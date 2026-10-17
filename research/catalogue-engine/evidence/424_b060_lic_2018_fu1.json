@@ -1,0 +1,5088 @@
+{
+ "packet_id": "backfill-b060-lic-2018-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b060",
+ "sources": [
+  {
+   "url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+   "title": "BLACK PANTHER: New Poster & Enamel Pins!",
+   "publisher": "Mondo",
+   "published_date": "2018-02-15",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://moviefone.com/2018/02/15/exclusive-black-panther-mondo-poster",
+   "title": "Exclusive: 'Black Panther' Gets the Mondo Treatment",
+   "publisher": "Moviefone",
+   "published_date": "2018-02-15",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+   "title": "Avengers Infinity War Mondo Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-04-27",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mondoshop.com/products/avengers-infinity-war-1",
+   "title": "Avengers: Infinity War",
+   "publisher": "Mondo",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mondotees.com/blogs/news/avengers-infinity-war-enamel-pins",
+   "title": "AVENGERS: INFINITY WAR Enamel Pins!",
+   "publisher": "Mondo",
+   "published_date": "2018-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+   "title": "Mondo's Marvel Pins for Comic-Con International 2018",
+   "publisher": "CBR",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mondo-marvel-pins-at-sdcc-2018/",
+   "title": "Mondo Marvel Pins at SDCC 2018",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mondotees.com/blogs/news/sdcc-online-release-part-ii",
+   "title": "SDCC Online Release (Part II)",
+   "publisher": "Mondo",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://sdccblog.com/2018/07/mondo-san-diego-comic-con-2018-exclusives/",
+   "title": "Mondo San Diego Comic-Con 2018 Exclusives",
+   "publisher": "San Diego Comic-Con Unofficial Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+   "title": "Marvel Daredevil Mondo Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.theblotsays.com/2018/10/daredevil-netflix-television-series.html",
+   "title": "Daredevil Netflix Television Series Marvel Portrait Enamel Pins by Matt Taylor x Mondo",
+   "publisher": "The Blot Says",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mondoshop.com/products/elektra-enamel-pin",
+   "title": "Daredevil (Elektra enamel pin)",
+   "publisher": "Mondo",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mondoshop.com/products/daredevil-enamel-pin-1",
+   "title": "Daredevil Enamel Pin",
+   "publisher": "Mondo",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/stitch-lanyard-pin-set-at-sdcc-2018/",
+   "title": "Stitch Lanyard Pin Set at SDCC 2018",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://sdccblog.com/2018/07/monogram-international-san-diego-comic-con-2018-exclusives/",
+   "title": "Monogram International San Diego Comic-Con 2018 Exclusives",
+   "publisher": "San Diego Comic-Con Unofficial Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://bleedingcool.com/collectibles/monogram-harry-potter-marvel-nbx-naruto-rick-morty-sdcc/",
+   "title": "Monogram Brings Harry Potter, Marvel, NBX, Naruto, and More to SDCC",
+   "publisher": "Bleeding Cool",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+   "title": "Kingdom Hearts Lanyard Pin Set at SDCC 2018",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.figures.com/2018/06/22/naruto-and-kingdom-hearts-get-monogram-sdcc-2018-exclusives/",
+   "title": "Naruto and Kingdom Hearts Get Monogram SDCC 2018 Exclusives",
+   "publisher": "Figures.com",
+   "published_date": "2018-06-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://awesometoyblog.com/2018/06/26/monogram-offers-naruto-and-kingdom-hearts-sdcc-exclusives-and-announces-online-pre-sale/",
+   "title": "Monogram Offers Naruto and Kingdom Hearts SDCC Exclusives and Announces Online Pre-Sale",
+   "publisher": "Awesome Toy Blog",
+   "published_date": "2018-06-26",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/kingdom-hearts-gift-set-at-nycc-2018-includes-pin/",
+   "title": "Kingdom Hearts Gift Set at NYCC 2018 Includes Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+   "title": "Mickey & Friends FiGPiN Mini Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.entertainmentearth.com/product/disney-mickey-mouse-and-friends-pluto-figpin-mini/fg334",
+   "title": "Disney Mickey Mouse and Friends Pluto FiGPin Mini",
+   "publisher": "Entertainment Earth",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.atomicempire.com/Item/250240",
+   "title": "Disney Figpin: Pluto Mini Pin",
+   "publisher": "Atomic Empire",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+   "title": "Primark Alice in Wonderland Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+   "title": "Primark Mickey & Minnie Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+   "title": "Primark Mickey & Friends Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-03-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+   "title": "Primark Rainbow Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mary-poppins-primark-disney-pin-set/",
+   "title": "Mary Poppins Primark Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/primark-pins/",
+   "title": "Primark Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.toynk.com/products/marvel-deadpool-and-cable-limited-edition-enamel-pin-nycc-2018-exclusive",
+   "title": "Marvel Deadpool and Cable Limited Edition Enamel Pin (NYCC 2018 Exclusive)",
+   "publisher": "Toynk Toys",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.figures.com/2018/09/19/toynk-nycc-2018-exclusives-galore-marvel-starwars-rickandmorty-dd-more/",
+   "title": "Toynk NYCC 2018 Exclusives Galore!",
+   "publisher": "Figures.com",
+   "published_date": "2018-09-19",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://sdccblog.com/2018/09/toynk-new-york-comic-con-2018-exclusives-revealed/",
+   "title": "Toynk New York Comic Con 2018 Exclusives Revealed",
+   "publisher": "San Diego Comic-Con Unofficial Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://bleedingcool.com/collectibles/sdcc-pins-rick-morty-deadpool-cuphead-star-wars/",
+   "title": "Toynk Toys Bring Deadpool, Rick and Morty, Star Wars, and More to SDCC",
+   "publisher": "Bleeding Cool",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+   "title": "Gentle Giant SDCC 2018 Exclusive 3.75\" Collector Scale Enamel Pins",
+   "publisher": "Jedi News",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.fanthatracks.com/news/collecting/sdcc-2018-gentle-giant-3-75-collector-scale-enamel-pins/",
+   "title": "SDCC 2018: Gentle Giant 3.75\" Collector Scale enamel pins",
+   "publisher": "Fantha Tracks",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://jediinsider.com/8-19913",
+   "title": "2018 Convention Exclusive Star Wars Enamel Pins From Gentle Giant",
+   "publisher": "Jedi Insider",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.bigbadtoystore.com/Product/VariationDetails/79234",
+   "title": "Star Wars Darth Vader SDCC 2018 Exclusive Large Enamel Pin",
+   "publisher": "BigBadToyStore",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://sdccblog.com/2018/07/gentle-giant-san-diego-comic-con-2018-exclusives/",
+   "title": "Gentle Giant San Diego Comic-Con 2018 Exclusives",
+   "publisher": "San Diego Comic-Con Unofficial Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.brianstoys.com/star-wars-gentle-giant-at-at-enamel-pin-2018-convention-exclusive.html",
+   "title": "Star Wars Gentle Giant Blind Box Enamel Pin Set 2018 SDCC Convention Exclusive",
+   "publisher": "Brian's Toys",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hades-hot-topic-disney-pin/",
+   "title": "Hades Hot Topic Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12-15",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/the-nightmare-before-christmas-25th-anniversary-12-day-interchangeable-necklace-set/11577156.html",
+   "title": "The Nightmare Before Christmas 25th Anniversary 12 Day Interchangeable Necklace Set",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+   "title": "Cri-Kee Mulan BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07-19",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+   "title": "Mushu And Cri-kee BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mulan-funko-pop-disney-boxlunch-pin-set/",
+   "title": "Mulan Funko Pop! Disney BoxLunch Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/funko-pop-disney-mickey-mouse-90th-blind-box-enamel-pin---boxlunch-exclusive/11662353.html",
+   "title": "Funko Pop! Disney Mickey Mouse 90th Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+   "title": "Funko Pop! Mickey Mouse 90th BoxLunch Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2018/mondo-black-panther",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mondo Black Panther enamel pins",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "Mondo poster and pin drop for the film opening"
+    },
+    {
+     "field": "issuer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "Mondo announcement"
+    },
+    {
+     "field": "format",
+     "value": "individual pins sold separately",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "Black Panther and Killmonger pins, $10 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-16",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "announced 15 Feb, on sale at a random time 16 Feb at mondotees.com"
+    },
+    {
+     "field": "price",
+     "value": 10,
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "MondoTees.com",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "online drop"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/mondo-avengers-infinity-war",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Avengers: Infinity War Enamel Pins (Mondo)",
+     "source_url": "https://mondotees.com/blogs/news/avengers-infinity-war-enamel-pins",
+     "method": "search_snippet",
+     "note": "Mondo announcement tied to the film's opening weekend"
+    },
+    {
+     "field": "issuer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "Mondo product page"
+    },
+    {
+     "field": "format",
+     "value": "individual pins sold separately",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "four pins, $10 each"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "product page lists four characters"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-27",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "blog gives 27 Apr 2018"
+    },
+    {
+     "field": "price",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "MondoTees.com",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "sold at MondoTees.com"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/mondo-sdcc",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mondo Marvel enamel pins, San Diego Comic-Con 2018",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo SDCC 2018 Marvel pin assortment"
+    },
+    {
+     "field": "issuer",
+     "value": "Mondo",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo booth"
+    },
+    {
+     "field": "format",
+     "value": "individual pins sold separately",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "each pin $10 at the booth"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "three Black Panther pins (Taylor) plus Nebula, Thanos, Infinity Gauntlet (Whalen)"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018, Mondo booth #435",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "sold at booth #435"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://sdccblog.com/2018/07/mondo-san-diego-comic-con-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "SDCC 2018 exclusives list"
+    },
+    {
+     "field": "price",
+     "value": 10,
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/mondo-daredevil-season-3",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Daredevil Season 3 portrait enamel pins (Mondo x Matt Taylor)",
+     "source_url": "https://www.theblotsays.com/2018/10/daredevil-netflix-television-series.html",
+     "method": "search_snippet",
+     "note": "Netflix Daredevil portrait pins by Matt Taylor"
+    },
+    {
+     "field": "issuer",
+     "value": "Mondo",
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "Mondo pins"
+    },
+    {
+     "field": "format",
+     "value": "individual pins sold separately",
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "two pins, $10 each"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "Daredevil and Elektra"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-30",
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "post dated 30 Oct 2018, tied to Season 3 debut"
+    },
+    {
+     "field": "price",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/monogram-sdcc-stitch-lanyard",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch Lanyard Pin Set (SDCC 2018)",
+     "source_url": "https://disneypinsblog.com/stitch-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "issuer",
+     "value": "Monogram International",
+     "source_url": "https://disneypinsblog.com/stitch-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "Monogram SDCC exclusive"
+    },
+    {
+     "field": "format",
+     "value": "lanyard with 3-pin pack",
+     "source_url": "https://disneypinsblog.com/stitch-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "lanyard plus three rock-and-roll themed Stitch enamel pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/stitch-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "three Stitch pins"
+    },
+    {
+     "field": "price",
+     "value": 15,
+     "source_url": "https://disneypinsblog.com/stitch-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "$15"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/stitch-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/stitch-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/stitch-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "LE 400 per blog"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://sdccblog.com/2018/07/monogram-international-san-diego-comic-con-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "400 pieces per SDCC blog"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018, Monogram booth #3645",
+     "source_url": "https://disneypinsblog.com/stitch-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "booth 3645"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://bleedingcool.com/collectibles/monogram-harry-potter-marvel-nbx-naruto-rick-morty-sdcc/",
+     "method": "search_snippet",
+     "note": "Monogram SDCC listing; Stitch lanyard holds a guitar"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/monogram-sdcc-kingdom-hearts-lanyard",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Kingdom Hearts Lanyard Pin Set (SDCC 2018)",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "issuer",
+     "value": "Monogram International",
+     "source_url": "https://www.figures.com/2018/06/22/naruto-and-kingdom-hearts-get-monogram-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Monogram SDCC 2018 exclusive"
+    },
+    {
+     "field": "format",
+     "value": "lanyard with 3-pin pack",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "three lapel pins (Mickey, Sora, Heartless) on a Kingdom Hearts II box-art lanyard"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "three pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "price",
+     "value": 15,
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "$15"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018, Monogram booth #3645",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "booth 3645"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-09",
+     "source_url": "https://awesometoyblog.com/2018/06/26/monogram-offers-naruto-and-kingdom-hearts-sdcc-exclusives-and-announces-online-pre-sale/",
+     "method": "search_snippet",
+     "note": "online pre-sale 9-11 Jul 2018 with daily stock"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/monogram-nycc-kingdom-hearts-sora-gift-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Kingdom Hearts gift set with Sora enamel pin (NYCC 2018)",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-gift-set-at-nycc-2018-includes-pin/",
+     "method": "search_snippet",
+     "note": "gift set that includes a pin"
+    },
+    {
+     "field": "format",
+     "value": "gift set including one pin",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-gift-set-at-nycc-2018-includes-pin/",
+     "method": "search_snippet",
+     "note": "gift set includes a Sora enamel pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-gift-set-at-nycc-2018-includes-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-gift-set-at-nycc-2018-includes-pin/",
+     "method": "search_snippet",
+     "note": "LE 700"
+    },
+    {
+     "field": "price",
+     "value": 20,
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-gift-set-at-nycc-2018-includes-pin/",
+     "method": "search_snippet",
+     "note": "$20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-gift-set-at-nycc-2018-includes-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-gift-set-at-nycc-2018-includes-pin/",
+     "method": "search_snippet",
+     "note": "NYCC 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/figpin-mickey-friends-mini",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "FiGPiN MiNis Mickey Mouse & Friends",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "first look; FiGPiN's first Disney collection"
+    },
+    {
+     "field": "issuer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "format",
+     "value": "individual pins sold separately",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "$9.99 per pin; each with pin stand and app code"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "six classic characters"
+    },
+    {
+     "field": "price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "first look Nov 2018; retail from Dec 2018 / Jan 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "GameStop, Best Buy, Target",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "select retailers"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/primark-alice-in-wonderland-emoji",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Primark Alice in Wonderland Disney Pin Set",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "sold at Primark UK"
+    },
+    {
+     "field": "region",
+     "value": "UK",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "UK stores"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "emoji-style pack of six named pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "six pins"
+    },
+    {
+     "field": "price",
+     "value": 3.0,
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "GBP 3.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "UK price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "post dated Feb 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/primark-mickey-minnie-emoji",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Primark Mickey & Minnie Disney Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "sold at Primark UK"
+    },
+    {
+     "field": "region",
+     "value": "UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "UK stores"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "six different emoji-style enamel pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "six pins"
+    },
+    {
+     "field": "price",
+     "value": 3.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "GBP 3.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "UK price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "snippet dates it Feb/Mar 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/primark-mickey-friends-emoji",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Primark Mickey & Friends Disney Pin Set",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "sold at Primark UK"
+    },
+    {
+     "field": "region",
+     "value": "UK",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "UK stores"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "emoji pin set, six pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "six pins"
+    },
+    {
+     "field": "price",
+     "value": 3.0,
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "GBP 3.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "UK price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "snippet shows 21 Mar 2018; page metadata inconsistent"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/primark-rainbow",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Primark Rainbow Disney Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "sold at Primark UK"
+    },
+    {
+     "field": "region",
+     "value": "UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "UK stores"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "six Mickey/Minnie themed pins listed"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "six pins"
+    },
+    {
+     "field": "price",
+     "value": 3.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "GBP 3.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "UK price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "one summary gives Apr 2018; another snippet gave no date"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/primark-mary-poppins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mary Poppins Primark Disney Pin Set",
+     "source_url": "https://disneypinsblog.com/mary-poppins-primark-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/mary-poppins-primark-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "region",
+     "value": "UK",
+     "source_url": "https://disneypinsblog.com/mary-poppins-primark-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "UK"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/mary-poppins-primark-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "six-pin set, gold-tone finish"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/mary-poppins-primark-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "six pins"
+    },
+    {
+     "field": "price",
+     "value": 3.0,
+     "source_url": "https://disneypinsblog.com/mary-poppins-primark-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "GBP 3.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/mary-poppins-primark-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/mary-poppins-primark-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "released Nov 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/toynk-nycc",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Toynk Toys NYCC 2018 exclusives",
+     "source_url": "https://www.figures.com/2018/09/19/toynk-nycc-2018-exclusives-galore-marvel-starwars-rickandmorty-dd-more/",
+     "method": "search_snippet",
+     "note": "Toynk NYCC 2018 lineup, booths #2164 and #2872"
+    },
+    {
+     "field": "issuer",
+     "value": "Toynk Toys",
+     "source_url": "https://www.figures.com/2018/09/19/toynk-nycc-2018-exclusives-galore-marvel-starwars-rickandmorty-dd-more/",
+     "method": "search_snippet",
+     "note": "Toynk"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018",
+     "source_url": "https://www.figures.com/2018/09/19/toynk-nycc-2018-exclusives-galore-marvel-starwars-rickandmorty-dd-more/",
+     "method": "search_snippet",
+     "note": "NYCC 2018 booths"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/toynk-nycc-ant-man-pym-particle",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Ant-Man Pym Particle pin set (Toynk NYCC 2018)",
+     "source_url": "https://sdccblog.com/2018/09/toynk-new-york-comic-con-2018-exclusives-revealed/",
+     "method": "search_snippet",
+     "note": "Toynk NYCC 2018 list"
+    },
+    {
+     "field": "issuer",
+     "value": "Toynk Toys",
+     "source_url": "https://sdccblog.com/2018/09/toynk-new-york-comic-con-2018-exclusives-revealed/",
+     "method": "search_snippet",
+     "note": "Toynk"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://sdccblog.com/2018/09/toynk-new-york-comic-con-2018-exclusives-revealed/",
+     "method": "search_snippet",
+     "note": "described as a pin set"
+    },
+    {
+     "field": "price",
+     "value": 20,
+     "source_url": "https://sdccblog.com/2018/09/toynk-new-york-comic-con-2018-exclusives-revealed/",
+     "method": "search_snippet",
+     "note": "$20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://sdccblog.com/2018/09/toynk-new-york-comic-con-2018-exclusives-revealed/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://sdccblog.com/2018/09/toynk-new-york-comic-con-2018-exclusives-revealed/",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://sdccblog.com/2018/09/toynk-new-york-comic-con-2018-exclusives-revealed/",
+     "method": "search_snippet",
+     "note": "LE 1000"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018",
+     "source_url": "https://sdccblog.com/2018/09/toynk-new-york-comic-con-2018-exclusives-revealed/",
+     "method": "search_snippet",
+     "note": "NYCC"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/toynk-sdcc",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Toynk Toys SDCC 2018 pins",
+     "source_url": "https://bleedingcool.com/collectibles/sdcc-pins-rick-morty-deadpool-cuphead-star-wars/",
+     "method": "search_snippet",
+     "note": "Toynk SDCC 2018 pin lineup"
+    },
+    {
+     "field": "issuer",
+     "value": "Toynk Toys",
+     "source_url": "https://bleedingcool.com/collectibles/sdcc-pins-rick-morty-deadpool-cuphead-star-wars/",
+     "method": "search_snippet",
+     "note": "Toynk"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://bleedingcool.com/collectibles/sdcc-pins-rick-morty-deadpool-cuphead-star-wars/",
+     "method": "search_snippet",
+     "note": "SDCC"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/gentle-giant-sdcc-collector-scale",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Gentle Giant 3.75in Collector Scale enamel pins (SDCC 2018)",
+     "source_url": "https://www.fanthatracks.com/news/collecting/sdcc-2018-gentle-giant-3-75-collector-scale-enamel-pins/",
+     "method": "search_snippet",
+     "note": "first Gentle Giant enamel pin range, new for SDCC 2018"
+    },
+    {
+     "field": "issuer",
+     "value": "Gentle Giant",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant SDCC exclusive"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "blind-boxed collector-scale pins with a mystery chase"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "mystery chase figure"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "limited to 1,500"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "SDCC 2018 exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/gentle-giant-sdcc-cantina-4-pack",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cantina Adventure enamel pin 4-pack (SDCC 2018)",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "cloisonne hard enamel boxed 4-pack, styled after 1978 set"
+    },
+    {
+     "field": "issuer",
+     "value": "Gentle Giant",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "exclusive boxed 4-pack"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "four pins named"
+    },
+    {
+     "field": "price",
+     "value": 24,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "$24"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "SDCC exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/gentle-giant-sdcc-mini",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Gentle Giant 1.75in Star Wars convention exclusive pins (SDCC 2018)",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "small pins sold separately, 2-pack option"
+    },
+    {
+     "field": "issuer",
+     "value": "Gentle Giant",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant"
+    },
+    {
+     "field": "format",
+     "value": "individual pins sold separately",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "singles plus a 2-pack option"
+    },
+    {
+     "field": "price",
+     "value": 6,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "$6 single, $12 2-pack per Jedi News"
+    },
+    {
+     "field": "price",
+     "value": 18,
+     "source_url": "https://jediinsider.com/8-19913",
+     "method": "search_snippet",
+     "note": "Jedi Insider lists $18; conflicts"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://sdccblog.com/2018/07/gentle-giant-san-diego-comic-con-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "SDCC 2018 exclusives list"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/loungefly-hot-topic-hades",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hades Loungefly pin at Hot Topic",
+     "source_url": "https://disneypinsblog.com/hades-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "blog title/summary"
+    },
+    {
+     "field": "issuer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/hades-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "new Hades Loungefly pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-15",
+     "source_url": "https://disneypinsblog.com/hades-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "post dated 15 Dec 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/funko-boxlunch-mulan",
+   "claims": [
+    {
+     "field": "price",
+     "value": 18.9,
+     "source_url": "https://disneypinsblog.com/mulan-funko-pop-disney-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "$18.90 per summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/mulan-funko-pop-disney-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "Dec 2018, Funko Pop BoxLunch collection"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/funko-boxlunch-mickey-90th-mystery",
+   "claims": [
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-mickey-mouse-90th-blind-box-enamel-pin---boxlunch-exclusive/11662353.html",
+     "method": "search_snippet",
+     "note": "one random pin per box"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-mickey-mouse-90th-blind-box-enamel-pin---boxlunch-exclusive/11662353.html",
+     "method": "search_snippet",
+     "note": "one pin per box"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-mickey-mouse-90th-blind-box-enamel-pin---boxlunch-exclusive/11662353.html",
+     "method": "search_snippet",
+     "note": "Funko Pop! listing"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-mickey-mouse-90th-blind-box-enamel-pin---boxlunch-exclusive/11662353.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "$9.90 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "released Dec 2018"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2018/mondo-black-panther/black-panther",
+   "set_key": "lic/2018/mondo-black-panther",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Black Panther",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "named in the Mondo drop"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Black Panther"
+     ],
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "one character per pin"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "Mondo release, designed by Matt Taylor"
+    },
+    {
+     "field": "retailer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "sold via mondotees.com"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "$10 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-16",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "on sale 16 Feb 2018"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "Black Panther film tie-in"
+    },
+    {
+     "field": "size_mm",
+     "value": 28,
+     "source_url": "https://moviefone.com/2018/02/15/exclusive-black-panther-mondo-poster",
+     "method": "search_snippet",
+     "note": "about 1.1in tall hard enamel pin, silver metal, butterfly clutch; Matt Taylor design"
+    },
+    {
+     "field": "materials",
+     "value": "hard enamel, shiny silver metal",
+     "source_url": "https://moviefone.com/2018/02/15/exclusive-black-panther-mondo-poster",
+     "method": "search_snippet",
+     "note": "hard enamel on shiny silver metal"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/mondo-black-panther/killmonger",
+   "set_key": "lic/2018/mondo-black-panther",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Killmonger",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "named in the Mondo drop"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Erik Killmonger"
+     ],
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "one character per pin"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "Mondo release, designed by Matt Taylor"
+    },
+    {
+     "field": "retailer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "sold via mondotees.com"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "$10 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-16",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "on sale 16 Feb 2018"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://mondoshop.com/blogs/news/new-poster-pin-release-black-panther",
+     "method": "search_snippet",
+     "note": "Black Panther film tie-in"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/mondo-avengers-infinity-war/iron-man",
+   "set_key": "lic/2018/mondo-avengers-infinity-war",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man"
+     ],
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "one of four separately priced character pins"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "Mondo product; designer Matt Taylor"
+    },
+    {
+     "field": "retailer",
+     "value": "Mondo",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "MondoTees.com"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "$10 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-27",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "release date per blog"
+    },
+    {
+     "field": "materials",
+     "value": "hard enamel",
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "hard enamel, single post, butterfly clutch, card backing"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "Infinity War tie-in"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/mondo-avengers-infinity-war/black-widow",
+   "set_key": "lic/2018/mondo-avengers-infinity-war",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Black Widow"
+     ],
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "one of four separately priced character pins"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "Mondo product; designer Matt Taylor"
+    },
+    {
+     "field": "retailer",
+     "value": "Mondo",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "MondoTees.com"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "$10 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-27",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "release date per blog"
+    },
+    {
+     "field": "materials",
+     "value": "hard enamel",
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "hard enamel, single post, butterfly clutch, card backing"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "Infinity War tie-in"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/mondo-avengers-infinity-war/star-lord",
+   "set_key": "lic/2018/mondo-avengers-infinity-war",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Star-Lord"
+     ],
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "one of four separately priced character pins"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "Mondo product; designer Matt Taylor"
+    },
+    {
+     "field": "retailer",
+     "value": "Mondo",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "MondoTees.com"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "$10 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-27",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "release date per blog"
+    },
+    {
+     "field": "materials",
+     "value": "hard enamel",
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "hard enamel, single post, butterfly clutch, card backing"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "Infinity War tie-in"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/mondo-avengers-infinity-war/spider-man",
+   "set_key": "lic/2018/mondo-avengers-infinity-war",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Spider-Man"
+     ],
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "one of four separately priced character pins"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "Mondo product; designer Matt Taylor"
+    },
+    {
+     "field": "retailer",
+     "value": "Mondo",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "MondoTees.com"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "$10 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-27",
+     "source_url": "https://disneypinsblog.com/avengers-infinity-war-mondo-pins/",
+     "method": "search_snippet",
+     "note": "release date per blog"
+    },
+    {
+     "field": "materials",
+     "value": "hard enamel",
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "hard enamel, single post, butterfly clutch, card backing"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://mondoshop.com/products/avengers-infinity-war-1",
+     "method": "search_snippet",
+     "note": "Infinity War tie-in"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/mondo-sdcc/killmonger",
+   "set_key": "lic/2018/mondo-sdcc",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Erik Killmonger"
+     ],
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "named individually; designed by Matt Taylor"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo pins"
+    },
+    {
+     "field": "retailer",
+     "value": "Mondo",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo booth at SDCC"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "$10 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo booth #435"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Marvel pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/mondo-sdcc/okoye",
+   "set_key": "lic/2018/mondo-sdcc",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Okoye"
+     ],
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "named individually; designed by Matt Taylor"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo pins"
+    },
+    {
+     "field": "retailer",
+     "value": "Mondo",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo booth at SDCC"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "$10 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo booth #435"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Marvel pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/mondo-sdcc/shuri",
+   "set_key": "lic/2018/mondo-sdcc",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Shuri"
+     ],
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "named individually; designed by Matt Taylor"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo pins"
+    },
+    {
+     "field": "retailer",
+     "value": "Mondo",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo booth at SDCC"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "$10 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo booth #435"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Marvel pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/mondo-sdcc/nebula",
+   "set_key": "lic/2018/mondo-sdcc",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Nebula"
+     ],
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "named individually; designed by Tom Whalen"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo pins"
+    },
+    {
+     "field": "retailer",
+     "value": "Mondo",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo booth at SDCC"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "$10 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo booth #435"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Marvel pins"
+    },
+    {
+     "field": "size_mm",
+     "value": 38,
+     "source_url": "https://mondotees.com/blogs/news/sdcc-online-release-part-ii",
+     "method": "search_snippet",
+     "note": "Mondo online listing: 1.5in tall"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-21",
+     "source_url": "https://mondotees.com/blogs/news/sdcc-online-release-part-ii",
+     "method": "search_snippet",
+     "note": "leftovers released online at a random time on Tue 21 Aug 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/mondo-sdcc/thanos",
+   "set_key": "lic/2018/mondo-sdcc",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thanos"
+     ],
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "named individually; designed by Tom Whalen"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo pins"
+    },
+    {
+     "field": "retailer",
+     "value": "Mondo",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo booth at SDCC"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "$10 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo booth #435"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Marvel pins"
+    },
+    {
+     "field": "size_mm",
+     "value": 32,
+     "source_url": "https://mondotees.com/blogs/news/sdcc-online-release-part-ii",
+     "method": "search_snippet",
+     "note": "Mondo online listing: 1.25in tall"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-21",
+     "source_url": "https://mondotees.com/blogs/news/sdcc-online-release-part-ii",
+     "method": "search_snippet",
+     "note": "leftovers released online at a random time on Tue 21 Aug 2018"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "comic corner-box style packaging"
+     ],
+     "source_url": "https://disneypinsblog.com/mondo-marvel-pins-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "backing card mimics classic Marvel comic corner boxes"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/mondo-sdcc/infinity-gauntlet",
+   "set_key": "lic/2018/mondo-sdcc",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Infinity Gauntlet"
+     ],
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "named individually; designed by Tom Whalen"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo pins"
+    },
+    {
+     "field": "retailer",
+     "value": "Mondo",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo booth at SDCC"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "$10 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Mondo booth #435"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.cbr.com/mondo-marvel-pins-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Marvel pins"
+    },
+    {
+     "field": "size_mm",
+     "value": 38,
+     "source_url": "https://mondotees.com/blogs/news/sdcc-online-release-part-ii",
+     "method": "search_snippet",
+     "note": "Mondo online listing: 1.5in tall"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-21",
+     "source_url": "https://mondotees.com/blogs/news/sdcc-online-release-part-ii",
+     "method": "search_snippet",
+     "note": "leftovers released online at a random time on Tue 21 Aug 2018"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "comic corner-box style packaging"
+     ],
+     "source_url": "https://disneypinsblog.com/mondo-marvel-pins-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "backing card mimics classic Marvel comic corner boxes"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/mondo-daredevil-season-3/daredevil",
+   "set_key": "lic/2018/mondo-daredevil-season-3",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Daredevil"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "one of two pins"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/products/daredevil-enamel-pin-1",
+     "method": "search_snippet",
+     "note": "Mondo product page"
+    },
+    {
+     "field": "retailer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/products/daredevil-enamel-pin-1",
+     "method": "search_snippet",
+     "note": "Mondo shop listing, now sold out"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "$10"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-30",
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "post date"
+    },
+    {
+     "field": "size_mm",
+     "value": 32,
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "height per blog: 1.25in Daredevil / 1.15in Elektra"
+    },
+    {
+     "field": "materials",
+     "value": "soft enamel, matte gold metal",
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "butterfly clutch backing"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "Marvel Netflix series"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/mondo-daredevil-season-3/elektra",
+   "set_key": "lic/2018/mondo-daredevil-season-3",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Elektra"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "one of two pins"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/products/elektra-enamel-pin",
+     "method": "search_snippet",
+     "note": "Mondo product page"
+    },
+    {
+     "field": "retailer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/products/elektra-enamel-pin",
+     "method": "search_snippet",
+     "note": "Mondo shop listing, now sold out"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "$10"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-30",
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "post date"
+    },
+    {
+     "field": "size_mm",
+     "value": 29,
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "height per blog: 1.25in Daredevil / 1.15in Elektra"
+    },
+    {
+     "field": "materials",
+     "value": "soft enamel, matte silver metal",
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "butterfly clutch backing"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-daredevil-mondo-pins/",
+     "method": "search_snippet",
+     "note": "Marvel Netflix series"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/monogram-sdcc-kingdom-hearts-lanyard/mickey",
+   "set_key": "lic/2018/monogram-sdcc-kingdom-hearts-lanyard",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "one of three named lapel pins in the set"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "three pins listed by name"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Monogram International",
+     "source_url": "https://www.figures.com/2018/06/22/naruto-and-kingdom-hearts-get-monogram-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Monogram exclusive"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "Monogram booth"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "set LE 400"
+    },
+    {
+     "field": "franchise",
+     "value": "Kingdom Hearts",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "Kingdom Hearts II artwork"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/monogram-sdcc-kingdom-hearts-lanyard/sora",
+   "set_key": "lic/2018/monogram-sdcc-kingdom-hearts-lanyard",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Sora"
+     ],
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "one of three named lapel pins in the set"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "three pins listed by name"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Monogram International",
+     "source_url": "https://www.figures.com/2018/06/22/naruto-and-kingdom-hearts-get-monogram-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Monogram exclusive"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "Monogram booth"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "set LE 400"
+    },
+    {
+     "field": "franchise",
+     "value": "Kingdom Hearts",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "Kingdom Hearts II artwork"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/monogram-sdcc-kingdom-hearts-lanyard/heartless",
+   "set_key": "lic/2018/monogram-sdcc-kingdom-hearts-lanyard",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Heartless"
+     ],
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "one of three named lapel pins in the set"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "three pins listed by name"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Monogram International",
+     "source_url": "https://www.figures.com/2018/06/22/naruto-and-kingdom-hearts-get-monogram-sdcc-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "Monogram exclusive"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "Monogram booth"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "set LE 400"
+    },
+    {
+     "field": "franchise",
+     "value": "Kingdom Hearts",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-lanyard-pin-set-at-sdcc-2018/",
+     "method": "search_snippet",
+     "note": "Kingdom Hearts II artwork"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/monogram-nycc-kingdom-hearts-sora-gift-set/sora",
+   "set_key": "lic/2018/monogram-nycc-kingdom-hearts-sora-gift-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Sora"
+     ],
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-gift-set-at-nycc-2018-includes-pin/",
+     "method": "search_snippet",
+     "note": "Sora enamel pin in the gift set"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-gift-set-at-nycc-2018-includes-pin/",
+     "method": "search_snippet",
+     "note": "NYCC"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-gift-set-at-nycc-2018-includes-pin/",
+     "method": "search_snippet",
+     "note": "set LE 700"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/figpin-mickey-friends-mini/mickey",
+   "set_key": "lic/2018/figpin-mickey-friends-mini",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "named as one of the six minis (via search summary)"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "FiGPiN Mini"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "$9.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "2in tall"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/figpin-mickey-friends-mini/minnie",
+   "set_key": "lic/2018/figpin-mickey-friends-mini",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "named as one of the six minis (via search summary)"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "FiGPiN Mini"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "$9.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "2in tall"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/figpin-mickey-friends-mini/donald",
+   "set_key": "lic/2018/figpin-mickey-friends-mini",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "named as one of the six minis (via search summary)"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "FiGPiN Mini"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "$9.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "2in tall"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/figpin-mickey-friends-mini/daisy",
+   "set_key": "lic/2018/figpin-mickey-friends-mini",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "named as one of the six minis (via search summary)"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "FiGPiN Mini"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "$9.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "2in tall"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/figpin-mickey-friends-mini/pluto",
+   "set_key": "lic/2018/figpin-mickey-friends-mini",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "named as one of the six minis (via search summary)"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "FiGPiN Mini"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "$9.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "2in tall"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://www.entertainmentearth.com/product/disney-mickey-mouse-and-friends-pluto-figpin-mini/fg334",
+     "method": "search_snippet",
+     "note": "Pluto FiGPiN Mini retailer listing (item FG334 is retailer code)"
+    },
+    {
+     "field": "materials",
+     "value": "hard enamel",
+     "source_url": "https://www.entertainmentearth.com/product/disney-mickey-mouse-and-friends-pluto-figpin-mini/fg334",
+     "method": "search_snippet",
+     "note": "premium hard enamel, 2in, display backer"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://www.atomicempire.com/Item/250240",
+     "method": "search_snippet",
+     "note": "Disney Figpin Pluto Mini listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/figpin-mickey-friends-mini/goofy",
+   "set_key": "lic/2018/figpin-mickey-friends-mini",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "named as one of the six minis (via search summary)"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "FiGPiN Mini"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "$9.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "2in tall"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-alice-in-wonderland-emoji/white-rabbit",
+   "set_key": "lic/2018/primark-alice-in-wonderland-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "White Rabbit",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "White Rabbit"
+     ],
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "subject of this pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "post dated Feb 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-alice-in-wonderland-emoji/alice",
+   "set_key": "lic/2018/primark-alice-in-wonderland-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "subject of this pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "post dated Feb 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-alice-in-wonderland-emoji/cheshire-cat",
+   "set_key": "lic/2018/primark-alice-in-wonderland-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cheshire Cat",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cheshire Cat"
+     ],
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "subject of this pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "post dated Feb 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-alice-in-wonderland-emoji/drink-me-bottle",
+   "set_key": "lic/2018/primark-alice-in-wonderland-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Drink Me bottle",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "post dated Feb 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-alice-in-wonderland-emoji/pocket-watch",
+   "set_key": "lic/2018/primark-alice-in-wonderland-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pocket watch",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "post dated Feb 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-alice-in-wonderland-emoji/mad-hatter-top-hat",
+   "set_key": "lic/2018/primark-alice-in-wonderland-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mad Hatter's top hat",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "post dated Feb 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-mickey-minnie-emoji/minnie-mouse",
+   "set_key": "lic/2018/primark-mickey-minnie-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "subject of this pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "snippet dates it Feb/Mar 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-mickey-minnie-emoji/bubble",
+   "set_key": "lic/2018/primark-mickey-minnie-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bubble",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "snippet dates it Feb/Mar 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-mickey-minnie-emoji/glove",
+   "set_key": "lic/2018/primark-mickey-minnie-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Glove",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "snippet dates it Feb/Mar 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-mickey-minnie-emoji/mickey-mouse",
+   "set_key": "lic/2018/primark-mickey-minnie-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "subject of this pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "snippet dates it Feb/Mar 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-mickey-minnie-emoji/glasses",
+   "set_key": "lic/2018/primark-mickey-minnie-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Glasses",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "snippet dates it Feb/Mar 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-mickey-minnie-emoji/minnie-heart",
+   "set_key": "lic/2018/primark-mickey-minnie-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse heart",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "subject of this pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-mickey-minnie-disney-pin-set",
+     "method": "search_snippet",
+     "note": "snippet dates it Feb/Mar 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-mickey-friends-emoji/mickey-mouse",
+   "set_key": "lic/2018/primark-mickey-friends-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "subject of this pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "snippet shows 21 Mar 2018; page metadata inconsistent"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-mickey-friends-emoji/minnie-mouse",
+   "set_key": "lic/2018/primark-mickey-friends-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "subject of this pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "snippet shows 21 Mar 2018; page metadata inconsistent"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-mickey-friends-emoji/donald-duck",
+   "set_key": "lic/2018/primark-mickey-friends-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "subject of this pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "snippet shows 21 Mar 2018; page metadata inconsistent"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-mickey-friends-emoji/daisy-duck",
+   "set_key": "lic/2018/primark-mickey-friends-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Daisy Duck",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "subject of this pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "snippet shows 21 Mar 2018; page metadata inconsistent"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-mickey-friends-emoji/pluto",
+   "set_key": "lic/2018/primark-mickey-friends-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pluto",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "subject of this pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "snippet shows 21 Mar 2018; page metadata inconsistent"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-mickey-friends-emoji/goofy",
+   "set_key": "lic/2018/primark-mickey-friends-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "subject of this pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03",
+     "source_url": "https://disneypinsblog.com/primark-mickey-friends-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "snippet shows 21 Mar 2018; page metadata inconsistent"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-rainbow/mickey-head-icon",
+   "set_key": "lic/2018/primark-rainbow",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey head icon",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "subject of this pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "one summary gives Apr 2018; another snippet gave no date"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-rainbow/mickey-under-rainbow",
+   "set_key": "lic/2018/primark-rainbow",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey under a rainbow",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "subject of this pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "one summary gives Apr 2018; another snippet gave no date"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-rainbow/100-percent-original",
+   "set_key": "lic/2018/primark-rainbow",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "100% Original",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "one summary gives Apr 2018; another snippet gave no date"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-rainbow/mickey-shorts",
+   "set_key": "lic/2018/primark-rainbow",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey's shorts",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "one summary gives Apr 2018; another snippet gave no date"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-rainbow/cool",
+   "set_key": "lic/2018/primark-rainbow",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cool",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "one summary gives Apr 2018; another snippet gave no date"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/primark-rainbow/minnie-bow",
+   "set_key": "lic/2018/primark-rainbow",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie's bow",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "named as one of the six pins in the pack"
+    },
+    {
+     "field": "retailer",
+     "value": "Primark",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "Primark UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/primark-disney-pin-set",
+     "method": "search_snippet",
+     "note": "one summary gives Apr 2018; another snippet gave no date"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/toynk-nycc/deadpool-and-cable-heart",
+   "set_key": "lic/2018/toynk-nycc",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Marvel Deadpool and Cable Limited Edition Enamel Pin",
+     "source_url": "https://www.toynk.com/products/marvel-deadpool-and-cable-limited-edition-enamel-pin-nycc-2018-exclusive",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Deadpool",
+      "Cable"
+     ],
+     "source_url": "https://www.toynk.com/products/marvel-deadpool-and-cable-limited-edition-enamel-pin-nycc-2018-exclusive",
+     "method": "search_snippet",
+     "note": "heart pin of the pair"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Toynk Toys",
+     "source_url": "https://www.toynk.com/products/marvel-deadpool-and-cable-limited-edition-enamel-pin-nycc-2018-exclusive",
+     "method": "search_snippet",
+     "note": "Toynk product"
+    },
+    {
+     "field": "retailer",
+     "value": "Toynk Toys",
+     "source_url": "https://www.toynk.com/products/marvel-deadpool-and-cable-limited-edition-enamel-pin-nycc-2018-exclusive",
+     "method": "search_snippet",
+     "note": "Toynk store"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.toynk.com/products/marvel-deadpool-and-cable-limited-edition-enamel-pin-nycc-2018-exclusive",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.toynk.com/products/marvel-deadpool-and-cable-limited-edition-enamel-pin-nycc-2018-exclusive",
+     "method": "search_snippet",
+     "note": "1,000 sets produced"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018",
+     "source_url": "https://www.toynk.com/products/marvel-deadpool-and-cable-limited-edition-enamel-pin-nycc-2018-exclusive",
+     "method": "search_snippet",
+     "note": "NYCC 2018 exclusive"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.toynk.com/products/marvel-deadpool-and-cable-limited-edition-enamel-pin-nycc-2018-exclusive",
+     "method": "search_snippet",
+     "note": "officially licensed Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/toynk-nycc/deadpool-unicorn",
+   "set_key": "lic/2018/toynk-nycc",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Deadpool"
+     ],
+     "source_url": "https://www.figures.com/2018/09/19/toynk-nycc-2018-exclusives-galore-marvel-starwars-rickandmorty-dd-more/",
+     "method": "search_snippet",
+     "note": "Deadpool riding a unicorn pin"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Toynk Toys",
+     "source_url": "https://www.figures.com/2018/09/19/toynk-nycc-2018-exclusives-galore-marvel-starwars-rickandmorty-dd-more/",
+     "method": "search_snippet",
+     "note": "Toynk exclusive"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.figures.com/2018/09/19/toynk-nycc-2018-exclusives-galore-marvel-starwars-rickandmorty-dd-more/",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://www.figures.com/2018/09/19/toynk-nycc-2018-exclusives-galore-marvel-starwars-rickandmorty-dd-more/",
+     "method": "search_snippet",
+     "note": "LE 2000"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018",
+     "source_url": "https://www.figures.com/2018/09/19/toynk-nycc-2018-exclusives-galore-marvel-starwars-rickandmorty-dd-more/",
+     "method": "search_snippet",
+     "note": "NYCC 2018"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.figures.com/2018/09/19/toynk-nycc-2018-exclusives-galore-marvel-starwars-rickandmorty-dd-more/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/toynk-sdcc/thanos-gauntlet",
+   "set_key": "lic/2018/toynk-sdcc",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thanos"
+     ],
+     "source_url": "https://bleedingcool.com/collectibles/sdcc-pins-rick-morty-deadpool-cuphead-star-wars/",
+     "method": "search_snippet",
+     "note": "Thanos gauntlet pin"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Toynk Toys",
+     "source_url": "https://bleedingcool.com/collectibles/sdcc-pins-rick-morty-deadpool-cuphead-star-wars/",
+     "method": "search_snippet",
+     "note": "Toynk"
+    },
+    {
+     "field": "original_price",
+     "value": 15,
+     "source_url": "https://bleedingcool.com/collectibles/sdcc-pins-rick-morty-deadpool-cuphead-star-wars/",
+     "method": "search_snippet",
+     "note": "$15"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://bleedingcool.com/collectibles/sdcc-pins-rick-morty-deadpool-cuphead-star-wars/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://bleedingcool.com/collectibles/sdcc-pins-rick-morty-deadpool-cuphead-star-wars/",
+     "method": "search_snippet",
+     "note": "SDCC 2018"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://bleedingcool.com/collectibles/sdcc-pins-rick-morty-deadpool-cuphead-star-wars/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-collector-scale/darth-vader",
+   "set_key": "lic/2018/gentle-giant-sdcc-collector-scale",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Darth Vader"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named in the collector-scale lineup"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant"
+    },
+    {
+     "field": "size_mm",
+     "value": 95,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "3.75in collector scale"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "SDCC"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "pin_name",
+     "value": "Star Wars Darth Vader SDCC 2018 Exclusive Large Enamel Pin",
+     "source_url": "https://www.bigbadtoystore.com/Product/VariationDetails/79234",
+     "method": "search_snippet",
+     "note": "retailer listing title"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://www.bigbadtoystore.com/Product/VariationDetails/79234",
+     "method": "search_snippet",
+     "note": "$19.99, sold out"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.bigbadtoystore.com/Product/VariationDetails/79234",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "materials",
+     "value": "metal",
+     "source_url": "https://www.bigbadtoystore.com/Product/VariationDetails/79234",
+     "method": "search_snippet",
+     "note": "metal, 3.75in scale"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-collector-scale/stormtrooper",
+   "set_key": "lic/2018/gentle-giant-sdcc-collector-scale",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stormtrooper"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named in the collector-scale lineup"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant"
+    },
+    {
+     "field": "size_mm",
+     "value": 95,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "3.75in collector scale"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "SDCC"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-collector-scale/han-solo",
+   "set_key": "lic/2018/gentle-giant-sdcc-collector-scale",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Han Solo"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named in the collector-scale lineup"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant"
+    },
+    {
+     "field": "size_mm",
+     "value": 95,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "3.75in collector scale"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "SDCC"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-collector-scale/chewbacca",
+   "set_key": "lic/2018/gentle-giant-sdcc-collector-scale",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chewbacca"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named in the collector-scale lineup"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant"
+    },
+    {
+     "field": "size_mm",
+     "value": 95,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "3.75in collector scale"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "SDCC"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-cantina-4-pack/hammerhead",
+   "set_key": "lic/2018/gentle-giant-sdcc-cantina-4-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hammerhead"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named member of the 4-pack"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "four pins packed together"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant"
+    },
+    {
+     "field": "size_mm",
+     "value": 44,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "1.75in per Jedi News"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://jediinsider.com/8-19913",
+     "method": "search_snippet",
+     "note": "2in per Jedi Insider"
+    },
+    {
+     "field": "materials",
+     "value": "cloisonne hard enamel",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "cloisonne hard enamel"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars cantina aliens"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-cantina-4-pack/walrus-man",
+   "set_key": "lic/2018/gentle-giant-sdcc-cantina-4-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Walrus Man"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named member of the 4-pack"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "four pins packed together"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant"
+    },
+    {
+     "field": "size_mm",
+     "value": 44,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "1.75in per Jedi News"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://jediinsider.com/8-19913",
+     "method": "search_snippet",
+     "note": "2in per Jedi Insider"
+    },
+    {
+     "field": "materials",
+     "value": "cloisonne hard enamel",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "cloisonne hard enamel"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars cantina aliens"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-cantina-4-pack/greedo",
+   "set_key": "lic/2018/gentle-giant-sdcc-cantina-4-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Greedo"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named member of the 4-pack"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "four pins packed together"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant"
+    },
+    {
+     "field": "size_mm",
+     "value": 44,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "1.75in per Jedi News"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://jediinsider.com/8-19913",
+     "method": "search_snippet",
+     "note": "2in per Jedi Insider"
+    },
+    {
+     "field": "materials",
+     "value": "cloisonne hard enamel",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "cloisonne hard enamel"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars cantina aliens"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-cantina-4-pack/snaggletooth-blue",
+   "set_key": "lic/2018/gentle-giant-sdcc-cantina-4-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Snaggletooth (blue)"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named member of the 4-pack"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "four pins packed together"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant"
+    },
+    {
+     "field": "size_mm",
+     "value": 44,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "1.75in per Jedi News"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://jediinsider.com/8-19913",
+     "method": "search_snippet",
+     "note": "2in per Jedi Insider"
+    },
+    {
+     "field": "materials",
+     "value": "cloisonne hard enamel",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "cloisonne hard enamel"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars cantina aliens"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-mini/porg",
+   "set_key": "lic/2018/gentle-giant-sdcc-mini",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Porg"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named as one of the separately sold pins"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant"
+    },
+    {
+     "field": "size_mm",
+     "value": 44,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "1.75in"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "SDCC"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-mini/at-at",
+   "set_key": "lic/2018/gentle-giant-sdcc-mini",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "AT-AT"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named as one of the separately sold pins"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant"
+    },
+    {
+     "field": "size_mm",
+     "value": 44,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "1.75in"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "SDCC"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "pin_name",
+     "value": "Star Wars Gentle Giant AT-AT Enamel Pin 2018 Convention Exclusive",
+     "source_url": "https://www.brianstoys.com/star-wars-gentle-giant-at-at-enamel-pin-2018-convention-exclusive.html",
+     "method": "search_snippet",
+     "note": "retailer listing (URL names AT-AT); title says blind box set - check"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-mini/dianoga",
+   "set_key": "lic/2018/gentle-giant-sdcc-mini",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dianoga"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named as one of the separately sold pins"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant"
+    },
+    {
+     "field": "size_mm",
+     "value": 44,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "1.75in"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "SDCC"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-mini/thala-siren-milk-bottle",
+   "set_key": "lic/2018/gentle-giant-sdcc-mini",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thala-siren with milk bottle"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named as one of the separately sold pins"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant"
+    },
+    {
+     "field": "size_mm",
+     "value": 44,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "1.75in"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "SDCC"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-hot-topic-hades/hades",
+   "set_key": "lic/2018/loungefly-hot-topic-hades",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hades"
+     ],
+     "source_url": "https://disneypinsblog.com/hades-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "Hercules villain"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/hades-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly pin"
+    },
+    {
+     "field": "retailer",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/hades-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "at Hot Topic"
+    },
+    {
+     "field": "original_price",
+     "value": 7.9,
+     "source_url": "https://disneypinsblog.com/hades-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "one line says $7.90"
+    },
+    {
+     "field": "original_price",
+     "value": 6.9,
+     "source_url": "https://disneypinsblog.com/hades-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "another line says $6.90; post inconsistent"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/hades-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-15",
+     "source_url": "https://disneypinsblog.com/hades-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "post date"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-cri-kee/cri-kee",
+   "set_key": "lic/2018/boxlunch-cri-kee",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-07-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "post dated 19 Jul 2018"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "$8.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch, in store only while supplies last"
+    },
+    {
+     "field": "visual_description",
+     "value": "Cri-Kee relaxing in a teacup",
+     "source_url": "https://disneypinsblog.com/blogs/news/cri-kee-mulan-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "paraphrase of design"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-mushu-and-cri-kee/mushu-and-cri-kee",
+   "set_key": "lic/2018/boxlunch-mushu-and-cri-kee",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-09-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "post dated 5 Sep 2018"
+    },
+    {
+     "field": "original_price",
+     "value": 5.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "$5.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/mushu-and-cri-kee-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2018/mondo",
+   "field": "pins",
+   "searched": "3 queries (Mondo Disney 2018, Mondo Mickey 90th, Mondo Star Wars 2018)",
+   "note": "no 2018 Mondo Disney-character or Star Wars pin found; Mondo Disney partnership (Sorcerer/90th Mickey) announced Feb 2019, so belongs to 2019 cell"
+  },
+  {
+   "key": "lic/2018/mondo-sdcc/killmonger",
+   "field": "product_code",
+   "searched": "CBR, DPB snippets",
+   "note": "separate SDCC Killmonger design vs Feb 2018 Killmonger pin not distinguished beyond source wording; check they are distinct designs"
+  },
+  {
+   "key": "lic/2018/monogram-sdcc-stitch-lanyard",
+   "field": "pins",
+   "searched": "DPB, Bleeding Cool, SDCC blog snippets",
+   "note": "three Stitch pins not individually described; members not recorded"
+  },
+  {
+   "key": "lic/2018/monogram-sdcc-stitch-lanyard",
+   "field": "edition_size",
+   "searched": "DPB reader comment",
+   "note": "reader comment says an identical set sold on BoxLunch site as a summer convention exclusive, disputing LE 400; unresolved"
+  },
+  {
+   "key": "lic/2018/monogram-nycc-kingdom-hearts-sora-gift-set",
+   "field": "issuer",
+   "searched": "1 query",
+   "note": "Monogram named as maker only in a search summary linking it to the SDCC set; confirm maker and other gift-set contents"
+  },
+  {
+   "key": "lic/2018/figpin-mickey-friends-mini/mickey",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "hold: six-member list came from a search summary citing an unnamed listing; verify against DPB post or FiGPiN numbers"
+  },
+  {
+   "key": "lic/2018/figpin-mickey-friends-mini/minnie",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "hold: six-member list came from a search summary citing an unnamed listing; verify against DPB post or FiGPiN numbers"
+  },
+  {
+   "key": "lic/2018/figpin-mickey-friends-mini/donald",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "hold: six-member list came from a search summary citing an unnamed listing; verify against DPB post or FiGPiN numbers"
+  },
+  {
+   "key": "lic/2018/figpin-mickey-friends-mini/daisy",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "hold: six-member list came from a search summary citing an unnamed listing; verify against DPB post or FiGPiN numbers"
+  },
+  {
+   "key": "lic/2018/figpin-mickey-friends-mini/goofy",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "hold: six-member list came from a search summary citing an unnamed listing; verify against DPB post or FiGPiN numbers"
+  },
+  {
+   "key": "lic/2018/figpin-mickey-friends-mini",
+   "field": "pins",
+   "searched": "DPB snippet",
+   "note": "post says a Mickey 90th pin is also in the set; unclear if a 7th design or the Mickey mini; regular FiGPiN Mickey 90th is separate - lead"
+  },
+  {
+   "key": "lic/2018/figpin-mickey-friends-mini",
+   "field": "release_year",
+   "searched": "DPB snippet",
+   "note": "retail Dec 2018/Jan 2019; may belong to 2019 if first shipped Jan 2019"
+  },
+  {
+   "key": "lic/2018/figpin",
+   "field": "pins",
+   "searched": "4 queries (FiGPiN 2018 Disney, Star Wars Solo, Infinity War, SDCC 2018)",
+   "note": "lead: FiGPiN Infinity War Thanos (Entertainment Earth FG244) and XL X1 (FG321) found undated; no FiGPiN numbers/dates for 2018 Star Wars or Marvel"
+  },
+  {
+   "key": "lic/2018/figpin-sdcc",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "only FiGPiN SDCC 2018 exclusive found was Dragon Ball Super (LE 504), not Disney-owned; no Marvel/Star Wars FiGPiN SDCC 2018 found"
+  },
+  {
+   "key": "lic/2018/primark-mary-poppins",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "six pins not named in snippets; members not recorded"
+  },
+  {
+   "key": "lic/2018/primark-alice-in-wonderland-emoji",
+   "field": "manufacturer",
+   "searched": "DPB snippets",
+   "note": "maker not stated; retailer only"
+  },
+  {
+   "key": "lic/2018/primark-mickey-minnie-emoji",
+   "field": "manufacturer",
+   "searched": "DPB snippets",
+   "note": "maker not stated; retailer only"
+  },
+  {
+   "key": "lic/2018/primark-mickey-friends-emoji",
+   "field": "manufacturer",
+   "searched": "DPB snippets",
+   "note": "maker not stated; retailer only"
+  },
+  {
+   "key": "lic/2018/primark-rainbow",
+   "field": "manufacturer",
+   "searched": "DPB snippets",
+   "note": "maker not stated; retailer only"
+  },
+  {
+   "key": "lic/2018/primark-mary-poppins",
+   "field": "manufacturer",
+   "searched": "DPB snippets",
+   "note": "maker not stated; retailer only"
+  },
+  {
+   "key": "lic/2018/primark-peter-pan",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: Primark Peter Pan (and London) Disney pin sets listed in DPB Primark archive; no year, price or members in snippets"
+  },
+  {
+   "key": "lic/2018/primark-rainbow",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "release month rests on one summary; second snippet gave no date"
+  },
+  {
+   "key": "lic/2018/toynk-nycc/deadpool-and-cable-heart",
+   "field": "pin_structure",
+   "searched": "toynk listing snippet",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - LE counted in 'sets', may be a 2-piece heart"
+  },
+  {
+   "key": "lic/2018/toynk-nycc-ant-man-pym-particle",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "pin count and members not stated"
+  },
+  {
+   "key": "lic/2018/toynk-nycc/star-lord-communication",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "lead: Toynk Star-Lord communication pin LE 500 called a summer exclusive, not NYCC-specific; not recorded"
+  },
+  {
+   "key": "lic/2018/bif-bang-pow-sdcc-nebula",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "scope: confirmed button/badge/non-pin (Nebula Pin Mates is a wooden figure, SDCC 2018 gift with purchase)"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-collector-scale/stormtrooper",
+   "field": "pin_structure",
+   "searched": "Jedi News, Fantha Tracks snippets",
+   "note": "hold: mystery designs not individually confirmed (lineup named in summary only; Vader has its own listing)"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-collector-scale/han-solo",
+   "field": "pin_structure",
+   "searched": "Jedi News, Fantha Tracks snippets",
+   "note": "hold: mystery designs not individually confirmed (lineup named in summary only; Vader has its own listing)"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-collector-scale/chewbacca",
+   "field": "pin_structure",
+   "searched": "Jedi News, Fantha Tracks snippets",
+   "note": "hold: mystery designs not individually confirmed (lineup named in summary only; Vader has its own listing)"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-collector-scale/han-solo",
+   "field": "visual_description",
+   "searched": "1 query",
+   "note": "summary notes Han Solo variant described as small head; not recorded as a claim"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-collector-scale",
+   "field": "pins",
+   "searched": "Jedi News snippet",
+   "note": "chase design not named"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-mini/at-at",
+   "field": "pin_structure",
+   "searched": "Brian's Toys snippet",
+   "note": "retailer title calls it a blind box enamel pin set while Jedi News says singles; confirm format"
+  },
+  {
+   "key": "lic/2018/loungefly-hot-topic-hades",
+   "field": "scope",
+   "searched": "n/a",
+   "note": "incidental Loungefly find; not in 221 packet keys - pass to Loungefly 2018 follow-up cell for corroboration"
+  },
+  {
+   "key": "lic/2018/boxlunch-coco-spirit-guide",
+   "field": "pins",
+   "searched": "1 query (incidental)",
+   "note": "lead: BoxLunch Coco Dante & Pepita spirit guide 2-pin set, Sept 2018, $14.90 per DPB; for BoxLunch 2018 follow-up cell, not re-researched"
+  },
+  {
+   "key": "lic/2018/loungefly-hot-topic-nightmare-before-christmas",
+   "field": "scope",
+   "searched": "1 query (HT NBC 12 pin 2018)",
+   "note": "still no 12-pin pack found; HT 25th anniv 12-day set is a necklace with 12 mystery charms (non-pin, undated) - possible source of the 12-pack mention"
+  },
+  {
+   "key": "lic/2018/hot-topic-nightmare-before-christmas-blind-box",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: undated Hot Topic NBC blind box enamel pin listing (id 11503066); year and maker not in snippet"
+  },
+  {
+   "key": "lic/2018/hot-topic",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no non-Loungefly Hot Topic Disney pin for 2018 found; Lock Shock Barrel HT set dated Sept 2019 by DPB"
+  },
+  {
+   "key": "lic/2018/boxlunch-cri-kee/cri-kee",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "maker not stated; Feb 2019 DPB date conflict noted in 223 still unresolved"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-mulan",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "no new per-design evidence; 222 holds on one-pin-per-character remain"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-mickey-90th-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed - still only 'Mickey in famous roles'; Funko mini-figure role list is not pin evidence"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-alice-queen-of-hearts-hedgehog",
+   "field": "pin_structure",
+   "searched": "0 dedicated queries (budget)",
+   "note": "not re-checked this round; 222 holds remain"
+  },
+  {
+   "key": "lic/2018/her-universe",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no 2018 Her Universe Disney/Star Wars pin found; DPB Her Universe Star Wars pins start Nov 2020"
+  },
+  {
+   "key": "lic/2018/d23-licensees",
+   "field": "pins",
+   "searched": "0 hits",
+   "note": "no D23-adjacent 2018 licensed booth pin surfaced"
+  },
+  {
+   "key": "lic/2018/uncas",
+   "field": "pins",
+   "searched": "not searched (budget)",
+   "note": "Uncas 2018 not searched"
+  },
+  {
+   "key": "lic/2018/pins-on-fire-sdcc-skottie-young-captain-marvel",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "lead: Skottie Young Captain Marvel SDCC 2018 Marvel exclusive enamel pin listed at Pins on Fire; maker and edition not in snippet"
+  },
+  {
+   "key": "lic/2018/buttons",
+   "field": "scope",
+   "searched": "n/a",
+   "note": "no new button items found; earlier button sets (216) keep their scope flags"
+  },
+  {
+   "key": "lic/2018/primark-alice-in-wonderland-emoji/white-rabbit",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-alice-in-wonderland-emoji/alice",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-alice-in-wonderland-emoji/cheshire-cat",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-alice-in-wonderland-emoji/drink-me-bottle",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-alice-in-wonderland-emoji/pocket-watch",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-alice-in-wonderland-emoji/mad-hatter-top-hat",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-mickey-minnie-emoji/minnie-mouse",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-mickey-minnie-emoji/bubble",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-mickey-minnie-emoji/glove",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-mickey-minnie-emoji/mickey-mouse",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-mickey-minnie-emoji/glasses",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-mickey-minnie-emoji/minnie-heart",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-mickey-friends-emoji/mickey-mouse",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-mickey-friends-emoji/minnie-mouse",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-mickey-friends-emoji/donald-duck",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-mickey-friends-emoji/daisy-duck",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-mickey-friends-emoji/pluto",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-mickey-friends-emoji/goofy",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-rainbow/mickey-head-icon",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-rainbow/mickey-under-rainbow",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-rainbow/100-percent-original",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-rainbow/mickey-shorts",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-rainbow/cool",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/primark-rainbow/minnie-bow",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-cantina-4-pack/hammerhead",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-cantina-4-pack/walrus-man",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-cantina-4-pack/greedo",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-cantina-4-pack/snaggletooth-blue",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 to 216 (B016); 30 standard WebSearches, excluded domains blocked. New makers: Mondo (Feb/Apr/Jul/Oct 2018 Marvel), Monogram SDCC/NYCC lanyards, FiGPiN Mickey minis, Gentle Giant and Toynk con pins, Primark UK emoji sets (Feb-Nov). Reused 216/222 keys for Cri-Kee and Funko. Loungefly/BoxLunch not re-researched; incidental Hades and Coco leads flagged."
+}

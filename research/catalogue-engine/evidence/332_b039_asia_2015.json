@@ -1,0 +1,1835 @@
+{
+ "packet_id": "backfill-b039-asia-2015",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b039",
+ "sources": [
+  {
+   "url": "https://disneynerds.com/2015/07/22/an-american-in-hong-kong-disneyland-a-pin-collector-paradise-and-other-great-finds-part-2/",
+   "title": "An American in Hong Kong Disneyland: a pin collector paradise (part 2)",
+   "publisher": "Disney Nerds",
+   "published_date": "2015-07-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/34019",
+   "title": "8th Mickey Mouse - HKDL Happy Memories to 10th Anniversary - 2015",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2015/05/happy-memories-to-10th.html",
+   "title": "Hong Kong Disneyland Happy Memories to 10th series merchandise",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2015-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+   "title": "Tsum Tsum Halloween 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+   "title": "Hong Kong Disneyland Safety Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-12-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/32221",
+   "title": "HKDL safety pin Sulley",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+   "title": "Hong Kong Disneyland Inside Out Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-06-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/magic-access-hong-kong-pin",
+   "title": "Magic Access Hong Kong Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-10-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/hong-kong-disneyland-pins/page/14/",
+   "title": "Hong Kong Disneyland Pins Archives - Page 14",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+   "title": "Tokyo Disney Star Wars Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-12-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://tdrexplorer.com/new-years-merch-2015/",
+   "title": "New Years 2015 Merchandise at Tokyo Disney Resort",
+   "publisher": "TDR Explorer",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://tdrexplorer.com/disneys-easter-merchandise-tokyo-disneysea-2015/",
+   "title": "Disney's Easter Merchandise at Tokyo DisneySea 2015",
+   "publisher": "TDR Explorer",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://tdrexplorer.com/tokyo-disneyland-halloween-merchandise-2015/",
+   "title": "Tokyo Disneyland Halloween Merchandise 2015",
+   "publisher": "TDR Explorer",
+   "published_date": "2015-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://tdrexplorer.com/halloween-2015-hotel-menu/",
+   "title": "Halloween 2015 Hotel Menu at Tokyo Disney Resort",
+   "publisher": "TDR Explorer",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://tdrexplorer.com/tokyo-disneyland-christmas-food-and-merchandise-2015/",
+   "title": "Christmas Fantasy 2015 food and merchandise at Tokyo Disneyland",
+   "publisher": "TDR Explorer",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://catnerd.wordpress.com/2015/11/09/disney-pin-trading-shanghai-cast-member-exclusive-pin/",
+   "title": "Disney Pin Trading: Shanghai Cast Member Exclusive Pin",
+   "publisher": "Crazy Cat Nerd",
+   "published_date": "2015-11-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://tdrexplorer.com/anna-and-elsas-frozen-fantasy-at-tokyo-disneyland/",
+   "title": "Anna and Elsa's Frozen Fantasy at Tokyo Disneyland",
+   "publisher": "TDR Explorer",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "hkdl/2015/happy-memories-to-10th",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Happy Memories to 10th Anniversary series",
+     "source_url": "https://mypincentral.com/pin/34019",
+     "method": "search_snippet",
+     "note": "MyPinCentral series name for HKDL 2015 anniversary pins"
+    },
+    {
+     "field": "set_name",
+     "value": "Happy Memories to 10th series",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2015/05/happy-memories-to-10th.html",
+     "method": "search_snippet",
+     "note": "blog says HKDL merchandise team began rolling out the series in May 2015; pins not named"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://mypincentral.com/pin/34019",
+     "method": "search_snippet",
+     "note": "series listed with a 2015 release date"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://mypincentral.com/pin/34019",
+     "method": "search_snippet",
+     "note": "HKDL series"
+    },
+    {
+     "field": "price",
+     "value": 238,
+     "source_url": "https://mypincentral.com/pin/34019",
+     "method": "search_snippet",
+     "note": "listed price for a pin in the series"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://mypincentral.com/pin/34019",
+     "method": "search_snippet",
+     "note": "price given in Hong Kong dollars"
+    },
+    {
+     "field": "format",
+     "value": "series of individual Mickey pins",
+     "source_url": "https://disneynerds.com/2015/07/22/an-american-in-hong-kong-disneyland-a-pin-collector-paradise-and-other-great-finds-part-2/",
+     "method": "search_snippet",
+     "note": "blog describes a series of Mickey sliding/easel pins showing park Mickey art from the first ten years"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneynerds.com/2015/07/22/an-american-in-hong-kong-disneyland-a-pin-collector-paradise-and-other-great-finds-part-2/",
+     "method": "search_snippet",
+     "note": "blog says each Mickey easel pin was limited to 600; link to the named series rests on subject only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://mypincentral.com/pin/34019",
+     "method": "search_snippet",
+     "note": "MyPinCentral marks the 8th Mickey entry as open edition; conflicts with LE 600 report"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2015/tsum-tsum-halloween",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tsum Tsum Halloween 2015 pins",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "DPB post on Halloween Tsum Tsum pins at Hong Kong Disneyland"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "post says three different versions"
+    },
+    {
+     "field": "format",
+     "value": "three separate pins, each a stacked multi-character design",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "each version names its own group of characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "only available at HKDR"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "post from September 2015"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2015/oe-set/safety-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hong Kong Disneyland safety pins",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "DPB post on safety-pin shaped pins at HKDL"
+    },
+    {
+     "field": "format",
+     "value": "2-pin cards",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "each card holds two pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "released December 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "sold at the resort"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2015/oe-single/inside-out-spinner",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Inside Out spinner pin",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "one of two new OE Inside Out pins at HKDR"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-06",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "post dated 11 June 2015"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2015/oe-single/inside-out-joy-sadness",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Inside Out Joy and Sadness pin",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "one of two new OE Inside Out pins at HKDR"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-06",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "post dated 11 June 2015"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2015/magic-access",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Magic Access Hong Kong pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/magic-access-hong-kong-pin",
+     "method": "search_snippet",
+     "note": "DPB post 28 Oct 2015"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/magic-access-hong-kong-pin",
+     "method": "search_snippet",
+     "note": "limited edition, HKDR only"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/magic-access-hong-kong-pin",
+     "method": "search_snippet",
+     "note": "post dated October 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/magic-access-hong-kong-pin",
+     "method": "search_snippet",
+     "note": "only at HKDR"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2015/star-wars",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tokyo Disney Resort Star Wars pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "DPB post 8 Dec 2015"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "released 1 December 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "only at TDR"
+    },
+    {
+     "field": "price",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "1000 yen each"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "format",
+     "value": "individual pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "each pin priced separately"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2015/new-year",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tokyo Disney Resort New Year 2015 pins",
+     "source_url": "https://tdrexplorer.com/new-years-merch-2015/",
+     "method": "search_snippet",
+     "note": "TDR Explorer New Year 2015 merchandise roundup shows pins"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://tdrexplorer.com/new-years-merch-2015/",
+     "method": "search_snippet",
+     "note": "TDR New Year merchandise"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2015/cast-member-exclusive",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Shanghai Disney Resort cast member exclusive pins",
+     "source_url": "https://catnerd.wordpress.com/2015/11/09/disney-pin-trading-shanghai-cast-member-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "fan blog on a Shanghai CM exclusive pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://catnerd.wordpress.com/2015/11/09/disney-pin-trading-shanghai-cast-member-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "LE, size unknown"
+    },
+    {
+     "field": "format",
+     "value": "series",
+     "source_url": "https://catnerd.wordpress.com/2015/11/09/disney-pin-trading-shanghai-cast-member-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "blog says other pins in the series show Mickey painting other things"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "hkdl/2015/happy-memories-to-10th/8th-anniversary-mickey",
+   "set_key": "hkdl/2015/happy-memories-to-10th",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "8th anniversary Mickey (Happy Memories to 10th series)",
+     "source_url": "https://mypincentral.com/pin/34019",
+     "method": "search_snippet",
+     "note": "listing for the 8th Mickey entry of the series"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://mypincentral.com/pin/34019",
+     "method": "search_snippet",
+     "note": "Mickey on an 8th anniversary design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mypincentral.com/pin/34019",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/34019",
+     "method": "search_snippet",
+     "note": "single listed pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://mypincentral.com/pin/34019",
+     "method": "search_snippet",
+     "note": "2015 release date"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://mypincentral.com/pin/34019",
+     "method": "search_snippet",
+     "note": "HKDL"
+    },
+    {
+     "field": "original_price",
+     "value": 238,
+     "source_url": "https://mypincentral.com/pin/34019",
+     "method": "search_snippet",
+     "note": "HK$238"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://mypincentral.com/pin/34019",
+     "method": "search_snippet",
+     "note": "Hong Kong dollars"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://mypincentral.com/pin/34019",
+     "method": "search_snippet",
+     "note": "listed as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2015/tsum-tsum-halloween/mickey-minnie-donald-daisy",
+   "set_key": "hkdl/2015/tsum-tsum-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tsum Tsum Halloween 2015 Mickey, Minnie, Donald and Daisy",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "one of three named versions"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse",
+      "Donald Duck",
+      "Daisy Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "characters named for this version"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "first-named character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "each version is a single pin showing the listed group"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "LE 500 stated; per design per a second snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 Halloween"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "HKDR exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2015/tsum-tsum-halloween/villains-lotso",
+   "set_key": "hkdl/2015/tsum-tsum-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tsum Tsum Halloween 2015 Maleficent, Queen of Hearts, Lotso and King of Hearts",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "one of three named versions"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent",
+      "Queen of Hearts",
+      "Lotso",
+      "King of Hearts"
+     ],
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "characters named for this version"
+    },
+    {
+     "field": "main_character",
+     "value": "Maleficent",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "first-named character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "each version is a single pin showing the listed group"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "LE 500 stated; per design per a second snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 Halloween"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "HKDR exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2015/tsum-tsum-halloween/goofy-pluto-chip-dale",
+   "set_key": "hkdl/2015/tsum-tsum-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tsum Tsum Halloween 2015 Goofy, Pluto, Chip and Dale",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "one of three named versions"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy",
+      "Pluto",
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "characters named for this version"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "first-named character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "each version is a single pin showing the listed group"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "LE 500 stated; per design per a second snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 Halloween"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/tsum-tsum-halloween-2015-pins/",
+     "method": "search_snippet",
+     "note": "HKDR exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2015/oe/safety-pin-mike",
+   "set_key": "hkdl/2015/oe-set/safety-pins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Safety pin Mike Wazowski",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "card pairs Monsters, Inc. characters, two pins per card"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mike Wazowski"
+     ],
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "character on the card"
+    },
+    {
+     "field": "main_character",
+     "value": "Mike Wazowski",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "pin in a 2-pin card",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "each card has two pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "December 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2015/oe/safety-pin-sulley",
+   "set_key": "hkdl/2015/oe-set/safety-pins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Safety pin Sulley",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "card pairs Monsters, Inc. characters, two pins per card"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sulley"
+     ],
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "character on the card"
+    },
+    {
+     "field": "main_character",
+     "value": "Sulley",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "pin in a 2-pin card",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "each card has two pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "December 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    },
+    {
+     "field": "visual_description",
+     "value": "gold safety-pin shape with Mickey heads on the back",
+     "source_url": "https://mypincentral.com/pin/32221",
+     "method": "search_snippet",
+     "note": "MyPinCentral describes a golden safety-pin Sulley pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2015/oe/safety-pin-pooh",
+   "set_key": "hkdl/2015/oe-set/safety-pins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Safety pin Winnie the Pooh",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "card pairs Winnie the Pooh characters, two pins per card"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "character on the card"
+    },
+    {
+     "field": "main_character",
+     "value": "Winnie the Pooh",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "pin in a 2-pin card",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "each card has two pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "December 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2015/oe/safety-pin-piglet",
+   "set_key": "hkdl/2015/oe-set/safety-pins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Safety pin Piglet",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "card pairs Winnie the Pooh characters, two pins per card"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Piglet"
+     ],
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "character on the card"
+    },
+    {
+     "field": "main_character",
+     "value": "Piglet",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "pin in a 2-pin card",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "each card has two pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "December 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-safety-pins/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2015/oe/inside-out-spinner",
+   "set_key": "hkdl/2015/oe-single/inside-out-spinner",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Inside Out spinner pin",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "spinner pin; characters not named in snippet"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "spinner pin; characters not named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "June 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "available at HKDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2015/oe/inside-out-joy-sadness",
+   "set_key": "hkdl/2015/oe-single/inside-out-joy-sadness",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Inside Out Joy and Sadness pin",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "single pin showing Joy and Sadness together"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "single pin showing Joy and Sadness together"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "June 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "available at HKDR"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Joy",
+      "Sadness"
+     ],
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "two characters on one pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Joy",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-inside-out-pins/",
+     "method": "search_snippet",
+     "note": "first named"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2015/magic-access/sorcerer-mickey-key",
+   "set_key": "hkdl/2015/magic-access",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Magic Access Sorcerer Mickey dangle pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/magic-access-hong-kong-pin",
+     "method": "search_snippet",
+     "note": "dangle pin for Magic Access"
+    },
+    {
+     "field": "main_character",
+     "value": "Sorcerer Mickey",
+     "source_url": "https://disneypinsblog.com/blogs/news/magic-access-hong-kong-pin",
+     "method": "search_snippet",
+     "note": "Sorcerer Mickey with a key behind"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/magic-access-hong-kong-pin",
+     "method": "search_snippet",
+     "note": "Mickey as Sorcerer"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/magic-access-hong-kong-pin",
+     "method": "search_snippet",
+     "note": "single dangle pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Sorcerer Mickey with a key backdrop; dangle reads Magic Access",
+     "source_url": "https://disneypinsblog.com/blogs/news/magic-access-hong-kong-pin",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/magic-access-hong-kong-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/magic-access-hong-kong-pin",
+     "method": "search_snippet",
+     "note": "October 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/magic-access-hong-kong-pin",
+     "method": "search_snippet",
+     "note": "HKDR only"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/star-wars/stormtrooper",
+   "set_key": "tdr/2015/star-wars",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tokyo Disney Resort Star Wars Stormtrooper pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "design named in DPB post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stormtrooper"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "main_character",
+     "value": "Stormtrooper",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "individually priced pin"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "1 Dec 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "TDR only"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/star-wars/darth-vader",
+   "set_key": "tdr/2015/star-wars",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tokyo Disney Resort Star Wars Darth Vader pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "design named in DPB post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Darth Vader"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "main_character",
+     "value": "Darth Vader",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "individually priced pin"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "1 Dec 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "TDR only"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/star-wars/yoda",
+   "set_key": "tdr/2015/star-wars",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tokyo Disney Resort Star Wars Yoda pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "design named in DPB post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Yoda"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "main_character",
+     "value": "Yoda",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "individually priced pin"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "1 Dec 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "TDR only"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/star-wars/r2-d2",
+   "set_key": "tdr/2015/star-wars",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tokyo Disney Resort Star Wars R2-D2 pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "design named in DPB post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "R2-D2"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "main_character",
+     "value": "R2-D2",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "individually priced pin"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "1 Dec 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "TDR only"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/star-wars/c-3po",
+   "set_key": "tdr/2015/star-wars",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tokyo Disney Resort Star Wars C-3PO pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "design named in DPB post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "C-3PO"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "main_character",
+     "value": "C-3PO",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "individually priced pin"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "1 Dec 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "TDR only"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/star-wars/darth-maul",
+   "set_key": "tdr/2015/star-wars",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tokyo Disney Resort Star Wars Darth Maul pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "design named in DPB post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Darth Maul"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "main_character",
+     "value": "Darth Maul",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "individually priced pin"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "1 Dec 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-star-wars-pins",
+     "method": "search_snippet",
+     "note": "TDR only"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/new-year/mickey",
+   "set_key": "tdr/2015/new-year",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "New Year 2015 Mickey pin",
+     "source_url": "https://tdrexplorer.com/new-years-merch-2015/",
+     "method": "search_snippet",
+     "note": "pin in the New Year 2015 roundup, Year of the Sheep theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://tdrexplorer.com/new-years-merch-2015/",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://tdrexplorer.com/new-years-merch-2015/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://tdrexplorer.com/new-years-merch-2015/",
+     "method": "search_snippet",
+     "note": "New Year 2015 merchandise"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://tdrexplorer.com/new-years-merch-2015/",
+     "method": "search_snippet",
+     "note": "TDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/new-year/danny-the-lamb",
+   "set_key": "tdr/2015/new-year",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "New Year 2015 Danny the Lamb pin",
+     "source_url": "https://tdrexplorer.com/new-years-merch-2015/",
+     "method": "search_snippet",
+     "note": "pin in the New Year 2015 roundup, Year of the Sheep theme"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Danny"
+     ],
+     "source_url": "https://tdrexplorer.com/new-years-merch-2015/",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Danny",
+     "source_url": "https://tdrexplorer.com/new-years-merch-2015/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://tdrexplorer.com/new-years-merch-2015/",
+     "method": "search_snippet",
+     "note": "New Year 2015 merchandise"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://tdrexplorer.com/new-years-merch-2015/",
+     "method": "search_snippet",
+     "note": "TDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2015/cast-member-exclusive/mickey-painting-snake",
+   "set_key": "shdr/2015/cast-member-exclusive",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Shanghai cast member pin, Mickey painting a snake",
+     "source_url": "https://catnerd.wordpress.com/2015/11/09/disney-pin-trading-shanghai-cast-member-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "pin shows Mickey painting a snake"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://catnerd.wordpress.com/2015/11/09/disney-pin-trading-shanghai-cast-member-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Mickey as painter"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://catnerd.wordpress.com/2015/11/09/disney-pin-trading-shanghai-cast-member-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://catnerd.wordpress.com/2015/11/09/disney-pin-trading-shanghai-cast-member-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://catnerd.wordpress.com/2015/11/09/disney-pin-trading-shanghai-cast-member-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "LE, size unknown"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://catnerd.wordpress.com/2015/11/09/disney-pin-trading-shanghai-cast-member-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Shanghai resort cast member exclusive"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "hkdl/2015/happy-memories-to-10th",
+   "field": "expected_pin_count",
+   "searched": "4 queries",
+   "note": "series count not stated; MyPinCentral shows neighbouring entries but members not named in snippets; LE 600 vs OE conflict open"
+  },
+  {
+   "key": "hkdl/2015/happy-memories-to-10th/8th-anniversary-mickey",
+   "field": "edition_type",
+   "searched": "4 queries",
+   "note": "hold: OE per MyPinCentral vs LE 600 per Disney Nerds easel-series post; confirm the two describe the same pins"
+  },
+  {
+   "key": "hkdl/2015/tsum-tsum-halloween",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "2015 price not in snippets; HK$118 seen only for the 2016 Halloween Tsum Tsum pins"
+  },
+  {
+   "key": "hkdl/2015/oe/safety-pin-mike",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: one character per pin inferred from 2-pin card naming the pair; confirm"
+  },
+  {
+   "key": "hkdl/2015/oe/safety-pin-pooh",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: one character per pin inferred from 2-pin card naming the pair; confirm"
+  },
+  {
+   "key": "hkdl/2015/oe/safety-pin-piglet",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: one character per pin inferred from 2-pin card naming the pair; confirm"
+  },
+  {
+   "key": "hkdl/2015/oe-set/safety-pins",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "one snippet names three cards (adds Donald and Daisy), another two; Donald/Daisy pins not recorded until confirmed"
+  },
+  {
+   "key": "hkdl/2015/oe/inside-out-spinner",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters on spinner not stated in snippet"
+  },
+  {
+   "key": "hkdl/2015/magic-access/sorcerer-mickey-key",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "edition size and price not in snippets"
+  },
+  {
+   "key": "hkdl/2015/christmas",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "lead: DPB archive lists a '2015 Hong Kong Disneyland Christmas Pin' post dated 24 Dec 2015; design/edition not in snippets"
+  },
+  {
+   "key": "hkdl/2015/pin-trading-fun-day",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: Fun Day 2015 Magical Ferris Elsa and Olaf pins seen only on a reseller listing; no fan/official source"
+  },
+  {
+   "key": "hkdl/2015/10th-anniversary-frozen",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: 10th anniversary Anna/Elsa/Olaf LE 1000 pin seen only on a retailer listing; release date not stated"
+  },
+  {
+   "key": "hkdl/2015/tsum-tsum",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: undated DPB post on HKDR Tsum Tsum spinner and 4-pin set; year not confirmed so not recorded"
+  },
+  {
+   "key": "tdr/2015/star-wars/darth-maul",
+   "field": "pin_name",
+   "searched": "3 queries",
+   "note": "hold: Darth Maul appears in some snippets of the DPB post but not others; confirm it is in the set"
+  },
+  {
+   "key": "tdr/2015/star-wars",
+   "field": "expected_pin_count",
+   "searched": "3 queries",
+   "note": "snippets give five or six designs; count unconfirmed"
+  },
+  {
+   "key": "tdr/2015/new-year",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "exact sale date and prices of the New Year pins not in snippets"
+  },
+  {
+   "key": "tdr/2015/new-year/mickey",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "snippet says Mickey pins (plural); confirm whether one or more Mickey designs"
+  },
+  {
+   "key": "tdr/2015/easter",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "scope: confirmed button/badge/non-pin (TDS Easter 2015 items were stuffed plush badges of Mickey, Minnie, Donald, Daisy)"
+  },
+  {
+   "key": "tdr/2015/halloween",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no TDL Halloween 2015 pin found; TDR Explorer list shows stuffed plush badges only (scope: plush badge)"
+  },
+  {
+   "key": "tdr/2015/halloween-hotel-dinner",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: Ambassador Hotel Halloween 2015 dinner sets included an original pin; design not stated"
+  },
+  {
+   "key": "tdr/2015/christmas",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no Christmas Fantasy 2015 pin in snippets; only a stuffed plush badge listed"
+  },
+  {
+   "key": "tdr/2015/game-prize-tdl",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: Jungle Carnival game prize pins (Pluto, Goofy) dated Dec 2015 seen only on a marketplace listing"
+  },
+  {
+   "key": "tdr/2015/happiness-is-here",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no 2015 Happiness is Here pin found in snippets"
+  },
+  {
+   "key": "tdr/2015/frozen-fantasy",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Frozen Fantasy ran Jan-Mar 2015 with ~25 merch items; no pin confirmed"
+  },
+  {
+   "key": "tdr/2015/duffy",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no 2015 TDS Duffy pin found; Duffy items seen were costumes and badge keychains"
+  },
+  {
+   "key": "shdr/2015/cast-member-exclusive/mickey-painting-snake",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "hold: only date evidence is a Nov 2015 fan blog post; release year and edition size unconfirmed"
+  },
+  {
+   "key": "shdr/2015/cast-member-exclusive",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "other designs in the Mickey painting series not named"
+  }
+ ],
+ "discovery_notes": "Search-snippet leads only, 30 standard searches. No prior 2015 asia keys found. Reseller/marketplace listings (fryguypins, collectrandom, suruga-ya, usshoppingsos) used only as not_found leads. HKDL safety pin singles and Darth Maul held. Disney Store Japan Star Wars set (4 Dec 2015) is out of cell. Christmas HKDL pin known by title only."
+}

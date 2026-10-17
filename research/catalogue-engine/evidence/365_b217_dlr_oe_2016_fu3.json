@@ -1,0 +1,374 @@
+{
+  "packet_id": "backfill-b217-dlr-oe-2016-fu3",
+  "spec_version": 1,
+  "collected_at": "2026-10-17",
+  "collector": "agent:backfill-b217",
+  "sources": [
+    {
+      "url": "https://distradingpins4u.com/products/disney-pin-119558",
+      "title": "Disney Trading Pin 119558 Disney Racers Mystery Pin Pack - Roger Rabbit",
+      "publisher": "DisTradingPins4U",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://mypincentral.com/pin/176370",
+      "title": "176370 (DLR/WDW Disney Racers Mystery Pin Pack 2016 - Kermit the Frog)",
+      "publisher": "My Pin Central",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.distradingpins4u.com/Disney-Trading-Pin-119605-DLR-Haunted-Mansion-Ho-p/disney-pin-119605.htm",
+      "title": "Disney Trading Pin 119605 DLR - Haunted Mansion Holiday Puzzle Reveal/Conceal Mystery Set 2016 - The Nightmare Before Christmas - Nutcracker",
+      "publisher": "DisTradingPins4U",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://fryguypins.com/products/dlr-cameos-with-character-annual-passholder-captain-hook-pin",
+      "title": "DLR Cameos With Character Annual Passholder Captain Hook Pin",
+      "publisher": "Fryguy Pins",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/pirates-caribbean-character-pins",
+      "title": "Pirates of the Caribbean Character Pins",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2016-07",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://mypincentral.com/pin/104188",
+      "title": "104188",
+      "publisher": "My Pin Central",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://mypincentral.com/pin/104189",
+      "title": "104189",
+      "publisher": "My Pin Central",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    }
+  ],
+  "sets": [
+    {
+      "set_key": "dlr/2016/oe-set/haunted-mansion-holiday-puzzle-mystery",
+      "claims": [
+        {
+          "field": "format",
+          "value": "mystery box",
+          "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-119605-DLR-Haunted-Mansion-Ho-p/disney-pin-119605.htm",
+          "method": "search_snippet",
+          "note": "Dealer page for one piece says each box holds 1 of 8 revealed pins and 1 of 7 mystery (concealed) pins"
+        },
+        {
+          "field": "pins_per_box",
+          "value": 2,
+          "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-119605-DLR-Haunted-Mansion-Ho-p/disney-pin-119605.htm",
+          "method": "search_snippet",
+          "note": "One revealed plus one concealed pin per box"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 15,
+          "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-119605-DLR-Haunted-Mansion-Ho-p/disney-pin-119605.htm",
+          "method": "search_snippet",
+          "note": "Dealer page states 15 pins forming parts of Oogie Boogie's roulette wheel"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-119605-DLR-Haunted-Mansion-Ho-p/disney-pin-119605.htm",
+          "method": "search_snippet",
+          "note": "Dealer page describes the pieces as a limited release"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-119605-DLR-Haunted-Mansion-Ho-p/disney-pin-119605.htm",
+          "method": "search_snippet",
+          "note": "Listing title labels the set DLR"
+        }
+      ]
+    },
+    {
+      "set_key": "dlr/2016/oe-set/pirates-of-the-caribbean-booster-2016",
+      "claims": [
+        {
+          "field": "release_location",
+          "value": "Walt Disney World and Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/pirates-caribbean-character-pins",
+          "method": "search_snippet",
+          "note": "Post says the four-pin booster was made especially for Walt Disney World and Disneyland Resort"
+        },
+        {
+          "field": "format",
+          "value": "multi-pin pack",
+          "source_url": "https://disneypinsblog.com/blogs/news/pirates-caribbean-character-pins",
+          "method": "search_snippet",
+          "note": "Described as a booster set of four pins; per-pin designs not described - see hold"
+        }
+      ]
+    }
+  ],
+  "pins": [
+    {
+      "pin_key": "dlr/2016/oe-set/disney-racers-mystery/roger-rabbit",
+      "set_key": "dlr/2016/oe-set/disney-racers-mystery",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Roger Rabbit"
+          ],
+          "source_url": "https://distradingpins4u.com/products/disney-pin-119558",
+          "method": "search_snippet",
+          "note": "Dealer per-design page: Roger Rabbit pin from the Disney Racers Mystery Pin Pack"
+        },
+        {
+          "field": "main_character",
+          "value": "Roger Rabbit",
+          "source_url": "https://distradingpins4u.com/products/disney-pin-119558",
+          "method": "search_snippet",
+          "note": "Single character design"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://distradingpins4u.com/products/disney-pin-119558",
+          "method": "search_snippet",
+          "note": "Sold as one design; page says the collection has 16 race-car designs, 5 random pins per pouch"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2016/oe-set/haunted-mansion-holiday-puzzle-mystery/nutcracker",
+      "set_key": "dlr/2016/oe-set/haunted-mansion-holiday-puzzle-mystery",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Nutcracker",
+          "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-119605-DLR-Haunted-Mansion-Ho-p/disney-pin-119605.htm",
+          "method": "search_snippet",
+          "note": "Dealer per-design page names the Nutcracker piece of the 2016 DLR HMH puzzle reveal/conceal set"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-119605-DLR-Haunted-Mansion-Ho-p/disney-pin-119605.htm",
+          "method": "search_snippet",
+          "note": "Sold as a single puzzle piece"
+        },
+        {
+          "field": "visual_description",
+          "value": "Gold-coloured pin showing a sinister-looking nutcracker soldier; one of the concealed pieces",
+          "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-119605-DLR-Haunted-Mansion-Ho-p/disney-pin-119605.htm",
+          "method": "search_snippet",
+          "note": "Paraphrase of dealer design notes"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-119605-DLR-Haunted-Mansion-Ho-p/disney-pin-119605.htm",
+          "method": "search_snippet",
+          "note": "Dealer calls the set a limited release"
+        },
+        {
+          "field": "release_year",
+          "value": 2016,
+          "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-119605-DLR-Haunted-Mansion-Ho-p/disney-pin-119605.htm",
+          "method": "search_snippet",
+          "note": "Listing title dates the set 2016"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-119605-DLR-Haunted-Mansion-Ho-p/disney-pin-119605.htm",
+          "method": "search_snippet",
+          "note": "Listing title labels it DLR"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2016/oe-set/ap-cameos-with-character/captain-hook",
+      "set_key": "dlr/2016/oe-set/ap-cameos-with-character",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Captain Hook"
+          ],
+          "source_url": "https://fryguypins.com/products/dlr-cameos-with-character-annual-passholder-captain-hook-pin",
+          "method": "search_snippet",
+          "note": "Dealer page: Captain Hook pin from the DLR Cameos With Character Annual Passholder series"
+        },
+        {
+          "field": "edition_type",
+          "value": "open edition",
+          "source_url": "https://fryguypins.com/products/dlr-cameos-with-character-annual-passholder-captain-hook-pin",
+          "method": "search_snippet",
+          "note": "Dealer lists it as open edition"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://fryguypins.com/products/dlr-cameos-with-character-annual-passholder-captain-hook-pin",
+          "method": "search_snippet",
+          "note": "Sold individually as one pin from the series"
+        }
+      ]
+    }
+  ],
+  "not_found": [
+    {
+      "key": "dlr/2016/oe-set/disney-racers-mystery/roger-rabbit",
+      "field": "release",
+      "searched": "distradingpins4u; 3 queries",
+      "note": "released: earlier lead (title only) now backed by the dealer's own per-design page 119558, which names the Racers series and describes it"
+    },
+    {
+      "key": "dlr/2016/oe-set/disney-racers-mystery/roger-rabbit",
+      "field": "pin_name",
+      "searched": "distradingpins4u; 3 queries",
+      "note": "hold: design known only from a pin dealer page; no publisher or fan catalogue per-design entry seen"
+    },
+    {
+      "key": "dlr/2016/oe-set/disney-racers-mystery/tigger",
+      "field": "set_key",
+      "searched": "mypincentral 176363; 3 queries",
+      "note": "hold: kept - entry describes a Tigger race car (2017 backstamp) but snippet gives no series label"
+    },
+    {
+      "key": "dlr/2016/oe-set/disney-racers-mystery/jiminy-cricket",
+      "field": "set_key",
+      "searched": "mypincentral 176356; 3 queries",
+      "note": "hold: kept - entry describes a Jiminy car caricature; series label not quoted; dealer number 119556 only on a full checklist"
+    },
+    {
+      "key": "dlr/2016/oe-set/disney-racers-mystery",
+      "field": "members",
+      "searched": "mypincentral, distradingpins4u, letsgopintrading; 7 queries",
+      "note": "11 of 16 still unnamed per design. Cheshire Cat 119551, Simba 119552, Baymax 119553, Stitch 119555, Genie 119559, Woody 119562 only on one shop checklist - not recorded"
+    },
+    {
+      "key": "dlr/2016/oe-set/music-magic-memories-mystery",
+      "field": "members",
+      "searched": "DPB, mypincentral, yourwdwstore; 3 queries",
+      "note": "7 of 8 designs still unnamed; 2016 MMM annual spinner and Sorcerer Mickey pins are separate dated-line items"
+    },
+    {
+      "key": "dlr/2016/oe-set/music-magic-memories-mystery/goofy",
+      "field": "pin_name",
+      "searched": "mypincentral; 1 query",
+      "note": "hold: kept - no fan catalogue or publisher entry for dealer pin 113145 found"
+    },
+    {
+      "key": "dlr/2016/oe-set/disney-princess-mystery-2016",
+      "field": "members",
+      "searched": "DPB, distradingpins4u; 2 queries",
+      "note": "Eight designs still unnamed; Princess Carousel and Instant Camera dealer pages are other series"
+    },
+    {
+      "key": "dlr/2016/oe-set/haunted-mansion-holiday-puzzle-mystery",
+      "field": "edition_type",
+      "searched": "distradingpins4u 119605; 2 queries",
+      "note": "lead now tied to one page: dealer page 119605 calls it limited release (8 revealed + 7 concealed). Consider moving to LE key dlr/2016/haunted-mansion-holiday-2016-puzzle-mystery"
+    },
+    {
+      "key": "dlr/2016/oe-set/haunted-mansion-holiday-puzzle-mystery/nutcracker",
+      "field": "pin_name",
+      "searched": "distradingpins4u; 2 queries",
+      "note": "hold: design known only from a pin dealer page; confirm from a fan catalogue or publisher before sign-off"
+    },
+    {
+      "key": "dlr/2016/oe-set/haunted-mansion-holiday-puzzle-mystery",
+      "field": "members",
+      "searched": "mypincentral, distradingpins4u; 3 queries",
+      "note": "14 of 15 pieces unnamed. My Pin Central 104188 (Man Eating Wreath) and 104189 (Oogie's Holiday Tricks and Treats) are HMH puzzle pieces, no year/series - lead only"
+    },
+    {
+      "key": "dlr/2016/oe-set/ap-cameos-with-character/aurora",
+      "field": "set_key",
+      "searched": "mypincentral 103613; 1 query",
+      "note": "hold: kept - entry again shows an AP Aurora profile pin without naming the Cameos with Character series"
+    },
+    {
+      "key": "dlr/2016/oe-set/ap-cameos-with-character/maleficent",
+      "field": "pin_name",
+      "searched": "mypincentral, fryguypins; 2 queries",
+      "note": "Maleficent, Mad Hatter, Alice, Peter Pan still named only in the pack list; no per-pin page - not created"
+    },
+    {
+      "key": "dlr/2016/oe-set/ap-cameos-with-character",
+      "field": "release_date",
+      "searched": "DPB, mypincentral; 2 queries",
+      "note": "No on-sale date. A summary dated the DPB post 9 Mar 2016, not shown on the page snippet - not recorded"
+    },
+    {
+      "key": "dlr/2016/oe-set/disney-princesses-cutie-pin-set",
+      "field": "members",
+      "searched": "DPB, buydisneypins; 2 queries",
+      "note": "hold: kept - confirm pin structure; DPB and an undated dealer 'Princess Cutie 6 Pin Set' only list six princesses"
+    },
+    {
+      "key": "dlr/2016/oe-set/pirates-of-the-caribbean-booster-2016",
+      "field": "members",
+      "searched": "DPB; 1 query",
+      "note": "hold: kept - confirm pin structure; four characters listed for four pins, per-pin designs not described"
+    },
+    {
+      "key": "dlr/2016/oe/april-2016-wk1",
+      "field": "release_location",
+      "searched": "DPB April 2016 wk1; 1 query",
+      "note": "lead: kept - search summary calls Pooh & Eeyore set and Captain Jake shared DL/WDW, but snippet only says Disney Parks - not recorded"
+    },
+    {
+      "key": "dlr/2016/oe/skull-rock",
+      "field": "release_location",
+      "searched": "DPB, yourwdwstore; 1 query",
+      "note": "hold: kept - DL tie still rests on the roundup's shared heading; dealer ties the design to Magic Kingdom's Peter Pan's Flight"
+    },
+    {
+      "key": "dlr/2016/oe-set/disney-streets-mystery",
+      "field": "members",
+      "searched": "mypincentral, letsgopintrading, DPB; 1 query",
+      "note": "hold: kept - one full series list (My Pin Central 149835, labelled 2015) vs DPB 2016; no per-design page found"
+    },
+    {
+      "key": "dlr/2016/disney-princess-royal-hall-mystery",
+      "field": "release",
+      "searched": "collectrandom; 1 query",
+      "note": "lead: 'Disney Princess Royal Hall Mystery 2016' Belle Throne pin seen on a reseller; edition and resort not stated - check LE cells"
+    },
+    {
+      "key": "dlr/2016/character-selfie-mystery",
+      "field": "release",
+      "searched": "mypincentral; 1 query",
+      "note": "lead: My Pin Central lists a Character Selfie Mystery Set of 2016; resort and edition not seen"
+    },
+    {
+      "key": "dlr/2016/cute-princess-starter-set",
+      "field": "release",
+      "searched": "DPB; 1 query",
+      "note": "lead: summary mentions a May 2016 Princess starter set (2 pins + lanyard); resort not stated - not recorded"
+    },
+    {
+      "key": "dlr/2016/licensed",
+      "field": "release",
+      "searched": "all queries",
+      "note": "No licensed pins surfaced in this follow-up"
+    }
+  ],
+  "discovery_notes": "Follow-up 3 (last) of B027 (DLR OE 2016). 27 WebSearch calls, all search_snippet. Reuses B027/B113/B204 keys. New: Racers Roger Rabbit and HMH Nutcracker (dealer per-design pages, held). HMH limited-release lead now tied to one page. Pirates booster DLR location added. Racers 11, MMM 7, Princess 8, HMH 14 designs unnamed; all prior holds kept."
+}

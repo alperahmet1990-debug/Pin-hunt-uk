@@ -1,0 +1,512 @@
+{
+ "packet_id": "backfill-b225-dlr-le-2015-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b225",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+   "title": "New Disney Pins - April 2015 Week 4",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-04"
+  },
+  {
+   "url": "http://diskingdom.com/2015/04/22/details-on-this-weeks-disneyland-walt-disney-world-pin-releases/",
+   "title": "Details On This Weeks Disneyland & Walt Disney World Pin Releases",
+   "publisher": "DisKingdom",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-04-22"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-1",
+   "title": "New Disney Pins (May 2015 Week 1)",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-05"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-3",
+   "title": "New Disney Pins August 2015 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-08"
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/diamond-decades-mr-toads-wild-ride.55108/",
+   "title": "DLR - Diamond Decades - Mr. Toad's Wild Ride",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-08-20"
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-mystery-pins-princess-snowflake-choice-44491.html",
+   "title": "Disney Mystery Pins - Princess Snowflake - Choice",
+   "publisher": "YourWDWStore",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-framed-pin-set-2015-seasons-greetings-princess-snowflake-44492.html",
+   "title": "Disney Framed Pin Set - 2015 Season's Greetings Princess Snowflake",
+   "publisher": "YourWDWStore",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2015/piece-of-disneyland-history",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Piece of Disney History (Disneyland Resort)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "April entries use Piece of Disney History name for DLR series; later posts say PODH"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/seasons-greetings-2015-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-princess-snowflake-choice-44491.html",
+     "method": "search_snippet",
+     "note": "retailer mystery listing says ten princess pins incl. two LE 500 chasers; DPB does not state a count"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-01",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-princess-snowflake-choice-44491.html",
+     "method": "search_snippet",
+     "note": "retailer gives 1 Nov 2015; conflicts with DPB 19 Nov - confirm"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2015/piece-of-disneyland-history/its-a-small-world",
+   "set_key": "dlr/2015/piece-of-disneyland-history",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Piece of Disney History - it's a small world",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "new PODH pin at DLR featuring it's a small world"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "attraction featured"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "$15.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-04-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "available at DLR on this date"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "DLR release"
+    },
+    {
+     "field": "product_code",
+     "value": "400009273670",
+     "source_url": "http://diskingdom.com/2015/04/22/details-on-this-weeks-disneyland-walt-disney-world-pin-releases/",
+     "method": "search_snippet",
+     "note": "item number cited in the DisKingdom release notice"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "single PODH pin entry"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/piece-of-disneyland-history/little-mermaid-ariels-undersea-adventure",
+   "set_key": "dlr/2015/piece-of-disneyland-history",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Piece of Disney History - The Little Mermaid ~ Ariel's Undersea Adventure",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "PODH entry for the Little Mermaid attraction"
+    },
+    {
+     "field": "attraction",
+     "value": "The Little Mermaid ~ Ariel's Undersea Adventure",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "attraction featured"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "$15.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-04-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "released 23 Apr 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "listed under DLR PODH releases"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2015-week-4",
+     "method": "search_snippet",
+     "note": "single PODH pin entry"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/piece-of-disneyland-history/snow-whites-scary-adventures",
+   "set_key": "dlr/2015/piece-of-disneyland-history",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Piece of Disney History - Snow White's Scary Adventures",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-1",
+     "method": "search_snippet",
+     "note": "latest PODH pin at Disneyland"
+    },
+    {
+     "field": "attraction",
+     "value": "Snow White's Scary Adventures",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-1",
+     "method": "search_snippet",
+     "note": "attraction featured"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Grumpy"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-1",
+     "method": "search_snippet",
+     "note": "Grumpy shown on the pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Grumpy",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-1",
+     "method": "search_snippet",
+     "note": "only character named"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-1",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-1",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-1",
+     "method": "search_snippet",
+     "note": "$15.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-1",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-1",
+     "method": "search_snippet",
+     "note": "available at DLR on this date"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-1",
+     "method": "search_snippet",
+     "note": "DLR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-1",
+     "method": "search_snippet",
+     "note": "single PODH pin entry"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-decades/mr-toads-wild-ride",
+   "set_key": "dlr/2015/diamond-decades",
+   "claims": [
+    {
+     "field": "set_membership",
+     "value": "Diamond Decades Collection",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-3",
+     "method": "search_snippet",
+     "note": "per-pin Aug wk3 entry: hinged Mr. Toad's Wild Ride pin in the Diamond Decades Collection, LE 5,000, $15.95, 20 Aug"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-20",
+     "source_url": "https://www.disneypinforum.com/threads/diamond-decades-mr-toads-wild-ride.55108/",
+     "method": "search_snippet",
+     "note": "forum thread titled DLR - Diamond Decades - Mr. Toad's Wild Ride, started on release day"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2015/piece-of-disneyland-history/little-mermaid-ariels-undersea-adventure",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "DisKingdom notice says sold only at Pin Traders, Downtown Disney Marketplace (a WDW name); unclear which item it applies to - confirm"
+  },
+  {
+   "key": "dlr/2015/piece-of-disneyland-history",
+   "field": "members",
+   "searched": "9 queries",
+   "note": "added Apr (small world, Little Mermaid) and May (Snow White) entries; no Mar, Jun, Jul, Aug or Nov 2015 PODH pin found"
+  },
+  {
+   "key": "dlr/2015/piece-of-disneyland-history/toy-story-midway-mania",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "lead: summary mentions a DLR Toy Story Mania PODH pin LE 1,000 $14.95, not tied to a page or year; not recorded"
+  },
+  {
+   "key": "dlr/2015/piece-of-disneyland-history/hyperion-theater",
+   "field": "release_date",
+   "searched": "3 queries",
+   "note": "hold kept: two summaries give 10 Dec 2015 for the Dec wk2 post; earlier 12 Dec reading not ruled out"
+  },
+  {
+   "key": "dlr/2015/mechanical-kingdom/pin-1-april",
+   "field": "characters",
+   "searched": "4 queries",
+   "note": "still not named; DPB and DisKingdom snippets give only hinged, LE 2,000, $15.95, 23 Apr"
+  },
+  {
+   "key": "dlr/2015/mechanical-kingdom/pin-2-june",
+   "field": "characters",
+   "searched": "4 queries",
+   "note": "still not named; DPB June wk2 snippet gives LE 2,000, $15.95, 11 Jun only"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/mr-toads-wild-ride",
+   "field": "set_membership",
+   "searched": "2 queries",
+   "note": "released: Aug 2015 wk3 DPB entry itself calls it a Diamond Decades Collection pin with LE/price/date; forum thread title agrees"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/haunted-mansion",
+   "field": "set_membership",
+   "searched": "2 queries",
+   "note": "hold kept: no per-pin Diamond Decades entry found; search found no HM Diamond Decades pin"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/its-a-small-world",
+   "field": "set_membership",
+   "searched": "2 queries",
+   "note": "hold kept: no per-pin Diamond Decades entry found"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/finding-nemo-submarine-voyage",
+   "field": "set_membership",
+   "searched": "2 queries",
+   "note": "hold kept: no per-pin Diamond Decades entry found"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/big-thunder-mountain",
+   "field": "set_membership",
+   "searched": "2 queries",
+   "note": "hold kept: only reseller (ecrater) listing again - pin-on-pin, LE 5,000, 6 Aug; DPB Aug wk1 post not surfaced"
+  },
+  {
+   "key": "dlr/2015/60th-decades/1975-1984-jiminy-cricket",
+   "field": "set_membership",
+   "searched": "1 query",
+   "note": "hold kept: Sept wk4 snippet calls it a Disneyland decades pin, ~24 Sep; link to Diamond Decades still unclear"
+  },
+  {
+   "key": "dlr/2015/diamond-d-pin-of-the-month/dumbo",
+   "field": "pin_name",
+   "searched": "3 queries",
+   "note": "lead kept: Sept Dumbo Diamond D (LE 3,000, 17 Sep) still only on an ecrater reseller listing"
+  },
+  {
+   "key": "dlr/2015/diamond-d-pin-of-the-month",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Nov/Dec 2015 Diamond D pins not found; Dec diamond pins found are the wreath set (LE 2,000)"
+  },
+  {
+   "key": "dlr/2015/ap-60th-diamond-collection",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no Sept 2015 DLR AP pin found; Sept items found (Paradise Pier DD, MHP AP Goofy) not labelled AP 60th"
+  },
+  {
+   "key": "dlr/2015/mickeys-halloween-party-2015",
+   "field": "members",
+   "searched": "1 query",
+   "note": "DPB names a Mickey's Halloween Party Pin Set 2015 at DLR; contents, size and price still absent (figures found are WDW)"
+  },
+  {
+   "key": "dlr/2015/november-2015/thanksgiving",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "Thanksgiving still only a theme mention in the DisKingdom Nov list; no pin details"
+  },
+  {
+   "key": "dlr/2015/november-2015/kaa",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "Kaa Villains pin still only named in DisKingdom Nov list; Disney Store EU Kaa LE 2750 is a different product"
+  },
+  {
+   "key": "dlr/2015/november-2015/jack-skellington",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "hold kept: no permitted source for a 2015 DLR Jack snowflake pin beyond the BonggaMom post"
+  },
+  {
+   "key": "dlr/2015/pin-trading-night",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no 2015 DLR pin trading night LE found; only generic note that PTNs often get an LE"
+  },
+  {
+   "key": "dlr/2015/seasons-greetings-2015-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed - retailer lists name princesses in one list; Cinderella and Aurora said to be LE 500 chasers"
+  },
+  {
+   "key": "dlr/2015/seasons-greetings-2015-framed",
+   "field": "members",
+   "searched": "1 query",
+   "note": "lead: retailer lists a framed princess snowflake set incl. an Alice LE 100 pin; not recorded - confirm"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: summary again names Frontierland only as one of five lands; no per-pin entries for keys or locks"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event/disneyland-marquee-jumbo",
+   "field": "source_attribution",
+   "searched": "1 query",
+   "note": "hold kept: same LE 1,000 $24.95 details; still a pin mounted on a lithograph - confirm pin vs combo"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event/walt-mickey-jumbo",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "hold kept: Park Pennies Standee Jumbo (hinged, stands up, LE 1,000 $34.95) still not tied to this record"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event-memorabilia-framed",
+   "field": "members",
+   "searched": "0 queries",
+   "note": "hold kept: not re-searched"
+  },
+  {
+   "key": "dlr/2015/disneyland-park-jumbo-2015/character-group",
+   "field": "characters",
+   "searched": "0 queries",
+   "note": "hold kept: not re-searched"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 of B036 (DLR LE 2015). 30 standard WebSearch calls, snippets only, blocked domains passed. New: PODH small world, Little Mermaid (Apr) and Snow White (May). Released Mr. Toad DD hold. Reseller listings (ecrater) seen, not used."
+}

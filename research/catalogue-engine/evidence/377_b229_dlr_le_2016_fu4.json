@@ -1,0 +1,996 @@
+{
+ "packet_id": "backfill-b229-dlr-le-2016-fu4",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b229",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+   "title": "New Disney Pins November 2016 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-11"
+  },
+  {
+   "url": "https://www.imnotbad.com/2016/",
+   "title": "ImNotBad.com - A Jessica Rabbit Site: 2016",
+   "publisher": "ImNotBad.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016"
+  },
+  {
+   "url": "https://www.imnotbad.com/2015/10/pin-preview-love-letters-monthly.html",
+   "title": "Pin Preview - Love Letters Monthly Collection",
+   "publisher": "ImNotBad.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-10"
+  },
+  {
+   "url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+   "title": "2016 Love Letters Pin of the Month Collection - Opened",
+   "publisher": "Flickr (collector drj1828)",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-12"
+  },
+  {
+   "url": "https://www.flickr.com/photos/68105287@N03/25208429492",
+   "title": "Disney Love Letters Pins of the Month - January and February 2016 - Loose - Opened",
+   "publisher": "Flickr (collector drj1828)",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-02"
+  },
+  {
+   "url": "https://mypincentral.com/pin/104856",
+   "title": "MyPinCentral pin 104856",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.flickr.com/photos/68105287@N03/28839766475",
+   "title": "Disney Princess Royal Hall Limited Release Mystery Pin Set - Disneyland Release 2016-07-28 - Rapunzel - Back",
+   "publisher": "Flickr (collector drj1828)",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-07"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2016/love-letters-pin-of-the-month",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://www.imnotbad.com/2015/10/pin-preview-love-letters-monthly.html",
+     "method": "search_snippet",
+     "note": "preview says one couple pin per month in 2016; lists 12 couples"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Love Letters monthly pin LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE 3,000 per pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "monthly pin sold at both DL and WDW"
+    },
+    {
+     "field": "format",
+     "value": "series of single pins released monthly",
+     "source_url": "https://www.imnotbad.com/2015/10/pin-preview-love-letters-monthly.html",
+     "method": "search_snippet",
+     "note": "one pin per month, each a different couple"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/disney-princess-royal-hall-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Princess Royal Hall limited release mystery pin set",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/28839766475",
+     "method": "search_snippet",
+     "note": "collector post title; princess throne designs"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/28839766475",
+     "method": "search_snippet",
+     "note": "limited release mystery set per collector post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-28",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/28839766475",
+     "method": "search_snippet",
+     "note": "Disneyland release 28 Jul 2016 per collector post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/28839766475",
+     "method": "search_snippet",
+     "note": "Disneyland release per collector post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://mypincentral.com/pin/104856",
+     "method": "search_snippet",
+     "note": "10 princess thrones: 7 common pins plus 3 chasers"
+    },
+    {
+     "field": "format",
+     "value": "mystery box, two pins per box",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/28839766475",
+     "method": "search_snippet",
+     "note": "blind box with two pins per collector account; 3 chasers each LE 500"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2016/love-letters-pin-of-the-month/wall-e-eve",
+   "set_key": "dlr/2016/love-letters-pin-of-the-month",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Love Letters - WALL-E & EVE",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "October Love Letters pin, released late"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "WALL-E",
+      "EVE"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "WALL-E and EVE"
+    },
+    {
+     "field": "main_character",
+     "value": "WALL-E",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "first named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "single pin of the month"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "glitter",
+      "slider"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "hinged pin with glitter and a slider"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "USD 15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "delayed October pin, out 10 Nov 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/love-letters-pin-of-the-month/roger-jessica-rabbit",
+   "set_key": "dlr/2016/love-letters-pin-of-the-month",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Love Letters - Roger & Jessica Rabbit",
+     "source_url": "https://www.imnotbad.com/2016/",
+     "method": "search_snippet",
+     "note": "Love Letters couple pin for Roger and Jessica"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Roger Rabbit",
+      "Jessica Rabbit"
+     ],
+     "source_url": "https://www.imnotbad.com/2016/",
+     "method": "search_snippet",
+     "note": "Roger and Jessica"
+    },
+    {
+     "field": "main_character",
+     "value": "Roger Rabbit",
+     "source_url": "https://www.imnotbad.com/2016/",
+     "method": "search_snippet",
+     "note": "first named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.imnotbad.com/2016/",
+     "method": "search_snippet",
+     "note": "single couple pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Roger kneeling while Jessica blows him a kiss, film reel between them",
+     "source_url": "https://www.imnotbad.com/2016/",
+     "method": "search_snippet",
+     "note": "paraphrase of fan-site description"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.imnotbad.com/2016/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://www.imnotbad.com/2016/",
+     "method": "search_snippet",
+     "note": "LE 3,000 per fan-site post"
+    },
+    {
+     "field": "original_price",
+     "value": 15.95,
+     "source_url": "https://www.imnotbad.com/2016/",
+     "method": "search_snippet",
+     "note": "USD 15.95 per pre-release post (other 2016 entries USD 15.99)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.imnotbad.com/2016/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09-01",
+     "source_url": "https://www.imnotbad.com/2016/",
+     "method": "search_snippet",
+     "note": "pre-release post says out 1 Sep 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://www.imnotbad.com/2016/",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/love-letters-pin-of-the-month/cinderella-prince-charming",
+   "set_key": "dlr/2016/love-letters-pin-of-the-month",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Love Letters - Cinderella & Prince Charming",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "named in collector's 2016 Love Letters lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella",
+      "Prince Charming"
+     ],
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "couple named"
+    },
+    {
+     "field": "main_character",
+     "value": "Cinderella",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "first named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "one couple pin per month"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/25208429492",
+     "method": "search_snippet",
+     "note": "collector: Love Letters pins LE 3,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://www.flickr.com/photos/68105287@N03/25208429492",
+     "method": "search_snippet",
+     "note": "LE 3,000 per collector post"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-02-14",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "January pin; collector lists 14 Feb 2016"
+    },
+    {
+     "field": "original_price",
+     "value": 15.95,
+     "source_url": "https://www.flickr.com/photos/68105287@N03/25208429492",
+     "method": "search_snippet",
+     "note": "collector: USD 15.95 for Jan/Feb pins, 15.99 from March"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/25208429492",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/love-letters-pin-of-the-month/aurora-prince-phillip",
+   "set_key": "dlr/2016/love-letters-pin-of-the-month",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Love Letters - Aurora & Prince Phillip",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "named in collector's 2016 Love Letters lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aurora",
+      "Prince Phillip"
+     ],
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "couple named"
+    },
+    {
+     "field": "main_character",
+     "value": "Aurora",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "first named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "one couple pin per month"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/25208429492",
+     "method": "search_snippet",
+     "note": "collector: Love Letters pins LE 3,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://www.flickr.com/photos/68105287@N03/25208429492",
+     "method": "search_snippet",
+     "note": "LE 3,000 per collector post"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-02-18",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "February pin; collector lists 18 Feb 2016"
+    },
+    {
+     "field": "original_price",
+     "value": 15.95,
+     "source_url": "https://www.flickr.com/photos/68105287@N03/25208429492",
+     "method": "search_snippet",
+     "note": "collector: USD 15.95 for Jan/Feb pins, 15.99 from March"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/25208429492",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/love-letters-pin-of-the-month/jack-sally",
+   "set_key": "dlr/2016/love-letters-pin-of-the-month",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Love Letters - Jack Skellington & Sally",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "named in collector's 2016 Love Letters lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington",
+      "Sally"
+     ],
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "couple named"
+    },
+    {
+     "field": "main_character",
+     "value": "Jack Skellington",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "first named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "one couple pin per month"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/25208429492",
+     "method": "search_snippet",
+     "note": "collector: Love Letters pins LE 3,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://www.flickr.com/photos/68105287@N03/25208429492",
+     "method": "search_snippet",
+     "note": "LE 3,000 per collector post"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "collector lists 19 May; a reseller says 29 May - month only"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/love-letters-pin-of-the-month/tiana-naveen",
+   "set_key": "dlr/2016/love-letters-pin-of-the-month",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Love Letters - Tiana & Prince Naveen",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "named in collector's 2016 Love Letters lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tiana",
+      "Prince Naveen"
+     ],
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "couple named"
+    },
+    {
+     "field": "main_character",
+     "value": "Tiana",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "first named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "one couple pin per month"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/25208429492",
+     "method": "search_snippet",
+     "note": "collector: Love Letters pins LE 3,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://www.flickr.com/photos/68105287@N03/25208429492",
+     "method": "search_snippet",
+     "note": "LE 3,000 per collector post"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-01",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "collector lists 1 Dec 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/love-letters-pin-of-the-month/beast-belle",
+   "set_key": "dlr/2016/love-letters-pin-of-the-month",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Love Letters - Beast & Belle",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "named in collector's 2016 Love Letters lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Beast",
+      "Belle"
+     ],
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "couple named"
+    },
+    {
+     "field": "main_character",
+     "value": "Beast",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "first named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "one couple pin per month"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/25208429492",
+     "method": "search_snippet",
+     "note": "collector: Love Letters pins LE 3,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://www.flickr.com/photos/68105287@N03/25208429492",
+     "method": "search_snippet",
+     "note": "LE 3,000 per collector post"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-22",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/31096741363/",
+     "method": "search_snippet",
+     "note": "collector lists 22 Dec 2016 as last of the series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/disney-princess-royal-hall-mystery/pocahontas-throne-chaser",
+   "set_key": "dlr/2016/disney-princess-royal-hall-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Princess Royal Hall - Pocahontas throne (chaser)",
+     "source_url": "https://mypincentral.com/pin/104856",
+     "method": "search_snippet",
+     "note": "per-pin entry for the Pocahontas throne chaser"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pocahontas"
+     ],
+     "source_url": "https://mypincentral.com/pin/104856",
+     "method": "search_snippet",
+     "note": "Pocahontas"
+    },
+    {
+     "field": "main_character",
+     "value": "Pocahontas",
+     "source_url": "https://mypincentral.com/pin/104856",
+     "method": "search_snippet",
+     "note": "Pocahontas"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/104856",
+     "method": "search_snippet",
+     "note": "individual mystery design"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://mypincentral.com/pin/104856",
+     "method": "search_snippet",
+     "note": "one of three chasers"
+    },
+    {
+     "field": "visual_description",
+     "value": "throne styled on Pocahontas's dress with feathers and her blue necklace",
+     "source_url": "https://mypincentral.com/pin/104856",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/104856",
+     "method": "search_snippet",
+     "note": "back stamped as LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://mypincentral.com/pin/104856",
+     "method": "search_snippet",
+     "note": "backstamp LE of 500"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mypincentral.com/pin/104856",
+     "method": "search_snippet",
+     "note": "backstamp 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/disney-princess-royal-hall-mystery/rapunzel-throne-chaser",
+   "set_key": "dlr/2016/disney-princess-royal-hall-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Princess Royal Hall - Rapunzel throne (chaser)",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/28839766475",
+     "method": "search_snippet",
+     "note": "collector photo titled Rapunzel from the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://www.flickr.com/photos/68105287@N03/28839766475",
+     "method": "search_snippet",
+     "note": "Rapunzel"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/28839766475",
+     "method": "search_snippet",
+     "note": "Rapunzel"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/28839766475",
+     "method": "search_snippet",
+     "note": "individual mystery design"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.flickr.com/photos/68105287@N03/28839766475",
+     "method": "search_snippet",
+     "note": "collector names Rapunzel among the three chasers"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/28839766475",
+     "method": "search_snippet",
+     "note": "chasers LE 500 per collector"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.flickr.com/photos/68105287@N03/28839766475",
+     "method": "search_snippet",
+     "note": "collector: each chaser LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-28",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/28839766475",
+     "method": "search_snippet",
+     "note": "set release at Disneyland"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month",
+   "field": "members",
+   "searched": "follow-up B229, 3 queries",
+   "note": "Carl & Ellie, Lady & Tramp, Mickey & Minnie named only in the 2015 preview list and reseller pages; no 2016 release date or publisher page - not recorded"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/cinderella-prince-charming",
+   "field": "release_date",
+   "searched": "follow-up B229, 3 queries",
+   "note": "hold: collector Flickr post only (plus preview list); confirm from a publisher page before sign-off"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/aurora-prince-phillip",
+   "field": "release_date",
+   "searched": "follow-up B229, 3 queries",
+   "note": "hold: collector Flickr post only (plus preview list); confirm from a publisher page before sign-off"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/jack-sally",
+   "field": "release_date",
+   "searched": "follow-up B229, 3 queries",
+   "note": "hold: collector Flickr post only; day conflict 19 vs 29 May (reseller); design details seen only on reseller - not used"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/tiana-naveen",
+   "field": "release_date",
+   "searched": "follow-up B229, 2 queries",
+   "note": "hold: collector Flickr post only (plus preview list); confirm from a publisher page before sign-off"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/beast-belle",
+   "field": "release_date",
+   "searched": "follow-up B229, 2 queries",
+   "note": "hold: collector Flickr post only; distinct from Disney Duets Belle & Beast pin recorded in B028"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/roger-jessica-rabbit",
+   "field": "release_date",
+   "searched": "follow-up B229, 2 queries",
+   "note": "date and price come from a pre-release fan-site post; no post-release confirmation seen"
+  },
+  {
+   "key": "dlr/2016/disney-princess-royal-hall-mystery",
+   "field": "members",
+   "searched": "follow-up B229, 3 queries",
+   "note": "hold: mystery designs not individually confirmed - commons (Snow White, Cinderella, Ariel, Belle, Jasmine, Tiana, Merida) and Aurora chaser named only by collector/resellers"
+  },
+  {
+   "key": "dlr/2016/disney-princess-royal-hall-mystery",
+   "field": "price",
+   "searched": "follow-up B229, 3 queries",
+   "note": "price conflict: collector USD 16.99 per 2-pin box; a DPB Princess mystery 2016 entry at USD 15.99 seems a different set; WDW availability only on a listing"
+  },
+  {
+   "key": "dlr/2016/disney-princess-royal-hall-mystery/rapunzel-throne-chaser",
+   "field": "edition_size",
+   "searched": "follow-up B229, 2 queries",
+   "note": "hold: rests on collector Flickr photo title and account only; confirm from a per-pin source"
+  },
+  {
+   "key": "dlr/2016/disney-royalty-mystery",
+   "field": "members",
+   "searched": "follow-up B229, 1 queries",
+   "note": "hold kept: still only the collector Flickr post (8 princesses + 8 mystery princes, USD 19.95, 11 Aug); no publisher listing"
+  },
+  {
+   "key": "dlr/2016/diamond-d-pin-of-the-month",
+   "field": "members",
+   "searched": "follow-up B229, 5 queries",
+   "note": "5 queries: still only Belle (Mar) and Pooh (Apr); DPB Mar wk3 restates Belle LE 3,000 USD 14.95; no Jan-Feb or May-Sep 2016 Diamond D pin named"
+  },
+  {
+   "key": "dlr/2016/diamond-d-pin-of-the-month/winnie-the-pooh",
+   "field": "edition_size",
+   "searched": "follow-up B229, 2 queries",
+   "note": "conflict kept: Pooh LE 5,000 vs series LE 3,000 (Belle, preview); no page reconciles it"
+  },
+  {
+   "key": "dlr/2016/ap-60th-diamond-collection",
+   "field": "members",
+   "searched": "follow-up B229, 2 queries",
+   "note": "Merryweather reconfirmed as 2nd release (10 Mar 2016, LE 3,000, USD 15.99); no later 2016 member found"
+  },
+  {
+   "key": "dlr/2016/haunted-mansion-october-2016",
+   "field": "release_location",
+   "searched": "follow-up B229, 2 queries",
+   "note": "hold kept: DPB Oct wk2 again says only Disney Parks; no source names Disneyland"
+  },
+  {
+   "key": "dlr/2016/mickeys-halloween-party-2016-costume-set",
+   "field": "members",
+   "searched": "follow-up B229, 2 queries",
+   "note": "DisKingdom Aug 2016 preview and DPB both say 4 costumed character pins LE 1,000; characters still unnamed"
+  },
+  {
+   "key": "dlr/2016/haunted-mansion-holiday-2016-puzzle-mystery",
+   "field": "members",
+   "searched": "follow-up B229, 1 queries",
+   "note": "no 2016 puzzle piece named; results gave 2017 (12-pin) and 2020 gingerbread mystery sets, other cells"
+  },
+  {
+   "key": "dlr/2016/halloween-2016-cast-member",
+   "field": "release_location",
+   "searched": "follow-up B229, 1 queries",
+   "note": "lead: DPB Halloween 2016 CM-store pin, Lucifer in pumpkin, LE 1,000, USD 11.95; resort not stated - not recorded"
+  },
+  {
+   "key": "dlr/2016/star-wars-day-2016",
+   "field": "edition_size",
+   "searched": "follow-up B229, 2 queries",
+   "note": "still no edition sizes; Touring Plans saw Revenge of the 5th marked down to USD 6.99 at an outlet in Oct 2016"
+  },
+  {
+   "key": "dlr/2016/graduation-2016/mickey",
+   "field": "visual_description",
+   "searched": "follow-up B229, 1 queries",
+   "note": "conflict kept: DPB Mickey with diploma (LE 2,000, 5 May, DL+WDW) vs reseller selfie design; resellers not used"
+  },
+  {
+   "key": "dlr/2016/disneyland-60-mystery-2016",
+   "field": "members",
+   "searched": "follow-up B229, 1 queries",
+   "note": "hold kept: mystery designs not individually confirmed; search returned only 2015 OE 60th mystery sets"
+  },
+  {
+   "key": "dlr/2016/diamond-celebration-closing",
+   "field": "release_date",
+   "searched": "follow-up B229, 1 queries",
+   "note": "no finale pin; Sep 2016 Disney Park Pack (final edition) is a DisneyStore.com item, dsus cell"
+  },
+  {
+   "key": "dlr/2016/ap-cameo-2016",
+   "field": "edition_type",
+   "searched": "follow-up B229, 1 queries",
+   "note": "lead: DPB Disneyland AP 2016 Cameo set of six pins is open edition - out of LE scope (OE cell)"
+  },
+  {
+   "key": "dlr/2016/pin-trading-night",
+   "field": "release_date",
+   "searched": "follow-up B229, 0 queries",
+   "note": "not re-searched in fu4 (budget); still no 2016 DLR Pin Trading Night LE identified"
+  },
+  {
+   "key": "dlr/2016/season-of-the-force",
+   "field": "release_date",
+   "searched": "follow-up B229, 0 queries",
+   "note": "not re-searched in fu4 (budget); no 2016 Season of the Force pin identified in four packets"
+  },
+  {
+   "key": "dlr/2016/dca-food-wine-2016",
+   "field": "release_date",
+   "searched": "follow-up B229, 0 queries",
+   "note": "not re-searched in fu4 (budget); no 2016 DCA Food & Wine pin identified"
+  },
+  {
+   "key": "dlr/2016/captain-america-civil-war-whose-side",
+   "field": "format",
+   "searched": "follow-up B229, 0 queries",
+   "note": "hold kept: confirm pin structure; not re-searched in fu4"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/rapunzel-flynn",
+   "field": "pin_name",
+   "searched": "follow-up B229, 0 queries",
+   "note": "hold: kept - not re-searched in fu4; no per-design publisher source names this couple"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/duchess-omalley",
+   "field": "pin_name",
+   "searched": "follow-up B229, 0 queries",
+   "note": "hold: kept - not re-searched in fu4; no per-design publisher source names this couple"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/beauty-beast",
+   "field": "pin_name",
+   "searched": "follow-up B229, 0 queries",
+   "note": "hold: kept - not re-searched in fu4; no per-design publisher source names this couple"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/aurora-phillip",
+   "field": "pin_name",
+   "searched": "follow-up B229, 0 queries",
+   "note": "hold: kept - not re-searched in fu4; no per-design publisher source names this couple"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/roger-anita",
+   "field": "pin_name",
+   "searched": "follow-up B229, 0 queries",
+   "note": "hold: kept - not re-searched in fu4; no per-design publisher source names this couple"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/anna-kristoff",
+   "field": "pin_name",
+   "searched": "follow-up B229, 0 queries",
+   "note": "hold: kept - not re-searched in fu4; no per-design publisher source names this couple"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/robin-hood-maid-marian",
+   "field": "pin_name",
+   "searched": "follow-up B229, 0 queries",
+   "note": "hold: kept - not re-searched in fu4; no per-design publisher source names this couple"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/aurora-phillip-chaser",
+   "field": "pin_name",
+   "searched": "follow-up B229, 0 queries",
+   "note": "hold: kept - not re-searched in fu4; no per-design publisher source names this couple"
+  }
+ ],
+ "discovery_notes": "Follow-up 4 of B028 (DLR LE 2016). 30 standard WebSearch calls, blocked domains passed. New: 7 Love Letters pins (WALL-E/EVE from DPB; Roger/Jessica from ImNotBad; 5 collector-only with holds) and Royal Hall mystery set with 2 chasers. Resellers (ecrater, distradingpins4u, collectrandom, magicalearscollectibles, yourwdwstore, parkscollectibles) ignored. No holds released."
+}

@@ -1,0 +1,505 @@
+{
+ "packet_id": "backfill-b243-dlr-le-2016-fu6",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b243",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+   "title": "New Disney Pins November 2016 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+   "title": "New Disney Pins April 2016 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-04"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-vacation-club-25th-anniversary-pin",
+   "title": "Disney Vacation Club 25th Anniversary Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+   "title": "New Disney Pins September 2016 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-09"
+  },
+  {
+   "url": "https://mypincentral.com/pin/53882",
+   "title": "53882",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+   "title": "New Disney Pins February 2016 Week 4",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-02"
+  },
+  {
+   "url": "https://letsgopintrading.com/MARKRITAARCSEPT2016.HTML",
+   "title": "Mark and Rita Pin Trading archive (Sept 2016)",
+   "publisher": "Let's Go Pin Trading",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-09"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-half-marathon-weekend-2016-pins",
+   "title": "Star Wars Half Marathon Weekend 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2016/disney-duets-pin-of-the-month",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2016-week-4",
+     "method": "search_snippet",
+     "note": "Duets pins of the month are LE 3,000 shared DL+WDW (Feb 2016 entry)"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2016/disney-duets-pin-of-the-month/cruella-pongo",
+   "set_key": "dlr/2016/disney-duets-pin-of-the-month",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Duets - Cruella de Vil and Pongo",
+     "source_url": "https://mypincentral.com/pin/53882",
+     "method": "search_snippet",
+     "note": "fan database entry places it in the 2016 Disney Duets series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cruella de Vil",
+      "Pongo"
+     ],
+     "source_url": "https://mypincentral.com/pin/53882",
+     "method": "search_snippet",
+     "note": "Cruella with Pongo"
+    },
+    {
+     "field": "main_character",
+     "value": "Cruella de Vil",
+     "source_url": "https://mypincentral.com/pin/53882",
+     "method": "search_snippet",
+     "note": "Cruella at the centre"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/53882",
+     "method": "search_snippet",
+     "note": "single pin showing both characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/53882",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mypincentral.com/pin/53882",
+     "method": "search_snippet",
+     "note": "released 2016 per entry"
+    },
+    {
+     "field": "visual_description",
+     "value": "Cruella in the centre with Pongo inside an oval outline; has a die-cast element",
+     "source_url": "https://mypincentral.com/pin/53882",
+     "method": "search_snippet",
+     "note": "paraphrased from entry"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/viva-navidad-2016/poinsettia-hinged",
+   "set_key": "dlr/2016/viva-navidad-2016",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2016-11-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "exact-phrase match on the post: standard Viva Navidad 2016 pin available at DLR 10 Nov 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "same entry says available at DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/dvc-25-years/mickey-hinged",
+   "set_key": "dlr/2016/dvc-25-years",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Suitcase-style hinged pin with Mickey; front says Welcome Home, inside notes 25 years and DVC member",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-vacation-club-25th-anniversary-pin",
+     "method": "search_snippet",
+     "note": "standalone DVC 25th post; same pin as Sep wk2 entry not confirmed"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2016/viva-navidad-2016/poinsettia-hinged",
+   "field": "release_location",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "released: exact-phrase search ties the poinsettia pin entry on DPB Nov 2016 wk2 to 'available at DLR on 10 Nov 2016'; fu5 summary-only hold closed"
+  },
+  {
+   "key": "dlr/2016/viva-navidad-2016/poinsettia-hinged",
+   "field": "original_price",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "retail price not in snippet"
+  },
+  {
+   "key": "dlr/2016/disney-duets-pin-of-the-month/cruella-pongo",
+   "field": "release_date",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold: single fan-database entry; month, edition size and DLR sale not confirmed by a publisher page"
+  },
+  {
+   "key": "dlr/2016/disney-duets-pin-of-the-month/cruella-pongo",
+   "field": "edition_size",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "LE 3,000 seen only on pixiepin.app (provenance unclear, may mirror excluded databases) - not recorded"
+  },
+  {
+   "key": "dlr/2016/disney-duets-pin-of-the-month",
+   "field": "members",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "Evil Queen/Snow White (#2, Feb) and Belle/Beast known; Cruella/Pongo added on hold; #1 and other months still unnamed"
+  },
+  {
+   "key": "dlr/2016/dvc-25-years/mickey-hinged",
+   "field": "duplicate_check",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: DPB standalone post gives suitcase Mickey LE 1,500 for Aug 2016; Sep wk2 says LE 2,000; one or two pins (WDW vs DLR) unresolved"
+  },
+  {
+   "key": "dlr/2016/disneyland-60-mystery-2016",
+   "field": "release_conflict",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "summary of DPB Apr wk3 lists the DL 60th mystery box (USD 12.95, 21 Apr, DL) and the Nemo Character Connection box as separate entries; likely distinct, not confirmed"
+  },
+  {
+   "key": "dlr/2016/disneyland-60-mystery-2016",
+   "field": "members",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: mystery designs not individually confirmed; Feb 2016 LE 5,000 box restated, no designs or count"
+  },
+  {
+   "key": "dlr/2016/diamond-d-pin-of-the-month",
+   "field": "members",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "6 queries (Pin of the Month, Available at DLR phrasings): still only Belle (Mar) and Pooh (Apr); no Jan-Feb or May-Sep 2016 Diamond D found"
+  },
+  {
+   "key": "dlr/2016/diamond-d-pin-of-the-month/winnie-the-pooh",
+   "field": "edition_size",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "conflict kept: Apr wk3 LE 5,000 vs series LE 3,000; unresolved"
+  },
+  {
+   "key": "dlr/2016/ap-60th-diamond-collection",
+   "field": "members",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "2 queries: only Pirates (2015) and Merryweather (10 Mar 2016); no later bi-monthly member named"
+  },
+  {
+   "key": "dlr/2016/mickeys-halloween-party-2016-costume-set",
+   "field": "members",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "DPB again: four costumed character pins LE 1,000; characters unnamed; no members recorded"
+  },
+  {
+   "key": "dlr/2016/haunted-mansion-holiday-2016-puzzle-mystery",
+   "field": "members",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: 15-pin reveal/conceal set reconfirmed (DPB Nov wk2); no piece named"
+  },
+  {
+   "key": "dlr/2016/star-wars-day-2016",
+   "field": "edition_size",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "still limited release only (4 and 5 May 2016); Vader/Death Star design again only on reseller ecrater - not used"
+  },
+  {
+   "key": "dlr/2016/pin-trading-night",
+   "field": "release",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "still no 2016 DLR Pin Trading Night; results only HKDL event and Date Nite (16 Jun 2016, Downtown Disney)"
+  },
+  {
+   "key": "dlr/2016/season-of-the-force",
+   "field": "release",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "no 2016 SotF or Hyperspace Mountain pin found; results only ride coverage"
+  },
+  {
+   "key": "dlr/2016/dca-food-wine-2016",
+   "field": "release",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "no 2016 DCA Food & Wine pin; festival 1 Apr-1 May 2016 weekends; LaughingPlace gift-card pin is a later year"
+  },
+  {
+   "key": "dlr/2016/dca-mystery-2016",
+   "field": "lead",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "lead: Let's Go Pin Trading Sep 2016 - DCA attractions mystery set, 8 pins, 2 per box, USD 15.99, DLR-exclusive; edition not stated (likely OE cell); hold: mystery designs not individually confirmed"
+  },
+  {
+   "key": "dlr/2016/star-wars-half-marathon-weekend-2016",
+   "field": "members",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: confirm pin structure - DPB summary again lists weekend and Rebel Challenge medal pins plus 5K/10K/Half race pins, each limited release; no counts or editions"
+  },
+  {
+   "key": "dlr/2016/character-connection-alice-puzzle-mystery",
+   "field": "members",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: mystery designs not individually confirmed - piece list and LE 1,100/600 still only on resellers (yourwdwstore, collectrandom)"
+  },
+  {
+   "key": "dlr/2016/disney-royalty-mystery",
+   "field": "members",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: still only collector Flickr posts (16 stained-glass pins, Flynn Rider closeup); no per-design publisher source"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/cinderella-prince-charming",
+   "field": "release_date",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: collector Flickr only (14 Feb 2016, USD 15.95); no publisher page"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/jack-sally",
+   "field": "release_date",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: 29 May 2016 LE 3,000 only on reseller ecrater; collector Flickr; no publisher page"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/tiana-naveen",
+   "field": "release_date",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: collector Flickr only; no date or edition source"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/aurora-prince-phillip",
+   "field": "release_date",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: collector-only; not resolved in fu6"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/beast-belle",
+   "field": "release_date",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: collector-only; not resolved in fu6"
+  },
+  {
+   "key": "dlr/2016/graduation-2016/mickey",
+   "field": "visual_description",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "conflict kept: DPB May wk1 again says Mickey holding diploma, LE 2,000, 5 May DL+WDW; selfie design still reseller-only"
+  },
+  {
+   "key": "dlr/2016/captain-america-civil-war-whose-side",
+   "field": "format",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: confirm pin structure; no park Team Cap/Iron Man pin source found"
+  },
+  {
+   "key": "dlr/2016/mondo-civil-war",
+   "field": "lead",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "lead: licensed Mondo Team Cap / Team Iron Man enamel pins (Tom Whalen), singles and 4-pin sets; year not stated - for lic cells, not recorded"
+  },
+  {
+   "key": "dlr/2016/haunted-mansion-october-2016",
+   "field": "release_location",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: DPB Oct wk2 again says surprise release at Disney Parks; Disneyland not named"
+  },
+  {
+   "key": "dlr/2016/star-wars-pin-of-the-month",
+   "field": "members",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "only Mustafar (5th, 8 Sep) confirmed; no other 2016 monthly Star Wars pin named; Endor/Tatooine attraction posters are OE"
+  },
+  {
+   "key": "dlr/2016/rogue-one-2016",
+   "field": "lead",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "lead: DPB posts 'Surprise Rogue One Star Wars Pin Release' and 'Rogue One Jumbo Pins' surfaced by title only; resort, date, edition unknown"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/rapunzel-flynn",
+   "field": "pin_name",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/duchess-omalley",
+   "field": "pin_name",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/beauty-beast",
+   "field": "pin_name",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/aurora-phillip",
+   "field": "pin_name",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/roger-anita",
+   "field": "pin_name",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/anna-kristoff",
+   "field": "pin_name",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/robin-hood-maid-marian",
+   "field": "pin_name",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/aurora-phillip-chaser",
+   "field": "pin_name",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold: kept - Date Nite results again only gave 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/anchor",
+   "field": "pin_structure",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: still named only in one fan-blog list of all 12 pieces; not re-searched; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/nemo",
+   "field": "pin_structure",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: still named only in one fan-blog list of all 12 pieces; not re-searched; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/marlin",
+   "field": "pin_structure",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: still named only in one fan-blog list of all 12 pieces; not re-searched; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/squirt",
+   "field": "pin_structure",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: still named only in one fan-blog list of all 12 pieces; not re-searched; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/tad",
+   "field": "pin_structure",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: still named only in one fan-blog list of all 12 pieces; not re-searched; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/pearl",
+   "field": "pin_structure",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: still named only in one fan-blog list of all 12 pieces; not re-searched; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/dory",
+   "field": "pin_structure",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: still named only in one fan-blog list of all 12 pieces; not re-searched; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/crush",
+   "field": "pin_structure",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: still named only in one fan-blog list of all 12 pieces; not re-searched; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/sheldon",
+   "field": "pin_structure",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: still named only in one fan-blog list of all 12 pieces; not re-searched; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/bruce",
+   "field": "pin_structure",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: still named only in one fan-blog list of all 12 pieces; not re-searched; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/mr-ray-chaser",
+   "field": "pin_structure",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: still named only in one fan-blog list of all 12 pieces; not re-searched; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/chum-chaser",
+   "field": "pin_structure",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: still named only in one fan-blog list of all 12 pieces; not re-searched; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/disney-princess-royal-hall-mystery",
+   "field": "members",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: commons named only by collector Flickr and resellers; not resolved in fu6"
+  },
+  {
+   "key": "dlr/2016/disney-princess-royal-hall-mystery/rapunzel-throne-chaser",
+   "field": "edition_size",
+   "searched": "follow-up B243, 30-query budget",
+   "note": "hold kept: collector Flickr only"
+  }
+ ],
+ "discovery_notes": "Follow-up 6 of B028 (DLR LE 2016). 30 standard WebSearch calls, blocked domains passed. New: Disney Duets Cruella/Pongo (MyPinCentral, on hold). Poinsettia Viva Navidad hold released (DPB exact-phrase). Resellers (ecrater, yourwdwstore, collectrandom, distradingpins4u) and pixiepin ignored. Most leads exhausted."
+}

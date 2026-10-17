@@ -1,0 +1,612 @@
+{
+ "packet_id": "backfill-b201-lic-other-2015-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b201",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/san-diego-comic-con-marvel-pins",
+   "title": "San Diego Comic Con Marvel Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-york-comic-con-2015-marvel-pins/",
+   "title": "New York Comic Con 2015 Marvel Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+   "title": "NYCC BB-8 Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-10-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://rebelscum.com/prec7-collectibles.asp",
+   "title": "Rebelscum.com: Celebration Anaheim Survival Guide",
+   "publisher": "Rebelscum.com",
+   "published_date": "2015-04-13",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.prnewswire.com/news-releases/thinkgeek-announces-star-wars-celebration-exclusives-and-early-releases-300063744.html",
+   "title": "ThinkGeek Announces Star Wars Celebration Exclusives and Early Releases",
+   "publisher": "PR Newswire (ThinkGeek release)",
+   "published_date": "2015-04-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://yakfaceforums.com/main/tag/badges/",
+   "title": "badges (tag archive)",
+   "publisher": "Yakface Forums (fan site)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://marveltoynews.com/nycc-2015-exclusive-skottie-young-marvel-pins/",
+   "title": "NYCC 2015 Exclusive Skottie Young Marvel Pins!",
+   "publisher": "Marvel Toy News",
+   "published_date": "2015-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.cbr.com/marvel-announces-new-set-of-adorable-nycc-exclusive-enamel-pins/",
+   "title": "Marvel announces new set of adorable, NYCC-exclusive enamel pins",
+   "publisher": "CBR",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.jedinews.com/events/articles/celebration-anaheim-2015-pin-trading-program-hoth-pin-set-pre-order-on-january-9/",
+   "title": "Celebration Anaheim 2015: Pin Trading Program Hoth Pin Set Pre-Order On January 9",
+   "publisher": "Jedi News",
+   "published_date": "2015-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2015/marvel-sdcc-skottie-young",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2015-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/san-diego-comic-con-marvel-pins",
+     "method": "search_snippet",
+     "note": "DPB says Marvel's pins went on sale at SDCC held 9-12 July 2015; which item sold on which day not stated"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2015/marvel-nycc-skottie-young",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2015-10",
+     "source_url": "https://disneypinsblog.com/new-york-comic-con-2015-marvel-pins/",
+     "method": "search_snippet",
+     "note": "DPB gives NYCC as 8-11 Oct 2015 at the Javits Center; exact on-sale day per item not stated"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2015, Javits Center, Marvel booth #1354",
+     "source_url": "https://disneypinsblog.com/new-york-comic-con-2015-marvel-pins/",
+     "method": "search_snippet",
+     "note": "DPB names venue and dates; booth number per CBR"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2015/lucasfilm-celebration-anaheim-4pack-wicket-ackbar-jedi-luke-gamorrean",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Collectible Pin Set: Return of the Jedi 4-Pack",
+     "source_url": "https://rebelscum.com/prec7-collectibles.asp",
+     "method": "search_snippet",
+     "note": "second query: guide lists the RotJ 4-pack with Wicket, Akbar, Jedi Luke and Gamorrean Guard"
+    },
+    {
+     "field": "format",
+     "value": "4-pack",
+     "source_url": "https://rebelscum.com/prec7-collectibles.asp",
+     "method": "search_snippet",
+     "note": "titled 4-pack"
+    },
+    {
+     "field": "price",
+     "value": 25,
+     "source_url": "https://rebelscum.com/prec7-collectibles.asp",
+     "method": "search_snippet",
+     "note": "$25 per guide listing"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2015/lucasfilm-celebration-anaheim-4pack-vader-stormtrooper-obi-wan-han",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Collectible Pin Set: A New Hope 4-Pack",
+     "source_url": "https://rebelscum.com/prec7-collectibles.asp",
+     "method": "search_snippet",
+     "note": "guide titles the Vader/Stormtrooper/Obi-Wan/Han Solo pack as A New Hope 4-pack, $25"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2015/lucasfilm-celebration-anaheim-hoth-2pack",
+   "claims": [
+    {
+     "field": "format",
+     "value": "2 pins (Luke in Hoth gear, Snowtrooper) plus exclusive t-shirt, for Celebration ticket holders",
+     "source_url": "https://yakfaceforums.com/main/tag/badges/",
+     "method": "search_snippet",
+     "note": "fan site relays the Hoth Pin & T-Shirt 2-Pack offer; year not shown in snippet"
+    },
+    {
+     "field": "price",
+     "value": 35,
+     "source_url": "https://yakfaceforums.com/main/tag/badges/",
+     "method": "search_snippet",
+     "note": "$35 for the pin and shirt bundle"
+    },
+    {
+     "field": "format",
+     "value": "second limited run offered from Wednesday 21 January",
+     "source_url": "https://yakfaceforums.com/main/tag/badges/",
+     "method": "search_snippet",
+     "note": "due to demand from ticket holders; year not in snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2015/lucasfilm-celebration-anaheim-early-bird",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Collectible Pin Set: Early Bird",
+     "source_url": "https://rebelscum.com/prec7-collectibles.asp",
+     "method": "search_snippet",
+     "note": "guide lists it with Luke, Leia, R2 and Chewbacca; marked sold out, price TBD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2015/thinkgeek-celebration-anaheim-exclusive",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single show-exclusive pin listed separately from ThinkGeek's Lando Calrissian pin-trading exclusive",
+     "source_url": "https://www.prnewswire.com/news-releases/thinkgeek-announces-star-wars-celebration-exclusives-and-early-releases-300063744.html",
+     "method": "search_snippet",
+     "note": "release lists both items as distinct show exclusives at booth #910"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2015/nycc-bb-8",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "New York Comic Con 2015 BB-8 pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+     "method": "search_snippet",
+     "note": "NYCC 2015 convention-exclusive BB-8 pin"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+     "method": "search_snippet",
+     "note": "one pin on a backer card"
+    },
+    {
+     "field": "price",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+     "method": "search_snippet",
+     "note": "$10"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+     "method": "search_snippet",
+     "note": "DPB post dated 10 Oct 2015 during NYCC"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+     "method": "search_snippet",
+     "note": "one pin"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2015/nycc-bb-8/bb-8",
+   "set_key": "lic/2015/nycc-bb-8",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "New York Comic Con 2015 BB-8",
+     "source_url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+     "method": "search_snippet",
+     "note": "pin text names NYCC 2015 and BB-8"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "BB-8"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "main_character",
+     "value": "BB-8",
+     "source_url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+     "method": "search_snippet",
+     "note": "one pin"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+     "method": "search_snippet",
+     "note": "$10"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+     "method": "search_snippet",
+     "note": "US convention"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+     "method": "search_snippet",
+     "note": "post dated 10 Oct 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+     "method": "search_snippet",
+     "note": "NYCC 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2015",
+     "source_url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+     "method": "search_snippet",
+     "note": "convention exclusive; booth not named"
+    },
+    {
+     "field": "visual_description",
+     "value": "outer ring with NYCC 2015 and BB-8 text; Force Awakens backer card with Disney logo",
+     "source_url": "https://disneypinsblog.com/blogs/news/nycc-bb-8-pin",
+     "method": "search_snippet",
+     "note": "paraphrased"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "gap kept: 22nd pin still unnamed (21 named); one search summary counted Coulson in the 22 but CBR lists Coulson apart - unresolved"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young-iron-man-3pack/hulkbuster",
+   "field": "pin_name",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "conflict: Marvel Toy News reportedly calls third Iron Man pin manga-style; Blot Says/ComicsAlliance say Hulkbuster - likely same pin, confirm"
+  },
+  {
+   "key": "lic/2015/marvel-sdcc-skottie-young",
+   "field": "release_date",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "partly filled: DPB gives con dates 9-12 Jul 2015; day-by-day 4-pack schedule (one per day per CBR) not found"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young",
+   "field": "release_date",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "partly filled: DPB gives con dates 8-11 Oct 2015; exact on-sale day not found"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young",
+   "field": "price",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "still not found: only pre-show projections from SDCC pricing; no confirmed NYCC prices"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim-4pack-wicket-ackbar-jedi-luke-gamorrean",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "released: second query shows Rebelscum guide listing Return of the Jedi 4-Pack (Wicket, Akbar, Jedi Luke, Gamorrean Guard) $25"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim-4pack-vader-stormtrooper-obi-wan-han",
+   "field": "set_name",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "resolved: Rebelscum guide titles this pack A New Hope 4-Pack"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim-hoth-2pack",
+   "field": "release_date",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold kept: Jan 9 pre-order rests on Jedi News headline; Yakface confirms Luke+Snowtrooper+shirt $35 and Jan 21 rerun but no year"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "gap kept: 45 stated, ~33 named; no further 4-pack titles or event/trade-only pin names found in snippets"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim",
+   "field": "lead",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "not keyed: emoji-style Celebration pin checklist found (Rebels etc.) belongs to Celebration Europe 2016 - lead for 2016 cell"
+  },
+  {
+   "key": "lic/2015/thinkgeek-celebration-anaheim-exclusive",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "gap kept: ThinkGeek pin is a separate item from the Lando trading pin; design not stated; image filename hints X-wing - unconfirmed, no record"
+  },
+  {
+   "key": "lic/2015/thinkgeek-celebration-anaheim-exclusive",
+   "field": "price",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "not found: neither the release nor previews give a price"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim-early-bird/leia",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - kept; guide lists Early Bird set by four names, no count or format"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim-early-bird/luke",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - kept; guide lists Early Bird set by four names, no count or format"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim-early-bird/r2-d2",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - kept; guide lists Early Bird set by four names, no count or format"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim-early-bird/chewbacca",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - kept; guide lists Early Bird set by four names, no count or format"
+  },
+  {
+   "key": "lic/2015/marvel-sdcc-skottie-young-blind-box/hulk-banner",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; B201 found only the same character list, no per-design entry"
+  },
+  {
+   "key": "lic/2015/marvel-sdcc-skottie-young-blind-box/captain-america",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; B201 found only the same character list, no per-design entry"
+  },
+  {
+   "key": "lic/2015/marvel-sdcc-skottie-young-blind-box/black-bolt",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; B201 found only the same character list, no per-design entry"
+  },
+  {
+   "key": "lic/2015/marvel-sdcc-skottie-young-blind-box/black-panther",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; B201 found only the same character list, no per-design entry"
+  },
+  {
+   "key": "lic/2015/marvel-sdcc-skottie-young-blind-box/iron-patriot",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; B201 found only the same character list, no per-design entry"
+  },
+  {
+   "key": "lic/2015/marvel-sdcc-skottie-young-blind-box/iron-fist",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; B201 found only the same character list, no per-design entry"
+  },
+  {
+   "key": "lic/2015/marvel-sdcc-skottie-young-blind-box/loki",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; B201 found only the same character list, no per-design entry"
+  },
+  {
+   "key": "lic/2015/marvel-sdcc-skottie-young-blind-box/captain-marvel",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; B201 found only the same character list, no per-design entry"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim-blind-box/ig-88",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; no per-design evidence found in B201"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim-blind-box/hammerhead",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; no per-design evidence found in B201"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim-blind-box/bespin-han",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; no per-design evidence found in B201"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim-blind-box/hoth-leia",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; no per-design evidence found in B201"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim-blind-box/c-3po",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; no per-design evidence found in B201"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim-blind-box/jawa",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; no per-design evidence found in B201"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim-blind-box/at-at-driver",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; no per-design evidence found in B201"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim-blind-box/tie-fighter-pilot",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: mystery designs not individually confirmed - kept; no per-design evidence found in B201"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young-blind-box/drax",
+   "field": "name",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: blind-box design named only in the full ten-name list - kept; full-list decision pending with maintainer"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young-blind-box/gamora",
+   "field": "name",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: blind-box design named only in the full ten-name list - kept; full-list decision pending with maintainer"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young-blind-box/star-lord-unmasked",
+   "field": "name",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: blind-box design named only in the full ten-name list - kept; full-list decision pending with maintainer"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young-blind-box/angela",
+   "field": "name",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: blind-box design named only in the full ten-name list - kept; full-list decision pending with maintainer"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young-blind-box/blade",
+   "field": "name",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: blind-box design named only in the full ten-name list - kept; full-list decision pending with maintainer"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young-blind-box/spider-woman",
+   "field": "name",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: blind-box design named only in the full ten-name list - kept; full-list decision pending with maintainer"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young-blind-box/thor",
+   "field": "name",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: blind-box design named only in the full ten-name list - kept; full-list decision pending with maintainer"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young-blind-box/deadpool",
+   "field": "name",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: blind-box design named only in the full ten-name list - kept; full-list decision pending with maintainer"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young-blind-box/medusa",
+   "field": "name",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: blind-box design named only in the full ten-name list - kept; full-list decision pending with maintainer"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young-blind-box/hawkeye",
+   "field": "name",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: blind-box design named only in the full ten-name list - kept; full-list decision pending with maintainer"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young-spider-man-mary-jane-heart-2pack/spider-man",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - kept; sources still say only Spidey and MJ 'Heart' two-pack"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young-spider-man-mary-jane-heart-2pack/mary-jane",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - kept; sources still say only Spidey and MJ 'Heart' two-pack"
+  },
+  {
+   "key": "lic/2015/marvel-sdcc-skottie-young",
+   "field": "manufacturer",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "scope note kept: maker not named; Marvel's own booth - maintainer decision pending on licensed status"
+  },
+  {
+   "key": "lic/2015/marvel-nycc-skottie-young",
+   "field": "manufacturer",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "scope note kept: maker not named; Marvel's own booth - maintainer decision pending on licensed status"
+  },
+  {
+   "key": "lic/2015/lucasfilm-celebration-anaheim",
+   "field": "manufacturer",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "scope note kept: maker not named; Lucasfilm event program - maintainer decision pending on licensed status"
+  },
+  {
+   "key": "lic/2015/nycc-bb-8/bb-8",
+   "field": "manufacturer",
+   "searched": "WebSearch snippets, follow-up cell B201",
+   "note": "hold: maker and seller not named; Disney-logo backer may mean Disney-issued (ds cell) - confirm licensed vs Disney Store"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 to packet 333 (B073); 28 standard WebSearches, excluded domains blocked; reuses 333 keys. Celebration 4-pack titles found (RotJ, A New Hope); Wicket pack confirmed. SDCC/NYCC con dates via DPB. ThinkGeek pin is distinct from Lando, design still unknown. New: NYCC 2015 BB-8 pin. All mystery/structure holds kept; NYCC 22nd pin unresolved."
+}

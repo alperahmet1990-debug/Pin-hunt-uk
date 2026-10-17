@@ -1,0 +1,712 @@
+{
+ "packet_id": "backfill-b220-ds-2016-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b220",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/animation-celebration-pin-trading-event",
+   "title": "Animation Celebration Pin Trading Event",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-10-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+   "title": "Zootopia LE 800 Pin Set - Disney Store Purchase - Boxed - Full Front View",
+   "publisher": "Flickr (collector photo log)",
+   "published_date": "2016-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2016/05/17/captain-america-pin-set-coming-soon/",
+   "title": "Captain America Pin Set Coming Soon",
+   "publisher": "DisKingdom",
+   "published_date": "2016-05-17",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/us-disney-store-captain-america-75th-anniversary-pin-set-limited-edition.58191/",
+   "title": "US Disney Store Captain America 75th Anniversary Pin Set - Limited Edition",
+   "publisher": "Disney Pin Forum",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/2016/03/19/aprils-pin-releases-disney-studio-store/",
+   "title": "April's Pin Releases At The Disney Studio Store",
+   "publisher": "DisKingdom",
+   "published_date": "2016-03-19",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-march-2016-pins",
+   "title": "Disney Studio Store Hollywood March 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://forums.yulelog.com/ubbthreads.php?ubb=showflat&Number=301804",
+   "title": "Disney Storybook Classics Monthly Ornament/Pin series!",
+   "publisher": "YuleLog Ornament Collector's Bulletin Board",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2016-pins",
+   "title": "Disney Studio Store Hollywood October 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://futureofstarwars.wordpress.com/2016/12/02/disneys-rogue-one-pins/",
+   "title": "Disney's Rogue One Pins",
+   "publisher": "Future of Star Wars",
+   "published_date": "2016-12-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2016/09/photos-hundreds-star-wars-rogue-one-items-arrive-930-disney-parks/",
+   "title": "PHOTOS: Hundreds of Star Wars - Rogue One Items Arrive 9/30 at Disney Parks",
+   "publisher": "WDW News Today",
+   "published_date": "2016-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-september-2016-pins",
+   "title": "Disney Studio Store Hollywood September 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://letsgopintrading.com/DISNEYSTORETSUMTSUM.HTML",
+   "title": "Disney Store - Tsum Tsum Pin Set",
+   "publisher": "Let's Go Pin Trading",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2016-pins",
+   "title": "Disney Studio Store Hollywood August 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/walt-disneys-animation-celebration-event-pins",
+   "title": "Walt Disney's Animation Celebration Event Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsus/2016/studio-store-hollywood-animation-celebration-event",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Animation Celebration Pin Trading Event (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/animation-celebration-pin-trading-event",
+     "method": "search_snippet",
+     "note": "post title; event hosted by Disney Studio Store Hollywood"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/animation-celebration-pin-trading-event",
+     "method": "search_snippet",
+     "note": "trading event held Sun 6 Nov 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "The Walt Disney Studios (Burbank), hosted by Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/animation-celebration-pin-trading-event",
+     "method": "search_snippet",
+     "note": "event venue per post"
+    },
+    {
+     "field": "format",
+     "value": "event releases",
+     "source_url": "https://disneypinsblog.com/blogs/news/animation-celebration-pin-trading-event",
+     "method": "search_snippet",
+     "note": "post lists an event pin set plus Paint Brush Set #1 and #2 releases"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/studio-store-hollywood-animation-celebration-event-event-pin-set",
+   "parent_set_key": "dsus/2016/studio-store-hollywood-animation-celebration-event",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Animation Celebration trading event pin set",
+     "source_url": "https://disneypinsblog.com/blogs/news/animation-celebration-pin-trading-event",
+     "method": "search_snippet",
+     "note": "listed among event releases"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/animation-celebration-pin-trading-event",
+     "method": "search_snippet",
+     "note": "event day"
+    },
+    {
+     "field": "release_location",
+     "value": "The Walt Disney Studios (Burbank), hosted by Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/animation-celebration-pin-trading-event",
+     "method": "search_snippet",
+     "note": "event"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/studio-store-hollywood-animation-celebration-event-paint-brush-set-1",
+   "parent_set_key": "dsus/2016/studio-store-hollywood-animation-celebration-event",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Paint Brush Set #1 Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/animation-celebration-pin-trading-event",
+     "method": "search_snippet",
+     "note": "listed among event releases"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/animation-celebration-pin-trading-event",
+     "method": "search_snippet",
+     "note": "event day"
+    },
+    {
+     "field": "release_location",
+     "value": "The Walt Disney Studios (Burbank), hosted by Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/animation-celebration-pin-trading-event",
+     "method": "search_snippet",
+     "note": "event"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/studio-store-hollywood-animation-celebration-event-paint-brush-set-2",
+   "parent_set_key": "dsus/2016/studio-store-hollywood-animation-celebration-event",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Paint Brush Set #2 Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/animation-celebration-pin-trading-event",
+     "method": "search_snippet",
+     "note": "listed among event releases"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/animation-celebration-pin-trading-event",
+     "method": "search_snippet",
+     "note": "event day"
+    },
+    {
+     "field": "release_location",
+     "value": "The Walt Disney Studios (Burbank), hosted by Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/animation-celebration-pin-trading-event",
+     "method": "search_snippet",
+     "note": "event"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/studio-store-hollywood-october-2016-marquee",
+   "parent_set_key": "dsus/2016/studio-store-hollywood-october-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hocus Pocus and The Nightmare Before Christmas Marquee pins (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2016-pins",
+     "method": "search_snippet",
+     "note": "named in October roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2016-pins",
+     "method": "search_snippet",
+     "note": "roundup ties the marquee release(s) to 22 Oct 2016"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2016-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2016-pins",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2016-pins",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2016-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2016-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/captain-america-75th-anniversary-le-175-set",
+   "claims": [
+    {
+     "field": "price",
+     "value": 129.95,
+     "source_url": "http://diskingdom.com/2016/05/17/captain-america-pin-set-coming-soon/",
+     "method": "search_snippet",
+     "note": "GBP 129.95 for Europe"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "http://diskingdom.com/2016/05/17/captain-america-pin-set-coming-soon/",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-27",
+     "source_url": "http://diskingdom.com/2016/05/17/captain-america-pin-set-coming-soon/",
+     "method": "search_snippet",
+     "note": "Europe release set for 27 May 2016 (preview post of 17 May)"
+    },
+    {
+     "field": "edition_size",
+     "value": 175,
+     "source_url": "http://diskingdom.com/2016/05/17/captain-america-pin-set-coming-soon/",
+     "method": "search_snippet",
+     "note": "175 worldwide, of which 35 for Europe"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "http://diskingdom.com/2016/05/17/captain-america-pin-set-coming-soon/",
+     "method": "search_snippet",
+     "note": "ten pins"
+    },
+    {
+     "field": "price",
+     "value": 129.95,
+     "source_url": "https://www.disneypinforum.com/threads/us-disney-store-captain-america-75th-anniversary-pin-set-limited-edition.58191/",
+     "method": "search_snippet",
+     "note": "forum thread confirms GBP 129.95 on DS UK"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/studio-store-hollywood-villain-cuties",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2016-04",
+     "source_url": "https://diskingdom.com/2016/03/19/aprils-pin-releases-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "19 Mar 2016 post lists a villains collection (Gaston, Hades, Jafar, Yzma, Cruella) among April DSSH releases"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/storybook-classics-01-mickey-and-the-beanstalk",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://forums.yulelog.com/ubbthreads.php?ubb=showflat&Number=301804",
+     "method": "search_snippet",
+     "note": "forum quotes UK store series listing: 1100 worldwide, only 100 for Europe"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsuk/2016/zootopia-le-800-set/judy-hopps",
+   "set_key": "dsuk/2016/zootopia-le-800-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zootopia LE 800 set - Judy Hopps",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "descriptive name from per-pin write-up; not an official title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Judy Hopps"
+     ],
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "character shown on this pin per collector write-up"
+    },
+    {
+     "field": "visual_description",
+     "value": "Judy in front of her police badge",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin description"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "set LE 800"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "Jan 2016 purchase"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "each of three pins described separately in boxed set"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "set is three pin-on-pin designs (DPB spec, B030)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2016/zootopia-le-800-set/mr-big",
+   "set_key": "dsuk/2016/zootopia-le-800-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zootopia LE 800 set - Mr. Big",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "descriptive name from per-pin write-up; not an official title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mr. Big"
+     ],
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "character shown on this pin per collector write-up"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mr. Big with two of his henchmen (henchmen unnamed)",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin description"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "set LE 800"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "Jan 2016 purchase"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "each of three pins described separately in boxed set"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "set is three pin-on-pin designs (DPB spec, B030)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2016/zootopia-le-800-set/nick-wilde",
+   "set_key": "dsuk/2016/zootopia-le-800-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zootopia LE 800 set - Nick Wilde",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "descriptive name from per-pin write-up; not an official title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Nick Wilde"
+     ],
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "character shown on this pin per collector write-up"
+    },
+    {
+     "field": "visual_description",
+     "value": "Nick with a baby elephant in front of a popsicle",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin description"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "set LE 800"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "Jan 2016 purchase"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "each of three pins described separately in boxed set"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "set is three pin-on-pin designs (DPB spec, B030)"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsuk/2016/zootopia-le-800-set",
+   "field": "members",
+   "searched": "1 query; Flickr per-pin write-up",
+   "note": "released: collector Flickr log of this boxed set describes each of the 3 pins separately (Judy, Mr. Big, Nick); prior spec list named characters only"
+  },
+  {
+   "key": "dsuk/2016/zootopia-le-800-set/mr-big",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "henchmen on Mr. Big pin not named; per-pin source is a single collector photo write-up, not official"
+  },
+  {
+   "key": "dsuk/2016/zootopia-le-800-set/nick-wilde",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "baby elephant on Nick pin not named as a character in snippet; not claimed"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-animation-celebration-event",
+   "field": "members",
+   "searched": "3 queries; DPB event post",
+   "note": "pin designs, counts, edition sizes and per-set prices for event pin set and Paint Brush Sets #1/#2 not in snippet (USD 19.99 seen in B207 lead)"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-animation-celebration-event",
+   "field": "identity",
+   "searched": "1 query",
+   "note": "not the 2018 WDW Epcot Animation Celebration (Aug 2018, goodbye 4-pin set LE 1250) - same name, separate event; lead for wdw/2018 cell"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-october-2016-marquee",
+   "field": "members",
+   "searched": "1 query; October roundup",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - one Hocus Pocus/NBC marquee pin or two separate marquees unclear"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-october-2016",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Spoon series given as 8 and 22 Oct with no per-pin day; only the marquee(s) tied to 22 Oct; Bow series day not stated"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-august-2016",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "per-day split (13 vs 20 Aug) still not stated in roundup snippets; no second source found"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-august-2016-character-block",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "blocks still titled by film only (Cinderella, Lilo & Stitch, BATB, Dumbo); characters on each block not described"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-villain-cuties",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "conflict narrowed: DisKingdom 19 Mar post places villains collection in April; DPB March roundup ties 18 Mar to Oswald Easter Train. Exact day still unconfirmed"
+  },
+  {
+   "key": "dsus/2016/captain-america-75th-anniversary-le-175-set",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "conflict: Europe release 27 May 2016 (DisKingdom) vs Oct 2016 date in DPB US summary; set keyed dsus though Europe date is earlier - review"
+  },
+  {
+   "key": "dsus/2016/captain-america-75th-anniversary-le-175-set",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "hold kept: snippets still describe 10 shields by finish only; no per-shield list"
+  },
+  {
+   "key": "dsus/2016/storybook-classics-01-mickey-and-the-beanstalk",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "GBP price for Storybook Classics still not found; Europe allocation of 100 rests on forum quote of UK listing"
+  },
+  {
+   "key": "dsus/2016/storybook-classics-04-lambert-the-sheepish-lion/lambert-the-sheepish-lion",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters / hinged interior still not described; reseller lists it as Nov 2016 (not used)"
+  },
+  {
+   "key": "dsuk/2016/pinocchio-or-other",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "July 2016 DS UK still no release found; DPB results show Scar (28 Jun) then Alice 65th (9 Aug) only"
+  },
+  {
+   "key": "dsuk/2016/film-releases",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "still no EU/UK date or GBP price for Moana, Doctor Strange or Rogue One jumbo sets; DS EU/UK Moana and Strange listings seen are later products"
+  },
+  {
+   "key": "dsus/2016/alice-through-the-looking-glass-le-1200-set",
+   "field": "price",
+   "searched": "1 query",
+   "note": "GBP price for 300 EU allocation still not found; a GBP 30 DS UK Alice set seen is a different product"
+  },
+  {
+   "key": "dsus/2016/oe/rogue-one-death-star-commemorative",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "still no DS UK date or GBP price; DPB only says it was announced at DS UK first"
+  },
+  {
+   "key": "dsus/2016/rogue-one-oe-pins",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "lead kept: five USD 9.99 pins (DisneyStore.com, parks) still unnamed; Jyn/K-2SO only in post tags, not tied to designs - not keyed"
+  },
+  {
+   "key": "dsus/2016/rogue-one-jumbo-le-1200/rogue-one-jumbo",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "hold kept: product copy says key cast only; Jyn/K-2SO tags on a roundup post are not a design description"
+  },
+  {
+   "key": "dsus/2016/rogue-one-jumbo-le-1200/rogue-one-jumbo",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "hold kept: no exact release day found"
+  },
+  {
+   "key": "dsuk/2016/tsum-tsum-le-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept for 6: LGPT summary names all nine with number range 113335-113343, but as one list; Sulley/Mike/Boo/Simba/Pumbaa/Rapunzel not tied to own entries"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-alice-chess-series",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: Sept roundup snippet shows six chess entries only; 7th pin unnamed and the stated count of 7 is itself unconfirmed"
+  },
+  {
+   "key": "dsus/2016/snow-white-and-the-seven-dwarfs-le-500-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: DPB names Doc, Grumpy, Hag among nine but gives no per-pin list"
+  },
+  {
+   "key": "dsus/2016/moana-le-1000-set/moana",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: DPB still lists 4 subjects for 4 pins; no per-pin description found"
+  },
+  {
+   "key": "dsus/2016/disney-animation-le-800-set/oswald",
+   "field": "pin_structure",
+   "searched": "0 new queries",
+   "note": "hold kept: no new per-pin evidence (budget)"
+  },
+  {
+   "key": "dsus/2016/doctor-strange-pin-set/doctor-strange",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: only set-level description (2-pin cloisonne, USD 39.95) resurfaced"
+  },
+  {
+   "key": "wdw/2016/rogue-one-open-edition-pins",
+   "field": "members",
+   "searched": "1 query",
+   "note": "lead for parks cells: WDWNT says varied OE Rogue One pins arrived 30 Sep 2016 at parks; none named"
+  }
+ ],
+ "discovery_notes": "Cell B220, follow-up 3 of B030 (DS 2016). 30 standard searches, snippets only. New: DSSH Animation Celebration event (6 Nov) sets, Oct marquee set (22 Oct). Released: Zootopia set 3 pins via per-pin Flickr write-up. Cap 75th GBP 129.95/EU 35/27 May added. Other holds kept. Resellers (yourwdwstore, jd-collectibles) seen, not used."
+}

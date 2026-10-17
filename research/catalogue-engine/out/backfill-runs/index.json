@@ -1,14 +1,14 @@
 {
  "source": "staging_payload.json",
- "git_commit": "e367a3c2f5f5",
+ "git_commit": "0081f781f612",
  "generated": "2026-10-17",
  "runs": [
   {
    "file": "run_01_wdw.json",
-   "pins": 1187,
-   "sets": 711,
-   "evidence": 8622,
-   "bytes": 3661875,
+   "pins": 1193,
+   "sets": 704,
+   "evidence": 8660,
+   "bytes": 3684125,
    "lines": [
     "wdw"
    ]
@@ -16,9 +16,9 @@
   {
    "file": "run_02_wdw-to-dlr.json",
    "pins": 1146,
-   "sets": 753,
-   "evidence": 8904,
-   "bytes": 3712537,
+   "sets": 749,
+   "evidence": 8885,
+   "bytes": 3708965,
    "lines": [
     "wdw",
     "dlr"
@@ -26,10 +26,10 @@
   },
   {
    "file": "run_03_dlr-to-dsuk.json",
-   "pins": 1205,
-   "sets": 694,
-   "evidence": 9589,
-   "bytes": 4166785,
+   "pins": 1187,
+   "sets": 704,
+   "evidence": 9586,
+   "bytes": 4112714,
    "lines": [
     "dlr",
     "dlp",
@@ -38,10 +38,10 @@
   },
   {
    "file": "run_04_dsuk-to-lic.json",
-   "pins": 1305,
-   "sets": 594,
-   "evidence": 10682,
-   "bytes": 4462142,
+   "pins": 1333,
+   "sets": 566,
+   "evidence": 10512,
+   "bytes": 4460171,
    "lines": [
     "dsuk",
     "dsus",
@@ -54,19 +54,19 @@
   {
    "file": "run_05_lic.json",
    "pins": 1047,
-   "sets": 544,
-   "evidence": 12286,
-   "bytes": 4815068,
+   "sets": 563,
+   "evidence": 12288,
+   "bytes": 4818803,
    "lines": [
     "lic"
    ]
   },
   {
    "file": "run_06_lic-to-windows-of-attraction.json",
-   "pins": 989,
-   "sets": 355,
-   "evidence": 10753,
-   "bytes": 4421116,
+   "pins": 1049,
+   "sets": 384,
+   "evidence": 11528,
+   "bytes": 4718912,
    "lines": [
     "lic",
     "animated-cuties",

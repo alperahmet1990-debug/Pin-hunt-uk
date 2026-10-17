@@ -1,0 +1,4999 @@
+{
+ "packet_id": "backfill-b137-lic-other-2022-2023-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b137",
+ "sources": [
+  {
+   "url": "https://figpin.com/blogs/news/d23-2022-round-up",
+   "title": "D23 - 2022 Round-Up!",
+   "publisher": "FiGPiN",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/d23-expo-2022-exclusive-pins-at-figpin",
+   "title": "FiGPiN D23 Expo 2022 Exclusive Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/disney-s-mickey-mouse-and-minnie-mouse-figpins-at-d23",
+   "title": "Disney's Mickey Mouse and Minnie Mouse FiGPiNS at D23!",
+   "publisher": "FiGPiN",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://blog.hobbydb.com/2022/09/09/disneys-d23-figpin-exclusives-now-on-hobbydb/",
+   "title": "Disney's D23 FiGPiN Exclusives Now on hobbyDB",
+   "publisher": "hobbyDB Blog",
+   "published_date": "2022-09-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/boba-fett-at-d23-2022",
+   "title": "Boba Fett at D23 2022!",
+   "publisher": "FiGPiN",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/disney-and-pixars-monsters-inc-boo-at-d23",
+   "title": "Disney and Pixar's Monsters, Inc. Boo at D23",
+   "publisher": "FiGPiN",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/d23-exclusive-ariel-mickey-mouse-and-minnie-mouse",
+   "title": "D23 Exclusive Ariel, Mickey Mouse, and Minnie Mouse",
+   "publisher": "FiGPiN",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/retailer-exclusive-roundup-2022",
+   "title": "Retailer Exclusive Roundup 2022",
+   "publisher": "FiGPiN",
+   "published_date": "2022",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/witch-marge-at-d23",
+   "title": "Witch Marge at D23!",
+   "publisher": "FiGPiN",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.pinsonfire.com/products/disney-d23-expo-exclusive-the-simpsons-witch-marge-1035",
+   "title": "Disney D23 Expo Exclusive The Simpsons Witch Marge #1035",
+   "publisher": "Pins on Fire (retailer)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/all-the-way-from-the-hundred-acre-wood",
+   "title": "All the way from the Hundred Acre Wood!",
+   "publisher": "FiGPiN",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+   "title": "Disney Parks and shopDisney Wave 4 Roundup",
+   "publisher": "FiGPiN",
+   "published_date": "2023",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/buzz-lightyear-pinocchio-disney-100-figpins-wave-3/",
+   "title": "Buzz Lightyear & Pinocchio Disney 100 FiGPiNS Wave 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.popsandpins.com/products/figpin-pinocchio-disney-100-1479",
+   "title": "FiGPiN Pinocchio Disney 100 #1479",
+   "publisher": "Pops and Pins (retailer)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+   "title": "Halloween Disney 100 FiGPiNs",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/get-ready-for-halloween-with-figpins-d100-collection",
+   "title": "Get ready for Halloween with FiGPiN's D100 collection!",
+   "publisher": "FiGPiN",
+   "published_date": "2023-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.toyshnip.com/products/figpin-enamel-pin-disney-d100-exclusive-edition-choose-your-figure",
+   "title": "FiGPiN Enamel Pin - Disney D100 Exclusive Edition - Select Figure(s)",
+   "publisher": "ToyShnip (retailer)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.distradingpins4u.com/Disney-Trading-Pin-Her-Universe-Shuri-Innovate-p/disney-pin-shuriinnovate.htm",
+   "title": "Disney Trading Pin Her Universe Shuri Innovate",
+   "publisher": "DisTradingPins4U (retailer)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-october-2022-week-4/",
+   "title": "New Disney Pins October 2022 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-pins-by-her-universe-at-shopdisney/",
+   "title": "Rebel, Warrior, Leader and Hero Star Wars Pins by Her Universe at shopDisney",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-10-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-survivor-pin-by-her-universe-at-shopdisney",
+   "title": "Star Wars \"Survivor\" Pin by Her Universe at shopDisney",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2022/11/her-universe-enchanted-wolverine-pins-disneyland/",
+   "title": "New Her Universe, 'Enchanted,' 'Treasure Planet,' Wolverine, and More Pins at Disneyland Resort",
+   "publisher": "WDW News Today",
+   "published_date": "2022-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.shopdisney.com/dale-figpin-walt-disney-world-50th-anniversary-limited-release-465052086653.html",
+   "title": "Dale FiGPiN - Walt Disney World 50th Anniversary - Limited Release",
+   "publisher": "shopDisney",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.shopdisney.com/chip-figpin-walt-disney-world-50th-anniversary-limited-release-465052086325.html",
+   "title": "Chip FiGPiN - Walt Disney World 50th Anniversary - Limited Release",
+   "publisher": "shopDisney",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://uspartyco.com/product/minnie-mouse-figpin-walt-disney-world-50th-anniversary-limited-release/",
+   "title": "Minnie Mouse FiGPiN - Walt Disney World 50th Anniversary - Limited Release",
+   "publisher": "US Party Co (reseller)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://uspartyco.com/product/mickey-mouse-figpin-walt-disney-world-50th-anniversary-limited-release/",
+   "title": "Mickey Mouse FiGPiN - Walt Disney World 50th Anniversary - Limited Release",
+   "publisher": "US Party Co (reseller)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/elemental-ember-wade-disney-pin-at-dpb-store",
+   "title": "Elemental Ember & Wade Disney Pin at DPB Store",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/elemental-vivisteria-flower-disney-pin-release-at-dpb-store",
+   "title": "Elemental Vivisteria Flower Disney Pin Release at DPB Store",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/stitch-peter-pan-disney-100th-anniversary-jumbo-pins-at-amazon/",
+   "title": "Stitch & Peter Pan Disney 100th Anniversary Jumbo Pins at Amazon",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/alice-ariel-disney-100th-anniversary-jumbo-pins-at-amazon/",
+   "title": "Alice & Ariel Disney 100th Anniversary Jumbo Pins at Amazon",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+   "title": "Cinderella & Jasmine Disney 100 Pins at Amazon",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/belle-floral-disney-100-pin-at-amazon/",
+   "title": "Belle Floral Disney 100 Pin at Amazon",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-100-pin-collection-by-hooked-company/",
+   "title": "Disney 100 Pin Collection by Hooked & Company",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-pets-limited-edition-pin-set-at-amazon/",
+   "title": "Disney Pets Limited Edition Pin Set at Amazon",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.steveshallmark.com/products/hallmark-disney-holiday-ever-after-loungefly-mystery-pin",
+   "title": "Hallmark + Disney Holiday Ever After Loungefly Mystery Pin",
+   "publisher": "Steve's Hallmark (retailer)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/w/news/2022/02/18/ultimate-princess-celebration-snow-white-funko-exclusive-pop-pin-set/",
+   "title": "Ultimate Princess Celebration Snow White Funko Exclusive Pop! and Pin Set Now Available",
+   "publisher": "Laughing Place",
+   "published_date": "2022-02-18",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pocahontas-pop-funko-with-exclusive-pin/",
+   "title": "Pocahontas POP! Funko with Exclusive Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/belle-pop-funko-with-exclusive-pin/",
+   "title": "Belle POP! Funko with Exclusive Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-09-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/merida-pop-funko-with-exclusive-pin/",
+   "title": "Merida POP! Funko with Exclusive Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-09-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/cinderella-pop-funko-with-exclusive-pin/",
+   "title": "Cinderella Funko Pop! with Exclusive Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/rapunzel-pop-funko-with-exclusive-pin/",
+   "title": "Rapunzel POP! Funko with Exclusive Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hotstuff4geeks.com/2022-new-ultimate-princess-belle-gold-funko-pop-with-pin",
+   "title": "2022 NEW Ultimate Princess: Belle (Gold) Funko Pop! With Pin",
+   "publisher": "Hot Stuff 4 Geeks (retailer)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+   "title": "Disney Holiday Funko Pop! Pins Available for Pre-Order at Entertainment Earth",
+   "publisher": "Laughing Place",
+   "published_date": "2023-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/funko-pop-disney-holiday-collectors-box-includes-4-pins",
+   "title": "Funko Pop! Disney Holiday Collectors Box Includes 4 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/funko-pop-disney-a-goofy-movie-powerline-large-enamel-pin/15067596.html",
+   "title": "Funko Pop! Disney A Goofy Movie Powerline Large Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.cinequest.com/store/SDCC-2022-EXCLUSIVES/DISNEYS-ROBIN-HOOD-SDCC-EXCLUSIVE-50TH-ANNIVERSARY-OVERSIZED-ENAMEL-PIN.html",
+   "title": "SDCC 2023: Disney's Robin Hood Exclusive 50th Anniversary Oversized Enamel Pin",
+   "publisher": "Cinequest (retailer)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.toynk.com/blogs/comic-con-events/unlock-rare-finds-top-5-limited-edition-pins-at-san-diego-comic-con-2023",
+   "title": "Unlock Rare Finds: Top 5 Limited Edition Pins at San Diego Comic-Con 2023",
+   "publisher": "Toynk",
+   "published_date": "2023-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.walmart.com/ip/Disney-Wreck-It-Ralph-10th-Anniversary-Enamel-Pin-SDCC-2022-Exclusive/5466169457",
+   "title": "Disney Wreck-It Ralph 10th Anniversary Enamel Pin (SDCC 2022 Exclusive)",
+   "publisher": "Walmart (marketplace listing)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+   "title": "Toynk & Disney+ San Diego Comic-Con 2022 Exclusives & Debuts",
+   "publisher": "San Diego Comic-Con Unofficial Blog",
+   "published_date": "2022-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.toynk.com/products/disney-snow-white-85th-anniversary-limited-edition-enamel-pin-sdcc-exclusive",
+   "title": "Disney Snow White 85th Anniversary Limited Edition Enamel Pin (SDCC Exclusive)",
+   "publisher": "Toynk",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.toynk.com/products/disney-and-pixar-up-limited-edition-enamel-pin-sdcc-2022-exclusive",
+   "title": "Disney and Pixar UP Limited Edition Enamel Pin",
+   "publisher": "Toynk",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.toynk.com/products/disney-pixar-ratatouille-15th-anniversary-enamel-pin-sdcc-2022-exclusive",
+   "title": "Disney Pixar Ratatouille 15th Anniversary Enamel Pin",
+   "publisher": "Toynk",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.toynk.com/products/disney-pixar-brave-10th-anniversary-enamel-pin-sdcc-2022-exclusive",
+   "title": "Disney Pixar Brave 10th Anniversary Enamel Pin",
+   "publisher": "Toynk",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.toynk.com/products/disney-hercules-and-meg-25th-anniversary-enamel-pin-sdcc-2022-exclusive",
+   "title": "Disney Hercules and Meg 25th Anniversary Enamel Pin",
+   "publisher": "Toynk",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+   "title": "New York Comic Con 2023 - FiGPiN Event Exclusives",
+   "publisher": "FiGPiN",
+   "published_date": "2023-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.target.com/p/figpin-figpin-exclusive-nycc-2023-marvel-avengers-beyond-earth-s-mightiest-hulk-glow-in-the-dark-enamel-pin-1488/-/A-93217566",
+   "title": "FiGPiN Exclusive NYCC 2023 Marvel Avengers: Beyond Earth's Mightiest Hulk Glow In The Dark Enamel Pin (1488)",
+   "publisher": "Target (marketplace listing)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.rawstarwars.com/product-page/figpin-black-panther-1487-nycc-2023-exclusive-enamel-pin",
+   "title": "FiGPiN Black Panther #1487 NYCC 2023 Exclusive Enamel Pin",
+   "publisher": "Raw Star Wars (reseller)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.rawstarwars.com/product-page/figpin-captain-america-1485-nycc-2023-exclusive-enamel-pin",
+   "title": "FiGPiN Captain America #1485 NYCC 2023 Exclusive Enamel Pin",
+   "publisher": "Raw Star Wars (reseller)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+   "title": "San Diego Comic Con 2023 Event Exclusives",
+   "publisher": "FiGPiN",
+   "published_date": "2023-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+   "title": "Hercules, Hades & Woody FiGPiN Exclusives at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2022/06/new-hades-hercules-and-woody-figpins-at-disneyland-resort/",
+   "title": "New Hades, Hercules, and Woody FiGPiNs at Disneyland Resort",
+   "publisher": "WDW News Today",
+   "published_date": "2022-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+   "title": "Doctor Strange and Scarlet Witch FiGPiN Exclusives at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2022/figpin-d23-expo-2022",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "D23 Expo 2022, FiGPiN booth 1121",
+     "source_url": "https://disneypinsblog.com/d23-expo-2022-exclusive-pins-at-figpin",
+     "method": "search_snippet",
+     "note": "sold at FiGPiN booth 1121, limit two per person"
+    },
+    {
+     "field": "price",
+     "value": 20,
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "round-up lists each exclusive at $20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/figpin-disney-parks-wave-2",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hercules, Hades & Woody FiGPiN Exclusives at Disney Parks",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "DPB title; second wave of parks FiGPiNs"
+    },
+    {
+     "field": "format",
+     "value": "separately sold individual pins",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "$24.99 each"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "price",
+     "value": 24.99,
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "$24.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-05-31",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Disneyland Resort 31 May 2022; WDW 21 Jun 2022"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "retailer",
+     "value": "Disney Parks",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "parks exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/figpin-disney-parks-doctor-strange-scarlet-witch",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Doctor Strange and Scarlet Witch FiGPiN Exclusives at Disney Parks",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "format",
+     "value": "separately sold individual pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "$24.99 each"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "price",
+     "value": 24.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "$24.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "August 2022 at DLR and WDW"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "retailer",
+     "value": "Disney Parks",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "parks exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/figpin-disney-parks-wave-4",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2023",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "winter/spring 2023 per FiGPiN roundup"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/figpin-disney100-wave-3",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2023-11-27",
+     "source_url": "https://disneypinsblog.com/buzz-lightyear-pinocchio-disney-100-figpins-wave-3/",
+     "method": "search_snippet",
+     "note": "online from 27 Nov 2023"
+    },
+    {
+     "field": "format",
+     "value": "separately sold individual pins",
+     "source_url": "https://disneypinsblog.com/buzz-lightyear-pinocchio-disney-100-figpins-wave-3/",
+     "method": "search_snippet",
+     "note": "$15 each"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/buzz-lightyear-pinocchio-disney-100-figpins-wave-3/",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/figpin-disney100-halloween",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2023-10-10",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "first sold online at FiGPiN.com Tue 10 Oct 2023"
+    },
+    {
+     "field": "edition_type",
+     "value": "FiGPiN exclusive, 750 units each",
+     "source_url": "https://figpin.com/blogs/news/get-ready-for-halloween-with-figpins-d100-collection",
+     "method": "search_snippet",
+     "note": "FiGPiN: each released as FiGPiN Exclusive, 750 made"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "DPB lists four designs"
+    },
+    {
+     "field": "retailer",
+     "value": "FiGPiN.com",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "sold online at FiGPiN.com"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/get-ready-for-halloween-with-figpins-d100-collection",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/dpb-store-elemental-ember-wade",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-ember-wade-disney-pin-at-dpb-store",
+     "method": "search_snippet",
+     "note": "pin-on-pin design (one pin with attached pin element)"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-ember-wade-disney-pin-at-dpb-store",
+     "method": "search_snippet",
+     "note": "one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/dpb-store-elemental-vivisteria-flower",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Elemental Vivisteria Flower Disney Pin Release at DPB Store",
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-vivisteria-flower-disney-pin-release-at-dpb-store",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-vivisteria-flower-disney-pin-release-at-dpb-store",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "price",
+     "value": 15,
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-vivisteria-flower-disney-pin-release-at-dpb-store",
+     "method": "search_snippet",
+     "note": "$15"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-vivisteria-flower-disney-pin-release-at-dpb-store",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-vivisteria-flower-disney-pin-release-at-dpb-store",
+     "method": "search_snippet",
+     "note": "December 2023"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-vivisteria-flower-disney-pin-release-at-dpb-store",
+     "method": "search_snippet",
+     "note": "DPB Store"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/uncas-amazon-disney100-jumbo-stitch-peter-pan",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/stitch-peter-pan-disney-100th-anniversary-jumbo-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "DPB: created by Uncas International, officially licensed by Disney"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/uncas-amazon-disney100-cinderella-jasmine",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cinderella & Jasmine Disney 100 Pins at Amazon",
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "format",
+     "value": "separately sold individual pins",
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "$30 each"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "LE 500 each"
+    },
+    {
+     "field": "price",
+     "value": 30,
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "$30 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08-30",
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "released 30 Aug 2023"
+    },
+    {
+     "field": "retailer",
+     "value": "Amazon",
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "Amazon release"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "created by Uncas International, officially licensed"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/funko-snow-white-pop-with-pin",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Snow White POP! Funko with Exclusive Pin",
+     "source_url": "https://www.laughingplace.com/w/news/2022/02/18/ultimate-princess-celebration-snow-white-funko-exclusive-pop-pin-set/",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "format",
+     "value": "vinyl figure bundled with one enamel pin",
+     "source_url": "https://www.laughingplace.com/w/news/2022/02/18/ultimate-princess-celebration-snow-white-funko-exclusive-pop-pin-set/",
+     "method": "search_snippet",
+     "note": "Pop! figure plus one pin"
+    },
+    {
+     "field": "price",
+     "value": 15,
+     "source_url": "https://www.laughingplace.com/w/news/2022/02/18/ultimate-princess-celebration-snow-white-funko-exclusive-pop-pin-set/",
+     "method": "search_snippet",
+     "note": "$15"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.laughingplace.com/w/news/2022/02/18/ultimate-princess-celebration-snow-white-funko-exclusive-pop-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-18",
+     "source_url": "https://www.laughingplace.com/w/news/2022/02/18/ultimate-princess-celebration-snow-white-funko-exclusive-pop-pin-set/",
+     "method": "search_snippet",
+     "note": "Funko.com launch 18 Feb 2022"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.laughingplace.com/w/news/2022/02/18/ultimate-princess-celebration-snow-white-funko-exclusive-pop-pin-set/",
+     "method": "search_snippet",
+     "note": "Funko"
+    },
+    {
+     "field": "retailer",
+     "value": "Funko.com",
+     "source_url": "https://www.laughingplace.com/w/news/2022/02/18/ultimate-princess-celebration-snow-white-funko-exclusive-pop-pin-set/",
+     "method": "search_snippet",
+     "note": "exclusive to Funko.com, limit 2 per person"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/funko-pocahontas-pop-with-pin",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pocahontas POP! Funko with Exclusive Pin",
+     "source_url": "https://disneypinsblog.com/pocahontas-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "format",
+     "value": "vinyl figure bundled with one enamel pin",
+     "source_url": "https://disneypinsblog.com/pocahontas-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Pop! figure plus one pin"
+    },
+    {
+     "field": "price",
+     "value": 15,
+     "source_url": "https://disneypinsblog.com/pocahontas-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "$15"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/pocahontas-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-04",
+     "source_url": "https://disneypinsblog.com/pocahontas-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "April 2022"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/pocahontas-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Funko"
+    },
+    {
+     "field": "size_mm",
+     "value": 38,
+     "source_url": "https://disneypinsblog.com/pocahontas-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "pin about 1.5 in"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/funko-belle-pop-with-pin",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Belle POP! Funko with Exclusive Pin",
+     "source_url": "https://disneypinsblog.com/belle-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "format",
+     "value": "vinyl figure bundled with one enamel pin",
+     "source_url": "https://disneypinsblog.com/belle-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Pop! figure plus one pin"
+    },
+    {
+     "field": "price",
+     "value": 15,
+     "source_url": "https://disneypinsblog.com/belle-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "$15"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/belle-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-09-01",
+     "source_url": "https://disneypinsblog.com/belle-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "listed 1 Sep 2022"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/belle-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Funko"
+    },
+    {
+     "field": "retailer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/belle-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "exclusive to Funko"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/funko-merida-pop-with-pin",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Merida POP! Funko with Exclusive Pin",
+     "source_url": "https://disneypinsblog.com/merida-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "format",
+     "value": "vinyl figure bundled with one enamel pin",
+     "source_url": "https://disneypinsblog.com/merida-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Pop! figure plus one pin"
+    },
+    {
+     "field": "price",
+     "value": 15,
+     "source_url": "https://disneypinsblog.com/merida-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "$15"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/merida-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-09-01",
+     "source_url": "https://disneypinsblog.com/merida-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "listed 1 Sep 2022"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/merida-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Funko"
+    },
+    {
+     "field": "retailer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/merida-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "available at Funko"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/funko-cinderella-pop-with-pin",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cinderella POP! Funko with Exclusive Pin",
+     "source_url": "https://disneypinsblog.com/cinderella-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "format",
+     "value": "vinyl figure bundled with one enamel pin",
+     "source_url": "https://disneypinsblog.com/cinderella-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Pop! figure plus one pin"
+    },
+    {
+     "field": "price",
+     "value": 15,
+     "source_url": "https://disneypinsblog.com/cinderella-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "$15"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/cinderella-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-09-21",
+     "source_url": "https://disneypinsblog.com/cinderella-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Wed 21 Sep 2022"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/cinderella-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Funko"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/funko-disney-holiday-pop-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Holiday Funko Pop! Pins",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "Laughing Place title"
+    },
+    {
+     "field": "format",
+     "value": "separately sold individual pins",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "$14.99 each"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "$14.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-11",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "pre-order Sep 2023, expected to ship Nov 2023"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "four pins"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "Funko Pop! Pins"
+    },
+    {
+     "field": "retailer",
+     "value": "Entertainment Earth",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "pre-order retailer; exclusivity not stated"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/monogram-toynk-sdcc-2022",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2022, Disney+ booth #4245 (Toynk)",
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "Toynk with Disney+, 20-24 Jul 2022"
+    },
+    {
+     "field": "price",
+     "value": 10,
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "pre-event listing $10 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/monogram-sdcc-2023-robin-hood-50th",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney's Robin Hood SDCC Exclusive 50th Anniversary Oversized Enamel Pin",
+     "source_url": "https://www.cinequest.com/store/SDCC-2022-EXCLUSIVES/DISNEYS-ROBIN-HOOD-SDCC-EXCLUSIVE-50TH-ANNIVERSARY-OVERSIZED-ENAMEL-PIN.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.cinequest.com/store/SDCC-2022-EXCLUSIVES/DISNEYS-ROBIN-HOOD-SDCC-EXCLUSIVE-50TH-ANNIVERSARY-OVERSIZED-ENAMEL-PIN.html",
+     "method": "search_snippet",
+     "note": "one oversized pin"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2023",
+     "source_url": "https://www.cinequest.com/store/SDCC-2022-EXCLUSIVES/DISNEYS-ROBIN-HOOD-SDCC-EXCLUSIVE-50TH-ANNIVERSARY-OVERSIZED-ENAMEL-PIN.html",
+     "method": "search_snippet",
+     "note": "title says SDCC 2023 (URL folder says SDCC-2022 - year conflict noted)"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Monogram International",
+     "source_url": "https://www.cinequest.com/store/SDCC-2022-EXCLUSIVES/DISNEYS-ROBIN-HOOD-SDCC-EXCLUSIVE-50TH-ANNIVERSARY-OVERSIZED-ENAMEL-PIN.html",
+     "method": "search_snippet",
+     "note": "manufactured by Monogram International"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/toynk-sdcc-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Toynk San Diego Comic-Con 2023 limited edition pins",
+     "source_url": "https://www.toynk.com/blogs/comic-con-events/unlock-rare-finds-top-5-limited-edition-pins-at-san-diego-comic-con-2023",
+     "method": "search_snippet",
+     "note": "Toynk blog top 5 SDCC 2023 pins"
+    },
+    {
+     "field": "format",
+     "value": "separately sold individual pins",
+     "source_url": "https://www.toynk.com/blogs/comic-con-events/unlock-rare-finds-top-5-limited-edition-pins-at-san-diego-comic-con-2023",
+     "method": "search_snippet",
+     "note": "individual pins"
+    },
+    {
+     "field": "retailer",
+     "value": "Toynk",
+     "source_url": "https://www.toynk.com/blogs/comic-con-events/unlock-rare-finds-top-5-limited-edition-pins-at-san-diego-comic-con-2023",
+     "method": "search_snippet",
+     "note": "Toynk"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2023",
+     "source_url": "https://www.toynk.com/blogs/comic-con-events/unlock-rare-finds-top-5-limited-edition-pins-at-san-diego-comic-con-2023",
+     "method": "search_snippet",
+     "note": "SDCC 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/figpin-sdcc-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "San Diego Comic Con 2023 Event Exclusives",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN title"
+    },
+    {
+     "field": "format",
+     "value": "separately sold individual pins",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "individual FiGPiNs"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2023, FiGPiN booth 403",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "20-23 Jul 2023"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-07-20",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "SDCC 20-23 Jul 2023"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/figpin-sdcc-2023-avengers-60th-deluxe-box-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Marvel Avengers 60th Anniversary Deluxe Box Set",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN SDCC 2023"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "500 units, with its own LE FiGPiN logo"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2023",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "SDCC 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2023/figpin-nycc-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "New York Comic Con 2023 - FiGPiN Event Exclusives",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN title"
+    },
+    {
+     "field": "format",
+     "value": "separately sold individual pins",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "individual FiGPiNs"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2023, FiGPiN booth #1235",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "booth 1235"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "NYCC 2023"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2022/figpin-d23-expo-2022/mickey-mouse",
+   "set_key": "lic/2022/figpin-d23-expo-2022",
+   "claims": [
+    {
+     "field": "product_code",
+     "value": "976",
+     "source_url": "https://figpin.com/blogs/news/disney-s-mickey-mouse-and-minnie-mouse-figpins-at-d23",
+     "method": "search_snippet",
+     "note": "FiGPiN #976 per FiGPiN D23 post"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://figpin.com/blogs/news/disney-s-mickey-mouse-and-minnie-mouse-figpins-at-d23",
+     "method": "search_snippet",
+     "note": "D23 exclusive, 1,000 units"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/disney-s-mickey-mouse-and-minnie-mouse-figpins-at-d23",
+     "method": "search_snippet",
+     "note": "FiGPiN post"
+    },
+    {
+     "field": "original_price",
+     "value": 20,
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "$20 in round-up"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-d23-expo-2022/minnie-mouse",
+   "set_key": "lic/2022/figpin-d23-expo-2022",
+   "claims": [
+    {
+     "field": "product_code",
+     "value": "977",
+     "source_url": "https://figpin.com/blogs/news/disney-s-mickey-mouse-and-minnie-mouse-figpins-at-d23",
+     "method": "search_snippet",
+     "note": "FiGPiN #977 per FiGPiN D23 post"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://figpin.com/blogs/news/disney-s-mickey-mouse-and-minnie-mouse-figpins-at-d23",
+     "method": "search_snippet",
+     "note": "D23 exclusive, 1,000 units"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/disney-s-mickey-mouse-and-minnie-mouse-figpins-at-d23",
+     "method": "search_snippet",
+     "note": "FiGPiN post"
+    },
+    {
+     "field": "original_price",
+     "value": 20,
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "$20 in round-up"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-d23-expo-2022/stitch",
+   "set_key": "lic/2022/figpin-d23-expo-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch (Swim Trunks)",
+     "source_url": "https://blog.hobbydb.com/2022/09/09/disneys-d23-figpin-exclusives-now-on-hobbydb/",
+     "method": "search_snippet",
+     "note": "hobbyDB list of D23 2022 FiGPiN exclusives names the variant"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-d23-expo-2022/boba-fett-502",
+   "set_key": "lic/2022/figpin-d23-expo-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Boba Fett",
+     "source_url": "https://figpin.com/blogs/news/boba-fett-at-d23-2022",
+     "method": "search_snippet",
+     "note": "FiGPiN post 'Boba Fett at D23 2022'"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Boba Fett"
+     ],
+     "source_url": "https://figpin.com/blogs/news/boba-fett-at-d23-2022",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "product_code",
+     "value": "502",
+     "source_url": "https://figpin.com/blogs/news/boba-fett-at-d23-2022",
+     "method": "search_snippet",
+     "note": "FiGPiN #502"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://figpin.com/blogs/news/boba-fett-at-d23-2022",
+     "method": "search_snippet",
+     "note": "D23 exclusive, 1,500 units"
+    },
+    {
+     "field": "original_price",
+     "value": 20,
+     "source_url": "https://figpin.com/blogs/news/boba-fett-at-d23-2022",
+     "method": "search_snippet",
+     "note": "$20 at booth 1121"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://figpin.com/blogs/news/boba-fett-at-d23-2022",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://figpin.com/blogs/news/boba-fett-at-d23-2022",
+     "method": "search_snippet",
+     "note": "D23 2022 per FiGPiN post title; resolves year of earlier lead"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/boba-fett-at-d23-2022",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://figpin.com/blogs/news/boba-fett-at-d23-2022",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-d23-expo-2022/boo",
+   "set_key": "lic/2022/figpin-d23-expo-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Boo",
+     "source_url": "https://figpin.com/blogs/news/disney-and-pixars-monsters-inc-boo-at-d23",
+     "method": "search_snippet",
+     "note": "Monsters, Inc. Boo at D23"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Boo"
+     ],
+     "source_url": "https://figpin.com/blogs/news/disney-and-pixars-monsters-inc-boo-at-d23",
+     "method": "search_snippet",
+     "note": "Monsters, Inc."
+    },
+    {
+     "field": "product_code",
+     "value": "807",
+     "source_url": "https://figpin.com/blogs/news/disney-and-pixars-monsters-inc-boo-at-d23",
+     "method": "search_snippet",
+     "note": "FiGPiN #807"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://figpin.com/blogs/news/disney-and-pixars-monsters-inc-boo-at-d23",
+     "method": "search_snippet",
+     "note": "limited to 500 pieces"
+    },
+    {
+     "field": "original_price",
+     "value": 20,
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "$20 in round-up"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "D23 2022 round-up"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/disney-and-pixars-monsters-inc-boo-at-d23",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "franchise",
+     "value": "Pixar",
+     "source_url": "https://figpin.com/blogs/news/disney-and-pixars-monsters-inc-boo-at-d23",
+     "method": "search_snippet",
+     "note": "Monsters, Inc."
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-d23-expo-2022/ariel",
+   "set_key": "lic/2022/figpin-d23-expo-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ariel",
+     "source_url": "https://figpin.com/blogs/news/d23-exclusive-ariel-mickey-mouse-and-minnie-mouse",
+     "method": "search_snippet",
+     "note": "D23 exclusive Ariel"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://figpin.com/blogs/news/d23-exclusive-ariel-mickey-mouse-and-minnie-mouse",
+     "method": "search_snippet",
+     "note": "The Little Mermaid"
+    },
+    {
+     "field": "product_code",
+     "value": "992",
+     "source_url": "https://figpin.com/blogs/news/d23-exclusive-ariel-mickey-mouse-and-minnie-mouse",
+     "method": "search_snippet",
+     "note": "FiGPiN D23 listing gives #992"
+    },
+    {
+     "field": "product_code",
+     "value": "991",
+     "source_url": "https://figpin.com/blogs/news/retailer-exclusive-roundup-2022",
+     "method": "search_snippet",
+     "note": "FiGPiN retailer roundup lists Ariel as #991 - conflict, possibly a different Ariel variant"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://figpin.com/blogs/news/d23-exclusive-ariel-mickey-mouse-and-minnie-mouse",
+     "method": "search_snippet",
+     "note": "1,500 units"
+    },
+    {
+     "field": "original_price",
+     "value": 20,
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "$20 in round-up"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "D23 2022 round-up"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/d23-exclusive-ariel-mickey-mouse-and-minnie-mouse",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-d23-expo-2022/tigger",
+   "set_key": "lic/2022/figpin-d23-expo-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tigger",
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "round-up lists Disney's Tigger among booth 1121 exclusives"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tigger"
+     ],
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "Winnie the Pooh"
+    },
+    {
+     "field": "original_price",
+     "value": 20,
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "$20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "D23 2022"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-d23-expo-2022/witch-marge",
+   "set_key": "lic/2022/figpin-d23-expo-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Witch Marge",
+     "source_url": "https://figpin.com/blogs/news/witch-marge-at-d23",
+     "method": "search_snippet",
+     "note": "FiGPiN post 'Witch Marge at D23!'"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Marge Simpson"
+     ],
+     "source_url": "https://figpin.com/blogs/news/witch-marge-at-d23",
+     "method": "search_snippet",
+     "note": "The Simpsons; Disney-owned franchise, in scope per rule 11 (provisional)"
+    },
+    {
+     "field": "product_code",
+     "value": "1035",
+     "source_url": "https://www.pinsonfire.com/products/disney-d23-expo-exclusive-the-simpsons-witch-marge-1035",
+     "method": "search_snippet",
+     "note": "retailer listing: FiGPiN #1035"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.pinsonfire.com/products/disney-d23-expo-exclusive-the-simpsons-witch-marge-1035",
+     "method": "search_snippet",
+     "note": "retailer listing: D23 Expo exclusive, 1,000 pieces"
+    },
+    {
+     "field": "original_price",
+     "value": 20,
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "$20 in round-up"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://figpin.com/blogs/news/d23-2022-round-up",
+     "method": "search_snippet",
+     "note": "D23 2022"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/witch-marge-at-d23",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "franchise",
+     "value": "The Simpsons",
+     "source_url": "https://figpin.com/blogs/news/witch-marge-at-d23",
+     "method": "search_snippet",
+     "note": "Simpsons"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-disney-parks-shopdisney-wave-1/wdw-50th-chip",
+   "set_key": "lic/2022/figpin-disney-parks-shopdisney-wave-1",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip FiGPiN - Walt Disney World 50th Anniversary - Limited Release",
+     "source_url": "https://www.shopdisney.com/chip-figpin-walt-disney-world-50th-anniversary-limited-release-465052086325.html",
+     "method": "search_snippet",
+     "note": "shopDisney product title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip"
+     ],
+     "source_url": "https://www.shopdisney.com/chip-figpin-walt-disney-world-50th-anniversary-limited-release-465052086325.html",
+     "method": "search_snippet",
+     "note": "Chip alone"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.shopdisney.com/chip-figpin-walt-disney-world-50th-anniversary-limited-release-465052086325.html",
+     "method": "search_snippet",
+     "note": "separate shopDisney listing for Chip only"
+    },
+    {
+     "field": "product_code",
+     "value": "774",
+     "source_url": "https://www.shopdisney.com/chip-figpin-walt-disney-world-50th-anniversary-limited-release-465052086325.html",
+     "method": "search_snippet",
+     "note": "FiGPiN number 774 in specs"
+    },
+    {
+     "field": "retailer_item_number",
+     "value": "465052086325",
+     "source_url": "https://www.shopdisney.com/chip-figpin-walt-disney-world-50th-anniversary-limited-release-465052086325.html",
+     "method": "search_snippet",
+     "note": "shopDisney item number"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://www.shopdisney.com/chip-figpin-walt-disney-world-50th-anniversary-limited-release-465052086325.html",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://www.shopdisney.com/chip-figpin-walt-disney-world-50th-anniversary-limited-release-465052086325.html",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "retailer",
+     "value": "shopDisney",
+     "source_url": "https://www.shopdisney.com/chip-figpin-walt-disney-world-50th-anniversary-limited-release-465052086325.html",
+     "method": "search_snippet",
+     "note": "shopDisney listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-disney-parks-shopdisney-wave-1/wdw-50th-dale",
+   "set_key": "lic/2022/figpin-disney-parks-shopdisney-wave-1",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dale FiGPiN - Walt Disney World 50th Anniversary - Limited Release",
+     "source_url": "https://www.shopdisney.com/dale-figpin-walt-disney-world-50th-anniversary-limited-release-465052086653.html",
+     "method": "search_snippet",
+     "note": "shopDisney product title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dale"
+     ],
+     "source_url": "https://www.shopdisney.com/dale-figpin-walt-disney-world-50th-anniversary-limited-release-465052086653.html",
+     "method": "search_snippet",
+     "note": "Dale alone"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.shopdisney.com/dale-figpin-walt-disney-world-50th-anniversary-limited-release-465052086653.html",
+     "method": "search_snippet",
+     "note": "separate shopDisney listing for Dale only"
+    },
+    {
+     "field": "product_code",
+     "value": "775",
+     "source_url": "https://www.shopdisney.com/dale-figpin-walt-disney-world-50th-anniversary-limited-release-465052086653.html",
+     "method": "search_snippet",
+     "note": "FiGPiN number 775 in specs"
+    },
+    {
+     "field": "retailer_item_number",
+     "value": "465052086653",
+     "source_url": "https://www.shopdisney.com/dale-figpin-walt-disney-world-50th-anniversary-limited-release-465052086653.html",
+     "method": "search_snippet",
+     "note": "shopDisney item number"
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://www.shopdisney.com/dale-figpin-walt-disney-world-50th-anniversary-limited-release-465052086653.html",
+     "method": "search_snippet",
+     "note": "$24.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.shopdisney.com/dale-figpin-walt-disney-world-50th-anniversary-limited-release-465052086653.html",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://www.shopdisney.com/dale-figpin-walt-disney-world-50th-anniversary-limited-release-465052086653.html",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://www.shopdisney.com/dale-figpin-walt-disney-world-50th-anniversary-limited-release-465052086653.html",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "retailer",
+     "value": "shopDisney",
+     "source_url": "https://www.shopdisney.com/dale-figpin-walt-disney-world-50th-anniversary-limited-release-465052086653.html",
+     "method": "search_snippet",
+     "note": "shopDisney listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-disney-parks-shopdisney-wave-1/wdw-50th-mickey",
+   "set_key": "lic/2022/figpin-disney-parks-shopdisney-wave-1",
+   "claims": [
+    {
+     "field": "product_code",
+     "value": "773",
+     "source_url": "https://uspartyco.com/product/mickey-mouse-figpin-walt-disney-world-50th-anniversary-limited-release/",
+     "method": "search_snippet",
+     "note": "reseller listing of the WDW 50th Mickey FiGPiN gives #773 (reseller only)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-disney-parks-shopdisney-wave-1/wdw-50th-minnie",
+   "set_key": "lic/2022/figpin-disney-parks-shopdisney-wave-1",
+   "claims": [
+    {
+     "field": "product_code",
+     "value": "772",
+     "source_url": "https://uspartyco.com/product/minnie-mouse-figpin-walt-disney-world-50th-anniversary-limited-release/",
+     "method": "search_snippet",
+     "note": "reseller listing of the WDW 50th Minnie FiGPiN gives #772 (reseller only)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-disney-parks-wave-2/hercules",
+   "set_key": "lic/2022/figpin-disney-parks-wave-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hercules"
+     ],
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "named in DPB title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "$24.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-05-31",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Disneyland Resort"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort; Walt Disney World (2022-06-21)",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "DLR first, WDW 21 Jun 2022"
+    },
+    {
+     "field": "visual_description",
+     "value": "full-body Hercules in warrior outfit",
+     "source_url": "https://wdwnt.com/2022/06/new-hades-hercules-and-woody-figpins-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "WDWNT paraphrase; includes display stand"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-disney-parks-wave-2/hades",
+   "set_key": "lic/2022/figpin-disney-parks-wave-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hades"
+     ],
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "named in DPB title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "$24.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-05-31",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Disneyland Resort"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort; Walt Disney World (2022-06-21)",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "DLR first, WDW 21 Jun 2022"
+    },
+    {
+     "field": "visual_description",
+     "value": "full-body Hades with blue flame on hand and back",
+     "source_url": "https://wdwnt.com/2022/06/new-hades-hercules-and-woody-figpins-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "WDWNT paraphrase; includes display stand"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-disney-parks-wave-2/woody",
+   "set_key": "lic/2022/figpin-disney-parks-wave-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Woody"
+     ],
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "named in DPB title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "$24.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-05-31",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Disneyland Resort"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort; Walt Disney World (2022-06-21)",
+     "source_url": "https://disneypinsblog.com/hercules-hades-woody-figpin-exclusives-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "DLR first, WDW 21 Jun 2022"
+    },
+    {
+     "field": "visual_description",
+     "value": "full-body Woody running",
+     "source_url": "https://wdwnt.com/2022/06/new-hades-hercules-and-woody-figpins-at-disneyland-resort/",
+     "method": "search_snippet",
+     "note": "WDWNT paraphrase; includes display stand"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-disney-parks-doctor-strange-scarlet-witch/doctor-strange",
+   "set_key": "lic/2022/figpin-disney-parks-doctor-strange-scarlet-witch",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Doctor Strange"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "$24.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "August 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "both resorts"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/figpin-disney-parks-doctor-strange-scarlet-witch/scarlet-witch",
+   "set_key": "lic/2022/figpin-disney-parks-doctor-strange-scarlet-witch",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Scarlet Witch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 24.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "$24.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "August 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "both resorts"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/blogs/news/doctor-strange-and-scarlet-witch-figpin-exclusives-at-disney-parks",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney-parks-wave-4/moon-knight",
+   "set_key": "lic/2023/figpin-disney-parks-wave-4",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Moon Knight"
+     ],
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "named in FiGPiN wave 4 roundup"
+    },
+    {
+     "field": "product_code",
+     "value": "1104",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "winter/spring 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks (US only)",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "as grouped in roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney-parks-wave-4/she-hulk",
+   "set_key": "lic/2023/figpin-disney-parks-wave-4",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "She-Hulk"
+     ],
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "named in FiGPiN wave 4 roundup"
+    },
+    {
+     "field": "product_code",
+     "value": "1105",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "winter/spring 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks (US only)",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "as grouped in roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney-parks-wave-4/anakin-skywalker",
+   "set_key": "lic/2023/figpin-disney-parks-wave-4",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Anakin Skywalker"
+     ],
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "named in FiGPiN wave 4 roundup"
+    },
+    {
+     "field": "product_code",
+     "value": "1125",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "winter/spring 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks (US only)",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "as grouped in roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney-parks-wave-4/ahsoka-tano",
+   "set_key": "lic/2023/figpin-disney-parks-wave-4",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ahsoka Tano"
+     ],
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "named in FiGPiN wave 4 roundup"
+    },
+    {
+     "field": "product_code",
+     "value": "1126",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "winter/spring 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks (US only)",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "as grouped in roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney-parks-wave-4/ursula",
+   "set_key": "lic/2023/figpin-disney-parks-wave-4",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ursula"
+     ],
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "named in FiGPiN wave 4 roundup"
+    },
+    {
+     "field": "product_code",
+     "value": "1150",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "winter/spring 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks (US and Hong Kong)",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "as grouped in roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney-parks-wave-4/ariel",
+   "set_key": "lic/2023/figpin-disney-parks-wave-4",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "named in FiGPiN wave 4 roundup"
+    },
+    {
+     "field": "product_code",
+     "value": "1151",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "winter/spring 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks (US and Hong Kong)",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "as grouped in roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney-parks-wave-4/minnie-mouse",
+   "set_key": "lic/2023/figpin-disney-parks-wave-4",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "named in FiGPiN wave 4 roundup"
+    },
+    {
+     "field": "product_code",
+     "value": "1139",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "winter/spring 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks and shopDisney",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "as grouped in roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney-parks-wave-4/mickey-mouse",
+   "set_key": "lic/2023/figpin-disney-parks-wave-4",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "named in FiGPiN wave 4 roundup"
+    },
+    {
+     "field": "product_code",
+     "value": "1140",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "winter/spring 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks and shopDisney",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "as grouped in roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney-parks-wave-4/captain-rx-24",
+   "set_key": "lic/2023/figpin-disney-parks-wave-4",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain RX-24"
+     ],
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "named in FiGPiN wave 4 roundup"
+    },
+    {
+     "field": "product_code",
+     "value": "1024",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "winter/spring 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney UK only (per snippet)",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "as grouped in roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney-parks-wave-4/everest-yeti",
+   "set_key": "lic/2023/figpin-disney-parks-wave-4",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Everest Yeti"
+     ],
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "named in FiGPiN wave 4 roundup"
+    },
+    {
+     "field": "product_code",
+     "value": "1160",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "winter/spring 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney UK only (per snippet)",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "as grouped in roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney-parks-wave-4/matterhorn-yeti",
+   "set_key": "lic/2023/figpin-disney-parks-wave-4",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Matterhorn Yeti"
+     ],
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "named in FiGPiN wave 4 roundup"
+    },
+    {
+     "field": "product_code",
+     "value": "1161",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "winter/spring 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney UK only (per snippet)",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "as grouped in roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney-parks-wave-4/oswald",
+   "set_key": "lic/2023/figpin-disney-parks-wave-4",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disney Parks (US and Hong Kong)",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "as grouped in roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney-parks-wave-4/ortensia",
+   "set_key": "lic/2023/figpin-disney-parks-wave-4",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disney Parks (US and Hong Kong)",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "as grouped in roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney-parks-wave-4/luke-skywalker-yoda",
+   "set_key": "lic/2023/figpin-disney-parks-wave-4",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Luke Skywalker with Yoda",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "named in roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Luke Skywalker",
+      "Yoda"
+     ],
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "Luke with Yoda"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "single FiGPiN number 1025 for Luke with Yoda"
+    },
+    {
+     "field": "product_code",
+     "value": "1025",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "winter/spring 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney UK only (per snippet)",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "as grouped in roundup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://figpin.com/blogs/news/disney-parks-and-shopdisney-wave-4-roundup",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney100-wave-3/buzz-lightyear",
+   "set_key": "lic/2023/figpin-disney100-wave-3",
+   "claims": [
+    {
+     "field": "product_code",
+     "value": "1480",
+     "source_url": "https://disneypinsblog.com/buzz-lightyear-pinocchio-disney-100-figpins-wave-3/",
+     "method": "search_snippet",
+     "note": "Buzz Lightyear (#1480)"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-11-27",
+     "source_url": "https://disneypinsblog.com/buzz-lightyear-pinocchio-disney-100-figpins-wave-3/",
+     "method": "search_snippet",
+     "note": "online 27 Nov 2023"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/buzz-lightyear-pinocchio-disney-100-figpins-wave-3/",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney100-wave-3/pinocchio",
+   "set_key": "lic/2023/figpin-disney100-wave-3",
+   "claims": [
+    {
+     "field": "product_code",
+     "value": "1479",
+     "source_url": "https://disneypinsblog.com/buzz-lightyear-pinocchio-disney-100-figpins-wave-3/",
+     "method": "search_snippet",
+     "note": "Pinocchio (#1479)"
+    },
+    {
+     "field": "product_code",
+     "value": "1479",
+     "source_url": "https://www.popsandpins.com/products/figpin-pinocchio-disney-100-1479",
+     "method": "search_snippet",
+     "note": "retailer listing title #1479"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-11-27",
+     "source_url": "https://disneypinsblog.com/buzz-lightyear-pinocchio-disney-100-figpins-wave-3/",
+     "method": "search_snippet",
+     "note": "online 27 Nov 2023"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://disneypinsblog.com/buzz-lightyear-pinocchio-disney-100-figpins-wave-3/",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney100-halloween/donald-duck",
+   "set_key": "lic/2023/figpin-disney100-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck - Devil Costume",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "DPB listing"
+    },
+    {
+     "field": "product_code",
+     "value": "1528",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "visual_description",
+     "value": "devil costume",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "costume named in DPB"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10-10",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "online 10 Oct 2023"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney100-halloween/mickey-mouse",
+   "set_key": "lic/2023/figpin-disney100-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse - Skeleton Costume",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "DPB listing"
+    },
+    {
+     "field": "product_code",
+     "value": "1529",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "visual_description",
+     "value": "skeleton costume",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "costume named in DPB"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10-10",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "online 10 Oct 2023"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney100-halloween/goofy",
+   "set_key": "lic/2023/figpin-disney100-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy - Mummy Costume",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "DPB listing"
+    },
+    {
+     "field": "product_code",
+     "value": "1530",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "visual_description",
+     "value": "mummy costume",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "costume named in DPB"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10-10",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "online 10 Oct 2023"
+    },
+    {
+     "field": "retailer",
+     "value": "Pops and Pins",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "DPB: Goofy is a Pops and Pins retailer exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-disney100-halloween/pluto",
+   "set_key": "lic/2023/figpin-disney100-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pluto - Pirate Costume",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "DPB listing"
+    },
+    {
+     "field": "product_code",
+     "value": "1531",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "visual_description",
+     "value": "pirate costume",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "costume named in DPB"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10-10",
+     "source_url": "https://disneypinsblog.com/halloween-disney-100-figpins/",
+     "method": "search_snippet",
+     "note": "online 10 Oct 2023"
+    },
+    {
+     "field": "product_code",
+     "value": "1530",
+     "source_url": "https://www.toyshnip.com/products/figpin-enamel-pin-disney-d100-exclusive-edition-choose-your-figure",
+     "method": "search_snippet",
+     "note": "retailer listing gives Pluto #1530 - conflicts with DPB #1531"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/her-universe-marvel-disney-parks/innovate",
+   "set_key": "lic/2022/her-universe-marvel-disney-parks",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Shuri"
+     ],
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-Her-Universe-Shuri-Innovate-p/disney-pin-shuriinnovate.htm",
+     "method": "search_snippet",
+     "note": "retailer listing titled 'Her Universe Shuri Innovate'; matched by brand + word, retailer only"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Her Universe",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2022-week-4/",
+     "method": "search_snippet",
+     "note": "Marvel Her Universe pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/her-universe-marvel-disney-parks/lead",
+   "set_key": "lic/2022/her-universe-marvel-disney-parks",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Her Universe",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2022-week-4/",
+     "method": "search_snippet",
+     "note": "Marvel Her Universe pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/her-universe-shopdisney-star-wars-limited-release/leia-rebel",
+   "set_key": "lic/2022/her-universe-shopdisney-star-wars-limited-release",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Leia \"Rebel\"",
+     "source_url": "https://wdwnt.com/2022/11/her-universe-enchanted-wolverine-pins-disneyland/",
+     "method": "search_snippet",
+     "note": "WDWNT names Leia as the Rebel pin (Disneyland, Nov 2022)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Princess Leia"
+     ],
+     "source_url": "https://wdwnt.com/2022/11/her-universe-enchanted-wolverine-pins-disneyland/",
+     "method": "search_snippet",
+     "note": "Leia"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2022/11/her-universe-enchanted-wolverine-pins-disneyland/",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2022/11/her-universe-enchanted-wolverine-pins-disneyland/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Her Universe",
+     "source_url": "https://wdwnt.com/2022/11/her-universe-enchanted-wolverine-pins-disneyland/",
+     "method": "search_snippet",
+     "note": "Her Universe"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://wdwnt.com/2022/11/her-universe-enchanted-wolverine-pins-disneyland/",
+     "method": "search_snippet",
+     "note": "Disneyland Nov 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/her-universe-shopdisney-star-wars-limited-release/ahsoka-survivor",
+   "set_key": "lic/2022/her-universe-shopdisney-star-wars-limited-release",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2022-09-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-survivor-pin-by-her-universe-at-shopdisney",
+     "method": "search_snippet",
+     "note": "separate DPB post: Survivor pin at shopDisney from Tue 27 Sep 2022, $17.99"
+    },
+    {
+     "field": "visual_description",
+     "value": "Rebel Alliance starbird with Survivor text",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-survivor-pin-by-her-universe-at-shopdisney",
+     "method": "search_snippet",
+     "note": "DPB paraphrase"
+    },
+    {
+     "field": "retailer",
+     "value": "shopDisney",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-survivor-pin-by-her-universe-at-shopdisney",
+     "method": "search_snippet",
+     "note": "shopDisney"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/dpb-store-elemental-ember-wade/ember-wade",
+   "set_key": "lic/2023/dpb-store-elemental-ember-wade",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-ember-wade-disney-pin-at-dpb-store",
+     "method": "search_snippet",
+     "note": "DPB describes one pin-on-pin Ember & Wade design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ember Lumen",
+      "Wade Ripple"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-ember-wade-disney-pin-at-dpb-store",
+     "method": "search_snippet",
+     "note": "both on one pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06-15",
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-ember-wade-disney-pin-at-dpb-store",
+     "method": "search_snippet",
+     "note": "DPBStore.com 15 Jun 2023"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-ember-wade-disney-pin-at-dpb-store",
+     "method": "search_snippet",
+     "note": "exclusive to Disney Pins Blog"
+    },
+    {
+     "field": "licensing",
+     "value": "officially licensed by Disney",
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-ember-wade-disney-pin-at-dpb-store",
+     "method": "search_snippet",
+     "note": "licensed"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/dpb-store-elemental-vivisteria-flower/ember-wade-vivisteria",
+   "set_key": "lic/2023/dpb-store-elemental-vivisteria-flower",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ember Lumen",
+      "Wade Ripple"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-vivisteria-flower-disney-pin-release-at-dpb-store",
+     "method": "search_snippet",
+     "note": "Vivisteria flower design featuring Ember and Wade"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-vivisteria-flower-disney-pin-release-at-dpb-store",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 15,
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-vivisteria-flower-disney-pin-release-at-dpb-store",
+     "method": "search_snippet",
+     "note": "$15"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-vivisteria-flower-disney-pin-release-at-dpb-store",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "franchise",
+     "value": "Pixar",
+     "source_url": "https://disneypinsblog.com/blogs/news/elemental-vivisteria-flower-disney-pin-release-at-dpb-store",
+     "method": "search_snippet",
+     "note": "Elemental"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/uncas-amazon-disney100-jumbo-stitch-peter-pan/stitch",
+   "set_key": "lic/2023/uncas-amazon-disney100-jumbo-stitch-peter-pan",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/stitch-peter-pan-disney-100th-anniversary-jumbo-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "post says 'these' (Stitch and Peter Pan) created by Uncas International"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/uncas-amazon-disney100-cinderella-jasmine/cinderella",
+   "set_key": "lic/2023/uncas-amazon-disney100-cinderella-jasmine",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "named in title"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "LE 500 each"
+    },
+    {
+     "field": "original_price",
+     "value": 30,
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "$30 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "about 2 in"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hard enamel"
+     ],
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "hard enamel"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08-30",
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "30 Aug 2023"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "Uncas"
+    },
+    {
+     "field": "retailer",
+     "value": "Amazon",
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "Amazon"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/uncas-amazon-disney100-cinderella-jasmine/jasmine",
+   "set_key": "lic/2023/uncas-amazon-disney100-cinderella-jasmine",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine"
+     ],
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "named in title"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "LE 500 each"
+    },
+    {
+     "field": "original_price",
+     "value": 30,
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "$30 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "about 2 in"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hard enamel"
+     ],
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "hard enamel"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08-30",
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "30 Aug 2023"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "Uncas"
+    },
+    {
+     "field": "retailer",
+     "value": "Amazon",
+     "source_url": "https://disneypinsblog.com/cinderella-jasmine-disney-100-pins-at-amazon/",
+     "method": "search_snippet",
+     "note": "Amazon"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/funko-snow-white-pop-with-pin/snow-white",
+   "set_key": "lic/2022/funko-snow-white-pop-with-pin",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://www.laughingplace.com/w/news/2022/02/18/ultimate-princess-celebration-snow-white-funko-exclusive-pop-pin-set/",
+     "method": "search_snippet",
+     "note": "princess named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.laughingplace.com/w/news/2022/02/18/ultimate-princess-celebration-snow-white-funko-exclusive-pop-pin-set/",
+     "method": "search_snippet",
+     "note": "one exclusive pin per figure"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.laughingplace.com/w/news/2022/02/18/ultimate-princess-celebration-snow-white-funko-exclusive-pop-pin-set/",
+     "method": "search_snippet",
+     "note": "Funko"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-18",
+     "source_url": "https://www.laughingplace.com/w/news/2022/02/18/ultimate-princess-celebration-snow-white-funko-exclusive-pop-pin-set/",
+     "method": "search_snippet",
+     "note": "Funko.com launch 18 Feb 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/funko-pocahontas-pop-with-pin/pocahontas",
+   "set_key": "lic/2022/funko-pocahontas-pop-with-pin",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pocahontas"
+     ],
+     "source_url": "https://disneypinsblog.com/pocahontas-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "princess named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/pocahontas-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "one exclusive pin per figure"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/pocahontas-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Funko"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-04",
+     "source_url": "https://disneypinsblog.com/pocahontas-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "April 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/funko-belle-pop-with-pin/belle",
+   "set_key": "lic/2022/funko-belle-pop-with-pin",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/belle-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "princess named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/belle-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "one exclusive pin per figure"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/belle-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Funko"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-09-01",
+     "source_url": "https://disneypinsblog.com/belle-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "listed 1 Sep 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/funko-merida-pop-with-pin/merida",
+   "set_key": "lic/2022/funko-merida-pop-with-pin",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Merida"
+     ],
+     "source_url": "https://disneypinsblog.com/merida-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "princess named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/merida-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "one exclusive pin per figure"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/merida-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Funko"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-09-01",
+     "source_url": "https://disneypinsblog.com/merida-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "listed 1 Sep 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/funko-cinderella-pop-with-pin/cinderella",
+   "set_key": "lic/2022/funko-cinderella-pop-with-pin",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://disneypinsblog.com/cinderella-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "princess named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/cinderella-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "one exclusive pin per figure"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/cinderella-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Funko"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-09-21",
+     "source_url": "https://disneypinsblog.com/cinderella-pop-funko-with-exclusive-pin/",
+     "method": "search_snippet",
+     "note": "Wed 21 Sep 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/funko-disney-holiday-pop-pins/mickey-mouse",
+   "set_key": "lic/2023/funko-disney-holiday-pop-pins",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "four pins sold at $14.99 each"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey Mouse in a Santa-inspired outfit, glow-in-the-dark",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "$14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "Funko"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/funko-disney-holiday-pop-pins/minnie-mouse",
+   "set_key": "lic/2023/funko-disney-holiday-pop-pins",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "four pins sold at $14.99 each"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie Mouse in a Santa-inspired outfit, glow-in-the-dark",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "$14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "Funko"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/funko-disney-holiday-pop-pins/winnie-the-pooh",
+   "set_key": "lic/2023/funko-disney-holiday-pop-pins",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "four pins sold at $14.99 each"
+    },
+    {
+     "field": "visual_description",
+     "value": "Winnie the Pooh in a Santa-inspired outfit, glow-in-the-dark",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "$14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "Funko"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/funko-disney-holiday-pop-pins/eeyore",
+   "set_key": "lic/2023/funko-disney-holiday-pop-pins",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Eeyore"
+     ],
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "four pins sold at $14.99 each"
+    },
+    {
+     "field": "visual_description",
+     "value": "Eeyore in a Santa-inspired outfit, glow-in-the-dark",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "$14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.laughingplace.com/w/disney-merchandise/disney-holiday-funko-pop-pins-entertainment-earth/",
+     "method": "search_snippet",
+     "note": "Funko"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/monogram-toynk-sdcc-2022/wreck-it-ralph-10th",
+   "set_key": "lic/2022/monogram-toynk-sdcc-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Wreck-It Ralph 10th Anniversary Enamel Pin",
+     "source_url": "https://www.walmart.com/ip/Disney-Wreck-It-Ralph-10th-Anniversary-Enamel-Pin-SDCC-2022-Exclusive/5466169457",
+     "method": "search_snippet",
+     "note": "listing title (SDCC 2022 Exclusive)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Wreck-It Ralph"
+     ],
+     "source_url": "https://www.walmart.com/ip/Disney-Wreck-It-Ralph-10th-Anniversary-Enamel-Pin-SDCC-2022-Exclusive/5466169457",
+     "method": "search_snippet",
+     "note": "Ralph"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "$10 pre-event"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "Ralph grinning while smashing 10th Anniversary lettering",
+     "source_url": "https://www.walmart.com/ip/Disney-Wreck-It-Ralph-10th-Anniversary-Enamel-Pin-SDCC-2022-Exclusive/5466169457",
+     "method": "search_snippet",
+     "note": "paraphrase of listing"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2022",
+     "source_url": "https://www.walmart.com/ip/Disney-Wreck-It-Ralph-10th-Anniversary-Enamel-Pin-SDCC-2022-Exclusive/5466169457",
+     "method": "search_snippet",
+     "note": "SDCC 2022 exclusive"
+    },
+    {
+     "field": "retailer",
+     "value": "Toynk",
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "Toynk at Disney+ booth"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/monogram-toynk-sdcc-2022/snow-white-85th",
+   "set_key": "lic/2022/monogram-toynk-sdcc-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Snow White 85th Anniversary Enamel Pin",
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "in Toynk SDCC 2022 lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://www.toynk.com/products/disney-snow-white-85th-anniversary-limited-edition-enamel-pin-sdcc-exclusive",
+     "method": "search_snippet",
+     "note": "Snow White"
+    },
+    {
+     "field": "edition_size",
+     "value": 2400,
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "LE 2,400"
+    },
+    {
+     "field": "edition_size",
+     "value": 2400,
+     "source_url": "https://www.toynk.com/products/disney-snow-white-85th-anniversary-limited-edition-enamel-pin-sdcc-exclusive",
+     "method": "search_snippet",
+     "note": "Toynk listing: limited edition of 2,400"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "$10"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "SDCC 2022 lineup"
+    },
+    {
+     "field": "retailer",
+     "value": "Toynk",
+     "source_url": "https://www.toynk.com/products/disney-snow-white-85th-anniversary-limited-edition-enamel-pin-sdcc-exclusive",
+     "method": "search_snippet",
+     "note": "Toynk"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/monogram-toynk-sdcc-2022/up-charles-muntz",
+   "set_key": "lic/2022/monogram-toynk-sdcc-2022",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "$10 pre-event"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/monogram-toynk-sdcc-2022/ratatouille-15th",
+   "set_key": "lic/2022/monogram-toynk-sdcc-2022",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://www.toynk.com/products/disney-pixar-ratatouille-15th-anniversary-enamel-pin-sdcc-2022-exclusive",
+     "method": "search_snippet",
+     "note": "Toynk listing: 2,000"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/monogram-toynk-sdcc-2022/brave-10th",
+   "set_key": "lic/2022/monogram-toynk-sdcc-2022",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://www.toynk.com/products/disney-pixar-brave-10th-anniversary-enamel-pin-sdcc-2022-exclusive",
+     "method": "search_snippet",
+     "note": "limited edition of 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "$10"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/monogram-toynk-sdcc-2022/hercules-meg-25th",
+   "set_key": "lic/2022/monogram-toynk-sdcc-2022",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://www.toynk.com/products/disney-hercules-and-meg-25th-anniversary-enamel-pin-sdcc-2022-exclusive",
+     "method": "search_snippet",
+     "note": "Toynk listing: limited edition of 2,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 1600,
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "other coverage gives 1,600 - conflict"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://sdccblog.com/2022/06/toynk-disney-san-diego-comic-con-2022-exclusives-debuts/",
+     "method": "search_snippet",
+     "note": "$10"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/monogram-sdcc-2023-robin-hood-50th/robin-hood-50th-oversized",
+   "set_key": "lic/2023/monogram-sdcc-2023-robin-hood-50th",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney's Robin Hood 50th Anniversary Oversized Enamel Pin",
+     "source_url": "https://www.cinequest.com/store/SDCC-2022-EXCLUSIVES/DISNEYS-ROBIN-HOOD-SDCC-EXCLUSIVE-50TH-ANNIVERSARY-OVERSIZED-ENAMEL-PIN.html",
+     "method": "search_snippet",
+     "note": "listing"
+    },
+    {
+     "field": "edition_size",
+     "value": 1400,
+     "source_url": "https://www.cinequest.com/store/SDCC-2022-EXCLUSIVES/DISNEYS-ROBIN-HOOD-SDCC-EXCLUSIVE-50TH-ANNIVERSARY-OVERSIZED-ENAMEL-PIN.html",
+     "method": "search_snippet",
+     "note": "1,400 worldwide; shared exclusive with Holzeheimer's Distribution"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.cinequest.com/store/SDCC-2022-EXCLUSIVES/DISNEYS-ROBIN-HOOD-SDCC-EXCLUSIVE-50TH-ANNIVERSARY-OVERSIZED-ENAMEL-PIN.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "size_mm",
+     "value": 76,
+     "source_url": "https://www.cinequest.com/store/SDCC-2022-EXCLUSIVES/DISNEYS-ROBIN-HOOD-SDCC-EXCLUSIVE-50TH-ANNIVERSARY-OVERSIZED-ENAMEL-PIN.html",
+     "method": "search_snippet",
+     "note": "2.78 x 3 in"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "gold plated"
+     ],
+     "source_url": "https://www.cinequest.com/store/SDCC-2022-EXCLUSIVES/DISNEYS-ROBIN-HOOD-SDCC-EXCLUSIVE-50TH-ANNIVERSARY-OVERSIZED-ENAMEL-PIN.html",
+     "method": "search_snippet",
+     "note": "gold-plated"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Monogram International",
+     "source_url": "https://www.cinequest.com/store/SDCC-2022-EXCLUSIVES/DISNEYS-ROBIN-HOOD-SDCC-EXCLUSIVE-50TH-ANNIVERSARY-OVERSIZED-ENAMEL-PIN.html",
+     "method": "search_snippet",
+     "note": "Monogram"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://www.cinequest.com/store/SDCC-2022-EXCLUSIVES/DISNEYS-ROBIN-HOOD-SDCC-EXCLUSIVE-50TH-ANNIVERSARY-OVERSIZED-ENAMEL-PIN.html",
+     "method": "search_snippet",
+     "note": "SDCC 2023 (Robin Hood 1973, 50th = 2023)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/toynk-sdcc-2023/indiana-jones-hat-lasso",
+   "set_key": "lic/2023/toynk-sdcc-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Indiana Jones hat and lasso pin",
+     "source_url": "https://www.toynk.com/blogs/comic-con-events/unlock-rare-finds-top-5-limited-edition-pins-at-san-diego-comic-con-2023",
+     "method": "search_snippet",
+     "note": "described in Toynk SDCC 2023 blog"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Indiana Jones"
+     ],
+     "source_url": "https://www.toynk.com/blogs/comic-con-events/unlock-rare-finds-top-5-limited-edition-pins-at-san-diego-comic-con-2023",
+     "method": "search_snippet",
+     "note": "Lucasfilm (Disney-owned) - in scope per rule 11 provisional"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://www.toynk.com/blogs/comic-con-events/unlock-rare-finds-top-5-limited-edition-pins-at-san-diego-comic-con-2023",
+     "method": "search_snippet",
+     "note": "SDCC 2023"
+    },
+    {
+     "field": "retailer",
+     "value": "Toynk",
+     "source_url": "https://www.toynk.com/blogs/comic-con-events/unlock-rare-finds-top-5-limited-edition-pins-at-san-diego-comic-con-2023",
+     "method": "search_snippet",
+     "note": "Toynk"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-sdcc-2023/groot",
+   "set_key": "lic/2023/figpin-sdcc-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Groot (Guardians of the Galaxy Vol. 3)",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN SDCC 2023 list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Groot"
+     ],
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "units stated"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "SDCC 2023"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-sdcc-2023/jafar-glitter",
+   "set_key": "lic/2023/figpin-sdcc-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jafar (glitter)",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN SDCC 2023 list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jafar"
+     ],
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "units stated"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "SDCC 2023"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "glitter"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-sdcc-2023/emperor-palpatine",
+   "set_key": "lic/2023/figpin-sdcc-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Emperor (Return of the Jedi variant)",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN SDCC 2023 list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Emperor Palpatine"
+     ],
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "units stated"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "SDCC 2023"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://figpin.com/blogs/news/san-diego-comic-con-2023-event-exclusives",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-nycc-2023/hulk",
+   "set_key": "lic/2023/figpin-nycc-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hulk (Avengers: Beyond Earth's Mightiest)",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN NYCC 2023 list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hulk"
+     ],
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "product_code",
+     "value": "1488",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "NYCC 2023"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "units stated"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glow in the dark"
+     ],
+     "source_url": "https://www.target.com/p/figpin-figpin-exclusive-nycc-2023-marvel-avengers-beyond-earth-s-mightiest-hulk-glow-in-the-dark-enamel-pin-1488/-/A-93217566",
+     "method": "search_snippet",
+     "note": "listing title: glow in the dark, #1488"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-nycc-2023/dumbo-disney100",
+   "set_key": "lic/2023/figpin-nycc-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dumbo (Disney100)",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN NYCC 2023 list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo"
+     ],
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "product_code",
+     "value": "1478",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "NYCC 2023"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "units stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-nycc-2023/yoda-force-ghost",
+   "set_key": "lic/2023/figpin-nycc-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Yoda (Return of the Jedi, Force ghost)",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN NYCC 2023 list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Yoda"
+     ],
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "product_code",
+     "value": "1567",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "NYCC 2023"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "units stated"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-nycc-2023/ahsoka-tano",
+   "set_key": "lic/2023/figpin-nycc-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ahsoka Tano",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN NYCC 2023 list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ahsoka Tano"
+     ],
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "product_code",
+     "value": "1475",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "NYCC 2023"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "units stated"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://figpin.com/blogs/news/new-york-comic-con-2023-figpin-event-exclusives",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-nycc-2023/black-panther",
+   "set_key": "lic/2023/figpin-nycc-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Black Panther",
+     "source_url": "https://www.rawstarwars.com/product-page/figpin-black-panther-1487-nycc-2023-exclusive-enamel-pin",
+     "method": "search_snippet",
+     "note": "reseller listing only (NYCC 2023 exclusive per title)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Black Panther"
+     ],
+     "source_url": "https://www.rawstarwars.com/product-page/figpin-black-panther-1487-nycc-2023-exclusive-enamel-pin",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "product_code",
+     "value": "1487",
+     "source_url": "https://www.rawstarwars.com/product-page/figpin-black-panther-1487-nycc-2023-exclusive-enamel-pin",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://www.rawstarwars.com/product-page/figpin-black-panther-1487-nycc-2023-exclusive-enamel-pin",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://www.rawstarwars.com/product-page/figpin-black-panther-1487-nycc-2023-exclusive-enamel-pin",
+     "method": "search_snippet",
+     "note": "NYCC 2023"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.rawstarwars.com/product-page/figpin-black-panther-1487-nycc-2023-exclusive-enamel-pin",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/figpin-nycc-2023/captain-america",
+   "set_key": "lic/2023/figpin-nycc-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Captain America",
+     "source_url": "https://www.rawstarwars.com/product-page/figpin-captain-america-1485-nycc-2023-exclusive-enamel-pin",
+     "method": "search_snippet",
+     "note": "reseller listing only (NYCC 2023 exclusive per title)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Captain America"
+     ],
+     "source_url": "https://www.rawstarwars.com/product-page/figpin-captain-america-1485-nycc-2023-exclusive-enamel-pin",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "product_code",
+     "value": "1485",
+     "source_url": "https://www.rawstarwars.com/product-page/figpin-captain-america-1485-nycc-2023-exclusive-enamel-pin",
+     "method": "search_snippet",
+     "note": "FiGPiN number"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://www.rawstarwars.com/product-page/figpin-captain-america-1485-nycc-2023-exclusive-enamel-pin",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://www.rawstarwars.com/product-page/figpin-captain-america-1485-nycc-2023-exclusive-enamel-pin",
+     "method": "search_snippet",
+     "note": "NYCC 2023"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.rawstarwars.com/product-page/figpin-captain-america-1485-nycc-2023-exclusive-enamel-pin",
+     "method": "search_snippet",
+     "note": "Marvel"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2022/figpin-d23-expo-2022",
+   "field": "pins",
+   "searched": "3 queries (FiGPiN blog, DPB, hobbyDB)",
+   "note": "resolved: the 5 previously unnamed of 10 are Boba Fett #502, Boo #807, Ariel, Tigger, Witch Marge #1035 (FiGPiN round-up and per-pin FiGPiN posts)"
+  },
+  {
+   "key": "lic/2022/figpin-d23-expo-2022/boba-fett-502",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead resolved: FiGPiN's own post places Boba Fett #502 at D23 2022; now a pin record"
+  },
+  {
+   "key": "lic/2022/figpin-d23-expo-2022/tigger",
+   "field": "product_code",
+   "searched": "2 queries",
+   "note": "number and edition size not found; FiGPiN says Pooh and Tigger came out as silver-plated white-glitter FiGPiNs at 2022 conventions (not explicitly D23); later common Tigger #1093 is not the D23 pin"
+  },
+  {
+   "key": "lic/2022/figpin-d23-expo-2022/ariel",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "conflict: #992 (FiGPiN D23 post) vs #991 (FiGPiN retailer roundup); both recorded"
+  },
+  {
+   "key": "lic/2022/figpin-d23-expo-2022/stitch",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "existing 1,000 from round-up kept; hobbyDB names Swim Trunks variant"
+  },
+  {
+   "key": "lic/2022/figpin-disney-parks-shopdisney-wave-1/wdw-50th-chip-dale",
+   "field": "pin_structure",
+   "searched": "1 query (shopDisney)",
+   "note": "hold released: shopDisney has separate Chip (#774) and Dale (#775) FiGPiN listings, so two separate pins; recorded as wdw-50th-chip and wdw-50th-dale"
+  },
+  {
+   "key": "lic/2022/figpin-disney-parks-wave-2/hercules",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "FiGPiN number not in snippet"
+  },
+  {
+   "key": "lic/2022/figpin-disney-parks-wave-2/hades",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "FiGPiN number not in snippet"
+  },
+  {
+   "key": "lic/2022/figpin-disney-parks-wave-2/woody",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "FiGPiN number not in snippet"
+  },
+  {
+   "key": "lic/2022/figpin-disney-parks-doctor-strange-scarlet-witch/doctor-strange",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "FiGPiN number not in snippet"
+  },
+  {
+   "key": "lic/2022/figpin-disney-parks-doctor-strange-scarlet-witch/scarlet-witch",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "FiGPiN number not in snippet"
+  },
+  {
+   "key": "lic/2023/figpin-disney-parks-wave-4",
+   "field": "pins",
+   "searched": "1 query (FiGPiN roundup)",
+   "note": "resolved: roundup names 14 members (#1024-1183); DPB instead calls Ariel, Ursula and Disney 100 Mickey & Minnie the fourth wave - grouping differs"
+  },
+  {
+   "key": "lic/2023/figpin-disney-parks-wave-4/captain-rx-24",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "hold: 'shopDisney UK only' grouping for #1024, #1025, #1160, #1161 seen only in a snippet summary; confirm before using"
+  },
+  {
+   "key": "lic/2023/figpin-disney-parks-wave-4/mickey-mouse",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "hold: possible duplicate - #1140 Mickey / #1139 Minnie may be the Jan 2023 Disney100 shopDisney FiGPiNs (lic/2023/figpin-disney100-shopdisney-mickey-minnie); not linked by any source"
+  },
+  {
+   "key": "lic/2023/figpin-disney100-shopdisney-mickey-minnie",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "possible same pins as wave-4 Mickey #1140 / Minnie #1139 (DPB groups Disney 100 Mickey & Minnie in a fourth wave); not confirmed, no numbers added"
+  },
+  {
+   "key": "lic/2023/figpin-disney100-wave-3",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "resolved: Buzz #1480, Pinocchio #1479"
+  },
+  {
+   "key": "lic/2023/figpin-disney100-halloween/pluto",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "conflict: DPB #1531 vs ToyShnip retailer #1530 (DPB gives #1530 to Goofy); both recorded"
+  },
+  {
+   "key": "lic/2023/figpin-disney100-halloween",
+   "field": "product_code",
+   "searched": "2 queries",
+   "note": "resolved: Donald #1528, Mickey #1529, Goofy #1530, Pluto #1531 (DPB)"
+  },
+  {
+   "key": "lic/2022/her-universe-marvel-disney-parks/innovate",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "Shuri only from a third-party retailer listing name; no official/news source names the character - treat as provisional"
+  },
+  {
+   "key": "lic/2022/her-universe-marvel-disney-parks/lead",
+   "field": "characters",
+   "searched": "3 queries",
+   "note": "character still not found in any snippet; hold kept"
+  },
+  {
+   "key": "lic/2022/her-universe-shopdisney-star-wars-limited-release",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "conflict largely resolved: DPB set of 4 is Rebel/Warrior/Leader/Hero (4 Oct 2022); Survivor was a separate shopDisney release (27 Sep 2022, own DPB post). Ahsoka-survivor key kept under this set for continuity"
+  },
+  {
+   "key": "lic/2022/her-universe-shopdisney-star-wars-limited-release/leia-rebel",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "hold: Leia named for 'Rebel' only in WDWNT Disneyland article; shopDisney Rebel pin linked by brand + word, not by a shopDisney listing"
+  },
+  {
+   "key": "lic/2022/her-universe-shopdisney-star-wars-limited-release/ahsoka-survivor",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "Survivor post snippet describes starbird + text and does not name Ahsoka; Ahsoka from WDWNT only"
+  },
+  {
+   "key": "lic/2023/dpb-store-elemental-ember-wade/ember-wade",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold released: DPB describes a single pin-on-pin design featuring Ember & Wade (one pin); maker still not stated"
+  },
+  {
+   "key": "lic/2023/dpb-store-elemental-vivisteria-flower/ember-wade-vivisteria",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure - title says 'Disney Pin' (singular) but not explicit; maker not stated"
+  },
+  {
+   "key": "lic/2023/dpb-store",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: other DPB Store pins surfaced (Chip n Dale & Donald Halloween, Jack & Sally NBC 30th, Stitch & Angel Beach Days, Moana Tropical Paradise); years/details not in snippet"
+  },
+  {
+   "key": "lic/2023/uncas-amazon-disney100-jumbo-stitch-peter-pan/stitch",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "resolved: DPB credits Uncas International for the Stitch & Peter Pan pair"
+  },
+  {
+   "key": "lic/2023/amazon-disney100-jumbo-alice-ariel",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "still not named in the Alice & Ariel snippet; sibling posts credit Uncas International - likely but not confirmed; key kept without uncas-"
+  },
+  {
+   "key": "lic/2023/uncas-amazon-disney100-belle-floral",
+   "field": "set",
+   "searched": "1 query",
+   "note": "DPB Belle Floral post: fifth and final release in the series, after Ariel & Snow White and Cinderella & Jasmine"
+  },
+  {
+   "key": "lic/2023/amazon-disney100-halloween-mystery",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "maker still not named; holds on all six designs kept"
+  },
+  {
+   "key": "lic/2023/hooked-company-disney100",
+   "field": "set",
+   "searched": "1 query",
+   "note": "lead: DPB post 'Disney 100 Pin Collection by Hooked & Company' (licensed maker); date, contents not in snippet"
+  },
+  {
+   "key": "lic/amazon-disney-pets-le-pin-set",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: DPB 'Disney Pets Limited Edition Pin Set at Amazon'; year, maker and contents not in snippet"
+  },
+  {
+   "key": "lic/2022/funko-snow-white-pop-with-pin/snow-white",
+   "field": "visual_description",
+   "searched": "1 query",
+   "note": "pin design not described in snippet"
+  },
+  {
+   "key": "lic/2022/funko-pocahontas-pop-with-pin/pocahontas",
+   "field": "visual_description",
+   "searched": "1 query",
+   "note": "pin design not described in snippet"
+  },
+  {
+   "key": "lic/2022/funko-belle-pop-with-pin/belle",
+   "field": "visual_description",
+   "searched": "1 query",
+   "note": "pin design not described in snippet"
+  },
+  {
+   "key": "lic/2022/funko-merida-pop-with-pin/merida",
+   "field": "visual_description",
+   "searched": "1 query",
+   "note": "pin design not described in snippet"
+  },
+  {
+   "key": "lic/2022/funko-cinderella-pop-with-pin/cinderella",
+   "field": "visual_description",
+   "searched": "1 query",
+   "note": "pin design not described in snippet"
+  },
+  {
+   "key": "lic/funko-rapunzel-pop-with-pin",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: DPB Rapunzel POP! with Exclusive Pin ($15, Funko); undated in snippet"
+  },
+  {
+   "key": "lic/2022/funko-belle-gold-pop-with-pin",
+   "field": "set",
+   "searched": "1 query",
+   "note": "lead: retailer lists '2022 NEW' Belle (Gold) and Merida (Gold) Pop! with pin (Funko Shop exclusive); not tied to an official source"
+  },
+  {
+   "key": "lic/2023/funko",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "partly resolved: 2023 Funko holiday Pop! Pins (Mickey, Minnie, Pooh, Eeyore) found; no Funko Disney100 pin found"
+  },
+  {
+   "key": "lic/funko-disney-holiday-collectors-box",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: DPB 'Funko Pop! Disney Holiday Collectors Box includes 4 pins' (Donald, Goofy, Mickey, Minnie; Amazon); year not in snippet"
+  },
+  {
+   "key": "lic/funko-boxlunch-goofy-movie-powerline-large",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: BoxLunch listing Funko Pop! A Goofy Movie Powerline Large Enamel Pin; undated - boxlunch cell"
+  },
+  {
+   "key": "lic/2022-2023/hallmark",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no Hallmark-made Disney pin for 2022-2023 found; only lead is 'Hallmark + Disney Holiday Ever After Loungefly Mystery Pin' (Loungefly maker, Hallmark retailer, undated) - loungefly cell"
+  },
+  {
+   "key": "lic/2022/monogram-toynk-sdcc-2022/snow-white-85th",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead resolved: sdccblog lists Snow White 85th (LE 2,400, $10) in Toynk's SDCC 2022 Disney+ booth lineup"
+  },
+  {
+   "key": "lic/2022/monogram-toynk-sdcc-2022/hercules-meg-25th",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "conflict: 2,000 (Toynk) vs 1,600 (convention coverage); both recorded"
+  },
+  {
+   "key": "lic/2022/monogram-toynk-sdcc-2022",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "Toynk sold pins from 15+ Disney titles at the booth (incl. Encanto, Aladdin, Lilo & Stitch); those pins not individually named in snippets"
+  },
+  {
+   "key": "lic/2023/monogram-sdcc-2023-robin-hood-50th/robin-hood-50th-oversized",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters on the pin not stated; retailer listing only"
+  },
+  {
+   "key": "lic/2023/toynk-sdcc-2023/indiana-jones-hat-lasso",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "maker, edition size and price not in snippet"
+  },
+  {
+   "key": "lic/2023/figpin-sdcc-2023/groot",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "FiGPiN number not in snippet"
+  },
+  {
+   "key": "lic/2023/figpin-sdcc-2023/jafar-glitter",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "FiGPiN number not in snippet"
+  },
+  {
+   "key": "lic/2023/figpin-sdcc-2023/emperor-palpatine",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "FiGPiN number not in snippet"
+  },
+  {
+   "key": "lic/2023/figpin-sdcc-2023-avengers-60th-deluxe-box-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); contents not named"
+  },
+  {
+   "key": "lic/2023/sdcc",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "partly resolved: SDCC 2023 non-Loungefly Disney pins found from FiGPiN (Groot, Jafar, Emperor, Avengers box), Monogram (Robin Hood 50th) and Toynk (Indiana Jones); list likely incomplete"
+  },
+  {
+   "key": "lic/2023/figpin-nycc-2023/black-panther",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "reseller only; not seen on FiGPiN list snippet; edition size unknown"
+  },
+  {
+   "key": "lic/2023/figpin-nycc-2023/captain-america",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "reseller only; edition size unknown"
+  },
+  {
+   "key": "lic/2023/figpin-nycc-2023-x-men-97-deluxe-box-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: FiGPiN NYCC 2023 X-Men '97 Deluxe Box Set, 500 units, own logo pin; confirm pin structure (contents not named)"
+  },
+  {
+   "key": "lic/2022/nycc",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no non-Loungefly Disney pin for NYCC 2022 found (FiGPiN NYCC 2022 exclusive found was Sailor Moon, not Disney)"
+  },
+  {
+   "key": "lic/2022/loungefly-hot-topic-disney-retro-blind-box",
+   "field": "pins",
+   "searched": "0 new queries (budget)",
+   "note": "holds kept: no new per-design source found; mystery designs not individually confirmed"
+  },
+  {
+   "key": "lic/2022/loungefly-hot-topic-chibi-princess-friends-blind-box",
+   "field": "pins",
+   "searched": "0 new queries (budget)",
+   "note": "holds kept: no new per-design source found; mystery designs not individually confirmed"
+  },
+  {
+   "key": "lic/2023/amazon-disney100-halloween-mystery",
+   "field": "pins",
+   "searched": "0 new queries (budget)",
+   "note": "holds kept: no new per-design source found; mystery designs not individually confirmed"
+  },
+  {
+   "key": "lic/2023/figpin-disney100-wave-2",
+   "field": "edition_size",
+   "searched": "0 queries (budget)",
+   "note": "not re-searched; edition size and price still unconfirmed"
+  }
+ ],
+ "discovery_notes": "Follow-up to packet 259 (b089); reuses its keys. 30 standard WebSearches, snippets only, blocked domains on every query. Resolved: 5 unnamed D23 2022 FiGPiNs (Boba Fett #502, Boo #807, Ariel, Tigger, Witch Marge #1035) plus Mickey #976/Minnie #977; parks wave 4 full list (#1024-1183); Disney100 wave 3 and Halloween numbers; Chip/Dale WDW50 are separate FiGPiNs (hold released); Ember & Wade is one pin-on-pin (hold released); Stitch jumbo maker Uncas; Snow White 85th and Boba #502 leads dated 2022. New: parks FiGPiN wave 2 and Doctor Strange/Scarlet Witch (2022), Funko Pop!-with-pin 2022 (5) and Funko holiday Pop! Pins 2023 (4), Toynk SDCC 2022 Wreck-It Ralph, FiGPiN SDCC 2023 and NYCC 2023, Monogram Robin Hood 50th, Toynk Indiana Jones, Uncas Cinderella & Jasmine, DPB Vivisteria. Still open: Her Universe Lead character, Innovate (Shuri) retailer-only, Alice/Ariel and Halloween mystery makers, Hallmark none, NYCC 2022 none; Retro/Chibi/Amazon Halloween holds kept."
+}

@@ -1,0 +1,3343 @@
+{
+ "packet_id": "backfill-b035-dlr-oe-2015",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b035",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+   "title": "Disneyland Diamond Celebration Event!",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+   "title": "Disneyland 60 Mystery Pin Sets",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-05-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+   "title": "DLR - 60th Diamond Celebration - Mystery Pin Pack",
+   "publisher": "Let's Go Pin Trading (fan site)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-60th-framed-pin-set",
+   "title": "Disneyland 60th Framed Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.diszine.com/content/disney-gives-fans-a-peek-at-the-disneyland-resort-diamond-celebration-pins",
+   "title": "Disney Gives Fans a Peek at the Disneyland Resort Diamond Celebration Pins",
+   "publisher": "DisZine",
+   "published_date": "2015-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/2015/05/11/details-on-disneylands-diamond-celebration-merchandise/",
+   "title": "Details On Disneyland's Diamond Celebration Merchandise",
+   "publisher": "DisKingdom",
+   "published_date": "2015-05-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://canadasdisneyconnection.com/products/disneyland-60-diamond-celebration-pintrading-starter-set-donald",
+   "title": "Disneyland 60 Diamond Celebration Pintrading starter set Donald",
+   "publisher": "Canada's Disney Connection (reseller)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/79838",
+   "title": "79838",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hiddenmickeydisney.com/2015-pins/",
+   "title": "2015 Pins - Hidden Mickey Disney Pin & Medallion Collection",
+   "publisher": "Hidden Mickey Disney (fan site)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/get-to-know-hidden-mickey-series.78041/",
+   "title": "GUIDE - Get to Know: Hidden Mickey Series",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.distradingpins4u.com/Disney-Trading-Pin-112220-DLR-2015-Hidden-Mickey-p/disney-pin-112220.htm",
+   "title": "DLR - 2015 Hidden Mickey Diamond Attractions - Autopia",
+   "publisher": "DisTradingPins4U (reseller)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.distradingpins4u.com/Disney-Trading-Pin-111949-DLR-2015-Hidden-Mickey-p/disney-pin-111949.htm",
+   "title": "DLR - 2015 Hidden Mickey Diamond Characters - Wendy Darling Chaser",
+   "publisher": "DisTradingPins4U (reseller)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://collectrandom.com/shop/dlr-horsedrawn-street-car-diamond-celebration-hidden-mickey-2015-disney-pin-e2/",
+   "title": "DLR Horsedrawn Street Car Diamond Celebration Hidden Mickey 2015 Disney Pin",
+   "publisher": "Collect Random Disney Pins (reseller)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-3",
+   "title": "New Disney Pins July 2015 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2015-week-2",
+   "title": "New Disney Pins December 2015 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2015-week-1",
+   "title": "New Disney Pins December 2015 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2015-week-2",
+   "title": "New Disney Pins November 2015 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/2015-mickeys-halloween-party-pins",
+   "title": "2015 Mickey's Halloween Party Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-5",
+   "title": "New Disney Pins October 2015 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/cast-member-holiday-2015-pin",
+   "title": "Cast Member Holiday 2015 Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-60th-anniversary-pin-series/",
+   "title": "Disneyland 60th Anniversary Pin Series",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/dmr-diamond-celebration-pin/",
+   "title": "DMR Diamond Celebration Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-pixar-inside-out-pin-set-joy-and-sadness-44496.html",
+   "title": "Disney Pixar Inside Out Pin Set - Joy and Sadness",
+   "publisher": "YourWDWStore (reseller)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/2015-hidden-mickey-wave-b-mystery-pins-released",
+   "title": "2015 Hidden Mickey Wave B Mystery Pins Released",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2015/oe-single/mickey-60-logo",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse 60 Logo Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single OE pin listed in Diamond Celebration event post"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-single/jeweled-sleeping-beauty-castle",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Jeweled Sleeping Beauty Castle Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single OE pin listed in Diamond Celebration event post"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-single/stained-glass-sleeping-beauty-castle",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stained Glass Sleeping Beauty Castle Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single OE pin listed in Diamond Celebration event post"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-single/jeweled-d",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Jeweled D Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single OE pin listed in Diamond Celebration event post"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-single/jeweled-ear-hat",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Jeweled Ear Hat Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single OE pin listed in Diamond Celebration event post"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-single/diamond-collection-mickey",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Diamond Collection Mickey Mouse Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single OE pin listed in Diamond Celebration event post"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-single/stone-character-head",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stone Character Head Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single OE pin listed in Diamond Celebration event post"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-single/mickey-vintage-label",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse Vintage Label Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single OE pin listed in Diamond Celebration event post"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-single/disneyland-60th-anniversary-july-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland 60th Anniversary Pin (July 2015)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-3",
+     "method": "search_snippet",
+     "note": "Standard pin marking 17 July 2015 anniversary"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-3",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland 60th Anniversary Mystery Pin Pack",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "DL 60 mystery pin pack"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 16,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "16 pins in total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Five random pins per pack"
+    },
+    {
+     "field": "price",
+     "value": 26.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Per pack"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Both DL60 mystery sets stated as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Post dated 21 May 2015, Diamond Celebration start"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Checklist titles it DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "format",
+     "value": "mystery pack",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Randomly selected pins per pack"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland 60th Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Smaller DL60 mystery box set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "8 pins in total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Both sets open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015 launch"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Diamond Celebration"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Blind box"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-set/60th-framed-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland 60th Framed Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60th-framed-pin-set",
+     "method": "search_snippet",
+     "note": "Framed set of glitter/gem accented pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60th-framed-pin-set",
+     "method": "search_snippet",
+     "note": "Nine pins"
+    },
+    {
+     "field": "price",
+     "value": 225,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60th-framed-pin-set",
+     "method": "search_snippet",
+     "note": "Retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60th-framed-pin-set",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60th-framed-pin-set",
+     "method": "search_snippet",
+     "note": "OE but sold only during the Diamond Celebration"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed with May 2015 Diamond Celebration event items"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60th-framed-pin-set",
+     "method": "search_snippet",
+     "note": "Diamond Celebration exclusive"
+    },
+    {
+     "field": "format",
+     "value": "framed multi-pin set",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60th-framed-pin-set",
+     "method": "search_snippet",
+     "note": "Nine pins in one frame"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-set/diamond-celebration-starter-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland 60 Diamond Celebration Pin Trading Starter Set",
+     "source_url": "https://canadasdisneyconnection.com/products/disneyland-60-diamond-celebration-pintrading-starter-set-donald",
+     "method": "search_snippet",
+     "note": "Starter set with lanyard"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://canadasdisneyconnection.com/products/disneyland-60-diamond-celebration-pintrading-starter-set-donald",
+     "method": "search_snippet",
+     "note": "Four pins in the starter set"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://canadasdisneyconnection.com/products/disneyland-60-diamond-celebration-pintrading-starter-set-donald",
+     "method": "search_snippet",
+     "note": "Disneyland 60 Diamond Celebration"
+    },
+    {
+     "field": "format",
+     "value": "starter set (multi-pin pack with lanyard)",
+     "source_url": "https://www.diszine.com/content/disney-gives-fans-a-peek-at-the-disneyland-resort-diamond-celebration-pins",
+     "method": "search_snippet",
+     "note": "Starter sets listed in DL60 lineup"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-attractions",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 Hidden Mickey Diamond Celebration Attractions",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "DLR 60th attractions HM set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Pin count in hiddenmickeydisney 2015 DLR table"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey (cast lanyard)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Cast trade-only pins with silver Mickey icon"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07",
+     "source_url": "https://www.disneypinforum.com/threads/get-to-know-hidden-mickey-series.78041/",
+     "method": "search_snippet",
+     "note": "DLR 2015 wave A debuted July 2015 after port-strike delay"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Listed in the Disneyland 2015 table"
+    },
+    {
+     "field": "format",
+     "value": "hidden mickey series (cast lanyard)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Series with one chaser and one completer"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-characters",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 Hidden Mickey Diamond Celebration Characters",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "DLR 60th characters HM set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Pin count in hiddenmickeydisney 2015 DLR table"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey (cast lanyard)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Cast trade-only pins with silver Mickey icon"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07",
+     "source_url": "https://www.disneypinforum.com/threads/get-to-know-hidden-mickey-series.78041/",
+     "method": "search_snippet",
+     "note": "DLR 2015 wave A debuted July 2015 after port-strike delay"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Listed in the Disneyland 2015 table"
+    },
+    {
+     "field": "format",
+     "value": "hidden mickey series (cast lanyard)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Series with one chaser and one completer"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-set/hidden-mickey-villain-neckties",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 Hidden Mickey Disney Villain Neckties",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Shared DLR/WDW release per forum guide"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Pin count in hiddenmickeydisney 2015 DLR table"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey (cast lanyard)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Cast trade-only pins with silver Mickey icon"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07",
+     "source_url": "https://www.disneypinforum.com/threads/get-to-know-hidden-mickey-series.78041/",
+     "method": "search_snippet",
+     "note": "DLR 2015 wave A debuted July 2015 after port-strike delay"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Listed in the Disneyland 2015 table"
+    },
+    {
+     "field": "format",
+     "value": "hidden mickey series (cast lanyard)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Series with one chaser and one completer"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-set/hidden-mickey-mad-tea-party-tea-cups",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 Hidden Mickey Mad Tea Party Tea Cups",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "DLR tea cup HM set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Pin count in hiddenmickeydisney 2015 DLR table"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey (cast lanyard)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Cast trade-only pins with silver Mickey icon"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07",
+     "source_url": "https://www.disneypinforum.com/threads/get-to-know-hidden-mickey-series.78041/",
+     "method": "search_snippet",
+     "note": "DLR 2015 wave A debuted July 2015 after port-strike delay"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Listed in the Disneyland 2015 table"
+    },
+    {
+     "field": "format",
+     "value": "hidden mickey series (cast lanyard)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Series with one chaser and one completer"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-set/hidden-mickey-disney-ducks",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 Hidden Mickey Disney Ducks",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "DLR ducks HM set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Pin count in hiddenmickeydisney 2015 DLR table"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey (cast lanyard)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Cast trade-only pins with silver Mickey icon"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07",
+     "source_url": "https://www.disneypinforum.com/threads/get-to-know-hidden-mickey-series.78041/",
+     "method": "search_snippet",
+     "note": "DLR 2015 wave A debuted July 2015 after port-strike delay"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Listed in the Disneyland 2015 table"
+    },
+    {
+     "field": "format",
+     "value": "hidden mickey series (cast lanyard)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Series with one chaser and one completer"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-set/hidden-mickey-character-silhouettes",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 Hidden Mickey Character Silhouettes",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "DLR silhouettes HM set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Pin count in hiddenmickeydisney 2015 DLR table"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey (cast lanyard)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Cast trade-only pins with silver Mickey icon"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07",
+     "source_url": "https://www.disneypinforum.com/threads/get-to-know-hidden-mickey-series.78041/",
+     "method": "search_snippet",
+     "note": "DLR 2015 wave A debuted July 2015 after port-strike delay"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Listed in the Disneyland 2015 table"
+    },
+    {
+     "field": "format",
+     "value": "hidden mickey series (cast lanyard)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Series with one chaser and one completer"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-set/hidden-mickey-mickey-food-icons",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 Hidden Mickey Mickey Mouse Food Icons",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Listed among DLR 2015 HM sets"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey (cast lanyard)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Cast trade-only pins with silver Mickey icon"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07",
+     "source_url": "https://www.disneypinforum.com/threads/get-to-know-hidden-mickey-series.78041/",
+     "method": "search_snippet",
+     "note": "DLR 2015 wave A debuted July 2015 after port-strike delay"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Listed in the Disneyland 2015 table"
+    },
+    {
+     "field": "format",
+     "value": "hidden mickey series (cast lanyard)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Series with one chaser and one completer"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/oe-set/inside-out-joy-sadness-card",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Inside Out Joy and Sadness Pin Card",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2015-week-2",
+     "method": "search_snippet",
+     "note": "Sadness and Joy pins on one card"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2015-week-2",
+     "method": "search_snippet",
+     "note": "Stated open edition"
+    },
+    {
+     "field": "price",
+     "value": 13.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2015-week-2",
+     "method": "search_snippet",
+     "note": "Retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2015-week-2",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2015-week-2",
+     "method": "search_snippet",
+     "note": "Listed in Dec 2015 wk2 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort; Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2015-week-2",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2015/oe/mickey-60-logo",
+   "set_key": "dlr/2015/oe-single/mickey-60-logo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse 60 Logo Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed among Diamond Celebration event pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Snippet labels it open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Retail price per snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Diamond Celebration merchandise event, 20-21 May 2015, Disneyland Hotel"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "2015 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Disneyland Hotel event; Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Characters as described in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Primary figure per snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "Crystal inset stones with glitter and translucent fill",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Paraphrased from snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe/jeweled-sleeping-beauty-castle",
+   "set_key": "dlr/2015/oe-single/jeweled-sleeping-beauty-castle",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jeweled Sleeping Beauty Castle Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed among Diamond Celebration event pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Snippet labels it open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Retail price per snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Diamond Celebration merchandise event, 20-21 May 2015, Disneyland Hotel"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "2015 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Disneyland Hotel event; Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Castle pin with glitter and inset crystal stones",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Paraphrased from snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe/stained-glass-sleeping-beauty-castle",
+   "set_key": "dlr/2015/oe-single/stained-glass-sleeping-beauty-castle",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stained Glass Sleeping Beauty Castle Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed among Diamond Celebration event pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Snippet labels it open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Retail price per snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Diamond Celebration merchandise event, 20-21 May 2015, Disneyland Hotel"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "2015 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Disneyland Hotel event; Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe/jeweled-d",
+   "set_key": "dlr/2015/oe-single/jeweled-d",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jeweled D Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed among Diamond Celebration event pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Snippet labels it open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Retail price per snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Diamond Celebration merchandise event, 20-21 May 2015, Disneyland Hotel"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "2015 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Disneyland Hotel event; Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe/jeweled-ear-hat",
+   "set_key": "dlr/2015/oe-single/jeweled-ear-hat",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jeweled Ear Hat Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed among Diamond Celebration event pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Snippet labels it open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Retail price per snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Diamond Celebration merchandise event, 20-21 May 2015, Disneyland Hotel"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "2015 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Disneyland Hotel event; Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe/diamond-collection-mickey",
+   "set_key": "dlr/2015/oe-single/diamond-collection-mickey",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Diamond Collection Mickey Mouse Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed among Diamond Celebration event pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Snippet labels it open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Retail price per snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Diamond Celebration merchandise event, 20-21 May 2015, Disneyland Hotel"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "2015 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Disneyland Hotel event; Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Characters as described in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Primary figure per snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey-head shape, glitter fill with clear faceted stones",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Paraphrased from snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe/stone-character-head",
+   "set_key": "dlr/2015/oe-single/stone-character-head",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stone Character Head Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed among Diamond Celebration event pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Snippet labels it open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 13.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Retail price per snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Diamond Celebration merchandise event, 20-21 May 2015, Disneyland Hotel"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "2015 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Disneyland Hotel event; Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Characters as described in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Primary figure per snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "Clear acrylic stone over Mickey, Minnie and Sleeping Beauty Castle",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Paraphrased from snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe/mickey-vintage-label",
+   "set_key": "dlr/2015/oe-single/mickey-vintage-label",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Vintage Label Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Listed among Diamond Celebration event pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Snippet labels it open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Retail price per snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Diamond Celebration merchandise event, 20-21 May 2015, Disneyland Hotel"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "2015 event"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Disneyland Hotel event; Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Single pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Characters as described in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Primary figure per snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pin-on-pin, silver glitter, Mickey under a Disneyland banner",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Paraphrased from snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe/disneyland-60th-anniversary-july-2015",
+   "set_key": "dlr/2015/oe-single/disneyland-60th-anniversary-july-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland 60th Anniversary Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-3",
+     "method": "search_snippet",
+     "note": "Commemorates 17 July 2015 anniversary"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-3",
+     "method": "search_snippet",
+     "note": "Retail price per snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-3",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-07-16",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-3",
+     "method": "search_snippet",
+     "note": "Available at Disneyland Resort on 16 July 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-3",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-3",
+     "method": "search_snippet",
+     "note": "Sold at Disneyland Resort"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-3",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/flynn-rider",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Flynn Rider"
+     ],
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Named as a design of the 16-pin pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Flynn Rider",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/lightning-mcqueen",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lightning McQueen"
+     ],
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Named as a design of the 16-pin pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Lightning McQueen",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/dopey",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dopey"
+     ],
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Named as a design of the 16-pin pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Dopey",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/flik",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Flik"
+     ],
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Named as a design of the 16-pin pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Flik",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/pinocchio",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio"
+     ],
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Named as a design of the 16-pin pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Pinocchio",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/mad-hatter",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mad Hatter"
+     ],
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Named as a design of the 16-pin pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Mad Hatter",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/mr-toad",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mr. Toad"
+     ],
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Named as a design of the 16-pin pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Mr. Toad",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/woody",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Woody"
+     ],
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Named as a design of the 16-pin pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Woody",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/jiminy-cricket",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jiminy Cricket"
+     ],
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Named as a design of the 16-pin pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Jiminy Cricket",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/genie",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Genie"
+     ],
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Named as a design of the 16-pin pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Genie",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/maleficent",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Named as a design of the 16-pin pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Maleficent",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/nemo-dory",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Nemo",
+      "Dory"
+     ],
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Named as a design of the 16-pin pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Nemo",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/mater",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mater"
+     ],
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Named as a design of the 16-pin pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Mater",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/sulley",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Sulley"
+     ],
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Named as a design of the 16-pin pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Sulley",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/peter-pan",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Peter Pan"
+     ],
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Named as a design of the 16-pin pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Peter Pan",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/buzz-lightyear",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Buzz Lightyear"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Named in DPB 16-name list for the pack"
+    },
+    {
+     "field": "main_character",
+     "value": "Buzz Lightyear",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Per design listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "Set stated open edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+     "method": "search_snippet",
+     "note": "May 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "DLR 60th Diamond Celebration"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+     "method": "search_snippet",
+     "note": "Fan checklist lists each design as a separate pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-starter-set/donald-space-mountain",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-starter-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://canadasdisneyconnection.com/products/disneyland-60-diamond-celebration-pintrading-starter-set-donald",
+     "method": "search_snippet",
+     "note": "Reseller lists it as one of four starter set pins"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://canadasdisneyconnection.com/products/disneyland-60-diamond-celebration-pintrading-starter-set-donald",
+     "method": "search_snippet",
+     "note": "Donald"
+    },
+    {
+     "field": "attraction",
+     "value": "Space Mountain",
+     "source_url": "https://canadasdisneyconnection.com/products/disneyland-60-diamond-celebration-pintrading-starter-set-donald",
+     "method": "search_snippet",
+     "note": "Donald shown with Space Mountain, D60 and diamond"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://canadasdisneyconnection.com/products/disneyland-60-diamond-celebration-pintrading-starter-set-donald",
+     "method": "search_snippet",
+     "note": "Diamond Celebration 2015"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://canadasdisneyconnection.com/products/disneyland-60-diamond-celebration-pintrading-starter-set-donald",
+     "method": "search_snippet",
+     "note": "Individual pin from a 4-pin set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/diamond-celebration-starter-set/minnie-mickeys-fun-wheel",
+   "set_key": "dlr/2015/oe-set/diamond-celebration-starter-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mypincentral.com/pin/79838",
+     "method": "search_snippet",
+     "note": "Database entry says part of the 4-pin starter set"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://mypincentral.com/pin/79838",
+     "method": "search_snippet",
+     "note": "Minnie"
+    },
+    {
+     "field": "attraction",
+     "value": "Mickey's Fun Wheel",
+     "source_url": "https://mypincentral.com/pin/79838",
+     "method": "search_snippet",
+     "note": "Square 60D pin with Mickey's Fun Wheel"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://mypincentral.com/pin/79838",
+     "method": "search_snippet",
+     "note": "Diamond Celebration 2015"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/79838",
+     "method": "search_snippet",
+     "note": "Individual pin from a 4-pin set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-attractions/monorail-completer",
+   "set_key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-attractions",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Monorail (completer)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Named completer of this DLR 2015 set"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey completer",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 series"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "DLR table"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Single completer pin"
+    },
+    {
+     "field": "attraction",
+     "value": "Disneyland Monorail",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer subject"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-attractions/autopia",
+   "set_key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-attractions",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Autopia",
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-112220-DLR-2015-Hidden-Mickey-p/disney-pin-112220.htm",
+     "method": "search_snippet",
+     "note": "Listed as DLR 2015 HM Diamond Attractions pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey (cast lanyard)",
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-112220-DLR-2015-Hidden-Mickey-p/disney-pin-112220.htm",
+     "method": "search_snippet",
+     "note": "HM series"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-112220-DLR-2015-Hidden-Mickey-p/disney-pin-112220.htm",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-112220-DLR-2015-Hidden-Mickey-p/disney-pin-112220.htm",
+     "method": "search_snippet",
+     "note": "DLR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-112220-DLR-2015-Hidden-Mickey-p/disney-pin-112220.htm",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-attractions/horsedrawn-street-car",
+   "set_key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-attractions",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Horse-drawn Street Car",
+     "source_url": "https://collectrandom.com/shop/dlr-horsedrawn-street-car-diamond-celebration-hidden-mickey-2015-disney-pin-e2/",
+     "method": "search_snippet",
+     "note": "Reseller lists a DLR 2015 Diamond Celebration HM street car pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://collectrandom.com/shop/dlr-horsedrawn-street-car-diamond-celebration-hidden-mickey-2015-disney-pin-e2/",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://collectrandom.com/shop/dlr-horsedrawn-street-car-diamond-celebration-hidden-mickey-2015-disney-pin-e2/",
+     "method": "search_snippet",
+     "note": "DLR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://collectrandom.com/shop/dlr-horsedrawn-street-car-diamond-celebration-hidden-mickey-2015-disney-pin-e2/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-characters/rapunzel-completer",
+   "set_key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-characters",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rapunzel (completer)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Named completer of this DLR 2015 set"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey completer",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 series"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "DLR table"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Single completer pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer subject"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-characters/wendy-darling-chaser",
+   "set_key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-characters",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Wendy Darling (chaser)",
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-111949-DLR-2015-Hidden-Mickey-p/disney-pin-111949.htm",
+     "method": "search_snippet",
+     "note": "Reseller lists DLR 2015 HM Diamond Characters Wendy chaser"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Wendy Darling"
+     ],
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-111949-DLR-2015-Hidden-Mickey-p/disney-pin-111949.htm",
+     "method": "search_snippet",
+     "note": "Wendy"
+    },
+    {
+     "field": "main_character",
+     "value": "Wendy Darling",
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-111949-DLR-2015-Hidden-Mickey-p/disney-pin-111949.htm",
+     "method": "search_snippet",
+     "note": "Wendy"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey chaser",
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-111949-DLR-2015-Hidden-Mickey-p/disney-pin-111949.htm",
+     "method": "search_snippet",
+     "note": "Chaser variant"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-111949-DLR-2015-Hidden-Mickey-p/disney-pin-111949.htm",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-111949-DLR-2015-Hidden-Mickey-p/disney-pin-111949.htm",
+     "method": "search_snippet",
+     "note": "DLR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-111949-DLR-2015-Hidden-Mickey-p/disney-pin-111949.htm",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/hidden-mickey-villain-neckties/captain-hook-completer",
+   "set_key": "dlr/2015/oe-set/hidden-mickey-villain-neckties",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Captain Hook (completer)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Named completer of this DLR 2015 set"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey completer",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 series"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "DLR table"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Single completer pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Captain Hook"
+     ],
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Captain Hook",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer subject"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/hidden-mickey-mad-tea-party-tea-cups/purple-tea-cup-completer",
+   "set_key": "dlr/2015/oe-set/hidden-mickey-mad-tea-party-tea-cups",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Purple Tea Cup (completer)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Named completer of this DLR 2015 set"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey completer",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 series"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "DLR table"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Single completer pin"
+    },
+    {
+     "field": "attraction",
+     "value": "Mad Tea Party",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer subject"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/hidden-mickey-disney-ducks/huey-dewey-louie-completer",
+   "set_key": "dlr/2015/oe-set/hidden-mickey-disney-ducks",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Huey, Dewey and Louie (completer)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Named completer of this DLR 2015 set"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey completer",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 series"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "DLR table"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Single completer pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Huey",
+      "Dewey",
+      "Louie"
+     ],
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Huey",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer subject"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/hidden-mickey-character-silhouettes/great-prince-completer",
+   "set_key": "dlr/2015/oe-set/hidden-mickey-character-silhouettes",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Great Prince of the Forest (completer)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Named completer of this DLR 2015 set"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey completer",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 series"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "DLR table"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Single completer pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Great Prince of the Forest"
+     ],
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Great Prince of the Forest",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer subject"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2015/oe/mickey-60-logo",
+   "field": "release_location",
+   "searched": "DPB event post; 3 queries",
+   "note": "Snippet ties pin to the May 2015 event; whether it was also sold in-park afterwards is not stated"
+  },
+  {
+   "key": "dlr/2015/oe/jeweled-sleeping-beauty-castle",
+   "field": "release_location",
+   "searched": "DPB event post; 3 queries",
+   "note": "Snippet ties pin to the May 2015 event; whether it was also sold in-park afterwards is not stated"
+  },
+  {
+   "key": "dlr/2015/oe/stained-glass-sleeping-beauty-castle",
+   "field": "release_location",
+   "searched": "DPB event post; 3 queries",
+   "note": "Snippet ties pin to the May 2015 event; whether it was also sold in-park afterwards is not stated"
+  },
+  {
+   "key": "dlr/2015/oe/jeweled-d",
+   "field": "release_location",
+   "searched": "DPB event post; 3 queries",
+   "note": "Snippet ties pin to the May 2015 event; whether it was also sold in-park afterwards is not stated"
+  },
+  {
+   "key": "dlr/2015/oe/jeweled-ear-hat",
+   "field": "release_location",
+   "searched": "DPB event post; 3 queries",
+   "note": "Snippet ties pin to the May 2015 event; whether it was also sold in-park afterwards is not stated"
+  },
+  {
+   "key": "dlr/2015/oe/diamond-collection-mickey",
+   "field": "release_location",
+   "searched": "DPB event post; 3 queries",
+   "note": "Snippet ties pin to the May 2015 event; whether it was also sold in-park afterwards is not stated"
+  },
+  {
+   "key": "dlr/2015/oe/stone-character-head",
+   "field": "release_location",
+   "searched": "DPB event post; 3 queries",
+   "note": "Snippet ties pin to the May 2015 event; whether it was also sold in-park afterwards is not stated"
+  },
+  {
+   "key": "dlr/2015/oe/mickey-vintage-label",
+   "field": "release_location",
+   "searched": "DPB event post; 3 queries",
+   "note": "Snippet ties pin to the May 2015 event; whether it was also sold in-park afterwards is not stated"
+  },
+  {
+   "key": "dlr/2015/oe/stained-glass-sleeping-beauty-castle",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "One snippet says Mickey and Minnie stand before a diamond with the castle; may belong to another pin (stone head) - confirm"
+  },
+  {
+   "key": "dlr/2015/oe/disneyland-60th-anniversary-july-2015",
+   "field": "edition_type",
+   "searched": "DPB July wk3; 2 queries",
+   "note": "hold: edition size not stated; one search summary called it a limited release - confirm OE vs LE before use"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "15 designs from a fan per-design checklist (one duplicate Dopey line) plus Buzz from DPB's 16-name list; verify full checklist against DPB post"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/flik",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "A DPB product page 'Flik - Disneyland 60th Anniversary Pin' seen; link to this pack rests on title only"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-set",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "hold: mystery designs not individually confirmed - eight designs not named in any snippet"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-set",
+   "field": "price",
+   "searched": "3 queries",
+   "note": "Box price not stated in snippets"
+  },
+  {
+   "key": "dlr/2015/oe-set/60th-framed-pin-set",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure - snippet lists Dumbo, Tinker Bell, Buzz, Mike, Chip, Mickey, Dale, Mr. Toad, Dopey for 9 pins; one pin per name not stated"
+  },
+  {
+   "key": "dlr/2015/oe-set/60th-framed-pin-set",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "2016 packet left year open; snippet groups set with May 2015 event coverage - confirm first sale date"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-starter-set",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Two of four pins named; remaining two not found"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-starter-set",
+   "field": "price",
+   "searched": "2 queries",
+   "note": "Starter set retail price and edition type not stated"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-attractions/horsedrawn-street-car",
+   "field": "set_key",
+   "searched": "1 query",
+   "note": "hold: placement in Attractions set rests on title/subject only (reseller); not confirmed by a checklist"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-attractions",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Other attraction designs and chaser not named in snippets"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-characters",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "Fan table says 7; a forum guide says series ran six plus completer - confirm count"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-characters",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Regular character designs not named; regular Wendy Darling pin implied by chaser but not recorded"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-villain-neckties",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Necktie designs other than Captain Hook completer not named"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-mad-tea-party-tea-cups",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Tea cup colours other than purple completer not named; forum notes fakes appeared Sep 2015"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-disney-ducks",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Duck designs other than the nephews completer not named"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-character-silhouettes",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Silhouette designs other than Great Prince completer not named"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-mickey-food-icons",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "Count, completer and designs not in snippets"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-*",
+   "field": "edition_type",
+   "searched": "3 queries",
+   "note": "DLR 2015 HM wave B (Nov 2015) sets not identified; DPB wave B post covers WDW pouch sale"
+  },
+  {
+   "key": "dlr/2015/oe-set/inside-out-joy-sadness-card",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - 'pins on the same card' unclear"
+  },
+  {
+   "key": "dlr/2015/oe-set/inside-out-joy-sadness-card",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "Reseller lists 2015-09-01 vs DPB Dec 2015 - conflict"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event/event-logo",
+   "field": "release",
+   "searched": "Disneyland Diamond Celebration Event!; snippets",
+   "note": "LE 1,500 event logo pin ($14.95) and LE 500 super jumbo ($150) at May 2015 event - LE lead for dlr-le 2015 cell"
+  },
+  {
+   "key": "dlr/2015/keys-to-the-kingdom",
+   "field": "release",
+   "searched": "Disneyland Diamond Celebration Event!; snippets",
+   "note": "Keys to the Kingdom boxed set, 5 key pins for original lands, LE 750, $125 - LE lead"
+  },
+  {
+   "key": "dlr/2015/60th-countdown-series",
+   "field": "release",
+   "searched": "Disneyland 60th Anniversary Pin Series; snippets",
+   "note": "Monthly diamond countdown pins LE 3,000 (July silver LE 5,000) - LE lead"
+  },
+  {
+   "key": "dlr/2015/ap-diamond-series",
+   "field": "release",
+   "searched": "Disney Gives Fans a Peek at the Disneyland Resort Diamond Celebration Pins; snippets",
+   "note": "Bi-monthly AP stained-glass hinged diamond pins from May 2015 (Pirates first, LE 3,000) - LE lead"
+  },
+  {
+   "key": "dlr/2015/dmr-diamond-celebration",
+   "field": "release",
+   "searched": "DMR Diamond Celebration Pin; snippets",
+   "note": "Disney Movie Rewards Diamond Celebration pin, 15 Jul 2015, limited release - lead"
+  },
+  {
+   "key": "dlr/2015/60th-jumbo",
+   "field": "release",
+   "searched": "New Disney Pins July 2015 Week 3; snippets",
+   "note": "60th Anniversary jumbo LE 1,000 $79.95; Diamond D Snow White LE 3,000; Diamond Decades $15.95 - LE leads"
+  },
+  {
+   "key": "dlr/2015/diamond-wreath",
+   "field": "release",
+   "searched": "New Disney Pins December 2015 Week 2; snippets",
+   "note": "Four Diamond Wreath pins (Mickey, Minnie, Pluto, Chip & Dale) LE 2,000 each, 10 Dec 2015 - LE lead"
+  },
+  {
+   "key": "dlr/2015/ap-happy-holidays",
+   "field": "release",
+   "searched": "New Disney Pins December 2015 Week 1; snippets",
+   "note": "AP Happy Holidays 2015 pin and ornament, Anna and Elsa, LE 500 - LE lead"
+  },
+  {
+   "key": "dlr/2015/cast-member-holiday",
+   "field": "release",
+   "searched": "Cast Member Holiday 2015 Pin; snippets",
+   "note": "Cast Member Holiday 2015 Stitch pin LE 1,000, cast stores - LE lead"
+  },
+  {
+   "key": "dlr/2015/halloween-pumpkin-mickey",
+   "field": "release",
+   "searched": "New Disney Pins October 2015 Week 5; snippets",
+   "note": "Halloween 2015 Pumpkin Mickey dangle LE 2,000, 31 Oct, DL and WDW - LE lead; no DLR Halloween Time OE found"
+  },
+  {
+   "key": "dlr/2015/mickeys-halloween-party",
+   "field": "release",
+   "searched": "2015 Mickey's Halloween Party Pins; snippets",
+   "note": "DLR MHP 2015 party pins (Goofy, castle, Ursula, Mickey and Pluto, Mickey) from 25 Sep; edition/price not stated - lead"
+  },
+  {
+   "key": "dlr/2015/oe/haunted-mansion-holiday-2015",
+   "field": "release",
+   "searched": "2015 Mickey's Halloween Party Pins; snippets",
+   "note": "Search summaries conflict on a HMH pin released 9 Sep 2015 at DLR; not recorded - verify"
+  },
+  {
+   "key": "dlr/2015/oe/splash-mountain",
+   "field": "release",
+   "searched": "New Disney Pins November 2015 Week 2; snippets",
+   "note": "Two OE Splash Mountain pins spotted Nov 2015 'at Disney Parks'; Disneyland not named - lead"
+  },
+  {
+   "key": "dlr/2015/haunted-mansion-puzzle",
+   "field": "release",
+   "searched": "New Disney Pins November 2015 Week 2; snippets",
+   "note": "HM character connection puzzle mystery box, LE pin per box, $12.95, 12 Nov 2015 DL and WDW - LE lead"
+  },
+  {
+   "key": "dlr/2015/60th-framed-le",
+   "field": "release",
+   "searched": "Disneyland 60th Framed Pin Set; snippets",
+   "note": "Separate 6-pin 60th framed set LE 300 at $325 seen in a summary - LE lead"
+  },
+  {
+   "key": "dlr/2015/diamond-collection-lanyard-medal",
+   "field": "release",
+   "searched": "Disney Gives Fans a Peek at the Disneyland Resort Diamond Celebration Pins; snippets",
+   "note": "Diamond Collection lanyard medal and DL60 trading bags/collector packs mentioned in previews; no details"
+  },
+  {
+   "key": "dlr/2015/oe-set/dca",
+   "field": "release",
+   "searched": "New Disney Pins July 2015 Week 3; snippets",
+   "note": "No DLR 2015 Disney California Adventure OE pin found in snippets"
+  },
+  {
+   "key": "dlr/2015/*",
+   "field": "product_code",
+   "searched": "all queries",
+   "note": "Pin numbers seen on fan/reseller pages appear to be database IDs from excluded sources; not recorded"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/flynn-rider",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/lightning-mcqueen",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/dopey",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/flik",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/pinocchio",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/mad-hatter",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/mr-toad",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/woody",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/jiminy-cricket",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/genie",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/maleficent",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/nemo-dory",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/mater",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/sulley",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/peter-pan",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/buzz-lightyear",
+   "field": "name",
+   "searched": "packet review",
+   "note": "hold: mystery design named only in a full checklist (fan site / DPB 16-name list), no per-design entry; pending maintainer decision on whether a full list counts as per-design confirmation"
+  }
+ ],
+ "discovery_notes": "DLR OE 2015 backfill; 28 WebSearch calls, snippets only, mostly Disney Pins Blog. No prior dlr/2015 keys. Diamond Celebration event OE singles, DL60 mystery pack (16 designs from fan checklist + DPB), 8-pin mystery box (held), framed set (held), DLR 2015 Hidden Mickey sets with named completers. LE items left as leads."
+}

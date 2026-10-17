@@ -1,0 +1,730 @@
+{
+ "packet_id": "backfill-b114-dlr-le-2016-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b114",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+   "title": "New Disney Pins March 2016 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-03"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+   "title": "New Disney Pins March 2016 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-03"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2016-week-1",
+   "title": "New Disney Pins April 2016 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-04"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+   "title": "New Disney Pins May 2016 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-05"
+  },
+  {
+   "url": "https://www.diszine.com/content/new-disney-trading-pins-coming-to-disney-parks-in-2016",
+   "title": "New Disney Trading Pins Coming to Disney Parks in 2016",
+   "publisher": "DisZine",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-12"
+  },
+  {
+   "url": "https://chipandco.com/a-look-at-new-pins-coming-to-disney-parks-in-2016-226556/",
+   "title": "A Look at New Pins Coming to Disney Parks in 2016",
+   "publisher": "Chip and Company",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-12"
+  },
+  {
+   "url": "https://themainstreetmouse.com/2015/12/31/look-ahead-at-new-pins-coming-to-disney-parks-in-2016/",
+   "title": "Look Ahead at New Pins Coming to Disney Parks in 2016",
+   "publisher": "The Main Street Mouse",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-12-31"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/date-night-disneyland-2016-pin-release",
+   "title": "Date Night at Disneyland 2016 Pin Release",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-06"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+   "title": "New Disney Pins November 2016 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/mickeys-halloween-party-2016-pins/",
+   "title": "Mickey's Halloween Party 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-09"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2016/diamond-d-pin-of-the-month",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland 60th Diamond D pin of the month",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "Diamond D monthly series continued into 2016"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.diszine.com/content/new-disney-trading-pins-coming-to-disney-parks-in-2016",
+     "method": "search_snippet",
+     "note": "preview: more Disneyland D character pins in the new year, all LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://chipandco.com/a-look-at-new-pins-coming-to-disney-parks-in-2016-226556/",
+     "method": "search_snippet",
+     "note": "preview: each pin a run of 3,000, Disneyland Resort only"
+    },
+    {
+     "field": "format",
+     "value": "series of single pins released monthly",
+     "source_url": "https://themainstreetmouse.com/2015/12/31/look-ahead-at-new-pins-coming-to-disney-parks-in-2016/",
+     "method": "search_snippet",
+     "note": "preview: monthly series released at DLR, came in a lidded metal box"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://chipandco.com/a-look-at-new-pins-coming-to-disney-parks-in-2016-226556/",
+     "method": "search_snippet",
+     "note": "DLR only"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/ap-60th-diamond-collection",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Park 60th Passholder collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "bi-monthly 60th passholder series continued in 2016"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "format",
+     "value": "series of single pins released bi-monthly",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "bi-monthly passholder collection"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "DLR passholder release"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/earth-day-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Earth Day 2016",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2016-week-1",
+     "method": "search_snippet",
+     "note": "Earth Day LE pin shared DL and WDW"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2016-week-1",
+     "method": "search_snippet",
+     "note": "available 7 Apr 2016"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/graduation-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Graduation 2016",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "graduation LE pin shared DL and WDW"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "available 5 May 2016"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/star-wars-day-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "May the 4th / Revenge of the 5th 2016",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "Star Wars Day limited pins listed for that week at DL and WDW"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2016/diamond-d-pin-of-the-month/belle",
+   "set_key": "dlr/2016/diamond-d-pin-of-the-month",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland 60th Diamond D - Belle",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "Diamond D pin of the month featuring Belle"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "Belle from Beauty and the Beast"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "Belle"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "single monthly pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "$14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03-17",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "at DLR 17 Mar 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/ap-60th-diamond-collection/merryweather",
+   "set_key": "dlr/2016/ap-60th-diamond-collection",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland Park 60th Passholder - Merryweather",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "60th passholder collection pin featuring Merryweather"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Merryweather"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "Merryweather"
+    },
+    {
+     "field": "main_character",
+     "value": "Merryweather",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "Merryweather"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "hinged design"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "$15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "at DLR 10 Mar 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-2",
+     "method": "search_snippet",
+     "note": "passholder release at DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/earth-day-2016/mike-wazowski",
+   "set_key": "dlr/2016/earth-day-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Earth Day 2016 - Mike Wazowski",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2016-week-1",
+     "method": "search_snippet",
+     "note": "Earth Day pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mike Wazowski"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2016-week-1",
+     "method": "search_snippet",
+     "note": "Mike drawn as a globe"
+    },
+    {
+     "field": "main_character",
+     "value": "Mike Wazowski",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2016-week-1",
+     "method": "search_snippet",
+     "note": "Mike"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2016-week-1",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2016-week-1",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2016-week-1",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2016-week-1",
+     "method": "search_snippet",
+     "note": "7 Apr 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2016-week-1",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/graduation-2016/mickey",
+   "set_key": "dlr/2016/graduation-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Graduation 2016 - Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "2016 graduation pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "Mickey holding a diploma"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "5 May 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/star-wars-day-2016/revenge-of-the-5th",
+   "set_key": "dlr/2016/star-wars-day-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Revenge of the 5th 2016",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "limited Revenge of the 5th pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "listed as a single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "LR"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "5 May 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/star-wars-day-2016/may-the-4th",
+   "set_key": "dlr/2016/star-wars-day-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "May the 4th 2016",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "May the 4th pin listed the same week"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "listed as a single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "listed as limited"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "shared release"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2016/pin-trading-night",
+   "field": "release",
+   "searched": "3 queries",
+   "note": "still no 2016 DLR Pin Trading Night LE identified; results gave only DLP and HKDL 2016 trading events"
+  },
+  {
+   "key": "dlr/2016/season-of-the-force",
+   "field": "release",
+   "searched": "4 queries",
+   "note": "no 2016 Season of the Force pin found; event ran Nov 2015-Sep 2016; a MiceChat SotF pin article appears to cover a later year - not used"
+  },
+  {
+   "key": "dlr/2016/dca-food-wine-2016",
+   "field": "release",
+   "searched": "1 query",
+   "note": "no 2016 DCA Food & Wine pin found; festival returned for weekends Apr 2016, gift-card pins seen only for later years"
+  },
+  {
+   "key": "dlr/2016/diamond-celebration-closing",
+   "field": "release",
+   "searched": "2 queries",
+   "note": "no finale pin found; celebration ended 5 Sep 2016"
+  },
+  {
+   "key": "dlr/2016/diamond-d-pin-of-the-month",
+   "field": "members",
+   "searched": "4 queries",
+   "note": "only Belle (Mar 2016) found for 2016; Jan-Feb and later 2016 Diamond D pins not named; 2015 members belong to the 2015 cell"
+  },
+  {
+   "key": "dlr/2016/diamond-d-pin-of-the-month/belle",
+   "field": "visual_description",
+   "searched": "2 queries",
+   "note": "design not described beyond Belle on the Diamond D"
+  },
+  {
+   "key": "dlr/2016/ap-60th-diamond-collection",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "only Merryweather found for 2016; other 2016 bi-monthly passholder pins not named"
+  },
+  {
+   "key": "dlr/2016/earth-day-2016/mike-wazowski",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "price not posted in snippet"
+  },
+  {
+   "key": "dlr/2016/graduation-2016/mickey",
+   "field": "visual_description",
+   "searched": "1 query",
+   "note": "blog says Mickey with diploma; a reseller describes a selfie design - conflict unresolved, not recorded"
+  },
+  {
+   "key": "dlr/2016/star-wars-day-2016",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "edition size, price and designs of the May the 4th and Revenge of the 5th pins not in snippets"
+  },
+  {
+   "key": "dlr/2016/star-wars-day-2016/may-the-4th",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "exact date not stated (likely 4 May but not confirmed)"
+  },
+  {
+   "key": "dlr/2016/captain-america-civil-war",
+   "field": "lead",
+   "searched": "1 query",
+   "note": "lead: Civil War limited pins at DL+WDW 5 May 2016 (team pair, logo, Cross Bones per one summary); hold: confirm pin structure (pack or single pins)"
+  },
+  {
+   "key": "dlr/2016/mickeys-halloween-party-2016-costume-set",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "four costumed characters still not named in snippets; no members recorded"
+  },
+  {
+   "key": "dlr/2016/haunted-mansion-holiday-2016-puzzle-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "15-piece reveal/conceal puzzle set confirmed again; individual pieces still not named"
+  },
+  {
+   "key": "dlr/2016/disney-royalty-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "16 designs (8 princesses + 8 princes) still not individually named by a source; Aurora/Phillip pairing only pictured in a collector post"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "publisher post confirms 8 LR, 8 LE 235 chasers, 1 LE 120 Blue Dress Aurora; it names no other couples"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/rapunzel-flynn",
+   "field": "pin_name",
+   "searched": "follow-up B114, 2 queries",
+   "note": "hold: kept - no publisher source names this couple; still forum-only"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/duchess-omalley",
+   "field": "pin_name",
+   "searched": "follow-up B114, 2 queries",
+   "note": "hold: kept - no publisher source names this couple; still forum-only"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/beauty-beast",
+   "field": "pin_name",
+   "searched": "follow-up B114, 2 queries",
+   "note": "hold: kept - no publisher source names this couple; still forum-only"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/aurora-phillip",
+   "field": "pin_name",
+   "searched": "follow-up B114, 2 queries",
+   "note": "hold: kept - no publisher source names this couple; still forum-only"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/roger-anita",
+   "field": "pin_name",
+   "searched": "follow-up B114, 2 queries",
+   "note": "hold: kept - no publisher source names this couple; still forum-only"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/anna-kristoff",
+   "field": "pin_name",
+   "searched": "follow-up B114, 2 queries",
+   "note": "hold: kept - no publisher source names this couple; still forum-only"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/robin-hood-maid-marian",
+   "field": "pin_name",
+   "searched": "follow-up B114, 2 queries",
+   "note": "hold: kept - no publisher source names this couple; still forum-only"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/aurora-phillip-chaser",
+   "field": "pin_name",
+   "searched": "follow-up B114, 2 queries",
+   "note": "hold: kept - no publisher source names this couple; still forum-only"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 of B028 (DLR LE 2016). 29 standard WebSearch calls, blocked domains passed. New leads mostly Disney Pins Blog weekly roundups; series format from 2015-12 previews (DisZine, Chip and Co, Main Street Mouse). Reseller hits (ecrater, magicalearscollectibles, vintageradar, yourwdwstore) ignored. No holds released."
+}

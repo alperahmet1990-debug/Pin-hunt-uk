@@ -1,0 +1,559 @@
+{
+ "packet_id": "backfill-b246-dlp-2015-fu6",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b246",
+ "sources": [
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-april-2015/",
+   "title": "Pin Trading Kollektion - April 2015",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+   "title": "Pin Trading Kollektion aus dem Disneyland Paris - Juni 2015",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+   "title": "Pin Trading Kollektion - September 2015 im Disneyland",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+   "title": "Pin Trading Kollektion - Oktober 2015 im Disneyland",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-dezember-2015/",
+   "title": "Pin-Trading Kollektion Dezember 2015",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://salonmickey.wordpress.com/2015/04/06/april-2015-pin-releases/",
+   "title": "April 2015 Pin Releases",
+   "publisher": "Salon Mickey",
+   "published_date": "2015-04-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://salonmickey.wordpress.com/2015/04/13/alice-in-phantomland-pin-event/",
+   "title": "Alice in Phantomland Pin Event",
+   "publisher": "Salon Mickey",
+   "published_date": "2015-04-13",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc016.php",
+   "title": "passiondlp : Archives Disneyland Paris 2015 trimestre 2",
+   "publisher": "passiondlp",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.passiondlp.com/actus/arc017.php",
+   "title": "passiondlp : Archives Disneyland Paris 2015 trimestre 3",
+   "publisher": "passiondlp",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc018.php",
+   "title": "passiondlp : Archives Disneyland Paris 2015 trimestre 4",
+   "publisher": "passiondlp",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+   "title": "Pin Trading Day Frozen Fun - 11 Juillet 2015",
+   "publisher": "Disney Gazette forum",
+   "published_date": "2015-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://forum.disneygazette.fr/viewtopic.php?p=364533",
+   "title": "89eme Pin Trading Night - 28 Aout 2015",
+   "publisher": "Disney Gazette forum",
+   "published_date": "2015-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://forum.disneygazette.fr/pin-station-f13/serie-cast-member-20eme-anniversaire-t9864.html",
+   "title": "Series \"Cast Member Exclusive\"",
+   "publisher": "Disney Gazette forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://la-gazette-de-mickey.com/alice-in-phantomland-pin-event-news-1727-html/",
+   "title": "Retour sur le Pin Event \"Alice in Phantomland\"",
+   "publisher": "La Gazette de Mickey",
+   "published_date": "2015-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://la-gazette-de-mickey.com/bal-cendrillon-pin-event-news-1861-html/",
+   "title": "Retour sur le Pin Event \"Le Bal de Cendrillon\"",
+   "publisher": "La Gazette de Mickey",
+   "published_date": "2015-12-29",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneycentralplaza.com/t48662p60-alice-in-phantomland-pin-trading-event-30-mai-2015",
+   "title": "Alice in Phantomland [Pin Trading Event - 30 mai 2015] - Page 3",
+   "publisher": "Disney Central Plaza forum",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneycentralplaza.com/t50251-pin-trading-event-dream-19-septembre-2015",
+   "title": "[Pin Trading Event] Dream (19 septembre 2015)",
+   "publisher": "Disney Central Plaza forum",
+   "published_date": "2015-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneycentralplaza.com/t48464-le-pin-trading-a-disneyland-paris",
+   "title": "Le Pin Trading a Disneyland Paris",
+   "publisher": "Disney Central Plaza forum",
+   "published_date": "2015-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.chroniquedisney.fr/dossier/2018-pin-trading.htm",
+   "title": "Le Pin Trading a Disneyland Paris",
+   "publisher": "Chronique Disney",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-october-2015-pins",
+   "title": "Disneyland Paris October 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/12/01/disneyland-pariss-le-bal-de-cendrillon-pins/",
+   "title": "Disneyland Paris's Le Bal de Cendrillon Pins",
+   "publisher": "Diskingdom",
+   "published_date": "2015-12-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2015/pin-trading-day-april-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Day 25 April 2015",
+     "source_url": "https://salonmickey.wordpress.com/2015/04/06/april-2015-pin-releases/",
+     "method": "search_snippet",
+     "note": "Salon Mickey April post announces the month's Pin Trading Day for Sat 25 Apr"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-04-25",
+     "source_url": "https://salonmickey.wordpress.com/2015/04/06/april-2015-pin-releases/",
+     "method": "search_snippet",
+     "note": "Saturday 25 April 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland, Disneyland Park",
+     "source_url": "https://salonmickey.wordpress.com/2015/04/06/april-2015-pin-releases/",
+     "method": "search_snippet",
+     "note": "Post says the PTD is held at the Pueblo Trading Post in Frontierland"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "http://www.passiondlp.com/actus/arc016.php",
+     "method": "search_snippet",
+     "note": "Q2 archive notes a big crowd and the four pins of the day; designs not named in snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/pin-trading-night-june-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "87th Pin Trading Night (26 June 2015)",
+     "source_url": "https://la-gazette-de-mickey.com/alice-in-phantomland-pin-event-news-1727-html/",
+     "method": "search_snippet",
+     "note": "Alice event recap says next PTN is Fri 26 June 2015 at Sequoia Lodge, the 87th PTN"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/pin-trading-night-august-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "89th Pin Trading Night (28 August 2015)",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?p=364533",
+     "method": "search_snippet",
+     "note": "Forum thread title numbers the 28 Aug 2015 PTN as the 89th"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hotel New York",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?p=364533",
+     "method": "search_snippet",
+     "note": "Search summary places the 89th PTN at the New York hotel; venue rests on a summary of the thread, verify"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2015/april-2015-releases/disneyland-hotel",
+   "set_key": "dlp/2015/april-2015-releases",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Galerie Mickey, Disneyland Hotel",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-april-2015/",
+     "method": "search_snippet",
+     "note": "April page says pin and matching lanyard were sold only at Galerie Mickey in the Disneyland Hotel, from 11 Apr"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/april-2015-releases/ratatouille-attraction",
+   "set_key": "dlp/2015/april-2015-releases",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Remy presenting his new attraction and Place de Remy, Walt Disney Studios",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-april-2015/",
+     "method": "search_snippet",
+     "note": "April page calls it a new Ratatouille pin showing Remy proudly presenting his attraction; edition and price not in snippet"
+    },
+    {
+     "field": "attraction",
+     "value": "Ratatouille: L'Aventure Totalement Toquee de Remy",
+     "source_url": "https://salonmickey.wordpress.com/2015/04/06/april-2015-pin-releases/",
+     "method": "search_snippet",
+     "note": "Salon Mickey April post independently lists an attraction pin for the Ratatouille ride"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/frozen-summer-fun-2015/anna-elsa-party-fever",
+   "set_key": "dlp/2015/frozen-summer-fun-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Anna & Elsa \"Party Fieber Outfit\" Pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Quoted overview line: Anna & Elsa 'Party Fieber Outfit' Pin (unlimitiert) 7,99"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "One line item, singular Pin, one price, naming both sisters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/frozen-summer-fun-2015/anna-party-fever",
+   "set_key": "dlp/2015/frozen-summer-fun-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Anna \"Party Fieber Outfit\" Pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Quoted overview line: Anna 'Party Fieber Outfit Pin' (unlimitiert) 7,99"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-06-20",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Page: available from 20 June"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/frozen-summer-fun-2015/elsa-party-fever",
+   "set_key": "dlp/2015/frozen-summer-fun-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Elsa \"Party Fieber Outfit\" Pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Quoted overview line: Elsa 'Party Fieber Outfit' Pin (unlimitiert) 7,99"
+    },
+    {
+     "field": "visual_description",
+     "value": "Elsa in the summer outfit from the Frozen Fever short",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Page text says the pin shows her summery outfit as in the short film"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-06-20",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-juni-2015/",
+     "method": "search_snippet",
+     "note": "Page: available from 20 June"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/september-2015-le/dopey",
+   "set_key": "dlp/2015/september-2015-le",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Dopey on stage in the 'Vorhang auf' series, big smile, oversized garment",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Sept page: Seppl's appearance is limited to 700 shows; stage theme, broad smile"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland, Disneyland Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-september-2015/",
+     "method": "search_snippet",
+     "note": "Quoted: only at Pueblo Trading Post, Frontierland, EUR 13.99"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2015/frozen-summer-fun-2015/anna-elsa-party-fever",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "released: dein-dlrp June quoted line 'Anna & Elsa Party Fieber Outfit Pin (unlimitiert) 7,99' - one joint pin, separate from the two solo lines"
+  },
+  {
+   "key": "dlp/2015/frozen-summer-fun-2015/anna-elsa-party-fever",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; search snippets",
+   "note": "released: quoted June line is a single 'Pin' naming both Anna and Elsa at one price; one pin with two characters"
+  },
+  {
+   "key": "dlp/2015/frozen-summer-fun-2015/anna-party-fever",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "released: dein-dlrp June quoted line 'Anna Party Fieber Outfit Pin (unlimitiert): 7,99' - own item"
+  },
+  {
+   "key": "dlp/2015/frozen-summer-fun-2015/elsa-party-fever",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "released: dein-dlrp June quoted line 'Elsa Party Fieber Outfit Pin (unlimitiert): 7,99' - own item, described in page text"
+  },
+  {
+   "key": "dlp/2015/stage-show-series/jiminy-cricket",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "variant: same pin as dlp/2015/september-2015-le/dopey (Sept page quote: Seppl/Dopey stage pin, LE 700; no Jiminy in that article)"
+  },
+  {
+   "key": "dlp/2015/october-2015-releases/minnie-2016",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: Oct page again shows only two 2016 singles (medal 6.99, sorcerer Mickey with pink Minnie 8.99); still a merge candidate with mickey-sorcerer-2016"
+  },
+  {
+   "key": "dlp/2015/cast-member-exclusive-mickey-vampire/mickey-vampire",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: no source compares CM Mickey Vampire (3015, 22 Sep) with OE park Mickey vampire; do not merge"
+  },
+  {
+   "key": "dlp/2015/disney-dreams-pin-event-2015/peter-pan-shadow-giveaway",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: passiondlp Q3 has a Dreams gaway category but snippet names no design; Shadow giveaway still rests on one forum recap"
+  },
+  {
+   "key": "dlp/2015/april-2015-releases/ratatouille-attraction",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: April page calls it a new Remy attraction pin, but no source compares it with the Feb retro-series Ratatouille LE; do not merge yet"
+  },
+  {
+   "key": "dlp/2015/oe/mickey-tower-of-terror-2016-booster",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: no new source; Disney Pins Blog Oct 2015 page snippet does not list booster contents; Earfall Tower naming unresolved"
+  },
+  {
+   "key": "dlp/2015/oe/ariel-princess-booster-a-2015",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: not re-searched; no per-design evidence for the 8 princess booster records"
+  },
+  {
+   "key": "dlp/2015/cinderella-ball-event-2015/cinderella-ball-1",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: Diskingdom and La Gazette de Mickey snippets do not describe the 1. Cinderella Ball design"
+  },
+  {
+   "key": "dlp/2015/cinderella-ball-event-2015/locket-pins",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: passiondlp Q4 says 'locket pins' showing before and after midnight; number of pins still not stated"
+  },
+  {
+   "key": "dlp/2015/pin-trading-day-april-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Four PTD pins still unnamed. A March forum post lists 25 Apr princess OE and Ursula/Jessica LE releases and guesses a Peter Pan theme; speculation, not recorded"
+  },
+  {
+   "key": "dlp/2015/april-2015-le/disneyland-paris-anniversary-1992-2015",
+   "field": "release_date",
+   "searched": "WebSearch standard; search snippets",
+   "note": "lead: April overview names an LE 700 14.99 pin 'Anniversaire 12 Avril 15'; supports 12 Apr, but summary lists it beside the '1992 D 2015' pin - same pin not confirmed"
+  },
+  {
+   "key": "dlp/2015/april-2015-le/disneyland-paris-anniversary-1992-2015",
+   "field": "visual_description",
+   "searched": "WebSearch standard; search snippets",
+   "note": "April page: blue border, red banner reading '1992 D 2015', LE 700, Pueblo only, EUR 14.99 (summary of page text)"
+  },
+  {
+   "key": "dlp/2015/pin-trading-day-frozen-fun-july-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Three LE 1000 pins still unnamed; Gazette thread repeats Sven LE 500 13.99, others LE 1000 14.99, 2 of each per buyer, Sven sold out fast"
+  },
+  {
+   "key": "dlp/2015/pin-trading-day-frozen-fun-july-2015",
+   "field": "release_location",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Conflict: passiondlp Q2 announced the PTD at Pueblo Trading Post; Gazette thread has collectors queuing at the Liberty Arcade exit (queue point, sale venue unclear)"
+  },
+  {
+   "key": "dlp/2015/pin-trading-night-june-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Mini-jumbo and Refresh Lanyard pin still undescribed; passiondlp Q2 lists them with Flora, Cleo, Big Bad Wolf; edition sizes and prices not found"
+  },
+  {
+   "key": "dlp/2015/pin-trading-nights-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "2015 Refresh Lanyard designs still unnamed; Chronique Disney (2018) says DLP Refresh pins carry a nametag shape, given at PTNs with a Trader cocktail purchase"
+  },
+  {
+   "key": "dlp/2015/disney-dreams-pin-event-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Four gaways, mini-jumbo and event pins still unnamed. Central Plaza pre-event thread: smaller ballroom, about 300 places, LE 600 per organiser; castle jumbo only a guess"
+  },
+  {
+   "key": "dlp/2015/alice-in-phantomland-event",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Round pins and jumbo still unnamed. Gazette de Mickey recap: Predalle signed pins, jumbo price criticised; forum puts jumbo at EUR 69. Salon Mickey: 350 places, EUR 45 with brunch"
+  },
+  {
+   "key": "dlp/2015/cinderella-ball-event-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Event pins still not itemised. Gazette de Mickey recap: leftover pins at Pueblo until 3 Jan 2016, except gaways and mini-jumbo kept for a later event"
+  },
+  {
+   "key": "dlp/2015/oe-set/star-wars-booster-september-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Still only Vader and Yoda named (Dedicated to DLP); dein-dlrp line Booster SW Cutes, 4 pins, unlimited, 18.99; no other designs found"
+  },
+  {
+   "key": "dlp/2015/oe-set/nutcracker-booster-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Other three Christmas Mickey designs still unnamed; Dedicated to DLP Sept post gives 26 Sep and a 9.99 lanyard only"
+  },
+  {
+   "key": "dlp/2015/december-2015-le/villains-2016",
+   "field": "characters",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Villains still not confirmed. Lead: two summaries of the Dec page say the Snow White witch (Evil Queen) wishes a happy new year with her apple; garbled with a Tink section, not recorded"
+  },
+  {
+   "key": "dlp/2015/december-2015-le/tinker-bell-le-700",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "lead: Dec page summaries mention a section 'Tinkerbell als Botin des Fruehjahrs' near an LE 700 Pueblo pin; may be the villain pin text. No Tink LE 700 pin recorded"
+  },
+  {
+   "key": "dlp/2015/cast-member-exclusive-thumper/thumper",
+   "field": "original_price",
+   "searched": "WebSearch standard; search snippets",
+   "note": "lead: Gazette CM series page says the 2015 CM Exclusive (LE 3015) cost EUR 5, sold at internal shop Jessica on CM ID; not clear it covers all four 2015 CM pins"
+  },
+  {
+   "key": "dlp/2015/cast-member-exclusive-gusteau/gusteau",
+   "field": "visual_description",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Designs of the 2015 CM pins (Panpan, Gusteau, Mickey Vampire, Pluto Noel) still not described; Gusteau marks the ride 1st anniversary (passiondlp Q3)"
+  },
+  {
+   "key": "dlp/2015/october-2015-retro-mickey-minnie/coffee-date",
+   "field": "characters",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Characters on Coffee Date still not named; only line item in dein-dlrp Oct quick overview, no design text"
+  },
+  {
+   "key": "dlp/2015/october-2015-retro-mickey-minnie",
+   "field": "format",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Conflict: one Oct search summary calls the four retro pins a booster; quoted lines list each at 7.99 unlimited. Packet 388 format (sold singly) kept; confirm"
+  },
+  {
+   "key": "dlp/2015/frozen-summer-fun-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Dedicated to DLP's 8th Frozen pin still unidentified; dein-dlrp June gives five 7.99 pins plus 6.99 Olaf Summer"
+  }
+ ],
+ "discovery_notes": "Follow-up 6 of B037 (DLP 2015). 30 WebSearch calls, all search_snippet, blocked domains passed. Reuses 330-388 keys; no 2016 packets duplicated. No new pins. Released: Party Fever trio (quoted June lines), Jiminy stage = Seppl/Dopey. Added: PTD Apr venue, PTN 87th/89th."
+}

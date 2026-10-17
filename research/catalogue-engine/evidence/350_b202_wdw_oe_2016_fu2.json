@@ -1,0 +1,840 @@
+{
+ "packet_id": "backfill-b202-wdw-oe-2016-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b202",
+ "sources": [
+  {
+   "url": "https://archive.wdwnt.com/2016/07/photos-magic-kingdom-45th-anniversary-merchandise-collection-revealed/",
+   "title": "PHOTOS: Magic Kingdom 45th Anniversary Merchandise Collection Revealed",
+   "publisher": "WDW News Today",
+   "published_date": "2016-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/166396",
+   "title": "166396",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/166393",
+   "title": "166393",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/additional-magic-kingdom-45th-anniversary-pins/",
+   "title": "Additional Magic Kingdom 45th Anniversary Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-trading-medals.html",
+   "title": "Disney Trading Medals",
+   "publisher": "Your WDW Store",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+   "title": "2016 Disney Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://yourwdwstore.net/Disney-Annual-Pin--2016-Music-Magic-Memories--Sorcerer-Mickey-Mouse_p_44169.html",
+   "title": "Disney Annual Pin - 2016 Music Magic Memories - Sorcerer Mickey Mouse",
+   "publisher": "Your WDW Store",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/99294",
+   "title": "99294",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.distradingpins4u.com/Disney-Trading-Pin-118495-Star-Wars-Rogue-One-Hel-p/disney-pin-118495.htm",
+   "title": "Disney Trading Pin 118495 Star Wars: Rogue One Helmets Booster Pack",
+   "publisher": "DisTradingPins4U",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-rogue-one-helmet-pin-set/",
+   "title": "Star Wars Rogue One Helmet Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-10-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://parkpins.com/product/disney-star-wars-rogue-one-rebel-squadron-red-leader-pin-2/",
+   "title": "Disney Star Wars Rogue One Rebel Squadron Red Leader Pin",
+   "publisher": "Park Pins",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://vintageradar.com/en-us/products/2016-rebel-squadron-red-leader-star-wars-disney-pin",
+   "title": "2016 Rebel Squadron Red Leader Star Wars Disney Pin",
+   "publisher": "Vintage Radar",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://parkpins.com/product-category/disney-pins/movie/star-wars/",
+   "title": "Star Wars Archives - Park Pins",
+   "publisher": "Park Pins",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-tag-mystery-pin-collection/",
+   "title": "Disney TAG Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-07-14",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.distradingpins4u.com/Disney-Trading-Pin-113144-Disney-Streets-Disney-Pa-p/disney-pin-113144.htm",
+   "title": "Disney Trading Pin 113144 Disney Streets/Disney Parks - Street Signs Mystery Box - Donald Blvd.",
+   "publisher": "DisTradingPins4U",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.distradingpins4u.com/Disney-Trading-Pin-114317-Disney-Streets-Disney-Pa-p/disney-pin-114317.htm",
+   "title": "Disney Trading Pin 114317 Disney Streets/Disney Parks Street Signs Mystery Box - Dale Blvd. Only",
+   "publisher": "DisTradingPins4U",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.distradingpins4u.com/Disney-Trading-Pin-113667-Disney-Streets-Disney-P-p/disney-pin-113667.htm",
+   "title": "Disney Trading Pin 113667 Disney Streets/Disney Parks - Street Signs Mystery Box - Goofy Cir",
+   "publisher": "DisTradingPins4U",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.distradingpins4u.com/Disney-Trading-Pin-113668-Disney-Streets-Disney-Pa-p/disney-pin-113668.htm",
+   "title": "Disney Trading Pin 113668 Disney Streets/Disney Parks - Street Signs Mystery Box - Chip Rd.",
+   "publisher": "DisTradingPins4U",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-mystery-pins-disney-street-signs-choice-45278.html",
+   "title": "Disney Mystery Pins - Disney Street Signs - Choice",
+   "publisher": "Your WDW Store",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/149835",
+   "title": "149835",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-streets-mystery-pin-collection/",
+   "title": "Disney Streets Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.magicalearscollectibles.com/Disney-Birthstone-Pin--Mary-Poppins--April_p_10979.html",
+   "title": "Disney Birthstone Pin - Mary Poppins - April",
+   "publisher": "Magical Ears Collectibles",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.magicalearscollectibles.com/Disney-Birthstone-Pin--Jessica--July_p_10982.html",
+   "title": "Disney Birthstone Pin - Jessica - July",
+   "publisher": "Magical Ears Collectibles",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://madhousecollectibles.com/products/birthstone-july-jessica-rabbit-pin",
+   "title": "Birthstone - July - Jessica Rabbit Pin",
+   "publisher": "Madhouse Collectibles",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.diszine.com/content/new-disney-trading-pins-coming-to-disney-parks-in-2016",
+   "title": "New Disney Trading Pins Coming to Disney Parks in 2016",
+   "publisher": "DisZine",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://themainstreetmouse.com/2015/12/31/look-ahead-at-new-pins-coming-to-disney-parks-in-2016/",
+   "title": "Look Ahead at New Pins Coming to Disney Parks in 2016",
+   "publisher": "The Main Street Mouse",
+   "published_date": "2015-12-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneys-hollywood-studios-2016-pin-set",
+   "title": "Disney's Hollywood Studios 2016 Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://archive.wdwnt.com/2016/07/photos-magic-kingdom-45th-anniversary-merchandise-collection-revealed/",
+     "method": "search_snippet",
+     "note": "July 2016 preview: mystery set of eight different pins"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://archive.wdwnt.com/2016/07/photos-magic-kingdom-45th-anniversary-merchandise-collection-revealed/",
+     "method": "search_snippet",
+     "note": "Two random pins in each box"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://archive.wdwnt.com/2016/07/photos-magic-kingdom-45th-anniversary-merchandise-collection-revealed/",
+     "method": "search_snippet",
+     "note": "Described as a mystery set with randomly selected pins"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/additional-magic-kingdom-45th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "DPB: mystery set themed to Magic Kingdom attractions, 15.99 per box"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-set/music-magic-memories-mystery",
+   "claims": [
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-disney-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Two random pins per box from eight; logo-style designs per summary"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-set/disney-tag-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney TAG Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/disney-tag-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Luggage-tag themed mystery collection"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/disney-tag-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Two randomly selected pins per box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/disney-tag-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Eight pins in the collection"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/disney-tag-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Two pins per box"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/disney-tag-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-tag-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "US pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07",
+     "source_url": "https://disneypinsblog.com/disney-tag-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Post dated 14 Jul 2016 says set spotted in parks"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World, Disneyland Resort and Shop Parks app",
+     "source_url": "https://disneypinsblog.com/disney-tag-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Spotted at both US resorts and on the app"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2016/oe-set/disney-streets-mystery",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2016-01-21",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-disney-street-signs-choice-45278.html",
+     "method": "search_snippet",
+     "note": "Dealer listing for the street-sign mystery set gives release date 21 Jan 2016"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://mypincentral.com/pin/149835",
+     "method": "search_snippet",
+     "note": "Pin Central labels it the WDW Disney Streets 2015 mystery box or bag"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-disney-street-signs-choice-45278.html",
+     "method": "search_snippet",
+     "note": "Dealer says the collection has eight character pins"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery/seven-dwarfs-mine-train",
+   "set_key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery",
+   "claims": [
+    {
+     "field": "front_text",
+     "value": "Seven Dwarfs Mine Train",
+     "source_url": "https://mypincentral.com/pin/166396",
+     "method": "search_snippet",
+     "note": "Database entry: ride name in pale yellow on red background"
+    },
+    {
+     "field": "attraction",
+     "value": "Seven Dwarfs Mine Train",
+     "source_url": "https://mypincentral.com/pin/166396",
+     "method": "search_snippet",
+     "note": "Attraction named on the pin"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "45th (c) Disney FAC-046730-16127 Made in China",
+     "source_url": "https://mypincentral.com/pin/166396",
+     "method": "search_snippet",
+     "note": "Back stamp as summarised; tagged WDW 45th Anniversary"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mypincentral.com/pin/166396",
+     "method": "search_snippet",
+     "note": "16 in code and 45th mark; year inferred, not stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery/enchanted-tiki-room",
+   "set_key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery",
+   "claims": [
+    {
+     "field": "front_text",
+     "value": "Enchanted Tiki Room",
+     "source_url": "https://mypincentral.com/pin/166393",
+     "method": "search_snippet",
+     "note": "Database entry: silver lettering on dark blue background"
+    },
+    {
+     "field": "attraction",
+     "value": "Walt Disney's Enchanted Tiki Room",
+     "source_url": "https://mypincentral.com/pin/166393",
+     "method": "search_snippet",
+     "note": "Attraction named on the pin"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "45th (c) Disney FAC-046730-16127 Made in China",
+     "source_url": "https://mypincentral.com/pin/166393",
+     "method": "search_snippet",
+     "note": "Same back stamp as the Mine Train entry; silver back with Mickey heads"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/disney-streets-mystery/donald-boulevard",
+   "set_key": "wdw/2016/oe-set/disney-streets-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Blvd.",
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-113144-Disney-Streets-Disney-Pa-p/disney-pin-113144.htm",
+     "method": "search_snippet",
+     "note": "Dealer has a separate product page for this single street-sign design"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/disney-streets-mystery/dale-boulevard",
+   "set_key": "wdw/2016/oe-set/disney-streets-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dale Blvd.",
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-114317-Disney-Streets-Disney-Pa-p/disney-pin-114317.htm",
+     "method": "search_snippet",
+     "note": "Dealer has a separate product page for this single street-sign design"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/disney-streets-mystery/goofy-circle",
+   "set_key": "wdw/2016/oe-set/disney-streets-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy Cir",
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-113667-Disney-Streets-Disney-P-p/disney-pin-113667.htm",
+     "method": "search_snippet",
+     "note": "Dealer has a separate product page for this single street-sign design"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/disney-streets-mystery/chip-road",
+   "set_key": "wdw/2016/oe-set/disney-streets-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip Rd.",
+     "source_url": "https://www.distradingpins4u.com/Disney-Trading-Pin-113668-Disney-Streets-Disney-Pa-p/disney-pin-113668.htm",
+     "method": "search_snippet",
+     "note": "Dealer has a separate product page for this single street-sign design"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/rogue-one-squadron-leaders-booster/red-leader",
+   "set_key": "wdw/2016/oe-set/rogue-one-squadron-leaders-booster",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rogue One Rebel Squadron Red Leader",
+     "source_url": "https://parkpins.com/product/disney-star-wars-rogue-one-rebel-squadron-red-leader-pin-2/",
+     "method": "search_snippet",
+     "note": "Dealer sells this design as a single pin; title only"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://vintageradar.com/en-us/products/2016-rebel-squadron-red-leader-star-wars-disney-pin",
+     "method": "search_snippet",
+     "note": "Shop listing title dates the Red Leader pin 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/rogue-one-squadron-leaders-booster/gold-leader",
+   "set_key": "wdw/2016/oe-set/rogue-one-squadron-leaders-booster",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rogue One Rebel Squadron Gold Leader",
+     "source_url": "https://parkpins.com/product-category/disney-pins/movie/star-wars/",
+     "method": "search_snippet",
+     "note": "Dealer category lists a single Gold Leader pin; no date"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/birthstone-2016/april-mary-poppins",
+   "set_key": "wdw/2016/oe-set/birthstone-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Birthstone Pin - Mary Poppins - April",
+     "source_url": "https://www.magicalearscollectibles.com/Disney-Birthstone-Pin--Mary-Poppins--April_p_10979.html",
+     "method": "search_snippet",
+     "note": "Dealer per-design page for April Mary Poppins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://www.magicalearscollectibles.com/Disney-Birthstone-Pin--Mary-Poppins--April_p_10979.html",
+     "method": "search_snippet",
+     "note": "Dealer calls it limited release; conflicts with DPB open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/birthstone-2016/july-jessica-rabbit",
+   "set_key": "wdw/2016/oe-set/birthstone-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Birthstone Pin - Jessica - July",
+     "source_url": "https://www.magicalearscollectibles.com/Disney-Birthstone-Pin--Jessica--July_p_10982.html",
+     "method": "search_snippet",
+     "note": "Dealer per-design page for July Jessica"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://www.magicalearscollectibles.com/Disney-Birthstone-Pin--Jessica--July_p_10982.html",
+     "method": "search_snippet",
+     "note": "Dealer calls it limited release; conflicts with DPB"
+    },
+    {
+     "field": "pin_name",
+     "value": "Birthstone - July - Jessica Rabbit",
+     "source_url": "https://madhousecollectibles.com/products/birthstone-july-jessica-rabbit-pin",
+     "method": "search_snippet",
+     "note": "Second dealer per-design page"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://madhousecollectibles.com/products/birthstone-july-jessica-rabbit-pin",
+     "method": "search_snippet",
+     "note": "Second dealer says open edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://madhousecollectibles.com/products/birthstone-july-jessica-rabbit-pin",
+     "method": "search_snippet",
+     "note": "Sold at both US resorts per listing"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery/seven-dwarfs-mine-train",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: mystery designs not individually confirmed - DB entry shares 45th back stamp but does not say it is in the mystery set; URL-to-pin match inferred"
+  },
+  {
+   "key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery/enchanted-tiki-room",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: mystery designs not individually confirmed - DB entry tagged WDW 45th, same back stamp as Mine Train, but set membership not stated"
+  },
+  {
+   "key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery",
+   "field": "members",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "Six of eight attraction designs still unnamed; a Splash Mountain DB entry has a similar back but no 45th mark - not added"
+  },
+  {
+   "key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery",
+   "field": "edition_type",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "Still not stated as OE or limited release"
+  },
+  {
+   "key": "wdw/2016/mk-45th-lanyard-medal",
+   "field": "scope",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "scope: confirmed button/badge/non-pin (DPB names a lanyard medal apart from the pins; dealer files it under trading medals). Resolves pin-vs-medal hold"
+  },
+  {
+   "key": "wdw/2016/oe-set/music-magic-memories-mystery",
+   "field": "members",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "Eight designs still unnamed; no per-design entry found on any permitted site"
+  },
+  {
+   "key": "wdw/2016/oe/2016-dated-line",
+   "field": "sub_series",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "lead: dealer sells a '2016 Music Magic Memories' Sorcerer Mickey annual pin (date field says 2013); may be the dated line theme - not linked"
+  },
+  {
+   "key": "wdw/2016/oe/2016-dated-line",
+   "field": "original_price",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "Still no original retail price for Sorcerer Mickey, Mickey & Minnie, Tinker Bell, Orange Bird 2016; only reseller asking prices seen"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-princess-mystery-2016",
+   "field": "members",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "Eight designs still unnamed; Pin Central entry 99294 (Aurora, 'Love', square, -16078 code) gives no year or set - lead only"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-princess-mystery-2016",
+   "field": "edition_type",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "OE vs limited release still not stated"
+  },
+  {
+   "key": "wdw/2016/oe-set/rogue-one-trooper-helmets-booster",
+   "field": "members",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "One dealer listing names four helmets (Stormtrooper, TIE Striker pilot, Scarif trooper, Death Trooper); single list, undated - no members created"
+  },
+  {
+   "key": "wdw/2016/oe-set/rogue-one-trooper-helmets-booster",
+   "field": "edition_type",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "Edition still not stated for helmet booster"
+  },
+  {
+   "key": "wdw/2016/oe-set/rogue-one-squadron-leaders-booster",
+   "field": "edition_type",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "Edition still not stated for squadron booster"
+  },
+  {
+   "key": "wdw/2016/oe-set/rogue-one-squadron-leaders-booster/red-leader",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - per-design dealer pages (Park Pins; Vintage Radar titled 2016) suggest a single Red Leader pin, but link rests on listing titles"
+  },
+  {
+   "key": "wdw/2016/oe-set/rogue-one-squadron-leaders-booster/gold-leader",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - Park Pins lists a single Gold Leader pin (title only, undated); not enough to release"
+  },
+  {
+   "key": "wdw/2016/oe-set/rogue-one-squadron-leaders-booster/blue-leader",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - no per-design page found for Blue Leader"
+  },
+  {
+   "key": "wdw/2016/oe-set/hollywood-studios-2016-booster",
+   "field": "edition_type",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "Booster edition still not stated"
+  },
+  {
+   "key": "wdw/2016/oe-set/hollywood-studios-2016-booster/star-tours-r2d2-c3po",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - only DPB's five-design list counts R2-D2 and C-3PO as one; no per-design page found"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-tag-mystery",
+   "field": "members",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "Eight luggage-tag designs not named in snippet"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-tag-mystery",
+   "field": "edition_type",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "OE vs limited release not stated"
+  },
+  {
+   "key": "dlr/2016/oe-set/disney-tag-mystery",
+   "field": "lead",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "lead: DPB says TAG mystery set also at Disneyland Resort - DLR cell"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery",
+   "field": "release_year",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - year still conflicts: DPB 2016 and a dealer date of 21 Jan 2016 vs Pin Central 2015 label; WDW/DLR keys stay linked"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/donald-boulevard",
+   "field": "name",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - per-design dealer page now found, but release year still conflicts (2015 vs 2016)"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/dale-boulevard",
+   "field": "name",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - per-design dealer page now found, but release year still conflicts (2015 vs 2016)"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/goofy-circle",
+   "field": "name",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - per-design dealer page now found, but release year still conflicts (2015 vs 2016)"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/chip-road",
+   "field": "name",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - per-design dealer page now found, but release year still conflicts (2015 vs 2016)"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/mickey-avenue",
+   "field": "name",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - no per-design page found this round; year conflict remains"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/minnie-lane",
+   "field": "name",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - no per-design page found this round; year conflict remains"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/daisy-lane",
+   "field": "name",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - no per-design page found this round; year conflict remains"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/pluto-avenue",
+   "field": "name",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - no per-design page found this round; year conflict remains"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/april-mary-poppins",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - dealer per-design page found, but undated and says limited release, so tie to the 2016 OE line is unclear"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/july-jessica-rabbit",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - two dealer per-design pages (one OE at DLR/WDW, one limited release), both undated; 2016 tie unclear"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/february-rapunzel",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - no per-design page found"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/may-ariel",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - no per-design page found"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/august-tiana",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - no per-design page found"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/november-belle",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - no per-design page found"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016",
+   "field": "lead",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "Magical Ears calls Mary Poppins and Jessica part of a 12-pin birthstone collection at 16.95 limited release; may be a different line - not claimed"
+  },
+  {
+   "key": "wdw/2016/oe-set/mickey-soccer-teams/seattle-sounders",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - no per-team page found for this team"
+  },
+  {
+   "key": "wdw/2016/oe-set/mickey-soccer-teams/vancouver-whitecaps",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - no per-team page found for this team"
+  },
+  {
+   "key": "wdw/2016/oe-set/mickey-soccer-teams/portland-timbers",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - no per-team page found for this team"
+  },
+  {
+   "key": "wdw/2016/oe-set/mickey-soccer-teams/toronto-fc",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - no per-team page found for this team"
+  },
+  {
+   "key": "wdw/2016/oe/humphrey-the-bear",
+   "field": "release_date",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - preview only; DisZine and Main Street Mouse previews list it among 2016 OE; no release, design or price confirmed"
+  },
+  {
+   "key": "wdw/2016/oe/20000-leagues-under-the-sea",
+   "field": "release_date",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - preview only; only older LE pins found; no release, design or price confirmed"
+  },
+  {
+   "key": "wdw/2016/oe/mary-poppins",
+   "field": "release_date",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "hold: kept - preview only; no release found; no release, design or price confirmed"
+  },
+  {
+   "key": "lic/2016",
+   "field": "licensed",
+   "searched": "30 standard WebSearches (B202)",
+   "note": "lead: Hot Topic sells Rogue One helmet and Loungefly Red Leader enamel pins (year unstated) - licensed cells"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 to packets 233/334 (B025/B111); 30 standard WebSearches, excluded domains blocked; reuses earlier keys. New: TAG mystery set (members unnamed); two MK 45th attraction pins from Pin Central, held. Disney Streets: 4 per-design dealer pages, year conflict kept. Lanyard medal scoped out as non-pin. No holds released."
+}

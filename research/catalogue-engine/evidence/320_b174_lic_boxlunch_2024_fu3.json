@@ -1,0 +1,995 @@
+{
+ "packet_id": "backfill-b174-lic-boxlunch-2024-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b174",
+ "sources": [
+  {
+   "url": "https://mypincentral.com/pin/209443",
+   "title": "MyPinCentral 209443 (Princess Compact Mirror series page; related entries incl. 209442 Tiana)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-princess-compact-mirror-blind-box-enamel-pin---boxlunch-exclusive/32579129.html",
+   "title": "Loungefly Disney Princess Compact Mirror Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-compact-mirror-blind-box-pin-set-at-boxlunch/",
+   "title": "Disney Princess Compact Mirror Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/209445",
+   "title": "MyPinCentral 209445 (LFY - BL - Mickey Mouse & Friends Cars Blind Box - 2024)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-friends-cars-blind-box-pin-set-at-boxlunch/",
+   "title": "Mickey Mouse & Friends Cars Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.liberty-center.com/buy/product/loungefly-disney-mickey-mouse-friends-cars-blind-box-enamel-pin-boxlunch-exclusive-boxlunch-571189",
+   "title": "Loungefly Disney Mickey Mouse & Friends Cars Blind Box Enamel Pin - BoxLunch Exclusive (mall-hosted BoxLunch listing)",
+   "publisher": "Liberty Center (BoxLunch listing)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+   "title": "The Lion King 30th Anniversary Disney Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneymouseketeer.com/disney-the-lion-king-30th-anniversary-pins-at-boxlunch/",
+   "title": "Disney The Lion King 30th Anniversary Pins at BoxLunch",
+   "publisher": "Disney Mouseketeer",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-lion-king-30th-anniversary-pride-rock-poster-enamel-pin---boxlunch-exclusive/31807334.html",
+   "title": "Loungefly Disney The Lion King 30th Anniversary Pride Rock Poster Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-friends-kites-blind-box-enamel-pin---boxlunch-exclusive/32790349.html",
+   "title": "Loungefly Disney Mickey Mouse & Friends Kites Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-and-friends-artwork-blind-box-enamel-pin---boxlunch-exclusive/32790348.html",
+   "title": "Loungefly Disney Mickey Mouse and Friends Artwork Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mickey-mouse-friends-breakfast-blind-box-pin-set-at-boxlunch",
+   "title": "Mickey Mouse & Friends Breakfast Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-mickey-friends-retro-blind-box-pin-set-at-boxlunch/",
+   "title": "Disney Mickey & Friends Retro Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-vinyl-record-blind-box-pin-set-at-boxlunch/",
+   "title": "Star Wars Vinyl Record Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-sand-blind-box-pin-set-at-boxlunch",
+   "title": "Star Wars Sand Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/inside-out-2-emotions-group-portrait-pin-at-boxlunch/",
+   "title": "Inside Out 2 Emotions Group Portrait Pin at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneymouseketeer.com/disney-pixar-inside-out-emotions-blind-box-pins-at-boxlunch/",
+   "title": "Disney-Pixar Inside Out Emotions Blind Box Pins",
+   "publisher": "Disney Mouseketeer",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-inside-out-2-emotions-train-blind-box-enamel-pin/33397818.html",
+   "title": "Disney Pixar Inside Out 2 Emotions Train Blind Box Enamel Pin",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/210809",
+   "title": "MyPinCentral 210809 (Winnie the Pooh Moon Nap Blind Box 2024)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-moon-nap-blind-box-pin-set-at-boxlunch",
+   "title": "Winnie the Pooh Moon Nap Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-the-lion-king-framed-blind-box-enamel-pin/33397827.html",
+   "title": "Disney The Lion King Framed Blind Box Enamel Pin",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-lion-king-framed-blind-box-pin-set-at-boxlunch/",
+   "title": "The Lion King Framed Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/boxlunch-pin-releases-on-friday-august-9th-d23-2024/",
+   "title": "BoxLunch Pin Releases on Friday, August 9th",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mouseinfo.com/2024/08/d23-2024-boxlunchs-exclusive-merch-lineup-is-black-and-white-literally/",
+   "title": "D23 2024: BoxLunch's exclusive merch lineup (with prices)",
+   "publisher": "MouseInfo",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-princesses-floral-portraits-blind-box-enamel-pin---boxlunch-exclusive/32579131.html",
+   "title": "Loungefly Disney Princesses Floral Portraits Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-characters-bubbles-blind-box-pin-set-at-boxlunch",
+   "title": "Disney Characters Bubbles Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-pixar-up-house-lenticular-blind-box-pin-set-at-boxlunch/",
+   "title": "Disney Pixar UP House Lenticular Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-fall-activities-stitch-blind-box-enamel-pin---boxlunch-exclusive/32108778.html",
+   "title": "Loungefly Disney Lilo & Stitch Fall Activities Stitch Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2024/loungefly-boxlunch-princess-compact-mirror-blind-box",
+   "claims": [
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "fan DB lists separate per-character entries in the series (Cinderella, Belle, Tiana, Mulan among others)"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-compact-mirror-blind-box-enamel-pin---boxlunch-exclusive/32579129.html",
+     "method": "search_snippet",
+     "note": "listing: six to collect, one random pin per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-10",
+     "source_url": "https://disneypinsblog.com/disney-princess-compact-mirror-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog post dated Oct 2024"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/disney-princess-compact-mirror-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog retail price per box"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/loungefly-boxlunch-mickey-friends-cars-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Loungefly Disney Mickey Mouse & Friends Cars Blind Box Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.liberty-center.com/buy/product/loungefly-disney-mickey-mouse-friends-cars-blind-box-enamel-pin-boxlunch-exclusive-boxlunch-571189",
+     "method": "search_snippet",
+     "note": "mall-hosted BoxLunch listing title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-friends-cars-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog: one randomly selected pin per box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-friends-cars-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog: six pins in the set"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://mypincentral.com/pin/209445",
+     "method": "search_snippet",
+     "note": "fan DB series name includes 2024; blog date stamps inconsistent"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.liberty-center.com/buy/product/loungefly-disney-mickey-mouse-friends-cars-blind-box-enamel-pin-boxlunch-exclusive-boxlunch-571189",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly; fan DB tags LFY"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.liberty-center.com/buy/product/loungefly-disney-mickey-mouse-friends-cars-blind-box-enamel-pin-boxlunch-exclusive-boxlunch-571189",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive in title; fan DB tags BL"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/boxlunch-lion-king-30th",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Lion King 30th Anniversary Disney Pins at BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "format",
+     "value": "individual pins",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "three separate pins, each on a 30th Anniversary card"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog: three new pins added online"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog: open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog: June 2024"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "sold on BoxLunch website"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/loungefly-boxlunch-lion-king-30th",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Loungefly Lion King 30th Anniversary pins at BoxLunch",
+     "source_url": "https://disneymouseketeer.com/disney-the-lion-king-30th-anniversary-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "descriptive name for Loungefly pins in the BoxLunch 30th roundup"
+    },
+    {
+     "field": "format",
+     "value": "individual pins",
+     "source_url": "https://disneymouseketeer.com/disney-the-lion-king-30th-anniversary-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "separate single pins, one boxed LE"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneymouseketeer.com/disney-the-lion-king-30th-anniversary-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "roundup names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneymouseketeer.com/disney-the-lion-king-30th-anniversary-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "roundup of BoxLunch pins"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/loungefly-boxlunch-mickey-friends-kites-blind-box",
+   "claims": [
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-friends-kites-blind-box-enamel-pin---boxlunch-exclusive/32790349.html",
+     "method": "search_snippet",
+     "note": "listing: Mickey and friends with different kites, one random pin per box"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/loungefly-boxlunch-mickey-friends-breakfast-blind-box",
+   "claims": [
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-mouse-friends-breakfast-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "blog: characters in pajamas with breakfast foods; one random pin per box"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/loungefly-boxlunch-mickey-friends-retro-blind-box",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2024-11",
+     "source_url": "https://disneypinsblog.com/disney-mickey-friends-retro-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog: November 2024"
+    },
+    {
+     "field": "price",
+     "value": 10.9,
+     "source_url": "https://disneypinsblog.com/disney-mickey-friends-retro-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog retail price per box"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2024/boxlunch-star-wars-vinyl-record-blind-box",
+   "claims": [
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://disneypinsblog.com/star-wars-vinyl-record-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog: record-shaped pins, each themed to a different film; six total"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2024/loungefly-boxlunch-princess-compact-mirror-blind-box/tiana",
+   "set_key": "lic/2024/loungefly-boxlunch-princess-compact-mirror-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tiana"
+     ],
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "series list on fan DB page names separate entry 209442 as Tiana"
+    },
+    {
+     "field": "main_character",
+     "value": "Tiana",
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "per-entry title in series list"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "one design of the six-design blind box"
+    },
+    {
+     "field": "release_year",
+     "value": 2024,
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "series titled Princess Compact Mirror Blind Box - 2024"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "series tagged LFY"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://mypincentral.com/pin/209443",
+     "method": "search_snippet",
+     "note": "series tagged BL"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/boxlunch-lion-king-30th/simba-timon-pumbaa",
+   "set_key": "lic/2024/boxlunch-lion-king-30th",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Simba",
+      "Timon",
+      "Pumbaa"
+     ],
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog names this as one of the three pin designs"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "one of three separate carded pins; characters share the pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog June 2024"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch online"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/boxlunch-lion-king-30th/young-simba-nala-zazu",
+   "set_key": "lic/2024/boxlunch-lion-king-30th",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Simba",
+      "Nala",
+      "Zazu"
+     ],
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog: young Simba, Nala and Zazu design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "one of three separate carded pins; characters share the pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog June 2024"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch online"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/boxlunch-lion-king-30th/simba-nala-sunshine",
+   "set_key": "lic/2024/boxlunch-lion-king-30th",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Simba",
+      "Nala"
+     ],
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog: Simba and Nala sunshine scene"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "one of three separate carded pins; characters share the pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "per pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog June 2024"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-lion-king-30th-anniversary-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch online"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/loungefly-boxlunch-lion-king-30th/sliding-log-le",
+   "set_key": "lic/2024/loungefly-boxlunch-lion-king-30th",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Disney The Lion King 30th Anniversary Limited Edition Boxed Pin",
+     "source_url": "https://disneymouseketeer.com/disney-the-lion-king-30th-anniversary-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "name as given in roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Simba",
+      "Timon",
+      "Pumbaa"
+     ],
+     "source_url": "https://disneymouseketeer.com/disney-the-lion-king-30th-anniversary-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "young Simba with Pumbaa and Timon on a log"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneymouseketeer.com/disney-the-lion-king-30th-anniversary-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "single boxed pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Young Simba sliding feature with Timon and Pumbaa on a log; boxed",
+     "source_url": "https://disneymouseketeer.com/disney-the-lion-king-30th-anniversary-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneymouseketeer.com/disney-the-lion-king-30th-anniversary-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1800,
+     "source_url": "https://disneymouseketeer.com/disney-the-lion-king-30th-anniversary-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "LE 1,800"
+    },
+    {
+     "field": "original_price",
+     "value": 20.9,
+     "source_url": "https://disneymouseketeer.com/disney-the-lion-king-30th-anniversary-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneymouseketeer.com/disney-the-lion-king-30th-anniversary-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneymouseketeer.com/disney-the-lion-king-30th-anniversary-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "Loungefly in name"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneymouseketeer.com/disney-the-lion-king-30th-anniversary-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "roundup says BoxLunch has it"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2024/loungefly-boxlunch-lion-king-30th/pride-rock-poster",
+   "set_key": "lic/2024/loungefly-boxlunch-lion-king-30th",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Disney The Lion King 30th Anniversary Pride Rock Poster Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-lion-king-30th-anniversary-pride-rock-poster-enamel-pin---boxlunch-exclusive/31807334.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-lion-king-30th-anniversary-pride-rock-poster-enamel-pin---boxlunch-exclusive/31807334.html",
+     "method": "search_snippet",
+     "note": "single enamel pin listing"
+    },
+    {
+     "field": "original_price",
+     "value": 10.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-lion-king-30th-anniversary-pride-rock-poster-enamel-pin---boxlunch-exclusive/31807334.html",
+     "method": "search_snippet",
+     "note": "listing price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-lion-king-30th-anniversary-pride-rock-poster-enamel-pin---boxlunch-exclusive/31807334.html",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-lion-king-30th-anniversary-pride-rock-poster-enamel-pin---boxlunch-exclusive/31807334.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-lion-king-30th-anniversary-pride-rock-poster-enamel-pin---boxlunch-exclusive/31807334.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive in title"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2024/loungefly-boxlunch-princess-compact-mirror-blind-box/tiana",
+   "field": "pin_structure",
+   "searched": "MyPinCentral via search",
+   "note": "released: fan DB series list gives Tiana its own entry (209442) in Princess Compact Mirror Blind Box - 2024; resolves fu2 Tiana lead"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-princess-compact-mirror-blind-box",
+   "field": "pins",
+   "searched": "MyPinCentral/BoxLunch via search",
+   "note": "four of six designs now named (Cinderella, Belle, Mulan, Tiana); 209440 seen in series but character cut off; two still unnamed"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-mickey-friends-cars-blind-box",
+   "field": "pins",
+   "searched": "DPB, BoxLunch listing, MyPinCentral via search",
+   "note": "set only: blog says six pins show Mickey, Minnie, Goofy, Pluto, Donald, Daisy in classic cars; no per-pin entries seen"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-mickey-friends-cars-blind-box/mickey",
+   "field": "pin_structure",
+   "searched": "DPB/MyPinCentral via search",
+   "note": "hold: mystery designs not individually confirmed (blog/fan DB list six characters for six pins; features list only, no per-design entries)"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-mickey-friends-cars-blind-box/minnie",
+   "field": "pin_structure",
+   "searched": "DPB/MyPinCentral via search",
+   "note": "hold: mystery designs not individually confirmed (blog/fan DB list six characters for six pins; features list only, no per-design entries)"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-mickey-friends-cars-blind-box/goofy",
+   "field": "pin_structure",
+   "searched": "DPB/MyPinCentral via search",
+   "note": "hold: mystery designs not individually confirmed (blog/fan DB list six characters for six pins; features list only, no per-design entries)"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-mickey-friends-cars-blind-box/pluto",
+   "field": "pin_structure",
+   "searched": "DPB/MyPinCentral via search",
+   "note": "hold: mystery designs not individually confirmed (blog/fan DB list six characters for six pins; features list only, no per-design entries)"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-mickey-friends-cars-blind-box/donald",
+   "field": "pin_structure",
+   "searched": "DPB/MyPinCentral via search",
+   "note": "hold: mystery designs not individually confirmed (blog/fan DB list six characters for six pins; features list only, no per-design entries)"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-mickey-friends-cars-blind-box/daisy",
+   "field": "pin_structure",
+   "searched": "DPB/MyPinCentral via search",
+   "note": "hold: mystery designs not individually confirmed (blog/fan DB list six characters for six pins; features list only, no per-design entries)"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-mickey-friends-cars-blind-box",
+   "field": "release_date",
+   "searched": "DPB via search",
+   "note": "blog date stamps inconsistent; month not recorded, only fan DB series year 2024"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-mickey-friends-cars-blind-box",
+   "field": "price",
+   "searched": "DPB/BoxLunch via search",
+   "note": "price not stated in snippets"
+  },
+  {
+   "key": "lic/2024/boxlunch-lion-king-30th",
+   "field": "manufacturer",
+   "searched": "DPB via search",
+   "note": "maker of the three carded 30th Anniversary pins not stated"
+  },
+  {
+   "key": "lic/2024/boxlunch-lion-king-30th/simba-timon-pumbaa",
+   "field": "pin_name",
+   "searched": "DPB via search",
+   "note": "exact BoxLunch product names of the three carded pins not seen"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-lion-king-30th/sliding-log-le",
+   "field": "release_date",
+   "searched": "Disney Mouseketeer via search",
+   "note": "year rests on 30th Anniversary title and article age (~mid 2024); hold: confirm 2024 release date"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-lion-king-30th/pride-rock-poster",
+   "field": "release_year",
+   "searched": "BoxLunch via search",
+   "note": "hold: listing undated; linked to 2024 by 30th Anniversary title only"
+  },
+  {
+   "key": "lic/2024/loungefly-lion-king-30th-hakuna-matata-glow-le",
+   "field": "retailer",
+   "searched": "search",
+   "note": "lead: Loungefly LK 30th Hakuna Matata glow 3in collector box pin LE 1800 at a non-BoxLunch shop; BoxLunch tie not shown"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-mickey-friends-artwork-blind-box",
+   "field": "release_year",
+   "searched": "BoxLunch/DPB via search",
+   "note": "lead: Loungefly Mickey & Friends Artwork blind box (32790348), BoxLunch Exclusive; id next to Kites (Dec 2024) - not evidence; undated"
+  },
+  {
+   "key": "lic/2025/boxlunch-inside-out-2-emotions-group-portrait",
+   "field": "release_year",
+   "searched": "DPB via search",
+   "note": "lead for 2025 cell: DPB IO2 Emotions Group Portrait pin at BoxLunch, approx 3in, $16.90, dated Feb 2025"
+  },
+  {
+   "key": "lic/2024/boxlunch-inside-out-emotions-blind-box",
+   "field": "release_year",
+   "searched": "Disney Mouseketeer via search",
+   "note": "lead: Inside Out Emotions blind box at BoxLunch, 9 designs, $16.90; year not in snippet"
+  },
+  {
+   "key": "lic/2024/boxlunch-inside-out-2-emotions-train-blind-box",
+   "field": "pins",
+   "searched": "BoxLunch/DPB via search",
+   "note": "emotions per train car still not named; listing: six to collect; maker not stated"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-pooh-moon-nap-blind-box",
+   "field": "pins",
+   "searched": "MyPinCentral/DPB via search",
+   "note": "no per-pin entries found for Owl, Roo, Eeyore, Piglet, Tigger; holds kept"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-pooh-moon-nap-blind-box/winnie-the-pooh",
+   "field": "set_key",
+   "searched": "MyPinCentral via search",
+   "note": "hold kept: 210813 snippet still does not name its series"
+  },
+  {
+   "key": "lic/2024/boxlunch-lion-king-framed-blind-box",
+   "field": "pins",
+   "searched": "BoxLunch/DPB/MyPinCentral via search",
+   "note": "hold kept: only 'Mufasa, Scar, Simba and more'; fan DB 211183/211185 still not tied to series; listing says six"
+  },
+  {
+   "key": "lic/2024/boxlunch-lion-king-framed-blind-box",
+   "field": "manufacturer",
+   "searched": "BoxLunch via search",
+   "note": "still no maker in title"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-up-house-lenticular-blind-box",
+   "field": "pins",
+   "searched": "DPB/BoxLunch/MyPinCentral via search",
+   "note": "six house-part lenticular designs still not named; no fan DB entries found"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-stitch-fall-activities-blind-box",
+   "field": "pins",
+   "searched": "BoxLunch/MyPinCentral via search",
+   "note": "no per-design entries found"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-mickey-friends-retro-blind-box",
+   "field": "pins",
+   "searched": "DPB via search",
+   "note": "characters/designs and set size still not stated"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-mickey-friends-kites-blind-box",
+   "field": "pins",
+   "searched": "BoxLunch via search",
+   "note": "which characters/kites not named; set size not stated"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-mickey-friends-breakfast-blind-box",
+   "field": "pins",
+   "searched": "DPB/MyPinCentral via search",
+   "note": "which characters/foods not named; set size not stated"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-vinyl-record-blind-box",
+   "field": "pins",
+   "searched": "DPB via search",
+   "note": "which six films not named; maker not stated"
+  },
+  {
+   "key": "lic/2024/boxlunch-star-wars-sand-blind-box",
+   "field": "pins",
+   "searched": "DPB/MyPinCentral via search",
+   "note": "other five sand-sculpture characters still not named; maker not stated"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-princesses-floral-portraits-blind-box",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB via search",
+   "note": "hold kept for all six princesses: still 'assortment features' / 'princesses like ... and more'; no per-pin entries"
+  },
+  {
+   "key": "lic/2024/loungefly-boxlunch-characters-bubbles-blind-box",
+   "field": "pin_structure",
+   "searched": "DPB/MyPinCentral via search",
+   "note": "hold kept for Pumbaa, Pinocchio, Marie: no per-pin entries surfaced"
+  },
+  {
+   "key": "lic/2024/boxlunch-d23-2024",
+   "field": "edition_size",
+   "searched": "DPB/MouseInfo via search",
+   "note": "Friday LE sizes still not stated (Jack & Zero, Cruella, Venom); MyPinCentral Cruella LE 400 hit is a DSSH pin, not BoxLunch"
+  },
+  {
+   "key": "lic/2024/boxlunch-d23-2024-saturday",
+   "field": "edition_size",
+   "searched": "not searched separately",
+   "note": "Saturday LE sizes still not stated"
+  },
+  {
+   "key": "lic/2024/boxlunch",
+   "field": "manufacturer",
+   "searched": "search",
+   "note": "makers of BoxLunch-only keys (Lion King Framed, IO2 Train, Star Wars sets, Valentine's, D23) still not stated"
+  },
+  {
+   "key": "lic/2024/boxlunch",
+   "field": "pins",
+   "searched": "search",
+   "note": "holds kept from fu2 unless noted: Classic VHS, Poster Chewie/Leia/Boba, Villains x5, NBC Fall, Aristocats pajamas, Valentine pairs"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 to 249_b083/273_b127/297_b151 (reuses their keys). 29 standard searches, snippets only (MyPinCentral, BoxLunch, DPB, Disney Mouseketeer, MouseInfo). Released Compact Mirror Tiana hold. New: Mickey & Friends Cars blind box (set only, members held), Lion King 30th carded OE trio and two Loungefly 30th pins. Other holds kept."
+}

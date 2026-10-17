@@ -1,0 +1,1432 @@
+{
+ "packet_id": "backfill-b210-wdw-le-2015-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b210",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-3",
+   "title": "New Disney Pins October 2015 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-5/",
+   "title": "New Disney Pins October 2015 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/wdw-april-2015-pin-event-recap",
+   "title": "WDW April 2015 Pin Event Recap",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/2015-mickeys-not-scary-halloween-party-pins/",
+   "title": "2015 Mickey's Not So Scary Halloween Party Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+   "title": "Disney Mystery Pins - 2015 Mickey's Halloween Party - Choice",
+   "publisher": "Your WDW Store",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-pin-2015-mickeys-not-so-scary-halloween-party-evil-queen-38359.html",
+   "title": "Disney Pin - 2015 Mickey's Not So Scary Halloween Party - Evil Queen",
+   "publisher": "Your WDW Store",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/Mickeys-Not-So-Scary-Halloween-Party_c_859-3.html",
+   "title": "Mickey's Not So Scary Halloween Party Souvenirs",
+   "publisher": "Your WDW Store",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/191926",
+   "title": "191926 (Life Lessons Mickey chaser)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/Disney-Pins-Accessories_c_1-61.html",
+   "title": "Disney Pins (category)",
+   "publisher": "Your WDW Store",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/Hercules_c_1331.html",
+   "title": "Hercules (category)",
+   "publisher": "Your WDW Store",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/Dumbo_c_1326.html",
+   "title": "Dumbo (category)",
+   "publisher": "Your WDW Store",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/EPCOT_c_695-24.html",
+   "title": "EPCOT Collectibles (category)",
+   "publisher": "Your WDW Store",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://allears.net/2015/10/10/2015-epcot-pin-event/",
+   "title": "2015 EPCOT Pin Event",
+   "publisher": "AllEars.Net",
+   "published_date": "2015-10-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/4769",
+   "title": "4769 (Remy green pepper prize pin)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneyparksblog.com/wdw/remys-ratatouille-hide-squeak-debuts-for-epcot-international-food-wine-festival/",
+   "title": "First Remy's Hide & Squeak at Epcot Food & Wine Festival",
+   "publisher": "Disney Parks Blog",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://blog.touringplans.com/2015/10/28/remys-hide-squeak-scavenger-hunt/",
+   "title": "A Look at Remy's Hide and Squeak Scavenger Hunt",
+   "publisher": "TouringPlans",
+   "published_date": "2015-10-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dolewhipped.com/2015/12/03/remys-ratatouille-hide-squeak-2015/",
+   "title": "Remy's Ratatouille Hide & Squeak 2015",
+   "publisher": "Dole Whipped",
+   "published_date": "2015-12-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/2015-epcot-international-food-wine-festival-pins",
+   "title": "2015 Epcot Food & Wine Festival Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/Disney-Food-and-Wine-Festival-Pin--2015-Swedish-Chef-DVC_p_64253.html",
+   "title": "Disney Food and Wine Festival Pin - 2015 Swedish Chef DVC",
+   "publisher": "Your WDW Store",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/dvc-resort-mystery-pin-collection/",
+   "title": "DVC Resort Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-11-24",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/dvc-2015-resort-pin-set",
+   "title": "DVC 2015 Resort Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pixar-celebration-pin-collection",
+   "title": "Pixar Party Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2015/force-awakens-countdown",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-5/",
+     "method": "search_snippet",
+     "note": "Week 5 post calls Rey pin #5 of 10"
+    },
+    {
+     "field": "edition_size",
+     "value": 10000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-5/",
+     "method": "search_snippet",
+     "note": "countdown pins #3-#5 each LE 10000 per DPB weekly posts; per pin, not set"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/mnsshp-2015-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey's Not So Scary Halloween Party 2015 Mystery Pins",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "neutral name; reseller choice listing for 2015 party mystery pins"
+    },
+    {
+     "field": "format",
+     "value": "mystery (2 random pins per box)",
+     "source_url": "https://disneypinsblog.com/2015-mickeys-not-scary-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "DPB says each mystery box holds two randomly selected pins"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/2015-mickeys-not-scary-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "two pins per box"
+    },
+    {
+     "field": "price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/2015-mickeys-not-scary-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "$16.95 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/2015-mickeys-not-scary-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "US park pricing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "reseller calls the set limited release"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "reseller marks two of the ten listed designs as chasers"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-15",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "reseller gives 9/15/2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom (MNSSHP)",
+     "source_url": "https://disneypinsblog.com/2015-mickeys-not-scary-halloween-party-pins/",
+     "method": "search_snippet",
+     "note": "party merchandise sold at Magic Kingdom during event nights"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/genearation-d-life-lessons",
+   "claims": [
+    {
+     "field": "format",
+     "value": "mystery: 8 limited release designs plus 8 LE 250 chasers",
+     "source_url": "https://allears.net/2015/10/10/2015-epcot-pin-event/",
+     "method": "search_snippet",
+     "note": "AllEars event report: Life Lessons mystery boxes had 8 LR pins and 8 chasers LE 250"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://allears.net/2015/10/10/2015-epcot-pin-event/",
+     "method": "search_snippet",
+     "note": "8 chasers"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/genearation-d-countdown",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://allears.net/2015/10/10/2015-epcot-pin-event/",
+     "method": "search_snippet",
+     "note": "AllEars event report says monthly countdown pins were LE 500 each; per pin"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/remy-hide-and-squeak-2015",
+   "claims": [
+    {
+     "field": "format",
+     "value": "prize pins: one of six commemorative designs, each Remy with an ingredient",
+     "source_url": "http://blog.touringplans.com/2015/10/28/remys-hide-squeak-scavenger-hunt/",
+     "method": "search_snippet",
+     "note": "completed map exchanged at Port of Entry for one of six Remy ingredient pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://dolewhipped.com/2015/12/03/remys-ratatouille-hide-squeak-2015/",
+     "method": "search_snippet",
+     "note": "blogger describes the prize as a limited release Remy pin; 327 had limited edition from Mousesteps"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-25",
+     "source_url": "https://disneyparksblog.com/wdw/remys-ratatouille-hide-squeak-debuts-for-epcot-international-food-wine-festival/",
+     "method": "search_snippet",
+     "note": "official blog: game began 25 Sept 2015, maps sold at Epcot incl. Pin Central"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/epcot-food-wine-2015",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2015-09",
+     "source_url": "https://www.yourwdwstore.net/Disney-Food-and-Wine-Festival-Pin--2015-Swedish-Chef-DVC_p_64253.html",
+     "method": "search_snippet",
+     "note": "reseller lists Swedish Chef DVC festival pin release 9/1/2015"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2015/force-awakens-countdown/finn",
+   "set_key": "wdw/2015/force-awakens-countdown",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "DPB Oct 2015 week 3 post: fourth countdown pin features Finn"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 10000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "LE 10000"
+    },
+    {
+     "field": "original_price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "retail $12.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "US park pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-15",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "available at Disneyland and WDW 15 Oct 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/force-awakens-countdown/rey",
+   "set_key": "wdw/2015/force-awakens-countdown",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-5/",
+     "method": "search_snippet",
+     "note": "DPB Oct 2015 week 5 post: Rey is countdown pin #5 of 10"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-5/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 10000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-5/",
+     "method": "search_snippet",
+     "note": "LE 10000"
+    },
+    {
+     "field": "original_price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-5/",
+     "method": "search_snippet",
+     "note": "retail $12.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-5/",
+     "method": "search_snippet",
+     "note": "US park pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-29",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-5/",
+     "method": "search_snippet",
+     "note": "available at Disneyland and WDW 29 Oct 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2015-week-5/",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/jumbo-2015/epcot",
+   "set_key": "wdw/2015/jumbo-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "WDW 2015 Jumbo - Epcot",
+     "source_url": "https://disneypinsblog.com/blogs/news/wdw-april-2015-pin-event-recap",
+     "method": "search_snippet",
+     "note": "neutral name; April 2015 event recap previews a WDW Epcot Jumbo Pin 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Epcot",
+     "source_url": "https://disneypinsblog.com/blogs/news/wdw-april-2015-pin-event-recap",
+     "method": "search_snippet",
+     "note": "Epcot subject per preview title"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/wdw-april-2015-pin-event-recap",
+     "method": "search_snippet",
+     "note": "previewed for May-July 2015 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/mnsshp-2015/evil-queen",
+   "set_key": "wdw/2015/mnsshp-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "MNSSHP 2015 Evil Queen",
+     "source_url": "https://www.yourwdwstore.net/disney-pin-2015-mickeys-not-so-scary-halloween-party-evil-queen-38359.html",
+     "method": "search_snippet",
+     "note": "neutral name from reseller product title"
+    },
+    {
+     "field": "main_character",
+     "value": "Evil Queen",
+     "source_url": "https://www.yourwdwstore.net/disney-pin-2015-mickeys-not-so-scary-halloween-party-evil-queen-38359.html",
+     "method": "search_snippet",
+     "note": "subject per listing title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.yourwdwstore.net/disney-pin-2015-mickeys-not-so-scary-halloween-party-evil-queen-38359.html",
+     "method": "search_snippet",
+     "note": "listing calls it limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 5500,
+     "source_url": "https://www.yourwdwstore.net/disney-pin-2015-mickeys-not-so-scary-halloween-party-evil-queen-38359.html",
+     "method": "search_snippet",
+     "note": "listing gives LE 5500"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-15",
+     "source_url": "https://www.yourwdwstore.net/disney-pin-2015-mickeys-not-so-scary-halloween-party-evil-queen-38359.html",
+     "method": "search_snippet",
+     "note": "listing gives 9/15/2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.yourwdwstore.net/disney-pin-2015-mickeys-not-so-scary-halloween-party-evil-queen-38359.html",
+     "method": "search_snippet",
+     "note": "2015 party pin per title"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/mnsshp-2015-mystery/gaston",
+   "set_key": "wdw/2015/mnsshp-2015-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "MNSSHP 2015 Mystery - Gaston",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "neutral name; character named on reseller choice listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Gaston",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "named among the ten choices on reseller listing"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "2015 party mystery listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/mnsshp-2015-mystery/ursula",
+   "set_key": "wdw/2015/mnsshp-2015-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "MNSSHP 2015 Mystery - Ursula",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "neutral name; character named on reseller choice listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Ursula",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "named among the ten choices on reseller listing"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "2015 party mystery listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/mnsshp-2015-mystery/chernabog",
+   "set_key": "wdw/2015/mnsshp-2015-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "MNSSHP 2015 Mystery - Chernabog",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "neutral name; character named on reseller choice listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Chernabog",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "named among the ten choices on reseller listing"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "2015 party mystery listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/mnsshp-2015-mystery/maleficent",
+   "set_key": "wdw/2015/mnsshp-2015-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "MNSSHP 2015 Mystery - Maleficent",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "neutral name; character named on reseller choice listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Maleficent",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "named among the ten choices on reseller listing"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "2015 party mystery listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/mnsshp-2015-mystery/oogie-boogie",
+   "set_key": "wdw/2015/mnsshp-2015-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "MNSSHP 2015 Mystery - Oogie Boogie",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "neutral name; character named on reseller choice listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Oogie Boogie",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "named among the ten choices on reseller listing"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "2015 party mystery listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/mnsshp-2015-mystery/jafar",
+   "set_key": "wdw/2015/mnsshp-2015-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "MNSSHP 2015 Mystery - Jafar",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "neutral name; character named on reseller choice listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Jafar",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "named among the ten choices on reseller listing"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "2015 party mystery listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/mnsshp-2015-mystery/captain-hook",
+   "set_key": "wdw/2015/mnsshp-2015-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "MNSSHP 2015 Mystery - Captain Hook",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "neutral name; character named on reseller choice listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Captain Hook",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "named among the ten choices on reseller listing"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "2015 party mystery listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/mnsshp-2015-mystery/scar",
+   "set_key": "wdw/2015/mnsshp-2015-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "MNSSHP 2015 Mystery - Scar",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "neutral name; character named on reseller choice listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Scar",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "named among the ten choices on reseller listing"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "2015 party mystery listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/mnsshp-2015-mystery/dr-facilier",
+   "set_key": "wdw/2015/mnsshp-2015-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "MNSSHP 2015 Mystery - Dr. Facilier (chaser)",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "neutral name; character named on reseller choice listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Dr. Facilier",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "named among the ten choices on reseller listing"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "2015 party mystery listing"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "listing marks this design as a chaser"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/mnsshp-2015-mystery/old-hag",
+   "set_key": "wdw/2015/mnsshp-2015-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "MNSSHP 2015 Mystery - Old Hag (chaser)",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "neutral name; character named on reseller choice listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Old Hag",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "named among the ten choices on reseller listing"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "2015 party mystery listing"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-2015-mickeys-halloween-party-choice-38355.html",
+     "method": "search_snippet",
+     "note": "listing marks this design as a chaser"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/genearation-d-life-lessons/mickey",
+   "set_key": "wdw/2015/genearation-d-life-lessons",
+   "claims": [
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://mypincentral.com/pin/191926",
+     "method": "search_snippet",
+     "note": "entry says back is marked as a chaser"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/191926",
+     "method": "search_snippet",
+     "note": "chaser is limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://mypincentral.com/pin/191926",
+     "method": "search_snippet",
+     "note": "back marked LE 250"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey in sorcerer hat with Use Your Imagination text on green",
+     "source_url": "https://mypincentral.com/pin/191926",
+     "method": "search_snippet",
+     "note": "paraphrase of entry description"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/191926",
+     "method": "search_snippet",
+     "note": "single design in the Life Lessons mystery box set"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/genearation-d-life-lessons/donald-duck-chaser",
+   "set_key": "wdw/2015/genearation-d-life-lessons",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "GenEARation D Life Lessons - Donald Duck (chaser)",
+     "source_url": "https://www.yourwdwstore.net/Disney-Pins-Accessories_c_1-61.html",
+     "method": "search_snippet",
+     "note": "neutral name from reseller product title"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://www.yourwdwstore.net/Disney-Pins-Accessories_c_1-61.html",
+     "method": "search_snippet",
+     "note": "Donald named in product title"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.yourwdwstore.net/Disney-Pins-Accessories_c_1-61.html",
+     "method": "search_snippet",
+     "note": "product title labels it a Life Lessons chaser"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/Disney-Pins-Accessories_c_1-61.html",
+     "method": "search_snippet",
+     "note": "listed as an individual mystery design"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://allears.net/2015/10/10/2015-epcot-pin-event/",
+     "method": "search_snippet",
+     "note": "Life Lessons chasers sold at Sept 2015 GenEARation D event"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/genearation-d-life-lessons/hercules-chaser",
+   "set_key": "wdw/2015/genearation-d-life-lessons",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "GenEARation D Life Lessons - Hercules (chaser)",
+     "source_url": "https://www.yourwdwstore.net/Hercules_c_1331.html",
+     "method": "search_snippet",
+     "note": "neutral name from reseller product title"
+    },
+    {
+     "field": "main_character",
+     "value": "Hercules",
+     "source_url": "https://www.yourwdwstore.net/Hercules_c_1331.html",
+     "method": "search_snippet",
+     "note": "Hercules named in product title"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.yourwdwstore.net/Hercules_c_1331.html",
+     "method": "search_snippet",
+     "note": "product title labels it a Life Lessons chaser"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/Hercules_c_1331.html",
+     "method": "search_snippet",
+     "note": "listed as an individual mystery design"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://allears.net/2015/10/10/2015-epcot-pin-event/",
+     "method": "search_snippet",
+     "note": "Life Lessons chasers sold at Sept 2015 GenEARation D event"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/genearation-d-life-lessons/dumbo-chaser",
+   "set_key": "wdw/2015/genearation-d-life-lessons",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "GenEARation D Life Lessons - Dumbo (chaser)",
+     "source_url": "https://www.yourwdwstore.net/Dumbo_c_1326.html",
+     "method": "search_snippet",
+     "note": "neutral name from reseller product title"
+    },
+    {
+     "field": "main_character",
+     "value": "Dumbo",
+     "source_url": "https://www.yourwdwstore.net/Dumbo_c_1326.html",
+     "method": "search_snippet",
+     "note": "Dumbo named in product title"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.yourwdwstore.net/Dumbo_c_1326.html",
+     "method": "search_snippet",
+     "note": "product title labels it a Life Lessons chaser"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/Dumbo_c_1326.html",
+     "method": "search_snippet",
+     "note": "listed as an individual mystery design"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://allears.net/2015/10/10/2015-epcot-pin-event/",
+     "method": "search_snippet",
+     "note": "Life Lessons chasers sold at Sept 2015 GenEARation D event"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/genearation-d-life-lessons/lion-king-chaser",
+   "set_key": "wdw/2015/genearation-d-life-lessons",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "GenEARation D Life Lessons - Lion King (chaser)",
+     "source_url": "https://www.yourwdwstore.net/EPCOT_c_695-24.html",
+     "method": "search_snippet",
+     "note": "neutral name from reseller product title"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.yourwdwstore.net/EPCOT_c_695-24.html",
+     "method": "search_snippet",
+     "note": "product title labels it a Life Lessons chaser"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/EPCOT_c_695-24.html",
+     "method": "search_snippet",
+     "note": "listed as an individual mystery design"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://allears.net/2015/10/10/2015-epcot-pin-event/",
+     "method": "search_snippet",
+     "note": "Life Lessons chasers sold at Sept 2015 GenEARation D event"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/remy-hide-and-squeak-2015/pepper",
+   "set_key": "wdw/2015/remy-hide-and-squeak-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Remy's Hide & Squeak 2015 - Remy with green pepper",
+     "source_url": "https://mypincentral.com/pin/4769",
+     "method": "search_snippet",
+     "note": "neutral name from per-pin database entry"
+    },
+    {
+     "field": "main_character",
+     "value": "Remy",
+     "source_url": "https://mypincentral.com/pin/4769",
+     "method": "search_snippet",
+     "note": "Remy design"
+    },
+    {
+     "field": "visual_description",
+     "value": "Remy lifting a green pepper overhead",
+     "source_url": "https://mypincentral.com/pin/4769",
+     "method": "search_snippet",
+     "note": "paraphrase of entry; back stamped Ratatouille Hide & Squeak"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/4769",
+     "method": "search_snippet",
+     "note": "single prize design"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://mypincentral.com/pin/4769",
+     "method": "search_snippet",
+     "note": "entry ties pin to 2015 Food & Wine Hide and Squeak prize"
+    },
+    {
+     "field": "release_location",
+     "value": "Epcot",
+     "source_url": "https://mypincentral.com/pin/4769",
+     "method": "search_snippet",
+     "note": "prize at Epcot Food & Wine Festival"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/epcot-food-wine-2015/swedish-chef-dvc",
+   "set_key": "wdw/2015/epcot-food-wine-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Food & Wine 2015 Swedish Chef DVC Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/2015-epcot-international-food-wine-festival-pins",
+     "method": "search_snippet",
+     "note": "neutral name; DPB festival post lists a Swedish Chef DVC pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Swedish Chef",
+     "source_url": "https://disneypinsblog.com/blogs/news/2015-epcot-international-food-wine-festival-pins",
+     "method": "search_snippet",
+     "note": "Swedish Chef design"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/2015-epcot-international-food-wine-festival-pins",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/2015-epcot-international-food-wine-festival-pins",
+     "method": "search_snippet",
+     "note": "LE 3000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/2015-epcot-international-food-wine-festival-pins",
+     "method": "search_snippet",
+     "note": "retail $15.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/2015-epcot-international-food-wine-festival-pins",
+     "method": "search_snippet",
+     "note": "US park pricing"
+    },
+    {
+     "field": "release_location",
+     "value": "Epcot (DVC members only)",
+     "source_url": "https://disneypinsblog.com/blogs/news/2015-epcot-international-food-wine-festival-pins",
+     "method": "search_snippet",
+     "note": "must be a DVC member to buy"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://www.yourwdwstore.net/Disney-Food-and-Wine-Festival-Pin--2015-Swedish-Chef-DVC_p_64253.html",
+     "method": "search_snippet",
+     "note": "reseller also gives 3000"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-01",
+     "source_url": "https://www.yourwdwstore.net/Disney-Food-and-Wine-Festival-Pin--2015-Swedish-Chef-DVC_p_64253.html",
+     "method": "search_snippet",
+     "note": "reseller gives 9/1/2015"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Swedish Chef",
+      "Camilla the Chicken"
+     ],
+     "source_url": "https://www.yourwdwstore.net/Disney-Food-and-Wine-Festival-Pin--2015-Swedish-Chef-DVC_p_64253.html",
+     "method": "search_snippet",
+     "note": "chef with Camilla in a pot (via search summary, page tie uncertain)"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/2015-epcot-international-food-wine-festival-pins",
+     "method": "search_snippet",
+     "note": "2015 festival"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2015/force-awakens-countdown/finn",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "released: DPB Oct 2015 week 3 post itself gives Finn as countdown #4, LE 10000, $12.95, 15 Oct 2015 at DL and WDW"
+  },
+  {
+   "key": "wdw/2015/force-awakens-countdown/rey",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "released: DPB Oct 2015 week 5 post itself gives Rey as #5 of 10, LE 10000, $12.95, 29 Oct 2015; distinct from DisneyStore.com Rey LE 1000"
+  },
+  {
+   "key": "wdw/2015/force-awakens-countdown",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "#1 and #10 still unidentified after 4 more queries; DPB Dec 2015 week 3 post not found in results"
+  },
+  {
+   "key": "wdw/2015/force-awakens-countdown/kylo-ren",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold kept: no editorial source for countdown #6 Kylo Ren found"
+  },
+  {
+   "key": "wdw/2015/force-awakens-countdown/captain-phasma",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold kept: only reseller listing found; no DPB week post for #9 in results"
+  },
+  {
+   "key": "wdw/2015/force-awakens-countdown/poe",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold kept: no editorial page for #2 Poe found this round"
+  },
+  {
+   "key": "wdw/2015/jumbo-2015/epcot",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: rests on preview list title only (April 2015 recap, listed among OE pins); edition, price, date and set position 2 unconfirmed"
+  },
+  {
+   "key": "wdw/2015/jumbo-2015",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "Epcot jumbo previewed for May-July 2015 but no release post found; one summary places AK jumbo in July week 2, not week 3"
+  },
+  {
+   "key": "wdw/2015/mvmcp-2015",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "Still no text source for designs or editions; DPB flyer is image only; nothing from WDWNT/AllEars/DFB for 2015"
+  },
+  {
+   "key": "wdw/2015/mvmcp-2015/mickey-minnie-pluto",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold kept: still reseller category title only"
+  },
+  {
+   "key": "wdw/2015/mvmcp-2015/hitchhiking-ghosts",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold kept: still reseller category title only"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015",
+   "field": "ap_pin",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "AP pin LE 5000 $15.95 design still unnamed; reseller title names a 2015 Halloween Party passholder Chip, Dale, Pluto pin, park unclear; not recorded"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015/evil-queen",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: reseller-only; likely one of the four LE 5500 pins, possibly same art as boxed-set Evil Queen; reseller price unreliable; confirm on editorial source"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "LE 5500 four: only Evil Queen tied to 5500 (reseller); Goofy 2015 pin listed by reseller without edition; others unnamed"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015",
+   "field": "mystery",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "Mystery set now recorded as wdw/2015/mnsshp-2015-mystery; designs from one reseller choice list only, holds below"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery",
+   "field": "expected_pin_count",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "Total not stated by editorial source; reseller list names 10 (8 plus 2 chasers); not recorded as count"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/gaston",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: mystery designs not individually confirmed; single reseller list names all ten; glow fill per listing"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/ursula",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: mystery designs not individually confirmed; single reseller list names all ten; glow fill per listing"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/chernabog",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: mystery designs not individually confirmed; single reseller list names all ten; glow fill per listing"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/maleficent",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: mystery designs not individually confirmed; single reseller list names all ten; glow fill per listing"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/oogie-boogie",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: mystery designs not individually confirmed; single reseller list names all ten; glow fill per listing"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/jafar",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: mystery designs not individually confirmed; single reseller list names all ten; glow fill per listing"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/captain-hook",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: mystery designs not individually confirmed; single reseller list names all ten; glow fill per listing"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/scar",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: mystery designs not individually confirmed; single reseller list names all ten; glow fill per listing"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/dr-facilier",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: mystery designs not individually confirmed; single reseller list names all ten; glow fill per listing"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/old-hag",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: mystery designs not individually confirmed; single reseller list names all ten; glow fill per listing"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/mickey",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "released: mypincentral 191926 itself places Mickey in Life Lessons mystery box set, back marked LE 250 chaser with GenEARation D stamp"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/donald-duck-chaser",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: reseller product title only (seen on category page); confirm on editorial source"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/hercules-chaser",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: reseller product title only (seen on category page); confirm on editorial source"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/dumbo-chaser",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: reseller product title only (seen on category page); confirm on editorial source"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/lion-king-chaser",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold: reseller title names film only; character not stated; confirm design on editorial source"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/rapunzel",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold kept: still reseller-only; LR vs chaser not stated"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/genie",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold kept: still reseller-only; LR vs chaser not stated"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/thumper",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold kept: still reseller-only; LR vs chaser not stated"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "AllEars: 8 LR + 8 chasers; named so far: 3 regular (reseller), 5 chasers (1 database, 4 reseller); 5 LR and 3 chasers unnamed"
+  },
+  {
+   "key": "wdw/2015/genearation-d-countdown",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "Month holds kept: AllEars LE 500 applies set-wide, no per-design source found this round"
+  },
+  {
+   "key": "wdw/2015/genearation-d-tv-through-the-years",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold kept: confirm pin structure; not researched further this round"
+  },
+  {
+   "key": "wdw/2015/genearation-d-digital-disney-boxed",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold kept: final lineup not confirmed this round"
+  },
+  {
+   "key": "wdw/2015/remy-hide-and-squeak-2015/pepper",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "Green pepper per mypincentral 4769; distinct from salt-pepper key (shaker design); forum lists pepper and salt & pepper separately"
+  },
+  {
+   "key": "wdw/2015/remy-hide-and-squeak-2015",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "Tomato and onion seen only on resale aggregator/Amazon titles (excluded-type); garlic still conflicts (Mousesteps 2015 photo vs forum 2016 rumour)"
+  },
+  {
+   "key": "wdw/2015/remy-hide-and-squeak-2015/olive-oil",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold kept: no per-design editorial source found"
+  },
+  {
+   "key": "wdw/2015/remy-hide-and-squeak-2015/salt-pepper",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "hold kept: salt vs salt-and-pepper design unresolved"
+  },
+  {
+   "key": "wdw/2015/remy-hide-and-squeak-2015",
+   "field": "edition_type",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "Conflict: Dole Whipped says limited release, Mousesteps says limited edition; mypincentral 2016 back stamp reads limited release"
+  },
+  {
+   "key": "wdw/2015/epcot-food-wine-2015/swedish-chef-dvc",
+   "field": "characters",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "Camilla detail comes via search summary not clearly tied to one page; confirm"
+  },
+  {
+   "key": "wdw/2015/dvc-resort-2015",
+   "field": "release_date",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "Still no exact date; DPB says set out a few months before its post; pins show resort established dates"
+  },
+  {
+   "key": "wdw/2015/lead/dvc-resort-mystery",
+   "field": "scope",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "lead: OE DVC Resort Mystery Pin Collection (DPB Nov 24 2015; 14 designs, 2 per box, DL and WDW, DVC members) for OE cell; designs not named"
+  },
+  {
+   "key": "wdw/2015/lead/pixar-countdown-hinged",
+   "field": "scope",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "lead: DPB says a Pixar countdown hinged pin LE 750 sold by random selection at GenEARation D, 12 Sept 2015; subject not stated; check vs pixar-party-countdown"
+  },
+  {
+   "key": "wdw/2015/lead/pin-trading-nights",
+   "field": "scope",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "No 2015 WDW pin trading night exclusives found; Feb night at Coronado Springs and April recap only preview later releases"
+  },
+  {
+   "key": "wdw/2015/lead/excluded-titles",
+   "field": "scope",
+   "searched": "WebSearch snippets, follow-up cell B210",
+   "note": "Remy tomato (LR, 9/25/2015) and onion titles seen only on resale aggregator and Amazon UK; not used as claims"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 to packets 327/343 (B034/B195), WDW LE/LR 2015; 28 standard WebSearches, snippets only, excluded domains blocked; reuses earlier keys. Released Finn, Rey, Life Lessons Mickey holds."
+}

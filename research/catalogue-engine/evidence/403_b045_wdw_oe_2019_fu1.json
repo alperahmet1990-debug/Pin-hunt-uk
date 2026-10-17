@@ -1,0 +1,2269 @@
+{
+ "packet_id": "backfill-b045-wdw-oe-2019-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b045",
+ "sources": [
+  {
+   "url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+   "title": "Disney Four Pin Booster Set - Star Wars Galaxy's Edge - First Order",
+   "publisher": "Your WDW Store",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-galaxys-edge-open-edition-disney-pins/",
+   "title": "Star Wars Galaxy's Edge Open Edition Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+   "title": "PHOTOS: Every Merchandise Item (with Prices) From First Order Cargo in Star Wars: Galaxy's Edge",
+   "publisher": "WDW News Today",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+   "title": "PHOTOS: Every Merchandise Item (with Prices) From Resistance Supply in Star Wars: Galaxy's Edge",
+   "publisher": "WDW News Today",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+   "title": "Resistance Star Wars Galaxy's Edge Booster Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-star-wars-galaxys-edge-grand-opening-at-disneys-hollywood-studios/",
+   "title": "PHOTOS: Every Piece of Merchandise (with Prices) from Star Wars: Galaxy's Edge Grand Opening at Disney's Hollywood Studios",
+   "publisher": "WDW News Today",
+   "published_date": "2019-08-29",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/toy-story-4-mystery-pin-collection",
+   "title": "Toy Story 4 Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/toy-story-land-mystery-disney-pin-set/",
+   "title": "Toy Story Land Mystery Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+   "title": "New Pandora - The World of Avatar 2019 Disney Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/09/photos-every-piece-of-new-disney-skyliner-merchandise-with-prices-now-available-at-walt-disney-world/",
+   "title": "PHOTOS: Every Piece of New Disney Skyliner Merchandise (with Prices) Now Available at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-skyliner-grand-opening-pins/",
+   "title": "Disney Skyliner Grand Opening Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+   "title": "New Disney Pins June 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+   "title": "New Disney Pins June 2019 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+   "title": "New Disney Pins June 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-september-2019-week-2/",
+   "title": "New Disney Pins September 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+   "title": "Disney Hugs Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-2",
+   "title": "New Disney Pins October 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+   "title": "New Disney Pins October 2019 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-incredibles-mystery-pin-collection",
+   "title": "The Incredibles Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10-23",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-1",
+   "title": "New Disney Pins March 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-4",
+   "title": "New Disney Pins March 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-1",
+   "title": "New Disney Pins April 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+   "title": "Disney Resorts Holiday 2019 Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-minnies-runaway-railway-grand-opening-pins/",
+   "title": "Mickey & Minnie's Runaway Railway Grand Opening Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/03/photos-every-2019-epcot-international-flower-garden-festival-merchandise-item-with-pricing/",
+   "title": "PHOTOS: Every 2019 Epcot International Flower & Garden Festival Merchandise Item with Pricing",
+   "publisher": "WDW News Today",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2019/oe-set/swge-first-order-booster",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Galaxy's Edge First Order Four Pin Booster Set",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Name as on dealer listing"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Dealer says four pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (booster)",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Four separate enamel pins sold together"
+    },
+    {
+     "field": "set_name",
+     "value": "The First Order Booster Pin Set",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-open-edition-disney-pins/",
+     "method": "search_snippet",
+     "note": "Listed in DPB Galaxy's Edge OE roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-open-edition-disney-pins/",
+     "method": "search_snippet",
+     "note": "Roundup is of GE open edition pins"
+    },
+    {
+     "field": "price",
+     "value": 24.99,
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-open-edition-disney-pins/",
+     "method": "search_snippet",
+     "note": "Roundup gives booster sets at USD 24.99"
+    },
+    {
+     "field": "price",
+     "value": 27.99,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "First Order Cargo list shows a booster pin set at USD 27.99"
+    },
+    {
+     "field": "price",
+     "value": 38.99,
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Dealer price, not original retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-open-edition-disney-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Disney's Hollywood Studios",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-open-edition-disney-pins/",
+     "method": "search_snippet",
+     "note": "Roundup says most GE OE pins sold on both coasts"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/oe-set/swge-resistance-booster",
+   "claims": [
+    {
+     "field": "price",
+     "value": 27.99,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-from-the-resistance-supply-at-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Resistance Supply list shows Resistance Booster Pin Set at USD 27.99 (DPB said 29.99)"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (booster)",
+     "source_url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+     "method": "search_snippet",
+     "note": "Four different pins in one set"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/oe-set/toy-story-4-mystery",
+   "claims": [
+    {
+     "field": "format",
+     "value": "mystery box, 2 random pins per box",
+     "source_url": "https://disneypinsblog.com/blogs/news/toy-story-4-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/oe-set/character-scoops",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Character Scoops pins",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Series name per roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Roundup says now available at WDW as well"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Hugs Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "10 pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Set of open edition pins"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "USD 14.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Released at Disneyland mid-May 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Snippet says available at both resorts"
+    },
+    {
+     "field": "format",
+     "value": "mystery box, 2 random pins per box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Blind box"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/oe-set/incredibles-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Incredibles Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-incredibles-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-incredibles-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "8 pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-incredibles-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Open edition pins"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-incredibles-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "USD 14.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-incredibles-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-incredibles-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Two random per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-incredibles-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Post dated 23 Oct 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-incredibles-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Snippet says available at both resorts"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2019/oe-set/swge-first-order-booster/special-forces",
+   "set_key": "wdw/2019/oe-set/swge-first-order-booster",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "First Order Special Forces helmet pin",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Dealer lists a helmet pin labelled Special Forces"
+    },
+    {
+     "field": "front_text",
+     "value": "Special Forces",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Label text per dealer description"
+    },
+    {
+     "field": "visual_description",
+     "value": "First Order helmet with 'Special Forces' text",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Paraphrase of dealer description"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Four separate pins in the pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/swge-first-order-booster/specialist",
+   "set_key": "wdw/2019/oe-set/swge-first-order-booster",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "First Order Specialist helmet pin",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Dealer lists a helmet pin labelled Specialist"
+    },
+    {
+     "field": "front_text",
+     "value": "Specialist",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Label text per dealer description"
+    },
+    {
+     "field": "visual_description",
+     "value": "First Order helmet with 'Specialist' text",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Paraphrase of dealer description"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Four separate pins in the pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/swge-first-order-booster/kylo-ren",
+   "set_key": "wdw/2019/oe-set/swge-first-order-booster",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "First Order Kylo Ren helmet pin",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Dealer lists a helmet pin labelled Kylo Ren"
+    },
+    {
+     "field": "front_text",
+     "value": "Kylo Ren",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Label text per dealer description"
+    },
+    {
+     "field": "visual_description",
+     "value": "First Order helmet with 'Kylo Ren' text",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Paraphrase of dealer description"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Four separate pins in the pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/swge-first-order-booster/trooper",
+   "set_key": "wdw/2019/oe-set/swge-first-order-booster",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "First Order Trooper helmet pin",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Dealer lists a helmet pin labelled Trooper"
+    },
+    {
+     "field": "front_text",
+     "value": "Trooper",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Label text per dealer description"
+    },
+    {
+     "field": "visual_description",
+     "value": "First Order helmet with 'Trooper' text",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Paraphrase of dealer description"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.yourwdwstore.net/disney-four-pin-booster-set-star-wars-galaxys-edge-first-order.html",
+     "method": "search_snippet",
+     "note": "Four separate pins in the pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/swge-supreme-leader-kylo-ren",
+   "set_key": "wdw/2019/oe-single/swge-supreme-leader-kylo-ren",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Supreme Leader Kylo Ren Pin",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Listed at First Order Cargo"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kylo Ren"
+     ],
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Named in item title"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "Post dated June 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/swge-resistance-booster/pilot",
+   "set_key": "wdw/2019/oe-set/swge-resistance-booster",
+   "claims": [
+    {
+     "field": "front_text",
+     "value": "Pilot",
+     "source_url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+     "method": "search_snippet",
+     "note": "Set page says the Falcon pins read Pilot among others"
+    },
+    {
+     "field": "visual_description",
+     "value": "Millennium Falcon pin reading 'Pilot'",
+     "source_url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+     "method": "search_snippet",
+     "note": "Set of four different pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/swge-resistance-booster/never-tell-me-the-odds",
+   "set_key": "wdw/2019/oe-set/swge-resistance-booster",
+   "claims": [
+    {
+     "field": "front_text",
+     "value": "Never Tell Me the Odds",
+     "source_url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+     "method": "search_snippet",
+     "note": "Set page says the Falcon pins read Never Tell Me the Odds among others"
+    },
+    {
+     "field": "visual_description",
+     "value": "Millennium Falcon pin reading 'Never Tell Me the Odds'",
+     "source_url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+     "method": "search_snippet",
+     "note": "Set of four different pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/swge-resistance-booster/black-spire-outpost",
+   "set_key": "wdw/2019/oe-set/swge-resistance-booster",
+   "claims": [
+    {
+     "field": "front_text",
+     "value": "Black Spire Outpost",
+     "source_url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+     "method": "search_snippet",
+     "note": "Set page says the Falcon pins read Black Spire Outpost among others"
+    },
+    {
+     "field": "visual_description",
+     "value": "Millennium Falcon pin reading 'Black Spire Outpost'",
+     "source_url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+     "method": "search_snippet",
+     "note": "Set of four different pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+     "method": "search_snippet",
+     "note": "Set described as open edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/toy-story-4-mystery/jessie",
+   "set_key": "wdw/2019/oe-set/toy-story-4-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jessie"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/toy-story-4-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Named in collection character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/toy-story-4-mystery/bullseye",
+   "set_key": "wdw/2019/oe-set/toy-story-4-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Bullseye"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/toy-story-4-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Named in collection character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/toy-story-4-mystery/ducky-and-bunny",
+   "set_key": "wdw/2019/oe-set/toy-story-4-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ducky & Bunny"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/toy-story-4-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Named in collection character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/toy-story-4-mystery/little-green-men",
+   "set_key": "wdw/2019/oe-set/toy-story-4-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Little Green Men"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/toy-story-4-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Named in collection character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/toy-story-4-mystery/buzz-lightyear",
+   "set_key": "wdw/2019/oe-set/toy-story-4-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Buzz Lightyear"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/toy-story-4-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Named in collection character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/pandora-banshee",
+   "set_key": "wdw/2019/oe-single/pandora-banshee",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Banshee pin",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "Listed among May 2019 Pandora OE pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "Listed as new open edition pins"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "May 2019 refresh"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Animal Kingdom",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "Pandora land release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/pandora-sivako",
+   "set_key": "wdw/2019/oe-single/pandora-sivako",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sivako pin",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "Listed among May 2019 Pandora OE pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "Listed as new open edition pins"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "May 2019 refresh"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Animal Kingdom",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "Pandora land release"
+    },
+    {
+     "field": "front_text",
+     "value": "Sivako",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "Na'vi word on pin, glossed as rise to the challenge"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/pandora-direhorse",
+   "set_key": "wdw/2019/oe-single/pandora-direhorse",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Direhorse pin",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "Listed among May 2019 Pandora OE pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "Listed as new open edition pins"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "May 2019 refresh"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Animal Kingdom",
+     "source_url": "https://disneypinsblog.com/new-pandora-the-world-of-avatar-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "Pandora land release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/skyliner-theres-magic-in-the-air",
+   "set_key": "wdw/2019/oe-single/skyliner-theres-magic-in-the-air",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "\"There's Magic in The Air\" Open Edition Pin",
+     "source_url": "https://wdwnt.com/2019/09/photos-every-piece-of-new-disney-skyliner-merchandise-with-prices-now-available-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Name as in WDWNT price list"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://wdwnt.com/2019/09/photos-every-piece-of-new-disney-skyliner-merchandise-with-prices-now-available-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://wdwnt.com/2019/09/photos-every-piece-of-new-disney-skyliner-merchandise-with-prices-now-available-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/09/photos-every-piece-of-new-disney-skyliner-merchandise-with-prices-now-available-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-27",
+     "source_url": "https://wdwnt.com/2019/09/photos-every-piece-of-new-disney-skyliner-merchandise-with-prices-now-available-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Skyliner merch on sale from 27 Sep 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://wdwnt.com/2019/09/photos-every-piece-of-new-disney-skyliner-merchandise-with-prices-now-available-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "WDW Skyliner merchandise"
+    },
+    {
+     "field": "visual_description",
+     "value": "Skyliner scene with palm trees, Spaceship Earth and Tower of Terror",
+     "source_url": "https://disneypinsblog.com/disney-skyliner-grand-opening-pins/",
+     "method": "search_snippet",
+     "note": "Paraphrase of design"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/nemo",
+   "set_key": "wdw/2019/oe-single/nemo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nemo pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Name as in weekly roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Snippet calls it open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Nemo"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Named in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "June 2019 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Availability per roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/goofy-june-2019",
+   "set_key": "wdw/2019/oe-single/goofy-june-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Name as in weekly roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Snippet calls it open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Named in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "June 2019 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Availability per roundup"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/pinocchio-june-2019",
+   "set_key": "wdw/2019/oe-single/pinocchio-june-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pinocchio pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Name as in weekly roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Snippet calls it open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Named in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "June 2019 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Availability per roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/mowgli-and-baloo",
+   "set_key": "wdw/2019/oe-single/mowgli-and-baloo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mowgli & Baloo pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Name as in weekly roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Snippet calls it open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mowgli",
+      "Baloo"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Named in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "June 2019 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Availability per roundup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2019-week-3/",
+     "method": "search_snippet",
+     "note": "Listed as one pin naming both characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/kim-possible-swivel",
+   "set_key": "wdw/2019/oe-single/kim-possible-swivel",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kim Possible Swivel Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet",
+     "note": "Name as in weekly roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet",
+     "note": "Snippet calls it open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kim Possible"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet",
+     "note": "Named in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet",
+     "note": "June 2019 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland (spotted); to come to Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet",
+     "note": "Availability per roundup"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "swivel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet",
+     "note": "Swivel element stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/spider-man-far-from-home",
+   "set_key": "wdw/2019/oe-single/spider-man-far-from-home",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Spider-Man Far From Home pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "Name as in weekly roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "Snippet calls it open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Spider-Man"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "Named in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "June 2019 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "Availability per roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/character-scoops/donald-duck",
+   "set_key": "wdw/2019/oe-set/character-scoops",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Named among Character Scoops pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Sep 2019 week 2 roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/character-scoops/chip-n-dale",
+   "set_key": "wdw/2019/oe-set/character-scoops",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Named among Character Scoops pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Sep 2019 week 2 roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/disney-hugs-mystery/jumbo-and-dumbo",
+   "set_key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mrs. Jumbo",
+      "Dumbo"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Pair named in collection lineup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/disney-hugs-mystery/lilo-and-stitch",
+   "set_key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lilo",
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Pair named in collection lineup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/disney-hugs-mystery/mickey-and-pluto",
+   "set_key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Pair named in collection lineup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/jack-jack-cookie-num-num",
+   "set_key": "wdw/2019/oe-single/jack-jack-cookie-num-num",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack Jack Cookie Num Num",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "Name per roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "Snippet calls it open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack-Jack"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "Named"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "Mid-October 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "Snippet says available at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/incredibles-2-family",
+   "set_key": "wdw/2019/oe-single/incredibles-2-family",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Incredibles 2 Family pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-2",
+     "method": "search_snippet",
+     "note": "Name per roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-2",
+     "method": "search_snippet",
+     "note": "Snippet calls it open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-2",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-2",
+     "method": "search_snippet",
+     "note": "Week of 6-12 Oct 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-2",
+     "method": "search_snippet",
+     "note": "Snippet says available at both resorts"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-2",
+     "method": "search_snippet",
+     "note": "One pin showing the whole family"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/incredibles-mystery/mr-incredible",
+   "set_key": "wdw/2019/oe-set/incredibles-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mr. Incredible"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-incredibles-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Named in collection character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/incredibles-mystery/mrs-incredible",
+   "set_key": "wdw/2019/oe-set/incredibles-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mrs. Incredible"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-incredibles-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Named in collection character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/incredibles-mystery/dash",
+   "set_key": "wdw/2019/oe-set/incredibles-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dash"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-incredibles-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Named in collection character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/incredibles-mystery/violet",
+   "set_key": "wdw/2019/oe-set/incredibles-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Violet"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-incredibles-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Named in collection character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/incredibles-mystery/edna-mode",
+   "set_key": "wdw/2019/oe-set/incredibles-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Edna Mode"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-incredibles-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Named in collection character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/incredibles-mystery/frozone",
+   "set_key": "wdw/2019/oe-set/incredibles-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Frozone"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-incredibles-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Named in collection character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/captain-marvel",
+   "set_key": "wdw/2019/oe-single/captain-marvel",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Captain Marvel Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-1",
+     "method": "search_snippet",
+     "note": "Name per roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-1",
+     "method": "search_snippet",
+     "note": "Snippet calls it open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-1",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-1",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Captain Marvel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-1",
+     "method": "search_snippet",
+     "note": "Named"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-1",
+     "method": "search_snippet",
+     "note": "March 2019 week 1"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-1",
+     "method": "search_snippet",
+     "note": "Snippet says available at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/avengers-endgame-march-2019",
+   "set_key": "wdw/2019/oe-single/avengers-endgame-march-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Avengers: Endgame pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-4",
+     "method": "search_snippet",
+     "note": "Name per roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-4",
+     "method": "search_snippet",
+     "note": "Snippet calls it open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-4",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-4",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-4",
+     "method": "search_snippet",
+     "note": "Spotted at Epcot, March 2019 week 4"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-4",
+     "method": "search_snippet",
+     "note": "Snippet says available at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/avengers-endgame-thanos",
+   "set_key": "wdw/2019/oe-single/avengers-endgame-thanos",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Avengers Endgame Thanos pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-1",
+     "method": "search_snippet",
+     "note": "Thanos design among new OE Endgame pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-1",
+     "method": "search_snippet",
+     "note": "Snippet calls it open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Thanos"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-1",
+     "method": "search_snippet",
+     "note": "Named"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-1",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-1",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-1",
+     "method": "search_snippet",
+     "note": "April 2019 week 1"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-1",
+     "method": "search_snippet",
+     "note": "Snippet says available at both resorts"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2019/oe-set/swge-first-order-booster/special-forces",
+   "field": "release_year",
+   "searched": "yourwdwstore listing; 2 queries",
+   "note": "hold: dealer listing undated; tie to the 2019 First Order booster rests on title/subject (a 2022 GE booster also exists)"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-first-order-booster/specialist",
+   "field": "release_year",
+   "searched": "yourwdwstore listing; 2 queries",
+   "note": "hold: dealer listing undated; tie to the 2019 First Order booster rests on title/subject (a 2022 GE booster also exists)"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-first-order-booster/kylo-ren",
+   "field": "release_year",
+   "searched": "yourwdwstore listing; 2 queries",
+   "note": "hold: dealer listing undated; tie to the 2019 First Order booster rests on title/subject (a 2022 GE booster also exists)"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-first-order-booster/trooper",
+   "field": "release_year",
+   "searched": "yourwdwstore listing; 2 queries",
+   "note": "hold: dealer listing undated; tie to the 2019 First Order booster rests on title/subject (a 2022 GE booster also exists)"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-first-order-booster",
+   "field": "release_location",
+   "searched": "WDWNT First Order Cargo; DPB GE OE",
+   "note": "WDWNT June 2019 list is the Disneyland shop; WDW availability only via DPB general 'both coasts' line"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-first-order",
+   "field": "members",
+   "searched": "4 queries",
+   "note": "Booster now split out as swge-first-order-booster; First Order starter/mystery sets still unnamed"
+  },
+  {
+   "key": "wdw/2019/oe/swge-supreme-leader-kylo-ren",
+   "field": "edition_type",
+   "searched": "WDWNT First Order Cargo",
+   "note": "Edition type not stated; price suggests OE"
+  },
+  {
+   "key": "wdw/2019/oe/swge-supreme-leader-kylo-ren",
+   "field": "release_location",
+   "searched": "WDWNT First Order Cargo",
+   "note": "hold: list is from Disneyland June 2019; WDW sale not stated in snippet"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-first-order-lanyard-set",
+   "field": "members",
+   "searched": "WDWNT First Order Cargo",
+   "note": "A 4 Pin Lanyard Set (USD 29.99) is listed at First Order Cargo; pins not named; may be the First Order starter set"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-resistance-booster",
+   "field": "members",
+   "searched": "DPB set page; 2 queries",
+   "note": "3 of 4 pin texts named in snippet; fourth pin unnamed"
+  },
+  {
+   "key": "wdw/2019/swge-grand-opening-mystery",
+   "field": "edition_type",
+   "searched": "WDWNT grand opening; 2 queries",
+   "note": "Jawa Salvage mystery (USD 19.99) at DHS opening is a limited release, not OE: lead for WDW LE cell (404)"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-resist-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Ten designs still unnamed in snippets"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-4-mystery/woody",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral; 3 queries",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-4-mystery/bo-peep",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral; 3 queries",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-4-mystery/hamm",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral; 3 queries",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-4-mystery/forky",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral; 3 queries",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-4-mystery/rex",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral; 3 queries",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-4-mystery/jessie",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral; 3 queries",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-4-mystery/bullseye",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral; 3 queries",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-4-mystery/ducky-and-bunny",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral; 3 queries",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-4-mystery/little-green-men",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral; 3 queries",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-4-mystery/buzz-lightyear",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral; 3 queries",
+   "note": "hold: mystery designs not individually confirmed (single collection list of 10 characters; no per-design pages found)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-land-mystery/woody",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-land-mystery/jessie",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-land-mystery/wheezy",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-land-mystery/buttercup",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-land-mystery/alien",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-land-mystery/toy-soldier",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-land-mystery/buzz-lightyear",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-land-mystery/hamm",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-land-mystery/rex",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-land-mystery/trixie",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-land-mystery/mr-and-mrs-potato-head",
+   "field": "pin_structure",
+   "searched": "DPB set page; 1 query",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-booster/donald-duck",
+   "field": "pin_structure",
+   "searched": "DPB 2019 pins; 2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); characters listed for a 6-pin booster, no per-pin description"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-booster/mickey-mouse",
+   "field": "pin_structure",
+   "searched": "DPB 2019 pins; 2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); characters listed for a 6-pin booster, no per-pin description"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-booster/goofy",
+   "field": "pin_structure",
+   "searched": "DPB 2019 pins; 2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); characters listed for a 6-pin booster, no per-pin description"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-booster/daisy-duck",
+   "field": "pin_structure",
+   "searched": "DPB 2019 pins; 2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); characters listed for a 6-pin booster, no per-pin description"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-booster/pluto",
+   "field": "pin_structure",
+   "searched": "DPB 2019 pins; 2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); characters listed for a 6-pin booster, no per-pin description"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-booster/minnie-mouse",
+   "field": "pin_structure",
+   "searched": "DPB 2019 pins; 2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); characters listed for a 6-pin booster, no per-pin description"
+  },
+  {
+   "key": "wdw/2019/oe-set/celebrate-mickey-90th-booster/minnie-mouse",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); character list only"
+  },
+  {
+   "key": "wdw/2019/oe-set/celebrate-mickey-90th-booster/mickey-mouse",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); character list only"
+  },
+  {
+   "key": "wdw/2019/oe-set/celebrate-mickey-90th-booster/donald-duck",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); character list only"
+  },
+  {
+   "key": "wdw/2019/oe-set/celebrate-mickey-90th-booster/pluto",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); character list only"
+  },
+  {
+   "key": "wdw/2019/oe-set/celebrate-mickey-90th-booster/goofy",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); character list only"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-starter-set",
+   "field": "members",
+   "searched": "DPB; WDWNT; 2 queries",
+   "note": "A marketplace listing names four characters; marketplaces are not evidence, members left unrecorded"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-2019-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Eight characters still not named in snippets"
+  },
+  {
+   "key": "wdw/2019/oe/pandora-2019-pandora",
+   "field": "pin_name",
+   "searched": "DPB Pandora 2019; 2 queries",
+   "note": "A fourth OE 'Pandora' pin is listed; may be the existing pandora-in-my-bones record; not recorded separately"
+  },
+  {
+   "key": "wdw/2019/oe-set/pandora-2019-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Mystery designs still unnamed for 2019 set"
+  },
+  {
+   "key": "wdw/2019/skyliner-mystery",
+   "field": "edition_type",
+   "searched": "WDWNT Skyliner",
+   "note": "Skyliner 8-design mystery set and Inaugural Flight pin are LE/LR: lead for WDW LE cell (404)"
+  },
+  {
+   "key": "wdw/2019/oe/nemo",
+   "field": "original_price",
+   "searched": "DPB June 2019 roundup",
+   "note": "Price not in snippet"
+  },
+  {
+   "key": "wdw/2019/oe/pinocchio-june-2019",
+   "field": "original_price",
+   "searched": "DPB June 2019 roundup",
+   "note": "Price not in snippet"
+  },
+  {
+   "key": "wdw/2019/oe/mowgli-and-baloo",
+   "field": "original_price",
+   "searched": "DPB June 2019 roundup",
+   "note": "Price not in snippet"
+  },
+  {
+   "key": "wdw/2019/oe/spider-man-far-from-home",
+   "field": "original_price",
+   "searched": "DPB June 2019 roundup",
+   "note": "Price not in snippet"
+  },
+  {
+   "key": "wdw/2019/oe-set/character-scoops/donald-duck",
+   "field": "pin_structure",
+   "searched": "DPB Sep 2019 wk2",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); edition/price not in snippet"
+  },
+  {
+   "key": "wdw/2019/oe-set/character-scoops/chip-n-dale",
+   "field": "pin_structure",
+   "searched": "DPB Sep 2019 wk2",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); edition/price not in snippet"
+  },
+  {
+   "key": "wdw/2019/oe-set/munchlings-mystery",
+   "field": "release_location",
+   "searched": "DPB Sep 2019 wk2",
+   "note": "Munchlings and Character Folding Fans mystery sets listed as OE at Disney Parks; park not stated"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery/jumbo-and-dumbo",
+   "field": "pin_structure",
+   "searched": "DPB set page; 2 queries",
+   "note": "hold: mystery designs not individually confirmed (collection lineup only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery/lilo-and-stitch",
+   "field": "pin_structure",
+   "searched": "DPB set page; 2 queries",
+   "note": "hold: mystery designs not individually confirmed (collection lineup only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery/mickey-and-pluto",
+   "field": "pin_structure",
+   "searched": "DPB set page; 2 queries",
+   "note": "hold: mystery designs not individually confirmed (collection lineup only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Only 3 of 10 pairings named in snippets"
+  },
+  {
+   "key": "wdw/2019/oe/jack-jack-cookie-num-num",
+   "field": "original_price",
+   "searched": "DPB Oct 2019",
+   "note": "Price not in snippet; week attribution from 'mid-October'"
+  },
+  {
+   "key": "wdw/2019/oe-set/incredibles-mystery",
+   "field": "release_location",
+   "searched": "DPB set page",
+   "note": "released: DPB set page (23 Oct 2019) states release at both Disneyland and Walt Disney World"
+  },
+  {
+   "key": "wdw/2019/oe-set/incredibles-mystery/mr-incredible",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/incredibles-mystery/mrs-incredible",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/incredibles-mystery/dash",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/incredibles-mystery/violet",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/incredibles-mystery/edna-mode",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/incredibles-mystery/frozone",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold: mystery designs not individually confirmed (collection character list only)"
+  },
+  {
+   "key": "wdw/2019/oe-set/incredibles-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "6 characters named for 8 pins"
+  },
+  {
+   "key": "wdw/2019/oe/captain-marvel",
+   "field": "source",
+   "searched": "DPB March 2019 wk1",
+   "note": "released: Captain Marvel OE (USD 9.99, DLR and WDW) now tied to the DPB March 2019 week 1 roundup page"
+  },
+  {
+   "key": "wdw/2019/oe/avengers-endgame-march-2019",
+   "field": "visual_description",
+   "searched": "DPB Mar 2019 wk4",
+   "note": "Design not described; may duplicate one of the April Endgame pins"
+  },
+  {
+   "key": "wdw/2019/oe-set/avengers-endgame-april-2019",
+   "field": "members",
+   "searched": "DPB Apr 2019 wk1",
+   "note": "Other OE Endgame pins in this post not named in snippet"
+  },
+  {
+   "key": "wdw/2019/oe/simba-3d",
+   "field": "edition_type",
+   "searched": "DPB Apr 2019",
+   "note": "Still not explicitly called open edition"
+  },
+  {
+   "key": "wdw/2019/oe/frozen-2",
+   "field": "members",
+   "searched": "DPB; 3 queries",
+   "note": "Frozen 2 OE parks pins (Nov 2019) referenced by DPB lanyard post but not named; dealer pages (Trust Your Journey, Snow It All) undated"
+  },
+  {
+   "key": "wdw/2019/oe/runaway-railway-logo",
+   "field": "release_date",
+   "searched": "DPB; WDWNT; AllEars",
+   "note": "scope: OE logo pin previewed Dec 2019 but on sale 4 Mar 2020; belongs to 2020"
+  },
+  {
+   "key": "wdw/2019/disney-resorts-holiday-2019",
+   "field": "edition_type",
+   "searched": "DPB",
+   "note": "24 resort holiday bell spinner pins USD 17.99, edition sizes vary: LE lead for 404, not OE"
+  },
+  {
+   "key": "wdw/2019/epcot-flower-garden",
+   "field": "edition_type",
+   "searched": "WDWNT F&G 2019",
+   "note": "WDWNT 2019 F&G list shows LR pins only, no OE pin found (confirms first pass)"
+  },
+  {
+   "key": "wdw/2019/oe/coco-and-mickey-americana",
+   "field": "release_location",
+   "searched": "DPB",
+   "note": "OE Coco Miguel and Mickey Americana pins (USD 17.99) listed; WDW availability and dates inconsistent"
+  },
+  {
+   "key": "wdw/2019/hidden-mickey-2019",
+   "field": "edition_type",
+   "searched": "WDWNT Mar 2019",
+   "note": "2019 Hidden Mickey series released Mar 2019; not checked for coverage elsewhere"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-resistance-booster/pilot",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: booster member named only by its pin text in one set listing, no per-design description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-resistance-booster/never-tell-me-the-odds",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: booster member named only by its pin text in one set listing, no per-design description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-resistance-booster/black-spire-outpost",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: booster member named only by its pin text in one set listing, no per-design description; pending maintainer decision on full lists"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 to packet 201 (B001); 30 standard WebSearches, excluded domains blocked; reuses 201 keys. New: GE First Order booster members (dealer, held on year), Kylo Ren OE, 3 Resistance booster texts, Pandora OE trio, Skyliner OE, June/Oct/Mar/Apr 2019 OE pins, Disney Hugs and Incredibles mystery sets (members held). Rule-12 holds added to 201 mystery/booster members. LE/LR leads (Jawa Salvage, Skyliner mystery, resort holiday bells) left for 404."
+}

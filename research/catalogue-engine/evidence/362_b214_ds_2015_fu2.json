@@ -1,0 +1,1759 @@
+{
+ "packet_id": "backfill-b214-ds-2015-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b214",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/disney-store-short-films-collection-pins",
+   "title": "Disney Store Short Films Collection Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-rey-pin",
+   "title": "Star Wars Rey Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneystore-com-force-friday-pins",
+   "title": "DisneyStore.com Force Friday Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+   "title": "DSSH Surprise Pin Release!",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+   "title": "February 26, 2015 Pin Trader Delight",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/140919",
+   "title": "MyPinCentral pin 140919",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+   "title": "January 25, 2015 Pin Trader Delight",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/08/23/latest-pin-trader-delight-pins-7/",
+   "title": "Latest Pin Trader Delight Pins",
+   "publisher": "DisKingdom",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/2015/12/14/star-wars-the-force-awakens-3-character-block-pin-released/",
+   "title": "Star Wars: The Force Awakens 3 Character Block Pin Released",
+   "publisher": "DisKingdom",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/10/20/details-on-a-star-wars-the-force-awakens-pin-trading-event/",
+   "title": "Details On A Star Wars: The Force Awakens Pin Trading Event",
+   "publisher": "DisKingdom",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+   "title": "Disney Studio Store Hollywood November 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+   "title": "Disney Studio Store Hollywood October 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-may-2015-pins",
+   "title": "Disney Studio Store May 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/and-yet-another-tomorrowland-pin.54115/",
+   "title": "And yet another Tomorrowland pin!",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+   "title": "Art Of Jasmine Pin Boxed Set Out Now",
+   "publisher": "DisKingdom",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2015-week-4",
+   "title": "New Disney Pins August 2015 Week 4",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-finn-disneystore-com-pin",
+   "title": "Star Wars Finn DisneyStore.com Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/cinderella-65th-anniversary-pin/",
+   "title": "Cinderella 65th Anniversary Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/09/28/star-wars-the-force-awakens-bb-8-limited-edition-pin-set-released-today/",
+   "title": "Star Wars: The Force Awakens BB-8 pin",
+   "publisher": "DisKingdom",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/disney-store-europe-june-4th-villains-sidekicks-series-2.54009/",
+   "title": "Disney Store Europe, June 4th: villains sidekicks series 2!",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsus/2015/d23-expo-short-films-collection-boxed-set",
+   "claims": [
+    {
+     "field": "price",
+     "value": 199.95,
+     "source_url": "https://disneypinsblog.com/disney-store-short-films-collection-pins",
+     "method": "search_snippet",
+     "note": "USD 199.95 retail for the 12-pin box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-store-short-films-collection-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/star-wars-tfa-pin-collector-tin",
+   "claims": [
+    {
+     "field": "format",
+     "value": "tin with starter pin and display card with six spots for the collection pins sold separately",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneystore-com-force-friday-pins",
+     "method": "search_snippet",
+     "note": "Force Friday post: card has six spots, pins sold separately"
+    },
+    {
+     "field": "format",
+     "value": "tin with starter pin; display card for the six DisneyStore.com TFA pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-rey-pin",
+     "method": "search_snippet",
+     "note": "Rey post calls Rey the sixth DisneyStore.com pin and the final pin for the tin collection"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/star-wars-tfa-disneystore-com-collection",
+   "claims": [
+    {
+     "field": "format",
+     "value": "six separately released LE pins that together complete one image",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneystore-com-force-friday-pins",
+     "method": "search_snippet",
+     "note": "Kylo Ren listing says the six pins complete a single image"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-january-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Studio Store Hollywood January 2015 Surprise Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "post subject: surprise releases 16 and 17 Jan"
+    },
+    {
+     "field": "format",
+     "value": "separately sold LE pins released on two dates",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "two Beloved Tales pins on 16 Jan, train pin on 17 Jan"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "all LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-16",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "first surprise release Fri 16 Jan 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-february-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Studio Store Hollywood February 2015 Surprise Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "surprise Pinocchio 75th pin reported in the 26 Feb PTD post"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "one surprise pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "single surprise pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02-24",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "24 Feb 2015 at 11AM"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-25",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trader Delight - 25 Jan 2015 (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "post subject"
+    },
+    {
+     "field": "format",
+     "value": "Pin Trader Delight rotation of separately sold pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "flip on Sun 25 Jan; sizes shown under each pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "4 pins named as available"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "flip date"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "PTD at DSSH"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-02-27",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trader Delight - 27 Feb 2015 (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "post subject"
+    },
+    {
+     "field": "format",
+     "value": "Pin Trader Delight rotation of separately sold pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "26 Feb post; available from 27 Feb; sizes shown under each pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "4 pins named as available"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "flip date"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "PTD at DSSH"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-08-23",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trader Delight - Aug 2015 (DSSH)",
+     "source_url": "http://diskingdom.com/2015/08/23/latest-pin-trader-delight-pins-7/",
+     "method": "search_snippet",
+     "note": "DisKingdom PTD post"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2015-week-4",
+     "method": "search_snippet",
+     "note": "PTDs flipped at DSSH that day"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "http://diskingdom.com/2015/08/23/latest-pin-trader-delight-pins-7/",
+     "method": "search_snippet",
+     "note": "store-only, with ice cream purchase"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-december-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars: The Force Awakens Pin Trading Event - Dec 2015",
+     "source_url": "http://diskingdom.com/2015/10/20/details-on-a-star-wars-the-force-awakens-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "event at Ray Dolby Ballroom, Hollywood & Highland"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-13",
+     "source_url": "https://diskingdom.com/2015/12/14/star-wars-the-force-awakens-3-character-block-pin-released/",
+     "method": "search_snippet",
+     "note": "event pin on sale from 13 Dec 2015 5PM"
+    },
+    {
+     "field": "release_location",
+     "value": "Star Wars Trading Event, Hollywood & Highland",
+     "source_url": "http://diskingdom.com/2015/10/20/details-on-a-star-wars-the-force-awakens-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "Ray Dolby Ballroom"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/art-of-jasmine-boxed-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Art of Jasmine Boxed Pin Set",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "post subject"
+    },
+    {
+     "field": "format",
+     "value": "boxed multi-pin pack",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "boxed set of three pins in display box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "three pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "LE 1000"
+    },
+    {
+     "field": "price",
+     "value": 69.95,
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "USD 69.95 online"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-17",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "out 17 Aug 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "sold online"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsus/2015/star-wars-tfa-disneystore-com-collection/rey",
+   "set_key": "dsus/2015/star-wars-tfa-disneystore-com-collection",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-rey-pin",
+     "method": "search_snippet",
+     "note": "sixth pin of the DisneyStore.com collection; final pin for the tin collection"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-rey-pin",
+     "method": "search_snippet",
+     "note": "released c. 3AM ET Mon 7 Dec 2015"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-rey-pin",
+     "method": "search_snippet",
+     "note": "LE 1000"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-rey-pin",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-rey-pin",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/star-wars-tfa-disneystore-com-collection/finn",
+   "set_key": "dsus/2015/star-wars-tfa-disneystore-com-collection",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-finn-disneystore-com-pin",
+     "method": "search_snippet",
+     "note": "fourth pin in the series"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-26",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-finn-disneystore-com-pin",
+     "method": "search_snippet",
+     "note": "c. 3AM ET Mon 26 Oct 2015"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-finn-disneystore-com-pin",
+     "method": "search_snippet",
+     "note": "LE 1000"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-january-2015/beloved-tales-the-incredibles",
+   "set_key": "dsus/2015/studio-store-hollywood-january-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Beloved Tales - The Incredibles (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "one of two Beloved Tales pins"
+    },
+    {
+     "field": "franchise",
+     "value": "The Incredibles",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "film subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "LE 300 each"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "USD 14.95 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-16",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "surprise release Fri 16 Jan 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-january-2015/beloved-tales-wreck-it-ralph",
+   "set_key": "dsus/2015/studio-store-hollywood-january-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Beloved Tales - Wreck-It Ralph (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "one of two Beloved Tales pins"
+    },
+    {
+     "field": "franchise",
+     "value": "Wreck-It Ralph",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "film subject"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "LE 300 each"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "USD 14.95 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-16",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "surprise release Fri 16 Jan 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-january-2015/aristocats-kittens-train",
+   "set_key": "dsus/2015/studio-store-hollywood-january-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Berlioz, Marie and Toulouse Train (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "surprise pin with the three kittens on a train"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Berlioz",
+      "Marie",
+      "Toulouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "all three kittens on one pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "a single train pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "USD 12.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-17",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "surprise release 17 Jan 2015"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-surprise-pin-release",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-february-2015/pinocchio-75th-anniversary",
+   "set_key": "dsus/2015/studio-store-hollywood-february-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pinocchio 75th Anniversary Surprise Pin (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "surprise pin for Pinocchio's 75th"
+    },
+    {
+     "field": "franchise",
+     "value": "Pinocchio",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "75th anniversary of Pinocchio"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02-24",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "24 Feb 2015, 11AM"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "DSSH"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio",
+      "Jiminy Cricket"
+     ],
+     "source_url": "https://mypincentral.com/pin/140919",
+     "method": "search_snippet",
+     "note": "Pinocchio at top, Jiminy at upper left"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pinocchio and Jiminy Cricket on an orange ground with 75th anniversary text",
+     "source_url": "https://mypincentral.com/pin/140919",
+     "method": "search_snippet",
+     "note": "paraphrased layout"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://mypincentral.com/pin/140919",
+     "method": "search_snippet",
+     "note": "listed in a 2015 75th Anniversary Series from the store"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-25/genie",
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-25",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Genie - Pin Trader Delight (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "named in flip list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Genie"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "post gives an edition size under each pin; listed as separate picks"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "available from flip"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "PTD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-25/adorabeezle-winterpop",
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-25",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Adorabeezle Winterpop - Pin Trader Delight (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "named in flip list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Adorabeezle Winterpop"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "post gives an edition size under each pin; listed as separate picks"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "available from flip"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "PTD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-25/geppetto",
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-25",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Geppetto - Pin Trader Delight (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "named in flip list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Geppetto"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "post gives an edition size under each pin; listed as separate picks"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "available from flip"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "PTD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-25/trigger",
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-25",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Trigger - Pin Trader Delight (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "named in flip list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Trigger"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "post gives an edition size under each pin; listed as separate picks"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "available from flip"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/january-25-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "PTD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-02-27/heimlich",
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-02-27",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Heimlich - Pin Trader Delight (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "named in flip list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Heimlich"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "post gives an edition size under each pin; listed as separate picks"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "available from flip"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "PTD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-02-27/flamingo",
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-02-27",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Flamingo - Pin Trader Delight (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "named in flip list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Flamingo"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "post gives an edition size under each pin; listed as separate picks"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "available from flip"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "PTD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-02-27/carlotta",
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-02-27",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Carlotta - Pin Trader Delight (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "named in flip list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Carlotta"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "post gives an edition size under each pin; listed as separate picks"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "available from flip"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "PTD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-02-27/clarabelle",
+   "set_key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-02-27",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Clarabelle - Pin Trader Delight (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "named in flip list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Clarabelle"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "post gives an edition size under each pin; listed as separate picks"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "available from flip"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-26-2015-pin-trader-delight",
+     "method": "search_snippet",
+     "note": "PTD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-december-2015/kylo-ren-bb-8-rey-block",
+   "set_key": "dsus/2015/studio-store-hollywood-december-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Force Awakens Three Character Block Pin (Trading Event)",
+     "source_url": "https://diskingdom.com/2015/12/14/star-wars-the-force-awakens-3-character-block-pin-released/",
+     "method": "search_snippet",
+     "note": "block pin of three characters"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kylo Ren",
+      "BB-8",
+      "Rey"
+     ],
+     "source_url": "https://diskingdom.com/2015/12/14/star-wars-the-force-awakens-3-character-block-pin-released/",
+     "method": "search_snippet",
+     "note": "three characters on one block pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://diskingdom.com/2015/12/14/star-wars-the-force-awakens-3-character-block-pin-released/",
+     "method": "search_snippet",
+     "note": "single block pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars: The Force Awakens",
+     "source_url": "https://diskingdom.com/2015/12/14/star-wars-the-force-awakens-3-character-block-pin-released/",
+     "method": "search_snippet",
+     "note": "TFA"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-13",
+     "source_url": "https://diskingdom.com/2015/12/14/star-wars-the-force-awakens-3-character-block-pin-released/",
+     "method": "search_snippet",
+     "note": "credentialed guests, 13 Dec 5PM to 17 Dec 10PM"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://diskingdom.com/2015/12/14/star-wars-the-force-awakens-3-character-block-pin-released/",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Star Wars Trading Event (credentialed guests only)",
+     "source_url": "https://diskingdom.com/2015/12/14/star-wars-the-force-awakens-3-character-block-pin-released/",
+     "method": "search_snippet",
+     "note": "event credential required"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-november-2015/nash-die-cast",
+   "set_key": "dsus/2015/studio-store-hollywood-november-2015",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD 16.95 for Nash die cast"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-november-2015/butch-die-cast",
+   "set_key": "dsus/2015/studio-store-hollywood-november-2015",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD 16.95 for Butch die cast (search summary)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-november-2015/ramsey-die-cast",
+   "set_key": "dsus/2015/studio-store-hollywood-november-2015",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD 16.95 for Ramsey die cast (search summary)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/art-of-jasmine-boxed-set/jasmine",
+   "set_key": "dsus/2015/art-of-jasmine-boxed-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jasmine - Art of Jasmine Boxed Set",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "one of three pins described"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine"
+     ],
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "pin depicts this character"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "LE set"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-17",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "set release"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "online"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/art-of-jasmine-boxed-set/aladdin",
+   "set_key": "dsus/2015/art-of-jasmine-boxed-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Aladdin - Art of Jasmine Boxed Set",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "one of three pins described"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin"
+     ],
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "pin depicts this character"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "LE set"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-17",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "set release"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "online"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/art-of-jasmine-boxed-set/magic-lamp",
+   "set_key": "dsus/2015/art-of-jasmine-boxed-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Magic Lamp - Art of Jasmine Boxed Set",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "one of three pins described"
+    },
+    {
+     "field": "visual_form",
+     "value": "magic lamp",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "pin depicts the lamp"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "LE set"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-17",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "set release"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "http://diskingdom.com/2015/08/17/art-of-jasmine-pin-boxed-set-out-now/",
+     "method": "search_snippet",
+     "note": "online"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsus/2015/star-wars-tfa-pin-collector-tin",
+   "field": "parent_set_key",
+   "searched": "Rey + Force Friday queries",
+   "note": "released: Rey post calls it the sixth DisneyStore.com pin and final pin for the tin collection; card holds the six-pin series"
+  },
+  {
+   "key": "dsus/2015/star-wars-tfa-disneystore-com-collection/kylo-ren",
+   "field": "set_position",
+   "searched": "2 queries",
+   "note": "hold kept: still no source states Kylo Ren's position; series pins complete one image"
+  },
+  {
+   "key": "dsus/2015/star-wars-tfa-disneystore-com-collection/finn",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "still not stated; Finn post gives date and LE 1000 only"
+  },
+  {
+   "key": "dsuk/2015/star-wars-kylo-ren",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "lead only: UK sell-out comment appears on a DisKingdom BB-8 post; no UK listing, price or date found"
+  },
+  {
+   "key": "dsuk/2015/cinderella-65th-le-350/cinderella-65th",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "still not stated; design still not described"
+  },
+  {
+   "key": "dsuk/2015/villains-sidekicks-series-2",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "pins 3-4 still unnamed; current disneystore.eu sidekicks pin and UK Ursula set are undated later items, not linked"
+  },
+  {
+   "key": "dsus/2015/d23-expo-short-films-collection-boxed-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "still only 3 of 12 named; 12 handbills for home-video shorts are prints, not pins"
+  },
+  {
+   "key": "dsus/2015/d23-expo-minnie-signature-boxed-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "six bow pins still not individually described"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-november-2015/butch-die-cast",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "hold kept: LE 300 and USD 16.95 again come from a search summary of the Nov post; only Nash quoted"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-november-2015/ramsey-die-cast",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "hold kept: LE 300 and USD 16.95 again come from a search summary of the Nov post; only Nash quoted"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-october-2015",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: Mike, Sully and Boo / Chip & Dale each given one LE 300, USD 18.95 entry but structure (one pin vs several) not explicit"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-may-2015/tomorrowland-surprise",
+   "field": "set_key",
+   "searched": "1 query",
+   "note": "hold kept: May round-up names a Tomorrowland Marquee; link to LE 400 surprise pin still rests on subject and date"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-may-2015",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: El Capitan Theatre military VIP Tomorrowland pins (Memorial Day 2015) are a separate theatre release, not DSSH"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-may-2015/avengers-age-of-ultron-marquee",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "hold kept: marquee checklist site lists it; LE 500 still only on a reseller title (not used)"
+  },
+  {
+   "key": "dsuk/2015/art-of-jasmine-boxed-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept for UK key: US set (LE 1000) has three pins (Jasmine, Aladdin, lamp); UK link rests on title and size only"
+  },
+  {
+   "key": "dsus/2015/art-of-jasmine-boxed-set",
+   "field": "region",
+   "searched": "1 query",
+   "note": "possible duplicate of dsuk/2015/art-of-jasmine-boxed-set (worldwide LE 1000; UK GBP 45 vs US USD 69.95)"
+  },
+  {
+   "key": "dsus/2015/art-of-jasmine-boxed-set/magic-lamp",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "pin shows the lamp; no character named"
+  },
+  {
+   "key": "dsus/2015/cinderella-live-action-le-400-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: three pins still unnamed; no source names Cinderella/Prince/Tremaine for this set"
+  },
+  {
+   "key": "dsuk/2015/good-dinosaur-set",
+   "field": "members",
+   "searched": "0 new queries",
+   "note": "hold kept: not re-searched (budget); contents unnamed"
+  },
+  {
+   "key": "dsuk/2015/pixar-cars-boxed-set",
+   "field": "set_key",
+   "searched": "0 new queries",
+   "note": "hold kept: no new evidence on UK vs D23 Cars LE 700"
+  },
+  {
+   "key": "dsus/2015/d23-expo-pixar-cars-set",
+   "field": "release_location",
+   "searched": "0 new queries",
+   "note": "hold kept: D23 seller not confirmed"
+  },
+  {
+   "key": "dsus/2015/d23-expo-music-of-frozen-boxed-set",
+   "field": "release_location",
+   "searched": "0 new queries",
+   "note": "hold kept: D23 seller not confirmed"
+  },
+  {
+   "key": "dsus/2015/d23-expo-fairytale-designer-pin-set",
+   "field": "members",
+   "searched": "0 new queries",
+   "note": "hold kept: no new evidence"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-january-2015/aristocats-kittens-train",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "post spells Berlioz as 'Beriloz'; name normalised"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-25",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "per-pin edition sizes and prices sit under each pin on the page but not in snippets; forum says PTD sizes usually LE 150-500"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-02-27",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "per-pin edition sizes and prices sit under each pin on the page but not in snippets; forum says PTD sizes usually LE 150-500"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-08-23",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); Ellie, David Kawena, Don Carlton, Pain & Panic named only as a list"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "lead: prior PTD flip 19 Jan 2015 (Dormouse, Buttercup, Eeyore, Baby Herman) mentioned; post URL not confirmed in snippet"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight",
+   "field": "scope",
+   "searched": "2 queries",
+   "note": "lead: other 2015 PTD flips (e.g. Mar, Apr, Oct) exist at DSSH; not researched"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-december-2015",
+   "field": "release_location",
+   "searched": "2 queries",
+   "note": "hold: event organiser as DSSH rests on prior packet lead and key convention; snippets name the venue only"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-december-2015",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "other event pins incl. Kylo Ren and BB-8 mentioned, plus package pins; not named or sized"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-december-2015/kylo-ren-bb-8-rey-block",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "edition size and price not in snippets"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-march-2015",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "no DSSH March 2015 LE round-up found; Pixar OE post (Mar 2015) not tied to DSSH"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-months",
+   "field": "scope",
+   "searched": "2 queries",
+   "note": "no DSSH July, Sept or regular Aug 2015 LE round-ups surfaced; April/June per-pin details not re-searched"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-february-2015/pinocchio-75th-anniversary",
+   "field": "set_key",
+   "searched": "1 query",
+   "note": "MyPinCentral places it in a store 75th Anniversary Series; other series members not identified"
+  },
+  {
+   "key": "dsus/2015/art-of-jasmine-boxed-set/jasmine",
+   "field": "pin_structure",
+   "searched": "packet review",
+   "note": "hold: confirm pin structure; one pin per subject inferred from the boxed-set contents list"
+  },
+  {
+   "key": "dsus/2015/art-of-jasmine-boxed-set/aladdin",
+   "field": "pin_structure",
+   "searched": "packet review",
+   "note": "hold: confirm pin structure; one pin per subject inferred from the boxed-set contents list"
+  },
+  {
+   "key": "dsus/2015/art-of-jasmine-boxed-set/magic-lamp",
+   "field": "pin_structure",
+   "searched": "packet review",
+   "note": "hold: confirm pin structure; one pin per subject inferred from the boxed-set contents list"
+  }
+ ],
+ "discovery_notes": "Cell B214, follow-up 2 of B038 (DS 2015). 30 standard searches, snippets only. New: DSSH Jan 2015 surprise pins (2 Beloved Tales + Aristocats train), Feb Pinocchio 75th, two PTD flips, TFA trading event block pin, US Art of Jasmine 3-pin set, Short Films price, Rey/Finn details, die-cast prices. Released 1 hold (TFA tin card). Resellers (collectrandom, yourwdwstore, parkscollectibles) seen, not used."
+}

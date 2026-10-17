@@ -1,6 +1,6 @@
 {
  "source": "staging_payload.json",
- "git_commit": "ac4d42a103f7",
+ "git_commit": "fcaadc8d3ec5",
  "generated": "2026-10-17",
  "runs": [
   {
@@ -43,36 +43,35 @@
   },
   {
    "file": "run_04_lic.json",
-   "pins": 1098,
-   "sets": 562,
-   "evidence": 12342,
-   "bytes": 4815013,
+   "pins": 1089,
+   "sets": 551,
+   "evidence": 12336,
+   "bytes": 4813611,
    "lines": [
     "lic"
    ]
   },
   {
-   "file": "run_05_lic-to-windows-of-attraction.json",
-   "pins": 1075,
-   "sets": 412,
-   "evidence": 11639,
-   "bytes": 4779760,
+   "file": "run_05_lic-to-brush-of-magic.json",
+   "pins": 1111,
+   "sets": 439,
+   "evidence": 11444,
+   "bytes": 4741424,
    "lines": [
     "lic",
-    "animated-cuties",
-    "brush-of-magic",
-    "disney-classics-london",
-    "windows-of-attraction"
+    "brush-of-magic"
    ]
   },
   {
-   "file": "run_06_animated-cuties.json",
-   "pins": 8,
-   "sets": 1,
-   "evidence": 154,
-   "bytes": 56132,
+   "file": "run_06_animated-cuties-to-windows-of-attraction.json",
+   "pins": 29,
+   "sets": 4,
+   "evidence": 986,
+   "bytes": 346962,
    "lines": [
-    "animated-cuties"
+    "animated-cuties",
+    "disney-classics-london",
+    "windows-of-attraction"
    ]
   }
  ]

@@ -1,0 +1,2987 @@
+{
+ "packet_id": "backfill-b134-lic-loungefly-2020-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b134",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/stitch-blind-box-loungefly-disney-pins",
+   "title": "Stitch Blind Box Loungefly Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-stitch-costumes-blind-box-enamel-pin/13445809.html",
+   "title": "Loungefly Disney Lilo & Stitch Stitch Costumes Blind Box Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": "unknown",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-lilo-stitch-stitch-costumes-enamel-pin-blind-box/13393277.html",
+   "title": "Loungefly Disney Lilo & Stitch Stitch Costumes Enamel Pin Blind Box",
+   "publisher": "Hot Topic",
+   "published_date": "unknown",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.moonstoystore.com/products/loungefly-disney-stitch-mystery-enamel-pin",
+   "title": "Loungefly Disney Stitch Mystery Enamel Pin",
+   "publisher": "Moon's Toy Store",
+   "published_date": "unknown",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://getreadycomics.com/shop/lilo-stitch-stitch-costumes-disney-loungefly-blind-box-mystery-pins/",
+   "title": "Lilo & Stitch Stitch Costumes Disney Loungefly Blind Box Mystery Pins",
+   "publisher": "Get Ready Comics",
+   "published_date": "unknown",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+   "title": "Loungefly Disney Cinderella 70th Anniversary Blind Box Enamel Pin",
+   "publisher": "Hot Topic",
+   "published_date": "unknown",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.geekcore.co.uk/products/loungefly-x-disney-cinderella-70th-anniversary-blind-box-mystery-pin",
+   "title": "Loungefly x Disney Cinderella 70th Anniversary Blind Box Mystery Pin",
+   "publisher": "Geek Core",
+   "published_date": "unknown",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/cinderella-70th-anniversary-blind-box-loungefly-disney-pins/",
+   "title": "Cinderella 70th Anniversary Blind Box Loungefly Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.greenlotusdreams.com/store/p3583/Loungefly_Disney_Pixar_A_Bug's_Life_Leaf_Blind_Box_Enamel_Pin.html",
+   "title": "Loungefly Disney Pixar A Bug's Life Leaf Blind Box Enamel Pin",
+   "publisher": "Green Lotus Dreams",
+   "published_date": "unknown",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.geekcore.co.uk/products/loungefly-x-disney-pixar-a-bug-life-mystery-box-pin",
+   "title": "Loungefly x Disney Pixar A Bug' Life Mystery Box Pin",
+   "publisher": "Geek Core",
+   "published_date": "unknown",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/robin-hood-limited-edition-loungefly-disney-pin/",
+   "title": "Robin Hood Limited Edition Loungefly Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.entertainmentearth.com/product/nightmare-before-christmas-3piece-pin-set-entertainment-earth-exclusive/lfwdpn1892r",
+   "title": "Nightmare Before Christmas 3-Piece Pin Set - Entertainment Earth Exclusive",
+   "publisher": "Entertainment Earth",
+   "published_date": "unknown",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://comicbook.com/gear/news/nycc-2020-exclusive-disney-the-nightmare-before-christmas/",
+   "title": "NYCC 2020 Exclusive The Nightmare Before Christmas Backpack and Pin Set Are Live",
+   "publisher": "ComicBook.com",
+   "published_date": "2020",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.thepopcentral.com/product/nightmare-before-christmas-3-piece-enamel-pin-set-entertainment-earth-exclusive/",
+   "title": "Nightmare Before Christmas 3-piece Pin Set",
+   "publisher": "The Pop Central",
+   "published_date": "unknown",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/marvel-comics-blind-box-loungefly-pins",
+   "title": "Marvel Comics Blind Box Loungefly Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/marvel-deadpool-blind-box-loungefly-pins",
+   "title": "Marvel Deadpool Blind Box Loungefly Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-empire-strikes-back-40th-anniversary-blind-box-loungefly-pins/",
+   "title": "Star Wars Empire Strikes Back 40th Anniversary Blind Box Loungefly Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.entertainmentearth.com/product/star-wars-empire-strikes-back-40th-anniversary-enamel-pin-blind-box/lfstpn0067",
+   "title": "Star Wars Empire Strikes Back 40th Anniversary Enamel Pin Blind Box",
+   "publisher": "Entertainment Earth",
+   "published_date": "unknown",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.modernpinup.com/products/loungefly-star-wars-empire-strikes-back-40th-anniversary-blind-box-enamel-pin",
+   "title": "Loungefly Star Wars Empire Strikes Back 40th Anniversary Blind Box Enamel Pin",
+   "publisher": "Modern Pinup",
+   "published_date": "unknown",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/august-2020-loungefly-disney-pin-preview",
+   "title": "August 2020 Loungefly Disney Pin Preview",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+   "title": "Meeko and Percy Limited Edition Loungefly Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+   "title": "Hercules Limited Edition Loungefly Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+   "title": "A Goofy Movie Limited Edition Loungefly Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+   "title": "Pizza Planet Limited Edition Loungefly Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+   "title": "WALL-E Limited Edition Loungefly Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+   "title": "New SUPER LIMITED EDITION Disney Pins Coming From Loungefly This June",
+   "publisher": "Disney Food Blog",
+   "published_date": "2020-05-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+   "title": "The Child Eating Frog Limited Edition Loungefly Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/toy-story-buzz-alien-pop-pin-at-loungefly/",
+   "title": "Toy Story Buzz & Alien Pop! Pin at Loungefly",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+   "title": "Pixar Toy Story Buzz & Alien Collector Box Sliding Enamel Funko Pop! Pin",
+   "publisher": "Loungefly",
+   "published_date": "unknown",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/december-2020-loungefly-disney-pin-preview/",
+   "title": "December 2020 Loungefly Disney Pin Preview",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+   "title": "Star Wars The Child Buttons Loungefly Limited Edition Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-mando-and-the-child-loungefly-le-500-pin-at-amazon",
+   "title": "Star Wars Mando and The Child Loungefly LE 500 Pin at Amazon",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+   "title": "Disneyland 65th Anniversary Loungefly Pin Collection on Amazon",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2020/loungefly-stitch-blind-box",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2020-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-blind-box-loungefly-disney-pins",
+     "method": "search_snippet",
+     "note": "DPB: six Stitch pins released April 2020, DPBStore first then Hot Topic"
+    },
+    {
+     "field": "retailer",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-blind-box-loungefly-disney-pins",
+     "method": "search_snippet",
+     "note": "DPB says later available at Hot Topic"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-stitch-costumes-blind-box-enamel-pin/13445809.html",
+     "method": "search_snippet",
+     "note": "official BoxLunch listing of 'Stitch Costumes' blind box (identity matched on lineup, see hold)"
+    },
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-stitch-costumes-blind-box-enamel-pin/13445809.html",
+     "method": "search_snippet",
+     "note": "BoxLunch $12.90 (retailer listing, date not shown)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-stitch-costumes-blind-box-enamel-pin/13445809.html",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-lilo-stitch-stitch-costumes-enamel-pin-blind-box/13393277.html",
+     "method": "search_snippet",
+     "note": "Loungefly-branded listing"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.geekcore.co.uk/products/loungefly-x-disney-cinderella-70th-anniversary-blind-box-mystery-pin",
+     "method": "search_snippet",
+     "note": "'collect all 6 designs'"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind box",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "blind box, one glitter enamel pin each"
+    },
+    {
+     "field": "retailer",
+     "value": "Hot Topic",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "Hot Topic listing with matching release name"
+    },
+    {
+     "field": "release_location",
+     "value": "Loungefly and select retailers",
+     "source_url": "https://disneypinsblog.com/cinderella-70th-anniversary-blind-box-loungefly-disney-pins/",
+     "method": "search_snippet",
+     "note": "DPB: July 2020 at Loungefly and select retailers"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-a-bugs-life-blind-box",
+   "claims": [
+    {
+     "field": "format",
+     "value": "mystery / blind box (pins form a leaf when collected)",
+     "source_url": "https://www.greenlotusdreams.com/store/p3583/Loungefly_Disney_Pixar_A_Bug's_Life_Leaf_Blind_Box_Enamel_Pin.html",
+     "method": "search_snippet",
+     "note": "'Leaf' blind box; six pins form a leaf; Heimlich layered chase 1/12"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-robin-hood-le",
+   "claims": [
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter",
+      "gold tone finish"
+     ],
+     "source_url": "https://disneypinsblog.com/robin-hood-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "glitter embellishments, gold tone"
+    },
+    {
+     "field": "release_location",
+     "value": "Loungefly.com",
+     "source_url": "https://disneypinsblog.com/robin-hood-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "sold at Loungefly.com"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-nycc-nightmare-before-christmas-pin-set",
+   "claims": [
+    {
+     "field": "product_code",
+     "value": "WDPN1892",
+     "source_url": "https://www.entertainmentearth.com/product/nightmare-before-christmas-3piece-pin-set-entertainment-earth-exclusive/lfwdpn1892r",
+     "method": "search_snippet",
+     "note": "EE item LFWDPN1892R"
+    },
+    {
+     "field": "retailer",
+     "value": "Entertainment Earth",
+     "source_url": "https://www.entertainmentearth.com/product/nightmare-before-christmas-3piece-pin-set-entertainment-earth-exclusive/lfwdpn1892r",
+     "method": "search_snippet",
+     "note": "EE exclusive, originally slated NYCC 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://comicbook.com/gear/news/nycc-2020-exclusive-disney-the-nightmare-before-christmas/",
+     "method": "search_snippet",
+     "note": "NYCC 2020 Loungefly 3-piece set"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (window box)",
+     "source_url": "https://www.entertainmentearth.com/product/nightmare-before-christmas-3piece-pin-set-entertainment-earth-exclusive/lfwdpn1892r",
+     "method": "search_snippet",
+     "note": "three pins in window box"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-marvel-deadpool-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Marvel Deadpool Blind Box Loungefly Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-deadpool-blind-box-loungefly-pins",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-deadpool-blind-box-loungefly-pins",
+     "method": "search_snippet",
+     "note": "assortment of six Deadpool pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-deadpool-blind-box-loungefly-pins",
+     "method": "search_snippet",
+     "note": "six Marvel Deadpool pins"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-deadpool-blind-box-loungefly-pins",
+     "method": "search_snippet",
+     "note": "chase features a 3D design"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-deadpool-blind-box-loungefly-pins",
+     "method": "search_snippet",
+     "note": "October 2020 (per packet 256 lead and DPB)"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/marvel-deadpool-blind-box-loungefly-pins",
+     "method": "search_snippet",
+     "note": "Loungefly blind box"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-star-wars-empire-strikes-back-40th-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Empire Strikes Back 40th Anniversary Blind Box Loungefly Pins",
+     "source_url": "https://disneypinsblog.com/star-wars-empire-strikes-back-40th-anniversary-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind box",
+     "source_url": "https://www.entertainmentearth.com/product/star-wars-empire-strikes-back-40th-anniversary-enamel-pin-blind-box/lfstpn0067",
+     "method": "search_snippet",
+     "note": "blind packaging, one pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/star-wars-empire-strikes-back-40th-anniversary-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "six designs"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://www.modernpinup.com/products/loungefly-star-wars-empire-strikes-back-40th-anniversary-blind-box-enamel-pin",
+     "method": "search_snippet",
+     "note": "glitter chase 1/12"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08",
+     "source_url": "https://disneypinsblog.com/star-wars-empire-strikes-back-40th-anniversary-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "August 2020"
+    },
+    {
+     "field": "product_code",
+     "value": "STPN0067",
+     "source_url": "https://www.entertainmentearth.com/product/star-wars-empire-strikes-back-40th-anniversary-enamel-pin-blind-box/lfstpn0067",
+     "method": "search_snippet",
+     "note": "EE item LFSTPN0067"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.modernpinup.com/products/loungefly-star-wars-empire-strikes-back-40th-anniversary-blind-box-enamel-pin",
+     "method": "search_snippet",
+     "note": "Loungefly listing"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-pizza-planet-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pizza Planet Limited Edition Loungefly Disney Pin",
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-05-26",
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "release date per post"
+    },
+    {
+     "field": "price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "$25.00"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly LE"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "hinged pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-wall-e-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "WALL-E Limited Edition Loungefly Disney Pin",
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06-30",
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "release date per post"
+    },
+    {
+     "field": "price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "$25.00"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly LE"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "moveable WALL-E pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-fox-and-the-hound-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Copper and Tod (The Fox and the Hound) Loungefly LE",
+     "source_url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+     "method": "search_snippet",
+     "note": "June 2020 Loungefly LE lineup"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+     "method": "search_snippet",
+     "note": "super limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+     "method": "search_snippet",
+     "note": "500 per design"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06",
+     "source_url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+     "method": "search_snippet",
+     "note": "Tuesdays in June 2020, 9AM PST"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-alice-in-wonderland-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Alice in Wonderland Loungefly LE (June 2020)",
+     "source_url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+     "method": "search_snippet",
+     "note": "June 2020 Loungefly LE lineup"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+     "method": "search_snippet",
+     "note": "super limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+     "method": "search_snippet",
+     "note": "500 per design"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06",
+     "source_url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+     "method": "search_snippet",
+     "note": "Tuesdays in June 2020, 9AM PST"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-star-wars-at-at-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "AT-ATs Loungefly LE (Star Wars)",
+     "source_url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+     "method": "search_snippet",
+     "note": "June 2020 Loungefly LE lineup"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+     "method": "search_snippet",
+     "note": "super limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+     "method": "search_snippet",
+     "note": "500 per design"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06",
+     "source_url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+     "method": "search_snippet",
+     "note": "Tuesdays in June 2020, 9AM PST"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.disneyfoodblog.com/2020/05/30/new-super-limited-edition-disney-pins-coming-from-loungefly-this-june-and-theyre-so-cute/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-pocahontas-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Meeko and Percy Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1200,
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "LE 1200"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-04",
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "release date per post"
+    },
+    {
+     "field": "price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "$25.00"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly LE"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "rotating element"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2020-loungefly-disney-pin-preview",
+     "method": "search_snippet",
+     "note": "Aug preview: Pocahontas LE 1,200"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-hercules-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hercules Limited Edition Loungefly Pin (Zero to Hero)",
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "LE 1000"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-11",
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "release date per post"
+    },
+    {
+     "field": "price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "$25.00"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly LE"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "slider element"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-spider-man-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Spider-Man Loungefly LE (Aug 2020)",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2020-loungefly-disney-pin-preview",
+     "method": "search_snippet",
+     "note": "August preview"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2020-loungefly-disney-pin-preview",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2020-loungefly-disney-pin-preview",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-18",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2020-loungefly-disney-pin-preview",
+     "method": "search_snippet",
+     "note": "18 Aug"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2020-loungefly-disney-pin-preview",
+     "method": "search_snippet",
+     "note": "Loungefly preview"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-a-goofy-movie-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "A Goofy Movie Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "LE 1000"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-25",
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "release date per post"
+    },
+    {
+     "field": "price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "$25.00"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly LE"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "slider element"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-the-child-eating-frog-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Child Eating Frog Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "LE 1500"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-22",
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "release date per post"
+    },
+    {
+     "field": "price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "$25.00"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly LE"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "swivel mechanism"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-toy-story-buzz-alien-pop-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Toy Story Buzz & Alien Pop! Pin",
+     "source_url": "https://disneypinsblog.com/toy-story-buzz-alien-pop-pin-at-loungefly/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/toy-story-buzz-alien-pop-pin-at-loungefly/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/toy-story-buzz-alien-pop-pin-at-loungefly/",
+     "method": "search_snippet",
+     "note": "LE 1500"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-11-03",
+     "source_url": "https://disneypinsblog.com/toy-story-buzz-alien-pop-pin-at-loungefly/",
+     "method": "search_snippet",
+     "note": "release date per post"
+    },
+    {
+     "field": "price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/toy-story-buzz-alien-pop-pin-at-loungefly/",
+     "method": "search_snippet",
+     "note": "$25.00"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/toy-story-buzz-alien-pop-pin-at-loungefly/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/toy-story-buzz-alien-pop-pin-at-loungefly/",
+     "method": "search_snippet",
+     "note": "Loungefly LE"
+    },
+    {
+     "field": "format",
+     "value": "single pin (collector box)",
+     "source_url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+     "method": "search_snippet",
+     "note": "collector box sliding pin"
+    },
+    {
+     "field": "product_code",
+     "value": "WDPN1771",
+     "source_url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+     "method": "search_snippet",
+     "note": "Loungefly SKU"
+    },
+    {
+     "field": "retailer",
+     "value": "Loungefly.com",
+     "source_url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+     "method": "search_snippet",
+     "note": "official listing, 2 per customer"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-christmas-disney-classic-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Christmas Disney Classic Loungefly LE",
+     "source_url": "https://disneypinsblog.com/december-2020-loungefly-disney-pin-preview/",
+     "method": "search_snippet",
+     "note": "December preview"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/december-2020-loungefly-disney-pin-preview/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2500,
+     "source_url": "https://disneypinsblog.com/december-2020-loungefly-disney-pin-preview/",
+     "method": "search_snippet",
+     "note": "LE 2,500"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12-15",
+     "source_url": "https://disneypinsblog.com/december-2020-loungefly-disney-pin-preview/",
+     "method": "search_snippet",
+     "note": "15 Dec"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/december-2020-loungefly-disney-pin-preview/",
+     "method": "search_snippet",
+     "note": "Loungefly preview"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-the-child-buttons-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars The Child Buttons Loungefly Limited Edition Pin",
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 2500,
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "LE 2500"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12-29",
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "release date per post"
+    },
+    {
+     "field": "price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "$25.00"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly LE"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "swivel arm"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-amazon-mando-and-the-child-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Mando and The Child Loungefly LE 500 Pin at Amazon",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-mando-and-the-child-loungefly-le-500-pin-at-amazon",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-mando-and-the-child-loungefly-le-500-pin-at-amazon",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-mando-and-the-child-loungefly-le-500-pin-at-amazon",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "retailer",
+     "value": "Amazon",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-mando-and-the-child-loungefly-le-500-pin-at-amazon",
+     "method": "search_snippet",
+     "note": "Amazon pre-order"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-mando-and-the-child-loungefly-le-500-pin-at-amazon",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-amazon-disneyland-65th-sleeping-beauty-castle",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland 65th Anniversary sliding Sleeping Beauty Castle pin (Amazon)",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "one of two Amazon 65th items"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "sliding castle pin"
+    },
+    {
+     "field": "price",
+     "value": 20.0,
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "$20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-11-15",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "pre-order, releases 15 Nov 2020"
+    },
+    {
+     "field": "retailer",
+     "value": "Amazon",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "Amazon"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "snippet says Loungefly/Funko"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-amazon-disneyland-65th-mickey-friends-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland 65th Anniversary Mickey and Friends set (Amazon)",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "second Amazon 65th item"
+    },
+    {
+     "field": "price",
+     "value": 20.0,
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "$20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-11-15",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "releases 15 Nov 2020"
+    },
+    {
+     "field": "retailer",
+     "value": "Amazon",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "Amazon"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "snippet says Loungefly/Funko"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2020/loungefly-stitch-blind-box/hula-stitch",
+   "set_key": "lic/2020/loungefly-stitch-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch hula",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-stitch-costumes-blind-box-enamel-pin/13445809.html",
+     "method": "search_snippet",
+     "note": "design named in retailer per-design costume list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-stitch-costumes-blind-box-enamel-pin/13445809.html",
+     "method": "search_snippet",
+     "note": "Stitch in costume"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.moonstoystore.com/products/loungefly-disney-stitch-mystery-enamel-pin",
+     "method": "search_snippet",
+     "note": "listing says six in total, naming each costume as its own design"
+    },
+    {
+     "field": "visual_description",
+     "value": "hula dancer / hula outfit",
+     "source_url": "https://getreadycomics.com/shop/lilo-stitch-stitch-costumes-disney-loungefly-blind-box-mystery-pins/",
+     "method": "search_snippet",
+     "note": "costume per retailer listings; Moon's list agrees"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-blind-box-loungefly-disney-pins",
+     "method": "search_snippet",
+     "note": "April 2020 set"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-lilo-stitch-stitch-costumes-enamel-pin-blind-box/13393277.html",
+     "method": "search_snippet",
+     "note": "Loungefly listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-stitch-blind-box/karate-stitch",
+   "set_key": "lic/2020/loungefly-stitch-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch karate",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-stitch-costumes-blind-box-enamel-pin/13445809.html",
+     "method": "search_snippet",
+     "note": "design named in retailer per-design costume list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-stitch-costumes-blind-box-enamel-pin/13445809.html",
+     "method": "search_snippet",
+     "note": "Stitch in costume"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.moonstoystore.com/products/loungefly-disney-stitch-mystery-enamel-pin",
+     "method": "search_snippet",
+     "note": "listing says six in total, naming each costume as its own design"
+    },
+    {
+     "field": "visual_description",
+     "value": "karate master / doing karate",
+     "source_url": "https://getreadycomics.com/shop/lilo-stitch-stitch-costumes-disney-loungefly-blind-box-mystery-pins/",
+     "method": "search_snippet",
+     "note": "costume per retailer listings; Moon's list agrees"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-blind-box-loungefly-disney-pins",
+     "method": "search_snippet",
+     "note": "April 2020 set"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-lilo-stitch-stitch-costumes-enamel-pin-blind-box/13393277.html",
+     "method": "search_snippet",
+     "note": "Loungefly listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-stitch-blind-box/skeleton-stitch",
+   "set_key": "lic/2020/loungefly-stitch-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch skeleton",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-stitch-costumes-blind-box-enamel-pin/13445809.html",
+     "method": "search_snippet",
+     "note": "design named in retailer per-design costume list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-stitch-costumes-blind-box-enamel-pin/13445809.html",
+     "method": "search_snippet",
+     "note": "Stitch in costume"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.moonstoystore.com/products/loungefly-disney-stitch-mystery-enamel-pin",
+     "method": "search_snippet",
+     "note": "listing says six in total, naming each costume as its own design"
+    },
+    {
+     "field": "visual_description",
+     "value": "dressed as a skeleton",
+     "source_url": "https://getreadycomics.com/shop/lilo-stitch-stitch-costumes-disney-loungefly-blind-box-mystery-pins/",
+     "method": "search_snippet",
+     "note": "costume per retailer listings; Moon's list agrees"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-blind-box-loungefly-disney-pins",
+     "method": "search_snippet",
+     "note": "April 2020 set"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-lilo-stitch-stitch-costumes-enamel-pin-blind-box/13393277.html",
+     "method": "search_snippet",
+     "note": "Loungefly listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-stitch-blind-box/vampire-stitch",
+   "set_key": "lic/2020/loungefly-stitch-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch vampire",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-stitch-costumes-blind-box-enamel-pin/13445809.html",
+     "method": "search_snippet",
+     "note": "design named in retailer per-design costume list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-stitch-costumes-blind-box-enamel-pin/13445809.html",
+     "method": "search_snippet",
+     "note": "Stitch in costume"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.moonstoystore.com/products/loungefly-disney-stitch-mystery-enamel-pin",
+     "method": "search_snippet",
+     "note": "listing says six in total, naming each costume as its own design"
+    },
+    {
+     "field": "visual_description",
+     "value": "vampire (HT/BoxLunch/Get Ready) = Dracula (Moon's)",
+     "source_url": "https://getreadycomics.com/shop/lilo-stitch-stitch-costumes-disney-loungefly-blind-box-mystery-pins/",
+     "method": "search_snippet",
+     "note": "costume per retailer listings; Moon's list agrees"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-blind-box-loungefly-disney-pins",
+     "method": "search_snippet",
+     "note": "April 2020 set"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-lilo-stitch-stitch-costumes-enamel-pin-blind-box/13393277.html",
+     "method": "search_snippet",
+     "note": "Loungefly listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-stitch-blind-box/elvis-stitch",
+   "set_key": "lic/2020/loungefly-stitch-blind-box",
+   "claims": [
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.moonstoystore.com/products/loungefly-disney-stitch-mystery-enamel-pin",
+     "method": "search_snippet",
+     "note": "corroboration: Elvis Stitch is the glitter chase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box/pink-dress",
+   "set_key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella's pink dress",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "listing: each pin depicts a symbol or character from the film; this one named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "each pin depicts one symbol/character; 6 designs (Geek Core)"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/cinderella-70th-anniversary-blind-box-loungefly-disney-pins/",
+     "method": "search_snippet",
+     "note": "July 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "Loungefly listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "glittery enamel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box/glass-slipper",
+   "set_key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Slipper",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "listing: each pin depicts a symbol or character from the film; this one named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "each pin depicts one symbol/character; 6 designs (Geek Core)"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/cinderella-70th-anniversary-blind-box-loungefly-disney-pins/",
+     "method": "search_snippet",
+     "note": "July 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "Loungefly listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "glittery enamel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box/mice",
+   "set_key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mice",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "listing: each pin depicts a symbol or character from the film; this one named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "each pin depicts one symbol/character; 6 designs (Geek Core)"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/cinderella-70th-anniversary-blind-box-loungefly-disney-pins/",
+     "method": "search_snippet",
+     "note": "July 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "Loungefly listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "glittery enamel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box/spool-of-thread",
+   "set_key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Spool of thread",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "listing: each pin depicts a symbol or character from the film; this one named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "each pin depicts one symbol/character; 6 designs (Geek Core)"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/cinderella-70th-anniversary-blind-box-loungefly-disney-pins/",
+     "method": "search_snippet",
+     "note": "July 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "Loungefly listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "glittery enamel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box/lucifer",
+   "set_key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lucifer",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "listing: each pin depicts a symbol or character from the film; this one named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "each pin depicts one symbol/character; 6 designs (Geek Core)"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/cinderella-70th-anniversary-blind-box-loungefly-disney-pins/",
+     "method": "search_snippet",
+     "note": "July 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "Loungefly listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "glittery enamel"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lucifer"
+     ],
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "character named"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box/fairy-godmother",
+   "set_key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Fairy Godmother",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "listing: each pin depicts a symbol or character from the film; this one named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "each pin depicts one symbol/character; 6 designs (Geek Core)"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/cinderella-70th-anniversary-blind-box-loungefly-disney-pins/",
+     "method": "search_snippet",
+     "note": "July 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "Loungefly listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "glittery enamel"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Fairy Godmother"
+     ],
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-cinderella-70th-anniversary-blind-box-enamel-pin/35399776.html",
+     "method": "search_snippet",
+     "note": "character named"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-nycc-nightmare-before-christmas-pin-set/jack-skellington",
+   "set_key": "lic/2020/loungefly-nycc-nightmare-before-christmas-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington"
+     ],
+     "source_url": "https://www.entertainmentearth.com/product/nightmare-before-christmas-3piece-pin-set-entertainment-earth-exclusive/lfwdpn1892r",
+     "method": "search_snippet",
+     "note": "Jack pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.entertainmentearth.com/product/nightmare-before-christmas-3piece-pin-set-entertainment-earth-exclusive/lfwdpn1892r",
+     "method": "search_snippet",
+     "note": "per-pin description in listing"
+    },
+    {
+     "field": "visual_description",
+     "value": "Jack holding a gift; ~2in, 3D molded metal details, five colours",
+     "source_url": "https://www.entertainmentearth.com/product/nightmare-before-christmas-3piece-pin-set-entertainment-earth-exclusive/lfwdpn1892r",
+     "method": "search_snippet",
+     "note": "paraphrase of listing per-pin copy"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-nycc-nightmare-before-christmas-pin-set/sally",
+   "set_key": "lic/2020/loungefly-nycc-nightmare-before-christmas-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack and Sally lovebirds",
+     "source_url": "https://www.entertainmentearth.com/product/nightmare-before-christmas-3piece-pin-set-entertainment-earth-exclusive/lfwdpn1892r",
+     "method": "search_snippet",
+     "note": "listing names the second pin a Jack and Sally lovebird pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington",
+      "Sally"
+     ],
+     "source_url": "https://www.entertainmentearth.com/product/nightmare-before-christmas-3piece-pin-set-entertainment-earth-exclusive/lfwdpn1892r",
+     "method": "search_snippet",
+     "note": "pair holding hands"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.entertainmentearth.com/product/nightmare-before-christmas-3piece-pin-set-entertainment-earth-exclusive/lfwdpn1892r",
+     "method": "search_snippet",
+     "note": "single pin showing both characters"
+    },
+    {
+     "field": "visual_description",
+     "value": "Jack and Sally holding hands seated on a gravestone; ~2in, eight colours",
+     "source_url": "https://www.entertainmentearth.com/product/nightmare-before-christmas-3piece-pin-set-entertainment-earth-exclusive/lfwdpn1892r",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-nycc-nightmare-before-christmas-pin-set/zero",
+   "set_key": "lic/2020/loungefly-nycc-nightmare-before-christmas-pin-set",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Zero beside his doghouse; printed details, four colours, glows in the dark",
+     "source_url": "https://www.entertainmentearth.com/product/nightmare-before-christmas-3piece-pin-set-entertainment-earth-exclusive/lfwdpn1892r",
+     "method": "search_snippet",
+     "note": "paraphrase; glow also stated by Pop Central"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-star-wars-empire-strikes-back-40th-blind-box/boba-fett",
+   "set_key": "lic/2020/loungefly-star-wars-empire-strikes-back-40th-blind-box",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Boba Fett"
+     ],
+     "source_url": "https://www.modernpinup.com/products/loungefly-star-wars-empire-strikes-back-40th-anniversary-blind-box-enamel-pin",
+     "method": "search_snippet",
+     "note": "chase named"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://www.modernpinup.com/products/loungefly-star-wars-empire-strikes-back-40th-anniversary-blind-box-enamel-pin",
+     "method": "search_snippet",
+     "note": "Boba Fett glitter chase, 1 in 12"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://www.modernpinup.com/products/loungefly-star-wars-empire-strikes-back-40th-anniversary-blind-box-enamel-pin",
+     "method": "search_snippet",
+     "note": "glitter embellishments"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.modernpinup.com/products/loungefly-star-wars-empire-strikes-back-40th-anniversary-blind-box-enamel-pin",
+     "method": "search_snippet",
+     "note": "single chase design"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/star-wars-empire-strikes-back-40th-anniversary-blind-box-loungefly-pins/",
+     "method": "search_snippet",
+     "note": "Aug 2020"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-pizza-planet-le/pizza-planet-box",
+   "set_key": "lic/2020/loungefly-pizza-planet-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pizza Planet Limited Edition Loungefly Disney Pin",
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-05-26",
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "2020"
+    },
+    {
+     "field": "release_location",
+     "value": "Loungefly.com",
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "sold at Loungefly.com while supplies last"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "post describes a single pin with a moving element"
+    },
+    {
+     "field": "original_price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "visual_description",
+     "value": "hinged pin shaped like a Pizza Planet pizza box",
+     "source_url": "https://disneypinsblog.com/pizza-planet-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-wall-e-le/wall-e",
+   "set_key": "lic/2020/loungefly-wall-e-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "WALL-E Limited Edition Loungefly Disney Pin",
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06-30",
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "2020"
+    },
+    {
+     "field": "release_location",
+     "value": "Loungefly.com",
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "sold at Loungefly.com while supplies last"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "post describes a single pin with a moving element"
+    },
+    {
+     "field": "original_price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "WALL-E"
+     ],
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "named in post"
+    },
+    {
+     "field": "visual_description",
+     "value": "WALL-E with moveable arm",
+     "source_url": "https://disneypinsblog.com/wall-e-limited-edition-loungefly-disney-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-pocahontas-le/meeko-percy",
+   "set_key": "lic/2020/loungefly-pocahontas-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Meeko and Percy Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1200,
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "LE 1200"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-04",
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "2020"
+    },
+    {
+     "field": "release_location",
+     "value": "Loungefly.com",
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "sold at Loungefly.com while supplies last"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "post describes a single pin with a moving element"
+    },
+    {
+     "field": "original_price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Meeko",
+      "Percy"
+     ],
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "named in post"
+    },
+    {
+     "field": "visual_description",
+     "value": "rotating element with Meeko and Percy in a bath tub",
+     "source_url": "https://disneypinsblog.com/meeko-and-percy-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-hercules-le/zero-to-hero",
+   "set_key": "lic/2020/loungefly-hercules-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zero to Hero",
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "LE 1000"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-11",
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "2020"
+    },
+    {
+     "field": "release_location",
+     "value": "Loungefly.com",
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "sold at Loungefly.com while supplies last"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "post describes a single pin with a moving element"
+    },
+    {
+     "field": "original_price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "visual_description",
+     "value": "slider element",
+     "source_url": "https://disneypinsblog.com/hercules-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-a-goofy-movie-le/a-goofy-movie",
+   "set_key": "lic/2020/loungefly-a-goofy-movie-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "A Goofy Movie Limited Edition Loungefly Pin",
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "LE 1000"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-25",
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "2020"
+    },
+    {
+     "field": "release_location",
+     "value": "Loungefly.com",
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "sold at Loungefly.com while supplies last"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "post describes a single pin with a moving element"
+    },
+    {
+     "field": "original_price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "visual_description",
+     "value": "slider element",
+     "source_url": "https://disneypinsblog.com/a-goofy-movie-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-the-child-eating-frog-le/the-child-eating-frog",
+   "set_key": "lic/2020/loungefly-the-child-eating-frog-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Child Eating Frog",
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "LE 1500"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-22",
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "2020"
+    },
+    {
+     "field": "release_location",
+     "value": "Loungefly.com",
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "sold at Loungefly.com while supplies last"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "post describes a single pin with a moving element"
+    },
+    {
+     "field": "original_price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "The Child"
+     ],
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "named in post"
+    },
+    {
+     "field": "visual_description",
+     "value": "swivel moves the frog side to side",
+     "source_url": "https://disneypinsblog.com/the-child-eating-frog-limited-edition-loungefly-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-toy-story-buzz-alien-pop-le/buzz-and-aliens",
+   "set_key": "lic/2020/loungefly-toy-story-buzz-alien-pop-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pixar Toy Story Buzz & Alien Collector Box Sliding Enamel Pop! Pin",
+     "source_url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+     "method": "search_snippet",
+     "note": "LE 1500"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-11-03",
+     "source_url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+     "method": "search_snippet",
+     "note": "2020"
+    },
+    {
+     "field": "release_location",
+     "value": "Loungefly.com",
+     "source_url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+     "method": "search_snippet",
+     "note": "sold at Loungefly.com while supplies last"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+     "method": "search_snippet",
+     "note": "post describes a single pin with a moving element"
+    },
+    {
+     "field": "original_price",
+     "value": 25.0,
+     "source_url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+     "method": "search_snippet",
+     "note": "retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Buzz Lightyear",
+      "Aliens"
+     ],
+     "source_url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+     "method": "search_snippet",
+     "note": "named in post"
+    },
+    {
+     "field": "visual_description",
+     "value": "~3in pin, Buzz and Pizza Planet aliens, wings slide in and out",
+     "source_url": "https://www.loungefly.com/products/pixar-toy-story-buzz-alien-collector-box-sliding-enamel-pop-pin",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-the-child-buttons-le/the-child-buttons",
+   "set_key": "lic/2020/loungefly-the-child-buttons-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars The Child Buttons",
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2500,
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "LE 2500"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12-29",
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "2020"
+    },
+    {
+     "field": "release_location",
+     "value": "Loungefly.com",
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "sold at Loungefly.com while supplies last"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "post describes a single pin with a moving element"
+    },
+    {
+     "field": "original_price",
+     "value": 25.0,
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "The Child"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "named in post"
+    },
+    {
+     "field": "visual_description",
+     "value": "swivel moves The Child's arm up and down; silver tone",
+     "source_url": "https://disneypinsblog.com/star-wars-the-child-buttons-loungefly-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-amazon-disneyland-65th-sleeping-beauty-castle/sleeping-beauty-castle",
+   "set_key": "lic/2020/loungefly-amazon-disneyland-65th-sleeping-beauty-castle",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sleeping Beauty Castle sliding pin",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "described"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "single sliding pin"
+    },
+    {
+     "field": "attraction",
+     "value": "Sleeping Beauty Castle",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "Disneyland 65th"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-loungefly-pin-collection-on-amazon",
+     "method": "search_snippet",
+     "note": "Nov 2020"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2020/loungefly-stitch-blind-box/hula-stitch",
+   "field": "pin_structure",
+   "searched": "follow-up b134; 2 queries",
+   "note": "hold released: retailer listings (BoxLunch/Hot Topic 'Stitch Costumes', Moon's 'six in total') name this costume as its own design; set identity hold applies"
+  },
+  {
+   "key": "lic/2020/loungefly-stitch-blind-box/karate-stitch",
+   "field": "pin_structure",
+   "searched": "follow-up b134; 2 queries",
+   "note": "hold released: retailer listings (BoxLunch/Hot Topic 'Stitch Costumes', Moon's 'six in total') name this costume as its own design; set identity hold applies"
+  },
+  {
+   "key": "lic/2020/loungefly-stitch-blind-box/skeleton-stitch",
+   "field": "pin_structure",
+   "searched": "follow-up b134; 2 queries",
+   "note": "hold released: retailer listings (BoxLunch/Hot Topic 'Stitch Costumes', Moon's 'six in total') name this costume as its own design; set identity hold applies"
+  },
+  {
+   "key": "lic/2020/loungefly-stitch-blind-box/vampire-stitch",
+   "field": "pin_structure",
+   "searched": "follow-up b134; 2 queries",
+   "note": "hold released: retailer listings (BoxLunch/Hot Topic 'Stitch Costumes', Moon's 'six in total') name this costume as its own design; set identity hold applies"
+  },
+  {
+   "key": "lic/2020/loungefly-stitch-blind-box",
+   "field": "identity",
+   "searched": "follow-up b134; 2 queries",
+   "note": "hold: 'Stitch Costumes' retailer listings are undated; linked to the Apr 2020 DPB set only by six-design count + Elvis glitter chase, not by date/code"
+  },
+  {
+   "key": "lic/2020/loungefly-stitch-blind-box/alien-suit-stitch",
+   "field": "pin_structure",
+   "searched": "follow-up b134; 2 queries",
+   "note": "hold: sixth design conflicts - Moon's says alien suit, retailers say Stitch 'as himself'; possibly the same design, not recorded as a pin"
+  },
+  {
+   "key": "lic/2020/loungefly-stitch-blind-box",
+   "field": "product_code",
+   "searched": "follow-up b134",
+   "note": "no Loungefly product code found; Hot Topic 33920061 'Stitch Costumes' may be a later re-listing, not linked"
+  },
+  {
+   "key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box/mice",
+   "field": "characters",
+   "searched": "follow-up b134",
+   "note": "which mice (Jaq/Gus etc.) not named"
+  },
+  {
+   "key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box",
+   "field": "has_chaser",
+   "searched": "follow-up b134; 1 query",
+   "note": "no chase stated for this set in snippets; whether 6 includes a chase unknown"
+  },
+  {
+   "key": "lic/2020/loungefly-cinderella-70th-anniversary-blind-box",
+   "field": "pin_structure",
+   "searched": "follow-up b134",
+   "note": "note: six designs taken from Hot Topic description ('each depicts...') plus Geek Core 'collect all 6'; snippet paraphrased"
+  },
+  {
+   "key": "lic/2020/loungefly-a-bugs-life-blind-box",
+   "field": "pins",
+   "searched": "follow-up b134; 2 queries",
+   "note": "non-chase designs still unnamed. Conflict explained: Atta-glitter-chase lineup (Dim, Heimlich, Francis, Rosie, Flik) is later Loungefly WDPN4148, not this set"
+  },
+  {
+   "key": "lic/2020/loungefly-robin-hood-le",
+   "field": "pins",
+   "searched": "follow-up b134; 2 queries",
+   "note": "hold kept: pin-on-pin 'technically a 2 pin set' but the two pieces/characters still not described; Maid Marian LE 1,200 pins are 2021, not this"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-robin-hood",
+   "field": "release_year",
+   "searched": "follow-up b134",
+   "note": "lead: BoxLunch-exclusive Loungefly Robin Hood pin (12308559) and Little John pin (12806929); years not shown, not linked"
+  },
+  {
+   "key": "lic/2020/loungefly-nycc-nightmare-before-christmas-pin-set/jack-skellington",
+   "field": "pin_structure",
+   "searched": "follow-up b134; 2 queries",
+   "note": "hold released: Entertainment Earth listing describes each of the three pins individually (key 'sally' kept; pin shows Jack and Sally together)"
+  },
+  {
+   "key": "lic/2020/loungefly-nycc-nightmare-before-christmas-pin-set/sally",
+   "field": "pin_structure",
+   "searched": "follow-up b134; 2 queries",
+   "note": "hold released: Entertainment Earth listing describes each of the three pins individually (key 'sally' kept; pin shows Jack and Sally together)"
+  },
+  {
+   "key": "lic/2020/loungefly-nycc-nightmare-before-christmas-pin-set",
+   "field": "edition_size",
+   "searched": "follow-up b134",
+   "note": "still not stated; listings call it an exclusive only"
+  },
+  {
+   "key": "lic/2020/loungefly-marvel-comics-blind-box",
+   "field": "pins",
+   "searched": "follow-up b134; 2 queries",
+   "note": "six members and chase still unnamed (DPB only: Oct 2020, select retailers, glitter chase). 'Avengers Classic Comics' blind box (MVPN0074) appears later - not linked"
+  },
+  {
+   "key": "lic/2020/loungefly-marvel-deadpool-blind-box",
+   "field": "pins",
+   "searched": "follow-up b134; 1 query",
+   "note": "designs and chase subject not named; lead carried from packet 256 (select retailers)"
+  },
+  {
+   "key": "lic/2020/loungefly-star-wars-empire-strikes-back-40th-blind-box/chewbacca",
+   "field": "pin_structure",
+   "searched": "follow-up b134; 1 query",
+   "note": "hold: mystery designs not individually confirmed (lineup Chewbacca, C-3PO/R2-D2, Luke, Stormtrooper, Vader seen only in summarised snippets)"
+  },
+  {
+   "key": "lic/2020/loungefly-star-wars-empire-strikes-back-40th-blind-box/c-3po-r2-d2",
+   "field": "pin_structure",
+   "searched": "follow-up b134; 1 query",
+   "note": "hold: mystery designs not individually confirmed (lineup Chewbacca, C-3PO/R2-D2, Luke, Stormtrooper, Vader seen only in summarised snippets)"
+  },
+  {
+   "key": "lic/2020/loungefly-star-wars-empire-strikes-back-40th-blind-box/luke-skywalker",
+   "field": "pin_structure",
+   "searched": "follow-up b134; 1 query",
+   "note": "hold: mystery designs not individually confirmed (lineup Chewbacca, C-3PO/R2-D2, Luke, Stormtrooper, Vader seen only in summarised snippets)"
+  },
+  {
+   "key": "lic/2020/loungefly-star-wars-empire-strikes-back-40th-blind-box/stormtrooper",
+   "field": "pin_structure",
+   "searched": "follow-up b134; 1 query",
+   "note": "hold: mystery designs not individually confirmed (lineup Chewbacca, C-3PO/R2-D2, Luke, Stormtrooper, Vader seen only in summarised snippets)"
+  },
+  {
+   "key": "lic/2020/loungefly-star-wars-empire-strikes-back-40th-blind-box/darth-vader",
+   "field": "pin_structure",
+   "searched": "follow-up b134; 1 query",
+   "note": "hold: mystery designs not individually confirmed (lineup Chewbacca, C-3PO/R2-D2, Luke, Stormtrooper, Vader seen only in summarised snippets)"
+  },
+  {
+   "key": "lic/2020/esb-40th-amazon-numbered-6-pin-set",
+   "field": "manufacturer",
+   "searched": "follow-up b134",
+   "note": "lead: separate Amazon-exclusive numbered ESB 40th set of 6 large pins; maker not stated"
+  },
+  {
+   "key": "lic/2020/loungefly-fox-and-the-hound-le",
+   "field": "pins",
+   "searched": "follow-up b134; 2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or pin-on-pin); design named in DFB preview only; exact date not found"
+  },
+  {
+   "key": "lic/2020/loungefly-alice-in-wonderland-le",
+   "field": "pins",
+   "searched": "follow-up b134; 2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or pin-on-pin); design named in DFB preview only; exact date not found"
+  },
+  {
+   "key": "lic/2020/loungefly-star-wars-at-at-le",
+   "field": "pins",
+   "searched": "follow-up b134; 2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or pin-on-pin); design named in DFB preview only; exact date not found"
+  },
+  {
+   "key": "lic/2020/loungefly-alice-in-wonderland-le",
+   "field": "release_year",
+   "searched": "follow-up b134",
+   "note": "note: Alice in Wonderland Loungefly LE 1,000 (15 Jun) found is 2021 - not this June 2020 design"
+  },
+  {
+   "key": "lic/2020/loungefly-hercules-le/zero-to-hero",
+   "field": "characters",
+   "searched": "follow-up b134",
+   "note": "characters on pin not stated"
+  },
+  {
+   "key": "lic/2020/loungefly-spider-man-le",
+   "field": "pins",
+   "searched": "follow-up b134; 2 queries",
+   "note": "hold: confirm pin structure; only the preview names it, no design or name found"
+  },
+  {
+   "key": "lic/2020/loungefly-a-goofy-movie-le/a-goofy-movie",
+   "field": "characters",
+   "searched": "follow-up b134",
+   "note": "characters not stated; not the Max-as-Powerline retail pins"
+  },
+  {
+   "key": "lic/2020/loungefly-toy-story-buzz-alien-pop-le",
+   "field": "manufacturer",
+   "searched": "follow-up b134",
+   "note": "note: Funko Pop! branded; listed on Loungefly.com - recorded as Loungefly only"
+  },
+  {
+   "key": "lic/2020/loungefly-christmas-disney-classic-le",
+   "field": "pins",
+   "searched": "follow-up b134; 1 query",
+   "note": "hold: confirm pin structure and subject; preview only. Chip and Dale Christmas Tree LE is Nov 2022, not this"
+  },
+  {
+   "key": "lic/2020/loungefly-amazon-mando-and-the-child-le",
+   "field": "pins",
+   "searched": "follow-up b134; 1 query",
+   "note": "hold: confirm pin structure; title says one 'Pin' but design not described. Pre-order seen 15 Dec 2020; ship date not found"
+  },
+  {
+   "key": "lic/2020/loungefly-amazon-disneyland-65th-mickey-friends-pin-set",
+   "field": "pins",
+   "searched": "follow-up b134; 1 query",
+   "note": "hold: confirm pin structure; set size and members not stated"
+  },
+  {
+   "key": "lic/2020/loungefly-monthly-le",
+   "field": "pins",
+   "searched": "follow-up b134; 6 queries",
+   "note": "Aug now closed (Pocahontas, Hercules, Spider-Man, Goofy); Nov: Buzz & Alien Pop! (3 Nov); Sep adds Child Eating Frog; May adds Pizza Planet; Jun adds WALL-E + 3 DFB designs. Jan-Mar 2020: none found, earliest is 28 Apr"
+  },
+  {
+   "key": "lic/2020/loungefly-star-wars-mandalorian-the-child-blind-box",
+   "field": "release_year",
+   "searched": "follow-up b134; 1 query",
+   "note": "lead (packet 256): Child blind box (EE LFSTPN0129AA, pearlized chase) - 2020 date not confirmed, not recorded"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-sleeping-beauty-blind-box",
+   "field": "release_year",
+   "searched": "follow-up b134",
+   "note": "lead: DPB 'Sleeping Beauty Blind Box Loungefly Disney Pins' at BoxLunch; year not shown"
+  },
+  {
+   "key": "lic/2020/loungefly-sdcc",
+   "field": "pins",
+   "searched": "follow-up b134; 1 query",
+   "note": "still none: no Comic-Con@Home 2020 Loungefly Disney pin found"
+  },
+  {
+   "key": "lic/2020/loungefly-parks",
+   "field": "pins",
+   "searched": "follow-up b134; 1 query",
+   "note": "no 2020 Loungefly pin sold in Disney Parks found in news/blog sources"
+  },
+  {
+   "key": "lic/2020/loungefly-minnie-fall-le",
+   "field": "release_year",
+   "searched": "follow-up b134",
+   "note": "out of cell: Minnie Mouse Fall LE 800 is Sept 2022"
+  },
+  {
+   "key": "lic/2020/loungefly-chip-dale-christmas-tree-le",
+   "field": "release_year",
+   "searched": "follow-up b134",
+   "note": "out of cell: Nov 2022 LE 1,500"
+  }
+ ],
+ "discovery_notes": "Follow-up to packet 257 (b074), reusing its keys; checked 256 (b075) and 225 (b096). 30 standard searches, snippets only. Released holds: NYCC Jack/Sally (EE per-pin copy), 4 Stitch costumes (retailer per-design lists; set identity hold). Cinderella 70th blind box 6 designs added. New Loungefly.com LEs: Pizza Planet, WALL-E, Meeko&Percy, Hercules, Goofy Movie, Child Eating Frog, Buzz&Alien Pop (WDPN1771), Child Buttons; set-only holds for Copper&Tod, Alice, AT-AT, Spider-Man, Christmas. New: ESB 40th + Deadpool blind boxes, Amazon DL65 and Mando LE. 4-pin packs, Robin Hood, Bug's Life, Marvel Comics still held."
+}

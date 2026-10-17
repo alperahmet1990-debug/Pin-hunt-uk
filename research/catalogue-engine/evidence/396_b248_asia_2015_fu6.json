@@ -1,0 +1,1380 @@
+{
+ "packet_id": "backfill-b248-asia-2015-fu6",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b248",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/snow-white-tsum-tsum-pin",
+   "title": "Snow White Tsum Tsum Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-01-15",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-56326/",
+   "title": "Colourful Disney Princess round pins (Tokyo Disneyland souvenir)",
+   "publisher": "MezzoMiki",
+   "published_date": "2015-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-41267/",
+   "title": "Disneyland Hotel and Rainy Day character pins at Tokyo Disneyland",
+   "publisher": "MezzoMiki",
+   "published_date": "2015-05-17",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-55253/",
+   "title": "Tokyo Disneyland Star Wars goods round-up (reissues and park-first releases)",
+   "publisher": "MezzoMiki",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-43943/",
+   "title": "Disney Summer Festival 2015 special goods",
+   "publisher": "MezzoMiki",
+   "published_date": "2015-07-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2015/10/10_14.html",
+   "title": "Hong Kong Disneyland 10th anniversary limited edition collectibles",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2015-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2015/12/blog-post_53.html",
+   "title": "Hong Kong Disneyland 10 Years of Magic Mickey limited edition display",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2015-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/hong-kong-disneyland-pins/page/14/",
+   "title": "Hong Kong Disneyland Pins Archives - Page 14",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/34019",
+   "title": "HKDL - Happy Memories to 10th Anniversary - 2015 - 8th Mickey Mouse",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/magic-access-hong-kong-pin",
+   "title": "Magic Access Hong Kong Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-10-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://catnerd.wordpress.com/2015/11/09/disney-pin-trading-shanghai-cast-member-exclusive-pin/",
+   "title": "Disney Pin Trading: Shanghai Cast Member Exclusive Pin",
+   "publisher": "Crazy Cat Nerd",
+   "published_date": "2015-11-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "hkdl/2015/oe-single/snow-white-tsum-tsum",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Snow White Tsum Tsum pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-tsum-tsum-pin",
+     "method": "search_snippet",
+     "note": "DPB post on a single Tsum Tsum pin sold at HKDR"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-tsum-tsum-pin",
+     "method": "search_snippet",
+     "note": "DPB calls it open edition"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-tsum-tsum-pin",
+     "method": "search_snippet",
+     "note": "one pin showing Snow White with the seven dwarfs as Tsum Tsums"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2015/princess-and-girls",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Princess & Girls round pins",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "MezzoMiki names the line as princess and girls pins, round full-colour designs"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 9,
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "article says nine kinds went on sale together"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-26",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "sale date 26 Dec 2015 stated in the article"
+    },
+    {
+     "field": "price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "each pin 1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "yen price"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland (Grand Emporium) and Tokyo DisneySea (Emporio)",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "shops named in the article"
+    },
+    {
+     "field": "format",
+     "value": "individual pins sold separately",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "nine designs, each 1000 yen, all 3.5 cm round; article describes each princess design in turn"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2015/happy-rainy-day",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Happy Rainy Day pins",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "MezzoMiki lists a Happy Rainy Day pin line in its May 2015 article"
+    },
+    {
+     "field": "price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "yen price"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland (Golden Galleon and other shops)",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "Golden Galleon named among shops"
+    },
+    {
+     "field": "format",
+     "value": "individual pins (Mickey and Minnie)",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "snippets tied to the article say two kinds, Mickey and Minnie, each with its own costume colours"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2015/oe-single/tdlh-doorman-mickey",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tokyo Disneyland Hotel doorman Mickey pin",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "article mentions a doorman (porter) Mickey pin at the hotel shop"
+    },
+    {
+     "field": "price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "single Mickey pin"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "hkdl/2015/oe/snow-white-tsum-tsum",
+   "set_key": "hkdl/2015/oe-single/snow-white-tsum-tsum",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Snow White Tsum Tsum pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-tsum-tsum-pin",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Snow White",
+      "Doc",
+      "Grumpy",
+      "Happy",
+      "Sleepy",
+      "Bashful",
+      "Sneezy",
+      "Dopey"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-tsum-tsum-pin",
+     "method": "search_snippet",
+     "note": "Snow White and the seven dwarfs as Tsum Tsums; dwarfs named collectively in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Snow White",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-tsum-tsum-pin",
+     "method": "search_snippet",
+     "note": "Snow White leads the group"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-tsum-tsum-pin",
+     "method": "search_snippet",
+     "note": "single pin featuring the group"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-tsum-tsum-pin",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-tsum-tsum-pin",
+     "method": "search_snippet",
+     "note": "only available at HKDR"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/snow-white-tsum-tsum-pin",
+     "method": "search_snippet",
+     "note": "DPB post dated 15 Jan 2015; blog calls it likely the first Tsum Tsum pin in circulation"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/princess-and-girls/cinderella",
+   "set_key": "tdr/2015/princess-and-girls",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Princess & Girls round pin - Cinderella",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "named among the nine kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "main_character",
+     "value": "Cinderella",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "each kind sold separately at 1000 yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-26",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "all nine released 26 Dec 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland and Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS)"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "visual_description",
+     "value": "round 3.5 cm pin; stained-glass style background with glass slipper; Cinderella in blue dress at centre",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "paraphrase of the article's per-design note"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/princess-and-girls/aurora",
+   "set_key": "tdr/2015/princess-and-girls",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Princess & Girls round pin - Aurora",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "named among the nine kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "main_character",
+     "value": "Aurora",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "each kind sold separately at 1000 yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-26",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "all nine released 26 Dec 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland and Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS)"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "visual_description",
+     "value": "round 3.5 cm pin; pink-toned design with roses in the background",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "paraphrase of the article's per-design note"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/princess-and-girls/snow-white",
+   "set_key": "tdr/2015/princess-and-girls",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Princess & Girls round pin - Snow White",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "named among the nine kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "main_character",
+     "value": "Snow White",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "each kind sold separately at 1000 yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-26",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "all nine released 26 Dec 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland and Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS)"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "visual_description",
+     "value": "round 3.5 cm pin; apples and flowers behind; Snow White holding a rose",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "paraphrase of the article's per-design note"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/princess-and-girls/ariel",
+   "set_key": "tdr/2015/princess-and-girls",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Princess & Girls round pin - Ariel",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "named among the nine kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "each kind sold separately at 1000 yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-26",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "all nine released 26 Dec 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland and Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS)"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "visual_description",
+     "value": "round 3.5 cm pin; seashells in the background; Ariel in human form",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "paraphrase of the article's per-design note"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/princess-and-girls/belle",
+   "set_key": "tdr/2015/princess-and-girls",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Princess & Girls round pin - Belle",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "named among the nine kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "each kind sold separately at 1000 yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-26",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "all nine released 26 Dec 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland and Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS)"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "visual_description",
+     "value": "round 3.5 cm pin; many roses in the background",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "paraphrase of the article's per-design note"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/princess-and-girls/rapunzel",
+   "set_key": "tdr/2015/princess-and-girls",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Princess & Girls round pin - Rapunzel",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "named among the nine kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "each kind sold separately at 1000 yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-26",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "all nine released 26 Dec 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland and Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS)"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "visual_description",
+     "value": "round 3.5 cm pin; Rapunzel holding a lantern",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "paraphrase of the article's per-design note"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/princess-and-girls/alice",
+   "set_key": "tdr/2015/princess-and-girls",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Princess & Girls round pin - Alice",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "named among the nine kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "main_character",
+     "value": "Alice",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "each kind sold separately at 1000 yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-26",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "all nine released 26 Dec 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland and Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS)"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "visual_description",
+     "value": "round 3.5 cm pin; Alice enjoying a tea party",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "paraphrase of the article's per-design note"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/princess-and-girls/anna",
+   "set_key": "tdr/2015/princess-and-girls",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Princess & Girls round pin - Anna",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "named among the nine kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Anna"
+     ],
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "main_character",
+     "value": "Anna",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "each kind sold separately at 1000 yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-26",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "all nine released 26 Dec 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland and Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS)"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "visual_description",
+     "value": "round 3.5 cm pin; Anna in winter outfit with a maroon cape",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "paraphrase of the article's per-design note"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/princess-and-girls/elsa",
+   "set_key": "tdr/2015/princess-and-girls",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Princess & Girls round pin - Elsa",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "named among the nine kinds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Elsa"
+     ],
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "main_character",
+     "value": "Elsa",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "single character design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "each kind sold separately at 1000 yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-26",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "all nine released 26 Dec 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland and Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS)"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "visual_description",
+     "value": "round 3.5 cm pin; Elsa in snow queen costume with snowflake background",
+     "source_url": "https://mezzomiki.jp/post-56326/",
+     "method": "search_snippet",
+     "note": "paraphrase of the article's per-design note"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/happy-rainy-day/mickey",
+   "set_key": "tdr/2015/happy-rainy-day",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Rainy Day pin - Mickey",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "article describes a separate pin for this character"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey"
+     ],
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "two kinds, Mickey and Minnie, per snippets tied to the article"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "Golden Galleon and other shops"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "visual_description",
+     "value": "light blue raincoat with blue cloud pattern, based on the Rainy Night Fun parade costume (2009-2011)",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "paraphrased costume description"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "on sale per article dated May 2015; own sale date not stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/happy-rainy-day/minnie",
+   "set_key": "tdr/2015/happy-rainy-day",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Rainy Day pin - Minnie",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "article describes a separate pin for this character"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie"
+     ],
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "two kinds, Mickey and Minnie, per snippets tied to the article"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "Golden Galleon and other shops"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "visual_description",
+     "value": "pink raincoat with orange cloud pattern",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "paraphrased costume description"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "on sale per article dated May 2015; own sale date not stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2015/oe/tdlh-doorman-mickey",
+   "set_key": "tdr/2015/oe-single/tdlh-doorman-mickey",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tokyo Disneyland Hotel doorman Mickey pin",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "article names a doorman Mickey pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey"
+     ],
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey dressed as a hotel doorman (porter)",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "subject only; details not in snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland Hotel (Disney Mercantile)",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "sold at the hotel shop"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "1000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-41267/",
+     "method": "search_snippet",
+     "note": "yen"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "tdr/2015/happy-rainy-day",
+   "field": "pins",
+   "searched": "MezzoMiki post-41267; 2 queries",
+   "note": "released: two snippets tied to MezzoMiki post-41267 say two kinds (Mickey, Minnie) and describe each costume; Mickey and Minnie pins now recorded"
+  },
+  {
+   "key": "tdr/2015/happy-rainy-day",
+   "field": "release_date",
+   "searched": "MezzoMiki post-41267; 2 queries",
+   "note": "own sale date not stated; the 15 May 2015 date in the article belongs to the hotel party costume pins"
+  },
+  {
+   "key": "tdr/2015/oe/tdlh-doorman-mickey",
+   "field": "release_year",
+   "searched": "MezzoMiki post-41267; 1 query",
+   "note": "hold: article (May 2015) shows it on sale at 1000 yen; release year not stated and may predate 2015"
+  },
+  {
+   "key": "tdr/2015/oe/tdlh-doorman-mickey",
+   "field": "edition_type",
+   "searched": "MezzoMiki post-41267",
+   "note": "edition type not stated"
+  },
+  {
+   "key": "tdr/2015/hotel-party-costume",
+   "field": "pins",
+   "searched": "MezzoMiki post-41267",
+   "note": "superseded: doorman Mickey lead now recorded as tdr/2015/oe/tdlh-doorman-mickey (held on release year)"
+  },
+  {
+   "key": "tdr/2015/princess-and-girls",
+   "field": "edition_type",
+   "searched": "MezzoMiki post-56326; 3 queries",
+   "note": "edition type not stated (likely regular goods; not recorded)"
+  },
+  {
+   "key": "hkdl/2015/oe/snow-white-tsum-tsum",
+   "field": "release_date",
+   "searched": "DPB; 2 queries",
+   "note": "exact sale date not stated; DPB post dated 15 Jan 2015; price not in snippets"
+  },
+  {
+   "key": "tdr/2015/star-wars/star-tours",
+   "field": "visual_description",
+   "searched": "MezzoMiki post-55253; 1 query",
+   "note": "hold kept: snippet lists a 1000-yen Star Tours pin but does not describe its artwork"
+  },
+  {
+   "key": "tdr/2015/star-wars",
+   "field": "pins",
+   "searched": "MezzoMiki post-55253",
+   "note": "note: article frames goods as reissues of May 2013 Star Tours opening items plus park-first releases; whether each pin is a reissue not stated"
+  },
+  {
+   "key": "tdr/2015/star-wars/darth-maul",
+   "field": "pin_name",
+   "searched": "not re-searched directly",
+   "note": "hold kept: MezzoMiki snippet again names Yoda, R2-D2, Vader and Star Tours pins, no Maul"
+  },
+  {
+   "key": "tdr/2015/summer-festival",
+   "field": "format",
+   "searched": "MezzoMiki post-43943; 1 query",
+   "note": "hold kept: article lists one 1000-yen pin with harvested fruit, Mickey and Minnie (singular wording); one pin vs two still not explicit"
+  },
+  {
+   "key": "tdr/2015/new-year/mickey",
+   "field": "pin_structure",
+   "searched": "New Year 2015 queries; 1 query",
+   "note": "hold kept: snippets name the Danny balloon pin and Mickey plush badges only; Mickey pin design count unconfirmed"
+  },
+  {
+   "key": "tdr/2015/new-year/mickey-daruma",
+   "field": "pin_name",
+   "searched": "not re-searched",
+   "note": "hold kept: possible duplicate of tdr/2015/new-year/mickey"
+  },
+  {
+   "key": "tdr/2015/game-prize-tdl",
+   "field": "pins",
+   "searched": "MezzoMiki/Castel Jungle Carnival; 1 query",
+   "note": "hold kept: Jungle Carnival opened Dec 2015 with pin fail prizes, but only later-year prize lineups surfaced"
+  },
+  {
+   "key": "hkdl/2015/christmas",
+   "field": "pins",
+   "searched": "DPB and Chinese queries; 3 queries",
+   "note": "lead kept: DPB archive title only (24 Dec 2015); DMK lists a 2015 Happily Ever After Christmas category but no pin surfaced"
+  },
+  {
+   "key": "hkdl/2015/10th-anniversary-frozen",
+   "field": "pins",
+   "searched": "English query; 1 query",
+   "note": "lead kept: no permitted source; results showed only Suruga-ya (reseller) and a 2026 HKDL Frozen pin"
+  },
+  {
+   "key": "hkdl/2015/10th-anniversary-jumbo-box-set",
+   "field": "edition_size",
+   "searched": "DMK; 3 queries",
+   "note": "conflict: one summary of DMK 10_14 gives 500, mid-Nov 2015 and ties 300 sets to the Mickey display; another repeats 300 sets, mid-Dec. Unresolved"
+  },
+  {
+   "key": "hkdl/2015/10th-anniversary-jumbo-box-set",
+   "field": "expected_pin_count",
+   "searched": "DMK; 3 queries",
+   "note": "hold kept: number of pins and designs in the box still not stated"
+  },
+  {
+   "key": "hkdl/2015/mickey-lucky-draw-jumbo",
+   "field": "pins",
+   "searched": "DMK; 2 queries",
+   "note": "hold kept: four prize-only jumbo designs, LE 500 each; castle and 10th logo theme; designs not named per pin"
+  },
+  {
+   "key": "hkdl/2015/happy-memories-to-10th",
+   "field": "pins",
+   "searched": "MyPinCentral, DMK; 3 queries",
+   "note": "lead kept: 34007 (1st), 34008 (4th), 34013 (5th) seen only as truncated list entries on the 34019 page; designs not described"
+  },
+  {
+   "key": "hkdl/2015/happy-memories-to-10th/8th-anniversary-mickey",
+   "field": "edition_type",
+   "searched": "MyPinCentral; 2 queries",
+   "note": "hold kept: MyPinCentral OE HK$238 vs Disney Nerds LE 600; no new evidence"
+  },
+  {
+   "key": "hkdl/2015/pin-trading-fun-day/sulley",
+   "field": "pin_name",
+   "searched": "MyPinCentral 56863-56876; 3 queries",
+   "note": "lead kept: Sulley 4 of 12 only in reseller titles; MyPinCentral 56870/56866 entries not tied to characters"
+  },
+  {
+   "key": "hkdl/2015/pin-trading-fun-day",
+   "field": "pins",
+   "searched": "MyPinCentral; 2 queries",
+   "note": "lead: a search summary mentions Boo in the Ferris Wheel set; not tied to a page, not recorded"
+  },
+  {
+   "key": "hkdl/2015/pin-trading-fun-day",
+   "field": "expected_pin_count",
+   "searched": "MyPinCentral; 2 queries",
+   "note": "conflict kept: MyPinCentral series list read as 13 pins vs 12 game pins plus 2 completers per reseller"
+  },
+  {
+   "key": "hkdl/2015/pin-trading-fun-day/elsa",
+   "field": "pin_name",
+   "searched": "MyPinCentral; 2 queries",
+   "note": "hold kept: Elsa appears only in reseller listings; no catalogue entry tied to the series"
+  },
+  {
+   "key": "hkdl/2015/magic-access/sorcerer-mickey-key",
+   "field": "edition_size",
+   "searched": "DPB, DMK; 1 query",
+   "note": "hold kept: DPB (28 Oct 2015) says key backdrop; DMK says logo backdrop, LE 500, HK$198; same-pin tie not proven"
+  },
+  {
+   "key": "hkdl/2015/magic-access/sorcerer-mickey-key",
+   "field": "release_date",
+   "searched": "DPB, DMK; 1 query",
+   "note": "still open: DMK 22 Oct sale vs DPB post 28 Oct vs existing 2015-10-23 claim"
+  },
+  {
+   "key": "hkdl/2015/oe-set/safety-pins",
+   "field": "expected_pin_count",
+   "searched": "not re-searched",
+   "note": "still open: total 2015 card count not stated"
+  },
+  {
+   "key": "hkdl/2015/oe/safety-pin-mike",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold kept: no per-pin evidence"
+  },
+  {
+   "key": "hkdl/2015/oe/safety-pin-pooh",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold kept: no per-pin evidence"
+  },
+  {
+   "key": "hkdl/2015/oe/safety-pin-piglet",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold kept: no per-pin evidence"
+  },
+  {
+   "key": "hkdl/2015/oe/safety-pin-donald",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold kept: no per-pin evidence"
+  },
+  {
+   "key": "hkdl/2015/oe/safety-pin-daisy",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold kept: no per-pin evidence"
+  },
+  {
+   "key": "hkdl/2015/oe/safety-pin-figaro",
+   "field": "release_year",
+   "searched": "not re-searched",
+   "note": "hold kept: no source dates the Pinocchio/Figaro card"
+  },
+  {
+   "key": "hkdl/2015/chinese-new-year",
+   "field": "pins",
+   "searched": "DPB query; 1 query",
+   "note": "lead kept: CNY 2015 ShellieMay LE 500 still only on Collect Random"
+  },
+  {
+   "key": "shdr/2015/cast-member-exclusive",
+   "field": "pins",
+   "searched": "English query; 1 query",
+   "note": "no other Mickey painting designs named; results were grand-opening (2016) pins"
+  },
+  {
+   "key": "shdr/2015/cast-member-exclusive/mickey-painting-snake",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "hold kept: still only the Nov 2015 Crazy Cat Nerd post"
+  }
+ ],
+ "discovery_notes": "Follow-up 6 of B039 (after B200, B215, B228, B235, B242). 29 standard searches, snippets only. Released one hold (TDL Happy Rainy Day: two pins). New: HKDL Snow White Tsum Tsum (Jan 2015), TDR Princess & Girls round pins (9, 26 Dec 2015), doorman Mickey (held: year). Resellers leads only."
+}

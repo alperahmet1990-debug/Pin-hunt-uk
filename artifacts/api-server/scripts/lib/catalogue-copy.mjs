@@ -21,7 +21,7 @@ export const CATALOGUE_TABLES = [
   { table: "characters", key: ["id"], natural: "name", reuse: true },
   { table: "categories", key: ["id"], natural: "name", reuse: true },
   { table: "pin_sets", key: ["id"], natural: "normalised_series", reuse: true },
-  { table: "pins", key: ["id"], natural: "pinhunt_id", reuse: false },
+  { table: "pins", key: ["id"], natural: "pinhunt_id", reuse: false, keep: "image_url" },
   { table: "pin_set_memberships", key: ["pin_id", "set_id"], refs: { pin_id: "pins", set_id: "pin_sets" } },
   { table: "pin_characters", key: ["pin_id", "character_id"], refs: { pin_id: "pins", character_id: "characters" } },
   { table: "pin_categories", key: ["pin_id", "category_id"], refs: { pin_id: "pins", category_id: "categories" } },
@@ -103,8 +103,12 @@ export function scrubRow(row) {
  *   skipped (never overwritten), along with their links.
  * - Link rows are only kept when every row they point at is being copied
  *   or already exists, so archived pins' links never come along.
+ * - A pin whose staging photo differs from main's keeps the staging photo
+ *   (cleaned with Pixian or added in the app there, #384), unless
+ *   `refreshImages` is set. The kept photo is written back as-is, so the
+ *   upsert never blanks it.
  */
-export function planCopy(main, staging) {
+export function planCopy(main, staging, { refreshImages = false } = {}) {
   const idMap = {}; // table -> Map(mainId -> stagingId)
   const present = {}; // table -> Set(ids that will exist in staging)
   const plan = [];
@@ -113,12 +117,24 @@ export function planCopy(main, staging) {
     const rows = (main[spec.table] ?? []).map(scrubRow);
     const skipped = [];
     let write = rows;
+    let kept = 0;
+
+    if (spec.keep && !refreshImages) {
+      const current = new Map((staging[spec.table] ?? []).map((r) => [r.id, r[spec.keep]]));
+      write = rows.map((row) => {
+        const theirs = current.get(row.id);
+        if (theirs == null || theirs === row[spec.keep]) return row;
+        kept += 1;
+        return { ...row, [spec.keep]: theirs };
+      });
+    }
 
     if (spec.natural) {
       const byNatural = new Map((staging[spec.table] ?? []).map((r) => [r[spec.natural], r.id]));
       const map = new Map();
+      const candidates = write;
       write = [];
-      for (const row of rows) {
+      for (const row of candidates) {
         const existing = byNatural.get(row[spec.natural]);
         if (existing && existing !== row.id) {
           if (spec.reuse) map.set(row.id, existing);
@@ -151,14 +167,14 @@ export function planCopy(main, staging) {
       if (dropped) skipped.push({ key: `${dropped} row(s)`, reason: "link to a pin, set, character or category that isn't copied" });
     }
 
-    plan.push({ table: spec.table, key: spec.key, rows: write, read: rows.length, skipped });
+    plan.push({ table: spec.table, key: spec.key, rows: write, read: rows.length, skipped, kept });
   }
   return plan;
 }
 
 /** One line per table for the report. */
 export function summarisePlan(plan) {
-  return plan.map((p) => `${p.table.padEnd(20)} read ${String(p.read).padStart(6)}  write ${String(p.rows.length).padStart(6)}${p.skipped.length ? `  skipped: ${p.skipped.map((s) => `${s.key} (${s.reason})`).slice(0, 3).join("; ")}${p.skipped.length > 3 ? ` … +${p.skipped.length - 3} more` : ""}` : ""}`);
+  return plan.map((p) => `${p.table.padEnd(20)} read ${String(p.read).padStart(6)}  write ${String(p.rows.length).padStart(6)}${p.kept ? `  kept ${p.kept} staging photo(s)` : ""}${p.skipped.length ? `  skipped: ${p.skipped.map((s) => `${s.key} (${s.reason})`).slice(0, 3).join("; ")}${p.skipped.length > 3 ? ` … +${p.skipped.length - 3} more` : ""}` : ""}`);
 }
 
 // ── run ─────────────────────────────────────────────────────────────────────
@@ -170,14 +186,14 @@ const chunk = (list, size) => Array.from({ length: Math.ceil(list.length / size)
  *         upsert(table, rows, keyColumns) → void (throws on error), log }
  * Never deletes. Without `apply` it only reports.
  */
-export async function runCopy({ apply }, deps) {
+export async function runCopy({ apply, refreshImages = false }, deps) {
   const main = {};
   const staging = {};
   for (const spec of CATALOGUE_TABLES) {
     main[spec.table] = await deps.readMain(spec.table, MAIN_FILTERS[spec.table] ?? []);
-    if (spec.natural) staging[spec.table] = await deps.readStaging(spec.table, ["id", spec.natural]);
+    if (spec.natural) staging[spec.table] = await deps.readStaging(spec.table, ["id", spec.natural, ...(spec.keep ? [spec.keep] : [])]);
   }
-  const plan = planCopy(main, staging);
+  const plan = planCopy(main, staging, { refreshImages });
   deps.log(apply ? "copy (apply):" : "copy (dry run — add --apply to write):");
   for (const line of summarisePlan(plan)) deps.log(`  ${line}`);
   if (!apply) return { plan, written: 0, failed: [] };

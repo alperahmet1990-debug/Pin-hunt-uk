@@ -4,7 +4,7 @@ import fs from "node:fs";
 import { describe, expect, it, vi } from "vitest";
 import {
   CATALOGUE_TABLES, CATALOGUE_TABLE_NAMES, INTERNAL_LINK_COLUMNS, MAIN_FILTERS, PERSON_COLUMNS,
-  assertAnonKey, assertMainTarget, planCopy, runCopy, scrubRow,
+  assertAnonKey, assertMainTarget, planCopy, runCopy, scrubRow, summarisePlan,
 } from "./catalogue-copy.mjs";
 
 const PROD = "prodprodprodprodprod";
@@ -148,6 +148,67 @@ describe("planCopy", () => {
   });
 });
 
+describe("keeping staging photos (#384)", () => {
+  const main = { pins: [
+    { id: "p-1", pinhunt_id: "PHUK-1", image_url: "https://main/1.jpg" },
+    { id: "p-2", pinhunt_id: "PHUK-2", image_url: "https://main/2.jpg" },
+    { id: "p-3", pinhunt_id: "PHUK-3", image_url: null },
+    { id: "p-4", pinhunt_id: "PHUK-4", image_url: "https://main/4.jpg" },
+  ] };
+  const staging = { pins: [
+    { id: "p-1", pinhunt_id: "PHUK-1", image_url: "https://staging/cleaned-1.jpg" },
+    { id: "p-2", pinhunt_id: "PHUK-2", image_url: "https://main/2.jpg" },
+    { id: "p-3", pinhunt_id: "PHUK-3", image_url: "https://staging/contributed-3.jpg" },
+    { id: "p-4", pinhunt_id: "PHUK-4", image_url: null },
+  ] };
+  const pinsStep = (plan) => plan.find((p) => p.table === "pins");
+
+  it("keeps a staging photo that differs from main's, by default", () => {
+    const step = pinsStep(planCopy(main, staging));
+    const byId = Object.fromEntries(step.rows.map((r) => [r.id, r.image_url]));
+    expect(byId).toEqual({
+      "p-1": "https://staging/cleaned-1.jpg", // cleaned in staging
+      "p-2": "https://main/2.jpg", // same as main
+      "p-3": "https://staging/contributed-3.jpg", // main has none, staging does
+      "p-4": "https://main/4.jpg", // staging has none, main's fills it
+    });
+    expect(step.kept).toBe(2);
+  });
+
+  it("--refresh-images takes main's photos", () => {
+    const step = pinsStep(planCopy(main, staging, { refreshImages: true }));
+    expect(step.rows.map((r) => r.image_url)).toEqual(["https://main/1.jpg", "https://main/2.jpg", null, "https://main/4.jpg"]);
+    expect(step.kept).toBe(0);
+  });
+
+  it("pins new to staging are copied as they are", () => {
+    const step = pinsStep(planCopy(main, {}));
+    expect(step.rows.map((r) => r.image_url)).toEqual(["https://main/1.jpg", "https://main/2.jpg", null, "https://main/4.jpg"]);
+  });
+
+  it("the report says how many staging photos were kept", () => {
+    const lines = summarisePlan(planCopy(main, staging));
+    expect(lines.find((l) => l.startsWith("pins"))).toMatch(/kept 2 staging photo\(s\)/);
+  });
+
+  it("runCopy passes the option through and writes the kept photos back", async () => {
+    const upsert = vi.fn(async () => {});
+    const deps = {
+      readMain: async (t) => (t === "pins" ? main.pins : []),
+      readStaging: async (t) => (t === "pins" ? staging.pins : []),
+      upsert,
+      log: () => {},
+    };
+    await runCopy({ apply: true }, deps);
+    const written = upsert.mock.calls.filter(([t]) => t === "pins").flatMap(([, rows]) => rows);
+    expect(written.find((r) => r.id === "p-1").image_url).toBe("https://staging/cleaned-1.jpg");
+    upsert.mockClear();
+    await runCopy({ apply: true, refreshImages: true }, deps);
+    const refreshed = upsert.mock.calls.filter(([t]) => t === "pins").flatMap(([, rows]) => rows);
+    expect(refreshed.find((r) => r.id === "p-1").image_url).toBe("https://main/1.jpg");
+  });
+});
+
 describe("runCopy", () => {
   const deps = (over = {}) => ({
     readMain: vi.fn(async (table) => (table === "pins" ? [{ id: "p-1", pinhunt_id: "PHUK-1" }, { id: "p-2", pinhunt_id: "PHUK-2" }] : [])),
@@ -163,7 +224,7 @@ describe("runCopy", () => {
     expect(d.upsert).not.toHaveBeenCalled();
     expect(result.written).toBe(0);
     expect(d.readMain).toHaveBeenCalledWith("pins", MAIN_FILTERS.pins);
-    expect(d.readStaging).toHaveBeenCalledWith("pins", ["id", "pinhunt_id"]);
+    expect(d.readStaging).toHaveBeenCalledWith("pins", ["id", "pinhunt_id", "image_url"]);
   });
 
   it("with --apply upserts by primary key, table by table", async () => {

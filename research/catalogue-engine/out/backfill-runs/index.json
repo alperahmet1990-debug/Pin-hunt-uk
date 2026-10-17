@@ -1,24 +1,24 @@
 {
  "source": "staging_payload.json",
- "git_commit": "6a179f01c171",
+ "git_commit": "b3e072860126",
  "generated": "2026-10-17",
  "runs": [
   {
    "file": "run_01_wdw.json",
-   "pins": 1200,
-   "sets": 699,
-   "evidence": 8549,
-   "bytes": 3678918,
+   "pins": 1207,
+   "sets": 693,
+   "evidence": 8635,
+   "bytes": 3715669,
    "lines": [
     "wdw"
    ]
   },
   {
    "file": "run_02_wdw-to-dlr.json",
-   "pins": 1175,
-   "sets": 725,
-   "evidence": 9371,
-   "bytes": 3901208,
+   "pins": 1172,
+   "sets": 728,
+   "evidence": 9350,
+   "bytes": 3882481,
    "lines": [
     "wdw",
     "dlr"
@@ -26,57 +26,57 @@
   },
   {
    "file": "run_03_dlr-to-dlp.json",
-   "pins": 1188,
-   "sets": 712,
-   "evidence": 9663,
-   "bytes": 4089328,
+   "pins": 1184,
+   "sets": 716,
+   "evidence": 9615,
+   "bytes": 4067571,
    "lines": [
     "dlr",
     "dlp"
    ]
   },
   {
-   "file": "run_04_dlp-to-tdr.json",
-   "pins": 1272,
-   "sets": 625,
-   "evidence": 10311,
-   "bytes": 4387664,
+   "file": "run_04_dlp-to-hkdl.json",
+   "pins": 1265,
+   "sets": 630,
+   "evidence": 10186,
+   "bytes": 4368982,
    "lines": [
     "dlp",
     "dsuk",
     "dsus",
     "shdr",
-    "hkdl",
-    "tdr"
+    "hkdl"
    ]
   },
   {
-   "file": "run_05_tdr-to-lic.json",
-   "pins": 1143,
-   "sets": 573,
-   "evidence": 12334,
-   "bytes": 4820944,
+   "file": "run_05_hkdl-to-lic.json",
+   "pins": 1168,
+   "sets": 583,
+   "evidence": 12361,
+   "bytes": 4816470,
    "lines": [
+    "hkdl",
     "tdr",
     "lic"
    ]
   },
   {
    "file": "run_06_lic.json",
-   "pins": 1109,
-   "sets": 512,
-   "evidence": 11826,
-   "bytes": 4820307,
+   "pins": 1090,
+   "sets": 511,
+   "evidence": 12072,
+   "bytes": 4816849,
    "lines": [
     "lic"
    ]
   },
   {
    "file": "run_07_lic-to-windows-of-attraction.json",
-   "pins": 446,
-   "sets": 118,
-   "evidence": 4958,
-   "bytes": 2067426,
+   "pins": 587,
+   "sets": 174,
+   "evidence": 6199,
+   "bytes": 2620188,
    "lines": [
     "lic",
     "animated-cuties",

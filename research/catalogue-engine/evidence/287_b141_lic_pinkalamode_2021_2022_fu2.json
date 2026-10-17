@@ -1,0 +1,1454 @@
+{
+ "packet_id": "backfill-b141-lic-pinkalamode-2021-2022-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b141",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-pins-at-pink-a-la-mode",
+   "title": "Nightmare Before Christmas Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-gothic-collectible-limited-edition-pin-series-at-pink-a-la-mode",
+   "title": "The Nightmare Before Christmas Gothic Limited Edition Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mystery-poster-disney-pins-at-pink-a-la-mode/",
+   "title": "Disney Poster Collectible Blind Box Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-02-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+   "title": "Robin Hood Mystery Disney Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-02-17",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/134815",
+   "title": "My Pin Central pin 134815 (Robin Hood mystery, Pink a la Mode exclusive)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.pinkalamode.com/products/disney-pixar-turning-red-4-town-3-collectible-pin-limited-edition-300",
+   "title": "Disney Pixar Turning Red 4 Town 3\" Collectible Pin Limited Edition 300",
+   "publisher": "Pink a la Mode",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.pinkalamode.com/collections/all-pins/turning-red-2022",
+   "title": "All Pins - Turning Red 2022",
+   "publisher": "Pink a la Mode",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.pinkalamode.com/collections/disney/enamel-pin",
+   "title": "Disney (enamel pin collection)",
+   "publisher": "Pink a la Mode",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.pinkalamode.com/products/disney-pixar-turning-red-mei-mei-red-panda-3-collectible-pin-special-edition-300-new-release",
+   "title": "Disney Pixar Turning Red Mei Mei Red Panda 3\" Collectible Pin Special Edition 300",
+   "publisher": "Pink a la Mode",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/turning-red-disney-pins/",
+   "title": "Turning Red Disney Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-pixar-turning-red-pin-series-at-pink-a-la-mode/",
+   "title": "Disney Pixar Turning Red Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-princess-locket-pin-series-at-pink-a-la-mode",
+   "title": "Disney Princess Locket Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-princess-keys-to-the-kingdom-pin-series-at-pink-a-la-mode",
+   "title": "Disney Princess Keys to the Kingdom Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-keys-to-the-kingdom-pin-series-2-at-pink-a-la-mode/",
+   "title": "Disney Princess Keys to the Kingdom Pin Series 2 at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-keys-to-the-kingdom-pin-series-3-at-pink-a-la-mode/",
+   "title": "Disney Princess Keys to the Kingdom Pin Series 3 at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-enchanted-princess-pin-series-at-pink-a-la-mode",
+   "title": "Disney Enchanted Princess Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-princess-villain-wave-1-pin-series-at-pink-a-la-mode",
+   "title": "Disney Princess/Villain Wave 1 Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-kingdom-pin-series-at-pink-a-la-mode/",
+   "title": "The Kingdom Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://shoppingtheparks.com/products/belle-disney-princess-royal-carousel-pink-a-la-mode-mystery-disney-pin",
+   "title": "Belle Disney Princess Royal Carousel Pink a la Mode Mystery Disney Pin",
+   "publisher": "Shopping the Parks",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.pinkalamode.com/collections/disney-princess",
+   "title": "Disney Princess collection",
+   "publisher": "Pink a la Mode",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-disney-frozen-watercolor-limited-edition-pin-series-at-pink-a-la-mode/",
+   "title": "Disney Frozen Watercolor Limited Edition Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-crest-le-300-pin-series-at-pink-a-la-mode/",
+   "title": "Disney Princess Crest LE 300 Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-08-24",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-cute-villains-mystery-pins-the-haunted-mansion-pin-set-at-pink-a-la-mode",
+   "title": "Disney Cute Villains Mystery Pins & The Haunted Mansion Pin Set at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-10-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-pins-at-pink-a-la-mode/",
+   "title": "Disney Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-09-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mickey-minnie-christmas-disney-pins-at-pink-a-la-mode",
+   "title": "Mickey & Minnie Christmas Disney Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-10-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-sidekicks-pin-series-at-pink-a-la-mode/",
+   "title": "Disney Sidekicks Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/royal-couples-pin-series-at-pink-a-la-mode/",
+   "title": "Royal Couples Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinforum.com/threads/2021-pin-discussion.75165/page-57",
+   "title": "2021 Pin Discussion (page 57)",
+   "publisher": "Disney Pin Forum",
+   "published_date": "2021-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2021/pink-a-la-mode-nightmare-before-christmas",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Nightmare Before Christmas Pins at Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-pins-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "blog title; Dec 2021 PALM release"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-pins-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "released Tue 14 Dec 2021"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-pins-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "coloured versions LE 400"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-pins-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "coloured versions LE 400"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-pins-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "$9.90 coloured version"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-pins-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-pins-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "white glitter chase variants LE 100 at $12.90"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-pins-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "release at Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/pink-a-la-mode-nightmare-before-christmas-gothic",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Nightmare Before Christmas Gothic Limited Edition Pin Series",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-gothic-collectible-limited-edition-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-gothic-collectible-limited-edition-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "7 pins in total"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-09-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-gothic-collectible-limited-edition-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "available Fri 23 Sept 2022 5PM PDT"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-gothic-collectible-limited-edition-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-gothic-collectible-limited-edition-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "price",
+     "value": 39.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-gothic-collectible-limited-edition-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "$39.90 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-gothic-collectible-limited-edition-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-gothic-collectible-limited-edition-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "made exclusively for Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/pink-a-la-mode-disney-poster-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Poster Collectible Blind Box Pins",
+     "source_url": "https://disneypinsblog.com/mystery-poster-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/mystery-poster-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "one pin per box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 14,
+     "source_url": "https://disneypinsblog.com/mystery-poster-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "14 pins in total (chase split not stated)"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-22",
+     "source_url": "https://disneypinsblog.com/mystery-poster-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "available Tue 22 Feb 2022"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/mystery-poster-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$9.90 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mystery-poster-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/mystery-poster-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "made exclusively for Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/pink-a-la-mode-robin-hood-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Robin Hood Mystery Disney Pins",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "mystery set, one random pin per box (database)"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "8 characters; plus 8 white chase pins (16 total) not counted"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-17",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "available Thu 17 Feb 2022 7pm ET"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured LE 360 each, white chasers LE 180"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$9.90 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "8 white chase pins, LE 180"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "release at Pink a la Mode"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "database calls series a Pink a la Mode exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/pink-a-la-mode-princess-locket",
+   "claims": [
+    {
+     "field": "format",
+     "value": "approx 1.5in pins, antique gold brushed metal plating",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-locket-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "size and plating stated at series level"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/pink-a-la-mode-keys-to-the-kingdom-series-1",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-keys-to-the-kingdom-pin-series-at-pink-a-la-mode",
+     "method": "search_snippet",
+     "note": "'the first three pins feature Ariel, Belle and Aurora'"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/pink-a-la-mode-keys-to-the-kingdom-series-2",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/disney-princess-keys-to-the-kingdom-pin-series-2-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "'the second three pins feature Tiana, Cinderella and Snow White'"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/pink-a-la-mode-keys-to-the-kingdom-series-3",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/disney-princess-keys-to-the-kingdom-pin-series-3-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "'the third three pins feature Rapunzel, Merida and Jasmine'"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-robin-hood-mystery/robin-hood",
+   "set_key": "lic/2022/pink-a-la-mode-robin-hood-mystery",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Robin Hood",
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "listed as one of 8 series characters, each with regular and chaser version"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Robin Hood"
+     ],
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "one character per design per database listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "8 characters + 8 white chase pins; one random pin per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360"
+    },
+    {
+     "field": "edition_size",
+     "value": 360,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360 (each)"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-17",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "17 Feb 2022"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$9.90 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "Pink a la Mode release"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-robin-hood-mystery/friar-tuck",
+   "set_key": "lic/2022/pink-a-la-mode-robin-hood-mystery",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Friar Tuck",
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "listed as one of 8 series characters, each with regular and chaser version"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Friar Tuck"
+     ],
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "one character per design per database listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "8 characters + 8 white chase pins; one random pin per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360"
+    },
+    {
+     "field": "edition_size",
+     "value": 360,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360 (each)"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-17",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "17 Feb 2022"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$9.90 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "Pink a la Mode release"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-robin-hood-mystery/little-john",
+   "set_key": "lic/2022/pink-a-la-mode-robin-hood-mystery",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Little John",
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "listed as one of 8 series characters, each with regular and chaser version"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Little John"
+     ],
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "one character per design per database listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "8 characters + 8 white chase pins; one random pin per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360"
+    },
+    {
+     "field": "edition_size",
+     "value": 360,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360 (each)"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-17",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "17 Feb 2022"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$9.90 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "Pink a la Mode release"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-robin-hood-mystery/sir-hiss",
+   "set_key": "lic/2022/pink-a-la-mode-robin-hood-mystery",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Sir Hiss",
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "listed as one of 8 series characters, each with regular and chaser version"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sir Hiss"
+     ],
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "one character per design per database listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "8 characters + 8 white chase pins; one random pin per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360"
+    },
+    {
+     "field": "edition_size",
+     "value": 360,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360 (each)"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-17",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "17 Feb 2022"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$9.90 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "Pink a la Mode release"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-robin-hood-mystery/prince-john",
+   "set_key": "lic/2022/pink-a-la-mode-robin-hood-mystery",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Prince John",
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "listed as one of 8 series characters, each with regular and chaser version"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Prince John"
+     ],
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "one character per design per database listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "8 characters + 8 white chase pins; one random pin per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360"
+    },
+    {
+     "field": "edition_size",
+     "value": 360,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360 (each)"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-17",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "17 Feb 2022"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$9.90 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "Pink a la Mode release"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-robin-hood-mystery/alan-a-dale",
+   "set_key": "lic/2022/pink-a-la-mode-robin-hood-mystery",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Alan-A-Dale",
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "listed as one of 8 series characters, each with regular and chaser version"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alan-A-Dale"
+     ],
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "one character per design per database listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "8 characters + 8 white chase pins; one random pin per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360"
+    },
+    {
+     "field": "edition_size",
+     "value": 360,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360 (each)"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-17",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "17 Feb 2022"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$9.90 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "Pink a la Mode release"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-robin-hood-mystery/nutsy",
+   "set_key": "lic/2022/pink-a-la-mode-robin-hood-mystery",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Nutsy",
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "listed as one of 8 series characters, each with regular and chaser version"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Nutsy"
+     ],
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "one character per design per database listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "8 characters + 8 white chase pins; one random pin per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360"
+    },
+    {
+     "field": "edition_size",
+     "value": 360,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360 (each)"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-17",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "17 Feb 2022"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$9.90 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "Pink a la Mode release"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-robin-hood-mystery/sheriff-of-nottingham",
+   "set_key": "lic/2022/pink-a-la-mode-robin-hood-mystery",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Sheriff of Nottingham",
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "listed as one of 8 series characters, each with regular and chaser version"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sheriff of Nottingham"
+     ],
+     "source_url": "https://mypincentral.com/pin/134815",
+     "method": "search_snippet",
+     "note": "one character per design per database listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "8 characters + 8 white chase pins; one random pin per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360"
+    },
+    {
+     "field": "edition_size",
+     "value": 360,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "coloured pins LE 360 (each)"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-17",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "17 Feb 2022"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "$9.90 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/robin-hood-mystery-disney-pins-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "Pink a la Mode release"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-turning-red/4-town",
+   "set_key": "lic/2022/pink-a-la-mode-turning-red",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Pixar Turning Red 4 Town 3\" Collectible Pin Limited Edition 300",
+     "source_url": "https://www.pinkalamode.com/products/disney-pixar-turning-red-4-town-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "retailer product listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "4*Town"
+     ],
+     "source_url": "https://www.pinkalamode.com/products/disney-pixar-turning-red-4-town-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "boy band from the film, per listing title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.pinkalamode.com/products/disney-pixar-turning-red-4-town-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "Limited Edition 300 stamped on back"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://www.pinkalamode.com/products/disney-pixar-turning-red-4-town-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 30.0,
+     "source_url": "https://www.pinkalamode.com/products/disney-pixar-turning-red-4-town-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "listed $30.00; conflicts with series $24.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.pinkalamode.com/products/disney-pixar-turning-red-4-town-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "visual_description",
+     "value": "3in hard enamel, gold-toned plating",
+     "source_url": "https://www.pinkalamode.com/products/disney-pixar-turning-red-4-town-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "listing; limit 2 per household"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://www.pinkalamode.com/products/disney-pixar-turning-red-4-town-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "own product listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-turning-red/turning-red-friends",
+   "set_key": "lic/2022/pink-a-la-mode-turning-red",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Turning Red Friends 3\" Collectible Pin Limited Edition 300",
+     "source_url": "https://www.pinkalamode.com/collections/disney/enamel-pin",
+     "method": "search_snippet",
+     "note": "listing name seen in retailer category page"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.pinkalamode.com/collections/disney/enamel-pin",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://www.pinkalamode.com/collections/disney/enamel-pin",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://www.pinkalamode.com/collections/disney/enamel-pin",
+     "method": "search_snippet",
+     "note": "own category listing"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2021/pink-a-la-mode-nightmare-before-christmas",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); post lists characters only: Dr. Finkelstein, Lock/Shock/Barrel, Mayor, Oogie Boogie, Zero, Jack, Sally"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode-nightmare-before-christmas",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no per-design listing; pin count not stated; no member records made"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode-nightmare-before-christmas",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "no maker named; Pink a la Mode is the retailer only"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-nightmare-before-christmas-gothic",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "7 pins; snippet names Jack Skellington, Sally, Zero 'and more' - character list only; no member records made"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-nightmare-before-christmas-gothic",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed / character list only; 4 of 7 subjects unnamed"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-nightmare-before-christmas-gothic",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "no maker named; Pink a la Mode is the retailer only"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-disney-poster-blind-box",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "14 pins; designs not named (unboxing video says classic Disney movie posters); edition size and chaser split not stated"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-disney-poster-blind-box",
+   "field": "identity",
+   "searched": "1 query",
+   "note": "lead only: site thepinkalamodes.com (not Pink a la Mode's domain, possibly a copycat shop) calls a poster mystery box a '2021' PALM exclusive; not used"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-disney-poster-blind-box",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "no maker named; Pink a la Mode is the retailer only"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "8 white chaser pins (LE 180) stated but no chaser records made; character list comes from search summary of a My Pin Central entry - confirm on page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "no maker named; Pink a la Mode is the retailer only"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-turning-red/4-town",
+   "field": "identity",
+   "searched": "3 queries",
+   "note": "hold: linked to Dec 2022 Turning Red series by subject + LE 300 + store tag 'Turning Red 2022' only; listing has no release date; confirm membership"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-turning-red/turning-red-friends",
+   "field": "identity",
+   "searched": "3 queries",
+   "note": "hold: linked to Dec 2022 Turning Red series by subject + LE 300 + store tag 'Turning Red 2022' only; listing has no release date; confirm membership"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-turning-red/4-town",
+   "field": "original_price",
+   "searched": "listing",
+   "note": "conflict: listing $30.00 vs blog $24.90 per pin for Dec 2022 series; may be a different/later release"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-turning-red",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "blog snippets never name the designs or pin count; Mei Red Panda SE 300 listing NOT tied: blog tag page shows a separate 'Turning Red Mei Mei Red Panda Pin at Pink a la Mode' post dated 2024-10-17"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-turning-red",
+   "field": "lead",
+   "searched": "1 query",
+   "note": "lead: blog post 'New Moana, Ratatouille, Turning Red and WALL-E Pins at Pink a la Mode' (undated in snippet) - check year"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-carousel-mystery-series-1",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "designs and set size still unnamed; LE 500, $9.90 restated; YouTube haul mentions Series 2 'mystery carousel horses'"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-carousel-mystery-series-2",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "designs and set size still unnamed; LE 500, $9.90 restated; YouTube haul mentions Series 2 'mystery carousel horses'"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-carousel-mystery-series-1",
+   "field": "identity",
+   "searched": "2 queries",
+   "note": "lead not tied: 'Disney Princesses Royal Carousel Mystery Jumbo' ($39.99, 2 pins per box; Belle design at a reseller) differs in price/format from LE 500 $9.90 series; undated"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-frozen-watercolor",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "still 2 of 5 designs unnamed; LE 250 $24.90 restated; retailer site search found no Watercolor listing; Kristoff/Sven appear only in a 2023 Frozen Stained Glass series"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-crest",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "12th crest still unnamed; snippets restate early releases only; Jasmine/Merida/Aurora results belong to Princess Stained Glass Wave 3, not crest"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode-debut",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "Sept 2021 Pinchella debut designs still unnamed; only LE 400, LE 100 white glitter chasers, $9.90 restated; blind box format not stated"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-mickey-minnie-christmas",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "per-pin identity still not stated beyond 'Mickey & Minnie Christmas'; LE 300, $29.90, combo $54.90, 21 Oct 2022 restated; no retailer listing found"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode-cute-villains-blind-box",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "chasers: 'chaser versions... white enamel with glitter, all LE 150 each' implies one per design but none named/described individually; no chaser records made"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode-cute-villains-blind-box",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "warning: a search summary attached LE 150 chasers to the Haunted Mansion set; source text ties 150 to Cute Villains chasers and 200 to Haunted Mansion chaser"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode-haunted-mansion-pin-set",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: contents still not described; one $24.90 price hints at one item, but pack vs multi-character pin unstated; no Hitchhiking Ghost tie (those are 2024 portrait pins)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-villain-wave-1/maleficent-aurora",
+   "field": "identity",
+   "searched": "2 queries",
+   "note": "hold: possible duplicate of lic/2022/pink-a-la-mode-enchanted-princess/aurora-maleficent (same pairing, LE 200, $29.90, 22 Apr vs May 2022); keep blocked until compared"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-villain-wave-1/maleficent-aurora",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "conflict lead: search summary gives Maleficent/Aurora available 12 May 2022; packet 263 gave 12 May to Evil Queen/Snow White; no date claim made"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-enchanted-princess",
+   "field": "identity",
+   "searched": "2 queries",
+   "note": "holds kept (3 from packet 263 + maleficent-aurora): no source states whether Wave 1 re-issues or differs from Enchanted Princess; a search summary called them separate but that is not source text"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-sidekicks",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "holds kept: '9 different pins' with pairings (e.g. Rajah & Abu, Timon & Pumbaa) restated; no per-pin listing"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-royal-couples",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "holds kept: ten couples, LE 300, $24.90, 1 Dec 2022 restated; no per-couple listing found"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-locket",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "holds kept: 7 princesses listed as 'characters include'; LE 350 series-level; no per-pin listing"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-keys-to-the-kingdom-series-1",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "holds kept: 'first three pins feature Ariel, Belle and Aurora' fixes count at 3 per series but is still a character list, not per-pin listing (same for series 2 and 3)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode",
+   "field": "manufacturer",
+   "searched": "all queries",
+   "note": "no 2021-22 snippet names a maker for any release; Pink a la Mode recorded as retailer only"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode",
+   "field": "releases",
+   "searched": "budget",
+   "note": "new 2021-22 releases found this pass: NBC (Dec 2021), Robin Hood mystery (Feb 2022), Disney Poster blind box (Feb 2022), NBC Gothic (Sept 2022); other undated PALM posts unchecked"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/robin-hood",
+   "field": "pin_name",
+   "searched": "packet review",
+   "note": "hold: design name comes from a search summary of a database entry; confirm on the source page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/friar-tuck",
+   "field": "pin_name",
+   "searched": "packet review",
+   "note": "hold: design name comes from a search summary of a database entry; confirm on the source page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/little-john",
+   "field": "pin_name",
+   "searched": "packet review",
+   "note": "hold: design name comes from a search summary of a database entry; confirm on the source page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/sir-hiss",
+   "field": "pin_name",
+   "searched": "packet review",
+   "note": "hold: design name comes from a search summary of a database entry; confirm on the source page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/prince-john",
+   "field": "pin_name",
+   "searched": "packet review",
+   "note": "hold: design name comes from a search summary of a database entry; confirm on the source page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/alan-a-dale",
+   "field": "pin_name",
+   "searched": "packet review",
+   "note": "hold: design name comes from a search summary of a database entry; confirm on the source page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/nutsy",
+   "field": "pin_name",
+   "searched": "packet review",
+   "note": "hold: design name comes from a search summary of a database entry; confirm on the source page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/sheriff-of-nottingham",
+   "field": "pin_name",
+   "searched": "packet review",
+   "note": "hold: design name comes from a search summary of a database entry; confirm on the source page"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 to packets 239/263, reusing their keys; 30 search snippets (Disney Pins Blog, Pink a la Mode listings, Disney Pin Forum, My Pin Central). New sets: NBC Dec 2021, Robin Hood mystery and Disney Poster blind box Feb 2022, NBC Gothic Sept 2022. Robin Hood 8 regular designs added. Turning Red 4*Town and Friends listings added under holds. No holds released; one new duplicate hold (Wave 1 Maleficent/Aurora). Pink a la Mode retailer only; no manufacturer claims."
+}

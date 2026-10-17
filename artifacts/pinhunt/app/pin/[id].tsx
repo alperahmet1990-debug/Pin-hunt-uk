@@ -245,6 +245,23 @@ export default function PinDetailScreen() {
         </LinearGradient>
 
         <View style={styles.content}>
+          {/* #383: a pin with a photo can be offered a better one. */}
+          {!!pin.imageUrl && (
+            <TouchableOpacity
+              testID="suggest-photo-link"
+              onPress={() => router.push({ pathname: '/contribute-image/[pinId]', params: { pinId: pin.id, from: 'replace' } })}
+              accessibilityRole="button"
+              accessibilityLabel="Suggest a better photo"
+              hitSlop={{ top: 8, bottom: 8, left: 12, right: 12 }}
+              style={styles.suggestPhoto}
+            >
+              <Feather name="camera" size={13} color={colors.homeCoral} />
+              <Text style={[styles.suggestPhotoText, { color: colors.homeCoral, textDecorationColor: colors.homeCoral }]}>
+                Suggest a better photo
+              </Text>
+            </TouchableOpacity>
+          )}
+
           {/* ── 2. Title / series ── */}
           <View style={styles.titleBlock}>
             <View style={styles.titleRow}>
@@ -498,6 +515,8 @@ function formatDate(dateStr: string) {
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
 const styles = StyleSheet.create({
+  suggestPhoto: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, alignSelf: 'center', minHeight: 28 },
+  suggestPhotoText: { fontSize: 13, fontFamily: 'Inter_600SemiBold', textDecorationLine: 'underline' },
   notFound: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 },
   notFoundText: { fontSize: 16, fontFamily: 'Inter_500Medium' },
   scroll: { flex: 1 },

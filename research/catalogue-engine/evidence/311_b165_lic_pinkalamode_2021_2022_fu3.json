@@ -1,0 +1,438 @@
+{
+ "packet_id": "backfill-b165-lic-pinkalamode-2021-2022-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b165",
+ "sources": [
+  {
+   "url": "https://www.pinkalamode.com/products/disney-princess-royal-couples-tiana-prince-naveen-3-collectible-pin-limited-edition-300",
+   "title": "Disney Princess Royal Couples Tiana & Prince Naveen 3\" Collectible Pin",
+   "publisher": "Pink a la Mode",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/royal-couples-pin-series-at-pink-a-la-mode/",
+   "title": "Royal Couples Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/product/hades-megara-le-200-pin/",
+   "title": "Hades & Megara LE 200 Pin",
+   "publisher": "Disney Pins Blog (store listing)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-moana-ratatouille-turning-red-and-wall-e-pins-at-pink-a-la-mode",
+   "title": "New Moana, Ratatouille, Turning Red and WALL-E Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2022/pink-a-la-mode-royal-couples",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.pinkalamode.com/products/disney-princess-royal-couples-tiana-prince-naveen-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "retailer listing for one couple pin in the Royal Couples line says LE 300"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://www.pinkalamode.com/products/disney-princess-royal-couples-tiana-prince-naveen-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "sold on Pink a la Mode's own store"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-royal-couples/tiana-prince-naveen",
+   "set_key": "lic/2022/pink-a-la-mode-royal-couples",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Princess Royal Couples Tiana & Prince Naveen 3\" Collectible Pin",
+     "source_url": "https://www.pinkalamode.com/products/disney-princess-royal-couples-tiana-prince-naveen-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "retailer product title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tiana",
+      "Prince Naveen"
+     ],
+     "source_url": "https://www.pinkalamode.com/products/disney-princess-royal-couples-tiana-prince-naveen-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "both named in one product title"
+    },
+    {
+     "field": "main_character",
+     "value": "Tiana",
+     "source_url": "https://www.pinkalamode.com/products/disney-princess-royal-couples-tiana-prince-naveen-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "princess named first in title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.pinkalamode.com/products/disney-princess-royal-couples-tiana-prince-naveen-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "single product listing for the pair: one 3in pin showing both characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.pinkalamode.com/products/disney-princess-royal-couples-tiana-prince-naveen-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "Limited Edition 300 in title"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://www.pinkalamode.com/products/disney-princess-royal-couples-tiana-prince-naveen-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "LE 300; listing says edition size is on the back"
+    },
+    {
+     "field": "original_price",
+     "value": 25.0,
+     "source_url": "https://www.pinkalamode.com/products/disney-princess-royal-couples-tiana-prince-naveen-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "listing price $25.00 (blog gave $24.90 at launch); listing undated"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.pinkalamode.com/products/disney-princess-royal-couples-tiana-prince-naveen-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "visual_description",
+     "value": "3 inch pin with silver-toned plating",
+     "source_url": "https://www.pinkalamode.com/products/disney-princess-royal-couples-tiana-prince-naveen-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "paraphrased from listing"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://www.pinkalamode.com/products/disney-princess-royal-couples-tiana-prince-naveen-3-collectible-pin-limited-edition-300",
+     "method": "search_snippet",
+     "note": "Pink a la Mode store listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/pink-a-la-mode-princess-villain-wave-1/megara-hades",
+   "set_key": "lic/2022/pink-a-la-mode-princess-villain-wave-1",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hades",
+      "Megara"
+     ],
+     "source_url": "https://disneypinsblog.com/product/hades-megara-le-200-pin/",
+     "method": "search_snippet",
+     "note": "store listing title names both"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/product/hades-megara-le-200-pin/",
+     "method": "search_snippet",
+     "note": "listed as a single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/product/hades-megara-le-200-pin/",
+     "method": "search_snippet",
+     "note": "LE 200 in listing title"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/product/hades-megara-le-200-pin/",
+     "method": "search_snippet",
+     "note": "LE 200; matches Wave 1 blog edition size"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2022/pink-a-la-mode-royal-couples/tiana-prince-naveen",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "released: Pink a la Mode listing sells Tiana & Prince Naveen as one 3in LE 300 pin, so this pairing is one pin, not two"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-royal-couples/tiana-prince-naveen",
+   "field": "identity",
+   "searched": "2 queries",
+   "note": "hold: listing is undated; tie to the Dec 2022 Royal Couples series rests on series title + LE 300 only; price $25.00 vs blog $24.90"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-royal-couples",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "holds kept for the other 9 couples: no per-couple listing found on the retailer site; Tiana/Naveen listing suggests one pin per couple but proves only its own"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-royal-couples/ariel-prince-eric",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: one pin per couple still inferred; no listing for this couple found (only Tiana & Naveen surfaced)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-royal-couples/aurora-prince-phillip",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: one pin per couple still inferred; no listing for this couple found (only Tiana & Naveen surfaced)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-royal-couples/belle-beast",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: one pin per couple still inferred; no listing for this couple found (only Tiana & Naveen surfaced)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-royal-couples/cinderella-prince-charming",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: one pin per couple still inferred; no listing for this couple found (only Tiana & Naveen surfaced)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-royal-couples/jasmine-aladdin",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: one pin per couple still inferred; no listing for this couple found (only Tiana & Naveen surfaced)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-royal-couples/rapunzel-flynn-rider",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: one pin per couple still inferred; no listing for this couple found (only Tiana & Naveen surfaced)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-royal-couples/snow-white-prince-florian",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: one pin per couple still inferred; no listing for this couple found (only Tiana & Naveen surfaced)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-royal-couples/pocahontas-john-smith",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: one pin per couple still inferred; no listing for this couple found (only Tiana & Naveen surfaced)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-royal-couples/mulan-li-shang",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: one pin per couple still inferred; no listing for this couple found (only Tiana & Naveen surfaced)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery",
+   "field": "pin_name",
+   "searched": "3 queries",
+   "note": "holds kept: names again come only from search summaries of the My Pin Central entry (spelled 'Sheriff van Nottingham' there); no blog or retailer text names designs"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery",
+   "field": "identity",
+   "searched": "3 queries",
+   "note": "lead not used: thepinkalamodes.com (not PALM's domain, likely copycat) gives 360/180 per character; PALM store shows only a later 2026 Robin Hood micro mystery"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/robin-hood",
+   "field": "pin_name",
+   "searched": "3 queries",
+   "note": "hold kept: design name still only from a search summary of a database entry; not confirmed on a page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/friar-tuck",
+   "field": "pin_name",
+   "searched": "3 queries",
+   "note": "hold kept: design name still only from a search summary of a database entry; not confirmed on a page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/little-john",
+   "field": "pin_name",
+   "searched": "3 queries",
+   "note": "hold kept: design name still only from a search summary of a database entry; not confirmed on a page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/sir-hiss",
+   "field": "pin_name",
+   "searched": "3 queries",
+   "note": "hold kept: design name still only from a search summary of a database entry; not confirmed on a page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/prince-john",
+   "field": "pin_name",
+   "searched": "3 queries",
+   "note": "hold kept: design name still only from a search summary of a database entry; not confirmed on a page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/alan-a-dale",
+   "field": "pin_name",
+   "searched": "3 queries",
+   "note": "hold kept: design name still only from a search summary of a database entry; not confirmed on a page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/nutsy",
+   "field": "pin_name",
+   "searched": "3 queries",
+   "note": "hold kept: design name still only from a search summary of a database entry; not confirmed on a page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-robin-hood-mystery/sheriff-of-nottingham",
+   "field": "pin_name",
+   "searched": "3 queries",
+   "note": "hold kept: design name still only from a search summary of a database entry; not confirmed on a page"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-enchanted-princess",
+   "field": "identity",
+   "searched": "1 query",
+   "note": "holds kept (4 Wave 1 possible duplicates): blog snippets restate both releases; no source says whether Wave 1 reissues Enchanted Princess pairings"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-villain-wave-1",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "conflict kept: a search summary gives Maleficent/Aurora 12 May then others 19 and 26 May; not source text, no date claims made"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode-nightmare-before-christmas",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "hold kept: Dec 2021 post still gives a character list only (9 names) with LE 400/LE 100 chase; no per-design listing found"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode-debut",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "Sept 2021 debut designs still unnamed; lead: its LE 400 / LE 100 white glitter chase / $9.90 match the Dec 2021 NBC series, but no source links them; not merged"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-nightmare-before-christmas-gothic",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: still Jack, Sally, Zero 'and more' for 7 pins (LE 200, $39.90); 4 subjects unnamed; no per-pin listing found"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-disney-poster-blind-box",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "14 designs still unnamed; snippets only restate $9.90, one pin per box, 22 Feb 2022"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-frozen-watercolor",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "2 of 5 still unnamed; lead: My Pin Central #71269 describes Kristoff riding Sven with Olaf, gold trim, but names no series or LE; not tied"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-crest",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "12th crest still unnamed; Jasmine, Merida, Aurora(-named) crests not found; Elsa again appears only in a search summary, so its identity hold stays"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-carousel-mystery-series-1",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "designs and set size still unnamed; only LE 500, $9.90, 27 Oct 2022 restated; Royal Carousel reseller item remains untied"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-carousel-mystery-series-2",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "designs and set size still unnamed; YouTube haul mentions series 2 carousel horses without names"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-turning-red",
+   "field": "identity",
+   "searched": "2 queries",
+   "note": "holds kept on 4-town and turning-red-friends: no dated listing found; retailer search shows no 4*Town product page in snippets"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-turning-red",
+   "field": "lead",
+   "searched": "2 queries",
+   "note": "lead resolved: 'New Moana, Ratatouille, Turning Red and WALL-E' post is March 2024 (LE 500, $16), out of 2021-22 scope; not this series"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-turning-red",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "Dec 2022 designs/count still unnamed; Mei red panda SE 300 listing shares the $24.90 price but stays untied (separate 2024 post per packet 287)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-keys-to-the-kingdom-series-3",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "holds kept (series 1-3): 'three pins feature' three princesses, each LE 300 with a matching key, but no per-pin listing; character list only"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-sidekicks",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "holds kept: no 2022 per-pin listing found; current PALM Princess & Sidekicks SE 1000 pins are a different later line"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-princess-locket",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "holds kept: snippets restate 7 princesses, LE 350, $9.90, 25 Aug 2022; no per-pin product page surfaced"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-mickey-minnie-christmas",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "per-pin identity still unstated; LE 300, $29.90, combo $54.90 restated; no retailer page found"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-disney-afternoons",
+   "field": "lead",
+   "searched": "2 queries",
+   "note": "lead: a Medium post reports PALM open-edition Scrooge McDuck and Darkwing Duck pins ($11.90, ~2.25in), undated; check year before recording"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode-cute-villains-medallion",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "4th design still unnamed; snippets restate Queen of Hearts, Old Hag, Captain Hook, LE 250, 3in, $24.90; holds kept"
+  },
+  {
+   "key": "lic/2021/pink-a-la-mode-haunted-mansion-pin-set",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: contents still undescribed (colour with glitter LE 1000 $24.90; white-out chaser LE 200 $29.90)"
+  },
+  {
+   "key": "lic/2022/pink-a-la-mode",
+   "field": "manufacturer",
+   "searched": "27 queries",
+   "note": "no 2021-22 snippet this pass names a maker for any release; Pink a la Mode recorded as retailer only"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 to packets 239/263/287, reusing their keys; 27 search snippets. No new pins. Tiana & Prince Naveen structure hold released via a Pink a la Mode per-pin listing (new identity hold added for the undated listing). Hades & Megara Wave 1 pin gets LE 200 from a store listing. Robin Hood names, Turning Red, Wave 1 vs Enchanted Princess, NBC/Gothic/Poster, debut, Frozen 4-5, Crest 12th and Carousel remain unresolved. Retailer only; no manufacturer claims."
+}

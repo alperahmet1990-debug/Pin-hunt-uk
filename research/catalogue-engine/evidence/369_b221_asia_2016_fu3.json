@@ -1,0 +1,416 @@
+{
+ "packet_id": "backfill-b221-asia-2016-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b221",
+ "sources": [
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+   "title": "Shanghai Disneyland castle x TRON Lightcycle limited edition commemorative pin",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2016-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/190967",
+   "title": "MyPinCentral pin 190967 (HKDL Tsum Tsum popcorn hidden Mickey, Perry)",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://ultimatepinsnews.com/hong-kong-disneyland-hidden-mickey-pins/",
+   "title": "Hong Kong Disneyland Hidden Mickey Pins",
+   "publisher": "Ultimate Pins News",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+   "title": "Tsum Tsum series at Disney Pin Trading Fun Day (HKDL)",
+   "publisher": "uLifestyle",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/ice-cream-tsum-tsum-pins",
+   "title": "Ice Cream Tsum Tsum Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.whb.cn/zhuzhan/kandian/20161201/77390.html",
+   "title": "Shanghai Disney opens its first Christmas season",
+   "publisher": "Wenhui Bao (whb.cn)",
+   "published_date": "2016-12-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://secure.cdn4.wdpromedia.com/media/wdpro-hkdl-assets/prod/en-intl/system/images/hkdl-media-factsheet-halloween-card-01-pdf.pdf",
+   "title": "All-new Disney Halloween Time at Hong Kong Disneyland Factsheet",
+   "publisher": "Hong Kong Disneyland (official)",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "shdr/2016/castle-x-tron",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "post describes one commemorative pin, not a pack"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-16",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "launched on Shanghai Disneyland opening day per post; earlier 2016-07 was the post month"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "limited to 300 worldwide"
+    },
+    {
+     "field": "price",
+     "value": 99,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "RMB 99"
+    },
+    {
+     "field": "currency",
+     "value": "CNY",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "renminbi"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "resort merchandise release"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2016/pin-trading-fun-days-popcorn",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tsum Tsum Popcorn Hidden Mickey 2016 pins",
+     "source_url": "https://ultimatepinsnews.com/hong-kong-disneyland-hidden-mickey-pins/",
+     "method": "search_snippet",
+     "note": "series name on the HKDL hidden Mickey checklist page"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-08",
+     "source_url": "https://ultimatepinsnews.com/hong-kong-disneyland-hidden-mickey-pins/",
+     "method": "search_snippet",
+     "note": "released at Pin Trading Fun Day, 8-10 Apr 2016"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 14,
+     "source_url": "https://ultimatepinsnews.com/hong-kong-disneyland-hidden-mickey-pins/",
+     "method": "search_snippet",
+     "note": "page states 14 pins; conflicts with an 'of 10' backstamp on one entry, see not_found"
+    },
+    {
+     "field": "format",
+     "value": "hidden Mickey series",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/104394/tsumtsum%E7%B3%BB%E5%88%97%E4%BA%AE%E7%9B%B8-%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%BD%E7%AB%A0%E4%BA%A4%E6%8F%9B%E5%90%8C%E6%A8%82%E6%97%A5",
+     "method": "search_snippet",
+     "note": "uLifestyle names a popcorn Tsum Tsum hidden Mickey series at the April 2016 Fun Day"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "shdr/2016/castle-x-tron/castle-and-tron-lightcycle",
+   "set_key": "shdr/2016/castle-x-tron",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Enchanted Storybook Castle x TRON Lightcycle Power Run limited edition commemorative pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "name paraphrased and translated from the post title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "post says the merchandise team released one commemorative pin"
+    },
+    {
+     "field": "attraction",
+     "value": "TRON Lightcycle Power Run",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "themed on the castle and the TRON coaster"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "described as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "300 worldwide"
+    },
+    {
+     "field": "original_price",
+     "value": 99,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "RMB 99"
+    },
+    {
+     "field": "currency",
+     "value": "CNY",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "renminbi"
+    },
+    {
+     "field": "product_code",
+     "value": "400060034517",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "product number given in the post"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-16",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "Shanghai Disneyland opening day"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "resort merchandise"
+    },
+    {
+     "field": "visual_description",
+     "value": "Enchanted Storybook Castle and TRON Lightcycle theme with glow-in-the-dark element",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2016/07/x.html",
+     "method": "search_snippet",
+     "note": "paraphrased; characters, if any, not stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/pin-trading-fun-days-popcorn/perry-the-platypus",
+   "set_key": "hkdl/2016/pin-trading-fun-days-popcorn",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hong Kong Disneyland Tsum Tsum popcorn hidden Mickey pin - Perry the Platypus",
+     "source_url": "https://mypincentral.com/pin/190967",
+     "method": "search_snippet",
+     "note": "per-pin catalogue entry"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Perry the Platypus"
+     ],
+     "source_url": "https://mypincentral.com/pin/190967",
+     "method": "search_snippet",
+     "note": "entry names Perry from Phineas and Ferb"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/190967",
+     "method": "search_snippet",
+     "note": "single pin; Perry as a Tsum Tsum in a popcorn bucket"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://mypincentral.com/pin/190967",
+     "method": "search_snippet",
+     "note": "pin text names Hong Kong Disneyland"
+    },
+    {
+     "field": "visual_description",
+     "value": "Tsum Tsum Perry in blue/yellow glitter popcorn bucket; blue background, gold 'Hong Kong Disneyland 10' text; hidden Mickey lower right",
+     "source_url": "https://mypincentral.com/pin/190967",
+     "method": "search_snippet",
+     "note": "paraphrased from the entry"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Hidden Mickey Pin 8 of 10",
+     "source_url": "https://mypincentral.com/pin/190967",
+     "method": "search_snippet",
+     "note": "paraphrase of reverse wording; factory code also present, not recorded"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "shdr/2016/castle-x-tron",
+   "field": "pin_structure",
+   "searched": "2 queries (ZH)",
+   "note": "released: DMK post (snippet) says one commemorative pin, LE 300, RMB 99, glow; pin structure hold resolved as a single pin"
+  },
+  {
+   "key": "shdr/2016/castle-x-tron",
+   "field": "release_date",
+   "searched": "1 query (ZH)",
+   "note": "conflict noted: fu1 recorded 2016-07 from post month; post text gives opening day 16 Jun 2016"
+  },
+  {
+   "key": "shdr/2016/castle-x-tron/castle-and-tron-lightcycle",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters (if any) not named in snippets"
+  },
+  {
+   "key": "hkdl/2016/pin-trading-fun-days-popcorn/perry-the-platypus",
+   "field": "release_year",
+   "searched": "4 queries (EN/ZH)",
+   "note": "hold: MyPinCentral entry gives no year; 2016 Fun Days link rests on subject match (Tsum Tsum popcorn hidden Mickey, HKDL 10 text) with UPN/uLifestyle"
+  },
+  {
+   "key": "hkdl/2016/pin-trading-fun-days-popcorn",
+   "field": "expected_pin_count",
+   "searched": "4 queries",
+   "note": "conflict: UPN says 14 pins; Perry entry backstamp reads 8 of 10; may be 10 plus extras, unresolved"
+  },
+  {
+   "key": "hkdl/2016/pin-trading-fun-days-popcorn",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "hold kept for others: UPN lists ten names (Oswald, Duffy, Cheshire Cat, etc.) in one checklist only; not per-pin evidence, not recorded"
+  },
+  {
+   "key": "hkdl/2016/tsum-tsum-halloween",
+   "field": "pins",
+   "searched": "5 queries",
+   "note": "hold kept: no new per-pin page; DPB, MyTsumTsum, TDR Explorer repeat six LE 500 glow designs without naming the rest"
+  },
+  {
+   "key": "hkdl/2016/tsum-tsum-halloween/duffy-and-gelatoni",
+   "field": "identity",
+   "searched": "2 queries",
+   "note": "hold kept: still only the forum list entry; no per-pin description found"
+  },
+  {
+   "key": "hkdl/2016/halloween",
+   "field": "pins",
+   "searched": "4 queries (EN/ZH)",
+   "note": "lead kept: DMK LE Halloween pin post seen only as a related-post title; official factsheet lists HK$108 item as a key chain, not a pin"
+  },
+  {
+   "key": "hkdl/2016/christmas",
+   "field": "pins",
+   "searched": "1 query (ZH)",
+   "note": "designs, count and edition still not in snippets; only the 19 Nov 2016 sale date"
+  },
+  {
+   "key": "hkdl/2016/10k-weekend",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "3K family and Mickey 10K pins still not described; DPB excerpt cuts off after the Duffy 5K pin"
+  },
+  {
+   "key": "hkdl/2016/ice-cream-tsum-tsum",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: DPB describes one pin with six Tsum Tsum in a waffle bowl plus a cone booster set, but page date and match to DMK HK$75 item unclear"
+  },
+  {
+   "key": "hkdl/2016/ice-cream-tsum-tsum",
+   "field": "price",
+   "searched": "1 query",
+   "note": "personal blog cites HK$238 for a set of ice cream pins in summer 2016; configuration unclear, not recorded"
+  },
+  {
+   "key": "hkdl/2016/sports-pin-series",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: DPB still a single release list; Baymax skating helmet design seen only on a reseller, not used"
+  },
+  {
+   "key": "shdr/2016",
+   "field": "pins",
+   "searched": "3 queries (EN/ZH)",
+   "note": "no SHDR Halloween 2016 pin found; Halloween merch items found are 2017"
+  },
+  {
+   "key": "shdr/2016/christmas",
+   "field": "pins",
+   "searched": "1 query (ZH)",
+   "note": "lead: Wenhui Bao (1 Dec 2016) lists badges among first Christmas season merch; no design named; scope: confirm pin vs button"
+  },
+  {
+   "key": "tdr/2016/game-prize-tds",
+   "field": "pins",
+   "searched": "1 query (JA)",
+   "note": "still no TDS summer 2016 prize pin lineup; summer success prize again a Chip/Dale plush"
+  },
+  {
+   "key": "tdr/2016/game-prize-tds-15th-anniversary/rainy-day-teru-teru-mickey-minnie",
+   "field": "pin_structure",
+   "searched": "1 query (JA)",
+   "note": "hold kept: Ure-pia and MezzoMiki still say a teru teru Mickey and Minnie pin; one or two pins unclear"
+  },
+  {
+   "key": "tdr/2016/tds-15th-anniversary/large-wish-crystal-pin",
+   "field": "release_date",
+   "searched": "1 query (JA)",
+   "note": "hold kept: summary gives 11 Apr 2016 for the large pin but not tied to one page"
+  },
+  {
+   "key": "tdr/2016/star-tours/force-awakens-special-version",
+   "field": "characters",
+   "searched": "2 queries (JA)",
+   "note": "still not named; reports say attraction characters only; BB-8 and Finn are in the ride, not tied to the pin"
+  },
+  {
+   "key": "tdr/2016/star-tours/force-awakens-special-version",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "conflict kept: no source dates the pin itself; ride version ran from 2 Feb 2016"
+  },
+  {
+   "key": "asia/2016",
+   "field": "holds",
+   "searched": "not re-searched",
+   "note": "holds kept: game-prize full lists, Fun Days variants, Natsu Matsuri/setsubun structure, duplicates, SHDR opening, Reveal/Conceal, deluxe box"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 of B031 (Asia 2016), last try before backlog. 30 standard searches, snippets only. Reuses B031/B192/B208 keys. Castle x TRON structure released as one pin; Perry popcorn hidden Mickey added under hold. Resellers (USShoppingSOS, PayPay Flea Market, Rakuma) not used."
+}

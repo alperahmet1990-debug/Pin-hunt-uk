@@ -1,0 +1,761 @@
+{
+ "packet_id": "backfill-b171-lic-loungefly-2025-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b171",
+ "sources": [
+  {
+   "url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+   "title": "Loungefly Stitch and Angel Cherry Blossom Mystery Box Pin (Style May Vary)",
+   "publisher": "GameStop",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://707street.com/products/loungefly-disney-lilo-stitch-cute-stitch-mystery-pins",
+   "title": "Loungefly Disney Stitch & Angel Cherry Blossom Mystery Box Pin",
+   "publisher": "707 Street",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://thepopinsider.com/products/stitch-angel-cherry-blossom-mystery-box-pin-set/",
+   "title": "Stitch & Angel Cherry Blossom Mystery Box Pin Set",
+   "publisher": "The Pop Insider",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+   "title": "Loungefly Disney Mickey & Friends Halloween Costume Mystery Box Pin",
+   "publisher": "707 Street",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.ociostock.com/loungefly-disney-daisy-mystery-blind-box-enamel-pin-assorted-p-1-51-177685/",
+   "title": "Loungefly Disney Daisy Mystery Blind Box Enamel Pin assorted",
+   "publisher": "Ociostock",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.cool-merch.com/products/embargo-2702-release-0303-loungefly-disney-daisy-duck-85th-anniversary-mystery-blind-box-enamel-pin",
+   "title": "LOUNGEFLY : DISNEY - Daisy Duck 85th Anniversary Mystery Blind Box Enamel Pin",
+   "publisher": "Cool Merch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://magicmadhouse.co.uk/loungefly-disney-pixar-vhs-tape-cover-mystery-box-pin",
+   "title": "Disney-Pixar: VHS Tape Cover Mystery Box Pin",
+   "publisher": "Magic Madhouse",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneymouseketeer.com/the-fantastic-four-first-steps-mystery-blind-box-pin-set-at-boxlunch/",
+   "title": "The Fantastic Four: First Steps Mystery Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Mouseketeer",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/marvel-the-fantastic-four-first-steps-spinning-logo-enamel-pin---boxlunch-exclusive/34343073.html",
+   "title": "Marvel The Fantastic Four: First Steps Spinning Logo Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-muppets-baby-muppets-blind-box-pin-set-at-boxlunch/",
+   "title": "The Muppets Baby Muppets Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://muppet.fandom.com/wiki/Muppet_pins_(BoxLunch)",
+   "title": "Muppet pins (BoxLunch)",
+   "publisher": "Muppet Wiki (Fandom)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-the-muppets-framed-characters-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/34008050.html",
+   "title": "Disney The Muppets Framed Characters Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-pixar-travel-cup-blind-box-enamel-pin-hot-topic-exclusive/34973111.html",
+   "title": "Loungefly Disney Pixar Travel Cup Blind Box Enamel Pin Hot Topic Exclusive",
+   "publisher": "Hot Topic",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-pixar-fast-food-blind-box-enamel-pin-hot-topic-exclusive/35849942.html",
+   "title": "Loungefly Disney Pixar Fast Food Blind Box Enamel Pin Hot Topic Exclusive",
+   "publisher": "Hot Topic",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-brother-bear-enamel-pin-set-hot-topic-exclusive/34966555.html",
+   "title": "Loungefly Disney Brother Bear Enamel Pin Set Hot Topic Exclusive",
+   "publisher": "Hot Topic",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://magicmadhouse.co.uk/loungefly-marvel-infinity-stones-mystery-box-pin",
+   "title": "Marvel: Infinity Stones Mystery Box Pin",
+   "publisher": "Magic Madhouse",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://thepopinsider.com/products/stitch-angel-cherry-blossom-mystery-box-pin-set/",
+     "method": "search_snippet",
+     "note": "retailer: each box holds one of six possible pins; glitter Stitch chase named as one of them (5 scenes + chase)"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "GameStop: random selection, style may vary, about 1.5in"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "WDPN3771",
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "GameStop vendor part number WDPN3771-EA"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "retailer: six to collect = Daisy, Goofy, Donald, Mickey, Pluto plus glitter Minnie chase"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "Minnie is the glitter chase"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "WDPN3853",
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "retailer style number WDPN3853"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/loungefly-daisy-duck-85th-anniversary-mystery",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2025-03-13",
+     "source_url": "https://www.ociostock.com/loungefly-disney-daisy-mystery-blind-box-enamel-pin-assorted-p-1-51-177685/",
+     "method": "search_snippet",
+     "note": "Spanish trade distributor listing gives 13 Mar 2025; conflicts with HMV 20 Mar 2025 (both UK/EU retail dates)"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://www.cool-merch.com/products/embargo-2702-release-0303-loungefly-disney-daisy-duck-85th-anniversary-mystery-blind-box-enamel-pin",
+     "method": "search_snippet",
+     "note": "retailer: six Daisy poses, glitter chase about 1 in 12"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery/stitch-among-flowers",
+   "set_key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Stitch among flowers",
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "named by GameStop as one of the possible scenes in the mystery box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "character(s) in the described scene"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "listing describes each possible pin scene separately (style may vary)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch among flowers",
+     "source_url": "https://707street.com/products/loungefly-disney-lilo-stitch-cute-stitch-mystery-pins",
+     "method": "search_snippet",
+     "note": "same five-scene list on 707 Street listing (style WDPN3771)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery/stitch-lei",
+   "set_key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Stitch lying down wearing a lei",
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "named by GameStop as one of the possible scenes in the mystery box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "character(s) in the described scene"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "listing describes each possible pin scene separately (style may vary)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch lying down wearing a lei",
+     "source_url": "https://707street.com/products/loungefly-disney-lilo-stitch-cute-stitch-mystery-pins",
+     "method": "search_snippet",
+     "note": "same five-scene list on 707 Street listing (style WDPN3771)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery/angel-flower-crown",
+   "set_key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Angel wearing a flower crown",
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "named by GameStop as one of the possible scenes in the mystery box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Angel"
+     ],
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "character(s) in the described scene"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "listing describes each possible pin scene separately (style may vary)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Angel wearing a flower crown",
+     "source_url": "https://707street.com/products/loungefly-disney-lilo-stitch-cute-stitch-mystery-pins",
+     "method": "search_snippet",
+     "note": "same five-scene list on 707 Street listing (style WDPN3771)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://thepopinsider.com/products/stitch-angel-cherry-blossom-mystery-box-pin-set/",
+     "method": "search_snippet",
+     "note": "Pop Insider names this scene as a design in the one-of-six box"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery/stitch-angel-together",
+   "set_key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Stitch and Angel together among flowers",
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "named by GameStop as one of the possible scenes in the mystery box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Angel"
+     ],
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "character(s) in the described scene"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "listing describes each possible pin scene separately (style may vary)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch and Angel together among flowers",
+     "source_url": "https://707street.com/products/loungefly-disney-lilo-stitch-cute-stitch-mystery-pins",
+     "method": "search_snippet",
+     "note": "same five-scene list on 707 Street listing (style WDPN3771)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery/stitch-cake",
+   "set_key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Stitch biting into a flower-topped cake",
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "named by GameStop as one of the possible scenes in the mystery box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "character(s) in the described scene"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://www.gamestop.com/clothing/accessories/pins/products/loungefly-stitch-and-angel-cherry-blossom-mystery-box-pin-style-may-vary/413322.html",
+     "method": "search_snippet",
+     "note": "listing describes each possible pin scene separately (style may vary)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch biting into a flower-topped cake",
+     "source_url": "https://707street.com/products/loungefly-disney-lilo-stitch-cute-stitch-mystery-pins",
+     "method": "search_snippet",
+     "note": "same five-scene list on 707 Street listing (style WDPN3771)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://thepopinsider.com/products/stitch-angel-cherry-blossom-mystery-box-pin-set/",
+     "method": "search_snippet",
+     "note": "Pop Insider names this scene as a design in the one-of-six box"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery/minnie",
+   "set_key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery",
+   "claims": [
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "retailer names Minnie as the glitter chase"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "Minnie in Halloween costume"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery/daisy",
+   "set_key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "named in the retailer's six-to-collect list, in Halloween costume"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "retailer lists each character as one of six designs to collect"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery/goofy",
+   "set_key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "named in the retailer's six-to-collect list, in Halloween costume"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "retailer lists each character as one of six designs to collect"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery/donald",
+   "set_key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "named in the retailer's six-to-collect list, in Halloween costume"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "retailer lists each character as one of six designs to collect"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery/mickey",
+   "set_key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "named in the retailer's six-to-collect list, in Halloween costume"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "retailer lists each character as one of six designs to collect"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery/pluto",
+   "set_key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "named in the retailer's six-to-collect list, in Halloween costume"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://707street.com/products/loungefly-disney-mickey-and-friends-halloween-costume-mystery-box-pins",
+     "method": "search_snippet",
+     "note": "retailer lists each character as one of six designs to collect"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery/stitch-among-flowers",
+   "field": "pin_structure",
+   "searched": "fu3: 3 queries",
+   "note": "released: GameStop lists five possible scenes individually; Pop Insider says one of six incl. glitter Stitch chase, so 5 scenes + chase; earlier hold resolved"
+  },
+  {
+   "key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery/stitch-lei",
+   "field": "pin_structure",
+   "searched": "fu3: 3 queries",
+   "note": "released: GameStop lists five possible scenes individually; Pop Insider says one of six incl. glitter Stitch chase, so 5 scenes + chase; earlier hold resolved"
+  },
+  {
+   "key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery/angel-flower-crown",
+   "field": "pin_structure",
+   "searched": "fu3: 3 queries",
+   "note": "released: GameStop lists five possible scenes individually; Pop Insider says one of six incl. glitter Stitch chase, so 5 scenes + chase; earlier hold resolved"
+  },
+  {
+   "key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery/stitch-angel-together",
+   "field": "pin_structure",
+   "searched": "fu3: 3 queries",
+   "note": "released: GameStop lists five possible scenes individually; Pop Insider says one of six incl. glitter Stitch chase, so 5 scenes + chase; earlier hold resolved"
+  },
+  {
+   "key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery/stitch-cake",
+   "field": "pin_structure",
+   "searched": "fu3: 3 queries",
+   "note": "released: GameStop lists five possible scenes individually; Pop Insider says one of six incl. glitter Stitch chase, so 5 scenes + chase; earlier hold resolved"
+  },
+  {
+   "key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery",
+   "field": "expected_pin_count",
+   "searched": "fu3: 3 queries",
+   "note": "resolved in fu3: Pop Insider six possible pins incl. chase, consistent with five GameStop scenes; which scene the glitter Stitch chase uses is not stated"
+  },
+  {
+   "key": "lic/2025/loungefly-stitch-angel-cherry-blossom-mystery",
+   "field": "pins",
+   "searched": "fu3",
+   "note": "chase design (glitter Stitch) not tied to a scene; not keyed as a separate member"
+  },
+  {
+   "key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery",
+   "field": "expected_pin_count",
+   "searched": "fu3: 2 queries",
+   "note": "resolved in fu3: 707 Street says six to collect = five regular + Minnie glitter chase; the 'five' retailers likely counted regulars only; official six stands"
+  },
+  {
+   "key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery",
+   "field": "original_price",
+   "searched": "fu3",
+   "note": "fu3: prices vary (Loungefly $10 then $9; 707 Street $15; a $12 SRP seen only in a summarised result); no new price claimed"
+  },
+  {
+   "key": "lic/2025/loungefly-mickey-friends-halloween-costume-mystery",
+   "field": "release_date",
+   "searched": "fu3: 2 queries",
+   "note": "fu3: US launch date still not found; HMV 16 Oct 2025 remains the only date"
+  },
+  {
+   "key": "lic/2025/loungefly-daisy-duck-85th-anniversary-mystery",
+   "field": "pins",
+   "searched": "fu3: 3 queries",
+   "note": "fu3: 3 queries; six poses still not described individually; chase pose not identified; Cool Merch URL slug hints UK embargo 27 Feb / release 3 Mar (slug only, not claimed)"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-pixar-vhs-covers-blind-box",
+   "field": "pins",
+   "searched": "fu3: 3 queries",
+   "note": "fu3: 3 queries; BoxLunch listing still names no films or set size; no DPB/Mouseketeer post found; no member records"
+  },
+  {
+   "key": "lic/undated/loungefly-pixar-vhs-tape-blind-box",
+   "field": "set_match",
+   "searched": "fu3: 3 queries",
+   "note": "hold kept: Magic Madhouse LF-WDPN3843 describes VHS covers of Pixar films (wording close to BoxLunch) but never mentions BoxLunch; link by subject/wording only"
+  },
+  {
+   "key": "lic/undated/loungefly-pixar-vhs-tape-blind-box",
+   "field": "release_date",
+   "searched": "fu3",
+   "note": "fu3: May/Jun 2025 dates seen only on excluded Amazon listings - not recorded; still undated in permitted sources"
+  },
+  {
+   "key": "lic/2025/loungefly-marvel-infinity-stones-blind-box",
+   "field": "pins",
+   "searched": "fu3: 3 queries",
+   "note": "hold kept: confirm pin structure; fu3 3 queries, count conflict 9 (HMV/Get Ready) vs 6 (Magic Madhouse) persists; same six characters listed; no per-design text"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-fantastic-four-first-steps-stained-glass",
+   "field": "release_date",
+   "searched": "fu3: 4 queries",
+   "note": "hold kept: fu3 4 queries; Mouseketeer post and BoxLunch listing state no date (page age ~mid-2025 is metadata, not a statement)"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-fantastic-four-first-steps-stained-glass/invisible-woman",
+   "field": "pin_structure",
+   "searched": "fu3: 4 queries",
+   "note": "hold kept: release year still assumed from the film, not stated by a source (fu3)"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-fantastic-four-first-steps-stained-glass/mr-fantastic",
+   "field": "pin_structure",
+   "searched": "fu3: 4 queries",
+   "note": "hold kept: release year still assumed from the film, not stated by a source (fu3)"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-fantastic-four-first-steps-stained-glass/logo",
+   "field": "pin_structure",
+   "searched": "fu3: 4 queries",
+   "note": "hold kept: release year still assumed from the film, not stated by a source (fu3)"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-fantastic-four-first-steps-stained-glass/the-thing",
+   "field": "pin_structure",
+   "searched": "fu3: 4 queries",
+   "note": "hold kept: release year still assumed from the film, not stated by a source (fu3)"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-fantastic-four-first-steps-stained-glass/human-torch",
+   "field": "pin_structure",
+   "searched": "fu3: 4 queries",
+   "note": "hold kept: release year still assumed from the film, not stated by a source (fu3)"
+  },
+  {
+   "key": "lic/2025/loungefly-boxlunch-fantastic-four-first-steps-stained-glass/herbie",
+   "field": "pin_structure",
+   "searched": "fu3: 4 queries",
+   "note": "hold kept: release year still assumed from the film, not stated by a source (fu3)"
+  },
+  {
+   "key": "lic/undated/boxlunch-fantastic-four-first-steps-spinning-logo",
+   "field": "release_date",
+   "searched": "fu3",
+   "note": "lead for BoxLunch cell: BoxLunch-exclusive F4 First Steps spinning logo pin ($16.90); maker not in title; undated"
+  },
+  {
+   "key": "lic/2025/loungefly-muppet-babies-mystery",
+   "field": "release_location",
+   "searched": "fu3: 3 queries",
+   "note": "conflict kept after fu3 (3 queries): DPB product page says Disney Parks 2025; DPB BoxLunch post (Nov 2025) and wiki say BoxLunch; no Parks/shopDisney listing found"
+  },
+  {
+   "key": "lic/2025/loungefly-muppet-babies-mystery",
+   "field": "set_match",
+   "searched": "fu3",
+   "note": "hold kept: BoxLunch Baby Muppets listing still linked to the Muppet Babies set by title/subject; wiki does not say it is the same product"
+  },
+  {
+   "key": "lic/2025/loungefly-muppet-babies-mystery/animal",
+   "field": "pin_structure",
+   "searched": "fu3: 3 queries",
+   "note": "hold kept: mystery designs not individually confirmed (fu3: DPB post names Animal, Kermit, Miss Piggy 'and more'; full list only on fan wiki)"
+  },
+  {
+   "key": "lic/2025/loungefly-muppet-babies-mystery/kermit",
+   "field": "pin_structure",
+   "searched": "fu3: 3 queries",
+   "note": "hold kept: mystery designs not individually confirmed (fu3: DPB post names Animal, Kermit, Miss Piggy 'and more'; full list only on fan wiki)"
+  },
+  {
+   "key": "lic/2025/loungefly-muppet-babies-mystery/fozzie",
+   "field": "pin_structure",
+   "searched": "fu3: 3 queries",
+   "note": "hold kept: mystery designs not individually confirmed (fu3: DPB post names Animal, Kermit, Miss Piggy 'and more'; full list only on fan wiki)"
+  },
+  {
+   "key": "lic/2025/loungefly-muppet-babies-mystery/piggy",
+   "field": "pin_structure",
+   "searched": "fu3: 3 queries",
+   "note": "hold kept: mystery designs not individually confirmed (fu3: DPB post names Animal, Kermit, Miss Piggy 'and more'; full list only on fan wiki)"
+  },
+  {
+   "key": "lic/2025/loungefly-muppet-babies-mystery/gonzo",
+   "field": "pin_structure",
+   "searched": "fu3: 3 queries",
+   "note": "hold kept: mystery designs not individually confirmed (fu3: DPB post names Animal, Kermit, Miss Piggy 'and more'; full list only on fan wiki)"
+  },
+  {
+   "key": "lic/2025/loungefly-muppet-babies-mystery/summer-penguin",
+   "field": "scope",
+   "searched": "fu3",
+   "note": "hold kept: Summer Penguin membership rests on fan wiki only (fu3)"
+  },
+  {
+   "key": "lic/undated/boxlunch-muppets-framed-characters-blind-box",
+   "field": "release_date",
+   "searched": "fu3",
+   "note": "lead for BoxLunch cell: BoxLunch-exclusive Muppets Framed Characters blind box; maker not in title; wiki mentions a 2025 framed-portrait set (link by subject only)"
+  },
+  {
+   "key": "lic/undated/loungefly-boxlunch-muppets-holiday-blind-box",
+   "field": "release_year",
+   "searched": "fu3",
+   "note": "lead for BoxLunch cell: Muppet wiki says Loungefly 2025 BoxLunch Christmas set (Bunsen, Fozzie, Pepe, Beaker, Animal, Kermit); matched to listing by title only"
+  },
+  {
+   "key": "lic/2025/loungefly-hot-topic-exclusives",
+   "field": "release_date",
+   "searched": "fu3: 5 queries",
+   "note": "still undated after fu3 (5 queries): Pixar Travel Cup, Pixar Fast Food, Brother Bear 2-pin set; no blog post or dated listing found"
+  },
+  {
+   "key": "lic/undated/loungefly-hot-topic-pixar-fast-food-blind-box",
+   "field": "pins",
+   "searched": "fu3: 3 queries",
+   "note": "hold: mystery designs not individually confirmed; HT names Woody & Buzz, Carl & Russell 'and more'; set size unknown (fu3)"
+  },
+  {
+   "key": "lic/undated/loungefly-hot-topic-pixar-travel-cup-blind-box",
+   "field": "pins",
+   "searched": "fu3: 2 queries",
+   "note": "hold: mystery designs not individually confirmed; an unattributed summary lists Coco, Toy Story, Cars, Monsters Inc., Ratatouille, Up - not tied to a named source; no records"
+  },
+  {
+   "key": "lic/undated/loungefly-hot-topic-brother-bear-pin-set",
+   "field": "pin_structure",
+   "searched": "fu3: 1 query",
+   "note": "lead kept: HT says 2 pins (~1.5in) featuring Kenai and Koda; split per pin not stated; Brother Bear mini backpacks dated Sep 2025 are bags, not this set"
+  }
+ ],
+ "discovery_notes": "B171 follow-up 3 to 246_b084/270_b124/294_b148 (Loungefly 2025). 29 standard searches, snippets only; keys reused. Released: Cherry Blossom 5 scene holds (GameStop per-scene list + Pop Insider one-of-six incl. chase). Halloween count conflict resolved (5 + Minnie chase = 6). Kept: Daisy poses, Pixar VHS link, Infinity Stones, F4 year, Muppet channel/designs, Hot Topic dates."
+}

@@ -1,0 +1,825 @@
+{
+ "packet_id": "backfill-b249-dlp-2015-fu7",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b249",
+ "sources": [
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-dezember-2015/",
+   "title": "Pin-Trading Kollektion Dezember 2015",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+   "title": "Pin Trading Kollektion - Oktober 2015 im Disneyland",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-februar-2015/",
+   "title": "Pin Trading Kollektion im Disneyland Paris - Februar 2015",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2015-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disneyland-paris-refresh_r9532",
+   "title": "Disneyland Paris - Refresh (pin list)",
+   "publisher": "Coleka",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disneyland-paris-refresh/mr-incredible_i471607",
+   "title": "Mr. Incredible - Disneyland Paris - Refresh",
+   "publisher": "Coleka",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.coleka.com/en/flynn-rider-eugene-fitzherbert_t1215?id_tag=3686",
+   "title": "Checklist Flynn Rider (Eugene Fitzherbert) - Disney",
+   "publisher": "Coleka",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://passiondlp.com/actus/arc015.php",
+   "title": "passiondlp : Archives Disneyland Paris 2015 trimestre 1",
+   "publisher": "passiondlp",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc016.php",
+   "title": "passiondlp : Archives Disneyland Paris 2015 trimestre 2",
+   "publisher": "passiondlp",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.passiondlp.com/actus/arc017.php",
+   "title": "passiondlp : Archives Disneyland Paris 2015 trimestre 3",
+   "publisher": "passiondlp",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc018.php",
+   "title": "passiondlp : Archives Disneyland Paris 2015 trimestre 4",
+   "publisher": "passiondlp",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+   "title": "Collections de Septembre 2015",
+   "publisher": "Disney Gazette forum",
+   "published_date": "2015-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+   "title": "Disney Dreams ! Pin Event - 19 Septembre 2015 (COMPLET)",
+   "publisher": "Disney Gazette forum",
+   "published_date": "2015-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/paris-refresh-lanyard-collection-together-at-last.58603/",
+   "title": "Paris Refresh Lanyard Collection - Together At Last",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://forum.disneygazette.fr/pin-station-f13/pin-trading-day-frozen-fun-11-juillet-2015-t12100.html",
+   "title": "Pin Trading Day Frozen Fun - 11 Juillet 2015",
+   "publisher": "Disney Gazette forum",
+   "published_date": "2015-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2015/refresh-lanyard-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cast Member Refresh Lanyard pins 2015",
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disneyland-paris-refresh_r9532",
+     "method": "search_snippet",
+     "note": "Coleka keeps a DLP Refresh series; its release-year breakdown shows eight items for 2015"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disneyland-paris-refresh_r9532",
+     "method": "search_snippet",
+     "note": "Coleka series page counts 8 Refresh items dated 2015; items not all named in snippet"
+    },
+    {
+     "field": "format",
+     "value": "lanyard pins, one per Pin Trading Night, later put on Cast Member lanyards",
+     "source_url": "https://www.disneypinforum.com/threads/paris-refresh-lanyard-collection-together-at-last.58603/",
+     "method": "search_snippet",
+     "note": "Forum: DLP-only; first obtainable with a cocktail at the PTN, later the rest go on CM lanyards"
+    },
+    {
+     "field": "release_date",
+     "value": "2015",
+     "source_url": "http://passiondlp.com/actus/arc015.php",
+     "method": "search_snippet",
+     "note": "passiondlp Q1-Q4 archives log a Refresh Lanyard pin with each 2015 PTN: 30 Jan, 27 Feb, 27 Mar, 26 Jun, 31 Jul, 28 Aug, 30 Oct, 27 Nov"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/disney-dreams-pin-event-2015",
+   "claims": [
+    {
+     "field": "format",
+     "value": "ticketed pin event: LE 600 event pins, LE 400 mini-jumbo, four giveaway pins",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Forum September collections thread gives event pins LE 600 at 15.99 each and mini-jumbo LE 400 at 29.99"
+    },
+    {
+     "field": "format",
+     "value": "ticketed pin event; shopping list, Last Chance sale; leftovers sold without limit",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+     "method": "search_snippet",
+     "note": "Recap: 4 Dreams gaways and mini-jumbo sold out at Last Chance, rest then unlimited; tickets gone in 80 minutes"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2015/oe-set/disneyland-paris-2016-booster",
+   "claims": [
+    {
+     "field": "format",
+     "value": "booster (multi-pin pack), 4 pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Oct page: 4-pin 2016 booster from 3 Oct, EUR 18.99; text describes a scene per pin (Mickey/Earfall Tower, Minnie/castle, Stitch/Phantom Manor, Chip & Chap/Space Mountain)"
+    },
+    {
+     "field": "price",
+     "value": 18.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-oktober-2015/",
+     "method": "search_snippet",
+     "note": "Package price EUR 18.99"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2015/refresh-lanyard-2015/mr-incredible",
+   "set_key": "dlp/2015/refresh-lanyard-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mr. Incredible (DLP Refresh lanyard)",
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disneyland-paris-refresh/mr-incredible_i471607",
+     "method": "search_snippet",
+     "note": "Coleka item page in the DLP Refresh series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mr. Incredible"
+     ],
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disneyland-paris-refresh/mr-incredible_i471607",
+     "method": "search_snippet",
+     "note": "Character from item title"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disneyland-paris-refresh/mr-incredible_i471607",
+     "method": "search_snippet",
+     "note": "Coleka Mr. Incredible checklist tags the Refresh pin 2015; one summary gave 27 Feb 2015, not confirmed on a second search"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris (Cast Member Refresh lanyard)",
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disneyland-paris-refresh_r9532",
+     "method": "search_snippet",
+     "note": "Series is DLP Refresh lanyard"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disneyland-paris-refresh/mr-incredible_i471607",
+     "method": "search_snippet",
+     "note": "Single item page"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/refresh-lanyard-2015/flynn-rider",
+   "set_key": "dlp/2015/refresh-lanyard-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Flynn Rider (DLP Refresh lanyard)",
+     "source_url": "https://www.coleka.com/en/flynn-rider-eugene-fitzherbert_t1215?id_tag=3686",
+     "method": "search_snippet",
+     "note": "Coleka Flynn Rider checklist lists a Disneyland Paris - Refresh (2015) entry"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Flynn Rider"
+     ],
+     "source_url": "https://www.coleka.com/en/flynn-rider-eugene-fitzherbert_t1215?id_tag=3686",
+     "method": "search_snippet",
+     "note": "Character from checklist entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disneyland-paris-refresh_r9532",
+     "method": "search_snippet",
+     "note": "Refresh series list also shows 'Flynn Rider (2015)'"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.coleka.com/en/other-collections/pins/disney-disney-parks-pins/disneyland-paris-refresh_r9532",
+     "method": "search_snippet",
+     "note": "Single list entry"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/disney-dreams-pin-event-2015/wendy",
+   "set_key": "dlp/2015/disney-dreams-pin-event-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Wendy (Disney Dreams! Pin Event)",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Forum Sept 2015 collections thread lists a Wendy event pin as its own line"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Wendy Darling"
+     ],
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Character named in the line item"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Listed as limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "LE 600 per line item"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "EUR 15.99 per line item"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-19",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+     "method": "search_snippet",
+     "note": "Event date 19 Sep 2015, Hotel New York convention centre"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Per-design line with own edition and price"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/disney-dreams-pin-event-2015/genie",
+   "set_key": "dlp/2015/disney-dreams-pin-event-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Genie (Disney Dreams! Pin Event)",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Forum Sept 2015 collections thread lists a Genie event pin as its own line"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Genie"
+     ],
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Character named in the line item"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Listed as limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "LE 600 per line item"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "EUR 15.99 per line item"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-19",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+     "method": "search_snippet",
+     "note": "Event date 19 Sep 2015, Hotel New York convention centre"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Per-design line with own edition and price"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/disney-dreams-pin-event-2015/quasimodo",
+   "set_key": "dlp/2015/disney-dreams-pin-event-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Quasimodo (Disney Dreams! Pin Event)",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Forum Sept 2015 collections thread lists a Quasimodo event pin as its own line"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Quasimodo"
+     ],
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Character named in the line item"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Listed as limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "LE 600 per line item"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "EUR 15.99 per line item"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-19",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+     "method": "search_snippet",
+     "note": "Event date 19 Sep 2015, Hotel New York convention centre"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Per-design line with own edition and price"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/disney-dreams-pin-event-2015/simba",
+   "set_key": "dlp/2015/disney-dreams-pin-event-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Simba (Disney Dreams! Pin Event)",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Forum Sept 2015 collections thread lists a Simba event pin as its own line"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Simba"
+     ],
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Character named in the line item"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Listed as limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "LE 600 per line item"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "EUR 15.99 per line item"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-19",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+     "method": "search_snippet",
+     "note": "Event date 19 Sep 2015, Hotel New York convention centre"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Per-design line with own edition and price"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/disney-dreams-pin-event-2015/mini-jumbo",
+   "set_key": "dlp/2015/disney-dreams-pin-event-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Dreams! mini-jumbo",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Forum thread lists a Mini Jumbo for the event"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 29.99,
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "EUR 29.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-09-19",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?p=365376",
+     "method": "search_snippet",
+     "note": "Sold at the 19 Sep event; sold out during Last Chance"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://forum.disneygazette.fr/pin-station-f13/collections-de-septembre-2015-t12184.html",
+     "method": "search_snippet",
+     "note": "Single mini-jumbo"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/december-2015-le/villains-2016",
+   "set_key": "dlp/2015/december-2015-le",
+   "claims": [
+    {
+     "field": "main_character",
+     "value": "Evil Queen (Old Hag)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-dezember-2015/",
+     "method": "search_snippet",
+     "note": "Dec page: on the 'Frohes neues Jahr 2016 Villains' pin the Snow White witch wishes a happy new year offering her apple"
+    },
+    {
+     "field": "visual_description",
+     "value": "Villains new-year 2016 greeting; Snow White witch holding out her red apple",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-dezember-2015/",
+     "method": "search_snippet",
+     "note": "Summary of Dec page text; other villains, if any, not named"
+    },
+    {
+     "field": "pin_name",
+     "value": "Frohes neues Jahr 2016 Villains",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-dezember-2015/",
+     "method": "search_snippet",
+     "note": "German title on the Dec page"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2015/retro-series/ratatouille",
+   "set_key": "dlp/2015/retro-series",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Rat gang incl. Remy and Emile gathered round a dining table",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-februar-2015/",
+     "method": "search_snippet",
+     "note": "Feb page: new Paris Retro pin devoted to Ratatouille, rats around the table"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-februar-2015/",
+     "method": "search_snippet",
+     "note": "Quick overview: limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-februar-2015/",
+     "method": "search_snippet",
+     "note": "Quoted overview: limited to 600, Pueblo Trading Post only"
+    },
+    {
+     "field": "original_price",
+     "value": 13.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-februar-2015/",
+     "method": "search_snippet",
+     "note": "EUR 13.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-februar-2015/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland, Disneyland Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-februar-2015/",
+     "method": "search_snippet",
+     "note": "Pueblo only"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2015/april-2015-releases/ratatouille-attraction",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "released: dein-dlrp Feb page describes retro Ratatouille as the rat gang at table (LE 600); April page shows Remy presenting his ride. Two designs, do not merge"
+  },
+  {
+   "key": "dlp/2015/october-2015-releases/minnie-2016",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "variant: same pin as dlp/2015/october-2015-releases/mickey-sorcerer-2016; Oct quick overview quoted lines are only 'Pin Medaille 2016' 6.99 and 'Pin Mickey Minnie 2016' 8.99"
+  },
+  {
+   "key": "dlp/2015/december-2015-le/villains-2016",
+   "field": "characters",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Evil Queen (witch with apple) now named on three summaries of the Dec page; whether other villains appear is still not stated. Earlier Tink garble not repeated here"
+  },
+  {
+   "key": "dlp/2015/disney-dreams-pin-event-2015/wendy",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold: four LE 600 designs rest on search summaries of one forum listing; confirm. Same forum also mentions Quasimodo/Simba/Genie locket pins, possibly separate items"
+  },
+  {
+   "key": "dlp/2015/disney-dreams-pin-event-2015/mini-jumbo",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold: rests on search summaries of one forum listing (Disney Gazette, Collections de Septembre 2015); confirm per-design line before sign-off"
+  },
+  {
+   "key": "dlp/2015/disney-dreams-pin-event-2015/simba",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold: rests on search summaries of one forum listing (Disney Gazette, Collections de Septembre 2015); confirm per-design line before sign-off"
+  },
+  {
+   "key": "dlp/2015/disney-dreams-pin-event-2015/quasimodo",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold: rests on search summaries of one forum listing (Disney Gazette, Collections de Septembre 2015); confirm per-design line before sign-off"
+  },
+  {
+   "key": "dlp/2015/disney-dreams-pin-event-2015/genie",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold: rests on search summaries of one forum listing (Disney Gazette, Collections de Septembre 2015); confirm per-design line before sign-off"
+  },
+  {
+   "key": "dlp/2015/disney-dreams-pin-event-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Recap counts 5 event pins; only 4 named (Wendy, Genie, Quasimodo, Simba). Fifth event pin, four gaways (bar Shadow) and mini-jumbo design undescribed"
+  },
+  {
+   "key": "dlp/2015/disney-dreams-pin-event-2015/locket-pins",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); a 2015 forum post offers Quasimodo, Simba and Genie locket pins; not recorded"
+  },
+  {
+   "key": "dlp/2015/disney-dreams-pin-event-2015/peter-pan-shadow-giveaway",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: Gazette recap summary says the Shadow gaway was excluded from a shopping-list draw; still no design text. Thread title 'Ombre de Peter Pan' is a lead only"
+  },
+  {
+   "key": "dlp/2015/refresh-lanyard-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "6 of 8 2015 Refresh pins unnamed. Mr. Incredible and Flynn Rider are 2015 on Coleka but not mapped to a specific PTN; a 27 Feb date for Mr. Incredible is unconfirmed"
+  },
+  {
+   "key": "dlp/2015/pin-trading-nights-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "passiondlp: one Refresh Lanyard pin per 2015 PTN (8 dates); none in Apr, May, Sep or Dec, matching Coleka's 8. Recorded as set refresh-lanyard-2015"
+  },
+  {
+   "key": "dlp/2015/pin-trading-night-june-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Mini-jumbo and Refresh pin still undescribed; Gazette de Mickey snippet confirms only date, venue (Sequoia Lodge) and 87th number"
+  },
+  {
+   "key": "dlp/2015/pin-trading-day-april-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Four PTD pins still unnamed; passiondlp only shows a photo captioned the 4 pins of the day"
+  },
+  {
+   "key": "dlp/2015/pin-trading-day-frozen-fun-july-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Three LE 1000 pins still unnamed; Gazette thread repeats prices/limits and passholder-only access; no character names in permitted sources"
+  },
+  {
+   "key": "dlp/2015/alice-in-phantomland-event",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Round pins and jumbo still unnamed; one summary says about 10 pins plus 1 jumbo (source unclear); MyPinCentral 157451 shows LE 700 and LE 400 siblings, unnamed"
+  },
+  {
+   "key": "dlp/2015/cinderella-ball-event-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "No new event pin names; recaps repeat 4 gaways, mini-jumbo, locket pins; 350 places, booking from 24 Nov 2015"
+  },
+  {
+   "key": "dlp/2015/cinderella-ball-event-2015/cinderella-ball-1",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: not resolved; no snippet describes the '1. Cinderella Ball' design"
+  },
+  {
+   "key": "dlp/2015/cinderella-ball-event-2015/locket-pins",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: recaps still say 'locket pins' before/after midnight without a count"
+  },
+  {
+   "key": "dlp/2015/oe-set/star-wars-booster-september-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Still only Vader and Yoda named (Dedicated to DLP); dein-dlrp Sept repeats 4 pins, unlimited, 18.99"
+  },
+  {
+   "key": "dlp/2015/oe-set/nutcracker-booster-2015",
+   "field": "members",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Other three Christmas Mickey designs still unnamed; dein-dlrp Sept repeats 4 Mickey pins, Nutcracker Mickey only described"
+  },
+  {
+   "key": "dlp/2015/oe/mickey-tower-of-terror-2016-booster",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: Oct page text again says Mickey with 'Earfall Tower'; no source settles Earffel Tower vs Tower of Terror"
+  },
+  {
+   "key": "dlp/2015/oe/ariel-princess-booster-a-2015",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: Feb page says each pack holds pins of four named princesses (character list); no per-design text. Applies to all 8 booster records"
+  },
+  {
+   "key": "dlp/2015/cast-member-exclusive-gusteau/gusteau",
+   "field": "visual_description",
+   "searched": "WebSearch standard; search snippets",
+   "note": "2015 CM pin designs (Panpan, Gusteau, Mickey Vampire, Pluto Noel) still undescribed; search found nothing new"
+  },
+  {
+   "key": "dlp/2015/cast-member-exclusive-mickey-vampire/mickey-vampire",
+   "field": "identity",
+   "searched": "WebSearch standard; search snippets",
+   "note": "hold kept: not resolved; no source compares the CM and OE Mickey vampire designs"
+  },
+  {
+   "key": "dlp/2015/april-2015-le/disneyland-paris-anniversary-1992-2015",
+   "field": "release_date",
+   "searched": "WebSearch standard; search snippets",
+   "note": "Not resolved this round; 12 Apr vs 25 Apr conflict and 'Anniversaire 12 Avril 15' lead unchanged"
+  }
+ ],
+ "discovery_notes": "Follow-up 7 of B037 (DLP 2015). 30 WebSearch calls, all search_snippet, blocked domains passed. Reuses 330-394 keys; no 2016 or 2020-21 duplication. New: 4 Disney Dreams LE 600 pins + mini-jumbo (hold), 2 Refresh 2015 pins. Released: Ratatouille attraction distinct; Minnie 2016 = variant."
+}

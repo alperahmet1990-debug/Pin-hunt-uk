@@ -1,0 +1,555 @@
+{
+ "packet_id": "backfill-b224-dlr-oe-2015-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b224",
+ "sources": [
+  {
+   "url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-chernabog-37711.html",
+   "title": "Disney Hidden Mickey Pin - 2015 A Series - Villains Ties - Chernabog",
+   "publisher": "Your WDW Store (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-gaston-37712.html?amp=1",
+   "title": "Disney Hidden Mickey Pin - 2015 A Series - Villains Ties - Gaston",
+   "publisher": "Your WDW Store (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hiddenmickeydisney.com/2015-pins/",
+   "title": "2015 Pins - Hidden Mickey Disney Pin & Medallion Collection",
+   "publisher": "Hidden Mickey Disney (fan site)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.pintrader.club/pins/dlr-2015-hidden-mickey-silhouettes-bambi-completer-disney-pin",
+   "title": "DLR 2015 Hidden Mickey Silhouettes Bambi Completer Disney Pin",
+   "publisher": "PinTrader Club (fan/trading site)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://distradingpins4u.com/products/disney-pin-111950",
+   "title": "Disney Trading Pins 111950 DLR - 2015 Hidden Mickey Mardi Gras - Stitch Chaser",
+   "publisher": "DisTradingPins4U (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://madhousecollectibles.com/products/hidden-mickey-2015-adella-pin",
+   "title": "Hidden Mickey 2015 - Adella Pin",
+   "publisher": "Madhouse Collectibles (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://collectrandom.com/year/2015/",
+   "title": "2015 Archives - Collect Random Disney Pins",
+   "publisher": "Collect Random Disney Pins (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.letsgopintrading.com/60THDIAMONDTRIANGLE.HTML",
+   "title": "DLR - 60th Diamond Celebration - Mystery Pin Pack",
+   "publisher": "Let's Go Pin Trading (fan site)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-60-mystery-pin-sets",
+   "title": "Disneyland 60 Mystery Pin Sets",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-60th-framed-pin-set/",
+   "title": "Disneyland 60th Framed Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2015-week-2",
+   "title": "New Disney Pins November 2015 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://canadasdisneyconnection.com/products/disneyland-60-diamond-celebration-pintrading-starter-set-donald",
+   "title": "Disneyland 60 Diamond Celebration Pintrading starter set Donald",
+   "publisher": "Canada's Disney Connection (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/155730",
+   "title": "155730",
+   "publisher": "My Pin Central (fan site)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/get-to-know-hidden-mickey-series.78041/",
+   "title": "GUIDE - Get to Know: Hidden Mickey Series",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/dlr-2015-hidden-mickey-mad-tea-party-cup-5-pin-set-ends-sunday-january-28-8pm-mst.61554/",
+   "title": "DLR 2015 Hidden Mickey Mad Tea Party Cup 5 Pin Set (auction)",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/finally-a-little-info-for-us-on-hidden-mickeys.53278/",
+   "title": "Finally! A little info for us on Hidden Mickey's",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [],
+ "pins": [
+  {
+   "pin_key": "dlr/2015/oe-set/hidden-mickey-villain-neckties/chernabog",
+   "set_key": "dlr/2015/oe-set/hidden-mickey-villain-neckties",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hidden Mickey 2015 A Series - Villains Ties - Chernabog",
+     "source_url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-chernabog-37711.html",
+     "method": "search_snippet",
+     "note": "Dealer's own page for this one design; filed under 2015 A Series Villains Ties"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chernabog"
+     ],
+     "source_url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-chernabog-37711.html",
+     "method": "search_snippet",
+     "note": "Page says the pin shows Chernabog"
+    },
+    {
+     "field": "main_character",
+     "value": "Chernabog",
+     "source_url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-chernabog-37711.html",
+     "method": "search_snippet",
+     "note": "Single-character necktie design"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey (cast lanyard)",
+     "source_url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-chernabog-37711.html",
+     "method": "search_snippet",
+     "note": "Listed as a Disney Hidden Mickey pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-chernabog-37711.html",
+     "method": "search_snippet",
+     "note": "Title gives 2015 A Series"
+    },
+    {
+     "field": "visual_description",
+     "value": "Colour enamel necktie design featuring Chernabog",
+     "source_url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-chernabog-37711.html",
+     "method": "search_snippet",
+     "note": "Paraphrase of dealer note: coloured enamel, not the silver chaser"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "#2 of 5",
+     "source_url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-chernabog-37711.html",
+     "method": "search_snippet",
+     "note": "Dealer gives '#2 of 5' for this pin; where it is printed is not stated; conflicts with other listings' numbering"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-chernabog-37711.html",
+     "method": "search_snippet",
+     "note": "Sold as a single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/hidden-mickey-villain-neckties/gaston",
+   "set_key": "dlr/2015/oe-set/hidden-mickey-villain-neckties",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hidden Mickey 2015 A Series - Villains Ties - Gaston",
+     "source_url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-gaston-37712.html?amp=1",
+     "method": "search_snippet",
+     "note": "Dealer's own page for this one design; filed under 2015 A Series Villains Ties"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Gaston"
+     ],
+     "source_url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-gaston-37712.html?amp=1",
+     "method": "search_snippet",
+     "note": "Page says the pin shows Gaston"
+    },
+    {
+     "field": "main_character",
+     "value": "Gaston",
+     "source_url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-gaston-37712.html?amp=1",
+     "method": "search_snippet",
+     "note": "Single-character necktie design"
+    },
+    {
+     "field": "edition_type",
+     "value": "Hidden Mickey (cast lanyard)",
+     "source_url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-gaston-37712.html?amp=1",
+     "method": "search_snippet",
+     "note": "Listed as a Disney Hidden Mickey pin, brand Disney Parks"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-gaston-37712.html?amp=1",
+     "method": "search_snippet",
+     "note": "Title gives 2015 A Series"
+    },
+    {
+     "field": "visual_description",
+     "value": "Colour enamel necktie design featuring Gaston",
+     "source_url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-gaston-37712.html?amp=1",
+     "method": "search_snippet",
+     "note": "Paraphrase of dealer note"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.yourwdwstore.net/disney-hidden-mickey-pin-2015-a-series-villains-ties-gaston-37712.html?amp=1",
+     "method": "search_snippet",
+     "note": "Sold as a single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/hidden-mickey-character-silhouettes/great-prince-completer",
+   "set_key": "dlr/2015/oe-set/hidden-mickey-character-silhouettes",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2015-04-01",
+     "source_url": "https://www.pintrader.club/pins/dlr-2015-hidden-mickey-silhouettes-bambi-completer-disney-pin",
+     "method": "search_snippet",
+     "note": "Per-design page for the DLR 2015 Silhouettes Bambi completer gives 1 Apr 2015; conflicts with July 2015 DLR debut"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "black",
+      "silver"
+     ],
+     "source_url": "https://www.pintrader.club/pins/dlr-2015-hidden-mickey-silhouettes-bambi-completer-disney-pin",
+     "method": "search_snippet",
+     "note": "Page describes a black/silver finish"
+    },
+    {
+     "field": "release_location",
+     "value": "Hidden Mickey mystery pouches (pink)",
+     "source_url": "https://www.pintrader.club/pins/dlr-2015-hidden-mickey-silhouettes-bambi-completer-disney-pin",
+     "method": "search_snippet",
+     "note": "Page says it came in pink mystery pouches with two Wave A HM pins each"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/hidden-mickey-mardi-gras/stitch-chaser",
+   "set_key": "dlr/2015/oe-set/hidden-mickey-mardi-gras",
+   "claims": [
+    {
+     "field": "backstamp_text",
+     "value": "Hidden Mickey Pin 7 of 10",
+     "source_url": "https://distradingpins4u.com/products/disney-pin-111950",
+     "method": "search_snippet",
+     "note": "Dealer summary says back reads 7 of 10, which does not fit a 6-pin set; numbering may be shared across the wave"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/oe-set/hidden-mickey-daughters-of-triton/adella",
+   "set_key": "dlr/2015/oe-set/hidden-mickey-daughters-of-triton",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort (Disneyland / DCA)",
+     "source_url": "https://madhousecollectibles.com/products/hidden-mickey-2015-adella-pin",
+     "method": "search_snippet",
+     "note": "Dealer's page for Hidden Mickey 2015 Adella lists DLR/DCA release; set name not on page (subject match)"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/flynn-rider",
+   "field": "name",
+   "searched": "6 queries (per-design listings)",
+   "note": "hold kept: fu3 again found only the Let's Go Pin Trading / DPB full checklists; no dealer page for this one design naming the pack"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/lightning-mcqueen",
+   "field": "name",
+   "searched": "6 queries (per-design listings)",
+   "note": "hold kept: fu3 again found only the Let's Go Pin Trading / DPB full checklists; no dealer page for this one design naming the pack"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/dopey",
+   "field": "name",
+   "searched": "6 queries (per-design listings)",
+   "note": "hold kept: fu3 again found only the Let's Go Pin Trading / DPB full checklists; no dealer page for this one design naming the pack"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/flik",
+   "field": "name",
+   "searched": "6 queries (per-design listings)",
+   "note": "hold kept: fu3 again found only the Let's Go Pin Trading / DPB full checklists; no dealer page for this one design naming the pack"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/mad-hatter",
+   "field": "name",
+   "searched": "6 queries (per-design listings)",
+   "note": "hold kept: fu3 again found only the Let's Go Pin Trading / DPB full checklists; no dealer page for this one design naming the pack"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/mr-toad",
+   "field": "name",
+   "searched": "6 queries (per-design listings)",
+   "note": "hold kept: fu3 again found only the Let's Go Pin Trading / DPB full checklists; no dealer page for this one design naming the pack"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/genie",
+   "field": "name",
+   "searched": "6 queries (per-design listings)",
+   "note": "hold kept: fu3 again found only the Let's Go Pin Trading / DPB full checklists; no dealer page for this one design naming the pack"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/maleficent",
+   "field": "name",
+   "searched": "6 queries (per-design listings)",
+   "note": "hold kept: fu3 again found only the Let's Go Pin Trading / DPB full checklists; no dealer page for this one design naming the pack"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/mater",
+   "field": "name",
+   "searched": "6 queries (per-design listings)",
+   "note": "hold kept: fu3 again found only the Let's Go Pin Trading / DPB full checklists; no dealer page for this one design naming the pack"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/peter-pan",
+   "field": "name",
+   "searched": "6 queries (per-design listings)",
+   "note": "hold kept: fu3 again found only the Let's Go Pin Trading / DPB full checklists; no dealer page for this one design naming the pack"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/buzz-lightyear",
+   "field": "name",
+   "searched": "6 queries (per-design listings)",
+   "note": "hold kept: fu3 again found only the Let's Go Pin Trading / DPB full checklists; no dealer page for this one design naming the pack"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/pinocchio",
+   "field": "name",
+   "searched": "3 queries",
+   "note": "hold kept: only the Collect Random archive title 'Diamond Celebration 60th Mystery Pin Pinocchio' again; no product page, pack vs 8-pin box not stated"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/woody",
+   "field": "name",
+   "searched": "1 query",
+   "note": "hold kept: only the Let's Go Pin Trading full pack checklist names Woody; no per-design dealer page found"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-pack/nemo-dory",
+   "field": "name",
+   "searched": "fu3 pack queries",
+   "note": "hold kept: no further page beyond The Stand Alone listing title"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-mystery-pin-set",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "hold kept: mystery designs not individually confirmed - DPB repeats 8 pins, 2 per box, open edition; no design names; forum thread gave none"
+  },
+  {
+   "key": "dlr/2015/oe-set/60th-framed-pin-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: DPB gives one list of nine characters for nine pins and says OE sold only during the Diamond Celebration; no per-pin source"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-starter-set",
+   "field": "price",
+   "searched": "1 query",
+   "note": "Retail price/edition still not found; only the reseller single Donald pin ($10) again"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-starter-set/pluto",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "hold kept: no per-pin page for the starter set Pluto pin found"
+  },
+  {
+   "key": "dlr/2015/oe-set/diamond-celebration-starter-set/mickey",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "hold kept: no per-pin page for the starter set Mickey pin found"
+  },
+  {
+   "key": "dlr/2015/oe/splash-mountain",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "Still unresolved: DPB Nov 2015 wk2 again says two OE Splash Mountain pins spotted at Disney Parks; park and designs not given"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-villain-neckties/chernabog",
+   "field": "release_location",
+   "searched": "2 queries",
+   "note": "hold: dealer page says sold in Disney theme parks; DLR not named. Fan guide calls Neckties a shared WDW/DLR release - confirm DLR"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-villain-neckties/gaston",
+   "field": "release_location",
+   "searched": "2 queries",
+   "note": "hold: dealer page says Disney Parks only; DLR not named and set link rests on 'Villains Ties' title - confirm DLR and set"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-villain-neckties/chernabog-chaser",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "Conflict kept: HM fan table names Captain Hook completer; earlier dealer called chaser silver of a Chernabog completer. Regular Chernabog now has own page"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-villain-neckties",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "Conflict: fan table says 7 pins; Chernabog listings give '2 of 5', '3 of 5' and '7 of 10' numbering - not resolved"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-villain-neckties",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "No Ursula/Maleficent/Evil Queen/Hades necktie found; Jafar, Chernabog, Gaston and Hook completer only"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-mad-tea-party-tea-cups",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Other cup colours still not on per-pin pages; forum auction (5-pin set) again mentions yellow, blue, orange, pink - not recorded"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-mad-tea-party-tea-cups",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "Conflict kept: HM fan table 7 pins vs forum auction 'complete five pin set' (regulars only?)"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-characters",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "lead: My Pin Central titles list Ariel and Flora under DLR HM Diamond Characters 2015; own pages not seen, numbers look like DB IDs - not recorded"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-diamond-celebration-attractions",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Fan table: 6 pins, 1 chaser, Monorail completer; other attraction designs still unnamed"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-daughters-of-triton",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "No per-design page for Aquata, Andrina or Arista; Alana and Adella dealer pages only"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-mardi-gras",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Regular designs still unnamed; DisTradingPins4U Stitch page lists related item numbers only (no names)"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-mardi-gras/mickey-mouse",
+   "field": "set_key",
+   "searched": "1 query",
+   "note": "hold kept: Collect Random 'Mickey Mouse - Mardi Gras Characters - HM 2015' seen again as archive listing; no product page"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-disney-ducks/darkwing-duck",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold kept: forum post (Apr 2015) mentions Darkwing and Launchpad pins only in passing; no per-pin page"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-disney-ducks/launchpad-mcquack",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold kept: forum post mentions Launchpad in passing; no per-pin page"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-disney-ducks/scrooge-mcduck",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold kept: no per-pin page found"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-disney-ducks/ludwig-von-drake",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold kept: no per-pin page found"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-disney-ducks/daisy-duck",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold kept: no per-pin page found"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-character-silhouettes",
+   "field": "members",
+   "searched": "1 query",
+   "note": "lead: 2015 forum thread mentions Tinker Bell, Simba and Pumbaa silhouettes; park/set not stated - not recorded"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-mickey-food-icons/churros",
+   "field": "set_key",
+   "searched": "1 query",
+   "note": "hold kept: dealer page still says 'Food series' only"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-mickey-food-icons/bitten-cookie-completer",
+   "field": "name",
+   "searched": "0 queries",
+   "note": "hold kept: not re-searched (budget); completer still named only in one fan table"
+  },
+  {
+   "key": "dlr/2015/oe-set/hidden-mickey-*",
+   "field": "members",
+   "searched": "1 query",
+   "note": "resolved lead: Collect Random title calls the 'Barber Genie' HM 2015 pin WDW - not DLR. lead: wdw/2015 HM Barber Genie for WDW cell"
+  },
+  {
+   "key": "dlr/2015/*",
+   "field": "product_code",
+   "searched": "all",
+   "note": "Numbers in reseller/fan titles look like database IDs; not recorded"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 of B035 (DLR OE 2015), last try before backlog. 30 WebSearch calls, snippets only. Added HM Villains Ties Chernabog (regular) and Gaston from dealer per-design pages (DLR held). Extra claims on Great Prince completer, Stitch chaser, Adella. No holds released; DL60 pack/box, framed, starter, Ducks, Mardi Gras Mickey, Food holds kept. Genie Barber is a WDW lead."
+}

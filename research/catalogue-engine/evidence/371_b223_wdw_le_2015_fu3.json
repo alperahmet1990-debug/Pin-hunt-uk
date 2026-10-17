@@ -1,0 +1,597 @@
+{
+ "packet_id": "backfill-b223-wdw-le-2015-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b223",
+ "sources": [
+  {
+   "url": "https://touringplans.com/blog/remys-hide-squeak-scavenger-hunt/",
+   "title": "A Look at Remy's Hide and Squeak Scavenger Hunt (reader comments)",
+   "publisher": "TouringPlans",
+   "published_date": "2015-10-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2015/09/29/remy-s-ratatouille-hide-squeak-cooks-up-fun-during-the-epcot-international-food-wine-festival-scavenger-hunt-review/",
+   "title": "Remy's Ratatouille Hide & Squeak scavenger hunt review",
+   "publisher": "Mousesteps",
+   "published_date": "2015-09-29",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/mulan-disney-princess.html",
+   "title": "Mulan Disney Princess (category page)",
+   "publisher": "YourWDWStore (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/Yearly-Logos_c_146.html",
+   "title": "Yearly Logos (category page)",
+   "publisher": "YourWDWStore (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-pin-2015-mickeys-not-so-scary-halloween-party-evil-queen-38359.html",
+   "title": "Disney Pin - 2015 Mickey's Not So Scary Halloween Party - Evil Queen",
+   "publisher": "YourWDWStore (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-pixar-party-pin-countdown-pin-luxo-lamp-and-ball.html",
+   "title": "Disney Pixar Party Pin - Countdown Pin - Luxo Lamp and Ball",
+   "publisher": "YourWDWStore (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pixar-celebration-pin-collection",
+   "title": "Pixar Party Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/Disney-GenEARation-D-Boxed-Pin-Set--Disney-TV-Through-the-Years_p_36236.html",
+   "title": "Disney GenEARation D Boxed Pin Set - Disney TV Through the Years",
+   "publisher": "YourWDWStore (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-genearation-d-boxed-pin-set-1964-worlds-fair-4-pin-set-36237.html",
+   "title": "Disney GenEARation D Boxed Pin Set - 1964 World's Fair - 4 Pin Set",
+   "publisher": "YourWDWStore (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/Disney-Food-and-Wine-Festival-Pin--2015-Swedish-Chef-DVC_p_64253.html",
+   "title": "Disney Food and Wine Festival Pin - 2015 Swedish Chef DVC",
+   "publisher": "YourWDWStore (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-star-wars-pin-force-awakens-countdown-9-captain-phasma-le-42584.html",
+   "title": "Disney Star Wars Pin - Force Awakens Countdown #9 Captain Phasma LE",
+   "publisher": "YourWDWStore (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-bb-8-disneystore-com-pin",
+   "title": "Star Wars BB-8 DisneyStore.com Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-09-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/2015-mickeys-not-scary-halloween-party-pins/",
+   "title": "2015 Mickey's Not So Scary Halloween Party Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/Mickeys-Not-So-Scary-Halloween-Party_c_859-3.html",
+   "title": "Mickey's Not So Scary Halloween Party Souvenirs (category page)",
+   "publisher": "YourWDWStore (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/w/news/2015/02/13/walt-disney-world-announces-pin-trading-night-at-coronado-springs/",
+   "title": "Walt Disney World Announces Pin Trading Night at Coronado Springs",
+   "publisher": "LaughingPlace",
+   "published_date": "2015-02-13",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://doctordisney.com/2015/11/09/full-guide-to-mickeys-very-merry-christmas-party-2015-character-locations-merchandise-times-treats-more/",
+   "title": "Full Guide To Mickey's Very Merry Christmas Party 2015",
+   "publisher": "Doctor Disney",
+   "published_date": "2015-11-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/4772",
+   "title": "MyPinCentral pin 4772",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/rumored-pins-for-remys-hide-squeak-2016-a-possible-look-ahead.55505/",
+   "title": "Rumored Pins for Remy's Hide & Squeak 2016",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2015/genearation-d-tv-through-the-years",
+   "claims": [
+    {
+     "field": "format",
+     "value": "boxed set (multi-pin pack)",
+     "source_url": "https://www.yourwdwstore.net/Disney-GenEARation-D-Boxed-Pin-Set--Disney-TV-Through-the-Years_p_36236.html",
+     "method": "search_snippet",
+     "note": "reseller listing calls it a four-pin set with pin-on-pin elements"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/remy-hide-and-squeak-2015",
+   "claims": [
+    {
+     "field": "format",
+     "value": "prize pins: one of six designs, each Remy with an ingredient",
+     "source_url": "https://touringplans.com/blog/remys-hide-squeak-scavenger-hunt/",
+     "method": "search_snippet",
+     "note": "article says a completed map earns one of six commemorative pins, each Remy with an ingredient"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2015/remy-hide-and-squeak-2015/tomato",
+   "set_key": "wdw/2015/remy-hide-and-squeak-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Remy's Hide & Squeak 2015 - Remy with tomato",
+     "source_url": "https://touringplans.com/blog/remys-hide-squeak-scavenger-hunt/",
+     "method": "search_snippet",
+     "note": "Oct 2015 reader comment on the article says their partner received the tomato pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Remy",
+     "source_url": "https://touringplans.com/blog/remys-hide-squeak-scavenger-hunt/",
+     "method": "search_snippet",
+     "note": "set prize pins each show Remy with one ingredient"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://touringplans.com/blog/remys-hide-squeak-scavenger-hunt/",
+     "method": "search_snippet",
+     "note": "one of six individual prize pins, one per map"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://touringplans.com/blog/remys-hide-squeak-scavenger-hunt/",
+     "method": "search_snippet",
+     "note": "2015 Food & Wine hunt"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/remy-hide-and-squeak-2015/olive-oil",
+   "set_key": "wdw/2015/remy-hide-and-squeak-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Remy's Hide & Squeak 2015 - Remy with olive oil",
+     "source_url": "https://touringplans.com/blog/remys-hide-squeak-scavenger-hunt/",
+     "method": "search_snippet",
+     "note": "Oct 2015 reader comment on the article says they received the Olive Oil pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/genearation-d-life-lessons/mulan",
+   "set_key": "wdw/2015/genearation-d-life-lessons",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "GenEARation D Life Lessons - Mulan",
+     "source_url": "https://www.yourwdwstore.net/mulan-disney-princess.html",
+     "method": "search_snippet",
+     "note": "reseller category page lists a GenEARation D event mystery pin, Life Lessons Mulan"
+    },
+    {
+     "field": "main_character",
+     "value": "Mulan",
+     "source_url": "https://www.yourwdwstore.net/mulan-disney-princess.html",
+     "method": "search_snippet",
+     "note": "product title names Mulan"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://www.yourwdwstore.net/mulan-disney-princess.html",
+     "method": "search_snippet",
+     "note": "GenEARation D event, Sept 2015"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/jumbo-2015/epcot",
+   "set_key": "wdw/2015/jumbo-2015",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Spaceship Earth",
+     "source_url": "https://www.yourwdwstore.net/Yearly-Logos_c_146.html",
+     "method": "search_snippet",
+     "note": "reseller category lists 2015 Jumbo Pin Collection - 2015 Jumbo Spaceship Earth; no park, edition or date"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/mnsshp-2015/evil-queen",
+   "set_key": "wdw/2015/mnsshp-2015",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2015-09-15",
+     "source_url": "https://www.yourwdwstore.net/disney-pin-2015-mickeys-not-so-scary-halloween-party-evil-queen-38359.html",
+     "method": "search_snippet",
+     "note": "reseller listing gives release 9/15/2015, matching party pin launch date"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/pixar-party-countdown/luxo",
+   "set_key": "wdw/2015/pixar-party-countdown",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 1,
+     "source_url": "https://www.yourwdwstore.net/disney-pixar-party-pin-countdown-pin-luxo-lamp-and-ball.html",
+     "method": "search_snippet",
+     "note": "reseller listing describes Luxo lamp and ball as #1 of a series of 13"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2015/remy-hide-and-squeak-2015/olive-oil",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "lead (not released at review: rests on a reader comment plus a photo caption): TouringPlans Oct 2015 reader comment names the Olive Oil prize pin, matching the Mousesteps 2015 photo; design detail sti"
+  },
+  {
+   "key": "wdw/2015/remy-hide-and-squeak-2015/tomato",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold: rests on one reader comment; design detail seen only on resale aggregator (excluded-type, not used); confirm on editorial source"
+  },
+  {
+   "key": "wdw/2015/remy-hide-and-squeak-2015",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "Named: eggplant, olive oil, salt/salt-pepper, green pepper, tomato. Onion only on Amazon UK title (excluded); garlic still conflicts (Mousesteps photo vs forum)"
+  },
+  {
+   "key": "wdw/2015/remy-hide-and-squeak-2015",
+   "field": "forum_list",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "Forum post lists tomato, eggplant, pepper, onion, olive oil, salt & pepper as the six; thread is titled as 2016 rumours, so year tie unclear"
+  },
+  {
+   "key": "wdw/2015/lead/remy-mypincentral-4772",
+   "field": "scope",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "MyPinCentral 4772 (Remy with herbs) is dated to the 2016 hunt; not a 2015 design; not recorded"
+  },
+  {
+   "key": "wdw/2015/remy-hide-and-squeak-2015/salt-pepper",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: salt shaker vs salt-and-pepper design unresolved"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/mulan",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold: reseller product title only (category page); LR vs chaser not stated; confirm on editorial source"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "Named so far: 4 regular (Rapunzel, Genie, Thumper, Mulan; reseller) and 5 chasers; 4 LR and 3 chasers still unnamed"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/rapunzel",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: still reseller-only; LR vs chaser not stated"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/genie",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: still reseller-only; LR vs chaser not stated"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/thumper",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: still reseller-only; LR vs chaser not stated"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/donald-duck-chaser",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: no editorial source for Life Lessons chasers found this round"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/hercules-chaser",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: no editorial source for Life Lessons chasers found this round"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/dumbo-chaser",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: no editorial source for Life Lessons chasers found this round"
+  },
+  {
+   "key": "wdw/2015/genearation-d-life-lessons/lion-king-chaser",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: no editorial source for Life Lessons chasers found this round"
+  },
+  {
+   "key": "wdw/2015/genearation-d-tv-through-the-years",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: confirm pin structure; reseller now names Mickey Mouse Club, Mouse Factory, DuckTales and Doggone Biscuits; no editorial list"
+  },
+  {
+   "key": "wdw/2015/genearation-d-digital-disney-boxed",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: final lineup not confirmed; not searched this round (budget)"
+  },
+  {
+   "key": "wdw/2015/genearation-d-2015",
+   "field": "lead",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "lead: reseller lists a GenEARation D 1964 World's Fair 4-pin boxed set; edition and contents not stated; not recorded"
+  },
+  {
+   "key": "wdw/2015/lead/pixar-countdown-hinged",
+   "field": "scope",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "lead resolved: DPB Pixar Party post says first pin, hinged LE 750, $15.95, random selection 12 Sep 2015; reseller names it Luxo #1 of 13; already wdw/2015/pixar-party-countdown/luxo"
+  },
+  {
+   "key": "wdw/2015/force-awakens-countdown",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "#1 and #10 still unidentified after 6 queries; DPB Oct wk1 confirms #3 Chewbacca so #1-#2 predate 1 Oct 2015; DPB Dec 2015 wk3 post not found"
+  },
+  {
+   "key": "wdw/2015/force-awakens-countdown/captain-phasma",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: only reseller listing found (gives 12/17/2015, LE 10000, but text describes Flame Trooper); no DPB post for #9"
+  },
+  {
+   "key": "wdw/2015/force-awakens-countdown/kylo-ren",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: no November 2015 DPB post for countdown #6 found"
+  },
+  {
+   "key": "wdw/2015/force-awakens-countdown/poe",
+   "field": "source",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: no editorial page for #2 Poe found"
+  },
+  {
+   "key": "wdw/2015/lead/dsus-bb-8",
+   "field": "scope",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "lead: DisneyStore.com BB-8 pin LE 1000 $14.95, 28 Sep 2015, 2nd in DisneyStore.com Force Awakens collection (dsus cell); not the park countdown"
+  },
+  {
+   "key": "wdw/2015/mvmcp-2015",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "Still no text list of 2015 designs or editions; DPB flyer is image only; Doctor Disney guide only says Frontier Trading Post sold a trading pin"
+  },
+  {
+   "key": "wdw/2015/mvmcp-2015/mickey-minnie-pluto",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: still reseller category title only"
+  },
+  {
+   "key": "wdw/2015/mvmcp-2015/hitchhiking-ghosts",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: still reseller category title only"
+  },
+  {
+   "key": "wdw/2015/mvmcp-2015",
+   "field": "lead",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "lead kept: 2015 MVMCP framed pin set seen only as reseller title; no edition or contents"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015",
+   "field": "ap_pin",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "AP pin LE 5000 $15.95 (DPB) design still unnamed; Chip, Dale, Pluto rests on reseller title only, which says Halloween Party without park; not recorded"
+  },
+  {
+   "key": "wdw/2015/lead/dlr-halloween-ap-2015",
+   "field": "scope",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "lead: a summary says the 2015 Disneyland Halloween party passholder pin shows Goofy with skeletons; for DLR cell; not tied to one page"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015",
+   "field": "members",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "LE 5500 four still unnamed by editorial source; reseller has Evil Queen (5500) and a Goofy 2015 pin without edition"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015/evil-queen",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: reseller-only; DPB does not name which designs are the four LE 5500 pins"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015/mickey-minnie",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: Parrillo blog says purple Limited Release card; DPB lists one LR pin at $14.95; no single source links the two"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015/haunted-mansion",
+   "field": "edition_size",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: Parrillo blog says yellow Limited Edition card; no source ties it to LE 5500"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/gaston",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: mystery designs not individually confirmed; no new per-design source found"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/ursula",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: mystery designs not individually confirmed; no new per-design source found"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/chernabog",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: mystery designs not individually confirmed; no new per-design source found"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/maleficent",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: mystery designs not individually confirmed; no new per-design source found"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/oogie-boogie",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: mystery designs not individually confirmed; no new per-design source found"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/jafar",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: mystery designs not individually confirmed; no new per-design source found"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/captain-hook",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: mystery designs not individually confirmed; no new per-design source found"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/scar",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: mystery designs not individually confirmed; no new per-design source found"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/dr-facilier",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: mystery designs not individually confirmed; no new per-design source found"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-mystery/old-hag",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: mystery designs not individually confirmed; no new per-design source found"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-boxed-set/hitchhiking-ghosts",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: boxed-set membership still reseller-only"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-boxed-set/goofy-candy-float",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: boxed-set membership still reseller-only"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-boxed-set/evil-queen-mirror",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: boxed-set membership still reseller-only"
+  },
+  {
+   "key": "wdw/2015/mnsshp-2015-boxed-set/donald-daisy",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: boxed-set membership still reseller-only"
+  },
+  {
+   "key": "wdw/2015/epcot-food-wine-2015/swedish-chef-dvc",
+   "field": "characters",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: Camilla is now seen on the reseller listing page itself; no editorial source names Camilla"
+  },
+  {
+   "key": "wdw/2015/jumbo-2015/epcot",
+   "field": "identity",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "hold kept: Spaceship Earth rests on reseller category title; edition, price, date and set position 2 unconfirmed"
+  },
+  {
+   "key": "wdw/2015/dvc-resort-2015",
+   "field": "release_date",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "Still no exact date; DPB Oct 11 2015 post says released a few months earlier"
+  },
+  {
+   "key": "wdw/2015/lead/pin-trading-nights",
+   "field": "scope",
+   "searched": "WebSearch snippets, follow-up cell B223",
+   "note": "No 2015 WDW pin trading night exclusives found; LaughingPlace: Feb 27 2015 night at Coronado Springs, $10 reservation; recaps only preview pins"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 to packets 327/343/358 (B034/B195/B210), WDW LE/LR 2015; 30 standard WebSearches, snippets only, excluded domains blocked; reuses earlier keys. Released Remy olive-oil hold. New: Remy tomato, Life Lessons Mulan (both held). Countdown #1/#10 and MVMCP designs still missing."
+}

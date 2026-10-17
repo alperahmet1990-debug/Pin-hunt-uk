@@ -249,7 +249,8 @@ export default function AdminReviewScreen() {
         prefillCharacters:  (submission.characterNames ?? []).join(', '),
         prefillNotes:       submission.notes ?? '',
         prefillFrontPath:   submission.frontImagePath ?? '',
-        prefillBackPath:    submission.backImagePath ?? '',
+        // The back photo is evidence for this review only (#257): it isn't
+        // carried onto the public pin. Admins can still add a back there.
       },
     });
   };
@@ -411,7 +412,7 @@ export default function AdminReviewScreen() {
             {/* Back image */}
             {backUrl && (
               <View style={{ gap: 8 }}>
-                <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>BACK OF PIN</Text>
+                <Text style={[styles.sectionLabel, { color: colors.homeMuted }]}>BACK OF PIN · ADMINS ONLY</Text>
                 <Image source={{ uri: backUrl }} style={[styles.backImage, { borderRadius: 12 }]} resizeMode="contain" onError={refreshImageUrls} />
               </View>
             )}

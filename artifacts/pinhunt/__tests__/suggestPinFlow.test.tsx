@@ -221,3 +221,73 @@ describe('Photo clean-up notice (#300)', () => {
     expect(screen.getByText(/couldn’t remove the background/)).toBeTruthy();
   });
 });
+
+// #257: an optional back photo, sent as taken for the admin.
+describe('Suggest a missing pin: back photo (#257)', () => {
+  const pick = () => jest.requireMock('@/utils/submissionImage').pickSubmissionImage as jest.Mock;
+
+  async function toPhotoStep() {
+    await render(<AddPinScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'Get started' }));
+  }
+
+  it('is optional: submitting without it sends no back photo', async () => {
+    await toDetails();
+    await fireEvent.changeText(screen.getByPlaceholderText('e.g. Dumbo Blue Sky'), 'Brush of Magic Mickey');
+    await fireEvent.press(screen.getByRole('button', { name: 'Submit for review' }));
+    await screen.findByText('Pin Submitted!');
+    expect(submitted()).not.toHaveProperty('backImageBase64');
+  });
+
+  it('says only admins see it, and sends it with the suggestion', async () => {
+    await toPhotoStep();
+    expect(screen.getByText('Back of the pin (optional)')).toBeTruthy();
+    expect(screen.getByText(/Only admins see it\./)).toBeTruthy();
+    await fireEvent.press(screen.getByText('Choose from Library', { exact: false }));
+    expect(await screen.findByLabelText('Your photo')).toBeTruthy();
+
+    pick().mockResolvedValueOnce({ uri: 'file:///back.jpg', width: 800, height: 800, base64: 'back64' });
+    await fireEvent.press(screen.getByRole('button', { name: 'Choose a back photo from your library' }));
+    expect(await screen.findByLabelText('Back of the pin')).toBeTruthy();
+    expect(pick()).toHaveBeenLastCalledWith('library');
+
+    await fireEvent.press(screen.getByRole('button', { name: 'Next' }));
+    await fireEvent.changeText(await screen.findByPlaceholderText('e.g. Dumbo Blue Sky'), 'Brush of Magic Mickey');
+    await fireEvent.press(screen.getByRole('button', { name: 'Submit for review' }));
+    await screen.findByText('Pin Submitted!');
+    expect(submitted()).toMatchObject({ frontDraftPath: 'drafts/x.jpg', backImageBase64: 'back64' });
+  });
+
+  it('can be removed before submitting', async () => {
+    await toPhotoStep();
+    await fireEvent.press(screen.getByText('Choose from Library', { exact: false }));
+    await screen.findByLabelText('Your photo');
+    pick().mockResolvedValueOnce({ uri: 'file:///back.jpg', width: 800, height: 800, base64: 'back64' });
+    await fireEvent.press(screen.getByRole('button', { name: 'Add a back photo' }));
+    expect(pick()).toHaveBeenLastCalledWith('camera');
+    await screen.findByLabelText('Back of the pin');
+    await fireEvent.press(screen.getByRole('button', { name: 'Remove the back photo' }));
+    expect(screen.queryByLabelText('Back of the pin')).toBeNull();
+
+    await fireEvent.press(screen.getByRole('button', { name: 'Next' }));
+    await fireEvent.changeText(await screen.findByPlaceholderText('e.g. Dumbo Blue Sky'), 'Brush of Magic Mickey');
+    await fireEvent.press(screen.getByRole('button', { name: 'Submit for review' }));
+    await screen.findByText('Pin Submitted!');
+    expect(submitted()).not.toHaveProperty('backImageBase64');
+  });
+
+  it('"Add Another Pin" starts without the previous back photo', async () => {
+    await toPhotoStep();
+    await fireEvent.press(screen.getByText('Choose from Library', { exact: false }));
+    await screen.findByLabelText('Your photo');
+    pick().mockResolvedValueOnce({ uri: 'file:///back.jpg', width: 800, height: 800, base64: 'back64' });
+    await fireEvent.press(screen.getByRole('button', { name: 'Add a back photo' }));
+    await screen.findByLabelText('Back of the pin');
+    await fireEvent.press(screen.getByRole('button', { name: 'Next' }));
+    await fireEvent.changeText(await screen.findByPlaceholderText('e.g. Dumbo Blue Sky'), 'Brush of Magic Mickey');
+    await fireEvent.press(screen.getByRole('button', { name: 'Submit for review' }));
+    await screen.findByText('Pin Submitted!');
+    await fireEvent.press(screen.getByText('Add Another Pin'));
+    expect(screen.queryByLabelText('Back of the pin')).toBeNull();
+  });
+});

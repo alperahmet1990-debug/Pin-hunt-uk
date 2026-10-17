@@ -239,6 +239,80 @@ function PhotoStep({
   );
 }
 
+// ─── Back photo (optional, #257) ──────────────────────────────────────────────
+
+/**
+ * The back of the pin: the backstamp helps the admin check the year and
+ * edition. Optional, stored as taken, and only admins see it.
+ */
+function BackPhotoCard({
+  uri, onCamera, onLibrary, onRemove, colors,
+}: {
+  uri: string | null;
+  onCamera: () => void;
+  onLibrary: () => void;
+  onRemove: () => void;
+  colors: ReturnType<typeof useColors>;
+}) {
+  return (
+    <View testID="back-photo-card" style={[styles.backCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+      <View style={styles.backRow}>
+        {uri ? (
+          <Image source={{ uri }} style={[styles.backThumb, { backgroundColor: colors.homeAqua }]} resizeMode="cover" accessibilityLabel="Back of the pin" />
+        ) : (
+          <View style={[styles.backThumb, styles.backThumbEmpty, { backgroundColor: colors.homeAqua }]}>
+            <Feather name="rotate-ccw" size={20} color={colors.homeMuted} />
+          </View>
+        )}
+        <View style={styles.backCopy}>
+          <Text style={[styles.backTitle, { color: colors.homeInk }]}>Back of the pin (optional)</Text>
+          <Text style={[styles.backBody, { color: colors.homeMuted }]}>
+            The backstamp helps us check the year and edition. Only admins see it.
+          </Text>
+        </View>
+      </View>
+      <View style={styles.backActions}>
+        <TouchableOpacity
+          onPress={onCamera}
+          activeOpacity={0.85}
+          accessibilityRole="button"
+          accessibilityLabel={uri ? 'Retake the back photo' : 'Add a back photo'}
+          style={[styles.backBtn, { borderColor: colors.homeLine }]}
+        >
+          <Feather name="camera" size={14} color={colors.homeInk} />
+          <Text style={[styles.backBtnLabel, { color: colors.homeInk }]}>
+            {uri ? (Platform.OS === 'web' ? 'Replace' : 'Retake') : Platform.OS === 'web' ? 'Choose photo' : 'Add back photo'}
+          </Text>
+        </TouchableOpacity>
+        {!uri && Platform.OS !== 'web' && (
+          <TouchableOpacity
+            onPress={onLibrary}
+            activeOpacity={0.85}
+            accessibilityRole="button"
+            accessibilityLabel="Choose a back photo from your library"
+            style={[styles.backBtn, { borderColor: colors.homeLine }]}
+          >
+            <Feather name="image" size={14} color={colors.homeInk} />
+            <Text style={[styles.backBtnLabel, { color: colors.homeInk }]}>Library</Text>
+          </TouchableOpacity>
+        )}
+        {uri && (
+          <TouchableOpacity
+            onPress={onRemove}
+            activeOpacity={0.85}
+            accessibilityRole="button"
+            accessibilityLabel="Remove the back photo"
+            style={[styles.backBtn, { borderColor: colors.homeLine }]}
+          >
+            <Feather name="x" size={14} color={colors.homeInk} />
+            <Text style={[styles.backBtnLabel, { color: colors.homeInk }]}>Remove</Text>
+          </TouchableOpacity>
+        )}
+      </View>
+    </View>
+  );
+}
+
 /**
  * 'off': the server has no photo clean-up set up (e.g. staging);
  * 'failed': clean-up was tried and didn't work, or the preview didn't load.
@@ -284,8 +358,9 @@ export default function AddPinScreen() {
 
   const [step, setStep] = useState(0);
 
-  // Photo (front only for now — back photo is a later addition)
+  // Photos: the front (required) and the back (optional, admins only, #257).
   const [front, setFront] = useState<PickedImage | null>(null);
+  const [back, setBack] = useState<PickedImage | null>(null);
   // Cleaned-up preview of `front` from the server (Pixian + watermark).
   const [frontPreview, setFrontPreview] = useState<FrontPreview | null>(null);
   const [previewing, setPreviewing] = useState(false);
@@ -419,6 +494,10 @@ export default function AddPinScreen() {
     const img = await pickSubmissionImage(source);
     if (img) setFront(img);
   };
+  const pickBack = async (source: 'camera' | 'library') => {
+    const img = await pickSubmissionImage(source);
+    if (img) setBack(img);
+  };
 
   // ── Validation ──────────────────────────────────────────────────────────────
   const validate = (): boolean => {
@@ -488,6 +567,8 @@ export default function AddPinScreen() {
           ...(frontPreview
             ? { frontDraftPath: frontPreview.draftPath }
             : { frontImageBase64: front.base64 }),
+          // Stored as taken, for the admin only (#257).
+          ...(back ? { backImageBase64: back.base64 } : {}),
           notes:            notes.trim() || undefined,
         }),
       });
@@ -536,7 +617,7 @@ export default function AddPinScreen() {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              setFront(null);
+              setFront(null); setBack(null);
               setProposedName(''); setBrand(''); setCharacterNames('');
               setSeriesName(''); setReleaseLocation(''); setReleaseYear('');
               setEditionType('unknown'); setEditionSize('');
@@ -765,16 +846,24 @@ export default function AddPinScreen() {
 
   const stepContent = [
     <IntroStep key="intro" colors={colors} />,
-    <PhotoStep
-      key="front"
-      title="Front photo"
-      subtitle="Photograph the front of the pin clearly, so an admin can check it."
-      uri={shownFrontUri}
-      status={previewStatus}
-      onCamera={() => pickFront('camera')}
-      onLibrary={() => pickFront('library')}
-      colors={colors}
-    />,
+    <View key="front">
+      <PhotoStep
+        title="Front photo"
+        subtitle="Photograph the front of the pin clearly, so an admin can check it."
+        uri={shownFrontUri}
+        status={previewStatus}
+        onCamera={() => pickFront('camera')}
+        onLibrary={() => pickFront('library')}
+        colors={colors}
+      />
+      <BackPhotoCard
+        uri={back?.uri ?? null}
+        onCamera={() => pickBack('camera')}
+        onLibrary={() => pickBack('library')}
+        onRemove={() => setBack(null)}
+        colors={colors}
+      />
+    </View>,
     renderDetails(),
   ][step];
 
@@ -843,6 +932,17 @@ export default function AddPinScreen() {
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
 const styles = StyleSheet.create({
+  // Back photo card (#257)
+  backCard: { marginTop: spacing.lg, borderWidth: 1, borderRadius: radius.lg, padding: spacing.md, gap: spacing.md },
+  backRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
+  backThumb: { width: 64, height: 64, borderRadius: radius.sm },
+  backThumbEmpty: { alignItems: 'center', justifyContent: 'center' },
+  backCopy: { flex: 1, minWidth: 0 },
+  backTitle: { fontSize: 14.5, fontFamily: 'Inter_700Bold' },
+  backBody: { fontSize: 12.5, lineHeight: 17, fontFamily: 'Inter_500Medium', marginTop: 2 },
+  backActions: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
+  backBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, minHeight: 44, paddingHorizontal: spacing.md, borderWidth: 1, borderRadius: radius.pill },
+  backBtnLabel: { fontSize: 13.5, fontFamily: 'Inter_600SemiBold' },
   processingOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', gap: 8, borderRadius: 12 },
   processingText:    { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   previewNote:       { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18, textAlign: 'center' },

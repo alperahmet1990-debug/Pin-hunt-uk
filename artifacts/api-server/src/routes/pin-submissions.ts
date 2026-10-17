@@ -21,6 +21,10 @@
  * the raw photo rather than blocking the submission. An admin can still
  * review it either way.
  *
+ * An optional back photo (#257) is stored as taken, with no clean-up and
+ * no watermark: the backstamp is evidence for the admin who checks the pin,
+ * kept in the same private bucket and never published automatically.
+ *
  * Auth: requireUser (any signed-in collector) — the row lands with status
  * 'submitted', ready for the admin review queue.
  */
@@ -103,6 +107,8 @@ interface SubmitPinBody {
   mimeType?: string;
   /** From /pin-submissions/preview — submits that already-cleaned photo. */
   frontDraftPath?: string;
+  /** Optional back of the pin (#257), stored as taken for the admin. */
+  backImageBase64?: string;
 }
 
 /**
@@ -171,33 +177,57 @@ router.post("/pin-submissions", requireUser, async (req: UserRequest, res: Respo
     const {
       proposedName, brand, seriesName, releaseLocation, releaseYear,
       editionType, editionSize, facNumber, sku, characterNames, notes,
-      frontImageBase64, mimeType = "image/jpeg", frontDraftPath,
+      frontImageBase64, mimeType = "image/jpeg", frontDraftPath, backImageBase64,
     } = req.body as SubmitPinBody;
 
     if (!proposedName?.trim()) { res.status(400).json({ error: "proposedName is required" }); return; }
     if (!brand?.trim()) { res.status(400).json({ error: "brand is required" }); return; }
     if (!frontImageBase64 && !frontDraftPath) { res.status(400).json({ error: "A front photo is required" }); return; }
+    if (backImageBase64 !== undefined && typeof backImageBase64 !== "string") {
+      res.status(400).json({ error: "backImageBase64 must be a string" });
+      return;
+    }
+    if (backImageBase64 && backImageBase64.length > MAX_IMAGE_BASE64_CHARS) {
+      res.status(413).json({ error: "The back photo is too large — please retake it." });
+      return;
+    }
 
     const userId = req.userId!;
     const submissionId = generateSubmissionId();
     const storagePath = `${userId}/${submissionId}/front.jpg`;
     const bucket = getStorageClient().storage.from("pin-submissions");
 
+    // The back goes first, so a failure here leaves nothing behind.
+    let backPath: string | null = null;
+    if (backImageBase64) {
+      backPath = `${userId}/${submissionId}/back.jpg`;
+      const { error: backError } = await bucket
+        .upload(backPath, Buffer.from(backImageBase64, "base64"), { contentType: "image/jpeg", upsert: false });
+      if (backError) {
+        res.status(500).json({ error: `Could not store the back photo: ${backError.message}` });
+        return;
+      }
+    }
+    const dropBack = async () => { if (backPath) await bucket.remove([backPath]); };
+
     if (frontDraftPath) {
       // Only the caller's own preview can be submitted.
       if (!frontDraftPath.startsWith(`${draftDir(userId)}/`) || frontDraftPath.split("/").length !== 3) {
+        await dropBack();
         res.status(400).json({ error: "That photo preview isn't yours." });
         return;
       }
       const { error: moveError } = await bucket.move(frontDraftPath, storagePath);
       if (moveError) {
+        await dropBack();
         res.status(410).json({ error: "This photo preview has expired — please take the photo again." });
         return;
       }
     } else {
       // Older app builds send the photo directly, without a preview.
-      if (!frontImageBase64) { res.status(400).json({ error: "frontImageBase64 is required" }); return; }
+      if (!frontImageBase64) { await dropBack(); res.status(400).json({ error: "frontImageBase64 is required" }); return; }
       if (frontImageBase64.length > MAX_IMAGE_BASE64_CHARS) {
+        await dropBack();
         res.status(413).json({ error: "Photo is too large — please retake it." });
         return;
       }
@@ -205,6 +235,7 @@ router.post("/pin-submissions", requireUser, async (req: UserRequest, res: Respo
       const { error: uploadError } = await bucket
         .upload(storagePath, buffer, { contentType: "image/jpeg", upsert: true });
       if (uploadError) {
+        await dropBack();
         res.status(500).json({ error: `Could not store your photo: ${uploadError.message}` });
         return;
       }
@@ -229,7 +260,7 @@ router.post("/pin-submissions", requireUser, async (req: UserRequest, res: Respo
       },
       submissionId,
       storagePath,
-      null,
+      backPath,
     );
 
     res.json({ submission });

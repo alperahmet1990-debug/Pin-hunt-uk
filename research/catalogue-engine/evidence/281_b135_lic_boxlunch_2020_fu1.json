@@ -1,0 +1,2014 @@
+{
+ "packet_id": "backfill-b135-lic-boxlunch-2020-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b135",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/disney-princess-soft-serve-blind-box-pins-at-boxlunch/",
+   "title": "Disney Princess Soft Serve Blind Box Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinforum.com/threads/loungefly-mystery-box-pins.75220/",
+   "title": "Loungefly Mystery Box Pins",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-pixar-bows-blind-box-pins-at-boxlunch/",
+   "title": "Disney Pixar Bows Blind Box Pins at BoxLunch - Disney Pins Blog",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pixar-bows-blind-box-enamel-pin---boxlunch-exclusive/13339015.html",
+   "title": "Loungefly Disney Pixar Bows Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://flippingmagicalfinds.wordpress.com/2020/04/18/disney-mulan-blind-box/",
+   "title": "Disney Mulan Blind Box",
+   "publisher": "Flipping Magical Finds (blog)",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-04-18"
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-puzzle-blind-box-enamel-pin---boxlunch-exclusive/13885865.html",
+   "title": "Loungefly Disney The Nightmare Before Christmas Puzzle Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-princess-perfume-blind-box-enamel-pin---boxlunch-exclusive/12679812.html",
+   "title": "Disney Princess Perfume Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/figaro-and-cleo-pinocchio-boxlunch-disney-pin",
+   "title": "Figaro and Cleo Pinocchio BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pinocchio-figaro-cleo-boxlunch-disney-pin-set",
+   "title": "Pinocchio Figaro & Cleo BoxLunch Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pinocchio-wish-boxlunch-disney-pin",
+   "title": "Pinocchio Wish BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-little-mermaid-ariel-pin-at-boxlunch/",
+   "title": "The Little Mermaid Ariel Pin at BoxLunch - Disney Pins Blog",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-12-09"
+  },
+  {
+   "url": "https://www.boxlunch.com/product/star-wars-the-mandalorian-the-child-with-soup-enamel-pin---boxlunch-exclusive/13470978.html",
+   "title": "Star Wars The Mandalorian The Child with Soup Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-child-with-soup-boxlunch-star-wars-pin",
+   "title": "The Child with Soup BoxLunch Star Wars Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-star-wars-the-mandalorian-the-child-with-soup-keychain---boxlunch-exclusive/13513067.html",
+   "title": "Loungefly Star Wars The Mandalorian The Child with Soup Keychain - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/star-wars-the-mandalorian-the-child-with-frog-enamel-pin---boxlunch-exclusive/13470972.html",
+   "title": "Star Wars The Mandalorian The Child with Frog Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/star-wars-the-mandalorian-snack-time-enamel-pin---boxlunch-exclusive/13205587.html",
+   "title": "Star Wars The Mandalorian Snack Time Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-pod-boxlunch-pin",
+   "title": "Star Wars The Mandalorian The Child Pod BoxLunch Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/star-wars-the-mandalorian-the-child-pod-enamel-pin/13113302.html",
+   "title": "Star Wars The Mandalorian The Child Pod Enamel Pin",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-protect-attack-snack-boxlunch-pin",
+   "title": "Star Wars The Mandalorian The Child Protect, Attack, Snack BoxLunch Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-star-wars-the-mandalorian-mando-the-child-chibi-enamel-pin---boxlunch-exclusive/14862715.html",
+   "title": "Loungefly Star Wars The Mandalorian Mando & The Child Chibi Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-65th-anniversary-puzzle-blind-box-pins-at-boxlunch/",
+   "title": "Disneyland 65th Anniversary Puzzle Blind Box Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://getreadycomics.com/product-category/loungefly/blind-box-pins/",
+   "title": "Blind Box Pins Archives",
+   "publisher": "Get Ready Comics",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-65th-anniversary-boxlunch-pin/",
+   "title": "Disneyland 65th Anniversary BoxLunch Pin - Disney Pins Blog",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pixar-monsters-inc.-mike-sulley-layered-enamel-pin---boxlunch-exclusive/13339021.html",
+   "title": "Loungefly Disney Pixar Monsters, Inc. Mike & Sulley Layered Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-blind-box-enamel-pin---boxlunch-exclusive/12499557.html",
+   "title": "Loungefly Disney Winnie the Pooh Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pixar-toy-story-holiday-enamel-pin-set---boxlunch-exclusive/12626189.html",
+   "title": "Loungefly Disney Pixar Toy Story Holiday Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-101-dalmatians-cruella-de-vil-holiday-enamel-pin---boxlunch-exclusive/15848130.html",
+   "title": "Loungefly Disney 101 Dalmatians Cruella De Vil Holiday Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-head-pastel-glitter-boxlunch-disney-pin/",
+   "title": "Mickey Mouse Head Pastel Glitter BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-10-31"
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-head-pastel-glitter-enamel-pin/14247177.html",
+   "title": "Loungefly Disney Mickey Mouse Head Pastel Glitter Enamel Pin",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-aristocats-sassy-marie-boxlunch-disney-pin",
+   "title": "The Aristocats Sassy Marie BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-08-02"
+  },
+  {
+   "url": "https://disneypinsblog.com/cinderella-happily-ever-after-boxlunch-disney-pin-set/",
+   "title": "Cinderella Happily Ever After BoxLunch Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-11-17"
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+   "title": "Loungefly Disney Cinderella Happily Ever After Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-jar-jar-jar-boxlunch-pin/",
+   "title": "Star Wars Jar Jar Jar BoxLunch Pin - Disney Pins Blog",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-11-05"
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-star-wars-jar-jar-jar-enamel-pin---boxlunch-exclusive/14065532.html",
+   "title": "Loungefly Star Wars Jar Jar Jar Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-star-wars-millennium-falcon-cake-enamel-pin---boxlunch-exclusive/14065534.html",
+   "title": "Loungefly Star Wars Millennium Falcon Cake Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-blind-box-loungefly-disney-pins",
+   "title": "Sleeping Beauty Blind Box Loungefly Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-11-14"
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-princess-sleeping-beauty-blind-box-enamel-pin---boxlunch-exclusive/14247167.html",
+   "title": "Loungefly Disney Princess Sleeping Beauty Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2020-week-2",
+   "title": "New Disney Pins November 2020 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-mulan-little-brother-enamel-pin---boxlunch-exclusive/11658559.html",
+   "title": "Disney Mulan Little Brother Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-lilo-stitch-surfing-slider-enamel-pin---boxlunch-exclusive/11566112.html",
+   "title": "Disney Lilo & Stitch Surfing Slider Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pixar-toy-story-alien-as-forky-enamel-pin---boxlunch-exclusive/13383756.html",
+   "title": "Loungefly Disney Pixar Toy Story Alien as Forky Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pride-logo-enamel-pin---boxlunch-exclusive/15204273.html",
+   "title": "Loungefly Disney Pride Logo Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pride-rainbow-stitch-enamel-pin---boxlunch-exclusive/15266731.html",
+   "title": "Loungefly Disney Pride Rainbow Stitch Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-earth-day-blind-box-enamel-pin---boxlunch-exclusive/13011345.html",
+   "title": "Loungefly Disney Earth Day Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-princess-sidekick-blind-box-enamel-pin---boxlunch-exclusive/12806931.html",
+   "title": "Loungefly Disney Princess Sidekick Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-summer-blind-box-enamel-pin---boxlunch-exclusive/13339013.html",
+   "title": "Loungefly Disney Lilo & Stitch Summer Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-june-2020-week-3/",
+   "title": "New Disney Pins June 2020 Week 3 - Disney Pins Blog",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2020/loungefly-boxlunch-pixar-bows-mystery",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2020-07-17",
+     "source_url": "https://disneypinsblog.com/disney-pixar-bows-blind-box-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "DPB gives July 17, 2020 release (refines 2020-07 in packet 256)"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-bows-blind-box-enamel-pin---boxlunch-exclusive/13339015.html",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-bows-blind-box-enamel-pin---boxlunch-exclusive/13339015.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-bows-blind-box-enamel-pin---boxlunch-exclusive/13339015.html",
+     "method": "search_snippet",
+     "note": "title says BoxLunch Exclusive"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-bows-blind-box-enamel-pin---boxlunch-exclusive/13339015.html",
+     "method": "search_snippet",
+     "note": "listing asks which of 10 styles you will get"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "13339015",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-bows-blind-box-enamel-pin---boxlunch-exclusive/13339015.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing number"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-bows-blind-box-enamel-pin---boxlunch-exclusive/13339015.html",
+     "method": "search_snippet",
+     "note": "listing price per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pixar-bows-blind-box-enamel-pin---boxlunch-exclusive/13339015.html",
+     "method": "search_snippet",
+     "note": "US retailer"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-boxlunch-princess-soft-serve-mystery",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "each princess pin has its own soft-serve flavour",
+     "source_url": "https://disneypinsblog.com/disney-princess-soft-serve-blind-box-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "paraphrase; confirms one design per princess but princesses not named"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-boxlunch-mulan-mystery",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://flippingmagicalfinds.wordpress.com/2020/04/18/disney-mulan-blind-box/",
+     "method": "search_snippet",
+     "note": "Apr 2020 personal blog calls it a Loungefly Mulan blind box sold as a BoxLunch exclusive"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://flippingmagicalfinds.wordpress.com/2020/04/18/disney-mulan-blind-box/",
+     "method": "search_snippet",
+     "note": "blog says BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-boxlunch-nightmare-before-christmas-puzzle-blind-box",
+   "claims": [
+    {
+     "field": "pack_product_code",
+     "value": "13885865",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-puzzle-blind-box-enamel-pin---boxlunch-exclusive/13885865.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing number"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-puzzle-blind-box-enamel-pin---boxlunch-exclusive/13885865.html",
+     "method": "search_snippet",
+     "note": "listing: collect all eight to form a stylised portrait"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-boxlunch-disneyland-65th-anniversary-puzzle-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland 65th Anniversary Puzzle Blind Box Pins at BoxLunch",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-puzzle-blind-box-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-puzzle-blind-box-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "one mystery pin per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-24",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-puzzle-blind-box-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog release date"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-puzzle-blind-box-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch per title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-puzzle-blind-box-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "snippet says Loungefly made the set"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-puzzle-blind-box-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "per box/pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-puzzle-blind-box-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "puzzle"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-puzzle-blind-box-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "silver-tone pieces fit together into a park map"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://getreadycomics.com/product-category/loungefly/blind-box-pins/",
+     "method": "search_snippet",
+     "note": "comic shop listing: six versions, each with different attractions"
+    },
+    {
+     "field": "price",
+     "value": 7.42,
+     "source_url": "https://getreadycomics.com/product-category/loungefly/blind-box-pins/",
+     "method": "search_snippet",
+     "note": "third-party shop price per box; conflicts with DPB $9.90"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/boxlunch-pinocchio-wish",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/blogs/news/pinocchio-wish-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "DPB post credits Uncas International as creator"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/boxlunch-figaro-and-cleo",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/blogs/news/figaro-and-cleo-pinocchio-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "DPB post credits Uncas International as creator"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/boxlunch-little-mermaid-ariel",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-ariel-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "DPB post credits Uncas International as creator"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/boxlunch-mandalorian-the-child-pod",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars The Mandalorian The Child Pod BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-pod-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-pod-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-pod-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "released online Jan 2020 at BoxLunch"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-pod-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch release"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/boxlunch-mandalorian-the-child-protect-attack-snack",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars The Mandalorian The Child Protect, Attack, Snack BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-protect-attack-snack-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-protect-attack-snack-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-protect-attack-snack-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "released July 2020"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-protect-attack-snack-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-boxlunch-mickey-head-pastel-glitter",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse Head Pastel Glitter BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-head-pastel-glitter-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-head-pastel-glitter-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-head-pastel-glitter-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "released Oct 2020; post 31 Oct 2020"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-head-pastel-glitter-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "BoxLunch pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-boxlunch-aristocats-sassy-marie",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Aristocats Sassy Marie BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-aristocats-sassy-marie-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-aristocats-sassy-marie-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-aristocats-sassy-marie-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "released Aug 2020; post 2 Aug 2020"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-aristocats-sassy-marie-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch pin"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-aristocats-sassy-marie-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "Loungefly pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-boxlunch-cinderella-happily-ever-after",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cinderella Happily Ever After BoxLunch Disney Pin Set",
+     "source_url": "https://disneypinsblog.com/cinderella-happily-ever-after-boxlunch-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "listing: set of 2"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "set of 2 pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-11",
+     "source_url": "https://disneypinsblog.com/cinderella-happily-ever-after-boxlunch-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "released Nov 2020; post 17 Nov 2020"
+    },
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://disneypinsblog.com/cinderella-happily-ever-after-boxlunch-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/cinderella-happily-ever-after-boxlunch-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "title names Loungefly"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/cinderella-happily-ever-after-boxlunch-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Loungefly silver-tone set"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "title says BoxLunch Exclusive"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "14247187",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing; same name as DPB post"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-boxlunch-star-wars-jar-jar-jar",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Jar Jar Jar BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/star-wars-jar-jar-jar-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/star-wars-jar-jar-jar-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-11",
+     "source_url": "https://disneypinsblog.com/star-wars-jar-jar-jar-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "Nov 2020; post 5 Nov 2020 (page metadata conflicts)"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-jar-jar-jar-enamel-pin---boxlunch-exclusive/14065532.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-jar-jar-jar-enamel-pin---boxlunch-exclusive/14065532.html",
+     "method": "search_snippet",
+     "note": "title names Loungefly"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2020/loungefly-boxlunch-sleeping-beauty-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Sleeping Beauty Blind Box Loungefly Disney Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-blind-box-loungefly-disney-pins",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-blind-box-loungefly-disney-pins",
+     "method": "search_snippet",
+     "note": "one mystery pin per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-blind-box-loungefly-disney-pins",
+     "method": "search_snippet",
+     "note": "Nov 2020; post 14 Nov 2020; post text inconsistent on month"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-blind-box-loungefly-disney-pins",
+     "method": "search_snippet",
+     "note": "12-pin assortment"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-blind-box-loungefly-disney-pins",
+     "method": "search_snippet",
+     "note": "per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-blind-box-loungefly-disney-pins",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-blind-box-loungefly-disney-pins",
+     "method": "search_snippet",
+     "note": "title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-sleeping-beauty-blind-box-enamel-pin---boxlunch-exclusive/14247167.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-sleeping-beauty-blind-box-enamel-pin---boxlunch-exclusive/14247167.html",
+     "method": "search_snippet",
+     "note": "title names Loungefly"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-sleeping-beauty-blind-box-enamel-pin---boxlunch-exclusive/14247167.html",
+     "method": "search_snippet",
+     "note": "title says BoxLunch Exclusive"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "14247167",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-sleeping-beauty-blind-box-enamel-pin---boxlunch-exclusive/14247167.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princess-sleeping-beauty-blind-box-enamel-pin---boxlunch-exclusive/14247167.html",
+     "method": "search_snippet",
+     "note": "listing price"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2020/loungefly-boxlunch-disneyland-65th-anniversary/disneyland-65th",
+   "set_key": "lic/2020/loungefly-boxlunch-disneyland-65th-anniversary",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "blue-and-silver commemorative pin, $8.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disneyland-65th-anniversary-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-boxlunch-mandalorian-the-child-with-soup/the-child",
+   "set_key": "lic/2020/loungefly-boxlunch-mandalorian-the-child-with-soup",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars The Mandalorian The Child with Soup Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/star-wars-the-mandalorian-the-child-with-soup-enamel-pin---boxlunch-exclusive/13470978.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/star-wars-the-mandalorian-the-child-with-soup-enamel-pin---boxlunch-exclusive/13470978.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/star-wars-the-mandalorian-the-child-with-soup-enamel-pin---boxlunch-exclusive/13470978.html",
+     "method": "search_snippet",
+     "note": "title says BoxLunch Exclusive"
+    },
+    {
+     "field": "product_code",
+     "value": "13470978",
+     "source_url": "https://www.boxlunch.com/product/star-wars-the-mandalorian-the-child-with-soup-enamel-pin---boxlunch-exclusive/13470978.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing number; title matches DPB post name"
+    },
+    {
+     "field": "visual_description",
+     "value": "The Child holding his cup of broth",
+     "source_url": "https://www.boxlunch.com/product/star-wars-the-mandalorian-the-child-with-soup-enamel-pin---boxlunch-exclusive/13470978.html",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx. 38 x 25 mm (1.5 x 1 in)",
+     "source_url": "https://www.boxlunch.com/product/star-wars-the-mandalorian-the-child-with-soup-enamel-pin---boxlunch-exclusive/13470978.html",
+     "method": "search_snippet",
+     "note": "listing size"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-soup-boxlunch-star-wars-pin",
+     "method": "search_snippet",
+     "note": "DPB retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-soup-boxlunch-star-wars-pin",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/boxlunch-pinocchio-wish/pinocchio-jiminy-cricket",
+   "set_key": "lic/2020/boxlunch-pinocchio-wish",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/blogs/news/pinocchio-wish-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "DPB post says created by Uncas International"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/pinocchio-wish-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive per post"
+    },
+    {
+     "field": "original_price",
+     "value": 12.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/pinocchio-wish-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "DPB retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/pinocchio-wish-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pinocchio-wish-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "gold-tone pin-on-pin, Pinocchio and Jiminy looking at a star"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/boxlunch-figaro-and-cleo/figaro-cleo",
+   "set_key": "lic/2020/boxlunch-figaro-and-cleo",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/blogs/news/figaro-and-cleo-pinocchio-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "DPB post says created by Uncas International"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/figaro-and-cleo-pinocchio-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive per post"
+    },
+    {
+     "field": "original_price",
+     "value": 12.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/figaro-and-cleo-pinocchio-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "DPB retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/figaro-and-cleo-pinocchio-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/boxlunch-little-mermaid-ariel/ariel",
+   "set_key": "lic/2020/boxlunch-little-mermaid-ariel",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-ariel-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "DPB post says created by Uncas International"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-ariel-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive per post"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12-09",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-ariel-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "post date 9 Dec 2020"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-ariel-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "DPB retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-ariel-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "materials",
+     "value": "recycled metal",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-ariel-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "described as a recycled metal pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/boxlunch-mandalorian-the-child-pod/the-child",
+   "set_key": "lic/2020/boxlunch-mandalorian-the-child-pod",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars The Mandalorian The Child Pod BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-pod-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "The Child"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-pod-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "The Child in his pod"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-pod-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "Jan 2020"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-pod-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch online"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-pod-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "DPB retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-pod-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "product_code",
+     "value": "13113302",
+     "source_url": "https://www.boxlunch.com/product/star-wars-the-mandalorian-the-child-pod-enamel-pin/13113302.html",
+     "method": "search_snippet",
+     "note": "BoxLunch 'The Child Pod Enamel Pin' listing; linked by matching name only"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/boxlunch-mandalorian-the-child-protect-attack-snack/the-child",
+   "set_key": "lic/2020/boxlunch-mandalorian-the-child-protect-attack-snack",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars The Mandalorian The Child Protect, Attack, Snack BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-protect-attack-snack-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "The Child"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-protect-attack-snack-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "The Child pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-protect-attack-snack-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "July 2020"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-protect-attack-snack-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-protect-attack-snack-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "DPB retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-the-child-protect-attack-snack-boxlunch-pin",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-boxlunch-mickey-head-pastel-glitter/mickey-head",
+   "set_key": "lic/2020/loungefly-boxlunch-mickey-head-pastel-glitter",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Head Pastel Glitter BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-head-pastel-glitter-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-mouse-head-pastel-glitter-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "Mickey head silhouette"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-head-pastel-glitter-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "Oct 2020"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-head-pastel-glitter-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-head-pastel-glitter-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "DPB retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-head-pastel-glitter-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-head-pastel-glitter-enamel-pin/14247177.html",
+     "method": "search_snippet",
+     "note": "listing title and text name Loungefly"
+    },
+    {
+     "field": "visual_description",
+     "value": "glittery pastel Mickey head silhouette",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-head-pastel-glitter-enamel-pin/14247177.html",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-head-pastel-glitter-enamel-pin/14247177.html",
+     "method": "search_snippet",
+     "note": "glitter enamel"
+    },
+    {
+     "field": "product_code",
+     "value": "14247177",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-head-pastel-glitter-enamel-pin/14247177.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing; same product name as DPB post"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-boxlunch-aristocats-sassy-marie/marie",
+   "set_key": "lic/2020/loungefly-boxlunch-aristocats-sassy-marie",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Aristocats Sassy Marie BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-aristocats-sassy-marie-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Marie"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-aristocats-sassy-marie-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "Marie"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-aristocats-sassy-marie-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "Aug 2020"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-aristocats-sassy-marie-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-aristocats-sassy-marie-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-aristocats-sassy-marie-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "DPB retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-aristocats-sassy-marie-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "silver-tone"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-aristocats-sassy-marie-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "silver-tone metal"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-boxlunch-cinderella-happily-ever-after/cinderella-and-prince-charming",
+   "set_key": "lic/2020/loungefly-boxlunch-cinderella-happily-ever-after",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella",
+      "Prince Charming"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "character pin of Cinderella and her prince at the ball"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "both characters on one pin of the 2-pin set"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx. 35 mm wide (1 3/8 in)",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "listing size"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-11",
+     "source_url": "https://disneypinsblog.com/cinderella-happily-ever-after-boxlunch-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Nov 2020"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-boxlunch-cinderella-happily-ever-after/happily-ever-after-book",
+   "set_key": "lic/2020/loungefly-boxlunch-cinderella-happily-ever-after",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happily Ever After storybook pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "second pin is a Happily Ever After book"
+    },
+    {
+     "field": "visual_form",
+     "value": "book",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "storybook"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx. 38 mm wide (1 1/2 in)",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "listing size"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-cinderella-happily-ever-after-enamel-pin-set---boxlunch-exclusive/14247187.html",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-11",
+     "source_url": "https://disneypinsblog.com/cinderella-happily-ever-after-boxlunch-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "Nov 2020"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/loungefly-boxlunch-star-wars-jar-jar-jar/jar-jar-binks",
+   "set_key": "lic/2020/loungefly-boxlunch-star-wars-jar-jar-jar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Star Wars Jar Jar Jar Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-jar-jar-jar-enamel-pin---boxlunch-exclusive/14065532.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jar Jar Binks"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-jar-jar-jar-enamel-pin---boxlunch-exclusive/14065532.html",
+     "method": "search_snippet",
+     "note": "Jar Jar inside a jar"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-11",
+     "source_url": "https://disneypinsblog.com/star-wars-jar-jar-jar-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "Nov 2020"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-jar-jar-jar-enamel-pin---boxlunch-exclusive/14065532.html",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-jar-jar-jar-enamel-pin---boxlunch-exclusive/14065532.html",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-jar-jar-jar-enamel-pin---boxlunch-exclusive/14065532.html",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-jar-jar-jar-enamel-pin---boxlunch-exclusive/14065532.html",
+     "method": "search_snippet",
+     "note": "listing price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-jar-jar-jar-enamel-pin---boxlunch-exclusive/14065532.html",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "product_code",
+     "value": "14065532",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-jar-jar-jar-enamel-pin---boxlunch-exclusive/14065532.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing; same name as DPB post"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "gold-tone"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-jar-jar-jar-enamel-pin---boxlunch-exclusive/14065532.html",
+     "method": "search_snippet",
+     "note": "gold-tone"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2020/loungefly-boxlunch-pixar-bows-mystery/mike-wazowski",
+   "field": "pin_structure",
+   "searched": "1 query (BoxLunch listing + DPB)",
+   "note": "hold: mystery designs not individually confirmed; hold kept: listing still names Mike, Woody, Russell only as examples of the 10 styles"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-pixar-bows-mystery/woody",
+   "field": "pin_structure",
+   "searched": "1 query (BoxLunch listing + DPB)",
+   "note": "hold: mystery designs not individually confirmed; hold kept: listing still names Mike, Woody, Russell only as examples of the 10 styles"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-pixar-bows-mystery/russell",
+   "field": "pin_structure",
+   "searched": "1 query (BoxLunch listing + DPB)",
+   "note": "hold: mystery designs not individually confirmed; hold kept: listing still names Mike, Woody, Russell only as examples of the 10 styles"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-princess-soft-serve-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "princesses in the 10-pin set still not named by DPB or BoxLunch snippets; members not recorded"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-princess-soft-serve-mystery/rapunzel",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "lead only: a 2021 Disney Pin Forum trade post names this princess as a wanted pin from the 10-pin soft serve set; user post, not verification; hold: mystery designs not individually confirmed"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-princess-soft-serve-mystery/belle",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "lead only: a 2021 Disney Pin Forum trade post names this princess as a wanted pin from the 10-pin soft serve set; user post, not verification; hold: mystery designs not individually confirmed"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-princess-soft-serve-mystery/jasmine",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "lead only: a 2021 Disney Pin Forum trade post names this princess as a wanted pin from the 10-pin soft serve set; user post, not verification; hold: mystery designs not individually confirmed"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-lilo-stitch-summer-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "designs and set size still not stated; BoxLunch listing only says Stitch doing island activities"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-princess-sidekick-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no 2020 per-design list or set size found; later Floral (Mar 2021), Books (Apr 2021) and other sidekick sets surfaced instead and are not this release"
+  },
+  {
+   "key": "lic/2020/boxlunch-princess-perfume-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: BoxLunch listing 12679812 still gives the 9 princesses only as an assortment list; DPB 10-pin count unresolved; maker still unstated; no chase info"
+  },
+  {
+   "key": "lic/2020/boxlunch-princess-perfume-mystery/tiana",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; hold kept: no per-design evidence found"
+  },
+  {
+   "key": "lic/2020/boxlunch-princess-perfume-mystery/jasmine",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; hold kept: no per-design evidence found"
+  },
+  {
+   "key": "lic/2020/boxlunch-princess-perfume-mystery/cinderella",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; hold kept: no per-design evidence found"
+  },
+  {
+   "key": "lic/2020/boxlunch-princess-perfume-mystery/mulan",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; hold kept: no per-design evidence found"
+  },
+  {
+   "key": "lic/2020/boxlunch-princess-perfume-mystery/aurora",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; hold kept: no per-design evidence found"
+  },
+  {
+   "key": "lic/2020/boxlunch-princess-perfume-mystery/snow-white",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; hold kept: no per-design evidence found"
+  },
+  {
+   "key": "lic/2020/boxlunch-princess-perfume-mystery/belle",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; hold kept: no per-design evidence found"
+  },
+  {
+   "key": "lic/2020/boxlunch-princess-perfume-mystery/ariel",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; hold kept: no per-design evidence found"
+  },
+  {
+   "key": "lic/2020/boxlunch-princess-perfume-mystery/pocahontas",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; hold kept: no per-design evidence found"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-mulan-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: Apr 2020 blog gives a 10-name assortment list (Mulan, Mushu, Li Shang, Little Brother, Yao, Ling, Chien-Po, Khan, Cri-Kee, hair comb) vs DPB 9 pins; list only, not per-design"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-mulan-mystery/mulan",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; named only in an assortment list"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-mulan-mystery/mushu",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; named only in an assortment list"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-mulan-mystery/cri-kee",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; named only in an assortment list"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-mulan-mystery/li-shang",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; named only in an assortment list"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-mulan-mystery/yao",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; named only in an assortment list"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-mulan-mystery/ling",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; named only in an assortment list"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-mulan-mystery/chien-po",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; named only in an assortment list"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-mulan-mystery/khan",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; named only in an assortment list"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-mulan-mystery/little-brother",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; named only in an assortment list"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-mulan-mystery/hair-comb",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; named only in an assortment list"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-nightmare-before-christmas-puzzle-blind-box/jack-skellington",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; BoxLunch listing names characters collectively; which piece shows whom not stated (mayor, scary-teddy added to match packet 257)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-nightmare-before-christmas-puzzle-blind-box/sally",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; BoxLunch listing names characters collectively; which piece shows whom not stated (mayor, scary-teddy added to match packet 257)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-nightmare-before-christmas-puzzle-blind-box/mayor",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; BoxLunch listing names characters collectively; which piece shows whom not stated (mayor, scary-teddy added to match packet 257)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-nightmare-before-christmas-puzzle-blind-box/scary-teddy",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; BoxLunch listing names characters collectively; which piece shows whom not stated (mayor, scary-teddy added to match packet 257)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-nightmare-before-christmas-puzzle-blind-box/oogie-boogie",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; BoxLunch listing names characters collectively; which piece shows whom not stated (mayor, scary-teddy added to match packet 257)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-nightmare-before-christmas-puzzle-blind-box/zero",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; BoxLunch listing names characters collectively; which piece shows whom not stated (mayor, scary-teddy added to match packet 257)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-nightmare-before-christmas-puzzle-blind-box/lock-shock-barrel",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; BoxLunch listing names characters collectively; which piece shows whom not stated (mayor, scary-teddy added to match packet 257)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-nightmare-before-christmas-puzzle-blind-box",
+   "field": "is_chaser",
+   "searched": "1 query",
+   "note": "no chase described for this 8-piece set"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-disneyland-65th-anniversary",
+   "field": "release",
+   "searched": "2 queries",
+   "note": "lead resolved: the mystery set released alongside is the Disneyland 65th Anniversary Puzzle blind box (see loungefly-boxlunch-disneyland-65th-anniversary-puzzle-mystery)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-disneyland-65th-anniversary-puzzle-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "designs not named per pin; Space Mountain and Sleeping Beauty Castle cited only as examples; a marketplace listing naming others was not used"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-disneyland-65th-anniversary-puzzle-mystery",
+   "field": "pack_product_code",
+   "searched": "2 queries",
+   "note": "BoxLunch listing for the puzzle set not found (map lanyard 13884238 is a different product)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-mandalorian-the-child-with-soup/the-child",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "still unconfirmed: pin listing title omits Loungefly, unlike the Loungefly-branded soup keychain 13513067; loungefly slug in key is provisional"
+  },
+  {
+   "key": "lic/2020/boxlunch-pinocchio-wish/pinocchio-jiminy-cricket",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "hold from packet 256 resolved by per-pin DPB snippet naming Uncas International; key slug boxlunch-* kept unchanged (keys are opaque)"
+  },
+  {
+   "key": "lic/2020/boxlunch-figaro-and-cleo/figaro-cleo",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "hold from packet 256 resolved by per-pin DPB snippet naming Uncas International; key slug boxlunch-* kept unchanged (keys are opaque)"
+  },
+  {
+   "key": "lic/2020/boxlunch-little-mermaid-ariel/ariel",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "hold from packet 256 resolved by per-pin DPB snippet naming Uncas International; key slug boxlunch-* kept unchanged (keys are opaque)"
+  },
+  {
+   "key": "lic/2020/boxlunch-figaro-and-cleo",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "BoxLunch listing 12539651 is a Loungefly 2-pin Figaro & Cleo set (DPB dates a 2-pin set Nov 2019) and 34923153 a later single pin; neither linked to this Dec 2020 Uncas pin"
+  },
+  {
+   "key": "lic/2020/boxlunch-mandalorian-the-child-pod/the-child",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "hold: listing 13113302 linked to the DPB Jan 2020 pin by matching name only; a larger $18.90 Baby Yoda Pod pin (32461535) is a different product"
+  },
+  {
+   "key": "lic/2020/boxlunch-mandalorian-the-child-pod/the-child",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "maker not stated in snippets"
+  },
+  {
+   "key": "lic/2020/boxlunch-mandalorian-the-child-protect-attack-snack/the-child",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "DPB credits no maker"
+  },
+  {
+   "key": "lic/2020/boxlunch-mandalorian-the-child-protect-attack-snack/the-child",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "not linked: BoxLunch 'Snack Time' pin 13205587 (undated) may or may not be this pin; subject match only"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-mickey-head-pastel-glitter/mickey-head",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "BoxLunch listing title does not say BoxLunch Exclusive"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-aristocats-sassy-marie/marie",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "BoxLunch listing not found"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-sleeping-beauty-blind-box",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "DPB post linked to listing 14247167 by identical assortment wording and price, not subject alone; 7 characters plus two glitter styles listed; 12 designs not individually described"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-sleeping-beauty-blind-box/aurora",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (character named only in an assortment list)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-sleeping-beauty-blind-box/prince-phillip",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (character named only in an assortment list)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-sleeping-beauty-blind-box/maleficent",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (character named only in an assortment list)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-sleeping-beauty-blind-box/dragon-maleficent",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (character named only in an assortment list)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-sleeping-beauty-blind-box/flora",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (character named only in an assortment list)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-sleeping-beauty-blind-box/fauna",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (character named only in an assortment list)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-sleeping-beauty-blind-box/merryweather",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (character named only in an assortment list)"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-mike-sulley-layered",
+   "field": "release",
+   "searched": "1 query",
+   "note": "lead kept: listing 13339021 ($9.90, gold-tone layered, Mike and Sulley peeking through a door) still undated; no DPB post found"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-mandalorian-mando-child-chibi",
+   "field": "release",
+   "searched": "1 query",
+   "note": "lead kept: listing 14862715 (silver-tone chibi, $8.90, BoxLunch Exclusive) still undated; no DPB post found"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-cruella-holiday",
+   "field": "release",
+   "searched": "1 query",
+   "note": "lead kept: listing 15848130 still undated; DPB Cruella Christmas pin of Nov 2021 may be a different pin"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-winnie-the-pooh-mystery",
+   "field": "release",
+   "searched": "1 query",
+   "note": "lead kept: listing 12499557 still undated; assortment list Pooh, Tigger, Piglet, Eeyore, Roo only"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-toy-story-holiday-set",
+   "field": "release",
+   "searched": "1 query",
+   "note": "lead kept: listing 12626189 undated; describes three aliens in Santa hats; hold: confirm pin structure (pack, single multi-character pin, or mystery designs)"
+  },
+  {
+   "key": "lic/2020/boxlunch-mandalorian-the-child-with-frog",
+   "field": "release",
+   "searched": "1 query",
+   "note": "lead: listing 13470972 'The Child with Frog' BoxLunch Exclusive, undated; not linked to Oct 2020 (DPB has a separate Oct 2021 Child with Frogs pin; FiGPiN 511 is in packet 260)"
+  },
+  {
+   "key": "lic/2020/boxlunch-mulan-little-brother",
+   "field": "release",
+   "searched": "1 query",
+   "note": "lead: listing 11658559 Mulan Little Brother pin, BoxLunch Exclusive, undated"
+  },
+  {
+   "key": "lic/2020/boxlunch-lilo-stitch-surfing-slider",
+   "field": "release",
+   "searched": "1 query",
+   "note": "lead: listing 11566112 Lilo & Stitch Surfing Slider pin, BoxLunch Exclusive, $9.90, undated"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-millennium-falcon-cake",
+   "field": "release",
+   "searched": "1 query",
+   "note": "lead: listing 14065534 Loungefly Millennium Falcon Cake pin, BoxLunch Exclusive, undated; adjacent listing number to Jar Jar Jar is not evidence of date"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-toy-story-alien-as-forky",
+   "field": "release",
+   "searched": "1 query",
+   "note": "lead: listing 13383756 Loungefly Alien as Forky pin, BoxLunch Exclusive, undated"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-pride",
+   "field": "release",
+   "searched": "1 query",
+   "note": "lead: Loungefly Pride Logo (15204273) and Pride Rainbow Stitch (15266731) BoxLunch Exclusive pins, undated; no 2020 date found"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-earth-day-mystery",
+   "field": "release",
+   "searched": "1 query",
+   "note": "listing 13011345 Earth Day blind box undated; likely the set keyed lic/2021/loungefly-boxlunch-earth-day-mystery in packet 255; not duplicated"
+  },
+  {
+   "key": "lic/2020/boxlunch-april-june-2020",
+   "field": "release",
+   "searched": "3 queries",
+   "note": "no BoxLunch Disney pin dated April-June 2020 found in DPB snippets or weekly round-ups (May/June 2020 weekly posts cover park releases)"
+  },
+  {
+   "key": "lic/2020/loungefly-oliver-company-pin-set",
+   "field": "retailer",
+   "searched": "0 queries",
+   "note": "cross-reference: packet 257 already records BoxLunch as a retailer of this 2020 Loungefly 4-pin set; not re-keyed here"
+  },
+  {
+   "key": "lic/2020/loungefly-boxlunch-robin-hood",
+   "field": "release",
+   "searched": "0 queries",
+   "note": "not searched here; lead held in packet 280 (BoxLunch Robin Hood 12308559 and Little John 12806929 pins, undated)"
+  }
+ ],
+ "discovery_notes": "Follow-up to 256 (b075); reuses its keys (and 257 for shared NBC puzzle, DL65). 29 standard searches, snippets only. Holds resolved: Dec 2020 Pinocchio Wish, Figaro & Cleo, Ariel maker = Uncas International (per-pin DPB snippets); DL65 'mystery set' lead = DL65 Puzzle blind box. Holds kept: Perfume, Mulan, Pixar Bows, NBC Puzzle, Soft Serve (forum lead only), Sleeping Beauty (new). New: Child Pod (Jan), Protect Attack Snack (Jul), Sassy Marie (Aug), DL65 Puzzle set (Sep), Mickey Pastel Glitter (Oct), Cinderella HEA 2-pin set, Jar Jar Jar, Sleeping Beauty blind box (Nov). Child with Soup maker still unknown. No Apr-Jun 2020 BoxLunch pins found. Sleeping Beauty key matches concurrent packet 280 lead key (loungefly-boxlunch-sleeping-beauty-blind-box)."
+}

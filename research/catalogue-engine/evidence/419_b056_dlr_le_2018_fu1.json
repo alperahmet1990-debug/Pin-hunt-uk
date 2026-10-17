@@ -1,0 +1,1882 @@
+{
+ "packet_id": "backfill-b056-dlr-le-2018-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b056",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/disney-parks-september-2018-pin-preview/",
+   "title": "Disney Parks September 2018 Pin Preview",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-parks-october-2018-pin-preview",
+   "title": "Disney Parks October 2018 Pin Preview",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/halloween-2018-cast-member-pin",
+   "title": "Halloween 2018 Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/halloween-2018-cast-member-disney-pins",
+   "title": "Halloween 2018 Cast Member Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+   "title": "New Disney Pins November 2018 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/182012",
+   "title": "182012",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+   "title": "New Disney Pins December 2018 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-california-adventure-food-wine-festival-2018-pin",
+   "title": "Disney California Adventure Food & Wine Festival 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneyfashionista.com/take-a-closer-look-at-the-2018-disney-california-adventure-food-wine-festival-merchandise/",
+   "title": "Take a Closer Look at the 2018 Disney California Adventure Food & Wine Festival Merchandise",
+   "publisher": "Disney Fashionista",
+   "published_date": "2018-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+   "title": "Channel 28 Disney Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-pin-trading-night-event-august-2018",
+   "title": "Disney Pin Trading Night Event August 2018",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-club-33-box-set-by-shag/",
+   "title": "Disneyland Club 33 Box Set By Shag",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/club-33-exclusive-1901-disney-pin",
+   "title": "Club 33 Exclusive 1901 Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/lunar-new-year-2018-disney-pins/",
+   "title": "Lunar New Year 2018 Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+   "title": "New Disney Pins February 2018 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/lunar-new-year-2018-ap-button",
+   "title": "Lunar New Year 2018 AP Button",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+   "title": "New Disney Pins December 2018 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2018-week-5",
+   "title": "New Disney Pins March 2018 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://carstairsconsiders.blogspot.com/2020/01/disney-pin-review-ursula-windows-of.html",
+   "title": "Disney Pin Review: Ursula - Windows of Evil - 2018 Release",
+   "publisher": "Carstairs Considers",
+   "published_date": "2020-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://carstairsconsiders.blogspot.com/2020/01/disney-pin-review-ariel-windows-of.html",
+   "title": "Disney Pin Review: Ariel - Windows of Magic - 2019 Release",
+   "publisher": "Carstairs Considers",
+   "published_date": "2020-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickeys-halloween-party-2018-annual-passholder-button/",
+   "title": "Mickey's Halloween Party 2018 Annual Passholder Button",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickeys-halloween-party-2018-pins/",
+   "title": "Mickey's Halloween Party 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://blog.disneygeek.com/2018/06/19/pixar-pier-merchandise-fact-sheet/",
+   "title": "Pixar Pier Merchandise Fact Sheet",
+   "publisher": "The Geek's Blog @ disneygeek.com",
+   "published_date": "2018-06-19",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pixar-pier-wdi-mystery-pin-collection",
+   "title": "Pixar Pier WDI Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.micechat.com/211619-lets-celebrate-mickey-minnie-90th-into-2019/",
+   "title": "Let's Celebrate Mickey & Minnie's 90th into 2019",
+   "publisher": "MiceChat",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-2",
+   "title": "New Disney Pins January 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2018/windows-of-evil",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Window of Evil",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "DPB names the Disneyland collection Window of Evil and numbers each pin"
+    },
+    {
+     "field": "format",
+     "value": "numbered single-pin series",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "each pin released separately and numbered within the collection"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "pins described as part of the collection at Disneyland"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2018-week-5",
+     "method": "search_snippet",
+     "note": "series pins issued as LEs"
+    },
+    {
+     "field": "format",
+     "value": "sporadic monthly single-pin series",
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/01/disney-pin-review-ursula-windows-of.html",
+     "method": "search_snippet",
+     "note": "review describes villains in faux stained-glass windows released through 2018-2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2018/holiday-season-2018-ugly-sweater-mystery",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-11-29",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "after PTN RSP, released generally at DL and WDW Nov 29, 2018"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "two random pins per box"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2018/passholder-happy-holidays-2018-ornament-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Passholder Happy Holidays 2018 Ornament & Pin Set",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "annual AP ornament and pin set"
+    },
+    {
+     "field": "format",
+     "value": "ornament and pin set",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "ornament plus pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "price",
+     "value": 44.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$44.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "available at DLR Dec 6, 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort (Annual Passholders)",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "AP exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2018/dca-food-wine-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney California Adventure Food & Wine Festival 2018 Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-california-adventure-food-wine-festival-2018-pin",
+     "method": "search_snippet",
+     "note": "festival pin post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney California Adventure",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-california-adventure-food-wine-festival-2018-pin",
+     "method": "search_snippet",
+     "note": "DCA festival, Mar 2-Apr 12 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2018/channel-28",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Channel 28 Disney Pin Collection",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "PTN Aug 2018 RSP collection"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-pin-trading-night-event-august-2018",
+     "method": "search_snippet",
+     "note": "first offered at DL Pin Trading Night Aug 23, 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Pin Trading Night, Star Wars Launch Bay",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-pin-trading-night-event-august-2018",
+     "method": "search_snippet",
+     "note": "Tomorrowland event, $15 admission"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland exclusive",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "exclusive to Disneyland, PTN first"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE pieces"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2018/channel-28-wonderful-world-box-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Wonderful World of Disney Box Set",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "Channel 28 box set"
+    },
+    {
+     "field": "format",
+     "value": "boxed set",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "box set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "four pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "price",
+     "value": 74.99,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "$74.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2018/channel-28-song-box-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Channel 28 Song Box Set",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "one summary lists a four-pin song box set"
+    },
+    {
+     "field": "format",
+     "value": "boxed set",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "box set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "four pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "price",
+     "value": 100.0,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "$100.00"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2018/channel-28-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Channel 28 Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "mystery set"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "2 random pins per box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "12 pins total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "two per box"
+    },
+    {
+     "field": "has_chaser",
+     "value": false,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "no chasers"
+    },
+    {
+     "field": "edition_size",
+     "value": 2400,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "2,400 boxes (box count, not per pin)"
+    },
+    {
+     "field": "price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "$19.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2018/club-33-shag-box-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Club 33 Box Set by Shag",
+     "source_url": "https://disneypinsblog.com/disneyland-club-33-box-set-by-shag/",
+     "method": "search_snippet",
+     "note": "Shag-designed box set"
+    },
+    {
+     "field": "format",
+     "value": "boxed set",
+     "source_url": "https://disneypinsblog.com/disneyland-club-33-box-set-by-shag/",
+     "method": "search_snippet",
+     "note": "box set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disneyland-club-33-box-set-by-shag/",
+     "method": "search_snippet",
+     "note": "4 pin set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-club-33-box-set-by-shag/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disneyland-club-33-box-set-by-shag/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://disneypinsblog.com/disneyland-club-33-box-set-by-shag/",
+     "method": "search_snippet",
+     "note": "Sept 2018 post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Club 33 (members only)",
+     "source_url": "https://disneypinsblog.com/disneyland-club-33-box-set-by-shag/",
+     "method": "search_snippet",
+     "note": "member exclusive"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2018/windows-of-evil/hades",
+   "set_key": "dlr/2018/windows-of-evil",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Window of Evil - Hades",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2018-week-5",
+     "method": "search_snippet",
+     "note": "Window of Evil pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hades"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2018-week-5",
+     "method": "search_snippet",
+     "note": "villain featured"
+    },
+    {
+     "field": "set_position",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2018-week-5",
+     "method": "search_snippet",
+     "note": "called pin number 3 in the collection at Disneyland"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2018-week-5",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2018-week-5",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2018-week-5",
+     "method": "search_snippet",
+     "note": "retail $16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2018-week-5",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-29",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2018-week-5",
+     "method": "search_snippet",
+     "note": "available at DLR on this date"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2018-week-5",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2018-week-5",
+     "method": "search_snippet",
+     "note": "DLR release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/windows-of-evil/dr-facilier",
+   "set_key": "dlr/2018/windows-of-evil",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Window of Evil - Dr. Facilier",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "Window of Evil pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dr. Facilier"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "villain featured"
+    },
+    {
+     "field": "set_position",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "called pin number 6 in the collection at Disneyland"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "retail $16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-29",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "available at DLR on this date"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "DLR release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/windows-of-evil/chernabog",
+   "set_key": "dlr/2018/windows-of-evil",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Window of Evil - Chernabog",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "Window of Evil pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chernabog"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "villain featured"
+    },
+    {
+     "field": "set_position",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "called pin number 7 in the collection at Disneyland"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "retail $16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-29",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "available at DLR on this date"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "DLR release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/windows-of-evil/kaa",
+   "set_key": "dlr/2018/windows-of-evil",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Window of Evil - Kaa",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "Window of Evil pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kaa"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "villain featured"
+    },
+    {
+     "field": "set_position",
+     "value": 9,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "called pin number 9 in the collection at Disneyland"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "retail $16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "available at DLR on this date"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "DLR release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/windows-of-evil/queen-of-hearts",
+   "set_key": "dlr/2018/windows-of-evil",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Window of Evil - Queen of Hearts",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "Window of Evil pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Queen of Hearts"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "villain featured"
+    },
+    {
+     "field": "set_position",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "called pin number 10 in the collection at Disneyland"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "retail $16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "available at DLR on this date"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "DLR release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/windows-of-evil/ursula",
+   "set_key": "dlr/2018/windows-of-evil",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ursula - Windows of Evil",
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/01/disney-pin-review-ursula-windows-of.html",
+     "method": "search_snippet",
+     "note": "fan review of the Ursula window pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ursula",
+      "Flotsam",
+      "Jetsam"
+     ],
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/01/disney-pin-review-ursula-windows-of.html",
+     "method": "search_snippet",
+     "note": "Ursula with Flotsam and Jetsam in the corners"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/01/disney-pin-review-ursula-windows-of.html",
+     "method": "search_snippet",
+     "note": "single window pin showing all three"
+    },
+    {
+     "field": "main_character",
+     "value": "Ursula",
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/01/disney-pin-review-ursula-windows-of.html",
+     "method": "search_snippet",
+     "note": "Ursula is the focus"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04",
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/01/disney-pin-review-ursula-windows-of.html",
+     "method": "search_snippet",
+     "note": "review gives an April 2018 release"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/01/disney-pin-review-ursula-windows-of.html",
+     "method": "search_snippet",
+     "note": "titled a 2018 release"
+    },
+    {
+     "field": "visual_description",
+     "value": "Ursula in a faux stained-glass window with Ariel silhouette; backed, so no light passes",
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/01/disney-pin-review-ursula-windows-of.html",
+     "method": "search_snippet",
+     "note": "paraphrase of review"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/haunted-mansion-holiday-2018/gingerbread",
+   "set_key": "dlr/2018/haunted-mansion-holiday-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Mansion Holiday 2018 Gingerbread Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "HMH 2018 gingerbread pin in weekly roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-29",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "available at DLR Nov 29, 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/holiday-season-2018-ugly-sweater-mystery/goofy",
+   "set_key": "dlr/2018/holiday-season-2018-ugly-sweater-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://mypincentral.com/pin/182012",
+     "method": "search_snippet",
+     "note": "per-pin entry: Goofy design in the 2018 Ugly Christmas Sweater mystery collection"
+    },
+    {
+     "field": "visual_description",
+     "value": "Goofy in an orange sweater vest",
+     "source_url": "https://mypincentral.com/pin/182012",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/182012",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/dca-food-wine-2018/annual-passholder",
+   "set_key": "dlr/2018/dca-food-wine-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "DCA Food & Wine Festival 2018 Annual Passholder Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-california-adventure-food-wine-festival-2018-pin",
+     "method": "search_snippet",
+     "note": "AP pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-california-adventure-food-wine-festival-2018-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-california-adventure-food-wine-festival-2018-pin",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneyfashionista.com/take-a-closer-look-at-the-2018-disney-california-adventure-food-wine-festival-merchandise/",
+     "method": "search_snippet",
+     "note": "AP pin $16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneyfashionista.com/take-a-closer-look-at-the-2018-disney-california-adventure-food-wine-festival-merchandise/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "front_text",
+     "value": "Swirl, Sip & Savor",
+     "source_url": "https://disneyfashionista.com/take-a-closer-look-at-the-2018-disney-california-adventure-food-wine-festival-merchandise/",
+     "method": "search_snippet",
+     "note": "words on the pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "horizontal blue pin",
+     "source_url": "https://disneyfashionista.com/take-a-closer-look-at-the-2018-disney-california-adventure-food-wine-festival-merchandise/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-california-adventure-food-wine-festival-2018-pin",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/dca-food-wine-2018/logo",
+   "set_key": "dlr/2018/dca-food-wine-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "DCA Food & Wine Festival 2018 Logo Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-california-adventure-food-wine-festival-2018-pin",
+     "method": "search_snippet",
+     "note": "logo pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-california-adventure-food-wine-festival-2018-pin",
+     "method": "search_snippet",
+     "note": "LR"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-california-adventure-food-wine-festival-2018-pin",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/channel-28/mickey-donald-guide",
+   "set_key": "dlr/2018/channel-28",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey and Donald Guide",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "Channel 28 collection piece"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-23",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "PTN release"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "feature stated"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "listed as a single pin entry"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/channel-28/walt-spinner",
+   "set_key": "dlr/2018/channel-28",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Walt Pin",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "Channel 28 collection piece"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-23",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "PTN release"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Walt Disney"
+     ],
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "lenticular",
+      "spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "feature stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/channel-28/donald-spinner",
+   "set_key": "dlr/2018/channel-28",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck Spinner Pin",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "Channel 28 collection piece"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-23",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "PTN release"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "feature stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/channel-28/tv-jumbo",
+   "set_key": "dlr/2018/channel-28",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Channel 28 TV Jumbo Pin",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "Channel 28 collection piece"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "original_price",
+     "value": 74.99,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "$74.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-23",
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "PTN release"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "jumbo",
+      "sculpted metal"
+     ],
+     "source_url": "https://disneypinsblog.com/channel-28-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "feature stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/club-33-1901/1901",
+   "set_key": "dlr/2018/club-33-1901",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Club 33 Exclusive 1901 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/club-33-exclusive-1901-disney-pin",
+     "method": "search_snippet",
+     "note": "Club 33 member pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "golden mirror-style pin showing 1901",
+     "source_url": "https://disneypinsblog.com/blogs/news/club-33-exclusive-1901-disney-pin",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "front_text",
+     "value": "1901",
+     "source_url": "https://disneypinsblog.com/blogs/news/club-33-exclusive-1901-disney-pin",
+     "method": "search_snippet",
+     "note": "date shown"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/club-33-exclusive-1901-disney-pin",
+     "method": "search_snippet",
+     "note": "available to members as of Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Club 33 (members)",
+     "source_url": "https://disneypinsblog.com/blogs/news/club-33-exclusive-1901-disney-pin",
+     "method": "search_snippet",
+     "note": "member exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/cast-member-halloween-2018/evil-queen",
+   "set_key": "dlr/2018/cast-member-halloween-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Halloween 2018 Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-2018-cast-member-pin",
+     "method": "search_snippet",
+     "note": "cast member Halloween pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-2018-cast-member-pin",
+     "method": "search_snippet",
+     "note": "features the Evil Queen"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-2018-cast-member-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-2018-cast-member-pin",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-2018-cast-member-pin",
+     "method": "search_snippet",
+     "note": "spotted Sept 13, 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Company D, Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-2018-cast-member-pin",
+     "method": "search_snippet",
+     "note": "cast member store at Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/lunar-new-year-2018/mickey-minnie-ap",
+   "set_key": "dlr/2018/lunar-new-year-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lunar New Year 2018 Mickey & Minnie Annual Passholder Pin",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2018-disney-pins/",
+     "method": "search_snippet",
+     "note": "AP exclusive"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2018-disney-pins/",
+     "method": "search_snippet",
+     "note": "Mickey & Minnie"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2018-disney-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2018-disney-pins/",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2018-disney-pins/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2018-disney-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2018-disney-pins/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney California Adventure (Annual Passholders)",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2018-disney-pins/",
+     "method": "search_snippet",
+     "note": "DCA LNY AP pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/lunar-new-year-2018/pluto",
+   "set_key": "dlr/2018/lunar-new-year-2018",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+     "method": "search_snippet",
+     "note": "Feb wk1 post says released in California the previous week, then WDW Feb 1"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2018/windows-of-evil/ursula",
+   "field": "set_position",
+   "searched": "2 queries; DPB + review",
+   "note": "hold: position 4 seen only on reseller/listing sites; DPB wording for Ursula not surfaced; edition size not tied to a permitted page"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil",
+   "field": "pins",
+   "searched": "5 queries; DPB weekly posts",
+   "note": "positions 1, 2, 5 and 8 not named in permitted snippets; series may have begun late 2017 per a reseller"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil",
+   "field": "expected_pin_count",
+   "searched": "DPB Jan 2019 wk2; reseller",
+   "note": "DPB calls Cruella pin 12 the final one (Scar 11, both Jan 2019, out of year); a reseller says 13-pin set; not recorded"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/dr-facilier",
+   "field": "pin_name",
+   "searched": "Mysterious Shadows + Window of Evil queries",
+   "note": "distinct from the Mysterious Shadows Dr. Facilier party pin (reseller lead); do not merge"
+  },
+  {
+   "key": "dlr/2018/haunted-mansion-holiday-2018/gingerbread",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "hold: may duplicate B012 key oogies-holiday-tricks-and-treats (also LE 3,000, $16.99); confirm whether same pin"
+  },
+  {
+   "key": "dlr/2018/haunted-mansion-holiday-2018-tarot-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed; 'The Big Witch' named only on a reseller listing (distradingpins4u)"
+  },
+  {
+   "key": "dlr/2018/holiday-season-2018-ugly-sweater-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (except Goofy via MPC); 10-character list only on reseller yourwdwstore; not recorded"
+  },
+  {
+   "key": "dlr/2018/holiday-season-2018-ugly-sweater-mystery",
+   "field": "set_key",
+   "searched": "cross-check 416",
+   "note": "same set as wdw/2018/holiday-season-rsp-ugly-sweater-mystery (B054); keys kept per resort as in B010/B012"
+  },
+  {
+   "key": "dlr/2018/passholder-happy-holidays-2018-ornament-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); number/design of pins not in snippet"
+  },
+  {
+   "key": "dlr/2018/passholder-happy-holidays-2018-ornament-pin-set",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "a WDW version LE 1,000 appears in the same post; a reader comment queried its placement; WDW item not recorded here"
+  },
+  {
+   "key": "dlr/2018/dca-food-wine-2018/logo",
+   "field": "visual_description",
+   "searched": "2 queries",
+   "note": "hold: Fashionista's $14.99 vertical Chef Mickey pin likely the DPB logo pin but link rests on context; price/design not recorded"
+  },
+  {
+   "key": "dlr/2018/channel-28-wonderful-world-box-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: four box pins not named; pin-on-pin with dangle per DPB; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2018/channel-28-song-box-set",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "hold: Song box set appears in one summary only; a second search of the same post did not surface it; members not named"
+  },
+  {
+   "key": "dlr/2018/channel-28-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed; 12 designs unnamed"
+  },
+  {
+   "key": "dlr/2018/club-33-shag-box-set/bartender",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "hold: 'Bartender' named only in the box set listing; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2018/club-33-shag-box-set/cello-player",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "hold: 'Cello Player' named only in the box set listing; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2018/club-33-shag-box-set/club-33-guests",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "hold: 'Club 33 guests' named only in the box set listing; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2018/club-33-shag-box-set/waitress",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "hold: 'Waitress' named only in the box set listing; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2018/club-33-1901/1901",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "hold: snippet does not name the resort; DLR assumed from the 1901 lounge name only; edition size/price not stated"
+  },
+  {
+   "key": "dlr/2018/cast-member-halloween-2018",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "lead: 4 villain CM pins (Cruella, Evil Queen, Maleficent, Ursula) LE 250 $14.95, Oct 25 2018 at Burbank/Glendale employee centers - not DLR; not recorded"
+  },
+  {
+   "key": "dlr/2018/lunar-new-year-2018/pluto",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "partial: B012 gap narrowed to late Jan 2018 (DLR) per DPB Feb 2018 wk1; exact day not stated"
+  },
+  {
+   "key": "dlr/2018/lunar-new-year-2018-ap-button",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "scope: confirmed button/badge/non-pin (DPB titles it a Lunar New Year 2018 AP button, Pluto, DLR APs)"
+  },
+  {
+   "key": "dlr/2018/mickeys-halloween-party-2018-mysterious-shadows-box-set",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "hold kept: four box pins still unnamed; Dr. Facilier LE 1,000 (one of 7 in series, 4 in box) seen only on reseller ecrater; not recorded"
+  },
+  {
+   "key": "dlr/2018/mickeys-halloween-party-2018/jack-skellington-ap",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: DPB also has a separate MHP 2018 AP button post; confirm the Jack LE 5,000 record is the pin, not the button"
+  },
+  {
+   "key": "dlr/2018/pixar-pier-opening",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "no Pixar Pier opening LE named; fact sheet only says LE Pixar pins through summer (Pixar Fest sets in B012)"
+  },
+  {
+   "key": "dlr/2018/pixar-pier-opening",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: Pixar Pier WDI mystery set (24 pins, $16.95, Jul 9 2018) sold at Mickey's of Glendale to cast - not DLR; not recorded"
+  },
+  {
+   "key": "dlr/2018/mickey-90th",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Get Your Ears On began Jan 2019 (out of year); Destination D 90th pin LE 1,000 was a WDW event; no new DLR Nov 2018 LE found"
+  },
+  {
+   "key": "dlr/2018/windows-of-magic",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "Windows of Magic began 2019 per fan review (Windows of Evil ran 2018); no 2018 entry; crests not searched"
+  },
+  {
+   "key": "dlr/2018",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "Sept/Oct 2018 DPB weekly round-ups still not surfaced; monthly previews show headers only; Sep/Oct shopDisney Park Packs are dsus leads"
+  },
+  {
+   "key": "dlr/2018/tape-series",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "not re-searched this pass (budget); other 2018 tape pins still unknown"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 of B012. 30 standard WebSearch queries, all search_snippet, blocked domains passed every time. Mainly Disney Pins Blog weekly/event posts, plus MyPinCentral, Disney Fashionista, Carstairs Considers, disneygeek, MiceChat. Resellers (ecrater, distradingpins4u, yourwdwstore, disneythemepark.biz, pintrader.club) and disneypinforum seen but not used as evidence. Reuses B012 keys (HMH 2018, ugly sweater, Lunar New Year, MHP). New: Window of Evil series (DLR-only, excluded by B010), Channel 28 PTN Aug 2018, DCA Food & Wine 2018, Club 33 Shag box/1901, Halloween CM Evil Queen, AP holiday ornament set. No B012 holds released; holds kept on tarot, ugly sweater, Mysterious Shadows box. No OE added (418 covers). No prompt-injection seen."
+}

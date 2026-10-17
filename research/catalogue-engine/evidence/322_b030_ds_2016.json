@@ -1,0 +1,3662 @@
+{
+ "packet_id": "backfill-b030-ds-2016",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b030",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+   "title": "Finding Nemo Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-02-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+   "title": "Winnie the Pooh Balloon Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+   "title": "Scar Disney Store UK Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+   "title": "Alice in Wonderland 65th Paris Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+   "title": "Mary Poppins Pin - Disney Store UK",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/zootopia-pin-disney-store-uk/",
+   "title": "Zootopia Pin - Disney Store UK",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+   "title": "Christmas Mickey and Minnie Pin - Europe",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/zootopia-pin-set",
+   "title": "Zootopia Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/zootopia-pin-set-released-at-disney-store/",
+   "title": "Zootopia Pin Set Released at Disney Store",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+   "title": "Zootopia LE 800 Pin Set - Disney Store Purchase",
+   "publisher": "Flickr (collector photo log)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/finding-dory-pin-set/",
+   "title": "Finding Dory Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+   "title": "Disney Store Finding Dory Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+   "title": "Alice Through the Looking Glass Limited Edition Pin Set Out Now",
+   "publisher": "DisKingdom",
+   "published_date": "2016-04-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+   "title": "Captain America: Civil War Limited Edition Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2016/03/03/captain-america-civil-war-limited-edition-pin-set-now/",
+   "title": "Captain America: Civil War Limited Edition Pin Set Out Now",
+   "publisher": "DisKingdom",
+   "published_date": "2016-03-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin-set/",
+   "title": "Snow White and the Seven Dwarfs Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/snow-white-and-the-seven-dwarfs-surprise-pin-set-release-le-500.57082/",
+   "title": "Snow White and The Seven Dwarfs Surprise Pin Set Release! LE 500",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+   "title": "Disney Animation LE Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2016/08/01/disney-animation-pin-box-set-now/",
+   "title": "Disney Animation Pin Box Set Out Now",
+   "publisher": "DisKingdom",
+   "published_date": "2016-08-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+   "title": "Disney Moana Limited Edition Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://insidethemagic.net/merchandise/disney-moana-limited-edition-pin-set/",
+   "title": "Disney Moana limited edition pin set",
+   "publisher": "Inside the Magic",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/marvel-doctor-strange-pin-set/",
+   "title": "Marvel Doctor Strange Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/captain-america-75th-anniversary-pin-set/",
+   "title": "Captain America 75th Anniversary Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/us-disney-store-captain-america-75th-anniversary-pin-set-limited-edition.58191/",
+   "title": "US Disney Store Captain America 75th Anniversary Pin Set - Limited Edition",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+   "title": "Disney Store Beauty and the Beast 25th Anniversary Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+   "title": "Rogue One Death Star Pin - USA",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://disneypinsblog.com/rogue-one-star-wars-story-jumbo-pin/",
+   "title": "Rogue One: A Star Wars Story Jumbo Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/disney-storybook-classics-pin.57779/",
+   "title": "Disney Storybook Classics Pin",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pecos-bill-pin/",
+   "title": "Pecos Bill Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/peter-wolf-pin/",
+   "title": "Peter and the Wolf Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/lambert-sheepish-lion-pin",
+   "title": "Lambert, the Sheepish Lion Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/upon-wintertime-pin/",
+   "title": "Once Upon a Wintertime Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/2016/12/19/upon-wintertime-pin-sketchbook-ornament-released/",
+   "title": "Once Upon A Wintertime Pin & Sketchbook Ornament Released",
+   "publisher": "DisKingdom",
+   "published_date": "2016-12-19",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsuk/2016/finding-nemo-le-500",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Finding Nemo Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "LE single pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-02-16",
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "due at Disney Store UK on this date"
+    },
+    {
+     "field": "price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "sold via Disney Store UK/Europe online"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2016/winnie-the-pooh-balloon-le-800",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Winnie the Pooh Balloon Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "LE single pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-17",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "due at Disney Store UK on this date"
+    },
+    {
+     "field": "price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "sold via Disney Store UK/Europe online"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2016/scar-le-750",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Scar Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "LE single pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-28",
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "due at Disney Store UK on this date"
+    },
+    {
+     "field": "price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "sold via Disney Store UK/Europe online"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2016/alice-in-wonderland-65th-le-600",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Alice in Wonderland 65th Anniversary Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "LE single pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "due at Disney Store UK on this date"
+    },
+    {
+     "field": "price",
+     "value": 15.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "GBP 15.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "sold via Disney Store UK/Europe online"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2016/christmas-mickey-and-minnie-le-600",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Christmas Mickey and Minnie Pin - Europe",
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "LE single pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-29",
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "due at Disney Store UK on this date"
+    },
+    {
+     "field": "price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "sold via Disney Store UK/Europe online"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2016/mary-poppins-le-800",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mary Poppins Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "LE single pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-28",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "due at Disney Store UK on this date"
+    },
+    {
+     "field": "price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "sold via Disney Store UK/Europe online"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2016/oe-single/zootopia",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Zootopia Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/zootopia-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/zootopia-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/zootopia-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03-01",
+     "source_url": "https://disneypinsblog.com/zootopia-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "due at DS UK 1 Mar 2016"
+    },
+    {
+     "field": "price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/zootopia-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/zootopia-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2016/zootopia-le-800-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Zootopia Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-pin-set",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/zootopia-pin-set-released-at-disney-store/",
+     "method": "search_snippet",
+     "note": "boxed set of three pin-on-pin designs"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/zootopia-pin-set-released-at-disney-store/",
+     "method": "search_snippet",
+     "note": "three pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/zootopia-pin-set-released-at-disney-store/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://disneypinsblog.com/zootopia-pin-set-released-at-disney-store/",
+     "method": "search_snippet",
+     "note": "LE 800 worldwide"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-pin-set",
+     "method": "search_snippet",
+     "note": "preview: 450 Europe / 800 worldwide"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-01-26",
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-pin-set",
+     "method": "search_snippet",
+     "note": "UK preview gives 26 Jan 2016"
+    },
+    {
+     "field": "price",
+     "value": 50.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-pin-set",
+     "method": "search_snippet",
+     "note": "GBP 50.00 UK"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-pin-set",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-01-27",
+     "source_url": "https://disneypinsblog.com/zootopia-pin-set-released-at-disney-store/",
+     "method": "search_snippet",
+     "note": "on DisneyStore.com Wed 27 Jan 2016"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-01-28",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "collector photo log of Disney Store purchase dated 28 Jan 2016"
+    },
+    {
+     "field": "price",
+     "value": 69.95,
+     "source_url": "https://www.flickr.com/photos/68105287@N03/24838213126",
+     "method": "search_snippet",
+     "note": "buyer-reported USD 69.95"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store",
+     "source_url": "https://disneypinsblog.com/zootopia-pin-set-released-at-disney-store/",
+     "method": "search_snippet",
+     "note": "Disney Store / DisneyStore.com"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2016/finding-dory-le-800-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Finding Dory Pin Set",
+     "source_url": "https://disneypinsblog.com/finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "boxed set of four cloisonne pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "four pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 800"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-19",
+     "source_url": "https://disneypinsblog.com/finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "due at DS UK 19 Apr 2016"
+    },
+    {
+     "field": "price",
+     "value": 50.0,
+     "source_url": "https://disneypinsblog.com/finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "GBP 50.00"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-16",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "on DisneyStore.com 16 May 2016 after UK"
+    },
+    {
+     "field": "price",
+     "value": 79.95,
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 79.95"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK then DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "Europe first, then US"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/alice-through-the-looking-glass-le-1200-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Alice Through the Looking Glass Limited Edition Pin Set",
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "article title"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "three silhouette pins in magnetic display box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "three pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1200,
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "LE 1200"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-04",
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "on DisneyStore.com c. 4 Apr 2016"
+    },
+    {
+     "field": "price",
+     "value": 69.95,
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "USD 69.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "US Disney Store online; Europe allocation of 300 from 5 Apr"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/captain-america-civil-war-le-800-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Captain America: Civil War Limited Edition Pin Set",
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "two pins in presentation box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "two pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 800"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03-02",
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "on DisneyStore.com Wed 2 Mar 2016"
+    },
+    {
+     "field": "price",
+     "value": 59.95,
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 59.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03",
+     "source_url": "http://diskingdom.com/2016/03/03/captain-america-civil-war-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "article 3 Mar 2016 says set out now"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/snow-white-and-the-seven-dwarfs-le-500-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Snow White and the Seven Dwarfs Pin Set",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin-set/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin-set/",
+     "method": "search_snippet",
+     "note": "nine collector pins in storybook-style box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 9,
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin-set/",
+     "method": "search_snippet",
+     "note": "nine pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin-set/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-09",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin-set/",
+     "method": "search_snippet",
+     "note": "on DisneyStore.com Mon 9 May 2016"
+    },
+    {
+     "field": "price",
+     "value": 199.95,
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 199.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/snow-white-seven-dwarfs-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneypinforum.com/threads/snow-white-and-the-seven-dwarfs-surprise-pin-set-release-le-500.57082/",
+     "method": "search_snippet",
+     "note": "forum thread: surprise set release LE 500"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/disney-animation-le-800-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Animation LE Pin Set",
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "four cloisonne pins, silver foil box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "four pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 800"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "http://diskingdom.com/2016/08/01/disney-animation-pin-box-set-now/",
+     "method": "search_snippet",
+     "note": "LE 800"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-01",
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "on DisneyStore.com Mon 1 Aug 2016"
+    },
+    {
+     "field": "price",
+     "value": 79.95,
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 79.95"
+    },
+    {
+     "field": "price",
+     "value": 79.99,
+     "source_url": "http://diskingdom.com/2016/08/01/disney-animation-pin-box-set-now/",
+     "method": "search_snippet",
+     "note": "USD 79.99 - minor conflict with DPB"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/moana-le-1000-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Moana Limited Edition Pin Set",
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "four pins in window display box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "four pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 1000"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09-12",
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "on website Mon 12 Sep 2016"
+    },
+    {
+     "field": "price",
+     "value": 79.95,
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 79.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09-12",
+     "source_url": "https://insidethemagic.net/merchandise/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "same date"
+    },
+    {
+     "field": "price",
+     "value": 79.95,
+     "source_url": "https://insidethemagic.net/merchandise/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 79.95"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/doctor-strange-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Marvel Doctor Strange Pin Set",
+     "source_url": "https://disneypinsblog.com/marvel-doctor-strange-pin-set/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/marvel-doctor-strange-pin-set/",
+     "method": "search_snippet",
+     "note": "boxed two-pin set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/marvel-doctor-strange-pin-set/",
+     "method": "search_snippet",
+     "note": "two pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-03",
+     "source_url": "https://disneypinsblog.com/marvel-doctor-strange-pin-set/",
+     "method": "search_snippet",
+     "note": "on DisneyStore.com 3 Oct 2016"
+    },
+    {
+     "field": "price",
+     "value": 39.95,
+     "source_url": "https://disneypinsblog.com/marvel-doctor-strange-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 39.95; limit 2 per guest"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/marvel-doctor-strange-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/captain-america-75th-anniversary-le-175-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Captain America 75th Anniversary Pin Set",
+     "source_url": "https://disneypinsblog.com/captain-america-75th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/captain-america-75th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "10 shield pins in flip-top box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/captain-america-75th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "10 shield pins in varied finishes"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/captain-america-75th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 175,
+     "source_url": "https://disneypinsblog.com/captain-america-75th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 175"
+    },
+    {
+     "field": "price",
+     "value": 199.95,
+     "source_url": "https://disneypinsblog.com/captain-america-75th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 199.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/captain-america-75th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10",
+     "source_url": "https://disneypinsblog.com/captain-america-75th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "Oct 2016 per search summary of post"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "6505047190500",
+     "source_url": "https://www.disneypinforum.com/threads/us-disney-store-captain-america-75th-anniversary-pin-set-limited-edition.58191/",
+     "method": "search_snippet",
+     "note": "item number cited from DisneyStore.com listing"
+    },
+    {
+     "field": "price",
+     "value": 199.95,
+     "source_url": "https://www.disneypinforum.com/threads/us-disney-store-captain-america-75th-anniversary-pin-set-limited-edition.58191/",
+     "method": "search_snippet",
+     "note": "USD 199.95"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://www.disneypinforum.com/threads/us-disney-store-captain-america-75th-anniversary-pin-set-limited-edition.58191/",
+     "method": "search_snippet",
+     "note": "US Disney Store listing"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/beauty-and-the-beast-25th-anniversary-le-1200",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store Beauty and the Beast 25th Anniversary Pin",
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-07",
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "on DisneyStore.com 7 Nov 2016"
+    },
+    {
+     "field": "price",
+     "value": 12.95,
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "USD 12.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/oe-single/rogue-one-death-star-commemorative",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Rogue One Death Star Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+     "method": "search_snippet",
+     "note": "not limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-16",
+     "source_url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+     "method": "search_snippet",
+     "note": "US release 16 Dec 2016"
+    },
+    {
+     "field": "price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/rogue-one-jumbo-le-1200",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Rogue One: A Star Wars Story Jumbo Pin",
+     "source_url": "http://disneypinsblog.com/rogue-one-star-wars-story-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "http://disneypinsblog.com/rogue-one-star-wars-story-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "single jumbo pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://disneypinsblog.com/rogue-one-star-wars-story-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "price",
+     "value": 39.95,
+     "source_url": "http://disneypinsblog.com/rogue-one-star-wars-story-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "USD 39.95; 1 per guest"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "http://disneypinsblog.com/rogue-one-star-wars-story-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/storybook-classics-01-mickey-and-the-beanstalk",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Storybook Classics - Mickey and the Beanstalk",
+     "source_url": "https://www.disneypinforum.com/threads/disney-storybook-classics-pin.57779/",
+     "method": "search_snippet",
+     "note": "storybook classics monthly pin"
+    },
+    {
+     "field": "sub_series",
+     "value": "Disney Storybook Classics",
+     "source_url": "https://www.disneypinforum.com/threads/disney-storybook-classics-pin.57779/",
+     "method": "search_snippet",
+     "note": "monthly DisneyStore.com series"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://www.disneypinforum.com/threads/disney-storybook-classics-pin.57779/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08",
+     "source_url": "https://www.disneypinforum.com/threads/disney-storybook-classics-pin.57779/",
+     "method": "search_snippet",
+     "note": "forum thread Aug 2016 links listing"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://www.disneypinforum.com/threads/disney-storybook-classics-pin.57779/",
+     "method": "search_snippet",
+     "note": "Disney Store"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/storybook-classics-02-pecos-bill",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Storybook Classics - Pecos Bill",
+     "source_url": "https://disneypinsblog.com/pecos-bill-pin/",
+     "method": "search_snippet",
+     "note": "storybook classics monthly pin"
+    },
+    {
+     "field": "sub_series",
+     "value": "Disney Storybook Classics",
+     "source_url": "https://disneypinsblog.com/pecos-bill-pin/",
+     "method": "search_snippet",
+     "note": "monthly DisneyStore.com series"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/pecos-bill-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09",
+     "source_url": "https://disneypinsblog.com/pecos-bill-pin/",
+     "method": "search_snippet",
+     "note": "second pin, Sep 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/pecos-bill-pin/",
+     "method": "search_snippet",
+     "note": "Disney Store"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/storybook-classics-03-peter-and-the-wolf",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Storybook Classics - Peter and the Wolf",
+     "source_url": "https://disneypinsblog.com/peter-wolf-pin/",
+     "method": "search_snippet",
+     "note": "storybook classics monthly pin"
+    },
+    {
+     "field": "sub_series",
+     "value": "Disney Storybook Classics",
+     "source_url": "https://disneypinsblog.com/peter-wolf-pin/",
+     "method": "search_snippet",
+     "note": "monthly DisneyStore.com series"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/peter-wolf-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10",
+     "source_url": "https://disneypinsblog.com/peter-wolf-pin/",
+     "method": "search_snippet",
+     "note": "third pin, Oct 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/peter-wolf-pin/",
+     "method": "search_snippet",
+     "note": "Disney Store"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/storybook-classics-04-lambert-the-sheepish-lion",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Storybook Classics - Lambert, the Sheepish Lion",
+     "source_url": "https://disneypinsblog.com/blogs/news/lambert-sheepish-lion-pin",
+     "method": "search_snippet",
+     "note": "storybook classics monthly pin"
+    },
+    {
+     "field": "sub_series",
+     "value": "Disney Storybook Classics",
+     "source_url": "https://disneypinsblog.com/blogs/news/lambert-sheepish-lion-pin",
+     "method": "search_snippet",
+     "note": "monthly DisneyStore.com series"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/lambert-sheepish-lion-pin",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/lambert-sheepish-lion-pin",
+     "method": "search_snippet",
+     "note": "fourth pin, Nov 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/lambert-sheepish-lion-pin",
+     "method": "search_snippet",
+     "note": "Disney Store"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/storybook-classics-05-once-upon-a-wintertime",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Storybook Classics - Once Upon a Wintertime",
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "storybook classics monthly pin"
+    },
+    {
+     "field": "sub_series",
+     "value": "Disney Storybook Classics",
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "monthly DisneyStore.com series"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-20",
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "fifth pin, c. 20 Dec 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "Disney Store"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsuk/2016/finding-nemo-le-500/finding-nemo-le-500",
+   "set_key": "dsuk/2016/finding-nemo-le-500",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Finding Nemo Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "LE 350 Europe / 500 worldwide"
+    },
+    {
+     "field": "original_price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-02-16",
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "Disney Store UK release date"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "Disney Store UK / Europe website"
+    },
+    {
+     "field": "region",
+     "value": "Europe",
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "Europe allocation of 350"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Marlin",
+      "Nemo"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "subject named in snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "Marlin and Nemo design",
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "paraphrase of snippet"
+    },
+    {
+     "field": "franchise",
+     "value": "Finding Nemo",
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "Disney Pixar Finding Nemo pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/finding-nemo-pin",
+     "method": "search_snippet",
+     "note": "single pin showing both fish"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2016/winnie-the-pooh-balloon-le-800/winnie-the-pooh-balloon-le-800",
+   "set_key": "dsuk/2016/winnie-the-pooh-balloon-le-800",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Winnie the Pooh Balloon Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "LE 500 Europe / 800 worldwide"
+    },
+    {
+     "field": "original_price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-17",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "Disney Store UK release date"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "Disney Store UK / Europe website"
+    },
+    {
+     "field": "region",
+     "value": "Europe",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "Europe allocation of 500"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "subject named in snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pooh with balloon (per post title)",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-pooh-balloon-pin",
+     "method": "search_snippet",
+     "note": "paraphrase of snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2016/scar-le-750/scar-le-750",
+   "set_key": "dsuk/2016/scar-le-750",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Scar Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "LE 750 in Europe"
+    },
+    {
+     "field": "original_price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-28",
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "Disney Store UK release date"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "Disney Store UK / Europe website"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scar",
+      "Hyenas"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "subject named in snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "Scar with the hyenas",
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "paraphrase of snippet"
+    },
+    {
+     "field": "franchise",
+     "value": "The Lion King",
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "Lion King villain"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+     "method": "search_snippet",
+     "note": "single LE pin post; snippet calls it Scar and the hyenas"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2016/alice-in-wonderland-65th-le-600/alice-in-wonderland-65th-le-600",
+   "set_key": "dsuk/2016/alice-in-wonderland-65th-le-600",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice in Wonderland 65th Anniversary Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "original_price",
+     "value": 15.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "GBP 15.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "Disney Store UK release date"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "Disney Store UK / Europe website"
+    },
+    {
+     "field": "franchise",
+     "value": "Alice in Wonderland",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "65th anniversary pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2016/christmas-mickey-and-minnie-le-600/christmas-mickey-and-minnie-le-600",
+   "set_key": "dsuk/2016/christmas-mickey-and-minnie-le-600",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Christmas Mickey and Minnie Pin - Europe",
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "LE 300 Europe / 600 worldwide"
+    },
+    {
+     "field": "original_price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-29",
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "Disney Store UK release date"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK",
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "Disney Store UK / Europe website"
+    },
+    {
+     "field": "region",
+     "value": "Europe",
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "Europe allocation of 300"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse",
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "subject named in snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie reads her Christmas wish list to Mickey",
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase of snippet"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/christmas-mickey-minnie-pin/",
+     "method": "search_snippet",
+     "note": "single pin showing both characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2016/mary-poppins-le-800/mary-poppins-le-800",
+   "set_key": "dsuk/2016/mary-poppins-le-800",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mary Poppins Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "LE 800; no Europe/worldwide split given"
+    },
+    {
+     "field": "original_price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-28",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "Disney Store UK release date"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "Disney Store UK / Europe website"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mary Poppins"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "subject named in snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mary Poppins silhouette flying with umbrella",
+     "source_url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "paraphrase of snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2016/oe/zootopia",
+   "set_key": "dsuk/2016/oe-single/zootopia",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zootopia Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/zootopia-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/zootopia-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "original_price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/zootopia-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/zootopia-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03-01",
+     "source_url": "https://disneypinsblog.com/zootopia-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "DS UK date"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/zootopia-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/zootopia-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "DS Europe online; post says also at US parks"
+    },
+    {
+     "field": "franchise",
+     "value": "Zootopia",
+     "source_url": "https://disneypinsblog.com/zootopia-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "Zootopia film pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2016/finding-dory-le-800-set/dory-nemo-and-marlin",
+   "set_key": "dsuk/2016/finding-dory-le-800-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dory",
+      "Nemo",
+      "Marlin"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "listed as one of the four pins"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dory, Nemo and Marlin, pin-on-pin",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "per-pin description in listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 800"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Finding Dory",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "Finding Dory set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2016/finding-dory-le-800-set/hank",
+   "set_key": "dsuk/2016/finding-dory-le-800-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hank"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "listed as one of the four pins"
+    },
+    {
+     "field": "visual_description",
+     "value": "Hank, pin-on-pin",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "per-pin description in listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 800"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Finding Dory",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "Finding Dory set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2016/finding-dory-le-800-set/bailey-and-destiny",
+   "set_key": "dsuk/2016/finding-dory-le-800-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Bailey",
+      "Destiny"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "listed as one of the four pins"
+    },
+    {
+     "field": "visual_description",
+     "value": "Bailey with Destiny",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "per-pin description in listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 800"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Finding Dory",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "Finding Dory set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2016/finding-dory-le-800-set/otters",
+   "set_key": "dsuk/2016/finding-dory-le-800-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Otters"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "listed as one of the four pins"
+    },
+    {
+     "field": "visual_description",
+     "value": "trio of otters",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "per-pin description in listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 800"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Finding Dory",
+     "source_url": "https://disneypinsblog.com/disney-store-finding-dory-pin-set/",
+     "method": "search_snippet",
+     "note": "Finding Dory set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/alice-through-the-looking-glass-le-1200-set/alice",
+   "set_key": "dsus/2016/alice-through-the-looking-glass-le-1200-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "one pin each; antiqued finishes gold/silver/copper across set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "set LE 1200"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Alice Through the Looking Glass",
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "live-action film set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/alice-through-the-looking-glass-le-1200-set/red-queen",
+   "set_key": "dsus/2016/alice-through-the-looking-glass-le-1200-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Red Queen"
+     ],
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "one pin each"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "set LE 1200"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Alice Through the Looking Glass",
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "live-action film set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/alice-through-the-looking-glass-le-1200-set/mad-hatter",
+   "set_key": "dsus/2016/alice-through-the-looking-glass-le-1200-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mad Hatter"
+     ],
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "one pin each"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "set LE 1200"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Alice Through the Looking Glass",
+     "source_url": "http://diskingdom.com/2016/04/04/alice-looking-glass-limited-edition-pin-set-now/",
+     "method": "search_snippet",
+     "note": "live-action film set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/captain-america-civil-war-le-800-set/heroes-clashing",
+   "set_key": "dsus/2016/captain-america-civil-war-le-800-set",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "the two heroes clashing",
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "one of the two pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 800"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "Civil War film"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/captain-america-civil-war-le-800-set/shield-and-arc-reactor",
+   "set_key": "dsus/2016/captain-america-civil-war-le-800-set",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Captain America shield combined with Iron Man arc reactor",
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "the second pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 800"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/captain-america-civil-war-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "Civil War film"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/disney-animation-le-800-set/oswald",
+   "set_key": "dsus/2016/disney-animation-le-800-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Oswald the Lucky Rabbit"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "named among the set's four characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 800"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/disney-animation-le-800-set/cheshire-cat",
+   "set_key": "dsus/2016/disney-animation-le-800-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cheshire Cat"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "named among the set's four characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 800"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/disney-animation-le-800-set/chip-n-dale",
+   "set_key": "dsus/2016/disney-animation-le-800-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "named among the set's four characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 800"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/disney-animation-le-800-set/dopey",
+   "set_key": "dsus/2016/disney-animation-le-800-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dopey"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "named among the set's four characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 800"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-animation-le-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/moana-le-1000-set/moana",
+   "set_key": "dsus/2016/moana-le-1000-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Moana"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named among the set's subjects"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1000"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Moana",
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "Moana film"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/moana-le-1000-set/maui",
+   "set_key": "dsus/2016/moana-le-1000-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Maui"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named among the set's subjects"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1000"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Moana",
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "Moana film"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/moana-le-1000-set/pua-and-heihei",
+   "set_key": "dsus/2016/moana-le-1000-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pua",
+      "Heihei"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named among the set's subjects"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1000"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Moana",
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "Moana film"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/moana-le-1000-set/kakamora",
+   "set_key": "dsus/2016/moana-le-1000-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Kakamora"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named among the set's subjects"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1000"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Moana",
+     "source_url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "Moana film"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/doctor-strange-pin-set/doctor-strange",
+   "set_key": "dsus/2016/doctor-strange-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Doctor Strange"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-doctor-strange-pin-set/",
+     "method": "search_snippet",
+     "note": "figure shown in set"
+    },
+    {
+     "field": "visual_description",
+     "value": "Doctor Strange figure",
+     "source_url": "https://disneypinsblog.com/marvel-doctor-strange-pin-set/",
+     "method": "search_snippet",
+     "note": "imagery named for the set"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/marvel-doctor-strange-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-doctor-strange-pin-set/",
+     "method": "search_snippet",
+     "note": "Doctor Strange film"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/doctor-strange-pin-set/eye-of-agamotto",
+   "set_key": "dsus/2016/doctor-strange-pin-set",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Eye of Agamotto",
+     "source_url": "https://disneypinsblog.com/marvel-doctor-strange-pin-set/",
+     "method": "search_snippet",
+     "note": "imagery named for the set"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/marvel-doctor-strange-pin-set/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/marvel-doctor-strange-pin-set/",
+     "method": "search_snippet",
+     "note": "Doctor Strange film"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/beauty-and-the-beast-25th-anniversary-le-1200/lumiere-and-cogsworth",
+   "set_key": "dsus/2016/beauty-and-the-beast-25th-anniversary-le-1200",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Beauty and the Beast 25th Anniversary Pin",
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lumiere",
+      "Cogsworth"
+     ],
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "both on pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Lumiere and Cogsworth dancing with 25th Anniversary dangle",
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "single pin with both"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1200,
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "LE 1200"
+    },
+    {
+     "field": "original_price",
+     "value": 12.95,
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "USD 12.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-07",
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "DisneyStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "dangle"
+     ],
+     "source_url": "http://disneypinsblog.com/disney-store-beauty-beast-25th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "25th dangle"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/oe/rogue-one-death-star-commemorative",
+   "set_key": "dsus/2016/oe-single/rogue-one-death-star-commemorative",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rogue One Theatrical Release Commemorative Pin (Death Star)",
+     "source_url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+     "method": "search_snippet",
+     "note": "billed as theatrical commemorative"
+    },
+    {
+     "field": "visual_description",
+     "value": "rectangular Death Star pin with raised Rogue One logo, antiqued bronze finish",
+     "source_url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+     "method": "search_snippet",
+     "note": "non-limited"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-16",
+     "source_url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+     "method": "search_snippet",
+     "note": "Rogue One"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store",
+     "source_url": "https://disneypinsblog.com/blogs/news/rogue-one-death-star-pin-usa",
+     "method": "search_snippet",
+     "note": "announced at DS UK first, then USA"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/rogue-one-jumbo-le-1200/rogue-one-jumbo",
+   "set_key": "dsus/2016/rogue-one-jumbo-le-1200",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rogue One: A Star Wars Story Jumbo Pin",
+     "source_url": "http://disneypinsblog.com/rogue-one-star-wars-story-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://disneypinsblog.com/rogue-one-star-wars-story-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1200,
+     "source_url": "http://disneypinsblog.com/rogue-one-star-wars-story-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "LE 1200"
+    },
+    {
+     "field": "original_price",
+     "value": 39.95,
+     "source_url": "http://disneypinsblog.com/rogue-one-star-wars-story-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "USD 39.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "http://disneypinsblog.com/rogue-one-star-wars-story-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_description",
+     "value": "jumbo pin of key cast, antiqued bronze with glitter accents, flip-top magnetic box",
+     "source_url": "http://disneypinsblog.com/rogue-one-star-wars-story-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "http://disneypinsblog.com/rogue-one-star-wars-story-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "glitter accents"
+    },
+    {
+     "field": "size_mm",
+     "value": "1.75 x 3.75 in",
+     "source_url": "http://disneypinsblog.com/rogue-one-star-wars-story-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "stated in inches"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "http://disneypinsblog.com/rogue-one-star-wars-story-jumbo-pin/",
+     "method": "search_snippet",
+     "note": "Rogue One"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/storybook-classics-01-mickey-and-the-beanstalk/mickey-and-the-beanstalk",
+   "set_key": "dsus/2016/storybook-classics-01-mickey-and-the-beanstalk",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey and the Beanstalk Pin",
+     "source_url": "https://www.disneypinforum.com/threads/disney-storybook-classics-pin.57779/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "set_position",
+     "value": 1,
+     "source_url": "https://www.disneypinforum.com/threads/disney-storybook-classics-pin.57779/",
+     "method": "search_snippet",
+     "note": "forum thread Aug 2016 links listing"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08",
+     "source_url": "https://www.disneypinforum.com/threads/disney-storybook-classics-pin.57779/",
+     "method": "search_snippet",
+     "note": "forum thread Aug 2016 links listing"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://www.disneypinforum.com/threads/disney-storybook-classics-pin.57779/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://www.disneypinforum.com/threads/disney-storybook-classics-pin.57779/",
+     "method": "search_snippet",
+     "note": "Storybook Classics collection at DisneyStore.com"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://www.disneypinforum.com/threads/disney-storybook-classics-pin.57779/",
+     "method": "search_snippet",
+     "note": "Limited Release 1100 worldwide (listing also showed 1000)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/storybook-classics-02-pecos-bill/pecos-bill",
+   "set_key": "dsus/2016/storybook-classics-02-pecos-bill",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pecos Bill Pin",
+     "source_url": "https://disneypinsblog.com/pecos-bill-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "set_position",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/pecos-bill-pin/",
+     "method": "search_snippet",
+     "note": "second pin, Sep 2016"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09",
+     "source_url": "https://disneypinsblog.com/pecos-bill-pin/",
+     "method": "search_snippet",
+     "note": "second pin, Sep 2016"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/pecos-bill-pin/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/pecos-bill-pin/",
+     "method": "search_snippet",
+     "note": "Storybook Classics collection at DisneyStore.com"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/pecos-bill-pin/",
+     "method": "search_snippet",
+     "note": "LE 1100 worldwide"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/pecos-bill-pin/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/pecos-bill-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/pecos-bill-pin/",
+     "method": "search_snippet",
+     "note": "hinged pin-on-pin opening like a book"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/storybook-classics-03-peter-and-the-wolf/peter-and-the-wolf",
+   "set_key": "dsus/2016/storybook-classics-03-peter-and-the-wolf",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Peter and the Wolf Pin",
+     "source_url": "https://disneypinsblog.com/peter-wolf-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "set_position",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/peter-wolf-pin/",
+     "method": "search_snippet",
+     "note": "third pin, Oct 2016"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10",
+     "source_url": "https://disneypinsblog.com/peter-wolf-pin/",
+     "method": "search_snippet",
+     "note": "third pin, Oct 2016"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/peter-wolf-pin/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/peter-wolf-pin/",
+     "method": "search_snippet",
+     "note": "Storybook Classics collection at DisneyStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/storybook-classics-04-lambert-the-sheepish-lion/lambert-the-sheepish-lion",
+   "set_key": "dsus/2016/storybook-classics-04-lambert-the-sheepish-lion",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lambert, the Sheepish Lion Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/lambert-sheepish-lion-pin",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "set_position",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/blogs/news/lambert-sheepish-lion-pin",
+     "method": "search_snippet",
+     "note": "fourth pin, Nov 2016"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/lambert-sheepish-lion-pin",
+     "method": "search_snippet",
+     "note": "fourth pin, Nov 2016"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/blogs/news/lambert-sheepish-lion-pin",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/lambert-sheepish-lion-pin",
+     "method": "search_snippet",
+     "note": "Storybook Classics collection at DisneyStore.com"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/storybook-classics-05-once-upon-a-wintertime/once-upon-a-wintertime",
+   "set_key": "dsus/2016/storybook-classics-05-once-upon-a-wintertime",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Once Upon a Wintertime Pin",
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "set_position",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "fifth pin, c. 20 Dec 2016"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-20",
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "fifth pin, c. 20 Dec 2016"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "Storybook Classics collection at DisneyStore.com"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "LE 1100"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "hinged pin-on-pin opening like a book"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12",
+     "source_url": "https://diskingdom.com/2016/12/19/upon-wintertime-pin-sketchbook-ornament-released/",
+     "method": "search_snippet",
+     "note": "article 19 Dec 2016 says pin released"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://diskingdom.com/2016/12/19/upon-wintertime-pin-sketchbook-ornament-released/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "franchise",
+     "value": "Melody Time",
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "skating segment of Melody Time"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jenny",
+      "Joe"
+     ],
+     "source_url": "https://disneypinsblog.com/upon-wintertime-pin/",
+     "method": "search_snippet",
+     "note": "skating couple from the segment"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsuk/2016/scar-le-750/scar-le-750",
+   "field": "characters",
+   "searched": "2 queries, DPB snippets",
+   "note": "hyenas not individually named in snippet"
+  },
+  {
+   "key": "dsuk/2016/alice-in-wonderland-65th-le-600/alice-in-wonderland-65th-le-600",
+   "field": "release_location",
+   "searched": "DPB snippet; 1 query",
+   "note": "conflict: surprise release at DS UK online, but post also says exclusive to Disneyland Paris; lead for dlp/2016 cell"
+  },
+  {
+   "key": "dsuk/2016/alice-in-wonderland-65th-le-600/alice-in-wonderland-65th-le-600",
+   "field": "characters",
+   "searched": "DPB snippet",
+   "note": "subject characters not stated in snippet"
+  },
+  {
+   "key": "dsuk/2016/oe/zootopia",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters/design not described in snippet; also sold at US parks - may duplicate a parks OE key"
+  },
+  {
+   "key": "dsuk/2016/zootopia-le-800-set",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "hold: confirm pin structure - 3 pin-on-pin pins; snippet names Judy, Nick, Mr. Big 'and more' without per-pin split"
+  },
+  {
+   "key": "dsuk/2016/finding-dory-le-800-set",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "Europe allocation of the set not stated"
+  },
+  {
+   "key": "dsus/2016/alice-through-the-looking-glass-le-1200-set",
+   "field": "price",
+   "searched": "1 query",
+   "note": "European allocation (300) price in GBP not stated; whether a separate dsuk key is needed is unclear"
+  },
+  {
+   "key": "dsus/2016/captain-america-civil-war-le-800-set/heroes-clashing",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters on clash pin not named in snippet (presumably Cap and Iron Man - not claimed)"
+  },
+  {
+   "key": "dsus/2016/snow-white-and-the-seven-dwarfs-le-500-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure - snippet lists Snow White, all seven dwarfs and Hag for 9 pins; per-pin split not stated, dwarfs not named"
+  },
+  {
+   "key": "dsus/2016/disney-animation-le-800-set/oswald",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure - one pin per subject inferred from 4 subjects for 4 pins, not stated"
+  },
+  {
+   "key": "dsus/2016/disney-animation-le-800-set/cheshire-cat",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure - one pin per subject inferred from 4 subjects for 4 pins, not stated"
+  },
+  {
+   "key": "dsus/2016/disney-animation-le-800-set/chip-n-dale",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure - one pin per subject inferred from 4 subjects for 4 pins, not stated"
+  },
+  {
+   "key": "dsus/2016/disney-animation-le-800-set/dopey",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure - one pin per subject inferred from 4 subjects for 4 pins, not stated"
+  },
+  {
+   "key": "dsus/2016/moana-le-1000-set/moana",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure - one pin per subject inferred from 4 subjects for 4 pins, not stated"
+  },
+  {
+   "key": "dsus/2016/moana-le-1000-set/maui",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure - one pin per subject inferred from 4 subjects for 4 pins, not stated"
+  },
+  {
+   "key": "dsus/2016/moana-le-1000-set/pua-and-heihei",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure - one pin per subject inferred from 4 subjects for 4 pins, not stated"
+  },
+  {
+   "key": "dsus/2016/moana-le-1000-set/kakamora",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure - one pin per subject inferred from 4 subjects for 4 pins, not stated"
+  },
+  {
+   "key": "dsus/2016/doctor-strange-pin-set/doctor-strange",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure - snippet says images include figure and Eye; per-pin split inferred"
+  },
+  {
+   "key": "dsus/2016/doctor-strange-pin-set/eye-of-agamotto",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure - snippet says images include figure and Eye; per-pin split inferred"
+  },
+  {
+   "key": "dsus/2016/doctor-strange-pin-set",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "edition size not in DPB snippet"
+  },
+  {
+   "key": "dsus/2016/doctor-strange-pin-set",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "lead: shopDisney UK lists undated Doctor Strange LE 1000 two-pin set (silhouette + gold Eye); link to 2016 set rests on subject only - hold"
+  },
+  {
+   "key": "dsus/2016/captain-america-75th-anniversary-le-175-set",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "10 shield variants differ by finish (silver/gold/bronze/copper/pewter etc.); per-pin list not given"
+  },
+  {
+   "key": "dsus/2016/oe/rogue-one-death-star-commemorative",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "UK release date/price not found though post says announced at Disney Store UK first; may need dsuk claims"
+  },
+  {
+   "key": "dsus/2016/rogue-one-jumbo-le-1200/rogue-one-jumbo",
+   "field": "release_date",
+   "searched": "3 queries",
+   "note": "hold: release date not in snippet; 2016 keying rests on film timing/blog era only"
+  },
+  {
+   "key": "dsus/2016/rogue-one-jumbo-le-1200/rogue-one-jumbo",
+   "field": "characters",
+   "searched": "3 queries",
+   "note": "cast members on jumbo not named"
+  },
+  {
+   "key": "dsus/2016/storybook-classics-01-mickey-and-the-beanstalk/mickey-and-the-beanstalk",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters on pin not stated in snippet; title only"
+  },
+  {
+   "key": "dsus/2016/storybook-classics-01-mickey-and-the-beanstalk/mickey-and-the-beanstalk",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "price not in snippet (other series pins USD 14.95)"
+  },
+  {
+   "key": "dsus/2016/storybook-classics-02-pecos-bill/pecos-bill",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters on pin not stated in snippet; title only"
+  },
+  {
+   "key": "dsus/2016/storybook-classics-03-peter-and-the-wolf/peter-and-the-wolf",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters on pin not stated in snippet; title only"
+  },
+  {
+   "key": "dsus/2016/storybook-classics-03-peter-and-the-wolf/peter-and-the-wolf",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "price not in snippet (other series pins USD 14.95)"
+  },
+  {
+   "key": "dsus/2016/storybook-classics-03-peter-and-the-wolf/peter-and-the-wolf",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "not in per-pin snippet; series described as LE 1100"
+  },
+  {
+   "key": "dsus/2016/storybook-classics-04-lambert-the-sheepish-lion/lambert-the-sheepish-lion",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters on pin not stated in snippet; title only"
+  },
+  {
+   "key": "dsus/2016/storybook-classics-04-lambert-the-sheepish-lion/lambert-the-sheepish-lion",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "price not in snippet (other series pins USD 14.95)"
+  },
+  {
+   "key": "dsus/2016/storybook-classics-04-lambert-the-sheepish-lion/lambert-the-sheepish-lion",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "not in per-pin snippet; series described as LE 1100"
+  },
+  {
+   "key": "dsus/2016/oe/mickey-icon-snowflake",
+   "field": "release_location",
+   "searched": "DPB Nov 2016 wk2 roundup",
+   "note": "lead: Mickey icon snowflake OE USD 9.99, Disney Parks Happy Holidays collection, also at Disney Store - parks cell; not keyed here"
+  },
+  {
+   "key": "dsus/2017/beauty-and-the-beast-live-action-le-1000-set",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "3-pin LE 1000 USD 79.95 live-action set; snippet date Jan 2016 conflicts with 2017 film - left under existing 2017 lead, not keyed"
+  },
+  {
+   "key": "dsus/2016/pinocchio-fathers-day",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "lead: Geppetto & Pinocchio Father's Day 2016 LE 200 USD 18.95 is Disney Studio Store Hollywood - not DS line; out of scope here"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood",
+   "field": "release_location",
+   "searched": "2 queries",
+   "note": "lead: Studio Store Hollywood 2016 pins (TTLG clock LE 300/Chronosphere LE 200; Doctor Strange marquee LE 300/medallion LE 200) - separate venue"
+  },
+  {
+   "key": "dsus/2016/disney-store-emoji-pin-sets",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "Zootopia/Aladdin/NBC emoji 3-pin sets USD 12.95 undated (likely 2017+); not keyed for 2016"
+  },
+  {
+   "key": "lic/2016/hot-topic-rogue-one-helmet",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "lead: licensed Hot Topic Rogue One helmet enamel pin, undated"
+  },
+  {
+   "key": "dsus/2016/disney-employee-center",
+   "field": "release_location",
+   "searched": "2 queries",
+   "note": "Maui/Mowgli postage-stamp pins are Cast Member Employee Center exclusives sold later on disneystore.com; out of DS 2016 scope"
+  },
+  {
+   "key": "dsus/2016/pin-trading-events",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no Disney Store-run pin trading event found for 2016"
+  },
+  {
+   "key": "dsuk/2016/film-releases",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "no EU/UK release or GBP price found for Moana, Doctor Strange or Rogue One jumbo sets"
+  },
+  {
+   "key": "dsuk/2016/pinocchio-or-other",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "other 2016 DS UK monthly LE singles (months without a hit: Jan, Apr, Jul, Sep, Oct) not found - possible gaps"
+  },
+  {
+   "key": "dsuk/2016/alice-in-wonderland-65th-le-600/alice-in-wonderland-65th-le-600",
+   "field": "identity",
+   "searched": "packet review",
+   "note": "variant: same pin as dlp/2016/alice-in-wonderland-65th/alice-doorknob (packet 321: same LE 600, £15, 9 Aug 2016); keep one record, location DLP vs Disney Store UK unresolved"
+  }
+ ],
+ "discovery_notes": "Cell B030 (Disney Store UK/EU + US, 2016). 30 standard searches, snippets only. Reused dsuk/2016/mary-poppins-le-800 from 228. Zootopia and Finding Dory sets keyed under dsuk (UK first); Alice TTLG under dsus (US first, EU allocation 300). Storybook Classics 01-05 started Aug 2016, keyed in the 228 pattern. Moana, Disney Animation and Doctor Strange member pins inferred one per subject - holds added. Zootopia and Snow White sets kept set-only. Alice 65th: DS UK online vs DLP exclusive conflict. Rogue One jumbo undated. Resellers (yourwdwstore, madhouse) seen but not used."
+}

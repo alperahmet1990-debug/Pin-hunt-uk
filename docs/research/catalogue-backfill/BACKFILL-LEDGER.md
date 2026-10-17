@@ -3,7 +3,7 @@
 _Maintained by the hourly research routine (scheduled task "PinHunt historical backfill"). Rules: `research/catalogue-engine/BACKFILL-RULES.md`. Workbook: `PinHunt_catalogue_2015_2026.xlsx` (regenerated each round)._
 
 ## Active round
-none
+Round 21 (started 2026-10-17 07:05 UTC): B029, B030, B031, B070, B071, B033
 
 ## Totals (after round 20, 17 Oct 2026 ~07:15 UTC)
 - Live public pins 2015–2026: 1,798 (baseline 2026-10-16).
@@ -81,20 +81,20 @@ Earlier: after round 19, 6,155; after round 18, 6,142; after round 17, 6,091; af
 | B090 | 2024-2026 | lic-other | Other licensed: Hot Topic, Funko, Her Universe, FiGPiN and other licensees (Pink a la Mode and ArtLand have dedicated cells) | partial | 258_b090_lic_other_2024_2026.json | 68 | follow-up appended |
 | B089 | 2022-2023 | lic-other | Other licensed: Hot Topic, Funko, Her Universe, FiGPiN and other licensees (Pink a la Mode and ArtLand have dedicated cells) | partial | 259_b089_lic_other_2022_2023.json | 82 | follow-up appended |
 | B088 | 2020-2021 | lic-other | Other licensed: Hot Topic, Funko, Her Universe, FiGPiN and other licensees (Pink a la Mode and ArtLand have dedicated cells) | partial | 260_b088_lic_other_2020_2021.json | 88 | follow-up appended |
-| B029 | 2016 | dlp | Disneyland Paris (OE+LE) | todo | | | |
-| B030 | 2016 | ds | Disney Store UK/EU + US | todo | | | |
-| B031 | 2016 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
-| B032 | 2016 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
-| B070 | 2016 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
-| B071 | 2016 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | todo | | | |
-| B033 | 2015 | wdw-oe | WDW open edition (incl. standalone) | todo | | | |
+| B029 | 2016 | dlp | Disneyland Paris (OE+LE) | in progress | | | |
+| B030 | 2016 | ds | Disney Store UK/EU + US | in progress | | | |
+| B031 | 2016 | asia | Shanghai, Hong Kong, Tokyo | in progress | | | |
+| B032 | 2016 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | superseded | | | no credible leads (maintainer check 17 Oct): the 2017 dedicated sweep B024 and the 2018 cells found no Loungefly-credited Disney pins before July 2018, and fresh searches found none for 2016; any Loungefly-credited pin seen by the 2016 BoxLunch / other-licensed cells is recorded there |
+| B070 | 2016 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | in progress | | | |
+| B071 | 2016 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | in progress | | | |
+| B033 | 2015 | wdw-oe | WDW open edition (incl. standalone) | in progress | | | |
 | B034 | 2015 | wdw-le | WDW LE/LR | todo | | | |
 | B035 | 2015 | dlr-oe | Disneyland California OE | todo | | | |
 | B036 | 2015 | dlr-le | Disneyland California LE/LR | todo | | | |
 | B037 | 2015 | dlp | Disneyland Paris (OE+LE) | todo | | | |
 | B038 | 2015 | ds | Disney Store UK/EU + US | todo | | | |
 | B039 | 2015 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
-| B040 | 2015 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | todo | | | |
+| B040 | 2015 | lic-loungefly | Loungefly (all retailers: own site, BoxLunch, Hot Topic, parks, conventions, Funko/Loungefly exclusives) | superseded | | | no credible leads (maintainer check 17 Oct): the 2017 dedicated sweep B024 and the 2018 cells found no Loungefly-credited Disney pins before July 2018, and fresh searches found none for 2015; any Loungefly-credited pin seen by the 2015 BoxLunch / other-licensed cells is recorded there |
 | B072 | 2015 | lic-boxlunch | BoxLunch (all makers: Loungefly, Funko, BoxLunch own-brand; exclusives, mystery sets) | todo | | | |
 | B073 | 2015 | lic-other | Other licensed: Hot Topic, ArtLand, Pink a la Mode, Funko, Her Universe and other licensees | todo | | | |
 | B041 | 2020-2026 | asia | Shanghai, Hong Kong, Tokyo | todo | | | |
@@ -270,4 +270,5 @@ Status: todo → in progress → done / partial (budget ran out; a follow-up cel
 | 19 | 2026-10-17 05:30 | B163/B164/B165 (Pink a la Mode FU3 2025–26, 2023–24, 2021–22), B166/B167/B168 (ArtLand FU3 2025–26, 2023–24, 2021–22) | +20 genuinely new (12 corroborated); 40 pin records; net change +13 | Successful: B108 +17 (Ben Harman per-finish records, Neo Nouveau S2 Cinderella / Belle / Tiana released on per-pin listings), B106 +3 (Megara & Tiana swing released). Unsuccessful: B103 +0, B104 +0, B107 +0 (all new pins held). B105 Pink a la Mode 2021–22 moved to the long-term backlog (LB3) after two unsuccessful follow-ups. Net +13 because the six combined-edition Ben Harman parents are now held (counted once, as finishes) and one Her Universe Tiana is flagged by the engine as a possible cross-set duplicate of the ArtLand swing Tiana. Holds added: Royal Stamp Wave 1 year, Belle Ornament edition type, NBC Stained Glass MyPinCentral links, Timothy & Hyacinth date (possible template text), Frozone / M-O wave links. Follow-up 4 cells B185–B189 |
 | 20 | 2026-10-17 06:30 | B169 (ArtLand 2019–20 FU3), B170 (BoxLunch 2026 FU3), B171/B172 (Loungefly/BoxLunch 2025 FU3), B173/B174 (Loungefly/BoxLunch 2024 FU3) | +12 genuinely new (4 corroborated); 44 pin records; net change +10 | All six low yield (B109 +4, B087 +0, B084 +2, B085 +0, B082 +2, B083 +4); under the maintainer's 17 Oct rule all moved to the long-term backlog (LB14–LB19), findings retained. Validation: B172 packet cited a blocked social-video domain for three Cozy Cone names; those claims and pins were removed at review and kept as a lead. Not accepted at review: Pixar Movie Ticket per-design release (search summary of MyPinCentral only). Released with per-design evidence: Cherry Blossom 5 scenes (GameStop / 707 Street), Neo Nouveau S1 structure, 2019 Villain Series Queen of Hearts and Maleficent, Nutcracker Oogie Boogie, Compact Mirror Tiana. Holds added: Neo Nouveau S1 Aurora / Snow White captions, Mickey & Friends Cars members, Camping Cuties chase, Soda Can members, Pride Rock Poster year, Dale Napping |
 | – | 2026-10-17 06:45 | process update (no new research) | – | Maintainer: switch priority to unexplored 2015 and 2016 coverage cells (parks, Disney Store, licensed). Low-yield licensed follow-ups (last attempt <5 new) moved to the long-term backlog: B176, B179, B180, B181, B183, B184, B185, B186, B187, B188 → LB4–LB13, findings retained. Still queued: B175, B177, B178, B182, B189 (last attempt ≥5). Round 20 (licensed) continues and is processed under the new rule. Evidence standards, duplicate checks and source restrictions unchanged |
+| 21 | 2026-10-17 07:05 | B029 (DLP 2016), B030 (Disney Store 2016), B031 (Asia 2016), B070 (BoxLunch 2016), B071 (other licensed 2016), B033 (WDW OE 2015). First round under the 17 Oct priority; the 2016 Loungefly cell (and 2015, B040) was superseded after an evidence check, its capacity given to B033 | in progress | |
 | – | 2026-10-16 16:50 | process update (no new research) | – | Licensed 2020–2026 moved to the front of the queue; dedicated Pink a la Mode and ArtLand cells B103–B109; manufacturer/retailer counted as separate dimensions; pin-structure rule 12; follow-up limit and long-term backlog |

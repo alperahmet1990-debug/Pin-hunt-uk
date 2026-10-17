@@ -1,0 +1,109 @@
+{
+ "packet_id": "backfill-b070-lic-boxlunch-2016",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b070",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+   "title": "BoxLunch Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-02-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+   "title": "Halloween Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/box-lunch-whaaaaaaaat.64679/",
+   "title": "Box Lunch - whaaaaaaaat?",
+   "publisher": "Disney Pin Forum",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pages/all-pins-released-by-month",
+   "title": "All Pins Released by Month",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/funko-pop-boxlunch-exclusive-disney-pins",
+   "title": "Funko Pop BoxLunch Exclusive Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-finding-dory-key-chain---boxlunch-exclusive/10830324.html",
+   "title": "Disney Pixar Finding Dory Key Chain - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [],
+ "pins": [],
+ "not_found": [
+  {
+   "key": "lic/2016/boxlunch",
+   "field": "pins",
+   "searched": "25 standard search-snippet queries: BoxLunch/Box Lunch + 2016, DPB tag and weekly 2016 roundups, forum, news sites, film/holiday themes",
+   "note": "no snippet tied any Disney pin sold at BoxLunch to a 2016 release; all BoxLunch product pages seen are undated"
+  },
+  {
+   "key": "lic/2016/boxlunch",
+   "field": "sets",
+   "searched": "same 25 queries",
+   "note": "no BoxLunch Disney pin set, mystery/blind box or exclusive dated 2016 found; earliest dated BoxLunch Disney pin sets seen are the Feb 2017 DPB roundup"
+  },
+  {
+   "key": "lic/2016/boxlunch",
+   "field": "manufacturer",
+   "searched": "Loungefly/Funko + BoxLunch + 2016 queries",
+   "note": "no maker stated for any 2016 BoxLunch pin; Loungefly not confirmed for 2016; Funko BoxLunch Disney pins seen are dated Nov-Dec 2018 by DPB"
+  },
+  {
+   "key": "lic/2016/boxlunch",
+   "field": "release_date",
+   "searched": "DPB weekly roundups May-Nov 2016 and Nov/Dec 2016 archive queries",
+   "note": "2016 DPB weekly roundups surfaced cover park releases only; snippets did not show BoxLunch items; monthly archive pages not readable"
+  },
+  {
+   "key": "lic/2016/boxlunch",
+   "field": "pins",
+   "searched": "Rogue One, Finding Dory, Moana, Zootopia, Jungle Book, NBC, Christmas, Halloween, Star Wars/Marvel + BoxLunch queries",
+   "note": "themed BoxLunch pins found are undated listings or dated 2017+; undated pages not used as 2016 evidence"
+  },
+  {
+   "key": "lic/2016/boxlunch",
+   "field": "pins",
+   "searched": "BoxLunch item-number check vs 231_b068",
+   "note": "lead: undated Finding Dory keychain (non-pin) has item no. 10830324, near the Feb 2017 pin sets; numbering alone does not date any pin to 2016"
+  },
+  {
+   "key": "lic/2016/boxlunch",
+   "field": "pins",
+   "searched": "forum queries",
+   "note": "lead: Disney Pin Forum June 2018 thread calls BoxLunch a new Hot Topic sister store selling Loungefly-made licensed pins; gives no 2016 items"
+  },
+  {
+   "key": "lic/2016/boxlunch",
+   "field": "pins",
+   "searched": "excluded-source policy",
+   "note": "any 2016 BoxLunch dating that exists only on PinPics/PinTradingDB/eBay not consulted; follow-up would need a permitted dated source (e.g. DPB Nov/Dec 2016 archive pages)"
+  }
+ ],
+ "discovery_notes": "BoxLunch 2016 sweep, 25 standard search-snippet queries with blocked domains. No existing lic/2016/ keys in evidence. No permitted snippet dated any Disney pin at BoxLunch to 2016; every BoxLunch product page seen is undated and DPB BoxLunch coverage starts Feb 2017. Packet records the negative result and follow-up leads only; no pins or sets created."
+}

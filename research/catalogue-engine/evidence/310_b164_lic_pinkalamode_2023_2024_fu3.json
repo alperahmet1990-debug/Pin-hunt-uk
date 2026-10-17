@@ -1,0 +1,494 @@
+{
+ "packet_id": "backfill-b164-lic-pinkalamode-2023-2024-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b164",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/snow-globe-pin-series-at-pink-a-la-mode/",
+   "title": "Snow Globe Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-02-15",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-nightmare-before-christmas-stained-glass-pin-series-at-pink-a-la-mode",
+   "title": "The Nightmare Before Christmas Stained Glass Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-10-17",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/197396",
+   "title": "My Pin Central entry 197396 (Jack, NBC Stained Glass Series)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/197398",
+   "title": "My Pin Central entry 197398 (Zero, NBC Stained Glass Series)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/197400",
+   "title": "My Pin Central entry 197400 (Scary Teddy, NBC Stained Glass Series)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/197402",
+   "title": "My Pin Central entry 197402 (Mayor, NBC Stained Glass Series)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/114669",
+   "title": "My Pin Central entry 114669 (Princess & Villains Micro Profile Mystery 2023)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/pink-a-la-mode-mystery-micro-profile-trade-thread.77243/",
+   "title": "Pink a la Mode Mystery Micro Profile Trade Thread",
+   "publisher": "Disney Pin Forum",
+   "published_date": "2023-05-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://medium.com/@disney_mouseketeer/disney-peter-pan-portrait-series-pins-at-pink-a-la-mode-9b8e159833cf",
+   "title": "Disney Peter Pan Portrait Series Pins at Pink a la Mode",
+   "publisher": "Medium (Disney Mouseketeer fan post)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/peter-pan-disney-pins/",
+   "title": "Peter Pan Disney Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/sleeping-beauty-icon-series-disney-pins-at-pink-a-la-mode/",
+   "title": "Sleeping Beauty Icon Series Disney Pins at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-01-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2023/pink-a-la-mode-snow-globe",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Snow Globe Pin Series",
+     "source_url": "https://disneypinsblog.com/snow-globe-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/snow-globe-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post says 3 princess pins and 3 villains pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/snow-globe-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "priced per set ($55 per set); film sets named Beauty and the Beast, Little Mermaid, Sleeping Beauty"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://disneypinsblog.com/snow-globe-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/snow-globe-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "price",
+     "value": 55,
+     "source_url": "https://disneypinsblog.com/snow-globe-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "per set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/snow-globe-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02-15",
+     "source_url": "https://disneypinsblog.com/snow-globe-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "on sale Feb 15 2023 6PM EST"
+    },
+    {
+     "field": "retailer",
+     "value": "Pink a la Mode",
+     "source_url": "https://disneypinsblog.com/snow-globe-pin-series-at-pink-a-la-mode/",
+     "method": "search_snippet",
+     "note": "post covers release at Pink a la Mode"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2023/pink-a-la-mode-nbc-stained-glass/jack-skellington",
+   "set_key": "lic/2023/pink-a-la-mode-nbc-stained-glass",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nightmare Before Christmas Stained Glass - Jack Skellington",
+     "source_url": "https://mypincentral.com/pin/197396",
+     "method": "search_snippet",
+     "note": "descriptive name; entry places pin in NBC Stained Glass Series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington"
+     ],
+     "source_url": "https://mypincentral.com/pin/197396",
+     "method": "search_snippet",
+     "note": "character at centre of pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/197396",
+     "method": "search_snippet",
+     "note": "single catalogue entry for this design"
+    },
+    {
+     "field": "visual_description",
+     "value": "Jack Skellington centred, translucent stained glass element",
+     "source_url": "https://mypincentral.com/pin/197396",
+     "method": "search_snippet",
+     "note": "paraphrase of catalogue description"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/pink-a-la-mode-nbc-stained-glass/zero",
+   "set_key": "lic/2023/pink-a-la-mode-nbc-stained-glass",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nightmare Before Christmas Stained Glass - Zero",
+     "source_url": "https://mypincentral.com/pin/197398",
+     "method": "search_snippet",
+     "note": "descriptive name; entry places pin in NBC Stained Glass Series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Zero"
+     ],
+     "source_url": "https://mypincentral.com/pin/197398",
+     "method": "search_snippet",
+     "note": "character at centre of pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/197398",
+     "method": "search_snippet",
+     "note": "single catalogue entry for this design"
+    },
+    {
+     "field": "visual_description",
+     "value": "Zero centred facing left, green and grey background, pumpkin at bottom, stained glass",
+     "source_url": "https://mypincentral.com/pin/197398",
+     "method": "search_snippet",
+     "note": "paraphrase of catalogue description"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/pink-a-la-mode-nbc-stained-glass/scary-teddy",
+   "set_key": "lic/2023/pink-a-la-mode-nbc-stained-glass",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nightmare Before Christmas Stained Glass - Scary Teddy",
+     "source_url": "https://mypincentral.com/pin/197400",
+     "method": "search_snippet",
+     "note": "descriptive name; entry places pin in NBC Stained Glass Series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scary Teddy"
+     ],
+     "source_url": "https://mypincentral.com/pin/197400",
+     "method": "search_snippet",
+     "note": "character at centre of pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/197400",
+     "method": "search_snippet",
+     "note": "single catalogue entry for this design"
+    },
+    {
+     "field": "visual_description",
+     "value": "rectangular; grinning Scary Teddy, blue and grey background, pumpkin at bottom, translucent stained glass",
+     "source_url": "https://mypincentral.com/pin/197400",
+     "method": "search_snippet",
+     "note": "paraphrase of catalogue description"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2023/pink-a-la-mode-nbc-stained-glass/the-mayor",
+   "set_key": "lic/2023/pink-a-la-mode-nbc-stained-glass",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nightmare Before Christmas Stained Glass - The Mayor",
+     "source_url": "https://mypincentral.com/pin/197402",
+     "method": "search_snippet",
+     "note": "descriptive name; entry places pin in NBC Stained Glass Series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "The Mayor"
+     ],
+     "source_url": "https://mypincentral.com/pin/197402",
+     "method": "search_snippet",
+     "note": "character at centre of pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/197402",
+     "method": "search_snippet",
+     "note": "single catalogue entry for this design"
+    },
+    {
+     "field": "visual_description",
+     "value": "rectangular; Mayor centred, orange and grey background, pumpkin at bottom, translucent stained glass",
+     "source_url": "https://mypincentral.com/pin/197402",
+     "method": "search_snippet",
+     "note": "paraphrase of catalogue description"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2023/pink-a-la-mode-nbc-stained-glass/jack-skellington",
+   "field": "release_location",
+   "searched": "b164; 3 queries",
+   "note": "hold: linked to PALM NBC Stained Glass by series name and subject only; entry snippet names no retailer, edition or date"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-nbc-stained-glass/zero",
+   "field": "release_location",
+   "searched": "b164; 3 queries",
+   "note": "hold: linked to PALM NBC Stained Glass by series name and subject only; entry snippet names no retailer, edition or date"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-nbc-stained-glass/scary-teddy",
+   "field": "release_location",
+   "searched": "b164; 3 queries",
+   "note": "hold: linked to PALM NBC Stained Glass by series name and subject only; entry snippet names no retailer, edition or date"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-nbc-stained-glass/the-mayor",
+   "field": "release_location",
+   "searched": "b164; 3 queries",
+   "note": "hold: linked to PALM NBC Stained Glass by series name and subject only; entry snippet names no retailer, edition or date"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-nbc-stained-glass",
+   "field": "pins",
+   "searched": "b164; 3 queries",
+   "note": "MPC entries 197396-197402 suggest separate pins per subject (Jack, Zero, Scary Teddy, Mayor); Sally, Oogie Boogie, Wreath, Snake not found; hold kept for rest"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-nbc-stained-glass",
+   "field": "lead",
+   "searched": "b164",
+   "note": "MPC 195337 (Jack, purple window) is outside the 1973xx run; not linked to this series"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-snow-globe",
+   "field": "pins",
+   "searched": "b164; 2 queries",
+   "note": "3 princess + 3 villain pins; villains not named, pairing per film set inferred only. hold: confirm pin structure (pack, single multi-character pin, or mystery designs)"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-snow-globe",
+   "field": "manufacturer",
+   "searched": "b164",
+   "note": "snippet names Pink a la Mode as seller only; actual maker not stated"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-peter-pan-portrait",
+   "field": "release_date",
+   "searched": "b164; 3 queries",
+   "note": "lead: search summaries cite a Jul 11-12 2024 post date and page age (~827 days) fits; no on-sale date stated. Hold kept"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-peter-pan-portrait/tinker-bell",
+   "field": "release_year",
+   "searched": "b164",
+   "note": "hold kept: 2024 still rests on post date/page age, not a stated release date"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-peter-pan-portrait/nana",
+   "field": "release_year",
+   "searched": "b164",
+   "note": "hold kept: 2024 still rests on post date/page age, not a stated release date"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-peter-pan-portrait/cubby",
+   "field": "release_year",
+   "searched": "b164",
+   "note": "hold kept: 2024 still rests on post date/page age, not a stated release date"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-beauty-and-the-beast-icon-series/bimbettes",
+   "field": "release_location",
+   "searched": "b164; 1 query",
+   "note": "hold kept: MPC 201215 snippet still names no retailer; no PALM product page found"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-sleeping-beauty-icon-series/three-fairies",
+   "field": "release_location",
+   "searched": "b164; 1 query",
+   "note": "hold kept: no per-pin listing found tying a Three Fairies design to PALM"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-sleeping-beauty-icon-series",
+   "field": "pins",
+   "searched": "b164; 1 query",
+   "note": "a search summary calls it a set of six ($35 each/$180 set) but count may be inferred from six subjects; hold kept"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-beauty-and-the-beast-icon-series",
+   "field": "pins",
+   "searched": "b164; 1 query",
+   "note": "still a subject list (Belle, Beast, Cogsworth/Lumiere/Wardrobe, Bimbettes); hold kept"
+  },
+  {
+   "key": "lic/2024/pink-a-la-mode-animals-series-1-mystery",
+   "field": "pins",
+   "searched": "b164; 1 query",
+   "note": "still a character list (incl. pairs); 12 designs. hold: mystery designs not individually confirmed"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-toy-story",
+   "field": "pins",
+   "searched": "b164; 2 queries",
+   "note": "still 'Woody, Jessie, Buzz and others'; Jessie & Bullseye SE300 page is a later SE release, not linked. hold kept"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-villains-medallions",
+   "field": "pins",
+   "searched": "b164; 2 queries",
+   "note": "characters only in a forum sale post (set of 8: Maleficent, Hades, Ursula, Jafar, Cruella, Evil Queen, Scar); not evidence"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-villains-mystery-profile",
+   "field": "pins",
+   "searched": "b164; 3 queries",
+   "note": "lead: MPC 114669 'Princess & Villains Micro Profile Mystery 2023' lists 12 names; a May 2023 forum trade thread fits this Apr drop. Not linked"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-villains-mystery-profile",
+   "field": "pins",
+   "searched": "b164",
+   "note": "hold: mystery designs not individually confirmed (MPC 114669 names Gaston, Ursula, Jafar, Maleficent, Lady Tremaine, Cinderella, Evil Queen...)"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-princess-villains-micro-mystery",
+   "field": "pins",
+   "searched": "b164; 2 queries",
+   "note": "MPC 114669 (12 names, 2 per box) could match this Sep 2023 set or the Apr Mystery Profile; link rests on title only; no pins created"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-princess-villains-micro-mystery",
+   "field": "pins",
+   "searched": "b164",
+   "note": "hold: mystery designs not individually confirmed; collectrandom Jafar LE300 listing is a reseller lead only"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-nbc-30th-micro-mystery",
+   "field": "pins",
+   "searched": "b164; 1 query",
+   "note": "10 designs still unnamed; each LE 300, $18 per box of two"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-happy-halloween-glow",
+   "field": "pins",
+   "searched": "b164; 2 queries",
+   "note": "characters still unnamed; image captions read 'D100 Halloween GID' (Disney100 tie-in lead only)"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-storybook",
+   "field": "releases",
+   "searched": "b164; 3 queries",
+   "note": "1st and 5th Storybook releases still not found; a thepinkalamodes.com BatB storybook listing is an unofficial site, not used"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-princess-stained-glass-wave-1",
+   "field": "pins",
+   "searched": "b164; 2 queries",
+   "note": "no per-pin listing found; a fryguypins 'PALM Stained Glass Princesses Ariel' reseller page seen, not used; hold kept"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-princess-stained-glass-wave-2",
+   "field": "pins",
+   "searched": "b164",
+   "note": "no per-pin evidence found; hold kept"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-princess-stained-glass-wave-3",
+   "field": "pins",
+   "searched": "b164",
+   "note": "no per-pin evidence found; hold kept"
+  },
+  {
+   "key": "lic/2023/pink-a-la-mode-frozen-stained-glass",
+   "field": "pins",
+   "searched": "b164; 2 queries",
+   "note": "still a character list; MPC 199082 (Anna, pink stained glass) not tied to PALM in snippet; hold kept"
+  },
+  {
+   "key": "lic/2023-2024/pink-a-la-mode",
+   "field": "coverage",
+   "searched": "b164",
+   "note": "Leads: Jack & Sally NBC 30th pin (DPB Store, LE300, $28; maker unclear), Sleeping Beauty Enchanted Fairies SE300 (2024-11-20)"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 to packets 238/262/286; reuses their keys. New: Snow Globe series set (Feb 2023) and four NBC Stained Glass pins (held: MPC entries name no retailer). No holds released. 29 searches."
+}

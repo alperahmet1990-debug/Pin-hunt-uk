@@ -1,0 +1,897 @@
+{
+ "packet_id": "backfill-b166-lic-artland-2025-2026-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b166",
+ "sources": [
+  {
+   "url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+   "title": "The Complete Princess & Swing Set of 6",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/collections/artland-fine-art-pins",
+   "title": "Artland Fine Art Pins",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://gallery-pulse.myshopify.com/collections/artland-fine-art-pins",
+   "title": "Artland Fine Art Pins",
+   "publisher": "Pulse Gallery",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/tiana-disney-pins/",
+   "title": "Tiana Disney Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/belle-jasmine-disney-princess-and-swing-pin-series-by-artland",
+   "title": "Belle & Jasmine Disney Princess and Swing Pin Series by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2025-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+   "title": "Winnie the Pooh \"Happy Roo\" Disney Pin by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2025-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/august-2026-pins/",
+   "title": "August 2026 Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/tagged/september-2026-pins",
+   "title": "News tagged September 2026 pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/artland-disney-pins/",
+   "title": "ArtLand Disney Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news",
+   "title": "News",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+   "title": "Star Wars Helmets Boba Fett, AT-AT Driver & Stormtrooper Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2025-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+   "title": "Darth Vader, Death Trooper & Imperial Royal Guard Star Wars Helmet Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-helmets-jango-fett-captain-rex-clone-commander-cody-pins-by-artland/",
+   "title": "Star Wars Helmets Jango Fett, Captain Rex & Clone Commander Cody Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.acmearchivesdirect.com/products/helmets-jango-fett-collectible-pin-dave-perillo",
+   "title": "Helmets: Jango Fett Collectible Pin",
+   "publisher": "Acme Archives Direct",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/beauty-and-the-beast-jumbo-castle-series-pin-by-artland/",
+   "title": "Beauty and the Beast Jumbo Castle Series Pin by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-little-mermaid-ariel-jumbo-castle-series-pin-by-artland/",
+   "title": "The Little Mermaid Ariel Jumbo Castle Series Pin by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/cinderella-disney-pins/",
+   "title": "Cinderella Disney Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/the-muppets-disney-pins/",
+   "title": "The Muppets Disney Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/rapunzel-tiana-artists-easel-pin-series-disney-pins-by-artland/",
+   "title": "Rapunzel & Tiana Artist's Easel Pin Series Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/sleeping-beauty-awakening-kiss-dragon-fire-disney-pins-by-artland/",
+   "title": "Sleeping Beauty Awakening Kiss & Dragon Fire Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/sleeping-beauty-feel-my-wrath-the-three-good-fairies-disney-pins-by-artland/",
+   "title": "Sleeping Beauty Feel My Wrath! & The Three Good Fairies Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hercules-muses-brave-artland-disney-pins",
+   "title": "Hercules Muses & Brave ArtLand Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-horned-king-jumbo-artland-disney-pin-with-creeper/",
+   "title": "The Horned King Jumbo ArtLand Disney Pin with Creeper",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/hades-jumbo-le-100-artland-disney-pin",
+   "title": "Hades Jumbo LE 100 ArtLand Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/sorcerer-mickey-starstream-artland-disney-pins",
+   "title": "Sorcerer Mickey Starstream ArtLand Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/belle-rapunzel-snow-white-floral-disney-pins-by-artland/",
+   "title": "Belle, Rapunzel & Snow White Floral Disney Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-castle-pin-series-by-artland",
+   "title": "Disney Castle Pin Series by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/sharing-a-dream-le-100-artland-disney-pin/",
+   "title": "Sharing a Dream LE 100 ArtLand Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/maleficent-by-george-caltsoudas-le-100-artland-jumbo-pin/",
+   "title": "Maleficent by George Caltsoudas LE 100 ArtLand Jumbo Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2025/artland-princess-and-swing-megara-tiana",
+   "claims": [
+    {
+     "field": "format",
+     "value": "multi-pin release (separately sold LE pins)",
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "Pulse sells Megara and Tiana swings as separate pins and names each in its six-pin Princess & Swing bundle"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "one Megara swing pin and one Tiana swing pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "bundle states editions of 200 per swing"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "Pulse Gallery listings and bundle"
+    },
+    {
+     "field": "sub_series",
+     "value": "releases 1-2 of Princess and Swing",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse says the swing series began with Megara and Tiana, then added Belle and Jasmine (DPB: releases 3-4)"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "designed by Guy Vasilovich",
+      "screen-printed signature on front"
+     ],
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse Tiana Swing listing credits Vasilovich design"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/artland-star-wars-helmets-boba-fett-at-at-driver-stormtrooper",
+   "claims": [
+    {
+     "field": "sub_series",
+     "value": "Star Wars Helmets series 2",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+     "method": "search_snippet",
+     "note": "search summary: DPB calls the Boba Fett, AT-AT Driver and Stormtrooper trio the second helmet series"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/artland-star-wars-helmets-vader-death-trooper-royal-guard",
+   "claims": [
+    {
+     "field": "sub_series",
+     "value": "Star Wars Helmets series 4",
+     "source_url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+     "method": "search_snippet",
+     "note": "search summary: Vader, Death Trooper and Royal Guard set described as the fourth helmet series, May 2026"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/artland-pooh-happy-roo",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Winnie the Pooh \"Happy Roo\" Disney Pin by ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin release",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "post title names one pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "single pin in title"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "available from March 2025 at DPBStore.com"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "post credits ArtLand"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/artland-pooh-tigger-fine-art",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Winnie the Pooh & Tigger Fine Art Disney Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/tagged/september-2026-pins",
+     "method": "search_snippet",
+     "note": "headline dated 2 Sep 2026 in DPB listings"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/tagged/september-2026-pins",
+     "method": "search_snippet",
+     "note": "headline credits ArtLand"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/artland-cinderella-mice",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cinderella Mice Disney Pin Series by ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/tagged/september-2026-pins",
+     "method": "search_snippet",
+     "note": "headline dated 9 Sep 2026 in DPB listings"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/tagged/september-2026-pins",
+     "method": "search_snippet",
+     "note": "headline credits ArtLand"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/artland-winnie-the-pooh-sep-2026",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "New Winnie the Pooh Pins by ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/tagged/september-2026-pins",
+     "method": "search_snippet",
+     "note": "headline dated 27 Sep 2026 in DPB listings"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/tagged/september-2026-pins",
+     "method": "search_snippet",
+     "note": "headline credits ArtLand"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/artland-muppets-animal-poster",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Animal Muppets Poster ArtLand Disney Pin",
+     "source_url": "https://disneypinsblog.com/category/august-2026-pins/",
+     "method": "search_snippet",
+     "note": "headline dated 29 Aug 2026, same day as Electric Mayhem post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/category/august-2026-pins/",
+     "method": "search_snippet",
+     "note": "headline credits ArtLand"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2025/artland-princess-and-swing-megara-tiana/megara",
+   "set_key": "lic/2025/artland-princess-and-swing-megara-tiana",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Megara Swing",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse listing name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Megara"
+     ],
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "bundle names each swing by princess"
+    },
+    {
+     "field": "main_character",
+     "value": "Megara",
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "separately listed pin; one princess per swing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "editions of 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "bundle states 200 editions per swing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size approx 3\"",
+      "certificate of authenticity"
+     ],
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "approx 3in, comes with COA"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/tag/tiana-disney-pins/",
+     "method": "search_snippet",
+     "note": "from DPB post date 2 Feb 2025 (prior packet); release month not stated"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "listed in Pulse Artland Fine Art Pins collection"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-princess-and-swing-megara-tiana/tiana",
+   "set_key": "lic/2025/artland-princess-and-swing-megara-tiana",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tiana Swing",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse listing name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tiana"
+     ],
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "bundle names each swing by princess"
+    },
+    {
+     "field": "main_character",
+     "value": "Tiana",
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "separately listed pin; one princess per swing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "editions of 200"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "bundle states 200 editions per swing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "size approx 3\"",
+      "certificate of authenticity"
+     ],
+     "source_url": "https://pulse.gallery/zh/collections/bundles-and-sets/products/the-complete-princess-swing-set",
+     "method": "search_snippet",
+     "note": "approx 3in, comes with COA"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/tag/tiana-disney-pins/",
+     "method": "search_snippet",
+     "note": "from DPB post date 2 Feb 2025 (prior packet); release month not stated"
+    },
+    {
+     "field": "original_price",
+     "value": 50.0,
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse 'from' GBP 50.00; another cached listing shows GBP 75 sold out"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "pounds"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "listed in Pulse Artland Fine Art Pins collection"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://pulse.gallery/collections/artland-fine-art-pins",
+     "method": "search_snippet",
+     "note": "Pulse listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/artland-pooh-happy-roo/happy-roo",
+   "set_key": "lic/2025/artland-pooh-happy-roo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Roo",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "name from post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Roo"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "Roo named in title"
+    },
+    {
+     "field": "main_character",
+     "value": "Roo",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "single pin post"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "LE 250"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "limited edition of 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "available from March 2025"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "release month stated"
+    },
+    {
+     "field": "release_location",
+     "value": "DPBStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "online release"
+    },
+    {
+     "field": "manufacturer",
+     "value": "ArtLand",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "ArtLand pin"
+    },
+    {
+     "field": "retailer",
+     "value": "DPB Store (DPBStore.com)",
+     "source_url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-happy-roo-disney-pin-by-artland",
+     "method": "search_snippet",
+     "note": "sold at DPBStore.com"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2025/artland-princess-and-swing-megara-tiana",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "released: Pulse lists Megara Swing and Tiana Swing separately and its Princess & Swing set of 6 names each (LE 200, 3in), so separate pins, not one or mystery"
+  },
+  {
+   "key": "lic/2025/artland-princess-and-swing-megara-tiana",
+   "field": "release_date",
+   "searched": "4 queries",
+   "note": "release month still not stated; year from DPB post date 2 Feb 2025; a Pulse review of Megara Swing dated Jul 2025"
+  },
+  {
+   "key": "lic/2025/artland-princess-and-swing-megara-tiana",
+   "field": "lead",
+   "searched": "4 queries",
+   "note": "Pulse Complete Princess & Swing Set of 6 (GBP 360) = Rapunzel, Ariel, Belle, Jasmine, Megara, Tiana; bundle, not a separate catalogue set"
+  },
+  {
+   "key": "lic/2025/artland-princess-and-swing-belle-jasmine",
+   "field": "family",
+   "searched": "4 queries",
+   "note": "numbering now consistent: Megara/Tiana 1-2, Belle/Jasmine 3-4, Ariel/Rapunzel 5-6, Merida/Tinker Bell 7-8, Alice/Cinderella 9-10; 1-2 from Pulse 'began with'"
+  },
+  {
+   "key": "lic/2026/artland-ember-wade/ember",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "hold kept: DPB ArtLand headline (5 Jul 2026) body still not returned; no source names ArtLand with the Pulse Ember listing"
+  },
+  {
+   "key": "lic/2026/artland-ember-wade/wade",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "hold kept: DPB ArtLand headline (5 Jul 2026) body still not returned; no source names ArtLand with the Pulse Wade listing"
+  },
+  {
+   "key": "lic/2026/artland-ben-harman-cars-3-tron/cars-3",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "hold kept: DPB post (15 Jul 2026) body still not returned; link to Pulse listing by subject only"
+  },
+  {
+   "key": "lic/2026/artland-ben-harman-cars-3-tron/tron-legacy",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "hold kept: DPB post (15 Jul 2026) body still not returned; link to Pulse listing by subject only"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem/animal",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "hold kept: bundle appears on Pulse Artland collection page, art inspired by Michael De Pippo; DPB headline (29 Aug 2026) body not returned"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem/janice",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "hold kept: bundle appears on Pulse Artland collection page, art inspired by Michael De Pippo; DPB headline (29 Aug 2026) body not returned"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem/floyd",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "hold kept: bundle appears on Pulse Artland collection page, art inspired by Michael De Pippo; DPB headline (29 Aug 2026) body not returned"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem/zoot",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "hold kept: bundle appears on Pulse Artland collection page, art inspired by Michael De Pippo; DPB headline (29 Aug 2026) body not returned"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem/lips",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "hold kept: bundle appears on Pulse Artland collection page, art inspired by Michael De Pippo; DPB headline (29 Aug 2026) body not returned"
+  },
+  {
+   "key": "lic/2026/artland-muppets-electric-mayhem",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "still no edition size; Pulse says numbered with AP/PP options; 2011 De Pippo prints were ACME LE 250 (art prints, not pins)"
+  },
+  {
+   "key": "lic/2026/artland-aladdin-little-mermaid-kiss/ariel-and-eric-kiss",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "hold kept: DPB headline (10 Oct 2026) only; Pulse shows Ariel & Eric Kiss sold out GBP 85; LE 200 seen only on resale listings (not recorded)"
+  },
+  {
+   "key": "lic/2026/artland-aladdin-little-mermaid-kiss/jasmine-and-prince-ali",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "hold kept: DPB headline only; Pulse lists Jasmine & Prince Ali from GBP 50 with No.1, AP/PP, Numbered options; edition size not stated"
+  },
+  {
+   "key": "lic/2026/artland-jumbo-castle-series/cinderella",
+   "field": "edition_size",
+   "searched": "4 queries",
+   "note": "hold kept: still headline only (21 Jun 2026); one search summary says Pulse lists it at GBP 275 sold out but exact page not returned; a later Pulse search found no such item"
+  },
+  {
+   "key": "lic/2026/artland-jumbo-castle-series/maleficent",
+   "field": "edition_size",
+   "searched": "3 queries",
+   "note": "hold kept: headline re-seen dated 12 Sep 2026; no edition, size or Pulse listing found"
+  },
+  {
+   "key": "lic/2026/artland-jumbo-castle-series",
+   "field": "visual_features",
+   "searched": "4 queries",
+   "note": "series confirmed as Guy Vasilovich design; BatB and Ariel both LE 100, 6.5x2.5in, boxed; Pulse Ariel castle GBP 275 sold out per summary, page unclear"
+  },
+  {
+   "key": "lic/2026/artland-jumbo-castle-series",
+   "field": "expected_pin_count",
+   "searched": "4 queries",
+   "note": "four castle pins known (BatB 1st, Cinderella, Ariel 3rd, Maleficent); total series size not stated"
+  },
+  {
+   "key": "lic/2024/artland-star-wars-helmets-jango-fett-captain-rex-clone-commander-cody",
+   "field": "sub_series",
+   "searched": "1 query",
+   "note": "out of window: Jango, Rex, Cody helmets LE 195, Dec 2024, Acme USD 39; series 1 by inference from DPB calling Boba trio second series; not labelled 1"
+  },
+  {
+   "key": "lic/2026/artland-star-wars-helmets-stormtrooper-tie-fighter-pilot-scout-trooper",
+   "field": "sub_series",
+   "searched": "1 query",
+   "note": "series 3 by inference (Boba = 2nd, Vader = 4th); prior packet saw it called third set"
+  },
+  {
+   "key": "lic/2025/artland-pooh-happy-roo/happy-roo",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters beyond Roo not stated; Roo inferred from title only"
+  },
+  {
+   "key": "lic/2026/artland-pooh-tigger-fine-art",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "headline only (2 Sep 2026); pins, editions and structure not in snippets; Pulse Tigger pin LE 300 GBP 35 not linked (subject match only)"
+  },
+  {
+   "key": "lic/2026/artland-pooh-tigger-fine-art",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "only post date 2 Sep 2026 seen; release month not stated"
+  },
+  {
+   "key": "lic/2026/artland-cinderella-mice",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); headline only (9 Sep 2026); members not named"
+  },
+  {
+   "key": "lic/2026/artland-winnie-the-pooh-sep-2026",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "headline only (27 Sep 2026); pins, editions, structure unknown; may overlap Pooh & Tigger release - unconfirmed"
+  },
+  {
+   "key": "lic/2026/artland-muppets-animal-poster",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: headline only (29 Aug 2026); may be the same item as the Electric Mayhem Animal framed pin; not recorded as a pin until confirmed"
+  },
+  {
+   "key": "lic/2026/artland-undated-leads",
+   "field": "release_date",
+   "searched": "9 queries",
+   "note": "dated out of window: Artist's Easel Rapunzel & Tiana 2023-12; SB Awakening Kiss & Dragon Fire 2024-06; Feel My Wrath & Three Good Fairies 2024-07; Muses & Brave 2021-10"
+  },
+  {
+   "key": "lic/2026/artland-undated-leads",
+   "field": "release_date",
+   "searched": "9 queries",
+   "note": "dated out of window: Horned King jumbo 2021-04; Hades jumbo 2020-12; Starstream 2021-06; Belle/Rapunzel/Snow White Floral 2022-11; Disney Castle series 2021-07"
+  },
+  {
+   "key": "lic/2026/artland-undated-leads",
+   "field": "release_date",
+   "searched": "9 queries",
+   "note": "dated out of window: Sharing a Dream LE 100 2021-03; Caltsoudas Maleficent jumbo 2021-01"
+  },
+  {
+   "key": "lic/2026/artland-undated-leads",
+   "field": "lead",
+   "searched": "9 queries",
+   "note": "still undated: Belle/Tinker Bell/Tiana and Villains Signature Series, Elsa/Moana/TB Easel, Mad Madam Mim, Muppets Studio Fine Art, Pooh Meets Tigger glass, Chilcott Pixar"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 to packets 240/264/288; reuses their keys. Released: Megara & Tiana swing structure (Pulse per-pin listings + named set-of-6 bundle). Added Happy Roo (Mar 2025) and Sep 2026 headline-only sets (Pooh & Tigger, Cinderella Mice, new Pooh, Animal poster). Helmets: Boba=series 2, Vader=series 4 per summaries. Ember & Wade, Cars 3/Tron, Electric Mayhem, Kiss holds kept. Many undated leads dated out of window. DPB plus Pulse snippets only. 30 searches."
+}

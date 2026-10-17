@@ -1,0 +1,3291 @@
+{
+ "packet_id": "backfill-b133-lic-boxlunch-2021-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b133",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+   "title": "The Haunted Mansion Pin Releases at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-haunted-mansion-quicksand-men-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644543.html",
+   "title": "Disney Haunted Mansion Quicksand Men Stretching Portrait Sliding Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-haunted-mansion-constance-hatchaway-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644545.html",
+   "title": "Disney Haunted Mansion Constance Hatchaway Stretching Portrait Sliding Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-haunted-mansion-tightrope-girl-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644541.html",
+   "title": "Disney Haunted Mansion Tightrope Girl Stretching Portrait Sliding Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-haunted-mansion-2022-disney-pin-series-at-boxlunch/",
+   "title": "The Haunted Mansion 2022 Disney Pin Series at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-minnies-runaway-railway-pins-at-boxlunch-shopdisney/",
+   "title": "Mickey & Minnie's Runaway Railway Pins at BoxLunch & shopDisney",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-mickey-minnies-runaway-railway-mickey-train-enamel-pin---boxlunch-exclusive/13841958.html",
+   "title": "Disney Mickey & Minnie's Runaway Railway Mickey Train Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-mickey-minnies-runaway-railway-daisy-train-enamel-pin---boxlunch-exclusive/13841954.html",
+   "title": "Disney Mickey & Minnie's Runaway Railway Daisy Train Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-mickey-minnies-runaway-railway-pluto-train-enamel-pin---boxlunch-exclusive/13841960.html",
+   "title": "Disney Mickey & Minnie's Runaway Railway Pluto Train Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/w/articles/2021/03/22/disney-mickey-and-minnies-runaway-railway-collection-boxlunch/",
+   "title": "All Aboard! Disney and BoxLunch Debut Mickey & Minnie's Runaway Railway Apparel and Pin Collection",
+   "publisher": "Laughing Place",
+   "published_date": "2021-03-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pumpkin-spice-drink-disney-pins-at-boxlunch",
+   "title": "Pumpkin Spice Drink Disney Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644547.html",
+   "title": "Loungefly Disney Mickey Mouse Pumpkin Spice Drink Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pluto-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644549.html",
+   "title": "Loungefly Disney Pluto Pumpkin Spice Drink Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pluto-pumpkin-spice-latte-enamel-pin---boxlunch-exclusive/18532039.html",
+   "title": "Loungefly Disney Pluto Pumpkin Spice Latte Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-minnie-mouse-peppermint-mocha-coffee-enamel-pin---boxlunch-exclusive/16396348.html",
+   "title": "Loungefly Disney Minnie Mouse Peppermint Mocha Coffee Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-mickey-minnie-mouse-charcuterie-board-spinning-enamel-pin---boxlunch-exclusive/16396344.html",
+   "title": "Loungefly Disney Mickey & Minnie Mouse Charcuterie Board Spinning Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/christmas-2021-disney-pins-at-boxlunch/",
+   "title": "Christmas 2021 Disney Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/grogu-holiday-star-wars-pin-at-boxlunch",
+   "title": "Grogu Holiday Star Wars Pin at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-star-wars-the-mandalorian-mando-holiday-wreath-enamel-pin---boxlunch-exclusive/15848108.html",
+   "title": "Loungefly Star Wars The Mandalorian Mando Holiday Wreath Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-boba-fett-on-throne-pin-at-boxlunch",
+   "title": "Star Wars The Mandalorian Boba Fett on Throne Pin at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-child-with-frogs-star-wars-pin-at-boxlunch",
+   "title": "The Child with Frogs Star Wars Pin at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-child-with-blue-macarons-star-wars-pin-at-boxlunch/",
+   "title": "The Child with Blue Macarons Star Wars Pin at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-x-wing-are-we-there-yet-boxlunch-pin/",
+   "title": "Star Wars X-Wing Are We There Yet BoxLunch Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-characters-puzzle-blind-box-pin-set-at-boxlunch",
+   "title": "Star Wars Characters Puzzle Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-day-of-the-dead-disney-pins-at-boxlunch/",
+   "title": "Star Wars Day of the Dead Disney Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-star-wars-the-mandalorian-the-child-terrarium-enamel-pin---boxlunch-exclusive/16396356.html",
+   "title": "Loungefly Star Wars The Mandalorian The Child Terrarium Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/marvel-chibi-loki-enamel-pin---boxlunch-exclusive/15127072.html",
+   "title": "Marvel Chibi Loki Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/loki-chibi-boxlunch-marvel-pin/",
+   "title": "Loki Chibi BoxLunch Marvel Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/loki-disney-pin/",
+   "title": "Loki Disney Pin Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/winnie-the-pooh-recycled-metal-pin-series-at-boxlunch",
+   "title": "Winnie the Pooh Recycled Metal Pin Series at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/winnie-the-pooh-recycled-metal-pin-series-at-boxlunch",
+   "title": "Winnie the Pooh Recycled Metal Pin Series at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-winnie-the-pooh-balloons-dangling-enamel-pin-pack---boxlunch-exclusive/14862697.html",
+   "title": "Disney Winnie the Pooh Balloons Dangling Enamel Pin Pack - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-winnie-the-pooh-pooh-friends-picnic-layered-enamel-pin---boxlunch-exclusive/14862695.html",
+   "title": "Disney Winnie the Pooh Pooh & Friends Picnic Layered Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pooh-piglet-with-balloons-disney-pin-set-at-boxlunch",
+   "title": "Pooh & Piglet with Balloons Disney Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-chibi-pooh-piglet-with-balloons-enamel-pin-set---boxlunch-exclusive/15848144.html",
+   "title": "Loungefly Disney Winnie the Pooh Chibi Pooh & Piglet with Balloons Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-chibi-enamel-pin-set---boxlunch-exclusive/14474427.html",
+   "title": "Disney The Fox and the Hound Chibi Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-chibi-playtime-enamel-pin---boxlunch-exclusive/15644515.html",
+   "title": "Disney The Fox and the Hound Chibi Playtime Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/w/articles/2021/08/31/boxlunch-exclusive-the-fox-and-the-hound-collection/",
+   "title": "Celebrate 40 Years of Friendship with BoxLunch Exclusive \"The Fox and the Hound\" Collection",
+   "publisher": "Laughing Place",
+   "published_date": "2021-08-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-logo-spinner-enamel-pin---boxlunch-exclusive/15644517.html",
+   "title": "Disney The Fox and the Hound Logo Spinner Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-fox-and-the-hound-disney-pins-at-boxlunch/",
+   "title": "The Fox and the Hound Disney Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/marvel-wandavision-split-reality-enamel-pin-set/15228645.html",
+   "title": "Marvel WandaVision Split Reality Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+   "title": "Marvel WandaVision Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/marvel-wandavision-tv-enamel-pin---boxlunch-exclusive/14497882.html",
+   "title": "Marvel WandaVision TV Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/marvel-wandavision-scarlet-witch-vector-silhouette-portrait-enamel-pin/15490893.html",
+   "title": "Marvel WandaVision Scarlet Witch Vector Silhouette Portrait Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/marvel-wandavision-scarlet-witch-flight-enamel-pin/15490895.html",
+   "title": "Marvel WandaVision Scarlet Witch Flight Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/wandavision-agatha-harkness-cosplay-brooch-pin-at-boxlunch/",
+   "title": "WandaVision Agatha Harkness Cosplay Brooch Pin at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/marvel-wandavision-agatha-harkness-replica-brooch-pin/15490891.html",
+   "title": "Marvel WandaVision Agatha Harkness Replica Brooch Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/marvel-wandavision-agatha-all-along-enamel-pin/15427117.html",
+   "title": "Marvel WandaVision Agatha All Along Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/marvel-wandavision-talent-show-pin-set-at-boxlunch",
+   "title": "Marvel WandaVision Talent Show Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://funko.fandom.com/wiki/Pop!_Pins_Disney",
+   "title": "Pop! Pins Disney",
+   "publisher": "Funko Wiki (Fandom)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+   "title": "Alice in Wonderland Door Pin at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-hercules-muses-column-enamel-pin---boxlunch-exclusive/14368893.html",
+   "title": "Loungefly Disney Hercules Muses Column Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hercules-muses-column-disney-pin-at-boxlunch/",
+   "title": "Hercules Muses Column Disney Pin at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+   "title": "Hercules & Megara Heart BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hercules-the-muses-vase-disney-pin-at-boxlunch/",
+   "title": "Hercules The Muses Vase Disney Pin at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/thumper-sleeping-boxlunch-disney-pin/",
+   "title": "Thumper Sleeping BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-bambi-thumper-sleeping-enamel-pin---boxlunch-exclusive/14756667.html",
+   "title": "Loungefly Disney Bambi Thumper Sleeping Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-pixar-up-carl-ellie-flair-pin-set/",
+   "title": "Disney Pixar UP Carl & Ellie Flair Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-earth-day-blind-box-enamel-pin---boxlunch-exclusive/13011345.html",
+   "title": "Loungefly Disney Earth Day Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/earth-day-2021-blind-box-disney-pins-at-boxlunch",
+   "title": "Earth Day 2021 Blind Box Disney Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-villains-character-bows-blind-box-pin-set-at-boxlunch",
+   "title": "Disney Villains Character Bows Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-princesses-grayscale-moments-blind-box-enamel-pin---boxlunch-exclusive/15644513.html",
+   "title": "Loungefly Disney Princesses Grayscale Moments Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-princesses-grayscale-moments-blind-box-pins-at-boxlunch",
+   "title": "Disney Princesses Grayscale Moments Blind Box Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-meal-time-with-stitch-blind-box-enamel-pin---boxlunch-exclusive/15204285.html",
+   "title": "Loungefly Disney Lilo & Stitch Meal Time with Stitch Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/meal-time-with-stitch-blind-box-loungefly-pins-at-boxlunch/",
+   "title": "Meal Time with Stitch Blind Box Loungefly Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-autumn-fun-with-stitch-enamel-pin---boxlunch-exclusive/15644519.html",
+   "title": "Loungefly Disney Lilo & Stitch Autumn Fun with Stitch Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2021/boxlunch-haunted-mansion-stretching-portraits",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Haunted Mansion Pin Releases at BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "individual pins sold separately",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "three portrait pins each with own BoxLunch listing"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "post names three stretching-room portraits (plus gates theme)"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "post says released September 2021 in stores and online"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog retail price each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch stores and BoxLunch.com"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-tightrope-girl-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644541.html",
+     "method": "search_snippet",
+     "note": "listing titles say BoxLunch Exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/boxlunch-runaway-railway",
+   "claims": [
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.laughingplace.com/w/articles/2021/03/22/disney-mickey-and-minnies-runaway-railway-collection-boxlunch/",
+     "method": "search_snippet",
+     "note": "Laughing Place 22 Mar 2021: BoxLunch debuts Runaway Railway apparel and pin collection"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/boxlunch-boba-fett-throne",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars The Mandalorian Boba Fett on Throne Pin at BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-boba-fett-on-throne-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-boba-fett-on-throne-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "single pin post"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-boba-fett-on-throne-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch release"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-boba-fett-on-throne-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "post says released December 2021"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-boba-fett-on-throne-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "retail price"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/boxlunch-child-blue-macarons",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Child with Blue Macarons Star Wars Pin at BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-child-with-blue-macarons-star-wars-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/the-child-with-blue-macarons-star-wars-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "single pin post"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-child-with-blue-macarons-star-wars-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch release"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08",
+     "source_url": "https://disneypinsblog.com/the-child-with-blue-macarons-star-wars-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "released August 2021"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/the-child-with-blue-macarons-star-wars-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "retail price"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/boxlunch-child-frogs",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Child with Frogs Star Wars Pin at BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-frogs-star-wars-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-frogs-star-wars-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "single pin post"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-frogs-star-wars-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch release"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-frogs-star-wars-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "search summary: October 2021"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-frogs-star-wars-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "search summary: $9.90"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/boxlunch-x-wing-are-we-there-yet",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars X-Wing Are We There Yet BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/star-wars-x-wing-are-we-there-yet-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/star-wars-x-wing-are-we-there-yet-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "single pin post"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/star-wars-x-wing-are-we-there-yet-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "BoxLunch release"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04",
+     "source_url": "https://disneypinsblog.com/star-wars-x-wing-are-we-there-yet-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "search summary: April 2021"
+    },
+    {
+     "field": "price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/star-wars-x-wing-are-we-there-yet-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "search summary: $8.90"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/boxlunch-star-wars-characters-puzzle-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Characters Puzzle Blind Box Pin Set at BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-characters-puzzle-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set with individual designs",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-characters-puzzle-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "blind box, price per box/pin"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-characters-puzzle-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch release"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-characters-puzzle-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "summary: December 2021"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-characters-puzzle-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "price per box/pin"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/boxlunch-wandavision-split-reality",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Marvel WandaVision Split Reality Enamel Pin Set",
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-split-reality-enamel-pin-set/15228645.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-split-reality-enamel-pin-set/15228645.html",
+     "method": "search_snippet",
+     "note": "listing: 2-piece set"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/boxlunch-wandavision-tv",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Marvel WandaVision TV BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "summary of DPB WandaVision roundup"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-tv-enamel-pin---boxlunch-exclusive/14497882.html",
+     "method": "search_snippet",
+     "note": "single enamel pin listing"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-tv-enamel-pin---boxlunch-exclusive/14497882.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-tv-enamel-pin---boxlunch-exclusive/14497882.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-01-15",
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "roundup lists 15 Jan 2021"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/boxlunch-wandavision-scarlet-witch",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Marvel WandaVision Pins at BoxLunch (Scarlet Witch singles)",
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "DPB WandaVision roundup, July 2021 releases"
+    },
+    {
+     "field": "format",
+     "value": "individual pins sold separately",
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "two pins at $9.90 each"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07",
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "released July 2021"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "each"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/boxlunch-wandavision-agatha-brooch",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "WandaVision Agatha Harkness Cosplay Brooch Pin at BoxLunch",
+     "source_url": "https://disneypinsblog.com/wandavision-agatha-harkness-cosplay-brooch-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/wandavision-agatha-harkness-cosplay-brooch-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "single item"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/wandavision-agatha-harkness-cosplay-brooch-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08",
+     "source_url": "https://disneypinsblog.com/wandavision-agatha-harkness-cosplay-brooch-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "released August 2021"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/wandavision-agatha-harkness-cosplay-brooch-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "retail price"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/uncas-boxlunch-fox-hound-chibi",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney The Fox and the Hound Chibi Enamel Pin Set - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-chibi-enamel-pin-set---boxlunch-exclusive/14474427.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-chibi-enamel-pin-set---boxlunch-exclusive/14474427.html",
+     "method": "search_snippet",
+     "note": "set of two gold-tone pins"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-chibi-enamel-pin-set---boxlunch-exclusive/14474427.html",
+     "method": "search_snippet",
+     "note": "summary: created by Uncas International for BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/boxlunch-fox-hound-chibi-playtime",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "BoxLunch exclusive The Fox and the Hound 40th anniversary collection",
+     "source_url": "https://www.laughingplace.com/w/articles/2021/08/31/boxlunch-exclusive-the-fox-and-the-hound-collection/",
+     "method": "search_snippet",
+     "note": "Laughing Place lists Chibi Playtime pin in the 40th collection"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/boxlunch-fox-hound-logo-spinner",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney The Fox and the Hound Logo Spinner Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-logo-spinner-enamel-pin---boxlunch-exclusive/15644517.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-logo-spinner-enamel-pin---boxlunch-exclusive/15644517.html",
+     "method": "search_snippet",
+     "note": "single spinner pin"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-logo-spinner-enamel-pin---boxlunch-exclusive/15644517.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-logo-spinner-enamel-pin---boxlunch-exclusive/15644517.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08",
+     "source_url": "https://www.laughingplace.com/w/articles/2021/08/31/boxlunch-exclusive-the-fox-and-the-hound-collection/",
+     "method": "search_snippet",
+     "note": "in BoxLunch 40th collection article dated 31 Aug 2021"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/boxlunch-pooh-recycled-metal",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-recycled-metal-pin-series-at-boxlunch",
+     "method": "search_snippet",
+     "note": "blog: created by Uncas International for BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/loungefly-boxlunch-pooh-piglet-balloons",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Loungefly Disney Winnie the Pooh Chibi Pooh & Piglet with Balloons Enamel Pin Set - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-chibi-pooh-piglet-with-balloons-enamel-pin-set---boxlunch-exclusive/15848144.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-chibi-pooh-piglet-with-balloons-enamel-pin-set---boxlunch-exclusive/15848144.html",
+     "method": "search_snippet",
+     "note": "pin set of two enamel pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-chibi-pooh-piglet-with-balloons-enamel-pin-set---boxlunch-exclusive/15848144.html",
+     "method": "search_snippet",
+     "note": "listing: two pins about 1.5 in"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-chibi-pooh-piglet-with-balloons-enamel-pin-set---boxlunch-exclusive/15848144.html",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/pooh-piglet-with-balloons-disney-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-winnie-the-pooh-chibi-pooh-piglet-with-balloons-enamel-pin-set---boxlunch-exclusive/15848144.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/pooh-piglet-with-balloons-disney-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "released October 2021"
+    },
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/pooh-piglet-with-balloons-disney-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/pooh-piglet-with-balloons-disney-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/boxlunch-alice-door",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Alice in Wonderland Door Pin at BoxLunch",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "single pin-on-pin design"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "July 2021; online sales from 3 Aug 2021"
+    },
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "retail price"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/loungefly-boxlunch-hercules-muses-column",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hercules Muses Column Disney Pin at BoxLunch",
+     "source_url": "https://disneypinsblog.com/hercules-muses-column-disney-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-hercules-muses-column-enamel-pin---boxlunch-exclusive/14368893.html",
+     "method": "search_snippet",
+     "note": "single pin listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-hercules-muses-column-enamel-pin---boxlunch-exclusive/14368893.html",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-hercules-muses-column-enamel-pin---boxlunch-exclusive/14368893.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-hercules-muses-column-enamel-pin---boxlunch-exclusive/14368893.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-01",
+     "source_url": "https://disneypinsblog.com/hercules-muses-column-disney-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "released January 2021"
+    },
+    {
+     "field": "price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/hercules-muses-column-disney-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "retail price"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/loungefly-boxlunch-hercules-megara-heart",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hercules & Megara Heart BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "blog credits Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02",
+     "source_url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "released February 2021"
+    },
+    {
+     "field": "price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "retail price"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/loungefly-boxlunch-thumper-sleeping",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Thumper Sleeping BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/thumper-sleeping-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-bambi-thumper-sleeping-enamel-pin---boxlunch-exclusive/14756667.html",
+     "method": "search_snippet",
+     "note": "single pin listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-bambi-thumper-sleeping-enamel-pin---boxlunch-exclusive/14756667.html",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-bambi-thumper-sleeping-enamel-pin---boxlunch-exclusive/14756667.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-bambi-thumper-sleeping-enamel-pin---boxlunch-exclusive/14756667.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02",
+     "source_url": "https://disneypinsblog.com/thumper-sleeping-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "released February 2021"
+    },
+    {
+     "field": "price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/thumper-sleeping-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "retail price"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/loungefly-boxlunch-earth-day-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Loungefly Disney Earth Day Blind Box Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-earth-day-blind-box-enamel-pin---boxlunch-exclusive/13011345.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-earth-day-blind-box-enamel-pin---boxlunch-exclusive/13011345.html",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-earth-day-blind-box-enamel-pin---boxlunch-exclusive/13011345.html",
+     "method": "search_snippet",
+     "note": "one randomly selected pin per box"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/loungefly-boxlunch-princess-grayscale-moments-mystery",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princesses-grayscale-moments-blind-box-enamel-pin---boxlunch-exclusive/15644513.html",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princesses-grayscale-moments-blind-box-enamel-pin---boxlunch-exclusive/15644513.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-princesses-grayscale-moments-blind-box-enamel-pin---boxlunch-exclusive/15644513.html",
+     "method": "search_snippet",
+     "note": "one randomly selected pin per order"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/loungefly-boxlunch-meal-time-stitch-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-meal-time-with-stitch-blind-box-enamel-pin---boxlunch-exclusive/15204285.html",
+     "method": "search_snippet",
+     "note": "listing: Stitch appears alongside six different foods in the collection (read as six designs)"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2021/boxlunch-haunted-mansion-stretching-portraits/tightrope-girl",
+   "set_key": "lic/2021/boxlunch-haunted-mansion-stretching-portraits",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Haunted Mansion Tightrope Girl Stretching Portrait Sliding Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-tightrope-girl-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644541.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tightrope Girl"
+     ],
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog names this portrait among the three"
+    },
+    {
+     "field": "main_character",
+     "value": "Tightrope Girl",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-tightrope-girl-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644541.html",
+     "method": "search_snippet",
+     "note": "portrait subject in listing title"
+    },
+    {
+     "field": "attraction",
+     "value": "The Haunted Mansion",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-tightrope-girl-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644541.html",
+     "method": "search_snippet",
+     "note": "attraction-themed pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-tightrope-girl-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644541.html",
+     "method": "search_snippet",
+     "note": "single sliding portrait pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sliding"
+     ],
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-tightrope-girl-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644541.html",
+     "method": "search_snippet",
+     "note": "listing: slide reveals hidden lower half of the portrait"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-tightrope-girl-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644541.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog release month"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "2021 release"
+    },
+    {
+     "field": "original_price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-tightrope-girl-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644541.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-haunted-mansion-stretching-portraits/constance-hatchaway",
+   "set_key": "lic/2021/boxlunch-haunted-mansion-stretching-portraits",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Haunted Mansion Constance Hatchaway Stretching Portrait Sliding Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-constance-hatchaway-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644545.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Constance Hatchaway"
+     ],
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog names this portrait among the three"
+    },
+    {
+     "field": "main_character",
+     "value": "Constance Hatchaway",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-constance-hatchaway-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644545.html",
+     "method": "search_snippet",
+     "note": "portrait subject in listing title"
+    },
+    {
+     "field": "attraction",
+     "value": "The Haunted Mansion",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-constance-hatchaway-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644545.html",
+     "method": "search_snippet",
+     "note": "attraction-themed pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-constance-hatchaway-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644545.html",
+     "method": "search_snippet",
+     "note": "single sliding portrait pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sliding"
+     ],
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-constance-hatchaway-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644545.html",
+     "method": "search_snippet",
+     "note": "listing: slide reveals hidden lower half of the portrait"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-constance-hatchaway-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644545.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog release month"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "2021 release"
+    },
+    {
+     "field": "original_price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-constance-hatchaway-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644545.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-haunted-mansion-stretching-portraits/quicksand-men",
+   "set_key": "lic/2021/boxlunch-haunted-mansion-stretching-portraits",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Haunted Mansion Quicksand Men Stretching Portrait Sliding Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-quicksand-men-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644543.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Quicksand Men"
+     ],
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog names this portrait among the three"
+    },
+    {
+     "field": "main_character",
+     "value": "Quicksand Men",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-quicksand-men-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644543.html",
+     "method": "search_snippet",
+     "note": "portrait subject in listing title"
+    },
+    {
+     "field": "attraction",
+     "value": "The Haunted Mansion",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-quicksand-men-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644543.html",
+     "method": "search_snippet",
+     "note": "attraction-themed pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-quicksand-men-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644543.html",
+     "method": "search_snippet",
+     "note": "single sliding portrait pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sliding"
+     ],
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-quicksand-men-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644543.html",
+     "method": "search_snippet",
+     "note": "listing: slide reveals hidden lower half of the portrait"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-quicksand-men-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644543.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog release month"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "2021 release"
+    },
+    {
+     "field": "original_price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-pin-releases-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-haunted-mansion-quicksand-men-stretching-portrait-sliding-enamel-pin---boxlunch-exclusive/15644543.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-runaway-railway/mickey",
+   "set_key": "lic/2021/boxlunch-runaway-railway",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Mickey & Minnie's Runaway Railway Mickey Train Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-minnies-runaway-railway-mickey-train-enamel-pin---boxlunch-exclusive/13841958.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-minnies-runaway-railway-mickey-train-enamel-pin---boxlunch-exclusive/13841958.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-minnies-runaway-railway-mickey-train-enamel-pin---boxlunch-exclusive/13841958.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-runaway-railway/daisy",
+   "set_key": "lic/2021/boxlunch-runaway-railway",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Mickey & Minnie's Runaway Railway Daisy Train Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-minnies-runaway-railway-daisy-train-enamel-pin---boxlunch-exclusive/13841954.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-minnies-runaway-railway-daisy-train-enamel-pin---boxlunch-exclusive/13841954.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-minnies-runaway-railway-daisy-train-enamel-pin---boxlunch-exclusive/13841954.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-runaway-railway/pluto",
+   "set_key": "lic/2021/boxlunch-runaway-railway",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Mickey & Minnie's Runaway Railway Pluto Train Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-minnies-runaway-railway-pluto-train-enamel-pin---boxlunch-exclusive/13841960.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-minnies-runaway-railway-pluto-train-enamel-pin---boxlunch-exclusive/13841960.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-minnies-runaway-railway-pluto-train-enamel-pin---boxlunch-exclusive/13841960.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-pumpkin-spice-drink/mickey",
+   "set_key": "lic/2021/boxlunch-pumpkin-spice-drink",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Disney Mickey Mouse Pumpkin Spice Drink Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644547.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; name matches DPB 'Pumpkin Spice Drink' release"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644547.html",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644547.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644547.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "visual_description",
+     "value": "chibi Mickey in front of a pumpkin spice drink with mouse ears",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644547.html",
+     "method": "search_snippet",
+     "note": "listing description paraphrased"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644547.html",
+     "method": "search_snippet",
+     "note": "listing price"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-pumpkin-spice-drink/pluto",
+   "set_key": "lic/2021/boxlunch-pumpkin-spice-drink",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Disney Pluto Pumpkin Spice Drink Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pluto-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644549.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; name matches DPB release"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pluto-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644549.html",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pluto-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644549.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pluto-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644549.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "visual_description",
+     "value": "chibi Pluto in front of a pumpkin spice drink",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pluto-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644549.html",
+     "method": "search_snippet",
+     "note": "listing description paraphrased"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pluto-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644549.html",
+     "method": "search_snippet",
+     "note": "listing price"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-christmas/minnie-peppermint-mocha",
+   "set_key": "lic/2021/boxlunch-christmas",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Disney Minnie Mouse Peppermint Mocha Coffee Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-minnie-mouse-peppermint-mocha-coffee-enamel-pin---boxlunch-exclusive/16396348.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-minnie-mouse-peppermint-mocha-coffee-enamel-pin---boxlunch-exclusive/16396348.html",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-minnie-mouse-peppermint-mocha-coffee-enamel-pin---boxlunch-exclusive/16396348.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-minnie-mouse-peppermint-mocha-coffee-enamel-pin---boxlunch-exclusive/16396348.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie in holiday outfit beside peppermint mocha mug with gingerbread cookie and candy cane",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-minnie-mouse-peppermint-mocha-coffee-enamel-pin---boxlunch-exclusive/16396348.html",
+     "method": "search_snippet",
+     "note": "listing description paraphrased"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-minnie-mouse-peppermint-mocha-coffee-enamel-pin---boxlunch-exclusive/16396348.html",
+     "method": "search_snippet",
+     "note": "listing original price"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-christmas/mandalorian-holiday-wreath",
+   "set_key": "lic/2021/boxlunch-christmas",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "The Mandalorian"
+     ],
+     "source_url": "https://disneypinsblog.com/christmas-2021-disney-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "Christmas 2021 post lists a Mandalorian wreath pin among Stitch, Toulouse, Cruella"
+    },
+    {
+     "field": "pin_name",
+     "value": "Loungefly Star Wars The Mandalorian Mando Holiday Wreath Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-the-mandalorian-mando-holiday-wreath-enamel-pin---boxlunch-exclusive/15848108.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; linked by name wording (Mandalorian + holiday wreath)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mando with head through the centre of a wreath, wearing a Santa hat",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-the-mandalorian-mando-holiday-wreath-enamel-pin---boxlunch-exclusive/15848108.html",
+     "method": "search_snippet",
+     "note": "listing description paraphrased"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-the-mandalorian-mando-holiday-wreath-enamel-pin---boxlunch-exclusive/15848108.html",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-the-mandalorian-mando-holiday-wreath-enamel-pin---boxlunch-exclusive/15848108.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-boba-fett-throne/boba-fett",
+   "set_key": "lic/2021/boxlunch-boba-fett-throne",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars The Mandalorian Boba Fett on Throne Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-boba-fett-on-throne-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "from post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Boba Fett"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-boba-fett-on-throne-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-boba-fett-on-throne-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-boba-fett-on-throne-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-boba-fett-on-throne-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "blog release month"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-boba-fett-on-throne-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "2021"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-boba-fett-on-throne-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-boba-fett-on-throne-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-the-mandalorian-boba-fett-on-throne-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-child-blue-macarons/the-child",
+   "set_key": "lic/2021/boxlunch-child-blue-macarons",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Child with Blue Macarons Star Wars Pin",
+     "source_url": "https://disneypinsblog.com/the-child-with-blue-macarons-star-wars-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "from post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "The Child (Grogu)"
+     ],
+     "source_url": "https://disneypinsblog.com/the-child-with-blue-macarons-star-wars-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "pin subject eating blue macarons"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/the-child-with-blue-macarons-star-wars-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "Star Wars / The Mandalorian"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/the-child-with-blue-macarons-star-wars-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08",
+     "source_url": "https://disneypinsblog.com/the-child-with-blue-macarons-star-wars-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog release month"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/the-child-with-blue-macarons-star-wars-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "2021"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/the-child-with-blue-macarons-star-wars-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-child-with-blue-macarons-star-wars-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-child-with-blue-macarons-star-wars-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-child-frogs/the-child",
+   "set_key": "lic/2021/boxlunch-child-frogs",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Child with Frogs Star Wars Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-frogs-star-wars-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "from post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "The Child (Grogu)"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-frogs-star-wars-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "pin subject"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-frogs-star-wars-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-frogs-star-wars-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-frogs-star-wars-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "summary release month"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-frogs-star-wars-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "2021"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-frogs-star-wars-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "summary price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-frogs-star-wars-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-child-with-frogs-star-wars-pin-at-boxlunch",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-x-wing-are-we-there-yet/x-wing",
+   "set_key": "lic/2021/boxlunch-x-wing-are-we-there-yet",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars X-Wing Are We There Yet BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/star-wars-x-wing-are-we-there-yet-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-x-wing-are-we-there-yet-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/star-wars-x-wing-are-we-there-yet-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04",
+     "source_url": "https://disneypinsblog.com/star-wars-x-wing-are-we-there-yet-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "summary release month"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/star-wars-x-wing-are-we-there-yet-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "2021"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/star-wars-x-wing-are-we-there-yet-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "summary price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/star-wars-x-wing-are-we-there-yet-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/star-wars-x-wing-are-we-there-yet-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-loki-chibi/loki",
+   "set_key": "lic/2021/boxlunch-loki-chibi",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Marvel Chibi Loki Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/marvel-chibi-loki-enamel-pin---boxlunch-exclusive/15127072.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/marvel-chibi-loki-enamel-pin---boxlunch-exclusive/15127072.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/marvel-chibi-loki-enamel-pin---boxlunch-exclusive/15127072.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-05-24",
+     "source_url": "https://disneypinsblog.com/tag/loki-disney-pin/",
+     "method": "search_snippet",
+     "note": "DPB tag archive dates the post 24 May 2021"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-wandavision-tv/tv",
+   "set_key": "lic/2021/boxlunch-wandavision-tv",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Marvel WandaVision TV Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-tv-enamel-pin---boxlunch-exclusive/14497882.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-tv-enamel-pin---boxlunch-exclusive/14497882.html",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-tv-enamel-pin---boxlunch-exclusive/14497882.html",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-01-15",
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "roundup date"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "2021"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-tv-enamel-pin---boxlunch-exclusive/14497882.html",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-wandavision-scarlet-witch/vector-silhouette-portrait",
+   "set_key": "lic/2021/boxlunch-wandavision-scarlet-witch",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Marvel WandaVision Scarlet Witch Vector Silhouette Portrait Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-scarlet-witch-vector-silhouette-portrait-enamel-pin/15490893.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scarlet Witch"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog names two Scarlet Witch pins"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-scarlet-witch-vector-silhouette-portrait-enamel-pin/15490893.html",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "sold individually"
+    },
+    {
+     "field": "visual_description",
+     "value": "Scarlet Witch silhouette portrait",
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "summary of blog text"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07",
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog release month"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "2021"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-scarlet-witch-vector-silhouette-portrait-enamel-pin/15490893.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-wandavision-scarlet-witch/flight",
+   "set_key": "lic/2021/boxlunch-wandavision-scarlet-witch",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Marvel WandaVision Scarlet Witch Flight Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-scarlet-witch-flight-enamel-pin/15490895.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scarlet Witch"
+     ],
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog names two Scarlet Witch pins"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-scarlet-witch-flight-enamel-pin/15490895.html",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "sold individually"
+    },
+    {
+     "field": "visual_description",
+     "value": "Wanda shown mid-flight",
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "summary of blog text"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07",
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog release month"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "2021"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/marvel-wandavision-pins-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-scarlet-witch-flight-enamel-pin/15490895.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-wandavision-agatha-brooch/agatha-harkness",
+   "set_key": "lic/2021/boxlunch-wandavision-agatha-brooch",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Marvel WandaVision Agatha Harkness Replica Brooch Pin",
+     "source_url": "https://www.boxlunch.com/product/marvel-wandavision-agatha-harkness-replica-brooch-pin/15490891.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; linked by name to DPB cosplay brooch post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Agatha Harkness"
+     ],
+     "source_url": "https://disneypinsblog.com/wandavision-agatha-harkness-cosplay-brooch-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://disneypinsblog.com/wandavision-agatha-harkness-cosplay-brooch-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08",
+     "source_url": "https://disneypinsblog.com/wandavision-agatha-harkness-cosplay-brooch-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog release month"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/wandavision-agatha-harkness-cosplay-brooch-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "2021"
+    },
+    {
+     "field": "original_price",
+     "value": 14.9,
+     "source_url": "https://disneypinsblog.com/wandavision-agatha-harkness-cosplay-brooch-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/wandavision-agatha-harkness-cosplay-brooch-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/wandavision-agatha-harkness-cosplay-brooch-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-fox-hound-chibi-playtime/tod-copper",
+   "set_key": "lic/2021/boxlunch-fox-hound-chibi-playtime",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tod",
+      "Copper"
+     ],
+     "source_url": "https://www.laughingplace.com/w/articles/2021/08/31/boxlunch-exclusive-the-fox-and-the-hound-collection/",
+     "method": "search_snippet",
+     "note": "chibi Tod and Copper on one pin"
+    },
+    {
+     "field": "materials",
+     "value": "metal and enamel, recycled materials",
+     "source_url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-chibi-playtime-enamel-pin---boxlunch-exclusive/15644515.html",
+     "method": "search_snippet",
+     "note": "listing material note"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-fox-hound-logo-spinner/tod-copper-logo",
+   "set_key": "lic/2021/boxlunch-fox-hound-logo-spinner",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney The Fox and the Hound Logo Spinner Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-logo-spinner-enamel-pin---boxlunch-exclusive/15644517.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tod",
+      "Copper"
+     ],
+     "source_url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-logo-spinner-enamel-pin---boxlunch-exclusive/15644517.html",
+     "method": "search_snippet",
+     "note": "Tod and Copper run around the logo"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-logo-spinner-enamel-pin---boxlunch-exclusive/15644517.html",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-logo-spinner-enamel-pin---boxlunch-exclusive/15644517.html",
+     "method": "search_snippet",
+     "note": "spinning element"
+    },
+    {
+     "field": "materials",
+     "value": "metal and enamel, recycled materials",
+     "source_url": "https://www.boxlunch.com/product/disney-the-fox-and-the-hound-logo-spinner-enamel-pin---boxlunch-exclusive/15644517.html",
+     "method": "search_snippet",
+     "note": "listing material note"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08",
+     "source_url": "https://www.laughingplace.com/w/articles/2021/08/31/boxlunch-exclusive-the-fox-and-the-hound-collection/",
+     "method": "search_snippet",
+     "note": "collection debut"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://www.laughingplace.com/w/articles/2021/08/31/boxlunch-exclusive-the-fox-and-the-hound-collection/",
+     "method": "search_snippet",
+     "note": "2021"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.laughingplace.com/w/articles/2021/08/31/boxlunch-exclusive-the-fox-and-the-hound-collection/",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive collection"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-pooh-recycled-metal/pooh-flowers",
+   "set_key": "lic/2021/boxlunch-pooh-recycled-metal",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-recycled-metal-pin-series-at-boxlunch",
+     "method": "search_snippet",
+     "note": "blog price"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-recycled-metal-pin-series-at-boxlunch",
+     "method": "search_snippet",
+     "note": "series credit"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-pooh-recycled-metal/pooh-friends-picnic",
+   "set_key": "lic/2021/boxlunch-pooh-recycled-metal",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Winnie the Pooh Pooh & Friends Picnic Layered Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-winnie-the-pooh-pooh-friends-picnic-layered-enamel-pin---boxlunch-exclusive/14862695.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh",
+      "Piglet",
+      "Tigger",
+      "Eeyore"
+     ],
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-recycled-metal-pin-series-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Piglet, Tigger and Eeyore join Pooh on one gold-toned pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-recycled-metal-pin-series-at-boxlunch",
+     "method": "search_snippet",
+     "note": "single layered pin"
+    },
+    {
+     "field": "original_price",
+     "value": 12.9,
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-recycled-metal-pin-series-at-boxlunch",
+     "method": "search_snippet",
+     "note": "blog price"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Uncas International",
+     "source_url": "https://disneypinsblog.com/winnie-the-pooh-recycled-metal-pin-series-at-boxlunch",
+     "method": "search_snippet",
+     "note": "series credit"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/disney-winnie-the-pooh-pooh-friends-picnic-layered-enamel-pin---boxlunch-exclusive/14862695.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/boxlunch-alice-door/alice-doorknob",
+   "set_key": "lic/2021/boxlunch-alice-door",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice in Wonderland Door Pin",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice",
+      "Doorknob"
+     ],
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "pin-on-pin with Alice and the Doorknob"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "single pin-on-pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "pin-on-pin design"
+    },
+    {
+     "field": "materials",
+     "value": "recycled metal",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "recycled metal"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog release month"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "2021"
+    },
+    {
+     "field": "original_price",
+     "value": 12.9,
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-door-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/loungefly-boxlunch-hercules-muses-column/muses",
+   "set_key": "lic/2021/loungefly-boxlunch-hercules-muses-column",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Disney Hercules Muses Column Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-hercules-muses-column-enamel-pin---boxlunch-exclusive/14368893.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Calliope",
+      "Clio",
+      "Thalia",
+      "Terpsichore",
+      "Melpomene"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-hercules-muses-column-enamel-pin---boxlunch-exclusive/14368893.html",
+     "method": "search_snippet",
+     "note": "five Muses disguised as columns on one silver-tone pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-hercules-muses-column-enamel-pin---boxlunch-exclusive/14368893.html",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/hercules-muses-column-disney-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog: created by Loungefly"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-01",
+     "source_url": "https://disneypinsblog.com/hercules-muses-column-disney-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog release month"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/hercules-muses-column-disney-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "2021"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-hercules-muses-column-enamel-pin---boxlunch-exclusive/14368893.html",
+     "method": "search_snippet",
+     "note": "listing price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-hercules-muses-column-enamel-pin---boxlunch-exclusive/14368893.html",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-hercules-muses-column-enamel-pin---boxlunch-exclusive/14368893.html",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/loungefly-boxlunch-hercules-megara-heart/hercules-megara",
+   "set_key": "lic/2021/loungefly-boxlunch-hercules-megara-heart",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hercules & Megara Heart BoxLunch Disney Pin",
+     "source_url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hercules",
+      "Megara"
+     ],
+     "source_url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "couple posed together on gold-tone heart"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "single heart pin"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "blog credit"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02",
+     "source_url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "blog release month"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "2021"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/hercules-megara-heart-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/loungefly-boxlunch-thumper-sleeping/thumper",
+   "set_key": "lic/2021/loungefly-boxlunch-thumper-sleeping",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Disney Bambi Thumper Sleeping Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-bambi-thumper-sleeping-enamel-pin---boxlunch-exclusive/14756667.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Thumper"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-bambi-thumper-sleeping-enamel-pin---boxlunch-exclusive/14756667.html",
+     "method": "search_snippet",
+     "note": "Thumper curled up asleep"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-bambi-thumper-sleeping-enamel-pin---boxlunch-exclusive/14756667.html",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "size_mm",
+     "value": "38x19",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-bambi-thumper-sleeping-enamel-pin---boxlunch-exclusive/14756667.html",
+     "method": "search_snippet",
+     "note": "listing gives 1 1/2 in W x 3/4 in H; converted approx"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02",
+     "source_url": "https://disneypinsblog.com/thumper-sleeping-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "blog release month"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/thumper-sleeping-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "2021"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-bambi-thumper-sleeping-enamel-pin---boxlunch-exclusive/14756667.html",
+     "method": "search_snippet",
+     "note": "listing original price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-bambi-thumper-sleeping-enamel-pin---boxlunch-exclusive/14756667.html",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-bambi-thumper-sleeping-enamel-pin---boxlunch-exclusive/14756667.html",
+     "method": "search_snippet",
+     "note": "BoxLunch"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2021/boxlunch-haunted-mansion-stretching-portraits",
+   "field": "manufacturer",
+   "searched": "follow-up b133; 1 query",
+   "note": "maker not stated in blog or listing snippets"
+  },
+  {
+   "key": "lic/2021/boxlunch-haunted-mansion-stretching-portraits/tightrope-girl",
+   "field": "original_price",
+   "searched": "follow-up b133",
+   "note": "conflict: blog $14.90 vs listing $13.99 (listing may be later repricing); same for Constance Hatchaway"
+  },
+  {
+   "key": "lic/2022/boxlunch-haunted-mansion/alexander-nitrokoff",
+   "field": "pin_key",
+   "searched": "follow-up b133",
+   "note": "lead: Alexander Nitrokoff stretching portrait (BoxLunch 18842270) is in DPB 2022 series, not 2021; coffin sliding pin 18842278 undated - for 2022 cell"
+  },
+  {
+   "key": "lic/2021/boxlunch-runaway-railway",
+   "field": "manufacturer",
+   "searched": "follow-up b133; 1 query",
+   "note": "still unstated: BoxLunch listing titles carry no maker name (unlike Loungefly-titled listings); no Loungefly/Uncas link found"
+  },
+  {
+   "key": "lic/2021/boxlunch-runaway-railway",
+   "field": "pins",
+   "searched": "follow-up b133",
+   "note": "DPB says 5 pins at BoxLunch; only Goofy, Mickey, Daisy, Pluto named. Fifth BoxLunch design unidentified (Minnie/Donald/Pete are shopDisney)"
+  },
+  {
+   "key": "lic/2021/boxlunch-pumpkin-spice-drink/mickey",
+   "field": "manufacturer",
+   "searched": "follow-up b133",
+   "note": "resolved: Loungefly-titled 'Pumpkin Spice Drink' listings for Mickey (15644547) and Pluto (15644549); matched to DPB release by exact series name + character"
+  },
+  {
+   "key": "lic/2021/boxlunch-pumpkin-spice-drink/minnie",
+   "field": "manufacturer",
+   "searched": "follow-up b133; 1 query",
+   "note": "no Minnie 'Pumpkin Spice Drink' listing found; maker unconfirmed (other Minnie PSL pins are 2022/2023)"
+  },
+  {
+   "key": "lic/2021/boxlunch-pumpkin-spice-drink",
+   "field": "manufacturer",
+   "searched": "follow-up b133",
+   "note": "set-level maker left unstated until Minnie confirmed; Mickey and Pluto are Loungefly"
+  },
+  {
+   "key": "lic/2021/boxlunch-pumpkin-spice-drink",
+   "field": "release_year",
+   "searched": "follow-up b133",
+   "note": "kept open: listing ids 156445xx sit beside Sep 2021 Haunted Mansion listings (weak support for 2021, not a dated statement). Distinct from 2022 'Pumpkin Spice Latte' (18532039)"
+  },
+  {
+   "key": "lic/2021/boxlunch-christmas/minnie-peppermint-mocha",
+   "field": "manufacturer",
+   "searched": "follow-up b133",
+   "note": "resolved: Loungefly listing 16396348 found, same series naming/ids as Mickey 16396346 and Goofy 16396350"
+  },
+  {
+   "key": "lic/2021/boxlunch-christmas/mandalorian-holiday-wreath",
+   "field": "characters",
+   "searched": "follow-up b133",
+   "note": "hold released: subject is Mando (listing + DPB 'Mandalorian wreath'); Grogu Holiday (Dec 2021, Santa hat and scarf, own DPB post) is a different pin, not a duplicate"
+  },
+  {
+   "key": "lic/2021/boxlunch-christmas/mandalorian-holiday-wreath",
+   "field": "manufacturer",
+   "searched": "follow-up b133",
+   "note": "hold: Loungefly maker from listing 15848108 linked to the DPB Christmas 2021 post by name wording and subject, not by a dated statement; confirm"
+  },
+  {
+   "key": "lic/2021/boxlunch-christmas/mandalorian-holiday-wreath",
+   "field": "original_price",
+   "searched": "follow-up b133",
+   "note": "listing shows $3.99 original (likely clearance repricing) vs DPB $9.90 set price; not recorded"
+  },
+  {
+   "key": "lic/2021/boxlunch-christmas/stitch-holiday",
+   "field": "release_year",
+   "searched": "follow-up b133; 2 queries",
+   "note": "hold kept: 2021 post calls it Santa Stitch, which matches the 2020 AllEars Santa Stitch wreath pin; no BoxLunch listing found - may be a 2020 carry-over"
+  },
+  {
+   "key": "lic/2021/boxlunch-christmas",
+   "field": "manufacturer",
+   "searched": "follow-up b133",
+   "note": "Stitch maker still unstated; Mandalorian now Loungefly (held); Toulouse, Cruella, Goofy, Mickey, Minnie Loungefly"
+  },
+  {
+   "key": "lic/2021/boxlunch-christmas/charcuterie-board",
+   "field": "pin_key",
+   "searched": "follow-up b133",
+   "note": "lead: Loungefly Mickey & Minnie Charcuterie Board Spinning pin (16396344) has adjacent listing id to peppermint mocha pins; not dated or in DPB post - not added"
+  },
+  {
+   "key": "lic/2021/boxlunch-boba-fett-throne/boba-fett",
+   "field": "manufacturer",
+   "searched": "follow-up b133",
+   "note": "maker and BoxLunch listing not found in snippets"
+  },
+  {
+   "key": "lic/2021/boxlunch-child-blue-macarons/the-child",
+   "field": "manufacturer",
+   "searched": "follow-up b133",
+   "note": "maker not stated; no BoxLunch listing found"
+  },
+  {
+   "key": "lic/2021/boxlunch-child-frogs/the-child",
+   "field": "release_date",
+   "searched": "follow-up b133",
+   "note": "Oct 2021 and $9.90 from a search summary across several DPB posts; confirm. Distinct from Sep 2023 Grogu with Frogs spinning pin (excluded in packet 255)"
+  },
+  {
+   "key": "lic/2021/boxlunch-child-frogs/the-child",
+   "field": "manufacturer",
+   "searched": "follow-up b133",
+   "note": "maker not stated; a Loungefly Chibi Grogu with Frog listing (17125847) is a later id - not linked"
+  },
+  {
+   "key": "lic/2021/boxlunch-x-wing-are-we-there-yet/x-wing",
+   "field": "characters",
+   "searched": "follow-up b133",
+   "note": "characters shown not stated; maker not stated"
+  },
+  {
+   "key": "lic/2021/boxlunch-star-wars-characters-puzzle-mystery",
+   "field": "pins",
+   "searched": "follow-up b133",
+   "note": "designs, set size and maker not in snippets; no member records"
+  },
+  {
+   "key": "lic/2022/boxlunch-star-wars-day-of-the-dead",
+   "field": "release_year",
+   "searched": "follow-up b133",
+   "note": "Star Wars Day of the Dead pins (Boba Fett, Vader) are Sep 2022 per DPB - not 2021"
+  },
+  {
+   "key": "lic/2021/boxlunch-child-terrarium",
+   "field": "pin_key",
+   "searched": "follow-up b133",
+   "note": "lead: Loungefly The Child Terrarium pin (16396356) BoxLunch exclusive $9.90; undated, id near Nov 2021 listings - not added"
+  },
+  {
+   "key": "lic/2021/boxlunch-loki-chibi/loki",
+   "field": "manufacturer",
+   "searched": "follow-up b133; 1 query",
+   "note": "still unstated: listing title has no maker name; no Loungefly version found"
+  },
+  {
+   "key": "lic/2021/boxlunch-loki-chibi/loki",
+   "field": "release_date",
+   "searched": "follow-up b133",
+   "note": "conflict: DPB post says June 2021 vs tag archive 24 May 2021"
+  },
+  {
+   "key": "lic/2021/boxlunch-loki/other-listings",
+   "field": "pin_key",
+   "searched": "follow-up b133",
+   "note": "leads: BoxLunch Alligator Loki (15496841), Vote Loki (16395271), Kid Loki (16395269) exclusives undated - not added"
+  },
+  {
+   "key": "lic/2021/boxlunch-black-widow-chibi/black-widow",
+   "field": "manufacturer",
+   "searched": "follow-up b133",
+   "note": "not re-searched (budget); Eternals and Shang-Chi makers also not re-searched"
+  },
+  {
+   "key": "lic/2021/boxlunch-wandavision-split-reality",
+   "field": "pins",
+   "searched": "follow-up b133; 1 query",
+   "note": "hold kept: listing describes the pairing of sitcom black-and-white and real-world looks overall, not each pin; confirm pin structure"
+  },
+  {
+   "key": "lic/2021/boxlunch-wandavision-tv/tv",
+   "field": "visual_description",
+   "searched": "follow-up b133",
+   "note": "design, price and maker not in snippets; listing linked to DPB entry by name (WandaVision TV + BoxLunch)"
+  },
+  {
+   "key": "lic/2021/boxlunch-wandavision-scarlet-witch",
+   "field": "edition_type",
+   "searched": "follow-up b133",
+   "note": "listings not titled BoxLunch Exclusive; maker not stated"
+  },
+  {
+   "key": "lic/2021/boxlunch-wandavision-agatha-brooch/agatha-harkness",
+   "field": "scope",
+   "searched": "follow-up b133",
+   "note": "scope: confirm pin vs brooch/jewelry (cosplay replica brooch pin)"
+  },
+  {
+   "key": "lic/2021/boxlunch-wandavision-agatha-all-along",
+   "field": "pin_key",
+   "searched": "follow-up b133",
+   "note": "lead: BoxLunch Agatha All Along enamel pin (15427117) undated - not added"
+  },
+  {
+   "key": "lic/2021/boxlunch-wandavision-talent-show",
+   "field": "release_year",
+   "searched": "follow-up b133",
+   "note": "kept as 2022: summary repeats DPB Jan 2022 release"
+  },
+  {
+   "key": "lic/2021/uncas-boxlunch-fox-hound-chibi",
+   "field": "pins",
+   "searched": "follow-up b133; 2 queries",
+   "note": "hold kept: listing says two gold-tone Tod and Copper pins but does not describe each pin; confirm one Tod + one Copper"
+  },
+  {
+   "key": "lic/2021/boxlunch-fox-hound-chibi-playtime/tod-copper",
+   "field": "manufacturer",
+   "searched": "follow-up b133",
+   "note": "still unstated in Laughing Place and listing snippets"
+  },
+  {
+   "key": "lic/2021/boxlunch-fox-hound-logo-spinner/tod-copper-logo",
+   "field": "original_price",
+   "searched": "follow-up b133",
+   "note": "listing shows $13.99 (possibly later price); no launch price in snippets; maker not stated"
+  },
+  {
+   "key": "lic/2021/boxlunch-pooh-recycled-metal",
+   "field": "manufacturer",
+   "searched": "follow-up b133",
+   "note": "resolved: DPB series post credits Uncas International (key slug kept as in packet 255)"
+  },
+  {
+   "key": "lic/2021/boxlunch-pooh-recycled-metal/balloons-dangling",
+   "field": "pin_structure",
+   "searched": "follow-up b133; 2 queries",
+   "note": "hold kept: BoxLunch 14862697 confirms a 2-pin pack ($14.90) with Tigger, Piglet, Pooh named collectively; pins not described one by one"
+  },
+  {
+   "key": "lic/2021/loungefly-boxlunch-pooh-piglet-balloons",
+   "field": "pins",
+   "searched": "follow-up b133",
+   "note": "hold: confirm pin structure; listing says two pins showing chibi Pooh and Piglet with balloons but not each pin individually"
+  },
+  {
+   "key": "lic/2021/boxlunch-alice-door/alice-doorknob",
+   "field": "manufacturer",
+   "searched": "follow-up b133",
+   "note": "lead: search summary grouped this post with Uncas International BoxLunch pins but snippet did not state the maker for it; confirm before using an uncas slug"
+  },
+  {
+   "key": "lic/2021/boxlunch-alice-door/alice-doorknob",
+   "field": "release_date",
+   "searched": "follow-up b133",
+   "note": "July 2021 release vs online sales 3 Aug 2021 (both from same post)"
+  },
+  {
+   "key": "lic/2021/loungefly-boxlunch-hercules-muses-column/muses",
+   "field": "pin_key",
+   "searched": "follow-up b133",
+   "note": "distinct from lic/2021/loungefly-hercules-muses (Loungefly.com LE 1,000, $25, Apr 2021, packet 254)"
+  },
+  {
+   "key": "lic/2021/loungefly-boxlunch-hercules-megara-heart/hercules-megara",
+   "field": "product_code",
+   "searched": "follow-up b133",
+   "note": "no BoxLunch listing found in snippets"
+  },
+  {
+   "key": "lic/2022/uncas-boxlunch-hercules-muses-vase",
+   "field": "release_year",
+   "searched": "follow-up b133",
+   "note": "Muses Vase pin (Uncas, $9.90) is Feb 2022 per DPB - lead for 2022 cell"
+  },
+  {
+   "key": "lic/2021/loungefly-boxlunch-earth-day-mystery",
+   "field": "pins",
+   "searched": "follow-up b133; 1 query",
+   "note": "holds kept on all 8 character keys: listing still uses assortment wording (Mickey joined by Minnie, EVE, Forky ... in this collection); set size not stated"
+  },
+  {
+   "key": "lic/2021/boxlunch-villains-character-bows-mystery",
+   "field": "pins",
+   "searched": "follow-up b133; 1 query",
+   "note": "still unnamed: DPB says Evil Queen, Ursula, Maleficent 'and more', collect all nine - list wording; no BoxLunch product page found; maker unconfirmed"
+  },
+  {
+   "key": "lic/2021/loungefly-boxlunch-princess-grayscale-moments-mystery",
+   "field": "pins",
+   "searched": "follow-up b133; 1 query",
+   "note": "hold: mystery designs not individually confirmed; series lists Tiana, Ariel, Mulan, Cinderella 'and more' only; set size not stated"
+  },
+  {
+   "key": "lic/2021/loungefly-boxlunch-princess-grayscale-moments-mystery",
+   "field": "price",
+   "searched": "follow-up b133",
+   "note": "conflict: DPB $9.90 vs current listing $12.90"
+  },
+  {
+   "key": "lic/2021/loungefly-boxlunch-meal-time-stitch-mystery",
+   "field": "pins",
+   "searched": "follow-up b133; 1 query",
+   "note": "six foods still unnamed; no per-design source"
+  },
+  {
+   "key": "lic/2021/funko-boxlunch",
+   "field": "pin_key",
+   "searched": "follow-up b133; 1 query",
+   "note": "still none dated 2021: BoxLunch Funko Pop! Disney pin listings found have older ids (116xxxxx); Funko wiki gives no years for BoxLunch exclusives"
+  },
+  {
+   "key": "lic/2021/boxlunch-lunar-new-year",
+   "field": "pin_key",
+   "searched": "follow-up b133; 1 query",
+   "note": "no BoxLunch Lunar New Year 2021 pin found; Year of the Ox results are Disney Parks/HKDL/Disney Store items"
+  },
+  {
+   "key": "dsus/2021/up-carl-ellie-flair-set",
+   "field": "pin_key",
+   "searched": "follow-up b133",
+   "note": "lead: shopDisney UP Carl & Ellie 3-piece flair set, 18 Jan 2021, $14.99 - for dsus cell"
+  },
+  {
+   "key": "lic/2021/boxlunch-lilo-stitch/autumn-fun",
+   "field": "pin_key",
+   "searched": "follow-up b133",
+   "note": "lead: Loungefly Autumn Fun with Stitch BoxLunch exclusive (15644519, $9.90) undated; id beside Sep 2021 listings only - not added"
+  },
+  {
+   "key": "lic/2021/boxlunch-wandavision-agatha-brooch/agatha-harkness",
+   "field": "pin_name",
+   "searched": "packet review",
+   "note": "hold: scope: described as a replica brooch; confirm it is a pin, not jewellery"
+  }
+ ],
+ "discovery_notes": "Follow-up to packet 255 (b077) reusing its keys; checked 254, 278, 260 (no shared new items). 30 standard searches, snippets only. New: Haunted Mansion stretching portraits x3 (Sep 2021), Boba Fett throne, Child blue macarons, Child frogs, X-Wing, SW characters puzzle set, WandaVision TV + 2 Scarlet Witch + Agatha brooch (scope hold), Fox and Hound logo spinner, Pooh & Piglet balloons set (Loungefly, structure hold), Alice door, Loungefly Hercules Muses column, Hercules & Megara heart, Thumper sleeping. Makers resolved: Pumpkin Spice Mickey/Pluto, Minnie peppermint mocha, Pooh recycled series (Uncas). Mandalorian wreath subject hold released (Mando), maker held. Stitch holiday year held."
+}

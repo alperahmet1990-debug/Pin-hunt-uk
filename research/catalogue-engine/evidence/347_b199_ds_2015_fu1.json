@@ -1,0 +1,2091 @@
+{
+ "packet_id": "backfill-b199-ds-2015-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b199",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+   "title": "Disney Studio Store Hollywood November 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+   "title": "Disney Studio Store Hollywood October 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-may-2015-pins",
+   "title": "Disney Studio Store May 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-april-2015-pins",
+   "title": "Disney Studio Store Hollywood April 2015 Pins!",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2015-pins/",
+   "title": "Disney Studio Store Hollywood June 2015 Pins!",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2015/05/22/tomorrowland-pin-released-at-disney-studio-store/",
+   "title": "Tomorrowland Pin Released At Disney Studio Store",
+   "publisher": "DisKingdom",
+   "published_date": "2015-05-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+   "title": "Tomorrowland Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+   "title": "Large LE 200 Tomorrowland Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+   "title": "Cars 10th Anniversary Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-stormtrooper-pin/",
+   "title": "Star Wars Stormtrooper Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/139518",
+   "title": "139518",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://letsgopintrading.com/D23EXPO2015CASTLE.HTML",
+   "title": "D23 Expo 2015 - Castle Collection Mystery Pin Box",
+   "publisher": "Let's Go Pin Trading",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/d23-pin-trading-mystery-box-castle-collection.55070/",
+   "title": "D23 Pin Trading (Mystery Box Castle Collection",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.flickr.com/photos/68105287@N03/9491683149",
+   "title": "Disney Fairytale Designer Collection Limited Edition Pin Set - US Disney Store Product Image #1 - Boxed",
+   "publisher": "Flickr (collector photo log)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-hot-topic",
+   "title": "New Disney Pins at... Hot Topic?",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-force-awakens-pin-trading-event",
+   "title": "Star Wars The Force Awakens Pin Trading Event",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://elcapitanmarquees.com/",
+   "title": "Disney Studio Store Hollywood El Capitan Movie Marquee Pins",
+   "publisher": "El Capitan Marquees (fan site)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/disney-store-europe-june-4th-villains-sidekicks-series-2.54009/",
+   "title": "Disney Store Europe, June 4th: villains sidekicks series 2!",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pixar-studio-store-the-good-dinosaur-pins",
+   "title": "Pixar Studio Store The Good Dinosaur Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsuk/2015/cars-10th-anniversary-le-600",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cars 10th Anniversary Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "post subject"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "single LE pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-29",
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "Disney Store UK release date"
+    },
+    {
+     "field": "price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK",
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "UK store"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-november-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Studio Store Hollywood November 2015 Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "monthly release round-up"
+    },
+    {
+     "field": "format",
+     "value": "separately sold LE pins released on two dates",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "6 Nov (Little Mermaid and Bow series) and 25 Nov (Good Dinosaur)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "all LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "first release day, 6am"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "store next to El Capitan"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-october-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Studio Store Hollywood October 2015 Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "monthly round-up"
+    },
+    {
+     "field": "format",
+     "value": "separately sold LE pins released on two dates",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "9 Oct and 23 Oct (Nightmare stained glass)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "first release day"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-may-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Studio Store Hollywood May 2015 Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-may-2015-pins",
+     "method": "search_snippet",
+     "note": "monthly round-up"
+    },
+    {
+     "field": "format",
+     "value": "separately sold LE pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-may-2015-pins",
+     "method": "search_snippet",
+     "note": "Marvel Avengers, Tomorrowland Marquee and Princess pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-may-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-may-2015-pins",
+     "method": "search_snippet",
+     "note": "releases 1 May and 22 May"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-may-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-april-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Studio Store Hollywood April 2015 Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-april-2015-pins",
+     "method": "search_snippet",
+     "note": "monthly round-up"
+    },
+    {
+     "field": "format",
+     "value": "separately sold LE pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-april-2015-pins",
+     "method": "search_snippet",
+     "note": "all pins LE"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-april-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-04-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-april-2015-pins",
+     "method": "search_snippet",
+     "note": "releases 10 Apr and 25 Apr"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-april-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-june-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Studio Store Hollywood June 2015 Pins",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2015-pins/",
+     "method": "search_snippet",
+     "note": "monthly round-up"
+    },
+    {
+     "field": "format",
+     "value": "separately sold LE pins",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2015-pins/",
+     "method": "search_snippet",
+     "note": "princess and Inside Out pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2015-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-06-06",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2015-pins/",
+     "method": "search_snippet",
+     "note": "releases 6 Jun and 19 Jun"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2015-pins/",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/tomorrowland-disneystore-com-le-200-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tomorrowland Limited Edition Pin Set (DisneyStore.com)",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "boxed multi-pin pack",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "boxed set of three pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "three pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "price",
+     "value": 69.95,
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 69.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-13",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "home video release day"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/tomorrowland-pin-set/",
+     "method": "search_snippet",
+     "note": "online"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/tomorrowland-disneystore-com-large-le-200",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Large LE 200 Tomorrowland Pin (DisneyStore.com)",
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "single large pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "single"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "price",
+     "value": 49.95,
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "USD 49.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-13",
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "same day as boxed set"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "DisneyStore.com only"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsuk/2015/cars-10th-anniversary-le-600/lightning-mcqueen-and-mater",
+   "set_key": "dsuk/2015/cars-10th-anniversary-le-600",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cars 10th Anniversary Pin - Lightning McQueen and Mater",
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "neutral name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lightning McQueen",
+      "Mater"
+     ],
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "both featured"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "single pin showing both"
+    },
+    {
+     "field": "franchise",
+     "value": "Cars",
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "10th anniversary of Cars"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "original_price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-12-29",
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "Disney Store UK"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK",
+     "source_url": "https://disneypinsblog.com/cars-10th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "UK store"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-november-2015/little-mermaid-marquee",
+   "set_key": "dsus/2015/studio-store-hollywood-november-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Little Mermaid Marquee - DSSH",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "neutral name from listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "release day per round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    },
+    {
+     "field": "franchise",
+     "value": "The Little Mermaid",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "marquee pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-november-2015/bow-series-ariel-flounder-sebastian",
+   "set_key": "dsus/2015/studio-store-hollywood-november-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bow Series - Ariel, Flounder and Sebastian",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "neutral name from listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel",
+      "Flounder",
+      "Sebastian"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "named together in one listing entry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "one pin per listing entry"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "release day per round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-november-2015/bow-series-mulan-little-brother",
+   "set_key": "dsus/2015/studio-store-hollywood-november-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bow Series - Mulan and Little Brother",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "neutral name from listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mulan",
+      "Little Brother"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "named together in one listing entry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "one pin per listing entry"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "release day per round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-november-2015/bow-series-aurora-forest-friends",
+   "set_key": "dsus/2015/studio-store-hollywood-november-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bow Series - Aurora and Forest Friends",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "neutral name from listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "forest friends not individually named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "one pin per listing entry"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "release day per round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-november-2015/bow-series-jasmine-rajah",
+   "set_key": "dsus/2015/studio-store-hollywood-november-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bow Series - Jasmine and Rajah",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "neutral name from listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine",
+      "Rajah"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "named together in one listing entry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "one pin per listing entry"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "release day per round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-november-2015/good-dinosaur-marquee",
+   "set_key": "dsus/2015/studio-store-hollywood-november-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Good Dinosaur Marquee - DSSH",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "neutral name from listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "release day per round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    },
+    {
+     "field": "franchise",
+     "value": "The Good Dinosaur",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "marquee pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-november-2015/nash-die-cast",
+   "set_key": "dsus/2015/studio-store-hollywood-november-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nash Die Cast - DSSH",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "neutral name from listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Nash"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "Good Dinosaur character"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "release day per round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    },
+    {
+     "field": "franchise",
+     "value": "The Good Dinosaur",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "die-cast pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-november-2015/butch-die-cast",
+   "set_key": "dsus/2015/studio-store-hollywood-november-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Butch Die Cast - DSSH",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "neutral name from listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Butch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "snippet summary: die-casts of Nash, Butch, Ramsey each LE 300"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "release day per round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    },
+    {
+     "field": "franchise",
+     "value": "The Good Dinosaur",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "die-cast pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-november-2015/ramsey-die-cast",
+   "set_key": "dsus/2015/studio-store-hollywood-november-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ramsey Die Cast - DSSH",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "neutral name from listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ramsey"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "snippet summary: die-casts of Nash, Butch, Ramsey each LE 300"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "release day per round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    },
+    {
+     "field": "franchise",
+     "value": "The Good Dinosaur",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+     "method": "search_snippet",
+     "note": "die-cast pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-october-2015/jack-and-sally",
+   "set_key": "dsus/2015/studio-store-hollywood-october-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack and Sally - DSSH",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "neutral name from listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington",
+      "Sally"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "snippet calls it a Jack & Sally pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "one pin per listing entry"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "release day per round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    },
+    {
+     "field": "franchise",
+     "value": "The Nightmare Before Christmas",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "stated in round-up"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-october-2015/hocus-pocus-marquee",
+   "set_key": "dsus/2015/studio-store-hollywood-october-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hocus Pocus Marquee - DSSH",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "neutral name from listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "release day per round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    },
+    {
+     "field": "franchise",
+     "value": "Hocus Pocus",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "marquee pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-october-2015/nightmare-stained-glass-marquee",
+   "set_key": "dsus/2015/studio-store-hollywood-october-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nightmare Before Christmas Stained Glass Marquee - DSSH",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "neutral name from listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "release day per round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    },
+    {
+     "field": "franchise",
+     "value": "The Nightmare Before Christmas",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "stained glass marquee"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-october-2015/jack-skellington-stained-glass",
+   "set_key": "dsus/2015/studio-store-hollywood-october-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack Skellington Stained Glass - DSSH",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "neutral name from listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "listed as its own stained glass pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "release day per round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    },
+    {
+     "field": "franchise",
+     "value": "The Nightmare Before Christmas",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "stated in round-up"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-october-2015/sally-stained-glass",
+   "set_key": "dsus/2015/studio-store-hollywood-october-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sally Stained Glass - DSSH",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "neutral name from listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sally"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "listed as its own stained glass pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "release day per round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    },
+    {
+     "field": "franchise",
+     "value": "The Nightmare Before Christmas",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "stated in round-up"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-october-2015/zero-stained-glass",
+   "set_key": "dsus/2015/studio-store-hollywood-october-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zero Stained Glass - DSSH",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "neutral name from listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Zero"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "listed as its own stained glass pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "release day per round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "DSSH"
+    },
+    {
+     "field": "franchise",
+     "value": "The Nightmare Before Christmas",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2015-pins",
+     "method": "search_snippet",
+     "note": "stated in round-up"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-may-2015/tomorrowland-surprise",
+   "set_key": "dsus/2015/studio-store-hollywood-may-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tomorrowland Surprise Pin - DSSH",
+     "source_url": "http://diskingdom.com/2015/05/22/tomorrowland-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "neutral name"
+    },
+    {
+     "field": "franchise",
+     "value": "Tomorrowland (2015 film)",
+     "source_url": "http://diskingdom.com/2015/05/22/tomorrowland-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "tie-in to film"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2015/05/22/tomorrowland-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "surprise LE release"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "http://diskingdom.com/2015/05/22/tomorrowland-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "http://diskingdom.com/2015/05/22/tomorrowland-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "http://diskingdom.com/2015/05/22/tomorrowland-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05-22",
+     "source_url": "http://diskingdom.com/2015/05/22/tomorrowland-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "article date; film opening day"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "http://diskingdom.com/2015/05/22/tomorrowland-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "http://diskingdom.com/2015/05/22/tomorrowland-pin-released-at-disney-studio-store/",
+     "method": "search_snippet",
+     "note": "Hollywood studio store"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/tomorrowland-disneystore-com-large-le-200/tomorrowland-large",
+   "set_key": "dsus/2015/tomorrowland-disneystore-com-large-le-200",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tomorrowland Large Limited Edition Pin",
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "neutral name"
+    },
+    {
+     "field": "franchise",
+     "value": "Tomorrowland (2015 film)",
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "film tie-in"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "original_price",
+     "value": 49.95,
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "USD 49.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-13",
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "DisneyStore.com"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/large-le-200-tomorrowland-pin/",
+     "method": "search_snippet",
+     "note": "online only"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/star-wars-tfa-disneystore-com-collection/stormtrooper",
+   "set_key": "dsus/2015/star-wars-tfa-disneystore-com-collection",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/star-wars-stormtrooper-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/star-wars-stormtrooper-pin/",
+     "method": "search_snippet",
+     "note": "snippet tied to the Stormtrooper post gives LE 1000; post marked sold out"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsus/2015/star-wars-tfa-disneystore-com-collection/stormtrooper",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "price not in snippet; a USD 14.95 figure on the page belongs to a different pin, not used"
+  },
+  {
+   "key": "dsus/2015/star-wars-tfa-disneystore-com-collection/finn",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "still not stated; a Finn countdown pin (parks, LE 10000, USD 12.95, 15 Oct 2015) is a different release"
+  },
+  {
+   "key": "dsus/2015/star-wars-tfa-disneystore-com-collection/kylo-ren",
+   "field": "set_position",
+   "searched": "2 queries",
+   "note": "hold kept: no snippet states Kylo Ren's position in the six-pin series"
+  },
+  {
+   "key": "dsuk/2015/star-wars-kylo-ren",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "lead only: forum comment says DS UK sold a Kylo Ren pin in 2015; no UK listing found; current UK Kylo LE 3200 pin is a 2019 TROS release"
+  },
+  {
+   "key": "dsuk/2015/cinderella-65th-le-350/cinderella-65th",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "price still not stated; design still not described"
+  },
+  {
+   "key": "dsuk/2015/villains-sidekicks-series-2",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "pins 3-4 still unnamed; forum member guessed Lucifer, Flotsam/Jetsam, Diablo - speculation only, no members created"
+  },
+  {
+   "key": "dsus/2015/d23-expo-short-films-collection-boxed-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "still only 3 of 12 named; 12 shorts likely match the WDAS Short Films home video but no pin list - not created"
+  },
+  {
+   "key": "dsus/2015/d23-expo-minnie-signature-boxed-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "six bow pins still not individually described"
+  },
+  {
+   "key": "dsuk/2015/art-of-jasmine-boxed-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: confirm pin structure; no contents found"
+  },
+  {
+   "key": "dsuk/2015/pixar-cars-boxed-set",
+   "field": "set_key",
+   "searched": "1 query",
+   "note": "hold kept: contents not named; link to D23 Cars set (both LE 700) still rests on title and size only"
+  },
+  {
+   "key": "dsuk/2015/good-dinosaur-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: confirm pin structure; contents unnamed; Pixar Studio Store employee-only Good Dinosaur pins are a separate release"
+  },
+  {
+   "key": "dsus/2015/cinderella-live-action-le-400-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: three pins still unnamed; only the collector photo log describes the set"
+  },
+  {
+   "key": "dsus/2015/d23-expo-fairytale-designer-pin-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: 2015 D23 item may be the doll sets; a DS US Fairytale Designer pin set LE 250 dated 2013 exists - LE 250 figure may be conflated"
+  },
+  {
+   "key": "dsus/2015/d23-expo-fairytale-designer-pin-set",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "hold kept: conflict unresolved; see 2013 LE 250 set (Flickr) as possible source of confusion"
+  },
+  {
+   "key": "dsus/2015/d23-expo-pixar-cars-set",
+   "field": "release_location",
+   "searched": "0 queries",
+   "note": "hold kept: D23 seller not confirmed as Disney Store"
+  },
+  {
+   "key": "dsus/2015/d23-expo-music-of-frozen-boxed-set",
+   "field": "release_location",
+   "searched": "0 queries",
+   "note": "hold kept: D23 seller not confirmed as Disney Store"
+  },
+  {
+   "key": "dsus/2015/star-wars-tfa-pin-collector-tin",
+   "field": "parent_set_key",
+   "searched": "0 queries",
+   "note": "hold kept: tin card link to six-pin series not explicit"
+  },
+  {
+   "key": "dsus/2015/d23-expo-castle-collection-mystery",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: D23 2015 Castle mystery box (2 of 16, LE 525/chaser LE 300, USD 15.95, 14 Aug) sold at the Dreamstore, not Disney Store; route to parks/D23"
+  },
+  {
+   "key": "dsuk/2015/kiss-the-girl",
+   "field": "existence",
+   "searched": "3 queries",
+   "note": "hold: MyPinCentral lists a DS UK Kiss the Girl series pin (Eric and Ariel in boat, LE 750) but gives no year; not keyed to 2015"
+  },
+  {
+   "key": "lic/2015/hot-topic-kiss-the-girl",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: licensed hot-topic Little Mermaid Kiss the Girl pin, Sept 2015 post, USD 5.50"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-may-2015/avengers-age-of-ultron-marquee",
+   "field": "existence",
+   "searched": "3 queries",
+   "note": "hold: Ultron marquee LE 500 rests on a reseller listing title and a marquee list; DPB May round-up names Avengers pins without sizes"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-may-2015/tomorrowland-surprise",
+   "field": "set_key",
+   "searched": "1 query",
+   "note": "hold: may be the same pin as the Tomorrowland Marquee in the DPB May round-up; link rests on subject and date"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-may-2015",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Avengers, Princess and Tomorrowland Marquee pins not individually named or sized in snippets"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-april-2015",
+   "field": "members",
+   "searched": "1 query",
+   "note": "per-pin names, sizes and prices not in snippet"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-june-2015",
+   "field": "members",
+   "searched": "1 query",
+   "note": "princess and Inside Out pins not individually named or sized in snippet"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-october-2015",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure - 'Mike, Sully and Boo' and 'Chip & Dale' (each LE 300, USD 18.95) may be single group pins or several; not created"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-november-2015/butch-die-cast",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "Butch and Ramsey sizes rest on a search summary of the DPB post; only Nash shown verbatim"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-november-2015/bow-series-aurora-forest-friends",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "forest friends on the Aurora bow pin not named"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-november-2015",
+   "field": "prices",
+   "searched": "1 query",
+   "note": "die-cast pin prices not in snippet"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-december-2015",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: DSSH TFA pin trading event 13 Dec 2015 with package pins; lineup not in snippet"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood",
+   "field": "months",
+   "searched": "2 queries",
+   "note": "no DSSH Jan-Mar, Jul-Sep or Dec 2015 round-ups surfaced in snippets"
+  },
+  {
+   "key": "dsus/2015/tomorrowland-disneystore-com-le-200-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "three pins not named; each has a film backstory per post"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-november-2015/butch-die-cast",
+   "field": "edition_size",
+   "searched": "packet review",
+   "note": "hold: name and LE 300 come from a search summary of the page, not quoted text; confirm before sign-off"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-november-2015/ramsey-die-cast",
+   "field": "edition_size",
+   "searched": "packet review",
+   "note": "hold: name and LE 300 come from a search summary of the page, not quoted text; confirm before sign-off"
+  }
+ ],
+ "discovery_notes": "Cell B199, follow-up 1 of B038 (DS 2015). 30 standard searches, snippets only. New: DS UK Cars 10th pin (Dec), DSSH 2015 Oct/Nov pins keyed dsus/2015/studio-store-hollywood-*, DSSH May Tomorrowland surprise, DisneyStore.com Tomorrowland LE 200 set and large pin. Stormtrooper LE 1000 added. No holds released. Resellers (collectrandom, buydisneypins, yourwdwstore) seen, not used."
+}

@@ -1,0 +1,472 @@
+{
+ "packet_id": "backfill-b244-ds-2016-fu6",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b244",
+ "sources": [
+  {
+   "url": "http://diskingdom.com/2016/05/25/pixar-summer-bash-pin-trading-event-coming-june/",
+   "title": "Pixar Summer Bash Pin Trading Event Coming This June",
+   "publisher": "DisKingdom",
+   "published_date": "2016-05-25",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pixar-summer-bash-pin-trading-event",
+   "title": "Pixar Summer Bash Pin Trading Event",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/dsf-pixar-summer-bash-trading-event-pin-and-lanyard-ends-7-6-8pm-pst.57429/",
+   "title": "DSF Pixar Summer Bash Trading Event Pin and Lanyard (auction thread)",
+   "publisher": "Disney Pin Forum",
+   "published_date": "2016-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/tag/disney-studio-store/",
+   "title": "disney studio store (tag archive)",
+   "publisher": "DisKingdom",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/december-2016-calendar-pin",
+   "title": "December 2016 Calendar Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+   "title": "Beauty and the Beast Live Action Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/rogue-one-jumbo-pins/",
+   "title": "Rogue One Jumbo Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/rogue-one-star-wars-story-jumbo-pin",
+   "title": "Rogue One: A Star Wars Story Jumbo Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-09-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/animation-celebration-pin-trading-event",
+   "title": "Animation Celebration Pin Trading Event",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-october-2016-pins",
+   "title": "Disney Studio Store Hollywood October 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2016-pins",
+   "title": "Disney Studio Store Hollywood August 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-september-2016-pins",
+   "title": "Disney Studio Store Hollywood September 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/dssh-alphabet-pin-series-7",
+   "title": "DSSH Alphabet Pin Series #7",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-moana-limited-edition-pin-set/",
+   "title": "Disney Moana Limited Edition Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-09-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/marvel-doctor-strange-pin-set",
+   "title": "Marvel Doctor Strange Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://futureofstarwars.wordpress.com/2016/12/02/disneys-rogue-one-pins/",
+   "title": "Disney's Rogue One Pins",
+   "publisher": "Future of Star Wars",
+   "published_date": "2016-12-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/scar-disney-store-uk-pin",
+   "title": "Scar Disney Store UK Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsus/2016/studio-store-hollywood-pixar-summer-bash",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pixar Summer Bash Pin Trading Event (DSSH)",
+     "source_url": "http://diskingdom.com/2016/05/25/pixar-summer-bash-pin-trading-event-coming-june/",
+     "method": "search_snippet",
+     "note": "DSSH-hosted Pixar Summer Bash trading event announced May 2016"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-26",
+     "source_url": "http://diskingdom.com/2016/05/25/pixar-summer-bash-pin-trading-event-coming-june/",
+     "method": "search_snippet",
+     "note": "event held Sunday 26 Jun 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Aquarium of the Pacific (event hosted by Disney Studio Store Hollywood)",
+     "source_url": "http://diskingdom.com/2016/05/25/pixar-summer-bash-pin-trading-event-coming-june/",
+     "method": "search_snippet",
+     "note": "event venue per announcement"
+    },
+    {
+     "field": "format",
+     "value": "event release",
+     "source_url": "https://disneypinsblog.com/blogs/news/pixar-summer-bash-pin-trading-event",
+     "method": "search_snippet",
+     "note": "event page lists several releases; online reservations opened 31 May 2016 9am PDT per summary"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2016/studio-store-hollywood-pixar-summer-bash-toy-story-3-surprise",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pixar Summer Bash early surprise pin (Toy Story 3)",
+     "source_url": "https://diskingdom.com/tag/disney-studio-store/",
+     "method": "search_snippet",
+     "note": "DisKingdom post dated 27 Jun 2016 announces an exclusive early surprise pin for event registrants"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://diskingdom.com/tag/disney-studio-store/",
+     "method": "search_snippet",
+     "note": "singular wording only ('surprise pin'); count rests on wording"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://diskingdom.com/tag/disney-studio-store/",
+     "method": "search_snippet",
+     "note": "DSSH release for Pixar Summer Bash registrants"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsus/2016/studio-store-hollywood-pixar-summer-bash/event-pin",
+   "set_key": "dsus/2016/studio-store-hollywood-pixar-summer-bash",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pixar Summer Bash Trading Event Pin",
+     "source_url": "https://www.disneypinforum.com/threads/dsf-pixar-summer-bash-trading-event-pin-and-lanyard-ends-7-6-8pm-pst.57429/",
+     "method": "search_snippet",
+     "note": "descriptive name from forum auction thread title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Russell",
+      "EVE",
+      "Hamm",
+      "Boo",
+      "Little Green Men"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/dsf-pixar-summer-bash-trading-event-pin-and-lanyard-ends-7-6-8pm-pst.57429/",
+     "method": "search_snippet",
+     "note": "forum auction post describes the event pin with these characters; collector post, not official"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneypinforum.com/threads/dsf-pixar-summer-bash-trading-event-pin-and-lanyard-ends-7-6-8pm-pst.57429/",
+     "method": "search_snippet",
+     "note": "thread offers a single event pin (with Luxo lanyard and card), not a pack"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disneypinforum.com/threads/dsf-pixar-summer-bash-trading-event-pin-and-lanyard-ends-7-6-8pm-pst.57429/",
+     "method": "search_snippet",
+     "note": "listed as limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://www.disneypinforum.com/threads/dsf-pixar-summer-bash-trading-event-pin-and-lanyard-ends-7-6-8pm-pst.57429/",
+     "method": "search_snippet",
+     "note": "LE 300 per auction post"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-26",
+     "source_url": "http://diskingdom.com/2016/05/25/pixar-summer-bash-pin-trading-event-coming-june/",
+     "method": "search_snippet",
+     "note": "event date; pin only available to attendees per forum post"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "http://diskingdom.com/2016/05/25/pixar-summer-bash-pin-trading-event-coming-june/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Pixar Summer Bash event, Aquarium of the Pacific (DSSH)",
+     "source_url": "http://diskingdom.com/2016/05/25/pixar-summer-bash-pin-trading-event-coming-june/",
+     "method": "search_snippet",
+     "note": "event pin for attendees"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2016/studio-store-hollywood-pixar-summer-bash-toy-story-3-surprise/toy-story-3-surprise",
+   "set_key": "dsus/2016/studio-store-hollywood-pixar-summer-bash-toy-story-3-surprise",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Toy Story 3 surprise pin (Pixar Summer Bash)",
+     "source_url": "https://diskingdom.com/tag/disney-studio-store/",
+     "method": "search_snippet",
+     "note": "descriptive name; snippet cuts off the official title"
+    },
+    {
+     "field": "franchise",
+     "value": "Toy Story 3",
+     "source_url": "https://diskingdom.com/tag/disney-studio-store/",
+     "method": "search_snippet",
+     "note": "film named in search summary of the DisKingdom tag archive; title truncated"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://diskingdom.com/tag/disney-studio-store/",
+     "method": "search_snippet",
+     "note": "post dated 27 Jun 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://diskingdom.com/tag/disney-studio-store/",
+     "method": "search_snippet",
+     "note": "early release for event registrants"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsus/2016/studio-store-hollywood-pixar-summer-bash/event-pin",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters, LE 300 and one-pin structure from one forum auction post; no DPB/DisKingdom per-pin description - check against an event page"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-pixar-summer-bash-toy-story-3-surprise/toy-story-3-surprise",
+   "field": "characters",
+   "searched": "3 queries",
+   "note": "hold: design, characters, edition size, price and exact day not in snippets; Toy Story 3 link rests on summary of a truncated title"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-pixar-summer-bash",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "hold: confirm pin structure - DPB event page summary names Finding Dory and Pixar Cuties pin sets; a second search found no Pixar Cuties source. Not keyed"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-december-2016",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "lead: DPB 8 Nov 2016 post says DSSH December pins include many villain Christmas ornament designs; no names, counts or prices - not keyed"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-calendar",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Jan/Feb/Aug 2016 calendar pins still not found; earliest dated calendar pin is March (29 Feb 2016); Dec post calls Arlo & Spot final. Series may start in March - unconfirmed"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-august-2016",
+   "field": "members",
+   "searched": "1 query",
+   "note": "13 vs 20 Aug per-pin split still not stated; no DisKingdom Aug 2016 post surfaced"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-october-2016-spoon-series",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "per-pin day (8 vs 22 Oct) still unstated; roundup snippet ties only the marquee to 22 Oct"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-october-2016-marquee",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: confirm pin structure - Hocus Pocus/NBC marquee still one line in roundup; 2017 NBC surprise (20 Oct 2017) is a different release"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-alphabet-series-6",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Alphabet #6 still not found; #7 (X,Y,Z) is final. T-W for #6 is inference only; reseller Ursula 'U' LE 300 listing not used"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-animation-celebration-event",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Paint Brush Set #1/#2 designs, counts, sizes, prices still absent; only event date (6 Nov 2016) and reservations (10 Oct) resurfaced"
+  },
+  {
+   "key": "dsus/2016/rogue-one-oe-pins",
+   "field": "members",
+   "searched": "1 query",
+   "note": "lead kept: Future of Star Wars still gives five USD 9.99 pins without naming them; Jyn/K-2SO appear only as post tags"
+  },
+  {
+   "key": "dsus/2016/rogue-one-jumbo-le-1200/rogue-one-jumbo",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "hold kept: snippets still say only 'key cast members'; Jyn/K-2SO only as tags on Future of Star Wars post"
+  },
+  {
+   "key": "wdw/2016/rogue-one-jumbo-pins",
+   "field": "members",
+   "searched": "1 query",
+   "note": "lead for parks cells: DPB says two Rogue One jumbo pins (Death Star LE 3000, character LE 1000) at parks from 16 Dec 2016"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-alice-chess-series",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: Sept roundup still names six chess pins only; no Tweedle/Dormouse 2016 DSSH pin; Tweedles are in a 2026 75th set"
+  },
+  {
+   "key": "dsuk/2016/pinocchio-or-other",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "July 2016 DS UK still no release; DPB UK 2016 posts found: Zootopia, Finding Nemo, Pooh balloon, Scar (28 Jun), Dumbo 75th, Christmas, Mary Poppins"
+  },
+  {
+   "key": "dsuk/2016/scar-le-750/scar-le-750",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "dated per-pin source already held: DPB Scar post gives 28 Jun 2016, LE 750 Europe, GBP 9 (as in packet 322); no change"
+  },
+  {
+   "key": "dsuk/2016/film-releases",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "still no UK/EU date or GBP price for Moana (USD 79.95, 12 Sep), Doctor Strange (USD 39.95, 3 Oct) or Rogue One jumbo; UK Moana/Strange items found are later"
+  },
+  {
+   "key": "dsus/2017/beauty-and-the-beast-live-action-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "lead for 2017 DS cell: DPB live-action BATB 3-pin set LE 1000 USD 79.95, also due at DS UK; summary said Jan 2016, likely 2017 (film 2017) - not keyed"
+  },
+  {
+   "key": "dsus/2016/moana-le-1000-set/moana",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: only the 4-subject set list (Moana, Maui, Pua with Heihei, Kakamora) resurfaced"
+  },
+  {
+   "key": "dsus/2016/doctor-strange-pin-set/doctor-strange",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: only set-level two-pin description resurfaced"
+  },
+  {
+   "key": "dsus/2016/captain-america-75th-anniversary-le-175-set",
+   "field": "members",
+   "searched": "0 queries",
+   "note": "hold kept: not searched this pass (budget)"
+  },
+  {
+   "key": "dsuk/2016/tsum-tsum-le-set",
+   "field": "members",
+   "searched": "0 queries",
+   "note": "hold kept: 6 members not searched this pass (budget)"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-frozen-surprise/frozen-surprise",
+   "field": "characters",
+   "searched": "0 queries",
+   "note": "hold kept: not searched this pass (budget)"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-january-2016-love-is-in-the-air/the-aristocats",
+   "field": "pin_structure",
+   "searched": "0 queries",
+   "note": "hold kept: Aristocats one-pin vs separate-pins conflict not revisited; no new source"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-alphabet-series-1",
+   "field": "members",
+   "searched": "0 queries",
+   "note": "hold kept: Alphabet #1-#5 letter holds unchanged pending maintainer decision on full lists"
+  },
+  {
+   "key": "wdw/2016/fall-gathering-alice",
+   "field": "members",
+   "searched": "1 query",
+   "note": "lead for parks/other cells: DPB Fall 2016 Gathering had two LE Alice pins incl. a Caterpillar (Acme series); not DS"
+  },
+  {
+   "key": "dsus/2016/studio-store-hollywood-pixar-summer-bash/event-pin",
+   "field": "design",
+   "searched": "review",
+   "note": "hold: design, LE 300 and attendee-only rest on one forum auction post; confirm on an event or publisher page"
+  }
+ ],
+ "discovery_notes": "Cell B244, follow-up 6 of B030 (DS 2016). 30 standard searches, snippets only. New: DSSH Pixar Summer Bash event (26 Jun 2016) event pin LE 300 (forum) and Toy Story 3 surprise (held). No holds released; DS UK 2016 list unchanged."
+}

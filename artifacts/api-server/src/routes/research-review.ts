@@ -28,6 +28,7 @@
 import { Router, type IRouter, type Request, type Response } from "express";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { logger } from "../lib/logger";
+import { classifySource, countsAsEvidence, isOfficialHost, storedSourceClass } from "../lib/source-registry";
 import {
   IDENTITY_FIELDS,
   KEY_RE,
@@ -92,13 +93,7 @@ export function fail(res: Response, where: string, err: unknown) {
 export const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const STATUSES = new Set(["researched", "needs_direct_verification", "direct_verified", "approved", "rejected",
   "needs_more_research", "imported", "superseded"]);
-const OFFICIAL_DOMAINS = [
-  "disneystore.com", "disneystore.co.uk", "disneystore.eu", "disneystore.fr", "disneystore.de", "disneystore.asia",
-  "disneystore.com.au", "shopdisney.com", "shopdisney.co.uk", "disney.go.com", "disneylandparis.com",
-  "disneyparksblog.com", "disney.co.uk",
-];
-export const isOfficialHost = (host: string) =>
-  OFFICIAL_DOMAINS.some(d => host === d || host.endsWith(`.${d}`));
+export { isOfficialHost };
 
 // ── Runs ─────────────────────────────────────────────────────────────────────
 
@@ -240,10 +235,11 @@ router.post("/admin/research/candidates/:id/direct-check", requireAppCreator, as
     if (!c) { res.status(404).json({ error: "Candidate not found" }); return; }
     if (["imported", "superseded"].includes(c.status as string)) { res.status(409).json({ error: "This candidate can no longer be changed" }); return; }
     const host = new URL(sourceUrl as string).hostname;
+    const cls = classifySource(sourceUrl as string)!.class;
     const rows = (fields as string[]).map(f => ({
       candidate_id: id, field: f, value: { confirmed: true },
       source_url: sourceUrl, publisher: host.replace(/^www\./, ""),
-      source_class: isOfficialHost(host.toLowerCase()) ? "official" : "unclassified",
+      source_class: storedSourceClass(cls),
       method: "human_direct_check", note: (note as string | undefined) ?? null, checked_by: req.creatorId,
     }));
     const { error: insErr } = await db.from("catalogue_evidence").insert(rows);
@@ -259,7 +255,7 @@ router.post("/admin/research/candidates/:id/direct-check", requireAppCreator, as
       // A decision made meanwhile wins; the check itself is still recorded as evidence.
       if (moved?.length) status = "direct_verified";
     }
-    res.json({ ok: true, status, recorded: rows.length });
+    res.json({ ok: true, status, recorded: rows.length, counts: countsAsEvidence(cls) });
   } catch (err) { fail(res, "direct check", err); }
 });
 
@@ -346,7 +342,8 @@ router.post("/admin/research/sets/:runId/:setKey/direct-check", requireAppCreato
     if (!ids.every(id => byId.has(id))) { res.status(400).json({ error: "Every ticked pin must belong to this set and run" }); return; }
 
     const host = new URL(sourceUrl as string).hostname.toLowerCase();
-    if (!isOfficialHost(host)) {
+    const cls = classifySource(sourceUrl as string)!.class;
+    if (cls !== "official") {
       // Otherwise the page must already be cited somewhere in this set (its pins or the set itself).
       const { data: setRow, error: setErr } = await db.from("catalogue_candidates")
         .select("id").eq("run_id", runId).eq("research_key", setKey).eq("entity_type", "set").maybeSingle();
@@ -371,7 +368,7 @@ router.post("/admin/research/sets/:runId/:setKey/direct-check", requireAppCreato
       for (const f of fieldsById.get(id)!) {
         rows.push({
           candidate_id: id, field: f, value: { confirmed: true }, source_url: sourceUrl,
-          publisher: host.replace(/^www\./, ""), source_class: isOfficialHost(host) ? "official" : "unclassified",
+          publisher: host.replace(/^www\./, ""), source_class: storedSourceClass(cls),
           method: "human_direct_check", note: (note as string | undefined) ?? null, checked_by: req.creatorId,
         });
       }
@@ -394,7 +391,7 @@ router.post("/admin/research/sets/:runId/:setKey/direct-check", requireAppCreato
       }
       results.push({ candidateId: id, status, recorded: fields.length });
     }
-    res.json({ ok: true, results, skipped });
+    res.json({ ok: true, results, skipped, counts: countsAsEvidence(cls) });
   } catch (err) { fail(res, "set direct check", err); }
 });
 

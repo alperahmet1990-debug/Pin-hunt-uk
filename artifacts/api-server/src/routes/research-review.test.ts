@@ -98,6 +98,29 @@ describe("research review routes — flow", () => {
     expect(tables.catalogue_research_runs ?? []).toHaveLength(0);
   });
 
+  it("pin direct check: registry class per host, lead-only stored as unclassified with counts:false, excluded refused", async () => {
+    await request(app).post("/api/admin/research/runs").set(auth).send({ run: payload });
+    const zazu = tables.catalogue_candidates.find(c => c.research_key === "brush-of-magic/mystery-series-3/zazu")!;
+    const check = (u: string) => request(app).post(`/api/admin/research/candidates/${zazu.id}/direct-check`).set(auth)
+      .send({ fields: ["characters"], sourceUrl: u });
+    const cases: Array<[string, string, boolean]> = [
+      ["https://www.disneystore.co.uk/p", "official", true],
+      ["https://static.wdwnt.com/p", "news", true],
+      ["https://www.disneypinsblog.com/p", "fan", true],
+      ["https://www.reddit.com/r/pins/1", "unclassified", false],
+    ];
+    for (const [url, stored, counts] of cases) {
+      const res = await check(url);
+      expect(res.status).toBe(200);
+      expect(res.body.counts).toBe(counts);
+      const last = tables.catalogue_evidence.filter(e => e.method === "human_direct_check" && e.source_url === url).at(-1)!;
+      expect(last.source_class).toBe(stored);
+    }
+    for (const u of ["https://pinandpop.com/p", "https://www.pinpics.com/p", "https://pintradingdb.com/p", "https://stewpins.com/p"]) {
+      expect((await check(u)).status).toBe(400);
+    }
+  });
+
   it("loads a run, then enforces direct check → decision", async () => {
     const load = await request(app).post("/api/admin/research/runs").set(auth).send({ run: payload });
     expect(load.status).toBe(200);
@@ -208,6 +231,18 @@ describe("research review routes — set level", () => {
     expect(marie().status).toBe("needs_direct_verification");
   });
 
+  it("set direct check: stores the registry class, refuses excluded hosts, flags lead-only as not counting", async () => {
+    const send = (u: string) => request(app).post(setUrl("direct-check")).set(auth)
+      .send({ source_url: u, confirmed: [{ candidateId: bambi().id, fields: ["characters"] }] });
+    const official = await send(OFFICIAL);
+    expect(official.status).toBe(200);
+    expect(official.body.counts).toBe(true);
+    for (const u of ["https://www.pinandpop.com/p/1", "https://stewpins.com/p/1"]) expect((await send(u)).status).toBe(400);
+    // Lead-only and unknown pages must already be cited for the set, as for any non-official page.
+    expect((await send("https://www.reddit.com/r/pins/1")).status).toBe(400);
+    expect(humanChecks(bambi().id).every(e => e.source_class === "official")).toBe(true);
+  });
+
   it("accepts a non-official page only when it is already cited for the set", async () => {
     const cited = "https://disneypinsblog.com/blogs/news/bambi-darkwing-duck-brush-of-magic-pins-at-disney-store";
     const body = (u: string) => ({ source_url: u, confirmed: [{ candidateId: bambi().id, fields: ["characters"] }] });
@@ -215,7 +250,7 @@ describe("research review routes — set level", () => {
     expect(humanChecks(bambi().id)).toHaveLength(0);
     const ok = await request(app).post(setUrl("direct-check")).set(auth).send(body(cited));
     expect(ok.status).toBe(200);
-    expect(humanChecks(bambi().id)[0]).toMatchObject({ source_class: "unclassified" });
+    expect(humanChecks(bambi().id)[0]).toMatchObject({ source_class: "fan" });
   });
 
   it("refuses excluded sources, a candidate from another set or run, and bad batches (400)", async () => {

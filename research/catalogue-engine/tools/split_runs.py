@@ -50,6 +50,9 @@ def main(src, out_dir):
         cur.extend(grp)
     flush()
     os.makedirs(out_dir, exist_ok=True)
+    for old in os.listdir(out_dir):  # runs are renamed as content shifts; never leave a stale run beside the new set
+        if old.startswith('run_') and old.endswith('.json'):
+            os.remove(os.path.join(out_dir, old))
     index = []
     for i, run in enumerate(runs, 1):
         lines = sorted({c['research_key'].split('/')[0] for c in run}, key=lambda l: (LINE_ORDER.index(l) if l in LINE_ORDER else 99, l))

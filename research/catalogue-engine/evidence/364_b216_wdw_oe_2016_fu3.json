@@ -1,0 +1,537 @@
+{
+ "packet_id": "backfill-b216-wdw-oe-2016-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b216",
+ "sources": [
+  {
+   "url": "https://www.yourwdwstore.net/disney-annual-pin-2016-music-magic-memories-spinner-44175.html",
+   "title": "Disney Annual Pin - 2016 Music Magic Memories - Spinner",
+   "publisher": "Your WDW Store",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-annual-pin-2016-music-magic-memories-sorcerer-mickey-mouse-44169.html",
+   "title": "Disney Annual Pin - 2016 Music Magic Memories - Sorcerer Mickey Mouse",
+   "publisher": "Your WDW Store",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/Yearly-Logos_c_146.html",
+   "title": "Yearly Logos",
+   "publisher": "Your WDW Store",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.magicalearscollectibles.com/Disney-Major-League-Soccer-Pin--Mickey-Mouse--Seattle-Sounders-FC_p_13047.html",
+   "title": "Disney Major League Soccer Pin - Mickey Mouse - Seattle Sounders FC",
+   "publisher": "Magical Ears Collectibles",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.magicalearscollectibles.com/Disney-Major-League-Soccer-Pin--Mickey-Mouse--Toronto-FC_p_13050.html",
+   "title": "Disney Major League Soccer Pin - Mickey Mouse - Toronto FC",
+   "publisher": "Magical Ears Collectibles",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-mickey-pin-mls-soccer-player-vancover-whitecaps-fc-52994.html",
+   "title": "Disney Mickey Pin - MLS - Soccer Player - Vancover Whitecaps FC",
+   "publisher": "Your WDW Store",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-4-pin-booster-set-pirates-of-the-caribbean-mickey-and-pals-63584.html",
+   "title": "Disney 4 Pin Booster Set - Pirates of the Caribbean - Mickey and Pals",
+   "publisher": "Your WDW Store",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://vintageradar.com/collections/disney-enamel-pins/collectible-disney-pin?page=14",
+   "title": "Disney Pin trading (collection page 14)",
+   "publisher": "Vintage Radar",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://chipandco.com/a-look-at-new-pins-coming-to-disney-parks-in-2016-226556/",
+   "title": "A Look at New Pins Coming to Disney Parks in 2016",
+   "publisher": "Chip and Company",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneyfashionista.com/merchandise-magic-kingdom-45th-anniversary-revealed/",
+   "title": "Merchandise For Magic Kingdom 45th Anniversary Revealed!",
+   "publisher": "Disney Fashionista",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://letsgopintrading.com/MARKRITAARCMAR2016.HTML",
+   "title": "Mark and Rita Pin Trading archive (Mar 2016)",
+   "publisher": "Let's Go Pin Trading",
+   "published_date": "2016-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [],
+ "pins": [
+  {
+   "pin_key": "wdw/2016/oe/spinner-2016",
+   "set_key": "wdw/2016/oe-single/spinner-2016",
+   "claims": [
+    {
+     "field": "sub_series",
+     "value": "Music Magic Memories",
+     "source_url": "https://www.yourwdwstore.net/disney-annual-pin-2016-music-magic-memories-spinner-44175.html",
+     "method": "search_snippet",
+     "note": "Dealer files the 2016 spinner (Sorcerer Mickey, Minnie, Donald, Goofy, WDW logo) as a 2016 Music Magic Memories annual pin; theme link from dealer title"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe/sorcerer-mickey-2016",
+   "set_key": "wdw/2016/oe-single/sorcerer-mickey-2016",
+   "claims": [
+    {
+     "field": "sub_series",
+     "value": "Music Magic Memories",
+     "source_url": "https://www.yourwdwstore.net/disney-annual-pin-2016-music-magic-memories-sorcerer-mickey-mouse-44169.html",
+     "method": "search_snippet",
+     "note": "Dealer title names it a 2016 Music Magic Memories annual pin with castle and Walt Disney Parks logo; dealer date field conflicts (2013)"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/mickey-soccer-teams/seattle-sounders",
+   "set_key": "wdw/2016/oe-set/mickey-soccer-teams",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Major League Soccer Pin - Mickey Mouse - Seattle Sounders FC",
+     "source_url": "https://www.magicalearscollectibles.com/Disney-Major-League-Soccer-Pin--Mickey-Mouse--Seattle-Sounders-FC_p_13047.html",
+     "method": "search_snippet",
+     "note": "Dealer per-team product page; describes Mickey in Sounders colours. Dealer price not claimed"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/mickey-soccer-teams/toronto-fc",
+   "set_key": "wdw/2016/oe-set/mickey-soccer-teams",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Major League Soccer Pin - Mickey Mouse - Toronto FC",
+     "source_url": "https://www.magicalearscollectibles.com/Disney-Major-League-Soccer-Pin--Mickey-Mouse--Toronto-FC_p_13050.html",
+     "method": "search_snippet",
+     "note": "Dealer per-team product page for a Toronto FC Mickey pin. Dealer price not claimed"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/mickey-soccer-teams/vancouver-whitecaps",
+   "set_key": "wdw/2016/oe-set/mickey-soccer-teams",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Mickey Pin - MLS - Soccer Player - Vancouver Whitecaps FC",
+     "source_url": "https://www.yourwdwstore.net/disney-mickey-pin-mls-soccer-player-vancover-whitecaps-fc-52994.html",
+     "method": "search_snippet",
+     "note": "Dealer per-team product page (team name misspelt in title); same title format as the Orlando/DC/NYCFC pages"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/pirates-caribbean-character-booster/mickey-mouse",
+   "set_key": "wdw/2016/oe-set/pirates-caribbean-character-booster",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Mickey Mouse dressed as Captain Jack Sparrow",
+     "source_url": "https://www.yourwdwstore.net/disney-4-pin-booster-set-pirates-of-the-caribbean-mickey-and-pals-63584.html",
+     "method": "search_snippet",
+     "note": "Undated dealer 4-pin booster listing gives per-pin roles; tie to the 2016 DPB set rests on title/subject"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/pirates-caribbean-character-booster/minnie-mouse",
+   "set_key": "wdw/2016/oe-set/pirates-caribbean-character-booster",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Minnie Mouse dressed as Elizabeth Swann",
+     "source_url": "https://www.yourwdwstore.net/disney-4-pin-booster-set-pirates-of-the-caribbean-mickey-and-pals-63584.html",
+     "method": "search_snippet",
+     "note": "Undated dealer 4-pin booster listing gives per-pin roles; tie to the 2016 DPB set rests on title/subject"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/pirates-caribbean-character-booster/pluto",
+   "set_key": "wdw/2016/oe-set/pirates-caribbean-character-booster",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Pluto as the jailhouse dog",
+     "source_url": "https://www.yourwdwstore.net/disney-4-pin-booster-set-pirates-of-the-caribbean-mickey-and-pals-63584.html",
+     "method": "search_snippet",
+     "note": "Undated dealer 4-pin booster listing gives per-pin roles; tie to the 2016 DPB set rests on title/subject"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2016/oe-set/pirates-caribbean-character-booster/donald-duck",
+   "set_key": "wdw/2016/oe-set/pirates-caribbean-character-booster",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Donald Duck as a cannon gunner",
+     "source_url": "https://www.yourwdwstore.net/disney-4-pin-booster-set-pirates-of-the-caribbean-mickey-and-pals-63584.html",
+     "method": "search_snippet",
+     "note": "Undated dealer 4-pin booster listing gives per-pin roles; tie to the 2016 DPB set rests on title/subject"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery",
+   "field": "members",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "Six of eight designs still unnamed after 4 more searches; DPB only says the pins show ride logos/attractions; no per-design page found"
+  },
+  {
+   "key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery/seven-dwarfs-mine-train",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: mystery designs not individually confirmed - kept; search summaries call it a set member but no single page says so"
+  },
+  {
+   "key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery/enchanted-tiki-room",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: mystery designs not individually confirmed - kept; search summaries call it a set member but no single page says so"
+  },
+  {
+   "key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery",
+   "field": "edition_type",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "Still not stated as open edition or limited release"
+  },
+  {
+   "key": "wdw/2016/oe-set/mk-45th-anniversary-attractions-mystery",
+   "field": "lead",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "A retailer lists Splash Mountain and Haunted Mansion mystery pins but not tied to the 45th set; not added"
+  },
+  {
+   "key": "wdw/2016/oe-set/music-magic-memories-mystery",
+   "field": "members",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "Eight designs still unnamed; DPB post adds only OE status through end of 2016 and DLR availability"
+  },
+  {
+   "key": "wdw/2016/oe/2016-dated-line",
+   "field": "original_price",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "Still no original retail price for the 2016 dated pins; dealer pages show only resale asking prices ($29.99-$39.99), not claimed"
+  },
+  {
+   "key": "wdw/2016/oe/spinner-2016",
+   "field": "sub_series",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: Music Magic Memories link rests on a dealer listing title; confirm the 2016 park theme from an official or news source"
+  },
+  {
+   "key": "wdw/2016/oe/sorcerer-mickey-2016",
+   "field": "sub_series",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: Music Magic Memories link rests on a dealer listing title (date field 2013); confirm before sign-off"
+  },
+  {
+   "key": "wdw/2016/oe/tinker-bell-2016",
+   "field": "sub_series",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "lead: dealer category lists a '2016 Music Magic Memories Tinker Bell' pin; per-pin page not seen, no claim made"
+  },
+  {
+   "key": "wdw/2016/oe/mickey-minnie-2016",
+   "field": "pin_name",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "lead: dealer category lists a '2016 Sorcerer Mickey and Minnie Musical' annual pin; may be this pin - not linked"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-princess-mystery-2016",
+   "field": "members",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "Eight princess designs still unnamed; Pin Central Aurora 'Love' entry still has no year or set"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-princess-mystery-2016",
+   "field": "release_location",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "Search summary of the DPB post says WDW and DLR; same URL already gave 'Disney Parks' in packet 334, so not re-claimed"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-princess-mystery-2016",
+   "field": "edition_type",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "OE vs limited release still not stated"
+  },
+  {
+   "key": "wdw/2016/oe-set/rogue-one-trooper-helmets-booster",
+   "field": "members",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "Four trooper designs still unnamed by DPB; separate Death Trooper (LE 4000), Scarif and TIE Striker pins found but not tied to the booster"
+  },
+  {
+   "key": "wdw/2016/oe-set/rogue-one-trooper-helmets-booster",
+   "field": "edition_type",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "Edition still not stated"
+  },
+  {
+   "key": "wdw/2016/oe-set/rogue-one-squadron-leaders-booster",
+   "field": "edition_type",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "Edition still not stated"
+  },
+  {
+   "key": "wdw/2016/oe-set/rogue-one-squadron-leaders-booster/blue-leader",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - only a reseller collection page titled '2016 Rebel Squadron Blue Leader' pin; title alone, not enough"
+  },
+  {
+   "key": "wdw/2016/oe-set/rogue-one-squadron-leaders-booster/red-leader",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - no new per-design evidence beyond the listing titles seen in packet 350"
+  },
+  {
+   "key": "wdw/2016/oe-set/rogue-one-squadron-leaders-booster/gold-leader",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - no new per-design evidence beyond the listing title seen in packet 350"
+  },
+  {
+   "key": "wdw/2016/oe-set/hollywood-studios-2016-booster/star-tours-r2d2-c3po",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - DPB numbered five-design list still the only source pairing R2-D2 and C-3PO on one pin"
+  },
+  {
+   "key": "wdw/2016/oe-set/hollywood-studios-2016-booster",
+   "field": "edition_type",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "Edition still not stated"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-tag-mystery",
+   "field": "members",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "Eight luggage-tag designs still unnamed; no dealer or database pages found"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-tag-mystery",
+   "field": "edition_type",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "OE vs limited release still not stated"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery",
+   "field": "release_year",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - DPB 27 Jan 2016 and dealer 21 Jan 2016 vs Pin Central 2015 label; a Mar 2016 trader archive also covers it but gives no release year"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/mickey-avenue",
+   "field": "name",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - year conflict (2015 vs 2016) unresolved; no new evidence"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/minnie-lane",
+   "field": "name",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - year conflict (2015 vs 2016) unresolved; no new evidence"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/daisy-lane",
+   "field": "name",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - year conflict (2015 vs 2016) unresolved; no new evidence"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/donald-boulevard",
+   "field": "name",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - year conflict (2015 vs 2016) unresolved; no new evidence"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/pluto-avenue",
+   "field": "name",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - year conflict (2015 vs 2016) unresolved; no new evidence"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/goofy-circle",
+   "field": "name",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - year conflict (2015 vs 2016) unresolved; no new evidence"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/chip-road",
+   "field": "name",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - year conflict (2015 vs 2016) unresolved; no new evidence"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-streets-mystery/dale-boulevard",
+   "field": "name",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - year conflict (2015 vs 2016) unresolved; no new evidence"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/february-rapunzel",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - no per-design page tied to the 2016 line found; DPB monthly list only"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/may-ariel",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - no per-design page tied to the 2016 line found; DPB monthly list only"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/august-tiana",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - no per-design page tied to the 2016 line found; DPB monthly list only"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/november-belle",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - no per-design page tied to the 2016 line found; DPB monthly list only"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/april-mary-poppins",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - no dated per-design page found; earlier dealer pages undated with conflicting edition types"
+  },
+  {
+   "key": "wdw/2016/oe-set/birthstone-2016/july-jessica-rabbit",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - no dated per-design page found; earlier dealer pages undated with conflicting edition types"
+  },
+  {
+   "key": "wdw/2016/oe-set/mickey-soccer-teams/seattle-sounders",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "released: dealer per-team product page (Magical Ears) for a Sounders Mickey pin, matching the per-team pages that cleared Orlando/DC/NYCFC/LA"
+  },
+  {
+   "key": "wdw/2016/oe-set/mickey-soccer-teams/toronto-fc",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "released: dealer per-team product page (Magical Ears) for a Toronto FC Mickey pin, same per-team standard as other teams"
+  },
+  {
+   "key": "wdw/2016/oe-set/mickey-soccer-teams/vancouver-whitecaps",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "released: dealer per-team product page (Your WDW Store) for a Whitecaps Mickey pin, same standard as Orlando/DC/NYCFC"
+  },
+  {
+   "key": "wdw/2016/oe-set/mickey-soccer-teams/vancouver-whitecaps",
+   "field": "release_date",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "Dealer page gives 1 Feb 2017 vs DPB Nov 2016 - same conflict as Orlando; not claimed"
+  },
+  {
+   "key": "wdw/2016/oe-set/mickey-soccer-teams/portland-timbers",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - no per-team page found for Portland Timbers"
+  },
+  {
+   "key": "wdw/2016/oe-set/pirates-caribbean-character-booster/mickey-mouse",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - per-pin roles from an undated dealer listing ($31.99); tie to the 2016 DPB booster rests on title/subject"
+  },
+  {
+   "key": "wdw/2016/oe-set/pirates-caribbean-character-booster/minnie-mouse",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - per-pin roles from an undated dealer listing ($31.99); tie to the 2016 DPB booster rests on title/subject"
+  },
+  {
+   "key": "wdw/2016/oe-set/pirates-caribbean-character-booster/pluto",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - per-pin roles from an undated dealer listing ($31.99); tie to the 2016 DPB booster rests on title/subject"
+  },
+  {
+   "key": "wdw/2016/oe-set/pirates-caribbean-character-booster/donald-duck",
+   "field": "pin_structure",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - per-pin roles from an undated dealer listing ($31.99); tie to the 2016 DPB booster rests on title/subject"
+  },
+  {
+   "key": "wdw/2016/oe-set/disney-babies-booster",
+   "field": "edition_type",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "Edition still not stated; DPB says late Apr 2016, also on Shop Parks app; designs still a list only (holds kept)"
+  },
+  {
+   "key": "wdw/2016/oe-set/mickey-mouse-shorts-booster",
+   "field": "members",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "No per-design evidence found; DPB describes four-pin card only (holds kept)"
+  },
+  {
+   "key": "wdw/2016/oe/humphrey-the-bear",
+   "field": "release_date",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - Chip and Co. preview also lists it among 2016 OE pins; still no release, design or price"
+  },
+  {
+   "key": "wdw/2016/oe/20000-leagues-under-the-sea",
+   "field": "release_date",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - only older or later LE/LR Nautilus pins found; no 2016 OE release"
+  },
+  {
+   "key": "wdw/2016/oe/mary-poppins",
+   "field": "release_date",
+   "searched": "30 standard WebSearches budget, 28 used (B216)",
+   "note": "hold: kept - preview only; no release found"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 (last try) to packets 233/334/350 (B025/B111/B202); 28 of 30 standard WebSearches, excluded domains blocked; reuses earlier keys. Released soccer holds for Seattle, Toronto, Vancouver via dealer per-team pages. Added dealer-title Music Magic Memories sub_series (held) and per-pin Pirates roles (held). No new pins. MK 45th, MMM, Princess, TAG, helmet designs still unnamed."
+}

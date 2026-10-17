@@ -1,0 +1,3002 @@
+{
+ "packet_id": "backfill-b033-wdw-oe-2015",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b033",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+   "title": "Disney Parks 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2014-12-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/2015-disney-alphabet-pin-collection/",
+   "title": "2015 Disney Alphabet Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.ecrater.com/p/37428196/disney-character-alphabet-mystery-pin",
+   "title": "Disney Character Alphabet Mystery Pin Collection U for Ursula Chaser Limited Edition 400",
+   "publisher": "eCRATER (reseller listing)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-mystery-pin-collection/",
+   "title": "Star Wars Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-weekends-2015-droid-pins/",
+   "title": "Star Wars Weekends 2015 Droid Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+   "title": "Star Wars Weekends 2015: Droid Mystery Pins",
+   "publisher": "Future of Star Wars (fan blog)",
+   "published_date": "2015-05-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/dvc-resort-mystery-pin-collection/",
+   "title": "DVC Resort Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/seasons-greetings-2015-mystery-pin-set",
+   "title": "Season's Greetings 2015 Mystery Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pirates-caribbean-concept-art-pins/",
+   "title": "Pirates of the Caribbean Concept Art Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypins.fandom.com/wiki/Tsum_Tsum_Classic_Mystery_Pin_Pack_(2015)",
+   "title": "Tsum Tsum Classic Mystery Pin Pack (2015)",
+   "publisher": "Disney Pins Wiki (Fandom)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.yourwdwstore.net/disney-mystery-pins-disney-tsum-tsum-series-1-choice-31030.html",
+   "title": "Disney Mystery Pins - Disney Tsum Tsum - Series 1 - Choice",
+   "publisher": "YourWDWStore (reseller listing)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hiddenmickeydisney.com/2015-pins/",
+   "title": "2015 Pins - Hidden Mickey Disney Pin & Medallion Collection",
+   "publisher": "Hidden Mickey Disney (fan checklist)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/2015-disney-hidden-mickey-pins-wave-a/",
+   "title": "2015 Disney Hidden Mickey Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+   "title": "Disney Pixar Open Edition Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-03-18",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+   "title": "February 2015 Week 3 New Pin Releases!",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/february-2015-week-4-new-pin-releases",
+   "title": "February 2015 Week 4 New Pin Releases!",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+   "title": "New Pins spotted at Walt Disney World",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-april-2015-week-1/",
+   "title": "New Disney Pins (April 2015 Week 1)",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/2015/03/30/new-pirates-of-the-caribbean-pins-released-at-walt-disney-world/",
+   "title": "New Pirates Of The Caribbean Pins Released At Walt Disney World",
+   "publisher": "DisKingdom",
+   "published_date": "2015-03-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/frozen-olaf-sven-pin",
+   "title": "Frozen Olaf and Sven Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/cutie-disney-pin-starter-set",
+   "title": "Cutie Disney Pin Starter Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2015",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2015/oe-single/figment-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Figment 2015 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/tinker-bell-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tinker Bell 2015 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/cinderella-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cinderella 2015 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/stitch-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch 2015 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/sorcerer-mickey-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Sorcerer Mickey 2015 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/mickey-minnie-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey and Minnie 2015 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/fab-five-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Fab Five 2015 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/character-alphabet-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Character Alphabet Mystery Pin Collection (2015)",
+     "source_url": "https://disneypinsblog.com/2015-disney-alphabet-pin-collection/",
+     "method": "search_snippet",
+     "note": "Neutral name; DPB covers the 2015 alphabet collection"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01",
+     "source_url": "https://disneypinsblog.com/2015-disney-alphabet-pin-collection/",
+     "method": "search_snippet",
+     "note": "Released January 2015 at Disney Parks; reported quickly sold out"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 52,
+     "source_url": "https://www.ecrater.com/p/37428196/disney-character-alphabet-mystery-pin",
+     "method": "search_snippet",
+     "note": "Listing says 52 pins: 26 limited release letters plus 26 chasers"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/2015-disney-alphabet-pin-collection/",
+     "method": "search_snippet",
+     "note": "Mystery collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://www.ecrater.com/p/37428196/disney-character-alphabet-mystery-pin",
+     "method": "search_snippet",
+     "note": "Letters described as limited releases with LE chasers"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/star-wars-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Mystery Pin Collection (2015)",
+     "source_url": "https://disneypinsblog.com/star-wars-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Neutral name"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/star-wars-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Each box holds two random pins"
+    },
+    {
+     "field": "price",
+     "value": 13.95,
+     "source_url": "https://disneypinsblog.com/star-wars-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Retail $13.95 per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10",
+     "source_url": "https://disneypinsblog.com/star-wars-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Covered as a new Oct 2015 collection"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/star-wars-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Available at both US resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/star-wars-weekends-droid-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Weekends 2015 Droid Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/star-wars-weekends-2015-droid-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name; droid-themed mystery set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 17,
+     "source_url": "https://disneypinsblog.com/star-wars-weekends-2015-droid-pins/",
+     "method": "search_snippet",
+     "note": "17 pins: 8 regular, 8 LE 400 chasers, 1 LE 200 super chaser"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/star-wars-weekends-2015-droid-pins/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "price",
+     "value": 19.95,
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "$19.95 per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05",
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Sold during Star Wars Weekends 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hollywood Studios (Darth's Mall)",
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Event merchandise location"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Droid set on a background scene pin"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/dvc-resort-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DVC Resort Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/dvc-resort-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Neutral name"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 14,
+     "source_url": "https://disneypinsblog.com/dvc-resort-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "14 pins, each a different Disney resort"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/dvc-resort-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/dvc-resort-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Springs (WDW); also Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/dvc-resort-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Found at Disney Springs; DVC membership ID required"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/seasons-greetings-2015-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Season's Greetings 2015 Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/seasons-greetings-2015-mystery-pin-set",
+     "method": "search_snippet",
+     "note": "Set title"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/blogs/news/seasons-greetings-2015-mystery-pin-set",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/seasons-greetings-2015-mystery-pin-set",
+     "method": "search_snippet",
+     "note": "Limited-release mystery set with two LE 500 chasers"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/seasons-greetings-2015-mystery-pin-set",
+     "method": "search_snippet",
+     "note": "Released 19 Nov 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/seasons-greetings-2015-mystery-pin-set",
+     "method": "search_snippet",
+     "note": "Both US resorts"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "snowflake shape"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/seasons-greetings-2015-mystery-pin-set",
+     "method": "search_snippet",
+     "note": "Snowflake pins with a princess in the centre"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/pirates-concept-art-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pirates of the Caribbean Concept Art Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/pirates-caribbean-concept-art-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/pirates-caribbean-concept-art-pins/",
+     "method": "search_snippet",
+     "note": "Eight pins in total"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/pirates-caribbean-concept-art-pins/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03",
+     "source_url": "https://disneypinsblog.com/pirates-caribbean-concept-art-pins/",
+     "method": "search_snippet",
+     "note": "March 2015 release per DPB coverage"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/tsum-tsum-classic-mystery-series-1",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tsum Tsum Classic Mystery Pin Pack Series 1 (2015)",
+     "source_url": "https://disneypins.fandom.com/wiki/Tsum_Tsum_Classic_Mystery_Pin_Pack_(2015)",
+     "method": "search_snippet",
+     "note": "Neutral name"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 16,
+     "source_url": "https://disneypins.fandom.com/wiki/Tsum_Tsum_Classic_Mystery_Pin_Pack_(2015)",
+     "method": "search_snippet",
+     "note": "16 possible designs"
+    },
+    {
+     "field": "format",
+     "value": "mystery pack of 5",
+     "source_url": "https://disneypins.fandom.com/wiki/Tsum_Tsum_Classic_Mystery_Pin_Pack_(2015)",
+     "method": "search_snippet",
+     "note": "Five random pins per blue pack"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01-22",
+     "source_url": "https://www.yourwdwstore.net/disney-mystery-pins-disney-tsum-tsum-series-1-choice-31030.html",
+     "method": "search_snippet",
+     "note": "Reseller gives 22 Jan 2015 release, sold in WDW parks"
+    },
+    {
+     "field": "price",
+     "value": 27.99,
+     "source_url": "https://disneypins.fandom.com/wiki/Tsum_Tsum_Classic_Mystery_Pin_Pack_(2015)",
+     "method": "search_snippet",
+     "note": "Disney Store price $27.99 per pack"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/hidden-mickey-epcot-center-logos",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 WDW Hidden Mickey EPCOT Center Logos",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Set as listed on 2015 WDW Hidden Mickey checklist"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Checklist lists 6 pins; plus chaser and completer noted"
+    },
+    {
+     "field": "format",
+     "value": "cast lanyard / Hidden Mickey series",
+     "source_url": "https://disneypinsblog.com/2015-disney-hidden-mickey-pins-wave-a/",
+     "method": "search_snippet",
+     "note": "Cast lanyard pins first, later sold in mystery pouches"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 checklist"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/hidden-mickey-cast-member-costumes",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 WDW Hidden Mickey Cast Member Costumes",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Set as listed on 2015 WDW Hidden Mickey checklist"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Checklist lists 7 pins; plus chaser and completer noted"
+    },
+    {
+     "field": "format",
+     "value": "cast lanyard / Hidden Mickey series",
+     "source_url": "https://disneypinsblog.com/2015-disney-hidden-mickey-pins-wave-a/",
+     "method": "search_snippet",
+     "note": "Cast lanyard pins first, later sold in mystery pouches"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 checklist"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/hidden-mickey-character-sidekicks",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 WDW Hidden Mickey Character Sidekicks",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Set as listed on 2015 WDW Hidden Mickey checklist"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Checklist lists 6 pins; plus chaser and completer noted"
+    },
+    {
+     "field": "format",
+     "value": "cast lanyard / Hidden Mickey series",
+     "source_url": "https://disneypinsblog.com/2015-disney-hidden-mickey-pins-wave-a/",
+     "method": "search_snippet",
+     "note": "Cast lanyard pins first, later sold in mystery pouches"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 checklist"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/hidden-mickey-character-apples",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 WDW Hidden Mickey Character Apples",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Set as listed on 2015 WDW Hidden Mickey checklist"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Checklist lists 8 pins; plus chaser and completer noted"
+    },
+    {
+     "field": "format",
+     "value": "cast lanyard / Hidden Mickey series",
+     "source_url": "https://disneypinsblog.com/2015-disney-hidden-mickey-pins-wave-a/",
+     "method": "search_snippet",
+     "note": "Cast lanyard pins first, later sold in mystery pouches"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 checklist"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/hidden-mickey-character-ear-hats",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 WDW Hidden Mickey Character Ear Hats",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Set as listed on 2015 WDW Hidden Mickey checklist"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Checklist lists 7 pins; plus chaser and completer noted"
+    },
+    {
+     "field": "format",
+     "value": "cast lanyard / Hidden Mickey series",
+     "source_url": "https://disneypinsblog.com/2015-disney-hidden-mickey-pins-wave-a/",
+     "method": "search_snippet",
+     "note": "Cast lanyard pins first, later sold in mystery pouches"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 checklist"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/hidden-mickey-macaroons",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 WDW Hidden Mickey Macaroons",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Set as listed on 2015 WDW Hidden Mickey checklist"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Checklist lists 7 pins; plus chaser and completer noted"
+    },
+    {
+     "field": "format",
+     "value": "cast lanyard / Hidden Mickey series",
+     "source_url": "https://disneypinsblog.com/2015-disney-hidden-mickey-pins-wave-a/",
+     "method": "search_snippet",
+     "note": "Cast lanyard pins first, later sold in mystery pouches"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 checklist"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/hidden-mickey-disney-dragons",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 WDW Hidden Mickey Disney Dragons",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Set as listed on 2015 WDW Hidden Mickey checklist"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Checklist lists 7 pins; plus chaser and completer noted"
+    },
+    {
+     "field": "format",
+     "value": "cast lanyard / Hidden Mickey series",
+     "source_url": "https://disneypinsblog.com/2015-disney-hidden-mickey-pins-wave-a/",
+     "method": "search_snippet",
+     "note": "Cast lanyard pins first, later sold in mystery pouches"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 checklist"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/hidden-mickey-outer-space-characters",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 WDW Hidden Mickey Outer Space Characters",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Set as listed on 2015 WDW Hidden Mickey checklist"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Checklist lists 6 pins; plus chaser and completer noted"
+    },
+    {
+     "field": "format",
+     "value": "cast lanyard / Hidden Mickey series",
+     "source_url": "https://disneypinsblog.com/2015-disney-hidden-mickey-pins-wave-a/",
+     "method": "search_snippet",
+     "note": "Cast lanyard pins first, later sold in mystery pouches"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 checklist"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/hidden-mickey-genie",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2015 WDW Hidden Mickey Genie (Aladdin)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Set as listed on 2015 WDW Hidden Mickey checklist"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Checklist lists 7 pins; chaser but no completer"
+    },
+    {
+     "field": "format",
+     "value": "cast lanyard / Hidden Mickey series",
+     "source_url": "https://disneypinsblog.com/2015-disney-hidden-mickey-pins-wave-a/",
+     "method": "search_snippet",
+     "note": "Cast lanyard pins first, later sold in mystery pouches"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 checklist"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/wall-e-eve",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "WALL-E and EVE Pin",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/jessie",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Jessie Pin",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/toy-story-aliens",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Toy Story Aliens Pin",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/buzz-zurg",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Buzz Lightyear and Zurg Pin",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/bonnie-woody",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Bonnie and Woody Pin",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/finding-nemo-school",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Finding Nemo Tad, Sheldon, Pearl and Nemo Pin",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/baymax-soccer",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Baymax with Soccer Ball Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/dory-just-keep-swimming",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Dory Just Keep Swimming Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/bruce-nemo-dory",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Bruce, Nemo and Dory Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/merida",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Merida Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/daisy-minnie",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Daisy and Minnie Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-4-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/cinderella-live-action-portrait",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cinderella Live-Action Portrait Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/test-track",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Test Track Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/pooh-piglet-umbrella",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pooh and Piglet Umbrella Moveable Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/pluto-chip-dale",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pluto and Chip 'n' Dale Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/randall-green",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Randall Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2015-week-1/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/pirates-parrot",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pirates of the Caribbean Parrot Pin",
+     "source_url": "https://diskingdom.com/2015/03/30/new-pirates-of-the-caribbean-pins-released-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/pirates-skeleton",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pirates of the Caribbean Skeleton Pin",
+     "source_url": "https://diskingdom.com/2015/03/30/new-pirates-of-the-caribbean-pins-released-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-single/olaf-sven-holiday-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Olaf on Sven Holiday 2015 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-olaf-sven-pin",
+     "method": "search_snippet",
+     "note": "Single-pin release; set name = pin name"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2015/oe-set/cutie-starter-set-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cutie Disney Pin Starter Set (2015)",
+     "source_url": "https://disneypinsblog.com/blogs/news/cutie-disney-pin-starter-set",
+     "method": "search_snippet",
+     "note": "Neutral name"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/cutie-disney-pin-starter-set",
+     "method": "search_snippet",
+     "note": "Lanyard plus 8 pins"
+    },
+    {
+     "field": "format",
+     "value": "starter set with lanyard",
+     "source_url": "https://disneypinsblog.com/blogs/news/cutie-disney-pin-starter-set",
+     "method": "search_snippet",
+     "note": "Starter set"
+    },
+    {
+     "field": "price",
+     "value": 19.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/cutie-disney-pin-starter-set",
+     "method": "search_snippet",
+     "note": "$19.95 with a $25+ purchase"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World (Magic Kingdom)",
+     "source_url": "https://disneypinsblog.com/blogs/news/cutie-disney-pin-starter-set",
+     "method": "search_snippet",
+     "note": "Found at Magic Kingdom"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/cutie-disney-pin-starter-set",
+     "method": "search_snippet",
+     "note": "Described as new for 2015"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2015/oe/figment-2015",
+   "set_key": "wdw/2015/oe-single/figment-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Figment 2015 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name; listed among 2015-dated Disney Parks souvenir pins"
+    },
+    {
+     "field": "main_character",
+     "value": "Figment",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Character named in roundup entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Part of the 2015-dated pin line, already on sale by late Dec 2014"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/tinker-bell-2015",
+   "set_key": "wdw/2015/oe-single/tinker-bell-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tinker Bell 2015 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name; listed among 2015-dated Disney Parks souvenir pins"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Character named in roundup entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Part of the 2015-dated pin line, already on sale by late Dec 2014"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/cinderella-2015",
+   "set_key": "wdw/2015/oe-single/cinderella-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella 2015 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name; listed among 2015-dated Disney Parks souvenir pins"
+    },
+    {
+     "field": "main_character",
+     "value": "Cinderella",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Character named in roundup entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Part of the 2015-dated pin line, already on sale by late Dec 2014"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/stitch-2015",
+   "set_key": "wdw/2015/oe-single/stitch-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch 2015 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name; listed among 2015-dated Disney Parks souvenir pins"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Character named in roundup entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Part of the 2015-dated pin line, already on sale by late Dec 2014"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/sorcerer-mickey-2015",
+   "set_key": "wdw/2015/oe-single/sorcerer-mickey-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sorcerer Mickey 2015 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name; listed among 2015-dated Disney Parks souvenir pins"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Character named in roundup entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Part of the 2015-dated pin line, already on sale by late Dec 2014"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/mickey-minnie-2015",
+   "set_key": "wdw/2015/oe-single/mickey-minnie-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey and Minnie 2015 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name; listed among 2015-dated Disney Parks souvenir pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Character named in roundup entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Part of the 2015-dated pin line, already on sale by late Dec 2014"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/fab-five-2015",
+   "set_key": "wdw/2015/oe-single/fab-five-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Fab Five 2015 Pin",
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name; listed among 2015-dated Disney Parks souvenir pins"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/disney-parks-2015-pins/",
+     "method": "search_snippet",
+     "note": "Part of the 2015-dated pin line, already on sale by late Dec 2014"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe-set/character-alphabet-mystery/u-ursula-chaser",
+   "set_key": "wdw/2015/oe-set/character-alphabet-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Character Alphabet U (Ursula) Chaser",
+     "source_url": "https://www.ecrater.com/p/37428196/disney-character-alphabet-mystery-pin",
+     "method": "search_snippet",
+     "note": "Neutral name from reseller title"
+    },
+    {
+     "field": "main_character",
+     "value": "Ursula",
+     "source_url": "https://www.ecrater.com/p/37428196/disney-character-alphabet-mystery-pin",
+     "method": "search_snippet",
+     "note": "U for Ursula"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.ecrater.com/p/37428196/disney-character-alphabet-mystery-pin",
+     "method": "search_snippet",
+     "note": "Chaser LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://www.ecrater.com/p/37428196/disney-character-alphabet-mystery-pin",
+     "method": "search_snippet",
+     "note": "LE 400 per listing"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-01",
+     "source_url": "https://www.ecrater.com/p/37428196/disney-character-alphabet-mystery-pin",
+     "method": "search_snippet",
+     "note": "Listing says released January 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://www.ecrater.com/p/37428196/disney-character-alphabet-mystery-pin",
+     "method": "search_snippet",
+     "note": "Sold exclusively at the two US resorts per listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe-set/star-wars-weekends-droid-mystery/r5-d4",
+   "set_key": "wdw/2015/oe-set/star-wars-weekends-droid-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars Weekends 2015 Droid R5-D4",
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name"
+    },
+    {
+     "field": "main_character",
+     "value": "R5-D4",
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "R5-D4 shown before a Tatooine hut"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars Weekends 2015"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe-set/star-wars-weekends-droid-mystery/rex-chaser",
+   "set_key": "wdw/2015/oe-set/star-wars-weekends-droid-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars Weekends 2015 Droid Rex Chaser",
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name"
+    },
+    {
+     "field": "main_character",
+     "value": "Rex",
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Fan reports pulling Rex as an LE 400 chaser"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Chaser tier"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars Weekends 2015"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe-set/star-wars-weekends-droid-mystery/mouse-droid-super-chaser",
+   "set_key": "wdw/2015/oe-set/star-wars-weekends-droid-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars Weekends 2015 Droid Mouse Droid Super Chaser",
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name"
+    },
+    {
+     "field": "main_character",
+     "value": "Mouse Droid",
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Fan breakdown names Mouse Droid as LE 200 super chaser"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Chaser tier"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://futureofstarwars.wordpress.com/2015/05/22/star-wars-weekends-2015-droid-mystery-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars Weekends 2015"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe-set/hidden-mickey-character-apples/purple-fruit-completer",
+   "set_key": "wdw/2015/oe-set/hidden-mickey-character-apples",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2015 WDW Hidden Mickey Character Apples Completer (Purple Fruit)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer named on checklist"
+    },
+    {
+     "field": "main_character",
+     "value": "Purple Fruit",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer subject"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 checklist"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe-set/hidden-mickey-macaroons/orange-macaroon-completer",
+   "set_key": "wdw/2015/oe-set/hidden-mickey-macaroons",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2015 WDW Hidden Mickey Macaroons Completer (Orange Macaroon)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer named on checklist"
+    },
+    {
+     "field": "main_character",
+     "value": "Orange Macaroon",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer subject"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 checklist"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe-set/hidden-mickey-disney-dragons/gwythaints-completer",
+   "set_key": "wdw/2015/oe-set/hidden-mickey-disney-dragons",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2015 WDW Hidden Mickey Disney Dragons Completer (Gwythaints)",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer named on checklist"
+    },
+    {
+     "field": "main_character",
+     "value": "Gwythaints",
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "Completer subject"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://hiddenmickeydisney.com/2015-pins/",
+     "method": "search_snippet",
+     "note": "2015 checklist"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/wall-e-eve",
+   "set_key": "wdw/2015/oe-single/wall-e-eve",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "WALL-E and EVE Pin",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name from DPB Pixar OE roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "All pins in post described as open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "WALL-E",
+      "EVE"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Characters named in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Post dated 18 Mar 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Found at WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/jessie",
+   "set_key": "wdw/2015/oe-single/jessie",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jessie Pin",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name from DPB Pixar OE roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "All pins in post described as open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Jessie",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Characters named in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Post dated 18 Mar 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Found at WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/toy-story-aliens",
+   "set_key": "wdw/2015/oe-single/toy-story-aliens",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Toy Story Aliens Pin",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name from DPB Pixar OE roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "All pins in post described as open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Aliens",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Characters named in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Post dated 18 Mar 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Found at WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/buzz-zurg",
+   "set_key": "wdw/2015/oe-single/buzz-zurg",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Buzz Lightyear and Zurg Pin",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name from DPB Pixar OE roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "All pins in post described as open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Buzz Lightyear",
+      "Zurg"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Characters named in roundup"
+    },
+    {
+     "field": "original_price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Blog reply: doubles like Buzz/Zurg about $11.95 (approximate)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Post dated 18 Mar 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Found at WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/bonnie-woody",
+   "set_key": "wdw/2015/oe-single/bonnie-woody",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bonnie and Woody Pin",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name from DPB Pixar OE roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "All pins in post described as open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bonnie",
+      "Woody"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Characters named in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Post dated 18 Mar 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Found at WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/finding-nemo-school",
+   "set_key": "wdw/2015/oe-single/finding-nemo-school",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Finding Nemo Tad, Sheldon, Pearl and Nemo Pin",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Neutral name from DPB Pixar OE roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "All pins in post described as open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tad",
+      "Sheldon",
+      "Pearl",
+      "Nemo"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Characters named in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Post dated 18 Mar 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-pixar-open-edition-pins/",
+     "method": "search_snippet",
+     "note": "Found at WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/baymax-soccer",
+   "set_key": "wdw/2015/oe-single/baymax-soccer",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Baymax with Soccer Ball Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Neutral name from DPB Feb 2015 weekly roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Baymax",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "As stated in roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "As stated in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Feb 2015 weekly new-release roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/dory-just-keep-swimming",
+   "set_key": "wdw/2015/oe-single/dory-just-keep-swimming",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dory Just Keep Swimming Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Neutral name from DPB Feb 2015 weekly roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Dory",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "As stated in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Feb 2015 weekly new-release roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/bruce-nemo-dory",
+   "set_key": "wdw/2015/oe-single/bruce-nemo-dory",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bruce, Nemo and Dory Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Neutral name from DPB Feb 2015 weekly roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bruce",
+      "Nemo",
+      "Dory"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "As stated in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Feb 2015 weekly new-release roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/merida",
+   "set_key": "wdw/2015/oe-single/merida",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Merida Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Neutral name from DPB Feb 2015 weekly roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Merida",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "As stated in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Feb 2015 weekly new-release roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/daisy-minnie",
+   "set_key": "wdw/2015/oe-single/daisy-minnie",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Daisy and Minnie Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-4-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Neutral name from DPB Feb 2015 weekly roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-4-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-4-new-pin-releases",
+     "method": "search_snippet",
+     "note": "As stated in roundup"
+    },
+    {
+     "field": "original_price",
+     "value": 8.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-4-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Retail $8.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-4-new-pin-releases",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-4-new-pin-releases",
+     "method": "search_snippet",
+     "note": "As stated in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-4-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Feb 2015 weekly new-release roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/cinderella-live-action-portrait",
+   "set_key": "wdw/2015/oe-single/cinderella-live-action-portrait",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella Live-Action Portrait Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Neutral name from DPB Feb 2015 weekly roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "main_character",
+     "value": "Cinderella",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "As stated in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Feb 2015 weekly new-release roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/test-track",
+   "set_key": "wdw/2015/oe-single/test-track",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Test Track Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Neutral name from DPB Feb 2015 weekly roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "attraction",
+     "value": "Test Track",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "As stated in roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "As stated in roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/february-2015-week-3-new-pin-releases",
+     "method": "search_snippet",
+     "note": "Feb 2015 weekly new-release roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/pooh-piglet-umbrella",
+   "set_key": "wdw/2015/oe-single/pooh-piglet-umbrella",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pooh and Piglet Umbrella Moveable Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh",
+      "Piglet"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+     "method": "search_snippet",
+     "note": "Pooh and Piglet share an umbrella; moveable"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "moveable"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+     "method": "search_snippet",
+     "note": "Pooh and Piglet share an umbrella; moveable"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+     "method": "search_snippet",
+     "note": "Spotted April 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+     "method": "search_snippet",
+     "note": "Spotted across WDW, 2nd week of April"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/pluto-chip-dale",
+   "set_key": "wdw/2015/oe-single/pluto-chip-dale",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pluto and Chip 'n' Dale Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto",
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+     "method": "search_snippet",
+     "note": "Pluto with Chip and Dale"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+     "method": "search_snippet",
+     "note": "Spotted April 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+     "method": "search_snippet",
+     "note": "Spotted across WDW, 2nd week of April"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/randall-green",
+   "set_key": "wdw/2015/oe-single/randall-green",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Randall Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2015-week-1/",
+     "method": "search_snippet",
+     "note": "Neutral descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Randall",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2015-week-1/",
+     "method": "search_snippet",
+     "note": "Randall on a green backdrop"
+    },
+    {
+     "field": "original_price",
+     "value": 8.95,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2015-week-1/",
+     "method": "search_snippet",
+     "note": "Retail $8.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2015-week-1/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-04",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2015-week-1/",
+     "method": "search_snippet",
+     "note": "Spotted April 2015"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/pirates-parrot",
+   "set_key": "wdw/2015/oe-single/pirates-parrot",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pirates of the Caribbean Parrot Pin",
+     "source_url": "https://diskingdom.com/2015/03/30/new-pirates-of-the-caribbean-pins-released-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Neutral name"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://diskingdom.com/2015/03/30/new-pirates-of-the-caribbean-pins-released-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "One of two new OE attraction pins"
+    },
+    {
+     "field": "attraction",
+     "value": "Pirates of the Caribbean",
+     "source_url": "https://diskingdom.com/2015/03/30/new-pirates-of-the-caribbean-pins-released-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Attraction-based"
+    },
+    {
+     "field": "front_text",
+     "value": "A Parrots Life For Me",
+     "source_url": "https://diskingdom.com/2015/03/30/new-pirates-of-the-caribbean-pins-released-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Pin wording as reported"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03-30",
+     "source_url": "https://diskingdom.com/2015/03/30/new-pirates-of-the-caribbean-pins-released-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Reported released 30 Mar 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://diskingdom.com/2015/03/30/new-pirates-of-the-caribbean-pins-released-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "WDW release"
+    },
+    {
+     "field": "original_price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+     "method": "search_snippet",
+     "note": "DPB April 2015 post: $11.95 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+     "method": "search_snippet",
+     "note": "US price"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/pirates-skeleton",
+   "set_key": "wdw/2015/oe-single/pirates-skeleton",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pirates of the Caribbean Skeleton Pin",
+     "source_url": "https://diskingdom.com/2015/03/30/new-pirates-of-the-caribbean-pins-released-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Neutral name"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://diskingdom.com/2015/03/30/new-pirates-of-the-caribbean-pins-released-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "One of two new OE attraction pins"
+    },
+    {
+     "field": "attraction",
+     "value": "Pirates of the Caribbean",
+     "source_url": "https://diskingdom.com/2015/03/30/new-pirates-of-the-caribbean-pins-released-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Attraction-based"
+    },
+    {
+     "field": "front_text",
+     "value": "Dead Men Tell No Tales",
+     "source_url": "https://diskingdom.com/2015/03/30/new-pirates-of-the-caribbean-pins-released-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Pin wording as reported"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-03-30",
+     "source_url": "https://diskingdom.com/2015/03/30/new-pirates-of-the-caribbean-pins-released-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Reported released 30 Mar 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://diskingdom.com/2015/03/30/new-pirates-of-the-caribbean-pins-released-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "WDW release"
+    },
+    {
+     "field": "original_price",
+     "value": 11.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+     "method": "search_snippet",
+     "note": "DPB April 2015 post: $11.95 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-pins-spotted-walt-disney-world",
+     "method": "search_snippet",
+     "note": "US price"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2015/oe/olaf-sven-holiday-2015",
+   "set_key": "wdw/2015/oe-single/olaf-sven-holiday-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Olaf on Sven Holiday 2015 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-olaf-sven-pin",
+     "method": "search_snippet",
+     "note": "Neutral name"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-olaf-sven-pin",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Olaf",
+      "Sven"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-olaf-sven-pin",
+     "method": "search_snippet",
+     "note": "Olaf sits on Sven's head"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-olaf-sven-pin",
+     "method": "search_snippet",
+     "note": "Single pin showing both characters"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-olaf-sven-pin",
+     "method": "search_snippet",
+     "note": "One of the first Holiday 2015 pins"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World (Disney Springs)",
+     "source_url": "https://disneypinsblog.com/blogs/news/frozen-olaf-sven-pin",
+     "method": "search_snippet",
+     "note": "Found at Disney Springs"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2015/oe/figment-2015",
+   "field": "edition_type",
+   "searched": "DPB 2015 roundup; 2 queries",
+   "note": "Snippet does not state open edition for the 2015-dated line; confirm"
+  },
+  {
+   "key": "wdw/2015/oe/figment-2015",
+   "field": "original_price",
+   "searched": "DPB 2015 roundup",
+   "note": "No price in snippets"
+  },
+  {
+   "key": "wdw/2015/oe/tinker-bell-2015",
+   "field": "edition_type",
+   "searched": "DPB 2015 roundup; 2 queries",
+   "note": "Snippet does not state open edition for the 2015-dated line; confirm"
+  },
+  {
+   "key": "wdw/2015/oe/tinker-bell-2015",
+   "field": "original_price",
+   "searched": "DPB 2015 roundup",
+   "note": "No price in snippets"
+  },
+  {
+   "key": "wdw/2015/oe/cinderella-2015",
+   "field": "edition_type",
+   "searched": "DPB 2015 roundup; 2 queries",
+   "note": "Snippet does not state open edition for the 2015-dated line; confirm"
+  },
+  {
+   "key": "wdw/2015/oe/cinderella-2015",
+   "field": "original_price",
+   "searched": "DPB 2015 roundup",
+   "note": "No price in snippets"
+  },
+  {
+   "key": "wdw/2015/oe/stitch-2015",
+   "field": "edition_type",
+   "searched": "DPB 2015 roundup; 2 queries",
+   "note": "Snippet does not state open edition for the 2015-dated line; confirm"
+  },
+  {
+   "key": "wdw/2015/oe/stitch-2015",
+   "field": "original_price",
+   "searched": "DPB 2015 roundup",
+   "note": "No price in snippets"
+  },
+  {
+   "key": "wdw/2015/oe/sorcerer-mickey-2015",
+   "field": "edition_type",
+   "searched": "DPB 2015 roundup; 2 queries",
+   "note": "Snippet does not state open edition for the 2015-dated line; confirm"
+  },
+  {
+   "key": "wdw/2015/oe/sorcerer-mickey-2015",
+   "field": "original_price",
+   "searched": "DPB 2015 roundup",
+   "note": "No price in snippets"
+  },
+  {
+   "key": "wdw/2015/oe/mickey-minnie-2015",
+   "field": "edition_type",
+   "searched": "DPB 2015 roundup; 2 queries",
+   "note": "Snippet does not state open edition for the 2015-dated line; confirm"
+  },
+  {
+   "key": "wdw/2015/oe/mickey-minnie-2015",
+   "field": "original_price",
+   "searched": "DPB 2015 roundup",
+   "note": "No price in snippets"
+  },
+  {
+   "key": "wdw/2015/oe/fab-five-2015",
+   "field": "edition_type",
+   "searched": "DPB 2015 roundup; 2 queries",
+   "note": "Snippet does not state open edition for the 2015-dated line; confirm"
+  },
+  {
+   "key": "wdw/2015/oe/fab-five-2015",
+   "field": "original_price",
+   "searched": "DPB 2015 roundup",
+   "note": "No price in snippets"
+  },
+  {
+   "key": "wdw/2015/oe/fab-five-2015",
+   "field": "characters",
+   "searched": "DPB 2015 roundup",
+   "note": "Entry named only as Fab Five; individual characters and whether one pin not stated"
+  },
+  {
+   "key": "wdw/2015/oe/fab-five-2015",
+   "field": "pin_structure",
+   "searched": "DPB 2015 roundup",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs)"
+  },
+  {
+   "key": "wdw/2015/oe/figment-2015",
+   "field": "visual_description",
+   "searched": "reseller search",
+   "note": "lead: reseller lists 2015 Retro Castle annual pins for Figment/Stitch/Cinderella; may be this design or a separate AP line; confirm"
+  },
+  {
+   "key": "wdw/2015/oe/stitch-2015",
+   "field": "visual_description",
+   "searched": "reseller search",
+   "note": "lead: reseller lists 2015 Retro Castle annual pins for Figment/Stitch/Cinderella; may be this design or a separate AP line; confirm"
+  },
+  {
+   "key": "wdw/2015/oe/cinderella-2015",
+   "field": "visual_description",
+   "searched": "reseller search",
+   "note": "lead: reseller lists 2015 Retro Castle annual pins for Figment/Stitch/Cinderella; may be this design or a separate AP line; confirm"
+  },
+  {
+   "key": "wdw/2015/oe-set/character-alphabet-mystery/u-ursula-chaser",
+   "field": "edition_size",
+   "searched": "1 query; reseller only",
+   "note": "hold: design and LE size rest on one reseller listing title; confirm on an editorial source"
+  },
+  {
+   "key": "wdw/2015/oe-set/character-alphabet-mystery",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Other 51 designs not named in permitted snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/character-alphabet-mystery",
+   "field": "price",
+   "searched": "2 queries",
+   "note": "No 2015 box retail price found; later reseller prices ignored"
+  },
+  {
+   "key": "wdw/2015/oe-set/star-wars-mystery",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "Set size and chaser count not in snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/star-wars-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "No individual designs named in snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/star-wars-weekends-droid-mystery/r5-d4",
+   "field": "main_character",
+   "searched": "3 queries",
+   "note": "hold: design identity rests on a fan-post snippet as summarised; confirm source and design"
+  },
+  {
+   "key": "wdw/2015/oe-set/star-wars-weekends-droid-mystery/rex-chaser",
+   "field": "main_character",
+   "searched": "3 queries",
+   "note": "hold: design identity rests on a fan-post snippet as summarised; confirm source and design"
+  },
+  {
+   "key": "wdw/2015/oe-set/star-wars-weekends-droid-mystery/mouse-droid-super-chaser",
+   "field": "main_character",
+   "searched": "3 queries",
+   "note": "hold: design identity rests on a fan-post snippet as summarised; confirm source and design"
+  },
+  {
+   "key": "wdw/2015/oe-set/star-wars-weekends-droid-mystery",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "14 of 17 designs not named in permitted snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/star-wars-weekends-droid-mystery",
+   "field": "scope",
+   "searched": "search",
+   "note": "Event-exclusive mystery set with LE chasers; may belong in a WDW event/LE line rather than OE"
+  },
+  {
+   "key": "wdw/2015/oe-set/dvc-resort-mystery",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "hold: 2015 year rests on search context only; post date not shown in snippet"
+  },
+  {
+   "key": "wdw/2015/oe-set/dvc-resort-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Individual resort designs not named"
+  },
+  {
+   "key": "wdw/2015/oe-set/dvc-resort-mystery",
+   "field": "price",
+   "searched": "2 queries",
+   "note": "No price in snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/seasons-greetings-2015-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "lead: reseller lists Belle, Ariel, Jasmine, Elsa, Rapunzel, Anna, Tiana; chasers Cinderella, Aurora (LE 500); confirm on editorial source"
+  },
+  {
+   "key": "wdw/2015/oe-set/seasons-greetings-2015-mystery",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "Total set size not stated in DPB snippet"
+  },
+  {
+   "key": "wdw/2015/oe-set/seasons-greetings-2015-mystery",
+   "field": "price",
+   "searched": "2 queries",
+   "note": "No price in snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/pirates-concept-art-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; none named in snippet"
+  },
+  {
+   "key": "wdw/2015/oe-set/pirates-concept-art-mystery",
+   "field": "price",
+   "searched": "1 query",
+   "note": "Snippet gives only an approximate (~$13.95) price; not recorded"
+  },
+  {
+   "key": "wdw/2015/oe-set/pirates-concept-art-mystery",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "Park/resort not stated in snippet"
+  },
+  {
+   "key": "wdw/2015/oe-set/tsum-tsum-classic-mystery-series-1",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed in permitted snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/tsum-tsum-classic-mystery-series-1",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "hold: may be a Disney Store (dsus) release also sold in parks; confirm line"
+  },
+  {
+   "key": "wdw/2015/oe-set/tsum-tsum-classic-mystery-series-1",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "Open edition status not stated"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-epcot-center-logos",
+   "field": "wave",
+   "searched": "3 queries",
+   "note": "Checklist does not label sets by wave A or B"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-epcot-center-logos",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Individual designs not named in snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-epcot-center-logos",
+   "field": "expected_pin_count",
+   "searched": "3 queries",
+   "note": "Confirm whether count includes chaser/completer"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-cast-member-costumes",
+   "field": "wave",
+   "searched": "3 queries",
+   "note": "Checklist does not label sets by wave A or B"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-cast-member-costumes",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Individual designs not named in snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-cast-member-costumes",
+   "field": "expected_pin_count",
+   "searched": "3 queries",
+   "note": "Confirm whether count includes chaser/completer"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-character-sidekicks",
+   "field": "wave",
+   "searched": "3 queries",
+   "note": "Checklist does not label sets by wave A or B"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-character-sidekicks",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Individual designs not named in snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-character-sidekicks",
+   "field": "expected_pin_count",
+   "searched": "3 queries",
+   "note": "Confirm whether count includes chaser/completer"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-character-apples",
+   "field": "wave",
+   "searched": "3 queries",
+   "note": "Checklist does not label sets by wave A or B"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-character-apples",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Individual designs not named in snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-character-apples",
+   "field": "expected_pin_count",
+   "searched": "3 queries",
+   "note": "Confirm whether count includes chaser/completer"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-character-ear-hats",
+   "field": "wave",
+   "searched": "3 queries",
+   "note": "Checklist does not label sets by wave A or B"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-character-ear-hats",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Individual designs not named in snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-character-ear-hats",
+   "field": "expected_pin_count",
+   "searched": "3 queries",
+   "note": "Confirm whether count includes chaser/completer"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-macaroons",
+   "field": "wave",
+   "searched": "3 queries",
+   "note": "Checklist does not label sets by wave A or B"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-macaroons",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Individual designs not named in snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-macaroons",
+   "field": "expected_pin_count",
+   "searched": "3 queries",
+   "note": "Confirm whether count includes chaser/completer"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-disney-dragons",
+   "field": "wave",
+   "searched": "3 queries",
+   "note": "Checklist does not label sets by wave A or B"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-disney-dragons",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Individual designs not named in snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-disney-dragons",
+   "field": "expected_pin_count",
+   "searched": "3 queries",
+   "note": "Confirm whether count includes chaser/completer"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-outer-space-characters",
+   "field": "wave",
+   "searched": "3 queries",
+   "note": "Checklist does not label sets by wave A or B"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-outer-space-characters",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Individual designs not named in snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-outer-space-characters",
+   "field": "expected_pin_count",
+   "searched": "3 queries",
+   "note": "Confirm whether count includes chaser/completer"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-genie",
+   "field": "wave",
+   "searched": "3 queries",
+   "note": "Checklist does not label sets by wave A or B"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-genie",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Individual designs not named in snippets"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-genie",
+   "field": "expected_pin_count",
+   "searched": "3 queries",
+   "note": "Confirm whether count includes chaser/completer"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-character-apples",
+   "field": "release_date",
+   "searched": "3 queries",
+   "note": "Forum guide: 2015 HM debut delayed to 15 May 2015 at WDW by port strike; Wave B Nov 2015; per-set wave unknown"
+  },
+  {
+   "key": "wdw/2015/oe-set/hidden-mickey-macaroons",
+   "field": "price",
+   "searched": "2 queries",
+   "note": "DPB: Wave B later sold in 2-pin mystery pouches at $12.99; which sets were Wave B unconfirmed"
+  },
+  {
+   "key": "wdw/2015/oe/finding-nemo-school",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs)"
+  },
+  {
+   "key": "wdw/2015/oe/jessie",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "Blog reply gives only a $7.95-$9.95 range for singles"
+  },
+  {
+   "key": "wdw/2015/oe/dory-just-keep-swimming",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "Search summary merged Feb week 3/4 posts; exact week and source page to confirm"
+  },
+  {
+   "key": "wdw/2015/oe/bruce-nemo-dory",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "Search summary merged Feb week 3/4 posts; exact week and source page to confirm"
+  },
+  {
+   "key": "wdw/2015/oe/merida",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "Search summary merged Feb week 3/4 posts; exact week and source page to confirm"
+  },
+  {
+   "key": "wdw/2015/oe/cinderella-live-action-portrait",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "Search summary merged Feb week 3/4 posts; exact week and source page to confirm"
+  },
+  {
+   "key": "wdw/2015/oe/test-track",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "Search summary merged Feb week 3/4 posts; exact week and source page to confirm"
+  },
+  {
+   "key": "wdw/2015/oe/bruce-nemo-dory",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "Described as one new pin featuring three characters; confirm single pin"
+  },
+  {
+   "key": "wdw/2015/oe/pooh-piglet-umbrella",
+   "field": "edition_type",
+   "searched": "2 queries",
+   "note": "Open edition not explicitly stated for this pin in snippet"
+  },
+  {
+   "key": "wdw/2015/oe/pluto-chip-dale",
+   "field": "edition_type",
+   "searched": "2 queries",
+   "note": "Open edition not explicitly stated for this pin in snippet"
+  },
+  {
+   "key": "wdw/2015/oe/randall-green",
+   "field": "edition_type",
+   "searched": "2 queries",
+   "note": "Open edition not explicitly stated for this pin in snippet"
+  },
+  {
+   "key": "wdw/2015/oe/randall-green",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "hold: DPB post URL for Randall inferred from search context; confirm page and location"
+  },
+  {
+   "key": "wdw/2015/lead/stitch-april-2015",
+   "field": "members",
+   "searched": "1 query",
+   "note": "DPB: four new Stitch pins at WDW April 2015, $9.95-$13.95; designs not described"
+  },
+  {
+   "key": "wdw/2015/oe/pirates-parrot",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "DPB says spotted 2nd week of April 2015 vs DisKingdom 30 Mar 2015"
+  },
+  {
+   "key": "wdw/2015/oe/pirates-skeleton",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "DPB says spotted 2nd week of April 2015 vs DisKingdom 30 Mar 2015"
+  },
+  {
+   "key": "wdw/2015/oe/olaf-sven-holiday-2015",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "No price in snippet"
+  },
+  {
+   "key": "wdw/2015/oe-set/cutie-starter-set-2015",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Eight pins not individually named"
+  },
+  {
+   "key": "wdw/2015/oe-set/cutie-starter-set-2015",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "Purchase-with-purchase; open edition not stated"
+  },
+  {
+   "key": "wdw/2015/lead/food-wine-2015",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: 2015 Epcot Food & Wine pins (Chef Figment AP LE 4000, booster LE 2000, Remy Hide and Squeak LR) belong in festival/LE cells"
+  },
+  {
+   "key": "wdw/2015/lead/force-awakens-2015",
+   "field": "scope",
+   "searched": "2 queries",
+   "note": "lead: Dec 2015 Force Awakens countdown and surprise pins (Chewie, Ackbar LE 10000) are LE; for wdw-le cell"
+  },
+  {
+   "key": "wdw/2015/lead/force-awakens-oe",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "No open edition Force Awakens pin at Hollywood Studios found in 2015 snippets"
+  },
+  {
+   "key": "wdw/2015/lead/anna-elsa-sweepstakes",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: July 2015 Anna and Elsa LE 300 pins via sweepstakes; LE cell"
+  },
+  {
+   "key": "wdw/2015/lead/frozen-oe-2015",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "No 2015 Frozen OE pin beyond Olaf/Sven found"
+  },
+  {
+   "key": "wdw/2015/lead/inside-out-oe",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "No US parks Inside Out OE pin confirmed in June 2015 snippets; reseller Joy/Sadness set dated Sep 2015 unverified"
+  },
+  {
+   "key": "wdw/2015/lead/mickey-mouse-club-starter",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: reseller lists 2015 Mickey Mouse Club starter set (4 pins); venue/edition unverified"
+  },
+  {
+   "key": "wdw/2015/lead/ap-pins-2015",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: 2015 WDW passholder pins (MK postcard, Parade of Memories set) not researched"
+  },
+  {
+   "key": "wdw/2015/lead/mnsshp-2015",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: 2015 MNSSHP pins post exists (DPB); likely LE, not researched"
+  },
+  {
+   "key": "wdw/2015/lead/d23-alphabet-framed",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: D23 Expo 2015 framed alphabet set LE 10 ($700); convention item, other cell"
+  }
+ ],
+ "discovery_notes": "WDW 2015 OE backfill; 29 WebSearch calls, snippets only, mostly Disney Pins Blog. No prior wdw/2015 keys existed. Mystery designs only where a snippet names them, with holds. Several shared DLR/WDW. LE/event items left as leads."
+}

@@ -1,0 +1,2625 @@
+{
+ "packet_id": "backfill-b058-ds-2018-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b058",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/december-2017-disney-park-pack",
+   "title": "December 2017 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-01-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hellosubscription.com/subscription-box-reviews/disney-park-pack-pin-trading-edition-reviews/",
+   "title": "Disney Park Pack: Pin Trading Edition Reviews",
+   "publisher": "Hello Subscription",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hellosubscription.com/2018/06/disney-park-pack-pin-edition-3-0-may-2018-subscription-box-review/",
+   "title": "Disney Park Pack Pin Edition 3.0 May 2018 Subscription Box Review",
+   "publisher": "Hello Subscription",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+   "title": "August 2018 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hellosubscription.com/disney-park-pack-pin-edition-3-0-august-2018-subscription-box-review/",
+   "title": "Disney Park Pack Pin Edition 3.0 August 2018 Subscription Box Review",
+   "publisher": "Hello Subscription",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disney-store-disney-princess-wreck-it-ralph-pins-set-of-6-465059032363.html",
+   "title": "Disney Store Disney Princess Wreck-It Ralph Pins, Set of 6",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.es/pines-princesas-disney-ralph-rompe-internet-disney-store-6%C2%A0u.-465059032363.html",
+   "title": "Pines princesas Disney Ralph rompe Internet, Disney Store (6 u.)",
+   "publisher": "Disney Store ES",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/vanellope-youre-my-hero-heart-pin-set/",
+   "title": "Vanellope ''You're My Hero'' Heart Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.flickr.com/photos/68105287@N03/44715436714",
+   "title": "Vanellope ''You're My Hero'' Heart Pin Set - US ShopDisney Product Image #2",
+   "publisher": "Flickr (collector photo of shopDisney listing)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+   "title": "Mickey Mouse Memories Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneydiary.com/2018/01/disney-launches-a-year-of-mickey-mouse-monthly-magic-collectibles/",
+   "title": "Disney launches a year of Mickey Mouse Monthly Magic collectibles",
+   "publisher": "Disney Diary",
+   "published_date": "2018-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.flickr.com/photos/68105287@N03/38837390050",
+   "title": "Mickey Mouse Memories Collection #2 - February 2018 - Pin Set - Front View",
+   "publisher": "Flickr (collector photo)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2018/11/mickey-memories-collection-a-look-back-on-the-anniversary-collection/",
+   "title": "Mickey Memories Collection - A Look Back on the Anniversary Collection",
+   "publisher": "WDW News Today",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-3/",
+   "title": "Mickey Mouse Memories Pin Set 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-6/",
+   "title": "Mickey Mouse Memories Pin Set 6",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-9/",
+   "title": "Mickey Mouse Memories Pin Set 9",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-12/",
+   "title": "Mickey Mouse Memories Pin Set 12",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/mickey-mouse-memories-pin-set-5-of-12-465058628871.html",
+   "title": "Mickey Mouse Memories Pin Set, 5 of 12",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-7-of-12-465058565664.html",
+   "title": "Disney Store Mickey Mouse Memories Pin Set, 7 of 12",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-9-of-12-465058566579.html",
+   "title": "Disney Store Mickey Mouse Memories Pin Set, 9 of 12",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.es/juego-pins-mickey-mouse-memories-disney-store-10-de-12-465058822996.html",
+   "title": "Juego pins Mickey Mouse Memories, Disney Store (10 de 12)",
+   "publisher": "Disney Store ES",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-11-of-12-465058823078.html",
+   "title": "Disney Store Mickey Mouse Memories Pin Set, 11 of 12",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-12-of-12-465058823153.html",
+   "title": "Disney Store Mickey Mouse Memories Pin Set, 12 of 12",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+   "title": "Surprise Winnie the Pooh Pin Release",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+   "title": "Pin Trader Delight - December 18, 2018",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+   "title": "Mulan 20th Anniversary Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/2018/06/18/mulan-20th-anniversary-pin-set-out-now/",
+   "title": "Mulan 20th Anniversary Pin Set Out Now",
+   "publisher": "DisKingdom",
+   "published_date": "2018-06-18",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+   "title": "Marvel Studios 10th Anniversary Limited Edition Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/2018/10/10/marvel-studios-10th-anniversary-limited-edition-pin-set-out-now/",
+   "title": "Marvel Studios 10th Anniversary Limited Edition Pin Set Out Now",
+   "publisher": "DisKingdom",
+   "published_date": "2018-10-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disney-store-marvel-10th-anniversary-pins-set-of-7-465058846268.html",
+   "title": "Disney Store Marvel 10th Anniversary Pins, Set of 7",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/incredibles-2-limited-edition-pins-set-of-5-465058261559.html",
+   "title": "Incredibles 2 Limited Edition Pins, Set of 5",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsus/2018/park-pack-3-0-08-aug",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "three LE 500 pins exclusive to the box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "sub_series",
+     "value": "Tangled",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "August 2018 box is Tangled themed"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (monthly subscription box)",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "three separate pins, each named"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com (monthly subscription box)",
+     "source_url": "https://hellosubscription.com/disney-park-pack-pin-edition-3-0-august-2018-subscription-box-review/",
+     "method": "search_snippet",
+     "note": "Pin Edition 3.0 subscription box"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/ralph-breaks-the-internet-vanellope-and-princesses",
+   "claims": [
+    {
+     "field": "format",
+     "value": "multi-pin pack: 3 slogan pins + 3 Vanellope-with-princess pins",
+     "source_url": "https://www.disneystore.eu/disney-store-disney-princess-wreck-it-ralph-pins-set-of-6-465059032363.html",
+     "method": "search_snippet",
+     "note": "EU listing: six pieces, three slogan pins and three showing Vanellope with a princess"
+    },
+    {
+     "field": "edition_size",
+     "value": 4200,
+     "source_url": "https://www.disneystore.eu/disney-store-disney-princess-wreck-it-ralph-pins-set-of-6-465059032363.html",
+     "method": "search_snippet",
+     "note": "limited to 4200 worldwide"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "465059032363",
+     "source_url": "https://www.disneystore.eu/disney-store-disney-princess-wreck-it-ralph-pins-set-of-6-465059032363.html",
+     "method": "search_snippet",
+     "note": "item number in EU listing URL; EU title says Wreck-It Ralph"
+    },
+    {
+     "field": "price",
+     "value": 24.5,
+     "source_url": "https://www.disneystore.es/pines-princesas-disney-ralph-rompe-internet-disney-store-6%C2%A0u.-465059032363.html",
+     "method": "search_snippet",
+     "note": "EUR 24.50 shown on Spanish listing, sold out; may not be launch price"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.es/pines-princesas-disney-ralph-rompe-internet-disney-store-6%C2%A0u.-465059032363.html",
+     "method": "search_snippet",
+     "note": "Spanish Disney Store listing"
+    },
+    {
+     "field": "region",
+     "value": "Europe",
+     "source_url": "https://www.disneystore.eu/disney-store-disney-princess-wreck-it-ralph-pins-set-of-6-465059032363.html",
+     "method": "search_snippet",
+     "note": "also sold via Disney Store EU"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/ralph-breaks-the-internet-youre-my-hero-heart",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Vanellope ''You're My Hero'' Heart Pin Set",
+     "source_url": "https://disneypinsblog.com/vanellope-youre-my-hero-heart-pin-set/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/vanellope-youre-my-hero-heart-pin-set/",
+     "method": "search_snippet",
+     "note": "two-pin set"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack: two pins fit together into a heart",
+     "source_url": "https://disneypinsblog.com/vanellope-youre-my-hero-heart-pin-set/",
+     "method": "search_snippet",
+     "note": "two pins join to form a heart with the slogan"
+    },
+    {
+     "field": "price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/vanellope-youre-my-hero-heart-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 12.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/vanellope-youre-my-hero-heart-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-19",
+     "source_url": "https://disneypinsblog.com/vanellope-youre-my-hero-heart-pin-set/",
+     "method": "search_snippet",
+     "note": "available 19 Oct 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney",
+     "source_url": "https://disneypinsblog.com/vanellope-youre-my-hero-heart-pin-set/",
+     "method": "search_snippet",
+     "note": "shopDisney release, while supplies last"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition (while supplies last)",
+     "source_url": "https://disneypinsblog.com/vanellope-youre-my-hero-heart-pin-set/",
+     "method": "search_snippet",
+     "note": "no edition size; sold while supplies last"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "6505057584573P",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/44715436714",
+     "method": "search_snippet",
+     "note": "item number per collector photo caption of shopDisney listing; secondary"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/mickey-memories",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse Memories Collection",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "series of 12 monthly 3-pin limited release sets",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "one new pin set (with mug and plush) each month of 2018"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "each set is a three-pin limited release"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com and Disney Store",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "online and Disney Store retail locations"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-01-20",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "first release planned 20 Jan 2018"
+    },
+    {
+     "field": "price",
+     "value": 16.95,
+     "source_url": "https://wdwnt.com/2018/11/mickey-memories-collection-a-look-back-on-the-anniversary-collection/",
+     "method": "search_snippet",
+     "note": "pin set USD 16.95 each month"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2018/11/mickey-memories-collection-a-look-back-on-the-anniversary-collection/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "format",
+     "value": "monthly 3-pin sets grouped by era of Mickey design",
+     "source_url": "https://wdwnt.com/2018/11/mickey-memories-collection-a-look-back-on-the-anniversary-collection/",
+     "method": "search_snippet",
+     "note": "Jan b/w Steamboat era through an Oct millennium technology theme; quantities rose from July"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "enamelled cloisonne, Mickey pinbacks, DPT 2018 logo on card"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/mickey-memories-01-jan",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "each monthly set has three pins"
+    },
+    {
+     "field": "set_position",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "set 1 of 12 in monthly series"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (3 pins on card)",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "three different limited release pins per set"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-01-20",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "first release 20 Jan 2018"
+    },
+    {
+     "field": "sub_series",
+     "value": "Steamboat Willie era (black and white)",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "first release themed to black-and-white Steamboat era"
+    }
+   ],
+   "parent_set_key": "dsus/2018/mickey-memories"
+  },
+  {
+   "set_key": "dsus/2018/mickey-memories-02-feb",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "each monthly set has three pins"
+    },
+    {
+     "field": "set_position",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "set 2 of 12 in monthly series"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (3 pins on card)",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "three different limited release pins per set"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-17",
+     "source_url": "https://www.flickr.com/photos/68105287@N03/38837390050",
+     "method": "search_snippet",
+     "note": "collector caption: released online and in store 17 Feb 2018"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-18",
+     "source_url": "https://disneydiary.com/2018/01/disney-launches-a-year-of-mickey-mouse-monthly-magic-collectibles/",
+     "method": "search_snippet",
+     "note": "Disney Diary gives 18 Feb for the February release"
+    }
+   ],
+   "parent_set_key": "dsus/2018/mickey-memories"
+  },
+  {
+   "set_key": "dsus/2018/mickey-memories-03-mar",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "each monthly set has three pins"
+    },
+    {
+     "field": "set_position",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "set 3 of 12 in monthly series"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (3 pins on card)",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "three different limited release pins per set"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-17",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-3/",
+     "method": "search_snippet",
+     "note": "available 17 Mar 2018"
+    },
+    {
+     "field": "sub_series",
+     "value": "1930s style",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-3/",
+     "method": "search_snippet",
+     "note": "three 1930s style pins"
+    },
+    {
+     "field": "price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-3/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-3/",
+     "method": "search_snippet",
+     "note": "shopDisney"
+    }
+   ],
+   "parent_set_key": "dsus/2018/mickey-memories"
+  },
+  {
+   "set_key": "dsus/2018/mickey-memories-04-apr",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "each monthly set has three pins"
+    },
+    {
+     "field": "set_position",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "set 4 of 12 in monthly series"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (3 pins on card)",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "three different limited release pins per set"
+    }
+   ],
+   "parent_set_key": "dsus/2018/mickey-memories"
+  },
+  {
+   "set_key": "dsus/2018/mickey-memories-05-may",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "each monthly set has three pins"
+    },
+    {
+     "field": "set_position",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "set 5 of 12 in monthly series"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (3 pins on card)",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "three different limited release pins per set"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "465058628871",
+     "source_url": "https://www.disneystore.eu/mickey-mouse-memories-pin-set-5-of-12-465058628871.html",
+     "method": "search_snippet",
+     "note": "item number in EU listing URL (title only)"
+    },
+    {
+     "field": "region",
+     "value": "Europe",
+     "source_url": "https://www.disneystore.eu/mickey-mouse-memories-pin-set-5-of-12-465058628871.html",
+     "method": "search_snippet",
+     "note": "sold at Disney Store EU"
+    }
+   ],
+   "parent_set_key": "dsus/2018/mickey-memories"
+  },
+  {
+   "set_key": "dsus/2018/mickey-memories-06-jun",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "each monthly set has three pins"
+    },
+    {
+     "field": "set_position",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "set 6 of 12 in monthly series"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (3 pins on card)",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "three different limited release pins per set"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-16",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-6/",
+     "method": "search_snippet",
+     "note": "available 16 Jun 2018"
+    },
+    {
+     "field": "sub_series",
+     "value": "1960s tie-dye",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-6/",
+     "method": "search_snippet",
+     "note": "tie-dye theme for the 1960s"
+    },
+    {
+     "field": "price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-6/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-6/",
+     "method": "search_snippet",
+     "note": "shopDisney"
+    }
+   ],
+   "parent_set_key": "dsus/2018/mickey-memories"
+  },
+  {
+   "set_key": "dsus/2018/mickey-memories-07-jul",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "each monthly set has three pins"
+    },
+    {
+     "field": "set_position",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "set 7 of 12 in monthly series"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (3 pins on card)",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "three different limited release pins per set"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "465058565664",
+     "source_url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-7-of-12-465058565664.html",
+     "method": "search_snippet",
+     "note": "item number in EU listing URL (title only)"
+    },
+    {
+     "field": "region",
+     "value": "Europe",
+     "source_url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-7-of-12-465058565664.html",
+     "method": "search_snippet",
+     "note": "sold at Disney Store EU"
+    }
+   ],
+   "parent_set_key": "dsus/2018/mickey-memories"
+  },
+  {
+   "set_key": "dsus/2018/mickey-memories-09-sep",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "each monthly set has three pins"
+    },
+    {
+     "field": "set_position",
+     "value": 9,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "set 9 of 12 in monthly series"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (3 pins on card)",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "three different limited release pins per set"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-9/",
+     "method": "search_snippet",
+     "note": "available 15 Sep 2018"
+    },
+    {
+     "field": "sub_series",
+     "value": "1990s",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-9/",
+     "method": "search_snippet",
+     "note": "three pins themed to the 1990s"
+    },
+    {
+     "field": "price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-9/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-9/",
+     "method": "search_snippet",
+     "note": "shopDisney"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "465058566579",
+     "source_url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-9-of-12-465058566579.html",
+     "method": "search_snippet",
+     "note": "item number in EU listing URL (title only)"
+    }
+   ],
+   "parent_set_key": "dsus/2018/mickey-memories"
+  },
+  {
+   "set_key": "dsus/2018/mickey-memories-10-oct",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "each monthly set has three pins"
+    },
+    {
+     "field": "set_position",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "set 10 of 12 in monthly series"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (3 pins on card)",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "three different limited release pins per set"
+    },
+    {
+     "field": "sub_series",
+     "value": "millennium technology",
+     "source_url": "https://wdwnt.com/2018/11/mickey-memories-collection-a-look-back-on-the-anniversary-collection/",
+     "method": "search_snippet",
+     "note": "recap says the series ran to a millennium tech theme in October"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "465058822996",
+     "source_url": "https://www.disneystore.es/juego-pins-mickey-mouse-memories-disney-store-10-de-12-465058822996.html",
+     "method": "search_snippet",
+     "note": "item number in Spanish listing URL (title only)"
+    }
+   ],
+   "parent_set_key": "dsus/2018/mickey-memories"
+  },
+  {
+   "set_key": "dsus/2018/mickey-memories-11-nov",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "each monthly set has three pins"
+    },
+    {
+     "field": "set_position",
+     "value": 11,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "set 11 of 12 in monthly series"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (3 pins on card)",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "three different limited release pins per set"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "465058823078",
+     "source_url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-11-of-12-465058823078.html",
+     "method": "search_snippet",
+     "note": "item number in EU listing URL (title only)"
+    },
+    {
+     "field": "region",
+     "value": "Europe",
+     "source_url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-11-of-12-465058823078.html",
+     "method": "search_snippet",
+     "note": "sold at Disney Store EU"
+    }
+   ],
+   "parent_set_key": "dsus/2018/mickey-memories"
+  },
+  {
+   "set_key": "dsus/2018/mickey-memories-12-dec",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "each monthly set has three pins"
+    },
+    {
+     "field": "set_position",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "set 12 of 12 in monthly series"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (3 pins on card)",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-collection/",
+     "method": "search_snippet",
+     "note": "three different limited release pins per set"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-08",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-12/",
+     "method": "search_snippet",
+     "note": "12th and final set, available 8 Dec 2018 in store and online"
+    },
+    {
+     "field": "sub_series",
+     "value": "futuristic",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-12/",
+     "method": "search_snippet",
+     "note": "three futuristic style pins, silver with glitter"
+    },
+    {
+     "field": "price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-12/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-memories-pin-set-12/",
+     "method": "search_snippet",
+     "note": "shopDisney"
+    },
+    {
+     "field": "price",
+     "value": 18.0,
+     "source_url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-12-of-12-465058823153.html",
+     "method": "search_snippet",
+     "note": "EUR 18, sold out"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-12-of-12-465058823153.html",
+     "method": "search_snippet",
+     "note": "Disney Store EU"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "465058823153",
+     "source_url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-12-of-12-465058823153.html",
+     "method": "search_snippet",
+     "note": "item number in EU listing"
+    },
+    {
+     "field": "materials",
+     "value": "zinc alloy",
+     "source_url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-12-of-12-465058823153.html",
+     "method": "search_snippet",
+     "note": "zinc alloy per listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "silver",
+      "glitter"
+     ],
+     "source_url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-12-of-12-465058823153.html",
+     "method": "search_snippet",
+     "note": "silver glitter designs"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-12-of-12-465058823153.html",
+     "method": "search_snippet",
+     "note": "limited release; 1 per guest, 2 per household on day"
+    }
+   ],
+   "parent_set_key": "dsus/2018/mickey-memories"
+  },
+  {
+   "set_key": "dsus/2018/studio-store-christopher-robin-surprise-pooh",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Surprise Winnie the Pooh Pin (Christopher Robin release, Disney Studio Store Hollywood)",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "blog title and context"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "LE 150"
+    },
+    {
+     "field": "price",
+     "value": 19.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "USD 19.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "surprise release on 3 Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "during the Christopher Robin pin release at DSSH"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/pin-trader-delight-2018-12-18",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trader Delight - December 18, 2018",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "three new sundae pins listed"
+    },
+    {
+     "field": "format",
+     "value": "separate pins, one with each sundae purchase",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "each sundae comes with one LE pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "each pin LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-18",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "available from 18 Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Ghirardelli)",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "Pin Trader Delight at DSSH"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/mulan-20th-anniversary-le-1850",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mulan 20th Anniversary Pin Set",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "two pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1850,
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 1850"
+    },
+    {
+     "field": "price",
+     "value": 39.95,
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 39.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-18",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "available 18 Jun 2018"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-18",
+     "source_url": "https://diskingdom.com/2018/06/18/mulan-20th-anniversary-pin-set-out-now/",
+     "method": "search_snippet",
+     "note": "post says set out now, 18 Jun 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "shopDisney release"
+    },
+    {
+     "field": "format",
+     "value": "2-pin set in flip-top display box with magnetic closure",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "two pins each showing half of Mulan's spirit, together one image"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/marvel-studios-10th-anniversary-le-1350",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Marvel Studios 10th Anniversary Limited Edition Pin Set",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "seven pin set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1350,
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 1350"
+    },
+    {
+     "field": "price",
+     "value": 69.95,
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 69.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-10",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "available 10 Oct 2018"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-10",
+     "source_url": "https://diskingdom.com/2018/10/10/marvel-studios-10th-anniversary-limited-edition-pin-set-out-now/",
+     "method": "search_snippet",
+     "note": "out now on shopDisney, 10 Oct 2018"
+    },
+    {
+     "field": "price",
+     "value": 69.95,
+     "source_url": "https://diskingdom.com/2018/10/10/marvel-studios-10th-anniversary-limited-edition-pin-set-out-now/",
+     "method": "search_snippet",
+     "note": "USD 69.95 on shopDisney"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "shopDisney"
+    },
+    {
+     "field": "format",
+     "value": "7-pin set in window display box",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "seven separate enamel pins, each named"
+    },
+    {
+     "field": "price",
+     "value": 50.0,
+     "source_url": "https://www.disneystore.eu/disney-store-marvel-10th-anniversary-pins-set-of-7-465058846268.html",
+     "method": "search_snippet",
+     "note": "EUR 50, sold out"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disney-store-marvel-10th-anniversary-pins-set-of-7-465058846268.html",
+     "method": "search_snippet",
+     "note": "Disney Store EU"
+    },
+    {
+     "field": "edition_size",
+     "value": 1350,
+     "source_url": "https://www.disneystore.eu/disney-store-marvel-10th-anniversary-pins-set-of-7-465058846268.html",
+     "method": "search_snippet",
+     "note": "1350 worldwide"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "465058846268",
+     "source_url": "https://www.disneystore.eu/disney-store-marvel-10th-anniversary-pins-set-of-7-465058846268.html",
+     "method": "search_snippet",
+     "note": "item number in EU listing"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2018/incredibles-2-le-set-of-5",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://www.disneystore.eu/incredibles-2-limited-edition-pins-set-of-5-465058261559.html",
+     "method": "search_snippet",
+     "note": "750 worldwide"
+    },
+    {
+     "field": "region",
+     "value": "Europe",
+     "source_url": "https://www.disneystore.eu/incredibles-2-limited-edition-pins-set-of-5-465058261559.html",
+     "method": "search_snippet",
+     "note": "European allocation of 100 of the 750 worldwide"
+    },
+    {
+     "field": "format",
+     "value": "5-pin set in magnetic-closure box",
+     "source_url": "https://www.disneystore.eu/incredibles-2-limited-edition-pins-set-of-5-465058261559.html",
+     "method": "search_snippet",
+     "note": "five pins, Mickey pinbacks, magnetic box"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-08-aug/flynn-rider",
+   "set_key": "dsus/2018/park-pack-3-0-08-aug",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Flynn Rider Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Flynn Rider"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "August 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Tangled",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "one of three separate pins in the box"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-08-aug/maximus",
+   "set_key": "dsus/2018/park-pack-3-0-08-aug",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Maximus Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Maximus"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "August 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Tangled",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "one of three separate pins in the box"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/park-pack-3-0-08-aug/rapunzel-stained-glass",
+   "set_key": "dsus/2018/park-pack-3-0-08-aug",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rapunzel Stained Glass Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "named in box contents"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "August 2018 box"
+    },
+    {
+     "field": "franchise",
+     "value": "Tangled",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "box theme"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "one of three separate pins in the box"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "variant 2 of 3"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/august-2018-disney-park-pack",
+     "method": "search_snippet",
+     "note": "listed as variant 2 of 3"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/studio-store-christopher-robin-surprise-pooh/winnie-the-pooh",
+   "set_key": "dsus/2018/studio-store-christopher-robin-surprise-pooh",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "title names Winnie the Pooh"
+    },
+    {
+     "field": "main_character",
+     "value": "Winnie the Pooh",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "Pooh pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "LE 150"
+    },
+    {
+     "field": "original_price",
+     "value": 19.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "USD 19.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "3 Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "DSSH surprise release"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "single surprise pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/pin-trader-delight-2018-12-18/miguel",
+   "set_key": "dsus/2018/pin-trader-delight-2018-12-18",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Miguel"
+     ],
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "Miguel from Coco"
+    },
+    {
+     "field": "franchise",
+     "value": "Coco",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "film named in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-18",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "18 Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "PTD sundae pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "one pin per sundae"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/pin-trader-delight-2018-12-18/evinrude",
+   "set_key": "dsus/2018/pin-trader-delight-2018-12-18",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Evinrude"
+     ],
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "Evinrude from The Rescuers"
+    },
+    {
+     "field": "franchise",
+     "value": "The Rescuers",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "film named in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-18",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "18 Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "PTD sundae pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "one pin per sundae"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/pin-trader-delight-2018-12-18/aliens",
+   "set_key": "dsus/2018/pin-trader-delight-2018-12-18",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aliens"
+     ],
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "Aliens from Chicken Little"
+    },
+    {
+     "field": "franchise",
+     "value": "Chicken Little",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "film named in post"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-18",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "18 Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "PTD sundae pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/pin-trader-delight-december-18-2018/",
+     "method": "search_snippet",
+     "note": "one pin per sundae"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/mulan-20th-anniversary-le-1850/mulan-traditional",
+   "set_key": "dsus/2018/mulan-20th-anniversary-le-1850",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mulan"
+     ],
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "Mulan"
+    },
+    {
+     "field": "main_character",
+     "value": "Mulan",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "Mulan"
+    },
+    {
+     "field": "visual_description",
+     "value": "Half of a combined image, showing Mulan's traditional side",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "each pin shows one half of Mulan's spirit; this is the traditional half"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1850"
+    },
+    {
+     "field": "edition_size",
+     "value": 1850,
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1850"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-18",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "18 Jun 2018"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "two separate pins that form one image"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/mulan-20th-anniversary-le-1850/mulan-warrior",
+   "set_key": "dsus/2018/mulan-20th-anniversary-le-1850",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mulan"
+     ],
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "Mulan"
+    },
+    {
+     "field": "main_character",
+     "value": "Mulan",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "Mulan"
+    },
+    {
+     "field": "visual_description",
+     "value": "Half of a combined image, showing Mulan's warrior side",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "each pin shows one half of Mulan's spirit; this is the warrior half"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1850"
+    },
+    {
+     "field": "edition_size",
+     "value": 1850,
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1850"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-18",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "18 Jun 2018"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/mulan-20th-anniversary-pin-set/",
+     "method": "search_snippet",
+     "note": "two separate pins that form one image"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/infinity-gauntlet",
+   "set_key": "dsus/2018/marvel-studios-10th-anniversary-le-1350",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Infinity Gauntlet",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of seven pins"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel Cinematic Universe",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "Marvel Studios 10th set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1350"
+    },
+    {
+     "field": "edition_size",
+     "value": 1350,
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1350"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-10",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "10 Oct 2018"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "each an enamel cloisonne pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "one of seven separate pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/tesseract-space-stone",
+   "set_key": "dsus/2018/marvel-studios-10th-anniversary-le-1350",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Tesseract (Space Stone)",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of seven pins"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel Cinematic Universe",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "Marvel Studios 10th set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1350"
+    },
+    {
+     "field": "edition_size",
+     "value": 1350,
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1350"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-10",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "10 Oct 2018"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "each an enamel cloisonne pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "one of seven separate pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/orb-power-stone",
+   "set_key": "dsus/2018/marvel-studios-10th-anniversary-le-1350",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Orb (Power Stone)",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of seven pins"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel Cinematic Universe",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "Marvel Studios 10th set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1350"
+    },
+    {
+     "field": "edition_size",
+     "value": 1350,
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1350"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-10",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "10 Oct 2018"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "each an enamel cloisonne pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "one of seven separate pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/aether-reality-stone",
+   "set_key": "dsus/2018/marvel-studios-10th-anniversary-le-1350",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Aether (Reality Stone)",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of seven pins"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel Cinematic Universe",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "Marvel Studios 10th set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1350"
+    },
+    {
+     "field": "edition_size",
+     "value": 1350,
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1350"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-10",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "10 Oct 2018"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "each an enamel cloisonne pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "one of seven separate pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/eye-of-agamotto-time-stone",
+   "set_key": "dsus/2018/marvel-studios-10th-anniversary-le-1350",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Eye of Agamotto (Time Stone)",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of seven pins"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel Cinematic Universe",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "Marvel Studios 10th set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1350"
+    },
+    {
+     "field": "edition_size",
+     "value": 1350,
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1350"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-10",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "10 Oct 2018"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "each an enamel cloisonne pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "one of seven separate pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/lokis-scepter-mind-stone",
+   "set_key": "dsus/2018/marvel-studios-10th-anniversary-le-1350",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loki's Scepter (Mind Stone)",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of seven pins"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel Cinematic Universe",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "Marvel Studios 10th set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1350"
+    },
+    {
+     "field": "edition_size",
+     "value": 1350,
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1350"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-10",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "10 Oct 2018"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "each an enamel cloisonne pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "one of seven separate pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/soul-stone",
+   "set_key": "dsus/2018/marvel-studios-10th-anniversary-le-1350",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Soul Stone",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "named as one of seven pins"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel Cinematic Universe",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "Marvel Studios 10th set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1350"
+    },
+    {
+     "field": "edition_size",
+     "value": 1350,
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 1350"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-10",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "10 Oct 2018"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "each an enamel cloisonne pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/marvel-studios-10th-anniversary-limited-edition-pin-set/",
+     "method": "search_snippet",
+     "note": "one of seven separate pins"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsus/2018/park-pack-3-0-08-aug/flynn-rider",
+   "field": "visual_features",
+   "searched": "DPB Aug 2018 snippet; 1 query",
+   "note": "blog notes variants differ in Flynn's nose; variant detail not split"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-08-aug/rapunzel-stained-glass",
+   "field": "pin_name",
+   "searched": "DPB + Hello Subscription Aug 2018; 1 query",
+   "note": "hold: Hello Subscription describes a Rapunzel & Pascal tower pin; may be same pin as DPB 'Rapunzel Stained Glass' or not; confirm"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-08-aug",
+   "field": "pins",
+   "searched": "DPB + Hello Subscription; 1 query",
+   "note": "released: DPB August 2018 Park Pack page names the three pins (Flynn Rider, Maximus, Rapunzel Stained Glass); recorded per pin"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-01-jan",
+   "field": "release_date",
+   "searched": "DPB Dec 2017 Park Pack page, Hello Subscription index; 3 queries",
+   "note": "hold: DPB labels the Fantasia box December 2017 (post dated 5 Jan 2018; Dancing Hippo, Movie Frame, Sorcerer Mickey LE 500); HS calls it Jan 2018. Same box? confirm month"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-01-jan",
+   "field": "pins",
+   "searched": "DPB Dec 2017 Park Pack page; 1 query",
+   "note": "kept: pin names exist only under DPB's December 2017 label; not added to 2018 until month conflict resolved (lead for ds 2017 cell)"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-02-feb",
+   "field": "all",
+   "searched": "DPB, Hello Subscription; 3 queries",
+   "note": "hold: May 2018 HS review says the box returned from an extended hiatus; Feb-Apr 2018 boxes may never have shipped; confirm before creating"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-03-mar",
+   "field": "all",
+   "searched": "DPB, Hello Subscription; 3 queries",
+   "note": "hold: May 2018 HS review says the box returned from an extended hiatus; Feb-Apr 2018 boxes may never have shipped; confirm before creating"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-04-apr",
+   "field": "all",
+   "searched": "DPB, Hello Subscription; 3 queries",
+   "note": "hold: May 2018 HS review says the box returned from an extended hiatus; Feb-Apr 2018 boxes may never have shipped; confirm before creating"
+  },
+  {
+   "key": "dsus/2018/ralph-breaks-the-internet-vanellope-and-princesses",
+   "field": "pins",
+   "searched": "DPB, DS EU/ES listings; 2 queries",
+   "note": "kept: EU listing gives 3 slogan + 3 Vanellope/princess pins (Snow White, Ariel, Tiana art) but slogans and pairings not tied per pin; no member records"
+  },
+  {
+   "key": "dsus/2018/ralph-breaks-the-internet-youre-my-hero-heart",
+   "field": "pins",
+   "searched": "DPB + Flickr; 1 query",
+   "note": "the two halves are not named or described individually; no member records"
+  },
+  {
+   "key": "dsus/2018/ralph-breaks-the-internet-youre-my-hero-heart",
+   "field": "edition_size",
+   "searched": "DPB; 1 query",
+   "note": "no edition size published; while supplies last"
+  },
+  {
+   "key": "dsus/2018/mickey-memories",
+   "field": "release_date",
+   "searched": "DPB comments, WDWNT; 2 queries",
+   "note": "sources differ on cadence: WDWNT says 18th of each month, DPB comment says 3rd Saturday (US), another says UK on the 18th"
+  },
+  {
+   "key": "dsus/2018/mickey-memories",
+   "field": "price",
+   "searched": "DPB comments; 1 query",
+   "note": "DPB admin first heard USD 19.95; later comment and WDWNT give 16.95"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-01-jan",
+   "field": "pins",
+   "searched": "DPB, DS EU listings; 7 queries",
+   "note": "individual designs of the three pins not named or described in snippets; no member records"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-02-feb",
+   "field": "pins",
+   "searched": "DPB, DS EU listings; 7 queries",
+   "note": "individual designs of the three pins not named or described in snippets; no member records"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-03-mar",
+   "field": "pins",
+   "searched": "DPB, DS EU listings; 7 queries",
+   "note": "individual designs of the three pins not named or described in snippets; no member records"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-04-apr",
+   "field": "pins",
+   "searched": "DPB, DS EU listings; 7 queries",
+   "note": "individual designs of the three pins not named or described in snippets; no member records"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-05-may",
+   "field": "pins",
+   "searched": "DPB, DS EU listings; 7 queries",
+   "note": "individual designs of the three pins not named or described in snippets; no member records"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-06-jun",
+   "field": "pins",
+   "searched": "DPB, DS EU listings; 7 queries",
+   "note": "individual designs of the three pins not named or described in snippets; no member records"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-07-jul",
+   "field": "pins",
+   "searched": "DPB, DS EU listings; 7 queries",
+   "note": "individual designs of the three pins not named or described in snippets; no member records"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-08-aug",
+   "field": "pins",
+   "searched": "DPB, DS EU listings; 7 queries",
+   "note": "individual designs of the three pins not named or described in snippets; no member records"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-09-sep",
+   "field": "pins",
+   "searched": "DPB, DS EU listings; 7 queries",
+   "note": "individual designs of the three pins not named or described in snippets; no member records"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-10-oct",
+   "field": "pins",
+   "searched": "DPB, DS EU listings; 7 queries",
+   "note": "individual designs of the three pins not named or described in snippets; no member records"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-11-nov",
+   "field": "pins",
+   "searched": "DPB, DS EU listings; 7 queries",
+   "note": "individual designs of the three pins not named or described in snippets; no member records"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-12-dec",
+   "field": "pins",
+   "searched": "DPB, DS EU listings; 7 queries",
+   "note": "individual designs of the three pins not named or described in snippets; no member records"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-04-apr",
+   "field": "all",
+   "searched": "DPB, resellers; 2 queries",
+   "note": "only reseller listings (Aviator Mickey / 1940s 'Oh Boy', 18 Apr 2018) surfaced; not recorded"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-08-aug",
+   "field": "all",
+   "searched": "DPB, DS EU; 2 queries",
+   "note": "no non-reseller source surfaced for set 8"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-11-nov",
+   "field": "visual_features",
+   "searched": "ToyWiz snippet; 1 query",
+   "note": "golden finish stated only by a reseller; not recorded"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-12-dec",
+   "field": "release_date",
+   "searched": "UK fan retrospective; 1 query",
+   "note": "a UK shop/blog retrospective says the final month came out 10 Dec (diamond-style 90th Mickey); conflicts with DPB 8 Dec; not recorded"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-05-may",
+   "field": "release_date",
+   "searched": "DPB, DS EU; 3 queries",
+   "note": "undated; only the EU/ES listing title and item number surfaced"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-07-jul",
+   "field": "release_date",
+   "searched": "DPB, DS EU; 3 queries",
+   "note": "undated; only the EU/ES listing title and item number surfaced"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-10-oct",
+   "field": "release_date",
+   "searched": "DPB, DS EU; 3 queries",
+   "note": "undated; only the EU/ES listing title and item number surfaced"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-11-nov",
+   "field": "release_date",
+   "searched": "DPB, DS EU; 3 queries",
+   "note": "undated; only the EU/ES listing title and item number surfaced"
+  },
+  {
+   "key": "dsus/2018/studio-store-christopher-robin-surprise-pooh",
+   "field": "related",
+   "searched": "DPB; 1 query",
+   "note": "the main Christopher Robin pin release at DSSH on 3 Aug 2018 is mentioned but its pins are not named in snippet"
+  },
+  {
+   "key": "dsus/2018/studio-store-christopher-robin-surprise-pooh/winnie-the-pooh",
+   "field": "visual_description",
+   "searched": "DPB; 1 query",
+   "note": "design not described in snippet"
+  },
+  {
+   "key": "dsus/2018/pin-trader-delight-2018-12-18",
+   "field": "price",
+   "searched": "DPB; 2 queries",
+   "note": "sundae price for this flip not in snippet (USD 17.50 seen only on an undated later post)"
+  },
+  {
+   "key": "dsus/2018/pin-trader-delight",
+   "field": "coverage",
+   "searched": "DPB, Medium, Disney Mouseketeer; 2 queries",
+   "note": "no other 2018 PTD flips surfaced; October Goofy/Jiminy/Bolt flip is undated"
+  },
+  {
+   "key": "dsus/2018/mulan-20th-anniversary-le-1850",
+   "field": "edition_size",
+   "searched": "Flickr collector post; 1 query",
+   "note": "a collector caption also gives 1390 alongside 1850; not recorded, possible typo"
+  },
+  {
+   "key": "dsus/2018/mulan-20th-anniversary-le-1850/mulan-traditional",
+   "field": "pin_name",
+   "searched": "DPB; 1 query",
+   "note": "official pin names not given; key slugs describe the halves only"
+  },
+  {
+   "key": "dsuk/2018/incredibles-2-le-set-of-5",
+   "field": "pins",
+   "searched": "DS EU listing; 1 query",
+   "note": "kept: EU listing lists Mr/Mrs Incredible, Violet, Dash, Jack-Jack and 750 worldwide, matching US LE 750 set; single list, no per-pin detail, not split"
+  },
+  {
+   "key": "dsuk/2018/incredibles-2-le-set-of-5",
+   "field": "edition_size",
+   "searched": "DS EU listing; 1 query",
+   "note": "EU allocation 100 of 750 worldwide; no separate field for regional allocation"
+  },
+  {
+   "key": "dsuk/2018/mary-poppins-returns-le-1500/mary-poppins-with-kite",
+   "field": "release_date",
+   "searched": "DS EU listing, DPB tag page, LetsGoPinTrading; 2 queries",
+   "note": "kept: DPB tag archive places the pin near a 'Nov 3 2018' date but not tied to one post; LGPT page lists USD 39.95, layout unclear"
+  },
+  {
+   "key": "lic/2018/stance-shopdisney-mickey-90-socks-and-pins",
+   "field": "all",
+   "searched": "DPB; 1 query",
+   "note": "lead: licensed Stance Mickey 90th socks + 2 pins box set sold at shopDisney, 22 Oct 2018, USD 59.95; for lic cell"
+  },
+  {
+   "key": "lic/2018/loungefly-nycc-mickey-90",
+   "field": "all",
+   "searched": "DPB; 1 query",
+   "note": "lead: licensed Loungefly Mickey 90 years pin sets at New York Comic Con 2018; for lic cell"
+  },
+  {
+   "key": "dsus/2018/mickey-90th",
+   "field": "coverage",
+   "searched": "DPB, DFB; 2 queries",
+   "note": "no Disney Store/shopDisney LE pin for Mickey's 90th surfaced; Company D cast pin (18 Nov) and Destination D LE 1000 are not DS releases"
+  },
+  {
+   "key": "dsuk/2018",
+   "field": "coverage",
+   "searched": "DPB, DS EU; 3 queries",
+   "note": "still few dated DS UK/EU 2018 pin releases; EU listings of US sets (Marvel 10th, RBI, Memories) are undated"
+  },
+  {
+   "key": "dsus/2018/pin-trading-day",
+   "field": "coverage",
+   "searched": "1 query",
+   "note": "no Disney Store pin trading day in 2018 surfaced"
+  },
+  {
+   "key": "dsuk/2018/disney-store-30th",
+   "field": "scope",
+   "searched": "editorial",
+   "note": "not searched: UK/EU stores opened 1990 so a 30th would fall in 2020; Disney Wisdom started 2019 (packet 206/410)"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-08-aug/rapunzel-stained-glass",
+   "field": "visual_features",
+   "searched": "Hello Subscription; 1 query",
+   "note": "HS notes all August pins have two posts for rubber Mickey backs; not per pin"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-08-aug/flynn-rider",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: member named only in the boxed set / pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-08-aug/maximus",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: member named only in the boxed set / pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-08-aug/rapunzel-stained-glass",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: member named only in the boxed set / pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/infinity-gauntlet",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: member named only in the boxed set / pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/tesseract-space-stone",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: member named only in the boxed set / pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/orb-power-stone",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: member named only in the boxed set / pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/aether-reality-stone",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: member named only in the boxed set / pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/eye-of-agamotto-time-stone",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: member named only in the boxed set / pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/lokis-scepter-mind-stone",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: member named only in the boxed set / pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/soul-stone",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: member named only in the boxed set / pack listing, no per-pin description; pending maintainer decision on full lists"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 of B014 (packet 214, Disney Store 2018); reuses 214 keys. 30 standard WebSearches, excluded domains blocked, snippets only. New: Mickey Mouse Memories 12-set series (sets only, designs unnamed), Aug Park Pack pins, Marvel 10th 7-pin LE, Mulan 20th 2-pin LE, RBI heart 2-pin set, DSSH surprise Pooh LE 150, PTD 18 Dec 2018 flip. Holds added: Jan Park Pack month conflict (Fantasia box labelled Dec 2017 by DPB), Feb-Apr Park Pack possible hiatus, Aug Rapunzel pin naming. Released: Aug Park Pack pins (named on DPB page). Kept: RBI princess split, Incredibles EU members, Mary Poppins date. Resellers (yourwdwstore, toywiz, millerbros, buydisneypins) not used as evidence."
+}

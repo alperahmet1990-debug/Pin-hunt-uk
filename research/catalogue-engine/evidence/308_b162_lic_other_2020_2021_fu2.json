@@ -1,0 +1,1574 @@
+{
+ "packet_id": "backfill-b162-lic-other-2020-2021-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b162",
+ "sources": [
+  {
+   "url": "https://figpin.com/blogs/news/new-the-mandalorian%E2%84%A2-season-2-inspired-figpins-have-arrived-in-the-galaxy",
+   "title": "New The Mandalorian Season 2 inspired FiGPiNs have arrived in the Galaxy!",
+   "publisher": "FiGPiN (official)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://thepopinsider.com/products/the-mandalorian-figpins-ahsoka-bo-katan-and-mando-with-grogu/",
+   "title": "THE MANDALORIAN FIGPINS: AHSOKA, BO-KATAN, AND MANDO WITH GROGU",
+   "publisher": "The Pop Insider",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-mandalorian-season-2-figpin-series/",
+   "title": "The Mandalorian Season 2 FiGPiN Series",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+   "title": "Our newest wave of Marvel Comics is epic!",
+   "publisher": "FiGPiN (official)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/marvel-comics-series-2-figpin-collection/",
+   "title": "Marvel Comics Series 2 FiGPiN Collection",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://vltd.co/products/fipn-724",
+   "title": "Ghost Rider #724 Marvel Classic Comics FiGPiN Classic",
+   "publisher": "VLTD (retailer)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/products/luke-cage-726",
+   "title": "Luke Cage (726)",
+   "publisher": "FiGPiN (official store)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://business.walmart.com/ip/FiGPiN-Marvel-Iron-Fist-727-Kraken-s-Collection-Exclusive/1386890977",
+   "title": "FiGPiN Marvel Iron Fist #727 Kraken's Collection Exclusive",
+   "publisher": "Walmart Business (retailer listing)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://vrarestore.com/products/marvel-comics-spider-woman-figpin-728",
+   "title": "Marvel Comics : Spider-Woman FiGPiN #728 EE Exclusive",
+   "publisher": "VRARE Store (retailer)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+   "title": "Comic Con Special Edition 2021 Roundup",
+   "publisher": "FiGPiN (official)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://sdccblog.com/2021/11/figpin-comic-con-special-edition-exclusives/",
+   "title": "FiGPiN Comic-Con Special Edition Exclusives",
+   "publisher": "San Diego Comic-Con Unofficial Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+   "title": "Moff Gideon, Boba Fett, The Mandalorian, and Grogu",
+   "publisher": "hobbyDB (collector database/marketplace)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-the-mandalorian-funko-pop-walmart-pin-set/",
+   "title": "Star Wars The Mandalorian Funko Pop! Pin Set at Walmart",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-the-mandalorian-funko-pin-set-at-walmart/",
+   "title": "Star Wars The Mandalorian Funko Pin Set at Walmart",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-the-nightmare-before-christmas-lock-shock-barrel-enamel-pin-set/12140774.html",
+   "title": "Loungefly The Nightmare Before Christmas Lock Shock & Barrel Enamel Pin Set",
+   "publisher": "Hot Topic (official retailer)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/lock-shock-barrel-pin-set-at-hot-topic/",
+   "title": "Lock, Shock & Barrel Pin Set at Hot Topic",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/lock-shock-and-barrel-hot-topic-disney-pin-set/",
+   "title": "Lock, Shock and Barrel Hot Topic Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.entertainmentearth.com/product/spiderman-no-way-home-lapel-pin-3pack/bwlpa11hlsnw",
+   "title": "Spider-Man No Way Home Lapel Pin 3-Pack",
+   "publisher": "Entertainment Earth (retailer)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://puffmonkey.com/new-arrivals/marvel-spider-man-no-way-home-suit-up-lapel-pins/",
+   "title": "Marvel Spider-Man No Way Home Suit Up Lapel Pins",
+   "publisher": "Puff Monkey (retailer)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.midtowncomics.com/product/2075684",
+   "title": "Marvel Spider-Man No Way Home Suit Up Lapel Pins",
+   "publisher": "Midtown Comics (retailer)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.toyshnip.com/products/figpin-714-marvel-the-falcon-and-the-winter-soldier-falcon-enamel-pin",
+   "title": "FiGPiN Enamel Pin - Marvel The Falcon And The Winter Soldier - Select Figure(s)",
+   "publisher": "Toyshnip (retailer)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://thepopinsider.com/products/the-falcon-and-the-winter-soldier-figpins/",
+   "title": "The Falcon and The Winter Soldier Figpins",
+   "publisher": "The Pop Insider",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://vintagevinyl.com/UPC/810021531083",
+   "title": "Figpin Marvel Studios Wandavision Wanda #691 [Limited Edition]",
+   "publisher": "Vintage Vinyl (retailer UPC record)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/marvel-wandavision-limited-edition-figpin-series/",
+   "title": "Marvel WandaVision Limited Edition FiGPiN Series",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/steamboat-willie-black-gold-hot-topic-disney-pin/",
+   "title": "Steamboat Willie Black & Gold Hot Topic Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/steamboat-willie-limited-edition-loungefly-disney-pin/",
+   "title": "Steamboat Willie Limited Edition Loungefly Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://numskull.com/products/the-mandalorian-1-1",
+   "title": "Pin Kings Official Star Wars The Mandalorian Enamel Pin Badge Set 1.1",
+   "publisher": "Numskull (maker)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://numskull.com/products/the-mandalorian-1-2",
+   "title": "Pin Kings Official Star Wars The Mandalorian Enamel Pin Badge Set 1.2",
+   "publisher": "Numskull (maker)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.geekstore.com/products/the-mandalorian-1-2",
+   "title": "Pin Kings Star Wars The Mandalorian Enamel Pin Badge Set 1.2",
+   "publisher": "Geek Store (retailer)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-the-mandalorian-10-pin-set-at-geek-store",
+   "title": "Star Wars The Mandalorian 10 Pin Set at Geek Store",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.heruniverse.com/product/marvel-wandavision-agatha-all-along-tv-enamel-pin/18778867.html",
+   "title": "Marvel WandaVision Agatha All Along TV Enamel Pin",
+   "publisher": "Her Universe (maker store)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-pins-by-her-universe-at-shopdisney/",
+   "title": "Rebel, Warrior, Leader and Hero Star Wars Pins by Her Universe at shopDisney",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://corporate.hallmark.com/news-article/popminded-by-hallmark-announces-2021-event-exclusives/",
+   "title": "PopMinded by Hallmark Announces 2021 Event Exclusives",
+   "publisher": "Hallmark Corporate (official)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/figpin-s-star-wars-the-mandalorian-offering-continues-to-grow",
+   "title": "FiGPiN's STAR WARS: THE MANDALORIAN offering continues to grow!",
+   "publisher": "FiGPiN (official)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-the-mandalorian-figpin-wave-3-pins/",
+   "title": "Star Wars The Mandalorian FiGPiN Wave 3 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2020/figpin-mandalorian-season-2",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://figpin.com/blogs/news/new-the-mandalorian%E2%84%A2-season-2-inspired-figpins-have-arrived-in-the-galaxy",
+     "method": "search_snippet",
+     "note": "FiGPiN announcement covers three pins: Ahsoka #735, Mando with Child #736, Bo-Katan #738; says more S2 characters coming in 2021"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://thepopinsider.com/products/the-mandalorian-figpins-ahsoka-bo-katan-and-mando-with-grogu/",
+     "method": "search_snippet",
+     "note": "Pop Insider title names the same three pins (Ahsoka, Bo-Katan, Mando with Grogu)"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/figpin-marvel-comics-series-2",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Marvel Comics Series 2 FiGPiN Collection",
+     "source_url": "https://disneypinsblog.com/marvel-comics-series-2-figpin-collection/",
+     "method": "search_snippet",
+     "note": "DPB title; FiGPiN post calls it its newest wave of Marvel Comics"
+    },
+    {
+     "field": "format",
+     "value": "individual pins (series: commons plus retailer/FiGPiN exclusives)",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "three commons and three separately numbered exclusives"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "six pins named in the FiGPiN post (3 commons, 3 exclusives); count derived from names, not stated as a number"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-14",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "all available Wed July 14 10am PT; year not in snippet, inferred 2021 (July 14 is a Wednesday in 2021; #724-729 numbering fits mid-2021)"
+    },
+    {
+     "field": "issuer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "FiGPiN release"
+    },
+    {
+     "field": "price",
+     "value": 15,
+     "source_url": "https://disneypinsblog.com/marvel-comics-series-2-figpin-collection/",
+     "method": "search_snippet",
+     "note": "commons retail $15"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/marvel-comics-series-2-figpin-collection/",
+     "method": "search_snippet",
+     "note": "US pricing"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/figpin-comic-con-special-edition-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Comic Con Special Edition 2021 Roundup",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN roundup title; event exclusives"
+    },
+    {
+     "field": "format",
+     "value": "individual exclusive pins (event)",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "separately numbered event exclusives, 2 per person per character"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11",
+     "source_url": "https://sdccblog.com/2021/11/figpin-comic-con-special-edition-exclusives/",
+     "method": "search_snippet",
+     "note": "SDCC Unofficial Blog post dated Nov 2021 for Comic-Con Special Edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Comic-Con Special Edition 2021, FiGPiN Booth #1841",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "first come first served at booth"
+    },
+    {
+     "field": "issuer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition (event exclusive)",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "Comic-Con Special Edition 2021 exclusives"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2021/funko-walmart-mandalorian-pin-set",
+   "claims": [
+    {
+     "field": "pack_product_code",
+     "value": "671803386198",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "UPC on hobbyDB entry; link to this set held"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2020/figpin-mandalorian-season-2/ahsoka-tano",
+   "set_key": "lic/2020/figpin-mandalorian-season-2",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "Open Edition (FiGPiN Commons)",
+     "source_url": "https://figpin.com/blogs/news/new-the-mandalorian%E2%84%A2-season-2-inspired-figpins-have-arrived-in-the-galaxy",
+     "method": "search_snippet",
+     "note": "FiGPiN post lists #735 as a Classic Common"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2020/figpin-mandalorian-season-2/the-mandalorian-with-the-child",
+   "set_key": "lic/2020/figpin-mandalorian-season-2",
+   "claims": [
+    {
+     "field": "product_code",
+     "value": "#736",
+     "source_url": "https://figpin.com/blogs/news/new-the-mandalorian%E2%84%A2-season-2-inspired-figpins-have-arrived-in-the-galaxy",
+     "method": "search_snippet",
+     "note": "FiGPiN Classic: The Mandalorian with The Child #736"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition (FiGPiN Commons)",
+     "source_url": "https://figpin.com/blogs/news/new-the-mandalorian%E2%84%A2-season-2-inspired-figpins-have-arrived-in-the-galaxy",
+     "method": "search_snippet",
+     "note": "listed as a Common at $15"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/figpin-marvel-comics-series-2/ghost-rider",
+   "set_key": "lic/2021/figpin-marvel-comics-series-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ghost Rider"
+     ],
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Ghost Rider named in the wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Ghost Rider",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Ghost Rider"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Marvel Comics wave"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "FiGPiN pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "individually numbered FiGPiN"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-14",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "wave launch Wed July 14 (year inferred 2021)"
+    },
+    {
+     "field": "product_code",
+     "value": "#724",
+     "source_url": "https://vltd.co/products/fipn-724",
+     "method": "search_snippet",
+     "note": "listing gives #724"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition (FiGPiN Commons)",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "listed as FiGPiN COMMONS"
+    },
+    {
+     "field": "original_price",
+     "value": 15,
+     "source_url": "https://disneypinsblog.com/marvel-comics-series-2-figpin-collection/",
+     "method": "search_snippet",
+     "note": "$15 retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/marvel-comics-series-2-figpin-collection/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/figpin-marvel-comics-series-2/namor",
+   "set_key": "lic/2021/figpin-marvel-comics-series-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Namor the Sub-Mariner"
+     ],
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Namor the Sub-Mariner named in the wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Namor the Sub-Mariner",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Namor the Sub-Mariner"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Marvel Comics wave"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "FiGPiN pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "individually numbered FiGPiN"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-14",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "wave launch Wed July 14 (year inferred 2021)"
+    },
+    {
+     "field": "product_code",
+     "value": "#725",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "listing gives #725"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition (FiGPiN Commons)",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "listed as FiGPiN COMMONS"
+    },
+    {
+     "field": "original_price",
+     "value": 15,
+     "source_url": "https://disneypinsblog.com/marvel-comics-series-2-figpin-collection/",
+     "method": "search_snippet",
+     "note": "$15 retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/marvel-comics-series-2-figpin-collection/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/figpin-marvel-comics-series-2/luke-cage",
+   "set_key": "lic/2021/figpin-marvel-comics-series-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Luke Cage"
+     ],
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Luke Cage named in the wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Luke Cage",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Luke Cage"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Marvel Comics wave"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "FiGPiN pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "individually numbered FiGPiN"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-14",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "wave launch Wed July 14 (year inferred 2021)"
+    },
+    {
+     "field": "product_code",
+     "value": "#726",
+     "source_url": "https://figpin.com/products/luke-cage-726",
+     "method": "search_snippet",
+     "note": "listing gives #726"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition (FiGPiN Commons)",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "listed as FiGPiN COMMONS"
+    },
+    {
+     "field": "original_price",
+     "value": 15,
+     "source_url": "https://disneypinsblog.com/marvel-comics-series-2-figpin-collection/",
+     "method": "search_snippet",
+     "note": "$15 retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/marvel-comics-series-2-figpin-collection/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/figpin-marvel-comics-series-2/iron-fist",
+   "set_key": "lic/2021/figpin-marvel-comics-series-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Iron Fist"
+     ],
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Iron Fist named in the wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Iron Fist",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Iron Fist"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Marvel Comics wave"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "FiGPiN pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "individually numbered FiGPiN"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-14",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "wave launch Wed July 14 (year inferred 2021)"
+    },
+    {
+     "field": "product_code",
+     "value": "#727",
+     "source_url": "https://business.walmart.com/ip/FiGPiN-Marvel-Iron-Fist-727-Kraken-s-Collection-Exclusive/1386890977",
+     "method": "search_snippet",
+     "note": "listing gives #727"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition (retailer exclusive)",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "retailer exclusive, Kraken's Collection only"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "2k units"
+    },
+    {
+     "field": "retailer",
+     "value": "Kraken's Collection",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "only available at Kraken's Collection"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/figpin-marvel-comics-series-2/spider-woman",
+   "set_key": "lic/2021/figpin-marvel-comics-series-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Spider-Woman"
+     ],
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Spider-Woman named in the wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Spider-Woman",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Spider-Woman"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Marvel Comics wave"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "FiGPiN pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "individually numbered FiGPiN"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-14",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "wave launch Wed July 14 (year inferred 2021)"
+    },
+    {
+     "field": "product_code",
+     "value": "#728",
+     "source_url": "https://vrarestore.com/products/marvel-comics-spider-woman-figpin-728",
+     "method": "search_snippet",
+     "note": "listing gives #728"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition (retailer exclusive)",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "retailer exclusive through Entertainment Earth"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "2k units"
+    },
+    {
+     "field": "retailer",
+     "value": "Entertainment Earth",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Entertainment Earth exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/figpin-marvel-comics-series-2/black-cat",
+   "set_key": "lic/2021/figpin-marvel-comics-series-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Black Cat"
+     ],
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Black Cat named in the wave"
+    },
+    {
+     "field": "main_character",
+     "value": "Black Cat",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Black Cat"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "Marvel Comics wave"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "FiGPiN pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "individually numbered FiGPiN"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-14",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "wave launch Wed July 14 (year inferred 2021)"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition (FiGPiN exclusive)",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "FiGPiN EXCLUSIVE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "limited to 1k units"
+    },
+    {
+     "field": "retailer",
+     "value": "FiGPiN.com",
+     "source_url": "https://figpin.com/blogs/news/our-newest-wave-of-marvel-comics-is-epic",
+     "method": "search_snippet",
+     "note": "FiGPiN exclusive"
+    },
+    {
+     "field": "original_price",
+     "value": 20,
+     "source_url": "https://disneypinsblog.com/marvel-comics-series-2-figpin-collection/",
+     "method": "search_snippet",
+     "note": "$20 retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/marvel-comics-series-2-figpin-collection/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/figpin-comic-con-special-edition-2021/c-3po",
+   "set_key": "lic/2021/figpin-comic-con-special-edition-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "C-3PO"
+     ],
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "C-3PO in event lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "C-3PO",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "C-3PO"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "individually numbered FiGPiN"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition (event exclusive)",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "Comic-Con Special Edition 2021 exclusive"
+    },
+    {
+     "field": "product_code",
+     "value": "#783",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "roundup lists #783"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "2000 units"
+    },
+    {
+     "field": "visual_description",
+     "value": "Star Wars: A New Hope C-3PO",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "A New Hope styling"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/figpin-comic-con-special-edition-2021/r2-d2",
+   "set_key": "lic/2021/figpin-comic-con-special-edition-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "R2-D2"
+     ],
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "R2-D2 in event lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "R2-D2",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "R2-D2"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "individually numbered FiGPiN"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition (event exclusive)",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "Comic-Con Special Edition 2021 exclusive"
+    },
+    {
+     "field": "product_code",
+     "value": "#784",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "roundup lists #784"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "2000 units"
+    },
+    {
+     "field": "visual_description",
+     "value": "Star Wars: A New Hope R2-D2",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "A New Hope styling"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/figpin-comic-con-special-edition-2021/hydra-stomper",
+   "set_key": "lic/2021/figpin-comic-con-special-edition-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hydra Stomper"
+     ],
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "Hydra Stomper in event lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Hydra Stomper",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "Hydra Stomper"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "Marvel"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "individually numbered FiGPiN"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition (event exclusive)",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "Comic-Con Special Edition 2021 exclusive"
+    },
+    {
+     "field": "product_code",
+     "value": "#818",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "roundup lists #818"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "1500 units"
+    },
+    {
+     "field": "visual_description",
+     "value": "Marvel What If...? Hydra Stomper",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "from What If...?"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/figpin-comic-con-special-edition-2021/stitch-glitter",
+   "set_key": "lic/2021/figpin-comic-con-special-edition-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://sdccblog.com/2021/11/figpin-comic-con-special-edition-exclusives/",
+     "method": "search_snippet",
+     "note": "Stitch in event lineup"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://sdccblog.com/2021/11/figpin-comic-con-special-edition-exclusives/",
+     "method": "search_snippet",
+     "note": "Stitch"
+    },
+    {
+     "field": "franchise",
+     "value": "Lilo & Stitch",
+     "source_url": "https://sdccblog.com/2021/11/figpin-comic-con-special-edition-exclusives/",
+     "method": "search_snippet",
+     "note": "Lilo & Stitch"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "FiGPiN exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "individually numbered FiGPiN"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition (event exclusive)",
+     "source_url": "https://figpin.com/blogs/news/comic-con-special-edition-2021-roundup",
+     "method": "search_snippet",
+     "note": "Comic-Con Special Edition 2021 exclusive"
+    },
+    {
+     "field": "pin_name",
+     "value": "Stitch with Glitter",
+     "source_url": "https://sdccblog.com/2021/11/figpin-comic-con-special-edition-exclusives/",
+     "method": "search_snippet",
+     "note": "named among the 2021 event FiGPiNs"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/funko-walmart-mandalorian-pin-set/moff-gideon",
+   "set_key": "lic/2021/funko-walmart-mandalorian-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Moff Gideon"
+     ],
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "hobbyDB lists Moff Gideon in a Walmart-exclusive Mandalorian 4-pin set dated 2021"
+    },
+    {
+     "field": "main_character",
+     "value": "Moff Gideon",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "Moff Gideon"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "The Mandalorian"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "Funko Pop! enamel pin set"
+    },
+    {
+     "field": "retailer",
+     "value": "Walmart",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "listed as Walmart exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "contains 4 individual pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/funko-walmart-mandalorian-pin-set/boba-fett",
+   "set_key": "lic/2021/funko-walmart-mandalorian-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Boba Fett"
+     ],
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "hobbyDB lists Boba Fett in a Walmart-exclusive Mandalorian 4-pin set dated 2021"
+    },
+    {
+     "field": "main_character",
+     "value": "Boba Fett",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "Boba Fett"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "The Mandalorian"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "Funko Pop! enamel pin set"
+    },
+    {
+     "field": "retailer",
+     "value": "Walmart",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "listed as Walmart exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "contains 4 individual pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/funko-walmart-mandalorian-pin-set/the-mandalorian",
+   "set_key": "lic/2021/funko-walmart-mandalorian-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "The Mandalorian"
+     ],
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "hobbyDB lists The Mandalorian in a Walmart-exclusive Mandalorian 4-pin set dated 2021"
+    },
+    {
+     "field": "main_character",
+     "value": "The Mandalorian",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "The Mandalorian"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "The Mandalorian"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "Funko Pop! enamel pin set"
+    },
+    {
+     "field": "retailer",
+     "value": "Walmart",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "listed as Walmart exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "contains 4 individual pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2021/funko-walmart-mandalorian-pin-set/grogu",
+   "set_key": "lic/2021/funko-walmart-mandalorian-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Grogu"
+     ],
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "hobbyDB lists Grogu in a Walmart-exclusive Mandalorian 4-pin set dated 2021 (as Grogu / The Child)"
+    },
+    {
+     "field": "main_character",
+     "value": "Grogu",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "Grogu"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "The Mandalorian"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "Funko Pop! enamel pin set"
+    },
+    {
+     "field": "retailer",
+     "value": "Walmart",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "listed as Walmart exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.hobbydb.com/marketplaces/hobbydb/collectibles/45411985",
+     "method": "search_snippet",
+     "note": "contains 4 individual pins"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2020/figpin-mandalorian-season-2",
+   "field": "expected_pin_count",
+   "searched": "follow-up b162; 2 queries",
+   "note": "gap narrowed: the Dec 21 2020 Season 2 drop is three pins per FiGPiN's own post; FiGPiN promised more S2 characters in 2021 (Boba Fett #734/#737 keyed separately in packet 284); no further S2 members found for 2021"
+  },
+  {
+   "key": "lic/2021/figpin-marvel-comics-series-2/black-cat",
+   "field": "product_code",
+   "searched": "follow-up b162; 2 queries",
+   "note": "#729 expected from packet 284 lead and sequence #727/#728, but no snippet here shows Black Cat's number; confirm"
+  },
+  {
+   "key": "lic/2021/figpin-marvel-comics-series-2/namor",
+   "field": "product_code",
+   "searched": "follow-up b162; 1 query",
+   "note": "#725 from search summary of FiGPiN post; no standalone Namor listing seen"
+  },
+  {
+   "key": "lic/2021/figpin-marvel-comics-series-3",
+   "field": "lead",
+   "searched": "follow-up b162; 3 queries",
+   "note": "lead from packet 284 closed: #724-729 wave recorded as lic/2021/figpin-marvel-comics-series-2 (DPB label 'Marvel Comics Series 2'), launched Wed July 14 (2021 inferred)"
+  },
+  {
+   "key": "lic/2021/figpin-comic-con-special-edition-2021/stitch-glitter",
+   "field": "product_code",
+   "searched": "follow-up b162; 2 queries",
+   "note": "number and unit count not in snippets; a glitter Stitch #983 LE 1000 belongs to SDCC 2022, not this release"
+  },
+  {
+   "key": "lic/2021/figpin-comic-con-special-edition-2021",
+   "field": "expected_pin_count",
+   "searched": "follow-up b162",
+   "note": "lineup also had non-Disney exclusives (Dragon Ball Ultra Instinct Goku #730, WoW Arthas) out of scope; Disney-owned count = 4 seen; full count not recorded"
+  },
+  {
+   "key": "lic/2021/figpin-marvel-what-if-series-1",
+   "field": "expected_pin_count",
+   "searched": "follow-up b162; 1 query",
+   "note": "#818 explained: Hydra Stomper #818 is a Comic-Con Special Edition 2021 exclusive (LE 1500), keyed separately; What If series 1 four-pin count unaffected"
+  },
+  {
+   "key": "lic/2021/sdcc-2021",
+   "field": "lead",
+   "searched": "follow-up b162; 3 queries",
+   "note": "no Comic-Con@Home 2021 (July) Disney/Marvel/SW pin found; Hallmark 2021 online exclusives seen were ornament/plush; FiGPiN Nov 2021 Comic-Con Special Edition pins recorded instead"
+  },
+  {
+   "key": "lic/2021/figpin-ecc-han-solo-833",
+   "field": "lead",
+   "searched": "follow-up b162",
+   "note": "lead: Han Solo A New Hope FiGPiN #833 described as 2021 ECC exclusive LE 2000 on a resale listing only (paywut); not recorded"
+  },
+  {
+   "key": "lic/2021/funko-walmart-mandalorian-pin-set/moff-gideon",
+   "field": "set_link",
+   "searched": "follow-up b162; 3 queries",
+   "note": "hold: member from hobbyDB entry (Walmart exclusive, dated 2021, UPC 671803386198) linked to DPB Dec 2021 $14.88 set by retailer, year and count only; confirm"
+  },
+  {
+   "key": "lic/2021/funko-walmart-mandalorian-pin-set/boba-fett",
+   "field": "set_link",
+   "searched": "follow-up b162; 3 queries",
+   "note": "hold: member from hobbyDB entry (Walmart exclusive, dated 2021, UPC 671803386198) linked to DPB Dec 2021 $14.88 set by retailer, year and count only; confirm"
+  },
+  {
+   "key": "lic/2021/funko-walmart-mandalorian-pin-set/the-mandalorian",
+   "field": "set_link",
+   "searched": "follow-up b162; 3 queries",
+   "note": "hold: member from hobbyDB entry (Walmart exclusive, dated 2021, UPC 671803386198) linked to DPB Dec 2021 $14.88 set by retailer, year and count only; confirm"
+  },
+  {
+   "key": "lic/2021/funko-walmart-mandalorian-pin-set/grogu",
+   "field": "set_link",
+   "searched": "follow-up b162; 3 queries",
+   "note": "hold: member from hobbyDB entry (Walmart exclusive, dated 2021, UPC 671803386198) linked to DPB Dec 2021 $14.88 set by retailer, year and count only; confirm"
+  },
+  {
+   "key": "lic/2020/funko-walmart-mandalorian-pin-set",
+   "field": "members",
+   "searched": "follow-up b162; 3 queries",
+   "note": "still unnamed: DPB Nov 2020 post confirms 4 pins at $7.88 but no characters; hobbyDB Gideon/Boba/Mando/Grogu set is dated 2021 and not linked to 2020"
+  },
+  {
+   "key": "lic/2020/hot-topic-lock-shock-barrel-pin-set",
+   "field": "pin_structure",
+   "searched": "follow-up b162; 2 queries",
+   "note": "hold kept: Dec 6 2020 DPB post ($16.90) still has no per-pin descriptions"
+  },
+  {
+   "key": "lic/2020/hot-topic-lock-shock-barrel-pin-set",
+   "field": "expected_pin_count",
+   "searched": "follow-up b162; 2 queries",
+   "note": "caution: separate DPB post covers a 2019 HT LSB set at $10.90; HT Loungefly set-of-3 listing 12140774 ($10.90, masks on wall plaques) matches that price, so packet 284's count 3 / Loungefly for the 2020 set is weaker; confirm"
+  },
+  {
+   "key": "lic/2019/hot-topic-lock-shock-barrel-pin-set",
+   "field": "lead",
+   "searched": "follow-up b162",
+   "note": "lead: 2019 Hot Topic Lock Shock Barrel set $10.90 (DPB) for 2019 cell; HT listing describes Loungefly set of 3 mask-on-plaque pins"
+  },
+  {
+   "key": "lic/2021/bioworld-entertainment-earth-spider-man-no-way-home-3-pack",
+   "field": "members",
+   "searched": "follow-up b162; 2 queries",
+   "note": "still undescribed; EE listing sold out with no designs. Bioworld 'Suit Up' lapel pins (Midtown 1/5/2022, $11.99; Puff Monkey: suit symbols and masks) not linked, count unstated"
+  },
+  {
+   "key": "lic/2021/figpin-falcon-winter-soldier-series-1/falcon",
+   "field": "release_date",
+   "searched": "follow-up b162; 2 queries",
+   "note": "still unresolved: no FiGPiN post found; Toyshnip groups Falcon #714, Winter Soldier #715 and LE Zemo #716 as one wave; Pop Insider March 2021 preorder said ships fall"
+  },
+  {
+   "key": "lic/2021/figpin-wandavision/wanda",
+   "field": "release_date",
+   "searched": "follow-up b162; 1 query",
+   "note": "still unresolved: DPB late-March 2021 ship estimate vs Vintage Vinyl UPC record 12/17/2021 at $19.99 (retailer record, likely restock/listing date)"
+  },
+  {
+   "key": "lic/2020/hot-topic-steamboat-willie-black-gold/steamboat-willie",
+   "field": "manufacturer",
+   "searched": "follow-up b162; 3 queries",
+   "note": "still unresolved: DPB post (July 2020, $8.90, film-reel section) names no maker; no Hot Topic listing found"
+  },
+  {
+   "key": "lic/2021/loungefly-steamboat-willie-le",
+   "field": "lead",
+   "searched": "follow-up b162",
+   "note": "lead: Loungefly LE 1000 Steamboat Willie pin (Mickey steering, Minnie on deck), June 2021, $25 (DPB) for the Loungefly cell"
+  },
+  {
+   "key": "lic/2020/numskull-mandalorian-10-pin-set",
+   "field": "members",
+   "searched": "follow-up b162; 1 query",
+   "note": "holds kept: designs still named only in disneypinforum owner review (adds Razor Crest, IG-11, Cara Dune, Kuiil, Mythosaur, logo); Geek Store detail says nine pins; no maker/retailer list"
+  },
+  {
+   "key": "lic/numskull-pin-kings-mandalorian",
+   "field": "lead",
+   "searched": "follow-up b162; 2 queries",
+   "note": "Pin Kings Mandalorian 1.1 (Snack Time + The Child, two hard enamel pins) and 1.2 (The Child + The Mandalorian) on numskull.com; Geek Store preorder 'November', no year; 1.3 not found; not recorded"
+  },
+  {
+   "key": "lic/2021/her-universe-disney-non-star-wars",
+   "field": "lead",
+   "searched": "follow-up b162; 3 queries",
+   "note": "no dated 2021 non-Star Wars Her Universe pin found; lead: Her Universe WandaVision 'Agatha All Along' TV pin (undated listing)"
+  },
+  {
+   "key": "lic/2022/her-universe-star-wars-rebel-warrior-leader-hero",
+   "field": "lead",
+   "searched": "follow-up b162",
+   "note": "lead for 2022 cell: Her Universe Rebel/Warrior/Leader/Hero Star Wars pins, shopDisney Oct 4 2022, $17.99 each (DPB)"
+  },
+  {
+   "key": "lic/2020/uncas",
+   "field": "lead",
+   "searched": "follow-up b162; 1 query",
+   "note": "still none: no Uncas Disney pin dated 2020-2021 outside BoxLunch found"
+  },
+  {
+   "key": "lic/2022/figpin-mandalorian-wave-3",
+   "field": "lead",
+   "searched": "follow-up b162",
+   "note": "lead for 2022 cell: FiGPiN Mandalorian Wave 3 (Luke #825, Mando with Grogu #827, Dark Trooper, Din Djarin #829 LE 1500), Wed Jan 26 (2022 inferred)"
+  },
+  {
+   "key": "lic/2021/figpin-marvel-comics-series-2/ghost-rider",
+   "field": "release_year",
+   "searched": "packet review",
+   "note": "hold: year assumed - source gives \"Wednesday July 14\" with no year; 2021 inferred from the weekday and numbering, confirm with a dated source"
+  },
+  {
+   "key": "lic/2021/figpin-marvel-comics-series-2/namor",
+   "field": "release_year",
+   "searched": "packet review",
+   "note": "hold: year assumed - source gives \"Wednesday July 14\" with no year; 2021 inferred from the weekday and numbering, confirm with a dated source"
+  },
+  {
+   "key": "lic/2021/figpin-marvel-comics-series-2/luke-cage",
+   "field": "release_year",
+   "searched": "packet review",
+   "note": "hold: year assumed - source gives \"Wednesday July 14\" with no year; 2021 inferred from the weekday and numbering, confirm with a dated source"
+  },
+  {
+   "key": "lic/2021/figpin-marvel-comics-series-2/iron-fist",
+   "field": "release_year",
+   "searched": "packet review",
+   "note": "hold: year assumed - source gives \"Wednesday July 14\" with no year; 2021 inferred from the weekday and numbering, confirm with a dated source"
+  },
+  {
+   "key": "lic/2021/figpin-marvel-comics-series-2/spider-woman",
+   "field": "release_year",
+   "searched": "packet review",
+   "note": "hold: year assumed - source gives \"Wednesday July 14\" with no year; 2021 inferred from the weekday and numbering, confirm with a dated source"
+  },
+  {
+   "key": "lic/2021/figpin-marvel-comics-series-2/black-cat",
+   "field": "release_year",
+   "searched": "packet review",
+   "note": "hold: year assumed - source gives \"Wednesday July 14\" with no year; 2021 inferred from the weekday and numbering, confirm with a dated source"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 to packets 260/284, reusing their keys. 30 standard search-snippet queries. New: FiGPiN Marvel Comics Series 2 (#724-729, July 14 2021 inferred), FiGPiN Comic-Con Special Edition 2021 Disney-owned exclusives (C-3PO #783, R2-D2 #784, Hydra Stomper #818, glitter Stitch). Season 2 Dec 2020 drop = 3 pins per FiGPiN. Walmart Funko Mandalorian 2021 members added from hobbyDB but held (linked by retailer/year/count only); 2020 members still unknown. Lock Shock Barrel hold kept and packet 284 link weakened (2019 $10.90 set). Falcon/Wanda dates, Steamboat maker, Bioworld members, Numskull names, Pin Kings year unresolved. No holds released."
+}

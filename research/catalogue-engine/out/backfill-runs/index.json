@@ -1,6 +1,6 @@
 {
  "source": "staging_payload.json",
- "git_commit": "cb5965791595",
+ "git_commit": "60ea727b491b",
  "generated": "2026-10-17",
  "runs": [
   {
@@ -43,20 +43,20 @@
   },
   {
    "file": "run_04_lic.json",
-   "pins": 1089,
-   "sets": 536,
-   "evidence": 12398,
-   "bytes": 4822390,
+   "pins": 1092,
+   "sets": 529,
+   "evidence": 12389,
+   "bytes": 4819481,
    "lines": [
     "lic"
    ]
   },
   {
    "file": "run_05_lic.json",
-   "pins": 1128,
-   "sets": 469,
-   "evidence": 10799,
-   "bytes": 4540500,
+   "pins": 1157,
+   "sets": 492,
+   "evidence": 11261,
+   "bytes": 4718118,
    "lines": [
     "lic"
    ]

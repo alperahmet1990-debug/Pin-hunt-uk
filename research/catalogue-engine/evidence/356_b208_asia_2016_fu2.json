@@ -1,0 +1,294 @@
+{
+ "packet_id": "backfill-b208-asia-2016-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b208",
+ "sources": [
+  {
+   "url": "https://mypincentral.com/pin/35944",
+   "title": "MyPinCentral pin 35944 (HKDL Halloween 2016 Tsum Tsum, Baymax and Stitch)",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+   "title": "Gelatoni Pins (forum list thread)",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/hong-kong-disneyland-halloween-set.67077/",
+   "title": "Hong Kong Disneyland Halloween set (forum thread)",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-halloween-2018-pins",
+   "title": "Hong Kong Disneyland Halloween 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.tokyodisneyresort.jp/tdrblog/detail/pr151130/",
+   "title": "Star Tours special version from 2 Feb 2016 (official TDR blog)",
+   "publisher": "Tokyo Disney Resort Blog",
+   "published_date": "2015-11-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2016/11/2016-duffy-2016.html",
+   "title": "HKDL 2016 Christmas series and Duffy winter 2016 merchandise",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2016-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://k.sina.cn/article_6454091954_180b1a0b2001006yk5.html",
+   "title": "Shanghai Disney Resort first Halloween season (Sina)",
+   "publisher": "Sina News",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "hkdl/2016/tsum-tsum-halloween",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://mypincentral.com/pin/35944",
+     "method": "search_snippet",
+     "note": "backstamp of the Baymax and Stitch pin numbers it as one of six"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "hkdl/2016/tsum-tsum-halloween/baymax-and-stitch",
+   "set_key": "hkdl/2016/tsum-tsum-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween 2016 Tsum Tsum Baymax and Stitch pin",
+     "source_url": "https://mypincentral.com/pin/35944",
+     "method": "search_snippet",
+     "note": "per-pin catalogue entry for the HKDL Halloween 2016 Tsum Tsum pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Baymax",
+      "Stitch"
+     ],
+     "source_url": "https://mypincentral.com/pin/35944",
+     "method": "search_snippet",
+     "note": "entry names Baymax and Stitch as the featured characters"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/35944",
+     "method": "search_snippet",
+     "note": "single pin with Baymax shown standing on top of Stitch"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/35944",
+     "method": "search_snippet",
+     "note": "backstamp marks it limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://mypincentral.com/pin/35944",
+     "method": "search_snippet",
+     "note": "backstamp gives LE 500"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://mypincentral.com/pin/35944",
+     "method": "search_snippet",
+     "note": "pin text reads Halloween 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://mypincentral.com/pin/35944",
+     "method": "search_snippet",
+     "note": "pin text and backstamp name Hong Kong Disneyland"
+    },
+    {
+     "field": "visual_description",
+     "value": "Tsum Tsum style; Baymax on Stitch; Halloween 2016 banner at top, park name at bottom; see-through stained glass element",
+     "source_url": "https://mypincentral.com/pin/35944",
+     "method": "search_snippet",
+     "note": "paraphrased from the entry"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "HKDL limited edition of 500, numbered of 6",
+     "source_url": "https://mypincentral.com/pin/35944",
+     "method": "search_snippet",
+     "note": "paraphrase of reverse wording; factory code also present, not recorded"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/tsum-tsum-halloween/duffy-and-gelatoni",
+   "set_key": "hkdl/2016/tsum-tsum-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "HKDL 2016 Halloween Gelatoni and Duffy Tsum Tsum pin",
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "entry in a forum list of Gelatoni pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy",
+      "Gelatoni"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "list entry names Gelatoni and Duffy together"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "list entry marks it LE 500"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "list entry says 2016 Halloween"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "hkdl/2016/tsum-tsum-halloween",
+   "field": "pins",
+   "searched": "8 queries (EN/ZH)",
+   "note": "released (partial): MyPinCentral per-pin entry names Baymax on Stitch as one of six LE 500; other designs still unnamed, hold kept for them"
+  },
+  {
+   "key": "hkdl/2016/tsum-tsum-halloween/duffy-and-gelatoni",
+   "field": "identity",
+   "searched": "2 queries",
+   "note": "hold: rests on a forum list title only (list cites an excluded database number, not copied); confirm it is one of the six glow designs"
+  },
+  {
+   "key": "hkdl/2016/tsum-tsum-halloween/duffy-and-gelatoni",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); list title only, no description"
+  },
+  {
+   "key": "hkdl/2016/tsum-tsum-halloween",
+   "field": "agent-p-marie",
+   "searched": "1 query",
+   "note": "Agent P and Marie design seen only on a PicClick marketplace listing title; excluded, not recorded"
+  },
+  {
+   "key": "hkdl/2016/tsum-tsum-halloween/baymax-and-stitch",
+   "field": "original_price",
+   "searched": "3 queries",
+   "note": "not stated on the entry; set-level HK$118 each from My Tsum Tsum already recorded"
+  },
+  {
+   "key": "hkdl/2016/halloween",
+   "field": "pins",
+   "searched": "3 queries (ZH)",
+   "note": "lead kept: DMK Blog links a 2016 Halloween LE themed pin post by title only; design, size, date not in snippets"
+  },
+  {
+   "key": "hkdl/2018/halloween",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead for 2018 cell: forum Halloween set (Donald, Judy, Finnick as ghosts, Baymax magician) is a 2018 release per DPB, not 2016"
+  },
+  {
+   "key": "hkdl/2016/christmas",
+   "field": "original_price",
+   "searched": "2 queries (ZH)",
+   "note": "hold: one search summary links HK$288 to a 2016 Christmas pin item on the DMK overview; not clearly one pin, not recorded"
+  },
+  {
+   "key": "hkdl/2016/christmas",
+   "field": "pins",
+   "searched": "4 queries (EN/ZH)",
+   "note": "designs, count and edition still not in snippets; member and general versions both dated 19 Nov 2016"
+  },
+  {
+   "key": "hkdl/2016/10k-weekend",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "3K family and Mickey 10K pins still not described; only the Duffy 5K pin (already recorded) appears"
+  },
+  {
+   "key": "hkdl/2016/sports-pin-series",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: DPB release list again pairs names per date with Baymax alone; still a single list, no per-pin description"
+  },
+  {
+   "key": "shdr/2016",
+   "field": "pins",
+   "searched": "4 queries (EN/ZH)",
+   "note": "still no Shanghai Halloween or Christmas 2016 pin found; Sina dates SHDR's first Halloween season from 25 Sep 2016 but names no pins"
+  },
+  {
+   "key": "tdr/2016/game-prize-tds",
+   "field": "pins",
+   "searched": "3 queries (JA)",
+   "note": "no TDS summer 2016 prize pin lineup found; summer success prize was a Chip/Dale plush; Mickey banana pin only on Yahoo Auctions, not used"
+  },
+  {
+   "key": "tdr/2016/game-prize-tds-15th-anniversary/rainy-day-teru-teru-mickey-minnie",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: MezzoMiki snippet again says a teru teru Mickey and Minnie pin; one pin or two still unclear"
+  },
+  {
+   "key": "tdr/2016/star-tours/force-awakens-special-version",
+   "field": "release_date",
+   "searched": "3 queries (EN/JA)",
+   "note": "conflict kept: official TDR blog confirms the ride version from 2 Feb 2016 but does not mention the pin; DPB 1 Dec 2015 date unresolved"
+  },
+  {
+   "key": "tdr/2016/star-tours/force-awakens-special-version",
+   "field": "characters",
+   "searched": "3 queries",
+   "note": "still not named; Travel Watch only says attraction characters; no source ties BB-8 to the pin"
+  },
+  {
+   "key": "asia/2016",
+   "field": "holds",
+   "searched": "not re-searched",
+   "note": "holds kept: game-prize full lists, 15th large pin, castle x TRON, ice cream Tsum Tsum, Natsu Matsuri/Fun Days duplicates, SHDR opening, Reveal/Conceal, popcorn, deluxe box"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 of B031 (Asia 2016). 30 standard searches, snippets only. Reuses B031/B192 keys. New per-pin evidence from MyPinCentral for one HKDL Tsum Tsum Halloween design; Disney Pin Forum list gives a second (held). Marketplaces (PicClick, Carousell, Yahoo Auctions) not used."
+}

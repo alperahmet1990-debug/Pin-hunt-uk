@@ -1,0 +1,3763 @@
+{
+ "packet_id": "backfill-b029-dlp-2016",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b029",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-january-2016-pins",
+   "title": "Disneyland Paris January 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-march-2016-pins",
+   "title": "Disneyland Paris March 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+   "title": "Alice in Wonderland 65th Paris Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+   "title": "Disneyland Paris Half Marathon Weekend 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-we-love-paris-mary-animals-and-tink/",
+   "title": "Disneyland Paris Pins for February 2016",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2016-02-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-its-all-about-star-wars-endor-with-spring-and-okaf/",
+   "title": "Disneyland Paris Pins for March 2016",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2016-02-27",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-magical-memorabilia-last-trip-to-endor-pin/",
+   "title": "Disneyland Paris Magical Memorabilia: Last Trip To Endor Pin",
+   "publisher": "Dedicated to DLP",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+   "title": "Disneyland Paris Pins for May 2016",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2016-04-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+   "title": "Disneyland Paris Pins For June 2016",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2016-05-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2016-marvel-more-marvel-and-some-disney-too/",
+   "title": "Disneyland Paris Pins For July 2016",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2016-06-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+   "title": "Disneyland Paris Pins For October 2016",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2016-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://salonmickey.wordpress.com/2016/04/30/may-2016-disneyland-paris-trading-pins/",
+   "title": "May 2016 Disneyland Paris Trading Pins",
+   "publisher": "Salon Mickey",
+   "published_date": "2016-04-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://salonmickey.wordpress.com/2016/05/30/june-2016-disneyland-paris-trading-pins/",
+   "title": "June 2016 Disneyland Paris Trading Pins",
+   "publisher": "Salon Mickey",
+   "published_date": "2016-05-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+   "title": "Pin Trading Kollektion Juli 2016 des Disneyland Paris",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2016-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+   "title": "Disneyland Paris Pin-Trading Kollektion im August 2016",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2016-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+   "title": "Disneyland Paris Pin-Kollektion im November 2016",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2016-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+   "title": "Disneyland Paris Pin Neuerscheinungen im Dezember 2016",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2016-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.magicdlp.de/pin-trading-disneyland-paris-news-september-2016-2/",
+   "title": "Pin Trading Disneyland Paris News Oktober 2016",
+   "publisher": "Magicdlp.de",
+   "published_date": "2016-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.tripadvisor.co.uk/ShowTopic-g2079053-i21935-k6714934-o150-Talk_to_me_about_pin_trading-Disneyland_Paris_Ile_de_France.html",
+   "title": "Talk to me about pin trading - Disneyland Paris forum",
+   "publisher": "Tripadvisor",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2016/february-2016-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris February 2016 pin releases",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-we-love-paris-mary-animals-and-tink/",
+     "method": "search_snippet",
+     "note": "Monthly release roundup grouping, not a boxed set"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-02",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-we-love-paris-mary-animals-and-tink/",
+     "method": "search_snippet",
+     "note": "Feb 2016 lineup post"
+    },
+    {
+     "field": "format",
+     "value": "monthly release group (separate single pins)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-we-love-paris-mary-animals-and-tink/",
+     "method": "search_snippet",
+     "note": "Grouping of individual releases"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/star-tours-last-trip-to-endor",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Tours Last Trip to Endor (2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-magical-memorabilia-last-trip-to-endor-pin/",
+     "method": "search_snippet",
+     "note": "Single LE release for attraction closing"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-magical-memorabilia-last-trip-to-endor-pin/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-magical-memorabilia-last-trip-to-endor-pin/",
+     "method": "search_snippet",
+     "note": "On March 2016 DLP poster"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-magical-memorabilia-last-trip-to-endor-pin/",
+     "method": "search_snippet",
+     "note": "One pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/march-2016-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris March 2016 pin releases",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-its-all-about-star-wars-endor-with-spring-and-okaf/",
+     "method": "search_snippet",
+     "note": "Monthly release grouping"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-march-2016-pins",
+     "method": "search_snippet",
+     "note": "March 2016 lineup"
+    },
+    {
+     "field": "format",
+     "value": "monthly release group (separate single pins)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-its-all-about-star-wars-endor-with-spring-and-okaf/",
+     "method": "search_snippet",
+     "note": "Individual releases"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/easter-eggs-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Easter egg design pins (March 2016)",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-march-2016-pins",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-march-2016-pins",
+     "method": "search_snippet",
+     "note": "March 2016 lineup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-march-2016-pins",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/star-wars-may-the-4th-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars May the 4th 2016 limited editions",
+     "source_url": "https://salonmickey.wordpress.com/2016/04/30/may-2016-disneyland-paris-trading-pins/",
+     "method": "search_snippet",
+     "note": "Four LE pins on 4 May"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://salonmickey.wordpress.com/2016/04/30/may-2016-disneyland-paris-trading-pins/",
+     "method": "search_snippet",
+     "note": "Four Star Wars pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://salonmickey.wordpress.com/2016/04/30/may-2016-disneyland-paris-trading-pins/",
+     "method": "search_snippet",
+     "note": "All limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-04",
+     "source_url": "https://salonmickey.wordpress.com/2016/04/30/may-2016-disneyland-paris-trading-pins/",
+     "method": "search_snippet",
+     "note": "Released 4 May 2016"
+    },
+    {
+     "field": "format",
+     "value": "four separate single LE pins",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "Each LE 600"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/finding-dory-booster-may-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Finding Dory booster set (May 2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "format",
+     "value": "booster",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "Booster set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 9,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "9 pins incl. booster; two Bruce pins near identical"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-14",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "Saturday 14 May"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/finding-dory-le-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Finding Dory limited edition (2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "One LE pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/tsum-tsum-may-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tsum Tsum pins (21 May 2016)",
+     "source_url": "https://salonmickey.wordpress.com/2016/04/30/may-2016-disneyland-paris-trading-pins/",
+     "method": "search_snippet",
+     "note": "Three new series pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://salonmickey.wordpress.com/2016/04/30/may-2016-disneyland-paris-trading-pins/",
+     "method": "search_snippet",
+     "note": "Three new pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-21",
+     "source_url": "https://salonmickey.wordpress.com/2016/04/30/may-2016-disneyland-paris-trading-pins/",
+     "method": "search_snippet",
+     "note": "21 May"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins in an ongoing series",
+     "source_url": "https://salonmickey.wordpress.com/2016/04/30/may-2016-disneyland-paris-trading-pins/",
+     "method": "search_snippet",
+     "note": "Series grows by three pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/june-2016-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "June 2016 limited editions",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Grouping of 4 LE pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Three P-film LEs plus Finding Dory"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "June 2016"
+    },
+    {
+     "field": "format",
+     "value": "separate single LE pins",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Released individually"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "LEs sold there on release day"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/my-dog-series",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "My Dog series (2016)",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "DLP LE dog series"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Series pins limited"
+    },
+    {
+     "field": "format",
+     "value": "series of separate single LE pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Monthly LE pins"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Only sold there"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/villains-series",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Villains series (2016)",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "DLP LE villains series"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "format",
+     "value": "series of separate single LE pins",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2016-marvel-more-marvel-and-some-disney-too/",
+     "method": "search_snippet",
+     "note": "Monthly LE pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/avengers-booster-july-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Avengers icon booster (July 2016)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "format",
+     "value": "booster",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Avengers booster"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "4 pins"
+    },
+    {
+     "field": "price",
+     "value": 16.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "EUR 16.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-02",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "From 2 July"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/guardians-of-the-galaxy-july-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Guardians of the Galaxy pins (July 2016)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Three rectangular pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-09",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2016-marvel-more-marvel-and-some-disney-too/",
+     "method": "search_snippet",
+     "note": "9 July"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/bastille-day-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "14 Juillet 2016 (French National Day)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2016-marvel-more-marvel-and-some-disney-too/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "9 July"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "One pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/christmas-oe-august-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Christmas pins released August 2016",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-06",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "From 6 Aug"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "DLP"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins plus a booster",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Mickey, Stitch singles and a booster"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/alice-in-wonderland-65th",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Alice in Wonderland 65th anniversary (Paris)",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "Title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "9 Aug 2016"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "One pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/half-marathon-weekend-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Half Marathon Weekend 2016",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Title"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "All limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Event 23-25 Sep 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney expo, Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Sold at expo"
+    },
+    {
+     "field": "format",
+     "value": "separate single LE pins",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Individual pins listed"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/2017-dated-pins-october-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2017-dated pins released October 2016",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 9,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "5 on 1 Oct plus 4 more; 9 in October"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "October 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "DLP"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Individual releases"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/halloween-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween 2016",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Only one Halloween pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-15",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "15 Oct"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "One pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/moana-november-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Moana (Vaiana) collection November 2016",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Nov 2016"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "Release-day pins not limited"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-november-2016/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/december-3-2016-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris 3 December 2016 releases",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Release-date grouping"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Four pins on 3 Dec"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "3 Dec"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Individual releases"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/christmas-2016-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Christmas/winter 2016 limited editions",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Grouping"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Each LE 600"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Dec 2016 article"
+    },
+    {
+     "field": "format",
+     "value": "separate single LE pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Individual pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/star-wars-day-december-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars day 10 December 2016",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "6 singles plus 4-pin booster"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "All unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-10",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "10 Dec"
+    },
+    {
+     "field": "format",
+     "value": "6 single pins plus a 4-pin booster",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Structure stated"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/oe-set/rogue-one-trooper-helmets-booster",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Rogue One trooper helmet booster",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "format",
+     "value": "booster",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Booster"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Four helmet pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "price",
+     "value": 18.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "EUR 18.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-10",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "10 Dec"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/december-10-2016-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris 10 December 2016 limited editions",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Release-date grouping"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "600 or 700 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-10",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "10 Dec"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "LE sales point"
+    },
+    {
+     "field": "format",
+     "value": "separate single LE pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Individual pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/bijou-collection-december-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Bijou (jewel-effect) collection December 2016",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Two pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "price",
+     "value": 16.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "EUR 16.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-24",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "24 Dec"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Two pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/le-reveillon-de-belle-event-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Le Reveillon de Belle pin trading event",
+     "source_url": "https://www.tripadvisor.co.uk/ShowTopic-g2079053-i21935-k6714934-o150-Talk_to_me_about_pin_trading-Disneyland_Paris_Ile_de_France.html",
+     "method": "search_snippet",
+     "note": "Event name"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-17",
+     "source_url": "https://www.tripadvisor.co.uk/ShowTopic-g2079053-i21935-k6714934-o150-Talk_to_me_about_pin_trading-Disneyland_Paris_Ile_de_France.html",
+     "method": "search_snippet",
+     "note": "17 Dec 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Coliseum Convention Centre, Disney's Hotel New York",
+     "source_url": "https://www.tripadvisor.co.uk/ShowTopic-g2079053-i21935-k6714934-o150-Talk_to_me_about_pin_trading-Disneyland_Paris_Ile_de_France.html",
+     "method": "search_snippet",
+     "note": "Venue"
+    },
+    {
+     "field": "format",
+     "value": "ticketed pin event",
+     "source_url": "https://www.tripadvisor.co.uk/ShowTopic-g2079053-i21935-k6714934-o150-Talk_to_me_about_pin_trading-Disneyland_Paris_Ile_de_France.html",
+     "method": "search_snippet",
+     "note": "350 places, EUR 45 with brunch"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2016/february-2016-releases/tinker-bell",
+   "set_key": "dlp/2016/february-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tinker Bell (February 2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-we-love-paris-mary-animals-and-tink/",
+     "method": "search_snippet",
+     "note": "Descriptive name; a Tink design listed"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-we-love-paris-mary-animals-and-tink/",
+     "method": "search_snippet",
+     "note": "Named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-we-love-paris-mary-animals-and-tink/",
+     "method": "search_snippet",
+     "note": "Single design mentioned"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-02",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-we-love-paris-mary-animals-and-tink/",
+     "method": "search_snippet",
+     "note": "Feb 2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-we-love-paris-mary-animals-and-tink/",
+     "method": "search_snippet",
+     "note": "DLP lineup"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/february-2016-releases/mary-poppins",
+   "set_key": "dlp/2016/february-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mary Poppins (February 2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-we-love-paris-mary-animals-and-tink/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Mary Poppins",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-we-love-paris-mary-animals-and-tink/",
+     "method": "search_snippet",
+     "note": "Named; author calls it the standout"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-we-love-paris-mary-animals-and-tink/",
+     "method": "search_snippet",
+     "note": "Single pin mentioned"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-02",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-we-love-paris-mary-animals-and-tink/",
+     "method": "search_snippet",
+     "note": "Feb 2016 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-we-love-paris-mary-animals-and-tink/",
+     "method": "search_snippet",
+     "note": "DLP lineup"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/star-tours-last-trip-to-endor/starspeeder",
+   "set_key": "dlp/2016/star-tours-last-trip-to-endor",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Tours Last Trip to Endor",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-magical-memorabilia-last-trip-to-endor-pin/",
+     "method": "search_snippet",
+     "note": "Name from post title"
+    },
+    {
+     "field": "attraction",
+     "value": "Star Tours",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-magical-memorabilia-last-trip-to-endor-pin/",
+     "method": "search_snippet",
+     "note": "Marks original Star Tours closing 16 Mar 2016"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-magical-memorabilia-last-trip-to-endor-pin/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-magical-memorabilia-last-trip-to-endor-pin/",
+     "method": "search_snippet",
+     "note": "Limited to 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-magical-memorabilia-last-trip-to-endor-pin/",
+     "method": "search_snippet",
+     "note": "March 2016 poster"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-magical-memorabilia-last-trip-to-endor-pin/",
+     "method": "search_snippet",
+     "note": "2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-magical-memorabilia-last-trip-to-endor-pin/",
+     "method": "search_snippet",
+     "note": "DLP"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-magical-memorabilia-last-trip-to-endor-pin/",
+     "method": "search_snippet",
+     "note": "Single pin; shape said to evoke Starspeeder 3000"
+    },
+    {
+     "field": "characters",
+     "value": [],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-its-all-about-star-wars-endor-with-spring-and-okaf/",
+     "method": "search_snippet",
+     "note": "March post centres on Endor pin; no characters stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/march-2016-releases/alice-in-wonderland",
+   "set_key": "dlp/2016/march-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice in Wonderland limited pin (March 2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-its-all-about-star-wars-endor-with-spring-and-okaf/",
+     "method": "search_snippet",
+     "note": "Descriptive; a limited Alice pin listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-its-all-about-star-wars-endor-with-spring-and-okaf/",
+     "method": "search_snippet",
+     "note": "Described as limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-its-all-about-star-wars-endor-with-spring-and-okaf/",
+     "method": "search_snippet",
+     "note": "March 2016 lineup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-its-all-about-star-wars-endor-with-spring-and-okaf/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/march-2016-releases/aristocats",
+   "set_key": "dlp/2016/march-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Aristocats (March 2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-its-all-about-star-wars-endor-with-spring-and-okaf/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-its-all-about-star-wars-endor-with-spring-and-okaf/",
+     "method": "search_snippet",
+     "note": "March 2016 lineup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-its-all-about-star-wars-endor-with-spring-and-okaf/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/march-2016-releases/st-patricks-day",
+   "set_key": "dlp/2016/march-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "St Patrick's Day 2016",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-march-2016-pins",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-march-2016-pins",
+     "method": "search_snippet",
+     "note": "March 2016 lineup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-march-2016-pins",
+     "method": "search_snippet",
+     "note": "DLP"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-february-2016-its-all-about-star-wars-endor-with-spring-and-okaf/",
+     "method": "search_snippet",
+     "note": "Snippet mentions a single St Patrick's Day pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/star-wars-may-the-4th-2016/x-wing-pilot",
+   "set_key": "dlp/2016/star-wars-may-the-4th-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars X-Wing Pilot (May the 4th 2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "Author singles out the X-Wing Pilot pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "Run of 600"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-04",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "4 May"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "DLP"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "One of four pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/finding-dory-le-2016/dory",
+   "set_key": "dlp/2016/finding-dory-le-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Finding Dory limited edition",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Dory",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Uses the film's main publicity image"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "4th June LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-18",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Released 18 June"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-18",
+     "source_url": "https://salonmickey.wordpress.com/2016/05/30/june-2016-disneyland-paris-trading-pins/",
+     "method": "search_snippet",
+     "note": "LE Dory at Pueblo Trading Post 18 June"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "LEs sold there on release day"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/tsum-tsum-may-2016/olaf",
+   "set_key": "dlp/2016/tsum-tsum-may-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tsum Tsum Olaf",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Olaf",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "Olaf Tsum pin named"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-21",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "21 May"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "DLP"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "Olaf and Sven named as separate Tsum pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/tsum-tsum-may-2016/sven",
+   "set_key": "dlp/2016/tsum-tsum-may-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tsum Tsum Sven",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Sven",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "Sven Tsum pin named"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-21",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "21 May"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "DLP"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-may-2016-star-wars-chesh-fish-and-other-animals/",
+     "method": "search_snippet",
+     "note": "Olaf and Sven named as separate Tsum pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/june-2016-le/pinocchio",
+   "set_key": "dlp/2016/june-2016-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pinocchio limited edition (June 2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Descriptive; film named"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "June 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Release day sales"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "One of 3 P-film LEs"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/june-2016-le/peter-pan",
+   "set_key": "dlp/2016/june-2016-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Peter Pan limited edition (June 2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Descriptive; film named"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "June 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Release day sales"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "One of 3 P-film LEs"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/june-2016-le/mary-poppins",
+   "set_key": "dlp/2016/june-2016-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mary Poppins limited edition (June 2016)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Descriptive; film named"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "June 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Release day sales"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "One of 3 P-film LEs"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/my-dog-series/nana-wendy",
+   "set_key": "dlp/2016/my-dog-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "My Dog Nana and Wendy",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Nana",
+      "Wendy"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Both named for My Dog pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Nana",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "Dog of the series"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-for-june-2016-its-all-very-cute/",
+     "method": "search_snippet",
+     "note": "June 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/my-dog-series/max",
+   "set_key": "dlp/2016/my-dog-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "My Dog Max",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Max",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Max pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "700"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "EUR 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "July 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Exclusive there"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/my-dog-series/lady",
+   "set_key": "dlp/2016/my-dog-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "My Dog Lady",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Lady",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Lady"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "700"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "EUR 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-20",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "From 20 Aug"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Only there"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/my-dog-series/dug-karl",
+   "set_key": "dlp/2016/my-dog-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dug and Karl",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dug",
+      "Karl"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Dug and Karl pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Dug",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Dug"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Limited release run"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-01",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Among pins out 1 Oct"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "DLP"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Single pin showing both"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/my-dog-series/pluto",
+   "set_key": "dlp/2016/my-dog-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "My Dog Pluto",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive name"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Pluto"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-10",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "10 Dec"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "LE sales point"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/villains-series/shan-yu",
+   "set_key": "dlp/2016/villains-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Villains Shan Yu",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2016-marvel-more-marvel-and-some-disney-too/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "main_character",
+     "value": "Shan Yu",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2016-marvel-more-marvel-and-some-disney-too/",
+     "method": "search_snippet",
+     "note": "From Mulan"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2016-marvel-more-marvel-and-some-disney-too/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-23",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2016-marvel-more-marvel-and-some-disney-too/",
+     "method": "search_snippet",
+     "note": "23 July"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2016-marvel-more-marvel-and-some-disney-too/",
+     "method": "search_snippet",
+     "note": "DLP"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2016-marvel-more-marvel-and-some-disney-too/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/villains-series/captain-hook",
+   "set_key": "dlp/2016/villains-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Villains Captain Hook",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "main_character",
+     "value": "Captain Hook",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Hook"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "700"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "EUR 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-13",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "From 13 Aug"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Only there"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/villains-series/hans",
+   "set_key": "dlp/2016/villains-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Villains Hans",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "main_character",
+     "value": "Hans",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Frozen villain"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-10",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "10 Dec"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "LE sales point"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/avengers-booster-july-2016/iron-man-helmet",
+   "set_key": "dlp/2016/avengers-booster-july-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Avengers icon Iron Man helmet",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive; round icon pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Iron Man",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Item named"
+    },
+    {
+     "field": "visual_description",
+     "value": "Round pin showing Iron Man head/helmet",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-02",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "2 July"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Each item a separate pin in 4-pin booster"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/avengers-booster-july-2016/hulk-fist",
+   "set_key": "dlp/2016/avengers-booster-july-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Avengers icon Hulk fist",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive; round icon pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Hulk",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Item named"
+    },
+    {
+     "field": "visual_description",
+     "value": "Round pin showing Hulk fist",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-02",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "2 July"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Each item a separate pin in 4-pin booster"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/avengers-booster-july-2016/thor-hammer",
+   "set_key": "dlp/2016/avengers-booster-july-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Avengers icon Thor hammer",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive; round icon pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Thor",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Item named"
+    },
+    {
+     "field": "visual_description",
+     "value": "Round pin showing Thor hammer",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-02",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "2 July"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Each item a separate pin in 4-pin booster"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/avengers-booster-july-2016/captain-america-shield",
+   "set_key": "dlp/2016/avengers-booster-july-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Avengers icon Captain America shield",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive; round icon pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Captain America",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Item named"
+    },
+    {
+     "field": "visual_description",
+     "value": "Round pin showing Cap shield",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-02",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "2 July"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Each item a separate pin in 4-pin booster"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/guardians-of-the-galaxy-july-2016/rocket",
+   "set_key": "dlp/2016/guardians-of-the-galaxy-july-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Guardians of the Galaxy Rocket",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "main_character",
+     "value": "Rocket",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Each pin shows one character"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-09",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2016-marvel-more-marvel-and-some-disney-too/",
+     "method": "search_snippet",
+     "note": "9 July"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Separate rectangular pin per character"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/guardians-of-the-galaxy-july-2016/groot",
+   "set_key": "dlp/2016/guardians-of-the-galaxy-july-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Guardians of the Galaxy Groot",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "main_character",
+     "value": "Groot",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Each pin shows one character"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-09",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2016-marvel-more-marvel-and-some-disney-too/",
+     "method": "search_snippet",
+     "note": "9 July"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Separate rectangular pin per character"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/guardians-of-the-galaxy-july-2016/star-lord",
+   "set_key": "dlp/2016/guardians-of-the-galaxy-july-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Guardians of the Galaxy Star-Lord",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "main_character",
+     "value": "Star-Lord",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Each pin shows one character"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-09",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2016-marvel-more-marvel-and-some-disney-too/",
+     "method": "search_snippet",
+     "note": "9 July"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Separate rectangular pin per character"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/bastille-day-2016/tinker-bell",
+   "set_key": "dlp/2016/bastille-day-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tinker Bell 14 Juillet 2016",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Text on pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Tink"
+    },
+    {
+     "field": "visual_description",
+     "value": "Rosette in French tricolour with Tink and 14 Juillet 2016 text",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2016-marvel-more-marvel-and-some-disney-too/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "9 July"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "DLP"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-kollektion-juli-2016/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/christmas-oe-august-2016/mickey-noel",
+   "set_key": "dlp/2016/christmas-oe-august-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Noel",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Pin name per source"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-06",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "6 Aug"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/christmas-oe-august-2016/stitch-noel",
+   "set_key": "dlp/2016/christmas-oe-august-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Noel",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Pin name per source"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Named"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-06",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "6 Aug"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-kollektion-august-2016",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/alice-in-wonderland-65th/alice-doorknob",
+   "set_key": "dlp/2016/alice-in-wonderland-65th",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice in Wonderland 65th anniversary Eat Me Drink Me",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "Descriptive, from pin text"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice",
+      "Doorknob"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "Alice and the Doorknob"
+    },
+    {
+     "field": "main_character",
+     "value": "Alice",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "Alice"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "original_price",
+     "value": 15.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "GBP 15.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "Pounds"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "9 Aug 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris and online",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "Made for DLP and online"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-wonderland-65th-paris-pin",
+     "method": "search_snippet",
+     "note": "Single pin with two characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/half-marathon-weekend-2016/5k-i-did-it-2016",
+   "set_key": "dlp/2016/half-marathon-weekend-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "runDisney Disneyland Paris 5K I Did It 2016",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "All LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Sep 2016"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Inaugural event"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/half-marathon-weekend-2016/21k-i-did-it-2016",
+   "set_key": "dlp/2016/half-marathon-weekend-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "runDisney Disneyland Paris 21K I Did It 2016",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "All LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Sep 2016"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Inaugural event"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/half-marathon-weekend-2016/5k-2016",
+   "set_key": "dlp/2016/half-marathon-weekend-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "runDisney Disneyland Paris 5K 2016",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "All LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Sep 2016"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Inaugural event"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/half-marathon-weekend-2016/inaugural-5k-2016",
+   "set_key": "dlp/2016/half-marathon-weekend-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "runDisney Disneyland Paris Inaugural 5K 2016",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "All LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Sep 2016"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Inaugural event"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/half-marathon-weekend-2016/castle-to-chateau-2016",
+   "set_key": "dlp/2016/half-marathon-weekend-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "runDisney Castle to Chateau 2016",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Name as listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "All LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Sep 2016"
+    },
+    {
+     "field": "release_year",
+     "value": 2016,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Inaugural event"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-half-marathon-weekend-2016-pins/",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/halloween-2016/halloween-pin",
+   "set_key": "dlp/2016/halloween-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween 2016 pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Neutral placeholder name"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-15",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "15 Oct release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "DLP"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/december-3-2016-releases/rogue-one",
+   "set_key": "dlp/2016/december-3-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rogue One limited edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "600"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "EUR 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "3 Dec"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Only there"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/december-3-2016-releases/big-ben",
+   "set_key": "dlp/2016/december-3-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Big Ben",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "600"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "3 Dec"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "LE sales point"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/december-3-2016-releases/joyeux-noel",
+   "set_key": "dlp/2016/december-3-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Joyeux Noel",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "600"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "3 Dec"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "LE sales point"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/december-3-2016-releases/mickey-chateau-2017",
+   "set_key": "dlp/2016/december-3-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Chateau DLP 2017",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Sorcerer-style Mickey"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey as wizard before Sleeping Beauty Castle",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "3 Dec"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/christmas-2016-le/beauty-beast-christmas-hat",
+   "set_key": "dlp/2016/christmas-2016-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Beauty and the Beast character in Christmas hat",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "600"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "EUR 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/christmas-2016-le/fab-four-christmas",
+   "set_key": "dlp/2016/christmas-2016-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey and friends Christmas",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse",
+      "Goofy",
+      "Donald Duck"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Four characters on one pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Four characters before park Christmas backdrop",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "600"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "EUR 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Single pin showing group"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/christmas-2016-le/mary-poppins-winter",
+   "set_key": "dlp/2016/christmas-2016-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mary Poppins winter (Christmas tree)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "main_character",
+     "value": "Mary Poppins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Mary Poppins"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "600"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "EUR 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/star-wars-day-december-2016/tie-fighter",
+   "set_key": "dlp/2016/star-wars-day-december-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "TIE Fighter",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Unlimited per day summary"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "EUR 8.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-10",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "10 Dec"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/december-10-2016-le/25th-anniversary-countdown",
+   "set_key": "dlp/2016/december-10-2016-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "25th anniversary countdown",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-10",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "10 Dec"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/december-10-2016-le/tinker-bell-bonne-annee-2017",
+   "set_key": "dlp/2016/december-10-2016-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tinker Bell Bonne Annee 2017",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Descriptive"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Tink"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "600"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "EUR 15.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-12-10",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "10 Dec"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2016/february-2016-releases",
+   "field": "members",
+   "searched": "ded_feb snippet",
+   "note": "Zootopia and Inside Out releases also listed; number and designs of those pins not given"
+  },
+  {
+   "key": "dlp/2016/february-2016-releases",
+   "field": "members",
+   "searched": "ded_feb title",
+   "note": "Post title also mentions a We Love Paris theme; no pin detail in snippet"
+  },
+  {
+   "key": "dlp/2016/january-2016-releases",
+   "field": "members",
+   "searched": "DPB Jan 2016 preview; dein-dlrp/ded queries",
+   "note": "DPB says Jan lineup has Marvel, Mickey & Minnie, Walt Disney themes; no pins named. PTN 29 Jan 2016, no event pin named"
+  },
+  {
+   "key": "dlp/2016/star-tours-last-trip-to-endor/starspeeder",
+   "field": "original_price",
+   "searched": "ded_endor; 1 query",
+   "note": "No price in snippets"
+  },
+  {
+   "key": "dlp/2016/march-2016-releases/alice-in-wonderland",
+   "field": "edition_size",
+   "searched": "ded_mar snippet",
+   "note": "Edition size and design not in snippet"
+  },
+  {
+   "key": "dlp/2016/march-2016-releases/aristocats",
+   "field": "characters",
+   "searched": "ded_mar snippet",
+   "note": "Which Aristocats characters appear not stated"
+  },
+  {
+   "key": "dlp/2016/march-2016-releases/st-patricks-day",
+   "field": "edition_size",
+   "searched": "DPB + ded March snippets",
+   "note": "Edition size, price and characters not given"
+  },
+  {
+   "key": "dlp/2016/easter-eggs-2016",
+   "field": "format",
+   "searched": "DPB + ded March snippets",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); count and characters of Easter egg pins not given"
+  },
+  {
+   "key": "dlp/2016/march-2016-releases",
+   "field": "members",
+   "searched": "ded_mar title",
+   "note": "Title mentions Spring and Olaf pins; no detail in snippet. PTN 25 Mar 2016 Beaver Creek Tavern, no event pin named"
+  },
+  {
+   "key": "dlp/2016/star-wars-may-the-4th-2016",
+   "field": "members",
+   "searched": "sm_may, ded_may; 2 queries",
+   "note": "Other 3 Star Wars pin designs not named in snippets"
+  },
+  {
+   "key": "dlp/2016/star-wars-may-the-4th-2016/x-wing-pilot",
+   "field": "characters",
+   "searched": "ded_may",
+   "note": "Which pilot (e.g. Luke) not stated for the DLP pin"
+  },
+  {
+   "key": "dlp/2016/finding-dory-booster-may-2016",
+   "field": "expected_pin_count",
+   "searched": "ded_may vs sm_may",
+   "note": "hold: 9-pin count may include singles alongside booster; Salon Mickey lists pins plus a lanyard, no count"
+  },
+  {
+   "key": "dlp/2016/finding-dory-booster-may-2016",
+   "field": "members",
+   "searched": "ded_may; 2 queries",
+   "note": "Booster members not named beyond Bruce pins"
+  },
+  {
+   "key": "dlp/2016/finding-dory-le-2016/dory",
+   "field": "release_date",
+   "searched": "ded_may vs ded_jun/sm_jun",
+   "note": "hold: May post cites an LE Dory on 21 May; June posts say 18 June. Same pin rescheduled or two pins unclear"
+  },
+  {
+   "key": "dlp/2016/tsum-tsum-may-2016",
+   "field": "members",
+   "searched": "sm_may, ded_may",
+   "note": "Third Tsum Tsum pin not named"
+  },
+  {
+   "key": "dlp/2016/may-2016-releases",
+   "field": "members",
+   "searched": "ded_may title",
+   "note": "Title mentions a Cheshire Cat pin; no detail in snippet. PTN 27 May 2016 Beaver Creek Tavern, no event pin named"
+  },
+  {
+   "key": "dlp/2016/june-2016-le/pinocchio",
+   "field": "edition_size",
+   "searched": "ded_jun; 2 queries",
+   "note": "Edition size, price, exact date and characters not given"
+  },
+  {
+   "key": "dlp/2016/june-2016-le/peter-pan",
+   "field": "edition_size",
+   "searched": "ded_jun; 2 queries",
+   "note": "Edition size, price, exact date and characters not given"
+  },
+  {
+   "key": "dlp/2016/june-2016-le/mary-poppins",
+   "field": "edition_size",
+   "searched": "ded_jun; 2 queries",
+   "note": "Edition size, price, exact date and characters not given"
+  },
+  {
+   "key": "dlp/2016/june-2016-le/mary-poppins",
+   "field": "pin_name",
+   "searched": "ded_jun",
+   "note": "hold: June also has a Mary Poppins summer pin; may be the same pin as this LE"
+  },
+  {
+   "key": "dlp/2016/june-2016-le",
+   "field": "members",
+   "searched": "ded_jun",
+   "note": "4th member is Finding Dory LE (18 June), recorded under dlp/2016/finding-dory-le-2016/dory"
+  },
+  {
+   "key": "dlp/2016/june-2016-releases",
+   "field": "members",
+   "searched": "DPB Jun; ded_jun",
+   "note": "Tsum Tsum and Mary Poppins summer pins mentioned; not named. Pin event 25 Jun 2016 Hotel New York, no event pin named"
+  },
+  {
+   "key": "dlp/2016/my-dog-series/nana-wendy",
+   "field": "pin_structure",
+   "searched": "ded_jun",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs)"
+  },
+  {
+   "key": "dlp/2016/my-dog-series/max",
+   "field": "characters",
+   "searched": "dd_jul",
+   "note": "Which Max (e.g. Goof Troop or Little Mermaid) not stated"
+  },
+  {
+   "key": "dlp/2016/my-dog-series/dug-karl",
+   "field": "set_key",
+   "searched": "ded_oct title",
+   "note": "hold: My Dog series link rests on post title (Dug Dog) only; may be a 2017-dated pin instead. Edition size not given"
+  },
+  {
+   "key": "dlp/2016/my-dog-series/pluto",
+   "field": "edition_size",
+   "searched": "dd_dec",
+   "note": "Snippet gives 600 or 700 across the 10 Dec LEs without matching each pin"
+  },
+  {
+   "key": "dlp/2016/villains-series/shan-yu",
+   "field": "edition_size",
+   "searched": "ded_jul",
+   "note": "Edition size and price not given"
+  },
+  {
+   "key": "dlp/2016/villains-series/hans",
+   "field": "edition_size",
+   "searched": "dd_dec",
+   "note": "600 or 700 per snippet, not matched to this pin"
+  },
+  {
+   "key": "dlp/2016/guardians-of-the-galaxy-july-2016",
+   "field": "format",
+   "searched": "dd_jul",
+   "note": "Sold as booster or as singles not stated; price not given"
+  },
+  {
+   "key": "dlp/2016/bastille-day-2016/tinker-bell",
+   "field": "edition_size",
+   "searched": "dd_jul; 2 queries",
+   "note": "Conflicting snippet summaries (500 vs not stated); edition size unconfirmed"
+  },
+  {
+   "key": "dlp/2016/july-2016-releases",
+   "field": "members",
+   "searched": "ded_jul",
+   "note": "PTN 29 Jul 2016 Beaver Creek Tavern; no event pin named"
+  },
+  {
+   "key": "dlp/2016/christmas-oe-august-2016",
+   "field": "members",
+   "searched": "dd_aug",
+   "note": "Christmas booster also released 6 Aug; contents, count and price not given"
+  },
+  {
+   "key": "dlp/2016/alice-in-wonderland-65th/alice-doorknob",
+   "field": "release_location",
+   "searched": "dpb_alice; 2 queries",
+   "note": "hold: post says DLP exclusive yet also online/Disney Store UK surprise release; GBP price suggests UK store. Confirm line (dlp vs dsuk)"
+  },
+  {
+   "key": "dlp/2016/half-marathon-weekend-2016/5k-i-did-it-2016",
+   "field": "edition_size",
+   "searched": "dpb_hm; 1 query",
+   "note": "Edition size and price not in snippet"
+  },
+  {
+   "key": "dlp/2016/half-marathon-weekend-2016/21k-i-did-it-2016",
+   "field": "edition_size",
+   "searched": "dpb_hm; 1 query",
+   "note": "Edition size and price not in snippet"
+  },
+  {
+   "key": "dlp/2016/half-marathon-weekend-2016/5k-2016",
+   "field": "edition_size",
+   "searched": "dpb_hm; 1 query",
+   "note": "Edition size and price not in snippet"
+  },
+  {
+   "key": "dlp/2016/half-marathon-weekend-2016/inaugural-5k-2016",
+   "field": "edition_size",
+   "searched": "dpb_hm; 1 query",
+   "note": "Edition size and price not in snippet"
+  },
+  {
+   "key": "dlp/2016/half-marathon-weekend-2016/castle-to-chateau-2016",
+   "field": "edition_size",
+   "searched": "dpb_hm; 1 query",
+   "note": "Edition size and price not in snippet"
+  },
+  {
+   "key": "dlp/2016/half-marathon-weekend-2016/inaugural-5k-2016",
+   "field": "pin_name",
+   "searched": "dpb_hm",
+   "note": "hold: may duplicate the 5K 2016 pin; snippet lists both names"
+  },
+  {
+   "key": "dlp/2016/2017-dated-pins-october-2016",
+   "field": "members",
+   "searched": "ded_oct, mdlp_oct; 2 queries",
+   "note": "2017-dated designs not named (Dug and Karl may be one of the 1 Oct five)"
+  },
+  {
+   "key": "dlp/2016/halloween-2016/halloween-pin",
+   "field": "characters",
+   "searched": "ded_oct, dd/magicdlp Oct queries",
+   "note": "Design, characters, edition not in snippets"
+  },
+  {
+   "key": "dlp/2016/october-2016-releases",
+   "field": "members",
+   "searched": "mdlp_oct; ded_oct",
+   "note": "Oct flyer also has Christmas pins (unnamed). PTN 28 Oct 2016; pin event Hotel New York end Oct; no event pins named"
+  },
+  {
+   "key": "dlp/2016/moana-november-2016",
+   "field": "members",
+   "searched": "dd_nov, dpb_nov; 1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); designs not named"
+  },
+  {
+   "key": "dlp/2016/november-2016-releases",
+   "field": "members",
+   "searched": "dpb_nov",
+   "note": "Frozen pins also listed, unnamed. Pin trading day 25 Nov 2016 Hotel Cheyenne; no event pin named"
+  },
+  {
+   "key": "dlp/2016/december-3-2016-releases/rogue-one",
+   "field": "edition_type",
+   "searched": "dd_dec",
+   "note": "hold: body text also lists a hexagonal Rogue One logo pin unlimited at EUR 12.99; may or may not be this pin"
+  },
+  {
+   "key": "dlp/2016/december-3-2016-releases/big-ben",
+   "field": "characters",
+   "searched": "dd_dec",
+   "note": "Characters not stated"
+  },
+  {
+   "key": "dlp/2016/december-3-2016-releases/joyeux-noel",
+   "field": "characters",
+   "searched": "dd_dec",
+   "note": "Characters not stated"
+  },
+  {
+   "key": "dlp/2016/christmas-2016-le/beauty-beast-christmas-hat",
+   "field": "main_character",
+   "searched": "dd_dec",
+   "note": "Which character not stated in snippet; exact release date not stated"
+  },
+  {
+   "key": "dlp/2016/christmas-2016-le/fab-four-christmas",
+   "field": "release_date",
+   "searched": "dd_dec",
+   "note": "Exact release day not stated"
+  },
+  {
+   "key": "dlp/2016/christmas-2016-le/mary-poppins-winter",
+   "field": "release_date",
+   "searched": "dd_dec",
+   "note": "Exact release day not stated"
+  },
+  {
+   "key": "dlp/2016/christmas-2016-le",
+   "field": "members",
+   "searched": "dd_dec vs ded_dec",
+   "note": "hold: Joyeux Noel (3 Dec) may overlap with one of these Christmas LEs; dedicatedtodlp notes 2 Christmas Eve releases"
+  },
+  {
+   "key": "dlp/2016/star-wars-day-december-2016",
+   "field": "members",
+   "searched": "dd_dec, ded_dec; 2 queries",
+   "note": "Singles EUR 8.99 not named. ded_dec says 10 pins that day, consistent with 6+4"
+  },
+  {
+   "key": "dlp/2016/star-wars-day-december-2016/tie-fighter",
+   "field": "set_key",
+   "searched": "dd_dec",
+   "note": "hold: mentioned in body text only, not overview; link to 10 Dec singles rests on price"
+  },
+  {
+   "key": "dlp/2016/oe-set/rogue-one-trooper-helmets-booster",
+   "field": "members",
+   "searched": "dd_dec",
+   "note": "Four trooper helmets not individually named"
+  },
+  {
+   "key": "dlp/2016/december-10-2016-le/25th-anniversary-countdown",
+   "field": "edition_size",
+   "searched": "dd_dec",
+   "note": "600 or 700, not matched; design not given"
+  },
+  {
+   "key": "dlp/2016/december-10-2016-le",
+   "field": "members",
+   "searched": "dd_dec",
+   "note": "Villains Hans and My Dog Pluto (also 10 Dec LEs) recorded under their series sets"
+  },
+  {
+   "key": "dlp/2016/bijou-collection-december-2016",
+   "field": "members",
+   "searched": "dd_dec, ded_dec",
+   "note": "Two Bijou pin designs not named"
+  },
+  {
+   "key": "dlp/2016/le-reveillon-de-belle-event-2016",
+   "field": "members",
+   "searched": "ta, dd_dec, ded_dec; 2 queries",
+   "note": "Event pins not described; ded_dec says BatB event pin sold out. Artist Laurent Predalle signing"
+  },
+  {
+   "key": "dlp/2016",
+   "field": "lines",
+   "searched": "all queries",
+   "note": "lead: no Disney Village / Disney Store DLP exclusives or April/September monthly flyers found beyond above; check dein-dlrp Feb/Apr/Sep/Oct/Nov 2016 posts"
+  },
+  {
+   "key": "dlp/2016",
+   "field": "sources",
+   "searched": "scope",
+   "note": "Some facts in pinpics/pintradingdb not consulted (excluded); no claims taken from excluded sites"
+  },
+  {
+   "key": "dlp/2016/christmas-2016-le/fab-four-christmas",
+   "field": "pin_structure",
+   "searched": "packet review",
+   "note": "hold: confirm pin structure; recorded as one pin showing Mickey, Minnie, Goofy and Donald but no source states it is one pin rather than a set"
+  }
+ ],
+ "discovery_notes": "DLP 2016 backfill; 30 WebSearch calls, all search_snippet (snippets were search-tool summaries). Main sources: Dedicated to DLP, dein-dlrp.de, Disney Pins Blog, Salon Mickey. No prior dlp/2016 keys existed. Monthly-release groupings used as set keys; series (My Dog, Villains) grouped across months. Dec 2016 2017-dated pins kept under 2016 (release year)."
+}

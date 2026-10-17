@@ -1,6 +1,6 @@
 {
  "source": "staging_payload.json",
- "git_commit": "34ac2e0a4bfa",
+ "git_commit": "db301059437c",
  "generated": "2026-10-17",
  "runs": [
   {
@@ -15,10 +15,10 @@
   },
   {
    "file": "run_02_wdw-to-dlr.json",
-   "pins": 1160,
-   "sets": 739,
-   "evidence": 9086,
-   "bytes": 3787270,
+   "pins": 1166,
+   "sets": 734,
+   "evidence": 9133,
+   "bytes": 3811439,
    "lines": [
     "wdw",
     "dlr"
@@ -26,10 +26,10 @@
   },
   {
    "file": "run_03_dlr-to-dsuk.json",
-   "pins": 1175,
-   "sets": 714,
-   "evidence": 9517,
-   "bytes": 4068693,
+   "pins": 1181,
+   "sets": 719,
+   "evidence": 9564,
+   "bytes": 4090652,
    "lines": [
     "dlr",
     "dlp",
@@ -39,9 +39,9 @@
   {
    "file": "run_04_dsuk-to-lic.json",
    "pins": 1324,
-   "sets": 569,
-   "evidence": 10471,
-   "bytes": 4446956,
+   "sets": 576,
+   "evidence": 10461,
+   "bytes": 4444230,
    "lines": [
     "dsuk",
     "dsus",
@@ -53,20 +53,20 @@
   },
   {
    "file": "run_05_lic.json",
-   "pins": 1078,
-   "sets": 529,
-   "evidence": 12364,
-   "bytes": 4819949,
+   "pins": 1068,
+   "sets": 532,
+   "evidence": 12392,
+   "bytes": 4819739,
    "lines": [
     "lic"
    ]
   },
   {
    "file": "run_06_lic.json",
-   "pins": 1079,
-   "sets": 453,
-   "evidence": 10515,
-   "bytes": 4426518,
+   "pins": 1113,
+   "sets": 462,
+   "evidence": 10788,
+   "bytes": 4541619,
    "lines": [
     "lic"
    ]

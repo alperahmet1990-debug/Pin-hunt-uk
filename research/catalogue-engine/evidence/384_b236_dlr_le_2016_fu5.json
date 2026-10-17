@@ -1,0 +1,1640 @@
+{
+ "packet_id": "backfill-b236-dlr-le-2016-fu5",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b236",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+   "title": "New Disney Pins March 2016 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-03"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+   "title": "New Disney Pins April 2016 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-04"
+  },
+  {
+   "url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+   "title": "Finding Nemo: Character Connection Limited Edition Mystery Pin Collection",
+   "publisher": "Dan the Pixar Fan",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-05"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2016-week-1",
+   "title": "New Disney Pins August 2016 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-08"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+   "title": "New Disney Pins September 2016 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-09"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-half-marathon-weekend-2016-pins",
+   "title": "Star Wars Half Marathon Weekend 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-01"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+   "title": "New Disney Pins November 2016 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-california-adventure-15th-anniversary-pins/",
+   "title": "Disney California Adventure 15th Anniversary Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-02"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2016/character-connection-alice-puzzle-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Character Connection - Alice in Wonderland puzzle mystery collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "next puzzle collection in the Character Connection series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "LE; includes chasers with lower edition size"
+    },
+    {
+     "field": "format",
+     "value": "mystery box puzzle collection with chasers",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "mystery boxes; chaser pins at a lower edition"
+    },
+    {
+     "field": "price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "USD 12.95 per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03-17",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "released 17 Mar 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2016-week-3",
+     "method": "search_snippet",
+     "note": "shared DL+WDW release"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Character Connection - Finding Nemo puzzle mystery collection",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Finding Nemo entry in the Character Connection puzzle series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "LE with chasers"
+    },
+    {
+     "field": "format",
+     "value": "mystery box, one pin per box; interlocking puzzle pieces",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "DPB: one pin per box; fan blog: 12 interconnecting puzzle pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "10 common characters plus 2 chasers"
+    },
+    {
+     "field": "price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "USD 12.95 per box (fan blog says 12.99 - conflict)"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "21 Apr 2016; fan blog agrees"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "shared DL+WDW release"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/star-wars-pin-of-the-month",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Pin of the Month (Disney Parks)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "monthly Star Wars collection at Disney Parks"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE 6,000 for the Sep entry"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/dvc-25-years",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Vacation Club 25 Years member pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "DVC member-exclusive single pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/star-wars-half-marathon-weekend-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Half Marathon Weekend 2016 pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-half-marathon-weekend-2016-pins",
+     "method": "search_snippet",
+     "note": "runDisney expo pins for the Disneyland weekend"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-half-marathon-weekend-2016-pins",
+     "method": "search_snippet",
+     "note": "medal replica and race pins described as limited release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort (runDisney expo)",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-wars-half-marathon-weekend-2016-pins",
+     "method": "search_snippet",
+     "note": "sold at the runDisney expo"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/viva-navidad-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Viva Navidad! 2016 pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "holiday pins for DCA Viva Navidad"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "DLR pin releases section"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/dca-15th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney California Adventure 15th Anniversary cast member pins",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-15th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "CM pin releases for the park's 15th anniversary"
+    },
+    {
+     "field": "edition_type",
+     "value": "cast member exclusive",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-15th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "CM releases; one described as a limited edition CM exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-02",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-15th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "tied to the 8 Feb 2016 anniversary; exact sale dates not given"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-15th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "DCA anniversary, cast member pins"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/anchor",
+   "set_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Character Connection Finding Nemo - Anchor",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "named among the 10 common designs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Anchor"
+     ],
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Anchor"
+    },
+    {
+     "field": "main_character",
+     "value": "Anchor",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Anchor"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "one puzzle-piece design per character with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "commons LE 900 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 900,
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "LE 900 each common"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "set released at Disney Parks 21 Apr 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/nemo",
+   "set_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Character Connection Finding Nemo - Nemo",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "named among the 10 common designs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Nemo"
+     ],
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Nemo"
+    },
+    {
+     "field": "main_character",
+     "value": "Nemo",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Nemo"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "one puzzle-piece design per character with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "commons LE 900 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 900,
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "LE 900 each common"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "set released at Disney Parks 21 Apr 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/marlin",
+   "set_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Character Connection Finding Nemo - Marlin",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "named among the 10 common designs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Marlin"
+     ],
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Marlin"
+    },
+    {
+     "field": "main_character",
+     "value": "Marlin",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Marlin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "one puzzle-piece design per character with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "commons LE 900 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 900,
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "LE 900 each common"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "set released at Disney Parks 21 Apr 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/squirt",
+   "set_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Character Connection Finding Nemo - Squirt",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "named among the 10 common designs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Squirt"
+     ],
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Squirt"
+    },
+    {
+     "field": "main_character",
+     "value": "Squirt",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Squirt"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "one puzzle-piece design per character with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "commons LE 900 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 900,
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "LE 900 each common"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "set released at Disney Parks 21 Apr 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/tad",
+   "set_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Character Connection Finding Nemo - Tad",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "named among the 10 common designs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tad"
+     ],
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Tad"
+    },
+    {
+     "field": "main_character",
+     "value": "Tad",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Tad"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "one puzzle-piece design per character with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "commons LE 900 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 900,
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "LE 900 each common"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "set released at Disney Parks 21 Apr 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/pearl",
+   "set_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Character Connection Finding Nemo - Pearl",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "named among the 10 common designs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pearl"
+     ],
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Pearl"
+    },
+    {
+     "field": "main_character",
+     "value": "Pearl",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Pearl"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "one puzzle-piece design per character with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "commons LE 900 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 900,
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "LE 900 each common"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "set released at Disney Parks 21 Apr 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/dory",
+   "set_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Character Connection Finding Nemo - Dory",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "named among the 10 common designs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dory"
+     ],
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Dory"
+    },
+    {
+     "field": "main_character",
+     "value": "Dory",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Dory"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "one puzzle-piece design per character with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "commons LE 900 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 900,
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "LE 900 each common"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "set released at Disney Parks 21 Apr 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/crush",
+   "set_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Character Connection Finding Nemo - Crush",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "named among the 10 common designs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Crush"
+     ],
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Crush"
+    },
+    {
+     "field": "main_character",
+     "value": "Crush",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Crush"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "one puzzle-piece design per character with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "commons LE 900 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 900,
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "LE 900 each common"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "set released at Disney Parks 21 Apr 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/sheldon",
+   "set_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Character Connection Finding Nemo - Sheldon",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "named among the 10 common designs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sheldon"
+     ],
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Sheldon"
+    },
+    {
+     "field": "main_character",
+     "value": "Sheldon",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Sheldon"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "one puzzle-piece design per character with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "commons LE 900 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 900,
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "LE 900 each common"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "set released at Disney Parks 21 Apr 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/bruce",
+   "set_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Character Connection Finding Nemo - Bruce",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "named among the 10 common designs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bruce"
+     ],
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Bruce"
+    },
+    {
+     "field": "main_character",
+     "value": "Bruce",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Bruce"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "one puzzle-piece design per character with its own edition"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "commons LE 900 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 900,
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "LE 900 each common"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "set released at Disney Parks 21 Apr 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/mr-ray-chaser",
+   "set_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Character Connection Finding Nemo - Mr. Ray (chaser)",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "named as one of two chasers"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mr. Ray"
+     ],
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Mr. Ray"
+    },
+    {
+     "field": "main_character",
+     "value": "Mr. Ray",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Mr. Ray"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "individual chaser design"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "chaser"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "chasers LE 600 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "LE 600 each chaser"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "set released 21 Apr 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/chum-chaser",
+   "set_key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Character Connection Finding Nemo - Chum (chaser)",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "named as one of two chasers"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chum"
+     ],
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Chum"
+    },
+    {
+     "field": "main_character",
+     "value": "Chum",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "Chum"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "individual chaser design"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "chaser"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "chasers LE 600 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "LE 600 each chaser"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "http://www.danthepixarfan.com/2016/05/finding-nemo-character-connection.html",
+     "method": "search_snippet",
+     "note": "set released 21 Apr 2016"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/piece-of-disneyland-resort-history/autopia",
+   "set_key": "dlr/2016/piece-of-disneyland-resort-history",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Piece of Disneyland Resort History - Autopia",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2016-week-1",
+     "method": "search_snippet",
+     "note": "contains a piece of the Autopia attraction"
+    },
+    {
+     "field": "attraction",
+     "value": "Autopia",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2016-week-1",
+     "method": "search_snippet",
+     "note": "Autopia"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2016-week-1",
+     "method": "search_snippet",
+     "note": "single PODH pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2016-week-1",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2016-week-1",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-08-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2016-week-1",
+     "method": "search_snippet",
+     "note": "available at DLR 4 Aug 2016; first DL PODH pin of 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2016-week-1",
+     "method": "search_snippet",
+     "note": "DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/star-wars-pin-of-the-month/mustafar",
+   "set_key": "dlr/2016/star-wars-pin-of-the-month",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars Pin of the Month - Mustafar",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "fifth pin in the monthly series"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "single monthly pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 6000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE 6,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "available 8 Sep 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/dvc-25-years/mickey-hinged",
+   "set_key": "dlr/2016/dvc-25-years",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Vacation Club 25 Years - Mickey (hinged)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "member exclusive celebrating 25 years"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "single hinged pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE, DVC members only"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "listed in the week of 4-10 Sep 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2016-week-2",
+     "method": "search_snippet",
+     "note": "shared DLR+WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/viva-navidad-2016/jose-jumbo",
+   "set_key": "dlr/2016/viva-navidad-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Viva Navidad! 2016 Jumbo - Jose Carioca",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "holiday jumbo with a ribbon element"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "José Carioca"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Jose from The Three Caballeros"
+    },
+    {
+     "field": "main_character",
+     "value": "José Carioca",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "Jose"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "single jumbo pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "available at DLR 10 Nov 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/viva-navidad-2016/poinsettia-hinged",
+   "set_key": "dlr/2016/viva-navidad-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Viva Navidad! 2016 - poinsettia hinged pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "poinsettia-shaped hinged pin reading Viva Navidad"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "single hinged pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "listed in the same Nov 2016 wk2 post"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/dca-15th-anniversary/downtown-disney-grand-californian",
+   "set_key": "dlr/2016/dca-15th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "DCA 15th Anniversary - Downtown Disney and Grand Californian",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-15th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "third CM pin features Downtown Disney and the Grand Californian Hotel"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-15th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "single CM pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-02",
+     "source_url": "https://disneypinsblog.com/disney-california-adventure-15th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "anniversary month"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2016/character-connection-alice-puzzle-mystery",
+   "field": "members",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold: mystery designs not individually confirmed - 8 commons + 2 chasers (Queen, Cheshire) named only by reseller yourwdwstore; no members recorded"
+  },
+  {
+   "key": "dlr/2016/character-connection-alice-puzzle-mystery",
+   "field": "expected_pin_count",
+   "searched": "follow-up B236, 1 query",
+   "note": "10 pins (8 LE 1,100 + 2 LE 600 chasers) stated only by a reseller; not recorded"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery",
+   "field": "price",
+   "searched": "follow-up B236, 2 queries",
+   "note": "conflict: DPB USD 12.95 per box vs fan blog USD 12.99; DPB used"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery",
+   "field": "release_date",
+   "searched": "follow-up B236, 2 queries",
+   "note": "resolved for this cell: DPB and fan blog give 21 Apr 2016; a reseller's 21 Jan 2016 not used (OE fu2 lead closed)"
+  },
+  {
+   "key": "dlr/2016/disneyland-60-mystery-2016",
+   "field": "release_conflict",
+   "searched": "follow-up B236, 1 query",
+   "note": "DPB Apr wk3 also lists the Nemo Character Connection box at USD 12.95 on 21 Apr; check the fu3 Apr 21 60th mystery entry is not this set"
+  },
+  {
+   "key": "dlr/2016/viva-navidad-2016/poinsettia-hinged",
+   "field": "release_date",
+   "searched": "follow-up B236, 1 query",
+   "note": "exact date not tied to this pin in snippet; jumbo dated 10 Nov 2016 in same post"
+  },
+  {
+   "key": "dlr/2016/viva-navidad-2016/poinsettia-hinged",
+   "field": "release_location",
+   "searched": "follow-up B236, 1 query",
+   "note": "DLR placement inferred from the post's DLR section via summary; confirm"
+  },
+  {
+   "key": "dlr/2016/star-wars-half-marathon-weekend-2016",
+   "field": "members",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold: confirm pin structure - medal replica pins, 5K/10K/Half race pins, weekend pin, Rebel Challenge named generically; counts and editions not given"
+  },
+  {
+   "key": "dlr/2016/star-wars-half-marathon-weekend-2016",
+   "field": "release_date",
+   "searched": "follow-up B236, 1 query",
+   "note": "weekend date not in DPB snippet; recaps call Jan 2016 the second annual DL event"
+  },
+  {
+   "key": "dlr/2016/dvc-25-years/mickey-hinged",
+   "field": "duplicate_check",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold: possible overlap with wdw/2016/dvc-25th-anniversary/mickey-suitcase (LE 1,500, B026); editions differ - confirm one or two pins"
+  },
+  {
+   "key": "dlr/2016/star-wars-pin-of-the-month",
+   "field": "members",
+   "searched": "follow-up B236, 1 query",
+   "note": "only Mustafar (5th) found; Bespin Boba Fett LE 6,000 seen on a reseller only, year unconfirmed - not recorded"
+  },
+  {
+   "key": "dlr/2016/dca-15th-anniversary",
+   "field": "members",
+   "searched": "follow-up B236, 1 query",
+   "note": "count conflict: post says three CM pins and also two; LE CM-exclusive design and second pin not described"
+  },
+  {
+   "key": "dlr/2016/dca-15th-anniversary/downtown-disney-grand-californian",
+   "field": "edition_type",
+   "searched": "follow-up B236, 1 query",
+   "note": "edition size/type of this pin not stated; scope: guest giveaway was a button (not a pin)"
+  },
+  {
+   "key": "dlr/2016/star-wars-pin-of-the-month/mustafar",
+   "field": "original_price",
+   "searched": "follow-up B236, 1 query",
+   "note": "price not in snippet"
+  },
+  {
+   "key": "dlr/2016/diamond-d-pin-of-the-month",
+   "field": "members",
+   "searched": "follow-up B236, 5 queries",
+   "note": "still only Belle (Mar) and Pooh (Apr); DPB weekly roundups seem to start Feb 2016; no Jan-Feb or May-Sep Diamond D pin named"
+  },
+  {
+   "key": "dlr/2016/diamond-d-pin-of-the-month/winnie-the-pooh",
+   "field": "edition_size",
+   "searched": "follow-up B236, 0 queries",
+   "note": "conflict kept: Pooh LE 5,000 vs series LE 3,000; not resolved"
+  },
+  {
+   "key": "dlr/2016/ap-60th-diamond-collection",
+   "field": "members",
+   "searched": "follow-up B236, 1 query",
+   "note": "no member beyond Pirates (2015) and Merryweather (Mar 2016); bi-monthly series later members unnamed"
+  },
+  {
+   "key": "dlr/2016/mickeys-halloween-party-2016-costume-set",
+   "field": "members",
+   "searched": "follow-up B236, 1 query",
+   "note": "DPB again: 4 costumed character pins LE 1,000, characters unnamed; WDW MNSSHP villains boxed set is a different (WDW) item"
+  },
+  {
+   "key": "dlr/2016/haunted-mansion-holiday-2016-puzzle-mystery",
+   "field": "members",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold kept: no piece named by a publisher; summary gives 8 revealed + 7 mystery and Oogie wheel theme, attribution unclear; nutcracker piece reseller only"
+  },
+  {
+   "key": "dlr/2016/star-wars-day-2016",
+   "field": "edition_size",
+   "searched": "follow-up B236, 1 query",
+   "note": "DPB May wk1 again gives only limited release, 4 and 5 May 2016; no edition sizes or designs"
+  },
+  {
+   "key": "dlr/2016/halloween-2016-cast-member",
+   "field": "release_location",
+   "searched": "follow-up B236, 1 query",
+   "note": "lead kept: DPB Lucifer-in-pumpkin CM pin LE 1,000 USD 11.95 sold at CM stores at Disney Parks; resort not named - not recorded"
+  },
+  {
+   "key": "dlr/2016/pin-trading-night",
+   "field": "release",
+   "searched": "follow-up B236, 1 query",
+   "note": "still no 2016 DLR Pin Trading Night LE; only HKDL events and Date Nite surfaced"
+  },
+  {
+   "key": "dlr/2016/season-of-the-force",
+   "field": "release",
+   "searched": "follow-up B236, 1 query",
+   "note": "no 2016 SotF pin; results covered the attraction and later-year merchandise only"
+  },
+  {
+   "key": "dlr/2016/dca-food-wine-2016",
+   "field": "release",
+   "searched": "follow-up B236, 0 queries",
+   "note": "not re-searched (budget); no 2016 DCA Food & Wine pin found in five packets"
+  },
+  {
+   "key": "dlr/2016/disney-park-pack-may-2016",
+   "field": "lead",
+   "searched": "follow-up B236, 1 query",
+   "note": "lead: May 2016 Disney Park Pack (Roz, Cheshire Cat) said available at DLR+WDW; earlier packets file Park Packs as dsus - not recorded"
+  },
+  {
+   "key": "dlr/2016/spring-2016-gathering",
+   "field": "lead",
+   "searched": "follow-up B236, 1 query",
+   "note": "lead: DPB Spring 2016 Gathering (17 Apr, WDW) Star Wars LE 100 jumbos and LE 250 Leia pins - WDW event, not DLR"
+  },
+  {
+   "key": "dlr/2016/disney-royalty-mystery",
+   "field": "members",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold kept: still only the collector Flickr post (8 princesses + 8 princes, USD 19.95, 11 Aug); no per-design publisher source"
+  },
+  {
+   "key": "dlr/2016/disney-princess-royal-hall-mystery",
+   "field": "members",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold kept: commons named only in the collector Flickr account and reseller pages (collectrandom, distradingpins4u); no per-design publisher page"
+  },
+  {
+   "key": "dlr/2016/disney-princess-royal-hall-mystery/rapunzel-throne-chaser",
+   "field": "edition_size",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold kept: collector Flickr post only"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/cinderella-prince-charming",
+   "field": "release_date",
+   "searched": "follow-up B236, 0 queries",
+   "note": "hold kept: collector-only; not re-searched in fu5 (budget spent on new leads)"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/aurora-prince-phillip",
+   "field": "release_date",
+   "searched": "follow-up B236, 0 queries",
+   "note": "hold kept: collector-only; not re-searched in fu5 (budget spent on new leads)"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/jack-sally",
+   "field": "release_date",
+   "searched": "follow-up B236, 0 queries",
+   "note": "hold kept: collector-only; not re-searched in fu5 (budget spent on new leads)"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/tiana-naveen",
+   "field": "release_date",
+   "searched": "follow-up B236, 0 queries",
+   "note": "hold kept: collector-only; not re-searched in fu5 (budget spent on new leads)"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month/beast-belle",
+   "field": "release_date",
+   "searched": "follow-up B236, 0 queries",
+   "note": "hold kept: collector-only; not re-searched in fu5 (budget spent on new leads)"
+  },
+  {
+   "key": "dlr/2016/captain-america-civil-war-whose-side",
+   "field": "format",
+   "searched": "follow-up B236, 0 queries",
+   "note": "hold kept: confirm pin structure; not re-searched in fu5"
+  },
+  {
+   "key": "dlr/2016/haunted-mansion-october-2016",
+   "field": "release_location",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold kept: results restate the 13 Oct set of four LE 5,000 at Disney Parks; no source names Disneyland"
+  },
+  {
+   "key": "dlr/2016/disneyland-60-mystery-2016",
+   "field": "members",
+   "searched": "follow-up B236, 0 queries",
+   "note": "hold kept: mystery designs not individually confirmed"
+  },
+  {
+   "key": "dlr/2016/graduation-2016/mickey",
+   "field": "visual_description",
+   "searched": "follow-up B236, 0 queries",
+   "note": "conflict kept: not re-searched in fu5"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/rapunzel-flynn",
+   "field": "pin_name",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold: kept - DPB Date Nite post again gave only 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/duchess-omalley",
+   "field": "pin_name",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold: kept - DPB Date Nite post again gave only 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/beauty-beast",
+   "field": "pin_name",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold: kept - DPB Date Nite post again gave only 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/aurora-phillip",
+   "field": "pin_name",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold: kept - DPB Date Nite post again gave only 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/roger-anita",
+   "field": "pin_name",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold: kept - DPB Date Nite post again gave only 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/anna-kristoff",
+   "field": "pin_name",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold: kept - DPB Date Nite post again gave only 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/robin-hood-maid-marian",
+   "field": "pin_name",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold: kept - DPB Date Nite post again gave only 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/aurora-phillip-chaser",
+   "field": "pin_name",
+   "searched": "follow-up B236, 1 query",
+   "note": "hold: kept - DPB Date Nite post again gave only 8 LR / 8 LE 235 chasers / 1 LE 120 super chaser; no per-design source"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/anchor",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: design named only in one fan-blog list of all 12 puzzle pieces (with edition sizes), no per-piece description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/nemo",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: design named only in one fan-blog list of all 12 puzzle pieces (with edition sizes), no per-piece description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/marlin",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: design named only in one fan-blog list of all 12 puzzle pieces (with edition sizes), no per-piece description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/squirt",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: design named only in one fan-blog list of all 12 puzzle pieces (with edition sizes), no per-piece description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/tad",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: design named only in one fan-blog list of all 12 puzzle pieces (with edition sizes), no per-piece description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/pearl",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: design named only in one fan-blog list of all 12 puzzle pieces (with edition sizes), no per-piece description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/dory",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: design named only in one fan-blog list of all 12 puzzle pieces (with edition sizes), no per-piece description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/crush",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: design named only in one fan-blog list of all 12 puzzle pieces (with edition sizes), no per-piece description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/sheldon",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: design named only in one fan-blog list of all 12 puzzle pieces (with edition sizes), no per-piece description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/bruce",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: design named only in one fan-blog list of all 12 puzzle pieces (with edition sizes), no per-piece description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/mr-ray-chaser",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: design named only in one fan-blog list of all 12 puzzle pieces (with edition sizes), no per-piece description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/character-connection-finding-nemo-puzzle-mystery/chum-chaser",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: design named only in one fan-blog list of all 12 puzzle pieces (with edition sizes), no per-piece description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dlr/2016/viva-navidad-2016/poinsettia-hinged",
+   "field": "release_location",
+   "searched": "review",
+   "note": "hold: Disneyland placement and date rest on a search summary, not tied to the post text"
+  }
+ ],
+ "discovery_notes": "Follow-up 5 of B028 (DLR LE 2016). 30 standard WebSearch calls, blocked domains passed. New: Alice and Finding Nemo Character Connection puzzle sets (12 Nemo designs from a fan blog with per-design editions), Autopia PODH, Star Wars POTM Mustafar, DVC 25 Years, Viva Navidad 2016 x2, Star Wars Half Marathon 2016 set, DCA 15th CM pins. Resellers (yourwdwstore, distradingpins4u, collectrandom, justdisney, bonanza) ignored. No holds released; three holds added."
+}

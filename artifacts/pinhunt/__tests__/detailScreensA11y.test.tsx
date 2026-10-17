@@ -152,3 +152,23 @@ describe('Pin detail with no photo (#308)', () => {
     expect(screen.queryByTestId('add-photo-card')).toBeNull();
   }, 30_000);
 });
+
+// #383: a pin with a photo offers "Suggest a better photo"; one without doesn't.
+describe('Pin detail: suggest a better photo (#383)', () => {
+  it('opens photo contribution in replace mode', async () => {
+    mockParams = { id: 'p1' };
+    const Screen = require('../app/pin/[id]').default;
+    await render(<Screen />);
+    for (let i = 0; i < 5; i++) await new Promise(r => setTimeout(r, 0));
+    await fireEvent.press(screen.getByRole('button', { name: 'Suggest a better photo' }));
+    expect(mockPush).toHaveBeenCalledWith({ pathname: '/contribute-image/[pinId]', params: { pinId: 'p1', from: 'replace' } });
+  }, 30_000);
+
+  it('is not shown for a pin with no photo (that one gets Add a photo)', async () => {
+    mockParams = { id: 'p2' };
+    const Screen = require('../app/pin/[id]').default;
+    await render(<Screen />);
+    for (let i = 0; i < 5; i++) await new Promise(r => setTimeout(r, 0));
+    expect(screen.queryByTestId('suggest-photo-link')).toBeNull();
+  }, 30_000);
+});

@@ -15,6 +15,10 @@
  * "Is this your pin?" check against the pin's details/reference photo, lets
  * a contributor propose a replacement for a pin that already has a photo
  * (with a reason), and finishes with "Next pin" instead of the pin page.
+ *
+ * `from=replace` (the pin page's "Suggest a better photo", #383) proposes a
+ * replacement for the pin's current photo: it shows that photo, asks why,
+ * and returns to the pin page when done.
  */
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
@@ -65,6 +69,7 @@ interface ProcessedPreview {
 export default function ContributeImageScreen() {
   const { pinId, from } = useLocalSearchParams<{ pinId: string; from?: string }>();
   const fromCatalogue = from === 'catalogue';
+  const fromReplace = from === 'replace';
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
@@ -82,9 +87,9 @@ export default function ContributeImageScreen() {
   const coverage = fromCatalogue ? getCachedCoverage(pinId) : undefined;
   const title = pin?.title ?? coverage?.title;
   const existingImageUrl = pin?.imageUrl ?? coverage?.imageUrl;
-  // Replacing an existing photo is only offered from the catalogue screen;
-  // the scan flow only routes here for pins with no photo.
-  const isReplacement = fromCatalogue && !!existingImageUrl;
+  // Replacing an existing photo is offered from the catalogue screen and the
+  // pin page (#383); the scan flow only routes here for pins with no photo.
+  const isReplacement = (fromCatalogue || fromReplace) && !!existingImageUrl;
   const [reason, setReason] = useState<ContributedImageReason | null>(null);
 
   const [step, setStep] = useState<Step>('consent');
@@ -99,9 +104,9 @@ export default function ContributeImageScreen() {
   }, [router, pinId]);
 
   const leave = useCallback(() => {
-    if (fromCatalogue) router.back();
+    if (fromCatalogue || fromReplace) router.back();
     else goToPin();
-  }, [fromCatalogue, router, goToPin]);
+  }, [fromCatalogue, fromReplace, router, goToPin]);
 
   const ownedIds = useMemo(() => new Set(
     Object.entries(collection)
@@ -115,7 +120,7 @@ export default function ContributeImageScreen() {
     router.replace({ pathname: '/contribute-image/[pinId]', params: { pinId: nextPin.pinhuntId, from: 'catalogue' } });
   }, [router, nextPin]);
 
-  const proposalReason = fromCatalogue ? (isReplacement ? reason : 'missing') : undefined;
+  const proposalReason = fromCatalogue || fromReplace ? (isReplacement ? reason : 'missing') : undefined;
 
   const handleTakePhoto = useCallback(async () => {
     if (!session?.access_token) return;
@@ -226,8 +231,8 @@ export default function ContributeImageScreen() {
             <Text style={[styles.title, { color: colors.homeInk }]}>
               {isReplacement ? 'Propose a better photo' : 'We don\u2019t have a photo of this pin yet'}
             </Text>
-            {fromCatalogue ? (
-              <View style={[styles.pinCard, { borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}>
+            {fromCatalogue || isReplacement ? (
+              <View testID="current-photo-card" style={[styles.pinCard, { borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}>
                 {existingImageUrl ? (
                   <Image source={{ uri: existingImageUrl }} style={styles.pinCardImage} resizeMode="contain" />
                 ) : (
@@ -236,7 +241,9 @@ export default function ContributeImageScreen() {
                   </View>
                 )}
                 <View style={{ flex: 1, gap: 2 }}>
-                  <Text style={[styles.pinCardLabel, { color: colors.homeMuted }]}>Is this your pin?</Text>
+                  <Text style={[styles.pinCardLabel, { color: colors.homeMuted }]}>
+                    {fromCatalogue ? 'Is this your pin?' : 'Current photo'}
+                  </Text>
                   <Text style={[styles.pinCardTitle, { color: colors.homeInk }]} numberOfLines={3}>{title ?? pinId}</Text>
                   <Text style={[styles.pinCardMeta, { color: colors.homeMuted }]} numberOfLines={2}>
                     {[coverage?.setName ?? pin?.collection, coverage?.releaseYear ?? pin?.releaseYear, coverage?.editionType ?? pin?.edition]

@@ -1,0 +1,1749 @@
+{
+ "packet_id": "backfill-b197-dlr-le-2015-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b197",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+   "title": "Disneyland Diamond Celebration Event!",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015"
+  },
+  {
+   "url": "https://www.parkpennies.com/60th-diamond-celebration-pennies/disneyland-60th-anniversary-merchandise.pdf",
+   "title": "Disneyland 60th anniversary merchandise (PDF)",
+   "publisher": "Park Pennies",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+   "title": "New Disney Pins October 2015 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-10"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-3",
+   "title": "New Disney Pins July 2015 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-07"
+  },
+  {
+   "url": "https://themainstreetmouse.com/2015/11/02/the-november-disney-pin-releases/",
+   "title": "The November Disney Pin Releases",
+   "publisher": "The Main Street Mouse",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-11-02"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2015-week-1",
+   "title": "New Disney Pins November 2015 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+   "title": "New Disney Pins (May 2015 Week 3)",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-05"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/cast-member-holiday-2015-pin",
+   "title": "Cast Member Holiday 2015 Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-12"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+   "title": "New Disney Pins August 2015 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-08"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-3/",
+   "title": "New Disney Pins August 2015 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-08"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/2015-mickeys-halloween-party-pins",
+   "title": "2015 Mickey's Halloween Party Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015-09"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "five translucent-filled sculpted key-shaped pins in antique-style finishes"
+    },
+    {
+     "field": "format",
+     "value": "boxed multi-pin set",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "boxed set of five key pins; coordinates with the Locks framed set"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom",
+   "claims": [
+    {
+     "field": "format",
+     "value": "framed multi-pin set",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "five sculpted lock-shaped pins, each honouring one original land"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/diamond-celebration-event-memorabilia-framed",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "six single-level pins in the framed set"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "price",
+     "value": 325,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "$325 retail"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://www.parkpennies.com/60th-diamond-celebration-pennies/disneyland-60th-anniversary-merchandise.pdf",
+     "method": "search_snippet",
+     "note": "merchandise sheet gives same LE; framed approx 21.5 x 16.5 in; artist Alex Maher"
+    },
+    {
+     "field": "price",
+     "value": 325,
+     "source_url": "https://www.parkpennies.com/60th-diamond-celebration-pennies/disneyland-60th-anniversary-merchandise.pdf",
+     "method": "search_snippet",
+     "note": "$325 on merchandise sheet"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/haunted-lands",
+   "claims": [
+    {
+     "field": "format",
+     "value": "series of single pins plus boxed set with exclusive completer",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "The Lands are Haunted boxed set LE 1,000 $74.95; completer only in the box"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/ap-november-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Annual Passholder pin (November 2015)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2015-week-1",
+     "method": "search_snippet",
+     "note": "next DLR AP release"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2015-week-1",
+     "method": "search_snippet",
+     "note": "LE"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/disneyland-park-jumbo-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Park 2015 Jumbo Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "DLR jumbo; WDW had a separate Magic Kingdom jumbo"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2015/graduation-2015",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Graduation 2015",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "listed among DLR releases as shared"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom/adventureland",
+   "set_key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Keys to the Kingdom - Adventureland key",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "key-shaped pin honouring Adventureland"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "one of five separate key pins in the boxed set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom/adventureland",
+   "set_key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Locks of the Kingdom - Adventureland lock",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "lock-shaped pin honouring Adventureland"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "one of five separate lock pins in the framed set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "set LE 300"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom/fantasyland",
+   "set_key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Keys to the Kingdom - Fantasyland key",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "key-shaped pin honouring Fantasyland"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "one of five separate key pins in the boxed set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom/fantasyland",
+   "set_key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Locks of the Kingdom - Fantasyland lock",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "lock-shaped pin honouring Fantasyland"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "one of five separate lock pins in the framed set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "set LE 300"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom/frontierland",
+   "set_key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Keys to the Kingdom - Frontierland key",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "key-shaped pin honouring Frontierland"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "one of five separate key pins in the boxed set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom/frontierland",
+   "set_key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Locks of the Kingdom - Frontierland lock",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "lock-shaped pin honouring Frontierland"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "one of five separate lock pins in the framed set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "set LE 300"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom/main-street-usa",
+   "set_key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Keys to the Kingdom - Main Street, U.S.A. key",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "key-shaped pin honouring Main Street, U.S.A."
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "one of five separate key pins in the boxed set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom/main-street-usa",
+   "set_key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Locks of the Kingdom - Main Street, U.S.A. lock",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "lock-shaped pin honouring Main Street, U.S.A."
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "one of five separate lock pins in the framed set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "set LE 300"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom/tomorrowland",
+   "set_key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Keys to the Kingdom - Tomorrowland key",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "key-shaped pin honouring Tomorrowland"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "one of five separate key pins in the boxed set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "set LE 750"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom/tomorrowland",
+   "set_key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Locks of the Kingdom - Tomorrowland lock",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "lock-shaped pin honouring Tomorrowland"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "one of five separate lock pins in the framed set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "set LE 300"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-celebration-event/walt-mickey-jumbo",
+   "set_key": "dlr/2015/diamond-celebration-event",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Walt Disney & Mickey Mouse Jumbo Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "hinged jumbo, antique nickel finish; separate from the LE 500 super jumbo"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Walt Disney",
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "Walt and Mickey"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 34.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "$34.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "jumbo"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "can be worn closed or opened to stand on a flat surface"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "single jumbo pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "event 20-21 May 2015"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-celebration-event/disneyland-marquee-jumbo",
+   "set_key": "dlr/2015/diamond-celebration-event",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland Marquee Jumbo Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "glitter-filled pin mounted on a matted lithograph"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 24.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "$24.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "event 20-21 May 2015"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-celebration-event/super-jumbo-character",
+   "set_key": "dlr/2015/diamond-celebration-event",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Super Jumbo Character Limited Edition Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "glitter-filled pin-on-pin with stones"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 125,
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "$125"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+     "method": "search_snippet",
+     "note": "event 20-21 May 2015"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/haunted-lands/frontierland-goofy",
+   "set_key": "dlr/2015/haunted-lands",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Lands - Frontierland pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "Frontierland pin of the collection featuring Goofy"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "Goofy"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    },
+    {
+     "field": "original_price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "$12.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-15",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "15 Oct 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "available at both resorts"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "one of four individually listed pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/haunted-lands/fantasyland-minnie",
+   "set_key": "dlr/2015/haunted-lands",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Lands - Fantasyland pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "Fantasyland pin of the collection featuring Minnie Mouse"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "Minnie Mouse"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    },
+    {
+     "field": "original_price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "$12.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-15",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "15 Oct 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "available at both resorts"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "one of four individually listed pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/haunted-lands/adventureland-pluto",
+   "set_key": "dlr/2015/haunted-lands",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Lands - Adventureland pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "Adventureland pin of the collection featuring Pluto"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "Pluto"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    },
+    {
+     "field": "original_price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "$12.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-15",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "15 Oct 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "available at both resorts"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "one of four individually listed pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/haunted-lands/completer-mickey-minnie",
+   "set_key": "dlr/2015/haunted-lands",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Lands are Haunted boxed set completer",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "completer only in the boxed set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "Mickey and Minnie"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "boxed set LE 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10-15",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "15 Oct 2015"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2015-week-3",
+     "method": "search_snippet",
+     "note": "single completer pin reading Beware The Lands are Haunted"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/60th-anniversary-day/jumbo",
+   "set_key": "dlr/2015/60th-anniversary-day",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "jumbo featuring the 17 July 2015 birthday date",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2015-week-3",
+     "method": "search_snippet",
+     "note": "subject is the 60th birthday date; available 16 Jul 2015"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/ap-november-2015/flo-ramone",
+   "set_key": "dlr/2015/ap-november-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Annual Passholder Exclusive - Flo and Ramone",
+     "source_url": "https://themainstreetmouse.com/2015/11/02/the-november-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "DLR AP exclusive"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Flo",
+      "Ramone"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2015-week-1",
+     "method": "search_snippet",
+     "note": "Flo and Ramone from Cars"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2015-week-1",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2015-week-1",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://themainstreetmouse.com/2015/11/02/the-november-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "edition size 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2015-week-1",
+     "method": "search_snippet",
+     "note": "$12.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2015-week-1",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-11-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2015-week-1",
+     "method": "search_snippet",
+     "note": "at DLR 5 Nov 2015"
+    },
+    {
+     "field": "product_code",
+     "value": "400009162653",
+     "source_url": "https://themainstreetmouse.com/2015/11/02/the-november-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "item number listed"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2015-week-1",
+     "method": "search_snippet",
+     "note": "DLR AP"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2015-week-1",
+     "method": "search_snippet",
+     "note": "one pin featuring both characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/disneyland-park-jumbo-2015/character-group",
+   "set_key": "dlr/2015/disneyland-park-jumbo-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland Park 2015 Jumbo Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "group jumbo"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse",
+      "Pluto",
+      "Donald Duck",
+      "Goofy",
+      "Jack Skellington"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "characters as listed in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "original_price",
+     "value": 24.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "$24.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-05-21",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "from 21 May 2015"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "one jumbo showing the group"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/graduation-2015/chip-dale",
+   "set_key": "dlr/2015/graduation-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Graduation 2015 - Chip and Dale",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "shared release"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "Chip and Dale"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "$12.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2015-week-3",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-decades/pirates-of-the-caribbean",
+   "set_key": "dlr/2015/diamond-decades",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Diamond Decades - Pirates of the Caribbean",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "Diamond Decades pin with Goofy at the attraction"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "Goofy"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.95,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "$15.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "single attraction pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-decades/enchanted-tiki-room",
+   "set_key": "dlr/2015/diamond-decades",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Diamond Decades - Enchanted Tiki Room",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "Diamond Decades pin, Mickey with Jose at the Tiki Room"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "José"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "Mickey and José"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.95,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "$15.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-decades/monorail-and-railroad",
+   "set_key": "dlr/2015/diamond-decades",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Diamond Decades Collection: Monorail and Trains",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "one pin showing the Monorail and trains"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "single pin featuring both Monorail and trains"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "LE 5,000 per DPB entry quoted in summary"
+    },
+    {
+     "field": "original_price",
+     "value": 15.95,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "$15.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-2/",
+     "method": "search_snippet",
+     "note": "US"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/diamond-decades/mr-toads-wild-ride",
+   "set_key": "dlr/2015/diamond-decades",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Diamond Decades - Mr. Toad's Wild Ride",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-3/",
+     "method": "search_snippet",
+     "note": "hinged attraction pin"
+    },
+    {
+     "field": "attraction",
+     "value": "Mr. Toad's Wild Ride",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-3/",
+     "method": "search_snippet",
+     "note": "attraction featured"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-3/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-3/",
+     "method": "search_snippet",
+     "note": "LE 5,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.95,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-3/",
+     "method": "search_snippet",
+     "note": "$15.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-3/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-08-20",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-3/",
+     "method": "search_snippet",
+     "note": "at DLR 20 Aug 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-3/",
+     "method": "search_snippet",
+     "note": "DLR"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-3/",
+     "method": "search_snippet",
+     "note": "hinged"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2015-week-3/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/mickeys-halloween-party-2015/ursula",
+   "set_key": "dlr/2015/mickeys-halloween-party-2015",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/2015-mickeys-halloween-party-pins",
+     "method": "search_snippet",
+     "note": "described as a limited release pin from The Little Mermaid"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2015/cast-member-holiday-2015/stitch",
+   "set_key": "dlr/2015/cast-member-holiday-2015",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disney Cast Member stores at Disneyland Resort and Walt Disney World Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/cast-member-holiday-2015-pin",
+     "method": "search_snippet",
+     "note": "released Dec 2015 at both resorts, cast stores only"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom/adventureland",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold: Adventureland key named only in one set-level list of five lands (DPB event post); no per-pin description - confirm"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom/adventureland",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold: Adventureland lock named only in one set-level list of five lands (DPB event post); no per-pin description - confirm"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom/fantasyland",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold: Fantasyland key named only in one set-level list of five lands (DPB event post); no per-pin description - confirm"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom/fantasyland",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold: Fantasyland lock named only in one set-level list of five lands (DPB event post); no per-pin description - confirm"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom/frontierland",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold: Frontierland key named only in one set-level list of five lands (DPB event post); no per-pin description - confirm"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom/frontierland",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold: Frontierland lock named only in one set-level list of five lands (DPB event post); no per-pin description - confirm"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom/main-street-usa",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold: Main Street, U.S.A. key named only in one set-level list of five lands (DPB event post); no per-pin description - confirm"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom/main-street-usa",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold: Main Street, U.S.A. lock named only in one set-level list of five lands (DPB event post); no per-pin description - confirm"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom/tomorrowland",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold: Tomorrowland key named only in one set-level list of five lands (DPB event post); no per-pin description - confirm"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event-locks-of-the-kingdom/tomorrowland",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold: Tomorrowland lock named only in one set-level list of five lands (DPB event post); no per-pin description - confirm"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event-keys-to-the-kingdom",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "resolved: DPB event post snippet states five key pins (earlier gap)"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event-memorabilia-framed",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "released: two separate searches tie LE 300/$325 to the DPB event post and Park Pennies sheet; six-pin count given for the DPB list"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event-memorabilia-framed",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "hold kept: subjects (nametag, bubble gum, castle with Tinker Bell, Fab Four, Gothic D Mickey, one garbled) seen in one combined summary only"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event/walt-mickey-jumbo",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "variant: Park Pennies sheet lists a hinged antique-nickel Standee Jumbo Pin LE 1,000 $34.95 - probably the same pin under another name; confirm"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event/disneyland-marquee-jumbo",
+   "field": "source_attribution",
+   "searched": "1 query",
+   "note": "hold: details from one summary of the DPB event list (said to match Park Pennies figures); confirm pin vs lithograph combo"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event/super-jumbo-character",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters on the super jumbo character pin not named in snippet"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "lead resolved: the LE 1,500 item is the event logo pin (not a jumbo); event also had a boxed coin pin set, contents unnamed"
+  },
+  {
+   "key": "dlr/2015/diamond-celebration-event/event-logo",
+   "field": "visual_description",
+   "searched": "3 queries",
+   "note": "hold kept: summary again calls the logo pin a Walt & Mickey spinner but still not tied to a quoted line"
+  },
+  {
+   "key": "dlr/2015/haunted-lands/frontierland-goofy",
+   "field": "pin_text",
+   "searched": "1 query",
+   "note": "wording on the pin not given in snippet (Tomorrowland pin reads Terror Tomorrowland)"
+  },
+  {
+   "key": "dlr/2015/haunted-lands/fantasyland-minnie",
+   "field": "pin_text",
+   "searched": "1 query",
+   "note": "wording on the pin not given in snippet (Tomorrowland pin reads Terror Tomorrowland)"
+  },
+  {
+   "key": "dlr/2015/haunted-lands/adventureland-pluto",
+   "field": "pin_text",
+   "searched": "1 query",
+   "note": "wording on the pin not given in snippet (Tomorrowland pin reads Terror Tomorrowland)"
+  },
+  {
+   "key": "dlr/2015/haunted-lands",
+   "field": "members",
+   "searched": "1 query",
+   "note": "released gap: DPB Oct week 3 lists all four lands pins individually with character, LE and price, plus the box-only completer"
+  },
+  {
+   "key": "dlr/2015/haunted-lands",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "boxed set total count (4 pins plus completer?) not stated in snippet"
+  },
+  {
+   "key": "dlr/2015/60th-anniversary-day/jumbo",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "gap partly filled: subject is the birthday date; any characters on the jumbo not described"
+  },
+  {
+   "key": "dlr/2015/ap-november-2015/flo-ramone",
+   "field": "set_membership",
+   "searched": "2 queries",
+   "note": "lead: Nov timing fits the bi-monthly AP 60th series, but sources do not call it a 60th pin; kept as its own release"
+  },
+  {
+   "key": "dlr/2015/ap-60th-diamond-collection",
+   "field": "members",
+   "searched": "4 queries",
+   "note": "no September 2015 DLR AP pin found; Nov AP pin (Flo & Ramone) not labelled 60th"
+  },
+  {
+   "key": "dlr/2015/ap-60th-diamond-collection/alice-in-wonderland",
+   "field": "set_membership",
+   "searched": "2 queries",
+   "note": "hold kept: Alice confirmed as DL 60th passholder pin (LE 3,000) but link to the bi-monthly collection still rests on timing"
+  },
+  {
+   "key": "dlr/2015/disneyland-park-jumbo-2015/character-group",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "hold: Jack Skellington in a Disneyland Park jumbo cast list is unexpected (WDW version has Daisy); confirm character"
+  },
+  {
+   "key": "dlr/2015/graduation-2015/chip-dale",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "shared pin: whether also sold at WDW and exact release date not stated"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/pirates-of-the-caribbean",
+   "field": "set_membership",
+   "searched": "3 queries",
+   "note": "released: DPB Aug 2015 week 2 lists it as a Diamond Decades pin with its own character, LE and price"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/enchanted-tiki-room",
+   "field": "set_membership",
+   "searched": "3 queries",
+   "note": "released: DPB Aug 2015 week 2 lists it as a Diamond Decades pin with its own characters, LE and price"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/monorail-and-railroad",
+   "field": "set_membership",
+   "searched": "3 queries",
+   "note": "released: DPB entry titled Diamond Decades Collection: Monorail and Trains, in the Aug 2015 week 2 list"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/monorail-and-railroad",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "released: DPB entry describes one pin featuring the Monorail and trains"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/mr-toads-wild-ride",
+   "field": "set_membership",
+   "searched": "2 queries",
+   "note": "hold: Diamond Decades label from one summary of the week 3 post; the snippet with LE/price names only the attraction"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/haunted-mansion",
+   "field": "set_membership",
+   "searched": "3 queries",
+   "note": "hold kept: not in the DPB Aug week 2/3 snippets; membership still rests on the official Aug list subject"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/its-a-small-world",
+   "field": "set_membership",
+   "searched": "3 queries",
+   "note": "hold kept: not in the DPB Aug week 2/3 snippets; membership still rests on the official Aug list subject"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/big-thunder-mountain",
+   "field": "set_membership",
+   "searched": "3 queries",
+   "note": "hold kept: not in the DPB Aug week 2/3 snippets; membership still rests on the official Aug list subject"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/finding-nemo-submarine-voyage",
+   "field": "set_membership",
+   "searched": "3 queries",
+   "note": "hold kept: not in the DPB Aug week 2/3 snippets; membership still rests on the official Aug list subject"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/paradise-pier",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "lead kept: Paradise Pier Diamond Decades (LE 3,000) still seen only on a reseller listing"
+  },
+  {
+   "key": "dlr/2015/diamond-decades/holiday-2015",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "hold kept: DPB Nov week 2 still says release delayed; no date found"
+  },
+  {
+   "key": "dlr/2015/dvc-olaf-2015",
+   "field": "members",
+   "searched": "1 query",
+   "note": "lead: DPB Aug week 3 mentions a Disney Vacation Club Olaf pin (20 Aug); resort and details not stated"
+  },
+  {
+   "key": "dlr/2015/mickeys-halloween-party-2015",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "DLR party pin set contents, edition sizes and prices still not in snippets; boxed/framed figures found are WDW"
+  },
+  {
+   "key": "dlr/2015/mickeys-halloween-party-2015/ursula",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "LE 1,000 $11.95 Ursula is a separate cast member pin; party Ursula size not stated"
+  },
+  {
+   "key": "dlr/2015/cast-member-holiday-2015/stitch",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "released: DPB cast member post says it came out at both DLR and WDW, cast member stores only"
+  },
+  {
+   "key": "dlr/2015/ap-happy-holidays-2015/anna-elsa-pin-ornament",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "hold kept: DPB still describes a pin and ornament sold together; pin count/scope unresolved"
+  },
+  {
+   "key": "dlr/2015/diamond-d-pin-of-the-month/dumbo",
+   "field": "pin_name",
+   "searched": "3 queries",
+   "note": "lead kept: Sept 2015 Dumbo Diamond D (LE 3,000, 17 Sep) still only on a reseller listing; DPB Sept week 3 not found"
+  },
+  {
+   "key": "dlr/2015/diamond-d-pin-of-the-month",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Nov/Dec 2015 and any pre-July pins of the month still not found"
+  },
+  {
+   "key": "dlr/2015/november-2015",
+   "field": "members",
+   "searched": "4 queries",
+   "note": "DisKingdom list still the only DLR source for Thanksgiving, Jack Skellington and Kaa pins; no details found"
+  },
+  {
+   "key": "dlr/2015/november-2015/kylo-ren",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "lead: 2015 Kylo Ren LE 1,000 $12.95 found was DisneyStore.com Force Friday (dsus cell); DLR Kylo Ren pin unconfirmed"
+  },
+  {
+   "key": "dlr/2015/november-2015/jack-skellington",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "lead: BonggaMom Dec 2015 post mentions a DLR limited-edition Jack Skellington pin; no details"
+  },
+  {
+   "key": "dlr/2015/d23-expo-2015",
+   "field": "members",
+   "searched": "1 query",
+   "note": "lead: D23 2015 pins sold at the Expo Dream Store (e.g. Mickey & Minnie Diamond Celebration set LE 1,000); no DLR sale found"
+  },
+  {
+   "key": "dlr/2015/pin-trading-night",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no 2015 Disneyland pin trading night found; 2015 pin nights found were WDW Downtown Disney"
+  },
+  {
+   "key": "dlr/2015/jingle-cruise-2015/jingle-cruise",
+   "field": "source_attribution",
+   "searched": "0 queries",
+   "note": "hold kept: not re-searched"
+  },
+  {
+   "key": "dlr/2015/hanukkah-2015/tinker-bell",
+   "field": "edition_size",
+   "searched": "0 queries",
+   "note": "hold kept: not re-searched"
+  },
+  {
+   "key": "dlr/2015/world-of-color-winter-dreams-2015/olaf",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "hold kept: DPB Nov week 2 snippet lists the hinged Olaf but no LE/price"
+  },
+  {
+   "key": "dlr/2015/diamond-d-pin-of-the-month/jiminy-cricket",
+   "field": "source_attribution",
+   "searched": "1 query",
+   "note": "hold kept: Jiminy Diamond D named in an Aug week 2 summary but still not quoted with LE/price"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 of B036 (DLR LE 2015). 30 standard WebSearch calls, snippets only, blocked domains excluded. Mostly Disney Pins Blog roundups plus Park Pennies sheet and Main Street Mouse. Released 6 holds; Keys/Locks members added on hold. Reseller listings (ecrater) seen, not used."
+}

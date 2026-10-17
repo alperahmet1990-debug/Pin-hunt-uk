@@ -1,0 +1,1307 @@
+{
+ "packet_id": "lic-boxlunch-2026-evidence-2026-10-17-b170-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b170-lic-boxlunch-2026-fu3",
+ "sources": [
+  {
+   "url": "https://mypincentral.com/pin/234617",
+   "title": "234617 (LFY - BL - Pixar Movie Ticket Blind Box - 2026)",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-princess-balcony-scene-blind-box-enamel-pin---boxlunch-exclusive/36274769.html",
+   "title": "Disney Princess Balcony Scene Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-princess-storybook-moments-blind-box-enamel-pin---boxlunch-exclusive/36274764.html",
+   "title": "Disney Princess Storybook Moments Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pets-hanging-portrait-blind-box-enamel-pin---boxlunch-exclusive/36274767.html",
+   "title": "Disney Pets Hanging Portrait Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-toy-story-character-lollipops-blind-box-enamel-pin---boxlunch-exclusive/35888483.html",
+   "title": "Disney Pixar Toy Story Character Lollipops Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-princess-sidekicks-flip-flop-blind-box-enamel-pin-set---boxlunch-exclusive/36274772.html",
+   "title": "Disney Princess & Sidekicks Flip Flop Blind Box Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://shoppingtheparks.com/collections/boxlunch-disney-pins?page=2",
+   "title": "BoxLunch Disney Pins (collection page 2)",
+   "publisher": "Shopping the Parks",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-villains-stained-glass-scenes-dangling-blind-box-enamel-pin---boxlunch-exclusive/36606427.html",
+   "title": "Disney Villains Stained Glass Scenes Dangling Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-villains-portrait-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/35988960.html",
+   "title": "Disney Villains Portrait Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-princess-horses-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/35939783.html",
+   "title": "Disney Princess Horses Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-horses-blind-box-pin-set-at-boxlunch/",
+   "title": "Disney Princess Horses Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-04-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-princess-initial-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/35983976.html",
+   "title": "Disney Princess Initial Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-cars-racing-jacket-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/36100049.html",
+   "title": "Disney Pixar Cars Racing Jacket Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://mypincentral.com/pin/234617",
+     "method": "search_snippet",
+     "note": "MPC series lists six film ticket pin entries (234615-234620) plus a separate unopened-box entry"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://mypincentral.com/pin/234617",
+     "method": "search_snippet",
+     "note": "series prefix LFY; origin given as Loungefly (BoxLunch)"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://mypincentral.com/pin/234617",
+     "method": "search_snippet",
+     "note": "series prefix BL; origin given as Loungefly (BoxLunch)"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/boxlunch-princess-balcony-scene",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.boxlunch.com/product/disney-princess-balcony-scene-blind-box-enamel-pin---boxlunch-exclusive/36274769.html",
+     "method": "search_snippet",
+     "note": "listing invites buyers to collect all six princess pins"
+    },
+    {
+     "field": "format",
+     "value": "blind box: one princess peeking from her balcony per pin",
+     "source_url": "https://www.boxlunch.com/product/disney-princess-balcony-scene-blind-box-enamel-pin---boxlunch-exclusive/36274769.html",
+     "method": "search_snippet",
+     "note": "listing: each mystery box holds one pin of a princess at her balcony window"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://www.boxlunch.com/product/disney-princess-balcony-scene-blind-box-enamel-pin---boxlunch-exclusive/36274769.html",
+     "method": "search_snippet",
+     "note": "one randomly selected pin per box"
+    },
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://www.boxlunch.com/product/disney-princess-balcony-scene-blind-box-enamel-pin---boxlunch-exclusive/36274769.html",
+     "method": "search_snippet",
+     "note": "$12.90"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-princess-balcony-scene-blind-box-enamel-pin---boxlunch-exclusive/36274769.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/boxlunch-princess-storybook-moments",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.boxlunch.com/product/disney-princess-storybook-moments-blind-box-enamel-pin---boxlunch-exclusive/36274764.html",
+     "method": "search_snippet",
+     "note": "listing says six designs to collect"
+    },
+    {
+     "field": "format",
+     "value": "blind box: framed princess romance scene with gold frame",
+     "source_url": "https://www.boxlunch.com/product/disney-princess-storybook-moments-blind-box-enamel-pin---boxlunch-exclusive/36274764.html",
+     "method": "search_snippet",
+     "note": "listing: each pin a framed fairytale-romance scene of a princess"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://www.boxlunch.com/product/disney-princess-storybook-moments-blind-box-enamel-pin---boxlunch-exclusive/36274764.html",
+     "method": "search_snippet",
+     "note": "one randomly selected pin per box"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://www.boxlunch.com/product/disney-princess-storybook-moments-blind-box-enamel-pin---boxlunch-exclusive/36274764.html",
+     "method": "search_snippet",
+     "note": "$14.90"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-princess-storybook-moments-blind-box-enamel-pin---boxlunch-exclusive/36274764.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/boxlunch-pets-hanging-portrait",
+   "claims": [
+    {
+     "field": "format",
+     "value": "blind box: hanging pet portrait",
+     "source_url": "https://www.boxlunch.com/product/disney-pets-hanging-portrait-blind-box-enamel-pin---boxlunch-exclusive/36274767.html",
+     "method": "search_snippet",
+     "note": "listing: each box has one pin with a hanging pet portrait design"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://www.boxlunch.com/product/disney-pets-hanging-portrait-blind-box-enamel-pin---boxlunch-exclusive/36274767.html",
+     "method": "search_snippet",
+     "note": "one randomly selected pin per box"
+    },
+    {
+     "field": "price",
+     "value": 16.9,
+     "source_url": "https://www.boxlunch.com/product/disney-pets-hanging-portrait-blind-box-enamel-pin---boxlunch-exclusive/36274767.html",
+     "method": "search_snippet",
+     "note": "$16.90"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-pets-hanging-portrait-blind-box-enamel-pin---boxlunch-exclusive/36274767.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/boxlunch-toy-story-character-lollipops",
+   "claims": [
+    {
+     "field": "format",
+     "value": "blind box: each character shown as a lollipop with ribbon bow",
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-toy-story-character-lollipops-blind-box-enamel-pin---boxlunch-exclusive/35888483.html",
+     "method": "search_snippet",
+     "note": "listing describes characters as lollipops with bows; names none in snippet"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-toy-story-character-lollipops-blind-box-enamel-pin---boxlunch-exclusive/35888483.html",
+     "method": "search_snippet",
+     "note": "one randomly selected pin per box"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-toy-story-character-lollipops-blind-box-enamel-pin---boxlunch-exclusive/35888483.html",
+     "method": "search_snippet",
+     "note": "$14.90"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-toy-story-character-lollipops-blind-box-enamel-pin---boxlunch-exclusive/35888483.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/boxlunch-princess-sidekicks-flip-flop",
+   "claims": [
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://www.boxlunch.com/product/disney-princess-sidekicks-flip-flop-blind-box-enamel-pin-set---boxlunch-exclusive/36274772.html",
+     "method": "search_snippet",
+     "note": "listing: set contains two randomly selected pins"
+    },
+    {
+     "field": "price",
+     "value": 16.9,
+     "source_url": "https://www.boxlunch.com/product/disney-princess-sidekicks-flip-flop-blind-box-enamel-pin-set---boxlunch-exclusive/36274772.html",
+     "method": "search_snippet",
+     "note": "$16.90"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-princess-sidekicks-flip-flop-blind-box-enamel-pin-set---boxlunch-exclusive/36274772.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/boxlunch-villains-portrait",
+   "claims": [
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://www.boxlunch.com/product/disney-villains-portrait-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/35988960.html",
+     "method": "search_snippet",
+     "note": "one randomly selected pin per box"
+    },
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://www.boxlunch.com/product/disney-villains-portrait-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/35988960.html",
+     "method": "search_snippet",
+     "note": "$12.90"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-villains-portrait-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/35988960.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive (listing 35988960)"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/boxlunch-princess-horses",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/disney-princess-horses-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "DPB says the assortment has six different pins"
+    },
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://www.boxlunch.com/product/disney-princess-horses-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/35939783.html",
+     "method": "search_snippet",
+     "note": "$12.90"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-princess-horses-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/35939783.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive (listing 35939783)"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/boxlunch-princess-initial",
+   "claims": [
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://www.boxlunch.com/product/disney-princess-initial-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/35983976.html",
+     "method": "search_snippet",
+     "note": "$12.90"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-princess-initial-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/35983976.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive (listing 35983976)"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/boxlunch-cars-racing-jacket",
+   "claims": [
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-cars-racing-jacket-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/36100049.html",
+     "method": "search_snippet",
+     "note": "$12.90"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-cars-racing-jacket-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/36100049.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive (listing 36100049)"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-cars-racing-jacket-blind-box-enamel-pin-%E2%80%94-boxlunch-exclusive/36100049.html",
+     "method": "search_snippet",
+     "note": "one randomly selected pin per box"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/boxlunch-villains-stained-glass-scenes-dangling",
+   "claims": [
+    {
+     "field": "format",
+     "value": "blind box: stained glass villain scenes with hanging chain",
+     "source_url": "https://www.boxlunch.com/product/disney-villains-stained-glass-scenes-dangling-blind-box-enamel-pin---boxlunch-exclusive/36606427.html",
+     "method": "search_snippet",
+     "note": "listing: one random pin per box, stained glass villain depictions with a chain"
+    },
+    {
+     "field": "price",
+     "value": 16.9,
+     "source_url": "https://www.boxlunch.com/product/disney-villains-stained-glass-scenes-dangling-blind-box-enamel-pin---boxlunch-exclusive/36606427.html",
+     "method": "search_snippet",
+     "note": "$16.90"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-villains-stained-glass-scenes-dangling-blind-box-enamel-pin---boxlunch-exclusive/36606427.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive (listing 36606427)"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket/ratatouille",
+   "set_key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "mystery design (separate fan-database pin entry per film)",
+     "source_url": "https://mypincentral.com/pin/234617",
+     "method": "search_snippet",
+     "note": "MPC series list gives this film its own pin entry (234615); seen via search summary of page 234617"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket/coco",
+   "set_key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "mystery design (separate fan-database pin entry per film)",
+     "source_url": "https://mypincentral.com/pin/234617",
+     "method": "search_snippet",
+     "note": "MPC series list gives this film its own pin entry (234616); seen via search summary of page 234617"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket/up",
+   "set_key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "mystery design (separate fan-database pin entry per film)",
+     "source_url": "https://mypincentral.com/pin/234617",
+     "method": "search_snippet",
+     "note": "MPC series list gives this film its own pin entry (234618); seen via search summary of page 234617"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket/toy-story",
+   "set_key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "mystery design (separate fan-database pin entry per film)",
+     "source_url": "https://mypincentral.com/pin/234617",
+     "method": "search_snippet",
+     "note": "MPC series list gives this film its own pin entry (234619); seen via search summary of page 234617"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket/turning-red",
+   "set_key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "mystery design (separate fan-database pin entry per film)",
+     "source_url": "https://mypincentral.com/pin/234617",
+     "method": "search_snippet",
+     "note": "MPC series list gives this film its own pin entry (234620); seen via search summary of page 234617"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/boxlunch-pets-hanging-portrait/oliver",
+   "set_key": "lic/2026/boxlunch-pets-hanging-portrait",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Oliver"
+     ],
+     "source_url": "https://www.boxlunch.com/product/disney-pets-hanging-portrait-blind-box-enamel-pin---boxlunch-exclusive/36274767.html",
+     "method": "search_snippet",
+     "note": "listing names Oliver, Mittens, Bolt and other pets as featured in the assortment"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-pets-hanging-portrait-blind-box-enamel-pin---boxlunch-exclusive/36274767.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/boxlunch-pets-hanging-portrait/mittens",
+   "set_key": "lic/2026/boxlunch-pets-hanging-portrait",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mittens"
+     ],
+     "source_url": "https://www.boxlunch.com/product/disney-pets-hanging-portrait-blind-box-enamel-pin---boxlunch-exclusive/36274767.html",
+     "method": "search_snippet",
+     "note": "listing names Oliver, Mittens, Bolt and other pets as featured in the assortment"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-pets-hanging-portrait-blind-box-enamel-pin---boxlunch-exclusive/36274767.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/boxlunch-pets-hanging-portrait/bolt",
+   "set_key": "lic/2026/boxlunch-pets-hanging-portrait",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Bolt"
+     ],
+     "source_url": "https://www.boxlunch.com/product/disney-pets-hanging-portrait-blind-box-enamel-pin---boxlunch-exclusive/36274767.html",
+     "method": "search_snippet",
+     "note": "listing names Oliver, Mittens, Bolt and other pets as featured in the assortment"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-pets-hanging-portrait-blind-box-enamel-pin---boxlunch-exclusive/36274767.html",
+     "method": "search_snippet",
+     "note": "BoxLunch Exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2026/boxlunch-chip-dale-veggies/dale-napping",
+   "set_key": "lic/2026/boxlunch-chip-dale-veggies",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dale Napping",
+     "source_url": "https://shoppingtheparks.com/collections/boxlunch-disney-pins?page=2",
+     "method": "search_snippet",
+     "note": "reseller lists a 'Dale Napping' Chip & Dale Veggies mystery BoxLunch pin, $13.99 resale, sold out"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dale"
+     ],
+     "source_url": "https://shoppingtheparks.com/collections/boxlunch-disney-pins?page=2",
+     "method": "search_snippet",
+     "note": "title names Dale"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket/ratatouille",
+   "field": "pin_structure",
+   "searched": "MPC search",
+   "note": "lead (not released at review: rests on a search summary of MyPinCentral, page not read): MPC series lists a separate pin entry for this film (234615-234620); design/characters not described in snippet"
+  },
+  {
+   "key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket/coco",
+   "field": "pin_structure",
+   "searched": "MPC search",
+   "note": "lead (not released at review: rests on a search summary of MyPinCentral, page not read): MPC series lists a separate pin entry for this film (234615-234620); design/characters not described in snippet"
+  },
+  {
+   "key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket/up",
+   "field": "pin_structure",
+   "searched": "MPC search",
+   "note": "lead (not released at review: rests on a search summary of MyPinCentral, page not read): MPC series lists a separate pin entry for this film (234615-234620); design/characters not described in snippet"
+  },
+  {
+   "key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket/toy-story",
+   "field": "pin_structure",
+   "searched": "MPC search",
+   "note": "lead (not released at review: rests on a search summary of MyPinCentral, page not read): MPC series lists a separate pin entry for this film (234615-234620); design/characters not described in snippet"
+  },
+  {
+   "key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket/turning-red",
+   "field": "pin_structure",
+   "searched": "MPC search",
+   "note": "lead (not released at review: rests on a search summary of MyPinCentral, page not read): MPC series lists a separate pin entry for this film (234615-234620); design/characters not described in snippet"
+  },
+  {
+   "key": "lic/2026/loungefly-boxlunch-pixar-movie-ticket",
+   "field": "release_date",
+   "searched": "MPC search",
+   "note": "MPC 26 Sep 2026 vs BoxLunch preorder window (B087) still unresolved"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-sidekicks-gaming/meeko",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: Meeko/Gus still named only by DPB; BoxLunch listing snippet this round names neither)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-sidekicks-gaming/gus",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: Meeko/Gus still named only by DPB; BoxLunch listing snippet this round names neither)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-crown-display-pillows/jasmine",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing describes one crown pillow per pin but names no princess; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-crown-display-pillows/snow-white",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing describes one crown pillow per pin but names no princess; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-crown-display-pillows/ariel",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing describes one crown pillow per pin but names no princess; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-crown-display-pillows/tiana",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing describes one crown pillow per pin but names no princess; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-crown-display-pillows/cinderella",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing describes one crown pillow per pin but names no princess; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-crown-display-pillows/aurora",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing describes one crown pillow per pin but names no princess; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-toy-story-character-lollipops/trixie",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing says each character is a lollipop but names none; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-toy-story-character-lollipops/lotso",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing says each character is a lollipop but names none; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-toy-story-character-lollipops/buttercup",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing says each character is a lollipop but names none; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-toy-story-character-lollipops/hamm",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing says each character is a lollipop but names none; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-toy-story-character-lollipops/rex",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing says each character is a lollipop but names none; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-toy-story-character-lollipops/alien",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing says each character is a lollipop but names none; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villain-sidekicks-portrait/magic-mirror",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no listing or MPC entry found; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villain-sidekicks-portrait/diablo",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no listing or MPC entry found; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villain-sidekicks-portrait/flotsam-and-jetsam",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no listing or MPC entry found; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villain-sidekicks-portrait/iago",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no listing or MPC entry found; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villain-sidekicks-portrait/pain-and-panic",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no listing or MPC entry found; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villain-sidekicks-portrait/hyenas",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no listing or MPC entry found; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-fairies/tinker-bell",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 36274768 names no fairy; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-fairies/flora",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 36274768 names no fairy; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-fairies/fauna",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 36274768 names no fairy; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-fairies/merryweather",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 36274768 names no fairy; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-fairies/fairy-godmother",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 36274768 names no fairy; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-fairies/blue-fairy",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 36274768 names no fairy; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-roller-skate/belle",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35154120 names no princess; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-roller-skate/ariel",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35154120 names no princess; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-roller-skate/snow-white",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35154120 names no princess; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-roller-skate/jasmine",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35154120 names no princess; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-roller-skate/tiana",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35154120 names no princess; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-roller-skate/cinderella",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35154120 names no princess; roster only from DPB list)"
+  },
+  {
+   "key": "lic/2026/boxlunch-moana/hei-hei",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no BoxLunch listing surfaced; DPB 'and more' list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-moana/pua",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no BoxLunch listing surfaced; DPB 'and more' list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-moana/moana",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no BoxLunch listing surfaced; DPB 'and more' list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-moana/maui",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no BoxLunch listing surfaced; DPB 'and more' list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-balcony-scene/rapunzel",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing confirms six princess pins but names none; roster only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-balcony-scene/cinderella",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing confirms six princess pins but names none; roster only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-balcony-scene/jasmine",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing confirms six princess pins but names none; roster only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-balcony-scene/tiana",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing confirms six princess pins but names none; roster only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-balcony-scene/aurora",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing confirms six princess pins but names none; roster only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-balcony-scene/belle",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing confirms six princess pins but names none; roster only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-storybook-moments/the-little-mermaid",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing confirms six designs but names none; film split only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-storybook-moments/tangled",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing confirms six designs but names none; film split only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-storybook-moments/snow-white",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing confirms six designs but names none; film split only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-storybook-moments/the-princess-and-the-frog",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing confirms six designs but names none; film split only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-storybook-moments/sleeping-beauty",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing confirms six designs but names none; film split only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-storybook-moments/cinderella",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing confirms six designs but names none; film split only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-pets-hanging-portrait/oliver",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing names some pets in a collection blurb, not per-design; others only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-pets-hanging-portrait/mittens",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing names some pets in a collection blurb, not per-design; others only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-pets-hanging-portrait/lucifer",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing names some pets in a collection blurb, not per-design; others only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-pets-hanging-portrait/georgette",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing names some pets in a collection blurb, not per-design; others only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-pets-hanging-portrait/bolt",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing names some pets in a collection blurb, not per-design; others only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-pets-hanging-portrait/bruno",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing names some pets in a collection blurb, not per-design; others only from DPB)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-mailbox-moving/jasmine",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no further MPC per-pin entry found)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-mailbox-moving/ariel",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no further MPC per-pin entry found)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-mailbox-moving/rapunzel",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no further MPC per-pin entry found)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-mailbox-moving/belle",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no further MPC per-pin entry found)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-mailbox-moving/snow-white",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no further MPC per-pin entry found)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-horses/belle",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: DPB says six different pins but per-design link to names rests on its list; listing names none)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-horses/mulan",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: DPB says six different pins but per-design link to names rests on its list; listing names none)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-horses/cinderella",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: DPB says six different pins but per-design link to names rests on its list; listing names none)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-horses/aurora",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: DPB says six different pins but per-design link to names rests on its list; listing names none)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-horses/merida",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: DPB says six different pins but per-design link to names rests on its list; listing names none)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-horses/rapunzel",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: DPB says six different pins but per-design link to names rests on its list; listing names none)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-initial/cinderella",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35983976 names no princess; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-initial/tiana",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35983976 names no princess; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-initial/rapunzel",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35983976 names no princess; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-initial/mulan",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35983976 names no princess; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-initial/jasmine",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35983976 names no princess; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-initial/snow-white",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35983976 names no princess; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-cars-racing-jacket/lightning-mcqueen",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 36100049 names no character; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-cars-racing-jacket/mater",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 36100049 names no character; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-cars-racing-jacket/doc-hudson",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 36100049 names no character; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-cars-racing-jacket/fillmore",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 36100049 names no character; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-cars-racing-jacket/ramone",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 36100049 names no character; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-cars-racing-jacket/dinoco",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 36100049 names no character; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villains-portrait/mother-gothel",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35988960 names no villain; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villains-portrait/ursula",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35988960 names no villain; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villains-portrait/cruella",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35988960 names no villain; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villains-portrait/evil-queen",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35988960 names no villain; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villains-portrait/maleficent",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35988960 names no villain; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villains-portrait/lady-tremaine",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing 35988960 names no villain; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villains-candy-box/jafar",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no listing or MPC entry found; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villains-candy-box/queen-of-hearts",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no listing or MPC entry found; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villains-candy-box/maleficent",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no listing or MPC entry found; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villains-candy-box/ursula",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no listing or MPC entry found; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villains-candy-box/evil-queen",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no listing or MPC entry found; DPB list only)"
+  },
+  {
+   "key": "lic/2026/boxlunch-villains-candy-box/dr-facilier",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: no listing or MPC entry found; DPB list only)"
+  },
+  {
+   "key": "lic/2026/loungefly-boxlunch-villains-cameos-glow/evil-queen",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing and DPB repeat assortment list only; no MPC entry)"
+  },
+  {
+   "key": "lic/2026/loungefly-boxlunch-villains-cameos-glow/ursula",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing and DPB repeat assortment list only; no MPC entry)"
+  },
+  {
+   "key": "lic/2026/loungefly-boxlunch-villains-cameos-glow/cruella",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing and DPB repeat assortment list only; no MPC entry)"
+  },
+  {
+   "key": "lic/2026/loungefly-boxlunch-villains-cameos-glow/maleficent",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing and DPB repeat assortment list only; no MPC entry)"
+  },
+  {
+   "key": "lic/2026/loungefly-boxlunch-villains-cameos-glow/scar",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing and DPB repeat assortment list only; no MPC entry)"
+  },
+  {
+   "key": "lic/2026/loungefly-boxlunch-villains-cameos-glow/jafar",
+   "field": "pin_structure",
+   "searched": "BoxLunch/DPB/MPC searches, B170",
+   "note": "hold: mystery designs not individually confirmed (kept, B170: listing and DPB repeat assortment list only; no MPC entry)"
+  },
+  {
+   "key": "lic/2026/boxlunch-grandfather-clock/the-lion-king",
+   "field": "pin_structure",
+   "searched": "MPC + listing search",
+   "note": "hold kept: film-per-pin structure stated by listing, but this film appears only in DPB list; no MPC entry found"
+  },
+  {
+   "key": "lic/2026/boxlunch-grandfather-clock/alice-in-wonderland",
+   "field": "pin_structure",
+   "searched": "MPC + listing search",
+   "note": "hold kept: film-per-pin structure stated by listing, but this film appears only in DPB list; no MPC entry found"
+  },
+  {
+   "key": "lic/2026/boxlunch-grandfather-clock/101-dalmatians",
+   "field": "pin_structure",
+   "searched": "MPC + listing search",
+   "note": "hold kept: film-per-pin structure stated by listing, but this film appears only in DPB list; no MPC entry found"
+  },
+  {
+   "key": "lic/2026/boxlunch-grandfather-clock/pinocchio",
+   "field": "pin_structure",
+   "searched": "MPC + listing search",
+   "note": "hold kept: film-per-pin structure stated by listing, but this film appears only in DPB list; no MPC entry found"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-sidekicks-flip-flop",
+   "field": "pin_structure",
+   "searched": "listing + DPB, 2 searches",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - listing: 2 random pins per set; DPB lists 6 princess/sidekick pairs; still unclear"
+  },
+  {
+   "key": "lic/2026/boxlunch-chip-dale-veggies/dale-napping",
+   "field": "pin_structure",
+   "searched": "reseller collection page",
+   "note": "hold: linked to the 2026 BoxLunch Veggies set by title only (reseller listing, undated); mystery designs not individually confirmed"
+  },
+  {
+   "key": "lic/2026/boxlunch-chip-dale-veggies",
+   "field": "pins",
+   "searched": "3 searches",
+   "note": "other veggie designs still unnamed; listing says chipmunks with different veggies"
+  },
+  {
+   "key": "lic/2026/boxlunch-d23-2026",
+   "field": "manufacturer",
+   "searched": "DPB, LaughingPlace, Mama's Geeky",
+   "note": "still no maker named; Mama's Geeky covers BoxLunch and Loungefly D23 presence together but does not attribute the BoxLunch one-day pins"
+  },
+  {
+   "key": "lic/2026/boxlunch-toy-story-5-hinge",
+   "field": "pins",
+   "searched": "1 search",
+   "note": "listing 36395844 still names no character"
+  },
+  {
+   "key": "lic/2026/boxlunch-toy-story-lollipop-keychain",
+   "field": "scope",
+   "searched": "1 search",
+   "note": "scope: confirmed button/badge/non-pin (BoxLunch Toy Story Lollipop blind box keychain, 36151219)"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-storybook-couples",
+   "field": "release_year",
+   "searched": "2 searches",
+   "note": "lead: BoxLunch Princess Storybook blind box (36274782), Disney couple emerging from open storybook, $12.90; undated; distinct from Storybook Moments"
+  },
+  {
+   "key": "lic/2026/boxlunch-alice-in-wonderland-shaker",
+   "field": "release_year",
+   "searched": "1 search",
+   "note": "lead: BoxLunch Alice in Wonderland blind box shaker pin (36606418), $12.90; undated, no characters stated; not recorded"
+  },
+  {
+   "key": "lic/2026/boxlunch-alice-in-wonderland-stained-glass-portrait",
+   "field": "release_year",
+   "searched": "1 search",
+   "note": "lead: BoxLunch Alice Character Stained Glass Portrait blind box (35676103), $12.90, ~2in; undated, characters not named"
+  },
+  {
+   "key": "lic/2026/boxlunch-villains-stained-glass-scenes-dangling",
+   "field": "release_year",
+   "searched": "1 search",
+   "note": "still undated: listing 36606427 ($16.90) found, no DPB post; set claims recorded but year unconfirmed"
+  },
+  {
+   "key": "lic/2026/boxlunch-villains-stained-glass-scenes-dangling",
+   "field": "pins",
+   "searched": "1 search",
+   "note": "designs unnamed"
+  },
+  {
+   "key": "lic/2026/boxlunch-princess-scenes",
+   "field": "release_year",
+   "searched": "1 search",
+   "note": "still undated: listing 36100056 ($12.90, different princess scenes); no DPB post found"
+  },
+  {
+   "key": "lic/2026/boxlunch-moana",
+   "field": "pins_per_box",
+   "searched": "1 search",
+   "note": "DPB still says 2 pins per box; no BoxLunch listing surfaced to check"
+  },
+  {
+   "key": "lic/2026/boxlunch-fairies",
+   "field": "pins_per_box",
+   "searched": "1 search",
+   "note": "listing again says one random pin; DPB versions still disagree"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 to 245_b087/269_b123/293_b147 (cell B170). Reuses existing keys. All search_snippet; 30 searches. Released 5 Pixar Movie Ticket holds (MPC lists a separate pin entry per film). All 11 newer held sets and older held sets keep holds: listings confirm counts/structure but name no characters. New pin: Chip & Dale Veggies 'Dale Napping' (reseller title, held). D23 maker still unknown. New undated leads: Princess Storybook couples, Alice shaker, Alice stained glass portrait."
+}

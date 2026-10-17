@@ -1,0 +1,798 @@
+{
+ "packet_id": "backfill-b257-ds-2015-fu8",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b257",
+ "sources": [
+  {
+   "url": "https://bashfulgnome.tumblr.com/post/752544602501873664/kritterart-im-king-candy",
+   "title": "kritterart: I'm King Candy! (reblog)",
+   "publisher": "Ships by night (Tumblr fan blog)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/52130",
+   "title": "52130",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+   "title": "October 2015 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://disneypinsblog.com/october-2015-disney-park-pack/",
+   "title": "October 2015 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/tag/park-pack/",
+   "title": "park pack (tag page)",
+   "publisher": "DisKingdom",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-april-2015-pins",
+   "title": "Disney Studio Store Hollywood April 2015 Pins!",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/ursula-disney-pin/",
+   "title": "Ursula Disney Pin Archives",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/disney-store-europe-june-4th-villains-sidekicks-series-2.54009/",
+   "title": "Disney Store Europe, June 4th: villains sidekicks series 2!",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-june-2015-pins",
+   "title": "Disney Studio Store June 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-november-2015-pins",
+   "title": "Disney Studio Store Hollywood November 2015 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/december-2015-mother-gothel-calendar-pin",
+   "title": "December 2015 Mother Gothel Calendar Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/tag/pin-trader-delights/",
+   "title": "pin trader delights (tag page)",
+   "publisher": "DisKingdom",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/2015/10/31/pin-trader-delight-review-1/",
+   "title": "Pin Trader Delight Review #1",
+   "publisher": "DisKingdom",
+   "published_date": "2015-10-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsus/2015/studio-store-hollywood-villains-calendar-2015",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://bashfulgnome.tumblr.com/post/752544602501873664/kritterart-im-king-candy",
+     "method": "search_snippet",
+     "note": "fan blog calls it a twelve-part monthly series, each a villain from a different animated film; single fan source"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2015/disney-park-pack-2015-10",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Park Pack: Pin Trading Edition - October 2015",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "DPB: sixth Park Pack box"
+    },
+    {
+     "field": "format",
+     "value": "box of 3 separate pins (1 LE in 4 variants + 2 OE)",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "two new OE pins plus one exclusive LE pin, each described separately"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "3 pins per box"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "October 2015 boxes shipped to DisneyStore.com buyers; exact ship day not stated"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "boxes sold through DisneyStore.com"
+    },
+    {
+     "field": "price",
+     "value": 39.95,
+     "source_url": "https://diskingdom.com/tag/park-pack/",
+     "method": "search_snippet",
+     "note": "DisKingdom (1 Oct 2015): relaunched as a monthly subscription, USD 39.95 incl. shipping, 3 pins"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://diskingdom.com/tag/park-pack/",
+     "method": "search_snippet",
+     "note": "US online price"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-villains-calendar-2015/king-candy-january",
+   "set_key": "dsus/2015/studio-store-hollywood-villains-calendar-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "King Candy - Villains Calendar Jan 2015 (DSSH)",
+     "source_url": "https://bashfulgnome.tumblr.com/post/752544602501873664/kritterart-im-king-candy",
+     "method": "search_snippet",
+     "note": "fan post names the DSSH/DSF 2015 Villains Calendar January King Candy pin, a surprise release"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "King Candy"
+     ],
+     "source_url": "https://bashfulgnome.tumblr.com/post/752544602501873664/kritterart-im-king-candy",
+     "method": "search_snippet",
+     "note": "subject per post"
+    },
+    {
+     "field": "main_character",
+     "value": "King Candy",
+     "source_url": "https://bashfulgnome.tumblr.com/post/752544602501873664/kritterart-im-king-candy",
+     "method": "search_snippet",
+     "note": "subject per post"
+    },
+    {
+     "field": "franchise",
+     "value": "Wreck-It Ralph",
+     "source_url": "https://bashfulgnome.tumblr.com/post/752544602501873664/kritterart-im-king-candy",
+     "method": "search_snippet",
+     "note": "film per post"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://bashfulgnome.tumblr.com/post/752544602501873664/kritterart-im-king-candy",
+     "method": "search_snippet",
+     "note": "single monthly calendar pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://bashfulgnome.tumblr.com/post/752544602501873664/kritterart-im-king-candy",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://bashfulgnome.tumblr.com/post/752544602501873664/kritterart-im-king-candy",
+     "method": "search_snippet",
+     "note": "LE 400 per post"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://bashfulgnome.tumblr.com/post/752544602501873664/kritterart-im-king-candy",
+     "method": "search_snippet",
+     "note": "2015 Villains Calendar"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://bashfulgnome.tumblr.com/post/752544602501873664/kritterart-im-king-candy",
+     "method": "search_snippet",
+     "note": "DSSH/DSF surprise release"
+    },
+    {
+     "field": "visual_description",
+     "value": "inside shows King Candy celebrating the new year with confetti beside a January calendar",
+     "source_url": "https://bashfulgnome.tumblr.com/post/752544602501873664/kritterart-im-king-candy",
+     "method": "search_snippet",
+     "note": "paraphrased from post"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/studio-store-hollywood-villains-calendar-2015/queen-of-hearts-february",
+   "set_key": "dsus/2015/studio-store-hollywood-villains-calendar-2015",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Queen of Hearts - Villains Calendar Feb 2015 (DSSH)",
+     "source_url": "https://mypincentral.com/pin/52130",
+     "method": "search_snippet",
+     "note": "listing: Disney Villains Calendar 2015 hinged pin opening to a February calendar"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Queen of Hearts"
+     ],
+     "source_url": "https://mypincentral.com/pin/52130",
+     "method": "search_snippet",
+     "note": "description shows the Queen of Hearts; listing's character tag says King of Hearts (see not_found)"
+    },
+    {
+     "field": "main_character",
+     "value": "Queen of Hearts",
+     "source_url": "https://mypincentral.com/pin/52130",
+     "method": "search_snippet",
+     "note": "per description"
+    },
+    {
+     "field": "franchise",
+     "value": "Alice in Wonderland",
+     "source_url": "https://mypincentral.com/pin/52130",
+     "method": "search_snippet",
+     "note": "film per listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/52130",
+     "method": "search_snippet",
+     "note": "single double-hinged pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/52130",
+     "method": "search_snippet",
+     "note": "backstamp per listing"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://mypincentral.com/pin/52130",
+     "method": "search_snippet",
+     "note": "back reads Disney Studio Store Hollywood Limited Edition 400 per listing"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://mypincentral.com/pin/52130",
+     "method": "search_snippet",
+     "note": "front title reads Villains Calendar 2015"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://mypincentral.com/pin/52130",
+     "method": "search_snippet",
+     "note": "store named on backstamp"
+    },
+    {
+     "field": "visual_description",
+     "value": "gold title on sparkly pink-purple front; two hinges open to the Queen holding a box of chocolates by a Feb calendar",
+     "source_url": "https://mypincentral.com/pin/52130",
+     "method": "search_snippet",
+     "note": "paraphrased; back gold with embossed ice cream cones"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/disney-park-pack-2015-10/hitchhiking-ghosts",
+   "set_key": "dsus/2015/disney-park-pack-2015-10",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hitchhiking Ghosts - Park Pack October 2015",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "exclusive LE pin of the October box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hitchhiking Ghosts"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "Haunted Mansion ghosts"
+    },
+    {
+     "field": "attraction",
+     "value": "The Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "attraction per post"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin (LE in 4 variants)",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "four variants of the LE pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "LE 750"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "October 2015 box"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "Park Pack sold via DisneyStore.com"
+    },
+    {
+     "field": "visual_description",
+     "value": "pin-on-pin design with glow-in-the-dark elements",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "paraphrased"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/disney-park-pack-2015-10/olaf",
+   "set_key": "dsus/2015/disney-park-pack-2015-10",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Olaf - Park Pack October 2015",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "OE pin in the October box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Olaf"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "subject per post"
+    },
+    {
+     "field": "main_character",
+     "value": "Olaf",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "franchise",
+     "value": "Frozen",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "Olaf"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pin in 3-pin box",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "one of two OE pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "original_price",
+     "value": 8.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "USD 8.95 retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "October 2015 box"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "2015"
+    },
+    {
+     "field": "visual_description",
+     "value": "Olaf with a text line joking that his friends are flakes",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "paraphrased"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2015/disney-park-pack-2015-10/kronk",
+   "set_key": "dsus/2015/disney-park-pack-2015-10",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kronk - Park Pack October 2015",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "OE pin in the October box"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kronk"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "subject per post"
+    },
+    {
+     "field": "main_character",
+     "value": "Kronk",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "franchise",
+     "value": "The Emperor's New Groove",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "film per post"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pin in 3-pin box",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "one of two OE pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "original_price",
+     "value": 8.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "USD 8.95 retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2015-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "October 2015 box"
+    },
+    {
+     "field": "release_year",
+     "value": 2015,
+     "source_url": "https://disneypinsblog.com/blogs/news/october-2015-disney-park-pack",
+     "method": "search_snippet",
+     "note": "2015"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsus/2015/studio-store-hollywood-villains-calendar-2015",
+   "field": "members",
+   "searched": "10 calendar queries",
+   "note": "now Jan (King Candy), Feb (Queen of Hearts), Mar, Sep (held), Oct, Dec known; Apr-Aug and Nov 2015 pins still not found; no Hades 2015 calendar pin (Hades Cutie is Apr 2016)"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-villains-calendar-2015",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "12 rests on one Tumblr fan post; consistent with a monthly calendar but no Disney or blog round-up states it"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-villains-calendar-2015/king-candy-january",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "hold: only source is a Tumblr fan post (no date, no price); confirm with a dated release post before sign-off"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-villains-calendar-2015/king-candy-january",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "price not stated; USD 18.95 of Mar/Oct/Dec pins not assumed"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-villains-calendar-2015/queen-of-hearts-february",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "listing tags King of Hearts while its description shows the Queen of Hearts; Queen used, confirm"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-villains-calendar-2015/queen-of-hearts-february",
+   "field": "release_date",
+   "searched": "3 queries",
+   "note": "release date and price not stated; MyPinCentral is the only source"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-villains-calendar-2015/ursula-september",
+   "field": "set_key",
+   "searched": "1 query",
+   "note": "hold kept: DPB Ursula tag page lists a Sept 2015 Ursula calendar pin by title only; store, size and price still not stated"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-villains-calendar-2015/ursula-september",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "not stated; LE 400 not assumed"
+  },
+  {
+   "key": "dsus/2015/disney-park-pack-2015-10/hitchhiking-ghosts",
+   "field": "variants",
+   "searched": "2 queries",
+   "note": "hold: four LE 750 variants not individually described; this record stands for the LE design only (as July 2015 Park Pack)"
+  },
+  {
+   "key": "dsus/2015/disney-park-pack-2015-10",
+   "field": "scope",
+   "searched": "2 queries",
+   "note": "OE Olaf and Kronk also sold at DLR and WDW per post; may suit a parks cell too"
+  },
+  {
+   "key": "dsus/2015/disney-park-pack-2015-10",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "exact ship date not stated; DisKingdom subscription relaunch post is 1 Oct 2015 (tag page only)"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-april-2015",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "lead: DPB April round-up (10 and 25 Apr) mentions gold hinged pins, bow pins and a Rapunzel and Pascal pin; no per-pin size, price or structure"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-june-2015",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "princess locket and Inside Out LE pins still unnamed; DSSH Ariel LE 400 seen only on an undated reseller listing (not used)"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-inside-out-now-playing",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: no new per-design evidence; Inside Out marquee/Sadness pins found are the 2024 Inside Out 2 release"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-months",
+   "field": "scope",
+   "searched": "2 July queries",
+   "note": "still no DSSH July 2015 LE pins; DPB July roundups cover parks, Lava and Park Pack only"
+  },
+  {
+   "key": "dsuk/2015/villains-sidekicks-series-2",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "pins 3-4 still unnamed; disneystore.eu multi-sidekick pin (Iago, Flotsam & Jetsam, Kronk, hyenas) is undated, not linked"
+  },
+  {
+   "key": "dsuk/2015/villains-sidekicks-series-2",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "DPF Brutus & Nero thread says the sidekicks series resumed; date unclear, likely earlier series - not linked"
+  },
+  {
+   "key": "dsus/2015/d23-expo-short-films-collection-boxed-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "still only 3 of 12 named (Happily Ever After, Paperman, Feast); Get a Horse LE 300 still only on resale listings"
+  },
+  {
+   "key": "dsus/2015/d23-expo-minnie-signature-boxed-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "six bow pins still not individually described"
+  },
+  {
+   "key": "dsus/2015/d23-expo-minnie-signature-boxed-set",
+   "field": "edition_size",
+   "searched": "not re-searched",
+   "note": "conflict unresolved: DPB LE 300 / USD 59.95 vs Dollect LE 400 / USD 79.95"
+  },
+  {
+   "key": "dsuk/2015/cinderella-65th-le-350/cinderella-65th",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "GBP price still not stated; GBP 25 on current DS UK site is a different Cinderella pin"
+  },
+  {
+   "key": "dsuk/2015/cinderella-65th-le-350/cinderella-65th",
+   "field": "set_key",
+   "searched": "1 query",
+   "note": "hold kept: MyPinCentral 43882 still gives no region or date"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-10",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "flip date, sizes and price still not found; only the 31 Oct 2015 DisKingdom review"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-12",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "5 Dec 2015 PTD (dessert + LE pin, USD 15.45) still unnamed in snippets"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-01-19",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "hold kept: pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-03-09",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-04-30",
+   "field": "members",
+   "searched": "not re-searched",
+   "note": "hold kept: pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-pin-trader-delight-2015-08-23",
+   "field": "members",
+   "searched": "not re-searched",
+   "note": "hold kept: pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-october-2015/mike-sully-and-boo",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold: one pin vs several still rests on a single round-up price line; earlier hold stands"
+  },
+  {
+   "key": "dsus/2015/studio-store-hollywood-october-2015/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold: one pin vs several still rests on a single round-up price line; earlier hold stands"
+  },
+  {
+   "key": "dsus/2015/disney-park-pack-2015-07/mickey-and-minnie-old-car",
+   "field": "variants",
+   "searched": "not re-searched",
+   "note": "hold kept: four LE 500 variants still not individually described"
+  },
+  {
+   "key": "dsuk/2015/good-dinosaur-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: contents still unnamed (LE 400 worldwide / 200 Europe, GBP 35, 27 Oct 2015)"
+  },
+  {
+   "key": "dsuk/2015/lava-le-300/lava",
+   "field": "release_date",
+   "searched": "not re-searched",
+   "note": "hold kept: no new evidence"
+  },
+  {
+   "key": "dsuk/2015/pixar-cars-boxed-set",
+   "field": "set_key",
+   "searched": "not re-searched",
+   "note": "hold kept: no new evidence"
+  },
+  {
+   "key": "dsus/2015/d23-expo-music-of-frozen-boxed-set",
+   "field": "release_location",
+   "searched": "not re-searched",
+   "note": "hold kept: no new evidence; route to D23/parks recommended"
+  },
+  {
+   "key": "dsuk/2015/art-of-jasmine-boxed-set",
+   "field": "members",
+   "searched": "not re-searched",
+   "note": "hold kept: no new evidence (budget)"
+  },
+  {
+   "key": "dsus/2015/star-wars-tfa-disneystore-com-collection/kylo-ren",
+   "field": "set_position",
+   "searched": "not re-searched",
+   "note": "hold kept: no new evidence (budget)"
+  },
+  {
+   "key": "dsuk/2015/star-wars-kylo-ren",
+   "field": "existence",
+   "searched": "not re-searched",
+   "note": "lead only, unchanged (budget)"
+  }
+ ],
+ "discovery_notes": "Cell B257, follow-up 8 of B038 (DS 2015). 30 standard searches, snippets only. New: Villains Calendar Jan (King Candy, Tumblr fan post, held) and Feb (Queen of Hearts, MyPinCentral), series size 12 (fan source); October 2015 Park Pack (3 pins). No holds released. Resellers (jd-collectibles, collectrandom, yourwdwstore, jnbcollectibles) seen, not used."
+}

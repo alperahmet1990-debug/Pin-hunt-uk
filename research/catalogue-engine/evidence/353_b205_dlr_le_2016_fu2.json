@@ -1,0 +1,996 @@
+{
+ "packet_id": "backfill-b205-dlr-le-2016-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b205",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+   "title": "New Disney Pins April 2016 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-04-19"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+   "title": "New Disney Pins May 2016 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-05"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+   "title": "New Disney Pins June 2016 Week 5",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-06"
+  },
+  {
+   "url": "https://futureofstarwars.wordpress.com/2016/05/04/may-the-4th-2016-be-with-you/",
+   "title": "May the 4th (2016) Be With You",
+   "publisher": "Future of Star Wars (fan blog)",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-05-04"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mickeys-halloween-party-2016-pins",
+   "title": "Mickey's Halloween Party 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-09"
+  },
+  {
+   "url": "http://diskingdom.com/2016/08/04/first-look-at-halloween-merchandise-coming-to-disneyland/",
+   "title": "First Look At Halloween Merchandise Coming To Disneyland",
+   "publisher": "DisKingdom",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-08-04"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+   "title": "New Disney Pins November 2016 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/march-2016-disney-park-pack/",
+   "title": "March 2016 Disney Park Pack",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-03"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/captain-america-civil-war-limited-edition-pin-set",
+   "title": "Captain America: Civil War Limited Edition Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-03"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-diamond-celebration-event",
+   "title": "Disneyland Diamond Celebration Event!",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2015"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/wdi-diamond-character-pins-june-2016",
+   "title": "WDI Diamond Character Pins June 2016",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2016-06"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2016/nurses-day-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Nurses Day 2016",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Nurses Day pin listed in the 17-23 Apr 2016 roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "available 21 Apr 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "listed as shared with WDW"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/teachers-day-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Teachers Day 2016",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Teachers Day pin in the same roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "available 21 Apr 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "listed as shared with WDW"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/independence-day-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Independence Day 2016",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Stitch Independence Day pin in 26 Jun-2 Jul roundup"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-30",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "available 30 Jun 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "described as a shared release"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/captain-america-civil-war",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Captain America: Civil War 2016 park pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "Civil War pins in the 1-7 May 2016 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "each listing called limited release"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "available 5 May 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "both resorts"
+    },
+    {
+     "field": "format",
+     "value": "separate listings: a two-pin Whose Side entry, a logo pin and a Cross Bones pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "post lists these as separate items"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/captain-america-civil-war-whose-side",
+   "parent_set_key": "dlr/2016/captain-america-civil-war",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Captain America: Civil War - Whose Side Are You On?",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "heading for two limited release Civil War pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "post says two pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "5 May 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/star-wars-day-2016",
+   "claims": [
+    {
+     "field": "price",
+     "value": 14.95,
+     "source_url": "https://futureofstarwars.wordpress.com/2016/05/04/may-the-4th-2016-be-with-you/",
+     "method": "search_snippet",
+     "note": "fan blog: 2016 park pins $14.95 each, a dollar less than 2015"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://futureofstarwars.wordpress.com/2016/05/04/may-the-4th-2016-be-with-you/",
+     "method": "search_snippet",
+     "note": "USD"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/mickeys-halloween-party-2016-costume-set",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "http://diskingdom.com/2016/08/04/first-look-at-halloween-merchandise-coming-to-disneyland/",
+     "method": "search_snippet",
+     "note": "Aug 2016 preview: four-pin set of characters in themed costumes"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "http://diskingdom.com/2016/08/04/first-look-at-halloween-merchandise-coming-to-disneyland/",
+     "method": "search_snippet",
+     "note": "preview gives edition of 1,000"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2016/08/04/first-look-at-halloween-merchandise-coming-to-disneyland/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "http://diskingdom.com/2016/08/04/first-look-at-halloween-merchandise-coming-to-disneyland/",
+     "method": "search_snippet",
+     "note": "select DLR merchandise locations"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickeys-halloween-party-2016-pins",
+     "method": "search_snippet",
+     "note": "four different pins in one set"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2016/haunted-mansion-holiday-2016-puzzle-mystery",
+   "claims": [
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "each box: one of 8 revealed pins plus one of 7 mystery pins"
+    },
+    {
+     "field": "format",
+     "value": "reveal/conceal mystery: 8 revealed + 7 concealed designs",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2016-week-2",
+     "method": "search_snippet",
+     "note": "15 total split 8 revealed, 7 mystery"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2016/diamond-d-pin-of-the-month/winnie-the-pooh",
+   "set_key": "dlr/2016/diamond-d-pin-of-the-month",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland 60th Diamond D - Winnie the Pooh",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "monthly Diamond D pin featuring Pooh"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Pooh"
+    },
+    {
+     "field": "main_character",
+     "value": "Winnie the Pooh",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Pooh"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "single monthly pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "snippet says LE 5,000; differs from 3,000 in series previews - not reconciled"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "21 Apr 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "listed under Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/love-letters-pin-of-the-month/ariel-eric",
+   "set_key": "dlr/2016/love-letters-pin-of-the-month",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Love Letters - Ariel & Eric",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "April Love Letters pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel",
+      "Prince Eric"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Ariel and Eric on one pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Ariel"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "single hinged pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "hinged"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "$15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "21 Apr 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "shared release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/nurses-day-2016/baymax",
+   "set_key": "dlr/2016/nurses-day-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nurses Day 2016 - Baymax",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Nurses Day pin with Baymax"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Baymax"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Baymax"
+    },
+    {
+     "field": "main_character",
+     "value": "Baymax",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Baymax"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "LE 5,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "21 Apr 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "shared release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/teachers-day-2016/chip-dale",
+   "set_key": "dlr/2016/teachers-day-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Teachers Day 2016 - Chip and Dale",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Teachers Day pin with Chip and Dale"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Chip and Dale"
+    },
+    {
+     "field": "main_character",
+     "value": "Chip",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "Chip and Dale pair"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-04-21",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "21 Apr 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2016-week-3/",
+     "method": "search_snippet",
+     "note": "shared release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/independence-day-2016/stitch",
+   "set_key": "dlr/2016/independence-day-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Independence Day 2016 - Stitch",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Stitch Independence Day pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Stitch"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "Stitch"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "edition of 3,500"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-06-30",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "30 Jun 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2016-week-5",
+     "method": "search_snippet",
+     "note": "shared release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/captain-america-civil-war/logo",
+   "set_key": "dlr/2016/captain-america-civil-war",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Captain America: Civil War logo pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "logo pin for the film"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "listed as a single limited release pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "LR"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "5 May 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/captain-america-civil-war/cross-bones",
+   "set_key": "dlr/2016/captain-america-civil-war",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Captain America: Civil War - Cross Bones",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "Cross Bones pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Crossbones"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "Crossbones villain named in listing title"
+    },
+    {
+     "field": "main_character",
+     "value": "Crossbones",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "Crossbones"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "listed as a single limited release pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "LR"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "5 May 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/star-wars-day-2016/may-the-4th",
+   "set_key": "dlr/2016/star-wars-day-2016",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "May the 4th Be With You 2016",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "limited release May the 4th pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-05-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2016-week-1",
+     "method": "search_snippet",
+     "note": "available at DL and WDW 4 May 2016"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://futureofstarwars.wordpress.com/2016/05/04/may-the-4th-2016-be-with-you/",
+     "method": "search_snippet",
+     "note": "fan blog gives $14.95 for each 2016 park pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2016/star-wars-day-2016/revenge-of-the-5th",
+   "set_key": "dlr/2016/star-wars-day-2016",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://futureofstarwars.wordpress.com/2016/05/04/may-the-4th-2016-be-with-you/",
+     "method": "search_snippet",
+     "note": "fan blog gives $14.95 for each 2016 park pin"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2016/captain-america-civil-war/logo",
+   "field": "pin_structure",
+   "searched": "follow-up B205, 2 queries",
+   "note": "released: DPB May 2016 wk1 page lists the logo as its own single LR pin; replaces fu1 structure hold for this item"
+  },
+  {
+   "key": "dlr/2016/captain-america-civil-war/cross-bones",
+   "field": "pin_structure",
+   "searched": "follow-up B205, 2 queries",
+   "note": "released: same DPB page lists Cross Bones as its own single LR pin; design beyond the name not described"
+  },
+  {
+   "key": "dlr/2016/captain-america-civil-war-whose-side",
+   "field": "members",
+   "searched": "follow-up B205, 2 queries",
+   "note": "hold: confirm pin structure (pack or two single pins); page says two pins, neither named or described"
+  },
+  {
+   "key": "dlr/2016/captain-america-civil-war",
+   "field": "edition_size",
+   "searched": "follow-up B205, 2 queries",
+   "note": "no edition sizes or prices given for the 2016 park Civil War pins"
+  },
+  {
+   "key": "dlr/2016/star-wars-day-2016/may-the-4th",
+   "field": "release_date",
+   "searched": "follow-up B205, 3 queries",
+   "note": "resolved: DPB May wk1 page gives 4 May 2016 (fu1 gap closed)"
+  },
+  {
+   "key": "dlr/2016/star-wars-day-2016",
+   "field": "edition_size",
+   "searched": "follow-up B205, 3 queries",
+   "note": "still no edition sizes or design descriptions; Vader/Death Star design for Revenge of the 5th seen only on reseller ecrater - not used"
+  },
+  {
+   "key": "dlr/2016/diamond-d-pin-of-the-month",
+   "field": "members",
+   "searched": "follow-up B205, 6 queries",
+   "note": "found Pooh (Apr 2016) besides Belle; Jan-Feb and May-Sep 2016 members still unnamed; Pooh LE 5,000 vs series 3,000 unreconciled"
+  },
+  {
+   "key": "dlr/2016/ap-60th-diamond-collection",
+   "field": "members",
+   "searched": "follow-up B205, 3 queries",
+   "note": "no 2016 member beyond Merryweather; July 2016 AP pin was the Pixar quarterly, not this series"
+  },
+  {
+   "key": "dlr/2016/love-letters-pin-of-the-month",
+   "field": "members",
+   "searched": "follow-up B205, 1 query",
+   "note": "Ariel & Eric (Apr) added beside Donald & Daisy (Mar); other 2016 months not searched"
+  },
+  {
+   "key": "dlr/2016/pin-trading-night",
+   "field": "release",
+   "searched": "follow-up B205, 1 query",
+   "note": "still nothing; results only HKDL Pin Trading Fun Days 2016 and Date Nite"
+  },
+  {
+   "key": "dlr/2016/season-of-the-force",
+   "field": "release",
+   "searched": "follow-up B205, 1 query",
+   "note": "no 2016 SotF pin found; only unrelated Tomorrowland pins"
+  },
+  {
+   "key": "dlr/2016/dca-food-wine-2016",
+   "field": "release",
+   "searched": "follow-up B205, 1 query",
+   "note": "no 2016 pin found; 2017 and 2018 DCA F&W pins exist (other cells)"
+  },
+  {
+   "key": "dlr/2016/diamond-celebration-closing",
+   "field": "release",
+   "searched": "follow-up B205, 2 queries",
+   "note": "no finale or closing pin found; Sep 2016 roundups show none tied to the Diamond Celebration"
+  },
+  {
+   "key": "dlr/2016/mickeys-halloween-party-2016-costume-set",
+   "field": "members",
+   "searched": "follow-up B205, 2 queries",
+   "note": "DPB and DisKingdom agree on 4 pins LE 1,000 in costumes; characters still unnamed; no members recorded"
+  },
+  {
+   "key": "dlr/2016/haunted-mansion-holiday-2016-puzzle-mystery",
+   "field": "members",
+   "searched": "follow-up B205, 1 query",
+   "note": "pieces still unnamed by a publisher; theme conflict (Oogie roulette wheel on reseller vs bat in forum) - neither recorded"
+  },
+  {
+   "key": "dlr/2016/disney-royalty-mystery",
+   "field": "members",
+   "searched": "follow-up B205, 1 query",
+   "note": "hold kept: still only one collector Flickr post; no per-design publisher listing"
+  },
+  {
+   "key": "dlr/2016/earth-day-2016/mike-wazowski",
+   "field": "original_price",
+   "searched": "follow-up B205, 1 query",
+   "note": "DPB says retail price had not been posted; no other source"
+  },
+  {
+   "key": "dlr/2016/graduation-2016/mickey",
+   "field": "visual_description",
+   "searched": "follow-up B205, 2 queries",
+   "note": "conflict kept: DPB says Mickey with diploma; resellers describe a selfie design with same LE 2,000 and date - unresolved"
+  },
+  {
+   "key": "dlr/2016/darkwing-duck-park-pack",
+   "field": "lead",
+   "searched": "follow-up B205, 2 queries",
+   "note": "lead: Darkwing Duck LE pin was the Mar 2016 Disney Park Pack (DisneyStore.com box), not DLR - belongs to dsus; LE 500 vs 750 conflict, 4 variants"
+  },
+  {
+   "key": "dlr/2016/captain-america-civil-war-disney-store-set",
+   "field": "lead",
+   "searched": "follow-up B205, 1 query",
+   "note": "lead: DisneyStore.com 2-pin boxed Civil War set, LE 800, $59.95, 2 Mar 2016 - dsus cell, not DLR"
+  },
+  {
+   "key": "dlr/2016/disneyland-60-mystery-2016",
+   "field": "lead",
+   "searched": "follow-up B205, 2 queries",
+   "note": "lead: DL 60th mystery sets 25 Feb 2016 (LE 5,000, $12.95, 1 per box) and 21 Apr 2016 ($12.95/box); designs unnamed - hold: mystery designs not individually confirmed"
+  },
+  {
+   "key": "dlr/2016/wdi-diamond-character-pins",
+   "field": "lead",
+   "searched": "follow-up B205, 2 queries",
+   "note": "CM-only WDI pins: summaries say seven vs eight pins, LE 250 $14.95; still not a park release, not recorded"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/rapunzel-flynn",
+   "field": "pin_name",
+   "searched": "follow-up B205, 2 queries",
+   "note": "hold: kept - Date Nite results only repeated the 8 LR / 8 chaser / 1 super chaser counts; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/duchess-omalley",
+   "field": "pin_name",
+   "searched": "follow-up B205, 2 queries",
+   "note": "hold: kept - Date Nite results only repeated the 8 LR / 8 chaser / 1 super chaser counts; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/beauty-beast",
+   "field": "pin_name",
+   "searched": "follow-up B205, 2 queries",
+   "note": "hold: kept - Date Nite results only repeated the 8 LR / 8 chaser / 1 super chaser counts; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/aurora-phillip",
+   "field": "pin_name",
+   "searched": "follow-up B205, 2 queries",
+   "note": "hold: kept - Date Nite results only repeated the 8 LR / 8 chaser / 1 super chaser counts; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/roger-anita",
+   "field": "pin_name",
+   "searched": "follow-up B205, 2 queries",
+   "note": "hold: kept - Date Nite results only repeated the 8 LR / 8 chaser / 1 super chaser counts; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/anna-kristoff",
+   "field": "pin_name",
+   "searched": "follow-up B205, 2 queries",
+   "note": "hold: kept - Date Nite results only repeated the 8 LR / 8 chaser / 1 super chaser counts; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/robin-hood-maid-marian",
+   "field": "pin_name",
+   "searched": "follow-up B205, 2 queries",
+   "note": "hold: kept - Date Nite results only repeated the 8 LR / 8 chaser / 1 super chaser counts; no per-design source"
+  },
+  {
+   "key": "dlr/2016/date-nite-2016/aurora-phillip-chaser",
+   "field": "pin_name",
+   "searched": "follow-up B205, 2 queries",
+   "note": "hold: kept - Date Nite results only repeated the 8 LR / 8 chaser / 1 super chaser counts; no per-design source"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 of B028 (DLR LE 2016). 30 standard WebSearch calls, blocked domains passed. New items from Disney Pins Blog weekly roundups (Apr wk3, May wk1, Jun wk5). Shared DL+WDW LEs included as in B028. Resellers (ecrater, magicalearscollectibles, distradingpins4u, vintageradar, yourwdwstore) ignored. Two Civil War structure holds released; Whose Side pair kept on hold."
+}

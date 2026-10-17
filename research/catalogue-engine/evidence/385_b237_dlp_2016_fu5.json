@@ -1,0 +1,547 @@
+{
+ "packet_id": "backfill-b237-dlp-2016-fu5",
+ "spec_version": 1,
+ "collected_at": "2026-10-17",
+ "collector": "agent:backfill-b237",
+ "sources": [
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+   "title": "Disneyland Paris Pins For October 2016: Christmas, 2017, Dug Dog and Halloween At Last",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2016-10-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+   "title": "Disneyland Paris Pins For September 2016: runDisney Bonanza, Villains, Poppins, Christmas Tink and Luna?",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2016-09-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-august-2016-christmas-hook-dog-and-sparkles/",
+   "title": "Disneyland Paris Pins For August 2016: Christmas (!), Hook, Dog and Sparkles",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2016-08-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-december-2016-star-wars-beauty-and-the-beast-christmas-jewellery-and-2017/",
+   "title": "Disneyland Paris Pins For December 2016: Star Wars, Beauty and the Beast, Christmas, Jewellery and 2017",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2016-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-april-2016-tsum-tsum-24th-anniversary-star-wars-and-mickey-ears/",
+   "title": "Disneyland Paris Pins for April 2016: Tsum Tsum, 24th Anniversary, Star Wars and Mickey Ears",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2016-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-january-2016-pins",
+   "title": "Disneyland Paris January 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-march-2016-pins",
+   "title": "Disneyland Paris March 2016 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.passiondlp.com/actus/arc020.php",
+   "title": "passiondlp : Archives Disneyland Paris 2016 trimestre 2",
+   "publisher": "passiondlp",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc022.php",
+   "title": "passiondlp : Archives Disneyland Paris 2016 trimestre 4",
+   "publisher": "passiondlp",
+   "published_date": "2016",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-maerz-2016/",
+   "title": "Disneyland Paris Pin-Trading Kollektion Maerz 2016",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2016-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+   "title": "Disneyland Paris Pin Neuerscheinungen im Dezember 2016",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2016-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.magicdlp.de/pin-trading-disneyland-paris-news-september-2016-2/",
+   "title": "Pin Trading Disneyland Paris News Oktober 2016",
+   "publisher": "magicdlp.de",
+   "published_date": "2016-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://salonmickey.wordpress.com/2016/04/30/may-2016-disneyland-paris-trading-pins/",
+   "title": "May 2016 Disneyland Paris Trading Pins",
+   "publisher": "Salon Mickey",
+   "published_date": "2016-04-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2016/pin-trading-night-january-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night 29 January 2016",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-january-2016-pins",
+     "method": "search_snippet",
+     "note": "Jan 2016 roundup names the next pin trading night"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-01-29",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-january-2016-pins",
+     "method": "search_snippet",
+     "note": "Night held Friday 29 Jan 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Yellow Rose Dance Hall, Disney's Hotel Cheyenne",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-january-2016-pins",
+     "method": "search_snippet",
+     "note": "Venue given as Hotel Cheyenne, Yellow Rose Dance Hall"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/pin-trading-night-march-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night 25 March 2016",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-march-2016-pins",
+     "method": "search_snippet",
+     "note": "March 2016 roundup names the next pin trading night"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-march-2016-pins",
+     "method": "search_snippet",
+     "note": "Night dated 25 Mar 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Beaver Creek Tavern, Disney's Sequoia Lodge",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-march-2016-pins",
+     "method": "search_snippet",
+     "note": "Venue given as Sequoia Lodge, Beaver Creek Tavern"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/pin-trading-night-july-2016",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night 29 July 2016",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Q2 archive notes Pueblo Trading Post closed Fri 29 Jul because of the Pin Trading Night"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-07-29",
+     "source_url": "https://www.passiondlp.com/actus/arc020.php",
+     "method": "search_snippet",
+     "note": "Date inferred only from Pueblo closure notice for the night; pins not named"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/2017-dated-pins-october-2016",
+   "claims": [
+    {
+     "field": "format",
+     "value": "two drops of 2017-dated single pins: five on 1 Oct and four on 15 Oct",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Post says five 2017 pins on 1 Oct and four more on 15 Oct, nine in all"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/october-2016-releases",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.magicdlp.de/pin-trading-disneyland-paris-news-september-2016-2/",
+     "method": "search_snippet",
+     "note": "Oct 2016 flyer post: 2017, Christmas and Halloween pins; PTN on 28 Oct"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/luna-september-2016",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2016-09-24",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-september-2016-rundisney-bonanza-villains-poppins-tink-and-luna/",
+     "method": "search_snippet",
+     "note": "Post places a Luna release on 24 Sep, aimed at Spanish-speaking guests"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2016/oe-set/rogue-one-trooper-helmets-booster",
+   "claims": [
+    {
+     "field": "format",
+     "value": "booster of four different pins, each an Imperial trooper helmet from Rogue One",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2016/",
+     "method": "search_snippet",
+     "note": "Dec post: 10 Dec booster of 4 different pins showing various Imperial troop helmets, unlimited, EUR 18.99"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2016/villains-series/ratigan",
+   "set_key": "dlp/2016/villains-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Villains Ratigan",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Post lists the next Villains series pin, Ratigan, among 15 Oct releases"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ratigan"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Ratigan named as the Villains pin subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Ratigan",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Single villain subject"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-10-15",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "Released Saturday 15 Oct 2016"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-october-2016-christmas-2017-dug-dog-and-halloween-at-last/",
+     "method": "search_snippet",
+     "note": "DLP monthly release roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/march-2016-releases/aristocats",
+   "set_key": "dlp/2016/march-2016-releases",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2016-03-12",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-maerz-2016/",
+     "method": "search_snippet",
+     "note": "Aristocats pin on sale from 12 Mar 2016"
+    },
+    {
+     "field": "edition_type",
+     "value": "OE",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-maerz-2016/",
+     "method": "search_snippet",
+     "note": "Listed as unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-maerz-2016/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-maerz-2016/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/march-2016-releases/alice-in-wonderland",
+   "set_key": "dlp/2016/march-2016-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice Joyeuses Paques",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-maerz-2016/",
+     "method": "search_snippet",
+     "note": "Easter Alice pin (Joyeuses Paques), translated summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-03-19",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-maerz-2016/",
+     "method": "search_snippet",
+     "note": "On sale from 19 Mar"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-trading-kollektion-maerz-2016/",
+     "method": "search_snippet",
+     "note": "Sold only at Pueblo Trading Post, Frontierland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/christmas-oe-august-2016/mickey-noel",
+   "set_key": "dlp/2016/christmas-oe-august-2016",
+   "claims": [
+    {
+     "field": "visual_features",
+     "value": [
+      "ribbon loop at top (ornament style)"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-august-2016-christmas-hook-dog-and-sparkles/",
+     "method": "search_snippet",
+     "note": "Mickey and Stitch Christmas pins have ribbon-like tops so they can hang on a tree"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/christmas-oe-august-2016/stitch-noel",
+   "set_key": "dlp/2016/christmas-oe-august-2016",
+   "claims": [
+    {
+     "field": "visual_features",
+     "value": [
+      "ribbon loop at top (ornament style)"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-august-2016-christmas-hook-dog-and-sparkles/",
+     "method": "search_snippet",
+     "note": "Mickey and Stitch Christmas pins have ribbon-like tops so they can hang on a tree"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2016/villains-series/captain-hook",
+   "set_key": "dlp/2016/villains-series",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Captain Hook with Tick-Tock detail at the top",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-august-2016-christmas-hook-dog-and-sparkles/",
+     "method": "search_snippet",
+     "note": "Paraphrase: Hook pin with crocodile detail above; only release on 13 Aug, Pueblo"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2016/villains-series/ratigan",
+   "field": "edition_size",
+   "searched": "DtDLP Oct 2016; 1 query",
+   "note": "Only a reseller listing gives LE 700 (not evidence); no blog or official edition size or price found"
+  },
+  {
+   "key": "dlp/2016/pin-trading-night-january-2016",
+   "field": "members",
+   "searched": "DPB Jan 2016; passiondlp poster archive; 3 queries",
+   "note": "92nd night 29 Jan at Cheyenne; trio still unnamed; passiondlp Q1 2016 actus page did not surface in results"
+  },
+  {
+   "key": "dlp/2016/pin-trading-night-march-2016",
+   "field": "members",
+   "searched": "DPB Mar 2016; 1 query",
+   "note": "Date/venue found (25 Mar, Sequoia Lodge); trio unnamed"
+  },
+  {
+   "key": "dlp/2016/pin-trading-night-july-2016",
+   "field": "members",
+   "searched": "passiondlp arc020; 2 queries",
+   "note": "Trio unnamed; a summary again attached the 27 May Aristocats musician-cat trio to 29 Jul, treated as conflation and not recorded"
+  },
+  {
+   "key": "dlp/2016/pin-trading-night-august-2016",
+   "field": "members",
+   "searched": "passiondlp Q3 queries; 1 query",
+   "note": "Q3 2016 page (arc021) never surfaced; August night date and trio unknown"
+  },
+  {
+   "key": "dlp/2016/star-wars-may-the-4th-2016",
+   "field": "members",
+   "searched": "Salon Mickey, DtDLP, DPB May 2016, dein-dlrp; 3 queries",
+   "note": "hold kept: four LE 600 pins confirmed again; only X-Wing Pilot named. DPB helmet trio (incl. Death Trooper) not tied to 4 May"
+  },
+  {
+   "key": "dlp/2016/oe-set/rogue-one-trooper-helmets-booster",
+   "field": "members",
+   "searched": "dein-dlrp Dec 2016, DPB; 2 queries",
+   "note": "hold: mystery designs not individually confirmed; four helmets stated, none named for the DLP booster. US Oct 2016 set is a different release"
+  },
+  {
+   "key": "dlp/2016/2017-dated-pins-october-2016",
+   "field": "members",
+   "searched": "DtDLP Oct, magicdlp, dein-dlrp; 3 queries",
+   "note": "Nine designs still unnamed; no dein-dlrp Oct 2016 post surfaced. Spinner/medallion link to the nine still unconfirmed"
+  },
+  {
+   "key": "dlp/2016/october-2016-releases/annual-spinner",
+   "field": "set_key",
+   "searched": "DtDLP Oct; 1 query",
+   "note": "hold kept: DtDLP restates spinner as yearly in the 1 Oct batch of five 2017 pins; 2017 text on pin not stated"
+  },
+  {
+   "key": "dlp/2016/october-2016-releases/medallion-pin-october",
+   "field": "set_key",
+   "searched": "DtDLP Oct; 1 query",
+   "note": "hold kept: not resolved this pass"
+  },
+  {
+   "key": "dlp/2016/december-3-2016-releases/big-ben",
+   "field": "characters",
+   "searched": "dein-dlrp Dec; 2 queries",
+   "note": "Still only LE 600, Pueblo, EUR 14.99; no design text. TDR Peter Pan Big Ben pin (OE, yen) is a different item"
+  },
+  {
+   "key": "dlp/2016/december-3-2016-releases/joyeux-noel",
+   "field": "characters",
+   "searched": "dein-dlrp, DtDLP Dec; 2 queries",
+   "note": "No design text found; Numista Joyeux Noel item is a coin, not a pin"
+  },
+  {
+   "key": "dlp/2016/christmas-2016-le",
+   "field": "members",
+   "searched": "DtDLP Dec; 1 query",
+   "note": "hold kept: Joyeux Noel vs Cogsworth hat pin overlap unresolved"
+  },
+  {
+   "key": "dlp/2016/le-reveillon-de-belle-event-2016",
+   "field": "members",
+   "searched": "passiondlp arc022; 2 queries",
+   "note": "Jumbo and surprise gaway still not named. A Tripadvisor forum post gives 350 places, EUR 45 ticket and an artist signing (not used as pin facts)"
+  },
+  {
+   "key": "dlp/2016/luna-september-2016",
+   "field": "members",
+   "searched": "DtDLP Sep; 1 query",
+   "note": "Designs and count per release not stated; Soy Luna link still unconfirmed"
+  },
+  {
+   "key": "dlp/2016/september-2016-releases",
+   "field": "members",
+   "searched": "dein-dlrp queries; 1 query",
+   "note": "No dein-dlrp September 2016 post surfaced"
+  },
+  {
+   "key": "dlp/2016",
+   "field": "lines",
+   "searched": "Disney Village queries; 1 query",
+   "note": "No Disney Village-only 2016 pin found; sources only say Village shops sell pins"
+  },
+  {
+   "key": "dlp/2016/tsum-tsum-april-2016/cheshire-cat",
+   "field": "pin_structure",
+   "searched": "DtDLP Apr; 1 query",
+   "note": "hold kept: DtDLP again only gives singles EUR 6.99 and a group EUR 7.99; which design is the group is still inferred, not stated"
+  },
+  {
+   "key": "dlp/2016/tsum-tsum-april-2016/winnie-the-pooh-and-friends",
+   "field": "pin_structure",
+   "searched": "DtDLP Apr; 1 query",
+   "note": "hold kept: same price-split inference; no per-design statement"
+  },
+  {
+   "key": "dlp/2016/june-2016-releases/leia-han-solo",
+   "field": "pin_structure",
+   "searched": "retailer listings; 1 query",
+   "note": "hold kept: a UK reseller and Disney Store EU list a DLP Han & Leia pair (one pin each) but neither ties it to June 2016"
+  },
+  {
+   "key": "dlp/2016/february-2016-le/aristocats-valentines-day",
+   "field": "pin_name",
+   "searched": "dein-dlrp Mar 2016; 1 query",
+   "note": "released: dein-dlrp Mar page lists the March Aristocats pin as unlimited, EUR 6.99 from 12 Mar; Valentine pin is LE 700 (13 Feb), so not the same pin"
+  },
+  {
+   "key": "dlp/2016/finding-dory-booster-may-2016",
+   "field": "members",
+   "searched": "DtDLP, Salon Mickey, DPB; 1 query",
+   "note": "hold kept: 9 vs 6 count unresolved; DPB six-pin booster is the US parks set; DLP members unnamed"
+  },
+  {
+   "key": "dlp/2016/oe-set/christmas-noel-booster-2016",
+   "field": "members",
+   "searched": "DtDLP Aug; 1 query",
+   "note": "hold kept: DtDLP calls booster designs standard Christmas ones; no per-design names"
+  },
+  {
+   "key": "dlp/2016/easter-eggs-2016-mickey-minnie",
+   "field": "members",
+   "searched": "not re-searched",
+   "note": "hold kept: Easter 2-pin set per-pin split not re-resolved this pass (applies to all four Easter sets)"
+  },
+  {
+   "key": "dlp/2016/star-wars-day-december-2016/planet",
+   "field": "name",
+   "searched": "not re-searched",
+   "note": "hold kept: Scarif AT-AT link (price/date only) not re-resolved"
+  },
+  {
+   "key": "dlp/2016/my-dog-series/nana-wendy",
+   "field": "hold",
+   "searched": "not re-searched",
+   "note": "hold kept: earlier DLP 2016 holds (Nana/Wendy, Vaiana booster, Magicien trio, Dory LE date, Jan pins, Alice line, Trooper/Hero labels) not resolved"
+  },
+  {
+   "key": "dlp/2016",
+   "field": "sources",
+   "searched": "all queries",
+   "note": "No claims from excluded or marketplace sites; jd-collectibles, Shop The Mouse and Tripadvisor seen but not used for pin facts"
+  }
+ ],
+ "discovery_notes": "Follow-up 5 of B029 (DLP 2016). 30 WebSearch calls, search_snippet only. New: Villains Ratigan (15 Oct). PTN Jan/Mar/Jul dates and venues; Aristocats March OE details release the Valentine overlap hold. Reuses 321/338/354/367/378 keys."
+}

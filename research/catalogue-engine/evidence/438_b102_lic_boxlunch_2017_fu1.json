@@ -1,0 +1,878 @@
+{
+ "packet_id": "backfill-b102-lic-boxlunch-2017-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b102",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+   "title": "Disney Hat Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-06-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/halloween-pins-boxlunch",
+   "title": "Halloween Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/guardians-galaxy-pins-boxlunch/",
+   "title": "Guardians of the Galaxy Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-08-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blog/page/341/",
+   "title": "Blog - Disney Pins Blog (archive page 341)",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/boxlunch-disney-pins",
+   "title": "BoxLunch Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-02-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-dumbo-hat-enamel-pin/10954879.html",
+   "title": "Disney Dumbo Hat Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-bambi-enamel-pin-set/10954895.html",
+   "title": "Disney Bambi Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+   "title": "Disney Alice In Wonderland Cheshire Cat Stack Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-peter-pan-enamel-pin-set/11310432.html",
+   "title": "Disney Peter Pan Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-mickey-mouse-and-minnie-mouse-enamel-pin-set/10871134.html",
+   "title": "Disney Mickey Mouse And Minnie Mouse Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-ducktales-halloween-enamel-pin-set/11135920.html",
+   "title": "Disney DuckTales Halloween Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/100882",
+   "title": "100882",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/marvel-guardians-of-the-galaxy-vol.-2-groot-enamel-pin/11090013.html",
+   "title": "Marvel Guardians Of The Galaxy Vol. 2 Groot Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/marvel-guardians-of-the-galaxy-vol.-2-awesome-mix-enamel-pin/11090015.html",
+   "title": "Marvel Guardians Of The Galaxy Vol. 2 Awesome Mix Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-up-enamel-pin-set/10831673.html",
+   "title": "Disney Pixar Up Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-enamel-pin-set/10831675.html",
+   "title": "Disney Alice In Wonderland Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-snow-white-and-the-seven-dwarfs-enamel-pin-set/10831661.html",
+   "title": "Disney Snow White And The Seven Dwarfs Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-mickey-friends-halloween-enamel-pins/11135922.html",
+   "title": "Disney Mickey & Friends Halloween Enamel Pins",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-the-little-mermaid-ariel-charm-enamel-pin/10955232.html",
+   "title": "Disney The Little Mermaid Ariel Charm Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/marvel-guardians-of-the-galaxy-enamel-pin/10955618.html",
+   "title": "Marvel Guardians Of The Galaxy Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-villains-evil-queen-enamel-pin---boxlunch-exclusive/11538131.html",
+   "title": "Disney Villains Evil Queen Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-halloween-enamel-pin-set/20611928.html",
+   "title": "Loungefly Disney Lilo & Stitch Halloween Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/star-wars-the-last-jedi-porg-enamel-pin-set/11301404.html",
+   "title": "Star Wars: The Last Jedi Porg Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-moana-enamel-pin-set---boxlunch-exclusive/11404269.html",
+   "title": "Disney Moana Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2017/boxlunch-alice-cheshire-cat-stack",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Alice In Wonderland Cheshire Cat Stack Enamel Pin Set",
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; undated"
+    },
+    {
+     "field": "format",
+     "value": "2-pin pack (body pin and head pin)",
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "listing says two pins, a body piece and a head piece, worn together or apart"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "two pins stated"
+    },
+    {
+     "field": "price",
+     "value": 5.9,
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "listing price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "materials",
+     "value": "metal",
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "listing material"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-bambi-thumper-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Bambi Enamel Pin Set",
+     "source_url": "https://www.boxlunch.com/product/disney-bambi-enamel-pin-set/10954895.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; undated"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bambi",
+      "Thumper"
+     ],
+     "source_url": "https://www.boxlunch.com/product/disney-bambi-enamel-pin-set/10954895.html",
+     "method": "search_snippet",
+     "note": "listing says the set features Bambi and Thumper"
+    },
+    {
+     "field": "price",
+     "value": 10.9,
+     "source_url": "https://www.boxlunch.com/product/disney-bambi-enamel-pin-set/10954895.html",
+     "method": "search_snippet",
+     "note": "listing price; differs from the $14.90 Feb 2017 sets"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/disney-bambi-enamel-pin-set/10954895.html",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-bambi-enamel-pin-set/10954895.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "materials",
+     "value": "metal",
+     "source_url": "https://www.boxlunch.com/product/disney-bambi-enamel-pin-set/10954895.html",
+     "method": "search_snippet",
+     "note": "listing material"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-mickey-minnie-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Mickey Mouse And Minnie Mouse Enamel Pin Set",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-mouse-and-minnie-mouse-enamel-pin-set/10871134.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; undated"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-mouse-and-minnie-mouse-enamel-pin-set/10871134.html",
+     "method": "search_snippet",
+     "note": "listing features Mickey and Minnie"
+    },
+    {
+     "field": "price",
+     "value": 10.9,
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-mouse-and-minnie-mouse-enamel-pin-set/10871134.html",
+     "method": "search_snippet",
+     "note": "listing price; differs from the $14.90 Feb 2017 sets"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-mouse-and-minnie-mouse-enamel-pin-set/10871134.html",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-mickey-mouse-and-minnie-mouse-enamel-pin-set/10871134.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-february-2017-pins-up",
+   "parent_set_key": "lic/2017/boxlunch-february-2017-pins",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-up-enamel-pin-set/10831673.html",
+     "method": "search_snippet",
+     "note": "listing describes a set of three Up-inspired pins, about 1in each; title/price match only"
+    },
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-up-enamel-pin-set/10831673.html",
+     "method": "search_snippet",
+     "note": "listing price matches DPB Feb 2017 set price"
+    },
+    {
+     "field": "visual_description",
+     "value": "three roughly 1in pins styled loosely like Wilderness Explorer badges",
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-up-enamel-pin-set/10831673.html",
+     "method": "search_snippet",
+     "note": "paraphrase of listing hint; designs not named"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-february-2017-pins-alice-in-wonderland",
+   "parent_set_key": "lic/2017/boxlunch-february-2017-pins",
+   "claims": [
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-enamel-pin-set/10831675.html",
+     "method": "search_snippet",
+     "note": "listing price matches DPB Feb 2017 set price; count and designs not stated"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-february-2017-pins-snow-white",
+   "parent_set_key": "lic/2017/boxlunch-february-2017-pins",
+   "claims": [
+    {
+     "field": "price",
+     "value": 14.9,
+     "source_url": "https://www.boxlunch.com/product/disney-snow-white-and-the-seven-dwarfs-enamel-pin-set/10831661.html",
+     "method": "search_snippet",
+     "note": "listing price matches DPB Feb 2017 set price; contents not stated"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/boxlunch-halloween-ducktales",
+   "parent_set_key": "lic/2017/boxlunch-halloween",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Huey, Dewey and Louie in mummy, cat and skeleton costumes",
+     "source_url": "https://www.boxlunch.com/product/disney-ducktales-halloween-enamel-pin-set/11135920.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing; which nephew wears which not stated"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-ducktales-halloween-enamel-pin-set/11135920.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2017/boxlunch-alice-cheshire-cat-stack/cheshire-cat-body",
+   "set_key": "lic/2017/boxlunch-alice-cheshire-cat-stack",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cheshire Cat body (stack pin)",
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "body piece of the two-pin stack set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cheshire Cat"
+     ],
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "Cheshire Cat"
+    },
+    {
+     "field": "main_character",
+     "value": "Cheshire Cat",
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "Cheshire Cat"
+    },
+    {
+     "field": "pin_structure",
+     "value": "multi-pin pack member",
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "one of two pins in the set"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-alice-cheshire-cat-stack/cheshire-cat-head",
+   "set_key": "lic/2017/boxlunch-alice-cheshire-cat-stack",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cheshire Cat head (stack pin)",
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "head piece of the two-pin stack set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cheshire Cat"
+     ],
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "Cheshire Cat"
+    },
+    {
+     "field": "main_character",
+     "value": "Cheshire Cat",
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "Cheshire Cat"
+    },
+    {
+     "field": "pin_structure",
+     "value": "multi-pin pack member",
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "one of two pins in the set"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-alice-in-wonderland-cheshire-cat-stack-enamel-pin-set/10954887.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-guardians-of-the-galaxy/baby-groot-cassette",
+   "set_key": "lic/2017/boxlunch-guardians-of-the-galaxy",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Marvel Guardians Of The Galaxy Vol. 2 Groot Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/marvel-guardians-of-the-galaxy-vol.-2-groot-enamel-pin/11090013.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; Groot holding Awesome Mix Vol. 2 matches DPB Aug 2017 Baby Groot pin"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://www.boxlunch.com/product/marvel-guardians-of-the-galaxy-vol.-2-groot-enamel-pin/11090013.html",
+     "method": "search_snippet",
+     "note": "listing price; matches DPB $8.90 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/marvel-guardians-of-the-galaxy-vol.-2-groot-enamel-pin/11090013.html",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/marvel-guardians-of-the-galaxy-vol.-2-groot-enamel-pin/11090013.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/marvel-guardians-of-the-galaxy-vol.-2-groot-enamel-pin/11090013.html",
+     "method": "search_snippet",
+     "note": "single pin listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-guardians-of-the-galaxy/awesome-mix-vol-2-cassette",
+   "set_key": "lic/2017/boxlunch-guardians-of-the-galaxy",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Marvel Guardians Of The Galaxy Vol. 2 Awesome Mix Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/marvel-guardians-of-the-galaxy-vol.-2-awesome-mix-enamel-pin/11090015.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; cassette design matches DPB Aug 2017 pin"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://www.boxlunch.com/product/marvel-guardians-of-the-galaxy-vol.-2-awesome-mix-enamel-pin/11090015.html",
+     "method": "search_snippet",
+     "note": "listing price"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/marvel-guardians-of-the-galaxy-vol.-2-awesome-mix-enamel-pin/11090015.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/marvel-guardians-of-the-galaxy-vol.-2-awesome-mix-enamel-pin/11090015.html",
+     "method": "search_snippet",
+     "note": "single pin listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-hat-pins/dumbo-hat",
+   "set_key": "lic/2017/boxlunch-hat-pins",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/disney-dumbo-hat-enamel-pin/10954879.html",
+     "method": "search_snippet",
+     "note": "BoxLunch sells the Dumbo hat as its own single 3/4in pin"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-dumbo-hat-enamel-pin/10954879.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-hat-pins/goofy-hat",
+   "set_key": "lic/2017/boxlunch-hat-pins",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "DPB names a Goofy hat pin and prices each hat pin at $5.90 individually"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "DPB: BoxLunch stores and online"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-hat-pins/donald-duck-hat",
+   "set_key": "lic/2017/boxlunch-hat-pins",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "DPB names a Donald Duck hat pin and prices each hat pin at $5.90 individually"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "DPB: BoxLunch stores and online"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/boxlunch-hat-pins/minnie-mouse-hat",
+   "set_key": "lic/2017/boxlunch-hat-pins",
+   "claims": [
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "DPB names a Minnie Mouse hat pin and prices each hat pin at $5.90 individually"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hat-pins",
+     "method": "search_snippet",
+     "note": "DPB: BoxLunch stores and online"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2017/boxlunch-hat-pins/dumbo-hat",
+   "field": "pin_structure",
+   "searched": "2 queries (DPB hat post + BoxLunch Dumbo listing)",
+   "note": "released: DPB June 2017 post names each hat as its own pin at $5.90 per pin; BoxLunch also lists the Dumbo hat as a single 3/4in pin"
+  },
+  {
+   "key": "lic/2017/boxlunch-hat-pins/goofy-hat",
+   "field": "pin_structure",
+   "searched": "2 queries (DPB hat post + BoxLunch Dumbo listing)",
+   "note": "released: DPB June 2017 post names each hat as its own pin at $5.90 per pin"
+  },
+  {
+   "key": "lic/2017/boxlunch-hat-pins/donald-duck-hat",
+   "field": "pin_structure",
+   "searched": "2 queries (DPB hat post + BoxLunch Dumbo listing)",
+   "note": "released: DPB June 2017 post names each hat as its own pin at $5.90 per pin"
+  },
+  {
+   "key": "lic/2017/boxlunch-hat-pins/minnie-mouse-hat",
+   "field": "pin_structure",
+   "searched": "2 queries (DPB hat post + BoxLunch Dumbo listing)",
+   "note": "released: DPB June 2017 post names each hat as its own pin at $5.90 per pin"
+  },
+  {
+   "key": "lic/2017/boxlunch-alice-cheshire-cat-stack",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "hold: 2017 date rests only on BoxLunch item number 10954xxx sitting beside the June 2017 Dumbo hat pin (10954879); no dated source"
+  },
+  {
+   "key": "lic/2017/boxlunch-alice-cheshire-cat-stack/cheshire-cat-body",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: pack member named only in the pack listing (body piece); pending maintainer decision on full lists; 2017 date unconfirmed"
+  },
+  {
+   "key": "lic/2017/boxlunch-alice-cheshire-cat-stack/cheshire-cat-head",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: pack member named only in the pack listing (head piece); pending maintainer decision on full lists; 2017 date unconfirmed"
+  },
+  {
+   "key": "lic/2017/boxlunch-alice-cheshire-cat-stack",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "maker not stated in listing snippet"
+  },
+  {
+   "key": "lic/2017/boxlunch-bambi-thumper-pin-set",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "hold: 2017 date rests only on BoxLunch item number 10954xxx sitting beside the June 2017 Dumbo hat pin (10954879); no dated source (item 10954895)"
+  },
+  {
+   "key": "lic/2017/boxlunch-bambi-thumper-pin-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); listing names Bambi and Thumper but no pin count"
+  },
+  {
+   "key": "lic/2017/boxlunch-mickey-minnie-pin-set",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "hold: undated listing 10871134, item number between the Feb 2017 sets and June 2017 hat pins; may be B024's Feb Mickey/Minnie set but price is $10.90 not $14.90"
+  },
+  {
+   "key": "lic/2017/boxlunch-mickey-minnie-pin-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure; listing says each pin is about 1in (so 2+ pins) with Mickey and Minnie, count and split not stated"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-bambi",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "hold kept; $10.90 Bambi & Thumper listing now keyed separately as lic/2017/boxlunch-bambi-thumper-pin-set (item no. near June 2017); Feb $14.90 Bambi set contents still unknown"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-peter-pan",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept; $22.90 listing 11310432 (Peter Pan, Darlings, Tinker Bell) sits near Jan 2018 Porg set item 11301404, so likely 2018, not the Feb 2017 set; no date"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-beauty-and-the-beast",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: listing 10831677 not surfaced in this sweep; no Cogsworth/Chip/rose contents traced to a snippet"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-up",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "listing gives 3 pins about 1in each but does not name or describe the designs; no member records"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-alice-in-wonderland",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "listing mentions pins about 1in each; count and designs not stated"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-snow-white",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "listing snippet gives price only; contents not stated"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-toy-story",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no BoxLunch listing for the 2017 Toy Story set found; Slinky Dog single (B024) only"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-little-mermaid",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no $14.90 Little Mermaid set listing found"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins-dumbo",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no BoxLunch Dumbo set listing traced to 2017; Timothy/Dumbo results are later items"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "Nightmare Before Christmas Feb 2017 set not found; NBC BoxLunch results are 2018 or later"
+  },
+  {
+   "key": "lic/2017/boxlunch-february-2017-pins",
+   "field": "manufacturer",
+   "searched": "all 30 queries",
+   "note": "maker still not stated for any 2017 BoxLunch item"
+  },
+  {
+   "key": "lic/2017/boxlunch-christmas",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "post body still not surfaced; only Buzz Lightyear image label known; Toy Story holiday searches returned later items"
+  },
+  {
+   "key": "lic/2017/boxlunch-christmas/buzz-lightyear-christmas",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "no further source beyond the DPB archive image label; weak"
+  },
+  {
+   "key": "lic/2017/boxlunch-halloween-mickey-friends",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: listing says pins (plural) with Mickey, Minnie and Goofy in orange and black; count and split not stated"
+  },
+  {
+   "key": "lic/2017/boxlunch-halloween-ducktales",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: BoxLunch says mummy, cat, skeleton; MyPinCentral 100882 calls a 3-pin set devil, ghost, witch (may be a different set); split unconfirmed"
+  },
+  {
+   "key": "lic/2017/boxlunch-halloween-stitch-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept; Loungefly Stitch Halloween 4-pin listing 20611928 (witch Stitch, Scrump, ducklings) is a much later item range; not linked to 2017"
+  },
+  {
+   "key": "lic/2017/boxlunch-halloween/evil-queen-sliding",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept; BoxLunch Evil Queen exclusive 11538131 is Halloween-tagged but undated, item range after Jan 2018 Porg; DPB ties a 2017 Evil Queen set to MHP, not BoxLunch"
+  },
+  {
+   "key": "lic/2017/boxlunch-guardians-of-the-galaxy",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "other Aug 2017 designs still unnamed; undated BoxLunch Guardians enamel pin 10955618 (subject not given) is a lead only"
+  },
+  {
+   "key": "lic/2017/boxlunch-guardians-of-the-galaxy",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "maker not stated"
+  },
+  {
+   "key": "lic/2017/boxlunch-little-mermaid-ariel-charm",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: undated BoxLunch Ariel charm pin 10955232 ($9.90; Sebastian, Flounder, shell charms); item number near June 2017 range; no dated source"
+  },
+  {
+   "key": "lic/2018/boxlunch-moana-pin-set",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: BoxLunch Moana 3-pin set 11404269 (Pua, Heihei, Kakamora, $14.90), item number after Jan 2018 Porg; belongs to 2018 cell if dated"
+  },
+  {
+   "key": "lic/2018/boxlunch-peter-pan-pin-set",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: $22.90 Peter Pan set 11310432 likely early 2018 by item number only; for 2018 cell"
+  },
+  {
+   "key": "lic/2017/boxlunch",
+   "field": "pins",
+   "searched": "30 queries",
+   "note": "no other dated 2017 BoxLunch Disney pins found beyond Feb sets, June hats, Aug Guardians, Sep-Oct Halloween, Dec Christmas"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 of B024/B068 (BoxLunch 2017), 30 standard search-snippet queries, excluded domains blocked. New: Cheshire Cat stack 2-pin set (body, head) and Bambi & Thumper and Mickey & Minnie sets, all keyed 2017 on item-number adjacency only with holds. Added BoxLunch listing support for Guardians Groot/Awesome Mix, Up (3 pins), DuckTales costumes. Released 4 hat-pin structure holds. No maker named for any 2017 BoxLunch item; Christmas 2017 contents still unknown."
+}

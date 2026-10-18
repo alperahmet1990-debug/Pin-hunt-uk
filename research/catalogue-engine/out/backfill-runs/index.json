@@ -1,24 +1,24 @@
 {
  "source": "staging_payload.json",
- "git_commit": "dd8f7b42f992",
+ "git_commit": "5b654e24c2ae",
  "generated": "2026-10-18",
  "runs": [
   {
    "file": "run_01_wdw.json",
-   "pins": 1228,
-   "sets": 672,
-   "evidence": 9090,
-   "bytes": 3863090,
+   "pins": 1222,
+   "sets": 671,
+   "evidence": 9140,
+   "bytes": 3870864,
    "lines": [
     "wdw"
    ]
   },
   {
    "file": "run_02_wdw-to-dlr.json",
-   "pins": 1168,
-   "sets": 732,
-   "evidence": 9906,
-   "bytes": 4030842,
+   "pins": 1172,
+   "sets": 727,
+   "evidence": 9875,
+   "bytes": 4030430,
    "lines": [
     "wdw",
     "dlr"
@@ -26,10 +26,10 @@
   },
   {
    "file": "run_03_dlr-to-dlp.json",
-   "pins": 1265,
-   "sets": 633,
-   "evidence": 9871,
-   "bytes": 4158871,
+   "pins": 1260,
+   "sets": 638,
+   "evidence": 9849,
+   "bytes": 4149782,
    "lines": [
     "dlr",
     "dlp"
@@ -38,9 +38,9 @@
   {
    "file": "run_04_dlp-to-dsus.json",
    "pins": 1234,
-   "sets": 665,
-   "evidence": 11098,
-   "bytes": 4670607,
+   "sets": 666,
+   "evidence": 11009,
+   "bytes": 4646797,
    "lines": [
     "dlp",
     "dsuk",
@@ -48,45 +48,45 @@
    ]
   },
   {
-   "file": "run_05_dsus-to-tdr.json",
-   "pins": 1294,
+   "file": "run_05_dsus-to-hkdl.json",
+   "pins": 1289,
    "sets": 603,
-   "evidence": 9705,
-   "bytes": 4142484,
+   "evidence": 9811,
+   "bytes": 4174950,
    "lines": [
     "dsus",
     "shdr",
-    "hkdl",
-    "tdr"
+    "hkdl"
    ]
   },
   {
-   "file": "run_06_tdr-to-lic.json",
-   "pins": 1272,
+   "file": "run_06_hkdl-to-lic.json",
+   "pins": 1290,
    "sets": 589,
-   "evidence": 11999,
-   "bytes": 4821382,
+   "evidence": 11966,
+   "bytes": 4820471,
    "lines": [
+    "hkdl",
     "tdr",
     "lic"
    ]
   },
   {
    "file": "run_07_lic.json",
-   "pins": 1054,
-   "sets": 521,
-   "evidence": 12250,
-   "bytes": 4818679,
+   "pins": 1058,
+   "sets": 528,
+   "evidence": 12266,
+   "bytes": 4822048,
    "lines": [
     "lic"
    ]
   },
   {
    "file": "run_08_lic-to-windows-of-attraction.json",
-   "pins": 981,
-   "sets": 348,
-   "evidence": 10620,
-   "bytes": 4373177,
+   "pins": 1019,
+   "sets": 368,
+   "evidence": 11147,
+   "bytes": 4574881,
    "lines": [
     "lic",
     "animated-cuties",

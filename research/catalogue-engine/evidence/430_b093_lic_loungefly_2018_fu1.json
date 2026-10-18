@@ -1,0 +1,608 @@
+{
+ "packet_id": "backfill-b093-lic-loungefly-2018-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b093",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-york-comic-con-2018-mickey-mouse-90-years-pin-set",
+   "title": "Loungefly Pin Sets at New York Comic Con 2018",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+   "title": "Review: NYCC Mickey 90th Pin Set by Loungefly",
+   "publisher": "DisKingdom",
+   "published_date": "2019-01-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+   "title": "New 2018 NYCC Loungefly Reveals For Mickey and NBC",
+   "publisher": "Disney Fashionista",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/124446",
+   "title": "124446",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/124439",
+   "title": "124439",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+   "title": "Alice In Wonderland BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/mary-poppins-umbrella-enamel-pin---boxlunch-exclusive/11584240.html",
+   "title": "Mary Poppins Umbrella Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-mary-poppins-practically-perfect-enamel-pin---boxlunch-exclusive/11584246.html",
+   "title": "Disney Mary Poppins Practically Perfect Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hades-hot-topic-disney-pin/",
+   "title": "Hades Hot Topic Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12-15",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-movie-blind-box-enamel-pin/11572421.html",
+   "title": "Loungefly Disney Movie Blind Box Enamel Pin",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2018/loungefly-nycc-mickey-90-years",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-york-comic-con-2018-mickey-mouse-90-years-pin-set",
+     "method": "search_snippet",
+     "note": "post covers Loungefly pin sets sold at NYCC 2018"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://diskingdom.com/2019/01/05/review-nycc-mickey-90th-pin-set-by-loungefly/",
+     "method": "search_snippet",
+     "note": "review title credits the set to Loungefly"
+    },
+    {
+     "field": "format",
+     "value": "9-pin set",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-york-comic-con-2018-mickey-mouse-90-years-pin-set",
+     "method": "search_snippet",
+     "note": "set of nine separate Mickey pins in different looks"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/loungefly-nycc-nightmare-before-christmas-25th",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-york-comic-con-2018-mickey-mouse-90-years-pin-set",
+     "method": "search_snippet",
+     "note": "second Loungefly set in the NYCC 2018 post"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+     "method": "search_snippet",
+     "note": "Loungefly NYCC reveal; rule-8 field alongside 221 issuer claim"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-york-comic-con-2018-mickey-mouse-90-years-pin-set",
+     "method": "search_snippet",
+     "note": "post says six pins of film characters for the 25th anniversary"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-york-comic-con-2018-mickey-mouse-90-years-pin-set",
+     "method": "search_snippet",
+     "note": "post says the NYCC pin sets are LE 500"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-york-comic-con-2018-mickey-mouse-90-years-pin-set",
+     "method": "search_snippet",
+     "note": "limited edition set"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-york-comic-con-2018-mickey-mouse-90-years-pin-set",
+     "method": "search_snippet",
+     "note": "NYCC exclusive set"
+    },
+    {
+     "field": "format",
+     "value": "6-pin set",
+     "source_url": "https://disneyfashionista.com/018-nycc-loungefly-reveals-mickey-nbc/",
+     "method": "search_snippet",
+     "note": "six-pin boxed set sold at the Loungefly booth"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/loungefly-nightmare-before-christmas-blind-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Nightmare Before Christmas Blind Box Set (Loungefly)",
+     "source_url": "https://mypincentral.com/pin/124446",
+     "method": "search_snippet",
+     "note": "MPC per-pin page names the blind box set this pin belongs to"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://mypincentral.com/pin/124446",
+     "method": "search_snippet",
+     "note": "MPC says set released by Loungefly"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://mypincentral.com/pin/124439",
+     "method": "search_snippet",
+     "note": "MPC says set released by Loungefly"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/124446",
+     "method": "search_snippet",
+     "note": "MPC dates the set to 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/124439",
+     "method": "search_snippet",
+     "note": "MPC dates the set to 2018"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://mypincentral.com/pin/124446",
+     "method": "search_snippet",
+     "note": "blind box set; one design per pin page"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-alice-in-wonderland",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "snippet describes it as a Loungefly enamel pin"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-mary-poppins",
+   "claims": [
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/mary-poppins-umbrella-enamel-pin---boxlunch-exclusive/11584240.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive listing for one of the Dec 2018 Mary Poppins pins"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins",
+     "source_url": "https://www.boxlunch.com/product/mary-poppins-umbrella-enamel-pin---boxlunch-exclusive/11584240.html",
+     "method": "search_snippet",
+     "note": "umbrella and Practically Perfect each have their own BoxLunch listing"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2018/loungefly-nightmare-before-christmas-blind-box/lock-shock-barrel",
+   "set_key": "lic/2018/loungefly-nightmare-before-christmas-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lock, Shock and Barrel",
+     "source_url": "https://mypincentral.com/pin/124446",
+     "method": "search_snippet",
+     "note": "MPC per-pin page for the trio"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lock",
+      "Shock",
+      "Barrel"
+     ],
+     "source_url": "https://mypincentral.com/pin/124446",
+     "method": "search_snippet",
+     "note": "trio shown on one pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/124446",
+     "method": "search_snippet",
+     "note": "single pin featuring all three trick-or-treaters"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://mypincentral.com/pin/124446",
+     "method": "search_snippet",
+     "note": "released by Loungefly"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/124446",
+     "method": "search_snippet",
+     "note": "MPC year 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/loungefly-nightmare-before-christmas-blind-box/mayor",
+   "set_key": "lic/2018/loungefly-nightmare-before-christmas-blind-box",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mayor",
+     "source_url": "https://mypincentral.com/pin/124439",
+     "method": "search_snippet",
+     "note": "MPC per-pin page for the Mayor design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mayor"
+     ],
+     "source_url": "https://mypincentral.com/pin/124439",
+     "method": "search_snippet",
+     "note": "Mayor of Halloween Town at centre"
+    },
+    {
+     "field": "main_character",
+     "value": "Mayor",
+     "source_url": "https://mypincentral.com/pin/124439",
+     "method": "search_snippet",
+     "note": "Mayor design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/124439",
+     "method": "search_snippet",
+     "note": "own per-pin page within the blind box set"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://mypincentral.com/pin/124439",
+     "method": "search_snippet",
+     "note": "released by Loungefly"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/124439",
+     "method": "search_snippet",
+     "note": "MPC year 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-alice-in-wonderland/alice-falling",
+   "set_key": "lic/2018/boxlunch-alice-in-wonderland",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "Loungefly enamel pin per DPB snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-boxlunch-disney-pin",
+     "method": "search_snippet",
+     "note": "BoxLunch release, post dated 28 Sep 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-mary-poppins/parrot-umbrella",
+   "set_key": "lic/2018/boxlunch-mary-poppins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mary Poppins Umbrella Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/mary-poppins-umbrella-enamel-pin---boxlunch-exclusive/11584240.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/mary-poppins-umbrella-enamel-pin---boxlunch-exclusive/11584240.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://www.boxlunch.com/product/mary-poppins-umbrella-enamel-pin---boxlunch-exclusive/11584240.html",
+     "method": "search_snippet",
+     "note": "listed at $8.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/mary-poppins-umbrella-enamel-pin---boxlunch-exclusive/11584240.html",
+     "method": "search_snippet",
+     "note": "US listing"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mary Poppins' parrot-head umbrella",
+     "source_url": "https://www.boxlunch.com/product/mary-poppins-umbrella-enamel-pin---boxlunch-exclusive/11584240.html",
+     "method": "search_snippet",
+     "note": "listing says it shows the parrot-head umbrella"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/mary-poppins-umbrella-enamel-pin---boxlunch-exclusive/11584240.html",
+     "method": "search_snippet",
+     "note": "sold as a single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-mary-poppins/practically-perfect",
+   "set_key": "lic/2018/boxlunch-mary-poppins",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Mary Poppins Practically Perfect Enamel Pin",
+     "source_url": "https://www.boxlunch.com/product/disney-mary-poppins-practically-perfect-enamel-pin---boxlunch-exclusive/11584246.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-mary-poppins-practically-perfect-enamel-pin---boxlunch-exclusive/11584246.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://www.boxlunch.com/product/disney-mary-poppins-practically-perfect-enamel-pin---boxlunch-exclusive/11584246.html",
+     "method": "search_snippet",
+     "note": "listed at $8.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/disney-mary-poppins-practically-perfect-enamel-pin---boxlunch-exclusive/11584246.html",
+     "method": "search_snippet",
+     "note": "US listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/disney-mary-poppins-practically-perfect-enamel-pin---boxlunch-exclusive/11584246.html",
+     "method": "search_snippet",
+     "note": "sold as a single pin"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2018/loungefly-nycc-mickey-90-years",
+   "field": "pins",
+   "searched": "4 queries (DPB, DisKingdom, Disney Fashionista, Funko blog)",
+   "note": "still only 4 of 9 named (Plane Crazy, Steamboat Willie, Comic Book, Little Whirlwind); 5 remain unnamed; no allowed source lists Sorcerer, Tailor etc"
+  },
+  {
+   "key": "lic/2018/loungefly-nycc-nightmare-before-christmas-25th",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "corroborated: DPB and Disney Fashionista both give 6 pins LE 500; six members still not named in any allowed snippet"
+  },
+  {
+   "key": "lic/2018/loungefly-nightmare-before-christmas-blind-box",
+   "field": "expected_pin_count",
+   "searched": "4 queries (MPC, Hot Topic NBC blind box listings)",
+   "note": "set size not stated; only Mayor and Lock/Shock/Barrel pages surfaced; Hot Topic id 11503066 (424 lead) not found"
+  },
+  {
+   "key": "lic/2018/loungefly-nightmare-before-christmas-blind-box",
+   "field": "release_date",
+   "searched": "4 queries",
+   "note": "hold: 2018 date rests on MyPinCentral alone; may be same as lic/2019/loungefly-boxlunch-nightmare-before-christmas-mystery (427); retailer not stated"
+  },
+  {
+   "key": "lic/2018/loungefly-nightmare-before-christmas-blind-box/mayor",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "MPC calls the Mayor pin limited edition, unusual for blind box; edition size not given; not claimed"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-nightmare-before-christmas-mystery/lock",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "no change: 2018 MPC 124446 shows LSB as one shared pin, but link to the 2019 BoxLunch set rests on subject only; 427 hold kept"
+  },
+  {
+   "key": "lic/2018/loungefly-hot-topic-nightmare-before-christmas",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "possible match for the 216 forum 12-pack mention is the MPC 2018 Loungefly NBC blind box; count of 12 unconfirmed, not linked"
+  },
+  {
+   "key": "lic/2018/loungefly-hot-topic-blind-box-oct",
+   "field": "product_code",
+   "searched": "2 queries",
+   "note": "lead: Hot Topic Loungefly Disney Movie Blind Box (id 11572421, $8.90, 1 pin per box) matches Oct 2018 price only; no designs or date; holds kept"
+  },
+  {
+   "key": "lic/2018/loungefly-hot-topic-blind-box-oct",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (kept for all 9 member keys from 216; no per-design source found)"
+  },
+  {
+   "key": "lic/2018/boxlunch-edna-mode-incredibles-2",
+   "field": "manufacturer",
+   "searched": "3 queries",
+   "note": "maker still unconfirmed: BoxLunch titles it Disney Pixar; only a pin reseller labels it Loungefly (not used as evidence); kept out of Loungefly claims"
+  },
+  {
+   "key": "lic/2018/loungefly-edna-mode-donut",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "lead: Loungefly Edna Mode donut pin (MPC 111635, Pixar Donuts mystery) undated; not recorded for 2018"
+  },
+  {
+   "key": "lic/2018/boxlunch-mary-poppins",
+   "field": "manufacturer",
+   "searched": "3 queries",
+   "note": "BoxLunch listings title the pins Disney/Mary Poppins with no Loungefly credit; a reseller labels carousel horse Loungefly (not used); maker unknown"
+  },
+  {
+   "key": "lic/2018/boxlunch-mary-poppins/carousel-horse",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "no BoxLunch listing found for the carousel horse pin; price not stated"
+  },
+  {
+   "key": "lic/2018/boxlunch-mary-poppins-penguins",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "penguin set still has no count or per-pin descriptions; BoxLunch titles it Disney, not Loungefly"
+  },
+  {
+   "key": "lic/2018/loungefly-hot-topic-hades",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "re-checked: only DPB (15 Dec 2018) names it a Loungefly Hot Topic pin; Hot Topic Hades listings found are later blind boxes/sets; no second source"
+  },
+  {
+   "key": "lic/2018/loungefly-hot-topic-hades/hades",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "DPB still gives both $6.90 and $7.90; unresolved"
+  },
+  {
+   "key": "lic/2018/loungefly",
+   "field": "pins",
+   "searched": "5 queries (DPB, Disney Fashionista, MPC)",
+   "note": "still no dated Jan-Jun 2018 Loungefly Disney pin; Lady & Tramp, Surfing Stitch, Sleeping Stitch HT posts are 2021/2024"
+  },
+  {
+   "key": "lic/2018/loungefly-sdcc",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no Loungefly Disney SDCC 2018 pin; only SDCC 2018 Stitch pins found are Monogram (424)"
+  },
+  {
+   "key": "lic/2018/loungefly-parks",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no 2018 Disney Parks Loungefly pin surfaced"
+  },
+  {
+   "key": "lic/2018/loungefly-mickey-90",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no Hot Topic/BoxLunch Loungefly Mickey 90th pin dated 2018 found besides the NYCC set"
+  },
+  {
+   "key": "lic/2018/boxlunch-ralph-breaks-the-internet",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "BoxLunch titles the Ralph/Vanellope/cookie set Disney; still undated; Loungefly Wreck-It Ralph pins are 2021; not recorded"
+  },
+  {
+   "key": "lic/2018/loungefly-coco",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no dated 2018 Loungefly Coco pin; Coco Spirit Guide set (Sep 2018) has no maker stated, left to BoxLunch cell 431"
+  },
+  {
+   "key": "lic/2018/loungefly-nightmare-before-christmas-blind-box/lock-shock-barrel",
+   "field": "release_year",
+   "searched": "4 queries",
+   "note": "hold: 2018 year and set identity rest on MyPinCentral only; may belong to the 2019 BoxLunch Loungefly NBC mystery set (427)"
+  },
+  {
+   "key": "lic/2018/loungefly-nightmare-before-christmas-blind-box/mayor",
+   "field": "release_year",
+   "searched": "4 queries",
+   "note": "hold: 2018 year and set identity rest on MyPinCentral only; may belong to the 2019 BoxLunch Loungefly NBC mystery set (427)"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 of B065 (221); 30 standard WebSearches, excluded domains blocked, snippets only. Reuses 216/221/424 keys. Adds a 2018 Loungefly NBC blind box (Mayor, Lock/Shock/Barrel via MyPinCentral, held as possible dup of 2019 BoxLunch set), Loungefly maker for BoxLunch Alice pin, BoxLunch listings for two Mary Poppins pins, DPB corroboration of NYCC NBC set. Uses manufacturer/retailer fields per rule 8. No holds released."
+}

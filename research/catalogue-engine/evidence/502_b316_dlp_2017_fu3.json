@@ -1,0 +1,2292 @@
+{
+ "packet_id": "backfill-b316-dlp-2017-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b316",
+ "sources": [
+  {
+   "url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+   "title": "Pin-Neuerscheinung im Disneyland Paris im Januar 2017",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+   "title": "Pin-Neuerscheinung im Disneyland Paris im Januar 2017",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+   "title": "Disneyland Paris Pin-Trading Kollektion im Februar 2017",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+   "title": "Pin-Neuerscheinungen im August 2017",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+   "title": "Pin-Neuerscheinungen im Dezember 2017",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-paris/shopping/pin-trading/page/3/",
+   "title": "Pin Trading in Disneyland Paris (archive page 3)",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-january-2017-star-wars-rapunzel/",
+   "title": "Disneyland Paris Pins January 2017",
+   "publisher": "Dedicated to DLP",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+   "title": "Disneyland Paris Pins For July 2017",
+   "publisher": "Dedicated to DLP",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-07-01"
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-november-2017-star-wars-new-year-mysteries-a-fidget-spinner/",
+   "title": "Disneyland Paris Pins For November 2017",
+   "publisher": "Dedicated to DLP",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-11-06"
+  },
+  {
+   "url": "https://www.mintinbox.net/2017/03/08/disneyland-paris-pins-star-tours-exclusifs/",
+   "title": "Disneyland Paris - Pins Star Tours exclusifs",
+   "publisher": "Mint in Box",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-03-08"
+  },
+  {
+   "url": "https://www.passiondlp.com/actus/arc025.php",
+   "title": "passiondlp : Archives Disneyland Paris 2017 trimestre 3",
+   "publisher": "passiondlp",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+   "title": "Pin Profiles - Disneyland Paris 25th Anniversary Spinner",
+   "publisher": "Theme Park Trader",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-november-2017-pins",
+   "title": "Disneyland Paris November 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-may-2017-pins",
+   "title": "Disneyland Paris May 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-pin-event/",
+   "title": "Disneyland Paris 25th Anniversary Pin Event",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2017/oe-set/season-of-the-force-booster-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Season of the Force booster pack (2017)",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "booster pack of Star Wars pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "booster pack"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "contains four Star Wars pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "price",
+     "value": 18.99,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "EUR 18.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-14",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "14 Jan 2017"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-14",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-january-2017-star-wars-rapunzel/",
+     "method": "search_snippet",
+     "note": "5 Star Wars pins on 14 Jan incl. booster with TIE Fighter Pilot"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/oe-set/beauty-and-the-beast-booster-2017",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "booster contains four pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "booster"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/star-tours-reopening-le-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Tours: L'Aventure Continue reopening limited pin",
+     "source_url": "https://www.mintinbox.net/2017/03/08/disneyland-paris-pins-star-tours-exclusifs/",
+     "method": "search_snippet",
+     "note": "second, harder-to-get Star Tours pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.mintinbox.net/2017/03/08/disneyland-paris-pins-star-tours-exclusifs/",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.mintinbox.net/2017/03/08/disneyland-paris-pins-star-tours-exclusifs/",
+     "method": "search_snippet",
+     "note": "1000 pieces"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-26",
+     "source_url": "https://www.mintinbox.net/2017/03/08/disneyland-paris-pins-star-tours-exclusifs/",
+     "method": "search_snippet",
+     "note": "sold only Sunday 26 Mar"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/july-2017-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris July 2017 releases",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "monthly pin rundown"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "July 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/oe-set/christmas-4-pin-set-august-2017",
+   "claims": [
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "quoted overview line: 4er Pin-Set Weihnachten (Pluto, Minnie, Mickey und Goofy)"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "4-pin Christmas set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "price",
+     "value": 18.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "EUR 18.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-08-26",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "summary places set in the 26 Aug release block (earlier packets: 5 Aug)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/cast-member-goofy-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cast Member Exclusive Goofy (Dingo) 25th anniversary pin",
+     "source_url": "https://www.passiondlp.com/actus/arc025.php",
+     "method": "search_snippet",
+     "note": "new CM exclusive pin for the 25th anniversary"
+    },
+    {
+     "field": "edition_type",
+     "value": "cast member exclusive",
+     "source_url": "https://www.passiondlp.com/actus/arc025.php",
+     "method": "search_snippet",
+     "note": "Cast Member Exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://www.passiondlp.com/actus/arc025.php",
+     "method": "search_snippet",
+     "note": "Q3 2017 archive; 22/09/17 per 472 summary"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/ptn-november-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night 24 November 2017",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-november-2017-pins",
+     "method": "search_snippet",
+     "note": "next PTN 24 Nov 2017"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-24",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-november-2017-pins",
+     "method": "search_snippet",
+     "note": "24 Nov 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Sequoia Lodge, Beaver Creek Tavern",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-november-2017-pins",
+     "method": "search_snippet",
+     "note": "venue"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/pin-trading-event-december-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris 25th Anniversary Pin Trading Event (17 Dec 2017)",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-pin-event/",
+     "method": "search_snippet",
+     "note": "event celebrating the 25th anniversary"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-12-17",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-pin-event/",
+     "method": "search_snippet",
+     "note": "17 Dec 2017, 11am-3pm"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Newport Bay Club Convention Center",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-25th-anniversary-pin-event/",
+     "method": "search_snippet",
+     "note": "venue"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/may-2017-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris May 2017 releases",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-paris/shopping/pin-trading/page/3/",
+     "method": "search_snippet",
+     "note": "May 2017 roundup dated 2 May 2017"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-paris/shopping/pin-trading/page/3/",
+     "method": "search_snippet",
+     "note": "May 2017"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-may-2017-pins",
+     "method": "search_snippet",
+     "note": "May 2017 DLP releases incl. Star Wars and Pirates of the Caribbean"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2017/rapunzel-january-2017/rapunzel-silver-oval",
+   "set_key": "dlp/2017/rapunzel-january-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rapunzel silver oval pin",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "one of three Rapunzel pins described individually"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "silver oval Rapunzel pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "Rapunzel"
+    },
+    {
+     "field": "visual_description",
+     "value": "silver oval Rapunzel pin",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "paraphrase of page summary"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "EUR 6.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-07",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "7 Jan 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "DLP Jan releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/rapunzel-january-2017/rapunzel-dancing-heart",
+   "set_key": "dlp/2017/rapunzel-january-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rapunzel dancing heart pin",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "one of three Rapunzel pins described individually"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "heart-shaped pin of Rapunzel dancing"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "Rapunzel"
+    },
+    {
+     "field": "visual_description",
+     "value": "heart-shaped pin of Rapunzel dancing",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "paraphrase of page summary"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "EUR 6.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-07",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "7 Jan 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "DLP Jan releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/rapunzel-january-2017/rapunzel-pascal",
+   "set_key": "dlp/2017/rapunzel-january-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rapunzel and Pascal pin",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "one of three Rapunzel pins described individually"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel",
+      "Pascal"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "pin with Rapunzel and Pascal"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "Rapunzel"
+    },
+    {
+     "field": "visual_description",
+     "value": "pin with Rapunzel and Pascal",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "paraphrase of page summary"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "EUR 6.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-07",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "7 Jan 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "DLP Jan releases"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "Rapunzel and Pascal described on one pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/season-of-the-force-2017/season-of-the-force-nighttime-show",
+   "set_key": "dlp/2017/season-of-the-force-2017",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "Season of the Force pin EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-14",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "14 Jan 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/january-21-2017-releases/donald",
+   "set_key": "dlp/2017/january-21-2017-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Donald",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "quoted overview line item"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "Pin Donald listed as its own line item"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "Donald Duck"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-21",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "available from 21 Jan 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/january-21-2017-releases/scrooge-mcduck",
+   "set_key": "dlp/2017/january-21-2017-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Dagobert",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "quoted overview line item"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scrooge McDuck"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "Pin Dagobert listed as its own line item"
+    },
+    {
+     "field": "main_character",
+     "value": "Scrooge McDuck",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "Scrooge McDuck"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-21",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "available from 21 Jan 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/january-21-2017-releases/elena",
+   "set_key": "dlp/2017/january-21-2017-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Elena von Avalor",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "quoted overview line item"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Elena of Avalor"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "Pin Elena von Avalor listed as its own line item"
+    },
+    {
+     "field": "main_character",
+     "value": "Elena of Avalor",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "Elena of Avalor"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-21",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "available from 21 Jan 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2017/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/oe-set/beauty-and-the-beast-booster-2017/belle-ball-gown",
+   "set_key": "dlp/2017/oe-set/beauty-and-the-beast-booster-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Belle in ball gown",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "named as one of the four booster pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "Belle in ball gown"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "booster is OE (see 435 set)"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "Feb 2017"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "booster lists four separate pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/oe-set/beauty-and-the-beast-booster-2017/beast-formal",
+   "set_key": "dlp/2017/oe-set/beauty-and-the-beast-booster-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Beast in smart attire",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "named as one of the four booster pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Beast"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "Beast in smart attire"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "booster is OE (see 435 set)"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "Feb 2017"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "booster lists four separate pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/oe-set/beauty-and-the-beast-booster-2017/rose",
+   "set_key": "dlp/2017/oe-set/beauty-and-the-beast-booster-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Enchanted rose",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "named as one of the four booster pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "booster is OE (see 435 set)"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "Feb 2017"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "booster lists four separate pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/oe-set/beauty-and-the-beast-booster-2017/feather-duster",
+   "set_key": "dlp/2017/oe-set/beauty-and-the-beast-booster-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Feather duster",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "named as one of the four booster pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "booster is OE (see 435 set)"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "Feb 2017"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-pin-kollektion-februar-2017/",
+     "method": "search_snippet",
+     "note": "booster lists four separate pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/oe/25th-anniversary-spinner",
+   "set_key": "dlp/2017/oe-single/25th-anniversary-spinner",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse",
+      "Donald Duck",
+      "Goofy"
+     ],
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "spinning pin showing the four characters"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "single spinner pin with four characters"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "spinning element"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-04",
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "original release 4 Mar 2017"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "EUR 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.themeparktrader.com/pin-profiles-6-disneyland-paris-25th-anniversary/",
+     "method": "search_snippet",
+     "note": "euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/march-25-2017-releases/star-tours",
+   "set_key": "dlp/2017/march-25-2017-releases",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Star Tours attraction logo",
+     "source_url": "https://www.mintinbox.net/2017/03/08/disneyland-paris-pins-star-tours-exclusifs/",
+     "method": "search_snippet",
+     "note": "first of two Star Tours pins shows the ride logo"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-25",
+     "source_url": "https://www.mintinbox.net/2017/03/08/disneyland-paris-pins-star-tours-exclusifs/",
+     "method": "search_snippet",
+     "note": "on sale 25 Mar"
+    },
+    {
+     "field": "release_location",
+     "value": "all Disneyland Park shops",
+     "source_url": "https://www.mintinbox.net/2017/03/08/disneyland-paris-pins-star-tours-exclusifs/",
+     "method": "search_snippet",
+     "note": "sold in all park shops"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/star-tours-reopening-le-2017/star-tours",
+   "set_key": "dlp/2017/star-tours-reopening-le-2017",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Star Tours",
+     "source_url": "https://www.mintinbox.net/2017/03/08/disneyland-paris-pins-star-tours-exclusifs/",
+     "method": "search_snippet",
+     "note": "Star Tours reopening pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.mintinbox.net/2017/03/08/disneyland-paris-pins-star-tours-exclusifs/",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.mintinbox.net/2017/03/08/disneyland-paris-pins-star-tours-exclusifs/",
+     "method": "search_snippet",
+     "note": "limited to 1000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-26",
+     "source_url": "https://www.mintinbox.net/2017/03/08/disneyland-paris-pins-star-tours-exclusifs/",
+     "method": "search_snippet",
+     "note": "26 Mar 2017 only"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.mintinbox.net/2017/03/08/disneyland-paris-pins-star-tours-exclusifs/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Star Traders, Discoveryland",
+     "source_url": "https://www.mintinbox.net/2017/03/08/disneyland-paris-pins-star-tours-exclusifs/",
+     "method": "search_snippet",
+     "note": "sold exclusively at the new Star Trader shop"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/july-2017-releases/moana-heihei",
+   "set_key": "dlp/2017/july-2017-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Moana pin featuring Heihei",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "named in July 2017 rundown"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Heihei"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "Moana pin featuring Heihei"
+    },
+    {
+     "field": "main_character",
+     "value": "Heihei",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "Heihei"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-08",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "release day 2017-07-08"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/july-2017-releases/peter-pan-blue-costume",
+   "set_key": "dlp/2017/july-2017-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Peter Pan in blue costume",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "named in July 2017 rundown"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Peter Pan"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "Peter Pan in blue costume"
+    },
+    {
+     "field": "main_character",
+     "value": "Peter Pan",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "Peter Pan"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-08",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "release day 2017-07-08"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "DLP"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "limited; expected fast sell-out"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "blue"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "blue-tinged Peter Pan"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/july-2017-releases/cars-3",
+   "set_key": "dlp/2017/july-2017-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cars 3 pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "named in July 2017 rundown"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-22",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "release day 2017-07-22"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/july-2017-releases/disney-illuminations",
+   "set_key": "dlp/2017/july-2017-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Illuminations pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "named in July 2017 rundown"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-29",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "release day 2017-07-29"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "DLP"
+    },
+    {
+     "field": "attraction",
+     "value": "Disney Illuminations",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "pin for the new night show, sold with lanyard"
+    },
+    {
+     "field": "attraction",
+     "value": "Disney Illuminations",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/disneyland-paris/shopping/pin-trading/page/3/",
+     "method": "search_snippet",
+     "note": "dein-dlrp July teaser: new pin and lanyard for Disney Illuminations"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/july-2017-releases/bb-8",
+   "set_key": "dlp/2017/july-2017-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "BB-8 pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "named in July 2017 rundown"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "BB-8"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "BB-8 pin"
+    },
+    {
+     "field": "main_character",
+     "value": "BB-8",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "BB-8"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-29",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "release day 2017-07-29"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/oe-set/christmas-4-pin-set-august-2017/pluto-wreath",
+   "set_key": "dlp/2017/oe-set/christmas-4-pin-set-august-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "named in quoted 4-pin set line"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "Pluto"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pluto with Christmas wreath and candy cane",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "per-pin description on the page (paraphrase)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "four separate pins in the pack"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/oe-set/christmas-4-pin-set-august-2017/minnie-holiday-dress",
+   "set_key": "dlp/2017/oe-set/christmas-4-pin-set-august-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "named in quoted 4-pin set line"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "Minnie Mouse"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie in a holiday dress",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "per-pin description on the page (paraphrase)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "four separate pins in the pack"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/oe-set/christmas-4-pin-set-august-2017/mickey-santa",
+   "set_key": "dlp/2017/oe-set/christmas-4-pin-set-august-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "named in quoted 4-pin set line"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "Mickey Mouse"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey as Santa with sack of candy canes",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "per-pin description on the page (paraphrase)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "four separate pins in the pack"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/oe-set/christmas-4-pin-set-august-2017/goofy-christmas-tree",
+   "set_key": "dlp/2017/oe-set/christmas-4-pin-set-august-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "named in quoted 4-pin set line"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "Goofy"
+    },
+    {
+     "field": "visual_description",
+     "value": "Goofy holding a small Christmas tree",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "per-pin description on the page (paraphrase)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "four separate pins in the pack"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/christmas-oe-august-2017/mickey-pluto-ornament",
+   "set_key": "dlp/2017/christmas-oe-august-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Pluto"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "both characters on one ornament pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "each ornament pin priced individually and shows the pair"
+    },
+    {
+     "field": "visual_description",
+     "value": "round ornament pin with hanging loop: Mickey as Santa and Pluto with antlers",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "visual_form",
+     "value": "ornament",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "bauble shape with loop"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "EUR 7.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/christmas-oe-august-2017/chip-dale-ornament",
+   "set_key": "dlp/2017/christmas-oe-august-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "both characters on one ornament pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "each ornament pin priced individually and shows the pair"
+    },
+    {
+     "field": "visual_description",
+     "value": "round ornament pin with hanging loop: Chip and Dale holding a gift",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "visual_form",
+     "value": "ornament",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "bauble shape with loop"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "EUR 7.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2017/",
+     "method": "search_snippet",
+     "note": "euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/cast-member-goofy-2017/goofy",
+   "set_key": "dlp/2017/cast-member-goofy-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cast Member Exclusive Dingo",
+     "source_url": "https://www.passiondlp.com/actus/arc025.php",
+     "method": "search_snippet",
+     "note": "Dingo = Goofy"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc025.php",
+     "method": "search_snippet",
+     "note": "Dingo (Goofy)"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://www.passiondlp.com/actus/arc025.php",
+     "method": "search_snippet",
+     "note": "Goofy"
+    },
+    {
+     "field": "edition_type",
+     "value": "cast member exclusive",
+     "source_url": "https://www.passiondlp.com/actus/arc025.php",
+     "method": "search_snippet",
+     "note": "CM exclusive"
+    },
+    {
+     "field": "edition_size",
+     "value": 3017,
+     "source_url": "https://www.passiondlp.com/actus/arc025.php",
+     "method": "search_snippet",
+     "note": "given as 3017 exemplaires; odd figure, may be a typo"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://www.passiondlp.com/actus/arc025.php",
+     "method": "search_snippet",
+     "note": "Sep 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.passiondlp.com/actus/arc025.php",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris (cast members)",
+     "source_url": "https://www.passiondlp.com/actus/arc025.php",
+     "method": "search_snippet",
+     "note": "CM exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/november-2017-releases/peter-pan-parade-float",
+   "set_key": "dlp/2017/november-2017-releases",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2017-11-11",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-november-2017-star-wars-new-year-mysteries-a-fidget-spinner/",
+     "method": "search_snippet",
+     "note": "11 Nov release continues the parade float series"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-november-2017-star-wars-new-year-mysteries-a-fidget-spinner/",
+     "method": "search_snippet",
+     "note": "2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/december-2017-releases/snow-white-prince",
+   "set_key": "dlp/2017/december-2017-releases",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Snow White",
+      "The Prince"
+     ],
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "princess pins showing the prince alongside for the first time"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "listed as one 'Pin-Paerchen' (pin couple) line item"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "quoted overview line: unlimited, EUR 7.99"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/december-2017-releases/aurora-phillip",
+   "set_key": "dlp/2017/december-2017-releases",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aurora",
+      "Prince Phillip"
+     ],
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "princess pins showing the prince alongside for the first time"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "listed as one 'Pin-Paerchen' (pin couple) line item"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "quoted overview line: unlimited, EUR 7.99"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/december-2017-releases/belle-beast",
+   "set_key": "dlp/2017/december-2017-releases",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle",
+      "Beast"
+     ],
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "princess pins showing the prince alongside for the first time"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "listed as one 'Pin-Paerchen' (pin couple) line item"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/december-2017-releases/jasmine-aladdin",
+   "set_key": "dlp/2017/december-2017-releases",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine",
+      "Aladdin"
+     ],
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "princess pins showing the prince alongside for the first time"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "listed as one 'Pin-Paerchen' (pin couple) line item"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/december-2017-releases/cinderella-prince-charming",
+   "set_key": "dlp/2017/december-2017-releases",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella",
+      "Prince Charming"
+     ],
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "princess pins showing the prince alongside for the first time"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "listed as one 'Pin-Paerchen' (pin couple) line item"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/december-2017-releases/ariel-eric",
+   "set_key": "dlp/2017/december-2017-releases",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel",
+      "Prince Eric"
+     ],
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "princess pins showing the prince alongside for the first time"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-dezember-2017",
+     "method": "search_snippet",
+     "note": "listed as one 'Pin-Paerchen' (pin couple) line item"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2017/oe-set/beauty-and-the-beast-booster-2017/feather-duster",
+   "field": "characters",
+   "searched": "dein-dlrp Feb summary",
+   "note": "character (e.g. Plumette) not named; only 'feather duster'"
+  },
+  {
+   "key": "dlp/2017/star-tours-reopening-le-2017/star-tours",
+   "field": "visual_description",
+   "searched": "mintinbox pre-release article",
+   "note": "design not described; 1000/26 Mar from a pre-release article only. This is the second Star Tours pin gap from 435/472"
+  },
+  {
+   "key": "dlp/2017/star-tours-reopening-le-2017/star-tours",
+   "field": "edition_size",
+   "searched": "DtDLP Mar",
+   "note": "DtDLP says two Star Tours pins released on the 25th without edition sizes; date conflict 25 vs 26 Mar kept"
+  },
+  {
+   "key": "dlp/2017/july-2017-releases/cars-3",
+   "field": "characters",
+   "searched": "DtDLP July",
+   "note": "character(s) on Cars 3 pin not named"
+  },
+  {
+   "key": "dlp/2017/july-2017-releases/moana-heihei",
+   "field": "characters",
+   "searched": "DtDLP July",
+   "note": "unclear whether Moana herself is on the pin; only Heihei stated"
+  },
+  {
+   "key": "dlp/2017/july-2017-releases/moana-heihei",
+   "field": "edition_type",
+   "searched": "DtDLP July",
+   "note": "edition and price not stated"
+  },
+  {
+   "key": "dlp/2017/july-2017-releases/cars-3",
+   "field": "edition_type",
+   "searched": "DtDLP July",
+   "note": "edition and price not stated"
+  },
+  {
+   "key": "dlp/2017/july-2017-releases/disney-illuminations",
+   "field": "edition_type",
+   "searched": "DtDLP July",
+   "note": "edition and price not stated"
+  },
+  {
+   "key": "dlp/2017/july-2017-releases/bb-8",
+   "field": "edition_type",
+   "searched": "DtDLP July",
+   "note": "edition and price not stated"
+  },
+  {
+   "key": "dlp/2017/july-2017-releases",
+   "field": "members",
+   "searched": "DtDLP July",
+   "note": "animal pins on first July release day and a possible Alice pin on 29 Jul not described individually; dein-dlrp July full list still not surfaced"
+  },
+  {
+   "key": "dlp/2017/november-2017-releases/peter-pan-parade-float",
+   "field": "identity",
+   "searched": "DtDLP July",
+   "note": "lead: DtDLP July describes a 22 Jul limited float pin (series continuation); subject unclear in snippet; may or may not be the Peter Pan float - not created"
+  },
+  {
+   "key": "dlp/2017/oe-set/christmas-4-pin-set-august-2017/pluto-wreath",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Aug",
+   "note": "released: hold from 472_b286 (member key) and 435_b099 (set members) - quoted overview line names the four, plus per-pin descriptions"
+  },
+  {
+   "key": "dlp/2017/oe-set/christmas-4-pin-set-august-2017/minnie-holiday-dress",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Aug",
+   "note": "released: hold from 472_b286 (member key) and 435_b099 (set members) - quoted overview line names the four, plus per-pin descriptions"
+  },
+  {
+   "key": "dlp/2017/oe-set/christmas-4-pin-set-august-2017/mickey-santa",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Aug",
+   "note": "released: hold from 472_b286 (member key) and 435_b099 (set members) - quoted overview line names the four, plus per-pin descriptions"
+  },
+  {
+   "key": "dlp/2017/oe-set/christmas-4-pin-set-august-2017/goofy-christmas-tree",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Aug",
+   "note": "released: hold from 472_b286 (member key) and 435_b099 (set members) - quoted overview line names the four, plus per-pin descriptions"
+  },
+  {
+   "key": "dlp/2017/oe-set/christmas-4-pin-set-august-2017",
+   "field": "release_date",
+   "searched": "dein-dlrp Aug",
+   "note": "conflict: 5 Aug (435/472) vs 26 Aug release block (this packet); both kept"
+  },
+  {
+   "key": "dlp/2017/christmas-oe-august-2017/mickey-pluto-ornament",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Aug",
+   "note": "released: hold from 435_b099 (kept in 472) - summary now describes two round ornament pins, each 7.99, each showing the pair"
+  },
+  {
+   "key": "dlp/2017/christmas-oe-august-2017/chip-dale-ornament",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Aug",
+   "note": "released: hold from 435_b099 (kept in 472) - summary now describes two round ornament pins, each 7.99, each showing the pair"
+  },
+  {
+   "key": "dlp/2017/cast-member-goofy-2017/goofy",
+   "field": "edition_size",
+   "searched": "passiondlp Q3; 1 query",
+   "note": "3017 run size looks like a typo (possibly tied to 2017); single source; confirm"
+  },
+  {
+   "key": "dlp/2017/cast-member-goofy-2017/goofy",
+   "field": "release_date",
+   "searched": "passiondlp Q3",
+   "note": "exact day 22 Sep 2017 seen only in 472 summary; this snippet gave no day"
+  },
+  {
+   "key": "dlp/2017/november-2017-releases/peter-pan-parade-float",
+   "field": "edition_size",
+   "searched": "DtDLP Nov; dein-dlrp Nov (not found)",
+   "note": "edition still not stated; series siblings (Chip&Dale, Hook, Maleficent) are LE 700 but not claimed"
+  },
+  {
+   "key": "dlp/2017/ptn-november-2017",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "PTN Nov 2017 pins still not named; passiondlp Q4 archive not surfaced"
+  },
+  {
+   "key": "dlp/2017/star-wars-pin-lithograph-december-2017",
+   "field": "members",
+   "searched": "DtDLP Nov",
+   "note": "fourth motif still unnamed. DtDLP Nov mentions a second pin+litho set on 7 Nov looking similar to the 4 Nov set (227 key); link to the Dec four-motif set unclear"
+  },
+  {
+   "key": "dlp/2017/december-2017-releases/snow-white-prince",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Dec",
+   "note": "released: hold from 472_b286 - page says princes appear on the princess pins; overview lists each couple as one pin item"
+  },
+  {
+   "key": "dlp/2017/december-2017-releases/aurora-phillip",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Dec",
+   "note": "released: hold from 472_b286 - page says princes appear on the princess pins; overview lists each couple as one pin item"
+  },
+  {
+   "key": "dlp/2017/december-2017-releases/belle-beast",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Dec",
+   "note": "released: hold from 472_b286 - page says princes appear on the princess pins; overview lists each couple as one pin item"
+  },
+  {
+   "key": "dlp/2017/december-2017-releases/jasmine-aladdin",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Dec",
+   "note": "released: hold from 472_b286 - page says princes appear on the princess pins; overview lists each couple as one pin item"
+  },
+  {
+   "key": "dlp/2017/december-2017-releases/cinderella-prince-charming",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Dec",
+   "note": "released: hold from 472_b286 - page says princes appear on the princess pins; overview lists each couple as one pin item"
+  },
+  {
+   "key": "dlp/2017/december-2017-releases/ariel-eric",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Dec",
+   "note": "released: hold from 472_b286 - page says princes appear on the princess pins; overview lists each couple as one pin item"
+  },
+  {
+   "key": "dlp/2017/pin-trading-event-december-2017",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "event pins not named; 'couples' theme only; not linked to the six OE couple pins"
+  },
+  {
+   "key": "dlp/2017/may-2017-releases",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "dein-dlrp teaser: 17 pins plus a lanyard and a booster pack in May (month total, not a set size); no pin named"
+  },
+  {
+   "key": "dlp/2017/june-2017-releases",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "still teaser only: Alice collection, emoticon pins, 4 anniversary pins, a Cars pin; disneypinsblog confirms Emojis/Alice only"
+  },
+  {
+   "key": "dlp/2017/september-2017-releases",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "no dein-dlrp Sep 2017 page exists in index; disneypinsblog: runDisney pins and PTD 30 Sep"
+  },
+  {
+   "key": "dlp/2017/ptn-may-2017",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "passiondlp Q2 2017 archive (likely arc024) not indexed; May PTN pins still unnamed"
+  },
+  {
+   "key": "dlp/2017/pin-trading-day-september-2017",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "no new per-pin source; passiondlp line only; 472 holds on Snow White/Cinderella/Aurora kept"
+  },
+  {
+   "key": "dlp/2017/ptn-july-2017",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "hold kept (472): no second per-pin source beyond passiondlp line-up; maintainer full-list decision pending"
+  },
+  {
+   "key": "dlp/2017/ptn-august-2017",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "hold kept (472): no second per-pin source beyond passiondlp line-up; maintainer full-list decision pending"
+  },
+  {
+   "key": "dlp/2017/ptn-october-2017",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "hold kept (472): no second per-pin source beyond passiondlp line-up; maintainer full-list decision pending"
+  },
+  {
+   "key": "dlp/2017/april-2017-le",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "600/500 (PTD per disneypinsblog) vs 700 (TTM April) conflict unresolved; TTM may describe month LEs not PTD"
+  },
+  {
+   "key": "dlp/2017/st-patricks-day-2017/st-patricks-day-pin",
+   "field": "identity",
+   "searched": "DtDLP Mar",
+   "note": "DtDLP review discusses St Patrick's pin (dangle) separately from the Tink lamppost spring LE 700 and the Mickey countdown pin - suggests three distinct pins; the 700 figure in snippet attaches to the Tink pin, so 227's 700 on this pin needs confirming"
+  },
+  {
+   "key": "dlp/2017/spring-2017-le/tinker-bell-lamppost",
+   "field": "pin_structure",
+   "searched": "DtDLP Mar",
+   "note": "hold (472) eased but kept for maintainer: review separates it from the St Patrick's pin and countdown Mickey; no second source"
+  },
+  {
+   "key": "dlp/2017/valentines-2017/ariel-eric",
+   "field": "identity",
+   "searched": "1 query",
+   "note": "no new source; Disney Store EU 'Ariel and Prince Eric princess pin' (undated) may be the Dec 2017 couple pin, not the Valentine LE; conflict unresolved"
+  },
+  {
+   "key": "dlp/2017/oe-set/coco-4-pin-set-2017",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept (435): other two pins still unnamed"
+  },
+  {
+   "key": "dlp/2017/minnie-signature-haute-couture-2017",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept (435): accessories (sunglasses, bow, hat, luggage) listed but not stated as separate pins; 300 at Pueblo + 650 online"
+  },
+  {
+   "key": "dlp/2017/beauty-and-the-beast-le-set-2017",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept (435): LE 300 set contents not itemised; 700 more online"
+  },
+  {
+   "key": "dlp/2017/april-2017-le/marie-chateau",
+   "field": "edition_size",
+   "searched": "not re-searched",
+   "note": "hold kept (435)"
+  },
+  {
+   "key": "dlp/2017/coco-october-2017/miguel-full-length",
+   "field": "pin_name",
+   "searched": "not re-searched",
+   "note": "hold kept (435)"
+  },
+  {
+   "key": "dlp/2017/25th-anniversary-lady-castle/lady",
+   "field": "release_year",
+   "searched": "not re-searched",
+   "note": "hold kept (435): likely 2018"
+  },
+  {
+   "key": "dlp/2017/march-2017-releases",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "dein-dlrp Mar full text still not surfaced"
+  },
+  {
+   "key": "lic/2017",
+   "field": "lead",
+   "searched": "n/a",
+   "note": "no licensed DLP-related 2017 leads seen"
+  },
+  {
+   "key": "dlp/2017/star-tours-reopening-le-2017/star-tours",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: rests on one pre-release article; design not described"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 of B021 (DLP 2017); reuses keys from 227_b021, 435_b099, 472_b286; no other packet has dlp/2017 keys. 30 WebSearch calls, standard mode, blocked domains passed; all search_snippet. Released holds: Christmas 4-pin members (472/435), ornament pairs (435), princess couples (472), ducks+Elena (435). New: Rapunzel three, SotF booster size, BatB booster members, Star Tours LE 1000, July pins, Goofy CM pin. dein-dlrp Mar/May/Jun/Jul/Sep/Nov still teaser or missing; passiondlp Q2/Q4 not indexed. Jan month: 8 new pins, 1 booster, 1 lanyard, only one LE (dein-dlrp)."
+}

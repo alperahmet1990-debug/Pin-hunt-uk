@@ -1,0 +1,1049 @@
+{
+ "packet_id": "b371-ds-2018-fu6",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+   "title": "Pinsgiving Pin Trading Event",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/186653",
+   "title": "186653 (DSSH - BFF Photo Booth Series - 2018)",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/186662",
+   "title": "186662 (DSSH - BFF Photo Booth Series - 2018 - Moana and Pua)",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/148442",
+   "title": "148442",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/191187",
+   "title": "191187",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/disney-studio-store-hollywood-pins/",
+   "title": "Disney Studio Store Hollywood Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-december-2018-pins",
+   "title": "Disney Studio Store Hollywood December 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+   "title": "Surprise Winnie the Pooh Pin Release",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/art-belle-limited-edition-pin-set/",
+   "title": "Art of Belle Limited Edition Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/art-of-belle-collection.57140/",
+   "title": "Art of Belle Collection",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/tangled-rapunzel-pascal-boxlunch-disney-pin-set",
+   "title": "Tangled Rapunzel & Pascal BoxLunch Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsus/2018/studio-store-hollywood-pinsgiving-bff-photo-booth-2",
+   "parent_set_key": "dsus/2018/studio-store-hollywood-bff-photo-booth",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "B.F.F. Photo Booth Series #2",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DPB Pinsgiving post lists three numbered BFF Photo Booth series"
+    },
+    {
+     "field": "franchise",
+     "value": [
+      "Wreck-It Ralph",
+      "Dumbo",
+      "Pinocchio",
+      "Big Hero 6"
+     ],
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DPB: series #2 features these films"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "each BFF series is a four-pin set"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (4 separate pins)",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "four-pin set; MPC has a separate page per pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "LE 400 per set (DPB)"
+    },
+    {
+     "field": "price",
+     "value": 99.95,
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "set retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "Pinsgiving event, Sun 18 Nov 2018, 12-6pm"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood Pinsgiving event, Disneyland Hotel",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DSSH event held at Disneyland Hotel"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/studio-store-hollywood-pinsgiving-bff-photo-booth-3",
+   "parent_set_key": "dsus/2018/studio-store-hollywood-bff-photo-booth",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "B.F.F. Photo Booth Series #3",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DPB Pinsgiving post lists three numbered BFF Photo Booth series"
+    },
+    {
+     "field": "franchise",
+     "value": [
+      "Lilo & Stitch",
+      "The Lion King",
+      "Moana",
+      "Zootopia"
+     ],
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DPB: series #3 features these films"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "each BFF series is a four-pin set"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (4 separate pins)",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "four-pin set; MPC has a separate page per pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "LE 400 per set (DPB)"
+    },
+    {
+     "field": "price",
+     "value": 99.95,
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "set retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "Pinsgiving event, Sun 18 Nov 2018, 12-6pm"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood Pinsgiving event, Disneyland Hotel",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DSSH event held at Disneyland Hotel"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsus/2018/studio-store-hollywood-bff-photo-booth/ralph",
+   "set_key": "dsus/2018/studio-store-hollywood-bff-photo-booth",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "DSSH - BFF Photo Booth Series - 2018 - Ralph and...",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC 186664 title in series listing; partner name truncated"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ralph"
+     ],
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "first character in MPC 186664 title; partner not visible"
+    },
+    {
+     "field": "main_character",
+     "value": "Ralph",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "first-named character in MPC title"
+    },
+    {
+     "field": "franchise",
+     "value": "Wreck-It Ralph",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DPB series #2 lists this film"
+    },
+    {
+     "field": "sub_series",
+     "value": "B.F.F. Photo Booth Series #2",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "assigned by film: DPB series #2 includes Wreck-It Ralph"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC series listing: Limited Edition 400"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC series listing LE 400 per pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC title 'BFF Photo Booth Series - 2018'"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC series listing gives release date 18 Nov 2018"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DPB: series #2 sold at Pinsgiving 18 Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "DSSH prefix in MPC title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "own MPC page/number; one pin showing a pair in photo-booth frame"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/studio-store-hollywood-bff-photo-booth/pinocchio",
+   "set_key": "dsus/2018/studio-store-hollywood-bff-photo-booth",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "DSSH - BFF Photo Booth Series - 2018 - Pinocchio and...",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC 186663 title in series listing; partner name truncated"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio"
+     ],
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "first character in MPC 186663 title; partner not visible"
+    },
+    {
+     "field": "main_character",
+     "value": "Pinocchio",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "first-named character in MPC title"
+    },
+    {
+     "field": "franchise",
+     "value": "Pinocchio",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DPB series #2 lists this film"
+    },
+    {
+     "field": "sub_series",
+     "value": "B.F.F. Photo Booth Series #2",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "assigned by film: DPB series #2 includes Pinocchio"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC series listing: Limited Edition 400"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC series listing LE 400 per pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC title 'BFF Photo Booth Series - 2018'"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC series listing gives release date 18 Nov 2018"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DPB: series #2 sold at Pinsgiving 18 Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "DSSH prefix in MPC title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "own MPC page/number; one pin showing a pair in photo-booth frame"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/studio-store-hollywood-bff-photo-booth/timon",
+   "set_key": "dsus/2018/studio-store-hollywood-bff-photo-booth",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "DSSH - BFF Photo Booth Series - 2018 - Timon and...",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC 186660 title in series listing; partner name truncated"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Timon"
+     ],
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "first character in MPC 186660 title; partner not visible"
+    },
+    {
+     "field": "main_character",
+     "value": "Timon",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "first-named character in MPC title"
+    },
+    {
+     "field": "franchise",
+     "value": "The Lion King",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DPB series #3 lists this film"
+    },
+    {
+     "field": "sub_series",
+     "value": "B.F.F. Photo Booth Series #3",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "assigned by film: DPB series #3 includes The Lion King"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC series listing: Limited Edition 400"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC series listing LE 400 per pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC title 'BFF Photo Booth Series - 2018'"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC series listing gives release date 18 Nov 2018"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DPB: series #3 sold at Pinsgiving 18 Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "DSSH prefix in MPC title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "own MPC page/number; one pin showing a pair in photo-booth frame"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/studio-store-hollywood-bff-photo-booth/nick-wilde-and-judy-hopps",
+   "set_key": "dsus/2018/studio-store-hollywood-bff-photo-booth",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DPB: series #3 (incl. Zootopia) sold at Pinsgiving 18 Nov 2018; pin tied by film"
+    },
+    {
+     "field": "sub_series",
+     "value": "B.F.F. Photo Booth Series #3",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "assigned by film: DPB series #3 includes Zootopia"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC series listing gives release date 18 Nov 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/studio-store-hollywood-bff-photo-booth/stitch-and-lilo",
+   "set_key": "dsus/2018/studio-store-hollywood-bff-photo-booth",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DPB: series #3 (incl. Lilo & Stitch) sold at Pinsgiving 18 Nov 2018; pin tied by film"
+    },
+    {
+     "field": "sub_series",
+     "value": "B.F.F. Photo Booth Series #3",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "assigned by film: DPB series #3 includes Lilo & Stitch"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC series listing gives release date 18 Nov 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/studio-store-hollywood-bff-photo-booth/moana-and-pua",
+   "set_key": "dsus/2018/studio-store-hollywood-bff-photo-booth",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DPB: series #3 (incl. Moana) sold at Pinsgiving 18 Nov 2018; pin tied by film"
+    },
+    {
+     "field": "sub_series",
+     "value": "B.F.F. Photo Booth Series #3",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "assigned by film: DPB series #3 includes Moana"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC series listing gives release date 18 Nov 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/studio-store-hollywood-bff-photo-booth/timothy",
+   "set_key": "dsus/2018/studio-store-hollywood-bff-photo-booth",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DPB: series #2 (incl. Dumbo) sold at Pinsgiving 18 Nov 2018; pin tied by film"
+    },
+    {
+     "field": "sub_series",
+     "value": "B.F.F. Photo Booth Series #2",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "assigned by film: DPB series #2 includes Dumbo"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC series listing gives release date 18 Nov 2018"
+    },
+    {
+     "field": "franchise",
+     "value": "Dumbo",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "series #2 includes Dumbo; Timothy is the only Dumbo pin in MPC list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2018/studio-store-hollywood-bff-photo-booth/baymax-and-hiro",
+   "set_key": "dsus/2018/studio-store-hollywood-bff-photo-booth",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DPB: series #2 (incl. Big Hero 6) sold at Pinsgiving 18 Nov 2018; pin tied by film"
+    },
+    {
+     "field": "sub_series",
+     "value": "B.F.F. Photo Booth Series #2",
+     "source_url": "https://disneypinsblog.com/pinsgiving-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "assigned by film: DPB series #2 includes Big Hero 6"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://mypincentral.com/pin/186653",
+     "method": "search_snippet",
+     "note": "MPC series listing gives release date 18 Nov 2018"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth/ralph",
+   "field": "characters",
+   "searched": "MPC series listing; 2 queries",
+   "note": "field note: partner truncated ('Ralph and...'); Vanellope likely but not seen"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth/pinocchio",
+   "field": "characters",
+   "searched": "MPC listing; 1 query",
+   "note": "field note: partner truncated; a resale listing calls it Pinocchio and Jiminy Cricket - not recorded"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth/timon",
+   "field": "characters",
+   "searched": "MPC listing; 2 queries",
+   "note": "field note: partner truncated ('Timon and...'); Pumbaa not confirmed by any source"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth/ralph",
+   "field": "visual_description",
+   "searched": "MPC",
+   "note": "no per-pin description in snippet"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth/pinocchio",
+   "field": "visual_description",
+   "searched": "MPC",
+   "note": "no per-pin description in snippet"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth/timon",
+   "field": "visual_description",
+   "searched": "MPC",
+   "note": "no per-pin description in snippet"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth/nick-wilde-and-judy-hopps",
+   "field": "release_date",
+   "searched": "DPB Pinsgiving + MPC",
+   "note": "release evidence: DPB series #3 (Zootopia) sold 18 Nov 2018 at Pinsgiving; MPC series date 18 Nov 2018; resolves fu5 2018-vs-2019 doubt"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth/stitch-and-lilo",
+   "field": "release_date",
+   "searched": "DPB Pinsgiving + MPC",
+   "note": "release evidence: DPB series #3 (Lilo & Stitch) 18 Nov 2018"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth/moana-and-pua",
+   "field": "release_date",
+   "searched": "DPB Pinsgiving + MPC",
+   "note": "release evidence: DPB series #3 (Moana) 18 Nov 2018"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth/timothy",
+   "field": "release_date",
+   "searched": "DPB Pinsgiving + MPC",
+   "note": "release evidence: DPB series #2 (Dumbo) 18 Nov 2018"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth/baymax-and-hiro",
+   "field": "release_date",
+   "searched": "DPB Pinsgiving + MPC",
+   "note": "release evidence: DPB series #2 (Big Hero 6) 18 Nov 2018"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth/timothy",
+   "field": "characters",
+   "searched": "DPB + fryguypins",
+   "note": "field note: partner still truncated on MPC; Dumbo partner only in reseller title (fryguypins) - DPB gives film only"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth",
+   "field": "expected_pin_count",
+   "searched": "DPB + MPC",
+   "note": "three numbered 4-pin series (DPB) = 12 pins; MPC 186653-186664 covers 12 ids; 186653/54/56/59 are set #1 under pinsgiving-bff-photo-booth-1 key"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth",
+   "field": "related",
+   "searched": "structure",
+   "note": "series #2/#3 sets now keyed pinsgiving-bff-photo-booth-2/-3 with parent this key; pins kept on series key to avoid duplicates - maintainer may re-key"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-pinsgiving-bff-photo-booth-2",
+   "field": "related",
+   "searched": "fu4 lead",
+   "note": "resolved: fu4 'Dumbo BFF set 2' reseller lead now confirmed by DPB series #2 list"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-christopher-robin",
+   "field": "all",
+   "searched": "3 queries (DPB, MPC)",
+   "note": "main 3 Aug 2018 DSSH Christopher Robin pins still unnamed; only surprise Pooh LE 150 USD 19.95 (already 421)"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-tangled-in-lights",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "still no non-reseller member list; Baymax Mochi LE 300 only on jd-collectibles (reseller) - not recorded"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-tangled-in-lights",
+   "field": "related",
+   "searched": "MPC 148442",
+   "note": "hold: Vanellope Santa hat/fairy lights DSSH LE 150 still not tied to series; backstamp FAC-046730-18271 (date code not interpreted)"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-mary-poppins-returns",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "series still unnamed; lead: MPC 191187/191247 Penguin Waiter DSSH LE 300 (FAC-000122-18250) and an oval Mary Poppins kite DSSH LE 300 - year/series not stated, not recorded"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-mary-poppins-returns/mary-poppins-and-friends",
+   "field": "pin_structure",
+   "searched": "no new",
+   "note": "hold: kept (495/518/537); no per-pin evidence"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-le-2000-89-99",
+   "field": "scope",
+   "searched": "DPB DSSH category snippet",
+   "note": "resolved lead: LE 2000 USD 89.99 item is a jumbo Disney Artist Collection pin still available at Epcot - parks, not DS; not recorded"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-animation-celebration-2018",
+   "field": "all",
+   "searched": "1 query",
+   "note": "Animation Celebration was an Epcot event 24-25 Aug 2018; DPB preview DSSH heading still has no pin list"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-cursive-cuties-2018-09-28",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "main pins still unnamed; DSSH Cursive Cutie LE 300 pins (Timothy, Marie, Berlioz, Thumper, Figaro, Dumbo) only on resellers/undated MPC"
+  },
+  {
+   "key": "dsus/2018/jumbo-park-pack-01",
+   "field": "all",
+   "searched": "2 queries",
+   "note": "first jumbo Park Pack still unidentified; DPB/DisKingdom only call Lion King set the second release"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-07-jul",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "still undated; DPB set 7 page not surfaced"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-08-aug",
+   "field": "release_date",
+   "searched": "no new",
+   "note": "still undated"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-04-apr",
+   "field": "pins",
+   "searched": "no new",
+   "note": "hold: designs not individually confirmed (kept)"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-07-jul",
+   "field": "pins",
+   "searched": "no new",
+   "note": "hold: designs not individually confirmed (kept)"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-08-aug",
+   "field": "pins",
+   "searched": "no new",
+   "note": "hold: designs not individually confirmed (kept)"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-11-nov",
+   "field": "pins",
+   "searched": "no new",
+   "note": "hold: designs not individually confirmed (kept)"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-12-dec",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: designs not individually confirmed (kept); DPB/Disney Fashionista describe 3 silver glitter futuristic pins only"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-01-jan/glove",
+   "field": "pin_structure",
+   "searched": "no new",
+   "note": "hold: kept"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-01-jan/face",
+   "field": "pin_structure",
+   "searched": "no new",
+   "note": "hold: kept"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-01-jan/walking",
+   "field": "pin_structure",
+   "searched": "no new",
+   "note": "hold: kept"
+  },
+  {
+   "key": "dsus/2018/ralph-breaks-the-internet-vanellope-and-princesses",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: kept; snippets repeat character list + 3 outfit pins, no per-pin breakdown"
+  },
+  {
+   "key": "dsus/2018/ralph-breaks-the-internet-youre-my-hero-heart",
+   "field": "pins",
+   "searched": "no new",
+   "note": "hold: kept"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-08-aug/maximus",
+   "field": "pin_name",
+   "searched": "not re-searched",
+   "note": "hold: kept (421)"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-08-aug/rapunzel-stained-glass",
+   "field": "pin_name",
+   "searched": "not re-searched",
+   "note": "hold: kept (421)"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-08-aug/flynn-rider",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold: kept (421)"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-12-dec/mulan-stained-glass",
+   "field": "characters",
+   "searched": "not re-searched",
+   "note": "hold: kept"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-12-dec/shan-yu",
+   "field": "visual_description",
+   "searched": "not re-searched",
+   "note": "hold: kept; MPC 134266 lead only"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/infinity-gauntlet",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold: kept (421)"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/tesseract-space-stone",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold: kept (421)"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/orb-power-stone",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold: kept (421)"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/aether-reality-stone",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold: kept (421)"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/eye-of-agamotto-time-stone",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold: kept (421)"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/lokis-scepter-mind-stone",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold: kept (421)"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/soul-stone",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold: kept (421)"
+  },
+  {
+   "key": "dsuk/2018/incredibles-2-le-set-of-5/mr-incredible",
+   "field": "pins",
+   "searched": "no new",
+   "note": "hold: kept. variant: same pin as dsus/2018/incredibles-2-le-750-set/mr-incredible"
+  },
+  {
+   "key": "dsuk/2018/incredibles-2-le-set-of-5/elastigirl",
+   "field": "pins",
+   "searched": "no new",
+   "note": "hold: kept. variant: same pin as dsus/2018/incredibles-2-le-750-set/elastigirl"
+  },
+  {
+   "key": "dsuk/2018/incredibles-2-le-set-of-5/violet",
+   "field": "pins",
+   "searched": "no new",
+   "note": "hold: kept. variant: same pin as dsus/2018/incredibles-2-le-750-set/violet"
+  },
+  {
+   "key": "dsuk/2018/incredibles-2-le-set-of-5/dash",
+   "field": "pins",
+   "searched": "no new",
+   "note": "hold: kept. variant: same pin as dsus/2018/incredibles-2-le-750-set/dash"
+  },
+  {
+   "key": "dsuk/2018/incredibles-2-le-set-of-5/jack-jack",
+   "field": "pins",
+   "searched": "no new",
+   "note": "hold: kept. variant: same pin as dsus/2018/incredibles-2-le-750-set/jack-jack"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-pin-trader-delight-2018-08-10/sarah-hawkins",
+   "field": "edition_size",
+   "searched": "not re-searched",
+   "note": "hold: kept"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-pin-trader-delight-2018-08-10/rizzo",
+   "field": "edition_size",
+   "searched": "not re-searched",
+   "note": "hold: kept"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-pin-trader-delight-2018-08-10/arthur",
+   "field": "edition_size",
+   "searched": "not re-searched",
+   "note": "hold: kept"
+  },
+  {
+   "key": "dsuk/2018/art-of-belle",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "DPB: LE 1300 Belle/Beast/rose set first at DS UK, later US USD 69.95; no UK date; DPF thread id 57140 predates 2018 threads (~65000) - likely 2017, not recorded"
+  },
+  {
+   "key": "dsuk/2018/tangled-pin-set",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "DS UK 2-piece Tangled set (466041688391, GBP 8.40, out of stock) still undated; not recorded"
+  },
+  {
+   "key": "dsuk/2018 coverage",
+   "field": "all",
+   "searched": "1 query",
+   "note": "no new dated UK/EU 2018 DS pins found"
+  },
+  {
+   "key": "lic/2018/boxlunch-tangled-rapunzel-pascal",
+   "field": "scope",
+   "searched": "DPB",
+   "note": "lead: licensed BoxLunch Tangled Rapunzel & Pascal pin set, Nov 2018, USD 14.90 - for licensed cell"
+  },
+  {
+   "key": "lic/2018/boxlunch-mickey-july",
+   "field": "scope",
+   "searched": "search summary",
+   "note": "lead: licensed BoxLunch July 2018 surfer / Steamboat-style Mickey pins (~USD 9 each) - for licensed cell"
+  }
+ ],
+ "discovery_notes": "Follow-up 6 of B014 (packets 214, 421, 463, 495, 518, 537; Disney Store 2018). 27 standard WebSearches, excluded domains blocked, search snippets/summaries only. New: DPB Pinsgiving post gives the BFF Photo Booth structure (3 numbered four-pin sets, LE 400, USD 99.95, 18 Nov 2018): series #2 Wreck-It Ralph/Dumbo/Pinocchio/Big Hero 6, #3 Lilo & Stitch/Lion King/Moana/Zootopia. Three new pins from MPC listing (Ralph 186664, Pinocchio 186663, Timon 186660; partners truncated). Release dates for five fu5 BFF pins (release evidence). LE 2000 USD 89.99 lead closed as Epcot Artist Collection jumbo. No hold released. Resellers (jd-collectibles, fryguypins) not used."
+}

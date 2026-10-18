@@ -1,0 +1,1966 @@
+{
+  "packet_id": "backfill-b281-wdw-le-2017-fu2",
+  "spec_version": 1,
+  "collected_at": "2026-10-18",
+  "collector": "agent:backfill-b281",
+  "sources": [
+    {
+      "url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+      "title": "New Disney Pins March 2017 Week 2",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-03",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-4/",
+      "title": "New Disney Pins March 2017 Week 4",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-03",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+      "title": "Star Wars Celebration 2017 Disney Parks Pins",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-04",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+      "title": "New Disney Pins May 2017 Week 2",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-05",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+      "title": "New Disney Pins May 2017 Week 3",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-05",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+      "title": "New Disney Pins June 2017 Week 3",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-06",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+      "title": "New Disney Pins July 2017 Week 2",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-07",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+      "title": "New Disney Pins July 2017 Week 4",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-07",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+      "title": "New Disney Pins July 2017 Week 1",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-07",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/bambi-75th-anniversary-pin-release",
+      "title": "Bambi 75th Anniversary Pin Release",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-07",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/oswald-90th-anniversary-pin-release/",
+      "title": "Oswald 90th Anniversary Pin Release",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-07",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-4/",
+      "title": "New Disney Pins August 2017 Week 4",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-08",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-5/",
+      "title": "New Disney Pins August 2017 Week 5",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-09",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+      "title": "New Disney Pins November 2017 Week 3",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-11",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/surprise-star-wars-last-jedi-pins-disney-parks/",
+      "title": "Surprise Star Wars: The Last Jedi Pins at Disney Parks",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-12",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+      "title": "New Disney Pins February 2017 Week 3",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-02",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://mypincentral.com/pin/45661",
+      "title": "45661",
+      "publisher": "MyPinCentral",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    }
+  ],
+  "sets": [
+    {
+      "set_key": "wdw/2017/star-wars-celebration-orlando",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Disney Parks pins at Star Wars Celebration Orlando 2017",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "Disney Parks pins first sold at Celebration, 40 years of Star Wars"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-04-13",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "first available Apr 13, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Star Wars Celebration Orlando; remaining stock to Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "leftover stock promised to DL and WDW"
+        },
+        {
+          "field": "format",
+          "value": "event release (separate pins)",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "each pin listed with its own edition and price"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2017/star-wars-celebration-orlando-40-years-two-pin-set",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Star Wars 40 Years Two Pin Set",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "two-pin set"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 2,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "two pin set"
+        },
+        {
+          "field": "format",
+          "value": "multi-pin pack",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "2-pin set"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "price",
+          "value": 19.99,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "$19.99"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-04-13",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "Celebration"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2017/jungle-cruise-45th",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Jungle Cruise 45th anniversary pins",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "four WDW pins for Jungle Cruise 45 years"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-05-11",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "May 11, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Walt Disney World",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "WDW releases"
+        },
+        {
+          "field": "format",
+          "value": "separate pins",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "each listed separately"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2017/bambi-75th-boxed-set",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Bambi 75th Anniversary boxed set",
+          "source_url": "https://disneypinsblog.com/blogs/news/bambi-75th-anniversary-pin-release",
+          "method": "search_snippet",
+          "note": "boxed set"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-07-20",
+          "source_url": "https://disneypinsblog.com/blogs/news/bambi-75th-anniversary-pin-release",
+          "method": "search_snippet",
+          "note": "WDW Jul 20, 2017 after D23 debut Jul 14"
+        },
+        {
+          "field": "release_location",
+          "value": "Walt Disney World",
+          "source_url": "https://disneypinsblog.com/blogs/news/bambi-75th-anniversary-pin-release",
+          "method": "search_snippet",
+          "note": "WDW"
+        },
+        {
+          "field": "format",
+          "value": "boxed set",
+          "source_url": "https://disneypinsblog.com/blogs/news/bambi-75th-anniversary-pin-release",
+          "method": "search_snippet",
+          "note": "boxed set with completer"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2017/oswald-90th-boxed-set",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Oswald 90th Anniversary boxed set",
+          "source_url": "https://disneypinsblog.com/oswald-90th-anniversary-pin-release/",
+          "method": "search_snippet",
+          "note": "boxed set"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-07-27",
+          "source_url": "https://disneypinsblog.com/oswald-90th-anniversary-pin-release/",
+          "method": "search_snippet",
+          "note": "WDW Jul 27, 2017"
+        },
+        {
+          "field": "format",
+          "value": "boxed set",
+          "source_url": "https://disneypinsblog.com/oswald-90th-anniversary-pin-release/",
+          "method": "search_snippet",
+          "note": "boxed set with completer"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2017/star-wars-gold-spaceship-set",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Star Wars gold spaceship pin set",
+          "source_url": "https://disneypinsblog.com/surprise-star-wars-last-jedi-pins-disney-parks/",
+          "method": "search_snippet",
+          "note": "gold set: TIE Fighter, Millennium Falcon, X-Wing"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/surprise-star-wars-last-jedi-pins-disney-parks/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 1000,
+          "source_url": "https://disneypinsblog.com/surprise-star-wars-last-jedi-pins-disney-parks/",
+          "method": "search_snippet",
+          "note": "LE 1,000"
+        },
+        {
+          "field": "price",
+          "value": 24.99,
+          "source_url": "https://disneypinsblog.com/surprise-star-wars-last-jedi-pins-disney-parks/",
+          "method": "search_snippet",
+          "note": "$24.99"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-12-14",
+          "source_url": "https://disneypinsblog.com/surprise-star-wars-last-jedi-pins-disney-parks/",
+          "method": "search_snippet",
+          "note": "surprise Last Jedi release Dec 14, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/surprise-star-wars-last-jedi-pins-disney-parks/",
+          "method": "search_snippet",
+          "note": "both resorts"
+        }
+      ]
+    }
+  ],
+  "pins": [
+    {
+      "pin_key": "wdw/2017/star-wars-pin-of-the-month/pin-11",
+      "set_key": "wdw/2017/star-wars-pin-of-the-month",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Star Wars Pin of the Month: Endor",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+          "method": "search_snippet",
+          "note": "weekly roundup lists Endor as the monthly Star Wars pin"
+        },
+        {
+          "field": "set_position",
+          "value": 11,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+          "method": "search_snippet",
+          "note": "pin 11 of 13"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+          "method": "search_snippet",
+          "note": "LE per roundup"
+        },
+        {
+          "field": "edition_size",
+          "value": 6000,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+          "method": "search_snippet",
+          "note": "LE 6,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+          "method": "search_snippet",
+          "note": "retail $15.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+          "method": "search_snippet",
+          "note": "US parks"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-03-09",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+          "method": "search_snippet",
+          "note": "available Mar 9, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+          "method": "search_snippet",
+          "note": "shared DL/WDW release"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/star-wars-celebration-orlando/40-years",
+      "set_key": "wdw/2017/star-wars-celebration-orlando",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Star Wars 40 Years pin",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "hinged 40 Years pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "per Celebration list"
+        },
+        {
+          "field": "original_price",
+          "value": 14.99,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "retail price per list"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "US event"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-04-13",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "Celebration opening"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "hinged"
+          ],
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "hinged"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/star-wars-celebration-orlando/who-shot-first",
+      "set_key": "wdw/2017/star-wars-celebration-orlando",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Who Shot First slider pin",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "slider pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "per Celebration list"
+        },
+        {
+          "field": "edition_size",
+          "value": 4000,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "edition size per list"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "retail price per list"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "US event"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-04-13",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "Celebration opening"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "slider"
+          ],
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "slider"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/star-wars-celebration-orlando/stormtrooper-podh",
+      "set_key": "wdw/2017/star-wars-celebration-orlando",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Stormtrooper Piece of Disney History pin",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "contains a piece of a Force Awakens stormtrooper costume"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "per Celebration list"
+        },
+        {
+          "field": "edition_size",
+          "value": 4000,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "edition size per list"
+        },
+        {
+          "field": "original_price",
+          "value": 19.99,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "retail price per list"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "US event"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-04-13",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "Celebration opening"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Stormtrooper"
+          ],
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "stormtrooper"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/star-wars-celebration-orlando/wookiees-need-love-too",
+      "set_key": "wdw/2017/star-wars-celebration-orlando",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Wookiees Need Love Too",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "Chewbacca pin with glitter"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "per Celebration list"
+        },
+        {
+          "field": "edition_size",
+          "value": 4000,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "edition size per list"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "retail price per list"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "US event"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-04-13",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "Celebration opening"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Chewbacca"
+          ],
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "Chewbacca"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "glitter"
+          ],
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "glitter accents"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/star-wars-celebration-orlando/darth-vader-lives",
+      "set_key": "wdw/2017/star-wars-celebration-orlando",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Darth Vader Lives button and pin combo",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "button-and-pin combination"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "per Celebration list"
+        },
+        {
+          "field": "edition_size",
+          "value": 4000,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "edition size per list"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "retail price per list"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "US event"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-04-13",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "Celebration opening"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Darth Vader"
+          ],
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "Darth Vader"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/star-wars-vehicles/millennium-falcon",
+      "set_key": "wdw/2017/star-wars-vehicles",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Millennium Falcon mini-jumbo pin",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "Celebration list: Falcon mini-jumbo"
+        },
+        {
+          "field": "edition_size",
+          "value": 5000,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "LE 5,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "$15.99"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-04-13",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "first sold at Celebration Orlando"
+        },
+        {
+          "field": "release_location",
+          "value": "Star Wars Celebration Orlando; then DL/WDW",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "remaining stock to parks"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/epcot-holidays-around-the-world/candlelight-processional",
+      "set_key": "wdw/2017/epcot-holidays-around-the-world",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Candlelight Processional 2017 (Epcot)",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+          "method": "search_snippet",
+          "note": "commemorative Epcot Candlelight pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 4000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+          "method": "search_snippet",
+          "note": "LE 4,000"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "hinged"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+          "method": "search_snippet",
+          "note": "hinged"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-11-19",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+          "method": "search_snippet",
+          "note": "WDW Nov 19, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Epcot",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+          "method": "search_snippet",
+          "note": "Epcot pin"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/jungle-cruise-45th/chief-nami-goofy",
+      "set_key": "wdw/2017/jungle-cruise-45th",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Jungle Cruise 45th - Chief Nami Goofy",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "Goofy as Chief Nami with dangle"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Goofy"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "characters per roundup"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-05-11",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "May 11, 2017"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "edition per roundup"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "$15.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "dangle"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "dangle"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/jungle-cruise-45th/skippers-mickey-donald-goofy",
+      "set_key": "wdw/2017/jungle-cruise-45th",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Jungle Cruise 45th - Skippers",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "trio dressed as skippers on one pin"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Mickey Mouse",
+            "Donald Duck",
+            "Goofy"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "characters per roundup"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-05-11",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "May 11, 2017"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "edition per roundup"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "$15.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "single pin with three characters"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/jungle-cruise-45th/skipper-nametag",
+      "set_key": "wdw/2017/jungle-cruise-45th",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Jungle Cruise 45th - Skipper Nametag",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "replica skipper nametag design"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-05-11",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "May 11, 2017"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 2000,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "edition per roundup"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "$15.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "US"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/jungle-cruise-45th/super-jumbo-spinner",
+      "set_key": "wdw/2017/jungle-cruise-45th",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Jungle Cruise 45th - Character Skipper Super Jumbo Spinner",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "super jumbo spinner with three characters"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Donald Duck",
+            "Mickey Mouse",
+            "Goofy"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "characters per roundup"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-05-11",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "May 11, 2017"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "spinner"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "spinner"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "one jumbo pin"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/mothers-day-2017/finding-dory",
+      "set_key": "wdw/2017/mothers-day-2017",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Mother's Day 2017 pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "Finding Dory themed design"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 5000,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "LE 5,000"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-05-11",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "May 11, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "shared release"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/graduation-2017/stitch",
+      "set_key": "wdw/2017/graduation-2017",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Graduation 2017 Stitch pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "Stitch with diploma"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Stitch"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "Stitch"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 2000,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "LE 2,000"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-05-11",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "May 11, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-may-2017-week-2/",
+          "method": "search_snippet",
+          "note": "shared release; no DLR key exists"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/piece-of-wdw-history/mannequins-dance-palace",
+      "set_key": "wdw/2017/piece-of-wdw-history",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Piece of Walt Disney World History - Mannequins Dance Palace",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "PODH pin with piece of Mannequins, Pleasure Island"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 1500,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "LE 1,500"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "$15.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "US"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-06-15",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "WDW Jun 15, 2017"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "piece of history"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "contains attraction material"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/summer-2017/olaf",
+      "set_key": "wdw/2017/summer-2017",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Summer 2017 Olaf pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "Olaf summer pin"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Olaf"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "Olaf"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 5000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "LE 5,000"
+        },
+        {
+          "field": "original_price",
+          "value": 12.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "$12.99"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-06-15",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "Jun 15, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "shared release; no DLR key exists"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/hercules-20th/commemorative",
+      "set_key": "wdw/2017/hercules-20th",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Hercules 20th anniversary pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "commemorative 20th pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 2000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "LE 2,000"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-06-15",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "Jun 15, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-3",
+          "method": "search_snippet",
+          "note": "shared release; not the dsuk Hercules LE 400"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/piece-of-wdw-history/town-square-theater",
+      "set_key": "wdw/2017/piece-of-wdw-history",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Piece of Walt Disney World History - Town Square Theater",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+          "method": "search_snippet",
+          "note": "PODH Town Square Theater"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 1500,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+          "method": "search_snippet",
+          "note": "LE 1,500"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+          "method": "search_snippet",
+          "note": "$15.99"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-07-13",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+          "method": "search_snippet",
+          "note": "WDW Jul 13, 2017"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/disney-recollections/the-fox-and-the-hound",
+      "set_key": "wdw/2017/disney-recollections",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Disney Recollections - The Fox and the Hound",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+          "method": "search_snippet",
+          "note": "third pin of 2017 quarterly series"
+        },
+        {
+          "field": "set_position",
+          "value": 3,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+          "method": "search_snippet",
+          "note": "third pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-07-13",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+          "method": "search_snippet",
+          "note": "WDW Jul 13, 2017"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/doorways-to-disney/toy-story-mania",
+      "set_key": "wdw/2017/doorways-to-disney",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Doorways to Disney - Toy Story Mania",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "Doorways series pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 4000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "LE 4,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "$15.99"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-07-27",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "Jul 27, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "shared release; no DLR key exists"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/doorways-to-disney/pirates-of-the-caribbean",
+      "set_key": "wdw/2017/doorways-to-disney",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Doorways to Disney - Pirates of the Caribbean",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-5/",
+          "method": "search_snippet",
+          "note": "roundup Aug 27-Sep 2, 2017"
+        },
+        {
+          "field": "release_year",
+          "value": 2017,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-5/",
+          "method": "search_snippet",
+          "note": "2017 roundup"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/spider-man-homecoming/commemorative",
+      "set_key": "wdw/2017/spider-man-homecoming",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Spider-Man: Homecoming commemorative pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+          "method": "search_snippet",
+          "note": "commemorative film pin"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Spider-Man"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+          "method": "search_snippet",
+          "note": "Spider-Man"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-07-06",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+          "method": "search_snippet",
+          "note": "Jul 6, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+          "method": "search_snippet",
+          "note": "both parks"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/oswald-90th/oswald-90-years",
+      "set_key": "wdw/2017/oswald-90th",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Oswald 90 years pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-4/",
+          "method": "search_snippet",
+          "note": "marks 90 years of Oswald"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Oswald the Lucky Rabbit"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-4/",
+          "method": "search_snippet",
+          "note": "Oswald"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-4/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-4/",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-08-24",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-4/",
+          "method": "search_snippet",
+          "note": "Aug 24, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-4/",
+          "method": "search_snippet",
+          "note": "shared release"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/essence-of-evil/gaston",
+      "set_key": "dlr/2017/essence-of-evil",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Essence of Evil - Gaston",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-4/",
+          "method": "search_snippet",
+          "note": "eighth pin of the series"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Gaston"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-4/",
+          "method": "search_snippet",
+          "note": "Gaston"
+        },
+        {
+          "field": "set_position",
+          "value": 8,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-4/",
+          "method": "search_snippet",
+          "note": "8th pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-4/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-4/",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-4/",
+          "method": "search_snippet",
+          "note": "$15.99"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-08-24",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-4/",
+          "method": "search_snippet",
+          "note": "Aug 24, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-4/",
+          "method": "search_snippet",
+          "note": "shared DL/WDW release; keyed on existing DLR set"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/force-friday-ii/r2-d2",
+      "set_key": "wdw/2017/force-friday-ii",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Force Friday II R2-D2 surprise pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-5/",
+          "method": "search_snippet",
+          "note": "surprise park release for Force Friday II"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "R2-D2"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-5/",
+          "method": "search_snippet",
+          "note": "R2-D2"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-5/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 5000,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-5/",
+          "method": "search_snippet",
+          "note": "LE 5,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-5/",
+          "method": "search_snippet",
+          "note": "$15.99"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-09-01",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-5/",
+          "method": "search_snippet",
+          "note": "Sep 1, 2017"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/force-friday-ii/bb-8",
+      "set_key": "wdw/2017/force-friday-ii",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Force Friday II BB-8 surprise pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-5/",
+          "method": "search_snippet",
+          "note": "companion surprise pin"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "BB-8"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-5/",
+          "method": "search_snippet",
+          "note": "BB-8"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-09-01",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-5/",
+          "method": "search_snippet",
+          "note": "Sep 1, 2017"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/easter-2017/bean-bunny",
+      "set_key": "wdw/2017/easter-2017",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Easter 2017 Bean Bunny pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-4/",
+          "method": "search_snippet",
+          "note": "WDW Easter pin"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Bean Bunny"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-4/",
+          "method": "search_snippet",
+          "note": "Bean Bunny"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-4/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-4/",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "original_price",
+          "value": 14.99,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-4/",
+          "method": "search_snippet",
+          "note": "$14.99"
+        },
+        {
+          "field": "release_location",
+          "value": "Walt Disney World",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-4/",
+          "method": "search_snippet",
+          "note": "WDW"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/annual-passholder-park-series/epcot-figment",
+      "set_key": "wdw/2017/annual-passholder-park-series",
+      "claims": [
+        {
+          "field": "set_position",
+          "value": 2,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+          "method": "search_snippet",
+          "note": "second pin of 2017 AP collection"
+        }
+      ]
+    }
+  ],
+  "not_found": [
+    {
+      "key": "wdw/2017/star-wars-pin-of-the-month/pin-11",
+      "field": "set_position",
+      "searched": "DPB SWC 2017 post",
+      "note": "conflict: DPB Celebration post calls an Endor pin 12 of 13 under a 'Naboo' heading; pin-12 stays held (426); shared DL/WDW, no DLR key exists"
+    },
+    {
+      "key": "wdw/2017/star-wars-celebration-orlando/darth-vader-lives",
+      "field": "scope",
+      "searched": "DPB SWC post",
+      "note": "scope: confirm pin vs button (listed as a button and pin combo)"
+    },
+    {
+      "key": "wdw/2017/star-wars-celebration-orlando-40-years-two-pin-set",
+      "field": "pins",
+      "searched": "DPB SWC post",
+      "note": "members not named or described"
+    },
+    {
+      "key": "wdw/2017/star-wars-vehicles/millennium-falcon",
+      "field": "set_key",
+      "searched": "2 queries",
+      "note": "link of Celebration Falcon to vehicle series pin 1 rests on a summary saying AT-AT is pin 2 after the Falcon; fills 426 gap on date/size"
+    },
+    {
+      "key": "wdw/2017/epcot-holidays-around-the-world/candlelight-processional",
+      "field": "original_price",
+      "searched": "1 query",
+      "note": "price not in snippet; DL Candlelight pin (LE 1,500, Nov 30) is a separate product, not this pin"
+    },
+    {
+      "key": "wdw/2017/jungle-cruise-45th/super-jumbo-spinner",
+      "field": "edition_size",
+      "searched": "1 query",
+      "note": "edition size and price cut from snippet"
+    },
+    {
+      "key": "wdw/2017/mothers-day-2017/finding-dory",
+      "field": "characters",
+      "searched": "1 query",
+      "note": "characters not named beyond Finding Dory theme; shared DL/WDW, no DLR key exists"
+    },
+    {
+      "key": "wdw/2017/hercules-20th/commemorative",
+      "field": "characters",
+      "searched": "1 query",
+      "note": "characters and price not in snippet"
+    },
+    {
+      "key": "wdw/2017/doorways-to-disney/pirates-of-the-caribbean",
+      "field": "edition_size",
+      "searched": "1 query",
+      "note": "edition, price, date and DL/WDW split not in snippet"
+    },
+    {
+      "key": "wdw/2017/piece-of-wdw-history/town-square-theater",
+      "field": "source_url",
+      "searched": "July roundups",
+      "note": "attribution to this specific weekly roundup inferred from date and result set; facts from DPB July 2017 snippets"
+    },
+    {
+      "key": "wdw/2017/disney-recollections/the-fox-and-the-hound",
+      "field": "source_url",
+      "searched": "July roundups",
+      "note": "attribution to this specific weekly roundup inferred from date and result set; facts from DPB July 2017 snippets"
+    },
+    {
+      "key": "wdw/2017/doorways-to-disney/toy-story-mania",
+      "field": "source_url",
+      "searched": "July roundups",
+      "note": "attribution to this specific weekly roundup inferred from date and result set; facts from DPB July 2017 snippets"
+    },
+    {
+      "key": "wdw/2017/spider-man-homecoming/commemorative",
+      "field": "edition_type",
+      "searched": "1 query",
+      "note": "edition type/size not stated; may belong to WDW OE cell"
+    },
+    {
+      "key": "wdw/2017/bambi-75th-boxed-set/walt-disney-completer",
+      "field": "pin_name",
+      "searched": "1 query",
+      "note": "hold: boxed set member (Walt Disney completer, LE 500) named only in the set listing; pending maintainer decision on full lists"
+    },
+    {
+      "key": "wdw/2017/bambi-75th-boxed-set",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "other members not named; see dsus Studio Store Bambi 75th keys for related but separate releases"
+    },
+    {
+      "key": "wdw/2017/oswald-90th-boxed-set",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "hold: members not named; LE 750 completer named only in set listing; pending maintainer decision on full lists"
+    },
+    {
+      "key": "wdw/2017/oswald-90th/oswald-90-years",
+      "field": "set_key",
+      "searched": "review",
+      "note": "variant: check whether same pin as dlr/2017/pin-trading-tales/oswald before merging"
+    },
+    {
+      "key": "wdw/2017/force-friday-ii/bb-8",
+      "field": "edition_size",
+      "searched": "1 query",
+      "note": "edition/price not stated; distinct from dsus/2017/force-friday-ii (Disney Store) keys"
+    },
+    {
+      "key": "wdw/2017/annual-passholder-park-series",
+      "field": "set_position",
+      "searched": "1 query",
+      "note": "DPB confirms Figment 2 and Maleficent 4 (Nov 2); pin 3 still unconfirmed; Yeti hold (426) not released"
+    },
+    {
+      "key": "wdw/2017/star-wars-gold-spaceship-set",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "hold: confirm pin structure (pack, single multi-ship pin, or mystery); ships named only in the set description; pending maintainer decision on full lists. Partially resolves 426 unattributed lead"
+    },
+    {
+      "key": "wdw/2017/love-is-an-adventure-love-is-strength-box-set",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "members still unnamed; DPB snippet repeats 4-pin, LE 300, $99.99, RSP"
+    },
+    {
+      "key": "wdw/2017/love-is-an-adventure-carl-and-ellie-through-the-years",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "members still unnamed; DPB repeats 6-pin boxed set LE 300 $139.99 via RSP"
+    },
+    {
+      "key": "wdw/2017/love-is-an-adventure-tangled-pin-set",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "lead: MPC 45661 lists 'Love is Light: Rapunzel and Flynn Set' as a booster; B018 has love-is-light as one pin LE 500 $24.99; structure unresolved, no members added"
+    },
+    {
+      "key": "wdw/2017/pandora-countdown-box-set",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "completer designs still unnamed; DPB repeats LE 250 box of five Dylan Cole posters, May 27, purchase limit two"
+    },
+    {
+      "key": "wdw/2017/star-wars-pin-of-the-month/pin-13",
+      "field": "characters",
+      "searched": "2 queries",
+      "note": "still held (433_b098); no new per-pin subject found"
+    },
+    {
+      "key": "wdw/2017/star-wars-pin-of-the-month/pin-12",
+      "field": "characters",
+      "searched": "2 queries",
+      "note": "still held (426_b062); DPB Mar wk2 makes Endor pin 11, which suggests Naboo for 12, but no per-pin evidence for 12"
+    },
+    {
+      "key": "wdw/2017/star-wars-vehicles",
+      "field": "pins",
+      "searched": "2 queries",
+      "note": "vehicle pin 4 still not found"
+    },
+    {
+      "key": "wdw/2017/rundisney-princess-half",
+      "field": "pins",
+      "searched": "2 queries",
+      "note": "Belle logo, Glass Slipper and Enchanted 10K pins still only on reseller; AllEars confirms race pins sold at expo but names none"
+    },
+    {
+      "key": "wdw/2017/mvmcp-mystery",
+      "field": "all",
+      "searched": "1 query",
+      "note": "sugar cookie mystery box appears to be 2019 (10 designs) per snippets; no 2017 release found"
+    },
+    {
+      "key": "wdw/2017/magic-kingdom-anniversary",
+      "field": "all",
+      "searched": "1 query",
+      "note": "no 2017 MK anniversary LE found (45th was 2016); Jungle Cruise 45th recorded instead"
+    },
+    {
+      "key": "wdw/2017/animal-kingdom-anniversary",
+      "field": "all",
+      "searched": "1 query",
+      "note": "no 2017 AK anniversary LE found"
+    },
+    {
+      "key": "wdw/2017/rivers-of-light",
+      "field": "all",
+      "searched": "2 queries",
+      "note": "lead: DPB Feb 2017 wk3 shows OE Rivers of Light pin $9.99 and a garbled shared LE 2,000 $12.99 entry (Feb 16); link to Rivers of Light unclear; not recorded"
+    },
+    {
+      "key": "wdw/2017/rundisney-star-wars-dark-side",
+      "field": "pins",
+      "searched": "0 queries",
+      "note": "holds (426) unchanged; no new per-pin evidence"
+    },
+    {
+      "key": "wdw/2017/rundisney-wine-dine",
+      "field": "pins",
+      "searched": "0 queries",
+      "note": "holds (426) unchanged"
+    },
+    {
+      "key": "wdw/2017/epcot-food-wine-ice-cream-box-set",
+      "field": "pins",
+      "searched": "0 queries",
+      "note": "holds (426) unchanged"
+    },
+    {
+      "key": "wdw/2017/love-is-an-adventure/love-is-scary",
+      "field": "release_year",
+      "searched": "0 queries",
+      "note": "hold (426) unchanged"
+    },
+    {
+      "key": "wdw/2017/mnsshp-boxed-set",
+      "field": "pins",
+      "searched": "0 queries",
+      "note": "holds (218/426) unchanged; MVMCP framed set likewise"
+    },
+    {
+      "key": "wdw/2017/star-wars-celebration-orlando/darth-vader-lives",
+      "field": "pin_structure",
+      "searched": "review",
+      "note": "hold: listed as a button and pin combo; confirm pin vs button (rule 11)"
+    },
+    {
+      "key": "wdw/2017/oswald-90th/oswald-90-years",
+      "field": "pin_structure",
+      "searched": "review",
+      "note": "hold: possible duplicate of dlr/2017/pin-trading-tales/oswald; confirm distinct product before counting"
+    }
+  ],
+  "discovery_notes": "Follow-up 2 of B018 (after 426). 29 standard WebSearch queries, blocked domains passed or allowed_domains limited to preferred sites. Evidence almost entirely Disney Pins Blog weekly roundups and event posts. New: SW Pin of the Month 11 (Endor), Celebration Orlando park pins, Candlelight Processional, Jungle Cruise 45th, PODH, shared DL/WDW monthly LEs (Mother's Day, Graduation, Olaf, Hercules, Doorways, Oswald, Essence of Evil Gaston, Force Friday II), Easter Bean Bunny. Gaston keyed on existing dlr/2017/essence-of-evil set. No holds released. Resellers (yourwdwstore) seen, not used. No prompt-injection seen."
+}

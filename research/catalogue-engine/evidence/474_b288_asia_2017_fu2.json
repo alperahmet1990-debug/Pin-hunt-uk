@@ -1,0 +1,825 @@
+{
+ "packet_id": "backfill-b288-asia-2017-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b288",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+   "title": "2016 Hong Kong Disneyland Pin Trading Event",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/aurora-carousel-limited-edition-pin/",
+   "title": "Aurora Carousel Limited Edition Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2018/08/2018.html",
+   "title": "HKDL Cinderella carousel LE pin and Teacher's Day 2018 LE pin (Chinese)",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+   "title": "Gelatoni Pins (forum thread)",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-pin-hunting-2017",
+   "title": "Hong Kong Disneyland Pin Hunting 2017",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.kankanews.com/detail/D1yp4MoJ4ym",
+   "title": "Shanghai Disneyland opens 2017 Pin Hunting event (Chinese)",
+   "publisher": "Kankanews",
+   "published_date": "2017-11-24",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/tokyo-disney-land-sea-tanabata-goods/",
+   "title": "Tokyo Disneyland Disney Tanabata Days 2017 special goods (Japanese)",
+   "publisher": "MezzoMiki",
+   "published_date": "2017-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "hkdl/2016/pin-trading-event-train",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2016-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "DPB release list runs from Oct 2016 to the 12th car in Sep 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2018/carousel-series",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/2018.html",
+     "method": "search_snippet",
+     "note": "carousel-style LE series of 12 designs, one released per month"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/2018.html",
+     "method": "search_snippet",
+     "note": "each design LE 300"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-07",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/2018.html",
+     "method": "search_snippet",
+     "note": "series began 7 Oct 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2017/pin-hunting-2017",
+   "claims": [
+    {
+     "field": "format",
+     "value": "7 individually sold LE pins, one per land, plus receipt redemption pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-pin-hunting-2017",
+     "method": "search_snippet",
+     "note": "each pin represents a different land, 3D elements; keep receipts to redeem a special pin at Town Square Photo; ran 8 Jul-6 Aug 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2017/pin-hunting-2017",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://www.kankanews.com/detail/D1yp4MoJ4ym",
+     "method": "search_snippet",
+     "note": "seven LE treasure-map hunt pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.kankanews.com/detail/D1yp4MoJ4ym",
+     "method": "search_snippet",
+     "note": "each design limited to 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-24",
+     "source_url": "https://www.kankanews.com/detail/D1yp4MoJ4ym",
+     "method": "search_snippet",
+     "note": "hunt pins on sale from 24 Nov 2017 at five shops"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "hkdl/2016/pin-trading-event-train/sadness",
+   "set_key": "hkdl/2016/pin-trading-event-train",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sadness Hong Kong Disneyland Train Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "dated per-pin entry in DPB train release list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sadness"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "subject of this monthly train car"
+    },
+    {
+     "field": "set_position",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "listed as release 4 of 12"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "month given in the dated release entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "2017 release in the train series"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "HKDL pin trading event series"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/pin-trading-event-train/joy",
+   "set_key": "hkdl/2016/pin-trading-event-train",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Joy Hong Kong Disneyland Train Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "dated per-pin entry in DPB train release list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Joy"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "subject of this monthly train car"
+    },
+    {
+     "field": "set_position",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "listed as release 5 of 12"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "month given in the dated release entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "2017 release in the train series"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "HKDL pin trading event series"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/pin-trading-event-train/baymax",
+   "set_key": "hkdl/2016/pin-trading-event-train",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Baymax Hong Kong Disneyland Train Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "dated per-pin entry in DPB train release list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Baymax"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "subject of this monthly train car"
+    },
+    {
+     "field": "set_position",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "listed as release 6 of 12"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "month given in the dated release entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "2017 release in the train series"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "HKDL pin trading event series"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/pin-trading-event-train/sulley",
+   "set_key": "hkdl/2016/pin-trading-event-train",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sulley Hong Kong Disneyland Train Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "dated per-pin entry in DPB train release list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sulley"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "subject of this monthly train car"
+    },
+    {
+     "field": "set_position",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "listed as release 7 of 12"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "month given in the dated release entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "2017 release in the train series"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "HKDL pin trading event series"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/pin-trading-event-train/lotso",
+   "set_key": "hkdl/2016/pin-trading-event-train",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lotso Hong Kong Disneyland Train Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "dated per-pin entry in DPB train release list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lotso"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "subject of this monthly train car"
+    },
+    {
+     "field": "set_position",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "listed as release 8 of 12"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "month given in the dated release entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "2017 release in the train series"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "HKDL pin trading event series"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/pin-trading-event-train/little-green-men",
+   "set_key": "hkdl/2016/pin-trading-event-train",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Little Green Men Hong Kong Disneyland Train Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "dated per-pin entry in DPB train release list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Little Green Men"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "subject of this monthly train car"
+    },
+    {
+     "field": "set_position",
+     "value": 9,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "listed as release 9 of 12"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "month given in the dated release entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "2017 release in the train series"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "HKDL pin trading event series"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/pin-trading-event-train/duffy",
+   "set_key": "hkdl/2016/pin-trading-event-train",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Duffy Bear Hong Kong Disneyland Train Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "dated per-pin entry in DPB train release list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "subject of this monthly train car"
+    },
+    {
+     "field": "set_position",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "listed as release 10 of 12"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "month given in the dated release entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "2017 release in the train series"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "HKDL pin trading event series"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/pin-trading-event-train/shelliemay",
+   "set_key": "hkdl/2016/pin-trading-event-train",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "ShellieMay Hong Kong Disneyland Train Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "dated per-pin entry in DPB train release list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "ShellieMay"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "subject of this monthly train car"
+    },
+    {
+     "field": "set_position",
+     "value": 11,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "listed as release 11 of 12"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "month given in the dated release entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "2017 release in the train series"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "HKDL pin trading event series"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2016/pin-trading-event-train/gelatoni",
+   "set_key": "hkdl/2016/pin-trading-event-train",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Gelatoni Hong Kong Disneyland Train Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "dated per-pin entry in DPB train release list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Gelatoni"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "subject of this monthly train car"
+    },
+    {
+     "field": "set_position",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "listed as release 12 of 12"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "month given in the dated release entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "2017 release in the train series"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/2016-hong-kong-disneyland-pin-trading-event",
+     "method": "search_snippet",
+     "note": "HKDL pin trading event series"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "forum checklist lists Train Pin Series - Gelatoni as LE 300"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "listed as LE"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/carousel-series/aurora",
+   "set_key": "hkdl/2018/carousel-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Aurora Carousel Limited Edition Pin",
+     "source_url": "https://disneypinsblog.com/aurora-carousel-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "own DPB post for this pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://disneypinsblog.com/aurora-carousel-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "Aurora on the carousel design"
+    },
+    {
+     "field": "set_position",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/aurora-carousel-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "third pin in the carousel themed collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/aurora-carousel-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/aurora-carousel-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-12-16",
+     "source_url": "https://disneypinsblog.com/aurora-carousel-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "available 16 Dec 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium, Main Street U.S.A., Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/aurora-carousel-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "sold at Emporium; limit two per guest, queue cards issued"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2017/tanabata-2017/glow-stars",
+   "set_key": "tdr/2017/tanabata-2017",
+   "claims": [
+    {
+     "field": "size_mm",
+     "value": "about 65 tall x 50 wide",
+     "source_url": "https://mezzomiki.jp/tokyo-disney-land-sea-tanabata-goods/",
+     "method": "search_snippet",
+     "note": "pin about 6.5 cm by 5 cm; stars glow in the dark"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "hkdl/2016/pin-trading-event-train",
+   "field": "edition_size",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "2017 cars: LE 300 per car is a set-level claim (packet 323); per-car size seen only for Gelatoni (forum). No HK$ prices found"
+  },
+  {
+   "key": "hkdl/2016/pin-trading-event-train/little-green-men",
+   "field": "characters",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "DPB names the subject only as Little Green Men; number of aliens on the car not stated"
+  },
+  {
+   "key": "hkdl/2018/carousel-series/dumbo",
+   "field": "release_date",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "hold kept (packet 437_b101): still no own post, date or size for Dumbo; only series lists (DPB, rarest.org)"
+  },
+  {
+   "key": "hkdl/2018/carousel-series/aurora",
+   "field": "original_price",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "HK$ price not in snippet"
+  },
+  {
+   "key": "hkdl/2018/carousel-series",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "Dwarfs (position 4?) still only in series lists; not recorded"
+  },
+  {
+   "key": "shdr/2017/first-anniversary-boxed-set",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "re-search (2 queries): three box-set pins still unnamed"
+  },
+  {
+   "key": "shdr/2017/first-anniversary-limited-release",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "re-search: the two 23 Jun 2017 LR pins still have no design in snippets"
+  },
+  {
+   "key": "shdr/2017/first-anniversary-frame-set",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "frame set still described only as featuring Peter Pan, Dumbo, Stitch, Baymax and others; per-pin split not stated; not split"
+  },
+  {
+   "key": "shdr/2017/first-anniversary-mystery",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "holds kept (229/437) on Pluto, Goofy, Dumbo, Duffy; other eight designs still unnamed; Chinese search found nothing"
+  },
+  {
+   "key": "shdr/2017/pin-trading-fun-day-2017-mystery",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "a snippet says the mystery box gives a surprise pin of the Fun Day 2017 designs (outlet unclear); contents and count not stated"
+  },
+  {
+   "key": "shdr/2017/chinese-zodiac-hidden-mickey",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "per-pin zodiac designs still not named; Garden of the Twelve Friends mural characters are not evidence of pin designs"
+  },
+  {
+   "key": "shdr/2017/summer-2017",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "mini and jumbo designs, characters and price still not in snippets"
+  },
+  {
+   "key": "shdr/2017/welcome-gelatoni",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "second LE pin, two OE pins and mystery box designs still unnamed; Duffy and Gelatoni hold (437) kept"
+  },
+  {
+   "key": "shdr/2017/pin-hunting-2017",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "six of seven hunt pin designs and price still not in snippets"
+  },
+  {
+   "key": "hkdl/2017/pin-hunting-2017",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "per-land designs still unnamed after 3 queries"
+  },
+  {
+   "key": "hkdl/2017/christmas-2017",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "still forum-only (Disney Pin Forum); no blog/official HKDL Christmas 2017 pin post; DMKB A Disney Christmas 2017 post covers stickers, not pins"
+  },
+  {
+   "key": "hkdl/2017/mickey-minnie-birthday-2017",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "no 2017 Mickey & Minnie birthday pin found"
+  },
+  {
+   "key": "hkdl/2017/12th-anniversary",
+   "field": "original_price",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "HK$ price still not in snippets (2018 13th anniversary HK$118 is a different year, not used)"
+  },
+  {
+   "key": "hkdl/2017/teacup-mystery",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "no per-design evidence found; 437 holds kept"
+  },
+  {
+   "key": "tdr/2017/christmas-fantasy-2017/pin",
+   "field": "characters",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "still no pin design or characters in snippets (Mickey/Minnie tree pin is TDS Christmas Wishes, already keyed, hold kept)"
+  },
+  {
+   "key": "tdr/2017/tanabata-2017/glow-stars",
+   "field": "characters",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "goods line is themed on Hikoboshi Mickey/Orihime Minnie, but snippets do not tie the characters to the pin itself"
+  },
+  {
+   "key": "tdr/2017/duffy-2017",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "Sweet Duffy 2017 goods show plush badges only; no 2017 Duffy flat pin found"
+  },
+  {
+   "key": "tdr/2017/easter-2017-tdl",
+   "field": "pins",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "no TDL Easter 2017 pin found; only TDS runway pin (keyed in 437) and wappen/can badges"
+  },
+  {
+   "key": "tdr/2017/easter-2017",
+   "field": "scope",
+   "searched": "WebSearch snippets, follow-up 2",
+   "note": "scope: confirmed button/badge/non-pin (Easter 2017 egg goods list wappen badge and can badge set)"
+  }
+ ],
+ "discovery_notes": "Cell B288, follow-up 2 of B023 (Asia 2017). 29 standard searches, snippets only. New: nine 2017 HKDL train cars (positions 4-12) from dated per-pin entries in the DPB 2016 Pin Trading Event list (set key from packet 323), and Aurora carousel pin 3 (own DPB post; set key from 422). Corroboration for SHDR Pin Hunting (Kankanews), HKDL Pin Hunting format, carousel series start, Tanabata pin size. No holds released: Dumbo carousel (437), Teacup mystery (437), SHDR anniversary mystery four (229/437), Abu's Bazaar, Easter Eggs Bunny, My Dreaming, Halloween Stitch/Cheshire, Gelatoni Duffy (437), Christmas Wishes (437) all kept. Resellers (usshoppingsos, parkscollectibles, carousell, fryguypins, vintageradar, yourwdwstore, madhousecollectibles) not used."
+}

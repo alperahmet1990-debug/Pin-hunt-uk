@@ -1,0 +1,878 @@
+{
+ "packet_id": "b289-lic-other-2017-fu2-2026-10-18",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.theglobaldispatch.com/star-wars-celebration-2017-pin-trading-checklist-show-exclusives-19249/",
+   "title": "Star Wars Celebration 2017: Pin trading checklist, show exclusives",
+   "publisher": "The Global Dispatch",
+   "published_date": "2017-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.friendsofcc.com/forum/index.php?topic=7636.0",
+   "title": "Star Wars Celebration 2017 Pin Trading thread",
+   "publisher": "Friends of Comic Cons (forum)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.starwarscelebration.com/Pages/Standard.aspx?id=27846",
+   "title": "Celebration Store - Star Wars Celebration",
+   "publisher": "Star Wars Celebration (official)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/complete-list-star-wars-celebration-orlando-2017-pins/",
+   "title": "Complete List of Star Wars Celebration Orlando 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.toynk.com/products/star-wars-40th-anniversary-collectible-bronze-pin-sdcc-17-exclusive",
+   "title": "Star Wars 40th Anniversary Collectible Bronze Pin, SDCC '17 Exclusive",
+   "publisher": "Toynk",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://thegeekiary.com/toynk-san-diego-comic-con-2017-exclusive/44769",
+   "title": "Toynk Toys Reveal San Diego Comic-Con 2017 Exclusive Pins",
+   "publisher": "The Geekiary",
+   "published_date": "2017-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.figures.com/2017/07/10/toynk-san-diego-comic-con-2017-exclusive-collector-pins/",
+   "title": "Toynk San Diego Comic-Con 2017 Exclusive Collector Pins",
+   "publisher": "Figures.com",
+   "published_date": "2017-07-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.toynk.com/products/star-wars-40th-anniversary-limited-edition-pin",
+   "title": "Star Wars 40th Anniversary Limited Edition Pin",
+   "publisher": "Toynk",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.target.com/p/salesone-llc-star-wars-40th-anniversary-limited-edition-pin/-/A-82517212",
+   "title": "SalesOne LLC Star Wars 40th Anniversary Limited Edition Pin",
+   "publisher": "Target",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-alice-in-wonderland-mad-hatter-hat-enamel-pin/10641636.html",
+   "title": "Loungefly Disney Alice In Wonderland Mad Hatter Hat Enamel Pin",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/disney-the-aristocats-marie-winking-enamel-pin/10641644.html",
+   "title": "Disney The Aristocats Marie Winking Enamel Pin",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/disney-lilo-stitch-stay-weird-enamel-pin/11054476.html",
+   "title": "Disney Lilo & Stitch Stay Weird Enamel Pin",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://bleedingcool.com/2017/07/24/marvel-true-believers-panel-sdcc-2017",
+   "title": "Marvel True Believers Panel: News, Leaks, And Whitewashing",
+   "publisher": "Bleeding Cool",
+   "published_date": "2017-07-24",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-porg-pin-set",
+   "title": "Star Wars Porg Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-york-comic-con-2017-marvel-pins",
+   "title": "New York Comic Con 2017 MARVEL Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://bleedingcool.com/comics/marvel-exclusives-new-york-comic-con/",
+   "title": "NYCC 2017 Marvel Exclusives: Lockjaw Plush, Netflix Vinyl, And More!",
+   "publisher": "Bleeding Cool",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://sdccblog.com/2017/09/toynk-nycc-2017-exclusives-revealed/",
+   "title": "Toynk NYCC 2017 Exclusives Revealed",
+   "publisher": "San Diego Comic-Con Unofficial Blog",
+   "published_date": "2017-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.toynk.com/products/star-wars-derek-laufman-collectors-series-darth-vader-enamel-exclusive-pin",
+   "title": "OFFICIAL Star Wars Darth Vader Pin (Derek Laufman Collectors Series)",
+   "publisher": "Toynk",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/primark-beauty-beast-disney-pin-set/",
+   "title": "Primark Beauty and the Beast Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/primark-alice-wonderland-disney-pin-set/",
+   "title": "Primark Alice in Wonderland Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/coco-disney-pixar-pin-series-by-artland/",
+   "title": "Coco Disney Pixar Pin Series by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-gold-frame-pins-at-boxlunch/",
+   "title": "Disney Princess/Villain Gold Frame Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2017/lucasfilm-celebration-orlando-women-of-star-wars-3-pack",
+   "parent_set_key": "lic/2017/lucasfilm-celebration-orlando",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Women of Star Wars Pin 3-Pack",
+     "source_url": "https://www.starwarscelebration.com/Pages/Standard.aspx?id=27846",
+     "method": "search_snippet",
+     "note": "official Celebration Store page lists a Women of Star Wars pin 3-pack among Orlando exclusives"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (3 pins)",
+     "source_url": "https://www.theglobaldispatch.com/star-wars-celebration-2017-pin-trading-checklist-show-exclusives-19249/",
+     "method": "search_snippet",
+     "note": "checklist lists the 3-pack and its three pins with separate trade ranges"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.theglobaldispatch.com/star-wars-celebration-2017-pin-trading-checklist-show-exclusives-19249/",
+     "method": "search_snippet",
+     "note": "3-pack; Leia, Rey and Sabine listed as its pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04",
+     "source_url": "https://www.theglobaldispatch.com/star-wars-celebration-2017-pin-trading-checklist-show-exclusives-19249/",
+     "method": "search_snippet",
+     "note": "Star Wars Celebration Orlando, April 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Star Wars Celebration Orlando 2017",
+     "source_url": "https://www.starwarscelebration.com/Pages/Standard.aspx?id=27846",
+     "method": "search_snippet",
+     "note": "Celebration Store exclusive"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.starwarscelebration.com/Pages/Standard.aspx?id=27846",
+     "method": "search_snippet",
+     "note": "Star Wars Celebration exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2017/toynk-celebration-orlando",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Toynk Star Wars Celebration 2017 exclusive pin",
+     "source_url": "https://www.toynk.com/products/star-wars-40th-anniversary-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "Toynk page says the pin was offered exclusively at Star Wars Celebration 2017 in Orlando"
+    },
+    {
+     "field": "format",
+     "value": "individual pin",
+     "source_url": "https://www.toynk.com/products/star-wars-40th-anniversary-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "single pin listing"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04",
+     "source_url": "https://www.toynk.com/products/star-wars-40th-anniversary-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "Celebration Orlando 2017 (April); month from event, page undated"
+    },
+    {
+     "field": "release_location",
+     "value": "Star Wars Celebration Orlando 2017",
+     "source_url": "https://www.toynk.com/products/star-wars-40th-anniversary-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "offered exclusively at Celebration 2017"
+    },
+    {
+     "field": "retailer",
+     "value": "Toynk",
+     "source_url": "https://www.toynk.com/products/star-wars-40th-anniversary-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "sold by Toynk"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2017/lucasfilm-celebration-orlando-women-of-star-wars-3-pack/princess-leia",
+   "set_key": "lic/2017/lucasfilm-celebration-orlando-women-of-star-wars-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Princess Leia"
+     ],
+     "source_url": "https://www.theglobaldispatch.com/star-wars-celebration-2017-pin-trading-checklist-show-exclusives-19249/",
+     "method": "search_snippet",
+     "note": "Leia listed as a Women of Star Wars 3-pack pin with its own trade range"
+    },
+    {
+     "field": "set_position",
+     "value": 38,
+     "source_url": "https://www.friendsofcc.com/forum/index.php?topic=7636.0",
+     "method": "search_snippet",
+     "note": "fan forum numbers Leia as pin 38 of the 2017 Celebration collection"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.theglobaldispatch.com/star-wars-celebration-2017-pin-trading-checklist-show-exclusives-19249/",
+     "method": "search_snippet",
+     "note": "Celebration Orlando 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/lucasfilm-celebration-orlando-women-of-star-wars-3-pack/rey",
+   "set_key": "lic/2017/lucasfilm-celebration-orlando-women-of-star-wars-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rey"
+     ],
+     "source_url": "https://www.theglobaldispatch.com/star-wars-celebration-2017-pin-trading-checklist-show-exclusives-19249/",
+     "method": "search_snippet",
+     "note": "Rey listed as a Women of Star Wars 3-pack pin with its own trade range"
+    },
+    {
+     "field": "set_position",
+     "value": 40,
+     "source_url": "https://www.friendsofcc.com/forum/index.php?topic=7636.0",
+     "method": "search_snippet",
+     "note": "fan forum numbers Rey as pin 40"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.theglobaldispatch.com/star-wars-celebration-2017-pin-trading-checklist-show-exclusives-19249/",
+     "method": "search_snippet",
+     "note": "Celebration Orlando 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/lucasfilm-celebration-orlando-women-of-star-wars-3-pack/sabine-wren",
+   "set_key": "lic/2017/lucasfilm-celebration-orlando-women-of-star-wars-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Sabine Wren"
+     ],
+     "source_url": "https://www.theglobaldispatch.com/star-wars-celebration-2017-pin-trading-checklist-show-exclusives-19249/",
+     "method": "search_snippet",
+     "note": "Sabine (Rebels) listed as a Women of Star Wars 3-pack pin with its own trade range"
+    },
+    {
+     "field": "set_position",
+     "value": 39,
+     "source_url": "https://www.friendsofcc.com/forum/index.php?topic=7636.0",
+     "method": "search_snippet",
+     "note": "fan forum numbers Sabine as pin 39"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.theglobaldispatch.com/star-wars-celebration-2017-pin-trading-checklist-show-exclusives-19249/",
+     "method": "search_snippet",
+     "note": "Celebration Orlando 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/lucasfilm-celebration-orlando-jedi-3-pack/young-anakin",
+   "set_key": "lic/2017/lucasfilm-celebration-orlando-jedi-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Anakin Skywalker"
+     ],
+     "source_url": "https://www.friendsofcc.com/forum/index.php?topic=7636.0",
+     "method": "search_snippet",
+     "note": "forum pre-show list names Young Anakin as a Jedi 3-pack pin (corroborates 439)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/lucasfilm-celebration-orlando-jedi-3-pack/obi-wan-kenobi",
+   "set_key": "lic/2017/lucasfilm-celebration-orlando-jedi-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Obi-Wan Kenobi"
+     ],
+     "source_url": "https://www.friendsofcc.com/forum/index.php?topic=7636.0",
+     "method": "search_snippet",
+     "note": "forum pre-show list names Obi-Wan Kenobi as a Jedi 3-pack pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/lucasfilm-celebration-orlando-jedi-3-pack/mace-windu",
+   "set_key": "lic/2017/lucasfilm-celebration-orlando-jedi-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mace Windu"
+     ],
+     "source_url": "https://www.friendsofcc.com/forum/index.php?topic=7636.0",
+     "method": "search_snippet",
+     "note": "forum pre-show list names Mace Windu as a Jedi 3-pack pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/lucasfilm-celebration-orlando-sith-3-pack/maul",
+   "set_key": "lic/2017/lucasfilm-celebration-orlando-sith-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Darth Maul"
+     ],
+     "source_url": "https://www.friendsofcc.com/forum/index.php?topic=7636.0",
+     "method": "search_snippet",
+     "note": "forum list: Darth Maul (Sith 3-Pack)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/lucasfilm-celebration-orlando-sith-3-pack/count-dooku",
+   "set_key": "lic/2017/lucasfilm-celebration-orlando-sith-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Count Dooku"
+     ],
+     "source_url": "https://www.friendsofcc.com/forum/index.php?topic=7636.0",
+     "method": "search_snippet",
+     "note": "forum list: Count Dooku (Sith 3-Pack)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/lucasfilm-celebration-orlando-sith-3-pack/palpatine",
+   "set_key": "lic/2017/lucasfilm-celebration-orlando-sith-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Emperor Palpatine"
+     ],
+     "source_url": "https://www.friendsofcc.com/forum/index.php?topic=7636.0",
+     "method": "search_snippet",
+     "note": "forum list: Emperor Palpatine (Sith 3-Pack)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/toynk-celebration-orlando/star-wars-40th-anniversary-silver",
+   "set_key": "lic/2017/toynk-celebration-orlando",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars 40th Anniversary Limited Edition Pin",
+     "source_url": "https://www.toynk.com/products/star-wars-40th-anniversary-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "Toynk product title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Luke Skywalker",
+      "Princess Leia"
+     ],
+     "source_url": "https://www.toynk.com/products/star-wars-40th-anniversary-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "listing describes Luke and Leia beside a large 40"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.toynk.com/products/star-wars-40th-anniversary-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "single pin showing both characters"
+    },
+    {
+     "field": "visual_description",
+     "value": "silver metal pin, about 1 inch, Luke and Leia with a large 40 and 40th anniversary text",
+     "source_url": "https://www.toynk.com/products/star-wars-40th-anniversary-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "paraphrase of listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://www.toynk.com/products/star-wars-40th-anniversary-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "titled Limited Edition; size not stated"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.toynk.com/products/star-wars-40th-anniversary-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "offered exclusively at Celebration 2017 Orlando"
+    },
+    {
+     "field": "release_location",
+     "value": "Star Wars Celebration Orlando 2017",
+     "source_url": "https://www.toynk.com/products/star-wars-40th-anniversary-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "Celebration exclusive"
+    },
+    {
+     "field": "retailer",
+     "value": "Toynk",
+     "source_url": "https://www.toynk.com/products/star-wars-40th-anniversary-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "sold by Toynk"
+    },
+    {
+     "field": "manufacturer",
+     "value": "SalesOne LLC",
+     "source_url": "https://www.target.com/p/salesone-llc-star-wars-40th-anniversary-limited-edition-pin/-/A-82517212",
+     "method": "search_snippet",
+     "note": "Target lists the pin under brand SalesOne LLC, sold by Toynk"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.toynk.com/products/star-wars-40th-anniversary-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "Star Wars 40th anniversary"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/toynk-sdcc/star-wars-40th-anniversary-bronze",
+   "set_key": "lic/2017/toynk-sdcc",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://thegeekiary.com/toynk-san-diego-comic-con-2017-exclusive/44769",
+     "method": "search_snippet",
+     "note": "Geekiary SDCC 2017 preview: $10, limited to 2000"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.toynk.com/products/star-wars-40th-anniversary-collectible-bronze-pin-sdcc-17-exclusive",
+     "method": "search_snippet",
+     "note": "Toynk page snippet says limited to 1000 pieces produced"
+    },
+    {
+     "field": "original_price",
+     "value": 10,
+     "source_url": "https://thegeekiary.com/toynk-san-diego-comic-con-2017-exclusive/44769",
+     "method": "search_snippet",
+     "note": "$10 at SDCC 2017"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://thegeekiary.com/toynk-san-diego-comic-con-2017-exclusive/44769",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/hot-topic-june-2017-disney-pins/mad-hatter-hat",
+   "set_key": "lic/2017/hot-topic-june-2017-disney-pins",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-alice-in-wonderland-mad-hatter-hat-enamel-pin/10641636.html",
+     "method": "search_snippet",
+     "note": "Hot Topic listing title credits Loungefly; listing undated"
+    },
+    {
+     "field": "retailer",
+     "value": "Hot Topic",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-alice-in-wonderland-mad-hatter-hat-enamel-pin/10641636.html",
+     "method": "search_snippet",
+     "note": "sold by Hot Topic"
+    },
+    {
+     "field": "product_code",
+     "value": "10641636",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-alice-in-wonderland-mad-hatter-hat-enamel-pin/10641636.html",
+     "method": "search_snippet",
+     "note": "Hot Topic product ID"
+    },
+    {
+     "field": "size_mm",
+     "value": "1 in x 1 in",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-alice-in-wonderland-mad-hatter-hat-enamel-pin/10641636.html",
+     "method": "search_snippet",
+     "note": "listing size, inches as stated"
+    },
+    {
+     "field": "original_price",
+     "value": 5.9,
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-alice-in-wonderland-mad-hatter-hat-enamel-pin/10641636.html",
+     "method": "search_snippet",
+     "note": "listed at $5.90 (undated)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-alice-in-wonderland-mad-hatter-hat-enamel-pin/10641636.html",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/hot-topic-june-2017-disney-pins/marie-winking",
+   "set_key": "lic/2017/hot-topic-june-2017-disney-pins",
+   "claims": [
+    {
+     "field": "retailer",
+     "value": "Hot Topic",
+     "source_url": "https://www.hottopic.com/product/disney-the-aristocats-marie-winking-enamel-pin/10641644.html",
+     "method": "search_snippet",
+     "note": "sold by Hot Topic"
+    },
+    {
+     "field": "product_code",
+     "value": "10641644",
+     "source_url": "https://www.hottopic.com/product/disney-the-aristocats-marie-winking-enamel-pin/10641644.html",
+     "method": "search_snippet",
+     "note": "Hot Topic product ID"
+    },
+    {
+     "field": "size_mm",
+     "value": "1 in x 1 in",
+     "source_url": "https://www.hottopic.com/product/disney-the-aristocats-marie-winking-enamel-pin/10641644.html",
+     "method": "search_snippet",
+     "note": "listing size, inches as stated"
+    },
+    {
+     "field": "original_price",
+     "value": 5.9,
+     "source_url": "https://www.hottopic.com/product/disney-the-aristocats-marie-winking-enamel-pin/10641644.html",
+     "method": "search_snippet",
+     "note": "original price $5.90 on listing (undated)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.hottopic.com/product/disney-the-aristocats-marie-winking-enamel-pin/10641644.html",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/hot-topic-june-2017-disney-pins/stitch-stay-weird",
+   "set_key": "lic/2017/hot-topic-june-2017-disney-pins",
+   "claims": [
+    {
+     "field": "retailer",
+     "value": "Hot Topic",
+     "source_url": "https://www.hottopic.com/product/disney-lilo-stitch-stay-weird-enamel-pin/11054476.html",
+     "method": "search_snippet",
+     "note": "sold by Hot Topic"
+    },
+    {
+     "field": "product_code",
+     "value": "11054476",
+     "source_url": "https://www.hottopic.com/product/disney-lilo-stitch-stay-weird-enamel-pin/11054476.html",
+     "method": "search_snippet",
+     "note": "Hot Topic product ID"
+    },
+    {
+     "field": "size_mm",
+     "value": "1 in x 1.25 in",
+     "source_url": "https://www.hottopic.com/product/disney-lilo-stitch-stay-weird-enamel-pin/11054476.html",
+     "method": "search_snippet",
+     "note": "listing size, inches as stated"
+    },
+    {
+     "field": "original_price",
+     "value": 5.0,
+     "source_url": "https://www.hottopic.com/product/disney-lilo-stitch-stay-weird-enamel-pin/11054476.html",
+     "method": "search_snippet",
+     "note": "listing shows $5.00 (undated; DPB 2017 gave $8.90) - conflict"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.hottopic.com/product/disney-lilo-stitch-stay-weird-enamel-pin/11054476.html",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/marvel-sdcc-emojis-blind-pack/kamala-khan",
+   "set_key": "lic/2017/marvel-sdcc-emojis-blind-pack",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Ms. Marvel emoji-style pin; author says Kamala's skin tone matches the Caucasian characters",
+     "source_url": "https://bleedingcool.com/2017/07/24/marvel-true-believers-panel-sdcc-2017",
+     "method": "search_snippet",
+     "note": "panel Q&A complaint about the individual Ms. Marvel pin sold at the Marvel booth"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kamala Khan"
+     ],
+     "source_url": "https://bleedingcool.com/2017/07/24/marvel-true-believers-panel-sdcc-2017",
+     "method": "search_snippet",
+     "note": "Ms. Marvel (Kamala Khan) pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2017/marvel-sdcc-emojis-avengers/black-widow",
+   "set_key": "lic/2017/marvel-sdcc-emojis-avengers",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Black Widow emoji-style pin, criticised as a generic redhead",
+     "source_url": "https://bleedingcool.com/2017/07/24/marvel-true-believers-panel-sdcc-2017",
+     "method": "search_snippet",
+     "note": "panel Q&A complaint describes the individual Black Widow pin"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2017/marvel-sdcc-emojis-blind-pack/kamala-khan",
+   "field": "pin_structure",
+   "searched": "Bleeding Cool panel report",
+   "note": "released: Bleeding Cool describes the individual Ms. Marvel pin (per-pin description); hold was set in packet 232"
+  },
+  {
+   "key": "lic/2017/marvel-sdcc-emojis-avengers/black-widow",
+   "field": "pin_structure",
+   "searched": "Bleeding Cool panel report",
+   "note": "released: Bleeding Cool describes the individual Black Widow pin; hold was set in packet 232"
+  },
+  {
+   "key": "lic/2017/marvel-sdcc-emojis-team-cap",
+   "field": "pins",
+   "searched": "Bleeding Cool panel report",
+   "note": "lead: author says Sam Wilson's Captain America pin is darker; unclear whether that is the Team Cap Captain America or Falcon key - holds unchanged"
+  },
+  {
+   "key": "lic/2017/marvel-sdcc-emojis-blind-pack",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "holds kept for venom, doctor-strange, rocket-raccoon, drax (439) and loki, red-skull, hawkeye (232): pool lists only; no per-design text found"
+  },
+  {
+   "key": "lic/2017/marvel-sdcc-emojis/iron-man-chase",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "lead: Iron Man chase variant emoji pin named only by a reseller (pinsonfire); not recorded"
+  },
+  {
+   "key": "lic/2017/marvel-sdcc-emojis-incentive/spider-gwen",
+   "field": "scope",
+   "searched": "review",
+   "note": "scope: Spider-Verse-related character (Spider-Gwen) - pending maintainer decision on Spider-Verse items"
+  },
+  {
+   "key": "lic/2017/marvel-nycc",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "NYCC 2017 Marvel pack contents, prices and maker still unstated; DPB names Iron Man pack only by title"
+  },
+  {
+   "key": "lic/2017/her-universe-nycc",
+   "field": "scope",
+   "searched": "2 queries",
+   "note": "Her Universe emoji pins still only a line item in Bleeding Cool NYCC list; no design, count or construction; scope: confirm pin vs button"
+  },
+  {
+   "key": "lic/2017/lucasfilm-celebration-orlando-women-of-star-wars-3-pack/princess-leia",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "hold: member named only in pack/checklist listings (Global Dispatch, forum numbering) pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2017/lucasfilm-celebration-orlando-women-of-star-wars-3-pack/rey",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "hold: member named only in pack/checklist listings (Global Dispatch, forum numbering) pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2017/lucasfilm-celebration-orlando-women-of-star-wars-3-pack/sabine-wren",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "hold: member named only in pack/checklist listings (Global Dispatch, forum numbering) pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2017/lucasfilm-celebration-orlando-women-of-star-wars-3-pack",
+   "field": "price",
+   "searched": "3 queries",
+   "note": "original retail price not stated; checklist trade ranges and a $49.99 reseller price (K&C) not recorded"
+  },
+  {
+   "key": "lic/2017/lucasfilm-celebration-orlando-jedi-3-pack",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "holds from 439 kept: forum pre-show list corroborates Jedi and Sith members but is a pack listing; forum notes 40 pins announced vs 38 silhouettes"
+  },
+  {
+   "key": "lic/2017/lucasfilm-celebration-orlando",
+   "field": "issuer",
+   "searched": "3 queries",
+   "note": "manufacturer still unstated; DPB says some pins came via booths, blind bags or trading and three sets sold out before the show"
+  },
+  {
+   "key": "lic/2017/toynk-sdcc/star-wars-40th-anniversary-bronze",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "conflict unresolved: Geekiary, figures.com, Target say 2000; Toynk page says 1000"
+  },
+  {
+   "key": "lic/2017/toynk-celebration-orlando/star-wars-40th-anniversary-silver",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "LE size not stated; Toynk is first-party seller; 2017 rests on its Celebration-exclusive wording"
+  },
+  {
+   "key": "lic/2017/toynk-nycc-derek-laufman-star-wars",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: Toynk Laufman line is six pins sold singly (Leia, Luke, Han, Jawa, Vader, R2-D2) but pages do not tie them to NYCC 2017"
+  },
+  {
+   "key": "lic/2017/hot-topic-star-wars-last-jedi-porg",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "hold kept: DPB dates the porg pin set to late Jan 2018 (BoxLunch); points to 2018, not 2017"
+  },
+  {
+   "key": "lic/2017/hot-topic-june-2017-disney-pins",
+   "field": "issuer",
+   "searched": "3 queries",
+   "note": "only Mad Hatter hat listing credits Loungefly; Marie and Stitch listings credit Disney only; listings undated; key lacks loungefly slug - re-key at merge if confirmed"
+  },
+  {
+   "key": "lic/2017/hot-topic-june-2017-disney-pins/enchanted-rose",
+   "field": "manufacturer",
+   "searched": "2 queries",
+   "note": "no listing found for the rose pin"
+  },
+  {
+   "key": "lic/2017/primark-beauty-and-the-beast-emoji",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "holds from 232 kept: DPB again says six different pins with the six characters, but no per-pin description; pin vs button unconfirmed"
+  },
+  {
+   "key": "lic/2017/primark-alice",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "Primark Alice set is Feb 2018 (DPB) - lead for 2018 cell"
+  },
+  {
+   "key": "lic/2017/artland-coco",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "ArtLand Coco series is Aug 2022 (LE 250, DPB); Mark Chilcott Coco pins Oct 2020; not 2017"
+  },
+  {
+   "key": "lic/2017/boxlunch-gold-frame-princess",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "BoxLunch Princess/Villain gold frame pins are Sep 2022; BoxLunch cell, not 2017"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 to 232/439 (B069). 26 standard WebSearches with blocked domains. New: Women of Star Wars 3-pack (official store) with held members; Toynk Celebration 2017 silver 40th pin; Bleeding Cool per-pin descriptions release 232 holds on Kamala Khan and Black Widow; Hot Topic codes and Loungefly credit on Mad Hatter hat; Toynk bronze 1000 vs 2000 still conflicting. NYCC Marvel contents still unknown."
+}

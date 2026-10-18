@@ -1,0 +1,1232 @@
+{
+ "packet_id": "backfill-b095-dlr-oe-2017-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b095",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+   "title": "New Disney Pins June 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/july-2017-pins/",
+   "title": "July 2017 Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+   "title": "New Disney Pins July 2017 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+   "title": "Disney Parks 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2016-12-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/elsa-anna-emoji-pin-set/",
+   "title": "Elsa & Anna Emoji Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/white-rabbit-cheshire-cat-emoji-pin-set/",
+   "title": "White Rabbit & Cheshire Cat Emoji Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/product/stitch-embarrassed-emoji-pin/",
+   "title": "Stitch Embarrassed Emoji Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/lion-king-disney-pin-trading-starter-set/",
+   "title": "Lion King Disney Pin Trading Starter Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-november-2017-week-2/",
+   "title": "New Disney Pins November 2017 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-2",
+   "title": "New Disney Pins May 2017 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/guardians-galaxy-mission-breakout-pins",
+   "title": "Guardians of the Galaxy Mission Breakout Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+   "title": "Kingdom of Cute Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+   "title": "Princess Gold Frame Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+   "title": "Digital Disney Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-frozen-mystery-pin-set",
+   "title": "Disney Frozen Mystery Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/steamboat-willie-emoji-pin-set",
+   "title": "Steamboat Willie Emoji Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2017/oe-single/haunted-mansion-ring",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Haunted Mansion Ring Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Single OE pin in July 2017 wk4 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Entry calls it open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/haunted-mansion-madame-leota-globe",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Haunted Mansion Madame Leota Globe Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Single OE pin in July 2017 wk4 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Entry calls it open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/rapunzel-painting",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Rapunzel Painting Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Single OE pin in June 2017 wk1 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Entry calls it open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/pin-trading-logo-bronze",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Logo Pin (bronze)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Single OE pin in June 2017 wk1 roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Entry calls it open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-single/coco-miguel",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Coco Miguel Pin",
+     "source_url": "https://disneypinsblog.com/category/july-2017-pins/",
+     "method": "search_snippet",
+     "note": "Single OE pin, July 2017 archive"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/category/july-2017-pins/",
+     "method": "search_snippet",
+     "note": "Entry calls it open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/elsa-anna-emoji",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Elsa & Anna Emoji Pin Set",
+     "source_url": "https://disneypinsblog.com/elsa-anna-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "Post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/elsa-anna-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "Six-pin set"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (emoji booster)",
+     "source_url": "https://disneypinsblog.com/elsa-anna-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "Set of six emoji-style pins sold together"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/elsa-anna-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/elsa-anna-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "US parks retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07",
+     "source_url": "https://disneypinsblog.com/elsa-anna-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "Released July 2017 at Disneyland"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort first; Walt Disney World to follow",
+     "source_url": "https://disneypinsblog.com/elsa-anna-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "DLR release, WDW said to be coming soon"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/white-rabbit-cheshire-cat-emoji",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "White Rabbit & Cheshire Cat Emoji Pin Set",
+     "source_url": "https://disneypinsblog.com/white-rabbit-cheshire-cat-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "Post title"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (emoji booster)",
+     "source_url": "https://disneypinsblog.com/white-rabbit-cheshire-cat-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "Emoji pin set sold as one pack"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/white-rabbit-cheshire-cat-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/white-rabbit-cheshire-cat-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "US parks retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06",
+     "source_url": "https://disneypinsblog.com/white-rabbit-cheshire-cat-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "Released late June 2017 on Shop Parks app"
+    },
+    {
+     "field": "release_location",
+     "value": "Shop Disney Parks app, Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/white-rabbit-cheshire-cat-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "App first, also at both resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/lion-king-starter-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lion King Disney Pin Trading Starter Set",
+     "source_url": "https://disneypinsblog.com/lion-king-disney-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "Post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/lion-king-disney-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "Four pins plus lanyard"
+    },
+    {
+     "field": "format",
+     "value": "starter set with lanyard",
+     "source_url": "https://disneypinsblog.com/lion-king-disney-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "Four-pin and lanyard starter set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/lion-king-disney-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "Called open edition"
+    },
+    {
+     "field": "price",
+     "value": 27.95,
+     "source_url": "https://disneypinsblog.com/lion-king-disney-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "USD 27.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/lion-king-disney-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "US parks retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01",
+     "source_url": "https://disneypinsblog.com/lion-king-disney-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "Available late January 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/lion-king-disney-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "Both resorts per post"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/oe-set/princess-gold-frame-mystery",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2017-09-01",
+     "source_url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Launched at Disneyland Resort 1 Sep 2017; refines 2017-09"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2017/oe/haunted-mansion-ring",
+   "set_key": "dlr/2017/oe-single/haunted-mansion-ring",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Mansion Ring Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Descriptive name; roundup names the ring among new OE Haunted Mansion pins"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Haunted Mansion themed OE pins"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Priced individually as the ring"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Roundup says new open edition Haunted Mansion pins"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "USD 8.99 for the ring"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "US parks retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "July 2017 week 4 roundup"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "2017 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Roundup says spotted at Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/haunted-mansion-madame-leota-globe",
+   "set_key": "dlr/2017/oe-single/haunted-mansion-madame-leota-globe",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Mansion Madame Leota Globe Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Descriptive name; roundup names the Madame Leota globe among new OE Haunted Mansion pins"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Haunted Mansion themed OE pins"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Priced individually as the Madame Leota globe"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Roundup says new open edition Haunted Mansion pins"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "USD 12.99 for the Madame Leota globe"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "US parks retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "July 2017 week 4 roundup"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "2017 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-4/",
+     "method": "search_snippet",
+     "note": "Roundup says spotted at Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/rapunzel-painting",
+   "set_key": "dlr/2017/oe-single/rapunzel-painting",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rapunzel Pin (painting)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Roundup entry titled Rapunzel Pin; shows Rapunzel painting"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Tangled pin of Rapunzel"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Single-character entry"
+    },
+    {
+     "field": "franchise",
+     "value": "Tangled",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Called a Tangled pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Individual roundup entry"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "New open edition per entry"
+    },
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "USD 8.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "US parks retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Round-up week 28 May-3 Jun 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "2017 round-up"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/pin-trading-logo-bronze",
+   "set_key": "dlr/2017/oe-single/pin-trading-logo-bronze",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Logo Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Roundup entry name"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Individual roundup entry"
+    },
+    {
+     "field": "visual_description",
+     "value": "Bronze-finish pin of the Disney Pin Trading logo",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Paraphrased from entry"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "New bronze open edition per entry"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "USD 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "US parks retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Round-up week 28 May-3 Jun 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "2017 round-up"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/coco-miguel",
+   "set_key": "dlr/2017/oe-single/coco-miguel",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Coco Miguel Pin",
+     "source_url": "https://disneypinsblog.com/category/july-2017-pins/",
+     "method": "search_snippet",
+     "note": "Descriptive name; July 2017 entry for a new Coco Miguel pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Miguel"
+     ],
+     "source_url": "https://disneypinsblog.com/category/july-2017-pins/",
+     "method": "search_snippet",
+     "note": "Miguel from Coco"
+    },
+    {
+     "field": "main_character",
+     "value": "Miguel",
+     "source_url": "https://disneypinsblog.com/category/july-2017-pins/",
+     "method": "search_snippet",
+     "note": "Single-character entry"
+    },
+    {
+     "field": "franchise",
+     "value": "Coco",
+     "source_url": "https://disneypinsblog.com/category/july-2017-pins/",
+     "method": "search_snippet",
+     "note": "Coco pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/category/july-2017-pins/",
+     "method": "search_snippet",
+     "note": "Individual entry"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/category/july-2017-pins/",
+     "method": "search_snippet",
+     "note": "Entry says open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/category/july-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 17.99 per snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/category/july-2017-pins/",
+     "method": "search_snippet",
+     "note": "US parks retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07",
+     "source_url": "https://disneypinsblog.com/category/july-2017-pins/",
+     "method": "search_snippet",
+     "note": "July 2017 pins archive; exact week not seen"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/category/july-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017 archive"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks",
+     "source_url": "https://disneypinsblog.com/category/july-2017-pins/",
+     "method": "search_snippet",
+     "note": "Snippet says Disney Parks; resort not named"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe-set/stitch-emoji/stitch-embarrassed",
+   "set_key": "dlr/2017/oe-set/stitch-emoji",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Embarrassed Emoji Pin",
+     "source_url": "https://disneypinsblog.com/product/stitch-embarrassed-emoji-pin/",
+     "method": "search_snippet",
+     "note": "Per-pin product page name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/product/stitch-embarrassed-emoji-pin/",
+     "method": "search_snippet",
+     "note": "Stitch with embarrassed expression"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/product/stitch-embarrassed-emoji-pin/",
+     "method": "search_snippet",
+     "note": "Single-character pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/product/stitch-embarrassed-emoji-pin/",
+     "method": "search_snippet",
+     "note": "Per-design page for one pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/product/stitch-embarrassed-emoji-pin/",
+     "method": "search_snippet",
+     "note": "Page says released 2017 at Disney Parks"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks",
+     "source_url": "https://disneypinsblog.com/product/stitch-embarrassed-emoji-pin/",
+     "method": "search_snippet",
+     "note": "Page says Disney Parks"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/castle-2017-sleeping-beauty-castle",
+   "set_key": "dlr/2017/oe-single/castle-2017-sleeping-beauty-castle",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2016-12",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Post dated 3 Dec 2016 says the 2017-dated pins began appearing early Dec 2016 at DLR and WDW; post-level"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/sorcerer-mickey-2017",
+   "set_key": "dlr/2017/oe-single/sorcerer-mickey-2017",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2016-12",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Post dated 3 Dec 2016 says the 2017-dated pins began appearing early Dec 2016 at DLR and WDW; post-level"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/stitch-2017",
+   "set_key": "dlr/2017/oe-single/stitch-2017",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2016-12",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Post dated 3 Dec 2016 says the 2017-dated pins began appearing early Dec 2016 at DLR and WDW; post-level"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/magic-2017",
+   "set_key": "dlr/2017/oe-single/magic-2017",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2016-12",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Post dated 3 Dec 2016 says the 2017-dated pins began appearing early Dec 2016 at DLR and WDW; post-level"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/minnie-mouse-2017",
+   "set_key": "dlr/2017/oe-single/minnie-mouse-2017",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2016-12",
+     "source_url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+     "method": "search_snippet",
+     "note": "Post dated 3 Dec 2016 says the 2017-dated pins began appearing early Dec 2016 at DLR and WDW; post-level"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2017/oe-set/digital-disney-mystery/mickey-mouse",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB names 8 characters in one list matching 8-pin count; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/digital-disney-mystery/minnie-mouse",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB names 8 characters in one list matching 8-pin count; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/digital-disney-mystery/daisy-duck",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB names 8 characters in one list matching 8-pin count; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/digital-disney-mystery/donald-duck",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB names 8 characters in one list matching 8-pin count; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/digital-disney-mystery/goofy",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB names 8 characters in one list matching 8-pin count; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/digital-disney-mystery/chip",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB names 8 characters in one list matching 8-pin count; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/digital-disney-mystery/pluto",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB names 8 characters in one list matching 8-pin count; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/digital-disney-mystery/dale",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB names 8 characters in one list matching 8-pin count; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/princess-gold-frame-mystery/cinderella",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB lists 8 princesses in one set list; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/princess-gold-frame-mystery/aurora",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB lists 8 princesses in one set list; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/princess-gold-frame-mystery/rapunzel",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB lists 8 princesses in one set list; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/princess-gold-frame-mystery/belle",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB lists 8 princesses in one set list; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/princess-gold-frame-mystery/snow-white",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB lists 8 princesses in one set list; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/princess-gold-frame-mystery/ariel",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB lists 8 princesses in one set list; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/princess-gold-frame-mystery/jasmine",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB lists 8 princesses in one set list; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/princess-gold-frame-mystery/tiana",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB lists 8 princesses in one set list; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/space-mountain",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB gives one numbered list of all 8; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/jungle-cruise",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB gives one numbered list of all 8; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/dole-whip",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB gives one numbered list of all 8; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/haunted-mansion",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB gives one numbered list of all 8; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/sword-in-the-stone",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB gives one numbered list of all 8; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/dumbo",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "hold: mystery designs not individually confirmed (DPB gives one numbered list of all 8; no per-pin page)"
+  },
+  {
+   "key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/teacup",
+   "field": "pins",
+   "searched": "DPB+reseller; 1 query",
+   "note": "hold: mystery designs not individually confirmed; DPB list plus a reseller per-pin page only (listing site, not used as evidence)"
+  },
+  {
+   "key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/peoplemover",
+   "field": "pins",
+   "searched": "DPB+reseller; 1 query",
+   "note": "hold: mystery designs not individually confirmed; DPB list plus a reseller per-pin page only (listing site, not used as evidence)"
+  },
+  {
+   "key": "dlr/2017/oe-set/frozen-holiday-mystery",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "kept: 8 designs still not named in snippets; no members created"
+  },
+  {
+   "key": "dlr/2017/oe-set/tsum-tsum-holiday-mystery",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "kept: 10 designs still not named in snippets; no members created"
+  },
+  {
+   "key": "dlr/2017/oe-set/minnie-mouse-emoji",
+   "field": "members",
+   "searched": "DPB; 2 queries",
+   "note": "kept: six emoji pins still not individually named"
+  },
+  {
+   "key": "dlr/2017/oe-set/stitch-emoji",
+   "field": "members",
+   "searched": "DPB; 1 query",
+   "note": "kept: only one of six (Embarrassed) has a per-pin page; other five unnamed"
+  },
+  {
+   "key": "dlr/2017/oe-set/stitch-emoji/stitch-embarrassed",
+   "field": "set_membership",
+   "searched": "DPB; 1 query",
+   "note": "hold: rests on a DPB shop product page only (says Stitch Emoji series, 2017 Disney Parks); confirm with editorial source. Was 224 lead dlr/2017/oe/stitch-embarrassed-emoji"
+  },
+  {
+   "key": "dlr/2017/oe-set/stitch-emoji/stitch-embarrassed",
+   "field": "original_price",
+   "searched": "DPB; 1 query",
+   "note": "Page shows 6.00, likely a later shop price, not original retail; not recorded"
+  },
+  {
+   "key": "dlr/2017/oe-set/elsa-anna-emoji",
+   "field": "members",
+   "searched": "DPB; 2 queries",
+   "note": "Six pins not individually named; no members created"
+  },
+  {
+   "key": "dlr/2017/oe-set/elsa-anna-emoji",
+   "field": "edition_type",
+   "searched": "DPB; 1 query",
+   "note": "Edition type not stated in snippet"
+  },
+  {
+   "key": "dlr/2017/oe-set/white-rabbit-cheshire-cat-emoji",
+   "field": "expected_pin_count",
+   "searched": "DPB; 2 queries",
+   "note": "Six-pin count only on an excluded marketplace listing (possibly a different Emoji Blitz product); not recorded"
+  },
+  {
+   "key": "dlr/2017/oe-set/white-rabbit-cheshire-cat-emoji",
+   "field": "members",
+   "searched": "DPB; 2 queries",
+   "note": "Designs not named by a permitted source; no members created"
+  },
+  {
+   "key": "dlr/2017/oe-set/lion-king-starter-set",
+   "field": "members",
+   "searched": "DPB; 1 query",
+   "note": "hold: confirm pin structure; post lists characters 'such as' Pumbaa, Scar, Timon, Simba - character list only, no members created"
+  },
+  {
+   "key": "dlr/2017/oe-set/disney-parks-2017-booster",
+   "field": "members",
+   "searched": "DPB+retailer; 2 queries",
+   "note": "kept: six characters named only on a pin retailer listing (yourwdwstore), not used as sole evidence; DPB snippet does not name them"
+  },
+  {
+   "key": "dlr/2017/oe-set/disney-parks-2017-starter-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "kept: silhouette pins still unnamed; price not found"
+  },
+  {
+   "key": "dlr/2017/oe/castle-2017-sleeping-beauty-castle",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "kept: no retail price for 2017-dated pins in permitted snippets"
+  },
+  {
+   "key": "dlr/2017/oe/sorcerer-mickey-2017",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "kept: no retail price for 2017-dated pins in permitted snippets"
+  },
+  {
+   "key": "dlr/2017/oe/stitch-2017",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "kept: no retail price for 2017-dated pins in permitted snippets"
+  },
+  {
+   "key": "dlr/2017/oe/magic-2017",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "kept: no retail price for 2017-dated pins in permitted snippets"
+  },
+  {
+   "key": "dlr/2017/oe/minnie-mouse-2017",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "kept: no retail price for 2017-dated pins in permitted snippets"
+  },
+  {
+   "key": "dlr/2017/oe/mission-breakout-star-lord",
+   "field": "original_price",
+   "searched": "DPB+news; 5 queries",
+   "note": "kept: OE section of DPB post names Star-Lord and Rocket but no price or exact name; 2022 prices are a later release"
+  },
+  {
+   "key": "dlr/2017/oe/mission-breakout-rocket",
+   "field": "original_price",
+   "searched": "DPB+news; 5 queries",
+   "note": "kept: OE section of DPB post names Star-Lord and Rocket but no price or exact name; 2022 prices are a later release"
+  },
+  {
+   "key": "dlr/2017/oe/haunted-mansion-bat-ghost",
+   "field": "pin_structure",
+   "searched": "DPB July wk4; 1 query",
+   "note": "hold: confirm pin structure; roundup prices 'the Bat and Ghost' at 9.99 - unclear if two pins or one; no record created"
+  },
+  {
+   "key": "dlr/2017/oe/rapunzel-painting",
+   "field": "release_location",
+   "searched": "DPB June wk1; 2 queries",
+   "note": "hold: confirm Disneyland sale; entry snippet gives no resort; only a summary said the week's list was shared DLR/WDW"
+  },
+  {
+   "key": "dlr/2017/oe/pin-trading-logo-bronze",
+   "field": "release_location",
+   "searched": "DPB June wk1; 2 queries",
+   "note": "hold: confirm Disneyland sale; entry snippet gives no resort; only a summary said the week's list was shared DLR/WDW"
+  },
+  {
+   "key": "dlr/2017/oe/coco-miguel",
+   "field": "release_location",
+   "searched": "DPB July 2017; 1 query",
+   "note": "hold: confirm Disneyland sale; snippet says Disney Parks only; may be WDW-led"
+  },
+  {
+   "key": "dlr/2017/oe/holiday-elena-of-avalor",
+   "field": "release",
+   "searched": "DPB Nov 2017 wk2; 1 query",
+   "note": "released: DPB Nov wk2 says new OE Holiday Elena pin, 9.99, at Disneyland and WDW; already keyed wdw/2017/oe/holiday-elena-of-avalor - not duplicated"
+  },
+  {
+   "key": "dlr/2017/oe/cars-3-maximum-mph",
+   "field": "duplicate",
+   "searched": "DPB May wk2; 1 query",
+   "note": "variant: shared DLR/WDW OE (9.99, May 2017) already keyed wdw/2017/oe/cars-3-maximum-mph in 425; not duplicated"
+  },
+  {
+   "key": "dlr/2017/oe/cars-3-jackson-storm-2-0",
+   "field": "duplicate",
+   "searched": "DPB May wk2; 1 query",
+   "note": "variant: shared DLR/WDW OE (9.99, May 2017) already keyed wdw/2017/oe/cars-3-jackson-storm-2-0 in 425; not duplicated"
+  },
+  {
+   "key": "dlr/2017/halloween-time-oe",
+   "field": "release",
+   "searched": "4 queries",
+   "note": "kept: no Disneyland open edition Halloween 2017 pin found; DL Halloween 2017 pins seen are LE/LR (party, Headless Horseman, Oogie spinner)"
+  },
+  {
+   "key": "dlr/2017/oe/mickey-americana",
+   "field": "original_price",
+   "searched": "DPB July 2017; 1 query",
+   "note": "lead: July 2017 archive gives OE 17.99 at Disney Parks for Mickey Americana (keyed wdw/2017/oe/mickey-americana); DLR sale unconfirmed"
+  },
+  {
+   "key": "dlr/2017/charming-characters/matterhorn",
+   "field": "release",
+   "searched": "DPB June wk1",
+   "note": "lead: Charming Characters Matterhorn LE 3000, 15.99, DLR 1 Jun 2017 - for DLR LE 2017 cell (433)"
+  },
+  {
+   "key": "dlr/2017/steamboat-willie-emoji",
+   "field": "release",
+   "searched": "1 query",
+   "note": "lead: Steamboat Willie emoji six-pin set was a D23 Expo 2017 surprise release; parks release unknown - not recorded as DLR OE"
+  },
+  {
+   "key": "dlr/2017/dcl-oe-june-2017",
+   "field": "release",
+   "searched": "DPB June wk1",
+   "note": "scope: Tangled musical, Captain, Princess Porthole and icon pins in same roundup are Disney Cruise Line OE - not DLR"
+  },
+  {
+   "key": "dlr/2017/coco-oe",
+   "field": "release",
+   "searched": "2 queries",
+   "note": "kept: no further Disneyland-specific Coco OE found; prior coco-skull/remember-me location holds unchanged"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 of B019 (DLR OE 2017); 30 WebSearch calls, search_snippet only, mostly Disney Pins Blog. New: two DL Haunted Mansion OE pins (Jul 2017), Rapunzel painting, bronze Pin Trading logo, Coco Miguel (last three hold for DL location), Stitch Embarrassed emoji member (hold), Elsa & Anna and White Rabbit/Cheshire emoji sets, Lion King starter set. Rule-12 holds added to 24 prior mystery members (Digital Disney, Princess Gold Frame, Kingdom of Cute). Holiday Elena and Cars 3 are shared pins already under wdw keys; not duplicated. No DL OE Halloween 2017 pin found; no licensed pins surfaced."
+}

@@ -15,7 +15,7 @@ import type { Session, User } from '@supabase/supabase-js';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { DEMO_SESSION, isDemoMode } from '@/lib/demoMode';
 import * as Linking from 'expo-linking';
-import { parseRecoveryLink } from '@/utils/recoveryLink';
+import { parseConfirmLink, parseRecoveryLink } from '@/utils/recoveryLink';
 
 // Shown to the user when they attempt auth without Supabase configured.
 const NOT_CONFIGURED =
@@ -61,6 +61,11 @@ function safeAuthError(
 // in Supabase Auth's redirect allow list (docs/release/CONTRIBUTOR-WEB.md).
 export const PASSWORD_RESET_REDIRECT =
   Platform.OS === 'web' && typeof window !== 'undefined' ? `${window.location.origin}/reset` : 'pinhunt://reset';
+// Where the sign-up confirmation email sends the user (same native/web split
+// as above). Must be in Supabase Auth's redirect allow list, or Supabase falls
+// back to the dashboard Site URL and the link goes nowhere on a phone.
+export const SIGNUP_CONFIRM_REDIRECT =
+  Platform.OS === 'web' && typeof window !== 'undefined' ? `${window.location.origin}/confirm` : 'pinhunt://confirm';
 const PASSWORD_RESET_RETRY = 'Unable to send the reset email right now. Please try again shortly.';
 
 /**
@@ -155,6 +160,24 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Password-reset deep link: establish the recovery session from the URL.
     // The flag is set before the session so AuthGuard never sees a normal one.
     const handleUrl = async (url: string | null) => {
+      const confirm = parseConfirmLink(url);
+      if (confirm) {
+        // Email is already confirmed server-side; a failure here just leaves
+        // the user on the login screen to sign in normally.
+        try {
+          if (confirm.kind === 'tokens') {
+            await supabase.auth.setSession({
+              access_token: confirm.accessToken,
+              refresh_token: confirm.refreshToken,
+            });
+          } else {
+            await supabase.auth.exchangeCodeForSession(confirm.code);
+          }
+        } catch {
+          // Ignore — see above.
+        }
+        return;
+      }
       const link = parseRecoveryLink(url);
       if (!link) return;
       try {
@@ -205,6 +228,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         email,
         password,
         options: {
+          emailRedirectTo: SIGNUP_CONFIRM_REDIRECT,
           data: { display_name: displayName?.trim() || email },
         },
       });

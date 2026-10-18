@@ -37,16 +37,16 @@ shared too.
    - Restrict both to the `main` branch.
 2. **Workflow.** Copy `docs/release/proposed/contributor-web.yml` to `.github/workflows/contributor-web.yml` in a
    PR labelled `human-approved-config`. Agents can't edit `.github/**`.
-3. **Supabase Auth URLs** (each project → Authentication → URL Configuration). Add the site's reset address to
-   **Redirect URLs**:
-   - staging: `https://<contributor-preview address>/reset`
-   - production: `https://<production address>/reset` (and the custom domain, if you add one)
+3. **Supabase Auth URLs** (each project → Authentication → URL Configuration). Add the site's reset and
+   sign-up confirmation addresses to **Redirect URLs**:
+   - staging: `https://<contributor-preview address>/reset` and `/confirm`
+   - production: `https://<production address>/reset` and `/confirm` (and the custom domain, if you add one)
 
-   Keep `pinhunt://reset` for the phone app.
+   Keep `pinhunt://reset` and `pinhunt://confirm` for the phone app.
 4. **API CORS.** The API currently allows every origin (`cors()` in `app.ts`), so the website works as is. It
    could later be limited to the website's address plus the app.
 5. **Custom domain (optional).** In the Expo dashboard → Hosting, add a domain such as `contribute.<your
-   domain>`, then add its `/reset` to Supabase as in step 3.
+   domain>`, then add its `/reset` and `/confirm` to Supabase as in step 3.
 
 ## Releasing
 
@@ -64,7 +64,7 @@ shared too.
 
 - [ ] The build step's log says `credential scan clean`.
 - [ ] The production environment variables hold the **anon** key, never the service-role key.
-- [ ] Supabase redirect URLs list only your own sites and `pinhunt://reset`.
+- [ ] Supabase redirect URLs list only your own sites, `pinhunt://reset` and `pinhunt://confirm`.
 - [ ] `robots.txt` on the live site says `Disallow: /`.
 - [ ] The contributor feature (`catalogue_contributions`) is still limited until you open it (launch checklist
   #399).

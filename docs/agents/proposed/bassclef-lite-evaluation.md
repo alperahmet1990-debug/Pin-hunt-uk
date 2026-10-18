@@ -138,3 +138,21 @@ A maintainer-authored PR from a non-`claude/*` branch, e.g. `chore/bassclef-skil
 Process: the maintainer adds `human-approved-config` (protected paths). This is the high-risk tier, so the merge is manual. Optionally drop `.agents/PAUSE` on `main` for the merge window and remove it after the first green dev run.
 
 **Phase 2 rollback:** `git revert -m 1 <merge-sha>` on a branch, then a PR with `human-approved-config` and a manual merge. Skills are inert files, so reverting fully restores the prior state. There are no global or GitHub-side changes to undo.
+
+## 7. Selective adoption: drafted skills (inactive)
+
+Maintainer decision: no framework install. Five skills were evaluated; `state-a-problem` and `kiss` were rejected, and three were adapted as drafts:
+
+| Draft | Size | Invocation |
+|---|---|---|
+| `docs/agents/proposed/skills/diagnose/SKILL.md` | ~5.6 KB | manual (`disable-model-invocation: true`) |
+| `docs/agents/proposed/skills/pre-mortem/SKILL.md` | ~5.0 KB | manual |
+| `docs/agents/proposed/skills/retro/SKILL.md` | ~2.6 KB | manual, interactive only |
+
+The drafts are inert outside `.claude/skills/`. They add no hooks, settings, permissions (`allowed-tools` is omitted), scripts, files, labels or issues, and each defers to `CLAUDE.md`, the operating model, the role files and the guard.
+
+**Licence.** bassclef is Apache-2.0. The package has no `NOTICE` file and no per-file copyright headers. For modified redistribution, §4 requires a copy of the licence (`docs/agents/proposed/skills/LICENSE-bassclef.txt`, verbatim) and a prominent change notice in each file (the HTML comment after the frontmatter). Under §6, the bassclef name is used only to state where the content came from.
+
+**Activation (maintainer only).** A PR from a non-`claude/*` branch that runs `git mv` on the three skill directories and the licence file into `.claude/skills/`, labelled `human-approved-config` and merged manually. Rollback: revert the merge commit.
+
+**Future automation (separate decision).** `disable-model-invocation: true` also stops agents from calling the skill. To use one in a routine later, add a line to the routine prompt or role file, e.g. "for bug issues, follow `.claude/skills/diagnose/SKILL.md`". That change also goes through `human-approved-config`.

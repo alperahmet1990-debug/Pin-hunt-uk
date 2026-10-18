@@ -1,0 +1,14 @@
+{
+  "_comment": "SYNTHETIC Soldgraph-style Whatnot response (not recorded). Only active Buy It Now rows in USD survive.",
+  "status": "complete",
+  "result": {
+    "next_page": null,
+    "data": [
+      { "id": "wn-6001", "title": "Disney Hatbox Ghost pin LE 2000", "price": { "amount": 35, "currency": "USD" }, "listing_type": "BUY_IT_NOW", "shipping": "$4.99", "url": "https://www.whatnot.com/listing/6001?ref=abc", "seller": { "username": "SELLER_SENTINEL" }, "image": "https://images.whatnot.example/IMAGE_SENTINEL.jpg" },
+      { "id": "wn-6002", "title": "Hatbox Ghost pin auction", "price": "$10", "listing_type": "AUCTION" },
+      { "id": "wn-6003", "title": "Hatbox Ghost pin Canada", "price": { "amount": "45.00", "currency": "CAD" }, "listing_type": "BUY_IT_NOW" },
+      { "id": "wn-6004", "title": "Hatbox Ghost pin sold", "price": "$30", "status": "sold" },
+      { "id": "wn-6005", "title": "Hatbox Ghost pin no price", "listing_type": "buy_it_now" }
+    ]
+  }
+}

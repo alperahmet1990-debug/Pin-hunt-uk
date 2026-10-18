@@ -1,0 +1,15 @@
+{
+  "_comment": "SYNTHETIC Soldgraph-style response for country=fr (not recorded). French decimal and date formats.",
+  "status": "complete",
+  "result": {
+    "next_page": null,
+    "data": [
+      { "item_id": "fr-2001", "title": "Pin's Disney Mickey Steamboat Willie Disneyland Paris 30 ans LE 800", "price": "12,50 €", "shipping": "4,99 €", "sold_date": "14/09/2026", "condition": "Neuf", "best_offer_accepted": "false", "url": "https://www.ebay.fr/itm/2001?mkcid=1" },
+      { "item_id": "fr-2002", "title": "Pin Disney Mickey Steamboat", "price": "1 234,56 €", "sold_date": "2026-09-10", "url": "http://www.ebay.fr/itm/2002" },
+      { "item_id": "fr-2003", "title": "Pin's Disney Mickey", "price": { "value": "8,9", "currency": "EUR" }, "sold_date": "2026-09-11", "best_offer_accepted": true, "median_excluding_best_offer": "10,00 €" },
+      { "item_id": "fr-2004", "title": "Pin Disney Mickey grand prix", "price": "1.234,50 EUR", "sold_date": "2026-09-12" },
+      { "item_id": "fr-2005", "title": "Pin Disney Mickey en livres", "price": "£9.00", "sold_date": "2026-09-12" },
+      { "item_id": "fr-2006", "title": "Pin Disney date invalide", "price": "9,00 €", "sold_date": "31/02/2026" }
+    ]
+  }
+}

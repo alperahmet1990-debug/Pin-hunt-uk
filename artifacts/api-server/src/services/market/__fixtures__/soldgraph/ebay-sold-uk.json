@@ -1,0 +1,60 @@
+{
+  "_comment": "SYNTHETIC Soldgraph-style response (not recorded). Field names are provisional until SG-08. Image, seller and location fields are present on purpose: adapters must drop them.",
+  "status": "complete",
+  "result": {
+    "next_page": null,
+    "next_cursor": null,
+    "data": [
+      {
+        "item_id": "uk-1001",
+        "title": "Disney Hatbox Ghost pin LE 2000 Haunted Mansion 50th",
+        "price": { "value": "24.99", "currency": "GBP" },
+        "shipping": "£3.20",
+        "sold_date": "2026-10-01T14:30:00Z",
+        "condition": "New",
+        "url": "https://www.ebay.co.uk/itm/1001?hash=item123&_trksid=p999",
+        "best_offer_accepted": false,
+        "best_offer_accepted_count": 3,
+        "median_excluding_best_offer": "22.50",
+        "image_url": "https://i.ebayimg.example/IMAGE_SENTINEL.jpg",
+        "images": ["https://i.ebayimg.example/IMAGE_SENTINEL_2.jpg"],
+        "seller": { "username": "SELLER_SENTINEL", "feedback_score": 1234, "location": "London" },
+        "seller_username": "SELLER_SENTINEL"
+      },
+      {
+        "item_id": "uk-1002",
+        "title": "Hatbox Ghost Disney pin LE 2000",
+        "price": 30,
+        "currency": "GBP",
+        "sold_date": "2026-09-28",
+        "best_offer_accepted": true,
+        "best_offer_accepted_count": 3,
+        "median_excluding_best_offer": 22.5,
+        "url": "https://www.ebay.co.uk/itm/1002"
+      },
+      {
+        "item_id": "uk-1003",
+        "title": "Disney Hatbox Ghost   pin\n2019",
+        "sold_price": "£18",
+        "sold_at": "2026-09-20T09:00:00+01:00",
+        "url": "https://www.ebay.co.uk/itm/1003"
+      },
+      { "item_id": "uk-1004", "title": "Hatbox Ghost pin no date", "price": "£15.00" },
+      { "item_id": "uk-1005", "title": "Hatbox Ghost pin price missing", "price": null, "sold_date": "2026-09-15" },
+      { "item_id": "uk-1006", "title": "Hatbox Ghost pin USD", "price": { "value": "40.00", "currency": "USD" }, "sold_date": "2026-09-15" },
+      { "item_id": "uk-1001", "title": "Duplicate of first row", "price": "£1", "sold_date": "2026-09-15" },
+      { "item_id": "uk-1008", "title": "   ", "price": "£5", "sold_date": "2026-09-15" },
+      {
+        "item_id": "uk-1009",
+        "title": "Hatbox Ghost pin odd link",
+        "price": "£19.50",
+        "shipping": { "value": "2.00", "currency": "USD" },
+        "sold_date": "2026-09-14",
+        "url": "https://ebay.co.uk.evil.example/itm/1009",
+        "thumbnail": "https://i.ebayimg.example/IMAGE_SENTINEL_3.jpg"
+      },
+      { "title": "No id at all", "price": "£5", "sold_date": "2026-09-15" },
+      "not an object"
+    ]
+  }
+}

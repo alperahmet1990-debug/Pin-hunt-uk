@@ -1,0 +1,1620 @@
+{
+ "packet_id": "backfill-b305-wdw-le-2018-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b305",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+   "title": "Walt Disney's Animation Celebration Event Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+   "title": "Walt Disney World Marathon Weekend 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/117086",
+   "title": "25th Anniversary - 2018 - Dopey Challenge (pin 117086)",
+   "publisher": "MyPinCentral",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+   "title": "Disney Resorts Holiday 2018 Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+   "title": "Toy Story Land Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/epcot-international-flower-garden-festival-2018-pins",
+   "title": "Epcot International Flower & Garden Festival 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+   "title": "New Disney Pins December 2018 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2018-week-2",
+   "title": "New Disney Pins July 2018 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2018-week-2",
+   "title": "New Disney Pins August 2018 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+   "title": "New Disney Pins November 2018 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/wall-e-10th-anniversary-pin-collection/",
+   "title": "WALL-E 10th Anniversary Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneydiary.com/2018/06/10th-anniversary-wall-e-pins-being-released-at-disneyland-disney-world/",
+   "title": "10th anniversary WALL-E pins being released at Disneyland, Disney World",
+   "publisher": "Disney Diary",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+   "title": "Peter Pan 65th Anniversary Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/69379",
+   "title": "Tree of Life 20th Anniversary pin (pin 69379)",
+   "publisher": "MyPinCentral",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2018/animation-celebration",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-08-24",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "event ran Aug 24-25, 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "World ShowPlace, Epcot",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "event held at World ShowPlace in Epcot"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/animation-celebration-mickey-and-the-beanstalk-framed-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey and the Beanstalk Story Board Pitch framed set",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "event-exclusive framed set"
+    },
+    {
+     "field": "format",
+     "value": "framed set",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "five-pin framed set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "five pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 150"
+    },
+    {
+     "field": "price",
+     "value": 285.0,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "$285.00"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "Animation Celebration event, Aug 24-25, 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/animation-celebration-goodbye-pin-set",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 1250,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "goodbye pin set limited edition of 1,250"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/rundisney-marathon-weekend",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "DPB says all expo pins are limited release"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/resorts-holiday-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Resorts Holiday 2018 Pin Collection",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "DPB collection title"
+    },
+    {
+     "field": "format",
+     "value": "single LE pins, one per resort",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "separate pin per named resort"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "edition sizes vary per pin"
+    },
+    {
+     "field": "price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "$16.99 per pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "first spotted at Disney's Pin Traders, Disney Springs, Nov 18, 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders (Disney Springs), main pin stores and the individual resorts",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "sold at main pin stores and specific resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/epcot-flower-garden-natural-beauty-4-pin-set",
+   "claims": [
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/blogs/news/epcot-international-flower-garden-festival-2018-pins",
+     "method": "search_snippet",
+     "note": "four-pin set featuring Minnie Mouse"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/epcot-international-flower-garden-festival-2018-pins",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/epcot-international-flower-garden-festival-2018-pins",
+     "method": "search_snippet",
+     "note": "limited edition of 1,500"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/epcot-international-flower-garden-festival-2018-pins",
+     "method": "search_snippet",
+     "note": "retail $29.99"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/star-wars-helmet",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2018-week-2",
+     "method": "search_snippet",
+     "note": "helmet pins available at DL and WDW"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2018-week-2",
+     "method": "search_snippet",
+     "note": "each LE 4,000 at $17.99"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/wall-e-10th-boxed-set",
+   "claims": [
+    {
+     "field": "format",
+     "value": "boxed set",
+     "source_url": "https://disneypinsblog.com/wall-e-10th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "four different pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/wall-e-10th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/wall-e-10th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "limited edition of 500"
+    },
+    {
+     "field": "price",
+     "value": 64.99,
+     "source_url": "https://disneypinsblog.com/wall-e-10th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "$64.99"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-21",
+     "source_url": "https://disneydiary.com/2018/06/10th-anniversary-wall-e-pins-being-released-at-disneyland-disney-world/",
+     "method": "search_snippet",
+     "note": "WDW date June 21, 2018 (DL June 14)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World Pin Trading Nights",
+     "source_url": "https://disneypinsblog.com/wall-e-10th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "RSP at June 2018 Pin Trading Nights; leftovers to parks"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/peter-pan-65th-neverland-framed-set",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "limited edition of 500"
+    },
+    {
+     "field": "price",
+     "value": 235.0,
+     "source_url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "$235.00"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "Pin Trading Night random selection, Feb 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Pin Trading Night (random selection process)",
+     "source_url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "offered via PTN RSP"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2018/animation-celebration/alice-in-wonderland-filmstrip",
+   "set_key": "wdw/2018/animation-celebration",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice in Wonderland filmstrip lenticular pin",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "listed as a Alice in Wonderland filmstrip lenticular pin in the event lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "Alice featured on the filmstrip"
+    },
+    {
+     "field": "attraction",
+     "value": "Alice in Wonderland",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "film featured on the filmstrip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 750"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "US event"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-24",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "event-only, Aug 24-25, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney's Animation Celebration, Epcot",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "available only at the event"
+    },
+    {
+     "field": "visual_description",
+     "value": "filmstrip lenticular pin",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "lenticular filmstrip format, as Lady and the Tramp filmstrip (B010)"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/animation-celebration/fantasia-filmstrip",
+   "set_key": "wdw/2018/animation-celebration",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Fantasia filmstrip lenticular pin",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "listed as a Fantasia filmstrip lenticular pin in the event lineup"
+    },
+    {
+     "field": "attraction",
+     "value": "Fantasia",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "film featured on the filmstrip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 750"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "US event"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-24",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "event-only, Aug 24-25, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney's Animation Celebration, Epcot",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "available only at the event"
+    },
+    {
+     "field": "visual_description",
+     "value": "filmstrip lenticular pin",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "lenticular filmstrip format, as Lady and the Tramp filmstrip (B010)"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/animation-celebration/sleeping-beauty-filmstrip",
+   "set_key": "wdw/2018/animation-celebration",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sleeping Beauty filmstrip lenticular pin",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "listed as a Sleeping Beauty filmstrip lenticular pin in the event lineup"
+    },
+    {
+     "field": "attraction",
+     "value": "Sleeping Beauty",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "film featured on the filmstrip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 750"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "US event"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-24",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "event-only, Aug 24-25, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney's Animation Celebration, Epcot",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "available only at the event"
+    },
+    {
+     "field": "visual_description",
+     "value": "filmstrip lenticular pin",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "lenticular filmstrip format, as Lady and the Tramp filmstrip (B010)"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/animation-celebration/peter-pan-filmstrip",
+   "set_key": "wdw/2018/animation-celebration",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Peter Pan filmstrip lenticular pin",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "listed as a Peter Pan filmstrip lenticular pin in the event lineup"
+    },
+    {
+     "field": "attraction",
+     "value": "Peter Pan",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "film featured on the filmstrip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 750"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "US event"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-24",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "event-only, Aug 24-25, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney's Animation Celebration, Epcot",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "available only at the event"
+    },
+    {
+     "field": "visual_description",
+     "value": "filmstrip lenticular pin",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "lenticular filmstrip format, as Lady and the Tramp filmstrip (B010)"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/rundisney-marathon-weekend/dopey-challenge-48-6",
+   "set_key": "wdw/2018/rundisney-marathon-weekend",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "25th Anniversary - 2018 - Dopey Challenge",
+     "source_url": "https://mypincentral.com/pin/117086",
+     "method": "search_snippet",
+     "note": "MPC per-pin title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dopey"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "Dopey Challenge pin in DPB list"
+    },
+    {
+     "field": "visual_description",
+     "value": "runDisney 48.6 miles Dopey Challenge 2018 text in multicolour on black",
+     "source_url": "https://mypincentral.com/pin/117086",
+     "method": "search_snippet",
+     "note": "MPC description, paraphrased"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "all marathon weekend pins limited release"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "Marathon Weekend Jan 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney Marathon Weekend expo, Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "expo merchandise"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/rundisney-marathon-weekend/minnie-10k",
+   "set_key": "wdw/2018/rundisney-marathon-weekend",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie 10K pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "listed in DPB 2018 marathon pin list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "Minnie"
+    },
+    {
+     "field": "visual_description",
+     "value": "hinged pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "DPB describes it as hinged"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "all pins limited release"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "Jan 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney Marathon Weekend expo, Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "expo"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/rundisney-marathon-weekend/goofy-challenge",
+   "set_key": "wdw/2018/rundisney-marathon-weekend",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy Challenge pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "listed in DPB 2018 marathon pin list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "Goofy Challenge"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "all pins limited release"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "Jan 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney Marathon Weekend expo, Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "expo"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/resorts-holiday-2018/fort-wilderness",
+   "set_key": "wdw/2018/resorts-holiday-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney's Fort Wilderness Resort Holiday 2018 pin",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "Disney's Fort Wilderness Resort named as one of the WDW resort holiday 2018 pins"
+    },
+    {
+     "field": "attraction",
+     "value": "Disney's Fort Wilderness Resort",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "resort featured"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE, sizes vary"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "$16.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "first spotted Nov 18, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs and the resort",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "pin stores and specific resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/resorts-holiday-2018/animal-kingdom-lodge",
+   "set_key": "wdw/2018/resorts-holiday-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney's Animal Kingdom Lodge Holiday 2018 pin",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "Disney's Animal Kingdom Lodge named as one of the WDW resort holiday 2018 pins"
+    },
+    {
+     "field": "attraction",
+     "value": "Disney's Animal Kingdom Lodge",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "resort featured"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE, sizes vary"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "$16.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "first spotted Nov 18, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs and the resort",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "pin stores and specific resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/resorts-holiday-2018/wilderness-lodge",
+   "set_key": "wdw/2018/resorts-holiday-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney's Wilderness Lodge Holiday 2018 pin",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "Disney's Wilderness Lodge named as one of the WDW resort holiday 2018 pins"
+    },
+    {
+     "field": "attraction",
+     "value": "Disney's Wilderness Lodge",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "resort featured"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE, sizes vary"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "$16.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "first spotted Nov 18, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs and the resort",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "pin stores and specific resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/resorts-holiday-2018/saratoga-springs",
+   "set_key": "wdw/2018/resorts-holiday-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney's Saratoga Springs Resort Holiday 2018 pin",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "Disney's Saratoga Springs Resort named as one of the WDW resort holiday 2018 pins"
+    },
+    {
+     "field": "attraction",
+     "value": "Disney's Saratoga Springs Resort",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "resort featured"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE, sizes vary"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "$16.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "first spotted Nov 18, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs and the resort",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "pin stores and specific resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/resorts-holiday-2018/boardwalk",
+   "set_key": "wdw/2018/resorts-holiday-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney's BoardWalk Holiday 2018 pin",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "Disney's BoardWalk named as one of the WDW resort holiday 2018 pins"
+    },
+    {
+     "field": "attraction",
+     "value": "Disney's BoardWalk",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "resort featured"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE, sizes vary"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "$16.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "first spotted Nov 18, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs and the resort",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "pin stores and specific resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/resorts-holiday-2018/yacht-club",
+   "set_key": "wdw/2018/resorts-holiday-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney's Yacht Club Resort Holiday 2018 pin",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "Disney's Yacht Club Resort named as one of the WDW resort holiday 2018 pins"
+    },
+    {
+     "field": "attraction",
+     "value": "Disney's Yacht Club Resort",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "resort featured"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE, sizes vary"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "$16.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "first spotted Nov 18, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs and the resort",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "pin stores and specific resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/resorts-holiday-2018/polynesian-village",
+   "set_key": "wdw/2018/resorts-holiday-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney's Polynesian Village Resort Holiday 2018 pin",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "Disney's Polynesian Village Resort named as one of the WDW resort holiday 2018 pins"
+    },
+    {
+     "field": "attraction",
+     "value": "Disney's Polynesian Village Resort",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "resort featured"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE, sizes vary"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "$16.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "first spotted Nov 18, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Pin Traders, Disney Springs and the resort",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2018-pin-collection/",
+     "method": "search_snippet",
+     "note": "pin stores and specific resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/toy-story-land-opening/opening-day",
+   "set_key": "wdw/2018/toy-story-land-opening",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "DPB roundup lists it under Limited Release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/toy-story-land-opening/annual-passholder",
+   "set_key": "wdw/2018/toy-story-land-opening",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "DPB roundup lists it under Limited Release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/epcot-flower-garden/minnie",
+   "set_key": "wdw/2018/epcot-flower-garden",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/blogs/news/epcot-international-flower-garden-festival-2018-pins",
+     "method": "search_snippet",
+     "note": "Minnie Mouse pin LE 4,000, $16.99"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/disney-donut-shop/baymax",
+   "set_key": "wdw/2018/disney-donut-shop",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "available at DL and WDW Dec 20, 2018"
+    },
+    {
+     "field": "visual_description",
+     "value": "hinged pin with 3D rubber element",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "DPB description, paraphrased"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2018/animation-celebration-mickey-and-the-beanstalk-framed-set",
+   "field": "pins",
+   "searched": "DPB event roundup; 2 queries",
+   "note": "five members not named in permitted snippets; artists/frame size only on reseller yourwdwstore (not recorded)"
+  },
+  {
+   "key": "wdw/2018/animation-celebration-goodbye-pin-set",
+   "field": "pins",
+   "searched": "DPB event roundup",
+   "note": "hold kept (B054/416): confirm pin structure (pack, single multi-character pin, or mystery designs); only set edition size 1,250 new"
+  },
+  {
+   "key": "wdw/2018/animation-celebration-framed-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "Walt Disney & Vintage Characters 5 pin framed set: members, size and price still not in snippets"
+  },
+  {
+   "key": "wdw/2018/animation-celebration",
+   "field": "pins",
+   "searched": "DPB",
+   "note": "a DPB result dated Apr 24 2018 (preview) also covers the Alice filmstrip; preview date not used as release date"
+  },
+  {
+   "key": "wdw/2018/rundisney-marathon-weekend/minnie-10k",
+   "field": "pin_name",
+   "searched": "DPB marathon post; 2 queries",
+   "note": "snippet text garbled; name may not be exact; single DPB source"
+  },
+  {
+   "key": "wdw/2018/rundisney-marathon-weekend/goofy-challenge",
+   "field": "pin_name",
+   "searched": "DPB marathon post; 2 queries",
+   "note": "snippet text garbled; name may not be exact; single DPB source"
+  },
+  {
+   "key": "wdw/2018/rundisney-marathon-weekend",
+   "field": "pins",
+   "searched": "DPB marathon post",
+   "note": "lead: 13.1 medal, 39.3 medal and 10K medal pins also listed; may overlap 25th-anniversary-medal / half-marathon-donald-13-1 / pluto-5k keys; not recorded. Medal pin gap unresolved"
+  },
+  {
+   "key": "wdw/2018/rundisney-marathon-weekend",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "expo prices still not in permitted snippets; MPC shows resale $14.99/$10.95 and a jumbo on reseller at $47.99 (not recorded)"
+  },
+  {
+   "key": "wdw/2018/rundisney-princess-half",
+   "field": "original_price",
+   "searched": "not searched (budget)",
+   "note": "expo prices still missing"
+  },
+  {
+   "key": "wdw/2018/rundisney-wine-dine",
+   "field": "original_price",
+   "searched": "not searched (budget)",
+   "note": "expo prices still missing"
+  },
+  {
+   "key": "wdw/2018/resorts-holiday-2018",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "per-pin edition sizes not in snippets (DPB: sizes vary); characters/designs per resort not described"
+  },
+  {
+   "key": "wdw/2018/resorts-holiday-2018/boardwalk",
+   "field": "variant",
+   "searched": "B010 210 compare",
+   "note": "distinct from B010 key wdw/2018/gingerbread/boardwalk (gingerbread display pin) per collection title; confirm not the same pin"
+  },
+  {
+   "key": "wdw/2018/resorts-holiday-2018/yacht-club",
+   "field": "visual_description",
+   "searched": "1 query",
+   "note": "lead: DPB tag shows a Mickey & Minnie Heart Yacht Club Resort pin dated Nov 19, 2018; not tied to this key, not recorded"
+  },
+  {
+   "key": "wdw/2018/resorts-holiday-2018",
+   "field": "variant",
+   "searched": "DLR packet 212 grep",
+   "note": "DLR counterpart keys dlr/2018/resorts-holiday-2018/* are different resorts (different pins); no shared pin"
+  },
+  {
+   "key": "wdw/2018/disney-springs",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no 2018 Disney Springs-exclusive LE surfaced beyond the resort holiday set first sold at Pin Traders"
+  },
+  {
+   "key": "wdw/2018/toy-story-land-opening",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "opening-day and AP pins are limited release (no edition size exists in sources); gap closed as LR, not LE"
+  },
+  {
+   "key": "wdw/2018/toy-story-land-opening",
+   "field": "pins",
+   "searched": "DPB roundup",
+   "note": "lead: DPB LR section also lists an \"Annual Passholder Open\" version; meaning (open variant vs separate pin) unclear; not recorded"
+  },
+  {
+   "key": "wdw/2018/toy-story-land-mystery",
+   "field": "pins",
+   "searched": "none new",
+   "note": "hold kept (416): mystery designs not individually confirmed (14 pins, $19.99 per 2-pin box)"
+  },
+  {
+   "key": "wdw/2018/epcot-flower-garden/minnie",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "conflict resolved: the LE 3,000 $16.99 figure belongs to the \"25\" centre design (25th festival), likely B010 key ap-figment-25 (LE 3,000); Minnie is LE 4,000"
+  },
+  {
+   "key": "wdw/2018/epcot-flower-garden-natural-beauty-4-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: members (Minnie, ladybug, logo sign, Natural Beauty logo) described only on reseller magicalears; release 2/28/2018 also reseller-only; not recorded"
+  },
+  {
+   "key": "wdw/2018/disney-donut-shop/baymax",
+   "field": "variant",
+   "searched": "DLR packets 212/419/461 grep",
+   "note": "shared DL/WDW release; no DLR key yet; if a DLR cell adds one, mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/disney-donut-shop",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "Feb and Aug-Oct still unnamed in permitted sources; Cheshire #8, Tigger #9, Dumbo #10 only on reseller yourwdwstore; not recorded"
+  },
+  {
+   "key": "wdw/2018/star-wars-helmet/tie-pilot",
+   "field": "variant",
+   "searched": "DLR packets 212/419/461 grep",
+   "note": "shared DL/WDW release; no DLR key yet; if a DLR cell adds one, mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/star-wars-helmet/imperial-stormtrooper",
+   "field": "variant",
+   "searched": "DLR packets 212/419/461 grep",
+   "note": "shared DL/WDW release; no DLR key yet; if a DLR cell adds one, mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/star-wars-helmet/shoretrooper",
+   "field": "variant",
+   "searched": "DLR packets 212/419/461 grep",
+   "note": "shared DL/WDW release; no DLR key yet; if a DLR cell adds one, mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/star-wars-helmet",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "positions 1, 2, 5, 6, 8 still not named; Executioner LE 4,000 only on reseller ecrater; #11 Boba Fett is Mar 2019"
+  },
+  {
+   "key": "lic/2018/artland-star-wars-helmets",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "lead: licensed ArtLand Star Wars helmet pins (editions 250-350) for licensed cell"
+  },
+  {
+   "key": "wdw/2018/wall-e-10th-boxed-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "four boxed pins still not named in permitted snippets"
+  },
+  {
+   "key": "wdw/2018/wall-e-10th",
+   "field": "variant",
+   "searched": "DLR packets 212/419/461 grep",
+   "note": "collection released at DL (Jun 14) and WDW (Jun 21); no DLR wall-e-10th keys yet; a DLR cell should mark variant: same pin as the 416 wdw/2018/wall-e-10th/* keys"
+  },
+  {
+   "key": "wdw/2018/wall-e-10th",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Eve with Light Bulb LE 2,000 seen only on reseller ecrater; not recorded"
+  },
+  {
+   "key": "wdw/2018/peter-pan-65th-neverland-framed-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "six region pins still not named in permitted snippets (only \"different regions of Neverland\")"
+  },
+  {
+   "key": "wdw/2018/peter-pan-65th-mystery",
+   "field": "pins",
+   "searched": "none new",
+   "note": "hold kept (416): mystery designs not individually confirmed"
+  },
+  {
+   "key": "wdw/2018/animal-kingdom-20th/tree-of-life-boxed-jumbo",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "lead: MPC 69379 describes a Tree of Life 20th Anniversary series 2018 pin, LE 1,000 on back; snippet does not say jumbo; reseller LE 1000 jumbo at $129.99 ignored; not recorded"
+  },
+  {
+   "key": "wdw/2018/animal-kingdom-20th/super-jumbo",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "hold kept (459): still may be the same pin as B010 key tree-of-life-boxed-jumbo; DPB $89.99 not tied to an edition size; AllEars confirms a boxed oversized Tree of Life pin"
+  },
+  {
+   "key": "wdw/2018/lattes-with-character",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "#6-11 still only on resellers: Nemo #4 (Apr 5), Sulley #9, Ariel #11 (yourwdwstore, ecrater); MPC 135343/135344 not tied to series in snippet; holds on ariel-flounder/sulley-mike (416) kept"
+  },
+  {
+   "key": "wdw/2018/lunch-time-tales",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "months 2, 4, 6, 9 still unnamed in permitted sources; Alice #4 and Wreck-It Ralph #9 only on reseller yourwdwstore; LE sizes for Ratatouille/Lilo/PatF (459) still missing"
+  },
+  {
+   "key": "wdw/2018 holds",
+   "field": "pin_structure",
+   "searched": "none new",
+   "note": "holds kept without new evidence: F&W, MNSSHP, Ugly Sweater, Peter Pan 65th, TSL mystery sets; MNSSHP/MVMCP box/frame members; snowman four; Goodbye set; Happy Holidays Zootopia completer; Fresh Epcot pair; Dapper Day; Mickey 90th CM pin resort; two Lattes; AK AP design"
+  },
+  {
+   "key": "lic/2018/boxlunch-alice",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "lead: DPB covers 2018 licensed Alice pins (BoxLunch, Hot Topic, Funko Pop BoxLunch Alice/Queen/Hedgehog set) for licensed cells"
+  },
+  {
+   "key": "wdw/2018/rundisney-marathon-weekend/minnie-10k",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - runDisney distance pin named only in one (garbled) blog list"
+  },
+  {
+   "key": "wdw/2018/rundisney-marathon-weekend/goofy-challenge",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - runDisney distance pin named only in one (garbled) blog list"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 of B010 (WDW LE 2018). 26 standard WebSearch queries, all search_snippet, blocked domains passed (or allowed_domains narrowed). Mainly Disney Pins Blog plus MyPinCentral and Disney Diary. Resellers (yourwdwstore, ecrater, magicalears, walmart) seen, not used. New: Animation Celebration filmstrips (Alice, Fantasia, Sleeping Beauty, Peter Pan; LE 750 $16.99), Mickey and the Beanstalk framed set (LE 150 $285), runDisney Dopey/Minnie 10K/Goofy Challenge, WDW Resorts Holiday 2018 (7 resorts, $16.99). Set data: Natural Beauty LE 1,500 $29.99, WALL-E boxed LE 500 $64.99, Neverland framed LE 500 $235, Goodbye set LE 1,250. F&G Minnie conflict resolved to 4,000. TSL opening pins are LR. No holds released. No prompt-injection seen."
+}

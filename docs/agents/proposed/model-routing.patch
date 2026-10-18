@@ -1,0 +1,146 @@
+diff -ruN a/.claude/agents/backend-developer.md b/.claude/agents/backend-developer.md
+--- a/.claude/agents/backend-developer.md	2026-10-18 12:52:18.266031017 +0000
++++ b/.claude/agents/backend-developer.md	2026-10-18 12:52:34.645101147 +0000
+@@ -1,6 +1,7 @@
+ ---
+ name: backend-developer
+ description: Fix-It Felix — PinHunt Backend Developer agent. Implements approved agent:backend issues in the API server, shared libs and new migration files (L2, or L3 as draft PRs only), with tests, and opens a PR for human review.
++model: sonnet
+ ---
+ 
+ You are 🛠️ Fix-It Felix, the PinHunt Backend Developer agent. Use this name with your role in run reports, PR summaries and review comments (e.g. "Fix-It Felix (Backend Developer): …"). Keep `agent-claim` comments, labels and branch names exactly as specified. The name is an internal team nickname: never put it in app code, UI copy or store text. Follow the developer run in `docs/agents/OPERATING-MODEL.md` §4 exactly, and `CLAUDE.md`.
+diff -ruN a/.claude/agents/product-manager.md b/.claude/agents/product-manager.md
+--- a/.claude/agents/product-manager.md	2026-10-18 12:52:18.276876855 +0000
++++ b/.claude/agents/product-manager.md	2026-10-18 12:52:34.645245370 +0000
+@@ -2,6 +2,7 @@
+ name: product-manager
+ description: Remy — PinHunt Product Manager agent. Grooms the GitHub backlog, checks issue readiness and dependencies, flags conflicts with product decisions, and summarises launch readiness. Never writes code.
+ tools: Read, Grep, Glob, Bash
++model: sonnet
+ ---
+ 
+ You are 🐭 Remy, the PinHunt Product Manager agent. Use this name with your role in run reports, PR summaries and review comments (e.g. "Remy (Product Manager): …"). Keep `agent-claim` comments, labels and branch names exactly as specified. The name is an internal team nickname: never put it in app code, UI copy or store text. Follow `docs/agents/OPERATING-MODEL.md` and `CLAUDE.md`.
+diff -ruN a/.claude/agents/qa-reviewer.md b/.claude/agents/qa-reviewer.md
+--- a/.claude/agents/qa-reviewer.md	2026-10-18 12:52:18.287642354 +0000
++++ b/.claude/agents/qa-reviewer.md	2026-10-18 12:52:34.645182073 +0000
+@@ -2,6 +2,7 @@
+ name: qa-reviewer
+ description: Roz — PinHunt QA agent. Reviews agent pull requests against the linked issue's acceptance criteria, runs typecheck/tests/regressions, checks evidence and screenshots, and posts a structured verdict. Comments and labels only.
+ tools: Read, Grep, Glob, Bash
++model: sonnet
+ ---
+ 
+ You are 🔍 Roz, the PinHunt QA agent. Use this name with your role in run reports, PR summaries and review comments (e.g. "Roz (QA): …"). Keep `agent-claim` comments, labels and branch names exactly as specified. The name is an internal team nickname: never put it in app code, UI copy or store text. Follow `docs/agents/OPERATING-MODEL.md` §5. The `Agent review` workflow posts the QA verdict of record (a check run); your comment and label are advisory and cannot unlock a merge.
+diff -ruN a/.claude/agents/security-reviewer.md b/.claude/agents/security-reviewer.md
+--- a/.claude/agents/security-reviewer.md	2026-10-18 12:52:18.297155119 +0000
++++ b/.claude/agents/security-reviewer.md	2026-10-18 12:52:34.645308283 +0000
+@@ -2,6 +2,7 @@
+ name: security-reviewer
+ description: Baymax — PinHunt Security Review agent. Reviews pull requests labelled security:required for RLS, auth, PII, secrets, cost-abuse and dependency risks, and posts a verdict. Comments and labels only.
+ tools: Read, Grep, Glob, Bash
++model: opus
+ ---
+ 
+ You are 🛡️ Baymax, the PinHunt Security Review agent. Use this name with your role in run reports, PR summaries and review comments (e.g. "Baymax (Security & privacy review): …"). Keep `agent-claim` comments, labels and branch names exactly as specified. The name is an internal team nickname: never put it in app code, UI copy or store text. Follow `docs/agents/OPERATING-MODEL.md` §5. The `Agent review` workflow posts the security verdict of record (a check run); your comment and label are advisory and cannot unlock a merge. Apply the general approach of the built-in `/security-review` command to the PR diff, plus this checklist.
+diff -ruN a/.claude/agents/ui-developer.md b/.claude/agents/ui-developer.md
+--- a/.claude/agents/ui-developer.md	2026-10-18 12:52:18.307004960 +0000
++++ b/.claude/agents/ui-developer.md	2026-10-18 12:52:34.644978062 +0000
+@@ -1,6 +1,7 @@
+ ---
+ name: ui-developer
+ description: Edna Mode — PinHunt UI/UX Developer agent. Implements approved agent:ui issues in the Expo app (artifacts/pinhunt) at autonomy L1/L2, with tests and before/after screenshots, and opens a PR for human review.
++model: sonnet
+ ---
+ 
+ You are 👓 Edna Mode, the PinHunt UI/UX Developer agent. Use this name with your role in run reports, PR summaries and review comments (e.g. "Edna Mode (UI/UX Developer): …"). Keep `agent-claim` comments, labels and branch names exactly as specified. The name is an internal team nickname: never put it in app code, UI copy or store text. Follow the developer run in `docs/agents/OPERATING-MODEL.md` §4 exactly, and `CLAUDE.md`.
+diff -ruN a/.claude/settings.json b/.claude/settings.json
+--- a/.claude/settings.json	2026-10-18 12:52:18.338269838 +0000
++++ b/.claude/settings.json	2026-10-18 12:52:34.645818093 +0000
+@@ -1,4 +1,7 @@
+ {
++  "env": {
++    "CLAUDE_CODE_SUBAGENT_MODEL": "sonnet"
++  },
+   "hooks": {
+     "PreToolUse": [
+       {
+diff -ruN a/.github/scripts/agent-review.mjs b/.github/scripts/agent-review.mjs
+--- a/.github/scripts/agent-review.mjs	2026-10-18 12:52:18.350265964 +0000
++++ b/.github/scripts/agent-review.mjs	2026-10-18 12:52:34.646244330 +0000
+@@ -19,7 +19,11 @@
+ import { REPO, addLabels, gh, ghAll, issueRefs, labelNames, loadAgentPaths, removeLabel } from './lib.mjs';
+ import { securityRequired } from './risk.mjs';
+ 
+-const MODEL = process.env.REVIEW_MODEL || 'claude-opus-5-5';
++// Model routing (docs/agents/MODEL-ROUTING.md): QA is a standard code review,
++// security is high-risk. REVIEW_MODEL is the older single override and now
++// applies to security only.
++const QA_MODEL = process.env.QA_REVIEW_MODEL || 'claude-sonnet-5-5';
++const SECURITY_MODEL = process.env.SECURITY_REVIEW_MODEL || process.env.REVIEW_MODEL || 'claude-opus-5-5';
+ const MAX_DIFF_CHARS = 350_000;
+ const MAX_IMAGES = 16;
+ const MAX_IMAGE_BYTES = 4_000_000;
+@@ -123,9 +127,9 @@
+   };
+ }
+ 
+-export async function askClaude(client, system, content, schema) {
++export async function askClaude(client, system, content, schema, model) {
+   const message = await client.messages.stream({
+-    model: MODEL,
++    model,
+     max_tokens: 32000,
+     output_config: { effort: 'high', format: { type: 'json_schema', schema } },
+     system,
+@@ -161,7 +165,7 @@
+     `**Screenshots:** ${r.screenshots}`, '', `**Scope:** ${r.scope}`, '',
+     r.required_fixes.length ? `**Required fixes**\n${r.required_fixes.map(f => `1. ${f}`).join('\n')}` : '**Required fixes:** none',
+     r.notes.length ? `\n**Notes**\n${r.notes.map(n => `- ${n}`).join('\n')}` : '',
+-    '', `_Independent review by the Agent review workflow (${MODEL}). CI results are enforced separately by branch protection._`,
++    '', `_Independent review by the Agent review workflow (${QA_MODEL}). CI results are enforced separately by branch protection._`,
+   ].join('\n');
+ }
+ 
+@@ -174,7 +178,7 @@
+     '## Security review — 🛡️ Baymax (automated)',
+     `**Verdict: ${pass ? 'PASS' : 'CHANGES REQUIRED'}** · head \`${sha.slice(0, 7)}\``,
+     '', r.summary, '', findings,
+-    '', `_Independent review by the Agent review workflow (${MODEL})._`,
++    '', `_Independent review by the Agent review workflow (${SECURITY_MODEL})._`,
+   ].join('\n');
+ }
+ 
+@@ -247,8 +251,8 @@
+     const images = await fetchImages(screenshotUrls(pr.body, REPO));
+ 
+     const [qa, sec] = await Promise.all([
+-      askClaude(client, qaSystem, [{ type: 'text', text }, ...images], QA_SCHEMA),
+-      needsSecurity ? askClaude(client, secSystem, [{ type: 'text', text }], SECURITY_SCHEMA) : null,
++      askClaude(client, qaSystem, [{ type: 'text', text }, ...images], QA_SCHEMA, QA_MODEL),
++      needsSecurity ? askClaude(client, secSystem, [{ type: 'text', text }], SECURITY_SCHEMA, SECURITY_MODEL) : null,
+     ]);
+ 
+     const qaOk = qaPasses(qa);
+diff -ruN a/.github/workflows/agent-review.yml b/.github/workflows/agent-review.yml
+--- a/.github/workflows/agent-review.yml	2026-10-18 12:52:18.383067602 +0000
++++ b/.github/workflows/agent-review.yml	2026-10-18 12:52:34.646346493 +0000
+@@ -48,3 +48,5 @@
+           REVIEW_APP_ID: ${{ vars.REVIEW_APP_ID }}
+           REVIEW_APP_PRIVATE_KEY: ${{ secrets.REVIEW_APP_PRIVATE_KEY }}
+           REVIEW_MODEL: ${{ vars.REVIEW_MODEL }}
++          QA_REVIEW_MODEL: ${{ vars.QA_REVIEW_MODEL }}
++          SECURITY_REVIEW_MODEL: ${{ vars.SECURITY_REVIEW_MODEL }}
+diff -ruN a/CLAUDE.md b/CLAUDE.md
+--- a/CLAUDE.md	2026-10-18 12:52:18.399910171 +0000
++++ b/CLAUDE.md	2026-10-18 12:52:34.646594846 +0000
+@@ -94,6 +94,10 @@
+ 
+ Cloud routines and unattended sessions follow `docs/agents/OPERATING-MODEL.md`: role files in `.claude/agents/`, routine prompts in `docs/agents/routines/`, autonomy levels L1/L2/L3, and the human-only `approved` / `l3-go` labels. `.claude/hooks/agent-guard.mjs` enforces the hard limits when `CLAUDE_CODE_REMOTE=true` or `PINHUNT_AGENT=1`. It is inert in local sessions. Tests: `pnpm test` (vitest + supertest in `api-server`, jest-expo in the app, `node --test` suites). UI screenshots: `pnpm --filter @workspace/pinhunt run screenshots` (Expo web export in demo mock mode via `lib/demoMode.ts`; demo mode can only activate when Supabase is not configured).
+ 
++### Model routing
++
++Every session and subagent follows `docs/agents/MODEL-ROUTING.md`: **Opus** for architecture, complex debugging, security, critical infrastructure and high-risk changes; **Sonnet** for standard features, UX, API integrations, code review and moderate tasks; **Haiku** for catalogue research, data validation, straightforward fixes, docs, routine tests and repetitive work. Use the cheapest tier that will reliably succeed and escalate one tier on failure. Always pass an explicit `model` when launching an `Agent`; `.claude/settings.json` sets `CLAUDE_CODE_SUBAGENT_MODEL=sonnet` so unlabelled subagents never inherit Opus, and each `.claude/agents/*.md` role pins its own model.
++
+ ---
+ 
+ ## PINHUNT PRODUCT CONTEXT

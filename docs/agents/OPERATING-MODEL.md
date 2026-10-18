@@ -19,6 +19,8 @@ Each role has an internal team name. Use it, with the role, in reports, PR summa
 
 Routine prompts live in `docs/agents/routines/`.
 
+Models per role, routine and task tier are set in `docs/agents/MODEL-ROUTING.md`. Use the cheapest tier that reliably finishes the task and escalate one tier on failure; always pass an explicit `model` when launching a subagent.
+
 ## 2. Labels
 
 Labels are the source of truth for agent state. Agents cannot write to the GitHub Project.

@@ -8,6 +8,8 @@ These prompts are pasted into the routines at claude.ai/code/routines. The repos
 | `pinhunt-review` | `trig_0162foJJn4YqGbqroWkXXHfz` | GitHub `pull_request.opened` only, no schedule. Filters: head branch starts with `claude/`, is draft = false, base = `main`. | **Enabled** | Sonnet | `pinhunt-agents` | none |
 | `pinhunt-pm-weekly` | `trig_01RAMYULMrJefdbw7wBBYVNM` | Schedule `17 6 * * 1` UTC (Mondays 07:17 BST / 06:17 GMT) | **Disabled** | Sonnet | `pinhunt-agents` | none |
 
+Models follow `docs/agents/MODEL-ROUTING.md`; re-checked against the live routines on 2026-10-18. The separate historical catalogue backfill routine (`trig_017mtnSxDpVuuBk3AdKk2H4b`, research only) should launch its research agents on Haiku, retrying a failed cell once on Sonnet; that prompt change is still pending (MODEL-ROUTING.md, "Pending maintainer step").
+
 _State checked against the live routines on 2026-10-12. All three were created disabled; `pinhunt-dev` was then switched from the original daily `17 1 * * *` schedule to hourly (see OPERATING-MODEL §4)._
 
 **Re-reviews.** `pinhunt-review` fires only when a PR is *opened*. Pushing fixes or editing a PR after a `qa:fail` does not re-run it. To get a fresh review, run the routine by hand from claude.ai/code/routines and name the PR in the run message (agents cannot fire routines they did not create). Until the PR passes QA or is closed, it keeps counting towards the dev routine's WIP limit of 2 open `claude/*` PRs, so the hourly dev run stops with "WIP limit: waiting for review".

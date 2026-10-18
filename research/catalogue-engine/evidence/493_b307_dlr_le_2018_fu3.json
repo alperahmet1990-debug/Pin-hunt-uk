@@ -1,0 +1,513 @@
+{
+ "packet_id": "backfill-b307-dlr-le-2018-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b307",
+ "sources": [
+  {
+   "url": "https://mypincentral.com/pin/144336",
+   "title": "144336 (DLR - Windows of Evil - 2017/2018/2019 - Jafar)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://carstairsconsiders.blogspot.com/2020/11/",
+   "title": "Carstairs Considers: November 2020 (sidebar lists 'Disney Pin Review: Jafar - Window of Evil - 2018 R...')",
+   "publisher": "Carstairs Considers",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-11"
+  },
+  {
+   "url": "https://mypincentral.com/pin/182004",
+   "title": "182004 (Holiday 2018 - Ugly Christmas Sweaters - Baymax)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/88902",
+   "title": "88902 (DLR - Channel 28 - Mystery Pin Collection - 2018)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/159406",
+   "title": "159406 (Mickey's Halloween Party 2018 AP pin)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/144332",
+   "title": "144332 (DLR - Windows of Evil - Scar)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://carstairsconsiders.blogspot.com/2021/01/disney-pin-review-evil-queen-windows-of.html",
+   "title": "Disney Pin Review: The Evil Queen - Windows of Evil - 2019 Release",
+   "publisher": "Carstairs Considers",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-01"
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/horn-king-windows-of-evil-pin/",
+   "title": "Horn King Windows of Evil Pin Archives",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+   "title": "New Disney Pins June 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-06"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-1",
+   "title": "New Disney Pins August 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-08"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+   "title": "New Disney Pin November 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+   "title": "New Disney Pins November 2018 Week 5",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-12"
+  },
+  {
+   "url": "https://mypincentral.com/pin/104189",
+   "title": "104189 (Oogie's Holiday Tricks And Treats jigsaw pin)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-holiday-2018-gift-card-pins",
+   "title": "Disney Holiday 2018 Gift Card Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018"
+  }
+ ],
+ "sets": [],
+ "pins": [
+  {
+   "pin_key": "dlr/2018/windows-of-evil/jafar",
+   "set_key": "dlr/2018/windows-of-evil",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Windows of Evil - Jafar",
+     "source_url": "https://mypincentral.com/pin/144336",
+     "method": "search_snippet",
+     "note": "MPC per-pin entry in the DLR Windows of Evil series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jafar"
+     ],
+     "source_url": "https://mypincentral.com/pin/144336",
+     "method": "search_snippet",
+     "note": "Jafar from Aladdin on a stained-glass window panel"
+    },
+    {
+     "field": "main_character",
+     "value": "Jafar",
+     "source_url": "https://mypincentral.com/pin/144336",
+     "method": "search_snippet",
+     "note": "sole featured character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/144336",
+     "method": "search_snippet",
+     "note": "single pin listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://mypincentral.com/pin/144336",
+     "method": "search_snippet",
+     "note": "series labelled DLR"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/144336",
+     "method": "search_snippet",
+     "note": "LE backstamp"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://mypincentral.com/pin/144336",
+     "method": "search_snippet",
+     "note": "back reads limited edition of 2000"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "LIMITED EDITION OF 2000 ©Disney Made in China",
+     "source_url": "https://mypincentral.com/pin/144336",
+     "method": "search_snippet",
+     "note": "backstamp per MPC; two posts"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "stained glass"
+     ],
+     "source_url": "https://mypincentral.com/pin/144336",
+     "method": "search_snippet",
+     "note": "faux stained-glass window panel"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/11/",
+     "method": "search_snippet",
+     "note": "Carstairs sidebar title truncated 'Jafar - Window of Evil - 2018 R...'; Carstairs also labels Scar/Cruella 2018 vs DPB Jan 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/holiday-season-2018-ugly-sweater-mystery/baymax",
+   "set_key": "dlr/2018/holiday-season-2018-ugly-sweater-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ugly Christmas Sweaters - Baymax",
+     "source_url": "https://mypincentral.com/pin/182004",
+     "method": "search_snippet",
+     "note": "MPC per-pin page, Holiday 2018 Ugly Christmas Sweaters"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Baymax"
+     ],
+     "source_url": "https://mypincentral.com/pin/182004",
+     "method": "search_snippet",
+     "note": "Baymax from Big Hero 6 shown"
+    },
+    {
+     "field": "main_character",
+     "value": "Baymax",
+     "source_url": "https://mypincentral.com/pin/182004",
+     "method": "search_snippet",
+     "note": "sole character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/182004",
+     "method": "search_snippet",
+     "note": "individual design page within the 10-pin mystery set"
+    },
+    {
+     "field": "visual_description",
+     "value": "White sweater with light grey Peter Pan collar and Baymax's two dots joined by a line",
+     "source_url": "https://mypincentral.com/pin/182004",
+     "method": "search_snippet",
+     "note": "paraphrased MPC description"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/182004",
+     "method": "search_snippet",
+     "note": "labelled Holiday 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/channel-28-mystery/darkwing-duck",
+   "set_key": "dlr/2018/channel-28-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Channel 28 Mystery Pin Collection - Darkwing Duck",
+     "source_url": "https://mypincentral.com/pin/88902",
+     "method": "search_snippet",
+     "note": "MPC per-pin entry in Channel 28 Mystery Pin Collection Set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Darkwing Duck"
+     ],
+     "source_url": "https://mypincentral.com/pin/88902",
+     "method": "search_snippet",
+     "note": "features Drake Mallard / Darkwing Duck"
+    },
+    {
+     "field": "main_character",
+     "value": "Darkwing Duck",
+     "source_url": "https://mypincentral.com/pin/88902",
+     "method": "search_snippet",
+     "note": "sole character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/88902",
+     "method": "search_snippet",
+     "note": "individual design page"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://mypincentral.com/pin/88902",
+     "method": "search_snippet",
+     "note": "DLR label"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/88902",
+     "method": "search_snippet",
+     "note": "labelled 2018"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/88902",
+     "method": "search_snippet",
+     "note": "MPC calls it limited edition"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/mickeys-halloween-party-2018/jack-skellington-ap",
+   "set_key": "dlr/2018/mickeys-halloween-party-2018",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Jack Skellington at centre with 2018 event name in dark grey on black",
+     "source_url": "https://mypincentral.com/pin/159406",
+     "method": "search_snippet",
+     "note": "MPC per-pin page describes it as the AP pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://mypincentral.com/pin/159406",
+     "method": "search_snippet",
+     "note": "MPC gives LE 5,000, matching DPB pin post"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/159406",
+     "method": "search_snippet",
+     "note": "listed as a pin on MPC, not a button"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2018/windows-of-evil/jafar",
+   "field": "set_position",
+   "searched": "MPC, DPB weekly, Carstairs; 3 queries",
+   "note": "position, release date and price not stated; MPC series label reads 2017/2018/2019. Possibly #4/#5/#8; unconfirmed"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/jafar",
+   "field": "release_year",
+   "searched": "Carstairs sidebar",
+   "note": "partial: 2018 only via truncated Carstairs title; no DPB week found. Confirm year before sign-off"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/maleficent",
+   "field": "set_position",
+   "searched": "MPC 144325, DPB, Carstairs; 4 queries",
+   "note": "hold kept: Feb 2018 / LE 2000 / $16.99 only on resellers pintrader.club and distradingpins4u; MPC 144325 seen only via a neighbouring listing. Likely #1 or #2"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/ursula",
+   "field": "set_position",
+   "searched": "DPB April 2018 wk2, Carstairs; 2 queries",
+   "note": "hold kept: no DPB week found; a disneypinforum thread (Apr 27 2018) calls it newest WoE pin - forum not used. Hades #3 Mar 29 suggests #4"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil",
+   "field": "pins",
+   "searched": "DPB tag pages and weeklies; 6 queries",
+   "note": "positions 1, 2, 4, 5, 8 still unconfirmed in permitted sources; known: 3 Hades, 6 Dr. Facilier, 7 Chernabog, 9 Kaa, 10 Queen of Hearts"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/horn-king",
+   "field": "existence",
+   "searched": "DPB tag; 2 queries",
+   "note": "lead: DPB has a 'Horn King Windows of Evil Pin' tag with an entry dated Dec 9 2018; no details in snippet. Possibly #8; not recorded as pin"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/scar",
+   "field": "release_year",
+   "searched": "MPC 144332",
+   "note": "conflict grows: MPC gives Oct 2019 / $16.99; DPB (B056) Jan 10 2019 as pin 11; Carstairs '2018 release'. Not keyed for 2018"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/cruella-de-vil",
+   "field": "release_year",
+   "searched": "Carstairs, DPB",
+   "note": "unchanged: DPB pin 12 Jan 10 2019; reseller ecrater numbers differ (not used). Not keyed for 2018"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/evil-queen",
+   "field": "release_year",
+   "searched": "Carstairs",
+   "note": "Carstairs: Evil Queen released 2019 after the twelve-pin run, going back to the first villain. Out of year; not keyed"
+  },
+  {
+   "key": "dlr/2018/tape-series",
+   "field": "pins",
+   "searched": "DPB weeklies; 4 queries",
+   "note": "pins 2-4 still unnamed. DPB: #1 Lion King Jun 2018 (monthly), #6 Peter Pan Jun 6 2019 (quarterly), #7 Goofy Movie Aug 2019, #8 Hercules Nov 2019"
+  },
+  {
+   "key": "dlr/2018/holiday-season-2018-ugly-sweater-mystery/baymax",
+   "field": "variant",
+   "searched": "WDW packets 210/416/459",
+   "note": "variant: same pin as wdw/2018/holiday-season-rsp-ugly-sweater-mystery/baymax if the WDW agent keys it (set sold at both resorts); pintrader lists WDW origin"
+  },
+  {
+   "key": "dlr/2018/holiday-season-2018-ugly-sweater-mystery",
+   "field": "pins",
+   "searched": "MPC; 2 queries",
+   "note": "hold kept for 8 designs: only Goofy (MPC 182012) and Baymax (MPC 182004) have per-pin pages; 10-name list only on reseller yourwdwstore"
+  },
+  {
+   "key": "dlr/2018/channel-28-mystery/darkwing-duck",
+   "field": "pin_name",
+   "searched": "MPC",
+   "note": "MPC 88899 is a TV-shaped Darkwing Duck pin; may be a duplicate entry of 88902 or a separate item - do not create a second record"
+  },
+  {
+   "key": "dlr/2018/channel-28-mystery/monterey-jack",
+   "field": "existence",
+   "searched": "MPC tag page",
+   "note": "lead: MPC 88895 titled 'DLR - Channel 28 - Mystery Pin Collection - 2018 - TV...' on a Monterey Jack tag page; design not stated. Not recorded"
+  },
+  {
+   "key": "dlr/2018/channel-28-mystery",
+   "field": "pins",
+   "searched": "MPC; 2 queries",
+   "note": "hold kept for 11 designs: only Darkwing Duck confirmed per-pin"
+  },
+  {
+   "key": "dlr/2018/haunted-mansion-holiday-2018-tarot-mystery",
+   "field": "pins",
+   "searched": "MPC; 1 query",
+   "note": "hold kept: no MPC per-pin page for 2018 tarot; Big Witch still only on reseller distradingpins4u"
+  },
+  {
+   "key": "dlr/2018/mickeys-halloween-party-2018-mysterious-shadows-box-set",
+   "field": "pins",
+   "searched": "MPC; 1 query",
+   "note": "hold kept: no MPC per-pin pages for box members; Dr. Facilier 1-of-7 only on reseller ecrater"
+  },
+  {
+   "key": "dlr/2018/mickeys-halloween-party-2018/jack-skellington-ap",
+   "field": "scope",
+   "searched": "MPC 159406",
+   "note": "resolves lean toward pin: MPC per-pin page treats it as a pin, LE 5,000 (B012/B274 key); separate AP button post remains a different item"
+  },
+  {
+   "key": "dlr/2018/haunted-mansion-holiday-2018/gingerbread",
+   "field": "pin_name",
+   "searched": "DPB Nov wk5, MPC; 2 queries",
+   "note": "hold kept vs oogies-holiday-tricks-and-treats; lead: MPC 104189 shows a jigsaw-shaped Oogie's Holiday Tricks and Treats pin (no year) - suggests a distinct design, not confirmed 2018"
+  },
+  {
+   "key": "dlr/2018/happy-holidays-2018-pin-set",
+   "field": "pins",
+   "searched": "DPB Dec wk1",
+   "note": "hold kept: snippet says box holds 'the four pins listed above' plus Zootopia completer; which four still ambiguous. Zootopia completer still box-only"
+  },
+  {
+   "key": "dlr/2018/dca-food-wine-2018/logo",
+   "field": "visual_description",
+   "searched": "DPB, Disney Fashionista; 1 query",
+   "note": "hold kept: DPB lists logo pin (LR) without design; Fashionista Chef Mickey $14.99 pin not tied to it"
+  },
+  {
+   "key": "dlr/2018/pixar-pier-opening",
+   "field": "pins",
+   "searched": "press, news; 1 query",
+   "note": "still no Pixar Pier opening LE pin named; press only mentions LE event merchandise"
+  },
+  {
+   "key": "dlr/2018/mickey-90th",
+   "field": "pins",
+   "searched": "DPB, DFB, MiceChat; 1 query",
+   "note": "no DLR-specific Nov 2018 LE with edition size found; DFB $14.99 2-per-guest 90th pin park unstated; MPC 180591 contents unknown"
+  },
+  {
+   "key": "dlr/2018/crests",
+   "field": "existence",
+   "searched": "DPB previews, Hidden Mickey checklist; 1 query",
+   "note": "no 2018 Disneyland crest series found"
+  },
+  {
+   "key": "dlr/2018/holiday-gift-card-pins",
+   "field": "existence",
+   "searched": "DPB",
+   "note": "lead: DPB Holiday 2018 Gift Card Pins (Mickey, Minnie, Donald, Goofy) sold at both resorts; edition and pin structure unstated; likely not LE - not recorded"
+  },
+  {
+   "key": "dlr/2018",
+   "field": "pins",
+   "searched": "DPB Sep/Oct previews and weeklies; 3 queries",
+   "note": "Sep/Oct 2018 DPB weekly round-ups still not surfaced; previews show images only"
+  },
+  {
+   "key": "dlr/2018/passholder-happy-holidays-2018-ornament-pin-set",
+   "field": "pins",
+   "searched": "DPB Dec wk1",
+   "note": "hold kept: pin count unstated; LE 1,000 in post vs 500 in a reader comment"
+  },
+  {
+   "key": "dlr/2018/club-33-shag-box-set",
+   "field": "pins",
+   "searched": "none (budget)",
+   "note": "hold kept pending maintainer full-list decision; not re-searched"
+  },
+  {
+   "key": "dlr/2018/club-33-1901/1901",
+   "field": "release_location",
+   "searched": "none (budget)",
+   "note": "hold kept; not re-searched"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/jafar",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: 2018 year rests only on a truncated blog sidebar title; confirm year and series number"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 of B012 (after B056, B274). 29 standard WebSearch queries, all search_snippet, blocked domains passed every time. New pins: Windows of Evil Jafar (MPC 144336, year partial), Ugly Sweater Baymax (MPC 182004), Channel 28 mystery Darkwing Duck (MPC 88902). MPC 159406 adds pin-side evidence for the MHP 2018 Jack AP key (B012). No holds released; Scar now has a third date (MPC Oct 2019). Resellers (pintrader.club, distradingpins4u, ecrater, yourwdwstore, disneythemepark.biz) and disneypinforum seen, not used. No WDW key exists for Baymax yet. No prompt-injection seen."
+}

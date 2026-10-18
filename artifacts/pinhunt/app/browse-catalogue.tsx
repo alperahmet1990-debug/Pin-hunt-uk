@@ -50,6 +50,7 @@ import { ScreenHeader } from '@/components/ui/ScreenHeader';
 import { EmptyState } from '@/components/EmptyState';
 import { PinTile } from '@/components/ui/PinTile';
 import { Sheet } from '@/components/ui/Sheet';
+import { FilterSheet } from '@/components/ui/FilterSheet';
 import { pinGridColumns, pinTileSize, PIN_GRID_GUTTER } from '@/components/ui/PinGrid';
 import { radius, spacing } from '@/constants/theme';
 
@@ -658,62 +659,6 @@ function BoardSheet({ visible, count, boards, onPickBoard, onCreateBoard, onClos
               <Text style={[styles.sectionMeta, { color: colors.homeMuted }]}>{item.count}</Text>
             </TouchableOpacity>
           )}
-        />
-      </View>
-    </Sheet>
-  );
-}
-
-function FilterSheet({ visible, title, searchable, items, value, onSelect, onClose }: {
-  visible: boolean;
-  title: string;
-  searchable: boolean;
-  items: Array<{ value: string; label: string }>;
-  value: string | null;
-  onSelect(value: string | null): void;
-  onClose(): void;
-}) {
-  const colors = useColors();
-  const [q, setQ] = useState('');
-  const shown = useMemo(() => {
-    const lower = q.trim().toLowerCase();
-    return lower ? items.filter(i => i.label.toLowerCase().includes(lower)) : items;
-  }, [items, q]);
-
-  const close = () => { setQ(''); onClose(); };
-  const pick = (v: string | null) => { setQ(''); onSelect(v); };
-
-  return (
-    <Sheet visible={visible} onClose={close} title={title} scroll={false}>
-      <View style={styles.sheetBody}>
-        {searchable && (
-          <TextInput
-            value={q}
-            onChangeText={setQ}
-            placeholder={`Search ${title.toLowerCase()}s`}
-            placeholderTextColor={colors.homeMuted}
-            autoCorrect={false}
-            style={[styles.sheetSearch, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeAqua }]}
-          />
-        )}
-        <FlatList
-          data={[{ value: '', label: `All ${title.toLowerCase()}s` }, ...shown]}
-          keyExtractor={item => item.value || '__all'}
-          keyboardShouldPersistTaps="handled"
-          renderItem={({ item }) => {
-            const active = item.value ? item.value === value : value === null;
-            return (
-              <TouchableOpacity
-                onPress={() => pick(item.value || null)}
-                accessibilityRole="button"
-                accessibilityState={{ selected: active }}
-                style={[styles.sheetRow, { borderBottomColor: colors.homeLine }]}
-              >
-                <Text style={[styles.sheetRowLabel, { color: colors.homeInk }]} numberOfLines={2}>{item.label}</Text>
-                {active && <Feather name="check" size={16} color={colors.homeCoral} />}
-              </TouchableOpacity>
-            );
-          }}
         />
       </View>
     </Sheet>

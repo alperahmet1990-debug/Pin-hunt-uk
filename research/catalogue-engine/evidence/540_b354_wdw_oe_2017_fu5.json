@@ -1,0 +1,446 @@
+{
+ "packet_id": "540-b354-wdw-oe-2017-fu5",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://mypincentral.com/pin/114621",
+   "title": "114621 (WDW/DLR Magical Mystery Pins Series 11 2017 - Mickey)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/114618",
+   "title": "114618 (Magical Mystery Pins Series 11 2017 - Oswald)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/114620",
+   "title": "WDW/DLR - Magical Mystery Pins - Series 11 - 2017 - Minnie",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/magical-mystery-pins-series-11",
+   "title": "Magical Mystery Pins Series 11",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-02-17"
+  },
+  {
+   "url": "https://mypincentral.com/pin/58152",
+   "title": "58152 (Pandora - The World of Avatar 2017 Mystery Pin Collection)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pandora-world-avatar-mystery-pin-collection/",
+   "title": "Pandora - The World of Avatar Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-february-2017-week-1/",
+   "title": "New Disney Pins February 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/175502",
+   "title": "175502 (Monorail Magic Mystery Collection 2017 - Daisy)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/49458",
+   "title": "49458 (Tsum Tsum Christmas Mystery Collection - Chip)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/69246",
+   "title": "69246 (Tsum Tsum Holiday Mystery Collection - Willie the Giant)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/43465",
+   "title": "43465 (King Triton head-shaped pin, Pin Trading 2017)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/43475",
+   "title": "43475 (Sebastian head-and-claws pin)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/145286",
+   "title": "145286 (R2-D2 tsum tsum pin)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/127267",
+   "title": "127267 (Jasmine in gold oval frame, Pin Trading 2017)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/149445",
+   "title": "DLR/WDW - Tsum Tsum Mystery Pin Pack - Series 5 - Pixar - 2017",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2017/oe-set/pandora-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://mypincentral.com/pin/58152",
+     "method": "search_snippet",
+     "note": "Per-pin page says the full mystery collection is eight pins (corroborates DPB count)"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://mypincentral.com/pin/58152",
+     "method": "search_snippet",
+     "note": "Two random pins per box per the per-pin page"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2017/oe-set/magical-mystery-pins-series-11/mickey-mouse",
+   "set_key": "wdw/2017/oe-set/magical-mystery-pins-series-11",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mypincentral.com/pin/114621",
+     "method": "search_snippet",
+     "note": "Per-pin MyPinCentral entry for Mickey in Magical Mystery Pins Series 11 (2017)"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://mypincentral.com/pin/114621",
+     "method": "search_snippet",
+     "note": "Single-character design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/114621",
+     "method": "search_snippet",
+     "note": "Individual design within the six-pin mystery series; own per-pin page"
+    },
+    {
+     "field": "visual_description",
+     "value": "Circular pin; Mickey at a ship's wheel, light grey wheel shown",
+     "source_url": "https://mypincentral.com/pin/114621",
+     "method": "search_snippet",
+     "note": "Paraphrase of per-pin description"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://mypincentral.com/pin/114621",
+     "method": "search_snippet",
+     "note": "Entry describes Series 11 of 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/magical-mystery-pins-series-11",
+     "method": "search_snippet",
+     "note": "Series sold at both resorts"
+    },
+    {
+     "field": "franchise",
+     "value": "Disney",
+     "source_url": "https://disneypinsblog.com/blogs/news/magical-mystery-pins-series-11",
+     "method": "search_snippet",
+     "note": "Classic characters in costume"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/oe-set/magical-mystery-pins-series-11/oswald",
+   "set_key": "wdw/2017/oe-set/magical-mystery-pins-series-11",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Circular pin; Oswald playing a banjo",
+     "source_url": "https://mypincentral.com/pin/114618",
+     "method": "search_snippet",
+     "note": "Corroboration (key from 520): per-pin page now consistently read as Oswald, Series 11, 2017"
+    },
+    {
+     "field": "product_code",
+     "value": "MPC 114618",
+     "source_url": "https://mypincentral.com/pin/114618",
+     "method": "search_snippet",
+     "note": "MyPinCentral ID; Mickey is separately 114621, which resolves the 520 Mickey-vs-Oswald ID doubt"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/oe-set/pandora-mystery/moara-valley-environmental-explorer",
+   "set_key": "wdw/2017/oe-set/pandora-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mo'ara Valley Environmental Explorer",
+     "source_url": "https://mypincentral.com/pin/58152",
+     "method": "search_snippet",
+     "note": "Per-pin page names the design within the Pandora 2017 Mystery Pin Collection"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/58152",
+     "method": "search_snippet",
+     "note": "Individual design; one of four Environmental Explorer pins within the eight-pin set"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dark green lettering on light yellow background",
+     "source_url": "https://mypincentral.com/pin/58152",
+     "method": "search_snippet",
+     "note": "Paraphrase of per-pin description"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Twentieth Century Fox / Disney copyright, Made in China",
+     "source_url": "https://mypincentral.com/pin/58152",
+     "method": "search_snippet",
+     "note": "Back marking per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://mypincentral.com/pin/58152",
+     "method": "search_snippet",
+     "note": "Collection named as 2017"
+    },
+    {
+     "field": "attraction",
+     "value": "Pandora - The World of Avatar",
+     "source_url": "https://mypincentral.com/pin/58152",
+     "method": "search_snippet",
+     "note": "Pandora land theme"
+    },
+    {
+     "field": "franchise",
+     "value": "Avatar",
+     "source_url": "https://mypincentral.com/pin/58152",
+     "method": "search_snippet",
+     "note": "Avatar / Pandora"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2017/oe-set/magical-mystery-pins-series-11/mickey-mouse",
+   "field": "hold_release",
+   "searched": "2 queries (MPC Series 11 Mickey/Minnie)",
+   "note": "evidence: new per-pin MPC 114621 names Mickey in Series 11 2017 with design; candidate to release the 520 hold (reviewer to confirm)"
+  },
+  {
+   "key": "wdw/2017/oe-set/magical-mystery-pins-series-11/oswald",
+   "field": "hold_release",
+   "searched": "1 query",
+   "note": "evidence: MPC 114618 now read consistently as Oswald (banjo); ID part of 520 hold resolved. Edition conflict (LE vs OE) not re-checked - keep that part open"
+  },
+  {
+   "key": "wdw/2017/oe-set/magical-mystery-pins-series-11",
+   "field": "edition_type_conflict",
+   "searched": "0 new queries",
+   "note": "still open: Pluto page OE vs Oswald page LE (520); DPB snippet gives no edition type"
+  },
+  {
+   "key": "wdw/2017/oe-set/magical-mystery-pins-series-11/minnie-mouse",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: MPC 114620 titled Series 11 2017 Minnie (dancing with watering can, pink) but same page also mentions brown background with 2014 - mismatch unresolved"
+  },
+  {
+   "key": "dlr/2017/oe-set/magical-mystery-pins-series-11/mickey-mouse",
+   "field": "duplicate",
+   "searched": "DPB",
+   "note": "variant: same pin as wdw/2017/oe-set/magical-mystery-pins-series-11/mickey-mouse"
+  },
+  {
+   "key": "wdw/2017/oe-set/pandora-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "partial: only Mo'ara Valley Environmental Explorer has a per-pin page; other seven designs unnamed; edition type not stated in snippet"
+  },
+  {
+   "key": "wdw/2017/monorail-magic-mystery",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "lead for LE cell (not OE): DPB Feb 2017 wk1 - WDW Monorail Magic mystery, 2 Feb 2017, 16.99/box of 2, 8 limited release + 4 chasers LE 500; MPC 175502 Daisy calls it limited edition"
+  },
+  {
+   "key": "dlr/2017/monorail-mystery",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "lead for DLR LE cell: separate Disneyland Monorail Mystery set same week, 16.99, chasers LE 400"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-holiday-mystery/chip",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: MPC 49458 Chip Tsum in Santa hat, named Tsum Tsum Christmas Mystery Collection; year/edition not given and low ID suggests earlier year - not created"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-holiday-mystery/willie-the-giant",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "hold: MPC 69246 names Tsum Tsum Holiday Mystery Collection but no year; 2017 only inferred from DPB set post (Oct 2017) - year still unconfirmed"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-holiday-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "kept: DPB 10 pins, 2 per box, 15.99 OE, Oct 2017; designs not named"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-series-4",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "hold: MPC 43465 King Triton (Pin Trading 2017 back) and 43475 Sebastian (FAC-000122-17100) are per-pin pages but neither names Tsum Tsum Series 4; checklist only on fandom wiki/listing sites"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-series-4/king-triton",
+   "field": "set_membership",
+   "searched": "1 query",
+   "note": "hold: confirm MPC 43465 is the Series 4 Tsum Tsum pin (page has character/2017 date only)"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-series-4/sebastian",
+   "field": "set_membership",
+   "searched": "1 query",
+   "note": "hold: confirm MPC 43475 is the Series 4 Tsum Tsum pin (page does not mention Tsum Tsum or 2017)"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar",
+   "field": "pins",
+   "searched": "7 queries (MPC 149445-149457)",
+   "note": "hold kept on remaining nine: MPC 149445 is a pack page listing 16 characters (list only); 149454/55/57 returned nothing; 149447/149456 are WALL-E/EVE already keyed"
+  },
+  {
+   "key": "wdw/2017/oe-set/star-wars-tsum-tsum-series-2",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: MPC 145286 R2-D2 tsum tsum pin found but series/year not stated; 16 vs 17 pin count conflict unchanged"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-villains-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: Maleficent as Dragon (2017 back) only on reseller distradingpins4u; no MPC per-pin page"
+  },
+  {
+   "key": "wdw/2017/oe-set/kingdom-of-cute-mystery-series-1",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: artist's Tumblr confirms 2 random pins/box but names no designs in snippet; MPC 107965 still does not name series"
+  },
+  {
+   "key": "wdw/2017/oe-set/princess-gold-frame-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: MPC 127267 Jasmine in gold oval frame (Pin Trading 2017) does not name the series; no other per-pin pages"
+  },
+  {
+   "key": "wdw/2017/oe-set/princess-gold-frame-mystery/jasmine",
+   "field": "set_membership",
+   "searched": "1 query",
+   "note": "hold: lead MPC 127267 matches style but series not named - confirm before releasing"
+  },
+  {
+   "key": "wdw/2017/oe-set/digital-disney-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept on seven: MPC 33940 Donald (already released via 469) only per-pin page; no others found"
+  },
+  {
+   "key": "wdw/2017/oe-set/mickey-minnie-mailbox/mickey",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: only MPC 175846 (Minnie) per-pin; no Mickey per-pin page"
+  },
+  {
+   "key": "wdw/2017/oe-set/star-wars-stocking",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: confirm pin structure - no per-pin pages; MPC 158945 Chewbacca/Yoda is the 2016-17 Pin of the Month, not this set"
+  },
+  {
+   "key": "wdw/2017/oe-set/haunted-mansion-cameo-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "kept: DPB 12 pins, 2/box, 14.99, UV ink, Aug 2017; designs only on forum roster (not used); no MPC Cameo per-pin page"
+  },
+  {
+   "key": "wdw/2017/oe/happy-hanukkah-chip-n-dale",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: no MPC page for 2017 pin (only 2008 Hanukkah pin 154284); design described only by reseller yourwdwstore"
+  },
+  {
+   "key": "wdw/2017/oe/frozen-ever-after-2017",
+   "field": "pin_structure",
+   "searched": "0 queries",
+   "note": "hold kept: not re-searched (budget)"
+  },
+  {
+   "key": "wdw/2017/oe-set/disney-parks-2017-booster",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: not re-searched"
+  },
+  {
+   "key": "wdw/2017/oe-set/nightmare-before-christmas-tsum-tsum-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: not re-searched"
+  },
+  {
+   "key": "wdw/2017/oe/cars-3-maximum-mph",
+   "field": "characters",
+   "searched": "0 queries",
+   "note": "kept: not re-searched this pass"
+  }
+ ],
+ "discovery_notes": "Follow-up 5 of B017 (WDW OE 2017); 30 standard WebSearch calls, search_snippet only, blocked domains passed. New: Series 11 Mickey (MPC 114621) and Pandora mystery Mo'ara Valley Environmental Explorer (MPC 58152). Oswald ID (114618) now consistent. Monorail Magic is limited release - LE cell lead. No holds released outright; Mickey/Oswald flagged as release candidates."
+}

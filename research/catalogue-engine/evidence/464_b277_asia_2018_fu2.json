@@ -1,0 +1,832 @@
+{
+ "packet_id": "backfill-b277-asia-2018-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b277",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/cinderella-carousel-limited-edition-pin",
+   "title": "Cinderella Carousel Limited Edition Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/hong-kong-disneyland-pin-trading.62891/",
+   "title": "Hong Kong Disneyland Pin Trading (thread)",
+   "publisher": "Disney Pin Forum",
+   "published_date": "2018-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+   "title": "Hong Kong Disneyland Easter 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+   "title": "Gelatoni Pins (thread)",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinforum.com/threads/gelatoni-pins.59200/page-2",
+   "title": "Gelatoni Pins (thread, page 2)",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/94999",
+   "title": "MyPinCentral pin 94999",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-131021/",
+   "title": "Tokyo Disney Resort attraction design pin badges",
+   "publisher": "MezzoMiki",
+   "published_date": "2018-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-120275/",
+   "title": "TDR 35th Happiest Celebration Mickey goods roundup",
+   "publisher": "MezzoMiki",
+   "published_date": "2018-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/71059",
+   "title": "MyPinCentral pin 71059",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickeys-90th-anniversary-pin-collection-at-shanghai-disneyland/",
+   "title": "Mickey's 90th Anniversary Pin Collection at Shanghai Disneyland",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/carrots-hkdl-2018-hidden-mickey-pins",
+   "title": "Carrots HKDL 2018 Hidden Mickey Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tokyo-disney-resort-attraction-2018-pins/",
+   "title": "Tokyo Disney Resort Attraction 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "hkdl/2018/easter-2018-character-eggs",
+   "parent_set_key": "hkdl/2018/easter-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hong Kong Disneyland Easter 2018 Duffy & Friends egg pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "post lists individual character egg pins besides the mystery and booster sets"
+    },
+    {
+     "field": "format",
+     "value": "individual pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "described as individual pins, not part of the mystery box"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-24",
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "stated"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2018/mickey-90th",
+   "claims": [
+    {
+     "field": "sub_series",
+     "value": "Mickey's 90th Mouse Party",
+     "source_url": "https://mypincentral.com/pin/71059",
+     "method": "search_snippet",
+     "note": "series name on MyPinCentral page; relation to DPB groups unclear"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2018/attraction-2018",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Grand Emporium, Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-131021/",
+     "method": "search_snippet",
+     "note": "TDL designs at Grand Emporium; Toy Story Mania at Emporio, Tokyo DisneySea"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "hkdl/2018/carousel-series/stitch",
+   "set_key": "hkdl/2018/carousel-series",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-carousel-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "Stitch named in the carousel series list, placed between Mary Poppins (7th) and Ariel (9th)"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-carousel-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "HKDL carousel series"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/carousel-series/duffy-and-stellalou",
+   "set_key": "hkdl/2018/carousel-series",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Duffy",
+      "StellaLou"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-carousel-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "'Duffy and StellaLou' is one entry in the 12-entry carousel series list, after Ariel"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-carousel-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "HKDL carousel series"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/carousel-series/woody-and-bullseye",
+   "set_key": "hkdl/2018/carousel-series",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Woody",
+      "Bullseye"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-carousel-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "'Woody and Bullseye' is one entry in the carousel series list, just before Cinderella (12th)"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-carousel-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "HKDL carousel series"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/easter-2018-character-eggs/duffy",
+   "set_key": "hkdl/2018/easter-2018-character-eggs",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Duffy"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "named among the individual Duffy & Friends egg pins in the Easter 2018 post"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-24",
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "Easter 2018 release date stated"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/easter-2018-character-eggs/shelliemay",
+   "set_key": "hkdl/2018/easter-2018-character-eggs",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "ShellieMay"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "named among the individual Duffy & Friends egg pins in the Easter 2018 post"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-24",
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "Easter 2018 release date stated"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/easter-2018-character-eggs/gelatoni",
+   "set_key": "hkdl/2018/easter-2018-character-eggs",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Gelatoni"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "named among the individual Duffy & Friends egg pins in the Easter 2018 post"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-24",
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "Easter 2018 release date stated"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/easter-2018-character-eggs/stellalou",
+   "set_key": "hkdl/2018/easter-2018-character-eggs",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "StellaLou"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "named among the individual Duffy & Friends egg pins in the Easter 2018 post"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-24",
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "Easter 2018 release date stated"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/hong-kong-disneyland-easter-2018-pins",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/chinese-new-year-2018/gelatoni-and-stellalou",
+   "set_key": "hkdl/2018/chinese-new-year-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Gelatoni",
+      "StellaLou"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "collector list names a Chinese New Year 2018 Gelatoni and StellaLou pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "listed as a single pin featuring both characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinforum.com/threads/gelatoni-pins.59200/page-2",
+     "method": "search_snippet",
+     "note": "second forum post tallies CNY Gelatoni and StellaLou at 500"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "labelled Chinese New Year 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "labelled HKDL"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2018/zootopia-emoji-mystery/flash",
+   "set_key": "shdr/2018/zootopia-emoji-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Flash"
+     ],
+     "source_url": "https://mypincentral.com/pin/94999",
+     "method": "search_snippet",
+     "note": "MyPinCentral donut-series page: Flash emerging from an iced sprinkled donut"
+    },
+    {
+     "field": "visual_description",
+     "value": "Flash rising out of an iced, sprinkled donut",
+     "source_url": "https://mypincentral.com/pin/94999",
+     "method": "search_snippet",
+     "note": "paraphrase; same donut format as Clawhauser/Finnick/Bogo pages"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2018/mickey-90th/minnie-popping-out-of-90",
+   "set_key": "shdr/2018/mickey-90th",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mypincentral.com/pin/71059",
+     "method": "search_snippet",
+     "note": "Minnie pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie popping out of the 0 in 90",
+     "source_url": "https://mypincentral.com/pin/71059",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/71059",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://mypincentral.com/pin/71059",
+     "method": "search_snippet",
+     "note": "issued by Shanghai Disneyland"
+    },
+    {
+     "field": "pin_name",
+     "value": "Mickey's 90th Mouse Party series - Minnie",
+     "source_url": "https://mypincentral.com/pin/71059",
+     "method": "search_snippet",
+     "note": "series name given on the page"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2018/attraction-2018/country-bear-theater-sunbonnets",
+   "set_key": "tdr/2018/attraction-2018",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Country Bear Theater",
+     "source_url": "https://mezzomiki.jp/post-131021/",
+     "method": "search_snippet",
+     "note": "one of two Country Bear Theater designs in the 23 May release"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "The Sunbonnets"
+     ],
+     "source_url": "https://mezzomiki.jp/post-131021/",
+     "method": "search_snippet",
+     "note": "Sunbonnets design"
+    },
+    {
+     "field": "visual_description",
+     "value": "The Sunbonnets in vacation costume",
+     "source_url": "https://mezzomiki.jp/post-131021/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05-23",
+     "source_url": "https://mezzomiki.jp/post-131021/",
+     "method": "search_snippet",
+     "note": "five attraction pins released 23 May 2018"
+    },
+    {
+     "field": "original_price",
+     "value": 1100,
+     "source_url": "https://mezzomiki.jp/post-131021/",
+     "method": "search_snippet",
+     "note": "1,100 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-131021/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_location",
+     "value": "Grand Emporium, Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-131021/",
+     "method": "search_snippet",
+     "note": "sold at Grand Emporium"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2018/attraction-2018/country-bear-theater",
+   "set_key": "tdr/2018/attraction-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Henry",
+      "Sammy"
+     ],
+     "source_url": "https://mezzomiki.jp/post-131021/",
+     "method": "search_snippet",
+     "note": "Henry & Sammy design, the other Country Bear Theater pin of the May release"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2018/attraction-2018/big-thunder-mountain",
+   "set_key": "tdr/2018/attraction-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://mezzomiki.jp/post-131021/",
+     "method": "search_snippet",
+     "note": "Goofy in western wear"
+    },
+    {
+     "field": "visual_description",
+     "value": "Goofy in western wear",
+     "source_url": "https://mezzomiki.jp/post-131021/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2018/attraction-2018/space-mountain",
+   "set_key": "tdr/2018/attraction-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-131021/",
+     "method": "search_snippet",
+     "note": "Mickey in a spacesuit"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey in a spacesuit",
+     "source_url": "https://mezzomiki.jp/post-131021/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2018/attraction-2018/toy-story-mania",
+   "set_key": "tdr/2018/attraction-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Woody",
+      "Little Green Men"
+     ],
+     "source_url": "https://mezzomiki.jp/post-131021/",
+     "method": "search_snippet",
+     "note": "entrance with Woody's face plus the Aliens"
+    },
+    {
+     "field": "visual_description",
+     "value": "Toy Story Mania entrance with Woody's face and Little Green Men",
+     "source_url": "https://mezzomiki.jp/post-131021/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "hkdl/2018/carousel-series/stitch",
+   "field": "pin_structure",
+   "searched": "4 queries",
+   "note": "hold: named only in one series list (Cinderella post); no own post, date, size or per-pin description; pending maintainer full-list decision"
+  },
+  {
+   "key": "hkdl/2018/carousel-series/duffy-and-stellalou",
+   "field": "pin_structure",
+   "searched": "4 queries",
+   "note": "hold: named only in one series list (Cinderella post); no own post, date, size or per-pin description; pending maintainer full-list decision"
+  },
+  {
+   "key": "hkdl/2018/carousel-series/woody-and-bullseye",
+   "field": "pin_structure",
+   "searched": "4 queries",
+   "note": "hold: named only in one series list (Cinderella post); no own post, date, size or per-pin description; pending maintainer full-list decision"
+  },
+  {
+   "key": "hkdl/2018/carousel-series/stitch",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "lead: Disney Pin Forum (May 2018) mentions a Stitch LE 300 released Sat 12 May 2018; thread does not say carousel, so not claimed"
+  },
+  {
+   "key": "hkdl/2018/carousel-series",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "series list also names Aurora and the Dwarfs (2017 positions); not recorded here. No HK$ prices for any carousel pin"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-character-eggs/duffy",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure; four names for 'four character egg pins' (count-matched list, post adds 'and more'), no per-pin description (rule 12)"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-character-eggs/shelliemay",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure; four names for 'four character egg pins' (count-matched list, post adds 'and more'), no per-pin description (rule 12)"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-character-eggs/gelatoni",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure; four names for 'four character egg pins' (count-matched list, post adds 'and more'), no per-pin description (rule 12)"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-character-eggs/stellalou",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure; four names for 'four character egg pins' (count-matched list, post adds 'and more'), no per-pin description (rule 12)"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-character-eggs/gelatoni",
+   "field": "visual_features",
+   "searched": "1 query",
+   "note": "lead: forum collector list mentions an Easter 2018 Gelatoni spinning egg with Duffy on the reverse; spinner/one-pin structure unconfirmed"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "15 egg designs still unnamed; no HK$ prices"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-incredibles-booster",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "contents and price still not given"
+  },
+  {
+   "key": "hkdl/2018/chinese-new-year-2018/gelatoni-and-stellalou",
+   "field": "source_url",
+   "searched": "2 queries",
+   "note": "hold: sole evidence is Disney Pin Forum collector lists; no blog/official post, date or HK$ price; confirm"
+  },
+  {
+   "key": "hkdl/2018/chinese-new-year-2018",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "lead: forum list puts a matching Duffy and Friends CNY 2018 LE 500 pin beside it; characters unclear, not recorded. Magic Access CNY LE and jumbo still undescribed"
+  },
+  {
+   "key": "hkdl/2018/christmas-2018",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "still no HKDL Christmas 2018 pin found; DPB 'Stitch Holiday 2018' LE 1300 is a shopDisney pin, not HKDL"
+  },
+  {
+   "key": "hkdl/2018/hidden-mickey-carrots",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "6th pin still only 'Rabbit Pin' on Ultimate Pins News list; no source states which is 6 of 6"
+  },
+  {
+   "key": "hkdl/2018/hidden-mickey-carrots/white-rabbit",
+   "field": "source_url",
+   "searched": "1 query",
+   "note": "hold kept (from 422): DPB says each carrot shows a different character, but names still rest on one list and MyPinCentral pages 108084/108087/108089 are not tied to names in snippets"
+  },
+  {
+   "key": "hkdl/2018/hidden-mickey-carrots/oswald",
+   "field": "source_url",
+   "searched": "1 query",
+   "note": "hold kept (from 422): DPB says each carrot shows a different character, but names still rest on one list and MyPinCentral pages 108084/108087/108089 are not tied to names in snippets"
+  },
+  {
+   "key": "hkdl/2018/hidden-mickey-carrots/thumper",
+   "field": "source_url",
+   "searched": "1 query",
+   "note": "hold kept (from 422): DPB says each carrot shows a different character, but names still rest on one list and MyPinCentral pages 108084/108087/108089 are not tied to names in snippets"
+  },
+  {
+   "key": "hkdl/2018/hidden-mickey-carrots/judy-hopps",
+   "field": "source_url",
+   "searched": "1 query",
+   "note": "hold kept (from 422): DPB says each carrot shows a different character, but names still rest on one list and MyPinCentral pages 108084/108087/108089 are not tied to names in snippets"
+  },
+  {
+   "key": "hkdl/2018/carousel-series",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "no HK$ price found for any 2018 HKDL LE; only HK$135 for a 2020 Tangled pin"
+  },
+  {
+   "key": "shdr/2018/zootopia-emoji-mystery/flash",
+   "field": "source_url",
+   "searched": "2 queries",
+   "note": "hold: MyPinCentral-only; snippet lists Flash among donut pages (94997/94998/94999/95001) and 94999 is the only new page, mapping inferred; page does not say Emoji or 2018"
+  },
+  {
+   "key": "shdr/2018/zootopia-emoji-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "6 of 10 designs still unnamed; DPB post gives no character list"
+  },
+  {
+   "key": "shdr/2018/mickey-90th/minnie-popping-out-of-90",
+   "field": "pin_structure",
+   "searched": "3 queries",
+   "note": "hold: MyPinCentral-only; unclear whether LE single, set member or mystery design; edition size not stated. MPC 180591 (Minnie in a box, 'Mickey's 90th Set') not tied to SHDR"
+  },
+  {
+   "key": "shdr/2018/mickey-90th",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "LE singles, jumbo/frame/pin sets and mystery collection still unnamed; no sizes or prices"
+  },
+  {
+   "key": "shdr/2018/toy-story-land-grand-opening-box-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "LE 300 box contents still not named"
+  },
+  {
+   "key": "shdr/2018/toy-story-land-grand-opening-two-pin-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "LE 800 two-pin set contents still not named"
+  },
+  {
+   "key": "shdr/2018/pin-trading-fun-day-2018-frozen-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "four Frozen pins still not named (LE 300); MPC 118936 Snowgies pin not tied to the event"
+  },
+  {
+   "key": "shdr/2018/pin-trading-fun-day-2018-framed-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "framed set contents still not described"
+  },
+  {
+   "key": "shdr/2018/2nd-anniversary",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "still no Shanghai 2nd anniversary (Jun 2018) pin found"
+  },
+  {
+   "key": "tdr/2018/attraction-2018/country-bear-theater",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "mapping note: earlier key from DPB 'Country Bear Theater'; Henry & Sammy assigned here because DPB's second entry ('Country Bear Theater Group') fits the Sunbonnets trio; confirm"
+  },
+  {
+   "key": "tdr/2018/attraction-2018",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "fifth May design now identified as the Sunbonnets (MezzoMiki); DPB lists five names but says four pins"
+  },
+  {
+   "key": "tdr/2018/35th-themed-land-pin-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "lead: MezzoMiki 10 Apr 2018 per-themed-land Mickey can badge + pin set, 3,500 yen, Grand Emporium; may be DPB's themed land set (9 Apr); scope: confirm pin vs button; not merged"
+  },
+  {
+   "key": "tdr/2018/35th-framed-35-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "35 pins still not individually described (price 50,000 yen and LE 500 already in 422)"
+  },
+  {
+   "key": "tdr/2018/35th-happiest-celebration/mickey",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "hold kept (from 422): MezzoMiki roundup again gives 900 yen each for 35th-costume Mickey & friends pins, still not tied per pin; castle Mickey & Minnie pin 1,000 yen, castle vs jumbo still unresolved"
+  },
+  {
+   "key": "tdr/2018/christmas-2018/tdl-mickey-and-minnie-wreath",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "no price found; MezzoMiki Christmas 2018 pin not located"
+  }
+ ],
+ "discovery_notes": "Cell B277, follow-up 2 of B015 (packets 215, 422); reuses their keys. 27 standard searches, snippets only. New: TDR May 2018 fifth attraction design (Sunbonnets) plus characters on the other four (MezzoMiki per-design text); HKDL carousel Stitch, Duffy & StellaLou, Woody & Bullseye (held, series list only); HKDL Easter character eggs (held, count-matched); HKDL CNY 2018 Gelatoni & StellaLou LE 500 (held, forum only); SHDR Zootopia Emoji Flash and Mickey 90th Minnie (held, MyPinCentral only). No existing holds released. Resellers (usshoppingsos, belloshophk, fryguypins, ebay.com.my) and YouTube ignored."
+}

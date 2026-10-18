@@ -1,0 +1,243 @@
+{
+ "packet_id": "backfill-b189-lic-artland-2021-2022-fu4",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b189",
+ "sources": [
+  {
+   "url": "https://gallery-pulse.myshopify.com/collections/ben-harman",
+   "title": "Ben Harman - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://gallery-pulse.myshopify.com/collections/ben-harman?page=2",
+   "title": "Ben Harman Page 2 - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pulse.gallery/products/copy-of-copy-of-the-hunchback-of-notre-dame-day-two-tone",
+   "title": "The Hunchback of Notre Dame Night - Two-tone - Pulse Gallery",
+   "publisher": "Pulse Gallery",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/artland-pixar-mystery-pin-collection-wave-2",
+   "title": "ArtLand Pixar Mystery Pin Collection Wave 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2022-09"
+  },
+  {
+   "url": "https://disneypinsblog.com/101-dalmatians-and-the-aristocats-ben-harman-artland-disney-pins/",
+   "title": "101 Dalmatians and The Aristocats Ben Harman ArtLand Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-11"
+  },
+  {
+   "url": "https://bottleneckgallery.com/blogs/news/new-disney-prints-by-ben-harman-on-sale-info-1",
+   "title": "NEW DISNEY Prints by Ben Harman - On Sale INFO!",
+   "publisher": "Bottleneck Gallery",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-04"
+  },
+  {
+   "url": "https://mickeyblog.com/2021/04/21/stunning-new-disney-posters-by-ben-harman/",
+   "title": "Stunning New Disney Posters by Ben Harman",
+   "publisher": "MickeyBlog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-04-21"
+  },
+  {
+   "url": "https://mypincentral.com/pin/97617",
+   "title": "97617",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-neo-nouveau-series-2-artland-pins/",
+   "title": "Disney Princess Neo Nouveau Series 2 ArtLand Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-02"
+  },
+  {
+   "url": "https://disneypinsblog.com/princess-friends-series-3-artland-disney-pins",
+   "title": "Princess & Friends Series 3 ArtLand Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-04"
+  },
+  {
+   "url": "https://popcultart.com/en-us/products/pluto",
+   "title": "Pluto",
+   "publisher": "PopCultArt",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://distradingpins4u.com/products/disney-pin-152679",
+   "title": "Disney Trading Pins 152679 Artland - M O - Chaser - Pixar - Mystery",
+   "publisher": "DisTradingPins4U",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2022/artland-pixar-mystery-wave-2",
+   "claims": [
+    {
+     "field": "size_mm",
+     "value": "approx 3 x 3 in to 5 x 7 in",
+     "source_url": "https://disneypinsblog.com/blogs/news/artland-pixar-mystery-pin-collection-wave-2",
+     "method": "search_snippet",
+     "note": "post gives a size range across the wave 2 designs (inches)"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2021/artland-ben-harman-hunchback/gold",
+   "set_key": "lic/2021/artland-ben-harman-hunchback",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Hunchback of Notre Dame - Day - Gold",
+     "source_url": "https://gallery-pulse.myshopify.com/collections/ben-harman",
+     "method": "search_snippet",
+     "note": "collection entry title names the gold version as the Day scene"
+    },
+    {
+     "field": "pin_name",
+     "value": "The Hunchback of Notre Dame - Day - Gold",
+     "source_url": "https://gallery-pulse.myshopify.com/collections/ben-harman?page=2",
+     "method": "search_snippet",
+     "note": "page 2 collection entry, same Day - Gold title"
+    },
+    {
+     "field": "original_price",
+     "value": 85.0,
+     "source_url": "https://gallery-pulse.myshopify.com/collections/ben-harman",
+     "method": "search_snippet",
+     "note": "retailer listing price, marked notify-me; not launch price"
+    },
+    {
+     "field": "original_price",
+     "value": 110.0,
+     "source_url": "https://gallery-pulse.myshopify.com/collections/ben-harman?page=2",
+     "method": "search_snippet",
+     "note": "same title shown at GBP 110 on page 2; prices conflict, both kept"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://gallery-pulse.myshopify.com/collections/ben-harman?page=2",
+     "method": "search_snippet",
+     "note": "GBP"
+    },
+    {
+     "field": "retailer",
+     "value": "Pulse Gallery",
+     "source_url": "https://gallery-pulse.myshopify.com/collections/ben-harman",
+     "method": "search_snippet",
+     "note": "UK retailer collection entry"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2021/artland-ben-harman-hunchback/gold",
+   "field": "pin_name",
+   "searched": "Pulse collection pages, DPB post; 3 queries",
+   "note": "two Pulse collection entries title the gold as 'Day - Gold'; DPB only says 'gold'; no gold product page seen; scene leans Day, not confirmed by maker"
+  },
+  {
+   "key": "lic/2021/artland-ben-harman-hunchback",
+   "field": "edition_size",
+   "searched": "DPB post, Pulse Night two-tone page",
+   "note": "reconfirmed 150 = 50 Day two-tone + 50 Night two-tone + 50 gold; no conflicting counts"
+  },
+  {
+   "key": "lic/2021/artland-ben-harman-101-dalmatians-aristocats",
+   "field": "release_date",
+   "searched": "DPB post, Bottleneck, MickeyBlog; 1 query",
+   "note": "resolved lead: Apr 2021 Ben Harman 101 Dalmatians/Aristocats items were screen prints (Bottleneck, 21 Apr 2021), not pins; DPB pin date Nov 2021 stands"
+  },
+  {
+   "key": "lic/2021/artland-ben-harman-101-dalmatians-aristocats",
+   "field": "scope",
+   "searched": "Bottleneck Gallery news, MickeyBlog",
+   "note": "scope: confirmed button/badge/non-pin (Apr 2021 Bottleneck Ben Harman Disney releases are art prints/posters, not pins)"
+  },
+  {
+   "key": "lic/2021/artland-pixar-mystery-wave-1",
+   "field": "members",
+   "searched": "DPB, DisTradingPins4U, mypincentral, Pulse; 9 queries",
+   "note": "no new names; second LE 100 chaser still unnamed; no per-design listings for Edna, Guido, Gypsy, Heimlich, Russell, Buf; holds kept"
+  },
+  {
+   "key": "lic/2021/artland-pixar-mystery-wave-1/frozone",
+   "field": "set_link",
+   "searched": "retailer item-number search (152678); 2 queries",
+   "note": "hold kept: no Frozone listing with wave/date found; adjacency to M-O item no. not confirmed"
+  },
+  {
+   "key": "lic/2021/artland-pixar-mystery-wave-1/m-o",
+   "field": "set_link",
+   "searched": "DisTradingPins4U listing; 3 queries",
+   "note": "hold kept: chaser listing says 10-pin Pixar mystery set but no wave or date; DPB wave 1 list omits M-O"
+  },
+  {
+   "key": "lic/2021/artland-pixar-mystery-wave-1/gypsy",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: DPB says 'Gypsy & Heimlich'; one pin vs two designs still unknown; no per-design listing"
+  },
+  {
+   "key": "lic/2022/artland-pixar-mystery-wave-2",
+   "field": "members",
+   "searched": "DPB, Pulse, Pins N More, mypincentral; 5 queries",
+   "note": "no new per-design listings; Boo/Waternoose/Jack-Jack/Dash remain feature mentions (holds kept); chasers unnamed; Mike/Randall/Roz not tied to ArtLand"
+  },
+  {
+   "key": "lic/2022/artland-pixar-mystery-wave-2",
+   "field": "members",
+   "searched": "mypincentral 97617",
+   "note": "lead: Theodore Pauley (Monsters, Inc.) pin with ARTLAND / Disney Pixar back; no wave, chaser or date stated; no record created"
+  },
+  {
+   "key": "lic/2021/artland-princess-friends-series-3",
+   "field": "expected_pin_count",
+   "searched": "DPB post, Pulse ArtLand pages; 2 queries",
+   "note": "post says series features Elsa/Bruni and Mulan/Cri-Kee (LE 250 each) and names no others; no explicit total stated, count not recorded"
+  },
+  {
+   "key": "lic/2021/artland-neo-nouveau-series-2",
+   "field": "expected_pin_count",
+   "searched": "DPB post, Pulse; 3 queries",
+   "note": "DPB says S2 features Cinderella, Belle, Elsa, Jasmine, Tiana (LE 300) but intro still swaps Aurora for Cinderella; no explicit total; count not recorded"
+  },
+  {
+   "key": "lic/2022/artland-floral-series-1/jasmine",
+   "field": "manufacturer",
+   "searched": "PopCultArt, DPB; 2 queries",
+   "note": "conflict kept: PopCultArt credits itself on Jasmine and Pluto but 'designed by ArtLand' on Zootopia pins; DPB credits ArtLand; no maker statement found"
+  }
+ ],
+ "discovery_notes": "Follow-up 4 to packets 242/266/290/314; reuses their keys, no new pin keys. Resolved: 101 Dalmatians/Aristocats Apr 2021 date was Ben Harman prints, not pins (Nov 2021 stands). Hunchback gold titled 'Day - Gold' on two Pulse collection pages (price conflict 85/110 GBP). All Pixar w1/w2 holds, Frozone/M-O wave links, Floral Jasmine maker kept. P&F S3 and Neo Nouveau S2 totals still unstated. Lead: ArtLand Pauley pin. 26 searches."
+}

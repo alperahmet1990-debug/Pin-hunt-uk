@@ -417,6 +417,43 @@ export default function ScanScreen() {
     });
   };
 
+  // ── Ready to scan: a full-screen camera (#392) ──────────────────────────────
+  // Like the iPhone camera: the frame in the middle, the shutter bottom-middle
+  // with the library on its left and the torch on its right, above the tab
+  // bar. Search sits at the top. Once a photo is taken the screen below takes
+  // over (identifying, matches).
+  if (LIVE_CAMERA && scanState === 'idle') {
+    return (
+      <View style={[styles.root, styles.fullCamera]}>
+        <ScanCamera
+          active={focused}
+          onCapture={photo => { void handleAsset(photo); }}
+          onError={() => Alert.alert('Could not take the photo', 'Please try again, or choose a photo.')}
+          onLibrary={handleChoosePhoto}
+          controlsBottom={botPad}
+        />
+        <View pointerEvents="box-none" style={[styles.fullTop, { top: topPad + 8 }]}>
+          <Text accessibilityRole="header" style={styles.fullTitle}>Find a Pin</Text>
+          <TouchableOpacity
+            onPress={() => router.push('/search')}
+            activeOpacity={0.85}
+            accessibilityRole="button"
+            style={styles.fullSearch}
+          >
+            <Feather name="search" size={16} color="#fff" />
+            <Text style={styles.fullSearchText}>Search by name instead</Text>
+          </TouchableOpacity>
+          {errorMsg && (
+            <View style={[styles.errorBanner, styles.fullError, { backgroundColor: colors.homeSurface, borderColor: colors.destructive + '40' }]}>
+              <Feather name="alert-circle" size={14} color={colors.destructive} />
+              <Text style={[styles.errorText, { color: colors.destructive }]}>{errorMsg}</Text>
+            </View>
+          )}
+        </View>
+      </View>
+    );
+  }
+
   return (
     <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
       <ScrollView
@@ -447,14 +484,6 @@ export default function ScanScreen() {
               { height: viewfinderHeight, backgroundColor: '#0a0a18', borderRadius: 18, opacity: shutterAnim },
             ]}
           >
-            {scanState === 'idle' && LIVE_CAMERA && (
-              <ScanCamera
-                active={focused && scanState === 'idle'}
-                onCapture={photo => { void handleAsset(photo); }}
-                onError={() => Alert.alert('Could not take the photo', 'Please try again, or choose a photo.')}
-              />
-            )}
-
             {scanState === 'idle' && !LIVE_CAMERA && (
               <TouchableOpacity
                 style={styles.viewfinderPlaceholder}
@@ -658,6 +687,16 @@ export default function ScanScreen() {
 // ─── Styles ──────────────────────────────────────────────────────────────────
 
 const styles = StyleSheet.create({
+  // Full-screen camera (#392)
+  fullCamera: { backgroundColor: '#0a0a18' },
+  fullTop: { position: 'absolute', left: 16, right: 16, gap: 10 },
+  fullTitle: { color: '#fff', fontSize: 24, fontFamily: 'Inter_700Bold', textShadowColor: 'rgba(0,0,0,0.5)', textShadowRadius: 6 },
+  fullSearch: {
+    flexDirection: 'row', alignItems: 'center', gap: 8, alignSelf: 'stretch', minHeight: 44,
+    paddingHorizontal: 14, borderRadius: 999, backgroundColor: 'rgba(0,0,0,0.45)',
+  },
+  fullSearchText: { color: '#fff', fontSize: 14, fontFamily: 'Inter_500Medium' },
+  fullError: { marginHorizontal: 0 },
   scanNext: { gap: 6, marginTop: 4, marginHorizontal: 16 },
   scanNextCount: { fontSize: 12.5, fontFamily: 'Inter_500Medium', textAlign: 'center' },
   root: { flex: 1 },

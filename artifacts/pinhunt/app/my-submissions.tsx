@@ -25,6 +25,7 @@ import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { radius, spacing } from '@/constants/theme';
 import type { PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
+import { submissionDisplayName } from '@/utils/suggestPin';
 
 /** Lifetime of signed image URLs (seconds). */
 const SIGNED_URL_TTL_SECONDS = 3600;
@@ -100,7 +101,7 @@ function SubmissionCard({
       <View style={styles.cardInfo}>
         <View style={styles.cardNameRow}>
           <Text style={[styles.cardName, { color: colors.homeInk, flex: 1 }]} numberOfLines={2}>
-            {submission.proposedName}
+            {submissionDisplayName(submission)}
           </Text>
           {isUnseen && (
             <View style={[styles.newBadge, { backgroundColor: sColor }]}>
@@ -333,7 +334,7 @@ export default function MySubmissionsScreen() {
   const handleDelete = (submission: PinSubmission) => {
     Alert.alert(
       'Delete Draft',
-      `Delete "${submission.proposedName}"? This also removes the uploaded photos and cannot be undone.`,
+      `Delete "${submissionDisplayName(submission)}"? This also removes the uploaded photos and cannot be undone.`,
       [
         { text: 'Cancel', style: 'cancel' },
         {

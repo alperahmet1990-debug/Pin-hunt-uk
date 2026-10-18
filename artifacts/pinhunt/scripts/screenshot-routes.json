@@ -91,6 +91,15 @@
     "click": "Select all"
   },
   {
+    "name": "add-pin",
+    "path": "/add-pin"
+  },
+  {
+    "name": "add-pin-photo",
+    "path": "/add-pin",
+    "upload": "Choose from Library"
+  },
+  {
     "name": "find-trades",
     "path": "/find-trades"
   }

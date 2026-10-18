@@ -1,13 +1,20 @@
 /**
- * Add Pin — "Suggest a missing pin" in three short steps (UX-011, #121).
+ * Add Pin — photo-first (Early Contributor Programme, #394; was UX-011, #121).
  *
  * Steps:
- *  0 — About: what happens to a suggestion (admin review, you're notified)
- *  1 — Front photo (required; back photo is a later addition)
- *  2 — Details: only the name is required. Set (with suggestions from the
- *      catalogue's sets), year and characters (pre-filled from a scan) are
- *      optional; everything else sits under "More details". An "Already in the catalogue?" check runs on the name.
- *  then — Confirmation
+ *  0 — Photo: the front photo and the image-rights tick are the only
+ *      required inputs. "Take Photo" opens the full-screen pin camera
+ *      (#392) on iOS/Android. While the photo is cleaned up, the AI scan
+ *      runs on it and offers "Is it one of these?" (a match opens that pin
+ *      instead of creating a submission). Submit works from here.
+ *  1 — Details, all optional: name, set, year and characters, prefilled
+ *      from the AI's guesses (marked as suggestions); the rest under
+ *      "More details". An "Already in the catalogue?" check runs on the name.
+ *  then — Confirmation ("Unidentified pin" when no name was given)
+ *
+ * The AI never blocks: a scan failure, timeout or daily cap just hides the
+ * suggestions. What it suggested goes with the submission as hints for the
+ * admin's duplicate check (`aiIdentification`).
  *
  * Submits via POST /pin-submissions on the API server rather than talking
  * to Supabase directly — the server runs the front photo through Pixian.ai
@@ -47,7 +54,11 @@ import { API_BASE } from '@/lib/apiBase';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { PinImage } from '@/components/ui/PinImage';
 import { getPinImageSource } from '@/utils/pinImage';
-import { localDuplicateCandidates, MIN_DUPLICATE_QUERY, scanHint, setSuggestions, UNKNOWN_BRAND } from '@/utils/suggestPin';
+import { localDuplicateCandidates, MIN_DUPLICATE_QUERY, scanHint, setSuggestions, submissionDisplayName } from '@/utils/suggestPin';
+import { identifyPin } from '@/utils/identifyPin';
+import { sharedCandidateSet } from '@/utils/scanRecovery';
+import { FullScreenCamera } from '@/components/scan/FullScreenCamera';
+import type { ScanCameraPhoto } from '@/components/scan/ScanCamera';
 import type { CataloguePin } from '@workspace/pin-repository';
 import { radius, spacing } from '@/constants/theme';
 
@@ -64,12 +75,19 @@ const EDITION_TYPES = [
 
 type EditionValue = (typeof EDITION_TYPES)[number]['value'];
 
-const STEPS = ['About', 'Photo', 'Details'];
+const STEPS = ['Photo', 'Details'];
+
+/** The live pin camera is native-only; web keeps the photo picker. */
+const LIVE_CAMERA = Platform.OS !== 'web';
+
+const RIGHTS_TEXT = 'I took this photo and PinHunt may use it as this pin\u2019s catalogue image.';
+
+interface AiMatch { pin: CataloguePin; confidence: number }
+type AiStatus = 'off' | 'running' | 'done' | 'unavailable';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 interface FormErrors {
-  proposedName?: string;
   releaseYear?: string;
   editionSize?: string;
 }
@@ -107,36 +125,6 @@ function StepIndicator({ current, colors }: { current: number; colors: ReturnTyp
           </React.Fragment>
         );
       })}
-    </View>
-  );
-}
-
-// ─── About step ───────────────────────────────────────────────────────────────
-
-const NEXT_STEPS: Array<{ icon: React.ComponentProps<typeof Feather>['name']; text: string }> = [
-  { icon: 'camera', text: 'Add a clear photo of the front of the pin.' },
-  { icon: 'edit-3', text: 'Give it a name. Everything else is optional.' },
-  { icon: 'check-circle', text: "An admin checks it. We'll let you know when it's in the catalogue." },
-];
-
-function IntroStep({ colors }: { colors: ReturnType<typeof useColors> }) {
-  return (
-    <View style={styles.photoStep}>
-      <Text accessibilityRole="header" style={[styles.stepTitle, { color: colors.homeInk }]}>Help build the catalogue</Text>
-      <Text style={[styles.stepSub, { color: colors.homeMuted }]}>
-        Can{"\u2019"}t find a pin? Suggest it and it{"\u2019"}ll be added for every collector.
-      </Text>
-      <View style={[styles.introCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
-        <Text style={[styles.fieldLabel, { color: colors.homeMuted }]}>WHAT HAPPENS NEXT</Text>
-        {NEXT_STEPS.map(({ icon, text }) => (
-          <View key={icon} style={styles.introRow}>
-            <View style={[styles.introIcon, { backgroundColor: colors.homeCoral + '18' }]}>
-              <Feather name={icon} size={14} color={colors.homeCoral} />
-            </View>
-            <Text style={[styles.introText, { color: colors.homeInk }]}>{text}</Text>
-          </View>
-        ))}
-      </View>
     </View>
   );
 }
@@ -330,6 +318,87 @@ interface FrontPreview {
   cleanupSkipped?: 'off' | 'failed';
 }
 
+// ─── Image rights (#394) ──────────────────────────────────────────────────────
+
+function RightsCheck({ checked, onToggle, colors }: {
+  checked: boolean;
+  onToggle: () => void;
+  colors: ReturnType<typeof useColors>;
+}) {
+  return (
+    <TouchableOpacity
+      onPress={onToggle}
+      activeOpacity={0.85}
+      accessibilityRole="checkbox"
+      accessibilityState={{ checked }}
+      accessibilityLabel={RIGHTS_TEXT}
+      style={[styles.rights, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+    >
+      <View style={[
+        styles.rightsBox,
+        { borderColor: checked ? colors.homeCoral : colors.homeMuted, backgroundColor: checked ? colors.homeCoral : 'transparent' },
+      ]}>
+        {checked && <Feather name="check" size={14} color={colors.homeSurface} />}
+      </View>
+      <Text style={[styles.rightsText, { color: colors.homeInk }]}>{RIGHTS_TEXT}</Text>
+    </TouchableOpacity>
+  );
+}
+
+// ─── "Is it one of these?" (#394) ─────────────────────────────────────────────
+
+function AiMatches({ status, matches, onOpen, colors }: {
+  status: AiStatus;
+  matches: AiMatch[];
+  onOpen: (pin: CataloguePin) => void;
+  colors: ReturnType<typeof useColors>;
+}) {
+  if (status === 'off') return null;
+  if (status === 'unavailable' || (status === 'done' && matches.length === 0)) {
+    return (
+      <Text testID="ai-unavailable" style={[styles.aiQuiet, { color: colors.homeMuted }]}>
+        No suggestions for this photo. You can still submit it.
+      </Text>
+    );
+  }
+  return (
+    <View testID="ai-matches" style={[styles.aiCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+      <View style={styles.aiHead}>
+        <Text accessibilityRole="header" style={[styles.aiTitle, { color: colors.homeInk }]}>Is it one of these?</Text>
+        <Text style={[styles.aiTag, { color: colors.homeMuted }]}>AI suggestions</Text>
+      </View>
+      {status === 'running' ? (
+        <View style={styles.aiLoading}>
+          <ActivityIndicator color={colors.homeCoral} />
+          <Text style={[styles.aiQuiet, { color: colors.homeMuted }]}>Looking for matches…</Text>
+        </View>
+      ) : (
+        <>
+          <View style={styles.aiRow}>
+            {matches.map(m => (
+              <TouchableOpacity
+                key={m.pin.id}
+                onPress={() => onOpen(m.pin)}
+                activeOpacity={0.8}
+                accessibilityRole="button"
+                accessibilityLabel={`${m.pin.title}, ${Math.round(m.confidence)}% match. Open this pin`}
+                style={[styles.aiItem, { borderColor: colors.homeLine }]}
+              >
+                <PinImage source={getPinImageSource(m.pin)} style={[styles.aiThumb, { backgroundColor: colors.homeAqua }]} contentFit="contain" />
+                <Text style={[styles.aiName, { color: colors.homeInk }]} numberOfLines={2}>{m.pin.title}</Text>
+                <Text style={[styles.aiPct, { color: colors.homeMuted }]}>{Math.round(m.confidence)}% match</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+          <Text style={[styles.aiQuiet, { color: colors.homeMuted }]}>
+            Tap one if it{"\u2019"}s your pin: you can add it to your collection or give it your photo. Not there? Just submit.
+          </Text>
+        </>
+      )}
+    </View>
+  );
+}
+
 // ─── Main screen ──────────────────────────────────────────────────────────────
 
 export default function AddPinScreen() {
@@ -350,15 +419,28 @@ export default function AddPinScreen() {
     brandHint?: string;
     setHint?: string;
   }>();
-  const nameHint = scanHint(rawNameHint);
-  const brandHint = scanHint(rawBrandHint);
-  const setHint = scanHint(rawSetHint);
-  /** Something from the scan was filled in, so ask the collector to check it. */
-  const filledFromScan = Boolean(nameHint || brandHint || setHint || handoffCharacters);
+  // The AI's guesses, from the scan screen's hand-off or this screen's own
+  // scan of the photo: filled in to start with, a chip brings one back (#301).
+  const [hints, setHints] = useState(() => ({
+    name: scanHint(rawNameHint), brand: scanHint(rawBrandHint), set: scanHint(rawSetHint),
+    characters: Boolean(handoffCharacters),
+  }));
+  const { name: nameHint, brand: brandHint, set: setHint } = hints;
+  /** Something from the AI was filled in, so ask the collector to check it. */
+  const filledFromScan = Boolean(nameHint || brandHint || setHint || hints.characters);
 
   const [step, setStep] = useState(0);
+  const [cameraOpen, setCameraOpen] = useState(false);
+  const [rightsConfirmed, setRightsConfirmed] = useState(false);
 
-  // Photos: the front (required) and the back (optional, admins only, #257).
+  // "Is it one of these?": the AI scan of the front photo.
+  const [aiStatus, setAiStatus] = useState<AiStatus>('off');
+  const [aiMatches, setAiMatches] = useState<AiMatch[]>([]);
+  const aiRun = useRef(0);
+  // A photo handed over by the scan screen was already identified there.
+  const frontFromHandoff = useRef(false);
+
+  // Photos: the front (required) and the back (optional, #257; only admins see it).
   const [front, setFront] = useState<PickedImage | null>(null);
   const [back, setBack] = useState<PickedImage | null>(null);
   // Cleaned-up preview of `front` from the server (Pixian + watermark).
@@ -399,7 +481,9 @@ export default function AddPinScreen() {
       Image.getSize(
         handoffUri,
         (width, height) => {
-          compressSubmissionImage(handoffUri, width, height).then(setFront).catch(() => {});
+          compressSubmissionImage(handoffUri, width, height)
+            .then(img => { frontFromHandoff.current = true; setFront(img); })
+            .catch(() => {});
         },
         () => {
           // Handoff photo couldn't be read (e.g. a stale temp file) — fall
@@ -452,6 +536,46 @@ export default function AddPinScreen() {
       .finally(() => { if (seq === previewSeq.current) setPreviewing(false); });
   }, [front, session?.access_token]);
 
+  // ── AI scan ──────────────────────────────────────────────────────────────────
+  // Runs alongside the clean-up. Its guesses fill only empty fields, and any
+  // failure (offline, timeout, daily cap) just hides the suggestions.
+  useEffect(() => {
+    setAiMatches([]);
+    if (!front || frontFromHandoff.current) { setAiStatus('off'); return; }
+    const run = ++aiRun.current;
+    setAiStatus('running');
+    identifyPin(front.base64, 'image/jpeg', session?.access_token)
+      .then(async ({ matches, imageInsights }) => {
+        const resolved = (await Promise.all(matches.slice(0, 3).map(async m => {
+          let pin = pins.find(p => p.id === m.pinId) ?? null;
+          if (!pin && repository) pin = await repository.getPinById(m.pinId).catch(() => null);
+          return pin ? { pin, confidence: m.confidence } : null;
+        }))).filter((m): m is AiMatch => m !== null);
+        if (run !== aiRun.current) return;
+        setAiMatches(resolved);
+        setAiStatus('done');
+
+        const guess = {
+          name: scanHint(imageInsights?.textOnPin ?? ''),
+          brand: scanHint(imageInsights?.logos[0] ?? ''),
+          set: scanHint(sharedCandidateSet(resolved.map(m => m.pin.collection)) ?? ''),
+          characters: (imageInsights?.characters ?? []).join(', '),
+        };
+        // Keep earlier guesses where this scan has none.
+        setHints(h => ({
+          name: guess.name || h.name, brand: guess.brand || h.brand, set: guess.set || h.set,
+          characters: h.characters || Boolean(guess.characters),
+        }));
+        setProposedName(v => v || guess.name);
+        setBrand(v => v || guess.brand);
+        setSeriesName(v => v || guess.set);
+        setCharacterNames(v => v || guess.characters);
+      })
+      .catch(() => { if (run === aiRun.current) setAiStatus('unavailable'); });
+    // Re-run only for a new photo.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [front]);
+
   const previewStatus: PreviewStatus = !front ? 'none'
     : previewing ? 'processing'
     : frontPreview?.cleaned ? 'ready'
@@ -490,9 +614,21 @@ export default function AddPinScreen() {
   const setOptions = setSuggestions(allSets ?? series, seriesName);
 
   // ── Photo picker ─────────────────────────────────────────────────────────────
+  const acceptFront = (img: PickedImage) => {
+    frontFromHandoff.current = false;
+    setFront(img);
+  };
   const pickFront = async (source: 'camera' | 'library') => {
+    if (source === 'camera' && LIVE_CAMERA) { setCameraOpen(true); return; }
     const img = await pickSubmissionImage(source);
-    if (img) setFront(img);
+    if (img) acceptFront(img);
+  };
+  /** From the full-screen camera: already cropped to its frame. */
+  const onCameraPhoto = (photo: ScanCameraPhoto) => {
+    setCameraOpen(false);
+    compressSubmissionImage(photo.uri, photo.width, photo.height)
+      .then(acceptFront)
+      .catch(() => Alert.alert('Could not read the photo', 'Please try again, or choose a photo.'));
   };
   const pickBack = async (source: 'camera' | 'library') => {
     const img = await pickSubmissionImage(source);
@@ -502,7 +638,6 @@ export default function AddPinScreen() {
   // ── Validation ──────────────────────────────────────────────────────────────
   const validate = (): boolean => {
     const errs: FormErrors = {};
-    if (!proposedName.trim()) errs.proposedName = 'Give the pin a name.';
     if (releaseYear.trim()) {
       const y = parseInt(releaseYear, 10);
       if (isNaN(y) || y < 1900 || y > 2030) errs.releaseYear = 'Enter a year between 1900 and 2030.';
@@ -517,11 +652,11 @@ export default function AddPinScreen() {
 
   // ── Navigation ──────────────────────────────────────────────────────────────
   const goNext = () => {
-    if (step === 1 && !front) {
+    if (step === 0 && !front) {
       Alert.alert('Front photo required', 'Please add a front photo before continuing.');
       return;
     }
-    if (step === 1 && previewing) return;
+    if (step === 0 && previewing) return;
     setStep(s => s + 1);
   };
   const goBack = () => setStep(s => s - 1);
@@ -536,6 +671,7 @@ export default function AddPinScreen() {
       Alert.alert('Front photo required', 'Please add a front photo before submitting.');
       return;
     }
+    if (!rightsConfirmed) return;
     if (!validate()) return;
 
     const characters = characterNames.trim()
@@ -552,9 +688,9 @@ export default function AddPinScreen() {
           Authorization: `Bearer ${session.access_token}`,
         },
         body: JSON.stringify({
-          proposedName:     proposedName.trim(),
-          // Required by the server; optional for collectors (UX-011).
-          brand:            brand.trim() || UNKNOWN_BRAND,
+          // Both optional: a photo alone is a valid submission (#393).
+          proposedName:     proposedName.trim() || undefined,
+          brand:            brand.trim() || undefined,
           seriesName:       seriesName.trim() || undefined,
           releaseLocation:  releaseLocation.trim() || undefined,
           releaseYear:      releaseYear.trim() ? parseInt(releaseYear, 10) : undefined,
@@ -570,6 +706,11 @@ export default function AddPinScreen() {
           // Stored as taken, for the admin only (#257).
           ...(back ? { backImageBase64: back.base64 } : {}),
           notes:            notes.trim() || undefined,
+          rightsConfirmed:  true,
+          aiIdentification: aiStatus === 'done' ? {
+            matches: aiMatches.map(m => ({ pinId: m.pin.id, confidence: m.confidence })),
+            suggested: { name: hints.name || undefined, brand: hints.brand || undefined, setName: hints.set || undefined },
+          } : undefined,
         }),
       });
       const data = await res.json();
@@ -605,7 +746,7 @@ export default function AddPinScreen() {
           </View>
           <Text style={[styles.confirmTitle, { color: colors.homeInk }]}>Pin Submitted!</Text>
           <Text style={[styles.confirmSub, { color: colors.homeMuted }]}>
-            "{proposedName}" has been submitted for review. We'll let you know once an admin has checked it — you can track its status under My Submissions.
+            "{submissionDisplayName({ proposedName })}" has been submitted for review. We'll let you know once an admin has checked it — you can track its status under My Submissions.
           </Text>
           <TouchableOpacity
             onPress={finish}
@@ -622,8 +763,9 @@ export default function AddPinScreen() {
               setSeriesName(''); setReleaseLocation(''); setReleaseYear('');
               setEditionType('unknown'); setEditionSize('');
               setFacNumber(''); setSku(''); setNotes('');
-              // Another suggestion skips the About step.
-              setShowMore(false); setStep(1); setDone(false);
+              setRightsConfirmed(false); setAiStatus('off'); setAiMatches([]);
+              setHints({ name: '', brand: '', set: '', characters: false });
+              setShowMore(false); setStep(0); setDone(false);
             }}
             activeOpacity={0.7}
             style={styles.confirmSecondary}
@@ -704,7 +846,7 @@ export default function AddPinScreen() {
           <Image source={{ uri: shownFrontUri ?? front.uri }} style={[styles.detailsThumb, { borderRadius: radius.md }]} resizeMode="cover" />
           <View style={{ flex: 1 }}>
             <Text accessibilityRole="header" style={[styles.stepTitle, { color: colors.homeInk }]}>About this pin</Text>
-            <Text style={[styles.stepSub, { color: colors.homeMuted }]}>Only the name is needed. Add anything else you know.</Text>
+            <Text style={[styles.stepSub, { color: colors.homeMuted }]}>All optional. Add anything you know; {"\u201c"}unidentified{"\u201d"} is fine.</Text>
           </View>
         </View>
       )}
@@ -716,18 +858,15 @@ export default function AddPinScreen() {
         >
           <Feather name="camera" size={14} color={colors.homeCoral} />
           <Text style={[styles.scanNoteText, { color: colors.homeInk }]}>
-            Filled in from your scan. Check it before you submit.
+            Suggested from your photo. Check it before you submit.
           </Text>
         </View>
       )}
 
-      {field('Pin name', true, (
+      {field('Pin name', false, (
         <>
-          {inp(proposedName, setProposedName, 'e.g. Dumbo Blue Sky', { errKey: 'proposedName' })}
-          {scanChip(nameHint, proposedName, 'name', () => {
-            setProposedName(nameHint);
-            setErrors(e => ({ ...e, proposedName: undefined }));
-          })}
+          {inp(proposedName, setProposedName, 'e.g. Dumbo Blue Sky')}
+          {scanChip(nameHint, proposedName, 'name', () => setProposedName(nameHint))}
         </>
       ))}
 
@@ -844,16 +983,24 @@ export default function AddPinScreen() {
     </View>
   );
 
+  const rights = <RightsCheck checked={rightsConfirmed} onToggle={() => setRightsConfirmed(c => !c)} colors={colors} />;
+
   const stepContent = [
-    <IntroStep key="intro" colors={colors} />,
-    <View key="front">
+    <View key="front" style={{ gap: spacing.lg }}>
       <PhotoStep
-        title="Front photo"
-        subtitle="Photograph the front of the pin clearly, so an admin can check it."
+        title="Photograph your pin"
+        subtitle="Just the front is needed. Our team checks every pin before it goes live."
         uri={shownFrontUri}
         status={previewStatus}
         onCamera={() => pickFront('camera')}
         onLibrary={() => pickFront('library')}
+        colors={colors}
+      />
+      {front && rights}
+      <AiMatches
+        status={aiStatus}
+        matches={aiMatches}
+        onOpen={pin => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })}
         colors={colors}
       />
       <BackPhotoCard
@@ -864,12 +1011,45 @@ export default function AddPinScreen() {
         colors={colors}
       />
     </View>,
-    renderDetails(),
+    <View key="details" style={{ gap: spacing.lg }}>
+      {renderDetails()}
+      {rights}
+    </View>,
   ][step];
+
+  const canSubmit = Boolean(front) && rightsConfirmed && !previewing;
+  const submitButton = saving ? (
+    <View style={[styles.navBtn, styles.navBtnPrimary]}>
+      <ActivityIndicator color={colors.homeCoral} />
+    </View>
+  ) : (
+    <TouchableOpacity
+      onPress={handleSubmit}
+      disabled={!canSubmit}
+      activeOpacity={0.85}
+      accessibilityRole="button"
+      accessibilityLabel="Submit for review"
+      accessibilityState={{ disabled: !canSubmit }}
+      style={[styles.navBtn, styles.navBtnPrimary, { backgroundColor: colors.homeCoral, opacity: canSubmit ? 1 : 0.45 }]}
+    >
+      <Feather name="send" size={16} color={colors.homeSurface} />
+      <Text style={[styles.navBtnLabel, { color: colors.homeSurface }]}>Submit pin</Text>
+    </TouchableOpacity>
+  );
 
   return (
     <>
-      <Stack.Screen options={{ title: 'Suggest a pin' }} />
+      <Stack.Screen options={{ title: 'Add a pin' }} />
+      {LIVE_CAMERA && (
+        <FullScreenCamera
+          visible={cameraOpen}
+          onClose={() => setCameraOpen(false)}
+          onCapture={onCameraPhoto}
+          onError={() => Alert.alert('Could not take the photo', 'Please try again, or choose a photo.')}
+          onLibrary={() => { void pickFront('library'); }}
+          coach="Front of the pin, fill the frame"
+        />
+      )}
       {/* Scrolls the focused field above the keyboard (UX-011). */}
       <KeyboardAwareScrollViewCompat
         style={{ flex: 1, backgroundColor: colors.homeBackground }}
@@ -894,36 +1074,24 @@ export default function AddPinScreen() {
                 <Text style={[styles.navBtnLabel, { color: colors.homeInk }]}>Back</Text>
               </TouchableOpacity>
             )}
-            {step < 2 ? (
+            {step === 0 && (
               <TouchableOpacity
                 onPress={goNext}
                 activeOpacity={0.85}
                 accessibilityRole="button"
-                accessibilityLabel={step === 0 ? 'Get started' : 'Next'}
-                style={[styles.navBtn, styles.navBtnPrimary, { backgroundColor: colors.homeCoral }]}
+                accessibilityLabel="Add details"
+                style={[styles.navBtn, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
               >
-                <Text style={[styles.navBtnLabel, { color: colors.homeSurface }]}>
-                  {step === 0 ? 'Get started' : 'Next'}
-                </Text>
-                <Feather name="arrow-right" size={16} color={colors.homeSurface} />
-              </TouchableOpacity>
-            ) : saving ? (
-              <View style={[styles.navBtn, styles.navBtnPrimary]}>
-                <ActivityIndicator color={colors.homeCoral} />
-              </View>
-            ) : (
-              <TouchableOpacity
-                onPress={handleSubmit}
-                activeOpacity={0.85}
-                accessibilityRole="button"
-                accessibilityLabel="Submit for review"
-                style={[styles.navBtn, styles.navBtnPrimary, { backgroundColor: colors.homeCoral }]}
-              >
-                <Feather name="send" size={16} color={colors.homeSurface} />
-                <Text style={[styles.navBtnLabel, { color: colors.homeSurface }]}>Submit</Text>
+                <Text style={[styles.navBtnLabel, { color: colors.homeInk }]}>Add details</Text>
               </TouchableOpacity>
             )}
+            {submitButton}
           </View>
+          {front && !rightsConfirmed && (
+            <Text testID="rights-needed" style={[styles.submitHint, { color: colors.homeMuted }]}>
+              Tick the photo confirmation to submit.
+            </Text>
+          )}
       </KeyboardAwareScrollViewCompat>
     </>
   );
@@ -1003,11 +1171,22 @@ const styles = StyleSheet.create({
   editionBtn: { paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderWidth: 1, borderRadius: radius.sm - 2 },
   editionBtnLabel: { fontSize: 12, fontFamily: 'Inter_500Medium' },
 
-  // About
-  introCard: { borderWidth: 1, borderRadius: radius.md, padding: spacing.md + 2, gap: spacing.md },
-  introRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
-  introIcon: { width: 30, height: 30, borderRadius: 15, alignItems: 'center', justifyContent: 'center' },
-  introText: { flex: 1, fontSize: 14, lineHeight: 20, fontFamily: 'Inter_500Medium' },
+  // Image rights + AI suggestions (#394)
+  rights: { flexDirection: 'row', alignItems: 'flex-start', gap: spacing.md, borderWidth: 1, borderRadius: radius.md, padding: spacing.md, minHeight: 44 },
+  rightsBox: { width: 22, height: 22, borderRadius: 6, borderWidth: 2, alignItems: 'center', justifyContent: 'center', marginTop: 1 },
+  rightsText: { flex: 1, fontSize: 13.5, lineHeight: 19, fontFamily: 'Inter_500Medium' },
+  aiCard: { borderWidth: 1, borderRadius: radius.lg, padding: spacing.md, gap: spacing.sm + 2 },
+  aiHead: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  aiTitle: { fontSize: 15, fontFamily: 'Inter_700Bold' },
+  aiTag: { fontSize: 12, fontFamily: 'Inter_400Regular' },
+  aiLoading: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, minHeight: 44 },
+  aiRow: { flexDirection: 'row', gap: spacing.sm + 2 },
+  aiItem: { flex: 1, alignItems: 'center', gap: 6, paddingVertical: spacing.sm, paddingHorizontal: 4, borderWidth: 1, borderRadius: radius.md, minHeight: 44 },
+  aiThumb: { width: 64, height: 64, borderRadius: radius.sm },
+  aiName: { fontSize: 11.5, lineHeight: 14, fontFamily: 'Inter_600SemiBold', textAlign: 'center' },
+  aiPct: { fontSize: 11, fontFamily: 'Inter_400Regular' },
+  aiQuiet: { fontSize: 12.5, lineHeight: 17, fontFamily: 'Inter_400Regular' },
+  submitHint: { fontSize: 12.5, fontFamily: 'Inter_400Regular', textAlign: 'center', marginTop: -spacing.md },
 
   // Details
   detailsHead: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },

@@ -57,7 +57,7 @@ beforeEach(() => {
 async function scanToResult() {
   await render(<ScanScreen />);
   // UX-008a (#115): picking the photo starts identification, no Identify tap.
-  await fireEvent.press(screen.getByRole('button', { name: 'Choose Photo' }));
+  await fireEvent.press(screen.getByRole('button', { name: 'Choose a photo from your library' }));
   await screen.findByRole('header', { name: 'Is this your pin?' }, { timeout: 3000 });
 }
 
@@ -170,7 +170,7 @@ describe('Scan result (UX-005)', () => {
     jest.spyOn(console, 'warn').mockImplementation(() => {});
     mockIdentify.mockRejectedValueOnce(new TypeError('Network request failed'));
     await render(<ScanScreen />);
-    await fireEvent.press(screen.getByRole('button', { name: 'Choose Photo' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Choose a photo from your library' }));
     expect(await screen.findByRole('alert', { name: "You're offline. Check your connection and try again." })).toBeTruthy();
     expect(screen.queryByText(/Network request failed/)).toBeNull();
     // Try again re-runs the identify with the same photo.
@@ -195,7 +195,7 @@ describe('Auto-identify after capture (UX-008a)', () => {
     const pending = deferred<typeof result>();
     mockIdentify.mockReturnValueOnce(pending.promise);
     await render(<ScanScreen />);
-    await fireEvent.press(screen.getByRole('button', { name: 'Choose Photo' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Choose a photo from your library' }));
     await waitFor(() => expect(mockIdentify).toHaveBeenCalledTimes(1));
     expect(screen.queryByRole('button', { name: 'Identify Pin' })).toBeNull();
     expect(screen.getByRole('button', { name: 'Retake' })).toBeTruthy();
@@ -208,7 +208,7 @@ describe('Auto-identify after capture (UX-008a)', () => {
     const pending = deferred<typeof result>();
     mockIdentify.mockReturnValueOnce(pending.promise);
     await render(<ScanScreen />);
-    await fireEvent.press(screen.getByRole('button', { name: 'Choose Photo' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Choose a photo from your library' }));
     await waitFor(() => expect(mockIdentify).toHaveBeenCalledTimes(1));
     await fireEvent.press(screen.getByRole('button', { name: 'Cancel' }));
     expect(screen.getByRole('button', { name: 'Identify Pin' })).toBeTruthy();

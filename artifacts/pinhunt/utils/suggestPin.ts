@@ -5,8 +5,12 @@
  */
 import type { CataloguePin } from '@workspace/pin-repository';
 
-/** The server and database require a brand; a blank one is sent as this. */
-export const UNKNOWN_BRAND = 'Unknown';
+/** A submission sent without a name (photo-only, #394) shows as this. */
+export const UNIDENTIFIED_PIN = 'Unidentified pin';
+
+export function submissionDisplayName(submission: { proposedName?: string | null }): string {
+  return submission.proposedName?.trim() || UNIDENTIFIED_PIN;
+}
 
 /** Names shorter than this don't trigger the already-in-the-catalogue check. */
 export const MIN_DUPLICATE_QUERY = 3;

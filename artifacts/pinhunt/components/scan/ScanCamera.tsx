@@ -10,6 +10,10 @@
  * refused for good → how to turn it on in Settings, while "Choose Photo"
  * below keeps scanning possible. Only rendered on iOS/Android; web keeps the
  * photo picker.
+ *
+ * Full screen (#392): with `onLibrary` the shutter row works like the iPhone
+ * camera: library on the left, shutter in the middle, torch on the right,
+ * lifted by `controlsBottom` to clear the tab bar or home indicator.
  */
 import React, { useRef, useState } from 'react';
 import { ActivityIndicator, Linking, StyleSheet, Text, TouchableOpacity, View, type LayoutChangeEvent } from 'react-native';
@@ -33,12 +37,18 @@ interface ScanCameraProps {
   onCapture: (photo: ScanCameraPhoto) => void;
   /** Taking or cropping the photo failed. */
   onError: () => void;
+  /** Shows a library button beside the shutter (full-screen layout, #392). */
+  onLibrary?: () => void;
+  /** Distance from the bottom edge to the shutter row. */
+  controlsBottom?: number;
+  /** The frame's coach line. */
+  coach?: string;
 }
 
 /** The frame's side as a share of the preview's shorter side. */
 export const FRAME_SHARE = 0.72;
 
-export function ScanCamera({ active, onCapture, onError }: ScanCameraProps) {
+export function ScanCamera({ active, onCapture, onError, onLibrary, controlsBottom = 14, coach = 'One pin, fill the frame' }: ScanCameraProps) {
   const colors = useColors();
   const [permission, requestPermission] = useCameraPermissions();
   const cameraRef = useRef<CameraView>(null);
@@ -72,6 +82,19 @@ export function ScanCamera({ active, onCapture, onError }: ScanCameraProps) {
     }
   };
 
+  const torchButton = (
+    <TouchableOpacity
+      onPress={() => setTorch(t => !t)}
+      accessibilityRole="switch"
+      accessibilityLabel="Torch"
+      accessibilityState={{ checked: torch }}
+      hitSlop={8}
+      style={[styles.round, torch && { backgroundColor: 'rgba(255,255,255,0.9)' }]}
+    >
+      <Feather name="zap" size={18} color={torch ? '#0a0a18' : '#fff'} />
+    </TouchableOpacity>
+  );
+
   // Still finding out whether we may use the camera.
   if (!permission) {
     return (
@@ -92,7 +115,7 @@ export function ScanCamera({ active, onCapture, onError }: ScanCameraProps) {
         <Text style={styles.messageBody}>
           {canAsk
             ? 'PinHunt uses the camera to identify pins you scan.'
-            : 'Turn on Camera for PinHunt in Settings, or choose a photo below.'}
+            : `Turn on Camera for PinHunt in Settings, or choose a photo${onLibrary ? '' : ' below'}.`}
         </Text>
         <Button
           label={canAsk ? 'Allow camera' : 'Open Settings'}
@@ -101,6 +124,10 @@ export function ScanCamera({ active, onCapture, onError }: ScanCameraProps) {
           fullWidth={false}
           onPress={() => (canAsk ? requestPermission() : Linking.openSettings())}
         />
+        {/* Full screen there's no "Choose Photo" below, so offer it here. */}
+        {onLibrary && (
+          <Button label="Choose Photo" icon="image" variant="secondary" size="compact" fullWidth={false} onPress={onLibrary} />
+        )}
       </View>
     );
   }
@@ -139,22 +166,23 @@ export function ScanCamera({ active, onCapture, onError }: ScanCameraProps) {
             ))}
           </View>
           <View style={[styles.coach, { top: Math.max(12, (size.height - frameSize) / 2 - 40) }]}>
-            <Text style={styles.coachText} accessibilityRole="text">One pin, fill the frame</Text>
+            <Text style={styles.coachText} accessibilityRole="text">{coach}</Text>
           </View>
         </View>
       )}
 
-      <View style={styles.bar}>
-        <TouchableOpacity
-          onPress={() => setTorch(t => !t)}
-          accessibilityRole="switch"
-          accessibilityLabel="Torch"
-          accessibilityState={{ checked: torch }}
-          hitSlop={8}
-          style={[styles.round, torch && { backgroundColor: 'rgba(255,255,255,0.9)' }]}
-        >
-          <Feather name="zap" size={18} color={torch ? '#0a0a18' : '#fff'} />
-        </TouchableOpacity>
+      <View style={[styles.bar, { bottom: controlsBottom }]}>
+        {onLibrary ? (
+          <TouchableOpacity
+            onPress={onLibrary}
+            accessibilityRole="button"
+            accessibilityLabel="Choose a photo from your library"
+            hitSlop={8}
+            style={styles.round}
+          >
+            <Feather name="image" size={18} color="#fff" />
+          </TouchableOpacity>
+        ) : torchButton}
         <TouchableOpacity
           onPress={capture}
           disabled={!ready || busy}
@@ -165,8 +193,8 @@ export function ScanCamera({ active, onCapture, onError }: ScanCameraProps) {
         >
           <View style={styles.shutterInner} />
         </TouchableOpacity>
-        {/* Balances the torch so the shutter sits in the middle. */}
-        <View style={styles.roundSpacer} />
+        {/* Balances the left button so the shutter sits in the middle. */}
+        {onLibrary ? torchButton : <View style={styles.roundSpacer} />}
       </View>
     </View>
   );
@@ -189,7 +217,7 @@ const styles = StyleSheet.create({
     color: '#fff', fontFamily: 'Inter_600SemiBold', fontSize: 14,
     backgroundColor: 'rgba(0,0,0,0.45)', paddingHorizontal: 12, paddingVertical: 5, borderRadius: 999, overflow: 'hidden',
   },
-  bar: { position: 'absolute', left: 0, right: 0, bottom: 14, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly' },
+  bar: { position: 'absolute', left: 0, right: 0, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly' },
   round: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.45)' },
   roundSpacer: { width: 44, height: 44 },
   shutter: { width: 68, height: 68, borderRadius: 34, borderWidth: 4, borderColor: '#fff', alignItems: 'center', justifyContent: 'center' },

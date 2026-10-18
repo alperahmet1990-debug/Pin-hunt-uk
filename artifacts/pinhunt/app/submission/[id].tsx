@@ -22,6 +22,7 @@ import { useMarketplace } from '@/hooks/useMarketplace';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { radius, spacing } from '@/constants/theme';
 import type { PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
+import { submissionDisplayName } from '@/utils/suggestPin';
 
 const STATUS_LABEL: Record<PinSubmissionStatus, string> = {
   draft:         'Draft',
@@ -243,7 +244,7 @@ export default function SubmissionDetailScreen() {
 
               {/* Details card */}
               <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.md }]}>
-                <InfoRow label="Pin Name"    value={submission.proposedName} />
+                <InfoRow label="Pin Name"    value={submissionDisplayName(submission)} />
                 <InfoRow label="Brand"       value={submission.brand} />
                 <InfoRow label="Characters"  value={submission.characterNames} />
                 <InfoRow label="Series"      value={submission.seriesName} />

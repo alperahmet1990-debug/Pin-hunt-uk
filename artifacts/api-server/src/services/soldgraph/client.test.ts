@@ -129,7 +129,7 @@ describe("soldgraph client", () => {
       deadlineMs: 5_000,
     });
     await expect(client.search("ebay/sold")).rejects.toBeInstanceOf(SoldgraphTimeoutError);
-    expect(store.records[0].status).toBe("timeout");
+    expect(store.records[0]).toMatchObject({ status: "timeout", credits: 1 });
   });
 
   it("surfaces a failed job with its error code", async () => {
@@ -140,12 +140,14 @@ describe("soldgraph client", () => {
     const err = await client.search("ebay/sold").catch((e) => e);
     expect(err).toBeInstanceOf(SoldgraphHttpError);
     expect(err.code).toBe("bad_query");
-    expect(store.records[0].status).toBe("failed");
+    // Failed searches are free (#403).
+    expect(store.records[0]).toMatchObject({ status: "failed", credits: 0 });
   });
 
   it("maps a failed job with a quota code to ProviderUnavailableError", async () => {
-    const { client } = setup([res(200, { status: "failed", error: { code: "upstream_daily_limit" } })]);
+    const { client, store } = setup([res(200, { status: "failed", error: { code: "upstream_daily_limit" } })]);
     await expect(client.search("ebay/sold")).rejects.toBeInstanceOf(ProviderUnavailableError);
+    expect(store.records[0]).toMatchObject({ status: "unavailable", credits: 0 });
   });
 
   it("honours Retry-After on 429 then succeeds", async () => {

@@ -206,6 +206,8 @@ export function createSoldgraphClient(options: SoldgraphClientOptions): Soldgrap
     maxAttempts: number;
     requestId: string | null;
     accepted: boolean;
+    // Soldgraph reported the job failed: failed searches cost no credit (#403).
+    jobFailed: boolean;
   }
 
   const fetchImpl = (): typeof fetch => options.fetch ?? fetch;
@@ -349,6 +351,7 @@ export function createSoldgraphClient(options: SoldgraphClientOptions): Soldgrap
       maxAttempts: opts.maxAttempts,
       requestId: null,
       accepted: false,
+      jobFailed: false,
     };
     let status: SoldgraphUsageStatus = "error";
     try {
@@ -375,6 +378,7 @@ export function createSoldgraphClient(options: SoldgraphClientOptions): Soldgrap
           return { rows, next, requestId: ctx.requestId };
         }
         if (body.status === "failed") {
+          ctx.jobFailed = true;
           throw failedJob(body, ctx, clock.now());
         }
         if (body.status !== "pending") {
@@ -410,7 +414,8 @@ export function createSoldgraphClient(options: SoldgraphClientOptions): Soldgrap
           requestId: ctx.requestId,
           idempotencyKey,
           status,
-          credits: ctx.accepted ? soldgraphCreditsForCall("search") : 0,
+          // Uncertain outcomes (timeout, error mid-poll) count, so the cap errs safe.
+          credits: ctx.accepted && !ctx.jobFailed ? soldgraphCreditsForCall("search") : 0,
           ...(opts.pinId ? { pinId: opts.pinId } : {}),
           occurredAt: new Date(clock.now()).toISOString(),
         });

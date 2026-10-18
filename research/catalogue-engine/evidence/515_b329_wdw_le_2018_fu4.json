@@ -1,0 +1,1548 @@
+{
+ "packet_id": "backfill-b329-wdw-le-2018-fu4",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b329",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+   "title": "New Disney Pins February 2018 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-february-2018-week-2/",
+   "title": "New Disney Pins February 2018 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+   "title": "New Disney Pins May 2018 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+   "title": "New Disney Pins May 2018 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2018-week-4",
+   "title": "New Disney Pins June 2018 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+   "title": "Toy Story Land Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+   "title": "Walt Disney World Star Wars Half Marathon Weekend 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/princess-half-marathon-weekend-2018-pins/",
+   "title": "Princess Half Marathon Weekend 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+   "title": "Walt Disney's Animation Celebration Event Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/wall-e-10th-anniversary-pin-collection/",
+   "title": "WALL-E 10th Anniversary Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2018/star-wars-vehicle",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+     "method": "search_snippet",
+     "note": "vehicle series pins released at both resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/may-the-4th",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "May the 4th 2018 surprise pin release",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "surprise Star Wars Day release"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "May 4, 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/solo-star-wars",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Solo: A Star Wars Story park pin release",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "Solo-themed LE pin, May 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/cinco-de-mayo-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cinco de Mayo 2018",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "holiday pin release"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05-03",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "May 3, 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/nurses-day-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Nurses Day 2018",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "holiday pin release"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05-03",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "May 3, 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/mothers-day-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mother's Day 2018",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "holiday pin release"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05-03",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "May 3, 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/independence-day-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Independence Day 2018",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2018-week-4",
+     "method": "search_snippet",
+     "note": "holiday pin"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/oe-single/toy-story-land-annual-passholder-open",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Annual Passholder Toy Story Land Pin Open",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "standalone OE"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/rundisney-star-wars-half",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Walt Disney World Star Wars Half Marathon Weekend 2018 pins",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "DPB roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "commemorative limited release pins"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney expo, ESPN Wide World of Sports",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "sold at the expo"
+    },
+    {
+     "field": "format",
+     "value": "individual pins",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "separate race and replica medal pins listed"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/rundisney-princess-half",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-02",
+     "source_url": "https://disneypinsblog.com/princess-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "event Feb 22-25, 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney expo, Walt Disney World",
+     "source_url": "https://disneypinsblog.com/princess-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "sold at the runDisney expo"
+    },
+    {
+     "field": "format",
+     "value": "individual pins",
+     "source_url": "https://disneypinsblog.com/princess-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "individual race pins (5K, 10K, 13.1, 19.3) plus replica medal pins"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/wall-e-10th-boxed-set",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Pin Trading Nights (Random Selection Process)",
+     "source_url": "https://disneypinsblog.com/wall-e-10th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "offered via RSP at June 2018 Pin Trading Nights"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2018/star-wars-vehicle/death-star",
+   "set_key": "wdw/2018/star-wars-vehicle",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Death Star pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+     "method": "search_snippet",
+     "note": "Death Star pin listed in shared DL/WDW releases"
+    },
+    {
+     "field": "set_position",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+     "method": "search_snippet",
+     "note": "10th pin in the Star Wars vehicle collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 6000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+     "method": "search_snippet",
+     "note": "limited edition of 6,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+     "method": "search_snippet",
+     "note": "retail $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+     "method": "search_snippet",
+     "note": "available Feb 1, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+     "method": "search_snippet",
+     "note": "shared release at both resorts"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+     "method": "search_snippet",
+     "note": "single monthly series pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/star-wars-vehicle/poes-x-wing",
+   "set_key": "wdw/2018/star-wars-vehicle",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Poe's X-Wing Fighter pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "named Poe's X-Wing Fighter Pin"
+    },
+    {
+     "field": "set_position",
+     "value": 13,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "13th pin in the Star Wars vehicle collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "limited edition of 4,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "retail $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "available May 4, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "shared release at both resorts"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "single monthly series pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/may-the-4th/millennium-falcon",
+   "set_key": "wdw/2018/may-the-4th",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Millennium Falcon May the 4th pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "surprise May the 4th pin featuring the Millennium Falcon"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "retail $14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "available May 4, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "surprise release at both resorts"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/solo-star-wars/chewie-is-my-copilot",
+   "set_key": "wdw/2018/solo-star-wars",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chewie is my Copilot pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "named Chewie is my Copilot"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chewbacca"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "features Chewie from Solo"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "Solo: A Star Wars Story"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "limited edition of 5,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "retail $16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "available May 4, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "shared release at both resorts"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2018-week-1",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/cinco-de-mayo-2018/cinco-de-mayo-pin",
+   "set_key": "wdw/2018/cinco-de-mayo-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinco de Mayo 2018 pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Cinco de Mayo 2018 pin in shared releases"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "The Three Caballeros"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "features The Three Caballeros"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "limited edition of 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "retail $14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05-03",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "available May 3, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "shared release at both resorts"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/nurses-day-2018/nurses-day-pin",
+   "set_key": "wdw/2018/nurses-day-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nurses Day 2018 pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Nurses Day 2018 pin in shared releases"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "limited edition of 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "retail $14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05-03",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "available May 3, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "shared release at both resorts"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/mothers-day-2018/mothers-day-pin",
+   "set_key": "wdw/2018/mothers-day-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mother's Day 2018 pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Mother's Day 2018 pin in shared releases"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "limited edition of 5,000"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "retail $14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05-03",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "available May 3, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "shared release at both resorts"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2018-week-1/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/independence-day-2018/sam-eagle",
+   "set_key": "wdw/2018/independence-day-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sam Eagle Independence Day pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2018-week-4",
+     "method": "search_snippet",
+     "note": "Independence Day pin featuring Sam Eagle"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sam Eagle"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2018-week-4",
+     "method": "search_snippet",
+     "note": "Sam Eagle from The Muppets"
+    },
+    {
+     "field": "franchise",
+     "value": "The Muppets",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2018-week-4",
+     "method": "search_snippet",
+     "note": "Muppets character"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2018-week-4",
+     "method": "search_snippet",
+     "note": "June 2018 week 4 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2018-week-4",
+     "method": "search_snippet",
+     "note": "shared between both resorts"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2018-week-4",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/lattes-with-character/jiminy-cricket",
+   "set_key": "wdw/2018/lattes-with-character",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jiminy Cricket"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-february-2018-week-2/",
+     "method": "search_snippet",
+     "note": "Jiminy Cricket pin in the monthly Lattes with Character collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-february-2018-week-2/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-february-2018-week-2/",
+     "method": "search_snippet",
+     "note": "limited edition of 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-february-2018-week-2/",
+     "method": "search_snippet",
+     "note": "retail $16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-february-2018-week-2/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-08",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-february-2018-week-2/",
+     "method": "search_snippet",
+     "note": "available Feb 8, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-february-2018-week-2/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-february-2018-week-2/",
+     "method": "search_snippet",
+     "note": "available at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/toy-story-land-annual-passholder-open",
+   "set_key": "wdw/2018/oe-single/toy-story-land-annual-passholder-open",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Annual Passholder Toy Story Land Pin Open",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed with the open edition Toy Story Land pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "in the OE section of the June 30 roundup"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "OE pins $9.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-30",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "available June 30, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hollywood Studios",
+     "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "Hollywood Studios"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/rundisney-star-wars-half/5k",
+   "set_key": "wdw/2018/rundisney-star-wars-half",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars Half Marathon Weekend 2018 5K pin",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "named in DPB 2018 Star Wars Half lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars race weekend"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 weekend"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney expo, Walt Disney World",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "expo at ESPN Wide World of Sports"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/rundisney-star-wars-half/10k",
+   "set_key": "wdw/2018/rundisney-star-wars-half",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars Half Marathon Weekend 2018 10K pin",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "named in DPB 2018 Star Wars Half lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars race weekend"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 weekend"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney expo, Walt Disney World",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "expo at ESPN Wide World of Sports"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/rundisney-star-wars-half/half-marathon",
+   "set_key": "wdw/2018/rundisney-star-wars-half",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars Half Marathon 2018 half marathon pin",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "named in DPB 2018 Star Wars Half lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars race weekend"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 weekend"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney expo, Walt Disney World",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "expo at ESPN Wide World of Sports"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/rundisney-star-wars-half/first-order-challenge",
+   "set_key": "wdw/2018/rundisney-star-wars-half",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "First Order Challenge pin",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "named in DPB 2018 Star Wars Half lineup"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars race weekend"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 weekend"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney expo, Walt Disney World",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "expo at ESPN Wide World of Sports"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/rundisney-star-wars-half/medal-stormtrooper",
+   "set_key": "wdw/2018/rundisney-star-wars-half",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stormtrooper replica medal pin",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "named in DPB 2018 Star Wars Half lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stormtrooper"
+     ],
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "replica medal character"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars race weekend"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 weekend"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney expo, Walt Disney World",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "expo at ESPN Wide World of Sports"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/rundisney-star-wars-half/medal-praetorian-guard",
+   "set_key": "wdw/2018/rundisney-star-wars-half",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Praetorian Guard replica medal pin",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "named in DPB 2018 Star Wars Half lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Praetorian Guard"
+     ],
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "replica medal character"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars race weekend"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 weekend"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney expo, Walt Disney World",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "expo at ESPN Wide World of Sports"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/rundisney-star-wars-half/medal-captain-phasma",
+   "set_key": "wdw/2018/rundisney-star-wars-half",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Captain Phasma replica medal pin",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "named in DPB 2018 Star Wars Half lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Captain Phasma"
+     ],
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "replica medal character"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars race weekend"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 weekend"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney expo, Walt Disney World",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "expo at ESPN Wide World of Sports"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/rundisney-star-wars-half/medal-kylo-ren",
+   "set_key": "wdw/2018/rundisney-star-wars-half",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kylo Ren replica medal pin",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "named in DPB 2018 Star Wars Half lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kylo Ren"
+     ],
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "replica medal character"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "Star Wars race weekend"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018 weekend"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney expo, Walt Disney World",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-star-wars-half-marathon-weekend-2018-pins/",
+     "method": "search_snippet",
+     "note": "expo at ESPN Wide World of Sports"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2018/mothers-day-2018/mothers-day-pin",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "snippet also shows an unattributed 'LE 4,000 $17.99 May 4' line near this entry; that is Poe's X-Wing, not Mother's Day"
+  },
+  {
+   "key": "wdw/2018/nurses-day-2018/nurses-day-pin",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters not stated in snippet"
+  },
+  {
+   "key": "wdw/2018/mothers-day-2018/mothers-day-pin",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters not stated in snippet"
+  },
+  {
+   "key": "wdw/2018/independence-day-2018/sam-eagle",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "edition type/size, price and exact date not in snippet"
+  },
+  {
+   "key": "wdw/2018/oe/toy-story-land-annual-passholder-open",
+   "field": "variant",
+   "searched": "1 query",
+   "note": "hold: confirm distinct from LR key wdw/2018/toy-story-land-opening/annual-passholder ($14.99 stained glass); only the OE label and $9.99 price separate them"
+  },
+  {
+   "key": "wdw/2018/rundisney-star-wars-half/5k",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - runDisney pin named only in one blog list (single DPB snippet)"
+  },
+  {
+   "key": "wdw/2018/rundisney-star-wars-half/10k",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - runDisney pin named only in one blog list (single DPB snippet)"
+  },
+  {
+   "key": "wdw/2018/rundisney-star-wars-half/half-marathon",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - runDisney pin named only in one blog list (single DPB snippet)"
+  },
+  {
+   "key": "wdw/2018/rundisney-star-wars-half/first-order-challenge",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - runDisney pin named only in one blog list (single DPB snippet)"
+  },
+  {
+   "key": "wdw/2018/rundisney-star-wars-half/medal-stormtrooper",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - runDisney pin named only in one blog list (single DPB snippet)"
+  },
+  {
+   "key": "wdw/2018/rundisney-star-wars-half/medal-praetorian-guard",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - runDisney pin named only in one blog list (single DPB snippet)"
+  },
+  {
+   "key": "wdw/2018/rundisney-star-wars-half/medal-captain-phasma",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - runDisney pin named only in one blog list (single DPB snippet)"
+  },
+  {
+   "key": "wdw/2018/rundisney-star-wars-half/medal-kylo-ren",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - runDisney pin named only in one blog list (single DPB snippet)"
+  },
+  {
+   "key": "wdw/2018/rundisney-star-wars-half",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "expo prices and exact event dates not in snippet"
+  },
+  {
+   "key": "wdw/2018/rundisney-princess-half",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: replica medal pins listed but not named in snippet; prices still missing"
+  },
+  {
+   "key": "wdw/2018/wall-e-10th-boxed-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "four boxed pins still not named; M-O not mentioned"
+  },
+  {
+   "key": "wdw/2018/animation-celebration-framed-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Walt Disney & Vintage Characters set re-confirmed LE 150 $285 (already in 416); members still unnamed. Other Animation Celebration sets (Character Drawings boxed, Logos Through the Years) seen only on reseller yourwdwstore"
+  },
+  {
+   "key": "wdw/2018/peter-pan-65th-neverland-framed-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "six region pins still unnamed in permitted snippets"
+  },
+  {
+   "key": "wdw/2018/lattes-with-character",
+   "field": "pins",
+   "searched": "5 queries",
+   "note": "#6 Rapunzel, #7 Maleficent, #8 Olaf, #9 Sulley, #10 Hades, #11 Ariel named only on resellers yourwdwstore / distradingpins4u / ecrater; not recorded. MPC 135344 Olaf cup pin not tied to series"
+  },
+  {
+   "key": "wdw/2018/lattes-with-character/cheshire-cat",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "LE 3,000 / #1 only on forum auction thread (disneypinforum); not recorded"
+  },
+  {
+   "key": "wdw/2018/lunch-time-tales",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "months 2/4/6/9 still unnamed; DPB tag page lists a Feb 2018 week 4 post with no detail in snippet"
+  },
+  {
+   "key": "wdw/2018/disney-donut-shop",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "Feb and Aug-Oct still unnamed in permitted sources; DPB tag shows a Mickey Donut pin Jan 7 2018 LE 2,000 not tied to series (conflicts with 210 LE 5,000 $54.99); not recorded"
+  },
+  {
+   "key": "wdw/2018/star-wars-helmet",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "positions 1, 2, 5, 6, 8 still not named; May 2018 wk1 roundup has no helmet pin"
+  },
+  {
+   "key": "wdw/2018/animal-kingdom-20th/tree-of-life-boxed-jumbo",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "hold kept: MPC 69379 (Tree of Life 20th series, LE 1,000 backstamp) still not stated as jumbo/boxed; super-jumbo $89.99 still not tied to a pin"
+  },
+  {
+   "key": "wdw/2018/rundisney-marathon-weekend",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: DPB lists 5K Pluto and Mickey/Pluto pins and a 13.1 pin; Mickey/Pluto may be a separate pin from pluto-5k; medal pins 13.1/39.3/10K still unresolved; prices not in snippets"
+  },
+  {
+   "key": "dlr/2018/lunar-new-year-2018/pluto",
+   "field": "variant",
+   "searched": "1 query",
+   "note": "Lunar New Year Pluto LE 4,000 also at WDW Feb 1, 2018 (DPB Feb wk1); already keyed under dlr in 212, not duplicated"
+  },
+  {
+   "key": "wdw/2018/star-wars-vehicle/death-star",
+   "field": "variant",
+   "searched": "DLR packets grep",
+   "note": "shared DL/WDW release; no DLR key found; a DLR cell should mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/star-wars-vehicle/poes-x-wing",
+   "field": "variant",
+   "searched": "DLR packets grep",
+   "note": "shared DL/WDW release; no DLR key found; a DLR cell should mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/may-the-4th/millennium-falcon",
+   "field": "variant",
+   "searched": "DLR packets grep",
+   "note": "shared DL/WDW release; no DLR key found; a DLR cell should mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/solo-star-wars/chewie-is-my-copilot",
+   "field": "variant",
+   "searched": "DLR packets grep",
+   "note": "shared DL/WDW release; no DLR key found; a DLR cell should mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/cinco-de-mayo-2018/cinco-de-mayo-pin",
+   "field": "variant",
+   "searched": "DLR packets grep",
+   "note": "shared DL/WDW release; no DLR key found; a DLR cell should mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/nurses-day-2018/nurses-day-pin",
+   "field": "variant",
+   "searched": "DLR packets grep",
+   "note": "shared DL/WDW release; no DLR key found; a DLR cell should mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/mothers-day-2018/mothers-day-pin",
+   "field": "variant",
+   "searched": "DLR packets grep",
+   "note": "shared DL/WDW release; no DLR key found; a DLR cell should mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/independence-day-2018/sam-eagle",
+   "field": "variant",
+   "searched": "DLR packets grep",
+   "note": "shared DL/WDW release; no DLR key found; a DLR cell should mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018 holds",
+   "field": "pin_structure",
+   "searched": "none new",
+   "note": "holds kept without new evidence: mystery sets (F&W, MNSSHP, Ugly Sweater, Peter Pan 65th, TSL), MNSSHP/MVMCP members, snowman four, Goodbye set, Zootopia completer, Fresh Epcot pair, Dapper Day, Mickey 90th CM pin, two Lattes, AK AP pin, Natural Beauty members"
+  }
+ ],
+ "discovery_notes": "Follow-up 4 of B010 (WDW LE 2018). 30 standard WebSearch queries, all search_snippet; blocked_domains passed or allowed_domains narrowed. All claims from Disney Pins Blog. Resellers (yourwdwstore, distradingpins4u, ecrater) and a forum auction seen, not used. New: Star Wars vehicle #10 Death Star and #13 Poe's X-Wing; May the 4th Millennium Falcon; Chewie is my Copilot; Cinco de Mayo/Nurses Day/Mother's Day 2018; Sam Eagle Independence Day; TSL AP Open (OE, held for variant check); Star Wars Half Marathon 2018 race/medal pins (held per runDisney list decision). Corroboration: Lattes Jiminy LE 3,000 $16.99 Feb 8. No holds released. No prompt-injection seen."
+}

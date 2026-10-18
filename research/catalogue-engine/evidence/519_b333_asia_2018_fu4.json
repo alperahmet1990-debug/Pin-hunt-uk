@@ -1,0 +1,1816 @@
+{
+ "packet_id": "backfill-b333-asia-2018-fu4",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b333",
+ "sources": [
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+   "title": "HKDL 13th anniversary LE pin series (phase 2) and Magic Access member LE pin release info",
+   "publisher": "Disney Magical Kingdom Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-08"
+  },
+  {
+   "url": "https://topick.hket.com/article/2025838/",
+   "title": "Disney Pin Trading Carnival in March: preview of the LE pins (D180309)",
+   "publisher": "HKET TOPick",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-03-09"
+  },
+  {
+   "url": "https://topick.hket.com/article/2030732/",
+   "title": "Disney Pin Trading Carnival guide: LE pins from parks worldwide",
+   "publisher": "HKET TOPick",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-03"
+  },
+  {
+   "url": "https://hkmsg.blogspot.com/2018/01/2018_19.html",
+   "title": "Pin Trading Day upgraded to Pin Trading Carnival 2018",
+   "publisher": "Hong Kong Main Street Gazette",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-01"
+  },
+  {
+   "url": "https://hkmsg.blogspot.com/2018/02/201823.html",
+   "title": "HKDL latest pin news (Feb and Mar 2018)",
+   "publisher": "Hong Kong Main Street Gazette",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-02"
+  },
+  {
+   "url": "https://hkmsg.blogspot.com/2018/12/",
+   "title": "Hong Kong Main Street Gazette archive Dec 2018",
+   "publisher": "Hong Kong Main Street Gazette",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-12"
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2018/05/hong-kong-disneyland-2018pin-trading.html",
+   "title": "HKDL Pin Trading Newswire: 2018 Summer",
+   "publisher": "Disney Magical Kingdom Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-05"
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2018/06/hong-kong-disneyland20187-9pin-trading.html",
+   "title": "HKDL Pin Trading Magical Moment, Jul-Sep 2018",
+   "publisher": "Disney Magical Kingdom Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-06"
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2018/11/mickey90-90_18.html",
+   "title": "#Mickey90",
+   "publisher": "Disney Magical Kingdom Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-11-18"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/shanghai-disneyland-november-2018-hidden-mickey-pin",
+   "title": "Shanghai Disneyland November 2018 Hidden Mickey Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/shanghai-disneyland-november-2018-hidden-mickey-pin/",
+   "title": "Shanghai Disneyland November 2018 Hidden Mickey Pin (alternate URL)",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickeys-90th-anniversary-pin-collection-at-shanghai-disneyland/",
+   "title": "Mickey's 90th Anniversary Pin Collection at Shanghai Disneyland",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/shanghai-pin-trading-fun-day-2018-event",
+   "title": "Shanghai Pin Trading Fun Day 2018 Event",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/tokyo-disney-sea-easter-2018-goods/",
+   "title": "Tokyo DisneySea Disney Easter 2018 special goods",
+   "publisher": "MezzoMiki",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-03"
+  },
+  {
+   "url": "https://castel.jp/p/1838",
+   "title": "2018 Disney Easter egg-motif goods (17 picks)",
+   "publisher": "Castel",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-03"
+  },
+  {
+   "url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+   "title": "TDS Abu's Bazaar Easter-limited prizes",
+   "publisher": "seasons-dlove.net",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-03"
+  },
+  {
+   "url": "https://mezzomiki.jp/tokyo-disney-sea-christmas-2018-goods/",
+   "title": "Tokyo DisneySea Disney Christmas 2018 special goods",
+   "publisher": "MezzoMiki",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-11"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "hkdl/2018/13th-anniversary-phase-2",
+   "parent_set_key": "hkdl/2018/13th-anniversary",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "phase 2 has five designs per search-engine summary"
+    },
+    {
+     "field": "format",
+     "value": "five separate LE pins sold individually",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "each design LE 500, HK$118; summary"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2018/pin-trading-carnival-2018",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disney Exhibition Hall (展藝館), Hong Kong Disneyland",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "15-18 Mar 2018, 10:30-19:00; summary"
+    },
+    {
+     "field": "format",
+     "value": "event release: 30+ new LE pins, HK$148-588",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "over 30 new LE pins; summary"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2018/pin-trading-carnival-2018-six-pin-box",
+   "parent_set_key": "hkdl/2018/pin-trading-carnival-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Carnival 2018 six-pin LE gift box",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "translated; summary"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "six pins per box; summary"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (boxed set)",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "gift box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "LE 600 sets"
+    },
+    {
+     "field": "price",
+     "value": 498,
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "HK$498; summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-15",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "carnival"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2018/pin-trading-carnival-2018-designer-series",
+   "parent_set_key": "hkdl/2018/pin-trading-carnival-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Designer series (Disney park festivals edition) - Pin Trading Carnival 2018",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "translated; summary"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "LE 800 each design"
+    },
+    {
+     "field": "price",
+     "value": 218,
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "HK version HK$218; other-park versions obtained via games; summary"
+    },
+    {
+     "field": "format",
+     "value": "series of separate pins designed by artists across Disney parks",
+     "source_url": "https://topick.hket.com/article/2030732/",
+     "method": "search_snippet",
+     "note": "co-designed by parks worldwide, each LE 800; summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-15",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "carnival"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2018/pin-trading-carnival-2018-food-truck-hidden-mickey",
+   "parent_set_key": "hkdl/2018/pin-trading-carnival-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hidden Mickey 'Carnival Food Truck' series",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "translated; summary"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "12 designs earned via games; summary"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://topick.hket.com/article/2030732/",
+     "method": "search_snippet",
+     "note": "12 designs; collector card bought in shop, rest via booth games; summary"
+    },
+    {
+     "field": "format",
+     "value": "hidden mickey game-earned series",
+     "source_url": "https://topick.hket.com/article/2030732/",
+     "method": "search_snippet",
+     "note": "game-earned; summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-15",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "carnival"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2018/pin-go-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "PIN-GO 2018",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/05/hong-kong-disneyland-2018pin-trading.html",
+     "method": "search_snippet",
+     "note": "Pin Trading Newswire 2018 Summer; summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-07",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/05/hong-kong-disneyland-2018pin-trading.html",
+     "method": "search_snippet",
+     "note": "7 Jul - 6 Aug 2018"
+    },
+    {
+     "field": "format",
+     "value": "stamp-card game; special edition pin redeemed at Center Street Boutique",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/05/hong-kong-disneyland-2018pin-trading.html",
+     "method": "search_snippet",
+     "note": "buy game-card pins at Emporium, five stamps in a line earns one special edition pin; summary"
+    },
+    {
+     "field": "edition_type",
+     "value": "special edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/05/hong-kong-disneyland-2018pin-trading.html",
+     "method": "search_snippet",
+     "note": "limited quantity"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2018/pin-trading-nights-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Nights 2018",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/05/hong-kong-disneyland-2018pin-trading.html",
+     "method": "search_snippet",
+     "note": "summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-22",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/05/hong-kong-disneyland-2018pin-trading.html",
+     "method": "search_snippet",
+     "note": "22 Jun and 24 Aug 2018, 17:00-19:00, Comet Cafe"
+    },
+    {
+     "field": "format",
+     "value": "event with special edition hidden mickey pin trading",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/05/hong-kong-disneyland-2018pin-trading.html",
+     "method": "search_snippet",
+     "note": "summary"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2018/pin-trading-magical-moment-jul-sep",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Magical Moment (Jul-Sep 2018)",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/06/hong-kong-disneyland20187-9pin-trading.html",
+     "method": "search_snippet",
+     "note": "summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-07",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/06/hong-kong-disneyland20187-9pin-trading.html",
+     "method": "search_snippet",
+     "note": "sessions 7-9 Jul, 18-20 Aug, 8-10 Sep 2018 at Center Street Boutique"
+    },
+    {
+     "field": "format",
+     "value": "trade-only special edition hidden mickey pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/06/hong-kong-disneyland20187-9pin-trading.html",
+     "method": "search_snippet",
+     "note": "guests trade own pin with cast for a special HM pin; summary"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2018/hidden-mickey-monthly-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Shanghai Disneyland 2018 monthly Hidden Mickey pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/shanghai-disneyland-november-2018-hidden-mickey-pin",
+     "method": "search_snippet",
+     "note": "descriptive; post links month-by-month pins"
+    },
+    {
+     "field": "format",
+     "value": "monthly single hidden mickey pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/shanghai-disneyland-november-2018-hidden-mickey-pin",
+     "method": "search_snippet",
+     "note": "post links to the October 2018 pin; summary"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2018/easter-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Easter 2018 (Tokyo DisneySea)",
+     "source_url": "https://mezzomiki.jp/tokyo-disney-sea-easter-2018-goods/",
+     "method": "search_snippet",
+     "note": "special goods"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-20",
+     "source_url": "https://mezzomiki.jp/tokyo-disney-sea-easter-2018-goods/",
+     "method": "search_snippet",
+     "note": "goods from 20 Mar 2018 per summary"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2018/easter-2018-abus-bazaar",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Abu's Bazaar Disney Easter 2018 prize pins",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "translated"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "five pin types"
+    },
+    {
+     "field": "format",
+     "value": "game prize pins, five designs",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "consolation prize; plush for winners"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "hkdl/2018/13th-anniversary-phase-2/chip",
+   "set_key": "hkdl/2018/13th-anniversary-phase-2",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "HKDL 13th Anniversary LE pin (phase 2) - Chip",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "descriptive name; translated; value from search-engine summary of the page"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip"
+     ],
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "summary lists phase 2 as five designs: Chip, Duffy, ShellieMay, Gelatoni, StellaLou"
+    },
+    {
+     "field": "main_character",
+     "value": "Chip",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "one character per design per summary"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin (one of five separate LE designs)",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "summary says five 款 (designs), each LE 500; search-engine summary"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "500 per design; search-engine summary"
+    },
+    {
+     "field": "original_price",
+     "value": 118,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "HK$118 each; search-engine summary"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-08",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "on sale 8 Sep 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium, Main Street U.S.A., Hong Kong Disneyland",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "sold at Emporium; max two of same design per guest"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/13th-anniversary-phase-2/duffy",
+   "set_key": "hkdl/2018/13th-anniversary-phase-2",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "HKDL 13th Anniversary LE pin (phase 2) - Duffy",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "descriptive name; translated; value from search-engine summary of the page"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy"
+     ],
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "summary lists phase 2 as five designs: Chip, Duffy, ShellieMay, Gelatoni, StellaLou"
+    },
+    {
+     "field": "main_character",
+     "value": "Duffy",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "one character per design per summary"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin (one of five separate LE designs)",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "summary says five 款 (designs), each LE 500; search-engine summary"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "500 per design; search-engine summary"
+    },
+    {
+     "field": "original_price",
+     "value": 118,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "HK$118 each; search-engine summary"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-08",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "on sale 8 Sep 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium, Main Street U.S.A., Hong Kong Disneyland",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "sold at Emporium; max two of same design per guest"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/13th-anniversary-phase-2/shelliemay",
+   "set_key": "hkdl/2018/13th-anniversary-phase-2",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "HKDL 13th Anniversary LE pin (phase 2) - ShellieMay",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "descriptive name; translated; value from search-engine summary of the page"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "ShellieMay"
+     ],
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "summary lists phase 2 as five designs: Chip, Duffy, ShellieMay, Gelatoni, StellaLou"
+    },
+    {
+     "field": "main_character",
+     "value": "ShellieMay",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "one character per design per summary"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin (one of five separate LE designs)",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "summary says five 款 (designs), each LE 500; search-engine summary"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "500 per design; search-engine summary"
+    },
+    {
+     "field": "original_price",
+     "value": 118,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "HK$118 each; search-engine summary"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-08",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "on sale 8 Sep 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium, Main Street U.S.A., Hong Kong Disneyland",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "sold at Emporium; max two of same design per guest"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/13th-anniversary-phase-2/gelatoni",
+   "set_key": "hkdl/2018/13th-anniversary-phase-2",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "HKDL 13th Anniversary LE pin (phase 2) - Gelatoni",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "descriptive name; translated; value from search-engine summary of the page"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Gelatoni"
+     ],
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "summary lists phase 2 as five designs: Chip, Duffy, ShellieMay, Gelatoni, StellaLou"
+    },
+    {
+     "field": "main_character",
+     "value": "Gelatoni",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "one character per design per summary"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin (one of five separate LE designs)",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "summary says five 款 (designs), each LE 500; search-engine summary"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "500 per design; search-engine summary"
+    },
+    {
+     "field": "original_price",
+     "value": 118,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "HK$118 each; search-engine summary"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-08",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "on sale 8 Sep 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium, Main Street U.S.A., Hong Kong Disneyland",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "sold at Emporium; max two of same design per guest"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/13th-anniversary-phase-2/stellalou",
+   "set_key": "hkdl/2018/13th-anniversary-phase-2",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "HKDL 13th Anniversary LE pin (phase 2) - StellaLou",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "descriptive name; translated; value from search-engine summary of the page"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "StellaLou"
+     ],
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "summary lists phase 2 as five designs: Chip, Duffy, ShellieMay, Gelatoni, StellaLou"
+    },
+    {
+     "field": "main_character",
+     "value": "StellaLou",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "one character per design per summary"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin (one of five separate LE designs)",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "summary says five 款 (designs), each LE 500; search-engine summary"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "500 per design; search-engine summary"
+    },
+    {
+     "field": "original_price",
+     "value": 118,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "HK$118 each; search-engine summary"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-08",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "on sale 8 Sep 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium, Main Street U.S.A., Hong Kong Disneyland",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/08/13-13.html",
+     "method": "search_snippet",
+     "note": "sold at Emporium; max two of same design per guest"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/pin-trading-carnival-2018/treasure-collection-jumbo",
+   "set_key": "hkdl/2018/pin-trading-carnival-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Carnival 2018 Treasure Collection LE pin (珍寶收藏限量版徽章)",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "translated name; summary"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "LE 250, limit one per person; search-engine summary"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://hkmsg.blogspot.com/2018/01/2018_19.html",
+     "method": "search_snippet",
+     "note": "summary quotes '限量 250 套' (250 sets); unit pieces vs sets unclear"
+    },
+    {
+     "field": "original_price",
+     "value": 588,
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "HK$588; search-engine summary"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Donald Duck",
+      "Duffy",
+      "StellaLou"
+     ],
+     "source_url": "https://hkmsg.blogspot.com/2018/01/2018_19.html",
+     "method": "search_snippet",
+     "note": "summary: Mickey and friends trading pins, Donald at carnival games, Duffy and StellaLou with a photo frame; attribution between Gazette/TOPick unclear in summary"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://hkmsg.blogspot.com/2018/01/2018_19.html",
+     "method": "search_snippet",
+     "note": "single large (biggest of the event) pin showing a group scene; summary"
+    },
+    {
+     "field": "visual_description",
+     "value": "largest pin of the 2018 carnival; carnival scene with Disney friends",
+     "source_url": "https://hkmsg.blogspot.com/2018/01/2018_19.html",
+     "method": "search_snippet",
+     "note": "first release of this treasure-type design; summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-15",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "carnival 15-18 Mar 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (Disney Exhibition Hall / 展藝館 carnival venue)",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "event venue per TOPick summary"
+    },
+    {
+     "field": "release_location",
+     "value": "Main Street Candy shop (大街糖果店), Hong Kong Disneyland",
+     "source_url": "https://hkmsg.blogspot.com/2018/02/201823.html",
+     "method": "search_snippet",
+     "note": "summary says Gazette Feb post lists this sale point; differs from TOPick venue"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/pin-trading-carnival-2018/pin-ambassador-pin",
+   "set_key": "hkdl/2018/pin-trading-carnival-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Carnival 2018 Pin Ambassador pin (徽章大使徽章)",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "translated; summary"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "LE 800; summary"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://topick.hket.com/article/2030732/",
+     "method": "search_snippet",
+     "note": "LE 800; summary"
+    },
+    {
+     "field": "original_price",
+     "value": 238,
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "HK$238 with signed card; summary"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "pin ambassador signatures printed on back",
+     "source_url": "https://topick.hket.com/article/2030732/",
+     "method": "search_snippet",
+     "note": "back bears that year's ambassador signatures; summary paraphrase, no exact text"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-15",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "carnival 15-18 Mar 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/pin-trading-carnival-2018/magic-access-member-pin",
+   "set_key": "hkdl/2018/pin-trading-carnival-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Carnival 2018 Magic Access member pin",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "translated; summary"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "member-only LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "LE 1,000; summary"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://topick.hket.com/article/2030732/",
+     "method": "search_snippet",
+     "note": "summary mentions a boxed treasure pin for Magic Access members, LE 1,000; may be the same item"
+    },
+    {
+     "field": "original_price",
+     "value": 218,
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "HK$218; summary"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-15",
+     "source_url": "https://topick.hket.com/article/2025838/",
+     "method": "search_snippet",
+     "note": "carnival 15-18 Mar 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2018/hidden-mickey-monthly-2018/november-judy-hopps",
+   "set_key": "shdr/2018/hidden-mickey-monthly-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Shanghai Disneyland November 2018 Hidden Mickey Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/shanghai-disneyland-november-2018-hidden-mickey-pin",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "pin_name",
+     "value": "Shanghai Disneyland November 2018 Hidden Mickey Pin",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-november-2018-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "post title (alternate URL)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Judy Hopps"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/shanghai-disneyland-november-2018-hidden-mickey-pin",
+     "method": "search_snippet",
+     "note": "features Judy Hopps from Zootopia and the month of November"
+    },
+    {
+     "field": "main_character",
+     "value": "Judy Hopps",
+     "source_url": "https://disneypinsblog.com/blogs/news/shanghai-disneyland-november-2018-hidden-mickey-pin",
+     "method": "search_snippet",
+     "note": "Judy Hopps"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/shanghai-disneyland-november-2018-hidden-mickey-pin",
+     "method": "search_snippet",
+     "note": "single HM pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "hidden mickey",
+     "source_url": "https://disneypinsblog.com/blogs/news/shanghai-disneyland-november-2018-hidden-mickey-pin",
+     "method": "search_snippet",
+     "note": "Hidden Mickey icon at top right"
+    },
+    {
+     "field": "visual_description",
+     "value": "Judy Hopps with gold glitter, November theme, Hidden Mickey icon top right",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-november-2018-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/shanghai-disneyland-november-2018-hidden-mickey-pin",
+     "method": "search_snippet",
+     "note": "November 2018 per title"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/shanghai-disneyland-november-2018-hidden-mickey-pin",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/shanghai-disneyland-november-2018-hidden-mickey-pin",
+     "method": "search_snippet",
+     "note": "Shanghai Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2018/easter-2018/tds-egg-mickey-minnie",
+   "set_key": "tdr/2018/easter-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Easter 2018 pin badge (egg shape)",
+     "source_url": "https://mezzomiki.jp/tokyo-disney-sea-easter-2018-goods/",
+     "method": "search_snippet",
+     "note": "translated; summary"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/tokyo-disney-sea-easter-2018-goods/",
+     "method": "search_snippet",
+     "note": "egg shape with Mickey, Minnie and Disney Easter 2018 logo; summary"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://castel.jp/p/1838",
+     "method": "search_snippet",
+     "note": "same design; summary"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/tokyo-disney-sea-easter-2018-goods/",
+     "method": "search_snippet",
+     "note": "single pin with both characters"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/tokyo-disney-sea-easter-2018-goods/",
+     "method": "search_snippet",
+     "note": "1,000 yen; summary"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://castel.jp/p/1838",
+     "method": "search_snippet",
+     "note": "1,000 yen; summary"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/tokyo-disney-sea-easter-2018-goods/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-20",
+     "source_url": "https://castel.jp/p/1838",
+     "method": "search_snippet",
+     "note": "egg-motif goods on sale 20 Mar 2018; summary"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://mezzomiki.jp/tokyo-disney-sea-easter-2018-goods/",
+     "method": "search_snippet",
+     "note": "Easter 2018 held at TDS only"
+    },
+    {
+     "field": "visual_description",
+     "value": "egg-shaped pin, about 5 x 4 cm, colourful Easter lettering",
+     "source_url": "https://mezzomiki.jp/tokyo-disney-sea-easter-2018-goods/",
+     "method": "search_snippet",
+     "note": "size and look per summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2018/easter-2018-abus-bazaar/mickey",
+   "set_key": "tdr/2018/easter-2018-abus-bazaar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Abu's Bazaar Disney Easter 2018 prize pin - Mickey Mouse",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "descriptive; translated"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "blog lists five prize pin types: Mickey, Minnie, Donald, Daisy, Chip & Dale"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin (one of five prize designs)",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "five 種類 of pin, each costume described"
+    },
+    {
+     "field": "edition_type",
+     "value": "game prize",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "given when the Abu's Bazaar game is failed"
+    },
+    {
+     "field": "visual_description",
+     "value": "steampunk costume",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "per-pin costume per blog summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "Easter 2018; blog visited 26 Mar press preview"
+    },
+    {
+     "field": "release_location",
+     "value": "Abu's Bazaar, Arabian Coast, Tokyo DisneySea",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2018/easter-2018-abus-bazaar/minnie",
+   "set_key": "tdr/2018/easter-2018-abus-bazaar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Abu's Bazaar Disney Easter 2018 prize pin - Minnie Mouse",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "descriptive; translated"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "blog lists five prize pin types: Mickey, Minnie, Donald, Daisy, Chip & Dale"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin (one of five prize designs)",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "five 種類 of pin, each costume described"
+    },
+    {
+     "field": "edition_type",
+     "value": "game prize",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "given when the Abu's Bazaar game is failed"
+    },
+    {
+     "field": "visual_description",
+     "value": "aqua-pop costume",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "per-pin costume per blog summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "Easter 2018; blog visited 26 Mar press preview"
+    },
+    {
+     "field": "release_location",
+     "value": "Abu's Bazaar, Arabian Coast, Tokyo DisneySea",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2018/easter-2018-abus-bazaar/donald",
+   "set_key": "tdr/2018/easter-2018-abus-bazaar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Abu's Bazaar Disney Easter 2018 prize pin - Donald Duck",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "descriptive; translated"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "blog lists five prize pin types: Mickey, Minnie, Donald, Daisy, Chip & Dale"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin (one of five prize designs)",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "five 種類 of pin, each costume described"
+    },
+    {
+     "field": "edition_type",
+     "value": "game prize",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "given when the Abu's Bazaar game is failed"
+    },
+    {
+     "field": "visual_description",
+     "value": "same costume as the success-prize plush",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "per-pin costume per blog summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "Easter 2018; blog visited 26 Mar press preview"
+    },
+    {
+     "field": "release_location",
+     "value": "Abu's Bazaar, Arabian Coast, Tokyo DisneySea",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2018/easter-2018-abus-bazaar/daisy",
+   "set_key": "tdr/2018/easter-2018-abus-bazaar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Abu's Bazaar Disney Easter 2018 prize pin - Daisy Duck",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "descriptive; translated"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "blog lists five prize pin types: Mickey, Minnie, Donald, Daisy, Chip & Dale"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin (one of five prize designs)",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "five 種類 of pin, each costume described"
+    },
+    {
+     "field": "edition_type",
+     "value": "game prize",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "given when the Abu's Bazaar game is failed"
+    },
+    {
+     "field": "visual_description",
+     "value": "same costume as the success-prize plush",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "per-pin costume per blog summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "Easter 2018; blog visited 26 Mar press preview"
+    },
+    {
+     "field": "release_location",
+     "value": "Abu's Bazaar, Arabian Coast, Tokyo DisneySea",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "game prize"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2018/easter-2018-abus-bazaar/chip-and-dale",
+   "set_key": "tdr/2018/easter-2018-abus-bazaar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Abu's Bazaar Disney Easter 2018 prize pin - Chip & Dale",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "descriptive; translated"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "blog lists five prize pin types: Mickey, Minnie, Donald, Daisy, Chip & Dale"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin (one of five prize designs)",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "five 種類 of pin, each costume described"
+    },
+    {
+     "field": "edition_type",
+     "value": "game prize",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "given when the Abu's Bazaar game is failed"
+    },
+    {
+     "field": "visual_description",
+     "value": "art nouveau costume",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "per-pin costume per blog summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "Easter 2018; blog visited 26 Mar press preview"
+    },
+    {
+     "field": "release_location",
+     "value": "Abu's Bazaar, Arabian Coast, Tokyo DisneySea",
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "game prize"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://seasons-dlove.net/entry/tds-easter2018-abu-s-bazaar/",
+     "method": "search_snippet",
+     "note": "listed as one type 'Chip & Dale'; blog did not photograph it"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "hkdl/2018/13th-anniversary-phase-2",
+   "field": "visual_description",
+   "searched": "DMK; 2 queries",
+   "note": "designs not described beyond character; phase-1 DPB post lists Minnie/Mickey/Donald/Goofy/Dale (already in 215)"
+  },
+  {
+   "key": "hkdl/2018/pin-trading-carnival-2018-six-pin-box",
+   "field": "pins",
+   "searched": "TOPick, Gazette; 4 queries",
+   "note": "six pins not named"
+  },
+  {
+   "key": "hkdl/2018/pin-trading-carnival-2018-designer-series",
+   "field": "pins",
+   "searched": "TOPick; 3 queries",
+   "note": "number of designs and parks/designs not named"
+  },
+  {
+   "key": "hkdl/2018/pin-trading-carnival-2018-food-truck-hidden-mickey",
+   "field": "pins",
+   "searched": "TOPick; 3 queries",
+   "note": "12 designs not named"
+  },
+  {
+   "key": "hkdl/2018/pin-trading-carnival-2018/pin-ambassador-pin",
+   "field": "characters",
+   "searched": "TOPick; 2 queries",
+   "note": "design not described"
+  },
+  {
+   "key": "hkdl/2018/pin-trading-carnival-2018/magic-access-member-pin",
+   "field": "characters",
+   "searched": "TOPick; 2 queries",
+   "note": "design not described; may equal the boxed treasure pin for members in TOPick 2030732"
+  },
+  {
+   "key": "hkdl/2018/pin-go-2018",
+   "field": "pins",
+   "searched": "DMK; 3 queries",
+   "note": "pin designs not named or described"
+  },
+  {
+   "key": "hkdl/2018/pin-trading-nights-2018",
+   "field": "pins",
+   "searched": "DMK; 3 queries",
+   "note": "pin designs not named or described"
+  },
+  {
+   "key": "hkdl/2018/pin-trading-magical-moment-jul-sep",
+   "field": "pins",
+   "searched": "DMK; 3 queries",
+   "note": "pin designs not named or described"
+  },
+  {
+   "key": "hkdl/2018/classic-pin-series-2",
+   "field": "price",
+   "searched": "DMK newswire; 1 query",
+   "note": "lead: 2018 summer newswire mentions Disney classic animation pin series purchase-with-purchase LE pin at HK$78 with two pin purchases; unclear if same series as 422 key; not claimed"
+  },
+  {
+   "key": "shdr/2018/hidden-mickey-monthly-2018/october-gelatoni",
+   "field": "identity",
+   "searched": "DPB; 2 queries",
+   "note": "lead: Nov post links to an October 2018 pin said to feature Gelatoni; no description found; not recorded as a pin"
+  },
+  {
+   "key": "shdr/2018/hidden-mickey-monthly-2018",
+   "field": "pins",
+   "searched": "DPB; 2 queries",
+   "note": "other 2018 months not found"
+  },
+  {
+   "key": "tdr/2018/easter-2018-abus-bazaar/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "seasons-dlove; 1 query",
+   "note": "Chip & Dale assumed one pin as listed as one of 5 types; not photographed by the blog; confirm"
+  },
+  {
+   "key": "tdr/2018/christmas-2018/tds-mickey-and-minnie-tree",
+   "field": "original_price",
+   "searched": "MezzoMiki; 1 query",
+   "note": "lead: summary says TDS Christmas 2018 goods include a pin at 1,000 yen (sold out); design not tied to this key; not claimed"
+  },
+  {
+   "key": "tdr/2018/christmas-2018/tdl-mickey-and-minnie-wreath",
+   "field": "original_price",
+   "searched": "dtimes, MezzoMiki, atnavi; 1 query",
+   "note": "still no 2018 price; an undated atnavi page lists 1,200 yen pin, year unconfirmed"
+  },
+  {
+   "key": "hkdl/2018/walt-disney-birthday-2018",
+   "field": "pins",
+   "searched": "Gazette, DMK; 2 queries",
+   "note": "lead: search summary says Gazette Dec 2018 archive covers a Winnie the Pooh Walt Disney birthday pin; no size/price/date found; not recorded"
+  },
+  {
+   "key": "hkdl/2018/christmas-2018",
+   "field": "pins",
+   "searched": "DMK, Gazette, LINE Today; 3 queries",
+   "note": "no HKDL Christmas 2018 or Mickey 90 pin found; DMK #Mickey90 (18 Nov) mentions only two special birthday stickers and four tickets"
+  },
+  {
+   "key": "hkdl/2018/carousel-series",
+   "field": "pins",
+   "searched": "DMK; 1 query",
+   "note": "10th/11th pins still not found; Peter Pan/Sofia position conflict unresolved; Woody & Bullseye and Duffy & StellaLou holds kept"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-mystery",
+   "field": "pins",
+   "searched": "none this pass",
+   "note": "15 designs still unnamed"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-incredibles-booster",
+   "field": "pins",
+   "searched": "none this pass",
+   "note": "contents still unknown"
+  },
+  {
+   "key": "hkdl/2018/chinese-new-year-2018",
+   "field": "pins",
+   "searched": "none this pass",
+   "note": "Magic Access CNY pin not found; Gelatoni & StellaLou hold kept"
+  },
+  {
+   "key": "hkdl/2018/hidden-mickey-carrots",
+   "field": "pins",
+   "searched": "none this pass",
+   "note": "sixth carrot pin not found; holds kept"
+  },
+  {
+   "key": "hkdl/2018/mothers-day-2018/mothers-day-pin",
+   "field": "characters",
+   "searched": "DMK; 2 queries",
+   "note": "still no design/price; Mystic Manor, Teachers' Day, Tsum Fun Fair designs also still undescribed"
+  },
+  {
+   "key": "hkdl/2018/food-game-pins",
+   "field": "pin_structure",
+   "searched": "none this pass",
+   "note": "hold kept (prize list only)"
+  },
+  {
+   "key": "hkdl/2018/tsum-tsum-fun-fair-2018-completer-box",
+   "field": "pins",
+   "searched": "none this pass",
+   "note": "hold kept"
+  },
+  {
+   "key": "shdr/2018/toy-story-land-grand-opening-box-set",
+   "field": "pins",
+   "searched": "Chinese web; 1 query",
+   "note": "box set and two-pin set still unnamed"
+  },
+  {
+   "key": "shdr/2018/pin-trading-fun-day-2018-frozen-set",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "DPB summary repeats 4 pins LE 300 (5-8 Jul 2018); characters still not named; framed set still undescribed"
+  },
+  {
+   "key": "shdr/2018/mickey-90th",
+   "field": "pins",
+   "searched": "DPB; 2 queries",
+   "note": "DPB lists LE, jumbo/pin sets, mystery and framed pins from 16 Nov 2018 but none individually; Minnie hold (464) kept"
+  },
+  {
+   "key": "shdr/2018/zootopia-emoji-mystery",
+   "field": "pins",
+   "searched": "none this pass",
+   "note": "6 of 10 still unnamed; holds kept"
+  },
+  {
+   "key": "shdr/2018/2nd-anniversary",
+   "field": "pins",
+   "searched": "Chinese web; 1 query",
+   "note": "still no 2nd anniversary pin found"
+  },
+  {
+   "key": "tdr/2018/35th-themed-land-pin-set",
+   "field": "scope",
+   "searched": "none this pass",
+   "note": "scope: confirm pin vs button (can badge + pin set) still open"
+  },
+  {
+   "key": "tdr/2018/35th-framed-35-pin-set",
+   "field": "pins",
+   "searched": "none this pass",
+   "note": "35 pins undescribed"
+  },
+  {
+   "key": "tdr/2018/35th-happiest-celebration/mickey",
+   "field": "original_price",
+   "searched": "none this pass",
+   "note": "900 yen hold kept; castle vs jumbo hold kept"
+  },
+  {
+   "key": "hkdl/2018/13th-anniversary-phase-2/chip",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: one-per-character split rests on a single search-engine summary of the fan-blog post, not quoted page text (round 54 review)"
+  },
+  {
+   "key": "hkdl/2018/13th-anniversary-phase-2/duffy",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: one-per-character split rests on a single search-engine summary of the fan-blog post, not quoted page text (round 54 review)"
+  },
+  {
+   "key": "hkdl/2018/13th-anniversary-phase-2/shelliemay",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: one-per-character split rests on a single search-engine summary of the fan-blog post, not quoted page text (round 54 review)"
+  },
+  {
+   "key": "hkdl/2018/13th-anniversary-phase-2/gelatoni",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: one-per-character split rests on a single search-engine summary of the fan-blog post, not quoted page text (round 54 review)"
+  },
+  {
+   "key": "hkdl/2018/13th-anniversary-phase-2/stellalou",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: one-per-character split rests on a single search-engine summary of the fan-blog post, not quoted page text (round 54 review)"
+  },
+  {
+   "key": "tdr/2018/easter-2018-abus-bazaar/mickey",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer full-list decision - game-prize pins named only in one prize list (round 54 review)"
+  },
+  {
+   "key": "tdr/2018/easter-2018-abus-bazaar/minnie",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer full-list decision - game-prize pins named only in one prize list (round 54 review)"
+  },
+  {
+   "key": "tdr/2018/easter-2018-abus-bazaar/donald",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer full-list decision - game-prize pins named only in one prize list (round 54 review)"
+  },
+  {
+   "key": "tdr/2018/easter-2018-abus-bazaar/daisy",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer full-list decision - game-prize pins named only in one prize list (round 54 review)"
+  },
+  {
+   "key": "tdr/2018/easter-2018-abus-bazaar/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer full-list decision - game-prize pins named only in one prize list (round 54 review)"
+  }
+ ],
+ "discovery_notes": "Cell B333, follow-up 4 of B015 (packets 215, 422, 464, 496); reuses their keys. 29 standard searches, snippets only; most values come from search-engine summaries of the pages, not quoted page text. New: HKDL 13th anniversary phase 2 five named LE pins (Chip, Duffy, ShellieMay, Gelatoni, StellaLou); Pin Trading Carnival 2018 treasure jumbo, ambassador and Magic Access pins plus three member sets (six-pin box, designer series, 12 food-truck HMs) unnamed; HKDL summer 2018 events (PIN-GO, Pin Trading Nights, Magical Moment) as sets only; SHDR Nov 2018 Hidden Mickey Judy Hopps; TDS Easter 2018 egg pin and five Abu's Bazaar Easter prize pins. No holds released. Resellers (carousell, usshoppingsos, belloshophk, parkscollectibles) and YouTube ignored."
+}

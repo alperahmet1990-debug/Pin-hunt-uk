@@ -1,0 +1,517 @@
+{
+ "packet_id": "backfill-b373-asia-2018-fu6",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b373",
+ "sources": [
+  {
+   "url": "https://hkmsg.blogspot.com/2018/03/2018_10.html",
+   "title": "春日限定商品系列 2018 (HKDL spring 2018 merchandise)",
+   "publisher": "Hong Kong Main Street Gazette",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-03-10"
+  },
+  {
+   "url": "https://hk.ulifestyle.com.hk/activity/detail/110056/%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%A9%E6%B4%BB%E7%AF%80%E7%B2%BE%E5%93%81%E7%8E%87%E5%85%88%E7%9D%87-%E5%85%A8%E6%96%B0%E8%B2%BC%E7%B4%99-%E5%85%AC%E4%BB%94-%E6%96%9C%E6%8F%B9%E8%A2%8B-%E7%AD%86%E8%A8%98%E7%B0%BF",
+   "title": "迪士尼復活節精品率先睇 (HKDL Easter 2018 merchandise preview)",
+   "publisher": "U Lifestyle",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-02"
+  },
+  {
+   "url": "https://hkmsg.blogspot.com/2017/11/2018.html",
+   "title": "香港迪士尼樂園 2018 年主題商品 (HKDL 2018 dated merchandise)",
+   "publisher": "Hong Kong Main Street Gazette",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-11"
+  },
+  {
+   "url": "https://collectrandom.com/character-story-theme/zootopia/",
+   "title": "Zootopia Archives - Collect Random Disney Pins",
+   "publisher": "Collect Random (reseller)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/ariel-carousel-limited-edition-pin/",
+   "title": "Ariel Carousel Limited Edition Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-06"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/cinderella-carousel-limited-edition-pin",
+   "title": "Cinderella Carousel Limited Edition Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-09"
+  },
+  {
+   "url": "https://disneypinsblog.com/chip-dale-carousel-limited-edition-pin/",
+   "title": "Chip and Dale Carousel Limited Edition Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-11"
+  },
+  {
+   "url": "https://mezzomiki.jp/post-124210/",
+   "title": "TDR 35th Happiest Celebration limited-quantity items",
+   "publisher": "MezzoMiki",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-35th-anniversary-pins",
+   "title": "Tokyo Disney Resort 35th Anniversary Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-04"
+  },
+  {
+   "url": "https://hkmsg.blogspot.com/2018/02/201823.html",
+   "title": "香港迪士尼樂園最新徽章資訊 (2018.2月及3月號)",
+   "publisher": "Hong Kong Main Street Gazette",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-02-26"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "hkdl/2018/easter-2018-mystery",
+   "parent_set_key": "hkdl/2018/easter-2018",
+   "claims": [
+    {
+     "field": "price",
+     "value": 228,
+     "source_url": "https://hkmsg.blogspot.com/2018/03/2018_10.html",
+     "method": "search_snippet",
+     "note": "egg-design pin box set HK$228; search-engine summary of Gazette post"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://hkmsg.blogspot.com/2018/03/2018_10.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 15,
+     "source_url": "https://hkmsg.blogspot.com/2018/03/2018_10.html",
+     "method": "search_snippet",
+     "note": "15 designs in all; summary; matches DPB 15"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 5,
+     "source_url": "https://hkmsg.blogspot.com/2018/03/2018_10.html",
+     "method": "search_snippet",
+     "note": "5 pins per box; summary; matches DPB"
+    },
+    {
+     "field": "set_name",
+     "value": "花蛋造型徽章套裝 (egg-design pin set)",
+     "source_url": "https://hkmsg.blogspot.com/2018/03/2018_10.html",
+     "method": "search_snippet",
+     "note": "Chinese product name as given in summary"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2018/easter-2018-incredibles-booster",
+   "parent_set_key": "hkdl/2018/easter-2018",
+   "claims": [
+    {
+     "field": "price",
+     "value": 228,
+     "source_url": "https://hkmsg.blogspot.com/2018/03/2018_10.html",
+     "method": "search_snippet",
+     "note": "Incredibles version of the egg pin set also HK$228; search-engine summary only"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://hkmsg.blogspot.com/2018/03/2018_10.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2018/easter-2018-character-eggs",
+   "parent_set_key": "hkdl/2018/easter-2018",
+   "claims": [
+    {
+     "field": "price",
+     "value": 85,
+     "source_url": "https://hkmsg.blogspot.com/2018/03/2018_10.html",
+     "method": "search_snippet",
+     "note": "Duffy & friends egg-design pin set, red tag HK$85; summary reads it as a set price"
+    },
+    {
+     "field": "format",
+     "value": "pin set (套裝)",
+     "source_url": "https://hkmsg.blogspot.com/2018/03/2018_10.html",
+     "method": "search_snippet",
+     "note": "Gazette calls it a 徽章套裝; conflicts with DPB 'individual pins' (464); summary only"
+    },
+    {
+     "field": "price",
+     "value": 85,
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/110056/%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%A9%E6%B4%BB%E7%AF%80%E7%B2%BE%E5%93%81%E7%8E%87%E5%85%88%E7%9D%87-%E5%85%A8%E6%96%B0%E8%B2%BC%E7%B4%99-%E5%85%AC%E4%BB%94-%E6%96%9C%E6%8F%B9%E8%A2%8B-%E7%AD%86%E8%A8%98%E7%B0%BF",
+     "method": "search_snippet",
+     "note": "Duffy與好友主題徽章 $85 each ('/個'); per-piece price conflicts with Gazette set reading"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/110056/%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%A9%E6%B4%BB%E7%AF%80%E7%B2%BE%E5%93%81%E7%8E%87%E5%85%88%E7%9D%87-%E5%85%A8%E6%96%B0%E8%B2%BC%E7%B4%99-%E5%85%AC%E4%BB%94-%E6%96%9C%E6%8F%B9%E8%A2%8B-%E7%AD%86%E8%A8%98%E7%B0%BF",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-25",
+     "source_url": "https://hk.ulifestyle.com.hk/activity/detail/110056/%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%BE%A9%E6%B4%BB%E7%AF%80%E7%B2%BE%E5%93%81%E7%8E%87%E5%85%88%E7%9D%87-%E5%85%A8%E6%96%B0%E8%B2%BC%E7%B4%99-%E5%85%AC%E4%BB%94-%E6%96%9C%E6%8F%B9%E8%A2%8B-%E7%AD%86%E8%A8%98%E7%B0%BF",
+     "method": "search_snippet",
+     "note": "Easter goods on sale 25 Feb 2018 (promo 25 Feb-25 Mar); DPB gives 24 Feb; summary"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2018/35th-framed-35-pin-set",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-04-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-35th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "framed 35-pin set released 9 Apr 2018 per summary; MezzoMiki goods date 10 Apr"
+    },
+    {
+     "field": "price",
+     "value": 50000,
+     "source_url": "https://mezzomiki.jp/post-124210/",
+     "method": "search_snippet",
+     "note": "framed 35-pin commemorative set 50,000 yen; summary; corroborates 422"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://mezzomiki.jp/post-124210/",
+     "method": "search_snippet",
+     "note": "limited to 500; summary"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2018/oe-single/2018-mickey-and-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "HKDL 2018 dated Mickey and Friends pin",
+     "source_url": "https://hkmsg.blogspot.com/2017/11/2018.html",
+     "method": "search_snippet",
+     "note": "single OE pin in 2018 merchandise line; summary"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://hkmsg.blogspot.com/2017/11/2018.html",
+     "method": "search_snippet",
+     "note": "one pin per summary wording"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "shdr/2018/zootopia-emoji-mystery/yax",
+   "set_key": "shdr/2018/zootopia-emoji-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Yax"
+     ],
+     "source_url": "https://collectrandom.com/character-story-theme/zootopia/",
+     "method": "search_snippet",
+     "note": "reseller listing title 'SDR - Yax - Zootopia - Emoji - Mystery Shanghai 2018'; listing only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://collectrandom.com/character-story-theme/zootopia/",
+     "method": "search_snippet",
+     "note": "SDR in listing title"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/carousel-series/ariel",
+   "set_key": "hkdl/2018/carousel-series",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 9,
+     "source_url": "https://disneypinsblog.com/ariel-carousel-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "described as the ninth pin of the carousel series; search-engine summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-16",
+     "source_url": "https://disneypinsblog.com/ariel-carousel-limited-edition-pin/",
+     "method": "search_snippet",
+     "note": "on sale 16 Jun 2018; summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/carousel-series/cinderella",
+   "set_key": "hkdl/2018/carousel-series",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/blogs/news/cinderella-carousel-limited-edition-pin",
+     "method": "search_snippet",
+     "note": "12th and final pin of the series; summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2018/oe/2018-mickey-and-friends",
+   "set_key": "hkdl/2018/oe-single/2018-mickey-and-friends",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2018 Mickey and Friends themed pin",
+     "source_url": "https://hkmsg.blogspot.com/2017/11/2018.html",
+     "method": "search_snippet",
+     "note": "listed in HKDL 2018 dated merchandise line; search-engine summary only"
+    },
+    {
+     "field": "original_price",
+     "value": 85,
+     "source_url": "https://hkmsg.blogspot.com/2017/11/2018.html",
+     "method": "search_snippet",
+     "note": "HK$85; summary only"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://hkmsg.blogspot.com/2017/11/2018.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://hkmsg.blogspot.com/2017/11/2018.html",
+     "method": "search_snippet",
+     "note": "HKDL 2018 merchandise"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://hkmsg.blogspot.com/2017/11/2018.html",
+     "method": "search_snippet",
+     "note": "2018-themed line announced Nov 2017"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "shdr/2018/zootopia-emoji-mystery/yax",
+   "field": "source_url",
+   "searched": "2 queries (mypincentral/collectrandom)",
+   "note": "hold: reseller listing only (Collect Random); no blog/official per-design text; confirm Yax is one of the 10 donut designs"
+  },
+  {
+   "key": "shdr/2018/zootopia-emoji-mystery",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "lead: Collect Random archive also lists Finnick and Mr. Big 'Zootopia emoji' pins but snippet does not tie them to SDR 2018; Finnick/Clawhauser/Bogo/Flash holds kept; 5+ designs unnamed"
+  },
+  {
+   "key": "hkdl/2018/oe/2018-mickey-and-friends",
+   "field": "pin_structure",
+   "searched": "2 queries (Gazette 2018 merchandise)",
+   "note": "hold: confirm pin structure and which friends appear; only a search-engine summary of a merchandise roundup, no design description"
+  },
+  {
+   "key": "hkdl/2018/oe/2018-mickey-and-friends",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "field note: 'Mickey and friends' only; individual characters not stated"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-character-eggs/duffy",
+   "field": "pin_structure",
+   "searched": "3 queries (Gazette spring 2018, U Lifestyle)",
+   "note": "hold kept: Gazette names a Duffy/ShellieMay/Gelatoni/StellaLou spring pin '套裝' (set) at HK$85, U Lifestyle says $85 each; still no per-pin description"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-character-eggs/shelliemay",
+   "field": "pin_structure",
+   "searched": "3 queries (Gazette spring 2018, U Lifestyle)",
+   "note": "hold kept: Gazette names a Duffy/ShellieMay/Gelatoni/StellaLou spring pin '套裝' (set) at HK$85, U Lifestyle says $85 each; still no per-pin description"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-character-eggs/gelatoni",
+   "field": "pin_structure",
+   "searched": "3 queries (Gazette spring 2018, U Lifestyle)",
+   "note": "hold kept: Gazette names a Duffy/ShellieMay/Gelatoni/StellaLou spring pin '套裝' (set) at HK$85, U Lifestyle says $85 each; still no per-pin description"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-character-eggs/stellalou",
+   "field": "pin_structure",
+   "searched": "3 queries (Gazette spring 2018, U Lifestyle)",
+   "note": "hold kept: Gazette names a Duffy/ShellieMay/Gelatoni/StellaLou spring pin '套裝' (set) at HK$85, U Lifestyle says $85 each; still no per-pin description"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-character-eggs",
+   "field": "format",
+   "searched": "3 queries",
+   "note": "conflict: DPB (464) individual pins vs Gazette set (套裝) vs U Lifestyle $85 per piece; not resolved; may also be one multi-character pin"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "15 designs still unnamed; HK$228 box price only from search summary of Gazette"
+  },
+  {
+   "key": "hkdl/2018/easter-2018-incredibles-booster",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "contents and count still unknown; only HK$228 price (summary)"
+  },
+  {
+   "key": "hkdl/2018/carousel-series",
+   "field": "pins",
+   "searched": "6 queries (zh + en)",
+   "note": "10th (Jul) and 11th (Aug) designs still not found; Woody & Bullseye and Duffy & StellaLou holds kept; DPB Chip & Dale = 2nd pin, 4 Nov 2017 (outside cell)"
+  },
+  {
+   "key": "hkdl/2018/carousel-series/sofia-the-first",
+   "field": "set_position",
+   "searched": "6 queries",
+   "note": "field note: DPB order (C&D 2nd Nov 2017, Ariel 9th Jun 2018, Cinderella 12th Sep 2018) fits monthly count with Sofia 6th; Gazette 4th/5th conflict still recorded, not resolved"
+  },
+  {
+   "key": "hkdl/2018/pin-trading-carnival-2018/treasure-collection-jumbo",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "lead: summary of Gazette Feb/Mar 2018 issue lists two 15 Mar 2018 pins, one LE 1000 (2 per guest) and one LE 250; mapping to treasure set / Duffy jumbo still not stated"
+  },
+  {
+   "key": "hkdl/2018/chinese-new-year-2018",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Magic Access CNY 2018 pin still not found; Gelatoni & StellaLou hold kept"
+  },
+  {
+   "key": "hkdl/2018/christmas-2018",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "still no HKDL Christmas 2018 pin found"
+  },
+  {
+   "key": "hkdl/2018/mothers-day-2018/mothers-day-pin",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "designs of Mother's Day, Mystic Manor 5th, Donald 84th still undescribed (DMK gives LE 500 each, 12 May only)"
+  },
+  {
+   "key": "hkdl/2018/pin-trading-carnival-2018-food-truck-hidden-mickey",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "7 designs still unnamed; summary repeats LE 800 and 15 Mar 2018 (conflict with 'Nil' kept)"
+  },
+  {
+   "key": "hkdl/2018/hidden-mickey-carrots",
+   "field": "pins",
+   "searched": "0 queries (budget)",
+   "note": "sixth carrot pin not researched; holds kept"
+  },
+  {
+   "key": "hkdl/2018/pin-trading-carnival-2018-six-pin-box",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "six pins still unnamed"
+  },
+  {
+   "key": "shdr/2018/chinese-new-year-2018-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: bendibao still gives only Mickey/Minnie/Pluto in Chinese dress for LE and mystery lines; designs and set size not stated"
+  },
+  {
+   "key": "shdr/2018/mickey-90th",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "still no individual pins; zhoudaosh repeats LE birthday pins 16-18 Nov and free Guest Services birthday 徽章 (pin vs button unconfirmed); Minnie hold kept"
+  },
+  {
+   "key": "shdr/2018/toy-story-land-grand-opening-box-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "box set (LE 300) and two-pin set (LE 800) contents still not named"
+  },
+  {
+   "key": "shdr/2018/pin-trading-fun-day-2018-frozen-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "four Frozen pins and framed set still undescribed"
+  },
+  {
+   "key": "shdr/2018/2nd-anniversary",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no SHDR 2nd anniversary pin found in zh or en searches"
+  },
+  {
+   "key": "shdr/2018/hidden-mickey-monthly-2018/october-gelatoni",
+   "field": "identity",
+   "searched": "0 queries (budget)",
+   "note": "not researched; lead from 539 kept"
+  },
+  {
+   "key": "tdr/2018/christmas-2018/tdl-mickey-and-minnie-wreath",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "still no TDL 2018 pin price; results give TDS pin 1,000 yen only"
+  },
+  {
+   "key": "tdr/2018/35th-framed-35-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "35 pins still not individually described"
+  },
+  {
+   "key": "tdr/2018/35th-happiest-celebration/mickey",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "900 yen per pin still not tied per pin (summary repeats 'each 900 yen'); castle vs jumbo hold kept"
+  },
+  {
+   "key": "lead/shdr/cute-mystery-collection",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: DPB 'Cute Shanghai Disney Mystery Pin Collection' (8 Fab-5 + Chip/Dale designs on stars) has no date in snippet; not recorded, year unknown"
+  }
+ ],
+ "discovery_notes": "Cell B373, follow-up 6 of B015 (packets 215, 422, 464, 496, 519, 539); reuses their keys. 30 standard searches (zh/ja/en), snippets only; most values from search-engine summaries (noted). New: Gazette HK$228 price for HKDL Easter egg mystery box and Incredibles box, HK$85 and set/per-piece conflict for Duffy & friends egg pins, HKDL 2018 dated Mickey & Friends pin HK$85 (held), Zootopia Emoji Yax (reseller only, held), carousel Ariel 9th / Cinderella 12th positions, TDR 35th framed set date. No holds released. Resellers (carousell, belloshophk, usshoppingsos, parkscollectibles, collectrandom as hold only) and YouTube not used as evidence."
+}

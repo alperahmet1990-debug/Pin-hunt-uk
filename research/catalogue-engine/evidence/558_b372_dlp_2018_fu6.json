@@ -1,0 +1,1432 @@
+{
+ "packet_id": "backfill-b372-dlp-2018-fu6",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+   "title": "Pin-Neuerscheinungen im Juni 2018",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2018-06-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-november-2018-pins/",
+   "title": "Disneyland Paris November 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/my-cat-yzma.62144/",
+   "title": "SOLD! - My Cat Yzma",
+   "publisher": "Disney Pin Forum",
+   "published_date": "2018-03-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/58321",
+   "title": "58321",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2018/oe-set/incredibles-june-2018",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "page text: 'Der fünfte Pin passend zu den Unglaublichen' - four character pins plus family pin"
+    },
+    {
+     "field": "format",
+     "value": "individual pins sold separately",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "quoted: Alle diese Pins sind unlimitiert ... für je 6,99€"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "all unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "9 June 2018 per article"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/snow-white-animator-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "own line item Pin Animator Schneewittchen"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/tinker-bell-animator-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "own line item Pin Animator Tinkerbell"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/moana-animator-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "own line item Pin Animator Moana"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/rapunzel-animator-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "own line item Pin Animator Rapunzel"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/belle-animator-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "own line item Pin Animator Belle"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-set/marvel-super-heroes-june-2018",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-06-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "Marvel pins with matching lanyard on 9 June 2018"
+    },
+    {
+     "field": "format",
+     "value": "individual pins sold separately",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "each Marvel pin priced separately"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2018/oe/edna-mode-incredibles-2018",
+   "set_key": "dlp/2018/oe-set/incredibles-june-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Edna Mode",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "page text quoted in result: first pin turquoise background, shows Edna, name lettering at side; line item 'Pin Edna Mode, 6,99€, unlimitiert' quoted"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Edna Mode"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "character named in June 2018 dein-dlrp text"
+    },
+    {
+     "field": "main_character",
+     "value": "Edna Mode",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "single character on pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "each Incredibles pin described and priced individually (je 6,99€)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Edna Mode on turquoise background with her name lettered at the side",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of German body text in search result"
+    },
+    {
+     "field": "front_text",
+     "value": "Edna Mode",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "lettering named in body text"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "Incredibles pins in 9 June drop per article (search summary)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item says unlimitiert (quoted line item in search result)"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item 6,99€ (quoted line item in search result)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "June 2018 release article"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "DLP June 2018 releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/mr-incredible-incredibles-2018",
+   "set_key": "dlp/2018/oe-set/incredibles-june-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Mr. Incredible",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item 'Pin Mr. Incredible, 6,99€' matched by exact-phrase query; body calls it Incredible Dad, dark blue background (German summary)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mr. Incredible"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "character named in June 2018 dein-dlrp text"
+    },
+    {
+     "field": "main_character",
+     "value": "Mr. Incredible",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "single character on pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "each Incredibles pin described and priced individually (je 6,99€)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mr. Incredible on dark blue background, lettering Incredible Dad",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of German body text in search result"
+    },
+    {
+     "field": "front_text",
+     "value": "Incredible Dad",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "lettering named in body text"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "Incredibles pins in 9 June drop per article (search summary)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item says unlimitiert (quoted line item in search result)"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item 6,99€ (quoted line item in search result)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "June 2018 release article"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "DLP June 2018 releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/mrs-incredible-incredibles-2018",
+   "set_key": "dlp/2018/oe-set/incredibles-june-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Mrs. Incredible",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item 'Pin Mrs. Incredible, 6,99€' matched by exact-phrase query; body: purple background, best fighting pose, 'Incredible Mom' (German summary)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mrs. Incredible"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "character named in June 2018 dein-dlrp text"
+    },
+    {
+     "field": "main_character",
+     "value": "Mrs. Incredible",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "single character on pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "each Incredibles pin described and priced individually (je 6,99€)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mrs. Incredible in fighting pose on purple background, lettering Incredible Mom",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of German body text in search result"
+    },
+    {
+     "field": "front_text",
+     "value": "Incredible Mom",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "lettering named in body text"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "Incredibles pins in 9 June drop per article (search summary)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item says unlimitiert (quoted line item in search result)"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item 6,99€ (quoted line item in search result)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "June 2018 release article"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "DLP June 2018 releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/jack-jack-incredibles-2018",
+   "set_key": "dlp/2018/oe-set/incredibles-june-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Jack Jack",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item 'Pin Jack Jack, 6,99€' matched by exact-phrase query; body: yellow background, lettering 'Incredible Baby' (German summary)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack-Jack"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "character named in June 2018 dein-dlrp text"
+    },
+    {
+     "field": "main_character",
+     "value": "Jack-Jack",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "single character on pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "each Incredibles pin described and priced individually (je 6,99€)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Jack-Jack on yellow background, lettering Incredible Baby",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of German body text in search result"
+    },
+    {
+     "field": "front_text",
+     "value": "Incredible Baby",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "lettering named in body text"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "Incredibles pins in 9 June drop per article (search summary)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item says unlimitiert (quoted line item in search result)"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item 6,99€ (quoted line item in search result)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "June 2018 release article"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "DLP June 2018 releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/team-incredibles-incredibles-2018",
+   "set_key": "dlp/2018/oe-set/incredibles-june-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Incredibles-Familie",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "page text quoted in result: fifth Incredibles pin shows the whole Parr family with 'Team Incredibles'; quick list name 'Pin Incredibles-Familie'"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Parr family"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "character named in June 2018 dein-dlrp text"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "each Incredibles pin described and priced individually (je 6,99€)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Whole Parr family with lettering Team Incredibles; simpler design",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of German body text in search result"
+    },
+    {
+     "field": "front_text",
+     "value": "Team Incredibles",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "lettering named in body text"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "Incredibles pins in 9 June drop per article (search summary)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item says unlimitiert (quoted line item in search result)"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item 6,99€ (quoted line item in search result)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "June 2018 release article"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "DLP June 2018 releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/snow-white-animator-2018",
+   "set_key": "dlp/2018/oe-single/snow-white-animator-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Animator Schneewittchen",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "quoted line item 'Pin Animator Schneewittchen, 6,99€, unlimitiert' in search result"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "one princess/fairy per Animator pin, shown as a toddler (German summary)"
+    },
+    {
+     "field": "main_character",
+     "value": "Snow White",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "listed as its own line item with its own price"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item says unlimitiert (quoted line item in search result)"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item 6,99€ (quoted line item in search result)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "June 2018 release article"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "DLP June 2018 releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/tinker-bell-animator-2018",
+   "set_key": "dlp/2018/oe-single/tinker-bell-animator-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Animator Tinkerbell",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "quoted line item 'Pin Animator Tinkerbell, 6,99€, unlimitiert' in search result"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "one princess/fairy per Animator pin, shown as a toddler (German summary)"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "listed as its own line item with its own price"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item says unlimitiert (quoted line item in search result)"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item 6,99€ (quoted line item in search result)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "June 2018 release article"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "DLP June 2018 releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/moana-animator-2018",
+   "set_key": "dlp/2018/oe-single/moana-animator-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Animator Moana",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "quoted line item 'Pin Animator Moana, 6,99€, unlimitiert' in search result"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Moana"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "one princess/fairy per Animator pin, shown as a toddler (German summary)"
+    },
+    {
+     "field": "main_character",
+     "value": "Moana",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "listed as its own line item with its own price"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item says unlimitiert (quoted line item in search result)"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item 6,99€ (quoted line item in search result)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "June 2018 release article"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "DLP June 2018 releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/rapunzel-animator-2018",
+   "set_key": "dlp/2018/oe-single/rapunzel-animator-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Animator Rapunzel",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "quoted line item 'Pin Animator Rapunzel, 6,99€, unlimitiert' in search result"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "one princess/fairy per Animator pin, shown as a toddler (German summary)"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "listed as its own line item with its own price"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item says unlimitiert (quoted line item in search result)"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item 6,99€ (quoted line item in search result)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "June 2018 release article"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "DLP June 2018 releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/belle-animator-2018",
+   "set_key": "dlp/2018/oe-single/belle-animator-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Animator Belle",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "quoted line item 'Pin Animator Belle, 6,99€, unlimitiert' in search result"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "one princess/fairy per Animator pin, shown as a toddler (German summary)"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "listed as its own line item with its own price"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item says unlimitiert (quoted line item in search result)"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item 6,99€ (quoted line item in search result)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "June 2018 release article"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "DLP June 2018 releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/ariel-animator-2018",
+   "set_key": "dlp/2018/oe-single/ariel-animator-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Animator Arielle",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "quoted line item 'Pin Animator Arielle, 6,99€, unlimitiert' (corroborates 420/538)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "6,99€ line item"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/captain-america-spider-man-iron-man",
+   "set_key": "dlp/2018/oe-set/marvel-super-heroes-june-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain America",
+      "Spider-Man",
+      "Iron Man"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "body text: one poster-motif pin with the three heroes"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "described as one pin ('diesen schicken Pin')"
+    },
+    {
+     "field": "visual_description",
+     "value": "Poster motif with the three heroes, full moon and Sleeping Beauty Castle behind",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of German body text"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "quoted: Kostenpunkt für diesen schicken Pin sind 6,99€"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "quoted: er ist ebenfalls unlimitiert"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "Marvel pins and lanyard on 9 June 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/marvel-poster-summer-of-super-heroes",
+   "set_key": "dlp/2018/oe-set/marvel-super-heroes-june-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Marvel Poster",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "quick-list line item 'Pin Marvel Poster, 7,99€, unlimitiert' (search result)"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "line item 7,99€; body section on rectangular film-poster pin also 7,99€"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "9 June 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/my-cat-2018/yzma",
+   "set_key": "dlp/2018/my-cat-2018",
+   "claims": [
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.disneypinforum.com/threads/my-cat-yzma.62144/",
+     "method": "search_snippet",
+     "note": "thread opened 1 Mar 2018; reply says the Paris flyer featured the My Cat Yzma pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.disneypinforum.com/threads/my-cat-yzma.62144/",
+     "method": "search_snippet",
+     "note": "Paris flyer"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/58321",
+     "method": "search_snippet",
+     "note": "database entry calls it a 2018 Disneyland Paris My Cat Series pin (search summary)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Yzma",
+      "Kronk"
+     ],
+     "source_url": "https://mypincentral.com/pin/58321",
+     "method": "search_snippet",
+     "note": "entry says Kronk at centre with 'My Cat: Yzma' (search summary); differs from 517 Yzma-only"
+    },
+    {
+     "field": "front_text",
+     "value": "My Cat: Yzma",
+     "source_url": "https://mypincentral.com/pin/58321",
+     "method": "search_snippet",
+     "note": "text on pin per entry (search summary)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/my-cat-2018/mochi",
+   "set_key": "dlp/2018/my-cat-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mochi"
+     ],
+     "source_url": "https://disneypinsblog.com/disneyland-paris-november-2018-pins/",
+     "method": "search_snippet",
+     "note": "Nov 2018 DLP post says the My Cat pin features Mochi from Big Hero 6"
+    },
+    {
+     "field": "franchise",
+     "value": "Big Hero 6",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-november-2018-pins/",
+     "method": "search_snippet",
+     "note": "Mochi from Big Hero 6"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-november-2018-pins/",
+     "method": "search_snippet",
+     "note": "November 2018 DLP releases"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-november-2018-pins/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-november-2018-pins/",
+     "method": "search_snippet",
+     "note": "DLP monthly release post"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2018/oe/edna-mode-incredibles-2018",
+   "field": "verification",
+   "searched": "4 dein-dlrp queries (searches 1-4, 7)",
+   "note": "release evidence: quoted German page text / exact-phrase line items now seen (round 57 hold was summary-only); per-pin text and price support one pin per character"
+  },
+  {
+   "key": "dlp/2018/oe/mr-incredible-incredibles-2018",
+   "field": "verification",
+   "searched": "4 dein-dlrp queries (searches 1-4, 7)",
+   "note": "release evidence: quoted German page text / exact-phrase line items now seen (round 57 hold was summary-only); per-pin text and price support one pin per character"
+  },
+  {
+   "key": "dlp/2018/oe/mrs-incredible-incredibles-2018",
+   "field": "verification",
+   "searched": "4 dein-dlrp queries (searches 1-4, 7)",
+   "note": "release evidence: quoted German page text / exact-phrase line items now seen (round 57 hold was summary-only); per-pin text and price support one pin per character"
+  },
+  {
+   "key": "dlp/2018/oe/jack-jack-incredibles-2018",
+   "field": "verification",
+   "searched": "4 dein-dlrp queries (searches 1-4, 7)",
+   "note": "release evidence: quoted German page text / exact-phrase line items now seen (round 57 hold was summary-only); per-pin text and price support one pin per character"
+  },
+  {
+   "key": "dlp/2018/oe/team-incredibles-incredibles-2018",
+   "field": "verification",
+   "searched": "4 dein-dlrp queries (searches 1-4, 7)",
+   "note": "release evidence: quoted German page text / exact-phrase line items now seen (round 57 hold was summary-only); per-pin text and price support one pin per character"
+  },
+  {
+   "key": "dlp/2018/oe/snow-white-animator-2018",
+   "field": "verification",
+   "searched": "searches 5-7",
+   "note": "release evidence: quoted German line item 'Pin Animator Schneewittchen, 6,99€, unlimitiert' (round 57 hold was summary-only)"
+  },
+  {
+   "key": "dlp/2018/oe/tinker-bell-animator-2018",
+   "field": "verification",
+   "searched": "searches 5-7",
+   "note": "release evidence: quoted German line item 'Pin Animator Tinkerbell, 6,99€, unlimitiert' (round 57 hold was summary-only)"
+  },
+  {
+   "key": "dlp/2018/oe/moana-animator-2018",
+   "field": "verification",
+   "searched": "searches 5-7",
+   "note": "release evidence: quoted German line item 'Pin Animator Moana, 6,99€, unlimitiert' (round 57 hold was summary-only)"
+  },
+  {
+   "key": "dlp/2018/oe/rapunzel-animator-2018",
+   "field": "verification",
+   "searched": "searches 5-7",
+   "note": "release evidence: quoted German line item 'Pin Animator Rapunzel, 6,99€, unlimitiert' (round 57 hold was summary-only)"
+  },
+  {
+   "key": "dlp/2018/oe/belle-animator-2018",
+   "field": "verification",
+   "searched": "searches 5-7",
+   "note": "release evidence: quoted German line item 'Pin Animator Belle, 6,99€, unlimitiert' (round 57 hold was summary-only)"
+  },
+  {
+   "key": "dlp/2018/oe/belle-animator-2018",
+   "field": "original_price",
+   "searched": "search 7",
+   "note": "field note: dein-dlrp Mar 2020 lists Pin Animator Belle/Tinkerbell at 7,99€, Oct 2020 Pin Animators Rapunzel 7,99€ - reissue or new design unknown; not merged"
+  },
+  {
+   "key": "dlp/2018/oe/tinker-bell-animator-2018",
+   "field": "original_price",
+   "searched": "search 7",
+   "note": "field note: dein-dlrp Mar 2020 lists Pin Animator Belle/Tinkerbell at 7,99€, Oct 2020 Pin Animators Rapunzel 7,99€ - reissue or new design unknown; not merged"
+  },
+  {
+   "key": "dlp/2018/oe/rapunzel-animator-2018",
+   "field": "original_price",
+   "searched": "search 7",
+   "note": "field note: dein-dlrp Mar 2020 lists Pin Animator Belle/Tinkerbell at 7,99€, Oct 2020 Pin Animators Rapunzel 7,99€ - reissue or new design unknown; not merged"
+  },
+  {
+   "key": "dlp/2018/oe/captain-america-spider-man-iron-man",
+   "field": "verification",
+   "searched": "search 26",
+   "note": "release evidence: quoted body text gives this trio pin its own price (6,99€) and unlimited status; 420 LE 700 conflict already traced to Ariel/Triton (494)"
+  },
+  {
+   "key": "dlp/2018/oe/marvel-poster-summer-of-super-heroes",
+   "field": "original_price",
+   "searched": "search 26",
+   "note": "release evidence: body 7,99€ matches line 'Pin Marvel Poster, 7,99€'; 6,99€ line 'Marvel Summer of Superheroes-Poster' likely the trio poster-motif pin (my inference)"
+  },
+  {
+   "key": "dlp/2018/oe-set/marvel-super-heroes-june-2018",
+   "field": "pin_name",
+   "searched": "search 26",
+   "note": "field note: mapping of line item 'Pin Marvel Summer of Superheroes-Poster, 6,99€' to the trio pin is inferred, not stated; result itself called price mapping uncertain"
+  },
+  {
+   "key": "dlp/2018/my-cat-2018/yzma",
+   "field": "verification",
+   "searched": "searches 21-22",
+   "note": "release evidence: DPF thread (1 Mar 2018, Paris flyer) and My Pin Central put Yzma in the 2018 DLP My Cat series; consistent with 517 Mar 2018"
+  },
+  {
+   "key": "dlp/2018/my-cat-2018/yzma",
+   "field": "release_date",
+   "searched": "searches 21-22",
+   "note": "field note: exact day 2018-03-24 still only from 517 PDF summary; flyer thread supports early 2018 only. Kronk on pin per MPC only"
+  },
+  {
+   "key": "dlp/2018/my-cat-2018/mochi",
+   "field": "verification",
+   "searched": "searches 23-24",
+   "note": "release evidence: Disney Pins Blog Nov 2018 DLP post independently names Mochi (Big Hero 6) as the month's My Cat pin; matches 517 PDF 17/11/2018"
+  },
+  {
+   "key": "dlp/2018/my-cat-2018/mochi",
+   "field": "edition_size",
+   "searched": "searches 23-24",
+   "note": "field note: LE 700 and exact day still only from 517 PDF summary; blog gives no edition or price"
+  },
+  {
+   "key": "dlp/2018/november-2018-releases",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "lead: Disney Pins Blog Nov 2018 DLP post mentions Mickey 90th anniversary and Mary Poppins pins; no designs named"
+  },
+  {
+   "key": "dlp/2018/oe/mickey-minnie-90th",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "lead: disneystore.eu Mickey and Minnie pin (URL no. 207801019017) in Mickey 90th collection for DLP and shopDisney; undated - not recorded"
+  },
+  {
+   "key": "dlp/2018/oe/mrs-incredible-incredibles-2018",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "lead: disneystore.co.uk 'Disneyland Paris Mrs. Incredible Pin' (URL no. 207801018036) undated; not linked; fryguypins 'Kite Characters' Mrs Incredible is another series"
+  },
+  {
+   "key": "dlp/2018/season-of-the-force-2018",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "still no 2018 SotF design, price or edition; Jan 2018 dein-dlrp teaser only"
+  },
+  {
+   "key": "dlp/2018/stars-on-parade-le-2018",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "Jan 2018 teaser only (Arielle, Star Wars, limited Stars on Parade series); members not named"
+  },
+  {
+   "key": "dlp/2018/ariel-collection-jan-2018",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "Jan 2018 Ariel designs not named; Apr 2018 Arielle Früchte pin is already 462 ariel-summer-fruit-2018"
+  },
+  {
+   "key": "dlp/2018/february-2018-releases",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "TttM Feb 2018 again: Lion King pins + Bambi LEs at Pueblo (10 Feb), Toy Story + 25th-anniversary LEs; no designs named. DPB adds Tangled"
+  },
+  {
+   "key": "dlp/2018/march-2018-releases",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "St Patrick's, Peter Pan, princess pins still unnamed"
+  },
+  {
+   "key": "dlp/2018/may-2018-releases",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "DPB May: Minnie, Dumbo, Star Wars, Jasmine My Cat; no designs named; dein-dlrp May page not indexed"
+  },
+  {
+   "key": "dlp/2018/monthly-pages",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "dein-dlrp Jan/Mar/May/Jul/Aug/Sep/Nov/Dec 2018 pages still not indexed; passiondlp arc028 not indexed"
+  },
+  {
+   "key": "dlp/2018/ptn-april-may-october-2018",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "Apr (28 Apr), May, Oct, Nov PTN trios and Incredibles PTN still unnamed"
+  },
+  {
+   "key": "dlp/2018/ptn-november-2018-bambi",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "DPB again: Bambi PTN LE 400, 30 Nov 2018; members not named; Flower hold (420) retained"
+  },
+  {
+   "key": "dlp/2018/christmas-2018-le",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "no Christmas 2018 LE beyond 20 Dec Cheshire/Stitch; Dec themes Peter Pan, Inside Out, Mulan unnamed"
+  },
+  {
+   "key": "dlp/2018/rendez-vous-gourmand-2018",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "2018 trio still unnamed (3 LE 500, 3 Aug, Chez Marianne); DPB surprise LE 500 RVG post is Aug 2019 Dumbo/Alice/Chip & Dale"
+  },
+  {
+   "key": "dlp/2018/valentines-2018",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "hold retained (538): postcard pin count/structure still not found"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "holds retained (420): no new per-pin evidence"
+  },
+  {
+   "key": "dlp/2018/june-2018-le/ursula-big-thunder-mountain",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "hold retained (420): no new evidence"
+  },
+  {
+   "key": "dlp/2018/ptn-november-2018-bambi/flower",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "hold retained (420): no new evidence"
+  },
+  {
+   "key": "dlp/2018/pirates-and-princesses-2018",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "hold retained (420): Peter Pan/Hook structure unconfirmed"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018/tod",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "hold retained (462): no Tod mini listing"
+  },
+  {
+   "key": "dlp/2018/cherry-blossom-girl-july-2018",
+   "field": "general",
+   "searched": "30-search follow-up",
+   "note": "hold retained: designs only on reseller"
+  }
+ ],
+ "discovery_notes": "Follow-up 6 of B013 (packets 213, 420, 462, 494, 517, 538). 30 standard searches; snippets only. Quoted German dein-dlrp June 2018 text and exact-phrase line items now support the Incredibles five and Animator five (release evidence notes). Quoted body price for the Marvel trio pin. Disney Pins Blog Nov 2018 names Mochi; DPF/MPC support Yzma 2018. No new pins; monthly dein-dlrp pages beyond Apr/Jun/Oct still not indexed."
+}

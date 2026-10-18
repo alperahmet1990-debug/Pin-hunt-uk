@@ -1,0 +1,3004 @@
+{
+ "packet_id": "backfill-b279-lic-2018-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b279",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+   "title": "Funko Pop! Mickey Mouse 90th BoxLunch Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/funko-pop-disney-mickey-mouse-90th-blind-box-enamel-pin---boxlunch-exclusive/11662353.html",
+   "title": "Funko Pop! Disney Mickey Mouse 90th Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/mickey-90-funko-pop-blind-box-pins.68339/",
+   "title": "Mickey 90 Funko Pop Blind Box Pins (sold/ended thread)",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/funko-pop-disney-alice-in-wonderland-alice-queen-of-hearts-hedgehog-enamel-pin-set---boxlunch-exclusive/11609619.html",
+   "title": "Funko Pop! Disney Alice In Wonderland Alice Queen Of Hearts & Hedgehog Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/alice-queen-of-hearts-hedgehog-funko-pop-disney-boxlunch-pin-set/",
+   "title": "Alice, Queen of Hearts & Hedgehog Funko Pop! Disney BoxLunch Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/funko-pop-disney-mulan-mulan-mushu-cri-kee-enamel-pin-set---boxlunch-exclusive/11609627.html",
+   "title": "Funko Pop! Disney Mulan Mulan Mushu & Cri-Kee Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mulan-funko-pop-disney-boxlunch-pin-set/",
+   "title": "Mulan Funko Pop! Disney BoxLunch Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/figpin-marvel-avengers-infinity-war-thanos-character-pin/11404283.html",
+   "title": "FiGPiN Marvel Avengers: Infinity War Thanos Character Pin",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://nerdycollectibles.com/products/figpin-marvel-avengers-infinity-war-thanos",
+   "title": "FiGPiN Marvel Avengers Infinity War - Thanos",
+   "publisher": "Nerdy Collectibles",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dcbservice.com/product/may182834/figpin-marvel-avengers-iw-black-panther-figure-pin-6pc-case",
+   "title": "Figpin Marvel Avengers IW Black Panther Figure Pin 6Pc Case",
+   "publisher": "Discount Comic Book Service",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.pinsonfire.com/products/figpin-infinity-war-black-panther-110-marvel-avengers-enamel-pin-hard-case",
+   "title": "FiGPiN Marvel Avengers Infinity War Black Panther #110",
+   "publisher": "Pins on Fire",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.starwarsuniverse.co.uk/figpin-avengers-infinity-war-black-panther-0110-3-inch-enamel-pin",
+   "title": "FiGPiN Avengers Infinity War Black Panther (0110) 3-inch Enamel Pin",
+   "publisher": "Star Wars Universe (UK)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.entertainmentearth.com/product/marvel-avengers-infinity-war-thanos-figpin-xl-enamel-pin/fg321",
+   "title": "Marvel Avengers: Infinity War Thanos FiGPiN XL Enamel Pin",
+   "publisher": "Entertainment Earth",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.knowheretoys.com/Avengers-Infinity-War-Thanos-X1-FiGPiN-XL_p_8518.html",
+   "title": "Avengers: Infinity War Thanos #X1 FiGPiN XL",
+   "publisher": "Knowhere Toys",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+   "title": "Mickey & Friends FiGPiN Mini Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.entertainmentearth.com/product/mickey-mouse-90th-anniversary-figpin-enamel-pin/fg344",
+   "title": "Mickey Mouse 90th Anniversary FiGPiN Enamel Pin",
+   "publisher": "Entertainment Earth",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.entertainmentearth.com/product/disney-mickey-mouse-and-friends-pluto-figpin-mini/fg334",
+   "title": "Disney Mickey Mouse and Friends Pluto FiGPin Mini",
+   "publisher": "Entertainment Earth",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.previewsworld.com/Catalog/JUL188374",
+   "title": "JUL188374 - FIGPIN MINI DISNEY PLUTO PIN",
+   "publisher": "Previews World",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.atomicempire.com/Item/250240",
+   "title": "Disney Figpin: Pluto Mini Pin",
+   "publisher": "Atomic Empire",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/kingdom-hearts-gift-set-at-nycc-2018-includes-pin/",
+   "title": "Kingdom Hearts Gift Set at NYCC 2018 Includes Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://monogram-store.com/nycc-2018-exclusive-kingdom-hearts-gift-set/",
+   "title": "NYCC 2018 Exclusive - Kingdom Hearts Gift Set",
+   "publisher": "Monogram International",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/stitch-lanyard-pin-set-at-sdcc-2018",
+   "title": "Stitch Lanyard Pin Set at SDCC 2018",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://sdccblog.com/2018/07/monogram-international-san-diego-comic-con-2018-exclusives/",
+   "title": "Monogram International San Diego Comic-Con 2018 Exclusives",
+   "publisher": "San Diego Comic-Con Unofficial Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mary-poppins-primark-disney-pin-set/",
+   "title": "Mary Poppins Primark Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.toynk.com/products/marvel-deadpool-and-cable-limited-edition-enamel-pin-nycc-2018-exclusive",
+   "title": "Marvel Deadpool and Cable Limited Edition Enamel Pin (NYCC 2018 Exclusive)",
+   "publisher": "Toynk Toys",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://sdccblog.com/2018/09/toynk-new-york-comic-con-2018-exclusives-revealed/",
+   "title": "Toynk New York Comic Con 2018 Exclusives Revealed",
+   "publisher": "San Diego Comic-Con Unofficial Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+   "title": "Gentle Giant SDCC 2018 Exclusive 3.75in Collector Scale Enamel Pins",
+   "publisher": "Jedi News",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.fanthatracks.com/news/collecting/sdcc-2018-gentle-giant-3-75-collector-scale-enamel-pins/",
+   "title": "SDCC 2018: Gentle Giant 3.75in Collector Scale enamel pins",
+   "publisher": "Fantha Tracks",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.yodasnews.com/gentle-giant-sdcc-exclusive-announcement-6-enamel-pins/",
+   "title": "Gentle Giant SDCC Exclusive Announcement #6 - Enamel Pins",
+   "publisher": "Yoda's News",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://sdccblog.com/2018/07/gentle-giant-san-diego-comic-con-2018-exclusives/",
+   "title": "Gentle Giant San Diego Comic-Con 2018 Exclusives",
+   "publisher": "San Diego Comic-Con Unofficial Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+   "title": "SDCC 2018 Exclusive Skottie Young Marvel Character Pin Series",
+   "publisher": "The Blot Says",
+   "published_date": "2018-07-14",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+   "title": "San Diego Comic Con 2018 Marvel Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://sdccblog.com/2018/07/marvel-san-diego-comic-con-2018-exclusives/",
+   "title": "Marvel San Diego Comic-Con 2018 Exclusives",
+   "publisher": "San Diego Comic-Con Unofficial Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+   "title": "NYCC 2018 Exclusive Skottie Young Marvel Character Pin Series",
+   "publisher": "The Blot Says",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2018/10/18/review-nycc-18-exclusive-skottie-young-marvel-pins/",
+   "title": "Review: NYCC '18 Exclusive Skottie Young Marvel Pins",
+   "publisher": "DisKingdom",
+   "published_date": "2018-10-18",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-90th-anniversary-socks-and-pins-box-set-by-stance/",
+   "title": "Mickey Mouse 90th Anniversary Socks and Pins Box Set by Stance",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-pixar-coco-booster-pin-set",
+   "title": "Disney Pixar Coco Booster Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/the-nightmare-before-christmas-25th-anniversary-12-day-interchangeable-necklace-set/11577156.html",
+   "title": "The Nightmare Before Christmas 25th Anniversary 12 Day Interchangeable Necklace Set",
+   "publisher": "Hot Topic",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/the-nightmare-before-christmas-blind-box-enamel-pin/11503066.html",
+   "title": "The Nightmare Before Christmas Blind Box Enamel Pin",
+   "publisher": "Hot Topic",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-friends-stained-glass-collectible-pin-series-at-pink-a-la-mode/",
+   "title": "Mickey & Friends Stained Glass Collectible Pin Series at Pink a la Mode",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/marvel-black-panther-enamel-pin-set---boxlunch-exclusive/11416539.html",
+   "title": "Marvel Black Panther Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hades-hot-topic-disney-pin/",
+   "title": "Hades Hot Topic Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2018/funko-boxlunch-mickey-90th-mystery",
+   "claims": [
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "DPB gives retail price $9.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "DPB says released December 2018"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "one random pin per box"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-mickey-mouse-90th-blind-box-enamel-pin---boxlunch-exclusive/11662353.html",
+     "method": "search_snippet",
+     "note": "BoxLunch product title names Funko Pop!"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-mickey-mouse-90th-blind-box-enamel-pin---boxlunch-exclusive/11662353.html",
+     "method": "search_snippet",
+     "note": "listed as a BoxLunch exclusive"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey in several iconic roles, Funko Pop! style",
+     "source_url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+     "method": "search_snippet",
+     "note": "designs show Mickey in famous roles; individual roles not named in snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/funko-boxlunch-alice-queen-of-hearts-hedgehog",
+   "claims": [
+    {
+     "field": "price",
+     "value": 18.9,
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-alice-in-wonderland-alice-queen-of-hearts-hedgehog-enamel-pin-set---boxlunch-exclusive/11609619.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing $18.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-alice-in-wonderland-alice-queen-of-hearts-hedgehog-enamel-pin-set---boxlunch-exclusive/11609619.html",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/alice-queen-of-hearts-hedgehog-funko-pop-disney-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB says released November 2018 as part of the Funko BoxLunch collection"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-alice-in-wonderland-alice-queen-of-hearts-hedgehog-enamel-pin-set---boxlunch-exclusive/11609619.html",
+     "method": "search_snippet",
+     "note": "Funko Pop! named in product title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-alice-in-wonderland-alice-queen-of-hearts-hedgehog-enamel-pin-set---boxlunch-exclusive/11609619.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/funko-boxlunch-mulan",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-12",
+     "source_url": "https://disneypinsblog.com/mulan-funko-pop-disney-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB: December 2018, Funko Pop BoxLunch collection"
+    },
+    {
+     "field": "price",
+     "value": 18.9,
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-mulan-mulan-mushu-cri-kee-enamel-pin-set---boxlunch-exclusive/11609627.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing $18.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-mulan-mulan-mushu-cri-kee-enamel-pin-set---boxlunch-exclusive/11609627.html",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-mulan-mulan-mushu-cri-kee-enamel-pin-set---boxlunch-exclusive/11609627.html",
+     "method": "search_snippet",
+     "note": "Funko Pop! named in product title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/funko-pop-disney-mulan-mulan-mushu-cri-kee-enamel-pin-set---boxlunch-exclusive/11609627.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/figpin-avengers-infinity-war",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "FiGPiN Marvel Avengers: Infinity War 3in pins",
+     "source_url": "https://www.dcbservice.com/product/may182834/figpin-marvel-avengers-iw-black-panther-figure-pin-6pc-case",
+     "method": "search_snippet",
+     "note": "distributor case listing offers Black Panther, Iron Man, Spider-Man or Thanos"
+    },
+    {
+     "field": "issuer",
+     "value": "FiGPiN",
+     "source_url": "https://www.dcbservice.com/product/may182834/figpin-marvel-avengers-iw-black-panther-figure-pin-6pc-case",
+     "method": "search_snippet",
+     "note": "FiGPiN line"
+    },
+    {
+     "field": "format",
+     "value": "individual pins sold separately",
+     "source_url": "https://www.dcbservice.com/product/may182834/figpin-marvel-avengers-iw-black-panther-figure-pin-6pc-case",
+     "method": "search_snippet",
+     "note": "case listing lets buyer choose one of four characters"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07",
+     "source_url": "https://www.dcbservice.com/product/may182834/figpin-marvel-avengers-iw-black-panther-figure-pin-6pc-case",
+     "method": "search_snippet",
+     "note": "expected ship date 25 Jul 2018 in distributor listing (MAY18 solicitation code)"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dcbservice.com/product/may182834/figpin-marvel-avengers-iw-black-panther-figure-pin-6pc-case",
+     "method": "search_snippet",
+     "note": "four character choices named in case listing; chase variants not counted"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/monogram-nycc-kingdom-hearts-sora-gift-set",
+   "claims": [
+    {
+     "field": "issuer",
+     "value": "Monogram International",
+     "source_url": "https://monogram-store.com/nycc-2018-exclusive-kingdom-hearts-gift-set/",
+     "method": "search_snippet",
+     "note": "Monogram store sells the NYCC 2018 exclusive gift set"
+    },
+    {
+     "field": "format",
+     "value": "gift set: lanyard, Sora pin, foam key ring",
+     "source_url": "https://monogram-store.com/nycc-2018-exclusive-kingdom-hearts-gift-set/",
+     "method": "search_snippet",
+     "note": "store lists the three items and an NYCC Exclusive sticker"
+    },
+    {
+     "field": "price",
+     "value": 20,
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-gift-set-at-nycc-2018-includes-pin/",
+     "method": "search_snippet",
+     "note": "DPB retail $20"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-gift-set-at-nycc-2018-includes-pin/",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018, Monogram booth #226",
+     "source_url": "https://disneypinsblog.com/kingdom-hearts-gift-set-at-nycc-2018-includes-pin/",
+     "method": "search_snippet",
+     "note": "NYCC 4-7 Oct 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/monogram-sdcc-stitch-lanyard",
+   "claims": [
+    {
+     "field": "price",
+     "value": 15,
+     "source_url": "https://sdccblog.com/2018/07/monogram-international-san-diego-comic-con-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "$15"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://sdccblog.com/2018/07/monogram-international-san-diego-comic-con-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://sdccblog.com/2018/07/monogram-international-san-diego-comic-con-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "limited to 400 pieces"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018, Monogram booth #3645",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-lanyard-pin-set-at-sdcc-2018",
+     "method": "search_snippet",
+     "note": "DPB booth number"
+    },
+    {
+     "field": "visual_description",
+     "value": "guitar-holding Stitch lanyard with three rock-and-roll themed Stitch pins",
+     "source_url": "https://sdccblog.com/2018/07/monogram-international-san-diego-comic-con-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "theme only"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/primark-mary-poppins",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/mary-poppins-primark-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "six different pins"
+    },
+    {
+     "field": "price",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mary-poppins-primark-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "GBP 3.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/mary-poppins-primark-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "UK price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/mary-poppins-primark-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "post says November 2018; archive dates 14 and 18 Nov"
+    },
+    {
+     "field": "visual_features",
+     "value": "gold tone finish",
+     "source_url": "https://disneypinsblog.com/mary-poppins-primark-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "all pins gold tone"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/gentle-giant-sdcc-collector-scale",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://www.fanthatracks.com/news/collecting/sdcc-2018-gentle-giant-3-75-collector-scale-enamel-pins/",
+     "method": "search_snippet",
+     "note": "four named characters plus one mystery chase; full set of 5 offered"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://www.fanthatracks.com/news/collecting/sdcc-2018-gentle-giant-3-75-collector-scale-enamel-pins/",
+     "method": "search_snippet",
+     "note": "each style limited to 1,500"
+    },
+    {
+     "field": "price",
+     "value": 100,
+     "source_url": "https://www.fanthatracks.com/news/collecting/sdcc-2018-gentle-giant-3-75-collector-scale-enamel-pins/",
+     "method": "search_snippet",
+     "note": "complete set of 5 as Premier Guild special, $100"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.fanthatracks.com/news/collecting/sdcc-2018-gentle-giant-3-75-collector-scale-enamel-pins/",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/gentle-giant-sdcc-cantina-4-pack",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "limited to 1,500"
+    },
+    {
+     "field": "price",
+     "value": 24,
+     "source_url": "http://www.yodasnews.com/gentle-giant-sdcc-exclusive-announcement-6-enamel-pins/",
+     "method": "search_snippet",
+     "note": "$24"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "http://www.yodasnews.com/gentle-giant-sdcc-exclusive-announcement-6-enamel-pins/",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018, Gentle Giant booth #3513",
+     "source_url": "http://www.yodasnews.com/gentle-giant-sdcc-exclusive-announcement-6-enamel-pins/",
+     "method": "search_snippet",
+     "note": "booth exclusive 18-22 July"
+    },
+    {
+     "field": "visual_description",
+     "value": "four 1.75in cloisonne pins of the original vintage Cantina aliens",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "vintage-line styling"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/marvel-sdcc-skottie-young",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "SDCC 2018 Exclusive Skottie Young Marvel Character Pin Series",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "four 4-pin sets, blind bag 2-pin sets, incentive pins"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018, Marvel booth #2329",
+     "source_url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+     "method": "search_snippet",
+     "note": "all Marvel exclusives at booth 2329, limited quantities"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "SDCC July 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "SDCC 2018 Skottie Young blind bag 2-pin sets",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "characters only in blind bags"
+    },
+    {
+     "field": "format",
+     "value": "blind bag, 2 pins per bag",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "Blind Bag 2 Pin Sets"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "2-pin sets"
+    },
+    {
+     "field": "price",
+     "value": 15,
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "$15 each"
+    },
+    {
+     "field": "price",
+     "value": 15,
+     "source_url": "https://sdccblog.com/2018/07/marvel-san-diego-comic-con-2018-exclusives/",
+     "method": "search_snippet",
+     "note": "blind 2-packs $15 or four for $25"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "twelve characters listed as blind-bag only"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-villains-4-pack",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "SDCC 2018 Skottie Young Villains 4-pin set",
+     "source_url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+     "method": "search_snippet",
+     "note": "one of four 4-pin sets"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+     "method": "search_snippet",
+     "note": "4-pin set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+     "method": "search_snippet",
+     "note": "4 pins"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-fantastic-four-4-pack",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "SDCC 2018 Skottie Young Fantastic Four 4-pin set",
+     "source_url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+     "method": "search_snippet",
+     "note": "one of four 4-pin sets"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+     "method": "search_snippet",
+     "note": "4-pin set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+     "method": "search_snippet",
+     "note": "4 pins"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-x-men-4-pack",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "SDCC 2018 Skottie Young X-Men 4-pin set",
+     "source_url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+     "method": "search_snippet",
+     "note": "one of four 4-pin sets"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+     "method": "search_snippet",
+     "note": "4-pin set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+     "method": "search_snippet",
+     "note": "4 pins"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-avengers-4-pack",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "SDCC 2018 Skottie Young Avengers 4-pin set",
+     "source_url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+     "method": "search_snippet",
+     "note": "one of four 4-pin sets"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+     "method": "search_snippet",
+     "note": "4-pin set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+     "method": "search_snippet",
+     "note": "4 pins"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-incentive",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "SDCC 2018 Skottie Young incentive pins",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "sold individually with a booth spend requirement"
+    },
+    {
+     "field": "format",
+     "value": "individual pins sold separately",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "sold individually"
+    },
+    {
+     "field": "price",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+     "method": "search_snippet",
+     "note": "$10 each with spend thresholds of $60/$80/$110"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/san-diego-comic-con-2018-marvel-pins/",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/marvel-nycc-skottie-young",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "NYCC 2018 Exclusive Skottie Young Marvel Pin Series",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "3-packs, 4-pack, blind bags, lanyard, promo and incentive pins"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "NYCC exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10",
+     "source_url": "http://diskingdom.com/2018/10/18/review-nycc-18-exclusive-skottie-young-marvel-pins/",
+     "method": "search_snippet",
+     "note": "post-con review 18 Oct 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/marvel-nycc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "format",
+     "value": "blind bag, 2 pins per bag",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "Blind Bag 2 Pin Sets"
+    },
+    {
+     "field": "price",
+     "value": 15,
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "$15 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "http://diskingdom.com/2018/10/18/review-nycc-18-exclusive-skottie-young-marvel-pins/",
+     "method": "search_snippet",
+     "note": "review names two chases"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/marvel-nycc-skottie-young-women-of-marvel-3-pack",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "NYCC 2018 Skottie Young Women of Marvel 3-pack",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "one of three 3-packs"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "3-pack"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "3 pins"
+    },
+    {
+     "field": "price",
+     "value": 25,
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "$25 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/marvel-nycc-skottie-young-fantastic-four-3-pack",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "NYCC 2018 Skottie Young Fantastic Four 3-pack",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "one of three 3-packs"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "3-pack"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "3 pins"
+    },
+    {
+     "field": "price",
+     "value": 25,
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "$25 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/marvel-nycc-skottie-young-x-men-3-pack",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "NYCC 2018 Skottie Young X-Men 3-pack",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "one of three 3-packs"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "3-pack"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "3 pins"
+    },
+    {
+     "field": "price",
+     "value": 25,
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "$25 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/marvel-nycc-skottie-young-avengers-4-pack",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "NYCC 2018 Skottie Young Avengers 4-pack",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "4-pack"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "4-pack"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "4 pins"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/marvel-nycc-skottie-young-incentive",
+   "claims": [
+    {
+     "field": "format",
+     "value": "individual pins sold separately",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "incentive pins for spending thresholds"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/stance-shopdisney-mickey-90-socks-and-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse 90th Anniversary Socks and Pins Box Set by Stance",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-90th-anniversary-socks-and-pins-box-set-by-stance/",
+     "method": "search_snippet",
+     "note": "socks plus collector pins box set"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Stance",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-90th-anniversary-socks-and-pins-box-set-by-stance/",
+     "method": "search_snippet",
+     "note": "set by Stance"
+    },
+    {
+     "field": "retailer",
+     "value": "shopDisney",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-90th-anniversary-socks-and-pins-box-set-by-stance/",
+     "method": "search_snippet",
+     "note": "sold at shopDisney"
+    },
+    {
+     "field": "price",
+     "value": 59.95,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-90th-anniversary-socks-and-pins-box-set-by-stance/",
+     "method": "search_snippet",
+     "note": "$59.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-90th-anniversary-socks-and-pins-box-set-by-stance/",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-22",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-90th-anniversary-socks-and-pins-box-set-by-stance/",
+     "method": "search_snippet",
+     "note": "release 22 Oct 2018"
+    },
+    {
+     "field": "format",
+     "value": "gift set with socks and pins",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-90th-anniversary-socks-and-pins-box-set-by-stance/",
+     "method": "search_snippet",
+     "note": "one pair of socks plus pins"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2018/figpin-avengers-infinity-war/thanos",
+   "set_key": "lic/2018/figpin-avengers-infinity-war",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Thanos",
+     "source_url": "https://www.boxlunch.com/product/figpin-marvel-avengers-infinity-war-thanos-character-pin/11404283.html",
+     "method": "search_snippet",
+     "note": "FiGPiN Avengers: Infinity War Thanos character pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Thanos"
+     ],
+     "source_url": "https://www.boxlunch.com/product/figpin-marvel-avengers-infinity-war-thanos-character-pin/11404283.html",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://www.boxlunch.com/product/figpin-marvel-avengers-infinity-war-thanos-character-pin/11404283.html",
+     "method": "search_snippet",
+     "note": "FiGPiN named in title"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/figpin-marvel-avengers-infinity-war-thanos-character-pin/11404283.html",
+     "method": "search_snippet",
+     "note": "sold on BoxLunch site (not marked exclusive)"
+    },
+    {
+     "field": "size_mm",
+     "value": 89,
+     "source_url": "https://www.boxlunch.com/product/figpin-marvel-avengers-infinity-war-thanos-character-pin/11404283.html",
+     "method": "search_snippet",
+     "note": "BoxLunch lists 3 1/2in; other listings say 3in"
+    },
+    {
+     "field": "product_code",
+     "value": "112",
+     "source_url": "https://nerdycollectibles.com/products/figpin-marvel-avengers-infinity-war-thanos",
+     "method": "search_snippet",
+     "note": "FiGPiN number 112 per retailer listings in summary; exact listing attribution unclear"
+    },
+    {
+     "field": "release_location",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/figpin-marvel-avengers-infinity-war-thanos-character-pin/11404283.html",
+     "method": "search_snippet",
+     "note": "available via BoxLunch"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/figpin-avengers-infinity-war/black-panther",
+   "set_key": "lic/2018/figpin-avengers-infinity-war",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Black Panther",
+     "source_url": "https://www.pinsonfire.com/products/figpin-infinity-war-black-panther-110-marvel-avengers-enamel-pin-hard-case",
+     "method": "search_snippet",
+     "note": "FiGPiN Infinity War Black Panther #110"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Black Panther"
+     ],
+     "source_url": "https://www.pinsonfire.com/products/figpin-infinity-war-black-panther-110-marvel-avengers-enamel-pin-hard-case",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://www.pinsonfire.com/products/figpin-infinity-war-black-panther-110-marvel-avengers-enamel-pin-hard-case",
+     "method": "search_snippet",
+     "note": "FiGPiN named in title"
+    },
+    {
+     "field": "product_code",
+     "value": "110",
+     "source_url": "https://www.pinsonfire.com/products/figpin-infinity-war-black-panther-110-marvel-avengers-enamel-pin-hard-case",
+     "method": "search_snippet",
+     "note": "listing title gives #110"
+    },
+    {
+     "field": "product_code",
+     "value": "110",
+     "source_url": "https://www.starwarsuniverse.co.uk/figpin-avengers-infinity-war-black-panther-0110-3-inch-enamel-pin",
+     "method": "search_snippet",
+     "note": "listing title gives 0110"
+    },
+    {
+     "field": "size_mm",
+     "value": 76,
+     "source_url": "https://www.starwarsuniverse.co.uk/figpin-avengers-infinity-war-black-panther-0110-3-inch-enamel-pin",
+     "method": "search_snippet",
+     "note": "about 3 inches tall"
+    },
+    {
+     "field": "materials",
+     "value": "zinc alloy, enamel, nickel plating",
+     "source_url": "https://www.pinsonfire.com/products/figpin-infinity-war-black-panther-110-marvel-avengers-enamel-pin-hard-case",
+     "method": "search_snippet",
+     "note": "cast zinc alloy with enamel and nickel finish, display box"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/figpin-avengers-infinity-war/iron-man",
+   "set_key": "lic/2018/figpin-avengers-infinity-war",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Iron Man",
+     "source_url": "https://www.dcbservice.com/product/may182834/figpin-marvel-avengers-iw-black-panther-figure-pin-6pc-case",
+     "method": "search_snippet",
+     "note": "named as a case choice"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man"
+     ],
+     "source_url": "https://www.dcbservice.com/product/may182834/figpin-marvel-avengers-iw-black-panther-figure-pin-6pc-case",
+     "method": "search_snippet",
+     "note": "single character option"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://www.dcbservice.com/product/may182834/figpin-marvel-avengers-iw-black-panther-figure-pin-6pc-case",
+     "method": "search_snippet",
+     "note": "FiGPiN case listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/figpin-avengers-infinity-war/spider-man",
+   "set_key": "lic/2018/figpin-avengers-infinity-war",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Spider-Man",
+     "source_url": "https://www.dcbservice.com/product/may182834/figpin-marvel-avengers-iw-black-panther-figure-pin-6pc-case",
+     "method": "search_snippet",
+     "note": "named as a case choice"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Spider-Man"
+     ],
+     "source_url": "https://www.dcbservice.com/product/may182834/figpin-marvel-avengers-iw-black-panther-figure-pin-6pc-case",
+     "method": "search_snippet",
+     "note": "single character option"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://www.dcbservice.com/product/may182834/figpin-marvel-avengers-iw-black-panther-figure-pin-6pc-case",
+     "method": "search_snippet",
+     "note": "FiGPiN case listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/figpin-xl-thanos/thanos",
+   "set_key": "lic/2018/figpin-xl-thanos",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Thanos FiGPiN XL",
+     "source_url": "https://www.entertainmentearth.com/product/marvel-avengers-infinity-war-thanos-figpin-xl-enamel-pin/fg321",
+     "method": "search_snippet",
+     "note": "Avengers: Infinity War Thanos XL"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Thanos"
+     ],
+     "source_url": "https://www.entertainmentearth.com/product/marvel-avengers-infinity-war-thanos-figpin-xl-enamel-pin/fg321",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://www.entertainmentearth.com/product/marvel-avengers-infinity-war-thanos-figpin-xl-enamel-pin/fg321",
+     "method": "search_snippet",
+     "note": "FiGPiN XL line"
+    },
+    {
+     "field": "product_code",
+     "value": "FG321",
+     "source_url": "https://www.entertainmentearth.com/product/marvel-avengers-infinity-war-thanos-figpin-xl-enamel-pin/fg321",
+     "method": "search_snippet",
+     "note": "Entertainment Earth item code"
+    },
+    {
+     "field": "product_code",
+     "value": "X1",
+     "source_url": "https://www.knowheretoys.com/Avengers-Infinity-War-Thanos-X1-FiGPiN-XL_p_8518.html",
+     "method": "search_snippet",
+     "note": "listing title gives #X1"
+    },
+    {
+     "field": "size_mm",
+     "value": 159,
+     "source_url": "https://www.knowheretoys.com/Avengers-Infinity-War-Thanos-X1-FiGPiN-XL_p_8518.html",
+     "method": "search_snippet",
+     "note": "about 6.25in tall, 3mm thick"
+    },
+    {
+     "field": "visual_description",
+     "value": "Thanos with Infinity Gauntlet, poised to snap",
+     "source_url": "https://www.knowheretoys.com/Avengers-Infinity-War-Thanos-X1-FiGPiN-XL_p_8518.html",
+     "method": "search_snippet",
+     "note": "retailer description"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/figpin-mickey-90th-anniversary/mickey",
+   "set_key": "lic/2018/figpin-mickey-90th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse 90th Anniversary FiGPiN",
+     "source_url": "https://www.entertainmentearth.com/product/mickey-mouse-90th-anniversary-figpin-enamel-pin/fg344",
+     "method": "search_snippet",
+     "note": "3in FiGPiN of Mickey in classic look"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.entertainmentearth.com/product/mickey-mouse-90th-anniversary-figpin-enamel-pin/fg344",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://www.entertainmentearth.com/product/mickey-mouse-90th-anniversary-figpin-enamel-pin/fg344",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "product_code",
+     "value": "FG344",
+     "source_url": "https://www.entertainmentearth.com/product/mickey-mouse-90th-anniversary-figpin-enamel-pin/fg344",
+     "method": "search_snippet",
+     "note": "Entertainment Earth item code"
+    },
+    {
+     "field": "size_mm",
+     "value": 76,
+     "source_url": "https://www.entertainmentearth.com/product/mickey-mouse-90th-anniversary-figpin-enamel-pin/fg344",
+     "method": "search_snippet",
+     "note": "3 inches tall"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/mickey-friends-figpin-mini-disney-pins/",
+     "method": "search_snippet",
+     "note": "DPB Nov 2018 Mini post also shows the regular FiGPiN Mickey 90th in hard case"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/figpin-mickey-friends-mini/pluto",
+   "set_key": "lic/2018/figpin-mickey-friends-mini",
+   "claims": [
+    {
+     "field": "product_code",
+     "value": "FG334",
+     "source_url": "https://www.entertainmentearth.com/product/disney-mickey-mouse-and-friends-pluto-figpin-mini/fg334",
+     "method": "search_snippet",
+     "note": "Entertainment Earth item code for Pluto mini"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "JUL188374",
+     "source_url": "https://www.previewsworld.com/Catalog/JUL188374",
+     "method": "search_snippet",
+     "note": "Previews catalog code for FiGPiN Mini Disney Pluto"
+    },
+    {
+     "field": "size_mm",
+     "value": 51,
+     "source_url": "https://www.atomicempire.com/Item/250240",
+     "method": "search_snippet",
+     "note": "minis are 2in tall hard enamel"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/monogram-nycc-kingdom-hearts-sora-gift-set/sora",
+   "set_key": "lic/2018/monogram-nycc-kingdom-hearts-sora-gift-set",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Monogram International",
+     "source_url": "https://monogram-store.com/nycc-2018-exclusive-kingdom-hearts-gift-set/",
+     "method": "search_snippet",
+     "note": "Monogram's own store listing; resolves 424 maker note"
+    },
+    {
+     "field": "retailer",
+     "value": "Monogram International",
+     "source_url": "https://monogram-store.com/nycc-2018-exclusive-kingdom-hearts-gift-set/",
+     "method": "search_snippet",
+     "note": "sold at Monogram booth and store"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/toynk-nycc/deadpool-and-cable-heart",
+   "set_key": "lic/2018/toynk-nycc",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "LE",
+     "source_url": "https://sdccblog.com/2018/09/toynk-new-york-comic-con-2018-exclusives-revealed/",
+     "method": "search_snippet",
+     "note": "NYCC 2018 exclusive LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://sdccblog.com/2018/09/toynk-new-york-comic-con-2018-exclusives-revealed/",
+     "method": "search_snippet",
+     "note": "announced as LE 1000"
+    },
+    {
+     "field": "original_price",
+     "value": 12,
+     "source_url": "https://sdccblog.com/2018/09/toynk-new-york-comic-con-2018-exclusives-revealed/",
+     "method": "search_snippet",
+     "note": "$12 at the show"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://sdccblog.com/2018/09/toynk-new-york-comic-con-2018-exclusives-revealed/",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Toynk Toys",
+     "source_url": "https://www.toynk.com/products/marvel-deadpool-and-cable-limited-edition-enamel-pin-nycc-2018-exclusive",
+     "method": "search_snippet",
+     "note": "Toynk product page"
+    },
+    {
+     "field": "visual_description",
+     "value": "heart split with Deadpool on one half and Cable on the other, ~2in, on Marvel card",
+     "source_url": "https://www.toynk.com/products/marvel-deadpool-and-cable-limited-edition-enamel-pin-nycc-2018-exclusive",
+     "method": "search_snippet",
+     "note": "product page description"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-collector-scale/darth-vader",
+   "set_key": "lic/2018/gentle-giant-sdcc-collector-scale",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Darth Vader"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named in the 3.75in blind-box lineup"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://www.fanthatracks.com/news/collecting/sdcc-2018-gentle-giant-3-75-collector-scale-enamel-pins/",
+     "method": "search_snippet",
+     "note": "each style limited to 1,500 pieces"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "http://www.yodasnews.com/gentle-giant-sdcc-exclusive-announcement-6-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant SDCC announcement"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-collector-scale/stormtrooper",
+   "set_key": "lic/2018/gentle-giant-sdcc-collector-scale",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stormtrooper"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named in the 3.75in blind-box lineup"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://www.fanthatracks.com/news/collecting/sdcc-2018-gentle-giant-3-75-collector-scale-enamel-pins/",
+     "method": "search_snippet",
+     "note": "each style limited to 1,500 pieces"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "http://www.yodasnews.com/gentle-giant-sdcc-exclusive-announcement-6-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant SDCC announcement"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-collector-scale/han-solo",
+   "set_key": "lic/2018/gentle-giant-sdcc-collector-scale",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Han Solo"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named in the 3.75in blind-box lineup"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://www.fanthatracks.com/news/collecting/sdcc-2018-gentle-giant-3-75-collector-scale-enamel-pins/",
+     "method": "search_snippet",
+     "note": "each style limited to 1,500 pieces"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "http://www.yodasnews.com/gentle-giant-sdcc-exclusive-announcement-6-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant SDCC announcement"
+    },
+    {
+     "field": "visual_description",
+     "value": "Han Solo, small-head vintage style",
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "lineup lists Han Solo (small head)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/gentle-giant-sdcc-collector-scale/chewbacca",
+   "set_key": "lic/2018/gentle-giant-sdcc-collector-scale",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chewbacca"
+     ],
+     "source_url": "https://www.jedinews.com/collecting/articles/gentle-giant-sdcc-2018-exclusive-enamel-pins/",
+     "method": "search_snippet",
+     "note": "named in the 3.75in blind-box lineup"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://www.fanthatracks.com/news/collecting/sdcc-2018-gentle-giant-3-75-collector-scale-enamel-pins/",
+     "method": "search_snippet",
+     "note": "each style limited to 1,500 pieces"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Gentle Giant",
+     "source_url": "http://www.yodasnews.com/gentle-giant-sdcc-exclusive-announcement-6-enamel-pins/",
+     "method": "search_snippet",
+     "note": "Gentle Giant SDCC announcement"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/ghost-rider",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ghost Rider"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "listed as available only in blind bag 2-pin sets"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "SDCC exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/spider-gwen",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Spider-Gwen"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "listed as available only in blind bag 2-pin sets"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "SDCC exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/deadpool",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Deadpool"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "listed as available only in blind bag 2-pin sets"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "SDCC exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/ant-man",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ant-Man"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "listed as available only in blind bag 2-pin sets"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "SDCC exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/america-chavez",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "America Chavez"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "listed as available only in blind bag 2-pin sets"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "SDCC exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/nightcrawler",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Nightcrawler"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "listed as available only in blind bag 2-pin sets"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "SDCC exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/doctor-strange",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Doctor Strange"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "listed as available only in blind bag 2-pin sets"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "SDCC exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/captain-marvel",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain Marvel"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "listed as available only in blind bag 2-pin sets"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "SDCC exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/nick-fury",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Nick Fury"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "listed as available only in blind bag 2-pin sets"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "SDCC exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/iron-man",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "listed as available only in blind bag 2-pin sets"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "SDCC exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/daredevil",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Daredevil"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "listed as available only in blind bag 2-pin sets"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "SDCC exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/elektra",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Elektra"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "listed as available only in blind bag 2-pin sets"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2018",
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "SDCC exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-villains-4-pack/modok",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-villains-4-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "MODOK"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "named in Villains 4-pin set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-villains-4-pack/magneto",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-villains-4-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Magneto"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "named in Villains 4-pin set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-villains-4-pack/doctor-doom",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-villains-4-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Doctor Doom"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "named in Villains 4-pin set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-villains-4-pack/venom",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-villains-4-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Venom"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "named in Villains 4-pin set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-incentive/silver-surfer-and-galactus",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-incentive",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Silver Surfer",
+      "Galactus"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "named among incentive pins sold individually"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-incentive/thanos",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-incentive",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thanos"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "named among incentive pins sold individually"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-sdcc-skottie-young-incentive/ms-marvel-and-lockjaw",
+   "set_key": "lic/2018/marvel-sdcc-skottie-young-incentive",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ms. Marvel",
+      "Lockjaw"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/07/sdcc-2018-exclusive-skottie-young_14.html",
+     "method": "search_snippet",
+     "note": "named among incentive pins sold individually"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-blind-bag/deadpool",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Deadpool"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "blind bag only"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-blind-bag/spider-man",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Spider-Man"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "blind bag only"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-blind-bag/colossus",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Colossus"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "blind bag only"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-blind-bag/cable",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cable"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "blind bag only"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-blind-bag/punisher",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "The Punisher"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "blind bag only"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-blind-bag/human-torch",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Human Torch"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "blind bag only"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-blind-bag/storm",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Storm"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "blind bag only"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-blind-bag/old-lace",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Old Lace"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "blind bag only"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-blind-bag/old-man-logan-chase",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Old Man Logan"
+     ],
+     "source_url": "http://diskingdom.com/2018/10/18/review-nycc-18-exclusive-skottie-young-marvel-pins/",
+     "method": "search_snippet",
+     "note": "review names as a chase"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "http://diskingdom.com/2018/10/18/review-nycc-18-exclusive-skottie-young-marvel-pins/",
+     "method": "search_snippet",
+     "note": "chase pin in blind pack set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-blind-bag/spider-ham-chase",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-blind-bag",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Spider-Ham"
+     ],
+     "source_url": "http://diskingdom.com/2018/10/18/review-nycc-18-exclusive-skottie-young-marvel-pins/",
+     "method": "search_snippet",
+     "note": "review names as a chase"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "http://diskingdom.com/2018/10/18/review-nycc-18-exclusive-skottie-young-marvel-pins/",
+     "method": "search_snippet",
+     "note": "chase pin in blind pack set"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-women-of-marvel-3-pack/thor",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-women-of-marvel-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thor"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "named in the Women of Marvel 3-pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-women-of-marvel-3-pack/captain-marvel",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-women-of-marvel-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain Marvel"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "named in the Women of Marvel 3-pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-women-of-marvel-3-pack/scarlet-witch",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-women-of-marvel-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Scarlet Witch"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "named in the Women of Marvel 3-pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-fantastic-four-3-pack/mister-fantastic",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-fantastic-four-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mister Fantastic"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "named in the Fantastic Four 3-pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-fantastic-four-3-pack/invisible-woman",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-fantastic-four-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Invisible Woman"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "named in the Fantastic Four 3-pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-fantastic-four-3-pack/the-thing",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-fantastic-four-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "The Thing"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "named in the Fantastic Four 3-pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-x-men-3-pack/wolverine",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-x-men-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Wolverine"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "named in the X-Men 3-pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-x-men-3-pack/magneto",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-x-men-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Magneto"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "named in the X-Men 3-pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-x-men-3-pack/nightcrawler",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-x-men-3-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Nightcrawler"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "named in the X-Men 3-pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-avengers-4-pack/iron-man",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-avengers-4-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "named in the Avengers 4-pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-avengers-4-pack/hulk",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-avengers-4-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hulk"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "named in the Avengers 4-pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-avengers-4-pack/hawkeye",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-avengers-4-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hawkeye"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "named in the Avengers 4-pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-avengers-4-pack/ant-man",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-avengers-4-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ant-Man"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "named in the Avengers 4-pack"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-lanyard/captain-america",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-lanyard",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain America"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "Captain America pin came with a lanyard"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "NYCC exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-promo/iron-man-mastercard",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-promo",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "Iron Man pin tied to a Marvel Mastercard sign-up"
+    },
+    {
+     "field": "release_location",
+     "value": "New York Comic Con 2018",
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "NYCC promo"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-incentive/thanos",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-incentive",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thanos"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "incentive pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/marvel-nycc-skottie-young-incentive/groot-and-rocket",
+   "set_key": "lic/2018/marvel-nycc-skottie-young-incentive",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Groot",
+      "Rocket Raccoon"
+     ],
+     "source_url": "https://www.theblotsays.com/2018/09/nycc-2018-exclusive-skottie-young.html",
+     "method": "search_snippet",
+     "note": "incentive pin of Groot with Rocket"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2018/funko-boxlunch-mickey-90th-mystery",
+   "field": "pins",
+   "searched": "DPB, BoxLunch, Disney Pin Forum; 2 queries",
+   "note": "hold: mystery designs not individually confirmed; a forum trade post names Conductor, Sorcerer Apprentice, Beanstalk Mickey (member list, not recorded)"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-mickey-90th-mystery",
+   "field": "has_chaser",
+   "searched": "Disney Pin Forum thread",
+   "note": "lead: forum thread mentions black-and-white versions treated as chasers/non-chasers; not claimed"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-alice-queen-of-hearts-hedgehog",
+   "field": "pin_structure",
+   "searched": "BoxLunch listing; 1 query",
+   "note": "222 holds remain: listing describes Pop-style pins of Alice, Queen of Hearts and hedgehog, sizes 1in to 1.5in; count not stated, no per-pin descriptions"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-mulan",
+   "field": "pin_structure",
+   "searched": "BoxLunch listing; 1 query",
+   "note": "222 holds remain: listing describes a stylized set of Mulan, Mushu and Cri-Kee (~1.5in); no pin count or per-pin descriptions"
+  },
+  {
+   "key": "lic/2018/figpin-avengers-infinity-war",
+   "field": "release_date",
+   "searched": "retailer listings; 3 queries",
+   "note": "only a distributor expected-ship date; no FiGPiN or news announcement dating the line found"
+  },
+  {
+   "key": "lic/2018/figpin-avengers-infinity-war/thanos",
+   "field": "is_chaser",
+   "searched": "retailer listings",
+   "note": "lead: listings mention a limited black-and-gold chase version; not keyed"
+  },
+  {
+   "key": "lic/2018/figpin-avengers-infinity-war/thanos",
+   "field": "release_date",
+   "searched": "3 queries",
+   "note": "no dated source; Amazon UK first-available date (May 2018) is a marketplace and not recorded"
+  },
+  {
+   "key": "lic/2018/figpin-avengers-infinity-war/iron-man",
+   "field": "product_code",
+   "searched": "2 queries",
+   "note": "FiGPiN number not found"
+  },
+  {
+   "key": "lic/2018/figpin-avengers-infinity-war/spider-man",
+   "field": "product_code",
+   "searched": "2 queries",
+   "note": "FiGPiN number not found; Infinity War (not Spider-Verse) item"
+  },
+  {
+   "key": "lic/2018/figpin-xl-thanos/thanos",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "hold: no dated source; year rests only on film tie-in and retailer listings; confirm 2018 vs 2019 before release"
+  },
+  {
+   "key": "lic/2018/figpin-mickey-90th-anniversary/mickey",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "price not in snippets; FiGPiN number not stated"
+  },
+  {
+   "key": "lic/2018/figpin-mickey-friends-mini",
+   "field": "pins",
+   "searched": "Atomic Empire, Previews; 2 queries",
+   "note": "424 holds on mickey/minnie/donald/daisy/goofy kept: only collection text names six; no per-design listing seen for those five"
+  },
+  {
+   "key": "lic/2018/monogram-sdcc-stitch-lanyard",
+   "field": "pins",
+   "searched": "DPB, SDCC blog; 1 query",
+   "note": "three Stitch pins still not individually described; members not recorded"
+  },
+  {
+   "key": "lic/2018/primark-mary-poppins",
+   "field": "pins",
+   "searched": "DPB; 1 query",
+   "note": "six members still not named; not recorded"
+  },
+  {
+   "key": "lic/2018/toynk-nycc/deadpool-and-cable-heart",
+   "field": "pin_structure",
+   "searched": "Toynk page, SDCC blog; 1 query",
+   "note": "hold kept (424): titled 'Enamel Pin' but listing says 1,000 'sets'; split-heart may be two pieces; confirm one pin vs 2-piece"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-collector-scale/stormtrooper",
+   "field": "pin_structure",
+   "searched": "Jedi News, Fantha Tracks, Yoda's News; 2 queries",
+   "note": "released: per-style edition size (1,500 each) and 'complete set of all 5' establish separate designs; was held in 424 (mystery designs not individually confirmed)"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-collector-scale/han-solo",
+   "field": "pin_structure",
+   "searched": "Jedi News, Fantha Tracks, Yoda's News; 2 queries",
+   "note": "released: per-style edition size (1,500 each) and 'complete set of all 5' establish separate designs; was held in 424 (mystery designs not individually confirmed)"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-collector-scale/chewbacca",
+   "field": "pin_structure",
+   "searched": "Jedi News, Fantha Tracks, Yoda's News; 2 queries",
+   "note": "released: per-style edition size (1,500 each) and 'complete set of all 5' establish separate designs; was held in 424 (mystery designs not individually confirmed)"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-collector-scale",
+   "field": "pins",
+   "searched": "3 sources",
+   "note": "chase design still unnamed"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-cantina-4-pack",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "424 holds kept: members named only in the 4-pack listing; pending maintainer full-list decision; SDCC blog also cites a 750 LE that seems to be another item"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-mini/thala-siren-milk-bottle",
+   "field": "pin_structure",
+   "searched": "Fantha Tracks summary",
+   "note": "summary calls it 'Thala Siren with Milk Bottle 2-Pack' ($12): may be two pins; confirm structure"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-mini",
+   "field": "price",
+   "searched": "2 sources",
+   "note": "conflict: $6 singles / $12 2-pack vs $18 in another source; not resolved"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young",
+   "field": "manufacturer",
+   "searched": "3 sources",
+   "note": "maker not stated; artwork by Skottie Young, sold by Marvel"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/ghost-rider",
+   "field": "pin_structure",
+   "searched": "The Blot Says list",
+   "note": "hold: mystery designs not individually confirmed (character list only); maintainer may accept the 'only in blind bags' wording"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/spider-gwen",
+   "field": "pin_structure",
+   "searched": "The Blot Says list",
+   "note": "hold: mystery designs not individually confirmed (character list only); maintainer may accept the 'only in blind bags' wording"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/deadpool",
+   "field": "pin_structure",
+   "searched": "The Blot Says list",
+   "note": "hold: mystery designs not individually confirmed (character list only); maintainer may accept the 'only in blind bags' wording"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/ant-man",
+   "field": "pin_structure",
+   "searched": "The Blot Says list",
+   "note": "hold: mystery designs not individually confirmed (character list only); maintainer may accept the 'only in blind bags' wording"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/america-chavez",
+   "field": "pin_structure",
+   "searched": "The Blot Says list",
+   "note": "hold: mystery designs not individually confirmed (character list only); maintainer may accept the 'only in blind bags' wording"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/nightcrawler",
+   "field": "pin_structure",
+   "searched": "The Blot Says list",
+   "note": "hold: mystery designs not individually confirmed (character list only); maintainer may accept the 'only in blind bags' wording"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/doctor-strange",
+   "field": "pin_structure",
+   "searched": "The Blot Says list",
+   "note": "hold: mystery designs not individually confirmed (character list only); maintainer may accept the 'only in blind bags' wording"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/captain-marvel",
+   "field": "pin_structure",
+   "searched": "The Blot Says list",
+   "note": "hold: mystery designs not individually confirmed (character list only); maintainer may accept the 'only in blind bags' wording"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/nick-fury",
+   "field": "pin_structure",
+   "searched": "The Blot Says list",
+   "note": "hold: mystery designs not individually confirmed (character list only); maintainer may accept the 'only in blind bags' wording"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/iron-man",
+   "field": "pin_structure",
+   "searched": "The Blot Says list",
+   "note": "hold: mystery designs not individually confirmed (character list only); maintainer may accept the 'only in blind bags' wording"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/daredevil",
+   "field": "pin_structure",
+   "searched": "The Blot Says list",
+   "note": "hold: mystery designs not individually confirmed (character list only); maintainer may accept the 'only in blind bags' wording"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/elektra",
+   "field": "pin_structure",
+   "searched": "The Blot Says list",
+   "note": "hold: mystery designs not individually confirmed (character list only); maintainer may accept the 'only in blind bags' wording"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/spider-gwen",
+   "field": "scope",
+   "searched": "The Blot Says",
+   "note": "scope: Spider-Verse character; pending maintainer decision"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-bag/captain-marvel",
+   "field": "visual_description",
+   "searched": "3 queries",
+   "note": "design not described; this resolves the 424 Pins on Fire lead as the SDCC 2018 blind-bag pin"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-villains-4-pack/modok",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-villains-4-pack/magneto",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-villains-4-pack/doctor-doom",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-villains-4-pack/venom",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-fantastic-four-4-pack",
+   "field": "pins",
+   "searched": "3 sources",
+   "note": "members not named in snippets"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-x-men-4-pack",
+   "field": "pins",
+   "searched": "3 sources",
+   "note": "members not named in snippets"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-avengers-4-pack",
+   "field": "pins",
+   "searched": "3 sources",
+   "note": "members not named in snippets"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-incentive/silver-surfer-and-galactus",
+   "field": "pin_structure",
+   "searched": "The Blot Says; 2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); snippets vary between one pin and two"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-incentive/ms-marvel-and-lockjaw",
+   "field": "pin_structure",
+   "searched": "The Blot Says; 2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); snippets vary between one pin and two"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young",
+   "field": "manufacturer",
+   "searched": "2 sources",
+   "note": "maker not stated"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-blind-bag/deadpool",
+   "field": "pin_structure",
+   "searched": "Blot / DisKingdom",
+   "note": "hold: mystery designs not individually confirmed (character list only)"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-blind-bag/spider-man",
+   "field": "pin_structure",
+   "searched": "Blot / DisKingdom",
+   "note": "hold: mystery designs not individually confirmed (character list only)"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-blind-bag/colossus",
+   "field": "pin_structure",
+   "searched": "Blot / DisKingdom",
+   "note": "hold: mystery designs not individually confirmed (character list only)"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-blind-bag/cable",
+   "field": "pin_structure",
+   "searched": "Blot / DisKingdom",
+   "note": "hold: mystery designs not individually confirmed (character list only)"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-blind-bag/punisher",
+   "field": "pin_structure",
+   "searched": "Blot / DisKingdom",
+   "note": "hold: mystery designs not individually confirmed (character list only)"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-blind-bag/human-torch",
+   "field": "pin_structure",
+   "searched": "Blot / DisKingdom",
+   "note": "hold: mystery designs not individually confirmed (character list only)"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-blind-bag/storm",
+   "field": "pin_structure",
+   "searched": "Blot / DisKingdom",
+   "note": "hold: mystery designs not individually confirmed (character list only)"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-blind-bag/old-lace",
+   "field": "pin_structure",
+   "searched": "Blot / DisKingdom",
+   "note": "hold: mystery designs not individually confirmed (character list only)"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-blind-bag/old-man-logan-chase",
+   "field": "pin_structure",
+   "searched": "Blot / DisKingdom",
+   "note": "hold: mystery designs not individually confirmed (character list only)"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-blind-bag/spider-ham-chase",
+   "field": "pin_structure",
+   "searched": "Blot / DisKingdom",
+   "note": "hold: mystery designs not individually confirmed (character list only)"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-blind-bag/spider-ham-chase",
+   "field": "scope",
+   "searched": "DisKingdom",
+   "note": "scope: Spider-Verse character; pending maintainer decision"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-blind-bag",
+   "field": "pins",
+   "searched": "DisKingdom",
+   "note": "lead: reviewer says a blind-packed Invisible Woman may be regular or an 'invisible' chase; not keyed"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-women-of-marvel-3-pack/thor",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-women-of-marvel-3-pack/captain-marvel",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-women-of-marvel-3-pack/scarlet-witch",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-fantastic-four-3-pack/mister-fantastic",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-fantastic-four-3-pack/invisible-woman",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-fantastic-four-3-pack/the-thing",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-x-men-3-pack/wolverine",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-x-men-3-pack/magneto",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-x-men-3-pack/nightcrawler",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-avengers-4-pack/iron-man",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-avengers-4-pack/hulk",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-avengers-4-pack/hawkeye",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-avengers-4-pack/ant-man",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: pack member named only in the pack listing, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-promo/iron-man-mastercard",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "confirm this is a distinct design from the Avengers 4-pack Iron Man"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young-incentive/groot-and-rocket",
+   "field": "pin_structure",
+   "searched": "The Blot Says",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs)"
+  },
+  {
+   "key": "lic/2018/stance-shopdisney-mickey-90-socks-and-pins",
+   "field": "expected_pin_count",
+   "searched": "DPB; 1 query",
+   "note": "hold: confirm pin structure; post says four pins in one place and two in another; designs (split Steamboat/classic Mickey, winking Mickey vintage/modern) not keyed"
+  },
+  {
+   "key": "lic/2018/loungefly-coco-faces-booster",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "lead resolved as not licensed: 2018 Coco booster found is a Disney Parks 5-pin set ($29.99, Disneyland 19 Oct 2018); pass to DLR 2018 cell; no Loungefly Coco 2018 found"
+  },
+  {
+   "key": "lic/2018/hot-topic-nightmare-before-christmas",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "still no 2018 HT NBC 12-pin pack; 12-day item is a necklace with 12 mystery charms (non-pin, undated)"
+  },
+  {
+   "key": "lic/2018/hot-topic-nightmare-before-christmas-blind-box",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: HT NBC blind box enamel pin (11503066) says 12 Halloween Town pins, $5.99; undated, maker unstated; not keyed"
+  },
+  {
+   "key": "lic/2018/uncas",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no 2018 Uncas licensed pin found; Uncas International made Pink a la Mode Mickey & Friends stained glass series dated June 2023 (out of cell)"
+  },
+  {
+   "key": "lic/2018/figpin-star-wars",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no 2018 FiGPiN Star Wars pin or number found; Han Solo Quest/749/833 are later releases"
+  },
+  {
+   "key": "lic/2018/figpin-sdcc",
+   "field": "pins",
+   "searched": "carried",
+   "note": "no Disney-owned FiGPiN SDCC 2018 exclusive found (unchanged from 424)"
+  },
+  {
+   "key": "lic/2018/boxlunch-black-panther-logo-mask",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "lead for BoxLunch 2018 cell B282: BoxLunch-exclusive Black Panther logo + mask pin set ($12.90); DPB archive has a Feb 2018 BoxLunch Black Panther set post; not keyed here"
+  },
+  {
+   "key": "lic/2018/boxlunch-toy-story-land",
+   "field": "pins",
+   "searched": "not searched",
+   "note": "left to BoxLunch 2018 cell B282 (keys in 222/431)"
+  },
+  {
+   "key": "lic/2018/loungefly-hot-topic-hades",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "lead for Loungefly cell: snippets give both $6.90 and $7.90 for the Dec 2018 Hades pin"
+  },
+  {
+   "key": "lic/2018",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "Jan-Jun 2018 US retailer (Hot Topic/BoxLunch) Disney pins still not surfaced; HT Peter Pan collar pin is Dec 2017"
+  },
+  {
+   "key": "lic/2018/primark",
+   "field": "pins",
+   "searched": "carried",
+   "note": "Primark four emoji/rainbow pack holds (424) unchanged; no per-pin evidence found"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 to 216 (B016) and 424. 29 standard WebSearches, excluded domains blocked. New: FiGPiN Infinity War line (#110/#112, Jul 2018 ship), FiGPiN XL Thanos (year held), FiGPiN Mickey 90th, Marvel Skottie Young SDCC and NYCC 2018 series (most members held), Stance x shopDisney set. Released 424 holds on Gentle Giant 3.75in Stormtrooper/Han Solo/Chewbacca (per-style LE 1500). Funko, Primark, Cantina, FiGPiN Mini, Deadpool & Cable holds kept. Coco Faces Booster lead is a Disney Parks set, not Loungefly. BoxLunch-exclusive items left to B282."
+}

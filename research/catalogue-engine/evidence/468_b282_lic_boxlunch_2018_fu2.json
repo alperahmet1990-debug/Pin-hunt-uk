@@ -1,0 +1,882 @@
+{
+ "packet_id": "backfill-b282-lic-boxlunch-2018-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b282",
+ "sources": [
+  {
+   "url": "https://www.boxlunch.com/product/the-nightmare-before-christmas-jack-skellington-wreath-enamel-pin---boxlunch-exclusive/11447747.html",
+   "title": "The Nightmare Before Christmas Jack Skellington Wreath Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-boxlunch-disney-pins",
+   "title": "The Nightmare Before Christmas BoxLunch Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/the-nightmare-before-christmas-scary-teddy-enamel-pin---boxlunch-exclusive/11447731.html",
+   "title": "The Nightmare Before Christmas Scary Teddy Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/the-nightmare-before-christmas-zero-dog-house-enamel-pin---boxlunch-exclusive/11447741.html",
+   "title": "The Nightmare Before Christmas Zero Dog House Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-the-nightmare-before-christmas-sally-tree-enamel-pin---boxlunch-exclusive/11447739.html",
+   "title": "Disney The Nightmare Before Christmas Sally Tree Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/the-nightmare-before-christmas-sallys-jars-enamel-pin-set---boxlunch-exclusive/11447743.html",
+   "title": "The Nightmare Before Christmas Sally's Jars Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/sallys-jars-boxlunch-disney-pin-set/",
+   "title": "Sally's Jars BoxLunch Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-incredibles-2-edna-mode-enamel-pin-set---boxlunch-exclusive/11502730.html",
+   "title": "Disney Pixar Incredibles 2 Edna Mode Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/edna-mode-incredibles-2-boxlunch-pin-set/",
+   "title": "Edna Mode Incredibles 2 BoxLunch Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/star-wars-the-last-jedi-porg-enamel-pin-set/11301404.html",
+   "title": "Star Wars: The Last Jedi Porg Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-porg-pin-set",
+   "title": "Star Wars Porg Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/funko-pop-disney-mickey-mouse-90th-blind-box-enamel-pin---boxlunch-exclusive/11662353.html",
+   "title": "Funko Pop! Disney Mickey Mouse 90th Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/funko-pop-mickey-mouse-90th-boxlunch-disney-pins/",
+   "title": "Funko Pop! Mickey Mouse 90th BoxLunch Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/boxlunch-toy-story-land-disney-pins/",
+   "title": "BoxLunch Toy Story Land Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-toy-story-land-logo-enamel-trading-pin---boxlunch-exclusive/11456636.html",
+   "title": "Disney Pixar Toy Story Land Logo Enamel Trading Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.danthepixarfan.com/2018/07/toy-story-land-logo-pin-boxlunch.html",
+   "title": "Dan the Pixar Fan: Toy Story Land Logo Pin (BoxLunch Exclusive)",
+   "publisher": "Dan the Pixar Fan",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/funko-pop-disney-lilo-stitch-alien-suit-enamel-pin---boxlunch-exclusive/11609625.html",
+   "title": "Funko Pop! Disney Lilo & Stitch Alien Suit Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/lilo-scrump-funko-pop-disney-boxlunch-pin-set/",
+   "title": "Lilo & Scrump Funko Pop! Disney BoxLunch Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/funko-pop-disney-lilo-stitch-lilo-scrump-enamel-pin-set---boxlunch-exclusive/11609623.html",
+   "title": "Funko Pop! Disney Lilo & Stitch Lilo & Scrump Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mad-hatter-cheshire-cat-funko-pop-disney-boxlunch-pin-set",
+   "title": "Mad Hatter & Cheshire Cat Funko Pop! Disney BoxLunch Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-ralph-breaks-the-internet-enamel-pin-set---boxlunch-exclusive/11640187.html",
+   "title": "Disney Ralph Breaks The Internet Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-coco-dante-boot-enamel-pin---boxlunch-exclusive/11299618.html",
+   "title": "Disney Pixar Coco Dante Boot Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-coco-alebrijes-enamel-pin-set---boxlunch-exclusive/11579622.html",
+   "title": "Disney Pixar Coco Alebrijes Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-coco-remember-me-enamel-pin-set---boxlunch-exclusive/11579620.html",
+   "title": "Disney Pixar Coco Remember Me Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-lilo-stitch-angel-stitch-enamel-pin-set---boxlunch-exclusive/11658561.html",
+   "title": "Disney Lilo & Stitch Angel & Stitch Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-hercules-baby-pegasus-enamel-pin-set---boxlunch-exclusive/11422679.html",
+   "title": "Disney Hercules Baby Pegasus Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/hercules-boxlunch-disney-pins",
+   "title": "Hercules Boxlunch Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-wall-e-christmas-lights-enamel-pin-set---boxlunch-exclusive/11609645.html",
+   "title": "Disney Pixar Wall-E Christmas Lights Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/christmas-2018-disney-pins-at-boxlunch",
+   "title": "Christmas 2018 Disney Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+   "title": "Max Goof Powerline Pin at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-05-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-a-goofy-movie-max-powerline-enamel-pin/11398104.html",
+   "title": "Disney A Goofy Movie Max Powerline Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-incredibles-logo-boxlunch-pin/",
+   "title": "The Incredibles Logo BoxLunch Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-pixar-the-incredibles-logo-enamel-pin---boxlunch-exclusive/11528393.html",
+   "title": "Disney Pixar The Incredibles Logo Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2018/boxlunch-max-goof-powerline",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Max Goof Powerline Pin at BoxLunch",
+     "source_url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "post covers one pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05",
+     "source_url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog says released May 2018; post dated 3 May 2018"
+    },
+    {
+     "field": "price",
+     "value": 6.9,
+     "source_url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog retail price $6.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "sold in BoxLunch stores"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-incredibles-logo",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Incredibles Logo BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/the-incredibles-logo-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/the-incredibles-logo-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "post covers one logo pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08",
+     "source_url": "https://disneypinsblog.com/the-incredibles-logo-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "blog: released Aug 2018 in store and online; post dated 22 Aug 2018"
+    },
+    {
+     "field": "price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/the-incredibles-logo-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "blog retail price $8.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-incredibles-logo-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-the-incredibles-logo-enamel-pin---boxlunch-exclusive/11528393.html",
+     "method": "search_snippet",
+     "note": "listing titled BoxLunch Exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/funko-boxlunch-mad-hatter-cheshire-cat",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mad Hatter & Cheshire Cat Funko Pop! Disney BoxLunch Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/mad-hatter-cheshire-cat-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/mad-hatter-cheshire-cat-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet",
+     "note": "blog: released Nov 2018"
+    },
+    {
+     "field": "price",
+     "value": 16.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/mad-hatter-cheshire-cat-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet",
+     "note": "blog retail price $16.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/mad-hatter-cheshire-cat-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Funko",
+     "source_url": "https://disneypinsblog.com/blogs/news/mad-hatter-cheshire-cat-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet",
+     "note": "title and 'Funko Pop BoxLunch Collection'; same post body also mentions Loungefly (conflict)"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/mad-hatter-cheshire-cat-funko-pop-disney-boxlunch-pin-set",
+     "method": "search_snippet",
+     "note": "part of BoxLunch Funko Pop collection"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-sallys-jars",
+   "claims": [
+    {
+     "field": "format",
+     "value": "3-pin set",
+     "source_url": "https://disneypinsblog.com/sallys-jars-boxlunch-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "blog says set has three different pins"
+    },
+    {
+     "field": "set_name",
+     "value": "The Nightmare Before Christmas Sally's Jars Enamel Pin Set - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/the-nightmare-before-christmas-sallys-jars-enamel-pin-set---boxlunch-exclusive/11447743.html",
+     "method": "search_snippet",
+     "note": "listing title; pins 1.5in metal; $13.99 shown (likely markdown)"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-edna-mode-incredibles-2",
+   "claims": [
+    {
+     "field": "format",
+     "value": "2-pin set",
+     "source_url": "https://disneypinsblog.com/edna-mode-incredibles-2-boxlunch-pin-set/",
+     "method": "search_snippet",
+     "note": "blog says set features two enamel pins"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-christmas-wall-e-eve-lights",
+   "claims": [
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/christmas-2018-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Christmas 2018 roundup gives $12.90 for the WALL-E lights set"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/christmas-2018-disney-pins-at-boxlunch",
+     "method": "search_snippet",
+     "note": "US retailer"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2018/boxlunch-toy-story-land",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-06-23",
+     "source_url": "https://disneypinsblog.com/boxlunch-toy-story-land-disney-pins/",
+     "method": "search_snippet",
+     "note": "blog: launched first at Altamonte Mall BoxLunch 23-24 Jun 2018"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2018/boxlunch-max-goof-powerline/max-powerline",
+   "set_key": "lic/2018/boxlunch-max-goof-powerline",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Max Goof Powerline Pin",
+     "source_url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "blog name"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Max Goof"
+     ],
+     "source_url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "Max dressed as Powerline, A Goofy Movie"
+    },
+    {
+     "field": "main_character",
+     "value": "Max Goof",
+     "source_url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "subject of pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05",
+     "source_url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "released May 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "May 2018"
+    },
+    {
+     "field": "original_price",
+     "value": 6.9,
+     "source_url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "$6.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/max-goof-powerline-pin-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "BoxLunch stores only"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 1 in",
+     "source_url": "https://www.boxlunch.com/product/disney-a-goofy-movie-max-powerline-enamel-pin/11398104.html",
+     "method": "search_snippet",
+     "note": "listing gives 1 inch, metal"
+    },
+    {
+     "field": "materials",
+     "value": "metal",
+     "source_url": "https://www.boxlunch.com/product/disney-a-goofy-movie-max-powerline-enamel-pin/11398104.html",
+     "method": "search_snippet",
+     "note": "listing spec"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-incredibles-logo/logo",
+   "set_key": "lic/2018/boxlunch-incredibles-logo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Incredibles Logo BoxLunch Pin",
+     "source_url": "https://disneypinsblog.com/the-incredibles-logo-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "blog name"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/the-incredibles-logo-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "single logo pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08",
+     "source_url": "https://disneypinsblog.com/the-incredibles-logo-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "released Aug 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/the-incredibles-logo-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "Aug 2018"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/the-incredibles-logo-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "$8.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-incredibles-logo-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/the-incredibles-logo-boxlunch-pin/",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive, store and online"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-nightmare-before-christmas-25th/jack-wreath",
+   "set_key": "lic/2018/boxlunch-nightmare-before-christmas-25th",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack Skellington Wreath",
+     "source_url": "https://www.boxlunch.com/product/the-nightmare-before-christmas-jack-skellington-wreath-enamel-pin---boxlunch-exclusive/11447747.html",
+     "method": "search_snippet",
+     "note": "BoxLunch per-pin listing title"
+    },
+    {
+     "field": "visual_description",
+     "value": "Jack Skellington at the centre of a wreath",
+     "source_url": "https://www.boxlunch.com/product/the-nightmare-before-christmas-jack-skellington-wreath-enamel-pin---boxlunch-exclusive/11447747.html",
+     "method": "search_snippet",
+     "note": "listing description paraphrased"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 1.5 in",
+     "source_url": "https://www.boxlunch.com/product/the-nightmare-before-christmas-jack-skellington-wreath-enamel-pin---boxlunch-exclusive/11447747.html",
+     "method": "search_snippet",
+     "note": "listing gives 1 1/2 in, metal"
+    },
+    {
+     "field": "materials",
+     "value": "metal",
+     "source_url": "https://www.boxlunch.com/product/the-nightmare-before-christmas-jack-skellington-wreath-enamel-pin---boxlunch-exclusive/11447747.html",
+     "method": "search_snippet",
+     "note": "listing spec"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/the-nightmare-before-christmas-jack-skellington-wreath-enamel-pin---boxlunch-exclusive/11447747.html",
+     "method": "search_snippet",
+     "note": "listing titled BoxLunch Exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/the-nightmare-before-christmas-jack-skellington-wreath-enamel-pin---boxlunch-exclusive/11447747.html",
+     "method": "search_snippet",
+     "note": "sold as an individual pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/boxlunch-toy-story-land/logo",
+   "set_key": "lic/2018/boxlunch-toy-story-land",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-toy-story-land-logo-enamel-trading-pin---boxlunch-exclusive/11456636.html",
+     "method": "search_snippet",
+     "note": "listing calls it a limited edition BoxLunch exclusive; size not stated"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/disney-pixar-toy-story-land-logo-enamel-trading-pin---boxlunch-exclusive/11456636.html",
+     "method": "search_snippet",
+     "note": "listing titled BoxLunch Exclusive"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2018/boxlunch-nightmare-before-christmas-25th/jack-wreath",
+   "field": "hold",
+   "searched": "BoxLunch listing search",
+   "note": "released: 431 hold lifted - BoxLunch per-pin listing 11447747 (1.5in, metal, Jack in a wreath) now supports this pin"
+  },
+  {
+   "key": "lic/2018/boxlunch-nightmare-before-christmas-25th/jack-wreath",
+   "field": "original_price",
+   "searched": "listing",
+   "note": "listing now shows $6.99 (likely markdown); not claimed; DPB $8.90 already in 431"
+  },
+  {
+   "key": "lic/2018/boxlunch-nightmare-before-christmas-25th/snowflake",
+   "field": "hold",
+   "searched": "2 queries for per-pin listing",
+   "note": "hold kept (431): no BoxLunch per-pin listing found; only the DPB line list; Loungefly 2023 snowflake blind box is out of cell"
+  },
+  {
+   "key": "lic/2018/boxlunch-nightmare-before-christmas-25th/spiral-hill",
+   "field": "hold",
+   "searched": "2 queries for per-pin listing",
+   "note": "hold kept (431): no BoxLunch per-pin listing found; only Loungefly backpack / later Jack & Sally scenic pin surfaced"
+  },
+  {
+   "key": "lic/2018/boxlunch-nightmare-before-christmas-25th",
+   "field": "expected_pin_count",
+   "searched": "4 queries",
+   "note": "still open: DPB says four pins but lists ~9; per-pin BoxLunch listings now seen for Scary Teddy, Zero Dog House, Sally Tree, Jack Wreath (ids 11447731-47); Sally's Jars set 11447743 is in same id run"
+  },
+  {
+   "key": "lic/2018/boxlunch-nightmare-before-christmas-25th",
+   "field": "release_date",
+   "searched": "DPB",
+   "note": "DPB gives availability Aug-Oct 2018 for the line (start month already claimed)"
+  },
+  {
+   "key": "lic/2018/boxlunch-sallys-jars",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "three jar designs still not named per pin; listing tagline cites Frog's Breath and Worm's Wort; Deadly Nightshade only on non-pin jar products; members not keyed"
+  },
+  {
+   "key": "lic/2018/boxlunch-sallys-jars",
+   "field": "price",
+   "searched": "listing",
+   "note": "listing shows $13.99 vs DPB $18.90; listing price not claimed (likely markdown)"
+  },
+  {
+   "key": "lic/2018/boxlunch-edna-mode-incredibles-2",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "two Edna Mode pins still not individually described; listing gives 1.5in metal; members not keyed"
+  },
+  {
+   "key": "lic/2018/boxlunch-star-wars-porg",
+   "field": "members",
+   "searched": "1 query",
+   "note": "listing: three Porgs in different poses; poses not named; DPB notes Disney/Star Wars backer card; members not keyed"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-mickey-90th-mystery",
+   "field": "hold",
+   "searched": "1 query",
+   "note": "hold kept: listing still only 'Mickey in several iconic roles' (2in, metal, Funko); Funko wiki figure names are vinyl Pops, not pins; not used"
+  },
+  {
+   "key": "lic/2018/boxlunch-toy-story-land",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "6 vs 7 explained: DPB counts six character designs; Dan the Pixar Fan counts seven incl. logo pin; both claimed earlier; no single source states 6+logo"
+  },
+  {
+   "key": "lic/2018/boxlunch-toy-story-land",
+   "field": "price",
+   "searched": "listings",
+   "note": "BoxLunch pages now show $6.99 for most, $10.90 Little Green Men; launch $10.90 per DPB; not re-claimed"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-mad-hatter-cheshire-cat",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - no count or per-pin split stated; members not keyed"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-mad-hatter-cheshire-cat",
+   "field": "manufacturer",
+   "searched": "DPB",
+   "note": "DPB post titles it Funko Pop but body also says Loungefly; confirm maker"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-stitch-alien-suit",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "lead kept: listing 11609625 ($9.90, 1x1.25in) adjacent to Nov 2018 Lilo & Scrump set 11609623 but no date stated; not keyed"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-lilo-scrump",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: DPB (22 Nov 2018) says set shows Lilo with camera and Scrump, $16.90; listing pins ~1-1.5in; count/split not stated"
+  },
+  {
+   "key": "lic/2018/boxlunch-ralph-breaks-the-internet",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "lead kept: listing 11640187 ($16.90, ~1.5in) Ralph, Vanellope, cookie; still undated; no DPB post; not keyed"
+  },
+  {
+   "key": "lic/2018/boxlunch-angel-stitch",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "lead kept: listing 11658561 ($14.90, ~1in) tagged stocking stuffers; undated; not linked to Stitch/Angel/Scrump holiday set"
+  },
+  {
+   "key": "lic/2018/boxlunch-coco-dante-boot",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "lead kept: listing 11299618 ($6.90, metal) id near Jan 2018 Porg set 11301404 but undated; not keyed"
+  },
+  {
+   "key": "lic/2018/boxlunch-coco-alebrijes",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "lead: BoxLunch Coco Alebrijes pin set 11579622 ($14.90, 1.5in); may be the same product as 431 Coco Spirit Guide set (same price) - unconfirmed; not keyed"
+  },
+  {
+   "key": "lic/2018/boxlunch-coco-spirit-guide/dante",
+   "field": "hold",
+   "searched": "2 queries",
+   "note": "hold kept (431): Alebrijes listing describes pins of the alebrijes without per-pin detail; no new per-pin evidence"
+  },
+  {
+   "key": "lic/2018/boxlunch-coco-spirit-guide/pepita",
+   "field": "hold",
+   "searched": "2 queries",
+   "note": "hold kept (431): no new per-pin evidence"
+  },
+  {
+   "key": "lic/2018/boxlunch-coco-remember-me",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "lead: BoxLunch Coco Remember Me pin set 11579620 ($12.90, 1.5in; guitar and Remember Me banner); undated, count not stated; not keyed"
+  },
+  {
+   "key": "lic/2018/boxlunch-hercules-baby-pegasus",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "lead kept: set 11422679 ($12.90, ~1in, pair for each side of lapel) id adjacent to Jun 2018 Pegasus set, but DPB Jun 2018 post names only bolt + 2-pin set; 2022 baby Pegasus is different"
+  },
+  {
+   "key": "lic/2018/boxlunch-hercules-pegasus/hercules",
+   "field": "hold",
+   "searched": "1 query",
+   "note": "hold kept (431): DPB still only says a two-pin set; no per-pin listing"
+  },
+  {
+   "key": "lic/2018/boxlunch-hercules-pegasus/pegasus",
+   "field": "hold",
+   "searched": "1 query",
+   "note": "hold kept (431): no per-pin evidence"
+  },
+  {
+   "key": "lic/2018/boxlunch-christmas-wall-e-eve-lights",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept (431): listing 1.5in metal, WALL-E and EVE holiday theme; count/split still not stated"
+  },
+  {
+   "key": "lic/2018/boxlunch-christmas-stitch-holiday-set",
+   "field": "pin_structure",
+   "searched": "0 new queries",
+   "note": "hold kept: no new evidence"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-alice-queen-of-hearts-hedgehog",
+   "field": "hold",
+   "searched": "0 new queries",
+   "note": "holds kept (222/431) on all three members: no new per-pin evidence"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-mulan",
+   "field": "hold",
+   "searched": "0 new queries",
+   "note": "holds kept (222/431) on Mulan, Mushu, Cri-Kee: no new per-pin evidence"
+  },
+  {
+   "key": "lic/2018/boxlunch",
+   "field": "coverage",
+   "searched": "4 queries",
+   "note": "Feb-Apr 2018 BoxLunch Disney pins still not surfaced; only May (Max Powerline) found; DPB results cluster Jul-Dec 2018"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 of B066 (BoxLunch 2018); 29 standard search-snippet queries, excluded domains blocked. New: Max Goof Powerline pin (May 2018), Incredibles logo pin (Aug 2018), Funko Mad Hatter & Cheshire Cat set (Nov 2018, structure held). Jack Wreath hold (431) released on BoxLunch per-pin listing. Snowflake/Spiral Hill, Coco, Hercules, WALL-E lights, Stitch holiday, Lilo & Scrump, Funko Alice/Mulan/Mickey 90th holds kept. Undated leads (Stitch alien suit, Ralph, Angel & Stitch, Dante boot, Baby Pegasus, Coco Remember Me/Alebrijes) not keyed."
+}

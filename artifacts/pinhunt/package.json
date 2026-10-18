@@ -12,7 +12,9 @@
     "test:collection-sync": "node --test context/collection-push-queue.test.mjs",
     "test:boards-sync": "node --test context/boards-sync.test.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "jest && pnpm run test:collection-sync && pnpm run test:boards-sync",
+    "test": "jest && pnpm run test:collection-sync && pnpm run test:boards-sync && pnpm run test:web-leak",
+    "test:web-leak": "node --test scripts/lib/webLeakCheck.test.mjs",
+    "build:contributor-web": "node scripts/build-contributor-web.mjs",
     "test:unit": "jest",
     "screenshots": "node scripts/screenshots.mjs"
   },

@@ -1053,7 +1053,7 @@ export default function AddPinScreen() {
       {/* Scrolls the focused field above the keyboard (UX-011). */}
       <KeyboardAwareScrollViewCompat
         style={{ flex: 1, backgroundColor: colors.homeBackground }}
-        contentContainerStyle={[styles.scroll, { paddingBottom: botPad }]}
+        contentContainerStyle={[styles.scroll, styles.scrollWide, { paddingBottom: botPad }]}
         bottomOffset={24}
         showsVerticalScrollIndicator={false}
       >
@@ -1122,6 +1122,8 @@ const styles = StyleSheet.create({
   cleanupTitle:      { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   cleanupBody:       { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },
   scroll: { padding: spacing.lg, gap: spacing.xl },
+  // Desktop browsers (contributor website, #398): a readable form width.
+  scrollWide: { width: '100%', maxWidth: 640, alignSelf: 'center' },
 
   // Step indicator
   stepRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: spacing.xs },

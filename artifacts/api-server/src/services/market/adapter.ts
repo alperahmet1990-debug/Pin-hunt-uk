@@ -30,11 +30,11 @@
  * implements `MarketplaceAdapter`, its entry in `adapters/index.ts`, and one
  * `market_sources` row. Nothing else changes.
  */
-import type { CataloguePin } from "@workspace/pin-repository";
+import type { CataloguePin, MarketCode } from "@workspace/pin-repository";
 import type { MatchLang } from "./matching";
 
-/** market_sources.market. */
-export type Market = "UK" | "US" | "FR";
+/** market_sources.market (same as market_valuations.market). */
+export type Market = MarketCode;
 
 /** market_sources.evidence_type. */
 export type EvidenceType = "sold" | "active";

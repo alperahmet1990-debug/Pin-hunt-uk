@@ -1,0 +1,2331 @@
+{
+ "packet_id": "backfill-b303-asia-2019-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b303",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+   "title": "HKDL 2019 Eggstravaganza Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+   "title": "Chinese New Year 2019 Pins at Shanghai Disneyland",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+   "title": "May 2019 HKDL Limited Edition Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-donald-duck-2019-birthday-pin",
+   "title": "Tokyo Disney Resort Donald Duck 2019 Birthday Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://tdrexplorer.com/donald-birthday-merchandise-tokyo-disney-resort/",
+   "title": "Happy Birthday Donald Merchandise at Tokyo Disney Resort",
+   "publisher": "TDR Explorer",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/donalds-hot-jungle-summer-2019-tokyo-disneyland-pin",
+   "title": "Donald's Hot Jungle Summer 2019 Tokyo Disneyland Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2019-pin",
+   "title": "Tokyo Disney Resort 2019 Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/cherry-blossom-tokyo-disney-2019-pin-set",
+   "title": "Cherry Blossom Tokyo Disney 2019 Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/valentines-day-2019-tokyo-disney-resort-pin/",
+   "title": "Valentine's Day 2019 Tokyo Disney Resort Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-02-14"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-halloween-2019-pins",
+   "title": "Tokyo Disney Resort Halloween 2019 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-tanabata-days-2019-pin/",
+   "title": "Disney Tanabata Days 2019 Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+   "title": "Happy Birthday Shanghai Disneyland Pin Series",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-shanghai-disneyland-pin",
+   "title": "Enchanted Storybook Castle Shanghai Disneyland Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/tron-shanghai-disneyland-pin",
+   "title": "Tron Shanghai Disneyland Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-155018/",
+   "title": "Tokyo DisneySea Disney Easter 2019 goods",
+   "publisher": "MezzoMiki",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/seven-dwarfs-hkdl-hidden-mickey-game-pins",
+   "title": "Seven Dwarfs HKDL Hidden Mickey Game Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "hkdl/2019/eggstravaganza-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "HKDL 2019 Eggstravaganza Disney Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "all pins stated open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "available from Jan 31 2019 while supplies last"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "HKDL release"
+    },
+    {
+     "field": "format",
+     "value": "egg-shaped character pins: one single pin plus two sets",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "post covers a Pooh single pin, a Mickey & Friends set and a Duffy & Friends set"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2019/eggstravaganza-2019-mickey-and-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "HKDL 2019 Eggstravaganza Mickey and Friends pin set",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "set within Eggstravaganza post"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "four-pin set"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "four separate pins sold as a set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "from Jan 31 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2019/eggstravaganza-2019-duffy-and-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "HKDL 2019 Eggstravaganza Duffy and Friends pin set",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "set within Eggstravaganza post"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "from Jan 31 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2019/seven-dwarfs-hidden-mickey",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Seven Dwarfs HKDL Hidden Mickey Game Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/seven-dwarfs-hkdl-hidden-mickey-game-pins",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/seven-dwarfs-hkdl-hidden-mickey-game-pins",
+     "method": "search_snippet",
+     "note": "available Dec 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (game prizes)",
+     "source_url": "https://disneypinsblog.com/blogs/news/seven-dwarfs-hkdl-hidden-mickey-game-pins",
+     "method": "search_snippet",
+     "note": "Hidden Mickey game prize series"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2019/chinese-new-year-2019-duffy-friends-box",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Duffy & Friends Box (Chinese New Year 2019)",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "one of five Jan 19 2019 releases"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "due Jan 19 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "SHDR CNY release"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2019/oe-set/happy-birthday-series",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Happy Birthday Shanghai Disneyland Pin Series",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "one character per month"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "released Oct 13 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "SHDR"
+    },
+    {
+     "field": "format",
+     "value": "birthday-month pin series, a different character for each month",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "post states each month has a different character"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2019/enchanted-storybook-castle-monthly",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Enchanted Storybook Castle Shanghai Disneyland Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-shanghai-disneyland-pin",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-24",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-shanghai-disneyland-pin",
+     "method": "search_snippet",
+     "note": "released May 24 2019"
+    },
+    {
+     "field": "format",
+     "value": "third release of the SHDR monthly pin series",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-shanghai-disneyland-pin",
+     "method": "search_snippet",
+     "note": "DPB calls it third in the monthly series"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2019/oe-single/tokyo-disney-resort-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tokyo Disney Resort 2019 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2019-pin",
+     "method": "search_snippet",
+     "note": "standalone OE"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2019/oe-single/donald-duck-birthday-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tokyo Disney Resort Donald Duck 2019 Birthday Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-donald-duck-2019-birthday-pin",
+     "method": "search_snippet",
+     "note": "standalone OE"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2019/donalds-hot-jungle-summer-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Donald's Hot Jungle Summer 2019 Tokyo Disneyland Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-hot-jungle-summer-2019-tokyo-disneyland-pin",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-hot-jungle-summer-2019-tokyo-disneyland-pin",
+     "method": "search_snippet",
+     "note": "event Jul 9 - Sep 1 2019 at TDL"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2019/cherry-blossom-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cherry Blossom Tokyo Disney 2019 Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/cherry-blossom-tokyo-disney-2019-pin-set",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/cherry-blossom-tokyo-disney-2019-pin-set",
+     "method": "search_snippet",
+     "note": "released Feb 2019 at TDR"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/cherry-blossom-tokyo-disney-2019-pin-set",
+     "method": "search_snippet",
+     "note": "TDR"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2019/valentines-day-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Valentine's Day 2019 Tokyo Disney Resort Pin",
+     "source_url": "https://disneypinsblog.com/valentines-day-2019-tokyo-disney-resort-pin/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2019/tdr-halloween-2019-dpb",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tokyo Disney Resort Halloween 2019 Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-halloween-2019-pins",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-halloween-2019-pins",
+     "method": "search_snippet",
+     "note": "one TDS and one TDL pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-halloween-2019-pins",
+     "method": "search_snippet",
+     "note": "both OE"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2019/disney-tanabata-days-2019-dpb",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Tanabata Days 2019 Pin",
+     "source_url": "https://disneypinsblog.com/disney-tanabata-days-2019-pin/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://disneypinsblog.com/disney-tanabata-days-2019-pin/",
+     "method": "search_snippet",
+     "note": "released June 2019 at TDL"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "hkdl/2019/eggstravaganza-2019/winnie-the-pooh-and-friends",
+   "set_key": "hkdl/2019/eggstravaganza-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Eggstravaganza 2019 Winnie the Pooh and Friends",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "single pin in the Eggstravaganza post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh",
+      "Piglet",
+      "Tigger",
+      "Eeyore"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "one pin showing all four"
+    },
+    {
+     "field": "main_character",
+     "value": "Winnie the Pooh",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "Pooh-led design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "described as a single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "from Jan 31 2019"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin",
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "blue glitter, pin-on-pin, egg shape"
+    },
+    {
+     "field": "visual_form",
+     "value": "egg",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "egg-shaped"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/eggstravaganza-2019-mickey-and-friends/mickey-and-minnie",
+   "set_key": "hkdl/2019/eggstravaganza-2019-mickey-and-friends",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "pairing as listed for the four-pin set"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "one pin per listed pair"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "from Jan 31 2019"
+    },
+    {
+     "field": "visual_form",
+     "value": "egg",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "egg-shaped"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/eggstravaganza-2019-mickey-and-friends/donald-and-daisy",
+   "set_key": "hkdl/2019/eggstravaganza-2019-mickey-and-friends",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck",
+      "Daisy Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "pairing as listed for the four-pin set"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "one pin per listed pair"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "from Jan 31 2019"
+    },
+    {
+     "field": "visual_form",
+     "value": "egg",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "egg-shaped"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/eggstravaganza-2019-mickey-and-friends/pluto-and-goofy",
+   "set_key": "hkdl/2019/eggstravaganza-2019-mickey-and-friends",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto",
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "pairing as listed for the four-pin set"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "one pin per listed pair"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "from Jan 31 2019"
+    },
+    {
+     "field": "visual_form",
+     "value": "egg",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "egg-shaped"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/eggstravaganza-2019-mickey-and-friends/chip-and-dale",
+   "set_key": "hkdl/2019/eggstravaganza-2019-mickey-and-friends",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "pairing as listed for the four-pin set"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "one pin per listed pair"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "from Jan 31 2019"
+    },
+    {
+     "field": "visual_form",
+     "value": "egg",
+     "source_url": "https://disneypinsblog.com/blogs/news/hkdl-2019-eggstravaganza-disney-pins",
+     "method": "search_snippet",
+     "note": "egg-shaped"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/may-2019-le/donald-duck-85th-anniversary",
+   "set_key": "hkdl/2019/may-2019-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck 85th Anniversary Limited Edition Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "listed in May 2019 HKDL roundup alongside Donald Duck Birthday pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "Donald pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "May releases out May 11 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium, Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "sold at Emporium"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/chinese-new-year-2019/mickey-and-minnie-new-year",
+   "set_key": "shdr/2019/chinese-new-year-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey & Minnie New Year",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "one of five Jan 19 2019 releases"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "single pin titled for both"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "LE 800"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "due Jan 19 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/chinese-new-year-2019/donald-and-daisy-new-year",
+   "set_key": "shdr/2019/chinese-new-year-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald & Daisy New Year",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "one of five Jan 19 2019 releases"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck",
+      "Daisy Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "single pin titled for both"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "LE 800"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "due Jan 19 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/chinese-new-year-2019/mickey-minnie-duffy-shelliemay-new-year",
+   "set_key": "shdr/2019/chinese-new-year-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey, Minnie, Duffy, ShellieMay New Year",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "one of five Jan 19 2019 releases"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse",
+      "Duffy",
+      "ShellieMay"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "single pin titled for all four"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/chinese-new-year-pins-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "due Jan 19 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/oe-set/happy-birthday-series/january-judy-hopps",
+   "set_key": "shdr/2019/oe-set/happy-birthday-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Birthday January",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "January pin in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Judy Hopps"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "Judy Hopps assigned to January"
+    },
+    {
+     "field": "main_character",
+     "value": "Judy Hopps",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "per month list"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "series release date"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/oe-set/happy-birthday-series/february-nick-wilde",
+   "set_key": "shdr/2019/oe-set/happy-birthday-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Birthday February",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "February pin in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Nick Wilde"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "Nick Wilde assigned to February"
+    },
+    {
+     "field": "main_character",
+     "value": "Nick Wilde",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "per month list"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "series release date"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/oe-set/happy-birthday-series/march-pluto",
+   "set_key": "shdr/2019/oe-set/happy-birthday-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Birthday March",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "March pin in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "Pluto assigned to March"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "per month list"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "series release date"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/oe-set/happy-birthday-series/april-chip-n-dale",
+   "set_key": "shdr/2019/oe-set/happy-birthday-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Birthday April",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "April pin in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "Chip n Dale assigned to April"
+    },
+    {
+     "field": "main_character",
+     "value": "Chip n Dale",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "per month list"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "series release date"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/oe-set/happy-birthday-series/may-goofy",
+   "set_key": "shdr/2019/oe-set/happy-birthday-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Birthday May",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "May pin in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "Goofy assigned to May"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "per month list"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "series release date"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/oe-set/happy-birthday-series/june-donald-duck",
+   "set_key": "shdr/2019/oe-set/happy-birthday-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Birthday June",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "June pin in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "Donald Duck assigned to June"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "per month list"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "series release date"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/oe-set/happy-birthday-series/july-duffy",
+   "set_key": "shdr/2019/oe-set/happy-birthday-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Birthday July",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "July pin in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "Duffy assigned to July"
+    },
+    {
+     "field": "main_character",
+     "value": "Duffy",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "per month list"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "series release date"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/oe-set/happy-birthday-series/august-shelliemay",
+   "set_key": "shdr/2019/oe-set/happy-birthday-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Birthday August",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "August pin in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "ShellieMay"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "ShellieMay assigned to August"
+    },
+    {
+     "field": "main_character",
+     "value": "ShellieMay",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "per month list"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "series release date"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/oe-set/happy-birthday-series/september-gelatoni",
+   "set_key": "shdr/2019/oe-set/happy-birthday-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Birthday September",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "September pin in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Gelatoni"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "Gelatoni assigned to September"
+    },
+    {
+     "field": "main_character",
+     "value": "Gelatoni",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "per month list"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "series release date"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/oe-set/happy-birthday-series/october-stellalou",
+   "set_key": "shdr/2019/oe-set/happy-birthday-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Birthday October",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "October pin in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "StellaLou"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "StellaLou assigned to October"
+    },
+    {
+     "field": "main_character",
+     "value": "StellaLou",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "per month list"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "series release date"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/oe-set/happy-birthday-series/november-mickey-mouse",
+   "set_key": "shdr/2019/oe-set/happy-birthday-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Birthday November",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "November pin in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "Mickey Mouse assigned to November"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "per month list"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "series release date"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/oe-set/happy-birthday-series/december-minnie-mouse",
+   "set_key": "shdr/2019/oe-set/happy-birthday-series",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Birthday December",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "December pin in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "Minnie Mouse assigned to December"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "per month list"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/happy-birthday-shanghai-disneyland-pin-series",
+     "method": "search_snippet",
+     "note": "series release date"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/enchanted-storybook-castle-monthly/castle",
+   "set_key": "shdr/2019/enchanted-storybook-castle-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Enchanted Storybook Castle Shanghai Disneyland Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-shanghai-disneyland-pin",
+     "method": "search_snippet",
+     "note": "third monthly series release"
+    },
+    {
+     "field": "attraction",
+     "value": "Enchanted Storybook Castle",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-shanghai-disneyland-pin",
+     "method": "search_snippet",
+     "note": "castle subject"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-24",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-shanghai-disneyland-pin",
+     "method": "search_snippet",
+     "note": "May 24 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-shanghai-disneyland-pin",
+     "method": "search_snippet",
+     "note": "SHDR"
+    },
+    {
+     "field": "visual_description",
+     "value": "brushed metal with 3D elements",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-shanghai-disneyland-pin",
+     "method": "search_snippet",
+     "note": "per DPB"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2019/tron-monthly/tron",
+   "set_key": "shdr/2019/tron-monthly",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/blogs/news/tron-shanghai-disneyland-pin",
+     "method": "search_snippet",
+     "note": "fifth release in SHDR monthly pin series"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2019/oe/tokyo-disney-resort-2019",
+   "set_key": "tdr/2019/oe-single/tokyo-disney-resort-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tokyo Disney Resort 2019 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2019-pin",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse",
+      "Pumbaa"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2019-pin",
+     "method": "search_snippet",
+     "note": "pin shows Mickey, Minnie and Pumbaa"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2019-pin",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2019-pin",
+     "method": "search_snippet",
+     "note": "OE, TDR exclusive"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2019-pin",
+     "method": "search_snippet",
+     "note": "2019 pin"
+    },
+    {
+     "field": "front_text",
+     "value": "2019",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2019-pin",
+     "method": "search_snippet",
+     "note": "reads 2019 at bottom"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2019-pin",
+     "method": "search_snippet",
+     "note": "exclusive to TDR, not park-specific"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2019/oe/donald-duck-birthday-2019",
+   "set_key": "tdr/2019/oe-single/donald-duck-birthday-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tokyo Disney Resort Donald Duck 2019 Birthday Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-donald-duck-2019-birthday-pin",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck",
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-donald-duck-2019-birthday-pin",
+     "method": "search_snippet",
+     "note": "Donald with Chip and Dale, balloons and confetti"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-donald-duck-2019-birthday-pin",
+     "method": "search_snippet",
+     "note": "birthday pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-donald-duck-2019-birthday-pin",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-donald-duck-2019-birthday-pin",
+     "method": "search_snippet",
+     "note": "OE, limited time"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-donald-duck-2019-birthday-pin",
+     "method": "search_snippet",
+     "note": "released May 10 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-donald-duck-2019-birthday-pin",
+     "method": "search_snippet",
+     "note": "released at TDL"
+    },
+    {
+     "field": "front_text",
+     "value": "2019 / 6.9 / Happy Birthday to Me!!",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-donald-duck-2019-birthday-pin",
+     "method": "search_snippet",
+     "note": "text at top and bottom"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://tdrexplorer.com/donald-birthday-merchandise-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed at 1,000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://tdrexplorer.com/donald-birthday-merchandise-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_location",
+     "value": "Gag Factory (TDL); Villa Donaldo Home Shop (TDS)",
+     "source_url": "https://tdrexplorer.com/donald-birthday-merchandise-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "shops selling Donald birthday goods"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2019/donalds-hot-jungle-summer-2019/donald",
+   "set_key": "tdr/2019/donalds-hot-jungle-summer-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald's Hot Jungle Summer 2019 pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-hot-jungle-summer-2019-tokyo-disneyland-pin",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-hot-jungle-summer-2019-tokyo-disneyland-pin",
+     "method": "search_snippet",
+     "note": "Donald pin"
+    },
+    {
+     "field": "front_text",
+     "value": "Donald's Hot Jungle Summer",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-hot-jungle-summer-2019-tokyo-disneyland-pin",
+     "method": "search_snippet",
+     "note": "event name at bottom"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-hot-jungle-summer-2019-tokyo-disneyland-pin",
+     "method": "search_snippet",
+     "note": "TDL event pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2019/valentines-day-2019/mickey-and-minnie",
+   "set_key": "tdr/2019/valentines-day-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Valentine's Day 2019 Tokyo Disney Resort Pin",
+     "source_url": "https://disneypinsblog.com/valentines-day-2019-tokyo-disney-resort-pin/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/valentines-day-2019-tokyo-disney-resort-pin/",
+     "method": "search_snippet",
+     "note": "Mickey and Minnie with pink glitter heart"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/valentines-day-2019-tokyo-disney-resort-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin",
+      "glitter",
+      "hidden Mickey"
+     ],
+     "source_url": "https://disneypinsblog.com/valentines-day-2019-tokyo-disney-resort-pin/",
+     "method": "search_snippet",
+     "note": "flower centre is a hidden Mickey"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/valentines-day-2019-tokyo-disney-resort-pin/",
+     "method": "search_snippet",
+     "note": "post dated Feb 14 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2019/tdr-halloween-2019-dpb/tds-mickey-bat-frame",
+   "set_key": "tdr/2019/tdr-halloween-2019-dpb",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-halloween-2019-pins",
+     "method": "search_snippet",
+     "note": "Mickey design"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey in a bat-shaped metal frame, Halloween 2019 logo",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-halloween-2019-pins",
+     "method": "search_snippet",
+     "note": "TDS pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-halloween-2019-pins",
+     "method": "search_snippet",
+     "note": "TDS"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-halloween-2019-pins",
+     "method": "search_snippet",
+     "note": "OE"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2019/tdr-halloween-2019-dpb/tdl-mickey-minnie-ghost",
+   "set_key": "tdr/2019/tdr-halloween-2019-dpb",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-halloween-2019-pins",
+     "method": "search_snippet",
+     "note": "Mickey and Minnie in costume"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-halloween-2019-pins",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "costumed Mickey and Minnie, spinning ghost, park backdrop, Halloween 2019 logo",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-halloween-2019-pins",
+     "method": "search_snippet",
+     "note": "TDL pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-halloween-2019-pins",
+     "method": "search_snippet",
+     "note": "spinning ghost"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-halloween-2019-pins",
+     "method": "search_snippet",
+     "note": "TDL"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-halloween-2019-pins",
+     "method": "search_snippet",
+     "note": "OE"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2019/disney-tanabata-days-2019-dpb/mickey-and-minnie-dangle",
+   "set_key": "tdr/2019/disney-tanabata-days-2019-dpb",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-tanabata-days-2019-pin/",
+     "method": "search_snippet",
+     "note": "dangle pin with Mickey and Minnie"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disney-tanabata-days-2019-pin/",
+     "method": "search_snippet",
+     "note": "single dangle pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "dangle"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-tanabata-days-2019-pin/",
+     "method": "search_snippet",
+     "note": "dangle"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://disneypinsblog.com/disney-tanabata-days-2019-pin/",
+     "method": "search_snippet",
+     "note": "June 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://disneypinsblog.com/disney-tanabata-days-2019-pin/",
+     "method": "search_snippet",
+     "note": "TDL, TDR exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2019/tds-easter-2019/pin",
+   "set_key": "tdr/2019/tds-easter-2019",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-04-01",
+     "source_url": "https://mezzomiki.jp/post-155018/",
+     "method": "search_snippet",
+     "note": "summary of MezzoMiki Easter 2019 article gives Apr 1 2019 release, 1,000 yen"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "hkdl/2019/eggstravaganza-2019-mickey-and-friends/mickey-and-minnie",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; pairs given as one list for the 4-pin set"
+  },
+  {
+   "key": "hkdl/2019/eggstravaganza-2019-mickey-and-friends/donald-and-daisy",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; pairs given as one list for the 4-pin set"
+  },
+  {
+   "key": "hkdl/2019/eggstravaganza-2019-mickey-and-friends/pluto-and-goofy",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; pairs given as one list for the 4-pin set"
+  },
+  {
+   "key": "hkdl/2019/eggstravaganza-2019-mickey-and-friends/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; pairs given as one list for the 4-pin set"
+  },
+  {
+   "key": "hkdl/2019/eggstravaganza-2019-duffy-and-friends",
+   "field": "pins",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); Duffy, ShellieMay, Gelatoni, StellaLou, CookieAnn named, count not stated"
+  },
+  {
+   "key": "hkdl/2019/eggstravaganza-2019-duffy-and-friends",
+   "field": "expected_pin_count",
+   "searched": "web search (standard), snippets only",
+   "note": "no piece count or price in snippet"
+  },
+  {
+   "key": "hkdl/2019/eggstravaganza-2019",
+   "field": "original_price",
+   "searched": "web search (standard), snippets only",
+   "note": "no HK$ price in snippet; a US reseller price seen, not used"
+  },
+  {
+   "key": "hkdl/2019/may-2019-le/donald-duck-85th-anniversary",
+   "field": "visual_description",
+   "searched": "web search (standard), snippets only",
+   "note": "resolves packet 456 gap (second Donald LE 500); design not described"
+  },
+  {
+   "key": "hkdl/2019/may-2019-le",
+   "field": "expected_pin_count",
+   "searched": "web search (standard), snippets only",
+   "note": "conflict kept: DPB says 3 releases (packet 207) while 456 recorded 6; now 6 named pins across packets"
+  },
+  {
+   "key": "hkdl/2019/donald-85th-employee-center",
+   "field": "pins",
+   "searched": "web search (standard), snippets only",
+   "note": "lead: MyPinCentral 172592 Donald 85th LE 150 with employee-center reference; park/line unclear - not recorded"
+  },
+  {
+   "key": "hkdl/2019/ant-man-nano-battle-launch",
+   "field": "pins",
+   "searched": "web search (standard), snippets only",
+   "note": "TDR Explorer again gives LE pins HK$158/HK$228 (US$20/29); designs and sizes still absent; LE 300 seen only on reseller for a 5th-anniv pin (not 2019)"
+  },
+  {
+   "key": "hkdl/2019/seven-dwarfs-hidden-mickey",
+   "field": "pins",
+   "searched": "web search (standard), snippets only",
+   "note": "members and count not in snippet"
+  },
+  {
+   "key": "hkdl/2019/january-2019-le",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "no January 2019 HKDL monthly LE roundup found again (DPB has Mar, May, Jun, Sep only); see Eggstravaganza OE (Jan 31) and Seven Dwarfs HM (Dec)"
+  },
+  {
+   "key": "hkdl/2019/february-2019-le",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "no February 2019 HKDL monthly LE roundup found again (DPB has Mar, May, Jun, Sep only); see Eggstravaganza OE (Jan 31) and Seven Dwarfs HM (Dec)"
+  },
+  {
+   "key": "hkdl/2019/april-2019-le",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "no April 2019 HKDL monthly LE roundup found again (DPB has Mar, May, Jun, Sep only); see Eggstravaganza OE (Jan 31) and Seven Dwarfs HM (Dec)"
+  },
+  {
+   "key": "hkdl/2019/july-2019-le",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "no July 2019 HKDL monthly LE roundup found again (DPB has Mar, May, Jun, Sep only); see Eggstravaganza OE (Jan 31) and Seven Dwarfs HM (Dec)"
+  },
+  {
+   "key": "hkdl/2019/august-2019-le",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "no August 2019 HKDL monthly LE roundup found again (DPB has Mar, May, Jun, Sep only); see Eggstravaganza OE (Jan 31) and Seven Dwarfs HM (Dec)"
+  },
+  {
+   "key": "hkdl/2019/november-2019-le",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "no November 2019 HKDL monthly LE roundup found again (DPB has Mar, May, Jun, Sep only); see Eggstravaganza OE (Jan 31) and Seven Dwarfs HM (Dec)"
+  },
+  {
+   "key": "hkdl/2019/baby-hidden-mickey",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "second six still unnamed; no per-pin sources found; holds in packet 456 kept"
+  },
+  {
+   "key": "hkdl/2019/coco-hidden-mickey",
+   "field": "expected_pin_count",
+   "searched": "web search (standard), snippets only",
+   "note": "still 5 (DPB) vs 6 (MyPinCentral backstamp of 6); no new per-pin pages; holds in packet 456 kept"
+  },
+  {
+   "key": "hkdl/2019/coco-hidden-mickey/hector",
+   "field": "pin_name",
+   "searched": "web search (standard), snippets only",
+   "note": "hold kept (packet 456): 166162 seen only as a related-pin label on page 166163; a listing calls it Hector and Miguel - not recorded"
+  },
+  {
+   "key": "hkdl/2019/coco-jumbo/miguel",
+   "field": "edition_size",
+   "searched": "web search (standard), snippets only",
+   "note": "no new info; packet 413 LE 600 Karibuni Oct 2019 stands"
+  },
+  {
+   "key": "hkdl/2019/pin-go-2019",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "still unnamed; Pooh & Piglet PIN-GO pin only on reseller dpinstore - not used"
+  },
+  {
+   "key": "hkdl/2019/pin-trading-carnival-2019",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "Tickets 8-pin LE 1000 list again only on a value-guide listing site (collectionhero); not used"
+  },
+  {
+   "key": "hkdl/2019",
+   "field": "original_price",
+   "searched": "web search (standard), snippets only",
+   "note": "no HK$ prices for monthly LEs found beyond Ant-Man launch pins"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/christmas-donald-and-goofy",
+   "field": "source",
+   "searched": "web search (standard), snippets only",
+   "note": "hold kept (packet 413): no publisher or official page found"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/christmas-mickey-and-minnie",
+   "field": "source",
+   "searched": "web search (standard), snippets only",
+   "note": "hold kept (packet 413): no publisher or official page found"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/christmas-pluto-chip-and-dale",
+   "field": "source",
+   "searched": "web search (standard), snippets only",
+   "note": "hold kept (packet 413): no publisher or official page found"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/magic-access-christmas-2019-jumbo",
+   "field": "source",
+   "searched": "web search (standard), snippets only",
+   "note": "hold kept (packet 413): no publisher or official page found"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/magic-access-2020",
+   "field": "source",
+   "searched": "web search (standard), snippets only",
+   "note": "hold kept (packet 413): no publisher or official page found"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/sulley-candy-machine",
+   "field": "source",
+   "searched": "web search (standard), snippets only",
+   "note": "hold kept (packet 413): no publisher or official page found"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/elsa",
+   "field": "source",
+   "searched": "web search (standard), snippets only",
+   "note": "hold kept (packet 413): no publisher or official page found"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/anna",
+   "field": "source",
+   "searched": "web search (standard), snippets only",
+   "note": "hold kept (packet 413): no publisher or official page found"
+  },
+  {
+   "key": "hkdl/2019/duffy-friends-chinese-new-year-2019",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold kept (packet 413): no new evidence; release year still Dec 2018"
+  },
+  {
+   "key": "hkdl/2019/oe-set/villains-2019",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold kept (packet 413): no new evidence"
+  },
+  {
+   "key": "hkdl/2019/oe-set/nightmare-before-christmas-2019",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold kept (packet 413): no new evidence"
+  },
+  {
+   "key": "hkdl/2019/valentines-2019",
+   "field": "pins",
+   "searched": "web search (standard), snippets only",
+   "note": "lead: forum thread says HKDL Valentine 2019 pins were out early 2019; no DPB/official source found"
+  },
+  {
+   "key": "shdr/2019/chinese-new-year-2019/donald-and-daisy-new-year",
+   "field": "identity",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: possible duplicate of packet 207 key shdr/2019/chinese-new-year-2019/donald-and-daisy (OE per a different DPB URL); kept separate pending review"
+  },
+  {
+   "key": "shdr/2019/chinese-new-year-2019-duffy-friends-box",
+   "field": "pins",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); box contents not described; may relate to packet 207 key chinese-new-year-2019/duffy (OE)"
+  },
+  {
+   "key": "shdr/2019/chinese-new-year-2019",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "with these, all five Jan 19 LE releases now named (Fab 5 Box 300 in packet 207); OE-vs-LE conflict between two DPB URLs kept"
+  },
+  {
+   "key": "shdr/2019/chinese-new-year-2019/fab-5-box-set",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: confirm whether box set is one pin or a multi-pin pack (packet 207 recorded as a pin)"
+  },
+  {
+   "key": "shdr/2019/oe-set/happy-birthday-series/january-judy-hopps",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; month mapping from one series list (snippet)"
+  },
+  {
+   "key": "shdr/2019/oe-set/happy-birthday-series/february-nick-wilde",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; month mapping from one series list (snippet)"
+  },
+  {
+   "key": "shdr/2019/oe-set/happy-birthday-series/march-pluto",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; month mapping from one series list (snippet)"
+  },
+  {
+   "key": "shdr/2019/oe-set/happy-birthday-series/april-chip-n-dale",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; month mapping from one series list (snippet)"
+  },
+  {
+   "key": "shdr/2019/oe-set/happy-birthday-series/may-goofy",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; month mapping from one series list (snippet)"
+  },
+  {
+   "key": "shdr/2019/oe-set/happy-birthday-series/june-donald-duck",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; month mapping from one series list (snippet)"
+  },
+  {
+   "key": "shdr/2019/oe-set/happy-birthday-series/july-duffy",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; month mapping from one series list (snippet)"
+  },
+  {
+   "key": "shdr/2019/oe-set/happy-birthday-series/august-shelliemay",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; month mapping from one series list (snippet)"
+  },
+  {
+   "key": "shdr/2019/oe-set/happy-birthday-series/september-gelatoni",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; month mapping from one series list (snippet)"
+  },
+  {
+   "key": "shdr/2019/oe-set/happy-birthday-series/october-stellalou",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; month mapping from one series list (snippet)"
+  },
+  {
+   "key": "shdr/2019/oe-set/happy-birthday-series/november-mickey-mouse",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; month mapping from one series list (snippet)"
+  },
+  {
+   "key": "shdr/2019/oe-set/happy-birthday-series/december-minnie-mouse",
+   "field": "pin_structure",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one set/series list, no per-pin source; month mapping from one series list (snippet)"
+  },
+  {
+   "key": "shdr/2019/enchanted-storybook-castle-monthly/castle",
+   "field": "edition_size",
+   "searched": "web search (standard), snippets only",
+   "note": "not in snippet; series peer Tron (5th release, packet 207) is LE 500"
+  },
+  {
+   "key": "shdr/2019/monthly-series",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "releases 1, 2, 4 (and after 5) of the 2019 SHDR monthly series not found; castle (3) and Tron (5) are separate set keys"
+  },
+  {
+   "key": "shdr/2019/3rd-anniversary",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "again no 3rd-anniversary-branded pin; Fun Day (Jun 9-11) remains the anniversary-period release"
+  },
+  {
+   "key": "shdr/2019/spring-party-2019-booster",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "still unnamed (LE 500)"
+  },
+  {
+   "key": "shdr/2019/spring-party-2019-mini-jumbo-set",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "still unnamed (LE 300)"
+  },
+  {
+   "key": "shdr/2019/pin-trading-fun-day-2019",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "framed set and mystery collection still without contents or sizes; DPB post is image-led"
+  },
+  {
+   "key": "tdr/2019/oe/tokyo-disney-resort-2019",
+   "field": "release_date",
+   "searched": "web search (standard), snippets only",
+   "note": "no date or price in snippet; Pumbaa fits Year of the Boar New Year theme (inference, not claimed)"
+  },
+  {
+   "key": "tdr/2019/oe/donald-duck-birthday-2019",
+   "field": "original_price",
+   "searched": "web search (standard), snippets only",
+   "note": "TDR Explorer price tied to the 85th-birthday merch article via summary; page year not shown in snippet"
+  },
+  {
+   "key": "tdr/2019/donalds-hot-jungle-summer-2019/donald",
+   "field": "edition_type",
+   "searched": "web search (standard), snippets only",
+   "note": "OE/LE not stated; release date and price not in snippet"
+  },
+  {
+   "key": "tdr/2019/cherry-blossom-2019",
+   "field": "pins",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); Minnie and Daisy in festive outfits, gold-tone; count not stated"
+  },
+  {
+   "key": "tdr/2019/valentines-day-2019/mickey-and-minnie",
+   "field": "release_date",
+   "searched": "web search (standard), snippets only",
+   "note": "post dated 2019-02-14; official date, venue, edition and price not stated"
+  },
+  {
+   "key": "tdr/2019/tdr-halloween-2019-dpb/tds-mickey-bat-frame",
+   "field": "identity",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: possible duplicate of tdr/2019/tds-halloween-2019/pin (packets 207/413, 1,000 yen Mystique design)"
+  },
+  {
+   "key": "tdr/2019/tdr-halloween-2019-dpb/tdl-mickey-minnie-ghost",
+   "field": "identity",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: possible overlap with tdr/2019/tdr-halloween-2019/mickey-ghost (packet 413, Mickey only, 800 yen) - likely different"
+  },
+  {
+   "key": "tdr/2019/disney-tanabata-days-2019-dpb/mickey-and-minnie-dangle",
+   "field": "identity",
+   "searched": "web search (standard), snippets only",
+   "note": "hold: possible duplicate of tdr/2019/tdl-tanabata-2019/pin (packet 413; MezzoMiki lists Mickey, Minnie, Chip, Dale)"
+  },
+  {
+   "key": "tdr/2019/duffy-winter-holiday-2019",
+   "field": "pins",
+   "searched": "web search (standard), snippets only",
+   "note": "scope: confirmed button/badge/non-pin (MezzoMiki: Duffy & Friends Winter Holiday 2019 items are plush badges, 2,100 yen, Nov 6-Dec 25)"
+  },
+  {
+   "key": "tdr/2019/castle-pin-2019-10-15",
+   "field": "pins",
+   "searched": "web search (standard), snippets only",
+   "note": "not found: no source ties a castle pin to 15 Oct 2019; MezzoMiki castle blind set (post-327132) looks recent, not 2019"
+  },
+  {
+   "key": "tdr/2019/imagining-the-magic",
+   "field": "pins",
+   "searched": "web search (standard), snippets only",
+   "note": "no 2019 Imagining the Magic pin found; packet 456 lead (likely 2020) stands"
+  },
+  {
+   "key": "tdr/2019/forever-one-mans-dream-ii/clapperboard",
+   "field": "visual_form",
+   "searched": "web search (standard), snippets only",
+   "note": "hold kept (packet 413): no new evidence"
+  },
+  {
+   "key": "tdr/2019/duffy-friends-2019",
+   "field": "members",
+   "searched": "web search (standard), snippets only",
+   "note": "still no 2019 Duffy pin found (only plush badges)"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 of B007 (packets 207, 413, 456); reuses their keys. 30 standard searches, snippets only. New: HKDL Eggstravaganza OE (Jan 31), May Donald 85th LE500, Seven Dwarfs HM (Dec); SHDR CNY LEs (3 pins + Duffy box), Happy Birthday OE series (12, held), castle monthly; TDR 2019 pin, Donald birthday, Hot Jungle Summer, Valentine, cherry blossom set, Halloween pair, Tanabata dangle. No holds released. Resellers, value guides and PinTrader.Club not used as evidence."
+}

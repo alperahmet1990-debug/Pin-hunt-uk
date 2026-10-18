@@ -1,0 +1,1499 @@
+{
+ "packet_id": "backfill-b304-lic-2019-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b304",
+ "sources": [
+  {
+   "url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+   "title": "Mighty Marvel Mondo Merch Heading to MondoCon 2019",
+   "publisher": "Marvel",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-frozen-2-arendelle-castle-enamel-pin---boxlunch-exclusive/12679788.html",
+   "title": "Loungefly Disney Frozen 2 Arendelle Castle Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/arendelle-castle-frozen-2-boxlunch-disney-pin/",
+   "title": "Arendelle Castle Frozen 2 BoxLunch Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-frozen-2-all-cast-enamel-pin---boxlunch-exclusive/12374713.html",
+   "title": "Loungefly Disney Frozen 2 All Cast Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/disney-frozen-2-elsa-enamel-pin/33865194.html",
+   "title": "Disney Frozen 2 Elsa Enamel Pin",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-aristocats-hot-topic-disney-pin/",
+   "title": "The Aristocats Hot Topic Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-the-nightmare-before-christmas-lock-shock-barrel-enamel-pin-set/12140774.html",
+   "title": "Loungefly The Nightmare Before Christmas Lock Shock & Barrel Enamel Pin Set",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/lock-shock-and-barrel-hot-topic-disney-pin-set/",
+   "title": "Lock, Shock and Barrel Hot Topic Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-lanyard-pin-set---boxlunch-exclusive/11640159.html",
+   "title": "Loungefly Disney The Nightmare Before Christmas Lanyard Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-lanyard-pin-set-at-boxlunch",
+   "title": "Nightmare Before Christmas Lanyard Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mondoshop.com/products/mrs-jumbo-dumbo-2-pin-set",
+   "title": "Dumbo (Mrs. Jumbo + Dumbo 2-pin set)",
+   "publisher": "Mondo",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.theblotsays.com/2019/08/disneys-dumbo-enamel-pins-by-tom-whalen.html",
+   "title": "Disney's Dumbo Enamel Pins by Tom Whalen x Mondo",
+   "publisher": "The Blot Says",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/sdcc2019toystory4",
+   "title": "SDCC 2019 Exclusive Reveal: Disney and Pixar's Toy Story 4 - Duke Caboom FiGPiN XL!",
+   "publisher": "FiGPiN",
+   "published_date": "2019-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/duke-caboom-figpin-xl-pin-at-sdcc-2019/",
+   "title": "Duke Caboom FiGPiN XL Pin at SDCC 2019",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://sdccblog.com/2019/07/figpins-san-diego-comic-con-exclusives-2019/",
+   "title": "FiGPins San Diego Comic-Con Exclusives 2019",
+   "publisher": "San Diego Comic-Con Unofficial Blog",
+   "published_date": "2019-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/toystory4reveal",
+   "title": "Disney and Pixar Toy Story 4 FiGPiN Collection Revealed!",
+   "publisher": "FiGPiN",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-pixar-toy-story-4-characters-badge-enamel-pin/11927344.html",
+   "title": "Loungefly Disney Pixar Toy Story 4 Characters Badge Enamel Pin",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pixar-toy-story-4-characters-badge-enamel-pin/11788278.html",
+   "title": "Loungefly Disney Pixar Toy Story 4 Characters Badge Enamel Pin",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/toy-story-4-badge-hot-topic-pin",
+   "title": "Toy Story 4 Badge Hot Topic Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/funko-pop-disney-pixar-toy-story-buzz-mrs.-nesbitt-enamel-pin-set/11711242.html",
+   "title": "Funko Pop! Disney Pixar Toy Story Buzz Mrs. Nesbitt Enamel Pin Set",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-kingdom-hearts-goofy-sora-donald-enamel-pin---boxlunch-exclusive/11943193.html",
+   "title": "Loungefly Disney Kingdom Hearts Goofy Sora Donald Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/kingdom-hearts-3-funko-pop-mystery-disney-pins/",
+   "title": "Kingdom Hearts 3 Funko Pop! Mystery Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/d23expo2019-mickeyminnie2pk",
+   "title": "D23 Expo: Disney's Mickey Mouse & Minnie Mouse Glitter FiGPiN 2-pack!",
+   "publisher": "FiGPiN",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/aladdin-primark-disney-pin-set/",
+   "title": "Aladdin Primark Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mondoshop.com/blogs/news/new-disney-pins-lady-and-the-tramp-robin-hood-marion-steamboat-willie-minnie",
+   "title": "DISNEY: Valentine's Day Enamel Pins!",
+   "publisher": "Mondo",
+   "published_date": "2019-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-pixar-toy-story-4-blind-box-enamel-pin/11883056.html",
+   "title": "Loungefly Disney Pixar Toy Story 4 Blind Box Enamel Pin",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/haunted-mansion-stretching-room-portraits-loungefly-blind-box-pin-set/",
+   "title": "Haunted Mansion Stretching Room Portraits Loungefly Blind Box Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pixar-toy-story-4-ducky-bunny-enamel-pin---boxlunch-exclusive/11788282.html",
+   "title": "Loungefly Disney Pixar Toy Story 4 Ducky & Bunny Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2019/mondo-mondocon-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mondo MondoCon 2019 Marvel pins",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "Marvel article on Mondo's MondoCon 2019 Marvel merchandise"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "Mondo brought the pins to its own convention"
+    },
+    {
+     "field": "retailer",
+     "value": "Mondo (MondoCon)",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "sold at MondoCon"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "MondoCon ran 14-15 Sept 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "MondoCon 2019, Austin, Texas",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "Austin, TX convention"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "four new Marvel pins, all by Tom Whalen"
+    },
+    {
+     "field": "format",
+     "value": "separate pins released together",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "each pin listed individually with its own size"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/loungefly-boxlunch-frozen-2-arendelle-castle",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Loungefly Disney Frozen 2 Arendelle Castle Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-frozen-2-arendelle-castle-enamel-pin---boxlunch-exclusive/12679788.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-frozen-2-arendelle-castle-enamel-pin---boxlunch-exclusive/12679788.html",
+     "method": "search_snippet",
+     "note": "listing title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-frozen-2-arendelle-castle-enamel-pin---boxlunch-exclusive/12679788.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/arendelle-castle-frozen-2-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "released at BoxLunch"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12",
+     "source_url": "https://disneypinsblog.com/arendelle-castle-frozen-2-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "DPB: released Dec 2019 at BoxLunch"
+    },
+    {
+     "field": "price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/arendelle-castle-frozen-2-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "DPB retail $8.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/arendelle-castle-frozen-2-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-frozen-2-arendelle-castle-enamel-pin---boxlunch-exclusive/12679788.html",
+     "method": "search_snippet",
+     "note": "single pin listing"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/hot-topic-aristocats",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin featuring several characters",
+     "source_url": "https://disneypinsblog.com/the-aristocats-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "one pin showing the three kittens"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/boxlunch-nightmare-before-christmas-lanyard",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-lanyard-pin-set---boxlunch-exclusive/11640159.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing names Loungefly as maker"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-lanyard-pin-set---boxlunch-exclusive/11640159.html",
+     "method": "search_snippet",
+     "note": "listing says BoxLunch exclusive"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-lanyard-pin-set---boxlunch-exclusive/11640159.html",
+     "method": "search_snippet",
+     "note": "lanyard with enamel Jack and Sally pins, PVC Oogie Boogie charm, clear ID holder"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2019/hot-topic-toy-story-4-badge",
+   "claims": [
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-pixar-toy-story-4-characters-badge-enamel-pin/11927344.html",
+     "method": "search_snippet",
+     "note": "HT listing title names Loungefly"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2019/mondo-mondocon-2019/spider-mobile",
+   "set_key": "lic/2019/mondo-mondocon-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Spider-mobile",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "named in MondoCon 2019 pin list"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "listed as an individual pin with own dimensions"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "Mondo"
+    },
+    {
+     "field": "size_mm",
+     "value": "1.26 in wide",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "size as stated in inches"
+    },
+    {
+     "field": "materials",
+     "value": "soft enamel, shiny silver metal, butterfly clutch",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "all four share this spec"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "MondoCon 14-15 Sept 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel (Spider-Man)",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "Marvel.com article; Spider-Man villains/vehicle"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/mondo-mondocon-2019/mysterio",
+   "set_key": "lic/2019/mondo-mondocon-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mysterio",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "named in MondoCon 2019 pin list"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "listed as an individual pin with own dimensions"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "Mondo"
+    },
+    {
+     "field": "size_mm",
+     "value": "1.65 in wide",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "size as stated in inches"
+    },
+    {
+     "field": "materials",
+     "value": "soft enamel, shiny silver metal, butterfly clutch",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "all four share this spec"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "MondoCon 14-15 Sept 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel (Spider-Man)",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "Marvel.com article; Spider-Man villains/vehicle"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mysterio"
+     ],
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "subject named in pin list"
+    },
+    {
+     "field": "main_character",
+     "value": "Mysterio",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "subject"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/mondo-mondocon-2019/doc-ock",
+   "set_key": "lic/2019/mondo-mondocon-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Doc Ock",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "named in MondoCon 2019 pin list"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "listed as an individual pin with own dimensions"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "Mondo"
+    },
+    {
+     "field": "size_mm",
+     "value": "1 in high",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "size as stated in inches"
+    },
+    {
+     "field": "materials",
+     "value": "soft enamel, shiny silver metal, butterfly clutch",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "all four share this spec"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "MondoCon 14-15 Sept 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel (Spider-Man)",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "Marvel.com article; Spider-Man villains/vehicle"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Doctor Octopus"
+     ],
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "subject named in pin list"
+    },
+    {
+     "field": "main_character",
+     "value": "Doctor Octopus",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "subject"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/mondo-mondocon-2019/green-goblin",
+   "set_key": "lic/2019/mondo-mondocon-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Green Goblin",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "named in MondoCon 2019 pin list"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "listed as an individual pin with own dimensions"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "Mondo"
+    },
+    {
+     "field": "size_mm",
+     "value": "1.22 in high",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "size as stated in inches"
+    },
+    {
+     "field": "materials",
+     "value": "soft enamel, shiny silver metal, butterfly clutch",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "all four share this spec"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "MondoCon 14-15 Sept 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "franchise",
+     "value": "Marvel (Spider-Man)",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "Marvel.com article; Spider-Man villains/vehicle"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Green Goblin"
+     ],
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "subject named in pin list"
+    },
+    {
+     "field": "main_character",
+     "value": "Green Goblin",
+     "source_url": "https://www.marvel.com/articles/gear/mighty-marvel-mondo-merch-heading-to-mondocon-2019",
+     "method": "search_snippet",
+     "note": "subject"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/loungefly-boxlunch-frozen-2-arendelle-castle/arendelle-castle",
+   "set_key": "lic/2019/loungefly-boxlunch-frozen-2-arendelle-castle",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Frozen 2 Arendelle Castle",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-frozen-2-arendelle-castle-enamel-pin---boxlunch-exclusive/12679788.html",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-frozen-2-arendelle-castle-enamel-pin---boxlunch-exclusive/12679788.html",
+     "method": "search_snippet",
+     "note": "single enamel pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "silver-tone Arendelle Castle pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-frozen-2-arendelle-castle-enamel-pin---boxlunch-exclusive/12679788.html",
+     "method": "search_snippet",
+     "note": "paraphrase of listing"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 2 in tall",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-frozen-2-arendelle-castle-enamel-pin---boxlunch-exclusive/12679788.html",
+     "method": "search_snippet",
+     "note": "size in inches per listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-frozen-2-arendelle-castle-enamel-pin---boxlunch-exclusive/12679788.html",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-frozen-2-arendelle-castle-enamel-pin---boxlunch-exclusive/12679788.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12",
+     "source_url": "https://disneypinsblog.com/arendelle-castle-frozen-2-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "Dec 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/arendelle-castle-frozen-2-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "original_price",
+     "value": 8.9,
+     "source_url": "https://disneypinsblog.com/arendelle-castle-frozen-2-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "retail $8.90; listing now shows lower $6.99 (later)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/arendelle-castle-frozen-2-boxlunch-disney-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "franchise",
+     "value": "Frozen 2",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-frozen-2-arendelle-castle-enamel-pin---boxlunch-exclusive/12679788.html",
+     "method": "search_snippet",
+     "note": "Frozen 2"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/hot-topic-aristocats/kittens",
+   "set_key": "lic/2019/hot-topic-aristocats",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Aristocats Hot Topic Disney Pin",
+     "source_url": "https://disneypinsblog.com/the-aristocats-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Marie",
+      "Berlioz",
+      "Toulouse"
+     ],
+     "source_url": "https://disneypinsblog.com/the-aristocats-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "pin shows the three kittens"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/the-aristocats-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "single pin with three kittens"
+    },
+    {
+     "field": "retailer",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/the-aristocats-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "Hot Topic, in store"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03",
+     "source_url": "https://disneypinsblog.com/the-aristocats-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "March 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/the-aristocats-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "original_price",
+     "value": 7.9,
+     "source_url": "https://disneypinsblog.com/the-aristocats-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "$7.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-aristocats-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "franchise",
+     "value": "The Aristocats",
+     "source_url": "https://disneypinsblog.com/the-aristocats-hot-topic-disney-pin/",
+     "method": "search_snippet",
+     "note": "The Aristocats"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/boxlunch-nightmare-before-christmas-lanyard/jack-skellington",
+   "set_key": "lic/2019/boxlunch-nightmare-before-christmas-lanyard",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-lanyard-pin-set---boxlunch-exclusive/11640159.html",
+     "method": "search_snippet",
+     "note": "listing names an enamel Jack pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Jack Skellington",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-lanyard-pin-set---boxlunch-exclusive/11640159.html",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-lanyard-pin-set---boxlunch-exclusive/11640159.html",
+     "method": "search_snippet",
+     "note": "listing: enamel Jack and Sally pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-lanyard-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "DPB: two pins, Sally and Jack Skellington"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-lanyard-pin-set---boxlunch-exclusive/11640159.html",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-lanyard-pin-set---boxlunch-exclusive/11640159.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-lanyard-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Aug 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/boxlunch-nightmare-before-christmas-lanyard/sally",
+   "set_key": "lic/2019/boxlunch-nightmare-before-christmas-lanyard",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Sally"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-lanyard-pin-set---boxlunch-exclusive/11640159.html",
+     "method": "search_snippet",
+     "note": "listing names an enamel Sally pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Sally",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-lanyard-pin-set---boxlunch-exclusive/11640159.html",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-lanyard-pin-set---boxlunch-exclusive/11640159.html",
+     "method": "search_snippet",
+     "note": "listing: enamel Jack and Sally pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sally"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-lanyard-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "DPB: two pins, Sally and Jack Skellington"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-lanyard-pin-set---boxlunch-exclusive/11640159.html",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-lanyard-pin-set---boxlunch-exclusive/11640159.html",
+     "method": "search_snippet",
+     "note": "BoxLunch exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-lanyard-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "Aug 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/mondo-dumbo-mrs-jumbo-2-pin-set/caboose",
+   "set_key": "lic/2019/mondo-dumbo-mrs-jumbo-2-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Caboose",
+     "source_url": "https://mondoshop.com/products/mrs-jumbo-dumbo-2-pin-set",
+     "method": "search_snippet",
+     "note": "product page lists a Caboose pin in the 2-pin set"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mondoshop.com/products/mrs-jumbo-dumbo-2-pin-set",
+     "method": "search_snippet",
+     "note": "described as its own pin with own size and backing"
+    },
+    {
+     "field": "size_mm",
+     "value": "1.55 in wide",
+     "source_url": "https://mondoshop.com/products/mrs-jumbo-dumbo-2-pin-set",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "materials",
+     "value": "soft enamel, shiny silver nickel, double post butterfly clutch",
+     "source_url": "https://mondoshop.com/products/mrs-jumbo-dumbo-2-pin-set",
+     "method": "search_snippet",
+     "note": "per-pin spec"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/products/mrs-jumbo-dumbo-2-pin-set",
+     "method": "search_snippet",
+     "note": "Mondo; designed by Tom Whalen"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://www.theblotsays.com/2019/08/disneys-dumbo-enamel-pins-by-tom-whalen.html",
+     "method": "search_snippet",
+     "note": "Aug 2019 launch"
+    },
+    {
+     "field": "franchise",
+     "value": "Dumbo",
+     "source_url": "https://mondoshop.com/products/mrs-jumbo-dumbo-2-pin-set",
+     "method": "search_snippet",
+     "note": "Dumbo"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/mondo-dumbo-mrs-jumbo-2-pin-set/mini-dumbo",
+   "set_key": "lic/2019/mondo-dumbo-mrs-jumbo-2-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mini Dumbo",
+     "source_url": "https://mondoshop.com/products/mrs-jumbo-dumbo-2-pin-set",
+     "method": "search_snippet",
+     "note": "product page lists a mini Dumbo pin in the set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo"
+     ],
+     "source_url": "https://mondoshop.com/products/mrs-jumbo-dumbo-2-pin-set",
+     "method": "search_snippet",
+     "note": "mini Dumbo"
+    },
+    {
+     "field": "main_character",
+     "value": "Dumbo",
+     "source_url": "https://mondoshop.com/products/mrs-jumbo-dumbo-2-pin-set",
+     "method": "search_snippet",
+     "note": "Dumbo"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mondoshop.com/products/mrs-jumbo-dumbo-2-pin-set",
+     "method": "search_snippet",
+     "note": "own pin, single post"
+    },
+    {
+     "field": "materials",
+     "value": "soft enamel, shiny silver nickel, single post butterfly clutch",
+     "source_url": "https://mondoshop.com/products/mrs-jumbo-dumbo-2-pin-set",
+     "method": "search_snippet",
+     "note": "per-pin spec"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Mondo",
+     "source_url": "https://mondoshop.com/products/mrs-jumbo-dumbo-2-pin-set",
+     "method": "search_snippet",
+     "note": "Mondo; Tom Whalen"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://www.theblotsays.com/2019/08/disneys-dumbo-enamel-pins-by-tom-whalen.html",
+     "method": "search_snippet",
+     "note": "Aug 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/figpin-sdcc-2019/duke-caboom-xl",
+   "set_key": "lic/2019/figpin-sdcc-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Duke Caboom FiGPiN XL",
+     "source_url": "https://figpin.com/blogs/news/sdcc2019toystory4",
+     "method": "search_snippet",
+     "note": "FiGPiN SDCC 2019 reveal title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duke Caboom"
+     ],
+     "source_url": "https://figpin.com/blogs/news/sdcc2019toystory4",
+     "method": "search_snippet",
+     "note": "Toy Story 4 Duke Caboom"
+    },
+    {
+     "field": "main_character",
+     "value": "Duke Caboom",
+     "source_url": "https://figpin.com/blogs/news/sdcc2019toystory4",
+     "method": "search_snippet",
+     "note": "Duke Caboom"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://figpin.com/blogs/news/sdcc2019toystory4",
+     "method": "search_snippet",
+     "note": "single XL pin"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://figpin.com/blogs/news/sdcc2019toystory4",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://figpin.com/blogs/news/sdcc2019toystory4",
+     "method": "search_snippet",
+     "note": "SDCC exclusive LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://figpin.com/blogs/news/sdcc2019toystory4",
+     "method": "search_snippet",
+     "note": "limited to 750"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://sdccblog.com/2019/07/figpins-san-diego-comic-con-exclusives-2019/",
+     "method": "search_snippet",
+     "note": "750 pieces"
+    },
+    {
+     "field": "original_price",
+     "value": 30,
+     "source_url": "https://figpin.com/blogs/news/sdcc2019toystory4",
+     "method": "search_snippet",
+     "note": "$30"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://figpin.com/blogs/news/sdcc2019toystory4",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "San Diego Comic-Con 2019, FiGPiN booth #719",
+     "source_url": "https://figpin.com/blogs/news/sdcc2019toystory4",
+     "method": "search_snippet",
+     "note": "booth 719, one per person"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-07",
+     "source_url": "https://disneypinsblog.com/duke-caboom-figpin-xl-pin-at-sdcc-2019/",
+     "method": "search_snippet",
+     "note": "SDCC July 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://figpin.com/blogs/news/sdcc2019toystory4",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "franchise",
+     "value": "Toy Story 4",
+     "source_url": "https://figpin.com/blogs/news/sdcc2019toystory4",
+     "method": "search_snippet",
+     "note": "Toy Story 4"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2019/hot-topic-toy-story-4-badge/toy-story-4-badge",
+   "set_key": "lic/2019/hot-topic-toy-story-4-badge",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Disney Pixar Toy Story 4 Characters Badge Enamel Pin",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-pixar-toy-story-4-characters-badge-enamel-pin/11927344.html",
+     "method": "search_snippet",
+     "note": "HT listing title"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-pixar-toy-story-4-characters-badge-enamel-pin/11927344.html",
+     "method": "search_snippet",
+     "note": "Loungefly"
+    },
+    {
+     "field": "visual_description",
+     "value": "sheriff badge with classic Toy Story characters plus Forky and Duke Caboom",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-pixar-toy-story-4-characters-badge-enamel-pin/11927344.html",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "size_mm",
+     "value": "2.25 in diameter",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-pixar-toy-story-4-characters-badge-enamel-pin/11927344.html",
+     "method": "search_snippet",
+     "note": "size in inches"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-pixar-toy-story-4-characters-badge-enamel-pin/11927344.html",
+     "method": "search_snippet",
+     "note": "orig $9.90; later sale $6.93"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-pixar-toy-story-4-characters-badge-enamel-pin/11927344.html",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.hottopic.com/product/loungefly-disney-pixar-toy-story-4-characters-badge-enamel-pin/11927344.html",
+     "method": "search_snippet",
+     "note": "single badge pin"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2019/mondo-mondocon-2019/spider-mobile",
+   "field": "characters",
+   "searched": "Marvel article",
+   "note": "vehicle pin; no character stated"
+  },
+  {
+   "key": "lic/2019/mondo-mondocon-2019/mysterio",
+   "field": "pin_name",
+   "searched": "Marvel article; mondoshop titles",
+   "note": "distinct from 2019 film pin lic/2019/mondo-spider-man-far-from-home/mysterio (other packets); MondoCon one is a Tom Whalen convention design - do not merge without checking"
+  },
+  {
+   "key": "lic/2019/mondo-mondocon-2019",
+   "field": "price",
+   "searched": "2 queries",
+   "note": "no MondoCon price or edition size in snippets"
+  },
+  {
+   "key": "lic/2019/mondocon-2019",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "gap closed (457 not_found): the four MondoCon 2019 designs are now keyed under lic/2019/mondo-mondocon-2019"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-frozen-2-arendelle-castle/arendelle-castle",
+   "field": "original_price",
+   "searched": "BoxLunch listing",
+   "note": "listing shows $6.99, differs from DPB $8.90; $8.90 recorded as launch price"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-frozen-2-arendelle-castle/arendelle-castle",
+   "field": "characters",
+   "searched": "listing snippet",
+   "note": "castle/location pin; no character stated"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-frozen-2-all-cast",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "lead kept (457): BoxLunch listing (silver-tone, snowflake ringed by Frozen 2 cast, ~1.75x2 in, $8.99) still undated; no DPB post found; not keyed as a pin"
+  },
+  {
+   "key": "lic/2019/hot-topic-frozen-2-singles",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead kept (457): HT Frozen 2 Elsa / Anna 2 in pins ($9.90) remain undated; listing IDs 338xxxxx; not keyed"
+  },
+  {
+   "key": "lic/2019/hot-topic-aristocats",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "gap closed (457 no pin record): design now described as the three kittens; keyed as kittens"
+  },
+  {
+   "key": "lic/2019/hot-topic-aristocats/kittens",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "maker not stated in snippet"
+  },
+  {
+   "key": "lic/2019/hot-topic-lock-shock-barrel",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept (457): HT listing 12140774: set of 3 Loungefly pins, masks on wall plaques, orig $10.90; tied to Sept 2019 DPB post by description+price only; per-pin designs not described"
+  },
+  {
+   "key": "lic/2019/hot-topic-lock-shock-barrel",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "DPB Sept 2019 post states no pin count; 3 appears only on undated HT listing - not recorded as a claim"
+  },
+  {
+   "key": "lic/2019/boxlunch-nightmare-before-christmas-lanyard/jack-skellington",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: pending maintainer decision on full lists - pin named only in this one lanyard-set listing (BoxLunch + DPB on same pack)"
+  },
+  {
+   "key": "lic/2019/boxlunch-nightmare-before-christmas-lanyard/sally",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: pending maintainer decision on full lists - pin named only in this one lanyard-set listing (BoxLunch + DPB on same pack)"
+  },
+  {
+   "key": "lic/2019/boxlunch-nightmare-before-christmas-lanyard",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "gap closed (457 'maker not stated'): BoxLunch listing names Loungefly"
+  },
+  {
+   "key": "lic/2019/boxlunch-nightmare-before-christmas-lanyard",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "457 structure hold: BoxLunch listing now names one enamel Jack pin and one enamel Sally pin; keyed with full-list hold"
+  },
+  {
+   "key": "lic/2019/mondo-dumbo-mrs-jumbo-2-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold released (held in 457): official Mondo product page describes each pin (Caboose 1.55 in, double post; mini Dumbo, single post)"
+  },
+  {
+   "key": "lic/2019/mondo-dumbo-mrs-jumbo-2-pin-set/mini-dumbo",
+   "field": "size_mm",
+   "searched": "1 query",
+   "note": "snippet gives '.23 in wide' - likely truncated; not recorded"
+  },
+  {
+   "key": "lic/2019/mondo-dumbo-mrs-jumbo-2-pin-set/caboose",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "whether Mrs. Jumbo is shown on the caboose not stated"
+  },
+  {
+   "key": "lic/2019/mondo-dumbo/mrs-jumbo",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept (414): product page names only Caboose + mini Dumbo, no separate Mrs. Jumbo pin; 414 key probably refers to this set - engine should check merge"
+  },
+  {
+   "key": "lic/2019/figpin-sdcc-2019/duke-caboom-xl",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "X20 seen only on reseller listings (Toy Tokyo); not recorded"
+  },
+  {
+   "key": "lic/2019/figpin-toy-story-4",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "FiGPiN reveal gives minis as M18 and M19 but snippet does not say which is Woody vs Buzz; 414 mini number gap stays"
+  },
+  {
+   "key": "lic/2019/hot-topic-toy-story-4-badge/toy-story-4-badge",
+   "field": "visual_description",
+   "searched": "1 query",
+   "note": "variant: same pin as lic/2019/loungefly-boxlunch-toy-story-4/characters-badge (identical Loungefly title / description at Hot Topic and BoxLunch; review). Agent proposed release: hold released (held in 414, kept in 457): BoxLunch listing 11788278 has same title+description; same pin as 208 lic/2019"
+  },
+  {
+   "key": "lic/2019/hot-topic-toy-story-4-badge",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "gap closed (414): HT listing names Loungefly"
+  },
+  {
+   "key": "lic/2019/funko-boxlunch-buzz-mrs-nesbitt",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept (414): BoxLunch calls it a pin set showing Buzz as Mrs. Nesbitt with detached arm holding teapot, ~1.75 in tall; could be one pin or pin + arm piece; count not stated"
+  },
+  {
+   "key": "lic/2019/loungefly-boxlunch-kingdom-hearts-trio/goofy-sora-donald",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "hold kept (414/457): BoxLunch listing (heart, ~1.5x1.5 in, $8.90) still undated"
+  },
+  {
+   "key": "lic/2019/funko-boxlunch-kingdom-hearts-3-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept (208/414/457): DPB says 7 pins, Jan 2019, $9.90; still no permitted source names the seven"
+  },
+  {
+   "key": "lic/2019/figpin-d23-expo-2019-mickey-minnie-glitter",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept (414): FiGPiN post confirms 2-pack LE 1000 $35; #200 Mickey / #201 Minnie mapping seen only in a reseller title; not recorded"
+  },
+  {
+   "key": "lic/2019/primark-aladdin",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept (414): DPB 21 May 2019 still only says set features Genie, Jafar, Aladdin, Jasmine, Lamp, Magic Carpet - collection list, no per-pin description"
+  },
+  {
+   "key": "lic/2019/funko-boxlunch-toy-story-4/ducky",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept (414): only a reseller (distradingpins4u) lists a separate Funko Ducky pin; no official per-pin source; Loungefly Ducky & Bunny is one pin (208)"
+  },
+  {
+   "key": "lic/2019/mondo-valentines-lady-and-the-tramp",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept (414/457): Mondo post still calls each an enamel pin set (LE 300, $15) with no pin count"
+  },
+  {
+   "key": "lic/2019/mondo-valentines-robin-hood-and-maid-marian",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept (414/457): no pin count or split"
+  },
+  {
+   "key": "lic/2019/mondo-valentines-steamboat-willie-and-minnie",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept (414/457): no pin count or split"
+  },
+  {
+   "key": "lic/2019/monogram-sdcc-kingdom-hearts-iii-lanyard",
+   "field": "pins",
+   "searched": "not re-researched",
+   "note": "hold kept (457): Monogram SDCC lanyard nine pending maintainer full-list decision"
+  },
+  {
+   "key": "lic/2019/mondo-sdcc-2019/ghost-spider",
+   "field": "scope",
+   "searched": "not re-researched",
+   "note": "hold kept (457): Spider-Verse scope pending maintainer"
+  },
+  {
+   "key": "lic/2019/mondo-sdcc-2019/miles-morales-costume",
+   "field": "scope",
+   "searched": "not re-researched",
+   "note": "hold kept (457): Spider-Verse scope pending maintainer"
+  },
+  {
+   "key": "lic/2019/figpin-avengers-endgame/captain-america",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "no Endgame Captain America FiGPiN found; only Infinity War #138, NYCC 2019 mini M21, What If #817"
+  },
+  {
+   "key": "lic/2019/loungefly-hot-topic-toy-story-4-mystery",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "still undated: HT listing 11883056 names 9 designs; no DPB post or dated source"
+  },
+  {
+   "key": "lic/2019/loungefly-haunted-mansion-stretching-room-mystery",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "out of year: DPB dates the Loungefly Stretching Room Portraits blind box to Sept 2023; already keyed as lic/2023/loungefly-haunted-mansion-icons-mystery (packet 250)"
+  },
+  {
+   "key": "lic/2019/her-universe",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "re-checked: no 2019 Her Universe Disney pin (SDCC or retail) found"
+  },
+  {
+   "key": "lic/2019/uncas",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "re-checked: no 2019 Uncas Disney pin found"
+  },
+  {
+   "key": "lic/2019/funko-sdcc-2019",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "re-checked: no Disney Funko SDCC 2019 pin found"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 to 208/414/457 (B008/B052/B269); 27 standard WebSearches, excluded domains blocked. New: Mondo MondoCon 2019 Marvel four, BoxLunch Loungefly Frozen 2 Arendelle Castle (Dec 2019), HT Aristocats kittens pin, BoxLunch NBC lanyard Jack/Sally pins (full-list hold), Mondo Caboose + mini Dumbo, FiGPiN SDCC Duke Caboom XL. Holds released: 457 Mondo 2-pin set members; 414 HT TS4 badge (same pin as 208 BoxLunch badge - merge)."
+}

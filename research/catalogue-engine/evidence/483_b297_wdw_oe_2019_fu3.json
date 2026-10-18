@@ -1,0 +1,784 @@
+{
+ "packet_id": "wdw-oe-2019-b297-fu3-evidence-2026-10-18",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b297-wdw-oe-2019-fu3",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2019-pins/",
+   "title": "Disney Parks 2019 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+   "title": "New Disney Pins August 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/158540",
+   "title": "158540 (Woodsprite, WDW Pandora 2019 Mystery Pin Collection)",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dorksideoftheforce.com/2019/12/12/star-wars-pins-walt-disney-world/",
+   "title": "Let's talk about the Star Wars pins at Walt Disney World",
+   "publisher": "Dork Side of the Force",
+   "published_date": "2019-12-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+   "title": "PHOTOS: November Pin Releases for Walt Disney World and Disneyland ... Frozen 2 Bruni Pin ...",
+   "publisher": "WDW News Today",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyfoodblog.com/2019/08/30/feast-your-eyes-on-the-new-2019-epcot-food-and-wine-festival-merchandise/",
+   "title": "Feast Your Eyes on the NEW 2019 Epcot Food and Wine Festival Merchandise!",
+   "publisher": "Disney Food Blog",
+   "published_date": "2019-08-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://chipandco.com/2019-epcot-food-and-wine-festival-pins-released-363515/",
+   "title": "2019 Epcot Food and Wine Festival Pins Released!",
+   "publisher": "Chip and Company",
+   "published_date": "2019",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/complete-disney-character-scoops-pin-collection",
+   "title": "Complete Disney Character Scoops Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+   "title": "New Disney Pin November 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/resistance-star-wars-galaxys-edge-booster-pin-set",
+   "title": "Resistance Star Wars Galaxy's Edge Booster Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-galaxys-edge-open-edition-disney-pins/",
+   "title": "Star Wars Galaxy's Edge Open Edition Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+   "title": "PHOTOS: Every Merchandise Item (with Prices) From First Order Cargo in Star Wars: Galaxy's Edge",
+   "publisher": "WDW News Today",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/44354",
+   "title": "44354 (WDW - Toy Story Land Mystery Set - 2019)",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2019/oe-set/pandora-2019-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://mypincentral.com/pin/158540",
+     "method": "search_snippet",
+     "note": "Per-pin page says Woodsprite is one of 8 pins in the WDW Pandora 2019 mystery collection"
+    },
+    {
+     "field": "set_name",
+     "value": "WDW - Pandora: The World of Avatar 2019 Mystery Pin Collection",
+     "source_url": "https://mypincentral.com/pin/158540",
+     "method": "search_snippet",
+     "note": "Set title as given on the per-pin page"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://mypincentral.com/pin/158540",
+     "method": "search_snippet",
+     "note": "Described as a mystery collection"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/oe-single/frozen-family-portrait",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Frozen Family Portrait pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Standalone OE pin in roundup"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/oe-single/frozen-sven-olaf",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Sven & Olaf pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Standalone OE pin in roundup"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/oe-set/frozen-elsa-anna-two-pin",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Elsa & Anna Pin Set",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Roundup names an Elsa & Anna pin set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Two pins on the card"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (2 pins on card)",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Two separate pins carded together"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Week of 4-10 Aug 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Roundup says sold at both resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/oe-single/swge-chewbacca-loyalty",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Chewbacca Loyalty pin",
+     "source_url": "https://dorksideoftheforce.com/2019/12/12/star-wars-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Standalone OE pin in WDW Star Wars pin list"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2019/oe-set/pandora-2019-mystery/woodsprite",
+   "set_key": "wdw/2019/oe-set/pandora-2019-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Woodsprite",
+     "source_url": "https://mypincentral.com/pin/158540",
+     "method": "search_snippet",
+     "note": "Per-design page for the 2019 WDW Pandora mystery set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Woodsprite"
+     ],
+     "source_url": "https://mypincentral.com/pin/158540",
+     "method": "search_snippet",
+     "note": "Woodsprite is the subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Woodsprite",
+     "source_url": "https://mypincentral.com/pin/158540",
+     "method": "search_snippet",
+     "note": "Single subject"
+    },
+    {
+     "field": "visual_description",
+     "value": "Round pin with a Woodsprite on a dark blue centre inside a silver metal border",
+     "source_url": "https://mypincentral.com/pin/158540",
+     "method": "search_snippet",
+     "note": "Paraphrase of per-pin description"
+    },
+    {
+     "field": "visual_form",
+     "value": "circle",
+     "source_url": "https://mypincentral.com/pin/158540",
+     "method": "search_snippet",
+     "note": "Circle-shaped pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://mypincentral.com/pin/158540",
+     "method": "search_snippet",
+     "note": "Set title is dated 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://mypincentral.com/pin/158540",
+     "method": "search_snippet",
+     "note": "Set title prefixed WDW"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/158540",
+     "method": "search_snippet",
+     "note": "One design within an 8-design mystery set"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/frozen-family-portrait",
+   "set_key": "wdw/2019/oe-single/frozen-family-portrait",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Frozen Family Portrait",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Name per DPB roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sven",
+      "Kristoff",
+      "Olaf",
+      "Anna",
+      "Elsa"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "One portrait pin showing these five"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Single pin featuring the group"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Listed among new OE Frozen pins"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "USD 12.99 per DPB (WDWNT DLR report said 9.99; see 203)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Week of 4-10 Aug 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Roundup says sold at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/frozen-sven-olaf",
+   "set_key": "wdw/2019/oe-single/frozen-sven-olaf",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sven & Olaf",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Name per DPB roundup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sven",
+      "Olaf"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Named pair on one pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Single pin named for the pair"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Listed among new OE Frozen pins"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "USD 9.99 per DPB (WDWNT DLR report said 12.99; see 203)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Week of 4-10 Aug 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Roundup says sold at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/swge-chewbacca-loyalty",
+   "set_key": "wdw/2019/oe-single/swge-chewbacca-loyalty",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chewbacca \"Loyalty\" pin",
+     "source_url": "https://dorksideoftheforce.com/2019/12/12/star-wars-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Listed in a Dec 2019 rundown of Star Wars pins at WDW"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chewbacca"
+     ],
+     "source_url": "https://dorksideoftheforce.com/2019/12/12/star-wars-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Chewbacca subject"
+    },
+    {
+     "field": "main_character",
+     "value": "Chewbacca",
+     "source_url": "https://dorksideoftheforce.com/2019/12/12/star-wars-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Single subject"
+    },
+    {
+     "field": "front_text",
+     "value": "Loyalty",
+     "source_url": "https://dorksideoftheforce.com/2019/12/12/star-wars-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Pin is named for the word Loyalty"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://dorksideoftheforce.com/2019/12/12/star-wars-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Article calls it open edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Star Wars: Galaxy's Edge, Walt Disney World",
+     "source_url": "https://dorksideoftheforce.com/2019/12/12/star-wars-pins-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Article covers pins at WDW Galaxy's Edge"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe/disney-parks-2019-minnie",
+   "set_key": "wdw/2019/oe-single/disney-parks-2019-minnie",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Minnie Mouse 2019 pin themed to it's a small world",
+     "source_url": "https://disneypinsblog.com/disney-parks-2019-pins/",
+     "method": "search_snippet",
+     "note": "Roundup describes the Minnie 2019 pin with the small world attraction"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://disneypinsblog.com/disney-parks-2019-pins/",
+     "method": "search_snippet",
+     "note": "Attraction theme per roundup"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-parks-2019-pins/",
+     "method": "search_snippet",
+     "note": "Pin-on-pin design per roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-parks-2019-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-2019-pins/",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2019/oe/frozen-family-portrait",
+   "field": "variant",
+   "searched": "DLR packets 203/407/452/485 grepped",
+   "note": "variant: same pin as dlr/2019/oe/frozen-family-portrait (203); price conflict DPB 12.99 vs WDWNT DLR 9.99"
+  },
+  {
+   "key": "wdw/2019/oe/frozen-sven-olaf",
+   "field": "variant",
+   "searched": "DLR packets grepped",
+   "note": "variant: same pin as dlr/2019/oe/frozen-sven-olaf-snowgies (203; WDWNT names Snowgies too); price conflict DPB 9.99 vs WDWNT 12.99"
+  },
+  {
+   "key": "wdw/2019/oe-set/frozen-elsa-anna-two-pin",
+   "field": "variant",
+   "searched": "DLR packets grepped",
+   "note": "variant: same set as dlr/2019/oe-set/frozen-sisters-two-pin (203)"
+  },
+  {
+   "key": "wdw/2019/oe-set/frozen-elsa-anna-two-pin",
+   "field": "members",
+   "searched": "DPB Aug 2019 wk2 snippet",
+   "note": "Two pins on card not described individually; no member keys created"
+  },
+  {
+   "key": "wdw/2019/oe/swge-chewbacca-loyalty",
+   "field": "variant",
+   "searched": "DLR packets grepped",
+   "note": "variant: same pin as dlr/2019/oe/ge-chewbacca-loyalty (203; USD 9.99, Resistance Supply June 2019)"
+  },
+  {
+   "key": "wdw/2019/oe/swge-chewbacca-loyalty",
+   "field": "release_date",
+   "searched": "Dork Side snippet",
+   "note": "Exact WDW release date and price not in snippet; article dated 12 Dec 2019"
+  },
+  {
+   "key": "wdw/2019/oe/disney-parks-2019-minnie",
+   "field": "visual_description",
+   "searched": "DPB Disney Parks 2019 roundup",
+   "note": "resolves 201 disagreement: roundup does list a standalone OE Minnie 2019 pin (small world theme, pin-on-pin, USD 12.99)"
+  },
+  {
+   "key": "wdw/2019/oe-set/character-scoops",
+   "field": "release_year",
+   "searched": "3 searches (DPB Sep 2019 wk2 page, Character Scoops 2019 OE, DPB collection page)",
+   "note": "hold kept (B297 follow-up 3): likely misdated. Only Character Scoops found is the 2024 LE 4000 series (Donald & Chip 'n Dale Sep 2024); 403's Sep 2019 page not resurfaced"
+  },
+  {
+   "key": "wdw/2019/oe-set/character-scoops/donald-duck",
+   "field": "release_year",
+   "searched": "3 searches (DPB Sep 2019 wk2 page, Character Scoops 2019 OE, DPB collection page)",
+   "note": "hold kept (B297 follow-up 3): likely misdated. Only Character Scoops found is the 2024 LE 4000 series (Donald & Chip 'n Dale Sep 2024); 403's Sep 2019 page not resurfaced"
+  },
+  {
+   "key": "wdw/2019/oe-set/character-scoops/chip-n-dale",
+   "field": "release_year",
+   "searched": "3 searches (DPB Sep 2019 wk2 page, Character Scoops 2019 OE, DPB collection page)",
+   "note": "hold kept (B297 follow-up 3): likely misdated. Only Character Scoops found is the 2024 LE 4000 series (Donald & Chip 'n Dale Sep 2024); 403's Sep 2019 page not resurfaced"
+  },
+  {
+   "key": "wdw/2019/epcot-food-wine-2019/chef-mickey",
+   "field": "edition_type",
+   "searched": "1 search",
+   "note": "not OE: snippets call the USD 15.99 Chef Mickey pin a limited release (Chip and Co) / list it under LE heading (DFB). Lead for WDW LE cell (key in 202); OE gap closed"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-starter-set",
+   "field": "members",
+   "searched": "1 search",
+   "note": "Four starter pins still unnamed outside marketplaces; DPB roundup gives only 4 pins + lanyard, USD 29.99"
+  },
+  {
+   "key": "wdw/2019/oe-set/frozen-starter-set",
+   "field": "members",
+   "searched": "1 MPC search",
+   "note": "hold kept: Anna, Elsa, Olaf, Sven listed only; no per-pin pages found. variant: same set as dlr/2019/oe-set/frozen-pin-trading-starter-2019 (452)"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-2019-mystery",
+   "field": "members",
+   "searched": "2 searches (DPB, MPC)",
+   "note": "Eight designs still unnamed; no per-design page found"
+  },
+  {
+   "key": "wdw/2019/oe-set/pandora-2019-mystery",
+   "field": "members",
+   "searched": "3 MPC searches",
+   "note": "Woodsprite added from MPC 158540; other 7 designs unnamed (MPC 158540 neighbours not tied to the set)"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-resist-mystery",
+   "field": "members",
+   "searched": "1 search",
+   "note": "Ten ship designs still unnamed; WDWNT Resistance Supply list gives only set name/USD 16.99"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-first-order-mystery",
+   "field": "members",
+   "searched": "not re-found",
+   "note": "Designs still undescribed"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-resistance-booster",
+   "field": "members",
+   "searched": "1 search",
+   "note": "Fourth Millennium Falcon pin still unnamed (DPB names Pilot, Never Tell Me the Odds, Black Spire Outpost)"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-resistance-booster/pilot",
+   "field": "pin_structure",
+   "searched": "1 search",
+   "note": "hold kept (B297 follow-up 3): booster member named only by pin text in one set listing; pending maintainer full-list decision (403)"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-resistance-booster/never-tell-me-the-odds",
+   "field": "pin_structure",
+   "searched": "1 search",
+   "note": "hold kept (B297 follow-up 3): booster member named only by pin text in one set listing; pending maintainer full-list decision (403)"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-resistance-booster/black-spire-outpost",
+   "field": "pin_structure",
+   "searched": "1 search",
+   "note": "hold kept (B297 follow-up 3): booster member named only by pin text in one set listing; pending maintainer full-list decision (403)"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-first-order-booster/special-forces",
+   "field": "release_year",
+   "searched": "1 search",
+   "note": "hold kept (B297 follow-up 3): helmet names still only on dealer listings (undated); DPB says only that FO boosters were previewed Apr 2019 (403)"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-first-order-booster/specialist",
+   "field": "release_year",
+   "searched": "1 search",
+   "note": "hold kept (B297 follow-up 3): helmet names still only on dealer listings (undated); DPB says only that FO boosters were previewed Apr 2019 (403)"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-first-order-booster/kylo-ren",
+   "field": "release_year",
+   "searched": "1 search",
+   "note": "hold kept (B297 follow-up 3): helmet names still only on dealer listings (undated); DPB says only that FO boosters were previewed Apr 2019 (403)"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-first-order-booster/trooper",
+   "field": "release_year",
+   "searched": "1 search",
+   "note": "hold kept (B297 follow-up 3): helmet names still only on dealer listings (undated); DPB says only that FO boosters were previewed Apr 2019 (403)"
+  },
+  {
+   "key": "wdw/2019/oe/swge-supreme-leader-kylo-ren",
+   "field": "release_location",
+   "searched": "2 searches",
+   "note": "hold kept (B297 follow-up 3): only the WDWNT Disneyland June 2019 First Order Cargo list names it (USD 9.99); no WDW sale source (403)"
+  },
+  {
+   "key": "wdw/2019/oe/frozen-2",
+   "field": "members",
+   "searched": "4 searches",
+   "note": "hold kept (B297 follow-up 3): Nov 2019 OE Frozen 2 parks pins still unnamed. Lead: WDWNT Oct 2019 Nov release post mentions Elsa and Bruni pin(s) at WDW/DLR, edition/price/structure not stated"
+  },
+  {
+   "key": "wdw/2019/oe/frozen-2-elsa-bruni",
+   "field": "edition_type",
+   "searched": "WDWNT Nov 2019 release post snippet",
+   "note": "hold: confirm edition (OE vs LE) and pin structure (one Elsa & Bruni pin or separate pins); no key created"
+  },
+  {
+   "key": "wdw/2019/oe/frozen-2",
+   "field": "visual_description",
+   "searched": "1 MPC search",
+   "note": "MPC 162219 Frozen II snowflake group pin is undated and not tied to parks; not recorded"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-land-mystery",
+   "field": "members",
+   "searched": "3 searches",
+   "note": "hold kept (B297 follow-up 3): MPC 44354 roster (Little Green Men/Green Army Man) vs DPB Alien/Toy Soldier unresolved; Green Army Man #146001 on reseller only; MPC 44360 Hamm untied"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-land-mystery/alien",
+   "field": "pin_name",
+   "searched": "3 searches",
+   "note": "hold kept (B297 follow-up 3): naming conflict unresolved (MPC set roster: Little Green Men / Green Army Man); reseller-only per-pin listing not evidence (201)"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-land-mystery/toy-soldier",
+   "field": "pin_name",
+   "searched": "3 searches",
+   "note": "hold kept (B297 follow-up 3): naming conflict unresolved (MPC set roster: Little Green Men / Green Army Man); reseller-only per-pin listing not evidence (201)"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery/lilo-and-stitch",
+   "field": "pin_structure",
+   "searched": "1 MPC search",
+   "note": "hold kept (B297 follow-up 3): MPC 144200 Lilo hugging Stitch has no series/year; not tied to Hugs set (403)"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery/mickey-and-pluto",
+   "field": "pin_structure",
+   "searched": "1 MPC search",
+   "note": "hold kept (B297 follow-up 3): no MPC per-pin page; reseller only (403)"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "field": "members",
+   "searched": "not re-searched",
+   "note": "Holds on 6 single-list pairs kept pending maintainer full-list decision (450)"
+  },
+  {
+   "key": "wdw/2019/oe-set/celebrate-mickey-90th-booster",
+   "field": "members",
+   "searched": "not re-searched",
+   "note": "Member holds kept (201/403/450); no new per-pin evidence"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-booster",
+   "field": "members",
+   "searched": "not re-searched",
+   "note": "Member holds kept (201/403/450); no new per-pin evidence"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-4-mystery",
+   "field": "members",
+   "searched": "not re-searched",
+   "note": "Member holds kept (403/450)"
+  },
+  {
+   "key": "wdw/2019/oe-set/incredibles-mystery",
+   "field": "members",
+   "searched": "not re-searched",
+   "note": "Member holds kept (403/450)"
+  },
+  {
+   "key": "wdw/2019/oe-set/its-a-small-world-mystery-2019",
+   "field": "*",
+   "searched": "DPB small world roundup snippet",
+   "note": "lead: Jan 2019 12-pin OE small world mystery set (USD 14.99) at both resorts; keyed as dlr/2019/oe-set/its-a-small-world-mystery-2019 (485); no WDW key created"
+  },
+  {
+   "key": "wdw/2019/oe-set/current-mood-mystery",
+   "field": "release_location",
+   "searched": "485 cross-check",
+   "note": "lead: keyed as dlr/2019/oe-set/current-mood-mystery (485); WDW availability still not stated; no WDW key created"
+  },
+  {
+   "key": "wdw/2019/oe/nov-2019-week-2",
+   "field": "edition_type",
+   "searched": "DPB Nov 2019 wk2 snippet",
+   "note": "lead: GE Droids pin and Thanksgiving Pooh pin listed for DLR/WDW 10-16 Nov 2019; edition/price not in snippet; not recorded"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 (final) to 201/403/450 (B001). 30 standard WebSearches, excluded domains blocked. New: Pandora 2019 mystery Woodsprite (MPC per-pin page, set of 8); WDW keys for Aug 2019 OE Frozen trio (DPB says both resorts; variants of DLR 203 keys); Chewbacca Loyalty OE at WDW (variant of DLR 203). Minnie 2019 standalone confirmed. Chef Mickey F&W USD 15.99 is LR, not OE. Character Scoops 2019 still uncorroborated (2024 LE series only). All prior holds kept; none released."
+}

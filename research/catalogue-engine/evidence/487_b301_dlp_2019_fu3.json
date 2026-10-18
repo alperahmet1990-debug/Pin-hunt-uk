@@ -1,0 +1,1314 @@
+{
+ "packet_id": "backfill-b301-dlp-2019-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b301",
+ "sources": [
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+   "title": "Pin-Neuerscheinungen im Disneyland Paris im Februar 2019",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2019-02-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-november-2019/",
+   "title": "Die Pin-Neuerscheinungen im November 2019 für Disneyland Paris",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2019-11-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+   "title": "Pin-Neuerscheinungen im Dezember 2019 für Disneyland Paris",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2019-12-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://news.disneylandparis.com/en/disneyland-paris-magic-run-medals-for-2019-revealed/",
+   "title": "Disneyland Paris Magic Run Medals for 2019 Revealed",
+   "publisher": "Disneyland Paris News",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc034.php",
+   "title": "passiondlp : Archives Disneyland Paris 2019 trimestre 4",
+   "publisher": "passiondlp.com",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+   "title": "May 2019 Disneyland Paris Pin Trading Night Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/02/february-pin-releases-for-disneyland-paris/",
+   "title": "February 2019 Pin Releases for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/10/october-2019-pin-releases-for-disneyland-paris/",
+   "title": "October 2019 Pin Releases for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "published_date": "2019-10-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/11/november-2019-pin-releases-for-disneyland-paris/",
+   "title": "November 2019 Pin Releases for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/08/august-2019-pin-releases-for-disneyland-paris/",
+   "title": "August 2019 Pin Releases for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2019/run-weekend-2019",
+   "claims": [
+    {
+     "field": "format",
+     "value": "limited-edition pin replicas of the 2019 race medals",
+     "source_url": "https://news.disneylandparis.com/en/disneyland-paris-magic-run-medals-for-2019-revealed/",
+     "method": "search_snippet",
+     "note": "official: collectors can buy medal replicas as limited-edition pin badges"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://news.disneylandparis.com/en/disneyland-paris-magic-run-medals-for-2019-revealed/",
+     "method": "search_snippet",
+     "note": "limited-edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-18",
+     "source_url": "https://news.disneylandparis.com/en/disneyland-paris-magic-run-medals-for-2019-revealed/",
+     "method": "search_snippet",
+     "note": "from 18 June via runDisney e-shop"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney e-shop; runDisney Expo",
+     "source_url": "https://news.disneylandparis.com/en/disneyland-paris-magic-run-medals-for-2019-revealed/",
+     "method": "search_snippet",
+     "note": "e-shop for runners from 18 Jun; Expo open to all during event"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/christmas-time-2019",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-11-09",
+     "source_url": "http://www.passiondlp.com/actus/arc034.php",
+     "method": "search_snippet",
+     "note": "passiondlp archive gives same event date"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "http://www.passiondlp.com/actus/arc034.php",
+     "method": "search_snippet",
+     "note": "425 copies each"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/oe-set/princesses-november-2019",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-11-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-november-2019/",
+     "method": "search_snippet",
+     "note": "eight princess pins out 16 Nov"
+    },
+    {
+     "field": "price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-november-2019/",
+     "method": "search_snippet",
+     "note": "each pin 7.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-november-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-november-2019/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2019/oe/lady",
+   "set_key": "dlp/2019/oe-single/lady",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lady"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "third spring pin described on its own: Lady (Susi) before white flowers"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "each of the six spring OE pins described individually"
+    },
+    {
+     "field": "visual_description",
+     "value": "Lady seated elegantly in front of a bed of white flowers",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin description"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "listed as unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "6.99 EUR each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "spring batch dated 16 Feb in body text"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "2019 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/oe/flower",
+   "set_key": "dlp/2019/oe-single/flower",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Flower"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "own per-pin description: Flower (Blume) with a pink flower"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "each of the six spring OE pins described individually"
+    },
+    {
+     "field": "visual_description",
+     "value": "Flower the skunk holding a pink flower",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin description"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "listed as unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "6.99 EUR each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "spring batch dated 16 Feb in body text"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "2019 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/oe/thumper",
+   "set_key": "dlp/2019/oe-single/thumper",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thumper"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "own per-pin description: Thumper (Klopfer) hugging a daisy"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "each of the six spring OE pins described individually"
+    },
+    {
+     "field": "visual_description",
+     "value": "Thumper hugging a daisy",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin description"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "listed as unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "6.99 EUR each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "spring batch dated 16 Feb in body text"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "2019 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/oe/bambi",
+   "set_key": "dlp/2019/oe-single/bambi",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Bambi"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "own per-pin description plus separate 'Pin Bambi' line item at 6.99 EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "each of the six spring OE pins described individually"
+    },
+    {
+     "field": "visual_description",
+     "value": "Bambi lying on a bed of flowers",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin description"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "listed as unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "6.99 EUR each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "spring batch dated 16 Feb in body text"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "2019 release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/valentines-up/carl-and-ellie-children",
+   "set_key": "dlp/2019/valentines-up",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Carl & Ellie as children",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "descriptive name from per-pin description; no official title quoted"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Carl Fredricksen",
+      "Ellie Fredricksen"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "pin shows Carl and Ellie together"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "each of the four pins shows the couple at a different life stage"
+    },
+    {
+     "field": "visual_description",
+     "value": "Carl and Ellie as children; 'Joyeuse St. Valentin' text below, balloon-shaped 2019 dangle on top",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "paraphrase; shared design elements"
+    },
+    {
+     "field": "front_text",
+     "value": "Joyeuse St. Valentin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "lettering at bottom of each pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "each of four pins limited to 700"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "15.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "sale start 9 Feb"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "Lineberty reservation required"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/valentines-up/carl-and-ellie-wedding",
+   "set_key": "dlp/2019/valentines-up",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Carl & Ellie wedding",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "descriptive name from per-pin description; no official title quoted"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Carl Fredricksen",
+      "Ellie Fredricksen"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "pin shows Carl and Ellie together"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "each of the four pins shows the couple at a different life stage"
+    },
+    {
+     "field": "visual_description",
+     "value": "Carl and Ellie at their wedding; 'Joyeuse St. Valentin' text below, balloon-shaped 2019 dangle on top",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "paraphrase; shared design elements"
+    },
+    {
+     "field": "front_text",
+     "value": "Joyeuse St. Valentin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "lettering at bottom of each pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "each of four pins limited to 700"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "15.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "sale start 9 Feb"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "Lineberty reservation required"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/valentines-up/carl-and-ellie-mailbox",
+   "set_key": "dlp/2019/valentines-up",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Carl & Ellie mailbox",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "descriptive name from per-pin description; no official title quoted"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Carl Fredricksen",
+      "Ellie Fredricksen"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "pin shows Carl and Ellie together"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "each of the four pins shows the couple at a different life stage"
+    },
+    {
+     "field": "visual_description",
+     "value": "Carl and Ellie in front of their self-made mailbox; 'Joyeuse St. Valentin' text below, balloon-shaped 2019 dangle on top",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "paraphrase; shared design elements"
+    },
+    {
+     "field": "front_text",
+     "value": "Joyeuse St. Valentin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "lettering at bottom of each pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "each of four pins limited to 700"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "15.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "sale start 9 Feb"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "Lineberty reservation required"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/valentines-up/carl-and-ellie-seniors",
+   "set_key": "dlp/2019/valentines-up",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Carl & Ellie as seniors",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "descriptive name from per-pin description; no official title quoted"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Carl Fredricksen",
+      "Ellie Fredricksen"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "pin shows Carl and Ellie together"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "each of the four pins shows the couple at a different life stage"
+    },
+    {
+     "field": "visual_description",
+     "value": "Carl and Ellie in old age; 'Joyeuse St. Valentin' text below, balloon-shaped 2019 dangle on top",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "paraphrase; shared design elements"
+    },
+    {
+     "field": "front_text",
+     "value": "Joyeuse St. Valentin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "lettering at bottom of each pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "each of four pins limited to 700"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "15.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-09",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "sale start 9 Feb"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-disneyland-paris-im-februar-2019/",
+     "method": "search_snippet",
+     "note": "Lineberty reservation required"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/annual-pass-christmas-2019/mickey-and-minnie",
+   "set_key": "dlp/2019/annual-pass-christmas-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "per-pin description"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "two separate designs described"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey and Minnie in festive outfits before snowy Sleeping Beauty Castle, silver Pass Annuel banner",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "700 each"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "15.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-12",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "Annual Pass event 12 Dec"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Thunder Mesa Riverboat Landing (Annual Pass event)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "sale location given"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/annual-pass-christmas-2019/stitch",
+   "set_key": "dlp/2019/annual-pass-christmas-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "per-pin description"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "two separate designs described"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch dressed as Santa before snowy Sleeping Beauty Castle, silver Pass Annuel banner",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "700 each"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "15.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-12",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "Annual Pass event 12 Dec"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Thunder Mesa Riverboat Landing (Annual Pass event)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "sale location given"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/ptn-may-2019/mr-big",
+   "set_key": "dlp/2019/ptn-may-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mr. Big"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "named on DPB May 2019 PTN page among the Zootopia set"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "page says each pin is LE 400"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "each pin LE 400"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "PTN 31 May 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/ptn-may-2019/bellwether",
+   "set_key": "dlp/2019/ptn-may-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Bellwether"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "named on DPB May 2019 PTN page among the Zootopia set"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "page says each pin is LE 400"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "each pin LE 400"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "PTN 31 May 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-disneyland-paris-pin-trading-night-pins",
+     "method": "search_snippet",
+     "note": "2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/christmas-time-2019/winnie-the-pooh-jumbo",
+   "set_key": "dlp/2019/christmas-time-2019",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 49.99,
+     "source_url": "http://www.passiondlp.com/actus/arc034.php",
+     "method": "search_snippet",
+     "note": "surprise jumbo 49.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "http://www.passiondlp.com/actus/arc034.php",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "http://www.passiondlp.com/actus/arc034.php",
+     "method": "search_snippet",
+     "note": "jumbo sold at Pueblo Trading Post"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2019/oe/lady",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Feb 2019 page; 2 queries",
+   "note": "released: dein-dlrp per-pin description (this packet 487). was: hold in 409 (kept in 454): six OE pins listed with six characters, one-per-character not stated"
+  },
+  {
+   "key": "dlp/2019/oe/flower",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Feb 2019 page; 2 queries",
+   "note": "released: dein-dlrp per-pin description (this packet 487). was: hold in 409 (kept in 454): six OE pins listed with six characters, one-per-character not stated"
+  },
+  {
+   "key": "dlp/2019/oe/thumper",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Feb 2019 page; 2 queries",
+   "note": "released: dein-dlrp per-pin description (this packet 487). was: hold in 409 (kept in 454): six OE pins listed with six characters, one-per-character not stated"
+  },
+  {
+   "key": "dlp/2019/oe/bambi",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Feb 2019 page; 2 queries",
+   "note": "released: dein-dlrp per-pin description (this packet 487). was: hold in 409 (kept in 454): six OE pins listed with six characters, one-per-character not stated"
+  },
+  {
+   "key": "dlp/2019/valentines-up/carl-and-ellie",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Feb 2019 page; 1 query",
+   "note": "superseded: the four designs are now keyed separately (valentines-up/carl-and-ellie-children, -wedding, -mailbox, -seniors) in packet 487; 205 key is ambiguous, maintainer to merge or retire"
+  },
+  {
+   "key": "dlp/2019/valentines-up",
+   "field": "pins",
+   "searched": "dein-dlrp Feb 2019 page",
+   "note": "released: four designs individually described (this packet); 409 'four designs not individually described' resolved"
+  },
+  {
+   "key": "dlp/2019/annual-pass-christmas-2019/mickey-and-minnie",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Dec 2019 page; 1 query",
+   "note": "released: non-listing source dein-dlrp Dec 2019 describes the pin (this packet 487). was: hold in 454 (PinTrader.Club sole source)"
+  },
+  {
+   "key": "dlp/2019/annual-pass-christmas-2019/stitch",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Dec 2019 page; 1 query",
+   "note": "released: non-listing source dein-dlrp Dec 2019 describes the pin (this packet 487). was: hold in 454 (PinTrader.Club sole source)"
+  },
+  {
+   "key": "dlp/2019/ptn-may-2019/mr-big",
+   "field": "pin_structure",
+   "searched": "DPB May PTN page; 2 queries",
+   "note": "hold kept at review: still no per-pin description; page match is summary-level only. Agent proposed: released (attribution): two searches tie Jerry Jumbeaux Jr., Mr. Big, Bellwether to the named DPB May PTN page (this packet 487). was: hold in 454; still snippet-level, no per-pin description"
+  },
+  {
+   "key": "dlp/2019/ptn-may-2019/bellwether",
+   "field": "pin_structure",
+   "searched": "DPB May PTN page; 2 queries",
+   "note": "hold kept at review: still no per-pin description; page match is summary-level only. Agent proposed: released (attribution): two searches tie Jerry Jumbeaux Jr., Mr. Big, Bellwether to the named DPB May PTN page (this packet 487). was: hold in 454; still snippet-level, no per-pin description"
+  },
+  {
+   "key": "dlp/2019/oe-set/princesses-november-2019",
+   "field": "pins",
+   "searched": "dein-dlrp Nov 2019; WDWNT Nov 2019; 2 queries",
+   "note": "hold kept (409/454): dein-dlrp says eight pins each 7.99 EUR with eight princesses listed; one princess per pin still not explicit"
+  },
+  {
+   "key": "dlp/2019/november-2019-oe",
+   "field": "pins",
+   "searched": "WDWNT Nov 2019; dein-dlrp Nov 2019",
+   "note": "lead: WDWNT mentions Elsa open edition pins and OE Stitch pins; dein-dlrp two Frozen 2 OE pins 23 Nov and a 7.99 Stitch pin; none described"
+  },
+  {
+   "key": "dlp/2019/run-weekend-2019",
+   "field": "pins",
+   "searched": "official DLP news, attractionsmagazine, dlptownsquare; 2 queries",
+   "note": "hold: medal designs known (5K Simba, 10K Rapunzel & Pascal, kids Peter Pan, half Mickey & Minnie, 31K Aladdin/carpet, 36K Genie, Castle to Chateau castle) but one pin per medal not stated; 13-count unconfirmed"
+  },
+  {
+   "key": "dlp/2019/run-weekend-2019",
+   "field": "scope",
+   "searched": "official DLP news",
+   "note": "scope: confirm pin vs button (source says 'pin badges'; UK usage normally means enamel pins)"
+  },
+  {
+   "key": "dlp/2019/christmas-time-2019",
+   "field": "pins",
+   "searched": "DPB, WDWNT, passiondlp; 3 queries",
+   "note": "LE 425 event pins still not individually named in any allowed snippet; count not stated"
+  },
+  {
+   "key": "dlp/2019/oe/maleficent-are-you-brave-enough",
+   "field": "pin_structure",
+   "searched": "WDWNT Oct 2019; DPB Oct 2019; 3 queries",
+   "note": "hold kept (454): WDWNT only mentions 'Are You Brave Enough?' OE pins as a group; per-pin still only PinTrader.Club"
+  },
+  {
+   "key": "dlp/2019/oe/minnie-rose-gold-glitter",
+   "field": "pin_structure",
+   "searched": "WDWNT Oct 2019; DPB Oct 2019",
+   "note": "hold kept (454): no non-listing per-pin source"
+  },
+  {
+   "key": "dlp/2019/oe/dumbo-christmas-2019",
+   "field": "pin_structure",
+   "searched": "WDWNT Oct 2019",
+   "note": "hold kept (454): WDWNT says 'additional Christmas-themed open editions' only; Dumbo named only by PinTrader.Club"
+  },
+  {
+   "key": "dlp/2019/oe/thumper-christmas-2019",
+   "field": "pin_structure",
+   "searched": "WDWNT Oct 2019",
+   "note": "hold kept (454): Thumper named only by PinTrader.Club"
+  },
+  {
+   "key": "dlp/2019/october-2019-oe",
+   "field": "pins",
+   "searched": "PinTrader.Club (listing site) via search summary",
+   "note": "lead only, not recorded as pins: Tower of Terror and Ursula 'Are you brave enough?' OE pins (6.99 EUR, 5 Oct) named only by PinTrader.Club; dein-dlrp Oct 2019 page not indexed"
+  },
+  {
+   "key": "dlp/2019/marvel-season-of-super-heroes",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "conflict 7.99 vs 6.99 EUR unresolved; no DLP 2019 Marvel LE pin found"
+  },
+  {
+   "key": "dlp/2019/hotel-pins",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no 2019 Disneyland Hotel exclusive pin found"
+  },
+  {
+   "key": "dlp/2019/ptn-february-2019",
+   "field": "pins",
+   "searched": "WDWNT Feb 2019; 2 queries",
+   "note": "Feb 22 PTN pins still not named (venue Sequoia Lodge Beaver Creek Tavern, 6pm already recorded)"
+  },
+  {
+   "key": "dlp/2019/ptn-april-2019",
+   "field": "pins",
+   "searched": "DPB Apr 2019; 2 queries",
+   "note": "Apr 26 PTN pins (Hotel Cheyenne) still not named"
+  },
+  {
+   "key": "dlp/2019/ptn-may-2019",
+   "field": "pages",
+   "searched": "2 queries",
+   "note": "dein-dlrp May 2019 page still not indexed"
+  },
+  {
+   "key": "dlp/2019/january-2019",
+   "field": "pins",
+   "searched": "dein-dlrp/DPB; 2 queries",
+   "note": "dein-dlrp Jan 2019 page not indexed; DPB lists themes only (Stitch, Tinker Bell, Wreck-It Ralph, Star Wars, 2019 logo)"
+  },
+  {
+   "key": "dlp/2019/october-2019",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "dein-dlrp Oct 2019 page not indexed"
+  },
+  {
+   "key": "dlp/2019/refresh-lanyard",
+   "field": "pins",
+   "searched": "not searched separately (budget)",
+   "note": "no refresh lanyard / mini-jumbo pins found"
+  },
+  {
+   "key": "dlp/2019/oe-count-groups",
+   "field": "pins",
+   "searched": "WDWNT/DPB/dein-dlrp; 4 queries",
+   "note": "Jul 5 OE, Aug OE, Nov Frozen 2/Stitch OE, Dec Star Wars OE still counts only"
+  },
+  {
+   "key": "dlp/2019/ptn-august-2019",
+   "field": "pins",
+   "searched": "DPB Aug PTN; 1 query",
+   "note": "hold kept (409/454): Beast, Wardrobe, Footstool still a character list (summary says each LE 400); no per-pin description"
+  },
+  {
+   "key": "dlp/2019/medal-september-2019/thumper",
+   "field": "characters",
+   "searched": "DPB Sept 2019; dein-dlrp; 2 queries",
+   "note": "hold kept: DPB again says Pascal, Alice, Thumper; no new dein-dlrp text on Bambi"
+  },
+  {
+   "key": "dlp/2019/medallion-july-2019/fabius",
+   "field": "characters",
+   "searched": "not re-searched",
+   "note": "hold kept (454): Fabius name from German listing; Flounder editorial only"
+  },
+  {
+   "key": "dlp/2019/oe/aladdin-april-2019",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold kept: single vs pair unresolved beyond 454 note"
+  },
+  {
+   "key": "dlp/2019/lion-king-jungle-festival-2019",
+   "field": "release_date",
+   "searched": "dein-dlrp Jul 2019; 1 query",
+   "note": "13 vs 17 Jul unresolved; snippet gives no Jungle Day date"
+  },
+  {
+   "key": "dlp/2019/august-2019-le-400/pascal",
+   "field": "pin_structure",
+   "searched": "WDWNT Aug 2019; 2 queries",
+   "note": "hold kept (454): WDWNT confirms Cherry Blossom Girl collection 10 Aug at Disney Gallery (same date/location as dein-dlrp LE 400 trio) but Pascal-Cherry Blossom link only in a reseller title"
+  },
+  {
+   "key": "dlp/2019/rapunzel-best-friends",
+   "field": "set_name",
+   "searched": "WDWNT/DPB Oct",
+   "note": "hold kept (409/454): Rapunzel carousel and Tod & Copper are two 12 Oct pins; regrouping needed"
+  },
+  {
+   "key": "dlp/2019/february-2019-le/wendy-darling",
+   "field": "release_date",
+   "searched": "WDWNT Feb 2019; 1 query",
+   "note": "hold kept (454): WDWNT names only Peter Pan's Flight and Jaq & Gus as week-2 LE; Wendy duplicate unresolved"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 of B005 (packets 205, 409, 454). 30 standard searches, snippets only. Holds released with new per-pin evidence: oe/lady, oe/flower, oe/thumper, oe/bambi (held in 409, kept in 454; dein-dlrp per-pin descriptions); annual-pass-christmas-2019 mickey-and-minnie and stitch (held in 454; dein-dlrp Dec page is a non-listing source); ptn-may-2019 mr-big, bellwether (held in 454 for attribution; DPB May PTN page). Valentine Up four designs keyed separately; 205 carl-and-ellie key now ambiguous - merge. Run Weekend: official DLP news confirms LE medal-replica pins from 18 Jun; per-medal pins not stated. PinTrader.Club used for leads only."
+}

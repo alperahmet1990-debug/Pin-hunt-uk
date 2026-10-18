@@ -1,0 +1,1155 @@
+{
+ "packet_id": "backfill-b298-wdw-le-2019-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b298",
+ "discovery_notes": "Follow-up 3 of B002 (after 404, 451). 28 standard searches, blocked_domains always passed; all search_snippet. Reuses B002/404/451 keys. Released B002 gap: WDW countdown pin 2 = X-Wing Pilot (DPB Aug wk2). New Vintage Vinyl #6 Jungle Book, #7 Oliver & Company, #8 Alice, #10 Bambi, #11 Aristocats (DPB weekly posts), Peter Pan Dec (WDWNT). Filled TIE Pilot day (Dec 19), 20,000 Leagues #9 LE 2000 Sep 26, parade date conflict (Nov 14 = DLR). No holds released. Resellers (yourwdwstore, ecrater, magicalears, parkscollectibles) ignored. No prompt-injection content seen.",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+   "title": "New Disney Pins August 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+   "title": "New Disney Pins December 2019 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/11/photos-december-2019-pin-releases-for-walt-disney-world-and-disneyland-feature-star-tours-30th-anniversary-princess-and-the-frog-10th-anniversary-matterhorn-disneys-riviera-resort-pins-and-more/",
+   "title": "December 2019 Pin Releases for Walt Disney World and Disneyland",
+   "publisher": "WDW News Today",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+   "title": "New Disney Pins September 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/07/august-pin-releases-for-walt-disney-world-and-disneyland-feature-a-goofy-movie-haunted-mansion-50th-anniversary-and-countdown-to-galaxys-edge-pins/",
+   "title": "August Pin Releases for Walt Disney World and Disneyland",
+   "publisher": "WDW News Today",
+   "published_date": "2019-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+   "title": "New Disney Pins June 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-july-2019-week-1/",
+   "title": "New Disney Pins July 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-1/",
+   "title": "New Disney Pins August 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+   "title": "New Disney Pins October 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2019-week-1",
+   "title": "New Disney Pins November 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/skyliner-mystery-pin-set-at-walt-disney-world/",
+   "title": "Skyliner Mystery Pin Set at Walt Disney World",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.letsgopintrading.com/MAIN.HTML",
+   "title": "Let's Go Pin Trading",
+   "publisher": "Let's Go Pin Trading",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-star-wars-galaxys-edge-grand-opening-at-disneys-hollywood-studios/",
+   "title": "Every Piece of Merchandise (with Prices) from Star Wars: Galaxy's Edge Grand Opening at Disney's Hollywood Studios",
+   "publisher": "WDW News Today",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+   "title": "Disney Resorts Holiday 2019 Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+   "title": "Limited Edition Resort Exclusive Holiday Pins Revealed for Walt Disney World and Disneyland Resort",
+   "publisher": "WDW News Today",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/w/news/2019/08/02/haunted-mansion-50th-anniversary-collection-coming-wdw/",
+   "title": "Haunted Mansion 50th Anniversary Collection Coming to Walt Disney World",
+   "publisher": "Laughing Place",
+   "published_date": "2019-08-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/08/photo-report-magic-kingdom-8-9-19-haunted-mansion-50th-fun-construction-updates-and-more/",
+   "title": "PHOTO REPORT: Magic Kingdom 8/9/19",
+   "publisher": "WDW News Today",
+   "published_date": "2019-08-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-mickeys-not-so-scary-halloween-party-2019-at-the-magic-kingdom/",
+   "title": "Every Piece of Merchandise (with Prices) from Mickey's Not-So-Scary Halloween Party 2019",
+   "publisher": "WDW News Today",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickeys-not-so-scary-halloween-party-2019-pins/",
+   "title": "Mickey's Not So Scary Halloween Party 2019 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyfoodblog.com/2019/08/17/all-the-merch-from-mickeys-not-so-scary-halloween-party/",
+   "title": "ALL THE MERCH From Mickey's Not So Scary Halloween Party!",
+   "publisher": "Disney Food Blog",
+   "published_date": "2019-08-17",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2019/skyliner-mystery",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-09-26",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "weekly post gives Sep 26 in one place and Sep 27 in another"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-27",
+     "source_url": "https://disneypinsblog.com/skyliner-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "available starting Sep 27 2019"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://disneypinsblog.com/skyliner-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "two random pins per box, 8 in total"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/skyliner-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "8 pins total"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/skyliner-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "LR"
+    },
+    {
+     "field": "price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/skyliner-mystery-pin-set-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "$19.99"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-24",
+     "source_url": "https://www.letsgopintrading.com/MAIN.HTML",
+     "method": "search_snippet",
+     "note": "fan guide dates the grand opening mystery set Sep 24 2019; conflict kept"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/swge-grand-opening-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Jawa Salvage \"Scrap Metal\" Mystery Pin Collection",
+     "source_url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-star-wars-galaxys-edge-grand-opening-at-disneys-hollywood-studios/",
+     "method": "search_snippet",
+     "note": "named in WDWNT grand-opening merch list"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-star-wars-galaxys-edge-grand-opening-at-disneys-hollywood-studios/",
+     "method": "search_snippet",
+     "note": "listed as limited release"
+    },
+    {
+     "field": "price",
+     "value": 19.99,
+     "source_url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-star-wars-galaxys-edge-grand-opening-at-disneys-hollywood-studios/",
+     "method": "search_snippet",
+     "note": "$19.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-star-wars-galaxys-edge-grand-opening-at-disneys-hollywood-studios/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-star-wars-galaxys-edge-grand-opening-at-disneys-hollywood-studios/",
+     "method": "search_snippet",
+     "note": "called a mystery pin collection"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hollywood Studios",
+     "source_url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-star-wars-galaxys-edge-grand-opening-at-disneys-hollywood-studios/",
+     "method": "search_snippet",
+     "note": "DHS grand opening merchandise; snippet places it under a passholder heading"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/resort-holiday-bells-2019",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 24,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "24-pin Disney Resorts collection; count spans WDW and Disneyland resorts"
+    },
+    {
+     "field": "format",
+     "value": "collection of single spinner pins",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "holiday bells, different character per resort pin"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "$17.99 each; edition sizes vary"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-11",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "WDWNT gives Nov 11 for the bell series"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/mnsshp-2019-sanderson-sisters",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Limited Release Sanderson Sisters Pin Set",
+     "source_url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-mickeys-not-so-scary-halloween-party-2019-at-the-magic-kingdom/",
+     "method": "search_snippet",
+     "note": "WDWNT merch list"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-mickeys-not-so-scary-halloween-party-2019-at-the-magic-kingdom/",
+     "method": "search_snippet",
+     "note": "LR"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-mickeys-not-so-scary-halloween-party-2019-at-the-magic-kingdom/",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-mickeys-not-so-scary-halloween-party-2019-at-the-magic-kingdom/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://www.disneyfoodblog.com/2019/08/17/all-the-merch-from-mickeys-not-so-scary-halloween-party/",
+     "method": "search_snippet",
+     "note": "DFB calls it a set of pins, LR, $17.99"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-16",
+     "source_url": "https://disneypinsblog.com/mickeys-not-so-scary-halloween-party-2019-pins/",
+     "method": "search_snippet",
+     "note": "party pins available from Aug 16 2019 on party nights only"
+    },
+    {
+     "field": "release_location",
+     "value": "Big Top Souvenirs, Magic Kingdom",
+     "source_url": "https://disneypinsblog.com/mickeys-not-so-scary-halloween-party-2019-pins/",
+     "method": "search_snippet",
+     "note": "LR/LE party pins sold at Big Top Souvenirs"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2019/galaxys-edge-countdown/x-wing-pilot",
+   "set_key": "wdw/2019/galaxys-edge-countdown",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars Galaxy's Edge Countdown Pin: X-Wing Pilot",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet",
+     "note": "named in weekly list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "X-Wing Pilot"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet",
+     "note": "features an X-Wing pilot"
+    },
+    {
+     "field": "set_position",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet",
+     "note": "called the second Galaxy's Edge countdown pin for WDW"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE 3,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet",
+     "note": "retail $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet",
+     "note": "available at WDW Aug 8 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet",
+     "note": "WDW countdown series"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet",
+     "note": "single countdown pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/galaxys-edge-monthly/first-order-tie-fighter-pilot",
+   "set_key": "wdw/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-12-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "available at WDW Dec 19 2019; fills B002 day gap"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge monthly collection at WDW"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500 confirmed"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://wdwnt.com/2019/11/photos-december-2019-pin-releases-for-walt-disney-world-and-disneyland-feature-star-tours-30th-anniversary-princess-and-the-frog-10th-anniversary-matterhorn-disneys-riviera-resort-pins-and-more/",
+     "method": "search_snippet",
+     "note": "WDWNT lists a TIE Fighter Pilot pin among WDW December 2019 pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/magic-of-honor/20000-leagues-under-the-sea",
+   "set_key": "wdw/2019/magic-of-honor",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 9,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "ninth pin in WDW Magic of Honor collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "LE 2,000 in DPB weekly post"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "retail $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-26",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "available at WDW Sep 26 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2019-week-4",
+     "method": "search_snippet",
+     "note": "WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/magic-of-honor/kilimanjaro-safaris",
+   "set_key": "wdw/2019/magic-of-honor",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "medal-style pin; green and tan ribbon, brass foliage around attraction logo and ride vehicle",
+     "source_url": "https://wdwnt.com/2019/07/august-pin-releases-for-walt-disney-world-and-disneyland-feature-a-goofy-movie-haunted-mansion-50th-anniversary-and-countdown-to-galaxys-edge-pins/",
+     "method": "search_snippet",
+     "note": "WDWNT August 2019 preview description, paraphrased"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2019/07/august-pin-releases-for-walt-disney-world-and-disneyland-feature-a-goofy-movie-haunted-mansion-50th-anniversary-and-countdown-to-galaxys-edge-pins/",
+     "method": "search_snippet",
+     "note": "single medal pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/vintage-vinyl/jungle-book",
+   "set_key": "wdw/2019/vintage-vinyl",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Vintage Vinyl - The Jungle Book",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "named in weekly list"
+    },
+    {
+     "field": "set_position",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "called pin 6 of the monthly Vintage Vinyl collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "retail $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "availability date in post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "shared DLR/WDW release; variant: same pin as DLR line (no dlr key yet)"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "single monthly pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/vintage-vinyl/oliver-and-company",
+   "set_key": "wdw/2019/vintage-vinyl",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Vintage Vinyl - Oliver & Company",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2019-week-1/",
+     "method": "search_snippet",
+     "note": "named in weekly list"
+    },
+    {
+     "field": "set_position",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2019-week-1/",
+     "method": "search_snippet",
+     "note": "called pin 7 of the monthly Vintage Vinyl collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2019-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2019-week-1/",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2019-week-1/",
+     "method": "search_snippet",
+     "note": "retail $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2019-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-07-04",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2019-week-1/",
+     "method": "search_snippet",
+     "note": "availability date in post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2019-week-1/",
+     "method": "search_snippet",
+     "note": "shared DLR/WDW release; variant: same pin as DLR line (no dlr key yet)"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2019-week-1/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2019-week-1/",
+     "method": "search_snippet",
+     "note": "single monthly pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/vintage-vinyl/alice-in-wonderland",
+   "set_key": "wdw/2019/vintage-vinyl",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Vintage Vinyl - Alice in Wonderland",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-1/",
+     "method": "search_snippet",
+     "note": "named in weekly list"
+    },
+    {
+     "field": "set_position",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-1/",
+     "method": "search_snippet",
+     "note": "called pin 8 of the monthly Vintage Vinyl collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-1/",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-1/",
+     "method": "search_snippet",
+     "note": "retail $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-01",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-1/",
+     "method": "search_snippet",
+     "note": "availability date in post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-1/",
+     "method": "search_snippet",
+     "note": "shared DLR/WDW release; variant: same pin as DLR line (no dlr key yet)"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-1/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-1/",
+     "method": "search_snippet",
+     "note": "single monthly pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/vintage-vinyl/bambi",
+   "set_key": "wdw/2019/vintage-vinyl",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Vintage Vinyl - Bambi",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+     "method": "search_snippet",
+     "note": "named in weekly list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bambi"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+     "method": "search_snippet",
+     "note": "subject of the record design"
+    },
+    {
+     "field": "set_position",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+     "method": "search_snippet",
+     "note": "called pin 10 of the monthly Vintage Vinyl collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+     "method": "search_snippet",
+     "note": "retail $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-03",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+     "method": "search_snippet",
+     "note": "availability date in post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+     "method": "search_snippet",
+     "note": "shared DLR/WDW release; variant: same pin as DLR line (no dlr key yet)"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+     "method": "search_snippet",
+     "note": "single monthly pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/vintage-vinyl/aristocats",
+   "set_key": "wdw/2019/vintage-vinyl",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Vintage Vinyl - The Aristocats",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2019-week-1",
+     "method": "search_snippet",
+     "note": "named in weekly list"
+    },
+    {
+     "field": "set_position",
+     "value": 11,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2019-week-1",
+     "method": "search_snippet",
+     "note": "called pin 11 of the monthly Vintage Vinyl collection"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2019-week-1",
+     "method": "search_snippet",
+     "note": "retail $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2019-week-1",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2019-week-1",
+     "method": "search_snippet",
+     "note": "availability date in post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2019-week-1",
+     "method": "search_snippet",
+     "note": "shared DLR/WDW release; variant: same pin as DLR line (no dlr key yet)"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2019-week-1",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2019-week-1",
+     "method": "search_snippet",
+     "note": "single monthly pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/vintage-vinyl/peter-pan",
+   "set_key": "wdw/2019/vintage-vinyl",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Vintage Vinyl - Peter Pan",
+     "source_url": "https://wdwnt.com/2019/11/photos-december-2019-pin-releases-for-walt-disney-world-and-disneyland-feature-star-tours-30th-anniversary-princess-and-the-frog-10th-anniversary-matterhorn-disneys-riviera-resort-pins-and-more/",
+     "method": "search_snippet",
+     "note": "WDWNT names Peter Pan as the December 2019 Vintage Vinyl pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12",
+     "source_url": "https://wdwnt.com/2019/11/photos-december-2019-pin-releases-for-walt-disney-world-and-disneyland-feature-star-tours-30th-anniversary-princess-and-the-frog-10th-anniversary-matterhorn-disneys-riviera-resort-pins-and-more/",
+     "method": "search_snippet",
+     "note": "December 2019 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://wdwnt.com/2019/11/photos-december-2019-pin-releases-for-walt-disney-world-and-disneyland-feature-star-tours-30th-anniversary-princess-and-the-frog-10th-anniversary-matterhorn-disneys-riviera-resort-pins-and-more/",
+     "method": "search_snippet",
+     "note": "in combined WDW/DLR December preview; variant: likely same joint pin (not confirmed)"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/11/photos-december-2019-pin-releases-for-walt-disney-world-and-disneyland-feature-star-tours-30th-anniversary-princess-and-the-frog-10th-anniversary-matterhorn-disneys-riviera-resort-pins-and-more/",
+     "method": "search_snippet",
+     "note": "2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/christmas-parade-2019/commemorative",
+   "set_key": "wdw/2019/christmas-parade-2019",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-11-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2019-week-1",
+     "method": "search_snippet",
+     "note": "Magic Kingdom parade pin, LR $15.99, at WDW Nov 6 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom, Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2019-week-1",
+     "method": "search_snippet",
+     "note": "commemorates the 2019 MK parade"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/haunted-mansion-50th-anniversary/day-of",
+   "set_key": "wdw/2019/haunted-mansion-50th-anniversary",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Frontier Trading Post, Magic Kingdom",
+     "source_url": "https://www.laughingplace.com/w/news/2019/08/02/haunted-mansion-50th-anniversary-collection-coming-wdw/",
+     "method": "search_snippet",
+     "note": "commemorative day-of pins sold at Frontier Trading Post"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-09",
+     "source_url": "https://wdwnt.com/2019/08/photo-report-magic-kingdom-8-9-19-haunted-mansion-50th-fun-construction-updates-and-more/",
+     "method": "search_snippet",
+     "note": "pins went on sale morning of Aug 9 2019; long line at Frontier Trading Post"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2019/galaxys-edge-countdown",
+   "field": "pins",
+   "searched": "DPB Aug 2019 wk2; 4 queries",
+   "note": "released: B002/404/451 gap 'countdown pin 2 not named' - DPB Aug wk2 names X-Wing Pilot as 2nd WDW countdown pin (LE 3500, Aug 8). Series now #1 BB-8, #2 X-Wing Pilot, #3 Kylo Ren"
+  },
+  {
+   "key": "wdw/2019/galaxys-edge-monthly/first-order-tie-fighter-pilot",
+   "field": "release_location",
+   "searched": "DPB Dec wk3, WDWNT Dec preview",
+   "note": "park within WDW (DHS) not stated in snippets"
+  },
+  {
+   "key": "wdw/2019/galaxys-edge-opening-day/rise-of-the-resistance-rey",
+   "field": "pins",
+   "searched": "WDWNT grand-opening merch list; 1 query",
+   "note": "lead: summarized snippet lists a 'Rise of the Resistance Rey' LE pin $17.99 in the DHS opening merch list; edition size and identity unconfirmed, not recorded"
+  },
+  {
+   "key": "wdw/2019/magic-of-honor/20000-leagues-under-the-sea",
+   "field": "edition_size",
+   "searched": "DPB Sep wk4; 1 query",
+   "note": "DPB weekly post gives LE 2,000 (recorded); 451's 3,000 reading was unattributed and is not recorded"
+  },
+  {
+   "key": "wdw/2019/magic-of-honor/kilimanjaro-safaris",
+   "field": "edition_size",
+   "searched": "3 queries (DPB Aug preview/weeks, WDWNT)",
+   "note": "still open: edition, position (8th?) and day not in permitted snippets; DPB Aug wk2/wk3 posts did not surface"
+  },
+  {
+   "key": "wdw/2019/magic-of-honor/its-a-small-world",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "still open: only reseller (yourwdwstore) gives #11, LE 2000 - not recorded"
+  },
+  {
+   "key": "wdw/2019/vintage-vinyl/lady-and-the-tramp",
+   "field": "edition_type",
+   "searched": "2 queries",
+   "note": "kept hold (404/451): #4, LE 3000, Apr 18 and slider format only on resellers (yourwdwstore, ecrater); DPB tag archive shows title only"
+  },
+  {
+   "key": "wdw/2019/vintage-vinyl/snow-white",
+   "field": "set_position",
+   "searched": "1 query",
+   "note": "position #5 not stated in permitted snippets (DPB tag archive title only)"
+  },
+  {
+   "key": "wdw/2019/vintage-vinyl/101-dalmatians",
+   "field": "edition_type",
+   "searched": "1 query + grep 204",
+   "note": "not re-claimed: this pass saw only reseller (#2, LE 3000); DPB Feb 2019 wk1 LE 3000 joint claim is held on dlr/2019/vintage-vinyl/101-dalmatians (packet 204) - variant: same pin"
+  },
+  {
+   "key": "wdw/2019/vintage-vinyl/bambi",
+   "field": "edition_size",
+   "searched": "DPB Oct wk1",
+   "note": "conflict within same post: formatted listing says LE 3,000 (recorded), body text says 2,500; Thumper/Owl/Flower characters only on reseller"
+  },
+  {
+   "key": "wdw/2019/vintage-vinyl/aristocats",
+   "field": "edition_size",
+   "searched": "DPB Nov wk1; 2 queries",
+   "note": "LE 3000 and slider format only on resellers (ecrater, yourwdwstore); not recorded"
+  },
+  {
+   "key": "wdw/2019/vintage-vinyl/peter-pan",
+   "field": "set_position",
+   "searched": "1 query",
+   "note": "#12 position, edition and exact day not in snippets"
+  },
+  {
+   "key": "wdw/2019/vintage-vinyl",
+   "field": "variant",
+   "searched": "grep 204/408/453",
+   "note": "DLR packets hold only dlr/2019/vintage-vinyl/101-dalmatians; new WDW keys here are joint DLR/WDW products - DLR agent should add 'variant: same pin as wdw/2019/vintage-vinyl/<slug>'"
+  },
+  {
+   "key": "wdw/2019/skyliner-mystery",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "8 designs still not named for 2019 (named 8-design list found is the 2025 set); date conflict Sep 24/26/27 recorded"
+  },
+  {
+   "key": "wdw/2019/swge-grand-opening-mystery",
+   "field": "pins",
+   "searched": "2 queries (mypincentral, WDWNT)",
+   "note": "designs not named; 12-pin count and DLR Launch Bay chaser LE 250 (May 31 2019) only on reseller (ecrater) - not recorded; lead for DLR LE cell"
+  },
+  {
+   "key": "wdw/2019/resort-holiday-bells-2019",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "kept: per-bell resort/character/edition not in snippets (24 count includes DLR resorts); only Coronado Springs Miguel (451) split"
+  },
+  {
+   "key": "wdw/2019/animal-kingdom-21st-anniversary",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "still no 2019 Animal Kingdom anniversary LE in permitted sources (DPB Apr wk4 lists only a Lion King Simba 3D pin spotted at DAK)"
+  },
+  {
+   "key": "wdw/2019/epcot-festival-of-the-arts-2019",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "DPB/WDWNT list only the four B002 pins; no further FotA LEs"
+  },
+  {
+   "key": "wdw/2019/christmas-parade-2019/commemorative",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "resolved conflict: Nov 6 is the MK pin (DPB Nov wk1); Nov 14 is a separate Disneyland parade pin, LR $15.99 (DPB Nov wk2, attribution from summarized result) - lead for DLR LE cell"
+  },
+  {
+   "key": "wdw/2019/haunted-mansion-50th-anniversary/day-of",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "kept hold (404/451): WDW day-of pin sold at Frontier Trading Post Aug 9, but no design/edition tying it to the DPB LR $15.99 list or dlr/2019/haunted-mansion-50th-retirement-unliving/50th-day-of"
+  },
+  {
+   "key": "wdw/2019/mnsshp-2019-sanderson-sisters",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); 'pin set' at a single $17.99 price, no per-sister pins named"
+  },
+  {
+   "key": "wdw/2019/epcot-flower-garden-2019-princess-set",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "kept hold: not searched this pass"
+  },
+  {
+   "key": "wdw/2019/hollywood-studios-30th-anniversary-booster",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "kept hold: character list only; not searched this pass"
+  },
+  {
+   "key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "kept hold: distance pins list-only; pending maintainer full-list decision"
+  },
+  {
+   "key": "wdw/2019/rundisney-star-wars-rival-run-weekend-2019",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "kept hold: distance pins list-only; pending maintainer full-list decision"
+  }
+ ]
+}

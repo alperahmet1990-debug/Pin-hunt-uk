@@ -16,6 +16,8 @@ export default defineConfig({
       EBAY_CLIENT_ID: "",
       EBAY_CLIENT_SECRET: "",
       GOOGLE_APPLICATION_CREDENTIALS_JSON: "",
+      SOLDGRAPH_API_KEY: "",
+      SOLDGRAPH_ENABLED: "",
       LOG_LEVEL: "silent",
     },
   },

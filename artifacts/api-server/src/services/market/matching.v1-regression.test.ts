@@ -5,7 +5,13 @@
  * change: v2 matching is opt-in and v1 callers keep v1 results.
  */
 import { describe, expect, it } from "vitest";
-import { scoreListing } from "../valuation";
+import { scoreListing, buildSearchQueries as valuationBuildSearchQueries } from "../valuation";
+import {
+  REJECTION_REASONS,
+  buildSearchQueries,
+  matchListing,
+  scoreListing as matchingScoreListing,
+} from "./matching";
 import { fixturePin, readFixture } from "./__fixtures__/load";
 
 interface V1Case { pin: string; title: string; expected: number | null }
@@ -25,4 +31,21 @@ describe("v1 scoreListing regression (#407)", () => {
       expect(scoreListing(fixturePin(pinKey), { itemId: "fixture", title })).toBe(expected);
     },
   );
+
+  it.each(fixture.cases.map(c => [c.pin, c.title, c.expected] as const))(
+    "matchListing default mode is v1 for (%s, %j)",
+    (pinKey, title, expected) => {
+      const r = matchListing(fixturePin(pinKey), title);
+      expect(r.mode).toBe("v1");
+      expect(r.accepted).toBe(expected !== null);
+      expect(r.score).toBe(expected ?? r.score);
+      if (expected === null) expect(REJECTION_REASONS).toContain(r.rejectionReason);
+      else expect(r.rejectionReason).toBeUndefined();
+    },
+  );
+
+  it("valuation.ts re-exports the matching module's v1 functions", () => {
+    expect(scoreListing).toBe(matchingScoreListing);
+    expect(valuationBuildSearchQueries).toBe(buildSearchQueries);
+  });
 });

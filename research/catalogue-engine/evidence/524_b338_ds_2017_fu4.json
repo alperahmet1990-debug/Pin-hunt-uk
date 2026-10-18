@@ -1,0 +1,81 @@
+{
+  "packet_id": "b338-ds-2017-fu4-2026-10-18",
+  "spec_version": 1,
+  "collected_at": "2026-10-18",
+  "collector": "agent:web-search",
+  "sources": [
+    {"url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "title": "Tron 35th Anniversary Pin - Disney Store UK", "publisher": "Disney Pins Blog", "published_date": "2017-08", "accessed_via": "search_snippet", "page_readable": false},
+    {"url": "https://disneypins.fandom.com/wiki/Tron_35th_Anniversary_Limited_Edition_(2017)", "title": "Tron 35th Anniversary Limited Edition (2017)", "publisher": "Disney Pins Wiki (Fandom)", "published_date": null, "accessed_via": "search_snippet", "page_readable": false},
+    {"url": "https://disneypinsblog.com/tag/disney-store-uk-pins/", "title": "Disney Store UK Pins Archives", "publisher": "Disney Pins Blog", "published_date": null, "accessed_via": "search_snippet", "page_readable": false},
+    {"url": "http://www.danthepixarfan.com/2017/02/toy-story-2-disney-store-30th.html", "title": "Toy Story 2: Disney Store 30th Anniversary Pin (Jessie & Bullseye)", "publisher": "Dan the Pixar Fan", "published_date": "2017-02-19", "accessed_via": "search_snippet", "page_readable": false},
+    {"url": "https://disneypinsblog.com/d23-expo-2017-dream-store-pins/", "title": "D23 Expo 2017 Dream Store Pins", "publisher": "Disney Pins Blog", "published_date": "2017-07", "accessed_via": "search_snippet", "page_readable": false},
+    {"url": "https://www.disneystore.eu/disney-store-disney-pixar-coco-pin-set-466040038203.html", "title": "Disney Store Disney Pixar Coco Pin Set", "publisher": "Disney Store EU", "published_date": null, "accessed_via": "search_snippet", "page_readable": false},
+    {"url": "https://hellosubscription.com/subscription-box-reviews/disney-park-pack-pin-trading-edition-reviews/", "title": "Disney Park Pack: Pin Trading Edition Reviews", "publisher": "Hello Subscription", "published_date": null, "accessed_via": "search_snippet", "page_readable": false},
+    {"url": "https://disneypinsblog.com/blogs/news/beauty-beast-movie-club-pin", "title": "Beauty And The Beast Movie Club Pin", "publisher": "Disney Pins Blog", "published_date": null, "accessed_via": "search_snippet", "page_readable": false},
+    {"url": "http://disneypinsblog.com/scar-disney-store-uk-pin/", "title": "Scar Disney Store UK Pin", "publisher": "Disney Pins Blog", "published_date": "2016-06", "accessed_via": "search_snippet", "page_readable": false},
+    {"url": "https://disneypinsblog.com/blogs/news/mary-poppins-pin-disney-store-uk", "title": "Mary Poppins Pin - Disney Store UK", "publisher": "Disney Pins Blog", "published_date": "2016-12", "accessed_via": "search_snippet", "page_readable": false},
+    {"url": "https://disneypinsblog.com/winnie-pooh-balloon-pin/", "title": "Winnie the Pooh Balloon Pin", "publisher": "Disney Pins Blog", "published_date": "2016-05", "accessed_via": "search_snippet", "page_readable": false},
+    {"url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/", "title": "Latest Pin Trader Delight Pins Revealed", "publisher": "DisKingdom", "published_date": "2017-06-17", "accessed_via": "search_snippet", "page_readable": false}
+  ],
+  "sets": [
+    {"set_key": "dsuk/2017/tron-35th-anniversary-le-500",
+     "claims": [
+       {"field": "set_name", "value": "Tron 35th Anniversary Pin (Disney Store UK)", "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "blog post title"},
+       {"field": "expected_pin_count", "value": 1, "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "single pin release"},
+       {"field": "format", "value": "single pin", "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "one pin announced"},
+       {"field": "edition_type", "value": "limited edition", "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "LE, Europe exclusive"},
+       {"field": "release_date", "value": "2017-08-15", "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "coming to Disney Store UK 15 Aug 2017"},
+       {"field": "price", "value": 9.0, "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "GBP 9.00"},
+       {"field": "currency", "value": "GBP", "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "UK price"}
+     ]}
+  ],
+  "pins": [
+    {"pin_key": "dsuk/2017/tron-35th-anniversary-le-500/tron-35th-anniversary-le-500", "set_key": "dsuk/2017/tron-35th-anniversary-le-500",
+     "claims": [
+       {"field": "pin_name", "value": "Tron 35th Anniversary Pin", "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "blog title"},
+       {"field": "pin_structure", "value": "one pin", "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "single pin release"},
+       {"field": "franchise", "value": "Tron", "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "Tron 35th anniversary"},
+       {"field": "edition_type", "value": "limited edition", "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "LE"},
+       {"field": "edition_size", "value": 500, "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "LE 500, exclusive to Europe"},
+       {"field": "edition_size", "value": 500, "source_url": "https://disneypins.fandom.com/wiki/Tron_35th_Anniversary_Limited_Edition_(2017)", "method": "search_snippet", "note": "wiki: one of 500 in Europe"},
+       {"field": "release_date", "value": "2017-08-15", "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "15 Aug 2017"},
+       {"field": "release_year", "value": 2017, "source_url": "https://disneypins.fandom.com/wiki/Tron_35th_Anniversary_Limited_Edition_(2017)", "method": "search_snippet", "note": "wiki lists as 2017 Disney Store Europe release"},
+       {"field": "original_price", "value": 9.0, "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "GBP 9.00"},
+       {"field": "currency", "value": "GBP", "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "GBP"},
+       {"field": "region", "value": "Europe", "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "exclusive to Europe"},
+       {"field": "release_location", "value": "Disney Store website (Europe)", "source_url": "https://disneypinsblog.com/tron-35th-anniversary-pin-disney-store-uk/", "method": "search_snippet", "note": "sold on European Disney Store site"},
+       {"field": "release_location", "value": "Disney Store Europe", "source_url": "https://disneypins.fandom.com/wiki/Tron_35th_Anniversary_Limited_Edition_(2017)", "method": "search_snippet", "note": "wiki: Disney Store, Europe"},
+       {"field": "characters", "value": ["Lora", "Kevin"], "source_url": "https://disneypins.fandom.com/wiki/Tron_35th_Anniversary_Limited_Edition_(2017)", "method": "search_snippet", "note": "wiki names the two characters as Lora and Kevin"},
+       {"field": "visual_description", "value": "Hard enamel pin with rugged edge, blue Tron logo, a light cycle and two characters; mainly blue and red with silver-effect outline", "source_url": "https://disneypins.fandom.com/wiki/Tron_35th_Anniversary_Limited_Edition_(2017)", "method": "search_snippet", "note": "paraphrase of wiki description"},
+       {"field": "visual_colours", "value": ["blue", "red", "black", "yellow", "silver"], "source_url": "https://disneypins.fandom.com/wiki/Tron_35th_Anniversary_Limited_Edition_(2017)", "method": "search_snippet", "note": "mainly blue/red, slight black/yellow, silver outline"}
+     ]}
+  ],
+  "not_found": [
+    {"key": "dsuk/2017/tron-35th-anniversary-le-500/tron-35th-anniversary-le-500", "field": "product_code", "searched": "DPB + fandom snippets; 2 queries", "note": "no product code in snippets"},
+    {"key": "dsuk/2017/tron-35th-anniversary-le-500/tron-35th-anniversary-le-500", "field": "characters", "searched": "2 queries", "note": "only the fan wiki names Lora and Kevin; DPB snippet does not name characters; single-source"},
+    {"key": "dsuk/2017/team-disney-dwarves", "field": "pins", "searched": "3 queries incl. exact title", "note": "lead: 'Team Disney Dwarves Pin - Disney Store UK' appears only as a title on DPB Disney Store UK archive (nearby date 12 Sep 2017, not clearly tied); no date/LE/price/design - not keyed"},
+    {"key": "dsuk/2018/up-new-year-2018/up-new-year-2018", "field": "release_date", "searched": "1 query", "note": "dedupe: UP! New Year 2018 pin (released 19 Dec 2017, GBP 10, Europe LE) already keyed in 214_b014_ds_2018.json; no new facts, not re-keyed under 2017"},
+    {"key": "dsuk/2017/coco-glow-in-the-dark-pin-set", "field": "release_year", "searched": "1 query", "note": "lead: disneystore.eu lists a Coco pin set of four glow-in-the-dark pins (EUR 15); year not stated, likely 2018 EU film release - not keyed"},
+    {"key": "dsuk/2016/scar-and-hyenas", "field": "release_year", "searched": "1 query", "note": "lead for 2016 ds cell: DPB Scar Disney Store UK pin, 28 Jun 2016, LE 750 Europe, GBP 9, Scar and Hyenas - out of year, not keyed"},
+    {"key": "dsuk/2016/mary-poppins", "field": "release_year", "searched": "1 query", "note": "lead for 2016 ds cell: DPB Mary Poppins Disney Store UK pin, 28 Dec 2016, LE 800, GBP 9, flying silhouette - out of year, not keyed"},
+    {"key": "dsuk/2016/winnie-the-pooh-balloon", "field": "release_year", "searched": "1 query", "note": "lead for 2016 ds cell: DPB Pooh balloon pin Disney Store UK 17 May 2016, GBP 9, LE 500 Europe / 800 worldwide - out of year, not keyed"},
+    {"key": "dsus/2017/d23-expo-disney-store-marvel-le-500-set", "field": "pins", "searched": "1 query", "note": "four covers still unnamed; DPB/Bleeding Cool snippets give 4 pins, LE 500, USD 49.95/49.99, sold 14 Jul 2017; Captain America/Thor not confirmed"},
+    {"key": "dsus/2017/d23-expo-dream-store-iron-man-poster", "field": "release_location", "searched": "1 query", "note": "lead kept: DPB Dream Store list gives Mickey, Buzz Lightyear, Tinker Bell, BB-8, Iron Man poster pins, each LE 2500 USD 15.99; Dream Store operator not confirmed as Disney Store - not keyed"},
+    {"key": "dsus/2017/disney-store-30th-anniversary-week-08", "field": "pins", "searched": "2 queries incl. exact title", "note": "Week 8 still only a link label on DPB main post; no contents in snippets"},
+    {"key": "dsus/2017/disney-store-30th-anniversary", "field": "pin_structure", "searched": "2 queries", "note": "hold kept: Dan the Pixar Fan and DPB Week 4 say weekly releases came as 3-pin sets (USD 19.95/19.99); per-pin split hold not released (no per-pin sale evidence beyond 228)"},
+    {"key": "dsus/2017/studio-store-hollywood-january-2017", "field": "pins", "searched": "1 query", "note": "DPB month index lists 'January 2017 Pins' but no DSSH Jan 2017 post content surfaced"},
+    {"key": "dsus/2017/coco-le-600-set", "field": "pins", "searched": "1 query", "note": "hold kept: still 5 named of 8 (Miguel, Imelda, Ernesto, Dante, Pepita 'and more'); Hector/Mama Coco unconfirmed for this set"},
+    {"key": "dsus/2017/studio-store-hollywood-coco-skull-surprise", "field": "pins", "searched": "2 queries", "note": "companion main DSSH Coco pin (released with skull pin 22 Nov 2017) still not described"},
+    {"key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph", "field": "pins", "searched": "3 queries", "note": "hold kept: pin 2 still unidentified; no Finn/Rose/Poe/Phasma Last Jedi LE 2000 pin found; Luke vs Praetorian '4th pin' conflict persists (both cite 14 Nov)"},
+    {"key": "dsus/2017/park-pack-3-0-10-oct", "field": "pins", "searched": "1 query", "note": "hold kept: Hello Subscription again says Oct 2017 3.0 box = Alice in Wonderland; DPB Sep conflict unresolved; no new non-reseller source"},
+    {"key": "dsuk/2017/treasure-planet-le-500/treasure-planet-le-500", "field": "characters", "searched": "1 query", "note": "still not described; later Jim Hawkins/Morph and 25th anniversary UK pins are different items"},
+    {"key": "dsuk/2017/snow-white-80th-anniversary-le-500/snow-white-80th-anniversary-le-500", "field": "characters", "searched": "1 query", "note": "still not described; only LE 500 / GBP 9 / Europe exclusive resurfaced"},
+    {"key": "dsus/2017/studio-store-hollywood-february-2017-oscar-winners", "field": "characters", "searched": "1 query", "note": "still only film titles (Little Mermaid, BatB, Aladdin, Lion King, Big Hero 6), each LE 300 USD 21.95, online 24 Feb 2017"},
+    {"key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-06-17", "field": "edition_size", "searched": "1 query", "note": "hold kept: DisKingdom 17 Jun 2017 still gives characters only; no per-pin size or price"},
+    {"key": "dsus/2017/studio-store-hollywood-pin-trader-delight", "field": "pins", "searched": "1 query", "note": "no further 2017 PTD flips surfaced"},
+    {"key": "dsus/2017/disney-movie-club-beauty-and-the-beast", "field": "release_date", "searched": "1 query", "note": "lead: DPB BatB Movie Club VIP pin for 25th Anniversary Blu-ray, USD 6.95, VIP store only; Blu-ray was 2016 so likely 2016; date not stated - not keyed (dsus key reserved pending line decision)"},
+    {"key": "dsus/2017/studio-store-hollywood-alphabet-series-6", "field": "pins", "searched": "0 new", "note": "not re-searched (budget); still no non-reseller source"},
+    {"key": "dsus/2017/held-items", "field": "pin_structure", "searched": "no new per-pin evidence", "note": "holds unchanged: couples Jack&Sally/Aladdin&Jasmine, Dark Tales 1-3, Designer Collection D23, Bookmark, BatB Belle/Beast, Mice, Aladdin 25th, Alphabet #7 X/Y/Z/XYZ, 30th Anniversary split"}
+  ],
+  "discovery_notes": "Cell B338, follow-up 4 of B022 (DS 2017). 30 standard searches, snippets only; keys from 228/436/473/503 reused, no duplicates. New: Disney Store UK Tron 35th Anniversary pin (15 Aug 2017, LE 500 Europe, GBP 9; fan wiki gives design and characters Lora and Kevin). Leads: Team Disney Dwarves (DS UK, title only), Coco glow set (EU, year unknown), three 2016 DS UK pins for the 2016 cell. UP! New Year 2018 already in 214 packet. No hold released. Resellers seen (yourwdwstore, toywiz, castleplanethk, fryguypins, dressweather) not used."
+}

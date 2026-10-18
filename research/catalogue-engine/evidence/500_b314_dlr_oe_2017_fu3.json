@@ -1,0 +1,424 @@
+{
+ "packet_id": "backfill-b314-dlr-oe-2017-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b314",
+ "sources": [
+  {
+   "url": "https://mypincentral.com/pin/69246",
+   "title": "MyPinCentral pin 69246",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-tsum-tsum-holiday-mystery-pins",
+   "title": "Disney Tsum Tsum Holiday Mystery Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/elsa-anna-emoji-pin-set/",
+   "title": "Elsa & Anna Emoji Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07-18",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+   "title": "New Disney Pins July 2017 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+   "title": "New Disney Pins June 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-frozen-mystery-pin-set",
+   "title": "Disney Frozen Mystery Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10-24",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-mickey-mouse-friends-halloween-pin-set/",
+   "title": "Mickey Mouse and Friends Halloween Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/lion-king-disney-pin-trading-starter-set/",
+   "title": "Lion King Disney Pin Trading Starter Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+   "title": "Disney Parks 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+   "title": "New Disney Pins October 2017 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/guardians-galaxy-mission-breakout-pins/",
+   "title": "Guardians of the Galaxy Mission Breakout Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2017/oe-set/elsa-anna-emoji",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2017-07-18",
+     "source_url": "https://disneypinsblog.com/elsa-anna-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "Dedicated post dated 18 Jul 2017: six-pin set debuted at Disneyland in July"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort (first); Walt Disney World to follow",
+     "source_url": "https://disneypinsblog.com/elsa-anna-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "Dedicated post: DL first, WDW coming soon"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+     "method": "search_snippet",
+     "note": "Week-4 roundup lists set among shared pins available 27 Jul 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+     "method": "search_snippet",
+     "note": "Roundup places set in shared DL/WDW section"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/elsa-anna-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "Six pins"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/elsa-anna-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/elsa-anna-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "US parks retail"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2017/oe-set/tsum-tsum-holiday-mystery/willie-the-giant",
+   "set_key": "wdw/2017/oe-set/tsum-tsum-holiday-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Willie the Giant (Tsum Tsum Holiday Mystery Collection)",
+     "source_url": "https://mypincentral.com/pin/69246",
+     "method": "search_snippet",
+     "note": "Per-pin page assigns pin to Tsum Tsum Holiday Mystery Collection"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Willie the Giant"
+     ],
+     "source_url": "https://mypincentral.com/pin/69246",
+     "method": "search_snippet",
+     "note": "Per-pin page: Willie the Giant featured"
+    },
+    {
+     "field": "main_character",
+     "value": "Willie the Giant",
+     "source_url": "https://mypincentral.com/pin/69246",
+     "method": "search_snippet",
+     "note": "Single featured character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/69246",
+     "method": "search_snippet",
+     "note": "Individual design page within a mystery collection"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/oe/pin-trading-logo-bronze",
+   "set_key": "dlr/2017/oe-single/pin-trading-logo-bronze",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Week of 28 May-3 Jun 2017 roundup: bronze OE Pin Trading logo pin at 11.99 (search summary)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "US parks retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+     "method": "search_snippet",
+     "note": "Listed in June 2017 week 1 roundup"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-holiday-mystery/willie-the-giant",
+   "field": "release_year",
+   "searched": "WebSearch snippets, B314",
+   "note": "hold: confirm year/set - MPC 69246 names the collection but snippet shows no year; 2017 link is by collection name matching DPB Oct 2017 10-pin set"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-holiday-mystery/willie-the-giant",
+   "field": "duplicate",
+   "searched": "WebSearch snippets, B314",
+   "note": "keyed under wdw because set is wdw-keyed (217/425); if a dlr key is ever made: variant: same pin as this wdw key. Parallel WDW cell may add same key"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-holiday-mystery/pete",
+   "field": "pins",
+   "searched": "WebSearch snippets, B314",
+   "note": "lead only: Pete as Ghost of Christmas Yet to Come named only by retailer distradingpins4u (125954); not recorded as a pin"
+  },
+  {
+   "key": "dlr/2017/oe-set/tsum-tsum-holiday-mystery",
+   "field": "pins",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: 9 of 10 designs unnamed by permitted sources; variant: same set as wdw/2017/oe-set/tsum-tsum-holiday-mystery"
+  },
+  {
+   "key": "dlr/2017/oe-set/frozen-holiday-mystery",
+   "field": "pins",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: 8 designs still unnamed (DPB 24 Oct 2017; no MPC per-pin page found); variant: same set as wdw/2017/oe-set/frozen-holiday-mystery"
+  },
+  {
+   "key": "dlr/2017/oe-set/minnie-mouse-emoji",
+   "field": "members",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: MPC 19656 shows a laughing Minnie emoji-style head (FAC-000122-17100) but names no set or year - lead only"
+  },
+  {
+   "key": "dlr/2017/oe-set/stitch-emoji",
+   "field": "members",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: MPC 104040/185999 Stitch heads (one FAC ...17100) do not name the emoji set - leads only"
+  },
+  {
+   "key": "dlr/2017/oe-set/stitch-emoji/stitch-embarrassed",
+   "field": "set_membership",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept hold (432): still only the DPB shop product page"
+  },
+  {
+   "key": "dlr/2017/oe-set/elsa-anna-emoji",
+   "field": "members",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: MPC 54058 (Elsa head) and 54060 (Anna head), both 2017 FAC-000122-17100, do not say emoji or set; Anna Nervous name only on pintrader.club (listing site)"
+  },
+  {
+   "key": "dlr/2017/oe-set/elsa-anna-emoji",
+   "field": "release_location",
+   "searched": "WebSearch snippets, B314",
+   "note": "resolved-ish: not a true conflict - dedicated post says DL first, WDW to follow; later roundup lists both parks 27 Jul 2017. Both claims recorded"
+  },
+  {
+   "key": "dlr/2017/oe-set/white-rabbit-cheshire-cat-emoji",
+   "field": "members",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: White Rabbit Happy Emoji named only by retailer everything-mousey-pins; MPC White Rabbit pages not tied to emoji set"
+  },
+  {
+   "key": "dlr/2017/oe-set/disney-parks-2017-booster",
+   "field": "members",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: six characters still only on reseller yourwdwstore; DPB 2017 page says six character pins without names; variant: same set as wdw/2017/oe-set/disney-parks-2017-booster"
+  },
+  {
+   "key": "dlr/2017/oe-set/disney-parks-2017-starter-set",
+   "field": "members",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: no 2017 silhouette starter set or price in permitted sources (last attempt)"
+  },
+  {
+   "key": "dlr/2017/oe/castle-2017-sleeping-beauty-castle",
+   "field": "original_price",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: no retail price for 2017-dated pins in permitted snippets (last attempt)"
+  },
+  {
+   "key": "dlr/2017/oe/sorcerer-mickey-2017",
+   "field": "original_price",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: no retail price for 2017-dated pins in permitted snippets (last attempt)"
+  },
+  {
+   "key": "dlr/2017/oe/stitch-2017",
+   "field": "original_price",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: no retail price for 2017-dated pins in permitted snippets (last attempt)"
+  },
+  {
+   "key": "dlr/2017/oe/magic-2017",
+   "field": "original_price",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: no retail price for 2017-dated pins in permitted snippets (last attempt)"
+  },
+  {
+   "key": "dlr/2017/oe/minnie-mouse-2017",
+   "field": "original_price",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: no retail price for 2017-dated pins in permitted snippets (last attempt)"
+  },
+  {
+   "key": "dlr/2017/oe/mission-breakout-star-lord",
+   "field": "pin_name",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: DPB lists OE Star-Lord with Rocket, no name/price; only pintrader.club (listing site) has a per-pin page"
+  },
+  {
+   "key": "dlr/2017/oe/mission-breakout-rocket",
+   "field": "pin_name",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: no per-pin page or price found; 2022 9.99 OE Rocket is a later release"
+  },
+  {
+   "key": "dlr/2017/oe-set/mickey-friends-halloween",
+   "field": "members",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept hold: confirm pin structure; DPB still gives five pins plus a five-name character list, no per-pin description; no MPC page"
+  },
+  {
+   "key": "dlr/2017/oe-set/lion-king-starter-set",
+   "field": "members",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept hold: four characters named only as list (DPB) and on ecrater listing (listing site); no per-pin page"
+  },
+  {
+   "key": "dlr/2017/oe/rapunzel-painting",
+   "field": "release_location",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept hold (432): DPB Jun 2017 wk1 gives OE 8.99, no resort per entry; no MPC page"
+  },
+  {
+   "key": "dlr/2017/oe/pin-trading-logo-bronze",
+   "field": "release_location",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept hold (432): price 11.99 now found, but DL/WDW only from summary of the week list, not the entry"
+  },
+  {
+   "key": "dlr/2017/oe/coco-miguel",
+   "field": "release_location",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept hold (432): MPC 64846 Miguel guitar is a 2018 LR pin, different item; no per-entry DL evidence"
+  },
+  {
+   "key": "dlr/2017/oe/haunted-mansion-bat-ghost",
+   "field": "pin_structure",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept hold (432): DPB Jul 2017 wk4 again prices 'Bat and Ghost' 9.99 in DL-spotted HM OE list; one vs two pins still unclear"
+  },
+  {
+   "key": "dlr/2017/oe/coco-skull",
+   "field": "release_location",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: DPB Oct 2017 wk3 entry spotted at Epcot, says available DL and WDW; no DL-specific per-pin evidence; variant: same pin as wdw/2017/oe/coco-skull"
+  },
+  {
+   "key": "dlr/2017/oe/coco-remember-me",
+   "field": "release_location",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept: same DPB Oct wk3 entry wording (Epcot spot, DL+WDW availability); variant: same pin as wdw/2017/oe/coco-remember-me"
+  },
+  {
+   "key": "dlr/2017/oe-set/digital-disney-mystery",
+   "field": "pins",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept holds (432): only Donald (MPC 33940, released in 469) has a per-pin page"
+  },
+  {
+   "key": "dlr/2017/oe-set/princess-gold-frame-mystery/jasmine",
+   "field": "pins",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept hold (432): MPC 127267 gold-frame Jasmine 2017 still does not name the set"
+  },
+  {
+   "key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1/sword-in-the-stone",
+   "field": "pins",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept hold (432): MPC 107965 Sword in the Stone (Pin Trading 2017) does not name Kingdom of Cute; lead for maintainer"
+  },
+  {
+   "key": "dlr/2017/oe-set/kingdom-of-cute-mystery-series-1",
+   "field": "pins",
+   "searched": "WebSearch snippets, B314",
+   "note": "kept holds (432): other designs only on DPB list / letsgopintrading / mydisneyshop"
+  },
+  {
+   "key": "dlr/2017/oe/baby-moana",
+   "field": "release_location",
+   "searched": "WebSearch snippets, B314",
+   "note": "not re-searched this round; 469 claims stand"
+  },
+  {
+   "key": "lic/2017/hot-topic-coco-sugar-skull",
+   "field": "release",
+   "searched": "WebSearch snippets, B314",
+   "note": "lead: licensed Hot Topic Coco sugar skull enamel pin and BoxLunch Coco Remember Me set seen in results; years not stated - licensed cells"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 (final) of B019 DLR OE 2017; 30 WebSearch calls, search_snippet only. New: Tsum Tsum Holiday Willie the Giant design (MPC 69246; keyed wdw, year held), bronze Pin Trading logo price 11.99 (location hold kept), Elsa & Anna emoji DL-first/shared dates. No holds released. Remaining gaps go to long-term backlog."
+}

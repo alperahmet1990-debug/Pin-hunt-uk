@@ -10,6 +10,7 @@
  * This file is bundled into the mobile app and must only use the anon key.
  */
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { Platform } from 'react-native';
 import type { Session, User } from '@supabase/supabase-js';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { DEMO_SESSION, isDemoMode } from '@/lib/demoMode';
@@ -54,7 +55,12 @@ function safeAuthError(
   return fallback;
 }
 
-export const PASSWORD_RESET_REDIRECT = 'pinhunt://reset';
+// Native: the app's deep link. Web (the contributor website, #398): back to
+// this site's /reset, where the recovery tokens are read from the URL below
+// and AuthGuard sends the user to update-password. Each site's /reset must be
+// in Supabase Auth's redirect allow list (docs/release/CONTRIBUTOR-WEB.md).
+export const PASSWORD_RESET_REDIRECT =
+  Platform.OS === 'web' && typeof window !== 'undefined' ? `${window.location.origin}/reset` : 'pinhunt://reset';
 const PASSWORD_RESET_RETRY = 'Unable to send the reset email right now. Please try again shortly.';
 
 /**

@@ -49,3 +49,12 @@ describe('redirectSystemPath', () => {
     expect(redirectSystemPath({ path: '/pin/1', initial: false })).toBe('/pin/1');
   });
 });
+
+// #398: the contributor website's reset emails come back to https://<site>/reset.
+describe('parseRecoveryLink on the website', () => {
+  it('reads the tokens from the site\'s own /reset address', () => {
+    expect(parseRecoveryLink('https://contribute.example.test/reset#access_token=a&refresh_token=r&type=recovery'))
+      .toEqual({ kind: 'tokens', accessToken: 'a', refreshToken: 'r' });
+    expect(parseRecoveryLink('https://contribute.example.test/reset?code=c')).toEqual({ kind: 'code', code: 'c' });
+  });
+});

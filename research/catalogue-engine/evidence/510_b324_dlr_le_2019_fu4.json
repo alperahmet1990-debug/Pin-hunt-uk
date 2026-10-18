@@ -1,0 +1,1610 @@
+{
+ "packet_id": "backfill-b324-dlr-le-2019-fu4",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b324",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+   "title": "New Disney Pins June 2019 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+   "title": "New Disney Pins October 2019 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+   "title": "New Disney Pin November 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11-13",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+   "title": "New Disney Pins December 2019 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-4",
+   "title": "New Disney Pins December 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-parks-november-2019-pin-preview/",
+   "title": "Disney Parks November 2019 Pin Preview",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+   "title": "New Disney Pins October 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-galaxys-edge-opening-day-pins-at-disneyland/",
+   "title": "Star Wars: Galaxy's Edge Opening Day Pins at Disneyland",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tis-the-season-advent-calendar-2019-pin-collection/",
+   "title": "Tis the Season Advent Calendar 2019 Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+   "title": "PHOTOS: November Pin Releases for Walt Disney World and Disneyland Features First-Ever Commemorative Christmas Parade Pin...",
+   "publisher": "WDW News Today",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/05/disneyland-disney-world-june-pin-releases-include-illuminations-farewell-attraction-anniversaries-galaxys-edge-spaceship-earth-and-more/",
+   "title": "Disneyland, Disney World June Pin Releases Include IllumiNations Farewell, Attraction Anniversaries, Galaxy's Edge...",
+   "publisher": "WDW News Today",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/07/august-pin-releases-for-walt-disney-world-and-disneyland-feature-a-goofy-movie-haunted-mansion-50th-anniversary-and-countdown-to-galaxys-edge-pins/",
+   "title": "August Pin Releases for Walt Disney World and Disneyland Feature \"A Goofy Movie\", Haunted Mansion 50th Anniversary, and Countdown to Galaxy's Edge Pins",
+   "publisher": "WDW News Today",
+   "published_date": "2019-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/09/photos-october-pin-releases-for-walt-disney-world-and-disneyland-feature-great-movie-ride-mr-toad-fantasia-and-the-incredibles/",
+   "title": "PHOTOS: October Pin Releases for Walt Disney World and Disneyland Feature The Great Movie Ride, Mr. Toad, Fantasia, and The Incredibles",
+   "publisher": "WDW News Today",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/11/photos-december-2019-pin-releases-for-walt-disney-world-and-disneyland-feature-star-tours-30th-anniversary-princess-and-the-frog-10th-anniversary-matterhorn-disneys-riviera-resort-pins-and-more/",
+   "title": "December 2019 Pin Releases for Walt Disney World and Disneyland Feature Star Tours 30th Anniversary...",
+   "publisher": "WDW News Today",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+   "title": "December Pin Releases at Disneyland and Walt Disney World Focus on the Holidays, Star Wars",
+   "publisher": "WDWInfo",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/72607",
+   "title": "72607",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.pintrader.club/articles/disneyland-resort-pin-releases-october-2019/",
+   "title": "Disneyland Resort Pin Releases October 2019",
+   "publisher": "Pin Trader Club",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Galaxy's Edge monthly collection (Disneyland)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "DPB calls these pins part of the Galaxy's Edge monthly collection at Disneyland"
+    },
+    {
+     "field": "format",
+     "value": "series of single pins (monthly; several pins per month)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Three separately listed monthly pins released the same day, each LE 1,500"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "DPB weekly entries: available at DLR"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "Monthly pins listed as limited edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/christmas-parade-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Christmas Parade 2019 (Disneyland)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Disneyland Christmas Parade 2019 pin"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "one commemorative pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/holiday-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Holiday 2019 (Mele Kalikimaka)",
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "Christmas lineup in the Nov 2019 WDW/DLR pin roundup"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/galaxys-edge-droid-mystery",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-05-31",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-opening-day-pins-at-disneyland/",
+     "method": "search_snippet",
+     "note": "listed with the Disneyland opening-day releases, May 31, 2019"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2019/galaxys-edge-monthly/first-order-reconnaissance-kylo-ren-command-shuttle",
+   "set_key": "dlr/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "First Order Reconnaissance Kylo Ren's Command Shuttle",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "named in DPB weekly list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kylo Ren"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "subject named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "available at DLR Jun 20, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "monthly collection at Disneyland"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "listed as a single monthly pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/galaxys-edge-monthly/resistance-reveal-princess-leia",
+   "set_key": "dlr/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Resistance Reveal Princess Leia",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "named in DPB weekly list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Princess Leia"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "subject named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "available at DLR Jun 20, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-3",
+     "method": "search_snippet",
+     "note": "monthly collection at Disneyland"
+    },
+    {
+     "field": "pin_name",
+     "value": "Resistance Reveal Princess Leia",
+     "source_url": "https://wdwnt.com/2019/05/disneyland-disney-world-june-pin-releases-include-illuminations-farewell-attraction-anniversaries-galaxys-edge-spaceship-earth-and-more/",
+     "method": "search_snippet",
+     "note": "WDWNT June preview names a Resistance Reveal Princess Leia pin for Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/galaxys-edge-monthly/droid-schematic-bb-8",
+   "set_key": "dlr/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Droid Schematic BB-8",
+     "source_url": "https://wdwnt.com/2019/05/disneyland-disney-world-june-pin-releases-include-illuminations-farewell-attraction-anniversaries-galaxys-edge-spaceship-earth-and-more/",
+     "method": "search_snippet",
+     "note": "WDWNT June preview lists a BB-8 droid schematic pin among Disneyland's Galaxy's Edge pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "BB-8"
+     ],
+     "source_url": "https://wdwnt.com/2019/05/disneyland-disney-world-june-pin-releases-include-illuminations-farewell-attraction-anniversaries-galaxys-edge-spaceship-earth-and-more/",
+     "method": "search_snippet",
+     "note": "BB-8"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://wdwnt.com/2019/05/disneyland-disney-world-june-pin-releases-include-illuminations-farewell-attraction-anniversaries-galaxys-edge-spaceship-earth-and-more/",
+     "method": "search_snippet",
+     "note": "Disneyland June 2019 lineup"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://wdwnt.com/2019/05/disneyland-disney-world-june-pin-releases-include-illuminations-farewell-attraction-anniversaries-galaxys-edge-spaceship-earth-and-more/",
+     "method": "search_snippet",
+     "note": "June 2019 Disneyland preview"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/galaxys-edge-monthly/droid-schematic-r5",
+   "set_key": "dlr/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "R-5 Droid Schematic",
+     "source_url": "https://wdwnt.com/2019/07/august-pin-releases-for-walt-disney-world-and-disneyland-feature-a-goofy-movie-haunted-mansion-50th-anniversary-and-countdown-to-galaxys-edge-pins/",
+     "method": "search_snippet",
+     "note": "WDWNT August roundup names an R-5 Droid Schematic Galaxy's Edge pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/07/august-pin-releases-for-walt-disney-world-and-disneyland-feature-a-goofy-movie-haunted-mansion-50th-anniversary-and-countdown-to-galaxys-edge-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://wdwnt.com/2019/07/august-pin-releases-for-walt-disney-world-and-disneyland-feature-a-goofy-movie-haunted-mansion-50th-anniversary-and-countdown-to-galaxys-edge-pins/",
+     "method": "search_snippet",
+     "note": "WDWNT notes these Galaxy's Edge pins are only LE 1,500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://wdwnt.com/2019/07/august-pin-releases-for-walt-disney-world-and-disneyland-feature-a-goofy-movie-haunted-mansion-50th-anniversary-and-countdown-to-galaxys-edge-pins/",
+     "method": "search_snippet",
+     "note": "August 2019 release roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/galaxys-edge-monthly/first-order-reconnaissance-bb-9e",
+   "set_key": "dlr/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "First Order Reconnaissance BB-9E",
+     "source_url": "https://wdwnt.com/2019/07/august-pin-releases-for-walt-disney-world-and-disneyland-feature-a-goofy-movie-haunted-mansion-50th-anniversary-and-countdown-to-galaxys-edge-pins/",
+     "method": "search_snippet",
+     "note": "WDWNT August roundup names a First Order Reconnaissance BB-9E pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "BB-9E"
+     ],
+     "source_url": "https://wdwnt.com/2019/07/august-pin-releases-for-walt-disney-world-and-disneyland-feature-a-goofy-movie-haunted-mansion-50th-anniversary-and-countdown-to-galaxys-edge-pins/",
+     "method": "search_snippet",
+     "note": "BB-9E"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/07/august-pin-releases-for-walt-disney-world-and-disneyland-feature-a-goofy-movie-haunted-mansion-50th-anniversary-and-countdown-to-galaxys-edge-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://wdwnt.com/2019/07/august-pin-releases-for-walt-disney-world-and-disneyland-feature-a-goofy-movie-haunted-mansion-50th-anniversary-and-countdown-to-galaxys-edge-pins/",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://wdwnt.com/2019/07/august-pin-releases-for-walt-disney-world-and-disneyland-feature-a-goofy-movie-haunted-mansion-50th-anniversary-and-countdown-to-galaxys-edge-pins/",
+     "method": "search_snippet",
+     "note": "August 2019 release roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/galaxys-edge-monthly/resistance-reveal-lando",
+   "set_key": "dlr/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Resistance Reveal Lando",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "named in DPB weekly list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lando Calrissian"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "subject named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-17",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "available at DLR Oct 17, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "monthly collection at Disneyland"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://wdwnt.com/2019/09/photos-october-pin-releases-for-walt-disney-world-and-disneyland-feature-great-movie-ride-mr-toad-fantasia-and-the-incredibles/",
+     "method": "search_snippet",
+     "note": "WDWNT October roundup: Lando Calrissian Resistance Reveal pin at Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/galaxys-edge-monthly/t3",
+   "set_key": "dlr/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "T3",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "named in DPB weekly list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "T3"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "subject named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-17",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "available at DLR Oct 17, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "monthly collection at Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/galaxys-edge-monthly/first-order-reconnaissance-kylo-ren",
+   "set_key": "dlr/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "First Order Reconnaissance Kylo Ren",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "named in DPB weekly list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kylo Ren"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "subject named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "DPB Oct wk3 entry gives Sep 19, 2019 (post covers Oct 13-19)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "monthly collection at Disneyland"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://wdwnt.com/2019/09/photos-october-pin-releases-for-walt-disney-world-and-disneyland-feature-great-movie-ride-mr-toad-fantasia-and-the-incredibles/",
+     "method": "search_snippet",
+     "note": "WDWNT October roundup: Kylo Ren First Order Reconnaissance pin at Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/galaxys-edge-monthly/resistance-reveal-bb-8",
+   "set_key": "dlr/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "BB-8 Resistance Reveal",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "named in DPB weekly list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "BB-8"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "subject named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "available at DLR Nov 14, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "monthly collection at Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/galaxys-edge-monthly/first-order-reconnaissance-flametrooper",
+   "set_key": "dlr/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Flametrooper First Order Reconnaissance",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "named in DPB weekly list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Flametrooper"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "subject named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "available at DLR Nov 14, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "monthly collection at Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/galaxys-edge-monthly/r4",
+   "set_key": "dlr/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "R4",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "named in DPB weekly list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "R4 droid"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "subject named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "available at DLR Nov 14, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "monthly collection at Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/galaxys-edge-monthly/first-order-reconnaissance-709th-legion",
+   "set_key": "dlr/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "709th Legion First Order Reconnaissance",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "named in DPB weekly list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "709th Legion stormtroopers"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "subject named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-19",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "available at DLR Dec 19, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "monthly collection at Disneyland"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://wdwnt.com/2019/11/photos-december-2019-pin-releases-for-walt-disney-world-and-disneyland-feature-star-tours-30th-anniversary-princess-and-the-frog-10th-anniversary-matterhorn-disneys-riviera-resort-pins-and-more/",
+     "method": "search_snippet",
+     "note": "WDWNT December roundup lists a First Order Reconnaissance 709th Legion pin for Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/galaxys-edge-monthly/droid-schematic-dj-r3x",
+   "set_key": "dlr/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "DJ R3X Droid Schematic",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "named in DPB weekly list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "DJ R3X"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "subject named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-19",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "available at DLR Dec 19, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "monthly collection at Disneyland"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://wdwnt.com/2019/11/photos-december-2019-pin-releases-for-walt-disney-world-and-disneyland-feature-star-tours-30th-anniversary-princess-and-the-frog-10th-anniversary-matterhorn-disneys-riviera-resort-pins-and-more/",
+     "method": "search_snippet",
+     "note": "WDWNT December roundup lists a Droid Schematic DJ R3X for Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/galaxys-edge-monthly/resistance-reveal-luke-skywalker",
+   "set_key": "dlr/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Luke Skywalker Resistance Reveal Star Wars Galaxy's Edge Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "DPB Dec wk3 headline names this pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Luke Skywalker"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "Luke Skywalker"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://wdwnt.com/2019/11/photos-december-2019-pin-releases-for-walt-disney-world-and-disneyland-feature-star-tours-30th-anniversary-princess-and-the-frog-10th-anniversary-matterhorn-disneys-riviera-resort-pins-and-more/",
+     "method": "search_snippet",
+     "note": "WDWNT December roundup lists a Resistance Reveal Luke Skywalker for Disneyland"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "WDWInfo lists it as a limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "WDWInfo: LE 1,500"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/christmas-parade-2019/commemorative",
+   "set_key": "dlr/2019/christmas-parade-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Christmas Parade 2019",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "pin commemorating the 2019 Disneyland Christmas parade"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "$15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "available at DLR Nov 14, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Disneyland parade pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-14",
+     "source_url": "https://disneypinsblog.com/disney-parks-november-2019-pin-preview/",
+     "method": "search_snippet",
+     "note": "DPB Nov preview: Disneyland version available Nov 14, 2019, same price as WDW"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/disney-parks-november-2019-pin-preview/",
+     "method": "search_snippet",
+     "note": "$15.99"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/holiday-2019/mele-kalikimaka",
+   "set_key": "dlr/2019/holiday-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mele Kalikimaka",
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "Nov 2019 roundup lists a Mele Kalikimaka pin with the Enchanted Tiki Room birds"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Enchanted Tiki Room birds"
+     ],
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "features the Tiki Room birds"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11",
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "listed in the November 2019 park pin preview"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Michael",
+      "Jose",
+      "Pierre",
+      "Fritz"
+     ],
+     "source_url": "https://mypincentral.com/pin/72607",
+     "method": "search_snippet",
+     "note": "database entry names the four Tiki Room birds in festive hats/scarf"
+    },
+    {
+     "field": "front_text",
+     "value": "MELE KALIKIMAKA",
+     "source_url": "https://mypincentral.com/pin/72607",
+     "method": "search_snippet",
+     "note": "lettering on dark orange background"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/72607",
+     "method": "search_snippet",
+     "note": "back stamped limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://mypincentral.com/pin/72607",
+     "method": "search_snippet",
+     "note": "backstamp reads LE of 4000"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/72607",
+     "method": "search_snippet",
+     "note": "single pin showing all four birds"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/jack-skellington-annual-passholder/jack-skellington",
+   "set_key": "wdw/2019/jack-skellington-annual-passholder",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+     "method": "search_snippet",
+     "note": "DPB Oct wk1: AP exclusive sold at both Disneyland and WDW"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-03",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+     "method": "search_snippet",
+     "note": "available Oct 3, 2019"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://www.pintrader.club/articles/disneyland-resort-pin-releases-october-2019/",
+     "method": "search_snippet",
+     "note": "Disneyland Oct 2019 roundup lists Jack Skellington AP exclusive, limited release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/halloween-2019/jack-skellington-passholder",
+   "set_key": "dlr/2019/halloween-2019",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-10-03",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-1/",
+     "method": "search_snippet",
+     "note": "available at DLR and WDW Oct 3, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://www.pintrader.club/articles/disneyland-resort-pin-releases-october-2019/",
+     "method": "search_snippet",
+     "note": "listed in Disneyland Resort October 2019 releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/windows-of-magic/black-cauldron",
+   "set_key": "dlr/2019/windows-of-magic",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "WDWNT lists it among Disneyland Pins of the Month for Nov 21"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/crests-of-the-kingdom/matterhorn",
+   "set_key": "dlr/2019/crests-of-the-kingdom",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-4",
+     "method": "search_snippet",
+     "note": "DPB Dec wk4: 12th and final Crests pin, LE 2,000"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/tis-the-season-advent/mickey-mouse",
+   "set_key": "dlr/2019/tis-the-season-advent",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/tis-the-season-advent-calendar-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in the Window 4 (Mickey and Friends) character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/tis-the-season-advent/minnie-mouse",
+   "set_key": "dlr/2019/tis-the-season-advent",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/tis-the-season-advent-calendar-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in the Window 4 (Mickey and Friends) character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/tis-the-season-advent/donald-duck",
+   "set_key": "dlr/2019/tis-the-season-advent",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/tis-the-season-advent-calendar-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in the Window 4 (Mickey and Friends) character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/tis-the-season-advent/goofy",
+   "set_key": "dlr/2019/tis-the-season-advent",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/tis-the-season-advent-calendar-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in the Window 4 (Mickey and Friends) character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/tis-the-season-advent/pluto",
+   "set_key": "dlr/2019/tis-the-season-advent",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/tis-the-season-advent-calendar-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in the Window 4 (Mickey and Friends) character list"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/tis-the-season-advent/figaro",
+   "set_key": "dlr/2019/tis-the-season-advent",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Figaro"
+     ],
+     "source_url": "https://disneypinsblog.com/tis-the-season-advent-calendar-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "named in the Window 4 (Mickey and Friends) character list"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2019/galaxys-edge-monthly",
+   "field": "expected_pin_count",
+   "searched": "8 queries (DPB weekly posts Jun-Dec, WDWNT monthly roundups)",
+   "note": "Series size not stated; three pins per month seen (Reconnaissance / Resistance Reveal / Droid Schematic). Sep 2019 DLR lineup and Jul 18 trio not confirmed per pin"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-monthly/droid-schematic-bb-8",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "DPB Jun wk3 third entry is garbled (labelled Princess Leia, described as BB-8); LE 1,500/$17.99 not claimed for BB-8"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-monthly/droid-schematic-r5",
+   "field": "release_location",
+   "searched": "2 queries",
+   "note": "WDWNT August roundup covers WDW and DLR; snippet does not tie R-5 or BB-9E to Disneyland explicitly (WDW land opened Aug 29). Characters for R-5 not claimed"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-monthly/first-order-reconnaissance-bb-9e",
+   "field": "release_location",
+   "searched": "2 queries",
+   "note": "Park not stated in snippet; see R-5 note. Price and exact date not stated"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-monthly/first-order-reconnaissance-kylo-ren",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "conflict: DPB Oct wk3 gives Sep 19, 2019 inside an Oct 13-19 post; may be the Sep DLR monthly pin or a duplicate listing of the June Command Shuttle pin - confirm"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-monthly/t3",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "Listed only as a T3 pin; whether it is the Droid Schematic entry (WDWNT says a new Droid Schematic pin at DLR in Oct) not stated"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-monthly/r4",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "Listed only as R4; sub-line (Droid Schematic?) not stated"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-monthly/resistance-reveal-luke-skywalker",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "DPB snippet gives no date; WDWInfo date appears in a list ending Dec 26 - not claimed"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-july-release",
+   "field": "hold",
+   "searched": "3 queries",
+   "note": "kept: Jul 18 trio (Recon Stormtroopers, Han Solo, Droid Schematic K-2SO) fits the galaxys-edge-monthly sub-lines, but no per-pin entry, edition or price found"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-countdown/dj-r3x",
+   "field": "variant",
+   "searched": "1 query",
+   "note": "not the same pin as dlr/2019/galaxys-edge-monthly/droid-schematic-dj-r3x (Dec 19, LE 1,500); countdown DJ R3X is LE 3,000 May 2019"
+  },
+  {
+   "key": "dlr/2019/christmas-parade-2019/commemorative",
+   "field": "variant",
+   "searched": "3 queries",
+   "note": "separate pin from wdw/2019/christmas-parade-2019/commemorative (Magic Kingdom, Nov 6); design and edition size not in snippets"
+  },
+  {
+   "key": "dlr/2019/holiday-2019/mele-kalikimaka",
+   "field": "release_location",
+   "searched": "4 queries",
+   "note": "WDWNT roundup covers WDW and DLR; park not stated in snippets (earlier OE packets read it as Disneyland). Price not found"
+  },
+  {
+   "key": "dlr/2019/holiday-2019/mele-kalikimaka",
+   "field": "edition_size",
+   "searched": "4 queries",
+   "note": "LE 4,000 rests on one database page that gives no year; linked to 2019 by matching design only (2018 Mele Kalikimaka pin was LE 3,250, a different release)"
+  },
+  {
+   "key": "dlr/2019/halloween-2019/jack-skellington-passholder",
+   "field": "variant",
+   "searched": "1 query",
+   "note": "variant: same pin as wdw/2019/jack-skellington-annual-passholder/jack-skellington (DPB: one AP pin sold at both resorts Oct 3, $16.99); resolves 451/486 lead"
+  },
+  {
+   "key": "dlr/2019/windows-of-magic/black-cauldron",
+   "field": "hold",
+   "searched": "1 query",
+   "note": "kept: park now stated (Disneyland, Nov 21) but number 11, edition and price still not stated by any snippet"
+  },
+  {
+   "key": "dlr/2019/windows-of-magic/aurora",
+   "field": "hold",
+   "searched": "0 new queries",
+   "note": "kept (packet 453): no new per-pin evidence"
+  },
+  {
+   "key": "dlr/2019/windows-of-magic",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "#8 (Aug 2019) still not named; DPB Aug wk1/2/4 entries show no Windows of Magic pin, wk3 post not surfaced"
+  },
+  {
+   "key": "dlr/2019/crests-of-the-kingdom/matterhorn",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "conflict narrowed: DPB Dec wk4 per-pin entry states LE 2,000 (matches backstamp, packet 204); the LE 5,000 reading was not re-seen"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-droid-mystery",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "Still unknown; only a DPB admin comment reply says two per box (not claimed). Not the Droid Depot pack (16 pins, 5 per pack) nor the 2021 Jawa Droid Depot mystery set"
+  },
+  {
+   "key": "dlr/2019/tis-the-season-advent/mickey-mouse",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: named only in one window character list; mapping inferred from 6-per-window count; pending maintainer full-list decision. variant: same product as dsus/2019/tis-the-season-advent-calendar"
+  },
+  {
+   "key": "dlr/2019/tis-the-season-advent/minnie-mouse",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: named only in one window character list; mapping inferred from 6-per-window count; pending maintainer full-list decision. variant: same product as dsus/2019/tis-the-season-advent-calendar"
+  },
+  {
+   "key": "dlr/2019/tis-the-season-advent/donald-duck",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: named only in one window character list; mapping inferred from 6-per-window count; pending maintainer full-list decision. variant: same product as dsus/2019/tis-the-season-advent-calendar"
+  },
+  {
+   "key": "dlr/2019/tis-the-season-advent/goofy",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: named only in one window character list; mapping inferred from 6-per-window count; pending maintainer full-list decision. variant: same product as dsus/2019/tis-the-season-advent-calendar"
+  },
+  {
+   "key": "dlr/2019/tis-the-season-advent/pluto",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: named only in one window character list; mapping inferred from 6-per-window count; pending maintainer full-list decision. variant: same product as dsus/2019/tis-the-season-advent-calendar"
+  },
+  {
+   "key": "dlr/2019/tis-the-season-advent/figaro",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: named only in one window character list; mapping inferred from 6-per-window count; pending maintainer full-list decision. variant: same product as dsus/2019/tis-the-season-advent-calendar"
+  },
+  {
+   "key": "dlr/2019/tis-the-season-advent",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Window 3 (Nightmare Before Christmas) list names Jack, Sally, Zero, Oogie Boogie, Shock, Lock and a barrel - 7 names for 6 pins, so per-pin mapping unclear; not keyed. hold: confirm pin structure"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-club-33",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "#2 (Jul 12), #4 (Aug 23), #5 (Sep 13) designs still not found; DPB only gives schedule, #3 Constance, #6 Hitchhiking Ghosts, $30 each"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-countdown/at-at",
+   "field": "set_position",
+   "searched": "1 query",
+   "note": "still not stated as #1; WDWNT Apr preview calls it an exclusive DLR countdown pin, Chewbacca is 'second'"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-opening-countdown-pin-set",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "kept: LE 500 $84.99 re-seen; DLR box contents not described"
+  },
+  {
+   "key": "dlr/2019/oogie-boogie-bash",
+   "field": "hold",
+   "searched": "1 query",
+   "note": "kept: Passholder Exclusive pin ($17.99, Kingswell Camera Shop, limited release) design still not described"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery",
+   "field": "hold",
+   "searched": "0 new queries",
+   "note": "kept: no new per-pin evidence this pass; prior hold stands"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-oval-plaque-boxed-set",
+   "field": "hold",
+   "searched": "0 new queries",
+   "note": "kept: no new per-pin evidence this pass; prior hold stands"
+  },
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-pin-trading-night/lion-king-ptn",
+   "field": "hold",
+   "searched": "0 new queries",
+   "note": "kept: no new per-pin evidence this pass; prior hold stands"
+  },
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-pin-trading-night/ray-ptn",
+   "field": "hold",
+   "searched": "0 new queries",
+   "note": "kept: no new per-pin evidence this pass; prior hold stands"
+  },
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-framed-set",
+   "field": "hold",
+   "searched": "0 new queries",
+   "note": "kept: no new per-pin evidence this pass; prior hold stands"
+  },
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-mystery",
+   "field": "hold",
+   "searched": "0 new queries",
+   "note": "kept: no new per-pin evidence this pass; prior hold stands"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-holiday-2019-mystery",
+   "field": "hold",
+   "searched": "0 new queries",
+   "note": "kept: no new per-pin evidence this pass; prior hold stands"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-silhouette-mystery",
+   "field": "hold",
+   "searched": "0 new queries",
+   "note": "kept: no new per-pin evidence this pass; prior hold stands"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-monthly/droid-schematic-r5",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: August 2019 source does not state the park (possible WDW release / variant); round 52 review"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-monthly/first-order-reconnaissance-bb-9e",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: August 2019 source does not state the park (possible WDW release / variant); round 52 review"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-monthly/first-order-reconnaissance-kylo-ren",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: possible duplicate of the June Kylo Ren command shuttle pin; listed Sep 19 date conflicts with the Oct 17 post (round 52 review)"
+  },
+  {
+   "key": "dlr/2019/holiday-2019/mele-kalikimaka",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: park not stated and LE 4,000 back-stamp entry undated; 2019 rests on design match (round 52 review)"
+  }
+ ],
+ "discovery_notes": "Follow-up 4 of B004 (after 408, 453, 486). 29 standard searches, snippets only, blocked domains passed every time. New: DLR Galaxy's Edge monthly collection (15 pins Jun-Dec 2019, LE 1,500), Disneyland Christmas Parade 2019 pin (Nov 14), Mele Kalikimaka 2019 (LE 4,000 from database, year by design match), Jack Skellington AP shared with WDW (keyed under wdw, variant note on dlr), Black Cauldron park, Matterhorn LE 2,000 corroboration, Droid mystery date, advent window 4 (held). Resellers (yourwdwstore, ecrater, usshoppingsos, walmart) seen, not used. No prompt-injection content seen."
+}

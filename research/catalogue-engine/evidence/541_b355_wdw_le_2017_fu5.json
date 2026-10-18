@@ -1,0 +1,1109 @@
+{
+ "packet_id": "541_b355_wdw_le_2017_fu5",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+   "title": "New Disney Pins October 2017 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+   "title": "New Disney Pins November 2017 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+   "title": "New Disney Pins June 2017 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+   "title": "New Disney Pins August 2017 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-4",
+   "title": "New Disney Pins May 2017 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+   "title": "New Disney Pins July 2017 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+   "title": "New Disney Pins May 2017 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+   "title": "New Disney Pins February 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+   "title": "New Disney Pins July 2017 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+   "title": "New Disney Pins March 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.pintrader.club/pins/haunted-mansion-doorways-to-disney",
+   "title": "Haunted Mansion - Doorways to Disney",
+   "publisher": "Pintrader Club",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyfoodblog.com/2017/09/24/own-a-piece-of-toy-story-pizza-planet-with-this-pin/",
+   "title": "Own a Piece of Toy Story Pizza Planet with This Pin!",
+   "publisher": "Disney Food Blog",
+   "published_date": "2017-09-24",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://insidethemagic.net/2017/02/new-disney-pin-collections-coming-in-2017/",
+   "title": "New Disney Pin Collections coming in 2017",
+   "publisher": "Inside the Magic",
+   "published_date": "2017-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/165827",
+   "title": "165827",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-4",
+   "title": "New Disney Pins December 2017 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2017/doorways-to-disney",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Doorways to Disney",
+     "source_url": "https://insidethemagic.net/2017/02/new-disney-pin-collections-coming-in-2017/",
+     "method": "search_snippet",
+     "note": "2017 Disney Parks pin collection announced Feb 2017"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://insidethemagic.net/2017/02/new-disney-pin-collections-coming-in-2017/",
+     "method": "search_snippet",
+     "note": "each pin LE 4,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://insidethemagic.net/2017/02/new-disney-pin-collections-coming-in-2017/",
+     "method": "search_snippet",
+     "note": "edition size 4,000 per pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://insidethemagic.net/2017/02/new-disney-pin-collections-coming-in-2017/",
+     "method": "search_snippet",
+     "note": "shared collection between WDW and Disneyland Resort"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins (monthly series)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "monthly releases numbered within the collection; slider and hinge elements"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-4",
+     "method": "search_snippet",
+     "note": "Peter Pan described as 12th and final pin of the collection"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2017/christmas-countdown-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Days til Christmas 2017 countdown jumbo",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "countdown days til Christmas 2017 jumbo pin"
+    },
+    {
+     "field": "format",
+     "value": "single jumbo pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "one jumbo pin with moveable nose"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2017/aladdin-character-connection",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Aladdin Character Connection puzzle pin set",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "next puzzle character connection pin set features Aladdin"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set (one pin per box, puzzle)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "each box contains one pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "eight LE pins plus two LE chasers"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "two limited edition chaser pins"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "one pin per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "regular pins LE 1,100; chasers LE 600"
+    },
+    {
+     "field": "price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "$12.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "available Feb 2, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "DL and WDW"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2017/disney-recollections",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Recollections quarterly collection 2017",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+     "method": "search_snippet",
+     "note": "quarterly collection at WDW"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+     "method": "search_snippet",
+     "note": "WDW release"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins (quarterly series)",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+     "method": "search_snippet",
+     "note": "one pin per quarter"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2017/doorways-to-disney/haunted-mansion",
+   "set_key": "wdw/2017/doorways-to-disney",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Doorways to Disney - The Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+     "method": "search_snippet",
+     "note": "10th pin of the Doorways to Disney collection"
+    },
+    {
+     "field": "attraction",
+     "value": "The Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+     "method": "search_snippet",
+     "note": "Haunted Mansion door"
+    },
+    {
+     "field": "set_position",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+     "method": "search_snippet",
+     "note": "10th pin in the collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+     "method": "search_snippet",
+     "note": "retail $15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-26",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+     "method": "search_snippet",
+     "note": "available DL and WDW Oct 26, 2017"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-21",
+     "source_url": "https://www.pintrader.club/pins/haunted-mansion-doorways-to-disney",
+     "method": "search_snippet",
+     "note": "fan pin site gives 21 Sep 2017; conflicts with DPB"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+     "method": "search_snippet",
+     "note": "DL and WDW"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "slider"
+     ],
+     "source_url": "https://www.pintrader.club/pins/haunted-mansion-doorways-to-disney",
+     "method": "search_snippet",
+     "note": "hinged door; sliding butler figure holding it shut"
+    },
+    {
+     "field": "visual_description",
+     "value": "Hinged Servants Quarters door with sliding butler; hitchhiking ghosts behind",
+     "source_url": "https://www.pintrader.club/pins/haunted-mansion-doorways-to-disney",
+     "method": "search_snippet",
+     "note": "paraphrase of fan site description"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+     "method": "search_snippet",
+     "note": "single series pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/doorways-to-disney/jungle-cruise",
+   "set_key": "wdw/2017/doorways-to-disney",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Doorways to Disney - Jungle Cruise",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "11th pin of the collection"
+    },
+    {
+     "field": "attraction",
+     "value": "Jungle Cruise",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "November release features Jungle Cruise"
+    },
+    {
+     "field": "set_position",
+     "value": 11,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "11th pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "retail $15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-30",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "available DL and WDW Nov 30, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "DL and WDW"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "slider",
+      "hinged"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "slider and hinge elements"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "single series pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/doorways-to-disney/its-a-small-world",
+   "set_key": "wdw/2017/doorways-to-disney",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Doorways to Disney - it's a small world",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "June release, sixth pin of the collection"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "features it's a small world attraction"
+    },
+    {
+     "field": "set_position",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "sixth pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "retail $15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06-29",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "available DL and WDW Jun 29, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "DL and WDW"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "slider",
+      "hinged"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "slider and hinge elements"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "single series pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/doorways-to-disney/pirates-of-the-caribbean",
+   "set_key": "wdw/2017/doorways-to-disney",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "eighth pin; August release"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "retail $15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "US parks"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/doorways-to-disney/alice-in-wonderland",
+   "set_key": "wdw/2017/doorways-to-disney",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-4",
+     "method": "search_snippet",
+     "note": "fifth pin of the collection"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/doorways-to-disney/toy-story-mania",
+   "set_key": "wdw/2017/doorways-to-disney",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+     "method": "search_snippet",
+     "note": "seventh pin; July release features Toy Story Midway Mania"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/goofy-85th/spinner",
+   "set_key": "wdw/2017/goofy-85th",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-4",
+     "method": "search_snippet",
+     "note": "LE 3,000, retail $15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-4",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-4",
+     "method": "search_snippet",
+     "note": "available DL and WDW May 25, 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/christmas-countdown-2017/olaf-jumbo",
+   "set_key": "wdw/2017/christmas-countdown-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Countdown Days til Christmas 2017 jumbo (Olaf)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "countdown jumbo pin featuring Olaf"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Olaf"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "features Olaf"
+    },
+    {
+     "field": "main_character",
+     "value": "Olaf",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "Olaf"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-30",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "available DL and WDW Nov 30, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "DL and WDW"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "moveable nose",
+      "jumbo"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "jumbo pin; Olaf has a moveable nose"
+    },
+    {
+     "field": "front_text",
+     "value": "Days Till Christmas 2017",
+     "source_url": "https://mypincentral.com/pin/165827",
+     "method": "search_snippet",
+     "note": "white text on red background; Christmas Countdown series"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-5",
+     "method": "search_snippet",
+     "note": "single jumbo pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/piece-of-wdw-history/flying-fish",
+   "set_key": "wdw/2017/piece-of-wdw-history",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Piece of Walt Disney World History - Flying Fish",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "contains a piece of renovated Flying Fish restaurant"
+    },
+    {
+     "field": "attraction",
+     "value": "Flying Fish (Disney's BoardWalk)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "BoardWalk Resort restaurant"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "retail $15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05-18",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "available WDW May 18, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "WDW"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-3",
+     "method": "search_snippet",
+     "note": "single series pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/piece-of-wdw-history/pizza-planet",
+   "set_key": "wdw/2017/piece-of-wdw-history",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Piece of Walt Disney World History - Toy Story Pizza Planet",
+     "source_url": "https://www.disneyfoodblog.com/2017/09/24/own-a-piece-of-toy-story-pizza-planet-with-this-pin/",
+     "method": "search_snippet",
+     "note": "holds a bit of filament from Pizza Planet arcade decor"
+    },
+    {
+     "field": "attraction",
+     "value": "Toy Story Pizza Planet",
+     "source_url": "https://www.disneyfoodblog.com/2017/09/24/own-a-piece-of-toy-story-pizza-planet-with-this-pin/",
+     "method": "search_snippet",
+     "note": "restaurant closed Jan 2016"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disneyfoodblog.com/2017/09/24/own-a-piece-of-toy-story-pizza-planet-with-this-pin/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://www.disneyfoodblog.com/2017/09/24/own-a-piece-of-toy-story-pizza-planet-with-this-pin/",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-07",
+     "source_url": "https://www.disneyfoodblog.com/2017/09/24/own-a-piece-of-toy-story-pizza-planet-with-this-pin/",
+     "method": "search_snippet",
+     "note": "released Sep 7, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://www.disneyfoodblog.com/2017/09/24/own-a-piece-of-toy-story-pizza-planet-with-this-pin/",
+     "method": "search_snippet",
+     "note": "WDW"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneyfoodblog.com/2017/09/24/own-a-piece-of-toy-story-pizza-planet-with-this-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/disney-recollections/the-fox-and-the-hound",
+   "set_key": "wdw/2017/disney-recollections",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-2/",
+     "method": "search_snippet",
+     "note": "third pin of the 2017 quarterly collection"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/pandora-countdown/explore-the-bioluminescence",
+   "set_key": "wdw/2017/pandora-countdown",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+     "method": "search_snippet",
+     "note": "conflict: release post calls the pin reading Pandora Explore the Bioluminescence countdown pin 1; attribution to Mar wk1 inferred"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+     "method": "search_snippet",
+     "note": "conflict: same snippet says released Mar 2, 2017; 426 recorded May 4 / pin 3"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2017/doorways-to-disney",
+   "field": "pins",
+   "searched": "6 queries (positions 1-4, 6, 9)",
+   "note": "pins 1-4 and 9 not found; only a CollectionHero resale listing calls an Enchanted Tiki Room pin #2 (not recorded)"
+  },
+  {
+   "key": "wdw/2017/doorways-to-disney/haunted-mansion",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "conflict: DPB Oct 26, 2017 vs Pintrader Club 21 Sep 2017; both recorded"
+  },
+  {
+   "key": "wdw/2017/doorways-to-disney/pirates-of-the-caribbean",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "DPB Aug wk5 says August release; exact day not in snippet"
+  },
+  {
+   "key": "wdw/2017/doorways-to-disney",
+   "field": "line",
+   "searched": "n/a",
+   "note": "shared DL/WDW series keyed under wdw; no dlr keys exist in DLR 2017 packets 226/433/471/501/522"
+  },
+  {
+   "key": "wdw/2017/christmas-countdown-2017/olaf-jumbo",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "no retail price in snippet; reseller $31.99 not recorded. Separate CM-only Olaf box set LE 200 $49.95 seen (WDI/cast item), not recorded"
+  },
+  {
+   "key": "wdw/2017/christmas-countdown-2017/olaf-jumbo",
+   "field": "line",
+   "searched": "n/a",
+   "note": "shared DL/WDW release keyed under wdw; no dlr key found in DLR 2017 packets"
+  },
+  {
+   "key": "wdw/2017/aladdin-character-connection",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed; 8 LE 1,100 + 2 chaser LE 600 designs not named"
+  },
+  {
+   "key": "wdw/2017/aladdin-character-connection",
+   "field": "line",
+   "searched": "n/a",
+   "note": "shared DL/WDW keyed under wdw (499/520 lead key); no dlr 2017 key; 2016 Character Connection sets are dlr-keyed"
+  },
+  {
+   "key": "wdw/2017/aladdin-character-connection",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "reseller gives Feb 1, 2017 vs DPB Feb 2; reseller not recorded"
+  },
+  {
+   "key": "wdw/2017/goofy-85th/spinner",
+   "field": "line",
+   "searched": "n/a",
+   "note": "DPB says DL and WDW; no dlr key exists"
+  },
+  {
+   "key": "wdw/2017/piece-of-wdw-history/mickeys-toontown",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "hold: #1 Mickey's Toontown, LE 1,500, Feb 9 2017 seen only on reseller (yourwdwstore)"
+  },
+  {
+   "key": "wdw/2017/piece-of-wdw-history/pleasure-island",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "hold: #2 Pleasure Island, LE 1,500, Mar 9 2017 seen only on reseller (yourwdwstore)"
+  },
+  {
+   "key": "wdw/2017/piece-of-wdw-history/downtown-disney-sign",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "hold: #4 Downtown Disney Sign seen only on reseller category page; no details"
+  },
+  {
+   "key": "wdw/2017/piece-of-wdw-history/world-of-motion",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "hold: #8 World of Motion seen only on reseller category page; no details"
+  },
+  {
+   "key": "wdw/2017/piece-of-wdw-history/flying-fish",
+   "field": "set_position",
+   "searched": "2 queries",
+   "note": "reseller numbers it #5 (Flying Fish Cafe Donald); not recorded; Donald character not in DPB snippet"
+  },
+  {
+   "key": "wdw/2017/piece-of-wdw-history/pizza-planet",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "no price in DFB snippet; reseller numbers it #9 (not recorded)"
+  },
+  {
+   "key": "wdw/2017/disney-recollections/hercules",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "hold: pin 1 Hercules with Pegasus, Jan 19 2017 (LE 3,000 vs 1,500 conflict) seen only on resellers (distradingpins4u, yourwdwstore)"
+  },
+  {
+   "key": "wdw/2017/disney-recollections",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "pins 2 and 4 of the quarterly collection not found"
+  },
+  {
+   "key": "wdw/2017/pandora-countdown/explore-the-bioluminescence",
+   "field": "set_position",
+   "searched": "2 queries",
+   "note": "conflict: DPB release post pin 1 Mar 2 vs 426 pin 3 May 4; DPB preview named pin 1 Journey to Pandora; mapping unresolved"
+  },
+  {
+   "key": "wdw/2017/pandora-countdown",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: pin 2 Where the Mountains Float! (Apr 6, LE 1,250) still not mapped to B018 names"
+  },
+  {
+   "key": "wdw/2017/pandora-countdown-box-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: two box-only completer posters still unnamed; DPB repeats LE 250, May 27, Dylan Cole art"
+  },
+  {
+   "key": "wdw/2017/earth-day-2017/tigger-and-rabbit",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "hold: Earth Day 2017 Tigger & Rabbit LE 2,000 Apr 20 seen only on reseller (yourwdwstore)"
+  },
+  {
+   "key": "hkdl/2017/earth-day-2017/jiminy-cricket",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "lead: DPB HKDL Earth Day Apr 22 2017 Jiminy Cricket pin; HKDL only; for HKDL cell"
+  },
+  {
+   "key": "wdw/2017/star-wars-vehicles/tie-fighter",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "hold kept: #4, LE 6,000, Aug 10 still only on reseller (yourwdwstore); DPB Aug 2017 wk2 roundup not surfaced"
+  },
+  {
+   "key": "wdw/2017/star-wars-vehicles/tie-fighter",
+   "field": "set_position",
+   "searched": "2 queries",
+   "note": "hold: position 4 only on reseller"
+  },
+  {
+   "key": "wdw/2017/star-wars-pin-of-the-month/pin-12",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "hold kept: DPB SWC post still self-contradicts (Naboo heading, Endor body); Naboo also only on reseller coastalpinmagic"
+  },
+  {
+   "key": "wdw/2017/christmas-2017/merry-christmas-2017",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "still no price; $15.99 in DPB Dec wk4 belongs to Doorways Peter Pan"
+  },
+  {
+   "key": "wdw/2017/thanksgiving-2017/thanksgiving-2017",
+   "field": "original_price",
+   "searched": "0 queries",
+   "note": "not searched this pass"
+  },
+  {
+   "key": "wdw/2017/rivers-of-light",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "unchanged: no LE 2,000 Rivers of Light pin found; reseller Rivers of Light logo pin has no edition or year"
+  },
+  {
+   "key": "wdw/2017/love-is-an-adventure-love-is-strength-box-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: DPB repeats 4-pin LE 300 $99.99; members unnamed"
+  },
+  {
+   "key": "wdw/2017/love-is-an-adventure-carl-and-ellie-through-the-years",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: DPB repeats six pins of the couple through the years, LE 300 $139.99; members unnamed"
+  },
+  {
+   "key": "wdw/2017/fathers-day-2017",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "lead: DPB tag lists a Father's Day Cinderella pin dated Jun 6 2017; snippet figures (LE 5,000 $54.99) garbled; issuer unknown, possibly Disney Store"
+  },
+  {
+   "key": "wdw/2017/held-items",
+   "field": "all",
+   "searched": "n/a",
+   "note": "holds kept, no new per-pin evidence: runDisney lists, Love is Scary, Yeti, F&W ice cream box, MNSSHP/MVMCP box+frame, gold spaceship, Bambi 75th/Oswald 90th, Darth Vader Lives, mystery sets, Ezra/Phineas"
+  },
+  {
+   "key": "wdw/2017/secrets-of-the-empire/disney-springs",
+   "field": "edition_size",
+   "searched": "0 queries",
+   "note": "not searched this pass (budget); edition/design still open"
+  },
+  {
+   "key": "wdw/2017/snow-white-80th-boxed-set",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "not searched this pass; members unnamed"
+  }
+ ],
+ "discovery_notes": "Follow-up 5 of B018 (after 218/426/467/499/521). 30 standard WebSearch queries, blocked domains passed every time, all search_snippet. New: Doorways to Disney Haunted Mansion (10), Jungle Cruise (11), it's a small world (6); Olaf Christmas countdown jumbo LE 1,000; Piece of WDW History Flying Fish and Pizza Planet; Aladdin Character Connection set (set only, designs held). Corroboration: Doorways positions 5/7/8 and Pirates LE/price, Goofy 85th price, Recollections Fox & Hound position 3, Pandora countdown pin-1 conflict. Reseller-only items held."
+}

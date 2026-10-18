@@ -1,0 +1,890 @@
+{
+ "packet_id": "backfill-b341-asia-2023-2024-fu11",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b341",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/duffy-and-friends-spinner-pin-at-shanghai-disney-resort/",
+   "title": "Duffy and Friends Spinner Pin at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/duffy-and-friends-spring-festival-2023-pin-set-at-shanghai-disney-resort",
+   "title": "Duffy and Friends Spring Festival 2023 Pin Set at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/christmas-2023-train-mystery-pin-set-at-shanghai-disney-resort/",
+   "title": "Christmas 2023 Train Mystery Pin Set at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-character-snowman-mystery-pin-set-at-shanghai-disney-resort/",
+   "title": "Disney Character Snowman Mystery Pin Set at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/scrooge-mcduck-mystery-pin-set-at-shanghai-disney-resort/",
+   "title": "Scrooge McDuck Mystery Pin Set at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/zootopia-my-dream-job-mystery-pin-set-at-shanghai-disney-resort",
+   "title": "Zootopia \"My Dream Job\" Mystery Pin Set at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/donalds-quacky-duck-city-dangle-pin-at-tokyo-disney-resort",
+   "title": "Donald's Quacky Duck City Dangle Pin at Tokyo Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/splash-mountain-2024-pin-at-tokyo-disney-resort/",
+   "title": "Splash Mountain 2024 Pin at Tokyo Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://tdrexplorer.com/tokyo-disney-resort-sakura-merchandise-2023/",
+   "title": "Tokyo Disney Resort Sakura Merchandise 2023",
+   "publisher": "TDR Explorer",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+   "title": "June 2024 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/july-2024-hong-kong-disneyland-pin-releases/",
+   "title": "July 2024 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-villains-halloween-2024-mystery-pin-collection-at-tokyo-disney-resort/",
+   "title": "Disney Villains Halloween 2024 Mystery Pin Collection at Tokyo Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2023-pin-releases-at-shanghai-disney-resort",
+   "title": "Pin Trading Fun Day 2023 Pin Releases at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+   "title": "Lunar New Year 2023 Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+   "title": "Duffy and Friends Summer 2024 Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+   "title": "Mid-Autumn Festival 2024 Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/wind-vane-pin-series-at-hong-kong-disneyland/",
+   "title": "Wind Vane Pin Series at Hong Kong Disneyland",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "shdr/2023/oe-single/duffy-and-friends-spinner",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Duffy and Friends Spinner Pin",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-spinner-pin-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "single OE pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01-08",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-spinner-pin-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "8 Jan 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2024/donalds-quacky-duck-city",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Donald's Quacky Duck City merchandise (2024)",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-quacky-duck-city-dangle-pin-at-tokyo-disney-resort",
+     "method": "search_snippet",
+     "note": "event merchandise"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-quacky-duck-city-dangle-pin-at-tokyo-disney-resort",
+     "method": "search_snippet",
+     "note": "8 Apr 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-quacky-duck-city-dangle-pin-at-tokyo-disney-resort",
+     "method": "search_snippet",
+     "note": "event at Tokyo Disneyland"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2023/duffy-spring-festival-2023",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2023-01-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/duffy-and-friends-spring-festival-2023-pin-set-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "available 12 Jan 2023 (adds day precision); LE 300, 7 pins corroborated (value from search-engine summary of the page, not quoted page text)"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2023/christmas-2023-train-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Christmas 2023 Train Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/christmas-2023-train-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://disneypinsblog.com/christmas-2023-train-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "mystery set; pieces connect to form a train"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://disneypinsblog.com/christmas-2023-train-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "December 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/christmas-2023-train-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/disney-character-snowman-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Character Snowman Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/disney-character-snowman-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://disneypinsblog.com/disney-character-snowman-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "mystery set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 21,
+     "source_url": "https://disneypinsblog.com/disney-character-snowman-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "21 pins in total"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/disney-character-snowman-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "released December 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/disney-character-snowman-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/scrooge-mcduck-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Scrooge McDuck Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/scrooge-mcduck-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://disneypinsblog.com/scrooge-mcduck-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "hinged mystery pins; vault-style packaging"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/scrooge-mcduck-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "six pins in total"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05",
+     "source_url": "https://disneypinsblog.com/scrooge-mcduck-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "released May 2024 at SHDR"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/scrooge-mcduck-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/zootopia-my-dream-job-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Zootopia \"My Dream Job\" Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-my-dream-job-mystery-pin-set-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-my-dream-job-mystery-pin-set-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "mystery set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-my-dream-job-mystery-pin-set-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "eight pins in total"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-my-dream-job-mystery-pin-set-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-my-dream-job-mystery-pin-set-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "released January 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-my-dream-job-mystery-pin-set-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "post title"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2023/sakura-2023-pin-badge-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tokyo Disney Resort Sakura 2023 Pin Badge Set",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-sakura-merchandise-2023/",
+     "method": "search_snippet",
+     "note": "listed in 2023 sakura merchandise"
+    },
+    {
+     "field": "price",
+     "value": 2300,
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-sakura-merchandise-2023/",
+     "method": "search_snippet",
+     "note": "Pin Badge Set ¥2,300"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-sakura-merchandise-2023/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02-02",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-sakura-merchandise-2023/",
+     "method": "search_snippet",
+     "note": "collection on sale 2 Feb 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland (Gag Factory) and Tokyo DisneySea (Bella Minni Collection)",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-sakura-merchandise-2023/",
+     "method": "search_snippet",
+     "note": "sales locations (value from search-engine summary of the page, not quoted page text)"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "shdr/2023/oe/duffy-and-friends-spinner",
+   "set_key": "shdr/2023/oe-single/duffy-and-friends-spinner",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Duffy and Friends Spinner Pin",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-spinner-pin-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy",
+      "LinaBell",
+      "StellaLou",
+      "CookieAnn",
+      "Gelatoni",
+      "Olu Mel",
+      "ShellieMay"
+     ],
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-spinner-pin-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "snippet says the spinner features these seven characters"
+    },
+    {
+     "field": "main_character",
+     "value": "Duffy",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-spinner-pin-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Duffy and Friends spinner; Duffy named first (value from search-engine summary of the page, not quoted page text)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-spinner-pin-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "single spinner pin showing all seven characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-spinner-pin-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "snippet: open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01-08",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-spinner-pin-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "available starting 8 Jan 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-spinner-pin-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2024/donalds-quacky-duck-city/dangle-pin",
+   "set_key": "tdr/2024/donalds-quacky-duck-city",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald's Quacky Duck City Dangle Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-quacky-duck-city-dangle-pin-at-tokyo-disney-resort",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-quacky-duck-city-dangle-pin-at-tokyo-disney-resort",
+     "method": "search_snippet",
+     "note": "features Donald Duck"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-quacky-duck-city-dangle-pin-at-tokyo-disney-resort",
+     "method": "search_snippet",
+     "note": "Donald Duck"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-quacky-duck-city-dangle-pin-at-tokyo-disney-resort",
+     "method": "search_snippet",
+     "note": "single dangle pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Donald Duck dangle pin reading 'Disney Pal-Palooza' at the top",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-quacky-duck-city-dangle-pin-at-tokyo-disney-resort",
+     "method": "search_snippet",
+     "note": "paraphrase of snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 1200,
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-quacky-duck-city-dangle-pin-at-tokyo-disney-resort",
+     "method": "search_snippet",
+     "note": "retail price ¥1,200"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-quacky-duck-city-dangle-pin-at-tokyo-disney-resort",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-quacky-duck-city-dangle-pin-at-tokyo-disney-resort",
+     "method": "search_snippet",
+     "note": "available from 8 Apr 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/donalds-quacky-duck-city-dangle-pin-at-tokyo-disney-resort",
+     "method": "search_snippet",
+     "note": "commemorates 2024 event at Tokyo Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/june-2024/donald-duck-birthday",
+   "set_key": "hkdl/2024/june-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck Happy Birthday Pin (2024)",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "June 2024 HKDL release list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "Donald Duck birthday pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "original_price",
+     "value": 159,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HK$159"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "eStore Redemption Center 1 Jun-30 Sep 2024, leftovers to Emporium/Archive Shop (value from search-engine summary of the page, not quoted page text)"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/pin-go-2024/donald",
+   "set_key": "hkdl/2024/pin-go-2024",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 159,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "Donald Duck PIN GO 2024 pin HK$159 (new field; LE 600 corroborated)"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "corroborates LE 600"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/july-2024/tiana-mirror-case",
+   "set_key": "hkdl/2024/july-2024",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 169,
+     "source_url": "https://disneypinsblog.com/july-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "Tiana Princess Mirror Case pin HK$169"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/july-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-07-12",
+     "source_url": "https://disneypinsblog.com/july-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "eStore sale 12-14 Jul 2024 (value from search-engine summary of the page, not quoted page text)"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/july-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "corroborates LE 500"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2024/splash-mountain-2024/pin",
+   "set_key": "tdr/2024/splash-mountain-2024",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/splash-mountain-2024-pin-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "DPB snippet: features Mickey Mouse and Pluto"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/splash-mountain-2024-pin-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/splash-mountain-2024-pin-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 1200,
+     "source_url": "https://disneypinsblog.com/splash-mountain-2024-pin-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "¥1,200"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://disneypinsblog.com/splash-mountain-2024-pin-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-10-24",
+     "source_url": "https://disneypinsblog.com/splash-mountain-2024-pin-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "available from 24 Oct 2024"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2024/halloween-2024-villains-mystery/dr-facilier",
+   "set_key": "tdr/2024/halloween-2024-villains-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dr. Facilier"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-villains-halloween-2024-mystery-pin-collection-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "DPB again lists Jafar, Captain Hook, Dr. Facilier, Maleficent, Ursula as the 5 pins (corroboration only)"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "tdr/2024/splash-mountain-2024/pin",
+   "field": "characters",
+   "searched": "DPB TDR 2024 search",
+   "note": "prior reseller-only hold superseded: Disney Pins Blog snippet now states Mickey & Pluto, OE, ¥1,200, 24 Oct 2024 (non-reseller)"
+  },
+  {
+   "key": "tdr/2024/donalds-quacky-duck-city/dangle-pin",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "edition type/size not stated"
+  },
+  {
+   "key": "tdr/2024/donald-birthday-2024",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "no TDR Donald birthday 2024 LE 300 pin found on allowed sources; DPB 300 hit is the DPB-store Donald 90th pin; TDR birthday badge collection is 2025"
+  },
+  {
+   "key": "hkdl/2024/donald-duck-birthday-2024",
+   "field": "edition_size",
+   "searched": "June 2024 DPB post",
+   "note": "Carousell-only 'LE 300' lead conflicts with DPB LE 500 HK$159 June 2024 birthday pin (recorded as hkdl/2024/june-2024/donald-duck-birthday); likely the same pin, unconfirmed"
+  },
+  {
+   "key": "shdr/2023/christmas-2023-train-mystery",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed - count and designs not stated; Duffy & Friends and Mickey & Friends named for the collection only"
+  },
+  {
+   "key": "shdr/2024/disney-character-snowman-mystery",
+   "field": "designs",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed - 21 pins; characters from Mickey & Friends, Winnie the Pooh, Duffy & Friends listed only collectively (resolves 479 year lead: Dec 2024)"
+  },
+  {
+   "key": "shdr/2024/scrooge-mcduck-mystery",
+   "field": "designs",
+   "searched": "1 query",
+   "note": "6 designs not named; a 2026 Disney Store re-release exists (separate)"
+  },
+  {
+   "key": "shdr/2024/zootopia-my-dream-job-mystery",
+   "field": "designs",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed - DPB names Judy Hopps, Nick Wilde, Flash 'and more'; per-pin listings only on reseller usshoppingsos (not used)"
+  },
+  {
+   "key": "tdr/2023/sakura-2023-pin-badge-set",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); collection art shows Mickey, Minnie, Pluto but set contents/count not stated; reseller k23japan lists a 5-pin logo set (not used)"
+  },
+  {
+   "key": "tdr/2024/halloween-2024-villains-mystery/dr-facilier",
+   "field": "characters",
+   "searched": "DPB recheck",
+   "note": "hold: Disney by Mark conflict (Queen of Hearts) still unresolved; DPB again lists Facilier"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-busy-buggies-mystery",
+   "field": "designs",
+   "searched": "1 query",
+   "note": "hold: 5 types per box / 5-pc set still only on resellers (k23japan, usshoppingsos); designs unnamed; set structure vs pin badge set unresolved"
+  },
+  {
+   "key": "tdr/2023/duffy-from-all-of-us-pin-badge-set",
+   "field": "pin_structure",
+   "searched": "not re-searched (budget)",
+   "note": "hold unchanged (506)"
+  },
+  {
+   "key": "shdr/2023/pin-trading-fun-day-2023",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "five LE 500 pins and LE 300 box still unnamed on allowed sources; Disney 100 box title reseller-only"
+  },
+  {
+   "key": "shdr/2024/pin-trading-fun-day-2024",
+   "field": "edition_size",
+   "searched": "Chinese + English queries",
+   "note": "still no edition sizes on allowed sources"
+  },
+  {
+   "key": "shdr/2023/lunar-new-year-2023-mystery",
+   "field": "designs",
+   "searched": "1 query",
+   "note": "12 designs still unnamed"
+  },
+  {
+   "key": "shdr/2024/duffy-summer-2024-mystery",
+   "field": "designs",
+   "searched": "1 query",
+   "note": "8 designs still unnamed; DPB snippet gives count only"
+  },
+  {
+   "key": "shdr/2024/mid-autumn-festival-2024-duffy-mystery",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "count still not in snippet"
+  },
+  {
+   "key": "hkdl/2023/world-of-frozen",
+   "field": "opening_day_pin",
+   "searched": "1 query",
+   "note": "no WoF opening-day LE pin found on allowed sources; mystery box 9 designs still reseller-only"
+  },
+  {
+   "key": "hkdl/2023/wind-vane",
+   "field": "members",
+   "searched": "1 query",
+   "note": "DPB snippet: OE Jan 2023, princess silhouette backers; princesses not named"
+  },
+  {
+   "key": "hkdl/2024/redemption-series-2024",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "July first two releases and per-land designs/prices still unnamed; structure holds unchanged (479)"
+  },
+  {
+   "key": "hkdl/2024",
+   "field": "monthly_posts",
+   "searched": "1 query",
+   "note": "DPB HKDL Feb and Dec 2024 posts still not surfaced"
+  },
+  {
+   "key": "hkdl/tsum-tsum-monsters-inc-and-pooh",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead: DPB 2 OE HKDL-exclusive Tsum Tsum pins (Monsters Inc, Winnie the Pooh); post undated - year unknown, not recorded"
+  },
+  {
+   "key": "tdr/monorail-pin",
+   "field": "design",
+   "searched": "1 query",
+   "note": "TDR annual monorail pin (exchange 3 free passes) - 2023/2024 designs not found"
+  },
+  {
+   "key": "tdr/2023/40th-dream-go-round-framed-pin-set",
+   "field": "members",
+   "searched": "TDR Explorer recheck",
+   "note": "hold unchanged (446): same single set description only"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-peter-pans-never-land-pin-set/peter-pan",
+   "field": "members",
+   "searched": "not re-searched",
+   "note": "hold unchanged (446)"
+  },
+  {
+   "key": "tdr/2024/40th-grand-finale-pin-set",
+   "field": "members",
+   "searched": "not re-searched",
+   "note": "hold unchanged (446)"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-hotel-pin-set",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold unchanged (446)"
+  },
+  {
+   "key": "shdr/2023/zootopia-grand-opening/framed-pin",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold unchanged (446)"
+  },
+  {
+   "key": "tdr/2023/40th-harmony-in-color",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold: 13-pin set still reseller-only (k23japan)"
+  }
+ ],
+ "discovery_notes": "Search-snippet leads only; 28 standard searches. Follow-up 11 of B041. Keys reused from 446/479/506. New: SHDR Duffy & Friends spinner (Jan 2023), Christmas 2023 Train mystery, Snowman mystery (Dec 2024, 21), Scrooge McDuck mystery (May 2024, 6), Zootopia My Dream Job mystery (Jan 2024, 8); TDR Quacky Duck City dangle pin (Apr 2024), Sakura 2023 pin badge set; HKDL June 2024 Donald birthday LE 500. Splash Mountain 2024 details now from DPB (non-reseller). No set-member hold released."
+}

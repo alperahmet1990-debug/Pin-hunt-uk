@@ -1,0 +1,1173 @@
+{
+ "packet_id": "523_b337_dlp_2017_fu4",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+   "title": "New Pin Releases Disneyland Paris September 2017",
+   "publisher": "Travel to the Magic",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-09-13"
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-september-2017-pins/",
+   "title": "Disneyland Paris September 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+   "title": "Minnie Mouse Signature Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+   "title": "Beauty and the Beast Live Action Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://forum.disneygazette.fr/viewtopic.php?t=13056",
+   "title": "103eme Pin Trading Night - 26 Mai 2017",
+   "publisher": "Disney Gazette forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.passiondlp.com/actus/arc025.php",
+   "title": "passiondlp : Archives Disneyland Paris 2017 trimestre 3",
+   "publisher": "passiondlp",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-november-2017-pins",
+   "title": "Disneyland Paris November 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-may-2017-pins",
+   "title": "Disneyland Paris May 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/tag/disneyland-paris-merchandise/",
+   "title": "Disneyland Paris Merchandise (tag page)",
+   "publisher": "Dedicated to DLP",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/coco-disney-pixar-pin-series-by-artland",
+   "title": "Coco Disney Pixar Pin Series by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disneyland-paris-the-little-mermaid-emoji-pins-207801017087.html",
+   "title": "Disneyland Paris The Little Mermaid Emoji Pins",
+   "publisher": "Disney Store EU",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disneyland-paris-mickey-mouse-emoji-pins-207801017084.html",
+   "title": "Disneyland Paris Mickey Mouse Emoji Pins",
+   "publisher": "Disney Store EU",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disneyland-paris-alice-in-wonderland-emoji-pins-207801017088.html",
+   "title": "Disneyland Paris Alice In Wonderland Emoji Pins",
+   "publisher": "Disney Store EU",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disneyland-paris-mickey-and-minnie-mouse-emoji-pins-207801017083.html",
+   "title": "Disneyland Paris Mickey And Minnie Mouse Emoji Pins",
+   "publisher": "Disney Store EU",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disney-store-peter-pan-characters-on-parade-limited-edition-pin-466042753524.html",
+   "title": "Disney Store Peter Pan 'Characters On Parade' Limited Edition Pin",
+   "publisher": "Disney Store EU",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2017/september-16-2017-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "25th Anniversary limited edition pins, 16 September 2017",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "three LE 25th anniversary pins on Sat 16 Sep (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "three LE pins listed for 16 Sep (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "each LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-16",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "Sat 16 Sep 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "sold only at Pueblo Trading Post"
+    },
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "each pin described separately, each limited to 700 (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/september-15-2017-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars pins, 15 September 2017",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "new Star Wars pins Fri 15 Sep; all but the Episode 8 logo are mystery pins (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-15",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "15 Sep 2017"
+    },
+    {
+     "field": "format",
+     "value": "single pin plus mystery pins",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "logo pin named; rest mystery (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/day-of-the-dead-september-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Day of the Dead Mickey pins, 30 September 2017",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "two Mickey pins with Day of the Dead designs on 30 Sep (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "two Mickey pins (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-30",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "30 Sep 2017"
+    },
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "two pins each described (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/minnie-signature-haute-couture-2017",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "blog says the LE 950 set has five different pins (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_size",
+     "value": 950,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 950 worldwide; matches dein-dlrp 300 at DLP + 650 online (435) - link inferred (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "five pins in hatbox-shaped display case (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-09",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "US Disney Store date 9 Mar 2017; blog says first released at Disney Store UK (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "price",
+     "value": 59.95,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 59.95 US retail; DLP price 64.99 EUR per dein-dlrp (435) (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/ptn-may-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "103rd Pin Trading Night, 26 May 2017",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?t=13056",
+     "method": "search_snippet",
+     "note": "forum thread titled 103rd PTN 26 May 2017 (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05-26",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?t=13056",
+     "method": "search_snippet",
+     "note": "Fri 26 May 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Newport Bay Club convention centre",
+     "source_url": "https://forum.disneygazette.fr/viewtopic.php?t=13056",
+     "method": "search_snippet",
+     "note": "venue per forum post (search-engine summary of page, not quoted text)"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2017/september-16-2017-le/tinker-bell",
+   "set_key": "dlp/2017/september-16-2017-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "25th Anniversary LE pin - Tinker Bell",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "one of three 16 Sep LE pins (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "pin shows Tinker"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "Tinker"
+    },
+    {
+     "field": "visual_description",
+     "value": "Tinker Bell anniversary LE pin",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "paraphrase (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "each limited to 700 (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-16",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "16 Sep 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "Pueblo only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "listed as an individual LE pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/september-16-2017-le/wendy",
+   "set_key": "dlp/2017/september-16-2017-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "25th Anniversary LE pin - Wendy",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "one of three 16 Sep LE pins (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Wendy Darling"
+     ],
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "pin shows Wendy"
+    },
+    {
+     "field": "main_character",
+     "value": "Wendy Darling",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "Wendy"
+    },
+    {
+     "field": "visual_description",
+     "value": "Wendy anniversary LE pin",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "paraphrase (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "each limited to 700 (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-16",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "16 Sep 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "Pueblo only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "listed as an individual LE pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/september-16-2017-le/jungle-book",
+   "set_key": "dlp/2017/september-16-2017-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "25th Anniversary LE pin - The Jungle Book",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "one of three 16 Sep LE pins (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Jungle Book characters anniversary LE pin",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "paraphrase (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "each limited to 700 (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-16",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "16 Sep 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "Pueblo only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "listed as an individual LE pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/september-15-2017-releases/star-wars-episode-8-logo",
+   "set_key": "dlp/2017/september-15-2017-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars Episode 8 logo pin",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "named as the non-mystery pin (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "Star Wars"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-15",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "15 Sep 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "DLP Sep releases"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "single logo pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/day-of-the-dead-september-2017/mickey-head",
+   "set_key": "dlp/2017/day-of-the-dead-september-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Day of the Dead Mickey head pin",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "one of two 30 Sep Mickey pins (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey head only, Day of the Dead design",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "paraphrase (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-30",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "30 Sep 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "DLP"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "described individually"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/day-of-the-dead-september-2017/mickey-castle",
+   "set_key": "dlp/2017/day-of-the-dead-september-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Day of the Dead Mickey with castle pin",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "one of two 30 Sep Mickey pins (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey in front of Sleeping Beauty Castle, Day of the Dead design",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "paraphrase (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-30",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "30 Sep 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "DLP"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "described individually"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/pin-trading-day-september-2017/aurora",
+   "set_key": "dlp/2017/pin-trading-day-september-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "second source: PTD 30 Sep has its own Princess Aurora pin (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "main_character",
+     "value": "Aurora",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "Aurora"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-30",
+     "source_url": "https://www.traveltothemagic.net/new-pin-releases-disneyland-paris-september-2017/",
+     "method": "search_snippet",
+     "note": "PTD 30 Sep 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/minnie-signature-haute-couture-2017/minnie-figaro",
+   "set_key": "dlp/2017/minnie-signature-haute-couture-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie with Figaro",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "one of five named pins in the Minnie Signature set (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse",
+      "Figaro"
+     ],
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "Minnie with Figaro"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "Minnie"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 950"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pin in multi-pin pack",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "set features five different pins (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/minnie-signature-haute-couture-2017/bow",
+   "set_key": "dlp/2017/minnie-signature-haute-couture-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bow",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "one of five named pins in the Minnie Signature set (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 950"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pin in multi-pin pack",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "set features five different pins (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/minnie-signature-haute-couture-2017/sunglasses",
+   "set_key": "dlp/2017/minnie-signature-haute-couture-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sunglasses",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "one of five named pins in the Minnie Signature set (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 950"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pin in multi-pin pack",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "set features five different pins (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/minnie-signature-haute-couture-2017/hat",
+   "set_key": "dlp/2017/minnie-signature-haute-couture-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hat",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "one of five named pins in the Minnie Signature set (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 950"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pin in multi-pin pack",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "set features five different pins (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/minnie-signature-haute-couture-2017/luggage",
+   "set_key": "dlp/2017/minnie-signature-haute-couture-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Luggage",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "one of five named pins in the Minnie Signature set (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "set LE 950"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pin in multi-pin pack",
+     "source_url": "https://disneypinsblog.com/minnie-mouse-signature-pin-set/",
+     "method": "search_snippet",
+     "note": "set features five different pins (search-engine summary of page, not quoted text)"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2017/september-16-2017-le/tinker-bell",
+   "field": "original_price",
+   "searched": "TTM Sep 2017; 2 queries",
+   "note": "no price in snippet; single source (TTM), no dein-dlrp Sep 2017 page indexed"
+  },
+  {
+   "key": "dlp/2017/september-16-2017-le/wendy",
+   "field": "original_price",
+   "searched": "TTM Sep 2017; 2 queries",
+   "note": "no price in snippet; single source (TTM), no dein-dlrp Sep 2017 page indexed"
+  },
+  {
+   "key": "dlp/2017/september-16-2017-le/jungle-book",
+   "field": "original_price",
+   "searched": "TTM Sep 2017; 2 queries",
+   "note": "no price in snippet; single source (TTM), no dein-dlrp Sep 2017 page indexed"
+  },
+  {
+   "key": "dlp/2017/september-16-2017-le/jungle-book",
+   "field": "characters",
+   "searched": "TTM Sep 2017",
+   "note": "summary says 'Jungle Book stars' only; characters not named"
+  },
+  {
+   "key": "dlp/2017/september-16-2017-le/tinker-bell",
+   "field": "identity",
+   "searched": "prior packets 227/435/472/502",
+   "note": "distinct date from Mar spring Tink lamppost LE 700 (472) and PTD Tink giveaway (30 Sep); may be part of 'stylish character' 25th series - unconfirmed"
+  },
+  {
+   "key": "dlp/2017/september-15-2017-releases/star-wars-episode-8-logo",
+   "field": "edition_type",
+   "searched": "TTM; 1 extra query",
+   "note": "edition/price not stated"
+  },
+  {
+   "key": "dlp/2017/september-15-2017-releases",
+   "field": "members",
+   "searched": "TTM; 1 query on DLP 15 Sep Star Wars mystery",
+   "note": "mystery pin designs and count not named; US Force Friday II mystery sets are a different release, not linked"
+  },
+  {
+   "key": "dlp/2017/day-of-the-dead-september-2017/mickey-head",
+   "field": "edition_type",
+   "searched": "TTM Sep 2017",
+   "note": "edition and price not stated; relation to Oct Coco range unknown"
+  },
+  {
+   "key": "dlp/2017/day-of-the-dead-september-2017/mickey-castle",
+   "field": "edition_type",
+   "searched": "TTM Sep 2017",
+   "note": "edition and price not stated; relation to Oct Coco range unknown"
+  },
+  {
+   "key": "dlp/2017/pin-trading-day-september-2017/aurora",
+   "field": "pin_structure",
+   "searched": "TTM Sep 2017",
+   "note": "hold kept (472): TTM now corroborates Aurora as a PTD pin (2nd source), but no edition size; maintainer full-list decision still pending"
+  },
+  {
+   "key": "dlp/2017/pin-trading-day-september-2017",
+   "field": "release_location",
+   "searched": "disneypinsblog Sep 2017",
+   "note": "disneypinsblog also places PTD 30 Sep at Pueblo Trading Post Frontierland (corroborates 472)"
+  },
+  {
+   "key": "dlp/2017/september-2017-releases",
+   "field": "members",
+   "searched": "TTM + disneypinsblog",
+   "note": "TTM: runDisney weekend 21-24 Sep had 11 pins and a lanyard (expo / preorder); pins not named; see half-marathon keys in 227"
+  },
+  {
+   "key": "dlp/2017/minnie-signature-haute-couture-2017/minnie-figaro",
+   "field": "identity",
+   "searched": "3 queries",
+   "note": "hold: confirm DLP LE 300 issue is this same 5-pin set; link rests on 300+650=950 and matching accessory names only"
+  },
+  {
+   "key": "dlp/2017/minnie-signature-haute-couture-2017/bow",
+   "field": "identity",
+   "searched": "3 queries",
+   "note": "hold: confirm DLP LE 300 issue is this same 5-pin set; link rests on 300+650=950 and matching accessory names only"
+  },
+  {
+   "key": "dlp/2017/minnie-signature-haute-couture-2017/sunglasses",
+   "field": "identity",
+   "searched": "3 queries",
+   "note": "hold: confirm DLP LE 300 issue is this same 5-pin set; link rests on 300+650=950 and matching accessory names only"
+  },
+  {
+   "key": "dlp/2017/minnie-signature-haute-couture-2017/hat",
+   "field": "identity",
+   "searched": "3 queries",
+   "note": "hold: confirm DLP LE 300 issue is this same 5-pin set; link rests on 300+650=950 and matching accessory names only"
+  },
+  {
+   "key": "dlp/2017/minnie-signature-haute-couture-2017/luggage",
+   "field": "identity",
+   "searched": "3 queries",
+   "note": "hold: confirm DLP LE 300 issue is this same 5-pin set; link rests on 300+650=950 and matching accessory names only"
+  },
+  {
+   "key": "dlp/2017/minnie-signature-haute-couture-2017",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "partially released (435 hold): disneypinsblog names five pins; disneypinsblog also mentions a UK set 'LE 150 Europe / 950 worldwide' - may conflict with DLP 300; per-pin DLP link still held"
+  },
+  {
+   "key": "dlp/2017/minnie-signature-haute-couture-2017",
+   "field": "lead",
+   "searched": "disneypinsblog",
+   "note": "lead: dsuk - set first released at Disney Store UK per disneypinsblog; not keyed under dsuk here"
+  },
+  {
+   "key": "dlp/2017/beauty-and-the-beast-le-set-2017",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "hold kept (435). lead: disneypinsblog live-action BatB 3-pin set LE 1000 (Belle; Beast; Lumiere group) - matches 300+700 only by total; date given as Mon 16 Jan 2016 (likely 2017); not linked"
+  },
+  {
+   "key": "dlp/2017/ptn-may-2017",
+   "field": "members",
+   "searched": "passiondlp Q2 archive (not indexed); 3 queries",
+   "note": "PTN pins still unnamed; forum reply says first 400 people guaranteed pins (wristbands noon-6pm) - not an edition size"
+  },
+  {
+   "key": "dlp/2017/may-2017-releases",
+   "field": "members",
+   "searched": "disneypinsblog May 2017",
+   "note": "still no items named; disneypinsblog lists Star Wars and Pirates of the Caribbean themes only"
+  },
+  {
+   "key": "dlp/2017/cast-member-goofy-2017/goofy",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "passiondlp summary again ties CM Dingo to the 25th anniversary with '3017'; 21/09 date nearby belongs to another item; no second source; still unconfirmed"
+  },
+  {
+   "key": "dlp/2017/june-2017-releases",
+   "field": "members",
+   "searched": "dein-dlrp Jun teaser, disneypinsblog, disneystore.eu; 4 queries",
+   "note": "still no dated item list. Disney Store EU 'Disneyland Paris Emoji Collection' 2-pin sets (EUR 9.99): Ariel+Flounder, Mickey, Alice+White Rabbit, Mickey+Minnie - undated, not keyed"
+  },
+  {
+   "key": "dlp/2017/june-2017-releases",
+   "field": "lead",
+   "searched": "disneystore.eu",
+   "note": "lead: emoji 2-pin sets may be the June 2017 emoticon pins; no year on listings; per-pin designs only for Ariel/Flounder and Alice/White Rabbit pairs"
+  },
+  {
+   "key": "dlp/2017/once-upon-a-star-june-2017",
+   "field": "members",
+   "searched": "disneypinsblog Jun 2017",
+   "note": "event 24 Jun 2017 confirmed again; no pins named"
+  },
+  {
+   "key": "dlp/2017/november-2017-releases/peter-pan-parade-float",
+   "field": "edition_size",
+   "searched": "3 queries",
+   "note": "still not found; no dein-dlrp Nov 2017 page indexed. Disney Store EU 'Peter Pan Characters on Parade LE pin' is a Disney Store item, undated - not linked"
+  },
+  {
+   "key": "dlp/2017/beauty-and-the-beast-february-2017",
+   "field": "members",
+   "searched": "DtDLP tag page; 2 queries",
+   "note": "DtDLP Feb 2017 post (1 Feb) title names BatB, Parisienne Minnie and Star Wars; pin list not in snippets"
+  },
+  {
+   "key": "dlp/2017/valentines-2017/ariel-eric",
+   "field": "identity",
+   "searched": "1 query",
+   "note": "no new DLP source; a Feb 2017 Ariel & Eric LE 300 pin is a Disney Studio Store Hollywood item, not DLP"
+  },
+  {
+   "key": "dlp/2017/oe-set/coco-4-pin-set-2017",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept (435): no new per-pin source; DLP Coco PTN trio (Dante/Miguel/Hector, LE 400) is Feb 2018, not this set"
+  },
+  {
+   "key": "lic/2017",
+   "field": "lead",
+   "searched": "Coco query",
+   "note": "lead: licensed ArtLand Coco 4-pin series LE 250 (Miguel, Hector, Ernesto, Dante); year/retailer not stated; not DLP"
+  },
+  {
+   "key": "dlp/2017/st-patricks-day-2017/st-patricks-day-pin",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "DtDLP Mar again: 11 Mar LE 700 St Patrick's dangle pin; character not named; 700 stays single-source"
+  },
+  {
+   "key": "dlp/2017/march-25-2017-releases",
+   "field": "members",
+   "searched": "B337 round",
+   "note": "second Star Tours design still unnamed; no new source"
+  },
+  {
+   "key": "dlp/2017/april-2017-le",
+   "field": "members",
+   "searched": "B337 round",
+   "note": "600/500 vs 700 conflict unresolved; TTM April 'five LE pins, 700 each' resurfaced, PTD sizes from disneypinsblog"
+  },
+  {
+   "key": "dlp/2017/star-wars-pin-lithograph-november-2017",
+   "field": "members",
+   "searched": "B337 round",
+   "note": "fourth litho motif and 7 Nov set not re-found (budget)"
+  },
+  {
+   "key": "dlp/2017/ptn-november-2017",
+   "field": "members",
+   "searched": "B337 round",
+   "note": "PTN Nov 2017 pins still unnamed; passiondlp Q4 (arc026?) not indexed"
+  },
+  {
+   "key": "dlp/2017/pin-trading-event-december-2017",
+   "field": "members",
+   "searched": "B337 round",
+   "note": "17 Dec event pins not found; passiondlp Q4 not indexed"
+  },
+  {
+   "key": "dlp/2017/july-2017-releases",
+   "field": "members",
+   "searched": "B337 round",
+   "note": "no TTM / dein-dlrp July list indexed; July pin editions still unknown"
+  },
+  {
+   "key": "dlp/2017/ptn-july-2017",
+   "field": "members",
+   "searched": "B337 round",
+   "note": "hold kept (472): no second source"
+  },
+  {
+   "key": "dlp/2017/ptn-august-2017",
+   "field": "members",
+   "searched": "B337 round",
+   "note": "hold kept (472): no second source"
+  },
+  {
+   "key": "dlp/2017/ptn-october-2017",
+   "field": "members",
+   "searched": "B337 round",
+   "note": "hold kept (472): no second source"
+  },
+  {
+   "key": "dlp/2017/april-2017-le/marie-chateau",
+   "field": "members",
+   "searched": "B337 round",
+   "note": "hold kept (435): not re-found"
+  },
+  {
+   "key": "dlp/2017/coco-october-2017/miguel-full-length",
+   "field": "members",
+   "searched": "B337 round",
+   "note": "hold kept (435): not re-found"
+  },
+  {
+   "key": "dlp/2017/25th-anniversary-lady-castle/lady",
+   "field": "members",
+   "searched": "B337 round",
+   "note": "hold kept (435): likely 2018"
+  },
+  {
+   "key": "dlp/2017/spring-2017-le/tinker-bell-lamppost",
+   "field": "members",
+   "searched": "B337 round",
+   "note": "hold kept (472/502): no second source"
+  }
+ ],
+ "discovery_notes": "Follow-up 4 of B021 (DLP 2017); reuses keys from 227/435/472/502. 30 WebSearch calls, standard mode, blocked domains passed; all search_snippet, page_readable false; most values come from search-engine summaries. New: Travel to the Magic Sep 2017 (16 Sep 3x LE 700 Tink/Wendy/Jungle Book; 15 Sep SW Ep8 logo + mystery; 30 Sep 2 Day of the Dead Mickeys; PTD Aurora corroboration); Minnie Signature 5 named pins (DLP link held); 103rd PTN 26 May venue. dein-dlrp Mar/May/Jun/Jul/Sep/Nov and passiondlp Q2/Q4 still not indexed."
+}

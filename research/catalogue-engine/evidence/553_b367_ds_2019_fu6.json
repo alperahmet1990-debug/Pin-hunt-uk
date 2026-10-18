@@ -1,0 +1,692 @@
+{
+ "packet_id": "553_b367_ds_2019_fu6",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://chipandco.com/new-donald-duck-merchandise-and-event-celebrates-85-years-355471/",
+   "title": "New Donald Duck Merchandise And Event Celebrates 85 Years",
+   "publisher": "Chip and Co",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.bobafettfanclub.com/news/collectibles/d23-expo-2019-exclusive-merchandise-for-the-mandalorian/",
+   "title": "D23 Expo 2019: Exclusive Merchandise for The Mandalorian",
+   "publisher": "Boba Fett Fan Club",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/donald-duck-85-years-disney-store-pin/",
+   "title": "Donald Duck 85 Years Disney Store Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-little-mermaid-30-years-disney-store-pin-set/",
+   "title": "The Little Mermaid 30 Years Disney Store Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+   "title": "Limited Edition Sleeping Beauty 60th Anniversary Pin Set",
+   "publisher": "Disney Store UK",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneystore.co.uk/disney-store-the-princess-and-the-frog-limited-edition-pin-set-465050434203.html",
+   "title": "The Princess and the Frog Limited Edition Pin Set",
+   "publisher": "Disney Store UK",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.co.uk/the-lion-king-limited-edition-pin-set-465050531308.html",
+   "title": "The Lion King Limited Edition Pin Set",
+   "publisher": "Disney Store UK",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsus/2019/donald-duck-85th-birthday-le-1600-pin-set",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://chipandco.com/new-donald-duck-merchandise-and-event-celebrates-85-years-355471/",
+     "method": "search_snippet",
+     "note": "five ducky pins in the set (second independent source after DPB / DS UK)"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (5 cloisonne pins in designer display box)",
+     "source_url": "https://chipandco.com/new-donald-duck-merchandise-and-event-celebrates-85-years-355471/",
+     "method": "search_snippet",
+     "note": "cloisonne pin set, five pins, display box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://chipandco.com/new-donald-duck-merchandise-and-event-celebrates-85-years-355471/",
+     "method": "search_snippet",
+     "note": "limited edition set"
+    },
+    {
+     "field": "edition_size",
+     "value": 1600,
+     "source_url": "https://chipandco.com/new-donald-duck-merchandise-and-event-celebrates-85-years-355471/",
+     "method": "search_snippet",
+     "note": "limited to 1,600"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2019/d23-expo-2019-disney-store-mandalorian",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disney Store at D23 Expo 2019",
+     "source_url": "https://www.bobafettfanclub.com/news/collectibles/d23-expo-2019-exclusive-merchandise-for-the-mandalorian/",
+     "method": "search_snippet",
+     "note": "D23-exclusive Mandalorian merchandise; pin sold out early afternoon"
+    },
+    {
+     "field": "format",
+     "value": "single pin on D23 card back",
+     "source_url": "https://www.bobafettfanclub.com/news/collectibles/d23-expo-2019-exclusive-merchandise-for-the-mandalorian/",
+     "method": "search_snippet",
+     "note": "wider release planned later without the D23 pin card back"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2019/little-mermaid-30th-anniversary-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Little Mermaid 30 Years Disney Store Pin Set",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30-years-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB '30 years' post title (the LR retail set)"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30-years-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "five limited release pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (5 pins)",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30-years-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "five-pin Under the Sea set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30-years-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "price",
+     "value": 29.95,
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30-years-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "retail USD 29.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30-years-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30-years-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "released at retail early September 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store and shopDisney",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30-years-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "retail locations and shopDisney"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2019/sleeping-beauty-60th-anniversary-le-pin-set",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "3 designs"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (3 pins) in illustrated window box",
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "three designs, window box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3550,
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "limited to 3,550 worldwide"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2019/princess-and-the-frog-10th-anniversary-le-pin-set",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneystore.co.uk/disney-store-the-princess-and-the-frog-limited-edition-pin-set-465050434203.html",
+     "method": "search_snippet",
+     "note": "five-piece set"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (5 gold-plated pins, each inspired by Tiana)",
+     "source_url": "https://disneystore.co.uk/disney-store-the-princess-and-the-frog-limited-edition-pin-set-465050434203.html",
+     "method": "search_snippet",
+     "note": "five separate pins, each Tiana-inspired; designs not described per pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2019/lion-king-25th-anniversary-pin-set",
+   "claims": [
+    {
+     "field": "format",
+     "value": "multi-pin pack (4 pins); Simba pins inspired by Rafiki's drawings",
+     "source_url": "https://www.disneystore.co.uk/the-lion-king-limited-edition-pin-set-465050531308.html",
+     "method": "search_snippet",
+     "note": "4-piece zinc alloy set; Simba pins drawn from Rafiki's drawings of Simba"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsus/2019/sleeping-beauty-60th-anniversary-le-pin-set/aurora",
+   "set_key": "dsus/2019/sleeping-beauty-60th-anniversary-le-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "one of 3 designs features Princess Aurora"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "listing describes 3 designs"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "rose gold"
+     ],
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "contemporary rose-gold finish"
+    },
+    {
+     "field": "edition_size",
+     "value": 3550,
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "set limited to 3,550 worldwide"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2019/sleeping-beauty-60th-anniversary-le-pin-set/maleficent",
+   "set_key": "dsus/2019/sleeping-beauty-60th-anniversary-le-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "one of 3 designs features Maleficent"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "listing describes 3 designs"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter",
+      "gem"
+     ],
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "Maleficent pin has glitter finish and gem embellishment"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "rose gold"
+     ],
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "rose-gold finish"
+    },
+    {
+     "field": "edition_size",
+     "value": 3550,
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "set limited to 3,550 worldwide"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2019/sleeping-beauty-60th-anniversary-le-pin-set/sleeping-beauty-logo",
+   "set_key": "dsus/2019/sleeping-beauty-60th-anniversary-le-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sleeping Beauty logo",
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "one of 3 designs is the Sleeping Beauty logo"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "listing describes 3 designs"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "rose gold"
+     ],
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "rose-gold finish"
+    },
+    {
+     "field": "edition_size",
+     "value": 3550,
+     "source_url": "https://www.disneystore.co.uk/limited-edition-sleeping-beauty-60th-anniversary-pin-set-465059168659.html",
+     "method": "search_snippet",
+     "note": "set limited to 3,550 worldwide"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2019/d23-expo-2019-disney-store-mandalorian/mandalorian",
+   "set_key": "dsus/2019/d23-expo-2019-disney-store-mandalorian",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://www.bobafettfanclub.com/news/collectibles/d23-expo-2019-exclusive-merchandise-for-the-mandalorian/",
+     "method": "search_snippet",
+     "note": "limited release pin (second source after DPB)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store at D23 Expo 2019",
+     "source_url": "https://www.bobafettfanclub.com/news/collectibles/d23-expo-2019-exclusive-merchandise-for-the-mandalorian/",
+     "method": "search_snippet",
+     "note": "D23-exclusive; sold out early afternoon"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.bobafettfanclub.com/news/collectibles/d23-expo-2019-exclusive-merchandise-for-the-mandalorian/",
+     "method": "search_snippet",
+     "note": "D23 Expo 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2019/donald-duck-85th-anniversary-cake-pin",
+   "set_key": "dsus/2019/donald-duck-85th-anniversary-cake-pin-release",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/donald-duck-85-years-disney-store-pin/",
+     "method": "search_snippet",
+     "note": "DPB says open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "https://disneypinsblog.com/donald-duck-85-years-disney-store-pin/",
+     "method": "search_snippet",
+     "note": "DPB post dated 8 June 2019 reports it as released at Disney Store and shopDisney"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/donald-duck-85-years-disney-store-pin/",
+     "method": "search_snippet",
+     "note": "from DPB post date 2019-06-08 describing the release"
+    },
+    {
+     "field": "visual_form",
+     "value": "cake",
+     "source_url": "https://disneypinsblog.com/donald-duck-85-years-disney-store-pin/",
+     "method": "search_snippet",
+     "note": "Donald-themed birthday cake pin"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsus/2019/sleeping-beauty-60th-anniversary-le-pin-set/aurora",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold review: official DS UK listing now independently names this design (Aurora, Maleficent, logo); packet 455 single-source hold may be released by maintainer (not applied)"
+  },
+  {
+   "key": "dsus/2019/sleeping-beauty-60th-anniversary-le-pin-set/maleficent",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold review: official DS UK listing now independently names this design (Aurora, Maleficent, logo); packet 455 single-source hold may be released by maintainer (not applied)"
+  },
+  {
+   "key": "dsus/2019/sleeping-beauty-60th-anniversary-le-pin-set/sleeping-beauty-logo",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold review: official DS UK listing now independently names this design (Aurora, Maleficent, logo); packet 455 single-source hold may be released by maintainer (not applied)"
+  },
+  {
+   "key": "dsus/2019/sleeping-beauty-60th-anniversary-le-pin-set/aurora",
+   "field": "characters",
+   "searched": "B367 web search (30 queries total)",
+   "note": "field note: a Flickr merchandise album (non-preferred, not used) lists Briar Rose instead of Aurora; DS UK and DPB say Aurora"
+  },
+  {
+   "key": "dsus/2019/donald-duck-85th-anniversary-cake-pin",
+   "field": "release_year",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold review: DPB post dated 2019-06-08 describes the pin as released at DS/shopDisney (OE); packet 533 year hold may be released by maintainer (not applied)"
+  },
+  {
+   "key": "dsus/2019/donald-duck-85th-anniversary-cake-pin",
+   "field": "release_date",
+   "searched": "B367 web search (30 queries total)",
+   "note": "field note: no exact day; June 2019 rests on DPB post date. shopDisney Donald 85th merchandise launched June 10 2019 (WDWNT), pin not named there"
+  },
+  {
+   "key": "dsus/2019/little-mermaid-30th-anniversary-pin-set",
+   "field": "source_conflict",
+   "searched": "B367 web search (30 queries total)",
+   "note": "source review: snippets confirm DPB '30-years' URL = LR USD 29.95 Sept 2019 set (Ariel, Sebastian, Fluke, Blackfish, Slugs); '30th-anniversary' URL = D23 LE 300 Ariel set. Packet 455 claims citing the latter should be re-pointed"
+  },
+  {
+   "key": "dsus/2019/little-mermaid-30th-anniversary-pin-set/sebastian",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold kept: DPB again names Sebastian; DS EU (Flounder) conflict unresolved; no new independent source"
+  },
+  {
+   "key": "dsus/2019/little-mermaid-30th-anniversary-pin-set",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "member holds kept: '30 years' post is the same single DPB list already used in packet 488"
+  },
+  {
+   "key": "dsus/2019/mulan-shopdisney-pin-set",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs). DPB/DS EU still list Mulan, Mushu, Cri-Kee for a 3-piece set without per-pin descriptions"
+  },
+  {
+   "key": "dsus/2019/mushu-and-cri-kee-pin-set",
+   "field": "scope",
+   "searched": "B367 web search (30 queries total)",
+   "note": "lead: separate DS EU 2-piece Mushu and Cri-Kee pin set (466049144233, EUR 12); year not stated"
+  },
+  {
+   "key": "dsus/2019/d23-expo-2019-disney-store-mandalorian/mandalorian",
+   "field": "edition_size",
+   "searched": "B367 web search (30 queries total)",
+   "note": "no edition size in DPB or Boba Fett Fan Club snippets"
+  },
+  {
+   "key": "dsus/2019/d23-expo-2019-disney-store-mandalorian/mandalorian",
+   "field": "characters",
+   "searched": "B367 web search (30 queries total)",
+   "note": "which character(s) are shown still not stated"
+  },
+  {
+   "key": "dsus/2019/mandalorian-wider-release-pin",
+   "field": "scope",
+   "searched": "B367 web search (30 queries total)",
+   "note": "lead: BFFC says the pin would get a wider release without the D23 card back; if found, likely variant: same pin as dsus/2019/d23-expo-2019-disney-store-mandalorian/mandalorian"
+  },
+  {
+   "key": "dsus/2019/donald-duck-85th-birthday-le-1600-pin-set",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "five pins still not individually described (Chip and Co: 'five ducky pins' only)"
+  },
+  {
+   "key": "dsus/2019/donald-duck-85th-anniversary-pin-set-us-listing",
+   "field": "scope",
+   "searched": "B367 web search (30 queries total)",
+   "note": "lead: disneystore.com URL 'donald-duck-85th-anniversary-pin-set-limited-edition-465052354967' surfaced without content; which set (D23 six or LE 1600 five) unknown"
+  },
+  {
+   "key": "dsus/2019/d23-expo-2019-disney-store-donald-duck-85th-set",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "six pins still not described; still single source (DPB)"
+  },
+  {
+   "key": "dsus/2019/d23-expo-2019-disney-store-little-mermaid-30th-ariel-set",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "five Ariel pins still not individually described; single source (DPB)"
+  },
+  {
+   "key": "dsus/2019/d23-expo-2019-disney-store-star-wars-droid-set",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "25 droid pins still not named; single source (DPB)"
+  },
+  {
+   "key": "dsus/star-wars-droid-limited-release-pin-set",
+   "field": "scope",
+   "searched": "B367 web search (30 queries total)",
+   "note": "resolved: DPB 'Star Wars Droid Limited Release Pin Set' is a 2022 shopDisney 4-pin set (USD 34.99), not 2019; for a 2022 cell"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-fathers-day-geppetto-pinocchio",
+   "field": "scope",
+   "searched": "B367 web search (30 queries total)",
+   "note": "resolved: Geppetto & Pinocchio Father's Day surprise (DSSH, LE 200, USD 18.95) was June 11 2016 per DPB 'pinocchio-fathers-day-2016-pin'; lead for 2016 DS cell"
+  },
+  {
+   "key": "tdr/2019/little-mermaid-30th-disney-store-japan-set",
+   "field": "scope",
+   "searched": "B367 web search (30 queries total)",
+   "note": "lead: DPB Disney Store Japan Little Mermaid 30th set, 14 pins, JPY 8,640; for Japan cell"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-d23-expo-2019-beloved-tales/miguel-coco",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold: Miguel (Coco) Beloved Tales D23 2019 pin seen only on reseller pinsbreaktheinternet; not used"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-d23-expo-2019-beloved-tales/aristocats",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold: Aristocats Beloved Tales LE 300 seen only on reseller fryguypins; D23 year not confirmed there"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-d23-expo-2019-beloved-tales",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "designs still unnamed in DPB/D23/WDWinfo (8 pins, LE 300 confirmed again)"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-d23-expo-2019-dark-tales",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold kept: Stromboli/Madam Mim/Prince John still reseller/unlabelled only"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-d23-expo-2019-marquee-series",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "designs still unnamed"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-june-2019-toy-story-4",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "main DSSH Toy Story 4 (21 Jun) pins still unnamed; only Ducky & Bunny surprise found"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-may-june-august-september",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "no DSSH September 2019 release found; only a Sept 15 preview of the October Coco/Maleficent release (already recorded)"
+  },
+  {
+   "key": "dsus/2019/lion-king-25th-anniversary-pin-set",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "Simba colours still not stated (DS UK: inspired by Rafiki's drawings); no Simba records"
+  },
+  {
+   "key": "dsus/2019/holiday-gift-pin-series",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "tenth pin still unnamed; DPB and WDWNT-era summaries name nine at most"
+  },
+  {
+   "key": "dsus/2019/oh-my-disney-dogs-mystery-pin-set",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "two mystery designs still unnamed. DS UK/EU 'Disney Dogs Mystery Pin Set' 438037621859 (2 per box, Pongo/Pluto/Dodger/Copper) is a later different product; do not use"
+  },
+  {
+   "key": "dsus/2019/aladdin-live-action-pin-set",
+   "field": "release_date",
+   "searched": "B367 web search (30 queries total)",
+   "note": "DS EU 'Free to Dream'/'Be Heard' set 466049764714 still undated"
+  },
+  {
+   "key": "dsuk/2019/christmas-2019-le",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "no Disney Store UK Christmas 2019 pin found again"
+  },
+  {
+   "key": "dsus/2019/haunted-mansion-mystery-pin-collection",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold kept: DPB says 'each of the three Hitchhiking Ghosts'; ghost names only added by search summary, not source text"
+  },
+  {
+   "key": "dsus/2019/disney-wisdom-12-cinderella/gus",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold kept: US coverage Gus vs DS EU Jaq; MickeyBlog/KennythePirate/Disney Driven Life seen but snippet did not attribute Gus to them"
+  },
+  {
+   "key": "dsus/2019/princess-and-the-frog-10th-anniversary-le-pin-set",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "holds kept: DS UK confirms 5 separate Tiana pins but does not describe each design"
+  },
+  {
+   "key": "dsus/2019/up-10th-anniversary-le-pin-set",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "holds kept: DS UK/EU say six travel-poster pins, titles not given; disneystore.com URL 465051095014 surfaced without content"
+  },
+  {
+   "key": "dsus/2019/avengers-endgame-le-pin-set",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold kept; not re-researched (DS UK hold review already proposed in packet 512)"
+  },
+  {
+   "key": "dsuk/2019/bambi-jumbo-le400/bambi-and-thumper",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold kept: no DS UK Bambi jumbo found; only 2018 DLP Bambi trading night LE 400 pins surfaced"
+  },
+  {
+   "key": "dsus/2019/dumbo-live-action-pin-set",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold kept; no new evidence"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-december-2019-rise-of-skywalker",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "holds kept: DPB and PinTrader.Club snippets name only the El Capitan marquee (LE 400, USD 27.95)"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-december-2019-family-portraits",
+   "field": "pins",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold kept; no new evidence"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-magnificent-circus-series-2",
+   "field": "pin_structure",
+   "searched": "B367 web search (30 queries total)",
+   "note": "hold kept: search found nothing new"
+  }
+ ],
+ "discovery_notes": "Follow-up 6 of B006 (packets 206, 410, 455, 488, 512, 533), Disney Store/shopDisney/DSSH 2019. 30 standard WebSearches, excluded domains blocked, snippets only. No new pins; corroboration only: Sleeping Beauty 60th members named by official DS UK listing (hold review proposed), Mandalorian D23 pin (Boba Fett Fan Club), Donald LE 1600 set (Chip and Co), Donald cake pin year from DPB post dated 2019-06-08 (hold review proposed), Little Mermaid 30 Years LR set re-sourced to the correct DPB URL. Leads resolved: Geppetto & Pinocchio = 2016, Star Wars Droid Limited Release = 2022. No hold released. Resellers (fryguypins, pinsbreaktheinternet, toywiz, magicalwdw, yourwdwstore) not used."
+}

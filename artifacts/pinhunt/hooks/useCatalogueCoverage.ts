@@ -1,6 +1,7 @@
 /**
- * useCatalogueCoverage — photo status for every Collectible PinTrader
- * catalogue pin, for the "Help build the catalogue" contributor screen.
+ * useCatalogueCoverage — photo status (and, since migration 048, what else is
+ * missing) for every verified catalogue pin, for the "Help build the
+ * catalogue" contributor screen (#396).
  *
  * Deliberately separate from PinCatalogueContext: that context caches a
  * 500-pin slice for normal browsing, whereas this screen needs every pin's

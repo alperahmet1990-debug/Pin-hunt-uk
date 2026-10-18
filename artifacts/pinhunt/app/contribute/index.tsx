@@ -1,10 +1,14 @@
 /**
  * Help build the catalogue — beta contributor screen.
  *
- * Browses the full Collectible PinTrader catalogue grouped by set, showing
+ * Browses the catalogue grouped by set, showing
  * each pin's photo status, so contributors can photograph pins they own.
  * Tapping a pin opens the existing contribution flow
  * (/contribute-image/[pinId]) in catalogue mode.
+ *
+ * Covers the whole verified catalogue (#396, migration 048), with filters for
+ * year, park, character and set, and for what's needed: a photo, a back
+ * photo, or missing information.
  *
  * Gated by the 'catalogue_contributions' feature flag (migration 039) —
  * starts admin-only; widened to contributors / public by editing its row.
@@ -34,8 +38,13 @@ import { EmptyState } from '@/components/EmptyState';
 import { PLACEHOLDER_IMAGE } from '@/utils/pinImage';
 import { radius, spacing } from '@/constants/theme';
 import { PinImage } from '@/components/ui/PinImage';
+import { FilterSheet } from '@/components/ui/FilterSheet';
+import {
+  FACET_TITLES, NO_FACETS, facetOptions, matchesFacets, missingLabel,
+  type FacetFilters, type FacetKey,
+} from '@/utils/contributeFilters';
 
-type PhotoFilter = 'all' | 'needs' | 'reference' | 'pending' | 'community';
+type PhotoFilter = 'all' | 'needs' | 'reference' | 'pending' | 'community' | 'info' | 'back';
 
 const COLUMNS = 3;
 
@@ -49,6 +58,8 @@ function matchesFilter(row: CatalogueImageCoverage, filter: PhotoFilter) {
     case 'reference': return row.imageSource === 'reference';
     case 'pending': return isPending(row);
     case 'community': return row.imageSource === 'community';
+    case 'info': return (row.missingFields?.length ?? 0) > 0;
+    case 'back': return row.needsBackImage === true;
     default: return true;
   }
 }
@@ -64,6 +75,8 @@ export default function ContributeCatalogueScreen() {
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState<PhotoFilter>('all');
   const [mineOnly, setMineOnly] = useState(false);
+  const [facets, setFacets] = useState<FacetFilters>(NO_FACETS);
+  const [openFacet, setOpenFacet] = useState<FacetKey | null>(null);
   const [refreshing, setRefreshing] = useState(false);
 
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 24;
@@ -74,18 +87,23 @@ export default function ContributeCatalogueScreen() {
       .map(([id]) => id),
   ), [collection]);
 
+  // Year / park / character / set narrow everything below, counts included.
+  const faceted = useMemo(() => rows.filter(r => matchesFacets(r, facets)), [rows, facets]);
+
   const stats = useMemo(() => {
-    let withPhoto = 0, community = 0, needs = 0, reference = 0, pending = 0, mine = 0;
-    for (const r of rows) {
+    let withPhoto = 0, community = 0, needs = 0, reference = 0, pending = 0, mine = 0, info = 0, back = 0;
+    for (const r of faceted) {
       if (r.imageSource) withPhoto++;
       if (r.imageSource === 'community') community++;
       if (r.imageSource === 'reference') reference++;
       if (matchesFilter(r, 'needs')) needs++;
       if (isPending(r)) pending++;
       if (ownedIds.has(r.pinhuntId)) mine++;
+      if (matchesFilter(r, 'info')) info++;
+      if (matchesFilter(r, 'back')) back++;
     }
-    return { total: rows.length, withPhoto, community, needs, reference, pending, mine };
-  }, [rows, ownedIds]);
+    return { total: faceted.length, withPhoto, community, needs, reference, pending, mine, info, back };
+  }, [faceted, ownedIds]);
 
   const sections = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -97,6 +115,7 @@ export default function ContributeCatalogueScreen() {
       if (r.imageSource) t.withPhoto++;
       setTotals.set(r.setName, t);
 
+      if (!matchesFacets(r, facets)) continue;
       if (mineOnly && !ownedIds.has(r.pinhuntId)) continue;
       if (!matchesFilter(r, filter)) continue;
       if (q && !r.title.toLowerCase().includes(q) && !r.setName.toLowerCase().includes(q)
@@ -110,7 +129,7 @@ export default function ContributeCatalogueScreen() {
       for (let i = 0; i < pins.length; i += COLUMNS) chunks.push(pins.slice(i, i + COLUMNS));
       return { title: setName, totals: setTotals.get(setName)!, data: chunks };
     });
-  }, [rows, query, filter, mineOnly, ownedIds]);
+  }, [rows, query, filter, mineOnly, ownedIds, facets]);
 
   const onRefresh = async () => {
     setRefreshing(true);
@@ -147,6 +166,8 @@ export default function ContributeCatalogueScreen() {
     { value: 'pending', label: 'In review', count: stats.pending },
     { value: 'reference', label: 'Reference photo', count: stats.reference },
     { value: 'community', label: 'Community photo', count: stats.community },
+    { value: 'info', label: 'Missing info', count: stats.info },
+    { value: 'back', label: 'Needs back photo', count: stats.back },
   ];
 
   const header = (
@@ -220,6 +241,31 @@ export default function ContributeCatalogueScreen() {
         })}
       </View>
 
+      {/* Year / park / character / set (#396) */}
+      <View style={styles.chips}>
+        {(Object.keys(FACET_TITLES) as FacetKey[]).map(key => {
+          const value = facets[key];
+          return (
+            <TouchableOpacity
+              key={key}
+              onPress={() => setOpenFacet(key)}
+              activeOpacity={0.8}
+              accessibilityRole="button"
+              accessibilityLabel={`${FACET_TITLES[key]}: ${value ?? 'any'}`}
+              style={[styles.facet, {
+                backgroundColor: value ? colors.homeCoral + '18' : colors.homeSurface,
+                borderColor: value ? colors.homeCoral : colors.homeLine,
+              }]}
+            >
+              <Text style={[styles.chipLabel, { color: colors.homeInk }]} numberOfLines={1}>
+                {value ?? FACET_TITLES[key]}
+              </Text>
+              <Feather name="chevron-down" size={14} color={colors.homeMuted} />
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+
       {error && <Text style={[styles.error, { color: colors.destructive }]}>{error}</Text>}
     </View>
   );
@@ -253,17 +299,26 @@ export default function ContributeCatalogueScreen() {
         renderItem={({ item: chunk }) => (
           <View style={styles.gridRow}>
             {chunk.map(row => (
-              <Tile key={row.pinhuntId} row={row} owned={ownedIds.has(row.pinhuntId)} onPress={() => openPin(row.pinhuntId)} />
+              <Tile key={row.pinhuntId} row={row} owned={ownedIds.has(row.pinhuntId)} showMissing={filter === 'info'} onPress={() => openPin(row.pinhuntId)} />
             ))}
             {Array.from({ length: COLUMNS - chunk.length }).map((_, i) => <View key={`pad-${i}`} style={styles.tile} />)}
           </View>
         )}
       />
+      <FilterSheet
+        visible={openFacet !== null}
+        title={openFacet ? FACET_TITLES[openFacet] : ''}
+        searchable={openFacet === 'character' || openFacet === 'set'}
+        items={openFacet ? facetOptions(rows.filter(r => matchesFacets(r, { ...facets, [openFacet]: null })), openFacet) : []}
+        value={openFacet ? facets[openFacet] : null}
+        onSelect={v => { if (openFacet) setFacets(f => ({ ...f, [openFacet]: v })); setOpenFacet(null); }}
+        onClose={() => setOpenFacet(null)}
+      />
     </View>
   );
 }
 
-function Tile({ row, owned, onPress }: { row: CatalogueImageCoverage; owned: boolean; onPress(): void }) {
+function Tile({ row, owned, showMissing, onPress }: { row: CatalogueImageCoverage; owned: boolean; showMissing?: boolean; onPress(): void }) {
   const colors = useColors();
   const pending = isPending(row);
   const needs = row.imageSource === null;
@@ -301,6 +356,9 @@ function Tile({ row, owned, onPress }: { row: CatalogueImageCoverage; owned: boo
         )}
       </View>
       <Text style={[styles.tileTitle, { color: colors.homeInk }]} numberOfLines={2}>{row.title}</Text>
+      {showMissing && missingLabel(row) && (
+        <Text style={[styles.tileMissing, { color: colors.homeMuted }]} numberOfLines={2}>{missingLabel(row)}</Text>
+      )}
     </TouchableOpacity>
   );
 }
@@ -339,4 +397,6 @@ const styles = StyleSheet.create({
   badge: { position: 'absolute', left: 6, bottom: 6, right: 6, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 3, borderRadius: radius.pill, paddingVertical: 3, paddingHorizontal: 6 },
   badgeLabel: { fontSize: 9, fontFamily: 'Inter_600SemiBold' },
   tileTitle: { fontSize: 11, fontFamily: 'Inter_500Medium', lineHeight: 14 },
+  tileMissing: { fontSize: 10, fontFamily: 'Inter_400Regular', lineHeight: 13 },
+  facet: { flexDirection: 'row', alignItems: 'center', gap: 4, borderWidth: 1, borderRadius: radius.md, paddingHorizontal: 10, minHeight: 36, maxWidth: 170 },
 });

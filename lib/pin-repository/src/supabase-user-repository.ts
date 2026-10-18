@@ -1400,6 +1400,12 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       imageSource: (row.image_source as CatalogueImageSource) ?? null,
       pendingCount: (row.pending_count as number | null) ?? 0,
       myStatus: (row.my_status as ContributedImageStatus | null) ?? undefined,
+      origin: (row.origin as string | null) ?? undefined,
+      mainCharacter: (row.main_character as string | null) ?? undefined,
+      allCharacters: (row.all_characters as string | null) ?? undefined,
+      catalogueSource: (row.catalogue_source as string | null) ?? undefined,
+      needsBackImage: (row.needs_back_image as boolean | null) ?? undefined,
+      missingFields: (row.missing_fields as string[] | null) ?? undefined,
     }));
   }
 

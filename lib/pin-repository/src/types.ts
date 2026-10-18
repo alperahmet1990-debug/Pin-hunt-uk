@@ -974,6 +974,15 @@ export interface CatalogueImageCoverage {
   pendingCount: number;
   /** The caller's own most recent contribution status for this pin. */
   myStatus?: ContributedImageStatus;
+  // From migration 048 (#396); absent on databases without it.
+  origin?: string;
+  mainCharacter?: string;
+  /** Comma-separated, as stored on pins.all_characters. */
+  allCharacters?: string;
+  catalogueSource?: string;
+  needsBackImage?: boolean;
+  /** Which of 'release_year' | 'set' | 'characters' | 'origin' the pin lacks. */
+  missingFields?: string[];
 }
 
 export interface ReviewContributedImageInput {

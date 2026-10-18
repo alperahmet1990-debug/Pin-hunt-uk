@@ -1,0 +1,604 @@
+{
+ "packet_id": "560-b374-wdw-oe-2017-fu6",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+   "title": "New Disney Pins August 2017 Week 5",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+   "title": "New Disney Pins June 2017 Week 5",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-06-25"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-1/",
+   "title": "New Disney Pins June 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+   "title": "New Disney Pins March 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://blogmickey.com/2017/08/new-haunted-mansion-merchandise-memento-mori/",
+   "title": "NEW Haunted Mansion Merchandise at Memento Mori",
+   "publisher": "BlogMickey",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-08-16"
+  },
+  {
+   "url": "https://mypincentral.com/pin/114620",
+   "title": "114620",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/114622",
+   "title": "114622",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/69246",
+   "title": "69246",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/165363",
+   "title": "165363",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/115456",
+   "title": "115456",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/127267",
+   "title": "127267",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2017-pins/",
+   "title": "Disney Parks 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-stocking-pin-set/",
+   "title": "Star Wars Stocking Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2017-10-30"
+  },
+  {
+   "url": "https://disneypinsblog.com/kingdom-cute-mystery-pin-collection/",
+   "title": "Kingdom of Cute Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/princess-gold-frame-mystery-pin-collection/",
+   "title": "Princess Gold Frame Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/digital-disney-mystery-pin-collection/",
+   "title": "Digital Disney Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.danthepixarfan.com/2018/05/pixar-tsum-tsum-collectible-mystery-pins.html",
+   "title": "Pixar Tsum Tsum Collectible Mystery Pins",
+   "publisher": "Dan the Pixar Fan",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-05"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2017/oe-single/memento-mori-haunted-mansion",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "Single OE pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "OE"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2017/oe-single/signature-minnie-heart",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "Single OE pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "OE"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2017/oe-single/mickey-friends-photobomb",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "Single OE pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "OE"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2017/oe/memento-mori-haunted-mansion",
+   "set_key": "wdw/2017/oe-single/memento-mori-haunted-mansion",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Haunted Mansion pin (Memento Mori)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "DPB Aug 2017 wk5: new Haunted Mansion pin spotted in the Memento Mori store; descriptive name, no official title given"
+    },
+    {
+     "field": "attraction",
+     "value": "Haunted Mansion",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "Haunted Mansion themed pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "Stated open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "Retail 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "US park pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "Spotted in week of 27 Aug to 2 Sep 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "2017 weekly round-up"
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom, Walt Disney World (Memento Mori)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "Spotted at Memento Mori shop, Magic Kingdom"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "Listed as a single new pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/oe/signature-minnie-heart",
+   "set_key": "wdw/2017/oe-single/signature-minnie-heart",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Signature Minnie heart pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "DPB Jun 2017 wk5 entry for a heart-shaped Signature Minnie pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "Minnie pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "Single character"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "New open edition at Disney Parks"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "Retail 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "US park pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "Round-up week 25 Jun to 1 Jul 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "2017 round-up"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "Snippet says Disney Parks; resort not named"
+    },
+    {
+     "field": "visual_description",
+     "value": "Heart-shaped pin with Love, Minnie Mouse signature text along the bottom",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/oe/mickey-friends-photobomb",
+   "set_key": "wdw/2017/oe-single/mickey-friends-photobomb",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Photobomb pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "DPB Jun 2017 wk5 entry"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Donald Duck",
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "Mickey and Donald take a photo while Goofy photobombs"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "Mickey named first"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "New open edition at Disney Parks"
+    },
+    {
+     "field": "original_price",
+     "value": 11.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "Retail 11.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "US park pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "Round-up week 25 Jun to 1 Jul 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "2017 round-up"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Parks",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "Snippet says Disney Parks; resort not named"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey and Donald posing for a photo with Goofy photobombing",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+     "method": "search_snippet",
+     "note": "One pin showing three characters"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2017/oe/memento-mori-haunted-mansion",
+   "field": "visual_description",
+   "searched": "WebSearch standard, B374; 3 queries (DPB, MPC, BlogMickey)",
+   "note": "field note: design not described in any snippet; no MPC page found; may overlap dlr/2017/oe/haunted-mansion-bat-ghost or other HM OE pins - confirm design"
+  },
+  {
+   "key": "wdw/2017/oe/signature-minnie-heart",
+   "field": "release_location",
+   "searched": "WebSearch standard, B374",
+   "note": "field note: DPB says Disney Parks without naming resort; keyed under wdw per shared-product convention; a reseller (yourwdwstore, not used) says theme parks"
+  },
+  {
+   "key": "wdw/2017/oe/mickey-friends-photobomb",
+   "field": "release_location",
+   "searched": "WebSearch standard, B374",
+   "note": "field note: DPB says Disney Parks; reseller yourwdwstore (not used) says made for WDW parks; DLR sale unconfirmed"
+  },
+  {
+   "key": "wdw/2017/oe/rapunzel-painting",
+   "field": "pin",
+   "searched": "WebSearch standard, B374; DPB Jun wk1",
+   "note": "hold: not created - DPB Jun 2017 wk1 OE 8.99 Rapunzel painting pin, resort not named per entry; already recorded as dlr/2017/oe/rapunzel-painting (location hold); re-key under wdw with dlr variant only if shared sale confirmed"
+  },
+  {
+   "key": "wdw/2017/oe/bride-and-doom-magnetic",
+   "field": "pin",
+   "searched": "WebSearch standard, B374",
+   "note": "lead: BlogMickey 16 Aug 2017 mentions a magnetic Bride and Doom pin at Memento Mori; edition/price unknown; scope: confirm pin vs button/novelty - not recorded"
+  },
+  {
+   "key": "wdw/2017/oe-set/magical-mystery-pins-series-11/minnie-mouse",
+   "field": "pin",
+   "searched": "WebSearch standard, B374; 1 query",
+   "note": "hold kept: MPC Pluto page (114622) index lists 114620 as Series 11 2017 Minnie, but 114620's own description is a 2014 watering-can design; conflict unresolved"
+  },
+  {
+   "key": "wdw/2017/oe-set/magical-mystery-pins-series-11/goofy",
+   "field": "product_code",
+   "searched": "WebSearch standard, B374",
+   "note": "field note: MPC Pluto page index lists 114617 as Series 11 2017 Goofy (lead for ID; not a new pin)"
+  },
+  {
+   "key": "wdw/2017/oe-set/magical-mystery-pins-series-11",
+   "field": "edition_type",
+   "searched": "WebSearch standard, B374",
+   "note": "still open: DPB gives 6 pins, 1 per pouch, 4.99, Feb 2017 both resorts; no edition statement; Pluto OE vs Oswald LE conflict (520) unresolved"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-villains-mystery",
+   "field": "members",
+   "searched": "WebSearch standard, B374",
+   "note": "hold kept: no MPC or DPB per-design page found for the nine designs"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-series-4",
+   "field": "members",
+   "searched": "WebSearch standard, B374",
+   "note": "hold kept: only listing site and fan wiki checklist name designs (Ariel 1/16, Rapunzel 5/16, Aladdin 11/16 per wiki, not used); no MPC per-pin page; DPB mid-July 2017, 27.99, 5 per pack"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar",
+   "field": "members",
+   "searched": "WebSearch standard, B374",
+   "note": "hold kept on remaining nine: Dan the Pixar Fan (May 2018) lists all 16 characters as one list only; no Remy/Carl etc. per-pin page"
+  },
+  {
+   "key": "wdw/2017/oe-set/star-wars-tsum-tsum-series-2",
+   "field": "members",
+   "searched": "WebSearch standard, B374",
+   "note": "hold kept: roster only on retailers; MPC 131639 (Qui-Gon, 2017 back), 145286/145290/145281 tsum pages do not name Series 2; 16 vs 17 conflict unchanged"
+  },
+  {
+   "key": "wdw/2017/oe-set/nightmare-before-christmas-tsum-tsum-mystery",
+   "field": "members",
+   "searched": "WebSearch standard, B374",
+   "note": "hold kept: MPC 165363 still a single list of eight (incl. two Jack designs); MPC 165368 Jack not tied to set. field note: a summary attributes 7/21/2017 and 15.99/box to an MPC listing - not claimed"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-holiday-mystery/willie-the-giant",
+   "field": "release_year",
+   "searched": "WebSearch standard, B374; 2 queries",
+   "note": "hold kept: MPC 69246 names Tsum Tsum Holiday Mystery Collection and Willie but snippet still gives no year"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-holiday-mystery/chip",
+   "field": "pin",
+   "searched": "WebSearch standard, B374",
+   "note": "hold kept: no Holiday-collection Chip page found; MPC 66547 Chip is a Space Mountain Halloween pin, unrelated"
+  },
+  {
+   "key": "wdw/2017/oe-set/kingdom-of-cute-mystery-series-1",
+   "field": "members",
+   "searched": "WebSearch standard, B374",
+   "note": "hold kept: DPB one-line list of 8; MPC 107965 (Sword in the Stone, 2017 back) and 107960 (Jungle Cruise boat) do not name the series in snippet; Teacup only on reseller"
+  },
+  {
+   "key": "wdw/2017/oe-set/princess-gold-frame-mystery",
+   "field": "members",
+   "searched": "WebSearch standard, B374; 2 queries",
+   "note": "hold kept on all eight: MPC 127267 Jasmine oval gold frame (2017 back) and 115456 Tiana gold edge circle (no year) do not name the series"
+  },
+  {
+   "key": "wdw/2017/oe-set/digital-disney-mystery",
+   "field": "members",
+   "searched": "WebSearch standard, B374",
+   "note": "hold kept on seven: no MPC per-pin pages beyond Donald 33940; DPB one list of 8 (8-bit style)"
+  },
+  {
+   "key": "wdw/2017/oe-set/mickey-minnie-mailbox/mickey",
+   "field": "pin",
+   "searched": "WebSearch standard, B374",
+   "note": "hold kept: only MPC 175846 (Minnie) per-pin; DPB set description only"
+  },
+  {
+   "key": "wdw/2017/oe-set/star-wars-stocking",
+   "field": "members",
+   "searched": "WebSearch standard, B374",
+   "note": "hold kept: confirm pin structure - DPB 30 Oct 2017 again names Yoda, Chewbacca, Darth Vader, R2-D2 for a 4-pin OE set (27.99) with no per-pin description; 2016 Cute Characters set has same four characters"
+  },
+  {
+   "key": "wdw/2017/oe/frozen-ever-after-2017",
+   "field": "pin",
+   "searched": "WebSearch standard, B374",
+   "note": "release evidence: DPB Mar 2017 wk1 summary says new OE pin at WDW from 26 Feb 2017, 9.99; design still unstated, so the 'same as June 2016 pin' hold stands"
+  },
+  {
+   "key": "wdw/2017/oe-set/disney-parks-2017-booster",
+   "field": "members",
+   "searched": "WebSearch standard, B374",
+   "note": "hold kept: DPB again gives OE, six character pins, no names; Tinker Bell/Dory etc. only on reseller"
+  },
+  {
+   "key": "wdw/2017/oe/cars-3-maximum-mph",
+   "field": "characters",
+   "searched": "WebSearch standard, B374",
+   "note": "kept: no permitted source describes the design"
+  },
+  {
+   "key": "wdw/2017/oe-set/pandora-mystery",
+   "field": "members",
+   "searched": "WebSearch standard, B374",
+   "note": "kept: other seven designs unnamed; results were 2021 creature set and MPC 58152 already recorded"
+  },
+  {
+   "key": "wdw/2017/oe-set/haunted-mansion-cameo-mystery",
+   "field": "members",
+   "searched": "WebSearch standard, B374",
+   "note": "kept: DPB 12 pins, 2/box, 14.99, UV ink, early Aug 2017; designs only on forum (not used); no MPC Cameo pages"
+  },
+  {
+   "key": "wdw/2017/oe/happy-hanukkah-chip-n-dale",
+   "field": "pin",
+   "searched": "WebSearch standard, B374",
+   "note": "hold kept: not re-searched (budget)"
+  },
+  {
+   "key": "dlr/2017/oe-set/disney-parks-2017-starter-set",
+   "field": "pin",
+   "searched": "WebSearch standard, B374",
+   "note": "field note: DPB Disney Parks 2017 page lists a Pin Trading Starter Set among shared DLR/WDW 2017 OE items; existing dlr key - consider re-keying under wdw with dlr variant"
+  },
+  {
+   "key": "wdw/2017/oe/memento-mori-haunted-mansion",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: design not described; possible overlap with dlr/2017/oe/haunted-mansion-bat-ghost (round 60 review)"
+  }
+ ],
+ "discovery_notes": "Follow-up 6 of B017 (WDW OE 2017); 30 standard WebSearch calls, search_snippet only, blocked domains passed. New: three OE pins from DPB weekly round-ups (Memento Mori Haunted Mansion Aug 2017; Signature Minnie heart and Photobomb Jun 2017). No holds released; Frozen Ever After gets release-date evidence only."
+}

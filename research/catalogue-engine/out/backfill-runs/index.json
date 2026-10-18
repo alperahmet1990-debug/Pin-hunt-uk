@@ -1,24 +1,24 @@
 {
  "source": "staging_payload.json",
- "git_commit": "64ad2e6cdc1f",
+ "git_commit": "cc040d7a3824",
  "generated": "2026-10-18",
  "runs": [
   {
    "file": "run_01_wdw.json",
-   "pins": 1202,
-   "sets": 695,
-   "evidence": 8675,
-   "bytes": 3725875,
+   "pins": 1204,
+   "sets": 694,
+   "evidence": 8668,
+   "bytes": 3727623,
    "lines": [
     "wdw"
    ]
   },
   {
    "file": "run_02_wdw-to-dlr.json",
-   "pins": 1174,
-   "sets": 726,
-   "evidence": 9623,
-   "bytes": 3963563,
+   "pins": 1179,
+   "sets": 721,
+   "evidence": 9649,
+   "bytes": 3976312,
    "lines": [
     "wdw",
     "dlr"
@@ -26,35 +26,35 @@
   },
   {
    "file": "run_03_dlr-to-dlp.json",
-   "pins": 1226,
-   "sets": 671,
-   "evidence": 10186,
-   "bytes": 4213994,
+   "pins": 1235,
+   "sets": 665,
+   "evidence": 10228,
+   "bytes": 4234389,
    "lines": [
     "dlr",
     "dlp"
    ]
   },
   {
-   "file": "run_04_dlp-to-shdr.json",
-   "pins": 1241,
-   "sets": 656,
-   "evidence": 10443,
-   "bytes": 4487130,
+   "file": "run_04_dlp-to-dsus.json",
+   "pins": 1245,
+   "sets": 655,
+   "evidence": 10643,
+   "bytes": 4544942,
    "lines": [
     "dlp",
     "dsuk",
-    "dsus",
-    "shdr"
+    "dsus"
    ]
   },
   {
-   "file": "run_05_shdr-to-lic.json",
-   "pins": 1282,
-   "sets": 615,
-   "evidence": 9923,
-   "bytes": 4211188,
+   "file": "run_05_dsus-to-lic.json",
+   "pins": 1269,
+   "sets": 630,
+   "evidence": 9598,
+   "bytes": 4095963,
    "lines": [
+    "dsus",
     "shdr",
     "hkdl",
     "tdr",
@@ -63,31 +63,32 @@
   },
   {
    "file": "run_06_lic.json",
-   "pins": 1060,
-   "sets": 535,
-   "evidence": 12530,
-   "bytes": 4822991,
+   "pins": 1054,
+   "sets": 525,
+   "evidence": 12538,
+   "bytes": 4817943,
    "lines": [
     "lic"
    ]
   },
   {
    "file": "run_07_lic.json",
-   "pins": 1155,
-   "sets": 482,
-   "evidence": 11272,
-   "bytes": 4745279,
+   "pins": 1153,
+   "sets": 486,
+   "evidence": 11550,
+   "bytes": 4814540,
    "lines": [
     "lic"
    ]
   },
   {
-   "file": "run_08_animated-cuties-to-windows-of-attraction.json",
-   "pins": 77,
-   "sets": 9,
-   "evidence": 2375,
-   "bytes": 851036,
+   "file": "run_08_lic-to-windows-of-attraction.json",
+   "pins": 186,
+   "sets": 42,
+   "evidence": 3117,
+   "bytes": 1200605,
    "lines": [
+    "lic",
     "animated-cuties",
     "brush-of-magic",
     "disney-classics-london",

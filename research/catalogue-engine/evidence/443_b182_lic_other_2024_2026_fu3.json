@@ -1,0 +1,905 @@
+{
+ "packet_id": "backfill-b182-lic-other-2024-2026-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b182",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/inside-out-2-mystery-series-1-figpin-release/",
+   "title": "Inside Out 2 Mystery Series 1 FiGPiN Release",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2025-01-24",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://medium.com/@disney_mouseketeer/figpin-disney-pixar-inside-out-2-mystery-mini-pins-series-1-7e25ee8a539e",
+   "title": "FiGPiN Disney-Pixar Inside Out 2 Mystery Mini Pins - Series 1",
+   "publisher": "Medium (Disney Mouseketeer)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.jedinews.com/collecting/articles/star-wars-celebration-japan-2025-figpin-exclusives/",
+   "title": "Star Wars Celebration Japan 2025: FiGPiN Exclusives",
+   "publisher": "Jedi News",
+   "published_date": "2025-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/star-wars%E2%84%A2-celebration-japan-2025-figpin-exclusives",
+   "title": "Star Wars Celebration Japan 2025 - FiGPiN Exclusives",
+   "publisher": "FiGPiN",
+   "published_date": "2025-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://madhousecollectibles.com/collections/figpin-mystery-minis",
+   "title": "FigPiN Mystery Minis",
+   "publisher": "Madhouse Collectibles",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-droid-mystery-pin-set-at-disney-parks/",
+   "title": "Star Wars Droid Mystery Pin Set at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://pastimesports.ca/products/figpin-star-wars-the-mandalorian-series-1-mystery-pins",
+   "title": "Figpin Star Wars The Mandalorian Series 1 Mystery Pins",
+   "publisher": "Pastime Sports",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneymouseketeer.com/figpin-disney-pixar-marvel-2025-sdcc-updates/",
+   "title": "FiGPiN Disney, Pixar & Marvel 2025 SDCC Updates",
+   "publisher": "Disney Mouseketeer",
+   "published_date": "2025-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://grottotreasures.com/products/figpin-marvel-studios-fantastic-four-quest-mystery-blind-box-pin",
+   "title": "FiGPiN Marvel Studios Fantastic Four Quest Mystery Blind Box Pin",
+   "publisher": "Grotto Treasures",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/products/fantastic-four-quest",
+   "title": "Fantastic Four Quest",
+   "publisher": "FiGPiN",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://derwincollectables.nl/en/product-categorie/pins-and-keychains/all-pins/disney-pins/disney-figpin/",
+   "title": "Disney FiGPiN - Derwin Collectables",
+   "publisher": "Derwin Collectables",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://thepinhub.com/products/figpin-wall-e-and-eve-collectible-pins-set",
+   "title": "FiGPiN Wall-E and Eve Collectible Pin Set",
+   "publisher": "The Pin Hub",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/blogs/news/valentines-day-sale",
+   "title": "Valentine's Day Sale!",
+   "publisher": "FiGPiN",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-villain-sidekicks-blind-box-pin-set-at-hot-topic/",
+   "title": "Disney Villain Sidekicks Blind Box Pin Set at Hot Topic",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-07-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-villain-sidekicks-blind-box-pin-set-at-hot-topic",
+   "title": "Disney Villain Sidekicks Blind Box Pin Set at Hot Topic",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/disney-character-jar-blind-box-enamel-pin-hot-topic-exclusive/36381034.html",
+   "title": "Disney Character Jar Blind Box Enamel Pin Hot Topic Exclusive",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-character-jar-blind-box-pin-set-at-boxlunch/",
+   "title": "Disney Character Jar Blind Box Pin Set at Hot Topic",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-princess-horse-blind-box-enamel-pin-hot-topic-exclusive/35469822.html",
+   "title": "Loungefly Disney Princess Horse Blind Box Enamel Pin Hot Topic Exclusive",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-princess-horse-blind-box-pin-set-at-hot-topic",
+   "title": "Disney Princess Horse Blind Box Pin Set at Hot Topic",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-01-17",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-princess-couples-blind-box-enamel-pin/35399774.html",
+   "title": "Loungefly Disney Princess Couples Blind Box Enamel Pin",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/hot-topic-pins/",
+   "title": "Hot Topic Pins Archives - Disney Pins Blog",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-villains-portrait-blind-box-enamel-pin-hot-topic-exclusive/36586279.html",
+   "title": "Loungefly Disney Villains Portrait Blind Box Enamel Pin Hot Topic Exclusive",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/disney-villains-portrait-blind-box-enamel-pin-hot-topic-exclusive/35612884.html",
+   "title": "Disney Villains Portrait Blind Box Enamel Pin Hot Topic Exclusive",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-princess-villain-blind-box-enamel-pin/31058634.html",
+   "title": "Loungefly Disney Princess & Villain Blind Box Enamel Pin",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-villain-blind-box-pin-set-at-hot-topic/",
+   "title": "Disney Princess & Villain Blind Box Pin Set at Hot Topic",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hottopic.com/product/loungefly-disney-pixar-fast-food-blind-box-enamel-pin-hot-topic-exclusive/35849942.html",
+   "title": "Loungefly Disney Pixar Fast Food Blind Box Enamel Pin Hot Topic Exclusive",
+   "publisher": "Hot Topic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.entertainmentearth.com/product/star-wars-mandalorian-and-grogu-mystery-minis-series-enamel-pin-display-of-10/fgfmp0177aa",
+   "title": "Star Wars Mandalorian and Grogu Mystery Minis Series Enamel Pin Display of 10",
+   "publisher": "Entertainment Earth",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/products/your-friendly-neighborhood-spider-man-mystery-series-01-case",
+   "title": "Your Friendly Neighborhood Spider-Man Mystery Series 01 - CASE",
+   "publisher": "FiGPiN",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://figpin.com/products/stitch-mystery-series-05-single",
+   "title": "Stitch Mystery Series 05 - SINGLE",
+   "publisher": "FiGPiN",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/figpin-pins/",
+   "title": "FiGPiN Pins Archives - Disney Pins Blog",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2025/figpin-star-wars-droids-series-1-mystery",
+   "claims": [
+    {
+     "field": "price",
+     "value": 10,
+     "source_url": "https://www.jedinews.com/collecting/articles/star-wars-celebration-japan-2025-figpin-exclusives/",
+     "method": "search_snippet",
+     "note": "Jedi News reproduces FiGPiN Celebration Japan list: single Droids Mystery Mini box $10, 10-pin case $100"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.jedinews.com/collecting/articles/star-wars-celebration-japan-2025-figpin-exclusives/",
+     "method": "search_snippet",
+     "note": "prices in USD; booth cashless, charged in USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Star Wars Celebration Japan 2025 (FiGPiN booth)",
+     "source_url": "https://www.jedinews.com/collecting/articles/star-wars-celebration-japan-2025-figpin-exclusives/",
+     "method": "search_snippet",
+     "note": "series offered at Celebration Japan 18-20 Apr 2025; corroborates official FiGPiN blog"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/figpin-sdcc-2025-fantastic-four-quest",
+   "claims": [
+    {
+     "field": "pack_product_code",
+     "value": "1834, 1839, 1845, 1850, 1851, 1852",
+     "source_url": "https://disneymouseketeer.com/figpin-disney-pixar-marvel-2025-sdcc-updates/",
+     "method": "search_snippet",
+     "note": "SDCC 2025 update lists the six Quest numbers without design names; first to market, not SDCC exclusive"
+    },
+    {
+     "field": "format",
+     "value": "mystery/blind box with individual designs (1 of 6)",
+     "source_url": "https://grottotreasures.com/products/figpin-marvel-studios-fantastic-four-quest-mystery-blind-box-pin",
+     "method": "search_snippet",
+     "note": "retailer: 1 of 6 randomized enamel pins per blind box, tiers named (Thing super rare, Human Torch glow hyper rare)"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2025/figpin-wall-e-eve-valentines-day",
+   "claims": [
+    {
+     "field": "pack_product_code",
+     "value": "1817-1818",
+     "source_url": "https://derwincollectables.nl/en/product-categorie/pins-and-keychains/all-pins/disney-pins/disney-figpin/",
+     "method": "search_snippet",
+     "note": "retailer lists FiGPiN Wall-E & Eve as Limited Edition 500 #1817-1818; ties the 1817-1818 numbers to the LE 500 set"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://derwincollectables.nl/en/product-categorie/pins-and-keychains/all-pins/disney-pins/disney-figpin/",
+     "method": "search_snippet",
+     "note": "Limited Edition 500"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (2 pins: WALL-E and EVE)",
+     "source_url": "https://thepinhub.com/products/figpin-wall-e-and-eve-collectible-pins-set",
+     "method": "search_snippet",
+     "note": "listing calls it a WALL-E & EVE 2 pack, FiGPiN exclusive, each pin about 3in with its own power base (attribution within results not certain)"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02-11",
+     "source_url": "https://thepinhub.com/products/figpin-wall-e-and-eve-collectible-pins-set",
+     "method": "search_snippet",
+     "note": "listing gives release date 11 Feb 2025 (agrees with packet 282 DPB date)"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/hot-topic-disney-villain-sidekicks-blind-box",
+   "claims": [
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://disneypinsblog.com/disney-villain-sidekicks-blind-box-pin-set-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "DPB: $12.90 per box/pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-villain-sidekicks-blind-box-pin-set-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/disney-villain-sidekicks-blind-box-pin-set-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "one mystery pin per box"
+    },
+    {
+     "field": "retailer",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/disney-villain-sidekicks-blind-box-pin-set-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "DPB says only available at Hot Topic"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-villain-sidekicks-blind-box-pin-set-at-hot-topic",
+     "method": "search_snippet",
+     "note": "one DPB version says released June 2026"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-07-01",
+     "source_url": "https://disneypinsblog.com/disney-villain-sidekicks-blind-box-pin-set-at-hot-topic/",
+     "method": "search_snippet",
+     "note": "other DPB page dated 1 Jul 2026 - conflicts with June 2026"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2026/hot-topic-disney-character-jar-blind-box",
+   "claims": [
+    {
+     "field": "price",
+     "value": 12.9,
+     "source_url": "https://www.hottopic.com/product/disney-character-jar-blind-box-enamel-pin-hot-topic-exclusive/36381034.html",
+     "method": "search_snippet",
+     "note": "Hot Topic listing $12.90, out of stock"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.hottopic.com/product/disney-character-jar-blind-box-enamel-pin-hot-topic-exclusive/36381034.html",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "retailer",
+     "value": "Hot Topic",
+     "source_url": "https://www.hottopic.com/product/disney-character-jar-blind-box-enamel-pin-hot-topic-exclusive/36381034.html",
+     "method": "search_snippet",
+     "note": "Hot Topic exclusive listing"
+    },
+    {
+     "field": "format",
+     "value": "mystery/blind box (designs not individually listed)",
+     "source_url": "https://www.hottopic.com/product/disney-character-jar-blind-box-enamel-pin-hot-topic-exclusive/36381034.html",
+     "method": "search_snippet",
+     "note": "blind box series of chibi Disney and Pixar characters in jars with glitter; 1 pin per box, about 1.5in"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://www.hottopic.com/product/disney-character-jar-blind-box-enamel-pin-hot-topic-exclusive/36381034.html",
+     "method": "search_snippet",
+     "note": "includes 1 pin, sold blind"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-08",
+     "source_url": "https://disneypinsblog.com/disney-character-jar-blind-box-pin-set-at-boxlunch/",
+     "method": "search_snippet",
+     "note": "DPB says released August 2026; post heading says Hot Topic but URL/images say BoxLunch - retailer conflict"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2025/figpin-inside-out-2-mystery-series-1/joy-uncommon",
+   "set_key": "lic/2025/figpin-inside-out-2-mystery-series-1",
+   "claims": [
+    {
+     "field": "product_code",
+     "value": "Y584",
+     "source_url": "https://disneypinsblog.com/inside-out-2-mystery-series-1-figpin-release/",
+     "method": "search_snippet",
+     "note": "DPB release post lists uncommon Joy (Y584)"
+    },
+    {
+     "field": "product_code",
+     "value": "Y584",
+     "source_url": "https://medium.com/@disney_mouseketeer/figpin-disney-pixar-inside-out-2-mystery-mini-pins-series-1-7e25ee8a539e",
+     "method": "search_snippet",
+     "note": "Medium write-up matches uncommon Joy (Y584)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/figpin-inside-out-2-mystery-series-1/sadness-uncommon",
+   "set_key": "lic/2025/figpin-inside-out-2-mystery-series-1",
+   "claims": [
+    {
+     "field": "product_code",
+     "value": "Y585",
+     "source_url": "https://disneypinsblog.com/inside-out-2-mystery-series-1-figpin-release/",
+     "method": "search_snippet",
+     "note": "DPB release post lists uncommon Sadness (Y585)"
+    },
+    {
+     "field": "product_code",
+     "value": "Y585",
+     "source_url": "https://medium.com/@disney_mouseketeer/figpin-disney-pixar-inside-out-2-mystery-mini-pins-series-1-7e25ee8a539e",
+     "method": "search_snippet",
+     "note": "Medium write-up matches uncommon Sadness (Y585)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/figpin-inside-out-2-mystery-series-1/disgust-uncommon",
+   "set_key": "lic/2025/figpin-inside-out-2-mystery-series-1",
+   "claims": [
+    {
+     "field": "product_code",
+     "value": "Y586",
+     "source_url": "https://disneypinsblog.com/inside-out-2-mystery-series-1-figpin-release/",
+     "method": "search_snippet",
+     "note": "DPB release post lists uncommon Disgust (Y586)"
+    },
+    {
+     "field": "product_code",
+     "value": "Y586",
+     "source_url": "https://medium.com/@disney_mouseketeer/figpin-disney-pixar-inside-out-2-mystery-mini-pins-series-1-7e25ee8a539e",
+     "method": "search_snippet",
+     "note": "Medium write-up matches uncommon Disgust (Y586)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/figpin-inside-out-2-mystery-series-1/anger-uncommon",
+   "set_key": "lic/2025/figpin-inside-out-2-mystery-series-1",
+   "claims": [
+    {
+     "field": "product_code",
+     "value": "Y587",
+     "source_url": "https://disneypinsblog.com/inside-out-2-mystery-series-1-figpin-release/",
+     "method": "search_snippet",
+     "note": "DPB release post lists uncommon Anger (Y587)"
+    },
+    {
+     "field": "product_code",
+     "value": "Y587",
+     "source_url": "https://medium.com/@disney_mouseketeer/figpin-disney-pixar-inside-out-2-mystery-mini-pins-series-1-7e25ee8a539e",
+     "method": "search_snippet",
+     "note": "Medium write-up matches uncommon Anger (Y587)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/figpin-inside-out-2-mystery-series-1/embarrassment-super-rare",
+   "set_key": "lic/2025/figpin-inside-out-2-mystery-series-1",
+   "claims": [
+    {
+     "field": "product_code",
+     "value": "Y591",
+     "source_url": "https://disneypinsblog.com/inside-out-2-mystery-series-1-figpin-release/",
+     "method": "search_snippet",
+     "note": "DPB release post snippet: super rare Fear (Y590), Embarrassment (Y591)"
+    },
+    {
+     "field": "product_code",
+     "value": "Y591",
+     "source_url": "https://medium.com/@disney_mouseketeer/figpin-disney-pixar-inside-out-2-mystery-mini-pins-series-1-7e25ee8a539e",
+     "method": "search_snippet",
+     "note": "Medium write-up super rare numbers match DPB"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/figpin-mandalorian-series-1-mystery/black-gold-redeemable-y537",
+   "set_key": "lic/2025/figpin-mandalorian-series-1-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "The Mandalorian",
+      "Grogu"
+     ],
+     "source_url": "https://pastimesports.ca/products/figpin-star-wars-the-mandalorian-series-1-mystery-pins",
+     "method": "search_snippet",
+     "note": "retailer checklist: Y537 is a black and gold Mandalorian with Grogu unlocked via the FiGPiN app"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://pastimesports.ca/products/figpin-star-wars-the-mandalorian-series-1-mystery-pins",
+     "method": "search_snippet",
+     "note": "single app-redemption pin showing both characters"
+    },
+    {
+     "field": "product_code",
+     "value": "Y537",
+     "source_url": "https://pastimesports.ca/products/figpin-star-wars-the-mandalorian-series-1-mystery-pins",
+     "method": "search_snippet",
+     "note": "Y537"
+    },
+    {
+     "field": "edition_size",
+     "value": 100,
+     "source_url": "https://pastimesports.ca/products/figpin-star-wars-the-mandalorian-series-1-mystery-pins",
+     "method": "search_snippet",
+     "note": "only 100 made"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://pastimesports.ca/products/figpin-star-wars-the-mandalorian-series-1-mystery-pins",
+     "method": "search_snippet",
+     "note": "app-redemption ultra rare"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://pastimesports.ca/products/figpin-star-wars-the-mandalorian-series-1-mystery-pins",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/figpin-mandalorian-series-1-mystery/mandalorian-grogu-chase",
+   "set_key": "lic/2025/figpin-mandalorian-series-1-mystery",
+   "claims": [
+    {
+     "field": "product_code",
+     "value": "Y536",
+     "source_url": "https://pastimesports.ca/products/figpin-star-wars-the-mandalorian-series-1-mystery-pins",
+     "method": "search_snippet",
+     "note": "second reseller also assigns Y536 to Mandalorian with Grogu under both hyper rare and ultra rare - same duplication as Pink a la Mode"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/figpin-star-wars-droids-series-1-mystery/chopper-black-gold-redemption",
+   "set_key": "lic/2025/figpin-star-wars-droids-series-1-mystery",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Star Wars Celebration Japan 2025 mystery cases/boxes only",
+     "source_url": "https://www.jedinews.com/collecting/articles/star-wars-celebration-japan-2025-figpin-exclusives/",
+     "method": "search_snippet",
+     "note": "Jedi News repeats FiGPiN: black and gold ultra rare Chopper obtainable only in Mystery Mini cases/boxes at the show; no app redemption mentioned"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/figpin-star-wars-droids-series-1-mystery/r5-d4",
+   "set_key": "lic/2025/figpin-star-wars-droids-series-1-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "R5-D4",
+     "source_url": "https://madhousecollectibles.com/collections/figpin-mystery-minis",
+     "method": "search_snippet",
+     "note": "reseller FiGPiN Mystery Minis collection lists R5-D4 among individually sold droid pins (with Chopper, K-2SO, BB-8, R2-D2, C-3PO)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "R5-D4"
+     ],
+     "source_url": "https://madhousecollectibles.com/collections/figpin-mystery-minis",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://madhousecollectibles.com/collections/figpin-mystery-minis",
+     "method": "search_snippet",
+     "note": "FiGPiN Mystery Minis collection"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/figpin-wall-e-eve-valentines-day/wall-e",
+   "set_key": "lic/2025/figpin-wall-e-eve-valentines-day",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "WALL-E"
+     ],
+     "source_url": "https://thepinhub.com/products/figpin-wall-e-and-eve-collectible-pins-set",
+     "method": "search_snippet",
+     "note": "WALL-E & EVE 2 pack: WALL-E is one of the two pins"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://thepinhub.com/products/figpin-wall-e-and-eve-collectible-pins-set",
+     "method": "search_snippet",
+     "note": "2 pack of separate 3in pins, each with a power base"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://thepinhub.com/products/figpin-wall-e-and-eve-collectible-pins-set",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02-11",
+     "source_url": "https://thepinhub.com/products/figpin-wall-e-and-eve-collectible-pins-set",
+     "method": "search_snippet",
+     "note": "listing release date 11 Feb 2025"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://derwincollectables.nl/en/product-categorie/pins-and-keychains/all-pins/disney-pins/disney-figpin/",
+     "method": "search_snippet",
+     "note": "set is Limited Edition 500 (#1817-1818)"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2025/figpin-wall-e-eve-valentines-day/eve",
+   "set_key": "lic/2025/figpin-wall-e-eve-valentines-day",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "EVE"
+     ],
+     "source_url": "https://thepinhub.com/products/figpin-wall-e-and-eve-collectible-pins-set",
+     "method": "search_snippet",
+     "note": "WALL-E & EVE 2 pack: EVE is one of the two pins"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://thepinhub.com/products/figpin-wall-e-and-eve-collectible-pins-set",
+     "method": "search_snippet",
+     "note": "2 pack of separate 3in pins, each with a power base"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://thepinhub.com/products/figpin-wall-e-and-eve-collectible-pins-set",
+     "method": "search_snippet",
+     "note": "FiGPiN"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02-11",
+     "source_url": "https://thepinhub.com/products/figpin-wall-e-and-eve-collectible-pins-set",
+     "method": "search_snippet",
+     "note": "listing release date 11 Feb 2025"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://derwincollectables.nl/en/product-categorie/pins-and-keychains/all-pins/disney-pins/disney-figpin/",
+     "method": "search_snippet",
+     "note": "set is Limited Edition 500 (#1817-1818)"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2025/figpin-star-wars-droids-series-1-mystery",
+   "field": "members",
+   "searched": "4 queries (codes, tiers, reseller lists)",
+   "note": "Y570-Y578 still not mapped to names/tiers; no snippet gives the uncommon/rare/super/hyper lineup"
+  },
+  {
+   "key": "lic/2025/figpin-star-wars-droids-series-1-mystery/k-2so",
+   "field": "edition_type",
+   "searched": "3 queries",
+   "note": "hold kept: still reseller-only, no tier/code. Caution: a Jan 2024 Disney Parks droid mystery set (not FiGPiN) also had K-2SO, BD-1, CHOP"
+  },
+  {
+   "key": "lic/2025/figpin-star-wars-droids-series-1-mystery/bd-1",
+   "field": "edition_type",
+   "searched": "3 queries",
+   "note": "hold kept: still reseller-only, no tier/code. Caution: Jan 2024 Disney Parks droid mystery set (DPB) also had BD-1 - possible mix-up"
+  },
+  {
+   "key": "lic/2025/figpin-star-wars-droids-series-1-mystery/d-o",
+   "field": "edition_type",
+   "searched": "3 queries",
+   "note": "hold kept: still reseller-only, no tier/code; no new per-pin evidence"
+  },
+  {
+   "key": "lic/2025/figpin-star-wars-droids-series-1-mystery/r5-d4",
+   "field": "edition_type",
+   "searched": "2 queries",
+   "note": "hold: reseller-only listing (Madhouse); tier, item number and series membership not confirmed by FiGPiN; may match one of Y570-Y578"
+  },
+  {
+   "key": "lic/2025/figpin-star-wars-droids-series-1-mystery/chopper-black-gold-redemption",
+   "field": "edition_type",
+   "searched": "2 queries",
+   "note": "conflict kept: packet 282 (FiGPiN case page) calls Y579 app-redeemable; official blog + Jedi News say show-case-only at Celebration Japan. No source reconciles"
+  },
+  {
+   "key": "lic/2025/figpin-star-wars-droids-series-1-mystery/celebration-japan-glitter-droids",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "lead kept: 3 glitter droids exclusive to Celebration Japan cases (Jedi News repeats); droids still unnamed - not created"
+  },
+  {
+   "key": "lic/2025/figpin-mandalorian-series-1-mystery/mandalorian-grogu-chase",
+   "field": "edition_type",
+   "searched": "2 queries",
+   "note": "conflict kept: Pastime Sports repeats Y536 under both hyper rare and ultra rare; Y537 is the app black/gold - Y536 likely hyper rare but not stated cleanly"
+  },
+  {
+   "key": "lic/2025/figpin-inside-out-2-mystery-series-1",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "gap closed: all 14 IO2 S1 codes now Y580-Y593 (DPB, Medium). Medium and DPB still differ on whether Anxiety Y593 is the ultra rare app pin vs hyper rare"
+  },
+  {
+   "key": "lic/2025/figpin-your-friendly-neighborhood-spider-man-series-1-mystery",
+   "field": "release_year",
+   "searched": "3 queries",
+   "note": "hold kept: no source states the pin release year; searches returned only TV-show dates"
+  },
+  {
+   "key": "lic/2025/figpin-your-friendly-neighborhood-spider-man-series-1-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Y836, Y837, Y840, Y841, Y844 still unnamed; Hot Topic text mentions Venom (Symbiote already recorded)"
+  },
+  {
+   "key": "lic/2025/figpin-stitch-mystery-series-5",
+   "field": "members",
+   "searched": "1 query",
+   "note": "Y1041, Y1045, Y1047, Y1049 still unnamed; official page range Y1039-Y1052 confirmed"
+  },
+  {
+   "key": "lic/2025/figpin-sdcc-2025-fantastic-four-quest",
+   "field": "product_code",
+   "searched": "2 queries",
+   "note": "still unmapped: 1834/1839/1845/1850/1851/1852 never tied to a named design (official blog, sdccblog, Disney Mouseketeer, retailers)"
+  },
+  {
+   "key": "lic/2026/figpin-star-wars-day-2026/han-leia-luke",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "hold kept: figpin.com 1870 preorder (delivery late June 2026, $20) and DPB 4 May 2026 headline still matched by title only"
+  },
+  {
+   "key": "lic/2025/figpin-wall-e-eve-valentines-day",
+   "field": "format",
+   "searched": "1 query",
+   "note": "set structure lead (review; pins held): hold resolved at set level: Derwin lists LE 500 #1817-1818 and The Pin Hub a WALL-E & EVE 2 pack (11 Feb 2025); WALL-E/EVE pins created"
+  },
+  {
+   "key": "lic/2025/figpin-wall-e-eve-valentines-day/wall-e",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "1817 vs 1818 not assigned to WALL-E or EVE by any snippet"
+  },
+  {
+   "key": "lic/2025/figpin-wall-e-eve-valentines-day/eve",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "1817 vs 1818 not assigned to WALL-E or EVE by any snippet"
+  },
+  {
+   "key": "lic/2026/hot-topic-disney-villain-sidekicks-blind-box",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "maker still not stated; no Loungefly-titled Villain Sidekicks listing found"
+  },
+  {
+   "key": "lic/2026/hot-topic-disney-villain-sidekicks-blind-box",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed - DPB names Maleficent, Hades, Scar and more (character list only); set size not stated"
+  },
+  {
+   "key": "lic/2026/hot-topic-disney-character-jar-blind-box",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "Hot Topic title has no Loungefly brand; maker not stated"
+  },
+  {
+   "key": "lic/2026/hot-topic-disney-character-jar-blind-box",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed - DPB names Marie, Pooh, Stitch and more (list only); set size not stated"
+  },
+  {
+   "key": "lic/2026/hot-topic-disney-character-jar-blind-box",
+   "field": "retailer",
+   "searched": "1 query",
+   "note": "conflict: DPB post heading says Hot Topic, URL/images say BoxLunch; Hot Topic listing exists"
+  },
+  {
+   "key": "lic/2026/loungefly-hot-topic-disney-princess-horse-blind-box",
+   "field": "members",
+   "searched": "1 query",
+   "note": "lead for Loungefly cell: HT listing titled Loungefly, HT exclusive, $12.90, ~1.5in; DPB 17 Jan 2026 preorder ships Mar 2026; Rapunzel/Maximus, Mulan/Khan, Merida/Angus (list)"
+  },
+  {
+   "key": "lic/2026/hot-topic-disney-princess-couples-blind-box",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "lead for Loungefly cell: HT has Loungefly Disney Princess Couples blind box ($12.90); tied to DPB 24 Aug 2026 post by name only"
+  },
+  {
+   "key": "lic/2026/hot-topic-disney-villains-portrait-blind-box",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "two HT listings: Loungefly-titled HT exclusive (Ursula, Hades, Evil Queen, Cruella, Maleficent, Jafar) and an unbranded one; differs from packet 244 list"
+  },
+  {
+   "key": "lic/2026/hot-topic-disney-princess-villain-halloween-blind-box",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "not found; results only show Loungefly Princess & Villain HT blind box from Feb 2024 ($9.90) - lead for Loungefly 2024 cell"
+  },
+  {
+   "key": "lic/2026/hot-topic-disney-animals-food-blind-box",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "not found; closest is undated Loungefly Disney Pixar Fast Food HT exclusive blind box (lead for Loungefly cell)"
+  },
+  {
+   "key": "lic/2026/figpin-mandalorian-and-grogu-mystery-minis",
+   "field": "members",
+   "searched": "1 query",
+   "note": "lead: Entertainment Earth display of 10 (FGFMP0177AA), est. June 2026, tiers common-hyper rare; unclear if new series or S1 restock"
+  },
+  {
+   "key": "lic/2024-2026/her-universe",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "still no Her Universe/Our Universe Disney pin dated 2024-26 outside BoxLunch-cell items (cowboy boot, baby Stitch)"
+  },
+  {
+   "key": "lic/2025/figpin-wall-e-eve-valentines-day/wall-e",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: sole evidence is reseller / pin-trading listing sites (Derwin Collectables, The Pin Hub); item numbers not assigned per pin"
+  },
+  {
+   "key": "lic/2025/figpin-wall-e-eve-valentines-day/eve",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: sole evidence is reseller / pin-trading listing sites (Derwin Collectables, The Pin Hub); item numbers not assigned per pin"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 to packets 258/282/306 (keys reused). IO2 S1 codes completed (Y584-Y587, Y591). Wall-E/Eve 2-pack tied to LE500 #1817-1818; two pins created. Y537 now Mandalorian+Grogu. New reseller-only R5-D4 held. Holds kept: K-2SO/BD-1/D-O, YFNSM year, Han/Leia/Luke, Chopper, Y536. HT 2026 makers: Horse, Couples, Villains Portrait are Loungefly (leads). All search_snippet leads. 26 searches."
+}

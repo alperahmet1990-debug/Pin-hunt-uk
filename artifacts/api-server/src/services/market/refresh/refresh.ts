@@ -592,10 +592,14 @@ export async function runRefresh(opts: RefreshOptions, deps: RefreshDeps): Promi
       rows.push(toListingRow(c, ref.uuid, src.retentionDays, now));
     }
   });
-  if (decision.deleteStored.length) await deps.store.deleteListings(decision.deleteStored);
   for (let i = 0; i < rows.length; i += UPSERT_CHUNK) {
     await deps.store.upsertListings(rows.slice(i, i + UPSERT_CHUNK));
   }
+  // Delete worse duplicates only after the new rows are stored, so a failed
+  // upsert never loses a listing; never delete a row this run just wrote.
+  const written = new Set(rows.map(r => listingKey({ pinUuid: r.pin_id, sourceId: r.source_id, externalId: r.external_id })));
+  const toDelete = decision.deleteStored.filter(k => !written.has(listingKey(k)));
+  if (toDelete.length) await deps.store.deleteListings(toDelete);
 
   // Revalue from stored evidence (no provider calls). Pins not reached after
   // a stop are left as they are.
@@ -607,7 +611,7 @@ export async function runRefresh(opts: RefreshOptions, deps: RefreshDeps): Promi
     }
   }
   const inRun = new Set(collected.map(c => c.ref.uuid));
-  const others = [...new Set(decision.deleteStored.map(d => d.pinUuid))].filter(u => !inRun.has(u));
+  const others = [...new Set(toDelete.map(d => d.pinUuid))].filter(u => !inRun.has(u));
   for (const uuid of others) {
     try {
       await deps.store.revalue(uuid, now);
@@ -628,7 +632,7 @@ export async function runRefresh(opts: RefreshOptions, deps: RefreshDeps): Promi
     pins: summaries,
     creditsSpent: run.spent(),
     listingsWritten: rows.length,
-    storedRowsReplaced: decision.deleteStored.length,
+    storedRowsReplaced: toDelete.length,
     otherPinsRevalued: others.length,
     ...(stoppedBy ? { stoppedBy } : {}),
     ...(budgetAfter ? { budgetAfter } : {}),

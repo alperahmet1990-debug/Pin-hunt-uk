@@ -373,6 +373,16 @@ describe("runRefresh: apply", () => {
     expect(store.revalued).toEqual([UUID_A, UUID_C]);
   });
 
+  it("keeps the stored duplicate if storing the better match fails", async () => {
+    const store = new FakeStore([pinRef(UUID_A, "PHUK-A")]);
+    store.listings.push(storedRow({ pin_id: UUID_C, external_id: "uk-1", match_score: 1, last_seen_at: iso(10) }));
+    store.upsertListings = async () => { throw new Error("db down"); };
+    const { client } = fakeClient();
+    await expect(runRefresh(opts({ apply: true, confirmCredits: 1 }), deps(store, client).d)).rejects.toThrow("db down");
+    expect(store.deleted).toEqual([]);
+    expect(store.listings.filter(l => l.external_id === "uk-1").map(l => l.pin_id)).toEqual([UUID_C]);
+  });
+
   it("does not store a match that a stored row on another pin beats", async () => {
     const store = new FakeStore([pinRef(UUID_A, "PHUK-A")]);
     store.listings.push(storedRow({ pin_id: UUID_C, external_id: "uk-1", match_score: 999, last_seen_at: iso(10) }));

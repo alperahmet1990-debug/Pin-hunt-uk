@@ -1,0 +1,1163 @@
+{
+ "packet_id": "backfill-b280-wdw-oe-2017-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b280",
+ "sources": [
+  {
+   "url": "https://mypincentral.com/pin/149453",
+   "title": "MyPinCentral pin 149453 (Woody Tsum Tsum)",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/149447",
+   "title": "MyPinCentral pin 149447 (WALL-E Tsum Tsum)",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/149452",
+   "title": "MyPinCentral pin 149452 (Dug Tsum Tsum)",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/149456",
+   "title": "MyPinCentral pin 149456 (EVE Tsum Tsum)",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/149445",
+   "title": "DLR/WDW Tsum Tsum Mystery Pin Pack - Series 5 - Pixar - 2017",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/175846",
+   "title": "MyPinCentral pin 175846 (Minnie, Mailbox Sweethearts 2017)",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+   "title": "New Disney Pins March 2017 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-03-19",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+   "title": "New Disney Pins February 2017 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+   "title": "New Disney Pins March 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/epcot-35th-anniversary-disney-pins/",
+   "title": "Epcot 35th Anniversary Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pandora-world-avatar-mystery-pin-collection/",
+   "title": "Pandora - The World of Avatar Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/nightmare-christmas-pin-set/",
+   "title": "The Nightmare Before Christmas Tsum Tsum Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07-17",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+   "title": "New Disney Pins October 2017 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+   "title": "New Disney Pins November 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-tsum-tsum-series-2-pin-collection/",
+   "title": "Star Wars Tsum Tsum Series 2 Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tsum Tsum Mystery Pin Pack - Series 5 - Pixar",
+     "source_url": "https://mypincentral.com/pin/149445",
+     "method": "search_snippet",
+     "note": "MyPinCentral pack listing title, DLR/WDW, 2017"
+    },
+    {
+     "field": "format",
+     "value": "mystery pack",
+     "source_url": "https://mypincentral.com/pin/149445",
+     "method": "search_snippet",
+     "note": "Pack holds five randomly selected pins"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 5,
+     "source_url": "https://mypincentral.com/pin/149445",
+     "method": "search_snippet",
+     "note": "Five random pins per pack"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://mypincentral.com/pin/149445",
+     "method": "search_snippet",
+     "note": "Listing prefixed DLR/WDW"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://mypincentral.com/pin/149445",
+     "method": "search_snippet",
+     "note": "Listing dated 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2017/oe-set/mickey-minnie-mailbox",
+   "claims": [
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Two-pin set, 11.99, open edition, Disneyland and WDW"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-1",
+     "method": "search_snippet",
+     "note": "Two-pin set"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2017/oe-single/rivers-of-light-logo",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Rivers of Light Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+     "method": "search_snippet",
+     "note": "Single OE pin per weekly round-up"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2017/oe-single/epcot-35th-figment",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Epcot 35 Figment Pin",
+     "source_url": "https://disneypinsblog.com/epcot-35th-anniversary-disney-pins/",
+     "method": "search_snippet",
+     "note": "Single OE pin on DPB Epcot 35th page"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2017/oe-set/pandora-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pandora - The World of Avatar Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/pandora-world-avatar-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/pandora-world-avatar-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/pandora-world-avatar-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Eight pins in the collection"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/pandora-world-avatar-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Two per box"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/pandora-world-avatar-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "USD per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/pandora-world-avatar-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05-27",
+     "source_url": "https://disneypinsblog.com/pandora-world-avatar-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Post says look for them when the land opens 27 May 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Pandora - The World of Avatar, Disney's Animal Kingdom",
+     "source_url": "https://disneypinsblog.com/pandora-world-avatar-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Land opening release"
+    },
+    {
+     "field": "sub_series",
+     "value": "ACE (Alpha Centauri Expeditions)",
+     "source_url": "https://disneypinsblog.com/pandora-world-avatar-mystery-pin-collection/",
+     "method": "search_snippet",
+     "note": "Pins represent ACE"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2017/oe-set/nightmare-before-christmas-tsum-tsum-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Nightmare Before Christmas Tsum Tsum Pin Set",
+     "source_url": "https://disneypinsblog.com/nightmare-christmas-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB post dated 17 Jul 2017"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/nightmare-christmas-pin-set/",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/nightmare-christmas-pin-set/",
+     "method": "search_snippet",
+     "note": "Eight different pins"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/nightmare-christmas-pin-set/",
+     "method": "search_snippet",
+     "note": "Two per box"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/nightmare-christmas-pin-set/",
+     "method": "search_snippet",
+     "note": "USD per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/nightmare-christmas-pin-set/",
+     "method": "search_snippet",
+     "note": "US retail"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/nightmare-christmas-pin-set/",
+     "method": "search_snippet",
+     "note": "Stated OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07",
+     "source_url": "https://disneypinsblog.com/nightmare-christmas-pin-set/",
+     "method": "search_snippet",
+     "note": "Spotted at Disneyland by 17 Jul 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort first; Walt Disney World and Shop Disney Parks app planned",
+     "source_url": "https://disneypinsblog.com/nightmare-christmas-pin-set/",
+     "method": "search_snippet",
+     "note": "WDW release announced as planned"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar/woody",
+   "set_key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Woody"
+     ],
+     "source_url": "https://mypincentral.com/pin/149453",
+     "method": "search_snippet",
+     "note": "Per-pin page shows Woody (Toy Story) as a single design"
+    },
+    {
+     "field": "main_character",
+     "value": "Woody",
+     "source_url": "https://mypincentral.com/pin/149453",
+     "method": "search_snippet",
+     "note": "Single-character design"
+    },
+    {
+     "field": "visual_form",
+     "value": "tsum tsum",
+     "source_url": "https://mypincentral.com/pin/149453",
+     "method": "search_snippet",
+     "note": "Pin shaped like a Tsum Tsum"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "2017 Disney/Pixar copyright",
+     "source_url": "https://mypincentral.com/pin/149453",
+     "method": "search_snippet",
+     "note": "Back carries 2017 Disney/Pixar copyright text (paraphrase)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/149453",
+     "method": "search_snippet",
+     "note": "Individual per-pin catalogue page for this design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Woody"
+     ],
+     "source_url": "https://mypincentral.com/pin/149445",
+     "method": "search_snippet",
+     "note": "Series 5 pack listing names Woody among the 16 designs"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar/wall-e",
+   "set_key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "WALL-E"
+     ],
+     "source_url": "https://mypincentral.com/pin/149447",
+     "method": "search_snippet",
+     "note": "Per-pin page shows WALL-E (WALL-E) as a single design"
+    },
+    {
+     "field": "main_character",
+     "value": "WALL-E",
+     "source_url": "https://mypincentral.com/pin/149447",
+     "method": "search_snippet",
+     "note": "Single-character design"
+    },
+    {
+     "field": "visual_form",
+     "value": "tsum tsum",
+     "source_url": "https://mypincentral.com/pin/149447",
+     "method": "search_snippet",
+     "note": "Pin shaped like a Tsum Tsum"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "2017 Disney/Pixar copyright",
+     "source_url": "https://mypincentral.com/pin/149447",
+     "method": "search_snippet",
+     "note": "Back carries 2017 Disney/Pixar copyright text (paraphrase)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/149447",
+     "method": "search_snippet",
+     "note": "Individual per-pin catalogue page for this design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "WALL-E"
+     ],
+     "source_url": "https://mypincentral.com/pin/149445",
+     "method": "search_snippet",
+     "note": "Series 5 pack listing names WALL-E among the 16 designs"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar/dug",
+   "set_key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dug"
+     ],
+     "source_url": "https://mypincentral.com/pin/149452",
+     "method": "search_snippet",
+     "note": "Per-pin page shows Dug (Up) as a single design"
+    },
+    {
+     "field": "main_character",
+     "value": "Dug",
+     "source_url": "https://mypincentral.com/pin/149452",
+     "method": "search_snippet",
+     "note": "Single-character design"
+    },
+    {
+     "field": "visual_form",
+     "value": "tsum tsum",
+     "source_url": "https://mypincentral.com/pin/149452",
+     "method": "search_snippet",
+     "note": "Pin shaped like a Tsum Tsum"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "2017 Disney/Pixar copyright",
+     "source_url": "https://mypincentral.com/pin/149452",
+     "method": "search_snippet",
+     "note": "Back carries 2017 Disney/Pixar copyright text (paraphrase)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/149452",
+     "method": "search_snippet",
+     "note": "Individual per-pin catalogue page for this design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dug"
+     ],
+     "source_url": "https://mypincentral.com/pin/149445",
+     "method": "search_snippet",
+     "note": "Series 5 pack listing names Dug among the 16 designs"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar/eve",
+   "set_key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "EVE"
+     ],
+     "source_url": "https://mypincentral.com/pin/149456",
+     "method": "search_snippet",
+     "note": "Per-pin page shows EVE (WALL-E) as a single design"
+    },
+    {
+     "field": "main_character",
+     "value": "EVE",
+     "source_url": "https://mypincentral.com/pin/149456",
+     "method": "search_snippet",
+     "note": "Single-character design"
+    },
+    {
+     "field": "visual_form",
+     "value": "tsum tsum",
+     "source_url": "https://mypincentral.com/pin/149456",
+     "method": "search_snippet",
+     "note": "Pin shaped like a Tsum Tsum"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "2017 Disney/Pixar copyright",
+     "source_url": "https://mypincentral.com/pin/149456",
+     "method": "search_snippet",
+     "note": "Back carries 2017 Disney/Pixar copyright text (paraphrase)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/149456",
+     "method": "search_snippet",
+     "note": "Individual per-pin catalogue page for this design"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "EVE"
+     ],
+     "source_url": "https://mypincentral.com/pin/149445",
+     "method": "search_snippet",
+     "note": "Series 5 pack listing names EVE among the 16 designs"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/oe-set/mickey-minnie-mailbox/minnie",
+   "set_key": "wdw/2017/oe-set/mickey-minnie-mailbox",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mypincentral.com/pin/175846",
+     "method": "search_snippet",
+     "note": "Per-pin page: Minnie posting a love letter to Mickey"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://mypincentral.com/pin/175846",
+     "method": "search_snippet",
+     "note": "Minnie pin of the pair"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie posting a letter, open letter box on the left",
+     "source_url": "https://mypincentral.com/pin/175846",
+     "method": "search_snippet",
+     "note": "Paraphrase of per-pin page"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://mypincentral.com/pin/175846",
+     "method": "search_snippet",
+     "note": "Page places it in the Minnie and Mickey Mailbox Sweethearts series of 2017"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://mypincentral.com/pin/175846",
+     "method": "search_snippet",
+     "note": "Page describes the Minnie half of the two-pin set as its own pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/oe/rivers-of-light-logo",
+   "set_key": "wdw/2017/oe-single/rivers-of-light-logo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rivers of Light Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+     "method": "search_snippet",
+     "note": "New OE pin in Feb 2017 week 3 round-up"
+    },
+    {
+     "field": "attraction",
+     "value": "Rivers of Light",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+     "method": "search_snippet",
+     "note": "Animal Kingdom nighttime show"
+    },
+    {
+     "field": "visual_description",
+     "value": "Show logo artwork",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+     "method": "search_snippet",
+     "note": "Design shows the show's logo art"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+     "method": "search_snippet",
+     "note": "Stated OE"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+     "method": "search_snippet",
+     "note": "Feb 2017 week 3 round-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+     "method": "search_snippet",
+     "note": "Spotted at WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/oe/epcot-35th-figment",
+   "set_key": "wdw/2017/oe-single/epcot-35th-figment",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Figment"
+     ],
+     "source_url": "https://disneypinsblog.com/epcot-35th-anniversary-disney-pins/",
+     "method": "search_snippet",
+     "note": "OE pin featuring Figment"
+    },
+    {
+     "field": "main_character",
+     "value": "Figment",
+     "source_url": "https://disneypinsblog.com/epcot-35th-anniversary-disney-pins/",
+     "method": "search_snippet",
+     "note": "Figment"
+    },
+    {
+     "field": "front_text",
+     "value": "EPCOT 35",
+     "source_url": "https://disneypinsblog.com/epcot-35th-anniversary-disney-pins/",
+     "method": "search_snippet",
+     "note": "Pin reads EPCOT 35"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/epcot-35th-anniversary-disney-pins/",
+     "method": "search_snippet",
+     "note": "Listed as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-01",
+     "source_url": "https://disneypinsblog.com/epcot-35th-anniversary-disney-pins/",
+     "method": "search_snippet",
+     "note": "Listed among 1 Oct 2017 35th anniversary releases"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/epcot-35th-anniversary-disney-pins/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Epcot",
+     "source_url": "https://disneypinsblog.com/epcot-35th-anniversary-disney-pins/",
+     "method": "search_snippet",
+     "note": "Epcot 35th anniversary merchandise"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/oe/belle-tassel",
+   "set_key": "wdw/2017/oe-single/belle-tassel",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "tassel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "Tassel elements on each side"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "Round-up post dated 19 Mar 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/oe/cinderella-tassel",
+   "set_key": "wdw/2017/oe-single/cinderella-tassel",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "tassel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "Tassel elements on each side"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "Round-up post dated 19 Mar 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/oe/star-wars-tsum-tsum-slider",
+   "set_key": "wdw/2017/oe-single/star-wars-tsum-tsum-slider",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "USD 12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "slider"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "Has a slider element"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/oe/frozen-ever-after-2017",
+   "set_key": "wdw/2017/oe-single/frozen-ever-after-2017",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+     "method": "search_snippet",
+     "note": "USD 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-26",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+     "method": "search_snippet",
+     "note": "Available from 26 Feb 2017 per round-up"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+     "method": "search_snippet",
+     "note": "Spotted at WDW"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+     "method": "search_snippet",
+     "note": "Listed as new OE"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/oe/happy-hanukkah-chip-n-dale",
+   "set_key": "wdw/2017/oe-single/happy-hanukkah-chip-n-dale",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 8.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+     "method": "search_snippet",
+     "note": "USD 8.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+     "method": "search_snippet",
+     "note": "OE in 22-28 Oct 2017 round-up"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+     "method": "search_snippet",
+     "note": "Week of 22-28 Oct 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-4",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar/woody",
+   "field": "set_membership",
+   "searched": "MyPinCentral per-pin + pack listing; 3 queries",
+   "note": "Per-pin page 149453 shows the design; Series 5 link rests on the pack listing (149445) naming Woody; confirm per-pin page names the pack"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar/wall-e",
+   "field": "set_membership",
+   "searched": "MyPinCentral per-pin + pack listing; 3 queries",
+   "note": "Per-pin page 149447 shows the design; Series 5 link rests on the pack listing (149445) naming WALL-E; confirm per-pin page names the pack"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar/dug",
+   "field": "set_membership",
+   "searched": "MyPinCentral per-pin + pack listing; 3 queries",
+   "note": "Per-pin page 149452 shows the design; Series 5 link rests on the pack listing (149445) naming Dug; confirm per-pin page names the pack"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar/eve",
+   "field": "set_membership",
+   "searched": "MyPinCentral per-pin + pack listing; 3 queries",
+   "note": "Per-pin page 149456 shows the design; Series 5 link rests on the pack listing (149445) naming EVE; confirm per-pin page names the pack"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "kept: remaining 12 designs (11 named: Dory, Remy, Carl, Mike, Sulley, Buzz, Flik, Heimlich, Linguini, Russell, Kevin; one unnamed) appear only in the pack-listing character list; no per-pin page seen - hold"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-series-5-pixar",
+   "field": "edition_type",
+   "searched": "3 queries",
+   "note": "Edition type not stated by a permitted per-source snippet"
+  },
+  {
+   "key": "wdw/2017/oe-set/mickey-minnie-mailbox/minnie",
+   "field": "hold_release",
+   "searched": "2 queries",
+   "note": "released: members hold on wdw/2017/oe-set/mickey-minnie-mailbox (217, kept in 425; dlr 224) lifted for Minnie only via MyPinCentral per-pin page 175846"
+  },
+  {
+   "key": "wdw/2017/oe-set/mickey-minnie-mailbox/mickey",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "kept: no per-pin page for the Mickey half found; set described as two pins only"
+  },
+  {
+   "key": "dlr/2017/oe-set/mickey-minnie-mailbox/minnie",
+   "field": "duplicate",
+   "searched": "2 queries",
+   "note": "variant: same pin as wdw/2017/oe-set/mickey-minnie-mailbox/minnie (shared DLR/WDW OE 2-pin set; counted once)"
+  },
+  {
+   "key": "wdw/2017/oe-set/mickey-minnie-mailbox",
+   "field": "original_price_conflict",
+   "searched": "2 queries",
+   "note": "A reseller listing (yourwdwstore) shows 19.99/29.99 and date 11/2/2017; not used - DPB 11.99 stands"
+  },
+  {
+   "key": "wdw/2017/oe/rivers-of-light-logo",
+   "field": "prior_lead",
+   "searched": "1 query",
+   "note": "resolves 233 lead wdw/2016/oe/rivers-of-light-logo (reseller-only, year unknown): DPB dates it Feb 2017; 2016 key should not be used"
+  },
+  {
+   "key": "wdw/2017/oe/epcot-35th-figment",
+   "field": "prior_lead",
+   "searched": "1 query",
+   "note": "released: 425 lead wdw/2017/oe/epcot-35th-figment now tied to a dated DPB Epcot 35th page entry"
+  },
+  {
+   "key": "wdw/2017/oe/epcot-35th-figment",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "No price in snippet"
+  },
+  {
+   "key": "wdw/2017/oe/star-wars-tsum-tsum-slider",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "This pass's snippet did not restate OE for the slider; characters still not stated"
+  },
+  {
+   "key": "wdw/2017/oe/frozen-ever-after-2017",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept (425): 2017 entry still gives no design; same 9.99 price as June 2016 OE pin, so a new design is not established"
+  },
+  {
+   "key": "wdw/2017/oe/happy-hanukkah-chip-n-dale",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept (425): lead - disneystore.com lists a single 'Chip n Dale Happy Hanukkah Pin' (400020429070) but year not stated; reseller date 10/12/2017 conflicts"
+  },
+  {
+   "key": "wdw/2017/oe-set/pandora-mystery",
+   "field": "prior_lead",
+   "searched": "1 query",
+   "note": "released: 425 year lead resolved - DPB ties the set to the 27 May 2017 land opening"
+  },
+  {
+   "key": "wdw/2017/oe-set/pandora-mystery",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "Edition type not stated in snippet"
+  },
+  {
+   "key": "wdw/2017/oe-set/pandora-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Designs not named; a retailer says 10 designs (not used) vs DPB 8"
+  },
+  {
+   "key": "wdw/2017/oe-set/nightmare-before-christmas-tsum-tsum-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Designs (Jack, Sally, Zero, Sandy Claws, Scary Teddy, Lock/Shock/Barrel) named only by reseller listings - not used; MyPinCentral 165363 pack listing also lists characters (list only)"
+  },
+  {
+   "key": "wdw/2017/oe-set/nightmare-before-christmas-tsum-tsum-mystery",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "WDW arrival not confirmed, only planned; shared DLR/WDW product keyed under wdw - DLR cell should note variant, not duplicate"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-series-4",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "kept: lead - MyPinCentral 43465 (King Triton) and 43475 (Sebastian) tsum pins with Pin Trading 2017 back, but pages do not name Series 4; 16-character list from wiki/listings only"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-villains-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "kept: no per-design page found; only a 2016-backed Jafar tsum pin surfaced, not tied to this set"
+  },
+  {
+   "key": "wdw/2017/oe-set/star-wars-tsum-tsum-series-2",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "conflict lead: DPB 16 vs letsgopintrading/retailer 17 designs (listing sites, not recorded as a claim)"
+  },
+  {
+   "key": "wdw/2017/oe-set/star-wars-tsum-tsum-series-2",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "kept: 17-character roster only on listing/reseller sites; MyPinCentral R2-D2/Chewbacca tsum pages have 2016 backs, not this set"
+  },
+  {
+   "key": "wdw/2017/oe-set/haunted-mansion-cameo-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "kept: no Cameo per-design page; lead - MyPinCentral 14534 Candelabra Gargoyle is from a 2017 HM Reveal/Conceal Bat Puzzle mystery set, not shown to be Cameo (forum also cites an LR puzzle set) - LE cell check"
+  },
+  {
+   "key": "wdw/2017/oe-set/disney-parks-2017-booster",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "kept: six characters (Sorcerer Mickey, Donald, Tinker Bell, Simba, Stitch, Dory) still only on reseller yourwdwstore; DPB gives count only"
+  },
+  {
+   "key": "wdw/2017/oe-single/march-2017-week-4-fourth-oe",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "kept: Mar wk4 snippet again named only Belle tassel, Cinderella tassel, SW Tsum slider at both resorts"
+  },
+  {
+   "key": "wdw/2017/oe/spring-break-2017",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "kept: no 2017 Spring Break pin found; 2016 and 2019 Spring Break pins were LE, so a 2017 one likely belongs to the LE cell"
+  },
+  {
+   "key": "wdw/2017/oe/cars-3-maximum-mph",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "kept: only a reseller (pinderellashop) names it 'Lightning McQueen and Cruz Maximum MPH'; sole evidence is a listing - not claimed"
+  },
+  {
+   "key": "wdw/2017/oe-set/halloween-2017-oe",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "kept: 2017 Halloween OE pins found are TDR-only; DLR/WDW party pins LE, Halloween 2017 commemorative LE 3000"
+  },
+  {
+   "key": "wdw/2017/oe-set/epcot-flower-garden-2017",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "kept: no OE F&G 2017 pin found; topiary/AP pins LE or LR (LE cell)"
+  },
+  {
+   "key": "wdw/2017/oe/disney-springs-2017",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "kept: no Disney Springs-specific 2017 OE pin found"
+  },
+  {
+   "key": "wdw/2017/oe-set/princess-gold-frame-mystery/jasmine",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: lead - a MyPinCentral oval gold-frame Jasmine page (2017 Pin Trading back) found, but series not named; other 7 no per-pin page"
+  },
+  {
+   "key": "wdw/2017/oe-set/digital-disney-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept on all 8 members: no per-pin pages; MyPinCentral Goofy 173489 is the MNSSHP 2017 mystery, not Digital Disney"
+  },
+  {
+   "key": "wdw/2017/oe-set/kingdom-of-cute-mystery-series-1",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "kept: seven designs held; leads MyPinCentral 107960 (smiling Jungle Cruise boat) and 72231 (Space Mountain) do not name the series"
+  },
+  {
+   "key": "wdw/2017/oe-set/tsum-tsum-holiday-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "Not re-searched this pass; 10 designs unnamed"
+  },
+  {
+   "key": "wdw/2017/oe-set/frozen-holiday-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "Not re-searched this pass; 8 designs unnamed"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 of B017 (WDW OE 2017); 29 standard WebSearch calls, search_snippet only, blocked domains passed. New: 4 Tsum Tsum Series 5 per-pin designs (MyPinCentral), Mailbox Minnie (hold released for Minnie only), Rivers of Light logo OE (Feb 2017), Epcot 35 Figment OE; new sets Pandora mystery (2017 confirmed) and NBC Tsum Tsum mystery (DLR first, WDW planned). Prices added for tassel/slider/Frozen Ever After/Hanukkah. Holds kept: Frozen Ever After, Chip n Dale structure, Kingdom of Cute seven, Mailbox Mickey, Digital Disney, Princess Gold Frame, booster, Tsum S4/Villains/SW S2, HM Cameo. Search tool returns model summaries; MyPinCentral per-pin identification of 149447/149452/149456 rests on such summaries. No prompt-injection content seen."
+}

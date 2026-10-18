@@ -1,0 +1,330 @@
+{
+ "packet_id": "561_b375_wdw_le_2017_fu6",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+   "title": "New Disney Pins March 2017 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+   "title": "New Disney Pins August 2017 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.wdwinfo.com/news-stories/new-trading-pins-revealed-for-2017-from-disney-parks-blog-unboxed/",
+   "title": "New Trading Pins Revealed for 2017 from Disney Parks Blog Unboxed",
+   "publisher": "WDWInfo",
+   "published_date": "2017-02-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/disney-recollections-pin/",
+   "title": "Disney Recollections Pin Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2017/piece-of-wdw-history",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Piece of Disney History (Walt Disney World) 2017",
+     "source_url": "https://www.wdwinfo.com/news-stories/new-trading-pins-revealed-for-2017-from-disney-parks-blog-unboxed/",
+     "method": "search_snippet",
+     "note": "2017 Piece of Disney History collection previewed in Disney Parks Blog Unboxed"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.wdwinfo.com/news-stories/new-trading-pins-revealed-for-2017-from-disney-parks-blog-unboxed/",
+     "method": "search_snippet",
+     "note": "each collection pin has an edition size"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://www.wdwinfo.com/news-stories/new-trading-pins-revealed-for-2017-from-disney-parks-blog-unboxed/",
+     "method": "search_snippet",
+     "note": "each pin LE 1,500"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://www.wdwinfo.com/news-stories/new-trading-pins-revealed-for-2017-from-disney-parks-blog-unboxed/",
+     "method": "search_snippet",
+     "note": "released only at Walt Disney World Resort"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins (monthly series)",
+     "source_url": "https://www.wdwinfo.com/news-stories/new-trading-pins-revealed-for-2017-from-disney-parks-blog-unboxed/",
+     "method": "search_snippet",
+     "note": "individual collection pins released over 2017"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2017/piece-of-wdw-history/pleasure-island",
+   "set_key": "wdw/2017/piece-of-wdw-history",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Piece of Walt Disney World History - Pleasure Island",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+     "method": "search_snippet",
+     "note": "WDW Piece of History pin with a piece of Pleasure Island at Downtown Disney"
+    },
+    {
+     "field": "attraction",
+     "value": "Pleasure Island",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+     "method": "search_snippet",
+     "note": "contains a piece of Pleasure Island, Downtown Disney"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+     "method": "search_snippet",
+     "note": "limited edition of 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+     "method": "search_snippet",
+     "note": "retail $15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-09",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+     "method": "search_snippet",
+     "note": "available at WDW March 9, 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+     "method": "search_snippet",
+     "note": "March 2017 week 2 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+     "method": "search_snippet",
+     "note": "WDW release"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "piece of history"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+     "method": "search_snippet",
+     "note": "pin contains an actual piece of Pleasure Island"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2017-week-2/",
+     "method": "search_snippet",
+     "note": "single pin entry"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/doorways-to-disney/pirates-of-the-caribbean",
+   "set_key": "wdw/2017/doorways-to-disney",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2017-08-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "eighth Doorways pin available DL and WDW Aug 31, 2017 per summary of roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+     "method": "search_snippet",
+     "note": "shared DL/WDW release"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2017/piece-of-wdw-history/pleasure-island",
+   "field": "release",
+   "searched": "3 queries",
+   "note": "release evidence: DPB Mar 2017 wk2 per-pin entry (LE 1,500, $15.99, WDW Mar 9 2017) matches 541 reseller hold; recorded as a pin this packet"
+  },
+  {
+   "key": "wdw/2017/piece-of-wdw-history/pleasure-island",
+   "field": "set_position",
+   "searched": "3 queries",
+   "note": "field note: #2 position only on reseller (yourwdwstore); set_position left unclaimed"
+  },
+  {
+   "key": "wdw/2017/piece-of-wdw-history/mickeys-toontown",
+   "field": "release",
+   "searched": "2 queries",
+   "note": "hold kept: #1 Mickey's Toontown (LE 1,500, Feb 9 2017) still only on reseller; DPB Feb 2017 wk2 roundup not indexed"
+  },
+  {
+   "key": "wdw/2017/piece-of-wdw-history/downtown-disney-sign",
+   "field": "release",
+   "searched": "1 query",
+   "note": "hold kept: #4 Downtown Disney Sign only on reseller category page; DPB Apr 2017 roundups found do not list it"
+  },
+  {
+   "key": "wdw/2017/piece-of-wdw-history/world-of-motion",
+   "field": "release",
+   "searched": "1 query",
+   "note": "hold kept: #8 World of Motion only on reseller category page; no DPB entry found"
+  },
+  {
+   "key": "dlr/2017/piece-of-disneyland-resort-history",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: DPB Mar 2017 wk2 lists a Pirates of the Caribbean Piece of Disneyland History pin LE 2,000 $15.99 DL Mar 9; check vs dlr pirates-lair-bone-cage key"
+  },
+  {
+   "key": "wdw/2017/disney-recollections/hercules",
+   "field": "release",
+   "searched": "3 queries",
+   "note": "release evidence: DPB Recollections tag archive (summary) puts Hercules & Pegasus pin in Jan 15-21 2017 roundup; edition LE 3,000 vs 1,500 still reseller-only; kept held"
+  },
+  {
+   "key": "wdw/2017/disney-recollections",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "pins 2 and 4 still not found; DPB tag archive surfaced only Hercules (Jan) and Fox and the Hound (pin 3, Jul 13, LE 3,000)"
+  },
+  {
+   "key": "wdw/2017/doorways-to-disney",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "pins 1-4 and 9 still not found in DPB/news snippets; Tiki Room #2 still only on CollectionHero resale listing"
+  },
+  {
+   "key": "wdw/2017/star-wars-vehicles/tie-fighter",
+   "field": "release",
+   "searched": "2 queries",
+   "note": "hold kept: #4, LE 6,000, Aug 10 still only on reseller (yourwdwstore); DPB Aug 2017 wk2 roundup not indexed; $17.99 inferred by summary only, not recorded"
+  },
+  {
+   "key": "wdw/2017/rivers-of-light",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "unchanged: DPB Feb wk3 OE $9.99 logo pin; LE 2,000 $12.99 shared line still nameless and not tied to Rivers of Light"
+  },
+  {
+   "key": "wdw/2017/pandora-countdown/explore-the-bioluminescence",
+   "field": "front_text",
+   "searched": "3 queries",
+   "note": "field note: conflict persists - DPB series post maps Bioluminescence to May 4; DPB Mar wk1 maps it to pin 1; DPB May wk1 says pin 3 reads A Place Like No Other"
+  },
+  {
+   "key": "wdw/2017/pandora-countdown",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: WDWNT Mar 2017 confirms LE 1,250 per pin, Mar 2 / Apr 6 / May 4 schedule, but gives no pin texts; mapping unresolved"
+  },
+  {
+   "key": "wdw/2017/pandora-countdown-box-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: WDWNT repeats 5-pin box LE 250 May 27 with two completers; completer designs unnamed"
+  },
+  {
+   "key": "wdw/2017/monorail-magic-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: Let's Go Pin Trading (fan site) lists 8 LR + 4 chasers (Pete, Daisy, Donald, Tinker Bell); MPC per-pin page found only for Daisy; also date Feb 10 vs DPB Feb 2"
+  },
+  {
+   "key": "wdw/2017/secrets-of-the-empire/disney-springs",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "DPB still says edition size unclear; opening-day handout; design not described"
+  },
+  {
+   "key": "wdw/2017/christmas-2017/merry-christmas-2017",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "still no price; DPB Dec wk4 gives LE 4,000 and Dec 25 only"
+  },
+  {
+   "key": "wdw/2017/snow-white-80th-boxed-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "members still unnamed; DPB repeats six pins LE 300 $100 DL+WDW Dec 14; Flickr names set Snow White Dancing With Dwarfs"
+  },
+  {
+   "key": "wdw/2017/love-is-an-adventure-goodbye-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: non-reseller searches (AllEars, ITM, DPB) give 4-pin set only; Robin Hood/Jungle Book/Cinderella/Lion King members not confirmed"
+  },
+  {
+   "key": "wdw/2017/held-items",
+   "field": "various",
+   "searched": "not searched this pass (budget)",
+   "note": "holds kept, no new per-pin evidence: Pin of the Month 12, runDisney lists, Love is Scary, Yeti, F&W ice cream box, MNSSHP/MVMCP box+frame, gold spaceship, Bambi 75th/Oswald 90th boxes, Darth Vader Lives, mystery sets, Ezra/Phineas, Pandora completers, Love is Strength, Carl & Ellie, Earth Day Tigger & Rabbit"
+  },
+  {
+   "key": "wdw/2017/thanksgiving-2017/thanksgiving-2017",
+   "field": "original_price",
+   "searched": "not searched this pass",
+   "note": "price still open"
+  },
+  {
+   "key": "wdw/2017/christmas-countdown-2017/olaf-jumbo",
+   "field": "original_price",
+   "searched": "not searched this pass",
+   "note": "price and CM Olaf box still open"
+  },
+  {
+   "key": "wdw/2017/aladdin-character-connection",
+   "field": "pins",
+   "searched": "not searched this pass",
+   "note": "designs still unnamed (hold kept)"
+  }
+ ],
+ "discovery_notes": "Follow-up 6 of B018 (after 218/426/467/499/521/541). 30 standard WebSearch queries, blocked domains passed every time (plus allowed_domains on 3), all search_snippet. New: Piece of WDW History Pleasure Island pin (DPB Mar 2017 wk2 per-pin entry; releases the 541 reseller hold) and the Piece of WDW History set record (WDWInfo: LE 1,500 each, WDW only); Doorways Pirates exact date Aug 31. Release-evidence note on Recollections Hercules (DPB tag archive) but kept held. DPB Feb 2017 wk2, Aug 2017 wk2, Oct 2017 wk2 roundups not indexed. Shared DL/WDW: no new dlr duplicates created."
+}

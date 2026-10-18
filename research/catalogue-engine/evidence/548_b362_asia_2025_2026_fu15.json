@@ -1,0 +1,946 @@
+{
+ "packet_id": "backfill-b362-asia-2025-2026-fu15",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b362",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+   "title": "Let's Learn with Duffy and Friends Pin Collection at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/duffy-and-friends-colors-of-nature-mystery-pin-set-at-shanghai-disney-resort/",
+   "title": "Duffy and Friends Colors of Nature Mystery Pin Set at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/easter-2026-mystery-pin-set-at-shanghai-disney-resort/",
+   "title": "Easter 2026 Mystery Pin Set at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-03-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/shanghai-disney-resort-pins/",
+   "title": "Shanghai Disney Resort Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-chip-n-dale-attraction-pins-at-shanghai-disney-resort",
+   "title": "New Chip n Dale Attraction Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2026-07-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/disney-parks/tokyo-disneysea-jubilee-journey-collection/",
+   "title": "New Merchandise Collection \"The Jubilee Journey\" Ready to Debut for Tokyo DisneySea Anniversary Celebration",
+   "publisher": "Laughing Place",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/its-a-small-world-with-groot-x-marvel-mystery-pin-set-at-tokyo-disneyland/",
+   "title": "It's a Small World with Groot x Marvel Mystery Pin Set at Tokyo Disneyland",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.hongkongdisneyland.com/en-ca/events/disney-pin-trading/",
+   "title": "Disney Pin Trading",
+   "publisher": "Hong Kong Disneyland (official)",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "shdr/2025/lets-learn-with-duffy-and-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Let's Learn with Duffy and Friends Pin Collection",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post says released February 2025 (search summary)"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "format",
+     "value": "collection: a two-character pin, per-character pin sets and a mystery pin set",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "lineup per search summary of post"
+    },
+    {
+     "field": "issuer",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2025/lets-learn-with-duffy-and-friends-duffy-pin-set",
+   "parent_set_key": "shdr/2025/lets-learn-with-duffy-and-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Let's Learn with Duffy and Friends Duffy Pin Set",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in post lineup (search summary)"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "described as a pin set for one character; pin count not given"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "collection released Feb 2025 (search summary)"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2025/lets-learn-with-duffy-and-friends-shelliemay-pin-set",
+   "parent_set_key": "shdr/2025/lets-learn-with-duffy-and-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Let's Learn with Duffy and Friends ShellieMay Pin Set",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in post lineup (search summary)"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "described as a pin set for one character; pin count not given"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "collection released Feb 2025 (search summary)"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2025/lets-learn-with-duffy-and-friends-gelatoni-pin-set",
+   "parent_set_key": "shdr/2025/lets-learn-with-duffy-and-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Let's Learn with Duffy and Friends Gelatoni Pin Set",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in post lineup (search summary)"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "described as a pin set for one character; pin count not given"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "collection released Feb 2025 (search summary)"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2025/lets-learn-with-duffy-and-friends-stellalou-pin-set",
+   "parent_set_key": "shdr/2025/lets-learn-with-duffy-and-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Let's Learn with Duffy and Friends StellaLou Pin Set",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in post lineup (search summary)"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "described as a pin set for one character; pin count not given"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "collection released Feb 2025 (search summary)"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2025/lets-learn-with-duffy-and-friends-cookieann-pin-set",
+   "parent_set_key": "shdr/2025/lets-learn-with-duffy-and-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Let's Learn with Duffy and Friends CookieAnn Pin Set",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in post lineup (search summary)"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "described as a pin set for one character; pin count not given"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "collection released Feb 2025 (search summary)"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2025/lets-learn-with-duffy-and-friends-olu-mel-pin-set",
+   "parent_set_key": "shdr/2025/lets-learn-with-duffy-and-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Let's Learn with Duffy and Friends Olu Mel Pin Set",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in post lineup (search summary)"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "described as a pin set for one character; pin count not given"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "collection released Feb 2025 (search summary)"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2025/lets-learn-with-duffy-and-friends-linabell-pin-set",
+   "parent_set_key": "shdr/2025/lets-learn-with-duffy-and-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Let's Learn with Duffy and Friends LinaBell Pin Set",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in post lineup (search summary)"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "described as a pin set for one character; pin count not given"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "collection released Feb 2025 (search summary)"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2025/lets-learn-with-duffy-and-friends-mystery",
+   "parent_set_key": "shdr/2025/lets-learn-with-duffy-and-friends",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Let's Learn with Duffy and Friends Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in post (search summary)"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "mystery pin set"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Feb 2025 per summary"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2025/duffy-and-friends-colors-of-nature-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Duffy and Friends Colors of Nature Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-colors-of-nature-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-colors-of-nature-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "mystery pin set"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-06",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-colors-of-nature-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post says released June 2025 (search summary)"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-colors-of-nature-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2026/easter-2026-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Easter 2026 Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/easter-2026-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/easter-2026-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "mystery pin set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 15,
+     "source_url": "https://disneypinsblog.com/easter-2026-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "assortment of 15 pins (search summary of post)"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-03",
+     "source_url": "https://disneypinsblog.com/easter-2026-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "March 2026; post dated 7 Mar 2026 (search summary)"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/easter-2026-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2026/pirate-stitch-and-friends-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pirate Stitch & Friends Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/category/shanghai-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "DPB related-post title dated 3 Jul 2026 (title only)"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/category/shanghai-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "title says mystery pin set"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-07",
+     "source_url": "https://disneypinsblog.com/category/shanghai-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "related-post date 3 Jul 2026; release date itself not seen"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/category/shanghai-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "title"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2026/duffy-and-friends-cherry-bakery-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Duffy and Friends Cherry Bakery Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/category/shanghai-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "DPB related-post title dated 26 Jul 2026 (title only)"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/category/shanghai-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "title says mystery pin set"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-07",
+     "source_url": "https://disneypinsblog.com/category/shanghai-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "related-post date 26 Jul 2026; release date itself not seen"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/category/shanghai-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "title"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2026/chip-n-dale-attraction-pins",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2026-07",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-chip-n-dale-attraction-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "post dated 20 Jul 2026 says released July 2026 at Shanghai Disneyland (search summary)"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2026/summer-2026-zootopia-mystery",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2026-07",
+     "source_url": "https://disneypinsblog.com/category/shanghai-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "DPB related-post title dated 2 Jul 2026 (search summary); exact release date not seen"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2026/tds-25th-jubilee-journey",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2026-05-25",
+     "source_url": "https://www.laughingplace.com/disney-parks/tokyo-disneysea-jubilee-journey-collection/",
+     "method": "search_snippet",
+     "note": "collection on sale from 25 May (search summary)"
+    },
+    {
+     "field": "set_name",
+     "value": "The Jubilee Journey",
+     "source_url": "https://www.laughingplace.com/disney-parks/tokyo-disneysea-jubilee-journey-collection/",
+     "method": "search_snippet",
+     "note": "collection name; items show Mickey and Minnie in outfits for each of the eight themed ports"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2025/small-world-with-groot-marvel-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/its-a-small-world-with-groot-x-marvel-mystery-pin-set-at-tokyo-disneyland/",
+     "method": "search_snippet",
+     "note": "12 different pins in total (search summary; corroborates packet 507)"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-12-26",
+     "source_url": "https://disneypinsblog.com/its-a-small-world-with-groot-x-marvel-mystery-pin-set-at-tokyo-disneyland/",
+     "method": "search_snippet",
+     "note": "available from 26 Dec 2025 at TDR (search summary)"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "shdr/2025/lets-learn-with-duffy-and-friends/gelatoni-and-linabell",
+   "set_key": "shdr/2025/lets-learn-with-duffy-and-friends",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Let's Learn with Duffy and Friends Gelatoni & LinaBell Pin",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named as a single pin in post lineup (search summary)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Gelatoni",
+      "LinaBell"
+     ],
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "both named in pin title"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-02",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "collection released Feb 2025"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/lets-learn-with-duffy-and-friends-pin-collection-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2026/spring-festival-2026/zootopia",
+   "set_key": "shdr/2026/spring-festival-2026",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2026-02",
+     "source_url": "https://disneypinsblog.com/category/shanghai-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "archive lists post 'Zootopia Spring Festival 2026 Shanghai Pin' dated 2 Feb 2026 (search summary); post date, not confirmed sale date"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "shdr/2025/lets-learn-with-duffy-and-friends-duffy-pin-set",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "pin count and members not stated; no per-pin records created (rule 12 multi-pin pack)"
+  },
+  {
+   "key": "shdr/2025/lets-learn-with-duffy-and-friends-shelliemay-pin-set",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "pin count and members not stated; no per-pin records created (rule 12 multi-pin pack)"
+  },
+  {
+   "key": "shdr/2025/lets-learn-with-duffy-and-friends-gelatoni-pin-set",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "pin count and members not stated; no per-pin records created (rule 12 multi-pin pack)"
+  },
+  {
+   "key": "shdr/2025/lets-learn-with-duffy-and-friends-stellalou-pin-set",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "pin count and members not stated; no per-pin records created (rule 12 multi-pin pack)"
+  },
+  {
+   "key": "shdr/2025/lets-learn-with-duffy-and-friends-cookieann-pin-set",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "pin count and members not stated; no per-pin records created (rule 12 multi-pin pack)"
+  },
+  {
+   "key": "shdr/2025/lets-learn-with-duffy-and-friends-olu-mel-pin-set",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "pin count and members not stated; no per-pin records created (rule 12 multi-pin pack)"
+  },
+  {
+   "key": "shdr/2025/lets-learn-with-duffy-and-friends-linabell-pin-set",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "pin count and members not stated; no per-pin records created (rule 12 multi-pin pack)"
+  },
+  {
+   "key": "shdr/2025/lets-learn-with-duffy-and-friends-gelatoni-pin-set",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "field note: reseller belloshophk gives 6 Feb 2025 for the Gelatoni set; reseller only, not claimed"
+  },
+  {
+   "key": "shdr/2025/lets-learn-with-duffy-and-friends-mystery",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "set size and designs not stated"
+  },
+  {
+   "key": "shdr/2025/lets-learn-with-duffy-and-friends/gelatoni-and-linabell",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "field note: one-pin reading inferred from singular 'pin' in lineup; not stated explicitly"
+  },
+  {
+   "key": "shdr/2025/lets-learn-with-duffy-and-friends/gelatoni-and-linabell",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "price/edition not in snippets"
+  },
+  {
+   "key": "shdr/2025/duffy-and-friends-colors-of-nature-mystery",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "set size, price not stated; summary lists Duffy, ShellieMay, LinaBell, CookieAnn, StellaLou, Gelatoni, Olu Mel as featured"
+  },
+  {
+   "key": "shdr/2025/duffy-and-friends-colors-of-nature-mystery/duffy",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed - Duffy named only in a character list for the set"
+  },
+  {
+   "key": "shdr/2025/duffy-and-friends-colors-of-nature-mystery/shelliemay",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed - ShellieMay named only in a character list for the set"
+  },
+  {
+   "key": "shdr/2025/duffy-and-friends-colors-of-nature-mystery/gelatoni",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed - Gelatoni named only in a character list for the set"
+  },
+  {
+   "key": "shdr/2025/duffy-and-friends-colors-of-nature-mystery/stellalou",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed - StellaLou named only in a character list for the set"
+  },
+  {
+   "key": "shdr/2025/duffy-and-friends-colors-of-nature-mystery/cookieann",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed - CookieAnn named only in a character list for the set"
+  },
+  {
+   "key": "shdr/2025/duffy-and-friends-colors-of-nature-mystery/olu-mel",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed - Olu Mel named only in a character list for the set"
+  },
+  {
+   "key": "shdr/2025/duffy-and-friends-colors-of-nature-mystery/linabell",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed - LinaBell named only in a character list for the set"
+  },
+  {
+   "key": "shdr/2026/easter-2026-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed - only 'Mickey & Friends and Duffy & Friends' stated; price not found"
+  },
+  {
+   "key": "shdr/2026/pirate-stitch-and-friends-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "title only; size, designs, price not seen"
+  },
+  {
+   "key": "shdr/2026/duffy-and-friends-cherry-bakery-mystery",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "7 designs and 8 Jul 2026 date stated only by reseller usshoppingsos; not claimed"
+  },
+  {
+   "key": "shdr/2026/chip-n-dale-attraction-pins",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold: per-attraction designs (Fantasia Carousel, TRON, Alice Maze, Seven Dwarfs Mine Train, Roaring Rapids, Pirates) only on reseller usshoppingsos; no pin records"
+  },
+  {
+   "key": "shdr/2026/summer-2026-zootopia-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "contents, size, price still not seen"
+  },
+  {
+   "key": "shdr/2026/spring-festival-2026/zootopia",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "design/characters still not seen"
+  },
+  {
+   "key": "tdr/2026/tds-25th-jubilee-journey",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "8 per-port pins still not individually described; LP mentions postcards/pin badges with port motifs but no per-pin list"
+  },
+  {
+   "key": "tdr/2025/small-world-with-groot-marvel-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "12 designs still unnamed on allowed sources; '2 pins per bag' and 3.6x2.8 cm seen in summary without clear allowed source - not claimed"
+  },
+  {
+   "key": "tdr/2026/tds-25th-sparkling-jubilee-box-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "14 attraction designs still unnamed; search surfaced only port collection, D23 pins and Jubilee Badge parts"
+  },
+  {
+   "key": "tdr/2026/park-signs-pin-badge-sets",
+   "field": "members",
+   "searched": "1 query",
+   "note": "2 of 12 designs still unnamed; reseller usshoppingsos lists an 'Ice Cream Cones/Grand Emporium' 4-pin set - lead only, not claimed; no Westernland/Adventureland sets"
+  },
+  {
+   "key": "tdr/2026/park-signs-pin-badge-sets/tokyo-disneyland-welcome-sign",
+   "field": "sub_series",
+   "searched": "1 query",
+   "note": "land allocation still not stated on allowed sources"
+  },
+  {
+   "key": "tdr/2026/park-signs-pin-badge-sets/emporium-sign",
+   "field": "sub_series",
+   "searched": "1 query",
+   "note": "land allocation still not stated on allowed sources"
+  },
+  {
+   "key": "tdr/2026/park-signs-pin-badge-sets/tomorrowland-sign",
+   "field": "sub_series",
+   "searched": "1 query",
+   "note": "land allocation still not stated on allowed sources"
+  },
+  {
+   "key": "tdr/2026/park-signs-pin-badge-sets/star-tours-sign",
+   "field": "sub_series",
+   "searched": "1 query",
+   "note": "land allocation still not stated on allowed sources"
+  },
+  {
+   "key": "tdr/2026/park-signs-pin-badge-sets/welcome-to-toontown-sign",
+   "field": "sub_series",
+   "searched": "1 query",
+   "note": "land allocation still not stated on allowed sources"
+  },
+  {
+   "key": "tdr/2026/park-signs-pin-badge-sets/mickeys-clock",
+   "field": "sub_series",
+   "searched": "1 query",
+   "note": "land allocation still not stated on allowed sources"
+  },
+  {
+   "key": "tdr/2025/frozen-kingdom",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: no allowed source names set contents; official Anna and Elsa's Frozen Journey attraction page lists a pin badge set without detail"
+  },
+  {
+   "key": "tdr/2026/christmas-2026/pin-badge",
+   "field": "pin_structure",
+   "searched": "0 queries",
+   "note": "hold kept: release 10 Nov 2026 is after today (18 Oct 2026); not researched"
+  },
+  {
+   "key": "tdr/2026/motifs-mystery",
+   "field": "members",
+   "searched": "0 queries",
+   "note": "hold kept: designs not individually confirmed"
+  },
+  {
+   "key": "tdr/2025/attractions-and-food-mystery",
+   "field": "members",
+   "searched": "0 queries",
+   "note": "hold kept: designs not individually confirmed"
+  },
+  {
+   "key": "shdr/2025/lunar-new-year-2025",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "still no RMB prices or edition sizes on allowed sources"
+  },
+  {
+   "key": "shdr/2025/pin-trading-fun-day-2025",
+   "field": "members",
+   "searched": "1 query",
+   "note": "DPB Duffy Fun Day 2025 post (19 May 2025) still title-only; Princess mystery box hold kept (reseller)"
+  },
+  {
+   "key": "shdr/2026/enchanted-storybook-castle-four-seasons",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: only the 9 May 2026 post title surfaced; structure, price, edition still unknown"
+  },
+  {
+   "key": "shdr/2026/winnie-the-pooh-spring-picnic-2026-mystery",
+   "field": "expected_pin_count",
+   "searched": "0 queries",
+   "note": "6 designs still reseller-only; not re-searched (budget)"
+  },
+  {
+   "key": "shdr/2026/halloween-2026-zootopia-mystery",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "hold: 2026 Halloween Zootopia mystery box (6 designs, 4 Oct 2026) seen only on reseller usshoppingsos; not recorded"
+  },
+  {
+   "key": "hkdl/2025/20th-anniversary-mickey-and-friends-grand-celebration/mickey",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: TDR Explorer collection lists HK$89 single pins but event article lists HK$89 medallions; still unresolved"
+  },
+  {
+   "key": "hkdl/2025/20th-anniversary-mickey-and-friends-grand-celebration/jumbo-pin",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: HK$229 jumbo vs DPB LE 500 HK$229 Grand Celebration pin still unresolved"
+  },
+  {
+   "key": "hkdl/2025/january-2025/chinese-new-year-2025",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "summary again says 'Dumbo and Lunar New Year' for the post as a whole; design of LE 600 pin still not described"
+  },
+  {
+   "key": "hkdl/2025/redemption-series-2025",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: summary calls Daisy & Chip, Minnie & Donald, Pluto & Dale 'three pin sets' (Aug 2025); pins per set still unclear"
+  },
+  {
+   "key": "hkdl/2025/pin-trading-carnival-2025",
+   "field": "members",
+   "searched": "1 query",
+   "note": "event pins still unnamed on allowed sources; Stitch & Angel super jumbo and Character Icons Shield holds kept (resellers)"
+  },
+  {
+   "key": "hkdl/2025/estore-months",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Oct 2025 HKDL lineup still not recovered"
+  },
+  {
+   "key": "hkdl/2026/estore-months",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Jan/Mar 2026 DPB posts still title-only; no Apr 2026 lineup; reseller Valentine's mystery set not recorded"
+  },
+  {
+   "key": "hkdl/2026/october-2026/dumbo-scene-collection",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "hold kept: official page metadata age still conflicts; field note: page splits LE 500 into 350 online + 150 package redemption; package purchase 1-7 Oct 2026 (search summary)"
+  },
+  {
+   "key": "hkdl/2026/beauty-and-the-beast-35th-anniversary",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "hold: HKDL BatB 35th anniversary limited pin named on official pin page per summary and dated 9 Oct 2026 by reseller belloshophk; no design/size; page date conflict - not recorded"
+  },
+  {
+   "key": "hkdl/2026/pin-trading-carnival-2026/flounder-presale",
+   "field": "pin_structure",
+   "searched": "0 queries",
+   "note": "hold kept: no new evidence"
+  },
+  {
+   "key": "hkdl/2026/mickeys-philharmagic",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: mystery box reseller-only"
+  },
+  {
+   "key": "lic/2026/artland-dpbstore-castle-jumbo-series/beauty-and-the-beast",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: licensed ArtLand Castle Jumbo Series BatB pin, LE 100, DPBStore May 2026 (DPB); not an HKDL Carnival release despite appearing in carnival post"
+  },
+  {
+   "key": "shdr/2024/duffy-and-friends-music-mystery",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead for 2023-2024 cell: DPB says released Oct 2024 (Duffy & Friends 7 characters)"
+  },
+  {
+   "key": "shdr/2024/zootopia-my-dream-job",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead for 2023-2024 cell: DPB says open edition 8 pins, Jan 2024"
+  },
+  {
+   "key": "shdr/2024/duffy-and-friends-denim-mystery",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead for 2023-2024 cell: DPB says 8 pins, 1 per box, June 2024"
+  },
+  {
+   "key": "shdr/2022/duffy-and-friends-cool-feast",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead for 2020-2022 cell: DPB 14-pin mystery (7 characters + treats) Aug 2022 and LinaBell 'Cool Feast' dangle"
+  }
+ ],
+ "discovery_notes": "Follow-up 15 of B041 (Asia 2025-2026). 30 web searches (budget 30). All claims search_snippet; most values come from search-engine summaries of Disney Pins Blog posts rather than quoted page text. New: SHDR Let's Learn with Duffy and Friends 2025 (1 two-character pin, 7 per-character pin sets, mystery set), Colors of Nature mystery (Jun 2025, designs held), Easter 2026 mystery (15 pins, designs held), Pirate Stitch & Friends and Cherry Bakery mystery sets (titles only, Jul 2026). New dates for Chip n Dale Attraction pins, Summer 2026 Zootopia mystery, Zootopia Spring Festival 2026 pin. Corroboration: Jubilee Journey (Laughing Place), Groot x Marvel mystery (DPB). No holds released."
+}

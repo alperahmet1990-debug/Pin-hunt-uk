@@ -1,0 +1,413 @@
+{
+ "packet_id": "b255-dsuk-2021-2022-fu1-2026-10-18-a",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b255-dsuk-2021-2022-fu1",
+ "sources": [
+  {
+   "url": "https://www.laughingplace.com/w/news/2022/02/17/beauty-and-the-beast-castle-disney-castle-collection/",
+   "title": "Beast's Castle Completes Disney Castle Collection Series, Now Available on shopDisney",
+   "publisher": "Laughing Place",
+   "published_date": "2022-02-17",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/belle-disney-castle-collection-limited-release-pin-series-10",
+   "title": "Belle Disney Castle Collection Limited Release Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/10-disney-castle-collection-belle.75168/",
+   "title": "#10 - Disney Castle Collection (Belle)",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.co.uk/disney-store-belle-castle-collection-journal-10-of-10-466042229821.html",
+   "title": "Disney Store Belle Castle Collection Journal, 10 of 10",
+   "publisher": "Disney Store UK",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.co.uk/disney-store-mother-gothel-our-transformation-story-limited-edition-pin-tangled-466042902861.html",
+   "title": "Disney Store Mother Gothel Our Transformation Story Limited Edition Pin, Tangled",
+   "publisher": "Disney Store UK",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disney-store-mother-gothel-our-transformation-story-limited-edition-pin-tangled-466042902861.html",
+   "title": "Disney Store Mother Gothel Our Transformation Story Limited Edition Pin, Tangled",
+   "publisher": "Disney Store Europe",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.it/pin-edizione-limitata-madre-gothel-our-transformation-story-rapunzel-disney-store-466042902861.html",
+   "title": "Pin edizione limitata Madre Gothel Our Transformation Story Rapunzel Disney Store",
+   "publisher": "Disney Store Italy",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/our-transformation-story-pins-bi-monthly-and-alternates-between-each-coast-limited-edition-of-2-750.76213/page-2",
+   "title": "Our Transformation Story pins (bi-monthly and alternates between each coast): Limited Edition of 2,750.",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [],
+ "pins": [
+  {
+   "pin_key": "dsuk/2022/disney-castle-collection/belle",
+   "set_key": "dsuk/2021/disney-castle-collection",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Belle Disney Castle Collection Limited Release Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/belle-disney-castle-collection-limited-release-pin-series-10",
+     "method": "search_snippet",
+     "note": "Pin name as given in the blog post title"
+    },
+    {
+     "field": "set_position",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/blogs/news/belle-disney-castle-collection-limited-release-pin-series-10",
+     "method": "search_snippet",
+     "note": "Blog calls it Series 10, the final pin of the castle series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/belle-disney-castle-collection-limited-release-pin-series-10",
+     "method": "search_snippet",
+     "note": "Belle named in title; castle themed to Beauty and the Beast"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/belle-disney-castle-collection-limited-release-pin-series-10",
+     "method": "search_snippet",
+     "note": "Blog says limited release"
+    },
+    {
+     "field": "original_price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/belle-disney-castle-collection-limited-release-pin-series-10",
+     "method": "search_snippet",
+     "note": "Blog gives USD 29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/belle-disney-castle-collection-limited-release-pin-series-10",
+     "method": "search_snippet",
+     "note": "Blog price in dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-17",
+     "source_url": "https://www.laughingplace.com/w/news/2022/02/17/beauty-and-the-beast-castle-disney-castle-collection/",
+     "method": "search_snippet",
+     "note": "Beast's Castle completes the series; available on shopDisney (US) per article dated 17 Feb 2022"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://www.laughingplace.com/w/news/2022/02/17/beauty-and-the-beast-castle-disney-castle-collection/",
+     "method": "search_snippet",
+     "note": "US shopDisney availability reported Feb 2022"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/10-disney-castle-collection-belle.75168/",
+     "method": "search_snippet",
+     "note": "Forum collectors describe a hinged dimensional Beast's Castle pin that opens to show the interior"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2022/our-transformation-story/mother-gothel",
+   "set_key": "dsuk/2022/our-transformation-story",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Store Mother Gothel Our Transformation Story Limited Edition Pin, Tangled",
+     "source_url": "https://www.disneystore.co.uk/disney-store-mother-gothel-our-transformation-story-limited-edition-pin-tangled-466042902861.html",
+     "method": "search_snippet",
+     "note": "UK listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mother Gothel"
+     ],
+     "source_url": "https://www.disneystore.co.uk/disney-store-mother-gothel-our-transformation-story-limited-edition-pin-tangled-466042902861.html",
+     "method": "search_snippet",
+     "note": "Mother Gothel from Tangled"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.co.uk/disney-store-mother-gothel-our-transformation-story-limited-edition-pin-tangled-466042902861.html",
+     "method": "search_snippet",
+     "note": "Single pin showing Gothel in witch and human forms"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mother Gothel shown in both witch and human form, classic artwork",
+     "source_url": "https://www.disneystore.co.uk/disney-store-mother-gothel-our-transformation-story-limited-edition-pin-tangled-466042902861.html",
+     "method": "search_snippet",
+     "note": "Paraphrase of listing description"
+    },
+    {
+     "field": "materials",
+     "value": "enamelled cloisonne; Mickey icon pin back",
+     "source_url": "https://www.disneystore.co.uk/disney-store-mother-gothel-our-transformation-story-limited-edition-pin-tangled-466042902861.html",
+     "method": "search_snippet",
+     "note": "Listing finish and pin back"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disneystore.co.uk/disney-store-mother-gothel-our-transformation-story-limited-edition-pin-tangled-466042902861.html",
+     "method": "search_snippet",
+     "note": "Listed as Limited Edition Pin"
+    },
+    {
+     "field": "original_price",
+     "value": 14.0,
+     "source_url": "https://www.disneystore.co.uk/disney-store-mother-gothel-our-transformation-story-limited-edition-pin-tangled-466042902861.html",
+     "method": "search_snippet",
+     "note": "GBP 14.00 shown; sold out"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://www.disneystore.co.uk/disney-store-mother-gothel-our-transformation-story-limited-edition-pin-tangled-466042902861.html",
+     "method": "search_snippet",
+     "note": "UK price"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK",
+     "source_url": "https://www.disneystore.co.uk/disney-store-mother-gothel-our-transformation-story-limited-edition-pin-tangled-466042902861.html",
+     "method": "search_snippet",
+     "note": "Listed on disneystore.co.uk"
+    },
+    {
+     "field": "product_code",
+     "value": "466042902861",
+     "source_url": "https://www.disneystore.co.uk/disney-store-mother-gothel-our-transformation-story-limited-edition-pin-tangled-466042902861.html",
+     "method": "search_snippet",
+     "note": "Item number in UK URL; same number on EU/IT/DE stores"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store Europe",
+     "source_url": "https://www.disneystore.eu/disney-store-mother-gothel-our-transformation-story-limited-edition-pin-tangled-466042902861.html",
+     "method": "search_snippet",
+     "note": "Same item number listed on disneystore.eu"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.disneystore.it/pin-edizione-limitata-madre-gothel-our-transformation-story-rapunzel-disney-store-466042902861.html",
+     "method": "search_snippet",
+     "note": "EUR 16.00 on Disney Store Italy"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.it/pin-edizione-limitata-madre-gothel-our-transformation-story-rapunzel-disney-store-466042902861.html",
+     "method": "search_snippet",
+     "note": "Euro price"
+    },
+    {
+     "field": "set_position",
+     "value": 9,
+     "source_url": "https://www.disneypinforum.com/threads/our-transformation-story-pins-bi-monthly-and-alternates-between-each-coast-limited-edition-of-2-750.76213/page-2",
+     "method": "search_snippet",
+     "note": "Forum running list puts Mother Gothel as #9, after Jafar (#8, WDW 11 Aug 2022); no date given"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsuk/2022/disney-castle-collection/belle",
+   "field": "release_location",
+   "searched": "2 queries",
+   "note": "hold: no UK/EU listing of the Belle pin found; UK only shows the matching 10 of 10 journal (non-pin, GBP 19). Date is shopDisney US"
+  },
+  {
+   "key": "dsuk/2022/disney-castle-collection/belle",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "No edition size stated in snippets (limited release)"
+  },
+  {
+   "key": "dsuk/2022/our-transformation-story/mother-gothel",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "hold: no date found; year 2022 rests on forum order (#9 after Jafar Aug 2022) and reseller only"
+  },
+  {
+   "key": "dsuk/2022/our-transformation-story/mother-gothel",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "UK/EU snippets did not state edition; LE 2,750 seen only on a reseller (not recorded) and series-level forum"
+  },
+  {
+   "key": "dsuk/2022/our-transformation-story",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Re-searched: still no UK/EU listing for Ursula, Evil Queen or Maleficent; park releases (DLR 11 Jan, WDW 8 Feb, DLR 8 Mar 2022 per forum). No dsuk records"
+  },
+  {
+   "key": "dsuk/2021/disney-castle-collection",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "Holds unchanged for Aurora/Jasmine/Ariel/Merida: UK/EU only show non-pin items (Aurora ornament 6 of 10 UK, Merida journal 9 of 10 EU); no UK pin listing"
+  },
+  {
+   "key": "dsuk/2021/disney-castle-collection",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "Snow White (series 4) shopDisney 7 Nov 2020 per Laughing Place/DFB/DisMerchandise and Rapunzel (series 5) 5 Dec 2020: both 2020, outside this slice; lead for dsuk/2020 (UK only shows Snow White figurine 4 of 10)"
+  },
+  {
+   "key": "dsuk/2021/new-year-2021/mickey-and-minnie",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "hold unchanged: UK listing (LE 4600) re-surfaced but no UK launch date"
+  },
+  {
+   "key": "dsuk/2022/obi-wan-kenobi-limited-release/obi-wan-kenobi",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "hold unchanged: DPB dates shopDisney Obi-Wan LR pin 15 Aug 2022 (USD 17.99, LE 1,500, 2021 backstamp) but its portrait-plus-Vader-duel design could match either UK pin"
+  },
+  {
+   "key": "dsuk/2022/obi-wan-kenobi-limited-release",
+   "field": "members",
+   "searched": "1 query",
+   "note": "lead: Disney Store EU 'Star Wars: Obi-Wan Kenobi Limited Release Pin Set' item 466043311716; contents/count not in snippet"
+  },
+  {
+   "key": "dsuk/2022/our-transformation-story/cruella-de-vil",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "hold unchanged: UK snippet again says 2,250 vs series 2,750; not resolved"
+  },
+  {
+   "key": "dsuk/2022/our-transformation-story/queen-of-hearts",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "hold unchanged: listing gives LE 2,750 but no date"
+  },
+  {
+   "key": "dsuk/2022/our-transformation-story/kaa",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "hold unchanged: forum only speculates an October release after an event preview"
+  },
+  {
+   "key": "dsuk/2022/one-family-2022/pinocchio",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "hold: DPB One Family 2022 post says a Pinocchio pin was UK only; no UK listing identified. Named in set list only; pending maintainer full-list decision"
+  },
+  {
+   "key": "dsuk/2022/pinocchio-and-blue-fairy",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead only: DS UK Pinocchio and Blue Fairy Pin 466043419641 (GBP 9, EUR 10); no year, edition or One Family link stated"
+  },
+  {
+   "key": "dsuk/2022/pinocchio-hinged-limited-edition",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "lead only: DS UK/EU/FR hinged Pinocchio LE 2,750 (GBP 18 / EUR 20), 'Characters on parade' cover, ~4 cm; year still not stated"
+  },
+  {
+   "key": "dsuk/2022/hocus-pocus-mystery",
+   "field": "release_year",
+   "searched": "4 queries",
+   "note": "lead only: UK 466042899161 (GBP 12, 10 designs, 2/pack; names Sarah, Winifred, Mary, Thackery Binx = collection list, hold: mystery designs not individually confirmed); year not stated; single 466042899086 not surfaced"
+  },
+  {
+   "key": "dsuk/2022/hocus-pocus-mystery",
+   "field": "scope",
+   "searched": "2 queries",
+   "note": "leads for later cells: DS UK Sanderson Sisters LR pin 438017893375 (2024 backstamp) and Hocus Pocus LR mystery set 438019871708 (GBP 25, 10 designs, 2025 backstamp)"
+  },
+  {
+   "key": "dsuk/2022/encanto-mystery-puzzle",
+   "field": "release_year",
+   "searched": "0 queries",
+   "note": "resolved as duplicate: already keyed dsuk/2024/encanto-mystery-puzzle-pin in 44_dsuk_2024.json; not a 2022 item"
+  },
+  {
+   "key": "dsuk/2021/disney-designer-collection-premiere-set-1",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "lead only: DS EU 465058920333, three-piece Premiere Series set (Belle, Jasmine, Tiana; LE 4800, EUR 25); year not stated. hold: confirm pin structure, pieces not individually described"
+  },
+  {
+   "key": "dsuk/2022/hades-exclusive-to-europe",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead only: Hades LE pin 466044222691, Exclusive to Europe, LE 700, GBP 14 (shopdisney.co.uk); year not stated"
+  },
+  {
+   "key": "dsuk/2022/hades-exclusive-to-europe",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead for dsuk/2023: WALL-E and Eve LE pin 466044006123 is a WALL-E 15th anniversary pin (LE 1,250, GBP 12), i.e. likely 2023, not 2022"
+  },
+  {
+   "key": "dsuk/2022/advent-calendar",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "leads only: DS UK Pin Advent Calendar 466041620551 (24 bauble pins, 3D tree, GBP 175) and DS EU Christmas Wreath Mystery Pin Advent Calendar 466043384734 (24 pins form wreath); neither dated"
+  },
+  {
+   "key": "dsuk/2022/advent-calendar",
+   "field": "variant",
+   "searched": "2 queries",
+   "note": "hold: EU wreath calendar resembles dsus/2022/holiday-countdown-advent-calendar-2022 (wreath on board) but no source links them; do not treat as same product yet"
+  },
+  {
+   "key": "dsuk/2022/christmas",
+   "field": "members",
+   "searched": "1 query",
+   "note": "lead only: DS UK Mickey and Minnie Holiday Cheer LE pin 465050527448 (sledge ride, LE 3700, GBP 9); year not stated. No dated 2021/2022 UK Christmas LE found"
+  },
+  {
+   "key": "dsuk/2021",
+   "field": "members",
+   "searched": "30 searches",
+   "note": "Gap: still no dated 2021 DS UK-specific LE beyond New Year 2021; no 2021/2022 UK Halloween or jumbo pin found"
+  }
+ ],
+ "discovery_notes": "Follow-up 1 of B043 (398). 30 standard searches, snippet leads only. Reuses B043 keys dsuk/2021/disney-castle-collection, dsuk/2022/disney-castle-collection/belle (was a not_found key) and dsuk/2022/our-transformation-story. New pin: Mother Gothel (UK listing). Belle keyed dsuk on series-level UK sale only; held. No existing hold released. Excluded: eBay/reseller snippets (Gothel LE, Walmart, icollecteverything not used). Item-number ranges not used as date evidence."
+}

@@ -1,0 +1,770 @@
+{
+ "packet_id": "backfill-b259-wdw-oe-2019-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b259",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+   "title": "Disney Hugs Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/189785",
+   "title": "189785",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/189782",
+   "title": "189782",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/celebrate-mickey-90th-booster-pin-set/",
+   "title": "Celebrate Mickey 90th Booster Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/44354",
+   "title": "44354",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-frozen-pin-trading-starter-set/",
+   "title": "Disney Frozen Pin Trading Starter Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-2019-mystery-pin-collection",
+   "title": "Disney 2019 Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-galaxys-edge-open-edition-disney-pins/",
+   "title": "Star Wars Galaxy's Edge Open Edition Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+   "title": "PHOTOS: Every Merchandise Item (with Prices) From First Order Cargo in Star Wars: Galaxy's Edge",
+   "publisher": "WDW News Today",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-star-wars-galaxys-edge-grand-opening-at-disneys-hollywood-studios/",
+   "title": "PHOTOS: Every Piece of Merchandise (with Prices) from Star Wars: Galaxy's Edge Grand Opening at Disney's Hollywood Studios",
+   "publisher": "WDW News Today",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/complete-disney-character-scoops-pin-collection",
+   "title": "Complete Disney Character Scoops Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-3/",
+   "title": "New Disney Pins December 2019 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/resistance-star-wars-galaxys-edge-booster-pin-set",
+   "title": "Resistance Star Wars Galaxy's Edge Booster Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/frozen-2-reversible-disney-lanyard",
+   "title": "Frozen 2 Reversible Disney Lanyard",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2019/oe-set/celebrate-mickey-90th-booster",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-01-07",
+     "source_url": "https://disneypinsblog.com/celebrate-mickey-90th-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Set page says released Monday 7 Jan 2019"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (booster)",
+     "source_url": "https://disneypinsblog.com/celebrate-mickey-90th-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Five different pins sold together"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/celebrate-mickey-90th-booster-pin-set/",
+     "method": "search_snippet",
+     "note": "Five different pins"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "claims": [
+    {
+     "field": "format",
+     "value": "mystery box, 2 random pins per box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Collection page lists ten pairings for 10 OE pins"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/oe-set/toy-story-land-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "WDW - Toy Story Land Mystery Set - 2019",
+     "source_url": "https://mypincentral.com/pin/44354",
+     "method": "search_snippet",
+     "note": "Set title on a MyPinCentral entry"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://mypincentral.com/pin/44354",
+     "method": "search_snippet",
+     "note": "Entry title marks it WDW"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/oe-set/frozen-starter-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Frozen Pin Trading Starter Set",
+     "source_url": "https://disneypinsblog.com/disney-frozen-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "Name per set page"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disney-frozen-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "Four pins plus lanyard"
+    },
+    {
+     "field": "format",
+     "value": "starter set with lanyard",
+     "source_url": "https://disneypinsblog.com/disney-frozen-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "Starter set includes a lanyard"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-frozen-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "Described as open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/disney-frozen-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "Released late August 2019"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/disney-frozen-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "USD 29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-frozen-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/disney-frozen-pin-trading-starter-set/",
+     "method": "search_snippet",
+     "note": "Available at both resorts"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/oe-set/disney-2019-mystery",
+   "claims": [
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-2019-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Two random pins per box"
+    },
+    {
+     "field": "format",
+     "value": "mystery box, 2 random pins per box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-2019-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Eight OE designs of Disney characters, blind boxes"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/oe-set/swge-first-order-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "First Order Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-open-edition-disney-pins/",
+     "method": "search_snippet",
+     "note": "Listed under The First Order in GE OE roundup"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-open-edition-disney-pins/",
+     "method": "search_snippet",
+     "note": "Roundup is of GE open edition pins"
+    },
+    {
+     "field": "price",
+     "value": 14.99,
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "First Order Cargo (Disneyland) list, USD 14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/06/photos-every-merchandise-item-with-prices-from-first-order-cargo-in-star-wars-galaxys-edge/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "format",
+     "value": "mystery box",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-open-edition-disney-pins/",
+     "method": "search_snippet",
+     "note": "Mystery collection"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2019/oe-set/disney-hugs-mystery/jumbo-and-dumbo",
+   "set_key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Dumbo held in Mrs. Jumbo's embrace",
+     "source_url": "https://mypincentral.com/pin/189785",
+     "method": "search_snippet",
+     "note": "Per-pin page describes this Hugs mystery design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/189785",
+     "method": "search_snippet",
+     "note": "Single pin showing both characters"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mrs. Jumbo",
+      "Dumbo"
+     ],
+     "source_url": "https://mypincentral.com/pin/189785",
+     "method": "search_snippet",
+     "note": "Both named on per-pin page"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/disney-hugs-mystery/jasmine-and-rajah",
+   "set_key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine",
+      "Rajah"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Pairing named in the ten-design lineup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Each Hugs design shows the pair together"
+    },
+    {
+     "field": "visual_description",
+     "value": "Jasmine holding Rajah before a blue castle-shaped background",
+     "source_url": "https://mypincentral.com/pin/189782",
+     "method": "search_snippet",
+     "note": "Per-pin page, listed as part of Hugs set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine",
+      "Rajah"
+     ],
+     "source_url": "https://mypincentral.com/pin/189782",
+     "method": "search_snippet",
+     "note": "Named on per-pin page"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/disney-hugs-mystery/jessie-and-bullseye",
+   "set_key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jessie",
+      "Bullseye"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Pairing named in the ten-design lineup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Each Hugs design shows the pair together"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/disney-hugs-mystery/baymax-and-hiro",
+   "set_key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Baymax",
+      "Hiro"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Pairing named in the ten-design lineup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Each Hugs design shows the pair together"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/disney-hugs-mystery/chip-and-dale",
+   "set_key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Pairing named in the ten-design lineup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Each Hugs design shows the pair together"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/disney-hugs-mystery/anna-and-elsa",
+   "set_key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Anna",
+      "Elsa"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Pairing named in the ten-design lineup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Each Hugs design shows the pair together"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/disney-hugs-mystery/pinocchio-and-geppetto",
+   "set_key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pinocchio",
+      "Geppetto"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Pairing named in the ten-design lineup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Each Hugs design shows the pair together"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/oe-set/disney-hugs-mystery/pooh-and-christopher-robin",
+   "set_key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh",
+      "Christopher Robin"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Pairing named in the ten-design lineup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-hugs-mystery-pin-collection",
+     "method": "search_snippet",
+     "note": "Each Hugs design shows the pair together"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery/jessie-and-bullseye",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral queries x3",
+   "note": "hold: named only in the single Hugs collection lineup (no per-design page found); mystery designs not individually confirmed; pending maintainer full-list decision"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery/baymax-and-hiro",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral queries x3",
+   "note": "hold: named only in the single Hugs collection lineup (no per-design page found); mystery designs not individually confirmed; pending maintainer full-list decision"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral queries x3",
+   "note": "hold: named only in the single Hugs collection lineup (no per-design page found); mystery designs not individually confirmed; pending maintainer full-list decision"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery/anna-and-elsa",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral queries x3",
+   "note": "hold: named only in the single Hugs collection lineup (no per-design page found); mystery designs not individually confirmed; pending maintainer full-list decision"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery/pinocchio-and-geppetto",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral queries x3",
+   "note": "hold: named only in the single Hugs collection lineup (no per-design page found); mystery designs not individually confirmed; pending maintainer full-list decision"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery/pooh-and-christopher-robin",
+   "field": "pin_structure",
+   "searched": "DPB set page; MyPinCentral queries x3",
+   "note": "hold: named only in the single Hugs collection lineup (no per-design page found); mystery designs not individually confirmed; pending maintainer full-list decision"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery/jumbo-and-dumbo",
+   "field": "pin_structure",
+   "searched": "MyPinCentral 189785",
+   "note": "released: per-design MyPinCentral page describes this design as a Disney Hugs mystery pin (new per-pin evidence)"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery/jasmine-and-rajah",
+   "field": "pin_structure",
+   "searched": "MyPinCentral 189782",
+   "note": "per-design MyPinCentral page plus DPB lineup; not held"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery/mickey-and-pluto",
+   "field": "pin_structure",
+   "searched": "MyPinCentral search; reseller",
+   "note": "hold kept: only a reseller (tictoccrocshop) gives a per-pin listing ('dog house' design); reseller is not evidence"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery/lilo-and-stitch",
+   "field": "pin_structure",
+   "searched": "MyPinCentral search",
+   "note": "hold kept: MPC Lilo/Stitch hits were lollipop/Skyliner pins, not Hugs"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-hugs-mystery",
+   "field": "release_location",
+   "searched": "DPB set page",
+   "note": "lead: released first at DLR mid May 2019; no DLR 2019 packet has a Hugs key (lead for DLR OE cell; would be variant: same pin as these WDW keys)"
+  },
+  {
+   "key": "wdw/2019/oe-set/frozen-starter-set",
+   "field": "members",
+   "searched": "DPB set page; 1 query",
+   "note": "Characters Anna, Elsa, Olaf, Sven listed for 4 pins; per-pin descriptions absent, members not created. Lead for DLR OE cell (variant: same set)"
+  },
+  {
+   "key": "wdw/2019/oe-set/celebrate-mickey-90th-booster/minnie-mouse",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold kept: set page lists the Fab 5 in party attire as five different pins but gives no per-pin description; pending maintainer full-list decision"
+  },
+  {
+   "key": "wdw/2019/oe-set/celebrate-mickey-90th-booster/mickey-mouse",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold kept: set page lists the Fab 5 in party attire as five different pins but gives no per-pin description; pending maintainer full-list decision"
+  },
+  {
+   "key": "wdw/2019/oe-set/celebrate-mickey-90th-booster/donald-duck",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold kept: set page lists the Fab 5 in party attire as five different pins but gives no per-pin description; pending maintainer full-list decision"
+  },
+  {
+   "key": "wdw/2019/oe-set/celebrate-mickey-90th-booster/pluto",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold kept: set page lists the Fab 5 in party attire as five different pins but gives no per-pin description; pending maintainer full-list decision"
+  },
+  {
+   "key": "wdw/2019/oe-set/celebrate-mickey-90th-booster/goofy",
+   "field": "pin_structure",
+   "searched": "DPB set page",
+   "note": "hold kept: set page lists the Fab 5 in party attire as five different pins but gives no per-pin description; pending maintainer full-list decision"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-booster/donald-duck",
+   "field": "pin_structure",
+   "searched": "DPB 2019 pins page; MyPinCentral query",
+   "note": "hold kept: still only the 6-character booster list; no per-pin page found"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-booster/mickey-mouse",
+   "field": "pin_structure",
+   "searched": "DPB 2019 pins page; MyPinCentral query",
+   "note": "hold kept: still only the 6-character booster list; no per-pin page found"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-booster/goofy",
+   "field": "pin_structure",
+   "searched": "DPB 2019 pins page; MyPinCentral query",
+   "note": "hold kept: still only the 6-character booster list; no per-pin page found"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-booster/daisy-duck",
+   "field": "pin_structure",
+   "searched": "DPB 2019 pins page; MyPinCentral query",
+   "note": "hold kept: still only the 6-character booster list; no per-pin page found"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-booster/pluto",
+   "field": "pin_structure",
+   "searched": "DPB 2019 pins page; MyPinCentral query",
+   "note": "hold kept: still only the 6-character booster list; no per-pin page found"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-booster/minnie-mouse",
+   "field": "pin_structure",
+   "searched": "DPB 2019 pins page; MyPinCentral query",
+   "note": "hold kept: still only the 6-character booster list; no per-pin page found"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-parks-2019-starter-set",
+   "field": "members",
+   "searched": "DPB; 1 query",
+   "note": "Four starter pins still unnamed in non-marketplace sources"
+  },
+  {
+   "key": "wdw/2019/oe-set/disney-2019-mystery",
+   "field": "members",
+   "searched": "DPB set page; 2 queries",
+   "note": "Eight designs still unnamed in snippets; MPC 72965 (2019 Fab 4 spinner) is not tied to this set"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-land-mystery",
+   "field": "members",
+   "searched": "MyPinCentral 44354; DPB",
+   "note": "hold kept on all members: MPC set title roster names Little Green Men and Green Army Man where DPB list says Alien/Toy Soldier; no per-design pages"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-4-mystery",
+   "field": "members",
+   "searched": "DPB; MyPinCentral query",
+   "note": "hold kept: a reseller lists Duke Caboom as one of eight TS4 mystery designs, matching the 2022 8-pin set not the 2019 10-pin set; not recorded"
+  },
+  {
+   "key": "wdw/2019/oe-set/incredibles-mystery",
+   "field": "members",
+   "searched": "MyPinCentral query",
+   "note": "hold kept: MPC 201691 (Baby Edna with lollipop) not tied to the 2019 set; Jack-Jack/Frozone per-design pages not found"
+  },
+  {
+   "key": "wdw/2019/oe-set/pandora-2019-mystery",
+   "field": "members",
+   "searched": "DPB 2019 Pandora post; 1 query",
+   "note": "2019 mystery designs still unnamed (2017/2021/2024 sets are different)"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-resist-mystery",
+   "field": "members",
+   "searched": "DPB; WDWNT; 1 query",
+   "note": "Ten ship designs still unnamed; A-wing/Y-wing/B-wing unverified"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-first-order-mystery",
+   "field": "members",
+   "searched": "DPB GE OE roundup; WDWNT",
+   "note": "Designs not described. variant: same set as dlr/2019/oe-set/first-order-mystery (203); WDW sale only via DPB 'both coasts' roundup"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-first-order-mystery",
+   "field": "release_location",
+   "searched": "DPB; WDWNT",
+   "note": "WDWNT price list is Disneyland First Order Cargo, June 2019"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-resistance-booster",
+   "field": "members",
+   "searched": "DPB set page; 1 query",
+   "note": "Fourth Millennium Falcon pin still unnamed (set page names Pilot, Never Tell Me the Odds, Black Spire Outpost only); member holds kept"
+  },
+  {
+   "key": "wdw/2019/oe-set/swge-first-order-booster",
+   "field": "release_year",
+   "searched": "DPB GE OE roundup",
+   "note": "hold kept: no dated per-pin source found tying the four helmet pins to 2019"
+  },
+  {
+   "key": "wdw/2019/oe/swge-supreme-leader-kylo-ren",
+   "field": "release_location",
+   "searched": "WDWNT DHS grand opening list; 1 query",
+   "note": "hold kept: DHS grand opening list (Aug 2019) does not show this pin; only the Disneyland June 2019 list does"
+  },
+  {
+   "key": "wdw/2019/oe-set/character-scoops",
+   "field": "release_date",
+   "searched": "DPB complete collection page; 3 queries",
+   "note": "conflict: DPB Character Scoops collection is a 2024 LE 4000 monthly series; Donald & Chip 'n Dale pin dated Sept 2024. 403's 2019 attribution not corroborated; maintainer review"
+  },
+  {
+   "key": "wdw/2019/oe-set/character-scoops/donald-duck",
+   "field": "release_year",
+   "searched": "DPB; reseller; 3 queries",
+   "note": "conflict: only Character Scoops Donald & Chip 'n Dale found is Sept 2024 LE 4000 (DPB); no 2019 OE source found; hold kept"
+  },
+  {
+   "key": "wdw/2019/oe-set/character-scoops/chip-n-dale",
+   "field": "release_year",
+   "searched": "DPB; reseller; 3 queries",
+   "note": "conflict: only Character Scoops Donald & Chip 'n Dale found is Sept 2024 LE 4000 (DPB); no 2019 OE source found; hold kept"
+  },
+  {
+   "key": "wdw/2019/oe/frozen-2",
+   "field": "members",
+   "searched": "DPB lanyard post; 4 queries",
+   "note": "Frozen 2 OE parks pins (Nov 2019) still unnamed/unpriced; DPB 'New Frozen OE pins' post is Feb 2025. Trust Your Journey / Snow It All only via resellers; see dsus/2019/frozen-2-shopdisney-dec-2019 keys (206)"
+  },
+  {
+   "key": "wdw/2019/epcot-flower-garden",
+   "field": "edition_type",
+   "searched": "WDWNT; wdwinfo; 1 query",
+   "note": "No 2019 OE festival pin found (LE/LR only)"
+  },
+  {
+   "key": "wdw/2019/epcot-food-wine",
+   "field": "edition_type",
+   "searched": "DPB; DFB; WDWNT; 1 query",
+   "note": "No 2019 OE F&W pin found; Figment/chef pins LE/LR"
+  },
+  {
+   "key": "wdw/2019/epcot-festival-of-holidays",
+   "field": "edition_type",
+   "searched": "WDWNT 2019 FotH list",
+   "note": "Only LR/LE pins listed (Chip 'n Dale LR USD 15.99, AP LE USD 17.99): lead for WDW LE cell"
+  },
+  {
+   "key": "wdw/2019/swge-tie-fighter-pilot-monthly",
+   "field": "edition_type",
+   "searched": "DPB Dec 2019 week 3",
+   "note": "lead: First Order TIE Fighter Pilot GE monthly pin, LE 1500, USD 17.99, WDW 19 Dec 2019: for WDW LE cell, not OE"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 to 201/403 (B001). 28 standard WebSearches, excluded domains blocked. New: Disney Hugs full 10-pair lineup (Jumbo/Dumbo released on MPC per-pin page; Jasmine/Rajah new with MPC page; 6 others held as single-list names); Frozen starter set (OE, Aug 2019, both resorts); First Order mystery set split out; Mickey 90th booster date. Character Scoops 2019 attribution conflicts with 2024 LE series. No OE Epcot festival pins found. Reseller-only facts not recorded."
+}

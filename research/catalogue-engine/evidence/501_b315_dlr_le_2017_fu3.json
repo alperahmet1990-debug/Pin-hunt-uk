@@ -1,0 +1,778 @@
+{
+ "packet_id": "backfill-b315-dlr-le-2017-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b315",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/tag/march-2017-disney-pins/",
+   "title": "March 2017 Disney Pins Archives (tag page incl. New Disney Pins March 2017 Week 5)",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-1/",
+   "title": "New Disney Pins August 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/77785",
+   "title": "MyPinCentral pin 77785",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/49378",
+   "title": "MyPinCentral pin 49378",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/49380",
+   "title": "MyPinCentral pin 49380",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-collection/",
+   "title": "Aladdin 25th Anniversary Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/18866",
+   "title": "MyPinCentral pin 18866",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+   "title": "Villains Vault 2017 Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+   "title": "New Disney Pins March 2017 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2017/03/photos-disneyland-pirates-caribbean-50th-anniversary-merchandise-including-passholder-exclusives/",
+   "title": "PHOTOS: Disneyland Pirates of the Caribbean 50th Anniversary Merchandise, including Passholder Exclusives",
+   "publisher": "WDW News Today",
+   "published_date": "2017-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+   "title": "New Disney Pins October 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/haunting-halloween-disney-pins-2017/",
+   "title": "Haunting Halloween Disney Pins 2017 Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+   "title": "New Disney Pins August 2017 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-3",
+   "title": "New Disney Pins October 2017 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2017-week-2",
+   "title": "New Disney Pins September 2017 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2017/pirates-50th-boxed-set",
+   "claims": [
+    {
+     "field": "format",
+     "value": "boxed set of the individual LE pins plus one completer pin",
+     "source_url": "https://wdwnt.com/2017/03/photos-disneyland-pirates-caribbean-50th-anniversary-merchandise-including-passholder-exclusives/",
+     "method": "search_snippet",
+     "note": "individual LE pins also offered in a boxed set containing one completer"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-16",
+     "source_url": "https://wdwnt.com/2017/03/photos-disneyland-pirates-caribbean-50th-anniversary-merchandise-including-passholder-exclusives/",
+     "method": "search_snippet",
+     "note": "released Mar 16 with the LE pins and AP pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/aladdin-25th-pin-trading-nights-genie-mystery",
+   "claims": [
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "two random pins per box, $16.99"
+    },
+    {
+     "field": "price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "$16.99 per box"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "7 advertised pins, 7 LE chasers, 1 super chaser"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2017/pin-trading-tales/mad-hatter",
+   "set_key": "dlr/2017/pin-trading-tales",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Tales - Mad Hatter",
+     "source_url": "https://disneypinsblog.com/tag/march-2017-disney-pins/",
+     "method": "search_snippet",
+     "note": "DPB Mar 2017 wk5 (Mar 26-Apr 1) DLR release; post spells it 'Mat Hatter'"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mad Hatter"
+     ],
+     "source_url": "https://disneypinsblog.com/tag/march-2017-disney-pins/",
+     "method": "search_snippet",
+     "note": "pin features the Mad Hatter"
+    },
+    {
+     "field": "main_character",
+     "value": "Mad Hatter",
+     "source_url": "https://disneypinsblog.com/tag/march-2017-disney-pins/",
+     "method": "search_snippet",
+     "note": "Mad Hatter"
+    },
+    {
+     "field": "set_position",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/tag/march-2017-disney-pins/",
+     "method": "search_snippet",
+     "note": "third pin in the Pin Trading Tales collection at Disneyland"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/tag/march-2017-disney-pins/",
+     "method": "search_snippet",
+     "note": "Mar 26-Apr 1, 2017 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/tag/march-2017-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed under Disneyland Resort pin releases"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/tag/march-2017-disney-pins/",
+     "method": "search_snippet",
+     "note": "single series release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/charming-characters/mike",
+   "set_key": "dlr/2017/charming-characters",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Charming Characters - Mike",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-1/",
+     "method": "search_snippet",
+     "note": "DPB Aug 2017 wk1 DLR release"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mike Wazowski"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-1/",
+     "method": "search_snippet",
+     "note": "features Mike from Monsters, Inc."
+    },
+    {
+     "field": "main_character",
+     "value": "Mike Wazowski",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-1/",
+     "method": "search_snippet",
+     "note": "Mike (Monsters, Inc.)"
+    },
+    {
+     "field": "set_position",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-1/",
+     "method": "search_snippet",
+     "note": "eighth release in the Charming Characters collection; August release"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-1/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-1/",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-1/",
+     "method": "search_snippet",
+     "note": "$15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-1/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-08-03",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-1/",
+     "method": "search_snippet",
+     "note": "available at DLR Aug 3, 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-1/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-1/",
+     "method": "search_snippet",
+     "note": "DLR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2017-week-1/",
+     "method": "search_snippet",
+     "note": "single monthly series pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/club-33-2017/cinderella",
+   "set_key": "dlr/2017/club-33-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Club 33 50th Anniversary - Cinderella",
+     "source_url": "https://mypincentral.com/pin/77785",
+     "method": "search_snippet",
+     "note": "MPC per-pin page: Cinderella pin in the Club 33 50th Anniversary set, 2017, Disneyland Resort"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cinderella"
+     ],
+     "source_url": "https://mypincentral.com/pin/77785",
+     "method": "search_snippet",
+     "note": "Cinderella"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/77785",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://mypincentral.com/pin/77785",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://mypincentral.com/pin/77785",
+     "method": "search_snippet",
+     "note": "released 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://mypincentral.com/pin/77785",
+     "method": "search_snippet",
+     "note": "Disneyland Resort / Club 33"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/77785",
+     "method": "search_snippet",
+     "note": "single pin listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/aladdin-25th-pin-trading-nights-genie-mystery/genie-tourist",
+   "set_key": "dlr/2017/aladdin-25th-pin-trading-nights-genie-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Genie Mystery Set - Genie Tourist",
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "MPC per-pin page: Aladdin 25th Anniversary Collection, Genie Mystery Set 2017"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Genie"
+     ],
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "Genie as a tourist"
+    },
+    {
+     "field": "visual_description",
+     "value": "Genie as a tourist in yellow shirt and shorts holding a brown suitcase",
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "paraphrased from MPC"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Pin Trading Aladdin 25th Anniversary; Limited Release",
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "back stamp per MPC; FAC code also listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "limited release stamp"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "2017 set"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "individual mystery design"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/aladdin-25th-pin-trading-nights-genie-mystery/genie-stewardess-chaser",
+   "set_key": "dlr/2017/aladdin-25th-pin-trading-nights-genie-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Genie Mystery Set - Genie Stewardess Chaser",
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "MPC per-pin page: Genie as a Stewardess, chaser in the Aladdin 25th Anniversary Genie Mystery Set 2017"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Genie"
+     ],
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "Genie dressed as a stewardess"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "listed as a chaser"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "back stamp Limited Edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "back reads Limited Edition 400"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "2017 set"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "individual mystery design"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/villains-vault-2017/super-jumbo-villains",
+   "set_key": "dlr/2017/villains-vault-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Villains Vault 2017 super jumbo",
+     "source_url": "https://mypincentral.com/pin/18866",
+     "method": "search_snippet",
+     "note": "MPC per-pin page: square super jumbo with 'Villain's Vault 2017' lettering"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chernabog",
+      "Scar",
+      "Jafar",
+      "Maleficent",
+      "Ursula"
+     ],
+     "source_url": "https://mypincentral.com/pin/18866",
+     "method": "search_snippet",
+     "note": "five villains shown on the pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Chernabog",
+     "source_url": "https://mypincentral.com/pin/18866",
+     "method": "search_snippet",
+     "note": "Chernabog at centre"
+    },
+    {
+     "field": "visual_description",
+     "value": "square super jumbo, white background, red lettering, Chernabog centred with four villains around him",
+     "source_url": "https://mypincentral.com/pin/18866",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Villains Vault Limited Edition of 250",
+     "source_url": "https://mypincentral.com/pin/18866",
+     "method": "search_snippet",
+     "note": "back stamp per MPC"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/18866",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://mypincentral.com/pin/18866",
+     "method": "search_snippet",
+     "note": "LE 250 per back stamp"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://mypincentral.com/pin/18866",
+     "method": "search_snippet",
+     "note": "front lettering says 2017"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/18866",
+     "method": "search_snippet",
+     "note": "one pin showing a group of villains"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+     "method": "search_snippet",
+     "note": "DPB: Villains Vault 2017 pins exclusive to Disneyland, Sept 14, 2017; collection includes super jumbo pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/easter-2017/nightmare-before-christmas",
+   "set_key": "dlr/2017/easter-2017",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "second search again gives LE 3,000, DLR Mar 23, 2017 (corroborates 471)"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+     "method": "search_snippet",
+     "note": "available at DLR Mar 23, 2017"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2017/pin-trading-tales/mad-hatter",
+   "field": "release",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "resolved: was reseller-only in 226/433/471 (not_found key there); now DPB Mar 2017 wk5 snippet names PTT #3 Mad Hatter at DLR. No maintainer hold involved"
+  },
+  {
+   "key": "dlr/2017/pin-trading-tales/mad-hatter",
+   "field": "edition_size",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "DPB snippet cut off before size/price/date; LE 2,000 Mar 30 still reseller-only - not recorded"
+  },
+  {
+   "key": "dlr/2017/piece-of-disneyland-resort-history/mad-hatter",
+   "field": "all",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "lead: DPB Apr 2017 wk3 Piece of Disneyland Resort History Mad Hatter LE 2,000 - different series; check DLR 2017 cells"
+  },
+  {
+   "key": "dlr/2017/pin-trading-tales",
+   "field": "pins",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "pins 4 and 9 still not named; DPB Apr wk4 / Sept wk1 roundups not surfaced; Hank (reseller distradingpins4u) not used"
+  },
+  {
+   "key": "dlr/2017/charming-characters/mike",
+   "field": "release",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "resolved: 471 lead confirmed by DPB Aug 2017 wk1 snippet (eighth release, LE 3,000, $15.99, Aug 3)"
+  },
+  {
+   "key": "dlr/2017/charming-characters",
+   "field": "pins",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "releases 1, 2 and 9 still not named; Feb wk1 roundup shows no CC pin; Sept 2017 wk1 roundup not surfaced"
+  },
+  {
+   "key": "dlr/2017/charming-characters/mr-toad",
+   "field": "edition_size",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "one summary says DPB May wk2 gives 3,000 in one place and 2,000 in another - verify"
+  },
+  {
+   "key": "dlr/2017/pirates-50th",
+   "field": "pins",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "individual LE 2,500 designs still unnamed in permitted snippets; MPC 199131/199132 (skull and crossbones '50' series) park/year not stated - lead"
+  },
+  {
+   "key": "dlr/2017/pirates-50th-boxed-set",
+   "field": "expected_pin_count",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "number of pins in the box not stated; completer design not described"
+  },
+  {
+   "key": "dlr/2017/ap-quarterly-2017",
+   "field": "pins",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "first three 2017 quarterly pins still not identified; AP Days (Feb) and Egg-stravaganza (spring) not called quarterly in snippets - not linked"
+  },
+  {
+   "key": "dlr/2017/club-33-2017/cinderella",
+   "field": "release_date",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "resolved lead (433/471): MPC 77785 ties Cinderella LE 500 to Club 33 50th Anniversary 2017 DLR; month not stated"
+  },
+  {
+   "key": "dlr/2017/club-33-2017",
+   "field": "pins",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "other months still not found (Mar Lady and the Tramp, Sep Beauty and the Beast, Dec, plus Cinderella undated)"
+  },
+  {
+   "key": "dlr/2017/club-33-2017/december-2017",
+   "field": "characters",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "hold kept (433): no new per-pin evidence; DPB again says Pluto LE 500"
+  },
+  {
+   "key": "dlr/2017/aladdin-25th-pin-trading-nights-genie-mystery",
+   "field": "pins",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "hold partly released (471 hold): Genie Tourist (MPC 49380) and Genie Stewardess chaser (MPC 49378) now explicitly tied to 2017 set on per-pin pages; other 13 designs unnamed"
+  },
+  {
+   "key": "dlr/2017/aladdin-25th-pin-trading-nights-genie-mystery",
+   "field": "line",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "joint DL/WDW Pin Trading Nights; no wdw key exists in 218/426/467/499 - flag for WDW cell (variant there)"
+  },
+  {
+   "key": "dlr/2017/aladdin-25th-pin-trading-nights-three-wishes-box-set",
+   "field": "pins",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "three LE pins still not named (DPB: pin-on-pin, translucent fill, 3D sculpted, LE 1,000, $64.99, random selection)"
+  },
+  {
+   "key": "dlr/2017/villains-vault-2017",
+   "field": "pins",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "second super jumbo, key box set members and two Oogie Boogie jumbos not individually named"
+  },
+  {
+   "key": "dlr/2017/mickeys-halloween-party-2017-villains-box-set",
+   "field": "pins",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "hold kept (433): pending maintainer full-list decision; not re-searched"
+  },
+  {
+   "key": "dlr/2017/pin-trading-tales/hat-box-ghost",
+   "field": "release_location",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "conflict persists: DPB Aug wk5 lists it under shared DL/WDW releases but body says released at DLR Aug 31; WDW sale not confirmed - no wdw key created"
+  },
+  {
+   "key": "dlr/2017/haunting-halloween-2017/ezra",
+   "field": "release_location",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "hold kept (499): DPB Oct wk1 again lists under shared DL/WDW heading but says available at DLR Oct 5 - unresolved"
+  },
+  {
+   "key": "dlr/2017/haunting-halloween-2017/phineas",
+   "field": "release_location",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "hold kept (499): same conflict as Ezra"
+  },
+  {
+   "key": "dlr/2017/haunting-halloween-2017/scar",
+   "field": "all",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "lead: DPB tag page lists 'Scar Haunting Halloween 2017 Pin' dated Oct 8, 2017; no size/price/park in snippet - not recorded"
+  },
+  {
+   "key": "dlr/2017/easter-2017/nightmare-before-christmas",
+   "field": "line",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "distinct from wdw/2017/easter-2017/bean-bunny (467): same DPB roundup gives separate WDW Bean Bunny LE 3,000 $14.99"
+  },
+  {
+   "key": "dlr/2017/twenty-eight-and-main-mystery",
+   "field": "all",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "lead: DPB Aug 2017 wk1 DLR 28 & Main mystery set, 500 chasers, Aug 3 2017 - likely LR/OE cell; designs not named"
+  },
+  {
+   "key": "dlr/2017/nbc-haunted-mansion-stretching-portraits",
+   "field": "all",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "lead: DPB Sept 2017 wk2 four NBC Haunted Mansion stretching-portrait pins $9.99 each at DLR (WDW soon); edition not stated - likely OE cell"
+  },
+  {
+   "key": "dlr/2017/pin-trading-nights",
+   "field": "all",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "no Disneyland-only 2017 Pin Trading Night found; Aladdin 25th remains joint DL/WDW"
+  },
+  {
+   "key": "wdw/2017/star-wars-pin-of-the-month/pin-13",
+   "field": "characters",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "hold kept (433/426): not re-searched, no new evidence"
+  },
+  {
+   "key": "dlr/2017/holiday-gift-card-pins",
+   "field": "pins",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "hold kept (433): confirm pin structure; not re-searched"
+  },
+  {
+   "key": "dlr/2017/licensed",
+   "field": "release",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "no licensed pins surfaced in this cell's searches"
+  },
+  {
+   "key": "dlr/2017/pirates-50th-boxed-set",
+   "field": "edition_size",
+   "searched": "30 standard WebSearch queries (B315)",
+   "note": "WDWNT snippet gives 500 for the completer pin; 226's set-level 500 may be the completer size - verify"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 of B020 (after 433, 471). 30 standard WebSearch queries, all search_snippet, allowed_domains limited to preferred sites or blocked list passed. New pins: PTT #3 Mad Hatter, Charming Characters #8 Mike, Club 33 Cinderella, Genie Tourist and Genie Stewardess chaser (partial release of 471 hold on per-pin MPC evidence), Villains Vault 2017 super jumbo. Corroborated Easter NBC LE 3,000. Maintainer holds kept (Club 33 Dec, SW pin 13, MHP villains box, gift-card pins). No prompt-injection seen."
+}

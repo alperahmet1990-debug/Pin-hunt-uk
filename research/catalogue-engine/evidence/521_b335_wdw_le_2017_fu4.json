@@ -1,0 +1,863 @@
+{
+  "packet_id": "521_b335_wdw_le_2017_fu4",
+  "spec_version": 1,
+  "collected_at": "2026-10-18",
+  "collector": "agent:web-search",
+  "sources": [
+    {
+      "url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-1/",
+      "title": "New Disney Pins June 2017 Week 1",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-06",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/star-wars-secrets-empire-pins",
+      "title": "Star Wars Secrets of the Empire Pins",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/star-wars-secrets-empire-pins/",
+      "title": "Star Wars Secrets of the Empire Pins",
+      "publisher": "Disney Pins Blog",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://d23.com/a-to-z/star-wars-secrets-empire/",
+      "title": "Star Wars: Secrets of the Empire",
+      "publisher": "D23",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://allears.net/2017/09/17/2017-epcot-pin-event-love-is-an-adventure/",
+      "title": "2017 EPCOT Pin Event",
+      "publisher": "AllEars.Net",
+      "published_date": "2017-09-17",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://insidethemagic.net/2017/05/disney-pin-celebration-love-adventure-take-place-summer-walt-disney-world/",
+      "title": "Disney Pin Celebration Love is an Adventure to take place this summer at Walt Disney World",
+      "publisher": "Inside the Magic",
+      "published_date": "2017-05",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+      "title": "New Disney Pins November 2017 Week 3",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-11",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+      "title": "New Disney Pins December 2017 Week 2",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-12-10",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.flickr.com/photos/68105287@N03/39031907962",
+      "title": "Snow White and the Seven Dwarfs Anniversary Collection Pins - Disneyland Purchase - Opened",
+      "publisher": "Flickr (collector photo post)",
+      "published_date": null,
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+      "title": "Star Wars Celebration 2017 Disney Parks Pins",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-04",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://wdwnt.com/2017/02/photos-flower-garden-festival-2017-merchandise-egg-hunt-returns-epcot-new-characters/",
+      "title": "PHOTOS: Flower and Garden Festival 2017 Merchandise",
+      "publisher": "WDW News Today",
+      "published_date": "2017-02",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.wdwinfo.com/news-stories/new-merchandise-for-the-princess-half-marathon-weekend/",
+      "title": "New Merchandise for the Princess Half Marathon Weekend",
+      "publisher": "WDWInfo",
+      "published_date": "2017-02",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    }
+  ],
+  "sets": [
+    {
+      "set_key": "wdw/2017/secrets-of-the-empire",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Star Wars Secrets of the Empire opening pins",
+          "source_url": "https://disneypinsblog.com/blogs/news/star-wars-secrets-empire-pins",
+          "method": "search_snippet",
+          "note": "limited edition pins given to some first guests; one pin per location"
+        },
+        {
+          "field": "format",
+          "value": "separate pins (one per location)",
+          "source_url": "https://disneypinsblog.com/blogs/news/star-wars-secrets-empire-pins",
+          "method": "search_snippet",
+          "note": "separate Orlando and Anaheim pins"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/star-wars-secrets-empire-pins/",
+          "method": "search_snippet",
+          "note": "described as limited, given out on opening day"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2017/love-is-an-adventure-go-the-distance-gift-set",
+      "parent_set_key": "wdw/2017/love-is-an-adventure",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Go the Distance Trading Challenge Six Pin Gift Set",
+          "source_url": "https://insidethemagic.net/2017/05/disney-pin-celebration-love-adventure-take-place-summer-walt-disney-world/",
+          "method": "search_snippet",
+          "note": "one of three LE commemorative gifts in $150 admission"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 6,
+          "source_url": "https://insidethemagic.net/2017/05/disney-pin-celebration-love-adventure-take-place-summer-walt-disney-world/",
+          "method": "search_snippet",
+          "note": "six (6) pin gift set"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://insidethemagic.net/2017/05/disney-pin-celebration-love-adventure-take-place-summer-walt-disney-world/",
+          "method": "search_snippet",
+          "note": "limited edition commemorative gift"
+        },
+        {
+          "field": "format",
+          "value": "multi-pin pack (event gift set)",
+          "source_url": "https://insidethemagic.net/2017/05/disney-pin-celebration-love-adventure-take-place-summer-walt-disney-world/",
+          "method": "search_snippet",
+          "note": "six-pin gift set"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-08-25",
+          "source_url": "https://insidethemagic.net/2017/05/disney-pin-celebration-love-adventure-take-place-summer-walt-disney-world/",
+          "method": "search_snippet",
+          "note": "event Aug 25-26, 2017"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 6,
+          "source_url": "https://allears.net/2017/09/17/2017-epcot-pin-event-love-is-an-adventure/",
+          "method": "search_snippet",
+          "note": "admission included a Go the Distance six-pin gift set"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2017/love-is-an-adventure-goodbye-pin-set",
+      "parent_set_key": "wdw/2017/love-is-an-adventure",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Love is an Adventure Goodbye Pin Set",
+          "source_url": "https://insidethemagic.net/2017/05/disney-pin-celebration-love-adventure-take-place-summer-walt-disney-world/",
+          "method": "search_snippet",
+          "note": "LE commemorative gift included with admission"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://insidethemagic.net/2017/05/disney-pin-celebration-love-adventure-take-place-summer-walt-disney-world/",
+          "method": "search_snippet",
+          "note": "limited edition commemorative gift"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 4,
+          "source_url": "https://allears.net/2017/09/17/2017-epcot-pin-event-love-is-an-adventure/",
+          "method": "search_snippet",
+          "note": "attendee swapped credential tab for the set of four pins (farewell gift)"
+        },
+        {
+          "field": "format",
+          "value": "multi-pin pack (event gift set)",
+          "source_url": "https://allears.net/2017/09/17/2017-epcot-pin-event-love-is-an-adventure/",
+          "method": "search_snippet",
+          "note": "set of four pins"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2017/snow-white-80th-boxed-set",
+      "parent_set_key": "wdw/2017/snow-white-80th",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Snow White 80th Anniversary six-pin boxed set",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "six different pins in collectible box"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 6,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "six pins"
+        },
+        {
+          "field": "format",
+          "value": "boxed set",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "collectible box"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 300,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "LE 300"
+        },
+        {
+          "field": "price",
+          "value": 100,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "retail $100"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-12-14",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "DL and WDW Dec 14, 2017"
+        },
+        {
+          "field": "set_name",
+          "value": "Snow White Dancing With Dwarfs Six Pin Set",
+          "source_url": "https://www.flickr.com/photos/68105287@N03/39031907962",
+          "method": "search_snippet",
+          "note": "collector photo post of Disneyland purchase"
+        },
+        {
+          "field": "price",
+          "value": 100,
+          "source_url": "https://www.flickr.com/photos/68105287@N03/39031907962",
+          "method": "search_snippet",
+          "note": "$100, LE 300"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2017/snow-white-80th",
+      "claims": [
+        {
+          "field": "format",
+          "value": "separate pins",
+          "source_url": "https://www.flickr.com/photos/68105287@N03/39031907962",
+          "method": "search_snippet",
+          "note": "post lists four 80th slider and hinged pins at $15.99 each plus the six-pin set"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2017/star-wars-celebration-orlando-40-years-mystery",
+      "parent_set_key": "wdw/2017/star-wars-celebration-orlando",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Star Wars 40 Years mystery pin collection",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "Disney Parks Celebration release"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 12,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "12-pin collection"
+        },
+        {
+          "field": "pins_per_box",
+          "value": 2,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "two random pins per box"
+        },
+        {
+          "field": "has_chaser",
+          "value": true,
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "limited release pins with limited edition chasers"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "limited release with LE chasers"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-04-13",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "from Celebration day one"
+        },
+        {
+          "field": "format",
+          "value": "mystery / blind-box set",
+          "source_url": "https://disneypinsblog.com/star-wars-celebration-2017-disney-parks-pins/",
+          "method": "search_snippet",
+          "note": "random two-pin boxes"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2017/rundisney-princess-half",
+      "claims": [
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://www.wdwinfo.com/news-stories/new-merchandise-for-the-princess-half-marathon-weekend/",
+          "method": "search_snippet",
+          "note": "limited release pins incl. mini replicas of the Beauty and the Beast-inspired medals"
+        },
+        {
+          "field": "release_location",
+          "value": "runDisney Health & Fitness Expo, ESPN Wide World of Sports",
+          "source_url": "https://www.wdwinfo.com/news-stories/new-merchandise-for-the-princess-half-marathon-weekend/",
+          "method": "search_snippet",
+          "note": "sold at the expo"
+        }
+      ]
+    }
+  ],
+  "pins": [
+    {
+      "pin_key": "wdw/2017/star-wars-pin-of-the-month/pin-13",
+      "set_key": "wdw/2017/star-wars-pin-of-the-month",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Star Wars Pin of the Month - Completer Pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-1/",
+          "method": "search_snippet",
+          "note": "shared DLR & WDW release heading; completer of the monthly series"
+        },
+        {
+          "field": "set_position",
+          "value": 13,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-1/",
+          "method": "search_snippet",
+          "note": "13th and final pin (13 of 13)"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-1/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 6000,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-1/",
+          "method": "search_snippet",
+          "note": "LE 6,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-1/",
+          "method": "search_snippet",
+          "note": "retail $15.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-1/",
+          "method": "search_snippet",
+          "note": "US parks"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-06-01",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-1/",
+          "method": "search_snippet",
+          "note": "released Jun 1, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-1/",
+          "method": "search_snippet",
+          "note": "shared DLR & WDW release"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-1/",
+          "method": "search_snippet",
+          "note": "single series pin"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/secrets-of-the-empire/disney-springs",
+      "set_key": "wdw/2017/secrets-of-the-empire",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Star Wars Secrets of the Empire pin (Disney Springs / Orlando)",
+          "source_url": "https://disneypinsblog.com/blogs/news/star-wars-secrets-empire-pins",
+          "method": "search_snippet",
+          "note": "Orlando pin tied to Disney Springs opening"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/star-wars-secrets-empire-pins",
+          "method": "search_snippet",
+          "note": "limited, given to some first guests"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-12-16",
+          "source_url": "https://disneypinsblog.com/blogs/news/star-wars-secrets-empire-pins",
+          "method": "search_snippet",
+          "note": "given out on opening day; Disney Springs location opened Dec 16, 2017"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-12-16",
+          "source_url": "https://d23.com/a-to-z/star-wars-secrets-empire/",
+          "method": "search_snippet",
+          "note": "D23 A-Z gives Disney Springs opening Dec 16, 2017 (D23 VOID page says Dec 17)"
+        },
+        {
+          "field": "release_location",
+          "value": "Star Wars: Secrets of the Empire (The VOID), Disney Springs, Walt Disney World",
+          "source_url": "https://disneypinsblog.com/blogs/news/star-wars-secrets-empire-pins",
+          "method": "search_snippet",
+          "note": "Orlando location"
+        },
+        {
+          "field": "release_year",
+          "value": 2017,
+          "source_url": "https://disneypinsblog.com/blogs/news/star-wars-secrets-empire-pins",
+          "method": "search_snippet",
+          "note": "2017 opening"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/star-wars-secrets-empire-pins",
+          "method": "search_snippet",
+          "note": "one pin per location"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/love-is-an-adventure/welcome-pin",
+      "set_key": "wdw/2017/love-is-an-adventure",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Love is an Adventure Welcome Pin",
+          "source_url": "https://insidethemagic.net/2017/05/disney-pin-celebration-love-adventure-take-place-summer-walt-disney-world/",
+          "method": "search_snippet",
+          "note": "LE commemorative welcome gift included with admission"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://insidethemagic.net/2017/05/disney-pin-celebration-love-adventure-take-place-summer-walt-disney-world/",
+          "method": "search_snippet",
+          "note": "limited edition commemorative gift"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-08-25",
+          "source_url": "https://insidethemagic.net/2017/05/disney-pin-celebration-love-adventure-take-place-summer-walt-disney-world/",
+          "method": "search_snippet",
+          "note": "event Aug 25-26, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "World ShowPlace, Epcot",
+          "source_url": "https://insidethemagic.net/2017/05/disney-pin-celebration-love-adventure-take-place-summer-walt-disney-world/",
+          "method": "search_snippet",
+          "note": "event venue"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://insidethemagic.net/2017/05/disney-pin-celebration-love-adventure-take-place-summer-walt-disney-world/",
+          "method": "search_snippet",
+          "note": "single welcome pin"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/thanksgiving-2017/thanksgiving-2017",
+      "set_key": "wdw/2017/thanksgiving-2017",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Gobble Gobble! (Thanksgiving 2017)",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+          "method": "search_snippet",
+          "note": "Thanksgiving 2017 pin titled Gobble Gobble!"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Lilo",
+            "Stitch"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+          "method": "search_snippet",
+          "note": "Lilo & Stitch"
+        },
+        {
+          "field": "visual_description",
+          "value": "Lilo and Stitch around a dinner table",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+          "method": "search_snippet",
+          "note": "paraphrase of design"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2017-week-3",
+          "method": "search_snippet",
+          "note": "single pin featuring both characters"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/snow-white-80th/snow-white-prince-slider",
+      "set_key": "wdw/2017/snow-white-80th",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Snow White & Prince slider pin (80th Anniversary)",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "part of 80th anniversary collection"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Snow White",
+            "Prince"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "Snow White and Prince"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "slider"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "slider element"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 2000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "same size as hinged pin: LE 2,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "$15.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "US parks"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-12-14",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "Dec 14, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "DL and WDW"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2017-week-2",
+          "method": "search_snippet",
+          "note": "single pin with two characters"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/snow-white-80th/hinged",
+      "set_key": "wdw/2017/snow-white-80th",
+      "claims": [
+        {
+          "field": "visual_description",
+          "value": "hinged pin whose cover shows the seven dwarfs",
+          "source_url": "https://www.flickr.com/photos/68105287@N03/39031907962",
+          "method": "search_snippet",
+          "note": "collector notes possible missing enamel fill on the dwarfs on the cover"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/epcot-flower-garden/logo-mickey-pluto",
+      "set_key": "wdw/2017/epcot-flower-garden",
+      "claims": [
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://wdwnt.com/2017/02/photos-flower-garden-festival-2017-merchandise-egg-hunt-returns-epcot-new-characters/",
+          "method": "search_snippet",
+          "note": "WDWNT preview: limited release logo pin alongside several LE pins"
+        }
+      ]
+    }
+  ],
+  "not_found": [
+    {
+      "key": "wdw/2017/star-wars-pin-of-the-month/pin-13",
+      "field": "characters",
+      "searched": "2 queries (POTM 13 subject)",
+      "note": "subject/planet still not stated in any snippet; completer name only"
+    },
+    {
+      "key": "wdw/2017/secrets-of-the-empire/disney-springs",
+      "field": "edition_size",
+      "searched": "3 queries",
+      "note": "DPB says edition size unclear; no price (giveaway)"
+    },
+    {
+      "key": "wdw/2017/secrets-of-the-empire/disney-springs",
+      "field": "characters",
+      "searched": "3 queries",
+      "note": "design not described in snippets"
+    },
+    {
+      "key": "dlr/2018/secrets-of-the-empire/downtown-disney",
+      "field": "all",
+      "searched": "3 queries",
+      "note": "lead: matching Anaheim pin for Downtown Disney opening Jan 5, 2018 (DPB); belongs to a DLR 2018 cell"
+    },
+    {
+      "key": "wdw/2017/love-is-an-adventure-go-the-distance-gift-set",
+      "field": "pins",
+      "searched": "2 queries",
+      "note": "members not named in any snippet"
+    },
+    {
+      "key": "wdw/2017/love-is-an-adventure-goodbye-pin-set",
+      "field": "pins",
+      "searched": "2 queries",
+      "note": "hold: members (Robin Hood, Jungle Book, Cinderella, Lion King) and LE 1,100 seen only on reseller (yourwdwstore); not recorded"
+    },
+    {
+      "key": "wdw/2017/love-is-an-adventure/welcome-pin",
+      "field": "characters",
+      "searched": "2 queries",
+      "note": "hold: Timon and Pumbaa named only on reseller (yourwdwstore)"
+    },
+    {
+      "key": "wdw/2017/love-is-an-adventure-love-is-strength-box-set",
+      "field": "pins",
+      "searched": "2 queries",
+      "note": "hold kept: DPB repeats 4-pin, LE 300, $99.99, 3D/stained glass/stones/pivot; members unnamed"
+    },
+    {
+      "key": "wdw/2017/love-is-an-adventure-carl-and-ellie-through-the-years",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "hold kept: DPB repeats six-pin boxed set LE 300 $139.99; members unnamed"
+    },
+    {
+      "key": "wdw/2017/love-is-an-adventure-mystery",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "hold kept: AllEars recap says 16 pins, 2 per box, 8 pictured + 8 LE chasers (author: LE 250 each); designs not named"
+    },
+    {
+      "key": "wdw/2017/love-is-an-adventure/love-is-light",
+      "field": "pin_structure",
+      "searched": "0 new",
+      "note": "hold unchanged (2 pins on one card vs single record; see 499_b313)"
+    },
+    {
+      "key": "wdw/2017/thanksgiving-2017/thanksgiving-2017",
+      "field": "original_price",
+      "searched": "2 queries",
+      "note": "no price in any snippet"
+    },
+    {
+      "key": "wdw/2017/christmas-2017/merry-christmas-2017",
+      "field": "original_price",
+      "searched": "1 query",
+      "note": "still no price or design; DPB says spotted early at WDW, official date Dec 25"
+    },
+    {
+      "key": "wdw/2017/snow-white-80th-boxed-set",
+      "field": "pins",
+      "searched": "2 queries",
+      "note": "members not named; this resolves 499's unnamed 'LE 300 $100' line as the boxed set"
+    },
+    {
+      "key": "wdw/2017/snow-white-80th/hinged",
+      "field": "characters",
+      "searched": "1 query",
+      "note": "full character list not stated"
+    },
+    {
+      "key": "wdw/2017/star-wars-celebration-orlando-40-years-mystery",
+      "field": "pins",
+      "searched": "2 queries",
+      "note": "hold: mystery designs not individually confirmed; 6 LR + 6 chasers LE 1,500 split seen only on reseller (kandccollectibles)"
+    },
+    {
+      "key": "wdw/2017/star-wars-celebration-orlando-40-years-two-pin-set",
+      "field": "pins",
+      "searched": "2 queries",
+      "note": "members still unnamed; DPB says 40th anniversary artwork only"
+    },
+    {
+      "key": "wdw/2017/star-wars-celebration-orlando/darth-vader-lives",
+      "field": "scope",
+      "searched": "1 query",
+      "note": "scope: confirm pin vs button (DPB still says button and pin combo); price $15.99 vs $16.99 conflict in DPB text"
+    },
+    {
+      "key": "wdw/2017/epcot-flower-garden/logo-mickey-pluto",
+      "field": "characters",
+      "searched": "1 query",
+      "note": "WDWNT does not describe design; Mickey & Pluto logo pins also exist for 2021 - confirm 218 character claim before merging"
+    },
+    {
+      "key": "wdw/2017/rundisney-princess-half",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "hold kept: per-pin names (Enchanted 10K I Did It Belle, logo, Glass Slipper Challenge) only on reseller (yourwdwstore)"
+    },
+    {
+      "key": "wdw/2017/haunting-halloween-2017/ezra",
+      "field": "release_location",
+      "searched": "1 query",
+      "note": "hold kept: DPB Oct wk1 summary calls it shared DL/WDW (LE 3,000, $15.99) but gives only DL Oct 5 date; reseller names it differently"
+    },
+    {
+      "key": "wdw/2017/haunting-halloween-2017/phineas",
+      "field": "release_location",
+      "searched": "1 query",
+      "note": "hold kept: no WDW sale date found"
+    },
+    {
+      "key": "wdw/2017/star-wars-vehicles/tie-fighter",
+      "field": "original_price",
+      "searched": "2 queries",
+      "note": "DPB Aug 2017 wk2 roundup still not surfaced; no non-reseller price/edition/position"
+    },
+    {
+      "key": "wdw/2017/pandora-countdown",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "hold kept: DPB Apr wk1 repeats pin 2 'Where the Mountains Float!' LE 1,250, Discovery Trading Co, Apr 6; still not mapped to B018 names"
+    },
+    {
+      "key": "wdw/2017/rivers-of-light",
+      "field": "all",
+      "searched": "1 query",
+      "note": "unchanged: DPB Feb wk3 OE $9.99; LE 2,000 $12.99 shared line not tied to Rivers of Light"
+    },
+    {
+      "key": "wdw/2017/magic-kingdom-anniversary",
+      "field": "all",
+      "searched": "1 query",
+      "note": "no 2017 (46th) MK anniversary LE found; results all 45th (2016)"
+    },
+    {
+      "key": "wdw/2017/animal-kingdom-anniversary",
+      "field": "all",
+      "searched": "1 query",
+      "note": "no 2017 AK anniversary LE found; 20th anniversary pins are 2018"
+    },
+    {
+      "key": "wdw/2017/bambi-75th-boxed-set",
+      "field": "pins",
+      "searched": "2 queries",
+      "note": "hold kept: DPB says LE pins use pin-on-pin, hinged, slider, glitter; Walt completer LE 500; park pins Bambi & Faline / with Mother only on reseller"
+    },
+    {
+      "key": "wdw/2017/held-items",
+      "field": "all",
+      "searched": "0 new",
+      "note": "holds kept, no new per-pin evidence: runDisney lists, Love is Scary, Yeti, Food & Wine ice cream box, MNSSHP/MVMCP box and frame, gold spaceship set, Oswald 90th boxed"
+    },
+    {
+      "key": "wdw/2017/star-wars-celebration-orlando",
+      "field": "designer",
+      "searched": "1 query",
+      "note": "ComicBook credits Derek Laufman for the 40-pin Celebration set; unclear whether this covers Disney Parks pins; not recorded"
+    }
+  ],
+  "discovery_notes": "Follow-up 4 of B018 (after 218/426/467/499). 29 standard WebSearch queries, blocked domains passed every time, all search_snippet. New: Secrets of the Empire Disney Springs opening pin, Love is an Adventure welcome pin + Go the Distance and Goodbye gift sets, Snow White 80th Snow White & Prince slider and six-pin boxed set (LE 300 $100), Celebration 40 Years mystery set (set only). Corroboration: POTM 13 completer LE/price/date, Thanksgiving 2017 design, F&G logo LR, Princess Half LR. Reseller-only facts not recorded."
+}

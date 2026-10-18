@@ -1,0 +1,1111 @@
+{
+ "packet_id": "backfill-b308-dlp-2018-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b308",
+ "sources": [
+  {
+   "url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+   "title": "Pin-Neuerscheinungen im Oktober 2018",
+   "publisher": "dein-dlrp.de",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+   "title": "Pin-Neuerscheinungen im Juni 2018",
+   "publisher": "dein-dlrp.de",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+   "title": "Pin-Neuerscheinungen im April 2018",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2018-04-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.passiondlp.com/collections/pdf/mycat.pdf",
+   "title": "Pin's My Cat (PDF)",
+   "publisher": "passiondlp",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+   "title": "Disneyland Paris Pins For July 2018",
+   "publisher": "Dedicated to DLP",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://passiondlp.com/actus/arc029.php",
+   "title": "passiondlp : Archives Disneyland Paris 2018 trimestre 3",
+   "publisher": "passiondlp",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://la-gazette-de-mickey.com/que-nous-reserve-le-rendez-vous-gourmand-2018/",
+   "title": "Que nous réserve le Rendez-Vous Gourmand 2018 ?",
+   "publisher": "La Gazette de Mickey",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/bambi-disneyland-paris-pin-trading-night-pins/",
+   "title": "Bambi Disneyland Paris Pin Trading Night Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11-30",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/stitch-autumn-2018-disneyland-paris-pin",
+   "title": "Stitch Autumn 2018 Disneyland Paris Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/188819",
+   "title": "188819",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disneyland-paris-copper-mini-pin-the-fox-and-the-hound-207801018053.html",
+   "title": "Disneyland Paris Copper Mini Pin, The Fox and the Hound",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.stepherella.com/pin-trading-nights-at-disneyland-paris-january-26th/",
+   "title": "Pin Trading Nights At Disneyland Paris",
+   "publisher": "Stepherella",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2018-pins",
+   "title": "Disneyland Paris September 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.traveltothemagic.net/review/review-season-of-the-force-2018-disneyland-paris/",
+   "title": "Review: Season of the Force 2018 - Disneyland Paris",
+   "publisher": "Travel to the Magic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-april-2018-pins",
+   "title": "Disneyland Paris April 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-june-2018-pins",
+   "title": "Disneyland Paris June 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://duffydoesdisney.wordpress.com/2018/06/27/dlp-spring-haul/",
+   "title": "Disneyland Paris Spring Haul 2018",
+   "publisher": "duffydoesdisney",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2018/nightmare-before-christmas-oct-2018",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-10-13",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "NBC pins released 13 Oct 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "DLP release"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/october-2018-le",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "four LE 700 pins at 15.99 EUR on 13 Oct: Duchess, Small World Tink, NBC 25 Years coffin, Jack & Sally"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "each LE 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-13",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "13 Oct 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/minnie-castle-eiffel-tower-bwr-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "one of four black-white-red pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/stitch-autumn-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-autumn-2018-disneyland-paris-pin",
+     "method": "search_snippet",
+     "note": "one surprise pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-autumn-2018-disneyland-paris-pin",
+     "method": "search_snippet",
+     "note": "23 Sep 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/ptn-november-2018-bambi",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/bambi-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "each pin LE 400, DLP exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-30",
+     "source_url": "https://disneypinsblog.com/bambi-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "30 Nov 2018 PTN"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/cherry-blossom-girl-july-2018",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "three pins inspired by the Cherry Blossom Girl"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-14",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "released 14 July"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/rendez-vous-gourmand-2018",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "three LE pins of Disney classics celebrating French cuisine"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "500 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "on sale 3 Aug"
+    },
+    {
+     "field": "release_location",
+     "value": "Chez Marianne (Souvenirs de Paris), Walt Disney Studios Park",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "exclusive to Chez Marianne"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://la-gazette-de-mickey.com/que-nous-reserve-le-rendez-vous-gourmand-2018/",
+     "method": "search_snippet",
+     "note": "three LE 500 pins at Chez Marianne for RVG 2018"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://la-gazette-de-mickey.com/que-nous-reserve-le-rendez-vous-gourmand-2018/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2018/nightmare-before-christmas-oct-2018/jack-coffin",
+   "set_key": "dlp/2018/nightmare-before-christmas-oct-2018",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "Jack coffin-shape pin, unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "9.99 EUR per-pin price in body text"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-13",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "13 Oct 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/nightmare-before-christmas-oct-2018/jack-spiderweb",
+   "set_key": "dlp/2018/nightmare-before-christmas-oct-2018",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "Jack spiderweb-shape pin, unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "9.99 EUR per-pin price in body text"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-13",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "13 Oct 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/nightmare-before-christmas-oct-2018/oogie-boogie",
+   "set_key": "dlp/2018/nightmare-before-christmas-oct-2018",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "Oogie Boogie pin, unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "7.99 EUR per-pin price in body text"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-13",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "13 Oct 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/nightmare-before-christmas-oct-2018/zero",
+   "set_key": "dlp/2018/nightmare-before-christmas-oct-2018",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "Zero pin, unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "6.99 EUR per-pin price in body text"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-13",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "13 Oct 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/nightmare-before-christmas-oct-2018/25th-anniversary-coffin",
+   "set_key": "dlp/2018/nightmare-before-christmas-oct-2018",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "coffin pin with 25 Years anniversary logo; LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "limited to 700"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "15.99 EUR each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-13",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "13 Oct 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland, Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "only at Pueblo Trading Post; LineBerty virtual ticket from 12 Oct"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/nightmare-before-christmas-oct-2018/jack-and-sally",
+   "set_key": "dlp/2018/nightmare-before-christmas-oct-2018",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "pin with the couple Jack and Sally; LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "limited to 700"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "15.99 EUR each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-13",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "13 Oct 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland, Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "only at Pueblo Trading Post; LineBerty virtual ticket from 12 Oct"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington",
+      "Sally"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "Jack & Sally pair on one pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "described as one pin showing the pair"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/spider-man-summer-of-super-heroes",
+   "set_key": "dlp/2018/oe-set/marvel-super-heroes-june-2018",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "Spider-Man pin with Summer of Super Heroes wording, unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "6.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/minnie-castle-eiffel-tower-bwr-2018",
+   "set_key": "dlp/2018/oe-single/minnie-castle-eiffel-tower-bwr-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "Minnie pin in front of the castle and Eiffel Tower"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie in front of the castle and Eiffel Tower, black-white-red Paris design",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "black-white-red collection all unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "7 Apr 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/stitch-autumn-2018/stitch",
+   "set_key": "dlp/2018/stitch-autumn-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Autumn 2018",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-autumn-2018-disneyland-paris-pin",
+     "method": "search_snippet",
+     "note": "autumn Stitch pin in the Stitch seasons series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-autumn-2018-disneyland-paris-pin",
+     "method": "search_snippet",
+     "note": "Stitch"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-autumn-2018-disneyland-paris-pin",
+     "method": "search_snippet",
+     "note": "surprise LE release"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-autumn-2018-disneyland-paris-pin",
+     "method": "search_snippet",
+     "note": "LE 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-autumn-2018-disneyland-paris-pin",
+     "method": "search_snippet",
+     "note": "released 23 Sep 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/blogs/news/stitch-autumn-2018-disneyland-paris-pin",
+     "method": "search_snippet",
+     "note": "DLP surprise release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/fun-adventures-2018/stitch-rock-n-roller-coaster",
+   "set_key": "dlp/2018/fun-adventures-2018",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "LE 700, DLP Fun Adventures 2018 series"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "back marked LE 700"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "listed as Nov 2018"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "15.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "slider"
+     ],
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "has a sliding element"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://mypincentral.com/pin/188819",
+     "method": "search_snippet",
+     "note": "Stitch riding the coaster"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/minis-july-2018/copper",
+   "set_key": "dlp/2018/minis-july-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland Paris Copper Mini Pin",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-copper-mini-pin-the-fox-and-the-hound-207801018053.html",
+     "method": "search_snippet",
+     "note": "official listing in DLP Minis line; undated"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Copper"
+     ],
+     "source_url": "https://www.disneystore.eu/disneyland-paris-copper-mini-pin-the-fox-and-the-hound-207801018053.html",
+     "method": "search_snippet",
+     "note": "Copper (Rouky)"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.disneystore.eu/disneyland-paris-copper-mini-pin-the-fox-and-the-hound-207801018053.html",
+     "method": "search_snippet",
+     "note": "6.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-copper-mini-pin-the-fox-and-the-hound-207801018053.html",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "materials",
+     "value": "zinc alloy",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-copper-mini-pin-the-fox-and-the-hound-207801018053.html",
+     "method": "search_snippet",
+     "note": "zinc alloy, cloisonne"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "dangle"
+     ],
+     "source_url": "https://www.disneystore.eu/disneyland-paris-copper-mini-pin-the-fox-and-the-hound-207801018053.html",
+     "method": "search_snippet",
+     "note": "silver-tone pendant with embossed R for Rouky"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-january-2018-inside-out/fear",
+   "set_key": "dlp/2018/ptn-january-2018-inside-out",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Fear"
+     ],
+     "source_url": "https://www.stepherella.com/pin-trading-nights-at-disneyland-paris-january-26th/",
+     "method": "search_snippet",
+     "note": "attendee blog names the Jan PTN Inside Out set: Bing Bong, Disgust, Fear"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-01-26",
+     "source_url": "https://www.stepherella.com/pin-trading-nights-at-disneyland-paris-january-26th/",
+     "method": "search_snippet",
+     "note": "PTN 26 Jan 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-january-2018-inside-out/disgust",
+   "set_key": "dlp/2018/ptn-january-2018-inside-out",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Disgust"
+     ],
+     "source_url": "https://www.stepherella.com/pin-trading-nights-at-disneyland-paris-january-26th/",
+     "method": "search_snippet",
+     "note": "attendee blog names the Jan PTN Inside Out set: Bing Bong, Disgust, Fear"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-01-26",
+     "source_url": "https://www.stepherella.com/pin-trading-nights-at-disneyland-paris-january-26th/",
+     "method": "search_snippet",
+     "note": "PTN 26 Jan 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-january-2018-inside-out/bing-bong",
+   "set_key": "dlp/2018/ptn-january-2018-inside-out",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Bing Bong"
+     ],
+     "source_url": "https://www.stepherella.com/pin-trading-nights-at-disneyland-paris-january-26th/",
+     "method": "search_snippet",
+     "note": "attendee blog names the Jan PTN Inside Out set: Bing Bong, Disgust, Fear"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-01-26",
+     "source_url": "https://www.stepherella.com/pin-trading-nights-at-disneyland-paris-january-26th/",
+     "method": "search_snippet",
+     "note": "PTN 26 Jan 2018"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2018/nightmare-before-christmas-oct-2018",
+   "field": "edition_type",
+   "searched": "dein-dlrp Oct 2018; 1 query",
+   "note": "conflict lead from packet 462 resolved: four NBC character pins unlimited (6.99-9.99 EUR); LE 700 applies to 25 Years coffin and Jack & Sally only"
+  },
+  {
+   "key": "dlp/2018/nightmare-before-christmas-oct-2018",
+   "field": "pins",
+   "searched": "dein-dlrp Oct 2018",
+   "note": "snippet says six unlimited NBC pins plus a lanyard on 13 Oct; only four named (Jack coffin, Jack web, Oogie, Zero); two not recorded"
+  },
+  {
+   "key": "dlp/2018/october-2018-le",
+   "field": "set_name",
+   "searched": "dein-dlrp Oct",
+   "note": "two NBC LE pins are keyed under the NBC set (packet 420); grouping of the four LE pins left to engine"
+  },
+  {
+   "key": "dlp/2018/oe-set/marvel-super-heroes-june-2018",
+   "field": "pins",
+   "searched": "dein-dlrp Jun 2018; 1 query",
+   "note": "conflict explained: the 16.99 EUR LE 700 figure belongs to the Ariel/Triton Father's Day pin, not a Marvel pin. Spider-Man hold key (462) has new per-pin text; release recommended"
+  },
+  {
+   "key": "dlp/2018/oe/marvel-poster-summer-of-super-heroes",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Jun",
+   "note": "hold retained (packet 462): poster pin still has two prices on the same page"
+  },
+  {
+   "key": "dlp/2018/oe/captain-america-spider-man-iron-man",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Jun",
+   "note": "hold retained (packet 462): no new per-pin evidence"
+  },
+  {
+   "key": "dlp/2018/oe/minnie-castle-eiffel-tower-bwr-2018",
+   "field": "original_price",
+   "searched": "dein-dlrp Apr",
+   "note": "only a 7.99-8.99 EUR range for the black-white-red pins; per-pin price not claimed"
+  },
+  {
+   "key": "dlp/2018/oe/we-love-dlp-red-black-white-2018",
+   "field": "pins",
+   "searched": "dein-dlrp Apr; 1 query",
+   "note": "four pins + lanyard; named: Paris je t'aime (462), Minnie castle/Eiffel (this packet), Minnie and Mickey with heart balloons; fourth unnamed"
+  },
+  {
+   "key": "dlp/2018/oe/mickey-minnie-heart-balloons-bwr-2018",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Apr",
+   "note": "hold: confirm pin structure (one pin or two) and whether it duplicates 420 key dlp/2018/oe/mickey-minnie-paris-2018 (Minnie w/ balloons, Mickey w/ Eiffel); not recorded as a pin"
+  },
+  {
+   "key": "dlp/2018/oe-set/we-love-dlp-booster-2018",
+   "field": "pins",
+   "searched": "dein-dlrp Apr",
+   "note": "booster belongs to the colourful Paris design, 18.99 EUR; contents still not named"
+  },
+  {
+   "key": "dlp/2018/stitch-autumn-2018/stitch",
+   "field": "original_price",
+   "searched": "DPB",
+   "note": "price not in snippet"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018",
+   "field": "pins",
+   "searched": "mypincentral series index; 1 query",
+   "note": "holds retained (packet 420): series index lists Phantom Manor (188825), Tower of Terror with Mickey (188818), Les Voyages de Pinocchio (188817), Pirates (188820); index only, no per-pin page/date read"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018",
+   "field": "expected_pin_count",
+   "searched": "mypincentral",
+   "note": "index also lists BTM, Mad Hatter Tea Cups, Small World, Flying Carpets, Orbitron, Peter Pan's Flight, Lancelot carrousel; years per pin unknown (may run into 2019); count not claimed"
+  },
+  {
+   "key": "dlp/2018/june-2018-le/ursula-big-thunder-mountain",
+   "field": "duplicate",
+   "searched": "mypincentral, dein-dlrp",
+   "note": "hold retained (packet 420): Ursula BTM is June 2018 LE 700; Fun Adventures BTM listed in Nov 2018 series index; still unconfirmed whether same pin"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018/copper",
+   "field": "pin_structure",
+   "searched": "disneystore.eu",
+   "note": "hold from packet 462 can be released: official per-pin listing now found (same basis as Thumper/Marie/Figaro). Note 6.99 EUR listing vs Pluto LE 700 in 213 - edition conflict, not resolved"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018/tod",
+   "field": "pin_structure",
+   "searched": "disneystore.eu; 1 query",
+   "note": "hold retained (packet 462): no Tod mini listing found"
+  },
+  {
+   "key": "dlp/2018/ptn-january-2018-inside-out/fear",
+   "field": "pin_structure",
+   "searched": "stepherella, mypincentral",
+   "note": "hold retained (packet 462): second source is another event line-up, not per-pin"
+  },
+  {
+   "key": "dlp/2018/ptn-january-2018-inside-out/disgust",
+   "field": "pin_structure",
+   "searched": "stepherella, mypincentral",
+   "note": "hold retained (packet 462): second source is another event line-up, not per-pin"
+  },
+  {
+   "key": "dlp/2018/ptn-january-2018-inside-out/bing-bong",
+   "field": "pin_structure",
+   "searched": "stepherella, mypincentral",
+   "note": "hold retained (packet 462): second source is another event line-up, not per-pin"
+  },
+  {
+   "key": "dlp/2018/ptn-january-2018-inside-out/bing-bong",
+   "field": "visual_description",
+   "searched": "mypincentral; 2 queries",
+   "note": "lead: a mypincentral listing (URL not pinned down, likely 126228) shows Bing Bong with pink bow tie on red PTN DLP banner, LE back; year not stated"
+  },
+  {
+   "key": "dlp/2018/ptn-march-2018-beauty-and-the-beast",
+   "field": "pins",
+   "searched": "mypincentral, DPB; 2 queries",
+   "note": "holds retained (packet 462): no per-pin source found for trio members"
+  },
+  {
+   "key": "dlp/2018/ptn-july-2018-lion-king",
+   "field": "pins",
+   "searched": "mypincentral, DPB; 2 queries",
+   "note": "holds retained (packet 462): no per-pin source found for trio members"
+  },
+  {
+   "key": "dlp/2018/ptn-august-2018-101-dalmatians",
+   "field": "pins",
+   "searched": "mypincentral, DPB; 2 queries",
+   "note": "holds retained (packet 462): no per-pin source found for trio members"
+  },
+  {
+   "key": "dlp/2018/ptn-november-2018-bambi/flower",
+   "field": "set_key",
+   "searched": "mypincentral 126119 (snippet)",
+   "note": "hold retained (packet 420): Flower listing has red PTN banner and 214/400 back, consistent with LE 400, but no date; other members still unnamed"
+  },
+  {
+   "key": "dlp/2018/cherry-blossom-girl-july-2018",
+   "field": "edition_size",
+   "searched": "D2D",
+   "note": "snippet says pins released 14 Jul had runs of 400 but unclear whether that covers the Cherry Blossom trio; not claimed"
+  },
+  {
+   "key": "dlp/2018/cherry-blossom-girl-july-2018",
+   "field": "pins",
+   "searched": "D2D, letsgopintrading, DPB Sep 2019",
+   "note": "hold retained: designs (Alice/Dinah, Pascal, Thumper) named only by reseller; Cherry Blossom Girl theme also returned Aug-Sep 2019 - possible year mix-up"
+  },
+  {
+   "key": "dlp/2018/rendez-vous-gourmand-2018",
+   "field": "pins",
+   "searched": "passiondlp Q3, Gazette de Mickey; 2 queries",
+   "note": "designs of the 2018 trio not named; Dumbo/Chip & Dale/Mad Hatter trio is Aug 2019 - not used"
+  },
+  {
+   "key": "dlp/2018/oe/rendez-vous-gourmand-2018-event-pin",
+   "field": "pins",
+   "searched": "Gazette de Mickey",
+   "note": "lead: a standard (non-LE) RVG 2018 event pin mentioned; design not described; not recorded"
+  },
+  {
+   "key": "dlp/2018/my-cat-2018",
+   "field": "pins",
+   "searched": "passiondlp My Cat PDF; 3 queries",
+   "note": "lead: PDF lists LE 700 My Cat releases dated 6 Jan, 17 Feb, 24 Mar, 14 Apr 2018 among others; table garbled so cat-to-date mapping not claimed; Jan-Mar 2018 My Cat pins unrecorded"
+  },
+  {
+   "key": "dlp/2018/september-2018-releases/jazzy-my-cat",
+   "field": "characters",
+   "searched": "DPB Sep 2018, passiondlp PDF",
+   "note": "Jazzy appears in passiondlp's My Cat name list, confirming the name only; film/identity still unconfirmed"
+  },
+  {
+   "key": "dlp/2018/december-2018-releases/figaro-my-cat",
+   "field": "edition_size",
+   "searched": "passiondlp PDF",
+   "note": "PDF shows 700 ex. runs but Dec 2018 row mapping not readable; not claimed"
+  },
+  {
+   "key": "dlp/2018/may-2018-releases/jasmine-my-cat",
+   "field": "characters",
+   "searched": "passiondlp PDF",
+   "note": "lead: PDF name list includes Rajah (Jasmine's tiger), not 'Jasmine'; check whether the May pin subject is Rajah"
+  },
+  {
+   "key": "dlp/2018/monthly-pages",
+   "field": "pins",
+   "searched": "dein-dlrp, passiondlp, Disney Gazette; ~10 queries",
+   "note": "dein-dlrp Jan/Feb/Mar/May/Jul/Aug/Sep/Nov/Dec 2018 and passiondlp Q2/Q4 (likely arc028/arc030) still not indexed; Disney Gazette Oct-Dec 2018 pages not indexed"
+  },
+  {
+   "key": "dlp/2018/ptn-april-may-june-oct-2018",
+   "field": "pins",
+   "searched": "passiondlp, DPB; 4 queries",
+   "note": "no PTN trios found; dates only: 28 Apr and 29 Jun 2018 (DPB Apr/Jun); Incredibles-themed 2018 PTN mentioned by Chronique Disney, month unknown"
+  },
+  {
+   "key": "dlp/2018/season-of-the-force-2018",
+   "field": "pins",
+   "searched": "Travel to the Magic etc.; 1 query",
+   "note": "still no 2018 SotF pin named; a 'tees, pins, magnets' mention is from a Disneyland (California) guide - not DLP"
+  },
+  {
+   "key": "dlp/2018/christmas-2018-le",
+   "field": "pins",
+   "searched": "DPB, dein-dlrp; 4 queries",
+   "note": "no Christmas 2018 LE beyond 20 Dec Cheshire/Stitch; Chip & Dale 2018 Christmas trade set still only on a shop listing; Radio Disney Club Carrousel/Best Friends Nov release undated - not used"
+  },
+  {
+   "key": "dlp/2018/surprise-coco",
+   "field": "duplicate",
+   "searched": "packets 213/460/462",
+   "note": "Surprise Coco LE 400 (Feb 2018) is the same release as dlp/2018/ptn-february-2018-coco (213); 460 lead key should map there"
+  },
+  {
+   "key": "dlp/2018/pin-trading-day-september-2018/marie",
+   "field": "pins",
+   "searched": "none new",
+   "note": "no new evidence this pass"
+  },
+  {
+   "key": "dlp/2018/pirates-and-princesses-2018",
+   "field": "pins",
+   "searched": "duffydoesdisney; 1 query",
+   "note": "hold retained (packet 420): blog again names Peter Pan, Hook and Jake pins (Mar 2018); only Jake has LE 700 / 15.99 EUR; Peter Pan/Hook structure unconfirmed"
+  },
+  {
+   "key": "dlp/2018/easter-2018/cheshire-cat",
+   "field": "pins",
+   "searched": "madhousecollectibles",
+   "note": "Joyeuses Paques 2018 Cheshire Cat seen only on reseller - not recorded"
+  },
+  {
+   "key": "lic/2018/primark-alice",
+   "field": "scope",
+   "searched": "n/a",
+   "note": "Primark Alice set (Feb 2018) not DLP - ignored per task"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 of B013 (packets 213, 420, 462). Search snippets only; 33 standard searches (3 over 30 budget). dein-dlrp Oct body text resolves NBC conflict (4 OE with per-pin prices, 2 LE 700). dein-dlrp Jun shows 16.99 LE 700 was Ariel/Triton, not Marvel. New: Stitch Autumn 2018 LE 700, Minnie castle/Eiffel BWR pin. Copper mini gains official listing (release 462 hold). RVG 2018 trio LE 500 3 Aug (designs unnamed). Cherry Blossom trio 14 Jul (designs unnamed). passiondlp My Cat PDF suggests Jan-Mar 2018 My Cat pins. Holds retained: Fun Adventures, Ursula BTM, Bambi Flower, Pirates & Princesses, PTN Jan/Mar/Jul/Aug trios, Tod, Marvel poster and trio."
+}

@@ -1,0 +1,576 @@
+{
+ "packet_id": "backfill-b370-dlr-le-2018-fu6",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b370",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+   "title": "New Disney Pins December 2018 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-12"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-november-2018-week-3",
+   "title": "New Disney Pins November 2018 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-holiday-2018-gift-card-pins/",
+   "title": "Disney Holiday 2018 Gift Card Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+   "title": "New Disney Pins November 2018 Week 5",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2018-week-2",
+   "title": "New Disney Pins July 2018 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-07"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2018/sword-in-the-stone-55th",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Sword in the Stone 55th Anniversary collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "Dec wk3 lists three Sword in the Stone 55th anniversary pins as shared DL/WDW releases"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "each pin LE 2,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "available at both parks Dec 20 2018"
+    },
+    {
+     "field": "price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "$16.99 each"
+    },
+    {
+     "field": "format",
+     "value": "series of single pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "three separately listed pins, each with its own edition size and price"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/holiday-gift-card-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Holiday 2018 Gift Card Pins",
+     "source_url": "https://disneypinsblog.com/disney-holiday-2018-gift-card-pins/",
+     "method": "search_snippet",
+     "note": "ninth annual holiday gift card pin release (series since 2009)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-holiday-2018-gift-card-pins/",
+     "method": "search_snippet",
+     "note": "limited edition of 2,655; stained glass elements; came with purchase of a $100 gift card"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-20",
+     "source_url": "https://disneypinsblog.com/disney-holiday-2018-gift-card-pins/",
+     "method": "search_snippet",
+     "note": "available from Nov 20 at select merchandise locations at WDW and Disneyland"
+    },
+    {
+     "field": "format",
+     "value": "gift-with-purchase pins (structure unconfirmed)",
+     "source_url": "https://disneypinsblog.com/disney-holiday-2018-gift-card-pins/",
+     "method": "search_snippet",
+     "note": "designs feature Mickey, Minnie, Donald and Goofy; number of separate pins not stated"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2018/sword-in-the-stone-55th/king-arthur",
+   "set_key": "wdw/2018/sword-in-the-stone-55th",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "King Arthur",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "Dec wk3 lists a King Arthur pin in the Sword in the Stone 55th anniversary releases"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Arthur"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "main_character",
+     "value": "Arthur",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "limited edition of 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "retail $16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "available at DL and WDW Dec 20 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "listed as shared DL/WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/sword-in-the-stone-55th/arthur-with-sword",
+   "set_key": "wdw/2018/sword-in-the-stone-55th",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Arthur with Sword",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "Dec wk3 lists an Arthur with Sword pin alongside King Arthur"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Arthur"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "main_character",
+     "value": "Arthur",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "limited edition of 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "retail $16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "available at DL and WDW Dec 20 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "listed as shared DL/WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/sword-in-the-stone-55th/55th-anniversary",
+   "set_key": "wdw/2018/sword-in-the-stone-55th",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sword in the Stone 55th Anniversary",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "Dec wk3 lists a Sword in the Stone 55th Anniversary pin with its own LE/price"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "limited edition of 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "retail $16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "available at DL and WDW Dec 20 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "listed as shared DL/WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/dapper-day-fine-and-dandy/donald-and-daisy",
+   "set_key": "wdw/2018/dapper-day-fine-and-dandy",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-11-15",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2018-week-3",
+     "method": "search_snippet",
+     "note": "WDW release date; post says pin was previously released at Disneyland for Dapper Day"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World (after earlier Disneyland Dapper Day release)",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-november-2018-week-3",
+     "method": "search_snippet",
+     "note": "available at WDW Nov 15 2018, LE 5,000"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2018/sword-in-the-stone-55th/55th-anniversary",
+   "field": "pin_name",
+   "searched": "2 queries on DPB Dec 2018 wk3",
+   "note": "hold: two summaries list it as a separate LE 2,000 pin, but it may be the collection heading; confirm it is a distinct pin before counting"
+  },
+  {
+   "key": "wdw/2018/sword-in-the-stone-55th/king-arthur",
+   "field": "visual_description",
+   "searched": "DPB Dec wk3 snippets",
+   "note": "field note: design not described; King Arthur vs Arthur with Sword distinct per both summaries, confirm on images"
+  },
+  {
+   "key": "dlr/2018/sword-in-the-stone-55th/king-arthur",
+   "field": "variant",
+   "searched": "DPB Dec wk3",
+   "note": "variant: same pin as wdw/2018/sword-in-the-stone-55th/king-arthur (shared DL/WDW Dec 20 2018)"
+  },
+  {
+   "key": "dlr/2018/sword-in-the-stone-55th/arthur-with-sword",
+   "field": "variant",
+   "searched": "DPB Dec wk3",
+   "note": "variant: same pin as wdw/2018/sword-in-the-stone-55th/arthur-with-sword (shared DL/WDW Dec 20 2018)"
+  },
+  {
+   "key": "dlr/2018/sword-in-the-stone-55th/55th-anniversary",
+   "field": "variant",
+   "searched": "DPB Dec wk3",
+   "note": "variant: same pin as wdw/2018/sword-in-the-stone-55th/55th-anniversary (shared DL/WDW; held there)"
+  },
+  {
+   "key": "dlr/2018/cast-member-movie-anniversary/sword-in-the-stone",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "lead: DPB CM Movie Anniversary #15 Sword in the Stone 55th spinner pin, LE 750, Apr 25 2018 at Company D; resort not stated; not recorded"
+  },
+  {
+   "key": "wdw/2018/holiday-gift-card-pins",
+   "field": "pins",
+   "searched": "1 query; DPB gift card post",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); Mickey, Minnie, Donald, Goofy named as designs only"
+  },
+  {
+   "key": "dlr/2018/holiday-gift-card-pins",
+   "field": "variant",
+   "searched": "DPB gift card post",
+   "note": "variant: same set as wdw/2018/holiday-gift-card-pins (sold at WDW and Disneyland from Nov 20 2018); B307 lead now keyed under wdw"
+  },
+  {
+   "key": "wdw/2018/dapper-day-fine-and-dandy/donald-and-daisy",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "field note: B350 conflict explained: DL Dapper Day release Apr 19 2018, then WDW Nov 15 2018 (DPB Nov wk3 'previously released at Disneyland'); same LE 5,000 pin"
+  },
+  {
+   "key": "wdw/2018/dapper-day-fine-and-dandy/donald-and-daisy",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "field note: Donald and Daisy signpost design still only on reseller distradingpins4u (130894); DPB snippets do not name characters"
+  },
+  {
+   "key": "dlr/2018/piece-of-disneyland-history/60th-castle",
+   "field": "pin_name",
+   "searched": "DPB Jul 2018 wk2 snippet",
+   "note": "field note: a Jul wk2 summary says the PODH piece is from the Sleeping Beauty 50th Castle, not 60th; B012 says 60th; confirm. LE 2,000/$16.99 may belong to the 63rd pin"
+  },
+  {
+   "key": "dlr/2018/bi-monthly-collection/jiminy-cricket",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "field note: MPC 28611 (B350 lead) is described as a 2000 Jiminy Cricket pin, so it is not this 2018 pin; lead withdrawn"
+  },
+  {
+   "key": "dlr/2018/bi-monthly-collection",
+   "field": "pins",
+   "searched": "4 queries (DPB July wk2-4, 'fourth/fifth pin' phrases, MPC)",
+   "note": "positions 4 and 5 still unnamed; DPB Jul wk2 has no Under the Sea pin; Jul wk3/wk4 and Sep posts not surfaced"
+  },
+  {
+   "key": "dlr/2018/bi-monthly-collection",
+   "field": "edition_size",
+   "searched": "same",
+   "note": "editions for #1-#3 still unstated; only #6 Sword in the Stone LE 2,000 $16.99 (Nov 29) known; total pin count unstated"
+  },
+  {
+   "key": "dlr/2018/tape-series",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "pins 2-4 still unnamed; DPB confirms #1 Lion King (Jun 2018, LE 1,500, $34.99), #5 Lady and the Tramp May 2019, #6 Peter Pan, #7 Goofy Movie, #8 Hercules"
+  },
+  {
+   "key": "dlr/2018/once-upon-a-time",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "positions 1-11 except Hercules still unnamed; MPC shows ~12 sibling IDs (c.160239-160250) LE 2000 without names in snippets"
+  },
+  {
+   "key": "dlr/2018/once-upon-a-time",
+   "field": "release_location",
+   "searched": "MPC 160244",
+   "note": "field note: MPC gives $16.99 for both WDW and Disneyland versions of Hercules; shared product but no wdw key exists; dlr keys kept, review"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/horn-king",
+   "field": "set_position",
+   "searched": "2 queries",
+   "note": "hold kept: Dec 2018 / LE 2000 / $16.99 only on reseller pintrader.club; DPB Dec wk1 and wk3 do not list it, wk2 not surfaced. #8 fits between Chernabog #7 (Nov 29) and Kaa #9 (Dec) - inference"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "DPB: #6 Dr. Facilier and #7 Chernabog Nov 29 2018, #9 Kaa and #10 Queen of Hearts Dec 2018 wk3; positions 1, 4, 5, 8 still unconfirmed in permitted sources"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/ursula",
+   "field": "set_position",
+   "searched": "not re-searched",
+   "note": "hold kept"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/oogie-boogie",
+   "field": "existence",
+   "searched": "not re-searched",
+   "note": "hold kept"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/scar",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "conflict unchanged: DPB Jan 2019 wk2 has Scar #11 and Cruella #12 final; not keyed for 2018"
+  },
+  {
+   "key": "dlr/2018/mickeys-halloween-party-2018-mysterious-shadows-box-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: Dr. Facilier 1-of-7 / 1-of-4 still only on reseller ecrater; DPB gives box LE 1,000 $54.99 without members"
+  },
+  {
+   "key": "dlr/2018/haunted-mansion-holiday-2018-tarot-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: DPB Nov wk3 gives 13 pins, 2 per box, $19.99, Nov 15 2018; The Big Witch still only on reseller distradingpins4u"
+  },
+  {
+   "key": "dlr/2018/haunted-mansion-holiday-2018/gingerbread",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "hold kept vs oogies-holiday-tricks-and-treats: DPB Nov wk5 HMH 2018 Gingerbread LE 3,000 $16.99 Nov 29; design not stated; 2017 Oogie gingerbread AP pin is separate"
+  },
+  {
+   "key": "dlr/2018/dca-food-wine-2018/logo",
+   "field": "visual_description",
+   "searched": "1 query",
+   "note": "hold kept: DPB says logo pin limited release (festival Mar 2-Apr 12 2018); Fashionista Chef Mickey $14.99 pin still not tied to it"
+  },
+  {
+   "key": "dlr/2018/passholder-happy-holidays-2018-ornament-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: DPB confirms LE 500, $44.99, Dec 6 2018 (already in B056); number/design of pins still unstated"
+  },
+  {
+   "key": "dlr/2018/channel-28-mystery",
+   "field": "pins",
+   "searched": "not re-searched (budget)",
+   "note": "hold kept for 11 designs"
+  },
+  {
+   "key": "dlr/2018/happy-holidays-2018-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: DPB says box holds 'all four pins above' plus Zootopia completer, LE 1,000 $89.99; which four still unnamed"
+  },
+  {
+   "key": "dlr/2018/happy-holidays-2018-pin-set/zootopia-completer",
+   "field": "pin_name",
+   "searched": "same",
+   "note": "hold kept: box-only"
+  },
+  {
+   "key": "dlr/2018/club-33-shag-box-set",
+   "field": "pins",
+   "searched": "not re-searched",
+   "note": "hold kept pending maintainer full-list decision"
+  },
+  {
+   "key": "dlr/2018/club-33-1901/1901",
+   "field": "release_location",
+   "searched": "not re-searched",
+   "note": "hold kept: resort not stated"
+  },
+  {
+   "key": "dlr/2018/pixar-pier-opening",
+   "field": "pins",
+   "searched": "not re-searched",
+   "note": "unchanged: no Pixar Pier opening LE named"
+  },
+  {
+   "key": "dlr/2018/crests",
+   "field": "existence",
+   "searched": "not re-searched",
+   "note": "unchanged: none found"
+  },
+  {
+   "key": "dlr/2018",
+   "field": "pins",
+   "searched": "3 queries (Sep/Oct weekly titles, LE 2,000 Sep/Oct)",
+   "note": "Sep/Oct 2018 DPB weekly round-ups still not surfaced; only previews (image-only), MHP, Park Pack (dsus), Halloween CM pin (already keyed), Studio Store (not DLR)"
+  }
+ ],
+ "discovery_notes": "Follow-up 6 of B012 (DLR LE 2018). 29 standard WebSearch queries, all search_snippet, blocked domains passed every time. New: Sword in the Stone 55th anniversary shared DL/WDW pins (King Arthur, Arthur with Sword; 55th Anniversary item held) keyed under wdw with dlr variant notes; Holiday 2018 gift card pins set (LE 2,655, Nov 20, WDW+DL) keyed under wdw, pins held for structure. Fine & Dandy date conflict explained (DL Apr 19, WDW Nov 15). Field notes: PODH 50th vs 60th castle; MPC 28611 Jiminy is a 2000 pin. No holds released. Resellers (pintrader.club, ecrater, distradingpins4u, yourwdwstore) and disneypinforum seen, not used. No prompt-injection seen."
+}

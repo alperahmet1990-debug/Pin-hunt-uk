@@ -1,0 +1,617 @@
+{
+ "packet_id": "backfill-b330-dlr-le-2018-fu4",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b330",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+   "title": "New Disney Pins December 2018 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-12"
+  },
+  {
+   "url": "https://mypincentral.com/pin/160244",
+   "title": "160244 (Once Upon A Time Pin of the Month Series 2018 - Hercules)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+   "title": "New Disney Pins April 2018 Week 3",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-04"
+  },
+  {
+   "url": "https://mypincentral.com/pin/144332",
+   "title": "144332 (DLR - Windows of Evil - Scar; series sidebar)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/tag/monterey-jack-chip-n-dale-rescue-rangers",
+   "title": "Monterey Jack (Chip 'n Dale: Rescue Rangers) tag page",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/tag/mr-jones-toy-story-of-terror",
+   "title": "Mr. Jones (Toy Story of Terror) tag page",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/horn-king-windows-of-evil-pin/",
+   "title": "Horn King Windows of Evil Pin Archives",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-parks-2018-pins",
+   "title": "Disney Parks 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2018/once-upon-a-time",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Once Upon A Time monthly collection",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "DPB names the Disneyland monthly series; Moana is the 12th and final pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Moana called the 12th and final pin of the monthly collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "December pin LE 2,000"
+    },
+    {
+     "field": "format",
+     "value": "monthly series of single pins",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "one pin per month at Disneyland"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "collection described as at Disneyland"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/earth-day",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Earth Day 2018",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "Disney Parks Earth Day 2018 pin"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "one pin listed"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2018/once-upon-a-time/moana",
+   "set_key": "dlr/2018/once-upon-a-time",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Once Upon A Time - Moana (December)",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "December pin of the monthly collection features Moana"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Moana"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "December pin features Moana"
+    },
+    {
+     "field": "main_character",
+     "value": "Moana",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "sole character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "single monthly pin"
+    },
+    {
+     "field": "set_position",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "12th and final pin in the collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "retail $16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "USD pricing"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "available at DLR 6 Dec 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "available at DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/once-upon-a-time/hercules",
+   "set_key": "dlr/2018/once-upon-a-time",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Once Upon A Time - Hercules",
+     "source_url": "https://mypincentral.com/pin/160244",
+     "method": "search_snippet",
+     "note": "MPC per-pin entry in the 2018 Once Upon A Time Pin of the Month Series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hercules",
+      "Megara",
+      "Philoctetes",
+      "Hera",
+      "Zeus"
+     ],
+     "source_url": "https://mypincentral.com/pin/160244",
+     "method": "search_snippet",
+     "note": "MPC lists these five characters on the pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Hercules",
+     "source_url": "https://mypincentral.com/pin/160244",
+     "method": "search_snippet",
+     "note": "title character of the entry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/160244",
+     "method": "search_snippet",
+     "note": "single pin featuring several characters"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://mypincentral.com/pin/160244",
+     "method": "search_snippet",
+     "note": "hinged design per MPC"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/160244",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://mypincentral.com/pin/160244",
+     "method": "search_snippet",
+     "note": "limited edition 2000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://mypincentral.com/pin/160244",
+     "method": "search_snippet",
+     "note": "retail $16.99 at DLR per MPC"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://mypincentral.com/pin/160244",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-27",
+     "source_url": "https://mypincentral.com/pin/160244",
+     "method": "search_snippet",
+     "note": "MPC gives 27 Sep 2018 at Disneyland Resort"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/160244",
+     "method": "search_snippet",
+     "note": "series released 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://mypincentral.com/pin/160244",
+     "method": "search_snippet",
+     "note": "MPC lists a Disneyland Resort release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/earth-day/kermit",
+   "set_key": "wdw/2018/earth-day",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Earth Day 2018 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "2018 Earth Day pin for Disney Parks"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kermit the Frog"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "features Kermit from The Muppets"
+    },
+    {
+     "field": "main_character",
+     "value": "Kermit the Frog",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "sole character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "retail $14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "available 19 Apr 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "available at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/dapper-day-fine-and-dandy/donald-and-daisy",
+   "set_key": "dlr/2018/dapper-day-fine-and-dandy",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-04-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "Fine & Dandy 2018 pin available at DLR 19 Apr 2018, timed for Dapper Day (fills B012 gap)"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "LE 5,000; corroborates B012"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+     "method": "search_snippet",
+     "note": "available at DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/lattes-with-character/oswald",
+   "set_key": "wdw/2018/lattes-with-character",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "DPB Dec 2018 wk1 lists the final Lattes with Character pin, Oswald, as shared with WDW"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "December 2018 round-up"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2018/earth-day/kermit",
+   "field": "variant",
+   "searched": "DPB Apr 2018 wk3; 1 query",
+   "note": "variant: same pin as wdw/2018/earth-day/kermit (sold at DL and WDW 19 Apr 2018)"
+  },
+  {
+   "key": "dlr/2018/lattes-with-character/oswald",
+   "field": "variant",
+   "searched": "DPB Dec 2018 wk1",
+   "note": "variant: same pin as wdw/2018/lattes-with-character/oswald (final Lattes pin, shared DL/WDW)"
+  },
+  {
+   "key": "dlr/2018/once-upon-a-time",
+   "field": "pins",
+   "searched": "DPB Dec wk1, MPC, DPB tag/category; 6 queries",
+   "note": "10 of 12 monthly pins unnamed in permitted sources; only #12 Moana (DPB) and Hercules (MPC, Sep 27) found; positions 1-11 except Hercules unknown"
+  },
+  {
+   "key": "dlr/2018/once-upon-a-time",
+   "field": "release_location",
+   "searched": "MPC/DPB snippets; 2 queries",
+   "note": "one summary labelled the series DLR/WDW; DPB says 'at Disneyland'. Keyed dlr; if a WDW key appears, review for variant notes"
+  },
+  {
+   "key": "dlr/2018/once-upon-a-time/felix-yzma-ursula",
+   "field": "existence",
+   "searched": "disneypinforum 2018 thread via snippet",
+   "note": "lead: a 2018 forum thread says OUAT pins are a circle with hinged half-circle and mentions Felix, Yzma, Ursula; forum not used; not recorded"
+  },
+  {
+   "key": "dlr/2018/bi-monthly-collection/moana-under-the-sea",
+   "field": "set_key",
+   "searched": "cross-check vs DPB Dec wk1",
+   "note": "check: B012 Moana 'Under the Sea' (pos 3, May 2018, bi-monthly) vs OUAT #12 Moana (Dec 6 2018); likely different series/pins; do not merge without review"
+  },
+  {
+   "key": "dlr/2018/once-upon-a-time/hercules",
+   "field": "set_position",
+   "searched": "MPC 160244 snippet",
+   "note": "position not stated; Sep 27 date suggests #9 if monthly from Jan, but that is inference"
+  },
+  {
+   "key": "dlr/2018/dapper-day-fine-and-dandy/donald-and-daisy",
+   "field": "key",
+   "searched": "cross-check",
+   "note": "possible duplicate of B055 OE-cell key dlr/2018/fine-dandy-donald-daisy; same Fine & Dandy 2018 pin? review"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/horn-king",
+   "field": "existence",
+   "searched": "DPB tag, MPC, pintrader; 4 queries",
+   "note": "hold kept: MPC 144331 'Horned King' LE 2000 seen only in a neighbouring page's series sidebar; Dec 2018/$16.99 only on reseller pintrader.club; DPB tag (Dec 9 2018) has no details"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/oogie-boogie",
+   "field": "existence",
+   "searched": "MPC sidebar, 1 query",
+   "note": "lead: MPC 144329 'Oogie Boogie' LE 2000 in WoE series sidebar; a forum comment implies a 2017 release (possible #1); not recorded"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/ursula",
+   "field": "set_position",
+   "searched": "MPC sidebar, Carstairs; 2 queries",
+   "note": "hold kept: MPC 144328 Ursula in series sidebar without LE tag; no position. Ursula still not numbered in permitted sources"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil",
+   "field": "pins",
+   "searched": "8 queries",
+   "note": "positions 1,2,4,5,8 still unconfirmed; unpositioned candidates Jafar, Ursula, Maleficent, Horned King, Oogie Boogie (inference only). MPC 144326 Evil Queen likely the 2019 #13 pin (DPB Dec 2019 wk2)"
+  },
+  {
+   "key": "dlr/2018/channel-28-mystery/monterey-jack",
+   "field": "existence",
+   "searched": "MPC tag page; 1 query",
+   "note": "hold kept: MPC Monterey Jack tag page lists 88895 'DLR - Channel 28 - Mystery Pin Collection - 2018 - TV...'; title truncated, design not stated"
+  },
+  {
+   "key": "dlr/2018/channel-28-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept for 11 designs; only Darkwing Duck confirmed per-pin"
+  },
+  {
+   "key": "dlr/2018/tape-series",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "pins 2-4 still unnamed; DPB 2018 posts surfaced only #1 Lion King (Jun 28 2018)"
+  },
+  {
+   "key": "dlr/2018/mickeys-halloween-party-2018-mysterious-shadows-box-set",
+   "field": "pins",
+   "searched": "DPB, MPC; 1 query",
+   "note": "hold kept: MPC 138599 'DLR - Mickey's Halloween Party - Mysterious Shadows' appears on a Mr. Jones (Toy Story of Terror) tag page; year/box membership not stated"
+  },
+  {
+   "key": "dlr/2018/happy-holidays-2018-pin-set",
+   "field": "pins",
+   "searched": "DPB Dec wk1; 1 query",
+   "note": "hold kept: DPB says 'all four pins above' + Zootopia completer, LE 1,000 $89.99; which four still not named"
+  },
+  {
+   "key": "dlr/2018",
+   "field": "pins",
+   "searched": "DPB Sep/Oct 2018 queries; 2 queries",
+   "note": "Sep/Oct 2018 DPB weekly round-ups still not surfaced; Oct 2018 results gave only MHP, Studio Store Hollywood (not DLR) and shopDisney Park Pack"
+  },
+  {
+   "key": "dlr/2018/pixar-pier-opening",
+   "field": "pins",
+   "searched": "not re-searched (budget)",
+   "note": "unchanged: no Pixar Pier opening LE pin named in prior passes"
+  },
+  {
+   "key": "dlr/2018/crests",
+   "field": "existence",
+   "searched": "not re-searched",
+   "note": "unchanged: no 2018 Disneyland crest series found in prior passes"
+  },
+  {
+   "key": "dlr/2018/holiday-gift-card-pins",
+   "field": "existence",
+   "searched": "not re-searched",
+   "note": "unchanged lead from B307: gift card pins at both resorts; edition/structure unstated"
+  },
+  {
+   "key": "dlr/2018/haunted-mansion-holiday-2018/gingerbread",
+   "field": "pin_name",
+   "searched": "not re-searched",
+   "note": "hold kept vs oogies-holiday-tricks-and-treats"
+  },
+  {
+   "key": "dlr/2018/dca-food-wine-2018/logo",
+   "field": "visual_description",
+   "searched": "not re-searched",
+   "note": "hold kept: Chef Mickey link unresolved"
+  },
+  {
+   "key": "dlr/2018/passholder-happy-holidays-2018-ornament-pin-set",
+   "field": "pins",
+   "searched": "not re-searched",
+   "note": "hold kept: pin count unstated"
+  },
+  {
+   "key": "dlr/2018/club-33-shag-box-set",
+   "field": "pins",
+   "searched": "not re-searched",
+   "note": "hold kept pending maintainer full-list decision"
+  },
+  {
+   "key": "dlr/2018/club-33-1901/1901",
+   "field": "release_location",
+   "searched": "not re-searched",
+   "note": "hold kept: resort not stated"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/scar",
+   "field": "release_year",
+   "searched": "not re-searched",
+   "note": "conflict unchanged (Carstairs 2018 vs DPB Jan 2019 vs MPC Oct 2019); not keyed for 2018"
+  }
+ ],
+ "discovery_notes": "Follow-up 4 of B012 (DLR LE 2018). New: Once Upon A Time monthly collection (12 pins, 2018) with Moana #12 and Hercules; Earth Day 2018 Kermit keyed under wdw (shared). Corroboration: Fine & Dandy 2018 DLR date (Apr 19), Oswald Lattes shared. WoE Horned King/Oogie Boogie/Ursula IDs seen only in MPC series sidebar; held. 26 web searches."
+}

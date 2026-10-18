@@ -5,6 +5,9 @@
  * "To Add" = approved by an admin but not yet in the catalogue — only the
  * App Creator can create the catalogue pin (migration 041), so these wait
  * here until they do.
+ *
+ * Photo-only submissions (#395) show as "Unidentified pin" with a badge, and
+ * a second row filters All / Unidentified / Named.
  */
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
@@ -26,10 +29,18 @@ import palette from '@/constants/colors';
 import { radius } from '@/constants/theme';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { supabase } from '@/lib/supabase';
+import { submissionDisplayName } from '@/utils/suggestPin';
 import type { PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
 
 // Theme-independent status colours for module-level lookup tables.
 const statusPalette = palette.light;
+
+type NameFilter = 'all' | 'unidentified' | 'named';
+const NAME_FILTERS: { key: NameFilter; label: string }[] = [
+  { key: 'all', label: 'All' },
+  { key: 'unidentified', label: 'Unidentified' },
+  { key: 'named', label: 'Named' },
+];
 
 type TabKey = 'pending' | 'under_review' | 'to_add' | 'all';
 
@@ -81,6 +92,7 @@ export default function AdminSubmissionsScreen() {
     TABS.some(t => t.key === initialTab) ? (initialTab as TabKey) : 'pending',
   );
   const [submissions, setSubmissions] = useState<PinSubmission[]>([]);
+  const [nameFilter, setNameFilter] = useState<NameFilter>('all');
   const [imageUrls, setImageUrls]   = useState<Record<string, string>>({});
   const [loading, setLoading]       = useState(true);
   const [refreshing, setRefreshing] = useState(false);
@@ -167,6 +179,9 @@ export default function AdminSubmissionsScreen() {
     return () => { clearInterval(timer); };
   }, []);
 
+  const shown = nameFilter === 'all' ? submissions
+    : submissions.filter(s => (nameFilter === 'unidentified') === !s.proposedName);
+
   return (
     <>
       <Stack.Screen options={{ title: 'Submission Queue' }} />
@@ -185,6 +200,29 @@ export default function AdminSubmissionsScreen() {
               <Text style={[styles.tabLabel, { color: active ? colors.homeCoral : colors.homeMuted }]}>
                 {t.label}
               </Text>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+
+      {/* Unidentified / named (#395) */}
+      <View style={[styles.filterRow, { backgroundColor: colors.homeBackground }]}>
+        {NAME_FILTERS.map(f => {
+          const active = nameFilter === f.key;
+          return (
+            <TouchableOpacity
+              key={f.key}
+              onPress={() => setNameFilter(f.key)}
+              activeOpacity={0.8}
+              accessibilityRole="button"
+              accessibilityState={{ selected: active }}
+              accessibilityLabel={`Show ${f.label.toLowerCase()} submissions`}
+              style={[styles.filterChip, {
+                backgroundColor: active ? colors.homeCoral : colors.homeSurface,
+                borderColor: active ? colors.homeCoral : colors.homeLine,
+              }]}
+            >
+              <Text style={[styles.filterLabel, { color: active ? colors.homeSurface : colors.homeInk }]}>{f.label}</Text>
             </TouchableOpacity>
           );
         })}
@@ -209,7 +247,7 @@ export default function AdminSubmissionsScreen() {
               <Text style={{ color: colors.homeCoral, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
             </TouchableOpacity>
           </View>
-        ) : submissions.length === 0 ? (
+        ) : shown.length === 0 ? (
           <View style={styles.empty}>
             <Feather name="inbox" size={40} color={colors.homeMuted} />
             <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>
@@ -225,9 +263,9 @@ export default function AdminSubmissionsScreen() {
         ) : (
           <>
             <Text style={[styles.countLabel, { color: colors.homeMuted }]}>
-              {submissions.length} submission{submissions.length !== 1 ? 's' : ''}
+              {shown.length} submission{shown.length !== 1 ? 's' : ''}
             </Text>
-            {submissions.map(s => (
+            {shown.map(s => (
               <TouchableOpacity
                 key={s.id}
                 onPress={() => router.push({ pathname: '/admin/review/[id]' as any, params: { id: s.id } })}
@@ -245,9 +283,15 @@ export default function AdminSubmissionsScreen() {
 
                 <View style={{ flex: 1, gap: 4 }}>
                   <Text style={[styles.cardName, { color: colors.homeInk }]} numberOfLines={2}>
-                    {s.proposedName}
+                    {submissionDisplayName(s)}
                   </Text>
-                  <Text style={[styles.cardBrand, { color: colors.homeMuted }]}>{s.brand}</Text>
+                  {!s.proposedName ? (
+                    <View style={[styles.unidentifiedBadge, { backgroundColor: colors.homeWarmSurface }]}>
+                      <Text style={[styles.unidentifiedText, { color: colors.homeSandInk }]}>Unidentified</Text>
+                    </View>
+                  ) : s.brand ? (
+                    <Text style={[styles.cardBrand, { color: colors.homeMuted }]}>{s.brand}</Text>
+                  ) : null}
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
                     <View style={[styles.statusBadge, { backgroundColor: STATUS_COLOR[s.status] + '18' }]}>
                       <Text style={[styles.statusLabel, { color: STATUS_COLOR[s.status] }]}>
@@ -297,5 +341,10 @@ const styles = StyleSheet.create({
   statusBadge: { paddingHorizontal: 7, paddingVertical: 3, borderRadius: 6 },
   statusLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
   noteBox:     { padding: 6 },
+  filterRow:   { flexDirection: 'row', gap: 8, paddingHorizontal: 16, paddingTop: 12 },
+  filterChip:  { minHeight: 36, paddingHorizontal: 14, borderRadius: 999, borderWidth: 1, justifyContent: 'center' },
+  filterLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  unidentifiedBadge: { alignSelf: 'flex-start', paddingHorizontal: 7, paddingVertical: 2, borderRadius: 6 },
+  unidentifiedText: { fontSize: 11, fontFamily: 'Inter_600SemiBold' },
   noteText:    { fontSize: 11, fontFamily: 'Inter_400Regular' },
 });

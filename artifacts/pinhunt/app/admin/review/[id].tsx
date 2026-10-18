@@ -1,6 +1,13 @@
 /**
  * Admin Review — full view of a community submission with approve/reject/needs-changes actions.
  * Shows a duplicate-warning banner when existing catalogue pins closely match the submission.
+ *
+ * Contributor programme (#395): photo-only submissions show as "Unidentified
+ * pin"; the AI's matches from submission time join the duplicate candidates;
+ * a "Contributor" card shows who sent it, the rights confirmation and the AI's
+ * guesses; "Original submission" shows what was first sent when it has since
+ * changed. After merging into a pin with no photo, "Use this photo" proposes
+ * the submission's photo through the normal photo review (never directly).
  */
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
@@ -28,6 +35,8 @@ import { supabase } from '@/lib/supabase';
 import type { DuplicateCandidate, PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
 
 import { API_BASE } from '@/lib/apiBase';
+import { submissionDisplayName } from '@/utils/suggestPin';
+import { originalChanges } from '@/utils/submissionProvenance';
 
 // Theme-independent status colours for module-level lookup tables.
 const statusPalette = palette.light;
@@ -105,6 +114,10 @@ export default function AdminReviewScreen() {
   // look like "no duplicates found".
   const [candidatesWarning, setCandidatesWarning] = useState<string | null>(null);
   const [duplicateBannerDismissed, setDuplicateBannerDismissed] = useState(false);
+  const [submitterName, setSubmitterName] = useState<string | null>(null);
+  // Merged into a pin that has no photo: offer the submission's photo for it.
+  const [mergedNoPhoto, setMergedNoPhoto] = useState<DuplicateCandidate | null>(null);
+  const [photoProposed, setPhotoProposed] = useState(false);
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 
@@ -116,6 +129,9 @@ export default function AdminReviewScreen() {
         if (!sub) { setError('Submission not found.'); setLoading(false); return; }
         setSubmission(sub);
         setReviewerNotes(sub.reviewerNotes ?? '');
+        repo.getProfile(sub.submittedBy)
+          .then(p => setSubmitterName(p?.username ?? p?.displayName ?? null))
+          .catch(() => {});
         const [front, back] = await Promise.all([
           getSignedUrl(sub.frontImagePath),
           sub.backImagePath ? getSignedUrl(sub.backImagePath) : Promise.resolve(null),
@@ -222,9 +238,36 @@ export default function AdminReviewScreen() {
         });
       }
       setPendingConfirm(null);
+      if (pendingConfirm.kind === 'merge' && !pendingConfirm.candidate.imageUrl && submission.rightsConfirmedAt) {
+        setMergedNoPhoto(pendingConfirm.candidate);
+        return;
+      }
       router.back();
     } catch (err) {
       setActionError(err instanceof Error ? err.message : 'Action failed.');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const proposePhoto = async () => {
+    if (!submission || !mergedNoPhoto) return;
+    try {
+      setSaving(true);
+      setActionError(null);
+      const res = await fetch(`${API_BASE}/admin/submissions/${submission.id}/propose-photo`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          ...(session?.access_token ? { Authorization: `Bearer ${session.access_token}` } : {}),
+        },
+        body: JSON.stringify({ pinhuntId: mergedNoPhoto.pinhuntId }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error((body as { error?: string }).error ?? 'Could not propose the photo.');
+      setPhotoProposed(true);
+    } catch (err) {
+      setActionError(err instanceof Error ? err.message : 'Could not propose the photo.');
     } finally {
       setSaving(false);
     }
@@ -237,6 +280,7 @@ export default function AdminReviewScreen() {
       params: {
         id: 'new',
         submissionId:       submission.id,
+        // Blank for an unidentified pin: the admin names it, never a placeholder.
         prefillTitle:       submission.proposedName ?? '',
         prefillBrand:       submission.brand ?? '',
         prefillSeries:      submission.seriesName ?? '',
@@ -282,7 +326,7 @@ export default function AdminReviewScreen() {
 
   return (
     <>
-      <Stack.Screen options={{ title: submission.proposedName ?? 'Review Submission' }} />
+      <Stack.Screen options={{ title: submissionDisplayName(submission) }} />
       <KeyboardAvoidingView
         style={{ flex: 1, backgroundColor: colors.homeBackground }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
@@ -310,6 +354,64 @@ export default function AdminReviewScreen() {
               <Text style={[styles.statusText, { color: STATUS_COLOR[submission.status] }]}>
                 {STATUS_LABEL[submission.status]}
               </Text>
+            </View>
+
+            {mergedNoPhoto && (
+              <View testID="use-this-photo" style={[styles.card, styles.mergedCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 14 }]}>
+                <Text style={[styles.contribTitle, { color: colors.homeInk }]}>
+                  Merged into {mergedNoPhoto.title} ({mergedNoPhoto.pinhuntId})
+                </Text>
+                {photoProposed ? (
+                  <Text style={[styles.contribBody, { color: colors.homeMuted }]}>
+                    The photo is waiting in Contributed Photos for review. It won{"\u2019"}t show on the pin until it{"\u2019"}s approved there.
+                  </Text>
+                ) : (
+                  <>
+                    <Text style={[styles.contribBody, { color: colors.homeMuted }]}>
+                      That pin has no photo yet. Propose this submission{"\u2019"}s photo for it? It goes to photo review first, credited to the contributor.
+                    </Text>
+                    <TouchableOpacity
+                      onPress={proposePhoto}
+                      disabled={saving}
+                      activeOpacity={0.85}
+                      accessibilityRole="button"
+                      accessibilityLabel="Use this photo"
+                      style={[styles.actionBtn, { backgroundColor: colors.homeCoral, borderRadius: 12 }]}
+                    >
+                      {saving ? <ActivityIndicator color="#fff" /> : <Feather name="image" size={16} color="#fff" />}
+                      <Text style={styles.actionBtnLabel}>Use this photo</Text>
+                    </TouchableOpacity>
+                  </>
+                )}
+                <TouchableOpacity onPress={() => router.back()} activeOpacity={0.85} accessibilityRole="button" accessibilityLabel="Done" style={[styles.outlineBtn, { borderColor: colors.homeLine, borderRadius: 12 }]}>
+                  <Text style={[styles.outlineBtnLabel, { color: colors.homeInk }]}>Done</Text>
+                </TouchableOpacity>
+              </View>
+            )}
+
+            {/* ── Contributor (#395) ── */}
+            <View testID="contributor-card" style={[styles.card, styles.contribCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 14 }]}>
+              {!submission.proposedName && (
+                <View style={[styles.unidentifiedBadge, { backgroundColor: colors.homeWarmSurface }]}>
+                  <Text style={[styles.unidentifiedText, { color: colors.homeSandInk }]}>UNIDENTIFIED PIN</Text>
+                </View>
+              )}
+              <Text style={[styles.contribBody, { color: colors.homeInk }]}>
+                From <Text style={{ fontFamily: 'Inter_600SemiBold' }}>{submitterName ? `@${submitterName}` : 'a collector'}</Text>
+              </Text>
+              <View style={styles.contribRow}>
+                <Feather name={submission.rightsConfirmedAt ? 'check-circle' : 'minus-circle'} size={14} color={submission.rightsConfirmedAt ? colors.owned : colors.homeMuted} />
+                <Text style={[styles.contribBody, { color: colors.homeMuted }]}>
+                  {submission.rightsConfirmedAt ? 'Photo rights confirmed' : 'Photo rights not recorded (older app)'}
+                </Text>
+              </View>
+              {(() => {
+                const s = submission.aiIdentification?.suggested;
+                const parts = [s?.name && `"${s.name}"`, s?.brand, s?.setName, s?.characters?.join(', ')].filter(Boolean);
+                return parts.length ? (
+                  <Text style={[styles.contribBody, { color: colors.homeMuted }]}>AI guessed: {parts.join(' · ')}</Text>
+                ) : null;
+              })()}
             </View>
 
             {/* ── Duplicate warning banner ── */}
@@ -390,7 +492,7 @@ export default function AdminReviewScreen() {
 
             {/* Submission detail */}
             <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 14 }]}>
-              <InfoRow label="Pin Name"     value={submission.proposedName} />
+              <InfoRow label="Pin Name"     value={submission.proposedName || 'Not given'} />
               <InfoRow label="Brand"        value={submission.brand} />
               <InfoRow label="Characters"   value={submission.characterNames} />
               <InfoRow label="Series"       value={submission.seriesName} />
@@ -408,6 +510,16 @@ export default function AdminReviewScreen() {
                 </Text>
               </View>
             </View>
+
+            {/* Original submission, when it has since been edited (#395) */}
+            {originalChanges(submission).length > 0 && (
+              <View testID="original-submission" style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: 14 }]}>
+                <Text style={[styles.sectionLabel, styles.originalLabel, { color: colors.homeMuted }]}>ORIGINALLY SENT</Text>
+                {originalChanges(submission).map(c => (
+                  <InfoRow key={c.label} label={c.label} value={c.original || 'Not given'} />
+                ))}
+              </View>
+            )}
 
             {/* Back image */}
             {backUrl && (
@@ -600,6 +712,14 @@ function ConfirmBar({
 }
 
 const styles = StyleSheet.create({
+  contribCard:      { padding: 14, gap: 8 },
+  mergedCard:       { padding: 14, gap: 10 },
+  contribTitle:     { fontSize: 15, fontFamily: 'Inter_700Bold' },
+  contribBody:      { fontSize: 13, lineHeight: 18, fontFamily: 'Inter_400Regular' },
+  contribRow:       { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  unidentifiedBadge: { alignSelf: 'flex-start', paddingHorizontal: 8, paddingVertical: 3, borderRadius: 6 },
+  unidentifiedText: { fontSize: 11, fontFamily: 'Inter_700Bold', letterSpacing: 0.3 },
+  originalLabel:    { paddingHorizontal: 14, paddingTop: 12 },
   inlineError:     { fontSize: 13, fontFamily: 'Inter_500Medium', textAlign: 'center' },
   confirmBar:      { borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.sm },
   confirmText:     { fontSize: 14, fontFamily: 'Inter_500Medium', lineHeight: 20 },

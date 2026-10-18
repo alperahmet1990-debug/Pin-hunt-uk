@@ -392,4 +392,60 @@ router.get(
   },
 );
 
+/**
+ * POST /admin/submissions/:id/propose-photo   { pinhuntId }
+ *
+ * "Use this photo" after merging a submission into an existing pin that has
+ * no photo (#395). Copies the submission's front photo into the contributed
+ * images bucket as a PENDING proposal credited to the submitter, so it goes
+ * through the normal photo review (admin/contributed-images) — never straight
+ * onto the pin. Needs the submitter's image-rights confirmation (migration
+ * 047); older submissions without it can't be proposed this way.
+ */
+router.post(
+  "/admin/submissions/:id/propose-photo",
+  requireAdmin,
+  async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params as { id: string };
+      const { pinhuntId } = (req.body ?? {}) as { pinhuntId?: unknown };
+      if (typeof pinhuntId !== "string" || !pinhuntId.trim()) {
+        res.status(400).json({ error: "pinhuntId is required" });
+        return;
+      }
+      const userRepo = getAdminUserRepository();
+      const sub = await userRepo.getPinSubmission(id);
+      if (!sub) { res.status(404).json({ error: "Submission not found" }); return; }
+      if (!sub.rightsConfirmedAt) {
+        res.status(409).json({ error: "The submitter didn't confirm the photo rights, so it can't be used as the pin's photo." });
+        return;
+      }
+
+      const storage = getAdminAuthClient().storage;
+      const { data: blob, error: downloadError } = await storage.from("pin-submissions").download(sub.frontImagePath);
+      if (downloadError || !blob) {
+        res.status(500).json({ error: `Could not read the submission photo: ${downloadError?.message ?? "missing"}` });
+        return;
+      }
+      const storagePath = `${sub.submittedBy}/${pinhuntId.trim()}/${Date.now()}.jpg`;
+      const { error: uploadError } = await storage.from("pin-contributed-images")
+        .upload(storagePath, Buffer.from(await blob.arrayBuffer()), { contentType: "image/jpeg", upsert: false });
+      if (uploadError) {
+        res.status(500).json({ error: `Could not store the photo: ${uploadError.message}` });
+        return;
+      }
+
+      const image = await userRepo.createContributedImage(sub.submittedBy, pinhuntId.trim(), {
+        storagePath,
+        consentGranted: true,
+        proposalReason: "missing",
+      });
+      res.json({ image });
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      res.status(msg.includes("not found") ? 404 : 500).json({ error: msg });
+    }
+  },
+);
+
 export default router;

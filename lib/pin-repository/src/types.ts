@@ -178,6 +178,8 @@ export interface CreatePinInput {
   /** Catalogue lifecycle status. Defaults to 'active' when omitted. */
   status?: CataloguePinStatus;
   catalogueSource?: string;
+  /** The collector whose submission this pin was approved from (credit, #395). */
+  submittedBy?: string;
 }
 
 export interface UpdatePinInput {

@@ -1,0 +1,1099 @@
+{
+  "packet_id": "backfill-b285-dlr-le-2017-fu2",
+  "spec_version": 1,
+  "collected_at": "2026-10-18",
+  "collector": "agent:backfill-b285",
+  "sources": [
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+      "title": "New Disney Pins August 2017 Week 5",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-08",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+      "title": "New Disney Pins March 2017 Week 4",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-03",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+      "title": "New Disney Pins October 2017 Week 1",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-10",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://mypincentral.com/pin/152455",
+      "title": "152455",
+      "publisher": "My Pin Central",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/guardians-galaxy-mission-breakout-pins",
+      "title": "Guardians of the Galaxy Mission Breakout Pins",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-05",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+      "title": "Villains Vault 2017 Pin Collection",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-09",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2017-week-2",
+      "title": "New Disney Pins September 2017 Week 2",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-09",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-collection/",
+      "title": "Aladdin 25th Anniversary Pin Collection",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-11",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+      "title": "New Disney Pins June 2017 Week 1",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-06",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://mypincentral.com/pin/134298",
+      "title": "134298",
+      "publisher": "My Pin Central",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://mypincentral.com/pin/134288",
+      "title": "134288",
+      "publisher": "My Pin Central",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    }
+  ],
+  "sets": [
+    {
+      "set_key": "dlr/2017/disneyland-railroad-pocket-watch",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Disneyland Railroad pocket watch pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "DLR release listed for Mar 19-25, 2017"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-03-23",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "on sale at DLR Mar 23, 2017"
+        },
+        {
+          "field": "format",
+          "value": "single pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "one hinged pocket watch pin"
+        }
+      ]
+    },
+    {
+      "set_key": "dlr/2017/easter-2017",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Disneyland Easter 2017 pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "Easter 2017 pin in DLR releases for Mar 19-25"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-03-23",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "DLR Mar 23, 2017"
+        },
+        {
+          "field": "format",
+          "value": "single pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "one commemorative pin"
+        }
+      ]
+    },
+    {
+      "set_key": "dlr/2017/haunting-halloween-2017",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Haunting Halloween 2017",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "Haunting Halloween series pins, Gus, Ezra and Phineas"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "LE 3,000 each"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-10-05",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "DLR Oct 5, 2017"
+        },
+        {
+          "field": "format",
+          "value": "separate single pins",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "each ghost listed as its own pin with own edition size and price"
+        }
+      ]
+    },
+    {
+      "set_key": "dlr/2017/dvc-halloween-2017",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Disney Vacation Club Halloween 2017 pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "DVC exclusive Halloween 2017 pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-10-05",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "DLR Oct 5, 2017"
+        },
+        {
+          "field": "format",
+          "value": "single pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "one pin"
+        }
+      ]
+    },
+    {
+      "set_key": "dlr/2017/villains-vault-2017",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Villains Vault 2017 Pin Collection",
+          "source_url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+          "method": "search_snippet",
+          "note": "DPB post on Villains Vault 2017 collection"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-09-14",
+          "source_url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+          "method": "search_snippet",
+          "note": "on sale Sep 14, 2017 while supplies last"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-september-2017-week-2",
+          "method": "search_snippet",
+          "note": "weekly roundup lists it as a Disneyland release, Pin Traders Downtown Disney suggested"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+          "method": "search_snippet",
+          "note": "post says edition sizes are listed above (sizes not in snippet)"
+        },
+        {
+          "field": "format",
+          "value": "collection: key box set, two Oogie Boogie jumbo pins, two super jumbo pins",
+          "source_url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+          "method": "search_snippet",
+          "note": "product list per snippet"
+        }
+      ]
+    },
+    {
+      "set_key": "dlr/2017/aladdin-25th-pin-trading-nights-genie-mystery",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Aladdin 25th Anniversary Genie Mystery Set",
+          "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-collection/",
+          "method": "search_snippet",
+          "note": "15 pin set featuring Genie"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 15,
+          "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-collection/",
+          "method": "search_snippet",
+          "note": "15 pin set"
+        },
+        {
+          "field": "format",
+          "value": "mystery set",
+          "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-collection/",
+          "method": "search_snippet",
+          "note": "mystery set via RSP"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World Pin Trading Nights",
+          "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-collection/",
+          "method": "search_snippet",
+          "note": "RSP at DL and WDW Pin Trading Nights Nov 2017"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-11",
+          "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-collection/",
+          "method": "search_snippet",
+          "note": "November 2017"
+        }
+      ]
+    }
+  ],
+  "pins": [
+    {
+      "pin_key": "dlr/2017/pin-trading-tales/hat-box-ghost",
+      "set_key": "dlr/2017/pin-trading-tales",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Pin Trading Tales - Hat Box Ghost",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+          "method": "search_snippet",
+          "note": "DPB calls it the eighth pin in the Pin Trading Tales collection at Disneyland"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Hat Box Ghost"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+          "method": "search_snippet",
+          "note": "named Hat Box Ghost"
+        },
+        {
+          "field": "main_character",
+          "value": "Hat Box Ghost",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+          "method": "search_snippet",
+          "note": "named subject"
+        },
+        {
+          "field": "set_position",
+          "value": 8,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+          "method": "search_snippet",
+          "note": "eighth pin in the collection"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 2000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+          "method": "search_snippet",
+          "note": "LE 2,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+          "method": "search_snippet",
+          "note": "$15.99 retail"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+          "method": "search_snippet",
+          "note": "USD price"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-08-31",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+          "method": "search_snippet",
+          "note": "released at DLR Aug 31, 2017"
+        },
+        {
+          "field": "release_year",
+          "value": 2017,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+          "method": "search_snippet",
+          "note": "2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+          "method": "search_snippet",
+          "note": "released at DLR"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+          "method": "search_snippet",
+          "note": "single hinged pin; summary mentions hinge and dangle chain"
+        },
+        {
+          "field": "visual_description",
+          "value": "hinged pin with dangle chain",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2017-week-5",
+          "method": "search_snippet",
+          "note": "hinged design with dangle per snippet summary"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/disneyland-railroad-pocket-watch/disneyland-railroad",
+      "set_key": "dlr/2017/disneyland-railroad-pocket-watch",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Disneyland Railroad pocket watch pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "hinged pocket watch pin featuring the Disneyland Railroad"
+        },
+        {
+          "field": "attraction",
+          "value": "Disneyland Railroad",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "features the Disneyland Railroad"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 2000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "LE 2,000"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-03-23",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "on sale at DLR Mar 23, 2017"
+        },
+        {
+          "field": "release_year",
+          "value": 2017,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "listed under Disneyland Resort releases"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "single hinged pin"
+        },
+        {
+          "field": "visual_description",
+          "value": "hinged pocket watch shape",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "hinged pocket watch pin"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/easter-2017/nightmare-before-christmas",
+      "set_key": "dlr/2017/easter-2017",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Easter 2017 - The Nightmare Before Christmas",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "Easter 2017 pin featuring The Nightmare Before Christmas"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "limited edition per summary"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "LE 3,000 per one summary; second summary said page text jumbled - verify"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-03-23",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "released at DLR Mar 23, 2017"
+        },
+        {
+          "field": "release_year",
+          "value": 2017,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "DLR release"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-4",
+          "method": "search_snippet",
+          "note": "single pin"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/mission-breakout-premiere/passholder-rocket-hand-scan",
+      "set_key": "dlr/2017/mission-breakout-premiere",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Guardians of the Galaxy - Mission: Breakout! Annual Passholder pin",
+          "source_url": "https://mypincentral.com/pin/152455",
+          "method": "search_snippet",
+          "note": "per-pin page: 2017 AP exclusive opening pin for Mission: Breakout"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Rocket"
+          ],
+          "source_url": "https://mypincentral.com/pin/152455",
+          "method": "search_snippet",
+          "note": "shows Rocket's hand scan to enter the ship"
+        },
+        {
+          "field": "attraction",
+          "value": "Guardians of the Galaxy - Mission: Breakout!",
+          "source_url": "https://mypincentral.com/pin/152455",
+          "method": "search_snippet",
+          "note": "Mission Breakout opening"
+        },
+        {
+          "field": "visual_description",
+          "value": "green circular pin, Rocket hand scan, text Mission Breakout May 2017",
+          "source_url": "https://mypincentral.com/pin/152455",
+          "method": "search_snippet",
+          "note": "paraphrase of per-pin description"
+        },
+        {
+          "field": "release_year",
+          "value": 2017,
+          "source_url": "https://mypincentral.com/pin/152455",
+          "method": "search_snippet",
+          "note": "May 2017 text on pin"
+        },
+        {
+          "field": "release_location",
+          "value": "Disney California Adventure",
+          "source_url": "https://disneypinsblog.com/blogs/news/guardians-galaxy-mission-breakout-pins",
+          "method": "search_snippet",
+          "note": "premiere party pins at DCA; AP pin is last one pictured"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/guardians-galaxy-mission-breakout-pins",
+          "method": "search_snippet",
+          "note": "premiere/AP pins described as limited"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://mypincentral.com/pin/152455",
+          "method": "search_snippet",
+          "note": "single pin"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/haunting-halloween-2017/gus",
+      "set_key": "dlr/2017/haunting-halloween-2017",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Haunting Halloween 2017 - Gus",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "Hitchhiking Ghost Gus pin in Haunting Halloween series"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Gus"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "Hitchhiking Ghost Gus"
+        },
+        {
+          "field": "main_character",
+          "value": "Gus",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "named ghost"
+        },
+        {
+          "field": "attraction",
+          "value": "Haunted Mansion",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "Hitchhiking Ghosts from The Haunted Mansion"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "$15.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "USD"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-10-05",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "available at DLR Oct 5, 2017"
+        },
+        {
+          "field": "release_year",
+          "value": 2017,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "shared DL/WDW release; DLR date given"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "listed individually"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/haunting-halloween-2017/ezra",
+      "set_key": "dlr/2017/haunting-halloween-2017",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Haunting Halloween 2017 - Ezra",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "Hitchhiking Ghost Ezra pin in Haunting Halloween series"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Ezra"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "Hitchhiking Ghost Ezra"
+        },
+        {
+          "field": "main_character",
+          "value": "Ezra",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "named ghost"
+        },
+        {
+          "field": "attraction",
+          "value": "Haunted Mansion",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "Hitchhiking Ghosts from The Haunted Mansion"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "$15.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "USD"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-10-05",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "available at DLR Oct 5, 2017"
+        },
+        {
+          "field": "release_year",
+          "value": 2017,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "shared DL/WDW release; DLR date given"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "listed individually"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/haunting-halloween-2017/phineas",
+      "set_key": "dlr/2017/haunting-halloween-2017",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Haunting Halloween 2017 - Phineas",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "Hitchhiking Ghost Phineas pin in Haunting Halloween series"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Phineas"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "Hitchhiking Ghost Phineas"
+        },
+        {
+          "field": "main_character",
+          "value": "Phineas",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "named ghost"
+        },
+        {
+          "field": "attraction",
+          "value": "Haunted Mansion",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "Hitchhiking Ghosts from The Haunted Mansion"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "$15.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "USD"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-10-05",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "available at DLR Oct 5, 2017"
+        },
+        {
+          "field": "release_year",
+          "value": 2017,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "shared DL/WDW release; DLR date given"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "listed individually"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/dvc-halloween-2017/dvc-halloween",
+      "set_key": "dlr/2017/dvc-halloween-2017",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Disney Vacation Club Halloween 2017 pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "DVC exclusive Halloween 2017 pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "$15.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "USD"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-10-05",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "available at DLR Oct 5, 2017"
+        },
+        {
+          "field": "release_year",
+          "value": 2017,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "DLR"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2017-week-1",
+          "method": "search_snippet",
+          "note": "single pin"
+        }
+      ]
+    }
+  ],
+  "not_found": [
+    {
+      "key": "dlr/2017/pin-trading-tales/hat-box-ghost",
+      "field": "set_key",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "distinct from dlr/2017/charming-characters/hat-box-ghost (226): DPB Aug wk5 PTT #8 Aug 31 LE 2,000 vs Oct wk1 Charming Characters #10 LE 3,000"
+    },
+    {
+      "key": "dlr/2017/pin-trading-tales/hat-box-ghost",
+      "field": "release_location",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "one summary says shared release also at WDW that day; other snippets say DLR collection - verify"
+    },
+    {
+      "key": "dlr/2017/pin-trading-tales",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "pins 3, 4 and 9 still not named in permitted snippets; DPB Mar wk5, Apr wk4 and Sept wk3-5 roundups not surfaced"
+    },
+    {
+      "key": "dlr/2017/pin-trading-tales/mad-hatter",
+      "field": "release",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "hold kept: still reseller-only (ecrater: LE 2,000, Mar 30 2017, Dormouse dangle); no DPB/MPC per-pin page found"
+    },
+    {
+      "key": "dlr/2017/pin-trading-tales/finding-dory",
+      "field": "product_code",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "MyPinCentral 134298 per-pin page: Pin Trading Tales 2017, Dory, LE 2,000, two hinges + dangle; MPC id is not a product code - recorded as note only"
+    },
+    {
+      "key": "dlr/2017/pin-trading-tales/oswald",
+      "field": "product_code",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "MyPinCentral 134288 per-pin page names Pin Trading Tales Series 2017 (Oswald results); MPC id not a product code - note only"
+    },
+    {
+      "key": "dlr/2017/charming-characters",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "releases 1, 2 and 9 still not named; no DPB Jan/Feb or Sept 2017 Charming Characters entry surfaced"
+    },
+    {
+      "key": "dlr/2017/charming-characters/mike",
+      "field": "release",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "lead: one search summary said DPB calls Mike (Monsters, Inc.) the eighth Charming Characters release (Aug 2017); follow-up search could not confirm - not recorded"
+    },
+    {
+      "key": "dlr/2017/disneyland-railroad-pocket-watch",
+      "field": "set_key",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "may belong to a train pocket-watch series; series name not in snippet"
+    },
+    {
+      "key": "dlr/2017/easter-2017/nightmare-before-christmas",
+      "field": "edition_size",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "LE 3,000 from one summary only; another summary said page text was jumbled - verify edition and price"
+    },
+    {
+      "key": "dlr/2017/mission-breakout-premiere/passholder-rocket-hand-scan",
+      "field": "release",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "sources differ: MPC says opening-day AP pin, DPB/MiceChat tie AP pin to premiere party; edition size and price not stated. Resolves 469 lead dlr/2017/mission-breakout/ap-rocket-hand-scan"
+    },
+    {
+      "key": "dlr/2017/haunting-halloween-2017",
+      "field": "line",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "shared DL/WDW release; no wdw key in 218/426/467 - flag for WDW cell (add variant there)"
+    },
+    {
+      "key": "dlr/2017/dvc-halloween-2017/dvc-halloween",
+      "field": "characters",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "design/characters not described in snippet"
+    },
+    {
+      "key": "dlr/2017/villains-vault-2017",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "members not individually named with sizes; MPC 18866 super jumbo (Chernabog, Scar, Jafar, Maleficent, Ursula, back 'Villains Vault LE 250') not tied to 2017 in snippet - lead only"
+    },
+    {
+      "key": "dlr/2017/aladdin-25th-pin-trading-nights-genie-mystery",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "hold: mystery designs not individually confirmed; MPC 49380 (Genie tourist) and 49378 (Genie stewardess, LE 400) surfaced but link to this 2017 set not explicit - leads only"
+    },
+    {
+      "key": "dlr/2017/aladdin-25th-pin-trading-nights-three-wishes-box-set",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "three LE pins still not named (DPB: pin-on-pin, translucent fill, LE 1,000, $64.99)"
+    },
+    {
+      "key": "dlr/2017/mickeys-halloween-party-2017-villains-box-set",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "hold kept (433): pending maintainer full-list decision; no new per-pin evidence"
+    },
+    {
+      "key": "dlr/2017/club-33-2017/december-2017",
+      "field": "characters",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "hold kept (433): DPB snippet again says Pluto, LE 500, $30 - same page, no new per-pin evidence"
+    },
+    {
+      "key": "dlr/2017/club-33-2017",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "other 2017 months not found (only Mar Lady and the Tramp, Sep Beauty and the Beast, Dec); Cinderella MPC 77785 still a lead"
+    },
+    {
+      "key": "dlr/2017/holiday-gift-card-pins",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "hold kept (433): confirm pin structure; DPB still lists Minnie, Mickey, Daisy, Donald and LE 2,650 without per-pin wording"
+    },
+    {
+      "key": "wdw/2017/star-wars-pin-of-the-month/pin-13",
+      "field": "characters",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "hold kept (433/426): DPB Jun wk1 gives 13th/final pin, LE 6,000, $15.99, DL+WDW Jun 1 2017, but design/subject still not stated"
+    },
+    {
+      "key": "dlr/2017/pirates-50th",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "individual LE 2,500 designs still unnamed; only sale locations (Westward Ho, 20th Century Music Co., Little Green Store Command, Pin Traders DTD) in summaries"
+    },
+    {
+      "key": "dlr/2017/ap-quarterly-2017",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "first three 2017 DL AP quarterly pins still not identified; Tiki Room confirmed as final quarterly pin"
+    },
+    {
+      "key": "dlr/2017/dca-food-wine-festival-2017",
+      "field": "source",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "no official Disney Parks Blog 2017 merch post surfaced; AP LE 2,000 and Mickey logo LR already in 226"
+    },
+    {
+      "key": "dlr/2017/pin-trading-nights",
+      "field": "all",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "no Disneyland-only 2017 Pin Trading Night found; Aladdin 25th remains joint DL/WDW"
+    },
+    {
+      "key": "dlr/2017/hkdl-pluto-birthday-2017",
+      "field": "scope",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "DPB Pluto 2017 Birthday pin (LE 300, Aug 19 2017) is Hong Kong Disneyland - lead for hkdl cell"
+    },
+    {
+      "key": "dlr/2017/licensed",
+      "field": "release",
+      "searched": "30 standard WebSearch queries (B285)",
+      "note": "no licensed (Loungefly/BoxLunch/Hot Topic etc.) pins surfaced in this cell's searches"
+    }
+  ],
+  "discovery_notes": "Follow-up 2 of B020 (after 433). 30 standard WebSearch queries, all search_snippet; blocked domains passed or allowed_domains limited to preferred sites. Mostly Disney Pins Blog roundups plus MyPinCentral per-pin pages. New: Pin Trading Tales #8 Hat Box Ghost (distinct from CC #10), DLR Railroad pocket watch, Easter 2017 NBC, Mission Breakout AP pin (MPC 152455), Haunting Halloween Gus/Ezra/Phineas, DVC Halloween 2017; sets Villains Vault 2017 and Genie mystery (no members). No holds released. Reseller (ecrater) seen, not used. No prompt-injection seen."
+}

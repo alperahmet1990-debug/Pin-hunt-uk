@@ -1,24 +1,24 @@
 {
  "source": "staging_payload.json",
- "git_commit": "09477b53bd19",
+ "git_commit": "513e69669bad",
  "generated": "2026-10-18",
  "runs": [
   {
    "file": "run_01_wdw.json",
-   "pins": 1231,
-   "sets": 668,
-   "evidence": 9317,
-   "bytes": 3929878,
+   "pins": 1232,
+   "sets": 667,
+   "evidence": 9348,
+   "bytes": 3941717,
    "lines": [
     "wdw"
    ]
   },
   {
    "file": "run_02_wdw-to-dlr.json",
-   "pins": 1176,
-   "sets": 724,
-   "evidence": 9922,
-   "bytes": 4052478,
+   "pins": 1173,
+   "sets": 725,
+   "evidence": 9905,
+   "bytes": 4045453,
    "lines": [
     "wdw",
     "dlr"
@@ -26,34 +26,34 @@
   },
   {
    "file": "run_03_dlr-to-dlp.json",
-   "pins": 1255,
-   "sets": 645,
-   "evidence": 9822,
-   "bytes": 4135702,
+   "pins": 1253,
+   "sets": 647,
+   "evidence": 9804,
+   "bytes": 4129606,
    "lines": [
     "dlr",
     "dlp"
    ]
   },
   {
-   "file": "run_04_dlp-to-dsus.json",
-   "pins": 1238,
-   "sets": 661,
-   "evidence": 11016,
-   "bytes": 4664565,
+   "file": "run_04_dlp-to-dsuk.json",
+   "pins": 1244,
+   "sets": 656,
+   "evidence": 11110,
+   "bytes": 4700959,
    "lines": [
     "dlp",
-    "dsuk",
-    "dsus"
+    "dsuk"
    ]
   },
   {
-   "file": "run_05_dsus-to-hkdl.json",
-   "pins": 1279,
-   "sets": 618,
-   "evidence": 10409,
-   "bytes": 4373647,
+   "file": "run_05_dsuk-to-hkdl.json",
+   "pins": 1274,
+   "sets": 623,
+   "evidence": 10540,
+   "bytes": 4413517,
    "lines": [
+    "dsuk",
     "dsus",
     "shdr",
     "hkdl"
@@ -61,10 +61,10 @@
   },
   {
    "file": "run_06_hkdl-to-lic.json",
-   "pins": 1306,
-   "sets": 594,
-   "evidence": 11286,
-   "bytes": 4618131,
+   "pins": 1312,
+   "sets": 588,
+   "evidence": 11097,
+   "bytes": 4565976,
    "lines": [
     "hkdl",
     "tdr",
@@ -73,20 +73,20 @@
   },
   {
    "file": "run_07_lic.json",
-   "pins": 1064,
-   "sets": 530,
-   "evidence": 12377,
-   "bytes": 4821504,
+   "pins": 1055,
+   "sets": 528,
+   "evidence": 12425,
+   "bytes": 4819279,
    "lines": [
     "lic"
    ]
   },
   {
    "file": "run_08_lic.json",
-   "pins": 1089,
-   "sets": 456,
-   "evidence": 10670,
-   "bytes": 4492469,
+   "pins": 1141,
+   "sets": 478,
+   "evidence": 11132,
+   "bytes": 4688187,
    "lines": [
     "lic"
    ]

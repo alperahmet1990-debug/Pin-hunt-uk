@@ -1,24 +1,24 @@
 {
  "source": "staging_payload.json",
- "git_commit": "513e69669bad",
+ "git_commit": "aa5e479ddacd",
  "generated": "2026-10-18",
  "runs": [
   {
    "file": "run_01_wdw.json",
-   "pins": 1232,
-   "sets": 667,
-   "evidence": 9348,
-   "bytes": 3941717,
+   "pins": 1234,
+   "sets": 666,
+   "evidence": 9397,
+   "bytes": 3959446,
    "lines": [
     "wdw"
    ]
   },
   {
    "file": "run_02_wdw-to-dlr.json",
-   "pins": 1173,
-   "sets": 725,
-   "evidence": 9905,
-   "bytes": 4045453,
+   "pins": 1171,
+   "sets": 728,
+   "evidence": 9915,
+   "bytes": 4046961,
    "lines": [
     "wdw",
     "dlr"
@@ -26,10 +26,10 @@
   },
   {
    "file": "run_03_dlr-to-dlp.json",
-   "pins": 1253,
+   "pins": 1250,
    "sets": 647,
-   "evidence": 9804,
-   "bytes": 4129606,
+   "evidence": 9733,
+   "bytes": 4105458,
    "lines": [
     "dlr",
     "dlp"
@@ -37,10 +37,10 @@
   },
   {
    "file": "run_04_dlp-to-dsuk.json",
-   "pins": 1244,
-   "sets": 656,
-   "evidence": 11110,
-   "bytes": 4700959,
+   "pins": 1238,
+   "sets": 654,
+   "evidence": 11227,
+   "bytes": 4720036,
    "lines": [
     "dlp",
     "dsuk"
@@ -48,10 +48,10 @@
   },
   {
    "file": "run_05_dsuk-to-hkdl.json",
-   "pins": 1274,
-   "sets": 623,
-   "evidence": 10540,
-   "bytes": 4413517,
+   "pins": 1272,
+   "sets": 626,
+   "evidence": 10628,
+   "bytes": 4450659,
    "lines": [
     "dsuk",
     "dsus",
@@ -61,10 +61,10 @@
   },
   {
    "file": "run_06_hkdl-to-lic.json",
-   "pins": 1312,
-   "sets": 588,
-   "evidence": 11097,
-   "bytes": 4565976,
+   "pins": 1315,
+   "sets": 585,
+   "evidence": 10967,
+   "bytes": 4534621,
    "lines": [
     "hkdl",
     "tdr",
@@ -73,20 +73,20 @@
   },
   {
    "file": "run_07_lic.json",
-   "pins": 1055,
+   "pins": 1056,
    "sets": 528,
-   "evidence": 12425,
-   "bytes": 4819279,
+   "evidence": 12476,
+   "bytes": 4821346,
    "lines": [
     "lic"
    ]
   },
   {
    "file": "run_08_lic.json",
-   "pins": 1141,
-   "sets": 478,
-   "evidence": 11132,
-   "bytes": 4688187,
+   "pins": 1161,
+   "sets": 486,
+   "evidence": 11347,
+   "bytes": 4777175,
    "lines": [
     "lic"
    ]

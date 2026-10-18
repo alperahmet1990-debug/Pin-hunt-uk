@@ -576,7 +576,9 @@ export type PinSubmissionStatus =
 export interface PinSubmission {
   id: string;
   submittedBy: string;
+  /** '' when the contributor didn't name the pin (photo-only submission, migration 047). */
   proposedName: string;
+  /** '' when not given. */
   brand: string;
   seriesName?: string;
   releaseLocation?: string;
@@ -596,16 +598,36 @@ export interface PinSubmission {
   approvedPinhuntId?: string;
   /** Title of the catalogue pin this submission was credited on (set when merged/approved). */
   approvedPinTitle?: string;
+  /** When the contributor confirmed the photo rights; unset on rows from older app builds. */
+  rightsConfirmedAt?: string;
+  /** What the AI scan suggested at submission time — hints for review, never trusted. */
+  aiIdentification?: SubmissionAiIdentification;
+  /** The fields exactly as first submitted (write-once, migration 047). */
+  originalMetadata?: Record<string, unknown>;
   createdAt: string;
   updatedAt: string;
+}
+
+/** AI scan output saved on a submission (pin_submissions.ai_identification). */
+export interface SubmissionAiIdentification {
+  /** Top catalogue matches, best first (pinId = pinhunt_id). */
+  matches?: Array<{ pinId: string; confidence: number }>;
+  /** Field guesses the contributor was offered, whether or not they kept them. */
+  suggested?: {
+    name?: string;
+    brand?: string;
+    setName?: string;
+    characters?: string[];
+  };
 }
 
 /** Every pin_submissions field except the images — shared by CreatePinSubmissionInput
  *  (client uploads base64 itself) and the API server's path-based create call
  *  (server has already uploaded a Pixian-normalized image and just has a path). */
 export interface PinSubmissionMetadataInput {
-  proposedName: string;
-  brand: string;
+  /** Optional since migration 047: a photo alone is a valid submission. */
+  proposedName?: string;
+  brand?: string;
   seriesName?: string;
   releaseLocation?: string;
   releaseYear?: number;
@@ -616,6 +638,9 @@ export interface PinSubmissionMetadataInput {
   characterNames?: string[];
   notes?: string;
   status?: PinSubmissionStatus;
+  /** Set when the contributor ticked the image-rights confirmation. */
+  rightsConfirmed?: boolean;
+  aiIdentification?: SubmissionAiIdentification;
 }
 
 export interface CreatePinSubmissionInput extends PinSubmissionMetadataInput {

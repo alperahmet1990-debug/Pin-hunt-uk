@@ -13,6 +13,7 @@ import {
 } from "../services/google-vision";
 import { findCandidates } from "../services/scanCandidates";
 import { createStageTimer } from "../services/scanTiming";
+import { cachedResult, imageHash, recordUsage, withinDailyCap } from "../services/usage-caps";
 
 const router: IRouter = Router();
 
@@ -160,6 +161,17 @@ router.post("/scan/identify", requireUser, async (req, res) => {
     return;
   }
   const userId = (req as Request & { userId?: string }).userId ?? "unknown";
+
+  // The same photo again (a retry, or the add-pin flow re-checking a photo
+  // the scan screen already identified) gets the earlier answer: no AI
+  // calls, no cooldown, doesn't count towards the daily cap.
+  const photoHash = imageHash(imageBase64);
+  const cached = await cachedResult<{ matches: unknown[]; imageInsights: unknown }>(userId, "scan", photoHash);
+  if (cached) {
+    res.json({ ...cached, cached: true });
+    return;
+  }
+
   const last = lastScanAt.get(userId);
   if (last && Date.now() - last < SCAN_COOLDOWN_MS) {
     res.status(429).json({ error: "One moment — please wait a few seconds between scans." });
@@ -167,6 +179,14 @@ router.post("/scan/identify", requireUser, async (req, res) => {
   }
   lastScanAt.set(userId, Date.now());
   if (lastScanAt.size > 5000) lastScanAt.clear();
+
+  if (!(await withinDailyCap(userId, "scan"))) {
+    res.status(429).json({
+      error: "You've reached today's limit for photo identification. You can still add the pin without it.",
+      capReached: true,
+    });
+    return;
+  }
 
   if (!repository) {
     res.status(503).json({ error: "Pin catalogue is not available yet." });
@@ -455,11 +475,15 @@ Give a confidence above 85 only when a reference image visually confirms the mat
     }
 
     logTimings("ok");
-    res.json({
+    const result = {
       matches: matches.slice(0, 3),
       imageInsights: buildImageInsights(description, visionSignals),
-    });
+    };
+    void recordUsage(userId, "scan", photoHash, result);
+    res.json(result);
   } catch (err) {
+    // The upstream calls were still made (and billed), so they count.
+    void recordUsage(userId, "scan", photoHash);
     logTimings(isUpstreamTimeout(err) ? "timeout" : "error");
     if (isUpstreamTimeout(err)) {
       console.error("[scan] upstream timeout");

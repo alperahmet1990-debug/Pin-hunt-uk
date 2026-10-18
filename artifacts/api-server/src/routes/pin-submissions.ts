@@ -25,14 +25,29 @@
  * no watermark: the backstamp is evidence for the admin who checks the pin,
  * kept in the same private bucket and never published automatically.
  *
+ * Photo-only submissions (Early Contributor Programme, migration 047): the
+ * front photo is the only required input. Name, brand and everything else
+ * are optional; an unnamed submission is stored with NULLs and named by
+ * the admin. When the app sends `rightsConfirmed` it must be true, and a
+ * photo-only submission must send it. Older app builds that don't send it
+ * at all still work (rights_confirmed_at stays NULL for them). The AI
+ * scan's suggestions (`aiIdentification`) are stored, size-limited, as
+ * hints for the admin's duplicate check — never trusted or published.
+ *
+ * Cost controls (services/usage-caps.ts): Pixian runs at most once per
+ * identical photo (the preview is keyed by the photo's hash and reused),
+ * and a daily per-user cap applies to clean-ups and submissions. Hitting
+ * the clean-up cap never blocks a submission — the raw photo is kept.
+ *
  * Auth: requireUser (any signed-in collector) — the row lands with status
  * 'submitted', ready for the admin review queue.
  */
 import { Router, type IRouter, type Request, type Response, type NextFunction } from "express";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
-import { createSupabaseUserRepository, type EditionType } from "@workspace/pin-repository";
+import { createSupabaseUserRepository, type EditionType, type SubmissionAiIdentification } from "@workspace/pin-repository";
 import { pixianConfigured, normalizePinPhoto } from "../services/pixian";
 import { watermarkPinPhoto } from "../services/watermark";
+import { imageHash, recordUsage, withinDailyCap } from "../services/usage-caps";
 
 const router: IRouter = Router();
 
@@ -109,21 +124,80 @@ interface SubmitPinBody {
   frontDraftPath?: string;
   /** Optional back of the pin (#257), stored as taken for the admin. */
   backImageBase64?: string;
+  /** "I took this photo and PinHunt may use it" — see header. */
+  rightsConfirmed?: boolean;
+  /** What the AI scan suggested; sanitized by sanitizeAiIdentification(). */
+  aiIdentification?: unknown;
+}
+
+const str = (v: unknown, max = 200): string | undefined =>
+  typeof v === "string" && v.trim() ? v.trim().slice(0, max) : undefined;
+
+/**
+ * Keep only the expected shape, bounded: up to 5 matches and 10
+ * characters, short strings. Anything else is dropped rather than refused —
+ * these are hints, and a malformed hint must never block a submission.
+ */
+export function sanitizeAiIdentification(raw: unknown): SubmissionAiIdentification | undefined {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return undefined;
+  const r = raw as Record<string, unknown>;
+  const out: SubmissionAiIdentification = {};
+
+  if (Array.isArray(r.matches)) {
+    const matches = r.matches
+      .map((m) => {
+        const mm = (m ?? {}) as Record<string, unknown>;
+        const pinId = str(mm.pinId, 64);
+        const confidence = typeof mm.confidence === "number" && Number.isFinite(mm.confidence)
+          ? Math.max(0, Math.min(100, Math.round(mm.confidence)))
+          : 0;
+        return pinId ? { pinId, confidence } : null;
+      })
+      .filter((m): m is { pinId: string; confidence: number } => m !== null)
+      .slice(0, 5);
+    if (matches.length) out.matches = matches;
+  }
+
+  if (r.suggested && typeof r.suggested === "object" && !Array.isArray(r.suggested)) {
+    const sg = r.suggested as Record<string, unknown>;
+    const suggested: NonNullable<SubmissionAiIdentification["suggested"]> = {
+      name: str(sg.name),
+      brand: str(sg.brand, 100),
+      setName: str(sg.setName),
+      characters: Array.isArray(sg.characters)
+        ? sg.characters.map((c) => str(c, 80)).filter((c): c is string => !!c).slice(0, 10)
+        : undefined,
+    };
+    if (!suggested.characters?.length) delete suggested.characters;
+    for (const k of Object.keys(suggested) as Array<keyof typeof suggested>) {
+      if (suggested[k] === undefined) delete suggested[k];
+    }
+    if (Object.keys(suggested).length) out.suggested = suggested;
+  }
+
+  return out.matches || out.suggested ? out : undefined;
 }
 
 /**
  * Why a photo wasn't cleaned up, so the app can say so: "off" when the
  * clean-up service isn't set up on this server (e.g. staging), "failed"
- * when it was tried and didn't work for this photo.
+ * when it was tried and didn't work for this photo, "limit" when the
+ * user's daily clean-up cap is used up (older apps show it as "failed").
  */
-export type CleanupSkipped = "off" | "failed";
+export type CleanupSkipped = "off" | "failed" | "limit";
 
 /** Pixian-normalize, falling back to the raw photo (see header). */
 async function normalizeOrRaw(
   rawBuffer: Buffer,
   mimeType: string,
+  userId: string,
+  sha256: string,
 ): Promise<{ buffer: Buffer; cleaned: boolean; cleanupSkipped?: CleanupSkipped }> {
   if (!pixianConfigured()) return { buffer: rawBuffer, cleaned: false, cleanupSkipped: "off" };
+  if (!(await withinDailyCap(userId, "photo_cleanup"))) {
+    return { buffer: rawBuffer, cleaned: false, cleanupSkipped: "limit" };
+  }
+  void recordUsage(userId, "photo_cleanup", sha256);
   try {
     return { buffer: await normalizePinPhoto(rawBuffer, mimeType), cleaned: true };
   } catch (err) {
@@ -134,8 +208,11 @@ async function normalizeOrRaw(
 
 // Cleaned photos waiting for the submitter to confirm, in the private
 // pin-submissions bucket. Each user keeps at most one — a new preview
-// clears the old — so abandoned previews can't pile up.
+// clears the old — so abandoned previews can't pile up. The file is named
+// after the photo's hash, so previewing the same photo again (going back a
+// step, a retry) reuses the cleaned result instead of paying Pixian twice.
 const draftDir = (userId: string) => `${userId}/drafts`;
+const CLEANED_SUFFIX = "-clean.jpg";
 
 /**
  * POST /pin-submissions/preview
@@ -153,13 +230,28 @@ router.post("/pin-submissions/preview", requireUser, async (req: UserRequest, re
       return;
     }
     const userId = req.userId!;
-    const { buffer, cleaned, cleanupSkipped } = await normalizeOrRaw(Buffer.from(frontImageBase64, "base64"), mimeType);
-
+    const sha = imageHash(frontImageBase64);
     const bucket = getStorageClient().storage.from("pin-submissions");
     const { data: old } = await bucket.list(draftDir(userId));
+
+    // Same photo, already cleaned: serve it again.
+    const reusable = old?.find((f) => f.name === `${sha}${CLEANED_SUFFIX}`);
+    if (reusable) {
+      const reusePath = `${draftDir(userId)}/${reusable.name}`;
+      const { data: blob } = await bucket.download(reusePath);
+      if (blob) {
+        const preview = await watermarkPinPhoto(Buffer.from(await blob.arrayBuffer()));
+        res.json({ draftPath: reusePath, previewBase64: preview.toString("base64"), cleaned: true, reused: true });
+        return;
+      }
+    }
+
+    const { buffer, cleaned, cleanupSkipped } = await normalizeOrRaw(
+      Buffer.from(frontImageBase64, "base64"), mimeType, userId, sha);
     if (old?.length) await bucket.remove(old.map((f) => `${draftDir(userId)}/${f.name}`));
 
-    const draftPath = `${draftDir(userId)}/${Date.now()}.jpg`;
+    // Only a cleaned result is worth reusing; a raw one is retried next time.
+    const draftPath = `${draftDir(userId)}/${cleaned ? `${sha}${CLEANED_SUFFIX}` : `${Date.now()}.jpg`}`;
     const { error } = await bucket.upload(draftPath, buffer, { contentType: "image/jpeg", upsert: false });
     if (error) {
       res.status(500).json({ error: `Could not store your photo: ${error.message}` });
@@ -178,11 +270,26 @@ router.post("/pin-submissions", requireUser, async (req: UserRequest, res: Respo
       proposedName, brand, seriesName, releaseLocation, releaseYear,
       editionType, editionSize, facNumber, sku, characterNames, notes,
       frontImageBase64, mimeType = "image/jpeg", frontDraftPath, backImageBase64,
+      rightsConfirmed, aiIdentification,
     } = req.body as SubmitPinBody;
 
-    if (!proposedName?.trim()) { res.status(400).json({ error: "proposedName is required" }); return; }
-    if (!brand?.trim()) { res.status(400).json({ error: "brand is required" }); return; }
     if (!frontImageBase64 && !frontDraftPath) { res.status(400).json({ error: "A front photo is required" }); return; }
+    if (proposedName !== undefined && typeof proposedName !== "string") {
+      res.status(400).json({ error: "proposedName must be a string" });
+      return;
+    }
+    if (brand !== undefined && typeof brand !== "string") {
+      res.status(400).json({ error: "brand must be a string" });
+      return;
+    }
+    if (rightsConfirmed !== undefined && rightsConfirmed !== true) {
+      res.status(400).json({ error: "Please confirm you took this photo and PinHunt may use it." });
+      return;
+    }
+    if (!proposedName?.trim() && rightsConfirmed !== true) {
+      res.status(400).json({ error: "Please confirm you took this photo and PinHunt may use it." });
+      return;
+    }
     if (backImageBase64 !== undefined && typeof backImageBase64 !== "string") {
       res.status(400).json({ error: "backImageBase64 must be a string" });
       return;
@@ -193,6 +300,10 @@ router.post("/pin-submissions", requireUser, async (req: UserRequest, res: Respo
     }
 
     const userId = req.userId!;
+    if (!(await withinDailyCap(userId, "submission"))) {
+      res.status(429).json({ error: "You've added a lot of pins today — thank you! Please try again tomorrow.", capReached: true });
+      return;
+    }
     const submissionId = generateSubmissionId();
     const storagePath = `${userId}/${submissionId}/front.jpg`;
     const bucket = getStorageClient().storage.from("pin-submissions");
@@ -231,7 +342,8 @@ router.post("/pin-submissions", requireUser, async (req: UserRequest, res: Respo
         res.status(413).json({ error: "Photo is too large — please retake it." });
         return;
       }
-      const { buffer } = await normalizeOrRaw(Buffer.from(frontImageBase64, "base64"), mimeType);
+      const { buffer } = await normalizeOrRaw(
+        Buffer.from(frontImageBase64, "base64"), mimeType, userId, imageHash(frontImageBase64));
       const { error: uploadError } = await bucket
         .upload(storagePath, buffer, { contentType: "image/jpeg", upsert: true });
       if (uploadError) {
@@ -245,8 +357,8 @@ router.post("/pin-submissions", requireUser, async (req: UserRequest, res: Respo
     const submission = await userRepo.createPinSubmissionFromPaths(
       userId,
       {
-        proposedName: proposedName.trim(),
-        brand: brand.trim(),
+        proposedName: proposedName?.trim() || undefined,
+        brand: brand?.trim() || undefined,
         seriesName: seriesName?.trim() || undefined,
         releaseLocation: releaseLocation?.trim() || undefined,
         releaseYear,
@@ -257,6 +369,8 @@ router.post("/pin-submissions", requireUser, async (req: UserRequest, res: Respo
         characterNames,
         notes: notes?.trim() || undefined,
         status: "submitted",
+        rightsConfirmed: rightsConfirmed === true,
+        aiIdentification: sanitizeAiIdentification(aiIdentification),
       },
       submissionId,
       storagePath,

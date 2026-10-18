@@ -14,6 +14,7 @@ import type {
   CreateExternalSaleListingInput,
   CreatePinSubmissionInput,
   PinSubmissionMetadataInput,
+  SubmissionAiIdentification,
   DuplicateCandidate,
   DuplicateCandidateResult,
   EditionType,
@@ -64,7 +65,7 @@ import type {
   UpdateUserPinInput,
   UserPin,
 } from './types';
-import type { Database } from './database.types';
+import type { Database, Json } from './database.types';
 
 // crypto.randomUUID() is not available in all React Native runtimes, so pin
 // submission IDs use a simple RFC 4122 v4 generator instead.
@@ -178,8 +179,8 @@ function rowToPinSubmission(row: Record<string, unknown>): PinSubmission {
   return {
     id: row.id as string,
     submittedBy: row.submitted_by as string,
-    proposedName: row.proposed_name as string,
-    brand: row.brand as string,
+    proposedName: (row.proposed_name as string | null) ?? '',
+    brand: (row.brand as string | null) ?? '',
     seriesName: (row.series_name as string | null) ?? undefined,
     releaseLocation: (row.release_location as string | null) ?? undefined,
     releaseYear: (row.release_year as number | null) ?? undefined,
@@ -196,6 +197,9 @@ function rowToPinSubmission(row: Record<string, unknown>): PinSubmission {
     approvedPinId: (row.approved_pin_id as string | null) ?? undefined,
     approvedPinhuntId: (row.approved_pin as { pinhunt_id: string } | null)?.pinhunt_id ?? undefined,
     approvedPinTitle: (row.approved_pin as { title?: string } | null)?.title ?? undefined,
+    rightsConfirmedAt: (row.rights_confirmed_at as string | null) ?? undefined,
+    aiIdentification: (row.ai_identification as SubmissionAiIdentification | null) ?? undefined,
+    originalMetadata: (row.original_metadata as Record<string, unknown> | null) ?? undefined,
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
   };
@@ -847,8 +851,8 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       .insert({
         id: submissionId,
         submitted_by: userId,
-        proposed_name: input.proposedName,
-        brand: input.brand,
+        proposed_name: input.proposedName || null,
+        brand: input.brand || null,
         series_name: input.seriesName ?? null,
         release_location: input.releaseLocation ?? null,
         release_year: input.releaseYear ?? null,
@@ -861,6 +865,10 @@ class SupabaseUserPinRepository implements IUserPinRepository {
         back_image_path: backImagePath,
         notes: input.notes ?? null,
         status: (input.status ?? 'draft') as PinSubmissionStatus,
+        // Columns from migration 047, sent only when used so a database
+        // without 047 still accepts ordinary named submissions.
+        ...(input.rightsConfirmed ? { rights_confirmed_at: new Date().toISOString() } : {}),
+        ...(input.aiIdentification ? { ai_identification: input.aiIdentification as unknown as Json } : {}),
       })
       .select()
       .single();

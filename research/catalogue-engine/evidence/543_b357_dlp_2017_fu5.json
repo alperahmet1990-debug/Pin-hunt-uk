@@ -1,0 +1,430 @@
+{
+ "packet_id": "543_b357_dlp_2017_fu5",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+   "title": "Disneyland Paris Pins For March 2017",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2017-03-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+   "title": "Disneyland Paris Pins For July 2017 - Animals, Cars, Droids & Fireworks",
+   "publisher": "Dedicated to DLP",
+   "published_date": "2017-07-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-july-2017-pins",
+   "title": "Disneyland Paris July 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://racontemoidisneyland.wordpress.com/2017/06/07/le-pin-trading/",
+   "title": "Le Pin Trading",
+   "publisher": "Raconte-moi Disneyland (WordPress)",
+   "published_date": "2017-06-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.fichier-pdf.fr/2017/07/31/pin-trading-tutoriel-082017/",
+   "title": "pin_trading_tutoriel_082017.pdf",
+   "publisher": "fichier-pdf.fr (fan pin trading guide, Aug 2017)",
+   "published_date": "2017-07-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2017/march-18-2017-releases",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris 18 March 2017 releases",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "further 25th anniversary pins due 18 Mar; unlike the first batch these do not say so on the pin (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-18",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "18 Mar 2017 (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "Mickey parade pin and Alice LE pin described as separate items (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2017/ptn-july-2017",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2017-07-28",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-july-2017-pins",
+     "method": "search_snippet",
+     "note": "next Pin Trading Night 28 Jul 2017 (second source for the date; pins not named) (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Sequoia Lodge",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-july-2017-pins",
+     "method": "search_snippet",
+     "note": "PTN venue Sequoia Lodge (search-engine summary of page, not quoted text)"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2017/march-18-2017-releases/mickey-parade-float",
+   "set_key": "dlp/2017/march-18-2017-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "25th Anniversary Mickey parade pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "Mickey parade pin in the 18 Mar release (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "Mickey on a parade float"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "reviewer wished Mickey had been a separate pin from the float, so Mickey and float share one pin (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey in costume on a parade float; costume blends into the float background",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "reviewer paraphrase (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-18",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "18 Mar 2017 release batch (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "Pueblo Trading Post exclusive (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/march-18-2017-releases/alice",
+   "set_key": "dlp/2017/march-18-2017-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice limited edition pin",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "limited edition Alice pin in the release; reviewer saw no link to the 25th anniversary (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "Alice"
+    },
+    {
+     "field": "main_character",
+     "value": "Alice",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "Alice"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "described as limited edition (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-18",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "listed with the 18 Mar batch (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-march-2017-25th-anniversary-star-tours-beauty-and-the-beast/",
+     "method": "search_snippet",
+     "note": "2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2017/july-2017-releases/cars-3",
+   "set_key": "dlp/2017/july-2017-releases",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2017-animals-cars-droids-fireworks/",
+     "method": "search_snippet",
+     "note": "22 Jul: two LE pins believed part of ongoing series, one a Cars 3 pin, the other a float pin (search-engine summary of page, not quoted text)"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2017/march-18-2017-releases/mickey-parade-float",
+   "field": "edition_size",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "field note: edition size and price not stated; Pueblo exclusive only. Distinct by date/venue from 12 Apr official Mickey (Disney Gallery) and countdown Mickeys"
+  },
+  {
+   "key": "dlp/2017/march-18-2017-releases/mickey-parade-float",
+   "field": "identity",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "field note: may be the first of the 2017 parade-float LE series (Chip&Dale Apr, Peter Pan, Hook, Maleficent) - not stated; single source (DtDLP Mar)"
+  },
+  {
+   "key": "dlp/2017/march-18-2017-releases/alice",
+   "field": "release_date",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "field note: summary places the Alice LE in the 18 Mar batch; exact day not quoted. Distinct from Aug 2016 Alice 65th LE 600 and Apr 2017 Alice Tsum Tsum"
+  },
+  {
+   "key": "dlp/2017/march-18-2017-releases/alice",
+   "field": "edition_size",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "field note: edition size, design and price not found (2 queries); single source"
+  },
+  {
+   "key": "dlp/2017/july-2017-releases/cars-3",
+   "field": "characters",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "field note: LE status from summary only; characters, edition size, price still not stated"
+  },
+  {
+   "key": "dlp/2017/july-2017-releases",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "lead: DtDLP 22 Jul second LE was a float pin (series continuation); summary guesses Peter Pan float but text unclear - not created; may duplicate november-2017-releases/peter-pan-parade-float"
+  },
+  {
+   "key": "dlp/2017/july-2017-releases",
+   "field": "lead",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "Disney Pins Blog July 2017 names Moana, Peter Pan, Cars 3 themes only (corroborates DtDLP themes, no per-pin detail); a Bambi/Winnie the Pooh mention is from an unclear post - not claimed"
+  },
+  {
+   "key": "dlp/2017/ptn-july-2017",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "hold kept (472): structure now corroborated by two independent 2017 guides (3 round PTN pins + Refresh pin per night; usually 3 characters from one film), but per-pin names still only from passiondlp"
+  },
+  {
+   "key": "dlp/2017/ptn-july-2017",
+   "field": "edition_size",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "field note: Aug 2017 fan guide (fichier-pdf) says PTN pins were LE 400 at EUR 13.99 each - a general statement, not event-specific; not claimed per pin"
+  },
+  {
+   "key": "dlp/2017/ptn-august-2017",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "hold kept (472): structure now corroborated by two independent 2017 guides (3 round PTN pins + Refresh pin per night; usually 3 characters from one film), but per-pin names still only from passiondlp"
+  },
+  {
+   "key": "dlp/2017/ptn-august-2017",
+   "field": "edition_size",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "field note: Aug 2017 fan guide (fichier-pdf) says PTN pins were LE 400 at EUR 13.99 each - a general statement, not event-specific; not claimed per pin"
+  },
+  {
+   "key": "dlp/2017/ptn-october-2017",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "hold kept (472): structure now corroborated by two independent 2017 guides (3 round PTN pins + Refresh pin per night; usually 3 characters from one film), but per-pin names still only from passiondlp"
+  },
+  {
+   "key": "dlp/2017/ptn-october-2017",
+   "field": "edition_size",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "field note: Aug 2017 fan guide (fichier-pdf) says PTN pins were LE 400 at EUR 13.99 each - a general statement, not event-specific; not claimed per pin"
+  },
+  {
+   "key": "dlp/2017/ptn-november-2017",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "PTN 24 Nov 2017 pins still unnamed; passiondlp Q4 2017 page (arc026) not indexed; passiondlp 2017 poster archive lists a Nov poster but contents not in snippet"
+  },
+  {
+   "key": "dlp/2017/ptn-may-2017",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "May PTN (26 May) pins still unnamed; disneypinsblog May lists Star Wars and Pirates themes only"
+  },
+  {
+   "key": "dlp/2017/pin-trading-event-december-2017",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "17 Dec 25th anniversary event pins still not named; Dec monthly preview mentions couples, Stitch, Star Wars only"
+  },
+  {
+   "key": "dlp/2017/pin-trading-day-september-2017",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "hold kept (472): passiondlp quoted line again lists Tinker Bell (giveaway), Snow White, Cinderella, Aurora; no edition sizes; no new independent per-pin source"
+  },
+  {
+   "key": "dlp/2017/cast-member-goofy-2017/goofy",
+   "field": "edition_size",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "field note: passiondlp quoted page text reads 'Dingo (3017 exemplaires)' - figure is the page's own, not a summary typo; still single source, may be a play on 2017"
+  },
+  {
+   "key": "dlp/2017/april-2017-le",
+   "field": "edition_size",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "field note: TTM April summary again: 5 LE pins of 700 each (anniversary batch) and 12 Apr Mickey at Disney Gallery; summary treats PTD 600/500 as a different release - conflict likely resolved by separating them, not confirmed"
+  },
+  {
+   "key": "dlp/2017/june-2017-releases",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "still teaser only (dein-dlrp: Alice collection, emoticon pins, 4 anniversary pins, a Cars pin); no dein-dlrp/TTM/DtDLP June 2017 page indexed; Disney Store EU emoji 2-pin sets still undated"
+  },
+  {
+   "key": "dlp/2017/once-upon-a-star-june-2017",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "24 Jun 2017 Once Upon a Star event re-confirmed (Raconte-moi Disneyland, Disney Pins Blog, Newport Bay Club); no pins named - set not created"
+  },
+  {
+   "key": "dlp/2017/september-15-2017-releases",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "mystery designs still unnamed; only TTM pre-release line (logo + all others mystery)"
+  },
+  {
+   "key": "dlp/2017/september-2017-releases",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "runDisney eleven pins still unnamed; only Castle to Chateau 2017 named (existing 227 key)"
+  },
+  {
+   "key": "dlp/2017/star-wars-pin-lithograph-december-2017",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "fourth motif and 7 Nov set still unnamed. lead: Disney Store EU 'Disneyland Paris Star Wars Stormtrooper Sketch-Style Pin' (undated) - not linked to the litho set"
+  },
+  {
+   "key": "dlp/2017/march-25-2017-releases",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "second Star Tours pin is the 26 Mar LE 1000 already keyed in 502 (mintinbox re-surfaced, no new facts)"
+  },
+  {
+   "key": "dlp/2017/beauty-and-the-beast-le-set-2017",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "hold kept (435): no DLP source for an LE 300 BatB set; Disney Store US live-action 3-pin LE 1000 set (Jan, USD 79.95) still not linked"
+  },
+  {
+   "key": "dlp/2017/25th-anniversary-lady-castle/lady",
+   "field": "release_year",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "hold kept (435): pin back reads LE X/700 per a listing; DtDLP 11 Mar LE 700 pin not named as Lady - no new evidence"
+  },
+  {
+   "key": "dlp/2017/minnie-signature-haute-couture-2017",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "hold kept (523): no new DLP LE 300 source found"
+  },
+  {
+   "key": "dlp/2017/oe-set/coco-4-pin-set-2017",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "hold kept (435): not re-searched (budget)"
+  },
+  {
+   "key": "dlp/2017/april-2017-le/marie-chateau",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "hold kept (435): no new source; Disney Store EU Marie mini pin is a different, undated item"
+  },
+  {
+   "key": "dlp/2017/coco-october-2017/miguel-full-length",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "hold kept (435): not re-searched (budget)"
+  },
+  {
+   "key": "dlp/2017/spring-2017-le/tinker-bell-lamppost",
+   "field": "members",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "hold kept (472/502): no second source"
+  },
+  {
+   "key": "dlp/2017/st-patricks-day-2017/st-patricks-day-pin",
+   "field": "edition_size",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "field note: 700 still single-source (DtDLP); not re-found"
+  },
+  {
+   "key": "lic/2017",
+   "field": "lead",
+   "searched": "WebSearch standard; see discovery_notes",
+   "note": "no new licensed DLP-related 2017 leads"
+  }
+ ],
+ "discovery_notes": "Follow-up 5 of B021 (DLP 2017); reuses keys from 227/435/472/502/523. 30 WebSearch calls (limit reached), standard mode, blocked domains passed; all search_snippet, page_readable false; most values from search-engine summaries. New: 18 Mar 2017 batch (Mickey parade pin, Pueblo exclusive; Alice LE pin) from DtDLP March; Cars 3 22 Jul LE status; second source for PTN 28 Jul date/venue; PTN structure (3 round pins + Refresh) corroborated by two 2017 guides. No holds released. passiondlp Q2/Q4 2017 (arc024/arc026) and dein-dlrp Mar/May/Jun/Jul/Sep/Nov pages still not indexed; passiondlp 2017 poster archive (pins/archives/arc2017/archive2017.php) exists but only image posters."
+}

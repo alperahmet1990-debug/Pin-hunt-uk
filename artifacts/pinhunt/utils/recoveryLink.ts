@@ -28,6 +28,35 @@ export function parseRecoveryLink(url: string | null | undefined): RecoveryLink 
   return code ? { kind: 'code', code } : null;
 }
 
+export type ConfirmLink = RecoveryLink;
+
+/**
+ * Extracts the session from a sign-up confirmation deep link
+ * (`pinhunt://confirm#access_token=…&type=signup`), or null if it is not one.
+ * Supabase has already confirmed the email by the time the app opens; the
+ * session only spares the user a manual sign-in.
+ */
+export function parseConfirmLink(url: string | null | undefined): ConfirmLink | null {
+  if (!url || !/^[a-z][a-z0-9+.-]*:\/\/\/?confirm(?:[/?#]|$)|\/confirm(?:[/?#]|$)/i.test(url)) {
+    return null;
+  }
+  const hashIdx = url.indexOf('#');
+  const queryIdx = url.indexOf('?');
+  const fragment = hashIdx >= 0 ? url.slice(hashIdx + 1) : '';
+  const query =
+    queryIdx >= 0 ? url.slice(queryIdx + 1, hashIdx > queryIdx ? hashIdx : undefined) : '';
+
+  const frag = new URLSearchParams(fragment);
+  const accessToken = frag.get('access_token');
+  const refreshToken = frag.get('refresh_token');
+  const type = frag.get('type');
+  if (accessToken && refreshToken && (type === 'signup' || type === 'email')) {
+    return { kind: 'tokens', accessToken, refreshToken };
+  }
+  const code = new URLSearchParams(query).get('code');
+  return code ? { kind: 'code', code } : null;
+}
+
 export const UPDATE_PASSWORD_ROUTE = '/(auth)/update-password';
 
 export type GuardTarget =

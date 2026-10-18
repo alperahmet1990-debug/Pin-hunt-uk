@@ -1,4 +1,4 @@
-import { parseRecoveryLink, resolveGuardTarget, UPDATE_PASSWORD_ROUTE } from '../recoveryLink';
+import { parseConfirmLink, parseRecoveryLink, resolveGuardTarget, UPDATE_PASSWORD_ROUTE } from '../recoveryLink';
 import { redirectSystemPath } from '../../app/+native-intent';
 
 describe('parseRecoveryLink', () => {
@@ -15,6 +15,23 @@ describe('parseRecoveryLink', () => {
     expect(parseRecoveryLink('pinhunt://pin/1#access_token=a&refresh_token=r&type=recovery')).toBeNull();
     expect(parseRecoveryLink('pinhunt://reset')).toBeNull();
     expect(parseRecoveryLink(null)).toBeNull();
+  });
+});
+
+describe('parseConfirmLink', () => {
+  it('reads signup tokens from the fragment', () => {
+    expect(
+      parseConfirmLink('pinhunt://confirm#access_token=a&refresh_token=r&type=signup'),
+    ).toEqual({ kind: 'tokens', accessToken: 'a', refreshToken: 'r' });
+  });
+  it('reads a PKCE code from the query', () => {
+    expect(parseConfirmLink('pinhunt://confirm?code=abc')).toEqual({ kind: 'code', code: 'abc' });
+  });
+  it('rejects recovery links, other paths and empty input', () => {
+    expect(parseConfirmLink('pinhunt://confirm#access_token=a&refresh_token=r&type=recovery')).toBeNull();
+    expect(parseConfirmLink('pinhunt://reset#access_token=a&refresh_token=r&type=signup')).toBeNull();
+    expect(parseConfirmLink('pinhunt://confirm')).toBeNull();
+    expect(parseConfirmLink(null)).toBeNull();
   });
 });
 
@@ -47,6 +64,9 @@ describe('redirectSystemPath', () => {
     expect(redirectSystemPath({ path: 'pinhunt://reset#access_token=a', initial: true })).toBe(UPDATE_PASSWORD_ROUTE);
     expect(redirectSystemPath({ path: '/reset', initial: false })).toBe(UPDATE_PASSWORD_ROUTE);
     expect(redirectSystemPath({ path: '/pin/1', initial: false })).toBe('/pin/1');
+  });
+  it('maps the signup confirmation link to login', () => {
+    expect(redirectSystemPath({ path: 'pinhunt://confirm#access_token=a', initial: true })).toBe('/(auth)/login');
   });
 });
 

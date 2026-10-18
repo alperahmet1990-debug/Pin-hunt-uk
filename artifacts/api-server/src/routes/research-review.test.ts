@@ -121,6 +121,23 @@ describe("research review routes — flow", () => {
     }
   });
 
+  it("pin direct check: marketplaces never count (eBay refused by the URL check, Whatnot stored unclassified with counts:false)", async () => {
+    await request(app).post("/api/admin/research/runs").set(auth).send({ run: payload });
+    const zazu = tables.catalogue_candidates.find(c => c.research_key === "brush-of-magic/mystery-series-3/zazu")!;
+    const check = (u: string) => request(app).post(`/api/admin/research/candidates/${zazu.id}/direct-check`).set(auth)
+      .send({ fields: ["characters"], sourceUrl: u });
+    for (const url of ["https://www.ebay.co.uk/itm/123456", "https://m.ebay.com/itm/123456"]) {
+      expect((await check(url)).status).toBe(400);
+      expect(tables.catalogue_evidence.some(e => e.source_url === url)).toBe(false);
+    }
+    const url = "https://www.whatnot.com/live/abc";
+    const res = await check(url);
+    expect(res.status).toBe(200);
+    expect(res.body.counts).toBe(false);
+    const last = tables.catalogue_evidence.filter(e => e.method === "human_direct_check" && e.source_url === url).at(-1)!;
+    expect(last.source_class).toBe("unclassified");
+  });
+
   it("loads a run, then enforces direct check → decision", async () => {
     const load = await request(app).post("/api/admin/research/runs").set(auth).send({ run: payload });
     expect(load.status).toBe(200);

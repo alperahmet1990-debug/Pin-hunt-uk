@@ -27,6 +27,10 @@ const FAN = [
 const LEAD_ONLY = [
   "disneypinventory.com", "disneypinforum.com", "reddit.com", "facebook.com", "instagram.com", "threads.com",
   "x.com", "twitter.com", "fandom.com", "medium.com",
+  // Marketplaces: seller-written listing text is never evidence on its own.
+  "ebay.co.uk", "ebay.com", "ebay.fr", "ebay.de", "ebay.it", "ebay.es", "ebay.com.au", "ebay.ca",
+  "vinted.co.uk", "vinted.fr", "vinted.com", "vinted.de", "whatnot.com", "mercari.com", "depop.com",
+  "etsy.com", "poshmark.com",
 ];
 const EXCLUDED = ["pinandpop.com", "pinpics.com", "pintradingdb.com", "stewpins.com"];
 

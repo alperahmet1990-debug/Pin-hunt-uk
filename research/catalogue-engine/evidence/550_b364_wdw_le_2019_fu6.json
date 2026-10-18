@@ -1,0 +1,765 @@
+{
+ "packet_id": "backfill-b364-wdw-le-2019-fu6",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b364",
+ "discovery_notes": "Follow-up 6 of B002 (WDW LE 2019). 30 web searches. New: Pop-Up #8 Beauty and the Beast and #11 Tangled (fu5 holds released on new per-pin text from DPB/WDWNT); Spring Break 2019 Timon & Pumbaa (WDW LE 2500); Presidents Day 2019 Muppets (shared, dlr variant); Walt Disney Day 2019 Steamboat Willie (edition unknown); Disney Visa Cardmember Steamboat Willie LR. Corroboration: Vintage Vinyl #4/#5 months (WDWNT), RotR mystery shop. Peter Pan #1 and Alice #2 holds kept.",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-3/",
+   "title": "New Disney Pins August 2019 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+   "title": "PHOTOS: November Pin Releases for Walt Disney World and Disneyland",
+   "publisher": "WDW News Today",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/pin-trading-pop-up-collection/",
+   "title": "Pin Trading Pop Up Collection Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+   "title": "New Disney Pins February 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+   "title": "New Disney Pins February 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-steamboat-willie-disney-visa-cardmember-pin/",
+   "title": "Mickey Mouse Steamboat Willie Disney Visa Cardmember Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-star-wars-galaxys-edge-grand-opening-at-disneys-hollywood-studios/",
+   "title": "PHOTOS: Every Piece of Merchandise (with Prices) from Star Wars: Galaxy's Edge Grand Opening at Disney's Hollywood Studios",
+   "publisher": "WDW News Today",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/04/april-pin-releases-for-walt-disney-world-disneyland-resort-features-easter-exclusives-and-star-wars-galaxys-edge-countdown-pin/",
+   "title": "April Pin Releases for Walt Disney World, Disneyland Resort Features Easter Exclusives and Star Wars: Galaxy's Edge Countdown Pin",
+   "publisher": "WDW News Today",
+   "published_date": "2019-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/05/may-pin-releases-for-walt-disney-world-disneyland-feature-haunted-mansion-dj-r3x-galaxys-edge-countdown-pins-and-more/",
+   "title": "May Pin Releases for Walt Disney World, Disneyland Feature Haunted Mansion, DJ R3X Galaxy's Edge Countdown Pins, and More!",
+   "publisher": "WDW News Today",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2019/rise-of-the-resistance-mystery",
+   "parent_set_key": "wdw/2019/galaxys-edge-opening-day",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Once Upon A Time, Disney's Hollywood Studios",
+     "source_url": "https://wdwnt.com/2019/08/photos-every-piece-of-merchandise-with-prices-from-star-wars-galaxys-edge-grand-opening-at-disneys-hollywood-studios/",
+     "method": "search_snippet",
+     "note": "summarized snippet says the mystery collection was sold at Once Upon A Time (DHS)"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/spring-break-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Spring Break 2019 pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "single Spring Break 2019 pin listed for WDW"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "available at WDW"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/presidents-day-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Presidents' Day 2019 pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "single Disney Parks Presidents Day 2019 pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "shared DL/WDW release; keyed under wdw"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/walt-disney-day-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Walt Disney Day 2019 pin",
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "WDWNT mentions this year's Walt Disney Day pin"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/disney-visa-cardmember-steamboat-willie",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse Steamboat Willie Disney Visa Cardmember Pin",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-steamboat-willie-disney-visa-cardmember-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-steamboat-willie-disney-visa-cardmember-pin/",
+     "method": "search_snippet",
+     "note": "limited release per summarized snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney, Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-steamboat-willie-disney-visa-cardmember-pin/",
+     "method": "search_snippet",
+     "note": "sold at shopDisney.com and both US resorts"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2019/pin-trading-pop-up-books/beauty-and-the-beast",
+   "set_key": "wdw/2019/pin-trading-pop-up-books",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Pop Up - Beauty and the Beast",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-3/",
+     "method": "search_snippet",
+     "note": "listed in DPB Aug 11-17 2019 weekly post"
+    },
+    {
+     "field": "set_position",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-3/",
+     "method": "search_snippet",
+     "note": "eighth pin in the monthly Pin Trading Pop-Up Books collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-3/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-3/",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-3/",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-3/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-15",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-3/",
+     "method": "search_snippet",
+     "note": "available Aug 15 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-3/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-3/",
+     "method": "search_snippet",
+     "note": "shared DL/WDW release; keyed under wdw"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-august-2019-week-3/",
+     "method": "search_snippet",
+     "note": "single monthly series pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/pin-trading-pop-up-books/tangled",
+   "set_key": "wdw/2019/pin-trading-pop-up-books",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tangled Pop-Up",
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "named in WDWNT November 2019 WDW/DL release preview"
+    },
+    {
+     "field": "pin_name",
+     "value": "Tangled Pin Trading Pop-Up Book Pin",
+     "source_url": "https://disneypinsblog.com/tag/pin-trading-pop-up-collection/",
+     "method": "search_snippet",
+     "note": "title in DPB tag archive under Nov 2019 week 3 (listing dated Nov 19)"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-21",
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "listed in the Nov 21 'pinpalooza' line-up"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/spring-break-2019/timon-and-pumbaa",
+   "set_key": "wdw/2019/spring-break-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Spring Break 2019",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "Spring Break 2019 pin in DPB Feb 24-Mar 2 2019 post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Timon",
+      "Pumbaa"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "features Pumbaa and Timon (The Lion King)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "limited to 2,500"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-28",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "available at WDW Feb 28 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "WDW"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-4",
+     "method": "search_snippet",
+     "note": "described as a single pin featuring both characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/presidents-day-2019/the-muppets",
+   "set_key": "wdw/2019/presidents-day-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Presidents' Day 2019",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "Disney Parks Presidents Day 2019 pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "The Muppets"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "features The Muppets"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "available Feb 14 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "available at both resorts; keyed under wdw"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/walt-disney-day-2019/steamboat-willie",
+   "set_key": "wdw/2019/walt-disney-day-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Walt Disney Day 2019",
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "this year's Walt Disney Day pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "features Steamboat Willie",
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "design subject is Steamboat Willie"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "2019 Walt Disney Day pin in the Nov 2019 WDW/DL preview"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/disney-visa-cardmember-steamboat-willie/mickey-mouse",
+   "set_key": "wdw/2019/disney-visa-cardmember-steamboat-willie",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Steamboat Willie Disney Visa Cardmember Pin",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-steamboat-willie-disney-visa-cardmember-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-mouse-steamboat-willie-disney-visa-cardmember-pin/",
+     "method": "search_snippet",
+     "note": "Mickey as Steamboat Willie"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-steamboat-willie-disney-visa-cardmember-pin/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-steamboat-willie-disney-visa-cardmember-pin/",
+     "method": "search_snippet",
+     "note": "$12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-steamboat-willie-disney-visa-cardmember-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-15",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-steamboat-willie-disney-visa-cardmember-pin/",
+     "method": "search_snippet",
+     "note": "available from Feb 15 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-steamboat-willie-disney-visa-cardmember-pin/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney, Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-steamboat-willie-disney-visa-cardmember-pin/",
+     "method": "search_snippet",
+     "note": "sold online and at both US resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/vintage-vinyl/lady-and-the-tramp",
+   "set_key": "wdw/2019/vintage-vinyl",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-04",
+     "source_url": "https://wdwnt.com/2019/04/april-pin-releases-for-walt-disney-world-disneyland-resort-features-easter-exclusives-and-star-wars-galaxys-edge-countdown-pin/",
+     "method": "search_snippet",
+     "note": "WDWNT April 2019 WDW/DL preview says this month's Vintage Vinyl is Lady and the Tramp"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/vintage-vinyl/snow-white",
+   "set_key": "wdw/2019/vintage-vinyl",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-05",
+     "source_url": "https://wdwnt.com/2019/05/may-pin-releases-for-walt-disney-world-disneyland-feature-haunted-mansion-dj-r3x-galaxys-edge-countdown-pins-and-more/",
+     "method": "search_snippet",
+     "note": "WDWNT May 2019 WDW/DL preview says the month's Vintage Vinyl is a Snow White record"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2019/pin-trading-pop-up-books/beauty-and-the-beast",
+   "field": "pin_name",
+   "searched": "DPB Aug 2019 wk3 post; 1 query",
+   "note": "released: fu5 hold (BatB tie from a reader comment). DPB Aug 11-17 weekly post body names #8 BatB, LE 4000, $17.99, DL+WDW Aug 15 (summarized snippet)"
+  },
+  {
+   "key": "wdw/2019/pin-trading-pop-up-books/beauty-and-the-beast",
+   "field": "release_date",
+   "searched": "same",
+   "note": "field note: fu5 saw an Aug 12 tag-archive listing date; Aug 15 is the stated availability date"
+  },
+  {
+   "key": "dlr/2019/pin-trading-pop-up-books/beauty-and-the-beast",
+   "field": "variant",
+   "searched": "same",
+   "note": "variant: same pin as wdw/2019/pin-trading-pop-up-books/beauty-and-the-beast (shared DL/WDW release)"
+  },
+  {
+   "key": "wdw/2019/pin-trading-pop-up-books/tangled",
+   "field": "pin_name",
+   "searched": "WDWNT Nov 2019 preview; DPB tag archive; 3 queries",
+   "note": "released: fu5 hold (DPB title only). WDWNT Nov 2019 WDW/DL preview names a Tangled Pop-Up in the Nov 21 line-up - preferred-source per-pin mention"
+  },
+  {
+   "key": "wdw/2019/pin-trading-pop-up-books/tangled",
+   "field": "edition_size",
+   "searched": "same",
+   "note": "field note: edition size, price and set position (#11) not stated in permitted snippets; LE 4000 only on resellers (see 509)"
+  },
+  {
+   "key": "wdw/2019/pin-trading-pop-up-books/tangled",
+   "field": "release_date",
+   "searched": "same",
+   "note": "field note: Nov 21 line-up also has DLR-only series (Crests, Windows of Magic) - date may be DL; DPB listing dated Nov 19; WDW date not stated"
+  },
+  {
+   "key": "dlr/2019/pin-trading-pop-up-books/tangled",
+   "field": "variant",
+   "searched": "same",
+   "note": "variant: same pin as wdw/2019/pin-trading-pop-up-books/tangled (Pop-Up series is a shared DL/WDW release)"
+  },
+  {
+   "key": "wdw/2019/pin-trading-pop-up-books/peter-pan",
+   "field": "pin_structure",
+   "searched": "DPB Jan/Feb 2019 previews and weekly posts; 4 queries",
+   "note": "hold: kept (round 55). No preferred source gives #1 date; a summarized snippet quotes DPB-style text (first pin, LE 4000, $17.99) but attribution unclear; reseller still says 2/21/2019"
+  },
+  {
+   "key": "wdw/2019/pin-trading-pop-up-books/alice-in-wonderland",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold: kept. #2 Alice, LE 4000, 2/21/2019 still only on reseller (yourwdwstore); DPB Feb wk3 body not surfaced"
+  },
+  {
+   "key": "wdw/2019/pin-trading-pop-up-books",
+   "field": "pins",
+   "searched": "fu6",
+   "note": "after fu6: #1 (held), #3-#10, #12 recorded; #8 BatB and #11 Tangled now recorded; #2 Alice still held"
+  },
+  {
+   "key": "dlr/2019/presidents-day-2019/the-muppets",
+   "field": "variant",
+   "searched": "DPB Feb 2019 wk2",
+   "note": "variant: same pin as wdw/2019/presidents-day-2019/the-muppets (DL+WDW release; dlr key from packet 204)"
+  },
+  {
+   "key": "wdw/2019/walt-disney-day-2019/steamboat-willie",
+   "field": "edition_type",
+   "searched": "2 queries",
+   "note": "field note: edition type, price, size and exact day not stated; may belong to WDW OE cell; whether DL had the same pin not stated"
+  },
+  {
+   "key": "wdw/2019/walt-disney-day-2019/steamboat-willie",
+   "field": "variant",
+   "searched": "same",
+   "note": "not dsuk/2019/walt-disney-day-limited-release (DS UK listing undated, design link unknown)"
+  },
+  {
+   "key": "wdw/2019/disney-visa-cardmember-steamboat-willie/mickey-mouse",
+   "field": "variant",
+   "searched": "1 query",
+   "note": "lead: also sold at shopDisney (dsus) and Disneyland (dlr) - those cells should add variant: same pin as this key; edition size not stated"
+  },
+  {
+   "key": "wdw/2019/spring-break-2019/timon-and-pumbaa",
+   "field": "variant",
+   "searched": "1 query",
+   "note": "retailer also lists it as Spring Break Pin 2019 Timon and Pumbaa; not the shopDisney Timon and Pumbaa set ($12.95, Mar 30 2019)"
+  },
+  {
+   "key": "wdw/2019/galaxys-edge-opening-day/rise-of-the-resistance-rey",
+   "field": "edition_size",
+   "searched": "3 queries",
+   "note": "still open: WDWNT LE $17.99, no size. A Rose Tico RotR LE 1500 pin is reseller-only and likely the 2020 RotR monthly series (Leia LE 1500 Jul 2020) - not recorded"
+  },
+  {
+   "key": "wdw/2019/rise-of-the-resistance-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "kept: designs/count still unnamed. Not the DLR June 2019 Resist mystery set (10 OE pins, $16.99) nor the 2025 Resistance mystery boxes"
+  },
+  {
+   "key": "wdw/2019/magic-of-honor/kilimanjaro-safaris",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "still open: only WDWNT Aug 2019 medal description; edition, position and day not found"
+  },
+  {
+   "key": "wdw/2019/magic-of-honor/its-a-small-world",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "still open: WDWNT names it Nov 2019 MoH pin; #11/LE 2000 still reseller-only"
+  },
+  {
+   "key": "wdw/2019/skyliner-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "kept: no further 2019 designs named beyond Belle and Beast"
+  },
+  {
+   "key": "wdw/2019/resort-holiday-bells-2019",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "kept hold: DPB lists Polynesian, Contemporary, Grand Floridian among 24 bells, no per-bell characters/sizes; Bambi/Moana results were 2024 hotel pins"
+  },
+  {
+   "key": "wdw/2019/vintage-vinyl/lady-and-the-tramp",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "kept hold: WDWNT April 2019 corroborates April release (combined WDW/DL list); #4/LE 3000/Apr 18 still reseller-only (ecrater, yourwdwstore)"
+  },
+  {
+   "key": "wdw/2019/vintage-vinyl/snow-white",
+   "field": "set_position",
+   "searched": "1 query",
+   "note": "kept: #5/LE 3000 still reseller-only (yourwdwstore, ubuy); WDWNT May corroborates month only; both-resort status not stated per pin"
+  },
+  {
+   "key": "wdw/2019/vintage-vinyl/mary-poppins",
+   "field": "variant",
+   "searched": "1 query",
+   "note": "still open: both-resort status not found; reseller says WDW parks; DPB Sep 2019 wk1 (Sep 4) listing only"
+  },
+  {
+   "key": "wdw/2019/swge-grand-opening-mystery",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "hold: mystery designs not individually confirmed (kept). DL Launch Bay 12-pin/LE 250 chaser still reseller-only (ecrater); no DPB post found"
+  },
+  {
+   "key": "wdw/2019/haunted-mansion-50th-anniversary/day-of",
+   "field": "edition_type",
+   "searched": "not searched",
+   "note": "kept hold (no new per-pin evidence this pass)"
+  },
+  {
+   "key": "wdw/2019/mnsshp-2019-sanderson-sisters",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); DFB still says only a $17.99 LR set, no sisters named per pin"
+  },
+  {
+   "key": "wdw/2019/epcot-flower-garden-2019-princess-set",
+   "field": "pins",
+   "searched": "not searched",
+   "note": "kept hold (no new per-pin evidence this pass)"
+  },
+  {
+   "key": "wdw/2019/hollywood-studios-30th-anniversary-booster",
+   "field": "pins",
+   "searched": "not searched",
+   "note": "kept hold (no new per-pin evidence this pass); character list only"
+  },
+  {
+   "key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019",
+   "field": "pins",
+   "searched": "not searched",
+   "note": "kept hold (no new per-pin evidence this pass)"
+  },
+  {
+   "key": "wdw/2019/rundisney-star-wars-rival-run-weekend-2019",
+   "field": "pins",
+   "searched": "not searched",
+   "note": "kept hold (no new per-pin evidence this pass)"
+  },
+  {
+   "key": "wdw/2019/rundisney-wine-dine-half-marathon-weekend-2019",
+   "field": "pins",
+   "searched": "not searched",
+   "note": "kept hold (no new per-pin evidence this pass)"
+  },
+  {
+   "key": "wdw/2019/pin-trading-pop-up-books/beauty-and-the-beast",
+   "field": "characters",
+   "searched": "DPB Aug 2019 wk3; 1 query",
+   "note": "snippet names the film only; individual characters not stated"
+  }
+ ]
+}

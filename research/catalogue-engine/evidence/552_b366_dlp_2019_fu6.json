@@ -1,0 +1,1169 @@
+{
+ "packet_id": "b366-dlp-2019-fu6-2026-10-18",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+   "title": "Pin-Neuerscheinungen im September 2019 in Disneyland Paris",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-09"
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2019/",
+   "title": "Pin-Neuerscheinungen im April 2019",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-04"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+   "title": "Disneyland Paris September 2019 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-09"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-halloween-2019-open-edition-pins-at-disney-parks/",
+   "title": "New Halloween 2019 Open Edition Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019"
+  },
+  {
+   "url": "http://passiondlp.com/actus/arc032.php",
+   "title": "passiondlp : Archives Disneyland Paris 2019 trimestre 2",
+   "publisher": "passiondlp",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc033.php",
+   "title": "passiondlp : Archives Disneyland Paris 2019 trimestre 3",
+   "publisher": "passiondlp",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "title": "Pin Trading à Disneyland Paris : la sélection de pin's du mois",
+   "publisher": "Disneyphile",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/07/phantom-manor-pin-trading-event-coming-to-disneyland-paris-this-september/",
+   "title": "Exclusive Phantom Manor Pin Trading Event Coming to Disneyland Paris this September",
+   "publisher": "WDW News Today",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-07"
+  },
+  {
+   "url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+   "title": "Captain Hook in doom buggy - Phantom Manor pin trading event - DLP",
+   "publisher": "PinTrader.Club",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2019/halloween-2019",
+   "claims": [
+    {
+     "field": "format",
+     "value": "separate single open edition Halloween pins, each character its own pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: Mickey, Minnie, Pluto, Donald, Goofy each get own costume pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: 7 Sep 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/oe-set/winnie-the-pooh-halloween-booster-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Winnie the Pooh Halloween booster set 2019",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: booster of four pins, Pooh and friends in Halloween costumes"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: booster set with four pins"
+    },
+    {
+     "field": "format",
+     "value": "booster set of four pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: characters listed: Pooh, Piglet, Iah (Eeyore), Tigger; per-pin designs not described"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: marked unlimited"
+    },
+    {
+     "field": "price",
+     "value": 19.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: 19.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "euro price"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: 7 Sep Halloween releases"
+    },
+    {
+     "field": "set_name",
+     "value": "Winnie the Pooh 2019 Halloween pin set",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-september-2019-pins",
+     "method": "search_snippet",
+     "note": "search summary only: DPB Sept 2019 DLP roundup lists a Winnie the Pooh 2019 Halloween pin set"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/oe-set/chip-and-dale-halloween-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Chip and Dale Halloween two-pin set 2019",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: two-pin set with Chip and Chap in costumes"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: two-pin set"
+    },
+    {
+     "field": "format",
+     "value": "two-pin set",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: per-pin designs not described"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: marked unlimited"
+    },
+    {
+     "field": "price",
+     "value": 12.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: 12.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "euro price"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: 7 Sep Halloween releases"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/surprise-up-set",
+   "claims": [
+    {
+     "field": "price",
+     "value": 49.99,
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "search summary only: surprise Up-themed coffret, 425 copies, 49.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "euro price"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "search summary only: 425 copies"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "search summary only: sold at Pueblo Trading Post"
+    },
+    {
+     "field": "format",
+     "value": "boxed set (coffret)",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "search summary only: described as a coffret of pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/rendez-vous-gourmand-2019",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "search summary only: three pins on the Rendez-Vous Gourmand theme"
+    },
+    {
+     "field": "format",
+     "value": "three separate limited pins, each a named design",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "search summary only: designs: Dumbo & Timothy, Chip & Dale, Mad Hatter & Dormouse in teapot"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "search summary only: 500 per pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-02",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "search summary only: surprise release Friday 2 Aug 2019"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2019/halloween-2019/mickey-vampire",
+   "set_key": "dlp/2019/halloween-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey vampire Halloween pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: own Halloween single pin: Mickey Mouse dressed as a vampire"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: each character gets its own Halloween costume pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey Mouse in a vampire Halloween costume",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: paraphrase of article description"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: listed as a single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: quick-reference list marks these unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: most singles 6.99 EUR, Donald the only exception"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "euro price"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: unlimited Halloween pins of 7 Sep 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "September 2019 listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "DLP monthly release article"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/halloween-2019/minnie-witch",
+   "set_key": "dlp/2019/halloween-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie witch Halloween pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: own Halloween single pin: Minnie Mouse dressed as a witch"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: each character gets its own Halloween costume pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie Mouse in a witch Halloween costume",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: paraphrase of article description"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: listed as a single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: quick-reference list marks these unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: most singles 6.99 EUR, Donald the only exception"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "euro price"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: unlimited Halloween pins of 7 Sep 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "September 2019 listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "DLP monthly release article"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/halloween-2019/pluto-mummy",
+   "set_key": "dlp/2019/halloween-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pluto mummy Halloween pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: own Halloween single pin: Pluto dressed as a mummy"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: each character gets its own Halloween costume pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pluto in a mummy Halloween costume",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: paraphrase of article description"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: listed as a single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: quick-reference list marks these unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: most singles 6.99 EUR, Donald the only exception"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "euro price"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: unlimited Halloween pins of 7 Sep 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "September 2019 listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "DLP monthly release article"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/halloween-2019/donald-poltergeist",
+   "set_key": "dlp/2019/halloween-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald poltergeist Halloween pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: own Halloween single pin: Donald Duck dressed as a poltergeist"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: each character gets its own Halloween costume pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Donald Duck in a poltergeist Halloween costume",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: paraphrase of article description"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: listed as a single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: quick-reference list marks these unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: Donald is the stated exception at 9.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "euro price"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: unlimited Halloween pins of 7 Sep 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "September 2019 listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "DLP monthly release article"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/halloween-2019/goofy-werewolf",
+   "set_key": "dlp/2019/halloween-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy werewolf Halloween pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: own Halloween single pin: Goofy dressed as a werewolf"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: each character gets its own Halloween costume pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Goofy in a werewolf Halloween costume",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: paraphrase of article description"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: listed as a single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: quick-reference list marks these unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: most singles 6.99 EUR, Donald the only exception"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "euro price"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: unlimited Halloween pins of 7 Sep 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "September 2019 listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "DLP monthly release article"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/halloween-2019/stitch-pumpkin",
+   "set_key": "dlp/2019/halloween-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch in a pumpkin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: listed among 7 Sep unlimited Halloween pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: Stitch in a pumpkin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch sitting in a pumpkin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: 7.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "euro price"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: released 7 Sep 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2019/",
+     "method": "search_snippet",
+     "note": "September 2019 listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/rendez-vous-gourmand-2019/dumbo",
+   "set_key": "dlp/2019/rendez-vous-gourmand-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo",
+      "Timothy Q. Mouse"
+     ],
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "search summary only: Disneyphile names the design as Dumbo et Timothée"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dumbo with Timothy",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "search summary only: per-design naming, Rendez-Vous Gourmand theme"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "search summary only: 500 per pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-02",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "search summary only: surprise release Friday 2 Aug"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/rendez-vous-gourmand-2019/alice",
+   "set_key": "dlp/2019/rendez-vous-gourmand-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mad Hatter",
+      "Dormouse"
+     ],
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "search summary only: Disneyphile: Mad Hatter and the Dormouse in the teapot; DPB (packet 532) gives Alice - record both"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mad Hatter with the Dormouse in a teapot",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "search summary only: paraphrase of per-design naming"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "search summary only: 500 per pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-02",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "search summary only: surprise release Friday 2 Aug"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/rendez-vous-gourmand-2019/chip-and-dale",
+   "set_key": "dlp/2019/rendez-vous-gourmand-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "search summary only: Disneyphile names a Tic & Tac design"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "search summary only: 500 per pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-02",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "search summary only: surprise release Friday 2 Aug"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/oe/aladdin-april-2019",
+   "set_key": "dlp/2019/oe-single/aladdin-april-2019",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Jasmine with Aladdin in his Prince Ali costume",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2019/",
+     "method": "search_snippet",
+     "note": "search summary only: 7.99 EUR pin shows Jasmine and Aladdin (Prince Ali outfit) together; same source as packet 454"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/phantom-manor-pin-trading-event-2019/captain-hook",
+   "set_key": "dlp/2019/phantom-manor-pin-trading-event-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Captain Hook in doom buggy",
+     "source_url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+     "method": "search_snippet",
+     "note": "per-pin page, search summary: listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Captain Hook",
+      "Melanie Ravenswood"
+     ],
+     "source_url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+     "method": "search_snippet",
+     "note": "per-pin page, search summary: Hook in the buggy, the Phantom Manor bride behind it"
+    },
+    {
+     "field": "main_character",
+     "value": "Captain Hook",
+     "source_url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+     "method": "search_snippet",
+     "note": "per-pin page, search summary: Hook is the featured character"
+    },
+    {
+     "field": "attraction",
+     "value": "Phantom Manor",
+     "source_url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+     "method": "search_snippet",
+     "note": "per-pin page, search summary: attraction named on page"
+    },
+    {
+     "field": "visual_description",
+     "value": "frightened Captain Hook in a Doom Buggy whose front piece carries the Phantom Manor logo, ghost bride behind",
+     "source_url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+     "method": "search_snippet",
+     "note": "per-pin page, search summary: paraphrase"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+     "method": "search_snippet",
+     "note": "per-pin page, search summary: buggy front is a pin-on-pin layer"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+     "method": "search_snippet",
+     "note": "per-pin page, search summary: single pin listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+     "method": "search_snippet",
+     "note": "per-pin page, search summary: LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 275,
+     "source_url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+     "method": "search_snippet",
+     "note": "per-pin page, search summary: LE 275"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-13",
+     "source_url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+     "method": "search_snippet",
+     "note": "per-pin page, search summary: released 13 Sep 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+     "method": "search_snippet",
+     "note": "per-pin page, search summary: 2019"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+     "method": "search_snippet",
+     "note": "per-pin page, search summary: original price 17.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+     "method": "search_snippet",
+     "note": "per-pin page, search summary: euro"
+    },
+    {
+     "field": "product_code",
+     "value": "FAC-036223-19140",
+     "source_url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+     "method": "search_snippet",
+     "note": "per-pin page, search summary: SKU shown on page"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.pintrader.club/fr/pins/captain-hook-in-doom-buggy-phantom-manor-pin-trading-event-dlp",
+     "method": "search_snippet",
+     "note": "per-pin page, search summary: Phantom Manor pin trading event, DLP"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2019/halloween-2019/mickey-vampire",
+   "field": "visual_description",
+   "searched": "DPB US Halloween OE page",
+   "note": "field note: DPB lists Vampire Mickey / Werewolf Goofy OE pins for DLR/WDW 2019; whether DLP sold the same design is not established"
+  },
+  {
+   "key": "dlp/2019/halloween-2019/goofy-werewolf",
+   "field": "visual_description",
+   "searched": "DPB US Halloween OE page",
+   "note": "field note: similarly named DLR/WDW 2019 OE pin exists; same design as DLP not established"
+  },
+  {
+   "key": "dlp/2019/halloween-2019/minnie-witch",
+   "field": "original_price",
+   "searched": "dein-dlrp Sept summary",
+   "note": "field note: price derived from 'most singles 6.99, Donald the only exception' in a search summary"
+  },
+  {
+   "key": "dlp/2019/halloween-2019/pluto-mummy",
+   "field": "original_price",
+   "searched": "dein-dlrp Sept summary",
+   "note": "field note: price derived from 'most singles 6.99, Donald the only exception' in a search summary"
+  },
+  {
+   "key": "dlp/2019/halloween-2019/mickey-vampire",
+   "field": "original_price",
+   "searched": "dein-dlrp Sept summary",
+   "note": "field note: price derived from 'most singles 6.99, Donald the only exception' in a search summary"
+  },
+  {
+   "key": "dlp/2019/halloween-2019/goofy-werewolf",
+   "field": "original_price",
+   "searched": "dein-dlrp Sept summary",
+   "note": "field note: price derived from 'most singles 6.99, Donald the only exception' in a search summary"
+  },
+  {
+   "key": "dlp/2019/halloween-2019/stitch-pumpkin",
+   "field": "pin_structure",
+   "searched": "2 searches",
+   "note": "variant check: OE 7.99 Sept pin; not the Oct LE 700 Stitch pumpkin wagon (lilo-stitch-halloween-2019/stitch-pumpkin-wagon)"
+  },
+  {
+   "key": "dlp/2019/oe-set/winnie-the-pooh-halloween-booster-2019",
+   "field": "pins",
+   "searched": "dein-dlrp Sept; DPB Sept",
+   "note": "hold: mystery designs not individually confirmed - four pins and four characters listed, no per-pin description; member records not created"
+  },
+  {
+   "key": "dlp/2019/oe-set/chip-and-dale-halloween-2019",
+   "field": "pins",
+   "searched": "dein-dlrp Sept",
+   "note": "hold: confirm pin structure - two-pin set of Chip and Chap, per-pin designs not described; member records not created"
+  },
+  {
+   "key": "dlp/2019/rendez-vous-gourmand-2019/dumbo",
+   "field": "pin_structure",
+   "searched": "Disneyphile + DPB",
+   "note": "hold: kept pending maintainer - new second source (Disneyphile, summary only) names each design; maintainer may release all three"
+  },
+  {
+   "key": "dlp/2019/rendez-vous-gourmand-2019/alice",
+   "field": "pin_structure",
+   "searched": "Disneyphile + DPB",
+   "note": "hold: kept pending maintainer - Disneyphile (summary only) describes Mad Hatter & Dormouse in teapot; conflicts with DPB 'Alice'; maintainer may release/rename"
+  },
+  {
+   "key": "dlp/2019/rendez-vous-gourmand-2019/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "Disneyphile + DPB",
+   "note": "hold: kept pending maintainer - Disneyphile (summary only) names a Tic & Tac design; maintainer may release"
+  },
+  {
+   "key": "dlp/2019/oe/aladdin-april-2019",
+   "field": "pin_structure",
+   "searched": "dein-dlrp April",
+   "note": "hold kept: Prince Ali description is from the same dein-dlrp page as packet 454; no independent source; maintainer may release as one pin (Jasmine + Aladdin)"
+  },
+  {
+   "key": "dlp/2019/surprise-up-set",
+   "field": "release_date",
+   "searched": "passiondlp Q2",
+   "note": "field note: passiondlp coffret entry date not given in summary; DPB gives 9 Jun"
+  },
+  {
+   "key": "dlp/2019/up-pin-event-june-2019",
+   "field": "pins",
+   "searched": "passiondlp Q2",
+   "note": "scope: confirmed badge (passiondlp: a badge handed to participants of the 15 Jun 2019 'La-Haut' Pin Event); event pins themselves not named"
+  },
+  {
+   "key": "dlp/2019/phantom-manor-pin-trading-event-2019",
+   "field": "price",
+   "searched": "WDWNT Jul 2019",
+   "note": "field note: 39 EUR ticket incl. meal and a voucher toward one event-exclusive pin worth 9.99 EUR; not a pin price (Hook pin page gives 17.99)"
+  },
+  {
+   "key": "dlp/2019/bastille-day-2019/14-juillet",
+   "field": "characters",
+   "searched": "2 searches",
+   "note": "field note: passiondlp Q3 page shows a 'capitaine crochet' label near the entry (possibly an image caption); not claimed"
+  },
+  {
+   "key": "dlp/2019/bastille-day-2019/14-juillet",
+   "field": "pin_structure",
+   "searched": "2 searches",
+   "note": "hold: design and characters not described (kept)"
+  },
+  {
+   "key": "dlp/2019/christmas-time-2019",
+   "field": "pins",
+   "searched": "4 searches (DPB, WDWNT, passiondlp, disneypinforum)",
+   "note": "9 Nov LE 425 event pins still unnamed"
+  },
+  {
+   "key": "dlp/2019/january-2019",
+   "field": "pins",
+   "searched": "3 searches",
+   "note": "lead: DPB summary says Jan 2019 DLP had 2019 logo pins, Wreck-It Ralph, Star Wars, Stitch, Tinker Bell; no per-pin data; dein-dlrp Jan not indexed"
+  },
+  {
+   "key": "dlp/2019/august-2019-oe",
+   "field": "pins",
+   "searched": "2 searches",
+   "note": "3 Aug four single Christmas pins (7.99 EUR, Disney Gallery, Lineberty) still undescribed"
+  },
+  {
+   "key": "dlp/2019/oe-set/joyeux-noel-2019-princess",
+   "field": "pins",
+   "searched": "1 search",
+   "note": "hold kept: no per-pin description found"
+  },
+  {
+   "key": "dlp/2019/marvel-season-of-super-heroes",
+   "field": "original_price",
+   "searched": "1 search",
+   "note": "6.99 vs 7.99 conflict within dein-dlrp March page unchanged"
+  },
+  {
+   "key": "dlp/2019/hotel-pins",
+   "field": "pins",
+   "searched": "1 search",
+   "note": "no 2019 Disneyland Hotel (Paris) pin found; only an undated reseller listing and a DLR gingerbread pin"
+  },
+  {
+   "key": "dlp/2019/toy-story-4-surprise-2019",
+   "field": "pins",
+   "searched": "1 search",
+   "note": "no DLP Toy Story 4 pin found (Toy Story Play Days 18-28 Jun 2019 had no pin mention)"
+  },
+  {
+   "key": "dlp/2019/medallion-july-2019/fabius",
+   "field": "characters",
+   "searched": "1 search",
+   "note": "hold kept: 'Fabius' identity still unconfirmed"
+  },
+  {
+   "key": "dlp/2019/ptn-february-2019",
+   "field": "edition_size",
+   "searched": "1 search",
+   "note": "edition size still not stated for Feb 2019 PTN pins"
+  },
+  {
+   "key": "dlp/2019/cherry-blossom-girl/dinah",
+   "field": "set_key",
+   "searched": "1 search",
+   "note": "only a reseller title (artoriginals) groups Alice/Dinah/Pascal/Thumper LE400; not evidence; no hold released"
+  },
+  {
+   "key": "dlp/2019/ptn-2019-mypincentral",
+   "field": "pins",
+   "searched": "2 searches",
+   "note": "MyPinCentral PTN DLP pages found (Bambi flower 214/400, Violet, Baymax, Bing Bong) carry no 2019 date; not recorded"
+  },
+  {
+   "key": "dlp/2019/october-2019-oe",
+   "field": "pins",
+   "searched": "1 search",
+   "note": "hold kept: dein-dlrp Oct 2019 page still not indexed"
+  },
+  {
+   "key": "dlp/2019/phantom-manor-pin-trading-event-2019",
+   "field": "pins",
+   "searched": "2 searches (FR + pintrader.club)",
+   "note": "only Captain Hook has a per-pin page; other doom-buggy pins unnamed; a summary mentions 'seven pins' (origin unclear, not claimed as expected_pin_count)"
+  },
+  {
+   "key": "dlp/2019/phantom-manor-pin-trading-event-2019/captain-hook",
+   "field": "original_price",
+   "searched": "pintrader.club",
+   "note": "field note: 17.99 EUR from PinTrader.Club per-pin page vs 9.99 EUR voucher value in WDWNT; voucher is not a price"
+  }
+ ],
+ "discovery_notes": "Follow-up 6 of B005 (packets 205, 409, 454, 487, 511, 532). 30 standard searches, snippets/summaries only. New: 7 Sep 2019 Halloween OE singles Mickey vampire, Minnie witch, Pluto mummy, Donald poltergeist, Goofy werewolf and Stitch in pumpkin (dein-dlrp, summary); sets only: Pooh Halloween booster (4, 19.99) and Chip & Dale Halloween 2-pin set (12.99), members held. New per-pin page: Phantom Manor event Captain Hook in doom buggy LE 275, 17.99 EUR, SKU FAC-036223-19140 (PinTrader.Club). Corroboration: Up surprise coffret 49.99 at Pueblo (passiondlp), Rendez-Vous Gourmand per-design names from Disneyphile (holds kept, maintainer may release), Aladdin Prince Ali description. No hold released."
+}

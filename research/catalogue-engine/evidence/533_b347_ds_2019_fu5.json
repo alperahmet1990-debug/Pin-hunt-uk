@@ -1,0 +1,1249 @@
+{
+ "packet_id": "533_b347_ds_2019_fu5",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mufasa-simba-fathers-day-surprise-pin",
+   "title": "Mufasa & Simba Father's Day Surprise Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/ducky-bunny-surprise-pin-release/",
+   "title": "Ducky & Bunny Surprise Pin Release",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-the-mandalorian-disney-store-pin-d23-expo-2019/",
+   "title": "Star Wars The Mandalorian Disney Store Pin - D23 Expo 2019",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-little-mermaid-30th-anniversary-disney-store-pin-set/",
+   "title": "The Little Mermaid 30th Anniversary Disney Store Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-little-mermaid-30-years-disney-store-pin-set",
+   "title": "The Little Mermaid 30 Years Disney Store Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-droid-pin-set-d23-expo-2019/",
+   "title": "Star Wars Droid Pin Set - D23 Expo 2019",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/d23-expo-2019-the-dream-store-pins",
+   "title": "D23 Expo 2019 The Dream Store Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/donald-duck-85th-anniversary-disney-store-pin-set/",
+   "title": "Donald Duck 85th Anniversary Disney Store Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/donald-duck-85th-birthday-shanghai-disney-store-pin-set",
+   "title": "Donald Duck 85th Birthday Disney Store Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.co.uk/donald-duck-limited-edition-pin-set-465050190161.html",
+   "title": "Donald Duck Limited Edition Pin Set",
+   "publisher": "Disney Store UK",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.co.uk/donald-duck-85th-anniversary-pin-466049674884.html",
+   "title": "Donald Duck 85th Anniversary Pin",
+   "publisher": "Disney Store UK",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/donald-duck-85-years-disney-store-pin/",
+   "title": "Donald Duck 85 Years Disney Store Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mulan-shopdisney-pin-set/",
+   "title": "Mulan shopDisney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/mulan-pin-set-466040762634.html",
+   "title": "Mulan Pin Set",
+   "publisher": "Disney Store EU",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.co.uk/mulan-pin-set-466040762634.html",
+   "title": "Mulan Pin Set",
+   "publisher": "Disney Store UK",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-haunted-mansion-shopdisney-mystery-pin-collection/",
+   "title": "The Haunted Mansion shopDisney Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/magnificent-pin-trading-event/",
+   "title": "Magnificent Pin Trading Event",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/holiday-2019-gift-pin-series-at-shopdisney",
+   "title": "Holiday 2019 Gift Pin Series at shopDisney",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsus/2019/studio-store-hollywood-fathers-day-2019-mufasa-simba",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mufasa & Simba Father's Day Surprise Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/mufasa-simba-fathers-day-surprise-pin",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "single surprise LE pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/mufasa-simba-fathers-day-surprise-pin",
+     "method": "search_snippet",
+     "note": "one pin release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/mufasa-simba-fathers-day-surprise-pin",
+     "method": "search_snippet",
+     "note": "surprise release at DSSH"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/mufasa-simba-fathers-day-surprise-pin",
+     "method": "search_snippet",
+     "note": "released June 12 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2019/studio-store-hollywood-toy-story-4-june-2019-ducky-bunny-surprise",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Ducky & Bunny Surprise Pin Release",
+     "source_url": "https://disneypinsblog.com/ducky-bunny-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "single surprise LE pin",
+     "source_url": "https://disneypinsblog.com/ducky-bunny-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "one surprise pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/ducky-bunny-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "surprise release during DSSH Toy Story 4 pin release"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-21",
+     "source_url": "https://disneypinsblog.com/ducky-bunny-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "June 21 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2019/d23-expo-2019-disney-store-mandalorian",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars The Mandalorian Disney Store Pin - D23 Expo 2019",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-disney-store-pin-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin on backer card",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-disney-store-pin-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "pin-on-pin with themed backer card"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store at D23 Expo 2019",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-disney-store-pin-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "released at Disney Store during D23 Expo"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-disney-store-pin-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "D23 Expo August 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2019/d23-expo-2019-disney-store-little-mermaid-30th-ariel-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Little Mermaid 30th Anniversary Disney Store Pin Set (D23 Expo 2019)",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB title; D23 Disney Store release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "five different Ariel pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "set of five Ariel pins with glitter embellishments"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "price",
+     "value": 79.95,
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 79.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store at D23 Expo 2019",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "released at Disney Store during D23 Expo 2019"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-30th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "D23 Expo August 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2019/d23-expo-2019-disney-store-star-wars-droid-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Droid Pin Set - D23 Expo 2019",
+     "source_url": "https://disneypinsblog.com/star-wars-droid-pin-set-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 25,
+     "source_url": "https://disneypinsblog.com/star-wars-droid-pin-set-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "25 different Droid pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/star-wars-droid-pin-set-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "set of 25 droid pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/star-wars-droid-pin-set-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/star-wars-droid-pin-set-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "LE 300 (sets)"
+    },
+    {
+     "field": "price",
+     "value": 199.95,
+     "source_url": "https://disneypinsblog.com/star-wars-droid-pin-set-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "USD 199.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/star-wars-droid-pin-set-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store at D23 Expo 2019",
+     "source_url": "https://disneypinsblog.com/star-wars-droid-pin-set-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "listed among Disney Store D23 2019 releases (search-engine summary)"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/star-wars-droid-pin-set-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "D23 Expo 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2019/d23-expo-2019-disney-store-donald-duck-85th-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Donald Duck 85th Anniversary Disney Store Pin Set",
+     "source_url": "https://disneypinsblog.com/donald-duck-85th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/donald-duck-85th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "six different Donald Duck pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/donald-duck-85th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "set of six pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/donald-duck-85th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/donald-duck-85th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "price",
+     "value": 89.95,
+     "source_url": "https://disneypinsblog.com/donald-duck-85th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 89.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/donald-duck-85th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store at D23 Expo 2019",
+     "source_url": "https://disneypinsblog.com/donald-duck-85th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "released at D23 Expo 2019"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/donald-duck-85th-anniversary-disney-store-pin-set/",
+     "method": "search_snippet",
+     "note": "D23 Expo 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2019/donald-duck-85th-birthday-le-1600-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Donald Duck 85th Birthday Disney Store Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-85th-birthday-shanghai-disney-store-pin-set",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-85th-birthday-shanghai-disney-store-pin-set",
+     "method": "search_snippet",
+     "note": "five pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-85th-birthday-shanghai-disney-store-pin-set",
+     "method": "search_snippet",
+     "note": "five-pin set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-85th-birthday-shanghai-disney-store-pin-set",
+     "method": "search_snippet",
+     "note": "LE 1600"
+    },
+    {
+     "field": "edition_size",
+     "value": 1600,
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-85th-birthday-shanghai-disney-store-pin-set",
+     "method": "search_snippet",
+     "note": "LE 1600"
+    },
+    {
+     "field": "price",
+     "value": 59.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-85th-birthday-shanghai-disney-store-pin-set",
+     "method": "search_snippet",
+     "note": "USD 59.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-85th-birthday-shanghai-disney-store-pin-set",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-85th-birthday-shanghai-disney-store-pin-set",
+     "method": "search_snippet",
+     "note": "first released at Shanghai Disney Store June 3 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Store; later Disney Store US (Times Square)",
+     "source_url": "https://disneypinsblog.com/blogs/news/donald-duck-85th-birthday-shanghai-disney-store-pin-set",
+     "method": "search_snippet",
+     "note": "originally Shanghai, available in America shortly after"
+    },
+    {
+     "field": "set_name",
+     "value": "Donald Duck Limited Edition Pin Set",
+     "source_url": "https://www.disneystore.co.uk/donald-duck-limited-edition-pin-set-465050190161.html",
+     "method": "search_snippet",
+     "note": "DS UK listing title, item 465050190161"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://www.disneystore.co.uk/donald-duck-limited-edition-pin-set-465050190161.html",
+     "method": "search_snippet",
+     "note": "5-piece set"
+    },
+    {
+     "field": "edition_size",
+     "value": 1600,
+     "source_url": "https://www.disneystore.co.uk/donald-duck-limited-edition-pin-set-465050190161.html",
+     "method": "search_snippet",
+     "note": "limited to 1,600 worldwide"
+    },
+    {
+     "field": "price",
+     "value": 50.0,
+     "source_url": "https://www.disneystore.co.uk/donald-duck-limited-edition-pin-set-465050190161.html",
+     "method": "search_snippet",
+     "note": "GBP 50"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://www.disneystore.co.uk/donald-duck-limited-edition-pin-set-465050190161.html",
+     "method": "search_snippet",
+     "note": "UK"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK/EU",
+     "source_url": "https://www.disneystore.co.uk/donald-duck-limited-edition-pin-set-465050190161.html",
+     "method": "search_snippet",
+     "note": "UK/EU listing; same set assumed from LE 1600 + 5 pieces only"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2019/donald-duck-85th-anniversary-cake-pin-release",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Donald Duck 85 Years Disney Store Pin",
+     "source_url": "https://disneypinsblog.com/donald-duck-85-years-disney-store-pin/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.disneystore.co.uk/donald-duck-85th-anniversary-pin-466049674884.html",
+     "method": "search_snippet",
+     "note": "single pin listing"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2019/mulan-shopdisney-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mulan shopDisney Pin Set",
+     "source_url": "https://disneypinsblog.com/mulan-shopdisney-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/mulan-shopdisney-pin-set/",
+     "method": "search_snippet",
+     "note": "three-pin set on card"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/mulan-shopdisney-pin-set/",
+     "method": "search_snippet",
+     "note": "3 pin set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/mulan-shopdisney-pin-set/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/mulan-shopdisney-pin-set/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mulan-shopdisney-pin-set/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12",
+     "source_url": "https://disneypinsblog.com/mulan-shopdisney-pin-set/",
+     "method": "search_snippet",
+     "note": "late December 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store and shopDisney",
+     "source_url": "https://disneypinsblog.com/mulan-shopdisney-pin-set/",
+     "method": "search_snippet",
+     "note": "DS and shopDisney.com"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.disneystore.eu/mulan-pin-set-466040762634.html",
+     "method": "search_snippet",
+     "note": "three-piece set, item 466040762634"
+    },
+    {
+     "field": "price",
+     "value": 12.0,
+     "source_url": "https://www.disneystore.eu/mulan-pin-set-466040762634.html",
+     "method": "search_snippet",
+     "note": "EUR 12"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/mulan-pin-set-466040762634.html",
+     "method": "search_snippet",
+     "note": "EU"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store EU",
+     "source_url": "https://www.disneystore.eu/mulan-pin-set-466040762634.html",
+     "method": "search_snippet",
+     "note": "EU listing; same set assumed from contents only"
+    },
+    {
+     "field": "price",
+     "value": 10.0,
+     "source_url": "https://www.disneystore.co.uk/mulan-pin-set-466040762634.html",
+     "method": "search_snippet",
+     "note": "GBP 10"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://www.disneystore.co.uk/mulan-pin-set-466040762634.html",
+     "method": "search_snippet",
+     "note": "UK"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK",
+     "source_url": "https://www.disneystore.co.uk/mulan-pin-set-466040762634.html",
+     "method": "search_snippet",
+     "note": "UK listing, same item number as EU"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsus/2019/studio-store-hollywood-fathers-day-2019-mufasa-simba/mufasa-and-simba",
+   "set_key": "dsus/2019/studio-store-hollywood-fathers-day-2019-mufasa-simba",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mufasa & Simba Father's Day Surprise Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/mufasa-simba-fathers-day-surprise-pin",
+     "method": "search_snippet",
+     "note": "name from DPB title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mufasa",
+      "Simba"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/mufasa-simba-fathers-day-surprise-pin",
+     "method": "search_snippet",
+     "note": "title names Mufasa and Simba"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/mufasa-simba-fathers-day-surprise-pin",
+     "method": "search_snippet",
+     "note": "post title refers to a single pin featuring both"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/mufasa-simba-fathers-day-surprise-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/blogs/news/mufasa-simba-fathers-day-surprise-pin",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "original_price",
+     "value": 21.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/mufasa-simba-fathers-day-surprise-pin",
+     "method": "search_snippet",
+     "note": "USD 21.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/mufasa-simba-fathers-day-surprise-pin",
+     "method": "search_snippet",
+     "note": "US store"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/mufasa-simba-fathers-day-surprise-pin",
+     "method": "search_snippet",
+     "note": "June 12 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/mufasa-simba-fathers-day-surprise-pin",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/mufasa-simba-fathers-day-surprise-pin",
+     "method": "search_snippet",
+     "note": "DSSH surprise, one per person per day"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2019/studio-store-hollywood-toy-story-4-june-2019-ducky-bunny-surprise/ducky-and-bunny",
+   "set_key": "dsus/2019/studio-store-hollywood-toy-story-4-june-2019-ducky-bunny-surprise",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ducky",
+      "Bunny"
+     ],
+     "source_url": "https://disneypinsblog.com/ducky-bunny-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "pin features Ducky & Bunny from Toy Story 4"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/ducky-bunny-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "post describes one surprise pin with both characters (search-engine summary wording)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/ducky-bunny-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://disneypinsblog.com/ducky-bunny-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "LE 150"
+    },
+    {
+     "field": "original_price",
+     "value": 24.95,
+     "source_url": "https://disneypinsblog.com/ducky-bunny-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "USD 24.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/ducky-bunny-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "US store"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-21",
+     "source_url": "https://disneypinsblog.com/ducky-bunny-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "June 21 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/ducky-bunny-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/ducky-bunny-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "DSSH"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2019/d23-expo-2019-disney-store-mandalorian/mandalorian",
+   "set_key": "dsus/2019/d23-expo-2019-disney-store-mandalorian",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars The Mandalorian pin",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-disney-store-pin-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-disney-store-pin-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "Star Wars The Mandalorian"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-disney-store-pin-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "original_price",
+     "value": 15.95,
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-disney-store-pin-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "USD 15.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-disney-store-pin-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "US"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-disney-store-pin-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "pin-on-pin design"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-disney-store-pin-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "D23 Expo 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-disney-store-pin-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store at D23 Expo 2019",
+     "source_url": "https://disneypinsblog.com/star-wars-the-mandalorian-disney-store-pin-d23-expo-2019/",
+     "method": "search_snippet",
+     "note": "Disney Store during D23 Expo"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2019/donald-duck-85th-anniversary-cake-pin",
+   "set_key": "dsus/2019/donald-duck-85th-anniversary-cake-pin-release",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck 85th Anniversary Pin",
+     "source_url": "https://www.disneystore.co.uk/donald-duck-85th-anniversary-pin-466049674884.html",
+     "method": "search_snippet",
+     "note": "DS UK listing title, item 466049674884"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://www.disneystore.co.uk/donald-duck-85th-anniversary-pin-466049674884.html",
+     "method": "search_snippet",
+     "note": "Donald 85th anniversary pin"
+    },
+    {
+     "field": "visual_form",
+     "value": "cake",
+     "source_url": "https://www.disneystore.co.uk/donald-duck-85th-anniversary-pin-466049674884.html",
+     "method": "search_snippet",
+     "note": "cake-shaped pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://www.disneystore.co.uk/donald-duck-85th-anniversary-pin-466049674884.html",
+     "method": "search_snippet",
+     "note": "glittery details; design inspired by Donald's costume"
+    },
+    {
+     "field": "product_code",
+     "value": "466049674884",
+     "source_url": "https://www.disneystore.co.uk/donald-duck-85th-anniversary-pin-466049674884.html",
+     "method": "search_snippet",
+     "note": "UK item number"
+    },
+    {
+     "field": "original_price",
+     "value": 9.0,
+     "source_url": "https://www.disneystore.co.uk/donald-duck-85th-anniversary-pin-466049674884.html",
+     "method": "search_snippet",
+     "note": "GBP 9"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://www.disneystore.co.uk/donald-duck-85th-anniversary-pin-466049674884.html",
+     "method": "search_snippet",
+     "note": "UK"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store UK",
+     "source_url": "https://www.disneystore.co.uk/donald-duck-85th-anniversary-pin-466049674884.html",
+     "method": "search_snippet",
+     "note": "sold out on UK site"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store and shopDisney",
+     "source_url": "https://disneypinsblog.com/donald-duck-85-years-disney-store-pin/",
+     "method": "search_snippet",
+     "note": "DPB says released at Disney Store and shopDisney"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsus/2019/studio-store-hollywood-fathers-day-2019-mufasa-simba/mufasa-and-simba",
+   "field": "corroboration",
+   "searched": "2 queries",
+   "note": "single source (DPB); resolves part of the DSSH June 2019 gap"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-toy-story-4-june-2019-ducky-bunny-surprise/ducky-and-bunny",
+   "field": "corroboration",
+   "searched": "2 queries",
+   "note": "single source (DPB)"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-june-2019-toy-story-4",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "DPB says the surprise came during a DSSH Toy Story 4 pin release on June 21 2019; main series pins not named in any snippet"
+  },
+  {
+   "key": "dsus/2019/d23-expo-2019-disney-store-mandalorian/mandalorian",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "which character(s) appear not stated in snippet"
+  },
+  {
+   "key": "dsus/2019/d23-expo-2019-disney-store-mandalorian/mandalorian",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "no edition size in snippet; a DPB tweet also announced it but x/twitter is excluded"
+  },
+  {
+   "key": "dsus/2019/d23-expo-2019-disney-store-little-mermaid-30th-ariel-set",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "five Ariel pins not individually described; no member records (rule 12 multi-pin pack)"
+  },
+  {
+   "key": "dsus/2019/little-mermaid-30th-anniversary-pin-set",
+   "field": "source_conflict",
+   "searched": "3 queries",
+   "note": "snippets tie the DPB '...30th-anniversary-disney-store-pin-set' URL (used in packet 455 for USD 29.95 LR) to the D23 LE 300 Ariel set; the LR USD 29.95 set is the '30-years' post. Review 455 claims"
+  },
+  {
+   "key": "dsus/2019/d23-expo-2019-dream-store-ariel",
+   "field": "scope",
+   "searched": "2 queries",
+   "note": "lead: D23 Dream Store (not Disney Store) Ariel boxed set of four LE 200 USD 89.99 and Ariel and Sisters jumbo LE 300 USD 74.99; for D23/parks cell"
+  },
+  {
+   "key": "dsus/2019/d23-expo-2019-disney-store-star-wars-droid-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "25 droid pins not named; no member records"
+  },
+  {
+   "key": "dsus/star-wars-droid-limited-release-pin-set",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: separate DPB 'Star Wars Droid Limited Release Pin Set' post; year and contents not stated"
+  },
+  {
+   "key": "dsus/2019/d23-expo-2019-disney-store-donald-duck-85th-set",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "six pins not individually described; single source"
+  },
+  {
+   "key": "dsus/2019/donald-duck-85th-birthday-le-1600-pin-set",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "five pins not individually described"
+  },
+  {
+   "key": "dsus/2019/donald-duck-85th-birthday-le-1600-pin-set",
+   "field": "release_date",
+   "searched": "3 queries",
+   "note": "UK/EU release date not stated; US/UK equivalence inferred from matching size and count"
+  },
+  {
+   "key": "shdr/2019/donald-duck-85th-birthday-shanghai-disney-store-set",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: originated at Shanghai Disney Store June 3 2019; asia cell may record it"
+  },
+  {
+   "key": "dsus/2019/donald-duck-85th-anniversary-cake-pin",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "hold: no source states the release date/year; 2019 only implied by 85th anniversary (editorial)"
+  },
+  {
+   "key": "dsus/2019/donald-duck-85th-anniversary-cake-pin",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "edition type/size not stated"
+  },
+  {
+   "key": "dsus/2019/mulan-shopdisney-pin-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs). Sources list Mulan, Mushu and Cri-Kee for a 3-piece set but do not describe each pin; no member records"
+  },
+  {
+   "key": "dsus/2019/mulan-shopdisney-pin-set",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "UK/EU listings undated; US-EU equivalence unconfirmed"
+  },
+  {
+   "key": "dsus/2019/haunted-mansion-mystery-pin-collection",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "hold kept: DPB again says 'each of the three Hitchhiking Ghosts' + Madame Leota + two mystery; ghost names not stated in source text. DS EU 9-design HM mystery set is a later release, not 2019"
+  },
+  {
+   "key": "dsus/2019/oh-my-disney-dogs-mystery-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no new names; 8 designs, six named, two mystery (DPB/DisMerchandise)"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-magnificent-circus-series-2",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept: DPB lists Genie, Abu, Bing Bong, The Mad Hatter, and Marie/Berlioz/Toulouse (5 list entries for a 5-pin set, but per-pin split not stated)"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-d23-expo-2019-dark-tales",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: Stromboli (136098) and Madam Mim (136092) Dark Tales pins seen only on reseller distradingpins4u; Prince John not found"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-d23-expo-2019-beloved-tales",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "designs still unnamed"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-d23-expo-2019-marquee-series",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "designs still unnamed"
+  },
+  {
+   "key": "dsus/2019/lion-king-25th-anniversary-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Simba colours still unstated (DPB: 'three different colors'); no Simba records"
+  },
+  {
+   "key": "dsus/2019/holiday-gift-pin-series",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "tenth pin still unnamed; DPB lists nine of ten"
+  },
+  {
+   "key": "dsus/2019/aladdin-live-action-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "EU 'Free to Dream'/'Be Heard' LR set 466049764714 still undated"
+  },
+  {
+   "key": "dsuk/2019/christmas-2019-le",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no Disney Store UK Christmas 2019 pin found again"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-may-june-august-september",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "June 2019 now has Mufasa & Simba (Jun 12) and Ducky & Bunny (Jun 21); no September 2019 DSSH release found"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-fathers-day-geppetto-pinocchio",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: DSSH Geppetto & Pinocchio Father's Day surprise LE 200 (DisKingdom); year not stated"
+  },
+  {
+   "key": "dsus/2019/disney-wisdom-12-cinderella/gus",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: US sources Gus, DS EU Jaq; no new per-pin evidence"
+  },
+  {
+   "key": "dsuk/2019/bambi-jumbo-le400/bambi-and-thumper",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: no source found"
+  },
+  {
+   "key": "dsus/2019/avengers-endgame-le-pin-set",
+   "field": "pins",
+   "searched": "not re-researched",
+   "note": "hold kept; no new evidence this pass"
+  },
+  {
+   "key": "dsus/2019/little-mermaid-30th-anniversary-pin-set/sebastian",
+   "field": "pins",
+   "searched": "not re-researched",
+   "note": "hold kept; no new evidence this pass"
+  },
+  {
+   "key": "dsus/2019/up-10th-anniversary-le-pin-set",
+   "field": "pins",
+   "searched": "not re-researched",
+   "note": "hold kept; no new evidence this pass"
+  },
+  {
+   "key": "dsus/2019/princess-and-the-frog-10th-anniversary-le-pin-set",
+   "field": "pins",
+   "searched": "not re-researched",
+   "note": "hold kept; no new evidence this pass"
+  },
+  {
+   "key": "dsus/2019/sleeping-beauty-60th-anniversary-le-pin-set",
+   "field": "pins",
+   "searched": "not re-researched",
+   "note": "hold kept; no new evidence this pass"
+  },
+  {
+   "key": "dsus/2019/dumbo-live-action-pin-set",
+   "field": "pins",
+   "searched": "not re-researched",
+   "note": "hold kept; no new evidence this pass"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-december-2019-rise-of-skywalker",
+   "field": "pins",
+   "searched": "not re-researched",
+   "note": "hold kept; no new evidence this pass"
+  },
+  {
+   "key": "dsus/2019/studio-store-hollywood-december-2019-family-portraits",
+   "field": "pins",
+   "searched": "not re-researched",
+   "note": "hold kept; no new evidence this pass"
+  },
+  {
+   "key": "lic/2019/funko-boxlunch-frozen-2",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: licensed Funko Pop! Frozen 2 enamel pins at BoxLunch (Nov 2019, USD 9.90)"
+  },
+  {
+   "key": "lic/2019/hot-topic-frozen-2-blind-box",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: licensed Frozen 2 blind box pins at Hot Topic (USD 8.90)"
+  },
+  {
+   "key": "wdi/2019/fathers-day-and-donald-85th",
+   "field": "scope",
+   "searched": "2 queries",
+   "note": "lead: WDI cast-only Father's Day (Mulan/Fa Zhou, Phillip/Hubert LE 250) and Donald 85th WDI pins at Mickey's of Glendale; not Disney Store"
+  }
+ ],
+ "discovery_notes": "Follow-up 5 of B006 (packets 206, 410, 455, 488, 512), Disney Store/shopDisney/DSSH 2019. 30 standard WebSearches, excluded domains blocked, snippets only. New: DSSH June 2019 surprises (Mufasa & Simba Father's Day, Ducky & Bunny), Disney Store at D23 2019 (Mandalorian pin; Little Mermaid 30th five-Ariel LE 300 set; Star Wars Droid 25-pin LE 300 set; Donald 85th six-pin LE 500 set), Donald 85th LE 1600 five-pin set (Shanghai DS origin, US + DS UK/EU), Donald 85th cake pin (year held), Mulan shopDisney 3-pin OE set (structure held). Flags a likely URL mix-up in packet 455 for the Little Mermaid 30th LR set. No existing hold released. Resellers (distradingpins4u, yourwdwstore, fryguypins, toywiz, magicalwdw) not used."
+}

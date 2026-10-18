@@ -342,8 +342,8 @@ export interface Database {
         Row: {
           id: string;
           submitted_by: string;
-          proposed_name: string;
-          brand: string;
+          proposed_name: string | null;
+          brand: string | null;
           series_name: string | null;
           release_location: string | null;
           release_year: number | null;
@@ -357,6 +357,9 @@ export interface Database {
           notes: string | null;
           status: 'draft' | 'submitted' | 'under_review' | 'approved' | 'rejected' | 'needs_changes';
           reviewer_notes: string | null;
+          rights_confirmed_at: string | null;
+          ai_identification: Json | null;
+          original_metadata: Json | null;
           approved_pin_id: string | null;
           created_at: string;
           updated_at: string;
@@ -364,8 +367,8 @@ export interface Database {
         Insert: {
           id?: string;
           submitted_by: string;
-          proposed_name: string;
-          brand: string;
+          proposed_name?: string | null;
+          brand?: string | null;
           series_name?: string | null;
           release_location?: string | null;
           release_year?: number | null;
@@ -379,13 +382,15 @@ export interface Database {
           notes?: string | null;
           status?: 'draft' | 'submitted' | 'under_review' | 'approved' | 'rejected' | 'needs_changes';
           reviewer_notes?: string | null;
+          rights_confirmed_at?: string | null;
+          ai_identification?: Json | null;
           approved_pin_id?: string | null;
           created_at?: string;
           updated_at?: string;
         };
         Update: {
-          proposed_name?: string;
-          brand?: string;
+          proposed_name?: string | null;
+          brand?: string | null;
           series_name?: string | null;
           release_location?: string | null;
           release_year?: number | null;

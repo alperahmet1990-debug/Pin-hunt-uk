@@ -24,6 +24,7 @@ export type {
   CreatePinSubmissionInput,
   EditionType,
   PinSubmission,
+  SubmissionAiIdentification,
   PinSubmissionStatus,
   UpdatePinSubmissionInput,
   Trade,

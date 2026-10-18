@@ -1,0 +1,3090 @@
+{
+ "packet_id": "backfill-b275-dlp-2018-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b275",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+   "title": "Surprise Coco Pins at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/surprise-101-dalmatians-pins-at-disneyland-paris",
+   "title": "Surprise 101 Dalmatians Pins At Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/bambi-disneyland-paris-pin-trading-night-pins/",
+   "title": "Bambi Disneyland Paris Pin Trading Night Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+   "title": "December 2018 Surprise Pin Releases at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+   "title": "Disneyland Paris September 2018 Pin Trading Day Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+   "title": "Les pin's de juillet a Disneyland Paris",
+   "publisher": "Disney Gazette",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+   "title": "Disneyland Paris Pins For July 2018",
+   "publisher": "DedicatedtoDLP",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.passiondlp.com/actus/arc027.php",
+   "title": "Archives Disneyland Paris 2018 trimestre 1",
+   "publisher": "passiondlp",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://passiondlp.com/actus/arc029.php",
+   "title": "Archives Disneyland Paris 2018 trimestre 3",
+   "publisher": "passiondlp",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+   "title": "Pin-Neuerscheinungen im April 2018",
+   "publisher": "dein-dlrp.de",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+   "title": "Pin-Neuerscheinungen im Juni 2018",
+   "publisher": "dein-dlrp.de",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+   "title": "Pin-Neuerscheinungen im Oktober 2018",
+   "publisher": "dein-dlrp.de",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disneyland-paris-thumper-mini-pin-bambi-207801018050.html",
+   "title": "Disneyland Paris Thumper Mini Pin, Bambi",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disneyland-paris-marie-mini-pin-the-aristocats-207801018051.html",
+   "title": "Disneyland Paris Marie Mini Pin, The Aristocats",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disneyland-paris-figaro-mini-pin-pinocchio-207801018055.html",
+   "title": "Disneyland Paris Figaro Mini Pin, Pinocchio",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.traveltothemagic.net/review/review-season-of-the-force-2018-disneyland-paris/",
+   "title": "Review: Season of the Force 2018 - Disneyland Paris",
+   "publisher": "Travel to the Magic",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2018/ptn-january-2018-inside-out",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night January 2018 (Inside Out)",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "PTN trio of Inside Out characters"
+    },
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "three PTN pins named individually"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "the three PTN pins; Refresh Lanyard pin listed separately"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-01-26",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "PTN 26 Jan 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hotel New York",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "session held at Hotel New York"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/ptn-february-2018-coco",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "three PTN pins Miguel, Dante, Hector plus separate Refresh Lanyard pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-23",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "PTN 23 Feb 2018"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-23",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "released at 23 Feb 2018 PTN"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "each pin LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "each pin LE 400"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/surprise-coco-pins-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "exclusive to DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/ptn-march-2018-beauty-and-the-beast",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night March 2018 (Beauty and the Beast)",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "PTN trio"
+    },
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "three PTN pins named individually"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "three PTN pins; Refresh Lanyard pin separate"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-30",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "PTN 30 Mar 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/ptn-july-2018-lion-king",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night July 2018 (The Lion King)",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "PTN trio"
+    },
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "three PTN pins named individually"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "three PTN pins; Refresh Lanyard pin separate"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-27",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "PTN 27 Jul 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Sequoia Lodge, Beaver Creek Tavern",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "venue given for 27 Jul PTN"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/ptn-august-2018-101-dalmatians",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "three PTN pins Pongo, Perdita, Nanny; Refresh Lanyard pin separate"
+    },
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "three PTN pins named individually"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-31",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "PTN 31 Aug 2018"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-101-dalmatians-pins-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "released at 31 Aug 2018 event"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-101-dalmatians-pins-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "each pin LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-101-dalmatians-pins-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "each pin LE 400"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-101-dalmatians-pins-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "exclusive to DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/ptn-november-2018-bambi",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-11-30",
+     "source_url": "https://disneypinsblog.com/bambi-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "PTN 30 Nov 2018"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/bambi-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/bambi-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "LE 400 each"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/bambi-disneyland-paris-pin-trading-night-pins/",
+     "method": "search_snippet",
+     "note": "exclusive to DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/ptn-refresh-lanyard-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Night Refresh Lanyard pins 2018",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "a Refresh Lanyard pin listed with each PTN trio"
+    },
+    {
+     "field": "format",
+     "value": "separate dated pins, one per PTN",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "one Refresh Lanyard pin per PTN date"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "Pin Trading Day 15 Sep 2018"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "PTD 15 Sep, no PTN that month"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/cast-member-exclusive-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Cast Member Exclusive pins 2018",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "CM exclusive pins noted in 2018 archives"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "each listed separately"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/surprise-december-2018",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "two new pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-20",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "20 Dec 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Harrington's, Main Street U.S.A.",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "sold at Harrington's while supplies last"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/minis-july-2018",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "group of six mini pins"
+    },
+    {
+     "field": "format",
+     "value": "series of separate mini pins",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "six mini pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-07",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Minis series from Sat 7 Jul"
+    },
+    {
+     "field": "set_name",
+     "value": "Les Minis",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "new Minis series"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/mickey-alphabet",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 26,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "26 Mickey pins, one per letter"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 26,
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "26 letters"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-07",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "7 Jul 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/cherry-blossom-girl-july-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Cherry Blossom Girl pins (July 2018)",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "three pins inspired by The Cherry Blossom Girl"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "three pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "LE 400 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-14",
+     "source_url": "https://dedicatedtodlp.com/the-vault/disneyland-paris-pins-for-july-2018-the-best-pirates-of-the-caribbean-pin-cute-characters-and-so-many-mickey-pins/",
+     "method": "search_snippet",
+     "note": "14 Jul 2018"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "three pins made with the blogger"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/rendez-vous-gourmand-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Le Rendez-Vous Gourmand de Disneyland Paris pins 2018",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "sale of Rendez-Vous Gourmand pins 3 Aug 2018"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "three pins of Disney classics celebrating French cuisine"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "500 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "3 Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Chez Marianne, Walt Disney Studios Park",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "Chez Marianne"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/mickey-paris-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "single unlimited pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "7 Apr 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/minnie-paris-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "single unlimited pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "7 Apr 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/chip-and-dale-paris-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "single unlimited pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "7 Apr 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/paris-spinner-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "single unlimited pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "7 Apr 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/paris-je-taime-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "single unlimited pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "7 Apr 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/tinker-bell-summer-fruit-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "single unlimited pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "7 Apr 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/ariel-summer-fruit-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "single unlimited pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "7 Apr 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-set/marvel-super-heroes-june-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "separate single pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "each pin described separately in body text"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-set/tinker-bell-ornaments-oct-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tinker Bell ornament-style pins (October 2018)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "four new unlimited Tinker Bell pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "four pins"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "four designs with own prices"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-06",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "6 Oct 2018"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2018/ptn-january-2018-inside-out/fear",
+   "set_key": "dlp/2018/ptn-january-2018-inside-out",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Fear"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "named Peur in the PTN trio (Vice-Versa)"
+    },
+    {
+     "field": "franchise",
+     "value": "Inside Out",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "personnages Vice-Versa"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-01-26",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "PTN 26 Jan 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-january-2018-inside-out/disgust",
+   "set_key": "dlp/2018/ptn-january-2018-inside-out",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Disgust"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "named Degout in the PTN trio (Vice-Versa)"
+    },
+    {
+     "field": "franchise",
+     "value": "Inside Out",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "personnages Vice-Versa"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-01-26",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "PTN 26 Jan 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-january-2018-inside-out/bing-bong",
+   "set_key": "dlp/2018/ptn-january-2018-inside-out",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Bing Bong"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "named Bing Bong in the PTN trio (Vice-Versa)"
+    },
+    {
+     "field": "franchise",
+     "value": "Inside Out",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "personnages Vice-Versa"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-01-26",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "PTN 26 Jan 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-february-2018-coco/dante",
+   "set_key": "dlp/2018/ptn-february-2018-coco",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dante"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "named in Feb 2018 PTN trio"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-23",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "23 Feb 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-february-2018-coco/miguel",
+   "set_key": "dlp/2018/ptn-february-2018-coco",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Miguel"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "named in Feb 2018 PTN trio"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-23",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "23 Feb 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-february-2018-coco/hector",
+   "set_key": "dlp/2018/ptn-february-2018-coco",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hector"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "named in Feb 2018 PTN trio"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-23",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "23 Feb 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-march-2018-beauty-and-the-beast/lumiere",
+   "set_key": "dlp/2018/ptn-march-2018-beauty-and-the-beast",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lumiere"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "named in March 2018 PTN trio (La Belle et la Bete)"
+    },
+    {
+     "field": "franchise",
+     "value": "Beauty and the Beast",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "personnages La Belle et la Bete"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-30",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "30 Mar 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-march-2018-beauty-and-the-beast/babette",
+   "set_key": "dlp/2018/ptn-march-2018-beauty-and-the-beast",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Babette"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "named in March 2018 PTN trio (La Belle et la Bete)"
+    },
+    {
+     "field": "franchise",
+     "value": "Beauty and the Beast",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "personnages La Belle et la Bete"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-30",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "30 Mar 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-march-2018-beauty-and-the-beast/lefou",
+   "set_key": "dlp/2018/ptn-march-2018-beauty-and-the-beast",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "LeFou"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "named in March 2018 PTN trio (La Belle et la Bete)"
+    },
+    {
+     "field": "franchise",
+     "value": "Beauty and the Beast",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "personnages La Belle et la Bete"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-30",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "30 Mar 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-july-2018-lion-king/nala",
+   "set_key": "dlp/2018/ptn-july-2018-lion-king",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Nala"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "named in July 2018 PTN trio (Le Roi Lion)"
+    },
+    {
+     "field": "franchise",
+     "value": "The Lion King",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "personnages Le Roi Lion"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-27",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "27 Jul 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-july-2018-lion-king/zazu",
+   "set_key": "dlp/2018/ptn-july-2018-lion-king",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Zazu"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "named in July 2018 PTN trio (Le Roi Lion)"
+    },
+    {
+     "field": "franchise",
+     "value": "The Lion King",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "personnages Le Roi Lion"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-27",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "27 Jul 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-july-2018-lion-king/rafiki",
+   "set_key": "dlp/2018/ptn-july-2018-lion-king",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rafiki"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "named in July 2018 PTN trio (Le Roi Lion)"
+    },
+    {
+     "field": "franchise",
+     "value": "The Lion King",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "personnages Le Roi Lion"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-27",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "27 Jul 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-august-2018-101-dalmatians/pongo",
+   "set_key": "dlp/2018/ptn-august-2018-101-dalmatians",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pongo"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "named in Aug 2018 PTN trio (Les 101 Dalmatiens)"
+    },
+    {
+     "field": "franchise",
+     "value": "101 Dalmatians",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "personnages Les 101 Dalmatiens"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-31",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "31 Aug 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-august-2018-101-dalmatians/perdita",
+   "set_key": "dlp/2018/ptn-august-2018-101-dalmatians",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Perdita"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "named in Aug 2018 PTN trio (Les 101 Dalmatiens)"
+    },
+    {
+     "field": "franchise",
+     "value": "101 Dalmatians",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "personnages Les 101 Dalmatiens"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-31",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "31 Aug 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-august-2018-101-dalmatians/nanny",
+   "set_key": "dlp/2018/ptn-august-2018-101-dalmatians",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Nanny"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "named in Aug 2018 PTN trio (Les 101 Dalmatiens)"
+    },
+    {
+     "field": "franchise",
+     "value": "101 Dalmatians",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "personnages Les 101 Dalmatiens"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-31",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "31 Aug 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-refresh-lanyard-2018/january",
+   "set_key": "dlp/2018/ptn-refresh-lanyard-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Refresh Lanyard pin 2018-01-26",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "pin's Refresh Lanyard dated to this PTN"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-01-26",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "dated to PTN"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-refresh-lanyard-2018/february",
+   "set_key": "dlp/2018/ptn-refresh-lanyard-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Refresh Lanyard pin 2018-02-23",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "pin's Refresh Lanyard dated to this PTN"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-23",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "dated to PTN"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-refresh-lanyard-2018/march",
+   "set_key": "dlp/2018/ptn-refresh-lanyard-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Refresh Lanyard pin 2018-03-30",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "pin's Refresh Lanyard dated to this PTN"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-30",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "dated to PTN"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-refresh-lanyard-2018/july",
+   "set_key": "dlp/2018/ptn-refresh-lanyard-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Refresh Lanyard pin 2018-07-27",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "pin's Refresh Lanyard dated to this PTN"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-27",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "dated to PTN"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-refresh-lanyard-2018/august",
+   "set_key": "dlp/2018/ptn-refresh-lanyard-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Refresh Lanyard pin 2018-08-31",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "pin's Refresh Lanyard dated to this PTN"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-31",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "dated to PTN"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/pin-trading-day-september-2018/marie",
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "character pins LE 500 each"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dia de los Muertos styling",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "15 Sep 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/pin-trading-day-september-2018/stitch",
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "character pins LE 500 each"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dia de los Muertos styling",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "15 Sep 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/pin-trading-day-september-2018/pascal",
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "character pins LE 500 each"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dia de los Muertos styling",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "15 Sep 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/pin-trading-day-september-2018/minnie-mouse",
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "character pins LE 500 each"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dia de los Muertos styling",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "15 Sep 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/pin-trading-day-september-2018/mickey-mouse",
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "character pins LE 500 each"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dia de los Muertos styling",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "15 Sep 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/pin-trading-day-september-2018/pluto",
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "character pins LE 500 each"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dia de los Muertos styling",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-15",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "15 Sep 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/pin-trading-day-september-2018/event-logo",
+   "set_key": "dlp/2018/pin-trading-day-september-2018",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "event logo pin LE 400"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-september-2018-pin-trading-day-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/cast-member-exclusive-2018/mickey-coco",
+   "set_key": "dlp/2018/cast-member-exclusive-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Coco (Cast Member Exclusive)",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "new CM exclusive pin, Sept 2018 entry"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "edition_size",
+     "value": 3018,
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "3018 copies"
+    },
+    {
+     "field": "edition_type",
+     "value": "cast member exclusive",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "CM exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "http://passiondlp.com/actus/arc029.php",
+     "method": "search_snippet",
+     "note": "September 2018 entry"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/cast-member-exclusive-2018/tinker-bell-25th-anniversary",
+   "set_key": "dlp/2018/cast-member-exclusive-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tinker Bell 25th anniversary (Cast Member Exclusive)",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "CM exclusive for DLP 25th anniversary"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "Fee Clochette"
+    },
+    {
+     "field": "edition_size",
+     "value": 3018,
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "3018 copies"
+    },
+    {
+     "field": "edition_type",
+     "value": "cast member exclusive",
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "CM exclusive"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.passiondlp.com/actus/arc027.php",
+     "method": "search_snippet",
+     "note": "listed on Q1 2018 archive page"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/surprise-december-2018/cheshire-cat",
+   "set_key": "dlp/2018/surprise-december-2018",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE 700 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-20",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "20 Dec 2018"
+    },
+    {
+     "field": "visual_description",
+     "value": "Cheshire Cat with a present dangle",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_location",
+     "value": "Harrington's, Main Street U.S.A.",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Harrington's"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/surprise-december-2018/stitch",
+   "set_key": "dlp/2018/surprise-december-2018",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "LE 700 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-20",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "20 Dec 2018"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch in a snowy scene with birds",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "release_location",
+     "value": "Harrington's, Main Street U.S.A.",
+     "source_url": "https://disneypinsblog.com/december-2018-surprise-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Harrington's"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/minis-july-2018/pluto",
+   "set_key": "dlp/2018/minis-july-2018",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-07-07",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Pluto named in 7 Jul Minis"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/minis-july-2018/thumper",
+   "set_key": "dlp/2018/minis-july-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thumper"
+     ],
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Panpan named among the six Minis"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-07",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "7 Jul 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "pin_name",
+     "value": "Disneyland Paris Thumper Mini Pin",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-thumper-mini-pin-bambi-207801018050.html",
+     "method": "search_snippet",
+     "note": "official listing in DLP Minis Collection; undated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/minis-july-2018/tod",
+   "set_key": "dlp/2018/minis-july-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tod"
+     ],
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Rox named among the six Minis"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-07",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "7 Jul 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/minis-july-2018/copper",
+   "set_key": "dlp/2018/minis-july-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Copper"
+     ],
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Rouky named among the six Minis"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-07",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "7 Jul 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/minis-july-2018/marie",
+   "set_key": "dlp/2018/minis-july-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Marie"
+     ],
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Marie named among the six Minis"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-07",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "7 Jul 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "pin_name",
+     "value": "Disneyland Paris Marie Mini Pin",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-marie-mini-pin-the-aristocats-207801018051.html",
+     "method": "search_snippet",
+     "note": "official listing in DLP Minis Collection; undated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/minis-july-2018/figaro",
+   "set_key": "dlp/2018/minis-july-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Figaro"
+     ],
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Figaro named among the six Minis"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-07",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "7 Jul 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "pin_name",
+     "value": "Disneyland Paris Figaro Mini Pin",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-figaro-mini-pin-pinocchio-207801018055.html",
+     "method": "search_snippet",
+     "note": "official listing in DLP Minis Collection; undated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/bastille-day-2018/lumiere",
+   "set_key": "dlp/2018/bastille-day-2018",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-07-14",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "14 Jul 2018 pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "exclusive at Pueblo Trading Post"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/july-2018-releases/felicia-my-cat",
+   "set_key": "dlp/2018/july-2018-releases",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Felicia"
+     ],
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Felicia added to My Cat series"
+    },
+    {
+     "field": "franchise",
+     "value": "The Great Mouse Detective",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "from Basil Detective Prive"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-07-14",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "14 Jul 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-juillet-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "14 Jul limited series at Pueblo"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/mickey-paris-2018",
+   "set_key": "dlp/2018/oe-single/mickey-paris-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "named in 7 Apr We love Disneyland Paris release"
+    },
+    {
+     "field": "visual_description",
+     "value": "colourful Paris design single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "7 Apr 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "character named"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/minnie-paris-2018",
+   "set_key": "dlp/2018/oe-single/minnie-paris-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "named in 7 Apr We love Disneyland Paris release"
+    },
+    {
+     "field": "visual_description",
+     "value": "colourful Paris design single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "7 Apr 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "character named"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/chip-and-dale-paris-2018",
+   "set_key": "dlp/2018/oe-single/chip-and-dale-paris-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip and Chap",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "named in 7 Apr We love Disneyland Paris release"
+    },
+    {
+     "field": "visual_description",
+     "value": "colourful Paris design; one single pin listed as Chip and Chap",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "7 Apr 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "listed as one of five single pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/paris-spinner-2018",
+   "set_key": "dlp/2018/oe-single/paris-spinner-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Paris spinner pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "named in 7 Apr We love Disneyland Paris release"
+    },
+    {
+     "field": "visual_description",
+     "value": "colourful Paris design spinner pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "7 Apr 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/paris-je-taime-2018",
+   "set_key": "dlp/2018/oe-single/paris-je-taime-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Paris je t'aime",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "named in 7 Apr We love Disneyland Paris release"
+    },
+    {
+     "field": "visual_description",
+     "value": "black, white and red Paris design",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "7 Apr 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/tinker-bell-summer-fruit-2018",
+   "set_key": "dlp/2018/oe-single/tinker-bell-summer-fruit-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tinker Bell summer fruit pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "named in 7 Apr We love Disneyland Paris release"
+    },
+    {
+     "field": "visual_description",
+     "value": "colourful summer design, fruit theme",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "7 Apr 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "character named"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/ariel-summer-fruit-2018",
+   "set_key": "dlp/2018/oe-single/ariel-summer-fruit-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ariel summer fruit pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "named in 7 Apr We love Disneyland Paris release"
+    },
+    {
+     "field": "visual_description",
+     "value": "colourful summer design, fruit theme",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-04-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "7 Apr 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-april-2018/",
+     "method": "search_snippet",
+     "note": "character named"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/spider-man-summer-of-super-heroes",
+   "set_key": "dlp/2018/oe-set/marvel-super-heroes-june-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Spider-Man"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "Spider-Man in hero pose"
+    },
+    {
+     "field": "visual_description",
+     "value": "Spider-Man in hero pose above Summer of Super Heroes lettering",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of body text"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "body text 6.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "June 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/marvel-poster-summer-of-super-heroes",
+   "set_key": "dlp/2018/oe-set/marvel-super-heroes-june-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Marvel poster pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "rectangular film-poster style pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Rectangular poster style, Marvel logo, SUMMER OF SUPER HEROES capitals with various heroes",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "body text 7.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "June 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/captain-america-spider-man-iron-man",
+   "set_key": "dlp/2018/oe-set/marvel-super-heroes-june-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain America",
+      "Spider-Man",
+      "Iron Man"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "one pin showing the three heroes"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "described as a single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "6.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juni-2018/",
+     "method": "search_snippet",
+     "note": "June 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/tinker-bell-ornament-palm",
+   "set_key": "dlp/2018/oe-set/tinker-bell-ornaments-oct-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "Tinker Bell"
+    },
+    {
+     "field": "visual_description",
+     "value": "Christmas-ornament style Tinker Bell, palm version",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "7.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-06",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "6 Oct 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/tinker-bell-ornament-pineapple",
+   "set_key": "dlp/2018/oe-set/tinker-bell-ornaments-oct-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "Tinker Bell"
+    },
+    {
+     "field": "visual_description",
+     "value": "Christmas-ornament style Tinker Bell, pineapple version",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "7.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-06",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "6 Oct 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/tinker-bell-ornament-swing",
+   "set_key": "dlp/2018/oe-set/tinker-bell-ornaments-oct-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "Tinker Bell"
+    },
+    {
+     "field": "visual_description",
+     "value": "Christmas-ornament style Tinker Bell, swing version",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "9.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-06",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "6 Oct 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/tinker-bell-ornament-pearl-necklace",
+   "set_key": "dlp/2018/oe-set/tinker-bell-ornaments-oct-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "Tinker Bell"
+    },
+    {
+     "field": "visual_description",
+     "value": "Christmas-ornament style Tinker Bell, pearl necklace version",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "6.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-10-06",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "6 Oct 2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/october-2018-le/tinker-bell-small-world",
+   "set_key": "dlp/2018/october-2018-le",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "LE 700"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "Pueblo only, LineBerty reservation"
+    },
+    {
+     "field": "attraction",
+     "value": "It's a Small World",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "attraction series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/october-2018-le/duchess-my-cat",
+   "set_key": "dlp/2018/october-2018-le",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "15.99 EUR"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2018/",
+     "method": "search_snippet",
+     "note": "LE 700"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2018/ptn-refresh-lanyard-2018/january",
+   "field": "visual_description",
+   "searched": "passiondlp quarterly archive snippets",
+   "note": "design not described"
+  },
+  {
+   "key": "dlp/2018/ptn-refresh-lanyard-2018/february",
+   "field": "visual_description",
+   "searched": "passiondlp quarterly archive snippets",
+   "note": "design not described"
+  },
+  {
+   "key": "dlp/2018/ptn-refresh-lanyard-2018/march",
+   "field": "visual_description",
+   "searched": "passiondlp quarterly archive snippets",
+   "note": "design not described"
+  },
+  {
+   "key": "dlp/2018/ptn-refresh-lanyard-2018/july",
+   "field": "visual_description",
+   "searched": "passiondlp quarterly archive snippets",
+   "note": "design not described"
+  },
+  {
+   "key": "dlp/2018/ptn-refresh-lanyard-2018/august",
+   "field": "visual_description",
+   "searched": "passiondlp quarterly archive snippets",
+   "note": "design not described"
+  },
+  {
+   "key": "dlp/2018/cast-member-exclusive-2018/tinker-bell-25th-anniversary",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "only placed on the Jan-Mar 2018 archive page; exact date not in snippet"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018/thumper",
+   "field": "edition_size",
+   "searched": "4 queries",
+   "note": "edition/price not stated for this mini (only Pluto LE 700 in packet 213)"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018/tod",
+   "field": "edition_size",
+   "searched": "4 queries",
+   "note": "edition/price not stated for this mini (only Pluto LE 700 in packet 213)"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018/copper",
+   "field": "edition_size",
+   "searched": "4 queries",
+   "note": "edition/price not stated for this mini (only Pluto LE 700 in packet 213)"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018/marie",
+   "field": "edition_size",
+   "searched": "4 queries",
+   "note": "edition/price not stated for this mini (only Pluto LE 700 in packet 213)"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018/figaro",
+   "field": "edition_size",
+   "searched": "4 queries",
+   "note": "edition/price not stated for this mini (only Pluto LE 700 in packet 213)"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018/thumper",
+   "field": "product_code",
+   "searched": "disneystore.eu listing",
+   "note": "lead: listing URLs carry 2078010180xx numbers (Thumper ..050, Marie ..051, Figaro ..055); not claimed as product codes"
+  },
+  {
+   "key": "dlp/2018/cherry-blossom-girl-july-2018",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: only a reseller (artoriginals.ca, undated) names designs (Alice/Dinah, Pascal, Thumper); reseller not evidence; members not recorded"
+  },
+  {
+   "key": "dlp/2018/rendez-vous-gourmand-2018",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "designs not named for 2018; well-documented LE 500 trio (Dumbo, Chip & Dale, Mad Hatter) is Aug 2019 - confirm 2018 set is not a mix-up"
+  },
+  {
+   "key": "dlp/2018/oe/paris-spinner-2018",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "spinner design characters not stated"
+  },
+  {
+   "key": "dlp/2018/oe/we-love-dlp-red-black-white-2018",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "four pins in black/white/red line; only Paris je t'aime named; other three not recorded"
+  },
+  {
+   "key": "dlp/2018/oe-set/we-love-dlp-booster-2018",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "booster still not described; members not recorded"
+  },
+  {
+   "key": "dlp/2018/oe/marvel-poster-summer-of-super-heroes",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "conflict: page summary list gives 6.99/7.99 to different poster entries than body text; body price recorded"
+  },
+  {
+   "key": "dlp/2018/oe-set/marvel-super-heroes-june-2018",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "new per-pin body text names Spider-Man and poster pins (hold was in packet 420); earlier no-Spider-Man / LE 700 snippet conflict not re-resolved - reviewer to check"
+  },
+  {
+   "key": "dlp/2018/nightmare-before-christmas-oct-2018",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "conflict lead: one Oct snippet calls four NBC pins LE 700 each; packet 420 recorded four NBC pins as unlimited 6.99-9.99 EUR; not claimed"
+  },
+  {
+   "key": "dlp/2018/monthly-pages",
+   "field": "pins",
+   "searched": "8 queries",
+   "note": "dein-dlrp Jan, Feb, Mar, May, Jul, Aug, Sep, Nov, Dec 2018 pages still not indexed; passiondlp Q2/Q4 2018 archive pages not indexed"
+  },
+  {
+   "key": "dlp/2018/ptn-june-2018",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "June (29 Jun), April, May, Oct, Nov PTN trios not found (Q2/Q4 archive not indexed)"
+  },
+  {
+   "key": "dlp/2018/ptn-november-2018-bambi",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "still no named members; Flower hold (packet 420) retained"
+  },
+  {
+   "key": "dlp/2018/season-of-the-force-2018",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Travel to the Magic notes SotF 2018 merchandise but no pin named; no pin recorded"
+  },
+  {
+   "key": "dlp/2018/christmas-2018-le",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no DLP Christmas 2018 LE set beyond Dec 20 Cheshire/Stitch found"
+  },
+  {
+   "key": "dlp/2018/september-2018-releases/jazzy-my-cat",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "Jazzy identity still unconfirmed"
+  },
+  {
+   "key": "dlp/2018/december-2018-releases/figaro-my-cat",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "still not stated"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "holds from packet 420 retained (membership inferred); no new per-pin evidence"
+  },
+  {
+   "key": "dlp/2018/june-2018-le/ursula-big-thunder-mountain",
+   "field": "duplicate",
+   "searched": "0 queries",
+   "note": "hold from packet 420 retained"
+  },
+  {
+   "key": "dlp/2018/pirates-and-princesses-2018",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold from packet 420 retained: Peter Pan/Hook structure unconfirmed"
+  },
+  {
+   "key": "dlp/2018/ptn-january-2018-inside-out/fear",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - Pin Trading Night pins named only in one event line-up (consistent with 2019 Aug PTN hold)"
+  },
+  {
+   "key": "dlp/2018/ptn-january-2018-inside-out/disgust",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - Pin Trading Night pins named only in one event line-up (consistent with 2019 Aug PTN hold)"
+  },
+  {
+   "key": "dlp/2018/ptn-january-2018-inside-out/bing-bong",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - Pin Trading Night pins named only in one event line-up (consistent with 2019 Aug PTN hold)"
+  },
+  {
+   "key": "dlp/2018/ptn-march-2018-beauty-and-the-beast/lumiere",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - Pin Trading Night pins named only in one event line-up (consistent with 2019 Aug PTN hold)"
+  },
+  {
+   "key": "dlp/2018/ptn-march-2018-beauty-and-the-beast/babette",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - Pin Trading Night pins named only in one event line-up (consistent with 2019 Aug PTN hold)"
+  },
+  {
+   "key": "dlp/2018/ptn-march-2018-beauty-and-the-beast/lefou",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - Pin Trading Night pins named only in one event line-up (consistent with 2019 Aug PTN hold)"
+  },
+  {
+   "key": "dlp/2018/ptn-july-2018-lion-king/nala",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - Pin Trading Night pins named only in one event line-up (consistent with 2019 Aug PTN hold)"
+  },
+  {
+   "key": "dlp/2018/ptn-july-2018-lion-king/zazu",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - Pin Trading Night pins named only in one event line-up (consistent with 2019 Aug PTN hold)"
+  },
+  {
+   "key": "dlp/2018/ptn-july-2018-lion-king/rafiki",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - Pin Trading Night pins named only in one event line-up (consistent with 2019 Aug PTN hold)"
+  },
+  {
+   "key": "dlp/2018/ptn-august-2018-101-dalmatians/pongo",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - Pin Trading Night pins named only in one event line-up (consistent with 2019 Aug PTN hold)"
+  },
+  {
+   "key": "dlp/2018/ptn-august-2018-101-dalmatians/perdita",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - Pin Trading Night pins named only in one event line-up (consistent with 2019 Aug PTN hold)"
+  },
+  {
+   "key": "dlp/2018/ptn-august-2018-101-dalmatians/nanny",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - Pin Trading Night pins named only in one event line-up (consistent with 2019 Aug PTN hold)"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018/tod",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - named only in one six-mini line-up, no per-pin listing"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018/copper",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - named only in one six-mini line-up, no per-pin listing"
+  },
+  {
+   "key": "dlp/2018/oe/spider-man-summer-of-super-heroes",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: packet 420 conflict unresolved (snippet without Spider-Man pin; EUR 16.99 LE 700) and poster pin has two prices on the same page"
+  },
+  {
+   "key": "dlp/2018/oe/marvel-poster-summer-of-super-heroes",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: packet 420 conflict unresolved (snippet without Spider-Man pin; EUR 16.99 LE 700) and poster pin has two prices on the same page"
+  },
+  {
+   "key": "dlp/2018/oe/captain-america-spider-man-iron-man",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: packet 420 conflict unresolved (snippet without Spider-Man pin; EUR 16.99 LE 700) and poster pin has two prices on the same page"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 of B013 (packets 213, 420). 30 standard searches, snippets only. passiondlp quarterly archives (Q1, Q3 2018) name each PTN trio plus a dated Refresh Lanyard pin: Jan Inside Out, Feb Coco, Mar BatB, Jul Lion King, Aug 101 Dalmatians. Disney Gazette names the six July Minis. dein-dlrp Apr/Jun/Oct body text gave per-pin OE detail. Holds from 420 retained (Fun Adventures, Ursula BTM, Bambi Flower, Pirates & Princesses). Marvel June per-pin text found (hold key in 420). Cherry Blossom Girl designs only on reseller."
+}

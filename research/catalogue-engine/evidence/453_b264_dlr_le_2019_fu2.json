@@ -1,0 +1,1365 @@
+{
+ "packet_id": "backfill-b264-dlr-le-2019-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b264",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-4",
+   "title": "New Disney Pins December 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+   "title": "New Disney Pins May 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+   "title": "November Pin Releases for Walt Disney World and Disneyland",
+   "publisher": "WDW News Today",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.pintrader.club/pins/aurora-windows-of-magic",
+   "title": "Aurora - Windows of Magic",
+   "publisher": "Pin Trader Club",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://carstairsconsiders.blogspot.com/2020/02/disney-pin-review-aurora-windows-of.html",
+   "title": "Disney Pin Review: Aurora - Windows of Magic - 2019 Release",
+   "publisher": "Carstairs Considers",
+   "published_date": "2020-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+   "title": "New Disney Pins January 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-haunted-mansion-celebrating-50-years-of-retirement-unliving-disney-pins/",
+   "title": "The Haunted Mansion: Celebrating 50 Years of Retirement Unliving Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/123371",
+   "title": "MyPinCentral pin 123371",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+   "title": "New Disney Pins May 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+   "title": "New Disney Pin November 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/164364",
+   "title": "MyPinCentral pin 164364",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+   "title": "I Heart Gaming Disney Pins Series Showcase",
+   "publisher": "DuckTalks",
+   "published_date": "2019-12-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-galaxys-edge-opening-day-pins-at-disneyland/",
+   "title": "Star Wars: Galaxy's Edge Opening Day Pins at Disneyland",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/sleeping-beauty-60th-anniversary-pin-collection/",
+   "title": "Sleeping Beauty 60th Anniversary Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-5",
+   "title": "New Disney Pins October 2019 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/oogie-boogie-bash-2019-disney-pins/",
+   "title": "Oogie Boogie Bash 2019 Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tis-the-season-advent-calendar-2019-pin-collection/",
+   "title": "Tis the Season Advent Calendar 2019 Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-haunted-mansion-club-33-disney-pin/",
+   "title": "The Haunted Mansion 50th Anniversary Club 33 Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Graveyard Ghosts Haunted Mansion Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-celebrating-50-years-of-retirement-unliving-disney-pins/",
+     "method": "search_snippet",
+     "note": "Named in HM 50th event post"
+    },
+    {
+     "field": "format",
+     "value": "mystery set",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-celebrating-50-years-of-retirement-unliving-disney-pins/",
+     "method": "search_snippet",
+     "note": "Two random pins per box, no chasers"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-celebrating-50-years-of-retirement-unliving-disney-pins/",
+     "method": "search_snippet",
+     "note": "Ten pins in total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-celebrating-50-years-of-retirement-unliving-disney-pins/",
+     "method": "search_snippet",
+     "note": "Two per box"
+    },
+    {
+     "field": "has_chaser",
+     "value": false,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-celebrating-50-years-of-retirement-unliving-disney-pins/",
+     "method": "search_snippet",
+     "note": "No chasers"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-celebrating-50-years-of-retirement-unliving-disney-pins/",
+     "method": "search_snippet",
+     "note": "Limited release"
+    },
+    {
+     "field": "price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-celebrating-50-years-of-retirement-unliving-disney-pins/",
+     "method": "search_snippet",
+     "note": "$19.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/the-haunted-mansion-celebrating-50-years-of-retirement-unliving-disney-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-07",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "Release date 7 Aug 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "Disneyland Resort"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/graduation-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Graduation 2019",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Weekly post"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/tape-series",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tape Series",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Disneyland Tape Series collection"
+    },
+    {
+     "field": "format",
+     "value": "series of single pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Hercules called the 8th in the series"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/i-heart-gaming",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "I Heart Gaming",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "2019 I Heart Gaming collection"
+    },
+    {
+     "field": "format",
+     "value": "series of single pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Chip n Dale pin is the 11th"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/galaxys-edge-silhouette-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Silhouette Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-opening-day-pins-at-disneyland/",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge opening roundup"
+    },
+    {
+     "field": "format",
+     "value": "mystery set",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-opening-day-pins-at-disneyland/",
+     "method": "search_snippet",
+     "note": "Silhouetted characters, droids and ships"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-opening-day-pins-at-disneyland/",
+     "method": "search_snippet",
+     "note": "Six pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-opening-day-pins-at-disneyland/",
+     "method": "search_snippet",
+     "note": "Limited release"
+    },
+    {
+     "field": "price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-opening-day-pins-at-disneyland/",
+     "method": "search_snippet",
+     "note": "$19.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-opening-day-pins-at-disneyland/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/galaxys-edge-droid-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Droid Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-opening-day-pins-at-disneyland/",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge opening roundup"
+    },
+    {
+     "field": "format",
+     "value": "mystery set",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-opening-day-pins-at-disneyland/",
+     "method": "search_snippet",
+     "note": "Mystery set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-opening-day-pins-at-disneyland/",
+     "method": "search_snippet",
+     "note": "Limited release"
+    },
+    {
+     "field": "price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-opening-day-pins-at-disneyland/",
+     "method": "search_snippet",
+     "note": "$19.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/star-wars-galaxys-edge-opening-day-pins-at-disneyland/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2019/windows-of-magic/tiana",
+   "set_key": "dlr/2019/windows-of-magic",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-4",
+     "method": "search_snippet",
+     "note": "Dated weekly post: 12th pin in the Disneyland Windows of Magic collection"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tiana"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-4",
+     "method": "search_snippet",
+     "note": "Pin features Tiana"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-4",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-4",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-4",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-4",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-26",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-4",
+     "method": "search_snippet",
+     "note": "Available at Disneyland Dec 26, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-4",
+     "method": "search_snippet",
+     "note": "DLR release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/windows-of-magic/alice",
+   "set_key": "dlr/2019/windows-of-magic",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Windows of Magic - Alice",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "Weekly post names the Disneyland Windows of Magic pin as Alice"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "Alice subject"
+    },
+    {
+     "field": "set_position",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "Fifth pin in the Disneyland Windows of Magic series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-23",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "Available at Disneyland Resort May 23, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "DLR release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/windows-of-magic/black-cauldron",
+   "set_key": "dlr/2019/windows-of-magic",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Windows of Magic - The Black Cauldron",
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "November preview lists a Black Cauldron Windows of Magic pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-21",
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "Listed in the Nov 21 release lineup"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/windows-of-magic/aurora",
+   "set_key": "dlr/2019/windows-of-magic",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://www.pintrader.club/pins/aurora-windows-of-magic",
+     "method": "search_snippet",
+     "note": "Aurora - Windows of Magic database entry"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.pintrader.club/pins/aurora-windows-of-magic",
+     "method": "search_snippet",
+     "note": "Stamped limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://www.pintrader.club/pins/aurora-windows-of-magic",
+     "method": "search_snippet",
+     "note": "LE 2,000 backstamp"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://www.pintrader.club/pins/aurora-windows-of-magic",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.pintrader.club/pins/aurora-windows-of-magic",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-31",
+     "source_url": "https://www.pintrader.club/pins/aurora-windows-of-magic",
+     "method": "search_snippet",
+     "note": "Release date 31 Jan 2019"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/02/disney-pin-review-aurora-windows-of.html",
+     "method": "search_snippet",
+     "note": "Review of the Aurora Windows of Magic pin, 2019 release; counterpart to Maleficent"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/ap-train-series/walt-disney",
+   "set_key": "dlr/2019/ap-train-series",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Walt Disney"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "Walt Disney on a train"
+    },
+    {
+     "field": "set_position",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "First Disneyland Annual Passholder quarterly pin of 2019"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-24",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "Available at DLR Jan 24, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "DLR, passholder exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/opera-singer-ghost",
+   "set_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ghost singing opera",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "Named among the ten designs of the Graveyard Ghosts mystery series"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "One of ten separate mystery designs (series of 10, two per box)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/horn-ghost",
+   "set_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ghost blowing horn",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "Named among the ten designs of the Graveyard Ghosts mystery series"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "One of ten separate mystery designs (series of 10, two per box)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/mummy",
+   "set_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mummy",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "Named among the ten designs of the Graveyard Ghosts mystery series"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "One of ten separate mystery designs (series of 10, two per box)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/graveyard-attendant",
+   "set_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Graveyard Attendant",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "Named among the ten designs of the Graveyard Ghosts mystery series"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "One of ten separate mystery designs (series of 10, two per box)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/reaper",
+   "set_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Reaper",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "Named among the ten designs of the Graveyard Ghosts mystery series"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "One of ten separate mystery designs (series of 10, two per box)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/headless-knight",
+   "set_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Headless Knight",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "Named among the ten designs of the Graveyard Ghosts mystery series"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "One of ten separate mystery designs (series of 10, two per box)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/harp-ghost",
+   "set_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Harp Ghost",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "Named among the ten designs of the Graveyard Ghosts mystery series"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "One of ten separate mystery designs (series of 10, two per box)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/tea-drinker",
+   "set_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Tea Drinker",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "Named among the ten designs of the Graveyard Ghosts mystery series"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "One of ten separate mystery designs (series of 10, two per box)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/brick-and-trowel",
+   "set_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Brick and Trowel",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "Named among the ten designs of the Graveyard Ghosts mystery series"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "One of ten separate mystery designs (series of 10, two per box)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/executioner",
+   "set_key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Executioner",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "Named among the ten designs of the Graveyard Ghosts mystery series"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/123371",
+     "method": "search_snippet",
+     "note": "One of ten separate mystery designs (series of 10, two per box)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/graduation-2019/mickey-graduation-ear-band",
+   "set_key": "dlr/2019/graduation-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Graduation 2019 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Graduation 2019 pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Mickey graduation ear band design"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey graduation ear band with glitter and a tassel element; side reads Class of 2019",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Paraphrased design"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE 3,500"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Available May 9, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-2",
+     "method": "search_snippet",
+     "note": "Both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/tape-series/hercules",
+   "set_key": "dlr/2019/tape-series",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hercules",
+      "Pegasus"
+     ],
+     "source_url": "https://mypincentral.com/pin/164364",
+     "method": "search_snippet",
+     "note": "VHS case opens to show a tape and Pegasus"
+    },
+    {
+     "field": "set_position",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Eighth in the Tape Series collection at Disneyland"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://mypincentral.com/pin/164364",
+     "method": "search_snippet",
+     "note": "Backstamp LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 34.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "$34.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Available at DLR Nov 14, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "DLR release"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://mypincentral.com/pin/164364",
+     "method": "search_snippet",
+     "note": "Case opens to reveal tape"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/i-heart-gaming/chip-n-dale-rescue-rangers",
+   "set_key": "dlr/2019/i-heart-gaming",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Chip 'n Dale: Rescue Rangers subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "Single pin showing Chip and Dale jumping over a nut"
+    },
+    {
+     "field": "set_position",
+     "value": 11,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "11th pin in the 2019 I Heart Gaming collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 2500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE 2,500"
+    },
+    {
+     "field": "edition_size",
+     "value": 2500,
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "LE 2,500, Disneyland release"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Available at DLR Nov 14, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "DLR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/sleeping-beauty-60th-pin-trading-night/fairy-godmothers",
+   "set_key": "dlr/2019/sleeping-beauty-60th-pin-trading-night",
+   "claims": [
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "z-fold"
+     ],
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-60th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "Hinged z-fold"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-60th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "Limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-60th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-60th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "$19.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-60th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World Pin Trading Nights",
+     "source_url": "https://disneypinsblog.com/sleeping-beauty-60th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "Feb 2019 PTN RSP at both resorts"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2019/windows-of-magic/black-cauldron",
+   "field": "set_position",
+   "searched": "standard web search, snippets",
+   "note": "hold: 11th only by inference between #10 Jack and #12 Tiana; park, edition and price not in snippet"
+  },
+  {
+   "key": "dlr/2019/windows-of-magic/aurora",
+   "field": "set_position",
+   "searched": "standard web search, snippets",
+   "note": "hold: Jan 31 date implies #1 but no source states the number or Disneyland; sole dated source is a database page"
+  },
+  {
+   "key": "dlr/2019/windows-of-magic",
+   "field": "pins",
+   "searched": "standard web search, snippets",
+   "note": "#8 (Aug 2019) still not named; #1 likely Aurora (held), #11 likely Black Cauldron (held). Forum Dumbo guess not used"
+  },
+  {
+   "key": "dlr/2019/windows-of-magic/tiana",
+   "field": "set_position",
+   "searched": "standard web search, snippets",
+   "note": "resolved: 408 hold on Tiana now backed by dated DPB Dec wk4 per-pin entry"
+  },
+  {
+   "key": "dlr/2019/ap-train-series",
+   "field": "pins",
+   "searched": "standard web search, snippets",
+   "note": "#3 (about May 2019) still not named; #1 Walt Disney found"
+  },
+  {
+   "key": "dlr/2019/crests-of-the-kingdom",
+   "field": "pins",
+   "searched": "standard web search, snippets",
+   "note": "#5 (May) and #8 (Aug) still not named; Jungle Cruise crest found on no allowed source - kept as reseller-only lead"
+  },
+  {
+   "key": "dlr/2019/crests-of-the-kingdom/matterhorn",
+   "field": "edition_size",
+   "searched": "standard web search, snippets",
+   "note": "conflict: a DPB post lists Matterhorn as both LE 5,000 and LE 2,000; not claimed"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-opening-countdown-pin-set",
+   "field": "expected_pin_count",
+   "searched": "standard web search, snippets",
+   "note": "kept: DLR LE 500 $84.99 re-confirmed but members and count still not in snippets"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-countdown",
+   "field": "pins",
+   "searched": "standard web search, snippets",
+   "note": "First DLR countdown pin still not named; AT-AT (Apr 25, LE 3,000) is earliest found but not stated as #1"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-club-33",
+   "field": "pins",
+   "searched": "standard web search, snippets",
+   "note": "#2 (Jul 12), #4 (Aug 23), #5 (Sep 13) designs still not found; reseller Constance listing not used"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-silhouette-mystery",
+   "field": "pins",
+   "searched": "standard web search, snippets",
+   "note": "hold: mystery designs not individually confirmed"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-droid-mystery",
+   "field": "expected_pin_count",
+   "searched": "standard web search, snippets",
+   "note": "Size and designs not stated; two-per-box only from a blog comment reply"
+  },
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-mystery",
+   "field": "pins",
+   "searched": "standard web search, snippets",
+   "note": "kept: hold - no allowed source names the 14 designs; forum trade lists not used"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-holiday-2019-mystery",
+   "field": "pins",
+   "searched": "standard web search, snippets",
+   "note": "kept: DPB Oct wk5 confirms 10 pins, 2/box, $19.99, Oct 31 - designs not named"
+  },
+  {
+   "key": "dlr/2019/oogie-boogie-bash/first-fright",
+   "field": "edition_size",
+   "searched": "standard web search, snippets",
+   "note": "DPB lists the standard First Fright pin as limited release with no number"
+  },
+  {
+   "key": "dlr/2019/tis-the-season-advent",
+   "field": "pins",
+   "searched": "standard web search, snippets",
+   "note": "kept: DPB says 4 scenes x 6 pins (Pooh, Lady and the Tramp, Nightmare Before Christmas, Mickey and Friends); individual pins not named"
+  },
+  {
+   "key": "dlr/2019/disneyland-after-dark-sweethearts-nite",
+   "field": "expected_pin_count",
+   "searched": "standard web search, snippets",
+   "note": "Still no 2019 Sweethearts' Nite pin found; LE 2-pin set belongs to 2020"
+  },
+  {
+   "key": "dlr/2019/pixar-pier",
+   "field": "expected_pin_count",
+   "searched": "standard web search, snippets",
+   "note": "No 2019 LE Pixar Pier pin found; only the OE Incredicoaster pin (already in OE cell)"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery",
+   "field": "pin_structure",
+   "searched": "standard web search, snippets",
+   "note": "Ten designs named on one MyPinCentral page; DPB confirms 10-pin mystery, 2/box. Character identities are descriptive names"
+  },
+  {
+   "key": "dlr/2019/graduation-2019/mickey-graduation-ear-band",
+   "field": "variant",
+   "searched": "standard web search, snippets",
+   "note": "Sold at DLR and WDW; no WDW key found in 202/404/451 - keyed once under dlr"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-oval-plaque-boxed-set",
+   "field": "hold",
+   "searched": "not re-searched beyond budget",
+   "note": "kept: no new per-pin evidence this pass; prior hold stands"
+  },
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-pin-trading-night/lion-king-ptn",
+   "field": "hold",
+   "searched": "not re-searched beyond budget",
+   "note": "kept: no new per-pin evidence this pass; prior hold stands"
+  },
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-pin-trading-night/ray-ptn",
+   "field": "hold",
+   "searched": "not re-searched beyond budget",
+   "note": "kept: no new per-pin evidence this pass; prior hold stands"
+  },
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-framed-set",
+   "field": "hold",
+   "searched": "not re-searched beyond budget",
+   "note": "kept: no new per-pin evidence this pass; prior hold stands"
+  },
+  {
+   "key": "dlr/2019/oogie-boogie-bash",
+   "field": "hold",
+   "searched": "not re-searched beyond budget",
+   "note": "kept: no new per-pin evidence this pass; prior hold stands"
+  },
+  {
+   "key": "dlr/2019/kingdom-consoles",
+   "field": "hold",
+   "searched": "not re-searched beyond budget",
+   "note": "kept: no new per-pin evidence this pass; prior hold stands"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-july-release",
+   "field": "hold",
+   "searched": "not re-searched beyond budget",
+   "note": "kept: no new per-pin evidence this pass; prior hold stands"
+  },
+  {
+   "key": "dlr/2019/lunar-new-year",
+   "field": "edition_size",
+   "searched": "standard web search, snippets",
+   "note": "No new facts beyond B004 (LE 4,000 park and AP pins); not re-claimed"
+  },
+  {
+   "key": "dlr/2019/happy-birthday-disneyland-64",
+   "field": "pins",
+   "searched": "standard web search, snippets",
+   "note": "No new facts beyond B004 (LE 2,500, $17.99, Jul 11); not re-claimed"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/opera-singer-ghost",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery designs named only in one database snippet list (page id also surfaced in an unrelated search); needs a per-design source or the maintainer's full-list decision"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/horn-ghost",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery designs named only in one database snippet list (page id also surfaced in an unrelated search); needs a per-design source or the maintainer's full-list decision"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/mummy",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery designs named only in one database snippet list (page id also surfaced in an unrelated search); needs a per-design source or the maintainer's full-list decision"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/graveyard-attendant",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery designs named only in one database snippet list (page id also surfaced in an unrelated search); needs a per-design source or the maintainer's full-list decision"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/reaper",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery designs named only in one database snippet list (page id also surfaced in an unrelated search); needs a per-design source or the maintainer's full-list decision"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/headless-knight",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery designs named only in one database snippet list (page id also surfaced in an unrelated search); needs a per-design source or the maintainer's full-list decision"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/harp-ghost",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery designs named only in one database snippet list (page id also surfaced in an unrelated search); needs a per-design source or the maintainer's full-list decision"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/tea-drinker",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery designs named only in one database snippet list (page id also surfaced in an unrelated search); needs a per-design source or the maintainer's full-list decision"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/brick-and-trowel",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery designs named only in one database snippet list (page id also surfaced in an unrelated search); needs a per-design source or the maintainer's full-list decision"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery/executioner",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery designs named only in one database snippet list (page id also surfaced in an unrelated search); needs a per-design source or the maintainer's full-list decision"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 of B004 (after 408). 30 standard searches, snippets only, blocked domains passed every time. Reuses 204/408 keys. New: Windows of Magic Alice #5, Tiana #12 (resolves 408 hold), Black Cauldron and Aurora (held on number/park); AP train #1 Walt; Graveyard Ghosts mystery (10 designs); Graduation 2019; Hercules Tape #8; I Heart Gaming Chip n Dale #11; GE Silhouette/Droid mystery sets. Resellers (fryguypins, yourwdwstore, ecrater) seen but not used. No prompt-injection content seen."
+}

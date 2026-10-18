@@ -1,0 +1,375 @@
+{
+ "packet_id": "backfill-b273-dlr-oe-2018-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b273",
+ "sources": [
+  {
+   "url": "https://mypincentral.com/pin/153018",
+   "title": "DLR - Dinoco Logo Cars - 2018",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-pixar-coco-booster-pin-set/",
+   "title": "Disney Pixar Coco Booster Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-10"
+  },
+  {
+   "url": "https://disneypinsblog.com/product/mama-coco-and-miguel-pin/",
+   "title": "Mama Coco and Miguel Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/nightmare-before-christmas-pin-trading-starter-set/",
+   "title": "Nightmare Before Christmas Pin Trading Starter Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-07"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2018-week-2",
+   "title": "New Disney Pins July 2018 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-07"
+  },
+  {
+   "url": "https://disneypinsblog.com/halloween-time-annual-passholder-button-at-disneyland/",
+   "title": "Halloween Time Annual Passholder Button At Disneyland",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-09"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mickeys-halloween-party-2018-pins",
+   "title": "Mickey's Halloween Party 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-09"
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-november-2018-week-1/",
+   "title": "New Disney Pins November 2018 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/category/october-2018-pins/",
+   "title": "October 2018 Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-10"
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2019-pins/",
+   "title": "Disney Parks 2019 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-11"
+  },
+  {
+   "url": "https://mypincentral.com/pin/64846",
+   "title": "La Guitarra de Miguel (2018 limited release)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/37979",
+   "title": "WDW/DLR - Ice Cream Bar Mystery Set - 2018",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/incredibles-2-booster-pin-set/",
+   "title": "Incredibles 2 Booster Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-04"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pixar-pier-wdi-mystery-pin-collection",
+   "title": "Pixar Pier WDI Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-07"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2018/oe-single/dinoco-logo",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DLR - Dinoco Logo Cars - 2018",
+     "source_url": "https://mypincentral.com/pin/153018",
+     "method": "search_snippet",
+     "note": "MPC per-pin entry title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://mypincentral.com/pin/153018",
+     "method": "search_snippet",
+     "note": "Single standard-size pin per entry"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2018/oe/dinoco-logo",
+   "set_key": "dlr/2018/oe-single/dinoco-logo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "DLR - Dinoco Logo Cars - 2018",
+     "source_url": "https://mypincentral.com/pin/153018",
+     "method": "search_snippet",
+     "note": "MPC per-pin entry title"
+    },
+    {
+     "field": "characters",
+     "value": [],
+     "source_url": "https://mypincentral.com/pin/153018",
+     "method": "search_snippet",
+     "note": "Logo pin; no character named in entry"
+    },
+    {
+     "field": "franchise",
+     "value": "Cars",
+     "source_url": "https://mypincentral.com/pin/153018",
+     "method": "search_snippet",
+     "note": "Entry ties the Dinoco logo to Pixar's Cars"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://mypincentral.com/pin/153018",
+     "method": "search_snippet",
+     "note": "Entry lists edition as Open Edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/153018",
+     "method": "search_snippet",
+     "note": "Entry release date 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://mypincentral.com/pin/153018",
+     "method": "search_snippet",
+     "note": "Entry origin Disneyland Resort"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://mypincentral.com/pin/153018",
+     "method": "search_snippet",
+     "note": "Price shown on MPC entry; not confirmed by an official or news source"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://mypincentral.com/pin/153018",
+     "method": "search_snippet",
+     "note": "Price in US dollars on entry"
+    },
+    {
+     "field": "visual_description",
+     "value": "Egg-shaped pin with the Dinoco name in orange on a white background",
+     "source_url": "https://mypincentral.com/pin/153018",
+     "method": "search_snippet",
+     "note": "Paraphrase of per-pin entry"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Pin Trading Authentic Official Disney Parks 2018",
+     "source_url": "https://mypincentral.com/pin/153018",
+     "method": "search_snippet",
+     "note": "Back stamp per entry, with Disney Pin Trading logo"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/153018",
+     "method": "search_snippet",
+     "note": "Single design per per-pin entry"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2018/oe/dinoco-logo",
+   "field": "release_date",
+   "searched": "MPC; DPB Cars Land OE posts; 3 queries",
+   "note": "Only MPC 153018 found; no DPB/news 2018 post; no month, land or WDW sale stated. Not shared with WDW per source; corroboration needed"
+  },
+  {
+   "key": "dlr/2018/oe/dinoco-logo",
+   "field": "attraction",
+   "searched": "MPC 153018",
+   "note": "Entry does not tie pin to Cars Land or any attraction; not claimed"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/mickey",
+   "field": "pins",
+   "searched": "MPC per-pin pages; MPC ids 37980-37982/37984/37987/37989 not surfaced; B273",
+   "note": "hold kept (from 418/458): mystery designs not individually confirmed; named only in MPC 37979 series list; no per-pin page surfaced"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/lucky",
+   "field": "pins",
+   "searched": "MPC per-pin pages; MPC ids 37980-37982/37984/37987/37989 not surfaced; B273",
+   "note": "hold kept (from 418/458): mystery designs not individually confirmed; named only in MPC series list; only a reseller (madhousecollectibles 'Ice Cream - 101 Dalmatians') seen, not recorded"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/cheshire-cat",
+   "field": "pins",
+   "searched": "MPC per-pin pages; MPC ids 37980-37982/37984/37987/37989 not surfaced; B273",
+   "note": "hold kept (from 418/458): mystery designs not individually confirmed; named only in MPC series list; per-design text only on pintrader.club database and distradingpins4u reseller, not recorded"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/baymax",
+   "field": "pins",
+   "searched": "MPC per-pin pages; MPC ids 37980-37982/37984/37987/37989 not surfaced; B273",
+   "note": "hold kept (from 418/458): mystery designs not individually confirmed; named only in MPC series list; no per-pin page surfaced"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/marie",
+   "field": "pins",
+   "searched": "MPC per-pin pages; MPC ids 37980-37982/37984/37987/37989 not surfaced; B273",
+   "note": "hold kept (from 418/458): mystery designs not individually confirmed; named only in MPC series list; MPC Marie ice cream cone pin is a different shape, undated, not tied"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/tinker-bell",
+   "field": "pins",
+   "searched": "MPC per-pin pages; MPC ids 37980-37982/37984/37987/37989 not surfaced; B273",
+   "note": "hold kept (from 418/458): mystery designs not individually confirmed; named only in MPC series list; MPC Tinker Bell hits are other products (Heroines profile; Jun 2018 Park Pack LE 500)"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack",
+   "field": "set_key",
+   "searched": "B273",
+   "note": "set-link holds on Jack (418) and Goofy/Pluto/Flounder/Heimlich/Lilo (458) kept; no new snippet names the series on those per-pin pages. Set shared DLR/WDW; key stays wdw/"
+  },
+  {
+   "key": "dlr/2018/oe-set/coco-booster",
+   "field": "characters",
+   "searched": "DPB booster page; MPC; DPB product pages; 3 queries",
+   "note": "kept: DPB still gives 5 OE pins, 29.99, DLR spot 19 Oct 2018 with no member list; no per-design pages found"
+  },
+  {
+   "key": "dlr/2018/coco-la-guitarra-de-miguel",
+   "field": "edition_type",
+   "searched": "MPC 64846",
+   "note": "lead: copper rectangular 'La Guitarra de Miguel' pin, backstamp 2018 pin trading limited release; LR not OE; for DLR/WDW LR cell"
+  },
+  {
+   "key": "lic/2018/loungefly-coco-faces-booster",
+   "field": "retailer",
+   "searched": "MPC tag page",
+   "note": "lead: licensed Loungefly 'Coco Faces Booster 2018' (e.g. Tia Rosita) seen on MPC tag list; for licensed cells"
+  },
+  {
+   "key": "dlp/2018/surprise-coco",
+   "field": "edition_type",
+   "searched": "DPB",
+   "note": "lead: Surprise Coco pins at DLP (Dante, Miguel, Hector) LE 400 each, Feb 2018; for DLP cell"
+  },
+  {
+   "key": "dlr/2018/oe/coco-miguel",
+   "field": "visual_description",
+   "searched": "DPB product page; 1 query",
+   "note": "hold kept (from 418): new snippet says DPB 'Mama Coco and Miguel Pin' product page is a 2026 Disney Parks release (OE 17.99/18.00), weakening the link to the 2018 Coco Miguel pin; a reseller lists a 2-pin Miguel & Mama Coco set, not recorded"
+  },
+  {
+   "key": "dlr/2018/oe-set/nightmare-before-christmas-starter-set",
+   "field": "members",
+   "searched": "DPB starter set post; 1 query",
+   "note": "kept: DPB Jul 2018 still names Jack, Sally, Oogie Boogie 'and more' (4 pins + lanyard, 29.99, DLR+WDW); Zero/Mayor lineup belongs to a 2020 set; fourth pin unnamed"
+  },
+  {
+   "key": "dlr/2018/oe-set/his-sally-her-jack",
+   "field": "members",
+   "searched": "DPB Jul 2018 wk2; reseller pages; 1 query",
+   "note": "kept: only resellers (yourwdwstore, magicalearscollectibles) describe the two pins; reseller date 5 Jul 2018 not recorded; DPB gives set only (2 OE pins, 14.99)"
+  },
+  {
+   "key": "dlr/2018/oe-set/incredibles-2-booster",
+   "field": "pins",
+   "searched": "MPC; DPB; 1 query",
+   "note": "kept: no per-design pages; MPC 110507/162682/192877 show Parr family pins not tied to booster; existing members from 211 unchanged"
+  },
+  {
+   "key": "dlr/2018/oe/pixar-pier-opening",
+   "field": "pin_name",
+   "searched": "DPB; MPC; news; 3 queries",
+   "note": "Still no 2018 OE Pixar Pier pin; only the CM-only WDI mystery collection (24 pins, 16.95) and Pixar Fest LR/AP items"
+  },
+  {
+   "key": "dlr/2018/halloween-time-ap-button",
+   "field": "scope",
+   "searched": "DPB",
+   "note": "scope: confirmed button/badge/non-pin (DPB calls the Halloween Time 2018 AP item a button, from 7 Sep 2018)"
+  },
+  {
+   "key": "dlr/2018/mickeys-halloween-party",
+   "field": "edition_type",
+   "searched": "DPB",
+   "note": "lead: DLR Mickey's Halloween Party 2018 pins (logo, AP Jack, Mysterious Shadows Jesse/Russell 16.99, box set) from 19 Sep 2018; event LR/LE, not OE; for DLR LE cell"
+  },
+  {
+   "key": "dlr/2018/oe/halloween-time-oe",
+   "field": "pin_name",
+   "searched": "DPB; MPC; 2 queries",
+   "note": "No DLR-only Halloween Time OE pin found; 2018 OE Halloween pins are the shared Aug 2018 line already in 211"
+  },
+  {
+   "key": "dlr/2018/oe/disneyland-2018-dated",
+   "field": "pin_name",
+   "searched": "DPB; MPC; 1 query",
+   "note": "No DLR-specific dated 2018 OE pin beyond 211/418 items (Castle 2018 shared; SBC sketch and gold D Dec 2018)"
+  },
+  {
+   "key": "dlr/2018/oe-price-2018",
+   "field": "original_price",
+   "searched": "B273",
+   "note": "Still no 2018 OE price table; observed per-pin prices unchanged from 418 (9.99 singles, 12.99 attraction, 14.99/24.99 sets, 29.99 boosters)"
+  },
+  {
+   "key": "dlr/2018/oe",
+   "field": "weekly-roundups",
+   "searched": "DPB Sep/Oct/Nov 2018 queries",
+   "note": "Oct wk4 post exists in DPB archive but contents not surfaced; Sep wk1-4 and Nov wk2-4 not surfaced; Nov wk1 and wk5 DLR items LE only"
+  },
+  {
+   "key": "dlr/2019/oe",
+   "field": "release_date",
+   "searched": "DPB",
+   "note": "lead: Disney Parks 2019 OE pins announced 19 Nov 2018; belong to 2019 OE cells, not recorded here"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 of B011 (DLR OE 2018); 27 WebSearch calls, search_snippet only. New: Dinoco logo OE pin (MPC 153018, DLR, 2018, 9.99), sole source MPC. No holds released: Ice Cream 6 designs and 6 set links, Coco Miguel (now weaker: Mama Coco page dated 2026), Coco booster, NBC starter 4th pin, His Sally Her Jack, Incredibles 2 per-design all kept. No WDW-shared product found for the new pin."
+}

@@ -1,0 +1,433 @@
+{
+ "packet_id": "backfill-b311-lic-2018-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b311",
+ "sources": [
+  {
+   "url": "https://www.previewsworld.com/Catalog/FEB188050",
+   "title": "FEB188050 - FIGPIN MARVEL AVENGERS IW SPIDER-MAN FIGURE PIN 6PC CASE",
+   "publisher": "Previews World (Diamond)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.entertainmentearth.com/product/marvel-avengers-infinity-war-iron-man-figpin-enamel-pin/fg241",
+   "title": "Marvel Avengers: Infinity War Iron Man FiGPiN Enamel Pin",
+   "publisher": "Entertainment Earth",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/alice-in-wonderland-hot-topic-pin/",
+   "title": "Alice in Wonderland Hot Topic Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-nightmare-before-christmas-blind-box-pins-at-hot-topic-2",
+   "title": "The Nightmare Before Christmas Blind Box Pins at Hot Topic",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-wars-helmets-boba-fett-at-at-driver-stormtrooper-pins-by-artland",
+   "title": "Star Wars Helmets Boba Fett, AT-AT Driver & Stormtrooper Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2025-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/stitch-skeleton-hot-topic-pin/",
+   "title": "Stitch Skeleton Hot Topic Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/black-panther-disney-movie-rewards-pins",
+   "title": "Black Panther Disney Movie Rewards Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/primark-pins/",
+   "title": "Primark Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2018/hot-topic-alice-in-wonderland",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Alice in Wonderland Hot Topic Pin",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-hot-topic-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title; single pin, not described as a set"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-hot-topic-pin/",
+     "method": "search_snippet",
+     "note": "post covers one pin, no pack or set wording in snippet"
+    },
+    {
+     "field": "retailer",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-hot-topic-pin/",
+     "method": "search_snippet",
+     "note": "sold in store at select Hot Topic locations"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-hot-topic-pin/",
+     "method": "search_snippet",
+     "note": "DPB says released around June 2018; post dated 5 Jul 2018"
+    },
+    {
+     "field": "price",
+     "value": 6.9,
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-hot-topic-pin/",
+     "method": "search_snippet",
+     "note": "retail $6.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-hot-topic-pin/",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2018/figpin-avengers-infinity-war/spider-man",
+   "set_key": "lic/2018/figpin-avengers-infinity-war",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Spider-Man"
+     ],
+     "source_url": "https://www.previewsworld.com/Catalog/FEB188050",
+     "method": "search_snippet",
+     "note": "Previews solicitation names Spider-Man from Avengers: Infinity War"
+    },
+    {
+     "field": "manufacturer",
+     "value": "FiGPiN",
+     "source_url": "https://www.previewsworld.com/Catalog/FEB188050",
+     "method": "search_snippet",
+     "note": "Previews item title names FiGPiN"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://www.previewsworld.com/Catalog/FEB188050",
+     "method": "search_snippet",
+     "note": "Previews gives SRP $14.99 per pin (sold to shops in 6pc case)"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.previewsworld.com/Catalog/FEB188050",
+     "method": "search_snippet",
+     "note": "US dollar SRP"
+    },
+    {
+     "field": "size_mm",
+     "value": 76,
+     "source_url": "https://www.previewsworld.com/Catalog/FEB188050",
+     "method": "search_snippet",
+     "note": "described as 3in tall hard enamel FiGPiN (~76mm, converted)"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "FEB188050",
+     "source_url": "https://www.previewsworld.com/Catalog/FEB188050",
+     "method": "search_snippet",
+     "note": "Diamond/Previews order code for the 6pc case, Feb 2018 solicitation"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2018/hot-topic-alice-in-wonderland/alice-in-wonderland-pin",
+   "set_key": "lic/2018/hot-topic-alice-in-wonderland",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice in Wonderland Hot Topic Pin",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-hot-topic-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title used as name; product title not in snippet"
+    },
+    {
+     "field": "franchise",
+     "value": "Alice in Wonderland",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-hot-topic-pin/",
+     "method": "search_snippet",
+     "note": "post title names Alice in Wonderland"
+    },
+    {
+     "field": "retailer",
+     "value": "Hot Topic",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-hot-topic-pin/",
+     "method": "search_snippet",
+     "note": "available in store at select Hot Topic locations"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-hot-topic-pin/",
+     "method": "search_snippet",
+     "note": "DPB: released around June 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-hot-topic-pin/",
+     "method": "search_snippet",
+     "note": "filed under June 2018 pins"
+    },
+    {
+     "field": "original_price",
+     "value": 6.9,
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-hot-topic-pin/",
+     "method": "search_snippet",
+     "note": "retail $6.90"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-hot-topic-pin/",
+     "method": "search_snippet",
+     "note": "US dollar price"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-hot-topic-pin/",
+     "method": "search_snippet",
+     "note": "post describes a single pin"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2018/figpin-avengers-infinity-war/spider-man",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "released: 465 held this key (sole evidence DCBS comic-shop listing); now backed by Previews World distributor solicitation FEB188050"
+  },
+  {
+   "key": "lic/2018/figpin-avengers-infinity-war/spider-man",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "Previews code shows Feb 2018 solicitation only; ship date stated only by DCBS (25 Jul 2018), not recorded"
+  },
+  {
+   "key": "lic/2018/figpin-avengers-infinity-war/iron-man",
+   "field": "all",
+   "searched": "3 queries",
+   "note": "hold kept (465): still only retailer listings (Entertainment Earth FG241, Walmart, DCBS); no Previews entry surfaced"
+  },
+  {
+   "key": "lic/2018/figpin-avengers-infinity-war/thanos",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "still undated; no Previews entry surfaced"
+  },
+  {
+   "key": "lic/2018/figpin-xl-thanos/thanos",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "hold kept (465): X1 number confirmed by retailers only; no launch date or 2018 announcement found"
+  },
+  {
+   "key": "lic/2018/figpin-star-wars",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no 2018 FiGPiN Star Wars pin found; Han Solo Quest, A New Hope commons and ECCC 2021 Han are later"
+  },
+  {
+   "key": "lic/2018/figpin-mickey-friends-mini",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "424 holds on mickey/minnie/donald/daisy/goofy kept; no Previews or per-design listing found for those five"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-box",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no per-design source beyond The Blot character list; 465 holds kept (incl. spider-gwen scope)"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-blind-box",
+   "field": "lead",
+   "searched": "2 queries",
+   "note": "summary mentions a blind-bagged Sue Storm or rare Invisible Woman variant at SDCC; may be confusion with NYCC lead in 465; not keyed"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-lanyard",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: Blot summary says an SDCC 2018 Spider-Man pin came only in a lanyard set; no price or design detail; not keyed"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-fantastic-four-4pack",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "members still not named"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-x-men-4pack",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "members still not named"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young-avengers-4pack",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "members still not named"
+  },
+  {
+   "key": "lic/2018/marvel-sdcc-skottie-young",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "maker still not stated anywhere; Marvel sold them, art by Skottie Young"
+  },
+  {
+   "key": "lic/2018/marvel-nycc-skottie-young",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "maker still not stated; NYCC blind-box and pack holds from 465 kept (incl. spider-ham scope)"
+  },
+  {
+   "key": "lic/2018/monogram-sdcc-stitch-lanyard",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "three pins only described as rock-and-roll themed Stitch pins; individual designs not named"
+  },
+  {
+   "key": "lic/2018/primark-mary-poppins",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "six gold-tone pins still not named; Bert/penguin results belong to a Disney Store tin set"
+  },
+  {
+   "key": "lic/2018/primark",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "Primark four emoji/rainbow pack holds (424) unchanged; not re-searched"
+  },
+  {
+   "key": "lic/2018/primark-peter-pan",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "lead: DPB Primark archive lists a Peter Pan set near the 9 Apr 2018 entry; date may belong to the rainbow set; contents and price not seen; not keyed"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-collector-scale",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "chase still described only as an unnamed mystery character"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-cantina-4-pack",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "424 holds kept; no new per-pin evidence"
+  },
+  {
+   "key": "lic/2018/gentle-giant-sdcc-mini/thala-siren-milk-bottle",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: summaries call it a 2-pack of a thala-siren and a green milk bottle ($12), while Entertainment Earth titles it as one 'Pin'; snippet source of the 2-pack wording unclear"
+  },
+  {
+   "key": "lic/2018/toynk-nycc/deadpool-and-cable-heart",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept (424/465): summaries now call it a two-pin set (heart halves) sold as 1,000 sets, but the wording could not be tied to one source"
+  },
+  {
+   "key": "lic/2018/stance-shopdisney-mickey-90-socks-and-pins",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "hold kept: DPB still says two pins in the intro and four in the feature list; no other source"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-mickey-90th-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: only a forum post names designs; no new per-design evidence"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-alice-queen-of-hearts-hedgehog",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "222/465 holds kept; Hot Topic also lists a Funko Alice Queen pin set (11957672), undated"
+  },
+  {
+   "key": "lic/2018/funko-boxlunch-mulan",
+   "field": "pin_structure",
+   "searched": "0 queries",
+   "note": "222/465 holds kept; not re-searched"
+  },
+  {
+   "key": "lic/2018/hot-topic-nightmare-before-christmas-blind-box",
+   "field": "release_year",
+   "searched": "2 queries",
+   "note": "HT listing 11503066 still undated ($5.99, 12 Halloween Town pins, no maker); DPB dates a HT NBC blind box line Sept 2019 at $6.90 - lead for lic 2019 cell"
+  },
+  {
+   "key": "lic/2018/hot-topic-alice-in-wonderland/alice-in-wonderland-pin",
+   "field": "visual_description",
+   "searched": "2 queries",
+   "note": "design and characters not described in snippets; maker not stated (Loungefly not named)"
+  },
+  {
+   "key": "lic/2018/artland-star-wars-helmets",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead resolved: ArtLand Star Wars helmet series (LE 250, Dave Perillo) date from 2025-2026 at DPB Store; no 2018 ArtLand release"
+  },
+  {
+   "key": "lic/2018/loungefly-hot-topic-stitch-skeleton",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead for Loungefly 2018 cell: DPB says Loungefly Stitch skeleton pin at Hot Topic, Sept 2018, $6.90; not keyed here"
+  },
+  {
+   "key": "dsus/2018/disney-movie-rewards-black-panther",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead for Disney Store/DMR 2018 cell: DPB 9 Feb 2018 Black Panther Disney Movie Rewards pins, 650 points each; not licensed"
+  },
+  {
+   "key": "lic/2018",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "Jan-Jun 2018 US retailer pins: only the June 2018 Hot Topic Alice pin found; Stitch ice cream (2019) and Stitch & Angel (2020) HT pins are later"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 to 216/424/465 (B016). 28 standard WebSearches, excluded domains blocked. New: Previews World FEB188050 backs FiGPiN Infinity War Spider-Man (465 hold released); Hot Topic Alice in Wonderland single pin, June 2018. All other holds kept (Skottie Young members, FiGPiN Iron Man/XL Thanos/Minis, Primark, Cantina, Deadpool & Cable, Thala Siren, Stance, Funko). ArtLand helmets lead is 2025-26; HT NBC blind box likely 2019."
+}

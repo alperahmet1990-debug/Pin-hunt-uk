@@ -1,0 +1,1100 @@
+{
+  "packet_id": "535_b349_wdw_le_2018_fu5",
+  "spec_version": 1,
+  "collected_at": "2026-10-18",
+  "collector": "agent:web-search",
+  "sources": [
+    {
+      "url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-1/",
+      "title": "New Disney Pins June 2018 Week 1",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2018-06",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-1/",
+      "title": "New Disney Pins August 2018 Week 1",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2018-08",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+      "title": "New Disney Pins February 2018 Week 1",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2018-02",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/lunar-new-year-2018-disney-pins",
+      "title": "Lunar New Year 2018 Disney Pins",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2018-01",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/tag/mickey-mouse-disney-donut-shop-pin/",
+      "title": "Mickey Mouse Disney Donut Shop Pin Archives",
+      "publisher": "Disney Pins Blog",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://mypincentral.com/pin/65762",
+      "title": "65762",
+      "publisher": "My Pin Central",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2018-week-2",
+      "title": "New Disney Pins July 2018 Week 2",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2018-07",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2018-week-2",
+      "title": "New Disney Pins August 2018 Week 2",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2018-08",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+      "title": "New Disney Pins November 2018 Week 5",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2018-11",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/new-disney-pins-january-2018-week-4/",
+      "title": "New Disney Pins January 2018 Week 4",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2018-01",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/tag/lunch-time-tales-disney-pin/",
+      "title": "Lunch Time Tales Disney Pin Archives",
+      "publisher": "Disney Pins Blog",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+      "title": "Walt Disney World Marathon Weekend 2018 Pins",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2018-01",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+      "title": "Peter Pan 65th Anniversary Pin Collection",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2018-02",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+      "title": "Walt Disney's Animation Celebration Event Pins",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2018-08",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+      "title": "Toy Story Land Disney Pins",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2018-06",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    }
+  ],
+  "sets": [
+    {
+      "set_key": "wdw/2018/lattes-with-character",
+      "claims": [
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-1/",
+          "method": "search_snippet",
+          "note": "sixth pin sold at both resorts"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2018/lunar-new-year-2018",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Lunar New Year 2018",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+          "method": "search_snippet",
+          "note": "WDW listing of Lunar New Year 2018 Pluto pin"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2018/peter-pan-65th-mystery",
+      "claims": [
+        {
+          "field": "expected_pin_count",
+          "value": 12,
+          "source_url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+          "method": "search_snippet",
+          "note": "collect all 12 to complete the Neverland map"
+        },
+        {
+          "field": "format",
+          "value": "mystery, 2 pins per box",
+          "source_url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+          "method": "search_snippet",
+          "note": "Reveal/Conceal mystery set, two pins per box"
+        },
+        {
+          "field": "price",
+          "value": 19.99,
+          "source_url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+          "method": "search_snippet",
+          "note": "$19.99 per box"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+          "method": "search_snippet",
+          "note": "LR"
+        },
+        {
+          "field": "release_date",
+          "value": "2018-02-22",
+          "source_url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+          "method": "search_snippet",
+          "note": "RSP at Feb 2018 Pin Trading Nights, remaining in parks Feb 22, 2018"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2018/animation-celebration-box-set",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Logos Through the Years 4 pin box set",
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "four-pin box set LE 300 $99.99 (matches 210 box set)"
+        },
+        {
+          "field": "format",
+          "value": "boxed set",
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "box set"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2018/animation-celebration-studio-departments-box-set",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Walt Disney Animation Studio Departments 7 Pin Box Set",
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "event box set of studio departments"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 7,
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "seven pins"
+        },
+        {
+          "field": "format",
+          "value": "boxed set",
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "box set"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 300,
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "LE 300"
+        },
+        {
+          "field": "price",
+          "value": 149.0,
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "$149.00"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "Epcot event"
+        },
+        {
+          "field": "release_date",
+          "value": "2018-08-24",
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "event Aug 24-25, 2018 at Epcot"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2018/animation-celebration-goofy-5-pin-box-set",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Animation Celebration five pin box set featuring Goofy",
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "five pin box set featuring Goofy"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 5,
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "five pins"
+        },
+        {
+          "field": "format",
+          "value": "boxed set",
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "box set"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 300,
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "LE 300"
+        },
+        {
+          "field": "price",
+          "value": 125.0,
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "$125.00"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "Epcot event"
+        },
+        {
+          "field": "release_date",
+          "value": "2018-08-24",
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "event Aug 24-25, 2018"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2018/animation-celebration-drawing-101-gift-set",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Drawing 101 Activity 4 Pin Gift Set",
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "listed among limited commemorative gifts"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 4,
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "four pin gift set"
+        },
+        {
+          "field": "format",
+          "value": "gift set (event commemorative gift)",
+          "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+          "method": "search_snippet",
+          "note": "commemorative gift"
+        }
+      ]
+    }
+  ],
+  "pins": [
+    {
+      "pin_key": "wdw/2018/lattes-with-character/rapunzel",
+      "set_key": "wdw/2018/lattes-with-character",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Rapunzel"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-1/",
+          "method": "search_snippet",
+          "note": "Rapunzel Lattes with Character pin"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-1/",
+          "method": "search_snippet",
+          "note": "single monthly series pin"
+        },
+        {
+          "field": "set_position",
+          "value": 6,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-1/",
+          "method": "search_snippet",
+          "note": "sixth pin in the monthly Lattes with Character collection"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-1/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-1/",
+          "method": "search_snippet",
+          "note": "limited edition of 3,000"
+        },
+        {
+          "field": "original_price",
+          "value": 16.99,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-1/",
+          "method": "search_snippet",
+          "note": "retail $16.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-1/",
+          "method": "search_snippet",
+          "note": "US parks"
+        },
+        {
+          "field": "release_date",
+          "value": "2018-06-07",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-1/",
+          "method": "search_snippet",
+          "note": "available June 7, 2018"
+        },
+        {
+          "field": "release_year",
+          "value": 2018,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-1/",
+          "method": "search_snippet",
+          "note": "2018 release"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-1/",
+          "method": "search_snippet",
+          "note": "sold at both resorts"
+        },
+        {
+          "field": "visual_description",
+          "value": "Rapunzel with a sun at the bottom of the pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2018-week-1/",
+          "method": "search_snippet",
+          "note": "short paraphrase of design note"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/lattes-with-character/olaf",
+      "set_key": "wdw/2018/lattes-with-character",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Olaf"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-1/",
+          "method": "search_snippet",
+          "note": "Olaf Lattes with Character pin"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-1/",
+          "method": "search_snippet",
+          "note": "single monthly series pin"
+        },
+        {
+          "field": "set_position",
+          "value": 8,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-1/",
+          "method": "search_snippet",
+          "note": "eighth pin in the monthly Lattes with Character collection"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-1/",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-1/",
+          "method": "search_snippet",
+          "note": "limited edition of 3,000"
+        },
+        {
+          "field": "original_price",
+          "value": 16.99,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-1/",
+          "method": "search_snippet",
+          "note": "retail $16.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-1/",
+          "method": "search_snippet",
+          "note": "US parks"
+        },
+        {
+          "field": "release_date",
+          "value": "2018-08-02",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-1/",
+          "method": "search_snippet",
+          "note": "available August 2, 2018"
+        },
+        {
+          "field": "release_year",
+          "value": 2018,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-1/",
+          "method": "search_snippet",
+          "note": "2018 release"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-august-2018-week-1/",
+          "method": "search_snippet",
+          "note": "sold at both resorts"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/lunar-new-year-2018/pluto",
+      "set_key": "wdw/2018/lunar-new-year-2018",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Pluto"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+          "method": "search_snippet",
+          "note": "Pluto, Year of the Dog, Lunar New Year 2018"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+          "method": "search_snippet",
+          "note": "single pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 4000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+          "method": "search_snippet",
+          "note": "limited edition of 4,000"
+        },
+        {
+          "field": "release_date",
+          "value": "2018-02-01",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+          "method": "search_snippet",
+          "note": "at Walt Disney World from Feb 1, 2018, a week after California"
+        },
+        {
+          "field": "release_year",
+          "value": 2018,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+          "method": "search_snippet",
+          "note": "2018"
+        },
+        {
+          "field": "release_location",
+          "value": "Walt Disney World (after Disney California Adventure)",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2018-week-1",
+          "method": "search_snippet",
+          "note": "WDW release followed DCA release the previous week"
+        },
+        {
+          "field": "edition_size",
+          "value": 4000,
+          "source_url": "https://disneypinsblog.com/lunar-new-year-2018-disney-pins",
+          "method": "search_snippet",
+          "note": "DLR event post: same Pluto pin LE 4,000"
+        },
+        {
+          "field": "original_price",
+          "value": 14.99,
+          "source_url": "https://disneypinsblog.com/lunar-new-year-2018-disney-pins",
+          "method": "search_snippet",
+          "note": "retail $14.99 (DLR event post)"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/lunar-new-year-2018-disney-pins",
+          "method": "search_snippet",
+          "note": "US parks"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/disney-donut-shop/donald",
+      "set_key": "wdw/2018/disney-donut-shop",
+      "claims": [
+        {
+          "field": "characters",
+          "value": [
+            "Donald Duck"
+          ],
+          "source_url": "https://disneypinsblog.com/tag/mickey-mouse-disney-donut-shop-pin/",
+          "method": "search_snippet",
+          "note": "Donald Duck - Disney Donut Shop Pin entry in DPB archive"
+        },
+        {
+          "field": "pin_name",
+          "value": "Donald Duck - Disney Donut Shop Pin",
+          "source_url": "https://disneypinsblog.com/tag/mickey-mouse-disney-donut-shop-pin/",
+          "method": "search_snippet",
+          "note": "entry title"
+        },
+        {
+          "field": "release_date",
+          "value": "2018-02",
+          "source_url": "https://disneypinsblog.com/tag/mickey-mouse-disney-donut-shop-pin/",
+          "method": "search_snippet",
+          "note": "listed under a February 2018 weekly post (week 3 per a second snippet)"
+        },
+        {
+          "field": "release_year",
+          "value": 2018,
+          "source_url": "https://disneypinsblog.com/tag/mickey-mouse-disney-donut-shop-pin/",
+          "method": "search_snippet",
+          "note": "2018"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/disney-donut-shop/mickey",
+      "set_key": "wdw/2018/disney-donut-shop",
+      "claims": [
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://mypincentral.com/pin/65762",
+          "method": "search_snippet",
+          "note": "backstamp reads Limited Edition 3000; conflicts with LE 5,000 in packet 210"
+        },
+        {
+          "field": "backstamp_text",
+          "value": "PIN TRADING 2018 Limited Edition 3000",
+          "source_url": "https://mypincentral.com/pin/65762",
+          "method": "search_snippet",
+          "note": "backstamp as described in snippet"
+        },
+        {
+          "field": "front_text",
+          "value": "Disney Donut Shop",
+          "source_url": "https://mypincentral.com/pin/65762",
+          "method": "search_snippet",
+          "note": "text on front in yellow on silver"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "hinged"
+          ],
+          "source_url": "https://mypincentral.com/pin/65762",
+          "method": "search_snippet",
+          "note": "hinged doughnut-shaped Mickey pin"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/star-wars-helmet/tie-pilot",
+      "set_key": "wdw/2018/star-wars-helmet",
+      "claims": [
+        {
+          "field": "visual_features",
+          "value": [
+            "hinged stand element"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2018-week-2",
+          "method": "search_snippet",
+          "note": "has a hinged stand element"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/star-wars-helmet/imperial-stormtrooper",
+      "set_key": "wdw/2018/star-wars-helmet",
+      "claims": [
+        {
+          "field": "visual_features",
+          "value": [
+            "hinged stand element"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2018-week-2",
+          "method": "search_snippet",
+          "note": "has a hinged stand element"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/star-wars-helmet/shoretrooper",
+      "set_key": "wdw/2018/star-wars-helmet",
+      "claims": [
+        {
+          "field": "visual_features",
+          "value": [
+            "hinged stand element"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+          "method": "search_snippet",
+          "note": "has a hinged stand element"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/lunch-time-tales/lady-and-the-tramp",
+      "set_key": "wdw/2018/lunch-time-tales",
+      "claims": [
+        {
+          "field": "set_position",
+          "value": 1,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-january-2018-week-4/",
+          "method": "search_snippet",
+          "note": "first pin of new 2018 WDW monthly Lunch Time Tales collection"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/lunch-time-tales/ratatouille",
+      "set_key": "wdw/2018/lunch-time-tales",
+      "claims": [
+        {
+          "field": "release_date",
+          "value": "2018-05",
+          "source_url": "https://disneypinsblog.com/tag/lunch-time-tales-disney-pin/",
+          "method": "search_snippet",
+          "note": "tag archive dates the Ratatouille entry May 2018"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/lunch-time-tales/lilo-and-stitch",
+      "set_key": "wdw/2018/lunch-time-tales",
+      "claims": [
+        {
+          "field": "release_date",
+          "value": "2018-08",
+          "source_url": "https://disneypinsblog.com/tag/lunch-time-tales-disney-pin/",
+          "method": "search_snippet",
+          "note": "tag archive dates the Lilo and Stitch entry August 2018"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/lunch-time-tales/princess-and-the-frog",
+      "set_key": "wdw/2018/lunch-time-tales",
+      "claims": [
+        {
+          "field": "release_date",
+          "value": "2018-10",
+          "source_url": "https://disneypinsblog.com/tag/lunch-time-tales-disney-pin/",
+          "method": "search_snippet",
+          "note": "tag archive: Oct 21 2018 entry under the October 2018 Week 4 post"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/oe/toy-story-land-annual-passholder-open",
+      "set_key": "wdw/2018/oe-single/toy-story-land-annual-passholder-open",
+      "claims": [
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+          "method": "search_snippet",
+          "note": "DPB lists Annual Passholder Toy Story Land Pin Open under the Limited Release heading (conflicts with OE label in 515)"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/rundisney-marathon-weekend/medal-13-1",
+      "set_key": "wdw/2018/rundisney-marathon-weekend",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "13.1 Miles Medal Pin",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "named in DPB Marathon Weekend 2018 expo list"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "all expo pins limited release"
+        },
+        {
+          "field": "release_date",
+          "value": "2018-01",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "Marathon Weekend Jan 3-7, 2018"
+        },
+        {
+          "field": "release_location",
+          "value": "runDisney expo, Walt Disney World",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "sold at the runDisney expo"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/rundisney-marathon-weekend/medal-39-3",
+      "set_key": "wdw/2018/rundisney-marathon-weekend",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "39.3 Miles Medal Pin",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "named in DPB Marathon Weekend 2018 expo list"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "all expo pins limited release"
+        },
+        {
+          "field": "release_date",
+          "value": "2018-01",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "Marathon Weekend Jan 3-7, 2018"
+        },
+        {
+          "field": "release_location",
+          "value": "runDisney expo, Walt Disney World",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "sold at the runDisney expo"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/rundisney-marathon-weekend/medal-10k",
+      "set_key": "wdw/2018/rundisney-marathon-weekend",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "10K Medal Pin",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "named in DPB Marathon Weekend 2018 expo list"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "all expo pins limited release"
+        },
+        {
+          "field": "release_date",
+          "value": "2018-01",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "Marathon Weekend Jan 3-7, 2018"
+        },
+        {
+          "field": "release_location",
+          "value": "runDisney expo, Walt Disney World",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "sold at the runDisney expo"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/rundisney-marathon-weekend/medal-5k-mickey-pluto",
+      "set_key": "wdw/2018/rundisney-marathon-weekend",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "5K Mickey and Pluto medal pin",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "named in DPB Marathon Weekend 2018 expo list"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Mickey Mouse",
+            "Pluto"
+          ],
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "5K Mickey and Pluto medal pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited release",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "all expo pins limited release"
+        },
+        {
+          "field": "release_date",
+          "value": "2018-01",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "Marathon Weekend Jan 3-7, 2018"
+        },
+        {
+          "field": "release_location",
+          "value": "runDisney expo, Walt Disney World",
+          "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins/",
+          "method": "search_snippet",
+          "note": "sold at the runDisney expo"
+        }
+      ]
+    }
+  ],
+  "not_found": [
+    {
+      "key": "dlr/2018/lattes-with-character/rapunzel",
+      "field": "variant",
+      "searched": "DPB June 2018 week 1",
+      "note": "variant: same pin as wdw/2018/lattes-with-character/rapunzel (shared DL/WDW, June 7 2018)"
+    },
+    {
+      "key": "dlr/2018/lunar-new-year-2018/pluto",
+      "field": "variant",
+      "searched": "DPB Feb 2018 week 1; DPB Lunar New Year 2018 post",
+      "note": "variant: same pin as wdw/2018/lunar-new-year-2018/pluto (DCA first, WDW Feb 1 2018)"
+    },
+    {
+      "key": "wdw/2018/lattes-with-character/olaf",
+      "field": "variant",
+      "searched": "DLR packets 212/419/461/493/516",
+      "note": "shared DL/WDW release; no DLR key exists; a DLR cell should mark variant: same pin as this key"
+    },
+    {
+      "key": "wdw/2018/disney-donut-shop/donald",
+      "field": "edition_size",
+      "searched": "2 queries (DPB, MPC)",
+      "note": "edition size, price, set position and exact date not in snippets; resort not stated"
+    },
+    {
+      "key": "wdw/2018/disney-donut-shop/mickey",
+      "field": "edition_size",
+      "searched": "DPB tag, MPC",
+      "note": "conflict: MPC 65762 backstamp LE 3000 vs 210 LE 5,000 $54.99 vs DPB tag Jan 7 LE 2,000; recorded both, not resolved"
+    },
+    {
+      "key": "wdw/2018/oe/toy-story-land-annual-passholder-open",
+      "field": "variant",
+      "searched": "DPB TSL post",
+      "note": "hold: confirm distinct from LR key wdw/2018/toy-story-land-opening/annual-passholder; DPB lists the Open pin under LR heading, 515 under OE; design/size/price not stated"
+    },
+    {
+      "key": "wdw/2018/rundisney-marathon-weekend/medal-13-1",
+      "field": "pin_structure",
+      "searched": "DPB Marathon Weekend 2018 post; 2 queries",
+      "note": "hold: pending maintainer decision on full lists - runDisney medal pin named only in one blog list (single DPB snippet)"
+    },
+    {
+      "key": "wdw/2018/rundisney-marathon-weekend/medal-39-3",
+      "field": "pin_structure",
+      "searched": "DPB Marathon Weekend 2018 post; 2 queries",
+      "note": "hold: pending maintainer decision on full lists - runDisney medal pin named only in one blog list (single DPB snippet)"
+    },
+    {
+      "key": "wdw/2018/rundisney-marathon-weekend/medal-10k",
+      "field": "pin_structure",
+      "searched": "DPB Marathon Weekend 2018 post; 2 queries",
+      "note": "hold: pending maintainer decision on full lists - runDisney medal pin named only in one blog list (single DPB snippet)"
+    },
+    {
+      "key": "wdw/2018/rundisney-marathon-weekend/medal-5k-mickey-pluto",
+      "field": "pin_structure",
+      "searched": "DPB Marathon Weekend 2018 post; 2 queries",
+      "note": "hold: pending maintainer decision on full lists - runDisney medal pin named only in one blog list (single DPB snippet)"
+    },
+    {
+      "key": "wdw/2018/rundisney-marathon-weekend",
+      "field": "original_price",
+      "searched": "DPB, resellers seen not used",
+      "note": "expo prices and edition sizes for medal pins not in snippets; only a reseller jumbo price seen (not recorded)"
+    },
+    {
+      "key": "wdw/2018/lattes-with-character",
+      "field": "pins",
+      "searched": "8 queries incl. Jul/Sep/Oct/Nov weekly posts",
+      "note": "#1 Cheshire Cat, #7 (Jul), #9, #10, #11 still not tied to DPB weekly posts; resellers name Maleficent/Sulley/Hades/Ariel (not recorded)"
+    },
+    {
+      "key": "wdw/2018/lattes-with-character/cheshire-cat",
+      "field": "set_position",
+      "searched": "1 query",
+      "note": "position #1 / LE still not in permitted snippets"
+    },
+    {
+      "key": "wdw/2018/lunch-time-tales",
+      "field": "pins",
+      "searched": "3 queries",
+      "note": "months 2/4/6/9/12 still unnamed; Feb 2018 week 4 post title seen, no content; Wreck-It Ralph Feb 18 2018 entry is Once Upon A Time series, not LTT"
+    },
+    {
+      "key": "wdw/2018/lunch-time-tales/muppets",
+      "field": "edition_size",
+      "searched": "DPB Nov wk5",
+      "note": "a 2,000 figure in the same snippet sits before the Muppets entry; appears to belong to another pin; not recorded"
+    },
+    {
+      "key": "wdw/2018/disney-donut-shop",
+      "field": "pins",
+      "searched": "2 queries",
+      "note": "Aug-Oct pins still unnamed; Disney Treats set (Sep 2018, OE, 4 pins incl Mickey donut) is a separate OE set, not series"
+    },
+    {
+      "key": "wdw/2018/star-wars-helmet",
+      "field": "pins",
+      "searched": "3 queries",
+      "note": "positions 1, 2, 5, 6, 8 still unnamed; #9 First Order Stormtrooper (Jan 2019) and #11 Boba Fett (Mar 2019) are out of year"
+    },
+    {
+      "key": "wdw/2018/wall-e-10th-boxed-set",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "four boxed pins still unnamed; M-O not confirmed"
+    },
+    {
+      "key": "wdw/2018/peter-pan-65th-neverland-framed-set",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "six region pins still unnamed"
+    },
+    {
+      "key": "wdw/2018/peter-pan-65th-mystery",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "hold: mystery designs not individually confirmed (12 map pieces, none named)"
+    },
+    {
+      "key": "wdw/2018/animation-celebration-framed-set",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "Walt Disney & Vintage Characters 5 pin framed set re-confirmed LE 150 $285; members still unnamed"
+    },
+    {
+      "key": "wdw/2018/animation-celebration-studio-departments-box-set",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "seven department pins not named"
+    },
+    {
+      "key": "wdw/2018/animation-celebration-goofy-5-pin-box-set",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "hold: confirm pin structure; only 'features Goofy' stated; set name and members not given"
+    },
+    {
+      "key": "wdw/2018/animation-celebration-drawing-101-gift-set",
+      "field": "edition_size",
+      "searched": "1 query",
+      "note": "contents, edition size and price not in snippet; gift vs sale status unclear"
+    },
+    {
+      "key": "wdw/2018 holds",
+      "field": "pin_structure",
+      "searched": "no new per-pin evidence",
+      "note": "holds kept: mystery sets (F&W, MNSSHP, Ugly Sweater, PP65, TSL), MNSSHP/MVMCP box/frame members, snowman four, Goodbye set, Zootopia completer, Fresh Epcot pair, Dapper Day, Mickey 90th CM, two Lattes, AK AP, Natural Beauty, AK20 jumbo, Star Wars Half eight, W&D duplicate"
+    },
+    {
+      "key": "wdw/2018/lattes-with-character/ariel-flounder",
+      "field": "set_position",
+      "searched": "Lattes queries",
+      "note": "hold kept (416): no DPB post ties MPC 135343 to the series or a month"
+    },
+    {
+      "key": "wdw/2018/lattes-with-character/sulley-mike",
+      "field": "set_position",
+      "searched": "Lattes queries",
+      "note": "hold kept (416): no DPB post ties MPC 135344 to the series or a month"
+    },
+    {
+      "key": "wdw/2018/disney-donut-shop/donald",
+      "field": "pin_structure",
+      "searched": "review",
+      "note": "hold: known only from a Disney Pins Blog archive title; no edition, price or design described (round 56 review)"
+    }
+  ],
+  "discovery_notes": "Follow-up 5 of B010 (WDW LE 2018). 28 standard WebSearch queries, all search_snippet, allowed_domains narrowed or blocked_domains passed. New pins: Lattes #6 Rapunzel (wdw key; dlr 212 key marked variant) and #8 Olaf; Lunar New Year Pluto wdw key (dlr 212 marked variant); Donut Shop Donald (Feb); four Marathon Weekend medal pins (held per runDisney list decision). New sets: Animation Celebration Studio Departments 7-pin box, Goofy 5-pin box, Drawing 101 gift set; Logos Through the Years name for 210 box set; PP65 mystery size 12. Corroboration: helmet hinged stand, LTT months/position, MPC Mickey donut LE 3000 conflict. No holds released. Resellers seen (yourwdwstore) not used. No prompt-injection seen."
+}

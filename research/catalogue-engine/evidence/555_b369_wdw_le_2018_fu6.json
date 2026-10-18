@@ -1,0 +1,471 @@
+{
+ "packet_id": "555_b369_wdw_le_2018_fu6",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.disneypinforum.com/threads/2018-pin-releases.61190/",
+   "title": "2018 Pin Releases (forum thread)",
+   "publisher": "Disney Pin Forum",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/iso-hades-latte.67125/",
+   "title": "ISO Hades Latte (forum thread)",
+   "publisher": "Disney Pin Forum",
+   "published_date": "2018-11-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://thekingdominsider.com/new-lattes-character-monthly-disney-pin-collection-coming-2018/",
+   "title": "New 'Lattes with Character' Monthly Disney Pin Collection Coming 2018",
+   "publisher": "The Kingdom Insider",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+   "title": "New Disney Pins December 2018 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+   "title": "New Disney Pins December 2018 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+   "title": "New Disney Pins November 2018 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/wall-e-10th-anniversary-pin-collection/",
+   "title": "WALL-E 10th Anniversary Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+   "title": "Peter Pan 65th Anniversary Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+   "title": "Walt Disney's Animation Celebration Event Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/lunch-time-tales-disney-pin/",
+   "title": "Lunch Time Tales Disney Pin Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/cupcake-and-donut-disney-character-boxlunch-pins/",
+   "title": "Cupcake and Donut Disney Character BoxLunch Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hong-kong-disneyland-wall-e-10th-anniversary-pin",
+   "title": "Hong Kong Disneyland WALL-E 10th Anniversary Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/darth-vader-death-trooper-imperial-royal-guard-star-wars-helmet-pins-by-artland/",
+   "title": "Darth Vader, Death Trooper & Imperial Royal Guard Star Wars Helmet Pins by ArtLand",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2018/lattes-with-character",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Oswald described as 12th and final pin of the monthly Lattes with Character collection"
+    },
+    {
+     "field": "format",
+     "value": "monthly LE series, one pin per month",
+     "source_url": "https://thekingdominsider.com/new-lattes-character-monthly-disney-pin-collection-coming-2018/",
+     "method": "search_snippet",
+     "note": "previewed at a pin event as monthly pins; Cheshire Cat, Jiminy Cricket, Genie shown first"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/disney-donut-shop",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2018-week-3",
+     "method": "search_snippet",
+     "note": "Baymax described as 12th and final monthly Disney Donut Shop pin, Dec 20 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/wall-e-10th-boxed-set",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/wall-e-10th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "boxed set includes four different pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/wall-e-10th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "price",
+     "value": 64.99,
+     "source_url": "https://disneypinsblog.com/wall-e-10th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "retail $64.99"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-06",
+     "source_url": "https://disneypinsblog.com/wall-e-10th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "offered by RSP at June 2018 Pin Trading Nights; remainder to parks"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/peter-pan-65th-neverland-framed-set",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "framed set of six Neverland region pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "price",
+     "value": 235.0,
+     "source_url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "retail $235"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-22",
+     "source_url": "https://disneypinsblog.com/peter-pan-65th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "RSP at Feb 2018 Pin Trading Nights; remainder in parks Feb 22 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/animation-celebration-framed-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Walt Disney & Vintage Characters 5 Pin Framed Set",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "event-exclusive framed set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "five pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "LE 150"
+    },
+    {
+     "field": "price",
+     "value": 285.0,
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "retail $285"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-24",
+     "source_url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+     "method": "search_snippet",
+     "note": "event at Epcot Aug 24-25 2018"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2018/lattes-with-character/maleficent",
+   "set_key": "wdw/2018/lattes-with-character",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/2018-pin-releases.61190/",
+     "method": "search_snippet",
+     "note": "forum member reports a Maleficent latte pin selling out"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneypinforum.com/threads/2018-pin-releases.61190/",
+     "method": "search_snippet",
+     "note": "single latte series pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://www.disneypinforum.com/threads/2018-pin-releases.61190/",
+     "method": "search_snippet",
+     "note": "sold out at Disneyland in about an hour, took a day or more at WDW"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.disneypinforum.com/threads/2018-pin-releases.61190/",
+     "method": "search_snippet",
+     "note": "discussed in the 2018 Pin Releases thread"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/lattes-with-character/hades",
+   "set_key": "wdw/2018/lattes-with-character",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hades"
+     ],
+     "source_url": "https://www.disneypinforum.com/threads/iso-hades-latte.67125/",
+     "method": "search_snippet",
+     "note": "collector seeking a Hades latte pin they missed"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneypinforum.com/threads/iso-hades-latte.67125/",
+     "method": "search_snippet",
+     "note": "single latte series pin"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.disneypinforum.com/threads/iso-hades-latte.67125/",
+     "method": "search_snippet",
+     "note": "thread dated Nov 2 2018 refers to the already-released pin"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2018/lattes-with-character/maleficent",
+   "field": "set_position",
+   "searched": "DPB, MPC, forum; 3 queries",
+   "note": "field note: #07 position known only from a reseller listing (yourwdwstore); date, edition, price not in non-reseller snippets"
+  },
+  {
+   "key": "wdw/2018/lattes-with-character/maleficent",
+   "field": "variant",
+   "searched": "dlr packets 212/419/461/493/516/536",
+   "note": "shared DL/WDW release per forum; no dlr key exists; a DLR cell should mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/lattes-with-character/hades",
+   "field": "set_position",
+   "searched": "DPB Oct 2018 wk1, MPC; 3 queries",
+   "note": "field note: #10, LE 3000, Oct 4 2018 and WDW-only sale stated only by reseller listing (yourwdwstore); not recorded as claims"
+  },
+  {
+   "key": "wdw/2018/lattes-with-character/nemo",
+   "field": "pin",
+   "searched": "DPB Apr 2018, MPC; 3 queries",
+   "note": "hold: #04 Nemo latte (Apr 5 2018, LE 3000) appears only on reseller/seller listings (yourwdwstore, ecrater)"
+  },
+  {
+   "key": "wdw/2018/lattes-with-character/cheshire-cat",
+   "field": "set_position",
+   "searched": "MPC, forum; 1 query",
+   "note": "forum thread names a Cheshire Cat latte pin; position #1 and LE still not in non-reseller snippets"
+  },
+  {
+   "key": "wdw/2018/lattes-with-character",
+   "field": "members",
+   "searched": "DPB phrase queries",
+   "note": "#9 and #11 still unnamed outside resellers; Ariel/Sulley holds kept (no new per-pin evidence)"
+  },
+  {
+   "key": "wdw/2018/disney-donut-shop/cheshire-cat",
+   "field": "pin",
+   "searched": "DPB Aug 2018; 2 queries",
+   "note": "hold: #08 Cheshire Cat donut named only on a reseller category page (yourwdwstore)"
+  },
+  {
+   "key": "wdw/2018/disney-donut-shop/tigger",
+   "field": "pin",
+   "searched": "DPB/MPC; 2 queries",
+   "note": "hold: #09 Tigger donut named only on a reseller listing (yourwdwstore)"
+  },
+  {
+   "key": "wdw/2018/disney-donut-shop/dumbo",
+   "field": "pin",
+   "searched": "DPB/MPC/forum; 1 query",
+   "note": "hold: #10 Dumbo donut named only on a reseller category page (yourwdwstore)"
+  },
+  {
+   "key": "wdw/2018/disney-donut-shop",
+   "field": "members",
+   "searched": "3 queries",
+   "note": "reseller numbering also lists #04 Minnie, #05 Goofy, #06 Chip & Dale, #07 Simba, #11 Pluto, #12 Baymax; Aug-Oct names not in DPB snippets"
+  },
+  {
+   "key": "wdw/2018/star-wars-helmet/scout-trooper",
+   "field": "pin",
+   "searched": "DPB/MPC; 2 queries",
+   "note": "hold: #6 Scout Trooper helmet named only in a reseller catalogue; DPB Scout Trooper result is an ArtLand LE 250 pin, not this series"
+  },
+  {
+   "key": "wdw/2018/star-wars-helmet",
+   "field": "members",
+   "searched": "5 queries",
+   "note": "positions 1, 2, 5, 8 still unnamed; #3 Tie Pilot Jul 12, #4 Imperial Stormtrooper Aug 9, #7 Shoretrooper Nov 29 re-seen"
+  },
+  {
+   "key": "wdw/2018/lunch-time-tales",
+   "field": "members",
+   "searched": "DPB tag archive, phrase queries; 4 queries",
+   "note": "months 2/4/6/9/12 still unnamed; tag archive lists a 'Merry Christmas 2018 Disney Pin' post (Dec 23 2018) with no content; reseller names #04 Alice (not recorded)"
+  },
+  {
+   "key": "wdw/2018/lunch-time-tales/alice-in-wonderland",
+   "field": "pin",
+   "searched": "2 queries",
+   "note": "hold: #04 Alice in Wonderland LTT named only on a reseller category page (yourwdwstore)"
+  },
+  {
+   "key": "wdw/2018/wall-e-10th-boxed-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "four boxed pins still unnamed; M-O not confirmed"
+  },
+  {
+   "key": "wdw/2018/peter-pan-65th-neverland-framed-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "six region pins still unnamed"
+  },
+  {
+   "key": "wdw/2018/animation-celebration-framed-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "five framed pins still unnamed"
+  },
+  {
+   "key": "wdw/2018 wreck-it-ralph once upon a time",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "Once Upon A Time 2018 is described as a Disneyland monthly series (Moana 12th, LE 2000 $16.99); no WDW sale of Wreck-It Ralph found"
+  },
+  {
+   "key": "wdw/2018/oe/toy-story-land-annual-passholder-open",
+   "field": "pin",
+   "searched": "none this round",
+   "note": "hold kept (no new evidence)"
+  },
+  {
+   "key": "wdw/2018 holds",
+   "field": "holds",
+   "searched": "n/a",
+   "note": "no holds released: mystery sets, MNSSHP/MVMCP members, snowman four, Goodbye set, Zootopia completer, Fresh Epcot pair, Dapper Day, Mickey 90th CM, Lattes Ariel/Sulley, AK AP, Natural Beauty, AK20, Star Wars Half/Marathon medals, W&D duplicate"
+  },
+  {
+   "key": "lic/2018/boxlunch-cupcake-donut",
+   "field": "lead",
+   "searched": "1 query",
+   "note": "lead: licensed BoxLunch cupcake and donut character pins (incl Mickey and Minnie ears donuts), early Aug 2018"
+  },
+  {
+   "key": "hkdl/2018/wall-e-10th",
+   "field": "lead",
+   "searched": "1 query",
+   "note": "lead: HKDL WALL-E 10th anniversary pin, Wall-E and Eve, LE 500, for the HKDL cell"
+  },
+  {
+   "key": "lic/artland-star-wars-helmets",
+   "field": "lead",
+   "searched": "1 query",
+   "note": "lead: licensed ArtLand Star Wars Helmets pins (Dave Perillo) Vader/Death Trooper/Royal Guard; year not established; not the park helmet series"
+  },
+  {
+   "key": "wdw/2018/lattes-with-character/maleficent",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: only forum posts mention this pin; position / edition / date come from resellers (round 60 review)"
+  },
+  {
+   "key": "wdw/2018/lattes-with-character/hades",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: only forum posts mention this pin; position / edition / date come from resellers (round 60 review)"
+  }
+ ],
+ "discovery_notes": "Follow-up 6 of B010 (WDW LE 2018). 30 standard WebSearch queries (hard limit reached), all search_snippet; blocked_domains or narrow allowed_domains on every query. New pin records: Lattes Maleficent and Hades (fan-forum mentions; positions/editions only on resellers, so field notes). Held (reseller-only): Lattes #04 Nemo, Donut Shop #08 Cheshire Cat / #09 Tigger / #10 Dumbo, Star Wars Helmet #6 Scout Trooper, LTT #04 Alice. Corroboration: Lattes and Donut Shop 12-pin counts, WALL-E boxed set, Neverland framed set, Vintage Characters framed set. No holds released. No prompt-injection seen."
+}

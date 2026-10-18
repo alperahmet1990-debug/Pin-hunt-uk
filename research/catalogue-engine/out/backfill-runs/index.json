@@ -1,24 +1,24 @@
 {
  "source": "staging_payload.json",
- "git_commit": "2200aac934c4",
+ "git_commit": "64ad2e6cdc1f",
  "generated": "2026-10-18",
  "runs": [
   {
    "file": "run_01_wdw.json",
-   "pins": 1206,
-   "sets": 694,
-   "evidence": 8710,
-   "bytes": 3739881,
+   "pins": 1202,
+   "sets": 695,
+   "evidence": 8675,
+   "bytes": 3725875,
    "lines": [
     "wdw"
    ]
   },
   {
    "file": "run_02_wdw-to-dlr.json",
-   "pins": 1166,
-   "sets": 733,
-   "evidence": 9544,
-   "bytes": 3930826,
+   "pins": 1174,
+   "sets": 726,
+   "evidence": 9623,
+   "bytes": 3963563,
    "lines": [
     "wdw",
     "dlr"
@@ -28,8 +28,8 @@
    "file": "run_03_dlr-to-dlp.json",
    "pins": 1226,
    "sets": 671,
-   "evidence": 10118,
-   "bytes": 4198297,
+   "evidence": 10186,
+   "bytes": 4213994,
    "lines": [
     "dlr",
     "dlp"
@@ -37,10 +37,10 @@
   },
   {
    "file": "run_04_dlp-to-shdr.json",
-   "pins": 1242,
+   "pins": 1241,
    "sets": 656,
-   "evidence": 10317,
-   "bytes": 4448643,
+   "evidence": 10443,
+   "bytes": 4487130,
    "lines": [
     "dlp",
     "dsuk",
@@ -50,10 +50,10 @@
   },
   {
    "file": "run_05_shdr-to-lic.json",
-   "pins": 1299,
-   "sets": 600,
-   "evidence": 10580,
-   "bytes": 4391936,
+   "pins": 1282,
+   "sets": 615,
+   "evidence": 9923,
+   "bytes": 4211188,
    "lines": [
     "shdr",
     "hkdl",
@@ -63,20 +63,20 @@
   },
   {
    "file": "run_06_lic.json",
-   "pins": 1059,
-   "sets": 541,
-   "evidence": 12354,
-   "bytes": 4813632,
+   "pins": 1060,
+   "sets": 535,
+   "evidence": 12530,
+   "bytes": 4822991,
    "lines": [
     "lic"
    ]
   },
   {
    "file": "run_07_lic.json",
-   "pins": 1064,
-   "sets": 436,
-   "evidence": 10312,
-   "bytes": 4349497,
+   "pins": 1155,
+   "sets": 482,
+   "evidence": 11272,
+   "bytes": 4745279,
    "lines": [
     "lic"
    ]

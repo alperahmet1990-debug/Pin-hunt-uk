@@ -1,0 +1,580 @@
+{
+ "packet_id": "backfill-b270-wdw-oe-2018-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b270",
+ "sources": [
+  {
+   "url": "https://wdwnt.com/2018/08/photos-disney-parks-halloween-2018-pins-released-first-to-feature-new-backer-cards-and-disney-pin-trading-logo/",
+   "title": "PHOTOS: Disney Parks Halloween 2018 Pins Released (new backer cards)",
+   "publisher": "WDW News Today",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+   "title": "New Halloween 2018 Pins at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+   "title": "New Disney Pins December 2018 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2018/12/photo-report-magic-kingdom-12-6-18-railroad-closed-new-holiday-pins-and-more/",
+   "title": "PHOTO REPORT: Magic Kingdom 12/7/18 (New Holiday Pins)",
+   "publisher": "WDW News Today",
+   "published_date": "2018-12-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2018/05/collectible-toy-story-pin-available-for-disney-visa-cardmembers-in-parks-and-online/",
+   "title": "Collectible Toy Story Pin Available For Disney Visa Cardmembers",
+   "publisher": "WDW News Today",
+   "published_date": "2018-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.wdwkingdom.com/2018/07/toy-story-land-slinky-dog-magicband-and-attraction-pins-now-available-on-shop-disney-parks-mobile-app/",
+   "title": "Toy Story Land Slinky Dog MagicBand and Attraction Pins on Shop Disney Parks app",
+   "publisher": "WDW Kingdom",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/toy-story-land-disney-pins/",
+   "title": "Toy Story Land Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/origami-mystery-pin-collection/",
+   "title": "Origami Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneys-animal-kingdom-mystery-pin-collection/",
+   "title": "Disney's Animal Kingdom Mystery Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/incredibles-2-booster-pin-set/",
+   "title": "Incredibles 2 Booster Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-parks-2018-pins",
+   "title": "Disney Parks 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/37991",
+   "title": "37991 (popsicle-shaped character pin entry)",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/37993",
+   "title": "37993 (popsicle-shaped character pin entry)",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/37995",
+   "title": "37995 (popsicle-shaped character pin entry)",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/37985",
+   "title": "37985 (popsicle-shaped character pin entry)",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/37983",
+   "title": "37983 (popsicle-shaped character pin entry)",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [],
+ "pins": [
+  {
+   "pin_key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/goofy",
+   "set_key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://mypincentral.com/pin/37991",
+     "method": "search_snippet",
+     "note": "Per-pin entry names this single character"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://mypincentral.com/pin/37991",
+     "method": "search_snippet",
+     "note": "Per-pin entry"
+    },
+    {
+     "field": "visual_description",
+     "value": "Popsicle shape with bite at top right and stick; Goofy; silver back with Mickey-head impressions",
+     "source_url": "https://mypincentral.com/pin/37991",
+     "method": "search_snippet",
+     "note": "Paraphrase of per-pin entry"
+    },
+    {
+     "field": "visual_form",
+     "value": "popsicle",
+     "source_url": "https://mypincentral.com/pin/37991",
+     "method": "search_snippet",
+     "note": "Popsicle-shaped pin per entry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/37991",
+     "method": "search_snippet",
+     "note": "One design per per-pin entry"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/pluto",
+   "set_key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://mypincentral.com/pin/37993",
+     "method": "search_snippet",
+     "note": "Per-pin entry names this single character"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://mypincentral.com/pin/37993",
+     "method": "search_snippet",
+     "note": "Per-pin entry"
+    },
+    {
+     "field": "visual_description",
+     "value": "Popsicle/lollipop shape; tan Pluto with green collar across middle and gold dog tag",
+     "source_url": "https://mypincentral.com/pin/37993",
+     "method": "search_snippet",
+     "note": "Paraphrase of per-pin entry"
+    },
+    {
+     "field": "visual_form",
+     "value": "popsicle",
+     "source_url": "https://mypincentral.com/pin/37993",
+     "method": "search_snippet",
+     "note": "Popsicle-shaped pin per entry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/37993",
+     "method": "search_snippet",
+     "note": "One design per per-pin entry"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/flounder",
+   "set_key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Flounder"
+     ],
+     "source_url": "https://mypincentral.com/pin/37995",
+     "method": "search_snippet",
+     "note": "Per-pin entry names this single character"
+    },
+    {
+     "field": "main_character",
+     "value": "Flounder",
+     "source_url": "https://mypincentral.com/pin/37995",
+     "method": "search_snippet",
+     "note": "Per-pin entry"
+    },
+    {
+     "field": "visual_description",
+     "value": "Popsicle shape with bite at top right and stick; Flounder",
+     "source_url": "https://mypincentral.com/pin/37995",
+     "method": "search_snippet",
+     "note": "Paraphrase of per-pin entry"
+    },
+    {
+     "field": "visual_form",
+     "value": "popsicle",
+     "source_url": "https://mypincentral.com/pin/37995",
+     "method": "search_snippet",
+     "note": "Popsicle-shaped pin per entry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/37995",
+     "method": "search_snippet",
+     "note": "One design per per-pin entry"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/heimlich",
+   "set_key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Heimlich"
+     ],
+     "source_url": "https://mypincentral.com/pin/37985",
+     "method": "search_snippet",
+     "note": "Per-pin entry names this single character"
+    },
+    {
+     "field": "main_character",
+     "value": "Heimlich",
+     "source_url": "https://mypincentral.com/pin/37985",
+     "method": "search_snippet",
+     "note": "Per-pin entry"
+    },
+    {
+     "field": "visual_description",
+     "value": "Popsicle shape with bite at top right and stick; Heimlich from A Bug's Life",
+     "source_url": "https://mypincentral.com/pin/37985",
+     "method": "search_snippet",
+     "note": "Paraphrase of per-pin entry"
+    },
+    {
+     "field": "visual_form",
+     "value": "popsicle",
+     "source_url": "https://mypincentral.com/pin/37985",
+     "method": "search_snippet",
+     "note": "Popsicle-shaped pin per entry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/37985",
+     "method": "search_snippet",
+     "note": "One design per per-pin entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/37985",
+     "method": "search_snippet",
+     "note": "Entry says back marks it as 2018 Disney Pin Trading"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/lilo",
+   "set_key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lilo Pelekai"
+     ],
+     "source_url": "https://mypincentral.com/pin/37983",
+     "method": "search_snippet",
+     "note": "Per-pin entry names this single character"
+    },
+    {
+     "field": "main_character",
+     "value": "Lilo Pelekai",
+     "source_url": "https://mypincentral.com/pin/37983",
+     "method": "search_snippet",
+     "note": "Per-pin entry"
+    },
+    {
+     "field": "visual_description",
+     "value": "Popsicle shape with bite at top right and stick; Lilo's red leaf-pattern dress and pale yellow leaf",
+     "source_url": "https://mypincentral.com/pin/37983",
+     "method": "search_snippet",
+     "note": "Paraphrase of per-pin entry"
+    },
+    {
+     "field": "visual_form",
+     "value": "popsicle",
+     "source_url": "https://mypincentral.com/pin/37983",
+     "method": "search_snippet",
+     "note": "Popsicle-shaped pin per entry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/37983",
+     "method": "search_snippet",
+     "note": "One design per per-pin entry"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "PIN TRADING ©Disney Made in China FAC-046730-18129",
+     "source_url": "https://mypincentral.com/pin/37983",
+     "method": "search_snippet",
+     "note": "Backstamp as quoted in entry snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/oe/halloween-2018-goofy-mummy",
+   "set_key": "wdw/2018/oe-single/halloween-2018-goofy-mummy",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy \"Creep It Real\"",
+     "source_url": "https://wdwnt.com/2018/08/photos-disney-parks-halloween-2018-pins-released-first-to-feature-new-backer-cards-and-disney-pin-trading-logo/",
+     "method": "search_snippet",
+     "note": "WDWNT names the Goofy pin Creep It Real"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Pin Traders, Disney Springs (Walt Disney World)",
+     "source_url": "https://wdwnt.com/2018/08/photos-disney-parks-halloween-2018-pins-released-first-to-feature-new-backer-cards-and-disney-pin-trading-logo/",
+     "method": "search_snippet",
+     "note": "WDWNT spotted it at Disney Pin Traders, Disney Springs"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://wdwnt.com/2018/08/photos-disney-parks-halloween-2018-pins-released-first-to-feature-new-backer-cards-and-disney-pin-trading-logo/",
+     "method": "search_snippet",
+     "note": "USD 9.99 per WDWNT"
+    },
+    {
+     "field": "visual_description",
+     "value": "Goofy dressed as a mummy with the phrase Creep it Real",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "DPB pairs the mummy Goofy with the Creep it Real text"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-halloween-2018-pins-at-disney-parks/",
+     "method": "search_snippet",
+     "note": "Single-character OE pin"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/goofy",
+   "field": "pins",
+   "searched": "MyPinCentral per-pin pages; B270 follow-up",
+   "note": "released: per-design MPC page 37991 describes this popsicle design individually; resolves hold from 418_b055_dlr_oe_2018_fu1 (orig. set hold in 415)"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/goofy",
+   "field": "set_key",
+   "searched": "MyPinCentral; B270",
+   "note": "hold: MPC 37991 snippet does not name the series; tie to Ice Cream pack rests on popsicle shape, adjacent numbering and MPC 37979 series list (as Jack in 418)"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/pluto",
+   "field": "pins",
+   "searched": "MyPinCentral per-pin pages; B270 follow-up",
+   "note": "released: per-design MPC page 37993 describes this popsicle design individually; resolves hold from 418_b055_dlr_oe_2018_fu1 (orig. set hold in 415)"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/pluto",
+   "field": "set_key",
+   "searched": "MyPinCentral; B270",
+   "note": "hold: MPC 37993 snippet does not name the series; tie to Ice Cream pack rests on popsicle shape, adjacent numbering and MPC 37979 series list (as Jack in 418)"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/flounder",
+   "field": "pins",
+   "searched": "MyPinCentral per-pin pages; B270 follow-up",
+   "note": "released: per-design MPC page 37995 describes this popsicle design individually; resolves hold from 418_b055_dlr_oe_2018_fu1 (orig. set hold in 415)"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/flounder",
+   "field": "set_key",
+   "searched": "MyPinCentral; B270",
+   "note": "hold: MPC 37995 snippet does not name the series; tie to Ice Cream pack rests on popsicle shape, adjacent numbering and MPC 37979 series list (as Jack in 418)"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/heimlich",
+   "field": "pins",
+   "searched": "MyPinCentral per-pin pages; B270 follow-up",
+   "note": "released: per-design MPC page 37985 describes this popsicle design individually; resolves hold from 418_b055_dlr_oe_2018_fu1 (orig. set hold in 415)"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/heimlich",
+   "field": "set_key",
+   "searched": "MyPinCentral; B270",
+   "note": "hold: MPC 37985 snippet does not name the series; tie to Ice Cream pack rests on popsicle shape, adjacent numbering and MPC 37979 series list (as Jack in 418)"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/lilo",
+   "field": "pins",
+   "searched": "MyPinCentral per-pin pages; B270 follow-up",
+   "note": "released: per-design MPC page 37983 describes this popsicle design individually; resolves hold from 418_b055_dlr_oe_2018_fu1 (orig. set hold in 415)"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/lilo",
+   "field": "set_key",
+   "searched": "MyPinCentral; B270",
+   "note": "hold: MPC 37983 snippet does not name the series; tie to Ice Cream pack rests on popsicle shape, adjacent numbering and MPC 37979 series list (as Jack in 418)"
+  },
+  {
+   "key": "wdw/2018/oe/halloween-2018-goofy-mummy",
+   "field": "pin_name",
+   "searched": "DPB+WDWNT; 1 query",
+   "note": "variant: same pin as dlr/2018/oe/goofy-creep-it-real (DPB: mummy Goofy with Creep it Real text, 9.99 OE, DLR and WDW); Goofy Creep It Real vs Mummy gap resolved"
+  },
+  {
+   "key": "wdw/2018/oe-set/origami-mystery/mickey",
+   "field": "pins",
+   "searched": "DPB + MyPinCentral; 4 queries",
+   "note": "hold kept: only per-design listing found is a reseller (distradingpins4u, item 132820), not recorded; DPB still one 8-name list"
+  },
+  {
+   "key": "wdw/2018/oe-set/origami-mystery",
+   "field": "pins",
+   "searched": "DPB + MPC number probes; 5 queries",
+   "note": "holds kept for Mickey, Donald, Daisy, Goofy, Pluto, Chip, Dale: no per-pin pages surfaced; only Minnie (MPC 34843, in 415) confirmed; mydisneyshop is a reseller"
+  },
+  {
+   "key": "wdw/2018/oe-set/origami-mystery",
+   "field": "edition_type",
+   "searched": "DPB; 3 queries",
+   "note": "Edition type still not stated; kept as OE candidate"
+  },
+  {
+   "key": "wdw/2018/oe-set/animal-kingdom-mystery",
+   "field": "pins",
+   "searched": "DPB + MPC; 3 queries",
+   "note": "Member designs still not named; MPC 38045 (safari Mickey Tree of Life) not tied to set; set facts (8 OE, 2/box, 15.99, 11 Feb 2018) reconfirmed"
+  },
+  {
+   "key": "wdw/2018/oe/toy-story-land-logo",
+   "field": "original_price",
+   "searched": "DPB TSL + WDW Kingdom; 1 query",
+   "note": "Still unmapped: DPB lists 9.99 OE and 14.99; WDW Kingdom gives 12.99 only for Slinky Dog Dash and Alien Swirling Saucers (already in 209)"
+  },
+  {
+   "key": "wdw/2018/oe-set/disney-parks-2018-booster",
+   "field": "price",
+   "searched": "3 queries",
+   "note": "Still no preferred-source price; pintrader.club database and resellers give 29.99/Nov 2017 and later resale prices; not recorded"
+  },
+  {
+   "key": "wdw/2018/oe-set/disney-parks-2018-starter-set",
+   "field": "price",
+   "searched": "1 query",
+   "note": "Still not found from any preferred source"
+  },
+  {
+   "key": "wdw/2018/disney-visa-toy-story",
+   "field": "edition_type",
+   "searched": "WDWNT; 1 query",
+   "note": "Card-member purchase offer (12.99, May 2018, DLR/WDW/Disney Springs shops and online); edition type not stated; not an OE pin; lead for special-offer cells"
+  },
+  {
+   "key": "wdw/2018/mk-frontierland-holiday-2018",
+   "field": "edition_type",
+   "searched": "WDWNT + DPB; 3 queries",
+   "note": "resolved: likely the Happy Holidays 2018 series (DPB Dec wk1): singles 16.99 LE 3,500, boxed 4 pins + Zootopia completer 89.99 LE 1,000, DLR+WDW 6 Dec; LE, not OE; lead for LE cells"
+  },
+  {
+   "key": "wdw/2018/oe-set/incredibles-2-booster",
+   "field": "pins",
+   "searched": "DPB + MPC; 1 query",
+   "note": "hold kept: no per-design pages; MPC 110507 is a single family pin not tied to booster; members exist as dlr/2018/oe-set/incredibles-2-booster/*"
+  },
+  {
+   "key": "dsus/2018/mickey-memories",
+   "field": "pins",
+   "searched": "none (reuse)",
+   "note": "Not a WDW OE item; already covered under dsus/2018/mickey-memories-* keys in 421_b058_ds_2018_fu1"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/mickey",
+   "field": "pins",
+   "searched": "MPC number probes 37981/37984/37987 + name query; 4 queries",
+   "note": "hold kept: mystery designs not individually confirmed (no per-pin page surfaced; named only in MPC series list)"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/lucky",
+   "field": "pins",
+   "searched": "MPC number probes 37981/37984/37987 + name query; 4 queries",
+   "note": "hold kept: mystery designs not individually confirmed (no per-pin page surfaced; named only in MPC series list)"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/cheshire-cat",
+   "field": "pins",
+   "searched": "MPC number probes 37981/37984/37987 + name query; 4 queries",
+   "note": "hold kept: mystery designs not individually confirmed (no per-pin page surfaced; named only in MPC series list)"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/baymax",
+   "field": "pins",
+   "searched": "MPC number probes 37981/37984/37987 + name query; 4 queries",
+   "note": "hold kept: mystery designs not individually confirmed (no per-pin page surfaced; named only in MPC series list)"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/marie",
+   "field": "pins",
+   "searched": "MPC number probes 37981/37984/37987 + name query; 4 queries",
+   "note": "hold kept: mystery designs not individually confirmed (no per-pin page surfaced; named only in MPC series list)"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/tinker-bell",
+   "field": "pins",
+   "searched": "MPC number probes 37981/37984/37987 + name query; 4 queries",
+   "note": "hold kept: mystery designs not individually confirmed (no per-pin page surfaced; named only in MPC series list)"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 of B009 (WDW OE 2018); 25 WebSearch calls, search_snippet only. Released 5 Ice Cream pack holds from 418 via MPC per-pin pages (Goofy, Pluto, Flounder, Heimlich, Lilo; set tie still held). Goofy Creep It Real = Goofy Mummy (variant of DLR key). MK Dec 2018 holiday set is LE Happy Holidays 2018. Origami (7), Ice Cream (6), Incredibles 2 holds kept."
+}

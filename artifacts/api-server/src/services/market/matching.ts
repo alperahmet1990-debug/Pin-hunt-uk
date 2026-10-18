@@ -237,7 +237,8 @@ export type VariantTerm =
   | "pin_traders_delight"
   | "prototype"
   | "completer"
-  | "framed";
+  | "framed"
+  | "hidden_mickey";
 
 /**
  * Stable, machine-readable rejection reasons. Values are stored with
@@ -254,6 +255,7 @@ export const REJECTION_REASONS = [
   "set_count_mismatch",     // set record, listing pin count differs
   "set_name_mismatch",      // set record, listing doesn't name the set
   "variant_not_in_record",  // jumbo / mini / chaser / AP / PTD … not in the record
+  "variant_missing",        // the record is a variant (e.g. jumbo), the listing isn't
   "edition_size_conflict",  // LE size differs
   "edition_kind_conflict",  // LE vs LR vs OE
   "year_conflict",          // a different release year in the title
@@ -363,6 +365,8 @@ const VARIANT_PATTERNS: Array<[VariantTerm, RegExp]> = [
   ["prototype", /\bprototypes?\b|\bproto\b/],
   ["completer", /\bcompleters?\b/],
   ["framed", /\bframed\b|\bencadres?\b/],
+  // Not "HM": collectors use it for Haunted Mansion.
+  ["hidden_mickey", /\bhidden mickeys?\b/],
 ];
 
 /** Non-pin merchandise, fakes and parts. Matched as whole words. */
@@ -563,6 +567,12 @@ const V2_GENERIC_TOKENS = new Set([
   "avec", "set", "boxed", "box", "booster",
 ]);
 
+/** Variants that make the record itself a different product from the base pin. */
+const STRONG_VARIANTS = new Set<VariantTerm>([
+  "jumbo", "mini", "pin_on_pin", "chaser", "artist_proof", "pin_traders_delight",
+  "prototype", "completer", "framed",
+]);
+
 function v2Tokens(normalised: string): string[] {
   return normalised.split(" ").filter(t => t.length > 2);
 }
@@ -706,6 +716,13 @@ function matchV2(pin: CataloguePin, title: string, lang: MatchLang | "auto"): Ma
     if (!allowedVariants.has(v)) return reject("variant_not_in_record", score, v);
   }
 
+  // A variant record (e.g. "Simba Jumbo Pin") must not match the base pin.
+  for (const v of parseAttributes(pin.title, { lang: "en" }).variantTerms) {
+    if (STRONG_VARIANTS.has(v) && !parsed.variantTerms.includes(v)) {
+      return reject("variant_missing", score, v);
+    }
+  }
+
   if (pin.limitedEditionSize && parsed.editionSize && parsed.editionSize !== pin.limitedEditionSize) {
     return reject("edition_size_conflict", score, String(parsed.editionSize));
   }
@@ -724,10 +741,22 @@ function matchV2(pin: CataloguePin, title: string, lang: MatchLang | "auto"): Ma
     return reject("generic_name_no_series", score);
   }
   if (nameRatio < 0.4 && !codeHit) return reject("low_name_overlap", score);
+  // Matching only the character's name is not enough when the pin name has
+  // other distinctive words ("Stitch Surfing" vs "Stitch Hula").
+  if (!setRecord && !codeHit) {
+    const charWords = new Set(recordCharAliases.flat().flatMap(a => a.split(" ")));
+    const distinctive = (s: string) =>
+      v2Tokens(normaliseTitle(s)).filter(t => !V2_GENERIC_TOKENS.has(t) && !charWords.has(t));
+    const sources = [pin.title, ...aliases].map(distinctive).filter(d => d.length > 0);
+    if (sources.length > 0 && !sources.some(d => d.some(t => titleTokens.has(t)))) {
+      return reject("low_name_overlap", score, "distinctive");
+    }
+  }
   if (!setRecord && !codeHit && recordChars.length > 0 && !charHit && nameRatio < 0.7) {
     return reject("character_missing", score);
   }
-  if (score < 40) return reject("low_score", score);
+  // An exact product code (SKU, FAC…) identifies the pin on its own.
+  if (score < 40 && !codeHit) return reject("low_score", score);
   return { mode: "v2", accepted: true, score, parsed };
 }
 

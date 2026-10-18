@@ -1,24 +1,24 @@
 {
  "source": "staging_payload.json",
- "git_commit": "7b0d08b01cff",
+ "git_commit": "c2be7bf6ccc0",
  "generated": "2026-10-18",
  "runs": [
   {
    "file": "run_01_wdw.json",
-   "pins": 1219,
-   "sets": 681,
-   "evidence": 8883,
-   "bytes": 3799780,
+   "pins": 1222,
+   "sets": 674,
+   "evidence": 8949,
+   "bytes": 3820897,
    "lines": [
     "wdw"
    ]
   },
   {
    "file": "run_02_wdw-to-dlr.json",
-   "pins": 1166,
-   "sets": 727,
-   "evidence": 9801,
-   "bytes": 3995847,
+   "pins": 1167,
+   "sets": 730,
+   "evidence": 9835,
+   "bytes": 4006014,
    "lines": [
     "wdw",
     "dlr"
@@ -26,10 +26,10 @@
   },
   {
    "file": "run_03_dlr-to-dlp.json",
-   "pins": 1259,
-   "sets": 641,
-   "evidence": 9935,
-   "bytes": 4177992,
+   "pins": 1257,
+   "sets": 643,
+   "evidence": 9981,
+   "bytes": 4191092,
    "lines": [
     "dlr",
     "dlp"
@@ -37,10 +37,10 @@
   },
   {
    "file": "run_04_dlp-to-dsus.json",
-   "pins": 1235,
-   "sets": 662,
-   "evidence": 10981,
-   "bytes": 4628723,
+   "pins": 1239,
+   "sets": 660,
+   "evidence": 10960,
+   "bytes": 4625220,
    "lines": [
     "dlp",
     "dsuk",
@@ -49,10 +49,10 @@
   },
   {
    "file": "run_05_dsus-to-lic.json",
-   "pins": 1267,
-   "sets": 604,
-   "evidence": 8898,
-   "bytes": 3899783,
+   "pins": 1265,
+   "sets": 609,
+   "evidence": 8877,
+   "bytes": 3877764,
    "lines": [
     "dsus",
     "shdr",
@@ -63,30 +63,30 @@
   },
   {
    "file": "run_06_lic.json",
-   "pins": 1178,
-   "sets": 537,
-   "evidence": 12302,
-   "bytes": 4817550,
+   "pins": 1195,
+   "sets": 530,
+   "evidence": 12246,
+   "bytes": 4820635,
    "lines": [
     "lic"
    ]
   },
   {
    "file": "run_07_lic.json",
-   "pins": 1039,
-   "sets": 530,
-   "evidence": 12146,
-   "bytes": 4822543,
+   "pins": 1032,
+   "sets": 533,
+   "evidence": 12150,
+   "bytes": 4818629,
    "lines": [
     "lic"
    ]
   },
   {
    "file": "run_08_lic-to-windows-of-attraction.json",
-   "pins": 744,
-   "sets": 222,
-   "evidence": 7745,
-   "bytes": 3229417,
+   "pins": 791,
+   "sets": 247,
+   "evidence": 8318,
+   "bytes": 3454141,
    "lines": [
     "lic",
     "animated-cuties",

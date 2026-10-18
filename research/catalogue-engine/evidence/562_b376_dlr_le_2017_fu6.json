@@ -1,0 +1,382 @@
+{
+ "packet_id": "562_b376_dlr_le_2017_fu6",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+   "title": "New Disney Pins February 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/134298",
+   "title": "134298",
+   "publisher": "MyPinCentral",
+   "published_date": "2017",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2017/monorail-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Monorail Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "Feb 2017 wk1 roundup lists a new Disneyland monorail mystery set alongside a separate WDW monorail set"
+    },
+    {
+     "field": "format",
+     "value": "mystery set",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "blind boxes, two randomly selected pins per box"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "each box holds two random pins"
+    },
+    {
+     "field": "price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "retail $16.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "US park release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "available at Disneyland Resort Feb 2, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "DLR release"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release with limited edition chasers",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "regular pins limited release; chasers LE 400"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-1",
+     "method": "search_snippet",
+     "note": "four chaser pins, each LE 400"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2017/pin-trading-tales/finding-dory",
+   "set_key": "dlr/2017/pin-trading-tales",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "square pin with a Dory dangle",
+     "source_url": "https://mypincentral.com/pin/134298",
+     "method": "search_snippet",
+     "note": "MPC listing: square 2017 Pin Trading Tales pin with Dory dangle"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dory"
+     ],
+     "source_url": "https://mypincentral.com/pin/134298",
+     "method": "search_snippet",
+     "note": "Dory named; any second character (e.g. Hank) not confirmed by a non-reseller source"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Limited Edition of 2000",
+     "source_url": "https://mypincentral.com/pin/134298",
+     "method": "search_snippet",
+     "note": "back marked LE 2000 per listing summary"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://mypincentral.com/pin/134298",
+     "method": "search_snippet",
+     "note": "LE 2000 on back"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://mypincentral.com/pin/134298",
+     "method": "search_snippet",
+     "note": "listing titled 2017 Pin Trading Tales"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2017/pin-trading-tales/finding-dory",
+   "field": "pin_key",
+   "searched": "2 queries (MPC 134298)",
+   "note": "field note: link of MPC 134298 (square, Dory dangle, LE 2000) to the #5 Finding Dory entry inferred from series/subject; listing gives no series number"
+  },
+  {
+   "key": "dlr/2017/monorail-mystery/pluto",
+   "field": "pin_key",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (DPB Feb 2017 wk1 lists Pluto, Goofy, Chip, Dale, Daisy, Donald, Minnie as a character list only)"
+  },
+  {
+   "key": "dlr/2017/monorail-mystery/goofy",
+   "field": "pin_key",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (DPB Feb 2017 wk1 lists Pluto, Goofy, Chip, Dale, Daisy, Donald, Minnie as a character list only)"
+  },
+  {
+   "key": "dlr/2017/monorail-mystery/chip",
+   "field": "pin_key",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (DPB Feb 2017 wk1 lists Pluto, Goofy, Chip, Dale, Daisy, Donald, Minnie as a character list only)"
+  },
+  {
+   "key": "dlr/2017/monorail-mystery/dale",
+   "field": "pin_key",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (DPB Feb 2017 wk1 lists Pluto, Goofy, Chip, Dale, Daisy, Donald, Minnie as a character list only)"
+  },
+  {
+   "key": "dlr/2017/monorail-mystery/daisy",
+   "field": "pin_key",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (DPB Feb 2017 wk1 lists Pluto, Goofy, Chip, Dale, Daisy, Donald, Minnie as a character list only)"
+  },
+  {
+   "key": "dlr/2017/monorail-mystery/donald",
+   "field": "pin_key",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (DPB Feb 2017 wk1 lists Pluto, Goofy, Chip, Dale, Daisy, Donald, Minnie as a character list only)"
+  },
+  {
+   "key": "dlr/2017/monorail-mystery/minnie",
+   "field": "pin_key",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (DPB Feb 2017 wk1 lists Pluto, Goofy, Chip, Dale, Daisy, Donald, Minnie as a character list only)"
+  },
+  {
+   "key": "dlr/2017/monorail-mystery",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "seven characters named plus four LE 400 chasers; total design count not stated for the DL set (8 LR + 4 chasers is the WDW set) - not recorded"
+  },
+  {
+   "key": "dlr/2017/monorail-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "four LE 400 chaser designs not named; not a variant of wdw/2017/monorail-magic-mystery (separate WDW set, LE 500 chasers)"
+  },
+  {
+   "key": "dlr/2017/pin-trading-tales",
+   "field": "pins",
+   "searched": "5 queries",
+   "note": "pins 4 and 9 still not named; no DPB Apr wk4 page surfaced; Sept 2017 roundups show no PTT release"
+  },
+  {
+   "key": "dlr/2017/pin-trading-tales/mad-hatter",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "Mar 30 2017 / LE 2,000 still reseller-only (ecrater); not recorded"
+  },
+  {
+   "key": "dlr/2017/charming-characters",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "releases 1 and 2 still not named; snippets only cover #3 Jessica Rabbit onward"
+  },
+  {
+   "key": "dlr/2017/magical-timepieces",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "May and Nov 2017 releases still not found; only Railroad (Mar) and 20,000 Leagues (Jul) resurfaced"
+  },
+  {
+   "key": "dlr/2017/ap-quarterly-2017",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "quarterly pins 1-3 still unnamed; DPB AP posts (AP Days, Egg-stravaganza, Food & Wine, HMH, Happy Holidays) none called quarterly"
+  },
+  {
+   "key": "dlr/2017/ap-quarterly-2017/enchanted-tiki-room",
+   "field": "edition_size",
+   "searched": "3 queries",
+   "note": "conflict unresolved: DPB Oct wk3 again gives LE 3,000 for this pin; 6,000/$17.99 fragment may be an adjacent item; MPC 138819 is a 2020 Tiki pin, not this one"
+  },
+  {
+   "key": "dlr/2017/club-33-2017/december-2017",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "hold kept (433): DPB again says Pluto, LE 500, $30 - same page, no new per-pin evidence"
+  },
+  {
+   "key": "dlr/2017/club-33-2017/july-tinker-bell",
+   "field": "pin_key",
+   "searched": "1 query",
+   "note": "hold kept: July Tinker Bell 50th LE 500 again only on a resale page (tinkerbellsgiftshop.com) - not recorded"
+  },
+  {
+   "key": "dlr/2017/club-33-2017",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no new months found"
+  },
+  {
+   "key": "dlr/2017/aladdin-25th-pin-trading-nights-three-wishes-box-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: red Aladdin / blue Aladdin / gold Genie and 'Saved from Drowning' still reseller-only (YourWDWStore, ecrater)"
+  },
+  {
+   "key": "wdw/2017/aladdin-25th-pin-trading-nights-genie-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no new designs; 13 other designs and LE 200 super chaser design still unnamed; Cheerleader Genie chaser still reseller-only (hold kept)"
+  },
+  {
+   "key": "dlr/2017/villains-vault-2017-key-box-set",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "lead only: resellers (ecrater, scienceagogo) describe five sculpted key pins incl. Cruella, LE 150 - not recorded"
+  },
+  {
+   "key": "dlr/2017/villains-vault-2017-four-pin-transform-box-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead only: reseller madhousecollectibles lists an Ursula & Vanessa transform pin (LE 200, artist proof) - not recorded"
+  },
+  {
+   "key": "dlr/2017/villains-vault-2017",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "DPB page also lists Storybook Pins and an Oogie Boogie jumbo; no per-pin detail in permitted snippets"
+  },
+  {
+   "key": "dlr/2017/marvel-choose-your-mark",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "10 pins still unnamed; DPB again calls both sets AP exclusives (conflict with 522 kept)"
+  },
+  {
+   "key": "dlr/2017/pirates-50th",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "LE 2,500 designs still unnamed in permitted sources; purple gem (ecrater) and blue gem (collectrandom) treasure chest pins reseller-only - hold"
+  },
+  {
+   "key": "dlr/2017/pirates-50th-boxed-set",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "hold kept: six-pin count reseller-only"
+  },
+  {
+   "key": "dlr/2017/cast-member-halloween-2017-jack-skellington",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "lead kept: DPB Sept 28 2017 CM Halloween NBC pin (Jack, stained glass, LE 500, CM only); resort still not stated"
+  },
+  {
+   "key": "dlr/2017/wdi-pirates-mystery",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "lead: WDI Pirates of the Caribbean mystery set (8 pins, LE 300, $12.95, D23 Expo 2017 / Mickey's of Glendale) - WDI line, not DLR park"
+  },
+  {
+   "key": "dlr/2017/twenty-eight-and-main-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "lead carried; not searched (likely OE/LR cell)"
+  },
+  {
+   "key": "dlr/2017/nbc-haunted-mansion-stretching-portraits",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "lead carried; not searched (likely OE cell)"
+  },
+  {
+   "key": "wdw/2017/star-wars-pin-of-the-month/pin-13",
+   "field": "pin_key",
+   "searched": "0 queries",
+   "note": "hold kept (433/426): not re-searched"
+  },
+  {
+   "key": "dlr/2017/mickeys-halloween-party-2017-villains-box-set",
+   "field": "pin_key",
+   "searched": "0 queries",
+   "note": "hold kept (433): not re-searched"
+  },
+  {
+   "key": "dlr/2017/holiday-gift-card-pins",
+   "field": "pin_key",
+   "searched": "0 queries",
+   "note": "hold kept (433): confirm pin structure; not re-searched"
+  },
+  {
+   "key": "dlr/2017/haunting-halloween-2017/ezra",
+   "field": "pin_key",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence"
+  },
+  {
+   "key": "dlr/2017/haunting-halloween-2017/phineas",
+   "field": "pin_key",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence"
+  },
+  {
+   "key": "dlr/2017/pin-trading-tales/hat-box-ghost",
+   "field": "pin_key",
+   "searched": "0 queries",
+   "note": "hold kept: WDW sale unconfirmed; no wdw key"
+  },
+  {
+   "key": "wdw/2017/mnsshp/maleficent",
+   "field": "pin_key",
+   "searched": "0 queries",
+   "note": "hold kept (522): possible duplicate; not re-searched"
+  },
+  {
+   "key": "wdw/2017/mnsshp/ursula",
+   "field": "pin_key",
+   "searched": "0 queries",
+   "note": "hold kept (522): possible duplicate; not re-searched"
+  },
+  {
+   "key": "dlr/2017/licensed",
+   "field": "pins",
+   "searched": "26 queries",
+   "note": "no licensed pins surfaced"
+  }
+ ],
+ "discovery_notes": "B376 follow-up 6 of B020 (DLR LE 2017). 26 web searches. New: Disneyland Monorail Mystery set (DPB Feb 2017 wk1: Feb 2, $16.99, 2 per box, four LE 400 chasers) recorded as set only; seven named characters held per rule 12. Field claims added to PTT Finding Dory from MPC 134298. No holds released. Maintainer: Aladdin 25th Pin Trading Nights pins/sets (433) are DL+WDW shared but keyed dlr - consider wdw re-key like the Genie mystery."
+}

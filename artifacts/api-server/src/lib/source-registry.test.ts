@@ -33,6 +33,29 @@ describe("classifySource", () => {
   });
 });
 
+describe("marketplaces are lead-only", () => {
+  const MARKETPLACES = [
+    "ebay.co.uk", "ebay.com", "ebay.fr", "ebay.de", "ebay.it", "ebay.es", "ebay.com.au", "ebay.ca",
+    "vinted.co.uk", "vinted.fr", "vinted.com", "vinted.de", "whatnot.com", "mercari.com", "depop.com",
+    "etsy.com", "poshmark.com",
+  ];
+  it.each(MARKETPLACES)("%s and its subdomains", domain => {
+    for (const host of [domain, `www.${domain}`, `m.${domain}`]) {
+      expect(classifySource(`https://${host}/itm/1`)).toEqual({ class: "lead_only", domain });
+    }
+    const cls = classifySource(`https://www.${domain}/x`)!.class;
+    expect(storedSourceClass(cls)).toBe("unclassified");
+    expect(countsAsEvidence(cls)).toBe(false);
+  });
+  it.each([
+    ["https://www.ebay.co.uk/itm/1"], ["https://m.ebay.com/itm/1"], ["https://www.vinted.fr/items/1"],
+  ])("%s", url => expect(classifySource(url)?.class).toBe("lead_only"));
+  it("does not treat lookalike marketplace hosts as listed", () => {
+    expect(classifySource("https://notebay.com/a")?.class).toBe("fan");
+    expect(classifySource("https://ebay.com.evil.example/a")?.class).toBe("fan");
+  });
+});
+
 describe("stored class and counting", () => {
   it("stores lead_only as unclassified and does not count it", () => {
     expect(storedSourceClass("lead_only")).toBe("unclassified");

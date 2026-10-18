@@ -1,0 +1,4986 @@
+{
+ "packet_id": "backfill-b253-asia-2023-2024-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b253",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+   "title": "Zootopia Grand Opening Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/linabell-scary-fun-halloween-pin-at-shanghai-disney-resort",
+   "title": "LinaBell Scary Fun Halloween Pin at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2023-pin-releases-at-shanghai-disney-resort",
+   "title": "Pin Trading Fun Day 2023 Pin Releases at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+   "title": "Lunar New Year 2023 Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/duffy-and-friends-spring-festival-2023-pin-set-at-shanghai-disney-resort",
+   "title": "Duffy and Friends Spring Festival 2023 Pin Set at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+   "title": "Spring 2023 Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+   "title": "Cherry Blossom Festival 2023 Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+   "title": "Lunar New Year 2024 Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-01-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/spring-festival-2024-pins-at-shanghai-disney-resort/",
+   "title": "Spring Festival 2024 Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+   "title": "Duffy and Friends Summer 2024 Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+   "title": "Mid-Autumn Festival 2024 Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+   "title": "Pin Trading Fun Day 2024 Pin Releases at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+   "title": "Full List (With Prices) of New World of Frozen Merchandise at Hong Kong Disneyland",
+   "publisher": "WDW News Today",
+   "published_date": "2023-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+   "title": "June 2023 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/february-2023-hong-kong-disneyland-pin-releases/",
+   "title": "February 2023 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/wind-vane-pin-series-at-hong-kong-disneyland",
+   "title": "Wind Vane Pin Series at Hong Kong Disneyland",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pin-trading-carnival-2023-hong-kong-disneyland-pin-releases/",
+   "title": "Pin Trading Carnival 2023 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-plates-2023-redemption-pin-series-at-hong-kong-disneyland",
+   "title": "Disney Plates 2023 Redemption Pin Series at Hong Kong Disneyland",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+   "title": "January 2024 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+   "title": "April 2024 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+   "title": "Pin Trading Carnival 2024 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/may-2024-hong-kong-disneyland-pin-releases",
+   "title": "May 2024 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+   "title": "June 2024 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/july-2024-hong-kong-disneyland-pin-releases/",
+   "title": "July 2024 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+   "title": "October 2024 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+   "title": "November 2024 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2023/03/photos-full-list-of-tokyo-disney-resort-40th-anniversary-dream-go-round-merchandise-with-prices/",
+   "title": "Full List of Tokyo Disney Resort 40th Anniversary 'Dream-Go-Round' Merchandise with Prices",
+   "publisher": "WDW News Today",
+   "published_date": "2023-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+   "title": "Tokyo Disney Resort 40th Anniversary Dream-Go-Round Limited Goods",
+   "publisher": "TDR Explorer",
+   "published_date": "2023-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2023/12/first-look-tokyo-disney-resort-40th-anniversary-grand-finale-merch/",
+   "title": "Tokyo Disney Resort 40th Anniversary Grand Finale Merchandise Preview",
+   "publisher": "WDW News Today",
+   "published_date": "2023-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-grand-finale-merchandise/",
+   "title": "Tokyo Disney Resort 40th Anniversary 'Everlasting Dreams' Grand Finale Merchandise",
+   "publisher": "TDR Explorer",
+   "published_date": "2024-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://tdrexplorer.com/fantasy-springs-themed-merchandise-at-disneysea/",
+   "title": "'Fantasy Springs' Themed Merchandise at DisneySea",
+   "publisher": "TDR Explorer",
+   "published_date": "2024",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://tdrexplorer.com/fantasy-springs-peter-pans-neverland-merchandise-tokyo-disneysea/",
+   "title": "Fantasy Springs 'Peter Pan's Neverland' Merchandise at Tokyo DisneySea",
+   "publisher": "TDR Explorer",
+   "published_date": "2024",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2024/02/tangled-frozen-peter-pan-merchandise-fantasy-springs/",
+   "title": "All New Tangled, Frozen, and Peter Pan Merchandise Exclusive to Fantasy Springs Revealed",
+   "publisher": "WDW News Today",
+   "published_date": "2024-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+   "title": "Full List (with Prices) of Fantasy Springs Merchandise",
+   "publisher": "WDW News Today",
+   "published_date": "2024-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://tdrexplorer.com/tokyo-disneysea-fantasy-springs-hotel-goods/",
+   "title": "Tokyo DisneySea 'Fantasy Springs Hotel' Goods",
+   "publisher": "TDR Explorer",
+   "published_date": "2024",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/fantasy-springs-pin-selection-at-tokyo-disney-resort/",
+   "title": "Fantasy Springs Pin Selection at Tokyo Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "shdr/2023/zootopia-grand-opening",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Zootopia Grand Opening pins",
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title names SHDR"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "snippet dates releases to December 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2023/linabell-halloween",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "LinaBell Scary Fun Halloween pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/linabell-scary-fun-halloween-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/linabell-scary-fun-halloween-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "October 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2023/pin-trading-fun-day-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Fun Day 2023",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2023-pin-releases-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "7th annual event"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2023-pin-releases-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "released in park from 22 Sep 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2023-pin-releases-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2023/lunar-new-year-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lunar New Year 2023 pins",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "early Jan 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2023/lunar-new-year-2023-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lunar New Year 2023 mystery pin set",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "mystery set in same post"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "mystery pin set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "12 pins in total"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2023/duffy-spring-festival-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Duffy and Friends Spring Festival 2023 Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/duffy-and-friends-spring-festival-2023-pin-set-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/blogs/news/duffy-and-friends-spring-festival-2023-pin-set-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "set of seven pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/blogs/news/duffy-and-friends-spring-festival-2023-pin-set-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "seven pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/duffy-and-friends-spring-festival-2023-pin-set-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "limited run"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/duffy-and-friends-spring-festival-2023-pin-set-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "300 sets"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/duffy-and-friends-spring-festival-2023-pin-set-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "on sale Jan 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/duffy-and-friends-spring-festival-2023-pin-set-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2023/spring-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Spring 2023 pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "Feb 2023"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2023/cherry-blossom-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cherry Blossom Festival 2023 pins",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01-31",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "release 31 Jan 2023"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/lunar-new-year-2024",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lunar New Year 2024 Year of the Dragon pins",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Jan 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/spring-festival-2024",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Spring Festival 2024 pins",
+     "source_url": "https://disneypinsblog.com/spring-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01",
+     "source_url": "https://disneypinsblog.com/spring-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Jan-Feb 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/spring-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/spring-festival-2024-duffy-boxed-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Spring Festival 2024 Duffy and Friends boxed set",
+     "source_url": "https://disneypinsblog.com/spring-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "boxed set of seven pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/spring-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "boxed set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/spring-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "seven pins"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/spring-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/spring-festival-2024-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Spring Festival 2024 Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/spring-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://disneypinsblog.com/spring-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "mystery set"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/spring-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/duffy-summer-2024",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Duffy and Friends Summer 2024 pins",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-07",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "July 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/duffy-summer-2024-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Duffy and Friends Summer 2024 mystery pin set",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "mystery set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "eight pins in total"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/mid-autumn-festival-2024",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mid-Autumn Festival 2024 pins",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-09",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Sept 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/mid-autumn-festival-2024-duffy-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Duffy & Friends Mid-Autumn Festival 2024 mystery pin set",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "mystery set"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/pin-trading-fun-day-2024",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Fun Day 2024",
+     "source_url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "8th annual event"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-09",
+     "source_url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Sept 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2023/world-of-frozen",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "World of Frozen merchandise pins",
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "WDWNT list of new WoF merch"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (Tick Tock Toys & Collectibles)",
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "sold at Tick Tock Toys & Collectibles"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-11",
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "article Nov 2023; land opened 20 Nov 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2023/world-of-frozen-anna-and-elsa-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "World of Frozen Anna & Elsa pin set",
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "described as a pin set"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2023/world-of-frozen-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "World of Frozen mystery pin box",
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "mystery box"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 3,
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "three pins per box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 9,
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "nine to collect"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2023/june-2023-estore",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "June 2023 Hong Kong Disneyland pin releases",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "eStore Redemption Center 2-6 Jun 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "eStore; leftovers at Emporium and Archive Shop"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2023/disney100-duffy-and-friends-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney 100 Anniversary Duffy and Friends Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "listed in June 2023 post"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "price",
+     "value": 799,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HK$799"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "eStore"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2023/february-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "February 2023 Hong Kong Disneyland pin releases",
+     "source_url": "https://disneypinsblog.com/february-2023-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/february-2023-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "Feb 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (Emporium)",
+     "source_url": "https://disneypinsblog.com/february-2023-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "sold at the Emporium"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2023/wind-vane",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Wind Vane pin series",
+     "source_url": "https://disneypinsblog.com/blogs/news/wind-vane-pin-series-at-hong-kong-disneyland",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/wind-vane-pin-series-at-hong-kong-disneyland",
+     "method": "search_snippet",
+     "note": "HKDL"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/wind-vane-pin-series-at-hong-kong-disneyland",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/wind-vane-pin-series-at-hong-kong-disneyland",
+     "method": "search_snippet",
+     "note": "Jan 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2023/pin-trading-carnival-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Carnival 2023",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2023-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2023-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-04-12",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2023-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "redemption from 12 Apr 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2023/disney-plates-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Plates 2023 redemption pin series",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-plates-2023-redemption-pin-series-at-hong-kong-disneyland",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-plates-2023-redemption-pin-series-at-hong-kong-disneyland",
+     "method": "search_snippet",
+     "note": "HKDL"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-plates-2023-redemption-pin-series-at-hong-kong-disneyland",
+     "method": "search_snippet",
+     "note": "started Aug 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2024/january-2024",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "January 2024 Hong Kong Disneyland pin releases",
+     "source_url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01-04",
+     "source_url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2024/april-2024",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "April 2024 Hong Kong Disneyland pin releases",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2024/ant-man-and-the-wasp-5th-anniversary-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Ant-Man and The Wasp 5th anniversary pin set",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "April 2024 post"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "pin set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "price",
+     "value": 259,
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$259"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2024/pin-trading-carnival-2024",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Carnival 2024 Hong Kong Disneyland pin releases",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04-01",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2024/pin-trading-carnival-2024-designer-series-box-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Carnival 2024 Designer Series box set",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "format",
+     "value": "boxed set",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "box set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2024/may-2024",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "May 2024 Hong Kong Disneyland pin releases",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2024/june-2024",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "June 2024 Hong Kong Disneyland pin releases",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2024/pin-go-2024",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "PIN GO 2024 character pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "June 2024 post"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "eStore 1 Jun-30 Sep 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 600 each"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2024/july-2024",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "July 2024 Hong Kong Disneyland pin releases",
+     "source_url": "https://disneypinsblog.com/july-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-07",
+     "source_url": "https://disneypinsblog.com/july-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/july-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2024/october-2024",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "October 2024 Hong Kong Disneyland pin releases",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-10",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2024/november-2024",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "November 2024 Hong Kong Disneyland pin releases",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-11-08",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2024/world-of-frozen-1st-anniversary-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "World of Frozen 1st Anniversary Pin Set",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "Nov 2024 post"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "pin set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "price",
+     "value": 299,
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$299"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-11-08",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "eStore 8-10 Nov 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2023/40th-dream-go-round-pin-and-tapestry-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "TDR 40th Anniversary Dream-Go-Round Pin & Tapestry Set",
+     "source_url": "https://wdwnt.com/2023/03/photos-full-list-of-tokyo-disney-resort-40th-anniversary-dream-go-round-merchandise-with-prices/",
+     "method": "search_snippet",
+     "note": "listed in launch merch"
+    },
+    {
+     "field": "price",
+     "value": 2500,
+     "source_url": "https://wdwnt.com/2023/03/photos-full-list-of-tokyo-disney-resort-40th-anniversary-dream-go-round-merchandise-with-prices/",
+     "method": "search_snippet",
+     "note": "¥2,500"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://wdwnt.com/2023/03/photos-full-list-of-tokyo-disney-resort-40th-anniversary-dream-go-round-merchandise-with-prices/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-04",
+     "source_url": "https://wdwnt.com/2023/03/photos-full-list-of-tokyo-disney-resort-40th-anniversary-dream-go-round-merchandise-with-prices/",
+     "method": "search_snippet",
+     "note": "launch merchandise Apr 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://wdwnt.com/2023/03/photos-full-list-of-tokyo-disney-resort-40th-anniversary-dream-go-round-merchandise-with-prices/",
+     "method": "search_snippet",
+     "note": "TDR"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2023/40th-dream-go-round-framed-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "TDR 40th Dream-Go-Round limited framed pin badge set",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+     "method": "search_snippet",
+     "note": "premium limited goods"
+    },
+    {
+     "field": "format",
+     "value": "framed multi-pin set",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+     "method": "search_snippet",
+     "note": "framed pin badge set"
+    },
+    {
+     "field": "price",
+     "value": 30000,
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+     "method": "search_snippet",
+     "note": "¥30,000"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10-19",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+     "method": "search_snippet",
+     "note": "app pre-orders 19 Oct-12 Nov 2023; shipping late May 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort app",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+     "method": "search_snippet",
+     "note": "app pre-order"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2024/40th-grand-finale-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "TDR 40th Anniversary Grand Finale pin badge set & frame",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-grand-finale-merchandise/",
+     "method": "search_snippet",
+     "note": "Grand Finale merch"
+    },
+    {
+     "field": "format",
+     "value": "framed multi-pin set",
+     "source_url": "https://wdwnt.com/2023/12/first-look-tokyo-disney-resort-40th-anniversary-grand-finale-merch/",
+     "method": "search_snippet",
+     "note": "pin set in frame"
+    },
+    {
+     "field": "price",
+     "value": 8500,
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-grand-finale-merchandise/",
+     "method": "search_snippet",
+     "note": "¥8,500"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-grand-finale-merchandise/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01-23",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-grand-finale-merchandise/",
+     "method": "search_snippet",
+     "note": "on sale 23 Jan 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-grand-finale-merchandise/",
+     "method": "search_snippet",
+     "note": "TDL and TDS"
+    },
+    {
+     "field": "size_mm",
+     "value": "about 120 x 330 (display)",
+     "source_url": "https://wdwnt.com/2023/12/first-look-tokyo-disney-resort-40th-anniversary-grand-finale-merch/",
+     "method": "search_snippet",
+     "note": "display approx 12 x 33 cm"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2024/fantasy-springs-logo-and-poster",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Fantasy Springs logo and attraction poster collection",
+     "source_url": "https://tdrexplorer.com/fantasy-springs-themed-merchandise-at-disneysea/",
+     "method": "search_snippet",
+     "note": "collection themed to logo and four attraction posters"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04-08",
+     "source_url": "https://tdrexplorer.com/fantasy-springs-themed-merchandise-at-disneysea/",
+     "method": "search_snippet",
+     "note": "from 8 Apr 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea (Emporio)",
+     "source_url": "https://tdrexplorer.com/fantasy-springs-themed-merchandise-at-disneysea/",
+     "method": "search_snippet",
+     "note": "Emporio, Mediterranean Harbor"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2024/fantasy-springs-poster-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Fantasy Springs Pin Badge Set (logo/poster collection)",
+     "source_url": "https://tdrexplorer.com/fantasy-springs-themed-merchandise-at-disneysea/",
+     "method": "search_snippet",
+     "note": "pin badge set in logo/poster collection"
+    },
+    {
+     "field": "price",
+     "value": 4800,
+     "source_url": "https://tdrexplorer.com/fantasy-springs-themed-merchandise-at-disneysea/",
+     "method": "search_snippet",
+     "note": "¥4,800"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://tdrexplorer.com/fantasy-springs-themed-merchandise-at-disneysea/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04-08",
+     "source_url": "https://tdrexplorer.com/fantasy-springs-themed-merchandise-at-disneysea/",
+     "method": "search_snippet",
+     "note": "from 8 Apr 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea (Emporio)",
+     "source_url": "https://tdrexplorer.com/fantasy-springs-themed-merchandise-at-disneysea/",
+     "method": "search_snippet",
+     "note": "Emporio"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2024/fantasy-springs-peter-pans-never-land-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Peter Pan's Never Land pin badge set",
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "Fantasy Springs merch list"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "three pins mounted on Never Land art print"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "three pins in this set"
+    },
+    {
+     "field": "price",
+     "value": 6000,
+     "source_url": "https://wdwnt.com/2024/02/tangled-frozen-peter-pan-merchandise-fantasy-springs/",
+     "method": "search_snippet",
+     "note": "¥6,000"
+    },
+    {
+     "field": "price",
+     "value": 6000,
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "¥6,000"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05-28",
+     "source_url": "https://tdrexplorer.com/fantasy-springs-peter-pans-neverland-merchandise-tokyo-disneysea/",
+     "method": "search_snippet",
+     "note": "collection at Emporio from 28 May 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea (Emporio)",
+     "source_url": "https://tdrexplorer.com/fantasy-springs-peter-pans-neverland-merchandise-tokyo-disneysea/",
+     "method": "search_snippet",
+     "note": "Emporio, Mediterranean Harbor"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2024/fantasy-springs-hotel-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tokyo DisneySea Fantasy Springs Hotel pin badge set",
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "hotel merch"
+    },
+    {
+     "field": "price",
+     "value": 6000,
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "¥6,000"
+    },
+    {
+     "field": "price",
+     "value": 6000,
+     "source_url": "https://tdrexplorer.com/tokyo-disneysea-fantasy-springs-hotel-goods/",
+     "method": "search_snippet",
+     "note": "¥6,000 pin badge set"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "format",
+     "value": "framed",
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "comes framed"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea Fantasy Springs Hotel",
+     "source_url": "https://tdrexplorer.com/tokyo-disneysea-fantasy-springs-hotel-goods/",
+     "method": "search_snippet",
+     "note": "hotel goods"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2024/fantasy-springs-busy-buggies-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tinker Bell Fantasy Springs mystery pin set",
+     "source_url": "https://disneypinsblog.com/fantasy-springs-pin-selection-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed in Sept 2024 trip post"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set",
+     "source_url": "https://disneypinsblog.com/fantasy-springs-pin-selection-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "mystery pin set"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://disneypinsblog.com/fantasy-springs-pin-selection-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "released 2024 at TDS"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "shdr/2023/zootopia-grand-opening/grand-opening-pin",
+   "set_key": "shdr/2023/zootopia-grand-opening",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zootopia Grand Opening Pin",
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "LE 800"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12-20",
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "released 20 Dec 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2023/zootopia-grand-opening/framed-pin",
+   "set_key": "shdr/2023/zootopia-grand-opening",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zootopia Grand Opening Framed Pin",
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2023/zootopia-grand-opening/nick-wilde-and-judy-hopps",
+   "set_key": "shdr/2023/zootopia-grand-opening",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nick Wilde & Judy Hopps Pin",
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in snippet"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Nick Wilde",
+      "Judy Hopps"
+     ],
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "both named in pin title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "title refers to a single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12-01",
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "released 1 Dec 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/zootopia-grand-opening-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2023/linabell-halloween/linabell",
+   "set_key": "shdr/2023/linabell-halloween",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "LinaBell Scary Fun Halloween Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/linabell-scary-fun-halloween-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "LinaBell"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/linabell-scary-fun-halloween-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "LinaBell"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/linabell-scary-fun-halloween-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/linabell-scary-fun-halloween-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "dangle"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/linabell-scary-fun-halloween-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "dangle with bat, candy and pumpkin elements"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/linabell-scary-fun-halloween-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "Oct 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/linabell-scary-fun-halloween-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2023/pin-trading-fun-day-2023/mickey-logo",
+   "set_key": "shdr/2023/pin-trading-fun-day-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Fun Day 2023 Mickey logo pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2023-pin-releases-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "Mickey logo pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2023-pin-releases-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2023-pin-releases-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "LE 800"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2023-pin-releases-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "event release"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2023-pin-releases-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2023/lunar-new-year-2023/donald-good-fortune",
+   "set_key": "shdr/2023/lunar-new-year-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lunar New Year 2023 Donald Duck Good Fortune pin",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Donald pin reading Good Fortune"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Donald"
+    },
+    {
+     "field": "front_text",
+     "value": "Good Fortune",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "text at bottom"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "early Jan 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2023/lunar-new-year-2023/stellalou",
+   "set_key": "shdr/2023/lunar-new-year-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lunar New Year 2023 StellaLou pin",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "second pin features StellaLou"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "StellaLou"
+     ],
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "StellaLou"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "early Jan 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2023/spring-2023/chip-n-dale",
+   "set_key": "shdr/2023/spring-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Spring 2023 Chip 'n' Dale pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "Chip 'n' Dale pin on star backer"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "Chip 'n' Dale"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "described as one Chip 'n' Dale pin"
+    },
+    {
+     "field": "materials",
+     "value": "PVC",
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "PVC design"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "Feb 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2023/spring-2023/daisy-duck",
+   "set_key": "shdr/2023/spring-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Spring 2023 Daisy Duck pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "Daisy pin on star backer"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "Daisy"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "Feb 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/spring-2023-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2023/cherry-blossom-2023/clarice",
+   "set_key": "shdr/2023/cherry-blossom-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cherry Blossom 2023 Clarice pin",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Clarice"
+     ],
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01-31",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "31 Jan 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2023/cherry-blossom-2023/chip-clarice-and-dale",
+   "set_key": "shdr/2023/cherry-blossom-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cherry Blossom 2023 Chip, Clarice & Dale pin",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Clarice",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01-31",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "31 Jan 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed as a single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2023/cherry-blossom-2023/chip-n-dale-slider",
+   "set_key": "shdr/2023/cherry-blossom-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cherry Blossom 2023 Chip n Dale slider pin",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed in post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-01-31",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "31 Jan 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed as a single pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "slider"
+     ],
+     "source_url": "https://disneypinsblog.com/cherry-blossom-festival-2023-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "slider pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/lunar-new-year-2024/mickey-and-minnie-year-of-the-dragon",
+   "set_key": "shdr/2024/lunar-new-year-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey & Minnie Year of the Dragon Pin",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "one of three pins listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Jan 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed as a single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/lunar-new-year-2024/mickey-and-minnie-castle",
+   "set_key": "shdr/2024/lunar-new-year-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey & Minnie Castle Lunar New Year 2024 pin",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "one of three pins listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Jan 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed as a single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/lunar-new-year-2024/donald-duck",
+   "set_key": "shdr/2024/lunar-new-year-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lunar New Year 2024 Donald Duck pin",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "one of three pins listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Jan 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/lunar-new-year-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/spring-festival-2024/spinner-pin",
+   "set_key": "shdr/2024/spring-festival-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Spring Festival 2024 Spinner Pin",
+     "source_url": "https://disneypinsblog.com/spring-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/spring-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "spinner"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/spring-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/duffy-summer-2024/linabell-fruitful-summer",
+   "set_key": "shdr/2024/duffy-summer-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "LinaBell Fruitful Summer 2024 pin",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "LinaBell"
+     ],
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "LinaBell"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-07",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "July 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/duffy-summer-2024/gelatoni-and-cookieann",
+   "set_key": "shdr/2024/duffy-summer-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Gelatoni & CookieAnn Summer 2024 pin",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Gelatoni",
+      "CookieAnn"
+     ],
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "both named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed as a single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-07",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "July 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-summer-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/mid-autumn-festival-2024/chip-n-dale",
+   "set_key": "shdr/2024/mid-autumn-festival-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mid-Autumn Festival 2024 Chip n Dale pin",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Chip n Dale"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-09",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Sept 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/mid-autumn-festival-2024/mickey-and-minnie",
+   "set_key": "shdr/2024/mid-autumn-festival-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mid-Autumn Festival 2024 Mickey & Minnie pin",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "both named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-09",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Sept 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/mid-autumn-festival-2024/linabell",
+   "set_key": "shdr/2024/mid-autumn-festival-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mid-Autumn Festival 2024 LinaBell pin",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "LinaBell"
+     ],
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "LinaBell"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-09",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Sept 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/mid-autumn-festival-2024-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/pin-trading-fun-day-2024/rapunzel",
+   "set_key": "shdr/2024/pin-trading-fun-day-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Fun Day 2024 Rapunzel pin",
+     "source_url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Rapunzel"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/pin-trading-fun-day-2024/mickey-and-friends",
+   "set_key": "shdr/2024/pin-trading-fun-day-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Fun Day 2024 Mickey & Friends pin",
+     "source_url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/pin-trading-fun-day-2024/duffy-and-friends-jumbo",
+   "set_key": "shdr/2024/pin-trading-fun-day-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Fun Day 2024 Duffy & Friends jumbo pin",
+     "source_url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/pin-trading-fun-day-2024/judy-hopps-and-nick-wilde",
+   "set_key": "shdr/2024/pin-trading-fun-day-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Fun Day 2024 Judy Hopps & Nick Wilde pin",
+     "source_url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Annual Pass exclusive"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Judy Hopps",
+      "Nick Wilde"
+     ],
+     "source_url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "both named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed as one pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "annual pass exclusive",
+     "source_url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "AP exclusive"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/pin-trading-fun-day-2024-pin-releases-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2023/world-of-frozen/sisters-stamp",
+   "set_key": "hkdl/2023/world-of-frozen",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "World of Frozen sisters stamp-style pin",
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "listed in WDWNT merch list"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "HKDL World of Frozen"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "Nov 2023 article"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2023/world-of-frozen/clock",
+   "set_key": "hkdl/2023/world-of-frozen",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "World of Frozen clock pin",
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "listed in WDWNT merch list"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "HKDL World of Frozen"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "Nov 2023 article"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2023/world-of-frozen/snowglobe",
+   "set_key": "hkdl/2023/world-of-frozen",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "World of Frozen snowglobe pin",
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "listed in WDWNT merch list"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "HKDL World of Frozen"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://wdwnt.com/2023/11/full-list-world-of-frozen-merchandise-hkdl/",
+     "method": "search_snippet",
+     "note": "Nov 2023 article"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2023/june-2023-estore/fathers-day-2023",
+   "set_key": "hkdl/2023/june-2023-estore",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2023 Father's Day Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "original_price",
+     "value": 149,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HK$149"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "eStore from 2 Jun 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2023/june-2023-estore/tiana-disney-dress-collection",
+   "set_key": "hkdl/2023/june-2023-estore",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Dress Collection Tiana Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "original_price",
+     "value": 159,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HK$159"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "eStore from 2 Jun 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tiana"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2023/june-2023-estore/mulan-25th-anniversary",
+   "set_key": "hkdl/2023/june-2023-estore",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mulan 25th Anniversary Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 5000 worldwide"
+    },
+    {
+     "field": "original_price",
+     "value": 149,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HK$149"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "eStore from 2 Jun 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mulan"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2023/june-2023-estore/donald-duck-birthday",
+   "set_key": "hkdl/2023/june-2023-estore",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck Birthday Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "original_price",
+     "value": 149,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HK$149"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "eStore from 2 Jun 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2023-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2023/february-2023/rapunzel-disney-dress-collection",
+   "set_key": "hkdl/2023/february-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Dress Collection Rapunzel pin",
+     "source_url": "https://disneypinsblog.com/february-2023-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/february-2023-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "Rapunzel"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/february-2023-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "Feb 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/february-2023-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2023/february-2023/peter-pan-70th-anniversary",
+   "set_key": "hkdl/2023/february-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Peter Pan 70th Anniversary pin",
+     "source_url": "https://disneypinsblog.com/february-2023-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-02",
+     "source_url": "https://disneypinsblog.com/february-2023-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "Feb 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/february-2023-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/january-2024/belle-mirror-case",
+   "set_key": "hkdl/2024/january-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Belle Princess Mirror Case pin",
+     "source_url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01-04",
+     "source_url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/january-2024/mickey-and-minnie-2024",
+   "set_key": "hkdl/2024/january-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey & Minnie 2024 pin",
+     "source_url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01-04",
+     "source_url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/january-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/april-2024/aurora-mirror-case",
+   "set_key": "hkdl/2024/april-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Aurora mirror case pin",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/april-2024/earth-day",
+   "set_key": "hkdl/2024/april-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Earth Day pin",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/april-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 600"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/pin-trading-carnival-2024/nightmare-before-christmas",
+   "set_key": "hkdl/2024/pin-trading-carnival-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Carnival 2024 Nightmare Before Christmas pin",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04-01",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL pavilion, 1-4 Apr 2024"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 800"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/pin-trading-carnival-2024/chip-dale-and-clarice-jumbo",
+   "set_key": "hkdl/2024/pin-trading-carnival-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Carnival 2024 Chip 'n Dale and Clarice jumbo pin",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-04-01",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL pavilion, 1-4 Apr 2024"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale",
+      "Clarice"
+     ],
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "jumbo"
+     ],
+     "source_url": "https://disneypinsblog.com/pin-trading-carnival-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "jumbo"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/may-2024/pocahontas-mirror-case",
+   "set_key": "hkdl/2024/may-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pocahontas mirror case pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pocahontas"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/may-2024/mothers-day-2024",
+   "set_key": "hkdl/2024/may-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mother's Day pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/may-2024/goofy-birthday",
+   "set_key": "hkdl/2024/may-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy Birthday pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/june-2024/rapunzel-mirror-case",
+   "set_key": "hkdl/2024/june-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rapunzel mirror case pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/pin-go-2024/mickey",
+   "set_key": "hkdl/2024/pin-go-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "PIN GO 2024 Mickey Mouse pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "character named among PIN GO pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 600 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "eStore from 1 Jun 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/pin-go-2024/minnie",
+   "set_key": "hkdl/2024/pin-go-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "PIN GO 2024 Minnie Mouse pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "character named among PIN GO pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 600 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "eStore from 1 Jun 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/pin-go-2024/donald",
+   "set_key": "hkdl/2024/pin-go-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "PIN GO 2024 Donald Duck pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "character named among PIN GO pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 600 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "eStore from 1 Jun 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/pin-go-2024/daisy",
+   "set_key": "hkdl/2024/pin-go-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "PIN GO 2024 Daisy Duck pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "character named among PIN GO pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 600 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "eStore from 1 Jun 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/pin-go-2024/goofy",
+   "set_key": "hkdl/2024/pin-go-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "PIN GO 2024 Goofy pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "character named among PIN GO pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 600 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-06-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "eStore from 1 Jun 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/june-2024-hong-kong-disneyland-pin-releases",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/july-2024/tiana-mirror-case",
+   "set_key": "hkdl/2024/july-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tiana mirror case pin",
+     "source_url": "https://disneypinsblog.com/july-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-07",
+     "source_url": "https://disneypinsblog.com/july-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/july-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/july-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/july-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tiana"
+     ],
+     "source_url": "https://disneypinsblog.com/july-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/october-2024/jack-jack",
+   "set_key": "hkdl/2024/october-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack-Jack pin",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-10",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 1100"
+    },
+    {
+     "field": "original_price",
+     "value": 159,
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$159"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack-Jack Parr"
+     ],
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/october-2024/incredibles-20th-anniversary",
+   "set_key": "hkdl/2024/october-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Incredibles 20th Anniversary pin",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-10",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 2000"
+    },
+    {
+     "field": "original_price",
+     "value": 159,
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$159"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/october-2024/101-dalmatians-flipping-slide",
+   "set_key": "hkdl/2024/october-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "101 Dalmatians flipping slide pin",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-10",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "original_price",
+     "value": 159,
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$159"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "flipping slide"
+     ],
+     "source_url": "https://disneypinsblog.com/october-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "flipping slide"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/november-2024/little-mermaid-flipping-slide",
+   "set_key": "hkdl/2024/november-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Little Mermaid flipping slide pin",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-11-08",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "flipping slide"
+     ],
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "flipping slide"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/november-2024/mickey-birthday",
+   "set_key": "hkdl/2024/november-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Birthday pin",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-11-08",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/november-2024/minnie-birthday",
+   "set_key": "hkdl/2024/november-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Birthday pin",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-11-08",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/november-2024/walt-disney-birthday",
+   "set_key": "hkdl/2024/november-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Walt Disney Birthday pin",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-11-08",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Walt Disney"
+     ],
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2024/november-2024/world-of-frozen-1st-anniversary-jumbo",
+   "set_key": "hkdl/2024/november-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "World of Frozen 1st Anniversary Jumbo Pin",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-11-08",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "per post"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL eStore"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "original_price",
+     "value": 259,
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$259"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "jumbo"
+     ],
+     "source_url": "https://disneypinsblog.com/november-2024-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "jumbo"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2023/40th-dream-go-round-framed-pin-set/grand-circuit-raceway",
+   "set_key": "tdr/2023/40th-dream-go-round-framed-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dream-Go-Round framed set Grand Circuit Raceway pin",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+     "method": "search_snippet",
+     "note": "named as a pin in the set"
+    },
+    {
+     "field": "attraction",
+     "value": "Grand Circuit Raceway",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+     "method": "search_snippet",
+     "note": "retired attraction depicted"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+     "method": "search_snippet",
+     "note": "TDR app"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2023/40th-dream-go-round-framed-pin-set/skyway",
+   "set_key": "tdr/2023/40th-dream-go-round-framed-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dream-Go-Round framed set Tokyo Disneyland Skyway pin",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+     "method": "search_snippet",
+     "note": "named as a pin in the set"
+    },
+    {
+     "field": "attraction",
+     "value": "Tokyo Disneyland Skyway",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+     "method": "search_snippet",
+     "note": "retired attraction depicted"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+     "method": "search_snippet",
+     "note": "TDR app"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2023/40th-dream-go-round-framed-pin-set/cinderella-castle-mystery-tour",
+   "set_key": "tdr/2023/40th-dream-go-round-framed-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dream-Go-Round framed set Cinderella Castle Mystery Tour pin",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+     "method": "search_snippet",
+     "note": "named as a pin in the set"
+    },
+    {
+     "field": "attraction",
+     "value": "Cinderella Castle Mystery Tour",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+     "method": "search_snippet",
+     "note": "retired attraction depicted"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://tdrexplorer.com/tokyo-disney-resort-40th-anniversary-dream-go-round-limited-goods/",
+     "method": "search_snippet",
+     "note": "TDR app"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2024/fantasy-springs-peter-pans-never-land-pin-set/peter-pan",
+   "set_key": "tdr/2024/fantasy-springs-peter-pans-never-land-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Never Land pin set - Peter Pan",
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "one of three pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Peter Pan"
+     ],
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "subject of this pin per WDWNT"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05-28",
+     "source_url": "https://tdrexplorer.com/fantasy-springs-peter-pans-neverland-merchandise-tokyo-disneysea/",
+     "method": "search_snippet",
+     "note": "28 May 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://tdrexplorer.com/fantasy-springs-peter-pans-neverland-merchandise-tokyo-disneysea/",
+     "method": "search_snippet",
+     "note": "Fantasy Springs collection"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2024/fantasy-springs-peter-pans-never-land-pin-set/wendy-and-her-brothers",
+   "set_key": "tdr/2024/fantasy-springs-peter-pans-never-land-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Never Land pin set - Wendy and her brothers",
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "one of three pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Wendy Darling"
+     ],
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "subject of this pin per WDWNT"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05-28",
+     "source_url": "https://tdrexplorer.com/fantasy-springs-peter-pans-neverland-merchandise-tokyo-disneysea/",
+     "method": "search_snippet",
+     "note": "28 May 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://tdrexplorer.com/fantasy-springs-peter-pans-neverland-merchandise-tokyo-disneysea/",
+     "method": "search_snippet",
+     "note": "Fantasy Springs collection"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "one pin of Wendy and her brothers"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2024/fantasy-springs-peter-pans-never-land-pin-set/lost-boys",
+   "set_key": "tdr/2024/fantasy-springs-peter-pans-never-land-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Never Land pin set - Lost Boys",
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "one of three pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lost Boys"
+     ],
+     "source_url": "https://wdwnt.com/2024/04/full-list-prices-fantasy-springs-merchandise-tds/",
+     "method": "search_snippet",
+     "note": "subject of this pin per WDWNT"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05-28",
+     "source_url": "https://tdrexplorer.com/fantasy-springs-peter-pans-neverland-merchandise-tokyo-disneysea/",
+     "method": "search_snippet",
+     "note": "28 May 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://tdrexplorer.com/fantasy-springs-peter-pans-neverland-merchandise-tokyo-disneysea/",
+     "method": "search_snippet",
+     "note": "Fantasy Springs collection"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "shdr/2023/zootopia-grand-opening/grand-opening-pin",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "subjects on the LE 800 pin not stated in snippets"
+  },
+  {
+   "key": "shdr/2023/zootopia-grand-opening/framed-pin",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (one framed pin vs framed set of several pins); subject not stated"
+  },
+  {
+   "key": "shdr/2023/zootopia-grand-opening/gift-set-le300",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "hold: Zootopia Grand Opening LE 300 pin gift set seen only on reseller usshoppingsos; may equal the framed pin; not recorded"
+  },
+  {
+   "key": "shdr/2023/pin-trading-fun-day-2023",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "five individual pins LE 500 each and a boxed set LE 300 listed; subjects/designs not named in snippets (reseller hints at Disney100 box, not used)"
+  },
+  {
+   "key": "shdr/2023/lunar-new-year-2023/donald-good-fortune",
+   "field": "edition_size",
+   "searched": "search snippets",
+   "note": "edition type/size not in snippet"
+  },
+  {
+   "key": "shdr/2023/lunar-new-year-2023/stellalou",
+   "field": "edition_size",
+   "searched": "search snippets",
+   "note": "edition type/size not in snippet"
+  },
+  {
+   "key": "shdr/2023/lunar-new-year-2023-mystery",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "12 mystery designs not named in snippets"
+  },
+  {
+   "key": "shdr/2023/duffy-spring-festival-2023",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure; snippet lists Duffy, ShellieMay, Gelatoni, StellaLou, CookieAnn, Olu Mel, LinaBell for the 7-pin set but does not map one pin per character"
+  },
+  {
+   "key": "shdr/2023/shanghai-disneyland-map-pin-set",
+   "field": "release_date",
+   "searched": "search snippets",
+   "note": "lead: DPB Shanghai Disneyland Map framed 6-pin set LE 1000; release year not confirmed as 2023, not recorded"
+  },
+  {
+   "key": "shdr/2024/lunar-new-year-2024/mickey-and-minnie-year-of-the-dragon",
+   "field": "edition_size",
+   "searched": "search snippets",
+   "note": "edition size/price not in snippets"
+  },
+  {
+   "key": "shdr/2024/lunar-new-year-2024/mickey-and-minnie-castle",
+   "field": "edition_size",
+   "searched": "search snippets",
+   "note": "edition size/price not in snippets"
+  },
+  {
+   "key": "shdr/2024/lunar-new-year-2024/donald-duck",
+   "field": "edition_size",
+   "searched": "search snippets",
+   "note": "edition size/price not in snippets"
+  },
+  {
+   "key": "shdr/2024/spring-festival-2024/spinner-pin",
+   "field": "characters",
+   "searched": "search snippets",
+   "note": "subject of spinner pin not in snippet"
+  },
+  {
+   "key": "shdr/2024/spring-festival-2024-duffy-boxed-set",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "members not named in snippet; edition size not given"
+  },
+  {
+   "key": "shdr/2024/spring-festival-2024-mystery",
+   "field": "expected_pin_count",
+   "searched": "search snippets",
+   "note": "set size and designs not in snippet"
+  },
+  {
+   "key": "shdr/2024/duffy-summer-2024-mystery",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "8 mystery designs not named in snippet"
+  },
+  {
+   "key": "shdr/2024/mid-autumn-festival-2024-duffy-mystery",
+   "field": "expected_pin_count",
+   "searched": "search snippets",
+   "note": "set size and designs not in snippet"
+  },
+  {
+   "key": "shdr/2024/pin-trading-fun-day-2024",
+   "field": "edition_size",
+   "searched": "search snippets",
+   "note": "no edition sizes in snippets for Fun Day 2024 items"
+  },
+  {
+   "key": "shdr/2024/pin-trading-fun-day-2024/mickey-and-friends",
+   "field": "characters",
+   "searched": "search snippets",
+   "note": "which characters appear not stated"
+  },
+  {
+   "key": "shdr/2024/pin-trading-fun-day-2024/duffy-and-friends-jumbo",
+   "field": "characters",
+   "searched": "search snippets",
+   "note": "which characters appear not stated"
+  },
+  {
+   "key": "shdr/2024/pin-trading-fun-day-2024",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "also listed but members unnamed: window pins, Disney Princess rocking horse pins, character pins, Disney Parks Around the World boxed set, Zootopia pin trading starter set"
+  },
+  {
+   "key": "hkdl/2023/world-of-frozen",
+   "field": "release_date",
+   "searched": "search snippets",
+   "note": "exact on-sale date of WoF pins not stated; edition types not stated"
+  },
+  {
+   "key": "hkdl/2023/world-of-frozen-anna-and-elsa-pin-set",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "pin count and members not described"
+  },
+  {
+   "key": "hkdl/2023/world-of-frozen-mystery",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "9 mystery designs not named"
+  },
+  {
+   "key": "hkdl/2023/disney100-duffy-and-friends-pin-set",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "pin count and members not named"
+  },
+  {
+   "key": "hkdl/2023/february-2023",
+   "field": "edition_size",
+   "searched": "search snippets",
+   "note": "edition sizes/prices not in snippet"
+  },
+  {
+   "key": "hkdl/2023/wind-vane",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "OE 3D sculpted brushed-metal series, Jan 2023; members not named"
+  },
+  {
+   "key": "hkdl/2023/pin-trading-carnival-2023",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "redemption 12-14 Apr 2023; pins not named in snippets (small world jumbo seen only on reseller)"
+  },
+  {
+   "key": "hkdl/2023/disney-plates-2023",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "four rounds Aug-Sep 2023, HK$79 with receipt; pins not named"
+  },
+  {
+   "key": "hkdl/2024/ant-man-and-the-wasp-5th-anniversary-pin-set",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "pin count/members not named"
+  },
+  {
+   "key": "hkdl/2024/pin-trading-carnival-2024-designer-series-box-set",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "members not named"
+  },
+  {
+   "key": "hkdl/2024/pin-trading-carnival-2024/chip-dale-and-clarice-jumbo",
+   "field": "pin_structure",
+   "searched": "search snippets",
+   "note": "jumbo implies one pin but snippet does not state it explicitly"
+  },
+  {
+   "key": "hkdl/2024/may-2024",
+   "field": "edition_size",
+   "searched": "search snippets",
+   "note": "edition sizes not in snippet"
+  },
+  {
+   "key": "hkdl/2024/pin-go-2024",
+   "field": "expected_pin_count",
+   "searched": "search snippets",
+   "note": "snippet says 'including' these five; full set size not stated"
+  },
+  {
+   "key": "hkdl/2024/redemption-series-2024",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "lead: new HKDL Redemption Series began July 2024; pins not named in snippet"
+  },
+  {
+   "key": "hkdl/2024/world-of-frozen-1st-anniversary-pin-set",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "members not named"
+  },
+  {
+   "key": "hkdl/2024/year-of-the-dragon-mushu",
+   "field": "existence",
+   "searched": "search snippets",
+   "note": "hold: HKDL CNY 2024 Year of Dragon Mushu pin seen only on reseller castleplanethk; not recorded"
+  },
+  {
+   "key": "hkdl/2023/year-of-the-rabbit",
+   "field": "existence",
+   "searched": "search snippets",
+   "note": "Disney Globetrotter HKDL Year of the Rabbit pins (5 singles, 3 LE 300, flocked 4-pin set) appear to date from 2011, not 2023; not recorded"
+  },
+  {
+   "key": "hkdl/2024",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "DPB HKDL months Feb, Mar, Aug, Sep, Dec 2024 not surfaced; HKDL CNY 2023/2024 pins not found on allowed sources"
+  },
+  {
+   "key": "tdr/2023/40th-dream-go-round-pin-and-tapestry-set",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "pin count/subjects not described; individual character pins also mentioned but not named"
+  },
+  {
+   "key": "tdr/2023/40th-dream-go-round-framed-pin-set",
+   "field": "expected_pin_count",
+   "searched": "search snippets",
+   "note": "total pins not stated; other pins depict park food and merchandise, unnamed"
+  },
+  {
+   "key": "tdr/2024/40th-grand-finale-pin-set",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "hold: confirm pin structure; snippet names Mickey, Minnie, Donald, Daisy, Pluto, Goofy, Chip 'n' Dale in Dream-Go-Round outfits but not count or per-pin split (Chip 'n' Dale may share a pin)"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-poster-pin-set",
+   "field": "expected_pin_count",
+   "searched": "search snippets",
+   "note": "lead: mypincentral pin pages 200803/200804 indicate a 4-pin poster set (8 Apr 2024, ¥4,800); exact page attribution unclear in snippet; members unnamed"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-logo-and-poster/logo-pin",
+   "field": "existence",
+   "searched": "search snippets",
+   "note": "lead: ¥1,200 single Pin Badge in the logo/poster collection; mypincentral describes a logo pin with dangling blue jewel; snippet does not tie price to the logo pin"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-peter-pans-never-land-pin-set/wendy-and-her-brothers",
+   "field": "characters",
+   "searched": "search snippets",
+   "note": "brothers not named individually in snippet (editorially John and Michael)"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-hotel-pin-set",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "hold: confirm pin structure (Mickey and Minnie in hotel outfits outside hotel; one pin or several in frame not stated)"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-busy-buggies-mystery",
+   "field": "expected_pin_count",
+   "searched": "search snippets",
+   "note": "hold: 5 designs stated only by reseller usshoppingsos; designs not named on allowed sources"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-pin-selection",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "leads from DPB Sept 2024 post: FS & TDS 23rd Anniversary pin set, FS Hotel framed set, Never Land Adventure framed set, 'To the World of Your Dreams' pin; details not in snippet"
+  },
+  {
+   "key": "tdr/2023/40th-harmony-in-color",
+   "field": "existence",
+   "searched": "search snippets",
+   "note": "hold: 13-pin 'Harmony in Color' 40th set (10 Jul 2023) seen only on reseller k23japan; not recorded"
+  },
+  {
+   "key": "tdr/2024/duffy",
+   "field": "pins",
+   "searched": "search snippets",
+   "note": "no 2023-2024 TDR Duffy & Friends pin found; 20th-anniv ¥25,000 pin set appears to be 2025 (lead for 2025 cell)"
+  },
+  {
+   "key": "tdr/2023/40th-dream-go-round-framed-pin-set/grand-circuit-raceway",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one boxed/framed set description, no per-pin source"
+  },
+  {
+   "key": "tdr/2023/40th-dream-go-round-framed-pin-set/skyway",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one boxed/framed set description, no per-pin source"
+  },
+  {
+   "key": "tdr/2023/40th-dream-go-round-framed-pin-set/cinderella-castle-mystery-tour",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one boxed/framed set description, no per-pin source"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-peter-pans-never-land-pin-set/peter-pan",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one boxed/framed set description, no per-pin source"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-peter-pans-never-land-pin-set/wendy-and-her-brothers",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one boxed/framed set description, no per-pin source"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-peter-pans-never-land-pin-set/lost-boys",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one boxed/framed set description, no per-pin source"
+  }
+ ],
+ "discovery_notes": "Search-snippet leads only; 30 standard searches. Follow-up 2 of B041, first coverage of Asia 2023-2024. Mainly Disney Pins Blog, WDWNT, TDR Explorer. Reseller-only items (usshoppingsos, k23japan, castleplanethk, fryguypins) held. Pin records only where a snippet names each pin; packs with only a character list held per rule 12. 'Pin badge' is TDR's term for pin."
+}

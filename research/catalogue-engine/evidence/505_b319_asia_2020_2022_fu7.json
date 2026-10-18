@@ -1,0 +1,1925 @@
+{
+ "packet_id": "backfill-b319-asia-2020-2022-fu7",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2020/12/hkdl-walt-disney-birthday-limited.html",
+   "title": "香港迪士尼樂園 2020年華特迪士尼生日限量版紀念徽章",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2020-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2020/01/2020.html",
+   "title": "香港迪士尼樂園 2020年鼠年生肖紀念徽章",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2020-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2020/07/2020731-release-information-hong-kong.html",
+   "title": "發售資訊：香港迪士尼樂園 限量版徽章（2020年7月31日）",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2020-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2022/03/2022%20International%20Womens%20DayLimited%20Release%20Pin.html",
+   "title": "2022 International Women's Day Limited Release Pin Arrived To Hong Kong Disneyland Resort",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2022-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2020/09/Hong-Kong-Disneyland-15th-Anniversary-Online-Tote-Bag-Pin.html",
+   "title": "香港迪士尼樂園度假區15周年生日正日慶祝活動 15周年特別版Tote Bag與珍藏徽章Pin",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2020-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+   "title": "香港迪士尼樂園2022年9月限量版徽章即將發售",
+   "publisher": "Hong Kong Main Street Gazette",
+   "published_date": "2022-08-23",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hk.ulifestyle.com.hk/topic/detail/218167/",
+   "title": "香港迪士尼樂園「2022徽章交換嘉年華」",
+   "publisher": "U Lifestyle",
+   "published_date": "2022-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/january-2022-hong-kong-disneyland-pin-releases/",
+   "title": "January 2022 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/halloween-2020-duffy-and-friends-hkdl-pins",
+   "title": "Halloween 2020 Duffy and Friends HKDL Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-friends-pin-sets-at-hong-kong-disneyland/",
+   "title": "Mickey & Friends Pin Sets at Hong Kong Disneyland",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-06-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hong-kong-disneyland-2020-pin-go/",
+   "title": "Hong Kong Disneyland PIN-GO 2020 Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/adventure-best-day-2022-pin-set-at-shanghai-disney-resort",
+   "title": "Adventure Best Day 2022 Pin Set at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2022-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/53699",
+   "title": "53699",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.ellechina.com/celeb/gossip/a30464922/disney-20200110/",
+   "title": "上海迪士尼度假区邀游客与米奇米妮共贺鼠年新春",
+   "publisher": "ELLE China",
+   "published_date": "2020-01-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://shcorporate.shanghaidisneyresort.com/wp-content/uploads/2020/01/Press-Release-Celebrate-the-Year-of-the-Mouse-with-Mickey-and-Minnie-and-Enjoy-an-Authentic-Spring-Festival-at-Shanghai-Disney-Resort.pdf",
+   "title": "Celebrate the Year of the Mouse with Mickey and Minnie (press release)",
+   "publisher": "Shanghai Disney Resort",
+   "published_date": "2020-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://sh.bendibao.com/tour/2020716/227067.shtm",
+   "title": "2020上海迪士尼传统二十四节气徽章售卖时间及售卖地点",
+   "publisher": "上海本地宝 (Shanghai Bendibao)",
+   "published_date": "2020-07-16",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-234685/",
+   "title": "各テーマポートをデザイン！東京ディズニーシー20周年 グランドフィナーレグッズ",
+   "publisher": "MezzoMiki",
+   "published_date": "2022-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://ameblo.jp/flowerminnie/entry-12746876259.html",
+   "title": "シー20周年グランドフィナーレ×購入グッズ その5",
+   "publisher": "Ameba blog (flowerminnie)",
+   "published_date": "2022-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://castel.jp/p/6990",
+   "title": "ディズニーシー20周年グッズ107選",
+   "publisher": "Castel",
+   "published_date": "2021",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-213606/",
+   "title": "アブーズ・バザール「東京ディズニーシー20周年：タイム・トゥ・シャイン！」景品",
+   "publisher": "MezzoMiki",
+   "published_date": "2021-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-240793/",
+   "title": "東京ディズニーリゾート ディズニー・ハロウィーン2022 スペシャルグッズ",
+   "publisher": "MezzoMiki",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://castel.jp/p/8343",
+   "title": "【2022】ディズニーハロウィングッズ全76種類まとめ",
+   "publisher": "Castel",
+   "published_date": "2022-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-216678/",
+   "title": "ミッキーバルーンとミニーマウス！東京ディズニーランド ピンバッジセット",
+   "publisher": "MezzoMiki",
+   "published_date": "2021-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-216628/",
+   "title": "パークロゴデザイン4種！東京ディズニーリゾート ピンバッジセット",
+   "publisher": "MezzoMiki",
+   "published_date": "2021-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-186639/",
+   "title": "気球デザイン8種がランダムであたる！東京ディズニーランド ピンバッジ",
+   "publisher": "MezzoMiki",
+   "published_date": "2020",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-245114/",
+   "title": "ツリーの飾り付けをするミッキーマウスたち！ディズニー・クリスマス2022 スペシャルグッズ",
+   "publisher": "MezzoMiki",
+   "published_date": "2022-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "hkdl/2020/walt-disney-birthday-2020",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Walt Disney Birthday 2020 limited edition pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/12/hkdl-walt-disney-birthday-limited.html",
+     "method": "search_snippet",
+     "note": "fan blog title: HKDL 2020 Walt Disney birthday LE commemorative pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/12/hkdl-walt-disney-birthday-limited.html",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/12/hkdl-walt-disney-birthday-limited.html",
+     "method": "search_snippet",
+     "note": "post describes one commemorative pin"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2020/year-of-the-rat-zodiac",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "2020 Year of the Rat zodiac commemorative pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/01/2020.html",
+     "method": "search_snippet",
+     "note": "fan blog title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/01/2020.html",
+     "method": "search_snippet",
+     "note": "describes 'this pin'"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2022/international-womens-day-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "International Women's Day 2022 limited release pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2022/03/2022%20International%20Womens%20DayLimited%20Release%20Pin.html",
+     "method": "search_snippet",
+     "note": "fan blog title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2022/03/2022%20International%20Womens%20DayLimited%20Release%20Pin.html",
+     "method": "search_snippet",
+     "note": "limited-time release"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2022/september-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hong Kong Disneyland September 2022 limited edition pins",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "fan blog pre-sale notice"
+    },
+    {
+     "field": "format",
+     "value": "separate LE pins",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "six LE pins listed individually, with three LinaBell LE pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08-29",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "online from 29 Aug (members) and 1 Sep 2022 (all)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "LE pins"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2022/january-2022",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2021-12-24",
+     "source_url": "https://disneypinsblog.com/january-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "pins sold online 24-30 Dec 2021"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2020/halloween-2020-duffy-friends",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-2020-duffy-and-friends-hkdl-pins",
+     "method": "search_snippet",
+     "note": "LE 500 stated for the release"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-2020-duffy-and-friends-hkdl-pins",
+     "method": "search_snippet",
+     "note": "October 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "Bibbidi Bobbidi Boutique, Hong Kong Disneyland Hotel",
+     "source_url": "https://disneypinsblog.com/blogs/news/halloween-2020-duffy-and-friends-hkdl-pins",
+     "method": "search_snippet",
+     "note": "sold at hotel boutique"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2020/mickey-friends-booster",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/mickey-friends-pin-sets-at-hong-kong-disneyland/",
+     "method": "search_snippet",
+     "note": "six-pin booster"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (booster)",
+     "source_url": "https://disneypinsblog.com/mickey-friends-pin-sets-at-hong-kong-disneyland/",
+     "method": "search_snippet",
+     "note": "booster set"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06",
+     "source_url": "https://disneypinsblog.com/mickey-friends-pin-sets-at-hong-kong-disneyland/",
+     "method": "search_snippet",
+     "note": "post 20 Jun 2020 after 18 Jun reopening"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2020/mickey-friends-starter-set",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/mickey-friends-pin-sets-at-hong-kong-disneyland/",
+     "method": "search_snippet",
+     "note": "four pins plus lanyard"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (starter set with lanyard)",
+     "source_url": "https://disneypinsblog.com/mickey-friends-pin-sets-at-hong-kong-disneyland/",
+     "method": "search_snippet",
+     "note": "starter set"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-06",
+     "source_url": "https://disneypinsblog.com/mickey-friends-pin-sets-at-hong-kong-disneyland/",
+     "method": "search_snippet",
+     "note": "June 2020"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2020/pin-go-2020",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-2020-pin-go/",
+     "method": "search_snippet",
+     "note": "PIN-GO pins LE 600"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-07",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-2020-pin-go/",
+     "method": "search_snippet",
+     "note": "July 2020"
+    },
+    {
+     "field": "sub_series",
+     "value": "Donald Duck and family",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-2020-pin-go/",
+     "method": "search_snippet",
+     "note": "2020 game features Donald Duck and family"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2022/pin-trading-carnival-2022",
+   "claims": [
+    {
+     "field": "sub_series",
+     "value": "Chip and Dale",
+     "source_url": "https://hk.ulifestyle.com.hk/topic/detail/218167/",
+     "method": "search_snippet",
+     "note": "2022 carnival themed on Chip and Dale; prizes feature various Disney/Pixar friends"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-05-21",
+     "source_url": "https://hk.ulifestyle.com.hk/topic/detail/218167/",
+     "method": "search_snippet",
+     "note": "event 21-27 May 2022"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2020/15th-anniversary-tote-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "15th Anniversary special tote bag and collectible pin set",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/09/Hong-Kong-Disneyland-15th-Anniversary-Online-Tote-Bag-Pin.html",
+     "method": "search_snippet",
+     "note": "online sale of tote bag with collectible pin set"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/09/Hong-Kong-Disneyland-15th-Anniversary-Online-Tote-Bag-Pin.html",
+     "method": "search_snippet",
+     "note": "15th anniversary day, Sept 2020"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2022/adventure-best-day-2022",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2022-10-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/adventure-best-day-2022-pin-set-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "14 Oct 2022"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2020/spring-festival-2020",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "New Year Mickey and Minnie limited edition pins",
+     "source_url": "https://www.ellechina.com/celeb/gossip/a30464922/disney-20200110/",
+     "method": "search_snippet",
+     "note": "listed among Spring Festival 2020 goods"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://shcorporate.shanghaidisneyresort.com/wp-content/uploads/2020/01/Press-Release-Celebrate-the-Year-of-the-Mouse-with-Mickey-and-Minnie-and-Enjoy-an-Authentic-Spring-Festival-at-Shanghai-Disney-Resort.pdf",
+     "method": "search_snippet",
+     "note": "limited-edition Mickey-themed pins"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2020/pin-trading-fun-day-2020-mystery",
+   "claims": [
+    {
+     "field": "sub_series",
+     "value": "traditional 24 solar terms",
+     "source_url": "http://sh.bendibao.com/tour/2020716/227067.shtm",
+     "method": "search_snippet",
+     "note": "solar-term mystery pin box (blind)"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind box",
+     "source_url": "http://sh.bendibao.com/tour/2020716/227067.shtm",
+     "method": "search_snippet",
+     "note": "blind box"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-07-21",
+     "source_url": "http://sh.bendibao.com/tour/2020716/227067.shtm",
+     "method": "search_snippet",
+     "note": "sold 21-22 Jul 2020"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2022/tokyo-disneysea-20th-grand-finale-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://mezzomiki.jp/post-234685/",
+     "method": "search_snippet",
+     "note": "7 theme-port designs, 1 random per bag"
+    },
+    {
+     "field": "price",
+     "value": 1100,
+     "source_url": "https://mezzomiki.jp/post-234685/",
+     "method": "search_snippet",
+     "note": "1,100 yen each"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-234685/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "format",
+     "value": "mystery / random",
+     "source_url": "https://mezzomiki.jp/post-234685/",
+     "method": "search_snippet",
+     "note": "random 1 of 7"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-06-01",
+     "source_url": "https://mezzomiki.jp/post-234685/",
+     "method": "search_snippet",
+     "note": "from 1 Jun 2022"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://mezzomiki.jp/post-234685/",
+     "method": "search_snippet",
+     "note": "one random pin per bag; a 7-pin box at 7,700 yen also sold"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2021/tokyo-disneysea-20th-anniversary-pin-set",
+   "claims": [
+    {
+     "field": "price",
+     "value": 6000,
+     "source_url": "https://castel.jp/p/6990",
+     "method": "search_snippet",
+     "note": "about 6,000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://castel.jp/p/6990",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-01",
+     "source_url": "https://castel.jp/p/6990",
+     "method": "search_snippet",
+     "note": "1 Nov 2021"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://castel.jp/p/6990",
+     "method": "search_snippet",
+     "note": "framed 5-pin set"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2022/halloween-2022-pin-badge-set",
+   "claims": [
+    {
+     "field": "price",
+     "value": 2600,
+     "source_url": "https://castel.jp/p/8343",
+     "method": "search_snippet",
+     "note": "5-pin set 2,600 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://castel.jp/p/8343",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://castel.jp/p/8343",
+     "method": "search_snippet",
+     "note": "5-piece set"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2022/halloween-2022-pin-badge-set-2400",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://mezzomiki.jp/post-240793/",
+     "method": "search_snippet",
+     "note": "3 ghost-design pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-09-14",
+     "source_url": "https://mezzomiki.jp/post-240793/",
+     "method": "search_snippet",
+     "note": "14 Sep 2022"
+    },
+    {
+     "field": "price",
+     "value": 2400,
+     "source_url": "https://mezzomiki.jp/post-240793/",
+     "method": "search_snippet",
+     "note": "2,400 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-240793/",
+     "method": "search_snippet",
+     "note": "yen"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2021/mickey-balloon-minnie-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey balloon and Minnie Mouse pin set (Tokyo Disneyland)",
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "MezzoMiki item"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "5-piece set"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "set of 5 pins"
+    },
+    {
+     "field": "price",
+     "value": 2600,
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "2,600 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-29",
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "29 Sep 2021 (date given against set item)"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2021/park-logo-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tokyo Disney Resort park logo pin set (4 designs)",
+     "source_url": "https://mezzomiki.jp/post-216628/",
+     "method": "search_snippet",
+     "note": "MezzoMiki item"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://mezzomiki.jp/post-216628/",
+     "method": "search_snippet",
+     "note": "4 park-logo designs"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://mezzomiki.jp/post-216628/",
+     "method": "search_snippet",
+     "note": "set of 4"
+    },
+    {
+     "field": "price",
+     "value": 2000,
+     "source_url": "https://mezzomiki.jp/post-216628/",
+     "method": "search_snippet",
+     "note": "2,000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-216628/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-29",
+     "source_url": "https://mezzomiki.jp/post-216628/",
+     "method": "search_snippet",
+     "note": "29 Sep 2021"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2020/oe-set/balloon-random",
+   "claims": [
+    {
+     "field": "price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-186639/",
+     "method": "search_snippet",
+     "note": "1,000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-186639/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://mezzomiki.jp/post-186639/",
+     "method": "search_snippet",
+     "note": "2 of 8 designs per bag"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "hkdl/2020/walt-disney-birthday-2020/sorcerer-mickey",
+   "set_key": "hkdl/2020/walt-disney-birthday-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Walt Disney Birthday 2020 Limited Edition Pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/12/hkdl-walt-disney-birthday-limited.html",
+     "method": "search_snippet",
+     "note": "annual Walt birthday LE pin, 2020 edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Sorcerer Mickey"
+     ],
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/12/hkdl-walt-disney-birthday-limited.html",
+     "method": "search_snippet",
+     "note": "designer chose Sorcerer Mickey for Fantasia's 80th anniversary"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/12/hkdl-walt-disney-birthday-limited.html",
+     "method": "search_snippet",
+     "note": "Sorcerer Mickey is the featured character"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/12/hkdl-walt-disney-birthday-limited.html",
+     "method": "search_snippet",
+     "note": "single commemorative pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/12/hkdl-walt-disney-birthday-limited.html",
+     "method": "search_snippet",
+     "note": "LE 600: 450 online, 150 via package redemption"
+    },
+    {
+     "field": "original_price",
+     "value": 135,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/12/hkdl-walt-disney-birthday-limited.html",
+     "method": "search_snippet",
+     "note": "HK$135"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/12/hkdl-walt-disney-birthday-limited.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-12",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/12/hkdl-walt-disney-birthday-limited.html",
+     "method": "search_snippet",
+     "note": "Dec 2020 post marking Walt's birthday"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/12/hkdl-walt-disney-birthday-limited.html",
+     "method": "search_snippet",
+     "note": "HKDL release, online sale"
+    },
+    {
+     "field": "visual_description",
+     "value": "Sorcerer Mickey design marking Fantasia 80th anniversary",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/12/hkdl-walt-disney-birthday-limited.html",
+     "method": "search_snippet",
+     "note": "paraphrase of design rationale"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2020/year-of-the-rat-zodiac/mickey-and-minnie",
+   "set_key": "hkdl/2020/year-of-the-rat-zodiac",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2020 Year of the Rat Zodiac Commemorative Pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/01/2020.html",
+     "method": "search_snippet",
+     "note": "HKDL zodiac pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/01/2020.html",
+     "method": "search_snippet",
+     "note": "this pin features Mickey and Minnie"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/01/2020.html",
+     "method": "search_snippet",
+     "note": "snippet refers to this single pin featuring both"
+    },
+    {
+     "field": "edition_type",
+     "value": "not for sale (giveaway / cast member)",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/01/2020.html",
+     "method": "search_snippet",
+     "note": "given out by the park on occasions and to cast at CNY; listed as not for sale"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/01/2020.html",
+     "method": "search_snippet",
+     "note": "2020 zodiac"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/01/2020.html",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2022/international-womens-day-2022/pin",
+   "set_key": "hkdl/2022/international-womens-day-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "International Women's Day 2022 Limited Release Pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2022/03/2022%20International%20Womens%20DayLimited%20Release%20Pin.html",
+     "method": "search_snippet",
+     "note": "title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2022/03/2022%20International%20Womens%20DayLimited%20Release%20Pin.html",
+     "method": "search_snippet",
+     "note": "limited-time sale"
+    },
+    {
+     "field": "original_price",
+     "value": 79,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2022/03/2022%20International%20Womens%20DayLimited%20Release%20Pin.html",
+     "method": "search_snippet",
+     "note": "HK$79"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2022/03/2022%20International%20Womens%20DayLimited%20Release%20Pin.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-03",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2022/03/2022%20International%20Womens%20DayLimited%20Release%20Pin.html",
+     "method": "search_snippet",
+     "note": "March 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland Resort",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2022/03/2022%20International%20Womens%20DayLimited%20Release%20Pin.html",
+     "method": "search_snippet",
+     "note": "HKDL"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2022/september-2022/pluto-birthday",
+   "set_key": "hkdl/2022/september-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pluto Birthday Limited Edition Pin",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "listed in Sept 2022 batch"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "Pluto birthday pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08-29",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "online sale from 29 Aug / 1 Sep"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2022/september-2022/oswald-95th-anniversary",
+   "set_key": "hkdl/2022/september-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Oswald the Lucky Rabbit 95th Anniversary Limited Edition Pin",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "listed in Sept 2022 batch"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Oswald the Lucky Rabbit"
+     ],
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "Oswald 95th"
+    },
+    {
+     "field": "original_price",
+     "value": 149,
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "HK$149, max two per transaction"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08-29",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "online sale from 29 Aug / 1 Sep"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2022/september-2022/teachers-day-2022",
+   "set_key": "hkdl/2022/september-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Teachers' Day 2022 Limited Edition Pin",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "listed in Sept 2022 batch"
+    },
+    {
+     "field": "original_price",
+     "value": 149,
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "HK$149"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08-29",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "online sale from 29 Aug / 1 Sep"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2022/september-2022/duffy-and-linabell",
+   "set_key": "hkdl/2022/september-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Duffy and LinaBell Limited Edition Pin",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "one of three LinaBell LE pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy",
+      "LinaBell"
+     ],
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "named Duffy and LinaBell"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "original_price",
+     "value": 229,
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "HK$229"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08-29",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "online sale from 29 Aug / 1 Sep"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2022/september-2022/linabell-magic-access",
+   "set_key": "hkdl/2022/september-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "LinaBell Magic Access Member Exclusive Limited Edition Pin",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "Magic Access exclusive"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "LinaBell"
+     ],
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "LinaBell"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "original_price",
+     "value": 229,
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "HK$229"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08-29",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "member priority from 29 Aug"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2022/august-2022/buzz-lightyear-camera-series",
+   "set_key": "hkdl/2022/august-2022",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 149,
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "HK$149; listed in HKDL Sept 2022 LE batch"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08-29",
+     "source_url": "https://hkmsg.blogspot.com/2022/08/20229.html",
+     "method": "search_snippet",
+     "note": "online sale from 29 Aug / 1 Sep 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2020/july-2020-candy-machine/lotso-candy-machine",
+   "set_key": "hkdl/2020/july-2020-candy-machine",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/07/2020731-release-information-hong-kong.html",
+     "method": "search_snippet",
+     "note": "LE 400: 250 online, 150 package redemption"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2020/july-2020-candy-machine/winnie-the-pooh-candy-machine",
+   "set_key": "hkdl/2020/july-2020-candy-machine",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/07/2020731-release-information-hong-kong.html",
+     "method": "search_snippet",
+     "note": "LE 600: 450 online, 150 package redemption"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2020/pin-trading-carnival-2020/lilo-stitch-scrump-rosette",
+   "set_key": "hkdl/2020/pin-trading-carnival-2020",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://mypincentral.com/pin/53699",
+     "method": "search_snippet",
+     "note": "back reads limited edition of 1500 (fan database)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lilo",
+      "Scrump",
+      "Stitch"
+     ],
+     "source_url": "https://mypincentral.com/pin/53699",
+     "method": "search_snippet",
+     "note": "Lilo and Scrump with Stitch"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2020/pin-trading-fun-day-2020/chip-and-dale-annual-pass",
+   "set_key": "shdr/2020/pin-trading-fun-day-2020",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "http://sh.bendibao.com/tour/2020716/227067.shtm",
+     "method": "search_snippet",
+     "note": "LE 800, for annual pass holders"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-07-21",
+     "source_url": "http://sh.bendibao.com/tour/2020716/227067.shtm",
+     "method": "search_snippet",
+     "note": "sold 21-22 Jul 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney Store, Shanghai",
+     "source_url": "http://sh.bendibao.com/tour/2020716/227067.shtm",
+     "method": "search_snippet",
+     "note": "World of Disney Store"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2020/pin-trading-fun-day-2020/logo",
+   "set_key": "shdr/2020/pin-trading-fun-day-2020",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "http://sh.bendibao.com/tour/2020716/227067.shtm",
+     "method": "search_snippet",
+     "note": "2020 Pin Trading Day theme pin LE 800"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-07-21",
+     "source_url": "http://sh.bendibao.com/tour/2020716/227067.shtm",
+     "method": "search_snippet",
+     "note": "sold 21-22 Jul 2020"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2022/tokyo-disneysea-20th-grand-finale-mystery/arabian-coast-daisy",
+   "set_key": "tdr/2022/tokyo-disneysea-20th-grand-finale-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://ameblo.jp/flowerminnie/entry-12746876259.html",
+     "method": "search_snippet",
+     "note": "fan blog pairs Daisy with Arabian Coast"
+    },
+    {
+     "field": "attraction",
+     "value": "Caravan Carousel",
+     "source_url": "https://ameblo.jp/flowerminnie/entry-12746876259.html",
+     "method": "search_snippet",
+     "note": "palace design, Caravan Carousel palace at centre"
+    },
+    {
+     "field": "original_price",
+     "value": 1100,
+     "source_url": "https://mezzomiki.jp/post-234685/",
+     "method": "search_snippet",
+     "note": "1,100 yen random"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-234685/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-06-01",
+     "source_url": "https://mezzomiki.jp/post-234685/",
+     "method": "search_snippet",
+     "note": "1 Jun 2022"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-234685/",
+     "method": "search_snippet",
+     "note": "one random design of 7"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2022/tokyo-disneysea-20th-grand-finale-mystery/mysterious-island-donald",
+   "set_key": "tdr/2022/tokyo-disneysea-20th-grand-finale-mystery",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://ameblo.jp/flowerminnie/entry-12746876259.html",
+     "method": "search_snippet",
+     "note": "search summary pairs Donald with Mysterious Island"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-06-01",
+     "source_url": "https://mezzomiki.jp/post-234685/",
+     "method": "search_snippet",
+     "note": "1 Jun 2022"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2021/tokyo-disneysea-20th-abus-bazaar-prize/mickey-20th-costume",
+   "set_key": "tdr/2021/tokyo-disneysea-20th-abus-bazaar-prize",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-213606/",
+     "method": "search_snippet",
+     "note": "prize pin shows Mickey in 20th anniversary costume"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09",
+     "source_url": "https://mezzomiki.jp/post-213606/",
+     "method": "search_snippet",
+     "note": "Abu's Bazaar 20th prize, 700 yen per play"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2021/mickey-balloon-minnie-pin-set/minnie-balloons",
+   "set_key": "tdr/2021/mickey-balloon-minnie-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "Minnie holding colourful retro balloons"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie holding colourful balloons",
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "per-design description"
+    },
+    {
+     "field": "release_location",
+     "value": "Grand Emporium, Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "sold at Grand Emporium etc."
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2021/mickey-balloon-minnie-pin-set/mickey-balloon-red",
+   "set_key": "tdr/2021/mickey-balloon-minnie-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey balloon pin (red)",
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "set lists red, blue, pink and yellow Mickey balloons"
+    },
+    {
+     "field": "visual_description",
+     "value": "red Mickey-shaped balloon",
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "per-design description"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2021/mickey-balloon-minnie-pin-set/mickey-balloon-blue",
+   "set_key": "tdr/2021/mickey-balloon-minnie-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey balloon pin (blue)",
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "set lists red, blue, pink and yellow Mickey balloons"
+    },
+    {
+     "field": "visual_description",
+     "value": "blue Mickey-shaped balloon",
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "per-design description"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2021/mickey-balloon-minnie-pin-set/mickey-balloon-pink",
+   "set_key": "tdr/2021/mickey-balloon-minnie-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey balloon pin (pink)",
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "set lists red, blue, pink and yellow Mickey balloons"
+    },
+    {
+     "field": "visual_description",
+     "value": "pink Mickey-shaped balloon",
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "per-design description"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2021/mickey-balloon-minnie-pin-set/mickey-balloon-yellow",
+   "set_key": "tdr/2021/mickey-balloon-minnie-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey balloon pin (yellow)",
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "set lists red, blue, pink and yellow Mickey balloons"
+    },
+    {
+     "field": "visual_description",
+     "value": "yellow Mickey-shaped balloon",
+     "source_url": "https://mezzomiki.jp/post-216678/",
+     "method": "search_snippet",
+     "note": "per-design description"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2020/oe/balloon-random-dopey",
+   "set_key": "tdr/2020/oe-set/balloon-random",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dopey"
+     ],
+     "source_url": "https://mezzomiki.jp/post-186639/",
+     "method": "search_snippet",
+     "note": "list of 8 incl. Dopey (おとぼけ); no Goofy in list"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dopey balloon decorated with Seven Dwarfs silhouettes",
+     "source_url": "https://mezzomiki.jp/post-186639/",
+     "method": "search_snippet",
+     "note": "per-design description"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2020/oe/balloon-random-simba",
+   "set_key": "tdr/2020/oe-set/balloon-random",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Simba balloon uses Rafiki's drawing",
+     "source_url": "https://mezzomiki.jp/post-186639/",
+     "method": "search_snippet",
+     "note": "per-design description"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2022/christmas-2022/tdl-mickey-minnie-present-tree",
+   "set_key": "tdr/2022/christmas-2022",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-245114/",
+     "method": "search_snippet",
+     "note": "Mickey gives Minnie a present in front of tree"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-245114/",
+     "method": "search_snippet",
+     "note": "single pin badge item"
+    },
+    {
+     "field": "original_price",
+     "value": 1200,
+     "source_url": "https://mezzomiki.jp/post-245114/",
+     "method": "search_snippet",
+     "note": "1,200 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-245114/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-245114/",
+     "method": "search_snippet",
+     "note": "TDL Christmas 2022 goods"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://mezzomiki.jp/post-245114/",
+     "method": "search_snippet",
+     "note": "Disney Christmas 2022"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "hkdl/2020/year-of-the-rat-zodiac/mickey-and-minnie",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "no edition size; non-sale pin"
+  },
+  {
+   "key": "hkdl/2022/international-womens-day-2022/pin",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters/design not given in snippet"
+  },
+  {
+   "key": "hkdl/2022/september-2022/pluto-birthday",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "size/price not isolated in snippet"
+  },
+  {
+   "key": "hkdl/2022/september-2022/teachers-day-2022",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "characters not given"
+  },
+  {
+   "key": "hkdl/2022/september-2022/duffy-and-linabell",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - listed as one LE item with one size; shared pin not explicit"
+  },
+  {
+   "key": "hkdl/2022/september-2022",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "third LinaBell LE pin not named in snippet; first snippet also mentioned a camera-series pin as '寶貝' while second says Buzz Lightyear - treated as Buzz (packet 397 key)"
+  },
+  {
+   "key": "hkdl/2022/august-2022/buzz-lightyear-camera-series",
+   "field": "relation",
+   "searched": "2 queries",
+   "note": "assumed same pin as packet 397 key (camera series Buzz); hkmsg lists it with Sept 2022 batch - verify"
+  },
+  {
+   "key": "hkdl/2020/july-2020-candy-machine/winnie-the-pooh-candy-machine",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "conflict: same page also gives 800 (650 online, 150 package) for a Pooh candy machine item; 600 recorded, verify"
+  },
+  {
+   "key": "hkdl/2020/halloween-2020-duffy-friends",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept (packet 478): no per-design text; designs still not named"
+  },
+  {
+   "key": "hkdl/2020/mickey-friends-booster",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept (packet 445): summary lists Donald, Minnie, Mickey, Chip 'n' Dale, Goofy, Pluto for the 6 pins but no per-pin description (rule 12)"
+  },
+  {
+   "key": "hkdl/2020/mickey-friends-starter-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept (packet 445): four pins not named"
+  },
+  {
+   "key": "hkdl/2020/pin-go-2020",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept (packet 445): game pins (Donald family) not individually named"
+  },
+  {
+   "key": "hkdl/2020/olu-mel-2020",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept (packet 478): WDWNT calls it a trading pin set with 'Olu Mel, Duffy and ShellieMay on inner tubes; count and per-pin split not stated"
+  },
+  {
+   "key": "hkdl/2020/pin-trading-carnival-2020/lilo-stitch-scrump-rosette",
+   "field": "relation",
+   "searched": "1 query",
+   "note": "relation hold from packet 478 kept; not linked to stitch-exclusive (445)"
+  },
+  {
+   "key": "hkdl/2020/pin-trading-carnival-2020",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "DMK leaflet post names Welcome Badge LE set, Deluxe 6 LE box, Mega Jumbo LE pin, Stitch game-exclusive; no new subjects; Deluxe 6-pin box seen only on reseller dpinstore (not used)"
+  },
+  {
+   "key": "hkdl/2022/pin-trading-carnival-2022",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept (packets 397/445): pins not individually named"
+  },
+  {
+   "key": "hkdl/2020/15th-anniversary-tote-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); pin count/designs not given"
+  },
+  {
+   "key": "hkdl/2020/15th-grand-celebrations",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: hkmsg lists Grand Celebrations Mickey & Friends goods incl. a Donald and Daisy pin HK$75 and an LE pin set of 150 sets (Dec 2020); pairing unclear"
+  },
+  {
+   "key": "hkdl/2021/monthly",
+   "field": "pins",
+   "searched": "6 queries (DPB, DMK blog, hkmsg)",
+   "note": "no HKDL LE posts found for Sep-Dec 2021; only Jan 2022 batch sold online 24-30 Dec 2021"
+  },
+  {
+   "key": "hkdl/2022/monthly",
+   "field": "pins",
+   "searched": "5 queries",
+   "note": "Jun 2022 and Oct-Dec 2022 still not found; Jan 2023 batch sold online 30 Dec 2022 already keyed in 2023 packets (hkdl/2023/january-2023/*)"
+  },
+  {
+   "key": "shdr/2022/adventure-best-day-2022",
+   "field": "format",
+   "searched": "1 query",
+   "note": "set includes a map piece reading Born to Explore (top) and Go Further - Adventure - Best Day 2022 (centre); map vs separate pins unclear"
+  },
+  {
+   "key": "shdr/2022/adventure-best-day-2022",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept (packet 478): seven Duffy & Friends characters listed; whether map holds separate pins per character not stated"
+  },
+  {
+   "key": "shdr/2020/spring-festival-2020",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: ELLE China lists New Year Mickey & Minnie LE pins; press release says LE Mickey-themed pins; count/designs not given"
+  },
+  {
+   "key": "shdr/2020/pin-trading-fun-day-2020-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept (packet 397): solar-term blind box designs not named"
+  },
+  {
+   "key": "shdr/2021/linabell",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "still no 2021 LinaBell pin; debut coverage mentions plush and other goods only"
+  },
+  {
+   "key": "shdr/2022/pin-trading-fun-day-2022",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "only Toy Story Sports set (packet 445) surfaced; 'Characters Water Sports 3 Pin Set' seen only on reseller usshoppingsos - hold: reseller only"
+  },
+  {
+   "key": "tdr/2022/tokyo-disneysea-20th-grand-finale-mystery/mysterious-island-donald",
+   "field": "visual_description",
+   "searched": "2 queries",
+   "note": "hold: conflicting detail - summary says centre shows Indiana Jones Adventure (Lost River Delta, Goofy per packet 478); verify on page"
+  },
+  {
+   "key": "tdr/2021/tokyo-disneysea-20th-anniversary-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept (packets 445/478): 5 framed pins still not named; 10,560 yen seen only on reseller wizmouse (not used)"
+  },
+  {
+   "key": "tdr/2021/tokyo-disneysea-20th-anniversary/large-pin-mickey-minnie",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "MezzoMiki 2,000 yen (from 3 Sep 2021) re-confirmed; 900 yen (packet 397, TDR Explorer) not found - conflict stays open"
+  },
+  {
+   "key": "tdr/2021/tokyo-disneysea-20th-abus-bazaar-prize/mickey-20th-costume",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: pending maintainer decision on full lists - prize pin named only in one game prize list"
+  },
+  {
+   "key": "tdr/2022/halloween-2022-pin-badge-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "other 4 pins still not individually described"
+  },
+  {
+   "key": "tdr/2022/halloween-2022-pin-badge-set-2400",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "3 ghost pins enjoying the park, not individually described"
+  },
+  {
+   "key": "tdr/2021/mickey-balloon-minnie-pin-set",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "date 29 Sep 2021 shown against the Mickey balloon item; set-wide date not explicit"
+  },
+  {
+   "key": "tdr/2021/park-logo-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "four logo designs not individually named in snippet"
+  },
+  {
+   "key": "tdr/2021-2022/mezzomiki-leads",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "Huey/Dewey/Louie post-301685: post id near 2024 range (Halloween 2024 is post-295162) - likely outside 2020-2022; not searched"
+  },
+  {
+   "key": "tdr/2020/oe/balloon-random-dopey",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "conflict lead from 478 (Goofy) not supported: new summary lists Dopey and says Goofy is not in this set"
+  },
+  {
+   "key": "tdr/2022/christmas-2022/tdl-mickey-minnie-present-tree",
+   "field": "relation",
+   "searched": "1 query",
+   "note": "may equal tdr/2022/christmas-2022/pin (packet 445); not linked"
+  },
+  {
+   "key": "tdr/2022/christmas-2022-abus-bazaar-prize",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept (packet 478): prize list pins pending maintainer full-list decision"
+  },
+  {
+   "key": "tdr/2021/christmas-2021-jungle-carnival-prize",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept (packet 478): prize list pins pending maintainer full-list decision"
+  },
+  {
+   "key": "shdr/2020/halloween-2020-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2021/chinese-new-year-2021-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2022/chinese-new-year-2022-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2021/foodie-party-2021-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "hkdl/2020/15th-anniversary-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "tdr/2022/oe-set/may-2022-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "tdr/2021/christmas-2021-game",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "hkdl/2020/castle-of-magical-dreams-princess-boosters",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "hkdl/2020/castle-of-magical-dreams-framed",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2022/halloween-2022",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2022/halloween-2022-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "hkdl/2020/january-2020-le",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "hkdl/2020/january-2020-le",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "CNY 2020 pair pins: still no source stating shared single pin vs pack (holds from 478 kept)"
+  },
+  {
+   "key": "tdr/2022/christmas-2022/tdl-mickey-minnie-present-tree",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: possible duplicate of tdr/2022/christmas-2022/pin (packet 445, ¥1,200, 7 Nov 2022)"
+  }
+ ],
+ "discovery_notes": "Follow-up 7 of B041 (397/445/478). 30 standard searches, snippet leads only. New pins: HKDL Walt Birthday 2020 Sorcerer Mickey (LE 600), 2020 Rat zodiac Mickey & Minnie (non-sale), IWD 2022, Sept 2022 LE batch (Pluto, Oswald 95th, Teachers Day, Duffy & LinaBell [structure hold], LinaBell Magic Access); TDR Mickey balloon & Minnie 5-pin set (2021-09-29, per-design MezzoMiki), TDS20 grand finale Daisy/Arabian Coast and Donald/Mysterious Island (conflict hold), Abu's Bazaar 20th Mickey prize (prize-list hold), TDL Christmas 2022 Mickey/Minnie present pin. Claims added to reused keys: candy machine 400 Lotso / 600 Pooh (800 conflict), balloon Dopey confirmed over Goofy, Fun Day 2020 LE 800s and solar-term mystery, TDS20 framed set 6,000 yen, Halloween 2022 sets. No earlier hold released. Resellers seen and not used: usshoppingsos, fryguypins, wizmouse, dpinstore, carousell, belloshophk."
+}

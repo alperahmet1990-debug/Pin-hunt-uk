@@ -1,0 +1,1301 @@
+{
+ "packet_id": "backfill-b268-asia-2019-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b268",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+   "title": "Baby HKDL Hidden Mickey Game Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-02-24"
+  },
+  {
+   "url": "https://disneypinsblog.com/june-2019-hkdl-limited-edition-pin-releases/",
+   "title": "June 2019 HKDL Limited Edition Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+   "title": "May 2019 HKDL Limited Edition Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/166165",
+   "title": "166165 (Coco Banner Hidden Mickey - Ernesto)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/166163",
+   "title": "166163 (Coco Banner Hidden Mickey - Miguel and Mama Coco)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/coco-hkdl-hidden-mickey-game-pins/",
+   "title": "Coco HKDL Hidden Mickey Game Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-167310/",
+   "title": "Tokyo Disneyland Forever One Man's Dream II goods",
+   "publisher": "MezzoMiki",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/duffy-friends-chinese-new-year-2019-pin-set/",
+   "title": "Duffy & Friends Chinese New Year 2019 Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-villains-2019-hkdl-pin-set/",
+   "title": "Disney Villains 2019 HKDL Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-2019-hkdl-pin-set",
+   "title": "Nightmare Before Christmas 2019 HKDL Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/2nd-pin-trading-carnival-2019-hkdl-pin-releases",
+   "title": "2nd Pin Trading Carnival 2019 HKDL Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-04-05"
+  },
+  {
+   "url": "https://www.pintrader.club/articles/hong-kong-disneyland-december-2019-pin-releases",
+   "title": "Hong Kong Disneyland December 2019 pin releases",
+   "publisher": "Pin Trader Club",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/03/photos-full-line-of-ant-man-and-the-wasp-nano-battle-merchandise-at-pavilion-gifts-in-hong-kong-disneyland/",
+   "title": "PHOTOS: Full Line of Ant-Man and The Wasp: Nano Battle! Merchandise at Pavilion Gifts",
+   "publisher": "WDW News Today",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-03"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/chinese-new-year-2019-pins-at-shanghai-disneyland",
+   "title": "Chinese New Year 2019 Pins at Shanghai Disneyland",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://d23.com/shanghai-disney-resort-gets-ready-for-a-magical-chinese-new-year-celebration/",
+   "title": "Shanghai Disney Resort Gets Ready for a Magical Chinese New Year Celebration",
+   "publisher": "D23",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/spring-party-2019-shanghai-disneyland-pins/",
+   "title": "Spring Party 2019 Shanghai Disneyland Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/shanghai-pin-trading-fun-day-2019-event",
+   "title": "Shanghai Pin Trading Fun Day 2019 Event",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-155192/",
+   "title": "Tokyo DisneySea Duffy & Friends hide-and-seek goods (spring 2019)",
+   "publisher": "MezzoMiki",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "hkdl/2019/baby-hidden-mickey",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Baby HKDL Hidden Mickey Game Pins",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "series of 12; only first six out at launch"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-24",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "launch date stated"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (game prizes)",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "won by playing park games"
+    },
+    {
+     "field": "format",
+     "value": "Hidden Mickey game pin series",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "first six listed by character, characters shown as babies in blankets"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2019/may-2019-le",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "Genie on Key, Mother's Day, Earth Day, UP 10th, two Donald Duck pins; B007 recorded 3"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2019/coco-hidden-mickey",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "MyPinCentral Coco Banner series numbered 'of 6' on backstamps; DPB (packet 413) says 5"
+    },
+    {
+     "field": "set_name",
+     "value": "Coco Banner Hidden Mickey (2019)",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "MyPinCentral series name"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "listed as Oct 2019 HKDL release"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "hkdl/2019/baby-hidden-mickey/winnie-the-pooh",
+   "set_key": "hkdl/2019/baby-hidden-mickey",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "named among the first six pins of the series"
+    },
+    {
+     "field": "main_character",
+     "value": "Winnie the Pooh",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "one of six listed first-wave pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-24",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "first wave launch"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (game prizes)",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "game prize pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Baby Winnie the Pooh in a baby blanket",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "series shows characters as babies in blankets"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/baby-hidden-mickey/tramp",
+   "set_key": "hkdl/2019/baby-hidden-mickey",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tramp"
+     ],
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "named among the first six pins of the series"
+    },
+    {
+     "field": "main_character",
+     "value": "Tramp",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "one of six listed first-wave pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-24",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "first wave launch"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (game prizes)",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "game prize pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Baby Tramp in a baby blanket",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "series shows characters as babies in blankets"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/baby-hidden-mickey/patch",
+   "set_key": "hkdl/2019/baby-hidden-mickey",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Patch"
+     ],
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "named among the first six pins of the series"
+    },
+    {
+     "field": "main_character",
+     "value": "Patch",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "one of six listed first-wave pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-24",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "first wave launch"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (game prizes)",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "game prize pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Baby Patch in a baby blanket",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "series shows characters as babies in blankets"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/baby-hidden-mickey/pumbaa",
+   "set_key": "hkdl/2019/baby-hidden-mickey",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pumbaa"
+     ],
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "named among the first six pins of the series"
+    },
+    {
+     "field": "main_character",
+     "value": "Pumbaa",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "one of six listed first-wave pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-24",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "first wave launch"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (game prizes)",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "game prize pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Baby Pumbaa in a baby blanket",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "series shows characters as babies in blankets"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/baby-hidden-mickey/thumper",
+   "set_key": "hkdl/2019/baby-hidden-mickey",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thumper"
+     ],
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "named among the first six pins of the series"
+    },
+    {
+     "field": "main_character",
+     "value": "Thumper",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "one of six listed first-wave pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-24",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "first wave launch"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (game prizes)",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "game prize pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Baby Thumper in a baby blanket",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "series shows characters as babies in blankets"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/baby-hidden-mickey/figaro",
+   "set_key": "hkdl/2019/baby-hidden-mickey",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Figaro"
+     ],
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "named among the first six pins of the series"
+    },
+    {
+     "field": "main_character",
+     "value": "Figaro",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "one of six listed first-wave pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-24",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "first wave launch"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (game prizes)",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "game prize pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Baby Figaro in a baby blanket",
+     "source_url": "https://disneypinsblog.com/baby-hkdl-hidden-mickey-game-pins/",
+     "method": "search_snippet",
+     "note": "series shows characters as babies in blankets"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/june-2019-le/aurora",
+   "set_key": "hkdl/2019/june-2019-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Aurora Limited Edition Pin",
+     "source_url": "https://disneypinsblog.com/june-2019-hkdl-limited-edition-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed in June 2019 HKDL LE releases"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://disneypinsblog.com/june-2019-hkdl-limited-edition-pin-releases/",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/june-2019-hkdl-limited-edition-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/june-2019-hkdl-limited-edition-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-15",
+     "source_url": "https://disneypinsblog.com/june-2019-hkdl-limited-edition-pin-releases/",
+     "method": "search_snippet",
+     "note": "available June 15 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium, Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/june-2019-hkdl-limited-edition-pin-releases/",
+     "method": "search_snippet",
+     "note": "Emporium"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/june-2019-le/pocahontas",
+   "set_key": "hkdl/2019/june-2019-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pocahontas Limited Edition Pin",
+     "source_url": "https://disneypinsblog.com/june-2019-hkdl-limited-edition-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed in June 2019 HKDL LE releases"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pocahontas"
+     ],
+     "source_url": "https://disneypinsblog.com/june-2019-hkdl-limited-edition-pin-releases/",
+     "method": "search_snippet",
+     "note": "named"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/june-2019-hkdl-limited-edition-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/june-2019-hkdl-limited-edition-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-15",
+     "source_url": "https://disneypinsblog.com/june-2019-hkdl-limited-edition-pin-releases/",
+     "method": "search_snippet",
+     "note": "available June 15 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium, Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/june-2019-hkdl-limited-edition-pin-releases/",
+     "method": "search_snippet",
+     "note": "Emporium"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/may-2019-le/earth-day-2019",
+   "set_key": "hkdl/2019/may-2019-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Earth Day 2019",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "listed in May 2019 HKDL LE releases"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "from May 11 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium, Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "Emporium"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/may-2019-le/up-10th-anniversary",
+   "set_key": "hkdl/2019/may-2019-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "UP 10th Anniversary",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "listed in May 2019 HKDL LE releases"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "from May 11 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium, Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/may-2019-hkdl-limited-edition-pin-releases",
+     "method": "search_snippet",
+     "note": "Emporium"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/coco-hidden-mickey/miguel",
+   "set_key": "hkdl/2019/coco-hidden-mickey",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Miguel",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "MyPinCentral id 166161 in Coco Banner series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Miguel"
+     ],
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "named in series listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (game prizes)",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "won by playing games at HKDL"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "Oct 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/coco-hidden-mickey/hector",
+   "set_key": "hkdl/2019/coco-hidden-mickey",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hector",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "MyPinCentral id 166162 in Coco Banner series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hector"
+     ],
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "named in series listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (game prizes)",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "won by playing games at HKDL"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "Oct 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/coco-hidden-mickey/miguel-and-mama-coco",
+   "set_key": "hkdl/2019/coco-hidden-mickey",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Miguel and Mama Coco",
+     "source_url": "https://mypincentral.com/pin/166163",
+     "method": "search_snippet",
+     "note": "MyPinCentral id 166163 in Coco Banner series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Miguel",
+      "Mama Coco"
+     ],
+     "source_url": "https://mypincentral.com/pin/166163",
+     "method": "search_snippet",
+     "note": "named in series listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (game prizes)",
+     "source_url": "https://mypincentral.com/pin/166163",
+     "method": "search_snippet",
+     "note": "won by playing games at HKDL"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://mypincentral.com/pin/166163",
+     "method": "search_snippet",
+     "note": "Oct 2019"
+    },
+    {
+     "field": "set_position",
+     "value": "1 of 6",
+     "source_url": "https://mypincentral.com/pin/166163",
+     "method": "search_snippet",
+     "note": "backstamp reads Hidden Mickey Pin 1 of 6"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/166163",
+     "method": "search_snippet",
+     "note": "single listing titled Miguel and Mama Coco"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/coco-hidden-mickey/pepita",
+   "set_key": "hkdl/2019/coco-hidden-mickey",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pepita",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "MyPinCentral id 166164 in Coco Banner series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pepita"
+     ],
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "named in series listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (game prizes)",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "won by playing games at HKDL"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "Oct 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/coco-hidden-mickey/ernesto",
+   "set_key": "hkdl/2019/coco-hidden-mickey",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ernesto",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "MyPinCentral id 166165 in Coco Banner series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ernesto de la Cruz"
+     ],
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "named in series listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (game prizes)",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "won by playing games at HKDL"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "Oct 2019"
+    },
+    {
+     "field": "set_position",
+     "value": "3 of 6",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "backstamp reads Hidden Mickey Pin 3 of 6"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stamp-shaped pin of Ernesto playing guitar with a hidden Mickey",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "described"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2019/coco-hidden-mickey/dante",
+   "set_key": "hkdl/2019/coco-hidden-mickey",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dante",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "MyPinCentral id 166166 in Coco Banner series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dante"
+     ],
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "named in series listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (game prizes)",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "won by playing games at HKDL"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://mypincentral.com/pin/166165",
+     "method": "search_snippet",
+     "note": "Oct 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2019/forever-one-mans-dream-ii/shining-mickey",
+   "set_key": "tdr/2019/forever-one-mans-dream-ii",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Shining Mickey Pin Badge",
+     "source_url": "https://mezzomiki.jp/post-167310/",
+     "method": "search_snippet",
+     "note": "name given in MezzoMiki One Man's Dream II goods article (domain-restricted search summary)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-167310/",
+     "method": "search_snippet",
+     "note": "Mickey with stars"
+    },
+    {
+     "field": "visual_description",
+     "value": "Gold pin with stars and Mickey Mouse",
+     "source_url": "https://mezzomiki.jp/post-167310/",
+     "method": "search_snippet",
+     "note": "gold base, star and Mickey motif"
+    },
+    {
+     "field": "size_mm",
+     "value": "approx 70 x 60",
+     "source_url": "https://mezzomiki.jp/post-167310/",
+     "method": "search_snippet",
+     "note": "about 7cm tall x 6cm wide"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://mezzomiki.jp/post-167310/",
+     "method": "search_snippet",
+     "note": "1,000 yen"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-167310/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-15",
+     "source_url": "https://mezzomiki.jp/post-167310/",
+     "method": "search_snippet",
+     "note": "release date stated"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-167310/",
+     "method": "search_snippet",
+     "note": "Forever One Man's Dream II goods"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "hkdl/2019/baby-hidden-mickey",
+   "field": "members",
+   "searched": "DPB; 2 queries",
+   "note": "second wave (6 of 12) not named in snippets"
+  },
+  {
+   "key": "hkdl/2019/baby-hidden-mickey",
+   "field": "edition_size",
+   "searched": "DPB; 2 queries",
+   "note": "no edition size in snippet"
+  },
+  {
+   "key": "hkdl/2019/june-2019-le",
+   "field": "members",
+   "searched": "DPB June post; 3 queries",
+   "note": "update: with Aurora and Pocahontas all 6 June releases now named (B007 had 3, B051 added Muppets)"
+  },
+  {
+   "key": "hkdl/2019/may-2019-le/earth-day-2019",
+   "field": "characters",
+   "searched": "DPB May post",
+   "note": "characters/design not described in snippet"
+  },
+  {
+   "key": "hkdl/2019/may-2019-le/up-10th-anniversary",
+   "field": "characters",
+   "searched": "DPB May post",
+   "note": "characters/design not described in snippet"
+  },
+  {
+   "key": "hkdl/2019/may-2019-le",
+   "field": "members",
+   "searched": "DPB May post",
+   "note": "second Donald Duck pin (LE 500) mentioned but not named; B007 has donald-duck-birthday only"
+  },
+  {
+   "key": "hkdl/2019/coco-hidden-mickey/miguel",
+   "field": "identity",
+   "searched": "MyPinCentral; 2 queries",
+   "note": "named only via series list (id 166161) seen on the Ernesto page summary; confirm on its own page"
+  },
+  {
+   "key": "hkdl/2019/coco-hidden-mickey/hector",
+   "field": "identity",
+   "searched": "MyPinCentral; 2 queries",
+   "note": "named only via series list (id 166162) seen on the Ernesto page summary; confirm on its own page"
+  },
+  {
+   "key": "hkdl/2019/coco-hidden-mickey/pepita",
+   "field": "identity",
+   "searched": "MyPinCentral; 2 queries",
+   "note": "named only via series list (id 166164) seen on the Ernesto page summary; confirm on its own page"
+  },
+  {
+   "key": "hkdl/2019/coco-hidden-mickey/dante",
+   "field": "identity",
+   "searched": "MyPinCentral; 2 queries",
+   "note": "named only via series list (id 166166) seen on the Ernesto page summary; confirm on its own page"
+  },
+  {
+   "key": "hkdl/2019/coco-hidden-mickey",
+   "field": "expected_pin_count",
+   "searched": "DPB + MyPinCentral",
+   "note": "conflict kept: DPB says 5, MyPinCentral backstamps say 'of 6'; also a solo Miguel (166161) plus Miguel & Mama Coco (1 of 6) - numbering of others unknown"
+  },
+  {
+   "key": "tdr/2019/forever-one-mans-dream-ii/shining-mickey",
+   "field": "source",
+   "searched": "2 domain-restricted queries",
+   "note": "page attribution from search summary naming the MezzoMiki Forever OMD II goods article; resolves B051 lead (packet 413) - confirm on page"
+  },
+  {
+   "key": "tdr/2019/forever-one-mans-dream-ii/clapperboard",
+   "field": "visual_form",
+   "searched": "2 queries (mezzomiki/tokyodisneyresort restricted)",
+   "note": "hold kept (packet 413): summaries again say clapperboard-motif pin, 1,000 yen, 2019-09-05, but still not tied to one page"
+  },
+  {
+   "key": "tdr/2019/forever-one-mans-dream-ii/castle",
+   "field": "original_price",
+   "searched": "domain-restricted query",
+   "note": "summary says castle-design pin 1,000 yen released 2019-10-15 (MezzoMiki); page not pinned - not recorded as claim"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/christmas-donald-and-goofy",
+   "field": "source",
+   "searched": "1 query; only Pin Trader Club and resellers returned",
+   "note": "hold kept (packet 413): still no publisher/official page; resellers (usshoppingsos) not used"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/christmas-mickey-and-minnie",
+   "field": "source",
+   "searched": "1 query; only Pin Trader Club and resellers returned",
+   "note": "hold kept (packet 413): still no publisher/official page; resellers (usshoppingsos) not used"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/christmas-pluto-chip-and-dale",
+   "field": "source",
+   "searched": "1 query; only Pin Trader Club and resellers returned",
+   "note": "hold kept (packet 413): still no publisher/official page; resellers (usshoppingsos) not used"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/magic-access-christmas-2019-jumbo",
+   "field": "source",
+   "searched": "1 query; only Pin Trader Club and resellers returned",
+   "note": "hold kept (packet 413): still no publisher/official page; resellers (usshoppingsos) not used"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/magic-access-2020",
+   "field": "source",
+   "searched": "1 query; only Pin Trader Club and resellers returned",
+   "note": "hold kept (packet 413): still no publisher/official page; resellers (usshoppingsos) not used"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/sulley-candy-machine",
+   "field": "source",
+   "searched": "1 query; only Pin Trader Club and resellers returned",
+   "note": "hold kept (packet 413): still no publisher/official page; resellers (usshoppingsos) not used"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/elsa",
+   "field": "source",
+   "searched": "1 query; only Pin Trader Club and resellers returned",
+   "note": "hold kept (packet 413): still no publisher/official page; resellers (usshoppingsos) not used"
+  },
+  {
+   "key": "hkdl/2019/december-2019-le/anna",
+   "field": "source",
+   "searched": "1 query; only Pin Trader Club and resellers returned",
+   "note": "hold kept (packet 413): still no publisher/official page; resellers (usshoppingsos) not used"
+  },
+  {
+   "key": "hkdl/2019/duffy-friends-chinese-new-year-2019",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept (packet 413): DPB still only names five characters for a five-pin set; no per-pin breakdown"
+  },
+  {
+   "key": "hkdl/2019/duffy-friends-chinese-new-year-2019",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "hold kept (packet 413): DPB again says released late Dec 2018"
+  },
+  {
+   "key": "hkdl/2019/oe-set/villains-2019",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept (packet 413): 'four pins featuring' Ursula, Evil Queen, Cruella, Hook - no per-pin statement; HK$ price not found"
+  },
+  {
+   "key": "hkdl/2019/oe-set/nightmare-before-christmas-2019",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold kept (packet 413): four OE glow pins, characters listed only"
+  },
+  {
+   "key": "hkdl/2019/january-2019-le",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "no Jan 2019 HKDL LE roundup found; only Moana jumbo, Hamm CM pin and Chip n Dale 2019 pin (already covered)"
+  },
+  {
+   "key": "hkdl/2019/february-2019-le",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no Feb 2019 HKDL LE roundup found; Baby Hidden Mickey series recorded instead"
+  },
+  {
+   "key": "hkdl/2019/april-2019-le",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no Apr monthly LE roundup; only Carnival releases"
+  },
+  {
+   "key": "hkdl/2019/july-2019-le",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no Jul monthly LE roundup; only Toy Story HM and Little Mermaid OE (covered)"
+  },
+  {
+   "key": "hkdl/2019/august-2019-le",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no Aug LE releases found; only Villains/NBC OE sets (covered)"
+  },
+  {
+   "key": "hkdl/2019/november-2019-le",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no Nov 2019 HKDL release found"
+  },
+  {
+   "key": "hkdl/2019/pin-trading-carnival-2019",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "lead: Tickets series, 8 pins LE 1000 (Stitch, Chip & Dale, Peter Pan, Pinocchio, Monsters Inc, Potato Heads, Alice, Oswald & Ortensia) - value-guide listing only, not used"
+  },
+  {
+   "key": "hkdl/2019/pin-trading-carnival-2019",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "DPB names a Hot Air Balloon Carnival pin set and a Carnival pin set; contents not in snippets"
+  },
+  {
+   "key": "hkdl/2019/pin-go-2019",
+   "field": "members",
+   "searched": "1 query",
+   "note": "still unnamed; Piglet PIN-GO pin appears only on reseller dpinstore - not used"
+  },
+  {
+   "key": "hkdl/2019/princess-monthly",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no 'princess of the month' series found; princess LEs sit in monthly roundups (Aurora, Pocahontas Jun; Snow White, Merida Sep; Rapunzel, Jasmine Oct)"
+  },
+  {
+   "key": "hkdl/2019/ant-man-nano-battle-launch",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "WDWNT confirms LE pins at 158/228 (currency unstated); designs and edition sizes still not in snippets"
+  },
+  {
+   "key": "hkdl/2019",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "no HK$ prices for 2019 monthly LEs on DPB; Oct LEs HK$148-228 only on Pin Trader Club"
+  },
+  {
+   "key": "shdr/2019/chinese-new-year-2019",
+   "field": "members",
+   "searched": "1 query",
+   "note": "still unresolved: DPB says SHDR CNY pins all OE; D23 mentions LE CNY pins without designs"
+  },
+  {
+   "key": "shdr/2019/3rd-anniversary",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no 3rd-anniversary-branded pin found again"
+  },
+  {
+   "key": "shdr/2019/spring-party-2019-booster",
+   "field": "members",
+   "searched": "1 query",
+   "note": "still unnamed (LE 500)"
+  },
+  {
+   "key": "shdr/2019/spring-party-2019-mini-jumbo-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "still unnamed (LE 300)"
+  },
+  {
+   "key": "shdr/2019/pin-trading-fun-day-2019",
+   "field": "members",
+   "searched": "1 query",
+   "note": "framed set and mystery collection still undetailed; Character Mystery Collection link unconfirmed"
+  },
+  {
+   "key": "tdr/2019/duffy-friends-2019",
+   "field": "members",
+   "searched": "1 query",
+   "note": "MezzoMiki spring 2019 Duffy hide-and-seek goods show no pin; no 2019 Duffy pin found"
+  },
+  {
+   "key": "tdr/2019/imagining-the-magic",
+   "field": "members",
+   "searched": "1 query",
+   "note": "lead: MezzoMiki TDL Imagining the Magic group pin 600 yen (post-193571) likely 2020, not 2019 - not recorded"
+  },
+  {
+   "key": "hkdl/2019/baby-hidden-mickey/winnie-the-pooh",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one series list, no per-pin source"
+  },
+  {
+   "key": "hkdl/2019/baby-hidden-mickey/tramp",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one series list, no per-pin source"
+  },
+  {
+   "key": "hkdl/2019/baby-hidden-mickey/patch",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one series list, no per-pin source"
+  },
+  {
+   "key": "hkdl/2019/baby-hidden-mickey/pumbaa",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one series list, no per-pin source"
+  },
+  {
+   "key": "hkdl/2019/baby-hidden-mickey/thumper",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one series list, no per-pin source"
+  },
+  {
+   "key": "hkdl/2019/baby-hidden-mickey/figaro",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one series list, no per-pin source"
+  },
+  {
+   "key": "hkdl/2019/coco-hidden-mickey/miguel",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one series list, no per-pin source"
+  },
+  {
+   "key": "hkdl/2019/coco-hidden-mickey/hector",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one series list, no per-pin source"
+  },
+  {
+   "key": "hkdl/2019/coco-hidden-mickey/pepita",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one series list, no per-pin source"
+  },
+  {
+   "key": "hkdl/2019/coco-hidden-mickey/dante",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: pending maintainer decision on full lists - pin named only in one series list, no per-pin source"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 of B007 (packets 207, 413); reuses their keys. 29 standard searches, snippets only. New: Baby Hidden Mickey HKDL series (6 of 12), June LEs Aurora/Pocahontas, May LEs Earth Day/UP, Coco Banner HM 6 pins (MyPinCentral), TDL Shining Mickey. No holds released. Resellers and value guides not used."
+}

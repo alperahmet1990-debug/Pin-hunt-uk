@@ -1,0 +1,4904 @@
+{
+ "packet_id": "backfill-b100-ds-2017-fu1",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b100",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/tag/disney-store-pin/",
+   "title": "Disney Store Pin Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": "",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://carstairsconsiders.blogspot.com/2017/03/pin-review-ugly-duckling-storybook.html",
+   "title": "Pin Review: The Ugly Duckling - Storybook Classics Collection #7 - 2017 Disney Store Release",
+   "publisher": "Carstairs Considers",
+   "published_date": "2017-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+   "title": "Johnny Appleseed Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-05-15",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/2017/05/16/johnny-appleseed-pin-sketchbook-ornament-now/",
+   "title": "Johnny Appleseed Pin & Sketchbook Ornament Out Now",
+   "publisher": "DisKingdom",
+   "published_date": "2017-05-16",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/casey-bat-pin/",
+   "title": "Casey at the Bat Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins/",
+   "title": "Disney Store 30th Anniversary Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.fanthatracks.com/news/collecting/the-last-jedi-limited-edition-disney-pins/",
+   "title": "The Last Jedi limited edition Disney Pins",
+   "publisher": "Fantha Tracks",
+   "published_date": "2018-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/force-friday-2-star-wars-pins/",
+   "title": "Force Friday 2 Star Wars Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-09-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+   "title": "Hercules Pin - Disney Store UK",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/minnie-mouse-pin-set",
+   "title": "Minnie Mouse Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+   "title": "Beauty and the Beast Live Action Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://chipandco.com/live-action-beauty-beast-merchandise-disney-store-257741/",
+   "title": "New Live Action Beauty and the Beast Merchandise at the Disney Store",
+   "publisher": "Chip and Company",
+   "published_date": "2017-01-18",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+   "title": "Pin Trader Delight - March 20, 2017",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-03-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+   "title": "Latest Pin Trader Delight Pins Revealed",
+   "publisher": "DisKingdom",
+   "published_date": "2017-06-17",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+   "title": "Pin Trader Delight - July 2, 2017",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+   "title": "Pin Trader Delight - July 11, 2017",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+   "title": "Pin Trader Delight - July 23, 2017",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07-23",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+   "title": "Pin Trader Delight",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-11-27",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/dssh-september-2017-surprise-release",
+   "title": "DSSH September 2017 Surprise Release",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-09-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/dssh-alphabet-pin-series-7",
+   "title": "DSSH Alphabet Pin Series #7",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/hocus-pocus-marquee-pin",
+   "title": "Hocus Pocus Marquee Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/surprise-coco-skull-pin-dssh",
+   "title": "Surprise Coco Skull Pin - DSSH",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-11-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/aladdin-25th-anniversary-surprise-pin-release/",
+   "title": "Aladdin 25th Anniversary Surprise Pin Release",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/aladdin-25th-anniversary-pins/",
+   "title": "Aladdin 25th Anniversary Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": "",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+   "title": "Aladdin 25th Anniversary Pin - Disney Store UK",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.shopdisney.co.uk/aladdin-25th-anniversary-limited-edition-pin-465055453261.html",
+   "title": "Aladdin 25th Anniversary Limited Edition Pin",
+   "publisher": "shopDisney UK",
+   "published_date": "",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-store-marvel-pin-set-d23-expo-2017",
+   "title": "Disney Store Marvel Pin Set - D23 Expo 2017",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+   "title": "Disney Studio Store Hollywood February 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+   "title": "Disney Studio Store Hollywood April 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+   "title": "Disney Studio Store Hollywood May 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2017-pins/",
+   "title": "Disney Studio Store Hollywood June 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+   "title": "Disney Studio Store Hollywood July 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+   "title": "Disney Studio Store Hollywood August 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/villain-pin-trading-event/",
+   "title": "Villain Pin Trading Event",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsus/2017/storybook-classics-07-the-ugly-duckling",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Storybook Classics #7: The Ugly Duckling Pin",
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "descriptive name from series position and subject"
+    },
+    {
+     "field": "family",
+     "value": "Disney Storybook Classics",
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "monthly Storybook Classics pin series at DisneyStore.com"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "described as LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "LE 1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "release timing per snippet"
+    },
+    {
+     "field": "price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "sold at DisneyStore.com"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/storybook-classics-10-johnny-appleseed",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Storybook Classics #10: Johnny Appleseed Pin",
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "descriptive name from series position and subject"
+    },
+    {
+     "field": "family",
+     "value": "Disney Storybook Classics",
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "monthly Storybook Classics pin series at DisneyStore.com"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "described as LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "LE 1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05-15",
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "release timing per snippet"
+    },
+    {
+     "field": "price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "sold at DisneyStore.com"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/storybook-classics-12-casey-at-the-bat",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Storybook Classics #12: Casey at the Bat Pin",
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "descriptive name from series position and subject"
+    },
+    {
+     "field": "family",
+     "value": "Disney Storybook Classics",
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "monthly Storybook Classics pin series at DisneyStore.com"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "described as LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "LE 1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07",
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "release timing per snippet"
+    },
+    {
+     "field": "price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "sold at DisneyStore.com"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/disney-store-30th-anniversary",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2017-01-28",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "releases ran weekends from 28 Jan to 1 Apr 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store (US) stores by raffle",
+     "source_url": "https://disneypinsblog.com/disney-store-30th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "in-store purchase by random raffle; limited quantity per store"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.fanthatracks.com/news/collecting/the-last-jedi-limited-edition-disney-pins/",
+     "method": "search_snippet",
+     "note": "article covers six pin-and-lithograph sets, each LE 2000; conflicts with DPB count of 7"
+    },
+    {
+     "field": "format",
+     "value": "pin with lithograph, plus LE 2000 collector tin and a starter pin",
+     "source_url": "https://www.fanthatracks.com/news/collecting/the-last-jedi-limited-edition-disney-pins/",
+     "method": "search_snippet",
+     "note": "tin and starter pin offered for storing the pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/force-friday-ii",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Force Friday II Star Wars pins at DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/force-friday-2-star-wars-pins/",
+     "method": "search_snippet",
+     "note": "descriptive name"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-01",
+     "source_url": "https://disneypinsblog.com/force-friday-2-star-wars-pins/",
+     "method": "search_snippet",
+     "note": "post dated 1 Sep 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "DisneyStore.com",
+     "source_url": "https://disneypinsblog.com/force-friday-2-star-wars-pins/",
+     "method": "search_snippet",
+     "note": "released at DisneyStore.com"
+    },
+    {
+     "field": "format",
+     "value": "pin sets, lanyards and individual pins",
+     "source_url": "https://disneypinsblog.com/force-friday-2-star-wars-pins/",
+     "method": "search_snippet",
+     "note": "post lists pin sets and lanyard items for The Last Jedi"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2017/minnie-mouse-signature-pin-set",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 950,
+     "source_url": "https://disneypinsblog.com/blogs/news/minnie-mouse-pin-set",
+     "method": "search_snippet",
+     "note": "950 worldwide, 150 of them allocated to Europe"
+    },
+    {
+     "field": "price",
+     "value": 40.0,
+     "source_url": "https://disneypinsblog.com/blogs/news/minnie-mouse-pin-set",
+     "method": "search_snippet",
+     "note": "GBP 40 for the five-pin set"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/beauty-and-the-beast-live-action-le-1000-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Beauty and the Beast Live Action Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "three pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack: three pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "Belle, Beast and Lumiere group pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "LE 1000"
+    },
+    {
+     "field": "price",
+     "value": 79.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "USD 79.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2016-01-16",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "post text gives 16 Jan 2016; page metadata says 2017; film was 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store (US) and Disney Store UK",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "post says set also released at DS UK"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01",
+     "source_url": "https://chipandco.com/live-action-beauty-beast-merchandise-disney-store-257741/",
+     "method": "search_snippet",
+     "note": "Chip & Co roundup dated 18 Jan 2017 shows the three-pin set among new DS merchandise"
+    }
+   ]
+  },
+  {
+   "set_key": "dsuk/2017/aladdin-25th-anniversary-le-500",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Aladdin 25th Anniversary Pin - Disney Store UK",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-08-29",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "coming to DS UK 29 Aug 2017"
+    },
+    {
+     "field": "price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP 9.00"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "pounds"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store website (Europe)",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "Europe-exclusive"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/d23-expo-disney-store-marvel-le-500-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Store Marvel Pin Set - D23 Expo 2017",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-store-marvel-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-store-marvel-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "four-pin set"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack: four pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-store-marvel-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "four pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-store-marvel-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-store-marvel-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "price",
+     "value": 49.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-store-marvel-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "USD 49.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-store-marvel-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-store-marvel-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "sold at D23 Expo 14 Jul 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store at D23 Expo 2017",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-store-marvel-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "Disney Store product at D23 Expo"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-february-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH February 2017 pins",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-04",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "first release day Sat 4 Feb 2017; second 24 Feb"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-february-2017-disney-couples",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH Disney Couples (Feb 2017)",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "four-pin Disney Couples set"
+    },
+    {
+     "field": "format",
+     "value": "four separate couple pins",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "each pin priced and numbered individually"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "each LE 300"
+    },
+    {
+     "field": "price",
+     "value": 21.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 21.95 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-04",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "4 Feb 2017"
+    }
+   ],
+   "parent_set_key": "dsus/2017/studio-store-hollywood-february-2017"
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-february-2017-oscar-winners",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH Oscar Winner series (Feb 2017)",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "five-pin Oscar Winner series"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300 each"
+    },
+    {
+     "field": "price",
+     "value": 21.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 21.95 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02-24",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "online 24 Feb 2017"
+    }
+   ],
+   "parent_set_key": "dsus/2017/studio-store-hollywood-february-2017"
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-april-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH April 2017 pins",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-04-08",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "release days Sat 8 Apr and Sat 29 Apr 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-april-2017-mice",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH Disney Mice (Apr 2017)",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "summary says four Mice pins, LE 300, USD 18.95 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 18.95 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ],
+   "parent_set_key": "dsus/2017/studio-store-hollywood-april-2017"
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-april-2017-villains-stained-glass",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH Villains Stained Glass (Apr 2017)",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "six pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 200 each"
+    },
+    {
+     "field": "price",
+     "value": 21.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 21.95 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ],
+   "parent_set_key": "dsus/2017/studio-store-hollywood-april-2017"
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-may-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH May 2017 pins",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "most pins LE 300"
+    },
+    {
+     "field": "format",
+     "value": "separate pins in cutie/card and emblem/stained glass lines",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "about eight individually priced pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-june-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH June 2017 pins",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2017-pins/",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2017-pins/",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06-16",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2017-pins/",
+     "method": "search_snippet",
+     "note": "release days 16 and 30 Jun 2017"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2017-pins/",
+     "method": "search_snippet",
+     "note": "each listed pin LE 300"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-july-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH July 2017 pins",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "Disney Magic and Bambi 75th pieces LE 300"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-july-2017-disney-magic",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH Disney Magic (Jul 2017)",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 16.95 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    }
+   ],
+   "parent_set_key": "dsus/2017/studio-store-hollywood-july-2017"
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-july-2017-bambi-75th",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH Bambi 75th (Jul 2017)",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 18.95 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ],
+   "parent_set_key": "dsus/2017/studio-store-hollywood-july-2017"
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-august-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH August 2017 pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-08-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "release days 4 and 19 Aug 2017"
+    },
+    {
+     "field": "price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "every piece USD 18.95"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "each LE 300"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-august-2017-postcard",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH Postcard series (Aug 2017)",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "USD 18.95 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "LE 300"
+    }
+   ],
+   "parent_set_key": "dsus/2017/studio-store-hollywood-august-2017"
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-september-2017-surprise",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH September 2017 Surprise Release",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-september-2017-surprise-release",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-september-2017-surprise-release",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-28",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-september-2017-surprise-release",
+     "method": "search_snippet",
+     "note": "surprise online release 28 Sep 2017"
+    },
+    {
+     "field": "format",
+     "value": "bookmark, Walk in the Park and Mighty Tiny pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-september-2017-surprise-release",
+     "method": "search_snippet",
+     "note": "three pin lines; sold out within an hour"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-alphabet-series-7",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH Alphabet Pin Series #7",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-alphabet-pin-series-7",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-alphabet-pin-series-7",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "sub_series",
+     "value": "DSSH Alphabet Pin Series",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-alphabet-pin-series-7",
+     "method": "search_snippet",
+     "note": "seventh and final set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-alphabet-pin-series-7",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-alphabet-pin-series-7",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "price",
+     "value": 49.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-alphabet-pin-series-7",
+     "method": "search_snippet",
+     "note": "USD 49.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-alphabet-pin-series-7",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-alphabet-pin-series-7",
+     "method": "search_snippet",
+     "note": "3 Oct 2017"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-alphabet-pin-series-7",
+     "method": "search_snippet",
+     "note": "set covering letters X, Y and Z"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-hocus-pocus-marquee",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hocus Pocus Marquee Pin (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/hocus-pocus-marquee-pin",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/hocus-pocus-marquee-pin",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/hocus-pocus-marquee-pin",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/hocus-pocus-marquee-pin",
+     "method": "search_snippet",
+     "note": "surprise release 6 Oct 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-coco-skull-surprise",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Surprise Coco Skull Pin (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-coco-skull-pin-dssh",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-coco-skull-pin-dssh",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-coco-skull-pin-dssh",
+     "method": "search_snippet",
+     "note": "22 Nov 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-aladdin-25th",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Aladdin 25th Anniversary Surprise Pin Release (DSSH)",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-12-04",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "post says 4 Dec 2017"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-21",
+     "source_url": "https://disneypinsblog.com/tag/aladdin-25th-anniversary-pins/",
+     "method": "search_snippet",
+     "note": "tag archive dates the same post 21 Nov 2017"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "pins LE 300 except logo LE 200"
+    },
+    {
+     "field": "price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "USD 18.95 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "DSSH Villain Pin Trading Event",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-08",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "Sun 8 Oct 2017, 1-5pm, Roosevelt Hotel"
+    },
+    {
+     "field": "format",
+     "value": "ticketed event release: sets, marquee and jumbo",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "reservations opened 11 Sep 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-2",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Dark Tales Set #2",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "four-pin set"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack: four pins",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "four pin set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "price",
+     "value": 88.95,
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "USD 88.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ],
+   "parent_set_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event"
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-3",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Dark Tales Set #3",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "descriptive name from post"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "four-pin set"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack: four pins",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "four pin set"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "price",
+     "value": 88.95,
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "USD 88.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ],
+   "parent_set_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event"
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-03-20",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trader Delight - 2017-03-20 (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "post subject"
+    },
+    {
+     "field": "format",
+     "value": "Pin Trader Delight rotation: separate LE pins, one per sundae",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "each LE pin sold with an ice cream dessert"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "three sundae pins named"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "DSSH sundae counter"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "PTD pins are LE"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-06-17",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trader Delight - 2017-06-17 (DSSH)",
+     "source_url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+     "method": "search_snippet",
+     "note": "post subject"
+    },
+    {
+     "field": "format",
+     "value": "Pin Trader Delight rotation: separate LE pins, one per sundae",
+     "source_url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+     "method": "search_snippet",
+     "note": "each LE pin sold with an ice cream dessert"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+     "method": "search_snippet",
+     "note": "three sundae pins named"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06-17",
+     "source_url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+     "method": "search_snippet",
+     "note": "post date; flip day may differ"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+     "method": "search_snippet",
+     "note": "DSSH sundae counter"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+     "method": "search_snippet",
+     "note": "PTD pins are LE"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-02",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trader Delight - 2017-07-02 (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+     "method": "search_snippet",
+     "note": "post subject"
+    },
+    {
+     "field": "format",
+     "value": "Pin Trader Delight rotation: separate LE pins, one per sundae",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+     "method": "search_snippet",
+     "note": "each LE pin sold with an ice cream dessert"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+     "method": "search_snippet",
+     "note": "three sundae pins named"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+     "method": "search_snippet",
+     "note": "DSSH sundae counter"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+     "method": "search_snippet",
+     "note": "PTD pins are LE"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-11",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trader Delight - 2017-07-11 (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+     "method": "search_snippet",
+     "note": "post subject"
+    },
+    {
+     "field": "format",
+     "value": "Pin Trader Delight rotation: separate LE pins, one per sundae",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+     "method": "search_snippet",
+     "note": "each LE pin sold with an ice cream dessert"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+     "method": "search_snippet",
+     "note": "three sundae pins named"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+     "method": "search_snippet",
+     "note": "DSSH sundae counter"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+     "method": "search_snippet",
+     "note": "PTD pins are LE"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-23",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trader Delight - 2017-07-23 (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+     "method": "search_snippet",
+     "note": "post subject"
+    },
+    {
+     "field": "format",
+     "value": "Pin Trader Delight rotation: separate LE pins, one per sundae",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+     "method": "search_snippet",
+     "note": "each LE pin sold with an ice cream dessert"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+     "method": "search_snippet",
+     "note": "three sundae pins named"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+     "method": "search_snippet",
+     "note": "DSSH sundae counter"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+     "method": "search_snippet",
+     "note": "PTD pins are LE"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-11-27",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trader Delight - 2017-11-27 (DSSH)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+     "method": "search_snippet",
+     "note": "post subject"
+    },
+    {
+     "field": "format",
+     "value": "Pin Trader Delight rotation: separate LE pins, one per sundae",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+     "method": "search_snippet",
+     "note": "each LE pin sold with an ice cream dessert"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+     "method": "search_snippet",
+     "note": "three sundae pins named"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood (Pin Trader Delight)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+     "method": "search_snippet",
+     "note": "DSSH sundae counter"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+     "method": "search_snippet",
+     "note": "PTD pins are LE"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsus/2017/storybook-classics-07-the-ugly-duckling/the-ugly-duckling",
+   "set_key": "dsus/2017/storybook-classics-07-the-ugly-duckling",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Ugly Duckling Pin",
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "pin title"
+    },
+    {
+     "field": "set_position",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "described as pin #7 of the series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "LE 1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-02",
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "release timing per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "franchise",
+     "value": "The Ugly Duckling",
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "subject named in title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/tag/disney-store-pin/",
+     "method": "search_snippet",
+     "note": "single hinged storybook pin"
+    },
+    {
+     "field": "set_position",
+     "value": 7,
+     "source_url": "https://carstairsconsiders.blogspot.com/2017/03/pin-review-ugly-duckling-storybook.html",
+     "method": "search_snippet",
+     "note": "fan review titles it Storybook Classics Collection #7, 2017 Disney Store release"
+    },
+    {
+     "field": "visual_description",
+     "value": "hinged storybook pin: happy ending on the cover, sad duckling scene inside",
+     "source_url": "https://carstairsconsiders.blogspot.com/2017/03/pin-review-ugly-duckling-storybook.html",
+     "method": "search_snippet",
+     "note": "paraphrase of fan review describing two scenes"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/storybook-classics-10-johnny-appleseed/johnny-appleseed",
+   "set_key": "dsus/2017/storybook-classics-10-johnny-appleseed",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Johnny Appleseed Pin",
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "pin title"
+    },
+    {
+     "field": "set_position",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "described as pin #10 of the series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "LE 1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05-15",
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "release timing per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "franchise",
+     "value": "Johnny Appleseed",
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "subject named in title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "single hinged storybook pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/johnny-appleseed-pin/",
+     "method": "search_snippet",
+     "note": "hinged pin that opens like a storybook"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05-16",
+     "source_url": "https://diskingdom.com/2017/05/16/johnny-appleseed-pin-sketchbook-ornament-now/",
+     "method": "search_snippet",
+     "note": "DisKingdom post says pin out now online and in Europe"
+    },
+    {
+     "field": "region",
+     "value": "US and Europe",
+     "source_url": "https://diskingdom.com/2017/05/16/johnny-appleseed-pin-sketchbook-ornament-now/",
+     "method": "search_snippet",
+     "note": "available at DisneyStore.com and in Europe per post"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/storybook-classics-12-casey-at-the-bat/casey-at-the-bat",
+   "set_key": "dsus/2017/storybook-classics-12-casey-at-the-bat",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Casey at the Bat Pin",
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "pin title"
+    },
+    {
+     "field": "set_position",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "described as pin #12 of the series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1100,
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "LE 1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07",
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "release timing per snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "2017 release"
+    },
+    {
+     "field": "original_price",
+     "value": 14.95,
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "USD 14.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "franchise",
+     "value": "Casey at the Bat",
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "subject named in title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "single hinged storybook pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/casey-bat-pin/",
+     "method": "search_snippet",
+     "note": "hinged pin-on-pin with golden finish"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2017/hercules-le-400/hercules-le-400",
+   "set_key": "dsuk/2017/hercules-le-400",
+   "claims": [
+    {
+     "field": "visual_features",
+     "value": [
+      "circular gold frame"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/hercules-pin-disney-store-uk",
+     "method": "search_snippet",
+     "note": "pin set in a circular gold frame"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/beauty-and-the-beast-live-action-le-1000-set/belle",
+   "set_key": "dsus/2017/beauty-and-the-beast-live-action-le-1000-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "Belle pin, golden finish"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "gold"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "golden finish"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "set LE 1000"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/beauty-and-the-beast-live-action-le-1000-set/beast",
+   "set_key": "dsus/2017/beauty-and-the-beast-live-action-le-1000-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Beast"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "Beast pin, golden finish"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "gold"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "golden finish"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "set LE 1000"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/beauty-and-the-beast-live-action-le-1000-set/lumiere-and-friends",
+   "set_key": "dsus/2017/beauty-and-the-beast-live-action-le-1000-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lumiere",
+      "Cogsworth",
+      "Mrs. Potts",
+      "Chip"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "Lumiere pin also shows Cogsworth, Mrs Potts and Chip"
+    },
+    {
+     "field": "main_character",
+     "value": "Lumiere",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "named as the Lumiere pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "one pin showing the four objects"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "pewter"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "pewter finish"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/beauty-beast-pin-set",
+     "method": "search_snippet",
+     "note": "set LE 1000"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsuk/2017/aladdin-25th-anniversary-le-500/aladdin-25th-anniversary-le-500",
+   "set_key": "dsuk/2017/aladdin-25th-anniversary-le-500",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Aladdin 25th Anniversary Pin",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "LE 500, exclusive to Europe"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.shopdisney.co.uk/aladdin-25th-anniversary-limited-edition-pin-465055453261.html",
+     "method": "search_snippet",
+     "note": "official UK listing says limited to 500 in Europe"
+    },
+    {
+     "field": "original_price",
+     "value": 9.0,
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "GBP 9.00 at launch"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "pounds"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-08-29",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "29 Aug 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "2017"
+    },
+    {
+     "field": "region",
+     "value": "Europe",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "Europe exclusive"
+    },
+    {
+     "field": "franchise",
+     "value": "Aladdin",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-disney-store-uk/",
+     "method": "search_snippet",
+     "note": "Aladdin 25th anniversary"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-february-2017-disney-couples/ellie-and-carl",
+   "set_key": "dsus/2017/studio-store-hollywood-february-2017-disney-couples",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ellie",
+      "Carl"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "couple named in four-pin set listing"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 21.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 21.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-february-2017-disney-couples/ariel-and-eric",
+   "set_key": "dsus/2017/studio-store-hollywood-february-2017-disney-couples",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel",
+      "Eric"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "couple named in four-pin set listing"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 21.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 21.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-february-2017-disney-couples/jack-and-sally",
+   "set_key": "dsus/2017/studio-store-hollywood-february-2017-disney-couples",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington",
+      "Sally"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "couple named in four-pin set listing"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 21.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 21.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-february-2017-disney-couples/aladdin-and-jasmine",
+   "set_key": "dsus/2017/studio-store-hollywood-february-2017-disney-couples",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin",
+      "Jasmine"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "couple named in four-pin set listing"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 21.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 21.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-february-2017-pins/",
+     "method": "search_snippet",
+     "note": "2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-april-2017-villains-stained-glass/king-candy",
+   "set_key": "dsus/2017/studio-store-hollywood-april-2017-villains-stained-glass",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "King Candy"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "named among the six stained glass villain pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "original_price",
+     "value": 21.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 21.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "stained glass"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "Villains Stained Glass series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-april-2017-villains-stained-glass/ursula",
+   "set_key": "dsus/2017/studio-store-hollywood-april-2017-villains-stained-glass",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ursula"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "named among the six stained glass villain pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "original_price",
+     "value": 21.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 21.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "stained glass"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "Villains Stained Glass series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-april-2017-villains-stained-glass/jafar",
+   "set_key": "dsus/2017/studio-store-hollywood-april-2017-villains-stained-glass",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jafar"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "named among the six stained glass villain pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "original_price",
+     "value": 21.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 21.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "stained glass"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "Villains Stained Glass series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-april-2017-villains-stained-glass/lady-tremaine",
+   "set_key": "dsus/2017/studio-store-hollywood-april-2017-villains-stained-glass",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lady Tremaine"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "named among the six stained glass villain pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    },
+    {
+     "field": "original_price",
+     "value": 21.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 21.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "stained glass"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-april-2017-pins/",
+     "method": "search_snippet",
+     "note": "Villains Stained Glass series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-may-2017/mother-gothel",
+   "set_key": "dsus/2017/studio-store-hollywood-may-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mother Gothel"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "listed among USD 16.95 cutie/card pins"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-may-2017/lady-tremaine",
+   "set_key": "dsus/2017/studio-store-hollywood-may-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lady Tremaine"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "listed among USD 16.95 cutie/card pins"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-may-2017/captain-hook",
+   "set_key": "dsus/2017/studio-store-hollywood-may-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Captain Hook"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "listed among USD 16.95 cutie/card pins"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-may-2017/claude-frollo",
+   "set_key": "dsus/2017/studio-store-hollywood-may-2017",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Claude Frollo"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "listed among USD 16.95 cutie/card pins"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-may-2017/black-pearl-stained-glass",
+   "set_key": "dsus/2017/studio-store-hollywood-may-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Black Pearl Stained Glass",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "Pirates of the Caribbean pin"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "stained glass"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "stained glass"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-may-2017/jack-sparrow-emblem",
+   "set_key": "dsus/2017/studio-store-hollywood-may-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack Sparrow Emblem",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "Pirates of the Caribbean pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Sparrow"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "emblem pin"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-may-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-june-2017/cars-3-marquee",
+   "set_key": "dsus/2017/studio-store-hollywood-june-2017",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cars 3 Marquee",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2017-pins/",
+     "method": "search_snippet",
+     "note": "marquee pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Cars 3",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2017-pins/",
+     "method": "search_snippet",
+     "note": "Cars 3"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-june-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-july-2017-disney-magic/genie",
+   "set_key": "dsus/2017/studio-store-hollywood-july-2017-disney-magic",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Genie"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "listed as a Disney Magic pin, USD 16.95"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-july-2017-disney-magic/stitch",
+   "set_key": "dsus/2017/studio-store-hollywood-july-2017-disney-magic",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "listed as a Disney Magic pin, USD 16.95"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-july-2017-disney-magic/dr-facilier",
+   "set_key": "dsus/2017/studio-store-hollywood-july-2017-disney-magic",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dr. Facilier"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "listed as a Disney Magic pin, USD 16.95"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-july-2017-disney-magic/white-rabbit",
+   "set_key": "dsus/2017/studio-store-hollywood-july-2017-disney-magic",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "White Rabbit"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "listed as a Disney Magic pin, USD 16.95"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 16.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 16.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-july-2017-bambi-75th/bambi",
+   "set_key": "dsus/2017/studio-store-hollywood-july-2017-bambi-75th",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Bambi"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "Bambi 75th pin, USD 18.95 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-july-2017-bambi-75th/thumper",
+   "set_key": "dsus/2017/studio-store-hollywood-july-2017-bambi-75th",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Thumper"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "Bambi 75th pin, USD 18.95 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-july-2017-bambi-75th/flower",
+   "set_key": "dsus/2017/studio-store-hollywood-july-2017-bambi-75th",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Flower"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "Bambi 75th pin, USD 18.95 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-july-2017-bambi-75th/miss-bunny",
+   "set_key": "dsus/2017/studio-store-hollywood-july-2017-bambi-75th",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Miss Bunny"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "Bambi 75th pin, USD 18.95 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-july-2017-bambi-75th/bambi-75th-anniversary",
+   "set_key": "dsus/2017/studio-store-hollywood-july-2017-bambi-75th",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bambi 75th Anniversary pin",
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "separate anniversary pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/disney-studio-store-hollywood-july-2017-pins/",
+     "method": "search_snippet",
+     "note": "LE 200"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-august-2017-postcard/kauai",
+   "set_key": "dsus/2017/studio-store-hollywood-august-2017-postcard",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kauai postcard",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "named postcard design"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-august-2017-postcard/paradise-falls",
+   "set_key": "dsus/2017/studio-store-hollywood-august-2017-postcard",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Paradise Falls postcard",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "named postcard design"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-august-2017-postcard/zootopia",
+   "set_key": "dsus/2017/studio-store-hollywood-august-2017-postcard",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zootopia postcard",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "named postcard design"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-august-2017-postcard/san-fransokyo",
+   "set_key": "dsus/2017/studio-store-hollywood-august-2017-postcard",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "San Fransokyo postcard",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "named postcard design"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-august-2017-pins",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-alphabet-series-7/x",
+   "set_key": "dsus/2017/studio-store-hollywood-alphabet-series-7",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Letter X",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-alphabet-pin-series-7",
+     "method": "search_snippet",
+     "note": "letter covered by the final set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-alphabet-series-7/y",
+   "set_key": "dsus/2017/studio-store-hollywood-alphabet-series-7",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Letter Y",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-alphabet-pin-series-7",
+     "method": "search_snippet",
+     "note": "letter covered by the final set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-alphabet-series-7/z",
+   "set_key": "dsus/2017/studio-store-hollywood-alphabet-series-7",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Letter Z",
+     "source_url": "https://disneypinsblog.com/blogs/news/dssh-alphabet-pin-series-7",
+     "method": "search_snippet",
+     "note": "letter covered by the final set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-hocus-pocus-marquee/hocus-pocus-marquee",
+   "set_key": "dsus/2017/studio-store-hollywood-hocus-pocus-marquee",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hocus Pocus Marquee",
+     "source_url": "https://disneypinsblog.com/blogs/news/hocus-pocus-marquee-pin",
+     "method": "search_snippet",
+     "note": "marquee pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/hocus-pocus-marquee-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/hocus-pocus-marquee-pin",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/hocus-pocus-marquee-pin",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/hocus-pocus-marquee-pin",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/hocus-pocus-marquee-pin",
+     "method": "search_snippet",
+     "note": "6 Oct 2017"
+    },
+    {
+     "field": "franchise",
+     "value": "Hocus Pocus",
+     "source_url": "https://disneypinsblog.com/blogs/news/hocus-pocus-marquee-pin",
+     "method": "search_snippet",
+     "note": "Hocus Pocus"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-coco-skull-surprise/coco-skull",
+   "set_key": "dsus/2017/studio-store-hollywood-coco-skull-surprise",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Coco skull pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-coco-skull-pin-dssh",
+     "method": "search_snippet",
+     "note": "surprise skull pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-coco-skull-pin-dssh",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-coco-skull-pin-dssh",
+     "method": "search_snippet",
+     "note": "LE 150"
+    },
+    {
+     "field": "original_price",
+     "value": 24.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-coco-skull-pin-dssh",
+     "method": "search_snippet",
+     "note": "USD 24.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-coco-skull-pin-dssh",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-coco-skull-pin-dssh",
+     "method": "search_snippet",
+     "note": "22 Nov 2017; one per person per day"
+    },
+    {
+     "field": "franchise",
+     "value": "Coco",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-coco-skull-pin-dssh",
+     "method": "search_snippet",
+     "note": "Coco"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-aladdin-25th/logo",
+   "set_key": "dsus/2017/studio-store-hollywood-aladdin-25th",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Aladdin 25th Anniversary logo pin",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "logo pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 200,
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "logo pin LE 200"
+    },
+    {
+     "field": "original_price",
+     "value": 18.95,
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "USD 18.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-surprise-pin-release/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-2/hades",
+   "set_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hades"
+     ],
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "named in Dark Tales Set #2 listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-2/yzma",
+   "set_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Yzma"
+     ],
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "named in Dark Tales Set #2 listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-2/queen-of-hearts",
+   "set_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Queen of Hearts"
+     ],
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "named in Dark Tales Set #2 listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-2/ursula",
+   "set_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-2",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ursula"
+     ],
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "named in Dark Tales Set #2 listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-3/evil-queen",
+   "set_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-3",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen"
+     ],
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "named in Dark Tales Set #3 listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-3/chernabog",
+   "set_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-3",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chernabog"
+     ],
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "named in Dark Tales Set #3 listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-3/scar",
+   "set_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-3",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Scar"
+     ],
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "named in Dark Tales Set #3 listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-3/jafar",
+   "set_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-3",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jafar"
+     ],
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "named in Dark Tales Set #3 listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event/marquee",
+   "set_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Villain event marquee (coloured)",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "coloured version of the die-cast marquee"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "original_price",
+     "value": 21.95,
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "USD 21.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event/premiere-collection-jumbo",
+   "set_key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Premiere Collection jumbo",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "jumbo pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen",
+      "Dr. Facilier",
+      "Hades",
+      "Ursula",
+      "Maleficent",
+      "Cruella De Vil",
+      "Jafar"
+     ],
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "jumbo featuring seven villains"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "a single jumbo featuring the villains"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "LE 150"
+    },
+    {
+     "field": "original_price",
+     "value": 149.95,
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "USD 149.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/villain-pin-trading-event/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-03-20/dug",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-03-20",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dug"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "LE 400"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-03-20/deacon-owl",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-03-20",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Deacon Owl"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "LE 300"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-03-20/jenny",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-03-20",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jenny"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-20",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-march-20-2017",
+     "method": "search_snippet",
+     "note": "LE 300"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-06-17/andrina",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-06-17",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Andrina"
+     ],
+     "source_url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06-17",
+     "source_url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+     "method": "search_snippet",
+     "note": "post date; flip day may differ"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-06-17/judy-hopps",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-06-17",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Judy Hopps"
+     ],
+     "source_url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06-17",
+     "source_url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+     "method": "search_snippet",
+     "note": "post date; flip day may differ"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-06-17/tarzan",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-06-17",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tarzan"
+     ],
+     "source_url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-06-17",
+     "source_url": "http://diskingdom.com/2017/06/17/latest-pin-trader-delight-pins-revealed-3/",
+     "method": "search_snippet",
+     "note": "post date; flip day may differ"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-02/rainbow-unicorn",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-02",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rainbow Unicorn"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-02/gideon",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-02",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Gideon"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-02/horace",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-02",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Horace"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-2-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-11/birds",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-11",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Birds (Cinderella)"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-11/genie",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-11",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Genie"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-11/rowlf",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-11",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rowlf"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-11-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-23/squishy",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-23",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Squishy"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-23/zarina",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-23",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Zarina"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-23/phoebus",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-23",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Phoebus"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-july-23-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-11-27/white-rabbit",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-11-27",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "White Rabbit"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-11-27/tinker-bell",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-11-27",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-11-27/maleficent",
+   "set_key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-11-27",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+     "method": "search_snippet",
+     "note": "named sundae pin in this flip"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trader-delight-november-27-2017",
+     "method": "search_snippet",
+     "note": "available from this date"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsus/2017/storybook-classics-07-the-ugly-duckling/the-ugly-duckling",
+   "field": "characters",
+   "searched": "2-3 queries",
+   "note": "characters on the pin not listed in snippets"
+  },
+  {
+   "key": "dsus/2017/storybook-classics-10-johnny-appleseed/johnny-appleseed",
+   "field": "characters",
+   "searched": "2-3 queries",
+   "note": "characters on the pin not listed in snippets"
+  },
+  {
+   "key": "dsus/2017/storybook-classics-12-casey-at-the-bat/casey-at-the-bat",
+   "field": "characters",
+   "searched": "2-3 queries",
+   "note": "characters on the pin not listed in snippets"
+  },
+  {
+   "key": "dsus/2017/storybook-classics",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "released: gap #7/#10/#12 resolved - Ugly Duckling (#7), Johnny Appleseed (#10), Casey at the Bat (#12) per DPB posts"
+  },
+  {
+   "key": "dsus/2017/storybook-classics-07-the-ugly-duckling/the-ugly-duckling",
+   "field": "release_date",
+   "searched": "3 queries",
+   "note": "only Feb 2017 month in DPB tag summary; exact day not found; reseller listing seen but not used"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-08",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "Week 8 still not found: DPB main post links a Week 8 page but no snippet gives its films/pins"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold kept: one-pin-per-film split for all weekly 3-packs still not confirmed by any source; B022 holds unchanged"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-10-oct",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: Oct 2017 box still unresolved; Hello Subscription and a reseller title say Alice theme, which DPB places in Sep box"
+  },
+  {
+   "key": "dsus/2017/coco-le-600-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: DPB still names only Miguel, Imelda, Ernesto, Dante, Pepita 'and more'; other 3 pins and pin split unconfirmed"
+  },
+  {
+   "key": "lic/2017/artland-coco",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: licensed ArtLand Coco Disney Pixar pin series (DPB post) for licensed cells; not researched here"
+  },
+  {
+   "key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: pins 2/3 still unidentified; a reseller title names a 'Skywalker' pin & litho LE 2000 - not used"
+  },
+  {
+   "key": "dsus/2017/force-friday-ii",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no pin names, prices or edition sizes in snippet; WDWNT parks Force Friday pins are a parks-cell lead"
+  },
+  {
+   "key": "dsus/2017/beauty-and-the-beast-live-action-le-1000-set",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "released: B022 date-conflict lead keyed as 2017 - Chip & Co (18 Jan 2017) dates the set; DPB 2016 text kept as a conflicting claim"
+  },
+  {
+   "key": "dsus/2017/beauty-and-the-beast-live-action-le-1000-set/belle",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: Belle and Beast as separate pins rests on a summary saying 'the Belle and Beast pins'; confirm pin structure"
+  },
+  {
+   "key": "dsus/2017/beauty-and-the-beast-live-action-le-1000-set/beast",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: Belle and Beast as separate pins rests on a summary saying 'the Belle and Beast pins'; confirm pin structure"
+  },
+  {
+   "key": "dsus/2017/beauty-and-the-beast-live-action-le-1000-set",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "DS UK GBP price/date for this set not found"
+  },
+  {
+   "key": "dsuk/2017/aladdin-25th-anniversary-le-500/aladdin-25th-anniversary-le-500",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "official UK listing now shows GBP 4.50 (out of stock); likely later reduction, not recorded as original price"
+  },
+  {
+   "key": "dsuk/2017/aladdin-25th-anniversary-le-500/aladdin-25th-anniversary-le-500",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "listing URL carries 465055453261 but snippet does not state it is the product code"
+  },
+  {
+   "key": "dsuk/2017/aladdin-25th-anniversary-le-500/aladdin-25th-anniversary-le-500",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters on pin not described"
+  },
+  {
+   "key": "dsus/2017/d23-expo-disney-store-marvel-le-500-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "4 pins not named in snippet; Disney Designer Collection D23 2017 set is a further DS lead not researched"
+  },
+  {
+   "key": "dsus/2017/thor-ragnarok",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no Disney Store Thor Ragnarok pin found; DPB shows a Disney Parks LE 2500 pin (2 Nov 2017) - parks-cell lead"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-february-2017-disney-couples/ellie-and-carl",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: one pin per couple inferred from 4 couples in a 4-pin set listing; confirm pin structure"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-february-2017-disney-couples/ariel-and-eric",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: one pin per couple inferred from 4 couples in a 4-pin set listing; confirm pin structure"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-february-2017-disney-couples/jack-and-sally",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: one pin per couple inferred from 4 couples in a 4-pin set listing; confirm pin structure"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-february-2017-disney-couples/aladdin-and-jasmine",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: one pin per couple inferred from 4 couples in a 4-pin set listing; confirm pin structure"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-february-2017-oscar-winners",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "five Oscar Winner pins not named in snippet"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-january-2017",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no January 2017 DSSH post surfaced"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-april-2017-mice",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure - one summary says 4 pins, another lists Suzy & Perla, Basil, Dawson, Olivia & Hiram, Bianca, Bernard & Jake, Church Mice"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-april-2017-villains-stained-glass",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "2 of 6 stained glass villains not named; which of the two April dates each set used not stated"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-may-2017/mother-gothel",
+   "field": "sub_series",
+   "searched": "1 query",
+   "note": "whether this is a 'cutie' or 'card' pin not stated; list numbering garbled"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-may-2017/lady-tremaine",
+   "field": "sub_series",
+   "searched": "1 query",
+   "note": "whether this is a 'cutie' or 'card' pin not stated; list numbering garbled"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-may-2017/captain-hook",
+   "field": "sub_series",
+   "searched": "1 query",
+   "note": "whether this is a 'cutie' or 'card' pin not stated; list numbering garbled"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-may-2017/claude-frollo",
+   "field": "sub_series",
+   "searched": "1 query",
+   "note": "whether this is a 'cutie' or 'card' pin not stated; list numbering garbled"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-may-2017",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "May post gives no release dates; another summary says May also had Guardians of the Galaxy Vol. 2 pins (unnamed)"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-june-2017",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "June patriotic character pins (USD 16.95, LE 300) not named in snippet"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-july-2017-disney-magic",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "total pins in Disney Magic series not stated"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-july-2017",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "July DSSH release days not stated in snippet"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-august-2017",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "August Lion King pins not named; which day each group released not stated"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-september-2017-surprise",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "individual bookmark / Walk in the Park / Mighty Tiny designs not named"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-alphabet-series-7/x",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: letter named only in the set listing of an LE 300 set, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-alphabet-series-7/y",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: letter named only in the set listing of an LE 300 set, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-alphabet-series-7/z",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: letter named only in the set listing of an LE 300 set, no per-pin description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-alphabet-series-7",
+   "field": "expected_pin_count",
+   "searched": "1 query",
+   "note": "pin count not stated; earlier sets had 4 pins incl. a combined-letter pin"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-alphabet-series-6",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "Alphabet #6 still not found"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-coco-skull-surprise",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "a regular Coco pin released alongside is not described"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-aladdin-25th",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure - series lists Aladdin, Jasmine, Genie, Abu, Jafar, Rajah but not pin by pin"
+  },
+  {
+   "key": "dsus/2017/aladdin-25th-three-wishes-box-set",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "3-pin box (red/blue Aladdin, gold Genie) LE 1000 seen only on reseller; DLR packet already keys a Three Wishes box"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-2/hades",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: character named only in the set listing of a 4-pin LE 300 set; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-2/yzma",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: character named only in the set listing of a 4-pin LE 300 set; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-2/queen-of-hearts",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: character named only in the set listing of a 4-pin LE 300 set; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-2/ursula",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: character named only in the set listing of a 4-pin LE 300 set; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-3/evil-queen",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: character named only in the set listing of a 4-pin LE 300 set; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-3/chernabog",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: character named only in the set listing of a 4-pin LE 300 set; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-3/scar",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: character named only in the set listing of a 4-pin LE 300 set; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-3/jafar",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: character named only in the set listing of a 4-pin LE 300 set; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-villain-pin-trading-event-dark-tales-set-1",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Dark Tales Set #1 not found in snippets"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-06-17",
+   "field": "edition_size",
+   "searched": "1-2 queries",
+   "note": "per-pin edition sizes and price not in snippet"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-02",
+   "field": "edition_size",
+   "searched": "1-2 queries",
+   "note": "per-pin edition sizes and price not in snippet"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-11",
+   "field": "edition_size",
+   "searched": "1-2 queries",
+   "note": "per-pin edition sizes and price not in snippet"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-23",
+   "field": "edition_size",
+   "searched": "1-2 queries",
+   "note": "per-pin edition sizes and price not in snippet"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-11-27",
+   "field": "edition_size",
+   "searched": "1-2 queries",
+   "note": "per-pin edition sizes and price not in snippet"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-11/genie",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "summary singles out Genie as the LE pin of this flip; edition type of Birds and Rowlf unclear"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "other 2017 PTD flips (Jan-Feb, Apr-May, Aug-Oct, Dec) not found"
+  },
+  {
+   "key": "dsuk/2017/treasure-planet-le-500/treasure-planet-le-500",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "still not described; a Jim Hawkins & Morph DS listing is a later, different pin"
+  },
+  {
+   "key": "dsuk/2017/snow-white-80th-anniversary-le-500/snow-white-80th-anniversary-le-500",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "still not described in snippets"
+  },
+  {
+   "key": "dsuk/2017/christmas",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no DS UK Christmas 2017 LE found; UP! New Year 2018 pin already keyed in packet 214"
+  },
+  {
+   "key": "dsus/2017/pin-trading-day",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no Disney Store chain pin trading day 2017 found; only the DSSH Villain event"
+  },
+  {
+   "key": "dsus/2017/moana",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "not searched (budget); Moana LE set is keyed under 2016"
+  },
+  {
+   "key": "dsus/2017/cars-3-le-750-set",
+   "field": "release_location",
+   "searched": "0 queries",
+   "note": "DS UK/EU Cars 3 release not searched (budget)"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-06-17/andrina",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: named only in the flip post list of three rotating pins, no per-pin edition or description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-06-17/judy-hopps",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: named only in the flip post list of three rotating pins, no per-pin edition or description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-06-17/tarzan",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: named only in the flip post list of three rotating pins, no per-pin edition or description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-02/rainbow-unicorn",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: named only in the flip post list of three rotating pins, no per-pin edition or description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-02/gideon",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: named only in the flip post list of three rotating pins, no per-pin edition or description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-02/horace",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: named only in the flip post list of three rotating pins, no per-pin edition or description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-11/birds",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: named only in the flip post list of three rotating pins, no per-pin edition or description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-11/genie",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: named only in the flip post list of three rotating pins, no per-pin edition or description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-11/rowlf",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: named only in the flip post list of three rotating pins, no per-pin edition or description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-23/squishy",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: named only in the flip post list of three rotating pins, no per-pin edition or description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-23/zarina",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: named only in the flip post list of three rotating pins, no per-pin edition or description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-07-23/phoebus",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: named only in the flip post list of three rotating pins, no per-pin edition or description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-11-27/white-rabbit",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: named only in the flip post list of three rotating pins, no per-pin edition or description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-11-27/tinker-bell",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: named only in the flip post list of three rotating pins, no per-pin edition or description; pending maintainer decision on full lists"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-11-27/maleficent",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: named only in the flip post list of three rotating pins, no per-pin edition or description; pending maintainer decision on full lists"
+  }
+ ],
+ "discovery_notes": "Cell B100, follow-up 1 of B022 (DS 2017). 30 standard searches, snippets only. Resolved Storybook Classics #7/#10/#12 and keyed live-action BatB set as 2017 (Chip & Co Jan 2017). New: DS UK Aladdin 25th LE 500, D23 DS Marvel set, many DSSH 2017 monthly, surprise, PTD and Villain event releases. Kept holds: 30th week split + Week 8, Coco 3 of 8, Last Jedi 2/3, Park Pack Oct. Resellers (yourwdwstore, others) seen, not used."
+}

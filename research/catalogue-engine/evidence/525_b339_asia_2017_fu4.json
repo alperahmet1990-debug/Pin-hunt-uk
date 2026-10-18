@@ -1,0 +1,63 @@
+{
+ "packet_id": "b339-asia-2017-fu4",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {"url": "https://disneypinforum.com/threads/gelatoni-pins.59200/page-2", "title": "Gelatoni Pins (page 2)", "publisher": "Disney Pin Forum", "published_date": "2018", "accessed_via": "search_snippet", "page_readable": false},
+  {"url": "https://www.laughingplace.com/w/news/2017/03/29/pin-trading-fun-day-comes-shanghai-disneyland/", "title": "Pin Trading Fun Day Comes to Shanghai Disneyland", "publisher": "Laughing Place", "published_date": "2017-03-29", "accessed_via": "search_snippet", "page_readable": false},
+  {"url": "https://www.mickeynews.com/sdrnews/exclusive-disney-trading-pins-debut-at-shanghai-disney-resort/", "title": "Exclusive Disney Trading Pins Debut at Shanghai Disney Resort", "publisher": "MickeyNews", "published_date": "2017-04", "accessed_via": "search_snippet", "page_readable": false},
+  {"url": "https://travel.watch.impress.co.jp/docs/news/1065167.html", "title": "東京ディズニーリゾート、「ディズニー七夕デイズ」に合わせたスペシャルグッズ・メニュー 6月15日から", "publisher": "Travel Watch (Impress)", "published_date": "2017-06", "accessed_via": "search_snippet", "page_readable": false},
+  {"url": "https://hkmsg.tumblr.com/page/5", "title": "Hong Kong Main Street Gazette 大街小報", "publisher": "Hong Kong Main Street Gazette", "published_date": "2017", "accessed_via": "search_snippet", "page_readable": false},
+  {"url": "https://disneypinsblog.com/blogs/news/tsum-tsum-hong-kong-disneyland-pins", "title": "Tsum Tsum Hong Kong Disneyland Pins", "publisher": "Disney Pins Blog", "published_date": "unknown", "accessed_via": "search_snippet", "page_readable": false}
+ ],
+ "sets": [
+  {"set_key": "shdr/2017/chinese-zodiac-hidden-mickey", "claims": [
+   {"field": "expected_pin_count", "value": 12, "source_url": "https://www.laughingplace.com/w/news/2017/03/29/pin-trading-fun-day-comes-shanghai-disneyland/", "method": "search_snippet", "note": "twelve new Hidden Mickey pins forming a Chinese Zodiac series; wording is from a search-engine summary blending this and the MickeyNews result"},
+   {"field": "release_date", "value": "2017-04-23", "source_url": "https://www.mickeynews.com/sdrnews/exclusive-disney-trading-pins-debut-at-shanghai-disney-resort/", "method": "search_snippet", "note": "debuted at first SHDR Pin Trading Fun Day, 23 Apr 2017, Carefree Corner (search-engine summary)"},
+   {"field": "format", "value": "Hidden Mickey series, cast member trading only", "source_url": "https://www.mickeynews.com/sdrnews/exclusive-disney-trading-pins-debut-at-shanghai-disney-resort/", "method": "search_snippet", "note": "only obtainable by trading with cast members, not sold at retail (search-engine summary)"}
+  ]},
+  {"set_key": "shdr/2017/pin-trading-fun-day-2017", "claims": [
+   {"field": "expected_pin_count", "value": 8, "source_url": "https://www.mickeynews.com/sdrnews/exclusive-disney-trading-pins-debut-at-shanghai-disney-resort/", "method": "search_snippet", "note": "corroboration: eight LE pins with first access at the 23 Apr 2017 event (search-engine summary); matches 229 member list"}
+  ]},
+  {"set_key": "tdr/2017/tanabata-2017", "claims": [
+   {"field": "release_date", "value": "2017-06-15", "source_url": "https://travel.watch.impress.co.jp/docs/news/1065167.html", "method": "search_snippet", "note": "special goods offered from 15 Jun 2017 (event 15 Jun-7 Jul); value from title plus search-engine summary"}
+  ]}
+ ],
+ "pins": [
+  {"pin_key": "shdr/2017/welcome-gelatoni/duffy-gelatoni-and-shelliemay", "set_key": "shdr/2017/welcome-gelatoni", "claims": [
+   {"field": "pin_name", "value": "Duffy, Gelatoni, and Shellie May - Welcome Gelatoni", "source_url": "https://disneypinforum.com/threads/gelatoni-pins.59200/page-2", "method": "search_snippet", "note": "forum member's checklist entry (SHDL), per search-engine summary"},
+   {"field": "characters", "value": ["Duffy", "Gelatoni", "ShellieMay"], "source_url": "https://disneypinforum.com/threads/gelatoni-pins.59200/page-2", "method": "search_snippet", "note": "three characters named in the list entry"},
+   {"field": "edition_type", "value": "limited edition", "source_url": "https://disneypinforum.com/threads/gelatoni-pins.59200/page-2", "method": "search_snippet", "note": "listed as LE"},
+   {"field": "edition_size", "value": 1000, "source_url": "https://disneypinforum.com/threads/gelatoni-pins.59200/page-2", "method": "search_snippet", "note": "LE 1000 per forum list; DPB says the first two Welcome Gelatoni pins are LE 1,000"},
+   {"field": "release_location", "value": "Shanghai Disney Resort", "source_url": "https://disneypinforum.com/threads/gelatoni-pins.59200/page-2", "method": "search_snippet", "note": "entry prefixed SHDL"}
+  ]}
+ ],
+ "not_found": [
+  {"key": "shdr/2017/welcome-gelatoni/duffy-gelatoni-and-shelliemay", "field": "pin_structure", "searched": "3 queries (EN/ZH) on Welcome Gelatoni pins", "note": "hold: forum name-list record only; may be the second LE 1,000 pin or the same pin as shdr/2017/welcome-gelatoni/duffy-and-gelatoni; confirm before sign-off"},
+  {"key": "shdr/2017/welcome-gelatoni/duffy-and-gelatoni", "field": "pin_structure", "searched": "3 queries", "note": "hold kept (437): DPB name 'Duffy Bear and Gelatoni' vs forum 'Duffy, Gelatoni, and Shellie May' unresolved; may be one pin"},
+  {"key": "shdr/2017/welcome-gelatoni", "field": "members", "searched": "3 queries", "note": "two OE pins still undescribed; forum mentions a Shanghai paint mystery pack of 4 Gelatonis (orange/pink/blue/light blue), undated, not tied to this Oct 2017 box; not recorded"},
+  {"key": "shdr/2017/chinese-zodiac-hidden-mickey", "field": "members", "searched": "2 queries", "note": "per-pin designs still unnamed; summaries name Remy/Tigger/Kaa and Hamm/Abu/Tiger without a traceable source URL; Garden mural list is not pin evidence; not recorded"},
+  {"key": "shdr/2017/pin-hunting-2017", "field": "original_price", "searched": "2 queries", "note": "all seven hunt pins already keyed (437/504); price still not in 2017 reports; kankanews re-checked, no new detail"},
+  {"key": "shdr/2017/pin-hunting-2017-event-pins", "field": "members", "searched": "2 queries", "note": "six Avenue M Arcade event LE pins and the mystery box still not described individually"},
+  {"key": "shdr/2017/first-anniversary-limited-release", "field": "members", "searched": "2 queries", "note": "23 Jun 2017 LR pair still undescribed; castle pin hold (504) kept; box set three and frame set split still unknown"},
+  {"key": "shdr/2017/first-anniversary-mystery", "field": "members", "searched": "1 query", "note": "holds kept (229/437) on Pluto, Goofy, Dumbo, Duffy; no per-design text found"},
+  {"key": "shdr/2017/summer-2017", "field": "members", "searched": "1 query", "note": "still only 8 minis plus a central jumbo, Aug 2017; LE status and designs not stated"},
+  {"key": "shdr/2017/pin-trading-fun-day-2017-mystery", "field": "members", "searched": "0 new", "note": "not re-found; contents still unknown"},
+  {"key": "hkdl/2017/oswald-birthday-2017", "field": "existence", "searched": "4 queries (EN/ZH)", "note": "lead only: one search summary said the 4 Nov 2017 Walt Disney birthday LE featured Oswald, but no URL carried it and a second query contradicted it; not recorded"},
+  {"key": "hkdl/2017/walt-disney-birthday-2017", "field": "existence", "searched": "2 queries", "note": "2017 design still unconfirmed (see Oswald lead); 2016 Gelatoni LE 500 HK$95 is a 2016 item"},
+  {"key": "hkdl/2017/lilo-and-stitch-15th-anniversary", "field": "existence", "searched": "2 queries", "note": "lead only: search-engine summary of HKMSG tumblr says a Lilo & Stitch 15th anniversary LE 300 pin sold at Town Square Photo, Jun 2017; no quoted page text or second source; not recorded"},
+  {"key": "hkdl/2017/pin-trading-night-2017", "field": "members", "searched": "1 query", "note": "Monsters Inc pins (4-5 Aug 2017) still unidentified; a 'Monsters Inc Pin Trading Night 2017 Magic Access Exclusive' name appears only on a reseller (BALELE); not recorded"},
+  {"key": "hkdl/oe/tsum-tsum-monsters-inc-and-pooh", "field": "release_date", "searched": "1 query", "note": "DPB post on two HKDL OE Tsum Tsum pins (Monsters Inc, Winnie the Pooh; sliders) is undated; not keyed to 2017"},
+  {"key": "hkdl/2017/pin-hunting-2017", "field": "members", "searched": "2 queries", "note": "per-land designs still unnamed"},
+  {"key": "hkdl/2017/christmas-2017", "field": "existence", "searched": "1 query", "note": "still forum-only (ornament and sledding jumbo, LE 500); no blog/official confirmation"},
+  {"key": "hkdl/2017/teacup-mystery", "field": "members", "searched": "0 new", "note": "holds kept (437); no new per-design evidence"},
+  {"key": "hkdl/2017/12th-anniversary", "field": "original_price", "searched": "0 new", "note": "HK$ price still not found"},
+  {"key": "tdr/2017/tanabata-2017/glow-stars", "field": "characters", "searched": "2 queries", "note": "still not tied: Mickey and Minnie facing each other design is described only in a Castel article written for 2018; 2017 sources describe the goods line, not the pin's characters"},
+  {"key": "tdr/2017/christmas-fantasy-2017/pin", "field": "visual_description", "searched": "1 query", "note": "design still not described; only price JPY 1,000 and ~6cm size (already in 437)"},
+  {"key": "tdr/2017/christmas-wishes-2017/mickey-and-minnie-tree", "field": "release_date", "searched": "1 query", "note": "hold kept (437): 1 Nov sale vs 8 Nov event start still unresolved"},
+  {"key": "tdr/2017/duffy-2017", "field": "existence", "searched": "0 new", "note": "not re-searched; earlier rounds found plush badges only"},
+  {"key": "tdr/2017/halloween-2017-abus-bazaar", "field": "members", "searched": "0 new", "note": "holds kept (437), pending maintainer decision on full lists"}
+ ],
+ "discovery_notes": "Round 5 for Asia 2017, 26 searches. Most leads exhausted; new: one forum-listed Welcome Gelatoni pin (held), zodiac set and Tanabata set corroboration. Excluded sources not used."
+}

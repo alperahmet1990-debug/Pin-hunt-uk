@@ -1,0 +1,629 @@
+{
+  "packet_id": "backfill-b350-dlr-le-2018-fu5",
+  "spec_version": 1,
+  "collected_at": "2026-10-18",
+  "collector": "agent:backfill-b350",
+  "sources": [
+    {
+      "url": "https://disneypinsblog.com/new-disney-pins-january-2018-week-4",
+      "title": "New Disney Pins January 2018 Week 4",
+      "publisher": "Disney Pins Blog",
+      "accessed_via": "search_snippet",
+      "page_readable": false,
+      "published_date": "2018-01"
+    },
+    {
+      "url": "https://disneypinsblog.com/new-disney-pins-march-2018-week-4",
+      "title": "New Disney Pins March 2018 Week 4",
+      "publisher": "Disney Pins Blog",
+      "accessed_via": "search_snippet",
+      "page_readable": false,
+      "published_date": "2018-03"
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+      "title": "New Disney Pins November 2018 Week 5",
+      "publisher": "Disney Pins Blog",
+      "accessed_via": "search_snippet",
+      "page_readable": false,
+      "published_date": "2018-11"
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+      "title": "New Disney Pins April 2018 Week 3",
+      "publisher": "Disney Pins Blog",
+      "accessed_via": "search_snippet",
+      "page_readable": false,
+      "published_date": "2018-04"
+    },
+    {
+      "url": "https://mypincentral.com/pin/160244",
+      "title": "160244 (Once Upon A Time Pin of the Month Series 2018 - Hercules)",
+      "publisher": "MyPinCentral",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    }
+  ],
+  "sets": [
+    {
+      "set_key": "dlr/2018/bi-monthly-collection",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Under the Sea (Disneyland 2018 bi-monthly collection)",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+          "method": "search_snippet",
+          "note": "Nov wk5 lists 'Under the Sea - Sword in the Stone' as sixth pin of the 2018 bi-monthly collection at Disneyland"
+        },
+        {
+          "field": "set_name",
+          "value": "Under the Sea (Disneyland 2018 bi-monthly collection)",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-january-2018-week-4",
+          "method": "search_snippet",
+          "note": "Jan wk4 lists 'Under the Sea - Jiminy Cricket' as first pin of a new bi-monthly Disneyland collection for 2018"
+        },
+        {
+          "field": "format",
+          "value": "bi-monthly series of single pins",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-january-2018-week-4",
+          "method": "search_snippet",
+          "note": "new bi-monthly pin collection at Disneyland for 2018"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+          "method": "search_snippet",
+          "note": "sixth pin LE 2,000"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+          "method": "search_snippet",
+          "note": "bi-monthly collection at Disneyland"
+        },
+        {
+          "field": "release_year",
+          "value": 2018,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-january-2018-week-4",
+          "method": "search_snippet",
+          "note": "2018 collection"
+        }
+      ]
+    },
+    {
+      "set_key": "wdw/2018/dapper-day-fine-and-dandy",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Fine & Dandy 2018",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+          "method": "search_snippet",
+          "note": "DPB Apr 2018 wk3 lists the Fine & Dandy 2018 pin for Dapper Day"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+          "method": "search_snippet",
+          "note": "post headline says available at both Disneyland and WDW"
+        },
+        {
+          "field": "format",
+          "value": "single pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+          "method": "search_snippet",
+          "note": "one LE pin listed"
+        }
+      ]
+    }
+  ],
+  "pins": [
+    {
+      "pin_key": "dlr/2018/bi-monthly-collection/jiminy-cricket",
+      "set_key": "dlr/2018/bi-monthly-collection",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Under the Sea - Jiminy Cricket",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-january-2018-week-4",
+          "method": "search_snippet",
+          "note": "named as first pin of the bi-monthly collection"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Jiminy Cricket"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-january-2018-week-4",
+          "method": "search_snippet",
+          "note": "Jiminy Cricket"
+        },
+        {
+          "field": "main_character",
+          "value": "Jiminy Cricket",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-january-2018-week-4",
+          "method": "search_snippet",
+          "note": "sole character named"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-january-2018-week-4",
+          "method": "search_snippet",
+          "note": "single pin in a bi-monthly series"
+        },
+        {
+          "field": "set_position",
+          "value": 1,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-january-2018-week-4",
+          "method": "search_snippet",
+          "note": "first pin of the new bi-monthly collection"
+        },
+        {
+          "field": "release_date",
+          "value": "2018-01-25",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-january-2018-week-4",
+          "method": "search_snippet",
+          "note": "first pin released 25 Jan 2018"
+        },
+        {
+          "field": "release_year",
+          "value": 2018,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-january-2018-week-4",
+          "method": "search_snippet",
+          "note": "2018"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-january-2018-week-4",
+          "method": "search_snippet",
+          "note": "bi-monthly collection at Disneyland"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-january-2018-week-4",
+          "method": "search_snippet",
+          "note": "listed among LE releases; edition size not in snippet"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2018/bi-monthly-collection/ariel-flounder",
+      "set_key": "dlr/2018/bi-monthly-collection",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Under the Sea - Ariel and Flounder",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2018-week-4",
+          "method": "search_snippet",
+          "note": "second pin of the bi-monthly collection features Ariel and Flounder"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Ariel",
+            "Flounder"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2018-week-4",
+          "method": "search_snippet",
+          "note": "Ariel and Flounder from The Little Mermaid"
+        },
+        {
+          "field": "main_character",
+          "value": "Ariel",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2018-week-4",
+          "method": "search_snippet",
+          "note": "Ariel named first"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2018-week-4",
+          "method": "search_snippet",
+          "note": "single pin showing two characters"
+        },
+        {
+          "field": "set_position",
+          "value": 2,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2018-week-4",
+          "method": "search_snippet",
+          "note": "second pin of the bi-monthly collection"
+        },
+        {
+          "field": "release_date",
+          "value": "2018-03-22",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2018-week-4",
+          "method": "search_snippet",
+          "note": "available at Disneyland 22 Mar 2018"
+        },
+        {
+          "field": "release_year",
+          "value": 2018,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2018-week-4",
+          "method": "search_snippet",
+          "note": "2018"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-march-2018-week-4",
+          "method": "search_snippet",
+          "note": "available at Disneyland"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2018/bi-monthly-collection/sword-in-the-stone",
+      "set_key": "dlr/2018/bi-monthly-collection",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Under the Sea - Sword in the Stone",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+          "method": "search_snippet",
+          "note": "named in Nov wk5 post"
+        },
+        {
+          "field": "franchise",
+          "value": "The Sword in the Stone",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+          "method": "search_snippet",
+          "note": "Sword in the Stone themed"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+          "method": "search_snippet",
+          "note": "single pin in a bi-monthly series"
+        },
+        {
+          "field": "set_position",
+          "value": 6,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+          "method": "search_snippet",
+          "note": "sixth pin in the bi-monthly collection at Disneyland for 2018"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 2000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+          "method": "search_snippet",
+          "note": "LE 2,000"
+        },
+        {
+          "field": "original_price",
+          "value": 16.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+          "method": "search_snippet",
+          "note": "retail $16.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+          "method": "search_snippet",
+          "note": "USD"
+        },
+        {
+          "field": "release_date",
+          "value": "2018-11-29",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+          "method": "search_snippet",
+          "note": "available at DLR 29 Nov 2018"
+        },
+        {
+          "field": "release_year",
+          "value": 2018,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+          "method": "search_snippet",
+          "note": "2018"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+          "method": "search_snippet",
+          "note": "available at DLR"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2018/dapper-day-fine-and-dandy/donald-and-daisy",
+      "set_key": "wdw/2018/dapper-day-fine-and-dandy",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Fine & Dandy 2018",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+          "method": "search_snippet",
+          "note": "Fine & Dandy 2018 pin listed for Dapper Day"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+          "method": "search_snippet",
+          "note": "LE"
+        },
+        {
+          "field": "edition_size",
+          "value": 5000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+          "method": "search_snippet",
+          "note": "limited edition of 5,000"
+        },
+        {
+          "field": "release_date",
+          "value": "2018-04-19",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+          "method": "search_snippet",
+          "note": "available at DLR 19 Apr 2018"
+        },
+        {
+          "field": "release_year",
+          "value": 2018,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+          "method": "search_snippet",
+          "note": "2018"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+          "method": "search_snippet",
+          "note": "headline says available at both Disneyland and WDW"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2018-week-3",
+          "method": "search_snippet",
+          "note": "single LE pin"
+        }
+      ]
+    }
+  ],
+  "not_found": [
+    {
+      "key": "dlr/2018/bi-monthly-collection/jiminy-cricket",
+      "field": "edition_size",
+      "searched": "DPB Jan wk4, MPC; 2 queries",
+      "note": "edition size/price not in snippet; lead: MPC 28611 Jiminy-with-seahorse LE 2000 (no date/park) may be this pin; not tied, not recorded"
+    },
+    {
+      "key": "dlr/2018/bi-monthly-collection/jiminy-cricket",
+      "field": "variant",
+      "searched": "cross-check 210/515",
+      "note": "distinct from wdw/2018/lattes-with-character/jiminy-cricket (Lattes, LE 3,000, Feb 8 2018, shared); do not merge"
+    },
+    {
+      "key": "dlr/2018/bi-monthly-collection/ariel-flounder",
+      "field": "edition_size",
+      "searched": "DPB Mar wk4; 2 queries",
+      "note": "edition size/price not in snippet; 'Under the Sea' prefix by analogy with #1/#6 wording, confirm"
+    },
+    {
+      "key": "dlr/2018/bi-monthly-collection/ariel-flounder",
+      "field": "variant",
+      "searched": "cross-check 416",
+      "note": "distinct from wdw/2018/lattes-with-character/ariel-flounder (cup-shaped, LE 3,000, held in 416); do not merge"
+    },
+    {
+      "key": "dlr/2018/bi-monthly-collection/sword-in-the-stone",
+      "field": "characters",
+      "searched": "DPB Nov wk5",
+      "note": "characters on the pin not stated in snippet"
+    },
+    {
+      "key": "dlr/2018/bi-monthly-collection",
+      "field": "pins",
+      "searched": "6 queries (DPB weeklies Jul/Sep, MPC)",
+      "note": "positions 4 (likely Jul) and 5 (likely Sep) unnamed; DPB Jul wk2 has no bi-monthly pin; whether a 7th exists not stated"
+    },
+    {
+      "key": "dlr/2018/bi-monthly-collection",
+      "field": "expected_pin_count",
+      "searched": "4 queries",
+      "note": "total not stated; six by 29 Nov 2018"
+    },
+    {
+      "key": "dlr/2018/bi-monthly-collection/moana-under-the-sea",
+      "field": "set_key",
+      "searched": "DPB May wk4 re-search; 2 queries",
+      "note": "B012 Moana #3 fits this Under the Sea bi-monthly series (#1 Jan, #2 Mar, #3 May); distinct from OUAT #12 Moana (Dec 6); edition size still unstated"
+    },
+    {
+      "key": "dlr/2018/dapper-day-fine-and-dandy/donald-and-daisy",
+      "field": "variant",
+      "searched": "DPB Apr wk3; 2 queries",
+      "note": "variant: same pin as wdw/2018/dapper-day-fine-and-dandy/donald-and-daisy (DPB says Fine & Dandy 2018 available at DL and WDW)"
+    },
+    {
+      "key": "dlr/2018/fine-dandy-donald-daisy",
+      "field": "variant",
+      "searched": "cross-check 418",
+      "note": "variant: same pin as wdw/2018/dapper-day-fine-and-dandy/donald-and-daisy (418 OE-cell lead key; same LE 5,000 Fine & Dandy 2018 pin)"
+    },
+    {
+      "key": "wdw/2018/dapper-day-fine-and-dandy/donald-and-daisy",
+      "field": "characters",
+      "searched": "DPB Apr wk3; 2 queries",
+      "note": "Donald and Daisy named only on resellers (yourwdwstore, distradingpins4u); DPB snippet does not name characters"
+    },
+    {
+      "key": "wdw/2018/dapper-day-fine-and-dandy/donald-and-daisy",
+      "field": "release_date",
+      "searched": "B012 cross-check",
+      "note": "conflict: B012 DPB Nov wk3 says WDW release Nov 15 2018; Apr wk3 headline implies both parks in April; record both, review"
+    },
+    {
+      "key": "wdw/2018/dapper-day-fine-and-dandy/mickey-minnie",
+      "field": "existence",
+      "searched": "1 query",
+      "note": "hold kept: Fine & Dandy 2018 Mickey and Minnie (Apr 26) still only on reseller yourwdwstore; not recorded"
+    },
+    {
+      "key": "dlr/2018/once-upon-a-time",
+      "field": "pins",
+      "searched": "5 queries (DPB, MPC 160239-160250 range)",
+      "note": "positions 1-11 except Hercules still unnamed; MPC sibling IDs 160240-160246 seen without names"
+    },
+    {
+      "key": "dlr/2018/once-upon-a-time",
+      "field": "release_location",
+      "searched": "MPC 160244",
+      "note": "MPC series label reads 'WDW/DLR - Once Upon A Time - Pin of the Month - 2018'; DPB says Disneyland; possible shared product, no wdw key exists - review"
+    },
+    {
+      "key": "dlr/2018/once-upon-a-time/felix-yzma-ursula",
+      "field": "existence",
+      "searched": "2 queries",
+      "note": "hold kept: Felix/Yzma/Ursula only in forum thread (disneypinforum); structure unknown"
+    },
+    {
+      "key": "dlr/2018/once-upon-a-time/wreck-it-ralph",
+      "field": "existence",
+      "searched": "1 query",
+      "note": "hold: Wreck-It Ralph OUAT pin LE 2000 only on reseller fryguypins; year/month not stated; not recorded"
+    },
+    {
+      "key": "dlr/2018/windows-of-evil/jafar",
+      "field": "set_position",
+      "searched": "MPC 144336, distradingpins4u; 2 queries",
+      "note": "hold kept: #2 only on reseller distradingpins4u (127252); MPC 144336 gives LE 2000 stained glass panel, no date or position"
+    },
+    {
+      "key": "dlr/2018/windows-of-evil/oogie-boogie",
+      "field": "existence",
+      "searched": "1 query",
+      "note": "hold kept: '#5' only on reseller disneythemepark.biz; earlier forum hint of 2017; not recorded"
+    },
+    {
+      "key": "dlr/2018/windows-of-evil",
+      "field": "pins",
+      "searched": "3 queries",
+      "note": "positions 1, 4, 5, 8 still unconfirmed in permitted sources; no new DPB weekly naming them"
+    },
+    {
+      "key": "dlr/2018/windows-of-evil/ursula",
+      "field": "set_position",
+      "searched": "not re-searched separately",
+      "note": "hold kept"
+    },
+    {
+      "key": "dlr/2018/windows-of-evil/horn-king",
+      "field": "existence",
+      "searched": "not re-searched",
+      "note": "hold kept"
+    },
+    {
+      "key": "dlr/2018/tape-series",
+      "field": "pins",
+      "searched": "4 queries",
+      "note": "pins 2-4 still unnamed; DPB confirms #1 Lion King and #8 Hercules (Nov 2019) only"
+    },
+    {
+      "key": "dlr/2018",
+      "field": "pins",
+      "searched": "3 queries",
+      "note": "Sep/Oct 2018 DPB weekly round-ups still not surfaced; only previews, MHP, Park Pack (dsus) and DLP posts"
+    },
+    {
+      "key": "dlr/2018/mickeys-halloween-party-2018-mysterious-shadows-box-set",
+      "field": "pins",
+      "searched": "2 queries",
+      "note": "hold kept: Dr. Facilier 1-of-4 still only on reseller ecrater; other box members unnamed"
+    },
+    {
+      "key": "dlr/2018/channel-28-mystery",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "hold kept for 11 designs; DPB collection page repeats 12 pins, 2,400 boxes, $19.99, 2 per box (already in B056)"
+    },
+    {
+      "key": "dlr/2018/haunted-mansion-holiday-2018-tarot-mystery",
+      "field": "pins",
+      "searched": "1 query",
+      "note": "hold kept: The Big Witch (132584) still only on reseller distradingpins4u; set size not confirmed"
+    },
+    {
+      "key": "dlr/2018/happy-holidays-2018-pin-set",
+      "field": "pins",
+      "searched": "not re-searched (budget)",
+      "note": "hold kept"
+    },
+    {
+      "key": "dlr/2018/haunted-mansion-holiday-2018/gingerbread",
+      "field": "pin_name",
+      "searched": "not re-searched",
+      "note": "hold kept vs oogies-holiday-tricks-and-treats"
+    },
+    {
+      "key": "dlr/2018/dca-food-wine-2018/logo",
+      "field": "visual_description",
+      "searched": "not re-searched",
+      "note": "hold kept: Chef Mickey link unresolved"
+    },
+    {
+      "key": "dlr/2018/passholder-happy-holidays-2018-ornament-pin-set",
+      "field": "pins",
+      "searched": "not re-searched",
+      "note": "hold kept: pin count unstated"
+    },
+    {
+      "key": "dlr/2018/club-33-shag-box-set",
+      "field": "pins",
+      "searched": "not re-searched",
+      "note": "hold kept pending maintainer full-list decision"
+    },
+    {
+      "key": "dlr/2018/club-33-1901/1901",
+      "field": "release_location",
+      "searched": "not re-searched",
+      "note": "hold kept: resort not stated"
+    },
+    {
+      "key": "dlr/2018/windows-of-evil/scar",
+      "field": "release_year",
+      "searched": "not re-searched",
+      "note": "conflict unchanged; not keyed for 2018"
+    },
+    {
+      "key": "dlr/2018/pixar-pier-opening",
+      "field": "pins",
+      "searched": "not re-searched",
+      "note": "unchanged: no Pixar Pier opening LE named"
+    },
+    {
+      "key": "dlr/2018/crests",
+      "field": "existence",
+      "searched": "not re-searched",
+      "note": "unchanged: none found"
+    },
+    {
+      "key": "dlr/2018/holiday-gift-card-pins",
+      "field": "existence",
+      "searched": "not re-searched",
+      "note": "unchanged lead; edition/structure unstated"
+    },
+    {
+      "key": "dlr/2018/happy-holidays-2018-pin-set/zootopia-completer",
+      "field": "pin_name",
+      "searched": "not re-searched",
+      "note": "hold kept: box-only"
+    }
+  ],
+  "discovery_notes": "Follow-up 5 of B012 (DLR LE 2018). New: Under the Sea bi-monthly collection identified as the B012 bi-monthly set (#1 Jiminy Cricket Jan 25, #2 Ariel & Flounder Mar 22, #6 Sword in the Stone Nov 29 LE 2,000; B012 Moana is #3). Fine & Dandy 2018 keyed under wdw as shared DL/WDW product with variant notes for both dlr keys. OUAT, Windows of Evil, Tape, Channel 28, Mysterious Shadows, tarot: no new permitted per-pin evidence; holds kept. 28 web searches."
+}

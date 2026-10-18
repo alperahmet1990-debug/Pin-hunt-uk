@@ -1,0 +1,893 @@
+{
+ "packet_id": "b358-ds-2017-fu5-2026-10-18",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+   "title": "Bambi 75th Anniversary Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.shopdisney.co.uk/bambi-75th-anniversary-limited-edition-pin-465055045701.html",
+   "title": "Bambi 75th Anniversary Limited Edition Pin",
+   "publisher": "shopDisney UK",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://diskingdom.com/2017/08/02/new-bambi-75th-anniversary-collection-online-now-disney-store/",
+   "title": "New Bambi 75th Anniversary Collection Online Now at the Disney Store",
+   "publisher": "DisKingdom",
+   "published_date": "2017-08-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+   "title": "Groot Disney Movie Club Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07-27",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/guardians-of-the-galaxy-pins/",
+   "title": "Guardians of the Galaxy Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+   "title": "Bambi Movie Club Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/bambi-75th-anniversary-pin-set-d23-expo-2017",
+   "title": "Bambi 75th Anniversary Pin Set - D23 Expo 2017",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-store-marvel-pin-set-d23-expo-2017/",
+   "title": "Disney Store Marvel Pin Set - D23 Expo 2017",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/holiday-gift-card-pins-2017",
+   "title": "Holiday Disney Gift Card 2017 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/guardians-galaxy-vol-2-free-button-set/",
+   "title": "Guardians of the Galaxy Vol. 2 Free Button Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/coco-pixar-studio-store-pins/",
+   "title": "Coco Pixar Studio Store Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-01-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/d23-expo-2017-dream-store-pins/",
+   "title": "D23 Expo 2017 Dream Store Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/surprise-coco-skull-pin-dssh/",
+   "title": "Surprise Coco Skull Pin - DSSH",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/dssh-alphabet-pin-series-7/",
+   "title": "DSSH Alphabet Pin Series #7",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsus/2017/bambi-75th-anniversary-le-800",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Bambi 75th Anniversary Pin",
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "single LE pin"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "one pin described"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "LE 800 worldwide"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "limited edition of 800 worldwide"
+    },
+    {
+     "field": "price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "USD 12.95 retail"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "US retail price"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-02",
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "search summary gives 2 Jan 2017; may be garbled, see not_found"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store",
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "Disney Store release"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney UK",
+     "source_url": "https://www.shopdisney.co.uk/bambi-75th-anniversary-limited-edition-pin-465055045701.html",
+     "method": "search_snippet",
+     "note": "UK listing for the same LE 800 worldwide pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://www.shopdisney.co.uk/bambi-75th-anniversary-limited-edition-pin-465055045701.html",
+     "method": "search_snippet",
+     "note": "UK listing: European allocation LE 300 of 800 worldwide"
+    },
+    {
+     "field": "price",
+     "value": 6.3,
+     "source_url": "https://www.shopdisney.co.uk/bambi-75th-anniversary-limited-edition-pin-465055045701.html",
+     "method": "search_snippet",
+     "note": "GBP 6.30 on UK listing (likely reduced price), shown out of stock"
+    },
+    {
+     "field": "currency",
+     "value": "GBP",
+     "source_url": "https://www.shopdisney.co.uk/bambi-75th-anniversary-limited-edition-pin-465055045701.html",
+     "method": "search_snippet",
+     "note": "UK listing price currency"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/disney-movie-club-groot",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Groot Disney Movie Club Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "single VIP pin"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "one VIP pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "limited series, VIP members only"
+    },
+    {
+     "field": "price",
+     "value": 6.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "USD 6.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "post dated 27 Jul 2017"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-21",
+     "source_url": "https://disneypinsblog.com/tag/guardians-of-the-galaxy-pins/",
+     "method": "search_snippet",
+     "note": "tag archive lists the Groot Movie Club pin at 21 Jul 2017 - conflict"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Movie Club VIP Pin Store (online)",
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "sold only via online VIP pin store"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/disney-movie-club-bambi",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Bambi Movie Club Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "single VIP pin"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "one VIP pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "limited series, limited supply"
+    },
+    {
+     "field": "price",
+     "value": 6.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "USD 6.95 or free with a regular-priced title purchase"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "search summary places it in May 2017; tied to 75th Anniversary Blu-ray"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Movie Club VIP Pin Store (online)",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "VIP members only, online VIP pin store"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2017/d23-expo-bambi-75th-anniversary-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Bambi 75th Anniversary Pin Set - D23 Expo 2017",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-75th-anniversary-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "blog post title"
+    },
+    {
+     "field": "format",
+     "value": "boxed set of separate pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-75th-anniversary-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "boxed set containing five different pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-75th-anniversary-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "five different pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-75th-anniversary-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "LE 300"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-75th-anniversary-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "limited edition of 300"
+    },
+    {
+     "field": "price",
+     "value": 59.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-75th-anniversary-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "USD 59.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-75th-anniversary-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-15",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-75th-anniversary-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "Disney Store at D23 Expo, Sat 15 Jul 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store at D23 Expo 2017",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-75th-anniversary-pin-set-d23-expo-2017",
+     "method": "search_snippet",
+     "note": "sold at the Disney Store at D23 Expo"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dsus/2017/bambi-75th-anniversary-le-800/bambi-75th-anniversary-le-800",
+   "set_key": "dsus/2017/bambi-75th-anniversary-le-800",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bambi 75th Anniversary Pin",
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "pin_name",
+     "value": "Bambi 75th Anniversary Limited Edition Pin",
+     "source_url": "https://www.shopdisney.co.uk/bambi-75th-anniversary-limited-edition-pin-465055045701.html",
+     "method": "search_snippet",
+     "note": "UK listing title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "single pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Bambi",
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "celebrates Bambi 75th anniversary"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bambi",
+      "Flower"
+     ],
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "search summary calls it a Bambi and Flower pin; single-source summary"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "LE 800 worldwide"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "800 worldwide"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://www.shopdisney.co.uk/bambi-75th-anniversary-limited-edition-pin-465055045701.html",
+     "method": "search_snippet",
+     "note": "UK listing: 800 worldwide (Europe allocation 300)"
+    },
+    {
+     "field": "original_price",
+     "value": 12.95,
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "USD 12.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-02",
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "summary date; see not_found doubt"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "75th anniversary year 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Store",
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "Disney Store release"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney UK",
+     "source_url": "https://www.shopdisney.co.uk/bambi-75th-anniversary-limited-edition-pin-465055045701.html",
+     "method": "search_snippet",
+     "note": "also sold on UK site"
+    },
+    {
+     "field": "materials",
+     "value": "enamel cloisonne, silvertone finish",
+     "source_url": "https://disneypinsblog.com/bambi-75th-anniversary-pin/",
+     "method": "search_snippet",
+     "note": "enameled cloisonne with silvertone finish, Mickey pin backs"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "official pin trading and limited edition number backstamps",
+     "source_url": "https://www.shopdisney.co.uk/bambi-75th-anniversary-limited-edition-pin-465055045701.html",
+     "method": "search_snippet",
+     "note": "listing mentions pin trading and LE number backstamps"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-movie-club-groot/groot",
+   "set_key": "dsus/2017/disney-movie-club-groot",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Groot Disney Movie Club Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "single VIP pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Groot"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "pin features Groot"
+    },
+    {
+     "field": "main_character",
+     "value": "Groot",
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "features Groot"
+    },
+    {
+     "field": "franchise",
+     "value": "Guardians of the Galaxy",
+     "source_url": "https://disneypinsblog.com/tag/guardians-of-the-galaxy-pins/",
+     "method": "search_snippet",
+     "note": "listed under Guardians of the Galaxy pins tag"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "limited series"
+    },
+    {
+     "field": "original_price",
+     "value": 6.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "USD 6.95"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "post date"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-21",
+     "source_url": "https://disneypinsblog.com/tag/guardians-of-the-galaxy-pins/",
+     "method": "search_snippet",
+     "note": "tag archive date - conflict"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Movie Club VIP Pin Store (online)",
+     "source_url": "https://disneypinsblog.com/blogs/news/groot-disney-movie-rewards-pin",
+     "method": "search_snippet",
+     "note": "VIP members only"
+    }
+   ]
+  },
+  {
+   "pin_key": "dsus/2017/disney-movie-club-bambi/bambi",
+   "set_key": "dsus/2017/disney-movie-club-bambi",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bambi Movie Club Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "single VIP pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Bambi",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "for Bambi 75th Anniversary Edition Blu-ray"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "limited series"
+    },
+    {
+     "field": "original_price",
+     "value": 6.95,
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "USD 6.95, or free with purchase"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "US price"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "summary month only"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "75th anniversary Blu-ray release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Movie Club VIP Pin Store (online)",
+     "source_url": "https://disneypinsblog.com/blogs/news/bambi-movie-club-pin",
+     "method": "search_snippet",
+     "note": "VIP members only"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dsus/2017/bambi-75th-anniversary-le-800/bambi-75th-anniversary-le-800",
+   "field": "release_date",
+   "searched": "DPB + DisKingdom; 2 queries",
+   "note": "field note: DPB summary says 2 Jan 2017, but DisKingdom shows Bambi 75th Disney Store collection online 2 Aug 2017 (no pin listed); date unconfirmed"
+  },
+  {
+   "key": "dsus/2017/bambi-75th-anniversary-le-800/bambi-75th-anniversary-le-800",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "field note: Bambi and Flower only from a search summary; DPB snippet itself just says Bambi 75th pin"
+  },
+  {
+   "key": "dsus/2017/bambi-75th-anniversary-le-800/bambi-75th-anniversary-le-800",
+   "field": "product_code",
+   "searched": "UK listing",
+   "note": "field note: a code appears only in the shopDisney UK URL slug, not stated in the snippet; not claimed"
+  },
+  {
+   "key": "dsus/2017/bambi-75th-anniversary-le-800/bambi-75th-anniversary-le-800",
+   "field": "release_location",
+   "searched": "3 queries",
+   "note": "field note: keyed under dsus (US price first); also sold on shopDisney UK with Europe LE 300 - one pin, not a separate dsuk pin"
+  },
+  {
+   "key": "dsus/2017/disney-movie-club-groot/groot",
+   "field": "edition_size",
+   "searched": "DPB snippet",
+   "note": "limited series; no edition size stated"
+  },
+  {
+   "key": "dsus/2017/disney-movie-club-groot/groot",
+   "field": "line",
+   "searched": "maintainer pending",
+   "note": "field note: Disney Movie Club keyed under dsus per pending maintainer line decision"
+  },
+  {
+   "key": "dsus/2017/disney-movie-club-bambi/bambi",
+   "field": "characters",
+   "searched": "DPB + reseller",
+   "note": "field note: DPB snippet does not describe design; only a reseller (distradingpins4u) calls VIP pin #64 Bambi with butterfly - not used"
+  },
+  {
+   "key": "dsus/2017/disney-movie-club-bambi/bambi",
+   "field": "release_date",
+   "searched": "DPB snippet",
+   "note": "field note: month from search summary only; exact day not stated"
+  },
+  {
+   "key": "dsus/2017/disney-movie-club-bambi/bambi",
+   "field": "line",
+   "searched": "maintainer pending",
+   "note": "field note: Disney Movie Club keyed under dsus per pending maintainer line decision"
+  },
+  {
+   "key": "dsus/2017/d23-expo-bambi-75th-anniversary-set",
+   "field": "pins",
+   "searched": "DPB + reseller; 2 queries",
+   "note": "five pins not named in DPB snippet; designer Keith Fulmis per DPB"
+  },
+  {
+   "key": "dsus/2017/d23-expo-bambi-75th-anniversary-set/bambi-and-butterfly",
+   "field": "pin_structure",
+   "searched": "reseller listing (lavenderlemming.ecrater.com)",
+   "note": "hold: Bambi and butterfly named as one of five only on a reseller listing; no non-reseller per-pin source"
+  },
+  {
+   "key": "dsus/2017/d23-expo-disney-store-marvel-le-500-set",
+   "field": "pins",
+   "searched": "DPB, Bleeding Cool, mypincentral; 2 queries",
+   "note": "four covers still unnamed; DPB adds designer Keith Fulmis (no spec field); no mypincentral page surfaced"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-january-2017",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "DPB month index lists January 2017 Pins but still no DSSH Jan 2017 post content"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary-week-08",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "Week 8 still only a heading/link on DPB main post; films (likely 2009-2011 by sequence) not confirmed"
+  },
+  {
+   "key": "dsus/2017/disney-store-30th-anniversary",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold kept: weekly 3-pin split unconfirmed; no new per-pin evidence"
+  },
+  {
+   "key": "dsus/2017/coco-le-600-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: still Miguel, Imelda, Ernesto, Dante, Pepita 'and more' (5 of 8)"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-coco-skull-surprise",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "companion main DSSH Coco release of 22 Nov 2017 still undescribed; Coco Cuties DSSH is Nov 2021, not this"
+  },
+  {
+   "key": "dsus/2018/pixar-studio-store-coco",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "lead for 2018 cell: DPB 6 Jan 2018, four LE Coco pins at Pixar Studio Store (family, logo designs); not Disney Store line - not keyed"
+  },
+  {
+   "key": "dsus/2017/star-wars-the-last-jedi-pin-and-lithograph",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: pin 2 still unidentified; no DPB post for a 7 Nov 2017 shopDisney pin; Luke vs Praetorian 4th conflict persists"
+  },
+  {
+   "key": "dsus/2017/park-pack-3-0-10-oct",
+   "field": "pins",
+   "searched": "not re-searched",
+   "note": "hold kept: no new non-reseller source"
+  },
+  {
+   "key": "dsuk/2017/treasure-planet-le-500/treasure-planet-le-500",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "still not described; DPB gives 18 Jul 2017, LE 500 Europe, GBP 9 only"
+  },
+  {
+   "key": "dsuk/2017/snow-white-80th-anniversary-le-500/snow-white-80th-anniversary-le-500",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "still not described; UK-only vs Europe-exclusive conflict persists"
+  },
+  {
+   "key": "dsuk/2017/team-disney-dwarves",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead kept: still only a title on DPB DS UK archive; a GBP 12 DS UK Seven Dwarfs pin listing is undated and not tied - not keyed"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-february-2017-oscar-winners",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "still only film titles; DPB labels each 'Oscar Winner 1990' (copy error); no mypincentral pages found"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-pin-trader-delight-2017-06-17",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "hold kept: DisKingdom still gives characters only; LE 500 Judy Hopps PTD only on reseller listings, undated - not used"
+  },
+  {
+   "key": "dsus/2017/studio-store-hollywood-alphabet-series-6",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "still not found; DPB has #5 (P-S, Dec 2016) and #7 (X-Z, Oct 2017) only"
+  },
+  {
+   "key": "dsuk/2017/coco-glow-in-the-dark-pin-set",
+   "field": "release_year",
+   "searched": "not re-searched",
+   "note": "lead kept from 524: year not established"
+  },
+  {
+   "key": "dsus/2017/d23-expo-dream-store-bambi-and-faline",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "lead: DPB Dream Store list has a Bambi and Faline pin LE 3000 USD 15.99; Dream Store not confirmed as Disney Store - not keyed"
+  },
+  {
+   "key": "dsus/2017/disney-movie-club-beauty-and-the-beast",
+   "field": "release_date",
+   "searched": "not re-searched",
+   "note": "lead kept: likely 2016 (25th Anniversary Blu-ray) - not keyed"
+  },
+  {
+   "key": "wdw/2017/holiday-gift-card-pins",
+   "field": "line",
+   "searched": "1 query",
+   "note": "lead for parks cells: DPB Holiday Disney Gift Card 2017 pins, four designs (Minnie, Mickey, Daisy, Donald) LE 2650 with USD 100 gift card at parks - not DS, not keyed"
+  },
+  {
+   "key": "dsus/2017/guardians-of-the-galaxy-vol-2-button-set",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "scope: confirmed button/badge/non-pin (DPB: free button set, six characters, Movie Rewards purchase offer to 30 Nov 2017)"
+  },
+  {
+   "key": "dsus/2017/held-items",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "holds unchanged: couples, Dark Tales 1-3, Designer Collection seven, Bookmark three, Belle/Beast, Mice, Aladdin 25th, Alphabet #7, 30th Anniversary split"
+  },
+  {
+   "key": "dsus/2017/disney-movie-club-bambi/bambi",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: design not described and month known only from a search summary (round 58 review)"
+  }
+ ],
+ "discovery_notes": "Cell B358, follow-up 5 of B022 (DS 2017). 29 standard searches, snippets only; keys from 228/436/473/503/524 reused, no duplicates. New: Disney Store Bambi 75th Anniversary LE 800 pin (USD 12.95; also shopDisney UK, Europe LE 300), Disney Movie Club VIP Groot (Jul 2017) and Bambi (May 2017) pins under dsus pending line decision, D23 Expo Disney Store Bambi 75th set (5 pins, LE 300, USD 59.95, set only). Leads: Pixar Studio Store Coco (2018), parks gift card pins, Dream Store Bambi/Faline. GotG Vol 2 button set excluded as buttons. No hold released. Resellers seen (yourwdwstore, fryguypins, jd-collectibles, distradingpins4u, lavenderlemming, gapconsulting, pinsbreaktheinternet) not used as evidence."
+}

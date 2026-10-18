@@ -1,0 +1,703 @@
+{
+ "packet_id": "backfill-b177-lic-boxlunch-2022-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b177",
+ "sources": [
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pluto-pumpkin-spice-latte-enamel-pin---boxlunch-exclusive/18532039.html",
+   "title": "Loungefly Disney Pluto Pumpkin Spice Latte Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pluto-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644549.html",
+   "title": "Loungefly Disney Pluto Pumpkin Spice Drink Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-mickey-mouse-pumpkin-spice-drink-enamel-pin---boxlunch-exclusive/15644547.html",
+   "title": "Loungefly Disney Mickey Mouse Pumpkin Spice Drink Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-lilo-stitch-stitch-pumpkin-spice-latte-enamel-pin---boxlunch-exclusive/18532035.html",
+   "title": "Loungefly Disney Lilo & Stitch Stitch Pumpkin Spice Latte Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-zero-pumpkin-spice-latte-enamel-pin---boxlunch-exclusive/20675368.html",
+   "title": "Loungefly Disney The Nightmare Before Christmas Zero Pumpkin Spice Latte Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-big-hero-6-baymax-pumpkin-spice-latte-enamel-pin---boxlunch-exclusive/20675366.html",
+   "title": "Loungefly Disney Big Hero 6 Baymax Pumpkin Spice Latte Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyfoodblog.com/2022/09/23/the-best-disney-gift-for-your-pumpkin-spice-latte-loving-friends/",
+   "title": "The BEST Disney Gift for Your Pumpkin Spice Latte-Loving Friends",
+   "publisher": "Disney Food Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pumpkin-spice-latte-disney-pins-at-boxlunch/",
+   "title": "Pumpkin Spice Latte Disney Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-star-wars-episode-i---the-phantom-menace-chibi-darth-maul-enamel-pin---boxlunch-exclusive/17356659.html",
+   "title": "Loungefly Star Wars: Episode I - The Phantom Menace Chibi Darth Maul Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-walt-disney-world-50th-anniversary-mickey-mouse-cinderellas-castle-enamel-pin---boxlunch-exclusive/16676540.html",
+   "title": "Loungefly Disney Walt Disney World 50th Anniversary Mickey Mouse & Cinderella's Castle Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pets-owners-blind-box-enamel-pin---boxlunch-exclusive/17125825.html",
+   "title": "Loungefly Disney Pets & Owners Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-pets-owners-blind-box-blind-box-pin-set-at-boxlunch",
+   "title": "Disney Pets & Owners Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-wreath-enamel-pin---boxlunch-exclusive/18653297.html",
+   "title": "Loungefly Disney The Nightmare Before Christmas Wreath Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-the-nightmare-before-christmas-lock-shock-barrel-enamel-pin-set---boxlunch-exclusive/18653299.html",
+   "title": "Loungefly Disney The Nightmare Before Christmas Lock, Shock, & Barrel Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/nightmare-before-christmas-lock-shock-barrel-pin-set-at-boxlunch",
+   "title": "Nightmare Before Christmas Lock, Shock & Barrel Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-princess-sidekick-floral-blind-box-enamel-pin---boxlunch-exclusive/18898806.html",
+   "title": "Loungefly Disney Princess Sidekick Floral Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-sidekick-floral-blind-box-pins-at-boxlunch/",
+   "title": "Disney Princess Sidekick Floral Blind Box Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-alice-in-wonderland-teacup-puzzle-blind-box-enamel-pin-/17356627.html",
+   "title": "Loungefly Alice in Wonderland Teacup Puzzle Blind Box Enamel Pin",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-hercules-herc-merch-enamel-pin-set---boxlunch-exclusive/16676536.html",
+   "title": "Disney Hercules Herc Merch Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/nightmare-before-christmas-train-set-blind-box-disney-pin-set-at-boxlunch/",
+   "title": "Nightmare Before Christmas Train Set Blind Box Disney Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/disney-the-nightmare-before-christmas-characters-blind-box-enamel-pin---boxlunch-exclusive/18928979.html",
+   "title": "Disney The Nightmare Before Christmas Characters Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-walt-disney-world-50th-anniversary-mickey-resort-map-blind-box-enamel-pin---boxlunch-exclusive/16676538.html",
+   "title": "Loungefly Disney Walt Disney World 50th Anniversary Mickey Resort Map Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-walt-disney-world-50th-anniversary-chip-n-dale-with-popcorn-enamel-pin---boxlunch-exclusive/16676544.html",
+   "title": "Loungefly Disney Walt Disney World 50th Anniversary Chip 'n Dale with Popcorn Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-pixar-up-russel-carl-dug-enamel-pin-set---boxlunch-exclusive/19028981.html",
+   "title": "Loungefly Disney Pixar Up Russel, Carl, & Dug Enamel Pin Set - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-chibi-pins-at-boxlunch/",
+   "title": "New Star Wars Chibi Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-characters-in-fruit-blind-box-pin-set-at-boxlunch",
+   "title": "Disney Characters in Fruit Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.boxlunch.com/product/loungefly-disney-characters-pumpkin-blind-box-enamel-pin---boxlunch-exclusive/18532029.html",
+   "title": "Loungefly Disney Characters Pumpkin Blind Box Enamel Pin - BoxLunch Exclusive",
+   "publisher": "BoxLunch",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-princess-signature-sidekicks-blind-box-pin-set-at-boxlunch",
+   "title": "Disney Princess Signature & Sidekicks Blind Box Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/alice-in-wonderland-characters-blind-box-disney-pin-set-at-boxlunch/",
+   "title": "Alice in Wonderland Characters Blind Box Disney Pin Set at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/christmas-2022-disney-pins-at-boxlunch",
+   "title": "Christmas 2022 Disney Pins at BoxLunch",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "lic/2022/loungefly-boxlunch-pets-owners-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Pets & Owners Blind Box Pin Set at BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-pets-owners-blind-box-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "blog title"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-pets-owners-blind-box-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "one random pin per box"
+    },
+    {
+     "field": "format",
+     "value": "blind box",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pets-owners-blind-box-enamel-pin---boxlunch-exclusive/17125825.html",
+     "method": "search_snippet",
+     "note": "listing: one randomly selected pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-pets-owners-blind-box-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "blog: released May 2022"
+    },
+    {
+     "field": "price",
+     "value": 9.9,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-pets-owners-blind-box-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "per box/pin"
+    },
+    {
+     "field": "price",
+     "value": 8.99,
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pets-owners-blind-box-enamel-pin---boxlunch-exclusive/17125825.html",
+     "method": "search_snippet",
+     "note": "listing page price, out of stock"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-pets-owners-blind-box-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pets-owners-blind-box-enamel-pin---boxlunch-exclusive/17125825.html",
+     "method": "search_snippet",
+     "note": "title names Loungefly"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-pets-owners-blind-box-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "blog describes it as a Loungefly series"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pets-owners-blind-box-enamel-pin---boxlunch-exclusive/17125825.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-pets-owners-blind-box-blind-box-pin-set-at-boxlunch",
+     "method": "search_snippet",
+     "note": "sold at BoxLunch"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pets-owners-blind-box-enamel-pin---boxlunch-exclusive/17125825.html",
+     "method": "search_snippet",
+     "note": "title says BoxLunch Exclusive"
+    },
+    {
+     "field": "pack_product_code",
+     "value": "17125825",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pets-owners-blind-box-enamel-pin---boxlunch-exclusive/17125825.html",
+     "method": "search_snippet",
+     "note": "BoxLunch item number"
+    },
+    {
+     "field": "visual_description",
+     "value": "pets shown with their owners, about 1 in pins",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-pets-owners-blind-box-enamel-pin---boxlunch-exclusive/17125825.html",
+     "method": "search_snippet",
+     "note": "listing paraphrase"
+    }
+   ]
+  },
+  {
+   "set_key": "lic/2022/loungefly-boxlunch-pumpkin-spice-latte",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2022-09",
+     "source_url": "https://www.disneyfoodblog.com/2022/09/23/the-best-disney-gift-for-your-pumpkin-spice-latte-loving-friends/",
+     "method": "search_snippet",
+     "note": "DFB post dated 23 Sept 2022 covering the set (on sale)"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "lic/2022/loungefly-boxlunch-star-wars-chibi/darth-maul",
+   "set_key": "lic/2022/loungefly-boxlunch-star-wars-chibi",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Star Wars: Episode I - The Phantom Menace Chibi Darth Maul Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-episode-i---the-phantom-menace-chibi-darth-maul-enamel-pin---boxlunch-exclusive/17356659.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Darth Maul"
+     ],
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-episode-i---the-phantom-menace-chibi-darth-maul-enamel-pin---boxlunch-exclusive/17356659.html",
+     "method": "search_snippet",
+     "note": "chibi Darth Maul"
+    },
+    {
+     "field": "main_character",
+     "value": "Darth Maul",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-episode-i---the-phantom-menace-chibi-darth-maul-enamel-pin---boxlunch-exclusive/17356659.html",
+     "method": "search_snippet",
+     "note": "subject"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-episode-i---the-phantom-menace-chibi-darth-maul-enamel-pin---boxlunch-exclusive/17356659.html",
+     "method": "search_snippet",
+     "note": "single enamel pin listing"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-episode-i---the-phantom-menace-chibi-darth-maul-enamel-pin---boxlunch-exclusive/17356659.html",
+     "method": "search_snippet",
+     "note": "title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-episode-i---the-phantom-menace-chibi-darth-maul-enamel-pin---boxlunch-exclusive/17356659.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-episode-i---the-phantom-menace-chibi-darth-maul-enamel-pin---boxlunch-exclusive/17356659.html",
+     "method": "search_snippet",
+     "note": "title says BoxLunch Exclusive"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-episode-i---the-phantom-menace-chibi-darth-maul-enamel-pin---boxlunch-exclusive/17356659.html",
+     "method": "search_snippet",
+     "note": "listing places it in Loungefly's 2022 Galactic Convention line"
+    },
+    {
+     "field": "visual_description",
+     "value": "chibi Darth Maul holding his double-bladed lightsaber",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-episode-i---the-phantom-menace-chibi-darth-maul-enamel-pin---boxlunch-exclusive/17356659.html",
+     "method": "search_snippet",
+     "note": "listing paraphrase"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-episode-i---the-phantom-menace-chibi-darth-maul-enamel-pin---boxlunch-exclusive/17356659.html",
+     "method": "search_snippet",
+     "note": "page price, out of stock"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-episode-i---the-phantom-menace-chibi-darth-maul-enamel-pin---boxlunch-exclusive/17356659.html",
+     "method": "search_snippet",
+     "note": "US retailer"
+    },
+    {
+     "field": "size_mm",
+     "value": 32,
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-episode-i---the-phantom-menace-chibi-darth-maul-enamel-pin---boxlunch-exclusive/17356659.html",
+     "method": "search_snippet",
+     "note": "listing approx 1 in W x 1.25 in H; height converted"
+    },
+    {
+     "field": "materials",
+     "value": "enamel, metal",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-episode-i---the-phantom-menace-chibi-darth-maul-enamel-pin---boxlunch-exclusive/17356659.html",
+     "method": "search_snippet",
+     "note": "listing"
+    },
+    {
+     "field": "product_code",
+     "value": "17356659",
+     "source_url": "https://www.boxlunch.com/product/loungefly-star-wars-episode-i---the-phantom-menace-chibi-darth-maul-enamel-pin---boxlunch-exclusive/17356659.html",
+     "method": "search_snippet",
+     "note": "BoxLunch item number"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/loungefly-boxlunch-pumpkin-spice-latte/minnie",
+   "set_key": "lic/2022/loungefly-boxlunch-pumpkin-spice-latte",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Minnie perched on the saucer of a pumpkin spice latte cup; otherwise close to the Mickey design",
+     "source_url": "https://www.disneyfoodblog.com/2022/09/23/the-best-disney-gift-for-your-pumpkin-spice-latte-loving-friends/",
+     "method": "search_snippet",
+     "note": "DFB Sept 2022 paraphrase"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.disneyfoodblog.com/2022/09/23/the-best-disney-gift-for-your-pumpkin-spice-latte-loving-friends/",
+     "method": "search_snippet",
+     "note": "DFB says the pins are Loungefly"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://www.disneyfoodblog.com/2022/09/23/the-best-disney-gift-for-your-pumpkin-spice-latte-loving-friends/",
+     "method": "search_snippet",
+     "note": "DFB: normally 9.90, then on sale 7.92"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/loungefly-boxlunch-pumpkin-spice-latte/pooh",
+   "set_key": "lic/2022/loungefly-boxlunch-pumpkin-spice-latte",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Pooh peeking out of a take-out cup with a large pumpkin on the sleeve",
+     "source_url": "https://www.disneyfoodblog.com/2022/09/23/the-best-disney-gift-for-your-pumpkin-spice-latte-loving-friends/",
+     "method": "search_snippet",
+     "note": "DFB Sept 2022 paraphrase"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.disneyfoodblog.com/2022/09/23/the-best-disney-gift-for-your-pumpkin-spice-latte-loving-friends/",
+     "method": "search_snippet",
+     "note": "DFB says the pins are Loungefly"
+    },
+    {
+     "field": "original_price",
+     "value": 9.9,
+     "source_url": "https://www.disneyfoodblog.com/2022/09/23/the-best-disney-gift-for-your-pumpkin-spice-latte-loving-friends/",
+     "method": "search_snippet",
+     "note": "DFB: normally 9.90"
+    }
+   ]
+  },
+  {
+   "pin_key": "lic/2022/boxlunch-wdw-50th-mickey-minnie/mickey-cinderella-castle",
+   "set_key": "lic/2022/boxlunch-wdw-50th-mickey-minnie",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Loungefly Disney Walt Disney World 50th Anniversary Mickey Mouse & Cinderella's Castle Enamel Pin - BoxLunch Exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-walt-disney-world-50th-anniversary-mickey-mouse-cinderellas-castle-enamel-pin---boxlunch-exclusive/16676540.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing title; matched to blog castle pin by name"
+    },
+    {
+     "field": "manufacturer",
+     "value": "Loungefly",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-walt-disney-world-50th-anniversary-mickey-mouse-cinderellas-castle-enamel-pin---boxlunch-exclusive/16676540.html",
+     "method": "search_snippet",
+     "note": "title names Loungefly"
+    },
+    {
+     "field": "retailer",
+     "value": "BoxLunch",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-walt-disney-world-50th-anniversary-mickey-mouse-cinderellas-castle-enamel-pin---boxlunch-exclusive/16676540.html",
+     "method": "search_snippet",
+     "note": "BoxLunch listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "BoxLunch exclusive",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-walt-disney-world-50th-anniversary-mickey-mouse-cinderellas-castle-enamel-pin---boxlunch-exclusive/16676540.html",
+     "method": "search_snippet",
+     "note": "title says BoxLunch Exclusive"
+    },
+    {
+     "field": "product_code",
+     "value": "16676540",
+     "source_url": "https://www.boxlunch.com/product/loungefly-disney-walt-disney-world-50th-anniversary-mickey-mouse-cinderellas-castle-enamel-pin---boxlunch-exclusive/16676540.html",
+     "method": "search_snippet",
+     "note": "BoxLunch item number"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "lic/2022/loungefly-boxlunch-pumpkin-spice-latte/pluto",
+   "field": "identity",
+   "searched": "3 queries",
+   "note": "hold released: Pluto has two separate Loungefly BoxLunch listings, 'Pumpkin Spice Drink' 15644549 and 'Pumpkin Spice Latte' 18532039; distinct pins"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-pumpkin-spice-latte/mickey",
+   "field": "identity",
+   "searched": "3 queries",
+   "note": "hold kept: still no Mickey 'Pumpkin Spice Latte' listing; only 2021 'Drink' listing 15644547 found; DFB Sept 2022 mentions Mickey without a distinguishing detail"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-pumpkin-spice-latte/minnie",
+   "field": "identity",
+   "searched": "3 queries",
+   "note": "hold kept: DFB Sept 2022 now describes Minnie on the saucer, but no own listing; 2021 Minnie drink pin also unlisted, so cannot compare"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-pumpkin-spice-latte/pooh",
+   "field": "product_code",
+   "searched": "1 query",
+   "note": "no own BoxLunch listing found; known from DPB lineup and DFB description"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-pumpkin-spice-latte",
+   "field": "expected_pin_count",
+   "searched": "3 queries",
+   "note": "still not stated; note 301's claim that 2023 pins are titled 'Scented' is incomplete: Zero 20675368 and Baymax 20675366 PSL listings sit in 2023 id range"
+  },
+  {
+   "key": "lic/2023/loungefly-boxlunch-pumpkin-spice-latte",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "lead for 2023 cell: Loungefly BoxLunch PSL pins Zero (20675368), Baymax (20675366), plus Sanrio; ids match 2023 scented set; undated in snippets"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-star-wars-chibi/darth-maul",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "hold: not in DPB June 2022 chibi post snippets; linked by listing's 2022 Galactic Convention wording and ids next to Obi-Wan/Jar Jar/Ahsoka (17356643-57)"
+  },
+  {
+   "key": "lic/2022/boxlunch-wdw-50th-mickey-minnie/mickey-cinderella-castle",
+   "field": "identity",
+   "searched": "1 query",
+   "note": "listing 16676540 matched to blog castle pin by name; ids 16676536-46 are the March 2022 WDW 50th BoxLunch batch"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-pets-owners-mystery",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "set size and chase not stated in listing or blog snippets"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-pets-owners-mystery/jenny-oliver",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (Jenny and Oliver named as one pairing in collection description with 'and more')"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-pets-owners-mystery/widow-tweed-tod",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: mystery designs not individually confirmed (Widow Tweed and Tod named as one pairing in collection description with 'and more')"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-wdw-50th-resort-map-mystery",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "six map pieces still unnamed; park count conflict (listing five, blog four) unresolved; Hot Topic WDW 50th blind box designs are a different release"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-star-wars-chibi-padme-outfits",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "only Red Invasion Gown named (forum snippet: plus three other outfits); four-pin set 19.90 June 2022 confirmed again"
+  },
+  {
+   "key": "lic/2022/boxlunch-hercules-merchandise-pin-set",
+   "field": "identity",
+   "searched": "2 queries",
+   "note": "hold kept: 'Herc Merch' listing 16676536 still undated; no DPB snippet uses the listing name"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-up-russell-carl-dug-pin-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "holds kept on russell/carl/dug: listing still says 3-piece set, no per-piece description"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-nbc-lock-shock-barrel-pin-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "holds kept on lock/shock/barrel: listing names accessories but not per pin; DPB gives Sept 2022, 16.90 (listing 15.99)"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-wdw-50th-chip-dale-popcorn-pin-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "2-piece set still not described per pin; no member records"
+  },
+  {
+   "key": "lic/2022/boxlunch-christmas/nbc-wreath",
+   "field": "identity",
+   "searched": "2 queries",
+   "note": "hold kept: Loungefly wreath listing 18653297 sits between 2022 NBC frame (18653295) and LSB set (18653299) ids; circumstantial, DPB link unconfirmed"
+  },
+  {
+   "key": "lic/2022/boxlunch-nbc-train-set-mystery",
+   "field": "identity",
+   "searched": "1 query",
+   "note": "candidate 18928979 still matched by subject only; later Loungefly 'Night Before Christmas Holiday Train' 32195500 is a different, later item"
+  },
+  {
+   "key": "lic/2022/boxlunch-nbc-train-set-mystery",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "still not stated"
+  },
+  {
+   "key": "lic/2022/boxlunch-characters-in-fruit-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "holds kept on all eight: DPB still lists names only (8 pins, June 2022); listing gives 12.90, no maker"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-characters-pumpkin-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "holds kept: Stitch, Alice, Simba 'and more'; DPB pre-order July 2022, ship Sept, 10.90 (listing 9.99); size not stated"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-princess-signature-sidekicks-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "holds kept: princess signatures listed, sidekick roster still not given"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-alice-characters-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "holds kept: DPB still 'characters include' six names, Sept 2022; Loungefly WDPN2899 roster (no Red Knight) is a different series"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-princess-sidekick-floral-mystery",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "lead, not recorded: BoxLunch Loungefly Princess Sidekick Floral blind box 18898806 (Abu, Flounder, Ray); DPB snippet says March 2021 but id suggests 2022; confirm year"
+  },
+  {
+   "key": "lic/2022/loungefly-boxlunch-alice-teacup-puzzle-mystery",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "lead, not recorded: Loungefly Alice Teacup Puzzle blind box on BoxLunch 17356627 (14.90); id near June 2022 chibi listings; undated, designs unnamed"
+  },
+  {
+   "key": "lic/2022/boxlunch-nbc-frame",
+   "field": "manufacturer",
+   "searched": "1 query",
+   "note": "still not stated"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 to 253 (b079), 277 (b131), 301 (b155); reuses their keys. 25 standard searches, snippets only. New: chibi Darth Maul (lead key from 277), Pets & Owners blind box set (May 2022, pins held). Added DFB descriptions for PSL Minnie/Pooh and listing 16676540 for WDW 50th castle pin. Hold released: PSL Pluto vs 2021 Drink (separate listings). All pack/mystery holds kept."
+}

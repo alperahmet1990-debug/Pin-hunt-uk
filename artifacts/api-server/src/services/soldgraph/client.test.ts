@@ -12,6 +12,9 @@ import {
   soldgraphCreditsForCall,
   type SoldgraphClientOptions,
   type SoldgraphClock,
+  type SoldgraphReservation,
+  type SoldgraphReserveRequest,
+  type SoldgraphUsageRecord,
 } from "./client";
 
 const KEY = "sg_test_SECRET_KEY_123";
@@ -401,5 +404,131 @@ describe("RateLimiter", () => {
     expect(clock.sleeps).toEqual([]);
     await client.search("ebay/sold");
     expect(clock.sleeps).toEqual([60_000]);
+  });
+});
+
+// A store with the atomic reserve path, mirroring reserve_provider_credit() /
+// record_provider_usage() from migration 049: a reservation is a row that
+// recordUsage later settles under the same idempotency key.
+class ReservingStore extends InMemoryUsageStore {
+  reserveCalls: SoldgraphReserveRequest[] = [];
+  monthReads = 0;
+  constructor(
+    now: () => number,
+    private readonly limit: number | null,
+  ) {
+    super(now);
+  }
+  override async getMonthUsage(month: string) {
+    this.monthReads += 1;
+    return super.getMonthUsage(month);
+  }
+  async reserveCredit(req: SoldgraphReserveRequest): Promise<SoldgraphReservation> {
+    this.reserveCalls.push(req);
+    const limitCredits = this.limit ?? req.defaultBudget.limitCredits;
+    const usedCredits = this.records
+      .filter((r) => (r.occurredAt ?? "").slice(0, 7) === req.month)
+      .reduce((n, r) => n + r.credits, 0);
+    if (usedCredits + req.credits > limitCredits) return { allowed: false, usedCredits, limitCredits, hardStop: true };
+    this.records.push({
+      provider: "soldgraph",
+      route: req.route,
+      requestId: null,
+      idempotencyKey: req.idempotencyKey,
+      status: "complete",
+      credits: req.credits,
+      occurredAt: req.occurredAt,
+    });
+    return { allowed: true, usedCredits, limitCredits, hardStop: true };
+  }
+  override async recordUsage(record: SoldgraphUsageRecord): Promise<void> {
+    const i = this.records.findIndex((r) => r.idempotencyKey === record.idempotencyKey);
+    if (i >= 0) this.records[i] = { ...record };
+    else this.records.push({ ...record });
+  }
+}
+
+describe("soldgraph client with an atomic reserving store", () => {
+  function setupReserving(responses: Response[], limit: number | null) {
+    const clock = fakeClock();
+    const store = new ReservingStore(clock.now, limit);
+    const queue = [...responses];
+    const fetchMock = vi.fn(async () => {
+      const next = queue.shift();
+      if (!next) throw new Error("unexpected extra fetch");
+      return next;
+    });
+    let n = 0;
+    const client = createSoldgraphClient({
+      usageStore: store,
+      apiKey: KEY,
+      enabled: true,
+      fetch: fetchMock as unknown as typeof fetch,
+      clock,
+      logger: { info: () => {}, warn: () => {}, error: () => {} },
+      random: () => 1,
+      uuid: () => `uuid-${++n}`,
+    });
+    return { client, store, fetchMock };
+  }
+
+  it("reserves before the call and settles the same row afterwards", async () => {
+    const { client, store, fetchMock } = setupReserving([res(200, complete())], 10);
+    await client.search("ebay/sold", { q: "x" }, { pinId: "pin-1" });
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(store.reserveCalls).toHaveLength(1);
+    expect(store.reserveCalls[0]).toMatchObject({
+      provider: "soldgraph",
+      month: MONTH,
+      route: "ebay/sold",
+      idempotencyKey: "uuid-1",
+      credits: 1,
+      pinId: "pin-1",
+      defaultBudget: { limitCredits: 100, hardStop: true },
+    });
+    // The budget is not also checked the non-atomic way.
+    expect(store.monthReads).toBe(0);
+    expect(store.records).toHaveLength(1);
+    expect(store.records[0]).toMatchObject({ idempotencyKey: "uuid-1", status: "complete", credits: 1 });
+  });
+
+  it("refuses without a network call when the reservation is not allowed", async () => {
+    const { client, store, fetchMock } = setupReserving([res(200, complete())], 0);
+    const err = await client.search("ebay/sold").catch((e) => e);
+    expect(err).toBeInstanceOf(BudgetExceededError);
+    expect(err.limitCredits).toBe(0);
+    expect(fetchMock).not.toHaveBeenCalled();
+    expect(store.records).toHaveLength(0);
+  });
+
+  it("fails closed when the reservation errors", async () => {
+    const { client, store, fetchMock } = setupReserving([res(200, complete())], 10);
+    store.reserveCredit = async () => {
+      throw new Error("db down");
+    };
+    await expect(client.search("ebay/sold")).rejects.toBeInstanceOf(BudgetExceededError);
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("parallel searches cannot exceed the cap", async () => {
+    const { client, store, fetchMock } = setupReserving(
+      Array.from({ length: 5 }, () => res(200, complete())),
+      3,
+    );
+    const results = await Promise.allSettled(Array.from({ length: 5 }, () => client.search("ebay/sold")));
+    expect(results.filter((r) => r.status === "fulfilled")).toHaveLength(3);
+    expect(results.filter((r) => r.status === "rejected" && r.reason instanceof BudgetExceededError)).toHaveLength(2);
+    expect(fetchMock).toHaveBeenCalledTimes(3);
+    expect(store.records.reduce((n, r) => n + r.credits, 0)).toBe(3);
+  });
+
+  it("a failed job settles its reservation to 0 credits", async () => {
+    const { client, store } = setupReserving(
+      [res(202, { status: "pending", poll_url: "/v1/jobs/j" }), res(200, { status: "failed", error: { code: "bad_query" } })],
+      10,
+    );
+    await expect(client.search("ebay/sold")).rejects.toBeInstanceOf(SoldgraphHttpError);
+    expect(store.records).toHaveLength(1);
+    expect(store.records[0]).toMatchObject({ idempotencyKey: "uuid-1", status: "failed", credits: 0 });
   });
 });

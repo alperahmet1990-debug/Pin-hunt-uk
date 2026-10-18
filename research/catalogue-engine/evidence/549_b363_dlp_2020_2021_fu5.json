@@ -1,0 +1,1570 @@
+{
+ "packet_id": "549_b363_dlp_2020_2021_fu5",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+   "title": "Neue Pins im Oktober 2021",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-10-05"
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+   "title": "Pin-Neuerscheinungen im September 2021",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-08-30"
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+   "title": "Pin-Neuerscheinungen im August 2021",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-07"
+  },
+  {
+   "url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "title": "Pin Trading a Disneyland Paris : la selection de pin's du mois",
+   "publisher": "Disneyphile",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyblog.com/2021/08/30/disneyland-paris-pin-releases-september-2021-include-brave-big-thunder-mountain-and-lots-of-halloween-treats/",
+   "title": "Disneyland Paris Has Amazing New Pin Releases for September!",
+   "publisher": "MickeyBlog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-08-30"
+  },
+  {
+   "url": "https://news.disneylandparis.com/en/christmas-2021/",
+   "title": "Disneyland Paris Launches Enchanted Christmas Season with a New Dazzling Parade",
+   "publisher": "Disneyland Paris News",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-11"
+  },
+  {
+   "url": "https://radiodisneyclub.fr/pin-trading-disneyland-paris/",
+   "title": "Pin Trading a Disneyland Paris tous les mois, les offres des pin's",
+   "publisher": "Radio Disney Club",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-animators-pin-collection-at-disneyland-paris/",
+   "title": "Disney Animators' Pin Collection at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-06-26"
+  },
+  {
+   "url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+   "title": "New September 2021 Pin Releases for Disneyland Paris",
+   "publisher": "Travel to the Magic",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-08-30"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2021/villains-silhouette-2021",
+   "claims": [
+    {
+     "field": "price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Quoted page text: a Maleficent, Dr Facilier, Ursula, Hades and Evil Queen pin for EUR 8 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "format",
+     "value": "five separate single pins, one per villain",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Quoted text names 'einen ... Pin' for each of five villains, EUR 8 each, no Lineberty needed"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-02",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Saturday 2 Oct block"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Quoted body list names ten items: five villains and five sidekick/object items incl. top hat"
+    },
+    {
+     "field": "format",
+     "value": "ten separate pins: five villains and their sidekicks",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Body text lists the ten; top hat said to get 'its own pin' too"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/halloween-2021",
+   "claims": [
+    {
+     "field": "format",
+     "value": "eight separate single OE pins at EUR 8, plus a 4-pin booster, two 2-pin sets and a lanyard",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted text: choice among the single pins (eight named), all EUR 8; set/booster/lanyard counts from search summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Search summary places the Halloween OE drop on Sat 25 Sep"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/oe-set/halloween-booster-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween pin booster set 2021",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Pin Booster-Set Halloween"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Search summary: booster with four pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://mickeyblog.com/2021/08/30/disneyland-paris-pin-releases-september-2021-include-brave-big-thunder-mountain-and-lots-of-halloween-treats/",
+     "method": "search_snippet",
+     "note": "Search summary: castle of stacked pumpkins sold in a four-pin booster at DLP"
+    },
+    {
+     "field": "price",
+     "value": 20.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "EUR 20 (search summary)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Summary: all Halloween items unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "25 Sep (summary)"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Booster and lanyard part of 25 Sep Halloween release (summary)"
+    },
+    {
+     "field": "format",
+     "value": "booster (multi-pin pack, 4 pins)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Contents listed as Chip, Chap (Dale), castle of pumpkins, pumpkin with Mickey ears (summary)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/oe-set/halloween-pluto-mummy-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween 2-pin set: Pluto mummy with pumpkin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Summary: 2-pin set showing Pluto as a mummy with a pumpkin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Two-pin set (summary)"
+    },
+    {
+     "field": "price",
+     "value": 13.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "EUR 13 each set (summary)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Summary: unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "25 Sep (summary)"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (2 pins)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Pin-Set with two pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/oe-set/halloween-pumpkin-ghost-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Halloween 2-pin set: pumpkin and Mickey-eared ghost",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Summary: 2-pin set showing a pumpkin and a ghost with Mickey ears"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Two-pin set (summary)"
+    },
+    {
+     "field": "price",
+     "value": 13.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "EUR 13 each set (summary)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Summary: unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "25 Sep (summary)"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (2 pins)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Pin-Set with two pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/oe-single/mickey-explorer",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey explorer open edition pin (August 2021)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Single OE pin on 21 Aug"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/christmas-le-november-2021",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://news.disneylandparis.com/en/christmas-2021/",
+     "method": "search_snippet",
+     "note": "Official: series of LE pins for the new parade"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://news.disneylandparis.com/en/christmas-2021/",
+     "method": "search_snippet",
+     "note": "Official: 500 copies"
+    },
+    {
+     "field": "price",
+     "value": 16.0,
+     "source_url": "https://news.disneylandparis.com/en/christmas-2021/",
+     "method": "search_snippet",
+     "note": "Official: EUR 16 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://news.disneylandparis.com/en/christmas-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-13",
+     "source_url": "https://news.disneylandparis.com/en/christmas-2021/",
+     "method": "search_snippet",
+     "note": "Official: released 13 Nov 2021"
+    },
+    {
+     "field": "format",
+     "value": "series of separate LE pins, each featuring one parade float and some characters",
+     "source_url": "https://news.disneylandparis.com/en/christmas-2021/",
+     "method": "search_snippet",
+     "note": "Official text: pins featuring each of the floats and some emblematic characters"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/santa-hat-november-2021",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: Christmas starts with two new pins, Marie and Chip and Dale in winter hats"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted 'non limites' (unlimited); conflicts with LE 500 claim in packet 529"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/cowboy-november-2021",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: Mickey and Chip and Dale as cowboys on three new unlimited pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted 'non limites'"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-13",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Saturday 13 Nov"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2021/villains-silhouette-2021/maleficent",
+   "set_key": "dlp/2021/villains-silhouette-2021",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Quoted text: a Maleficent pin for EUR 8"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named as its own pin in quoted 2 Oct text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-silhouette-2021/dr-facilier",
+   "set_key": "dlp/2021/villains-silhouette-2021",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Quoted text: a Dr. Facilier pin for EUR 8"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dr. Facilier"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named as its own pin in quoted 2 Oct text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-silhouette-2021/ursula",
+   "set_key": "dlp/2021/villains-silhouette-2021",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Quoted text: a Ursula pin for EUR 8"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ursula"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named as its own pin in quoted 2 Oct text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-silhouette-2021/hades",
+   "set_key": "dlp/2021/villains-silhouette-2021",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Quoted text: a Hades pin for EUR 8"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hades"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named as its own pin in quoted 2 Oct text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-silhouette-2021/evil-queen",
+   "set_key": "dlp/2021/villains-silhouette-2021",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Quoted text: a Evil Queen pin for EUR 8"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named as its own pin in quoted 2 Oct text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/maleficent",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Maleficent",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted dein-dlrp body list of the 30 Oct villains/sidekicks pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/spinning-wheel-diablo",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Spinning wheel with raven",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted dein-dlrp body list of the 30 Oct villains/sidekicks pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/evil-queen",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Evil Queen",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted dein-dlrp body list of the 30 Oct villains/sidekicks pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/poisoned-apple",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Poisoned apple (popcorn-bucket style)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted dein-dlrp body list of the 30 Oct villains/sidekicks pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/flotsam-jetsam",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Flotsam and Jetsam",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted dein-dlrp body list of the 30 Oct villains/sidekicks pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/hades",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hades",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted dein-dlrp body list of the 30 Oct villains/sidekicks pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/pain-panic",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pain and Panic",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted dein-dlrp body list of the 30 Oct villains/sidekicks pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/dr-facilier",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dr. Facilier",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted dein-dlrp body list of the 30 Oct villains/sidekicks pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/ursula",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ursula",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted body list between poisoned apple and Flotsam/Jetsam"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ursula"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "main_character",
+     "value": "Ursula",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-30",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Summary places Ursula among 30 Oct Lineberty pins at Thunder Mesa Riverboat Landing"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Search summary quotes 'fuer jeweils 16EUR' for the 30 Oct group; not separately priced"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/top-hat",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dr. Facilier's top hat",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Quoted body text: finally Dr Facilier's top hat also got its own pin; overview line 'Dr. Faciliers Zylinder (16EUR)'"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Overview line quoted with EUR 16"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/halloween-2021/chip-dale-carving-pumpkin",
+   "set_key": "dlp/2021/halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip and Dale carving a pumpkin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted list of single Halloween pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "As described in quoted text"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted: all these pins cost EUR 8 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Overview line quoted as 'unlimitiert'"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Date from search summary (25 Sep block), not quoted text"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Listed as one of the single pins showing both characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/halloween-2021/pascal",
+   "set_key": "dlp/2021/halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween Pascal",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted list of single Halloween pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pascal"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "As described in quoted text"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted: all these pins cost EUR 8 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Overview line quoted as 'unlimitiert'"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Date from search summary (25 Sep block), not quoted text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/halloween-2021/marie-pumpkin",
+   "set_key": "dlp/2021/halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Marie in a pumpkin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted list of single Halloween pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Marie"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "As described in quoted text"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted: all these pins cost EUR 8 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Summary says all Halloween OE items unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Date from search summary (25 Sep block), not quoted text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/halloween-2021/minnie-figaro",
+   "set_key": "dlp/2021/halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse with Figaro",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted list of single Halloween pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse",
+      "Figaro"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "As described in quoted text"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted: all these pins cost EUR 8 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Summary says all Halloween OE items unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Date from search summary (25 Sep block), not quoted text"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Listed as one of the single pins showing both characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/halloween-2021/goofy-scarecrow",
+   "set_key": "dlp/2021/halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy as a scarecrow",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted list of single Halloween pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "As described in quoted text"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted: all these pins cost EUR 8 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Summary says all Halloween OE items unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Date from search summary (25 Sep block), not quoted text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/halloween-2021/mickey-cape-pumpkins",
+   "set_key": "dlp/2021/halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey with cape holding pumpkins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted list of single Halloween pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "As described in quoted text"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted: all these pins cost EUR 8 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Summary says all Halloween OE items unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Date from search summary (25 Sep block), not quoted text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/halloween-2021/daisy-witch",
+   "set_key": "dlp/2021/halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Daisy as a witch on a broom",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted list of single Halloween pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "As described in quoted text"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted: all these pins cost EUR 8 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Overview line quoted as 'unlimitiert'"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Date from search summary (25 Sep block), not quoted text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/halloween-2021/donald-foot-pumpkin",
+   "set_key": "dlp/2021/halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald with one foot stuck in a pumpkin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Named in quoted list of single Halloween pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "As described in quoted text"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted: all these pins cost EUR 8 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Summary says all Halloween OE items unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Date from search summary (25 Sep block), not quoted text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/oe-set/halloween-booster-2021/castle-pumpkins",
+   "set_key": "dlp/2021/oe-set/halloween-booster-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Castle made of pumpkins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Search summary lists a castle of pumpkins in the booster"
+    },
+    {
+     "field": "visual_description",
+     "value": "Castle built from stacked pumpkins",
+     "source_url": "https://mickeyblog.com/2021/08/30/disneyland-paris-pin-releases-september-2021-include-brave-big-thunder-mountain-and-lots-of-halloween-treats/",
+     "method": "search_snippet",
+     "note": "Search summary: stacked-pumpkin castle pin, single at WDW but in a 4-pin booster at DLP"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Summary date"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/oe-set/halloween-booster-2021/mickey-ears-pumpkin",
+   "set_key": "dlp/2021/oe-set/halloween-booster-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pumpkin with Mickey ears",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Search summary lists it as a booster item"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Summary date"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/oe-set/halloween-booster-2021/chip",
+   "set_key": "dlp/2021/oe-set/halloween-booster-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Search summary lists Chip as a booster item"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/oe-set/halloween-booster-2021/dale",
+   "set_key": "dlp/2021/oe-set/halloween-booster-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dale"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Search summary lists Chap (Dale) as a booster item"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/oe/mickey-explorer",
+   "set_key": "dlp/2021/oe-single/mickey-explorer",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey as explorer",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Name from search summary ('Mickey als Entdecker')"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey in an adventurer outfit holding a compass",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Quoted text: an unlimited pin, EUR 10, showing Mickey in adventurer outfit with compass"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "As described"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Quoted 'unlimitierter Pin'"
+    },
+    {
+     "field": "original_price",
+     "value": 10.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Quoted EUR 10"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08-21",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Same 21 Aug block as the eight Jungle Festival LEs"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/maleficent",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "released (proposed): quoted dein-dlrp body list names exactly the ten items of the 10-pin set and says the top hat 'also got its own pin', implying one pin per item. was: hold: villain named only in a list"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/evil-queen",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "released (proposed): same quoted ten-item list and 'own pin' wording as maleficent. was: hold: villain named only in a list. Reviewer may keep hold if a list is judged insufficient"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/hades",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "released (proposed): same quoted ten-item list and 'own pin' wording as maleficent. was: hold: villain named only in a list. Reviewer may keep hold if a list is judged insufficient"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/dr-facilier",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "released (proposed): same quoted ten-item list and 'own pin' wording as maleficent. was: hold: villain named only in a list. Reviewer may keep hold if a list is judged insufficient"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/top-hat",
+   "field": "pin_name",
+   "searched": "WebSearch standard; B363",
+   "note": "released: quoted body text says Dr Facilier's top hat also got its own pin; overview line 'Dr. Faciliers Zylinder (16EUR)'. was: hold: seen only in search summary"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/top-hat",
+   "field": "release_date",
+   "searched": "WebSearch standard; B363",
+   "note": "field note: overview places the top hat under 9 Oct, body text under 30 Oct; same page, unresolved"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/ursula",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "field note: Ursula is named in the quoted ten-item list; release date/price from summary. Some 30 Oct pins sold 'again' (wieder) at Thunder Mesa Riverboat Landing"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021",
+   "field": "edition_size",
+   "searched": "WebSearch standard; B363",
+   "note": "No edition size stated; 30 Oct pins need Lineberty registration"
+  },
+  {
+   "key": "dlp/2021/villains-jumbo-2021",
+   "field": "pins",
+   "searched": "WebSearch standard; B363",
+   "note": "lead: summary says 23 Oct jumbo pins at EUR 50 incl. Ursula, Hades, Dr Facilier (dein-dlrp Oct 2021); MickeyBlog has 23 Oct glow-in-dark at WoD. Link to LE 500 jumbo / portraits not confirmed"
+  },
+  {
+   "key": "dlp/2021/villains-silhouette-2021",
+   "field": "scope",
+   "searched": "WebSearch standard; B363",
+   "note": "Matching villains lanyard EUR 13 on 2 Oct; lanyard, not counted"
+  },
+  {
+   "key": "dlp/2021/halloween-2021/marie-pumpkin",
+   "field": "pin_name",
+   "searched": "WebSearch standard; B363",
+   "note": "field note: quoted text reads 'Pascal oder Marie in einem Kuerbis'; parsed as two pins (Pascal; Marie in a pumpkin) because eight singles are listed; Pascal may also be in a pumpkin"
+  },
+  {
+   "key": "dlp/2021/halloween-2021/pascal",
+   "field": "visual_description",
+   "searched": "WebSearch standard; B363",
+   "note": "field note: overview line 'Pin Halloween Pascal, unlimitiert, 8EUR' quoted; design detail not stated"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-booster-2021/chip",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "hold: one-pin-per-character split (Chip, Chap separate booster pins) seen only in search-engine summary text; need quoted text or second source"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-booster-2021/dale",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "hold: one-pin-per-character split (Chip, Chap separate booster pins) seen only in search-engine summary text; need quoted text or second source"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-booster-2021/castle-pumpkins",
+   "field": "visual_description",
+   "searched": "WebSearch standard; B363",
+   "note": "field note: booster contents from search summaries only (dein-dlrp and MickeyBlog); MickeyBlog summary calls it a Cinderella Castle design"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-booster-2021/mickey-ears-pumpkin",
+   "field": "pin_name",
+   "searched": "WebSearch standard; B363",
+   "note": "field note: from search summary only"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-pluto-mummy-2021",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "hold: confirm pin structure; 2-pin set shows Pluto mummy and a pumpkin, which pin shows what not stated"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-pumpkin-ghost-2021",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "hold: confirm pin structure; 2-pin set shows a pumpkin and a Mickey-eared ghost, split not stated"
+  },
+  {
+   "key": "dlp/2021/lanyards-september-2021",
+   "field": "scope",
+   "searched": "WebSearch standard; B363",
+   "note": "scope: confirm pin vs button; Genie/Olaf/Pascal lanyards with pouch EUR 13 (4 Sep) and a Halloween lanyard with pouch EUR 13 (25 Sep); no pin mentioned"
+  },
+  {
+   "key": "dlp/2020/lanyards-october-2020",
+   "field": "scope",
+   "searched": "WebSearch standard; B363",
+   "note": "Not searched again (budget); no new evidence"
+  },
+  {
+   "key": "dlp/2021/oe/mickey-explorer",
+   "field": "set_key",
+   "searched": "WebSearch standard; B363",
+   "note": "Resolves 'ninth 21 Aug pin' lead (dein-dlrp: 8 LE + 1 OE). Kept outside jungle-august-2021 because that set is LE 500"
+  },
+  {
+   "key": "dlp/2021/santa-hat-november-2021",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "hold: confirm pin structure; two pins 'representing Marie and Chip and Dale' (Disneyphile quoted) - Marie / Chip-and-Dale split likely but not stated. OE (Disneyphile) vs LE 500 EUR 16 (packet 529, maybe parade set)"
+  },
+  {
+   "key": "dlp/2021/cowboy-november-2021",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "hold: confirm pin structure; three unlimited pins with Mickey and Chip and Dale (Disneyphile quoted); split not stated"
+  },
+  {
+   "key": "dlp/2021/cowboy-november-2021/sheriff-mickey",
+   "field": "edition_type",
+   "searched": "WebSearch standard; B363",
+   "note": "field note: Disneyphile calls it a Mickey sheriff badge ('insigne'); a reseller (La Boutique Disney) calls pin 146028 'Opening Edition' 13 Nov 2021 - reseller only, not recorded"
+  },
+  {
+   "key": "dlp/2021/christmas-le-november-2021",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "Floats not individually named; official text says each float has its own pin. Five floats per wiki-type summary only; expected_pin_count not recorded"
+  },
+  {
+   "key": "dlp/2021/101-dalmatians-december-2021",
+   "field": "characters",
+   "searched": "WebSearch standard; B363",
+   "note": "Disneyphile again: three LE 700 Dalmatians pins, 4 Dec, Thunder Mesa Mercantile Building; designs still unnamed. No dein-dlrp/magicdlp/TTTM Dec 2021 list indexed"
+  },
+  {
+   "key": "dlp/2021/animators-dalmatians-oe-december-2021",
+   "field": "characters",
+   "searched": "WebSearch standard; B363",
+   "note": "Still only the Disney Pins Blog caption 'Animator & 101 Dalmatians OE pins'"
+  },
+  {
+   "key": "dlp/2021/christmas-oe-december-2021",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "Hold stays: no new per-pin evidence"
+  },
+  {
+   "key": "dlp/2021/star-wars-patrice-girod-november-2021",
+   "field": "pin_name",
+   "searched": "WebSearch standard; B363",
+   "note": "Four RotJ designs still not named; Girod searches only return the Jan 2019 Millennium Falcon LE 500 series (planete-starwars, mintinbox) - different release"
+  },
+  {
+   "key": "dlp/2022/january-2022-world-of-disney-le/genie-chef",
+   "field": "release_date",
+   "searched": "WebSearch standard; B363",
+   "note": "Disneyphile re-seen: two Genie pins, 700 each, Sat 11 Dec 2021; no store named. dein-dlrp 15 Jan 2022 conflict unresolved"
+  },
+  {
+   "key": "dlp/2022/january-2022-world-of-disney-le/genie-performer",
+   "field": "release_date",
+   "searched": "WebSearch standard; B363",
+   "note": "Same Dec 2021 vs Jan 2022 conflict; no new source"
+  },
+  {
+   "key": "dlp/2021/december-2021-le/genie",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "hold stays: key covers the two Genie designs; map or retire at review"
+  },
+  {
+   "key": "dlp/2020/holiday-2020-delayed",
+   "field": "characters",
+   "searched": "WebSearch standard; B363",
+   "note": "Alice holiday 2020 pin still undescribed; only Disney Pins Blog (Stitch LE 700, 13 Mar 2021) surfaced"
+  },
+  {
+   "key": "dlp/2020/march-2020-le/pocahontas-carousel",
+   "field": "release_date",
+   "searched": "WebSearch standard; B363",
+   "note": "field note: Disneyphile 26 Sep 2020: two LE 700 releases in Best Friends and Carrousel lines (Pocahontas not named). Radio Disney Club: 16 Sep carousel Pocahontas at Disney Fashion via Lineberty. 19/26 Sep unresolved"
+  },
+  {
+   "key": "dlp/2021/big-thunder-mountain-2021",
+   "field": "edition_type",
+   "searched": "WebSearch standard; B363",
+   "note": "Not searched again; OE (two sources) vs LE 700 (packet 105) left for review"
+  },
+  {
+   "key": "dlp/2020/oe-set/christmas-booster-2020",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "Hold stays: dein-dlrp Dec 2020 again lists four Christmas pins (Mickey, Pluto, Figaro, Minnie) EUR 20, unlimited, 19 Dec - character list only"
+  },
+  {
+   "key": "dlp/2021/halloween-trio-2021",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "Hold stays; not searched again"
+  },
+  {
+   "key": "dlp/2021/pin-trading-anniversary-2021",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "Hold stays; not searched again"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "Hold stays: Disney Pins Blog says five pins EUR 8 per pin with Moana, Merida, Tiana, Pocahontas, Lilo - still a character list; per-pin listing only on a reseller"
+  },
+  {
+   "key": "dlp/2020/cast-member-genie/genie",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "Hold stays; not searched"
+  },
+  {
+   "key": "dlp/2021/stitch-august-2021/2-pin-set",
+   "field": "pin_structure",
+   "searched": "WebSearch standard; B363",
+   "note": "Hold stays; not searched"
+  },
+  {
+   "key": "dlp/2021/disney-hotel-new-york",
+   "field": "release_date",
+   "searched": "WebSearch standard; B363",
+   "note": "Official opening (21 Jun 2021) gift was a Marvel print; only an undated reseller listing for a hotel Marvel pin. No dated hotel pins found"
+  },
+  {
+   "key": "discovery",
+   "field": "budget",
+   "searched": "WebSearch standard; B363",
+   "note": "31 WebSearch calls used (one over the 30 limit); a 32nd call errored (rate limit)"
+  }
+ ],
+ "discovery_notes": "B363 follow-up 5 of B044 (DLP 2020-2021). New: eight Halloween 2021 OE singles (quoted dein-dlrp list), Halloween booster/2-pin sets, Mickey explorer OE (ninth 21 Aug pin), Ursula in villains+sidekicks, top hat quoted as own pin, silhouette villains EUR 8 each, official parade LE 500 facts, santa-hat 2 OE pins, cowboy 3 OE. All method search_snippet; summary-only values flagged in notes."
+}

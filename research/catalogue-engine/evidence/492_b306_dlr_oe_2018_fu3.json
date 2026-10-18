@@ -1,0 +1,528 @@
+{
+ "packet_id": "backfill-b306-dlr-oe-2018-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b306",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/wall-e-emoji-pin-set/",
+   "title": "WALL-E Emoji Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-02"
+  },
+  {
+   "url": "https://mypincentral.com/pin/61344",
+   "title": "Wall-E emoji pin (sweat drop)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/61345",
+   "title": "Wall-E emoji pin (heart eyes)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-treats-pin-set/",
+   "title": "Disney Treats Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-09"
+  },
+  {
+   "url": "https://disneypinsblog.com/nightmare-before-christmas-lanyard-medal-pin/",
+   "title": "The Nightmare Before Christmas Lanyard Medal & Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-07"
+  },
+  {
+   "url": "https://disneypinsblog.com/nightmare-before-christmas-pin-trading-starter-set/",
+   "title": "Nightmare Before Christmas Pin Trading Starter Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-07"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2018-week-2",
+   "title": "New Disney Pins July 2018 Week 2",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-07"
+  },
+  {
+   "url": "https://disneypinsblog.com/ice-cream-collectible-pin-pack/",
+   "title": "Ice Cream Collectible Pin Pack",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-08"
+  },
+  {
+   "url": "https://mypincentral.com/pin/37979",
+   "title": "WDW/DLR - Ice Cream Bar Mystery Set - 2018",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-pixar-coco-booster-pin-set/",
+   "title": "Disney Pixar Coco Booster Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-10"
+  },
+  {
+   "url": "https://disneypinsblog.com/product/mama-coco-and-miguel-pin/",
+   "title": "Mama Coco and Miguel Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/153018",
+   "title": "DLR - Dinoco Logo Cars - 2018",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-november-2018-week-1/",
+   "title": "New Disney Pins November 2018 Week 1",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+   "title": "New Disney Pins November 2018 Week 5",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/open-edition-pin-prices-increase-at-disney-parks",
+   "title": "Open Edition Pin Prices Increase at Disney Parks",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2022"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2018/oe-set/wall-e-emoji",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "WALL-E Emoji Pin Set",
+     "source_url": "https://disneypinsblog.com/wall-e-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/wall-e-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "Set of six different pins sold together"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/wall-e-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB: six different pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://mypincentral.com/pin/61344",
+     "method": "search_snippet",
+     "note": "MPC per-pin page calls it a six-pin WALL-E themed emoji booster pack"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/wall-e-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/wall-e-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-02-13",
+     "source_url": "https://disneypinsblog.com/wall-e-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB: released 13 Feb 2018 at Disneyland Resort; WDW to follow"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/wall-e-emoji-pin-set/",
+     "method": "search_snippet",
+     "note": "Debuted at DLR; WDW 'coming soon' per DPB"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2018/oe-set/disney-treats",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Treats Pin Set",
+     "source_url": "https://disneypinsblog.com/disney-treats-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/disney-treats-pin-set/",
+     "method": "search_snippet",
+     "note": "Open edition set of four pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/disney-treats-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB: four pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-treats-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB states open edition"
+    },
+    {
+     "field": "price",
+     "value": 24.99,
+     "source_url": "https://disneypinsblog.com/disney-treats-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB retail price"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-treats-pin-set/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://disneypinsblog.com/disney-treats-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB: released early September 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World Resort",
+     "source_url": "https://disneypinsblog.com/disney-treats-pin-set/",
+     "method": "search_snippet",
+     "note": "DPB: both resorts; also shopDisney while supplies last"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2018/oe-set/wall-e-emoji/wall-e-sweat-drop",
+   "set_key": "dlr/2018/oe-set/wall-e-emoji",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "WALL-E"
+     ],
+     "source_url": "https://mypincentral.com/pin/61344",
+     "method": "search_snippet",
+     "note": "Per-pin entry names WALL-E"
+    },
+    {
+     "field": "main_character",
+     "value": "WALL-E",
+     "source_url": "https://mypincentral.com/pin/61344",
+     "method": "search_snippet",
+     "note": "Per-pin entry"
+    },
+    {
+     "field": "franchise",
+     "value": "WALL-E",
+     "source_url": "https://mypincentral.com/pin/61344",
+     "method": "search_snippet",
+     "note": "Disney/Pixar WALL-E"
+    },
+    {
+     "field": "visual_description",
+     "value": "WALL-E drawn as an emoji with a sweat drop on one eye, looking concerned; art from Emoji Blitz game",
+     "source_url": "https://mypincentral.com/pin/61344",
+     "method": "search_snippet",
+     "note": "Paraphrase of per-pin entry"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/61344",
+     "method": "search_snippet",
+     "note": "Back dated 2018 per entry"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "2018 with Disney Pin Trading logo",
+     "source_url": "https://mypincentral.com/pin/61344",
+     "method": "search_snippet",
+     "note": "Per entry, paraphrased"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/61344",
+     "method": "search_snippet",
+     "note": "Per-pin page; entry says it is one of six pins in the emoji booster"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/oe-set/wall-e-emoji/wall-e-heart-eyes",
+   "set_key": "dlr/2018/oe-set/wall-e-emoji",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "WALL-E"
+     ],
+     "source_url": "https://mypincentral.com/pin/61345",
+     "method": "search_snippet",
+     "note": "Per-pin entry names WALL-E"
+    },
+    {
+     "field": "main_character",
+     "value": "WALL-E",
+     "source_url": "https://mypincentral.com/pin/61345",
+     "method": "search_snippet",
+     "note": "Per-pin entry"
+    },
+    {
+     "field": "franchise",
+     "value": "WALL-E",
+     "source_url": "https://mypincentral.com/pin/61345",
+     "method": "search_snippet",
+     "note": "Disney/Pixar copyright on back"
+    },
+    {
+     "field": "visual_description",
+     "value": "WALL-E in emoji style with heart-shaped eyes; silver back with Mickey heads",
+     "source_url": "https://mypincentral.com/pin/61345",
+     "method": "search_snippet",
+     "note": "Paraphrase of per-pin entry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/61345",
+     "method": "search_snippet",
+     "note": "Per-pin page, single design"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/oe/oogie-boogie-lanyard-medal-pin",
+   "set_key": "dlr/2018/oe-single/oogie-boogie-lanyard-medal-pin",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/nightmare-before-christmas-lanyard-medal-pin/",
+     "method": "search_snippet",
+     "note": "DPB retail 17.99 for the Jack lanyard medal plus Oogie Boogie pin combo, not the pin alone"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/nightmare-before-christmas-lanyard-medal-pin/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/mickey",
+   "field": "pins",
+   "searched": "MPC per-character popsicle queries (Mickey, Lucky, Cheshire Cat, Baymax, Marie, Tinker Bell); MPC id 37980 direct; B306, 7 queries",
+   "note": "hold kept (from 418, kept in 458/460): no per-pin page surfaced; MPC ids 37980-37982/37984/37987/37989 still not indexed; named only in MPC 37979 series list"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/lucky",
+   "field": "pins",
+   "searched": "MPC per-character popsicle queries (Mickey, Lucky, Cheshire Cat, Baymax, Marie, Tinker Bell); MPC id 37980 direct; B306, 7 queries",
+   "note": "hold kept (from 418, kept in 458/460): no per-pin page surfaced; MPC ids 37980-37982/37984/37987/37989 still not indexed; named only in MPC 37979 series list"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/cheshire-cat",
+   "field": "pins",
+   "searched": "MPC per-character popsicle queries (Mickey, Lucky, Cheshire Cat, Baymax, Marie, Tinker Bell); MPC id 37980 direct; B306, 7 queries",
+   "note": "hold kept (from 418, kept in 458/460): no per-pin page surfaced; MPC ids 37980-37982/37984/37987/37989 still not indexed; named only in MPC 37979 series list"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/baymax",
+   "field": "pins",
+   "searched": "MPC per-character popsicle queries (Mickey, Lucky, Cheshire Cat, Baymax, Marie, Tinker Bell); MPC id 37980 direct; B306, 7 queries",
+   "note": "hold kept (from 418, kept in 458/460): no per-pin page surfaced; MPC ids 37980-37982/37984/37987/37989 still not indexed; named only in MPC 37979 series list"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/marie",
+   "field": "pins",
+   "searched": "MPC per-character popsicle queries (Mickey, Lucky, Cheshire Cat, Baymax, Marie, Tinker Bell); MPC id 37980 direct; B306, 7 queries",
+   "note": "hold kept (from 418, kept in 458/460): no per-pin page surfaced; MPC ids 37980-37982/37984/37987/37989 still not indexed; named only in MPC 37979 series list"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack/tinker-bell",
+   "field": "pins",
+   "searched": "MPC per-character popsicle queries (Mickey, Lucky, Cheshire Cat, Baymax, Marie, Tinker Bell); MPC id 37980 direct; B306, 7 queries",
+   "note": "hold kept (from 418, kept in 458/460): no per-pin page surfaced; MPC ids 37980-37982/37984/37987/37989 still not indexed; named only in MPC 37979 series list"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack",
+   "field": "set_key",
+   "searched": "B306 popsicle queries; FAC code query",
+   "note": "set-link holds kept on Jack (418) and Goofy/Pluto/Flounder/Heimlich/Lilo (458): per-pin snippets still do not name the series; shared FAC-046730-18129 back code (already in 458) is a factory code, not a series name"
+  },
+  {
+   "key": "wdw/2018/oe-set/ice-cream-collectible-pin-pack",
+   "field": "series_link",
+   "searched": "DPB Ice Cream pack page; MPC",
+   "note": "DPB still gives 16 pins, 5 random per pack, 27.99, no contents list; DPB pack vs MPC 'Ice Cream Bar Mystery Set' tie unchanged from 415/418"
+  },
+  {
+   "key": "dlr/2018/oe-set/wall-e-emoji",
+   "field": "edition_type",
+   "searched": "DPB set page; MPC 61344",
+   "note": "Edition type not stated in snippets (booster format); not claimed as OE"
+  },
+  {
+   "key": "dlr/2018/oe-set/wall-e-emoji",
+   "field": "pins",
+   "searched": "MPC emoji queries; 5 queries",
+   "note": "4 of 6 designs unnamed; MPC 61341/61343/61346 show EVE pins in the same id range but none described as emoji or tied to the booster; not recorded"
+  },
+  {
+   "key": "dlr/2018/oe-set/wall-e-emoji/wall-e-heart-eyes",
+   "field": "set_key",
+   "searched": "MPC 61345",
+   "note": "hold: per-pin page does not name the emoji booster; tie rests on emoji style and adjacent MPC numbering beside 61344"
+  },
+  {
+   "key": "dlr/2018/oe-set/wall-e-emoji",
+   "field": "release_date",
+   "searched": "DPB",
+   "note": "WDW release date not stated (only 'coming soon'); no wdw key exists, so set keyed under dlr; shared product with WDW"
+  },
+  {
+   "key": "dlr/2018/oe-set/disney-treats/minnie-ice-cream-cone",
+   "field": "pins",
+   "searched": "DPB set page; MPC/news query; 2 queries",
+   "note": "hold: 'Minnie ice cream cone' named only in the DPB set list (4 designs, silver tone); no per-pin page; pending maintainer full-list decision"
+  },
+  {
+   "key": "dlr/2018/oe-set/disney-treats/mickey-donut",
+   "field": "pins",
+   "searched": "DPB set page; MPC/news query; 2 queries",
+   "note": "hold: 'Mickey donut' named only in the DPB set list (4 designs, silver tone); no per-pin page; pending maintainer full-list decision"
+  },
+  {
+   "key": "dlr/2018/oe-set/disney-treats/mickey-premium-bar",
+   "field": "pins",
+   "searched": "DPB set page; MPC/news query; 2 queries",
+   "note": "hold: 'Mickey Premium Bar' named only in the DPB set list (4 designs, silver tone); no per-pin page; pending maintainer full-list decision"
+  },
+  {
+   "key": "dlr/2018/oe-set/disney-treats/dole-whip",
+   "field": "pins",
+   "searched": "DPB set page; MPC/news query; 2 queries",
+   "note": "hold: 'Dole Whip' named only in the DPB set list (4 designs, silver tone); no per-pin page; pending maintainer full-list decision"
+  },
+  {
+   "key": "dlr/2018/oe-set/disney-treats",
+   "field": "release_location",
+   "searched": "DPB",
+   "note": "Shared DLR/WDW product; no wdw key exists in 209/415/458, so keyed under dlr"
+  },
+  {
+   "key": "dlr/2018/disney-treats-lanyard",
+   "field": "scope",
+   "searched": "DPB lanyard page",
+   "note": "scope: confirmed button/badge/non-pin (DPB Disney Treats lanyard, 12.99, is a lanyard; no pins stated)"
+  },
+  {
+   "key": "dlr/2018/oe-set/coco-booster",
+   "field": "characters",
+   "searched": "DPB booster page; MPC Coco queries; 2 queries",
+   "note": "kept: DPB still 5 OE pins, 29.99, DLR spot 19 Oct 2018, no member list; MPC Ernesto/Miguel hits undated or 2020 back stamp, not tied"
+  },
+  {
+   "key": "dlr/2018/oe/coco-miguel",
+   "field": "visual_description",
+   "searched": "DPB product page; 1 query",
+   "note": "hold kept (from 418): DPB 'Mama Coco and Miguel' page still undated (OE 17.99); no 2018 per-pin evidence; MPC 64846 guitar pin is LR"
+  },
+  {
+   "key": "dlr/2018/oe-set/nightmare-before-christmas-starter-set",
+   "field": "members",
+   "searched": "DPB starter set post; 1 query",
+   "note": "kept: DPB Jul 2018 names Jack, Sally, Oogie Boogie 'and more'; fourth pin unnamed; Zero/Mayor list is the Jan 2020 set (32.99)"
+  },
+  {
+   "key": "dlr/2018/oe-set/his-sally-her-jack",
+   "field": "members",
+   "searched": "DPB Jul 2018 wk2; preferred-domain query",
+   "note": "kept: only DPB wk2 (2 OE pins, 14.99, DLR+WDW, 8-14 Jul 2018) surfaced; no non-reseller per-pin description"
+  },
+  {
+   "key": "dlr/2018/oe-set/incredibles-2-booster",
+   "field": "pins",
+   "searched": "MPC Incredibles queries",
+   "note": "kept: no per-design booster pages; MPC Edna/Jack-Jack hits are Pixar ball or donut pins, undated, not tied"
+  },
+  {
+   "key": "dlr/2018/oe/dinoco-logo",
+   "field": "release_date",
+   "searched": "MPC; DPB Cars Land OE pages; news; 1 query",
+   "note": "Still only MPC 153018 (2018, DLR, OE, 9.99); DPB Cars Land OE posts are 2022+; no month or land stated"
+  },
+  {
+   "key": "dlr/2018/oe",
+   "field": "weekly-roundups",
+   "searched": "DPB Sep/Oct/Nov 2018 queries; 3 queries",
+   "note": "Sep: only Disney Treats set (added) found; Oct weekly posts not surfaced (holiday OE 18 Oct already in 211); Nov wk1 DLR LE only, OE are WDW Everest; Nov wk5 DLR LE only"
+  },
+  {
+   "key": "dlr/2018/oe-price-2018",
+   "field": "original_price",
+   "searched": "DPB price-increase post",
+   "note": "Still no 2018 price table; DPB 2022 post says silver OE went 9.99 to 11.99 in Oct 2022 and the last prior change was 2018, without 2018 figures"
+  }
+ ],
+ "discovery_notes": "Follow-up 3 of B011 (final before backlog); 27 standard WebSearches, excluded domains blocked. Reused keys from 211/418/460; checked WDW 209/415/458: no wdw keys for WALL-E Emoji or Disney Treats, so both keyed under dlr as shared DLR/WDW products. No holds released: no new per-pin evidence for the six Ice Cream designs, Jack/WDW set links or Coco Miguel. New: WALL-E Emoji set (6 pins, 29.99, DLR 13 Feb 2018) with 2 per-pin MPC designs; Disney Treats OE 4-pin set (24.99, Sep 2018) with 4 designs held as single-list names; lanyard medal combo price 17.99."
+}

@@ -1,0 +1,1627 @@
+{
+ "packet_id": "529_b343_dlp_2020_2021_fu4",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+   "title": "Pin-Neuerscheinungen im September 2021",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-08-30"
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+   "title": "Pin Neuerscheinungen im Januar 2022",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2022-01"
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+   "title": "Neue Pins im Oktober 2021",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-10"
+  },
+  {
+   "url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+   "title": "Disneyland Paris Pin Releases for October 2021 Include Villains, Dwarfs, and Halloween Fun!",
+   "publisher": "MickeyBlog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-09-30"
+  },
+  {
+   "url": "https://mickeyblog.com/2021/10/31/disneyland-paris-pin-trading-releases-for-november-2021-include-cowboys-pirates-and-holiday-fun/",
+   "title": "Disneyland Paris Pin Trading Releases for November 2021 Include Cowboys, Pirates, and Holiday Fun!",
+   "publisher": "MickeyBlog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-10-31"
+  },
+  {
+   "url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "title": "Pin Trading a Disneyland Paris : la selection de pin's du mois",
+   "publisher": "Disneyphile",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+   "title": "Pin-Neuerscheinungen im Oktober 2020",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-10"
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+   "title": "Pin-Neuerscheinungen im September 2020",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-09"
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+   "title": "Pin-Neuerscheinungen im August 2021",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-07"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2021/stitch-september-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch open edition pins (September 2021)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Several Stitch OE pins listed for 11 Sep"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Stitch pins dated 11 Sep in overview (search summary)"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Listed as unlimited"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/oe-single/lucky",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lucky open edition pin (September 2021)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Single OE pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/january-2022-world-of-disney-le",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2022-01-15",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "Three LE pins due 15 Jan 2022 (search summary)"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "All three LE pins only at World of Disney"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "format",
+     "value": "ten separate pins: five villains and their sidekicks",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Ten-pin collection of five villains and sidekicks"
+    },
+    {
+     "field": "price",
+     "value": 16.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "EUR 16 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-30",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Saturday 30 Oct, Lineberty booking"
+    },
+    {
+     "field": "release_location",
+     "value": "Thunder Mesa Riverboat Landing, Frontierland",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "dein-dlrp names Riverboat Landing; MickeyBlog (packet 105) says Thunder Mesa Mercantile"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Ten pins (re-seen)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/aristocats-october-2020",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2020-10-24",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Four new Aristocats pins on 24 Oct"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Four new pins (re-seen)"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Quick overview lists all items unlimited (search summary)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/star-wars-patrice-girod-november-2021",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Four collector pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "500 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-27",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Saturday 27 Nov"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "World of Disney"
+    },
+    {
+     "field": "sub_series",
+     "value": "Return of the Jedi",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Inspired by Return of the Jedi; one reproduces its famous poster"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/cowboy-november-2021",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Mickey and Chip and Dale as cowboys on three new pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Called non limited"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-13",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Sat 13 Nov"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/santa-hat-november-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Christmas pins with Marie and Chip and Dale in winter hats",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Festive pins, Marie and Chip and Dale in hats (search summary)"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Two pins per search-engine summary, not quoted text"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Limited to 500 each; same passage also says non limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "500 each"
+    },
+    {
+     "field": "price",
+     "value": 16.0,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "EUR 16"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_location",
+     "value": "Thunder Mesa Mercantile Building, Frontierland",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Thunder Mesa Mercantile"
+    },
+    {
+     "field": "set_name",
+     "value": "Santa hat pins with Marie, Chip and Dale",
+     "source_url": "https://mickeyblog.com/2021/10/31/disneyland-paris-pin-trading-releases-for-november-2021-include-cowboys-pirates-and-holiday-fun/",
+     "method": "search_snippet",
+     "note": "MickeyBlog: festive pins with Marie, Chip and Dale in Santa hats, 13 Nov"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2021/stitch-september-2021/sleeping",
+   "set_key": "dlp/2021/stitch-september-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch sleeping",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Stitch asleep holding a bottle and Scrump"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch",
+      "Scrump"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Stitch with Scrump in one arm"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Stitch"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "11 Sep"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Described as a single pin"
+    },
+    {
+     "field": "visual_description",
+     "value": "Sleeping Stitch with a bottle in one arm and Scrump in the other",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Paraphrase (search summary of page text)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/stitch-september-2021/grimace",
+   "set_key": "dlp/2021/stitch-september-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Grimasse",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Overview line item 'Pin Stitch Grimasse'"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Stitch"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Stitch"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "EUR 8"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Listed under 11 Sep (search summary)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/oe/lucky",
+   "set_key": "dlp/2021/oe-single/lucky",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lucky",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Overview line 'Pin Lucky'"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lucky"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "101 Dalmatians puppy Lucky"
+    },
+    {
+     "field": "main_character",
+     "value": "Lucky",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Lucky"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 7.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "EUR 7"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-04",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "4 Sep per search-engine summary; snippet placement ambiguous"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/january-2022-world-of-disney-le/genie-chef",
+   "set_key": "dlp/2022/january-2022-world-of-disney-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Genie in cooking apron",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "One of two Genie LE pins, each described separately (search summary)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Genie"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "Genie"
+    },
+    {
+     "field": "main_character",
+     "value": "Genie",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "Genie"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "limitiert"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "700 each"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "EUR 16 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-01-15",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "15 Jan 2022 per dein-dlrp (search summary)"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12-11",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Disneyphile: Genie on two LE 700 pins, Sat 11 Dec 2021; designs not split there"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "World of Disney only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "Two separate Genie pins, each with its own description"
+    },
+    {
+     "field": "visual_description",
+     "value": "Genie wearing a cooking apron and holding a cookbook",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "Paraphrase from search summary of page text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2022/january-2022-world-of-disney-le/genie-performer",
+   "set_key": "dlp/2022/january-2022-world-of-disney-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Genie as performer",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "One of two Genie LE pins, each described separately (search summary)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Genie"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "Genie"
+    },
+    {
+     "field": "main_character",
+     "value": "Genie",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "Genie"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "limitiert"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "700 each"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "EUR 16 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-01-15",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "15 Jan 2022 per dein-dlrp (search summary)"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12-11",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Disneyphile: Genie on two LE 700 pins, Sat 11 Dec 2021; designs not split there"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "World of Disney only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "Two separate Genie pins, each with its own description"
+    },
+    {
+     "field": "visual_description",
+     "value": "Genie as a performer in an elegant costume",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-januar-2022/",
+     "method": "search_snippet",
+     "note": "Paraphrase from search summary of page text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/maleficent",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Maleficent",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named in 30 Oct list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "main_character",
+     "value": "Maleficent",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-30",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "30 Oct"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "EUR 16 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/spinning-wheel-diablo",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Spinning wheel with raven",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Sleeping Beauty spinning wheel with raven"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Diablo"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "main_character",
+     "value": "Diablo",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-30",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "30 Oct"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "EUR 16 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glow in the dark"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "MickeyBlog says these pins glow in the dark"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Sidekick/prop represented on its own pin in a ten-pin set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/evil-queen",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Evil Queen",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named in 30 Oct list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Evil Queen"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "main_character",
+     "value": "Evil Queen",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-30",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "30 Oct"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "EUR 16 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/poisoned-apple",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Poisoned apple",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Evil Queen's poisoned apple represented on a pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-30",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "30 Oct"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "EUR 16 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "pin_name",
+     "value": "Poisoned apple",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Also listed by dein-dlrp for 30 Oct"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glow in the dark"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "MickeyBlog says these pins glow in the dark"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Sidekick/prop represented on its own pin in a ten-pin set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/flotsam-jetsam",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Flotsam and Jetsam",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Ursula's eels on a pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Flotsam",
+      "Jetsam"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "main_character",
+     "value": "Flotsam",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-30",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "30 Oct"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "EUR 16 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "pin_name",
+     "value": "Flotsam and Jetsam",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Also listed by dein-dlrp for 30 Oct"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glow in the dark"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "MickeyBlog says these pins glow in the dark"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Sidekick/prop represented on its own pin in a ten-pin set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/hades",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hades",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named in 30 Oct list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hades"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "main_character",
+     "value": "Hades",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-30",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "30 Oct"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "EUR 16 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/pain-panic",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pain and Panic",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Hercules sidekicks on a pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pain",
+      "Panic"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "main_character",
+     "value": "Pain",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-30",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "30 Oct"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "EUR 16 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "pin_name",
+     "value": "Pain and Panic",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Also listed by dein-dlrp for 30 Oct"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glow in the dark"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "MickeyBlog says these pins glow in the dark"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Sidekick/prop represented on its own pin in a ten-pin set"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/dr-facilier",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dr. Facilier",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Named in 30 Oct list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dr. Facilier"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "main_character",
+     "value": "Dr. Facilier",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "As named"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-30",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "30 Oct"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "EUR 16 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/villains-sidekicks-2021/top-hat",
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dr. Facilier's top hat",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Separate pin for Facilier's top hat per search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-30",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "30 Oct"
+    },
+    {
+     "field": "original_price",
+     "value": 16.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "EUR 16 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/aristocats-october-2020/marie",
+   "set_key": "dlp/2020/aristocats-october-2020",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10-24",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "24 Oct"
+    },
+    {
+     "field": "visual_description",
+     "value": "Grumpy-looking Marie with her bow slipped",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Paraphrase of quoted page text"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "First of four pins described"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/aristocats-october-2020/marie-berlioz",
+   "set_key": "dlp/2020/aristocats-october-2020",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "EUR 7.99 (search summary)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10-24",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "24 Oct"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/aristocats-october-2020/marie-toulouse-berlioz",
+   "set_key": "dlp/2020/aristocats-october-2020",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "EUR 7.99 (search summary)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10-24",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "24 Oct"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/aristocats-october-2020/paw-prints-family",
+   "set_key": "dlp/2020/aristocats-october-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Aristocats cat family",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Fourth pin is a cat family at EUR 7.99 (search summary)"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10-24",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "24 Oct"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/march-2020-le/pocahontas-carousel",
+   "set_key": "dlp/2020/march-2020-le",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2020-09-26",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Search summary: four new pins on 26 Sep incl. Pocahontas carousel; not quoted text"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR 15.99"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Gallery, Disney Village",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Disney Gallery, Lineberty booking"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/best-friends-september-2020/baymax-hiro-best-friends",
+   "set_key": "dlp/2020/best-friends-september-2020",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2020-09-26",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Search summary dates the Baymax/Hiro and Pocahontas pins 26 Sep; not quoted text"
+    },
+    {
+     "field": "visual_description",
+     "value": "Baymax hugging a grumpy-looking Hiro",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2021/stitch-september-2021/sleeping",
+   "field": "original_price",
+   "searched": "dein-dlrp Sep 2021; 3 queries",
+   "note": "Overview has 'Pin Stitch Pyjama, unlimited, EUR 8', probably the sleeping pin but not stated; price not attached to this pin"
+  },
+  {
+   "key": "dlp/2021/stitch-september-2021",
+   "field": "notes",
+   "searched": "dein-dlrp Sep 2021",
+   "note": "Resolves B322 lead (Stitch sleeping / grimace). Overview mentions other Stitch pins on 11 Sep not identified here"
+  },
+  {
+   "key": "dlp/2021/oe/lucky",
+   "field": "release_date",
+   "searched": "dein-dlrp Sep 2021",
+   "note": "Date 4 Sep comes from search summary; list appears before the 11 Sep block, confirm"
+  },
+  {
+   "key": "dlp/2021/lanyards-september-2021",
+   "field": "scope",
+   "searched": "dein-dlrp Sep 2021",
+   "note": "scope: confirm pin vs button (Pascal, Olaf and Genie lanyards with pouch, EUR 13, unlimited; unclear whether a pin is included)"
+  },
+  {
+   "key": "dlp/2022/january-2022-world-of-disney-le/genie-chef",
+   "field": "release_date",
+   "searched": "dein-dlrp Jan 2022; Disneyphile",
+   "note": "Date conflict: 15 Jan 2022 (dein-dlrp) vs 11 Dec 2021 (Disneyphile). Design descriptions from search summary, not quoted page text"
+  },
+  {
+   "key": "dlp/2022/january-2022-world-of-disney-le/genie-performer",
+   "field": "release_date",
+   "searched": "dein-dlrp Jan 2022; Disneyphile",
+   "note": "Date conflict: 15 Jan 2022 (dein-dlrp) vs 11 Dec 2021 (Disneyphile). Design descriptions from search summary, not quoted page text"
+  },
+  {
+   "key": "dlp/2021/december-2021-le/genie",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Jan 2022; Disneyphile",
+   "note": "hold: key covers two designs, now recorded as dlp/2022/january-2022-world-of-disney-le/genie-chef and genie-performer; map or retire this key at review"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/maleficent",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Oct 2021; MickeyBlog",
+   "note": "hold: confirm pin structure; villain named only in a list at EUR 16 each (ten pins = five villains + five sidekicks implies separate, not stated per pin)"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/evil-queen",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Oct 2021; MickeyBlog",
+   "note": "hold: confirm pin structure; villain named only in a list at EUR 16 each (ten pins = five villains + five sidekicks implies separate, not stated per pin)"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/hades",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Oct 2021; MickeyBlog",
+   "note": "hold: confirm pin structure; villain named only in a list at EUR 16 each (ten pins = five villains + five sidekicks implies separate, not stated per pin)"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/dr-facilier",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Oct 2021; MickeyBlog",
+   "note": "hold: confirm pin structure; villain named only in a list at EUR 16 each (ten pins = five villains + five sidekicks implies separate, not stated per pin)"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/top-hat",
+   "field": "pin_name",
+   "searched": "dein-dlrp Oct 2021",
+   "note": "hold: top-hat pin seen only in a search-engine summary, not quoted page text; confirm it is one of the ten"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/ursula",
+   "field": "pin_name",
+   "searched": "dein-dlrp Oct 2021; MickeyBlog",
+   "note": "Ursula (fifth villain, partner of Flotsam and Jetsam) presumed but not named in snippets; no record created"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021",
+   "field": "edition_size",
+   "searched": "3 queries incl. passiondlp",
+   "note": "No edition size stated; passiondlp '500 each Pin Trading Day' lead not confirmed"
+  },
+  {
+   "key": "dlp/2021/pin-trading-day-october-2021",
+   "field": "notes",
+   "searched": "dein-dlrp Oct 2021; MickeyBlog; passiondlp",
+   "note": "Lead resolved: the 30 Oct 2021 release is the ten-pin villains and sidekicks set (dlp/2021/villains-sidekicks-2021); no separate Pin Trading Day set found"
+  },
+  {
+   "key": "dlp/2020/aristocats-october-2020/paw-prints-family",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Oct 2020",
+   "note": "released: quoted dein-dlrp text says the EUR 9.99 item with all Aristocats on paw prints is the Pin-Lanyard; the fourth pin is the cat family (EUR 7.99). was: hold: paw-prints vs cat family. Key slug is misleading, consider rename"
+  },
+  {
+   "key": "dlp/2020/aristocats-october-2020/marie",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Oct 2020",
+   "note": "Marie (EUR 6.99, solo, bow askew) is distinct from Marie and Berlioz (EUR 7.99); overlap concern from packet 508 resolved"
+  },
+  {
+   "key": "dlp/2020/aristocats-lanyard-october-2020",
+   "field": "scope",
+   "searched": "dein-dlrp Oct 2020",
+   "note": "scope: confirmed button/badge/non-pin (Aristocats Pin-Lanyard, paw prints on white, EUR 9.99, unlimited)"
+  },
+  {
+   "key": "dlp/2021/star-wars-patrice-girod-november-2021",
+   "field": "pin_name",
+   "searched": "Disneyphile; planete-starwars; 3 queries",
+   "note": "Four designs not individually named (only that one reproduces the RotJ poster). Disneyphile does not name Girod; MickeyBlog does"
+  },
+  {
+   "key": "dlp/2021/cowboy-november-2021",
+   "field": "pin_structure",
+   "searched": "Disneyphile; MickeyBlog",
+   "note": "hold: confirm pin structure; three OE pins with Mickey, Chip and Dale, split not stated. Disneyphile calls the extra item a Mickey sheriff 'insigne'; MickeyBlog says Sheriff Mickey pin"
+  },
+  {
+   "key": "dlp/2021/santa-hat-november-2021",
+   "field": "pin_structure",
+   "searched": "Disneyphile; MickeyBlog; 2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or separate pins); two-pin count from summary only. 500/EUR 16 may belong to parade set dlp/2021/christmas-le-november-2021. A Joyeux Noel Chip & Dale LE 500 seen only on reseller, not recorded"
+  },
+  {
+   "key": "dlp/2020/march-2020-le/pocahontas-carousel",
+   "field": "release_date",
+   "searched": "dein-dlrp Sep 2020",
+   "note": "19 vs 26 Sep: summary now favours 26 Sep for dein-dlrp, but packet 402 read 19 Sep from same page; still unresolved without quoted text"
+  },
+  {
+   "key": "dlp/2021/101-dalmatians-december-2021",
+   "field": "notes",
+   "searched": "B343 follow-up searches",
+   "note": "Three LE 700 Dalmatians pins (Thunder Mesa Mercantile) still unnamed; Disneyphile placement before 11 Dec entry; no dein-dlrp/magicdlp Dec 2021 list surfaced"
+  },
+  {
+   "key": "dlp/2021/animators-dalmatians-oe-december-2021",
+   "field": "notes",
+   "searched": "B343 follow-up searches",
+   "note": "Still only DPB caption; designs/count not given"
+  },
+  {
+   "key": "dlp/2021/christmas-oe-december-2021",
+   "field": "notes",
+   "searched": "B343 follow-up searches",
+   "note": "Hold stays: no new per-pin evidence"
+  },
+  {
+   "key": "dlp/2021/christmas-le-november-2021",
+   "field": "notes",
+   "searched": "B343 follow-up searches",
+   "note": "Hold stays: parade floats not named"
+  },
+  {
+   "key": "dlp/2020/oe-set/christmas-booster-2020",
+   "field": "notes",
+   "searched": "B343 follow-up searches",
+   "note": "Hold stays; not searched again"
+  },
+  {
+   "key": "dlp/2021/halloween-trio-2021",
+   "field": "notes",
+   "searched": "B343 follow-up searches",
+   "note": "Hold stays; dein-dlrp Oct 2021 re-seen mentions Halloween Mickey, Donald, Figaro only as before"
+  },
+  {
+   "key": "dlp/2021/pin-trading-anniversary-2021",
+   "field": "notes",
+   "searched": "B343 follow-up searches",
+   "note": "Hold stays; no new evidence"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021",
+   "field": "notes",
+   "searched": "B343 follow-up searches",
+   "note": "Hold stays; no new evidence"
+  },
+  {
+   "key": "dlp/2020/cast-member-genie/genie",
+   "field": "notes",
+   "searched": "B343 follow-up searches",
+   "note": "Hold stays: possible duplicate; no new evidence"
+  },
+  {
+   "key": "dlp/2021/stitch-august-2021/2-pin-set",
+   "field": "notes",
+   "searched": "B343 follow-up searches",
+   "note": "Hold stays: dein-dlrp re-seen, 2-pin set shows heads of Stitch and Scrump, EUR 13, unlimited; one head per pin still implicit"
+  },
+  {
+   "key": "dlp/2020/holiday-2020-delayed",
+   "field": "notes",
+   "searched": "B343 follow-up searches",
+   "note": "Alice holiday pin still undescribed; no dein-dlrp March 2021 page indexed"
+  },
+  {
+   "key": "dlp/2021/jungle-august-2021",
+   "field": "notes",
+   "searched": "B343 follow-up searches",
+   "note": "Ninth (OE) 21 Aug pin still unnamed; dein-dlrp body says 8 LE + 1 OE"
+  },
+  {
+   "key": "dlp/2021/disney-hotel-new-york",
+   "field": "notes",
+   "searched": "B343 follow-up searches",
+   "note": "No dated 2020-2021 hotel pin found (only a hotel key card news item)"
+  },
+  {
+   "key": "dlp/2020/lanyards-october-2020",
+   "field": "notes",
+   "searched": "B343 follow-up searches",
+   "note": "No new evidence on whether the Baloo/Simba/Chip/Pooh lanyards include a pin"
+  },
+  {
+   "key": "dlp/2021/small-world-august-2021",
+   "field": "edition_type",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+   "note": "dein-dlrp Aug 2021: small world pins unlimited EUR 10, lanyard EUR 13; the three LE 700 WoD pins that month are Jasmine/Rajah, Pocahontas/Meeko, Moana carousel (already recorded)"
+  },
+  {
+   "key": "dlp/2021/big-thunder-mountain-2021",
+   "field": "edition_type",
+   "searched": "not re-searched",
+   "note": "No new source; OE (two sources) vs LE 700 (packet 105) left for review"
+  },
+  {
+   "key": "dlp/2022/january-2022-world-of-disney-le/genie-chef",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: year conflict - dein-dlrp 15 Jan 2022 vs Disneyphile 11 Dec 2021; may be the held December 2021 Genie two (round 55 review)"
+  },
+  {
+   "key": "dlp/2022/january-2022-world-of-disney-le/genie-performer",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: year conflict - dein-dlrp 15 Jan 2022 vs Disneyphile 11 Dec 2021; may be the held December 2021 Genie two (round 55 review)"
+  }
+ ],
+ "discovery_notes": "B343 follow-up 4 of B044 (DLP 2020-2021). 27 WebSearch queries. New: Stitch Sep 2021 sleeping/grimace, Lucky OE, two Genie LE designs (Jan 2022 vs Dec 2021 date conflict), villains & sidekicks 30 Oct 2021 members, Aristocats paw-print item identified as lanyard, Star Wars RotJ 4x LE 500 set facts, cowboy OE count, santa-hat set. All method search_snippet; some values from search-engine summaries as noted."
+}

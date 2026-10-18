@@ -1,0 +1,1098 @@
+{
+ "packet_id": "b360-asia-2020-2022-fu13",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/happiest-place-on-earth-princess-pin-series-at-hong-kong-disneyland",
+   "title": "Happiest Place on Earth Princess Pin Series at Hong Kong Disneyland",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-03"
+  },
+  {
+   "url": "https://disneypinsblog.com/happiest-place-on-earth-princess-pin-series-at-hong-kong-disneyland/",
+   "title": "Happiest Place on Earth Princess Pin Series at Hong Kong Disneyland",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-03"
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2020/07/2020731-release-information-hong-kong.html",
+   "title": "發售資訊：香港迪士尼樂園 限量版徽章（2020年7月31日）",
+   "publisher": "Disney Magical Kingdom Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-07"
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2020/06/hong-kong-disneyland-limited-edition.html",
+   "title": "香港迪士尼樂園 限量版徽章網上發售安排",
+   "publisher": "Disney Magical Kingdom Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-06"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2020-pins",
+   "title": "Tokyo Disney Resort 2020 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-01"
+  },
+  {
+   "url": "https://disneypinsblog.com/tokyo-disney-resort-2020-pins/",
+   "title": "Tokyo Disney Resort 2020 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-01"
+  },
+  {
+   "url": "https://disneypinsblog.com/the-happy-ride-with-baymax-grand-opening-tokyo-disneyland-pin/",
+   "title": "The Happy Ride with Baymax Grand Opening Tokyo Disneyland Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-09"
+  },
+  {
+   "url": "https://disneypinsblog.com/dolls-day-2020-tokyo-disney-pin-set/",
+   "title": "Doll's Day 2020 Tokyo Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020"
+  },
+  {
+   "url": "http://sh.bendibao.com/tour/2020716/227067.shtm",
+   "title": "2020上海迪士尼传统二十四节气徽章售卖时间及售卖地点",
+   "publisher": "上海本地宝 (bendibao)",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-07-16"
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+   "title": "Tokyo Disney Resort Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://castel.jp/p/6990",
+   "title": "ディズニーシー20周年グッズ (タイム・トゥ・シャイン)",
+   "publisher": "Castel",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://rurubu.jp/andmore/article/17253",
+   "title": "9月14日から先行販売！ディズニー・ハロウィーングッズ全66点大公開！",
+   "publisher": "るるぶ&more.",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2022-09"
+  },
+  {
+   "url": "https://hkmsg.blogspot.com/2022/",
+   "title": "Hong Kong Main Street Gazette 大街小報: 2022",
+   "publisher": "Hong Kong Main Street Gazette",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "hkdl/2021/happiest-place-on-earth-princess",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Happiest Place on Earth Princess Pin Series",
+     "source_url": "https://disneypinsblog.com/blogs/news/happiest-place-on-earth-princess-pin-series-at-hong-kong-disneyland",
+     "method": "search_snippet",
+     "note": "DPB post title; backer cards read Happiest Place on Earth (search summary)"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/happiest-place-on-earth-princess-pin-series-at-hong-kong-disneyland",
+     "method": "search_snippet",
+     "note": "on sale from 5 Mar 2021 at HKDL (search summary, not quoted page text)"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/happiest-place-on-earth-princess-pin-series-at-hong-kong-disneyland",
+     "method": "search_snippet",
+     "note": "released at HKDL"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/happiest-place-on-earth-princess-pin-series-at-hong-kong-disneyland",
+     "method": "search_snippet",
+     "note": "described as limited release"
+    },
+    {
+     "field": "format",
+     "value": "series of princess pins (count not stated)",
+     "source_url": "https://disneypinsblog.com/blogs/news/happiest-place-on-earth-princess-pin-series-at-hong-kong-disneyland",
+     "method": "search_snippet",
+     "note": "each pin has character name, quote and signature; pin-on-pin characters (summary)"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03",
+     "source_url": "https://disneypinsblog.com/happiest-place-on-earth-princess-pin-series-at-hong-kong-disneyland/",
+     "method": "search_snippet",
+     "note": "second URL form of same post, March 2021"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2020/july-2020-candy-machine",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2020-07-31",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/07/2020731-release-information-hong-kong.html",
+     "method": "search_snippet",
+     "note": "online sale 31 Jul 11:00 to 6 Aug 16:00 2020 (corroborates 478)"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2020/oe-single/happy-ride-with-baymax-grand-opening",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Happy Ride with Baymax Grand Opening Tokyo Disneyland Pin",
+     "source_url": "https://disneypinsblog.com/the-happy-ride-with-baymax-grand-opening-tokyo-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title; single pin"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/the-happy-ride-with-baymax-grand-opening-tokyo-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "one grand opening pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-28",
+     "source_url": "https://disneypinsblog.com/the-happy-ride-with-baymax-grand-opening-tokyo-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "released 28 Sep 2020 (search summary)"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2020/tokyo-disney-resort-2020",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tokyo Disney Resort 2020 Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2020-pins",
+     "method": "search_snippet",
+     "note": "DPB post covering two January 2020 TDR pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2020-pins",
+     "method": "search_snippet",
+     "note": "post covers two pins: spinner and flower Mickey (search summary)"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2020-pins",
+     "method": "search_snippet",
+     "note": "January 2020 at the parks"
+    },
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "https://disneypinsblog.com/tokyo-disney-resort-2020-pins/",
+     "method": "search_snippet",
+     "note": "two individually described pins, not a pack"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2020/dolls-day-2020",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/dolls-day-2020-tokyo-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "set of two pins, Mickey and Minnie in kimonos (corroborates 526)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/dolls-day-2020-tokyo-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "open edition, TDR exclusive"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/dolls-day-2020-tokyo-disney-pin-set/",
+     "method": "search_snippet",
+     "note": "two-pin set for Hinamatsuri"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2021/minnie-summer-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Minnie Mouse Summer 2021 Tokyo Disney Resort Pin",
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "archive entry title only, dated 2 Jun 2021"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-06",
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "archive entry dated 2 Jun 2021 (post date, not confirmed sale date)"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "title names one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2022/easter-2022",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Easter 2022 Tokyo Disney Resort Pin",
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "archive entry title only (search summary)"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "title names one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2022/toy-story-traffic-cones-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Toy Story Traffic Cones Pin Set",
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "archive entry in TDR pins tag, dated 18 May 2022 (search summary)"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-05",
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "archive date 18 May 2022"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2022/disney-100-dangle",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney 100 Dangle Pin at Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "archive entry title; summary dates it 1 Aug 2022, doubtful for Disney100"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "hkdl/2020/july-2020-candy-machine/lady-and-the-tramp-65th",
+   "set_key": "hkdl/2020/july-2020-candy-machine",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lady and the Tramp 65th Anniversary limited edition pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/07/2020731-release-information-hong-kong.html",
+     "method": "search_snippet",
+     "note": "《小姐與流氓》65週年徽章 in 31 Jul 2020 release (two search summaries)"
+    },
+    {
+     "field": "franchise",
+     "value": "Lady and the Tramp",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/07/2020731-release-information-hong-kong.html",
+     "method": "search_snippet",
+     "note": "film 65th anniversary"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/07/2020731-release-information-hong-kong.html",
+     "method": "search_snippet",
+     "note": "LE pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-07-31",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/07/2020731-release-information-hong-kong.html",
+     "method": "search_snippet",
+     "note": "online 31 Jul-6 Aug 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland official website (online)",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/07/2020731-release-information-hong-kong.html",
+     "method": "search_snippet",
+     "note": "online sale, package redemption for remainder"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/07/2020731-release-information-hong-kong.html",
+     "method": "search_snippet",
+     "note": "one summary: LE 600 (450 online, 150 package); second summary only saw 400 and 600 unmapped - search summary only"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2020/july-2020-candy-machine/olu-mel",
+   "set_key": "hkdl/2020/july-2020-candy-machine",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "'Olu Mel limited edition pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/07/2020731-release-information-hong-kong.html",
+     "method": "search_snippet",
+     "note": "one search summary lists an 'Olu Mel LE pin in 31 Jul 2020 release"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "'Olu Mel"
+     ],
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/07/2020731-release-information-hong-kong.html",
+     "method": "search_snippet",
+     "note": "character named"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/07/2020731-release-information-hong-kong.html",
+     "method": "search_snippet",
+     "note": "one summary: LE 800 (650 online, 150 package) - search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-07-31",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2020/07/2020731-release-information-hong-kong.html",
+     "method": "search_snippet",
+     "note": "same release window"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2020/oe/happy-ride-with-baymax-grand-opening",
+   "set_key": "tdr/2020/oe-single/happy-ride-with-baymax-grand-opening",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Happy Ride with Baymax Grand Opening Pin",
+     "source_url": "https://disneypinsblog.com/the-happy-ride-with-baymax-grand-opening-tokyo-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "attraction",
+     "value": "The Happy Ride with Baymax",
+     "source_url": "https://disneypinsblog.com/the-happy-ride-with-baymax-grand-opening-tokyo-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "attraction grand opening pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/the-happy-ride-with-baymax-grand-opening-tokyo-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "open edition"
+    },
+    {
+     "field": "original_price",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/the-happy-ride-with-baymax-grand-opening-tokyo-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "1,000 yen (search summary)"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://disneypinsblog.com/the-happy-ride-with-baymax-grand-opening-tokyo-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-28",
+     "source_url": "https://disneypinsblog.com/the-happy-ride-with-baymax-grand-opening-tokyo-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "released 28 Sep 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://disneypinsblog.com/the-happy-ride-with-baymax-grand-opening-tokyo-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "TDL attraction pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2020/tokyo-disney-resort-2020/spinner-mickey-and-friends",
+   "set_key": "tdr/2020/tokyo-disney-resort-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tokyo Disney Resort 2020 spinner pin (Mickey and friends)",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2020-pins",
+     "method": "search_snippet",
+     "note": "spinner with Mickey and friends, 2020 in centre (search summary)"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2020-pins",
+     "method": "search_snippet",
+     "note": "spinner pin"
+    },
+    {
+     "field": "front_text",
+     "value": "2020",
+     "source_url": "https://disneypinsblog.com/tokyo-disney-resort-2020-pins/",
+     "method": "search_snippet",
+     "note": "year 2020 marked in centre"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2020-pins",
+     "method": "search_snippet",
+     "note": "January 2020 at the parks"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2020-pins",
+     "method": "search_snippet",
+     "note": "TDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2020/tokyo-disney-resort-2020/mickey-flowers",
+   "set_key": "tdr/2020/tokyo-disney-resort-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tokyo Disney Resort 2020 Mickey flowers pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2020-pins",
+     "method": "search_snippet",
+     "note": "Mickey with colourful flowers and the year at the bottom"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2020-pins",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "front_text",
+     "value": "2020",
+     "source_url": "https://disneypinsblog.com/tokyo-disney-resort-2020-pins/",
+     "method": "search_snippet",
+     "note": "year 2020 on pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-01",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2020-pins",
+     "method": "search_snippet",
+     "note": "January 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/tokyo-disney-resort-2020-pins",
+     "method": "search_snippet",
+     "note": "TDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2021/minnie-summer-2021/minnie",
+   "set_key": "tdr/2021/minnie-summer-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse Summer 2021 Tokyo Disney Resort Pin",
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "archive title only"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "from title"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "archive entry 2 Jun 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "TDR per title"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2022/easter-2022/pin",
+   "set_key": "tdr/2022/easter-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Easter 2022 Tokyo Disney Resort Pin",
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "archive title only"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "title year; TDR Disney Easter ran 1 Apr-30 Jun 2022 per WDWNT (summary)"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "TDR per title"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2022/disney-100-dangle/pin",
+   "set_key": "tdr/2022/disney-100-dangle",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney 100 Dangle Pin at Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "archive title only"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "dangle"
+     ],
+     "source_url": "https://disneypinsblog.com/tag/tokyo-disney-resort-pins/",
+     "method": "search_snippet",
+     "note": "dangle per title"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2020/pin-trading-fun-day-2020/logo",
+   "set_key": "shdr/2020/pin-trading-fun-day-2020",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Chinese-style design with Mickey inscription",
+     "source_url": "http://sh.bendibao.com/tour/2020716/227067.shtm",
+     "method": "search_snippet",
+     "note": "2020 Pin Trading Day theme pin, Chinese-style Mickey lettering design (search summary)"
+    },
+    {
+     "field": "edition_size",
+     "value": 800,
+     "source_url": "http://sh.bendibao.com/tour/2020716/227067.shtm",
+     "method": "search_snippet",
+     "note": "theme pin limited to 800 (sh.bendibao URL; corroborates 397/505)"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "hkdl/2021/happiest-place-on-earth-princess",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - princesses, pin count and edition size not named in snippets"
+  },
+  {
+   "key": "hkdl/2020/july-2020-candy-machine/olu-mel",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: named only in one search summary of DMK 31 Jul 2020 page; a second summary of the same page did not find it; confirm on page"
+  },
+  {
+   "key": "hkdl/2020/july-2020-candy-machine/lady-and-the-tramp-65th",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "field note: summaries disagree how 400/600/800 map to items on DMK page; 600 for this pin from one summary only"
+  },
+  {
+   "key": "hkdl/2020/july-2020-candy-machine/winnie-the-pooh-candy-machine",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "field note: new summaries map 600 to Lady and the Tramp 65th and 800 to 'Olu Mel, and do not mention Pooh; 478/505 600-vs-800 Pooh conflict may be a mapping error"
+  },
+  {
+   "key": "hkdl/2020/olu-mel-2020",
+   "field": "relation",
+   "searched": "1 query",
+   "note": "lead: possible LE 'Olu Mel pin in 31 Jul 2020 online release (hkdl/2020/july-2020-candy-machine/olu-mel, held); not linked to June 2020 merchandise-line pins"
+  },
+  {
+   "key": "tdr/2020/oe/happy-ride-with-baymax-grand-opening",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "field note: earlier note on tdr/2020/baymax-fantasyland (WDWNT) found only plush badges in Sep 2020 Baymax line; this DPB pin is a separate attraction pin"
+  },
+  {
+   "key": "tdr/2020/baymax-fantasyland",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: DPB documents an OE 1,000 yen Happy Ride with Baymax grand opening pin (28 Sep 2020), keyed tdr/2020/oe/happy-ride-with-baymax-grand-opening"
+  },
+  {
+   "key": "tdr/2020/tokyo-disney-resort-2020/spinner-mickey-and-friends",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "field note: 'Mickey and friends' not itemised; distinct from US Disney Parks 2020 spinner (Mickey, Minnie, Donald, Goofy, $14.99) - do not merge"
+  },
+  {
+   "key": "tdr/2020/tokyo-disney-resort-2020/spinner-mickey-and-friends",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "no price in snippet"
+  },
+  {
+   "key": "tdr/2020/tokyo-disney-resort-2020/mickey-flowers",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "no price in snippet"
+  },
+  {
+   "key": "tdr/2020/pins",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "DPB Tokyo Disney Resort 2020 Pins post now covered: keyed as tdr/2020/tokyo-disney-resort-2020 (two pins)"
+  },
+  {
+   "key": "tdr/2020/disney-store-japan-leads",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead repeated: TDR Store 20th anniversary 7-pin box set, Oct 2020, 6,050 yen at Disney Store Japan (no line)"
+  },
+  {
+   "key": "tdr/2020/dolls-day-2020",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "still no 2020 release date or price; only Hinamatsuri (3 Mar) context"
+  },
+  {
+   "key": "tdr/2021/minnie-summer-2021/minnie",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "archive title only; design, price, edition not in snippet"
+  },
+  {
+   "key": "tdr/2022/easter-2022/pin",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "archive title only; design, price, characters not in snippet"
+  },
+  {
+   "key": "tdr/2022/toy-story-traffic-cones-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) and whether sold at TDR or Disney Store Japan - title only"
+  },
+  {
+   "key": "tdr/2022/disney-100-dangle/pin",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "hold: archive date 1 Aug 2022 conflicts with Disney100 (2023) timing; year and venue unverified - title only"
+  },
+  {
+   "key": "tdr/2021/tokyo-disneysea-20th-anniversary-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: summary links the framed 5-pin set with Mickey costumes from grand opening, 5th, 10th, 15th, 20th, but does not say one pin per period; not created"
+  },
+  {
+   "key": "tdr/2021/park-logo-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: re-searched; still only TDR/TDL/TDS logos named for 4 pins; fourth design not stated"
+  },
+  {
+   "key": "tdr/2022/halloween-2022-pin-badge-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: rurubu summary again describes balloons plus Minnie holding balloons; 4 balloon pins not individually described; 5-count not re-confirmed"
+  },
+  {
+   "key": "hkdl/2022/monthly",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "still no Jun 2022 or Dec 2022 HKDL LE batch post found (hkmsg/DMK/DPB searched); Jan 2023 batch on sale from 22 Dec 2022 belongs to 2023"
+  },
+  {
+   "key": "hkdl/2021/monthly",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "still no HKDL LE batch posts for Sep-Nov 2021 found"
+  },
+  {
+   "key": "hkdl/2022/november-2022",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: three new-design birthday-theme LE pins still unnamed (hkmsg 2 Nov 2022 summary)"
+  },
+  {
+   "key": "hkdl/2022/september-2022",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: third LinaBell LE pin still unnamed; not re-searched beyond resellers"
+  },
+  {
+   "key": "hkdl/2020/mickey-friends-booster",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: re-searched (Chinese), no per-pin evidence"
+  },
+  {
+   "key": "hkdl/2020/mickey-friends-starter-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: no per-pin evidence"
+  },
+  {
+   "key": "hkdl/2020/pin-go-2020",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: re-searched; game pins (Donald Duck and family theme) still not individually named"
+  },
+  {
+   "key": "hkdl/2020/15th-anniversary-tote-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: not searched this pass (budget)"
+  },
+  {
+   "key": "hkdl/2022/pin-trading-carnival-2022",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: ulifestyle/hkmsg re-surfaced; prizes only 'various Disney and Pixar friends'"
+  },
+  {
+   "key": "hkdl/2021/christmas-2021-advent-calendar-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: not re-searched (budget)"
+  },
+  {
+   "key": "shdr/2020/pin-trading-fun-day-2020",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: sh.bendibao summary describes a single 800 Chinese-style Mickey theme pin, supporting the single-logo-pin reading; four-seasonal-pin variant not re-seen; structure conflict left open"
+  },
+  {
+   "key": "shdr/2020/spring-festival-2020",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: not re-searched"
+  },
+  {
+   "key": "shdr/2021/linabell",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no 2021 LinaBell pin found; only debut news (29 Sep 2021)"
+  },
+  {
+   "key": "shdr/2022/pin-trading-fun-day-2022",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: DPB Fun Day 2022 post title only; water sports set still reseller-only - hold: reseller only"
+  },
+  {
+   "key": "shdr/2021/backpack-pin-series",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: not re-searched"
+  },
+  {
+   "key": "shdr/2022/halloween-2022",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: DPB summary again says Chip and Dale and Donald designs; structure still not stated"
+  },
+  {
+   "key": "hkdl/2022/january-2022/pinocchio-camera-series",
+   "field": "release_year",
+   "searched": "0 queries",
+   "note": "hold: year convention pending maintainer decision (sold online 24-30 Dec 2021, titled Jan 2022); not searched per instructions"
+  },
+  {
+   "key": "hkdl/2022/january-2022/iron-man-experience-5th",
+   "field": "release_year",
+   "searched": "0 queries",
+   "note": "hold: year convention pending maintainer decision (sold online 24-30 Dec 2021, titled Jan 2022); not searched per instructions"
+  },
+  {
+   "key": "hkdl/2022/january-2022/cny-2022-mickey-and-minnie",
+   "field": "release_year",
+   "searched": "0 queries",
+   "note": "hold: year convention pending maintainer decision (sold online 24-30 Dec 2021, titled Jan 2022); not searched per instructions"
+  },
+  {
+   "key": "hkdl/2022/january-2022/cny-2022-donald-and-daisy",
+   "field": "release_year",
+   "searched": "0 queries",
+   "note": "hold: year convention pending maintainer decision (sold online 24-30 Dec 2021, titled Jan 2022); not searched per instructions"
+  },
+  {
+   "key": "hkdl/2022/january-2022/cny-2022-pluto-chip-and-dale",
+   "field": "release_year",
+   "searched": "0 queries",
+   "note": "hold: year convention pending maintainer decision (sold online 24-30 Dec 2021, titled Jan 2022); not searched per instructions"
+  },
+  {
+   "key": "hkdl/2022/january-2022/magic-access-jumbo",
+   "field": "release_year",
+   "searched": "0 queries",
+   "note": "hold: year convention pending maintainer decision (sold online 24-30 Dec 2021, titled Jan 2022); not searched per instructions"
+  },
+  {
+   "key": "shdr/2020/halloween-2020-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2021/chinese-new-year-2021-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2022/chinese-new-year-2022-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2021/foodie-party-2021-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "hkdl/2020/15th-anniversary-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "tdr/2022/oe-set/may-2022-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "tdr/2021/christmas-2021-game",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "hkdl/2020/castle-of-magical-dreams-princess-boosters",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "hkdl/2020/castle-of-magical-dreams-framed",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2022/halloween-2022-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "hkdl/2020/halloween-2020-duffy-friends",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "hkdl/2020/olu-mel-2020",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2022/adventure-best-day-2022",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "tdr/2021/christmas-2021-jungle-carnival-prize",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "tdr/2022/christmas-2022-abus-bazaar-prize",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "tdr/2022/halloween-2022-pin-badge-set-2400",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2020/pin-trading-fun-day-2020-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2020/pin-trading-fun-day-2020-duffy-friends-box",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold kept: no new per-pin evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2021/backpack-pin-series/duffy",
+   "field": "pin_structure",
+   "searched": "0 queries",
+   "note": "hold kept: mystery designs not individually confirmed"
+  },
+  {
+   "key": "shdr/2021/backpack-pin-series/marie",
+   "field": "pin_structure",
+   "searched": "0 queries",
+   "note": "hold kept: mystery designs not individually confirmed"
+  },
+  {
+   "key": "shdr/2021/backpack-pin-series/alice",
+   "field": "pin_structure",
+   "searched": "0 queries",
+   "note": "hold kept: mystery designs not individually confirmed"
+  },
+  {
+   "key": "shdr/2021/backpack-pin-series/stellalou",
+   "field": "pin_structure",
+   "searched": "0 queries",
+   "note": "hold kept: mystery designs not individually confirmed"
+  },
+  {
+   "key": "shdr/2021/backpack-pin-series/winnie-the-pooh",
+   "field": "pin_structure",
+   "searched": "0 queries",
+   "note": "hold kept: mystery designs not individually confirmed"
+  },
+  {
+   "key": "hkdl/2022/september-2022/duffy-and-linabell",
+   "field": "pin_structure",
+   "searched": "0 queries",
+   "note": "hold kept: structure still unconfirmed"
+  },
+  {
+   "key": "tdr/2021/tokyo-disneysea-20th-abus-bazaar-prize/mickey-20th-costume",
+   "field": "pin_structure",
+   "searched": "0 queries",
+   "note": "hold kept: pending maintainer decision on full prize lists"
+  },
+  {
+   "key": "tdr/2022/christmas-2022/pin",
+   "field": "relation",
+   "searched": "0 queries",
+   "note": "variant: same pin as tdr/2022/christmas-2022/tdl-mickey-minnie-present-tree (carried from 526)"
+  },
+  {
+   "key": "hkdl/2020/online-le-sales",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: DMK says HKDL sold 2020 LE pins online weekly from 10 Jul 2020 (2 per transaction); first-week (10-16 Jul) designs not named"
+  },
+  {
+   "key": "hkdl/2021/pin-auction",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: hkmsg Mar 2021 online pin auction of 30 worldwide LE pins - existing pins, not new HKDL releases; not recorded"
+  },
+  {
+   "key": "tdr/2021/minnie-summer-2021/minnie",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: known only from a blog archive title; design, edition and price not described (round 58 review)"
+  },
+  {
+   "key": "tdr/2022/easter-2022/pin",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: known only from a blog archive title; design, edition and price not described (round 58 review)"
+  }
+ ],
+ "discovery_notes": "Cell B360, follow-up 13 of B041 (packets 397/445/478/505/526); reuses their keys. 29 standard searches, snippet leads only (all claims from search-engine summaries, not quoted page text). New: HKDL Happiest Place on Earth Princess series (Mar 2021, set only, structure hold); HKDL Lady and the Tramp 65th LE pin (31 Jul 2020) and held 'Olu Mel LE pin; TDR Happy Ride with Baymax grand opening OE pin (28 Sep 2020, 1,000 yen); TDR 2020 spinner and Mickey-flowers year pins (Jan 2020); TDR Minnie Summer 2021 and Easter 2022 pins (titles only); Toy Story Traffic Cones set and Disney 100 dangle (held). Corroboration: Fun Day 2020 theme pin single LE 800 Chinese-style Mickey (sh.bendibao); Doll's Day 2020 two-pin OE set. Pooh candy machine 600/800 conflict may be a mapping error. Not found: HKDL Jun/Dec 2022 and Sep-Nov 2021 batches, Nov 2022 birthday three, third LinaBell, SHDR LinaBell 2021, Fun Day 2022 contents, TDS20 framed five, Halloween 2022 balloon four, park-logo fourth. Resellers seen, not used: usshoppingsos, carousell, wickedpins, fryguypins, castleplanethk, wizmouse, fril, Yahoo auctions, ilovecharacters."
+}

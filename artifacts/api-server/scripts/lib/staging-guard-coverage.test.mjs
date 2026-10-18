@@ -13,11 +13,13 @@ const DIRS = ["artifacts/api-server/scripts", "scripts"];
 const READ_ONLY = new Set(["artifacts/api-server/scripts/dryrun-collectible-pintrader.mjs"]);
 // The staging-db tool runs its own guard (assertStagingTarget + per-project connections).
 const OWN_GUARD = new Set(["artifacts/api-server/scripts/staging-db.mjs"]);
-// Their database writes live in bundled service code (src/services/market/refresh),
-// so the pattern check can't see them: always require the guard (#409).
+// Their database access lives in bundled service code (src/services/market/refresh
+// and market/leads), so the pattern check can't see it: always require the guard
+// (#409, #415; the leads set probe records provider usage through the Soldgraph client).
 const ALWAYS_GUARDED = new Set([
   "artifacts/api-server/scripts/market-refresh.mjs",
   "artifacts/api-server/scripts/market-usage.mjs",
+  "artifacts/api-server/scripts/marketplace-leads.mjs",
 ]);
 
 const WRITES = /\.(insert|upsert|update|delete|upload|remove|rpc)\(|auth\.admin\.|\b(INSERT|UPDATE|DELETE)\b|\\copy/;
@@ -59,7 +61,7 @@ describe("staging guard coverage", () => {
     });
   }
 
-  it("finds the market refresh scripts (#409)", () => {
+  it("finds the market refresh and leads scripts (#409, #415)", () => {
     for (const file of ALWAYS_GUARDED) expect(files).toContain(file);
   });
 

@@ -1,6 +1,8 @@
 /**
  * Loads the market refresh code (src/services/market/refresh/cli.ts) for the
- * maintainer scripts market-refresh.mjs and market-usage.mjs (#409).
+ * maintainer scripts market-refresh.mjs and market-usage.mjs (#409), and the
+ * marketplace leads code (src/services/market/leads/cli.ts) for
+ * marketplace-leads.mjs (#415).
  *
  * The service code is TypeScript with extensionless imports, so Node can't
  * import it directly. This bundles it with esbuild (already a dev dependency
@@ -19,6 +21,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const API_ROOT = fileURLToPath(new URL("../../", import.meta.url));
 const ENTRY = path.join(API_ROOT, "src/services/market/refresh/cli.ts");
+export const LEADS_ENTRY = path.join(API_ROOT, "src/services/market/leads/cli.ts");
 const CACHE_DIR = path.join(API_ROOT, "node_modules/.cache/pinhunt-market-refresh");
 
 const SILENT_LOGGER = `
@@ -40,10 +43,10 @@ export const marketRefreshPlugin = {
 };
 
 /** Bundles the entry to a string (exported for the test). */
-export async function bundleMarketRefresh() {
+export async function bundleMarketRefresh(entry = ENTRY) {
   const { build } = await import("esbuild");
   const result = await build({
-    entryPoints: [ENTRY],
+    entryPoints: [entry],
     bundle: true,
     write: false,
     platform: "node",
@@ -55,12 +58,12 @@ export async function bundleMarketRefresh() {
   return result.outputFiles[0].text;
 }
 
-/** Bundles and imports the refresh module. */
-export async function loadMarketRefresh() {
-  const code = await bundleMarketRefresh();
+/** Bundles and imports the refresh module (or another entry, such as LEADS_ENTRY). */
+export async function loadMarketRefresh(entry = ENTRY) {
+  const code = await bundleMarketRefresh(entry);
   const hash = crypto.createHash("sha256").update(code).digest("hex").slice(0, 16);
   await fs.mkdir(CACHE_DIR, { recursive: true });
-  const file = path.join(CACHE_DIR, `cli-${hash}.mjs`);
+  const file = path.join(CACHE_DIR, `${path.basename(path.dirname(entry))}-cli-${hash}.mjs`);
   await fs.writeFile(file, code);
   return import(pathToFileURL(file).href);
 }

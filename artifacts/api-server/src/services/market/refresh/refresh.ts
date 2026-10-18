@@ -428,7 +428,11 @@ async function prepare(opts: RefreshOptions, deps: RefreshDeps, now: number): Pr
 }
 
 /** Reasons --apply must not run, in the order they are reported. */
-export function applyBlockers(plan: RefreshPlan, opts: { confirmCredits: number | null }, env: NodeJS.ProcessEnv): string[] {
+export function applyBlockers(
+  plan: Pick<RefreshPlan, "missingSources" | "disabledSources" | "worstCaseCredits" | "overBudget" | "remainingCredits">,
+  opts: { confirmCredits: number | null },
+  env: NodeJS.ProcessEnv,
+): string[] {
   const out: string[] = [];
   if (plan.missingSources.length) out.push(`no market_sources row for: ${plan.missingSources.join(", ")}`);
   if (plan.disabledSources.length) out.push(`market_sources not enabled for: ${plan.disabledSources.join(", ")}`);

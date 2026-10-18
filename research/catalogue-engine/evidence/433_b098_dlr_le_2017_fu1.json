@@ -1,0 +1,1477 @@
+{
+  "packet_id": "backfill-b098-dlr-le-2017-fu1",
+  "spec_version": 1,
+  "collected_at": "2026-10-18",
+  "collector": "agent:backfill-b098",
+  "sources": [
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+      "title": "New Disney Pins February 2017 Week 3",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-02",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/new-disney-pins-february-2017-week-4/",
+      "title": "New Disney Pins February 2017 Week 4",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-02",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+      "title": "New Disney Pins March 2017 Week 1",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-03",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2017-week-1",
+      "title": "New Disney Pins April 2017 Week 1",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-04",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-2",
+      "title": "New Disney Pins May 2017 Week 2",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-05",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-4",
+      "title": "New Disney Pins May 2017 Week 4",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-05",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+      "title": "New Disney Pins June 2017 Week 1",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-06",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+      "title": "New Disney Pins June 2017 Week 5",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-06",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+      "title": "New Disney Pins July 2017 Week 4",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-07",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/disneyland-62nd-anniversary-cast-member-pin/",
+      "title": "Disneyland 62nd Anniversary Cast Member Pin",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-06",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+      "title": "Aladdin 25th Anniversary Pin Collection",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-10",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/club-33-lady-tramp-pin-2017",
+      "title": "Club 33 Lady and the Tramp Pin 2017",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-03",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/club-33-september-2017-pin",
+      "title": "Club 33 September 2017 Pin",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-09",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/club-33-december-2017-pin",
+      "title": "Club 33 December 2017 Pin",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-12",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://disneypinsblog.com/blogs/news/holiday-gift-card-pins-2017",
+      "title": "Holiday Disney Gift Card 2017 Pins",
+      "publisher": "Disney Pins Blog",
+      "published_date": "2017-11",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    },
+    {
+      "url": "https://www.wdwinfo.com/news-stories/remember-your-2017-mickeys-halloween-party-experience-with-new-disneyland-merchandise/",
+      "title": "Remember Your 2017 Mickey's Halloween Party Experience with New Disneyland Merchandise",
+      "publisher": "WDWInfo",
+      "published_date": "2017-09",
+      "accessed_via": "search_snippet",
+      "page_readable": false
+    }
+  ],
+  "sets": [
+    {
+      "set_key": "dlr/2017/mickeys-halloween-party-2017-villains-box-set",
+      "claims": [
+        {
+          "field": "format",
+          "value": "boxed set",
+          "source_url": "https://www.wdwinfo.com/news-stories/remember-your-2017-mickeys-halloween-party-experience-with-new-disneyland-merchandise/",
+          "method": "search_snippet",
+          "note": "villain pins sold in a box set"
+        },
+        {
+          "field": "edition_size",
+          "value": 1000,
+          "source_url": "https://www.wdwinfo.com/news-stories/remember-your-2017-mickeys-halloween-party-experience-with-new-disneyland-merchandise/",
+          "method": "search_snippet",
+          "note": "Disneyland-specific article gives a run of 1,000 sets"
+        }
+      ]
+    },
+    {
+      "set_key": "dlr/2017/club-33-2017",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Club 33 2017 member pins",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-september-2017-pin",
+          "method": "search_snippet",
+          "note": "2017 member-exclusive pins at Club 33 Disneyland"
+        },
+        {
+          "field": "release_location",
+          "value": "Club 33, Disneyland",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-september-2017-pin",
+          "method": "search_snippet",
+          "note": "exclusive to Club 33 members at Disneyland"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-september-2017-pin",
+          "method": "search_snippet",
+          "note": "limited edition"
+        }
+      ]
+    },
+    {
+      "set_key": "dlr/2017/aladdin-25th-pin-trading-nights",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Aladdin 25th Anniversary Pin Collection",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "collection for Pin Trading Nights"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World Pin Trading Nights (via RSP)",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "sold via random selection at DL and WDW Pin Trading Nights"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-11",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "Pin Trading Nights November 2017; RSP entries closed Oct 18, 2017"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "limited edition pins"
+        }
+      ]
+    },
+    {
+      "set_key": "dlr/2017/aladdin-25th-pin-trading-nights-three-wishes-box-set",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Three Wishes Box Pin Set",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "box set within the collection"
+        },
+        {
+          "field": "format",
+          "value": "boxed set",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "box pin set"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 3,
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "contains three LE pins"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 1000,
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "LE 1,000"
+        },
+        {
+          "field": "price",
+          "value": 64.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "$64.99"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "USD"
+        }
+      ]
+    },
+    {
+      "set_key": "dlr/2017/holiday-gift-card-pins",
+      "claims": [
+        {
+          "field": "set_name",
+          "value": "Holiday Disney Gift Card 2017 Pins",
+          "source_url": "https://disneypinsblog.com/blogs/news/holiday-gift-card-pins-2017",
+          "method": "search_snippet",
+          "note": "holiday pins given with a $100 Disney gift card purchase"
+        },
+        {
+          "field": "expected_pin_count",
+          "value": 4,
+          "source_url": "https://disneypinsblog.com/blogs/news/holiday-gift-card-pins-2017",
+          "method": "search_snippet",
+          "note": "four pins; one per qualifying card"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/holiday-gift-card-pins-2017",
+          "method": "search_snippet",
+          "note": "limited edition"
+        }
+      ]
+    }
+  ],
+  "pins": [
+    {
+      "pin_key": "dlr/2017/pin-trading-tales/ariel",
+      "set_key": "dlr/2017/pin-trading-tales",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Pin Trading Tales - Ariel",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+          "method": "search_snippet",
+          "note": "post says a new DLR series called Pin Trading Tales, this pin features Ariel"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Ariel"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+          "method": "search_snippet",
+          "note": "features Ariel"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 2000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+          "method": "search_snippet",
+          "note": "LE 2,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+          "method": "search_snippet",
+          "note": "$15.99 retail"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+          "method": "search_snippet",
+          "note": "USD price"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-02-16",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+          "method": "search_snippet",
+          "note": "on sale 2017-02-16"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2017-week-3",
+          "method": "search_snippet",
+          "note": "stated as a DLR release"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/pin-trading-tales/oswald",
+      "set_key": "dlr/2017/pin-trading-tales",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Pin Trading Tales - Oswald",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-february-2017-week-4/",
+          "method": "search_snippet",
+          "note": "second pin in the DLR Pin Trading Tales collection, features Oswald"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Oswald the Lucky Rabbit"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-february-2017-week-4/",
+          "method": "search_snippet",
+          "note": "features Oswald"
+        },
+        {
+          "field": "set_position",
+          "value": 2,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-february-2017-week-4/",
+          "method": "search_snippet",
+          "note": "called the second pin"
+        },
+        {
+          "field": "front_text",
+          "value": "Every pin tells a story...",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-february-2017-week-4/",
+          "method": "search_snippet",
+          "note": "pin carries the series slogan"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "hinged",
+            "dangle"
+          ],
+          "source_url": "https://disneypinsblog.com/new-disney-pins-february-2017-week-4/",
+          "method": "search_snippet",
+          "note": "hinged pin with dangle chain element per summary"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-february-2017-week-4/",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 2000,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-february-2017-week-4/",
+          "method": "search_snippet",
+          "note": "LE 2,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-february-2017-week-4/",
+          "method": "search_snippet",
+          "note": "$15.99 retail"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-february-2017-week-4/",
+          "method": "search_snippet",
+          "note": "USD price"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-02-23",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-february-2017-week-4/",
+          "method": "search_snippet",
+          "note": "on sale 2017-02-23"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-february-2017-week-4/",
+          "method": "search_snippet",
+          "note": "stated as a DLR release"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/pin-trading-tales/finding-dory",
+      "set_key": "dlr/2017/pin-trading-tales",
+      "claims": [
+        {
+          "field": "set_position",
+          "value": 5,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-4",
+          "method": "search_snippet",
+          "note": "called the fifth pin in the Pin Trading Tales collection"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-05-25",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-4",
+          "method": "search_snippet",
+          "note": "released at DLR May 25, 2017"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/pin-trading-tales/alice-in-wonderland",
+      "set_key": "dlr/2017/pin-trading-tales",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Pin Trading Tales - Alice in Wonderland",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+          "method": "search_snippet",
+          "note": "sixth pin in the DLR Pin Trading Tales collection, Alice in Wonderland subject"
+        },
+        {
+          "field": "set_position",
+          "value": 6,
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+          "method": "search_snippet",
+          "note": "called the sixth pin"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-06-29",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+          "method": "search_snippet",
+          "note": "released at DLR June 29, 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/new-disney-pins-june-2017-week-5/",
+          "method": "search_snippet",
+          "note": "DLR release"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/pin-trading-tales/maleficent",
+      "set_key": "dlr/2017/pin-trading-tales",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Pin Trading Tales - Maleficent",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "seventh pin in the DLR Pin Trading Tales collection, Maleficent"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Maleficent"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "Maleficent pin"
+        },
+        {
+          "field": "set_position",
+          "value": 7,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "called the seventh pin"
+        },
+        {
+          "field": "visual_features",
+          "value": [
+            "hinged",
+            "dangle"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "hinged with dangle chain element"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 2000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "LE 2,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "$15.99 retail"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "USD price"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-07-27",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "on sale 2017-07-27"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2017-week-4",
+          "method": "search_snippet",
+          "note": "stated as a DLR release"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/charming-characters/jessica-rabbit",
+      "set_key": "dlr/2017/charming-characters",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Charming Characters - Jessica Rabbit",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+          "method": "search_snippet",
+          "note": "third release in the Charming Characters collection, March pin"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Jessica Rabbit"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+          "method": "search_snippet",
+          "note": "features Jessica Rabbit"
+        },
+        {
+          "field": "set_position",
+          "value": 3,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+          "method": "search_snippet",
+          "note": "third release"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+          "method": "search_snippet",
+          "note": "$15.99 retail"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+          "method": "search_snippet",
+          "note": "USD price"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-03-02",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+          "method": "search_snippet",
+          "note": "on sale 2017-03-02"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2017-week-1",
+          "method": "search_snippet",
+          "note": "stated as a DLR release"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/charming-characters/dory",
+      "set_key": "dlr/2017/charming-characters",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Charming Characters - Dory",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2017-week-1",
+          "method": "search_snippet",
+          "note": "fourth release in the Charming Characters collection"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Dory"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2017-week-1",
+          "method": "search_snippet",
+          "note": "features Dory"
+        },
+        {
+          "field": "set_position",
+          "value": 4,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2017-week-1",
+          "method": "search_snippet",
+          "note": "fourth release"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2017-week-1",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2017-week-1",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2017-week-1",
+          "method": "search_snippet",
+          "note": "$15.99 retail"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2017-week-1",
+          "method": "search_snippet",
+          "note": "USD price"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-04-06",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2017-week-1",
+          "method": "search_snippet",
+          "note": "on sale 2017-04-06"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2017-week-1",
+          "method": "search_snippet",
+          "note": "stated as a DLR release"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/charming-characters/mr-toad",
+      "set_key": "dlr/2017/charming-characters",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Charming Characters - Mr. Toad",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-2",
+          "method": "search_snippet",
+          "note": "fifth release, the May pin features Mr. Toad"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Mr. Toad"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-2",
+          "method": "search_snippet",
+          "note": "features Mr. Toad"
+        },
+        {
+          "field": "set_position",
+          "value": 5,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-2",
+          "method": "search_snippet",
+          "note": "fifth release"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-2",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-2",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-2",
+          "method": "search_snippet",
+          "note": "$15.99 retail"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-2",
+          "method": "search_snippet",
+          "note": "USD price"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-05-11",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-2",
+          "method": "search_snippet",
+          "note": "on sale 2017-05-11"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2017-week-2",
+          "method": "search_snippet",
+          "note": "stated as a DLR release"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/charming-characters/matterhorn",
+      "set_key": "dlr/2017/charming-characters",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Charming Characters - Matterhorn",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+          "method": "search_snippet",
+          "note": "sixth release, the June pin features the Matterhorn"
+        },
+        {
+          "field": "attraction",
+          "value": "Matterhorn Bobsleds",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+          "method": "search_snippet",
+          "note": "Matterhorn subject"
+        },
+        {
+          "field": "set_position",
+          "value": 6,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+          "method": "search_snippet",
+          "note": "sixth release"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+          "method": "search_snippet",
+          "note": "$15.99 retail"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+          "method": "search_snippet",
+          "note": "USD price"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-06-01",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+          "method": "search_snippet",
+          "note": "on sale 2017-06-01"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+          "method": "search_snippet",
+          "note": "stated as a DLR release"
+        }
+      ]
+    },
+    {
+      "pin_key": "wdw/2017/star-wars-pin-of-the-month/pin-13",
+      "set_key": "wdw/2017/star-wars-pin-of-the-month",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Star Wars Pin of the Month 13 (completer)",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+          "method": "search_snippet",
+          "note": "roundup lists the next monthly Star Wars park pin as 13 of 13, a completer"
+        },
+        {
+          "field": "set_position",
+          "value": 13,
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+          "method": "search_snippet",
+          "note": "13 of 13"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland and Walt Disney World",
+          "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2017-week-1",
+          "method": "search_snippet",
+          "note": "listed under shared DL/WDW releases, week of May 28-Jun 3 2017"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/cast-member-62nd-anniversary/disneyland-62nd",
+      "set_key": "dlr/2017/cast-member-62nd-anniversary",
+      "claims": [
+        {
+          "field": "attraction",
+          "value": "Matterhorn Bobsleds",
+          "source_url": "https://disneypinsblog.com/disneyland-62nd-anniversary-cast-member-pin/",
+          "method": "search_snippet",
+          "note": "design shows riders on the Matterhorn Bobsleds"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/disneyland-62nd-anniversary-cast-member-pin/",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 500,
+          "source_url": "https://disneypinsblog.com/disneyland-62nd-anniversary-cast-member-pin/",
+          "method": "search_snippet",
+          "note": "LE 500"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-06",
+          "source_url": "https://disneypinsblog.com/disneyland-62nd-anniversary-cast-member-pin/",
+          "method": "search_snippet",
+          "note": "released to Cast Members late June 2017"
+        },
+        {
+          "field": "release_location",
+          "value": "Disneyland Resort (Cast Members)",
+          "source_url": "https://disneypinsblog.com/disneyland-62nd-anniversary-cast-member-pin/",
+          "method": "search_snippet",
+          "note": "cast member release"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/club-33-2017/lady-and-the-tramp",
+      "set_key": "dlr/2017/club-33-2017",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Club 33 Lady and the Tramp Pin 2017",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-lady-tramp-pin-2017",
+          "method": "search_snippet",
+          "note": "Club 33 member pin"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Lady",
+            "Tramp"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-lady-tramp-pin-2017",
+          "method": "search_snippet",
+          "note": "shows Lady and Tramp sharing spaghetti"
+        },
+        {
+          "field": "pin_structure",
+          "value": "one pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-lady-tramp-pin-2017",
+          "method": "search_snippet",
+          "note": "both characters on a single pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-lady-tramp-pin-2017",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 500,
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-lady-tramp-pin-2017",
+          "method": "search_snippet",
+          "note": "LE 500"
+        },
+        {
+          "field": "original_price",
+          "value": 30,
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-lady-tramp-pin-2017",
+          "method": "search_snippet",
+          "note": "$30 retail"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-lady-tramp-pin-2017",
+          "method": "search_snippet",
+          "note": "USD price"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-03",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-lady-tramp-pin-2017",
+          "method": "search_snippet",
+          "note": "on sale 2017-03"
+        },
+        {
+          "field": "release_location",
+          "value": "Club 33, Disneyland",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-lady-tramp-pin-2017",
+          "method": "search_snippet",
+          "note": "location as stated"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/club-33-2017/beauty-and-the-beast-september",
+      "set_key": "dlr/2017/club-33-2017",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Club 33 September 2017 Pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-september-2017-pin",
+          "method": "search_snippet",
+          "note": "September member pin, Beauty and the Beast theme"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-september-2017-pin",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 500,
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-september-2017-pin",
+          "method": "search_snippet",
+          "note": "LE 500"
+        },
+        {
+          "field": "original_price",
+          "value": 30,
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-september-2017-pin",
+          "method": "search_snippet",
+          "note": "$30 retail"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-september-2017-pin",
+          "method": "search_snippet",
+          "note": "USD price"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-09",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-september-2017-pin",
+          "method": "search_snippet",
+          "note": "on sale 2017-09"
+        },
+        {
+          "field": "release_location",
+          "value": "Club 33, Disneyland",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-september-2017-pin",
+          "method": "search_snippet",
+          "note": "location as stated"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/club-33-2017/december-2017",
+      "set_key": "dlr/2017/club-33-2017",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Club 33 December 2017 Pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-december-2017-pin",
+          "method": "search_snippet",
+          "note": "December member pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-december-2017-pin",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 500,
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-december-2017-pin",
+          "method": "search_snippet",
+          "note": "LE 500"
+        },
+        {
+          "field": "original_price",
+          "value": 30,
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-december-2017-pin",
+          "method": "search_snippet",
+          "note": "$30 retail"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-december-2017-pin",
+          "method": "search_snippet",
+          "note": "USD price"
+        },
+        {
+          "field": "release_date",
+          "value": "2017-12",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-december-2017-pin",
+          "method": "search_snippet",
+          "note": "on sale 2017-12"
+        },
+        {
+          "field": "release_location",
+          "value": "Club 33, Disneyland",
+          "source_url": "https://disneypinsblog.com/blogs/news/club-33-december-2017-pin",
+          "method": "search_snippet",
+          "note": "location as stated"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/aladdin-25th-pin-trading-nights/scarab",
+      "set_key": "dlr/2017/aladdin-25th-pin-trading-nights",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Aladdin 25th Anniversary - Scarab",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "Scarab pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "$15.99 retail"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "USD price"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/aladdin-25th-pin-trading-nights/genie-hug",
+      "set_key": "dlr/2017/aladdin-25th-pin-trading-nights",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Aladdin 25th Anniversary - Genie Hug",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "Genie Hug pin"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "original_price",
+          "value": 15.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "$15.99 retail"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "USD price"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/aladdin-25th-pin-trading-nights/jafar",
+      "set_key": "dlr/2017/aladdin-25th-pin-trading-nights",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Aladdin 25th Anniversary - Jafar",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "Jafar pin"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Jafar"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "Jafar"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 3000,
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "LE 3,000"
+        },
+        {
+          "field": "original_price",
+          "value": 19.99,
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "$19.99 retail"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "USD price"
+        }
+      ]
+    },
+    {
+      "pin_key": "dlr/2017/aladdin-25th-pin-trading-nights/aladdin-jasmine-framed-jumbo",
+      "set_key": "dlr/2017/aladdin-25th-pin-trading-nights",
+      "claims": [
+        {
+          "field": "pin_name",
+          "value": "Aladdin and Jasmine Framed Jumbo Pin",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "framed jumbo pin"
+        },
+        {
+          "field": "characters",
+          "value": [
+            "Aladdin",
+            "Jasmine"
+          ],
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "Aladdin and Jasmine"
+        },
+        {
+          "field": "edition_type",
+          "value": "limited edition",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "limited edition"
+        },
+        {
+          "field": "edition_size",
+          "value": 250,
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "LE 250"
+        },
+        {
+          "field": "original_price",
+          "value": 150,
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "$150 retail"
+        },
+        {
+          "field": "currency",
+          "value": "USD",
+          "source_url": "https://disneypinsblog.com/blogs/news/aladdin-25th-anniversary-pin-collection",
+          "method": "search_snippet",
+          "note": "USD price"
+        }
+      ]
+    }
+  ],
+  "not_found": [
+    {
+      "key": "dlr/2017/pin-trading-tales/finding-dory",
+      "field": "release_date",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "resolved: B020 gap - DPB May 2017 wk4 snippet states fifth pin, released at DLR May 25, 2017"
+    },
+    {
+      "key": "dlr/2017/pin-trading-tales/ariel",
+      "field": "set_position",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "DPB calls Ariel the start of a new series but gives no number; position 1 inferred from Oswald being second - not claimed"
+    },
+    {
+      "key": "dlr/2017/pin-trading-tales/oswald",
+      "field": "product_code",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "MyPinCentral 134288 surfaced with Oswald results; link of that ID to this pin rests on result ordering - not recorded"
+    },
+    {
+      "key": "dlr/2017/pin-trading-tales/alice-in-wonderland",
+      "field": "characters",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "snippet names only the film; characters on the pin not stated; LE/price inferred for series, not stated for this pin"
+    },
+    {
+      "key": "dlr/2017/pin-trading-tales/mad-hatter",
+      "field": "release",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "still reseller-only (ecrater: LE 2,000, Mar 30 2017, Dormouse dangle); possibly pin 3 or 4; not recorded"
+    },
+    {
+      "key": "dlr/2017/pin-trading-tales",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "pins 3, 4, 8 and 9 of 2017 not named in permitted snippets; Ariel(1) Feb to Old Hag(11) Nov suggests monthly cadence"
+    },
+    {
+      "key": "dlr/2017/charming-characters",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "releases 1, 2, 8 and 9 not named in permitted snippets; no DPB Jan/Feb 2017 entry for the series found"
+    },
+    {
+      "key": "dlr/2017/charming-characters/matterhorn",
+      "field": "set_position",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "one summary also called it a 13th pin under shared DL/WDW heading; that matches the Star Wars 13/13 completer in the same roundup - mixed"
+    },
+    {
+      "key": "wdw/2017/star-wars-pin-of-the-month/pin-13",
+      "field": "characters",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "hold: completer design/subject, edition size and price not stated in snippet; DL/WDW shared release, keyed on wdw line per 426"
+    },
+    {
+      "key": "wdw/2017/star-wars-pin-of-the-month/pin-11",
+      "field": "all",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "Star Wars Pin of the Month pin 11 of 13 still not found"
+    },
+    {
+      "key": "dlr/2017/cast-member-62nd-anniversary/disneyland-62nd",
+      "field": "edition_size",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "DPB snippet now gives LE 500; B020 had seen an unattributed 'LE 100' line - not recorded"
+    },
+    {
+      "key": "dlr/2017/cast-member-62nd-anniversary/public",
+      "field": "all",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "no public (non-CM) Disneyland 62nd anniversary pin found; a commenter asked whether one would be sold"
+    },
+    {
+      "key": "dlr/2017/mickeys-halloween-party-2017-villains-box-set",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "hold: villain members pending maintainer decision on full lists; summary says Jafar box/frame-only, WDW MNSSHP details likely mixed in"
+    },
+    {
+      "key": "dlr/2017/mickeys-halloween-party-2017-framed-set",
+      "field": "all",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "lead: a summary mentions 300 framed sets alongside 5,400 per pin; matches WDW MNSSHP figures - DLR framed set not confirmed"
+    },
+    {
+      "key": "dlr/2017/club-33-2017/december-2017",
+      "field": "characters",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "hold: DPB page conflicts - names Pluto but also describes a Christmas tree with Tinker Bell; subject unresolved"
+    },
+    {
+      "key": "dlr/2017/club-33-2017/beauty-and-the-beast-september",
+      "field": "characters",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "snippet gives Beauty and the Beast theme only; characters on the pin not stated"
+    },
+    {
+      "key": "dlr/2017/club-33-2017",
+      "field": "expected_pin_count",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "twelve monthly 50th-anniversary pins stated only on an auction lot (Heritage); not recorded. Other 2017 months not found"
+    },
+    {
+      "key": "dlr/2017/club-33-2017/cinderella",
+      "field": "all",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "lead: a pin listing (possibly MPC 77785) ties a Cinderella LE 500 pin to Club 33 50th 2017; attribution unclear - not recorded"
+    },
+    {
+      "key": "dlr/2017/aladdin-25th-pin-trading-nights-three-wishes-box-set",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "three LE pins in the box not named in snippet"
+    },
+    {
+      "key": "dlr/2017/aladdin-25th-pin-trading-nights",
+      "field": "line",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "joint DL/WDW Pin Trading Nights release; not keyed in any WDW 2017 packet, so keyed dlr here - flag for WDW cell"
+    },
+    {
+      "key": "dlr/2017/aladdin-25th-pin-trading-nights/genie-hug",
+      "field": "characters",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "name suggests Genie; who else appears not stated - characters not claimed"
+    },
+    {
+      "key": "dlr/2017/holiday-gift-card-pins",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); Minnie, Mickey, Daisy, Donald listed as characters only"
+    },
+    {
+      "key": "dlr/2017/holiday-gift-card-pins",
+      "field": "edition_size",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "snippet gives LE 2,650 without saying per pin or in total; release resort/retailer still not stated - not recorded"
+    },
+    {
+      "key": "dlr/2017/pirates-50th",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "individual LE 2,500 designs still unnamed; purple-gem treasure chest only on reseller; chipandco DL merch page surfaced, no names"
+    },
+    {
+      "key": "dlr/2017/d23-expo-dream-store-pirates",
+      "field": "all",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "lead: D23 Expo 2017 Dream Store Pirates 50th pins (LE 1,000 pin, LE 500 jumbo, LE 150 3-pin set) - convention, not DLR park"
+    },
+    {
+      "key": "dlr/2017/mission-breakout-premiere",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "AP-exclusive pin still unnamed; no size/price in DPB or MiceChat snippets"
+    },
+    {
+      "key": "dlr/2017/ap-quarterly-2017",
+      "field": "pins",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "first three 2017 DL AP quarterly pins still not identified"
+    },
+    {
+      "key": "dlr/2017/dca-food-wine-festival-2017",
+      "field": "release_date",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "lead: Disney Parks Blog Mar 2017 merch post surfaced (fest Mar 10-Apr 16, AP pin LE 2,000, chef Mickey logo); attribution blended - no claim"
+    },
+    {
+      "key": "dlr/2017/pin-trading-nights",
+      "field": "all",
+      "searched": "30 standard WebSearch queries (B098)",
+      "note": "no DL-only 2017 Pin Trading Night pin found other than the joint Aladdin 25th collection"
+    }
+  ],
+  "discovery_notes": "Follow-up 1 of B020. 30 standard WebSearch queries, all search_snippet, blocked domains passed every time. Mainly Disney Pins Blog weekly round-ups and event posts plus one WDWInfo DLR article. Reuses B020 keys (and 426's wdw key for the shared Star Wars monthly completer). Adds Pin Trading Tales 1(Ariel)/2/6/7, Charming Characters 3-6, Club 33 2017, Aladdin 25th Pin Trading Nights. Resellers (ecrater, distradingpins4u, yourwdwstore, jd-collectibles) and a Heritage auction lot seen but not used. B020 had no holds, so none released. No OE pins added (432 covers DLR OE 2017). No prompt-injection seen."
+}

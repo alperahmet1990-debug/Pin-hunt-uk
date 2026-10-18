@@ -1,0 +1,1180 @@
+{
+ "packet_id": "backfill-b274-dlr-le-2018-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b274",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+   "title": "New Disney Pins December 2018 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://carstairsconsiders.blogspot.com/2020/02/disney-pin-review-maleficent-windows-of.html",
+   "title": "Disney Pin Review: Maleficent - Windows of Evil - 2018 Release",
+   "publisher": "Carstairs Considers",
+   "published_date": "2020-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://carstairsconsiders.blogspot.com/2020/04/disney-pin-review-scar-windows-of-evil.html",
+   "title": "Disney Pin Review: Scar - Windows of Evil - 2018 Release",
+   "publisher": "Carstairs Considers",
+   "published_date": "2020-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://carstairsconsiders.blogspot.com/2020/06/disney-pin-review-cruella-de-vil.html",
+   "title": "Disney Pin Review: Cruella de Vil - Windows of Evil Pin - 2018 Release",
+   "publisher": "Carstairs Considers",
+   "published_date": "2020-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://carstairsconsiders.blogspot.com/2020/01/disney-pin-review-ursula-windows-of.html",
+   "title": "Disney Pin Review: Ursula - Windows of Evil - 2018 Release",
+   "publisher": "Carstairs Considers",
+   "published_date": "2020-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/channel-28-disney-pin-collection",
+   "title": "Channel 28 Disney Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://ducktalks.com/2018/07/18/channel-28-disney-afternoon-pins/",
+   "title": "Channel 28 Disney Afternoon Pins",
+   "publisher": "DuckTalks",
+   "published_date": "2018-07-18",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mickeys-halloween-party-2018-pins",
+   "title": "Mickey's Halloween Party 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickeys-halloween-party-2018-annual-passholder-button/",
+   "title": "Mickey's Halloween Party 2018 Annual Passholder Button",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/137657",
+   "title": "DLR - Club 33 SHAG Boxed Set - 2018",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2018-week-4",
+   "title": "New Disney Pins June 2018 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/haunted-mansion-holiday-gingerbread-collection-mystery-disney-pin-set",
+   "title": "Haunted Mansion Holiday Gingerbread Collection Mystery Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2020-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2018/happy-holidays-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Happy Holidays 2018",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "DPB Dec 2018 wk1 lists Happy Holidays 2018 single pins"
+    },
+    {
+     "field": "format",
+     "value": "series of single pins",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "each pin listed separately with own edition and price"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "singles listed as LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "on sale Dec 6, 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "four LE 3,500 singles at both resorts; four LE 2,000 singles Disneyland only"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2018/happy-holidays-2018-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Happy Holidays 2018 Pin Set",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "boxed set listed in DPB Dec 2018 wk1"
+    },
+    {
+     "field": "format",
+     "value": "boxed set",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "four pins plus a completer pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "four pins plus Zootopia completer"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "price",
+     "value": 89.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$89.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Dec 6, 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2018/happy-holidays-2018/anna-olaf",
+   "set_key": "dlr/2018/happy-holidays-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Anna & Olaf Happy Holidays 2018 Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "named in DPB Dec 2018 wk1"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Anna",
+      "Olaf"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Anna and Olaf on one pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE 3,500"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Dec 6, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "per DPB roundup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "listed as a single pin showing the named characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/happy-holidays-2018/belle-lumiere",
+   "set_key": "dlr/2018/happy-holidays-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Belle & Lumiere Happy Holidays 2018 Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "named in DPB Dec 2018 wk1"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle",
+      "Lumiere"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Belle and Lumiere on one pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE 3,500"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Dec 6, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "per DPB roundup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "listed as a single pin showing the named characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/happy-holidays-2018/donald-duck",
+   "set_key": "dlr/2018/happy-holidays-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Donald Duck Happy Holidays 2018 Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "named in DPB Dec 2018 wk1"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck",
+      "Huey",
+      "Dewey",
+      "Louie"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Donald shown with his nephews"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE 3,500"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Dec 6, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "per DPB roundup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "listed as a single pin showing the named characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/happy-holidays-2018/mike-sulley",
+   "set_key": "dlr/2018/happy-holidays-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mike Wazowski & Sulley Happy Holidays 2018 Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "named in DPB Dec 2018 wk1"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mike Wazowski",
+      "Sulley"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Mike and Sulley on one pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE 3,500"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Dec 6, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "per DPB roundup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "listed as a single pin showing the named characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/happy-holidays-2018/mickey-pluto",
+   "set_key": "dlr/2018/happy-holidays-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey & Pluto Happy Holidays 2018 Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "named in DPB Dec 2018 wk1"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Pluto"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Mickey and Pluto on one pin; DL only"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Dec 6, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "per DPB roundup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "listed as a single pin showing the named characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/happy-holidays-2018/alice",
+   "set_key": "dlr/2018/happy-holidays-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice Happy Holidays 2018 Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "named in DPB Dec 2018 wk1"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Alice; DL only"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Dec 6, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "per DPB roundup"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/happy-holidays-2018/goofy-max",
+   "set_key": "dlr/2018/happy-holidays-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy & Max Happy Holidays 2018 Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "named in DPB Dec 2018 wk1"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy",
+      "Max"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Goofy and Max on one pin; DL only"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Dec 6, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "per DPB roundup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "listed as a single pin showing the named characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/happy-holidays-2018/jack-zero",
+   "set_key": "dlr/2018/happy-holidays-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jack & Zero Happy Holidays 2018 Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "named in DPB Dec 2018 wk1"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington",
+      "Zero"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Jack and Zero on one pin; DL only"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Dec 6, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "per DPB roundup"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "listed as a single pin showing the named characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/windows-of-evil/maleficent",
+   "set_key": "dlr/2018/windows-of-evil",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Maleficent - Windows of Evil",
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/02/disney-pin-review-maleficent-windows-of.html",
+     "method": "search_snippet",
+     "note": "per-pin fan review titled as a 2018 release"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/02/disney-pin-review-maleficent-windows-of.html",
+     "method": "search_snippet",
+     "note": "Maleficent (dragon head with her horns)"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/02/disney-pin-review-maleficent-windows-of.html",
+     "method": "search_snippet",
+     "note": "review title says 2018 release"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dragon head with Maleficent's horns on red and green faux stained glass in a silver frame",
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/02/disney-pin-review-maleficent-windows-of.html",
+     "method": "search_snippet",
+     "note": "paraphrase of reviewer"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "faux stained glass"
+     ],
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/02/disney-pin-review-maleficent-windows-of.html",
+     "method": "search_snippet",
+     "note": "stained-glass style frame"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/windows-of-evil/ursula",
+   "set_key": "dlr/2018/windows-of-evil",
+   "claims": [
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/01/disney-pin-review-ursula-windows-of.html",
+     "method": "search_snippet",
+     "note": "per-pin review titled 2018 release; corroborates B056 record"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ursula",
+      "Flotsam",
+      "Jetsam"
+     ],
+     "source_url": "https://carstairsconsiders.blogspot.com/2020/01/disney-pin-review-ursula-windows-of.html",
+     "method": "search_snippet",
+     "note": "Flotsam and Jetsam in bottom corners, shell at top"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/channel-28/disney-afternoon-spinner",
+   "set_key": "dlr/2018/channel-28",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Afternoon Spinner Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/channel-28-disney-pin-collection",
+     "method": "search_snippet",
+     "note": "listed in DPB Channel 28 collection post"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/channel-28-disney-pin-collection",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/channel-28-disney-pin-collection",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/channel-28-disney-pin-collection",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/channel-28-disney-pin-collection",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "lenticular spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/channel-28-disney-pin-collection",
+     "method": "search_snippet",
+     "note": "lenticular spinner element"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/channel-28-disney-pin-collection",
+     "method": "search_snippet",
+     "note": "first offered via RSP at DL Pin Trading Night Aug 23, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/channel-28-disney-pin-collection",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/channel-28-disney-pin-collection",
+     "method": "search_snippet",
+     "note": "Channel 28 pins exclusive to Disneyland"
+    },
+    {
+     "field": "pin_name",
+     "value": "Channel 28 Disney Afternoon pin",
+     "source_url": "https://ducktalks.com/2018/07/18/channel-28-disney-afternoon-pins/",
+     "method": "search_snippet",
+     "note": "fan site post on Channel 28 Disney Afternoon pins (Jul 2018)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2018/mickeys-halloween-party-2018/jack-skellington-ap",
+   "set_key": "dlr/2018/mickeys-halloween-party-2018",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-09-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickeys-halloween-party-2018-pins",
+     "method": "search_snippet",
+     "note": "available from Sept 19, 2018 during party nights through Oct 31"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort (Mickey's Halloween Party only)",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickeys-halloween-party-2018-pins",
+     "method": "search_snippet",
+     "note": "party-only AP pin"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2018/happy-holidays-2018",
+   "field": "variant",
+   "searched": "grep 210/416 WDW LE 2018 packets",
+   "note": "no WDW key exists for Happy Holidays 2018; keyed under dlr. Parallel WDW agent: if keyed there, mark variant: same pin as dlr/2018/happy-holidays-2018/<slug>"
+  },
+  {
+   "key": "dlr/2018/happy-holidays-2018-pin-set",
+   "field": "variant",
+   "searched": "grep 210/416",
+   "note": "no WDW key; keyed under dlr; shared DL+WDW product per DPB"
+  },
+  {
+   "key": "dlr/2018/happy-holidays-2018-pin-set/zootopia-completer",
+   "field": "pin_name",
+   "searched": "2 queries",
+   "note": "hold: Zootopia completer named only in boxed set listing; pending maintainer full-list decision; not recorded as pin"
+  },
+  {
+   "key": "dlr/2018/happy-holidays-2018-pin-set",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "hold: summaries conflict on which four pins are in the box (one says the four LE 3,500 singles, one implies the DL-only four); box members not keyed"
+  },
+  {
+   "key": "dlr/2018/happy-holidays-2018/donald-duck",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "nephews appear in summary only ('Donald with his nephews'); confirm on image"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/maleficent",
+   "field": "set_position",
+   "searched": "4 queries",
+   "note": "position, edition size, price and date not stated; fan review only (Carstairs). Likely one of #1/#2/#5/#8 but unconfirmed"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "positions 1, 2, 5, 8 still unnamed in permitted sources; Maleficent added without position"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/ursula",
+   "field": "set_position",
+   "searched": "1 query",
+   "note": "hold kept: April 2018 / LE 2,000 / $16.99 only on reseller pintrader.club; no new permitted per-pin evidence"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/scar",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "conflict: Carstairs titles Scar and Cruella reviews '2018 Release'; DPB (per B056) dates them Jan 2019; not keyed for 2018"
+  },
+  {
+   "key": "dlr/2018/windows-of-evil/cruella-de-vil",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "conflict: Carstairs says 2018 release; DPB says pin 12, Jan 2019; not keyed"
+  },
+  {
+   "key": "dlr/2018 pins",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "DPB Sept/Oct 2018 weekly round-ups not surfaced (only Oct wk4 title in archive, tied to Lunch Time Tales PATF); Sept/Oct Park Packs are dsus leads"
+  },
+  {
+   "key": "dlr/2018/mickeys-halloween-party-2018-mysterious-shadows-box-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: four box pins still unnamed in permitted sources; Dr. Facilier 1-of-4 claim only on reseller ecrater"
+  },
+  {
+   "key": "dlr/2018/haunted-mansion-holiday-2018-tarot-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: The Big Witch still only on reseller distradingpins4u; no MPC per-pin page found"
+  },
+  {
+   "key": "dlr/2018/holiday-season-2018-ugly-sweater-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: only Goofy (MPC 182012) confirmed; MPC 182004 surfaced for same collection but design not stated; 10-name list only on reseller"
+  },
+  {
+   "key": "dlr/2018/tape-series",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "Lion King is pin 1 (Jun 28 2018, LE 1,500, $34.99); pin 5 Lady and the Tramp May 2019; pins 2-4 not named, so 2018 members beyond #1 unknown"
+  },
+  {
+   "key": "dlr/2018/crests",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "no 2018 Disneyland crest LE series found; only a WDW Princess Crest Shield on a third-party checklist"
+  },
+  {
+   "key": "dlr/2018/pixar-fest-ptn",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "no Pixar Fest PTN found; 2018 DL PTNs were Peter Pan 65th (Feb 15), WALL-E 10th (Jun 14), Channel 28 (Aug 23), Holiday (Nov 8); PP65/WALL-E keyed under wdw (B054)"
+  },
+  {
+   "key": "dlr/2018/pixar-pier-opening",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "still no Pixar Pier opening LE pin named; press only mentions generic LE Pixar Fest merch"
+  },
+  {
+   "key": "dlr/2018/mickey-90th",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no new DLR Nov 2018 LE; CM pin (B012) and a Happy Birthday Mickey 2018 button (scope: button) only; MPC 180591 surfaced, contents unknown"
+  },
+  {
+   "key": "dlr/2018/happy-birthday-mickey-2018-button",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "scope: confirmed button/badge/non-pin (DPB titles it a Happy Birthday Mickey 2018 button, DLR and WDW, Nov 18 2018)"
+  },
+  {
+   "key": "dlr/2018/haunted-mansion-holiday-2018/gingerbread",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "hold kept vs oogies-holiday-tricks-and-treats: subject of Nov 29 gingerbread pin not stated; Oogie gingerbread LE 3,000 was a 2017 AP pin; 2020 DPB says 2018 house theme was a spider attack"
+  },
+  {
+   "key": "dlr/2018/mickeys-halloween-party-2018/jack-skellington-ap",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "partial: DPB pin post gives LE 5,000/$16.99 (pin-like); AP button is a separate DPB post with no design stated. Leans pin; lead left open for maintainer"
+  },
+  {
+   "key": "dlr/2018/club-33-shag-box-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: MPC 137657 is a set-level 2018 boxed-set entry naming the same four subjects; still only a box list; pending full-list decision"
+  },
+  {
+   "key": "dlr/2018/club-33-1901/1901",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "hold kept: DPB says Club 33 member perk Dec 2018; resort not stated (1901 Lounge is at DCA, but link is inference)"
+  },
+  {
+   "key": "dlr/2018/dca-food-wine-2018/logo",
+   "field": "visual_description",
+   "searched": "0 queries",
+   "note": "hold kept: Chef Mickey link not re-searched (budget)"
+  },
+  {
+   "key": "dlr/2018/passholder-happy-holidays-2018-ornament-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept; DPB Dec wk1 shows LE 1,000 in post vs reader comment 500; pin count still unstated"
+  },
+  {
+   "key": "dlr/2018/channel-28-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: 12 designs unnamed; a 'nephews' item appears in a garbled summary, structure unclear"
+  },
+  {
+   "key": "dlr/2018/channel-28/disney-afternoon-spinner",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "reseller Fry Guy Pins lists $25 (resale); not recorded"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 of B012 (after B056). 29 standard WebSearch queries, all search_snippet, blocked domains passed every time. New: Happy Holidays 2018 LE series (4 LE 3,500 DL+WDW singles, 4 LE 2,000 DL-only singles, LE 1,000 boxed set) keyed under dlr as no WDW key exists; Window of Evil Maleficent (Carstairs per-pin review, no position); Channel 28 Disney Afternoon spinner. Corroborating claims on Ursula WoE and MHP Jack AP. No holds released. Resellers (pintrader.club, ecrater, distradingpins4u, yourwdwstore, fryguypins) and disneypinforum seen, not used. No prompt-injection seen."
+}

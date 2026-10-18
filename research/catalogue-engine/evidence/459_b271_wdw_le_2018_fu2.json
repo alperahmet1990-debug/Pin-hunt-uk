@@ -1,0 +1,1189 @@
+{
+ "packet_id": "backfill-b271-wdw-le-2018-fu2",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:backfill-b271",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+   "title": "New Disney Pins December 2018 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+   "title": "New Disney Pins November 2018 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/lunch-time-tales-disney-pin/",
+   "title": "Lunch Time Tales Disney Pin Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneys-animal-kingdom-20th-anniversary-pin-collection/",
+   "title": "Disney's Animal Kingdom 20th Anniversary Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins",
+   "title": "Walt Disney World Marathon Weekend 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.wdwinfo.com/news-stories/rundisney-releases-merchandise-for-2018-disney-wine-dine-half-marathon-weekend/",
+   "title": "runDisney Releases Merchandise for 2018 Disney Wine & Dine Half Marathon Weekend",
+   "publisher": "WDWInfo",
+   "published_date": "2018-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/epcot-international-flower-garden-festival-2018-pins",
+   "title": "Epcot International Flower & Garden Festival 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-90th-anniversary-cast-member-pin/",
+   "title": "Mickey 90th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/surprise-frozen-5th-anniversary-pin-release",
+   "title": "Surprise Frozen 5th Anniversary Pin Release",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11-27",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2018/happy-holidays-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Happy Holidays 2018 pin series",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "DPB names a Happy Holidays 2018 series sold at Disneyland and WDW"
+    },
+    {
+     "field": "format",
+     "value": "single LE pins released together",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "four separately listed singles, each with its own edition size"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "each single LE 3,500"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "on sale Dec 6, 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "bicoastal release per DPB"
+    },
+    {
+     "field": "price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$16.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "US parks"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/happy-holidays-2018-pin-set",
+   "parent_set_key": "wdw/2018/happy-holidays-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Happy Holidays 2018 Pin Set",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "boxed set of the four singles plus a Zootopia completer"
+    },
+    {
+     "field": "format",
+     "value": "boxed set",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "multi-pin pack; four singles plus completer"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "four series pins plus completer pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "limited edition of 1,000"
+    },
+    {
+     "field": "price",
+     "value": 89.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$89.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "on sale Dec 6, 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "bicoastal release"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/rundisney-wine-dine",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://www.wdwinfo.com/news-stories/rundisney-releases-merchandise-for-2018-disney-wine-dine-half-marathon-weekend/",
+     "method": "search_snippet",
+     "note": "limited release pins sold at the runDisney Health & Fitness Expo, event Nov 1-4, 2018"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2018/epcot-flower-garden-fresh-epcot-2-pin-set",
+   "claims": [
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/blogs/news/epcot-international-flower-garden-festival-2018-pins",
+     "method": "search_snippet",
+     "note": "two-pin set; DPB describes each pin"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2018/happy-holidays-2018/anna-olaf",
+   "set_key": "wdw/2018/happy-holidays-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Holidays 2018 - Anna & Olaf",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "listed as a single in the Happy Holidays 2018 series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Anna",
+      "Olaf"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "characters named in the single listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Anna",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "first-named character in listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE single"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "limited edition of 3,500"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Dec 6, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "sold at both resorts"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "listed as one pin featuring both characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/happy-holidays-2018/belle-lumiere",
+   "set_key": "wdw/2018/happy-holidays-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Holidays 2018 - Belle & Lumiere",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "listed as a single in the Happy Holidays 2018 series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle",
+      "Lumiere"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "characters named in the single listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Belle",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "first-named character in listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE single"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "limited edition of 3,500"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Dec 6, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "sold at both resorts"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "listed as one pin featuring both characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/happy-holidays-2018/donald",
+   "set_key": "wdw/2018/happy-holidays-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Holidays 2018 - Donald Duck",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "listed as a single in the Happy Holidays 2018 series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "characters named in the single listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "first-named character in listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE single"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "limited edition of 3,500"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Dec 6, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "sold at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/happy-holidays-2018/mike-sulley",
+   "set_key": "wdw/2018/happy-holidays-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Holidays 2018 - Mike Wazowski & Sulley",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "listed as a single in the Happy Holidays 2018 series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mike Wazowski",
+      "Sulley"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "characters named in the single listing"
+    },
+    {
+     "field": "main_character",
+     "value": "Sulley",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "first-named character in listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "LE single"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "limited edition of 3,500"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-12-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Dec 6, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "sold at both resorts"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "listed as one pin featuring both characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/happy-holidays-2018-pin-set/zootopia-completer",
+   "set_key": "wdw/2018/happy-holidays-2018-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Holidays 2018 Zootopia completer pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "completer named only as part of the boxed set"
+    },
+    {
+     "field": "franchise",
+     "value": "Zootopia",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "Zootopia completer"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2018-week-1/",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/holiday-season-rsp/seasons-greetings-chip-dale",
+   "set_key": "wdw/2018/holiday-season-rsp",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Season's Greetings 2018 - Chip and Dale Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "DPB lists this as its own pin entry"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "character(s) named in the per-pin entry"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "own per-pin listing with its own edition size; Chip and Dale share this one pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "limited edition of 5,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "described with hinged arms"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-29",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "general release at DL and WDW Nov 29, 2018 after PTN random selection"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "first via RSP at Pin Trading Night, then both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/holiday-season-rsp/seasons-greetings-stitch",
+   "set_key": "wdw/2018/holiday-season-rsp",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Season's Greetings 2018 - Stitch Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "DPB lists this as its own pin entry"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "character(s) named in the per-pin entry"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "limited edition of 5,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "described with hinged arms"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11-29",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "general release at DL and WDW Nov 29, 2018 after PTN random selection"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-november-2018-week-5",
+     "method": "search_snippet",
+     "note": "first via RSP at Pin Trading Night, then both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/lunch-time-tales/ratatouille",
+   "set_key": "wdw/2018/lunch-time-tales",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Ratatouille",
+     "source_url": "https://disneypinsblog.com/tag/lunch-time-tales-disney-pin/",
+     "method": "search_snippet",
+     "note": "archive entry titled Lunch Time Tales 2018 Ratatouille Pin, dated May 20, 2018 (post New Disney Pins April 2018 Week 4)"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/tag/lunch-time-tales-disney-pin/",
+     "method": "search_snippet",
+     "note": "2018 entry in DPB Lunch Time Tales tag archive"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/tag/lunch-time-tales-disney-pin/",
+     "method": "search_snippet",
+     "note": "series is a WDW monthly collection per DPB"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/lunch-time-tales/lilo-and-stitch",
+   "set_key": "wdw/2018/lunch-time-tales",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Lilo & Stitch",
+     "source_url": "https://disneypinsblog.com/tag/lunch-time-tales-disney-pin/",
+     "method": "search_snippet",
+     "note": "archive lists a 2018 Lilo & Stitch Lunch Time Tales pin in an Aug 2018 post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/tag/lunch-time-tales-disney-pin/",
+     "method": "search_snippet",
+     "note": "2018 entry in DPB Lunch Time Tales tag archive"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/tag/lunch-time-tales-disney-pin/",
+     "method": "search_snippet",
+     "note": "series is a WDW monthly collection per DPB"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/lunch-time-tales/princess-and-the-frog",
+   "set_key": "wdw/2018/lunch-time-tales",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "The Princess and the Frog",
+     "source_url": "https://disneypinsblog.com/tag/lunch-time-tales-disney-pin/",
+     "method": "search_snippet",
+     "note": "archive lists a 2018 Princess and the Frog Lunch Time Tales pin in an Oct 2018 post"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/tag/lunch-time-tales-disney-pin/",
+     "method": "search_snippet",
+     "note": "2018 entry in DPB Lunch Time Tales tag archive"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/tag/lunch-time-tales-disney-pin/",
+     "method": "search_snippet",
+     "note": "series is a WDW monthly collection per DPB"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/animal-kingdom-20th/super-jumbo",
+   "set_key": "wdw/2018/animal-kingdom-20th",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Animal Kingdom 20th Anniversary super jumbo pin",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-20th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "DPB collection post lists a super jumbo pin"
+    },
+    {
+     "field": "original_price",
+     "value": 89.99,
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-20th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "retail price $89.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-20th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "US parks"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-03-29",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-20th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "collection available at Animal Kingdom Mar 29, 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Animal Kingdom",
+     "source_url": "https://disneypinsblog.com/disneys-animal-kingdom-20th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "WDW park release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/rundisney-marathon-weekend/half-marathon-donald-13-1",
+   "set_key": "wdw/2018/rundisney-marathon-weekend",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "13.1 Half Marathon Donald Duck pin",
+     "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "listed in the 2018 Marathon Weekend pin lineup"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "Donald Duck half marathon pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "pins were limited release at the marathon expo"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-01",
+     "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "Marathon Weekend Jan 3-7, 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/marathon-weekend-25th-anniversary-pins",
+     "method": "search_snippet",
+     "note": "2018"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/epcot-flower-garden-fresh-epcot-2-pin-set/spaceship-earth-fruit",
+   "set_key": "wdw/2018/epcot-flower-garden-fresh-epcot-2-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Spaceship Earth inspired fruit pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/epcot-international-flower-garden-festival-2018-pins",
+     "method": "search_snippet",
+     "note": "one of two pins in the Fresh Epcot set"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/epcot-international-flower-garden-festival-2018-pins",
+     "method": "search_snippet",
+     "note": "2018 festival"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/epcot-flower-garden-fresh-epcot-2-pin-set/fresh-epcot",
+   "set_key": "wdw/2018/epcot-flower-garden-fresh-epcot-2-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Fresh Epcot pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/epcot-international-flower-garden-festival-2018-pins",
+     "method": "search_snippet",
+     "note": "one of two pins in the Fresh Epcot set"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://disneypinsblog.com/blogs/news/epcot-international-flower-garden-festival-2018-pins",
+     "method": "search_snippet",
+     "note": "2018 festival"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2018/mickey-90th/cast-member",
+   "set_key": "wdw/2018/mickey-90th",
+   "claims": [
+    {
+     "field": "front_text",
+     "value": "Let's Celebrate!",
+     "source_url": "https://disneypinsblog.com/mickey-90th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "line along the bottom per DPB"
+    },
+    {
+     "field": "visual_description",
+     "value": "1928 and 2018 flanking a highlighted 90 with pin-on-pin Mickey",
+     "source_url": "https://disneypinsblog.com/mickey-90th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "paraphrased design"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-90th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "pin-on-pin Mickey"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2018/happy-holidays-2018/anna-olaf",
+   "field": "variant",
+   "searched": "DLR 2018 packets 212/419 grep",
+   "note": "shared DLR/WDW release; no DLR key exists yet in 212/419; if a DLR cell adds one, mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/happy-holidays-2018/belle-lumiere",
+   "field": "variant",
+   "searched": "DLR 2018 packets 212/419 grep",
+   "note": "shared DLR/WDW release; no DLR key exists yet in 212/419; if a DLR cell adds one, mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/happy-holidays-2018/donald",
+   "field": "variant",
+   "searched": "DLR 2018 packets 212/419 grep",
+   "note": "shared DLR/WDW release; no DLR key exists yet in 212/419; if a DLR cell adds one, mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/happy-holidays-2018/mike-sulley",
+   "field": "variant",
+   "searched": "DLR 2018 packets 212/419 grep",
+   "note": "shared DLR/WDW release; no DLR key exists yet in 212/419; if a DLR cell adds one, mark variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2018/happy-holidays-2018-pin-set/zootopia-completer",
+   "field": "pin_name",
+   "searched": "DPB Dec 2018 wk1; 2 queries",
+   "note": "hold: boxed set member named only in the set listing; pending maintainer decision on full lists; design not described"
+  },
+  {
+   "key": "wdw/2018/happy-holidays-2018-pin-set",
+   "field": "pins",
+   "searched": "DPB Dec 2018 wk1",
+   "note": "box contents are the four LE singles by reference plus completer; not separate records (see singles)"
+  },
+  {
+   "key": "dlr/2018/happy-holidays-2018-dlr",
+   "field": "existence",
+   "searched": "DPB Dec 2018 wk1",
+   "note": "lead (DLR cell): DL-only Happy Holidays singles Mickey & Pluto, Alice, Goofy & Max, Jack & Zero, LE 2,000 $16.99 each; not WDW, not recorded"
+  },
+  {
+   "key": "wdw/2018/holiday-season-rsp/seasons-greetings-chip-dale",
+   "field": "pin_structure",
+   "searched": "DPB Nov 2018 wk5; 1 query",
+   "note": "hold release: B054 (416) held this key on pin structure; new per-pin DPB entry (own LE 5,000/$16.99) shows two separate pins. variant: same pin as dlr/2018/holiday-season-2018/seasons-greetings-chip-and-dale"
+  },
+  {
+   "key": "wdw/2018/holiday-season-rsp/seasons-greetings-stitch",
+   "field": "pin_structure",
+   "searched": "DPB Nov 2018 wk5; 1 query",
+   "note": "hold release: B054 (416) held this key on pin structure; new per-pin DPB entry (own LE 5,000/$16.99) shows two separate pins. variant: same pin as dlr/2018/holiday-season-2018/seasons-greetings-stitch"
+  },
+  {
+   "key": "wdw/2018/lunch-time-tales/ratatouille",
+   "field": "edition_size",
+   "searched": "DPB tag archive; 4 queries",
+   "note": "per-pin post body not surfaced; edition size, price, exact date and set_position not stated (archive post date ~2018-05); position only on reseller, not recorded"
+  },
+  {
+   "key": "wdw/2018/lunch-time-tales/lilo-and-stitch",
+   "field": "edition_size",
+   "searched": "DPB tag archive; 4 queries",
+   "note": "per-pin post body not surfaced; edition size, price, exact date and set_position not stated (archive post date ~2018-08); position only on reseller, not recorded"
+  },
+  {
+   "key": "wdw/2018/lunch-time-tales/princess-and-the-frog",
+   "field": "edition_size",
+   "searched": "DPB tag archive; 4 queries",
+   "note": "per-pin post body not surfaced; edition size, price, exact date and set_position not stated (archive post date ~2018-10); position only on reseller, not recorded"
+  },
+  {
+   "key": "wdw/2018/lunch-time-tales",
+   "field": "pins",
+   "searched": "4 queries",
+   "note": "months 2, 4, 6, 9 still unnamed in permitted sources; Alice (#4) and Wreck-It Ralph (#9) only on reseller yourwdwstore; Feb 2018 wk4 post body not surfaced"
+  },
+  {
+   "key": "wdw/2018/animal-kingdom-20th/super-jumbo",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "hold: may be the same pin as B010 key tree-of-life-boxed-jumbo; LE 2,000 on a DPB tag page not clearly tied to this pin (AP pin is also LE 2,000); reseller LE 1,000 ignored"
+  },
+  {
+   "key": "wdw/2018/rundisney-marathon-weekend",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: a Mickey/Pluto medal pin also listed; unclear whether distinct from existing pluto-5k key; not recorded"
+  },
+  {
+   "key": "wdw/2018/rundisney-marathon-weekend",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "expo prices and edition sizes still not stated in permitted snippets; only resale prices seen (not recorded)"
+  },
+  {
+   "key": "wdw/2018/rundisney-princess-half",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "expo prices and edition sizes still not stated in permitted snippets; only resale prices seen (not recorded)"
+  },
+  {
+   "key": "wdw/2018/rundisney-wine-dine",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "expo prices and edition sizes still not stated in permitted snippets; only resale prices seen (not recorded)"
+  },
+  {
+   "key": "wdw/2018/epcot-flower-garden-fresh-epcot-2-pin-set/spaceship-earth-fruit",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "hold: pack member named only in the set listing; pending maintainer decision on full lists"
+  },
+  {
+   "key": "wdw/2018/epcot-flower-garden-fresh-epcot-2-pin-set/fresh-epcot",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "hold: pack member named only in the set listing; pending maintainer decision on full lists"
+  },
+  {
+   "key": "wdw/2018/epcot-flower-garden/minnie",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "DPB page gives Minnie as both LE 4,000 and LE 3,000 at $16.99; conflict noted, 3,000 not recorded as same-source duplicate"
+  },
+  {
+   "key": "wdw/2018/epcot-flower-garden-natural-beauty-4-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "four Minnie pins still not named; reseller prices $49.99/$69.99 ignored"
+  },
+  {
+   "key": "wdw/2018/mickey-90th/cast-member",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "hold kept (B054/416): still only Company D Cast Member stores, resort not named; cast-only"
+  },
+  {
+   "key": "wdw/2018/frozen-5th-anniversary",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "out of cell: Frozen 5th Anniversary LE 200 $21.95 (Nov 27, 2018) was a surprise release at Disney Studio Store Hollywood, not WDW; lead for a DLR/other cell"
+  },
+  {
+   "key": "wdw/2018/lattes-with-character",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "#6-11 incl. Nemo (#4) and Sulley month still only on resellers (ecrater, yourwdwstore); no DPB weekly post surfaced; holds on ariel-flounder/sulley-mike (416) kept"
+  },
+  {
+   "key": "wdw/2018/disney-donut-shop",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "Feb and Aug-Oct still unnamed in permitted sources; Cheshire #8, Tigger #9, Dumbo #10 only on resellers (yourwdwstore, phvcondo); not recorded"
+  },
+  {
+   "key": "wdw/2018/star-wars-helmet",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "positions 1, 2, 5, 6, 8 still not named; #3 Jul, #4 Aug, #7 Nov 2018 confirmed; Executioner LE 4,000 only on reseller ecrater"
+  },
+  {
+   "key": "wdw/2018/toy-story-land-opening",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "still no DHS Toy Story Land LE sizes; jumbo box set only on reseller everything-mousey"
+  },
+  {
+   "key": "lic/2018/boxlunch-toy-story-land",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "lead: licensed BoxLunch exclusive Toy Story Land pins (logo, Woody, Jessie, Rex, Buzz, Slinky Dog) for licensed cell"
+  },
+  {
+   "key": "wdw/2018/dapper-day-spring",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: Fine & Dandy 2018 Mickey and Minnie LE 5,000 (Apr 26, 2018) only on reseller yourwdwstore; not recorded. DLR key dlr/2018/dapper-day-fine-and-dandy/donald-and-daisy may be related"
+  },
+  {
+   "key": "wdw/2018/disney-springs",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no 2018 Disney Springs or resort LE pin surfaced (beyond gingerbread/Grand Floridian in B010)"
+  },
+  {
+   "key": "wdw/2018/animation-celebration-framed-set",
+   "field": "pins",
+   "searched": "not searched (budget)",
+   "note": "members would be held as frame-only names; WALL-E boxed and Neverland framed likewise not searched"
+  },
+  {
+   "key": "wdw/2018/animal-kingdom-20th/annual-passholder",
+   "field": "visual_description",
+   "searched": "2 queries",
+   "note": "hold kept (416): tiger design hinted in a Chip and Co summary but tied to LE 2,000 ambiguously; not recorded"
+  },
+  {
+   "key": "wdw/2018 holds",
+   "field": "pin_structure",
+   "searched": "none new",
+   "note": "holds kept without new evidence: F&W, MNSSHP, Ugly Sweater, Peter Pan 65th, TSL mystery sets; MNSSHP/MVMCP box/frame members; snowman four; Goodbye set; two Lattes; AK AP design"
+  }
+ ],
+ "discovery_notes": "Follow-up 2 of B010 (WDW LE 2018). 28 standard WebSearch queries, all search_snippet, blocked domains passed every time. Mainly Disney Pins Blog (Dec 2018 wk1, Nov 2018 wk5, LTT tag archive, AK20, runDisney, CM pin), plus WDWInfo. Resellers (yourwdwstore, ecrater, phvcondo, magicalears, everything-mousey) and disneypinforum seen, not used. New: Happy Holidays 2018 series (4 singles LE 3,500 $16.99, boxed set LE 1,000 $89.99, Dec 6, DL+WDW); LTT Ratatouille, Lilo & Stitch, Princess and the Frog; AK20 super jumbo $89.99; Marathon 13.1 Donald; Fresh Epcot pack members (held). Hold released: B054 (416) Season's Greetings Chip & Dale / Stitch, on new per-pin DPB evidence; variants of DLR 212 keys. Frozen 5th LE 200 found to be Disney Studio Store Hollywood, out of cell. Conflicts: F&G Minnie LE 4,000 vs 3,000 on one DPB page. No prompt-injection seen."
+}

@@ -4,6 +4,9 @@
  * without listing detail. Stores and the Soldgraph client are fakes; nothing
  * here reaches a database or a network.
  */
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
 import { describe, expect, it, vi } from "vitest";
 import { validateResearchRun } from "../../../lib/research-run";
 import type { SoldgraphClient, SoldgraphSearchResult } from "../../soldgraph/client";
@@ -151,6 +154,19 @@ describe("executeLeadsCli (default: stored listings only)", () => {
     expect(inside.store.calls).toHaveLength(0);
     const exists = setup({ fileExists: () => true });
     await expect(executeLeadsCli(opts(["--out", "/tmp/leads.json"]), exists.deps)).rejects.toThrow(/already exists/);
+  });
+
+  it("refuses an output folder that is a link back into the repository", async () => {
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "leads-"));
+    try {
+      const repo = path.join(tmp, "repo");
+      fs.mkdirSync(repo);
+      fs.symlinkSync(repo, path.join(tmp, "link"));
+      const { deps } = setup({ repoRoot: repo });
+      await expect(executeLeadsCli(opts(["--out", path.join(tmp, "link", "leads.json")]), deps)).rejects.toThrow(/outside the repository/);
+    } finally {
+      fs.rmSync(tmp, { recursive: true, force: true });
+    }
   });
 
   it("needs a git commit for the research-run format", async () => {

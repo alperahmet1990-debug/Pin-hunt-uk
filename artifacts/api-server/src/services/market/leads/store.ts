@@ -12,6 +12,9 @@ import { createSupabasePinRepository, type PinSetSummary } from "@workspace/pin-
 import { NEAR_MISS_REASONS } from "../refresh/refresh";
 import type { CatalogueEntry, LeadListing, LeadSource } from "./leads";
 
+/** Third-party titles are cut to this length before parsing. */
+export const MAX_TITLE_LENGTH = 300;
+
 export class LeadsStoreError extends Error {
   constructor(public readonly operation: string) {
     super(`marketplace leads: ${operation} failed`);
@@ -63,7 +66,7 @@ export function toLeadListing(r: Row): LeadListing | null {
     sourceId,
     externalId,
     pinUuid,
-    title,
+    title: title.slice(0, MAX_TITLE_LENGTH),
     price: num(r.price),
     currency,
     soldDate: str(r.sold_date),

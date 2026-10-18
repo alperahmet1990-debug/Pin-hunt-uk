@@ -11,6 +11,7 @@
  * Terminal output is counts only: never listing titles, links, seller data
  * or keys.
  */
+import fs from "node:fs";
 import path from "node:path";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { validateResearchRun } from "../../../lib/research-run";
@@ -197,7 +198,10 @@ export async function executeLeadsCli(opts: LeadsCliOptions, d: LeadsCliDeps): P
   if (opts.out) {
     outFile = path.resolve(opts.out);
     if (d.repoRoot) {
-      const rel = path.relative(path.resolve(d.repoRoot), outFile);
+      // Compare real paths, so a symlinked folder can't point back into the repo.
+      const real = (p: string) => { try { return fs.realpathSync(p); } catch { return path.resolve(p); } };
+      const realOut = path.join(real(path.dirname(outFile)), path.basename(outFile));
+      const rel = path.relative(real(d.repoRoot), realOut);
       if (!rel.startsWith("..") && !path.isAbsolute(rel)) {
         throw new LeadsUsageError("--out must be outside the repository, so a leads file is never committed.");
       }

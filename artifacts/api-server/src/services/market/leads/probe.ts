@@ -27,6 +27,7 @@ import { applyBlockers, withRunCache } from "../refresh/refresh";
 import { PLANNING_CLIENT, buildRefreshAdapters } from "../refresh/sources";
 import type { BudgetStatus, RefreshStore } from "../refresh/types";
 import type { CatalogueEntry, LeadListing } from "./leads";
+import { MAX_TITLE_LENGTH } from "./store";
 
 export const DEFAULT_PROBE_SETS = 3;
 export const MAX_PROBE_SETS = 10;
@@ -176,7 +177,7 @@ export async function runSetProbe(gaps: SetGap[], opts: SetProbeOptions, deps: S
             sourceId: l.sourceId,
             externalId: l.externalId,
             pinUuid: null,
-            title: l.title,
+            title: l.title.slice(0, MAX_TITLE_LENGTH),
             price: l.price,
             currency: l.currency,
             soldDate: l.soldDate,

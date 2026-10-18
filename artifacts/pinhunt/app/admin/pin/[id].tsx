@@ -210,6 +210,8 @@ export default function AdminPinEditorScreen() {
   // duplicate pin and overwriting the existing approved_pin_id link.
   const [alreadyApprovedPinhuntId, setAlreadyApprovedPinhuntId] = useState<string | null>(null);
   const [checkingSubmission, setCheckingSubmission] = useState(Boolean(isNew && submissionId));
+  // Credited on the new pin (#395): the collector whose submission it came from.
+  const [submitterId, setSubmitterId] = useState<string | undefined>(undefined);
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 
@@ -285,6 +287,7 @@ export default function AdminPinEditorScreen() {
     (async () => {
       try {
         const submission = await userRepo.getPinSubmission(submissionId);
+        if (!cancelled && submission) setSubmitterId(submission.submittedBy);
         if (!cancelled && submission?.approvedPinId) {
           setAlreadyApprovedPinhuntId(submission.approvedPinhuntId ?? '');
         }
@@ -436,7 +439,7 @@ export default function AdminPinEditorScreen() {
       };
 
       if (isNew) {
-        await repo.createPin(input);
+        await repo.createPin({ ...input, submittedBy: submissionId ? submitterId : undefined });
 
         // ── Approve & Add to Catalogue: link submission → catalogue pin ──────
         // Must run after createPin so the pinhunt_id is guaranteed to exist.

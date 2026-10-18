@@ -1079,17 +1079,18 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     const PIN_COLS = 'pinhunt_id, title, brand, collection, release_year, image_url, all_characters';
     // Signal strength — lower ranks first in the result.
     const STRENGTH: Record<string, number> = {
-      'FAC number': 0, SKU: 0, 'name + brand': 1, name: 2, 'same set + character': 3,
+      'FAC number': 0, SKU: 0, 'name + brand': 1, name: 2, 'same set + character': 3, 'AI match': 4,
     };
     const candidates = new Map<string, DuplicateCandidate & { strength: number }>();
     const failedChecks: string[] = [];
 
-    const addCandidate = (row: Record<string, unknown>, reason: string) => {
+    // `label` overrides the shown reason (e.g. "AI match (86%)"); `reason` ranks it.
+    const addCandidate = (row: Record<string, unknown>, reason: string, label?: string) => {
       const id = row.pinhunt_id as string;
       const existing = candidates.get(id);
       if (existing) {
         // Several signals agreeing is worth showing.
-        if (!existing.matchReason.includes(reason)) existing.matchReason += ` + ${reason}`;
+        if (!existing.matchReason.includes(reason)) existing.matchReason += ` + ${label ?? reason}`;
         existing.strength = Math.min(existing.strength, STRENGTH[reason]);
         return;
       }
@@ -1100,7 +1101,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
         collection: row.collection as string,
         releaseYear: (row.release_year as number | null) ?? undefined,
         imageUrl: (row.image_url as string | null) ?? undefined,
-        matchReason: reason,
+        matchReason: label ?? reason,
         strength: STRENGTH[reason],
       });
     };
@@ -1145,7 +1146,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     //    submitters and the catalogue spell brands differently
     //    ("Disney" vs "Disney Parks").
     const STOP = new Set(['the', 'and', 'pin', 'pins', 'disney', 'with', 'for', 'of']);
-    const tokens = sub.proposedName
+    const tokens = (sub.proposedName ?? '')
       .toLowerCase()
       .replace(/[^\p{L}\p{N}\s]/gu, ' ')
       .split(/\s+/)
@@ -1173,6 +1174,18 @@ class SupabaseUserPinRepository implements IUserPinRepository {
         .limit(60)).then(rows => rows.forEach(r => {
           const text = `${norm(r.title as string)} ${norm(r.all_characters as string)}`;
           if (characters.some(c => text.includes(c))) addCandidate(r, 'same set + character');
+        })));
+    }
+
+    // 4. What the AI scan matched when the photo was submitted (#395) — the
+    //    only signal an unnamed, photo-only submission has. Ranked last.
+    const aiMatches = (sub.aiIdentification?.matches ?? []).filter(m => m.pinId).slice(0, 5);
+    if (aiMatches.length > 0) {
+      const confidence = new Map(aiMatches.map(m => [m.pinId, m.confidence]));
+      checks.push(run('AI match', livePins().in('pinhunt_id', aiMatches.map(m => m.pinId)))
+        .then(rows => rows.forEach(r => {
+          const pct = Math.round(confidence.get(r.pinhunt_id as string) ?? 0);
+          addCandidate(r, 'AI match', `AI match (${pct}%)`);
         })));
     }
 

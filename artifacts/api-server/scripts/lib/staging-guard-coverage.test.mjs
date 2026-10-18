@@ -13,6 +13,12 @@ const DIRS = ["artifacts/api-server/scripts", "scripts"];
 const READ_ONLY = new Set(["artifacts/api-server/scripts/dryrun-collectible-pintrader.mjs"]);
 // The staging-db tool runs its own guard (assertStagingTarget + per-project connections).
 const OWN_GUARD = new Set(["artifacts/api-server/scripts/staging-db.mjs"]);
+// Their database writes live in bundled service code (src/services/market/refresh),
+// so the pattern check can't see them: always require the guard (#409).
+const ALWAYS_GUARDED = new Set([
+  "artifacts/api-server/scripts/market-refresh.mjs",
+  "artifacts/api-server/scripts/market-usage.mjs",
+]);
 
 const WRITES = /\.(insert|upsert|update|delete|upload|remove|rpc)\(|auth\.admin\.|\b(INSERT|UPDATE|DELETE)\b|\\copy/;
 // Connects itself: a Supabase client or a spawned psql (comments don't count).
@@ -36,7 +42,7 @@ describe("staging guard coverage", () => {
   for (const file of files) {
     const src = fs.readFileSync(path.join(ROOT, file), "utf8");
     const writes = file.endsWith(".sql") ? /\b(insert|update|delete)\b/i.test(src) : WRITES.test(src) && CONNECTS.test(src);
-    if (!writes || READ_ONLY.has(file) || OWN_GUARD.has(file)) continue;
+    if ((!writes && !ALWAYS_GUARDED.has(file)) || READ_ONLY.has(file) || OWN_GUARD.has(file)) continue;
 
     it(`${file} checks it's on staging before writing`, () => {
       if (file.endsWith(".sql")) {
@@ -52,6 +58,10 @@ describe("staging guard coverage", () => {
       expect(client === -1 || guard < client).toBe(true);
     });
   }
+
+  it("finds the market refresh scripts (#409)", () => {
+    for (const file of ALWAYS_GUARDED) expect(files).toContain(file);
+  });
 
   it("read-only exceptions really don't write", () => {
     for (const file of READ_ONLY) {

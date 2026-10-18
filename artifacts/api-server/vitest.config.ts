@@ -18,6 +18,7 @@ export default defineConfig({
       GOOGLE_APPLICATION_CREDENTIALS_JSON: "",
       SOLDGRAPH_API_KEY: "",
       SOLDGRAPH_ENABLED: "",
+      MARKET_VALUATION_V2_ENABLED: "",
       LOG_LEVEL: "silent",
     },
   },

@@ -1,0 +1,984 @@
+{
+ "packet_id": "b318-asia-2017-fu3",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2017/10/exclusive-for-magic-access-members-shop.html",
+   "title": "HKDL Magic Access Shop and Reward - Mad Hatter Tea Cups Pin Series",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+   "title": "上海迪士尼乐园开启2017徽章寻宝活动 一大波限量徽章等你寻觅",
+   "publisher": "Sina News",
+   "published_date": "2017-11-24",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/shanghai-disney-resort-first-anniversary-pins",
+   "title": "Shanghai Disney Resort First Anniversary Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2018/01/2018120.html",
+   "title": "香港迪士尼樂園「小矮人 旋轉木馬造型限量版徽章」將於 2018年1月20日 發售",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2018-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2017/01/iron-man-experiencemarquee-logo.html",
+   "title": "香港迪士尼樂園「鐵甲奇俠飛行之旅」MARQUEE LOGO 限量版徽章",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2017-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/hong-kong-disneyland-iron-man-experience-pin/",
+   "title": "Hong Kong Disneyland Iron Man Experience Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+   "title": "Gelatoni Pins",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://static.zhoudaosh.com/files/633EB9EDD0C2EDAD0B9E8BB085581B1D2ED8F9D6CC4948B67B30DC70BB6275BF/ebc31cc6b850816a520633def34fd2f9b4608f91.html",
+   "title": "上海迪士尼度假区又有新朋友——猫画家杰拉多尼登场",
+   "publisher": "Zhoudao (Shanghai)",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hkmsg.blogspot.com/2017/10/",
+   "title": "Hong Kong Main Street Gazette archive October 2017",
+   "publisher": "Hong Kong Main Street Gazette",
+   "published_date": "2017-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://hkmsg.blogspot.com/2017/11/",
+   "title": "Hong Kong Main Street Gazette archive November 2017",
+   "publisher": "Hong Kong Main Street Gazette",
+   "published_date": "2017-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "hkdl/2017/teacup-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mad Hatter Tea Cups Pin Series",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/10/exclusive-for-magic-access-members-shop.html",
+     "method": "search_snippet",
+     "note": "English title of the Magic Access shop-and-reward series"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-01",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/10/exclusive-for-magic-access-members-shop.html",
+     "method": "search_snippet",
+     "note": "programme ran 1 Oct 2017 to 31 Jan 2018"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/10/exclusive-for-magic-access-members-shop.html",
+     "method": "search_snippet",
+     "note": "12 designs, Disney friends riding in tea cups"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/10/exclusive-for-magic-access-members-shop.html",
+     "method": "search_snippet",
+     "note": "each redemption gives a set of two pins, designs random"
+    },
+    {
+     "field": "price",
+     "value": 40,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/10/exclusive-for-magic-access-members-shop.html",
+     "method": "search_snippet",
+     "note": "4 stamps plus HK$40, or 8 stamps free; one stamp per HK$50 spent"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/10/exclusive-for-magic-access-members-shop.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "format",
+     "value": "random two-pin redemption for Magic Access members (shop-and-reward)",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/10/exclusive-for-magic-access-members-shop.html",
+     "method": "search_snippet",
+     "note": "members collect stamps from park/hotel purchases; redeem until 11 Feb 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland Resort shops incl. hotel shops",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/10/exclusive-for-magic-access-members-shop.html",
+     "method": "search_snippet",
+     "note": "redemption points include hotel shops such as Hollywood Hotel and Explorers Lodge shops"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2017/pin-hunting-2017",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "seven map-exclusive LE hunt pins across five shops"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "each design limited to 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-24",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "hunt began 24 Nov 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2017/pin-hunting-2017-event-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Shanghai Disneyland 2017 Pin Hunting event-exclusive LE pins",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "six LE pins designed for the event, sold at Avenue M Arcade (M大街购物廊)"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "six limited edition pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "release_location",
+     "value": "Avenue M Arcade (M大街购物廊), Shanghai Disneyland",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "same shop also sells one mystery pin box"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-24",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "event start"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2018/carousel-series",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/01/2018120.html",
+     "method": "search_snippet",
+     "note": "carousel-design LE series of 12, one a month"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/01/2018120.html",
+     "method": "search_snippet",
+     "note": "each limited to 300"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-10-07",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/01/2018120.html",
+     "method": "search_snippet",
+     "note": "series monthly from 7 Oct 2017"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/01/2018120.html",
+     "method": "search_snippet",
+     "note": "LE"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2017/iron-man-experience-opening",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Iron Man Experience Marquee Logo Limited Edition Pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/01/iron-man-experiencemarquee-logo.html",
+     "method": "search_snippet",
+     "note": "single LE pin for attraction opening"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/01/iron-man-experiencemarquee-logo.html",
+     "method": "search_snippet",
+     "note": "one pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-11",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/01/iron-man-experiencemarquee-logo.html",
+     "method": "search_snippet",
+     "note": "attraction opening day"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2017/welcome-gelatoni",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://static.zhoudaosh.com/files/633EB9EDD0C2EDAD0B9E8BB085581B1D2ED8F9D6CC4948B67B30DC70BB6275BF/ebc31cc6b850816a520633def34fd2f9b4608f91.html",
+     "method": "search_snippet",
+     "note": "LE pins listed among SHDR-exclusive Gelatoni debut goods (headband, T-shirt, pins)"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "hkdl/2018/carousel-series/dumbo",
+   "set_key": "hkdl/2018/carousel-series",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2017-10-07",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/01/2018120.html",
+     "method": "search_snippet",
+     "note": "series started 7 Oct 2017 with Dumbo as first design"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/01/2018120.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/01/2018120.html",
+     "method": "search_snippet",
+     "note": "each design limited to 300"
+    },
+    {
+     "field": "set_position",
+     "value": 1,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/01/2018120.html",
+     "method": "search_snippet",
+     "note": "Dumbo named as the first design"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "sold with collector card"
+     ],
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/01/2018120.html",
+     "method": "search_snippet",
+     "note": "first pin sold together with a collectible card"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2018/01/2018120.html",
+     "method": "search_snippet",
+     "note": "Oct 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2017/iron-man-experience-opening/marquee-logo-jumbo",
+   "set_key": "hkdl/2017/iron-man-experience-opening",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Iron Man Experience Marquee Logo Limited Edition Pin",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/01/iron-man-experiencemarquee-logo.html",
+     "method": "search_snippet",
+     "note": "title wording, translated"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man"
+     ],
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/01/iron-man-experiencemarquee-logo.html",
+     "method": "search_snippet",
+     "note": "Iron Man in Hong Kong expo-edition armour"
+    },
+    {
+     "field": "attraction",
+     "value": "Iron Man Experience",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/01/iron-man-experiencemarquee-logo.html",
+     "method": "search_snippet",
+     "note": "attraction opening pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/01/iron-man-experiencemarquee-logo.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/01/iron-man-experiencemarquee-logo.html",
+     "method": "search_snippet",
+     "note": "500 pieces"
+    },
+    {
+     "field": "original_price",
+     "value": 198,
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/01/iron-man-experiencemarquee-logo.html",
+     "method": "search_snippet",
+     "note": "HK$198"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/01/iron-man-experiencemarquee-logo.html",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-11",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/01/iron-man-experiencemarquee-logo.html",
+     "method": "search_snippet",
+     "note": "on sale opening day"
+    },
+    {
+     "field": "release_location",
+     "value": "Expo Shop, Tomorrowland, Hong Kong Disneyland",
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/01/iron-man-experiencemarquee-logo.html",
+     "method": "search_snippet",
+     "note": "sold from park opening"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "attraction logo on reverse"
+     ],
+     "source_url": "https://www.disney-magical-kingdom-blog.com/2017/01/iron-man-experiencemarquee-logo.html",
+     "method": "search_snippet",
+     "note": "official attraction logo on the back"
+    },
+    {
+     "field": "visual_form",
+     "value": "jumbo",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-iron-man-experience-pin/",
+     "method": "search_snippet",
+     "note": "marquee logo jumbo pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-iron-man-experience-pin/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01-11",
+     "source_url": "https://disneypinsblog.com/hong-kong-disneyland-iron-man-experience-pin/",
+     "method": "search_snippet",
+     "note": "released 11 Jan 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2017/12th-anniversary/gelatoni",
+   "set_key": "hkdl/2017/12th-anniversary",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "forum Gelatoni list: 12th Anniversary Gelatoni LE 500"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2017/12th-anniversary-magic-access/member-pin",
+   "set_key": "hkdl/2017/12th-anniversary-magic-access",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "12th Anniversary Magic Access Exclusive Jumbo",
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "forum Gelatoni list names it as a jumbo"
+    },
+    {
+     "field": "edition_size",
+     "value": 50,
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "LE 50"
+    },
+    {
+     "field": "visual_form",
+     "value": "jumbo",
+     "source_url": "https://www.disneypinforum.com/threads/gelatoni-pins.59200/",
+     "method": "search_snippet",
+     "note": "described as jumbo in forum list"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2017/first-anniversary/first-anniversary-castle",
+   "set_key": "shdr/2017/first-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "First Anniversary Castle Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/shanghai-disney-resort-first-anniversary-pins",
+     "method": "search_snippet",
+     "note": "named in DPB first-anniversary roundup; no design, size or date given"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/blogs/news/shanghai-disney-resort-first-anniversary-pins",
+     "method": "search_snippet",
+     "note": "first anniversary 2017"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2017/pin-hunting-2017/seven-dwarfs-mine-train",
+   "set_key": "shdr/2017/pin-hunting-2017",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Seven Dwarfs Mine Train",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "one of seven named hunt-map pins (七个小矮人矿山车)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "each of the seven limited to 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-24",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "hunt start"
+    },
+    {
+     "field": "release_location",
+     "value": "森林百物 shop, Shanghai Disneyland",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "shop where this hunt pin is found"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "seven designs, each tied to one attraction and shop"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2017/pin-hunting-2017/peter-pans-flight",
+   "set_key": "shdr/2017/pin-hunting-2017",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Peter Pan's Flight",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "one of seven named hunt-map pins (小飞侠天空奇遇)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "each of the seven limited to 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-24",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "hunt start"
+    },
+    {
+     "field": "release_location",
+     "value": "森林百物 shop, Shanghai Disneyland",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "shop where this hunt pin is found"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "seven designs, each tied to one attraction and shop"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2017/pin-hunting-2017/soaring-over-the-horizon",
+   "set_key": "shdr/2017/pin-hunting-2017",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Soaring Over the Horizon",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "one of seven named hunt-map pins (翱翔·飞越地平线)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "each of the seven limited to 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-24",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "hunt start"
+    },
+    {
+     "field": "release_location",
+     "value": "笑猴商铺 shop, Shanghai Disneyland",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "shop where this hunt pin is found"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "seven designs, each tied to one attraction and shop"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2017/pin-hunting-2017/roaring-rapids",
+   "set_key": "shdr/2017/pin-hunting-2017",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Roaring Rapids",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "one of seven named hunt-map pins (雷鸣山漂流)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "each of the seven limited to 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-24",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "hunt start"
+    },
+    {
+     "field": "release_location",
+     "value": "笑猴商铺 shop, Shanghai Disneyland",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "shop where this hunt pin is found"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "seven designs, each tied to one attraction and shop"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2017/pin-hunting-2017/pirates-of-the-caribbean",
+   "set_key": "shdr/2017/pin-hunting-2017",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Pirates of the Caribbean - Battle for the Sunken Treasure",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "one of seven named hunt-map pins (加勒比海盗)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "each of the seven limited to 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-24",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "hunt start"
+    },
+    {
+     "field": "release_location",
+     "value": "达布隆集市 shop, Shanghai Disneyland",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "shop where this hunt pin is found"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "seven designs, each tied to one attraction and shop"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2017/pin-hunting-2017/tron-lightcycle-power-run",
+   "set_key": "shdr/2017/pin-hunting-2017",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "TRON Lightcycle Power Run",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "one of seven named hunt-map pins (创极速光轮)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "each of the seven limited to 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11-24",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "hunt start"
+    },
+    {
+     "field": "release_location",
+     "value": "星际贸易港 shop, Shanghai Disneyland",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "shop where this hunt pin is found"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://news.sina.cn/2017-11-24/detail-ifypapmz4563043.d.html",
+     "method": "search_snippet",
+     "note": "seven designs, each tied to one attraction and shop"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "hkdl/2018/carousel-series/dumbo",
+   "field": "release_date",
+   "searched": "DMKB carousel posts; 3 queries",
+   "note": "hold released: packet 437_b101 held the Dumbo date; DMKB Dwarfs post now states the series began 7 Oct 2017 with Dumbo, LE 300"
+  },
+  {
+   "key": "hkdl/2018/carousel-series/dwarfs",
+   "field": "release_date",
+   "searched": "DMKB",
+   "note": "date check: packet 496 already keys Dwarfs at 20 Jan 2018 (DMKB); that is correct, it is a 2018 pin, not 2017"
+  },
+  {
+   "key": "hkdl/2018/carousel-series/dumbo",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "HK$ price not in snippets"
+  },
+  {
+   "key": "shdr/2017/pin-hunting-2017",
+   "field": "original_price",
+   "searched": "2 queries",
+   "note": "price per hunt pin not in 2017 reports; later guide prices not used"
+  },
+  {
+   "key": "shdr/2017/pin-hunting-2017-event-pins",
+   "field": "pins",
+   "searched": "sina/kankanews",
+   "note": "six event LE pins and the mystery box at Avenue M Arcade not described individually"
+  },
+  {
+   "key": "shdr/2017/pin-hunting-2017/seven-dwarfs-mine-train",
+   "field": "characters",
+   "searched": "sina",
+   "note": "characters on the six attraction hunt pins not stated"
+  },
+  {
+   "key": "shdr/2017/first-anniversary/first-anniversary-castle",
+   "field": "identity",
+   "searched": "2 queries",
+   "note": "hold: named only in one DPB roundup list, pending maintainer full-list decision; may be one of the 23 Jun LR pins or the box set, not confirmed"
+  },
+  {
+   "key": "shdr/2017/first-anniversary-limited-release",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "23 Jun 2017 LR pair still not described; castle pin link unconfirmed"
+  },
+  {
+   "key": "shdr/2017/first-anniversary-boxed-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "three box pins still unnamed"
+  },
+  {
+   "key": "shdr/2017/first-anniversary-frame-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "still no per-pin split"
+  },
+  {
+   "key": "shdr/2017/first-anniversary-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "holds kept (229/437) on Pluto, Goofy, Dumbo, Duffy; other eight unnamed"
+  },
+  {
+   "key": "shdr/2017/pin-trading-fun-day-2017-mystery",
+   "field": "pins",
+   "searched": "1 query (Chinese)",
+   "note": "contents still not found"
+  },
+  {
+   "key": "shdr/2017/chinese-zodiac-hidden-mickey",
+   "field": "pins",
+   "searched": "0 new queries",
+   "note": "not re-searched this round; per-pin zodiac designs unnamed"
+  },
+  {
+   "key": "shdr/2017/summer-2017",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "still only 8 minis plus a central jumbo, Aug expected; designs and price unnamed"
+  },
+  {
+   "key": "shdr/2017/welcome-gelatoni",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "second LE, two OE, mystery box still undescribed; Duffy and Gelatoni hold (437) kept"
+  },
+  {
+   "key": "hkdl/2017/teacup-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "DMKB states 12 designs of Disney friends in tea cups but no per-design names; 437 holds kept"
+  },
+  {
+   "key": "hkdl/2017/12th-anniversary",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "HK$ price still not stated (resale HK$380 full set seen on Carousell, not used)"
+  },
+  {
+   "key": "hkdl/2017/12th-anniversary",
+   "field": "conflict",
+   "searched": "1 query",
+   "note": "no conflict found: DMKB pairs Daisy/ShellieMay 19 Aug, Dale/Duffy 2 Sep, Gelatoni/Donald 9 Sep, matching 437; forum gives Gelatoni LE 500"
+  },
+  {
+   "key": "hkdl/2017/12th-anniversary/gelatoni",
+   "field": "product_code",
+   "searched": "forum",
+   "note": "forum lists a pin number that appears to be a PinPics-style ID; not recorded"
+  },
+  {
+   "key": "hkdl/2017/pin-hunting-2017",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "per-land designs still unnamed"
+  },
+  {
+   "key": "hkdl/2017/christmas-2017",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no non-forum HKDL Christmas 2017 pin found; A Disney Christmas 2017 posts mention ornaments, not pins"
+  },
+  {
+   "key": "hkdl/2017/walt-disney-birthday-2017",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "annual Walt birthday LE series exists (2016: Gelatoni, LE 500, HK$95) but no 2017 design found"
+  },
+  {
+   "key": "hkdl/2017/oswald-birthday-2017",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "lead: HKMSG Nov 2017 archive summary mentions an Oswald birthday pin LE 500 sold out day one; no post-level confirmation, not recorded"
+  },
+  {
+   "key": "hkdl/2017/pin-trading-night-2017",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Pin Trading Night 2017 previewed the 12th anniversary series; Monsters Inc pins still unidentified"
+  },
+  {
+   "key": "hkdl/2017/my-dreaming-2017",
+   "field": "pin_structure",
+   "searched": "0 new queries",
+   "note": "holds on Genie, Judy Hopps, Marie kept (437)"
+  },
+  {
+   "key": "hkdl/2017/halloween-2017",
+   "field": "pin_structure",
+   "searched": "0 new queries",
+   "note": "holds on Stitch, Cheshire Cat kept (437)"
+  },
+  {
+   "key": "tdr/2017/christmas-fantasy-2017/pin",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "goods line themed on Mickey and friends with presents; pin design itself still not described"
+  },
+  {
+   "key": "tdr/2017/christmas-wishes-2017/mickey-and-minnie-tree",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "hold kept (437): 1 Nov sale vs 8 Nov event start not resolved"
+  },
+  {
+   "key": "tdr/2017/tanabata-2017/glow-stars",
+   "field": "characters",
+   "searched": "0 new queries",
+   "note": "not re-searched; characters still not tied to the pin"
+  },
+  {
+   "key": "tdr/2017/duffy-2017",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Sweet Duffy, Easter, Halloween 2017 Duffy goods are plush badges (JPY 1,800-2,000); no flat Duffy pin found"
+  },
+  {
+   "key": "tdr/2017/halloween-2017-abus-bazaar",
+   "field": "scope",
+   "searched": "0 new queries",
+   "note": "holds kept (437); a Yahoo flea market listing seen, not used"
+  },
+  {
+   "key": "hkdl/2017/magic-access-sorcerer-mickey-key",
+   "field": "release_year",
+   "searched": "1 query",
+   "note": "DPB Magic Access Sorcerer Mickey key dangle pin is undated; not keyed to 2017"
+  }
+ ],
+ "discovery_notes": "Cell B318, follow-up 3 of B023 (Asia 2017). 28 standard searches, snippets only. New: six SHDR 2017 Pin Hunting attraction pins (sina per-shop list; set key from 437), HKDL Iron Man Experience marquee LE 500 jumbo (11 Jan 2017, DMKB + DPB), SHDR First Anniversary Castle pin (held, roundup name only). Hold released: Dumbo carousel date (437_b101) now 7 Oct 2017, LE 300, from DMKB Dwarfs post. Dwarfs carousel correctly 2018 (496). Teacup set-level terms added; designs still held. HKMSG monthly archive only yielded leads (Oswald birthday LE 500). Resellers (carousell, usshoppingsos, vintageradar, parkscollectibles, fryguypins, dpinstore, Yahoo flea market) not used."
+}

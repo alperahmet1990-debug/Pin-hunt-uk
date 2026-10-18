@@ -1,0 +1,933 @@
+{
+ "packet_id": "542_b356_dlr_le_2017_fu5",
+ "spec_version": 1,
+ "collected_at": "2026-10-18",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+   "title": "New Disney Pins September 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/magical-timepieces-peter-pan-pin/",
+   "title": "Magical Timepieces Peter Pan Pin Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/magical-timepieces-pin/",
+   "title": "Magical Timepieces Pin Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+   "title": "New Disney Pins July 2017 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://insidethemagic.net/2017/02/new-disney-pin-collections-coming-in-2017/",
+   "title": "New Disney Pin Collections coming in 2017",
+   "publisher": "Inside the Magic",
+   "published_date": "2017-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://themainstreetmouse.com/2017/02/20/disney-merchandise-announces-disney-parks-new-2017-pin-collections/",
+   "title": "Disney Merchandise Announces Disney Park's New 2017 Pin Collections",
+   "publisher": "The Main Street Mouse",
+   "published_date": "2017-02-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/49378",
+   "title": "49378",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/49380",
+   "title": "49380",
+   "publisher": "MyPinCentral",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+   "title": "Villains Vault 2017 Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-collection/",
+   "title": "Aladdin 25th Anniversary Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2017-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlr/2017/magical-timepieces",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Magical Timepieces",
+     "source_url": "https://disneypinsblog.com/tag/magical-timepieces-peter-pan-pin/",
+     "method": "search_snippet",
+     "note": "DPB Jan 2017 post names a new bi-monthly 2017 collection called Magical Timepieces"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/tag/magical-timepieces-peter-pan-pin/",
+     "method": "search_snippet",
+     "note": "post says the collection is exclusive to Disneyland"
+    },
+    {
+     "field": "format",
+     "value": "bi-monthly series of individual hinged pocket watch pins",
+     "source_url": "https://disneypinsblog.com/tag/magical-timepieces-peter-pan-pin/",
+     "method": "search_snippet",
+     "note": "bi-monthly cadence stated; hinged pocket watch form stated for later releases (Jul wk1)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "July release in the series stated as limited to 2,000"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/pin-trading-tales",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://insidethemagic.net/2017/02/new-disney-pin-collections-coming-in-2017/",
+     "method": "search_snippet",
+     "note": "Feb 2017 announcement: Pin Trading Tales 2,000 edition size each, Disneyland only"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://themainstreetmouse.com/2017/02/20/disney-merchandise-announces-disney-parks-new-2017-pin-collections/",
+     "method": "search_snippet",
+     "note": "Feb 2017 announcement says Pin Trading Tales sets only available at Disneyland"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/charming-characters",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://insidethemagic.net/2017/02/new-disney-pin-collections-coming-in-2017/",
+     "method": "search_snippet",
+     "note": "Feb 2017 announcement: Charming Characters 3,000 edition size each, Disneyland only"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://themainstreetmouse.com/2017/02/20/disney-merchandise-announces-disney-parks-new-2017-pin-collections/",
+     "method": "search_snippet",
+     "note": "Feb 2017 announcement says Charming Characters only available at Disneyland"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2017/aladdin-25th-pin-trading-nights-genie-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Aladdin 25th Anniversary Genie Mystery Set",
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "per-pin page names the Genie Mystery Set of the Aladdin 25th Anniversary collection, 2017"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 15,
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "fifteen pin set stated"
+    },
+    {
+     "field": "format",
+     "value": "mystery set: 7 limited release pins, 7 LE 400 chasers, 1 LE 200 super chaser",
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "summary of MPC Genie set pages gives this split; attributed to 49380, may be from 49378"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "stewardess pin is a chaser of the set"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "two random pins per box stated"
+    },
+    {
+     "field": "price",
+     "value": 16.99,
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "$16.99 per box stated"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "US park release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World Pin Trading Nights",
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "pins shared evenly between DLR and WDW, first released at each park's Pin Trading Night"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-11",
+     "source_url": "https://disneypinsblog.com/aladdin-25th-anniversary-pin-collection/",
+     "method": "search_snippet",
+     "note": "DPB: collection offered at DL and WDW Pin Trading Nights in November 2017"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/villains-vault-2017-four-pin-transform-box-set",
+   "parent_set_key": "dlr/2017/villains-vault-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Four Pin Transform Box Set - Villains Vault 2017",
+     "source_url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+     "method": "search_snippet",
+     "note": "DPB Villains Vault 2017 page lists a Four Pin Transform Box Set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+     "method": "search_snippet",
+     "note": "set name states four pins"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin boxed set",
+     "source_url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+     "method": "search_snippet",
+     "note": "listed as a box set; transform mechanism not described"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-14",
+     "source_url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+     "method": "search_snippet",
+     "note": "collection available at Disneyland Sept 14, 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+     "method": "search_snippet",
+     "note": "collection sold at Disneyland"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2017/villains-vault-2017-key-box-set",
+   "parent_set_key": "dlr/2017/villains-vault-2017",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Key Box Set - Villains Vault 2017",
+     "source_url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+     "method": "search_snippet",
+     "note": "DPB Villains Vault 2017 page lists a Key Box Set"
+    },
+    {
+     "field": "format",
+     "value": "boxed set",
+     "source_url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+     "method": "search_snippet",
+     "note": "listed as a box set; contents and count not stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09-14",
+     "source_url": "https://disneypinsblog.com/villains-vault-2017-pin-collection/",
+     "method": "search_snippet",
+     "note": "collection available at Disneyland Sept 14, 2017"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlr/2017/charming-characters/jack-skellington",
+   "set_key": "dlr/2017/charming-characters",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Charming Characters - Jack Skellington",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+     "method": "search_snippet",
+     "note": "Sept 2017 wk1 roundup (Sept 3-9) lists a Jack Skellington Charming Characters pin at Disneyland"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jack Skellington"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+     "method": "search_snippet",
+     "note": "Jack Skellington named"
+    },
+    {
+     "field": "main_character",
+     "value": "Jack Skellington",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+     "method": "search_snippet",
+     "note": "sole named character"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+     "method": "search_snippet",
+     "note": "LE stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+     "method": "search_snippet",
+     "note": "limited edition of 3,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+     "method": "search_snippet",
+     "note": "roundup covers Sept 3-9, 2017; exact day not in snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+     "method": "search_snippet",
+     "note": "2017 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+     "method": "search_snippet",
+     "note": "listed as a Disneyland release"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+     "method": "search_snippet",
+     "note": "single series release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/magical-timepieces/peter-pan",
+   "set_key": "dlr/2017/magical-timepieces",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Magical Timepieces - Peter Pan",
+     "source_url": "https://disneypinsblog.com/tag/magical-timepieces-peter-pan-pin/",
+     "method": "search_snippet",
+     "note": "Jan 2017 post says the first Magical Timepieces pin features Peter Pan"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Peter Pan"
+     ],
+     "source_url": "https://disneypinsblog.com/tag/magical-timepieces-peter-pan-pin/",
+     "method": "search_snippet",
+     "note": "Peter Pan named"
+    },
+    {
+     "field": "set_position",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/tag/magical-timepieces-peter-pan-pin/",
+     "method": "search_snippet",
+     "note": "stated as the first pin of the collection"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-01",
+     "source_url": "https://disneypinsblog.com/tag/magical-timepieces-peter-pan-pin/",
+     "method": "search_snippet",
+     "note": "January 2017 post; exact day not in snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/tag/magical-timepieces-peter-pan-pin/",
+     "method": "search_snippet",
+     "note": "new collection for 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/tag/magical-timepieces-peter-pan-pin/",
+     "method": "search_snippet",
+     "note": "collection exclusive to Disneyland"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/tag/magical-timepieces-peter-pan-pin/",
+     "method": "search_snippet",
+     "note": "single series pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/magical-timepieces/disneyland-railroad",
+   "set_key": "dlr/2017/magical-timepieces",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Magical Timepieces - Disneyland Railroad",
+     "source_url": "https://disneypinsblog.com/tag/magical-timepieces-pin/",
+     "method": "search_snippet",
+     "note": "summary of Magical Timepieces results lists the Mar 2017 DL Railroad hinged pocket watch pin; series link from grouped results"
+    },
+    {
+     "field": "attraction",
+     "value": "Disneyland Railroad",
+     "source_url": "https://disneypinsblog.com/tag/magical-timepieces-pin/",
+     "method": "search_snippet",
+     "note": "DL Railroad featured"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/tag/magical-timepieces-pin/",
+     "method": "search_snippet",
+     "note": "limited to 2,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-03-23",
+     "source_url": "https://disneypinsblog.com/tag/magical-timepieces-pin/",
+     "method": "search_snippet",
+     "note": "available at Disneyland Mar 23, 2017"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://disneypinsblog.com/tag/magical-timepieces-pin/",
+     "method": "search_snippet",
+     "note": "hinged pocket watch"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/magical-timepieces/twenty-thousand-leagues-under-the-sea",
+   "set_key": "dlr/2017/magical-timepieces",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Magical Timepieces - 20,000 Leagues Under the Sea",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "July 2017 wk1 roundup: next hinged pocket watch pin in Magical Timepieces features 20,000 Leagues"
+    },
+    {
+     "field": "attraction",
+     "value": "20,000 Leagues Under the Sea",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "film/attraction theme named; characters not stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "limited stated"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "limited to 2,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-07-06",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "available at Disneyland Jul 6, 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "2017 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "Disneyland release"
+    },
+    {
+     "field": "visual_form",
+     "value": "pocket watch",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "hinged pocket watch pin"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "hinged"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-july-2017-week-1/",
+     "method": "search_snippet",
+     "note": "single series pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2017/magical-timepieces/mr-toads-wild-ride",
+   "set_key": "dlr/2017/magical-timepieces",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Magical Timepieces - Mr. Toad's Wild Ride",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+     "method": "search_snippet",
+     "note": "Sept 2017 wk1 roundup lists a Mr. Toad's Wild Ride Magical Timepieces pin at Disneyland"
+    },
+    {
+     "field": "attraction",
+     "value": "Mr. Toad's Wild Ride",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+     "method": "search_snippet",
+     "note": "attraction named"
+    },
+    {
+     "field": "release_date",
+     "value": "2017-09",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+     "method": "search_snippet",
+     "note": "roundup covers Sept 3-9, 2017"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+     "method": "search_snippet",
+     "note": "2017 roundup"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+     "method": "search_snippet",
+     "note": "Disneyland release"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2017-week-1/",
+     "method": "search_snippet",
+     "note": "single series pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/aladdin-25th-pin-trading-nights-genie-mystery/genie-stewardess-chaser",
+   "set_key": "wdw/2017/aladdin-25th-pin-trading-nights-genie-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Genie Mystery Set - Genie Stewardess Chaser",
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "per-pin page: Genie dressed as a stewardess, chaser, Genie Mystery Set 2017"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Genie"
+     ],
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "Genie"
+    },
+    {
+     "field": "is_chaser",
+     "value": true,
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "chaser stated"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "LE 400 on back"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "back reads Limited Edition 400"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Limited Edition 400 FAC-046730-17206 Disney Made In China Chaser",
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "backstamp text as given on the per-pin page"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "Genie Mystery Set of 2017"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World Pin Trading Nights",
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "set shared evenly between DLR and WDW"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/49378",
+     "method": "search_snippet",
+     "note": "single mystery design"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2017/aladdin-25th-pin-trading-nights-genie-mystery/genie-tourist",
+   "set_key": "wdw/2017/aladdin-25th-pin-trading-nights-genie-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Genie Mystery Set - Genie Tourist",
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "per-pin page: Genie as a tourist from the 2017 Genie Mystery Set"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Genie"
+     ],
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "Genie"
+    },
+    {
+     "field": "visual_description",
+     "value": "Genie as a tourist carrying a brown suitcase",
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "paraphrased from per-pin page"
+    },
+    {
+     "field": "release_year",
+     "value": 2017,
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "2017 set"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World Pin Trading Nights",
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "set shared evenly between DLR and WDW"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/49380",
+     "method": "search_snippet",
+     "note": "single mystery design"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2017/magical-timepieces/disneyland-railroad",
+   "searched": "web search, standard mode",
+   "note": "variant: same pin as dlr/2017/disneyland-railroad-pocket-watch/disneyland-railroad (471; same DL Railroad hinged pocket watch, LE 2,000, Mar 23 2017, now tied to Magical Timepieces)"
+  },
+  {
+   "key": "dlr/2017/disneyland-railroad-pocket-watch",
+   "searched": "web search, standard mode",
+   "note": "resolved 471 gap: series name appears to be Magical Timepieces (bi-monthly DLR collection); see dlr/2017/magical-timepieces"
+  },
+  {
+   "key": "dlr/2017/magical-timepieces",
+   "searched": "web search, standard mode",
+   "note": "bi-monthly cadence implies about six 2017 pins; Peter Pan (Jan), Railroad (Mar), 20,000 Leagues (Jul), Mr. Toad (Sep) found; May and Nov releases not found",
+   "field": "expected_pin_count"
+  },
+  {
+   "key": "dlr/2017/magical-timepieces/twenty-thousand-leagues-under-the-sea",
+   "searched": "web search, standard mode",
+   "note": "one summary gave $89.99 for this pin; implausible for a single pin and may belong to an adjacent item - not recorded",
+   "field": "original_price"
+  },
+  {
+   "key": "dlr/2017/magical-timepieces/peter-pan",
+   "searched": "web search, standard mode",
+   "note": "edition size, price and exact date not in snippet; hinged pocket watch form assumed for series but not stated for this pin"
+  },
+  {
+   "key": "dlr/2017/magical-timepieces/mr-toads-wild-ride",
+   "searched": "web search, standard mode",
+   "note": "edition size, price and exact day not in snippet (one summary only)"
+  },
+  {
+   "key": "dlr/2017/charming-characters/jack-skellington",
+   "searched": "web search, standard mode",
+   "note": "set_position 9 inferred (between Mike #8 Aug 3 and Hat Box Ghost #10 Oct 5), not stated; price and exact day not in snippet; seen in one summary only - verify",
+   "field": "set_position"
+  },
+  {
+   "key": "dlr/2017/charming-characters",
+   "searched": "web search, standard mode",
+   "note": "releases 1 and 2 still not named; Feb 2017 announcement (ITM / Main Street Mouse) confirms 3,000 each, DLR only"
+  },
+  {
+   "key": "dlr/2017/pin-trading-tales",
+   "searched": "web search, standard mode",
+   "note": "pins 4 and 9 still not named; DPB Apr wk4 and Sept wk2-4 2017 roundups did not surface in 4 searches"
+  },
+  {
+   "key": "dlr/2017/pin-trading-tales/mad-hatter",
+   "searched": "web search, standard mode",
+   "note": "size/price/date still reseller-only (ecrater LE 2,000); not recorded"
+  },
+  {
+   "key": "dlr/2017/pirates-50th",
+   "searched": "web search, standard mode",
+   "note": "individual LE 2,500 designs still unnamed in permitted snippets; chipandco and WDWNT give only sizes/locations"
+  },
+  {
+   "key": "dlr/2017/pirates-50th-boxed-set",
+   "searched": "web search, standard mode",
+   "note": "hold: box count (six pins) and purple-gem treasure chest design seen only on reseller ecrater - not recorded",
+   "field": "expected_pin_count"
+  },
+  {
+   "key": "dlr/2017/ap-quarterly-2017",
+   "searched": "web search, standard mode",
+   "note": "first three 2017 quarterly pins still unnamed; DPB AP posts surfaced (AP Days LE 5,000, Egg-stravaganza LE 5,000) but neither called quarterly"
+  },
+  {
+   "key": "dlr/2017/ap-quarterly-2017/enchanted-tiki-room",
+   "searched": "web search, standard mode",
+   "note": "conflict: one DPB Oct wk3 span gives LE 6,000, another LE 3,000 (226 recorded 3,000) - verify",
+   "field": "edition_size"
+  },
+  {
+   "key": "dlr/2017/club-33-2017/july-tinker-bell",
+   "searched": "web search, standard mode",
+   "note": "hold: July 2017 Club 33 50th Tinker Bell LE 500 seen only on a resale product page (tinkerbelltalks.com) - not recorded"
+  },
+  {
+   "key": "dlr/2017/club-33-2017",
+   "searched": "web search, standard mode",
+   "note": "twelve monthly pins still only on auction lot; months found: Mar, Sep, Dec, Cinderella (undated), Tinker Bell July (reseller lead)"
+  },
+  {
+   "key": "dlr/2017/club-33-2017/december-2017",
+   "searched": "web search, standard mode",
+   "note": "hold kept (433): no new per-pin evidence"
+  },
+  {
+   "key": "dlr/2017/aladdin-25th-pin-trading-nights-three-wishes-box-set",
+   "searched": "web search, standard mode",
+   "note": "hold: members (red Aladdin, blue Aladdin, gold Genie; 'Saved from Drowning' wish) seen only on reseller YourWDWStore / ecrater - not recorded; YWS also gives $95.99 vs DPB $64.99"
+  },
+  {
+   "key": "dlr/2017/aladdin-25th-pin-trading-nights-genie-mystery/genie-stewardess-chaser",
+   "searched": "web search, standard mode",
+   "note": "variant: same pin as wdw/2017/aladdin-25th-pin-trading-nights-genie-mystery/genie-stewardess-chaser (shared DL/WDW Pin Trading Nights, Nov 2017)"
+  },
+  {
+   "key": "dlr/2017/aladdin-25th-pin-trading-nights-genie-mystery/genie-tourist",
+   "searched": "web search, standard mode",
+   "note": "variant: same pin as wdw/2017/aladdin-25th-pin-trading-nights-genie-mystery/genie-tourist (shared DL/WDW Pin Trading Nights, Nov 2017)"
+  },
+  {
+   "key": "dlr/2017/aladdin-25th-pin-trading-nights-genie-mystery",
+   "searched": "web search, standard mode",
+   "note": "variant: same set as wdw/2017/aladdin-25th-pin-trading-nights-genie-mystery (shared DL/WDW release)"
+  },
+  {
+   "key": "wdw/2017/aladdin-25th-pin-trading-nights-genie-mystery",
+   "searched": "web search, standard mode",
+   "note": "13 other designs still unnamed; Cheerleader Genie chaser seen only on reseller distradingpins4u (MPC 125492 id) - hold; super chaser design not found"
+  },
+  {
+   "key": "wdw/2017/aladdin-25th-pin-trading-nights-genie-mystery/cheerleader-genie-chaser",
+   "searched": "web search, standard mode",
+   "note": "hold: Cheerleader Genie chaser named only on reseller listing - not recorded"
+  },
+  {
+   "key": "dlr/2017/villains-vault-2017",
+   "searched": "web search, standard mode",
+   "note": "second super jumbo and key box members still not individually described; Oogie Boogie jumbo spinner LE 500 seen only on reseller ecrater - hold"
+  },
+  {
+   "key": "dlr/2017/villains-vault-2017-four-pin-transform-box-set",
+   "searched": "web search, standard mode",
+   "note": "four member pins, edition size, price and transform mechanism not described"
+  },
+  {
+   "key": "dlr/2017/villains-vault-2017-key-box-set",
+   "searched": "web search, standard mode",
+   "note": "contents, pin count, edition size and price not stated",
+   "field": "expected_pin_count"
+  },
+  {
+   "key": "wdw/2017/haunting-halloween-2017-villains-boxed-set",
+   "searched": "web search, standard mode",
+   "note": "original retail price not found; only reseller YourWDWStore price $137.99 seen - not recorded",
+   "field": "price"
+  },
+  {
+   "key": "dlr/2017/marvel-choose-your-mark",
+   "searched": "web search, standard mode",
+   "note": "10 pins still unnamed; one DPB summary called both sets Annual Passholder exclusives, conflicting with 522's one AP set - verify"
+  },
+  {
+   "key": "dlr/2017/twenty-eight-and-main-mystery",
+   "searched": "web search, standard mode",
+   "note": "lead carried (501/522): not surfaced in DPB search; likely OE/LR cell"
+  },
+  {
+   "key": "dlr/2017/nbc-haunted-mansion-stretching-portraits",
+   "searched": "web search, standard mode",
+   "note": "lead carried (501/522): no pin source surfaced; likely OE cell"
+  },
+  {
+   "key": "wdw/2017/star-wars-pin-of-the-month/pin-13",
+   "searched": "web search, standard mode",
+   "note": "hold kept (433/426): not re-searched, no new evidence"
+  },
+  {
+   "key": "dlr/2017/mickeys-halloween-party-2017-villains-box-set",
+   "searched": "web search, standard mode",
+   "note": "hold kept (433): pending maintainer decision; no new evidence"
+  },
+  {
+   "key": "dlr/2017/holiday-gift-card-pins",
+   "searched": "web search, standard mode",
+   "note": "hold kept (433): confirm pin structure (pack, single multi-character pin, or mystery designs); not re-searched"
+  },
+  {
+   "key": "dlr/2017/haunting-halloween-2017/ezra",
+   "searched": "web search, standard mode",
+   "note": "hold kept (471/499/501/522): no new per-pin evidence"
+  },
+  {
+   "key": "dlr/2017/haunting-halloween-2017/phineas",
+   "searched": "web search, standard mode",
+   "note": "hold kept (471/499/501/522): no new per-pin evidence"
+  },
+  {
+   "key": "dlr/2017/pin-trading-tales/hat-box-ghost",
+   "searched": "web search, standard mode",
+   "note": "hold kept: WDW sale still unconfirmed; no wdw key created"
+  },
+  {
+   "key": "wdw/2017/mnsshp/maleficent",
+   "searched": "web search, standard mode",
+   "note": "hold kept (522): possible duplicate of wdw/2017/haunting-halloween-2017/maleficent; not re-searched"
+  },
+  {
+   "key": "wdw/2017/mnsshp/ursula",
+   "searched": "web search, standard mode",
+   "note": "hold kept (522): possible duplicate of wdw/2017/haunting-halloween-2017/ursula; not re-searched"
+  },
+  {
+   "key": "dlr/2017/cast-member-halloween-2017-jack-skellington",
+   "searched": "web search, standard mode",
+   "note": "lead: DPB Sept 28 2017 Cast Member Halloween pin (Jack Skellington, LE 500, CM exclusive); resort not stated - for CM / DLR or WDW cell"
+  },
+  {
+   "key": "dlr/2017/licensed",
+   "searched": "web search, standard mode",
+   "note": "no licensed pins surfaced in this cell's searches"
+  },
+  {
+   "key": "dlr/2017/charming-characters/jack-skellington",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: single search-engine summary; series position inferred from neighbouring dates; possible overlap with other 2017 Jack Skellington pins (round 57 review)"
+  }
+ ],
+ "discovery_notes": "B356 follow-up 5 of B020 (DLR LE 2017). 29 web searches. New: Magical Timepieces bi-monthly DLR series (Peter Pan, 20,000 Leagues, Mr. Toad; Railroad pocket watch from 471 linked by variant note), Charming Characters Jack Skellington (Sept wk1, likely #9). Genie mystery set re-keyed under wdw with dlr variant notes; stewardess backstamp added. Villains Vault four-pin transform and key box sets recorded as sets. Pirates box count, Three Wishes members, Club 33 July Tinker Bell, Cheerleader Genie, Oogie spinner remain reseller-only holds."
+}

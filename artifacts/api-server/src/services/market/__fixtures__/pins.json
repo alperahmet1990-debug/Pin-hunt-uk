@@ -1,0 +1,57 @@
+{
+  "_comment": "Synthetic catalogue records for listing-matching tests. Text only, fictional ids. Fields mirror CataloguePin.",
+  "hatbox": {
+    "id": "PHUK-TEST0001", "title": "Hatbox Ghost", "brand": "Disney",
+    "collection": "Haunted Mansion 50th Anniversary", "edition": "Limited Edition",
+    "limitedEditionSize": 2000, "releaseYear": 2019, "characters": ["Hatbox Ghost"]
+  },
+  "steamboat": {
+    "id": "PHUK-TEST0002", "title": "Steamboat Willie Mickey", "brand": "Disney",
+    "collection": "Disneyland Paris 30th Anniversary", "edition": "Limited Edition",
+    "limitedEditionSize": 800, "releaseYear": 2022, "characters": ["Mickey Mouse"],
+    "mainCharacter": "Mickey Mouse", "origin": "Disneyland Paris"
+  },
+  "tink": {
+    "id": "PHUK-TEST0003", "title": "Tinker Bell Pixie Dust", "brand": "Disney",
+    "collection": "Peter Pan 70th Anniversary", "edition": "Open Edition",
+    "releaseYear": 2023, "characters": ["Tinker Bell"],
+    "searchAliases": "Fee Clochette poussiere de fee"
+  },
+  "stitchMystery": {
+    "id": "PHUK-TEST0004", "title": "Stitch Surfing", "brand": "Disney",
+    "collection": "Stitch Mystery Pin Series", "edition": "Limited Release",
+    "releaseYear": 2021, "characters": ["Stitch"]
+  },
+  "princessSet": {
+    "id": "PHUK-TEST0005", "title": "Princess Castle 4 Pin Booster Set", "brand": "Disney",
+    "collection": "Princess Castle Booster Set", "edition": "Open Edition",
+    "releaseYear": 2020, "characters": ["Cinderella", "Belle", "Ariel", "Aurora"]
+  },
+  "jumboSimba": {
+    "id": "PHUK-TEST0006", "title": "Simba Jumbo Pin", "brand": "Disney",
+    "collection": "The Lion King 30th Anniversary", "edition": "Limited Edition",
+    "limitedEditionSize": 500, "releaseYear": 2024, "characters": ["Simba"]
+  },
+  "figment": {
+    "id": "PHUK-TEST0007", "title": "Figment Popcorn Bucket", "brand": "Disney",
+    "collection": "EPCOT Festival of the Arts", "edition": "Limited Release",
+    "releaseYear": 2024, "characters": ["Figment"],
+    "externalIdentifiers": { "sku": "400020815822" }
+  },
+  "minnieEiffel": {
+    "id": "PHUK-TEST0008", "title": "Minnie Mouse Tour Eiffel", "brand": "Disney",
+    "collection": "Disneyland Paris Exclusive", "edition": "Open Edition",
+    "releaseYear": 2018, "characters": ["Minnie Mouse"]
+  },
+  "hitchhikingBox": {
+    "id": "PHUK-TEST0009", "title": "Hitchhiking Ghosts 3 Pin Boxed Set", "brand": "Disney",
+    "collection": "Hitchhiking Ghosts Boxed Set", "edition": "Limited Edition",
+    "limitedEditionSize": 1500, "releaseYear": 2019,
+    "characters": ["Ezra", "Phineas", "Gus"]
+  },
+  "orangeBird": {
+    "id": "PHUK-TEST0010", "title": "Orange Bird Sunshine", "brand": "Disney",
+    "collection": "Flower and Garden Festival", "edition": "Open Edition",
+    "releaseYear": 2022, "characters": ["Orange Bird"]
+  }
+}

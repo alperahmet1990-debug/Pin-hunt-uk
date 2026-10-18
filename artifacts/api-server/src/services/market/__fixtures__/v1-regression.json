@@ -1,0 +1,180 @@
+{
+  "_comment": "v1 scoreListing behaviour captured from valuation.ts BEFORE the move to market/matching.ts. expected = score, or null when v1 rejects. Do not edit expected values: they pin v1 behaviour.",
+  "cases": [
+    {
+      "pin": "hatbox",
+      "title": "Disney Haunted Mansion 50th Anniversary Hatbox Ghost Pin LE 2000",
+      "expected": 109
+    },
+    {
+      "pin": "hatbox",
+      "title": "Hatbox Ghost Disney pin Haunted Mansion LE2000",
+      "expected": 91
+    },
+    {
+      "pin": "hatbox",
+      "title": "Disney Hatbox Ghost pin",
+      "expected": null
+    },
+    {
+      "pin": "hatbox",
+      "title": "Disney Hatbox Ghost Haunted Mansion 50th pin LE 3000",
+      "expected": null
+    },
+    {
+      "pin": "hatbox",
+      "title": "Disney Hatbox Ghost Haunted Mansion pin job lot",
+      "expected": null
+    },
+    {
+      "pin": "hatbox",
+      "title": "Hatbox Ghost Haunted Mansion 50th Anniversary lanyard",
+      "expected": null
+    },
+    {
+      "pin": "hatbox",
+      "title": "Hatbox Ghost Haunted Mansion 50th Anniversary badge 2019",
+      "expected": 84
+    },
+    {
+      "pin": "steamboat",
+      "title": "Disneyland Paris 30th Anniversary Steamboat Willie Mickey Mouse pin LE 800",
+      "expected": 124
+    },
+    {
+      "pin": "steamboat",
+      "title": "Steamboat Willie pin Disney",
+      "expected": null
+    },
+    {
+      "pin": "steamboat",
+      "title": "Pin's Disney Mickey Steamboat Willie Disneyland Paris 30 ans",
+      "expected": 76
+    },
+    {
+      "pin": "steamboat",
+      "title": "Steamboat Willie Mickey Mouse 30th Anniversary pin LE 1000",
+      "expected": null
+    },
+    {
+      "pin": "steamboat",
+      "title": "Lot de 5 pin's Disney Mickey Steamboat Willie",
+      "expected": null
+    },
+    {
+      "pin": "steamboat",
+      "title": "Steamboat Willie Mickey funko pop",
+      "expected": null
+    },
+    {
+      "pin": "tink",
+      "title": "Disney Tinker Bell Pixie Dust Peter Pan 70th Anniversary pin",
+      "expected": 109
+    },
+    {
+      "pin": "tink",
+      "title": "Tinker Bell pin Disney Peter Pan",
+      "expected": 66
+    },
+    {
+      "pin": "tink",
+      "title": "Pin's Fée Clochette Disney poussière de fée",
+      "expected": null
+    },
+    {
+      "pin": "tink",
+      "title": "Tinker Bell Pixie Dust plush keychain pin",
+      "expected": null
+    },
+    {
+      "pin": "stitchMystery",
+      "title": "Disney Stitch Surfing Mystery Pin Series",
+      "expected": 91
+    },
+    {
+      "pin": "stitchMystery",
+      "title": "Stitch Surfing pin Disney mystery",
+      "expected": 91
+    },
+    {
+      "pin": "stitchMystery",
+      "title": "Stitch Surfing Mystery pin chaser",
+      "expected": 81
+    },
+    {
+      "pin": "princessSet",
+      "title": "Disney Princess Castle Booster Set 4 pins Cinderella Belle Ariel Aurora",
+      "expected": 99
+    },
+    {
+      "pin": "princessSet",
+      "title": "Princess Castle Booster pin Belle",
+      "expected": 79
+    },
+    {
+      "pin": "jumboSimba",
+      "title": "Disney Simba Jumbo Pin Lion King 30th Anniversary LE 500",
+      "expected": 114
+    },
+    {
+      "pin": "jumboSimba",
+      "title": "Simba pin Lion King 30th",
+      "expected": 72.33333333333333
+    },
+    {
+      "pin": "jumboSimba",
+      "title": "Simba Jumbo pin LE 750 Lion King",
+      "expected": null
+    },
+    {
+      "pin": "figment",
+      "title": "Figment Popcorn Bucket pin EPCOT Festival of the Arts 2024",
+      "expected": 99
+    },
+    {
+      "pin": "figment",
+      "title": "Disney pin 400020815822 Figment Popcorn Bucket",
+      "expected": null
+    },
+    {
+      "pin": "figment",
+      "title": "Figment pin custom popcorn bucket fantasy",
+      "expected": null
+    },
+    {
+      "pin": "minnieEiffel",
+      "title": "Disneyland Paris Exclusive Minnie Mouse Tour Eiffel pin",
+      "expected": 109
+    },
+    {
+      "pin": "minnieEiffel",
+      "title": "Pin's Minnie Tour Eiffel Disneyland Paris",
+      "expected": 63.5
+    },
+    {
+      "pin": "minnieEiffel",
+      "title": "Minnie Mouse Tour Eiffel porte-clés",
+      "expected": null
+    },
+    {
+      "pin": "hitchhikingBox",
+      "title": "Hitchhiking Ghosts Boxed Set 3 pins Ezra Phineas Gus LE 1500",
+      "expected": 104
+    },
+    {
+      "pin": "hitchhikingBox",
+      "title": "Gus Hitchhiking Ghost pin",
+      "expected": 43
+    },
+    {
+      "pin": "orangeBird",
+      "title": "Orange Bird Sunshine pin Flower and Garden Festival 2022",
+      "expected": 99
+    },
+    {
+      "pin": "orangeBird",
+      "title": "Orange Bird Sunshine pin Fantasyland",
+      "expected": null
+    }
+  ]
+}

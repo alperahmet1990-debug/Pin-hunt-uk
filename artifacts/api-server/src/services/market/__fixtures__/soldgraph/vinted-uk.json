@@ -1,0 +1,25 @@
+{
+  "_comment": "SYNTHETIC Soldgraph-style Vinted response for country=uk (not recorded). Photo and user fields are present on purpose: adapters must drop them.",
+  "status": "complete",
+  "result": {
+    "next_page": null,
+    "data": [
+      {
+        "id": 4001,
+        "title": "Disney Stitch pin",
+        "price": { "amount": "6.00", "currency_code": "GBP" },
+        "total_item_price": { "amount": "6.99", "currency_code": "GBP" },
+        "shipping_price": "2.79",
+        "status": "active",
+        "condition": "Very good",
+        "url": "https://www.vinted.co.uk/items/4001-disney-stitch-pin?referrer=catalog",
+        "photo": { "url": "https://images.vinted.example/IMAGE_SENTINEL.jpg" },
+        "user": { "login": "SELLER_SENTINEL", "id": 99 }
+      },
+      { "id": "4002", "title": "Disney pin sold", "price": "£5", "is_sold": true },
+      { "id": "4003", "title": "Disney pin closed", "price": "£5", "status": "Sold" },
+      { "id": "4004", "title": "Disney pin no price" },
+      { "id": "4005", "title": "Disney pin in euros", "price": { "amount": "6.00", "currency_code": "EUR" } }
+    ]
+  }
+}

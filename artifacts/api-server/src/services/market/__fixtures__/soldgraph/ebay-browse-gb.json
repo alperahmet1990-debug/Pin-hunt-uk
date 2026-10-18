@@ -1,0 +1,9 @@
+{
+  "_comment": "SYNTHETIC eBay Browse item_summary/search response for the v1 regression test (not recorded).",
+  "itemSummaries": [
+    { "itemId": "v1|1|0", "title": "Disney Hatbox Ghost pin LE 2000", "itemWebUrl": "https://www.ebay.com/itm/1", "image": { "imageUrl": "https://i.ebayimg.example/a.jpg" }, "price": { "value": "21.00", "currency": "GBP" }, "condition": "New", "itemLocation": { "country": "GB" }, "shippingOptions": [{ "shippingCost": { "value": "2.50", "currency": "GBP" } }, { "shippingCost": { "value": "1.20", "currency": "GBP" } }] },
+    { "itemId": "v1|2|0", "title": "Hatbox Ghost pin", "itemWebUrl": "https://www.ebay.co.uk/itm/2", "price": { "value": "18.5", "currency": "GBP" }, "itemLocation": { "country": "GB" } },
+    { "itemId": "v1|3|0", "title": "Hatbox Ghost pin no price", "itemLocation": { "country": "GB" }, "shippingOptions": [{ "shippingCost": { "value": "0.00", "currency": "GBP" } }] },
+    { "itemId": "v1|4|0", "title": "Hatbox Ghost pin no currency", "price": { "value": "9.99" } }
+  ]
+}

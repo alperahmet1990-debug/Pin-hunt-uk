@@ -102,6 +102,20 @@ export type { SupabasePinRepositoryOptions } from './supabase-repository';
 export type { IUserPinRepository } from './user-repository';
 export { createSupabaseUserRepository } from './supabase-user-repository';
 
+// ─── Market valuations (migration 049, read-only) ─────────────────────────────
+export type {
+  MarketCode,
+  MarketConfidenceBand,
+  MarketValuation,
+  MarketValuationSource,
+  MarketValuationsClient,
+} from './market-valuations';
+export {
+  getMarketValuations,
+  mapMarketValuationRow,
+  MARKET_VALUATION_COLUMNS,
+} from './market-valuations';
+
 // ─── Database types ───────────────────────────────────────────────────────────
 export type { Database, Tables, TablesInsert, TablesUpdate } from './database.types';
 

@@ -9,7 +9,8 @@
  *   jitter. `quota_exceeded` / `upstream_daily_limit` are never retried: they map
  *   to ProviderUnavailableError(until).
  * - Spend control: SOLDGRAPH_ENABLED must equal "true" (kill switch), the month's
- *   usage is checked against the budget BEFORE each billable call, usage is
+ *   usage is checked against the budget BEFORE each billable call (atomically,
+ *   with a reservation, when the store implements reserveCredit), usage is
  *   recorded for every call, and an in-process limiter keeps under 60 req/min.
  * - SOLDGRAPH_API_KEY is only ever placed in the Authorization header. It is
  *   never logged, never put in an error message and never returned.
@@ -307,8 +308,39 @@ export function createSoldgraphClient(options: SoldgraphClientOptions): Soldgrap
     return new SoldgraphHttpError(200, code, ctx.requestId);
   }
 
-  async function guardBudget(route: string): Promise<void> {
+  async function guardBudget(route: string, idempotencyKey: string, pinId?: string): Promise<void> {
     const month = monthOf(clock.now());
+    const cost = soldgraphCreditsForCall("search");
+    if (store.reserveCredit) {
+      // Atomic path: the store checks the budget and reserves the credit in one step.
+      let r;
+      try {
+        r = await store.reserveCredit({
+          provider: "soldgraph",
+          month,
+          route,
+          idempotencyKey,
+          credits: cost,
+          ...(pinId ? { pinId } : {}),
+          occurredAt: new Date(clock.now()).toISOString(),
+          defaultBudget: options.defaultBudget ?? defaultSoldgraphBudget(),
+        });
+      } catch {
+        log.error({ route, month }, "soldgraph budget reservation failed, refusing call");
+        throw new BudgetExceededError(month, null, null);
+      }
+      if (!r.allowed) {
+        log.warn({ route, month, used: r.usedCredits, limit: r.limitCredits }, "soldgraph budget cap reached, refusing call");
+        throw new BudgetExceededError(month, r.usedCredits, r.limitCredits);
+      }
+      if (r.limitCredits > 0 && r.usedCredits + cost >= r.limitCredits * warnAt) {
+        log.warn(
+          { route, month, used: r.usedCredits, limit: r.limitCredits },
+          "soldgraph usage at or above budget warning threshold",
+        );
+      }
+      return;
+    }
     let usage;
     let budget;
     try {
@@ -319,7 +351,6 @@ export function createSoldgraphClient(options: SoldgraphClientOptions): Soldgrap
       throw new BudgetExceededError(month, null, null);
     }
     const effective = budget ?? options.defaultBudget ?? defaultSoldgraphBudget();
-    const cost = soldgraphCreditsForCall("search");
     const used = usage.credits;
     const limit = effective.limitCredits;
     if (effective.hardStop && used + cost > limit) {
@@ -343,9 +374,9 @@ export function createSoldgraphClient(options: SoldgraphClientOptions): Soldgrap
     key: string,
     opts: { pinId?: string; deadlineAt: number; maxAttempts: number },
   ): Promise<PageResult> {
-    await guardBudget(route);
-
     const idempotencyKey = uuid();
+    await guardBudget(route, idempotencyKey, opts.pinId);
+
     const ctx: Ctx = {
       deadlineAt: opts.deadlineAt,
       maxAttempts: opts.maxAttempts,

@@ -1,0 +1,1760 @@
+{
+ "packet_id": "b387-dlp-2018-fu7",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+   "title": "Pin-Neuerscheinungen im August 2018",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2018-08-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/188825",
+   "title": "188825 (DLP - Fun Adventures - 2018 - Phantom Manor)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/188819",
+   "title": "188819 (DLP - Fun Adventures - 2018 - Stitch)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/156763",
+   "title": "156763 (Le Rendez-vous Gourmand Belle and Beast)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/122543",
+   "title": "122543 (Back to Neverland Tick-Tock)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneyland-paris-back-to-neverland-pin-event/",
+   "title": "Disneyland Paris Back to Neverland Pin Event",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-may-2018-pins",
+   "title": "Disneyland Paris May 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://passiondlp.com/actus/arc029.php",
+   "title": "passiondlp : Archives Disneyland Paris 2018 trimestre 3",
+   "publisher": "passiondlp",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/surprise-le-500-le-rendez-vous-gourmand-de-disneyland-paris-pins/",
+   "title": "Surprise LE 500 Le Rendez-vous Gourmand de Disneyland Paris Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2018/august-2018-le",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris August 2018 limited editions (11 Aug)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "three LE pins on 11 Aug at Pueblo Trading Post (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "article says three limited pins on 11 Aug: Tivoli 175, My Cat Si and Am, Donald on Phantom Manor (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "11 August sale date (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland, Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "only at Pueblo Trading Post (quoted line item in search result)"
+    },
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "each pin given its own edition and price"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/rendez-vous-gourmand-2018",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "three RVG pins, LE 500, 15,99€ each, only at Chez Marianne (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "je 15,99€ (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "three pins each LE 500 (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/minnie-mickey-mistletoe-christmas-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Minnie und Mickey Christmas pin (Aug 2018)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "single Christmas pin (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "sold as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/tinker-bell-gift-box-christmas-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tinkerbell Christmas pin (Aug 2018)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "single Christmas pin (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "sold as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/stitch-christmas-hat-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch Christmas pin (Aug 2018)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "single Christmas pin (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "sold as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/cheshire-cat-christmas-hat-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Grinsekatze Christmas pin (Aug 2018)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "single Christmas pin (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "sold as one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-set/christmas-pin-set-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Christmas pin set 2018 (Minnie, Figaro, Pluto, Mickey)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "unlimited Christmas pin set (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "set of four pins with Minnie, Figaro, Pluto and Mickey (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "pin set (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "unlimitiert (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "price",
+     "value": 18.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "18,99€ (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "with first Christmas pins (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/postcard-pin-sets-aug-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin and postcard sets (Aug 2018)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "four sets, each a pin mounted centrally on a matching postcard (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "format",
+     "value": "pin on postcard",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "one pin per postcard (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "four postcard sets, one pin each (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "unlimitiert (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "price",
+     "value": 12.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "12,99€ each (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "quick list puts postcard sets on 25 Aug (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/back-to-neverland-may-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Back to Neverland pin trading event",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-back-to-neverland-pin-event/",
+     "method": "search_snippet",
+     "note": "DLP pin event Back to Neverland"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05-26",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-back-to-neverland-pin-event/",
+     "method": "search_snippet",
+     "note": "26 May 2018, 11am-3pm"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-05-26",
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-may-2018-pins",
+     "method": "search_snippet",
+     "note": "May 2018 post announces Back to Neverland event on 26 May"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Hotel New York Coliseum Convention Center, Disneyland Paris",
+     "source_url": "https://disneypinsblog.com/disneyland-paris-back-to-neverland-pin-event/",
+     "method": "search_snippet",
+     "note": "event venue"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2018/august-2018-le/tivoli-175th-anniversary",
+   "set_key": "dlp/2018/august-2018-le",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Tivoli 175. Jubiläum",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "line item 'Pin Tivoli 175. Jubiläum, limitiert auf 500 Stück, 16,99€' (quoted line item in search result)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Walt Disney"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "body text: gold statue of Walt and Mickey shown (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "single line item"
+    },
+    {
+     "field": "visual_description",
+     "value": "All-gold Walt and Mickey statue in front of a gold Tivoli building, flowers and a 'Tivoli 175' garland",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of body text (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "front_text",
+     "value": "Tivoli 175",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "garland text named in body (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "limitiert (quoted line item in search result)"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "500 Stück (quoted line item in search result)"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "16,99€ (quoted line item in search result)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "11 Aug drop (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018 article"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland, Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "nur im Pueblo Trading Post (quoted line item in search result)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/my-cat-2018/si-and-am",
+   "set_key": "dlp/2018/my-cat-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "My Cat - Si und Am",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "line item 'Pin \"My Cat – Si und Am\", limitiert auf 700 Stück, 15,99€' (quoted line item in search result)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Si",
+      "Am"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Siamese cats named in line item"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "one line item covering both cats"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "limitiert (quoted line item in search result)"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "700 Stück (quoted line item in search result)"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "15,99€ (quoted line item in search result)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "11 Aug drop (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland, Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "only at Pueblo (quoted line item in search result)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/fun-adventures-2018/phantom-manor",
+   "set_key": "dlp/2018/fun-adventures-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Donald auf Phantom Manor",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "line item 'Pin Donald auf Phantom Manor, limitiert auf 700 Stück, 15,99€' (quoted line item in search result)"
+    },
+    {
+     "field": "pin_name",
+     "value": "DLP - Fun Adventures - 2018 - Phantom Manor",
+     "source_url": "https://mypincentral.com/pin/188825",
+     "method": "search_snippet",
+     "note": "listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "frightened Donald in a Doom Buggy before Phantom Manor (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://mypincentral.com/pin/188825",
+     "method": "search_snippet",
+     "note": "Donald seated in a cart in front of the manor"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://mypincentral.com/pin/188825",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "attraction",
+     "value": "Phantom Manor",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "attraction named (quoted line item in search result)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "single line item"
+    },
+    {
+     "field": "visual_description",
+     "value": "Scared Donald riding a Doom Buggy in front of Phantom Manor",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "dangle"
+     ],
+     "source_url": "https://mypincentral.com/pin/188825",
+     "method": "search_snippet",
+     "note": "'Phantom MANOR' dangle described"
+    },
+    {
+     "field": "front_text",
+     "value": "Phantom MANOR",
+     "source_url": "https://mypincentral.com/pin/188825",
+     "method": "search_snippet",
+     "note": "dangle lettering"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "DISNEY PARIS EDITION LIMITEE XXX/700",
+     "source_url": "https://mypincentral.com/pin/188825",
+     "method": "search_snippet",
+     "note": "back marked Paris limited edition of 700"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "limitiert (quoted line item in search result)"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "700 Stück (quoted line item in search result)"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mypincentral.com/pin/188825",
+     "method": "search_snippet",
+     "note": "Limited Edition 700"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "15,99€ (quoted line item in search result)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "11 Aug drop (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/188825",
+     "method": "search_snippet",
+     "note": "series titled 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland, Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "only at Pueblo (quoted line item in search result)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/rendez-vous-gourmand-2018/belle-and-beast",
+   "set_key": "dlp/2018/rendez-vous-gourmand-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Belle",
+      "Beast"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "summary names Belle and the Beast among the three Chez Marianne LE 500 pins (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Belle",
+      "Beast"
+     ],
+     "source_url": "https://mypincentral.com/pin/156763",
+     "method": "search_snippet",
+     "note": "listing: Belle and Beast sharing soup from a white bowl"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/156763",
+     "method": "search_snippet",
+     "note": "single pin showing both characters"
+    },
+    {
+     "field": "visual_description",
+     "value": "Belle and the Beast sharing soup, red background, yellow 'Le Rendez-vous Gourmand de Disneyland Paris' lettering",
+     "source_url": "https://mypincentral.com/pin/156763",
+     "method": "search_snippet",
+     "note": "paraphrase of listing"
+    },
+    {
+     "field": "front_text",
+     "value": "LE RENDEZ-VOUS GOURMAND de DISNEYLAND PARIS",
+     "source_url": "https://mypincentral.com/pin/156763",
+     "method": "search_snippet",
+     "note": "front lettering per listing"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "DISNEY PARIS EDITION LIMITEE XXX/500",
+     "source_url": "https://mypincentral.com/pin/156763",
+     "method": "search_snippet",
+     "note": "reverse per listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/156763",
+     "method": "search_snippet",
+     "note": "LE back"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://mypincentral.com/pin/156763",
+     "method": "search_snippet",
+     "note": "numbered of 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "LE 500 (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "15,99€ (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "3 Aug sale (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_location",
+     "value": "Chez Marianne, Walt Disney Studios Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Chez Marianne only (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/rendez-vous-gourmand-2018/remy-and-emile",
+   "set_key": "dlp/2018/rendez-vous-gourmand-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Remy",
+      "Emile"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Rémy and Émile named as one of the three Chez Marianne LE 500 pins (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "LE 500 (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "15,99€ (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "3 Aug sale (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_location",
+     "value": "Chez Marianne, Walt Disney Studios Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Chez Marianne only (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/rendez-vous-gourmand-2018/lady-and-the-tramp",
+   "set_key": "dlp/2018/rendez-vous-gourmand-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Lady",
+      "Tramp"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Susi und Strolch (Lady and the Tramp) named as one of the three Chez Marianne LE 500 pins (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "LE 500 (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "15,99€ (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "3 Aug sale (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_location",
+     "value": "Chez Marianne, Walt Disney Studios Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Chez Marianne only (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/minnie-mickey-mistletoe-christmas-2018",
+   "set_key": "dlp/2018/oe-single/minnie-mickey-mistletoe-christmas-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse",
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Christmas single pin: Minnie und Mickey (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Minnie and Mickey on a single pin (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie kissing Mickey on the cheek under mistletoe",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of body text (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Christmas pins unlimitiert (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "7,99€ (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "body says first Christmas pins on 11 Aug (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "DLP Christmas range"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/tinker-bell-gift-box-christmas-2018",
+   "set_key": "dlp/2018/oe-single/tinker-bell-gift-box-christmas-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Christmas single pin: Tinkerbell (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "first-named character (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Tinker Bell in a red holiday dress sitting on a gift box",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of body text (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Christmas pins unlimitiert (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "7,99€ (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "body says first Christmas pins on 11 Aug (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "DLP Christmas range"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/stitch-christmas-hat-2018",
+   "set_key": "dlp/2018/oe-single/stitch-christmas-hat-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Christmas single pin: Stitch (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "first-named character (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch rolling on the floor laughing, wearing a Christmas hat",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of body text (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Christmas pins unlimitiert (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "7,99€ (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "body says first Christmas pins on 11 Aug (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "DLP Christmas range"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/cheshire-cat-christmas-hat-2018",
+   "set_key": "dlp/2018/oe-single/cheshire-cat-christmas-hat-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Cheshire Cat"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Christmas single pin: Grinsekatze (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "main_character",
+     "value": "Cheshire Cat",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "first-named character (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "visual_description",
+     "value": "Cheshire Cat with a Christmas hat on the tip of its tail",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of body text (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Christmas pins unlimitiert (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "7,99€ (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "body says first Christmas pins on 11 Aug (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "DLP Christmas range"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/christmas-pin-set-2018-minnie",
+   "set_key": "dlp/2018/oe-set/christmas-pin-set-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "named in four-pin Christmas set (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "set unlimitiert (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/christmas-pin-set-2018-figaro",
+   "set_key": "dlp/2018/oe-set/christmas-pin-set-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Figaro"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "named in four-pin Christmas set (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "set unlimitiert (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/christmas-pin-set-2018-pluto",
+   "set_key": "dlp/2018/oe-set/christmas-pin-set-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "named in four-pin Christmas set (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "set unlimitiert (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/christmas-pin-set-2018-mickey",
+   "set_key": "dlp/2018/oe-set/christmas-pin-set-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "named in four-pin Christmas set (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "set unlimitiert (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/postcard-pin-sets-aug-2018/chip-and-dale-christmas",
+   "set_key": "dlp/2018/postcard-pin-sets-aug-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Christmas postcard set shows Chip and Dale (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "one pin per postcard set (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "unlimitiert (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "set price 12,99€ (pin + postcard) (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "25 Aug (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/postcard-pin-sets-aug-2018/fab-5-best-day-ever",
+   "set_key": "dlp/2018/postcard-pin-sets-aug-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse",
+      "Donald Duck",
+      "Goofy",
+      "Pluto"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "last set shows the Fab 5, titled Best Day Ever (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "one pin per postcard set (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "front_text",
+     "value": "Best Day Ever",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "title of the set (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "unlimitiert (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "set price 12,99€ (search-engine summary of page, not quoted text)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-25",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "25 Aug (search-engine summary of page, not quoted text)"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/back-to-neverland-may-2018/tick-tock",
+   "set_key": "dlp/2018/back-to-neverland-may-2018",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tick-Tock the Crocodile"
+     ],
+     "source_url": "https://mypincentral.com/pin/122543",
+     "method": "search_snippet",
+     "note": "Tick-Tock pin with Pin Trading Event Disneyland Paris branding"
+    },
+    {
+     "field": "main_character",
+     "value": "Tick-Tock the Crocodile",
+     "source_url": "https://mypincentral.com/pin/122543",
+     "method": "search_snippet",
+     "note": "single character"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "EDITION LIMITEE 031/425 Back to Neverland",
+     "source_url": "https://mypincentral.com/pin/122543",
+     "method": "search_snippet",
+     "note": "reverse shows LE numbering of 425 and event name"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/122543",
+     "method": "search_snippet",
+     "note": "edition limitee"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://mypincentral.com/pin/122543",
+     "method": "search_snippet",
+     "note": "numbered x/425"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://mypincentral.com/pin/122543",
+     "method": "search_snippet",
+     "note": "DLP pin trading event"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2018/fun-adventures-2018/phantom-manor",
+   "field": "release",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "release evidence: dein-dlrp Aug 2018 quoted line item (Donald auf Phantom Manor, LE 700, 15,99€) plus MPC 188825 per-pin page (Donald, Fun Adventures 2018, LE 700) confirm existence, character and 2018"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/phantom-manor",
+   "field": "release_date",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "field note: dein-dlrp gives 11 Aug 2018; MPC series sibling 188819 (Stitch) shows Nov 2018 - date for this pin on MPC not seen"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/phantom-manor",
+   "field": "set_key",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "field note: dein-dlrp says the pin continues a series of characters riding DLP attractions; name 'Fun Adventures' only from MPC"
+  },
+  {
+   "key": "dlp/2018/june-2018-le/ursula-big-thunder-mountain",
+   "field": "link",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold retained (420): dein-dlrp Aug supports Ursula BTM starting the ride series, but no per-pin MPC BTM (188815) text seen; same-pin link still unconfirmed"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/big-thunder-mountain",
+   "field": "release",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold retained (420): per-pin pages not returned (only series index on 188819)"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/pirates-of-the-caribbean",
+   "field": "release",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold retained (420): per-pin pages not returned (only series index on 188819)"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/pinocchio",
+   "field": "release",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold retained (420): per-pin pages not returned (only series index on 188819)"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/tower-of-terror",
+   "field": "release",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold retained (420): per-pin pages not returned (only series index on 188819)"
+  },
+  {
+   "key": "dlp/2018/rendez-vous-gourmand-2018/belle-and-beast",
+   "field": "release_year",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "field note: MPC 156763 gives no year; 2018 rests on dein-dlrp summary; 2019 RVG LE 500 trio is Dumbo/Alice/Chip & Dale (DPB) so not that set"
+  },
+  {
+   "key": "dlp/2018/rendez-vous-gourmand-2018/remy-and-emile",
+   "field": "pin",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold: named only in one synthesized search summary of dein-dlrp Aug 2018 (no quoted line item); a second search found no listing for this design"
+  },
+  {
+   "key": "dlp/2018/rendez-vous-gourmand-2018/lady-and-the-tramp",
+   "field": "pin",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold: named only in one synthesized search summary of dein-dlrp Aug 2018 (no quoted line item); a second search found no listing for this design"
+  },
+  {
+   "key": "dlp/2018/rendez-vous-gourmand-2018",
+   "field": "open_edition",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "lead: same summary mentions four RVG open-edition pins (6,99-7,99€) incl. Mickey with ice cream, Minnie with candyfloss; unquoted, not recorded"
+  },
+  {
+   "key": "dlp/2018/oe/minnie-mickey-mistletoe-christmas-2018",
+   "field": "release_date",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "field note: body text says 11 Aug, the article quick list puts Christmas items under 3 Aug"
+  },
+  {
+   "key": "dlp/2018/oe/tinker-bell-gift-box-christmas-2018",
+   "field": "release_date",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "field note: body text says 11 Aug, the article quick list puts Christmas items under 3 Aug"
+  },
+  {
+   "key": "dlp/2018/oe/stitch-christmas-hat-2018",
+   "field": "release_date",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "field note: body text says 11 Aug, the article quick list puts Christmas items under 3 Aug"
+  },
+  {
+   "key": "dlp/2018/oe/cheshire-cat-christmas-hat-2018",
+   "field": "release_date",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "field note: body text says 11 Aug, the article quick list puts Christmas items under 3 Aug"
+  },
+  {
+   "key": "dlp/2018/oe/stitch-christmas-hat-2018",
+   "field": "identity",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "lead: may relate to dlp/2018/oe/stitch-santa-2018 (Oct list, 7,99€) but descriptions differ (laughing in hat vs Santa costume); not merged"
+  },
+  {
+   "key": "dlp/2018/oe/cheshire-cat-christmas-hat-2018",
+   "field": "identity",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "field note: OE 7,99€, distinct from 20 Dec 2018 LE 700 surprise Cheshire Cat (gift tag) in surprise-december-2018"
+  },
+  {
+   "key": "dlp/2018/oe/christmas-pin-set-2018-minnie",
+   "field": "pin_structure",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold: four characters for a four-pin set in a summary only; one character per pin not stated explicitly"
+  },
+  {
+   "key": "dlp/2018/oe/christmas-pin-set-2018-figaro",
+   "field": "pin_structure",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold: four characters for a four-pin set in a summary only; one character per pin not stated explicitly"
+  },
+  {
+   "key": "dlp/2018/oe/christmas-pin-set-2018-pluto",
+   "field": "pin_structure",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold: four characters for a four-pin set in a summary only; one character per pin not stated explicitly"
+  },
+  {
+   "key": "dlp/2018/oe/christmas-pin-set-2018-mickey",
+   "field": "pin_structure",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold: four characters for a four-pin set in a summary only; one character per pin not stated explicitly"
+  },
+  {
+   "key": "dlp/2018/christmas-lanyard-2018",
+   "field": "scope",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "scope: confirmed non-pin (Christmas lanyard 9,99€ with lanyard cards, characters incl. Minnie, Mickey, Donald, Daisy, Goofy, Pinocchio, Bambi)"
+  },
+  {
+   "key": "dlp/2018/postcard-pin-sets-aug-2018/fab-5-best-day-ever",
+   "field": "characters",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "field note: Fab 5 expanded to the usual five (incl. Pluto) editorially; source says only 'Fab 5'"
+  },
+  {
+   "key": "dlp/2018/postcard-pin-sets-aug-2018",
+   "field": "members",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "two of the four postcard sets not named in snippets"
+  },
+  {
+   "key": "dlp/2018/back-to-neverland-may-2018/tick-tock",
+   "field": "release_date",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "field note: 2018-05-26 is the event date (DPB); MPC listing date not seen - link via 'Back to Neverland' backstamp"
+  },
+  {
+   "key": "dlp/2018/back-to-neverland-may-2018",
+   "field": "members",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "other event pins (count, characters) not named in snippets"
+  },
+  {
+   "key": "dlp/2018/monthly-pages",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "dein-dlrp Aug 2018 now indexed (used here); Jan/Mar/May/Jul/Sep/Nov/Dec 2018 still not indexed; passiondlp arc028 not indexed (arc027/arc029 add nothing new)"
+  },
+  {
+   "key": "dlp/2018/season-of-the-force-2018",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "no 2018 SotF design found"
+  },
+  {
+   "key": "dlp/2018/stars-on-parade-le-2018",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "Jan 2018 Stars on Parade / Ariel LE still unnamed"
+  },
+  {
+   "key": "dlp/2018/february-2018-releases",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "Lion King / Bambi LEs / Toy Story 25th still unnamed"
+  },
+  {
+   "key": "dlp/2018/march-2018-releases",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "St Patrick's / Peter Pan / princess pins still unnamed"
+  },
+  {
+   "key": "dlp/2018/may-2018-releases",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "Minnie / Dumbo / Star Wars still unnamed; Back to Neverland event (26 May) found instead"
+  },
+  {
+   "key": "dlp/2018/ptn-april-may-october-2018",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "passiondlp PTN pages list Jan/Feb/Mar/Jul/Aug only; Apr/May/Oct/Nov and Incredibles PTN members unnamed; MPC hints a Nov 2018 PTN pin LE 425, unidentified"
+  },
+  {
+   "key": "dlp/2018/ptn-november-2018-bambi/flower",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold retained (420): no listing date found"
+  },
+  {
+   "key": "dlp/2018/christmas-2018-le",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "no new Christmas LE beyond 20 Dec Cheshire/Stitch; Aug OE Christmas range recorded here"
+  },
+  {
+   "key": "dlp/2018/november-2018-releases",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "Mickey 90th / Mary Poppins DLP pins not found"
+  },
+  {
+   "key": "dlp/2018/oe/belle-animator-2018",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "Animator 2020 reissue question not researched further (budget)"
+  },
+  {
+   "key": "dlp/2018/my-cat-2018/yzma",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "Kronk on pin still only per MPC; no new evidence"
+  },
+  {
+   "key": "dlp/2018/pirates-and-princesses-2018",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold retained (420): no new evidence"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018/tod",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold retained (462): no new evidence"
+  },
+  {
+   "key": "dlp/2018/cherry-blossom-girl-july-2018",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold retained: no new evidence"
+  },
+  {
+   "key": "dlp/2018/valentines-2018",
+   "field": "coverage",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "hold retained: Aug postcard sets are a different release; Valentine structure still unknown"
+  },
+  {
+   "key": "dlp/2018/christmas-chip-and-dale-trade-set",
+   "field": "lead",
+   "searched": "28 standard searches; dein-dlrp, passiondlp, DPB, MPC",
+   "note": "reseller mickeyundco lists 'DLRP 2018 Trade Set Chip Chap Weihnachten' (34,99€ resale); may be a DLP pack; not evidence"
+  }
+ ],
+ "discovery_notes": "Follow-up 7 of B013 (packets 213,420,462,494,517,538,558). 28 standard searches, snippets only. dein-dlrp Aug 2018 page now indexed: 11 Aug LEs (Tivoli 175, My Cat Si and Am, Donald Phantom Manor), RVG trio names, Christmas OE singles, 4-pin Christmas set, postcard sets. MPC 188825 confirms Donald on Fun Adventures Phantom Manor (hold released). Back to Neverland event (26 May) Tick-Tock LE 425 new."
+}

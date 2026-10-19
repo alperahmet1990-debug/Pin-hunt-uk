@@ -1,0 +1,761 @@
+{
+ "packet_id": "b434-dlp-2020-2021-fu14-2026-10-19",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "discovery_notes": "B434 follow-up 14 of B044 (DLP 2020-2021). rp84 site: queries returned only already-known pages. myPinCentral per-pin pages yielded: Animators Dolls 2021 designs Moana & Pua, Merida, Tiana & Naveen, Lilo & Scrump (releases four designs of the animators-june-2021 hold; Pocahontas stays held, 2021 vs 2022), Stitch Pulling Eyelids 12 Feb 2021 EUR 8, Daisy Christmas 2021 LE 500 (parade-series link inferred). Snippet-only evidence.",
+ "sources": [
+  {
+   "url": "https://mypincentral.com/pin/143390",
+   "title": "myPinCentral pin 143390 (Moana Animators Dolls)",
+   "publisher": "mypincentral.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/143404",
+   "title": "myPinCentral pin 143404 (Merida Animators Dolls)",
+   "publisher": "mypincentral.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/143399",
+   "title": "myPinCentral pin 143399 (Tiana & Naveen Animators Dolls)",
+   "publisher": "mypincentral.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/143396",
+   "title": "myPinCentral pin 143396 (Lilo & Scrump Animators Dolls)",
+   "publisher": "mypincentral.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/143406",
+   "title": "myPinCentral pin 143406 (Merida archery 2022; series table)",
+   "publisher": "mypincentral.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-animators-pin-collection-at-disneyland-paris/",
+   "title": "Disney Animators' Pin Collection at Disneyland Paris - Disney Pins Blog",
+   "publisher": "disneypinsblog.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/124914",
+   "title": "myPinCentral pin 124914 (Stitch Pulling Eyelids)",
+   "publisher": "mypincentral.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/80893",
+   "title": "myPinCentral pin 80893 (Daisy Christmas 2021 LE 500)",
+   "publisher": "mypincentral.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2021/10/26/mickeys-dazzling-christmas-parade-pins-releasing-at-disneyland-paris-on-november-13th-2021/",
+   "title": "\"Mickey's Dazzling Christmas Parade\" Pins Releasing at Disneyland Paris on November 13th, 2021 - Mousesteps",
+   "publisher": "mousesteps.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-december-2021-pin-releases",
+   "title": "Disneyland Paris December 2021 Pin Releases",
+   "publisher": "disneypinsblog.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/113327",
+   "title": "myPinCentral pin 113327 (Spider-Man Santa, DLP Marvel)",
+   "publisher": "mypincentral.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/89610",
+   "title": "myPinCentral pin 89610 (Groot pumpkin, Halloween 2022)",
+   "publisher": "mypincentral.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dlp.rp84.fr/pins/2493-tic-tac-2021/",
+   "title": "Pin's TIC & TAC 2021, référencé par DLP par RP84",
+   "publisher": "dlp.rp84.fr",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [],
+ "pins": [
+  {
+   "pin_key": "dlp/2021/animators-june-2021/moana-pua",
+   "set_key": "dlp/2021/animators-june-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Animators Dolls - Moana",
+     "source_url": "https://mypincentral.com/pin/143390",
+     "method": "search_snippet",
+     "note": "myPinCentral per-pin page, Animators Dolls series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Moana",
+      "Pua"
+     ],
+     "source_url": "https://mypincentral.com/pin/143390",
+     "method": "search_snippet",
+     "note": "Characters shown on the pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Moana",
+     "source_url": "https://mypincentral.com/pin/143390",
+     "method": "search_snippet",
+     "note": "Central figure"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/143390",
+     "method": "search_snippet",
+     "note": "Listing calls it a limited-edition pin of the series; see field note"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://mypincentral.com/pin/143390",
+     "method": "search_snippet",
+     "note": "Released in 2021 by Disneyland Paris per listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://mypincentral.com/pin/143390",
+     "method": "search_snippet",
+     "note": "Origin Disneyland Paris"
+    },
+    {
+     "field": "visual_description",
+     "value": "Moana at top with Pua below",
+     "source_url": "https://mypincentral.com/pin/143390",
+     "method": "search_snippet",
+     "note": "Paraphrased from listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/143390",
+     "method": "search_snippet",
+     "note": "Own per-pin listing"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://disneypinsblog.com/disney-animators-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "DPB June 2021: five pins, EUR 8 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://disneypinsblog.com/disney-animators-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/animators-june-2021/merida",
+   "set_key": "dlp/2021/animators-june-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Animators Dolls - Merida",
+     "source_url": "https://mypincentral.com/pin/143404",
+     "method": "search_snippet",
+     "note": "myPinCentral per-pin page, Animators Dolls series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Merida"
+     ],
+     "source_url": "https://mypincentral.com/pin/143404",
+     "method": "search_snippet",
+     "note": "Characters shown on the pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Merida",
+     "source_url": "https://mypincentral.com/pin/143404",
+     "method": "search_snippet",
+     "note": "Central figure"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/143404",
+     "method": "search_snippet",
+     "note": "Listing calls it a limited-edition pin of the series; see field note"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://mypincentral.com/pin/143404",
+     "method": "search_snippet",
+     "note": "Released in 2021 by Disneyland Paris per listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://mypincentral.com/pin/143404",
+     "method": "search_snippet",
+     "note": "Origin Disneyland Paris"
+    },
+    {
+     "field": "visual_description",
+     "value": "Merida in dark blue dress, centred",
+     "source_url": "https://mypincentral.com/pin/143404",
+     "method": "search_snippet",
+     "note": "Paraphrased from listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/143404",
+     "method": "search_snippet",
+     "note": "Own per-pin listing"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://disneypinsblog.com/disney-animators-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "DPB June 2021: five pins, EUR 8 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://disneypinsblog.com/disney-animators-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/animators-june-2021/tiana-naveen",
+   "set_key": "dlp/2021/animators-june-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Animators Dolls - Tiana & Naveen",
+     "source_url": "https://mypincentral.com/pin/143399",
+     "method": "search_snippet",
+     "note": "myPinCentral per-pin page, Animators Dolls series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tiana",
+      "Naveen"
+     ],
+     "source_url": "https://mypincentral.com/pin/143399",
+     "method": "search_snippet",
+     "note": "Characters shown on the pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Tiana",
+     "source_url": "https://mypincentral.com/pin/143399",
+     "method": "search_snippet",
+     "note": "Central figure"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/143399",
+     "method": "search_snippet",
+     "note": "Listing calls it a limited-edition pin of the series; see field note"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://mypincentral.com/pin/143399",
+     "method": "search_snippet",
+     "note": "Released in 2021 by Disneyland Paris per listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://mypincentral.com/pin/143399",
+     "method": "search_snippet",
+     "note": "Origin Disneyland Paris"
+    },
+    {
+     "field": "visual_description",
+     "value": "Tiana in green dress with tiara, with Prince Naveen",
+     "source_url": "https://mypincentral.com/pin/143399",
+     "method": "search_snippet",
+     "note": "Paraphrased from listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/143399",
+     "method": "search_snippet",
+     "note": "Own per-pin listing"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://disneypinsblog.com/disney-animators-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "DPB June 2021: five pins, EUR 8 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://disneypinsblog.com/disney-animators-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/animators-june-2021/lilo-scrump",
+   "set_key": "dlp/2021/animators-june-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Animators Dolls - Lilo & Scrump",
+     "source_url": "https://mypincentral.com/pin/143396",
+     "method": "search_snippet",
+     "note": "myPinCentral per-pin page, Animators Dolls series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lilo",
+      "Scrump"
+     ],
+     "source_url": "https://mypincentral.com/pin/143396",
+     "method": "search_snippet",
+     "note": "Characters shown on the pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Lilo",
+     "source_url": "https://mypincentral.com/pin/143396",
+     "method": "search_snippet",
+     "note": "Central figure"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/143396",
+     "method": "search_snippet",
+     "note": "Listing calls it a limited-edition pin of the series; see field note"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://mypincentral.com/pin/143396",
+     "method": "search_snippet",
+     "note": "Released in 2021 by Disneyland Paris per listing"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://mypincentral.com/pin/143396",
+     "method": "search_snippet",
+     "note": "Origin Disneyland Paris"
+    },
+    {
+     "field": "visual_description",
+     "value": "Lilo in red dress at centre holding Scrump",
+     "source_url": "https://mypincentral.com/pin/143396",
+     "method": "search_snippet",
+     "note": "Paraphrased from listing"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/143396",
+     "method": "search_snippet",
+     "note": "Own per-pin listing"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://disneypinsblog.com/disney-animators-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "DPB June 2021: five pins, EUR 8 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://disneypinsblog.com/disney-animators-pin-collection-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/stitch-february-2021/pulling-eyelids",
+   "set_key": "dlp/2021/stitch-february-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Pulling Eyelids",
+     "source_url": "https://mypincentral.com/pin/124914",
+     "method": "search_snippet",
+     "note": "Listing title; also titled Exasperated Stitch"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://mypincentral.com/pin/124914",
+     "method": "search_snippet",
+     "note": "Stitch"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://mypincentral.com/pin/124914",
+     "method": "search_snippet",
+     "note": "Stitch"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-12",
+     "source_url": "https://mypincentral.com/pin/124914",
+     "method": "search_snippet",
+     "note": "Release date 12 February 2021, origin Disneyland Paris"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://mypincentral.com/pin/124914",
+     "method": "search_snippet",
+     "note": "2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://mypincentral.com/pin/124914",
+     "method": "search_snippet",
+     "note": "Origin DLP"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://mypincentral.com/pin/124914",
+     "method": "search_snippet",
+     "note": "EUR 8.00"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://mypincentral.com/pin/124914",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "visual_description",
+     "value": "Green enamel pin of a frustrated Stitch tugging at his eyelids",
+     "source_url": "https://mypincentral.com/pin/124914",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/124914",
+     "method": "search_snippet",
+     "note": "Own per-pin listing"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/christmas-le-november-2021/daisy-candy-cane",
+   "set_key": "dlp/2021/christmas-le-november-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Daisy Duck Christmas 2021 (candy canes)",
+     "source_url": "https://mypincentral.com/pin/80893",
+     "method": "search_snippet",
+     "note": "Descriptive name; listing has no formal title in snippet"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Daisy Duck"
+     ],
+     "source_url": "https://mypincentral.com/pin/80893",
+     "method": "search_snippet",
+     "note": "Daisy on the left"
+    },
+    {
+     "field": "main_character",
+     "value": "Daisy Duck",
+     "source_url": "https://mypincentral.com/pin/80893",
+     "method": "search_snippet",
+     "note": "Daisy"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/80893",
+     "method": "search_snippet",
+     "note": "Back: 2021 Disneyland Paris edition limitee XXX/500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://mypincentral.com/pin/80893",
+     "method": "search_snippet",
+     "note": "XXX/500 on back"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://mypincentral.com/pin/80893",
+     "method": "search_snippet",
+     "note": "Back marked 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://mypincentral.com/pin/80893",
+     "method": "search_snippet",
+     "note": "Back marked Disneyland Paris"
+    },
+    {
+     "field": "visual_description",
+     "value": "Daisy beside a Christmas tree with snowflake and candy canes on light blue",
+     "source_url": "https://mypincentral.com/pin/80893",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/80893",
+     "method": "search_snippet",
+     "note": "Own per-pin listing"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2021/animators-june-2021/moana-pua",
+   "field": "pin_structure",
+   "searched": "site:mypincentral.com Disneyland Paris Animators 2021 (143390)",
+   "note": "release evidence: dlp/2021/animators-june-2021 hold released for this design: myPinCentral per-pin page 143390 (Animators Dolls series, DLP 2021) names it individually; matches DPB June 2021 character list"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/moana-pua",
+   "field": "edition_type",
+   "searched": "mypincentral 143404 / 143406",
+   "note": "field note: per-pin pages say limited edition, but 143406 series table stats show open edition and DPB gives EUR 8 (OE-level price); edition size not stated"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/moana-pua",
+   "field": "release_date",
+   "searched": "site:mypincentral.com Animators Dolls 2021",
+   "note": "field note: exact date not on per-pin page; June 2021 from DPB post; 143406 series table labels some members (Tiana, Pocahontas) 2022"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/merida",
+   "field": "pin_structure",
+   "searched": "site:mypincentral.com Disneyland Paris Animators 2021 (143404)",
+   "note": "release evidence: dlp/2021/animators-june-2021 hold released for this design: myPinCentral per-pin page 143404 (Animators Dolls series, DLP 2021) names it individually; matches DPB June 2021 character list"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/merida",
+   "field": "edition_type",
+   "searched": "mypincentral 143404 / 143406",
+   "note": "field note: per-pin pages say limited edition, but 143406 series table stats show open edition and DPB gives EUR 8 (OE-level price); edition size not stated"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/merida",
+   "field": "release_date",
+   "searched": "site:mypincentral.com Animators Dolls 2021",
+   "note": "field note: exact date not on per-pin page; June 2021 from DPB post; 143406 series table labels some members (Tiana, Pocahontas) 2022"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/tiana-naveen",
+   "field": "pin_structure",
+   "searched": "site:mypincentral.com Disneyland Paris Animators 2021 (143399)",
+   "note": "release evidence: dlp/2021/animators-june-2021 hold released for this design: myPinCentral per-pin page 143399 (Animators Dolls series, DLP 2021) names it individually; matches DPB June 2021 character list"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/tiana-naveen",
+   "field": "edition_type",
+   "searched": "mypincentral 143404 / 143406",
+   "note": "field note: per-pin pages say limited edition, but 143406 series table stats show open edition and DPB gives EUR 8 (OE-level price); edition size not stated"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/tiana-naveen",
+   "field": "release_date",
+   "searched": "site:mypincentral.com Animators Dolls 2021",
+   "note": "field note: exact date not on per-pin page; June 2021 from DPB post; 143406 series table labels some members (Tiana, Pocahontas) 2022"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/lilo-scrump",
+   "field": "pin_structure",
+   "searched": "site:mypincentral.com Disneyland Paris Animators 2021 (143396)",
+   "note": "release evidence: dlp/2021/animators-june-2021 hold released for this design: myPinCentral per-pin page 143396 (Animators Dolls series, DLP 2021) names it individually; matches DPB June 2021 character list"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/lilo-scrump",
+   "field": "edition_type",
+   "searched": "mypincentral 143404 / 143406",
+   "note": "field note: per-pin pages say limited edition, but 143406 series table stats show open edition and DPB gives EUR 8 (OE-level price); edition size not stated"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/lilo-scrump",
+   "field": "release_date",
+   "searched": "site:mypincentral.com Animators Dolls 2021",
+   "note": "field note: exact date not on per-pin page; June 2021 from DPB post; 143406 series table labels some members (Tiana, Pocahontas) 2022"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/tiana-naveen",
+   "field": "characters",
+   "searched": "mypincentral 143399",
+   "note": "field note: listing adds Prince Naveen; DPB list names only Tiana"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021",
+   "field": "pocahontas",
+   "searched": "mypincentral 143394 DLP Animator Doll Series Pocahontas",
+   "note": "hold stays for Pocahontas design: only seen in 143406 series table as 'DLP - Animator Doll Series - 2022 - Pocahontas' (143394); per-pin page not indexed; 2021 vs 2022 unresolved"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021",
+   "field": "members",
+   "searched": "site:mypincentral.com Animators Dolls Pocahontas Meeko",
+   "note": "Pin 143401 Pocahontas with Meeko (baby Pocahontas) seen without series/year; not recorded"
+  },
+  {
+   "key": "dlp/2021/stitch-february-2021/pulling-eyelids",
+   "field": "set membership",
+   "searched": "site:mypincentral.com Disneyland Paris February 2021",
+   "note": "field note: matched to passiondlp's 2 surprise Stitch pins 12 Feb 2021 by date and EUR 8; second design still unnamed (crying Stitch 138467 'PIN TRADING 2021' undated, likely stitch-august-2021/crying)"
+  },
+  {
+   "key": "dlp/2021/stitch-february-2021",
+   "field": "second pin",
+   "searched": "site:mypincentral.com Disneyland Paris 2021 Stitch February 2021",
+   "note": "Second 12 Feb 2021 Stitch design not found"
+  },
+  {
+   "key": "dlp/2021/christmas-le-november-2021/daisy-candy-cane",
+   "field": "set membership",
+   "searched": "mypincentral 80893 Daisy Christmas",
+   "note": "field note: link to 13 Nov 2021 Dazzling Christmas Parade LE 500 EUR 16 series (Mousesteps) is inference from 2021/LE 500/Christmas; release date and price not on the pin page"
+  },
+  {
+   "key": "dlp/2021/christmas-le-november-2021",
+   "field": "members",
+   "searched": "site:mypincentral.com Christmas 2021 EDITION LIMITEE 500 Chip Dale Marie",
+   "note": "Hold stays for Marie / Chip & Dale split; parade floats designs other than Daisy not found"
+  },
+  {
+   "key": "dlp/2021/101-dalmatians-december-2021",
+   "field": "designs",
+   "searched": "https://disneypinsblog.com/blogs/news/disneyland-paris-december-2021-pin-releases",
+   "note": "DPB Dec 2021 post captions only: Genie & Cruella LE, Animator & 101 Dalmatians OE, Marvel Christmas & Mickey Minnie, medal pins; designs not described"
+  },
+  {
+   "key": "dlp/2021/december-2021-le",
+   "field": "marvel christmas",
+   "searched": "site:mypincentral.com Disneyland Paris Marvel Christmas 2021",
+   "note": "lead: myPinCentral 113327 Spider-Man in Santa hat with web gift sack, DLP Marvel back stamp; year not stated, not recorded"
+  },
+  {
+   "key": "dlp/2021/guardians-of-the-galaxy-june-2021",
+   "field": "groot pair",
+   "searched": "site:dlp.rp84.fr Groot; site:mypincentral.com Disneyland Paris Groot",
+   "note": "Groot pair 19 Jun 2021 not found; only DLP Groot found is Halloween pumpkin 2022 (89610) - lead for 2022 cell"
+  },
+  {
+   "key": "dlp/2021/valentines-2021",
+   "field": "designs",
+   "searched": "site:dlp.rp84.fr Saint Valentin 2021; site:mypincentral.com Valentine 2021 700",
+   "note": "Three LE designs still not found; rp84 14 Feb 2021 Tic & Tac 2021 OE 9.99 is the existing dated-2021/chip-dale, not a Valentine pin"
+  },
+  {
+   "key": "dlp/2021/pirates-november-2021",
+   "field": "designs",
+   "searched": "site:mypincentral.com Pirates 2021 Goofy",
+   "note": "No per-pin Pirates Goofy / Chip & Dale / skull logo pages found; hold stays"
+  },
+  {
+   "key": "dlp/2021/star-wars-patrice-girod-november-2021",
+   "field": "designs",
+   "searched": "site:mypincentral.com Return of the Jedi 2021 500",
+   "note": "Other three RotJ posters not found (mypincentral RotJ hits are non-DLP)"
+  },
+  {
+   "key": "dlp/2021/delayed-seasonal-june-2021",
+   "field": "designs",
+   "searched": "site:dlp.rp84.fr Paques 2021 700",
+   "note": "Easter / seasonal LE 700 June 2021 designs not found"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021",
+   "field": "designs",
+   "searched": "-",
+   "note": "Not searched this round (budget)"
+  },
+  {
+   "key": "dlp/2021/pin-trading-anniversary-2021",
+   "field": "designs",
+   "searched": "site:mypincentral.com Pin Trading Day 2021",
+   "note": "Pin Trading Day 21 Aug 2021 designs not found"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/moana-pua",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: year and edition conflict - DPB dates the Animators collection June 2021 and per-pin pages say LE, but a myPinCentral series table labels members 2022 and open edition; confirm year and edition"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/merida",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: year and edition conflict - DPB dates the Animators collection June 2021 and per-pin pages say LE, but a myPinCentral series table labels members 2022 and open edition; confirm year and edition"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/tiana-naveen",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: year and edition conflict - DPB dates the Animators collection June 2021 and per-pin pages say LE, but a myPinCentral series table labels members 2022 and open edition; confirm year and edition"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021/lilo-scrump",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: year and edition conflict - DPB dates the Animators collection June 2021 and per-pin pages say LE, but a myPinCentral series table labels members 2022 and open edition; confirm year and edition"
+  }
+ ]
+}

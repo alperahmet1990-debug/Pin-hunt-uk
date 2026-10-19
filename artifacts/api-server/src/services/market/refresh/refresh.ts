@@ -21,7 +21,9 @@
  * (source_id, external_id, pin_id), with last_seen_at = now and expires_at
  * capped by the source's retention_days (the 049 trigger caps it again). A
  * listing accepted for two pins is kept against the better match only. No
- * images, seller details, listed prices or medians are stored.
+ * images, seller details, location text, listed prices or medians are
+ * stored. eBay sold rows carry region provenance (054, #450): the website
+ * searched, the item_location filter sent and the derived item country.
  */
 import fs from "node:fs";
 import type { SoldgraphClient } from "../../soldgraph/client";
@@ -35,9 +37,12 @@ import {
   REFRESH_SOURCE_IDS,
   buildRefreshAdapters,
   firstQuery,
+  locationFilters,
   refreshSource,
   rowContext,
+  sourceParams,
 } from "./sources";
+import { SOLDGRAPH_EBAY_SOLD_ROUTE } from "../adapters/soldgraph-ebay-sold";
 import type {
   BudgetStatus,
   ListingKey,
@@ -278,6 +283,12 @@ export function toListingRow(c: CollectedListing, pinUuid: string, retentionDays
     parsed: parsedAttributes(c),
     last_seen_at: at,
     expires_at: new Date(now + retentionDays * DAY_MS).toISOString(),
+    // Region provenance (054, #450): bounded values only; no location text.
+    site: l.site && /^(uk|fr|us)$/.test(l.site) ? l.site : null,
+    location_filter: l.locationFilter ?? null,
+    item_country: l.itemCountry && /^[A-Z]{2}$/.test(l.itemCountry) ? l.itemCountry : null,
+    displayed_currency: l.displayedCurrency && /^[A-Z]{3}$/.test(l.displayedCurrency) ? l.displayedCurrency : null,
+    price_is_converted: l.priceIsConverted ?? null,
   };
 }
 
@@ -349,6 +360,8 @@ export interface RefreshPlan {
   missingSources: string[];
   /** Requested sources whose market_sources row is not enabled. */
   disabledSources: string[];
+  /** Requested sources and the `item_location` filter each search sends (null = none). */
+  filters: Array<{ sourceId: string; itemLocation: string | null }>;
   /** Unique paid searches across the run (cross-pin dedupe applied). */
   uniqueSearches: number;
   /** Planned searches that reuse another pin's identical search. */
@@ -394,7 +407,15 @@ async function prepare(opts: RefreshOptions, deps: RefreshDeps, now: number): Pr
   const pins = opts.pinhuntIds.map(id => byId.get(id)).filter((p): p is PinRef => p !== undefined);
   const missingPins = opts.pinhuntIds.filter(id => !byId.has(id));
 
-  const lastSeen = await deps.store.lastSeen(pins.map(p => p.uuid), runnable, now);
+  // Only rows fetched with the same item_location count as cached, so rows
+  // stored without the domestic filter never block a domestic search.
+  const filters = locationFilters(runnable);
+  const lastSeen = await deps.store.lastSeen(
+    pins.map(p => p.uuid),
+    runnable,
+    now,
+    new Map(runnable.filter(id => refreshSource(id)?.route === SOLDGRAPH_EBAY_SOLD_ROUTE).map(id => [id, filters.get(id) ?? null])),
+  );
   const adapters = buildRefreshAdapters(PLANNING_CLIENT, runnable, opts.queriesPerSource);
   const perPinCreditLimit = adapters.reduce((n, a) => n + a.creditsPerSearch * opts.queriesPerSource, 0);
 
@@ -426,6 +447,7 @@ async function prepare(opts: RefreshOptions, deps: RefreshDeps, now: number): Pr
       missingPins,
       missingSources,
       disabledSources,
+      filters: opts.sources.map(id => ({ sourceId: id, itemLocation: refreshSource(id)?.itemLocation ?? null })),
       uniqueSearches: costByKey.size,
       sharedSearches: planned - costByKey.size,
       worstCaseCredits,
@@ -747,6 +769,8 @@ export interface ProbeResult {
   sourceId: string;
   route: string;
   country: string;
+  /** `item_location` the search sends; null = none. */
+  itemLocation: string | null;
   /** Whether a query could be built (the query text itself is the pin's own catalogue title). */
   query: string | null;
   budget: BudgetStatus;
@@ -763,6 +787,8 @@ export interface ProbeResult {
   /** matchListing v2 on mapped rows: accepted count and rejection reasons (counts only). */
   matchAccepted?: number;
   matchRejected?: Record<string, number>;
+  /** Mapped rows by ISO-2 country parsed from the location text ("unknown" when unsure). Counts only. */
+  itemCountries?: Record<string, number>;
   /** Key names (never values) of Soldgraph's response and its `result`. */
   responseKeys?: { body: string[]; result: string[] };
   error?: string;
@@ -786,6 +812,7 @@ export async function runProbe(opts: ProbeOptions, deps: RefreshDeps): Promise<P
     sourceId: spec.id,
     route: spec.route,
     country: spec.country,
+    itemLocation: spec.itemLocation,
     query,
     budget,
     remainingCredits,
@@ -807,12 +834,13 @@ export async function runProbe(opts: ProbeOptions, deps: RefreshDeps): Promise<P
   try {
     const res = await deps.createClient().search<unknown>(
       spec.route,
-      { q: query!, country: spec.country },
+      { ...sourceParams(spec), q: query! },
       { pinId: ref!.uuid, maxPages: 1 },
     );
     const ctx = rowContext(spec, now);
     const dropped: Record<string, number> = {};
     const matchRejected: Record<string, number> = {};
+    const itemCountries: Record<string, number> = {};
     let mapped = 0;
     let withPrice = 0;
     let withSoldDate = 0;
@@ -828,6 +856,10 @@ export async function runProbe(opts: ProbeOptions, deps: RefreshDeps): Promise<P
         continue;
       }
       mapped += 1;
+      if (out.itemCountry !== undefined) {
+        const c = out.itemCountry ?? "unknown";
+        itemCountries[c] = (itemCountries[c] ?? 0) + 1;
+      }
       if (out.price !== null) withPrice += 1;
       if (out.soldDate) withSoldDate += 1;
       const m = matchListing(ref!.pin, out.title, { mode: "v2", lang: ctx.lang });
@@ -849,6 +881,7 @@ export async function runProbe(opts: ProbeOptions, deps: RefreshDeps): Promise<P
       dropped,
       matchAccepted,
       matchRejected,
+      ...(Object.keys(itemCountries).length ? { itemCountries } : {}),
       ...(res.responseKeys ? { responseKeys: res.responseKeys } : {}),
     };
   } catch (err) {

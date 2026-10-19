@@ -38,6 +38,8 @@ function sold(price: number | null, age = 10, over: Partial<ValuationEvidence> &
     soldDate: daysAgo(age),
     bestOfferAccepted: false,
     matchScore: 100,
+    // Fetched with the domestic filter (#450): region-verified eBay sold evidence.
+    locationFilter: "domestic",
     ...over,
   };
 }

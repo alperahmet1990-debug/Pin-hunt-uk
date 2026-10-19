@@ -17,6 +17,9 @@
  *   priceKind           →  price_kind
  *   bestOfferAccepted   →  best_offer_accepted
  *   url                 →  listing_url
+ *   site, locationFilter, itemCountry, displayedCurrency, priceIsConverted
+ *                       →  site, location_filter, item_country,
+ *                          displayed_currency, price_is_converted (054)
  *
  * `listedPrice`, `bestOfferAcceptedCount`, `medianExcludingBestOffer` and
  * `condition` have no column in 049; they are kept in memory for the
@@ -32,6 +35,7 @@
  */
 import type { CataloguePin, MarketCode } from "@workspace/pin-repository";
 import type { MatchLang } from "./matching";
+import type { ItemLocation } from "./region";
 
 /** market_sources.market (same as market_valuations.market). */
 export type Market = MarketCode;
@@ -82,6 +86,20 @@ export interface NormalisedListing {
   /** https link on the marketplace's own domain, query string removed; null otherwise. */
   url: string | null;
   condition: string | null;
+  /**
+   * Region provenance (SG-13, #450; columns from migration 054). Set by the
+   * eBay sold adapter; other adapters leave them out (stored as null).
+   *   site              Soldgraph `country` searched: "uk" | "fr" | "us"
+   *   locationFilter    `item_location` sent; null = none sent
+   *   itemCountry       ISO-2 country parsed from the location text; null = unsure
+   *   displayedCurrency currency the row itself stated for its price
+   *   priceIsConverted  only when the provider says so; null = unknown
+   */
+  site?: string | null;
+  locationFilter?: ItemLocation | null;
+  itemCountry?: string | null;
+  displayedCurrency?: string | null;
+  priceIsConverted?: boolean | null;
 }
 
 /**

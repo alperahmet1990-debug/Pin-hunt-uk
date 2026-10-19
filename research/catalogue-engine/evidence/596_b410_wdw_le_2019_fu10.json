@@ -1,0 +1,2218 @@
+{
+ "packet_id": "596_b410_wdw_le_2019_fu10",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "discovery_notes": "Follow-up 10 of B002 (WDW LE 2019). 30 web searches. New: Valentine's Day 2019 (WDW, design unknown); shared Lunar New Year, Kingdom Consoles Aladdin/Lion King and Fine & Dandy Fall 2019 keyed under wdw with variant notes to dlr keys; WDW I Heart Gaming series (Aladdin, A Goofy Movie, TaleSpin, Gummi Bears) plus DLR Lion King; Holiday Gifting Bunny Gets the Pancake and small world; Holiday 2019 gift card pins (4, held for design confirmation); WDW Galaxy's Edge monthly Oct-Dec (8 new); Landing 2019 BB-8; DVC 2019 member pins (3); WDW cast member pins (CM 2019, DHS 30th, Star Tours 30th, Incredibles 15th). No holds released.",
+ "sources": [
+  {
+   "url": "https://disneydiary.com/2018/12/disney-world-january-2019-pin-releases-include-festival-of-arts-pins/",
+   "title": "Disney World January 2019 pin releases include Festival of Arts pins",
+   "publisher": "Disney Diary",
+   "published_date": "2018-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+   "title": "New Disney Pins January 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+   "title": "New Disney Pins February 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+   "title": "New Disney Pins March 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/03/march-pin-releases-for-disneyland-walt-disney-world-resort-features-food-and-wine-pins-figment-medal-of-honor/",
+   "title": "March Pin Releases for Disneyland, Walt Disney World Resort Features Food and Wine Pins, Figment Medal of Honor",
+   "publisher": "WDW News Today",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://ducktalks.com/2019/02/22/kingdom-consoles-and-i-%E2%99%A5%EF%B8%8F-gaming-pins/",
+   "title": "Kingdom Consoles and I Heart Gaming Pins",
+   "publisher": "DuckTalks",
+   "published_date": "2019-02-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+   "title": "I Heart Gaming Disney Pins Series Showcase",
+   "publisher": "DuckTalks",
+   "published_date": "2019-12-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://ducktalks.com/2019/08/10/kingdom-consoles-and-i-heart-gaming-disney-pin-series-releases-announced-for-the-rest-of-the-year/",
+   "title": "Kingdom Consoles and I Heart Gaming Disney Pin Series Releases Announced for the Rest of the Year",
+   "publisher": "DuckTalks",
+   "published_date": "2019-08-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/10/photos-new-ornament-box-pins-land-at-walt-disney-world/",
+   "title": "PHOTOS: New Limited Edition Holiday Ornament Boxed Gifting Pins Land at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": "2019-10-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/holiday-gifting-2019-disney-pin-releases",
+   "title": "Holiday Gifting 2019 Disney Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-holiday-2019-gift-card-pins/",
+   "title": "Disney Holiday 2019 Gift Card Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/11/photos-new-100-disney-gift-cards-with-limited-edition-holiday-pins-now-available-at-walt-disney-world/",
+   "title": "PHOTOS: New $100 Disney Gift Cards with Limited Edition Holiday Pins Now Available at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+   "title": "New Disney Pins October 2019 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+   "title": "New Disney Pin November 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+   "title": "New Disney Pins December 2019 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-4",
+   "title": "New Disney Pins August 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dvcnews.com/index.php/dvc-program/member-benefits/news-66853/4497-second-member-exclusive-pin-of-2019-arrives",
+   "title": "Second Member-Exclusive Pin of 2019 Arrives",
+   "publisher": "DVC News",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://worldofwalt.com/september-2019-pin-releases.html",
+   "title": "September 2019 Pin Releases",
+   "publisher": "World of Walt",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-world-cast-member-2019-pin",
+   "title": "Disney World Cast Member 2019 Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disneys-hollywood-studios-30th-anniversary-cast-member-pin/",
+   "title": "Disney's Hollywood Studios 30th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/star-tours-30-years-wdw-cast-member-pin",
+   "title": "Star Tours 30 Years WDW Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-incredibles-15th-anniversary-cast-member-pin/",
+   "title": "The Incredibles 15th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2019/valentines-day-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Valentine's Day 2019",
+     "source_url": "https://disneydiary.com/2018/12/disney-world-january-2019-pin-releases-include-festival-of-arts-pins/",
+     "method": "search_snippet",
+     "note": "WDW January 2019 schedule includes a Valentine's Day pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneydiary.com/2018/12/disney-world-january-2019-pin-releases-include-festival-of-arts-pins/",
+     "method": "search_snippet",
+     "note": "listed among WDW January 2019 releases"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/lunar-new-year",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Lunar New Year 2019",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "Lunar New Year 2019 Disney Parks pin"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/i-heart-gaming",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "I Heart Gaming (WDW releases)",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "series alternated monthly between DLR and WDW in 2019"
+    },
+    {
+     "field": "format",
+     "value": "series of single pins",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "bimonthly single-pin releases"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "WDW releases limited to 1,500 vs 2,500 at DLR"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "$17.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "WDW-month releases"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/holiday-gift-card-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Holiday 2019 Gift Card Pins",
+     "source_url": "https://disneypinsblog.com/disney-holiday-2019-gift-card-pins/",
+     "method": "search_snippet",
+     "note": "10th edition of the holiday gift card pin series"
+    },
+    {
+     "field": "format",
+     "value": "pins sold with gift card",
+     "source_url": "https://disneypinsblog.com/disney-holiday-2019-gift-card-pins/",
+     "method": "search_snippet",
+     "note": "pin comes with a $100 gift card purchase"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-holiday-2019-gift-card-pins/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2655,
+     "source_url": "https://disneypinsblog.com/disney-holiday-2019-gift-card-pins/",
+     "method": "search_snippet",
+     "note": "LE 2,655"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-19",
+     "source_url": "https://disneypinsblog.com/disney-holiday-2019-gift-card-pins/",
+     "method": "search_snippet",
+     "note": "from 19 Nov 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World and Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/disney-holiday-2019-gift-card-pins/",
+     "method": "search_snippet",
+     "note": "select WDW and DLR locations"
+    },
+    {
+     "field": "edition_size",
+     "value": 2655,
+     "source_url": "https://wdwnt.com/2019/11/photos-new-100-disney-gift-cards-with-limited-edition-holiday-pins-now-available-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "LE 2,655"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://wdwnt.com/2019/11/photos-new-100-disney-gift-cards-with-limited-edition-holiday-pins-now-available-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "four card designs, each with a matching pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://wdwnt.com/2019/11/photos-new-100-disney-gift-cards-with-limited-edition-holiday-pins-now-available-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "available at WDW"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/fine-and-dandy-fall-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Fine & Dandy Fall 2019 (Dapper Day)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Dapper Day Fall 2019 pin"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/dvc-member-exclusive-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Vacation Club member-exclusive pins 2019",
+     "source_url": "https://dvcnews.com/index.php/dvc-program/member-benefits/news-66853/4497-second-member-exclusive-pin-of-2019-arrives",
+     "method": "search_snippet",
+     "note": "series of 2019 DVC member-exclusive pins"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://dvcnews.com/index.php/dvc-program/member-benefits/news-66853/4497-second-member-exclusive-pin-of-2019-arrives",
+     "method": "search_snippet",
+     "note": "sold at both resorts with DVC member ID"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/cast-member-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Walt Disney World Cast Member 2019",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-world-cast-member-2019-pin",
+     "method": "search_snippet",
+     "note": "annual cast member pin"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2019/valentines-day-2019/pin",
+   "set_key": "wdw/2019/valentines-day-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Valentine's Day 2019 pin",
+     "source_url": "https://disneydiary.com/2018/12/disney-world-january-2019-pin-releases-include-festival-of-arts-pins/",
+     "method": "search_snippet",
+     "note": "one Valentine's Day pin among 13 WDW January 2019 pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01",
+     "source_url": "https://disneydiary.com/2018/12/disney-world-january-2019-pin-releases-include-festival-of-arts-pins/",
+     "method": "search_snippet",
+     "note": "January 2019 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneydiary.com/2018/12/disney-world-january-2019-pin-releases-include-festival-of-arts-pins/",
+     "method": "search_snippet",
+     "note": "WDW release"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneydiary.com/2018/12/disney-world-january-2019-pin-releases-include-festival-of-arts-pins/",
+     "method": "search_snippet",
+     "note": "a single Valentine's Day pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/lunar-new-year/park-pin",
+   "set_key": "wdw/2019/lunar-new-year",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lunar New Year 2019 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "general Lunar New Year 2019 park pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "$16.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "at DLR 25 Jan 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-january-2019-week-4",
+     "method": "search_snippet",
+     "note": "DLR 25 Jan; due at WDW the following week"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/kingdom-consoles/aladdin",
+   "set_key": "wdw/2019/kingdom-consoles",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kingdom Consoles - Aladdin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "second pin in the monthly Kingdom Consoles collection"
+    },
+    {
+     "field": "set_position",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "second in the collection"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "Aladdin video game console pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "DLR and WDW 14 Feb 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "shared release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/kingdom-consoles/the-lion-king",
+   "set_key": "wdw/2019/kingdom-consoles",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kingdom Consoles - The Lion King",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "third in the monthly Kingdom Consoles collection"
+    },
+    {
+     "field": "set_position",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "third pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE 4,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "DLR and WDW 14 Mar 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "shared release"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://wdwnt.com/2019/03/march-pin-releases-for-disneyland-walt-disney-world-resort-features-food-and-wine-pins-figment-medal-of-honor/",
+     "method": "search_snippet",
+     "note": "listed in WDW March 2019 pin releases"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "slider",
+      "dangle",
+      "magnet"
+     ],
+     "source_url": "https://ducktalks.com/2019/02/22/kingdom-consoles-and-i-%E2%99%A5%EF%B8%8F-gaming-pins/",
+     "method": "search_snippet",
+     "note": "cartridge slides out of console; controller dangles and reattaches by magnet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/i-heart-gaming/aladdin",
+   "set_key": "wdw/2019/i-heart-gaming",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "I Heart Gaming - Aladdin",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "Feb 2019 Aladdin release listed for WDW"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin"
+     ],
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "movie-themed Aladdin game pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "February 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "WDW release"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://ducktalks.com/2019/02/22/kingdom-consoles-and-i-%E2%99%A5%EF%B8%8F-gaming-pins/",
+     "method": "search_snippet",
+     "note": "Feb 2019 preview: Aladdin I Heart Gaming pin across WDW parks"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/i-heart-gaming/a-goofy-movie",
+   "set_key": "wdw/2019/i-heart-gaming",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "I Heart Gaming - A Goofy Movie",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "Goofy, Max and Powerline in the I2I perfect cast pose"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy",
+      "Max",
+      "Powerline"
+     ],
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "three characters on one design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "single pin showing three characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/i-heart-gaming/talespin-kit-cloudkicker",
+   "set_key": "wdw/2019/i-heart-gaming",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "I Heart Gaming - TaleSpin",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "Kit Cloudkicker cloud surfing behind the Sea Duck"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kit Cloudkicker"
+     ],
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "Kit on the pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "WDW release"
+    },
+    {
+     "field": "pin_name",
+     "value": "I Heart Gaming - TaleSpin",
+     "source_url": "https://ducktalks.com/2019/08/10/kingdom-consoles-and-i-heart-gaming-disney-pin-series-releases-announced-for-the-rest-of-the-year/",
+     "method": "search_snippet",
+     "note": "listed among remaining 2019 releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/i-heart-gaming/gummi-bears-cubbi",
+   "set_key": "wdw/2019/i-heart-gaming",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "I Heart Gaming - Gummi Bears",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "Cubbi Gummi leaping for Gummiberry Juice"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cubbi Gummi"
+     ],
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "Cubbi"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/i-heart-gaming/the-lion-king",
+   "set_key": "dlr/2019/i-heart-gaming",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "I Heart Gaming - The Lion King",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "first release of the series, January"
+    },
+    {
+     "field": "set_position",
+     "value": 1,
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "first release"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "January 2019"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2500,
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "LE 2,500, Disneyland exclusive"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://ducktalks.com/2019/12/20/i-heart-gaming-disney-pins-series-showcase/",
+     "method": "search_snippet",
+     "note": "exclusive to Disneyland"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/holiday-gifting-2019/bunny-gets-the-pancake",
+   "set_key": "wdw/2019/holiday-gifting-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Bunny Gets the Pancake",
+     "source_url": "https://wdwnt.com/2019/10/photos-new-ornament-box-pins-land-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "ornament-box gifting pin inspired by Ralph Breaks the Internet"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://wdwnt.com/2019/10/photos-new-ornament-box-pins-land-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "$15.99 at Pin Traders, Disney Springs"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/10/photos-new-ornament-box-pins-land-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-28",
+     "source_url": "https://wdwnt.com/2019/10/photos-new-ornament-box-pins-land-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "article dated 28 Oct 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://wdwnt.com/2019/10/photos-new-ornament-box-pins-land-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Pin Traders, Disney Springs"
+    },
+    {
+     "field": "pin_name",
+     "value": "Bunny Gets the Pancake",
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-gifting-2019-disney-pin-releases",
+     "method": "search_snippet",
+     "note": "listed in Holiday Gifting 2019 for DLR and WDW"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-gifting-2019-disney-pin-releases",
+     "method": "search_snippet",
+     "note": "limited release from 28 Oct 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/holiday-gifting-2019/its-a-small-world",
+   "set_key": "wdw/2019/holiday-gifting-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "it's a small world gifting pin",
+     "source_url": "https://wdwnt.com/2019/10/photos-new-ornament-box-pins-land-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "small world themed ornament-box gifting pin"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://wdwnt.com/2019/10/photos-new-ornament-box-pins-land-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "$15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/10/photos-new-ornament-box-pins-land-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://wdwnt.com/2019/10/photos-new-ornament-box-pins-land-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "Disney Springs Pin Traders"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/holiday-gift-card-2019/mickey",
+   "set_key": "wdw/2019/holiday-gift-card-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-holiday-2019-gift-card-pins/",
+     "method": "search_snippet",
+     "note": "Mickey Mouse named among the characters shown with hot cocoa"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/holiday-gift-card-2019/minnie",
+   "set_key": "wdw/2019/holiday-gift-card-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-holiday-2019-gift-card-pins/",
+     "method": "search_snippet",
+     "note": "Minnie Mouse named among the characters shown with hot cocoa"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/holiday-gift-card-2019/donald",
+   "set_key": "wdw/2019/holiday-gift-card-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-holiday-2019-gift-card-pins/",
+     "method": "search_snippet",
+     "note": "Donald Duck named among the characters shown with hot cocoa"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/holiday-gift-card-2019/goofy",
+   "set_key": "wdw/2019/holiday-gift-card-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-holiday-2019-gift-card-pins/",
+     "method": "search_snippet",
+     "note": "Goofy named among the characters shown with hot cocoa"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/galaxys-edge-monthly/rise-of-the-resistance-admiral-ackbar",
+   "set_key": "wdw/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Admiral Ackbar - Rise of the Resistance",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "Galaxy's Edge monthly collection, Rise of the Resistance sub-series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Admiral Ackbar"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-17",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "at WDW 2019-10-17"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/galaxys-edge-monthly/first-order-scouting-kylo-ren",
+   "set_key": "wdw/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kylo Ren - First Order Scouting",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "First Order Scouting sub-series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kylo Ren"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-17",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "at WDW 2019-10-17"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/galaxys-edge-monthly/droid-depot-c-3po",
+   "set_key": "wdw/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "C-3PO - Droid Depot",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "Droid Depot monthly collection at WDW"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "C-3PO"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-17",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "at WDW 2019-10-17"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet",
+     "note": "WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/galaxys-edge-monthly/rise-of-the-resistance-droids",
+   "set_key": "wdw/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Droids - Rise of the Resistance",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Rise of the Resistance sub-series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "at WDW 2019-11-14"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/galaxys-edge-monthly/first-order-scouting-709th-legion",
+   "set_key": "wdw/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "709th Legion - First Order Scouting",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "First Order Scouting sub-series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "at WDW 2019-11-14"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/galaxys-edge-monthly/droid-depot-r1",
+   "set_key": "wdw/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "R1 - Droid Depot",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Droid Depot sub-series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "R1"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "at WDW 2019-11-14"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/galaxys-edge-monthly/rise-of-the-resistance-lando",
+   "set_key": "wdw/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lando - Rise of the Resistance",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "Rise of the Resistance sub-series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lando Calrissian"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "character named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "at WDW 2019-12-19"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/galaxys-edge-monthly/droid-depot-c1-series",
+   "set_key": "wdw/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "C1-Series - Droid Depot",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "Droid Depot sub-series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "at WDW 2019-12-19"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/galaxys-edge-monthly/first-order-tie-fighter-pilot",
+   "set_key": "wdw/2019/galaxys-edge-monthly",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "First Order TIE Fighter Pilot at WDW 19 Dec 2019"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/galaxys-edge-landing-2019/bb-8",
+   "set_key": "wdw/2019/galaxys-edge-landing-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "BB-8 Star Wars Galaxy's Edge Landing 2019 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-4",
+     "method": "search_snippet",
+     "note": "BB-8 silhouette marking Galaxy's Edge landing at WDW"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "BB-8"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-4",
+     "method": "search_snippet",
+     "note": "BB-8"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-4",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-4",
+     "method": "search_snippet",
+     "note": "$15.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-4",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-4",
+     "method": "search_snippet",
+     "note": "WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/fine-and-dandy-fall-2019/fine-and-dandy",
+   "set_key": "wdw/2019/fine-and-dandy-fall-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Fine & Dandy Fall 2019 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "Dapper Day fall 2019"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE 5,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "at WDW 14 Nov 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pin-november-2019-week-2",
+     "method": "search_snippet",
+     "note": "WDW release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/dvc-member-exclusive-2019/mickey-and-minnie-poolside",
+   "set_key": "wdw/2019/dvc-member-exclusive-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://dvcnews.com/index.php/dvc-program/member-benefits/news-66853/4497-second-member-exclusive-pin-of-2019-arrives",
+     "method": "search_snippet",
+     "note": "first 2019 member pin, Mickey and Minnie poolside"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05",
+     "source_url": "https://dvcnews.com/index.php/dvc-program/member-benefits/news-66853/4497-second-member-exclusive-pin-of-2019-arrives",
+     "method": "search_snippet",
+     "note": "released in May"
+    },
+    {
+     "field": "set_position",
+     "value": 1,
+     "source_url": "https://dvcnews.com/index.php/dvc-program/member-benefits/news-66853/4497-second-member-exclusive-pin-of-2019-arrives",
+     "method": "search_snippet",
+     "note": "first member-exclusive of 2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/dvc-member-exclusive-2019/ariel-and-flounder",
+   "set_key": "wdw/2019/dvc-member-exclusive-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ariel",
+      "Flounder"
+     ],
+     "source_url": "https://dvcnews.com/index.php/dvc-program/member-benefits/news-66853/4497-second-member-exclusive-pin-of-2019-arrives",
+     "method": "search_snippet",
+     "note": "Ariel and Flounder underwater scene"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dvcnews.com/index.php/dvc-program/member-benefits/news-66853/4497-second-member-exclusive-pin-of-2019-arrives",
+     "method": "search_snippet",
+     "note": "single pin with both characters"
+    },
+    {
+     "field": "set_position",
+     "value": 2,
+     "source_url": "https://dvcnews.com/index.php/dvc-program/member-benefits/news-66853/4497-second-member-exclusive-pin-of-2019-arrives",
+     "method": "search_snippet",
+     "note": "second member-exclusive pin of 2019"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "dangle"
+     ],
+     "source_url": "https://dvcnews.com/index.php/dvc-program/member-benefits/news-66853/4497-second-member-exclusive-pin-of-2019-arrives",
+     "method": "search_snippet",
+     "note": "bangle carrying the DVC logo"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://dvcnews.com/index.php/dvc-program/member-benefits/news-66853/4497-second-member-exclusive-pin-of-2019-arrives",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://dvcnews.com/index.php/dvc-program/member-benefits/news-66853/4497-second-member-exclusive-pin-of-2019-arrives",
+     "method": "search_snippet",
+     "note": "3,500 made"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-20",
+     "source_url": "https://dvcnews.com/index.php/dvc-program/member-benefits/news-66853/4497-second-member-exclusive-pin-of-2019-arrives",
+     "method": "search_snippet",
+     "note": "on sale from 20 Jun 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://dvcnews.com/index.php/dvc-program/member-benefits/news-66853/4497-second-member-exclusive-pin-of-2019-arrives",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/dvc-member-exclusive-2019/winnie-the-pooh-and-friends",
+   "set_key": "wdw/2019/dvc-member-exclusive-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Winnie the Pooh and Friends DVC pin",
+     "source_url": "https://worldofwalt.com/september-2019-pin-releases.html",
+     "method": "search_snippet",
+     "note": "new DVC member pin in WDW September 2019 releases"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Winnie the Pooh"
+     ],
+     "source_url": "https://worldofwalt.com/september-2019-pin-releases.html",
+     "method": "search_snippet",
+     "note": "Pooh and friends; other characters not named"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://worldofwalt.com/september-2019-pin-releases.html",
+     "method": "search_snippet",
+     "note": "September 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://worldofwalt.com/september-2019-pin-releases.html",
+     "method": "search_snippet",
+     "note": "WDW September releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/ap-quarterly-2019/dormouse",
+   "set_key": "wdw/2019/ap-quarterly-2019",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Mad Tea Party teacup with the Dormouse inside",
+     "source_url": "https://worldofwalt.com/september-2019-pin-releases.html",
+     "method": "search_snippet",
+     "note": "AP Quarterly Series pin, Dormouse in a teacup"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09",
+     "source_url": "https://worldofwalt.com/september-2019-pin-releases.html",
+     "method": "search_snippet",
+     "note": "September 2019 WDW releases"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/cast-member-2019/mickey-name-tag",
+   "set_key": "wdw/2019/cast-member-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney World Cast Member 2019 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-world-cast-member-2019-pin",
+     "method": "search_snippet",
+     "note": "cast-exclusive Mickey pin shaped like a name tag"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-world-cast-member-2019-pin",
+     "method": "search_snippet",
+     "note": "Mickey"
+    },
+    {
+     "field": "front_text",
+     "value": "2019 Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-world-cast-member-2019-pin",
+     "method": "search_snippet",
+     "note": "name-tag text"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "glitter"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-world-cast-member-2019-pin",
+     "method": "search_snippet",
+     "note": "glitter accents"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World (cast members)",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-world-cast-member-2019-pin",
+     "method": "search_snippet",
+     "note": "cast member exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/hollywood-studios-30th-anniversary-cast-member/mickey-clapperboard",
+   "set_key": "wdw/2019/hollywood-studios-30th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney's Hollywood Studios 30th Anniversary Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/disneys-hollywood-studios-30th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "cast member pin for the park's 30th"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/disneys-hollywood-studios-30th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Mickey with clapperboard"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey with clapperboard reading 30 Years and May 1, 1989; Earful Tower, Tower of Terror and Sorcerer Hat behind",
+     "source_url": "https://disneypinsblog.com/disneys-hollywood-studios-30th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "design summary"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disneys-hollywood-studios-30th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/disneys-hollywood-studios-30th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-01",
+     "source_url": "https://disneypinsblog.com/disneys-hollywood-studios-30th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Company D, 1 May 2019 after delay"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World Company D (cast members)",
+     "source_url": "https://disneypinsblog.com/disneys-hollywood-studios-30th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Company D"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/star-tours-30th-anniversary-cast-member/c-3po",
+   "set_key": "wdw/2019/star-tours-30th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Tours 30 Years WDW Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-tours-30-years-wdw-cast-member-pin",
+     "method": "search_snippet",
+     "note": "WDW cast pin for Star Tours 30th"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "C-3PO"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/star-tours-30-years-wdw-cast-member-pin",
+     "method": "search_snippet",
+     "note": "C-3PO"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "dangle"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/star-tours-30-years-wdw-cast-member-pin",
+     "method": "search_snippet",
+     "note": "dangle element"
+    },
+    {
+     "field": "front_text",
+     "value": "30 Years - Established 1989",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-tours-30-years-wdw-cast-member-pin",
+     "method": "search_snippet",
+     "note": "bottom text"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-tours-30-years-wdw-cast-member-pin",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/blogs/news/star-tours-30-years-wdw-cast-member-pin",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-tours-30-years-wdw-cast-member-pin",
+     "method": "search_snippet",
+     "note": "early December 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World Company D (cast members)",
+     "source_url": "https://disneypinsblog.com/blogs/news/star-tours-30-years-wdw-cast-member-pin",
+     "method": "search_snippet",
+     "note": "cast stores"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/incredibles-15th-anniversary-cast-member/pin",
+   "set_key": "wdw/2019/incredibles-15th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Incredibles 15th Anniversary Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/the-incredibles-15th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "33rd pin in the cast member movie anniversary collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/the-incredibles-15th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/the-incredibles-15th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-08",
+     "source_url": "https://disneypinsblog.com/the-incredibles-15th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Company D 8 Nov 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World Company D (cast members)",
+     "source_url": "https://disneypinsblog.com/the-incredibles-15th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "WDW Company D"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2019/valentines-day-2019/pin",
+   "field": "characters / edition_size / original_price",
+   "searched": "3 queries (Disney Diary, DPB Jan 2019 preview, wk3)",
+   "note": "design, edition and price not in snippets; a reseller-only Ariel & Eric 2019 Valentine listing exists, not used"
+  },
+  {
+   "key": "wdw/2019/lunar-new-year/park-pin",
+   "field": "variant",
+   "searched": "n/a",
+   "note": "variant: same pin as dlr/2019/lunar-new-year/park-pin (shared DLR/WDW release; WDW date the week after 25 Jan)"
+  },
+  {
+   "key": "wdw/2019/kingdom-consoles/aladdin",
+   "field": "variant",
+   "searched": "n/a",
+   "note": "variant: same pin as dlr/2019/kingdom-consoles/aladdin (shared DLR/WDW release, keyed under wdw per rules)"
+  },
+  {
+   "key": "wdw/2019/kingdom-consoles/aladdin",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "edition not stated in the snippet"
+  },
+  {
+   "key": "wdw/2019/kingdom-consoles/the-lion-king",
+   "field": "variant",
+   "searched": "n/a",
+   "note": "variant: same pin as dlr/2019/kingdom-consoles-lion-king/the-lion-king (shared DLR/WDW release)"
+  },
+  {
+   "key": "wdw/2019/kingdom-consoles/the-lion-king",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "snippet names the film only; characters not stated"
+  },
+  {
+   "key": "wdw/2019/i-heart-gaming/aladdin",
+   "field": "edition_size",
+   "searched": "3 queries",
+   "note": "field note: a DPB Feb 2019 weekly snippet gave LE 2,500 / $17.99, but DuckTalks says WDW releases were 1,500; exact DPB URL unclear, not claimed"
+  },
+  {
+   "key": "wdw/2019/i-heart-gaming/a-goofy-movie",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "month not confirmed (summary said April; WDWNT August releases headline mentions A Goofy Movie, possibly a different pin)"
+  },
+  {
+   "key": "wdw/2019/i-heart-gaming/gummi-bears-cubbi",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "month not in snippet"
+  },
+  {
+   "key": "wdw/2019/holiday-gifting-2019/its-a-small-world",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "field note: exact name not in snippet; check it is not the same as the carousel pin already keyed"
+  },
+  {
+   "key": "wdw/2019/holiday-gifting-2019/sorcerer-mickey",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "field note: WDWNT names a Fantasia Mickey pin and box in this release; probably this pin, unconfirmed"
+  },
+  {
+   "key": "wdw/2019/holiday-gifting-2019",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "still 10 of 16 named; remaining six designs not surfaced"
+  },
+  {
+   "key": "wdw/2019/holiday-gift-card-2019/mickey",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm each character is a separate design (WDWNT: four designs; DPB names Mickey, Minnie, Donald, Goofy; WDWNT also mentions Pluto and Max)"
+  },
+  {
+   "key": "wdw/2019/holiday-gift-card-2019/minnie",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm each character is a separate design (WDWNT: four designs; DPB names Mickey, Minnie, Donald, Goofy; WDWNT also mentions Pluto and Max)"
+  },
+  {
+   "key": "wdw/2019/holiday-gift-card-2019/donald",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm each character is a separate design (WDWNT: four designs; DPB names Mickey, Minnie, Donald, Goofy; WDWNT also mentions Pluto and Max)"
+  },
+  {
+   "key": "wdw/2019/holiday-gift-card-2019/goofy",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm each character is a separate design (WDWNT: four designs; DPB names Mickey, Minnie, Donald, Goofy; WDWNT also mentions Pluto and Max)"
+  },
+  {
+   "key": "dsus/2019/disney-holiday-gift-card-pins",
+   "field": "scope",
+   "searched": "n/a",
+   "note": "lead taken up: recorded under wdw/2019/holiday-gift-card-2019"
+  },
+  {
+   "key": "wdw/2019/galaxys-edge-monthly/first-order-scouting-709th-legion",
+   "field": "pin_name",
+   "searched": "1 query",
+   "note": "field note: DPB Nov wk2 page text garbled in snippet; confirm WDW vs DLR and exact name (DLR has a 709th Legion reconnaissance pin)"
+  },
+  {
+   "key": "wdw/2019/galaxys-edge-monthly/rise-of-the-resistance-droids",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "which droids are shown not stated"
+  },
+  {
+   "key": "wdw/2019/galaxys-edge-monthly/droid-depot-c1-series",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "droid shown not named beyond C1-series"
+  },
+  {
+   "key": "wdw/2019/fine-and-dandy-fall-2019/fine-and-dandy",
+   "field": "variant",
+   "searched": "n/a",
+   "note": "variant: same pin as dlr/2019/dapper-day-fall-2019/fine-and-dandy (shared, WDW date 14 Nov)"
+  },
+  {
+   "key": "wdw/2019/fine-and-dandy-fall-2019/fine-and-dandy",
+   "field": "original_price / DLR date",
+   "searched": "1 query",
+   "note": "price and DLR date not in snippet"
+  },
+  {
+   "key": "wdw/2019/dvc-member-exclusive-2019/mickey-and-minnie-poolside",
+   "field": "edition_size / original_price",
+   "searched": "1 query",
+   "note": "not in snippet"
+  },
+  {
+   "key": "wdw/2019/dvc-member-exclusive-2019/ariel-and-flounder",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "only a reseller price seen; not claimed"
+  },
+  {
+   "key": "wdw/2019/dvc-member-exclusive-2019/winnie-the-pooh-and-friends",
+   "field": "edition_size / original_price / characters",
+   "searched": "1 query",
+   "note": "single source; friends not named, edition and price not stated"
+  },
+  {
+   "key": "wdw/2019/ap-quarterly-2019/dormouse",
+   "field": "edition_size / original_price / release day",
+   "searched": "1 query",
+   "note": "still not stated; sister pins Alice and Queen of Hearts are LE 3,000 / $17.99 (not claimed for Dormouse)"
+  },
+  {
+   "key": "wdw/2019/incredibles-15th-anniversary-cast-member/pin",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters not in snippet"
+  },
+  {
+   "key": "wdw/2019/character-connection-mulan",
+   "field": "members",
+   "searched": "1 query",
+   "note": "still no per-design names outside PinTradingDB/forum; LE 900 incl. chasers, $17.99, 25 Jul 2019 (DPB, already recorded)"
+  },
+  {
+   "key": "wdw/2019/character-connection-mickeys-christmas-carol",
+   "field": "members",
+   "searched": "1 query",
+   "note": "designs still unnamed; forum-only 9 + 3 chaser breakdown not used"
+  },
+  {
+   "key": "wdw/2019/disney-disguises-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "other eleven designs not named in snippets"
+  },
+  {
+   "key": "wdw/2019/skyliner-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no 2019 character list; 2025 set list not applicable"
+  },
+  {
+   "key": "wdw/2019",
+   "field": "dpb weekly sweep",
+   "searched": "6 queries",
+   "note": "DPB Jan wk3, Feb wk3, Apr wk2/3, Sep wk3, Nov wk3 still not surfaced; Jul wk3, Nov wk4 not searched this round"
+  },
+  {
+   "key": "wdw/2019",
+   "field": "holds",
+   "searched": "n/a",
+   "note": "no holds released: Jawa Salvage, Sanderson Sisters, HM day-of, Flower & Garden princess, DHS 30th booster, runDisney, Steamboat Visa unchanged"
+  },
+  {
+   "key": "wdw/2019/galaxys-edge-opening-day/rise-of-the-resistance-rey",
+   "field": "edition_size",
+   "searched": "not searched this round (budget)",
+   "note": "gap carried forward"
+  },
+  {
+   "key": "wdw/2019/pin-trading-pop-up-books",
+   "field": "pop-up #1/#2 dates",
+   "searched": "not searched this round (budget)",
+   "note": "gap carried forward"
+  },
+  {
+   "key": "wdw/2019/vintage-vinyl",
+   "field": "#4/#5 editions",
+   "searched": "not searched this round (budget)",
+   "note": "gap carried forward"
+  },
+  {
+   "key": "wdw/2019/walt-disney-day-2019/steamboat-willie",
+   "field": "edition_size",
+   "searched": "not searched this round (budget)",
+   "note": "gap carried forward"
+  },
+  {
+   "key": "wdw/2019/resort-holiday-bells-2019",
+   "field": "per-bell members",
+   "searched": "not searched this round (budget)",
+   "note": "gap carried forward"
+  },
+  {
+   "key": "wdw/2019/magic-of-honor",
+   "field": "editions",
+   "searched": "not searched this round (budget)",
+   "note": "gap carried forward"
+  },
+  {
+   "key": "wdw/2019/i-heart-gaming/aladdin",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: single fan-blog source (DuckTalks); WDW LE 1,500 vs DLR LE 2,500 - may be park variants of the DLR I Heart Gaming pins; confirm from a dated DPB / official source"
+  },
+  {
+   "key": "wdw/2019/i-heart-gaming/a-goofy-movie",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: single fan-blog source (DuckTalks); WDW LE 1,500 vs DLR LE 2,500 - may be park variants of the DLR I Heart Gaming pins; confirm from a dated DPB / official source"
+  },
+  {
+   "key": "wdw/2019/i-heart-gaming/talespin-kit-cloudkicker",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: single fan-blog source (DuckTalks); WDW LE 1,500 vs DLR LE 2,500 - may be park variants of the DLR I Heart Gaming pins; confirm from a dated DPB / official source"
+  },
+  {
+   "key": "wdw/2019/i-heart-gaming/gummi-bears-cubbi",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: single fan-blog source (DuckTalks); WDW LE 1,500 vs DLR LE 2,500 - may be park variants of the DLR I Heart Gaming pins; confirm from a dated DPB / official source"
+  },
+  {
+   "key": "dlr/2019/i-heart-gaming/the-lion-king",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: single fan-blog source (DuckTalks); WDW LE 1,500 vs DLR LE 2,500 - may be park variants of the DLR I Heart Gaming pins; confirm from a dated DPB / official source"
+  },
+  {
+   "key": "wdw/2019/valentines-day-2019/pin",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: title-only - design not described"
+  },
+  {
+   "key": "wdw/2019/holiday-gifting-2019/its-a-small-world",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: possible duplicate of wdw/2019/holiday-gifting-2019/carousel (packet 588)"
+  }
+ ]
+}

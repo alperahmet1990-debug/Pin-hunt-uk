@@ -67,6 +67,16 @@ describe("only the public catalogue is copied", () => {
     expect(MAIN_FILTERS.pin_images).toEqual([["eq", "public_display_allowed", true], ["neq", "source", "pin_and_pop"]]);
   });
 
+  it("never reads Pin & Pop external-id links", () => {
+    expect(MAIN_FILTERS.pin_external_ids).toEqual([["neq", "source", "pin_and_pop"]]);
+  });
+
+  it("clears the reviewer on external-id links (migration 053)", () => {
+    expect(PERSON_COLUMNS).toContain("confirmed_by");
+    expect(scrubRow({ id: "e-1", source: "pinpics", match_status: "confirmed", confirmed_by: "admin-uuid" }))
+      .toEqual({ id: "e-1", source: "pinpics", match_status: "confirmed", confirmed_by: null });
+  });
+
   it("clears every column that points at a person", () => {
     const row = Object.fromEntries([...PERSON_COLUMNS.map((c) => [c, "user-uuid"]), ["title", "Mickey"]]);
     const out = scrubRow(row);

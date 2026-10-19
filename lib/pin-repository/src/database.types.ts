@@ -288,11 +288,14 @@ export interface Database {
         ];
       };
       pin_external_ids: {
-        Row: { id: string; pin_id: string; source: string; external_id: string; created_at: string; updated_at: string };
-        Insert: { id?: string; pin_id: string; source: string; external_id: string; created_at?: string; updated_at?: string };
-        Update: { source?: string; external_id?: string; updated_at?: string };
+        // Link metadata columns added by migration 053 (all nullable; null = legacy link).
+        Row: { id: string; pin_id: string; source: string; external_id: string; match_status: 'proposed' | 'confirmed' | 'rejected' | null; match_method: 'pinhunt_id' | 'external_id' | 'exact' | 'strong' | 'manual' | null; confidence: number | null; confirmed_by: string | null; confirmed_at: string | null; last_seen_at: string | null; source_payload_hash: string | null; created_at: string; updated_at: string };
+        Insert: { id?: string; pin_id: string; source: string; external_id: string; match_status?: 'proposed' | 'confirmed' | 'rejected' | null; match_method?: 'pinhunt_id' | 'external_id' | 'exact' | 'strong' | 'manual' | null; confidence?: number | null; confirmed_by?: string | null; confirmed_at?: string | null; last_seen_at?: string | null; source_payload_hash?: string | null; created_at?: string; updated_at?: string };
+        Update: { source?: string; external_id?: string; match_status?: 'proposed' | 'confirmed' | 'rejected' | null; match_method?: 'pinhunt_id' | 'external_id' | 'exact' | 'strong' | 'manual' | null; confidence?: number | null; confirmed_by?: string | null; confirmed_at?: string | null; last_seen_at?: string | null; source_payload_hash?: string | null; updated_at?: string };
         Relationships: [
-          { foreignKeyName: 'pin_external_ids_pin_id_fkey'; columns: ['pin_id']; referencedRelation: 'pins'; referencedColumns: ['id'] }
+          { foreignKeyName: 'pin_external_ids_pin_id_fkey'; columns: ['pin_id']; referencedRelation: 'pins'; referencedColumns: ['id'] },
+          { foreignKeyName: 'pin_external_ids_source_fkey'; columns: ['source']; referencedRelation: 'catalogue_sources'; referencedColumns: ['id'] },
+          { foreignKeyName: 'pin_external_ids_confirmed_by_fkey'; columns: ['confirmed_by']; referencedRelation: 'profiles'; referencedColumns: ['id'] }
         ];
       };
       pin_images: {

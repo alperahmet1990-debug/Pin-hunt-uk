@@ -1,0 +1,929 @@
+{
+ "packet_id": "608_b422_asia_2023_2024_fu24",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+   "title": "東京ディズニーリゾート、予約限定の「ピンバッジセット」を販売。40周年を一気に振り返り、終了したあのアトラクションも！",
+   "publisher": "Travel Watch (Impress)",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2023-10"
+  },
+  {
+   "url": "https://travel.watch.impress.co.jp/docs/news/1545841.html",
+   "title": "東京ディズニーリゾート40周年、グランドフィナーレグッズは、思い出に浸れるアイテムが目白押し！",
+   "publisher": "Travel Watch (Impress)",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2023-12"
+  },
+  {
+   "url": "https://disneypinsblog.com/scrooge-mcduck-mystery-pin-set-at-shanghai-disney-resort/",
+   "title": "Scrooge McDuck Mystery Pin Set at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2024-05"
+  },
+  {
+   "url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+   "title": "Scrooge McDuck Hinged Mystery Pin Blind Box from Shanghai Disney Resort on DisneyStore.com",
+   "publisher": "Disney Mouseketeer",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2026-05-20"
+  },
+  {
+   "url": "https://www.dismerchandise.com/2026/05/20/scrooge-mcduck-hinged-mystery-pin-blind-pack-duck-tales-1-pc-shanghai-disney-resort-can-now-be-purchased-online/",
+   "title": "Scrooge McDuck Hinged Mystery Pin Blind Pack - Duck Tales - 1-Pc. - Shanghai Disney Resort can now be purchased online",
+   "publisher": "DisMerchandise",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2026-05-20"
+  },
+  {
+   "url": "https://castel.jp/p/9076",
+   "title": "【2023】ディズニーハロウィングッズ全77種類まとめ！",
+   "publisher": "castel",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2023-09"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "tdr/2023/40th-dream-go-round-framed-pin-set",
+   "claims": [
+    {
+     "field": "price",
+     "value": 30000,
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+     "method": "search_snippet",
+     "note": "framed pin badge set ¥30,000, reservation-only"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10-19",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+     "method": "search_snippet",
+     "note": "reservations taken 19 Oct to 12 Nov 2023 for park guests"
+    },
+    {
+     "field": "format",
+     "value": "framed multi-pin set",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+     "method": "search_snippet",
+     "note": "framed pin set recalling 40 years incl. retired attractions"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort (reservation)",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+     "method": "search_snippet",
+     "note": "reservation-only item for TDL/TDS guests"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2024/40th-grand-finale-pin-set",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1545841.html",
+     "method": "search_snippet",
+     "note": "search summary of Grand Finale goods coverage: framed set holds 7 pins"
+    },
+    {
+     "field": "price",
+     "value": 8500,
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1545841.html",
+     "method": "search_snippet",
+     "note": "pin badge set & frame ¥8,500"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1545841.html",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01-23",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1545841.html",
+     "method": "search_snippet",
+     "note": "Grand Finale goods from 23 Jan 2024 (one other site gives 1 Feb 2024)"
+    },
+    {
+     "field": "size_mm",
+     "value": "frame approx. 120 x 330 x 30; pins approx. 30-70 each side",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1545841.html",
+     "method": "search_snippet",
+     "note": "frame ~12x33x3 cm; pins ~3-7 cm"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/scrooge-mcduck-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/scrooge-mcduck-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "six pins in total"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind-box set (hinged pins)",
+     "source_url": "https://disneypinsblog.com/scrooge-mcduck-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "hinged mystery pins, vault-style packaging"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-05",
+     "source_url": "https://disneypinsblog.com/scrooge-mcduck-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "released May 2024 at SHDR"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/scrooge-mcduck-mystery-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "Disney Store listing for SHDR hinged blind box: six scenes"
+    },
+    {
+     "field": "format",
+     "value": "blind box, 1 hinged pin per box",
+     "source_url": "https://www.dismerchandise.com/2026/05/20/scrooge-mcduck-hinged-mystery-pin-blind-pack-duck-tales-1-pc-shanghai-disney-resort-can-now-be-purchased-online/",
+     "method": "search_snippet",
+     "note": "1-pc blind pack, SHDR product sold online"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2023/halloween-2023-history-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://castel.jp/p/9076",
+     "method": "search_snippet",
+     "note": "Mickey past Halloween costume pin, 8 types, 1 per bag"
+    },
+    {
+     "field": "price",
+     "value": 1200,
+     "source_url": "https://castel.jp/p/9076",
+     "method": "search_snippet",
+     "note": "¥1,200 per bag"
+    },
+    {
+     "field": "price",
+     "value": 9600,
+     "source_url": "https://castel.jp/p/9076",
+     "method": "search_snippet",
+     "note": "8-bag set ¥9,600"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://castel.jp/p/9076",
+     "method": "search_snippet",
+     "note": "yen"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "tdr/2023/40th-dream-go-round-framed-pin-set/cinderella-castle-mystery-tour",
+   "set_key": "tdr/2023/40th-dream-go-round-framed-pin-set",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Cinderella Castle Mystery Tour",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+     "method": "search_snippet",
+     "note": "named among retired attractions shown as pins in the framed set"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2023/40th-dream-go-round-framed-pin-set/grand-circuit-raceway",
+   "set_key": "tdr/2023/40th-dream-go-round-framed-pin-set",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Grand Circuit Raceway",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+     "method": "search_snippet",
+     "note": "named among retired attractions shown as pins in the framed set"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2023/40th-dream-go-round-framed-pin-set/star-jets",
+   "set_key": "tdr/2023/40th-dream-go-round-framed-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dream-Go-Round framed set Star Jets pin",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+     "method": "search_snippet",
+     "note": "Star Jets (スタージェット) named among retired attractions made into pins"
+    },
+    {
+     "field": "attraction",
+     "value": "Star Jets",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+     "method": "search_snippet",
+     "note": "retired attraction depicted"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+     "method": "search_snippet",
+     "note": "reservations Oct-Nov 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+     "method": "search_snippet",
+     "note": "reservation-only"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2023/40th-dream-go-round-framed-pin-set/stormrider",
+   "set_key": "tdr/2023/40th-dream-go-round-framed-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dream-Go-Round framed set StormRider pin",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+     "method": "search_snippet",
+     "note": "StormRider (ストームライダー) named among retired attractions made into pins"
+    },
+    {
+     "field": "attraction",
+     "value": "StormRider",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+     "method": "search_snippet",
+     "note": "retired attraction depicted"
+    },
+    {
+     "field": "release_year",
+     "value": 2023,
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+     "method": "search_snippet",
+     "note": "reservations Oct-Nov 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://travel.watch.impress.co.jp/docs/news/1531124.html",
+     "method": "search_snippet",
+     "note": "reservation-only"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/scrooge-mcduck-mystery/cityscape",
+   "set_key": "shdr/2024/scrooge-mcduck-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Scrooge McDuck hinged mystery pin - Cityscape",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "one of six named wealth scenes in the listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scrooge McDuck"
+     ],
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "every design shows Scrooge"
+    },
+    {
+     "field": "main_character",
+     "value": "Scrooge McDuck",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "Scrooge"
+    },
+    {
+     "field": "visual_description",
+     "value": "Scrooge with a cityscape scene; golden vault cover opens to a cloisonne scene",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "paraphrase of listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "hinged top layer reveals scene"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "listing says created for SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/scrooge-mcduck-mystery/tossing-coins",
+   "set_key": "shdr/2024/scrooge-mcduck-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Scrooge McDuck hinged mystery pin - Tossing coins",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "one of six named wealth scenes in the listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scrooge McDuck"
+     ],
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "every design shows Scrooge"
+    },
+    {
+     "field": "main_character",
+     "value": "Scrooge McDuck",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "Scrooge"
+    },
+    {
+     "field": "visual_description",
+     "value": "Scrooge tossing coins; golden vault cover opens to a cloisonne scene",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "paraphrase of listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "hinged top layer reveals scene"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "listing says created for SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/scrooge-mcduck-mystery/diving-into-coins",
+   "set_key": "shdr/2024/scrooge-mcduck-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Scrooge McDuck hinged mystery pin - Diving into coins",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "one of six named wealth scenes in the listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scrooge McDuck"
+     ],
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "every design shows Scrooge"
+    },
+    {
+     "field": "main_character",
+     "value": "Scrooge McDuck",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "Scrooge"
+    },
+    {
+     "field": "visual_description",
+     "value": "Scrooge diving into coins; golden vault cover opens to a cloisonne scene",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "paraphrase of listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "hinged top layer reveals scene"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "listing says created for SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/scrooge-mcduck-mystery/gold-mine",
+   "set_key": "shdr/2024/scrooge-mcduck-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Scrooge McDuck hinged mystery pin - Gold mine",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "one of six named wealth scenes in the listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scrooge McDuck"
+     ],
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "every design shows Scrooge"
+    },
+    {
+     "field": "main_character",
+     "value": "Scrooge McDuck",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "Scrooge"
+    },
+    {
+     "field": "visual_description",
+     "value": "Scrooge in a gold mine scene; golden vault cover opens to a cloisonne scene",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "paraphrase of listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "hinged top layer reveals scene"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "listing says created for SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/scrooge-mcduck-mystery/artifacts",
+   "set_key": "shdr/2024/scrooge-mcduck-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Scrooge McDuck hinged mystery pin - Artifacts",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "one of six named wealth scenes in the listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scrooge McDuck"
+     ],
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "every design shows Scrooge"
+    },
+    {
+     "field": "main_character",
+     "value": "Scrooge McDuck",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "Scrooge"
+    },
+    {
+     "field": "visual_description",
+     "value": "Scrooge with artifacts; golden vault cover opens to a cloisonne scene",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "paraphrase of listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "hinged top layer reveals scene"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "listing says created for SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/scrooge-mcduck-mystery/cash-lined-jacket",
+   "set_key": "shdr/2024/scrooge-mcduck-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Scrooge McDuck hinged mystery pin - Cash-lined jacket",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "one of six named wealth scenes in the listing"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Scrooge McDuck"
+     ],
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "every design shows Scrooge"
+    },
+    {
+     "field": "main_character",
+     "value": "Scrooge McDuck",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "Scrooge"
+    },
+    {
+     "field": "visual_description",
+     "value": "Scrooge with a cash-lined jacket; golden vault cover opens to a cloisonne scene",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "paraphrase of listing"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "hinged",
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "hinged top layer reveals scene"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneymouseketeer.com/scrooge-mcduck-hinged-mystery-pin-blind-box-from-shanghai-disney-resort-on-disneystore-com/",
+     "method": "search_snippet",
+     "note": "listing says created for SHDR"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "shdr/2024/scrooge-mcduck-mystery/cityscape",
+   "field": "release_date",
+   "searched": "DPB + Disney Store listing coverage; 3 queries",
+   "note": "hold: design named only by the May 2026 DisneyStore.com listing of the SHDR hinged blind box; confirm it is the same set as the May 2024 SHDR release (DPB) before filing under 2024"
+  },
+  {
+   "key": "shdr/2024/scrooge-mcduck-mystery/tossing-coins",
+   "field": "release_date",
+   "searched": "DPB + Disney Store listing coverage; 3 queries",
+   "note": "hold: design named only by the May 2026 DisneyStore.com listing of the SHDR hinged blind box; confirm it is the same set as the May 2024 SHDR release (DPB) before filing under 2024"
+  },
+  {
+   "key": "shdr/2024/scrooge-mcduck-mystery/diving-into-coins",
+   "field": "release_date",
+   "searched": "DPB + Disney Store listing coverage; 3 queries",
+   "note": "hold: design named only by the May 2026 DisneyStore.com listing of the SHDR hinged blind box; confirm it is the same set as the May 2024 SHDR release (DPB) before filing under 2024"
+  },
+  {
+   "key": "shdr/2024/scrooge-mcduck-mystery/gold-mine",
+   "field": "release_date",
+   "searched": "DPB + Disney Store listing coverage; 3 queries",
+   "note": "hold: design named only by the May 2026 DisneyStore.com listing of the SHDR hinged blind box; confirm it is the same set as the May 2024 SHDR release (DPB) before filing under 2024"
+  },
+  {
+   "key": "shdr/2024/scrooge-mcduck-mystery/artifacts",
+   "field": "release_date",
+   "searched": "DPB + Disney Store listing coverage; 3 queries",
+   "note": "hold: design named only by the May 2026 DisneyStore.com listing of the SHDR hinged blind box; confirm it is the same set as the May 2024 SHDR release (DPB) before filing under 2024"
+  },
+  {
+   "key": "shdr/2024/scrooge-mcduck-mystery/cash-lined-jacket",
+   "field": "release_date",
+   "searched": "DPB + Disney Store listing coverage; 3 queries",
+   "note": "hold: design named only by the May 2026 DisneyStore.com listing of the SHDR hinged blind box; confirm it is the same set as the May 2024 SHDR release (DPB) before filing under 2024"
+  },
+  {
+   "key": "shdr/2024/scrooge-mcduck-mystery",
+   "field": "release_date",
+   "searched": "3 queries",
+   "note": "field note: DPB dates the SHDR set May 2024; Disney Store online release 20 May 2026 (US$24.99) may be a later online sale of the same set"
+  },
+  {
+   "key": "shdr/2024/scrooge-mcduck-mystery",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "field note: per-design scenes come from a fan news blog repeating the Disney Store listing; no official SHDR per-design sheet seen"
+  },
+  {
+   "key": "tdr/2023/40th-dream-go-round-framed-pin-set/star-jets",
+   "field": "pin_structure",
+   "searched": "Travel Watch article; 2 queries",
+   "note": "hold: pending maintainer decision on full lists - pin named only in framed-set descriptions, no per-pin source (same basis as 446 members)"
+  },
+  {
+   "key": "tdr/2023/40th-dream-go-round-framed-pin-set/stormrider",
+   "field": "pin_structure",
+   "searched": "Travel Watch article; 2 queries",
+   "note": "hold: pending maintainer decision on full lists - pin named only in framed-set descriptions, no per-pin source (same basis as 446 members)"
+  },
+  {
+   "key": "tdr/2023/40th-dream-go-round-framed-pin-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold unchanged (40th framed): Travel Watch adds Star Jets and StormRider as named examples only; full count and list still not stated"
+  },
+  {
+   "key": "tdr/2024/40th-grand-finale-pin-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold unchanged: 7 pins; summary names Mickey, Minnie, Donald, Daisy, Pluto, Goofy in 40th costumes (character list only, 6 names for 7 pins); no per-pin descriptions"
+  },
+  {
+   "key": "tdr/2023/halloween-2023-history-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "8 designs still not individually named"
+  },
+  {
+   "key": "shdr/2023/hidden-mickey-2023/stellalou",
+   "field": "visual_description",
+   "searched": "2 DPB queries",
+   "note": "hold unchanged (Hidden Mickey title-only): snippets still give titles/dates only; no post body describing the design"
+  },
+  {
+   "key": "shdr/2023/hidden-mickey-2023/marie",
+   "field": "visual_description",
+   "searched": "2 DPB queries",
+   "note": "hold unchanged (Hidden Mickey title-only): snippets still give titles/dates only; no post body describing the design"
+  },
+  {
+   "key": "shdr/2023/hidden-mickey-2023/nick-wilde",
+   "field": "visual_description",
+   "searched": "2 DPB queries",
+   "note": "hold unchanged (Hidden Mickey title-only): snippets still give titles/dates only; no post body describing the design"
+  },
+  {
+   "key": "shdr/2024/hidden-mickey-2024/mickey-mouse",
+   "field": "visual_description",
+   "searched": "2 DPB queries",
+   "note": "hold unchanged (Hidden Mickey title-only): snippets still give titles/dates only; no post body describing the design"
+  },
+  {
+   "key": "shdr/2024/hidden-mickey-2024/minnie-mouse",
+   "field": "visual_description",
+   "searched": "2 DPB queries",
+   "note": "hold unchanged (Hidden Mickey title-only): snippets still give titles/dates only; no post body describing the design"
+  },
+  {
+   "key": "shdr/2024/hidden-mickey-2024/judy-hopps",
+   "field": "visual_description",
+   "searched": "2 DPB queries",
+   "note": "hold unchanged (Hidden Mickey title-only): snippets still give titles/dates only; no post body describing the design"
+  },
+  {
+   "key": "shdr/2023/hidden-mickey-2023",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no further 2023 months (Jan-Aug, Nov) surfaced; DPB tag archive lists only recorded months"
+  },
+  {
+   "key": "shdr/2024/hidden-mickey-2024",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no 2024 months after Feb surfaced; Mar-Dec 2024 still unknown"
+  },
+  {
+   "key": "shdr/2024/attraction-mickey-icon/hunny-pot-spin",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold unchanged (Attraction Mickey Icon nine): DPB again gives the nine-name line-up only"
+  },
+  {
+   "key": "shdr/2024/mickey-and-friends-t-shirt",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold unchanged (Mickey T-shirt): no new evidence"
+  },
+  {
+   "key": "shdr/2024/oe-set/princess-silhouette/belle",
+   "field": "pin_structure",
+   "searched": "0 queries",
+   "note": "hold unchanged (Princess Silhouette five): no new evidence"
+  },
+  {
+   "key": "shdr/2024/starter-sets-january-2024",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold unchanged (starter sets five): no new evidence"
+  },
+  {
+   "key": "shdr/2024/zootopia-my-dream-job-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "8 OE designs; DPB says they include Judy, Nick and Flash among others (character list only); separate standalone Dream Job pins seen only on reseller USShoppingSOS - not recorded"
+  },
+  {
+   "key": "shdr/2023/christmas-2023-train-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "count and designs still not stated"
+  },
+  {
+   "key": "shdr/2024/duffy-halloween-2024-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "DPB gives seven-character list only (Duffy, ShellieMay, Gelatoni, StellaLou, CookieAnn, OluMel, LinaBell); no per-design text"
+  },
+  {
+   "key": "shdr/2024/duffy-music-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "same seven-character list only; no per-design text"
+  },
+  {
+   "key": "shdr/2023/lunar-new-year-2023-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "12-pin mystery set designs still unnamed"
+  },
+  {
+   "key": "shdr/2024/oe-set/character-alphabet-hinged",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "not re-searched; letters still unlisted"
+  },
+  {
+   "key": "tdr/2023/happiness-everywhere-vol-3-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "12 designs still unnamed (DPB gives count and 15 Jun 2023 only)"
+  },
+  {
+   "key": "tdr/2024/park-souvenir-motif-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "12 designs still unnamed; MezzoMiki post-311361 (2-pin random ¥1,300, 6-bag full set) date unclear - may be the separate later set already noted in 593; not merged"
+  },
+  {
+   "key": "tdr/2023/duffy-from-all-of-us-pin-badge-set",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "other seven designs still not named"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-frozen",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "scope: Frozen Kingdom logo pin (¥1,200) and 14-design random 2-pin set (¥1,300) dated 30 Oct 2025 by MezzoMiki/dtimes - belongs to 2025 cell, not recorded"
+  },
+  {
+   "key": "hkdl/2023/may-2023",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "28 Apr 2023 five-pin sale contents still not found; no DPB May 2023 HKDL post"
+  },
+  {
+   "key": "hkdl/2024/december-2024",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "HKDL Dec 2023, Feb 2024, Dec 2024 LE releases still not found"
+  },
+  {
+   "key": "hkdl/2024/presale-packages",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Oct-Dec 2024 pre-sale package contents not found; official page now shows only the 2026 package"
+  },
+  {
+   "key": "hkdl/2023/world-of-frozen-mystery",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "box nine designs not re-searched"
+  },
+  {
+   "key": "hkdl/2023/pin-trading-carnival-2023",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "mystery box designs not re-searched"
+  },
+  {
+   "key": "tdr/2023/monorail",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "not re-searched"
+  },
+  {
+   "key": "tdr/2024/halloween-2024-villains-mystery/dr-facilier",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold unchanged (Facilier vs Queen of Hearts): no new evidence"
+  },
+  {
+   "key": "hkdl/2023/june-2023-estore/tiana-disney-dress-collection",
+   "field": "edition_size",
+   "searched": "0 queries",
+   "note": "hold unchanged (Tiana edition): no new evidence"
+  },
+  {
+   "key": "hkdl/2023/pin-go-2023/mickey",
+   "field": "characters",
+   "searched": "0 queries",
+   "note": "hold unchanged (PIN-GO Mickey): no new evidence"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-peter-pans-never-land-pin-set/peter-pan",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold unchanged (Never Land): no new evidence"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-hotel-pin-set",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold unchanged (Fantasy Springs Hotel): no new evidence"
+  },
+  {
+   "key": "shdr/2023/zootopia-grand-opening/framed-pin",
+   "field": "pin_structure",
+   "searched": "0 queries",
+   "note": "hold unchanged (Zootopia framed): no new evidence"
+  },
+  {
+   "key": "tdr/2023/sakura-2023-pin-badge-set",
+   "field": "pins",
+   "searched": "0 queries",
+   "note": "hold unchanged (Sakura 2023): no new evidence"
+  },
+  {
+   "key": "shdr/2023/disney100-duffy-and-friends-framed-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "LE 300, 7 pins, seven Duffy & Friends characters listed (DPB) - character list only; no members created"
+  }
+ ],
+ "discovery_notes": "Search-snippet leads only; 27 standard searches. Follow-up 24 of B041. New: SHDR Scrooge McDuck hinged mystery six designs (scenes from a May 2026 Disney Store listing of the SHDR blind box; held pending confirmation it matches the May 2024 SHDR set); TDR 40th Dream-Go-Round framed set members Star Jets and StormRider (held, same basis as earlier members) with corroborating claims on Cinderella Castle Mystery Tour / Grand Circuit Raceway; Grand Finale framed set count 7 (character list only, hold kept); castel corroboration for Halloween 2023 history blind 8. No hold released. HKDL Dec 2023 / Feb / Dec 2024, Apr 2023 five and pre-sale packages still not found; SHDR Hidden Mickey posts still title-only."
+}

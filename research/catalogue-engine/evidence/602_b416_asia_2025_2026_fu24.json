@@ -1,0 +1,1877 @@
+{
+ "packet_id": "b416-asia-2025-2026-fu24",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://mezzomiki.jp/post-327132/",
+   "title": "Cinderella Castle pin badge (Tokyo Disneyland) souvenir",
+   "publisher": "MezzoMiki",
+   "published_date": "2026-01-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://castel.jp/p/6671",
+   "title": "2026 Disneyland & Sea pin badges (84 types)",
+   "publisher": "Castel",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://ure.pia.co.jp/articles/-/3089976",
+   "title": "Duffy 20th anniversary big goods honest review",
+   "publisher": "Urepia (PIA)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+   "title": "Duffy big goods review (Yahoo! JAPAN syndication)",
+   "publisher": "Yahoo! JAPAN / PIA",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-324149/",
+   "title": "Duffy & Friends 20th My Memories with Duffy special goods",
+   "publisher": "MezzoMiki",
+   "published_date": "2025-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-327875/",
+   "title": "Headband design random pin badge set (2 pcs)",
+   "publisher": "MezzoMiki",
+   "published_date": "2026-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-329906/",
+   "title": "Palpalooza Vanellope's Sweets Pop World special goods",
+   "publisher": "MezzoMiki",
+   "published_date": "2026-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.tokyodisneyresort.jp/goods/112002340/",
+   "title": "Pin badge | recommended goods (TDL 43rd)",
+   "publisher": "Tokyo Disney Resort (official)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-330351/",
+   "title": "TDS 25th Jubilee badge",
+   "publisher": "MezzoMiki",
+   "published_date": "2026-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://news.yahoo.co.jp/articles/fdc3757a75f2f7b74d632ddd96cc08c5646a2a4a",
+   "title": "Jubilee badge Halloween design (Travel Watch via Yahoo News)",
+   "publisher": "Travel Watch / Yahoo! News",
+   "published_date": "2026-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disney-magical-kingdom-blog.com/2026/08/hong-kong-disneylands-pin-trading-carnival-returns-in-2026-for-its-ninth-edition.html",
+   "title": "HKDL Pin Trading Carnival 2026 ninth edition",
+   "publisher": "Disney Magical Kingdom Blog",
+   "published_date": "2026-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://news.hongkongdisneyland.com/en/press/2025-07-14/",
+   "title": "HKDL 10K Weekend 2025 press release",
+   "publisher": "Hong Kong Disneyland (official)",
+   "published_date": "2025-07-14",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/category/shanghai-disney-resort-pins/",
+   "title": "Shanghai Disney Resort Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "tdr/2026/cinderella-castle-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://castel.jp/p/6671",
+     "method": "search_snippet",
+     "note": "castle-shaped pins, 12 types"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://castel.jp/p/6671",
+     "method": "search_snippet",
+     "note": "2 per bag"
+    },
+    {
+     "field": "price",
+     "value": 1300,
+     "source_url": "https://castel.jp/p/6671",
+     "method": "search_snippet",
+     "note": "¥1,300 per bag"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://castel.jp/p/6671",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "format",
+     "value": "mystery: 2 random pins per bag from 12 designs",
+     "source_url": "https://castel.jp/p/6671",
+     "method": "search_snippet",
+     "note": "blind bag"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 11,
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "11-pin set"
+    },
+    {
+     "field": "price",
+     "value": 25000,
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "¥25,000"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "format",
+     "value": "framed multi-pin set: 11 pins on Duffy's-room backing art",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "framed, approx 25 x 30 cm"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2026/headband-random-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Headband design random pin badge set (2 pcs)",
+     "source_url": "https://mezzomiki.jp/post-327875/",
+     "method": "search_snippet",
+     "note": "MezzoMiki item post"
+    },
+    {
+     "field": "format",
+     "value": "mystery: 2 random pins per bag from 12 headband designs",
+     "source_url": "https://mezzomiki.jp/post-327875/",
+     "method": "search_snippet",
+     "note": "blind bag, 12 types"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://mezzomiki.jp/post-327875/",
+     "method": "search_snippet",
+     "note": "12 designs"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://mezzomiki.jp/post-327875/",
+     "method": "search_snippet",
+     "note": "2 per bag"
+    },
+    {
+     "field": "price",
+     "value": 1300,
+     "source_url": "https://mezzomiki.jp/post-327875/",
+     "method": "search_snippet",
+     "note": "¥1,300 per bag"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-327875/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-02-19",
+     "source_url": "https://mezzomiki.jp/post-327875/",
+     "method": "search_snippet",
+     "note": "on sale 19 Feb 2026"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland (Grand Emporium) and Tokyo DisneySea (Emporio)",
+     "source_url": "https://mezzomiki.jp/post-327875/",
+     "method": "search_snippet",
+     "note": "shops per summary"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "tdr/2026/cinderella-castle-mystery/mickey-cinderella-castle",
+   "set_key": "tdr/2026/cinderella-castle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella Castle pin - Mickey & Cinderella Castle",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "descriptive name; pairing listed in the 12-design lineup of the MezzoMiki item post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "one design of the 12 in the blind bag"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey Mouse with Cinderella Castle inside a Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "paraphrase of lineup entry"
+    },
+    {
+     "field": "visual_form",
+     "value": "Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "castle-shaped pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01-22",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "set on sale 22 Jan 2026"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "2026"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS) per summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2026/cinderella-castle-mystery/mickey-mount-prometheus",
+   "set_key": "tdr/2026/cinderella-castle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella Castle pin - Mickey & Mount Prometheus",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "descriptive name; pairing listed in the 12-design lineup of the MezzoMiki item post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "one design of the 12 in the blind bag"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey Mouse with Mount Prometheus inside a Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "paraphrase of lineup entry"
+    },
+    {
+     "field": "visual_form",
+     "value": "Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "castle-shaped pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01-22",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "set on sale 22 Jan 2026"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "2026"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS) per summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2026/cinderella-castle-mystery/minnie-toontown",
+   "set_key": "tdr/2026/cinderella-castle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella Castle pin - Minnie & Toontown",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "descriptive name; pairing listed in the 12-design lineup of the MezzoMiki item post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "one design of the 12 in the blind bag"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie Mouse with Toontown inside a Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "paraphrase of lineup entry"
+    },
+    {
+     "field": "visual_form",
+     "value": "Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "castle-shaped pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01-22",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "set on sale 22 Jan 2026"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "2026"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS) per summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2026/cinderella-castle-mystery/huey-splash-mountain",
+   "set_key": "tdr/2026/cinderella-castle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella Castle pin - Huey & Splash Mountain",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "descriptive name; pairing listed in the 12-design lineup of the MezzoMiki item post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Huey"
+     ],
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "main_character",
+     "value": "Huey",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "one design of the 12 in the blind bag"
+    },
+    {
+     "field": "visual_description",
+     "value": "Huey with Splash Mountain inside a Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "paraphrase of lineup entry"
+    },
+    {
+     "field": "visual_form",
+     "value": "Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "castle-shaped pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01-22",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "set on sale 22 Jan 2026"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "2026"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS) per summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2026/cinderella-castle-mystery/dewey-king-tritons-castle",
+   "set_key": "tdr/2026/cinderella-castle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella Castle pin - Dewey & King Triton's Castle",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "descriptive name; pairing listed in the 12-design lineup of the MezzoMiki item post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dewey"
+     ],
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "main_character",
+     "value": "Dewey",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "one design of the 12 in the blind bag"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dewey with King Triton's Castle inside a Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "paraphrase of lineup entry"
+    },
+    {
+     "field": "visual_form",
+     "value": "Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "castle-shaped pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01-22",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "set on sale 22 Jan 2026"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "2026"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS) per summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2026/cinderella-castle-mystery/louie-transit-steamer-line",
+   "set_key": "tdr/2026/cinderella-castle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella Castle pin - Louie & DisneySea Transit Steamer Line",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "descriptive name; pairing listed in the 12-design lineup of the MezzoMiki item post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Louie"
+     ],
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "main_character",
+     "value": "Louie",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "one design of the 12 in the blind bag"
+    },
+    {
+     "field": "visual_description",
+     "value": "Louie with DisneySea Transit Steamer Line inside a Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "paraphrase of lineup entry"
+    },
+    {
+     "field": "visual_form",
+     "value": "Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "castle-shaped pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01-22",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "set on sale 22 Jan 2026"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "2026"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS) per summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2026/cinderella-castle-mystery/pluto-alices-tea-party",
+   "set_key": "tdr/2026/cinderella-castle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella Castle pin - Pluto & Alice's Tea Party",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "descriptive name; pairing listed in the 12-design lineup of the MezzoMiki item post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "main_character",
+     "value": "Pluto",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "one design of the 12 in the blind bag"
+    },
+    {
+     "field": "visual_description",
+     "value": "Pluto with Alice's Tea Party inside a Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "paraphrase of lineup entry"
+    },
+    {
+     "field": "visual_form",
+     "value": "Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "castle-shaped pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01-22",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "set on sale 22 Jan 2026"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "2026"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS) per summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2026/cinderella-castle-mystery/goofy-western-river-railroad",
+   "set_key": "tdr/2026/cinderella-castle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella Castle pin - Goofy & Western River Railroad",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "descriptive name; pairing listed in the 12-design lineup of the MezzoMiki item post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "one design of the 12 in the blind bag"
+    },
+    {
+     "field": "visual_description",
+     "value": "Goofy with Western River Railroad inside a Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "paraphrase of lineup entry"
+    },
+    {
+     "field": "visual_form",
+     "value": "Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "castle-shaped pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01-22",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "set on sale 22 Jan 2026"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "2026"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS) per summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2026/cinderella-castle-mystery/chip-n-dale-world-bazaar",
+   "set_key": "tdr/2026/cinderella-castle-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinderella Castle pin - Chip 'n' Dale & World Bazaar",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "descriptive name; pairing listed in the 12-design lineup of the MezzoMiki item post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "main_character",
+     "value": "Chip and Dale",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "character named for this design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "one design of the 12 in the blind bag"
+    },
+    {
+     "field": "visual_description",
+     "value": "Chip and Dale with World Bazaar inside a Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "paraphrase of lineup entry"
+    },
+    {
+     "field": "visual_form",
+     "value": "Cinderella Castle silhouette",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "castle-shaped pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-01-22",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "set on sale 22 Jan 2026"
+    },
+    {
+     "field": "release_year",
+     "value": 2026,
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "2026"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://mezzomiki.jp/post-327132/",
+     "method": "search_snippet",
+     "note": "Grand Emporium (TDL) and Emporio (TDS) per summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/duffy-debut-2005",
+   "set_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Duffy & Friends 20th pin badge set - Duffy debut (2005) art",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "2005 debut design named in review"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy"
+     ],
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "main_character",
+     "value": "Duffy",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "one of 11 pins in the framed set"
+    },
+    {
+     "field": "visual_description",
+     "value": "reproduces past Duffy event art from 2005",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "set reproduces iconic past event illustrations"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-12-18",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "set on sale 18 Dec 2025 (app first)"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "2025"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "TDR app from 18 Dec 2025, then TDS shops"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/duffy-blue-trunk-2007",
+   "set_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Duffy & Friends 20th pin badge set - Duffy sitting on a blue trunk (2007) art",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "2007 blue-trunk design named in review"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy"
+     ],
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "main_character",
+     "value": "Duffy",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "one of 11 pins in the framed set"
+    },
+    {
+     "field": "visual_description",
+     "value": "reproduces past Duffy event art from 2007",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "set reproduces iconic past event illustrations"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-12-18",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "set on sale 18 Dec 2025 (app first)"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "2025"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "TDR app from 18 Dec 2025, then TDS shops"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/sweet-duffy-2009",
+   "set_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Duffy & Friends 20th pin badge set - Sweet Duffy heart (2009) art",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "2009 first Sweet Duffy design named in review"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy"
+     ],
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "main_character",
+     "value": "Duffy",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "one of 11 pins in the framed set"
+    },
+    {
+     "field": "visual_description",
+     "value": "reproduces past Duffy event art from 2009",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "set reproduces iconic past event illustrations"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-12-18",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "set on sale 18 Dec 2025 (app first)"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "2025"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://article.yahoo.co.jp/detail/2e81a3a618cb38bc994906f4dd32904bcdfd69f0",
+     "method": "search_snippet",
+     "note": "TDR app from 18 Dec 2025, then TDS shops"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/spring-voyage-2012",
+   "set_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Duffy & Friends 20th pin badge set - Mickey & Duffy's Spring Voyage (2012) art",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "Spring Voyage art named among motifs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy"
+     ],
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "main_character",
+     "value": "Duffy",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "one of 11 pins in the framed set"
+    },
+    {
+     "field": "visual_description",
+     "value": "reproduces past Duffy event art from 2012",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "set reproduces iconic past event illustrations"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-12-18",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "set on sale 18 Dec 2025 (app first)"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "2025"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "TDR app from 18 Dec 2025, then TDS shops"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/christmas-snowman-2014",
+   "set_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Duffy & Friends 20th pin badge set - Christmas snowman Duffy (2014) art",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "snowman art named among motifs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy"
+     ],
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "main_character",
+     "value": "Duffy",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "one of 11 pins in the framed set"
+    },
+    {
+     "field": "visual_description",
+     "value": "reproduces past Duffy event art from 2014",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "set reproduces iconic past event illustrations"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-12-18",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "set on sale 18 Dec 2025 (app first)"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "2025"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "TDR app from 18 Dec 2025, then TDS shops"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/cupcake-duffy-2017",
+   "set_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Duffy & Friends 20th pin badge set - Cupcake Duffy (2017) art",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "cupcake art named among motifs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy"
+     ],
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "main_character",
+     "value": "Duffy",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "one of 11 pins in the framed set"
+    },
+    {
+     "field": "visual_description",
+     "value": "reproduces past Duffy event art from 2017",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "set reproduces iconic past event illustrations"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-12-18",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "set on sale 18 Dec 2025 (app first)"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "2025"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "TDR app from 18 Dec 2025, then TDS shops"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/sunny-fun-2019",
+   "set_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Duffy & Friends 20th pin badge set - Duffy's Sunny Fun (2019) art",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "Sunny Fun art named among motifs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy"
+     ],
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "main_character",
+     "value": "Duffy",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "one of 11 pins in the framed set"
+    },
+    {
+     "field": "visual_description",
+     "value": "reproduces past Duffy event art from 2019",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "set reproduces iconic past event illustrations"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-12-18",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "set on sale 18 Dec 2025 (app first)"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "2025"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "TDR app from 18 Dec 2025, then TDS shops"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/raincoat-duffy-2022",
+   "set_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Duffy & Friends 20th pin badge set - Raincoat Duffy (2022) art",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "raincoat art named among motifs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy"
+     ],
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "main_character",
+     "value": "Duffy",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "one of 11 pins in the framed set"
+    },
+    {
+     "field": "visual_description",
+     "value": "reproduces past Duffy event art from 2022",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "set reproduces iconic past event illustrations"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-12-18",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "set on sale 18 Dec 2025 (app first)"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "2025"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "TDR app from 18 Dec 2025, then TDS shops"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/come-find-spring-2024",
+   "set_key": "tdr/2025/duffy-20th-anniversary-pin-badge-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Duffy & Friends 20th pin badge set - Come Find Spring! (2024) art",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "Come Find Spring art named among motifs"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Duffy"
+     ],
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "main_character",
+     "value": "Duffy",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "Duffy design"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "one of 11 pins in the framed set"
+    },
+    {
+     "field": "visual_description",
+     "value": "reproduces past Duffy event art from 2024",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "set reproduces iconic past event illustrations"
+    },
+    {
+     "field": "release_date",
+     "value": "2025-12-18",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "set on sale 18 Dec 2025 (app first)"
+    },
+    {
+     "field": "release_year",
+     "value": 2025,
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "2025"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo DisneySea",
+     "source_url": "https://ure.pia.co.jp/articles/-/3089976",
+     "method": "search_snippet",
+     "note": "TDR app from 18 Dec 2025, then TDS shops"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2026/palpalooza-vanellopes-sweets-pop-world/vanellope",
+   "set_key": "tdr/2026/palpalooza-vanellopes-sweets-pop-world",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Vanellope in the sweets world",
+     "source_url": "https://mezzomiki.jp/post-329906/",
+     "method": "search_snippet",
+     "note": "summary of 2026 special goods post; ¥1,400; on sale 8 Apr 2026 at Disney & Co."
+    },
+    {
+     "field": "original_price",
+     "value": 1400,
+     "source_url": "https://mezzomiki.jp/post-329906/",
+     "method": "search_snippet",
+     "note": "¥1,400"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2026/tdl-43rd-anniversary-toontown/pin-badge",
+   "set_key": "tdr/2026/tdl-43rd-anniversary-toontown",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 1400,
+     "source_url": "https://www.tokyodisneyresort.jp/goods/112002340/",
+     "method": "search_snippet",
+     "note": "official goods page lists ¥1,400"
+    },
+    {
+     "field": "release_date",
+     "value": "2026-04-15",
+     "source_url": "https://www.tokyodisneyresort.jp/goods/112002340/",
+     "method": "search_snippet",
+     "note": "official page gives sale start 15 Apr 2026"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland (Gag Factory / Five & Dime)",
+     "source_url": "https://www.tokyodisneyresort.jp/goods/112002340/",
+     "method": "search_snippet",
+     "note": "shop per summary"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/mickey-cinderella-castle",
+   "field": "characters",
+   "searched": "4 queries (JP)",
+   "note": "field note: pairing from a search summary of the MezzoMiki 12-design list; consistent with the 3 designs in packet 586; per-design photos not seen"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/mickey-mount-prometheus",
+   "field": "characters",
+   "searched": "4 queries (JP)",
+   "note": "field note: pairing from a search summary of the MezzoMiki 12-design list; consistent with the 3 designs in packet 586; per-design photos not seen"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/minnie-toontown",
+   "field": "characters",
+   "searched": "4 queries (JP)",
+   "note": "field note: pairing from a search summary of the MezzoMiki 12-design list; consistent with the 3 designs in packet 586; per-design photos not seen"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/huey-splash-mountain",
+   "field": "characters",
+   "searched": "4 queries (JP)",
+   "note": "field note: pairing from a search summary of the MezzoMiki 12-design list; consistent with the 3 designs in packet 586; per-design photos not seen"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/dewey-king-tritons-castle",
+   "field": "characters",
+   "searched": "4 queries (JP)",
+   "note": "field note: pairing from a search summary of the MezzoMiki 12-design list; consistent with the 3 designs in packet 586; per-design photos not seen"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/louie-transit-steamer-line",
+   "field": "characters",
+   "searched": "4 queries (JP)",
+   "note": "field note: pairing from a search summary of the MezzoMiki 12-design list; consistent with the 3 designs in packet 586; per-design photos not seen"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/pluto-alices-tea-party",
+   "field": "characters",
+   "searched": "4 queries (JP)",
+   "note": "field note: pairing from a search summary of the MezzoMiki 12-design list; consistent with the 3 designs in packet 586; per-design photos not seen"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/goofy-western-river-railroad",
+   "field": "characters",
+   "searched": "4 queries (JP)",
+   "note": "field note: pairing from a search summary of the MezzoMiki 12-design list; consistent with the 3 designs in packet 586; per-design photos not seen"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/chip-n-dale-world-bazaar",
+   "field": "characters",
+   "searched": "4 queries (JP)",
+   "note": "field note: pairing from a search summary of the MezzoMiki 12-design list; consistent with the 3 designs in packet 586; per-design photos not seen"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/chip-n-dale-world-bazaar",
+   "field": "pin_structure",
+   "searched": "4 queries (JP)",
+   "note": "field note: Chip and Dale share one design per the lineup (one of 12), recorded as one pin"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/minnie-toontown",
+   "field": "visual_description",
+   "searched": "4 queries (JP)",
+   "note": "field note: one intermediate summary paired Minnie only with Toontown; the full 12-list has Minnie twice (AquaSphere and Toontown) - two designs"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/duffy-debut-2005",
+   "field": "visual_description",
+   "searched": "3 queries (JP)",
+   "note": "field note: year label from search summary of the review; exact art reproduced not seen"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/duffy-blue-trunk-2007",
+   "field": "visual_description",
+   "searched": "3 queries (JP)",
+   "note": "field note: year label from search summary of the review; exact art reproduced not seen"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/sweet-duffy-2009",
+   "field": "visual_description",
+   "searched": "3 queries (JP)",
+   "note": "field note: year label from search summary of the review; exact art reproduced not seen"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/spring-voyage-2012",
+   "field": "visual_description",
+   "searched": "3 queries (JP)",
+   "note": "field note: year label from search summary of the review; exact art reproduced not seen"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/christmas-snowman-2014",
+   "field": "visual_description",
+   "searched": "3 queries (JP)",
+   "note": "field note: year label from search summary of the review; exact art reproduced not seen"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/cupcake-duffy-2017",
+   "field": "visual_description",
+   "searched": "3 queries (JP)",
+   "note": "field note: year label from search summary of the review; exact art reproduced not seen"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/sunny-fun-2019",
+   "field": "visual_description",
+   "searched": "3 queries (JP)",
+   "note": "field note: year label from search summary of the review; exact art reproduced not seen"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/raincoat-duffy-2022",
+   "field": "visual_description",
+   "searched": "3 queries (JP)",
+   "note": "field note: year label from search summary of the review; exact art reproduced not seen"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/come-find-spring-2024",
+   "field": "visual_description",
+   "searched": "3 queries (JP)",
+   "note": "field note: year label from search summary of the review; exact art reproduced not seen"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set",
+   "field": "members",
+   "searched": "3 queries (JP)",
+   "note": "9 of 11 designs now named from review summaries; 2 unnamed (a gold Duffy at the centre table mentioned, unclear if a pin)"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set",
+   "field": "release_location",
+   "searched": "3 queries (JP)",
+   "note": "field note: store sale start reported as 21 Dec and 28 Dec 2025 by different blogs"
+  },
+  {
+   "key": "tdr/2026/palpalooza-vanellopes-sweets-pop-world/vanellope",
+   "field": "pin_structure",
+   "searched": "1 query (JP)",
+   "note": "hold kept: summary calls it a different design from the 2025 ¥1,200 pin but this looks like inference; no side-by-side source; not released"
+  },
+  {
+   "key": "tdr/2026/tdl-43rd-anniversary-toontown/pin-badge",
+   "field": "visual_description",
+   "searched": "1 query (JP)",
+   "note": "field note: conflict persists - most sources: Mickey & Minnie at Mickey's House, swaying; one outlet: Gag Factory gag-machine motif"
+  },
+  {
+   "key": "tdr/2026/headband-random-pin-set",
+   "field": "members",
+   "searched": "2 queries (JP)",
+   "note": "hold: mystery designs not individually confirmed - one summary lists Mickey, Minnie, Donald, Daisy, Goofy, Pluto, Chip & Dale, Stitch, Angel, Judy, Nick + secret; a 2nd search could not confirm"
+  },
+  {
+   "key": "tdr/2026/headband-random-pin-set",
+   "field": "edition_type",
+   "searched": "2 queries (JP)",
+   "note": "field note: summary also cited official page 112001965, but that is the 2024 park-souvenir 12-design bag - not used"
+  },
+  {
+   "key": "tdr/2024/park-souvenir-pin-set",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "out of cell: official 12-design park-souvenir pin set (¥7,800 box / ¥1,300 bag) dates from Nov 2024"
+  },
+  {
+   "key": "tdr/2026/halloween-2026-jubilee-badge-set",
+   "field": "scope",
+   "searched": "1 query (JP)",
+   "note": "scope: confirmed button/badge/non-pin (Jubilee badge is a customisable rosette-style badge with ribbon and charm parts; Halloween set ¥2,500, TDS only, 15 Sep 2026)"
+  },
+  {
+   "key": "tdr/2026/tds-25th-jubilee-journey",
+   "field": "members",
+   "searched": "1 query (JP)",
+   "note": "port-by-port characters still not named; summary repeats Mickey & Minnie in 8 port costumes on a moon-phase board (¥11,000)"
+  },
+  {
+   "key": "shdr/2026/duffy-and-friends-little-voyage-mystery",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "hold: SHDR Duffy & Friends 'Little Voyage' mystery box (7 designs, 1 per box, Sep 2026) seen only on reseller usshoppingsos; DPB post title only"
+  },
+  {
+   "key": "dsus/2026/winnie-the-pooh-halloween-shdr-mystery",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: DPB says Winnie the Pooh Halloween Shanghai Disney Resort mystery set sold via Disney Store (US$19.99/2-pin box) from 29 Sep 2026 - store line, not park"
+  },
+  {
+   "key": "shdr/2026/duffy-and-friends-cherry-bakery-mystery",
+   "field": "members",
+   "searched": "2 queries (EN/CN)",
+   "note": "reseller gives 8 Jul 2026 and 7 designs (possibly another listing's text); DPB title dated 26 Jul 2026; designs not on allowed source"
+  },
+  {
+   "key": "shdr/2026/summer-2026-zootopia-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "DPB title only (2 Jul 2026); count and designs still not seen"
+  },
+  {
+   "key": "shdr/2026/halloween-2026-zootopia-mystery",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "hold kept: reseller-only (release 4 Oct 2026, Shanghai Disney Store)"
+  },
+  {
+   "key": "shdr/2026/inside-out-2-mystery",
+   "field": "existence",
+   "searched": "1 query",
+   "note": "lead: DPB post on an Inside Out 2 mystery set at SHDR seen in results; date not established"
+  },
+  {
+   "key": "hkdl/2026/pin-trading-carnival-2026",
+   "field": "members",
+   "searched": "2 queries (CN)",
+   "note": "Princess vs Villain theme, HK-exclusive Storybook series (villain cover, princess/prince inside); prize-wheel designs not named; edition sizes not found"
+  },
+  {
+   "key": "hkdl/2026/pin-trading-carnival-2026/ariel-le",
+   "field": "characters",
+   "searched": "1 query (CN)",
+   "note": "field note: 艾莉奧 LE (with stamp card) still unresolved (Elio vs Ariel)"
+  },
+  {
+   "key": "hkdl/2025/10k-weekend-2025",
+   "field": "members",
+   "searched": "1 query (CN)",
+   "note": "official press release (1-2 Nov 2025) race pack has no pin; blogs say eStore party items include LE themed pins - designs not named"
+  },
+  {
+   "key": "hkdl/2025/chinese-new-year-2025-medallions",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "scope: confirmed button/badge/non-pin (CNY 2025 limited medallions, 4 designs - not pins)"
+  },
+  {
+   "key": "tdr/2026/park-signs-pin-badge-sets",
+   "field": "members",
+   "searched": "1 query (JP)",
+   "note": "no new allowed source; 2 unnamed designs and land allocation still open"
+  },
+  {
+   "key": "b416/holds",
+   "field": "members",
+   "searched": "29 queries total",
+   "note": "holds kept, none released: Vanellope 2026, Hello Hello SUMMER two, Carnival tote-bag, Sparkling Jubilee seven, Frozen Kingdom 14, Four Seasons, Redemption 2025, stained-glass / 626 mini jumbo / SHDR Zootopia 2, SHDR Halloween 2026 / LNY 2026 boxes"
+  },
+  {
+   "key": "tdr/2026/christmas-2026/pin-badge",
+   "field": "existence",
+   "searched": "0 queries",
+   "note": "not recorded: TDR Christmas 2026 goods start 10 Nov 2026, after today (19 Oct 2026)"
+  },
+  {
+   "key": "b416/not-researched",
+   "field": "members",
+   "searched": "budget",
+   "note": "not re-searched: Clawhauser motif, Summer Vibes structure, Pirate Stitch, Spring Festival 2026, LNY 2025 prices, Fun Day 2025, Let's Learn, birthday badge, student-month box, HKDL eStore months, Carnival 2025, CNY 2025 four, Q4 2025 / Q3 / Q4 2026 packages"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/mickey-cinderella-castle",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery design pairing only in a search-engine summary of the MezzoMiki 12-design list; confirm each design from quoted text / official page (rule 12)"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/mickey-mount-prometheus",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery design pairing only in a search-engine summary of the MezzoMiki 12-design list; confirm each design from quoted text / official page (rule 12)"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/minnie-toontown",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery design pairing only in a search-engine summary of the MezzoMiki 12-design list; confirm each design from quoted text / official page (rule 12)"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/huey-splash-mountain",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery design pairing only in a search-engine summary of the MezzoMiki 12-design list; confirm each design from quoted text / official page (rule 12)"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/dewey-king-tritons-castle",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery design pairing only in a search-engine summary of the MezzoMiki 12-design list; confirm each design from quoted text / official page (rule 12)"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/louie-transit-steamer-line",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery design pairing only in a search-engine summary of the MezzoMiki 12-design list; confirm each design from quoted text / official page (rule 12)"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/pluto-alices-tea-party",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery design pairing only in a search-engine summary of the MezzoMiki 12-design list; confirm each design from quoted text / official page (rule 12)"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/goofy-western-river-railroad",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery design pairing only in a search-engine summary of the MezzoMiki 12-design list; confirm each design from quoted text / official page (rule 12)"
+  },
+  {
+   "key": "tdr/2026/cinderella-castle-mystery/chip-n-dale-world-bazaar",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: mystery design pairing only in a search-engine summary of the MezzoMiki 12-design list; confirm each design from quoted text / official page (rule 12)"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/duffy-debut-2005",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: framed-set member named only in search summaries of reviews (list-only); confirm each design from quoted text / official page"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/duffy-blue-trunk-2007",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: framed-set member named only in search summaries of reviews (list-only); confirm each design from quoted text / official page"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/sweet-duffy-2009",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: framed-set member named only in search summaries of reviews (list-only); confirm each design from quoted text / official page"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/spring-voyage-2012",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: framed-set member named only in search summaries of reviews (list-only); confirm each design from quoted text / official page"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/christmas-snowman-2014",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: framed-set member named only in search summaries of reviews (list-only); confirm each design from quoted text / official page"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/cupcake-duffy-2017",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: framed-set member named only in search summaries of reviews (list-only); confirm each design from quoted text / official page"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/sunny-fun-2019",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: framed-set member named only in search summaries of reviews (list-only); confirm each design from quoted text / official page"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/raincoat-duffy-2022",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: framed-set member named only in search summaries of reviews (list-only); confirm each design from quoted text / official page"
+  },
+  {
+   "key": "tdr/2025/duffy-20th-anniversary-pin-badge-set/come-find-spring-2024",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: framed-set member named only in search summaries of reviews (list-only); confirm each design from quoted text / official page"
+  }
+ ],
+ "discovery_notes": "Follow-up 24 of B041 (Asia 2025-2026), cell B416. 29 web searches (budget 30). All claims search_snippet. Completed TDR Cinderella Castle blind lineup (9 new designs; 12/12 with packet 586). Named 9 of 11 Duffy 20th framed-set pins from reviews. New set: TDR headband random 2-pin bag (Feb 2026, 12 designs; members held). Enriched Vanellope 2026 and TDL 43rd. Halloween 2026 Jubilee badge confirmed rosette badge (out of scope). No holds released."
+}

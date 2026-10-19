@@ -1,6 +1,6 @@
 {
  "source": "staging_payload.json",
- "git_commit": "1065040544f8",
+ "git_commit": "7f01d990649e",
  "generated": "2026-10-19",
  "runs": [
   {
@@ -27,9 +27,9 @@
   {
    "file": "run_03_dlr-to-dlp.json",
    "pins": 1239,
-   "sets": 659,
-   "evidence": 9775,
-   "bytes": 4089595,
+   "sets": 660,
+   "evidence": 9809,
+   "bytes": 4099067,
    "lines": [
     "dlr",
     "dlp"
@@ -37,10 +37,10 @@
   },
   {
    "file": "run_04_dlp-to-dsuk.json",
-   "pins": 1230,
+   "pins": 1228,
    "sets": 669,
-   "evidence": 11561,
-   "bytes": 4735282,
+   "evidence": 11529,
+   "bytes": 4728580,
    "lines": [
     "dlp",
     "dsuk"
@@ -48,10 +48,10 @@
   },
   {
    "file": "run_05_dsuk-to-shdr.json",
-   "pins": 1275,
-   "sets": 625,
-   "evidence": 11237,
-   "bytes": 4710967,
+   "pins": 1288,
+   "sets": 607,
+   "evidence": 11384,
+   "bytes": 4753914,
    "lines": [
     "dsuk",
     "dsus",
@@ -60,10 +60,10 @@
   },
   {
    "file": "run_06_shdr-to-lic.json",
-   "pins": 1291,
-   "sets": 608,
-   "evidence": 10152,
-   "bytes": 4311251,
+   "pins": 1269,
+   "sets": 631,
+   "evidence": 10239,
+   "bytes": 4333595,
    "lines": [
     "shdr",
     "hkdl",
@@ -73,30 +73,30 @@
   },
   {
    "file": "run_07_lic.json",
-   "pins": 1079,
-   "sets": 521,
-   "evidence": 12624,
-   "bytes": 4811804,
+   "pins": 1104,
+   "sets": 531,
+   "evidence": 12566,
+   "bytes": 4822697,
    "lines": [
     "lic"
    ]
   },
   {
    "file": "run_08_lic.json",
-   "pins": 1097,
-   "sets": 498,
-   "evidence": 11798,
-   "bytes": 4803447,
+   "pins": 1094,
+   "sets": 501,
+   "evidence": 11914,
+   "bytes": 4812176,
    "lines": [
     "lic"
    ]
   },
   {
    "file": "run_09_lic-to-windows-of-attraction.json",
-   "pins": 503,
-   "sets": 145,
-   "evidence": 5543,
-   "bytes": 2310651,
+   "pins": 555,
+   "sets": 160,
+   "evidence": 5926,
+   "bytes": 2491152,
    "lines": [
     "lic",
     "animated-cuties",

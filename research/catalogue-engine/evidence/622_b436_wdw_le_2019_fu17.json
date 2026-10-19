@@ -1,0 +1,468 @@
+{
+ "packet_id": "622_b436_wdw_le_2019_fu17",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "discovery_notes": "Follow-up 17 of B002 (WDW LE 2019). 28 web searches. New keys: Aladdin 2019 film Opening Day pin (Aladdin & Jasmine, LR, 23 May 2019, DPB) and Dumbo The Flying Elephant LR $15.99 (DPB Mar 2019 wk1; held title-only). Re-used: Kingdom Consoles Fantasia (Sorcerer Mickey, $17.99, WDWNT), Knights of Ren booster set details. Maleficent price field notes. No holds released. New areas tried (Disney Springs, film tie-ins, Toy Story Land, pin trading 20th, attraction anniversaries) mostly saturated.",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+   "title": "New Disney Pins May 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-1/",
+   "title": "New Disney Pins March 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/10/photo-report-magic-kingdom-10-20-19-orange-bird-park-pal-iphone-11-cases-new-pins-construction-updates-and-more/",
+   "title": "PHOTO REPORT: Magic Kingdom 10/20/19 (Orange Bird Park Pal, iPhone 11 Cases, New Limited Edition Pins, Construction Updates, and More!)",
+   "publisher": "WDW News Today",
+   "published_date": "2019-10-20",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+   "title": "New Disney Pins December 2019 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dismerchandise.com/2020/01/13/knights-of-ren-pin-set-star-wars-the-rise-of-skywalker-limited-release-is-now-out/",
+   "title": "Knights of Ren Pin Set - Star Wars The Rise of Skywalker limited release",
+   "publisher": "DisMerchandise",
+   "published_date": "2020-01-13",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/11/photos-december-2019-pin-releases-for-walt-disney-world-and-disneyland-feature-star-tours-30th-anniversary-princess-and-the-frog-10th-anniversary-matterhorn-disneys-riviera-resort-pins-and-more/",
+   "title": "December 2019 Pin Releases for Walt Disney World and Disneyland Feature Star Tours 30th Anniversary, Princess and The Frog 10th Anniversary, Matterhorn, Disney's Riviera Resort Pins, and More",
+   "publisher": "WDW News Today",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2019/aladdin-2019-film-opening-day",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Aladdin (2019 film) Opening Day pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "single-pin release named in DPB shared DLR/WDW list"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "one pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-23",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "available at both resorts 23 May 2019"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/dumbo-flying-elephant-lr-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Dumbo The Flying Elephant pin (Disney Parks limited release, March 2019)",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-1/",
+     "method": "search_snippet",
+     "note": "listed under shared DLR and WDW releases, week of 3-9 Mar 2019"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-1/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-1/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-1/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-1/",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/rise-of-skywalker-knights-booster",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "booster set with six Knights of Ren"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack (booster set of six pins)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "members not named individually"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "available at Disneyland and WDW 19 Dec 2019"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2019/aladdin-2019-film-opening-day/aladdin-and-jasmine",
+   "set_key": "wdw/2019/aladdin-2019-film-opening-day",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Aladdin Opening Day Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Aladdin",
+      "Princess Jasmine"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "pair shown riding the magic carpet"
+    },
+    {
+     "field": "main_character",
+     "value": "Aladdin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "Aladdin and Jasmine on the magic carpet; pin-on-pin design",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "paraphrase of DPB line"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "single pin featuring two characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-23",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-may-2019-week-4/",
+     "method": "search_snippet",
+     "note": "shared release; keyed under wdw"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/dumbo-flying-elephant-lr-2019/dumbo",
+   "set_key": "wdw/2019/dumbo-flying-elephant-lr-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dumbo The Flying Elephant Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-1/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-1/",
+     "method": "search_snippet",
+     "note": "subject inferred from the pin title only"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-1/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-1/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-1/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-1/",
+     "method": "search_snippet",
+     "note": "week of 3-9 Mar 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-1/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-1/",
+     "method": "search_snippet",
+     "note": "shared release; keyed under wdw"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/kingdom-consoles/fantasia",
+   "set_key": "wdw/2019/kingdom-consoles",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://wdwnt.com/2019/10/photo-report-magic-kingdom-10-20-19-orange-bird-park-pal-iphone-11-cases-new-pins-construction-updates-and-more/",
+     "method": "search_snippet",
+     "note": "WDWNT calls it the Kingdom Consoles Sorcerer Mickey pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://wdwnt.com/2019/10/photo-report-magic-kingdom-10-20-19-orange-bird-park-pal-iphone-11-cases-new-pins-construction-updates-and-more/",
+     "method": "search_snippet",
+     "note": "Sorcerer Mickey"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2019/10/photo-report-magic-kingdom-10-20-19-orange-bird-park-pal-iphone-11-cases-new-pins-construction-updates-and-more/",
+     "method": "search_snippet",
+     "note": "$17.99 each, sold throughout WDW"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/10/photo-report-magic-kingdom-10-20-19-orange-bird-park-pal-iphone-11-cases-new-pins-construction-updates-and-more/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/10/photo-report-magic-kingdom-10-20-19-orange-bird-park-pal-iphone-11-cases-new-pins-construction-updates-and-more/",
+     "method": "search_snippet"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2019/dumbo-flying-elephant-lr-2019/dumbo",
+   "field": "hold",
+   "searched": "DPB Mar 2019 wk1 (2 queries); mypincentral/WDWNT search",
+   "note": "hold: title-only - dated DPB round-up gives name, limited release and $15.99 but the design is not described; not confirmed as the 2019 film tie-in vs attraction pin"
+  },
+  {
+   "key": "wdw/2019/dumbo-flying-elephant-lr-2019/dumbo",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "no edition size stated; $15.99 rests on one partly garbled DPB weekly line"
+  },
+  {
+   "key": "wdw/2019/dumbo-flying-elephant-lr-2019/dumbo",
+   "field": "variant",
+   "searched": "key check",
+   "note": "field note: not the Magic of Honor Dumbo (LE 2,000, Feb 2019), Vintage Vinyl Dumbo, DLR Crests Dumbo or shopDisney live-action 3-pin set (Disney Store LR $16.95)"
+  },
+  {
+   "key": "wdw/2019/aladdin-2019-film-opening-day/aladdin-and-jasmine",
+   "field": "variant",
+   "searched": "key check",
+   "note": "field note: distinct from wdw/2019/oe/aladdin-pin-on-pin (OE $9.99, Jafar/Genie/Abu/Aladdin, May wk5); single dated DPB source, a commenter reports buying it at DLR 27 May"
+  },
+  {
+   "key": "wdw/2019/kingdom-consoles/fantasia",
+   "field": "visual_description",
+   "searched": "WDWNT MK 10/20/19 photo report",
+   "note": "field note: 'Sorcerer Mickey' label from WDWNT report summary; console artwork not described"
+  },
+  {
+   "key": "wdw/2019/maleficent-mistress-of-evil/maleficent-bust",
+   "field": "original_price",
+   "searched": "WDWNT MK 10/20/19 photo report",
+   "note": "field note: WDWNT says the face-only Maleficent pin was $15.99 (existing claim $16.99)"
+  },
+  {
+   "key": "wdw/2019/maleficent-mistress-of-evil/park-pin",
+   "field": "original_price",
+   "searched": "WDWNT MK 10/20/19 photo report",
+   "note": "field note: WDWNT says the 'Mistress of Evil' pin was $17.99 (existing claim $16.99)"
+  },
+  {
+   "key": "wdw/2019/rise-of-skywalker-knights-booster",
+   "field": "pins",
+   "searched": "DPB Dec 2019 wk3; WDWNT Dec 2019 preview; DisMerchandise",
+   "note": "six Knights not named individually; DisMerchandise reports a shopDisney release 12 Jan 2020 at $29.99 (same set probably, unconfirmed)"
+  },
+  {
+   "key": "wdw/2019/earth-day-2019/simba",
+   "field": "hold",
+   "searched": "1 query (DPB, WDWNT, DFB)",
+   "note": "hold kept: WDWNT Apr 2019 releases article (already cited in earlier packets) mentions a Simba Earth Day design only in a search summary; LE 2,500 still reseller-only"
+  },
+  {
+   "key": "wdw/2019/tarzan-20th-anniversary",
+   "field": "hold",
+   "searched": "1 query",
+   "note": "hold kept: LE 4,000 / $17.99 restated in summary; design still not described"
+  },
+  {
+   "key": "wdw/2019/resort-holiday-bells-2019",
+   "field": "hold",
+   "searched": "1 query",
+   "note": "hold kept: DPB lists Grand Floridian, Polynesian, Contemporary bells among WDW releases; characters and editions per bell still not stated"
+  },
+  {
+   "key": "wdw/2019/rundisney-wine-dine-half-marathon-weekend-2019",
+   "field": "pins",
+   "searched": "1 query (DPB, WDWNT, WDWInfo, ITM)",
+   "note": "DPB says LR pins for 5K, 10K, half and more, most sold out day one; per-pin designs not in snippets"
+  },
+  {
+   "key": "wdw/2019/animal-kingdom-pin-thursday",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "WDWNT Oct 2019 announcement: weekly from 7 Nov 2019, LE/LR at Discovery Trading Co. and Africa cart; no named pin"
+  },
+  {
+   "key": "dlr/2019/graduation-2019/mickey-graduation-ear-band",
+   "field": "variant",
+   "searched": "DPB May 2019 preview search",
+   "note": "lead: shared DLR/WDW pin (LE 3,500, $16.99, 9 May 2019) is keyed under dlr; convention says shared pins key under wdw - reviewer to decide whether to re-key"
+  },
+  {
+   "key": "wdw/2019/toy-story-4-film",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "none found: no park LE/LR Toy Story 4 opening pin; only Disney Store Times Square LE 500 and Studio Store Ducky & Bunny LE 150 (non-park)"
+  },
+  {
+   "key": "wdw/2019/frozen-2-film",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "none found: no park opening-day Frozen 2 LE; Nokk LE 150 at Studio Store Hollywood (non-park)"
+  },
+  {
+   "key": "wdw/2019/toy-story-land-1st-anniversary",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "none found: no 2019 first-anniversary pin surfaced"
+  },
+  {
+   "key": "wdw/2019/disney-springs-exclusives",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "none found: Disney Springs 2019 LE items found are Three Caballeros 75th, I Heart Gaming Gummi Bears, holiday ornament boxes, resort bells - all already keyed"
+  },
+  {
+   "key": "wdw/2019/pin-trading-20th-anniversary",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "none in 2019: 20 Years of Disney Pins countdown (nine, LE 4,000) is a 2020 release; announced Aug 2019"
+  },
+  {
+   "key": "lead: d23-expo-2019 big-thunder-40th",
+   "field": "scope",
+   "searched": "1 query",
+   "note": "lead: D23 Expo 2019 Dream Store Big Thunder Mountain 40th pin LE 500 $44.99 (25 Aug 2019) and Mickey's of Glendale anniversary jumbos LE 300 - not WDW; for an event/other line"
+  },
+  {
+   "key": "wdw/2019/dpb-weekly-roundups",
+   "field": "gap",
+   "searched": "3 queries",
+   "note": "DPB Apr 2019 wk2 and Nov 2019 wk3 posts did not surface in search; Jul / Aug / Dec / May previews only restate already-keyed pins"
+  }
+ ]
+}

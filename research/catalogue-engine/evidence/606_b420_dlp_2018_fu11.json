@@ -1,0 +1,679 @@
+{
+ "packet_id": "606_b420_dlp_2018_fu11",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://mypincentral.com/pin/73624",
+   "title": "73624",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/126136",
+   "title": "126136",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-june-2018-pins",
+   "title": "Disneyland Paris June 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/incredibles-disney-pins/",
+   "title": "Incredibles Disney Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/bambi-disneyland-paris-pin-trading-night-pins/",
+   "title": "Bambi Disneyland Paris Pin Trading Night Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://radiodisneyclub.fr/disney-magic-run-weekend-troisieme-edition/",
+   "title": "Disney Magic Run Weekend : tout savoir sur l'edition 2018",
+   "publisher": "Radio Disney Club",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+   "title": "Les medailles du Disneyland Paris Magic Run Weekend 2018 devoilees !",
+   "publisher": "Androland",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://blog.disneygeek.com/2018/06/28/medals-for-the-2018-disneyland-paris-magic-run-weekend-unveiled/",
+   "title": "Medals for the 2018 Disneyland Paris Magic Run Weekend Unveiled",
+   "publisher": "Disney Geek",
+   "published_date": "2018-06-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://radiodisneyclub.fr/shopping-mickey-disneyland-paris/",
+   "title": "Shopping Mickey special anniversaire a Disneyland Paris",
+   "publisher": "Radio Disney Club",
+   "published_date": "2018-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2018/rundisney-magic-run-weekend-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Magic Run Weekend 2018 pins",
+     "source_url": "https://radiodisneyclub.fr/disney-magic-run-weekend-troisieme-edition/",
+     "method": "search_snippet",
+     "note": "collector pins offered for the third Magic Run Weekend"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 11,
+     "source_url": "https://radiodisneyclub.fr/disney-magic-run-weekend-troisieme-edition/",
+     "method": "search_snippet",
+     "note": "eleven collector pins stated: eight limited plus three non-limited"
+    },
+    {
+     "field": "format",
+     "value": "eleven separate pins: eight limited editions for the three races (5 km, 10 km, 21.1 km) reproducing the five medals, plus three non-limited designs; one per buyer, runners only, collected at the runDisney expo",
+     "source_url": "https://radiodisneyclub.fr/disney-magic-run-weekend-troisieme-edition/",
+     "method": "search_snippet",
+     "note": "paraphrase; per-pin edition split not given"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-20",
+     "source_url": "https://blog.disneygeek.com/2018/06/28/medals-for-the-2018-disneyland-paris-magic-run-weekend-unveiled/",
+     "method": "search_snippet",
+     "note": "event ran 20-23 Sep 2018; pin pre-sale stated to run until 31 Aug 2018 (Radio Disney Club)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris (runDisney expo)",
+     "source_url": "https://radiodisneyclub.fr/disney-magic-run-weekend-troisieme-edition/",
+     "method": "search_snippet",
+     "note": "pins collected at the runDisney expo"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2018/pin-trading-night-november-2018/mickey-mouse-sad",
+   "set_key": "dlp/2018/pin-trading-night-november-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Night Disneyland Paris - Mickey Mouse (November 2018)",
+     "source_url": "https://mypincentral.com/pin/73624",
+     "method": "search_snippet",
+     "note": "per-pin listing says released for the Nov 2018 Pin Trading Night"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://mypincentral.com/pin/73624",
+     "method": "search_snippet",
+     "note": "Mickey at the centre"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://mypincentral.com/pin/73624",
+     "method": "search_snippet",
+     "note": "only character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/73624",
+     "method": "search_snippet",
+     "note": "single per-pin listing"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey looking sad in front of a blue banner with a small castle and the Earful Tower",
+     "source_url": "https://mypincentral.com/pin/73624",
+     "method": "search_snippet",
+     "note": "paraphrase of listing"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/73624",
+     "method": "search_snippet",
+     "note": "back marked edition limitee"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://mypincentral.com/pin/73624",
+     "method": "search_snippet",
+     "note": "back numbered X/425"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://mypincentral.com/pin/73624",
+     "method": "search_snippet",
+     "note": "listing: Pin Trading Night, November 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://mypincentral.com/pin/73624",
+     "method": "search_snippet",
+     "note": "Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://mypincentral.com/pin/73624",
+     "method": "search_snippet",
+     "note": "Disneyland Paris Pin Trading Night"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/ptn-june-2018-incredibles/violet-parr",
+   "set_key": "dlp/2018/ptn-june-2018-incredibles",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Trading Night Disneyland Paris - Violet Parr",
+     "source_url": "https://mypincentral.com/pin/126136",
+     "method": "search_snippet",
+     "note": "front text PIN TRADING NIGHT DISNEYLAND PARIS"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Violet Parr"
+     ],
+     "source_url": "https://mypincentral.com/pin/126136",
+     "method": "search_snippet",
+     "note": "Violet in her usual outfit, waving"
+    },
+    {
+     "field": "main_character",
+     "value": "Violet Parr",
+     "source_url": "https://mypincentral.com/pin/126136",
+     "method": "search_snippet",
+     "note": "only character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/126136",
+     "method": "search_snippet",
+     "note": "single per-pin listing"
+    },
+    {
+     "field": "visual_description",
+     "value": "Violet Parr waving, in everyday outfit, on a shaped pin with Pin Trading Night Disneyland Paris text",
+     "source_url": "https://mypincentral.com/pin/126136",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/126136",
+     "method": "search_snippet",
+     "note": "back numbered 143/400"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://mypincentral.com/pin/126136",
+     "method": "search_snippet",
+     "note": "numbered 143/400"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://mypincentral.com/pin/126136",
+     "method": "search_snippet",
+     "note": "Disneyland Paris Pin Trading Night"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/rundisney-magic-run-weekend-2018/i-did-it-5k",
+   "set_key": "dlp/2018/rundisney-magic-run-weekend-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "runDisney 2018 'I did it' 5 km pin",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "listed under the 5 km tab"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "listed separately per race distance"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "Magic Run Weekend 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "runDisney 2018 at Disneyland Paris"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/rundisney-magic-run-weekend-2018/i-did-it-10k",
+   "set_key": "dlp/2018/rundisney-magic-run-weekend-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "runDisney 2018 'I did it' 10 km pin",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "listed under the 10 km tab"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "listed separately per race distance"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "Magic Run Weekend 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "runDisney 2018 at Disneyland Paris"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/rundisney-magic-run-weekend-2018/i-did-it-21k",
+   "set_key": "dlp/2018/rundisney-magic-run-weekend-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "runDisney 2018 'I did it' 21.1 km pin",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "listed under the 21.1 km tab"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "listed separately per race distance"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "Magic Run Weekend 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "runDisney 2018 at Disneyland Paris"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/rundisney-magic-run-weekend-2018/medal-pin-5k",
+   "set_key": "dlp/2018/rundisney-magic-run-weekend-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "runDisney 2018 5 km medal pin",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "listed under the 5 km tab"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "listed separately per race distance"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "Magic Run Weekend 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "runDisney 2018 at Disneyland Paris"
+    },
+    {
+     "field": "original_price",
+     "value": 14.0,
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "medal pins for 5 km and 10 km listed at 14,00 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/rundisney-magic-run-weekend-2018/medal-pin-10k",
+   "set_key": "dlp/2018/rundisney-magic-run-weekend-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "runDisney 2018 10 km medal pin",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "listed under the 10 km tab"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "listed separately per race distance"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "Magic Run Weekend 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "runDisney 2018 at Disneyland Paris"
+    },
+    {
+     "field": "original_price",
+     "value": 14.0,
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "medal pins for 5 km and 10 km listed at 14,00 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://androland.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees-903.html",
+     "method": "search_snippet",
+     "note": "euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/mickey-90-november-2018/mickey-90th-birthday-pin",
+   "set_key": "dlp/2018/mickey-90-november-2018",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2018-11-18",
+     "source_url": "https://radiodisneyclub.fr/shopping-mickey-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "a limited-edition pin offered at Pueblo Trading Post on Sun 18 Nov (Mickey's 90th birthday)"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://radiodisneyclub.fr/shopping-mickey-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "sold exclusively at Pueblo Trading Post"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2018/pin-trading-night-november-2018/mickey-mouse-sad",
+   "field": "edition_size",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "field note: Nov 2018 PTN Bambi pins were LE 400 each (DPB 30 Nov 2018); this Mickey is /425 - may be an event/attendee pin rather than a Bambi PTN member; single per-pin listing"
+  },
+  {
+   "key": "dlp/2018/pin-trading-night-november-2018/mickey-mouse-sad",
+   "field": "original_price",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "price and exact day not stated; resolves the fu7 'MPC Nov 2018 PTN LE 425 pin, unidentified' lead"
+  },
+  {
+   "key": "dlp/2018/ptn-june-2018-incredibles/violet-parr",
+   "field": "release_date",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "hold: listing gives no date; link to the 29 Jun 2018 Incredibles PTN (DPB June 2018 post + DPB tag entry title) rests on subject and PTN branding only; confirm year"
+  },
+  {
+   "key": "dlp/2018/ptn-june-2018-incredibles",
+   "field": "members",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "other Incredibles PTN pins (Dash, Jack-Jack, Mr/Mrs Incredible, Edna) not found; set size not stated"
+  },
+  {
+   "key": "dlp/2018/rundisney-magic-run-weekend-2018",
+   "field": "members",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "five medal designs stated but only 5 km and 10 km medal pins named; 21.1 km and challenge medal pins and two of three non-limited designs not named; villains theme per Disney Geek medal article"
+  },
+  {
+   "key": "dlp/2018/rundisney-magic-run-weekend-2018/i-did-it-5k",
+   "field": "original_price",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "field note: snippet shows 10,00 EUR near the 21.1 km and lanyard tabs; page layout unclear which item it belongs to - not claimed"
+  },
+  {
+   "key": "dlp/2018/rundisney-magic-run-weekend-2018/i-did-it-10k",
+   "field": "original_price",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "field note: as 5 km; price not claimed"
+  },
+  {
+   "key": "dlp/2018/rundisney-magic-run-weekend-2018/i-did-it-21k",
+   "field": "original_price",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "field note: 10,00 EUR shown on this tab but layout unclear - not claimed"
+  },
+  {
+   "key": "dlp/2018/rundisney-magic-run-weekend-2018/i-did-it-5k",
+   "field": "edition_type",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "8 limited + 3 non-limited overall; which pins are limited not stated per pin"
+  },
+  {
+   "key": "dlp/2018/rundisney-magic-run-weekend-2018/medal-pin-5k",
+   "field": "edition_type",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "field note: medal pins likely among the 8 limited (they reproduce the medals), not stated per pin"
+  },
+  {
+   "key": "dlp/2018/rundisney-magic-run-weekend-2018/medal-pin-10k",
+   "field": "edition_type",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "field note: as 5 km medal pin"
+  },
+  {
+   "key": "dlp/2018/rundisney-magic-run-weekend-2018",
+   "field": "original_price",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "lead: one summary gave a 6 EUR 'Disneyland Paris Magic Run Weekend 2018' pin; source page not identified - not recorded"
+  },
+  {
+   "key": "dlp/2018/mickey-90-november-2018/mickey-90th-birthday-pin",
+   "field": "visual_description",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "field note: a fan-site summary says the pin is dated '18 novembre 2018'; source page not pinned down (radiodisneyclub vs disneylandparisbonsplans), design otherwise undescribed; LE 1928 there refers to a key"
+  },
+  {
+   "key": "dlp/2018/disney-loves-jazz-2018",
+   "field": "members",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "hold retained: Chip and Co jazz merch article (LE 500, 15.99 EUR, Aristocats OE pin) is the 15 Jun 2019 event, not 2018; 2018 designs still unnamed"
+  },
+  {
+   "key": "dlp/2018/worlds-biggest-mouse-party-oct-2018",
+   "field": "original_price",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "no second source or price this round; DPB page only. lead: Shop The Mouse lists a DLP 'Worlds Biggest Birthday Party' pin trading badge (reseller; scope unclear) - not recorded"
+  },
+  {
+   "key": "dlp/2018/worlds-biggest-mouse-party-oct-2018/mickey-mouse",
+   "field": "visual_description",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "per-pin outfits still not described"
+  },
+  {
+   "key": "dlp/2018/oe/christmas-pin-set-2018-minnie",
+   "field": "hold",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "existing hold retained: disneystore.eu search returned only ornaments, no Christmas pin set listing"
+  },
+  {
+   "key": "dlp/2018/june-2018-le/ursula-big-thunder-mountain",
+   "field": "hold",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "existing hold retained: no new evidence this round"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018",
+   "field": "hold",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "existing hold retained (BTM, PotC, Pinocchio, ToT): no new evidence this round"
+  },
+  {
+   "key": "dlp/2018/ptn-november-2018-bambi/flower",
+   "field": "hold",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "existing hold retained: MPC Flower /400 PTN listing seen again without date; only an unreliable 'boutique-disney.com' shop page describes a Bambi/Thumper/Flower 400 pin - not evidence"
+  },
+  {
+   "key": "dlp/2018/ptn-november-2018-bambi",
+   "field": "members",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "Bambi PTN members still not named by an acceptable source (DPB: LE 400 each, 30 Nov 2018); MPC 191830 Thumper has no PTN text"
+  },
+  {
+   "key": "dlp/2018/pirates-and-princesses-2018",
+   "field": "hold",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "existing hold retained: not searched (budget)"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018/tod",
+   "field": "hold",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "existing hold retained: disneystore.eu again shows Copper mini only; no Tod mini listing"
+  },
+  {
+   "key": "dlp/2018/cherry-blossom-girl-july-2018",
+   "field": "hold",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "existing hold retained: Disney Gazette July 2018 again names three pins but no designs"
+  },
+  {
+   "key": "dlp/2018/valentines-2018",
+   "field": "hold",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "existing hold retained: no new evidence"
+  },
+  {
+   "key": "dlp/2018/ptn-trios",
+   "field": "members",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "PTN trios Apr / May / Oct 2018 still unnamed"
+  },
+  {
+   "key": "dlp/2018/february-2018-releases",
+   "field": "members",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "DPB Feb 2018: Toy Story, Tangled, Lion King themes; TTM: Lion King + Bambi LEs 10 Feb, Toy Story + 25th LEs 17 Feb; no designs; dein-dlrp Feb 2018 page not indexed"
+  },
+  {
+   "key": "dlp/2018/may-2018-releases",
+   "field": "members",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "DPB May 2018: Minnie, Dumbo, Star Wars, Jasmine My Cat; no designs; dein-dlrp May 2018 page not indexed"
+  },
+  {
+   "key": "dlp/2018/monthly-pages",
+   "field": "members",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "passiondlp Q2 2018 (arc028) and Q4 2018 still not indexed; passiondlp poster index lists monthly posters without text; dein-dlrp Feb/Mar/May/Nov/Dec 2018 not indexed"
+  },
+  {
+   "key": "lead/dlp/ptn-undated",
+   "field": "members",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "lead: MPC undated DLP Pin Trading Night /400 pins: Kronk, King of Hearts, Baymax, Bing Bong (Bing Bong is Jan 2018 PTN, already recorded); years unknown - not recorded"
+  },
+  {
+   "key": "lead/dlp/worlds-best-friends-tod-copper",
+   "field": "release_date",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "lead: reseller (pinsbreaktheinternet) lists a DLP 'World's Best Friends' Tod and Copper LE 700 pin; year unknown, reseller only - not recorded"
+  },
+  {
+   "key": "dlp/2018/season-of-the-force-2018",
+   "field": "members",
+   "searched": "29 standard searches (DPB, passiondlp, dein-dlrp, chroniquedisney, disneygazette, radiodisneyclub, androland, MyPinCentral, disneystore.eu)",
+   "note": "not searched further this round; no design known"
+  }
+ ],
+ "discovery_notes": "B420 (DLP 2018 FU11). New: Nov 2018 PTN sad Mickey /425 (MPC 73624), Violet Parr PTN /400 (MPC 126136, held: undated), runDisney Magic Run Weekend 2018 set (11 pins) with five distance-named pins. Mickey 90th pin date/location added. No holds released. 29 searches."
+}

@@ -1,0 +1,951 @@
+{
+ "packet_id": "b412-dlp-2019-fu10-2026-10-19",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "http://www.passiondlp.com/actus/arc031.php",
+   "title": "passiondlp : Archives Disneyland Paris 2019 trimestre 1",
+   "publisher": "passiondlp.com",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://passiondlp.com/actus/arc032.php",
+   "title": "passiondlp : Archives Disneyland Paris 2019 trimestre 2",
+   "publisher": "passiondlp.com",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc033.php",
+   "title": "passiondlp : Archives Disneyland Paris 2019 trimestre 3",
+   "publisher": "passiondlp.com",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc034.php",
+   "title": "passiondlp : Archives Disneyland Paris 2019 trimestre 4",
+   "publisher": "passiondlp.com",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+   "title": "Pin-Neuerscheinungen im Dezember 2019 für Disneyland Paris",
+   "publisher": "dein-dlrp.de",
+   "published_date": "2019-12-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/christmas-time-2019-disneyland-paris-event-pin-releases/",
+   "title": "Christmas Time 2019 Disneyland Paris Event Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2019/fete-des-meres-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Fête des Mères 2019 surprise pin",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "surprise release of the 'Fête des Mères' pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "archive speaks of a single pin (le pin's)"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "one surprise pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "700 copies"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-26",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "entry dated 26/05/19"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/fete-des-peres-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Fête des Pères 2019 surprise pin",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "surprise release of the 'Fête des Pères' pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "archive speaks of a single pin (le pin's)"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "one surprise pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "700 copies"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-16",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "entry dated 16/06/19"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/saison-ete-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Saison Été 2019 surprise pin",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "surprise release of the 'Saison Été' pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "archive speaks of a single pin (le pin's)"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "one surprise pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "700 copies"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "entry dated 21/06/19 in one summary, 26/06/19 in another; month only"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/toy-story-4-surprise-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Toy Story 4 surprise pins (film release)",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "surprise release of three Toy Story 4 pins for the film release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "3 pin's"
+    },
+    {
+     "field": "format",
+     "value": "three separate pins",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "three pins, each limited"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "édition limitée"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "500 exemplaires"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-26",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "entry 26/06/19, 'ce matin'"
+    },
+    {
+     "field": "release_location",
+     "value": "Barrel of Monkeys, Walt Disney Studios Park",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "sold at Barrel of Monkeys boutique"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/oe-set/beauty-and-the-beast-december-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Beauty and the Beast open edition pins (7 Dec 2019)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "three unlimited pins themed on Beauty and the Beast among six new pins on 7 Dec"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "three of the six 7 Dec pins are unlimited, all Beauty and the Beast"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "each pin described/listed separately"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "7. Dezember"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/lion-king-jungle-festival-2019",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2019-07-13",
+     "source_url": "http://www.passiondlp.com/actus/arc033.php",
+     "method": "search_snippet",
+     "note": "Q3 archive: Pin Trading Day pins of 13 July 2019 (entry 13/07/19)"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "http://www.passiondlp.com/actus/arc033.php",
+     "method": "search_snippet",
+     "note": "500 exemplaires chacun"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2019/fete-des-meres-2019/mothers-day",
+   "set_key": "dlp/2019/fete-des-meres-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Fête des Mères",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "Q2 2019 archive: surprise release of pin 'Fête des Mères'"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "singular pin entry"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "limited run"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "700 exemplaires"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-26",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "entry dated 26/05/19"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "Q2 2019 archive"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "listed in DLP news archive; shop not given in snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/fete-des-peres-2019/fathers-day",
+   "set_key": "dlp/2019/fete-des-peres-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Fête des Pères",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "Q2 2019 archive: surprise release of pin 'Fête des Pères'"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "singular pin entry"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "limited run"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "700 exemplaires"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-16",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "entry dated 16/06/19"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "Q2 2019 archive"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "listed in DLP news archive; shop not given in snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/saison-ete-2019/summer",
+   "set_key": "dlp/2019/saison-ete-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Saison Été",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "Q2 2019 archive: surprise release of pin 'Saison Été'"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "singular pin entry"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "limited run"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "700 exemplaires"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "entry dated 21/06/19 in one summary, 26/06/19 in another; month only"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "Q2 2019 archive"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "http://passiondlp.com/actus/arc032.php",
+     "method": "search_snippet",
+     "note": "listed in DLP news archive; shop not given in snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/oe/wardrobe-pink-dress-december-2019",
+   "set_key": "dlp/2019/oe-set/beauty-and-the-beast-december-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Madame Garderobe",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "quoted: Madame Garderobe pin, unlimited, 6,99 EUR"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Wardrobe"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "Von Unruh is the German name of Cogsworth; Madame Garderobe = Wardrobe"
+    },
+    {
+     "field": "main_character",
+     "value": "Wardrobe",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "only character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "single line item"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "6.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "7 Dec 2019 release"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "December 2019 list"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "DLP monthly release list"
+    },
+    {
+     "field": "visual_description",
+     "value": "Wardrobe conjuring a pink dress",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "paraphrase of dein-dlrp description"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/oe/enchanted-rose-december-2019",
+   "set_key": "dlp/2019/oe-set/beauty-and-the-beast-december-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Enchanted Rose",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "quoted: second pin decorated with the enchanted rose, 6,99 EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "single line item"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "6.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "7 Dec 2019 release"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "December 2019 list"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "DLP monthly release list"
+    },
+    {
+     "field": "visual_description",
+     "value": "the enchanted rose",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "paraphrase of dein-dlrp description"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/oe/lumiere-and-cogsworth-december-2019",
+   "set_key": "dlp/2019/oe-set/beauty-and-the-beast-december-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lumiere und Von Unruh",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "overview list item 'Pin Lumiere und Von Unruh', unlimited, 7,99 EUR"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lumière",
+      "Cogsworth"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "Von Unruh is the German name of Cogsworth; Madame Garderobe = Wardrobe"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "single line item"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "7.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-07",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "7 Dec 2019 release"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "December 2019 list"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2019/",
+     "method": "search_snippet",
+     "note": "DLP monthly release list"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2019/fete-des-meres-2019/mothers-day",
+   "field": "characters",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "design and characters not described in any snippet (3 queries); not inferred"
+  },
+  {
+   "key": "dlp/2019/fete-des-peres-2019/fathers-day",
+   "field": "characters",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "design and characters not described in any snippet (3 queries); not inferred"
+  },
+  {
+   "key": "dlp/2019/saison-ete-2019/summer",
+   "field": "characters",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "design and characters not described in any snippet (3 queries); not inferred"
+  },
+  {
+   "key": "dlp/2019/saison-ete-2019/summer",
+   "field": "release_date",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "field note: summaries disagree 21/06/19 vs 26/06/19; month only claimed"
+  },
+  {
+   "key": "dlp/2019/fete-des-peres-2019/fathers-day",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "field note: dein-dlrp Father's Day LE 700 (Ariel/Triton, 16.99) is June 2018, not this pin; passiondlp 2024 also has a Fête des Pères - do not merge"
+  },
+  {
+   "key": "dlp/2019/toy-story-4-surprise-2019",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "the three Toy Story 4 designs are not named in any snippet (2 queries); no member records created; replaces packet 532 'no pin details' lead"
+  },
+  {
+   "key": "dlp/2019/oe/lumiere-and-cogsworth-december-2019",
+   "field": "original_price",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "field note: body text gives 6,99 for the BatB unlimited pins, overview gives 7,99 for this one; not a repeat of the Aug Christmas Lumière / Herr von Unruh singles (separate Aug line items) - confirm"
+  },
+  {
+   "key": "dlp/2019/oe/enchanted-rose-december-2019",
+   "field": "characters",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "no character stated (object design); none inferred"
+  },
+  {
+   "key": "dlp/2019/july-13-2019-pin-trading-day",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "lead resolved (likely): passiondlp 13 Jul PTD 500 each matches dein-dlrp Jungle Day seven (13 Jul, 500 each; Clarice shows Pin Trading Day lettering) - key not used; supports 13 Jul over 17 Jul"
+  },
+  {
+   "key": "dlp/2019/princesses-day-2019/moana",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold: passiondlp Q1 2019 states the Moana pin was cancelled (Pin Trading Day 30 Mar); packet 454 Moana record rests on dein-dlrp pre-announcement - confirm it was sold"
+  },
+  {
+   "key": "dlp/2019/princesses-day-2019",
+   "field": "release_date",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "field note: passiondlp Q1: Stitch pin planned 30 Mar moved to 23 Mar and Pin Trading Day (Princesses Day) held 30 Mar; dein-dlrp gave 22/23 Mar - check"
+  },
+  {
+   "key": "dlp/2019/christmas-time-2019/winnie-the-pooh-jumbo",
+   "field": "original_price",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "field note: passiondlp Q4 has two entries: 15/12 Pooh Christmas 'petit train de pin's' and 20/12 surprise 'Christmas Time' jumbo LE 425 49,99 Pueblo; packet 487 49.99/Pueblo may belong to the 20/12 entry"
+  },
+  {
+   "key": "dlp/2019/christmas-time-2019",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "lead: possible separate 'Christmas Time' jumbo (20/12/19, 425, 49.99, Pueblo, passiondlp) vs Pooh jumbo (DPB 14 Dec); DPB event page also has a Jumbo Pin section; not recorded as a new pin"
+  },
+  {
+   "key": "dlp/2019/christmas-time-2019",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "9 Nov LE 425 event designs still unnamed in text (DPB 'various characters with a festive twist'; dein-dlrp Nov does not cover it)"
+  },
+  {
+   "key": "dlp/2019/annual-pass-christmas-2019",
+   "field": "expected_pin_count",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "field note: dein-dlrp Dec 2019 body mentions two 12 Dec annual pass pins (15.99, LE 700, Thunder Mesa Riverboat Landing), overview list only one"
+  },
+  {
+   "key": "dlp/2019/phantom-manor-pin-trading-event-2019",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "doom-buggy pins other than Captain Hook still unnamed (2 queries); WDWNT adds ticket incl. a 9.99 pin voucher"
+  },
+  {
+   "key": "dlp/2019/january-2019",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "5 Jan Stitch / Tic & Tac LE designs still undescribed; dein-dlrp Jan 2019 page exists (03.01.19) but only teaser indexed (Stitch, Tinkerbell, year pins); DPB adds Wreck-It Ralph theme only"
+  },
+  {
+   "key": "dlp/2019/ptn-february-2019",
+   "field": "edition_size",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "not searched further this round"
+  },
+  {
+   "key": "dlp/2019/ptn-april-2019",
+   "field": "edition_size",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "not searched further this round"
+  },
+  {
+   "key": "dlp/2019/oe/marvel-season-of-super-heroes",
+   "field": "original_price",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "field note: 6.99 vs 7.99 still unresolved; not re-searched"
+  },
+  {
+   "key": "dlp/2019/ptn-may-2019",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "dein-dlrp May and Oct 2019 pages not re-searched; Jan page teaser only"
+  },
+  {
+   "key": "dlp/2019/rapunzel-best-friends/rapunzel",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "field note: series (Best Friends vs carousel) unresolved; not re-searched"
+  },
+  {
+   "key": "dlp/2019/christmas-jumper-day-2019/winnie-the-pooh-christmas",
+   "field": "release_date",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "field note: still undated; passiondlp 15/12 Pooh 'train' entry is a different item from the 7 Dec dein-dlrp trio by date - unresolved"
+  },
+  {
+   "key": "dlp/2019/cherry-blossom-girl",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "no new non-reseller source (1 query); only WDWNT collection start 10 Aug and a reseller LE400 title"
+  },
+  {
+   "key": "dlp/2019/lion-king-jumbo/hakuna-matata",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "no new evidence; regroup with tresors stays with maintainer"
+  },
+  {
+   "key": "dlp/2019/cast-member-2019/dalmatian-christmas",
+   "field": "release_year",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: passiondlp Q1 again only gives the Feb 2019 re-issue after the numbering problem"
+  },
+  {
+   "key": "dlp/2019/ptn-february-2019/mr-crocodile",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: PTN line-ups; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2019/ptn-february-2019/michael-darling",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: PTN line-ups; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2019/ptn-february-2019/john-darling",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: PTN line-ups; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2019/ptn-april-2019/marshmallow",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: PTN line-ups; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2019/ptn-april-2019/oaken",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: PTN line-ups; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2019/ptn-april-2019/bulda",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: PTN line-ups; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2019/oe-set/joyeux-noel-2019-princess",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: Joyeux Noël princesses; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2019/october-2019-oe",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: October OE four; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2019/oe-set/winnie-the-pooh-halloween-booster-2019",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: Pooh booster; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2019/oe-set/chip-and-dale-halloween-2019",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: Chip & Dale two-pin; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2019/bastille-day-2019/14-juillet",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: 14 Juillet (Q3 summary repeats 700/Pueblo; entry dated 24/07 with 14/07 label; design still undescribed); no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2019/oe/aladdin-april-2019",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: Aladdin April; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2019/run-weekend-2019",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: Run Weekend medals; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2019/oe-set/july-5-2019-oe",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: July OE five; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2019/oe-set/star-wars-december-2019",
+   "field": "pin_name",
+   "searched": "WebSearch standard; passiondlp/dein-dlrp/DPB",
+   "note": "hold kept: December Star Wars six (dein-dlrp: all unlimited, 6.99-12.99, 14 Dec); no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2019/fete-des-meres-2019/mothers-day",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: title-only - passiondlp archive entry gives occasion, date and LE 700 but no design or character; confirm the design"
+  },
+  {
+   "key": "dlp/2019/fete-des-peres-2019/fathers-day",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: title-only - passiondlp archive entry gives occasion, date and LE 700 but no design or character; confirm the design"
+  },
+  {
+   "key": "dlp/2019/saison-ete-2019/summer",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: title-only - passiondlp archive entry gives occasion, date and LE 700 but no design or character; confirm the design"
+  }
+ ],
+ "discovery_notes": "Follow-up 10 of B005 (packets 205-590). 28 standard searches, snippets only. New pins: passiondlp Q2 2019 surprise singles Fête des Mères (26/05, LE 700), Fête des Pères (16/06, LE 700), Saison Été (June, LE 700); dein-dlrp Dec 2019 BatB open-edition trio of 7 Dec (Madame Garderobe, Enchanted Rose, Lumière & Von Unruh). New set without members: Toy Story 4 surprise trio (26/06, LE 500, Barrel of Monkeys). Corroboration: 13 Jul 2019 Pin Trading Day (500 each) = Jungle Day date. Hold added: Princesses Day Moana (passiondlp says cancelled). Surprise UP set (9 Jun LE 425) was already in packet 205/552; no change."
+}

@@ -5,7 +5,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator, Alert, Image, InteractionManager, KeyboardAvoidingView, Modal, Platform,
-  FlatList, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View,
+  FlatList, Pressable, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -24,6 +24,11 @@ import { PinImage } from '@/components/ui/PinImage';
 import { chatListData } from '@/utils/chatList';
 import { ErrorState } from '@/components/ui/ErrorState';
 import { toUserError, userErrorLine, type UserError } from '@/utils/userError';
+import { useBlockedUsers } from '@/context/BlockedUsersContext';
+import { UserSafetySheet } from '@/components/UserSafetySheet';
+import { Button } from '@/components/ui/Button';
+import { useToast } from '@/components/ui/Toast';
+import { otherParticipantId } from '@/utils/blockedUsers';
 
 /** Space between messages (FlatList content has no `gap`). */
 function MessageGap() {
@@ -37,14 +42,32 @@ function previewBody(msg: ConversationMessage) {
   return 'Message';
 }
 
-function MessageBubble({ msg, isMe, colors, pins }: {
+function MessageBubble({ msg, isMe, colors, pins, onLongPress }: {
   msg: ConversationMessage; isMe: boolean; colors: ReturnType<typeof useColors>;
   pins: Map<string, CataloguePin>;
+  /** Their messages only: press and hold to report or block (B-P0-05b, #17). */
+  onLongPress?: (msg: ConversationMessage) => void;
 }) {
   const router = useRouter();
+  const bubbleStyle = [styles.bubble, { backgroundColor: isMe ? colors.homeCoral : colors.homeSurface, borderColor: colors.homeLine }, isMe && styles.bubbleMe];
+  // Only their messages respond to a long press; everything else stays a plain View.
+  const actionProps = !isMe && onLongPress ? {
+    onLongPress: () => onLongPress(msg),
+    delayLongPress: 350,
+    // Pin shares keep their pin buttons reachable by screen readers.
+    accessible: msg.messageType !== 'pin_share',
+    accessibilityLabel: previewBody(msg),
+    accessibilityHint: 'Press and hold to report or block',
+    accessibilityActions: [{ name: 'longpress', label: 'Report or block' }],
+    onAccessibilityAction: (e: { nativeEvent: { actionName: string } }) => {
+      if (e.nativeEvent.actionName === 'longpress') onLongPress(msg);
+    },
+    testID: `message-${msg.id}`,
+  } : null;
+  const Bubble = actionProps ? Pressable : View;
   return (
     <View style={[styles.bubbleRow, isMe && styles.bubbleRowMe]}>
-      <View style={[styles.bubble, { backgroundColor: isMe ? colors.homeCoral : colors.homeSurface, borderColor: colors.homeLine }, isMe && styles.bubbleMe]}>
+      <Bubble {...actionProps} style={bubbleStyle}>
         {msg.messageType === 'photo' && msg.photoUrls.length > 0 && (
           <View style={styles.photoGrid}>
             {msg.photoUrls.map((url, index) => <Image key={`${url}-${index}`} source={{ uri: url }} accessibilityLabel={`Photo ${index + 1} of ${msg.photoUrls.length}${isMe ? ' you sent' : ''}`} style={[styles.sharedPhoto, { backgroundColor: colors.homeLine }]} />)}
@@ -76,7 +99,7 @@ function MessageBubble({ msg, isMe, colors, pins }: {
         <Text style={[styles.bubbleTime, { color: isMe ? colors.homeSurface + '99' : colors.homeMuted }]}>
           {new Date(msg.createdAt).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
         </Text>
-      </View>
+      </Bubble>
     </View>
   );
 }
@@ -99,6 +122,11 @@ export default function ChatScreen() {
   const [tradeConfirmOpen, setTradeConfirmOpen] = useState(false);
   const [pinPickerOpen, setPinPickerOpen] = useState(false); const [selectedPinIds, setSelectedPinIds] = useState<string[]>([]);
   const [pinSearch, setPinSearch] = useState('');
+  // Report / Block from a message (B-P0-05b, #17).
+  const { isBlocked, canModerate, unblock } = useBlockedUsers();
+  const toast = useToast();
+  const [safetyMessageId, setSafetyMessageId] = useState<string | null>(null);
+  const [unblocking, setUnblocking] = useState(false);
 
   const pinMap = useMemo(() => new Map(pins.map(pin => [pin.id, pin])), [pins]);
   const newestFirst = useMemo(() => chatListData(messages), [messages]);
@@ -266,6 +294,20 @@ export default function ChatScreen() {
     }
   };
   const otherName = conv?.otherParticipant?.username ? `@${conv.otherParticipant.username}` : 'Conversation';
+  const otherId = conv ? otherParticipantId(conv, userId) : undefined;
+  const otherBlocked = isBlocked(otherId);
+  const handleUnblock = async () => {
+    if (!otherId) return;
+    setUnblocking(true);
+    try {
+      await unblock(otherId);
+      toast.show({ message: `Unblocked ${otherName}` });
+    } catch (e) {
+      toast.show({ message: userErrorLine(e, 'block') });
+    } finally {
+      setUnblocking(false);
+    }
+  };
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 8;
 
   return (
@@ -282,6 +324,24 @@ export default function ChatScreen() {
           <View style={styles.center}>
             <ErrorState error={error} onRetry={() => { setError(null); load(true); }} />
           </View>
+        ) : otherBlocked ? (
+          // Blocked: their messages are hidden and nothing can be sent.
+          <View testID="chat-blocked" style={[styles.center, styles.blockedWrap]}>
+            <Feather name="slash" size={32} color={colors.homeMuted} />
+            <Text accessibilityRole="header" style={[styles.blockedTitle, { color: colors.homeInk }]}>You blocked {otherName}</Text>
+            <Text style={[styles.blockedText, { color: colors.homeMuted }]}>
+              This conversation is hidden. Neither of you can send messages while they're blocked.
+            </Text>
+            <Button
+              label="Unblock"
+              variant="secondary"
+              size="compact"
+              fullWidth={false}
+              loading={unblocking}
+              onPress={() => { void handleUnblock(); }}
+              accessibilityLabel={`Unblock ${otherName}`}
+            />
+          </View>
         ) : (
           <>
             {/* Inverted list (UX-052, #160): only what's on screen renders, the
@@ -296,7 +356,13 @@ export default function ChatScreen() {
               data={newestFirst}
               keyExtractor={msg => msg.id}
               renderItem={({ item }) => (
-                <MessageBubble msg={item} isMe={item.senderId === userId} colors={colors} pins={pinMap} />
+                <MessageBubble
+                  msg={item}
+                  isMe={item.senderId === userId}
+                  colors={colors}
+                  pins={pinMap}
+                  onLongPress={canModerate && otherId ? m => setSafetyMessageId(m.id) : undefined}
+                />
               )}
               ItemSeparatorComponent={MessageGap}
               ListFooterComponent={
@@ -388,6 +454,14 @@ export default function ChatScreen() {
           </>
         )}
       </KeyboardAvoidingView>
+      {otherId && (
+        <UserSafetySheet
+          visible={safetyMessageId !== null}
+          onClose={() => setSafetyMessageId(null)}
+          target={{ id: otherId, username: conv?.otherParticipant?.username, avatarUrl: conv?.otherParticipant?.avatarUrl }}
+          messageId={safetyMessageId ?? undefined}
+        />
+      )}
       <Modal
         visible={tradeConfirmOpen}
         animationType="fade"
@@ -573,4 +647,7 @@ const styles = StyleSheet.create({
   modalShade: { flex: 1, justifyContent: 'flex-end', backgroundColor: 'rgba(0,0,0,.45)' }, pinPicker: { maxHeight: '78%', borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, padding: spacing.lg, gap: spacing.sm + 2 }, pickerHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }, pickerTitle: { fontSize: 17, fontFamily: 'Inter_700Bold' }, pinSearch: { borderWidth: 1, borderRadius: radius.sm - 1, paddingHorizontal: 11, paddingVertical: spacing.sm + 1, fontSize: 14, fontFamily: 'Inter_400Regular' }, pickerRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm + 2, paddingVertical: spacing.sm + 2, borderBottomWidth: StyleSheet.hairlineWidth }, pickerImage: { width: 48, height: 48, borderRadius: 7 }, shareButton: { alignItems: 'center', padding: spacing.md + 1, borderRadius: radius.sm }, shareLabel: { fontFamily: 'Inter_600SemiBold' },
   safelyLink: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 6, alignSelf: 'flex-start' },
   safelyText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  blockedWrap: { padding: spacing.xxl, gap: spacing.md },
+  blockedTitle: { fontSize: 18, fontFamily: 'Inter_700Bold', textAlign: 'center' },
+  blockedText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20, textAlign: 'center', maxWidth: 300 },
 });

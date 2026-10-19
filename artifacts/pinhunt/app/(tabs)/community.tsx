@@ -25,6 +25,8 @@ import { useColors } from '@/hooks/useColors';
 import { Avatar } from '@/components/Avatar';
 import { useCommunity } from '@/hooks/useCommunity';
 import { useUnreadMessages } from '@/context/UnreadMessagesContext';
+import { useBlockedUsers } from '@/context/BlockedUsersContext';
+import { withoutBlockedAuthors } from '@/utils/blockedUsers';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { CommunityPost, CommunityPostType } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
@@ -290,6 +292,11 @@ export default function CommunityScreen() {
   }, [params.filter]);
 
   const [posts, setPosts]       = useState<CommunityPost[]>([]);
+  // Posts by collectors I blocked are hidden (B-P0-05b, #17).
+  const { blockedIds } = useBlockedUsers();
+  const blockedIdsRef           = useRef(blockedIds);
+  blockedIdsRef.current         = blockedIds;
+  const visiblePosts = React.useMemo(() => withoutBlockedAuthors(posts, blockedIds), [posts, blockedIds]);
   const [loading, setLoading]   = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError]       = useState<string | null>(null);
@@ -372,6 +379,8 @@ export default function CommunityScreen() {
           const newRow = payload.new as { id: string; post_type: string };
           // Only prepend if it matches the active filter (or filter is 'all')
           if (filterRef.current !== 'all' && newRow.post_type !== filterRef.current) return;
+          // No "new posts" nudge for a blocked author's post.
+          if (blockedIdsRef.current.has((payload.new as { author_id?: string }).author_id ?? '')) return;
           try {
             const fullPost = await repo.getCommunityPost(newRow.id);
             if (!fullPost) return;
@@ -577,7 +586,7 @@ export default function CommunityScreen() {
               <Text style={{ color: colors.homeCoral, fontFamily: 'Inter_500Medium' }}>Try Again</Text>
             </TouchableOpacity>
           </View>
-        ) : posts.length === 0 ? (
+        ) : visiblePosts.length === 0 ? (
           <View style={styles.empty}>
             <Feather name="rss" size={40} color={colors.homeMuted} />
             <Text style={[styles.emptyTitle, { color: colors.homeInk }]}>No posts yet</Text>
@@ -600,7 +609,7 @@ export default function CommunityScreen() {
             </TouchableOpacity>
           </View>
         ) : (
-          posts.map(post => (
+          visiblePosts.map(post => (
             <PostCard
               key={post.id}
               post={post}

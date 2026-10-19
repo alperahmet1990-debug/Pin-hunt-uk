@@ -18,6 +18,8 @@ import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { Avatar } from '@/components/Avatar';
 import { useCommunity } from '@/hooks/useCommunity';
+import { useBlockedUsers } from '@/context/BlockedUsersContext';
+import { withoutBlockedConversations } from '@/utils/blockedUsers';
 import { radius, spacing } from '@/constants/theme';
 import type { Conversation } from '@workspace/pin-repository';
 
@@ -93,7 +95,13 @@ export default function ConversationsScreen() {
   const router  = useRouter();
   const { repo, userId } = useCommunity();
 
-  const [convs,      setConvs]      = useState<Conversation[]>([]);
+  const [allConvs,   setConvs]      = useState<Conversation[]>([]);
+  // Conversations with collectors I blocked are hidden (B-P0-05b, #17).
+  const { blockedIds } = useBlockedUsers();
+  const convs = React.useMemo(
+    () => withoutBlockedConversations(allConvs, blockedIds, userId),
+    [allConvs, blockedIds, userId],
+  );
   const [loading,    setLoading]    = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error,      setError]      = useState<string | null>(null);

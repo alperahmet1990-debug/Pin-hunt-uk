@@ -19,7 +19,7 @@ import { useMarketplace } from '@/hooks/useMarketplace';
 import { Avatar } from '@/components/Avatar';
 import { Chip } from '@/components/ui';
 import { ScreenHeader } from '@/components/ui/ScreenHeader';
-import { Button } from '@/components/ui/Button';
+import { Button, IconButton } from '@/components/ui/Button';
 import { SkeletonHeader, SkeletonRows } from '@/components/ui/Skeleton';
 import { ErrorState } from '@/components/ui/ErrorState';
 import { toUserError, type UserError } from '@/utils/userError';
@@ -30,6 +30,9 @@ import { CollectorForTradeGrid } from '@/components/CollectorForTradeGrid';
 import { useCollection } from '@/context/CollectionContext';
 import { useToast } from '@/components/ui/Toast';
 import { sortCollectorForTrade } from '@/utils/collectorForTrade';
+import { useBlockedUsers } from '@/context/BlockedUsersContext';
+import { UserSafetySheet } from '@/components/UserSafetySheet';
+import { userErrorLine } from '@/utils/userError';
 
 // ─── Potential trade row ──────────────────────────────────────────────────────
 
@@ -99,6 +102,11 @@ export default function CollectorProfileScreen() {
 
   const [potentialTrades, setPotentialTrades] = useState<PotentialTradePin[]>([]);
   const [tradesLoading, setTradesLoading] = useState(false);
+
+  // Block and Report (B-P0-05b, #17): More options → Report / Block, two taps.
+  const { isBlocked, canModerate, unblock } = useBlockedUsers();
+  const [safetyOpen, setSafetyOpen] = useState(false);
+  const [unblocking, setUnblocking] = useState(false);
 
   // Load public profile
   useEffect(() => {
@@ -170,9 +178,26 @@ export default function CollectorProfileScreen() {
     />
   );
 
-  const theyHaveIWant = potentialTrades.filter(p => p.direction === 'they_have_i_want');
-  const iHaveTheyWant = potentialTrades.filter(p => p.direction === 'i_have_they_want');
-  const hasPotentialTrades = potentialTrades.length > 0;
+  const isOwnProfile = !!profile && profile.id === currentUserId;
+  // A collector I blocked: no trade matches, For Trade list or Message.
+  const blocked = !!profile && isBlocked(profile.id);
+  const visibleTrades = blocked ? [] : potentialTrades;
+  const theyHaveIWant = visibleTrades.filter(p => p.direction === 'they_have_i_want');
+  const iHaveTheyWant = visibleTrades.filter(p => p.direction === 'i_have_they_want');
+  const hasPotentialTrades = visibleTrades.length > 0;
+
+  const handleUnblock = async () => {
+    if (!profile) return;
+    setUnblocking(true);
+    try {
+      await unblock(profile.id);
+      toast.show({ message: `Unblocked @${profile.username}` });
+    } catch (e) {
+      toast.show({ message: userErrorLine(e, 'block') });
+    } finally {
+      setUnblocking(false);
+    }
+  };
 
   // Start a plain conversation — this must never silently create a formal
   // Trade Request. The Potential Trade Match counts travel along as display
@@ -194,7 +219,18 @@ export default function CollectorProfileScreen() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
-        <ScreenHeader title={profile?.username ? `@${profile.username}` : 'Collector'} />
+        <ScreenHeader
+          title={profile?.username ? `@${profile.username}` : 'Collector'}
+          right={profile && canModerate && !isOwnProfile ? (
+            <IconButton
+              icon="more-horizontal"
+              accessibilityLabel={`More options for @${profile.username}`}
+              variant="tinted"
+              onPress={() => setSafetyOpen(true)}
+              testID="collector-more-options"
+            />
+          ) : undefined}
+        />
         {loading ? (
           // Placeholder in the hero's place: compact row for a match entry,
           // the full centred hero otherwise (UX-045).
@@ -412,12 +448,36 @@ export default function CollectorProfileScreen() {
 
                   {/* Message button — hidden when Potential Trade Match below already
                       surfaces Start Conversation as the primary way to reach out. */}
-                  {currentUserId && profile.id !== currentUserId && !hasPotentialTrades && (
+                  {currentUserId && profile.id !== currentUserId && !hasPotentialTrades && !blocked && (
                     <Button label="Message" icon="mail" size="compact" fullWidth={false} onPress={startConversation} style={styles.messageBtn} />
                   )}
                 </View>
 
-                {bioSection}
+                {blocked && (
+                  <View
+                    testID="collector-blocked-notice"
+                    style={[styles.blockedCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+                  >
+                    <View style={styles.blockedHead}>
+                      <Feather name="slash" size={16} color={colors.homeMuted} />
+                      <Text style={[styles.blockedTitle, { color: colors.homeInk }]}>You blocked @{profile.username}</Text>
+                    </View>
+                    <Text style={[styles.blockedText, { color: colors.homeMuted }]}>
+                      You won't see their posts, messages or trade matches, and neither of you can contact the other.
+                    </Text>
+                    <Button
+                      label="Unblock"
+                      variant="secondary"
+                      size="compact"
+                      fullWidth={false}
+                      loading={unblocking}
+                      onPress={() => { void handleUnblock(); }}
+                      accessibilityLabel={`Unblock @${profile.username}`}
+                    />
+                  </View>
+                )}
+
+                {!blocked && bioSection}
 
                 {(hasPotentialTrades || tradesLoading) && (
                   <View style={[styles.section, { marginHorizontal: spacing.lg, marginTop: spacing.xl }]}>
@@ -430,13 +490,20 @@ export default function CollectorProfileScreen() {
                   </View>
                 )}
 
-                {forTradeSection}
+                {!blocked && forTradeSection}
               </>
             )}
           </ScrollView>
           );
         })()}
       </View>
+      {profile && !isOwnProfile && (
+        <UserSafetySheet
+          visible={safetyOpen}
+          onClose={() => setSafetyOpen(false)}
+          target={{ id: profile.id, username: profile.username, avatarUrl: profile.avatarUrl }}
+        />
+      )}
     </>
   );
 }
@@ -487,6 +554,18 @@ const styles = StyleSheet.create({
   bioText: { fontSize: 15, fontFamily: 'Inter_400Regular', lineHeight: 22 },
 
   messageBtn: { marginTop: spacing.xs },
+  blockedCard: {
+    marginHorizontal: spacing.lg,
+    marginTop: spacing.xl,
+    borderWidth: 1,
+    borderRadius: radius.lg,
+    padding: spacing.lg,
+    gap: spacing.sm,
+    alignItems: 'flex-start',
+  },
+  blockedHead: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
+  blockedTitle: { flex: 1, fontSize: 15, fontFamily: 'Inter_600SemiBold' },
+  blockedText: { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 19 },
 
   // Potential trades
   tradeMatchCard: { borderWidth: 1, borderRadius: radius.lg, overflow: 'hidden' },

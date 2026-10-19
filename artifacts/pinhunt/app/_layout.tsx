@@ -13,6 +13,7 @@ import { AuthProvider, useAuth } from '@/context/AuthContext';
 import { ProfileProvider, useProfile } from '@/context/ProfileContext';
 import { SubmissionNotificationsProvider } from '@/context/SubmissionNotificationsContext';
 import { UnreadMessagesProvider } from '@/context/UnreadMessagesContext';
+import { BlockedUsersProvider } from '@/context/BlockedUsersContext';
 import { resolveGuardTarget } from '@/utils/recoveryLink';
 import { stackHeaderOptions } from '@/utils/stackHeader';
 import { useColors } from '@/hooks/useColors';
@@ -155,11 +156,14 @@ export default function RootLayout() {
                         <KeyboardProvider>
                           {/* Innermost on purpose: no existing provider moves (see CLAUDE.md). */}
                           <ToastProvider>
-                            <AuthGuard>
-                              <RootLayoutNav />
-                            </AuthGuard>
-                            <ToastHost />
-                            <SetCompleteWatcher />
+                            {/* Also innermost (B-P0-05b, #17): only needs the session. */}
+                            <BlockedUsersProvider>
+                              <AuthGuard>
+                                <RootLayoutNav />
+                              </AuthGuard>
+                              <ToastHost />
+                              <SetCompleteWatcher />
+                            </BlockedUsersProvider>
                           </ToastProvider>
                         </KeyboardProvider>
                       </GestureHandlerRootView>

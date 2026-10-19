@@ -1,0 +1,1320 @@
+{
+ "packet_id": "backfill-b382-wdw-le-2019-fu7",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:backfill-b382",
+ "discovery_notes": "Follow-up 7 of B002 (WDW LE 2019). 29 web searches. New: Ray and Lion King SB60 PTN pins keyed under wdw (DPB says PTN editions shared DL/WDW; dlr keys get variant + release evidence notes); Dec 2019 shared Rise of Skywalker park LEs (Kylo & Rey 3000, logo 3000, Kylo jumbo 2000, Jedi jumbo 1000, cluster jumbo 1000 re-keyed under wdw), Knights booster set (6, LR, no members), Happy Hanukkah 2019 Aristocats LE 3500, Mickey Tuxedo Disney Visa 2019 LR. Vintage Vinyl #9 now both resorts, Sep 5. Holds kept: Pop-Up #1/#2, VV #4, mystery/booster/runDisney holds.",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+   "title": "Sleeping Beauty 60th Anniversary Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/pin-trading-night-events-february-2019/",
+   "title": "Pin Trading Night Events February 2019",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+   "title": "New Disney Pins December 2019 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+   "title": "New Disney Pins December 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+   "title": "December Pin Releases at Disneyland and Walt Disney World Focus on the Holidays, Star Wars",
+   "publisher": "WDWInfo",
+   "published_date": "2019-12-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/11/photos-december-2019-pin-releases-for-walt-disney-world-and-disneyland-feature-star-tours-30th-anniversary-princess-and-the-frog-10th-anniversary-matterhorn-disneys-riviera-resort-pins-and-more/",
+   "title": "December 2019 Pin Releases for Walt Disney World and Disneyland",
+   "publisher": "WDW News Today",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-tuxedo-disney-visa-cardmember-2019-pin/",
+   "title": "Mickey Mouse Tuxedo Disney Visa Cardmember 2019 Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-september-2019-week-1/",
+   "title": "New Disney Pins September 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/08/september-pin-releases-for-walt-disney-world-feature-mary-poppins-countdown-to-halloween-and-galaxys-edge-pins/",
+   "title": "September Pin Releases for Walt Disney World and Disneyland",
+   "publisher": "WDW News Today",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2019/sleeping-beauty-60th-pin-trading-night",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Sleeping Beauty 60th Anniversary Pin Trading Night pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "PTN event-exclusive pins listed in the SB60 collection post"
+    },
+    {
+     "field": "format",
+     "value": "event-exclusive single pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "each PTN pin listed separately with its own edition"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World Pin Trading Nights",
+     "source_url": "https://disneypinsblog.com/pin-trading-night-events-february-2019/",
+     "method": "search_snippet",
+     "note": "DL event Feb 21 (Launch Bay), WDW event Feb 28 (Contemporary); edition sizes shared equally between the two"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02",
+     "source_url": "https://disneypinsblog.com/pin-trading-night-events-february-2019/",
+     "method": "search_snippet",
+     "note": "events Feb 21 (DL) and Feb 28 (WDW) 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/rise-of-skywalker-parks",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars: The Rise of Skywalker collection at Disney Parks",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "DPB calls these part of the Rise of Skywalker collection at Disney Parks"
+    },
+    {
+     "field": "format",
+     "value": "collection of single pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "pins listed individually with own editions"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "shared DL/WDW release; keyed under wdw"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/rise-of-skywalker-cluster-jumbo",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Cluster Jumbo Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "surprise jumbo release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "single jumbo pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "shared release; keyed under wdw"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/rise-of-skywalker-knights-booster",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars The Rise of Skywalker Knights booster",
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "booster set of Knights from The Rise of Skywalker"
+    },
+    {
+     "field": "format",
+     "value": "booster (multi-pin pack)",
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "booster pin set"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "features 6 Knights"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "price",
+     "value": 29.99,
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "$29.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-19",
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "Dec 19 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "listed among pins on both coasts"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/happy-hanukkah-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Happy Hanukkah 2019 pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "single Disney Parks Hanukkah pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "one pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "shared release; keyed under wdw"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/disney-visa-cardmember-mickey-tuxedo",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse Tuxedo Disney Visa Cardmember 2019 Pin",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-tuxedo-disney-visa-cardmember-2019-pin/",
+     "method": "search_snippet",
+     "note": "single cardmember pin"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-tuxedo-disney-visa-cardmember-2019-pin/",
+     "method": "search_snippet",
+     "note": "one pin"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com, Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-tuxedo-disney-visa-cardmember-2019-pin/",
+     "method": "search_snippet",
+     "note": "online and in both US resorts; keyed under wdw per 550 precedent"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2019/sleeping-beauty-60th-pin-trading-night/ray-ptn",
+   "set_key": "wdw/2019/sleeping-beauty-60th-pin-trading-night",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ray PTN Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "Ray PTN pin in SB60 collection post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ray"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "named Ray PTN pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "event exclusive limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin",
+      "translucent fill"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "pin-on-pin with translucent fill"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World Pin Trading Nights",
+     "source_url": "https://disneypinsblog.com/pin-trading-night-events-february-2019/",
+     "method": "search_snippet",
+     "note": "PTN exclusive editions shared equally between DL (Feb 21) and WDW (Feb 28) events"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02",
+     "source_url": "https://disneypinsblog.com/pin-trading-night-events-february-2019/",
+     "method": "search_snippet",
+     "note": "Feb 2019 PTN events"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/sleeping-beauty-60th-pin-trading-night/lion-king-ptn",
+   "set_key": "wdw/2019/sleeping-beauty-60th-pin-trading-night",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lion King PTN Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "Lion King PTN pin in SB60 collection post"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "event exclusive limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin",
+      "translucent fill"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "pin-on-pin with translucent fill"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World Pin Trading Nights",
+     "source_url": "https://disneypinsblog.com/pin-trading-night-events-february-2019/",
+     "method": "search_snippet",
+     "note": "PTN exclusive editions shared equally between DL (Feb 21) and WDW (Feb 28) events"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-02",
+     "source_url": "https://disneypinsblog.com/pin-trading-night-events-february-2019/",
+     "method": "search_snippet",
+     "note": "Feb 2019 PTN events"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-beauty-60th-anniversary-pin-collection",
+     "method": "search_snippet",
+     "note": "2019"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/rise-of-skywalker-parks/kylo-ren-and-rey",
+   "set_key": "wdw/2019/rise-of-skywalker-parks",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kylo Ren and Rey battle pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "Kylo Ren and Rey in battle"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kylo Ren",
+      "Rey"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "Kylo Ren and Rey"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "single pin showing both characters"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "The Rise of Skywalker"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "3,000 pins"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "Dec 19 2019"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-19",
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "Dec 19"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/rise-of-skywalker-parks/logo",
+   "set_key": "wdw/2019/rise-of-skywalker-parks",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars The Rise of Skywalker Logo Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "surprise release of the film logo pin"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "The Rise of Skywalker"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "Dec 19 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/rise-of-skywalker-parks/kylo-ren-jumbo",
+   "set_key": "wdw/2019/rise-of-skywalker-parks",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kylo Ren Jumbo Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "jumbo pin featuring Kylo Ren"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Kylo Ren"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Kylo Ren"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Rise of Skywalker collection at Disney Parks"
+    },
+    {
+     "field": "visual_form",
+     "value": "jumbo",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "jumbo pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 54.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "$54.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-12",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Dec 12 2019"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-12",
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "Dec 12, both coasts"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/rise-of-skywalker-parks/jedi-symbol-jumbo",
+   "set_key": "wdw/2019/rise-of-skywalker-parks",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jedi Symbol Jumbo Pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Jedi symbol jumbo, Rise of Skywalker collection"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Rise of Skywalker collection"
+    },
+    {
+     "field": "visual_form",
+     "value": "jumbo",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "jumbo pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 54.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "$54.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-12",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "Dec 12 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-december-2019-week-2/",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/rise-of-skywalker-cluster-jumbo/cluster-jumbo",
+   "set_key": "wdw/2019/rise-of-skywalker-cluster-jumbo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars Cluster Jumbo Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "surprise Rise of Skywalker character cluster jumbo"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "The Rise of Skywalker"
+    },
+    {
+     "field": "visual_form",
+     "value": "jumbo",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "jumbo pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "surprise jumbo LE 1,000 added Dec 19"
+    },
+    {
+     "field": "original_price",
+     "value": 54.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "$54.99"
+    },
+    {
+     "field": "original_price",
+     "value": 54.99,
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "$54.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "Dec 19 2019"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-19",
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "surprise release Dec 19 for the film premiere"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/happy-hanukkah-2019/aristocats",
+   "set_key": "wdw/2019/happy-hanukkah-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Hanukkah 2019",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "Disney Parks Hanukkah 2019 pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Marie",
+      "Toulouse",
+      "Berlioz"
+     ],
+     "source_url": "https://wdwnt.com/2019/11/photos-december-2019-pin-releases-for-walt-disney-world-and-disneyland-feature-star-tours-30th-anniversary-princess-and-the-frog-10th-anniversary-matterhorn-disneys-riviera-resort-pins-and-more/",
+     "method": "search_snippet",
+     "note": "Hanukkah pin stars Marie, Toulouse and Berlioz"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Marie",
+      "Berlioz",
+      "Toulouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "pin-on-pin with the three Aristocats kittens"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "single pin with the three kittens"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin",
+      "sparkle"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "pin-on-pin; Happy Hanukkah text sparkles on presents"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "LE 3,500 in formatted listing"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "3,500"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-19",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "Dec 19 2019"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-19",
+     "source_url": "https://www.wdwinfo.com/news-stories/december-pin-releases-at-disneyland-and-walt-disney-world-focus-on-the-holidays-star-wars/",
+     "method": "search_snippet",
+     "note": "Dec 19"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-3",
+     "method": "search_snippet",
+     "note": "both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/disney-visa-cardmember-mickey-tuxedo/mickey-mouse",
+   "set_key": "wdw/2019/disney-visa-cardmember-mickey-tuxedo",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse Tuxedo Disney Visa Cardmember 2019 Pin",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-tuxedo-disney-visa-cardmember-2019-pin/",
+     "method": "search_snippet",
+     "note": "2019 cardmember pin, Mickey in tuxedo"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-mouse-tuxedo-disney-visa-cardmember-2019-pin/",
+     "method": "search_snippet",
+     "note": "Mickey Mouse in tuxedo"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-tuxedo-disney-visa-cardmember-2019-pin/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-tuxedo-disney-visa-cardmember-2019-pin/",
+     "method": "search_snippet",
+     "note": "$12.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-tuxedo-disney-visa-cardmember-2019-pin/",
+     "method": "search_snippet",
+     "note": "USD"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-07-15",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-tuxedo-disney-visa-cardmember-2019-pin/",
+     "method": "search_snippet",
+     "note": "available Jul 15 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/mickey-mouse-tuxedo-disney-visa-cardmember-2019-pin/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "shopDisney.com, Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-tuxedo-disney-visa-cardmember-2019-pin/",
+     "method": "search_snippet",
+     "note": "online and at both resorts; max two per cardmember"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/vintage-vinyl/mary-poppins",
+   "set_key": "wdw/2019/vintage-vinyl",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2019-week-1/",
+     "method": "search_snippet",
+     "note": "shared DL/WDW release, 9th Vintage Vinyl pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-05",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-september-2019-week-1/",
+     "method": "search_snippet",
+     "note": "available at DL and WDW Sep 5 2019"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-09-05",
+     "source_url": "https://wdwnt.com/2019/08/september-pin-releases-for-walt-disney-world-feature-mary-poppins-countdown-to-halloween-and-galaxys-edge-pins/",
+     "method": "search_snippet",
+     "note": "Mary Poppins Vintage Vinyl starts Sep 5"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World and Disneyland",
+     "source_url": "https://wdwnt.com/2019/08/september-pin-releases-for-walt-disney-world-feature-mary-poppins-countdown-to-halloween-and-galaxys-edge-pins/",
+     "method": "search_snippet",
+     "note": "listed in combined WDW/DL September preview"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-pin-trading-night/ray-ptn",
+   "field": "variant",
+   "searched": "2 queries",
+   "note": "variant: same pin as wdw/2019/sleeping-beauty-60th-pin-trading-night/ray-ptn (PTN editions shared DL Feb 21 / WDW Feb 28)"
+  },
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-pin-trading-night/ray-ptn",
+   "field": "release_location",
+   "searched": "2 queries",
+   "note": "release evidence: DPB PTN Feb 2019 events post says event pin editions shared equally between DL and WDW events; SB60 post lists Ray PTN LE 1,000"
+  },
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-pin-trading-night/lion-king-ptn",
+   "field": "variant",
+   "searched": "2 queries",
+   "note": "variant: same pin as wdw/2019/sleeping-beauty-60th-pin-trading-night/lion-king-ptn (PTN editions shared DL Feb 21 / WDW Feb 28)"
+  },
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-pin-trading-night/lion-king-ptn",
+   "field": "release_location",
+   "searched": "2 queries",
+   "note": "release evidence: DPB PTN Feb 2019 events post says event pin editions shared equally between DL and WDW events; SB60 post lists Lion King PTN LE 1,000"
+  },
+  {
+   "key": "wdw/2019/sleeping-beauty-60th-pin-trading-night/ray-ptn",
+   "field": "release_location",
+   "searched": "2 queries",
+   "note": "field note: both-resort status rests on the event-level 'editions shared equally' statement, not a per-pin line; recap of WDW event does not name the pin"
+  },
+  {
+   "key": "wdw/2019/sleeping-beauty-60th-pin-trading-night/lion-king-ptn",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "field note: Simba/Mufasa design named only by reseller (yourwdwstore); characters not claimed"
+  },
+  {
+   "key": "wdw/2019/sleeping-beauty-60th-pin-trading-night/lion-king-ptn",
+   "field": "release_location",
+   "searched": "2 queries",
+   "note": "field note: both-resort status rests on the event-level 'editions shared equally' statement, not a per-pin line"
+  },
+  {
+   "key": "wdw/2019/sleeping-beauty-60th-pin-trading-night",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "lead: dlr/2019/sleeping-beauty-60th-pin-trading-night/fairy-godmothers (LE 4000, RSP at both PTNs per 453) is also shared; no wdw key made here without a fresh snippet"
+  },
+  {
+   "key": "dlr/2019/rise-of-skywalker-cluster-jumbo/cluster-jumbo",
+   "field": "variant",
+   "searched": "3 queries",
+   "note": "variant: same pin as wdw/2019/rise-of-skywalker-cluster-jumbo/cluster-jumbo (DPB/WDWInfo state DL and WDW)"
+  },
+  {
+   "key": "dlr/2019/vintage-vinyl/mary-poppins",
+   "field": "variant",
+   "searched": "1 query",
+   "note": "variant: same pin as wdw/2019/vintage-vinyl/mary-poppins (DPB Sep wk1: shared DL/WDW release Sep 5)"
+  },
+  {
+   "key": "wdw/2019/vintage-vinyl/mary-poppins",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "field note: 451 recorded Sep 4 from a tag archive; DPB Sep wk1 and WDWNT give Sep 5. A separate LE 2,000/$24.99 Mary Poppins line on the tag page is unexplained"
+  },
+  {
+   "key": "wdw/2019/rise-of-skywalker-parks",
+   "field": "dlr",
+   "searched": "5 queries",
+   "note": "lead for DLR cell: Kylo & Rey, logo, Kylo Ren jumbo, Jedi jumbo, Hanukkah 2019 and Knights booster are shared; dlr keys should carry variant notes to these wdw keys"
+  },
+  {
+   "key": "wdw/2019/rise-of-skywalker-parks/jedi-symbol-jumbo",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "field note: a summarized WDWInfo line was read as a Dec 19 surprise for a 1,000 jumbo; that matches the cluster jumbo, so Dec 12 (DPB wk2) kept"
+  },
+  {
+   "key": "wdw/2019/rise-of-skywalker-parks/logo",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "field note: listed as a surprise release; no announcement date"
+  },
+  {
+   "key": "wdw/2019/rise-of-skywalker-knights-booster",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold: booster of 6 Knights; individual pins not named or described - members not created"
+  },
+  {
+   "key": "wdw/2019/happy-hanukkah-2019/aristocats",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "field note: one DPB wk3 snippet and reseller (yourwdwstore) mention 2,500; formatted DPB listing and WDWInfo give 3,500"
+  },
+  {
+   "key": "wdw/2019/disney-visa-cardmember-mickey-tuxedo/mickey-mouse",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "edition size not stated; dsus/dlr cells should add variant: same pin as this key"
+  },
+  {
+   "key": "wdw/2019/disney-visa-cardmember-steamboat-willie/mickey-mouse",
+   "field": "variants",
+   "searched": "2 queries",
+   "note": "no further 2019 Visa pin variants found beyond the Tuxedo pin (new here); 2024-2026 Visa pins only"
+  },
+  {
+   "key": "wdw/2019/pin-trading-pop-up-books/peter-pan",
+   "field": "hold",
+   "searched": "2 queries",
+   "note": "hold: kept. #1 Jan date still unconfirmed; only reseller (yourwdwstore: delayed twice, 2/21/2019); DPB Jan 2019 preview snippet does not list it"
+  },
+  {
+   "key": "wdw/2019/pin-trading-pop-up-books/alice-in-wonderland",
+   "field": "hold",
+   "searched": "2 queries",
+   "note": "hold: kept. #2 Alice LE 4000 2/21/2019 still reseller-only; DPB Feb 2019 wk3 post appears under the Pop Up tag but body not surfaced"
+  },
+  {
+   "key": "wdw/2019/pin-trading-pop-up-books/tangled",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "field note: still no permitted edition, price or WDW date; DPB tag archive dated Nov 19 title only"
+  },
+  {
+   "key": "wdw/2019/galaxys-edge-opening-day/rise-of-the-resistance-rey",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "still open: no size found. Not the Studio Store Rey (LE 400, $25.95, Dec 20) nor the Kylo & Rey battle pin (LE 3000)"
+  },
+  {
+   "key": "wdw/2019/rise-of-the-resistance-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "kept: designs/count still unnamed; WDWNT lists it LR $19.99 under AP exclusives. Resistance Supply BB-8 RotR pin $12.99 is a separate single pin (lead for OE cells)"
+  },
+  {
+   "key": "wdw/2019/skyliner-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "kept: 2019 designs beyond Belle and Beast not named; 8-character list found is WDWNT 2025 restock - not applied to 2019"
+  },
+  {
+   "key": "wdw/2019/magic-of-honor/kilimanjaro-safaris",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "still open: only WDWNT Aug 2019 medal description; edition, position, day not found"
+  },
+  {
+   "key": "wdw/2019/magic-of-honor/its-a-small-world",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "still open: #11 only on reseller (yourwdwstore)"
+  },
+  {
+   "key": "wdw/2019/resort-holiday-bells-2019",
+   "field": "members",
+   "searched": "2 queries",
+   "note": "kept hold: per-bell resort/character/edition not in permitted snippets; reseller lists a Port Orleans Aristocats bell - lead only"
+  },
+  {
+   "key": "wdw/2019/vintage-vinyl/lady-and-the-tramp",
+   "field": "hold",
+   "searched": "2 queries",
+   "note": "kept hold: #4/LE 3000/Apr 18 and DL+WDW sale only on resellers (ecrater, yourwdwstore)"
+  },
+  {
+   "key": "wdw/2019/vintage-vinyl/snow-white",
+   "field": "edition_size",
+   "searched": "0 queries",
+   "note": "kept: #5 edition still reseller-only; not re-searched"
+  },
+  {
+   "key": "wdw/2019/walt-disney-day-2019/steamboat-willie",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "field note: still no edition/price/day; WDWNT Nov 2019 preview names it; reseller price figures conflict - not used"
+  },
+  {
+   "key": "wdw/2019/swge-grand-opening-mystery",
+   "field": "hold",
+   "searched": "0 queries",
+   "note": "hold: mystery designs not individually confirmed (kept, not re-searched)"
+  },
+  {
+   "key": "wdw/2019/haunted-mansion-50th-anniversary/day-of",
+   "field": "hold",
+   "searched": "0 queries",
+   "note": "kept hold (no new per-pin evidence)"
+  },
+  {
+   "key": "wdw/2019/mnsshp-2019-sanderson-sisters",
+   "field": "hold",
+   "searched": "0 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); kept"
+  },
+  {
+   "key": "wdw/2019/epcot-flower-garden-2019-princess-set",
+   "field": "hold",
+   "searched": "0 queries",
+   "note": "kept hold (no new per-pin evidence)"
+  },
+  {
+   "key": "wdw/2019/hollywood-studios-30th-anniversary-booster",
+   "field": "hold",
+   "searched": "0 queries",
+   "note": "kept hold: character list only (no new per-pin evidence)"
+  },
+  {
+   "key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019",
+   "field": "hold",
+   "searched": "0 queries",
+   "note": "kept hold (no new per-pin evidence)"
+  },
+  {
+   "key": "wdw/2019/rundisney-star-wars-rival-run-weekend-2019",
+   "field": "hold",
+   "searched": "0 queries",
+   "note": "kept hold (no new per-pin evidence)"
+  },
+  {
+   "key": "wdw/2019/rundisney-wine-dine-half-marathon-weekend-2019",
+   "field": "hold",
+   "searched": "0 queries",
+   "note": "kept hold (no new per-pin evidence)"
+  }
+ ]
+}

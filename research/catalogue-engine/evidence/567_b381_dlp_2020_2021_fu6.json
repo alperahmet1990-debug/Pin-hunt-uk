@@ -1,0 +1,814 @@
+{
+ "packet_id": "567_b381_dlp_2020_2021_fu6",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+   "title": "Neue Pins im Oktober 2021",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-10-05"
+  },
+  {
+   "url": "http://passiondlp.com/actus/arc042.php",
+   "title": "passiondlp : Archives Disneyland Paris 2021 trimestre 4",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "title": "Pin Trading à Disneyland Paris : la sélection de pin's du mois",
+   "publisher": "Disneyphile",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+   "title": "Pin-Neuerscheinungen im September 2020",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+   "title": "New September 2021 Pin Releases for Disneyland Paris",
+   "publisher": "Travel to the Magic",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+   "title": "Pin-Neuerscheinungen im September 2021",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-08-30"
+  },
+  {
+   "url": "https://www.mousesteps.com/2021/10/26/mickeys-dazzling-christmas-parade-pins-releasing-at-disneyland-paris-on-november-13th-2021/",
+   "title": "Mickey's Dazzling Christmas Parade Pins Releasing at Disneyland Paris on November 13th, 2021",
+   "publisher": "Mousesteps",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-10-26"
+  },
+  {
+   "url": "https://mickeyblog.com/2021/10/31/disneyland-paris-pin-trading-releases-for-november-2021-include-cowboys-pirates-and-holiday-fun/",
+   "title": "Disneyland Paris Pin Trading Releases for November 2021 Include Cowboys, Pirates, and Holiday Fun!",
+   "publisher": "MickeyBlog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-10-31"
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2020/",
+   "title": "Pin-Neuerscheinungen im Dezember 2020",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-12-08"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2021/attraction-medals-december-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Attraction medal pins (December 2021)",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "passiondlp: three attraction medal pins released 22 Dec 2021"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Quoted: release of 3 attraction medal pins, each named"
+    },
+    {
+     "field": "format",
+     "value": "three separate medal-shaped pins, each in its own box",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Quoted: each pin is in a box; 150 copies each"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Quoted: 150 copies each"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Quoted: 150 exemplaires chacun"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12-22",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Dated entry 22/12/21"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12-22",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: Wednesday 22 December, three attractions honoured on medal-shaped pins"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: on sale at Pueblo Trading Post"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/beauty-beast-stained-glass-november-2021",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: three BatB characters in stained-glass windows, limited to 250 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: limitées à 250 exemplaires chacune"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-10",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: Wednesday 10 November"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: World of Disney shop in Disney Village"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: three pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/villains-jumbo-2021",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Quoted: jumbo pins of Ursula, Maleficent, the Evil Queen, Dr Facilier and Hades"
+    },
+    {
+     "field": "price",
+     "value": 50.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Quoted: EUR 50 each (jeweils)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-23",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Body text: jumbos released 23 Oct, Lineberty registration for World of Disney (date per search summary)"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Lineberty registration for World of Disney (per search summary)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/villains-sidekicks-2021",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Quoted: Pin Trading Day pins of 30 Oct 2021, 500 copies each"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Quoted: 500 exemplaires chacun; link to this set via packet 529 (the 30 Oct release is the ten villains/sidekicks pins)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/christmas-le-november-2021",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://mickeyblog.com/2021/10/31/disneyland-paris-pin-trading-releases-for-november-2021-include-cowboys-pirates-and-holiday-fun/",
+     "method": "search_snippet",
+     "note": "Ten festive pins exclusive to Thunder Mesa Mercantile on 13 Nov (parade link inferred)"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Search summary: ten pins for the new Christmas parade at Thunder Mesa Mercantile, EUR 16, 500 each"
+    },
+    {
+     "field": "format",
+     "value": "five pins each showing one parade float and five pins focused on main characters",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Search summary only, not quoted text"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/pin-trading-anniversary-2021",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: four new LE pins at World of Disney, one of them jumbo"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: 700 copies"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: World of Disney shop"
+    },
+    {
+     "field": "format",
+     "value": "four separate pins (three standard, one jumbo)",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: four new pins, one jumbo at EUR 55"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2021/attraction-medals-december-2021/crushs-coaster",
+   "set_key": "dlp/2021/attraction-medals-december-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Crush's Coaster medal pin",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Named in quoted passiondlp list of three medal pins"
+    },
+    {
+     "field": "attraction",
+     "value": "Crush's Coaster",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Attraction named in quoted list"
+    },
+    {
+     "field": "attraction",
+     "value": "Crush's Coaster",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Disneyphile quoted list names the same three attractions"
+    },
+    {
+     "field": "visual_form",
+     "value": "medal",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Medal-shaped pin"
+    },
+    {
+     "field": "size_mm",
+     "value": 45,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Quoted: medal pin size 45mm"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "150 copies each"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Quoted: 150 copies each"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12-22",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "22/12/21"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12-22",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Wednesday 22 December"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: Pueblo Trading Post"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/attraction-medals-december-2021/hyperspace-mountain",
+   "set_key": "dlp/2021/attraction-medals-december-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars Hyperspace Mountain medal pin",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Named in quoted passiondlp list of three medal pins"
+    },
+    {
+     "field": "attraction",
+     "value": "Star Wars Hyperspace Mountain",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Attraction named in quoted list"
+    },
+    {
+     "field": "attraction",
+     "value": "Star Wars Hyperspace Mountain",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Disneyphile quoted list names the same three attractions"
+    },
+    {
+     "field": "visual_form",
+     "value": "medal",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Medal-shaped pin"
+    },
+    {
+     "field": "size_mm",
+     "value": 45,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Quoted: medal pin size 45mm"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "150 copies each"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Quoted: 150 copies each"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12-22",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "22/12/21"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12-22",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Wednesday 22 December"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: Pueblo Trading Post"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/attraction-medals-december-2021/its-a-small-world",
+   "set_key": "dlp/2021/attraction-medals-december-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "it's a small world medal pin",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Named in quoted passiondlp list of three medal pins"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Attraction named in quoted list"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Disneyphile quoted list names the same three attractions"
+    },
+    {
+     "field": "visual_form",
+     "value": "medal",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Medal-shaped pin"
+    },
+    {
+     "field": "size_mm",
+     "value": 45,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Quoted: medal pin size 45mm"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "150 copies each"
+    },
+    {
+     "field": "edition_size",
+     "value": 150,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Quoted: 150 copies each"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12-22",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "22/12/21"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12-22",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Wednesday 22 December"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Quoted: Pueblo Trading Post"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/beauty-beast-stained-glass-november-2021/mrs-potts",
+   "set_key": "dlp/2021/beauty-beast-stained-glass-november-2021",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Each of the three stained-glass pins limited to 250 (quoted 'chacune')"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2021/attraction-medals-december-2021",
+   "field": "original_price",
+   "searched": "passiondlp + Disneyphile snippets",
+   "note": "Price not stated in either snippet"
+  },
+  {
+   "key": "dlp/2021/beauty-beast-stained-glass-november-2021",
+   "field": "characters",
+   "searched": "Disneyphile snippet",
+   "note": "Disneyphile names no characters; other two portraits still unnamed"
+  },
+  {
+   "key": "dlp/2021/villains-jumbo-2021",
+   "field": "release_date",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+   "note": "field note: same page's end-of-article overview puts the jumbos under Sat 2 Oct; body text says 23 Oct (summary)"
+  },
+  {
+   "key": "dlp/2021/villains-jumbo-2021",
+   "field": "pins",
+   "searched": "dein-dlrp Oct 2021 + packet 105",
+   "note": "lead: same five villains, 23 Oct, World of Disney as dlp/2021/villains-portraits-2021 (MickeyBlog glow portraits); likely one release. Per-villain jumbo records not created to avoid duplicates; merge at review"
+  },
+  {
+   "key": "dlp/2021/villains-portraits-2021/hades",
+   "field": "original_price",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+   "note": "field note: dein-dlrp lists a jumbo pin of this villain at EUR 50, 23 Oct, World of Disney; probably this pin, link not stated, price not attached"
+  },
+  {
+   "key": "dlp/2021/villains-portraits-2021/maleficent",
+   "field": "original_price",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+   "note": "field note: dein-dlrp lists a jumbo pin of this villain at EUR 50, 23 Oct, World of Disney; probably this pin, link not stated, price not attached"
+  },
+  {
+   "key": "dlp/2021/villains-portraits-2021/dr-facilier",
+   "field": "original_price",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+   "note": "field note: dein-dlrp lists a jumbo pin of this villain at EUR 50, 23 Oct, World of Disney; probably this pin, link not stated, price not attached"
+  },
+  {
+   "key": "dlp/2021/villains-portraits-2021/ursula",
+   "field": "original_price",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+   "note": "field note: dein-dlrp lists a jumbo pin of this villain at EUR 50, 23 Oct, World of Disney; probably this pin, link not stated, price not attached"
+  },
+  {
+   "key": "dlp/2021/villains-portraits-2021/evil-queen",
+   "field": "original_price",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+   "note": "field note: dein-dlrp lists a jumbo pin of this villain at EUR 50, 23 Oct, World of Disney; probably this pin, link not stated, price not attached"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021",
+   "field": "edition_size",
+   "searched": "http://passiondlp.com/actus/arc042.php",
+   "note": "field note: passiondlp calls the 30 Oct 2021 pins 'Pin Trading Day' pins and does not name them; set link is from earlier packets"
+  },
+  {
+   "key": "dlp/2021/christmas-le-november-2021",
+   "field": "pins",
+   "searched": "https://www.mousesteps.com/2021/10/26/mickeys-dazzling-christmas-parade-pins-releasing-at-disneyland-paris-on-november-13th-2021/; https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "note": "Floats and characters still not individually named; no per-pin records. 5 floats + 5 characters split from search summary only"
+  },
+  {
+   "key": "dlp/2021/santa-hat-november-2021",
+   "field": "edition_type",
+   "searched": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "note": "hold: confirm pin structure; Disneyphile 'EUR 16, 500 each' sentence appears to follow the parade pins, supporting OE for the two santa-hat pins; Marie / Chip-Dale split still not stated"
+  },
+  {
+   "key": "dlp/2021/pin-trading-anniversary-2021/chip-dale-autumn",
+   "field": "pin_structure",
+   "searched": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "note": "release evidence: Disneyphile (new source) quotes four LE 700 pins incl. one jumbo EUR 55 - counts items as single pins, matching dein-dlrp EUR 20 per pin, against 'sets of two'. Not named per pin"
+  },
+  {
+   "key": "dlp/2021/pin-trading-anniversary-2021/mickey-minnie",
+   "field": "pin_structure",
+   "searched": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "note": "release evidence: Disneyphile (new source) quotes four LE 700 pins incl. one jumbo EUR 55 - counts items as single pins, matching dein-dlrp EUR 20 per pin, against 'sets of two'. Not named per pin"
+  },
+  {
+   "key": "dlp/2021/pin-trading-anniversary-2021/stitch-duck-family",
+   "field": "pin_structure",
+   "searched": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "note": "release evidence: Disneyphile (new source) quotes four LE 700 pins incl. one jumbo EUR 55 - counts items as single pins, matching dein-dlrp EUR 20 per pin, against 'sets of two'. Not named per pin"
+  },
+  {
+   "key": "dlp/2021/pin-trading-anniversary-2021/stitch-jumbo",
+   "field": "original_price",
+   "searched": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "note": "field note: Disneyphile quotes jumbo at EUR 55 (character not named in snippet)"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-booster-2021/chip",
+   "field": "pin_structure",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+   "note": "release evidence: quoted dein-dlrp text lists booster contents as 'Chip, Chap, a castle of pumpkins and a pumpkin with Mickey ears' - four items for the four-pin booster"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-booster-2021/dale",
+   "field": "pin_structure",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+   "note": "release evidence: quoted dein-dlrp text lists booster contents as 'Chip, Chap, a castle of pumpkins and a pumpkin with Mickey ears' - four items for the four-pin booster"
+  },
+  {
+   "key": "dlp/2020/march-2020-le/pocahontas-carousel",
+   "field": "release_date",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+   "note": "field note: quoted text only says the second pin of that day continues the carousel series with Pocahontas, LE 700, EUR 15.99, Disney Gallery. Summaries gave 12 Sep and 26 Sep this round; unresolved"
+  },
+  {
+   "key": "dlp/2021/big-thunder-mountain-2021",
+   "field": "edition_type",
+   "searched": "https://www.traveltothemagic.net/new-september-2021-pin-releases-for-disneyland-paris/",
+   "note": "TTTM summary again: BTM set is open edition; 700 each belongs to the Best Friends LEs. No new source beyond earlier packets"
+  },
+  {
+   "key": "dlp/2020/oe-set/christmas-booster-2020",
+   "field": "pin_structure",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2020/",
+   "note": "Hold stays: dein-dlrp Dec 2020 again a list (four festive pins Mickey, Pluto, Figaro, Minnie, EUR 20); date 18 vs 19 Dec in two versions of the page"
+  },
+  {
+   "key": "dlp/2020/christmas-booster-2020/mickey",
+   "field": "pin_structure",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2020/",
+   "note": "hold: confirm pin structure; booster contents still only a character list"
+  },
+  {
+   "key": "dlp/2020/christmas-booster-2020/pluto",
+   "field": "pin_structure",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2020/",
+   "note": "hold: confirm pin structure; booster contents still only a character list"
+  },
+  {
+   "key": "dlp/2020/christmas-booster-2020/figaro",
+   "field": "pin_structure",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2020/",
+   "note": "hold: confirm pin structure; booster contents still only a character list"
+  },
+  {
+   "key": "dlp/2020/christmas-booster-2020/minnie",
+   "field": "pin_structure",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2020/",
+   "note": "hold: confirm pin structure; booster contents still only a character list"
+  },
+  {
+   "key": "dlp/2020/lanyard-charms-december-2020",
+   "field": "scope",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2020/",
+   "note": "scope: confirm pin vs button (12 Dec 2020 lanyard charms: Cheshire Cat, Stitch, Simba, Marie, Tinker Bell, EUR 4.99 each, per summary)"
+  },
+  {
+   "key": "dlp/2021/christmas-oe-december-2021",
+   "field": "pin_structure",
+   "searched": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "note": "Hold stays: Disneyphile re-seen, three unlimited Christmas pins starring Mickey, Pluto, Chip and Dale, 4 Dec; split not stated"
+  },
+  {
+   "key": "dlp/2021/101-dalmatians-december-2021",
+   "field": "pins",
+   "searched": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "note": "Three LE 700 Dalmatians pins (4 Dec, Thunder Mesa Mercantile) still unnamed; no dein-dlrp Dec 2021 article indexed; passiondlp Q4 2021 snippet silent"
+  },
+  {
+   "key": "dlp/2021/animators-dalmatians-oe-december-2021",
+   "field": "pins",
+   "searched": "disneypinsblog Dec 2021",
+   "note": "Still only the gallery caption; no designs or count"
+  },
+  {
+   "key": "dlp/2021/star-wars-patrice-girod-november-2021",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "Four RotJ designs still not named; only Jan 2019 Millennium Falcon Girod series surfaces"
+  },
+  {
+   "key": "dlp/2021/cowboy-november-2021",
+   "field": "pin_structure",
+   "searched": "https://mickeyblog.com/2021/10/31/disneyland-paris-pin-trading-releases-for-november-2021-include-cowboys-pirates-and-holiday-fun/",
+   "note": "hold: confirm pin structure; no new split; MickeyBlog again 'three cowboy-themed sets with Mickey, Chip and Dale' plus Sheriff Mickey"
+  },
+  {
+   "key": "dlp/2021/december-2021-le/genie",
+   "field": "pin_structure",
+   "searched": "not searched",
+   "note": "hold stays: key covers two Genie designs recorded under dlp/2022/january-2022-world-of-disney-le; map or retire at review"
+  },
+  {
+   "key": "dlp/2020/holiday-2020-delayed",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "Alice holiday 2020 pin(s) still undescribed; disneypinsblog says 'the Alice pins' (plural), count unknown; no dein-dlrp Mar 2021 page indexed"
+  },
+  {
+   "key": "dlp/2021/disney-hotel-new-york",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "No dated 2020-2021 hotel pin; opening collectible was a Marvel print; only an undated retailer pin listing"
+  },
+  {
+   "key": "dlp/2021/sorcerer-mickey-november-2021",
+   "field": "pins",
+   "searched": "http://passiondlp.com/actus/arc042.php",
+   "note": "lead: passiondlp Q4 2021 summary mentions a jumbo Mickey Sorcier pin, 400 copies, EUR 50; date and link to the 20 Nov release not confirmed"
+  },
+  {
+   "key": "dlp/2021/cast-member-stitch-christmas-2021",
+   "field": "pins",
+   "searched": "http://passiondlp.com/actus/arc042.php",
+   "note": "lead: passiondlp Q4 2021 summary mentions a 'Stitch Noel' Cast Member Exclusive pin, 3021 copies; summary only, not recorded as a pin"
+  },
+  {
+   "key": "dlp/2021/halloween-trio-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2020/cast-member-genie/genie",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/stitch-august-2021/2-pin-set",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-pluto-mummy-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-pumpkin-ghost-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/top-hat",
+   "field": "release_date",
+   "searched": "not searched",
+   "note": "field note: 9 vs 30 Oct conflict unchanged"
+  },
+  {
+   "key": "dlp/2020/lanyards-october-2020",
+   "field": "scope",
+   "searched": "not searched",
+   "note": "No new evidence on pin vs non-pin"
+  }
+ ],
+ "discovery_notes": "B381 follow-up 6 of B044 (DLP 2020-2021), 27 web searches. New: three Dec 2021 attraction medal pins (passiondlp + Disneyphile, 150 each). Added: BatB stained glass LE 250; villains jumbo EUR 50 x5 (likely = villains-portraits); villains+sidekicks LE 500 (passiondlp PTD 30 Oct); parade set count 10; 20 years four LE 700 pins (Disneyphile). Release evidence proposed: Halloween booster Chip/Dale; 20 years three pins. All search_snippet."
+}

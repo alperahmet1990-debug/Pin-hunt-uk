@@ -334,7 +334,10 @@ describe("runRefresh: apply", () => {
     expect(byId["uk-2"].parsed).toMatchObject({ edition_size: 500 });
     expect(Date.parse(byId["uk-1"].expires_at) - NOW).toBe(30 * DAY);
     expect(JSON.stringify(store.listings)).not.toMatch(/SENTINEL|image|seller/i);
-    expect(r.pins[0]).toMatchObject({ pinhuntId: "PHUK-A", searchesRun: 1, accepted: 1, nearMisses: 1 });
+    expect(r.pins[0]).toMatchObject({ pinhuntId: "PHUK-A", searchesRun: 1, found: 3, accepted: 1, nearMisses: 1 });
+    expect(r.pins[0].rejectedReasons).toMatchObject({ edition_size_conflict: 1 });
+    const text = formatRefresh(r, opts({ apply: true, confirmCredits: 1 }), ON).join("\n");
+    expect(text).toMatch(/found 3 {2}accepted 1 {2}near-misses 1 {2}turned down .*edition_size_conflict 1/);
     expect(store.revalued).toEqual([UUID_A]);
   });
 

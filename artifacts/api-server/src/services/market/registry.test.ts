@@ -9,7 +9,7 @@ import type { SoldgraphClient } from "../soldgraph/client";
 import { normaliseQueryKey, type MarketplaceAdapter, type NormalisedListing } from "./adapter";
 import { createDefaultAdapterRegistry, defaultAdapters } from "./adapters";
 import { fixturePin } from "./__fixtures__/load";
-import { buildEnglishQueries, buildFrenchQueries, dedupeQueries, planPinSearches } from "./queries";
+import { buildEnglishQueries, buildFrenchQueries, dedupeQueries, planPinSearches, shortKeywordQuery } from "./queries";
 import { createAdapterRegistry, type MarketSourceSetting } from "./registry";
 
 /** A client that must never be called in these tests. */
@@ -85,15 +85,30 @@ describe("default adapters", () => {
 describe("query building", () => {
   const hatbox = fixturePin("hatbox");
 
-  it("English sources reuse v1 buildSearchQueries", () => {
-    expect(buildEnglishQueries(hatbox, 1)).toEqual(["Disney Hatbox Ghost pin LE 2000"]);
+  it("English sources lead with a short keyword search, then reuse v1 buildSearchQueries", () => {
+    expect(buildEnglishQueries(hatbox, 1)).toEqual(["Hatbox Ghost pin"]);
+    expect(buildEnglishQueries(hatbox, 2)).toEqual(["Hatbox Ghost pin", "Disney Hatbox Ghost pin LE 2000"]);
   });
 
   it("French sources add French terms first", () => {
-    expect(buildFrenchQueries(fixturePin("tink"), 2)).toEqual([
+    expect(buildFrenchQueries(fixturePin("tink"), 3)).toEqual([
+      "pin's Tinker Bell Pixie Dust",
       "pin's Disney Tinker Bell Pixie Dust",
       "pin Disney Tinker Bell Pixie Dust",
     ]);
+  });
+
+  it("short keyword search: the pin's own name first, no filler, years or park codes, at most 5 words", () => {
+    const short = (title: string) => shortKeywordQuery({ ...hatbox, title });
+    // Titles from the #411 mini-pilot.
+    expect(short("Disney Royalty Reveal / Conceal - Aladdin")).toBe("Aladdin Royalty Reveal Conceal");
+    expect(short("Hidden Mickey 2013 WDW - Characters - Tinker Bell")).toBe("Tinker Bell Hidden Mickey");
+    expect(short("Stitch Summer Series - Sandcastle")).toBe("Sandcastle Stitch Summer");
+    expect(short("Stitch with Nature Series - Duckling")).toBe("Duckling Stitch Nature");
+    expect(short("Pixar Squares - Nemo")).toBe("Nemo Pixar Squares");
+    expect(short("Hidden Mickey 2018 DLR – Moana Coconuts – Silver Claw Chaser")).toBe("Silver Claw Chaser Moana Coconuts");
+    expect(short("101 Dalmatians - Lucky")).toBe("Lucky 101 Dalmatians");
+    expect(short("Disney Pin")).toBeNull();
   });
 
   it("dedupeQueries is case and whitespace insensitive", () => {
@@ -188,7 +203,7 @@ describe("Mercari readiness", () => {
 
     const plan = planPinSearches(fixturePin("hatbox"), enabled);
     const planned = plan.searches.filter(s => s.adapter === mercari);
-    expect(planned.map(s => s.query)).toEqual(["Disney Hatbox Ghost pin LE 2000"]);
+    expect(planned.map(s => s.query)).toEqual(["Hatbox Ghost pin"]);
     expect(plan.credits).toBe(13);
     const res = await planned[0].adapter.search(planned[0].query);
     expect(res.listings).toEqual([row]);

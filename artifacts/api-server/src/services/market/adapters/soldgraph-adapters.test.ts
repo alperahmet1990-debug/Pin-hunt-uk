@@ -168,14 +168,14 @@ describe("soldgraph eBay sold adapter (UK)", () => {
     expectStorable(res.listings);
   });
 
-  it("builds at most two English v1 queries by default and keys searches by country", () => {
+  it("builds at most two English queries by default and keys searches by country", () => {
     const h = harness("ebay-sold-uk.json");
     const uk = createSoldgraphEbaySoldAdapter(h.client, { country: "uk" });
     const us = createSoldgraphEbaySoldAdapter(h.client, { country: "us" });
     const q = uk.buildQueries(hatbox);
-    expect(q).toEqual(["Disney Hatbox Ghost pin LE 2000", "Hatbox Ghost Haunted Mansion 50th Anniversary Disney pin 2019"]);
+    expect(q).toEqual(["Hatbox Ghost pin", "Disney Hatbox Ghost pin LE 2000"]);
     expect(uk.searchKey(q[0])).not.toBe(us.searchKey(q[0]));
-    expect(uk.searchKey("  disney HATBOX ghost pin le 2000 ")).toBe(uk.searchKey(q[0]));
+    expect(uk.searchKey("  HATBOX ghost   pin ")).toBe(uk.searchKey(q[0]));
   });
 
   it("propagates the client's kill switch without a network call", async () => {
@@ -229,9 +229,9 @@ describe("soldgraph eBay sold adapter (FR)", () => {
     const h = harness("ebay-sold-fr.json");
     const adapter = createSoldgraphEbaySoldAdapter(h.client, { country: "fr", maxQueries: 3 });
     expect(adapter.buildQueries(hatbox)).toEqual([
+      "pin's Hatbox Ghost",
       "pin's Disney Hatbox Ghost LE 2000",
       "pin Disney Hatbox Ghost",
-      "Disney Hatbox Ghost pin LE 2000",
     ]);
   });
 });

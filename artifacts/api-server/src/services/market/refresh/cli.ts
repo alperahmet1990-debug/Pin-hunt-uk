@@ -75,8 +75,12 @@ function formatPin(p: PinSummary): string {
     p.sharedSearches ? `shared ${p.sharedSearches}` : "",
     p.searchesFailed ? `failed ${p.searchesFailed}` : "",
     p.cachedSources.length ? `cached ${p.cachedSources.length}` : "",
+    `found ${p.found}`,
     `accepted ${p.accepted}`,
     `near-misses ${p.nearMisses}`,
+    Object.keys(p.rejectedReasons ?? {}).length
+      ? `turned down ${Object.entries(p.rejectedReasons).sort((a, b) => b[1] - a[1]).map(([r, n]) => `${r} ${n}`).join(", ")}`
+      : "",
     p.droppedAsDuplicate ? `kept on a better-matching pin ${p.droppedAsDuplicate}` : "",
     p.stoppedBy ? `STOPPED (${p.stoppedBy})` : "",
   ].filter(Boolean);

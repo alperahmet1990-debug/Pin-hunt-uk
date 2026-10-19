@@ -1,0 +1,975 @@
+{
+ "packet_id": "b423-dlp-2020-2021-fu11-2026-10-19",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "http://passiondlp.com/actus/arc042.php",
+   "title": "passiondlp : Archives Disneyland Paris 2021 trimestre 4",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc038.php",
+   "title": "passiondlp : Archives Disneyland Paris 2020 trimestre 4",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "title": "Pin Trading à Disneyland Paris : la sélection de pin's du mois",
+   "publisher": "Disneyphile",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+   "title": "Neue Pins im Oktober 2021",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.passiondlp.com/actus/arc041.php",
+   "title": "passiondlp : Archives Disneyland Paris 2021 trimestre 3",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/pins/archives/arc2021/archive2021.php",
+   "title": "Pin Trading : archive affiches 2021 - Paris",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2021/pin-trading-time-november-2021",
+   "claims": [
+    {
+     "field": "format",
+     "value": "six separate LE pins",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Six PTT pins named individually, 400 each, plus separate Refresh Lanyard pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/pirates-november-2021",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Disneyphile: Pirates of the Caribbean series of non-limited pins with a lanyard"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/star-wars-patrice-girod-november-2021",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Star Wars collector pins limited to 500 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-27",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Saturday 27 Nov 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Sold at World of Disney"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2021/pin-trading-time-november-2021/chip",
+   "set_key": "dlp/2021/pin-trading-time-november-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tic / Chip (Pin Trading Time Nov 2021)",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "passiondlp names 'Tic' among the six PTT 5 Nov 2021 pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Listed as its own pin: Tic"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 copies each"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 exemplaires chacun"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-05",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Time of 5 Nov 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Six pins listed by name, 400 each; one character/subject per pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/pin-trading-time-november-2021/clarice",
+   "set_key": "dlp/2021/pin-trading-time-november-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Clarice (Pin Trading Time Nov 2021)",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "passiondlp names 'Clarice' among the six PTT 5 Nov 2021 pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Clarice"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Listed as its own pin: Clarice"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 copies each"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 exemplaires chacun"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-05",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Time of 5 Nov 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Six pins listed by name, 400 each; one character/subject per pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/pin-trading-time-november-2021/dale",
+   "set_key": "dlp/2021/pin-trading-time-november-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tac / Dale (Pin Trading Time Nov 2021)",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "passiondlp names 'Tac' among the six PTT 5 Nov 2021 pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dale"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Listed as its own pin: Tac"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 copies each"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 exemplaires chacun"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-05",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Time of 5 Nov 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Six pins listed by name, 400 each; one character/subject per pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/pin-trading-time-november-2021/maleficent",
+   "set_key": "dlp/2021/pin-trading-time-november-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Maleficent (Pin Trading Time Nov 2021)",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "passiondlp names 'Maléfique' among the six PTT 5 Nov 2021 pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Listed as its own pin: Maléfique"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 copies each"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 exemplaires chacun"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-05",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Time of 5 Nov 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Six pins listed by name, 400 each; one character/subject per pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/pin-trading-time-november-2021/dragon",
+   "set_key": "dlp/2021/pin-trading-time-november-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dragon (Pin Trading Time Nov 2021)",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "passiondlp names 'Dragon' among the six PTT 5 Nov 2021 pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Maleficent (dragon form)"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Listed as its own pin: Dragon"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 copies each"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 exemplaires chacun"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-05",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Time of 5 Nov 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Six pins listed by name, 400 each; one character/subject per pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/pin-trading-time-november-2021/raven",
+   "set_key": "dlp/2021/pin-trading-time-november-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Raven / Diablo (Pin Trading Time Nov 2021)",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "passiondlp names 'Corbeau' among the six PTT 5 Nov 2021 pins"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Diablo"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Listed as its own pin: Corbeau"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 copies each"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 exemplaires chacun"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-05",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Time of 5 Nov 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "separate pins",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Six pins listed by name, 400 each; one character/subject per pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/pirates-november-2021/stitch",
+   "set_key": "dlp/2021/pirates-november-2021",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Stitch named in non-limited Pirates series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/pirates-november-2021/goofy",
+   "set_key": "dlp/2021/pirates-november-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy (Pirates of the Caribbean, Nov 2021)",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Disneyphile names Dingo / Tic et Tac in the Pirates OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Named among stars of the Pirates series"
+    },
+    {
+     "field": "attraction",
+     "value": "Pirates of the Caribbean",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Series inspired by the attraction"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Non-limited series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/pirates-november-2021/chip-dale",
+   "set_key": "dlp/2021/pirates-november-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip & Dale (Pirates of the Caribbean, Nov 2021)",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Disneyphile names Dingo / Tic et Tac in the Pirates OE series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Named among stars of the Pirates series"
+    },
+    {
+     "field": "attraction",
+     "value": "Pirates of the Caribbean",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Series inspired by the attraction"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Non-limited series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/doc",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Doc"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "dein-dlrp lists Doc by name as a dwarf pin at EUR 7 each"
+    },
+    {
+     "field": "original_price",
+     "value": 7.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Doc, Grumpy, Sleepy, Sneezy, Bashful, Happy: EUR 7 per piece (Dopey EUR 10)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021, no Lineberty needed"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/grumpy",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Grumpy"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "dein-dlrp lists Grumpy by name as a dwarf pin at EUR 7 each"
+    },
+    {
+     "field": "original_price",
+     "value": 7.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Doc, Grumpy, Sleepy, Sneezy, Bashful, Happy: EUR 7 per piece (Dopey EUR 10)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021, no Lineberty needed"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/sleepy",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Sleepy"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "dein-dlrp lists Sleepy by name as a dwarf pin at EUR 7 each"
+    },
+    {
+     "field": "original_price",
+     "value": 7.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Doc, Grumpy, Sleepy, Sneezy, Bashful, Happy: EUR 7 per piece (Dopey EUR 10)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021, no Lineberty needed"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/sneezy",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Sneezy"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "dein-dlrp lists Sneezy by name as a dwarf pin at EUR 7 each"
+    },
+    {
+     "field": "original_price",
+     "value": 7.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Doc, Grumpy, Sleepy, Sneezy, Bashful, Happy: EUR 7 per piece (Dopey EUR 10)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021, no Lineberty needed"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/bashful",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Bashful"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "dein-dlrp lists Bashful by name as a dwarf pin at EUR 7 each"
+    },
+    {
+     "field": "original_price",
+     "value": 7.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Doc, Grumpy, Sleepy, Sneezy, Bashful, Happy: EUR 7 per piece (Dopey EUR 10)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021, no Lineberty needed"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/happy",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Happy"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "dein-dlrp lists Happy by name as a dwarf pin at EUR 7 each"
+    },
+    {
+     "field": "original_price",
+     "value": 7.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Doc, Grumpy, Sleepy, Sneezy, Bashful, Happy: EUR 7 per piece (Dopey EUR 10)"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021, no Lineberty needed"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/snow-white",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Snow White alone EUR 8"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/prince-charming",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Snow White",
+      "Prince Charming"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "dein-dlrp: Snow White with her prince, EUR 8"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "EUR 8"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/cast-member-genie/genie",
+   "set_key": "dlp/2020/cast-member-genie",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2020-10-29",
+     "source_url": "http://www.passiondlp.com/actus/arc038.php",
+     "method": "search_snippet",
+     "note": "Archive entry dated 29/10/20 announcing new CM Exclusive Le Génie, 3020 copies"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2021/pin-trading-time-november-2021/dragon",
+   "field": "characters",
+   "searched": "passiondlp Q4 2021",
+   "note": "field note: passiondlp lists 'Dragon' after Maleficent; presumably Maleficent's dragon form, not stated explicitly"
+  },
+  {
+   "key": "dlp/2021/pin-trading-time-november-2021/raven",
+   "field": "characters",
+   "searched": "passiondlp Q4 2021",
+   "note": "field note: passiondlp says 'Corbeau' (raven); Diablo name is editorial"
+  },
+  {
+   "key": "dlp/2021/pin-trading-time-november-2021/chip-dale-clarice",
+   "field": "pin_structure",
+   "searched": "passiondlp Q4 2021 (arc042)",
+   "note": "hold: passiondlp names six separate LE 400 pins (Tic, Clarice, Tac, Maléfique, Dragon, Corbeau); this combined key likely duplicates new keys chip/clarice/dale; do not count"
+  },
+  {
+   "key": "dlp/2021/pin-trading-time-november-2021/maleficent-diablo",
+   "field": "pin_structure",
+   "searched": "passiondlp Q4 2021 (arc042)",
+   "note": "hold: passiondlp names six separate LE 400 pins (Tic, Clarice, Tac, Maléfique, Dragon, Corbeau); this combined key likely duplicates new keys maleficent/dragon/raven; do not count"
+  },
+  {
+   "key": "dlp/2021/pirates-november-2021/goofy",
+   "field": "pin_structure",
+   "searched": "Disneyphile, MickeyBlog, WDWNT queries",
+   "note": "hold: confirm pin structure; Disneyphile gives a character list (Stitch, Dingo, Tic et Tac) only; no per-pin listing or count; Pirates set not dated in that passage"
+  },
+  {
+   "key": "dlp/2021/pirates-november-2021/chip-dale",
+   "field": "pin_structure",
+   "searched": "Disneyphile, MickeyBlog, WDWNT queries",
+   "note": "hold: confirm pin structure; Disneyphile gives a character list (Stitch, Dingo, Tic et Tac) only; no per-pin listing or count; Pirates set not dated in that passage"
+  },
+  {
+   "key": "dlp/2021/pirates-november-2021",
+   "field": "release_date",
+   "searched": "Disneyphile",
+   "note": "Disneyphile passage on Pirates series does not repeat the 27 Nov date (MickeyBlog gives it); skull logo pin from earlier WDWNT lead still unconfirmed"
+  },
+  {
+   "key": "dlp/2021/star-wars-patrice-girod-november-2021",
+   "field": "pin_name",
+   "searched": "RotJ/Girod/Jabba/Endor queries",
+   "note": "Four RotJ designs still unnamed"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/doc",
+   "field": "pin_structure",
+   "searched": "dein-dlrp October 2021",
+   "note": "release evidence: dein-dlrp Oct 2021 names Doc individually with a per-piece price (EUR 7 each, Dopey EUR 10), so the dwarf is no longer inferred; releases hold on this key"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/grumpy",
+   "field": "pin_structure",
+   "searched": "dein-dlrp October 2021",
+   "note": "release evidence: dein-dlrp Oct 2021 names Grumpy individually with a per-piece price (EUR 7 each, Dopey EUR 10), so the dwarf is no longer inferred; releases hold on this key"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/sleepy",
+   "field": "pin_structure",
+   "searched": "dein-dlrp October 2021",
+   "note": "release evidence: dein-dlrp Oct 2021 names Sleepy individually with a per-piece price (EUR 7 each, Dopey EUR 10), so the dwarf is no longer inferred; releases hold on this key"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/sneezy",
+   "field": "pin_structure",
+   "searched": "dein-dlrp October 2021",
+   "note": "release evidence: dein-dlrp Oct 2021 names Sneezy individually with a per-piece price (EUR 7 each, Dopey EUR 10), so the dwarf is no longer inferred; releases hold on this key"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/bashful",
+   "field": "pin_structure",
+   "searched": "dein-dlrp October 2021",
+   "note": "release evidence: dein-dlrp Oct 2021 names Bashful individually with a per-piece price (EUR 7 each, Dopey EUR 10), so the dwarf is no longer inferred; releases hold on this key"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/happy",
+   "field": "pin_structure",
+   "searched": "dein-dlrp October 2021",
+   "note": "release evidence: dein-dlrp Oct 2021 names Happy individually with a per-piece price (EUR 7 each, Dopey EUR 10), so the dwarf is no longer inferred; releases hold on this key"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/prince-charming",
+   "field": "characters",
+   "searched": "dein-dlrp October 2021",
+   "note": "field note: dein-dlrp describes this pin as Snow White with her prince; MickeyBlog-based record lists Prince Charming alone"
+  },
+  {
+   "key": "dlp/2020/cast-member-genie/genie",
+   "field": "release_date",
+   "searched": "passiondlp Q4 2020",
+   "note": "hold stays: only posting date 29 Oct 2020 added; nothing new on the seller-blog Mar 2020 duplicate question"
+  },
+  {
+   "key": "dlp/2021/sorcerer-mickey-jumbo-2021/mickey-sorcier-jumbo",
+   "field": "release_date",
+   "searched": "passiondlp 2021 poster archive",
+   "note": "field note: summary of passiondlp archive pages gives 23 Nov 2021 for the surprise jumbo; packet 595 has 20 Nov from arc042"
+  },
+  {
+   "key": "dlp/2021/christmas-le-november-2021",
+   "field": "pins",
+   "searched": "passiondlp Q4 2021",
+   "note": "Parade float pins LE 500, EUR 16, 13 Nov 2021 restated; float names still not found"
+  },
+  {
+   "key": "dlp/2020/holiday-2020-delayed",
+   "field": "pins",
+   "searched": "passiondlp Q4 2020",
+   "note": "EUR 69.99 Christmas box with exclusive Stitch LE 700 restated; 18 Dec 2020 LE sale cancelled; Alice pins still undescribed"
+  },
+  {
+   "key": "dlp/2021/guardians-of-the-galaxy-june-2021",
+   "field": "pins",
+   "searched": "Palais des Goodies, pintrader, DPB",
+   "note": "lead: retailer lists 'Groot OE' and 'Groot cassette OE' pins (EUR 10) with no date or DLP tie; Groot pair still not recorded"
+  },
+  {
+   "key": "dlp/2021/small-world-august-2021",
+   "field": "pins",
+   "searched": "small world queries",
+   "note": "lead: summary says 28 Aug 2021 small world series features Stitch, Goofy, Chip and Dale plus lanyard; character list only, not recorded"
+  },
+  {
+   "key": "dlp/2021/pin-trading-day-august-2021",
+   "field": "pins",
+   "searched": "passiondlp Q3 2021",
+   "note": "lead: passiondlp entry 21/08/21 pin trading day: pins 500 each plus one OE; designs not named (may relate to Jungle Festival keys)"
+  },
+  {
+   "key": "dlp/2021/delayed-seasonal-june-2021",
+   "field": "pins",
+   "searched": "passiondlp, DPB, pintrader",
+   "note": "Designs still unnamed; passiondlp notes Easter LE reveal 4 Apr 2021 and a 29th-anniversary medal LE 700 reveal 12 Apr 2021 (possibly the jumbo-medal-birthday key)"
+  },
+  {
+   "key": "dlp/2021/valentines-2021",
+   "field": "pins",
+   "searched": "Valentine 2021 queries",
+   "note": "lead: seller listing names a DLP Winnie the Pooh Valentine's Day series pin, undated; seller only, not recorded"
+  },
+  {
+   "key": "dlp/2021/december-2021-le/genie",
+   "field": "pins",
+   "searched": "DPB Dec 2021",
+   "note": "hold stays: DPB Dec 2021 post lists Genie & Cruella LE and Animator / Dalmatians OE without design names; also mentions Marvel Christmas and Mickey & Minnie pins (unnamed)"
+  },
+  {
+   "key": "dlp/2021/101-dalmatians-december-2021",
+   "field": "pins",
+   "searched": "dein-dlrp / DPB",
+   "note": "No dein-dlrp Dec 2021 page indexed; three designs unnamed"
+  },
+  {
+   "key": "dlp/2021/wedding-winnie-the-pooh-january-2021",
+   "field": "pins",
+   "searched": "passiondlp Q1 2021, DPB",
+   "note": "hold stays: summaries mention Mickey et Minnie and Tigrou et Porcinet items, 29 Jan 2021, no count or per-pin listing"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/bagheera",
+   "field": "pin_structure",
+   "searched": "passiondlp Q1 2021, Disneyphile",
+   "note": "hold stays: same four-pins-plus-character-list evidence; date conflict 5 vs 12 Feb 2021"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/miss-bunny",
+   "field": "pin_structure",
+   "searched": "as above",
+   "note": "hold stays: no new per-pin evidence"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/berlioz",
+   "field": "pin_structure",
+   "searched": "as above",
+   "note": "hold stays: no new per-pin evidence"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/toulouse",
+   "field": "pin_structure",
+   "searched": "as above",
+   "note": "hold stays: no new per-pin evidence"
+  },
+  {
+   "key": "dlp/2020/parisian-minnie-2020",
+   "field": "pins",
+   "searched": "Minnie Parisienne queries",
+   "note": "Three OE pins 5 Sep 2020 plus lanyard restated (red/white polka dots); designs still undescribed"
+  },
+  {
+   "key": "dlp/2021/disney-hotel-new-york",
+   "field": "pins",
+   "searched": "WDWNT, Once Upon Magic",
+   "note": "No 2021 hotel opening pin found; only undated OE Marvel hotel pin at a retailer"
+  },
+  {
+   "key": "dlp/2021/halloween-2021/chip-dale-pirates",
+   "field": "pins",
+   "searched": "not searched",
+   "note": "hold stays; no new evidence"
+  },
+  {
+   "key": "discovery",
+   "field": "searches",
+   "searched": "WebSearch",
+   "note": "26 WebSearch calls used"
+  }
+ ],
+ "discovery_notes": "B423 follow-up 11 of B044 (DLP 2020-2021). New: six PTT 5 Nov 2021 pins named individually by passiondlp (combined keys held as likely duplicates); Pirates Nov 2021 Goofy and Chip & Dale (held, character list). Released: six Snow White dwarf holds via dein-dlrp per-piece prices. Snippet-only evidence."
+}

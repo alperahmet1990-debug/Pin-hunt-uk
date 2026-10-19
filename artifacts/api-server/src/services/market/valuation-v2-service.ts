@@ -69,6 +69,10 @@ export interface CollectResult {
   plannedCredits: number;
   searchesRun: number;
   searchesFailed: number;
+  /** Listings the searches returned (after adapter mapping, before matching). */
+  listingsFound: number;
+  /** Why the unmatched listings were turned down, by rejection reason. */
+  rejectedReasons: Record<string, number>;
   /** Set when a budget, kill-switch or provider limit stopped the remaining searches. */
   stoppedBy?: "budget" | "disabled" | "unavailable";
 }
@@ -108,6 +112,7 @@ export async function collectPinEvidence(
   const best = new Map<string, CollectedListing>();
   let searchesRun = 0;
   let searchesFailed = 0;
+  let listingsFound = 0;
   let stoppedBy: CollectResult["stoppedBy"];
 
   for (const { adapter, query } of plan.searches) {
@@ -123,6 +128,7 @@ export async function collectPinEvidence(
       if (stoppedBy) break;
       continue;
     }
+    listingsFound += res.listings.length;
     for (const listing of res.listings) {
       const match = matchListing(pin, listing.title, { mode: "v2", lang: adapter.lang });
       const key = `${listing.sourceId}|${listing.externalId}`;
@@ -135,6 +141,12 @@ export async function collectPinEvidence(
 
   const all = [...best.values()];
   const accepted = all.filter(c => c.match.accepted);
+  const rejectedReasons: Record<string, number> = {};
+  for (const c of all) {
+    if (c.match.accepted) continue;
+    const r = c.match.rejectionReason ?? "unknown";
+    rejectedReasons[r] = (rejectedReasons[r] ?? 0) + 1;
+  }
   const seenAt = new Date(now()).toISOString();
   return {
     evidence: accepted.map(c => ({ ...toEvidence(c), seenAt: c.evidenceType === "active" ? seenAt : null })),
@@ -143,6 +155,8 @@ export async function collectPinEvidence(
     plannedCredits: plan.credits,
     searchesRun,
     searchesFailed,
+    listingsFound,
+    rejectedReasons,
     ...(stoppedBy ? { stoppedBy } : {}),
   };
 }

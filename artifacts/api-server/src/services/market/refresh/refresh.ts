@@ -472,8 +472,12 @@ export interface PinSummary {
   searchesRun: number;
   searchesFailed: number;
   sharedSearches: number;
+  /** Listings the searches returned, before matching. */
+  found: number;
   accepted: number;
   nearMisses: number;
+  /** Why unmatched listings were turned down (counts only). */
+  rejectedReasons: Record<string, number>;
   droppedAsDuplicate: number;
   stoppedBy?: "budget" | "disabled" | "unavailable";
   valuation?: RevalueResult | { status: "error" };
@@ -575,8 +579,10 @@ export async function runRefresh(opts: RefreshOptions, deps: RefreshDeps): Promi
       searchesRun: res.searchesRun - (run.shared() - sharedBefore),
       searchesFailed: res.searchesFailed,
       sharedSearches: run.shared() - sharedBefore,
+      found: res.listingsFound,
       accepted: res.accepted.length,
       nearMisses: items.length - res.accepted.length,
+      rejectedReasons: res.rejectedReasons,
       droppedAsDuplicate: 0,
       ...(res.stoppedBy ? { stoppedBy: res.stoppedBy } : {}),
     });

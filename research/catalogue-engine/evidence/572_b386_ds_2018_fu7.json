@@ -1,0 +1,489 @@
+{
+ "packet_id": "572_b386_ds_2018_fu7",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+   "title": "Surprise Winnie the Pooh Pin Release",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/prefixess/dsf-dssh.30/",
+   "title": "DSF/DSSH Threads",
+   "publisher": "Disney Pin Forum",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/mickey-mouse-memories-pin-set-5-of-12-465058628871.html",
+   "title": "Mickey Mouse Memories Pin Set, 5 of 12",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disney-store-mickey-mouse-memories-pin-set-7-of-12-465058565664.html",
+   "title": "Disney Store Mickey Mouse Memories Pin Set, 7 of 12",
+   "publisher": "Disney Store EU",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-studio-store-hollywood-december-2018-pins",
+   "title": "Disney Studio Store Hollywood December 2018 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/186653",
+   "title": "186653 (DSSH - BFF Photo Booth Series - 2018)",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-lion-king-jumbo-pin-set/",
+   "title": "The Lion King Jumbo Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/art-belle-limited-edition-pin-set",
+   "title": "Art of Belle Limited Edition Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.co.uk/disney-store-tangled-pin-set-466041688391.html",
+   "title": "Disney Store Tangled Pin Set",
+   "publisher": "Disney Store UK",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/walt-disneys-animation-celebration-event-pins/",
+   "title": "Walt Disney's Animation Celebration Event Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/60546",
+   "title": "60546",
+   "publisher": "My Pin Central",
+   "published_date": null,
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://lizeindisneyland.wordpress.com/2018/07/23/disney-product-review-mickey-mouse-memories-july-plush/",
+   "title": "Disney Product Review: Mickey Mouse Memories July Plush",
+   "publisher": "Lize in Disneyland (blog)",
+   "published_date": "2018-07-23",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyfromthe.uk/products/mickey-mouse-memories-august-review",
+   "title": "Mickey Mouse Memories August Review",
+   "publisher": "Mickey from the UK (fan site)",
+   "published_date": "2018-08-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dsus/2018/studio-store-hollywood-christopher-robin",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Christopher Robin DSSH pin release",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "DPB: surprise Pooh pin sold during the Christopher Robin pin release at DSSH"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "DPB dates the Christopher Robin pin release 3 Aug 2018"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://www.disneypinforum.com/prefixess/dsf-dssh.30/",
+     "method": "search_snippet",
+     "note": "DPF thread 'DSF/DSSH Almost Live From Hollywood: Christopher Robin' dated 3 Aug 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Studio Store Hollywood",
+     "source_url": "https://disneypinsblog.com/blogs/news/surprise-winnie-the-pooh-pin-release",
+     "method": "search_snippet",
+     "note": "DSSH release"
+    }
+   ]
+  },
+  {
+   "set_key": "dsus/2018/mickey-memories-05-may",
+   "parent_set_key": "dsus/2018/mickey-memories",
+   "claims": [
+    {
+     "field": "sub_series",
+     "value": "1950s Atomic Age",
+     "source_url": "https://www.disneystore.eu/mickey-mouse-memories-pin-set-5-of-12-465058628871.html",
+     "method": "search_snippet",
+     "note": "EU listing: 5 of 12, three pins each inspired by the Atomic Age of the 1950s"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.disneystore.eu/mickey-mouse-memories-pin-set-5-of-12-465058628871.html",
+     "method": "search_snippet",
+     "note": "EU listing: set of 3 pins"
+    }
+   ]
+  }
+ ],
+ "pins": [],
+ "not_found": [
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth/ralph",
+   "field": "characters",
+   "searched": "search snippets; fu7",
+   "note": "field note: MPC 186664 title still truncated ('Ralph and...'); partner unconfirmed after 3 more queries"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth/pinocchio",
+   "field": "characters",
+   "searched": "search snippets; fu7",
+   "note": "field note: MPC 186663 title still truncated ('Pinocchio and...'); Jiminy not confirmed by non-reseller source"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth/timon",
+   "field": "characters",
+   "searched": "search snippets; fu7",
+   "note": "field note: MPC 186660 title still truncated ('Timon and...'); Pumbaa not confirmed"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-bff-photo-booth",
+   "field": "related",
+   "searched": "search snippets; fu7",
+   "note": "series #2/#3 member mapping unchanged from fu6 (assigned by film per DPB); no per-pin page surfaced for 186660/63/64"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-christopher-robin",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "main 3 Aug 2018 pin(s) still unnamed; set now keyed with date (DPB + DPF thread title); no design, size or price found. Surprise Pooh stays under studio-store-christopher-robin-surprise-pooh"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-christopher-robin",
+   "field": "related",
+   "searched": "search snippets; fu7",
+   "note": "lead: DPF sale threads mention a DSSH 'Christopher Robin and Friends in Umbrella' pin, undated; MPC 208659 Pooh & Christopher Robin party-hat 2-pin set not tied to DSSH/2018 - not recorded"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-tangled-in-lights",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "still no non-reseller member list; leads only: jd-collectibles 'Dante Tangled In Lights DSSH LE 300' and 'Baymax Mochi' (reseller) - not recorded"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-tangled-in-lights",
+   "field": "related",
+   "searched": "search snippets; fu7",
+   "note": "MPC 60546 Rapunzel & Pascal lanterns DSSH LE 300 (Tangled 10th) not tied to Tangled in Lights or 2018 - not recorded"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-tangled-in-lights",
+   "field": "related",
+   "searched": "search snippets; fu7",
+   "note": "hold: Vanellope 148442 (Santa hat/fairy lights DSSH LE 150) still not tied to series; kept"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-mary-poppins-returns",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "series still unnamed; MPC 191247 Penguin Waiters and kite pin DSSH LE 300 undated - not recorded; DPB Feb 2019 DSSH Mary Poppins Cutie LE 300 is 2019, out of cell"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-mary-poppins-returns/mary-poppins-and-friends",
+   "field": "pin_structure",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept (495/518/537/557); no per-pin evidence"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-animation-celebration-2018",
+   "field": "scope",
+   "searched": "search snippets; fu7",
+   "note": "closed: Animation Celebration 2018 pins (logo LE 1200, Peter Pan filmstrip LE 750 etc.) are Epcot event pins, not DSSH; recommend maintainer drop this DS lead"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-cursive-cuties-2018-09-28",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "main #3 pins still unnamed; Timothy/Berlioz/Dumbo/Thumper Cursive Cutie DSSH LE 300 only on resellers/price guides, undated - not recorded"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-cursive-cuties-2018-09-28",
+   "field": "related",
+   "searched": "search snippets; fu7",
+   "note": "lead: price-guide Thumper Cursive Cutie backstamp FAC-046730-17096 (date code not interpreted; may indicate an earlier wave)"
+  },
+  {
+   "key": "dsus/2018/jumbo-park-pack-01",
+   "field": "all",
+   "searched": "search snippets; fu7",
+   "note": "first jumbo Park Pack still unidentified; DPB Lion King post says set 'is back' and is the second release - ambiguous, no first set named"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-07-jul",
+   "field": "release_date",
+   "searched": "search snippets; fu7",
+   "note": "still undated; lead: blog review 23 Jul 2018 (July plush) and DPB commenter 'third Saturday' pattern; WDWNT says 18th - not recorded"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-08-aug",
+   "field": "release_date",
+   "searched": "search snippets; fu7",
+   "note": "still undated; lead: UK fan review of Aug plush dated 21 Aug 2018 (8am shopDisney launch) - not tied to US pin date"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-05-may",
+   "field": "release_date",
+   "searched": "search snippets; fu7",
+   "note": "no DPB set 5 page surfaced; date still missing"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-04-apr",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "hold: designs not individually confirmed (kept); EU listings give set theme only"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-05-may",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "hold: designs not individually confirmed (kept); EU listings give set theme only"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-07-jul",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "hold: designs not individually confirmed (kept); EU listings give set theme only"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-08-aug",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "hold: designs not individually confirmed (kept); EU listings give set theme only"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-11-nov",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "hold: designs not individually confirmed (kept); EU listings give set theme only"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-12-dec",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "hold: designs not individually confirmed (kept); EU listings give set theme only"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-01-jan/glove",
+   "field": "pin_structure",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-01-jan/face",
+   "field": "pin_structure",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept"
+  },
+  {
+   "key": "dsus/2018/mickey-memories-01-jan/walking",
+   "field": "pin_structure",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept"
+  },
+  {
+   "key": "dsuk/2018/art-of-belle",
+   "field": "release_date",
+   "searched": "search snippets; fu7",
+   "note": "still no UK date; DPB: first sold at DS UK, later US USD 69.95, LE 1300 - likely 2017, not recorded"
+  },
+  {
+   "key": "dsuk/2018/tangled-pin-set",
+   "field": "release_date",
+   "searched": "search snippets; fu7",
+   "note": "DS UK 2-piece Tangled set (Rapunzel & Flynn boat, Pascal lantern, Mickey-icon backs, 466041688391, GBP 8.40) still undated - not recorded"
+  },
+  {
+   "key": "dsuk/2018 coverage",
+   "field": "all",
+   "searched": "search snippets; fu7",
+   "note": "no new dated UK/EU 2018 DS pins; Silly Symphony 90th DS pin already keyed 2019 in 206 (front-text 1926 vs 1928 wording differs between DPB and a UK reseller)"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/infinity-gauntlet",
+   "field": "pin_structure",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept (421); DPB/DisKingdom again list the seven by name only (goldtone/silvertone, window box), no per-pin description"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/tesseract-space-stone",
+   "field": "pin_structure",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept (421); DPB/DisKingdom again list the seven by name only (goldtone/silvertone, window box), no per-pin description"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/orb-power-stone",
+   "field": "pin_structure",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept (421); DPB/DisKingdom again list the seven by name only (goldtone/silvertone, window box), no per-pin description"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/aether-reality-stone",
+   "field": "pin_structure",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept (421); DPB/DisKingdom again list the seven by name only (goldtone/silvertone, window box), no per-pin description"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/eye-of-agamotto-time-stone",
+   "field": "pin_structure",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept (421); DPB/DisKingdom again list the seven by name only (goldtone/silvertone, window box), no per-pin description"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/lokis-scepter-mind-stone",
+   "field": "pin_structure",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept (421); DPB/DisKingdom again list the seven by name only (goldtone/silvertone, window box), no per-pin description"
+  },
+  {
+   "key": "dsus/2018/marvel-studios-10th-anniversary-le-1350/soul-stone",
+   "field": "pin_structure",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept (421); DPB/DisKingdom again list the seven by name only (goldtone/silvertone, window box), no per-pin description"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-08-aug/flynn-rider",
+   "field": "pin_structure",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept (421); not re-searched"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-08-aug/maximus",
+   "field": "pin_structure",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept (421); not re-searched"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-08-aug/rapunzel-stained-glass",
+   "field": "pin_name",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept (421); not re-searched"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-12-dec/mulan-stained-glass",
+   "field": "characters",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept; not re-searched"
+  },
+  {
+   "key": "dsus/2018/park-pack-3-0-12-dec/shan-yu",
+   "field": "visual_description",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept; MPC 134266 lead only; not re-searched"
+  },
+  {
+   "key": "dsus/2018/ralph-breaks-the-internet-vanellope-and-princesses",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept; snippet repeats Vanellope/Tiana/Ariel/Snow White + outfit pins (Aurora/Anna/Jasmine per unnamed reports), no per-pin breakdown"
+  },
+  {
+   "key": "dsus/2018/ralph-breaks-the-internet-youre-my-hero-heart",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept; halves not described individually"
+  },
+  {
+   "key": "dsuk/2018/incredibles-2-le-set-of-5/mr-incredible",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept. variant: same pin as dsus/2018/incredibles-2-le-750-set/mr-incredible"
+  },
+  {
+   "key": "dsuk/2018/incredibles-2-le-set-of-5/elastigirl",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept. variant: same pin as dsus/2018/incredibles-2-le-750-set/elastigirl"
+  },
+  {
+   "key": "dsuk/2018/incredibles-2-le-set-of-5/violet",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept. variant: same pin as dsus/2018/incredibles-2-le-750-set/violet"
+  },
+  {
+   "key": "dsuk/2018/incredibles-2-le-set-of-5/dash",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept. variant: same pin as dsus/2018/incredibles-2-le-750-set/dash"
+  },
+  {
+   "key": "dsuk/2018/incredibles-2-le-set-of-5/jack-jack",
+   "field": "pins",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept. variant: same pin as dsus/2018/incredibles-2-le-750-set/jack-jack"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-pin-trader-delight-2018-08-10/sarah-hawkins",
+   "field": "edition_size",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept; DisKingdom gives price only; no edition size from non-reseller source (reseller LE 400 for another PTD not used)"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-pin-trader-delight-2018-08-10/rizzo",
+   "field": "edition_size",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept; DisKingdom gives price only; no edition size from non-reseller source (reseller LE 400 for another PTD not used)"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-pin-trader-delight-2018-08-10/arthur",
+   "field": "edition_size",
+   "searched": "search snippets; fu7",
+   "note": "hold: kept; DisKingdom gives price only; no edition size from non-reseller source (reseller LE 400 for another PTD not used)"
+  },
+  {
+   "key": "dsus/2018/studio-store-hollywood-tangled-in-lights/baymax-mochi",
+   "field": "all",
+   "searched": "search snippets; fu7",
+   "note": "hold: reseller-only lead (jd-collectibles); not recorded as pin"
+  }
+ ],
+ "discovery_notes": "Follow-up 7 of B014 (packets 214, 421, 463, 495, 518, 537, 557; Disney Store 2018). 27 standard WebSearches, excluded domains blocked, search snippets/summaries only. No new pin records: no lead yielded per-pin evidence from a non-reseller source. New set-level facts: Christopher Robin DSSH release set keyed with 3 Aug 2018 date (DPB + DPF thread title); Memories set 5 theme (1950s Atomic Age, EU listing). Animation Celebration lead closed as Epcot. No hold released. Resellers (jd-collectibles, collectionhero, yourwdwstore, millerbrostoys) not used."
+}

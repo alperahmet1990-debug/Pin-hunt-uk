@@ -68,7 +68,9 @@ It prints the route, the search text and the budget. Then run it for real:
 SOLDGRAPH_ENABLED=true node --env-file=.env.staging scripts/market-refresh.mjs probe --pinhunt-id PHUK-00000001 --source soldgraph:ebay_gb_sold --apply --confirm-credits 1
 ```
 
-It prints only the **names and types** of the fields Soldgraph returned (no values), how many rows our code could read, and how many matched the pin. Paste that output into issue #409 or #411. If it says "Soldgraph request failed (status 404 ...)", the route name is wrong; nothing was charged for a failed search. Either way, stop there and let the agent fix the names.
+It prints only the **names and types** of the fields Soldgraph returned (no values), how many rows our code could read, and how many matched the pin. It also prints the key names of Soldgraph's response (no values), so an empty search can be told apart from listings sitting where the code doesn't look.
+
+If it finds 0 rows, the pin's title may be too specific. Try a shorter search with `--query "..."` added to the same command (still 1 credit), for example `--query "disney hatbox ghost pin"`. Paste that output into issue #409 or #411. If it says "Soldgraph request failed (status 404 ...)", the route name is wrong; nothing was charged for a failed search. Either way, stop there and let the agent fix the names.
 
 ## 2. Plan the pilot (dry run)
 

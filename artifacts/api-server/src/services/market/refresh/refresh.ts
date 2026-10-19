@@ -93,6 +93,8 @@ export interface ProbeOptions {
   command: "probe";
   pinhuntId: string;
   source: string;
+  /** Search text to use instead of the pin's own query (for checking a shorter search). */
+  query?: string;
   apply: boolean;
   confirmCredits: number | null;
 }
@@ -198,7 +200,18 @@ export function parseCliArgs(argv: string[], readFile: (p: string) => string = p
     const source = take("--source");
     if (!id) throw new RefreshUsageError("probe needs --pinhunt-id (one pin).");
     if (!source) throw new RefreshUsageError("probe needs --source (one source).");
-    out = { command: "probe", pinhuntId: checkIds([id])[0], source: checkSource(source), apply, confirmCredits };
+    const query = take("--query")?.trim();
+    if (query !== undefined && (query.length < 3 || query.length > 120)) {
+      throw new RefreshUsageError("--query must be 3 to 120 characters.");
+    }
+    out = {
+      command: "probe",
+      pinhuntId: checkIds([id])[0],
+      source: checkSource(source),
+      ...(query ? { query } : {}),
+      apply,
+      confirmCredits,
+    };
   } else {
     const source = take("--source");
     if (confirmCredits !== null) throw new RefreshUsageError("purge makes no provider calls; drop --confirm-credits.");
@@ -741,6 +754,8 @@ export interface ProbeResult {
   /** matchListing v2 on mapped rows: accepted count and rejection reasons (counts only). */
   matchAccepted?: number;
   matchRejected?: Record<string, number>;
+  /** Key names (never values) of Soldgraph's response and its `result`. */
+  responseKeys?: { body: string[]; result: string[] };
   error?: string;
 }
 
@@ -754,7 +769,7 @@ export async function runProbe(opts: ProbeOptions, deps: RefreshDeps): Promise<P
   const row = sources.find(s => s.id === opts.source);
   const [ref] = await deps.store.loadPins([opts.pinhuntId]);
   const adapter = buildRefreshAdapters(PLANNING_CLIENT, [opts.source], 1)[0];
-  const query = ref ? firstQuery(adapter, ref.pin) : null;
+  const query = opts.query ?? (ref ? firstQuery(adapter, ref.pin) : null);
   const result: ProbeResult = {
     applied: false,
     blockers: [],
@@ -819,6 +834,7 @@ export async function runProbe(opts: ProbeOptions, deps: RefreshDeps): Promise<P
       dropped,
       matchAccepted,
       matchRejected,
+      ...(res.responseKeys ? { responseKeys: res.responseKeys } : {}),
     };
   } catch (err) {
     // Typed client errors are generic and safe to show (no key, body or URL).

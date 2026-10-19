@@ -82,6 +82,14 @@ const auth = (init: RequestInit) => (init.headers as Record<string, string>).Aut
 const idem = (init: RequestInit) => (init.headers as Record<string, string>)["Idempotency-Key"];
 
 describe("soldgraph client", () => {
+  it("reports the response's key names, never its values", async () => {
+    const { client } = setup([res(200, { status: "complete", result: { listings: [{ id: "a" }], total: 1, "x y": "SECRET" } })]);
+    const out = await client.search("ebay/sold", { q: "stitch pin" });
+    expect(out.rows).toEqual([]);
+    expect(out.responseKeys).toEqual({ body: ["status:string", "result:object"], result: ["listings:array(1)", "total:number"] });
+    expect(JSON.stringify(out.responseKeys)).not.toMatch(/SECRET/);
+  });
+
   it("returns rows for a completed search and records usage", async () => {
     const { client, calls, store } = setup([res(200, complete([{ id: "a" }, { id: "b" }]), { "x-request-id": "req-1" })]);
     const out = await client.search("ebay/sold", { q: "stitch pin", market: "uk" }, { pinId: "pin-1" });

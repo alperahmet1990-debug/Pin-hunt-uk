@@ -42,6 +42,17 @@ if (anon.startsWith('eyJ') && jwtRole(anon) !== 'anon') {
 }
 if (!/^https:\/\//.test(process.env.EXPO_PUBLIC_API_BASE_URL)) fail('EXPO_PUBLIC_API_BASE_URL must be an https:// URL.', 2);
 
+// The Supabase address must be the bare project URL: the client adds
+// /auth/v1, /rest/v1 itself. Catch a copied list abbreviation ("…") or an
+// endpoint path ("/rest/v1/") before the two-minute export, not after.
+let supabaseUrl;
+try { supabaseUrl = new URL(process.env.EXPO_PUBLIC_SUPABASE_URL.trim()); } catch {
+  fail('EXPO_PUBLIC_SUPABASE_URL is not a valid address. Copy the full Project URL (no "…") from Supabase → Project Settings → API.', 2);
+}
+if (supabaseUrl.protocol !== 'https:' || supabaseUrl.pathname.replace(/\/+$/, '') !== '' || supabaseUrl.search) {
+  fail(`EXPO_PUBLIC_SUPABASE_URL must be just the project address, like https://<project>.supabase.co, with nothing after it. Got a path: "${supabaseUrl.pathname}".`, 2);
+}
+
 // 2. Web export.
 rmSync(outDir, { recursive: true, force: true });
 const env = { ...process.env, EXPO_PUBLIC_DEMO_MODE: '', EXPO_PUBLIC_DEMO_ADMIN: '', EXPO_PUBLIC_RESEARCH_PREVIEW: '' };

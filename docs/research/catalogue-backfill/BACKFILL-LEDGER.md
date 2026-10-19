@@ -2,6 +2,13 @@
 
 _Maintained by the hourly research routine (scheduled task "PinHunt historical backfill"). Rules: `research/catalogue-engine/BACKFILL-RULES.md`. Workbook: `PinHunt_catalogue_2015_2026.xlsx` (regenerated each round)._
 
+## Status: paused (maintainer decision, 19 Oct 2026)
+Independent catalogue expansion is paused. Pin & Pop integration is now the highest-priority catalogue workstream.
+- The hourly backfill task is **disabled, not deleted**. No new rounds start until the maintainer re-enables it.
+- The 10,320 research records (6,994 genuinely new, 3,308 held), the evidence packets, this ledger, `report_state.json` and the workbook are **retained**. They serve as a gap-analysis dataset (what Pin & Pop does not cover), a validation dataset (cross-checking mapped records) and a potential future contribution dataset. Nothing here is deleted or imported.
+- The research branches are preserved by `archive/2026-10-19/*` tags.
+- Existing exclusions stay in force until written Pin & Pop terms confirm permitted usage.
+
 ## Active round
 none
 

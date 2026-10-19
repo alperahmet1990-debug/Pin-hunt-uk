@@ -27,6 +27,9 @@ import type {
   PostReportSummary,
   CommentReport,
   ReportedComment,
+  ReportUserInput,
+  UserBlock,
+  UserReport,
   CatalogueImageCoverage,
   ContributedPinImage,
   CreateContributedImageInput,
@@ -488,6 +491,38 @@ export interface IUserPinRepository {
    * for the admin moderation queue, most-recently-reported first. Admin RLS applies.
    */
   getReportedComments(): Promise<ReportedComment[]>;
+
+  // ── Blocks and user reports (migration 050) ────────────────────────────────
+
+  /**
+   * Block another user as blockerId (must be the signed-in user; RLS enforced).
+   * Idempotent: blocking someone already blocked resolves without error.
+   * While a block exists in either direction, neither user can start a
+   * conversation or trade with the other or send them a message.
+   */
+  blockUser(blockerId: string, blockedUserId: string): Promise<void>;
+
+  /** Remove the signed-in user's block on blockedUserId. No-op if none exists. */
+  unblockUser(blockerId: string, blockedUserId: string): Promise<void>;
+
+  /** Users blockerId has blocked, most recent first. Only own blocks are readable. */
+  getBlockedUsers(blockerId: string): Promise<UserBlock[]>;
+
+  /**
+   * Report a profile, or one message the reported user sent in a conversation
+   * the reporter takes part in. Idempotent per (reporter, profile) and
+   * (reporter, message): repeating a report resolves to the existing one.
+   */
+  reportUser(reporterId: string, input: ReportUserInput): Promise<UserReport>;
+
+  /**
+   * User and message reports, most recent first. Admins see all of them; any
+   * other user sees only the reports they filed (RLS).
+   */
+  getUserReports(): Promise<UserReport[]>;
+
+  /** Dismiss (delete) a user report. Admin RLS applies. */
+  dismissUserReport(reportId: string): Promise<void>;
 
   // ── Conversations / DMs ────────────────────────────────────────────────────
 

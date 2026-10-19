@@ -740,6 +740,37 @@ export interface ReportedComment {
   reasons: string[];
 }
 
+// ─── Blocks and user reports (migration 050) ──────────────────────────────────
+
+/** A user the current user has blocked. */
+export interface UserBlock {
+  blockedUserId: string;
+  /** Public profile fields, when the blocked user's profile is visible. */
+  username?: string;
+  avatarUrl?: string;
+  createdAt: string;
+}
+
+/** What a user report is about: a profile, or one message in a conversation. */
+export type UserReportTarget = 'profile' | 'message';
+
+export interface ReportUserInput {
+  reportedUserId: string;
+  /** Set to report one message (sent by reportedUserId) instead of the profile. */
+  messageId?: string;
+  reason?: string;
+}
+
+export interface UserReport {
+  id: string;
+  target: UserReportTarget;
+  reporterId: string;
+  reportedUserId: string;
+  messageId?: string;
+  reason?: string;
+  createdAt: string;
+}
+
 /** Aggregated report info per post, for the admin moderation queue. */
 export interface PostReportSummary {
   postId: string;

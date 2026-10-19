@@ -121,6 +121,8 @@ export interface SoldgraphSearchResult<T = unknown> {
   /** True when the provider reported more pages than the page cap allowed. */
   truncated: boolean;
   requestIds: string[];
+  /** Key names (never values) of the first page's response and its `result`, for diagnosing an empty search. */
+  responseKeys?: { body: string[]; result: string[] };
 }
 
 export interface SoldgraphClient {
@@ -181,6 +183,15 @@ function quotaUntil(code: string, now: number, retryAfterMs: number | null): Dat
   return code === "upstream_daily_limit"
     ? new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() + 1))
     : new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1));
+}
+
+/** Identifier-shaped key names of an object (at most 40), with their JSON type. Never values. */
+function keyNames(o: unknown): string[] {
+  if (typeof o !== "object" || o === null || Array.isArray(o)) return [];
+  return Object.entries(o as Record<string, unknown>)
+    .filter(([k]) => /^[A-Za-z][A-Za-z0-9_]{0,63}$/.test(k))
+    .slice(0, 40)
+    .map(([k, v]) => `${k}:${v === null ? "null" : Array.isArray(v) ? `array(${v.length})` : typeof v}`);
 }
 
 export function createSoldgraphClient(options: SoldgraphClientOptions): SoldgraphClient {
@@ -366,6 +377,7 @@ export function createSoldgraphClient(options: SoldgraphClientOptions): Soldgrap
     rows: unknown[];
     next: { cursor?: string; page?: string } | null;
     requestId: string | null;
+    keys: { body: string[]; result: string[] };
   }
 
   async function runPage(
@@ -406,7 +418,7 @@ export function createSoldgraphClient(options: SoldgraphClientOptions): Soldgrap
               : result.next_page != null && result.next_page !== ""
                 ? { page: String(result.next_page) }
                 : null;
-          return { rows, next, requestId: ctx.requestId };
+          return { rows, next, requestId: ctx.requestId, keys: { body: keyNames(body), result: keyNames(result) } };
         }
         if (body.status === "failed") {
           ctx.jobFailed = true;
@@ -487,9 +499,11 @@ export function createSoldgraphClient(options: SoldgraphClientOptions): Soldgrap
       let pages = 0;
       let truncated = false;
       let query = base;
+      let responseKeys: SoldgraphSearchResult["responseKeys"];
       for (;;) {
         const page = await runPage(cleanRoute, query, key, { pinId: opts.pinId, deadlineAt, maxAttempts });
         pages += 1;
+        responseKeys ??= page.keys;
         rows.push(...(page.rows as T[]));
         if (page.requestId) requestIds.push(page.requestId);
         if (!page.next) break;
@@ -502,7 +516,7 @@ export function createSoldgraphClient(options: SoldgraphClientOptions): Soldgrap
         else if (page.next.page !== undefined) query.set("page", page.next.page);
       }
       log.info({ route: cleanRoute, pages, rows: rows.length, truncated }, "soldgraph search complete");
-      return { rows, pages, truncated, requestIds };
+      return { rows, pages, truncated, requestIds, ...(responseKeys ? { responseKeys } : {}) };
     },
   };
 }

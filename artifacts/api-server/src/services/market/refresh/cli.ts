@@ -151,6 +151,10 @@ export function formatProbe(r: ProbeResult): string[] {
     if (r.report.hiddenKeys) out.push(`  (${r.report.hiddenKeys} key(s) not shaped like field names were not shown)`);
     out.push(`Adapter: ${r.mapped} row(s) mapped${Object.keys(r.dropped ?? {}).length ? `, dropped ${JSON.stringify(r.dropped)}` : ""}.`);
     out.push(`Matching v2: ${r.matchAccepted} accepted${Object.keys(r.matchRejected ?? {}).length ? `, rejected ${JSON.stringify(r.matchRejected)}` : ""}.`);
+    if (r.responseKeys) {
+      out.push(`Response keys: ${r.responseKeys.body.join(", ") || "(none)"}`);
+      out.push(`Result keys: ${r.responseKeys.result.join(", ") || "(none)"}`);
+    }
   }
   return out;
 }

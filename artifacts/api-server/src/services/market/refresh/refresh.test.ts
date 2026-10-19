@@ -211,6 +211,12 @@ describe("parseCliArgs", () => {
     expect(() => parseCliArgs([...base, "--bogus", "1"])).toThrow(/Unknown flag/);
   });
 
+  it("takes an optional --query for the probe, 3 to 120 characters", () => {
+    expect(parseCliArgs(["probe", "--pinhunt-id", "PHUK-1", "--source", "soldgraph:ebay_gb_sold", "--query", "hatbox ghost pin"]))
+      .toMatchObject({ command: "probe", query: "hatbox ghost pin" });
+    expect(() => parseCliArgs(["probe", "--pinhunt-id", "PHUK-1", "--source", "soldgraph:ebay_gb_sold", "--query", "ab"])).toThrow(/3 to 120/);
+  });
+
   it("parses probe and purge", () => {
     expect(parseCliArgs(["probe", "--pinhunt-id", "PHUK-1", "--source", "soldgraph:vinted_gb_active"]))
       .toMatchObject({ command: "probe", pinhuntId: "PHUK-1", source: "soldgraph:vinted_gb_active", apply: false });
@@ -530,6 +536,19 @@ describe("runProbe", () => {
     expect(text).toMatch(/item_id: string/);
     expect(text).not.toMatch(/SENTINEL|ebayimg|24\.99|Haunted Mansion 50th|uk-1/);
     expect(store.upserts).toBe(0);
+  });
+
+  it("searches a --query instead of the pin's title, and prints the response keys", async () => {
+    const store = new FakeStore([pinRef(UUID_A, "PHUK-A")]);
+    const search = vi.fn(async (_route: string, _params?: unknown, _opts?: unknown) => ({
+      rows: [], pages: 1, truncated: false, requestIds: [],
+      responseKeys: { body: ["status:string", "result:object"], result: ["listings:array(3)"] },
+    }));
+    const r = await runProbe(probe({ apply: true, confirmCredits: 1, query: "hatbox ghost pin" }), deps(store, { search } as unknown as SoldgraphClient).d);
+    expect(search.mock.calls[0][1]).toMatchObject({ q: "hatbox ghost pin" });
+    const text = formatProbe(r).join("\n");
+    expect(text).toMatch(/Query: hatbox ghost pin/);
+    expect(text).toMatch(/Result keys: listings:array\(3\)/);
   });
 
   it("refuses without confirmation, kill switch or budget", async () => {

@@ -1,0 +1,1832 @@
+{
+ "packet_id": "b409-dlp-2020-2021-fu9-2026-10-19",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "http://passiondlp.com/actus/arc042.php",
+   "title": "passiondlp : Archives Disneyland Paris 2021 trimestre 4",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://passiondlp.com/actus/arc039.php",
+   "title": "passiondlp : Archives Disneyland Paris 2021 trimestre 1",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.passiondlp.com/actus/arc041.php",
+   "title": "passiondlp : Archives Disneyland Paris 2021 trimestre 3",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "title": "Pin Trading a Disneyland Paris : la selection de pin's du mois",
+   "publisher": "Disneyphile",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+   "title": "Pin-Neuerscheinungen im Oktober 2020",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2020/",
+   "title": "Pin-Neuerscheinungen im Dezember 2020",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-12-08"
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juli-2021/",
+   "title": "Pin-Neuerscheinungen im Juli 2021",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+   "title": "Neue Pins im Oktober 2021",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-10-05"
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+   "title": "Pin-Neuerscheinungen im August 2020",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pin-trading-time-november-2021-releases-at-disneyland-paris",
+   "title": "Pin Trading Time November 2021 Releases at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/june-2021-limited-edition-pin-releases-at-disneyland-paris/",
+   "title": "June 2021 Limited Edition Pin Releases at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-06-19"
+  },
+  {
+   "url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+   "title": "Guardians of the Galaxy Disneyland Paris Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-animators-pin-collection-at-disneyland-paris/",
+   "title": "Disney Animators' Pin Collection at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-06-26"
+  },
+  {
+   "url": "https://disneypinsblog.com/raya-and-the-last-dragon-open-edition-pins-at-disneyland-paris/",
+   "title": "Raya and the Last Dragon Open Edition Pins at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+   "title": "Disneyland Paris Pin Releases for October 2021 Include Villains, Dwarfs, and Halloween Fun!",
+   "publisher": "MickeyBlog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-09-30"
+  },
+  {
+   "url": "https://mypincentral.com/pin/131741",
+   "title": "DLP - The Little Mermaid Event - 2021 (Ursula with Flotsam and Jetsam)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/131748",
+   "title": "DLP - The Little Mermaid Event - 2021 (Ariel Contract)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.mousesteps.com/2021/10/26/mickeys-dazzling-christmas-parade-pins-releasing-at-disneyland-paris-on-november-13th-2021/",
+   "title": "Mickey's Dazzling Christmas Parade Pins Releasing at Disneyland Paris on November 13th, 2021",
+   "publisher": "MouseSteps",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-10-26"
+  },
+  {
+   "url": "https://mickeyblog.com/2021/10/31/disneyland-paris-pin-trading-releases-for-november-2021-include-cowboys-pirates-and-holiday-fun/",
+   "title": "Disneyland Paris Pin Trading Releases for November 2021 Include Cowboys, Pirates, and Holiday Fun!",
+   "publisher": "MickeyBlog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-10-31"
+  },
+  {
+   "url": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+   "title": "September 2020 Pin Trading Releases for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2021/little-mermaid-pin-trading-event-2021",
+   "claims": [
+    {
+     "field": "price",
+     "value": 17.0,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR 17.00 retail per pin in series data"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Each pin LE 425 per series listing (agrees with passiondlp 425; event capped ~400 people)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/guardians-of-the-galaxy-june-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Guardians of the Galaxy pins (June 2021)",
+     "source_url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+     "method": "search_snippet",
+     "note": "DPB: Guardians pins released 19 Jun 2021 at World of Disney DLP"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+     "method": "search_snippet",
+     "note": "Logo, Rocket and two Groot pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-06-19",
+     "source_url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+     "method": "search_snippet",
+     "note": "19 Jun 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+     "method": "search_snippet",
+     "note": "World of Disney store at DLP"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins",
+     "source_url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+     "method": "search_snippet",
+     "note": "Pins listed individually (logo, Rocket, two Groot)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/minis-february-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "MINIS collection additions (February 2021)",
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "passiondlp Q1 2021: MINIS collection grows with Bagheera, Miss Bunny, Berlioz and Toulouse"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "'4 nouveaux pin's' to go on sale that Friday"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-05",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Disneyphile dates the release 5 Feb 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "World of Disney boutique, Disney Village"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Snow White and the Seven Dwarfs pins (October 2021)",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "MickeyBlog preview: nine classic-style pins on 16 Oct 2021 plus a lanyard"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 9,
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Nine pins: one per dwarf plus Snow White and Prince Charming"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Each dwarf has a pin, plus Snow White and Prince Charming"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/neue-pins-im-oktober-2021/",
+     "method": "search_snippet",
+     "note": "dein-dlrp: Snow White release 16 Oct, no Lineberty booking needed"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/pin-trading-time-november-2021",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2021-11-05",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Pin Trading Time 5 Nov 2021"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "'Les six pin's du Pin Trading Time' plus separate Refresh Lanyard pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 copies each"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Davy Crockett Ranch",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Held at Davy Crockett Ranch"
+    },
+    {
+     "field": "release_location",
+     "value": "Alamo Trading Post",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-time-november-2021-releases-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "DPB says Alamo Trading Post, 1-5pm"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-time-november-2021-releases-at-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Limited edition of 400"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2021/little-mermaid-pin-trading-event-2021/ariel-in-shell",
+   "set_key": "dlp/2021/little-mermaid-pin-trading-event-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ariel in Shell",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "'Ariel in Shell' listed in the Little Mermaid Event 2021 series on My Pin Central"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Characters per pin name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Series entries marked LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Series listing marks this entry LE 425"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-18",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Series release date 18 Sep 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris - Disney's Newport Bay Club Convention Centre (Pin Trading Event)",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Event held at Newport Bay Club convention centre"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/little-mermaid-pin-trading-event-2021/vanessa",
+   "set_key": "dlp/2021/little-mermaid-pin-trading-event-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Vanessa",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "'Vanessa' listed in the Little Mermaid Event 2021 series on My Pin Central"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Vanessa"
+     ],
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Characters per pin name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Series entries marked LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Series listing marks this entry LE 425"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-18",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Series release date 18 Sep 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris - Disney's Newport Bay Club Convention Centre (Pin Trading Event)",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Event held at Newport Bay Club convention centre"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/little-mermaid-pin-trading-event-2021/ariel-ursula",
+   "set_key": "dlp/2021/little-mermaid-pin-trading-event-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ariel and Ursula",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "'Ariel and Ursula' listed in the Little Mermaid Event 2021 series on My Pin Central"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel",
+      "Ursula"
+     ],
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Characters per pin name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Series entries marked LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Series listing marks this entry LE 425"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-18",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Series release date 18 Sep 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris - Disney's Newport Bay Club Convention Centre (Pin Trading Event)",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Event held at Newport Bay Club convention centre"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Listed as a single series entry naming both characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/little-mermaid-pin-trading-event-2021/ariel-contract",
+   "set_key": "dlp/2021/little-mermaid-pin-trading-event-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ariel Contract",
+     "source_url": "https://mypincentral.com/pin/131748",
+     "method": "search_snippet",
+     "note": "Own My Pin Central page 131748, Little Mermaid Event 2021"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel"
+     ],
+     "source_url": "https://mypincentral.com/pin/131748",
+     "method": "search_snippet",
+     "note": "Character per pin name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/131748",
+     "method": "search_snippet",
+     "note": "Backstamp reads Edition Limitee"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://mypincentral.com/pin/131748",
+     "method": "search_snippet",
+     "note": "Backstamp numbered 409/425"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Disneyland Paris Pin Trading Edition Limitee 409/425 (c)Disney Made in China",
+     "source_url": "https://mypincentral.com/pin/131748",
+     "method": "search_snippet",
+     "note": "Reverse text as quoted on page; 409 is the copy number"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-18",
+     "source_url": "https://mypincentral.com/pin/131748",
+     "method": "search_snippet",
+     "note": "Series release date 18 Sep 2021"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/guardians-of-the-galaxy-june-2021/logo",
+   "set_key": "dlp/2021/guardians-of-the-galaxy-june-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Guardians of the Galaxy logo",
+     "source_url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+     "method": "search_snippet",
+     "note": "Guardians of the Galaxy logo pin named in DPB post"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-06-19",
+     "source_url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+     "method": "search_snippet",
+     "note": "19 Jun 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+     "method": "search_snippet",
+     "note": "World of Disney store at DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/guardians-of-the-galaxy-june-2021/rocket",
+   "set_key": "dlp/2021/guardians-of-the-galaxy-june-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rocket",
+     "source_url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+     "method": "search_snippet",
+     "note": "Rocket pin named in DPB post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rocket"
+     ],
+     "source_url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+     "method": "search_snippet",
+     "note": "Character per pin name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-06-19",
+     "source_url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+     "method": "search_snippet",
+     "note": "19 Jun 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://disneypinsblog.com/guardians-of-the-galaxy-disneyland-paris-pin-releases/",
+     "method": "search_snippet",
+     "note": "World of Disney store at DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/minis-february-2021/bagheera",
+   "set_key": "dlp/2021/minis-february-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Bagheera"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "Bagheera named among the four MINIS additions"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-05",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "5 Feb 2021 at World of Disney"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "World of Disney, Disney Village"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/minis-february-2021/miss-bunny",
+   "set_key": "dlp/2021/minis-february-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Miss Bunny"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "Miss Bunny named among the four MINIS additions"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-05",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "5 Feb 2021 at World of Disney"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "World of Disney, Disney Village"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/minis-february-2021/berlioz",
+   "set_key": "dlp/2021/minis-february-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Berlioz"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "Berlioz named among the four MINIS additions"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-05",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "5 Feb 2021 at World of Disney"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "World of Disney, Disney Village"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/minis-february-2021/toulouse",
+   "set_key": "dlp/2021/minis-february-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Toulouse"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "Toulouse named among the four MINIS additions"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-05",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "5 Feb 2021 at World of Disney"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "World of Disney, Disney Village"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/snow-white",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Snow White has own pin (MickeyBlog)"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "One pin per character stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/prince-charming",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Prince Charming"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Prince Charming has own pin (MickeyBlog)"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "One pin per character stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/doc",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Doc"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Each dwarf has a pin (MickeyBlog)"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "One pin per character stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/grumpy",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Grumpy"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Each dwarf has a pin (MickeyBlog)"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "One pin per character stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/happy",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Happy"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Each dwarf has a pin (MickeyBlog)"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "One pin per character stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/sleepy",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Sleepy"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Each dwarf has a pin (MickeyBlog)"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "One pin per character stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/bashful",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Bashful"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Each dwarf has a pin (MickeyBlog)"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "One pin per character stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/sneezy",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Sneezy"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Each dwarf has a pin (MickeyBlog)"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "One pin per character stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/snow-white-2021/dopey",
+   "set_key": "dlp/2021/snow-white-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dopey"
+     ],
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "Each dwarf has a pin (MickeyBlog)"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-16",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "16 Oct 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mickeyblog.com/2021/09/30/disneyland-paris-pin-releases-for-october-2021-include-villains-dwarfs-and-halloween-fun/",
+     "method": "search_snippet",
+     "note": "One pin per character stated"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/sorcerer-mickey-jumbo-2021/mickey-sorcier-jumbo",
+   "set_key": "dlp/2021/sorcerer-mickey-jumbo-2021",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2021-11-20",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Surprise jumbo release; entry captioned 20/11/21"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "On sale at Pueblo Trading Post"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 copies"
+    },
+    {
+     "field": "original_price",
+     "value": 50.0,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "EUR 50"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Euro"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/october-2020-le/jasmine-carousel",
+   "set_key": "dlp/2020/october-2020-le",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2020-10-24",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "24 Oct 2020"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "700 each"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "EUR 15.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_location",
+     "value": "Thunder Mesa Riverboat Landing (Lineberty booking)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Sold at Thunder Mesa with Lineberty reservation"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/october-2020-le/mike-sully",
+   "set_key": "dlp/2020/october-2020-le",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2020-10-24",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "24 Oct 2020"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "700 each"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "EUR 15.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_location",
+     "value": "Thunder Mesa Riverboat Landing (Lineberty booking)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Sold at Thunder Mesa with Lineberty reservation"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/richard-orlinski-2020/simba",
+   "set_key": "dlp/2020/richard-orlinski-2020",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2020-10-10",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "10 Oct 2020"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "original_price",
+     "value": 49.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "EUR 49"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Gallery, Disney Village (Lineberty booking)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Sold at Disney Gallery with Lineberty reservation"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/richard-orlinski-2020/sorcerer-mickey",
+   "set_key": "dlp/2020/richard-orlinski-2020",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2020-10-10",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "10 Oct 2020"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "original_price",
+     "value": 49.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "EUR 49"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney Gallery, Disney Village (Lineberty booking)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-oktober-2020/",
+     "method": "search_snippet",
+     "note": "Sold at Disney Gallery with Lineberty reservation"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/july-2021-le/carousel-ariel",
+   "set_key": "dlp/2021/july-2021-le",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juli-2021/",
+     "method": "search_snippet",
+     "note": "Four LE 700 pins in July 2021 list"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juli-2021/",
+     "method": "search_snippet",
+     "note": "EUR 15.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juli-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2020/",
+     "method": "search_snippet",
+     "note": "Announced 8 Dec 2020 for 18 Dec 2020 at 700 each, EUR 15.99"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/july-2021-le/carousel-belle",
+   "set_key": "dlp/2021/july-2021-le",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juli-2021/",
+     "method": "search_snippet",
+     "note": "Four LE 700 pins in July 2021 list"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juli-2021/",
+     "method": "search_snippet",
+     "note": "EUR 15.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juli-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2020/",
+     "method": "search_snippet",
+     "note": "Announced 8 Dec 2020 for 18 Dec 2020 at 700 each, EUR 15.99"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/july-2021-le/best-friends-simba-nala",
+   "set_key": "dlp/2021/july-2021-le",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juli-2021/",
+     "method": "search_snippet",
+     "note": "Four LE 700 pins in July 2021 list"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juli-2021/",
+     "method": "search_snippet",
+     "note": "EUR 15.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juli-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2020/",
+     "method": "search_snippet",
+     "note": "Announced 8 Dec 2020 for 18 Dec 2020 at 700 each, EUR 15.99"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/july-2021-le/best-friends-cogsworth-lumiere",
+   "set_key": "dlp/2021/july-2021-le",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juli-2021/",
+     "method": "search_snippet",
+     "note": "Four LE 700 pins in July 2021 list"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juli-2021/",
+     "method": "search_snippet",
+     "note": "EUR 15.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juli-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-dezember-2020/",
+     "method": "search_snippet",
+     "note": "Announced 8 Dec 2020 for 18 Dec 2020 at 700 each, EUR 15.99"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2021/little-mermaid-pin-trading-event-2021/ariel-in-shell",
+   "field": "visual_description",
+   "searched": "mypincentral series listing",
+   "note": "field note: named only in the series list on another pin's page; no own detail page found"
+  },
+  {
+   "key": "dlp/2021/little-mermaid-pin-trading-event-2021/vanessa",
+   "field": "visual_description",
+   "searched": "mypincentral series listing",
+   "note": "field note: named only in the series list on another pin's page; no own detail page found"
+  },
+  {
+   "key": "dlp/2021/little-mermaid-pin-trading-event-2021/ariel-ursula",
+   "field": "visual_description",
+   "searched": "mypincentral series listing",
+   "note": "field note: named only in the series list on another pin's page; no own detail page found"
+  },
+  {
+   "key": "dlp/2021/little-mermaid-pin-trading-event-2021",
+   "field": "pins",
+   "searched": "mypincentral 131741/131748 snippets",
+   "note": "Series list still not complete; 'Ariel and Eric at the ...' third Ariel & Eric pin not identified; full count unknown"
+  },
+  {
+   "key": "dlp/2021/guardians-of-the-galaxy-june-2021",
+   "field": "pins",
+   "searched": "disneypinsblog GotG DLP post",
+   "note": "Two Groot pins stated but not individually described; no per-pin records created"
+  },
+  {
+   "key": "dlp/2021/guardians-of-the-galaxy-june-2021/logo",
+   "field": "original_price",
+   "searched": "disneypinsblog GotG DLP post",
+   "note": "price not in snippet"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/bagheera",
+   "field": "pin_structure",
+   "searched": "passiondlp Q1 2021; Disneyphile",
+   "note": "hold: confirm pin structure; four new pins with four characters given as a list, one pin per character inferred (same standard as the Animators June 2021 hold)"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/miss-bunny",
+   "field": "pin_structure",
+   "searched": "passiondlp Q1 2021; Disneyphile",
+   "note": "hold: confirm pin structure; four new pins with four characters given as a list, one pin per character inferred (same standard as the Animators June 2021 hold)"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/berlioz",
+   "field": "pin_structure",
+   "searched": "passiondlp Q1 2021; Disneyphile",
+   "note": "hold: confirm pin structure; four new pins with four characters given as a list, one pin per character inferred (same standard as the Animators June 2021 hold)"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/toulouse",
+   "field": "pin_structure",
+   "searched": "passiondlp Q1 2021; Disneyphile",
+   "note": "hold: confirm pin structure; four new pins with four characters given as a list, one pin per character inferred (same standard as the Animators June 2021 hold)"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021",
+   "field": "edition_type",
+   "searched": "passiondlp; Disneyphile",
+   "note": "Edition size and price not stated"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/snow-white",
+   "field": "original_price",
+   "searched": "dein-dlrp Oct 2021",
+   "note": "field note: packet 402 cites EUR 7 for dwarfs other than Dopey; not restated per pin here"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/prince-charming",
+   "field": "original_price",
+   "searched": "dein-dlrp Oct 2021",
+   "note": "field note: packet 402 cites EUR 7 for dwarfs other than Dopey; not restated per pin here"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/doc",
+   "field": "characters",
+   "searched": "MickeyBlog Oct 2021 preview",
+   "note": "field note: source says each dwarf has a pin but does not list dwarfs by name; dwarf name is the canonical seven"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/doc",
+   "field": "original_price",
+   "searched": "dein-dlrp Oct 2021",
+   "note": "field note: packet 402 cites EUR 7 for dwarfs other than Dopey; not restated per pin here"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/grumpy",
+   "field": "characters",
+   "searched": "MickeyBlog Oct 2021 preview",
+   "note": "field note: source says each dwarf has a pin but does not list dwarfs by name; dwarf name is the canonical seven"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/grumpy",
+   "field": "original_price",
+   "searched": "dein-dlrp Oct 2021",
+   "note": "field note: packet 402 cites EUR 7 for dwarfs other than Dopey; not restated per pin here"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/happy",
+   "field": "characters",
+   "searched": "MickeyBlog Oct 2021 preview",
+   "note": "field note: source says each dwarf has a pin but does not list dwarfs by name; dwarf name is the canonical seven"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/happy",
+   "field": "original_price",
+   "searched": "dein-dlrp Oct 2021",
+   "note": "field note: packet 402 cites EUR 7 for dwarfs other than Dopey; not restated per pin here"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/sleepy",
+   "field": "characters",
+   "searched": "MickeyBlog Oct 2021 preview",
+   "note": "field note: source says each dwarf has a pin but does not list dwarfs by name; dwarf name is the canonical seven"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/sleepy",
+   "field": "original_price",
+   "searched": "dein-dlrp Oct 2021",
+   "note": "field note: packet 402 cites EUR 7 for dwarfs other than Dopey; not restated per pin here"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/bashful",
+   "field": "characters",
+   "searched": "MickeyBlog Oct 2021 preview",
+   "note": "field note: source says each dwarf has a pin but does not list dwarfs by name; dwarf name is the canonical seven"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/bashful",
+   "field": "original_price",
+   "searched": "dein-dlrp Oct 2021",
+   "note": "field note: packet 402 cites EUR 7 for dwarfs other than Dopey; not restated per pin here"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/sneezy",
+   "field": "characters",
+   "searched": "MickeyBlog Oct 2021 preview",
+   "note": "field note: source says each dwarf has a pin but does not list dwarfs by name; dwarf name is the canonical seven"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/sneezy",
+   "field": "original_price",
+   "searched": "dein-dlrp Oct 2021",
+   "note": "field note: packet 402 cites EUR 7 for dwarfs other than Dopey; not restated per pin here"
+  },
+  {
+   "key": "dlp/2021/sorcerer-mickey-jumbo-2021/mickey-sorcier-jumbo",
+   "field": "release_date",
+   "searched": "passiondlp Q4 2021",
+   "note": "field note: day now explicit (20/11/21), resolving the 'likely 20 Nov' note from packets 578/587"
+  },
+  {
+   "key": "dlp/2020/october-2020-le",
+   "field": "pins",
+   "searched": "dein-dlrp Oct 2020",
+   "note": "passiondlp's 10 Oct (Disney Gallery) and 24 Oct (Thunder Mesa) LE sales are the Orlinski pair and Jasmine carousel / Mike & Sully; month total 24 pins, all already keyed"
+  },
+  {
+   "key": "dlp/2021/july-2021-le/carousel-ariel",
+   "field": "release_date",
+   "searched": "dein-dlrp Dec 2020 / Jul 2021; passiondlp Q4 2020",
+   "note": "field note: first scheduled 18 Dec 2020 (sale cancelled per passiondlp); dein-dlrp Jul 2021 summary groups the four under 24 Jul vs 31 Jul in packet 105"
+  },
+  {
+   "key": "dlp/2021/july-2021-le/carousel-belle",
+   "field": "release_date",
+   "searched": "dein-dlrp Dec 2020 / Jul 2021; passiondlp Q4 2020",
+   "note": "field note: first scheduled 18 Dec 2020 (sale cancelled per passiondlp); dein-dlrp Jul 2021 summary groups the four under 24 Jul vs 31 Jul in packet 105"
+  },
+  {
+   "key": "dlp/2021/july-2021-le/best-friends-simba-nala",
+   "field": "release_date",
+   "searched": "dein-dlrp Dec 2020 / Jul 2021; passiondlp Q4 2020",
+   "note": "field note: first scheduled 18 Dec 2020 (sale cancelled per passiondlp); dein-dlrp Jul 2021 summary groups the four under 24 Jul vs 31 Jul in packet 105"
+  },
+  {
+   "key": "dlp/2021/july-2021-le/best-friends-cogsworth-lumiere",
+   "field": "release_date",
+   "searched": "dein-dlrp Dec 2020 / Jul 2021; passiondlp Q4 2020",
+   "note": "field note: first scheduled 18 Dec 2020 (sale cancelled per passiondlp); dein-dlrp Jul 2021 summary groups the four under 24 Jul vs 31 Jul in packet 105"
+  },
+  {
+   "key": "dlp/2020/december-2020-le",
+   "field": "pins",
+   "searched": "dein-dlrp Dec 2020",
+   "note": "Cancelled 18 Dec 2020 LE sale = Ariel / Belle carousel and Simba & Nala / Lumiere & Cogsworth Best Friends, released Jul 2021 under dlp/2021/july-2021-le keys"
+  },
+  {
+   "key": "dlp/2021/delayed-specials-july-2021/genie-national-day",
+   "field": "release_date",
+   "searched": "dein-dlrp Jul 2021",
+   "note": "field note: dein-dlrp summary places the three LE 700 specials (Genie EUR 16, book EUR 15.99, jumbo medal EUR 50, WoD, Lineberty) under 10 Jul vs 17 Jul in packet 402"
+  },
+  {
+   "key": "dlp/2021/delayed-specials-july-2021/book-birthday",
+   "field": "release_date",
+   "searched": "dein-dlrp Jul 2021",
+   "note": "field note: dein-dlrp summary places the three LE 700 specials (Genie EUR 16, book EUR 15.99, jumbo medal EUR 50, WoD, Lineberty) under 10 Jul vs 17 Jul in packet 402"
+  },
+  {
+   "key": "dlp/2021/delayed-specials-july-2021/jumbo-medal-birthday",
+   "field": "release_date",
+   "searched": "dein-dlrp Jul 2021",
+   "note": "field note: dein-dlrp summary places the three LE 700 specials (Genie EUR 16, book EUR 15.99, jumbo medal EUR 50, WoD, Lineberty) under 10 Jul vs 17 Jul in packet 402"
+  },
+  {
+   "key": "dlp/2021/pin-trading-time-november-2021/chip-dale-clarice",
+   "field": "pin_structure",
+   "searched": "passiondlp Q4 2021; Disney Pins Blog",
+   "note": "hold: confirm pin structure; passiondlp counts six LE 400 pins excluding Refresh Lanyard, so these combined keys may be separate character pins (only four keys exist)"
+  },
+  {
+   "key": "dlp/2021/pin-trading-time-november-2021/maleficent-diablo",
+   "field": "pin_structure",
+   "searched": "passiondlp Q4 2021; Disney Pins Blog",
+   "note": "hold: confirm pin structure; passiondlp counts six LE 400 pins excluding Refresh Lanyard, so these combined keys may be separate character pins (only four keys exist)"
+  },
+  {
+   "key": "dlp/2021/pin-trading-time-november-2021",
+   "field": "pins",
+   "searched": "passiondlp Q4 2021; DPB; Disneyphile",
+   "note": "Six-pin count vs four keyed (two are CM refresher); missing designs not identified"
+  },
+  {
+   "key": "dlp/2021/seasonal-le-june-2021",
+   "field": "pins",
+   "searched": "disneypinsblog June 2021 LE post (19 Jun 2021)",
+   "note": "lead: LE 700 pins held back by closure, released 18 Jun 2021 at World of Disney DLP, themed spring, summer, Mother's Day, Father's Day, Easter, St Patrick's Day; per-pin count/characters not stated, not recorded"
+  },
+  {
+   "key": "dlp/2021/easter-le-april-2021",
+   "field": "pins",
+   "searched": "disneypinsblog June 2021 LE post",
+   "note": "lead: the 4 Apr 2021 Easter LE reveal probably went on sale 18 Jun 2021 in the seasonal LE 700 batch above; not confirmed"
+  },
+  {
+   "key": "dlp/2021/villains-jumbo-2021",
+   "field": "pins",
+   "searched": "dein-dlrp Oct 2021; MickeyBlog Oct 2021",
+   "note": "lead stays: dein-dlrp lists villain jumbo pins EUR 50 each on 23 Oct (Lineberty); MickeyBlog says five glow-in-the-dark villain pins 23 Oct at WoD. Merge with villains-portraits-2021 at review"
+  },
+  {
+   "key": "dlp/2021/lanyard-charms-july-2021",
+   "field": "scope",
+   "searched": "dein-dlrp Jul 2021",
+   "note": "scope: confirm pin vs button/charm - 3 Jul 2021 lanyard charms Pua, Winnie the Pooh, Chip (Tassilo), Pascal, Fabius at EUR 5; not recorded"
+  },
+  {
+   "key": "dlp/2021/christmas-le-november-2021",
+   "field": "pins",
+   "searched": "passiondlp Q4 2021; MouseSteps; 2 queries",
+   "note": "Parade float pins LE 500, EUR 16, 13 Nov 2021 restated by passiondlp; float names still not found"
+  },
+  {
+   "key": "dlp/2021/star-wars-patrice-girod-november-2021",
+   "field": "pins",
+   "searched": "Disneyphile; planete-starwars; 2 queries",
+   "note": "Four RotJ pins LE 500, 27 Nov 2021 at World of Disney, one reproduces the film poster; others still unnamed"
+  },
+  {
+   "key": "dlp/2021/jungle-august-2021",
+   "field": "pins",
+   "searched": "passiondlp Q3 2021",
+   "note": "The OE pin of the 21 Aug 2021 Pin Trading Day still unnamed (possibly dlp/2021/oe/mickey-explorer, also 21 Aug; unconfirmed)"
+  },
+  {
+   "key": "dlp/2020/august-2020-releases",
+   "field": "pins",
+   "searched": "dein-dlrp Aug 2020",
+   "note": "Cars lead not supported: Aug 2020 summary lists Pinocchio, Lilo & Stitch, Marvel, Fox and Hound/Rescuers, Onward and castle pins, no Cars pins"
+  },
+  {
+   "key": "dlp/2020/parisian-minnie-2020",
+   "field": "pins",
+   "searched": "WDWNT Sep 2020; 1 query",
+   "note": "Three Parisian Minnie pins still undescribed"
+  },
+  {
+   "key": "dlp/2020/halloween-2020/mickey",
+   "field": "pin_structure",
+   "searched": "disneypinsblog Sep 2020 post",
+   "note": "hold stays: title-only; designs not described"
+  },
+  {
+   "key": "dlp/2020/halloween-2020/pluto",
+   "field": "pin_structure",
+   "searched": "disneypinsblog Sep 2020 post",
+   "note": "hold stays: title-only; designs not described"
+  },
+  {
+   "key": "dlp/2020/halloween-2020/donald",
+   "field": "pin_structure",
+   "searched": "disneypinsblog Sep 2020 post",
+   "note": "hold stays: title-only; designs not described"
+  },
+  {
+   "key": "dlp/2021/raya-oe-may-2021",
+   "field": "pin_structure",
+   "searched": "disneypinsblog Raya DLP post",
+   "note": "hold stays: 29 May 2021 WoD OE; 'features Sisu, Raya and the Ongis' still a list"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021",
+   "field": "pin_structure",
+   "searched": "disneypinsblog Animators DLP post",
+   "note": "hold stays: five pins EUR 8 with Moana, Merida, Tiana, Pocahontas, Lilo - list only"
+  },
+  {
+   "key": "dlp/2020/oe-set/christmas-booster-2020",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Dec 2020",
+   "note": "hold stays: four Christmas pins Mickey, Pluto, Figaro, Minnie EUR 20 - same list wording; 12 vs 19 Dec in page"
+  },
+  {
+   "key": "dlp/2020/lanyard-charms-december-2020",
+   "field": "scope",
+   "searched": "dein-dlrp Dec 2020",
+   "note": "scope: confirm pin vs button - restated five charms EUR 4.99, 12 Dec; no new evidence"
+  },
+  {
+   "key": "dlp/2021/cinderella-oe-may-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/santa-hat-november-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/cowboy-november-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/christmas-oe-december-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/halloween-trio-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-pluto-mummy-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-pumpkin-ghost-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2020/cast-member-genie/genie",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/stitch-august-2021/2-pin-set",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/pin-trading-anniversary-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/101-dalmatians-december-2021",
+   "field": "pins",
+   "searched": "searched this round",
+   "note": "LE 700 three still unnamed; not found this round"
+  },
+  {
+   "key": "dlp/2021/animators-dalmatians-oe-december-2021",
+   "field": "pins",
+   "searched": "searched this round",
+   "note": "No designs found"
+  },
+  {
+   "key": "dlp/2021/december-2021-le/genie",
+   "field": "pins",
+   "searched": "searched this round",
+   "note": "hold stays: Dec 2021 vs 15 Jan 2022 unchanged"
+  },
+  {
+   "key": "dlp/2020/holiday-2020-delayed",
+   "field": "pins",
+   "searched": "searched this round",
+   "note": "Alice holiday pins still undescribed"
+  },
+  {
+   "key": "dlp/2021/disney-hotel-new-york",
+   "field": "pins",
+   "searched": "searched this round",
+   "note": "No dated 2020-2021 hotel pin found"
+  },
+  {
+   "key": "dlp/2020/pin-trading-time-february-2020/refresh-lanyard",
+   "field": "pins",
+   "searched": "searched this round",
+   "note": "lead stays: Refresh Lanyard pin not described"
+  },
+  {
+   "key": "dlp/2021/cast-member-alice-mad-hatter-2021",
+   "field": "edition_size",
+   "searched": "searched this round",
+   "note": "field note: CM 3020/3021 per pin vs combined not resolved"
+  },
+  {
+   "key": "dlp/2021/attraction-medals-december-2021",
+   "field": "edition_size",
+   "searched": "searched this round",
+   "note": "field note: passiondlp Q4 2021 says 45mm medal pins in boxes, 150 copies each; price not found"
+  },
+  {
+   "key": "discovery",
+   "field": "budget",
+   "searched": "WebSearch",
+   "note": "27 WebSearch calls used"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/doc",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: dwarf named by inference - source summary says only 'each dwarf has a pin' (nine pins) without naming them; confirm each design (rule 12)"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/grumpy",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: dwarf named by inference - source summary says only 'each dwarf has a pin' (nine pins) without naming them; confirm each design (rule 12)"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/happy",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: dwarf named by inference - source summary says only 'each dwarf has a pin' (nine pins) without naming them; confirm each design (rule 12)"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/sleepy",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: dwarf named by inference - source summary says only 'each dwarf has a pin' (nine pins) without naming them; confirm each design (rule 12)"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/bashful",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: dwarf named by inference - source summary says only 'each dwarf has a pin' (nine pins) without naming them; confirm each design (rule 12)"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/sneezy",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: dwarf named by inference - source summary says only 'each dwarf has a pin' (nine pins) without naming them; confirm each design (rule 12)"
+  }
+ ],
+ "discovery_notes": "B409 follow-up 9 of B044 (DLP 2020-2021), 27 web searches, all search_snippet. New: Little Mermaid event 2021 Ariel in Shell, Vanessa, Ariel and Ursula, Ariel Contract (LE 425, EUR 17); Guardians of the Galaxy OE 19 Jun 2021 logo and Rocket (two Groot unrecorded); MINIS Feb 2021 four (held); Snow White Oct 2021 eight more (each dwarf plus Snow White and Prince Charming). Resolved: Sorcier jumbo 20 Nov 2021 Pueblo Trading Post; Oct 2020 LE sales identified; Dec 2020 cancelled LE = July 2021 LE four. Floats, RotJ, Dalmatians LE still missing."
+}

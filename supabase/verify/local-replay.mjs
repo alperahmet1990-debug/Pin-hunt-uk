@@ -1,6 +1,7 @@
 // Local replay harness used to pre-validate migrations before staging.
 // Usage (outside the repo, in a scratch dir):
 //   npm i @electric-sql/pglite@0.5.7 && node local-replay.mjs <repo> --with-045 <repo>/supabase/verify/045_verify.sql
+//   node local-replay.mjs <repo> --with-045 <repo>/supabase/verify/050_verify.sql   (RLS cases, 050)
 // PGlite is an in-process WASM Postgres; this never contacts a hosted database.
 // Local, throwaway Postgres (PGlite, in-process WASM) — replays the repo's
 // migration chain with minimal Supabase stubs, then migration 045 and its
@@ -32,6 +33,13 @@ alter table storage.objects enable row level security;
 create or replace function storage.foldername(name text) returns text[] language sql immutable as $$ select (string_to_array(name, '/'))[1:greatest(array_length(string_to_array(name, '/'),1)-1,0)] $$;
 create or replace function storage.filename(name text) returns text language sql immutable as $$ select (string_to_array(name, '/'))[array_length(string_to_array(name, '/'),1)] $$;
 create publication supabase_realtime;
+-- Supabase's default grants, so verify scripts can run RLS cases as
+-- anon/authenticated (050+). Migrations that revoke still revoke after this.
+grant usage on schema public, auth, storage to anon, authenticated, service_role;
+grant execute on function auth.uid(), auth.jwt(), auth.role() to anon, authenticated, service_role;
+alter default privileges in schema public grant all on tables to anon, authenticated, service_role;
+alter default privileges in schema public grant all on sequences to anon, authenticated, service_role;
+alter default privileges in schema public grant all on functions to anon, authenticated, service_role;
 `;
 
 await db.exec(STUBS);

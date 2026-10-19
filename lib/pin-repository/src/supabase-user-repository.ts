@@ -34,6 +34,9 @@ import type {
   PostReportSummary,
   CommentReport,
   ReportedComment,
+  ReportUserInput,
+  UserBlock,
+  UserReport,
   CatalogueImageCoverage,
   CatalogueImageSource,
   ContributedPinImage,
@@ -76,7 +79,23 @@ function generateSubmissionId(): string {
   });
 }
 
+/** Postgres unique_violation: the row already exists. */
+const UNIQUE_VIOLATION = '23505';
+
 // ─── Row → domain mappers ─────────────────────────────────────────────────────
+
+function rowToUserReport(row: Record<string, unknown>): UserReport {
+  const messageId = (row.message_id as string | null) ?? undefined;
+  return {
+    id: row.id as string,
+    target: messageId ? 'message' : 'profile',
+    reporterId: row.reporter_id as string,
+    reportedUserId: row.reported_user_id as string,
+    messageId,
+    reason: (row.reason as string | null) ?? undefined,
+    createdAt: row.created_at as string,
+  };
+}
 
 function rowToUserPin(row: Record<string, unknown>): UserPin {
   const pinRow = row.pins as Record<string, unknown> | null;
@@ -2135,6 +2154,99 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     }
     // Most recently reported first
     return [...byComment.values()].sort((a, b) => b.latestReportAt.localeCompare(a.latestReportAt));
+  }
+
+  // ── Blocks and user reports (migration 050) ─────────────────────────────────
+
+  async blockUser(blockerId: string, blockedUserId: string): Promise<void> {
+    const { error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('user_blocks' as any)
+      .insert({ blocker_id: blockerId, blocked_id: blockedUserId });
+    // Already blocked: the primary key rejects the duplicate, which is the
+    // state the caller asked for.
+    if (error && error.code !== UNIQUE_VIOLATION) throw new Error(error.message);
+  }
+
+  async unblockUser(blockerId: string, blockedUserId: string): Promise<void> {
+    const { error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('user_blocks' as any)
+      .delete()
+      .eq('blocker_id', blockerId)
+      .eq('blocked_id', blockedUserId);
+    if (error) throw new Error(error.message);
+  }
+
+  async getBlockedUsers(blockerId: string): Promise<UserBlock[]> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('user_blocks' as any)
+      .select('blocked_id, created_at, blocked:profiles!user_blocks_blocked_id_fkey(username, avatar_url)')
+      .eq('blocker_id', blockerId)
+      .order('created_at', { ascending: false });
+
+    if (error) throw new Error(error.message);
+    return ((data ?? []) as unknown as Record<string, unknown>[]).map(r => {
+      const profile = r.blocked as Record<string, unknown> | null;
+      return {
+        blockedUserId: r.blocked_id as string,
+        username: (profile?.username as string | null) ?? undefined,
+        avatarUrl: (profile?.avatar_url as string | null) ?? undefined,
+        createdAt: r.created_at as string,
+      };
+    });
+  }
+
+  async reportUser(reporterId: string, input: ReportUserInput): Promise<UserReport> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('user_reports' as any)
+      .insert({
+        reporter_id: reporterId,
+        reported_user_id: input.reportedUserId,
+        message_id: input.messageId ?? null,
+        reason: input.reason?.trim() || null,
+      })
+      .select('*')
+      .single();
+
+    if (!error) return rowToUserReport(data as unknown as Record<string, unknown>);
+    if (error.code !== UNIQUE_VIOLATION) throw new Error(error.message);
+
+    // Already reported: return the existing report.
+    let existing = this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('user_reports' as any)
+      .select('*')
+      .eq('reporter_id', reporterId);
+    existing = input.messageId
+      ? existing.eq('message_id', input.messageId)
+      : existing.eq('reported_user_id', input.reportedUserId).is('message_id', null);
+    const { data: row, error: readError } = await existing.maybeSingle();
+    if (readError) throw new Error(readError.message);
+    if (!row) throw new Error('Report could not be saved');
+    return rowToUserReport(row as unknown as Record<string, unknown>);
+  }
+
+  async getUserReports(): Promise<UserReport[]> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('user_reports' as any)
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) throw new Error(error.message);
+    return ((data ?? []) as unknown as Record<string, unknown>[]).map(rowToUserReport);
+  }
+
+  async dismissUserReport(reportId: string): Promise<void> {
+    const { error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('user_reports' as any)
+      .delete()
+      .eq('id', reportId);
+    if (error) throw new Error(error.message);
   }
 
   // ── Conversations / DMs ──────────────────────────────────────────────────────

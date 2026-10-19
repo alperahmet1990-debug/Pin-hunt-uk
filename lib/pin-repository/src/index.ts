@@ -65,6 +65,11 @@ export type {
   PostReportSummary,
   CommentReport,
   ReportedComment,
+  // Blocks and user reports (migration 050)
+  UserBlock,
+  UserReport,
+  UserReportTarget,
+  ReportUserInput,
   StartConversationInput,
   // Duplicate detection
   DuplicateCandidate,

@@ -1,0 +1,1051 @@
+{
+ "packet_id": "619_b433_wdw_le_2019_fu15",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "discovery_notes": "Follow-up 15 of B002 (WDW LE 2019). 27 web searches. New: six more EPCOT Pavilion Symbols pins (WDWNT 24 Dec 2019 per-pin price list; 10 of 14 now named) with per-pin prices for the four existing ones; Princess Half 2019 race-pin characters (DPB) releasing the four distance-pin holds; Marathon Weekend Goofy Challenge and Dopey medal pins and Princess medal pins (held, list-only); Festival of the Holidays edition types. runDisney Star Wars / Wine & Dine holds kept.",
+ "sources": [
+  {
+   "url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+   "title": "PHOTOS: Former D23 Exclusive EPCOT Pavilion Logo Pins Now Available at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": "2019-12-24",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/princess-half-marathon-weekend-2019-disney-pins",
+   "title": "Princess Half Marathon Weekend 2019 Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/11/photos-every-merchandise-item-with-prices-for-epcots-2019-international-festival-of-the-holidays/",
+   "title": "PHOTOS: Every Merchandise Item (with Prices) for the EPCOT International Festival of the Holidays 2019",
+   "publisher": "WDW News Today",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/walt-disney-world-marathon-weekend-2019-pins/",
+   "title": "Walt Disney World Marathon Weekend 2019 Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-01",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-rival-run-weekend-2019-disney-pins/",
+   "title": "Star Wars Rival Run Weekend 2019 Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/wine-dine-half-marathon-weekend-2019-disney-pins",
+   "title": "Wine & Dine Half Marathon Weekend 2019 Disney Pins",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.wdwinfo.com/news-stories/medals-revealed-for-rundisneys-2019-disney-princess-half-marathon-weekend/",
+   "title": "Medals Revealed for runDisney's 2019 Disney Princess Half Marathon Weekend",
+   "publisher": "WDWInfo",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/10/new-pin-thursday-weekly-pin-trading-event-coming-to-disneys-animal-kingdom/",
+   "title": "New \"Pin Thursday\" Weekly Pin Trading Event Coming to Disney's Animal Kingdom",
+   "publisher": "WDW News Today",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/06/photos-merchandise-for-disney-villains-after-hours-at-magic-kingdom-revealed/",
+   "title": "PHOTOS: Merchandise Unveiled for Disney Villains After Hours at the Magic Kingdom",
+   "publisher": "WDW News Today",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/epcot-pavilion-symbols-disney-pin-set/",
+   "title": "Epcot Pavilion Symbols Disney Pin Set",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [],
+ "pins": [
+  {
+   "pin_key": "wdw/2019/epcot-pavilion-symbols/the-seas",
+   "set_key": "wdw/2019/epcot-pavilion-symbols",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "EPCOT Pavilion Symbol pin - The Seas",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "WDWNT price list names this pavilion pin among the 14"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "each of the 14 pins sold separately, LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1200,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "each pin LE 1,200"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "listed at $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "reported on sale in WDWNT article of 24 Dec 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "EPCOT - Camera Center and Pin Traders",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "found at new Camera Center and Pin Traders shop at front of EPCOT"
+    },
+    {
+     "field": "attraction",
+     "value": "The Seas",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "pavilion named in the pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/epcot-pavilion-symbols/the-land",
+   "set_key": "wdw/2019/epcot-pavilion-symbols",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "EPCOT Pavilion Symbol pin - The Land",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "WDWNT price list names this pavilion pin among the 14"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "each of the 14 pins sold separately, LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1200,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "each pin LE 1,200"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "listed at $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "reported on sale in WDWNT article of 24 Dec 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "EPCOT - Camera Center and Pin Traders",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "found at new Camera Center and Pin Traders shop at front of EPCOT"
+    },
+    {
+     "field": "attraction",
+     "value": "The Land",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "pavilion named in the pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/epcot-pavilion-symbols/world-showcase",
+   "set_key": "wdw/2019/epcot-pavilion-symbols",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "EPCOT Pavilion Symbol pin - World Showcase",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "WDWNT price list names this pavilion pin among the 14"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "each of the 14 pins sold separately, LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1200,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "each pin LE 1,200"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "listed at $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "reported on sale in WDWNT article of 24 Dec 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "EPCOT - Camera Center and Pin Traders",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "found at new Camera Center and Pin Traders shop at front of EPCOT"
+    },
+    {
+     "field": "attraction",
+     "value": "World Showcase",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "pavilion named in the pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/epcot-pavilion-symbols/mission-space-horizons",
+   "set_key": "wdw/2019/epcot-pavilion-symbols",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "EPCOT Pavilion Symbol pin - Mission: SPACE (Horizons)",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "WDWNT price list names this pavilion pin among the 14"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "each of the 14 pins sold separately, LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1200,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "each pin LE 1,200"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "listed at $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "reported on sale in WDWNT article of 24 Dec 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "EPCOT - Camera Center and Pin Traders",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "found at new Camera Center and Pin Traders shop at front of EPCOT"
+    },
+    {
+     "field": "attraction",
+     "value": "Mission: SPACE (Horizons)",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "pavilion named in the pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/epcot-pavilion-symbols/play-pavilion",
+   "set_key": "wdw/2019/epcot-pavilion-symbols",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "EPCOT Pavilion Symbol pin - Play Pavilion",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "WDWNT price list names this pavilion pin among the 14"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "each of the 14 pins sold separately, LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1200,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "each pin LE 1,200"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "listed at $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "reported on sale in WDWNT article of 24 Dec 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "EPCOT - Camera Center and Pin Traders",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "found at new Camera Center and Pin Traders shop at front of EPCOT"
+    },
+    {
+     "field": "attraction",
+     "value": "Play Pavilion",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "pavilion named in the pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/epcot-pavilion-symbols/test-track-world-of-motion",
+   "set_key": "wdw/2019/epcot-pavilion-symbols",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "EPCOT Pavilion Symbol pin - Test Track (World of Motion)",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "WDWNT price list names this pavilion pin among the 14"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "each of the 14 pins sold separately, LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 1200,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "each pin LE 1,200"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "listed at $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "reported on sale in WDWNT article of 24 Dec 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "EPCOT - Camera Center and Pin Traders",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "found at new Camera Center and Pin Traders shop at front of EPCOT"
+    },
+    {
+     "field": "attraction",
+     "value": "Test Track (World of Motion)",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "pavilion named in the pin title"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/epcot-pavilion-symbols/new-epcot-park-logo",
+   "set_key": "wdw/2019/epcot-pavilion-symbols",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "per-pin price list gives $15.99 for this pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/epcot-pavilion-symbols/epcot-center",
+   "set_key": "wdw/2019/epcot-pavilion-symbols",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "per-pin price list gives $15.99 for this pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/epcot-pavilion-symbols/journey-into-imagination",
+   "set_key": "wdw/2019/epcot-pavilion-symbols",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "per-pin price list gives $17.99 for this pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/epcot-pavilion-symbols/spaceship-earth",
+   "set_key": "wdw/2019/epcot-pavilion-symbols",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "per-pin price list gives $17.99 for this pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-epcot-pavilion-symbol-pins-arrive-at-walt-disney-world/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019/5k",
+   "set_key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Elena"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-half-marathon-weekend-2019-disney-pins",
+     "method": "search_snippet",
+     "note": "DPB 2019 roundup pairs the 5k pin with Elena"
+    },
+    {
+     "field": "main_character",
+     "value": "Elena",
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-half-marathon-weekend-2019-disney-pins",
+     "method": "search_snippet",
+     "note": "Elena on the 5k pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019/10k",
+   "set_key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mulan"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-half-marathon-weekend-2019-disney-pins",
+     "method": "search_snippet",
+     "note": "DPB 2019 roundup pairs the 10k pin with Mulan"
+    },
+    {
+     "field": "main_character",
+     "value": "Mulan",
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-half-marathon-weekend-2019-disney-pins",
+     "method": "search_snippet",
+     "note": "Mulan on the 10k pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019/half-marathon",
+   "set_key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Aurora"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-half-marathon-weekend-2019-disney-pins",
+     "method": "search_snippet",
+     "note": "DPB 2019 roundup pairs the half-marathon pin with Aurora"
+    },
+    {
+     "field": "main_character",
+     "value": "Aurora",
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-half-marathon-weekend-2019-disney-pins",
+     "method": "search_snippet",
+     "note": "Aurora on the half-marathon pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019/fairy-tale-challenge",
+   "set_key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Jasmine"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-half-marathon-weekend-2019-disney-pins",
+     "method": "search_snippet",
+     "note": "DPB 2019 roundup pairs the fairy-tale-challenge pin with Jasmine"
+    },
+    {
+     "field": "main_character",
+     "value": "Jasmine",
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-half-marathon-weekend-2019-disney-pins",
+     "method": "search_snippet",
+     "note": "Jasmine on the fairy-tale-challenge pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019/half-marathon-medal",
+   "set_key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Princess Half Marathon Weekend 2019 Half Marathon medal pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-half-marathon-weekend-2019-disney-pins",
+     "method": "search_snippet",
+     "note": "DPB roundup lists a separate medal pin for this race"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-half-marathon-weekend-2019-disney-pins",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney Health & Fitness Expo, ESPN Wide World of Sports",
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-half-marathon-weekend-2019-disney-pins",
+     "method": "search_snippet",
+     "note": "expo release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019/fairy-tale-challenge-medal",
+   "set_key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Princess Half Marathon Weekend 2019 Fairy Tale Challenge medal pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-half-marathon-weekend-2019-disney-pins",
+     "method": "search_snippet",
+     "note": "DPB roundup lists a separate medal pin for this race"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-half-marathon-weekend-2019-disney-pins",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "runDisney Health & Fitness Expo, ESPN Wide World of Sports",
+     "source_url": "https://disneypinsblog.com/blogs/news/princess-half-marathon-weekend-2019-disney-pins",
+     "method": "search_snippet",
+     "note": "expo release"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/rundisney-marathon-weekend-2019/goofy-challenge",
+   "set_key": "wdw/2019/rundisney-marathon-weekend-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Marathon Weekend 2019 Goofy Challenge pin",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-marathon-weekend-2019-pins/",
+     "method": "search_snippet",
+     "note": "named in DPB 2019 marathon weekend gallery"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-marathon-weekend-2019-pins/",
+     "method": "search_snippet",
+     "note": "DPB says all the weekend pins are limited release"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-09",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-marathon-weekend-2019-pins/",
+     "method": "search_snippet",
+     "note": "available 9 Jan 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/walt-disney-world-marathon-weekend-2019-pins/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "ESPN Wide World of Sports",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-marathon-weekend-2019-pins/",
+     "method": "search_snippet",
+     "note": "runDisney expo"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/rundisney-marathon-weekend-2019/dopey-challenge-medal",
+   "set_key": "wdw/2019/rundisney-marathon-weekend-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Marathon Weekend 2019 Dopey Challenge medal pin",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-marathon-weekend-2019-pins/",
+     "method": "search_snippet",
+     "note": "named in DPB 2019 marathon weekend gallery"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-marathon-weekend-2019-pins/",
+     "method": "search_snippet",
+     "note": "DPB says all the weekend pins are limited release"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-09",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-marathon-weekend-2019-pins/",
+     "method": "search_snippet",
+     "note": "available 9 Jan 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/walt-disney-world-marathon-weekend-2019-pins/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "ESPN Wide World of Sports",
+     "source_url": "https://disneypinsblog.com/walt-disney-world-marathon-weekend-2019-pins/",
+     "method": "search_snippet",
+     "note": "runDisney expo"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/epcot-festival-of-the-holidays-2019/candlelight-processional",
+   "set_key": "wdw/2019/epcot-festival-of-the-holidays-2019",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/11/photos-every-merchandise-item-with-prices-for-epcots-2019-international-festival-of-the-holidays/",
+     "method": "search_snippet",
+     "note": "listed as Candlelight Processional Limited Edition Pin, $17.99"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/epcot-festival-of-the-holidays-2019/disney-vacation-club",
+   "set_key": "wdw/2019/epcot-festival-of-the-holidays-2019",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/11/photos-every-merchandise-item-with-prices-for-epcots-2019-international-festival-of-the-holidays/",
+     "method": "search_snippet",
+     "note": "listed as DVC Festival Limited Edition Pin, $17.99"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/epcot-festival-of-the-holidays-2019/annual-passholder",
+   "set_key": "wdw/2019/epcot-festival-of-the-holidays-2019",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/11/photos-every-merchandise-item-with-prices-for-epcots-2019-international-festival-of-the-holidays/",
+     "method": "search_snippet",
+     "note": "listed as Annual Passholder Limited Edition Pin, $17.99"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/epcot-festival-of-the-holidays-2019/festival-le",
+   "set_key": "wdw/2019/epcot-festival-of-the-holidays-2019",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://wdwnt.com/2019/11/photos-every-merchandise-item-with-prices-for-epcots-2019-international-festival-of-the-holidays/",
+     "method": "search_snippet",
+     "note": "snippet calls the $15.99 Chip 'n' Dale Spaceship Earth ornament pin a Limited Release trading pin"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://wdwnt.com/2019/11/photos-every-merchandise-item-with-prices-for-epcots-2019-international-festival-of-the-holidays/",
+     "method": "search_snippet",
+     "note": "$15.99"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2019/epcot-pavilion-symbols/mission-space-horizons",
+   "field": "visual_description",
+   "searched": "3 queries",
+   "note": "field note: WDWNT labels it 'Mission: SPACE (Horizons)'; whether the pin shows the old Horizons symbol is not stated in snippet"
+  },
+  {
+   "key": "wdw/2019/epcot-pavilion-symbols/test-track-world-of-motion",
+   "field": "visual_description",
+   "searched": "3 queries",
+   "note": "field note: labelled 'Test Track (World of Motion)'; snippet does not say which symbol the pin shows"
+  },
+  {
+   "key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019/5k",
+   "field": "pin_structure",
+   "searched": "2 queries (DPB roundup; medal reveal)",
+   "note": "release lead (not applied - pairings from a search summary only, round 72 review): DPB 2019 roundup now describes this pin by character (Elena); matches 2019 medal theme in WDWInfo/MickeyBlog medal reveals"
+  },
+  {
+   "key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019/10k",
+   "field": "pin_structure",
+   "searched": "2 queries (DPB roundup; medal reveal)",
+   "note": "release lead (not applied - pairings from a search summary only, round 72 review): DPB 2019 roundup now describes this pin by character (Mulan); matches 2019 medal theme in WDWInfo/MickeyBlog medal reveals"
+  },
+  {
+   "key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019/half-marathon",
+   "field": "pin_structure",
+   "searched": "2 queries (DPB roundup; medal reveal)",
+   "note": "release lead (not applied - pairings from a search summary only, round 72 review): DPB 2019 roundup now describes this pin by character (Aurora); matches 2019 medal theme in WDWInfo/MickeyBlog medal reveals"
+  },
+  {
+   "key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019/fairy-tale-challenge",
+   "field": "pin_structure",
+   "searched": "2 queries (DPB roundup; medal reveal)",
+   "note": "release lead (not applied - pairings from a search summary only, round 72 review): DPB 2019 roundup now describes this pin by character (Jasmine); matches 2019 medal theme in WDWInfo/MickeyBlog medal reveals"
+  },
+  {
+   "key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019/half-marathon-medal",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: medal pin named only in the DPB list beside the Aurora race pin; no separate per-pin description"
+  },
+  {
+   "key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019/fairy-tale-challenge-medal",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: medal pin named only in the DPB list beside the Jasmine race pin; no separate per-pin description"
+  },
+  {
+   "key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019/enchanted-10k",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: DPB list names an 'Enchanted 10K' pin besides the 10K Mulan pin; may be the same pin or an I Did It version; not recorded"
+  },
+  {
+   "key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019/5k",
+   "field": "lead",
+   "searched": "1 query",
+   "note": "lead: mypincentral 171986 describes a 5K Elena pin with Limited Release backstamp and '2019 I DID IT' - possibly an I Did It variant; not recorded"
+  },
+  {
+   "key": "wdw/2019/rundisney-marathon-weekend-2019/goofy-challenge",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: named only as a gallery caption in the DPB list; no per-pin description"
+  },
+  {
+   "key": "wdw/2019/rundisney-marathon-weekend-2019/dopey-challenge-medal",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold: named only as a gallery caption in the DPB list; no per-pin description"
+  },
+  {
+   "key": "wdw/2019/rundisney-marathon-weekend-2019",
+   "field": "price",
+   "searched": "1 query",
+   "note": "kept: original prices still not in permitted sources; only reseller (yourwdwstore) prices for the Goofy pin"
+  },
+  {
+   "key": "wdw/2019/epcot-festival-of-the-holidays-2019/festival-le",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "field note: conflicts with B002 'limited edition' claim from the same page; both recorded"
+  },
+  {
+   "key": "wdw/2019/epcot-pavilion-symbols",
+   "field": "members",
+   "searched": "5 queries",
+   "note": "10 of 14 now named; 4 still unnamed. Price math (2 x 15.99 + 12 x 17.99 = 247.86) implies the rest are $17.99, not claimed"
+  },
+  {
+   "key": "wdw/2019/epcot-pavilion-symbols",
+   "field": "price",
+   "searched": "5 queries",
+   "note": "field note: no bundle price; WDWNT says buying all 14 individually totals $247.86 before discounts"
+  },
+  {
+   "key": "wdw/2019/epcot-pavilion-symbols",
+   "field": "lead",
+   "searched": "1 query",
+   "note": "lead: D23 Expo 2019 Mickey's of Glendale EPCOT Pavilion Symbols set LE 200 at $200 (DPB) is a different set - for the dsus/D23 2019 cell"
+  },
+  {
+   "key": "wdw/2019/play-disney-parks-achievement",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no further WDW achievement pins named; Oct 2019 lists WDW achievements (Little Mermaid, Alien Swirling Saucers, Slinky Dog Dash) but not pins"
+  },
+  {
+   "key": "wdw/2019/rundisney-wine-dine-half-marathon-weekend-2019",
+   "field": "hold",
+   "searched": "2 queries",
+   "note": "kept hold: DPB still lists only 5K, 10K, Half Marathon 'and more'; most sold out day one; no per-pin description"
+  },
+  {
+   "key": "wdw/2019/rundisney-star-wars-rival-run-weekend-2019",
+   "field": "hold",
+   "searched": "2 queries",
+   "note": "kept hold: DPB lists race pins, I Did It versions and replica medal pins (incl. Kessel Run); medal characters known but pin art not described"
+  },
+  {
+   "key": "wdw/2019/rundisney-princess-half-marathon-weekend-2019",
+   "field": "hold",
+   "searched": "2 queries",
+   "note": "hold released for the four race pins only (see release evidence notes); medal pins and Enchanted 10K stay held"
+  },
+  {
+   "key": "wdw/2019/earth-day-2019/simba",
+   "field": "hold",
+   "searched": "1 query",
+   "note": "kept hold: Earth Day 2019 Simba LE 2,500 still reseller-only (yourwdwstore); DPB Apr wk4 Simba 3D is a different OE pin"
+  },
+  {
+   "key": "wdw/2019/villains-after-hours-2019",
+   "field": "hold",
+   "searched": "1 query",
+   "note": "kept hold: WDWNT/DFB say a pin set features villains and henchmen (Cruella, Ursula, Scar named); no per-pin designs, sizes or prices"
+  },
+  {
+   "key": "wdw/2019/rise-of-skywalker-knights-booster",
+   "field": "members",
+   "searched": "1 query",
+   "note": "six knights still not individually named outside reseller listings"
+  },
+  {
+   "key": "wdw/2019/disney-disguises-mystery",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no new design names; other eleven still unconfirmed"
+  },
+  {
+   "key": "wdw/2019/animal-kingdom-pin-thursday",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "WDWNT Oct 2019: weekly Pin Thursday event from 7 Nov 2019 with LE/LR pins at Discovery Trading Co; no specific pin named"
+  },
+  {
+   "key": "wdw/2019/epcot-flower-garden-2019-princess-set",
+   "field": "hold",
+   "searched": "1 query",
+   "note": "kept hold (no new per-pin evidence)"
+  },
+  {
+   "key": "wdw/2019/dpb-weekly-roundups",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "DPB Feb wk3, Apr wk2/wk3, Jul wk3, Sep wk3, Nov wk3/wk4 2019 posts still not surfaced"
+  },
+  {
+   "key": "wdw/2019",
+   "field": "hold",
+   "searched": "not re-searched",
+   "note": "kept: remaining B432 holds (Tarzan 20th, Dia de los Muertos, Disney Guitars, Coco CM, I Heart Gaming trio, Up 10th Ariel PTN, Ariel & Friends, NYE, Bruni, Valentine, small world, gift-card four, Jawa, Sanderson, HM day-of, DHS 30th booster, Steamboat Visa)"
+  },
+  {
+   "key": "dsus/2019/forky-employee-center-surprise",
+   "field": "lead",
+   "searched": "1 query",
+   "note": "lead: DPB Surprise Forky Disney Employee Center pin LE 250, 29 Aug 2019 (Burbank/Glendale) - for dsus 2019 cell"
+  }
+ ]
+}

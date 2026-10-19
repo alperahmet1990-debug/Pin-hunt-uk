@@ -9,6 +9,10 @@ import React from 'react';
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { BlockedUsersProvider, useBlockedUsers } from '../context/BlockedUsersContext';
 
+// The first test pays the collector screen's cold start, which passed 5 s on
+// a busy CI runner (#454); the same allowance as scanResultFlow.
+jest.setTimeout(20_000);
+
 const mockPush = jest.fn();
 const mockToast = jest.fn();
 let mockParams: Record<string, string | undefined> = {};

@@ -20,7 +20,7 @@ describe('curated Home events', () => {
       else expect(e.rumour).toBeFalsy();
       expect(e.sourceName).toBeTruthy();
       // A rumour always says roughly when, and is labelled as one.
-      if (e.rumour) expect([e.whenText, e.badgeLabel]).toEqual([expect.any(String), 'RUMOUR']);
+      if (e.rumour) expect([e.whenText, e.badgeLabel]).toEqual([expect.any(String), 'TBA']);
     }
   });
 });

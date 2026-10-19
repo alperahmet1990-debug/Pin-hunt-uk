@@ -65,7 +65,7 @@ export function EventCard({ event, onPress }: { event: PinHuntEvent; onPress: ()
       activeOpacity={0.9}
       onPress={onPress}
       accessibilityRole="button"
-      accessibilityLabel={[event.badgeLabel, event.title, event.rumour ? `Rumoured, ${event.whenText ?? 'date to be confirmed'}` : null, locationLine.trim()].filter(Boolean).join('. ')}
+      accessibilityLabel={[event.badgeLabel, event.title, event.rumour ? `Date to be announced, ${event.whenText ?? 'date to be confirmed'}` : null, locationLine.trim()].filter(Boolean).join('. ')}
       style={[
         styles.card,
         { width, backgroundColor: colors.homeSurface, borderColor: colors.homeLine, shadowColor: colors.homeShadow },
@@ -85,7 +85,7 @@ export function EventCard({ event, onPress }: { event: PinHuntEvent; onPress: ()
         {event.rumour ? (
           <View style={styles.dateLineRow}>
             <Feather name="help-circle" size={11} color={colors.homeMuted} />
-            <Text style={[styles.dateLine, { color: colors.homeMuted }]} numberOfLines={1}>RUMOURED · {(event.whenText ?? 'Date TBC').toUpperCase()}</Text>
+            <Text style={[styles.dateLine, { color: colors.homeMuted }]} numberOfLines={1}>TBA · {(event.whenText ?? 'Date TBC').toUpperCase()}</Text>
           </View>
         ) : event.hasScheduledDate ? (
           <Text style={[styles.dateLine, { color: colors.homeCoralDeep }]} numberOfLines={1}>{day} {month}</Text>

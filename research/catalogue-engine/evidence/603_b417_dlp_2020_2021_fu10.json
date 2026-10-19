@@ -1,0 +1,815 @@
+{
+ "packet_id": "b417-dlp-2020-2021-fu10-2026-10-19",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+   "title": "Chip n Dale Pin Releases at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-02-17"
+  },
+  {
+   "url": "https://www.pintrader.club/pins/chip-dale-with-acorn-disneyland-paris",
+   "title": "Chip & Dale with acorn - Disneyland Paris",
+   "publisher": "pintrader.club",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.pintrader.club/pins/chip-n-dale-disneyland-paris-halloween-2021",
+   "title": "Chip n Dale - Disneyland Paris - Halloween 2021",
+   "publisher": "pintrader.club",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://passiondlp.com/actus/arc039.php",
+   "title": "passiondlp : Archives Disneyland Paris 2021 trimestre 1",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "title": "Pin Trading à Disneyland Paris : la sélection de pin's du mois",
+   "publisher": "Disneyphile",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/wedding-winnie-the-pooh-pins-release-at-disneyland-paris/",
+   "title": "Wedding & Winnie the Pooh Pins Release at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-02-04"
+  },
+  {
+   "url": "https://www.palais-des-goodies.fr/goodies-disney/pins-disney-tic-et-tac-secret.html",
+   "title": "Disney - Tic et Tac : Pin's secret OE",
+   "publisher": "Palais des Goodies",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.passiondlp.com/actus/arc035.php",
+   "title": "passiondlp : Archives Disneyland Paris 2020 trimestre 1",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.pintrader.club/movies/guardians-of-the-galaxy-pins",
+   "title": "Guardians of the Galaxy Pins",
+   "publisher": "pintrader.club",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyblog.com/2021/10/31/disneyland-paris-pin-trading-releases-for-november-2021-include-cowboys-pirates-and-holiday-fun/",
+   "title": "Disneyland Paris Pin Trading Releases for November 2021 Include Cowboys, Pirates, and Holiday Fun!",
+   "publisher": "MickeyBlog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-10-31"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2021/chip-dale-february-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Chip 'n' Dale open edition pins (February 2021)",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "DPB post on four Chip n Dale OE pins at DLP"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Four pins: Acorn, Peanut, Secret, Suspicious"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "passiondlp: four new Chip & Dale pins plus a lanyard at World of Disney"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Open edition, DLP exclusive"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-12",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Available from 12 Feb 2021"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-12",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Disneyphile timeline: 12 Feb 2021, four pins and a Chip & Dale lanyard at World of Disney"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Park closed; sold at World of Disney store"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "From Friday 12:00 at World of Disney (Disney Village)"
+    },
+    {
+     "field": "format",
+     "value": "separate single pins",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Four pins named individually; a matching lanyard sold alongside"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/wedding-winnie-the-pooh-january-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Wedding & Winnie the Pooh pins (January 2021)",
+     "source_url": "https://disneypinsblog.com/wedding-winnie-the-pooh-pins-release-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://disneypinsblog.com/wedding-winnie-the-pooh-pins-release-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "A few new open edition pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-01-29",
+     "source_url": "https://disneypinsblog.com/wedding-winnie-the-pooh-pins-release-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Available from 29 Jan 2021 (post dated 4 Feb 2021)"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://disneypinsblog.com/wedding-winnie-the-pooh-pins-release-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Park closed; sold at World of Disney store"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/stitch-february-2021",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Two Stitch pins alongside the 12 Feb 2021 Chip & Dale release"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Described as non-limited editions"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-12",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Listed under 12 Feb 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Same World of Disney release entry"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/valentines-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Saint-Valentin 2021 limited edition pins",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Three Saint-Valentin LE pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Three pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Limited editions"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-20",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "20 Feb 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Sold at World of Disney"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2021/chip-dale-february-2021/acorn",
+   "set_key": "dlp/2021/chip-dale-february-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Acorn",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "'Acorn' named among the four DLP Chip n Dale OE pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-12",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "From 12 Feb 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "World of Disney store"
+    },
+    {
+     "field": "pin_name",
+     "value": "Chip & Dale with acorn",
+     "source_url": "https://www.pintrader.club/pins/chip-dale-with-acorn-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Per-pin page title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://www.pintrader.club/pins/chip-dale-with-acorn-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Per-pin page names Chip & Dale with an acorn"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.pintrader.club/pins/chip-dale-with-acorn-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Single pin showing both chipmunks"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-12",
+     "source_url": "https://www.pintrader.club/pins/chip-dale-with-acorn-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Per-pin page release date 12 Feb 2021"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.pintrader.club/pins/chip-dale-with-acorn-disneyland-paris",
+     "method": "search_snippet",
+     "note": "Marked open edition, DLP"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/chip-dale-february-2021/peanut",
+   "set_key": "dlp/2021/chip-dale-february-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Peanut",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "'Peanut' named among the four DLP Chip n Dale OE pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-12",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "From 12 Feb 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "World of Disney store"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/chip-dale-february-2021/secret",
+   "set_key": "dlp/2021/chip-dale-february-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Secret",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "'Secret' named among the four DLP Chip n Dale OE pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-12",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "From 12 Feb 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "World of Disney store"
+    },
+    {
+     "field": "pin_name",
+     "value": "Tic et Tac : Pin's secret OE",
+     "source_url": "https://www.palais-des-goodies.fr/goodies-disney/pins-disney-tic-et-tac-secret.html",
+     "method": "search_snippet",
+     "note": "Retailer page names a Chip & Dale 'secret' OE pin; supports the name"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/chip-dale-february-2021/suspicious",
+   "set_key": "dlp/2021/chip-dale-february-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Suspicious",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "'Suspicious' named among the four DLP Chip n Dale OE pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-12",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "From 12 Feb 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-pin-releases-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "World of Disney store"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/halloween-2021/chip-dale-pirates",
+   "set_key": "dlp/2021/halloween-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip n Dale - Disneyland Paris - Halloween 2021",
+     "source_url": "https://www.pintrader.club/pins/chip-n-dale-disneyland-paris-halloween-2021",
+     "method": "search_snippet",
+     "note": "Per-pin page title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://www.pintrader.club/pins/chip-n-dale-disneyland-paris-halloween-2021",
+     "method": "search_snippet",
+     "note": "Shows Chip and Dale dressed as pirates"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.pintrader.club/pins/chip-n-dale-disneyland-paris-halloween-2021",
+     "method": "search_snippet",
+     "note": "One pin with both characters"
+    },
+    {
+     "field": "visual_description",
+     "value": "Chip and Dale in pirate costumes",
+     "source_url": "https://www.pintrader.club/pins/chip-n-dale-disneyland-paris-halloween-2021",
+     "method": "search_snippet",
+     "note": "Paraphrase of per-pin description"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.pintrader.club/pins/chip-n-dale-disneyland-paris-halloween-2021",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-25",
+     "source_url": "https://www.pintrader.club/pins/chip-n-dale-disneyland-paris-halloween-2021",
+     "method": "search_snippet",
+     "note": "Released 25 Sep 2021"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.pintrader.club/pins/chip-n-dale-disneyland-paris-halloween-2021",
+     "method": "search_snippet",
+     "note": "EUR 8.00"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.pintrader.club/pins/chip-n-dale-disneyland-paris-halloween-2021",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Mickey waffle pattern, Official Pin Trading logo, Disneyland Paris logo, (c)Disney, Made in China; one post",
+     "source_url": "https://www.pintrader.club/pins/chip-n-dale-disneyland-paris-halloween-2021",
+     "method": "search_snippet",
+     "note": "Back described as silvertone with these marks"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2021/chip-dale-february-2021/peanut",
+   "field": "characters",
+   "searched": "DPB Chip n Dale DLP post; pintrader",
+   "note": "field note: whether Chip, Dale or both appear on this pin is not stated in snippets"
+  },
+  {
+   "key": "dlp/2021/chip-dale-february-2021/secret",
+   "field": "characters",
+   "searched": "DPB Chip n Dale DLP post; pintrader",
+   "note": "field note: whether Chip, Dale or both appear on this pin is not stated in snippets"
+  },
+  {
+   "key": "dlp/2021/chip-dale-february-2021/suspicious",
+   "field": "characters",
+   "searched": "DPB Chip n Dale DLP post; pintrader",
+   "note": "field note: whether Chip, Dale or both appear on this pin is not stated in snippets"
+  },
+  {
+   "key": "dlp/2021/chip-dale-february-2021/acorn",
+   "field": "original_price",
+   "searched": "https://www.pintrader.club/pins/chip-dale-with-acorn-disneyland-paris",
+   "note": "field note: pintrader lists original price 7.99 with a $ sign; currency likely EUR at DLP, not recorded as a claim"
+  },
+  {
+   "key": "dlp/2021/chip-dale-february-2021",
+   "field": "lanyard",
+   "searched": "passiondlp Q1 2021; Disneyphile",
+   "note": "Chip & Dale lanyard sold with the four pins; not a pin, not recorded"
+  },
+  {
+   "key": "dlp/2021/halloween-2021/chip-dale-pirates",
+   "field": "pin_structure",
+   "searched": "pintrader per-pin page vs dein-dlrp Sep 2021",
+   "note": "hold: possibly the same pin as dlp/2021/halloween-2021/chip-dale-carving-pumpkin (both Chip & Dale, EUR 8, OE, 25 Sep 2021); confirm distinct design before counting"
+  },
+  {
+   "key": "dlp/2021/wedding-winnie-the-pooh-january-2021",
+   "field": "pin_structure",
+   "searched": "DPB post; 3 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); summaries mention Mickey & Minnie wedding and Tigger/Pooh items but no count or per-pin names"
+  },
+  {
+   "key": "dlp/2021/stitch-february-2021",
+   "field": "pins",
+   "searched": "Disneyphile Feb 2021 timeline",
+   "note": "Two OE Stitch pins, designs not named; no per-pin records"
+  },
+  {
+   "key": "dlp/2021/valentines-2021",
+   "field": "pins",
+   "searched": "Disneyphile; passiondlp Q1 2021 (official note dated 17/02/21); 2 queries",
+   "note": "Three LE Valentine pins 20 Feb 2021; designs, edition size and price not found"
+  },
+  {
+   "key": "lic/2021/artland-dlp-chip-dale-cutout",
+   "field": "pins",
+   "searched": "pintrader release roundup snippet",
+   "note": "lead: licensed ArtLand Chip 'n' Dale cut-out pin mid-2021 (DLP context); for licensed cells, unverified"
+  },
+  {
+   "key": "dlp/2021/guardians-of-the-galaxy-june-2021",
+   "field": "pins",
+   "searched": "DPB GotG post; pintrader GotG list; 2 queries",
+   "note": "lead: pintrader lists DLP Groot pins 'Groot with Mix Tape' and 'I am Groot smash' with no dates; may be the June 2021 pair, not recorded"
+  },
+  {
+   "key": "dlp/2020/pin-trading-time-february-2020/refresh-lanyard",
+   "field": "pins",
+   "searched": "passiondlp Q1 2020 / archive summary",
+   "note": "lead stays: passiondlp lists the Refresh Lanyard pin with the three Dumbo LE 400 pins; image labels reportedly name Suzy, design not described in text"
+  },
+  {
+   "key": "dlp/2021/star-wars-patrice-girod-november-2021",
+   "field": "pins",
+   "searched": "MickeyBlog Nov 2021; planete-starwars; 2 queries",
+   "note": "Four RotJ pins still unnamed; only the 2019 Girod Falcon set surfaced; a Sarlacc Pit LE 500 lead appeared only on a marketplace (excluded)"
+  },
+  {
+   "key": "dlp/2021/pirates-november-2021",
+   "field": "pins",
+   "searched": "MickeyBlog Nov 2021; 1 query",
+   "note": "27 Nov 2021: series of pins plus a Pirates lanyard; designs beyond the keyed Stitch not named"
+  },
+  {
+   "key": "dlp/2021/christmas-le-november-2021",
+   "field": "pins",
+   "searched": "MickeyBlog / MouseSteps Nov 2021",
+   "note": "Parade float pins LE 500 EUR 16, 13 Nov 2021 restated; float names still not found"
+  },
+  {
+   "key": "dlp/2021/101-dalmatians-december-2021",
+   "field": "pins",
+   "searched": "Disneyphile; passiondlp; dein-dlrp; 2 queries",
+   "note": "Three LE 700 pins 4 Dec 2021 Thunder Mesa Mercantile restated; designs unnamed; no dein-dlrp Dec 2021 page indexed"
+  },
+  {
+   "key": "dlp/2021/animators-dalmatians-oe-december-2021",
+   "field": "pins",
+   "searched": "DPB Dec 2021 roundup",
+   "note": "No designs found"
+  },
+  {
+   "key": "dlp/2021/december-2021-le/genie",
+   "field": "pins",
+   "searched": "Disneyphile",
+   "note": "hold stays: two Genie LE 700 on 11 Dec 2021 vs 15 Jan 2022; designs not distinguished"
+  },
+  {
+   "key": "dlp/2020/holiday-2020-delayed",
+   "field": "pins",
+   "searched": "DPB holiday 2020 post; dein-dlrp",
+   "note": "Alice holiday pins still undescribed; only Stitch LE 700 confirmed"
+  },
+  {
+   "key": "dlp/2020/parisian-minnie-2020",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Three Parisian Minnie pins still undescribed"
+  },
+  {
+   "key": "dlp/2021/disney-hotel-new-york",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "No hotel opening pin found (Jun 2021); only a room key item surfaced"
+  },
+  {
+   "key": "dlp/2021/villains-jumbo-2021",
+   "field": "pins",
+   "searched": "MickeyBlog Oct 2021; DPB Oct 2021",
+   "note": "lead stays: jumbo LE 500 EUR 50 vs five glow portraits 23 Oct; no new evidence to merge or split"
+  },
+  {
+   "key": "dlp/2021/beauty-beast-stained-glass-november-2021",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "No further BatB stained glass DLP designs found"
+  },
+  {
+   "key": "dlp/2020/september-2020-releases",
+   "field": "release_date",
+   "searched": "passiondlp Q3 2020; Disneyphile; Radio Disney Club",
+   "note": "field note: 12 Sep (three delayed LE 700) / 16 / 26 Sep conflict unchanged; nothing new"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/doc",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/grumpy",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/happy",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/sleepy",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/bashful",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/snow-white-2021/sneezy",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/bagheera",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/miss-bunny",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/berlioz",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/toulouse",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/pin-trading-time-november-2021/chip-dale-clarice",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/pin-trading-time-november-2021/maleficent-diablo",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/raya-oe-may-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/cinderella-oe-may-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2020/oe-set/christmas-booster-2020",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/santa-hat-november-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/cowboy-november-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/christmas-oe-december-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/halloween-trio-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-pluto-mummy-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-pumpkin-ghost-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2020/cast-member-genie/genie",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/stitch-august-2021/2-pin-set",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/pin-trading-anniversary-2021",
+   "field": "pin_structure",
+   "searched": "not re-searched / no new per-pin evidence",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "discovery",
+   "field": "budget",
+   "searched": "WebSearch",
+   "note": "30 WebSearch calls used (hard limit reached)"
+  }
+ ],
+ "discovery_notes": "B417 follow-up 10 of B044 (DLP 2020-2021). New: Chip 'n' Dale OE Feb 2021 four named pins (Acorn, Peanut, Secret, Suspicious), Wedding & Pooh Jan 2021 set (held), two Stitch OE Feb 2021 set, Valentine 2021 LE three set, pirate Chip & Dale Halloween 2021 pin (held as possible duplicate). No holds released. Snippet-only evidence."
+}

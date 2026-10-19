@@ -1,0 +1,1211 @@
+{
+ "packet_id": "588_b402_wdw_le_2019_fu9",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "discovery_notes": "Follow-up 9 of B002 (WDW LE 2019). 28 web searches, sweep of DPB 2019 weekly round-ups not cited by earlier packets (Jan wk3, Feb wk1/3, Mar wk2, Apr wk1-3, May wk4, Jul wk3, Sep wk3, Oct wk4, Nov wk3/4) plus holiday posts. New: WDW Easter 2019, Fine & Dandy 2019 Mary Poppins (shared, wdw key), Rock 'n' Roller Coaster 20th public + CM pins, Disney Disguises mystery set (shared; Cogsworth design), Character Connection Mulan and Mickey's Christmas Carol sets (members unnamed), Holiday Gifting 2019 (8 of 16 named). Jan wk3, Feb wk1/3, Apr wk2/3, Jul wk3, Sep wk3, Nov wk3/4 posts not surfaced. No holds released.",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-april-2019-week-1/",
+   "title": "New Disney Pins April 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-4",
+   "title": "New Disney Pins April 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+   "title": "New Disney Pins July 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/rock-n-roller-coaster-20-years-cast-member-pin",
+   "title": "Rock 'n' Roller Coaster 20 Years Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+   "title": "New Disney Pins March 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/03/march-pin-releases-for-disneyland-walt-disney-world-resort-features-food-and-wine-pins-figment-medal-of-honor/",
+   "title": "March Pin Releases for Disneyland, Walt Disney World Resort Features Food and Wine Pins, Figment Medal of Honor",
+   "publisher": "WDW News Today",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-4/",
+   "title": "New Disney Pins October 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/holiday-gifting-2019-disney-pin-releases",
+   "title": "Holiday Gifting 2019 Disney Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+   "title": "Holiday Gifting 2019 Disney Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-5",
+   "title": "New Disney Pins October 2019 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2019/easter-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Easter 2019",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2019-week-1/",
+     "method": "search_snippet",
+     "note": "WDW commemorative Easter 2019 pin"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2019-week-1/",
+     "method": "search_snippet",
+     "note": "WDW release"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/fine-and-dandy-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Fine & Dandy 2019 (Dapper Day Spring 2019)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-4",
+     "method": "search_snippet",
+     "note": "Dapper Day Spring 2019 Fine & Dandy pin"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/rock-n-roller-coaster-20th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Rock 'n' Roller Coaster 20th Anniversary",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "surprise release for the attraction's 20th"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "WDW"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/rock-n-roller-coaster-20th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Rock 'n' Roller Coaster 20 Years Cast Member",
+     "source_url": "https://disneypinsblog.com/blogs/news/rock-n-roller-coaster-20-years-cast-member-pin",
+     "method": "search_snippet",
+     "note": "cast member pin for RnRC 20th"
+    },
+    {
+     "field": "release_location",
+     "value": "Company D cast member stores, Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/rock-n-roller-coaster-20-years-cast-member-pin",
+     "method": "search_snippet",
+     "note": "Company D"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/disney-disguises-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Disguises Mystery Pin Set",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "Disney Disguises mystery set"
+    },
+    {
+     "field": "format",
+     "value": "mystery box: 2 pins per box (1 of 6 revealed + 1 of 6 mystery)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "each box has two pins, one revealed and one mystery"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "two pins per box"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "six revealed plus six mystery designs"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "$19.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "Mar 14, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-march-2019-week-2",
+     "method": "search_snippet",
+     "note": "shared DLR/WDW release"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/character-connection-mulan",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Character Connection - Mulan",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "character connection pin set featuring Mulan"
+    },
+    {
+     "field": "format",
+     "value": "mystery box, 1 pin per box",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "each box contains one pin"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "one pin per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 900,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "LE 900"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "includes LE 500 chaser pins"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "$17.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-07-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "Jul 25, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "shared DLR/WDW"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/character-connection-mickeys-christmas-carol",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Character Connection - Mickey's Christmas Carol",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-4/",
+     "method": "search_snippet",
+     "note": "character connection set featuring Mickey's Christmas Carol"
+    },
+    {
+     "field": "format",
+     "value": "mystery box, 1 pin per box",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-4/",
+     "method": "search_snippet",
+     "note": "each box holds one pin"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-4/",
+     "method": "search_snippet",
+     "note": "one pin per box"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-4/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 900,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-4/",
+     "method": "search_snippet",
+     "note": "LE 900"
+    },
+    {
+     "field": "has_chaser",
+     "value": true,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-4/",
+     "method": "search_snippet",
+     "note": "includes LE 500 chaser pins"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-4/",
+     "method": "search_snippet",
+     "note": "$17.99 per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-4/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-24",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-4/",
+     "method": "search_snippet",
+     "note": "Oct 24, 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-october-2019-week-4/",
+     "method": "search_snippet",
+     "note": "shared DLR/WDW"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/holiday-gifting-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Holiday Gifting 2019",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "tiny pins in holiday packaging at Disney Parks"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 16,
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-gifting-2019-disney-pin-releases",
+     "method": "search_snippet",
+     "note": "16 designs listed"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "$15.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-28",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "available from Oct 28, 2019"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-31",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-5",
+     "method": "search_snippet",
+     "note": "weekly round-up dates these pins Oct 31"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "Disney Parks (DL and WDW)"
+    },
+    {
+     "field": "format",
+     "value": "individually sold small pins in gift packaging",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "each pin $15.99 in holiday packaging"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2019/easter-2019/character-eggs",
+   "set_key": "wdw/2019/easter-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Happy Easter 2019",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2019-week-1/",
+     "method": "search_snippet",
+     "note": "commemorative Easter 2019 pin at WDW"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Orange Bird",
+      "Pluto",
+      "Baymax",
+      "Figment",
+      "Thumper"
+     ],
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2019-week-1/",
+     "method": "search_snippet",
+     "note": "character-themed eggs incl. Orange Bird, Pluto, Baymax, Figment, Thumper"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2019-week-1/",
+     "method": "search_snippet",
+     "note": "described as a single pin with character eggs"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2019-week-1/",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2019-week-1/",
+     "method": "search_snippet",
+     "note": "LE 3,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2019-week-1/",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2019-week-1/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-04-04",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2019-week-1/",
+     "method": "search_snippet",
+     "note": "available at WDW Apr 4, 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2019-week-1/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-april-2019-week-1/",
+     "method": "search_snippet",
+     "note": "WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/fine-and-dandy-2019/mary-poppins",
+   "set_key": "wdw/2019/fine-and-dandy-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Fine & Dandy 2019 - Mary Poppins",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-4",
+     "method": "search_snippet",
+     "note": "Mary Poppins themed Fine & Dandy pin for Dapper Day Spring 2019"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-4",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-4",
+     "method": "search_snippet",
+     "note": "LE 3,500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-04-25",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-4",
+     "method": "search_snippet",
+     "note": "available at WDW Apr 25, 2019 (released earlier at Disneyland)"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-4",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-4",
+     "method": "search_snippet",
+     "note": "previously released at DL, now at WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/rock-n-roller-coaster-20th-anniversary/park-pin",
+   "set_key": "wdw/2019/rock-n-roller-coaster-20th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rock 'n' Roller Coaster 20th Anniversary",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "celebrates 20th of RnRC at Disney's Hollywood Studios"
+    },
+    {
+     "field": "attraction",
+     "value": "Rock 'n' Roller Coaster",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "attraction at DHS"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-07-26",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "surprise release Fri Jul 26, 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-july-2019-week-4",
+     "method": "search_snippet",
+     "note": "available at WDW"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/rock-n-roller-coaster-20th-anniversary-cast-member/mickey",
+   "set_key": "wdw/2019/rock-n-roller-coaster-20th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rock 'n' Roller Coaster 20 Years Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/rock-n-roller-coaster-20-years-cast-member-pin",
+     "method": "search_snippet",
+     "note": "CM pin for attraction's 20th"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/rock-n-roller-coaster-20-years-cast-member-pin",
+     "method": "search_snippet",
+     "note": "features Mickey"
+    },
+    {
+     "field": "attraction",
+     "value": "Rock 'n' Roller Coaster",
+     "source_url": "https://disneypinsblog.com/blogs/news/rock-n-roller-coaster-20-years-cast-member-pin",
+     "method": "search_snippet",
+     "note": "DHS attraction"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/rock-n-roller-coaster-20-years-cast-member-pin",
+     "method": "search_snippet",
+     "note": "limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/blogs/news/rock-n-roller-coaster-20-years-cast-member-pin",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "original_price",
+     "value": 14.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/rock-n-roller-coaster-20-years-cast-member-pin",
+     "method": "search_snippet",
+     "note": "$14.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/rock-n-roller-coaster-20-years-cast-member-pin",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-07-26",
+     "source_url": "https://disneypinsblog.com/blogs/news/rock-n-roller-coaster-20-years-cast-member-pin",
+     "method": "search_snippet",
+     "note": "released Jul 26, 2019 at Company D"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/rock-n-roller-coaster-20-years-cast-member-pin",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Company D cast member stores, Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/rock-n-roller-coaster-20-years-cast-member-pin",
+     "method": "search_snippet",
+     "note": "cast member stores"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/rock-n-roller-coaster-20-years-cast-member-pin",
+     "method": "search_snippet",
+     "note": "pin-on-pin design"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/disney-disguises-mystery/cogsworth-as-napoleon",
+   "set_key": "wdw/2019/disney-disguises-mystery",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disney Disguises - Cogsworth as Napoleon Bonaparte",
+     "source_url": "https://wdwnt.com/2019/03/march-pin-releases-for-disneyland-walt-disney-world-resort-features-food-and-wine-pins-figment-medal-of-honor/",
+     "method": "search_snippet",
+     "note": "set includes Cogsworth as Napoleon Bonaparte"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cogsworth"
+     ],
+     "source_url": "https://wdwnt.com/2019/03/march-pin-releases-for-disneyland-walt-disney-world-resort-features-food-and-wine-pins-figment-medal-of-honor/",
+     "method": "search_snippet",
+     "note": "Cogsworth"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/holiday-gifting-2019/olaf",
+   "set_key": "wdw/2019/holiday-gifting-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Olaf",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "design named in Holiday Gifting 2019 lineup"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "$15.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/holiday-gifting-2019/sorcerer-mickey",
+   "set_key": "wdw/2019/holiday-gifting-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sorcerer Mickey",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "design named in Holiday Gifting 2019 lineup"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "$15.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/holiday-gifting-2019/stitch",
+   "set_key": "wdw/2019/holiday-gifting-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "design named in Holiday Gifting 2019 lineup"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "$15.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/holiday-gifting-2019/fresh-mickey-waffle",
+   "set_key": "wdw/2019/holiday-gifting-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Fresh Mickey Waffle",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "design named in Holiday Gifting 2019 lineup"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "$15.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/holiday-gifting-2019/jasmines-mix-tape",
+   "set_key": "wdw/2019/holiday-gifting-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jasmine's Mix Tape",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "design named in Holiday Gifting 2019 lineup"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "$15.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/holiday-gifting-2019/lady-and-the-tramp",
+   "set_key": "wdw/2019/holiday-gifting-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lady and the Tramp",
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-gifting-2019-disney-pin-releases",
+     "method": "search_snippet",
+     "note": "design named in Holiday Gifting 2019 lineup"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "$15.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/holiday-gifting-2019/carousel",
+   "set_key": "wdw/2019/holiday-gifting-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Carousel",
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-gifting-2019-disney-pin-releases",
+     "method": "search_snippet",
+     "note": "design named in Holiday Gifting 2019 lineup"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "$15.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/holiday-gifting-2019/bing-bongs-sweet-stuff-taffy",
+   "set_key": "wdw/2019/holiday-gifting-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bing Bong's Sweet Stuff Taffy",
+     "source_url": "https://disneypinsblog.com/blogs/news/holiday-gifting-2019-disney-pin-releases",
+     "method": "search_snippet",
+     "note": "design named in Holiday Gifting 2019 lineup"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "limited release"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "$15.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/holiday-gifting-2019-disney-pin-releases/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2019/easter-2019/character-eggs",
+   "field": "characters",
+   "searched": "DPB Apr wk1; 1 query",
+   "note": "field note: snippet says eggs 'including' these five; list may be incomplete"
+  },
+  {
+   "key": "wdw/2019/easter-2019/character-eggs",
+   "field": "variant",
+   "searched": "DPB Apr wk1; 1 query",
+   "note": "not dlr/2019/easter-2019/character-eggs (separate DL pin: Chip, Dale, Tinker Bell, Mr. Toad, White Rabbit)"
+  },
+  {
+   "key": "wdw/2019/fine-and-dandy-2019/mary-poppins",
+   "field": "original_price",
+   "searched": "DPB Apr wk4; 2 queries",
+   "note": "price not stated in snippets"
+  },
+  {
+   "key": "wdw/2019/fine-and-dandy-2019/mary-poppins",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "field note: Disneyland first-release date not stated; Apr 25 is the WDW date"
+  },
+  {
+   "key": "wdw/2019/fine-and-dandy-2019/mary-poppins",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "field note: a garbled snippet line shows 'LE 3,000' near the Expedition Everest MoH pin; 3,500 is the figure tied to this pin"
+  },
+  {
+   "key": "wdw/2019/fine-and-dandy-2019/mary-poppins",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "field note: 'Mary Poppins themed'; characters on the pin not stated"
+  },
+  {
+   "key": "wdw/2019/rock-n-roller-coaster-20th-anniversary/park-pin",
+   "field": "characters",
+   "searched": "DPB Jul wk4; 1 query",
+   "note": "characters on the public pin not stated"
+  },
+  {
+   "key": "wdw/2019/rock-n-roller-coaster-20th-anniversary-cast-member/mickey",
+   "field": "variant",
+   "searched": "1 query",
+   "note": "not wdw/2019/rock-n-roller-coaster-20th-anniversary/park-pin (separate public LE 2,000 pin)"
+  },
+  {
+   "key": "wdw/2019/disney-disguises-mystery/cogsworth-as-napoleon",
+   "field": "set_position",
+   "searched": "WDWNT + DPB; 2 queries",
+   "note": "field note: not stated whether this is a revealed or mystery design"
+  },
+  {
+   "key": "wdw/2019/disney-disguises-mystery",
+   "field": "members",
+   "searched": "DPB Mar wk2, WDWNT; 2 queries",
+   "note": "other 11 designs not named in non-reseller snippets; set kept with expected_pin_count 12"
+  },
+  {
+   "key": "wdw/2019/disney-disguises-mystery",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "field note: LE 1,000 may refer to boxes rather than individual pins; not stated"
+  },
+  {
+   "key": "wdw/2019/character-connection-mulan",
+   "field": "members",
+   "searched": "DPB Jul wk4; 2 queries",
+   "note": "individual designs / count not named on non-excluded sources (puzzle count only via forum citing PinTradingDB, excluded)"
+  },
+  {
+   "key": "wdw/2019/character-connection-mickeys-christmas-carol",
+   "field": "members",
+   "searched": "DPB Oct wk4; 2 queries",
+   "note": "designs not named; 9 puzzle + 3 chaser count only on forum citing PinTradingDB (excluded), not recorded"
+  },
+  {
+   "key": "wdw/2019/holiday-gifting-2019",
+   "field": "members",
+   "searched": "DPB Holiday Gifting; 2 queries",
+   "note": "8 of 16 designs named in snippets; remaining 8 not named"
+  },
+  {
+   "key": "wdw/2019/holiday-gifting-2019",
+   "field": "variant",
+   "searched": "1 query",
+   "note": "not dsus/2019/holiday-gift-pin-series (Disney Store/shopDisney, 10 pins, $12.95, Nov 4)"
+  },
+  {
+   "key": "wdw/2019/oe/aladdin-pin-on-pin",
+   "field": "edition_type",
+   "searched": "DPB May wk4; 1 query",
+   "note": "lead (OE cell): DPB calls the shared Aladdin opening-day pin-on-pin (Aladdin & Jasmine on carpet) a 'limited release'; check vs OE key"
+  },
+  {
+   "key": "dlr/2019/kingdom-consoles/aladdin",
+   "field": "release_location",
+   "searched": "DPB Feb wk2; 1 query",
+   "note": "lead: shared DLR/WDW Kingdom Consoles Aladdin (LE 4,000, $17.99) keyed only under dlr; no wdw duplicate created"
+  },
+  {
+   "key": "dlr/2019/kingdom-consoles-lion-king/the-lion-king",
+   "field": "release_location",
+   "searched": "DPB Mar wk2; 1 query",
+   "note": "lead: Kingdom Consoles Lion King shared DLR/WDW Mar 14 2019 (LE 4,000, $17.99), keyed under dlr; no wdw duplicate created"
+  },
+  {
+   "key": "wdw/2019/pin-trading-pop-up-books/alice-in-wonderland",
+   "field": "release_date",
+   "searched": "DPB Pop Up searches; 1 query",
+   "note": "Feb 21 2019 date and LE 4,000 only on a reseller listing (yourwdwstore); not recorded; DPB did not confirm"
+  },
+  {
+   "key": "wdw/2019/pin-trading-pop-up-books/peter-pan",
+   "field": "gap",
+   "searched": "B402 round",
+   "note": "Pop-Up #1 date not re-searched this round (budget spent on new-pin sweep)"
+  },
+  {
+   "key": "wdw/2019/galaxys-edge-opening-day/rise-of-the-resistance-rey",
+   "field": "gap",
+   "searched": "B402 round",
+   "note": "Rey LE size not re-searched this round"
+  },
+  {
+   "key": "wdw/2019/skyliner-mystery",
+   "field": "gap",
+   "searched": "B402 round",
+   "note": "designs beyond Belle & Beast not re-searched this round"
+  },
+  {
+   "key": "wdw/2019/rise-of-the-resistance-mystery",
+   "field": "gap",
+   "searched": "B402 round",
+   "note": "mystery designs not re-searched this round"
+  },
+  {
+   "key": "wdw/2019/vintage-vinyl",
+   "field": "gap",
+   "searched": "B402 round",
+   "note": "#4 / #5 editions not re-searched this round"
+  },
+  {
+   "key": "wdw/2019/walt-disney-day-2019/steamboat-willie",
+   "field": "gap",
+   "searched": "B402 round",
+   "note": "edition not re-searched this round"
+  },
+  {
+   "key": "wdw/2019/resort-holiday-bells-2019",
+   "field": "gap",
+   "searched": "B402 round",
+   "note": "per-bell details not re-searched this round"
+  },
+  {
+   "key": "wdw/2019/rise-of-skywalker-knights-booster",
+   "field": "gap",
+   "searched": "B402 round",
+   "note": "member names not re-searched this round"
+  },
+  {
+   "key": "wdw/2019/ap-quarterly-2019/dormouse",
+   "field": "gap",
+   "searched": "B402 round",
+   "note": "edition/price/day still missing; DPB Sep wk3 post not surfaced again (2 queries)"
+  },
+  {
+   "key": "wdw/2019/magic-of-honor/its-a-small-world",
+   "field": "edition_size",
+   "searched": "B402 round",
+   "note": "not re-searched; Kilimanjaro / small world editions still open"
+  }
+ ]
+}

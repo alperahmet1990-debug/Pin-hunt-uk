@@ -1,0 +1,953 @@
+{
+ "packet_id": "604_b418_wdw_le_2019_fu11",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "discovery_notes": "Follow-up 11 of B002 (WDW LE 2019). 29 web searches. New shared DL/WDW May 2019 pins from DPB May wk1: Teachers Day (Monsters, Inc.), Cinco de Mayo (Donald), Nurses Day (Mickey), Star Wars Day Stormtrooper LR and Darth Vader jumbo LE 1,000. New WDW pin: DAK New Year's Eve 2019 event pin LE 1,000 (4 news sources). Held: Villains After Hours 2019 pin set (structure unknown), Frozen 2 Bruni (title-only). Aladdin Kingdom Consoles LE 4,000 corroborated on wdw key. DPB weeks Feb wk3, Apr wk2-3, Jul wk3, Nov wk3-4 not found. No holds released.",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+   "title": "New Disney Pins February 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+   "title": "New Disney Pins May 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/12/photos-new-limited-edition-pin-and-details-revealed-for-exclusive-new-years-eve-pin-trading-event-at-disneys-animal-kingdom/",
+   "title": "PHOTOS: New Limited Edition Pin and Details Revealed for Exclusive New Year's Eve Pin Trading Event at Disney's Animal Kingdom",
+   "publisher": "WDW News Today",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/w/news/2019/12/26/disneys-animal-kingdom-new-years-eve-pin-trading-opportunity/",
+   "title": "Disney's Animal Kingdom to Host New Year's Eve Pin Trading Opportunity",
+   "publisher": "LaughingPlace.com",
+   "published_date": "2019-12-26",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.laughingplace.com/w/news/2019/12/31/special-new-years-eve-pin-trading-opportunity-comes-to-disneys-animal-kingdom/",
+   "title": "Special New Year's Eve Pin Trading Opportunity Comes to Disney's Animal Kingdom",
+   "publisher": "LaughingPlace.com",
+   "published_date": "2019-12-31",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyfoodblog.com/2019/12/26/disney-world-is-hosting-the-ultimate-pin-trading-event-on-new-years-eve/",
+   "title": "Disney World is Hosting the Ultimate Pin Trading Event on New Year's Eve!",
+   "publisher": "Disney Food Blog",
+   "published_date": "2019-12-26",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://insidethemagic.net/2019/12/disneys-animal-kingdom-pin-trading-event-kc1/",
+   "title": "Disney's Animal Kingdom Hosting Ultimate Pin Trading Event",
+   "publisher": "Inside the Magic",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/06/photos-merchandise-for-disney-villains-after-hours-at-magic-kingdom-revealed/",
+   "title": "PHOTOS: Merchandise Unveiled for Disney Villains After Hours at the Magic Kingdom",
+   "publisher": "WDW News Today",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyfoodblog.com/2019/06/04/new-exclusive-merchandise-revealed-for-disney-villains-after-hours-at-magic-kingdom/",
+   "title": "NEW Exclusive Merchandise Revealed for Disney Villains After Hours at Magic Kingdom",
+   "publisher": "Disney Food Blog",
+   "published_date": "2019-06-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+   "title": "PHOTOS: November Pin Releases for Walt Disney World and Disneyland Features ... Frozen 2 Bruni Pin, and Holiday Gifting Boxed Sets",
+   "publisher": "WDW News Today",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/10/new-pin-thursday-weekly-pin-trading-event-coming-to-disneys-animal-kingdom/",
+   "title": "New \"Pin Thursday\" Weekly Pin Trading Event Coming to Disney's Animal Kingdom",
+   "publisher": "WDW News Today",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/05/special-experiences-merchandise-announced-for-may-the-4th-at-walt-disney-world/",
+   "title": "Special Experiences, Merchandise Announced for May the 4th at Walt Disney World",
+   "publisher": "WDW News Today",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2019/teachers-day-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Teachers Day 2019",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/cinco-de-mayo-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cinco de Mayo 2019",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/nurses-day-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Nurses Day 2019",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/star-wars-day-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars Day (May the 4th) 2019",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "two separate single pins (standard + jumbo), sold separately",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet",
+     "note": "DPB lists Stormtrooper pin and Vader jumbo as two entries"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/new-years-eve-pin-trading-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney's Animal Kingdom New Year's Eve Pin Trading Event 2019",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-limited-edition-pin-and-details-revealed-for-exclusive-new-years-eve-pin-trading-event-at-disneys-animal-kingdom/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-limited-edition-pin-and-details-revealed-for-exclusive-new-years-eve-pin-trading-event-at-disneys-animal-kingdom/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-31",
+     "source_url": "https://www.laughingplace.com/w/news/2019/12/26/disneys-animal-kingdom-new-years-eve-pin-trading-opportunity/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Animal Kingdom",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-limited-edition-pin-and-details-revealed-for-exclusive-new-years-eve-pin-trading-event-at-disneys-animal-kingdom/",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/villains-after-hours-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Villains After Hours 2019 pin set",
+     "source_url": "https://wdwnt.com/2019/06/photos-merchandise-for-disney-villains-after-hours-at-magic-kingdom-revealed/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "pin set (count and structure not stated)",
+     "source_url": "https://wdwnt.com/2019/06/photos-merchandise-for-disney-villains-after-hours-at-magic-kingdom-revealed/",
+     "method": "search_snippet",
+     "note": "villains plus their henchmen; event merchandise"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-06",
+     "source_url": "https://wdwnt.com/2019/06/photos-merchandise-for-disney-villains-after-hours-at-magic-kingdom-revealed/",
+     "method": "search_snippet",
+     "note": "event nights Jun 6-Aug 8 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom",
+     "source_url": "https://wdwnt.com/2019/06/photos-merchandise-for-disney-villains-after-hours-at-magic-kingdom-revealed/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Magic Kingdom",
+     "source_url": "https://www.disneyfoodblog.com/2019/06/04/new-exclusive-merchandise-revealed-for-disney-villains-after-hours-at-magic-kingdom/",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/frozen-2-bruni",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Frozen 2 Bruni pin (November 2019 parks release)",
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11",
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "named only in WDWNT Nov 2019 WDW/DL pin release headline"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2019/teachers-day-2019/monsters-inc",
+   "set_key": "wdw/2019/teachers-day-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Teachers Day 2019 pin (Monsters, Inc.)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet",
+     "note": "DPB wk1 (Apr 28-May 4): shared DL/WDW release May 2"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "franchise",
+     "value": "Monsters, Inc.",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/cinco-de-mayo-2019/donald-duck",
+   "set_key": "wdw/2019/cinco-de-mayo-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cinco de Mayo 2019 pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_size",
+     "value": 3500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet",
+     "note": "DPB wk1: shared DL/WDW release May 2"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/nurses-day-2019/mickey",
+   "set_key": "wdw/2019/nurses-day-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nurses Day 2019 pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet",
+     "note": "DPB wk1: shared DL/WDW release May 2"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey-themed design with glitter embellishments",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/star-wars-day-2019/stormtrooper",
+   "set_key": "wdw/2019/star-wars-day-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "May the 4th Be With You 2019 pin (Stormtrooper)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stormtrooper"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Stormtrooper",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/star-wars-day-2019/darth-vader-jumbo",
+   "set_key": "wdw/2019/star-wars-day-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Star Wars Day 2019 jumbo pin (Darth Vader)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Darth Vader"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Darth Vader",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-04",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin (jumbo)",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-1",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/new-years-eve-pin-trading-2019/new-years-day-2020",
+   "set_key": "wdw/2019/new-years-eve-pin-trading-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "2020 commemorative New Year's Day pin (DAK NYE event)",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-limited-edition-pin-and-details-revealed-for-exclusive-new-years-eve-pin-trading-event-at-disneys-animal-kingdom/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-limited-edition-pin-and-details-revealed-for-exclusive-new-years-eve-pin-trading-event-at-disneys-animal-kingdom/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-limited-edition-pin-and-details-revealed-for-exclusive-new-years-eve-pin-trading-event-at-disneys-animal-kingdom/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.laughingplace.com/w/news/2019/12/26/disneys-animal-kingdom-new-years-eve-pin-trading-opportunity/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://www.disneyfoodblog.com/2019/12/26/disney-world-is-hosting-the-ultimate-pin-trading-event-on-new-years-eve/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-31",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-limited-edition-pin-and-details-revealed-for-exclusive-new-years-eve-pin-trading-event-at-disneys-animal-kingdom/",
+     "method": "search_snippet",
+     "note": "on sale 7:00 pm Dec 31 2019 via numbered wristbands, max 2 per holder"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-31",
+     "source_url": "https://www.laughingplace.com/w/news/2019/12/31/special-new-years-eve-pin-trading-opportunity-comes-to-disneys-animal-kingdom/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/12/photos-new-limited-edition-pin-and-details-revealed-for-exclusive-new-years-eve-pin-trading-event-at-disneys-animal-kingdom/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Animal Kingdom - Discovery Trading Company",
+     "source_url": "https://www.laughingplace.com/w/news/2019/12/26/disneys-animal-kingdom-new-years-eve-pin-trading-opportunity/",
+     "method": "search_snippet",
+     "note": "wristbands from 7am at Discovery Trading Company"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Animal Kingdom",
+     "source_url": "https://insidethemagic.net/2019/12/disneys-animal-kingdom-pin-trading-event-kc1/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2019/12/photos-new-limited-edition-pin-and-details-revealed-for-exclusive-new-years-eve-pin-trading-event-at-disneys-animal-kingdom/",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/frozen-2-bruni/bruni",
+   "set_key": "wdw/2019/frozen-2-bruni",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Frozen 2 Bruni pin",
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bruni"
+     ],
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://wdwnt.com/2019/10/photos-november-pin-releases-for-walt-disney-world-and-disneyland-features-first-ever-commemorative-christmas-parade-pin-tiny-stocking-stuffers-mystery-pins-frozen-2-bruni-pin-and-holiday-gifting/",
+     "method": "search_snippet",
+     "note": "headline covers both resorts; which resort(s) unconfirmed"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/kingdom-consoles/aladdin",
+   "set_key": "wdw/2019/kingdom-consoles",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet",
+     "note": "DPB Feb wk2 lists it among shared DL/WDW releases, LE 4,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-february-2019-week-2",
+     "method": "search_snippet"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2019/star-wars-day-2019/darth-vader-jumbo",
+   "field": "original_price",
+   "searched": "DPB May wk1; 2 queries",
+   "note": "price not in snippets ($17.99 stated only for the Stormtrooper pin)"
+  },
+  {
+   "key": "wdw/2019/star-wars-day-2019",
+   "field": "pins",
+   "searched": "WDWNT May the 4th 2019 announcement",
+   "note": "WDWNT says several pins sold May 4 at DHS (Tatooine Traders, Launch Bay) but names none; may include OE items - not split"
+  },
+  {
+   "key": "wdw/2019/teachers-day-2019/monsters-inc",
+   "field": "characters",
+   "searched": "DPB May wk1 snippet",
+   "note": "characters not named beyond film (Monsters, Inc.)"
+  },
+  {
+   "key": "wdw/2019/teachers-day-2019/monsters-inc",
+   "field": "release_location",
+   "searched": "grep of evidence for dlr/2019 keys",
+   "note": "shared DL/WDW pin keyed under wdw; no dlr/2019 key exists for it (new shared key)"
+  },
+  {
+   "key": "wdw/2019/cinco-de-mayo-2019/donald-duck",
+   "field": "release_location",
+   "searched": "grep of evidence for dlr/2019 keys",
+   "note": "shared DL/WDW pin keyed under wdw; no dlr/2019 key exists for it (new shared key)"
+  },
+  {
+   "key": "wdw/2019/nurses-day-2019/mickey",
+   "field": "release_location",
+   "searched": "grep of evidence for dlr/2019 keys",
+   "note": "shared DL/WDW pin keyed under wdw; no dlr/2019 key exists for it (new shared key)"
+  },
+  {
+   "key": "wdw/2019/star-wars-day-2019/stormtrooper",
+   "field": "release_location",
+   "searched": "grep of evidence for dlr/2019 keys",
+   "note": "shared DL/WDW pin keyed under wdw; no dlr/2019 key exists for it (new shared key)"
+  },
+  {
+   "key": "wdw/2019/star-wars-day-2019/darth-vader-jumbo",
+   "field": "release_location",
+   "searched": "grep of evidence for dlr/2019 keys",
+   "note": "shared DL/WDW pin keyed under wdw; no dlr/2019 key exists for it (new shared key)"
+  },
+  {
+   "key": "wdw/2019/new-years-eve-pin-trading-2019/new-years-day-2020",
+   "field": "characters",
+   "searched": "WDWNT/LP/DFB/ITM; 2 queries",
+   "note": "design/characters not described in snippets (photos only)"
+  },
+  {
+   "key": "wdw/2019/new-years-eve-pin-trading-2019/new-years-day-2020",
+   "field": "original_price",
+   "searched": "WDWNT/LP/DFB/ITM; 2 queries",
+   "note": "price not stated in snippets"
+  },
+  {
+   "key": "wdw/2019/new-years-eve-pin-trading-2019/new-years-day-2020",
+   "field": "release_year",
+   "searched": "snippets",
+   "note": "field note: pin is dated 2020 in design/name but sold Dec 31 2019; keyed under 2019 by release date"
+  },
+  {
+   "key": "wdw/2019/villains-after-hours-2019",
+   "field": "pins",
+   "searched": "WDWNT + DFB VAH merch posts; 2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); no count, price, edition or per-pin designs in snippets"
+  },
+  {
+   "key": "wdw/2019/villains-after-hours-2019",
+   "field": "edition_type",
+   "searched": "2 queries",
+   "note": "not stated whether LE/LR/event-exclusive OE"
+  },
+  {
+   "key": "wdw/2019/villains-after-hours-2019/hades",
+   "field": "pin_name",
+   "searched": "reseller listing (yourwdwstore) only",
+   "note": "lead: reseller lists an After Hours Hades limited release pin; DPB dates a Hades Magic Kingdom VAH pin to Aug 2020 - not recorded for 2019"
+  },
+  {
+   "key": "wdw/2019/frozen-2-bruni/bruni",
+   "field": "edition_type",
+   "searched": "WDWNT Nov 2019 headline + 1 Bruni query",
+   "note": "hold: title-only mention (WDWNT headline); edition, price, date and resort not confirmed; Bruni search found no parks listing"
+  },
+  {
+   "key": "wdw/2019/kingdom-consoles/aladdin",
+   "field": "edition_size",
+   "searched": "DPB Feb 2019 wk2 snippet",
+   "note": "field note: DPB Feb wk2 gives LE 4,000 (matches dlr/2019/kingdom-consoles/aladdin); earlier 2,500 vs 1,500 figures likely other items - not resolved"
+  },
+  {
+   "key": "wdw/2019/pin-thursday-2019",
+   "field": "pins",
+   "searched": "WDWNT Oct 2019",
+   "note": "lead: DAK Pin Thursday from Nov 7 2019 sold LE/LR pins at Discovery Trading Co. and Africa cart; no pins named"
+  },
+  {
+   "key": "wdw/2019/character-connection-mulan",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Khan puzzle piece named only on a reseller listing; designs still unconfirmed"
+  },
+  {
+   "key": "wdw/2019/resort-holiday-bells-2019",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "kept hold: DPB/WDWNT restate 24 bells, Nov 11, $17.99, editions 750-3,000; no new per-bell mapping"
+  },
+  {
+   "key": "wdw/2019/ap-quarterly-2019/dormouse",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "still not stated; worldofwalt Sept 2019 page describes the teacup design only"
+  },
+  {
+   "key": "wdw/2019/disney-weekly-roundups",
+   "field": "pins",
+   "searched": "DPB Feb wk3, Apr wk2-3, Jul wk3, Nov wk3-4 (5 queries)",
+   "note": "DPB weekly posts for these weeks did not surface; neighbouring weeks only (may not exist)"
+  },
+  {
+   "key": "wdw/2019/oe/rise-of-the-resistance-opening-day",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead unchanged (OE $9.99 x2, Dec 5 2019); already logged in 509/579"
+  },
+  {
+   "key": "wdw/2019/holds",
+   "field": "note",
+   "searched": "this packet",
+   "note": "no existing holds released (I Heart Gaming five, Valentine 2019, small world, gift-card four, Jawa Salvage, Sanderson Sisters, HM day-of, F&G princess, DHS 30th booster, runDisney, Steamboat Visa kept)"
+  },
+  {
+   "key": "wdw/2019/new-years-eve-pin-trading-2019/new-years-day-2020",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: title-only - event, date and LE 1,000 confirmed by several outlets but design / characters not described"
+  }
+ ]
+}

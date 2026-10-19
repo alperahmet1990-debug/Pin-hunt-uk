@@ -1,0 +1,1427 @@
+{
+ "packet_id": "601_b415_asia_2023_2024_fu23",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+   "title": "Hidden Mickey Disney Pins Archives",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/marie-october-2023-shanghai-disneyland-hidden-mickey-pin/",
+   "title": "Marie October 2023 Shanghai Disneyland Hidden Mickey Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-10-14",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/nick-wilde-december-2023-shanghai-disneyland-hidden-mickey-pin/",
+   "title": "Nick Wilde December 2023 Shanghai Disneyland Hidden Mickey Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-12-22",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-mouse-january-2024-shanghai-disneyland-hidden-mickey-pin/",
+   "title": "Mickey Mouse January 2024 Shanghai Disneyland Hidden Mickey Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-01-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/zootopia-judy-hopps-hidden-mickey-pin-at-shanghai-disney-resort",
+   "title": "Zootopia Judy Hopps Hidden Mickey Pin at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-02",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+   "title": "Shanghai Disneyland Attraction Mickey Icon Pin Series",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/shanghai-disneyland-attraction-mickey-icon-pin-series",
+   "title": "Shanghai Disneyland Attraction Mickey Icon Pin Series",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mickey-and-friends-t-shirt-pins-at-shanghai-disney-resort",
+   "title": "Mickey and Friends T-Shirt Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2024-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2023-pin-releases-at-shanghai-disney-resort",
+   "title": "Pin Trading Fun Day 2023 Pin Releases at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2023-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-269604/",
+   "title": "仮装してパークを楽しむゴーストたちがかわいい！東京ディズニーランド”ディズニー・ハロウィーン2023”スペシャルグッズ",
+   "publisher": "MezzoMiki",
+   "published_date": "2023-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-269171/",
+   "title": "懐かしいハロウィーンコスチュームを着たミッキーをデザイン！東京ディズニーリゾート40周年”メモリーゴーラウンド”ディズニー・ハロウィーン2023グッズ",
+   "publisher": "MezzoMiki",
+   "published_date": "2023-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-262083/",
+   "title": "今までの思い出があふれ出すデザイン！「東京ディズニーリゾート40周年”メモリーゴーラウンド”」グッズ",
+   "publisher": "MezzoMiki",
+   "published_date": "2023-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dtimes.jp/post-714643/",
+   "title": "パークの楽しい思い出がよみがえる！東京ディズニーリゾート40周年“ドリームゴーラウンド｢MEMORY-GO-ROUND｣グッズ",
+   "publisher": "Disney Times (dtimes)",
+   "published_date": "2023-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "shdr/2023/hidden-mickey-2023",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Shanghai Disneyland Hidden Mickey pins 2023",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "DPB tag archive lists monthly SHDR Hidden Mickey pin posts"
+    },
+    {
+     "field": "format",
+     "value": "monthly individual Hidden Mickey pins",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "one character per monthly post title"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/hidden-mickey-2024",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Shanghai Disneyland Hidden Mickey pins 2024",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "DPB tag archive lists monthly SHDR Hidden Mickey pin posts"
+    },
+    {
+     "field": "format",
+     "value": "monthly individual Hidden Mickey pins",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "one character per monthly post title"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/attraction-mickey-icon",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Shanghai Disneyland Attraction Mickey Icon Pin Series",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 9,
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "nine pins in total"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "released Dec 2024"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/shanghai-disneyland-attraction-mickey-icon-pin-series",
+     "method": "search_snippet",
+     "note": "second DPB URL: released Dec 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    },
+    {
+     "field": "format",
+     "value": "pin series (one attraction per design implied by listing)",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "attractions listed for the nine-pin series"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2024/mickey-and-friends-t-shirt",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey and Friends T-Shirt Pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-and-friends-t-shirt-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-and-friends-t-shirt-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "summary says released Oct 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/mickey-and-friends-t-shirt-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2023/pin-trading-fun-day-2023",
+   "claims": [
+    {
+     "field": "format",
+     "value": "event release: Mickey logo pin LE 800, five individual pins LE 500 each, boxed set LE 300",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2023-pin-releases-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "7th annual event; in park from 22 Sep 2023"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2023-pin-releases-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "released in park from 22 Sep 2023"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2023/halloween-2023-ghost-pin-set",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "3-pin set, each about 4 x 4 cm"
+    },
+    {
+     "field": "price",
+     "value": 2400,
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "¥2,400"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09-14",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "14 Sep 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland (World Bazaar, Disney & Co.)",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "sold at Disney & Co."
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "3 pins in a set"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2023/halloween-2023-history-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://mezzomiki.jp/post-269171/",
+     "method": "search_snippet",
+     "note": "1 of 8 random"
+    },
+    {
+     "field": "price",
+     "value": 1200,
+     "source_url": "https://mezzomiki.jp/post-269171/",
+     "method": "search_snippet",
+     "note": "¥1,200 single blind pin"
+    },
+    {
+     "field": "price",
+     "value": 9600,
+     "source_url": "https://mezzomiki.jp/post-269171/",
+     "method": "search_snippet",
+     "note": "¥9,600 complete 8-pin box"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-269171/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind (1 of 8) and complete 8-pin box",
+     "source_url": "https://mezzomiki.jp/post-269171/",
+     "method": "search_snippet",
+     "note": "Mickey in past Halloween costumes, 40th Memory-Go-Round"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2023/40th-memory-go-round-framed-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "TDR 40th Memory-Go-Round framed pin badge set (Mickey in anniversary costumes)",
+     "source_url": "https://mezzomiki.jp/post-262083/",
+     "method": "search_snippet",
+     "note": "Mickey in each anniversary's costume and motif"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://mezzomiki.jp/post-262083/",
+     "method": "search_snippet",
+     "note": "5 pins with frame"
+    },
+    {
+     "field": "price",
+     "value": 6000,
+     "source_url": "https://mezzomiki.jp/post-262083/",
+     "method": "search_snippet",
+     "note": "¥6,000"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-262083/",
+     "method": "search_snippet",
+     "note": "yen"
+    },
+    {
+     "field": "format",
+     "value": "framed multi-pin set",
+     "source_url": "https://mezzomiki.jp/post-262083/",
+     "method": "search_snippet",
+     "note": "frame about 20 x 20 x 3 cm, 5 pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-06-13",
+     "source_url": "https://mezzomiki.jp/post-262083/",
+     "method": "search_snippet",
+     "note": "app reservation 13-30 Jun 2023 for park visitors"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland / Tokyo DisneySea (app reservation)",
+     "source_url": "https://mezzomiki.jp/post-262083/",
+     "method": "search_snippet",
+     "note": "reservation via TDR app on visit day"
+    },
+    {
+     "field": "set_name",
+     "value": "MEMORY-GO-ROUND pin badge set",
+     "source_url": "https://dtimes.jp/post-714643/",
+     "method": "search_snippet",
+     "note": "listed among Memory-Go-Round goods"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "shdr/2023/hidden-mickey-2023/stellalou",
+   "set_key": "shdr/2023/hidden-mickey-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "StellaLou September 2023 Shanghai Disneyland Hidden Mickey Pin",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed in DPB archive (post 9 Sep 2023)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "StellaLou"
+     ],
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "character named in post title"
+    },
+    {
+     "field": "main_character",
+     "value": "StellaLou",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "title character"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "month given in post title/summary"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "single-character Hidden Mickey pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2023/hidden-mickey-2023/marie",
+   "set_key": "shdr/2023/hidden-mickey-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Marie October 2023 Shanghai Disneyland Hidden Mickey Pin",
+     "source_url": "https://disneypinsblog.com/marie-october-2023-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "DPB per-pin post (The Aristocats)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Marie"
+     ],
+     "source_url": "https://disneypinsblog.com/marie-october-2023-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "character named in post title"
+    },
+    {
+     "field": "main_character",
+     "value": "Marie",
+     "source_url": "https://disneypinsblog.com/marie-october-2023-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "title character"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-10",
+     "source_url": "https://disneypinsblog.com/marie-october-2023-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "month given in post title/summary"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/marie-october-2023-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/marie-october-2023-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "single-character Hidden Mickey pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2023/hidden-mickey-2023/nick-wilde",
+   "set_key": "shdr/2023/hidden-mickey-2023",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Nick Wilde December 2023 Shanghai Disneyland Hidden Mickey Pin",
+     "source_url": "https://disneypinsblog.com/nick-wilde-december-2023-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "DPB per-pin post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Nick Wilde"
+     ],
+     "source_url": "https://disneypinsblog.com/nick-wilde-december-2023-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "character named in post title"
+    },
+    {
+     "field": "main_character",
+     "value": "Nick Wilde",
+     "source_url": "https://disneypinsblog.com/nick-wilde-december-2023-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "title character"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-12",
+     "source_url": "https://disneypinsblog.com/nick-wilde-december-2023-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "month given in post title/summary"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/nick-wilde-december-2023-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/nick-wilde-december-2023-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "single-character Hidden Mickey pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/hidden-mickey-2024/mickey-mouse",
+   "set_key": "shdr/2024/hidden-mickey-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Mouse January 2024 Shanghai Disneyland Hidden Mickey Pin",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-january-2024-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "DPB per-pin post"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/mickey-mouse-january-2024-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "character named in post title"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-january-2024-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "title character"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-01",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-january-2024-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "month given in post title/summary"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-january-2024-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/mickey-mouse-january-2024-shanghai-disneyland-hidden-mickey-pin/",
+     "method": "search_snippet",
+     "note": "single-character Hidden Mickey pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/hidden-mickey-2024/minnie-mouse",
+   "set_key": "shdr/2024/hidden-mickey-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie Mouse February 2024 Shanghai Disneyland Hidden Mickey Pin",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "listed in DPB archive"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "character named in post title"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "title character"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-02",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "month given in post title/summary"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/tag/hidden-mickey-disney-pins/",
+     "method": "search_snippet",
+     "note": "single-character Hidden Mickey pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/hidden-mickey-2024/judy-hopps",
+   "set_key": "shdr/2024/hidden-mickey-2024",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zootopia Judy Hopps Hidden Mickey Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-judy-hopps-hidden-mickey-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "DPB per-pin post, released Feb 2024"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Judy Hopps"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-judy-hopps-hidden-mickey-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "character named in post title"
+    },
+    {
+     "field": "main_character",
+     "value": "Judy Hopps",
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-judy-hopps-hidden-mickey-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "title character"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-02",
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-judy-hopps-hidden-mickey-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "month given in post title/summary"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-judy-hopps-hidden-mickey-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "SHDR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/zootopia-judy-hopps-hidden-mickey-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "single-character Hidden Mickey pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/attraction-mickey-icon/hunny-pot-spin",
+   "set_key": "shdr/2024/attraction-mickey-icon",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Hunny Pot Spin",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "attraction named in the series line-up"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "Dec 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/attraction-mickey-icon/dumbo-the-flying-elephant",
+   "set_key": "shdr/2024/attraction-mickey-icon",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Dumbo the Flying Elephant",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "attraction named in the series line-up"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "Dec 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/attraction-mickey-icon/soaring-over-the-horizon",
+   "set_key": "shdr/2024/attraction-mickey-icon",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Soaring Over the Horizon",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "attraction named in the series line-up"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "Dec 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/attraction-mickey-icon/pirates-of-the-caribbean",
+   "set_key": "shdr/2024/attraction-mickey-icon",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Pirates of the Caribbean: Battle for the Sunken Treasure",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "attraction named in the series line-up"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "Dec 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/attraction-mickey-icon/enchanted-storybook-castle",
+   "set_key": "shdr/2024/attraction-mickey-icon",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Enchanted Storybook Castle",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "attraction named in the series line-up"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "Dec 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/attraction-mickey-icon/seven-dwarfs-mine-train",
+   "set_key": "shdr/2024/attraction-mickey-icon",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Seven Dwarfs Mine Train",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "attraction named in the series line-up"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "Dec 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/attraction-mickey-icon/rex-racer",
+   "set_key": "shdr/2024/attraction-mickey-icon",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Rex's Racer",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "attraction named in the series line-up"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "Dec 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/attraction-mickey-icon/tron-lightcycle-power-run",
+   "set_key": "shdr/2024/attraction-mickey-icon",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "TRON Lightcycle Power Run",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "attraction named in the series line-up"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "Dec 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2024/attraction-mickey-icon/jet-packs",
+   "set_key": "shdr/2024/attraction-mickey-icon",
+   "claims": [
+    {
+     "field": "attraction",
+     "value": "Jet Packs",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "attraction named in the series line-up"
+    },
+    {
+     "field": "release_date",
+     "value": "2024-12",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "Dec 2024"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-attraction-mickey-icon-pin-series/",
+     "method": "search_snippet",
+     "note": "SHDR"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2023/halloween-2023-ghost-pin-set/fairy-ghost",
+   "set_key": "tdr/2023/halloween-2023-ghost-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Costumed ghost pin - fairy",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "one of the three designs described"
+    },
+    {
+     "field": "visual_description",
+     "value": "ghost in a fairy costume handing out sweets",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "per-pin description in summary"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ghost (Disney Halloween 2023)"
+     ],
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "park-original costumed ghost character"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09-14",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "set released 14 Sep 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "Disney & Co., World Bazaar"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "one ghost per pin in the 3-pin set"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2023/halloween-2023-ghost-pin-set/vampire-ghost",
+   "set_key": "tdr/2023/halloween-2023-ghost-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Costumed ghost pin - vampire",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "one of the three designs described"
+    },
+    {
+     "field": "visual_description",
+     "value": "ghost dressed as a vampire",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "per-pin description in summary"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ghost (Disney Halloween 2023)"
+     ],
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "park-original costumed ghost character"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09-14",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "set released 14 Sep 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "Disney & Co., World Bazaar"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "one ghost per pin in the 3-pin set"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2023/halloween-2023-ghost-pin-set/masquerade-ghost",
+   "set_key": "tdr/2023/halloween-2023-ghost-pin-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Costumed ghost pin - mask and hat",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "one of the three designs described"
+    },
+    {
+     "field": "visual_description",
+     "value": "ghost with mask and hat catching sweets",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "per-pin description in summary"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ghost (Disney Halloween 2023)"
+     ],
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "park-original costumed ghost character"
+    },
+    {
+     "field": "release_date",
+     "value": "2023-09-14",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "set released 14 Sep 2023"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "Disney & Co., World Bazaar"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mezzomiki.jp/post-269604/",
+     "method": "search_snippet",
+     "note": "one ghost per pin in the 3-pin set"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "shdr/2023/hidden-mickey-2023",
+   "field": "expected_pin_count",
+   "searched": "DPB tag/archive; 3 queries",
+   "note": "months other than those recorded not found in snippets; full year list not seen"
+  },
+  {
+   "key": "shdr/2024/hidden-mickey-2024",
+   "field": "expected_pin_count",
+   "searched": "DPB tag/archive; 3 queries",
+   "note": "months other than those recorded not found in snippets; full year list not seen"
+  },
+  {
+   "key": "shdr/2023/hidden-mickey-2023/stellalou",
+   "field": "edition_type",
+   "searched": "DPB snippets",
+   "note": "edition/price/visual not in snippet"
+  },
+  {
+   "key": "shdr/2023/hidden-mickey-2023/marie",
+   "field": "edition_type",
+   "searched": "DPB snippets",
+   "note": "edition/price/visual not in snippet"
+  },
+  {
+   "key": "shdr/2023/hidden-mickey-2023/nick-wilde",
+   "field": "edition_type",
+   "searched": "DPB snippets",
+   "note": "edition/price/visual not in snippet"
+  },
+  {
+   "key": "shdr/2024/hidden-mickey-2024/mickey-mouse",
+   "field": "edition_type",
+   "searched": "DPB snippets",
+   "note": "edition/price/visual not in snippet"
+  },
+  {
+   "key": "shdr/2024/hidden-mickey-2024/minnie-mouse",
+   "field": "edition_type",
+   "searched": "DPB snippets",
+   "note": "edition/price/visual not in snippet"
+  },
+  {
+   "key": "shdr/2024/hidden-mickey-2024/judy-hopps",
+   "field": "edition_type",
+   "searched": "DPB snippets",
+   "note": "edition/price/visual not in snippet"
+  },
+  {
+   "key": "shdr/2024/hidden-mickey-2024/judy-hopps",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "field note: posted as a Zootopia Hidden Mickey pin alongside the Feb 2024 Minnie pin; confirm it is part of the same monthly series"
+  },
+  {
+   "key": "shdr/2024/attraction-mickey-icon/hunny-pot-spin",
+   "field": "pin_structure",
+   "searched": "DPB snippets; 2 queries",
+   "note": "hold: one attraction per pin inferred from a nine-name line-up for a nine-pin series; confirm each design (characters, edition, price not stated)"
+  },
+  {
+   "key": "shdr/2024/attraction-mickey-icon/dumbo-the-flying-elephant",
+   "field": "pin_structure",
+   "searched": "DPB snippets; 2 queries",
+   "note": "hold: one attraction per pin inferred from a nine-name line-up for a nine-pin series; confirm each design (characters, edition, price not stated)"
+  },
+  {
+   "key": "shdr/2024/attraction-mickey-icon/soaring-over-the-horizon",
+   "field": "pin_structure",
+   "searched": "DPB snippets; 2 queries",
+   "note": "hold: one attraction per pin inferred from a nine-name line-up for a nine-pin series; confirm each design (characters, edition, price not stated)"
+  },
+  {
+   "key": "shdr/2024/attraction-mickey-icon/pirates-of-the-caribbean",
+   "field": "pin_structure",
+   "searched": "DPB snippets; 2 queries",
+   "note": "hold: one attraction per pin inferred from a nine-name line-up for a nine-pin series; confirm each design (characters, edition, price not stated)"
+  },
+  {
+   "key": "shdr/2024/attraction-mickey-icon/enchanted-storybook-castle",
+   "field": "pin_structure",
+   "searched": "DPB snippets; 2 queries",
+   "note": "hold: one attraction per pin inferred from a nine-name line-up for a nine-pin series; confirm each design (characters, edition, price not stated)"
+  },
+  {
+   "key": "shdr/2024/attraction-mickey-icon/seven-dwarfs-mine-train",
+   "field": "pin_structure",
+   "searched": "DPB snippets; 2 queries",
+   "note": "hold: one attraction per pin inferred from a nine-name line-up for a nine-pin series; confirm each design (characters, edition, price not stated)"
+  },
+  {
+   "key": "shdr/2024/attraction-mickey-icon/rex-racer",
+   "field": "pin_structure",
+   "searched": "DPB snippets; 2 queries",
+   "note": "hold: one attraction per pin inferred from a nine-name line-up for a nine-pin series; confirm each design (characters, edition, price not stated)"
+  },
+  {
+   "key": "shdr/2024/attraction-mickey-icon/tron-lightcycle-power-run",
+   "field": "pin_structure",
+   "searched": "DPB snippets; 2 queries",
+   "note": "hold: one attraction per pin inferred from a nine-name line-up for a nine-pin series; confirm each design (characters, edition, price not stated)"
+  },
+  {
+   "key": "shdr/2024/attraction-mickey-icon/jet-packs",
+   "field": "pin_structure",
+   "searched": "DPB snippets; 2 queries",
+   "note": "hold: one attraction per pin inferred from a nine-name line-up for a nine-pin series; confirm each design (characters, edition, price not stated)"
+  },
+  {
+   "key": "shdr/2024/attraction-mickey-icon",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "Stitch Encounter Attraction Mickey Icon pin seen only on reseller fryguypins; not recorded, membership unknown"
+  },
+  {
+   "key": "shdr/2024/attraction-mickey-icon",
+   "field": "edition_type",
+   "searched": "2 queries",
+   "note": "edition type and price not stated"
+  },
+  {
+   "key": "shdr/2024/mickey-and-friends-t-shirt",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); character list only: Mickey, Minnie, Donald, Goofy, Chip and Dale"
+  },
+  {
+   "key": "shdr/2024/mickey-and-friends-t-shirt",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "field note: page metadata age conflicts with an Oct 2024 date; confirm year"
+  },
+  {
+   "key": "shdr/2024/mickey-and-friends-t-shirt",
+   "field": "expected_pin_count",
+   "searched": "2 queries",
+   "note": "count, price, edition not stated"
+  },
+  {
+   "key": "shdr/2023/pin-trading-fun-day-2023",
+   "field": "pins",
+   "searched": "2 queries (EN, ZH)",
+   "note": "five individual LE 500 pins not named in snippets; not created"
+  },
+  {
+   "key": "tdr/2023/halloween-2023-ghost-pin-set",
+   "field": "pins",
+   "searched": "MezzoMiki per-design post; 1 query",
+   "note": "release evidence: tdr/2023/halloween-2023-ghost-pin-set - MezzoMiki goods post describes each of the 3 pins: fairy-costume ghost giving sweets, vampire ghost, masked/hatted ghost catching sweets"
+  },
+  {
+   "key": "tdr/2023/halloween-2023-ghost-pin-set/masquerade-ghost",
+   "field": "visual_description",
+   "searched": "1 query",
+   "note": "field note: an earlier summary named a mermaid ghost; MezzoMiki gives the mask/hat ghost as the third design"
+  },
+  {
+   "key": "tdr/2023/halloween-2023-history-mystery",
+   "field": "pins",
+   "searched": "MezzoMiki; 1 query",
+   "note": "8 designs still not individually named"
+  },
+  {
+   "key": "tdr/2023/40th-memory-go-round-framed-pin-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "which anniversary costumes the 5 pins show not stated; no members created; distinct from the ¥30,000 Dream-Go-Round framed set"
+  },
+  {
+   "key": "tdr/2024/park-souvenir-motif-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "12 designs still unnamed (official page gives only count and bag format)"
+  },
+  {
+   "key": "tdr/2023/duffy-from-all-of-us-pin-badge-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "other seven designs (incl. secret) still not named; urepia review title only"
+  },
+  {
+   "key": "shdr/2024/oe-set/character-alphabet-hinged",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "letters not listed by DPB; O for Olaf seen only on reseller fryguypins; not recorded"
+  },
+  {
+   "key": "shdr/2023/christmas-2023-train-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold unchanged: count and designs still not stated"
+  },
+  {
+   "key": "tdr/2023/happiness-everywhere-vol-3-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "12 designs still unnamed"
+  },
+  {
+   "key": "hkdl/2023/disney-plates-2023",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "plate designs still unnamed; T&C confirms 4 rounds x 2 designs, 5 Aug-29 Sep 2023 (already recorded)"
+  },
+  {
+   "key": "hkdl/2024/presale-packages",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: HKDL Jan-Mar 2024 and Oct-Dec 2024 LE pin pre-sale package T&C PDFs (Jan-Mar package HK$1,065); contents not in snippets"
+  },
+  {
+   "key": "tdr/2023/monorail",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "no 2023/2024 Disney Resort Line pin found on allowed sources"
+  },
+  {
+   "key": "hkdl/2024/december-2024",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "no Dec 2024 / Feb 2024 HKDL LE pin details found"
+  },
+  {
+   "key": "tdr/2024/halloween-2024-villains-mystery/dr-facilier",
+   "field": "pins",
+   "searched": "none",
+   "note": "hold unchanged (Facilier vs Queen of Hearts): no new evidence"
+  },
+  {
+   "key": "hkdl/2023/june-2023-estore/tiana-disney-dress-collection",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "hold unchanged (Tiana edition): May 2023 HKDL sheet gives HK$159 only"
+  },
+  {
+   "key": "hkdl/2023/pin-go-2023/mickey",
+   "field": "characters",
+   "searched": "none",
+   "note": "hold unchanged (PIN-GO Mickey): no new evidence"
+  },
+  {
+   "key": "tdr/2023/40th-dream-go-round-framed-pin-set",
+   "field": "pins",
+   "searched": "none",
+   "note": "hold unchanged (40th framed): no new evidence"
+  },
+  {
+   "key": "tdr/2024/40th-grand-finale-pin-set",
+   "field": "pins",
+   "searched": "none",
+   "note": "hold unchanged: no new evidence"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-peter-pans-never-land-pin-set/peter-pan",
+   "field": "pins",
+   "searched": "none",
+   "note": "hold unchanged (Never Land): no new evidence"
+  },
+  {
+   "key": "tdr/2024/fantasy-springs-hotel-pin-set",
+   "field": "pins",
+   "searched": "none",
+   "note": "hold unchanged: no new evidence"
+  },
+  {
+   "key": "shdr/2023/zootopia-grand-opening/framed-pin",
+   "field": "pin_structure",
+   "searched": "none",
+   "note": "hold unchanged: no new evidence"
+  },
+  {
+   "key": "tdr/2023/sakura-2023-pin-badge-set",
+   "field": "pins",
+   "searched": "none",
+   "note": "hold unchanged: no new evidence"
+  },
+  {
+   "key": "shdr/2024/oe-set/princess-silhouette/belle",
+   "field": "pin_structure",
+   "searched": "none",
+   "note": "hold unchanged (Princess Silhouette five): no per-pin evidence found"
+  },
+  {
+   "key": "shdr/2024/starter-sets-january-2024",
+   "field": "pins",
+   "searched": "none",
+   "note": "hold unchanged (starter sets five): no new evidence"
+  },
+  {
+   "key": "shdr/2023/hidden-mickey-2023/stellalou",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: known only from a Disney Pins Blog post title; design, edition and price not described (title-only)"
+  },
+  {
+   "key": "shdr/2023/hidden-mickey-2023/marie",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: known only from a Disney Pins Blog post title; design, edition and price not described (title-only)"
+  },
+  {
+   "key": "shdr/2023/hidden-mickey-2023/nick-wilde",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: known only from a Disney Pins Blog post title; design, edition and price not described (title-only)"
+  },
+  {
+   "key": "shdr/2024/hidden-mickey-2024/mickey-mouse",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: known only from a Disney Pins Blog post title; design, edition and price not described (title-only)"
+  },
+  {
+   "key": "shdr/2024/hidden-mickey-2024/minnie-mouse",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: known only from a Disney Pins Blog post title; design, edition and price not described (title-only)"
+  },
+  {
+   "key": "shdr/2024/hidden-mickey-2024/judy-hopps",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: known only from a Disney Pins Blog post title; design, edition and price not described (title-only)"
+  }
+ ],
+ "discovery_notes": "Search-snippet leads only; 27 standard searches. Follow-up 23 of B041. New: SHDR monthly Hidden Mickey pins 2023-2024 (StellaLou, Marie, Nick Wilde, Mickey, Minnie, Judy Hopps); SHDR Attraction Mickey Icon nine (Dec 2024, held: one-per-attraction inferred); SHDR Mickey & Friends T-shirt pins (Oct 2024, set only, structure hold); TDR 40th Memory-Go-Round framed 5-pin Mickey set (Jun 2023, members unnamed). Released hold on TDR Halloween 2023 ghost set with MezzoMiki per-design descriptions (three pins). Added claims to SHDR Fun Day 2023 and TDR Halloween history mystery sets."
+}

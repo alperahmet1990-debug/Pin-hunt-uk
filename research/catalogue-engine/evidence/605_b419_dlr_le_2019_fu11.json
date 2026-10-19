@@ -1,0 +1,1394 @@
+{
+ "packet_id": "605_b419_dlr_le_2019_fu11",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+   "title": "Tarzan 20th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-skeleton-dance-90th-anniversary-cast-member-pin/",
+   "title": "The Skeleton Dance 90th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+   "title": "UP 10th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/wonderful-world-of-color-65th-anniversary-cast-member-pin/",
+   "title": "Wonderful World of Color 65th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+   "title": "20,000 Leagues Under the Sea 65th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-resort-gingerbread-display-2019-pin-collection/",
+   "title": "Disney Resort Gingerbread Display 2019 Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+   "title": "Limited Edition Resort Exclusive Holiday Pins Revealed for Walt Disney World and Disneyland Resort",
+   "publisher": "WDW News Today",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.wdwinfo.com/news-stories/november-pin-releases-at-disneyland-and-walt-disney-world-will-focus-on-the-holidays/",
+   "title": "November Pin Releases at Disneyland and Walt Disney World Will Focus on the Holidays",
+   "publisher": "WDWInfo",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+   "title": "Disney Resorts Holiday 2019 Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-april-2019-week-4",
+   "title": "New Disney Pins April 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/matterhorn-60th-and-tarzan-20th-anniversary-wdi-pin-release/",
+   "title": "Matterhorn 60th and Tarzan 20th Anniversary WDI Pin Release",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/mickeys-of-glendale-anniversary-pin-releases-d23-expo-2019",
+   "title": "Mickey's of Glendale Anniversary Pin Releases - D23 Expo 2019",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/cast-member-movie-anniversary-pin/",
+   "title": "Cast Member Movie Anniversary Pin Archives",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-incredibles-15th-anniversary-cast-member-pin/",
+   "title": "The Incredibles 15th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/princess-and-the-frog-10th-anniversary-cast-member-pin",
+   "title": "Princess and the Frog 10th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2019/tarzan-20th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tarzan 20th Anniversary Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "one cast member pin per release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "cast member exclusive LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-07-10",
+     "source_url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DLR 10 Jul 2019; WDW 12 Jul 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/skeleton-dance-90th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "The Skeleton Dance 90th Anniversary Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/the-skeleton-dance-90th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/the-skeleton-dance-90th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "one cast member pin per release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/the-skeleton-dance-90th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/the-skeleton-dance-90th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "cast member exclusive LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-14",
+     "source_url": "https://disneypinsblog.com/the-skeleton-dance-90th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DLR 14 Aug 2019; WDW 16 Aug 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/up-10th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "UP 10th Anniversary Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "one cast member pin per release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "cast member exclusive LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "DLR 22 May 2019; WDW 24 May 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/wonderful-world-of-color-65th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Wonderful World of Color 65th Anniversary Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/wonderful-world-of-color-65th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/wonderful-world-of-color-65th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "one cast member pin per release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/wonderful-world-of-color-65th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/wonderful-world-of-color-65th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "cast member exclusive LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-23",
+     "source_url": "https://disneypinsblog.com/wonderful-world-of-color-65th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DLR 23 Oct 2019; WDW 25 Oct 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/20000-leagues-under-the-sea-65th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "20,000 Leagues Under the Sea 65th Anniversary Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "one cast member pin per release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "single pin release"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "cast member exclusive LE"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "DLR 6 Mar 2019; WDW 8 Mar 2019"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/resort-gingerbread-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Resort Gingerbread Display 2019 Pin Collection (Disneyland Resort hotels)",
+     "source_url": "https://disneypinsblog.com/disney-resort-gingerbread-display-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "DLR portion of the resort gingerbread series; WDW pins under wdw/2019/resort-gingerbread-2019"
+    },
+    {
+     "field": "format",
+     "value": "separate single pin releases",
+     "source_url": "https://disneypinsblog.com/disney-resort-gingerbread-display-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "one pin per resort/park gingerbread display, sold only at that location"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-resort-gingerbread-display-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE per location"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-16",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "Disneyland Hotel and Grand Californian pins 16 Nov 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort hotels",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "only available at the featured resort"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/resort-holiday-bells-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Resorts Holiday 2019 Pin Collection (Disneyland Resort hotel bells)",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "DLR portion of the resort holiday bells; WDW bells under wdw/2019/resort-holiday-bells-2019"
+    },
+    {
+     "field": "format",
+     "value": "separate single pin releases",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "holiday bell pins with character spinner, one per resort"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "all LE, sizes vary by pin"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "$17.99 per pin"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "DPB says from 11 Nov 2019; DPB update says resorts 7 Nov - date conflict"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2019/tarzan-20th-anniversary-cast-member/jane-and-tarzan",
+   "set_key": "wdw/2019/tarzan-20th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tarzan 20th Anniversary Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "cast member exclusive"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-07-10",
+     "source_url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DLR 10 Jul, WDW 12 Jul 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "2019 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World cast member stores (Team Centers / Company D)",
+     "source_url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DLR 10 Jul, WDW 12 Jul 2019"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "29th pin in the Cast Member movie anniversary collection"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tarzan",
+      "Jane"
+     ],
+     "source_url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Tarzan",
+     "source_url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "first named character"
+    },
+    {
+     "field": "visual_description",
+     "value": "pin-on-pin design with Jane and Tarzan",
+     "source_url": "https://disneypinsblog.com/tarzan-20th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "paraphrased from snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/skeleton-dance-90th-anniversary-cast-member/pin",
+   "set_key": "wdw/2019/skeleton-dance-90th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "The Skeleton Dance 90th Anniversary Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/the-skeleton-dance-90th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/the-skeleton-dance-90th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "cast member exclusive"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/the-skeleton-dance-90th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-14",
+     "source_url": "https://disneypinsblog.com/the-skeleton-dance-90th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DLR 14 Aug, WDW 16 Aug 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/the-skeleton-dance-90th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "2019 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World cast member stores (Team Centers / Company D)",
+     "source_url": "https://disneypinsblog.com/the-skeleton-dance-90th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DLR 14 Aug, WDW 16 Aug 2019"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/the-skeleton-dance-90th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "30th pin in the Cast Member movie anniversary collection"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/up-10th-anniversary-cast-member/pin",
+   "set_key": "wdw/2019/up-10th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "UP 10th Anniversary Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "cast member exclusive"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "DLR 22 May, WDW 24 May 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "2019 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World cast member stores (Team Centers / Company D)",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "DLR 22 May, WDW 24 May 2019"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "26th pin in the Cast Member movie anniversary collection"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Carl Fredricksen",
+      "Russell",
+      "Dug",
+      "Kevin"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "characters named in snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Carl Fredricksen",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "first named character"
+    },
+    {
+     "field": "visual_description",
+     "value": "hinged pin; Kevin, Russell, Dug and Carl shown inside",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "paraphrased from snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/wonderful-world-of-color-65th-anniversary-cast-member/pin",
+   "set_key": "wdw/2019/wonderful-world-of-color-65th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Wonderful World of Color 65th Anniversary Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/wonderful-world-of-color-65th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/wonderful-world-of-color-65th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "cast member exclusive"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/wonderful-world-of-color-65th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-23",
+     "source_url": "https://disneypinsblog.com/wonderful-world-of-color-65th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DLR 23 Oct, WDW 25 Oct 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/wonderful-world-of-color-65th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "2019 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World cast member stores (Team Centers / Company D)",
+     "source_url": "https://disneypinsblog.com/wonderful-world-of-color-65th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "DLR 23 Oct, WDW 25 Oct 2019"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/wonderful-world-of-color-65th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "32nd pin in the Cast Member movie anniversary collection"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/20000-leagues-under-the-sea-65th-anniversary-cast-member/pin",
+   "set_key": "wdw/2019/20000-leagues-under-the-sea-65th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "20,000 Leagues Under the Sea 65th Anniversary Cast Member Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "cast member exclusive"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "DLR 6 Mar, WDW 8 Mar 2019 (Company D)"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "2019 release"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World cast member stores (Team Centers / Company D)",
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "DLR 6 Mar, WDW 8 Mar 2019 (Company D)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "25th pin in the Cast Member movie anniversary collection"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/resort-gingerbread-2019/disneyland-hotel-ralph-and-vanellope",
+   "set_key": "dlr/2019/resort-gingerbread-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Gingerbread 2019 - Disneyland Hotel",
+     "source_url": "https://disneypinsblog.com/disney-resort-gingerbread-display-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "DPB gingerbread collection entry"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ralph",
+      "Vanellope von Schweetz"
+     ],
+     "source_url": "https://disneypinsblog.com/disney-resort-gingerbread-display-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "features Ralph and Vanellope"
+    },
+    {
+     "field": "main_character",
+     "value": "Ralph",
+     "source_url": "https://disneypinsblog.com/disney-resort-gingerbread-display-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "Ralph and Vanellope"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disney-resort-gingerbread-display-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "single pin showing both characters"
+    },
+    {
+     "field": "visual_description",
+     "value": "Ralph and Vanellope decorating the Disneyland Hotel gingerbread house",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-resort-gingerbread-display-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "1,000 pins; DPB also LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/disney-resort-gingerbread-display-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-resort-gingerbread-display-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "$"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-16",
+     "source_url": "https://disneypinsblog.com/disney-resort-gingerbread-display-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "available 16 Nov 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/disney-resort-gingerbread-display-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Hotel",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "only at the featured resort"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/resort-gingerbread-2019/grand-californian-chip-and-dale",
+   "set_key": "dlr/2019/resort-gingerbread-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Gingerbread 2019 - Disney's Grand Californian Hotel & Spa",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "resort gingerbread pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "featuring Chip and Dale"
+    },
+    {
+     "field": "main_character",
+     "value": "Chip",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "Chip and Dale"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "single pin showing both characters"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "1,000 pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "1,000 pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-16",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "16 Nov 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Grand Californian Hotel & Spa",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "only at the featured resort"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/resort-holiday-bells-2019/disneyland-hotel",
+   "set_key": "dlr/2019/resort-holiday-bells-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland Hotel 2019 Holiday Pin",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "title in DPB resort holiday 2019 list"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "all resort bells LE, sizes vary"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "$17.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "$"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Hotel",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "each bell only at its own location"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "bell pin with character spinner element"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/resort-holiday-bells-2019/grand-californian-hotel",
+   "set_key": "dlr/2019/resort-holiday-bells-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Grand Californian Hotel 2019 Holiday Pin",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "title in DPB resort holiday 2019 list"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "all resort bells LE, sizes vary"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "$17.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "$"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Grand Californian Hotel & Spa",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "each bell only at its own location"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "bell pin with character spinner element"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/resort-holiday-bells-2019/paradise-pier-hotel",
+   "set_key": "dlr/2019/resort-holiday-bells-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Paradise Pier Hotel 2019 Holiday Pin",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "title in DPB resort holiday 2019 list"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "all resort bells LE, sizes vary"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "$17.99 per pin"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "$"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Paradise Pier Hotel",
+     "source_url": "https://wdwnt.com/2019/10/exclusive-gingerbread-and-holiday-bell-resort-2019-limited-edition-pins-revealed/",
+     "method": "search_snippet",
+     "note": "each bell only at its own location"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "bell pin with character spinner element"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlr/2019/tarzan-20th-anniversary-cast-member/jane-and-tarzan",
+   "field": "variant",
+   "searched": "DPB Tarzan CM post",
+   "note": "variant: same pin as wdw/2019/tarzan-20th-anniversary-cast-member/jane-and-tarzan (shared DLR 10 Jul / WDW 12 Jul)"
+  },
+  {
+   "key": "dlr/2019/skeleton-dance-90th-anniversary-cast-member/pin",
+   "field": "variant",
+   "searched": "DPB Skeleton Dance CM post",
+   "note": "variant: same pin as wdw/2019/skeleton-dance-90th-anniversary-cast-member/pin (DLR 14 Aug / WDW 16 Aug)"
+  },
+  {
+   "key": "dlr/2019/up-10th-anniversary-cast-member/pin",
+   "field": "variant",
+   "searched": "DPB UP CM post",
+   "note": "variant: same pin as wdw/2019/up-10th-anniversary-cast-member/pin (DLR 22 May / WDW 24 May); not the DLR Up PTN pins"
+  },
+  {
+   "key": "dlr/2019/wonderful-world-of-color-65th-anniversary-cast-member/pin",
+   "field": "variant",
+   "searched": "DPB WWoC CM post",
+   "note": "variant: same pin as wdw/2019/wonderful-world-of-color-65th-anniversary-cast-member/pin (DLR 23 Oct / WDW 25 Oct)"
+  },
+  {
+   "key": "dlr/2019/20000-leagues-under-the-sea-65th-anniversary-cast-member/pin",
+   "field": "variant",
+   "searched": "DPB 20,000 Leagues CM post",
+   "note": "variant: same pin as wdw/2019/20000-leagues-under-the-sea-65th-anniversary-cast-member/pin (DLR 6 Mar / WDW 8 Mar)"
+  },
+  {
+   "key": "dlr/2019/incredibles-15th-anniversary-cast-member/pin",
+   "field": "variant",
+   "searched": "DPB Incredibles CM post (search summary)",
+   "note": "variant: same pin as wdw/2019/incredibles-15th-anniversary-cast-member/pin; DLR CM release 6 Nov 2019 (WDW 8 Nov)"
+  },
+  {
+   "key": "dlr/2019/princess-and-the-frog-10th-anniversary-cast-member/pin",
+   "field": "variant",
+   "searched": "DPB PatF CM post (search summary)",
+   "note": "variant: same pin as wdw/2019/princess-and-the-frog-10th-anniversary-cast-member/pin; LE 800, DLR 11 Dec 2019 (WDW 13 Dec)"
+  },
+  {
+   "key": "dlr/2019/fine-and-dandy-2019/mary-poppins",
+   "field": "variant",
+   "searched": "DPB Apr 2019 wk4",
+   "note": "variant: same pin as wdw/2019/fine-and-dandy-2019/mary-poppins; spring Dapper Day Mary Poppins pin LE 3,500 released at Disneyland first, then WDW"
+  },
+  {
+   "key": "wdw/2019/skeleton-dance-90th-anniversary-cast-member/pin",
+   "field": "characters",
+   "searched": "DPB post (search summaries)",
+   "note": "characters / design not stated in snippets"
+  },
+  {
+   "key": "wdw/2019/wonderful-world-of-color-65th-anniversary-cast-member/pin",
+   "field": "characters",
+   "searched": "DPB post (search summaries)",
+   "note": "characters / design not stated in snippets"
+  },
+  {
+   "key": "wdw/2019/20000-leagues-under-the-sea-65th-anniversary-cast-member/pin",
+   "field": "characters",
+   "searched": "DPB post (search summaries)",
+   "note": "characters / design not stated in snippets"
+  },
+  {
+   "key": "wdw/2019/tarzan-20th-anniversary-cast-member/jane-and-tarzan",
+   "field": "original_price",
+   "searched": "DPB post (search summaries)",
+   "note": "price not stated (cast member store)"
+  },
+  {
+   "key": "wdw/2019/up-10th-anniversary-cast-member/pin",
+   "field": "original_price",
+   "searched": "DPB post (search summaries)",
+   "note": "price not stated (cast member store)"
+  },
+  {
+   "key": "wdw/2019/up-10th-anniversary-cast-member/pin",
+   "field": "release_date",
+   "searched": "DPB UP CM post",
+   "note": "field note: one version of the page shows only the WDW date; full article lists DLR 22 May and WDW 24 May"
+  },
+  {
+   "key": "wdw/2019/20000-leagues-under-the-sea-65th-anniversary-cast-member/pin",
+   "field": "release_date",
+   "searched": "DPB CM archive",
+   "note": "field note: archive post date 24 Jan 2019 conflicts with stated 6/8 Mar 2019 releases; release date taken from article"
+  },
+  {
+   "key": "wdw/2019/cast-member-movie-anniversary-2019",
+   "field": "leads",
+   "searched": "DPB CM movie anniversary tag",
+   "note": "lead: Mary Poppins 55th Anniversary Cast Member pin (c. Jun 2019) seen only as an archive title - not keyed (title-only); collection #27, #28, #31 and 2019 #22-#24 still unidentified"
+  },
+  {
+   "key": "dlr/2019/resort-gingerbread-2019/grand-californian-chip-and-dale",
+   "field": "original_price",
+   "searched": "WDWNT/WDWInfo summaries",
+   "note": "price not stated for this pin (DLH sister pin $17.99)"
+  },
+  {
+   "key": "dlr/2019/resort-holiday-bells-2019/disneyland-hotel",
+   "field": "pin_structure",
+   "searched": "DPB resorts holiday 2019 / WDWNT",
+   "note": "hold: title-only listing - characters and edition size not stated; confirm design before release"
+  },
+  {
+   "key": "dlr/2019/resort-holiday-bells-2019/grand-californian-hotel",
+   "field": "pin_structure",
+   "searched": "DPB resorts holiday 2019 / WDWNT",
+   "note": "hold: title-only listing - characters and edition size not stated; confirm design before release"
+  },
+  {
+   "key": "dlr/2019/resort-holiday-bells-2019/paradise-pier-hotel",
+   "field": "pin_structure",
+   "searched": "DPB resorts holiday 2019 / WDWNT",
+   "note": "hold: title-only listing - characters and edition size not stated; confirm design before release"
+  },
+  {
+   "key": "dlr/2019/resort-holiday-bells-2019",
+   "field": "release_date",
+   "searched": "DPB / WDWNT",
+   "note": "field note: 7 Nov (DPB update, resorts) vs 11 Nov 2019 (WDWNT/DPB) - DLR date unconfirmed"
+  },
+  {
+   "key": "dlr/2019/le-leads-9",
+   "field": "scope",
+   "searched": "DPB WDI release / Mickey's of Glendale D23 post",
+   "note": "scope: WDI 60th Matterhorn/Monorail/Submarine jumbo LE 200 $74.95 (cast in-store 20 Jun 2019) and WDI Tarzan 20th jumbo LE 250 $69.95 plus four Tarzan book pins are Mickey's of Glendale cast-store releases, not DLR park; a D23 listing gives Matterhorn/Monorail/Subs LE 250 $69.95 (conflict) - leave for a WDI/cast-store cell"
+  },
+  {
+   "key": "dlr/2019/le-leads-9",
+   "field": "leads",
+   "searched": "DPB Happy New Year 2019 jumbo",
+   "note": "lead: Mickey and Minnie Happy New Year 2019 jumbo is a shopDisney LE 1,200 $12.95 released 5 Dec 2018 - dsus 2018 cell, not DLR 2019"
+  },
+  {
+   "key": "dlr/2019/le-leads-9",
+   "field": "leads",
+   "searched": "DPB Jul 2019 roundups",
+   "note": "lead: Disney Studio Store Hollywood July 2019 pins (El Capitan store) - dsus/lic scope, not DLR park"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-club-33",
+   "field": "pin designs",
+   "searched": "DPB Club 33 posts",
+   "note": "#2 (12 Jul), #4 (23 Aug), #5 (13 Sep) designs still not in snippets; #3 Constance and #6 Hitchhiking Ghosts confirmed only"
+  },
+  {
+   "key": "dlr/2019/tape-series",
+   "field": "members",
+   "searched": "general search",
+   "note": "#2-#4 still not found; search returned only 2022 shopDisney VHS series (unrelated)"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-countdown/at-at",
+   "field": "series number",
+   "searched": "DPB Apr 2019 wk4 / preview",
+   "note": "LE 3,000, 25 Apr 2019 reconfirmed; still not stated as #1"
+  },
+  {
+   "key": "wdw/2019/mickey-91st-birthday/happy-birthday-mickey",
+   "field": "release_location",
+   "searched": "MickeyBlog 18 Nov 2019",
+   "note": "Disneyland distribution still not confirmed (MickeyBlog author picked up at Magic Kingdom)"
+  },
+  {
+   "key": "dlr/2019/tis-the-season-advent",
+   "field": "pin structure",
+   "searched": "DPB advent post",
+   "note": "hold: kept - snippet says each pin fits into one of four window scenes; window pins still not individually described"
+  },
+  {
+   "key": "dlr/2019/medieval-magic/donald-duck",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/medieval-magic/goofy",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/medieval-magic-disney-dragons-mystery",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "wdw/2019/worlds-biggest-mouse-party-surprise",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/i-heart-gaming/ducktales",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/i-heart-gaming/the-lion-king",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/holiday-2019/mele-kalikimaka",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-july-release",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-monthly/first-order-reconnaissance-kylo-ren",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-oval-plaque-boxed-set",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-framed-set",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-mystery",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-holiday-2019-mystery",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-silhouette-mystery",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/oogie-boogie-bash",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/windows-of-magic/aurora",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/windows-of-magic/black-cauldron",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/festival-of-holidays/feliz-navidad",
+   "field": "hold",
+   "searched": "this pass",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/medieval-magic",
+   "field": "gap",
+   "searched": "this pass",
+   "note": "full collection count / Prince and the Pauper, Sword in the Stone, Brave Little Tailor members not re-found this pass"
+  },
+  {
+   "key": "dlr/2019/windows-of-magic",
+   "field": "gap",
+   "searched": "this pass",
+   "note": "#8 and #11 still unnamed"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-monthly/droid-badge-2-1b",
+   "field": "gap",
+   "searched": "this pass",
+   "note": "edition still not found"
+  },
+  {
+   "key": "dlr/2019/dca-food-wine-festival-2019",
+   "field": "gap",
+   "searched": "this pass",
+   "note": "per-pin mapping still open"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-retirement-unliving/doom-buggy-slider",
+   "field": "gap",
+   "searched": "this pass",
+   "note": "sale day still not stated"
+  },
+  {
+   "key": "dsus/2019/d23-expo-2019-dream-store",
+   "field": "gap",
+   "searched": "this pass",
+   "note": "lead kept for D23/dsus cell; not re-searched"
+  }
+ ],
+ "discovery_notes": "B419 follow-up 11 of B004 (DLR LE 2019). 26 standard searches. New: five 2019 Cast Member movie anniversary pins released at DLR and WDW (20,000 Leagues 65th, UP 10th, Tarzan 20th, Skeleton Dance 90th, Wonderful World of Color 65th) keyed under wdw with dlr variant notes; DLR resort gingerbread pins (Disneyland Hotel Ralph & Vanellope, Grand Californian Chip & Dale, LE 1,000, 16 Nov 2019); three DLR hotel holiday bells recorded but held (title-only). WDI/Mickey's of Glendale pins resolved as cast-store scope leads. No holds released."
+}

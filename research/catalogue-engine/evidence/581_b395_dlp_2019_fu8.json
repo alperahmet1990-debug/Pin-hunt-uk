@@ -1,0 +1,1437 @@
+{
+ "packet_id": "b395-dlp-2019-fu8-2026-10-19",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+   "title": "Die Pin-Neuerscheinungen im August 2019",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-08"
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+   "title": "Die Pin-Neuerscheinungen im August 2019 (blog URL)",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-08"
+  },
+  {
+   "url": "https://phantommanorlegends.wordpress.com/archives-merchandising/",
+   "title": "Archives Merchandising",
+   "publisher": "Phantom Manor Legends (fan blog)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc031.php",
+   "title": "passiondlp : Archives Disneyland Paris 2019 trimestre 1",
+   "publisher": "passiondlp",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019"
+  },
+  {
+   "url": "https://mypincentral.com/pin/146385",
+   "title": "MyPinCentral pin 146385",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disneyland-paris-the-lion-king-limited-edition-pin-207821018098.html",
+   "title": "Disneyland Paris The Lion King Limited Edition Pin",
+   "publisher": "Disney Store EU (official)",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "title": "Pin Trading à Disneyland Paris : la sélection de pin's du mois",
+   "publisher": "Disneyphile",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneypinforum.com/threads/2019-pin-releases.67216/page-98",
+   "title": "2019 pin releases (page 98)",
+   "publisher": "Disney Pin Forum",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-08"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-august-2019-pins",
+   "title": "Disneyland Paris August 2019 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-08"
+  },
+  {
+   "url": "https://disneypinsblog.com/christmas-time-2019-disneyland-paris-event-pin-releases/",
+   "title": "Christmas Time 2019 Disneyland Paris Event Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-11"
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-november-2019/",
+   "title": "Die Pin-Neuerscheinungen im November 2019 für Disneyland Paris",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2019-11"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2019/august-2019-le-250",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "August 2019 limited 250 pins (24 Aug)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "dein-dlrp Aug page: two limited pins on 24 Aug"
+    },
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "two separately listed pins, each with its own line item and price"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "two line items: Zauberer-Mickey and Tinkerbell"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "each limited to 250"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-24",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "listed under 24 August"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "sold at Pueblo Trading Post"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/oe-single/stitch-phantom-manor-january-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch Phantom Manor open edition pin (5 Jan 2019)",
+     "source_url": "https://phantommanorlegends.wordpress.com/archives-merchandising/",
+     "method": "search_snippet",
+     "note": "quoted archive line: 5 Janvier 2019, pins oe Stitch Phantom Manor 9,99 e"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://phantommanorlegends.wordpress.com/archives-merchandising/",
+     "method": "search_snippet",
+     "note": "one design named"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/oe-set/august-3-2019-christmas-oe",
+   "claims": [
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "four separately listed singles, each 7.99"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "four line items"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "3 Aug"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/rendez-vous-gourmand-2019",
+   "claims": [
+    {
+     "field": "format",
+     "value": "separate pins",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "three pins, LE 500 each, each a character pair"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2019/lion-king-jumbo",
+   "claims": [
+    {
+     "field": "family",
+     "value": "Les Trésors de Disneyland Paris",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-the-lion-king-limited-edition-pin-207821018098.html",
+     "method": "search_snippet",
+     "note": "official Disney Store EU listing calls the Lion King LE pin part of the Les Trésors de Disneyland Paris collection"
+    },
+    {
+     "field": "format",
+     "value": "single jumbo pin",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-the-lion-king-limited-edition-pin-207821018098.html",
+     "method": "search_snippet",
+     "note": "one LE pin"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://www.disneystore.eu/disneyland-paris-the-lion-king-limited-edition-pin-207821018098.html",
+     "method": "search_snippet",
+     "note": "LE 400"
+    },
+    {
+     "field": "price",
+     "value": 89.0,
+     "source_url": "https://www.disneystore.eu/disneyland-paris-the-lion-king-limited-edition-pin-207821018098.html",
+     "method": "search_snippet",
+     "note": "89.00 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-the-lion-king-limited-edition-pin-207821018098.html",
+     "method": "search_snippet",
+     "note": "euro"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2019/august-2019-le-250/sorcerer-mickey",
+   "set_key": "dlp/2019/august-2019-le-250",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Sorcerer Mickey (Zauberer-Mickey) LE 250",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "quoted line item 'Pin Zauberer-Mickey', LE 250, 19.99 EUR"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "character named in line item"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "only character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "one line item per pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "limitiert"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "250 pieces"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "19.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-24",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "24 Aug section"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "2019 page"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "Pueblo Trading Post"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey dressed as a sorcerer/wizard",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "article describes Mickey as a wizard"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/august-2019-le-250/tinker-bell",
+   "set_key": "dlp/2019/august-2019-le-250",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tinker Bell (Tinkerbell) LE 250",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "quoted line item 'Pin Tinkerbell', LE 250, 19.99 EUR"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "character named in line item"
+    },
+    {
+     "field": "main_character",
+     "value": "Tinker Bell",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "only character named"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "one line item per pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "limitiert"
+    },
+    {
+     "field": "edition_size",
+     "value": 250,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "250 pieces"
+    },
+    {
+     "field": "original_price",
+     "value": 19.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "19.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-24",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "24 Aug section"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "2019 page"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "Pueblo Trading Post"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/worlds-best-friends-2019/chip-and-dale",
+   "set_key": "dlp/2019/worlds-best-friends-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "World's Best Friends Chip & Chap",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "dein-dlrp Aug: limited 'World's Best Friends' Chip und Chap pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "German names Chip und Chap"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "one Best Friends pin showing the pair; one line item"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "limitiert"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "700 pieces"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "15.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "August 2019 page; quick list places it before 31 Aug section"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "Pueblo only, Lineberty reservation"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/carrousel-2019/snow-white",
+   "set_key": "dlp/2019/carrousel-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Carrousel Snow White",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "dein-dlrp Aug: limited carousel pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "Snow White"
+    },
+    {
+     "field": "main_character",
+     "value": "Snow White",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "only character"
+    },
+    {
+     "field": "visual_description",
+     "value": "Snow White riding a carousel horse",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin description"
+    },
+    {
+     "field": "visual_form",
+     "value": "carrousel",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "carousel series"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "single line item"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "limitiert"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "700 pieces"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "15.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "August 2019 page"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "https://www.dein-dlrp.de/disneyland-resort-paris-blog/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "Pueblo only"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Snow White"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disneyland-paris-august-2019-pins",
+     "method": "search_snippet",
+     "note": "DPB Aug 2019 DLP summary: month features Christmas, Snow White, Stitch"
+    },
+    {
+     "field": "visual_form",
+     "value": "carrousel",
+     "source_url": "https://www.disneypinforum.com/threads/2019-pin-releases.67216/page-98",
+     "method": "search_snippet",
+     "note": "forum post on the DLP August poster mentions a Snow White carousel pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/oe/stitch-phantom-manor-january-2019",
+   "set_key": "dlp/2019/oe-single/stitch-phantom-manor-january-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Phantom Manor",
+     "source_url": "https://phantommanorlegends.wordpress.com/archives-merchandising/",
+     "method": "search_snippet",
+     "note": "quoted: 'Pins oe Stitch Phantom Manor'"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://phantommanorlegends.wordpress.com/archives-merchandising/",
+     "method": "search_snippet",
+     "note": "Stitch named"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://phantommanorlegends.wordpress.com/archives-merchandising/",
+     "method": "search_snippet",
+     "note": "only character"
+    },
+    {
+     "field": "attraction",
+     "value": "Phantom Manor",
+     "source_url": "https://phantommanorlegends.wordpress.com/archives-merchandising/",
+     "method": "search_snippet",
+     "note": "named in line"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://phantommanorlegends.wordpress.com/archives-merchandising/",
+     "method": "search_snippet",
+     "note": "'oe'"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://phantommanorlegends.wordpress.com/archives-merchandising/",
+     "method": "search_snippet",
+     "note": "quoted 9,99 e"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://phantommanorlegends.wordpress.com/archives-merchandising/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-01-05",
+     "source_url": "https://phantommanorlegends.wordpress.com/archives-merchandising/",
+     "method": "search_snippet",
+     "note": "quoted: 5 Janvier 2019"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://phantommanorlegends.wordpress.com/archives-merchandising/",
+     "method": "search_snippet",
+     "note": "2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://phantommanorlegends.wordpress.com/archives-merchandising/",
+     "method": "search_snippet",
+     "note": "DLP merchandising archive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/cast-member-2019/dalmatian-christmas",
+   "set_key": "dlp/2019/cast-member-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cast Member Exclusive 'Dalmatien Noël'",
+     "source_url": "http://www.passiondlp.com/actus/arc031.php",
+     "method": "search_snippet",
+     "note": "Q1 2019 archive: re-issue of the CM Exclusive Dalmatien Noël pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dalmatian puppy"
+     ],
+     "source_url": "http://www.passiondlp.com/actus/arc031.php",
+     "method": "search_snippet",
+     "note": "name says Dalmatian (Christmas); specific dog not named"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "http://www.passiondlp.com/actus/arc031.php",
+     "method": "search_snippet",
+     "note": "3019 copies"
+    },
+    {
+     "field": "edition_size",
+     "value": 3019,
+     "source_url": "http://www.passiondlp.com/actus/arc031.php",
+     "method": "search_snippet",
+     "note": "3019 exemplaires"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "http://www.passiondlp.com/actus/arc031.php",
+     "method": "search_snippet",
+     "note": "re-issued in Q1 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris (Cast Member exclusive)",
+     "source_url": "http://www.passiondlp.com/actus/arc031.php",
+     "method": "search_snippet",
+     "note": "Cast Member Exclusive"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/christmas-time-2019/snow-white-seven-dwarfs-old-hag",
+   "set_key": "dlp/2019/christmas-time-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Christmas Time Event Series - Snow White and the Seven Dwarfs",
+     "source_url": "https://mypincentral.com/pin/146385",
+     "method": "search_snippet",
+     "note": "MyPinCentral: DLP 2019 pin in the Christmas Time Event Series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Snow White",
+      "Bashful",
+      "Doc",
+      "Dopey",
+      "Grumpy",
+      "Happy",
+      "Sleepy",
+      "Sneezy",
+      "Old Hag"
+     ],
+     "source_url": "https://mypincentral.com/pin/146385",
+     "method": "search_snippet",
+     "note": "all named as featured on this pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Snow White",
+     "source_url": "https://mypincentral.com/pin/146385",
+     "method": "search_snippet",
+     "note": "listed first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/146385",
+     "method": "search_snippet",
+     "note": "'featured on this pin' - one pin with all characters"
+    },
+    {
+     "field": "visual_colours",
+     "value": [
+      "yellow",
+      "orange"
+     ],
+     "source_url": "https://mypincentral.com/pin/146385",
+     "method": "search_snippet",
+     "note": "yellow text on orange background"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/146385",
+     "method": "search_snippet",
+     "note": "listing says limited edition"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://mypincentral.com/pin/146385",
+     "method": "search_snippet",
+     "note": "released 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://mypincentral.com/pin/146385",
+     "method": "search_snippet",
+     "note": "Disneyland Paris"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/oe/tinker-bell-christmas-august-2019",
+   "set_key": "dlp/2019/oe-set/august-3-2019-christmas-oe",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tinkerbell Weihnachten",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "quoted line item 'Pin Tinkerbell Weihnachten'"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tinker Bell"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "named in line item"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "one quoted line item per pin; four separate line items on 3 Aug"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "7.99 EUR each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "3 Aug section"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/oe/lumiere-christmas-august-2019",
+   "set_key": "dlp/2019/oe-set/august-3-2019-christmas-oe",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lumiere Weihnachten",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "quoted line item 'Pin Lumiere Weihnachten'"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lumière"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "named in line item"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "one quoted line item per pin; four separate line items on 3 Aug"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "7.99 EUR each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "3 Aug section"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/oe/herr-von-unruh-christmas-august-2019",
+   "set_key": "dlp/2019/oe-set/august-3-2019-christmas-oe",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Herr von Unruh Weihnachten",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "quoted line item 'Pin Herr von Unruh Weihnachten'"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Herr von Unruh"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "named in line item"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "one quoted line item per pin; four separate line items on 3 Aug"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "7.99 EUR each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "3 Aug section"
+    },
+    {
+     "field": "visual_description",
+     "value": "wearing a Christmas hat, looking grumpy",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "paraphrase of article description"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/oe/mickey-and-minnie-christmas-august-2019",
+   "set_key": "dlp/2019/oe-set/august-3-2019-christmas-oe",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey und Minnie Weihnachten",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "quoted line item 'Pin Mickey und Minnie Weihnachten'"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse",
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "named in line item"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "one quoted line item per pin; four separate line items on 3 Aug"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "7.99 EUR each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/die-pin-neuerscheinungen-im-august-2019/",
+     "method": "search_snippet",
+     "note": "3 Aug section"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/rendez-vous-gourmand-2019/dumbo",
+   "set_key": "dlp/2019/rendez-vous-gourmand-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo",
+      "Timothée"
+     ],
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Disneyphile names each of the three pins by a character pair"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dumbo with Timothée (Timothy Q. Mouse) on one pin",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin design name"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "each named design is one pin showing its pair; the three pins are separate from each other"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/rendez-vous-gourmand-2019/chip-and-dale",
+   "set_key": "dlp/2019/rendez-vous-gourmand-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Tic",
+      "Tac"
+     ],
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Disneyphile names each of the three pins by a character pair"
+    },
+    {
+     "field": "visual_description",
+     "value": "Tic & Tac (Chip and Dale) together on one pin",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin design name"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "each named design is one pin showing its pair; the three pins are separate from each other"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2019/rendez-vous-gourmand-2019/alice",
+   "set_key": "dlp/2019/rendez-vous-gourmand-2019",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mad Hatter",
+      "Dormouse"
+     ],
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Disneyphile names each of the three pins by a character pair"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mad Hatter with the Dormouse in the teapot on one pin",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "paraphrase of per-pin design name"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "each named design is one pin showing its pair; the three pins are separate from each other"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2019/august-2019-le-250/sorcerer-mickey",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "field note: single source (dein-dlrp Aug, line items via search summary); WDWNT/DPB Aug pages do not mention a 24 Aug LE 250 pair"
+  },
+  {
+   "key": "dlp/2019/august-2019-le-250/sorcerer-mickey",
+   "field": "product_code",
+   "searched": "2 queries",
+   "note": "not found"
+  },
+  {
+   "key": "dlp/2019/august-2019-le-250/tinker-bell",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "field note: single source (dein-dlrp Aug, line items via search summary); WDWNT/DPB Aug pages do not mention a 24 Aug LE 250 pair"
+  },
+  {
+   "key": "dlp/2019/august-2019-le-250/tinker-bell",
+   "field": "product_code",
+   "searched": "2 queries",
+   "note": "not found"
+  },
+  {
+   "key": "dlp/2019/august-2019-le-250/tinker-bell",
+   "field": "visual_description",
+   "searched": "see discovery_notes",
+   "note": "not described; distinct from the 21 Aug Tinker Bell medallion LE 150 (medallion-august-2019/tinker-bell)"
+  },
+  {
+   "key": "dlp/2019/worlds-best-friends-2019/chip-and-dale",
+   "field": "release_date",
+   "searched": "see discovery_notes",
+   "note": "field note: summary says body text reads '17. Juli' while quick list implies 17 Aug; day not claimed"
+  },
+  {
+   "key": "dlp/2019/worlds-best-friends-2019/chip-and-dale",
+   "field": "visual_description",
+   "searched": "see discovery_notes",
+   "note": "not described beyond Best Friends series; an unlimited Chip & Chap pin (7.99) also listed that month - not recorded, details unclear"
+  },
+  {
+   "key": "dlp/2019/carrousel-2019/snow-white",
+   "field": "release_date",
+   "searched": "see discovery_notes",
+   "note": "field note: 17 Aug inferred only from quick-list order (body text says 17 Jul); day not claimed"
+  },
+  {
+   "key": "dlp/2019/oe/stitch-phantom-manor-january-2019",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "field note: French 'pins' can be singular; could be more than one Stitch design - not established; may relate to the 5 Jan Stitch poster error noted by passiondlp"
+  },
+  {
+   "key": "dlp/2019/oe/stitch-phantom-manor-january-2019",
+   "field": "visual_description",
+   "searched": "see discovery_notes",
+   "note": "design not described"
+  },
+  {
+   "key": "dlp/2019/cast-member-2019/dalmatian-christmas",
+   "field": "release_date",
+   "searched": "see discovery_notes",
+   "note": "field note: earlier sale halted because every pin was numbered 1; original sale date (possibly late 2018) and re-issue day not given"
+  },
+  {
+   "key": "dlp/2019/cast-member-2019/dalmatian-christmas",
+   "field": "visual_description",
+   "searched": "see discovery_notes",
+   "note": "design not described"
+  },
+  {
+   "key": "dlp/2019/christmas-time-2019/snow-white-seven-dwarfs-old-hag",
+   "field": "edition_size",
+   "searched": "see discovery_notes",
+   "note": "field note: MPC gives no size; event pins were LE 425 (DPB/passiondlp), but DPB post also has non-event Christmas pins - 425 not claimed for this pin"
+  },
+  {
+   "key": "dlp/2019/christmas-time-2019/snow-white-seven-dwarfs-old-hag",
+   "field": "release_date",
+   "searched": "see discovery_notes",
+   "note": "not stated by MPC; 9 Nov 2019 event date not claimed for this pin"
+  },
+  {
+   "key": "dlp/2019/christmas-time-2019",
+   "field": "pins",
+   "searched": "see discovery_notes",
+   "note": "partly addressed: one event-series pin named (Snow White/Dwarfs/Old Hag, MyPinCentral); remaining 9 Nov LE 425 designs still unnamed"
+  },
+  {
+   "key": "dlp/2019/oe/tinker-bell-christmas-august-2019",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "release evidence: dein-dlrp Aug line item now quoted ('Pin Tinkerbell Weihnachten', unlimitiert, 7,99€); four separate line items; maintainer may release"
+  },
+  {
+   "key": "dlp/2019/oe/lumiere-christmas-august-2019",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "release evidence: dein-dlrp Aug line item now quoted ('Pin Lumiere Weihnachten', unlimitiert, 7,99€); four separate line items; maintainer may release"
+  },
+  {
+   "key": "dlp/2019/oe/herr-von-unruh-christmas-august-2019",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "release evidence: dein-dlrp Aug line item now quoted ('Pin Herr von Unruh Weihnachten', unlimitiert, 7,99€); four separate line items; maintainer may release"
+  },
+  {
+   "key": "dlp/2019/oe/mickey-and-minnie-christmas-august-2019",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "release evidence: dein-dlrp Aug line item now quoted ('Pin Mickey und Minnie Weihnachten', unlimitiert, 7,99€); four separate line items; maintainer may release"
+  },
+  {
+   "key": "dlp/2019/oe/mickey-and-minnie-christmas-august-2019",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "field note: one line item names Mickey und Minnie - treated as one pin with both characters, not two pins"
+  },
+  {
+   "key": "dlp/2019/rendez-vous-gourmand-2019/dumbo",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "field note: earlier 'separate pins' claim (packet 570) meant the three designs are separate pins, not that this pair is split; this record is one pin showing both characters"
+  },
+  {
+   "key": "dlp/2019/rendez-vous-gourmand-2019/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "field note: earlier 'separate pins' claim (packet 570) meant the three designs are separate pins, not that this pair is split; this record is one pin showing both characters"
+  },
+  {
+   "key": "dlp/2019/rendez-vous-gourmand-2019/alice",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "field note: earlier 'separate pins' claim (packet 570) meant the three designs are separate pins, not that this pair is split; this record is one pin showing both characters"
+  },
+  {
+   "key": "dlp/2019/rendez-vous-gourmand-2019/alice",
+   "field": "characters",
+   "searched": "see discovery_notes",
+   "note": "field note: DPB still says 'Alice in Wonderland' (not Alice herself); Disneyphile names Mad Hatter + Dormouse; key slug kept"
+  },
+  {
+   "key": "dlp/2019/lion-king-jumbo/hakuna-matata",
+   "field": "set_key",
+   "searched": "see discovery_notes",
+   "note": "regroup evidence: Disney Store EU (official) places this jumbo in 'Les Trésors de Disneyland Paris' (with Snow White jumbo #1); maintainer may regroup with tresors-de-disneyland-paris-jumbo-1"
+  },
+  {
+   "key": "dlp/2019/november-2019-le/mulan-carrousel",
+   "field": "release_location",
+   "searched": "see discovery_notes",
+   "note": "corroboration: dein-dlrp Nov repeats Pueblo only + Lineberty for Mulan and Woody/Buzz (already claimed); no new field"
+  },
+  {
+   "key": "dlp/2019/lanyard-pouches-november-2019",
+   "field": "pins",
+   "searched": "see discovery_notes",
+   "note": "scope: confirmed non-pin (dein-dlrp: four lanyard pouches 5.99 on 2 Nov 2019)"
+  },
+  {
+   "key": "dlp/2019/phantom-manor-pin-trading-event-2019",
+   "field": "pins",
+   "searched": "see discovery_notes",
+   "note": "doom-buggy pins other than Captain Hook still unnamed in any non-reseller source (4 queries); 'seven' not confirmed"
+  },
+  {
+   "key": "dlp/2019/january-2019",
+   "field": "pins",
+   "searched": "see discovery_notes",
+   "note": "5 Jan Stitch / Tic & Tac LE designs still undescribed; passiondlp Q1 only notes poster correction; dein-dlrp Jan page not indexed"
+  },
+  {
+   "key": "dlp/2019/ptn-february-2019",
+   "field": "edition_size",
+   "searched": "see discovery_notes",
+   "note": "still not stated by a non-reseller source; forum says PTN pins are generally 400 (general statement, not claimed)"
+  },
+  {
+   "key": "dlp/2019/ptn-april-2019",
+   "field": "edition_size",
+   "searched": "see discovery_notes",
+   "note": "still not stated by a non-reseller source"
+  },
+  {
+   "key": "dlp/2019/oe/marvel-season-of-super-heroes",
+   "field": "original_price",
+   "searched": "see discovery_notes",
+   "note": "field note: 6.99 vs 7.99 conflict unresolved; no second price source found (1 query)"
+  },
+  {
+   "key": "dlp/2019/ptn-may-2019",
+   "field": "pages",
+   "searched": "see discovery_notes",
+   "note": "dein-dlrp May 2019 page still not indexed"
+  },
+  {
+   "key": "dlp/2019/october-2019-oe",
+   "field": "pins",
+   "searched": "see discovery_notes",
+   "note": "hold kept: dein-dlrp Oct 2019 still not indexed; diskingdom Oct page snippet gives themes only"
+  },
+  {
+   "key": "dlp/2019/tresors-de-disneyland-paris",
+   "field": "pins",
+   "searched": "see discovery_notes",
+   "note": "no further Trésors releases (beyond Snow White and Lion King) found in 2019"
+  },
+  {
+   "key": "dlp/2019/easter-2019-eggs",
+   "field": "pins",
+   "searched": "see discovery_notes",
+   "note": "lead rejected: Chip/Dale/Tinker Bell/Mr Toad/White Rabbit Easter eggs pin is Disneyland Resort (California), not DLP"
+  },
+  {
+   "key": "dlp/2019/ptn-february-2019/mr-crocodile",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "hold kept: PTN line-ups; no new evidence this round"
+  },
+  {
+   "key": "dlp/2019/ptn-april-2019/bulda",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "hold kept: PTN line-ups; no new evidence this round"
+  },
+  {
+   "key": "dlp/2019/oe-set/joyeux-noel-2019-princess",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "hold kept: Joyeux Noël princesses; no new evidence this round"
+  },
+  {
+   "key": "dlp/2019/october-2019-oe",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "hold kept: October OE four; no new evidence this round"
+  },
+  {
+   "key": "dlp/2019/oe-set/winnie-the-pooh-halloween-booster-2019",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "hold kept: Pooh booster; no new evidence this round"
+  },
+  {
+   "key": "dlp/2019/oe-set/chip-and-dale-halloween-2019",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "hold kept: Chip & Dale two-pin; no new evidence this round"
+  },
+  {
+   "key": "dlp/2019/bastille-day-2019/14-juillet",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "hold kept: 14 Juillet; no new evidence this round"
+  },
+  {
+   "key": "dlp/2019/oe/aladdin-april-2019",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "hold kept: Aladdin April; no new evidence this round"
+  },
+  {
+   "key": "dlp/2019/medallion-july-2019/fabius",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "hold kept: Fabius; no new evidence this round"
+  },
+  {
+   "key": "dlp/2019/run-weekend-2019",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "hold kept: Run Weekend medals; no new evidence this round"
+  },
+  {
+   "key": "dlp/2019/oe-set/july-5-2019-oe",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "hold kept: July OE five; no new evidence this round"
+  },
+  {
+   "key": "dlp/2019/oe-set/star-wars-december-2019",
+   "field": "pin_structure",
+   "searched": "see discovery_notes",
+   "note": "hold kept: December Star Wars six; no new evidence this round"
+  },
+  {
+   "key": "dlp/2019/cast-member-2019/dalmatian-christmas",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: year unclear - CM Dalmatien Noël 3019 described as a Q1 2019 re-issue of a misnumbered first run whose original sale date is unknown (likely Christmas 2018); confirm release year and that it is not a 2018 key"
+  }
+ ],
+ "discovery_notes": "Follow-up 8 of B005 (packets 205, 409, 454, 487, 511, 532, 552, 570). 29 standard searches, snippets/summaries only. New pins: 24 Aug LE 250 Sorcerer Mickey + Tinker Bell 19.99 Pueblo (dein-dlrp line items); Aug World's Best Friends Chip & Chap and carrousel Snow White LE 700 15.99 Pueblo (dein-dlrp; DPB/forum corroborate Snow White); Stitch Phantom Manor OE 9.99 5 Jan 2019 (Phantom Manor Legends quoted); CM Exclusive Dalmatien Noël 3019 re-issue Q1 2019 (passiondlp); Christmas Time Event Series Snow White/Dwarfs/Old Hag (MyPinCentral). Release evidence: 3 Aug Christmas singles four (quoted dein-dlrp line items). RVG: one-pin claims per pair to clear the pin-structure conflict. Lion King jumbo placed in Les Trésors de Disneyland Paris by official Disney Store EU listing. Still open: Phantom Manor doom-buggy pins, other Christmas Time pins, 5 Jan LE designs, PTN Feb/Apr sizes, Marvel price, dein-dlrp Jan/May/Oct."
+}

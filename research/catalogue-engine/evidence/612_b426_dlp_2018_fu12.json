@@ -1,0 +1,241 @@
+{
+ "packet_id": "612_b426_dlp_2018_fu12",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.disneygazette.fr/les-pins-de-septembre-a-disneyland-paris/",
+   "title": "Les pin's de Septembre a Disneyland Paris",
+   "publisher": "Disney Gazette",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.chroniquedisney.fr/actu/fil-info-201809.htm",
+   "title": "Fil Info - Septembre 2018",
+   "publisher": "Chronique Disney",
+   "published_date": "2018-09",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://news.disneylandparis.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees/",
+   "title": "Les medailles du Disneyland Paris Magic Run Weekend 2018 devoilees",
+   "publisher": "Disneyland Paris News",
+   "published_date": "2018",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2018/oe-set/villains-september-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disneyland Paris Villains open edition pins (September 2018)",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-septembre-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "villain-themed OE pins released to refresh the pin trading offer"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-septembre-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "article calls the release Open Edition pins"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09-08",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-septembre-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "released Saturday 8 September 2018"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-09",
+     "source_url": "https://www.chroniquedisney.fr/actu/fil-info-201809.htm",
+     "method": "search_snippet",
+     "note": "Sept 2018 preview: a series tied to the most iconic villains out early in the month"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-septembre-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "DLP pin trading refresh"
+    },
+    {
+     "field": "format",
+     "value": "villain open-edition pins plus a Villains lanyard; characters listed (Cruella, Ursula, Jafar, Evil Queen, Captain Hook, Queen of Hearts, Maleficent) but per-pin split not described",
+     "source_url": "https://www.disneygazette.fr/les-pins-de-septembre-a-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "paraphrase; structure unconfirmed, see hold"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/rundisney-magic-run-weekend-2018",
+   "claims": [
+    {
+     "field": "format",
+     "value": "medal pins reproduce the 2018 villain-themed medals; the two challenge medals (31 km / 36 km) are in Maleficent colours",
+     "source_url": "https://news.disneylandparis.com/les-medailles-du-disneyland-paris-magic-run-weekend-2018-devoilees/",
+     "method": "search_snippet",
+     "note": "official medal article; describes medals, not pins directly - pin designs still unnamed"
+    }
+   ]
+  }
+ ],
+ "pins": [],
+ "not_found": [
+  {
+   "key": "dlp/2018/oe-set/villains-september-2018",
+   "field": "members",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); Gazette lists seven villains (Cruella, Ursula, Jafar, Evil Queen, Captain Hook, Queen of Hearts, Maleficent) as a character list only - no per-pin records created"
+  },
+  {
+   "key": "dlp/2018/oe-set/villains-september-2018",
+   "field": "original_price",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "price and count of pins not stated; lanyard is not a pin"
+  },
+  {
+   "key": "dlp/2018/oe-set/villains-september-2018",
+   "field": "members",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "lead: reseller (madhousecollectibles) lists a 'Disneyland Paris - Villains Jafar Pin' as OE, undated - not recorded"
+  },
+  {
+   "key": "dlp/2018/september-2018-releases",
+   "field": "members",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "lead: one search summary says Sept 2018 also had three seasonal Winnie the Pooh Halloween pins; not traced to a specific page; a resale ad (leboncoin) shows a 'Winnie vampire' Halloween 2018 DLP pin - not recorded"
+  },
+  {
+   "key": "dlp/2018/disney-loves-jazz-2018",
+   "field": "release_location",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "field note: one search summary places the three 2018 Aristocats LE pins at Chez Marianne for the 29 Sep night; not tied to a quoted line (2019 edition was also Chez Marianne) - not claimed"
+  },
+  {
+   "key": "dlp/2018/disney-loves-jazz-2018",
+   "field": "members",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "hold retained: designs still unnamed. lead: reseller (distradingpins4u) lists 'DLP - Disney Loves Jazz - Scat Cat' with no year/edition (could be 2018 or 2019) - not recorded"
+  },
+  {
+   "key": "dlp/2018/rundisney-magic-run-weekend-2018",
+   "field": "members",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "six of eleven pins still unnamed (21.1 km and challenge medal pins, two non-limited designs, plus one more); per-pin LE vs OE still not stated"
+  },
+  {
+   "key": "lead/dlp/ptn-undated",
+   "field": "release_date",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "lead: MPC 126277 Kronk PTN /400 seen again (gaway-shaped, back 'Edition Limitee X/400 Disneyland Paris'); no date - year unknown, not recorded"
+  },
+  {
+   "key": "dlp/2018/ptn-june-2018-incredibles/violet-parr",
+   "field": "release_date",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "hold retained: MPC 126136 still undated; DPB June 2018 confirms only a 29 Jun PTN and Incredibles 2 theme; no new evidence"
+  },
+  {
+   "key": "dlp/2018/ptn-june-2018-incredibles",
+   "field": "members",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "other Incredibles PTN pins still not found"
+  },
+  {
+   "key": "dlp/2018/ptn-november-2018-bambi",
+   "field": "members",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "still unnamed beyond held Flower; lead: disneystore.eu 'Bambi And Thumper My Best Friends Pin' (URL no. 207801018126) undated, retail not PTN - not recorded"
+  },
+  {
+   "key": "dlp/2018/pirates-and-princesses-2018",
+   "field": "hold",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "existing hold retained: duffydoesdisney again only source for Peter Pan/Hook/Jake March pins; lead: disneystore.eu 'Captain Jake And The Never Land Pirates Favourite Heroes Pin' (URL no. 207801018058, 6.99 EUR) undated - not linked to the festival"
+  },
+  {
+   "key": "lead/dlp/pinhunt-event-pirates",
+   "field": "release_date",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "lead: Disney Gazette 'Pin'Hunt Event - Pirates of the Caribbean' (23 April, 6 pins + lanyard + treasure chest at the attraction); year not stated - not recorded, check 2017 vs 2018"
+  },
+  {
+   "key": "dlp/2018/oe/christmas-pin-set-2018-minnie",
+   "field": "hold",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "existing hold retained: no new evidence"
+  },
+  {
+   "key": "dlp/2018/june-2018-le/ursula-big-thunder-mountain",
+   "field": "hold",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "existing hold retained: no new evidence"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018",
+   "field": "hold",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "existing hold retained (BTM, PotC, Pinocchio, ToT): no new evidence"
+  },
+  {
+   "key": "dlp/2018/ptn-november-2018-bambi/flower",
+   "field": "hold",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "existing hold retained: no new evidence"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018/tod",
+   "field": "hold",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "existing hold retained: no new evidence"
+  },
+  {
+   "key": "dlp/2018/cherry-blossom-girl-july-2018",
+   "field": "hold",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "existing hold retained: no new evidence"
+  },
+  {
+   "key": "dlp/2018/valentines-2018",
+   "field": "hold",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "existing hold retained: no new evidence"
+  },
+  {
+   "key": "dlp/2018/ptn-trios",
+   "field": "members",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "PTN trios Apr / May / Oct 2018 still unnamed; passiondlp Q2 (arc028) / Q4 2018 still not indexed"
+  },
+  {
+   "key": "dlp/2018/february-2018-releases",
+   "field": "members",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "no designs found for Lion King / Bambi LE (10 Feb) or Toy Story + 25th LE (17 Feb)"
+  },
+  {
+   "key": "dlp/2018/season-of-the-force-2018",
+   "field": "members",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "no pin design found; reviews mention SotF merchandise only"
+  },
+  {
+   "key": "dlp/2018/monthly-pages",
+   "field": "members",
+   "searched": "28 standard searches (disneygazette, chroniquedisney, passiondlp, dein-dlrp, DPB, MyPinCentral, disneystore.eu, disneyphile, radiodisneyclub/androland)",
+   "note": "dein-dlrp Feb/Mar/May/Sep/Nov/Dec 2018 and Disney Gazette Oct-Dec 2018 still not indexed; Mary Poppins (only a 2018 CM holiday pin tag, venue unknown), Mickey 90th design, Animator reissues, Yzma with Kronk, January teasers not found"
+  }
+ ],
+ "discovery_notes": "B426 (DLP 2018 FU12). 28 standard searches. New set: Sept 2018 Villains OE release (Disney Gazette, 8 Sep 2018, seven villains + lanyard) recorded as set only with structure hold. Magic Run medal design context added. No pins recorded; no holds released; leads: Scat Cat Disney Loves Jazz (reseller), Winnie Halloween trio, Pin'Hunt PotC event (year?), Kronk PTN undated."
+}

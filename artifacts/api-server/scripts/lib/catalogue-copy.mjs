@@ -34,10 +34,12 @@ export const CATALOGUE_TABLE_NAMES = new Set(CATALOGUE_TABLES.map((t) => t.table
 export const MAIN_FILTERS = {
   pins: [["eq", "verification_status", "verified"], ["eq", "is_searchable", true]],
   pin_images: [["eq", "public_display_allowed", true], ["neq", "source", "pin_and_pop"]],
+  // Pin & Pop links are admin-only (migration 053 RLS); never copied, even if RLS changes.
+  pin_external_ids: [["neq", "source", "pin_and_pop"]],
 };
 
 /** Columns that point at a person. Always cleared: staging has none of main's users. */
-export const PERSON_COLUMNS = ["submitted_by", "uploaded_by", "reviewed_by", "created_by", "updated_by", "imported_by", "changed_by", "approved_by", "user_id", "owner_id"];
+export const PERSON_COLUMNS = ["submitted_by", "uploaded_by", "reviewed_by", "created_by", "updated_by", "imported_by", "changed_by", "approved_by", "confirmed_by", "user_id", "owner_id"];
 
 /** Links to private admin records that aren't copied (pins.import_batch_id → import_batches). Cleared too. */
 export const INTERNAL_LINK_COLUMNS = ["import_batch_id"];

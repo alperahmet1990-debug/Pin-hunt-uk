@@ -4,9 +4,9 @@ Preview and TestFlight builds read the **staging** Supabase project, which start
 
 ## What it copies, and what it never copies
 
-**Copied:** catalogue sources, characters, categories, sets, verified and searchable pins, set memberships, pin characters and categories, external IDs, and pin image links that are allowed to be shown. Pin & Pop images are never copied.
+**Copied:** catalogue sources, characters, categories, sets, verified and searchable pins, set memberships, pin characters and categories, external IDs, and pin image links that are allowed to be shown. Pin & Pop images and Pin & Pop external-ID links are never copied.
 
-**Never copied:** sign-ins, profiles, collections, boards, community posts, messages, submissions, contributions waiting for review, admin or research data, or any files. Columns that point at a person (`submitted_by`, `uploaded_by` and so on) are cleared, as is each pin's link to the private import record (`import_batch_id`). Images keep loading from main's public bucket.
+**Never copied:** sign-ins, profiles, collections, boards, community posts, messages, submissions, contributions waiting for review, admin or research data, or any files. Columns that point at a person (`submitted_by`, `uploaded_by`, `confirmed_by` and so on) are cleared, as is each pin's link to the private import record (`import_batch_id`). Images keep loading from main's public bucket.
 
 **How it stays safe:**
 - It reads main with main's **anon (public) key only**, so it can only see what any app user sees. It refuses a service-role or secret key.

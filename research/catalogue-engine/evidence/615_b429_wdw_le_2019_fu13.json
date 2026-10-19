@@ -1,0 +1,1083 @@
+{
+ "packet_id": "615_b429_wdw_le_2019_fu13",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "discovery_notes": "Follow-up 13 of B002 (WDW LE 2019). 30 web searches. New keys: Kingdom Consoles Bonkers, Tarzan 20th, I Heart Gaming Beauty and the Beast, Dia de los Muertos 2019, Spring 2019 (Fantasia), Typhoon Lagoon 30th (LE 750); new mystery sets Disney Guitars (10) and Coco What's My Name CM (8), members held. Re-used I Heart Gaming TaleSpin / Gummi Bears keys with dated DPB evidence releasing their DuckTalks holds.",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+   "title": "New Disney Pins June 2019 Week 1",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-2",
+   "title": "New Disney Pins June 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+   "title": "New Disney Pins June 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+   "title": "New Disney Pins October 2019 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+   "title": "New Disney Pins March 2019 Week 3",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+   "title": "New Disney Pins May 2019 Week 5",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+   "title": "New Disney Pins August 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-2",
+   "title": "New Disney Pins December 2019 Week 2",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-12",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/coco-whats-my-name-mystery-disney-pin-collection/",
+   "title": "Coco What's My Name Mystery Disney Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://worldofwalt.com/april-2019-pin-releases.html",
+   "title": "April 2019 Pin Releases",
+   "publisher": "World of Walt",
+   "published_date": "2019-04",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2019/kingdom-consoles",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "series of single pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/i-heart-gaming",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "series of single pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-2",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/tarzan-20th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tarzan 20th Anniversary pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/dia-de-los-muertos-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Dia de los Muertos 2019 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-17",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/spring-2019",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Spring 2019 pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03-21",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/typhoon-lagoon-30th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Typhoon Lagoon 30th Anniversary pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    },
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/disney-guitars-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Guitars Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind box, 2 random pins per box",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet",
+     "note": "described as a limited mystery release; no edition size in snippet"
+    },
+    {
+     "field": "price",
+     "value": 19.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet",
+     "note": "per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-27",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-4",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/coco-whats-my-name-cast-member-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Coco What's My Name? Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/coco-whats-my-name-mystery-disney-pin-collection/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind box, 2 random pins per box",
+     "source_url": "https://disneypinsblog.com/coco-whats-my-name-mystery-disney-pin-collection/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/coco-whats-my-name-mystery-disney-pin-collection/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "cast member exclusive",
+     "source_url": "https://disneypinsblog.com/coco-whats-my-name-mystery-disney-pin-collection/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "price",
+     "value": 11.55,
+     "source_url": "https://disneypinsblog.com/coco-whats-my-name-mystery-disney-pin-collection/",
+     "method": "search_snippet",
+     "note": "per box"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/coco-whats-my-name-mystery-disney-pin-collection/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10",
+     "source_url": "https://disneypinsblog.com/coco-whats-my-name-mystery-disney-pin-collection/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World (Cast Members)",
+     "source_url": "https://disneypinsblog.com/coco-whats-my-name-mystery-disney-pin-collection/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "Coco characters styled as Cast Member name tags",
+     "source_url": "https://disneypinsblog.com/coco-whats-my-name-mystery-disney-pin-collection/",
+     "method": "search_snippet"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2019/kingdom-consoles/bonkers",
+   "set_key": "wdw/2019/kingdom-consoles",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Kingdom Consoles - Bonkers",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bonkers"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet",
+     "note": "sixth pin in the monthly Kingdom Consoles collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/tarzan-20th-anniversary/pin",
+   "set_key": "wdw/2019/tarzan-20th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tarzan 20th Anniversary",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_size",
+     "value": 4000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-1",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/i-heart-gaming/beauty-and-the-beast",
+   "set_key": "wdw/2019/i-heart-gaming",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "I Heart Gaming - Beauty and the Beast",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "series_number",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-2",
+     "method": "search_snippet",
+     "note": "sixth pin in the 2019 I Heart Gaming collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-06-13",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-june-2019-week-2",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/dia-de-los-muertos-2019/pin",
+   "set_key": "wdw/2019/dia-de-los-muertos-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dia de los Muertos 2019 Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_size",
+     "value": 5000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-17",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-3",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/spring-2019/fantasia",
+   "set_key": "wdw/2019/spring-2019",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Spring 2019 Pin (Fantasia)",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03-21",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+     "method": "search_snippet"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/new-disney-pins-march-2019-week-3/",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/typhoon-lagoon-30th-anniversary/mickey-surfing",
+   "set_key": "wdw/2019/typhoon-lagoon-30th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Typhoon Lagoon 30th Anniversary",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    },
+    {
+     "field": "attraction",
+     "value": "Disney's Typhoon Lagoon",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey Mouse surfing",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_size",
+     "value": 750,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet",
+     "note": "DPB week of May 26 - Jun 1 2019; exact day not in snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-may-2019-week-5",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/i-heart-gaming/talespin-kit-cloudkicker",
+   "set_key": "wdw/2019/i-heart-gaming",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "I Heart Gaming - TaleSpin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "series_number",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet",
+     "note": "eighth pin in the 2019 I Heart Gaming collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-08",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-august-2019-week-2",
+     "method": "search_snippet"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/i-heart-gaming/gummi-bears-cubbi",
+   "set_key": "wdw/2019/i-heart-gaming",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "I Heart Gaming - Gummi Bears",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "series_number",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-2",
+     "method": "search_snippet",
+     "note": "12th and final pin in the 2019 I Heart Gaming collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "edition_size",
+     "value": 1500,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-12-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_year",
+     "value": 2019,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "release_location",
+     "value": "Walt Disney World",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-2",
+     "method": "search_snippet"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-december-2019-week-2",
+     "method": "search_snippet"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2019/i-heart-gaming/talespin-kit-cloudkicker",
+   "field": "release",
+   "searched": "DPB I Heart Gaming search; DPB Aug 2019 weekly",
+   "note": "release evidence: dated DPB weekly round-up gives 8th I Heart Gaming pin, LE 1,500, $17.99, WDW 8 Aug 2019 - independent of the DuckTalks single-source hold"
+  },
+  {
+   "key": "wdw/2019/i-heart-gaming/talespin-kit-cloudkicker",
+   "field": "visual_description",
+   "searched": "DPB I Heart Gaming search",
+   "note": "field note: DPB description text names Pocahontas under the TaleSpin title (likely blog copy error); Kit Cloudkicker design rests on DuckTalks; source_url week attribution (Aug wk2) inferred from 8 Aug date"
+  },
+  {
+   "key": "wdw/2019/i-heart-gaming/gummi-bears-cubbi",
+   "field": "release",
+   "searched": "DPB I Heart Gaming search; DPB Dec 2019 weekly",
+   "note": "release evidence: dated DPB weekly round-up gives 12th and final I Heart Gaming pin, LE 1,500, $17.99, WDW 12 Dec 2019"
+  },
+  {
+   "key": "wdw/2019/i-heart-gaming/gummi-bears-cubbi",
+   "field": "characters",
+   "searched": "DPB I Heart Gaming search",
+   "note": "field note: Cubbi as subject rests on earlier DuckTalks snippet; DPB snippet names only Gummi Bears"
+  },
+  {
+   "key": "wdw/2019/i-heart-gaming/a-goofy-movie",
+   "field": "hold",
+   "searched": "DPB I Heart Gaming search",
+   "note": "hold kept: still only DuckTalks describes the WDW A Goofy Movie pin (LE 1,500); no dated DPB line surfaced"
+  },
+  {
+   "key": "wdw/2019/tarzan-20th-anniversary/pin",
+   "field": "characters",
+   "searched": "DPB June 2019 wk1",
+   "note": "design/characters not described in snippet; distinct from the Tarzan 20th CM pin and the WDI jumbo (LE 250, $69.95, cast sale 20 Jun 2019)"
+  },
+  {
+   "key": "wdw/2019/dia-de-los-muertos-2019/pin",
+   "field": "characters",
+   "searched": "DPB Oct 2019 wk3",
+   "note": "design/characters not described in snippet"
+  },
+  {
+   "key": "wdw/2019/spring-2019/fantasia",
+   "field": "visual_description",
+   "searched": "DPB Mar 2019 wk3",
+   "note": "field note: Fantasia theme from round-up summary only; characters/design not described; distinct from Spring Break 2019 Timon & Pumbaa (LE 2,500)"
+  },
+  {
+   "key": "wdw/2019/kingdom-consoles/bonkers",
+   "field": "variant",
+   "searched": "DPB June 2019 wk1",
+   "note": "shared DL/WDW release; no dlr key exists - keyed under wdw per shared-pin rule"
+  },
+  {
+   "key": "wdw/2019/disney-guitars-mystery",
+   "field": "members",
+   "searched": "DPB June 2019 wk4",
+   "note": "hold: mystery designs not individually confirmed - 10 designs, none named in snippets; no edition size"
+  },
+  {
+   "key": "wdw/2019/coco-whats-my-name-cast-member-mystery",
+   "field": "members",
+   "searched": "DPB Coco What's My Name post",
+   "note": "hold: mystery designs not individually confirmed - 8 designs, none named; CM-only purchase"
+  },
+  {
+   "key": "wdw/2019/earth-day-2019/simba",
+   "field": "hold",
+   "searched": "Earth Day 2019 Simba search; World of Walt April 2019",
+   "note": "hold: Earth Day 2019 Lion King Simba pin (LE 2,500) described only on a reseller (yourwdwstore); World of Walt says April releases included Earth Day but no details - not keyed as a pin"
+  },
+  {
+   "key": "wdw/2019/oe/rainbow-castle-2019",
+   "field": "lead",
+   "searched": "DPB June 2019 wk1",
+   "note": "lead: OE cell - WDW rainbow castle pin with WDW logo, glitter, $9.99, June 2019 (DPB); not LE"
+  },
+  {
+   "key": "wdw/2019/oe-set/toy-story-4-mystery",
+   "field": "lead",
+   "searched": "DPB Toy Story 4 search",
+   "note": "lead: OE cell - Toy Story 4 mystery set of 10 OE, $14.99/box, DL & WDW; Toy Story Land mystery 12 OE, WDW Dec 2019; no WDW LE Toy Story 4 pin found"
+  },
+  {
+   "key": "dsus/2019/dumbo-live-action-film-set",
+   "field": "lead",
+   "searched": "WDWNT Dumbo search",
+   "note": "lead: DS/shopDisney cell - Dumbo live action film pin set, limited release $16.95 (WDWNT shopDisney list); member names only on a pin database, not used"
+  },
+  {
+   "key": "dlr/2019/big-thunder-mountain-40th",
+   "field": "lead",
+   "searched": "WDWNT Aug 2019 / BTMRR 40th search",
+   "note": "lead: DLR/D23 cells - BTMRR 40th D23 Dream Store LE 500 $44.99 (25 Aug 2019) and DL CM pin LE 600; WDW BTMRR 40th pin is 2020, not 2019"
+  },
+  {
+   "key": "wdw/2019/villains-after-hours-2019",
+   "field": "hold",
+   "searched": "DFB/WDWNT Villains After Hours search",
+   "note": "hold kept: villain pins (Cruella, Ursula, Scar, Hades) mentioned generally; Hades LR pin only on an undated reseller listing"
+  },
+  {
+   "key": "wdw/2019/pin-thursday-2019",
+   "field": "no change",
+   "searched": "WDWNT Pin Thursday",
+   "note": "no DAK Pin Thursday-specific pins named"
+  },
+  {
+   "key": "wdw/2019/disney-disguises-mystery",
+   "field": "no change",
+   "searched": "Disney Disguises search",
+   "note": "no further designs named beyond Cogsworth as Napoleon"
+  },
+  {
+   "key": "wdw/2019/rise-of-skywalker-knights-booster",
+   "field": "no change",
+   "searched": "Knights of Ren search",
+   "note": "set (6, LR, $29.99, 19 Dec 2019) already recorded; Knights still not named per pin"
+  },
+  {
+   "key": "wdw/2019/weekly-roundups",
+   "field": "not found",
+   "searched": "DPB Feb wk3 / Jul wk3 / Sep wk3 searches",
+   "note": "the three target weekly posts did not surface in search results"
+  },
+  {
+   "key": "wdw/2019/holds",
+   "field": "holds",
+   "searched": "see above",
+   "note": "released: I Heart Gaming TaleSpin and Gummi Bears. Kept: I Heart Gaming A Goofy Movie, Valentine 2019, Up 10th Ariel PTN, Ariel & Friends set, NYE 2019, Bruni, Villains After Hours, small world, gift-card four, Jawa Salvage, Sanderson Sisters, HM day-of, F&G princess, DHS 30th booster, runDisney, Steamboat Visa (not re-searched unless noted)"
+  },
+  {
+   "key": "wdw/2019/tarzan-20th-anniversary/pin",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: title-only - dated DPB round-up gives edition / price / date but the design is not described"
+  },
+  {
+   "key": "wdw/2019/dia-de-los-muertos-2019/pin",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: title-only - dated DPB round-up gives edition / price / date but the design is not described"
+  }
+ ]
+}

@@ -1,0 +1,591 @@
+{
+ "packet_id": "607_b421_asia_2020_2022_fu23",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+   "title": "Toy Story 4 Pin Set at Tokyo Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/toy-story-4-mystery-pin-collection-at-tokyo-disney-resort/",
+   "title": "Toy Story 4 Mystery Pin Collection at Tokyo Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tokyo-disney-resort-attraction-postcard-pins/",
+   "title": "Tokyo Disney Resort Attraction Postcard Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-01-18"
+  },
+  {
+   "url": "https://disneypinsblog.com/shanghai-disneyland-hotel-toy-story-hotel-pins-at-shdr/",
+   "title": "Shanghai Disneyland Hotel & Toy Story Hotel Pins at SHDR",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-04-08"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-pins-at-shanghai-disney-resort",
+   "title": "Pirates of the Caribbean Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-battle-for-the-sunken-treasure-pins-at-shanghai-disney-resort",
+   "title": "Pirates of the Caribbean Battle for the Sunken Treasure Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/tokyo-disney-resort-store-20th-anniversary-pin-set/",
+   "title": "Tokyo Disney Resort Store 20th Anniversary Pin Set",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/181252",
+   "title": "181252",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "tdr/2021/toy-story-4-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Toy Story 4 Pin Set",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "summary: six pins in total"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "price",
+     "value": 2900,
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "retail JPY 2,900 (about USD 26.53) per summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-21",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "summary gives 21 Apr 2021"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "six-pin set; subjects listed but pins not described one by one"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2021/oe-set/toy-story-4-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Toy Story 4 Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/toy-story-4-mystery-pin-collection-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 12,
+     "source_url": "https://disneypinsblog.com/toy-story-4-mystery-pin-collection-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "summary: 12 pins in total"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/toy-story-4-mystery-pin-collection-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "price",
+     "value": 1200,
+     "source_url": "https://disneypinsblog.com/toy-story-4-mystery-pin-collection-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "JPY 1,200 per pouch per summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04",
+     "source_url": "https://disneypinsblog.com/toy-story-4-mystery-pin-collection-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "summary: released end of April 2021"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/toy-story-4-mystery-pin-collection-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "sold per pouch; designs not named in summaries"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2020/attraction-postcard-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Tokyo Disney Resort Attraction Postcard Pins",
+     "source_url": "https://disneypinsblog.com/tokyo-disney-resort-attraction-postcard-pins/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/tokyo-disney-resort-attraction-postcard-pins/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-01",
+     "source_url": "https://disneypinsblog.com/tokyo-disney-resort-attraction-postcard-pins/",
+     "method": "search_snippet",
+     "note": "post dated 18 Jan 2020; released Jan 2020"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin cards (three pins per card)",
+     "source_url": "https://disneypinsblog.com/tokyo-disney-resort-attraction-postcard-pins/",
+     "method": "search_snippet",
+     "note": "summary: three pins per card; attraction themes"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "tdr/2021/toy-story-4-pin-set/woody",
+   "set_key": "tdr/2021/toy-story-4-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Woody"
+     ],
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in the set's character list only"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "set-level statement"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-21",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "set-level date"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2021/toy-story-4-pin-set/hamm",
+   "set_key": "tdr/2021/toy-story-4-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Hamm"
+     ],
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in the set's character list only"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "set-level statement"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-21",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "set-level date"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2021/toy-story-4-pin-set/duke-caboom",
+   "set_key": "tdr/2021/toy-story-4-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Duke Caboom"
+     ],
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in the set's character list only"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "set-level statement"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-21",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "set-level date"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2021/toy-story-4-pin-set/pet-patrol",
+   "set_key": "tdr/2021/toy-story-4-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Pet Patrol"
+     ],
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in the set's character list only"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "set-level statement"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-21",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "set-level date"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2021/toy-story-4-pin-set/gabby-gabby",
+   "set_key": "tdr/2021/toy-story-4-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Gabby Gabby"
+     ],
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in the set's character list only"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "set-level statement"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-21",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "set-level date"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2021/toy-story-4-pin-set/ducky-and-bunny",
+   "set_key": "tdr/2021/toy-story-4-pin-set",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Ducky",
+      "Bunny"
+     ],
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "named in the set's character list only"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "set-level statement"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-21",
+     "source_url": "https://disneypinsblog.com/toy-story-4-pin-set-at-tokyo-disney-resort/",
+     "method": "search_snippet",
+     "note": "set-level date"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/woody",
+   "field": "pin_structure",
+   "searched": "2 standard searches on the DPB post",
+   "note": "hold: confirm pin structure; six subjects listed against a six-pin set but no per-pin description (character list only, rule 12)"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/woody",
+   "field": "release_date",
+   "searched": "1 search for a 2019 TDR Toy Story 4 set",
+   "note": "field note: 2021 date is from summaries only; film is 2019 - confirm year on page"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/hamm",
+   "field": "pin_structure",
+   "searched": "2 standard searches on the DPB post",
+   "note": "hold: confirm pin structure; six subjects listed against a six-pin set but no per-pin description (character list only, rule 12)"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/hamm",
+   "field": "release_date",
+   "searched": "1 search for a 2019 TDR Toy Story 4 set",
+   "note": "field note: 2021 date is from summaries only; film is 2019 - confirm year on page"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/duke-caboom",
+   "field": "pin_structure",
+   "searched": "2 standard searches on the DPB post",
+   "note": "hold: confirm pin structure; six subjects listed against a six-pin set but no per-pin description (character list only, rule 12)"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/duke-caboom",
+   "field": "release_date",
+   "searched": "1 search for a 2019 TDR Toy Story 4 set",
+   "note": "field note: 2021 date is from summaries only; film is 2019 - confirm year on page"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/pet-patrol",
+   "field": "pin_structure",
+   "searched": "2 standard searches on the DPB post",
+   "note": "hold: confirm pin structure; six subjects listed against a six-pin set but no per-pin description (character list only, rule 12)"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/pet-patrol",
+   "field": "release_date",
+   "searched": "1 search for a 2019 TDR Toy Story 4 set",
+   "note": "field note: 2021 date is from summaries only; film is 2019 - confirm year on page"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/gabby-gabby",
+   "field": "pin_structure",
+   "searched": "2 standard searches on the DPB post",
+   "note": "hold: confirm pin structure; six subjects listed against a six-pin set but no per-pin description (character list only, rule 12)"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/gabby-gabby",
+   "field": "release_date",
+   "searched": "1 search for a 2019 TDR Toy Story 4 set",
+   "note": "field note: 2021 date is from summaries only; film is 2019 - confirm year on page"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/ducky-and-bunny",
+   "field": "pin_structure",
+   "searched": "2 standard searches on the DPB post",
+   "note": "hold: confirm pin structure; six subjects listed against a six-pin set but no per-pin description (character list only, rule 12)"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/ducky-and-bunny",
+   "field": "release_date",
+   "searched": "1 search for a 2019 TDR Toy Story 4 set",
+   "note": "field note: 2021 date is from summaries only; film is 2019 - confirm year on page"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set",
+   "field": "visual_description",
+   "searched": "3 standard searches",
+   "note": "no per-pin descriptions surfaced; subjects Woody, Hamm, Duke Caboom, Pet Patrol, Gabby Gabby, Ducky & Bunny"
+  },
+  {
+   "key": "tdr/2021/oe-set/toy-story-4-mystery",
+   "field": "members",
+   "searched": "3 standard searches",
+   "note": "hold: mystery designs not individually confirmed; 12 designs, none named in DPB summaries"
+  },
+  {
+   "key": "tdr/2021/oe-set/toy-story-4-mystery",
+   "field": "members",
+   "searched": "1 standard search",
+   "note": "lead: My Pin Central 181252 shows a Gabby Gabby + Benson pin 'from Toy Story 4 Mystery set' - which mystery set (TDR vs US) not stated"
+  },
+  {
+   "key": "tdr/2021/oe-set/toy-story-4-mystery",
+   "field": "release_date",
+   "searched": "1 standard search",
+   "note": "field note: 'actually released end of April 2021' per summary; confirm year on page"
+  },
+  {
+   "key": "tdr/2020/attraction-postcard-pins",
+   "field": "members",
+   "searched": "1 standard search",
+   "note": "hold: confirm pin structure; cards of three pins, attractions given only as examples (Space Mountain, Tower of Terror, Peter Pan's Flight and more)"
+  },
+  {
+   "key": "tdr/2020/attraction-postcard-pins",
+   "field": "expected_pin_count",
+   "searched": "1 standard search",
+   "note": "number of cards and total pins not stated"
+  },
+  {
+   "key": "shdr/2021/hotel-pins",
+   "field": "members",
+   "searched": "1 standard search",
+   "note": "hold kept: DPB 8 Apr 2021 summary names both hotels and Mickey, Minnie, Woody, Buzz but does not split designs"
+  },
+  {
+   "key": "shdr/2021/pirates-of-the-caribbean-2021",
+   "field": "members",
+   "searched": "2 standard searches",
+   "note": "hold kept: two OE pirate pins 'featuring Mickey and Donald' - one each not stated; resellers only list separate pins"
+  },
+  {
+   "key": "shdr/2021/pirates-of-the-caribbean-treasure-map-mystery",
+   "field": "members",
+   "searched": "1 standard search",
+   "note": "hold kept: 8-piece map mystery (30 Apr 2021) designs not named"
+  },
+  {
+   "key": "shdr/2021/battle-for-the-sunken-treasure-pin-set",
+   "field": "members",
+   "searched": "2 standard searches",
+   "note": "hold kept: three-pin OE set (9 Jul 2021); characters not given in summaries"
+  },
+  {
+   "key": "shdr/2022/pin-trading-fun-day-2022",
+   "field": "members",
+   "searched": "1 standard search",
+   "note": "gap kept: only the Toy Story Sports set (21 Sep 2022) surfaced"
+  },
+  {
+   "key": "hkdl/2021",
+   "field": "releases",
+   "searched": "2 standard searches",
+   "note": "gap kept: no Sep or Nov 2021 HKDL batch found on DPB; Aug 2021 Magic Prize sock series already keyed"
+  },
+  {
+   "key": "hkdl/2022",
+   "field": "releases",
+   "searched": "2 standard searches",
+   "note": "gap kept: no Jun or Dec 2022 HKDL batch found; Jan 2023 batch (sold from 22 Dec 2022) stays held, not keyed"
+  },
+  {
+   "key": "shdr/2022",
+   "field": "solar-term",
+   "searched": "1 standard search",
+   "note": "gap kept: no source for a solar-term pin series"
+  },
+  {
+   "key": "shdr/2021",
+   "field": "linabell-2021",
+   "searched": "1 standard search",
+   "note": "gap kept: no 2021 LinaBell pin found; earliest LinaBell pins seen are Oct 2022"
+  },
+  {
+   "key": "dsj/2020/store-20th-anniversary-pin-set",
+   "field": "scope",
+   "searched": "1 standard search",
+   "note": "lead: Disney Store Japan 20th anniversary boxed set, 7 pins, JPY 6,050, Oct 2020 - for Disney Store cells, not a park release"
+  },
+  {
+   "key": "tdr/2026/ear-headband-mystery",
+   "field": "scope",
+   "searched": "1 standard search",
+   "note": "out of cell: DPB dates the ear-headband mystery set to Mar 2026"
+  }
+ ],
+ "discovery_notes": "Cell B421, follow-up 23 of B041 (reuses 397/445/478/505/526/546/564/575/584/592/600). 27 standard searches; all claims from search summaries of Disney Pins Blog. New: TDR Toy Story 4 six-pin set (21 Apr 2021, OE, JPY 2,900; six subject pins recorded under a structure hold), TDR Toy Story 4 mystery 12 (end Apr 2021, JPY 1,200/pouch; designs held), TDR Attraction Postcard pins (Jan 2020, three per card; held). No holds released; HKDL Jan 2022 six and Jan 2023 batch untouched. Remaining gaps: HKDL Jun/Dec 2022, Sep/Nov 2021, SHDR Pirates/Sunken Treasure members, Fun Day 2022, solar-term, LinaBell 2021. Resellers seen, not used: usshoppingsos, fryguypins, k23japan, distradingpins4u."
+}

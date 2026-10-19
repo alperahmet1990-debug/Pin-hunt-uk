@@ -1,0 +1,574 @@
+{
+ "packet_id": "616_b430_asia_2020_2022_fu25",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/may-2022-hong-kong-disneyland-pin-releases/",
+   "title": "May 2022 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+   "title": "August 2022 Hong Kong Disneyland Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-princess-designer-series-from-pin-trading-carnival-2021-at-hkdl",
+   "title": "Disney Princess Designer Series from Pin Trading Carnival 2021 at HKDL",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/duffy-and-friends-spring-hiking-pins-at-shanghai-disney-resort/",
+   "title": "Duffy and Friends Spring Hiking Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/four-seasons-2020-pins-at-hong-kong-disneyland/",
+   "title": "Four Seasons 2020 Pins at Hong Kong Disneyland",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/99936",
+   "title": "SHDL - Avengers Mini Set - 2020 - Iron Man (pin 99936)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-marvel-pin-sets-at-shanghai-disneyland",
+   "title": "New Marvel Pin Sets at Shanghai Disneyland",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "hkdl/2022/may-2022",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2022-04-29",
+     "source_url": "https://disneypinsblog.com/may-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "batch sold online from 29 Apr 2022 11:00 to 5 May 2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (online sale)",
+     "source_url": "https://disneypinsblog.com/may-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "short online sale window per post"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2022/august-2022",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Emporium, Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "on sale 30 Jul - 31 Dec 2022 while supplies last"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07-30",
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "from 30 Jul 2022"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2022/ariel-pin-trading-nights-2022",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 5,
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "pin set listed as 5 pins"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "pin set LE 600"
+    },
+    {
+     "field": "price",
+     "value": 429,
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$429"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "5-pin set; jumbo listed separately"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2021/pin-trading-carnival-2021-princess-designer-series",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Princess Designer Series (Pin Trading Carnival 2021)",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-designer-series-from-pin-trading-carnival-2021-at-hkdl",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-03",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-designer-series-from-pin-trading-carnival-2021-at-hkdl",
+     "method": "search_snippet",
+     "note": "redemption slots 3-9 Apr 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Bibbidi Bobbidi Boutique, Hong Kong Disneyland Hotel",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-designer-series-from-pin-trading-carnival-2021-at-hkdl",
+     "method": "search_snippet",
+     "note": "pick-up location"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-designer-series-from-pin-trading-carnival-2021-at-hkdl",
+     "method": "search_snippet",
+     "note": "boxed set LE 600; jumbo pins LE 400 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-designer-series-from-pin-trading-carnival-2021-at-hkdl",
+     "method": "search_snippet",
+     "note": "boxed set LE 600"
+    },
+    {
+     "field": "price",
+     "value": 799,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-designer-series-from-pin-trading-carnival-2021-at-hkdl",
+     "method": "search_snippet",
+     "note": "boxed set HK$799; jumbos HK$219 each"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-designer-series-from-pin-trading-carnival-2021-at-hkdl",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "format",
+     "value": "boxed set plus separate jumbo pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-princess-designer-series-from-pin-trading-carnival-2021-at-hkdl",
+     "method": "search_snippet",
+     "note": "boxed set and jumbo pins listed separately"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2022/duffy-friends-spring-hiking-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Duffy and Friends Spring Hiking Pins",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-spring-hiking-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-spring-hiking-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "7 pins in total"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-spring-hiking-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "each box has 2 random pins"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-spring-hiking-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "random 2-pin boxes"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-spring-hiking-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-08",
+     "source_url": "https://disneypinsblog.com/duffy-and-friends-spring-hiking-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post dated 18 Aug 2022 in summary; may be post date, not sale date"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2020/four-seasons-2020",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/four-seasons-2020-pins-at-hong-kong-disneyland/",
+     "method": "search_snippet",
+     "note": "two Mickey & Minnie pins per season"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-10-02",
+     "source_url": "https://disneypinsblog.com/four-seasons-2020-pins-at-hong-kong-disneyland/",
+     "method": "search_snippet",
+     "note": "available from 2 Oct 2020"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited release",
+     "source_url": "https://disneypinsblog.com/four-seasons-2020-pins-at-hong-kong-disneyland/",
+     "method": "search_snippet",
+     "note": "described as limited release"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "hkdl/2022/may-2022/goofy-happy-birthday-2022",
+   "set_key": "hkdl/2022/may-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy Happy Birthday 2022 Pin",
+     "source_url": "https://disneypinsblog.com/may-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed by name in May 2022 batch, separate from Goofy 90th"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://disneypinsblog.com/may-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "main_character",
+     "value": "Goofy",
+     "source_url": "https://disneypinsblog.com/may-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/may-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/may-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "original_price",
+     "value": 149,
+     "source_url": "https://disneypinsblog.com/may-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$149"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/may-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-04-29",
+     "source_url": "https://disneypinsblog.com/may-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "online sale 29 Apr - 5 May 2022"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/may-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "2022 batch"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/may-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HKDL release"
+    }
+   ]
+  },
+  {
+   "pin_key": "hkdl/2022/august-2022/ariel-pin-trading-nights-2022-jumbo",
+   "set_key": "hkdl/2022/august-2022",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ariel Pin Trading Nights 2022 Jumbo Pin",
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "jumbo listed as its own item"
+    },
+    {
+     "field": "main_character",
+     "value": "Ariel",
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "named in pin title"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "original_price",
+     "value": 229,
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$229"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07-30",
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "Emporium sale 30 Jul - 31 Dec 2022"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "2022"
+    },
+    {
+     "field": "release_location",
+     "value": "Emporium, Hong Kong Disneyland",
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "Emporium"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/august-2022-hong-kong-disneyland-pin-releases/",
+     "method": "search_snippet",
+     "note": "single jumbo pin"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "hkdl/2022/may-2022/goofy-happy-birthday-2022",
+   "field": "visual_description",
+   "searched": "DPB May 2022 post; 2 queries",
+   "note": "design not described in summary"
+  },
+  {
+   "key": "hkdl/2022/may-2022/goofy-happy-birthday-2022",
+   "field": "pin_name",
+   "searched": "DPB May 2022 post",
+   "note": "field note: distinct from hkdl/2022/may-2022/goofy-90th-anniversary (both listed, each LE 500 HK$149); not merged"
+  },
+  {
+   "key": "hkdl/2022/august-2022/ariel-pin-trading-nights-2022-jumbo",
+   "field": "characters",
+   "searched": "DPB Aug 2022 post; 2 queries",
+   "note": "field note: only Ariel implied by title; other characters not stated"
+  },
+  {
+   "key": "hkdl/2022/august-2022/ariel-pin-trading-nights-2022-jumbo",
+   "field": "set_key",
+   "searched": "DPB Aug 2022 post",
+   "note": "field note: keyed under august-2022 like momentus-jumbo, since the 5-pin Ariel PTN set (LE 600, HK$429) is a separate item"
+  },
+  {
+   "key": "hkdl/2022/ariel-pin-trading-nights-2022",
+   "field": "members",
+   "searched": "DPB Aug 2022 post; 2 queries",
+   "note": "hold kept: five pins in the set still not named; HK$149 singles not described"
+  },
+  {
+   "key": "hkdl/2021/pin-trading-carnival-2021-princess-designer-series",
+   "field": "members",
+   "searched": "DPB post; 2 queries",
+   "note": "hold: confirm pin structure - boxed set contents and jumbo princesses not named; jumbos LE 400 HK$219 each"
+  },
+  {
+   "key": "hkdl/2021/pin-trading-carnival-2021-princess-designer-series",
+   "field": "notes",
+   "searched": "DPB post",
+   "note": "field note: March carnival Belle/Cinderella jumbos (also LE 400 HK$219, keyed in 397) are a separate March wave; do not merge without a source"
+  },
+  {
+   "key": "hkdl/2021/pin-trading-carnival-2021-princess-designer-series",
+   "field": "lead",
+   "searched": "search summary",
+   "note": "lead: third-party catalogue (thepinpal) mentions Snow White and Hei Hei Princess Castle pins for 2021 carnival - not used, unverified"
+  },
+  {
+   "key": "shdr/2022/duffy-friends-spring-hiking-mystery",
+   "field": "members",
+   "searched": "DPB post; 2 queries",
+   "note": "hold: mystery designs not individually confirmed - Duffy, Gelatoni, StellaLou 'and more' only"
+  },
+  {
+   "key": "shdr/2022/duffy-friends-spring-hiking-mystery",
+   "field": "release_date",
+   "searched": "DPB post; 2 queries",
+   "note": "field note: only the post date (18 Aug 2022) seen; spring theme vs August date - year/sale date unconfirmed; edition size not stated"
+  },
+  {
+   "key": "hkdl/2020/four-seasons-2020",
+   "field": "members",
+   "searched": "DPB post; 1 query",
+   "note": "hold kept: eight pins, two per season, individual designs still not described"
+  },
+  {
+   "key": "shdr/2020/avengers-mini-set",
+   "field": "notes",
+   "searched": "MPC 99936, DPB Marvel post; 2 queries",
+   "note": "field note: same-release question unresolved - no source links Avengers Mini Set and Marvel Emblems; MPC Iron Man pin shows Tony Stark's face (not an emblem), so may differ; not merged"
+  },
+  {
+   "key": "shdr/2020/marvel-emblems-pin-set",
+   "field": "members",
+   "searched": "DPB Marvel post; 2 queries",
+   "note": "six emblem pins still not named"
+  },
+  {
+   "key": "shdr/2020/marvel-comics-pin-set",
+   "field": "members",
+   "searched": "DPB Marvel post; 1 query",
+   "note": "gap kept: LE 800 four pins still not named"
+  },
+  {
+   "key": "shdr/2020/captain-america-winter-soldier-pin-set",
+   "field": "release_year",
+   "searched": "MPC 77667; 1 query",
+   "note": "lead kept: MPC Winter Soldier pin - one of two, LE 500 SHDR backstamp, no date; 2020 seen only on a reseller (not used)"
+  },
+  {
+   "key": "tdr/2021/tokyo-disneysea-20th-anniversary-pin-set",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: only reseller (wizmouse) listing resurfaced; five pins not named"
+  },
+  {
+   "key": "tdr/2022/totally-minnie-mouse-random-pin",
+   "field": "notes",
+   "searched": "MezzoMiki summary; 1 query",
+   "note": "hold kept: MezzoMiki summary again mixes a 6 can-badge set (3 Land, 3 Sea) with the 1,100 yen pin; pins vs badges unresolved"
+  },
+  {
+   "key": "hkdl/2022/june-2022",
+   "field": "release",
+   "searched": "2 queries",
+   "note": "gap: no HKDL June 2022 pin post found"
+  },
+  {
+   "key": "hkdl/2022/december-2022",
+   "field": "release",
+   "searched": "1 query",
+   "note": "gap: no Dec 2022 post; nearest is Jan 2023 batch (from 22 Dec 2022) - held, not keyed"
+  },
+  {
+   "key": "hkdl/2021/september-november-2021",
+   "field": "release",
+   "searched": "2 queries",
+   "note": "gap: no Sep/Nov 2021 or Halloween 2021 HKDL posts found"
+  },
+  {
+   "key": "hkdl/2022/november-2022-birthday",
+   "field": "release",
+   "searched": "1 query",
+   "note": "gap: no 17th anniversary / birthday three source found"
+  },
+  {
+   "key": "hkdl/2022/pin-trading-carnival-2022",
+   "field": "members",
+   "searched": "1 query",
+   "note": "hold kept: passport set LE 600 seen only on reseller (fryguypins); not used"
+  },
+  {
+   "key": "shdr/solar-term-series",
+   "field": "release",
+   "searched": "1 query",
+   "note": "gap: no solar-term series source surfaced"
+  },
+  {
+   "key": "lic/2021/loungefly-zootopia-le",
+   "field": "lead",
+   "searched": "search summary",
+   "note": "lead: licensed Loungefly Zootopia LE 800 pin (US, May 2021, $25) per DPB title - for licensed cells"
+  }
+ ],
+ "discovery_notes": "Cell B430, follow-up 25 of B041 (reuses keys from 397/445/478/505/526/546/564/575/584/592/600/607/613). 25 standard searches; all claims from search summaries of Disney Pins Blog. New pins: HKDL Goofy Happy Birthday 2022 (LE 500, HK$149, May 2022 batch) and Ariel Pin Trading Nights 2022 jumbo (LE 600, HK$229). New sets (members held): HKDL Princess Designer Series (Apr 2021), SHDR Duffy Spring Hiking mystery 7 (date unclear). Avengers Mini vs Marvel Emblems: no source shows they are the same; field note added. No holds released; HKDL Jan 2022 six and Jan 2023 batch untouched. Resellers seen, not used: wizmouse, fryguypins, usshoppingsos, castleplanethk, wdwpinpals, dpinstore, thepinpal."
+}

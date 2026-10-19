@@ -16,6 +16,7 @@ import pinSubmissionsRouter from "./pin-submissions";
 import researchReviewRouter from "./research-review";
 import researchImportRouter from "./research-import";
 import researchCatalogueRouter from "./research-catalogue";
+import accountRouter from "./account";
 
 const router: IRouter = Router();
 
@@ -36,5 +37,6 @@ router.use(pinSubmissionsRouter);
 router.use(researchReviewRouter);
 router.use(researchImportRouter);
 router.use(researchCatalogueRouter);
+router.use(accountRouter);
 
 export default router;

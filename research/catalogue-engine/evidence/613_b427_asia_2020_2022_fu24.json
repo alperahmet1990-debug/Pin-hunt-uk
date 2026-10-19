@@ -1,0 +1,1293 @@
+{
+ "packet_id": "613_b427_asia_2020_2022_fu24",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+   "title": "Zootopia 5th Anniversary Hong Kong Disneyland Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2021-02-28",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/99936",
+   "title": "SHDL - Avengers Mini Set - 2020 - Iron Man (pin 99936)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-marvel-pin-sets-at-shanghai-disneyland",
+   "title": "New Marvel Pin Sets at Shanghai Disneyland",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.jalan.net/news/article/547404/",
+   "title": "Toy Story 4 new goods on sale 4/21 (Tokyo Disney Resort)",
+   "publisher": "Jalan News",
+   "published_date": "2021-04-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-225656/",
+   "title": "Tokyo Disney Resort Totally Minnie Mouse goods",
+   "publisher": "MezzoMiki",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://castel.jp/p/7508",
+   "title": "Totally Minnie Mouse goods round-up",
+   "publisher": "Castel",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://ure.pia.co.jp/articles/-/1260319",
+   "title": "Totally Minnie goods round-up (1/2)",
+   "publisher": "Ure Pia Soken",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-216628/",
+   "title": "Tokyo Disney Resort park-logo pin set (4 designs)",
+   "publisher": "MezzoMiki",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/mickey-friends-pin-sets-at-hong-kong-disneyland/",
+   "title": "Mickey & Friends Pin Sets at Hong Kong Disneyland",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/77667",
+   "title": "SHDL Winter Soldier pin (pin 77667)",
+   "publisher": "My Pin Central",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "hkdl/2021/zootopia-5th-anniversary",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Zootopia 5th Anniversary Hong Kong Disneyland Pin",
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "post title; single-pin release"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 1,
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "one LE pin described"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-06",
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "redemption 6-12 Mar 2021"
+    },
+    {
+     "field": "price",
+     "value": 135,
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "HK$135"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "one pin"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2020/avengers-mini-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "SHDL - Avengers Mini Set - 2020",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "series name on My Pin Central"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "Iron Man listing plus five other individual pin entries and a Full Set entry"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "each pin LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-12",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "date on SHDR entry; may not be release date"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin set with per-pin listings",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "Full Set entry plus individual pin entries"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2021/toy-story-4-pin-set",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.jalan.net/news/article/547404/",
+     "method": "search_snippet",
+     "note": "six-pin set"
+    },
+    {
+     "field": "price",
+     "value": 2900,
+     "source_url": "https://www.jalan.net/news/article/547404/",
+     "method": "search_snippet",
+     "note": "JPY 2,900"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-21",
+     "source_url": "https://www.jalan.net/news/article/547404/",
+     "method": "search_snippet",
+     "note": "article of 10 Apr 2021 announces sale from 21 Apr 2021"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://www.jalan.net/news/article/547404/",
+     "method": "search_snippet",
+     "note": "6-piece pin badge set; each about 3-4 x 4 cm or 4 cm diameter"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2021/oe-set/toy-story-4-mystery",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://www.jalan.net/news/article/547404/",
+     "method": "search_snippet",
+     "note": "random 2-pin pack, 6 designs in total per Jalan"
+    },
+    {
+     "field": "price",
+     "value": 1200,
+     "source_url": "https://www.jalan.net/news/article/547404/",
+     "method": "search_snippet",
+     "note": "JPY 1,200 per 2-pin pack"
+    },
+    {
+     "field": "format",
+     "value": "mystery / random 2-pin pack",
+     "source_url": "https://www.jalan.net/news/article/547404/",
+     "method": "search_snippet",
+     "note": "contents unknown until opened; 6-pack box sold separately"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2022/totally-minnie-mouse-random-pin",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Totally Minnie Mouse pin badge (random)",
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "event goods article"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "six designs; complete box of all six JPY 6,600"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://ure.pia.co.jp/articles/-/1260319",
+     "method": "search_snippet",
+     "note": "six designs"
+    },
+    {
+     "field": "price",
+     "value": 1100,
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "JPY 1,100 per blind pin"
+    },
+    {
+     "field": "price",
+     "value": 1100,
+     "source_url": "https://castel.jp/p/7508",
+     "method": "search_snippet",
+     "note": "JPY 1,100"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-14",
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "on sale 14 Feb 2022"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-14",
+     "source_url": "https://castel.jp/p/7508",
+     "method": "search_snippet",
+     "note": "14 Feb 2022"
+    },
+    {
+     "field": "format",
+     "value": "mystery / blind single pin",
+     "source_url": "https://castel.jp/p/7508",
+     "method": "search_snippet",
+     "note": "one of six designs at random; glitter, about 5 x 6 cm"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "standard park merchandise; no edition size stated"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2021/park-logo-pin-set",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2021-09-29",
+     "source_url": "https://mezzomiki.jp/post-216628/",
+     "method": "search_snippet",
+     "note": "MezzoMiki summary date"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "hkdl/2021/zootopia-5th-anniversary/zootopia-5th-anniversary-pin",
+   "set_key": "hkdl/2021/zootopia-5th-anniversary",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Zootopia 5th Anniversary Pin",
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "post title"
+    },
+    {
+     "field": "franchise",
+     "value": "Zootopia",
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "Zootopia anniversary pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "LE 600"
+    },
+    {
+     "field": "edition_size",
+     "value": 600,
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "limited edition of 600"
+    },
+    {
+     "field": "original_price",
+     "value": 135,
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "HK$135 retail"
+    },
+    {
+     "field": "currency",
+     "value": "HKD",
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "HK$"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-06",
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "redemption window 6-12 Mar 2021"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "2021 redemption"
+    },
+    {
+     "field": "release_location",
+     "value": "Hong Kong Disneyland (Bibbidi Bobbidi Boutique, Hong Kong Disneyland Hotel)",
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "redemption location per summary"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "one pin showing six Zootopia characters"
+    },
+    {
+     "field": "visual_description",
+     "value": "six Zootopia characters with a '5th' anniversary dangle in the centre",
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "paraphrase of summary"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "dangle"
+     ],
+     "source_url": "https://disneypinsblog.com/zootopia-5th-anniversary-hong-kong-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "5th dangle element"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2020/avengers-mini-set/iron-man",
+   "set_key": "shdr/2020/avengers-mini-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "SHDL - Avengers Mini Set - 2020 - Iron Man",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "this listing (99936) is the Iron Man pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "listed LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "Limited Edition 500 per entry"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "SHDL series"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "series dated 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin of a multi-pin set",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "separate per-pin entries"
+    },
+    {
+     "field": "visual_description",
+     "value": "micro-size pin",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "listed size Micro"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Iron Man"
+     ],
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "named in entry title"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2020/avengers-mini-set/spider-man",
+   "set_key": "shdr/2020/avengers-mini-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "SHDL - Avengers Mini Set - 2020 - Spiderman",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "individual pin entry in the series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "listed LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "Limited Edition 500 per entry"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "SHDL series"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "series dated 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin of a multi-pin set",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "separate per-pin entries"
+    },
+    {
+     "field": "visual_description",
+     "value": "micro-size pin",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "listed size Micro"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Spider-Man"
+     ],
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "named in entry title"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2020/avengers-mini-set/captain-marvel",
+   "set_key": "shdr/2020/avengers-mini-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "SHDL - Avengers Mini Set - 2020 - Captain Marvel",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "individual pin entry in the series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "listed LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "Limited Edition 500 per entry"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "SHDL series"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "series dated 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin of a multi-pin set",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "separate per-pin entries"
+    },
+    {
+     "field": "visual_description",
+     "value": "micro-size pin",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "listed size Micro"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Captain Marvel"
+     ],
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "named in entry title"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2020/avengers-mini-set/hulk",
+   "set_key": "shdr/2020/avengers-mini-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "SHDL - Avengers Mini Set - 2020 - Hulk",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "individual pin entry in the series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "listed LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "Limited Edition 500 per entry"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "SHDL series"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "series dated 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin of a multi-pin set",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "separate per-pin entries"
+    },
+    {
+     "field": "visual_description",
+     "value": "micro-size pin",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "listed size Micro"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Hulk"
+     ],
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "named in entry title"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2020/avengers-mini-set/captain-america-shield",
+   "set_key": "shdr/2020/avengers-mini-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "SHDL - Avengers Mini Set - 2020 - Captain America Shield",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "individual pin entry in the series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "listed LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "Limited Edition 500 per entry"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "SHDL series"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "series dated 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin of a multi-pin set",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "separate per-pin entries"
+    },
+    {
+     "field": "visual_description",
+     "value": "micro-size pin",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "listed size Micro"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2020/avengers-mini-set/guardians-of-the-galaxy",
+   "set_key": "shdr/2020/avengers-mini-set",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "SHDL - Avengers Mini Set - 2020 - Guardians of the Galaxy",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "individual pin entry in the series"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "listed LE 500"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "Limited Edition 500 per entry"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "SHDL series"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "series dated 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin of a multi-pin set",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "separate per-pin entries"
+    },
+    {
+     "field": "visual_description",
+     "value": "micro-size pin",
+     "source_url": "https://mypincentral.com/pin/99936",
+     "method": "search_snippet",
+     "note": "listed size Micro"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2022/totally-minnie-mouse-random-pin/minnie-oh-minnie",
+   "set_key": "tdr/2022/totally-minnie-mouse-random-pin",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://ure.pia.co.jp/articles/-/1260319",
+     "method": "search_snippet",
+     "note": "costume list for the line"
+    },
+    {
+     "field": "visual_description",
+     "value": "heart-shaped pin of Minnie in her Minnie Oh! Minnie costume",
+     "source_url": "https://ure.pia.co.jp/articles/-/1260319",
+     "method": "search_snippet",
+     "note": "costume named in summary list"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-14",
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "set-level date"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "TDR event goods"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://castel.jp/p/7508",
+     "method": "search_snippet",
+     "note": "blind single pin, one of six"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2022/totally-minnie-mouse-random-pin/disney-princess-days",
+   "set_key": "tdr/2022/totally-minnie-mouse-random-pin",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://ure.pia.co.jp/articles/-/1260319",
+     "method": "search_snippet",
+     "note": "costume list for the line"
+    },
+    {
+     "field": "visual_description",
+     "value": "heart-shaped pin of Minnie in her Disney Princess Days costume",
+     "source_url": "https://ure.pia.co.jp/articles/-/1260319",
+     "method": "search_snippet",
+     "note": "costume named in summary list"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-14",
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "set-level date"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "TDR event goods"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://castel.jp/p/7508",
+     "method": "search_snippet",
+     "note": "blind single pin, one of six"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2022/totally-minnie-mouse-random-pin/sairyo-kabu",
+   "set_key": "tdr/2022/totally-minnie-mouse-random-pin",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://ure.pia.co.jp/articles/-/1260319",
+     "method": "search_snippet",
+     "note": "costume list for the line"
+    },
+    {
+     "field": "visual_description",
+     "value": "heart-shaped pin of Minnie in her Sairyo Kabu costume",
+     "source_url": "https://ure.pia.co.jp/articles/-/1260319",
+     "method": "search_snippet",
+     "note": "costume named in summary list"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-14",
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "set-level date"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "TDR event goods"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://castel.jp/p/7508",
+     "method": "search_snippet",
+     "note": "blind single pin, one of six"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2022/totally-minnie-mouse-random-pin/table-is-waiting",
+   "set_key": "tdr/2022/totally-minnie-mouse-random-pin",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://ure.pia.co.jp/articles/-/1260319",
+     "method": "search_snippet",
+     "note": "costume list for the line"
+    },
+    {
+     "field": "visual_description",
+     "value": "heart-shaped pin of Minnie in her Table is Waiting costume",
+     "source_url": "https://ure.pia.co.jp/articles/-/1260319",
+     "method": "search_snippet",
+     "note": "costume named in summary list"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-14",
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "set-level date"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "TDR event goods"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://castel.jp/p/7508",
+     "method": "search_snippet",
+     "note": "blind single pin, one of six"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2022/totally-minnie-mouse-random-pin/valentine-night",
+   "set_key": "tdr/2022/totally-minnie-mouse-random-pin",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://ure.pia.co.jp/articles/-/1260319",
+     "method": "search_snippet",
+     "note": "costume list for the line"
+    },
+    {
+     "field": "visual_description",
+     "value": "heart-shaped pin of Minnie in her Valentine Night costume",
+     "source_url": "https://ure.pia.co.jp/articles/-/1260319",
+     "method": "search_snippet",
+     "note": "costume named in summary list"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-14",
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "set-level date"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "TDR event goods"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://castel.jp/p/7508",
+     "method": "search_snippet",
+     "note": "blind single pin, one of six"
+    }
+   ]
+  },
+  {
+   "pin_key": "tdr/2022/totally-minnie-mouse-random-pin/tropical-splash",
+   "set_key": "tdr/2022/totally-minnie-mouse-random-pin",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://ure.pia.co.jp/articles/-/1260319",
+     "method": "search_snippet",
+     "note": "costume list for the line"
+    },
+    {
+     "field": "visual_description",
+     "value": "heart-shaped pin of Minnie in her Minnie's Tropical Splash costume",
+     "source_url": "https://ure.pia.co.jp/articles/-/1260319",
+     "method": "search_snippet",
+     "note": "costume named in summary list"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-02-14",
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "set-level date"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disney Resort",
+     "source_url": "https://mezzomiki.jp/post-225656/",
+     "method": "search_snippet",
+     "note": "TDR event goods"
+    },
+    {
+     "field": "pin_structure",
+     "value": "mystery design",
+     "source_url": "https://castel.jp/p/7508",
+     "method": "search_snippet",
+     "note": "blind single pin, one of six"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "hkdl/2021/zootopia-5th-anniversary/zootopia-5th-anniversary-pin",
+   "field": "characters",
+   "searched": "DPB summary; 2 queries",
+   "note": "the six Zootopia characters are not named in snippets"
+  },
+  {
+   "key": "shdr/2020/avengers-mini-set/iron-man",
+   "field": "release_date",
+   "searched": "My Pin Central snippet; 4 queries",
+   "note": "field note: 12 Aug 2020 shown on entry but snippet unclear whether it is the release date"
+  },
+  {
+   "key": "shdr/2020/avengers-mini-set/spider-man",
+   "field": "release_date",
+   "searched": "My Pin Central snippet; 4 queries",
+   "note": "field note: 12 Aug 2020 shown on entry but snippet unclear whether it is the release date"
+  },
+  {
+   "key": "shdr/2020/avengers-mini-set/captain-marvel",
+   "field": "release_date",
+   "searched": "My Pin Central snippet; 4 queries",
+   "note": "field note: 12 Aug 2020 shown on entry but snippet unclear whether it is the release date"
+  },
+  {
+   "key": "shdr/2020/avengers-mini-set/hulk",
+   "field": "release_date",
+   "searched": "My Pin Central snippet; 4 queries",
+   "note": "field note: 12 Aug 2020 shown on entry but snippet unclear whether it is the release date"
+  },
+  {
+   "key": "shdr/2020/avengers-mini-set/captain-america-shield",
+   "field": "release_date",
+   "searched": "My Pin Central snippet; 4 queries",
+   "note": "field note: 12 Aug 2020 shown on entry but snippet unclear whether it is the release date"
+  },
+  {
+   "key": "shdr/2020/avengers-mini-set/guardians-of-the-galaxy",
+   "field": "release_date",
+   "searched": "My Pin Central snippet; 4 queries",
+   "note": "field note: 12 Aug 2020 shown on entry but snippet unclear whether it is the release date"
+  },
+  {
+   "key": "shdr/2020/avengers-mini-set/captain-america-shield",
+   "field": "characters",
+   "searched": "My Pin Central snippet",
+   "note": "subject is the shield; no character figure stated"
+  },
+  {
+   "key": "shdr/2020/avengers-mini-set/guardians-of-the-galaxy",
+   "field": "characters",
+   "searched": "My Pin Central snippet",
+   "note": "which Guardians characters appear is not stated"
+  },
+  {
+   "key": "shdr/2020/avengers-mini-set/spider-man",
+   "field": "visual_description",
+   "searched": "My Pin Central snippet",
+   "note": "field note: only the Iron Man page was surfaced directly; other five seen as entries in its series list"
+  },
+  {
+   "key": "shdr/2020/avengers-mini-set",
+   "field": "set_name",
+   "searched": "DPB Marvel post + My Pin Central; 4 queries",
+   "note": "field note: possibly the same release as shdr/2020/marvel-emblems-pin-set (DPB: LE 500, six pins, 12 Aug 2020); names differ, not merged - confirm"
+  },
+  {
+   "key": "shdr/2020/marvel-comics-pin-set",
+   "field": "members",
+   "searched": "DPB + My Pin Central; 3 queries",
+   "note": "gap kept: LE 800 four-pin set (12 Aug 2020) - four pins still not named"
+  },
+  {
+   "key": "shdr/2020/captain-america-winter-soldier-pin-set",
+   "field": "members",
+   "searched": "My Pin Central 77667",
+   "note": "lead: SHDL two-pin Captain America / Winter Soldier set, each LE 500; year not stated - confirm year before keying"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/woody",
+   "field": "pin_structure",
+   "searched": "Jalan + DPB; 2 queries",
+   "note": "hold kept: Jalan names Woody, Hamm, Ducky & Bunny, Gabby Gabby 'and others' only - no per-pin description; not released"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/hamm",
+   "field": "pin_structure",
+   "searched": "Jalan + DPB; 2 queries",
+   "note": "hold kept: Jalan names Woody, Hamm, Ducky & Bunny, Gabby Gabby 'and others' only - no per-pin description; not released"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/duke-caboom",
+   "field": "pin_structure",
+   "searched": "Jalan + DPB; 2 queries",
+   "note": "hold kept: Jalan names Woody, Hamm, Ducky & Bunny, Gabby Gabby 'and others' only - no per-pin description; not released"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/pet-patrol",
+   "field": "pin_structure",
+   "searched": "Jalan + DPB; 2 queries",
+   "note": "hold kept: Jalan names Woody, Hamm, Ducky & Bunny, Gabby Gabby 'and others' only - no per-pin description; not released"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/gabby-gabby",
+   "field": "pin_structure",
+   "searched": "Jalan + DPB; 2 queries",
+   "note": "hold kept: Jalan names Woody, Hamm, Ducky & Bunny, Gabby Gabby 'and others' only - no per-pin description; not released"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set/ducky-and-bunny",
+   "field": "pin_structure",
+   "searched": "Jalan + DPB; 2 queries",
+   "note": "hold kept: Jalan names Woody, Hamm, Ducky & Bunny, Gabby Gabby 'and others' only - no per-pin description; not released"
+  },
+  {
+   "key": "tdr/2021/toy-story-4-pin-set",
+   "field": "release_date",
+   "searched": "Jalan News 10 Apr 2021",
+   "note": "field note: Jalan confirms 21 Apr 2021 sale (Planet M, Il Postino Stationery) - 2021 year now supported by a second source"
+  },
+  {
+   "key": "tdr/2021/oe-set/toy-story-4-mystery",
+   "field": "expected_pin_count",
+   "searched": "Jalan vs DPB",
+   "note": "field note: Jalan says 6 designs, DPB summaries said 12 - conflict recorded, not resolved"
+  },
+  {
+   "key": "tdr/2021/oe-set/toy-story-4-mystery",
+   "field": "members",
+   "searched": "Jalan + DPB",
+   "note": "hold kept: mystery designs not individually confirmed"
+  },
+  {
+   "key": "tdr/2022/totally-minnie-mouse-random-pin/minnie-oh-minnie",
+   "field": "pin_structure",
+   "searched": "MezzoMiki/Castel/Ure Pia; 4 queries",
+   "note": "hold: mystery designs not individually confirmed - six costumes listed but summaries may conflate with the six plush badges"
+  },
+  {
+   "key": "tdr/2022/totally-minnie-mouse-random-pin/disney-princess-days",
+   "field": "pin_structure",
+   "searched": "MezzoMiki/Castel/Ure Pia; 4 queries",
+   "note": "hold: mystery designs not individually confirmed - six costumes listed but summaries may conflate with the six plush badges"
+  },
+  {
+   "key": "tdr/2022/totally-minnie-mouse-random-pin/sairyo-kabu",
+   "field": "pin_structure",
+   "searched": "MezzoMiki/Castel/Ure Pia; 4 queries",
+   "note": "hold: mystery designs not individually confirmed - six costumes listed but summaries may conflate with the six plush badges"
+  },
+  {
+   "key": "tdr/2022/totally-minnie-mouse-random-pin/table-is-waiting",
+   "field": "pin_structure",
+   "searched": "MezzoMiki/Castel/Ure Pia; 4 queries",
+   "note": "hold: mystery designs not individually confirmed - six costumes listed but summaries may conflate with the six plush badges"
+  },
+  {
+   "key": "tdr/2022/totally-minnie-mouse-random-pin/valentine-night",
+   "field": "pin_structure",
+   "searched": "MezzoMiki/Castel/Ure Pia; 4 queries",
+   "note": "hold: mystery designs not individually confirmed - six costumes listed but summaries may conflate with the six plush badges"
+  },
+  {
+   "key": "tdr/2022/totally-minnie-mouse-random-pin/tropical-splash",
+   "field": "pin_structure",
+   "searched": "MezzoMiki/Castel/Ure Pia; 4 queries",
+   "note": "hold: mystery designs not individually confirmed - six costumes listed but summaries may conflate with the six plush badges"
+  },
+  {
+   "key": "tdr/2022/totally-minnie-mouse-random-pin/minnie-oh-minnie",
+   "field": "visual_description",
+   "searched": "Ure Pia summary",
+   "note": "field note: one summary gives this costume only as 'Minnie'; another as Minnie Oh! Minnie"
+  },
+  {
+   "key": "tdr/2021/park-logo-pin-set",
+   "field": "members",
+   "searched": "MezzoMiki post-216628",
+   "note": "hold kept: summary again gives 4 logo designs, JPY 2,000, on sale 29 Sep 2021; fourth design still not described"
+  },
+  {
+   "key": "hkdl/2020/mickey-friends-booster",
+   "field": "members",
+   "searched": "DPB; 1 query",
+   "note": "hold kept: six-pin booster 'featuring Donald, Minnie, Mickey, Chip n Dale, Goofy and Pluto' - character list only"
+  },
+  {
+   "key": "hkdl/2020/mickey-friends-starter-set",
+   "field": "members",
+   "searched": "DPB; 1 query",
+   "note": "gap kept: four pins plus lanyard; pins not described"
+  },
+  {
+   "key": "hkdl/2022",
+   "field": "members",
+   "searched": "various; see discovery notes",
+   "note": "gap kept: no Jun/Dec 2022 HKDL batch found; Nov 2022 birthday three not found"
+  },
+  {
+   "key": "hkdl/2021",
+   "field": "members",
+   "searched": "various; see discovery notes",
+   "note": "gap kept: no Sep/Nov 2021 HKDL batch found"
+  },
+  {
+   "key": "hkdl/2021/castle-of-magical-dreams-collection-origins",
+   "field": "members",
+   "searched": "various; see discovery notes",
+   "note": "gap kept: no 'Origins' collection source surfaced"
+  },
+  {
+   "key": "hkdl/2021/happiest-place-on-earth-princess",
+   "field": "members",
+   "searched": "various; see discovery notes",
+   "note": "hold kept: princesses still not named"
+  },
+  {
+   "key": "shdr/2021/battle-for-the-sunken-treasure-pin-set",
+   "field": "members",
+   "searched": "various; see discovery notes",
+   "note": "hold kept: only reseller titles seen (usshoppingsos), not used"
+  },
+  {
+   "key": "tdr/2021/tokyo-disneysea-20th-anniversary-pin-set",
+   "field": "members",
+   "searched": "various; see discovery notes",
+   "note": "hold kept: no framed five-pin source; MezzoMiki returned 2022 grand-finale 7-pin box (already keyed via themed-port pins) and a 2025 Duffy 20th framed set"
+  },
+  {
+   "key": "tdr/2020/dolls-day-2020",
+   "field": "members",
+   "searched": "various; see discovery notes",
+   "note": "gap kept: date/price not found; DPB says two OE kimono pins (already keyed)"
+  },
+  {
+   "key": "shdr/2022/pin-trading-fun-day-2022",
+   "field": "members",
+   "searched": "various; see discovery notes",
+   "note": "gap kept: not found"
+  },
+  {
+   "key": "hkdl/2022/january-2022",
+   "field": "members",
+   "searched": "various; see discovery notes",
+   "note": "hold kept: year convention pending maintainer decision - not released"
+  },
+  {
+   "key": "hkdl/2023/january-2023",
+   "field": "members",
+   "searched": "various; see discovery notes",
+   "note": "hold kept: year convention pending; not keyed"
+  },
+  {
+   "key": "tdr/2018/attraction-design-pins",
+   "field": "members",
+   "searched": "MezzoMiki post-143586",
+   "note": "out of cell: Tower of Terror / Splash Mountain pins dated 12 Oct 2018"
+  },
+  {
+   "key": "tdr/2023/park-snack-pin-sets",
+   "field": "members",
+   "searched": "MezzoMiki post-267198",
+   "note": "out of cell: TDL snack pin sets (2 pins each, JPY 2,000) dated 17 Aug 2023 - for 2023-24 cell"
+  }
+ ],
+ "discovery_notes": "Cell B427, follow-up 24 of B041 (reuses 397/445/478/505/526/546/564/575/584/592/600/607). 28 standard searches; all claims from search summaries. New: HKDL Zootopia 5th Anniversary LE 600 pin (Mar 2021); SHDR Avengers Mini Set 2020 (six per-pin My Pin Central entries, LE 500; possibly same release as the DPB Marvel Emblems set - field note, not merged); TDR Totally Minnie Mouse random pin (Feb 2022, six costume designs held). Re-used: TDR Toy Story 4 six-pin set (Jalan confirms 21 Apr 2021, JPY 2,900; members stay held), TS4 mystery (Jalan: 6 designs vs DPB 12), park-logo set date. No holds released; HKDL Jan 2022 / Jan 2023 untouched. Resellers seen, not used: usshoppingsos, castleplanethk, fryguypins, goodsrepublic."
+}

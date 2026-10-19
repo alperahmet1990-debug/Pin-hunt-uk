@@ -1,0 +1,2273 @@
+{
+ "packet_id": "578_b392_dlp_2020_2021_fu7",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "http://passiondlp.com/actus/arc042.php",
+   "title": "passiondlp : Archives Disneyland Paris 2021 trimestre 4",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+   "title": "Pin-Neuerscheinungen im Februar 2020 in Disneyland Paris",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+   "title": "Pin-Neuerscheinungen im August 2020",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+   "title": "Pin-Neuerscheinungen im September 2020",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+   "title": "Pin-Neuerscheinungen im September 2021",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-08-30"
+  },
+  {
+   "url": "https://wdwnt.com/2020/08/august-2020-pin-trading-releases-revealed-for-disneyland-paris/",
+   "title": "August 2020 Pin Trading Releases Revealed for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-08-02"
+  },
+  {
+   "url": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+   "title": "September 2020 Pin Trading Releases for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-09-03"
+  },
+  {
+   "url": "https://mickeyblog.com/2021/08/30/disneyland-paris-pin-releases-september-2021-include-brave-big-thunder-mountain-and-lots-of-halloween-treats/",
+   "title": "Disneyland Paris Has Amazing New Pin Releases for September!",
+   "publisher": "MickeyBlog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-08-30"
+  },
+  {
+   "url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+   "title": "Check out the Disneyland Paris Pin Trading Releases for January - Including Attractions, Genie, and 2022 Pins!",
+   "publisher": "MickeyBlog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2022-01-01"
+  },
+  {
+   "url": "https://mickeyblog.com/2021/10/31/disneyland-paris-pin-trading-releases-for-november-2021-include-cowboys-pirates-and-holiday-fun/",
+   "title": "Disneyland Paris Pin Trading Releases for November 2021 Include Cowboys, Pirates, and Holiday Fun!",
+   "publisher": "MickeyBlog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-10-31"
+  },
+  {
+   "url": "https://www.laughingplace.com/w/news/2021/10/26/new-merchandise-to-be-released-at-disneyland-paris-celebrating-mickeys-new-christmas-parade/",
+   "title": "New Merchandise To Be Released at Disneyland Paris Celebrating Mickey's New Christmas Parade",
+   "publisher": "Laughing Place",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-10-26"
+  },
+  {
+   "url": "https://wdwnt.com/2021/12/photos-new-attraction-pin-collections-coming-soon-to-disneyland-paris-including-indiana-jones-phantom-manor-big-thunder-mountain-and-more/",
+   "title": "PHOTOS: New Attraction Pin Collections Coming Soon to Disneyland Paris, Including Indiana Jones, Phantom Manor, Big Thunder Mountain, and More",
+   "publisher": "WDW News Today",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-12-05"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/cinderella-open-edition-pins-at-disneyland-paris",
+   "title": "Cinderella Open Edition Pins at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-05-21"
+  },
+  {
+   "url": "https://disneypinsblog.com/raya-and-the-last-dragon-open-edition-pins-at-disneyland-paris/",
+   "title": "Raya and the Last Dragon Open Edition Pins at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/holiday-2020-pins-delayed-release-at-disneyland-paris",
+   "title": "Holiday 2020 Pins Delayed Release at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-03-13"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-december-2021-pin-releases",
+   "title": "Disneyland Paris December 2021 Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "title": "Pin Trading à Disneyland Paris : la sélection de pin's du mois",
+   "publisher": "Disneyphile",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-december-2020-pins",
+   "title": "Disneyland Paris December 2020 Pins",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2021/cast-member-stitch-christmas-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cast Member exclusive Stitch Noel pin (December 2021)",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "passiondlp Q4 2021 archive, Pin Trading item in entry dated 14 Dec 2021"
+    },
+    {
+     "field": "edition_type",
+     "value": "Cast Member Exclusive, Limited Edition",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Listed as Cast Member exclusive, 3021 copies"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/sorcerer-mickey-jumbo-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Jumbo Mickey Sorcier surprise release (2021)",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "passiondlp Q4 2021: surprise release of a jumbo Mickey Sorcier pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 copies"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 copies"
+    },
+    {
+     "field": "price",
+     "value": 50.0,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "EUR 50"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Sold at Pueblo Trading Post"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Q4 2021 entry next to 20 Nov 2021 Pin Trading Time note"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/sword-in-the-stone-2020",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Quoted: the three Sword in the Stone pins"
+    },
+    {
+     "field": "price",
+     "value": 16.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR 16.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Quoted: limited to 400 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-29",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "29 Feb"
+    },
+    {
+     "field": "release_location",
+     "value": "The Disney Gallery, Disney Village",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Disney Gallery, Lineberty ticket needed"
+    },
+    {
+     "field": "designer",
+     "value": "Romain Costa",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Quoted: designed or inspired by Romain Costa"
+    },
+    {
+     "field": "format",
+     "value": "three separate limited pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Quoted: three pins show Archimedes, the tower where Merlin lives, and Merlin himself"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/hollywood-tower-hotel-2020",
+   "claims": [
+    {
+     "field": "format",
+     "value": "five separate open edition pins plus a lanyard",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "8 Feb: five new pins and a lanyard, all unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "8 Feb"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/onward-august-2020",
+   "claims": [
+    {
+     "field": "price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Later article: Ian alone EUR 6.99, the other EUR 7.99"
+    },
+    {
+     "field": "format",
+     "value": "two separate open edition pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Pin with both brothers EUR 7.99; Ian alone EUR 6.99"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/lilo-stitch-august-2020",
+   "claims": [
+    {
+     "field": "format",
+     "value": "two separate open edition pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "One pin of the two friends together, the other Stitch alone asleep on a pillow"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/fox-hound-rescuers-august-2020",
+   "claims": [
+    {
+     "field": "format",
+     "value": "two separate open edition pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Copper and Tod pin; Bernard and Bianca pin, each listed unlimited"
+    },
+    {
+     "field": "price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR 7.99 each"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/rainbow-mickey-minnie-2020",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR 7.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-26",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Body text 26 Sep"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/halloween-2020",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2020-09-30",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "30 Sep Halloween pins (search summary)"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/parisian-minnie-2020",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "5 Sep: three new pins and a lanyard"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "All unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-05",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "5 Sep"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09",
+     "source_url": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "WDWNT: first weekend of the month, Parisian Minnie collection with lanyard"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/big-thunder-mountain-2021",
+   "claims": [
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted overview: all four BTM pins 'unlimitiert'"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "11 Sep"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-11",
+     "source_url": "https://mickeyblog.com/2021/08/30/disneyland-paris-pin-releases-september-2021-include-brave-big-thunder-mountain-and-lots-of-halloween-treats/",
+     "method": "search_snippet",
+     "note": "MickeyBlog: four pins on the 11th themed to Big Thunder Mountain"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/christmas-le-november-2021",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.laughingplace.com/w/news/2021/10/26/new-merchandise-to-be-released-at-disneyland-paris-celebrating-mickeys-new-christmas-parade/",
+     "method": "search_snippet",
+     "note": "Laughing Place: 500 copies each"
+    },
+    {
+     "field": "price",
+     "value": 16.0,
+     "source_url": "https://www.laughingplace.com/w/news/2021/10/26/new-merchandise-to-be-released-at-disneyland-paris-celebrating-mickeys-new-christmas-parade/",
+     "method": "search_snippet",
+     "note": "EUR 16"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.laughingplace.com/w/news/2021/10/26/new-merchandise-to-be-released-at-disneyland-paris-celebrating-mickeys-new-christmas-parade/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-13",
+     "source_url": "https://www.laughingplace.com/w/news/2021/10/26/new-merchandise-to-be-released-at-disneyland-paris-celebrating-mickeys-new-christmas-parade/",
+     "method": "search_snippet",
+     "note": "13 Nov 2021"
+    },
+    {
+     "field": "format",
+     "value": "series of separate pins, one per parade float with characters aboard",
+     "source_url": "https://www.laughingplace.com/w/news/2021/10/26/new-merchandise-to-be-released-at-disneyland-paris-celebrating-mickeys-new-christmas-parade/",
+     "method": "search_snippet",
+     "note": "Series featuring each float with classic characters"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2022/january-2022-world-of-disney-le",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2022-01-15",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "MickeyBlog: three pins 15 Jan at World of Disney, two of them Genie"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "All three 700 each"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+     "method": "search_snippet",
+     "note": "Lineberty reservation needed"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/raya-oe-may-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Raya and the Last Dragon open edition pins",
+     "source_url": "https://disneypinsblog.com/raya-and-the-last-dragon-open-edition-pins-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://disneypinsblog.com/raya-and-the-last-dragon-open-edition-pins-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-05-29",
+     "source_url": "https://disneypinsblog.com/raya-and-the-last-dragon-open-edition-pins-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "29 May 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://disneypinsblog.com/raya-and-the-last-dragon-open-edition-pins-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Park closed; sold at World of Disney"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2021/cast-member-stitch-christmas-2021/stitch-noel",
+   "set_key": "dlp/2021/cast-member-stitch-christmas-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Noel (Cast Member Exclusive)",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Named 'Stitch Noel' in passiondlp archive"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Stitch Christmas design per name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Cast Member exclusive, limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 3021,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "3021 copies stated"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12-14",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Archive entry dated 14 Dec 2021 (search summary)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Single named pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/sorcerer-mickey-jumbo-2021/mickey-sorcier-jumbo",
+   "set_key": "dlp/2021/sorcerer-mickey-jumbo-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Sorcier jumbo pin",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Surprise jumbo pin named Mickey Sorcier"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Sorcerer Mickey"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Sorcerer Mickey"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 copies"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "400 copies"
+    },
+    {
+     "field": "original_price",
+     "value": 50.0,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "EUR 50"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Frontierland",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Pueblo Trading Post"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Q4 2021 archive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://passiondlp.com/actus/arc042.php",
+     "method": "search_snippet",
+     "note": "Single jumbo pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/sword-in-the-stone-2020/archimedes",
+   "set_key": "dlp/2020/sword-in-the-stone-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Archimedes (Sword in the Stone LE 400)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "One of three pins named in quoted text"
+    },
+    {
+     "field": "visual_description",
+     "value": "Archimedes",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Quoted subject list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Archimedes"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Subject named in quoted text"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR 16.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-29",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "29 Feb 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "The Disney Gallery, Disney Village",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Disney Gallery"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Three pins, three subjects in quoted text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/sword-in-the-stone-2020/merlin-tower",
+   "set_key": "dlp/2020/sword-in-the-stone-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Merlin's tower (Sword in the Stone LE 400)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "One of three pins named in quoted text"
+    },
+    {
+     "field": "visual_description",
+     "value": "The tower where Merlin lives in the castle",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Quoted subject list"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR 16.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-29",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "29 Feb 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "The Disney Gallery, Disney Village",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Disney Gallery"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Three pins, three subjects in quoted text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/sword-in-the-stone-2020/merlin",
+   "set_key": "dlp/2020/sword-in-the-stone-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Merlin (Sword in the Stone LE 400)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "One of three pins named in quoted text"
+    },
+    {
+     "field": "visual_description",
+     "value": "Merlin himself",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Quoted subject list"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Merlin"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Subject named in quoted text"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR 16.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-29",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "29 Feb 2020"
+    },
+    {
+     "field": "release_location",
+     "value": "The Disney Gallery, Disney Village",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Disney Gallery"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Three pins, three subjects in quoted text"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/hollywood-tower-hotel-2020/logo",
+   "set_key": "dlp/2020/hollywood-tower-hotel-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Tower of Terror logo",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Named in dein-dlrp price list (search summary)"
+    },
+    {
+     "field": "attraction",
+     "value": "The Twilight Zone Tower of Terror",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Tower of Terror pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "All unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "8 Feb 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Each listed with its own price"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/hollywood-tower-hotel-2020/goofy",
+   "set_key": "dlp/2020/hollywood-tower-hotel-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy (Tower of Terror)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Named in dein-dlrp price list (search summary)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Character named in price list"
+    },
+    {
+     "field": "attraction",
+     "value": "The Twilight Zone Tower of Terror",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Tower of Terror pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "All unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "8 Feb 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Each listed with its own price"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/hollywood-tower-hotel-2020/stitch",
+   "set_key": "dlp/2020/hollywood-tower-hotel-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch (Tower of Terror)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Named in dein-dlrp price list (search summary)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Character named in price list"
+    },
+    {
+     "field": "attraction",
+     "value": "The Twilight Zone Tower of Terror",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Tower of Terror pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "All unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "8 Feb 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Each listed with its own price"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/hollywood-tower-hotel-2020/chip-dale",
+   "set_key": "dlp/2020/hollywood-tower-hotel-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip and Dale (Tower of Terror)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Named in dein-dlrp price list (search summary)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Character named in price list"
+    },
+    {
+     "field": "attraction",
+     "value": "The Twilight Zone Tower of Terror",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Tower of Terror pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "All unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "8 Feb 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Each listed with its own price"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/hollywood-tower-hotel-2020/exterior",
+   "set_key": "dlp/2020/hollywood-tower-hotel-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Hollywood Tower Hotel exterior view",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Named in dein-dlrp price list (search summary)"
+    },
+    {
+     "field": "attraction",
+     "value": "The Twilight Zone Tower of Terror",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Tower of Terror pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "All unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "8 Feb 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Each listed with its own price"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/onward-august-2020/ian-barley",
+   "set_key": "dlp/2020/onward-august-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ian and Barley (Onward)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Pin with the two main characters"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ian Lightfoot",
+      "Barley Lightfoot"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Both brothers"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "dein-dlrp: Onward pins meant for March finally on sale (Aug 2020)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/onward-august-2020/ian",
+   "set_key": "dlp/2020/onward-august-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ian (Onward)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Pin with Ian alone (page typo 'Lan')"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ian Lightfoot"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Ian alone"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Sold Aug 2020 after postponement"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/lilo-stitch-august-2020/lilo-and-stitch",
+   "set_key": "dlp/2020/lilo-stitch-august-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lilo and Stitch",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Pin showing the two friends together"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lilo",
+      "Stitch"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Both on one pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "All six Aug pins unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR 7.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-15",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "15 Aug"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Single pin with two characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/august-2020-releases/stitch-tired",
+   "set_key": "dlp/2020/august-2020-releases",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Stitch alone, asleep on a pillow",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Second Lilo & Stitch pin of 15 Aug"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR 7.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-15",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "15 Aug"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/fox-hound-rescuers-august-2020/copper-tod",
+   "set_key": "dlp/2020/fox-hound-rescuers-august-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Copper and Tod",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Listed as its own unlimited pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Copper",
+      "Tod"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Pair named"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-22",
+     "source_url": "https://wdwnt.com/2020/08/august-2020-pin-trading-releases-revealed-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "WDWNT: 22 Aug"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Two characters on one pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/fox-hound-rescuers-august-2020/bernard-bianca",
+   "set_key": "dlp/2020/fox-hound-rescuers-august-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bernard and Bianca",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Listed as its own unlimited pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bernard",
+      "Bianca"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Pair named"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-22",
+     "source_url": "https://wdwnt.com/2020/08/august-2020-pin-trading-releases-revealed-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "WDWNT: 22 Aug"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Two characters on one pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/rainbow-mickey-minnie-2020/mickey",
+   "set_key": "dlp/2020/rainbow-mickey-minnie-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rainbow Mickey (Pride 2020)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Buyers could choose Mickey or Minnie rainbow pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "One character per pin (choice of Mickey or Minnie)"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-26",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Body text 26 Sep"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Mickey or Minnie choice"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/rainbow-mickey-minnie-2020/minnie",
+   "set_key": "dlp/2020/rainbow-mickey-minnie-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rainbow Minnie (Pride 2020)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Buyers could choose Mickey or Minnie rainbow pin"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "One character per pin (choice of Mickey or Minnie)"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-26",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Body text 26 Sep"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Mickey or Minnie choice"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/halloween-2020/mickey",
+   "set_key": "dlp/2020/halloween-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween Mickey (2020)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Listed with own price"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Named"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Halloween OE"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-30",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "30 Sep 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Single listed pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/halloween-2020/pluto",
+   "set_key": "dlp/2020/halloween-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween Pluto (2020)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Listed with own price"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pluto"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Named"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Halloween OE"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-30",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "30 Sep 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Single listed pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/halloween-2020/donald",
+   "set_key": "dlp/2020/halloween-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Halloween Donald (2020)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Listed with own price"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Named"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Halloween OE"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-30",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "30 Sep 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Single listed pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/big-thunder-mountain-2021/attraction-logo",
+   "set_key": "dlp/2021/big-thunder-mountain-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Big Thunder Mountain Logo",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted dein-dlrp line item"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted: unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 10.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted EUR 10"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "11 Sep 2021"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/big-thunder-mountain-2021/chip-dale-mine-cart",
+   "set_key": "dlp/2021/big-thunder-mountain-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip und Chap Minenwagen",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted dein-dlrp line item"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted: unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 10.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted EUR 10"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "11 Sep 2021"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/big-thunder-mountain-2021/stitch",
+   "set_key": "dlp/2021/big-thunder-mountain-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Minenwagen",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted dein-dlrp line item"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted: unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 10.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted EUR 10"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "11 Sep 2021"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/big-thunder-mountain-2021/goofy",
+   "set_key": "dlp/2021/big-thunder-mountain-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy Cowboy",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted dein-dlrp line item"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted: unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "Quoted EUR 8"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+     "method": "search_snippet",
+     "note": "11 Sep 2021"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2021/cast-member-stitch-christmas-2021/stitch-noel",
+   "field": "release_date",
+   "searched": "passiondlp Q4 2021 snippet",
+   "note": "field note: 14 Dec is the archive entry date per search summary; distribution date to cast not stated. Released from lead (packet 567) on passiondlp text"
+  },
+  {
+   "key": "dlp/2021/sorcerer-mickey-jumbo-2021/mickey-sorcier-jumbo",
+   "field": "release_date",
+   "searched": "passiondlp Q4 2021 snippet",
+   "note": "field note: day not stated; sits beside 20 Nov 2021 PTT note, so 20 Nov likely. Kept apart from OE dlp/2021/sorcerer-mickey-november-2021 (Disneyphile: that series not limited)"
+  },
+  {
+   "key": "dlp/2020/sword-in-the-stone-2020/archimedes",
+   "field": "pin_structure",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+   "note": "field note: one subject per pin inferred from quoted 'the three pins show Archimedes, the tower, and Merlin' (three pins, three subjects); confirm at review"
+  },
+  {
+   "key": "dlp/2020/sword-in-the-stone-2020/merlin-tower",
+   "field": "pin_structure",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+   "note": "field note: one subject per pin inferred from quoted 'the three pins show Archimedes, the tower, and Merlin' (three pins, three subjects); confirm at review"
+  },
+  {
+   "key": "dlp/2020/sword-in-the-stone-2020/merlin",
+   "field": "pin_structure",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/",
+   "note": "field note: one subject per pin inferred from quoted 'the three pins show Archimedes, the tower, and Merlin' (three pins, three subjects); confirm at review"
+  },
+  {
+   "key": "dlp/2020/hollywood-tower-hotel-2020/logo",
+   "field": "pin_name",
+   "searched": "dein-dlrp Feb 2020 summary",
+   "note": "field note: five pins and prices from a search summary of the dein-dlrp page, not a verbatim quote; Chip and Dale pin taken as one pin (one price)"
+  },
+  {
+   "key": "dlp/2020/onward-february-2020",
+   "field": "pins",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-februar-2020/; https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+   "note": "variant: same pins as dlp/2020/onward-august-2020/ian-barley and /ian - Feb 2020 page lists them for 29 Feb, Aug 2020 page says they were postponed from March and only now on sale"
+  },
+  {
+   "key": "dlp/2020/onward-august-2020/ian-barley",
+   "field": "release_date",
+   "searched": "https://wdwnt.com/2020/08/august-2020-pin-trading-releases-revealed-for-disneyland-paris/",
+   "note": "field note: WDWNT gives only 'end of the month' (Aug 2020); 29 Aug from earlier packet"
+  },
+  {
+   "key": "dlp/2020/august-2020-releases/stitch-tired",
+   "field": "set_key",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+   "note": "field note: this is the second pin of dlp/2020/lilo-stitch-august-2020 (2 pins); set link to review"
+  },
+  {
+   "key": "dlp/2020/august-2020-releases",
+   "field": "pins",
+   "searched": "https://wdwnt.com/2020/08/august-2020-pin-trading-releases-revealed-for-disneyland-paris/",
+   "note": "WDWNT says the 22 Aug Marvel pins were cancelled; dein-dlrp still lists Spider-Man and Iron Man at EUR 7.99. Not recorded"
+  },
+  {
+   "key": "dlp/2020/rainbow-mickey-minnie-2020",
+   "field": "release_date",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+   "note": "field note: same page's overview gives 19 Sep vs body 26 Sep"
+  },
+  {
+   "key": "dlp/2020/halloween-2020/mickey",
+   "field": "visual_description",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/; https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+   "note": "field note: designs not described; prices from search summary of dein-dlrp; WDWNT mentions a Mickey and gang costume release. Edition type inferred from 'unlimited' context"
+  },
+  {
+   "key": "dlp/2020/halloween-2020",
+   "field": "pins",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+   "note": "Two Halloween sets at EUR 12.99 on 30 Sep 2020; contents not stated"
+  },
+  {
+   "key": "dlp/2020/parisian-minnie-2020",
+   "field": "pins",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/; https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+   "note": "Three pins (two EUR 7.99, one EUR 9.99) not described; no per-pin records"
+  },
+  {
+   "key": "dlp/2021/big-thunder-mountain-2021",
+   "field": "edition_type",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2021/",
+   "note": "field note: quoted line items say unlimited (EUR 10/10/10/8); supports OE over LE 700 (packet 105). WDWNT 5 Dec 2021 also shows the set 'coming soon' with lanyard - preview only"
+  },
+  {
+   "key": "dlp/2021/christmas-le-november-2021",
+   "field": "pins",
+   "searched": "https://www.laughingplace.com/w/news/2021/10/26/new-merchandise-to-be-released-at-disneyland-paris-celebrating-mickeys-new-christmas-parade/",
+   "note": "Floats still not named; ten-pin count from packet 567 not restated here; no per-float records"
+  },
+  {
+   "key": "dlp/2022/january-2022-world-of-disney-le/genie-chef",
+   "field": "release_date",
+   "searched": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+   "note": "field note: MickeyBlog (new source) 15 Jan 2022 agrees with dein-dlrp; Disneyphile 11 Dec 2021 remains the only Dec date"
+  },
+  {
+   "key": "dlp/2021/december-2021-le/genie",
+   "field": "pin_structure",
+   "searched": "https://mickeyblog.com/2022/01/01/check-out-the-disneyland-paris-pin-trading-releases-for-january-including-attractions-genie-and-2022-pins/",
+   "note": "hold stays: second source now dates the two Genie LE 700 pins to 15 Jan 2022; this 2021 key likely retires into the 2022 keys"
+  },
+  {
+   "key": "dlp/2021/raya-oe-may-2021",
+   "field": "pin_structure",
+   "searched": "https://disneypinsblog.com/raya-and-the-last-dragon-open-edition-pins-at-disneyland-paris/",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs); series 'features Sisu, Raya and the Ongis' - character list only; count unknown"
+  },
+  {
+   "key": "dlp/2021/cinderella-oe-may-2021",
+   "field": "pin_structure",
+   "searched": "https://disneypinsblog.com/blogs/news/cinderella-open-edition-pins-at-disneyland-paris",
+   "note": "hold: confirm pin structure; series 'features Lucifer, Jaq and Gus, Cinderella and the Carriage' - list only, count and split not stated"
+  },
+  {
+   "key": "dlp/2021/attraction-medals-december-2021",
+   "field": "original_price",
+   "searched": "http://passiondlp.com/actus/arc042.php",
+   "note": "field note: same archive mentions EUR 27 and a 1992-copy item nearby, not tied to the medal pins; price still unconfirmed"
+  },
+  {
+   "key": "dlp/2021/pirates-november-2021",
+   "field": "pins",
+   "searched": "https://wdwnt.com/2021/12/photos-new-attraction-pin-collections-coming-soon-to-disneyland-paris-including-indiana-jones-phantom-manor-big-thunder-mountain-and-more/; https://mickeyblog.com/2021/10/31/disneyland-paris-pin-trading-releases-for-november-2021-include-cowboys-pirates-and-holiday-fun/",
+   "note": "lead: WDWNT preview: Pirates set of Stitch, Goofy, Chip & Dale plus skull-and-swords logo pin; MickeyBlog 27 Nov 2021 Pirates pins + lanyard. Only Stitch recorded; others not dated in 2021"
+  },
+  {
+   "key": "dlp/2021/indiana-jones-attraction-set",
+   "field": "pins",
+   "searched": "https://wdwnt.com/2021/12/photos-new-attraction-pin-collections-coming-soon-to-disneyland-paris-including-indiana-jones-phantom-manor-big-thunder-mountain-and-more/",
+   "note": "lead: WDWNT 5 Dec 2021 preview of a two-pin Indiana Jones set (hat/whip over daggers; attraction icon) and a Merlin l'Enchanteur shop pin - 'coming soon', release date (likely 2022) not found"
+  },
+  {
+   "key": "dlp/2021/101-dalmatians-december-2021",
+   "field": "pins",
+   "searched": "3 queries",
+   "note": "Three LE 700 designs still unnamed; Disneyphile only; no new source"
+  },
+  {
+   "key": "dlp/2021/animators-dalmatians-oe-december-2021",
+   "field": "pins",
+   "searched": "https://disneypinsblog.com/blogs/news/disneyland-paris-december-2021-pin-releases",
+   "note": "Still only the caption; no designs"
+  },
+  {
+   "key": "dlp/2021/star-wars-patrice-girod-november-2021",
+   "field": "pins",
+   "searched": "1 query; https://mickeyblog.com/2021/10/31/disneyland-paris-pin-trading-releases-for-november-2021-include-cowboys-pirates-and-holiday-fun/",
+   "note": "Four RotJ designs not named; MickeyBlog only gives 27 Nov at World of Disney (says 'Disney Springs' in error)"
+  },
+  {
+   "key": "dlp/2020/holiday-2020-delayed",
+   "field": "pins",
+   "searched": "https://disneypinsblog.com/blogs/news/holiday-2020-pins-delayed-release-at-disneyland-paris",
+   "note": "Alice pins still undescribed; Disney Pins Blog repeats Stitch LE 700 and 'Alice pins' 13 Mar 2021 at World of Disney"
+  },
+  {
+   "key": "dlp/2020/lanyard-charms-december-2020",
+   "field": "scope",
+   "searched": "1 query; https://disneypinsblog.com/blogs/news/disneyland-paris-december-2020-pins",
+   "note": "scope: confirm pin vs button - no new evidence; Dec 2020 blog mentions only 'new lanyards'"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/top-hat",
+   "field": "release_date",
+   "searched": "not searched (budget)",
+   "note": "field note: 9 vs 30 Oct conflict unchanged"
+  },
+  {
+   "key": "dlp/2020/march-2020-le/pocahontas-carousel",
+   "field": "release_date",
+   "searched": "not searched (budget)",
+   "note": "field note: 12/16/19/26 Sep 2020 conflict unchanged; dein-dlrp Sep 2020 summary again: three LE 700 pins on 12 Sep, EUR 15.99, Pueblo Trading Post"
+  },
+  {
+   "key": "dlp/2021/villains-jumbo-2021",
+   "field": "pins",
+   "searched": "not searched",
+   "note": "lead stays: probably same release as dlp/2021/villains-portraits-2021; merge at review"
+  },
+  {
+   "key": "dlp/2021/disney-hotel-new-york",
+   "field": "pins",
+   "searched": "not searched (budget)",
+   "note": "No dated 2020-2021 hotel pin found in any packet"
+  },
+  {
+   "key": "dlp/2020/mickey-castle-august-2020",
+   "field": "pins",
+   "searched": "https://wdwnt.com/2020/08/august-2020-pin-trading-releases-revealed-for-disneyland-paris/",
+   "note": "WDWNT: two designs of Mickey and Sleeping Beauty Castle at month end; not described"
+  },
+  {
+   "key": "dlp/2020/oe-set/christmas-booster-2020",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/santa-hat-november-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/cowboy-november-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/christmas-oe-december-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/halloween-trio-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-pluto-mummy-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-pumpkin-ghost-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2020/cast-member-genie/genie",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/stitch-august-2021/2-pin-set",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/pin-trading-anniversary-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "Hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "discovery",
+   "field": "budget",
+   "searched": "WebSearch standard; B392",
+   "note": "27 WebSearch calls used"
+  },
+  {
+   "key": "dlp/2020/halloween-2020/mickey",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: title-only (search summary of dein-dlrp Sep 2020 lists a Halloween Mickey / Pluto / Donald with prices; designs not described); confirm each design before counting"
+  },
+  {
+   "key": "dlp/2020/halloween-2020/pluto",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: title-only (search summary of dein-dlrp Sep 2020 lists a Halloween Mickey / Pluto / Donald with prices; designs not described); confirm each design before counting"
+  },
+  {
+   "key": "dlp/2020/halloween-2020/donald",
+   "field": "pin_structure",
+   "searched": "review",
+   "note": "hold: title-only (search summary of dein-dlrp Sep 2020 lists a Halloween Mickey / Pluto / Donald with prices; designs not described); confirm each design before counting"
+  }
+ ],
+ "discovery_notes": "B392 follow-up 7 of B044 (DLP 2020-2021), 27 web searches. New: Stitch Noel CM LE 3021 and Mickey Sorcier jumbo LE 400 (passiondlp leads promoted); 2020 OE backfill from dein-dlrp: Tower of Terror five, Sword in the Stone three LE 400, Onward two, Lilo & Stitch, Copper & Tod, Bernard & Bianca, rainbow Mickey/Minnie, Halloween 2020 Mickey/Pluto/Donald. BTM OE confirmed by quoted line items. New set Raya OE May 2021 (held). All search_snippet."
+}

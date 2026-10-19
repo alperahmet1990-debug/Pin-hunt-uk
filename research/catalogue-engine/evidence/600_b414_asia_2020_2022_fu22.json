@@ -1,0 +1,1871 @@
+{
+ "packet_id": "600_b414_asia_2020_2022_fu22",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/sleeping-princess-pins-at-shanghai-disney-resort",
+   "title": "Sleeping Princess Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2022-10"
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-princess-perfume-bottle-pin-series-at-shanghai-disneyland/",
+   "title": "Disney Princess Perfume Bottle Pin Series at Shanghai Disneyland",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-01"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+   "title": "Disney Character Restaurant Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-11"
+  },
+  {
+   "url": "https://disneypinsblog.com/shanghai-disneyland-hotel-toy-story-hotel-pins-at-shdr/",
+   "title": "Shanghai Disneyland Hotel & Toy Story Hotel Pins at SHDR",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-04-08"
+  },
+  {
+   "url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+   "title": "Star Wars & Monsters University Spinner Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-02"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-spinner-pin-at-shanghai-disney-resort",
+   "title": "Alice in Wonderland Spinner Pin at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-03"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-spinner-shanghai-disney-pin",
+   "title": "Enchanted Storybook Castle Spinner Shanghai Disney Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-10"
+  },
+  {
+   "url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+   "title": "Hello Spring 2021 Shanghai Disney Resort Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-03"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-pins-at-shanghai-disney-resort",
+   "title": "Pirates of the Caribbean Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-04"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-battle-for-the-sunken-treasure-pins-at-shanghai-disney-resort",
+   "title": "Pirates of the Caribbean Battle for the Sunken Treasure Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-07"
+  },
+  {
+   "url": "https://disneypinsblog.com/mickeys-pool-party-pins-at-shanghai-disney-resort/",
+   "title": "Mickey's Pool Party Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2022-07-24"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/character-fruit-mystery-pin-collection-at-shanghai-disney-resort",
+   "title": "Character Fruit Mystery Pin Collection at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2022-06"
+  },
+  {
+   "url": "https://mezzomiki.jp/post-216628/",
+   "title": "Tokyo Disney Resort pin badge set, park logo four designs (MezzoMiki)",
+   "publisher": "MezzoMiki",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mezzomiki.jp/post-240806/",
+   "title": "Disney Halloween 2022 Mickey balloon design goods (MezzoMiki)",
+   "publisher": "MezzoMiki",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2022-09"
+  },
+  {
+   "url": "https://rurubu.jp/andmore/article/16312",
+   "title": "Duffy & Friends Beautiful Rainy Days goods (rurubu&more)",
+   "publisher": "rurubu&more",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2022"
+  },
+  {
+   "url": "https://mezzomiki.jp/post-230313/",
+   "title": "Duffy & Friends Beautiful Rainy Days goods (MezzoMiki)",
+   "publisher": "MezzoMiki",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2022"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/happiest-place-on-earth-princess-pin-series-at-hong-kong-disneyland",
+   "title": "Happiest Place on Earth Princess Pin Series at Hong Kong Disneyland",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-03"
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "shdr/2022/sleeping-princess",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Sleeping Princess pin series",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-princess-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-princess-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-10-28",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-princess-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-princess-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "format",
+     "value": "open edition series",
+     "source_url": "https://disneypinsblog.com/blogs/news/sleeping-princess-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "series of pins; per-pin split not stated; search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/disney-princess-perfume-bottle",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Princess Perfume Bottle pin series",
+     "source_url": "https://disneypinsblog.com/disney-princess-perfume-bottle-pin-series-at-shanghai-disneyland/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/disney-princess-perfume-bottle-pin-series-at-shanghai-disneyland/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-01",
+     "source_url": "https://disneypinsblog.com/disney-princess-perfume-bottle-pin-series-at-shanghai-disneyland/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/disney-princess-perfume-bottle-pin-series-at-shanghai-disneyland/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "format",
+     "value": "open edition series",
+     "source_url": "https://disneypinsblog.com/disney-princess-perfume-bottle-pin-series-at-shanghai-disneyland/",
+     "method": "search_snippet",
+     "note": "perfume-bottle pins with stained-glass bottle part; search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/character-restaurant-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Disney Character Restaurant pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "three pins described; search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "spotted November 2021; search summary only"
+    },
+    {
+     "field": "format",
+     "value": "open edition series of separate pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "each pin shows one character in front of a resort restaurant; search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/hotel-pins",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Shanghai Disneyland Hotel & Toy Story Hotel pins",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-hotel-toy-story-hotel-pins-at-shdr/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-hotel-toy-story-hotel-pins-at-shdr/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-hotel-toy-story-hotel-pins-at-shdr/",
+     "method": "search_snippet",
+     "note": "post dated 8 Apr 2021; search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/shanghai-disneyland-hotel-toy-story-hotel-pins-at-shdr/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/spinner-pins-star-wars-monsters-university",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Star Wars & Monsters University spinner pins",
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "two new pins; search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02",
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "format",
+     "value": "two separate open edition spinner pins",
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/oe-single/alice-in-wonderland-spinner",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Alice in Wonderland spinner pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-spinner-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-spinner-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-spinner-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/oe-single/enchanted-storybook-castle-spinner",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Enchanted Storybook Castle spinner pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-spinner-shanghai-disney-pin",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-spinner-shanghai-disney-pin",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-spinner-shanghai-disney-pin",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-spinner-shanghai-disney-pin",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/hello-spring-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hello Spring 2021",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-01",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "format",
+     "value": "release batch: single pins, pin set, mystery collection, boxed set",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/hello-spring-2021-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hello Spring 2021 pin set",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-01",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/hello-spring-2021-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hello Spring 2021 mystery collection",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 6,
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "six pins; search summary only"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "2 random per box; search summary only"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-01",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/hello-spring-2021-box-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Hello Spring 2021 boxed set",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "LE 500; search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-01",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/pirates-of-the-caribbean-treasure-map-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pirates of the Caribbean mystery set (treasure map)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "eight pins; search summary only"
+    },
+    {
+     "field": "format",
+     "value": "mystery; completed set forms a treasure map",
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-30",
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/pirates-of-the-caribbean-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pirates of the Caribbean open edition pins 2021",
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "two OE pins featuring Mickey and Donald; search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-30",
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/battle-for-the-sunken-treasure",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pirates of the Caribbean Battle for the Sunken Treasure pins",
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-battle-for-the-sunken-treasure-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-battle-for-the-sunken-treasure-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-battle-for-the-sunken-treasure-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-battle-for-the-sunken-treasure-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/battle-for-the-sunken-treasure-pin-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pirates of the Caribbean pin set (Battle for the Sunken Treasure release)",
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-battle-for-the-sunken-treasure-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-battle-for-the-sunken-treasure-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "three pins in total; search summary only"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-battle-for-the-sunken-treasure-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-battle-for-the-sunken-treasure-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/pirates-of-the-caribbean-battle-for-the-sunken-treasure-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2022/mickeys-pool-party",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey's Pool Party pin series",
+     "source_url": "https://disneypinsblog.com/mickeys-pool-party-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/mickeys-pool-party-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07",
+     "source_url": "https://disneypinsblog.com/mickeys-pool-party-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "post dated 24 Jul 2022; search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/mickeys-pool-party-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2022/character-fruit-mystery",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Character Fruit Mystery Pin Collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/character-fruit-mystery-pin-collection-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "DPB post title"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 8,
+     "source_url": "https://disneypinsblog.com/blogs/news/character-fruit-mystery-pin-collection-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "8 pins in total; search summary only"
+    },
+    {
+     "field": "pins_per_box",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/blogs/news/character-fruit-mystery-pin-collection-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "2 random per box; search summary only"
+    },
+    {
+     "field": "format",
+     "value": "mystery",
+     "source_url": "https://disneypinsblog.com/blogs/news/character-fruit-mystery-pin-collection-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/character-fruit-mystery-pin-collection-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/character-fruit-mystery-pin-collection-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "tdr/2022/halloween-2022-pin-badge-set",
+   "claims": [
+    {
+     "field": "visual_colours",
+     "value": [
+      "orange",
+      "purple"
+     ],
+     "source_url": "https://mezzomiki.jp/post-240806/",
+     "method": "search_snippet",
+     "note": "Halloween-colour Mickey balloon pins (orange/purple goods line); search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-09-14",
+     "source_url": "https://mezzomiki.jp/post-240806/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "price",
+     "value": 2600,
+     "source_url": "https://mezzomiki.jp/post-240806/",
+     "method": "search_snippet",
+     "note": "2,600 yen; search summary only"
+    },
+    {
+     "field": "currency",
+     "value": "JPY",
+     "source_url": "https://mezzomiki.jp/post-240806/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Tokyo Disneyland - Disney & Co.",
+     "source_url": "https://mezzomiki.jp/post-240806/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "shdr/2021/character-restaurant-pins/stitch-barbossas-bounty",
+   "set_key": "shdr/2021/character-restaurant-pins",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "attraction",
+     "value": "Barbossa's Bounty",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "restaurant named on the pin per summary"
+    },
+    {
+     "field": "visual_description",
+     "value": "Stitch as a pirate in front of Barbossa's Bounty",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "paraphrase; search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "spotted Nov 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "one character per pin per per-pin description"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2021/character-restaurant-pins/rapunzel-tangled-tavern",
+   "set_key": "shdr/2021/character-restaurant-pins",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "attraction",
+     "value": "Tangled Tavern",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "restaurant named on the pin per summary"
+    },
+    {
+     "field": "visual_description",
+     "value": "Rapunzel in front of Tangled Tavern",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "paraphrase; search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "spotted Nov 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "one character per pin per per-pin description"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2021/character-restaurant-pins/mulan-wandering-moon",
+   "set_key": "shdr/2021/character-restaurant-pins",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mulan"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "main_character",
+     "value": "Mulan",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "attraction",
+     "value": "Wandering Moon Restaurant",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "restaurant named on the pin per summary"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mulan in front of Wandering Moon Restaurant",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "paraphrase; search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "spotted Nov 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/disney-character-restaurant-pins-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "one character per pin per per-pin description"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2021/spinner-pins-star-wars-monsters-university/star-wars",
+   "set_key": "shdr/2021/spinner-pins-star-wars-monsters-university",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Star Wars",
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "visual_description",
+     "value": "characters spin around a Millennium Falcon",
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "paraphrase; search summary only"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02",
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2021/spinner-pins-star-wars-monsters-university/monsters-university",
+   "set_key": "shdr/2021/spinner-pins-star-wars-monsters-university",
+   "claims": [
+    {
+     "field": "franchise",
+     "value": "Monsters University",
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "visual_description",
+     "value": "spinner design with the MU 1313 logo",
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "paraphrase; search summary only"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02",
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/star-wars-monsters-university-spinner-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2021/oe/alice-in-wonderland-spinner",
+   "set_key": "shdr/2021/oe-single/alice-in-wonderland-spinner",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice in Wonderland Spinner Pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-spinner-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "franchise",
+     "value": "Alice in Wonderland",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-spinner-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-spinner-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-12",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-spinner-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-spinner-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/alice-in-wonderland-spinner-pin-at-shanghai-disney-resort",
+     "method": "search_snippet",
+     "note": "single pin post"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2021/oe/enchanted-storybook-castle-spinner",
+   "set_key": "shdr/2021/oe-single/enchanted-storybook-castle-spinner",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Enchanted Storybook Castle Spinner",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-spinner-shanghai-disney-pin",
+     "method": "search_snippet",
+     "note": "DPB title"
+    },
+    {
+     "field": "attraction",
+     "value": "Enchanted Storybook Castle",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-spinner-shanghai-disney-pin",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "visual_description",
+     "value": "double-sided spinner: castle by day on one side, at night with fireworks on the other",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-spinner-shanghai-disney-pin",
+     "method": "search_snippet",
+     "note": "paraphrase; search summary only"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "spinner",
+      "double-sided"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-spinner-shanghai-disney-pin",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-spinner-shanghai-disney-pin",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-10-09",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-spinner-shanghai-disney-pin",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-spinner-shanghai-disney-pin",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/enchanted-storybook-castle-spinner-shanghai-disney-pin",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2021/hello-spring-2021/spring-time-2021",
+   "set_key": "shdr/2021/hello-spring-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Spring Time 2021",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-01",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2021/hello-spring-2021/chip-and-dale-diorama",
+   "set_key": "shdr/2021/hello-spring-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "visual_form",
+     "value": "diorama",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "annual passholder exclusive",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "AP exclusive per summary"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-01",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "listed as one Chip n Dale pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2021/hello-spring-2021/donald-duck-egg",
+   "set_key": "shdr/2021/hello-spring-2021",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "visual_form",
+     "value": "egg",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-01",
+     "source_url": "https://disneypinsblog.com/hello-spring-2021-shanghai-disney-resort-pin-releases/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2022/mickeys-pool-party/donald-duck",
+   "set_key": "shdr/2022/mickeys-pool-party",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/mickeys-pool-party-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "listed as a Donald Duck pin"
+    },
+    {
+     "field": "main_character",
+     "value": "Donald Duck",
+     "source_url": "https://disneypinsblog.com/mickeys-pool-party-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/mickeys-pool-party-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07",
+     "source_url": "https://disneypinsblog.com/mickeys-pool-party-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/mickeys-pool-party-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "heading names a single Donald Duck pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2022/mickeys-pool-party/chip-and-dale",
+   "set_key": "shdr/2022/mickeys-pool-party",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/mickeys-pool-party-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/mickeys-pool-party-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-07",
+     "source_url": "https://disneypinsblog.com/mickeys-pool-party-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "shdr/2022/sleeping-princess",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - Snow White, Rapunzel, Belle, Jasmine, Aurora named as a character list only; no members created"
+  },
+  {
+   "key": "shdr/2022/sleeping-princess",
+   "field": "price",
+   "searched": "2 queries",
+   "note": "price not stated; a reseller lists an Aurora pin individually (not used)"
+  },
+  {
+   "key": "shdr/2022/sleeping-princess",
+   "field": "release_date",
+   "searched": "2 queries",
+   "note": "field note: page age metadata inconsistent with 28 Oct 2022; confirm on page"
+  },
+  {
+   "key": "shdr/2021/disney-princess-perfume-bottle",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure - 'each pin' has a stained-glass bottle, but Cinderella, Ariel, Snow White, Rapunzel, Jasmine, Belle, Aurora are a character list only; no members created"
+  },
+  {
+   "key": "shdr/2021/disney-princess-perfume-bottle",
+   "field": "price",
+   "searched": "2 queries",
+   "note": "price not stated"
+  },
+  {
+   "key": "shdr/2021/character-restaurant-pins/stitch-barbossas-bounty",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "official price not stated (reseller USD price seen, not used)"
+  },
+  {
+   "key": "shdr/2021/character-restaurant-pins/rapunzel-tangled-tavern",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "official price not stated (reseller USD price seen, not used)"
+  },
+  {
+   "key": "shdr/2021/character-restaurant-pins/mulan-wandering-moon",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "official price not stated (reseller USD price seen, not used)"
+  },
+  {
+   "key": "shdr/2021/character-restaurant-pins/rapunzel-tangled-tavern",
+   "field": "attraction",
+   "searched": "1 query",
+   "note": "field note: DPB says Tangled Tavern, reseller listings say Tangled Tree Tavern"
+  },
+  {
+   "key": "shdr/2021/hotel-pins",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure - pins feature Shanghai Disneyland Hotel and Toy Story Hotel with Mickey, Minnie, Woody, Buzz; count and per-pin mapping not stated; no members created"
+  },
+  {
+   "key": "shdr/2021/spinner-pins-star-wars-monsters-university/star-wars",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters on the spinner not named"
+  },
+  {
+   "key": "shdr/2021/spinner-pins-star-wars-monsters-university/monsters-university",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters not named"
+  },
+  {
+   "key": "shdr/2021/oe/alice-in-wonderland-spinner",
+   "field": "edition_type",
+   "searched": "1 query",
+   "note": "edition type not stated in summary; post links it to the Star Wars / MU spinner versions (OE) - not assumed"
+  },
+  {
+   "key": "shdr/2021/oe/alice-in-wonderland-spinner",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "characters not listed"
+  },
+  {
+   "key": "shdr/2021/oe/enchanted-storybook-castle-spinner",
+   "field": "original_price",
+   "searched": "1 query",
+   "note": "price not stated"
+  },
+  {
+   "key": "shdr/2021/hello-spring-2021/spring-time-2021",
+   "field": "characters",
+   "searched": "2 queries",
+   "note": "design/characters not described"
+  },
+  {
+   "key": "shdr/2021/hello-spring-2021/chip-and-dale-diorama",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "edition size not stated"
+  },
+  {
+   "key": "shdr/2021/hello-spring-2021/donald-duck-egg",
+   "field": "edition_size",
+   "searched": "2 queries",
+   "note": "edition size not stated"
+  },
+  {
+   "key": "shdr/2021/hello-spring-2021-pin-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - features Donald & Daisy, Mickey & Minnie, Chip & Dale; pin count/split not stated"
+  },
+  {
+   "key": "shdr/2021/hello-spring-2021-mystery",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "six designs not named; summary text partly garbled"
+  },
+  {
+   "key": "shdr/2021/hello-spring-2021-box-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "contents and count not stated"
+  },
+  {
+   "key": "shdr/2021/pirates-of-the-caribbean-treasure-map-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "eight designs not named; edition type not stated"
+  },
+  {
+   "key": "shdr/2021/pirates-of-the-caribbean-2021",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure - two OE pirate pins featuring Mickey Mouse and Donald Duck; one-character-per-pin not explicit; no members created"
+  },
+  {
+   "key": "shdr/2021/battle-for-the-sunken-treasure-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "three pins not described"
+  },
+  {
+   "key": "shdr/2021/battle-for-the-sunken-treasure",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "the release's first item (before the 3-pin set) not described; page age metadata inconsistent with Jul 2021"
+  },
+  {
+   "key": "shdr/2022/mickeys-pool-party/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure - post headings call the Chip n Dale item both a pin and a pin set"
+  },
+  {
+   "key": "shdr/2022/mickeys-pool-party",
+   "field": "price",
+   "searched": "2 queries",
+   "note": "price not stated"
+  },
+  {
+   "key": "shdr/2022/character-fruit-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: mystery designs not individually confirmed - Goofy, Mickey, Minnie, Donald, Dale, Daisy, Chip, Pluto given as 'characters featured'; no member records created"
+  },
+  {
+   "key": "tdr/2021/park-logo-pin-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: MezzoMiki summary again names TDR, TDL (Mickey mark + castle silhouette) and TDS logos for 4 designs at 2,000 yen (29 Sep 2021); fourth still not explicit"
+  },
+  {
+   "key": "tdr/2022/halloween-2022-pin-badge-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: 5-pin set = Mickey balloon pins plus Minnie in purple dress (keyed); the balloon pins' individual colours/count still not stated"
+  },
+  {
+   "key": "tdr/2022/duffy-beautiful-rainy-days",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "scope: confirmed button/badge/non-pin (rurubu/MezzoMiki list plush badges of Duffy, ShellieMay, Gelatoni, StellaLou at 2,200 yen); no pin badge found - lead not keyed"
+  },
+  {
+   "key": "hkdl/2021/happiest-place-on-earth-princess",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: summary confirms name + quote + signature, pin-on-pin, from 5 Mar 2021, but princesses still not named"
+  },
+  {
+   "key": "hkdl/2022/monthly",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "still no Jun / Dec 2022 HKDL LE batch found"
+  },
+  {
+   "key": "hkdl/2021/monthly",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "still no Sep / Nov 2021 HKDL LE batch found; Halloween/Christmas 2021 query gave nothing"
+  },
+  {
+   "key": "hkdl/2022/november-2022",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "hold/gap kept: birthday three not re-searched"
+  },
+  {
+   "key": "hkdl/2020/online-le-sales",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "10-16 Jul 2020 online designs not re-searched"
+  },
+  {
+   "key": "hkdl/2020/mickey-friends-booster",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "hold/gap kept: not re-searched"
+  },
+  {
+   "key": "hkdl/2020/mickey-friends-starter-set",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "hold/gap kept: not re-searched"
+  },
+  {
+   "key": "hkdl/2020/pin-go-2020",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "hold/gap kept: not re-searched"
+  },
+  {
+   "key": "hkdl/2022/august-2022/buzz-lightyear-camera-series",
+   "field": "edition_size",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "edition-size mapping not re-searched"
+  },
+  {
+   "key": "hkdl/2021/castle-of-magical-dreams-collection-origins",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "hold/gap kept: members not re-searched"
+  },
+  {
+   "key": "shdr/2020/marvel-comics-pin-set",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "four pins still not named (not re-searched)"
+  },
+  {
+   "key": "shdr/2020/marvel-emblems-pin-set",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "six emblem pins still not named (not re-searched)"
+  },
+  {
+   "key": "shdr/2021/linabell",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "no 2021 LinaBell pin found"
+  },
+  {
+   "key": "shdr/2021/pin-trading-fun-day-2021-zootopia-mystery",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "designs not re-searched"
+  },
+  {
+   "key": "shdr/2022/pin-trading-fun-day-2022",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "hold kept: contents not found"
+  },
+  {
+   "key": "shdr/2020/spring-festival-2020",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "hold kept: count not found"
+  },
+  {
+   "key": "shdr/2020/pin-trading-fun-day-2020-mystery",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "hold kept: solar-term designs not named"
+  },
+  {
+   "key": "shdr/2020/into-the-film",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "members not re-searched"
+  },
+  {
+   "key": "shdr/2021/play-in-the-park-canvas-pin-set",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "contents not re-searched"
+  },
+  {
+   "key": "tdr/2021/tokyo-disneysea-20th-anniversary-pin-set",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "hold kept: five framed designs not re-searched"
+  },
+  {
+   "key": "tdr/2020/dolls-day-2020",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "2020 date/price not re-searched"
+  },
+  {
+   "key": "tdr/2022/toy-story-hotel-pin-badge",
+   "field": "pins",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "hold kept: per-design list not re-searched"
+  },
+  {
+   "key": "tdr/2020/tokyo-disney-resort-2020/spinner-mickey-and-friends",
+   "field": "release_date",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "field note kept: date conflict not re-searched"
+  },
+  {
+   "key": "tdr/2022/disney-100-dangle/pin",
+   "field": "release_year",
+   "searched": "not re-searched / 0-1 queries",
+   "note": "hold kept: year not re-searched"
+  },
+  {
+   "key": "shdr/2022/seven-dwarfs-mine-train-mystery",
+   "field": "pins",
+   "searched": "no new evidence",
+   "note": "hold kept: no new evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2022/halloween-2022/chip-and-dale",
+   "field": "pins",
+   "searched": "no new evidence",
+   "note": "hold kept: no new evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2022/halloween-2022/donald-duck",
+   "field": "pins",
+   "searched": "no new evidence",
+   "note": "hold kept: no new evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2021/alice-in-wonderland-le300-set",
+   "field": "pins",
+   "searched": "no new evidence",
+   "note": "hold kept: no new evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2022/duffy-friends-warm-christmas-wishes",
+   "field": "pins",
+   "searched": "no new evidence",
+   "note": "hold kept: no new evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2021/oe-set/boba-tea",
+   "field": "pins",
+   "searched": "no new evidence",
+   "note": "hold kept: no new evidence this pass; not released"
+  },
+  {
+   "key": "hkdl/2020/olu-mel-2020",
+   "field": "pins",
+   "searched": "no new evidence",
+   "note": "hold kept: no new evidence this pass; not released"
+  },
+  {
+   "key": "hkdl/2021/pin-trading-carnival-2021",
+   "field": "pins",
+   "searched": "no new evidence",
+   "note": "hold kept: no new evidence this pass; not released"
+  },
+  {
+   "key": "hkdl/2022/pin-trading-carnival-2022",
+   "field": "pins",
+   "searched": "no new evidence",
+   "note": "hold kept: no new evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2021/backpack-pin-series",
+   "field": "pins",
+   "searched": "no new evidence",
+   "note": "hold kept: no new evidence this pass; not released"
+  },
+  {
+   "key": "shdr/2020/pin-trading-fun-day-2020",
+   "field": "pins",
+   "searched": "no new evidence",
+   "note": "hold kept: no new evidence this pass; not released"
+  },
+  {
+   "key": "tdr/2022/toy-story-traffic-cones-pin-set",
+   "field": "pins",
+   "searched": "no new evidence",
+   "note": "hold kept: no new evidence this pass; not released"
+  },
+  {
+   "key": "hkdl/2021/oe-set/magic-prize-sock",
+   "field": "pins",
+   "searched": "no new evidence",
+   "note": "hold kept: no new evidence this pass; not released"
+  },
+  {
+   "key": "hkdl/2022/january-2022/pinocchio-camera-series",
+   "field": "release_year",
+   "searched": "not searched",
+   "note": "hold kept: year convention pending maintainer decision - not released"
+  },
+  {
+   "key": "hkdl/2022/january-2022/iron-man-experience-5th",
+   "field": "release_year",
+   "searched": "not searched",
+   "note": "hold kept: year convention pending maintainer decision - not released"
+  },
+  {
+   "key": "hkdl/2022/january-2022/cny-2022-mickey-and-minnie",
+   "field": "release_year",
+   "searched": "not searched",
+   "note": "hold kept: year convention pending maintainer decision - not released"
+  },
+  {
+   "key": "hkdl/2022/january-2022/cny-2022-donald-and-daisy",
+   "field": "release_year",
+   "searched": "not searched",
+   "note": "hold kept: year convention pending maintainer decision - not released"
+  },
+  {
+   "key": "hkdl/2022/january-2022/cny-2022-pluto-chip-and-dale",
+   "field": "release_year",
+   "searched": "not searched",
+   "note": "hold kept: year convention pending maintainer decision - not released"
+  },
+  {
+   "key": "hkdl/2022/january-2022/magic-access-jumbo",
+   "field": "release_year",
+   "searched": "not searched",
+   "note": "hold kept: year convention pending maintainer decision - not released"
+  },
+  {
+   "key": "hkdl/2023/january-2023",
+   "field": "pins",
+   "searched": "not searched",
+   "note": "hold kept: year convention pending; not keyed"
+  },
+  {
+   "key": "shdr/2024/winnie-the-pooh-happy-sunny-day-spinner",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: SHDR Pooh Happy Sunny Day spinner, Jun 2024 - for 2023-24 cell"
+  },
+  {
+   "key": "shdr/2024/disney-princess-silhouette-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: SHDR Princess Silhouette 5-pin OE set, Jan 2024 - for 2023-24 cell"
+  },
+  {
+   "key": "shdr/2025/teapot-and-cup-pin-sets",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: SHDR Teapot and Cup OE sets (10 cards of 2), Mar 2025 - for 2025-26 cell"
+  },
+  {
+   "key": "shdr/2025/film-spinner-pins",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: SHDR Film Spinner OE pins, Apr 2025 - for 2025-26 cell"
+  }
+ ],
+ "discovery_notes": "Cell B414, follow-up 22 of B041 (reuses keys from 397/445/478/505/526/546/564/575/584/592). 28 standard searches; all claims from search-engine summaries of Disney Pins Blog / MezzoMiki / rurubu. New SHDR pins: restaurant trio Nov 2021 (Stitch/Barbossa's Bounty, Rapunzel/Tangled Tree Tavern, Mulan/Wandering Moon), Star Wars + MU spinners Feb 2021, Alice spinner 12 Mar 2021, Storybook Castle double-sided spinner 9 Oct 2021, Hello Spring 2021 (Spring Time OE, Chip & Dale diorama AP, Donald egg LE), Mickey's Pool Party 2022 Donald + Chip n Dale (structure hold). New sets only (structure/mystery holds): Sleeping Princess 2022, Perfume Bottle 2021, hotel pins 2021, Hello Spring 2021 pin set / mystery 6 / box LE500, Pirates treasure-map mystery 8 and two OE pins (Apr 2021), Battle for the Sunken Treasure 3-pin set (Jul 2021), Character Fruit mystery 8 (Jun 2022). Re-used: TDR Halloween 2022 balloon set (date/price), park-logo hold kept, HKDL princess hold kept. Duffy Beautiful Rainy Days resolved as plush badges (scope). No holds released; HKDL Jan 2022 / Jan 2023 untouched. Resellers seen, not used: usshoppingsos, fryguypins, paypay flea market."
+}

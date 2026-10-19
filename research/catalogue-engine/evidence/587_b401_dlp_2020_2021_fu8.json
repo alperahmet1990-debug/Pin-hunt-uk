@@ -1,0 +1,2090 @@
+{
+ "packet_id": "b401-dlp-2020-2021-fu8-2026-10-19",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.passiondlp.com/actus/arc037.php",
+   "title": "passiondlp : Archives Disneyland Paris 2020 trimestre 3",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.passiondlp.com/actus/arc035.php",
+   "title": "passiondlp : Archives Disneyland Paris 2020 trimestre 1",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://www.passiondlp.com/actus/arc038.php",
+   "title": "passiondlp : Archives Disneyland Paris 2020 trimestre 4",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://passiondlp.com/actus/arc039.php",
+   "title": "passiondlp : Archives Disneyland Paris 2021 trimestre 1",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.passiondlp.com/actus/arc041.php",
+   "title": "passiondlp : Archives Disneyland Paris 2021 trimestre 3",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-little-mermaid-pin-series-at-la-petite-sirene-event-at-disneyland-paris/",
+   "title": "The Little Mermaid Pin Series at La Petite Sirene Event at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/131741",
+   "title": "DLP - The Little Mermaid Event - 2021 (Ursula with Flotsam and Jetsam)",
+   "publisher": "MyPinCentral",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mickeyblog.com/2021/08/22/pin-trading-events-are-back-with-a-splash-at-disneyland-paris/",
+   "title": "Pin Trading Events Are Back with a Splash at Disneyland Paris!",
+   "publisher": "MickeyBlog.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-08-22"
+  },
+  {
+   "url": "https://www.laughingplace.com/w/articles/2021/08/25/disneyland-paris-to-host-first-pin-trading-event-in-18-months/",
+   "title": "Disneyland Paris To Host First Pin Trading Event in 18 Months",
+   "publisher": "Laughing Place",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-08-25"
+  },
+  {
+   "url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+   "title": "PIN TRADING TIME - PREMIERE EDITION",
+   "publisher": "Raconte Moi Disneyland",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+   "title": "Pin-Neuerscheinungen im August 2020",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://wdwnt.com/2020/08/august-2020-pin-trading-releases-revealed-for-disneyland-paris/",
+   "title": "August 2020 Pin Trading Releases Revealed for Disneyland Paris",
+   "publisher": "WDW News Today",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2020-08"
+  },
+  {
+   "url": "https://www.mousesteps.com/2021/10/26/mickeys-dazzling-christmas-parade-pins-releasing-at-disneyland-paris-on-november-13th-2021/",
+   "title": "Mickey's Dazzling Christmas Parade Pins Releasing at Disneyland Paris on November 13th, 2021",
+   "publisher": "Mousesteps",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-10-26"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-december-2021-pin-releases",
+   "title": "Disneyland Paris December 2021 Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/holiday-2020-pins-delayed-release-at-disneyland-paris",
+   "title": "Holiday 2020 Pins Delayed Release at Disneyland Paris",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "title": "Pin Trading a Disneyland Paris : la selection de pin's du mois",
+   "publisher": "Disneyphile",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2020/cast-member-pascal-cruella-2020",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cast Member exclusive pins Pascal and Cruella (2020)",
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "passiondlp Q3 2020: two new Cast Member Exclusive pins, Pascal and Cruella"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "Two new CM pins named"
+    },
+    {
+     "field": "edition_type",
+     "value": "Cast Member Exclusive, Limited Edition",
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "CM exclusive, 3020 copies"
+    },
+    {
+     "field": "format",
+     "value": "two separate single pins",
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "Two pins each named separately"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/cast-member-alice-mad-hatter-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Cast Member exclusive pins Mad Hatter and Alice (2021)",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "passiondlp Q3 2021: two new CM Exclusive pins 'Le Chapelier Fou' and 'Alice'"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Two CM pins named"
+    },
+    {
+     "field": "edition_type",
+     "value": "Cast Member Exclusive, Limited Edition",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "3021 copies"
+    },
+    {
+     "field": "format",
+     "value": "two separate single pins",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Two pins named separately"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/little-mermaid-pin-trading-event-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "La Petite Sirene Pin Trading Event pins (18 Sep 2021)",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "passiondlp Q3 2021: Pin Trading Event 'La Petite Sirene' pins of 18 Sep 2021"
+    },
+    {
+     "field": "set_name",
+     "value": "The Little Mermaid Pin Series at La Petite Sirene Event",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-pin-series-at-la-petite-sirene-event-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Disney Pins Blog title"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "425 copies each"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "425 copies each"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-pin-series-at-la-petite-sirene-event-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Blog says limited edition of 400"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Series listed as LE 425; back stamp 142/425 seen on Ursula pin page"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-18",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Event Saturday 18 Sep 2021"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-18",
+     "source_url": "https://disneypinsblog.com/the-little-mermaid-pin-series-at-la-petite-sirene-event-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Event on 18 Sep 2021"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-18",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Release date 18 Sep 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Newport Bay Club Convention Centre",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Event 11am-3pm at Newport Bay Club Convention Centre"
+    },
+    {
+     "field": "release_location",
+     "value": "Disney's Newport Bay Club Convention Centre",
+     "source_url": "https://mickeyblog.com/2021/08/22/pin-trading-events-are-back-with-a-splash-at-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Event at Newport Bay Club, 11am-3pm, entry includes coupon for a pin worth 15 EUR+"
+    },
+    {
+     "field": "price",
+     "value": 17.0,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR 17 per pin"
+    },
+    {
+     "field": "format",
+     "value": "series of separate LE pins",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Each pin listed separately in series, each LE 425"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/pin-trading-time-february-2020",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Time (first edition) Dumbo pins, 5 Feb 2020",
+     "source_url": "https://www.passiondlp.com/actus/arc035.php",
+     "method": "search_snippet",
+     "note": "passiondlp Q1 2020: first Pin Trading Time, Wed 5 Feb 2020"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://www.passiondlp.com/actus/arc035.php",
+     "method": "search_snippet",
+     "note": "Three pins sold only at the event"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 3,
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "Three Dumbo-themed pins"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.passiondlp.com/actus/arc035.php",
+     "method": "search_snippet",
+     "note": "400 copies each"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://www.passiondlp.com/actus/arc035.php",
+     "method": "search_snippet",
+     "note": "400 copies each"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-05",
+     "source_url": "https://www.passiondlp.com/actus/arc035.php",
+     "method": "search_snippet",
+     "note": "Wed 5 Feb 2020, 13:00-17:00"
+    },
+    {
+     "field": "release_location",
+     "value": "Cowboy Cookout Barbecue, Frontierland",
+     "source_url": "https://www.passiondlp.com/actus/arc035.php",
+     "method": "search_snippet",
+     "note": "Event at Cowboy Cookout Barbecue"
+    },
+    {
+     "field": "release_location",
+     "value": "Cowboy Cookout Barbecue, Frontierland",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "Restaurant privatised for the event"
+    },
+    {
+     "field": "price",
+     "value": 16.99,
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "EUR 16.99"
+    },
+    {
+     "field": "format",
+     "value": "three separate LE pins",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "Three pins: Dumbo, his mother and Timothee"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/oe-single/stitch-noel-march-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Stitch Noel surprise open edition pin (March 2021)",
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "passiondlp Q1 2021: surprise OE release, 29 Mar 2021"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-29",
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "29 Mar 2021"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2020/mickey-castle-august-2020",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Sleeping Beauty Castle / Mickey open edition pins (August 2020)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Two unlimited castle pins at EUR 6.99"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Two castle pins"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://wdwnt.com/2020/08/august-2020-pin-trading-releases-revealed-for-disneyland-paris/",
+     "method": "search_snippet",
+     "note": "Two designs of Mickey and the castle"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Both unlimitiert"
+    },
+    {
+     "field": "format",
+     "value": "two separate single pins",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Each pin described and priced separately"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/jungle-august-2021",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "passiondlp: Pin Trading Day 21 Aug 2021 pins, 500 each plus one open edition"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/july-2021-le",
+   "claims": [
+    {
+     "field": "price",
+     "value": 15.99,
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "passiondlp: four LE Best Friends/Carousel pins (Simba & Nala, Lumiere & Cogsworth) at World of Disney, EUR 15.99 each"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2020/cast-member-pascal-cruella-2020/pascal",
+   "set_key": "dlp/2020/cast-member-pascal-cruella-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pascal (Cast Member Exclusive 2020)",
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "Named 'Pascal' in passiondlp Q3 2020 archive"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Pascal"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "Character per pin name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "Cast Member Exclusive, limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 3020,
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "3020 copies stated"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "Q3 2020 archive"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris (Cast Members)",
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "Cast Member exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "Single named pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/cast-member-pascal-cruella-2020/cruella",
+   "set_key": "dlp/2020/cast-member-pascal-cruella-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Cruella (Cast Member Exclusive 2020)",
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "Named 'Cruella' in passiondlp Q3 2020 archive"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Cruella de Vil"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "Character per pin name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "Cast Member Exclusive, limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 3020,
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "3020 copies stated"
+    },
+    {
+     "field": "release_year",
+     "value": 2020,
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "Q3 2020 archive"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris (Cast Members)",
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "Cast Member exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.passiondlp.com/actus/arc037.php",
+     "method": "search_snippet",
+     "note": "Single named pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/cast-member-alice-mad-hatter-2021/mad-hatter",
+   "set_key": "dlp/2021/cast-member-alice-mad-hatter-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Le Chapelier Fou / Mad Hatter (Cast Member Exclusive 2021)",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Named in passiondlp Q3 2021 archive"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mad Hatter"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Character per pin name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Cast Member Exclusive"
+    },
+    {
+     "field": "edition_size",
+     "value": 3021,
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "3021 copies stated"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Q3 2021 archive"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris (Cast Members)",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Cast Member exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Single named pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/cast-member-alice-mad-hatter-2021/alice",
+   "set_key": "dlp/2021/cast-member-alice-mad-hatter-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Alice (Cast Member Exclusive 2021)",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Named in passiondlp Q3 2021 archive"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Alice"
+     ],
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Character per pin name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Cast Member Exclusive"
+    },
+    {
+     "field": "edition_size",
+     "value": 3021,
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "3021 copies stated"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Q3 2021 archive"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris (Cast Members)",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Cast Member exclusive"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.passiondlp.com/actus/arc041.php",
+     "method": "search_snippet",
+     "note": "Single named pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/little-mermaid-pin-trading-event-2021/ursula-flotsam-jetsam",
+   "set_key": "dlp/2021/little-mermaid-pin-trading-event-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ursula with Flotsam and Jetsam",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Series page; centre pin of series; back 142/425"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ursula",
+      "Flotsam",
+      "Jetsam"
+     ],
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Characters per listing name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "LE 425"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "LE 425"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-18",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "18 Sep 2021"
+    },
+    {
+     "field": "original_price",
+     "value": 17.0,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR 17"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Own listing within series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/little-mermaid-pin-trading-event-2021/king-triton",
+   "set_key": "dlp/2021/little-mermaid-pin-trading-event-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "King Triton",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Listed in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "King Triton"
+     ],
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Characters per listing name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "LE 425"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "LE 425"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-18",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "18 Sep 2021"
+    },
+    {
+     "field": "original_price",
+     "value": 17.0,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR 17"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Own listing within series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/little-mermaid-pin-trading-event-2021/ursula-jumbo",
+   "set_key": "dlp/2021/little-mermaid-pin-trading-event-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ursula Jumbo",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Listed in series as jumbo"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ursula"
+     ],
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Characters per listing name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "LE 425"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "LE 425"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-18",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "18 Sep 2021"
+    },
+    {
+     "field": "original_price",
+     "value": 17.0,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR 17"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Own listing within series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/little-mermaid-pin-trading-event-2021/ariel-eric-boat",
+   "set_key": "dlp/2021/little-mermaid-pin-trading-event-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ariel and Eric in Boat",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Listed in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ariel",
+      "Prince Eric"
+     ],
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Characters per listing name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "LE 425"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "LE 425"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-18",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "18 Sep 2021"
+    },
+    {
+     "field": "original_price",
+     "value": 17.0,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR 17"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Own listing within series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/little-mermaid-pin-trading-event-2021/eric-statue",
+   "set_key": "dlp/2021/little-mermaid-pin-trading-event-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Eric Statue",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Listed in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Prince Eric"
+     ],
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Characters per listing name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "LE 425"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "LE 425"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-18",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "18 Sep 2021"
+    },
+    {
+     "field": "original_price",
+     "value": 17.0,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR 17"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Own listing within series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/little-mermaid-pin-trading-event-2021/ursula-gold",
+   "set_key": "dlp/2021/little-mermaid-pin-trading-event-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ursula Gold",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Listed in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ursula"
+     ],
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Characters per listing name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "LE 425"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "LE 425"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-18",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "18 Sep 2021"
+    },
+    {
+     "field": "original_price",
+     "value": 17.0,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR 17"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Own listing within series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/little-mermaid-pin-trading-event-2021/ursula-pink",
+   "set_key": "dlp/2021/little-mermaid-pin-trading-event-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Ursula Pink",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Listed in series"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Ursula"
+     ],
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Characters per listing name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "LE 425"
+    },
+    {
+     "field": "edition_size",
+     "value": 425,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "LE 425"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-09-18",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "18 Sep 2021"
+    },
+    {
+     "field": "original_price",
+     "value": 17.0,
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR 17"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/131741",
+     "method": "search_snippet",
+     "note": "Own listing within series"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/pin-trading-time-february-2020/dumbo",
+   "set_key": "dlp/2020/pin-trading-time-february-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dumbo (Pin Trading Time Feb 2020)",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "One of three Dumbo-theme pins named by the blog"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dumbo"
+     ],
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "Per blog: Dumbo, his mother, Timothee"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.passiondlp.com/actus/arc035.php",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://www.passiondlp.com/actus/arc035.php",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-05",
+     "source_url": "https://www.passiondlp.com/actus/arc035.php",
+     "method": "search_snippet",
+     "note": "5 Feb 2020"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "EUR 16.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "Three pins, one character each per blog"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/pin-trading-time-february-2020/mrs-jumbo",
+   "set_key": "dlp/2020/pin-trading-time-february-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mrs Jumbo (Pin Trading Time Feb 2020)",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "One of three Dumbo-theme pins named by the blog"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mrs. Jumbo"
+     ],
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "Per blog: Dumbo, his mother, Timothee"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.passiondlp.com/actus/arc035.php",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://www.passiondlp.com/actus/arc035.php",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-05",
+     "source_url": "https://www.passiondlp.com/actus/arc035.php",
+     "method": "search_snippet",
+     "note": "5 Feb 2020"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "EUR 16.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "Three pins, one character each per blog"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/pin-trading-time-february-2020/timothy",
+   "set_key": "dlp/2020/pin-trading-time-february-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Timothee / Timothy Q. Mouse (Pin Trading Time Feb 2020)",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "One of three Dumbo-theme pins named by the blog"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Timothy Q. Mouse"
+     ],
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "Per blog: Dumbo, his mother, Timothee"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.passiondlp.com/actus/arc035.php",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://www.passiondlp.com/actus/arc035.php",
+     "method": "search_snippet",
+     "note": "400 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-02-05",
+     "source_url": "https://www.passiondlp.com/actus/arc035.php",
+     "method": "search_snippet",
+     "note": "5 Feb 2020"
+    },
+    {
+     "field": "original_price",
+     "value": 16.99,
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "EUR 16.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+     "method": "search_snippet",
+     "note": "Three pins, one character each per blog"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/oe/stitch-noel-march-2021",
+   "set_key": "dlp/2021/oe-single/stitch-noel-march-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Stitch Noel (open edition)",
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "Surprise OE pin 'Stitch Noel'"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Stitch"
+     ],
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "Stitch Christmas pin per name"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "Open edition"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-29",
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "29 Mar 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "Sold at World of Disney"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "http://passiondlp.com/actus/arc039.php",
+     "method": "search_snippet",
+     "note": "Single named pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/august-2020-releases/gepetto-pinocchio-figaro",
+   "set_key": "dlp/2020/august-2020-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Gepetto, Pinocchio and Figaro",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Quoted: shows Gepetto as well as Pinocchio and Figaro, EUR 9.99"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Geppetto",
+      "Pinocchio",
+      "Figaro"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Per dein-dlrp description"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Listed unlimitiert"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Overview: 8 Aug 2020"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Per overview/description"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Single pin showing three characters"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/august-2020-releases/jiminy-cricket",
+   "set_key": "dlp/2020/august-2020-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Jiminy Cricket (Jiminy Grille)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Pin of Jiminy the cricket, EUR 6.99"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Jiminy Cricket"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Per dein-dlrp description"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Listed unlimitiert"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Overview: 8 Aug 2020"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Per overview/description"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/august-2020-releases/bullseye",
+   "set_key": "dlp/2020/august-2020-releases",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Bullseye (cute)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Shows Bullseye, Woody's horse, EUR 6.99"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Bullseye"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Per dein-dlrp description"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Listed unlimitiert"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Overview: 8 Aug 2020"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Per overview/description"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/mickey-castle-august-2020/castle-white",
+   "set_key": "dlp/2020/mickey-castle-august-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Schloss weiss (castle, white/grey/gold)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Plain white, grey and gold pin with Sleeping Beauty Castle and Mickey"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Mickey / Mickey silhouette per description"
+    },
+    {
+     "field": "attraction",
+     "value": "Sleeping Beauty Castle",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Castle design"
+    },
+    {
+     "field": "visual_description",
+     "value": "Plain white, grey and gold pin with Sleeping Beauty Castle and Mickey",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Paraphrase of dein-dlrp text"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Overview puts these on 8 Aug"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR 6.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/mickey-castle-august-2020/mickey-silhouette-castle",
+   "set_key": "dlp/2020/mickey-castle-august-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Mickey Silhouette Schloss",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Castle pin shaped as a Mickey silhouette"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Mickey / Mickey silhouette per description"
+    },
+    {
+     "field": "attraction",
+     "value": "Sleeping Beauty Castle",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Castle design"
+    },
+    {
+     "field": "visual_description",
+     "value": "Castle pin shaped as a Mickey silhouette",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Paraphrase of dein-dlrp text"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-08-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Overview puts these on 8 Aug"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR 6.99 each"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "EUR"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+     "method": "search_snippet",
+     "note": "Single pin"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2020/cast-member-pascal-cruella-2020/pascal",
+   "field": "edition_size",
+   "searched": "https://www.passiondlp.com/actus/arc037.php",
+   "note": "field note: '(3020 exemplaires)' follows both names; per pin vs combined not explicit"
+  },
+  {
+   "key": "dlp/2020/cast-member-pascal-cruella-2020/pascal",
+   "field": "release_date",
+   "searched": "https://www.passiondlp.com/actus/arc037.php",
+   "note": "field note: summary places it near a 26 Sep 2020 LE sale at Disney Fashion Junior; CM distribution date not stated"
+  },
+  {
+   "key": "dlp/2020/cast-member-pascal-cruella-2020/pascal",
+   "field": "visual_description",
+   "searched": "https://www.passiondlp.com/actus/arc037.php",
+   "note": "field note: design not described beyond character name (same standard as CM Stitch Noel 2021)"
+  },
+  {
+   "key": "dlp/2020/cast-member-pascal-cruella-2020/cruella",
+   "field": "edition_size",
+   "searched": "https://www.passiondlp.com/actus/arc037.php",
+   "note": "field note: '(3020 exemplaires)' follows both names; per pin vs combined not explicit"
+  },
+  {
+   "key": "dlp/2020/cast-member-pascal-cruella-2020/cruella",
+   "field": "release_date",
+   "searched": "https://www.passiondlp.com/actus/arc037.php",
+   "note": "field note: summary places it near a 26 Sep 2020 LE sale at Disney Fashion Junior; CM distribution date not stated"
+  },
+  {
+   "key": "dlp/2020/cast-member-pascal-cruella-2020/cruella",
+   "field": "visual_description",
+   "searched": "https://www.passiondlp.com/actus/arc037.php",
+   "note": "field note: design not described beyond character name (same standard as CM Stitch Noel 2021)"
+  },
+  {
+   "key": "dlp/2021/cast-member-alice-mad-hatter-2021/mad-hatter",
+   "field": "edition_size",
+   "searched": "https://www.passiondlp.com/actus/arc041.php",
+   "note": "field note: passiondlp wording leaves 3021 per pin vs combined ambiguous"
+  },
+  {
+   "key": "dlp/2021/cast-member-alice-mad-hatter-2021/mad-hatter",
+   "field": "release_date",
+   "searched": "https://www.passiondlp.com/actus/arc041.php",
+   "note": "field note: only Q3 2021 (Jul-Sep) known; day not stated"
+  },
+  {
+   "key": "dlp/2021/cast-member-alice-mad-hatter-2021/alice",
+   "field": "edition_size",
+   "searched": "https://www.passiondlp.com/actus/arc041.php",
+   "note": "field note: passiondlp wording leaves 3021 per pin vs combined ambiguous"
+  },
+  {
+   "key": "dlp/2021/cast-member-alice-mad-hatter-2021/alice",
+   "field": "release_date",
+   "searched": "https://www.passiondlp.com/actus/arc041.php",
+   "note": "field note: only Q3 2021 (Jul-Sep) known; day not stated"
+  },
+  {
+   "key": "dlp/2021/little-mermaid-pin-trading-event-2021/ursula-flotsam-jetsam",
+   "field": "edition_size",
+   "searched": "https://disneypinsblog.com/the-little-mermaid-pin-series-at-la-petite-sirene-event-at-disneyland-paris/",
+   "note": "field note: Disney Pins Blog says LE 400; passiondlp and MyPinCentral say 425"
+  },
+  {
+   "key": "dlp/2021/little-mermaid-pin-trading-event-2021/king-triton",
+   "field": "edition_size",
+   "searched": "https://disneypinsblog.com/the-little-mermaid-pin-series-at-la-petite-sirene-event-at-disneyland-paris/",
+   "note": "field note: Disney Pins Blog says LE 400; passiondlp and MyPinCentral say 425"
+  },
+  {
+   "key": "dlp/2021/little-mermaid-pin-trading-event-2021/ursula-jumbo",
+   "field": "edition_size",
+   "searched": "https://disneypinsblog.com/the-little-mermaid-pin-series-at-la-petite-sirene-event-at-disneyland-paris/",
+   "note": "field note: Disney Pins Blog says LE 400; passiondlp and MyPinCentral say 425"
+  },
+  {
+   "key": "dlp/2021/little-mermaid-pin-trading-event-2021/ariel-eric-boat",
+   "field": "edition_size",
+   "searched": "https://disneypinsblog.com/the-little-mermaid-pin-series-at-la-petite-sirene-event-at-disneyland-paris/",
+   "note": "field note: Disney Pins Blog says LE 400; passiondlp and MyPinCentral say 425"
+  },
+  {
+   "key": "dlp/2021/little-mermaid-pin-trading-event-2021/eric-statue",
+   "field": "edition_size",
+   "searched": "https://disneypinsblog.com/the-little-mermaid-pin-series-at-la-petite-sirene-event-at-disneyland-paris/",
+   "note": "field note: Disney Pins Blog says LE 400; passiondlp and MyPinCentral say 425"
+  },
+  {
+   "key": "dlp/2021/little-mermaid-pin-trading-event-2021/ursula-gold",
+   "field": "edition_size",
+   "searched": "https://disneypinsblog.com/the-little-mermaid-pin-series-at-la-petite-sirene-event-at-disneyland-paris/",
+   "note": "field note: Disney Pins Blog says LE 400; passiondlp and MyPinCentral say 425"
+  },
+  {
+   "key": "dlp/2021/little-mermaid-pin-trading-event-2021/ursula-pink",
+   "field": "edition_size",
+   "searched": "https://disneypinsblog.com/the-little-mermaid-pin-series-at-la-petite-sirene-event-at-disneyland-paris/",
+   "note": "field note: Disney Pins Blog says LE 400; passiondlp and MyPinCentral say 425"
+  },
+  {
+   "key": "dlp/2021/little-mermaid-pin-trading-event-2021/ursula-gold",
+   "field": "pin_structure",
+   "searched": "https://mypincentral.com/pin/131741",
+   "note": "field note: Gold and Pink Ursula may be colour versions of one design (e.g. coupon pin); confirm separate designs at review"
+  },
+  {
+   "key": "dlp/2021/little-mermaid-pin-trading-event-2021/ursula-pink",
+   "field": "pin_structure",
+   "searched": "https://mypincentral.com/pin/131741",
+   "note": "field note: Gold and Pink Ursula may be colour versions of one design (e.g. coupon pin); confirm separate designs at review"
+  },
+  {
+   "key": "dlp/2021/little-mermaid-pin-trading-event-2021",
+   "field": "pins",
+   "searched": "https://mypincentral.com/pin/131741",
+   "note": "Series also lists 'Ariel and Eric at the ...' (name truncated) and 'others'; not recorded; full count unknown"
+  },
+  {
+   "key": "dlp/2020/pin-trading-time-february-2020/dumbo",
+   "field": "pin_structure",
+   "searched": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+   "note": "field note: one character per pin inferred from 'three pins: Dumbo, his mother and Timothee'; confirm at review"
+  },
+  {
+   "key": "dlp/2020/pin-trading-time-february-2020/mrs-jumbo",
+   "field": "pin_structure",
+   "searched": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+   "note": "field note: one character per pin inferred from 'three pins: Dumbo, his mother and Timothee'; confirm at review"
+  },
+  {
+   "key": "dlp/2020/pin-trading-time-february-2020/timothy",
+   "field": "pin_structure",
+   "searched": "https://racontemoidisneyland.com/pin-trading-time-premiere-edition/",
+   "note": "field note: one character per pin inferred from 'three pins: Dumbo, his mother and Timothee'; confirm at review"
+  },
+  {
+   "key": "dlp/2020/pin-trading-time-february-2020/refresh-lanyard",
+   "field": "pins",
+   "searched": "https://www.passiondlp.com/actus/arc035.php",
+   "note": "lead: passiondlp also lists a 'Refresh Lanyard' pin at this event; not described; not recorded"
+  },
+  {
+   "key": "dlp/2021/oe/stitch-noel-march-2021",
+   "field": "visual_description",
+   "searched": "http://passiondlp.com/actus/arc039.php",
+   "note": "field note: design not described; check it is not an OE version of dlp/2020/holiday-2020-delayed/stitch-christmas-2020 (LE 700) or the 2021 CM Stitch Noel"
+  },
+  {
+   "key": "dlp/2020/august-2020-releases/gepetto-pinocchio-figaro",
+   "field": "pin_name",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+   "note": "field note: separate from dlp/2020/august-2020-releases/pinocchio-figaro (EUR 7.99) per overview; one passage says 'both pins 7.99', price conflict"
+  },
+  {
+   "key": "dlp/2020/august-2020-releases/bullseye",
+   "field": "release_date",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+   "note": "field note: overview groups Bullseye with the 8 Aug Pinocchio pins; WDWNT gives 8 Aug only for Pinocchio pins"
+  },
+  {
+   "key": "dlp/2020/august-2020-releases",
+   "field": "pins",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+   "note": "lead: dein-dlrp overview also mentions Cars pins in August 2020; not described, not recorded"
+  },
+  {
+   "key": "dlp/2020/mickey-castle-august-2020/castle-white",
+   "field": "release_date",
+   "searched": "https://wdwnt.com/2020/08/august-2020-pin-trading-releases-revealed-for-disneyland-paris/",
+   "note": "field note: WDWNT says the two Mickey/castle designs came at month end; dein-dlrp overview says 8 Aug"
+  },
+  {
+   "key": "dlp/2020/mickey-castle-august-2020/mickey-silhouette-castle",
+   "field": "release_date",
+   "searched": "https://wdwnt.com/2020/08/august-2020-pin-trading-releases-revealed-for-disneyland-paris/",
+   "note": "field note: WDWNT says the two Mickey/castle designs came at month end; dein-dlrp overview says 8 Aug"
+  },
+  {
+   "key": "dlp/2020/mickey-castle-august-2020",
+   "field": "pins",
+   "searched": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2020/",
+   "note": "release evidence: dlp/2020/mickey-castle-august-2020 (lead in packet 578, designs undescribed) - dein-dlrp August 2020 now describes both designs and prices"
+  },
+  {
+   "key": "dlp/2021/jungle-august-2021",
+   "field": "pins",
+   "searched": "https://www.passiondlp.com/actus/arc041.php",
+   "note": "The one OE pin of the 21 Aug 2021 Pin Trading Day is not named"
+  },
+  {
+   "key": "dlp/2021/christmas-le-november-2021",
+   "field": "pins",
+   "searched": "https://www.mousesteps.com/2021/10/26/mickeys-dazzling-christmas-parade-pins-releasing-at-disneyland-paris-on-november-13th-2021/",
+   "note": "Parade float pins: LE 500, EUR 16, 13 Nov 2021 restated; float names still not found"
+  },
+  {
+   "key": "dlp/2021/star-wars-patrice-girod-november-2021",
+   "field": "pins",
+   "searched": "1 query (planete-starwars, mintinbox results only cover 2019 Falcon series)",
+   "note": "Four RotJ designs still unnamed"
+  },
+  {
+   "key": "dlp/2021/101-dalmatians-december-2021",
+   "field": "pins",
+   "searched": "2 queries; https://disneypinsblog.com/blogs/news/disneyland-paris-december-2021-pin-releases",
+   "note": "LE 700 three still unnamed; Disney Pins Blog Dec 2021 shows only Animator & Dalmatians OE caption"
+  },
+  {
+   "key": "dlp/2021/animators-dalmatians-oe-december-2021",
+   "field": "pins",
+   "searched": "https://disneypinsblog.com/blogs/news/disneyland-paris-december-2021-pin-releases",
+   "note": "No designs in snippet"
+  },
+  {
+   "key": "dlp/2021/december-2021-le/genie",
+   "field": "pin_structure",
+   "searched": "not searched",
+   "note": "hold stays: Dec 2021 vs 15 Jan 2022 unchanged"
+  },
+  {
+   "key": "dlp/2020/holiday-2020-delayed",
+   "field": "pins",
+   "searched": "https://disneypinsblog.com/blogs/news/holiday-2020-pins-delayed-release-at-disneyland-paris",
+   "note": "Alice pins still undescribed; Stitch LE 700 and 13 Mar 2021 WoD restated; passiondlp Q4 2020 ties Stitch LE 700 to a EUR 69.99 Christmas box"
+  },
+  {
+   "key": "dlp/2021/villains-sidekicks-2021/top-hat",
+   "field": "release_date",
+   "searched": "not searched (budget)",
+   "note": "field note: 9 vs 30 Oct conflict unchanged"
+  },
+  {
+   "key": "dlp/2020/march-2020-le/pocahontas-carousel",
+   "field": "release_date",
+   "searched": "not searched (budget)",
+   "note": "field note: Sep 2020 date conflict unchanged"
+  },
+  {
+   "key": "dlp/2021/villains-jumbo-2021",
+   "field": "pins",
+   "searched": "not searched",
+   "note": "lead stays: probable merge with dlp/2021/villains-portraits-2021"
+  },
+  {
+   "key": "dlp/2021/attraction-medals-december-2021",
+   "field": "original_price",
+   "searched": "not searched",
+   "note": "field note: EUR 27 still unconfirmed"
+  },
+  {
+   "key": "dlp/2020/lanyard-charms-december-2020",
+   "field": "scope",
+   "searched": "not searched",
+   "note": "scope: confirm pin vs button - no new evidence"
+  },
+  {
+   "key": "dlp/2021/disney-hotel-new-york",
+   "field": "pins",
+   "searched": "not searched (budget)",
+   "note": "No dated 2020-2021 hotel pin found"
+  },
+  {
+   "key": "dlp/2020/parisian-minnie-2020",
+   "field": "pins",
+   "searched": "https://wdwnt.com/2020/09/september-2020-pin-trading-releases-for-disneyland-paris/",
+   "note": "Three Parisian Minnie pins still undescribed (WDWNT: collection with matching lanyard, first weekend of Sep 2020)"
+  },
+  {
+   "key": "dlp/2020/halloween-2020/mickey",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold stays: title-only; designs not described"
+  },
+  {
+   "key": "dlp/2020/halloween-2020/pluto",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold stays: title-only; designs not described"
+  },
+  {
+   "key": "dlp/2020/halloween-2020/donald",
+   "field": "pin_structure",
+   "searched": "1 query",
+   "note": "hold stays: title-only; designs not described"
+  },
+  {
+   "key": "dlp/2021/sorcerer-mickey-jumbo-2021/mickey-sorcier-jumbo",
+   "field": "release_date",
+   "searched": "not searched",
+   "note": "field note: day still unconfirmed (likely 20 Nov 2021)"
+  },
+  {
+   "key": "dlp/2021/easter-le-april-2021",
+   "field": "pins",
+   "searched": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "note": "lead: Disneyphile notes an Easter LE pin revealed 4 Apr 2021; design not described; not recorded"
+  },
+  {
+   "key": "dlp/2020/october-2020-le",
+   "field": "pins",
+   "searched": "http://www.passiondlp.com/actus/arc038.php",
+   "note": "passiondlp Q4 2020: LE sales on 10 Oct (Disney Gallery) and 24 Oct (Thunder Mesa Mercantile) 2020; pins not named here"
+  },
+  {
+   "key": "dlp/2020/december-2020-le",
+   "field": "pins",
+   "searched": "http://www.passiondlp.com/actus/arc038.php",
+   "note": "passiondlp: 18 Dec 2020 LE sale cancelled; contents not named"
+  },
+  {
+   "key": "dlp/2021/raya-oe-may-2021",
+   "field": "pin_structure",
+   "searched": "not searched",
+   "note": "hold stays: character list only"
+  },
+  {
+   "key": "dlp/2021/cinderella-oe-may-2021",
+   "field": "pin_structure",
+   "searched": "not searched",
+   "note": "hold stays: character list only"
+  },
+  {
+   "key": "dlp/2020/oe-set/christmas-booster-2020",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/santa-hat-november-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/cowboy-november-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/christmas-oe-december-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/halloween-trio-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-pluto-mummy-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-pumpkin-ghost-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2020/cast-member-genie/genie",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/stitch-august-2021/2-pin-set",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/pin-trading-anniversary-2021",
+   "field": "pin_structure",
+   "searched": "not searched (budget)",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "discovery",
+   "field": "budget",
+   "searched": "WebSearch standard; B401",
+   "note": "28 WebSearch calls used"
+  }
+ ],
+ "discovery_notes": "B401 follow-up 8 of B044 (DLP 2020-2021), 28 web searches, all search_snippet. New: CM Pascal & Cruella 2020 (3020), CM Mad Hatter & Alice 2021 (3021), La Petite Sirene Pin Trading Event 18 Sep 2021 (seven pins, LE 425 vs 400), first Pin Trading Time 5 Feb 2020 Dumbo three (LE 400), Stitch Noel OE 29 Mar 2021, August 2020 Gepetto/Jiminy/Bullseye and two castle pins (castle lead released). Jungle Festival 21 Aug 2021 corroborated as Pin Trading Day. Float names, RotJ four, Dalmatians LE three still missing."
+}

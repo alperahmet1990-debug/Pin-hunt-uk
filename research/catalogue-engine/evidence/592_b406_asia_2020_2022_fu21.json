@@ -1,0 +1,1016 @@
+{
+ "packet_id": "592_b406_asia_2020_2022_fu21",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+   "title": "Chip n Dale Birthday 2021 Shanghai Disneyland Pin",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-04"
+  },
+  {
+   "url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+   "title": "Chip n Dale Treat Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-04"
+  },
+  {
+   "url": "https://disneypinsblog.com/tag/chip-n-dale-disney-pins/",
+   "title": "Chip N Dale Disney Pins Archives - Disney Pins Blog",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/halloween-2022-pins-at-shanghai-disney-resort/",
+   "title": "Halloween 2022 Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2022-09-26"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/halloween-2022-pins-at-shanghai-disney-resort",
+   "title": "Halloween 2022 Pins at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/alice-in-wonderland-le-300-pin-set-at-shanghai-disney-resort/",
+   "title": "Alice in Wonderland LE 300 Pin Set at Shanghai Disney Resort",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-03"
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2021-pin-releases-at-shanghai-disneyland",
+   "title": "Pin Trading Fun Day 2021 Pin Releases at Shanghai Disneyland",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-07"
+  },
+  {
+   "url": "https://disneypinsblog.com/magic-prize-sock-pins-at-hong-kong-disneyland/",
+   "title": "Magic Prize Sock Pins at Hong Kong Disneyland",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021-08"
+  },
+  {
+   "url": "https://mezzomiki.jp/post-213021/",
+   "title": "Tokyo DisneySea 20th Anniversary Time to Shine special goods (MezzoMiki)",
+   "publisher": "MezzoMiki",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2021"
+  },
+  {
+   "url": "https://www.tokyodisneyresort.jp/goods/112001966/",
+   "title": "Pin badge set (official TDR goods page)",
+   "publisher": "Tokyo Disney Resort",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "shdr/2021/chip-n-dale-birthday-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Chip n Dale Birthday 2021",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "DPB post title; search summary only"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "one LE pin described; search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "LE; search summary only"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "LE 500; search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-02",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/oe-single/chip-n-dale-candy-jar",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Chip n Dale treat pin - candy jar",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "one of two OE treat releases; search summary only"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "first of the two releases is one pin; search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-30",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/oe-set/chip-n-dale-treats",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Chip n Dale treat 2-pin set",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "second OE release described as a 2-pin set; search summary only"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "2-pin set, each pin described (Chip ice cream cone, Dale donut); search summary only"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 2,
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "2-pin set; search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-30",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/alice-in-wonderland-le300-set",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Alice in Wonderland LE 300 pin set",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-le-300-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "DPB post title; search summary only"
+    },
+    {
+     "field": "format",
+     "value": "multi-pin pack",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-le-300-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "set of 7 pins; search summary only"
+    },
+    {
+     "field": "expected_pin_count",
+     "value": 7,
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-le-300-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "7 pins in total; search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-le-300-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_size",
+     "value": 300,
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-le-300-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "LE 300; search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-03-09",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-le-300-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "visual_description",
+     "value": "characters named: Tweedle Dee and Tweedle Dum, White Rabbit, Alice, Cheshire Cat, Mad Hatter, March Hare, Dormouse",
+     "source_url": "https://disneypinsblog.com/alice-in-wonderland-le-300-pin-set-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "eight names for seven pins - per-pin split not stated; search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2021/pin-trading-fun-day-2021-zootopia-mystery",
+   "parent_set_key": "shdr/2021/pin-trading-fun-day-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Pin Trading Fun Day 2021 Zootopia mystery pin set",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2021-pin-releases-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "listed in Fun Day 2021 releases; search summary only"
+    },
+    {
+     "field": "format",
+     "value": "mystery box, 2 random pins per box",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2021-pin-releases-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "each box holds two randomly selected pins; search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-07-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/pin-trading-fun-day-2021-pin-releases-at-shanghai-disneyland",
+     "method": "search_snippet",
+     "note": "Fun Day pins on sale in park from 22 Jul 2021; search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "hkdl/2021/oe-set/magic-prize-sock",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Disney characters styled as socks; named include Dumbo, Stitch, Eeyore, Simba, Pooh, Chip and Dale, Baymax 'among others'",
+     "source_url": "https://disneypinsblog.com/magic-prize-sock-pins-at-hong-kong-disneyland/",
+     "method": "search_snippet",
+     "note": "character list only, total not given; search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/magic-prize-sock-pins-at-hong-kong-disneyland/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08",
+     "source_url": "https://disneypinsblog.com/magic-prize-sock-pins-at-hong-kong-disneyland/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "set_key": "shdr/2022/halloween-2022",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2022-09",
+     "source_url": "https://disneypinsblog.com/halloween-2022-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Chip and Dale and Donald Halloween pins released late Sep 2022 (Duffy/LinaBell pin 20 Oct 2022); search summary only"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "shdr/2021/chip-n-dale-birthday-2021/chip-and-dale",
+   "set_key": "shdr/2021/chip-n-dale-birthday-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip n Dale Birthday 2021 pin",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "main_character",
+     "value": "Chip and Dale",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "single LE pin showing both; search summary only"
+    },
+    {
+     "field": "visual_description",
+     "value": "pin-on-pin design with glitter; marks the pair turning 78",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-02",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disneyland",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-birthday-2021-shanghai-disneyland-pin/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2021/oe/chip-n-dale-candy-jar",
+   "set_key": "shdr/2021/oe-single/chip-n-dale-candy-jar",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip n Dale in a candy jar treat pin",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "main_character",
+     "value": "Chip and Dale",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "one pin with both characters in a candy jar; search summary only"
+    },
+    {
+     "field": "visual_description",
+     "value": "Chip and Dale inside a candy jar",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-30",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2021/oe/chip-ice-cream-cone",
+   "set_key": "shdr/2021/oe-set/chip-n-dale-treats",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip as an ice cream cone (treat 2-pin set)",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip"
+     ],
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "main_character",
+     "value": "Chip",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin of a 2-pin set",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "visual_description",
+     "value": "Chip as an ice cream cone",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-30",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2021/oe/dale-donut",
+   "set_key": "shdr/2021/oe-set/chip-n-dale-treats",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Dale in a donut (treat 2-pin set)",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "main_character",
+     "value": "Dale",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin of a 2-pin set",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "visual_description",
+     "value": "Dale in a donut",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-04-30",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_year",
+     "value": 2021,
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/chip-n-dale-treat-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2022/halloween-2022/chip-and-dale",
+   "set_key": "shdr/2022/halloween-2022",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2022-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Halloween costume design; search summary only"
+    },
+    {
+     "field": "visual_description",
+     "value": "Chip and Dale in Halloween costumes",
+     "source_url": "https://disneypinsblog.com/halloween-2022-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-09",
+     "source_url": "https://disneypinsblog.com/halloween-2022-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "late September 2022; search summary only"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/halloween-2022-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/halloween-2022-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  },
+  {
+   "pin_key": "shdr/2022/halloween-2022/donald-duck",
+   "set_key": "shdr/2022/halloween-2022",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Donald Duck"
+     ],
+     "source_url": "https://disneypinsblog.com/halloween-2022-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "Halloween costume design; search summary only"
+    },
+    {
+     "field": "visual_description",
+     "value": "Donald Duck in Halloween costume",
+     "source_url": "https://disneypinsblog.com/halloween-2022-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_date",
+     "value": "2022-09",
+     "source_url": "https://disneypinsblog.com/halloween-2022-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "late September 2022; search summary only"
+    },
+    {
+     "field": "release_year",
+     "value": 2022,
+     "source_url": "https://disneypinsblog.com/halloween-2022-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    },
+    {
+     "field": "release_location",
+     "value": "Shanghai Disney Resort",
+     "source_url": "https://disneypinsblog.com/halloween-2022-pins-at-shanghai-disney-resort/",
+     "method": "search_snippet",
+     "note": "search summary only"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "shdr/2021/chip-n-dale-birthday-2021/chip-and-dale",
+   "field": "original_price",
+   "searched": "DPB summary",
+   "note": "price not stated"
+  },
+  {
+   "key": "shdr/2021/oe/chip-n-dale-candy-jar",
+   "field": "release_date",
+   "searched": "DPB summary + tag archive",
+   "note": "field note: tag archive dates the post 5 Apr 2021, post text says released 30 Apr 2021"
+  },
+  {
+   "key": "shdr/2021/oe/chip-n-dale-candy-jar",
+   "field": "original_price",
+   "searched": "DPB summary",
+   "note": "price not stated"
+  },
+  {
+   "key": "shdr/2021/oe-set/chip-n-dale-treats",
+   "field": "price",
+   "searched": "DPB summary",
+   "note": "price not stated"
+  },
+  {
+   "key": "shdr/2022/halloween-2022/chip-and-dale",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - one summary says 'these two pins', another calls it a Halloween set featuring Chip and Dale and Donald"
+  },
+  {
+   "key": "shdr/2022/halloween-2022/donald-duck",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: confirm pin structure (pack, single multi-character pin, or mystery designs) - two pins vs a set not settled; edition size not stated"
+  },
+  {
+   "key": "shdr/2021/alice-in-wonderland-le300-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold: confirm pin structure - 7 pins but 8 characters listed (Tweedles presumably shared) and no per-pin description; no members created"
+  },
+  {
+   "key": "shdr/2021/alice-in-wonderland-le300-set",
+   "field": "relation",
+   "searched": "review",
+   "note": "field note: possible overlap with shdr/2021/foodie-party-2021-alice-set (also LE 300, dated 21 Dec 2021); dates differ, kept separate"
+  },
+  {
+   "key": "shdr/2021/pin-trading-fun-day-2021-zootopia-mystery",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "designs and total count not named; no members created (reseller box listing seen, not used)"
+  },
+  {
+   "key": "hkdl/2021/oe-set/magic-prize-sock",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: character list only ('among others'), total not given - mystery/structure not confirmed"
+  },
+  {
+   "key": "tdr/2021/tokyo-disneysea-20th-anniversary-pin-set",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "hold kept: one summary of MezzoMiki gives Mickey in Grand Opening/5th/10th/15th/20th costumes, but a check query found that wording on the TDR 40th framed set - likely conflation, not released"
+  },
+  {
+   "key": "shdr/2024/mickey-friends-t-shirt",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: Mickey & Friends T-shirt pins SHDR, Oct 2024 - for 2023-24 cell"
+  },
+  {
+   "key": "shdr/2024/attraction-mickey-icon",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "lead: Attraction Mickey Icon series (9 pins) SHDR, Dec 2024 - for later cell"
+  },
+  {
+   "key": "tdr/2022/duffy-beautiful-rainy-days",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "lead: a blog mentions 8 pin designs for TDS Duffy Beautiful Rainy Days (7 Apr-15 Jun 2022); not confirmed as pins vs plush badges - not keyed"
+  },
+  {
+   "key": "hkdl/2022/monthly",
+   "field": "pins",
+   "searched": "2 queries",
+   "note": "still no Jun 2022 or Dec 2022 HKDL LE batch post found"
+  },
+  {
+   "key": "hkdl/2021/monthly",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "still no Sep/Nov 2021 HKDL LE batch found"
+  },
+  {
+   "key": "hkdl/2023/january-2023",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "hold kept: HKMSG Jan 2023 batch re-seen (sold from 30 Dec 2022); year convention pending - not keyed"
+  },
+  {
+   "key": "shdr/2020/marvel-comics-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "four pins still not named"
+  },
+  {
+   "key": "shdr/2020/marvel-emblems-pin-set",
+   "field": "pins",
+   "searched": "1 query",
+   "note": "six emblem pins still not named"
+  },
+  {
+   "key": "hkdl/2022/january-2022/pinocchio-camera-series",
+   "field": "release_year",
+   "searched": "not searched per instructions",
+   "note": "hold kept: year convention pending maintainer decision - not released"
+  },
+  {
+   "key": "hkdl/2022/january-2022/iron-man-experience-5th",
+   "field": "release_year",
+   "searched": "not searched per instructions",
+   "note": "hold kept: year convention pending maintainer decision - not released"
+  },
+  {
+   "key": "hkdl/2022/january-2022/cny-2022-mickey-and-minnie",
+   "field": "release_year",
+   "searched": "not searched per instructions",
+   "note": "hold kept: year convention pending maintainer decision - not released"
+  },
+  {
+   "key": "hkdl/2022/january-2022/cny-2022-donald-and-daisy",
+   "field": "release_year",
+   "searched": "not searched per instructions",
+   "note": "hold kept: year convention pending maintainer decision - not released"
+  },
+  {
+   "key": "hkdl/2022/january-2022/cny-2022-pluto-chip-and-dale",
+   "field": "release_year",
+   "searched": "not searched per instructions",
+   "note": "hold kept: year convention pending maintainer decision - not released"
+  },
+  {
+   "key": "hkdl/2022/january-2022/magic-access-jumbo",
+   "field": "release_year",
+   "searched": "not searched per instructions",
+   "note": "hold kept: year convention pending maintainer decision - not released"
+  },
+  {
+   "key": "shdr/2022/seven-dwarfs-mine-train-mystery/happy",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold kept: mystery designs not individually confirmed from page text"
+  },
+  {
+   "key": "shdr/2022/seven-dwarfs-mine-train-mystery/sleepy",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold kept: mystery designs not individually confirmed from page text"
+  },
+  {
+   "key": "shdr/2022/seven-dwarfs-mine-train-mystery/sneezy",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold kept: mystery designs not individually confirmed from page text"
+  },
+  {
+   "key": "shdr/2022/seven-dwarfs-mine-train-mystery/dopey",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold kept: mystery designs not individually confirmed from page text"
+  },
+  {
+   "key": "shdr/2022/seven-dwarfs-mine-train-mystery/grumpy",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold kept: mystery designs not individually confirmed from page text"
+  },
+  {
+   "key": "shdr/2022/seven-dwarfs-mine-train-mystery/doc",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold kept: mystery designs not individually confirmed from page text"
+  },
+  {
+   "key": "shdr/2022/seven-dwarfs-mine-train-mystery/bashful",
+   "field": "pin_structure",
+   "searched": "not re-searched",
+   "note": "hold kept: mystery designs not individually confirmed from page text"
+  },
+  {
+   "key": "shdr/2022/duffy-friends-warm-christmas-wishes",
+   "field": "pins",
+   "searched": "not re-searched",
+   "note": "hold kept: confirm pin structure"
+  },
+  {
+   "key": "shdr/2021/oe-set/boba-tea",
+   "field": "pins",
+   "searched": "not re-searched",
+   "note": "hold kept: confirm pin structure"
+  },
+  {
+   "key": "tdr/2022/toy-story-traffic-cones-pin-set",
+   "field": "pins",
+   "searched": "not re-searched",
+   "note": "hold kept: confirm pin structure"
+  },
+  {
+   "key": "hkdl/2020/olu-mel-2020",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "hkdl/2021/pin-trading-carnival-2021",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "hkdl/2022/pin-trading-carnival-2022",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "tdr/2022/toy-story-hotel-pin-badge",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "shdr/2021/backpack-pin-series",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "shdr/2020/pin-trading-fun-day-2020",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "tdr/2022/halloween-2022-pin-badge-set",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "tdr/2021/park-logo-pin-set",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "hkdl/2022/november-2022",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "hkdl/2021/happiest-place-on-earth-princess",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "hkdl/2020/mickey-friends-booster",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "hkdl/2020/mickey-friends-starter-set",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "hkdl/2020/pin-go-2020",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "shdr/2020/pin-trading-fun-day-2020-mystery",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "shdr/2020/spring-festival-2020",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "shdr/2022/pin-trading-fun-day-2022",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  },
+  {
+   "key": "tdr/2020/dolls-day-2020",
+   "field": "pins",
+   "searched": "not re-searched or no new evidence",
+   "note": "hold/gap kept: no new evidence this pass"
+  }
+ ],
+ "discovery_notes": "Cell B406, follow-up 21 of B041 (reuses keys from 397/445/478/505/526/546/564/575/584). 27 standard searches; all claims from search-engine summaries. New pins: SHDR Chip n Dale Birthday 2021 LE500 (2 Apr 2021); SHDR Chip n Dale OE treat pins 30 Apr 2021 (candy jar single + 2-pin set Chip ice cream cone / Dale donut); SHDR Halloween 2022 Chip and Dale and Donald (structure held). New sets only: SHDR Alice in Wonderland LE300 7-pin set (9 Mar 2021, structure hold), Fun Day 2021 Zootopia mystery (2 per box, designs unnamed). Re-used: HKDL Magic Prize Sock (character list added, hold kept), SHDR Halloween 2022 set date. No holds released: TDS 20th framed five costume wording looked conflated with TDR 40th framed set. HKDL Jan 2022 / Jan 2023 untouched. Resellers seen, not used: usshoppingsos, carousell, wizmouse, yahoo auctions."
+}

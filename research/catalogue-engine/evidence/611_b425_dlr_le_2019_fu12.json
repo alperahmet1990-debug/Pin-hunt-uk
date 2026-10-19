@@ -1,0 +1,824 @@
+{
+ "packet_id": "611_b425_dlr_le_2019_fu12",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+   "title": "20,000 Leagues Under the Sea 65th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-03",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+   "title": "UP 10th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-05",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/tarzan-20th-anniversary-cast-member-pin",
+   "title": "Tarzan 20th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-07",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/the-skeleton-dance-90th-anniversary-cast-member-pin",
+   "title": "The Skeleton Dance 90th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-08",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/wonderful-world-of-color-65th-anniversary-cast-member-pin",
+   "title": "Wonderful World of Color 65th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/the-incredibles-15th-anniversary-cast-member-pin/",
+   "title": "The Incredibles 15th Anniversary Cast Member Pin",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://mypincentral.com/pin/112945",
+   "title": "Incredibles 15th Anniversary dinner table pin (listing 112945)",
+   "publisher": "MyPinCentral",
+   "published_date": "",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-4",
+   "title": "New Disney Pins October 2019 Week 4",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-10-21",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+   "title": "Disney Resorts Holiday 2019 Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-11",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/medieval-magic-disney-pin-collection/",
+   "title": "Medieval Magic Disney Pin Collection",
+   "publisher": "Disney Pins Blog",
+   "published_date": "2019-06",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "wdw/2019/20000-leagues-under-the-sea-65th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "family",
+     "value": "Cast Member Movie Anniversary collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "post calls it pin #25 of the Cast Member movie anniversary collection"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/up-10th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "family",
+     "value": "Cast Member Movie Anniversary collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "post calls it pin #26 of the Cast Member movie anniversary collection"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/tarzan-20th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "family",
+     "value": "Cast Member Movie Anniversary collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/tarzan-20th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "post calls it pin #29 of the Cast Member movie anniversary collection"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/skeleton-dance-90th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "family",
+     "value": "Cast Member Movie Anniversary collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-skeleton-dance-90th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "post calls it pin #30 of the Cast Member movie anniversary collection"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/wonderful-world-of-color-65th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "family",
+     "value": "Cast Member Movie Anniversary collection",
+     "source_url": "https://disneypinsblog.com/blogs/news/wonderful-world-of-color-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "post calls it pin #32 of the Cast Member movie anniversary collection"
+    }
+   ]
+  },
+  {
+   "set_key": "wdw/2019/incredibles-15th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "family",
+     "value": "Cast Member Movie Anniversary collection",
+     "source_url": "https://disneypinsblog.com/the-incredibles-15th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "post calls it pin #33 of the Cast Member movie anniversary collection"
+    }
+   ]
+  },
+  {
+   "set_key": "dlr/2019/resort-holiday-bells-2019",
+   "claims": [
+    {
+     "field": "price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "each bell pin $17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/disney-resorts-holiday-2019-pin-collection/",
+     "method": "search_snippet",
+     "note": "all resort bell pins LE, sizes vary"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "wdw/2019/20000-leagues-under-the-sea-65th-anniversary-cast-member/pin",
+   "set_key": "wdw/2019/20000-leagues-under-the-sea-65th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 25,
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "#25 in the Cast Member movie anniversary collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "cast member limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-03-06",
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "Disneyland date 2019-03-06; WDW two days later"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World cast member stores",
+     "source_url": "https://disneypinsblog.com/blogs/news/20000-leagues-under-the-sea-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "Company D / Team Center cast stores at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/up-10th-anniversary-cast-member/pin",
+   "set_key": "wdw/2019/up-10th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 26,
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "#26 in the Cast Member movie anniversary collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "cast member limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 1000,
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "LE 1,000"
+    },
+    {
+     "field": "original_price",
+     "value": 13.55,
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "retail $13.55"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-05-22",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "DLR 22 May 2019 (WDW 24 May)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World cast member stores",
+     "source_url": "https://disneypinsblog.com/blogs/news/up-10th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "Company D / Team Center cast stores at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/tarzan-20th-anniversary-cast-member/jane-and-tarzan",
+   "set_key": "wdw/2019/tarzan-20th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 29,
+     "source_url": "https://disneypinsblog.com/blogs/news/tarzan-20th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "#29 in the Cast Member movie anniversary collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/tarzan-20th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "cast member limited edition"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Tarzan",
+      "Jane"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/tarzan-20th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "pin-on-pin design with Jane and Tarzan"
+    },
+    {
+     "field": "visual_features",
+     "value": [
+      "pin-on-pin"
+     ],
+     "source_url": "https://disneypinsblog.com/blogs/news/tarzan-20th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "pin-on-pin"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://disneypinsblog.com/blogs/news/tarzan-20th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "single pin showing both characters"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-07-10",
+     "source_url": "https://disneypinsblog.com/blogs/news/tarzan-20th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "DLR 10 Jul 2019 (WDW 12 Jul)"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World cast member stores",
+     "source_url": "https://disneypinsblog.com/blogs/news/tarzan-20th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "Company D / Team Center cast stores at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/skeleton-dance-90th-anniversary-cast-member/pin",
+   "set_key": "wdw/2019/skeleton-dance-90th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 30,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-skeleton-dance-90th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "#30 in the Cast Member movie anniversary collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-skeleton-dance-90th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "cast member limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/the-skeleton-dance-90th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-08-14",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-skeleton-dance-90th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "Disneyland date 2019-08-14; WDW two days later"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World cast member stores",
+     "source_url": "https://disneypinsblog.com/blogs/news/the-skeleton-dance-90th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "Company D / Team Center cast stores at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/wonderful-world-of-color-65th-anniversary-cast-member/pin",
+   "set_key": "wdw/2019/wonderful-world-of-color-65th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 32,
+     "source_url": "https://disneypinsblog.com/blogs/news/wonderful-world-of-color-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "#32 in the Cast Member movie anniversary collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/blogs/news/wonderful-world-of-color-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "cast member limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/blogs/news/wonderful-world-of-color-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-23",
+     "source_url": "https://disneypinsblog.com/blogs/news/wonderful-world-of-color-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "Disneyland date 2019-10-23; WDW two days later"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World cast member stores",
+     "source_url": "https://disneypinsblog.com/blogs/news/wonderful-world-of-color-65th-anniversary-cast-member-pin",
+     "method": "search_snippet",
+     "note": "Company D / Team Center cast stores at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/incredibles-15th-anniversary-cast-member/pin",
+   "set_key": "wdw/2019/incredibles-15th-anniversary-cast-member",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 33,
+     "source_url": "https://disneypinsblog.com/the-incredibles-15th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "#33 in the Cast Member movie anniversary collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://disneypinsblog.com/the-incredibles-15th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "cast member limited edition"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://disneypinsblog.com/the-incredibles-15th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "LE 500"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-11-06",
+     "source_url": "https://disneypinsblog.com/the-incredibles-15th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Disneyland date 2019-11-06; WDW two days later"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland and Walt Disney World cast member stores",
+     "source_url": "https://disneypinsblog.com/the-incredibles-15th-anniversary-cast-member-pin/",
+     "method": "search_snippet",
+     "note": "Company D / Team Center cast stores at both resorts"
+    }
+   ]
+  },
+  {
+   "pin_key": "wdw/2019/incredibles-15th-anniversary/dinner-table",
+   "set_key": "wdw/2019/incredibles-15th-anniversary",
+   "claims": [
+    {
+     "field": "characters",
+     "value": [
+      "Mr. Incredible",
+      "Elastigirl",
+      "Violet",
+      "Dash",
+      "Jack-Jack"
+     ],
+     "source_url": "https://mypincentral.com/pin/112945",
+     "method": "search_snippet",
+     "note": "listing names Bob, Helen, Violet, Dash and Jack-Jack at the dinner table"
+    },
+    {
+     "field": "backstamp_text",
+     "value": "Celebrating 15 Years",
+     "source_url": "https://mypincentral.com/pin/112945",
+     "method": "search_snippet",
+     "note": "back reads Celebrating 15 Years"
+    },
+    {
+     "field": "edition_size",
+     "value": 3000,
+     "source_url": "https://mypincentral.com/pin/112945",
+     "method": "search_snippet",
+     "note": "LE 3,000 (matches public park release)"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://mypincentral.com/pin/112945",
+     "method": "search_snippet",
+     "note": "single scene pin"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlr/2019/crests-of-the-kingdom/splash-mountain",
+   "set_key": "dlr/2019/crests-of-the-kingdom",
+   "claims": [
+    {
+     "field": "set_position",
+     "value": 10,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-4",
+     "method": "search_snippet",
+     "note": "10th in monthly Crests of the Kingdom collection"
+    },
+    {
+     "field": "edition_size",
+     "value": 2000,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-4",
+     "method": "search_snippet",
+     "note": "LE 2,000"
+    },
+    {
+     "field": "original_price",
+     "value": 17.99,
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-4",
+     "method": "search_snippet",
+     "note": "$17.99"
+    },
+    {
+     "field": "currency",
+     "value": "USD",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-4",
+     "method": "search_snippet",
+     "note": "US dollars"
+    },
+    {
+     "field": "release_date",
+     "value": "2019-10-24",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-4",
+     "method": "search_snippet",
+     "note": "at DLR 24 Oct 2019"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Resort",
+     "source_url": "https://disneypinsblog.com/blogs/news/new-disney-pins-october-2019-week-4",
+     "method": "search_snippet",
+     "note": "DLR"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "wdw/2019/20000-leagues-under-the-sea-65th-anniversary-cast-member/pin",
+   "field": "characters",
+   "searched": "3 queries (DPB, WDWNT, design terms)",
+   "note": "design/characters still not in snippets; distinct pin by collection number #25 and date - not a duplicate of the other CM anniversary pins"
+  },
+  {
+   "key": "wdw/2019/skeleton-dance-90th-anniversary-cast-member/pin",
+   "field": "characters",
+   "searched": "3 queries (DPB, WDWNT, design terms)",
+   "note": "design/characters still not in snippets; distinct pin by collection number #30 and date - not a duplicate of the other CM anniversary pins"
+  },
+  {
+   "key": "wdw/2019/wonderful-world-of-color-65th-anniversary-cast-member/pin",
+   "field": "characters",
+   "searched": "3 queries (DPB, WDWNT, design terms)",
+   "note": "design/characters still not in snippets; distinct pin by collection number #32 and date - not a duplicate of the other CM anniversary pins"
+  },
+  {
+   "key": "wdw/2019/incredibles-15th-anniversary-cast-member/pin",
+   "field": "characters",
+   "searched": "3 queries (DPB, WDWNT, design terms)",
+   "note": "design/characters still not in snippets; distinct pin by collection number #33 and date - not a duplicate of the other CM anniversary pins"
+  },
+  {
+   "key": "wdw/2019/incredibles-15th-anniversary/dinner-table",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "field note: characters from one fan-catalogue listing only; LE 3,000 matches public park pin, not the LE 500 CM pin"
+  },
+  {
+   "key": "dlr/2019/resort-holiday-bells-2019/disneyland-hotel",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "hold: kept - DPB says bells show different characters on a spinner, $17.99, series LE 750-3,000; per-hotel characters/edition still not stated"
+  },
+  {
+   "key": "dlr/2019/resort-holiday-bells-2019/grand-californian-hotel",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "hold: kept - DPB says bells show different characters on a spinner, $17.99, series LE 750-3,000; per-hotel characters/edition still not stated"
+  },
+  {
+   "key": "dlr/2019/resort-holiday-bells-2019/paradise-pier-hotel",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "hold: kept - DPB says bells show different characters on a spinner, $17.99, series LE 750-3,000; per-hotel characters/edition still not stated"
+  },
+  {
+   "key": "dlr/2019/resort-holiday-bells-2019",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "field note: 7 Nov (resort update) vs 11 Nov 2019 still unresolved"
+  },
+  {
+   "key": "dlr/2019/medieval-magic/donald-duck",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: kept - DPB collection page again titles it 'Donald Duck Medieval Magic Pin Set' (gold metal base, LE 1,000, $17.99); single vs set still unresolved"
+  },
+  {
+   "key": "dlr/2019/medieval-magic/goofy",
+   "field": "pin_structure",
+   "searched": "2 queries",
+   "note": "hold: kept - same 'Pin Set' wording as Donald; summary also mentions 'Mickey and Minnie sets' - confirm structure"
+  },
+  {
+   "key": "dlr/2019/medieval-magic",
+   "field": "release_date",
+   "searched": "1 query",
+   "note": "field note: a reader comment says released 13 Jun 2019; event dates elsewhere 6 Jun 2019. Full collection size still not stated"
+  },
+  {
+   "key": "wdw/2019/cast-member-movie-anniversary-2019",
+   "field": "set_members",
+   "searched": "4 queries",
+   "note": "collection numbers now known: #25 20,000 Leagues, #26 Up, #29 Tarzan, #30 Skeleton Dance, #32 World of Color, #33 Incredibles; #27, #28, #31 and #22-#24 still unnamed"
+  },
+  {
+   "key": "wdw/2019/princess-and-the-frog-10th-anniversary-cast-member/pin",
+   "field": "set_position",
+   "searched": "2 queries",
+   "note": "collection number (#34?) and design not stated in snippets"
+  },
+  {
+   "key": "wdw/2019/mary-poppins-55th-anniversary-cast-member",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "still title-only (DPB tag archive); not keyed. Possibly #31 (Aug 2019) - unconfirmed. Not the Disney Store 55th pin (Mary Poppins/Bert silhouette, $12.95)"
+  },
+  {
+   "key": "dlr/2019/le-leads-10",
+   "field": "lead",
+   "searched": "1 query",
+   "note": "lead: Disney Store Mary Poppins 55th Anniversary pin (Mary Poppins, Bert, penguins silhouette, limited release $12.95; also disneystore.eu EUR10) - dsus/dsuk 2019 cells"
+  },
+  {
+   "key": "dlr/2019/le-leads-10",
+   "field": "lead",
+   "searched": "1 query",
+   "note": "lead: Anniversary Nametag Cast Member Pins Series #3 (Aurora, Ariel, Jane, Tiana; Employee Centers LE 250, $19.95) - year not confirmed; CM/Employee Center scope"
+  },
+  {
+   "key": "dlr/2019/tape-series",
+   "field": "set_members",
+   "searched": "2 queries",
+   "note": "#2-#4 still unnamed; only #1 Lion King (2018) and #5-#8 surface"
+  },
+  {
+   "key": "dlr/2019/windows-of-magic",
+   "field": "set_members",
+   "searched": "2 queries",
+   "note": "#8 (Aug 2019) and #11 still unnamed; DPB Aug 2019 week 4 lists no Windows of Magic pin"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-club-33",
+   "field": "set_members",
+   "searched": "1 query",
+   "note": "#2, #4, #5 designs still not in snippets; one summary says Club 33 pins $30 in collectible box (source not attributable - not claimed)"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-monthly/droid-badge-2-1b",
+   "field": "edition_size",
+   "searched": "1 query",
+   "note": "WDWNT Aug 2019 preview names the 2-1B droid badge only; edition/price still not stated"
+  },
+  {
+   "key": "wdw/2019/mickey-91st-birthday/happy-birthday-mickey",
+   "field": "release_location",
+   "searched": "1 query",
+   "note": "Disneyland distribution still not confirmed (MickeyBlog author at Magic Kingdom)"
+  },
+  {
+   "key": "dlr/2019/disneyland-after-dark-sweethearts-nite",
+   "field": "existence",
+   "searched": "2 queries",
+   "note": "no 2019 Sweethearts' Nite (7 Feb) pin found; two-piece LE sweetheart set is 2020 - not keyed"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-countdown/at-at",
+   "field": "set_position",
+   "searched": "0 new queries",
+   "note": "still not stated as #1; not re-searched"
+  },
+  {
+   "key": "dlr/2019/dca-food-wine-festival-2019",
+   "field": "mapping",
+   "searched": "0 new queries",
+   "note": "per-pin mapping still open; not re-searched"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-retirement-unliving/doom-buggy-slider",
+   "field": "release_date",
+   "searched": "0 new queries",
+   "note": "sale day still not stated; not re-searched"
+  },
+  {
+   "key": "dlr/2019/medieval-magic-disney-dragons-mystery",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "wdw/2019/worlds-biggest-mouse-party-surprise",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/i-heart-gaming/ducktales",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/i-heart-gaming/the-lion-king",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/holiday-2019/mele-kalikimaka",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-july-release",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-monthly/first-order-reconnaissance-kylo-ren",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-graveyard-ghosts-mystery",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-50th-oval-plaque-boxed-set",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-framed-set",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/sleeping-beauty-60th-mystery",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/haunted-mansion-holiday-2019-mystery",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/galaxys-edge-silhouette-mystery",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/tis-the-season-advent",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/oogie-boogie-bash",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/windows-of-magic/aurora",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/windows-of-magic/black-cauldron",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  },
+  {
+   "key": "dlr/2019/festival-of-holidays/feliz-navidad",
+   "field": "hold",
+   "searched": "no new per-pin evidence",
+   "note": "hold: kept - no new per-pin evidence this pass"
+  }
+ ],
+ "discovery_notes": "B425 DLR LE 2019 FU12. Main gain: Cast Member movie anniversary collection numbers (#25/26/29/30/32/33) on shared wdw keys to separate the CM pins; Up CM price $13.55; Tarzan pin-on-pin. CM pin characters (20,000 Leagues, Skeleton Dance, WOC, Incredibles, PatF) still not in snippets. No holds released. 28 searches."
+}

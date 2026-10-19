@@ -756,6 +756,9 @@ export interface ProbeResult {
   truncated?: boolean;
   /** Adapter mapping of the rows: mapped count and drop reasons (counts only). */
   mapped?: number;
+  /** Mapped rows with a usable price, and with a sold date (counts only). */
+  withPrice?: number;
+  withSoldDate?: number;
   dropped?: Record<string, number>;
   /** matchListing v2 on mapped rows: accepted count and rejection reasons (counts only). */
   matchAccepted?: number;
@@ -811,6 +814,8 @@ export async function runProbe(opts: ProbeOptions, deps: RefreshDeps): Promise<P
     const dropped: Record<string, number> = {};
     const matchRejected: Record<string, number> = {};
     let mapped = 0;
+    let withPrice = 0;
+    let withSoldDate = 0;
     let matchAccepted = 0;
     for (const raw of res.rows) {
       if (typeof raw !== "object" || raw === null || Array.isArray(raw)) {
@@ -823,6 +828,8 @@ export async function runProbe(opts: ProbeOptions, deps: RefreshDeps): Promise<P
         continue;
       }
       mapped += 1;
+      if (out.price !== null) withPrice += 1;
+      if (out.soldDate) withSoldDate += 1;
       const m = matchListing(ref!.pin, out.title, { mode: "v2", lang: ctx.lang });
       if (m.accepted) matchAccepted += 1;
       else {
@@ -837,6 +844,8 @@ export async function runProbe(opts: ProbeOptions, deps: RefreshDeps): Promise<P
       pages: res.pages,
       truncated: res.truncated,
       mapped,
+      withPrice,
+      withSoldDate,
       dropped,
       matchAccepted,
       matchRejected,

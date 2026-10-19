@@ -33,7 +33,7 @@ export function mapVintedRow(row: RawRow, ctx: RowContext): NormalisedListing | 
   const status = typeof row.status === "string" ? row.status.trim().toLowerCase() : "";
   if (parseBool(pick(row, "is_sold", "sold")) === true || SOLD_STATUSES.has(status)) return "not_active";
   // `price` is the seller's asking price; buyer-protection totals are ignored.
-  const prices = rowPrices(row, ctx, ["price", "asking_price"]);
+  const prices = rowPrices(row, ctx, ["price", "asking_price", "displayed_price"]);
   if (prices === "currency_mismatch") return prices;
 
   return {

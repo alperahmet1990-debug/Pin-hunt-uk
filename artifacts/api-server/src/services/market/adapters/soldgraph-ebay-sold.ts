@@ -57,7 +57,7 @@ export function mapEbaySoldRow(row: RawRow, ctx: RowContext): NormalisedListing 
   if (!title) return "missing_title";
   const soldDate = parseDate(pick(row, "sold_date", "sold_at", "end_date", "ended_at", "date_sold"), ctx.market, ctx.now);
   if (!soldDate) return "missing_sold_date";
-  const prices = rowPrices(row, ctx, ["sold_price", "price", "sale_price"]);
+  const prices = rowPrices(row, ctx, ["sold_price", "price", "sale_price", "displayed_price"]);
   if (prices === "currency_mismatch") return prices;
 
   const bestOfferAccepted = parseBool(pick(row, "best_offer_accepted"));

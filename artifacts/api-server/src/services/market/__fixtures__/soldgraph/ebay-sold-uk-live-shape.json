@@ -1,0 +1,73 @@
+{
+  "_comment": "SYNTHETIC values in the field shape the maintainer's staging probe reported for ebay/sold (#411, 2026-10-19): price under displayed_price {amount, currency}, shipping under displayed_shipping. Image and seller fields are present on purpose: adapters must drop them.",
+  "request_id": "req-synthetic",
+  "status": "complete",
+  "credits": 1,
+  "cached": false,
+  "result": {
+    "page": 1,
+    "count": 3,
+    "next_page": null,
+    "next_cursor": null,
+    "data": [
+      {
+        "id": "live-1",
+        "title": "Disney Hatbox Ghost pin LE 2000 Haunted Mansion 50th",
+        "best_offer_accepted": false,
+        "bid_count": null,
+        "condition": "New",
+        "displayed_price": { "amount": 24.99, "currency": "GBP" },
+        "displayed_price_range": null,
+        "displayed_price_text": "£24.99",
+        "displayed_shipping": { "amount": 3.2, "currency": "GBP" },
+        "format": "fixed_price",
+        "image": "https://i.ebayimg.com/images/g/SENTINEL/s-l500.jpg",
+        "link": "https://www.ebay.co.uk/itm/live-1",
+        "location_text": "SENTINEL-TOWN",
+        "seller_text": "SENTINEL-SELLER (123) 99.9%",
+        "shipping_text": "+£3.20 postage",
+        "sold_date": "2026-10-01",
+        "sold_date_text": "Sold 1 Oct 2026",
+        "title_extra": null
+      },
+      {
+        "id": "live-2",
+        "title": "Disney Hatbox Ghost pin LE 2000",
+        "best_offer_accepted": true,
+        "bid_count": null,
+        "condition": "New",
+        "displayed_price": { "amount": 30, "currency": "GBP" },
+        "displayed_price_range": null,
+        "displayed_price_text": "£30.00",
+        "displayed_shipping": { "amount": 0, "currency": "GBP" },
+        "format": "best_offer",
+        "image": "https://i.ebayimg.com/images/g/SENTINEL/s-l500.jpg",
+        "link": "https://www.ebay.co.uk/itm/live-2",
+        "location_text": null,
+        "seller_text": "SENTINEL-SELLER",
+        "shipping_text": "Free postage",
+        "sold_date": "2026-09-20",
+        "sold_date_text": "Sold 20 Sep 2026"
+      },
+      {
+        "id": "live-3",
+        "title": "Disney Hatbox Ghost pin LE 2000 auction",
+        "best_offer_accepted": false,
+        "bid_count": 7,
+        "condition": "Used",
+        "displayed_price": { "amount": 19.5, "currency": "GBP" },
+        "displayed_price_range": null,
+        "displayed_price_text": "£19.50",
+        "displayed_shipping": { "amount": 2.5, "currency": "GBP" },
+        "format": "auction",
+        "image": "https://i.ebayimg.com/images/g/SENTINEL/s-l500.jpg",
+        "link": "https://www.ebay.co.uk/itm/live-3",
+        "location_text": null,
+        "seller_text": "SENTINEL-SELLER",
+        "shipping_text": "+£2.50 postage",
+        "sold_date": "2026-09-05",
+        "sold_date_text": "Sold 5 Sep 2026"
+      }
+    ]
+  }
+}

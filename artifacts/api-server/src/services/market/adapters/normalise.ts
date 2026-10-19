@@ -217,7 +217,7 @@ export function rowPrices(
   row: RawRow,
   ctx: { currency: string; lang: "en" | "fr" },
   priceKeys: string[],
-  shippingKeys: string[] = ["shipping", "shipping_price", "shipping_cost", "postage"],
+  shippingKeys: string[] = ["shipping", "shipping_price", "shipping_cost", "postage", "displayed_shipping"],
 ): { price: number | null; shipping: number | null } | "currency_mismatch" {
   const price = parseMoney(pick(row, ...priceKeys), ctx.lang);
   const stated = price.currency ?? currencyCode(pick(row, "currency", "currency_code"));

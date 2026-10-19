@@ -27,7 +27,7 @@ export function mapWhatnotRow(row: RawRow, ctx: RowContext): NormalisedListing |
   if (format.includes("auction")) return "not_buy_it_now";
   const status = typeof row.status === "string" ? row.status.trim().toLowerCase() : "";
   if (parseBool(pick(row, "is_sold", "sold")) === true || status === "sold" || status === "ended") return "not_active";
-  const prices = rowPrices(row, ctx, ["price", "buy_it_now_price", "asking_price"]);
+  const prices = rowPrices(row, ctx, ["price", "buy_it_now_price", "asking_price", "displayed_price"]);
   if (prices === "currency_mismatch") return prices;
 
   return {

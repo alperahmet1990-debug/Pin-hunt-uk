@@ -333,6 +333,12 @@ export default function ProfileScreen() {
                 label="Sign Out"
                 destructive
                 onPress={() => signOut()}
+              />
+              <SettingsRow
+                icon="trash-2"
+                label="Delete Account"
+                destructive
+                onPress={() => router.push('/delete-account' as any)}
                 last
               />
             </Section>

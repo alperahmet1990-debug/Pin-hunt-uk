@@ -1,0 +1,1078 @@
+{
+ "packet_id": "b428-dlp-2020-2021-fu12-2026-10-19",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+   "title": "Pin-Neuerscheinungen im August 2021",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+   "title": "Pin-Neuerscheinungen im September 2020",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-juli-2021/",
+   "title": "Pin-Neuerscheinungen im Juli 2021",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+   "title": "Pin Trading à Disneyland Paris : la sélection de pin's du mois",
+   "publisher": "Disneyphile",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dlp.rp84.fr/pins/2508-lucifer/",
+   "title": "Pin's LUCIFER, référencé par DLP par RP84",
+   "publisher": "DLP par RP84",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dlp.rp84.fr/pins/2641-mickey-cowboy/",
+   "title": "Pin's MICKEY COWBOY, référencé par DLP par RP84",
+   "publisher": "DLP par RP84",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dlp.rp84.fr/pins/2671-set-pins-tic-tac/",
+   "title": "Pin's SET PINS TIC & TAC, référencé par DLP par RP84",
+   "publisher": "DLP par RP84",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dlp.rp84.fr/pins/2493-tic-tac-2021/",
+   "title": "Pin's TIC & TAC 2021, référencé par DLP par RP84",
+   "publisher": "DLP par RP84",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dlp.rp84.fr/pins/2572-ep-merida-arc/",
+   "title": "Pin's EP MERIDA ARC, référencé par DLP par RP84",
+   "publisher": "DLP par RP84",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://dlp.rp84.fr/pins/2573-ep-feu-follet/",
+   "title": "Pin's EP FEU FOLLET, référencé par DLP par RP84",
+   "publisher": "DLP par RP84",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "http://passiondlp.com/actus/arc039.php",
+   "title": "passiondlp : Archives Disneyland Paris 2021 trimestre 1",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.passiondlp.com/actus/arc041.php",
+   "title": "passiondlp : Archives Disneyland Paris 2021 trimestre 3",
+   "publisher": "passiondlp.com",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/guardians-of-the-galaxy-disneyland-paris-pin-releases",
+   "title": "Guardians of the Galaxy Disneyland Paris Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://disneypinsblog.com/blogs/news/disneyland-paris-december-2021-pin-releases",
+   "title": "Disneyland Paris December 2021 Pin Releases",
+   "publisher": "Disney Pins Blog",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2020/parisian-minnie-2020",
+   "claims": [
+    {
+     "field": "format",
+     "value": "three separate OE pins plus a lanyard",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "dein-dlrp 5 Sep 2020 gives three pin line items, each with its own name and price, plus a lanyard EUR 12.99"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-05",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Listed under 5 September 2020"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/small-world-august-2021",
+   "claims": [
+    {
+     "field": "release_date",
+     "value": "2021-08-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "dein-dlrp section on it's a small world dates the series 16 Aug 2021"
+    },
+    {
+     "field": "format",
+     "value": "separate OE pins at EUR 10 plus a Chip and Dale pin set at EUR 13 and a lanyard",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Facade, Stitch and Goofy pins listed individually, C&D set and lanyard separately"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "All listed as unlimited"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/small-world-august-2021/chip-dale-tower-bridge-set",
+   "parent_set_key": "dlp/2021/small-world-august-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "it's a small world Chip and Dale pin set (London)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Pin set showing Chip and Dale in front of Tower Bridge"
+    },
+    {
+     "field": "format",
+     "value": "2-pin set",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Summary calls it a 2er-Set; whether each pin shows one chipmunk is not stated"
+    },
+    {
+     "field": "price",
+     "value": 13.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "EUR 13"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Same 16 Aug small world release"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/christmas-oe-december-2021/chip-dale-christmas-set",
+   "parent_set_key": "dlp/2021/christmas-oe-december-2021",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Set pins Tic & Tac (Christmas 2021)",
+     "source_url": "https://dlp.rp84.fr/pins/2671-set-pins-tic-tac/",
+     "method": "search_snippet",
+     "note": "rp84 per-item page 'SET PINS TIC & TAC', subjects Noel, Tic, Tac"
+    },
+    {
+     "field": "format",
+     "value": "pin set",
+     "source_url": "https://dlp.rp84.fr/pins/2671-set-pins-tic-tac/",
+     "method": "search_snippet",
+     "note": "Listed as a set; number of pins not stated"
+    },
+    {
+     "field": "price",
+     "value": 13.0,
+     "source_url": "https://dlp.rp84.fr/pins/2671-set-pins-tic-tac/",
+     "method": "search_snippet",
+     "note": "EUR 13.00"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://dlp.rp84.fr/pins/2671-set-pins-tic-tac/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://dlp.rp84.fr/pins/2671-set-pins-tic-tac/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-12-04",
+     "source_url": "https://dlp.rp84.fr/pins/2671-set-pins-tic-tac/",
+     "method": "search_snippet",
+     "note": "Release 04/12/2021, same day as the three Christmas OE pins"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2021/star-wars-patrice-girod-november-2021",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Four collector pins inspired by Return of the Jedi, 27 Nov 2021, World of Disney"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "500 each"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2020/parisian-minnie-2020/bow-dress",
+   "set_key": "dlp/2020/parisian-minnie-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie bow dress (Schleifenkleid)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Line item: Pin Minnie Schleifenkleid"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Minnie"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-05",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "5 Sep 2020"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie in a red-and-white bow dress",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Paraphrase of line item; red/white bow dress per summary"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Own line item with own price"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/parisian-minnie-2020/big-bow",
+   "set_key": "dlp/2020/parisian-minnie-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie with large red-and-white bow",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Line item: Pin Minnie mit grosser rot-weisser Schleife"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Minnie"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-05",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "5 Sep 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Own line item with own price"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2020/parisian-minnie-2020/mini-dress",
+   "set_key": "dlp/2020/parisian-minnie-2020",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie mini dress (Minikleid)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Line item: Pin Minnie Minikleid"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Minnie"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "unlimitiert"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "EUR 7.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2020-09-05",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "5 Sep 2020"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-september-2020/",
+     "method": "search_snippet",
+     "note": "Own line item with own price"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/small-world-august-2021/facade",
+   "set_key": "dlp/2021/small-world-august-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "it's a small world facade",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Pin of the attraction facade with clock and title lettering"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Attraction facade"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 10.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "EUR 10"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "16 Aug 2021"
+    },
+    {
+     "field": "visual_description",
+     "value": "Attraction frontage with its clock and 'it's a small world' lettering",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Paraphrase"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/small-world-august-2021/goofy-gondolier",
+   "set_key": "dlp/2021/small-world-august-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Goofy gondolier (it's a small world)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Goofy as an Italian gondolier in the attraction"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Goofy"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Goofy"
+    },
+    {
+     "field": "attraction",
+     "value": "it's a small world",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Attraction theme"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    },
+    {
+     "field": "original_price",
+     "value": 10.0,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "EUR 10"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "16 Aug 2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Listed individually"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/small-world-august-2021/stitch",
+   "set_key": "dlp/2021/small-world-august-2021",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Stitch dancing with dolls in the France scene",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "dein-dlrp describes the Stitch pin's scene"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-08-16",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Section dates the small world series 16 Aug"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2021/",
+     "method": "search_snippet",
+     "note": "Unlimited"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/cinderella-oe-may-2021/lucifer",
+   "set_key": "dlp/2021/cinderella-oe-may-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Lucifer",
+     "source_url": "https://dlp.rp84.fr/pins/2508-lucifer/",
+     "method": "search_snippet",
+     "note": "rp84 per-pin page titled LUCIFER"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lucifer"
+     ],
+     "source_url": "https://dlp.rp84.fr/pins/2508-lucifer/",
+     "method": "search_snippet",
+     "note": "Subjects: Cendrillon (film), Lucifer"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://dlp.rp84.fr/pins/2508-lucifer/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://dlp.rp84.fr/pins/2508-lucifer/",
+     "method": "search_snippet",
+     "note": "EUR 6.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://dlp.rp84.fr/pins/2508-lucifer/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-05-22",
+     "source_url": "https://dlp.rp84.fr/pins/2508-lucifer/",
+     "method": "search_snippet",
+     "note": "Release 22/05/2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dlp.rp84.fr/pins/2508-lucifer/",
+     "method": "search_snippet",
+     "note": "Own per-pin page"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/cowboy-november-2021/mickey-cowboy",
+   "set_key": "dlp/2021/cowboy-november-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey Cowboy",
+     "source_url": "https://dlp.rp84.fr/pins/2641-mickey-cowboy/",
+     "method": "search_snippet",
+     "note": "rp84 per-pin page titled MICKEY COWBOY"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://dlp.rp84.fr/pins/2641-mickey-cowboy/",
+     "method": "search_snippet",
+     "note": "Subjects: cowboy, Mickey Mouse"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://dlp.rp84.fr/pins/2641-mickey-cowboy/",
+     "method": "search_snippet",
+     "note": "OE"
+    },
+    {
+     "field": "original_price",
+     "value": 8.0,
+     "source_url": "https://dlp.rp84.fr/pins/2641-mickey-cowboy/",
+     "method": "search_snippet",
+     "note": "EUR 8.00"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://dlp.rp84.fr/pins/2641-mickey-cowboy/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-13",
+     "source_url": "https://dlp.rp84.fr/pins/2641-mickey-cowboy/",
+     "method": "search_snippet",
+     "note": "Release 13/11/2021"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://dlp.rp84.fr/pins/2641-mickey-cowboy/",
+     "method": "search_snippet",
+     "note": "Own per-pin page"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/star-wars-patrice-girod-november-2021/rotj-poster",
+   "set_key": "dlp/2021/star-wars-patrice-girod-november-2021",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Return of the Jedi poster pin",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "One of the four RotJ collector pins reproduces the film's famous poster"
+    },
+    {
+     "field": "edition_type",
+     "value": "Limited Edition",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "500 each"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-11-27",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Saturday 27 Nov 2021"
+    },
+    {
+     "field": "release_location",
+     "value": "World of Disney, Disney Village",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "World of Disney"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneyphile.fr/pin-trading-a-disneyland-paris-la-selection-de-pins-du-mois/",
+     "method": "search_snippet",
+     "note": "Described as one of four separate collector pins"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/dated-2021/chip-dale",
+   "set_key": "dlp/2021/dated-2021",
+   "claims": [
+    {
+     "field": "original_price",
+     "value": 9.99,
+     "source_url": "https://dlp.rp84.fr/pins/2493-tic-tac-2021/",
+     "method": "search_snippet",
+     "note": "rp84 per-pin page: EUR 9.99"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://dlp.rp84.fr/pins/2493-tic-tac-2021/",
+     "method": "search_snippet",
+     "note": "Euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2021-02-14",
+     "source_url": "https://dlp.rp84.fr/pins/2493-tic-tac-2021/",
+     "method": "search_snippet",
+     "note": "Release 14/02/2021"
+    },
+    {
+     "field": "edition_type",
+     "value": "Open Edition",
+     "source_url": "https://dlp.rp84.fr/pins/2493-tic-tac-2021/",
+     "method": "search_snippet",
+     "note": "OE"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/brave-2021/merida-bow",
+   "set_key": "dlp/2021/brave-2021",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://dlp.rp84.fr/pins/2572-ep-merida-arc/",
+     "method": "search_snippet",
+     "note": "rp84 'EP MERIDA ARC' page; summary says the Merida pair is limited to 400 each, Sep 2021"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2021/brave-2021/merida-wisp",
+   "set_key": "dlp/2021/brave-2021",
+   "claims": [
+    {
+     "field": "edition_size",
+     "value": 400,
+     "source_url": "https://dlp.rp84.fr/pins/2573-ep-feu-follet/",
+     "method": "search_snippet",
+     "note": "rp84 'EP FEU FOLLET' page; summary says the Merida pair is limited to 400 each, Sep 2021"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2021/small-world-august-2021/chip-dale-tower-bridge-set",
+   "field": "pin_structure",
+   "searched": "dein-dlrp Aug 2021; 2 queries",
+   "note": "hold: confirm pin structure; summary calls it a 2-pin set of Chip and Dale before Tower Bridge but also says pins EUR 10 each; per-pin designs not described"
+  },
+  {
+   "key": "dlp/2021/small-world-august-2021",
+   "field": "release_date",
+   "searched": "dein-dlrp Aug 2021",
+   "note": "field note: dein-dlrp dates the small world series 16 Aug 2021; packet 508 had 21 Aug and the ledger 28 Aug"
+  },
+  {
+   "key": "dlp/2021/small-world-august-2021",
+   "field": "expected_pin_count",
+   "searched": "dein-dlrp Aug 2021",
+   "note": "field note: facade, Stitch, Goofy plus a 2-pin C&D set would make the five pins in packet 402; inference only"
+  },
+  {
+   "key": "dlp/2021/cowboy-november-2021/mickey-cowboy",
+   "field": "identity",
+   "searched": "rp84; 2 queries",
+   "note": "hold: possibly the same pin as dlp/2021/cowboy-november-2021/sheriff-mickey (both Mickey, OE, 13 Nov 2021); rp84 page does not say sheriff; confirm before counting"
+  },
+  {
+   "key": "dlp/2021/cowboy-november-2021",
+   "field": "pin_structure",
+   "searched": "rp84 site search",
+   "note": "hold stays for the Chip and Dale cowboy pin(s); rp84 shows a separate Mickey Cowboy OE EUR 8 page only"
+  },
+  {
+   "key": "dlp/2021/cinderella-oe-may-2021",
+   "field": "pin_structure",
+   "searched": "rp84 site search",
+   "note": "hold stays for Jaq and Gus, Cinderella and carriage; only Lucifer has a per-pin page (new key lucifer)"
+  },
+  {
+   "key": "dlp/2021/cinderella-oe-may-2021/lucifer",
+   "field": "release_date",
+   "searched": "rp84 vs packet 402",
+   "note": "field note: rp84 gives 22 May 2021; packet 402 set date 20 May 2021"
+  },
+  {
+   "key": "dlp/2021/christmas-oe-december-2021",
+   "field": "pin_structure",
+   "searched": "rp84; 2 queries",
+   "note": "hold stays: rp84 shows the Chip and Dale item is a Christmas pin set (OE EUR 13, 4 Dec 2021), recorded as child set; Mickey and Pluto pins still undescribed"
+  },
+  {
+   "key": "dlp/2021/delayed-specials-july-2021/jumbo-medal-birthday",
+   "field": "identity",
+   "searched": "passiondlp; dein-dlrp Jul 2021",
+   "note": "field note: passiondlp reveal 12 Apr 2021 of a 29th-anniversary medal pin LE 700; dein-dlrp Jul 2021 jumbo medal birthday LE 700 EUR 50 delayed from April - likely the same pin, not merged"
+  },
+  {
+   "key": "dlp/2021/delayed-seasonal-june-2021",
+   "field": "designs",
+   "searched": "passiondlp arc041",
+   "note": "Easter LE pin revealed 4 Apr 2021 (filed under July 2021); design and edition size not stated"
+  },
+  {
+   "key": "dlp/2021/guardians-of-the-galaxy-june-2021",
+   "field": "designs",
+   "searched": "DPB GotG post; passiondlp",
+   "note": "Two Groot OE pins 19 Jun 2021 at World of Disney per DPB; designs still not described in snippets"
+  },
+  {
+   "key": "dlp/2021/valentines-2021",
+   "field": "designs",
+   "searched": "passiondlp arc039; Disneyphile; dein-dlrp",
+   "note": "passiondlp has a 'pin's saint valentin' entry dated 17/02/21 (heading only); three LE designs still unnamed; no dein-dlrp Feb 2021 page indexed"
+  },
+  {
+   "key": "dlp/2021/stitch-february-2021",
+   "field": "designs",
+   "searched": "passiondlp arc039",
+   "note": "passiondlp: 2 Stitch pins as a surprise release 12/02/21 at World of Disney; designs not described"
+  },
+  {
+   "key": "dlp/2021/star-wars-patrice-girod-november-2021",
+   "field": "designs",
+   "searched": "Disneyphile; planete-starwars",
+   "note": "Remaining three RotJ designs unnamed; Disneyphile passage does not mention Girod (MickeyBlog does)"
+  },
+  {
+   "key": "dlp/2021/101-dalmatians-december-2021",
+   "field": "designs",
+   "searched": "DPB Dec 2021; Disneyphile; dein-dlrp",
+   "note": "Three LE 700 4 Dec 2021 restated; designs unnamed; no dein-dlrp Dec 2021 page indexed"
+  },
+  {
+   "key": "dlp/2021/december-2021-le/genie",
+   "field": "identity",
+   "searched": "Disneyphile; DPB Dec 2021",
+   "note": "hold stays: two Genie LE 700 11 Dec 2021 vs 15 Jan 2022; no new evidence"
+  },
+  {
+   "key": "dlp/2021/marvel-christmas-december-2021",
+   "field": "designs",
+   "searched": "DPB Dec 2021; Disneyphile",
+   "note": "Marvel Christmas and Mickey & Minnie pins mentioned only as headings; no designs, counts or editions"
+  },
+  {
+   "key": "dlp/2021/pin-trading-day-august-2021",
+   "field": "designs",
+   "searched": "passiondlp arc041",
+   "note": "21 Aug 2021 pins 500 each plus one OE restated; designs not named (presumably the jungle-august-2021 keys)"
+  },
+  {
+   "key": "dlp/2021/pirates-november-2021",
+   "field": "designs",
+   "searched": "rp84 site search",
+   "note": "No per-pin Pirates pages found; skull logo pin unconfirmed"
+  },
+  {
+   "key": "dlp/2020/holiday-2020-delayed",
+   "field": "designs",
+   "searched": "dein-dlrp Dec 2020; DPB",
+   "note": "Alice holiday LE 700 pins still undescribed; dein-dlrp Dec 2020 lists only lanyard charms and four Best Friends/Carousel LEs"
+  },
+  {
+   "key": "lead/dlp.rp84.fr",
+   "field": "source",
+   "searched": "3 site-restricted queries",
+   "note": "lead: dlp.rp84.fr (DLP par RP84) is a per-pin DLP database with edition, price and release date; worth targeting for remaining 2020-2021 holds"
+  },
+  {
+   "key": "dlp/2021/pirates-november-2021/goofy",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/pirates-november-2021/chip-dale",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/pin-trading-time-november-2021/chip-dale-clarice",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/pin-trading-time-november-2021/maleficent-diablo",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/halloween-2021/chip-dale-pirates",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/wedding-winnie-the-pooh-january-2021",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/bagheera",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/miss-bunny",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/berlioz",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/minis-february-2021/toulouse",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/raya-oe-may-2021",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2020/oe-set/christmas-booster-2020",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/santa-hat-november-2021",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/halloween-trio-2021",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-pluto-mummy-2021",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/oe-set/halloween-pumpkin-ghost-2021",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/animators-june-2021",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2020/cast-member-genie/genie",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/stitch-august-2021/2-pin-set",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "dlp/2021/pin-trading-anniversary-2021",
+   "field": "pin_structure",
+   "searched": "this round",
+   "note": "hold stays; no new per-pin evidence this round"
+  },
+  {
+   "key": "discovery",
+   "field": "searches",
+   "searched": "budget",
+   "note": "30 WebSearch calls used (hard limit reached); parade floats, hotel pins, Refresh Lanyard, CM 3020/3021 not reached"
+  }
+ ],
+ "discovery_notes": "B428 follow-up 12 of B044 (DLP 2020-2021). New: Parisian Minnie three (dein-dlrp Sep 2020 line items), small world facade and Goofy gondolier (dein-dlrp Aug 2021) plus C&D Tower Bridge set (held), Cinderella OE Lucifer and Mickey Cowboy (rp84 per-pin pages; cowboy held as possible sheriff duplicate), RotJ poster pin (Disneyphile). Child set for Christmas 2021 C&D pin set. No holds released. New source dlp.rp84.fr. Snippet-only evidence."
+}

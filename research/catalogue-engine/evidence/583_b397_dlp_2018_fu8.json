@@ -1,0 +1,1265 @@
+{
+ "packet_id": "b397-dlp-2018-fu8",
+ "spec_version": 1,
+ "collected_at": "2026-10-19",
+ "collector": "agent:web-search",
+ "sources": [
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+   "title": "Pin-Neuerscheinungen im August 2018",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false,
+   "published_date": "2018-08-01"
+  },
+  {
+   "url": "https://www.dein-dlrp.de/disney-parks-magazin/sammlerstuecke-zum-90-geburtstag-von-mickey-mouse/",
+   "title": "Sammlerstücke zum 90. Geburtstag von Mickey Mouse",
+   "publisher": "dein-dlrp.de",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disneyland-paris-mickey-mouse-best-day-ever-postcard-pin-207801018140.html",
+   "title": "Disneyland Paris Mickey Mouse Best Day Ever Postcard Pin",
+   "publisher": "Disney Store EU",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disneyland-paris-lilo-and-stitch-best-friends-postcard-pin-207801018141.html",
+   "title": "Disneyland Paris Lilo And Stitch Best Friends Postcard Pin",
+   "publisher": "Disney Store EU",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  },
+  {
+   "url": "https://www.disneystore.eu/disneyland-paris-rapunzel-and-belle-postcard-pin-207801018142.html",
+   "title": "Disneyland Paris Rapunzel And Belle Postcard Pin",
+   "publisher": "Disney Store EU",
+   "accessed_via": "search_snippet",
+   "page_readable": false
+  }
+ ],
+ "sets": [
+  {
+   "set_key": "dlp/2018/oe-single/rendez-vous-gourmand-poster-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Rendez-vous Gourmand poster pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "single OE pin in Aug 2018 quick overview"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "listed as an individual pin with its own price"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/mickey-balloon-ice-cream-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey with balloon and ice cream pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "single OE pin in Aug 2018 quick overview"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "listed as an individual pin with its own price"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/minnie-balloon-candyfloss-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Minnie with balloon and candyfloss pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "single OE pin in Aug 2018 quick overview"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "listed as an individual pin with its own price"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/oe-single/chip-and-dale-popcorn-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Chip and Chap popcorn pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "single OE pin in Aug 2018 quick overview"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "listed as an individual pin with its own price"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/rendez-vous-gourmand-2018",
+   "claims": [
+    {
+     "field": "release_location",
+     "value": "Chez Marianne, Walt Disney Studios Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "three LE pins sold at Chez Marianne"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "each limited to 500"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/postcard-pin-sets-aug-2018",
+   "claims": [
+    {
+     "field": "expected_pin_count",
+     "value": 4,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "four unlimited sets at month end, each one pin on a postcard"
+    },
+    {
+     "field": "format",
+     "value": "pin on postcard",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "each set is a single pin fixed centrally on a matching postcard"
+    },
+    {
+     "field": "price",
+     "value": 12.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "12,99 EUR each"
+    }
+   ]
+  },
+  {
+   "set_key": "dlp/2018/mickey-90-november-2018",
+   "claims": [
+    {
+     "field": "set_name",
+     "value": "Mickey Mouse 90th birthday collectibles (Nov 2018)",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/sammlerstuecke-zum-90-geburtstag-von-mickey-mouse/",
+     "method": "search_snippet",
+     "note": "collectibles for Mickey's 90th, released 16 and 18 November"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/sammlerstuecke-zum-90-geburtstag-von-mickey-mouse/",
+     "method": "search_snippet",
+     "note": "16 and 18 November"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/sammlerstuecke-zum-90-geburtstag-von-mickey-mouse/",
+     "method": "search_snippet",
+     "note": "limited pins sold only at Pueblo Trading Post"
+    },
+    {
+     "field": "format",
+     "value": "single pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/sammlerstuecke-zum-90-geburtstag-von-mickey-mouse/",
+     "method": "search_snippet",
+     "note": "lineup lists 'a pin' among key, T-shirts, ornament, prints"
+    }
+   ]
+  }
+ ],
+ "pins": [
+  {
+   "pin_key": "dlp/2018/oe/rendez-vous-gourmand-poster-2018",
+   "set_key": "dlp/2018/oe-single/rendez-vous-gourmand-poster-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Rendez-vous Gourmand poster pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "named in quick overview under 03 August (search-engine summary of page)"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "unlimited per article overview"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "6.99 EUR in overview"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "overview heading 03 August"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018 article"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "DLP release list"
+    },
+    {
+     "field": "visual_description",
+     "value": "poster-style pin as a souvenir of the 2018 Rendez-vous Gourmand food festival",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/mickey-balloon-ice-cream-2018",
+   "set_key": "dlp/2018/oe-single/mickey-balloon-ice-cream-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey with balloon and ice cream pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "named in quick overview under 03 August (search-engine summary of page)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "character named in the pin description"
+    },
+    {
+     "field": "main_character",
+     "value": "Mickey Mouse",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "main subject of the pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "unlimited per article overview"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "6.99 EUR in overview"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "overview heading 03 August"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018 article"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "DLP release list"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey holding a blue balloon and an ice cream",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/minnie-balloon-candyfloss-2018",
+   "set_key": "dlp/2018/oe-single/minnie-balloon-candyfloss-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Minnie with balloon and candyfloss pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "named in quick overview under 03 August (search-engine summary of page)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Minnie Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "character named in the pin description"
+    },
+    {
+     "field": "main_character",
+     "value": "Minnie Mouse",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "main subject of the pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "unlimited per article overview"
+    },
+    {
+     "field": "original_price",
+     "value": 6.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "6.99 EUR in overview"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "overview heading 03 August"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018 article"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "DLP release list"
+    },
+    {
+     "field": "visual_description",
+     "value": "Minnie holding a pink balloon and pink candyfloss",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of summary"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/oe/chip-and-dale-popcorn-2018",
+   "set_key": "dlp/2018/oe-single/chip-and-dale-popcorn-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Chip and Chap popcorn pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "named in quick overview under 03 August (search-engine summary of page)"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Chip",
+      "Dale"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "character named in the pin description"
+    },
+    {
+     "field": "main_character",
+     "value": "Chip",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "main subject of the pin"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "unlimited per article overview"
+    },
+    {
+     "field": "original_price",
+     "value": 7.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "7.99 EUR in overview"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08-03",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "overview heading 03 August"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018 article"
+    },
+    {
+     "field": "release_location",
+     "value": "Disneyland Paris",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "DLP release list"
+    },
+    {
+     "field": "visual_description",
+     "value": "Chip and Dale (Chip und Chap) with popcorn",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of summary"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "summary refers to a single 'Chip and Chap popcorn pin' at 7,99 EUR"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/rendez-vous-gourmand-2018/remy-and-emile",
+   "set_key": "dlp/2018/rendez-vous-gourmand-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Rendez-vous Gourmand Rémy und Emilé",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "named in second targeted search on the Aug 2018 page"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Remy",
+      "Emile"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Rémy with his brother Emile"
+    },
+    {
+     "field": "main_character",
+     "value": "Remy",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Rémy named first"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "500 pieces"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "15,99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_location",
+     "value": "Chez Marianne, Walt Disney Studios Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "sold only at Chez Marianne, not Pueblo Trading Post"
+    },
+    {
+     "field": "visual_description",
+     "value": "Rémy with Emile stuck in a cheese Eiffel Tower",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of summary"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018 article"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/rendez-vous-gourmand-2018/lady-and-the-tramp",
+   "set_key": "dlp/2018/rendez-vous-gourmand-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Pin Rendez-vous Gourmand Susi und Strolch",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "named in second targeted search on the Aug 2018 page"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lady",
+      "Tramp"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Susi und Strolch = Lady and the Tramp"
+    },
+    {
+     "field": "main_character",
+     "value": "Lady",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Lady named first"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "limited"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "500 pieces"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "15,99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_location",
+     "value": "Chez Marianne, Walt Disney Studios Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "sold only at Chez Marianne"
+    },
+    {
+     "field": "visual_description",
+     "value": "recreates the spaghetti scene from the film",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of summary"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018 article"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/rendez-vous-gourmand-2018/belle-and-beast",
+   "set_key": "dlp/2018/rendez-vous-gourmand-2018",
+   "claims": [
+    {
+     "field": "visual_description",
+     "value": "Beast trying to eat politely to impress Belle",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase of summary; corroborates fu7 record"
+    },
+    {
+     "field": "edition_size",
+     "value": 500,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "500 pieces"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/postcard-pin-sets-aug-2018/lilo-and-stitch-best-friends",
+   "set_key": "dlp/2018/postcard-pin-sets-aug-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland Paris Lilo And Stitch Best Friends Postcard Pin",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-lilo-and-stitch-best-friends-postcard-pin-207801018141.html",
+     "method": "search_snippet",
+     "note": "official listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lilo",
+      "Stitch"
+     ],
+     "source_url": "https://www.disneystore.eu/disneyland-paris-lilo-and-stitch-best-friends-postcard-pin-207801018141.html",
+     "method": "search_snippet",
+     "note": "pair shown playing instruments"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Lilo",
+      "Stitch"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "second set 'Best Friends' with Lilo and Stitch making music"
+    },
+    {
+     "field": "main_character",
+     "value": "Stitch",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-lilo-and-stitch-best-friends-postcard-pin-207801018141.html",
+     "method": "search_snippet",
+     "note": "field note: listing names Lilo and Stitch as a pair"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "each set is one pin fixed to a matching postcard"
+    },
+    {
+     "field": "product_code",
+     "value": "207801018141",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-lilo-and-stitch-best-friends-postcard-pin-207801018141.html",
+     "method": "search_snippet",
+     "note": "code in listing URL"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://www.disneystore.eu/disneyland-paris-lilo-and-stitch-best-friends-postcard-pin-207801018141.html",
+     "method": "search_snippet",
+     "note": "12.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-lilo-and-stitch-best-friends-postcard-pin-207801018141.html",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "12,99 EUR per set"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "end of August 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018 article"
+    },
+    {
+     "field": "visual_description",
+     "value": "Lilo and Stitch playing music together, pin mounted on a postcard",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/postcard-pin-sets-aug-2018/rapunzel-and-belle",
+   "set_key": "dlp/2018/postcard-pin-sets-aug-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland Paris Rapunzel And Belle Postcard Pin",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-rapunzel-and-belle-postcard-pin-207801018142.html",
+     "method": "search_snippet",
+     "note": "official listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel",
+      "Belle"
+     ],
+     "source_url": "https://www.disneystore.eu/disneyland-paris-rapunzel-and-belle-postcard-pin-207801018142.html",
+     "method": "search_snippet",
+     "note": "cloisonné design featuring both characters"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Rapunzel",
+      "Belle"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "third set themed on princesses Rapunzel and Belle"
+    },
+    {
+     "field": "main_character",
+     "value": "Rapunzel",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-rapunzel-and-belle-postcard-pin-207801018142.html",
+     "method": "search_snippet",
+     "note": "named first"
+    },
+    {
+     "field": "pin_structure",
+     "value": "one pin",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-rapunzel-and-belle-postcard-pin-207801018142.html",
+     "method": "search_snippet",
+     "note": "listing describes one cloisonné pin linking the two characters"
+    },
+    {
+     "field": "product_code",
+     "value": "207801018142",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-rapunzel-and-belle-postcard-pin-207801018142.html",
+     "method": "search_snippet",
+     "note": "code in listing URL"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://www.disneystore.eu/disneyland-paris-rapunzel-and-belle-postcard-pin-207801018142.html",
+     "method": "search_snippet",
+     "note": "12.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-rapunzel-and-belle-postcard-pin-207801018142.html",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "edition_type",
+     "value": "open edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "unlimited"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-08",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "end of August 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "Aug 2018 article"
+    },
+    {
+     "field": "visual_description",
+     "value": "princess pin with Rapunzel and Belle on a stamp-style postcard",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-rapunzel-and-belle-postcard-pin-207801018142.html",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/postcard-pin-sets-aug-2018/fab-5-best-day-ever",
+   "set_key": "dlp/2018/postcard-pin-sets-aug-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Disneyland Paris Mickey Mouse Best Day Ever Postcard Pin",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-mickey-mouse-best-day-ever-postcard-pin-207801018140.html",
+     "method": "search_snippet",
+     "note": "official listing title"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.disneystore.eu/disneyland-paris-mickey-mouse-best-day-ever-postcard-pin-207801018140.html",
+     "method": "search_snippet",
+     "note": "pin shows Mickey linked to the castle; Fab 5 artwork is on the postcard"
+    },
+    {
+     "field": "characters",
+     "value": [
+      "Mickey Mouse"
+     ],
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "pin shows Mickey alone before Sleeping Beauty Castle; postcard shows Fab 5"
+    },
+    {
+     "field": "product_code",
+     "value": "207801018140",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-mickey-mouse-best-day-ever-postcard-pin-207801018140.html",
+     "method": "search_snippet",
+     "note": "code in listing URL"
+    },
+    {
+     "field": "original_price",
+     "value": 12.99,
+     "source_url": "https://www.disneystore.eu/disneyland-paris-mickey-mouse-best-day-ever-postcard-pin-207801018140.html",
+     "method": "search_snippet",
+     "note": "12.99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.disneystore.eu/disneyland-paris-mickey-mouse-best-day-ever-postcard-pin-207801018140.html",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "visual_description",
+     "value": "Mickey alone in front of Sleeping Beauty Castle; postcard carries Fab 5 and 'Best Day Ever'",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/pin-neuerscheinungen-im-august-2018/",
+     "method": "search_snippet",
+     "note": "paraphrase"
+    }
+   ]
+  },
+  {
+   "pin_key": "dlp/2018/mickey-90-november-2018/mickey-90th-birthday-pin",
+   "set_key": "dlp/2018/mickey-90-november-2018",
+   "claims": [
+    {
+     "field": "pin_name",
+     "value": "Mickey 90th birthday pin",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/sammlerstuecke-zum-90-geburtstag-von-mickey-mouse/",
+     "method": "search_snippet",
+     "note": "descriptive name; article lists one pin in the 90th collection"
+    },
+    {
+     "field": "edition_type",
+     "value": "limited edition",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/sammlerstuecke-zum-90-geburtstag-von-mickey-mouse/",
+     "method": "search_snippet",
+     "note": "limited, Pueblo Trading Post only"
+    },
+    {
+     "field": "edition_size",
+     "value": 700,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/sammlerstuecke-zum-90-geburtstag-von-mickey-mouse/",
+     "method": "search_snippet",
+     "note": "pin edition 700 (search-engine summary of page)"
+    },
+    {
+     "field": "original_price",
+     "value": 15.99,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/sammlerstuecke-zum-90-geburtstag-von-mickey-mouse/",
+     "method": "search_snippet",
+     "note": "15,99 EUR"
+    },
+    {
+     "field": "currency",
+     "value": "EUR",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/sammlerstuecke-zum-90-geburtstag-von-mickey-mouse/",
+     "method": "search_snippet",
+     "note": "euro"
+    },
+    {
+     "field": "release_date",
+     "value": "2018-11",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/sammlerstuecke-zum-90-geburtstag-von-mickey-mouse/",
+     "method": "search_snippet",
+     "note": "16/18 November 2018"
+    },
+    {
+     "field": "release_year",
+     "value": 2018,
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/sammlerstuecke-zum-90-geburtstag-von-mickey-mouse/",
+     "method": "search_snippet",
+     "note": "Mickey 90th, Nov 2018"
+    },
+    {
+     "field": "release_location",
+     "value": "Pueblo Trading Post, Disneyland Park",
+     "source_url": "https://www.dein-dlrp.de/disney-parks-magazin/sammlerstuecke-zum-90-geburtstag-von-mickey-mouse/",
+     "method": "search_snippet",
+     "note": "exclusive to Pueblo Trading Post"
+    }
+   ]
+  }
+ ],
+ "not_found": [
+  {
+   "key": "dlp/2018/oe/chip-and-dale-popcorn-2018",
+   "field": "main_character",
+   "searched": "dein-dlrp Aug 2018",
+   "note": "field note: main_character Chip chosen only as first-named; source names the pair"
+  },
+  {
+   "key": "dlp/2018/oe/rendez-vous-gourmand-poster-2018",
+   "field": "release",
+   "searched": "dein-dlrp Aug 2018; 2 queries",
+   "note": "release evidence: second search returned the four 03 Aug OE pins by name with descriptions and prices (fu7 lead 'RVG OE four' now named)"
+  },
+  {
+   "key": "dlp/2018/oe/mickey-balloon-ice-cream-2018",
+   "field": "release",
+   "searched": "dein-dlrp Aug 2018; 2 queries",
+   "note": "release evidence: second search returned the four 03 Aug OE pins by name with descriptions and prices (fu7 lead 'RVG OE four' now named)"
+  },
+  {
+   "key": "dlp/2018/oe/minnie-balloon-candyfloss-2018",
+   "field": "release",
+   "searched": "dein-dlrp Aug 2018; 2 queries",
+   "note": "release evidence: second search returned the four 03 Aug OE pins by name with descriptions and prices (fu7 lead 'RVG OE four' now named)"
+  },
+  {
+   "key": "dlp/2018/oe/chip-and-dale-popcorn-2018",
+   "field": "release",
+   "searched": "dein-dlrp Aug 2018; 2 queries",
+   "note": "release evidence: second search returned the four 03 Aug OE pins by name with descriptions and prices (fu7 lead 'RVG OE four' now named)"
+  },
+  {
+   "key": "dlp/2018/oe/rendez-vous-gourmand-poster-2018",
+   "field": "characters",
+   "searched": "dein-dlrp Aug 2018",
+   "note": "characters on poster pin not described"
+  },
+  {
+   "key": "dlp/2018/rendez-vous-gourmand-2018/remy-and-emile",
+   "field": "release",
+   "searched": "dein-dlrp Aug 2018; targeted query naming the three LE designs",
+   "note": "release evidence: a second independent search returned all three RVG LE 500 pins by name with per-pin scene descriptions, Chez Marianne, 15,99 EUR; fu7 hold (single summary) lifted"
+  },
+  {
+   "key": "dlp/2018/rendez-vous-gourmand-2018/lady-and-the-tramp",
+   "field": "release",
+   "searched": "dein-dlrp Aug 2018; targeted query naming the three LE designs",
+   "note": "release evidence: a second independent search returned all three RVG LE 500 pins by name with per-pin scene descriptions, Chez Marianne, 15,99 EUR; fu7 hold (single summary) lifted"
+  },
+  {
+   "key": "dlp/2018/postcard-pin-sets-aug-2018/fab-5-best-day-ever",
+   "field": "characters",
+   "searched": "dein-dlrp Aug 2018; disneystore.eu 207801018140",
+   "note": "field note: both sources say the pin shows Mickey alone; Fab 5 (incl. Pluto) appear only on the postcard - fu7 editorial Fab 5 character list should not apply to the pin"
+  },
+  {
+   "key": "dlp/2018/postcard-pin-sets-aug-2018/chip-and-dale-christmas",
+   "field": "product_code",
+   "searched": "disneystore.eu; 2 queries",
+   "note": "no disneystore.eu listing returned for the Chip and Dale Christmas postcard pin; siblings are 207801018140-142"
+  },
+  {
+   "key": "dlp/2018/postcard-pin-sets-aug-2018",
+   "field": "release_date",
+   "searched": "dein-dlrp Aug 2018",
+   "note": "field note: this round's summary says only 'end of the month'; 25 Aug not restated"
+  },
+  {
+   "key": "dlp/2018/mickey-90-november-2018/mickey-90th-birthday-pin",
+   "field": "characters",
+   "searched": "dein-dlrp Mickey 90 article; 2 queries",
+   "note": "pin design not described; Mickey on pin not stated"
+  },
+  {
+   "key": "dlp/2018/mickey-90-november-2018/mickey-90th-birthday-pin",
+   "field": "edition_size",
+   "searched": "dein-dlrp Mickey 90 article",
+   "note": "field note: other items in the collection are LE 1928; 700 is from one summary only, the other summary gave no size"
+  },
+  {
+   "key": "dlp/2018/mickey-90-november-2018/mickey-90th-birthday-pin",
+   "field": "release_date",
+   "searched": "dein-dlrp",
+   "note": "field note: 16 vs 18 Nov not resolved for the pin"
+  },
+  {
+   "key": "dlp/2018/oe/christmas-pin-set-2018-minnie",
+   "field": "hold",
+   "searched": "this round",
+   "note": "hold retained: new summary again says the set 'includes four pins: Minnie, Figaro, Pluto and Mickey' - still no explicit one character per pin"
+  },
+  {
+   "key": "dlp/2018/oe/christmas-pin-set-2018-figaro",
+   "field": "hold",
+   "searched": "this round",
+   "note": "hold retained: as Minnie"
+  },
+  {
+   "key": "dlp/2018/oe/christmas-pin-set-2018-pluto",
+   "field": "hold",
+   "searched": "this round",
+   "note": "hold retained: as Minnie"
+  },
+  {
+   "key": "dlp/2018/oe/christmas-pin-set-2018-mickey",
+   "field": "hold",
+   "searched": "this round",
+   "note": "hold retained: as Minnie"
+  },
+  {
+   "key": "dlp/2018/june-2018-le/ursula-big-thunder-mountain",
+   "field": "hold",
+   "searched": "this round",
+   "note": "hold retained: no new evidence (MPC 188815 not searched)"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/big-thunder-mountain",
+   "field": "hold",
+   "searched": "this round",
+   "note": "hold retained: no new evidence"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/pirates-of-the-caribbean",
+   "field": "hold",
+   "searched": "this round",
+   "note": "hold retained: no new evidence"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/pinocchio",
+   "field": "hold",
+   "searched": "this round",
+   "note": "hold retained: no new evidence"
+  },
+  {
+   "key": "dlp/2018/fun-adventures-2018/tower-of-terror",
+   "field": "hold",
+   "searched": "this round",
+   "note": "hold retained: no new evidence"
+  },
+  {
+   "key": "dlp/2018/ptn-november-2018-bambi/flower",
+   "field": "hold",
+   "searched": "this round",
+   "note": "hold retained: DPB Bambi PTN (30 Nov 2018, LE 400 each) seen again but members not named"
+  },
+  {
+   "key": "dlp/2018/pirates-and-princesses-2018",
+   "field": "hold",
+   "searched": "this round",
+   "note": "hold retained: duffydoesdisney again names Peter Pan, Captain Hook and Jake (March festival) but not structure"
+  },
+  {
+   "key": "dlp/2018/minis-july-2018/tod",
+   "field": "hold",
+   "searched": "this round",
+   "note": "hold retained: no new evidence"
+  },
+  {
+   "key": "dlp/2018/cherry-blossom-girl-july-2018",
+   "field": "hold",
+   "searched": "this round",
+   "note": "hold retained: no new evidence"
+  },
+  {
+   "key": "dlp/2018/valentines-2018",
+   "field": "hold",
+   "searched": "this round",
+   "note": "hold retained: no new evidence"
+  },
+  {
+   "key": "dlp/2018/ptn-april-may-october-2018",
+   "field": "hold",
+   "searched": "this round",
+   "note": "hold retained: PTN trios Apr/May/Oct/Nov still unnamed; no Incredibles PTN or LE 425 Nov PTN source found"
+  },
+  {
+   "key": "dlp/2018/favourite-heroes",
+   "field": "lead",
+   "searched": "disneystore.eu",
+   "note": "lead: disneystore.eu 'Stitch and Angel Pin' 207801018075 (9.99 EUR, Favourite Heroes Collection) and 'Lilo And Stitch Favourite Heroes Pin' 207801018073; year not stated, not recorded"
+  },
+  {
+   "key": "dlp/2018/november-2018-releases",
+   "field": "lead",
+   "searched": "DPB Nov 2018; reseller",
+   "note": "lead: DPB Nov 2018 title names Mickey 90th and Mary Poppins; only a reseller (madhousecollectibles) lists a 'DLP - Mary Poppins Pin'; not evidence"
+  },
+  {
+   "key": "dlp/2018/my-cat-2018/yzma",
+   "field": "characters",
+   "searched": "1 query",
+   "note": "Kronk with Yzma only on MPC and a reseller (distradingpins4u 127730); no new evidence"
+  },
+  {
+   "key": "dlp/2018/oe/stitch-christmas-hat-2018",
+   "field": "identity",
+   "searched": "1 query",
+   "note": "Stitch Christmas hat vs Stitch Santa still unresolved; not merged"
+  },
+  {
+   "key": "dlp/2018/monthly-pages",
+   "field": "coverage",
+   "searched": "dein-dlrp site queries x6",
+   "note": "dein-dlrp indexed 2018 pages: Apr, Jun, Aug, Oct only; Jan page only as a teaser (Ariel collection, 25th-anniversary series, SotF pin, My Cat Dinah); Mar/May/Jul/Sep/Nov/Dec not indexed"
+  },
+  {
+   "key": "dlp/2018/season-of-the-force-2018",
+   "field": "coverage",
+   "searched": "2 queries",
+   "note": "Jan 2018 dein-dlrp teaser confirms a SotF launch pin exists; design, price, edition not found"
+  },
+  {
+   "key": "dlp/2018/stars-on-parade-le-2018",
+   "field": "coverage",
+   "searched": "2 queries",
+   "note": "Jan 2018 Stars on Parade LE and Ariel collection still unnamed"
+  },
+  {
+   "key": "dlp/2018/february-2018-releases",
+   "field": "coverage",
+   "searched": "Travel to the Magic, DPB",
+   "note": "Lion King pins + Bambi LEs (10 Feb), Toy Story pins + 25th LEs (17 Feb) still without designs"
+  },
+  {
+   "key": "dlp/2018/march-2018-releases",
+   "field": "coverage",
+   "searched": "Travel to the Magic Mar 2018, DPB",
+   "note": "March: St Patrick's, spring, flower festival, Pirates & Princesses themes; no designs named"
+  },
+  {
+   "key": "dlp/2018/may-2018-releases",
+   "field": "coverage",
+   "searched": "DPB May 2018",
+   "note": "Minnie / Dumbo / Star Wars still unnamed"
+  },
+  {
+   "key": "dlp/2018/back-to-neverland-may-2018",
+   "field": "members",
+   "searched": "1 query",
+   "note": "no other event pins beyond Tick-Tock LE 425 found"
+  },
+  {
+   "key": "dlp/2018/christmas-2018-le",
+   "field": "coverage",
+   "searched": "1 query",
+   "note": "no Christmas 2018 LEs beyond the 20 Dec surprise pair"
+  },
+  {
+   "key": "dlp/2018/oe/belle-animator-2018",
+   "field": "coverage",
+   "searched": "1 query",
+   "note": "no source for a 2020 Animator reissue"
+  },
+  {
+   "key": "passiondlp-arc028",
+   "field": "coverage",
+   "searched": "1 query",
+   "note": "arc028 (Q2 2018) still not indexed"
+  }
+ ],
+ "discovery_notes": "Follow-up 8 of B013 (packets 213,420,462,494,517,538,558,573). 29 standard searches, snippets only. dein-dlrp Aug 2018 re-mined: 03 Aug RVG OE four named; RVG Remy/Lady & Tramp holds released via per-pin descriptions; postcard sets three/four named (Lilo & Stitch, Rapunzel & Belle) with disneystore.eu codes 207801018140-142; Fab 5 postcard pin shows Mickey alone. dein-dlrp Mickey 90 article: Nov 2018 PTP pin LE 700 (design unstated)."
+}

@@ -64,7 +64,10 @@ export function formatBudget(b: BudgetStatus): string {
 }
 
 function formatValuation(v: MarketValuationV2): string {
-  if (v.fair === null) return `${v.market} ${v.confidence.band}`;
+  if (v.fair === null) {
+    const why = Object.entries(v.excluded ?? {}).filter(([, n]) => (n ?? 0) > 0).map(([r, n]) => `${r} ${n}`).join(", ");
+    return `${v.market} ${v.confidence.band}${why ? ` (left out: ${why})` : ""}`;
+  }
   return `${v.market} fair ${v.fair.toFixed(2)} ${v.currency} (${v.confidence.band}, ${v.soldCount} sold, ${v.activeCount} listed)`;
 }
 
@@ -153,7 +156,7 @@ export function formatProbe(r: ProbeResult): string[] {
       out.push(`  ${f.name}: ${f.types.join("|")}  in ${f.present}/${r.report.rows}${f.nested ? `  { ${f.nested.join(", ")} }` : ""}`);
     }
     if (r.report.hiddenKeys) out.push(`  (${r.report.hiddenKeys} key(s) not shaped like field names were not shown)`);
-    out.push(`Adapter: ${r.mapped} row(s) mapped${Object.keys(r.dropped ?? {}).length ? `, dropped ${JSON.stringify(r.dropped)}` : ""}.`);
+    out.push(`Adapter: ${r.mapped} row(s) mapped, ${r.withPrice ?? 0} with a price, ${r.withSoldDate ?? 0} with a sold date${Object.keys(r.dropped ?? {}).length ? `, dropped ${JSON.stringify(r.dropped)}` : ""}.`);
     out.push(`Matching v2: ${r.matchAccepted} accepted${Object.keys(r.matchRejected ?? {}).length ? `, rejected ${JSON.stringify(r.matchRejected)}` : ""}.`);
     if (r.responseKeys) {
       out.push(`Response keys: ${r.responseKeys.body.join(", ") || "(none)"}`);

@@ -537,6 +537,7 @@ describe("runProbe", () => {
     expect(r.matchRejected).toMatchObject({ edition_size_conflict: 1 });
     const text = formatProbe(r).join("\n");
     expect(text).toMatch(/item_id: string/);
+    expect(text).toMatch(/Adapter: 3 row\(s\) mapped, \d+ with a price, \d+ with a sold date/);
     expect(text).not.toMatch(/SENTINEL|ebayimg|24\.99|Haunted Mansion 50th|uk-1/);
     expect(store.upserts).toBe(0);
   });

@@ -168,6 +168,20 @@ describe("soldgraph eBay sold adapter (UK)", () => {
     expectStorable(res.listings);
   });
 
+  it("reads the price from displayed_price, the shape the staging probe reported (#411)", async () => {
+    const h = harness("ebay-sold-uk-live-shape.json");
+    const adapter = createSoldgraphEbaySoldAdapter(h.client, { country: "uk", clock: h.clock });
+    const res = await adapter.search("Hatbox Ghost pin");
+    const byId = Object.fromEntries(res.listings.map(l => [l.externalId, l]));
+    expect(byId["live-1"]).toMatchObject({ price: 24.99, shipping: 3.2, currency: "GBP", priceKind: "sold", url: "https://www.ebay.co.uk/itm/live-1" });
+    // An accepted Best Offer keeps its listed price aside, never as the sale price.
+    expect(byId["live-2"]).toMatchObject({ price: null, listedPrice: 30, bestOfferAccepted: true });
+    expect(byId["live-3"]).toMatchObject({ price: 19.5, shipping: 2.5 });
+    expectNoThirdPartyDetail(res.listings);
+    expectStorable(res.listings);
+    expect(JSON.stringify(res.listings)).not.toMatch(/SENTINEL/);
+  });
+
   it("builds at most two English queries by default and keys searches by country", () => {
     const h = harness("ebay-sold-uk.json");
     const uk = createSoldgraphEbaySoldAdapter(h.client, { country: "uk" });

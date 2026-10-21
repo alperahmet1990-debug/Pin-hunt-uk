@@ -19,6 +19,8 @@ export default defineConfig({
       SOLDGRAPH_API_KEY: "",
       SOLDGRAPH_ENABLED: "",
       MARKET_VALUATION_V2_ENABLED: "",
+      MARKET_VALUATION_PUBLISHED_MARKETS: "",
+      MARKET_COMPS_PUBLIC_ENABLED: "",
       LOG_LEVEL: "silent",
     },
   },

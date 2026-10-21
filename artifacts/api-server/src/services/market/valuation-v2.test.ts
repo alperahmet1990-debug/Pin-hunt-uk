@@ -307,3 +307,52 @@ describe("confidence", () => {
     expectConsistent(v);
   });
 });
+
+describe("per-source summaries and freshness (SG-12, #446)", () => {
+  it("summarises each source separately: sold count / latest date / median, asking count / range / median", () => {
+    const v = value("UK", [
+      sold(10, 5), sold(12, 20), sold(30, 2),
+      active(14, { seenAt: daysAgo(2) }), active(9, { seenAt: daysAgo(1) }), active(11),
+      // eBay Browse asking prices: same marketplace, different provider, never merged.
+      active(13, { sourceId: "ebay_browse:ebay_gb_active", seenAt: daysAgo(3) }),
+    ]);
+    expect(v.sourceSummaries).toEqual([
+      { source_id: "soldgraph:ebay_gb_sold", provider: "soldgraph", evidence_type: "sold", count: 3, latest_date: daysAgo(2).slice(0, 10), median: 12 },
+      { source_id: "soldgraph:vinted_gb_active", provider: "soldgraph", evidence_type: "active", count: 3, latest_date: daysAgo(1).slice(0, 10), median: 11, low: 9, high: 14 },
+      { source_id: "ebay_browse:ebay_gb_active", provider: "ebay_browse", evidence_type: "active", count: 1, latest_date: daysAgo(3).slice(0, 10), median: 13, low: 13, high: 13 },
+    ]);
+  });
+
+  it("keeps Soldgraph eBay sold data and any other eBay sold source in separate entries", () => {
+    const v = value("UK", [sold(10), sold(20, 10, { sourceId: "ebay_browse:ebay_gb_sold" })]);
+    expect(v.sourceSummaries.map(s => [s.source_id, s.provider, s.count])).toEqual([
+      ["ebay_browse:ebay_gb_sold", "ebay_browse", 1],
+      ["soldgraph:ebay_gb_sold", "soldgraph", 1],
+    ]);
+  });
+
+  it("leaves Best Offer, unverified-region and converted rows out of the summaries", () => {
+    const v = value("UK", [
+      sold(10), bestOffer(), sold(50, 5, { locationFilter: null }), sold(60, 5, { priceIsConverted: true }),
+      sold(70, 5, { locationFilter: "domestic", itemCountry: "US" }),
+    ]);
+    expect(v.sourceSummaries).toEqual([
+      { source_id: "soldgraph:ebay_gb_sold", provider: "soldgraph", evidence_type: "sold", count: 1, latest_date: daysAgo(10).slice(0, 10), median: 10 },
+    ]);
+    expect(v.excluded).toMatchObject({ best_offer: 1, region_unverified: 2, converted_price: 1 });
+  });
+
+  it("decides freshness by last-seen date for asking prices and sold date for sales, not by stored expiry", () => {
+    const v = value("UK", [active(10, { seenAt: daysAgo(31) }), active(12, { seenAt: daysAgo(29) }), sold(15, 366), sold(16, 364)]);
+    expect(v.excluded).toMatchObject({ stale_listing: 1, too_old: 1 });
+    expect(v.sourceSummaries.map(s => [s.source_id, s.count])).toEqual([
+      ["soldgraph:ebay_gb_sold", 1],
+      ["soldgraph:vinted_gb_active", 1],
+    ]);
+  });
+
+  it("stamps the region-verified method version", () => {
+    expect(VALUATION_V2_METHOD_VERSION).toBe("v2.1");
+    expect(value("UK", []).sourceSummaries).toEqual([]);
+  });
+});

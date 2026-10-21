@@ -113,12 +113,14 @@ export type {
   MarketConfidenceBand,
   MarketValuation,
   MarketValuationSource,
+  MarketValuationSourceSummary,
   MarketValuationsClient,
 } from './market-valuations';
 export {
   getMarketValuations,
   mapMarketValuationRow,
   MARKET_VALUATION_COLUMNS,
+  MARKET_VALUATION_COLUMNS_WITH_SUMMARIES,
 } from './market-valuations';
 
 // ─── Database types ───────────────────────────────────────────────────────────

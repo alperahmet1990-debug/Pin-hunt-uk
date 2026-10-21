@@ -179,6 +179,11 @@ export function formatPurge(r: PurgeResult): string[] {
   const total = r.expired.reduce((n, e) => n + e.count, 0);
   const out = [r.applied ? "Purge expired market listings: APPLY" : "Purge expired market listings: dry run (nothing deleted)"];
   for (const e of r.expired) out.push(`  ${e.sourceId}: ${e.count} expired row(s)`);
+  if (r.kept.length) {
+    out.push(`Kept, no age-based expiry: ${r.kept.join(", ")}`);
+    out.push("  These sources have unlimited retention (Soldgraph sets no limit; see docs/market-data/RIGHTS.md), so purge never deletes their rows.");
+    out.push("  To delete every row of one source on purpose, run purge_market_listings('<source>', true) in the SQL editor.");
+  }
   out.push(r.applied ? `Deleted ${r.deleted} row(s).` : `${total} row(s) would be deleted. Add --apply to delete them.`);
   return out;
 }

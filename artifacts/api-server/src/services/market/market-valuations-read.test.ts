@@ -3,6 +3,7 @@
 import { describe, expect, it, vi } from "vitest";
 import {
   MARKET_VALUATION_COLUMNS,
+  MARKET_VALUATION_COLUMNS_WITH_SUMMARIES,
   getMarketValuations,
   mapMarketValuationRow,
   type MarketValuationsClient,
@@ -82,6 +83,39 @@ describe("market valuations read (pin-repository)", () => {
     expect(MARKET_VALUATION_COLUMNS).not.toContain("*");
     expect(eq).toHaveBeenCalledWith("pin_id", PIN);
     expect(out.map((v) => v.market)).toEqual(["UK", "FR", "US"]);
+  });
+
+  it("maps per-source summaries (055) key by key, keeping low/high for asking-price sources only", () => {
+    const v = mapMarketValuationRow(row({
+      source_summaries: [
+        { source_id: "soldgraph:ebay_gb_sold", provider: "soldgraph", evidence_type: "sold", count: "3", latest_date: "2026-10-01", median: "12", low: 1, high: 2, title: "x" },
+        { source_id: "ebay_browse:ebay_gb_active", provider: "ebay_browse", evidence_type: "active", count: 2, median: 16, low: 15, high: 17 },
+        { source_id: "x:y", provider: "x", evidence_type: "other", count: 1 },
+        { source_id: "x:z", evidence_type: "sold", count: 1 },
+        "junk",
+      ],
+    }));
+    expect(v?.sourceSummaries).toEqual([
+      { sourceId: "soldgraph:ebay_gb_sold", provider: "soldgraph", evidenceType: "sold", count: 3, latestDate: "2026-10-01", median: 12 },
+      { sourceId: "ebay_browse:ebay_gb_active", provider: "ebay_browse", evidenceType: "active", count: 2, median: 16, low: 15, high: 17 },
+    ]);
+    expect(mapMarketValuationRow(row())).not.toHaveProperty("sourceSummaries");
+  });
+
+  it("reads source_summaries when asked, and falls back without them before 055 is applied", async () => {
+    const ok = mockClient({ data: [row({ source_summaries: [] })], error: null });
+    expect((await getMarketValuations(ok.client, PIN, { withSummaries: true }))[0].sourceSummaries).toEqual([]);
+    expect(ok.select).toHaveBeenCalledWith(MARKET_VALUATION_COLUMNS_WITH_SUMMARIES);
+    expect(MARKET_VALUATION_COLUMNS_WITH_SUMMARIES).not.toContain("*");
+
+    let n = 0;
+    const eq = vi.fn(async () => (n++ === 0 ? { data: null, error: { code: "42703", message: "column does not exist" } } : { data: [row()], error: null }));
+    const select = vi.fn(() => ({ eq }));
+    const client = { from: vi.fn(() => ({ select })) } as unknown as MarketValuationsClient;
+    const out = await getMarketValuations(client, PIN, { withSummaries: true });
+    expect(select.mock.calls.map(c => (c as unknown[])[0])).toEqual([MARKET_VALUATION_COLUMNS_WITH_SUMMARIES, MARKET_VALUATION_COLUMNS]);
+    expect(out).toHaveLength(1);
+    expect(out[0]).not.toHaveProperty("sourceSummaries");
   });
 
   it("returns [] for a non-uuid id without querying", async () => {

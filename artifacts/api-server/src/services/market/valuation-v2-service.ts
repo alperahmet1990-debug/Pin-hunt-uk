@@ -2,7 +2,9 @@
  * Valuation v2 wiring (SG-05, #408): evidence in, market_valuations rows out.
  *
  * - Behind MARKET_VALUATION_V2_ENABLED (server-side, off unless "true").
- * - Writes ONLY market_valuations (upsert on pin_id, market). Never writes
+ * - Writes ONLY market_valuations (upsert on pin_id, market) and, for each
+ *   recalculation, one append-only market_valuation_history row per market
+ *   (055, #446). Never writes
  *   pins.estimated_value_gbp, user_pins.*, pin_market_estimates or
  *   ebay_listing_snapshots; v1 (services/valuation.ts) is untouched.
  * - No route can start a paid search. collectPinEvidence is for the
@@ -10,7 +12,9 @@
  *   and Soldgraph clients come only from createSoldgraphClientFromEnv, which
  *   refuses to run without the Supabase-backed usage store.
  * - Storing raw listing rows (market_listings upsert, dedupe, near-misses,
- *   retention) belongs to SG-06; this module only reads them.
+ *   retention) belongs to SG-06; this module only reads them. Freshness is
+ *   by sold date / last-seen date (VALUATION_V2_CONFIG), never by stored
+ *   expiry: Soldgraph rows have no age-based expiry (055).
  */
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { CataloguePin, MarketCode } from "@workspace/pin-repository";
@@ -20,9 +24,11 @@ import { matchListing, type MatchResult } from "./matching";
 import { planPinSearches } from "./queries";
 import {
   MARKET_PRIORITY,
+  VALUATION_V2_CONFIG,
   computePinValuations,
   type MarketValuationV2,
   type ValuationEvidence,
+  type ValuationSourceSummary,
 } from "./valuation-v2";
 
 export const VALUATION_V2_FLAG_ENV = "MARKET_VALUATION_V2_ENABLED";
@@ -173,6 +179,15 @@ const MARKETS = new Set<string>(MARKET_PRIORITY);
 const PRICE_KINDS = new Set<string>(["sold", "sold_possible_offer", "active"]);
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+/** PostgREST `or` filter: sold within the sold window, or seen within the active window. */
+export function freshnessFilter(now: number): string {
+  const soldCutoff = new Date(now - VALUATION_V2_CONFIG.maxAgeDays * DAY_MS).toISOString();
+  const seenCutoff = new Date(now - VALUATION_V2_CONFIG.activeMaxAgeDays * DAY_MS).toISOString();
+  return `sold_date.gte.${soldCutoff},last_seen_at.gte.${seenCutoff}`;
+}
+
 function num(v: unknown): number | null {
   if (v === null || v === undefined || v === "") return null;
   const n = typeof v === "number" ? v : Number(v);
@@ -180,7 +195,10 @@ function num(v: unknown): number | null {
 }
 
 /**
- * Accepted, unexpired listing evidence for one pin from enabled sources.
+ * Accepted listing evidence for one pin from enabled sources, within the
+ * freshness windows: sold in the last 365 days or seen in the last 30 days
+ * (the exact rules are applied again in computeMarketValuation). Stored
+ * expiry is not used: rows of a no-limit source have none (055).
  * Explicit columns only; titles and links are never read here. The item id
  * and region provenance (054) are read only so valuation can count one
  * transaction once and leave out rows whose region is unverified (#450).
@@ -202,7 +220,7 @@ export async function loadStoredEvidence(db: SupabaseClient, pinUuid: string, no
     .select(LISTING_COLUMNS)
     .eq("pin_id", pinUuid)
     .eq("accepted", true)
-    .gt("expires_at", new Date(now).toISOString());
+    .or(freshnessFilter(now));
   if (listingsRes.error) throw new ValuationV2Error("load listings");
 
   const out: ValuationEvidence[] = [];
@@ -244,10 +262,28 @@ export interface MarketValuationRow {
   confidence_score: number;
   confidence_band: MarketValuationV2["confidence"]["band"];
   sources: Array<{ source_id: string; count: number; latest_date: string }>;
+  /** Derived per-source figures (055 CHECK limits the keys). */
+  source_summaries: ValuationSourceSummary[];
   method_version: string;
   calculated_at: string;
   expires_at: string;
   updated_at: string;
+}
+
+/** Exactly the market_valuation_history columns v2 writes (055). Append-only. */
+export type MarketValuationHistoryRow = Omit<MarketValuationRow, "expires_at" | "updated_at">;
+
+/** Rebuilt key by key so nothing but the 055-allowed keys can be stored. */
+function toSummaryRows(list: readonly ValuationSourceSummary[]): ValuationSourceSummary[] {
+  return list.map(s => ({
+    source_id: s.source_id,
+    provider: s.provider,
+    evidence_type: s.evidence_type,
+    count: s.count,
+    latest_date: s.latest_date,
+    median: s.median,
+    ...(s.evidence_type === "active" ? { low: s.low ?? null, high: s.high ?? null } : {}),
+  }));
 }
 
 export function toMarketValuationRow(pinUuid: string, v: MarketValuationV2, calculatedAt: number): MarketValuationRow {
@@ -265,6 +301,7 @@ export function toMarketValuationRow(pinUuid: string, v: MarketValuationV2, calc
     confidence_band: v.confidence.band,
     // Rebuilt key by key: 049's CHECK allows only these three keys.
     sources: v.sources.map(s => ({ source_id: s.source_id, count: s.count, latest_date: s.latest_date })),
+    source_summaries: toSummaryRows(v.sourceSummaries),
     method_version: v.methodVersion,
     calculated_at: at,
     expires_at: new Date(calculatedAt + VALUATION_V2_TTL_DAYS * 24 * 60 * 60 * 1000).toISOString(),
@@ -272,8 +309,35 @@ export function toMarketValuationRow(pinUuid: string, v: MarketValuationV2, calc
   };
 }
 
+export function toHistoryRow(row: MarketValuationRow): MarketValuationHistoryRow {
+  return {
+    pin_id: row.pin_id,
+    market: row.market,
+    currency: row.currency,
+    low: row.low,
+    fair: row.fair,
+    high: row.high,
+    sold_count: row.sold_count,
+    active_count: row.active_count,
+    confidence_score: row.confidence_score,
+    confidence_band: row.confidence_band,
+    sources: row.sources,
+    source_summaries: row.source_summaries,
+    method_version: row.method_version,
+    calculated_at: row.calculated_at,
+  };
+}
+
+/**
+ * Save one recalculation: append one history row per market first, then
+ * upsert the current rows. History first, so a current value always has its
+ * history row; if the upsert then fails, history simply holds one more
+ * calculation than market_valuations shows.
+ */
 export async function saveMarketValuations(db: SupabaseClient, rows: MarketValuationRow[]): Promise<void> {
   if (rows.length === 0) return;
+  const history = await db.from("market_valuation_history").insert(rows.map(toHistoryRow));
+  if (history.error) throw new ValuationV2Error("save valuation history");
   const { error } = await db.from("market_valuations").upsert(rows, { onConflict: "pin_id,market" });
   if (error) throw new ValuationV2Error("save valuations");
 }

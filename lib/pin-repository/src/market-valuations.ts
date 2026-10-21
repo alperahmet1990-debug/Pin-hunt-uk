@@ -29,6 +29,22 @@ export interface MarketValuationSource {
   latestDate?: string;
 }
 
+/**
+ * Derived per-source figures (migration 055, #446). One entry per source id:
+ * sources are never merged. Sold sources carry latestDate and median; active
+ * (asking-price) sources also low and high. No listing detail.
+ */
+export interface MarketValuationSourceSummary {
+  sourceId: string;
+  provider: string;
+  evidenceType: 'sold' | 'active';
+  count: number;
+  latestDate?: string;
+  median?: number;
+  low?: number;
+  high?: number;
+}
+
 export interface MarketValuation {
   /** pins.id (internal UUID). */
   pinId: string;
@@ -43,6 +59,8 @@ export interface MarketValuation {
   confidenceScore: number;
   confidenceBand: MarketConfidenceBand;
   sources: MarketValuationSource[];
+  /** Present only when read with `withSummaries` (055 applied). */
+  sourceSummaries?: MarketValuationSourceSummary[];
   methodVersion: string;
   calculatedAt: string;
   expiresAt: string;
@@ -51,6 +69,9 @@ export interface MarketValuation {
 /** Explicit column list: never select('*') from market tables. */
 export const MARKET_VALUATION_COLUMNS =
   'pin_id, market, currency, low, fair, high, sold_count, active_count, confidence_score, confidence_band, sources, method_version, calculated_at, expires_at';
+
+/** MARKET_VALUATION_COLUMNS plus the 055 per-source summaries. */
+export const MARKET_VALUATION_COLUMNS_WITH_SUMMARIES = `${MARKET_VALUATION_COLUMNS}, source_summaries`;
 
 const MARKETS: readonly MarketCode[] = ['UK', 'US', 'FR'];
 const BANDS: readonly MarketConfidenceBand[] = ['insufficient', 'low', 'medium', 'high'];
@@ -77,6 +98,31 @@ function mapSources(v: unknown): MarketValuationSource[] {
   return out;
 }
 
+function mapSourceSummaries(v: unknown): MarketValuationSourceSummary[] {
+  if (!Array.isArray(v)) return [];
+  const out: MarketValuationSourceSummary[] = [];
+  for (const s of v) {
+    if (typeof s !== 'object' || s === null) continue;
+    const o = s as Record<string, unknown>;
+    if (typeof o.source_id !== 'string' || typeof o.provider !== 'string') continue;
+    if (o.evidence_type !== 'sold' && o.evidence_type !== 'active') continue;
+    const median = num(o.median);
+    const low = num(o.low);
+    const high = num(o.high);
+    out.push({
+      sourceId: o.source_id,
+      provider: o.provider,
+      evidenceType: o.evidence_type,
+      count: num(o.count) ?? 0,
+      ...(typeof o.latest_date === 'string' ? { latestDate: o.latest_date } : {}),
+      ...(median !== undefined ? { median } : {}),
+      ...(o.evidence_type === 'active' && low !== undefined ? { low } : {}),
+      ...(o.evidence_type === 'active' && high !== undefined ? { high } : {}),
+    });
+  }
+  return out;
+}
+
 /** Maps one market_valuations row; returns null for a row with an unknown market or band. */
 export function mapMarketValuationRow(row: Record<string, unknown>): MarketValuation | null {
   const market = row.market as MarketCode;
@@ -98,6 +144,7 @@ export function mapMarketValuationRow(row: Record<string, unknown>): MarketValua
     confidenceScore: num(row.confidence_score) ?? 0,
     confidenceBand: band,
     sources: mapSources(row.sources),
+    ...(Array.isArray(row.source_summaries) ? { sourceSummaries: mapSourceSummaries(row.source_summaries) } : {}),
     methodVersion: String(row.method_version ?? ''),
     calculatedAt: String(row.calculated_at ?? ''),
     expiresAt: String(row.expires_at ?? ''),
@@ -110,13 +157,20 @@ const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
  * Valuations for one pin (by pins.id), UK first, then FR, then US.
  * Returns [] for a non-UUID id and when the table does not exist yet
  * (migration 049 not applied: PostgREST 42P01 / PGRST205). Other errors throw.
+ * `withSummaries` also reads source_summaries (055); if that column does not
+ * exist yet (42703), it reads again without it.
  */
-export async function getMarketValuations(client: MarketValuationsClient, pinId: string): Promise<MarketValuation[]> {
+export async function getMarketValuations(
+  client: MarketValuationsClient,
+  pinId: string,
+  opts: { withSummaries?: boolean } = {},
+): Promise<MarketValuation[]> {
   if (!UUID_RE.test(pinId)) return [];
-  const { data, error } = await client
-    .from('market_valuations')
-    .select(MARKET_VALUATION_COLUMNS)
-    .eq('pin_id', pinId);
+  const read = (columns: string) => client.from('market_valuations').select(columns).eq('pin_id', pinId);
+  let { data, error } = await read(opts.withSummaries ? MARKET_VALUATION_COLUMNS_WITH_SUMMARIES : MARKET_VALUATION_COLUMNS);
+  if (error && opts.withSummaries && (error as { code?: string }).code === '42703') {
+    ({ data, error } = await read(MARKET_VALUATION_COLUMNS));
+  }
   if (error) {
     const code = (error as { code?: string }).code;
     if (code === '42P01' || code === 'PGRST205') return [];

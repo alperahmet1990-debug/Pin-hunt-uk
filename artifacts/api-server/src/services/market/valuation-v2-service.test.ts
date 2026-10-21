@@ -43,6 +43,11 @@ function listing(over: Partial<NormalisedListing>): NormalisedListing {
     medianExcludingBestOffer: null,
     url: null,
     condition: null,
+    site: "uk",
+    locationFilter: "domestic",
+    itemCountry: null,
+    displayedCurrency: "GBP",
+    priceIsConverted: null,
     ...over,
   };
 }
@@ -108,9 +113,10 @@ const SOURCES_ROWS = [
 ];
 
 const LISTING_ROWS = [
-  ...[10, 12, 14].map(p => ({
-    source_id: "soldgraph:ebay_gb_sold", price: String(p), currency: "GBP", sold_date: iso(3),
+  ...[10, 12, 14].map((p, i) => ({
+    source_id: "soldgraph:ebay_gb_sold", external_id: `uk-${i}`, price: String(p), currency: "GBP", sold_date: iso(3),
     price_kind: "sold", best_offer_accepted: false, match_score: "90.00", last_seen_at: iso(1),
+    location_filter: "domestic", item_country: null, price_is_converted: null,
   })),
   // Disabled source: ignored.
   { source_id: "soldgraph:ebay_us_sold", price: "99", currency: "USD", sold_date: iso(3),
@@ -196,7 +202,8 @@ describe("stored evidence and market_valuations writes", () => {
     expect(ev.every(e => e.market === "UK" && e.price !== null)).toBe(true);
     const selects = calls.filter(c => c.op === "select").map(c => String(c.args[0]));
     expect(selects.some(s => s.includes("*"))).toBe(false);
-    expect(selects.join(" ")).not.toMatch(/title|listing_url|external_id/);
+    // Item ids and region provenance are read (#450); titles, links and any location text are not.
+    expect(selects.join(" ")).not.toMatch(/title|listing_url|location_text|seller/);
     expect(calls).toContainEqual({ table: "market_listings", op: "eq", args: ["accepted", true] });
     expect(calls).toContainEqual({ table: "market_listings", op: "gt", args: ["expires_at", new Date(NOW).toISOString()] });
   });

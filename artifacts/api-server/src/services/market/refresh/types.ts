@@ -43,6 +43,12 @@ export interface MarketListingRow {
   parsed: Record<string, unknown> | null;
   last_seen_at: string;
   expires_at: string;
+  /** Region provenance (054, #450). Null when not recorded. Never seller or town text. */
+  site: string | null;
+  location_filter: string | null;
+  item_country: string | null;
+  displayed_currency: string | null;
+  price_is_converted: boolean | null;
 }
 
 /** An accepted listing already stored, identified by (pin, source, item). */
@@ -93,8 +99,16 @@ export interface RefreshStore {
   /**
    * Latest market_listings.last_seen_at (any row, accepted or rejected, not
    * yet expired) per pin and source, keyed `${pinUuid}|${sourceId}`.
+   * For a source listed in `locationFilters`, only rows fetched with that
+   * location_filter count (so rows fetched without the domestic filter
+   * never stop a domestic search from running).
    */
-  lastSeen(pinUuids: string[], sourceIds: string[], now: number): Promise<Map<string, string>>;
+  lastSeen(
+    pinUuids: string[],
+    sourceIds: string[],
+    now: number,
+    locationFilters?: ReadonlyMap<string, string | null>,
+  ): Promise<Map<string, string>>;
   /** Accepted rows for these (source, item) pairs, on any pin. */
   acceptedFor(pairs: Array<{ sourceId: string; externalId: string }>): Promise<StoredAcceptedListing[]>;
   upsertListings(rows: MarketListingRow[]): Promise<void>;

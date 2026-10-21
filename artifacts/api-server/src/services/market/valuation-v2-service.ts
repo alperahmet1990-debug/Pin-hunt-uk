@@ -90,6 +90,10 @@ export function toEvidence(c: CollectedListing): ValuationEvidence {
     matchScore: c.match.score,
     medianExcludingBestOffer: c.listing.medianExcludingBestOffer,
     seenAt: null,
+    externalId: c.listing.externalId,
+    locationFilter: c.listing.locationFilter ?? null,
+    itemCountry: c.listing.itemCountry ?? null,
+    priceIsConverted: c.listing.priceIsConverted ?? null,
   };
 }
 
@@ -164,7 +168,7 @@ export async function collectPinEvidence(
 // ─── Stored evidence (market_listings, service role) ─────────────────────────
 
 const SOURCE_COLUMNS = "id, market, currency, evidence_type, enabled";
-const LISTING_COLUMNS = "source_id, price, currency, sold_date, price_kind, best_offer_accepted, match_score, last_seen_at";
+const LISTING_COLUMNS = "source_id, external_id, price, currency, sold_date, price_kind, best_offer_accepted, match_score, last_seen_at, location_filter, item_country, price_is_converted";
 const MARKETS = new Set<string>(MARKET_PRIORITY);
 const PRICE_KINDS = new Set<string>(["sold", "sold_possible_offer", "active"]);
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -177,7 +181,9 @@ function num(v: unknown): number | null {
 
 /**
  * Accepted, unexpired listing evidence for one pin from enabled sources.
- * Explicit columns only; titles, links and ids are never read here.
+ * Explicit columns only; titles and links are never read here. The item id
+ * and region provenance (054) are read only so valuation can count one
+ * transaction once and leave out rows whose region is unverified (#450).
  */
 export async function loadStoredEvidence(db: SupabaseClient, pinUuid: string, now: number): Promise<ValuationEvidence[]> {
   if (!UUID_RE.test(pinUuid)) return [];
@@ -214,6 +220,10 @@ export async function loadStoredEvidence(db: SupabaseClient, pinUuid: string, no
       bestOfferAccepted: typeof r.best_offer_accepted === "boolean" ? r.best_offer_accepted : null,
       matchScore: num(r.match_score),
       seenAt: typeof r.last_seen_at === "string" ? r.last_seen_at : null,
+      externalId: typeof r.external_id === "string" ? r.external_id : null,
+      locationFilter: typeof r.location_filter === "string" ? r.location_filter : null,
+      itemCountry: typeof r.item_country === "string" ? r.item_country : null,
+      priceIsConverted: typeof r.price_is_converted === "boolean" ? r.price_is_converted : null,
     });
   }
   return out;

@@ -30,6 +30,21 @@
  * `median_excluding_best_offer` summary.
  * Item price only: shipping is never part of a pin's value (same as v1).
  *
+ * ── Region (SG-13, #450) ───────────────────────────────────────────────────
+ * Rows from the Soldgraph eBay sold sources (REGION_CHECKED_SOURCE_IDS) are
+ * regional evidence only when region-verified. Checked before anything else:
+ *   - region_unverified: the row was not fetched with
+ *     item_location=domestic (every row stored before 054), or its parsed
+ *     itemCountry is a different country from the market's website.
+ *   - converted_price: the provider said the price was converted.
+ *   - cross_market_duplicate: the same eBay item (externalId) is
+ *     region-verified under sources of more than one market for this pin.
+ *     It counts once, in the market whose country matches itemCountry, and
+ *     is left out of every other market. If no single market matches, it is
+ *     left out of all of them.
+ * Stored rows are never deleted for this: they stay as raw evidence until
+ * they expire.
+ *
  * ── Figures ────────────────────────────────────────────────────────────────
  * Prices are trimmed with the 1.5×IQR rule (5 or more points), then
  *   fair = weighted median, low = weighted p20, high = weighted p80,
@@ -58,6 +73,7 @@
  */
 import type { MarketCode } from "@workspace/pin-repository";
 import type { EvidenceType, PriceKind } from "./adapter";
+import { MARKET_COUNTRY, REGION_CHECKED_SOURCE_IDS } from "./region";
 
 export const VALUATION_V2_METHOD_VERSION = "v2.0";
 
@@ -112,9 +128,62 @@ export interface ValuationEvidence {
   medianExcludingBestOffer?: number | null;
   /** When an active row was last seen (ISO); used for attribution dates. */
   seenAt?: string | null;
+  /** The marketplace's item id; used only to count one transaction once across markets. */
+  externalId?: string | null;
+  /** Region provenance (054). Missing or null = not recorded. */
+  locationFilter?: string | null;
+  itemCountry?: string | null;
+  priceIsConverted?: boolean | null;
 }
 
-export type ExclusionReason = "best_offer" | "no_sale_price" | "no_sale_date" | "too_old" | "currency_mismatch" | "outlier";
+export type ExclusionReason =
+  | "best_offer"
+  | "no_sale_price"
+  | "no_sale_date"
+  | "too_old"
+  | "currency_mismatch"
+  | "outlier"
+  | "region_unverified"
+  | "cross_market_duplicate"
+  | "converted_price";
+
+export type RegionExclusion = Extract<ExclusionReason, "region_unverified" | "cross_market_duplicate" | "converted_price">;
+
+/** True for rows that need region provenance to count (Soldgraph eBay sold). */
+export function isRegionChecked(ev: Pick<ValuationEvidence, "sourceId">): boolean {
+  return REGION_CHECKED_SOURCE_IDS.has(ev.sourceId);
+}
+
+function regionCheck(ev: ValuationEvidence): RegionExclusion | null {
+  if (ev.priceIsConverted === true) return "converted_price";
+  if (ev.locationFilter !== "domestic") return "region_unverified";
+  if (ev.itemCountry && ev.itemCountry !== MARKET_COUNTRY[ev.market]) return "region_unverified";
+  return null;
+}
+
+/**
+ * Region decision for every row of one pin's evidence (all markets), in the
+ * same order: null = may count (or not region-checked), otherwise why it is
+ * left out. Pure; nothing is removed from storage.
+ */
+export function regionExclusions(evidence: readonly ValuationEvidence[]): Array<RegionExclusion | null> {
+  const out = evidence.map(ev => (isRegionChecked(ev) ? regionCheck(ev) : null));
+  // The same item, region-verified in more than one market: one owner at most.
+  const byItem = new Map<string, number[]>();
+  evidence.forEach((ev, i) => {
+    if (!isRegionChecked(ev) || out[i] !== null || !ev.externalId) return;
+    byItem.set(ev.externalId, [...(byItem.get(ev.externalId) ?? []), i]);
+  });
+  for (const idx of byItem.values()) {
+    if (new Set(idx.map(i => evidence[i].market)).size < 2) continue;
+    const owners = new Set(
+      idx.filter(i => evidence[i].itemCountry === MARKET_COUNTRY[evidence[i].market]).map(i => evidence[i].market),
+    );
+    const owner = owners.size === 1 ? [...owners][0] : null;
+    for (const i of idx) if (evidence[i].market !== owner) out[i] = "cross_market_duplicate";
+  }
+  return out;
+}
 
 export type ConfidenceReasonCode =
   | "no_evidence"
@@ -293,9 +362,15 @@ export function computeMarketValuation(
   const sold: Point[] = [];
   const active: Point[] = [];
   const offerMedians: number[] = [];
+  const region = regionExclusions(evidence);
 
-  for (const ev of evidence) {
+  for (const [i, ev] of evidence.entries()) {
     if (ev.market !== market) continue;
+    const regionReason = region[i];
+    if (regionReason) {
+      exclude(regionReason);
+      continue;
+    }
     if (ev.currency !== currency) {
       exclude("currency_mismatch");
       continue;

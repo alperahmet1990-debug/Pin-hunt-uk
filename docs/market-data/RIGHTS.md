@@ -67,7 +67,7 @@ Deletion still happens when another rule requires it:
 
 **Implementation status:**
 - **Today, nothing deletes on a timer.** There is no scheduled job, and `purge` only runs when someone runs it by hand. However, migration 049 still gives every source a `retention_days` value (default 30, at most 365), and the purge command deletes rows past it.
-- **SG-12 (#446) changes this.** Soldgraph sources get no age-based expiry: migration 055, staging first, never applied by an agent. `purge` will then leave Soldgraph rows alone unless the maintainer deletes them explicitly, and every listing-level change will be recorded in valuation history.
+- **SG-12 (#446) changes this.** Soldgraph sources get no age-based expiry: migration 055, staging first, never applied by an agent. `purge` will then leave Soldgraph rows alone unless the maintainer deletes them explicitly. Each recalculated valuation is also kept as a history row instead of only overwriting the last one.
 - **Until 055 is applied, don't run `market-refresh.mjs purge --apply`.**
 
 ## 6. Data quality: blocker on publishing regional values

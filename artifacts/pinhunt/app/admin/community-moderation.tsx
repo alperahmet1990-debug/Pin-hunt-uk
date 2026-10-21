@@ -21,7 +21,8 @@ import { useColors } from '@/hooks/useColors';
 import palette from '@/constants/colors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { Avatar } from '@/components/Avatar';
-import type { CommunityPost, PostReportSummary, ReportedComment } from '@workspace/pin-repository';
+import type { CommunityPost, PostReportSummary, ReportedComment, UserReport } from '@workspace/pin-repository';
+import { countReportsByUser, userReportLabel } from '@/utils/blockedUsers';
 
 // Theme-independent status colours for module-level lookup tables.
 const statusPalette = palette.light;
@@ -30,7 +31,11 @@ const PAGE_SIZE = 30;
 
 type Confirming =
   | { kind: 'remove' | 'dismiss'; id: string }
-  | { kind: 'removeComment'; id: string };
+  | { kind: 'removeComment'; id: string }
+  | { kind: 'dismissUserReport'; id: string };
+
+/** Public names for the people in user reports, resolved once per load. */
+type ProfileNames = Map<string, { username?: string; avatarUrl?: string }>;
 
 const TYPE_LABEL: Record<string, string> = {
   in_search_of: 'In Search Of',
@@ -76,6 +81,10 @@ export default function CommunityModerationScreen() {
   const [reportedOnly, setReportedOnly] = useState(false);
   const [reportedComments, setReportedComments] = useState<ReportedComment[]>([]);
   const [removingCommentId, setRemovingCommentId] = useState<string | null>(null);
+  // User and message reports (B-P0-05b, #17).
+  const [userReports, setUserReports] = useState<UserReport[]>([]);
+  const [reportNames, setReportNames] = useState<ProfileNames>(new Map());
+  const [dismissingUserReportId, setDismissingUserReportId] = useState<string | null>(null);
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 
@@ -84,14 +93,25 @@ export default function CommunityModerationScreen() {
     try {
       if (isRefresh) setRefreshing(true); else setLoading(true);
       setError(null);
-      const [rows, summaries, commentRows] = await Promise.all([
+      const [rows, summaries, commentRows, userReportRows] = await Promise.all([
         repo.getCommunityFeed({ limit: PAGE_SIZE, offset: 0 }),
         repo.getPostReportSummaries(),
         repo.getReportedComments(),
+        // A failure here must not hide the post and comment queues.
+        repo.getUserReports().catch(() => [] as UserReport[]),
       ]);
       setPosts(rows);
       setReports(new Map(summaries.map(s => [s.postId, s])));
       setReportedComments(commentRows);
+      setUserReports(userReportRows);
+      const ids = [...new Set(userReportRows.flatMap(r => [r.reportedUserId, r.reporterId]))];
+      const profiles = await Promise.all(ids.map(id => repo.getProfile(id).catch(() => null)));
+      const names: ProfileNames = new Map();
+      ids.forEach((id, i) => {
+        const p = profiles[i];
+        if (p) names.set(id, { username: p.username, avatarUrl: p.avatarUrl });
+      });
+      setReportNames(names);
       setHasMore(rows.length === PAGE_SIZE);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Failed to load posts.');
@@ -174,6 +194,23 @@ export default function CommunityModerationScreen() {
     }
   }, [repo]);
 
+  const handleDismissUserReport = useCallback(async (report: UserReport) => {
+    if (!repo) return;
+    try {
+      setDismissingUserReportId(report.id);
+      setActionError(null);
+      await repo.dismissUserReport(report.id);
+      setUserReports(prev => prev.filter(r => r.id !== report.id));
+      setConfirming(null);
+    } catch (e) {
+      setActionError(e instanceof Error ? e.message : 'Could not dismiss the report.');
+    } finally {
+      setDismissingUserReportId(null);
+    }
+  }, [repo]);
+
+  const reportsPerUser = React.useMemo(() => countReportsByUser(userReports), [userReports]);
+
   // Reported posts first (most recently reported at top), then newest posts.
   const displayPosts = React.useMemo(() => {
     const reported = posts.filter(p => reports.has(p.id));
@@ -196,7 +233,7 @@ export default function CommunityModerationScreen() {
     const removing   = removingId === item.id;
     const dismissing = dismissingId === item.id;
     const report     = reports.get(item.id);
-    const confirmingThis = confirming && confirming.kind !== 'removeComment' && confirming.id === item.id ? confirming : null;
+    const confirmingThis = confirming && (confirming.kind === 'remove' || confirming.kind === 'dismiss') && confirming.id === item.id ? confirming : null;
     return (
       <TouchableOpacity
         activeOpacity={0.85}
@@ -329,6 +366,98 @@ export default function CommunityModerationScreen() {
                       Reported ({reportedCount})
                     </Text>
                   </TouchableOpacity>
+                )}
+
+                {userReports.length > 0 && (
+                  <View style={{ gap: 8 }} testID="admin-user-reports">
+                    <Text style={[styles.sectionHeading, { color: colors.homeMuted }]}>
+                      REPORTED USERS AND MESSAGES ({userReports.length})
+                    </Text>
+                    {userReports.map(report => {
+                      const reported = reportNames.get(report.reportedUserId);
+                      const reporter = reportNames.get(report.reporterId);
+                      const reportedUsername = reported?.username;
+                      const reportedName = reportedUsername ? `@${reportedUsername}` : 'Unknown collector';
+                      const reporterName = reporter?.username ? `@${reporter.username}` : 'a collector';
+                      const againstCount = reportsPerUser.get(report.reportedUserId) ?? 1;
+                      const dismissing = dismissingUserReportId === report.id;
+                      return (
+                        <View
+                          key={report.id}
+                          style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+                        >
+                          <View style={[styles.reportedBanner, { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' }]}>
+                            <Feather name={report.target === 'message' ? 'message-square' : 'user-x'} size={12} color={colors.destructive} />
+                            <Text style={[styles.reportedBannerText, { color: colors.destructive }]} numberOfLines={2}>
+                              {userReportLabel(report)}{report.reason ? ` · ${report.reason}` : ''}
+                            </Text>
+                          </View>
+                          <View style={styles.cardTop}>
+                            <Avatar uri={reported?.avatarUrl} name={reportedUsername ?? '?'} size={32} />
+                            <View style={{ flex: 1 }}>
+                              <Text style={[styles.author, { color: colors.homeInk }]} numberOfLines={1}>{reportedName}</Text>
+                              <Text style={[styles.time, { color: colors.homeMuted }]} numberOfLines={1}>
+                                Reported by {reporterName} · {timeAgo(report.createdAt)}
+                              </Text>
+                            </View>
+                          </View>
+                          {againstCount > 1 && (
+                            <Text style={[styles.metaChipLabel, { color: colors.homeMuted }]}>
+                              {againstCount} open reports against {reportedName}
+                            </Text>
+                          )}
+                          {report.target === 'message' && report.messageId ? (
+                            <Text style={[styles.metaChipLabel, { color: colors.homeMuted }]} selectable>
+                              Message ID {report.messageId}
+                            </Text>
+                          ) : null}
+                          {confirming?.kind === 'dismissUserReport' && confirming.id === report.id ? (
+                            <InlineConfirm
+                              message="Dismiss this report? Nothing else changes."
+                              confirmLabel="Dismiss"
+                              busy={dismissing}
+                              error={actionError}
+                              onCancel={() => { setConfirming(null); setActionError(null); }}
+                              onConfirm={() => handleDismissUserReport(report)}
+                            />
+                          ) : (
+                            <View style={styles.cardBottom}>
+                              {reportedUsername ? (
+                                <TouchableOpacity
+                                  onPress={() => router.push({ pathname: '/collector/[username]', params: { username: reportedUsername } })}
+                                  accessibilityRole="link"
+                                  accessibilityLabel={`View ${reportedName}'s profile`}
+                                  hitSlop={{ top: 12, bottom: 12, left: 6, right: 6 }}
+                                  style={styles.metaChip}
+                                >
+                                  <Feather name="user" size={12} color={colors.homeCoralDeep} />
+                                  <Text style={[styles.metaChipLabel, { color: colors.homeCoralDeep }]}>View profile</Text>
+                                </TouchableOpacity>
+                              ) : null}
+                              <View style={{ flex: 1 }} />
+                              <TouchableOpacity
+                                onPress={() => setConfirming({ kind: 'dismissUserReport', id: report.id })}
+                                disabled={dismissing}
+                                activeOpacity={0.85}
+                                accessibilityRole="button"
+                                accessibilityLabel={`Dismiss report about ${reportedName}`}
+                                style={[styles.removeBtn, { backgroundColor: colors.homeMuted + '12', borderColor: colors.homeLine }]}
+                                hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+                              >
+                                <Feather name="check" size={13} color={colors.homeMuted} />
+                                <Text style={[styles.removeBtnLabel, { color: colors.homeMuted }]}>Dismiss</Text>
+                              </TouchableOpacity>
+                            </View>
+                          )}
+                        </View>
+                      );
+                    })}
+                    {reportedComments.length === 0 && (
+                      <Text style={[styles.sectionHeading, { color: colors.homeMuted, marginTop: 4 }]}>
+                        POSTS
+                      </Text>
+                    )}
+                  </View>
                 )}
 
                 {reportedComments.length > 0 && (

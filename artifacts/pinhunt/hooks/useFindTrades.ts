@@ -21,6 +21,8 @@ import {
 } from '@/utils/findTradesEngine';
 import type { PublicProfile } from '@workspace/pin-repository';
 import { toUserError, type UserError } from '@/utils/userError';
+import { useBlockedUsers } from '@/context/BlockedUsersContext';
+import { withoutBlockedTraders } from '@/utils/blockedUsers';
 
 export interface SetOpportunity {
   setName: string;
@@ -58,6 +60,8 @@ export function useFindTrades(): FindTradesData {
   const { repo, userId } = useMarketplace();
   const { collection } = useCollection();
   const { repository: catRepo } = usePinCatalogue();
+  // Collectors I blocked never appear as matches (B-P0-05b, #17).
+  const { blockedIds } = useBlockedUsers();
 
   const [isoOpportunities, setIsoOpportunities] = useState<PinOpportunity[]>([]);
   const [reciprocalTraderIds, setReciprocalTraderIds] = useState<Set<string>>(new Set());
@@ -82,7 +86,10 @@ export function useFindTrades(): FindTradesData {
         const allHandledIds = new Set(entries.map(([id]) => id));
 
         // ── 1. On Your ISO ──────────────────────────────────────────────────
-        const isoInventory = wantedIds.length ? await repo.getForTradeInventory({ viewerId: userId, pinIds: wantedIds }) : [];
+        const isoInventory = withoutBlockedTraders(
+          wantedIds.length ? await repo.getForTradeInventory({ viewerId: userId, pinIds: wantedIds }) : [],
+          blockedIds,
+        );
         const isoGrouped = groupInventoryByPin(isoInventory);
 
         // ── 2. Potential trades — scan only collectors already surfaced by ISO ──
@@ -132,7 +139,10 @@ export function useFindTrades(): FindTradesData {
           .sort((a, b) => b.ownedCount - a.ownedCount)
           .slice(0, MAX_SET_CARDS);
         const setOps = await Promise.all(inProgressSets.map(async s => {
-          const availInventory = await repo.getForTradeInventory({ viewerId: userId, pinIds: s.missingPinIds });
+          const availInventory = withoutBlockedTraders(
+            await repo.getForTradeInventory({ viewerId: userId, pinIds: s.missingPinIds }),
+            blockedIds,
+          );
           return { setName: s.setName, ownedCount: s.ownedCount, totalCount: s.totalCount, available: groupInventoryByPin(availInventory) };
         }));
 
@@ -145,7 +155,10 @@ export function useFindTrades(): FindTradesData {
         let discovery: DiscoveryItem[] = [];
         if (interests.length > 0) {
           const excludeIds = new Set([...allHandledIds, ...isoGrouped.map(o => o.pinId)]);
-          const allForTrade = await repo.getForTradeInventory({ viewerId: userId, limit: 500 });
+          const allForTrade = withoutBlockedTraders(
+            await repo.getForTradeInventory({ viewerId: userId, limit: 500 }),
+            blockedIds,
+          );
           discovery = buildDiscoveryItems(allForTrade, interests, excludeIds);
         }
 
@@ -165,7 +178,7 @@ export function useFindTrades(): FindTradesData {
     run();
     return () => { cancelled = true; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [repo, userId, catRepo, refreshToken]);
+  }, [repo, userId, catRepo, refreshToken, blockedIds]);
 
   const refresh = useCallback(() => setRefreshToken(t => t + 1), []);
 

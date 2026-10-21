@@ -5,7 +5,7 @@
  * whole time. Leads toward the Potential Trade Match (View Match) when one
  * exists; otherwise offers a single plain Message action.
  */
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
   Platform,
@@ -29,6 +29,8 @@ import { formatMatchSummary, isReciprocalMatch } from '@/utils/tradeMatch';
 import type { TraderProfile } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
 import { ScreenHeader } from '@/components/ui/ScreenHeader';
+import { useBlockedUsers } from '@/context/BlockedUsersContext';
+import { withoutBlockedProfiles } from '@/utils/blockedUsers';
 
 // ─── Rating badge ─────────────────────────────────────────────────────────────
 
@@ -133,7 +135,10 @@ export default function TradersScreen() {
   // The catalogue isn't preloaded (#25): fetch this pin if it isn't loaded.
   useEffect(() => { if (pinId) ensurePins([pinId]).catch(() => {}); }, [pinId, ensurePins]);
 
-  const [traders,    setTraders]    = useState<TraderProfile[]>([]);
+  const [allTraders, setTraders]    = useState<TraderProfile[]>([]);
+  // Collectors I blocked are left out (B-P0-05b, #17).
+  const { blockedIds } = useBlockedUsers();
+  const traders = useMemo(() => withoutBlockedProfiles(allTraders, blockedIds), [allTraders, blockedIds]);
   const [loading,    setLoading]    = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error,      setError]      = useState<string | null>(null);

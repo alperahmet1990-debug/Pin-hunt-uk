@@ -1252,7 +1252,8 @@ class SupabaseUserPinRepository implements IUserPinRepository {
         ...(input.proposalReason ? { proposal_reason: input.proposalReason } : {}),
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } as any)
-      .select()
+      // Same pin join as the other contributed-image reads: publishing needs pinhuntId.
+      .select('*, pin:pins!pin_id(pinhunt_id, title, image_url)')
       .single();
 
     if (error) throw new Error(error.message);

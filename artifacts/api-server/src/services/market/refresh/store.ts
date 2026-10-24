@@ -116,7 +116,12 @@ export class SupabaseRefreshStore implements RefreshStore {
     return out;
   }
 
-  async lastSeen(pinUuids: string[], sourceIds: string[], now: number): Promise<Map<string, string>> {
+  async lastSeen(
+    pinUuids: string[],
+    sourceIds: string[],
+    now: number,
+    locationFilters?: ReadonlyMap<string, string | null>,
+  ): Promise<Map<string, string>> {
     const out = new Map<string, string>();
     if (pinUuids.length === 0 || sourceIds.length === 0) return out;
     const nowIso = new Date(now).toISOString();
@@ -124,13 +129,15 @@ export class SupabaseRefreshStore implements RefreshStore {
       const rows = await allPages("load cache", () =>
         this.db
           .from("market_listings")
-          .select("pin_id, source_id, last_seen_at")
+          .select("pin_id, source_id, last_seen_at, location_filter")
           .in("pin_id", part)
           .in("source_id", sourceIds)
           .gt("expires_at", nowIso)
           .order("id"));
       for (const r of rows) {
         if (typeof r.last_seen_at !== "string") continue;
+        const source = String(r.source_id);
+        if (locationFilters?.has(source) && (r.location_filter ?? null) !== locationFilters.get(source)) continue;
         const key = `${String(r.pin_id)}|${String(r.source_id)}`;
         const prev = out.get(key);
         if (!prev || Date.parse(r.last_seen_at) > Date.parse(prev)) out.set(key, r.last_seen_at);

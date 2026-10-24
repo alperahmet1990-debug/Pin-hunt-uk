@@ -15,6 +15,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import * as Haptics from 'expo-haptics';
 import { Button } from '@/components/ui/Button';
 import { useColors } from '@/hooks/useColors';
+import { useBlockedUsers } from '@/context/BlockedUsersContext';
+import { withoutBlockedProfiles } from '@/utils/blockedUsers';
 import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
@@ -75,6 +77,7 @@ export default function PinDetailScreen() {
   const [manageSheetPin, setManageSheetPin] = useState<CataloguePin | null>(null);
   const [marketplaceListings, setMarketplaceListings] = useState<ExternalSaleListing[]>([]);
   const [traderCount, setTraderCount] = useState(0);
+  const { blockedIds } = useBlockedUsers();
   const [activeImage, setActiveImage] = useState(0);
   const [marketplaceExpanded, setMarketplaceExpanded] = useState(false);
   const [sourceDisplayName, setSourceDisplayName] = useState<string | null>(null);
@@ -93,9 +96,10 @@ export default function PinDetailScreen() {
   useEffect(() => {
     if (!pin || !marketplaceRepo) return;
     marketplaceRepo.getUsersWithPinForTrade(pin.id)
-      .then(traders => setTraderCount(traders.length))
+      // Same list as the Traders screen: collectors I blocked aren't counted (#17).
+      .then(traders => setTraderCount(withoutBlockedProfiles(traders, blockedIds).length))
       .catch(() => {});
-  }, [pin?.id, marketplaceRepo]);
+  }, [pin?.id, marketplaceRepo, blockedIds]);
 
   // Subtle catalogue-data attribution — resolved from the pin's actual
   // provenance (catalogueSource), never hard-coded. Stays null (no line

@@ -24,7 +24,7 @@ import {
   runRefresh,
   runUsageReport,
 } from "./refresh";
-import { refreshSource } from "./sources";
+import { describeFilter, refreshSource } from "./sources";
 import { SupabaseRefreshStore } from "./store";
 import type { BudgetStatus, RefreshStore } from "./types";
 
@@ -63,12 +63,12 @@ export function formatBudget(b: BudgetStatus): string {
   return `Month ${b.month}: ${b.usedCredits} of ${b.limitCredits} credits used (${origin}), ${left}.`;
 }
 
-function formatValuation(v: MarketValuationV2): string {
-  if (v.fair === null) {
-    const why = Object.entries(v.excluded ?? {}).filter(([, n]) => (n ?? 0) > 0).map(([r, n]) => `${r} ${n}`).join(", ");
-    return `${v.market} ${v.confidence.band}${why ? ` (left out: ${why})` : ""}`;
-  }
-  return `${v.market} fair ${v.fair.toFixed(2)} ${v.currency} (${v.confidence.band}, ${v.soldCount} sold, ${v.activeCount} listed)`;
+export function formatValuation(v: MarketValuationV2): string {
+  // Includes the region reasons (#450): region_unverified, cross_market_duplicate, converted_price.
+  const why = Object.entries(v.excluded ?? {}).filter(([, n]) => (n ?? 0) > 0).map(([r, n]) => `${r} ${n}`).join(", ");
+  const leftOut = why ? ` (left out: ${why})` : "";
+  if (v.fair === null) return `${v.market} ${v.confidence.band}${leftOut}`;
+  return `${v.market} fair ${v.fair.toFixed(2)} ${v.currency} (${v.confidence.band}, ${v.soldCount} sold, ${v.activeCount} listed)${leftOut}`;
 }
 
 function formatPin(p: PinSummary): string {
@@ -100,6 +100,10 @@ export function formatRefresh(r: RefreshResult, opts: Extract<CliOptions, { comm
   out.push(r.applied ? "Market refresh: APPLY" : "Market refresh: dry run (no provider calls, nothing written)");
   out.push(formatBudget(p.budget));
   out.push(`Sources: ${opts.sources.join(", ")}  (queries per source per pin: ${opts.queriesPerSource}; cache: sold ${opts.soldTtlDays}d, active ${opts.activeTtlDays}d)`);
+  for (const f of p.filters ?? []) {
+    const spec = refreshSource(f.sourceId);
+    if (spec) out.push(`  ${f.sourceId}: ${describeFilter(spec)}`);
+  }
   if (p.missingSources.length) out.push(`  No market_sources row: ${p.missingSources.join(", ")}`);
   if (p.disabledSources.length) out.push(`  Not enabled in market_sources: ${p.disabledSources.join(", ")}`);
   out.push(`Pins: ${p.pins.length} found${p.missingPins.length ? `, ${p.missingPins.length} not found: ${p.missingPins.join(", ")}` : ""}`);
@@ -142,7 +146,8 @@ export function formatProbe(r: ProbeResult): string[] {
   const out: string[] = [];
   out.push(r.applied ? "Single probe: APPLY (1 search)" : "Single probe: dry run (no provider call)");
   out.push(formatBudget(r.budget));
-  out.push(`Source ${r.sourceId}: route "${r.route}", country=${r.country}`);
+  const spec = refreshSource(r.sourceId);
+  out.push(`Source ${r.sourceId}: route "${r.route}", country=${r.country}, ${spec ? describeFilter(spec) : "no item_location filter"}`);
   out.push(r.pinFound ? `Query: ${r.query ?? "(none could be built)"}` : "Pin not found.");
   if (r.blockers.length) {
     out.push("Not applied:");
@@ -158,6 +163,10 @@ export function formatProbe(r: ProbeResult): string[] {
     if (r.report.hiddenKeys) out.push(`  (${r.report.hiddenKeys} key(s) not shaped like field names were not shown)`);
     out.push(`Adapter: ${r.mapped} row(s) mapped, ${r.withPrice ?? 0} with a price, ${r.withSoldDate ?? 0} with a sold date${Object.keys(r.dropped ?? {}).length ? `, dropped ${JSON.stringify(r.dropped)}` : ""}.`);
     out.push(`Matching v2: ${r.matchAccepted} accepted${Object.keys(r.matchRejected ?? {}).length ? `, rejected ${JSON.stringify(r.matchRejected)}` : ""}.`);
+    if (r.itemCountries) {
+      const byCount = Object.entries(r.itemCountries).sort((a, b) => b[1] - a[1]).map(([c, n]) => `${c} ${n}`).join(", ");
+      out.push(`Item country (parsed from location, counts only): ${byCount}.`);
+    }
     if (r.responseKeys) {
       out.push(`Response keys: ${r.responseKeys.body.join(", ") || "(none)"}`);
       out.push(`Result keys: ${r.responseKeys.result.join(", ") || "(none)"}`);

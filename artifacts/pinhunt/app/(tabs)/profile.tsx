@@ -20,6 +20,7 @@ import { Avatar } from '@/components/Avatar';
 import { useProfile } from '@/context/ProfileContext';
 import { useAuth } from '@/context/AuthContext';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
+import { useBlockedUsers } from '@/context/BlockedUsersContext';
 import { useFeature } from '@/hooks/useFeature';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
@@ -151,6 +152,7 @@ export default function ProfileScreen() {
   const { unseenCount } = useSubmissionNotifications();
   const isAdmin = profile?.isAdmin === true;
   const { enabled: canContribute } = useFeature('catalogue_contributions');
+  const { blockedUsers } = useBlockedUsers();
 
   const { collection } = useCollection();
   const { pins } = usePinCatalogue();
@@ -280,6 +282,17 @@ export default function ProfileScreen() {
                 />
               </Section>
             )}
+
+            {/* Safety (B-P0-05b, #17) */}
+            <Section title="Privacy and safety">
+              <SettingsRow
+                icon="slash"
+                label="Blocked users"
+                value={blockedUsers.length ? String(blockedUsers.length) : undefined}
+                onPress={() => router.push('/settings/blocked-users' as any)}
+                last
+              />
+            </Section>
 
             {/* App Settings */}
             <Section title="App">

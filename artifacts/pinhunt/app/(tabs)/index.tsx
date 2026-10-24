@@ -16,6 +16,8 @@ import { useUnreadMessages } from '@/context/UnreadMessagesContext';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 import { useAuth } from '@/context/AuthContext';
 import { useCommunity } from '@/hooks/useCommunity';
+import { useBlockedUsers } from '@/context/BlockedUsersContext';
+import { withoutBlockedAuthors } from '@/utils/blockedUsers';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { Avatar } from '@/components/Avatar';
 import { EventCard } from '@/components/EventCard';
@@ -49,8 +51,12 @@ export default function HomeScreen() {
   const { unseenCount } = useSubmissionNotifications();
   const { repo: userRepo } = useCommunity();
   const { repository: catRepo, pins, ensureCollections } = usePinCatalogue();
-  const [pickupPosts, setPickupPosts] = useState<CommunityPost[]>([]);
-  const [officialPost, setOfficialPost] = useState<CommunityPost | null>(null);
+  const [allPickupPosts, setPickupPosts] = useState<CommunityPost[]>([]);
+  const [loadedOfficialPost, setOfficialPost] = useState<CommunityPost | null>(null);
+  // Posts by collectors I blocked are hidden (B-P0-05b, #17).
+  const { blockedIds, isBlocked } = useBlockedUsers();
+  const pickupPosts = useMemo(() => withoutBlockedAuthors(allPickupPosts, blockedIds), [allPickupPosts, blockedIds]);
+  const officialPost = loadedOfficialPost && !isBlocked(loadedOfficialPost.authorId) ? loadedOfficialPost : null;
   const [activeSet, setActiveSet] = useState<PinSetSummary | null>(null);
   const [activeSetOwnerId, setActiveSetOwnerId] = useState<string | null>(null);
   const [activeSetLoading, setActiveSetLoading] = useState(false);

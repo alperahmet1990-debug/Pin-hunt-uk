@@ -73,10 +73,13 @@ class FakeStore implements RefreshStore {
 
   async loadSources() { return this.sources; }
   async loadPins(ids: string[]) { return this.pins.filter(p => ids.includes(p.pinhuntId)); }
-  async lastSeen(pinUuids: string[], sourceIds: string[], now: number) {
+  lastSeenFilters: Array<ReadonlyMap<string, string | null> | undefined> = [];
+  async lastSeen(pinUuids: string[], sourceIds: string[], now: number, filters?: ReadonlyMap<string, string | null>) {
+    this.lastSeenFilters.push(filters);
     const out = new Map<string, string>();
     for (const r of this.listings) {
       if (!pinUuids.includes(r.pin_id) || !sourceIds.includes(r.source_id) || Date.parse(r.expires_at) <= now) continue;
+      if (filters?.has(r.source_id) && (r.location_filter ?? null) !== filters.get(r.source_id)) continue;
       const k = `${r.pin_id}|${r.source_id}`;
       if (!out.has(k) || Date.parse(r.last_seen_at) > Date.parse(out.get(k)!)) out.set(k, r.last_seen_at);
     }
@@ -137,6 +140,7 @@ function storedRow(over: Partial<StoredRow>): StoredRow {
     price: 20, shipping: null, currency: "GBP", sold_date: iso(10), price_kind: "sold", best_offer_accepted: false,
     listing_url: null, match_score: 80, accepted: true, rejection_reason: null, parsed: {},
     first_seen_at: iso(1), last_seen_at: iso(1), expires_at: new Date(NOW + 29 * DAY).toISOString(),
+    site: "uk", location_filter: "domestic", item_country: null, displayed_currency: "GBP", price_is_converted: null,
     ...over,
   };
 }
@@ -586,5 +590,62 @@ describe("runUsageReport", () => {
       { route: "ebay/sold", credits: 2, requests: 2, failed: 0 },
       { route: "vinted/search", credits: 1, requests: 2, failed: 1 },
     ]);
+  });
+});
+
+// ─── Region provenance (SG-13, #450) ─────────────────────────────────────────
+
+describe("region-true eBay sold evidence (#450)", () => {
+  const ROW_WITH_LOCATION = {
+    ...SOLD_ROWS[0], location_text: "Little Whinging, Surrey, United Kingdom", seller_text: "SELLERNAME-SENTINEL (12) 100%",
+  };
+
+  it("the dry run states the filter each source sends", async () => {
+    const store = new FakeStore([pinRef(UUID_A, "PHUK-A")]);
+    const sources = ["soldgraph:ebay_gb_sold", "soldgraph:vinted_gb_active"];
+    const r = await runRefresh(opts({ sources }), deps(store).d);
+    expect(r.plan.filters).toEqual([
+      { sourceId: "soldgraph:ebay_gb_sold", itemLocation: "domestic" },
+      { sourceId: "soldgraph:vinted_gb_active", itemLocation: null },
+    ]);
+    const text = formatRefresh(r, opts({ sources }), ON).join("\n");
+    expect(text).toMatch(/soldgraph:ebay_gb_sold: item_location=domestic/);
+    expect(text).toMatch(/soldgraph:vinted_gb_active: no item_location filter/);
+  });
+
+  it("a fresh row stored without the domestic filter is not a cache hit", async () => {
+    const store = new FakeStore([pinRef(UUID_A, "PHUK-A")]);
+    store.listings.push(storedRow({ last_seen_at: iso(1), location_filter: null, site: null, displayed_currency: null }));
+    const r = await runRefresh(opts(), deps(store).d);
+    expect(store.lastSeenFilters[0]?.get("soldgraph:ebay_gb_sold")).toBe("domestic");
+    expect(r.plan.pins[0].cachedSources).toEqual([]);
+    expect(r.plan.worstCaseCredits).toBe(1);
+  });
+
+  it("searches with item_location=domestic and stores the country only", async () => {
+    const store = new FakeStore([pinRef(UUID_A, "PHUK-A")]);
+    const { client, search } = fakeClient([ROW_WITH_LOCATION, SOLD_ROWS[1]]);
+    const r = await runRefresh(opts({ apply: true, confirmCredits: 1 }), deps(store, client).d);
+    expect(r.applied).toBe(true);
+    expect(search.mock.calls[0][1]).toMatchObject({ country: "uk", item_location: "domestic" });
+    const row = store.listings.find(l => l.external_id === "uk-1")!;
+    expect(row).toMatchObject({
+      site: "uk", location_filter: "domestic", item_country: "GB", displayed_currency: "GBP", price_is_converted: null,
+    });
+    expect(JSON.stringify(store.listings)).not.toMatch(/Whinging|Surrey|SELLERNAME|SENTINEL|location_text|seller/i);
+  });
+
+  it("the probe sends the same filter and reports parsed countries as counts only", async () => {
+    const store = new FakeStore([pinRef(UUID_A, "PHUK-A")]);
+    const { client, search } = fakeClient([ROW_WITH_LOCATION, SOLD_ROWS[1], SOLD_ROWS[2]]);
+    const probe = { command: "probe" as const, pinhuntId: "PHUK-A", source: "soldgraph:ebay_gb_sold", apply: true, confirmCredits: 1 };
+    const r = await runProbe(probe, deps(store, client).d);
+    expect(search.mock.calls[0][1]).toMatchObject({ country: "uk", item_location: "domestic" });
+    expect(r.itemLocation).toBe("domestic");
+    expect(r.itemCountries).toEqual({ GB: 1, unknown: 2 });
+    const text = formatProbe(r).join("\n");
+    expect(text).toMatch(/country=uk, item_location=domestic/);
+    expect(text).toMatch(/Item country \(parsed from location, counts only\): unknown 2, GB 1\./);
+    expect(text).not.toMatch(/Whinging|Surrey|SELLERNAME/);
   });
 });

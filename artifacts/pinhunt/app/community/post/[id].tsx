@@ -26,6 +26,8 @@ import { useColors } from '@/hooks/useColors';
 import { Avatar } from '@/components/Avatar';
 import { useCommunity } from '@/hooks/useCommunity';
 import { useProfile } from '@/context/ProfileContext';
+import { useBlockedUsers } from '@/context/BlockedUsersContext';
+import { withoutBlockedAuthors } from '@/utils/blockedUsers';
 import type { CommunityPost, PostComment } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
 
@@ -253,7 +255,14 @@ export default function PostDetailScreen() {
   const isAdmin = profile?.isAdmin === true;
 
   const [post,        setPost]        = useState<CommunityPost | null>(null);
-  const [comments,    setComments]    = useState<PostComment[]>([]);
+  const [allComments, setComments]    = useState<PostComment[]>([]);
+  // Comments by collectors I blocked are hidden (B-P0-05b, #17); admins
+  // still see everything so they can moderate.
+  const { blockedIds, isBlocked } = useBlockedUsers();
+  const comments = React.useMemo(
+    () => (isAdmin ? allComments : withoutBlockedAuthors(allComments, blockedIds)),
+    [allComments, blockedIds, isAdmin],
+  );
   const [loading,     setLoading]     = useState(true);
   const [error,       setError]       = useState<string | null>(null);
   const [commentText, setCommentText] = useState('');
@@ -458,6 +467,23 @@ export default function PostDetailScreen() {
         <Stack.Screen options={{ title: 'Post' }} />
         <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
           <Text style={[styles.errorText, { color: colors.destructive }]}>{error ?? 'Post not found.'}</Text>
+        </View>
+      </>
+    );
+  }
+
+  if (!isAdmin && isBlocked(post.authorId)) {
+    return (
+      <>
+        <Stack.Screen options={{ title: 'Post' }} />
+        <View testID="post-blocked" style={[styles.center, { backgroundColor: colors.homeBackground, gap: 8, padding: 32 }]}>
+          <Feather name="slash" size={28} color={colors.homeMuted} />
+          <Text style={[styles.errorText, { color: colors.homeInk }]}>
+            You blocked {post.authorProfile?.username ? `@${post.authorProfile.username}` : 'this collector'}.
+          </Text>
+          <Text style={[styles.errorText, { color: colors.homeMuted }]}>
+            To see their posts again, unblock them in Profile, Blocked users.
+          </Text>
         </View>
       </>
     );

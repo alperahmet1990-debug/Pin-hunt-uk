@@ -7,9 +7,13 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { availablePinCount, groupByCollector, type SetTrader } from '@/utils/setTraders';
+import { useBlockedUsers } from '@/context/BlockedUsersContext';
+import { withoutBlockedTraders } from '@/utils/blockedUsers';
 
 export function useSetTraders(missingPinIds: string[]) {
   const { repo, userId } = useMarketplace();
+  // Collectors I blocked are left out (B-P0-05b, #17).
+  const { blockedIds } = useBlockedUsers();
   const [traders, setTraders] = useState<SetTrader[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -26,13 +30,13 @@ export function useSetTraders(missingPinIds: string[]) {
     setError(null);
     try {
       const items = await repo.getForTradeInventory({ viewerId: userId, pinIds: key.split(',') });
-      if (!signal?.cancelled) setTraders(groupByCollector(items));
+      if (!signal?.cancelled) setTraders(groupByCollector(withoutBlockedTraders(items, blockedIds)));
     } catch (e) {
       if (!signal?.cancelled) setError(e instanceof Error ? e.message : 'Could not load collectors.');
     } finally {
       if (!signal?.cancelled) setLoading(false);
     }
-  }, [repo, userId, key]);
+  }, [repo, userId, key, blockedIds]);
 
   useEffect(() => {
     const signal = { cancelled: false };

@@ -22,6 +22,7 @@ import {
   normaliseQueryKey,
 } from "../adapter";
 import type { MatchLang } from "../matching";
+import { isItemLocation, type ItemLocation } from "../region";
 import { isRawRow, type RawRow } from "./normalise";
 
 export const SOLDGRAPH_PROVIDER = "soldgraph";
@@ -45,6 +46,16 @@ export interface RowContext {
   currency: string;
   lang: MatchLang;
   now: number;
+  /** Soldgraph `country` searched (the eBay or Vinted website). */
+  country?: SoldgraphCountry;
+  /** `item_location` sent with the search; null when none was sent. */
+  locationFilter?: ItemLocation | null;
+}
+
+/** The `item_location` a params object sends, or null when it sends none (or an unknown value). */
+export function locationFilterOf(params: SoldgraphParams | undefined): ItemLocation | null {
+  const v = params?.item_location;
+  return isItemLocation(v) ? v : null;
 }
 
 export type RowMapper = (row: RawRow, ctx: RowContext) => NormalisedListing | AdapterRejectionReason;
@@ -88,7 +99,15 @@ export function createSoldgraphAdapter(client: SoldgraphClient, cfg: SoldgraphAd
         { ...params, q: query, country: cfg.country },
         { pinId: opts.pinId, ...(cfg.maxPages ? { maxPages: cfg.maxPages } : {}) },
       );
-      const ctx: RowContext = { sourceId: cfg.sourceId, market, currency, lang, now: now() };
+      const ctx: RowContext = {
+        sourceId: cfg.sourceId,
+        market,
+        currency,
+        lang,
+        now: now(),
+        country: cfg.country,
+        locationFilter: locationFilterOf(params),
+      };
       const listings: NormalisedListing[] = [];
       const rejected: AdapterRejectionCounts = {};
       const seen = new Set<string>();

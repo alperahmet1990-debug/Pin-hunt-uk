@@ -55,8 +55,15 @@ const NORMALISED_KEYS = [
   "url",
 ].sort();
 
+/** Region provenance (#450): only eBay sold rows carry these, always all five. */
+const PROVENANCE_KEYS = ["displayedCurrency", "itemCountry", "locationFilter", "priceIsConverted", "site"];
+
 function expectNoThirdPartyDetail(listings: NormalisedListing[]) {
-  for (const l of listings) expect(Object.keys(l).sort()).toEqual(NORMALISED_KEYS);
+  for (const l of listings) {
+    const keys = Object.keys(l).sort();
+    const expected = l.sourceId.includes("_sold") ? [...NORMALISED_KEYS, ...PROVENANCE_KEYS].sort() : NORMALISED_KEYS;
+    expect(keys).toEqual(expected);
+  }
   const text = JSON.stringify(listings);
   expect(text).not.toMatch(/SENTINEL|ebayimg|images\.|photo|seller|feedback|London/i);
 }
@@ -101,6 +108,8 @@ describe("soldgraph eBay sold adapter (UK)", () => {
     expect(url.pathname).toBe("/v1/ebay/sold");
     expect(url.searchParams.get("country")).toBe("uk");
     expect(url.searchParams.get("q")).toBe("Disney Hatbox Ghost pin LE 2000");
+    // Domestic sellers only by default (#450).
+    expect(url.searchParams.get("item_location")).toBe("domestic");
     expect((await h.store.getMonthUsage("2026-10")).credits).toBe(1);
     expect(h.store.records[0].pinId).toBe("pin-uuid-1");
 
@@ -135,6 +144,12 @@ describe("soldgraph eBay sold adapter (UK)", () => {
       medianExcludingBestOffer: 22.5,
       url: "https://www.ebay.co.uk/itm/1001",
       condition: "New",
+      site: "uk",
+      locationFilter: "domestic",
+      // The fixture's location is a town only ("London"): no country, and the town is not kept.
+      itemCountry: null,
+      displayedCurrency: "GBP",
+      priceIsConverted: null,
     });
     // Accepted Best Offer: the listed price is never the sale price.
     expect(byId["uk-1002"]).toMatchObject({

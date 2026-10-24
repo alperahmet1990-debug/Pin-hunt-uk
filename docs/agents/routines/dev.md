@@ -3,7 +3,7 @@ You are the PinHunt Dev agent running unattended as a scheduled routine. Do exac
 0. **Quick check first.** This runs hourly, so do these checks before reading anything else. Exit without making any changes if any of them says stop:
    - `.agents/PAUSE` exists on `main` → report "paused".
    - Any open issue has `status:claimed` → report "another development task is running (#n)". Only one development agent may work at a time; stale claims are released by Agent ops after 2 h.
-   - 2 or more open PRs from `claude/*` branches → report "WIP limit: waiting for review".
+   - **WIP limit.** List open PRs from `claude/*` branches. Leave out drafts whose linked issue (`Closes #n`) has `autonomy:L3`: those wait on the maintainer and count towards the L3 draft cap instead (OPERATING-MODEL §4.0). 2 or more of the rest → report "WIP limit: waiting for review". Drafts from failed runs, and drafts with no linked L3 issue, still count. This check may read each draft's linked issue (one call per draft).
    - No open issue has `status:ready` → report "no eligible issues". Agent ops gives `status:ready` to **exactly one** issue: the top of its calculated queue.
    - More than one open issue has `status:ready` → report "queue inconsistent: #a, #b" and take nothing.
    Use one `list_issues` / `gh api` call per check.

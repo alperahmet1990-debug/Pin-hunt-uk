@@ -10,6 +10,8 @@ const state = vi.hoisted(() => ({
   submission: null as Record<string, unknown> | null,
   uploads: [] as string[],
   created: [] as unknown[][],
+  pinExists: true,
+  pending: false,
 }));
 
 vi.mock("@supabase/supabase-js", () => ({
@@ -28,8 +30,12 @@ vi.mock("@supabase/supabase-js", () => ({
 }));
 vi.mock("@workspace/pin-repository", async (importOriginal) => ({
   ...(await importOriginal<typeof import("@workspace/pin-repository")>()),
+  createSupabasePinRepository: () => ({
+      getPinByPinhuntId: async (id: string) => (state.pinExists ? { id, pinhuntId: id } : null),
+  }),
   createSupabaseUserRepository: () => ({
       getPinSubmission: async () => state.submission,
+      hasPendingContributedImage: async () => state.pending,
       createContributedImage: async (...a: unknown[]) => { state.created.push(a); return { id: "img-1", status: "pending" }; },
   }),
 }));
@@ -48,6 +54,8 @@ describe("POST /api/admin/submissions/:id/propose-photo (#395)", () => {
     state.isAdmin = true;
     state.uploads = [];
     state.created = [];
+    state.pinExists = true;
+    state.pending = false;
     state.submission = {
       id: "sub-1", submittedBy: "user-1", frontImagePath: "user-1/sub-1/front.jpg",
       rightsConfirmedAt: "2026-10-18T10:00:00Z",
@@ -66,6 +74,20 @@ describe("POST /api/admin/submissions/:id/propose-photo (#395)", () => {
     const res = await propose();
     expect(res.status).toBe(409);
     expect(state.created).toHaveLength(0);
+  });
+
+  it("refuses an unknown pin before copying anything", async () => {
+    state.pinExists = false;
+    const res = await propose();
+    expect(res.status).toBe(404);
+    expect(state.uploads).toHaveLength(0);
+  });
+
+  it("refuses when the submitter already has a photo of this pin waiting", async () => {
+    state.pending = true;
+    const res = await propose();
+    expect(res.status).toBe(409);
+    expect(state.uploads).toHaveLength(0);
   });
 
   it("needs a pin to propose it for", async () => {

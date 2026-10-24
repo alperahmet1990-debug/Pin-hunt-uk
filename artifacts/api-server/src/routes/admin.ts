@@ -420,6 +420,15 @@ router.post(
         res.status(409).json({ error: "The submitter didn't confirm the photo rights, so it can't be used as the pin's photo." });
         return;
       }
+      // Checked before copying, so a mistyped pin or a repeat click leaves no stray file.
+      if (!(await getWriteRepository().getPinByPinhuntId(pinhuntId.trim()))) {
+        res.status(404).json({ error: "Pin not found" });
+        return;
+      }
+      if (await userRepo.hasPendingContributedImage(sub.submittedBy, pinhuntId.trim())) {
+        res.status(409).json({ error: "This submitter already has a photo of this pin waiting for review." });
+        return;
+      }
 
       const storage = getAdminAuthClient().storage;
       const { data: blob, error: downloadError } = await storage.from("pin-submissions").download(sub.frontImagePath);

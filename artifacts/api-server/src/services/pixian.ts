@@ -8,9 +8,65 @@
  */
 
 const PIXIAN_ENDPOINT = "https://api.pixian.ai/api/v2/remove-background";
+const DEFAULT_TIMEOUT_MS = 30_000;
+
+/** Thrown when Pixian doesn't answer in time, so callers can say so. */
+export class PixianTimeoutError extends Error {
+  constructor() {
+    super("Pixian request timed out.");
+    this.name = "PixianTimeoutError";
+  }
+}
+
+let testModeBlockLogged = false;
+
+/**
+ * Test mode watermarks every result. In production that would put
+ * watermarked photos in the live catalogue, so Pixian is treated as
+ * switched off there instead (callers already handle "not configured").
+ */
+export function pixianTestModeBlocked(): boolean {
+  const blocked = process.env.NODE_ENV === "production" && process.env.PIXIAN_TEST_MODE === "true";
+  if (blocked && !testModeBlockLogged) {
+    testModeBlockLogged = true;
+    console.error("[pixian] PIXIAN_TEST_MODE=true is not allowed in production; photo clean-up is disabled.");
+  }
+  return blocked;
+}
 
 export function pixianConfigured(): boolean {
-  return !!(process.env.PIXIAN_API_ID && process.env.PIXIAN_API_SECRET);
+  return !!(process.env.PIXIAN_API_ID && process.env.PIXIAN_API_SECRET) && !pixianTestModeBlocked();
+}
+
+function timeoutMs(): number {
+  const raw = Number(process.env.PIXIAN_TIMEOUT_MS);
+  return Number.isFinite(raw) && raw > 0 ? raw : DEFAULT_TIMEOUT_MS;
+}
+
+/**
+ * One request with a timeout. Retries once on a network error or a 5xx,
+ * where Pixian produced no result; never after a timeout, which may still
+ * have been charged.
+ */
+async function postWithRetry(form: FormData, auth: string): Promise<globalThis.Response> {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      const res = await fetch(PIXIAN_ENDPOINT, {
+        method: "POST",
+        headers: { Authorization: `Basic ${auth}` },
+        body: form,
+        signal: AbortSignal.timeout(timeoutMs()),
+      });
+      if (res.status >= 500 && attempt === 1) continue;
+      return res;
+    } catch (err) {
+      if (err instanceof Error && (err.name === "TimeoutError" || err.name === "AbortError")) {
+        throw new PixianTimeoutError();
+      }
+      if (attempt === 1) continue;
+      throw err;
+    }
+  }
 }
 
 /**
@@ -23,6 +79,9 @@ export async function normalizePinPhoto(imageBuffer: Buffer, mimeType: string): 
   const apiSecret = process.env.PIXIAN_API_SECRET;
   if (!apiId || !apiSecret) {
     throw new Error("Pixian is not configured (PIXIAN_API_ID / PIXIAN_API_SECRET missing).");
+  }
+  if (pixianTestModeBlocked()) {
+    throw new Error("Pixian test mode is not allowed in production.");
   }
 
   const form = new FormData();
@@ -41,11 +100,7 @@ export async function normalizePinPhoto(imageBuffer: Buffer, mimeType: string): 
   }
 
   const auth = Buffer.from(`${apiId}:${apiSecret}`).toString("base64");
-  const res = await fetch(PIXIAN_ENDPOINT, {
-    method: "POST",
-    headers: { Authorization: `Basic ${auth}` },
-    body: form,
-  });
+  const res = await postWithRetry(form, auth);
 
   if (!res.ok) {
     const body = await res.text().catch(() => "");

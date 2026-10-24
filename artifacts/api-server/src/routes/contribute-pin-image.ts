@@ -25,7 +25,8 @@
 import { Router, type IRouter, type Request, type Response, type NextFunction } from "express";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { createSupabasePinRepository, createSupabaseUserRepository } from "@workspace/pin-repository";
-import { pixianConfigured, normalizePinPhoto } from "../services/pixian";
+import { pixianConfigured, normalizePinPhoto, PixianTimeoutError } from "../services/pixian";
+import { imageHash, recordUsage, withinDailyCap } from "../services/usage-caps";
 import { publishContributedImage } from "../services/contributed-images";
 import { watermarkPinPhoto } from "../services/watermark";
 
@@ -86,15 +87,24 @@ const PROPOSAL_REASONS = ["missing", "wrong_pin", "poor_quality", "other"] as co
 type ProposalReason = (typeof PROPOSAL_REASONS)[number];
 
 // Clean (un-watermarked) Pixian results waiting for the contributor to
-// confirm: {userId}/drafts/{pinId}__{timestamp}.jpg in the private bucket.
+// confirm: {userId}/drafts/{pinId}__{photo hash}.jpg in the private bucket.
 // Each user keeps at most one — a new preview clears the old ones — so
-// abandoned previews can't pile up.
+// abandoned previews can't pile up. Naming it after the photo's hash means
+// previewing the same photo again reuses the cleaned result instead of
+// paying Pixian twice.
 const draftPrefix = (userId: string, pinId: string) => `${userId}/drafts/${pinId}__`;
 
-async function clearDrafts(userId: string) {
+async function clearDrafts(userId: string, keep?: string) {
   const bucket = getStorageClient().storage.from("pin-contributed-images");
   const { data } = await bucket.list(`${userId}/drafts`);
-  if (data?.length) await bucket.remove(data.map((f) => `${userId}/drafts/${f.name}`));
+  const stale = (data ?? []).map((f) => `${userId}/drafts/${f.name}`).filter((p) => p !== keep);
+  if (stale.length) await bucket.remove(stale);
+}
+
+/** The cleaned draft for this exact photo, if the user previewed it already. */
+async function existingDraft(draftPath: string): Promise<Buffer | null> {
+  const { data } = await getStorageClient().storage.from("pin-contributed-images").download(draftPath);
+  return data ? Buffer.from(await data.arrayBuffer()) : null;
 }
 
 interface ContributionBody {
@@ -132,7 +142,13 @@ async function validateContribution(req: UserRequest, res: Response, needsImage:
     res.status(400).json({ error: "Unknown proposal reason." });
     return false;
   }
-  // Checked before the (paid) Pixian call, not just before the insert.
+  // Everything below is checked before the (paid) Pixian call, not just
+  // before the insert.
+  const pinRepo = createSupabasePinRepository(process.env.SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+  if (!(await pinRepo.getPinByPinhuntId(pinId))) {
+    res.status(404).json({ error: "We couldn't find that pin." });
+    return false;
+  }
   if (await getServiceUserRepository().hasPendingContributedImage(req.userId!, pinId)) {
     res.status(409).json({ error: "You've already sent a photo of this pin — it's waiting for review." });
     return false;
@@ -140,12 +156,24 @@ async function validateContribution(req: UserRequest, res: Response, needsImage:
   return true;
 }
 
-/** Pixian-normalize a photo; sends a 502 and returns null on failure. */
-async function normalize(res: Response, imageBase64: string, mimeType: string): Promise<Buffer | null> {
+/**
+ * Pixian-normalize a photo within the user's daily clean-up cap (shared with
+ * pin submissions). Sends a 429, 504 or 502 and returns null on failure.
+ */
+async function normalize(res: Response, userId: string, imageBase64: string, mimeType: string): Promise<Buffer | null> {
+  if (!(await withinDailyCap(userId, "photo_cleanup"))) {
+    res.status(429).json({ error: "You've reached today's limit for photo clean-ups. Please try again tomorrow." });
+    return null;
+  }
+  void recordUsage(userId, "photo_cleanup", imageHash(imageBase64));
   try {
     return await normalizePinPhoto(Buffer.from(imageBase64, "base64"), mimeType);
   } catch (err) {
     console.error("[contribute-pin-image] Pixian normalization failed:", err);
+    if (err instanceof PixianTimeoutError) {
+      res.status(504).json({ error: "Photo clean-up is taking too long. Please try again." });
+      return null;
+    }
     res.status(502).json({
       error: "Could not process your photo — please retake it with better lighting or a plainer background.",
     });
@@ -201,18 +229,20 @@ router.post("/pin-images/contribute/preview", requireUser, async (req: UserReque
     const body = req.body as ContributionBody;
     const userId = req.userId!;
 
-    const processed = await normalize(res, body.imageBase64!, body.mimeType ?? "image/jpeg");
-    if (!processed) return;
-
-    await clearDrafts(userId);
-    const draftPath = `${draftPrefix(userId, body.pinId!)}${Date.now()}.jpg`;
-    const { error: uploadError } = await getStorageClient().storage
-      .from("pin-contributed-images")
-      .upload(draftPath, processed, { contentType: "image/jpeg", upsert: false });
-    if (uploadError) {
-      res.status(500).json({ error: `Could not store your photo: ${uploadError.message}` });
-      return;
+    const draftPath = `${draftPrefix(userId, body.pinId!)}${imageHash(body.imageBase64!)}.jpg`;
+    let processed = await existingDraft(draftPath);
+    if (!processed) {
+      processed = await normalize(res, userId, body.imageBase64!, body.mimeType ?? "image/jpeg");
+      if (!processed) return;
+      const { error: uploadError } = await getStorageClient().storage
+        .from("pin-contributed-images")
+        .upload(draftPath, processed, { contentType: "image/jpeg", upsert: true });
+      if (uploadError) {
+        res.status(500).json({ error: `Could not store your photo: ${uploadError.message}` });
+        return;
+      }
     }
+    await clearDrafts(userId, draftPath);
 
     const preview = await watermarkPinPhoto(processed);
     res.json({ draftPath, previewBase64: preview.toString("base64") });
@@ -254,7 +284,7 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
         return;
       }
     } else {
-      const processed = await normalize(res, body.imageBase64!, body.mimeType ?? "image/jpeg");
+      const processed = await normalize(res, userId, body.imageBase64!, body.mimeType ?? "image/jpeg");
       if (!processed) return;
       const { error: uploadError } = await bucket
         .upload(storagePath, processed, { contentType: "image/jpeg", upsert: false });

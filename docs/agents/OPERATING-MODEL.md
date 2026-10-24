@@ -87,7 +87,7 @@ The dev routine runs **hourly, every day**, starting at :07. Agent ops runs at :
 - 2 or more `claude/*` PRs are open (the WIP limit). Drafts whose linked issue has `autonomy:L3` don't count: they wait on the maintainer, not on review. Drafts from failed runs, and any draft without a linked L3 issue, still count;
 - no issue is eligible (step 1).
 
-**L3 draft cap.** At most 4 draft `claude/*` PRs linked to `autonomy:L3` issues may be open at once. An interactive L3 session must not open a new L3 draft while 4 are open: finish, merge or close one first. L3 drafts keep every other control: SQL, rollback and runbook in the PR, security review, application by the maintainer only, and a manual merge (§6).
+**L3 draft cap.** At most 4 draft `claude/*` PRs linked to `autonomy:L3` issues may be open at once. An interactive L3 session must not open a new L3 draft while 4 are open: finish, merge or close one first. `Agent PR checks` enforces this: a fifth L3 draft fails the check. #90 reports both counts. L3 drafts keep every other control: SQL, rollback and runbook in the PR, security review, application by the maintainer only, and a manual merge (§6).
 
 ### 1. Select (Agent ops does this, not you)
 **Agent ops owns task selection.** On every issue change and hourly, it ranks every eligible issue in code (`.github/scripts/queue.mjs`, unit-tested) and gives `status:ready` to **only the top-ranked one**. All other approved issues stay approved but not ready. Development agents **never rank or choose**: they take the single `status:ready` issue, or nothing.

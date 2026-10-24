@@ -19,11 +19,16 @@
  * Storage: accepted matches and near-miss rejections (variant, year or
  * edition mismatch, for SG-10) are upserted into market_listings on
  * (source_id, external_id, pin_id), with last_seen_at = now and expires_at
- * capped by the source's retention_days (the 049 trigger caps it again). A
+ * capped by the source's retention_days (the 049 trigger caps it again), or
+ * no expiry at all for a source with no age limit (Soldgraph, 055, #446). A
  * listing accepted for two pins is kept against the better match only. No
  * images, seller details, location text, listed prices or medians are
  * stored. eBay sold rows carry region provenance (054, #450): the website
  * searched, the item_location filter sent and the derived item country.
+ *
+ * Retention (#446, docs/market-data/RIGHTS.md §5): a refresh never purges
+ * anything. `purge` is a separate, maintainer-run command, and it never
+ * deletes rows of a source with no age-based expiry.
  */
 import fs from "node:fs";
 import type { SoldgraphClient } from "../../soldgraph/client";
@@ -144,6 +149,17 @@ function checkSource(id: string): string {
 }
 
 /**
+ * purge may name any market_sources id (for example ebay_browse:ebay_gb_active),
+ * not only the sources the refresh searches.
+ */
+function checkPurgeSource(id: string): string {
+  if (!/^[a-z0-9_]+:[a-z0-9_]+$/.test(id) || id.length > 80) {
+    throw new RefreshUsageError(`Not a market source id: "${id.slice(0, 80)}".`);
+  }
+  return id;
+}
+
+/**
  * Parse the market-refresh.mjs arguments. Throws RefreshUsageError, before
  * anything connects, for anything unclear.
  */
@@ -220,7 +236,7 @@ export function parseCliArgs(argv: string[], readFile: (p: string) => string = p
   } else {
     const source = take("--source");
     if (confirmCredits !== null) throw new RefreshUsageError("purge makes no provider calls; drop --confirm-credits.");
-    out = { command: "purge", source: source === undefined ? null : checkSource(source), apply };
+    out = { command: "purge", source: source === undefined ? null : checkPurgeSource(source), apply };
   }
   if (flags.size) throw new RefreshUsageError(`Unknown flag for ${command}: ${[...flags.keys()].join(", ")}.`);
   if (!apply && confirmCredits !== null) {
@@ -262,7 +278,7 @@ export function parsedAttributes(c: CollectedListing): Record<string, unknown> {
 
 const round2 = (n: number) => Math.round(n * 100) / 100;
 
-export function toListingRow(c: CollectedListing, pinUuid: string, retentionDays: number, now: number): MarketListingRow {
+export function toListingRow(c: CollectedListing, pinUuid: string, retentionDays: number | null, now: number): MarketListingRow {
   const l = c.listing;
   const at = new Date(now).toISOString();
   return {
@@ -282,7 +298,7 @@ export function toListingRow(c: CollectedListing, pinUuid: string, retentionDays
     rejection_reason: c.match.accepted ? null : (c.match.rejectionReason ?? null),
     parsed: parsedAttributes(c),
     last_seen_at: at,
-    expires_at: new Date(now + retentionDays * DAY_MS).toISOString(),
+    expires_at: retentionDays === null ? null : new Date(now + retentionDays * DAY_MS).toISOString(),
     // Region provenance (054, #450): bounded values only; no location text.
     site: l.site && /^(uk|fr|us)$/.test(l.site) ? l.site : null,
     location_filter: l.locationFilter ?? null,
@@ -892,18 +908,42 @@ export async function runProbe(opts: ProbeOptions, deps: RefreshDeps): Promise<P
 
 // ─── Purge ───────────────────────────────────────────────────────────────────
 
+/**
+ * Providers whose rows are never deleted by age from this command, whatever
+ * retention_days says (maintainer policy, 21 Oct 2026: Soldgraph sets no
+ * retention limit). Migration 055 also sets their retention_days to NULL;
+ * this keeps the command safe on a database where 055 is not applied yet.
+ * Deleting every row of such a source stays possible, deliberately, with
+ * purge_market_listings('<source>', true) in the SQL editor.
+ */
+export const NO_AGE_EXPIRY_PROVIDERS: ReadonlySet<string> = new Set(["soldgraph"]);
+
+export function hasAgeExpiry(s: Pick<SourceRow, "provider" | "retentionDays">): boolean {
+  return s.retentionDays !== null && !NO_AGE_EXPIRY_PROVIDERS.has(s.provider);
+}
+
 export interface PurgeResult {
   applied: boolean;
   expired: Array<{ sourceId: string; count: number }>;
+  /** Sources in scope with no age-based expiry: nothing of theirs is deleted. */
+  kept: string[];
   deleted?: number;
 }
 
 export async function runPurge(opts: PurgeOptions, deps: RefreshDeps): Promise<PurgeResult> {
   const now = (deps.now ?? Date.now)();
-  const expired = await deps.store.countExpired(opts.source, now);
-  if (!opts.apply) return { applied: false, expired };
-  const deleted = await deps.store.purgeExpired(opts.source);
-  return { applied: true, expired, deleted };
+  const inScope = (await deps.store.loadSources()).filter(s => opts.source === null || s.id === opts.source);
+  const targets = new Set(inScope.filter(hasAgeExpiry).map(s => s.id));
+  const kept = inScope.filter(s => !targets.has(s.id)).map(s => s.id);
+  const expired = targets.size === 0
+    ? []
+    : (await deps.store.countExpired(opts.source, now)).filter(e => targets.has(e.sourceId));
+  if (!opts.apply) return { applied: false, expired, kept };
+  // One source at a time, never purge_market_listings(NULL): only sources
+  // with an age limit are ever passed.
+  let deleted = 0;
+  for (const id of targets) deleted += await deps.store.purgeExpired(id);
+  return { applied: true, expired, kept, deleted };
 }
 
 // ─── Usage report (market-usage.mjs) ─────────────────────────────────────────

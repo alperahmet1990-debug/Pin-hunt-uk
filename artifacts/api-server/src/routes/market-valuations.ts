@@ -14,6 +14,16 @@
  * values and source ids, counts and latest dates only. No listing titles,
  * links, images, sellers or prices of individual listings.
  *
+ * Publication (SG-12, #446; docs/market-data/RIGHTS.md §3):
+ *   - only markets in MARKET_VALUATION_PUBLISHED_MARKETS are returned
+ *     (default: none);
+ *   - only values built from region-verified evidence (054, #450) are
+ *     returned: rows from an older method version are left out;
+ *   - each value carries per-source summaries (count, latest date, median,
+ *     asking range), one per source id. Derived figures only.
+ * Comparable listings are a separate endpoint behind its own flag
+ * (market-comps.ts); nothing here returns listing rows or links.
+ *
  * The v1 routes in market-value.ts are unchanged.
  */
 import { Router, type IRouter, type Request, type Response, type NextFunction } from "express";
@@ -22,23 +32,25 @@ import {
   getMarketValuations,
   type MarketCode,
   type MarketValuation,
+  type MarketValuationSourceSummary,
   type MarketValuationsClient,
 } from "@workspace/pin-repository";
 import { valuationV2Enabled } from "../services/market/valuation-v2-service";
-import { basisForCounts, primaryMarket, type ValuationBasis } from "../services/market/valuation-v2";
+import { basisForCounts, primaryMarket, providerOf, type ValuationBasis } from "../services/market/valuation-v2";
+import { isRegionVerifiedMethod, publishedMarkets } from "../services/market/publication";
 
 const router: IRouter = Router();
 
-const PIN_ID_RE = /^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/;
+export const PIN_ID_RE = /^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/;
 const SOURCE_ID_RE = /^[a-z0-9_]+:[a-z0-9_]+$/;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}/;
 
-interface AuthedRequest extends Request {
+export interface AuthedRequest extends Request {
   supabaseToken?: string;
 }
 
 /** Require a valid signed-in Supabase user (Bearer token). */
-async function requireUser(req: AuthedRequest, res: Response, next: NextFunction) {
+export async function requireUser(req: AuthedRequest, res: Response, next: NextFunction) {
   const authHeader = req.headers.authorization ?? "";
   const token = authHeader.startsWith("Bearer ") ? authHeader.slice(7).trim() : null;
   if (!token) {
@@ -60,12 +72,26 @@ async function requireUser(req: AuthedRequest, res: Response, next: NextFunction
 }
 
 /** A client that acts as the caller, so RLS decides what is visible. */
-function userClient(token: string): SupabaseClient {
+export function userClient(token: string): SupabaseClient {
   return createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!, {
     global: { headers: { Authorization: `Bearer ${token}` } },
     auth: { persistSession: false, autoRefreshToken: false },
   });
 }
+
+/** One source's derived figures. Sold and asking-price sources have different shapes. */
+export type SourceSummaryResponse =
+  | { sourceId: string; provider: string; evidenceType: "sold"; count: number; latestSoldDate: string | null; median: number | null }
+  | {
+      sourceId: string;
+      provider: string;
+      evidenceType: "active";
+      count: number;
+      latestSeenDate: string | null;
+      low: number | null;
+      high: number | null;
+      median: number | null;
+    };
 
 export interface MarketValuationResponseItem {
   market: MarketCode;
@@ -78,9 +104,32 @@ export interface MarketValuationResponseItem {
   activeCount: number;
   confidence: { score: number; band: string };
   sources: Array<{ sourceId: string; count: number; latestDate: string | null }>;
+  sourceSummaries: SourceSummaryResponse[];
   methodVersion: string;
   calculatedAt: string;
   stale: boolean;
+}
+
+const dateOrNull = (d: string | undefined) => (d && DATE_RE.test(d) ? d.slice(0, 10) : null);
+
+/**
+ * Whitelist mapping of per-source summaries. One entry per source id, never
+ * merged; the provider must match the source id's own prefix.
+ */
+export function toSourceSummaries(list: readonly MarketValuationSourceSummary[] | undefined): SourceSummaryResponse[] {
+  const out: SourceSummaryResponse[] = [];
+  const seen = new Set<string>();
+  for (const s of list ?? []) {
+    if (!SOURCE_ID_RE.test(s.sourceId) || s.provider !== providerOf(s.sourceId) || seen.has(s.sourceId)) continue;
+    seen.add(s.sourceId);
+    const base = { sourceId: s.sourceId, provider: s.provider, count: s.count, median: s.median ?? null };
+    if (s.evidenceType === "sold") {
+      out.push({ ...base, evidenceType: "sold", latestSoldDate: dateOrNull(s.latestDate) });
+    } else if (s.evidenceType === "active") {
+      out.push({ ...base, evidenceType: "active", latestSeenDate: dateOrNull(s.latestDate), low: s.low ?? null, high: s.high ?? null });
+    }
+  }
+  return out;
 }
 
 /** Whitelist mapping: only these fields ever leave the server. */
@@ -101,8 +150,9 @@ export function toResponseItem(v: MarketValuation, now: number): MarketValuation
       .map(s => ({
         sourceId: s.sourceId,
         count: s.count,
-        latestDate: s.latestDate && DATE_RE.test(s.latestDate) ? s.latestDate.slice(0, 10) : null,
+        latestDate: dateOrNull(s.latestDate),
       })),
+    sourceSummaries: toSourceSummaries(v.sourceSummaries),
     methodVersion: v.methodVersion,
     calculatedAt: v.calculatedAt,
     stale: Number.isNaN(expires) || expires < now,
@@ -131,9 +181,12 @@ router.get("/pins/:pinId/market-valuations", requireUser, async (req: AuthedRequ
       res.status(404).json({ error: "Pin not found" });
       return;
     }
-    const rows = await getMarketValuations(db as unknown as MarketValuationsClient, String(pin.id));
+    const rows = await getMarketValuations(db as unknown as MarketValuationsClient, String(pin.id), { withSummaries: true });
     const now = Date.now();
-    const valuations = rows.map(v => toResponseItem(v, now));
+    const published = new Set<string>(publishedMarkets());
+    const valuations = rows
+      .filter(v => published.has(v.market) && isRegionVerifiedMethod(v.methodVersion))
+      .map(v => toResponseItem(v, now));
     res.json({ pinId: pinhuntId, primaryMarket: primaryMarket(valuations), valuations });
   } catch (err) {
     req.log.error({ err: err instanceof Error ? err.message : "unknown" }, "market-valuations read failed");

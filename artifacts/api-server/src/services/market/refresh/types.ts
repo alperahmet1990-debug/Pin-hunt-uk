@@ -12,8 +12,11 @@ export interface SourceRow {
   market: Market;
   evidenceType: EvidenceType;
   enabled: boolean;
-  /** How long raw listing rows from this source may be kept. */
-  retentionDays: number;
+  /**
+   * Days raw listing rows from this source are kept after last seen. null =
+   * no age-based expiry (Soldgraph, migration 055, #446).
+   */
+  retentionDays: number | null;
 }
 
 export interface PinRef {
@@ -42,7 +45,8 @@ export interface MarketListingRow {
   rejection_reason: string | null;
   parsed: Record<string, unknown> | null;
   last_seen_at: string;
-  expires_at: string;
+  /** null for a source with no age-based expiry (055). The DB trigger enforces it. */
+  expires_at: string | null;
   /** Region provenance (054, #450). Null when not recorded. Never seller or town text. */
   site: string | null;
   location_filter: string | null;
@@ -98,7 +102,7 @@ export interface RefreshStore {
   loadPins(pinhuntIds: string[]): Promise<PinRef[]>;
   /**
    * Latest market_listings.last_seen_at (any row, accepted or rejected, not
-   * yet expired) per pin and source, keyed `${pinUuid}|${sourceId}`.
+   * expired; rows with no expiry count) per pin and source, keyed `${pinUuid}|${sourceId}`.
    * For a source listed in `locationFilters`, only rows fetched with that
    * location_filter count (so rows fetched without the domestic filter
    * never stop a domestic search from running).
@@ -114,9 +118,14 @@ export interface RefreshStore {
   upsertListings(rows: MarketListingRow[]): Promise<void>;
   deleteListings(keys: ListingKey[]): Promise<void>;
   budget(month: string): Promise<BudgetStatus>;
-  /** Rows purge_market_listings() would delete now, per source. */
+  /**
+   * Rows purge_market_listings() would delete now, per source. Sources with
+   * no age-based expiry (retentionDays null) are left out: nothing of theirs
+   * is ever deleted by age.
+   */
   countExpired(sourceId: string | null, now: number): Promise<ExpiredCount[]>;
-  purgeExpired(sourceId: string | null): Promise<number>;
+  /** Age-based purge of one source (never all sources at once from the CLI). */
+  purgeExpired(sourceId: string): Promise<number>;
   usageRows(fromMonth: string): Promise<UsageReportRow[]>;
   budgets(fromMonth: string): Promise<Array<{ month: string; limitCredits: number; hardStop: boolean }>>;
   revalue(pinUuid: string, now: number): Promise<RevalueResult>;

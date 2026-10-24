@@ -2,7 +2,7 @@
 
 `scripts/market-refresh.mjs` searches Soldgraph for a short list of pins, stores the matching listings, and works out each pin's UK / FR / US value (valuation v2). `scripts/market-usage.mjs` shows how many credits have been used. Both run on your own laptop, against **staging** only: the staging guard refuses anything else.
 
-Nothing here is shown in the app. The values go into `market_valuations`; the listings stay in `market_listings`, which only the server can read.
+Nothing here is shown in the app. The values go into `market_valuations` (the current value) and `market_valuation_history` (one row per recalculation, never changed afterwards); the listings stay in `market_listings`, which only the server can read. What the API may publish is controlled separately (see "Publishing" below).
 
 ## What it does, and what it never does
 
@@ -13,9 +13,10 @@ Nothing here is shown in the app. The values go into `market_valuations`; the li
 - Runs an identical search only once, even if two pins would make it.
 - Stores matched listings, plus "near misses" (same pin but a different variant, year or edition size) for catalogue research. Unrelated listings are not stored. No images, no seller details, no location text: for eBay sold listings only the **country** worked out from the location is kept.
 - Searches eBay sold listings for **domestic sellers only** (`item_location=domestic`) and only counts those as evidence for that market. See "Region" below.
-- Keeps each listing only as long as the source's `retention_days` allows (30 days by default). `purge` deletes anything older.
+- Keeps listings by source (see "Retention" below). Soldgraph listings have **no age-based expiry**: they are kept as price history. eBay Browse API listings keep their configured limit (30 days). A refresh never deletes anything by age.
+- Uses only recent evidence for values: sales from the last **365 days** and current listings seen in the last **30 days**. Older rows stay stored but don't count. This is decided by date, never by deleting rows.
 - If the same listing matches two pins, keeps it against the better match only.
-- Recalculates the value of each pin it searched.
+- Recalculates the value of each pin it searched, and adds one history row per market each time.
 
 **Never:**
 - Runs without `--apply`. Without it, it only reads and prints.
@@ -26,7 +27,7 @@ Nothing here is shown in the app. The values go into `market_valuations`; the li
 ## Before you start
 
 - Node 22.18 or newer, and `pnpm install` done in the repo.
-- Migrations 049 and 054 applied on staging (054 adds the region columns; without it, saving listings fails).
+- Migrations 049, 054 and 055 applied on staging (054 adds the region columns; without it, saving listings fails. 055 adds valuation history and per-source summaries; without it, saving values fails, and Soldgraph sources still carry a 30-day `retention_days`).
 - `artifacts/api-server/.env.staging` set up as for `staging:import-catalogue`, plus the Soldgraph key (the same value as on the staging Render service):
   ```
   SOLDGRAPH_API_KEY=...
@@ -115,7 +116,7 @@ Soldgraph's `country` chooses the eBay **website** (ebay.co.uk, ebay.fr, ebay.co
   - `region_unverified`: fetched without the domestic filter (all listings from before #450), or the item's country is another country.
   - `cross_market_duplicate`: the same eBay item counted for more than one market. It counts once, in the market matching its country; if its country is unknown, in none.
   - `converted_price`: Soldgraph says the price was converted (it has no such field today, so this doesn't happen yet).
-- Nothing is deleted for this: the listings stay until they expire as usual.
+- Nothing is deleted for this: the listings stay stored.
 
 ## 4. Check usage
 
@@ -126,19 +127,48 @@ node --env-file=.env.staging scripts/market-usage.mjs --months 6 --usd-per-credi
 
 Credits and calls per month and Soldgraph route, the budget, and what's left. `--usd-per-credit` adds a rough cost (0.0045 is the $9 / 2,000 plan).
 
+## Retention
+
+Policy (maintainer, 21 Oct 2026; `docs/market-data/RIGHTS.md` §5): historical price data is **not deleted automatically because of its age**. Soldgraph has confirmed in writing that it sets no retention limit.
+
+- Each source has a `retention_days` in `market_sources`. **NULL means no age-based expiry.** Migration 055 sets every Soldgraph source (`provider = 'soldgraph'`) to NULL. Their listings have no `expires_at`.
+- `ebay_browse:*` keeps its configured limit (30 days). eBay's API licence is separate from Soldgraph and hasn't been reviewed for longer retention yet.
+- Freshness is decided by date, never by deleting: values use sales from the last 365 days and current listings seen in the last 30 days, and the refresh cache uses the last-seen date.
+- Nothing runs on a timer. A refresh never purges.
+- No images, seller details or location text are stored (049, 054).
+- A pin being deleted removes its listings, values and value history (cascade).
+
+To change a source's limit, in the SQL editor (1 to 365 days, or NULL for no age-based expiry):
+```sql
+update market_sources set retention_days = 30, updated_at = now() where id = 'ebay_browse:ebay_gb_active';
+```
+A shorter limit takes effect at the next `purge`.
+
 ## Delete old listings
+
+`purge` only deletes rows of sources **with** an age limit. It never deletes Soldgraph rows, whatever `retention_days` says, and its output lists the sources it kept and why.
 
 Dry run, then delete:
 ```
 node --env-file=.env.staging scripts/market-refresh.mjs purge
 node --env-file=.env.staging scripts/market-refresh.mjs purge --apply
 ```
-`--source soldgraph:ebay_gb_sold` limits it to one source. It deletes rows past their expiry, or older than the source's current `retention_days` (so shortening `retention_days` takes effect at the next purge).
+`--source ebay_browse:ebay_gb_active` limits it to one source. It deletes rows past their expiry, or older than the source's current `retention_days`.
 
-To delete **every** stored listing from a source (for example if the Soldgraph plan ends), run this in the SQL editor:
+To delete **every** stored listing from one source on purpose (for example if the Soldgraph plan ends, or a marketplace asks), run this in the SQL editor. This works for any source, including Soldgraph ones:
 ```sql
 select purge_market_listings('soldgraph:ebay_gb_sold', true);
 ```
+
+Valuation history (`market_valuation_history`) can't be updated or deleted, by anyone, except when the pin itself is deleted.
+
+## Publishing (API server switches, all off by default)
+
+See `docs/market-data/RIGHTS.md` §3. Nothing here changes what the refresh stores or calculates: values are still worked out for every market on staging.
+
+- `MARKET_VALUATION_V2_ENABLED=true`: the `GET /api/pins/:pinId/market-valuations` read (signed-in users), and writing values during a refresh.
+- `MARKET_VALUATION_PUBLISHED_MARKETS`: comma list of markets the read returns, for example `UK`. Empty (the default) returns none. Add a market only once its evidence has been checked region-true (#411, #450). Values calculated before region provenance (method version `v2.0`) are never returned; recalculate them with a refresh.
+- `MARKET_COMPS_PUBLIC_ENABLED=true`: the comparable-sales endpoint `GET /api/pins/:pinId/market-comps?market=UK&limit=20` (signed-in users; date, price, currency, marketplace, source and a cleaned link only). Off returns 404 for everyone. It is separate from the valuation switch and stays off until the marketplace terms are resolved (RIGHTS.md §2).
 
 ## Switching it all off
 

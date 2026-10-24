@@ -4,7 +4,8 @@
  * the client). Nothing here inserts, updates or deletes.
  *
  * market_listings is read for near misses only (accepted = false, a
- * near-miss rejection_reason, not expired). The listing link column is never
+ * near-miss rejection_reason, not expired; rows of a source with no
+ * age-based expiry have no expires_at and always count). The listing link column is never
  * selected. Errors are generic (operation name only).
  */
 import type { SupabaseClient } from "@supabase/supabase-js";
@@ -95,7 +96,7 @@ export class SupabaseLeadsStore implements LeadsStore {
         .select(LISTING_COLUMNS)
         .eq("accepted", false)
         .in("rejection_reason", [...NEAR_MISS_REASONS])
-        .gt("expires_at", nowIso)
+        .or(`expires_at.is.null,expires_at.gt.${nowIso}`)
         .gte("last_seen_at", sinceIso);
       if (sourceIds) q = q.in("source_id", sourceIds);
       const { data, error } = await q.order("id").range(from, from + PAGE - 1);

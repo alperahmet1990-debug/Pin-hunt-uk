@@ -23,7 +23,10 @@
  *   - `sold_possible_offer` (Best Offer status not reported) keeps its weight
  *     for Low and Fair, but its price is capped at Fair when High is worked
  *     out, and its share lowers confidence.
- * Active rows (Vinted, Whatnot, eBay Browse): asking prices, weight 0.3. Used
+ * Active rows (Vinted, Whatnot, eBay Browse): asking prices, weight 0.3. Rows
+ * last seen more than ACTIVE_MAX_AGE_DAYS (30) ago are left out ("stale_listing").
+ * Freshness is decided here, by sold date and last-seen date, never by
+ * deleting stored rows (#446: Soldgraph rows have no age-based expiry). Used
  * only when there are fewer than 3 sold rows, and then Fair may not exceed
  * the sold anchor by more than FAIR_CAP_OVER_SOLD. The sold anchor is the
  * weighted median of the usable sold rows or, when there are none, Soldgraph's
@@ -42,8 +45,7 @@
  *     It counts once, in the market whose country matches itemCountry, and
  *     is left out of every other market. If no single market matches, it is
  *     left out of all of them.
- * Stored rows are never deleted for this: they stay as raw evidence until
- * they expire.
+ * Stored rows are never deleted for this: they stay as raw evidence.
  *
  * ── Figures ────────────────────────────────────────────────────────────────
  * Prices are trimmed with the 1.5×IQR rule (5 or more points), then
@@ -56,6 +58,15 @@
  *   "listings" fewer than 3 sold rows plus active rows: "based on current
  *              listings", confidence band capped at "low";
  *   "none"     no usable evidence: no figures, band "insufficient".
+ *
+ * ── Per-source summaries (SG-12, #446) ─────────────────────────────────────
+ * Alongside the figures, each market lists one summary per source id, built
+ * from the rows that passed the checks above (region, currency, Best Offer,
+ * price, date, age), before outlier trimming:
+ *   sold sources    count, latest sold date, median sold price;
+ *   active sources  count, latest seen date, low–high asking range, median.
+ * Derived figures only. Sources are never merged: Soldgraph eBay data and
+ * eBay Browse API data always sit in separate entries.
  *
  * ── Confidence (0–100) ─────────────────────────────────────────────────────
  * Sum of whole-number points, each recorded as a reason:
@@ -75,7 +86,19 @@ import type { MarketCode } from "@workspace/pin-repository";
 import type { EvidenceType, PriceKind } from "./adapter";
 import { MARKET_COUNTRY, REGION_CHECKED_SOURCE_IDS } from "./region";
 
-export const VALUATION_V2_METHOD_VERSION = "v2.0";
+/**
+ * v2.1 (#446): freshness by sold / last-seen date instead of stored expiry,
+ * per-source summaries, region-verified evidence only (054, #450).
+ */
+export const VALUATION_V2_METHOD_VERSION = "v2.1";
+
+/**
+ * Method versions whose stored values were built from region-verified
+ * evidence only (054, #450). Values from earlier versions (v2.0, including
+ * the pre-#450 pilot) may contain unverified regional sales and are never
+ * published.
+ */
+export const REGION_VERIFIED_METHOD_VERSIONS: ReadonlySet<string> = new Set(["v2.1"]);
 
 export const MARKET_CURRENCY: Record<MarketCode, string> = { UK: "GBP", FR: "EUR", US: "USD" };
 /** Display / fallback priority: eBay UK sold first, then FR, then US. */
@@ -92,6 +115,8 @@ export const VALUATION_V2_CONFIG = {
   maxAgeDays: 365,
   oldestWeight: 0.4,
   activeWeight: 0.3,
+  /** Active rows last seen longer ago than this are stale and left out. */
+  activeMaxAgeDays: 30,
   /** Active rows can never lift Fair more than this fraction above the sold anchor. */
   fairCapOverSold: 0.15,
   lowQuantile: 0.2,
@@ -143,6 +168,7 @@ export type ExclusionReason =
   | "too_old"
   | "currency_mismatch"
   | "outlier"
+  | "stale_listing"
   | "region_unverified"
   | "cross_market_duplicate"
   | "converted_price";
@@ -217,6 +243,21 @@ export interface ValuationSourceAttribution {
   latest_date: string;
 }
 
+/**
+ * market_valuations.source_summaries entry (055 CHECK: only these keys).
+ * Sold sources carry latest_date and median; active sources also low/high.
+ */
+export interface ValuationSourceSummary {
+  source_id: string;
+  provider: string;
+  evidence_type: "sold" | "active";
+  count: number;
+  latest_date: string | null;
+  median: number | null;
+  low?: number | null;
+  high?: number | null;
+}
+
 export interface MarketValuationV2 {
   market: MarketCode;
   currency: string;
@@ -230,6 +271,8 @@ export interface MarketValuationV2 {
   activeCount: number;
   confidence: ValuationConfidence;
   sources: ValuationSourceAttribution[];
+  /** One derived summary per source id (never merged across sources). */
+  sourceSummaries: ValuationSourceSummary[];
   /** Rows left out, by reason. Diagnostic only: never stored or returned to clients. */
   excluded: Partial<Record<ExclusionReason, number>>;
   methodVersion: string;
@@ -336,6 +379,42 @@ function attribution(points: Point[]): ValuationSourceAttribution[] {
     .map(([id, v]) => ({ source_id: id, count: v.count, latest_date: v.latest as string }));
 }
 
+/** Provider part of a market_sources id ("soldgraph:ebay_gb_sold" → "soldgraph"). */
+export function providerOf(sourceId: string): string {
+  const i = sourceId.indexOf(":");
+  return i > 0 ? sourceId.slice(0, i) : sourceId;
+}
+
+/**
+ * Per-source summaries from usable (pre-trim) points. Keyed by source id
+ * only, so two providers' rows for the same marketplace never share an entry.
+ */
+function sourceSummaries(points: readonly Point[]): ValuationSourceSummary[] {
+  const by = new Map<string, { sold: boolean; prices: number[]; latest: string | null }>();
+  for (const p of points) {
+    const cur = by.get(p.ev.sourceId) ?? { sold: p.sold, prices: [], latest: null };
+    cur.prices.push(p.price);
+    const d = dateOnly(p.sold ? p.ev.soldDate : p.ev.seenAt);
+    if (d && (!cur.latest || d > cur.latest)) cur.latest = d;
+    by.set(p.ev.sourceId, cur);
+  }
+  return [...by.entries()]
+    .sort(([ia, a], [ib, b]) => Number(b.sold) - Number(a.sold) || b.prices.length - a.prices.length || ia.localeCompare(ib))
+    .map(([id, v]) => {
+      const m = median(v.prices);
+      const base: ValuationSourceSummary = {
+        source_id: id,
+        provider: providerOf(id),
+        evidence_type: v.sold ? "sold" : "active",
+        count: v.prices.length,
+        latest_date: v.latest,
+        median: m === null ? null : round2(m),
+      };
+      if (v.sold) return base;
+      return { ...base, low: round2(Math.min(...v.prices)), high: round2(Math.max(...v.prices)) };
+    });
+}
+
 function median(values: number[]): number | null {
   if (values.length === 0) return null;
   const s = [...values].sort((a, b) => a - b);
@@ -400,6 +479,11 @@ export function computeMarketValuation(
       }
       sold.push({ ev, price: ev.price, weight: w, sold: true, possibleOffer: ev.priceKind === "sold_possible_offer" });
     } else {
+      const seen = ev.seenAt ? Date.parse(ev.seenAt) : NaN;
+      if (!Number.isNaN(seen) && (opts.now - seen) / DAY_MS > cfg.activeMaxAgeDays) {
+        exclude("stale_listing");
+        continue;
+      }
       active.push({ ev, price: ev.price, weight: cfg.activeWeight, sold: false, possibleOffer: false });
     }
   }
@@ -452,6 +536,7 @@ export function computeMarketValuation(
     activeCount: keptActive.length,
     confidence,
     sources: attribution(kept),
+    sourceSummaries: sourceSummaries([...sold, ...active]),
     excluded,
     methodVersion: VALUATION_V2_METHOD_VERSION,
   };

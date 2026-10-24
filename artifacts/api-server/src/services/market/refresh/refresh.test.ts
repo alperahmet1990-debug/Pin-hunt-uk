@@ -22,7 +22,7 @@ import {
   runUsageReport,
   type RefreshOptions,
 } from "./refresh";
-import { executeRefreshCli, formatProbe, formatRefresh } from "./cli";
+import { executeRefreshCli, formatProbe, formatPurge, formatRefresh } from "./cli";
 import type {
   BudgetStatus,
   ExpiredCount,
@@ -65,7 +65,7 @@ class FakeStore implements RefreshStore {
   revalued: string[] = [];
   deleted: ListingKey[] = [];
   upserts = 0;
-  purged: Array<string | null> = [];
+  purged: string[] = [];
   budgetStatus: Omit<BudgetStatus, "month"> = { usedCredits: 0, requests: 0, limitCredits: 100, hardStop: true, origin: "default" };
   usage: UsageReportRow[] = [];
 
@@ -78,7 +78,7 @@ class FakeStore implements RefreshStore {
     this.lastSeenFilters.push(filters);
     const out = new Map<string, string>();
     for (const r of this.listings) {
-      if (!pinUuids.includes(r.pin_id) || !sourceIds.includes(r.source_id) || Date.parse(r.expires_at) <= now) continue;
+      if (!pinUuids.includes(r.pin_id) || !sourceIds.includes(r.source_id) || (r.expires_at !== null && Date.parse(r.expires_at) <= now)) continue;
       if (filters?.has(r.source_id) && (r.location_filter ?? null) !== filters.get(r.source_id)) continue;
       const k = `${r.pin_id}|${r.source_id}`;
       if (!out.has(k) || Date.parse(r.last_seen_at) > Date.parse(out.get(k)!)) out.set(k, r.last_seen_at);
@@ -105,23 +105,23 @@ class FakeStore implements RefreshStore {
       !keys.some(k => k.pinUuid === r.pin_id && k.sourceId === r.source_id && k.externalId === r.external_id));
   }
   async budget(month: string): Promise<BudgetStatus> { return { month, ...this.budgetStatus }; }
+  /** The purge_market_listings() age rule (055): never a row of a no-limit source. */
+  private expiredRow(r: StoredRow, now: number): boolean {
+    const s = this.sources.find(x => x.id === r.source_id)!;
+    if (s.retentionDays === null) return false;
+    return (r.expires_at !== null && Date.parse(r.expires_at) <= now) || Date.parse(r.last_seen_at) + s.retentionDays * DAY <= now;
+  }
   async countExpired(sourceId: string | null, now: number): Promise<ExpiredCount[]> {
-    return this.sources.filter(s => sourceId === null || s.id === sourceId).map(s => ({
+    return this.sources.filter(s => (sourceId === null || s.id === sourceId) && s.retentionDays !== null).map(s => ({
       sourceId: s.id,
-      count: this.listings.filter(r => r.source_id === s.id &&
-        (Date.parse(r.expires_at) <= now || Date.parse(r.last_seen_at) + s.retentionDays * DAY <= now)).length,
+      count: this.listings.filter(r => r.source_id === s.id && this.expiredRow(r, now)).length,
     }));
   }
-  async purgeExpired(sourceId: string | null) {
+  async purgeExpired(sourceId: string) {
     this.purged.push(sourceId);
     const before = this.listings.length;
     const expired = await this.countExpired(sourceId, NOW);
-    this.listings = this.listings.filter(r => {
-      const s = this.sources.find(x => x.id === r.source_id)!;
-      const gone = (sourceId === null || r.source_id === sourceId) &&
-        (Date.parse(r.expires_at) <= NOW || Date.parse(r.last_seen_at) + s.retentionDays * DAY <= NOW);
-      return !gone;
-    });
+    this.listings = this.listings.filter(r => !(r.source_id === sourceId && this.expiredRow(r, NOW)));
     expect(before - this.listings.length).toBe(expired.reduce((n, e) => n + e.count, 0));
     return before - this.listings.length;
   }
@@ -336,7 +336,7 @@ describe("runRefresh: apply", () => {
     expect(byId["uk-1"]).toMatchObject({ accepted: true, rejection_reason: null, price: 24.99, currency: "GBP", price_kind: "sold", listing_url: "https://www.ebay.co.uk/itm/1" });
     expect(byId["uk-2"]).toMatchObject({ accepted: false, rejection_reason: "edition_size_conflict" });
     expect(byId["uk-2"].parsed).toMatchObject({ edition_size: 500 });
-    expect(Date.parse(byId["uk-1"].expires_at) - NOW).toBe(30 * DAY);
+    expect(Date.parse(byId["uk-1"].expires_at!) - NOW).toBe(30 * DAY);
     expect(JSON.stringify(store.listings)).not.toMatch(/SENTINEL|image|seller/i);
     expect(r.pins[0]).toMatchObject({ pinhuntId: "PHUK-A", searchesRun: 1, found: 3, accepted: 1, nearMisses: 1 });
     expect(r.pins[0].rejectedReasons).toMatchObject({ edition_size_conflict: 1 });
@@ -475,20 +475,96 @@ describe("resolveCrossPinDuplicates", () => {
   });
 });
 
+describe("runRefresh: retention (#446)", () => {
+  const noLimit = () => SOURCES.map(s => (s.provider === "soldgraph" ? { ...s, retentionDays: null } : s));
+
+  it("never purges, and stores no expiry for a source with unlimited retention", async () => {
+    const store = new FakeStore([pinRef(UUID_A, "PHUK-A")], noLimit());
+    // An old row with no expiry is still there after the run.
+    store.listings.push(storedRow({ external_id: "kept-old", sold_date: iso(300), last_seen_at: iso(300), expires_at: null }));
+    const { client } = fakeClient();
+    const r = await runRefresh(opts({ apply: true, confirmCredits: 1 }), deps(store, client).d);
+    expect(r.applied).toBe(true);
+    expect(store.purged).toEqual([]);
+    const byId = Object.fromEntries(store.listings.map(l => [l.external_id, l]));
+    expect(byId["kept-old"]).toBeDefined();
+    expect(byId["uk-1"].expires_at).toBeNull();
+  });
+
+  it("a recent row with no expiry is a cache hit", async () => {
+    const store = new FakeStore([pinRef(UUID_A, "PHUK-A")], noLimit());
+    store.listings.push(storedRow({ last_seen_at: iso(1), expires_at: null }));
+    const r = await runRefresh(opts(), deps(store).d);
+    expect(r.plan.worstCaseCredits).toBe(0);
+  });
+});
+
 // ─── Purge ───────────────────────────────────────────────────────────────────
 
 describe("runPurge", () => {
-  it("counts expired rows in a dry run and deletes them only with --apply", async () => {
-    const store = new FakeStore([]);
+  // As after migration 055: Soldgraph has no age-based expiry; eBay Browse keeps a limit.
+  const RETENTION_SOURCES: SourceRow[] = [
+    { id: "soldgraph:ebay_gb_sold", provider: "soldgraph", market: "UK", evidenceType: "sold", enabled: true, retentionDays: null },
+    // A Soldgraph source still showing a limit (055 not applied yet): kept all the same.
+    { id: "soldgraph:vinted_gb_active", provider: "soldgraph", market: "UK", evidenceType: "active", enabled: true, retentionDays: 14 },
+    { id: "ebay_browse:ebay_gb_active", provider: "ebay_browse", market: "UK", evidenceType: "active", enabled: false, retentionDays: 30 },
+  ];
+  const browse = (over: Partial<StoredRow>) =>
+    storedRow({ source_id: "ebay_browse:ebay_gb_active", price_kind: "active", sold_date: null, best_offer_accepted: null, site: null, location_filter: null, displayed_currency: null, ...over });
+
+  it("never deletes rows of a source with unlimited retention, only rows of sources with a limit", async () => {
+    const store = new FakeStore([], RETENTION_SOURCES);
+    store.listings.push(
+      storedRow({ external_id: "sold-400-days", sold_date: iso(400), last_seen_at: iso(400), expires_at: null }),
+      storedRow({ source_id: "soldgraph:vinted_gb_active", external_id: "vinted-old", price_kind: "active", sold_date: null, best_offer_accepted: null, last_seen_at: iso(60), expires_at: iso(46) }),
+      browse({ external_id: "browse-old", last_seen_at: iso(40), expires_at: iso(10) }),
+      browse({ external_id: "browse-fresh", last_seen_at: iso(1), expires_at: new Date(NOW + 29 * DAY).toISOString() }),
+    );
+    const dry = await runPurge({ command: "purge", source: null, apply: false }, deps(store).d);
+    expect(dry).toEqual({
+      applied: false,
+      expired: [{ sourceId: "ebay_browse:ebay_gb_active", count: 1 }],
+      kept: ["soldgraph:ebay_gb_sold", "soldgraph:vinted_gb_active"],
+    });
+    expect(store.purged).toEqual([]);
+
+    const all = await runPurge({ command: "purge", source: null, apply: true }, deps(store).d);
+    expect(all.deleted).toBe(1);
+    // Never purge_market_listings(NULL): only the source with a limit is passed.
+    expect(store.purged).toEqual(["ebay_browse:ebay_gb_active"]);
+    expect(store.listings.map(l => l.external_id).sort()).toEqual(["browse-fresh", "sold-400-days", "vinted-old"]);
+
+    const one = await runPurge({ command: "purge", source: "soldgraph:ebay_gb_sold", apply: true }, deps(store).d);
+    expect(one).toEqual({ applied: true, expired: [], kept: ["soldgraph:ebay_gb_sold"], deleted: 0 });
+    expect(store.purged).toEqual(["ebay_browse:ebay_gb_active"]);
+    expect(store.listings).toHaveLength(3);
+  });
+
+  it("explains in its output that unlimited-retention sources are kept", async () => {
+    const store = new FakeStore([], RETENTION_SOURCES);
+    const text = formatPurge(await runPurge({ command: "purge", source: null, apply: false }, deps(store).d)).join("\n");
+    expect(text).toContain("Kept, no age-based expiry: soldgraph:ebay_gb_sold, soldgraph:vinted_gb_active");
+    expect(text).toMatch(/unlimited retention/);
+    expect(text).toContain("purge_market_listings('<source>', true)");
+  });
+
+  it("accepts any market source id for --source, and rejects malformed ones", () => {
+    expect(parseCliArgs(["purge", "--source", "ebay_browse:ebay_gb_active"])).toEqual({ command: "purge", source: "ebay_browse:ebay_gb_active", apply: false });
+    expect(() => parseCliArgs(["purge", "--source", "Bad Source"])).toThrow(/Not a market source id/);
+  });
+
+  it("counts expired rows of limited sources in a dry run and deletes them only with --apply", async () => {
+    const store = new FakeStore([], RETENTION_SOURCES.map(s => ({ ...s, provider: "ebay_browse" })));
     store.listings.push(
       storedRow({ external_id: "fresh" }),
       storedRow({ external_id: "expired", expires_at: iso(1) }),
       // Retention shortened since: 14 days for Vinted, seen 20 days ago.
       storedRow({ source_id: "soldgraph:vinted_gb_active", external_id: "old", price_kind: "active", sold_date: null, best_offer_accepted: null, last_seen_at: iso(20), expires_at: new Date(NOW + DAY).toISOString() }),
     );
+    // soldgraph:ebay_gb_sold has retention null here, so "expired" is kept.
     const dry = await runPurge({ command: "purge", source: null, apply: false }, deps(store).d);
     expect(dry.applied).toBe(false);
-    expect(dry.expired.reduce((n, e) => n + e.count, 0)).toBe(2);
+    expect(dry.expired.reduce((n, e) => n + e.count, 0)).toBe(1);
     expect(store.purged).toEqual([]);
     expect(store.listings).toHaveLength(3);
 
@@ -496,8 +572,8 @@ describe("runPurge", () => {
     expect(one.deleted).toBe(1);
     expect(store.purged).toEqual(["soldgraph:vinted_gb_active"]);
     const all = await runPurge({ command: "purge", source: null, apply: true }, deps(store).d);
-    expect(all.deleted).toBe(1);
-    expect(store.listings.map(l => l.external_id)).toEqual(["fresh"]);
+    expect(all.deleted).toBe(0);
+    expect(store.listings.map(l => l.external_id)).toEqual(["fresh", "expired"]);
   });
 });
 

@@ -13,9 +13,11 @@ import { fixturePin } from "./__fixtures__/load";
 import { computeMarketValuation } from "./valuation-v2";
 import {
   collectPinEvidence,
+  freshnessFilter,
   loadStoredEvidence,
   revaluePinFromStoredEvidence,
   saveMarketValuations,
+  toHistoryRow,
   toMarketValuationRow,
   valuationV2Enabled,
 } from "./valuation-v2-service";
@@ -89,12 +91,16 @@ function fakeDb(results: Record<string, Result>) {
   const from = (table: string) => {
     const result = results[table] ?? { data: [], error: null };
     const builder: Record<string, unknown> = {};
-    for (const op of ["select", "eq", "gt"]) {
+    for (const op of ["select", "eq", "gt", "or"]) {
       builder[op] = (...args: unknown[]) => {
         calls.push({ table, op, args });
         return builder;
       };
     }
+    builder.insert = (...args: unknown[]) => {
+      calls.push({ table, op: "insert", args });
+      return Promise.resolve({ error: (results[`${table}:insert`] ?? { error: null }).error });
+    };
     builder.upsert = (...args: unknown[]) => {
       calls.push({ table, op: "upsert", args });
       return Promise.resolve({ error: (results[`${table}:upsert`] ?? { error: null }).error });
@@ -192,7 +198,7 @@ describe("collectPinEvidence", () => {
 });
 
 describe("stored evidence and market_valuations writes", () => {
-  it("reads explicit columns of accepted, unexpired rows from enabled sources only", async () => {
+  it("reads explicit columns of accepted, fresh rows from enabled sources only (by date, never by stored expiry)", async () => {
     const { db, calls } = fakeDb({
       market_sources: { data: SOURCES_ROWS, error: null },
       market_listings: { data: LISTING_ROWS, error: null },
@@ -205,21 +211,44 @@ describe("stored evidence and market_valuations writes", () => {
     // Item ids and region provenance are read (#450); titles, links and any location text are not.
     expect(selects.join(" ")).not.toMatch(/title|listing_url|location_text|seller/);
     expect(calls).toContainEqual({ table: "market_listings", op: "eq", args: ["accepted", true] });
-    expect(calls).toContainEqual({ table: "market_listings", op: "gt", args: ["expires_at", new Date(NOW).toISOString()] });
+    // Freshness is by sold date / last seen, never expires_at (NULL for Soldgraph rows, 055).
+    expect(calls.some(c => JSON.stringify(c.args).includes("expires_at"))).toBe(false);
+    expect(calls).toContainEqual({ table: "market_listings", op: "or", args: [freshnessFilter(NOW)] });
+    expect(freshnessFilter(NOW)).toBe(
+      `sold_date.gte.${new Date(NOW - 365 * 86_400_000).toISOString()},last_seen_at.gte.${new Date(NOW - 30 * 86_400_000).toISOString()}`,
+    );
   });
 
-  it("builds rows with exactly the 049 columns and source keys", () => {
+  it("builds rows with exactly the 049 + 055 columns and source keys", () => {
     const v = computeMarketValuation("UK", [], { now: NOW });
-    const row = toMarketValuationRow(PIN_UUID, { ...v, sources: [{ source_id: "a:b", count: 2, latest_date: "2026-10-01" }] }, NOW);
+    const row = toMarketValuationRow(PIN_UUID, {
+      ...v,
+      sources: [{ source_id: "a:b", count: 2, latest_date: "2026-10-01" }],
+      sourceSummaries: [
+        { source_id: "a:b", provider: "a", evidence_type: "sold", count: 2, latest_date: "2026-10-01", median: 10, low: 1, high: 2,
+          title: "x", listing_url: "https://x" } as never,
+        { source_id: "c:d", provider: "c", evidence_type: "active", count: 3, latest_date: "2026-10-02", median: 11, low: 9, high: 14 },
+      ],
+    }, NOW);
     expect(Object.keys(row).sort()).toEqual([
       "active_count", "calculated_at", "confidence_band", "confidence_score", "currency", "expires_at", "fair",
-      "high", "low", "market", "method_version", "pin_id", "sold_count", "sources", "updated_at",
+      "high", "low", "market", "method_version", "pin_id", "sold_count", "source_summaries", "sources", "updated_at",
     ]);
     expect(row.sources).toEqual([{ source_id: "a:b", count: 2, latest_date: "2026-10-01" }]);
+    // Rebuilt key by key: only the 055-allowed keys; low/high only for asking-price sources.
+    expect(row.source_summaries).toEqual([
+      { source_id: "a:b", provider: "a", evidence_type: "sold", count: 2, latest_date: "2026-10-01", median: 10 },
+      { source_id: "c:d", provider: "c", evidence_type: "active", count: 3, latest_date: "2026-10-02", median: 11, low: 9, high: 14 },
+    ]);
+    const history = toHistoryRow(row);
+    expect(Object.keys(history).sort()).toEqual([
+      "active_count", "calculated_at", "confidence_band", "confidence_score", "currency", "fair",
+      "high", "low", "market", "method_version", "pin_id", "sold_count", "source_summaries", "sources",
+    ]);
     expect(row.expires_at).toBe(new Date(NOW + 7 * 86_400_000).toISOString());
   });
 
-  it("revalues from stored evidence and writes only market_valuations", async () => {
+  it("revalues from stored evidence and writes only market_valuations plus one history row per market", async () => {
     const { db, calls } = fakeDb({
       market_sources: { data: SOURCES_ROWS, error: null },
       market_listings: { data: LISTING_ROWS, error: null },
@@ -228,6 +257,20 @@ describe("stored evidence and market_valuations writes", () => {
     expect(res.status).toBe("saved");
     const writes = calls.filter(c => c.op === "upsert");
     expect(writes.map(w => w.table)).toEqual(["market_valuations"]);
+    // History is appended first (insert only, never update or delete), one row per market.
+    const inserts = calls.filter(c => c.op === "insert");
+    expect(inserts.map(w => w.table)).toEqual(["market_valuation_history"]);
+    expect(calls.findIndex(c => c.op === "insert")).toBeLessThan(calls.findIndex(c => c.op === "upsert"));
+    const hist = inserts[0].args[0] as Array<Record<string, unknown>>;
+    expect(hist.map(r => [r.market, r.fair, r.method_version, r.calculated_at])).toEqual([
+      ["UK", 12, "v2.1", new Date(NOW).toISOString()],
+      ["FR", null, "v2.1", new Date(NOW).toISOString()],
+      ["US", null, "v2.1", new Date(NOW).toISOString()],
+    ]);
+    expect(hist[0]).not.toHaveProperty("expires_at");
+    expect(hist[0].source_summaries).toEqual([
+      { source_id: "soldgraph:ebay_gb_sold", provider: "soldgraph", evidence_type: "sold", count: 3, latest_date: iso(3).slice(0, 10), median: 12 },
+    ]);
     expect(writes[0].args[1]).toEqual({ onConflict: "pin_id,market" });
     const rows = writes[0].args[0] as Array<Record<string, unknown>>;
     expect(rows.map(r => [r.market, r.currency, r.fair, r.confidence_band])).toEqual([
@@ -236,7 +279,7 @@ describe("stored evidence and market_valuations writes", () => {
       ["US", "USD", null, "insufficient"],
     ]);
     const touched = new Set(calls.map(c => c.table));
-    expect([...touched].sort()).toEqual(["market_listings", "market_sources", "market_valuations"]);
+    expect([...touched].sort()).toEqual(["market_listings", "market_sources", "market_valuation_history", "market_valuations"]);
     for (const t of ["pins", "user_pins", "pin_market_estimates", "ebay_listing_snapshots"]) expect(touched.has(t)).toBe(false);
   });
 
@@ -244,6 +287,25 @@ describe("stored evidence and market_valuations writes", () => {
     const { db, calls } = fakeDb({});
     expect(await revaluePinFromStoredEvidence(db, PIN_UUID, { now: NOW, env: {} as NodeJS.ProcessEnv })).toEqual({ status: "disabled" });
     expect(calls).toEqual([]);
+  });
+
+  it("writes a history row on every recalculation, even when the values have not changed", async () => {
+    const { db, calls } = fakeDb({
+      market_sources: { data: SOURCES_ROWS, error: null },
+      market_listings: { data: LISTING_ROWS, error: null },
+    });
+    await revaluePinFromStoredEvidence(db, PIN_UUID, { now: NOW, env: ON });
+    await revaluePinFromStoredEvidence(db, PIN_UUID, { now: NOW + 60_000, env: ON });
+    const inserts = calls.filter(c => c.op === "insert" && c.table === "market_valuation_history");
+    expect(inserts).toHaveLength(2);
+    expect(inserts.map(i => (i.args[0] as unknown[]).length)).toEqual([3, 3]);
+  });
+
+  it("does not update the current row when the history row cannot be written", async () => {
+    const { db, calls } = fakeDb({ "market_valuation_history:insert": { data: null, error: { message: "secret detail" } } });
+    const row = toMarketValuationRow(PIN_UUID, computeMarketValuation("UK", [], { now: NOW }), NOW);
+    await expect(saveMarketValuations(db, [row])).rejects.toThrow(/^valuation v2: save valuation history failed$/);
+    expect(calls.some(c => c.op === "upsert")).toBe(false);
   });
 
   it("fails with a generic error on a database error", async () => {

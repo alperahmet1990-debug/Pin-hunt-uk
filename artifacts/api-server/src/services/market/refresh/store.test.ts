@@ -52,7 +52,7 @@ describe("SupabaseRefreshStore", () => {
     expect(rows[0]).not.toHaveProperty("first_seen_at");
   });
 
-  it("reads the cache from unexpired rows only, keeping the latest last_seen_at", async () => {
+  it("reads the cache from unexpired rows (or rows with no expiry), keeping the latest last_seen_at", async () => {
     const { db, calls } = fakeDb({
       market_listings: {
         data: [
@@ -65,7 +65,9 @@ describe("SupabaseRefreshStore", () => {
     const m = await new SupabaseRefreshStore(db, {}).lastSeen(["p1"], ["s:a"], NOW);
     expect(m.get("p1|s:a")).toBe("2026-10-15T00:00:00Z");
     const c = calls[0];
-    expect(op(c, "gt")).toEqual([["expires_at", new Date(NOW).toISOString()]]);
+    // Rows of a source with no age-based expiry have expires_at NULL (055) and still count.
+    expect(op(c, "or")).toEqual([[`expires_at.is.null,expires_at.gt.${new Date(NOW).toISOString()}`]]);
+    expect(op(c, "gt")).toEqual([]);
     expect(op(c, "in")).toEqual([["pin_id", ["p1"]], ["source_id", ["s:a"]]]);
   });
 
@@ -82,6 +84,27 @@ describe("SupabaseRefreshStore", () => {
     expect(op(c, "or")).toEqual([[`expires_at.lte.${new Date(NOW).toISOString()},last_seen_at.lte.${cutoff}`]]);
     expect(await store.purgeExpired("soldgraph:ebay_gb_sold")).toBe(4);
     expect(rpcs).toEqual([["purge_market_listings", { p_source_id: "soldgraph:ebay_gb_sold", p_all: false }]]);
+  });
+
+  it("never counts rows of a source with unlimited retention (retention_days NULL)", async () => {
+    const { db, calls } = fakeDb({
+      "market_sources": {
+        data: [
+          { id: "soldgraph:ebay_gb_sold", provider: "soldgraph", market: "UK", evidence_type: "sold", enabled: true, retention_days: null },
+          { id: "ebay_browse:ebay_gb_active", provider: "ebay_browse", market: "UK", evidence_type: "active", enabled: false, retention_days: 30 },
+        ],
+        error: null,
+      },
+      "market_listings": { count: 2, error: null },
+    });
+    const store = new SupabaseRefreshStore(db, {});
+    expect(await store.countExpired(null, NOW)).toEqual([{ sourceId: "ebay_browse:ebay_gb_active", count: 2 }]);
+    const counted = calls.filter(x => x.table === "market_listings").map(c => op(c, "eq")[0]);
+    expect(counted).toEqual([["source_id", "ebay_browse:ebay_gb_active"]]);
+    expect(await store.loadSources()).toEqual([
+      expect.objectContaining({ id: "soldgraph:ebay_gb_sold", retentionDays: null }),
+      expect.objectContaining({ id: "ebay_browse:ebay_gb_active", retentionDays: 30 }),
+    ]);
   });
 
   it("uses the default budget (SOLDGRAPH_MONTHLY_LIMIT or 100, hard stop) when no row exists", async () => {

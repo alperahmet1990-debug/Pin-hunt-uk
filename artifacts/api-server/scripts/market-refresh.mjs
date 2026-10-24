@@ -5,7 +5,8 @@
  *
  *   refresh (default)  plan, then (with --apply) search, store and revalue
  *   probe              exactly one search; prints field names only
- *   purge              delete expired market_listings rows
+ *   purge              delete expired market_listings rows of sources with an
+ *                      age limit (never Soldgraph rows: no age-based expiry)
  *
  * Every command is a dry run without --apply. --apply on refresh and probe
  * also needs --confirm-credits equal to the worst case the dry run printed.

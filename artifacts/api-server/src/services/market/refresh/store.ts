@@ -79,14 +79,16 @@ export class SupabaseRefreshStore implements RefreshStore {
     for (const r of (data ?? []) as Row[]) {
       if (typeof r.id !== "string" || !MARKETS.has(String(r.market))) continue;
       if (r.evidence_type !== "sold" && r.evidence_type !== "active") continue;
+      // NULL = no age-based expiry (055). An unreadable value falls back to 30.
       const retention = num(r.retention_days);
+      const retentionDays = r.retention_days === null ? null : retention !== null && retention >= 1 ? retention : 30;
       out.push({
         id: r.id,
         provider: String(r.provider ?? ""),
         market: r.market as Market,
         evidenceType: r.evidence_type as EvidenceType,
         enabled: r.enabled === true,
-        retentionDays: retention !== null && retention >= 1 ? retention : 30,
+        retentionDays,
       });
     }
     return out;
@@ -132,7 +134,7 @@ export class SupabaseRefreshStore implements RefreshStore {
           .select("pin_id, source_id, last_seen_at, location_filter")
           .in("pin_id", part)
           .in("source_id", sourceIds)
-          .gt("expires_at", nowIso)
+          .or(`expires_at.is.null,expires_at.gt.${nowIso}`)
           .order("id"));
       for (const r of rows) {
         if (typeof r.last_seen_at !== "string") continue;
@@ -218,6 +220,8 @@ export class SupabaseRefreshStore implements RefreshStore {
     const nowIso = new Date(now).toISOString();
     const out: ExpiredCount[] = [];
     for (const s of sources) {
+      // No age-based expiry for this source (055): nothing to count.
+      if (s.retentionDays === null) continue;
       // The same rule as purge_market_listings(): expired, or older than the
       // source's (possibly shortened) retention.
       const cutoff = new Date(now - s.retentionDays * 86_400_000).toISOString();
@@ -232,7 +236,7 @@ export class SupabaseRefreshStore implements RefreshStore {
     return out;
   }
 
-  async purgeExpired(sourceId: string | null): Promise<number> {
+  async purgeExpired(sourceId: string): Promise<number> {
     const { data, error } = await this.db.rpc("purge_market_listings", { p_source_id: sourceId, p_all: false });
     if (error) throw new RefreshStoreError("purge expired listings");
     const n = num(data);

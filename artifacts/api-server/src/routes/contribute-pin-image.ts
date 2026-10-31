@@ -207,7 +207,10 @@ async function recordContribution(res: Response, userId: string, body: Contribut
       return;
     } catch (err) {
       // The pending row is already saved, so it falls back to the review queue.
-      console.error("[contribute-pin-image] auto-publish failed, left pending:", err);
+      console.error(
+        `[contribute-pin-image] auto-publish failed, left pending (pin ${body.pinId}, image ${image.id}):`,
+        err,
+      );
     }
   }
 

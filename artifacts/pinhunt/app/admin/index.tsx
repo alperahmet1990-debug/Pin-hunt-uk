@@ -33,6 +33,7 @@ type FeatherName = React.ComponentProps<typeof Feather>['name'];
 
 interface AttentionCounts {
   reportedContent: number;
+  tradeProblems: number;
   pendingSubmissions: number;
   /** Approved submissions with no catalogue pin yet — App Creator's queue. */
   toAdd: number;
@@ -105,13 +106,16 @@ export default function AdminIndexScreen() {
           .catch(() => setPendingPhotos(0))
           .finally(() => clearTimeout(timer));
       }
-      const [reportedPosts, reportedComments, submissions] = await Promise.all([
+      const [reportedPosts, reportedComments, submissions, tradeProblems] = await Promise.all([
         repo.getPostReportSummaries(),
         repo.getReportedComments(),
         repo.getAllPinSubmissions(),
+        // A failure here shouldn't hide the other counts.
+        repo.getProblemTrades().catch(() => []),
       ]);
       setCounts({
         reportedContent: reportedPosts.length + reportedComments.length,
+        tradeProblems: tradeProblems.length,
         pendingSubmissions: submissions.filter(
           s => s.status === 'submitted' || s.status === 'under_review',
         ).length,
@@ -130,6 +134,7 @@ export default function AdminIndexScreen() {
 
   type AttentionItem = { icon: FeatherName; label: string; count: number; href: Href };
   const attention: AttentionItem[] = counts ? ([
+    { icon: 'alert-triangle', label: 'Trade problems', count: counts.tradeProblems, href: '/admin/trade-problems' as Href },
     { icon: 'flag',   label: 'Reported content',   count: counts.reportedContent,    href: '/admin/community-moderation' as Href },
     { icon: 'inbox',  label: 'Pin submissions',    count: counts.pendingSubmissions, href: '/admin/submissions' as Href },
     { icon: 'camera', label: 'Contributed photos', count: pendingPhotos,             href: '/admin/contributed-images' as Href },

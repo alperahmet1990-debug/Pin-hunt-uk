@@ -413,33 +413,37 @@ export default function TradeScreen() {
     }
   };
 
-  const runAction = async (action: () => Promise<Trade>) => {
-    if (!repo || !trade) return;
+  const runAction = async (action: () => Promise<Trade>): Promise<boolean> => {
+    if (!repo || !trade) return false;
     try {
       setActioning(true);
       const updated = await action();
       await load();
       if (updated.status === 'completed') setShowRating(true);
+      return true;
     } catch (e) {
       Alert.alert('Error', e instanceof Error ? e.message : 'Try again.');
+      return false;
     } finally {
       setActioning(false);
     }
   };
 
-  const markPosted = () => {
+  const markPosted = async () => {
     if (!repo || !trade) return;
-    void runAction(() => repo.markTradePosted(trade.id, { carrier, tracking }));
-    setCarrier('');
-    setTracking('');
+    if (await runAction(() => repo.markTradePosted(trade.id, { carrier, tracking }))) {
+      setCarrier('');
+      setTracking('');
+    }
   };
 
-  const submitProblem = () => {
+  const submitProblem = async () => {
     if (!repo || !trade) return;
     const reason = reportReason.trim();
-    void runAction(() => repo.reportTradeProblem(trade.id, reason));
-    setReportOpen(false);
-    setReportReason('');
+    if (await runAction(() => repo.reportTradeProblem(trade.id, reason))) {
+      setReportOpen(false);
+      setReportReason('');
+    }
   };
 
   const isInitiator = trade?.initiatorId === userId;
@@ -533,6 +537,12 @@ export default function TradeScreen() {
                   userId={userId}
                 />
               )}
+                {trade.problemReason && (
+                  <Text style={[styles.problemNote, { color: colors.homeMuted }]}>Reported: {trade.problemReason}</Text>
+                )}
+                {trade.problemResolutionNote && (
+                  <Text style={[styles.problemNote, { color: colors.homeMuted }]}>PinHunt: {trade.problemResolutionNote}</Text>
+                )}
             </ScrollView>
 
             {/* Action buttons */}
@@ -544,12 +554,6 @@ export default function TradeScreen() {
               <View style={[styles.actionBar, { borderTopColor: colors.homeLine, backgroundColor: colors.homeBackground }]}>
                 {actions?.nextStep && (
                   <Text style={[styles.nextStep, { color: colors.homeMuted }]}>{actions.nextStep}</Text>
-                )}
-                {trade.problemReason && (
-                  <Text style={[styles.nextStep, { color: colors.homeMuted }]}>Reported: {trade.problemReason}</Text>
-                )}
-                {trade.problemResolutionNote && (
-                  <Text style={[styles.nextStep, { color: colors.homeMuted }]}>PinHunt: {trade.problemResolutionNote}</Text>
                 )}
                 {theirTracking && (
                   <Text selectable style={[styles.nextStep, { color: colors.homeMuted }]}>Their tracking: {theirTracking}</Text>
@@ -604,7 +608,7 @@ export default function TradeScreen() {
                 )}
                 {actions?.canMarkPosted && (
                   <TouchableOpacity
-                    onPress={markPosted}
+                    onPress={() => void markPosted()}
                     activeOpacity={0.85}
                     accessibilityRole="button"
                     style={[styles.actionBtnFull, { backgroundColor: colors.homeCoral, borderColor: colors.homeCoral }]}
@@ -614,7 +618,7 @@ export default function TradeScreen() {
                 )}
                 {actions?.canUpdateTracking && (carrier.trim() !== '' || tracking.trim() !== '') && (
                   <TouchableOpacity
-                    onPress={markPosted}
+                    onPress={() => void markPosted()}
                     activeOpacity={0.85}
                     accessibilityRole="button"
                     style={[styles.actionBtnFull, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
@@ -684,7 +688,7 @@ export default function TradeScreen() {
                         <Text style={[styles.actionBtnLabel, { color: colors.homeMuted }]}>Back</Text>
                       </TouchableOpacity>
                       <TouchableOpacity
-                        onPress={submitProblem}
+                        onPress={() => void submitProblem()}
                         disabled={reportReason.trim() === ''}
                         activeOpacity={0.85}
                         accessibilityRole="button"
@@ -768,6 +772,7 @@ const styles = StyleSheet.create({
   actionBar: { borderTopWidth: StyleSheet.hairlineWidth, paddingHorizontal: spacing.md, paddingTop: spacing.sm + 2, gap: spacing.sm + 2 },
   actionRow: { flexDirection: 'row', gap: spacing.sm + 2 },
   trackingRow: { flexDirection: 'row', gap: spacing.sm },
+  problemNote: { fontSize: 13, fontFamily: 'Inter_500Medium', paddingHorizontal: spacing.md, paddingVertical: spacing.xs },
   reportInput: { minHeight: 72, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, fontSize: 14, fontFamily: 'Inter_400Regular', borderWidth: 1, borderRadius: radius.sm, textAlignVertical: 'top' },
   nextStep: { fontSize: 13, fontFamily: 'Inter_500Medium', textAlign: 'center' },
   actionBtn: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm },

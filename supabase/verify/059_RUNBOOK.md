@@ -24,7 +24,7 @@ The replay's known `006_trade_ratings.sql` failure (T17) was patched in a scratc
 2. Run `supabase/verify/059_verify.sql`. Expect `ALL 059 CHECKS PASSED`. It rolls itself back.
 3. Run `notify pgrst, 'reload schema';`
 4. Deploy the API (automatic on merge), then publish the OTA update. Between steps 1 and 4 reports fail in the installed app.
-5. Device check: report a problem with a reason, close it in Admin → Trade Problems, then try deleting an account with an open trade.
+5. Device check: report a problem with a reason, close it in Admin → Trade Problems, then try deleting an account with an open trade. Also check that a 500-character reason and note scroll with the trade and don't crowd the buttons, that a failed send keeps the typed text, and that Admin home shows the open report count.
 
 Production is a separate approval, after 057 and 058.
 

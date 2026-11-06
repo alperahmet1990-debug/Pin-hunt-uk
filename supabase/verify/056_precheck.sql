@@ -8,9 +8,8 @@
 --   of_which_own_email   ...where the value is the account's current email
 --   has_at_not_cleared   other values containing '@' ("Pins @ Paris"): kept,
 --                        and the app already hides them
---   equals_email_prefix  values equal to the part of the email before the @:
---                        kept, because they can't be told apart from a name
---                        the collector chose. Maintainer's call if not zero.
+--   of_which_prefix      ...where the value is the part of that email before
+--                        the @
 -- ============================================================
 with classified as (
   select
@@ -24,8 +23,8 @@ with classified as (
 )
 select
   count(*) as total_profiles,
-  count(*) filter (where own_email or email_shaped) as will_be_cleared,
+  count(*) filter (where own_email or email_shaped or email_prefix) as will_be_cleared,
   count(*) filter (where own_email) as of_which_own_email,
-  count(*) filter (where has_at and not (own_email or email_shaped)) as has_at_not_cleared,
-  count(*) filter (where email_prefix) as equals_email_prefix
+  count(*) filter (where email_prefix) as of_which_prefix,
+  count(*) filter (where has_at and not (own_email or email_shaped)) as has_at_not_cleared
 from classified;

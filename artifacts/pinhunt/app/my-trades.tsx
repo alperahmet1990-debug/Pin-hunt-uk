@@ -4,9 +4,9 @@
  * deleted conversation. The delete account screen links here, because open
  * trades hold deletion.
  */
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { ActivityIndicator, RefreshControl, SectionList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Stack, useRouter } from 'expo-router';
+import { Stack, useFocusEffect, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import type { Trade } from '@workspace/pin-repository';
 import { useColors } from '@/hooks/useColors';
@@ -25,7 +25,10 @@ export default function MyTradesScreen() {
   const [error, setError] = useState<string | null>(null);
 
   const load = useCallback(async () => {
-    if (!repo || !userId) return;
+    if (!repo || !userId) {
+      setLoading(false);
+      return;
+    }
     try {
       setError(null);
       setTrades(await repo.getUserTrades(userId));
@@ -36,7 +39,8 @@ export default function MyTradesScreen() {
     }
   }, [repo, userId]);
 
-  useEffect(() => { void load(); }, [load]);
+  // On focus, so a trade just cancelled or finished moves straight away.
+  useFocusEffect(useCallback(() => { void load(); }, [load]));
 
   const { active, past } = groupTrades(trades);
   const sections = [

@@ -29,7 +29,7 @@ import { UserSafetySheet } from '@/components/UserSafetySheet';
 import { Button } from '@/components/ui/Button';
 import { useToast } from '@/components/ui/Toast';
 import { otherParticipantId } from '@/utils/blockedUsers';
-import { canProposeInChat, tradeCardTitle } from '@/utils/tradeActions';
+import { canProposeInChat, proposalRefusalLine, tradeCardTitle } from '@/utils/tradeActions';
 
 /** Space between messages (FlatList content has no `gap`). */
 function MessageGap() {
@@ -279,7 +279,7 @@ export default function ChatScreen() {
       setTradeStatus(trade.status);
       setTradeConfirmOpen(false);
     } catch (e) {
-      Alert.alert('Trade not proposed', userErrorLine(e, 'chat-agree'));
+      Alert.alert('Trade not proposed', proposalRefusalLine(e) ?? userErrorLine(e, 'chat-agree'));
     } finally {
       setSending(false);
     }

@@ -610,14 +610,21 @@ class SupabaseUserPinRepository implements IUserPinRepository {
   // ── Trades ────────────────────────────────────────────────────────────
 
   async getUserTrades(userId: string): Promise<Trade[]> {
-    const { data, error } = await this.client
+    // Open trades are fetched on their own, so a long history can't push one
+    // out of the list. Accepted and problem trades hold account deletion.
+    const mine = () => this.client
       .from('trades')
       .select('*')
-      .or(`initiator_id.eq.${userId},recipient_id.eq.${userId}`)
-      .order('updated_at', { ascending: false });
+      .or(`initiator_id.eq.${userId},recipient_id.eq.${userId}`);
+    const [open, past] = await Promise.all([
+      // `problem` (migration 057) isn't in the generated types yet.
+      mine().in('status', ['pending', 'accepted', 'problem'] as never[]).order('updated_at', { ascending: false }),
+      mine().in('status', ['completed', 'rejected', 'cancelled'] as never[]).order('updated_at', { ascending: false }).limit(200),
+    ]);
 
-    if (error) throw new Error(error.message);
-    const trades = (data as Record<string, unknown>[]).map(rowToTrade);
+    if (open.error) throw new Error(open.error.message);
+    if (past.error) throw new Error(past.error.message);
+    const trades = ([...(open.data ?? []), ...(past.data ?? [])] as Record<string, unknown>[]).map(rowToTrade);
     const otherIds = [...new Set(trades.map(t => (t.initiatorId === userId ? t.recipientId : t.initiatorId)))];
     if (otherIds.length === 0) return trades;
 

@@ -4,6 +4,9 @@ import {
   canProposeInChat,
   groupTrades,
   isOpenTrade,
+  otherUserIdFor,
+  proposalRefusalLine,
+  sendFailureLine,
   otherSideTracking,
   tradeActionsFor,
   tradeCardTitle,
@@ -66,6 +69,25 @@ describe('canMessage', () => {
       expect(tradeActionsFor(trade({ status }), 'a').canMessage).toBe(false);
     }
     expect(tradeActionsFor(trade({}), 'c').canMessage).toBe(false);
+  });
+});
+
+describe('messages shown to collectors', () => {
+  it('hides database wording when a message is refused', () => {
+    const line = sendFailureLine(new Error('new row violates row-level security policy for table "trade_messages"'));
+    expect(line).not.toMatch(/row-level|trade_messages/);
+    expect(line).toMatch(/can't be sent/);
+  });
+
+  it('passes on written refusals and nothing else', () => {
+    expect(proposalRefusalLine(new Error('This chat already has a trade in progress.'))).toMatch(/in progress/);
+    expect(proposalRefusalLine(new Error('duplicate key value violates constraint'))).toBeUndefined();
+  });
+
+  it('finds the other collector', () => {
+    expect(otherUserIdFor(trade({}), 'a')).toBe('b');
+    expect(otherUserIdFor(trade({}), 'b')).toBe('a');
+    expect(otherUserIdFor(null, 'a')).toBeUndefined();
   });
 });
 

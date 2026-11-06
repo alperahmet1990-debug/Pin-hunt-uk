@@ -6,7 +6,7 @@ import { API_BASE } from '@/lib/apiBase';
 
 export const DELETE_CONFIRM_WORD = 'DELETE';
 
-export type DeleteAccountOutcome = 'deleted' | 'unauthorized' | 'not_allowed' | 'retry';
+export type DeleteAccountOutcome = 'deleted' | 'unauthorized' | 'not_allowed' | 'open_trade' | 'retry';
 
 /** The confirm button stays disabled until the user has typed DELETE exactly. */
 export function isDeleteConfirmed(input: string): boolean {
@@ -22,7 +22,10 @@ export async function requestAccountDeletion(accessToken: string | undefined): P
     });
     if (res.status === 200) return 'deleted';
     if (res.status === 401) return 'unauthorized';
-    if (res.status === 409) return 'not_allowed';
+    if (res.status === 409) {
+      const body = (await res.json().catch(() => null)) as { reason?: string } | null;
+      return body?.reason === 'open_trade' ? 'open_trade' : 'not_allowed';
+    }
     return 'retry';
   } catch {
     return 'retry';

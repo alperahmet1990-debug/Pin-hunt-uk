@@ -32,6 +32,7 @@ const DELETED_ITEMS = [
 
 const ERROR_MESSAGES = {
   not_allowed: "This account can't be deleted in the app. Please contact PinHunt support.",
+  open_trade: "You have a trade in progress. Cancel it, or finish it first. If pins are already in the post, report a problem on the trade and we'll review it.",
   retry: "We couldn't delete your account. Please check your connection and try again.",
 } as const;
 

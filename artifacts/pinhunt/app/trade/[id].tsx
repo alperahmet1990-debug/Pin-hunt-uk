@@ -301,6 +301,8 @@ export default function TradeScreen() {
   const [showRating,     setShowRating]     = useState(false);
   const [carrier,        setCarrier]        = useState('');
   const [tracking,       setTracking]       = useState('');
+  const [reportOpen,     setReportOpen]     = useState(false);
+  const [reportReason,   setReportReason]   = useState('');
   const [potentialPins,  setPotentialPins]  = useState<PotentialTradePin[]>([]);
   const [bannerDismissed, setBannerDismissed] = useState(false);
 
@@ -432,6 +434,14 @@ export default function TradeScreen() {
     setTracking('');
   };
 
+  const submitProblem = () => {
+    if (!repo || !trade) return;
+    const reason = reportReason.trim();
+    void runAction(() => repo.reportTradeProblem(trade.id, reason));
+    setReportOpen(false);
+    setReportReason('');
+  };
+
   const isInitiator = trade?.initiatorId === userId;
   const isRecipient = trade?.recipientId === userId;
   const messages    = trade?.messages ?? [];
@@ -535,6 +545,12 @@ export default function TradeScreen() {
                 {actions?.nextStep && (
                   <Text style={[styles.nextStep, { color: colors.homeMuted }]}>{actions.nextStep}</Text>
                 )}
+                {trade.problemReason && (
+                  <Text style={[styles.nextStep, { color: colors.homeMuted }]}>Reported: {trade.problemReason}</Text>
+                )}
+                {trade.problemResolutionNote && (
+                  <Text style={[styles.nextStep, { color: colors.homeMuted }]}>PinHunt: {trade.problemResolutionNote}</Text>
+                )}
                 {theirTracking && (
                   <Text selectable style={[styles.nextStep, { color: colors.homeMuted }]}>Their tracking: {theirTracking}</Text>
                 )}
@@ -636,18 +652,49 @@ export default function TradeScreen() {
                   </TouchableOpacity>
                 )}
 
-                {actions?.canReportProblem && (
+                {actions?.canReportProblem && !reportOpen && (
                   <TouchableOpacity
-                    onPress={() => Alert.alert('Report a problem?', 'This stops the trade. It cannot be undone in the app.', [
-                      { text: 'No', style: 'cancel' },
-                      { text: 'Report problem', style: 'destructive', onPress: () => void runAction(() => repo!.reportTradeProblem(trade.id)) },
-                    ])}
+                    onPress={() => setReportOpen(true)}
                     activeOpacity={0.85}
                     accessibilityRole="button"
                     style={[styles.actionBtnFull, { backgroundColor: colors.destructive + '18', borderColor: colors.destructive + '55' }]}
                   >
                     <Text style={[styles.actionBtnLabel, { color: colors.destructive }]}>Report a Problem</Text>
                   </TouchableOpacity>
+                )}
+                {actions?.canReportProblem && reportOpen && (
+                  <>
+                    <TextInput
+                      value={reportReason}
+                      onChangeText={setReportReason}
+                      placeholder="What went wrong? The other collector can read this."
+                      placeholderTextColor={colors.homeMuted}
+                      accessibilityLabel="What went wrong"
+                      multiline
+                      maxLength={500}
+                      style={[styles.reportInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
+                    />
+                    <View style={styles.actionRow}>
+                      <TouchableOpacity
+                        onPress={() => setReportOpen(false)}
+                        activeOpacity={0.85}
+                        accessibilityRole="button"
+                        style={[styles.actionBtn, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
+                      >
+                        <Text style={[styles.actionBtnLabel, { color: colors.homeMuted }]}>Back</Text>
+                      </TouchableOpacity>
+                      <TouchableOpacity
+                        onPress={submitProblem}
+                        disabled={reportReason.trim() === ''}
+                        activeOpacity={0.85}
+                        accessibilityRole="button"
+                        accessibilityState={{ disabled: reportReason.trim() === '' }}
+                        style={[styles.actionBtn, { backgroundColor: colors.destructive + '18', borderColor: colors.destructive + '55', opacity: reportReason.trim() === '' ? 0.5 : 1 }]}
+                      >
+                        <Text style={[styles.actionBtnLabel, { color: colors.destructive }]}>Send Report</Text>
+                      </TouchableOpacity>
+                    </View>
+                  </>
                 )}
 
                 {/* Rate after completion (re-show prompt) */}
@@ -721,6 +768,7 @@ const styles = StyleSheet.create({
   actionBar: { borderTopWidth: StyleSheet.hairlineWidth, paddingHorizontal: spacing.md, paddingTop: spacing.sm + 2, gap: spacing.sm + 2 },
   actionRow: { flexDirection: 'row', gap: spacing.sm + 2 },
   trackingRow: { flexDirection: 'row', gap: spacing.sm },
+  reportInput: { minHeight: 72, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, fontSize: 14, fontFamily: 'Inter_400Regular', borderWidth: 1, borderRadius: radius.sm, textAlignVertical: 'top' },
   nextStep: { fontSize: 13, fontFamily: 'Inter_500Medium', textAlign: 'center' },
   actionBtn: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm },
   actionBtnFull: { alignItems: 'center', paddingVertical: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm },

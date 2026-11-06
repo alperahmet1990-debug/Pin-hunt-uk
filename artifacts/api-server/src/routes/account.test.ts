@@ -147,6 +147,15 @@ describe("DELETE /api/account", () => {
     expect(state.removed).toEqual([]);
   });
 
+  it("returns 409 with a reason while a trade is open, and deletes nothing", async () => {
+    state.prepare = { status: "refused", reason: "open_trade" };
+    const res = await request(app).delete("/api/account").set("Authorization", "Bearer good-token");
+    expect(res.status).toBe(409);
+    expect(res.body.reason).toBe("open_trade");
+    expect(state.deleted).toEqual([]);
+    expect(state.removed).toEqual([]);
+  });
+
   it("returns a generic 500 when a step fails, without leaking details", async () => {
     state.prepareError = { code: "42883", message: "function prepare_account_deletion(uuid) does not exist" };
     const res = await request(app).delete("/api/account").set("Authorization", "Bearer good-token");

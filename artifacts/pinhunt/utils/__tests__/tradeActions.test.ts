@@ -41,6 +41,15 @@ describe('tradeActionsFor', () => {
   });
 });
 
+describe('problem trades', () => {
+  it('tells both collectors the report is being reviewed', () => {
+    const t = trade({ status: 'problem' });
+    expect(tradeActionsFor(t, 'a').nextStep).toMatch(/reviewing/);
+    expect(tradeActionsFor(t, 'b').nextStep).toMatch(/reviewing/);
+    expect(tradeActionsFor(t, 'c').nextStep).toBeUndefined();
+  });
+});
+
 describe('otherSideTracking', () => {
   it("shows the other side's details, not your own", () => {
     const t = trade({ initiatorCarrier: 'Royal Mail', initiatorTracking: 'AB1', recipientTracking: 'CD2' });
@@ -72,7 +81,7 @@ describe('repository trade calls', () => {
     await repo.cancelTrade('t1');
     await repo.markTradePosted('t1', { carrier: 'RM', tracking: 'X1' });
     await repo.markTradeReceived('t1');
-    await repo.reportTradeProblem('t1');
+    await repo.reportTradeProblem('t1', 'Lost');
     expect(rpc.mock.calls).toEqual([
       ['trade_propose', { p_recipient_id: 'b', p_notes: 'hi' }],
       ['trade_accept', { p_trade_id: 't1' }],
@@ -80,7 +89,7 @@ describe('repository trade calls', () => {
       ['trade_cancel', { p_trade_id: 't1' }],
       ['trade_mark_posted', { p_trade_id: 't1', p_carrier: 'RM', p_tracking: 'X1' }],
       ['trade_mark_received', { p_trade_id: 't1' }],
-      ['trade_report_problem', { p_trade_id: 't1' }],
+      ['trade_report_problem', { p_trade_id: 't1', p_reason: 'Lost' }],
     ]);
   });
 
@@ -88,6 +97,19 @@ describe('repository trade calls', () => {
     const { rpc, repo } = setup({ data: { id: 'r1', trade_id: 't1', rater_id: 'a', ratee_id: 'b', is_positive: true }, error: null });
     await repo.createTradeRating({ tradeId: 't1', isPositive: true, comment: 'Nice' });
     expect(rpc).toHaveBeenCalledWith('trade_rate', { p_trade_id: 't1', p_is_positive: true, p_comment: 'Nice' });
+  });
+
+  it('reads and closes problem reports through the admin functions', async () => {
+    const { rpc, repo } = setup({
+      data: [{ id: 't1', initiator_id: 'a', recipient_id: 'b', initiator_username: 'al', problem_reason: 'Lost' }],
+      error: null,
+    });
+    const [report] = await repo.getProblemTrades();
+    expect(report).toMatchObject({ id: 't1', initiatorUsername: 'al', reason: 'Lost' });
+    await repo.resolveTradeProblem('t1', 'cancelled', 'Refunded');
+    expect(rpc).toHaveBeenLastCalledWith('admin_resolve_trade_problem', {
+      p_trade_id: 't1', p_outcome: 'cancelled', p_note: 'Refunded',
+    });
   });
 
   it('maps the returned row', async () => {

@@ -54,6 +54,13 @@ router.delete("/account", requireUser, async (req: AuthedRequest, res: Response)
 
     if (result.status === "refused") {
       logger.info({ route: "account.delete", reason: result.reason }, "account deletion refused");
+      if (result.reason === "open_trade") {
+        res.status(409).json({
+          error: "Finish or cancel your open trades before deleting your account.",
+          reason: "open_trade",
+        });
+        return;
+      }
       res.status(409).json({ error: "This account can't be deleted in the app. Please contact support." });
       return;
     }

@@ -479,10 +479,32 @@ export interface Trade {
   recipientReceivedAt?: string;
   problemReportedBy?: string;
   problemReportedAt?: string;
+  problemReason?: string;
+  problemResolutionNote?: string;
   items?: TradeItem[];
   messages?: TradeMessage[];
   createdAt: string;
   updatedAt: string;
+}
+
+/** An open problem report, as admins see it. */
+export interface ProblemTrade {
+  id: string;
+  initiatorId: string;
+  recipientId: string;
+  initiatorUsername?: string;
+  recipientUsername?: string;
+  initiatorPostedAt?: string;
+  recipientPostedAt?: string;
+  initiatorTracking?: string;
+  recipientTracking?: string;
+  initiatorCarrier?: string;
+  recipientCarrier?: string;
+  initiatorReceivedAt?: string;
+  recipientReceivedAt?: string;
+  reportedBy?: string;
+  reportedAt?: string;
+  reason?: string;
 }
 
 export interface MarkTradePostedInput {

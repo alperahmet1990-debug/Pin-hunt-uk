@@ -1,6 +1,7 @@
 import type {
   AddUserPinInput,
   MarkTradePostedInput,
+  ProblemTrade,
   AdminReviewInput,
   CommunityPost,
   Conversation,
@@ -170,8 +171,14 @@ export interface IUserPinRepository {
   /** Marks the other side's pins as received. The trade completes when both sides have. */
   markTradeReceived(tradeId: string): Promise<Trade>;
 
-  /** Either side, once pins have been posted. */
-  reportTradeProblem(tradeId: string): Promise<Trade>;
+  /** Either side, once pins have been posted. Both collectors can read the reason. */
+  reportTradeProblem(tradeId: string, reason: string): Promise<Trade>;
+
+  /** Admins: open problem reports, oldest first. */
+  getProblemTrades(): Promise<ProblemTrade[]>;
+
+  /** Admins: close a report on someone else's trade. */
+  resolveTradeProblem(tradeId: string, outcome: 'completed' | 'cancelled', note?: string): Promise<void>;
 
   /** Send a message in a trade thread. */
   sendTradeMessage(tradeId: string, senderId: string, message: string): Promise<TradeMessage>;

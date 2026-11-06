@@ -47,6 +47,7 @@ interface LinkItem {
 
 const MODERATION_LINKS: LinkItem[] = [
   { icon: 'flag',   title: 'Community',             description: 'Reported posts and comments.',                      href: '/admin/community-moderation' as Href },
+  { icon: 'alert-triangle', title: 'Trade Problems', description: 'Problem reports on trades.', href: '/admin/trade-problems' as Href },
   { icon: 'inbox',  title: 'Pin Submissions',       description: 'New pins collectors want added to the catalogue.',  href: '/admin/submissions' as Href },
   { icon: 'camera', title: 'Contributed Photos',    description: 'Photos collectors sent from Scan or the catalogue.', href: '/admin/contributed-images' as Href },
 ];

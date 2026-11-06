@@ -327,8 +327,6 @@ export interface UpdateProfileInput {
   town?: string;
   county?: string;
   country?: string;
-  /** Update the stored postcode (used for geocoding pre-fill). */
-  postcode?: string;
   nearbyDiscoveryEnabled?: boolean;
   preferredRadiusMiles?: number;
   openToLocalTrades?: boolean;

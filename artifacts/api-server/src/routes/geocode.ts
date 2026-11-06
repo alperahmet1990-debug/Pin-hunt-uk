@@ -48,7 +48,7 @@ async function geocodeUkPostcode(
     if (!data.result?.latitude || !data.result?.longitude) return null;
     return { lat: data.result.latitude, lng: data.result.longitude };
   } catch (err) {
-    logger.warn({ err, outwardCode: cleaned.slice(0, -3) }, '[geocode] postcodes.io request failed');
+    logger.warn({ err }, '[geocode] postcodes.io request failed');
     return null;
   }
 }
@@ -68,6 +68,10 @@ router.post('/geocode', async (req: Request, res: Response) => {
   const { postcode } = req.body as { postcode?: unknown };
   if (typeof postcode !== 'string' || !postcode.trim()) {
     res.status(400).json({ error: '"postcode" is required' });
+    return;
+  }
+  if (postcode.length > 12 || !/^[A-Za-z0-9 ]+$/.test(postcode)) {
+    res.status(400).json({ error: 'That doesn\'t look like a UK postcode.' });
     return;
   }
 

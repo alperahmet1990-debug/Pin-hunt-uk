@@ -50,16 +50,10 @@ describe('profile privacy', () => {
     expect(client.rpc).not.toHaveBeenCalled();
   });
 
-  it('saves postcode outside the upsert', async () => {
+  it('never writes postcode or coordinates from the app', async () => {
     const { upserts, updates, repo } = setup({ data: 'AA1 1AA', error: null });
-    await repo.updateMyProfile('u1', { bio: 'Hi', postcode: 'AA1 1AA' });
-    expect(upserts[0]).not.toHaveProperty('postcode');
-    expect(updates).toEqual([{ postcode: 'AA1 1AA' }]);
-  });
-
-  it('leaves postcode alone when it isn’t being changed', async () => {
-    const { updates, repo } = setup({ data: 'AA1 1AA', error: null });
     await repo.updateMyProfile('u1', { bio: 'Hi' });
+    expect(Object.keys(upserts[0])).toEqual(expect.not.arrayContaining(['postcode', 'approx_lat', 'approx_lng']));
     expect(updates).toEqual([]);
   });
 });

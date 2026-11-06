@@ -416,8 +416,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     if (input.openToLocalTrades !== undefined) upsertData.open_to_local_trades = input.openToLocalTrades;
     if (input.openToPostalTrades !== undefined) upsertData.open_to_postal_trades = input.openToPostalTrades;
     if (input.happyToTravel !== undefined) upsertData.happy_to_travel = input.happyToTravel;
-    // Saved separately: an upsert has to read every column it writes, and
-    // postcode isn't readable by clients (migration 062).
+
     const { data, error } = await this.client
       .from('profiles')
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -438,13 +437,6 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     }
 
     if (error) throw new Error(error.message);
-    if (input.postcode !== undefined) {
-      const saved = await this.client
-        .from('profiles')
-        .update({ postcode: input.postcode ?? null } as never)
-        .eq('id', userId);
-      if (saved.error) throw new Error(saved.error.message);
-    }
     return this.withMyPostcode(rowToProfile(data as unknown as Record<string, unknown>));
   }
 

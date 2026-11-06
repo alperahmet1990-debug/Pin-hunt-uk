@@ -29,7 +29,7 @@ import { UserSafetySheet } from '@/components/UserSafetySheet';
 import { Button } from '@/components/ui/Button';
 import { useToast } from '@/components/ui/Toast';
 import { otherParticipantId } from '@/utils/blockedUsers';
-import { tradeCardTitle } from '@/utils/tradeActions';
+import { canProposeInChat, tradeCardTitle } from '@/utils/tradeActions';
 
 /** Space between messages (FlatList content has no `gap`). */
 function MessageGap() {
@@ -270,7 +270,6 @@ export default function ChatScreen() {
     });
     setSelectedPinIds([]);
   };
-  const tradeRelated = contextPost?.postType === 'for_trade' || Boolean(conv?.tradeId);
   const agreeTrade = async () => {
     if (!repo || !userId || !conv) return;
     try {
@@ -372,7 +371,7 @@ export default function ChatScreen() {
                       </Text>
                     </View>
                   )}
-                  {tradeRelated && (conv?.tradeId ? (
+                  {!!conv?.tradeId && (
                     <View style={[styles.agreedCard, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
                       <Text style={[styles.agreedTitle, { color: colors.homeInk }]}>{tradeCardTitle(tradeStatus)}</Text>
                       <Text style={[styles.contextText, { color: colors.homeMuted }]}>Each of you posts your own pins. Use a tracked service.</Text>
@@ -387,12 +386,13 @@ export default function ChatScreen() {
                         <Feather name="chevron-right" size={13} color={colors.homeCoral} />
                       </TouchableOpacity>
                     </View>
-                  ) : (
+                  )}
+                  {!!otherId && canProposeInChat(conv?.tradeId, tradeStatus) && (
                     <TouchableOpacity accessibilityRole="button" onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
                       <Feather name="check-circle" size={16} color={colors.homeCoral} />
                       <Text style={[styles.agreeText, { color: colors.homeCoral }]}>Propose Trade</Text>
                     </TouchableOpacity>
-                  ))}
+                  )}
                   {messages.length === 0 && (
                     <View style={styles.emptyMessages}>
                       <Text style={[styles.emptyMsgText, { color: colors.homeMuted }]}>

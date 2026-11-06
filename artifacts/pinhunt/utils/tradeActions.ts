@@ -59,6 +59,15 @@ export function otherSideTracking(trade: Trade, userId: string | null | undefine
   return [carrier, tracking].filter(Boolean).join(' · ') || undefined;
 }
 
+/**
+ * Whether a chat can offer Propose Trade: there's no trade yet, or the last one
+ * has finished. While the status of a linked trade is loading, the answer is no.
+ */
+export function canProposeInChat(tradeId: string | null | undefined, status: Trade['status'] | undefined): boolean {
+  if (!tradeId) return true;
+  return status === 'rejected' || status === 'cancelled' || status === 'completed';
+}
+
 /** The chat card's heading for a linked trade. */
 export function tradeCardTitle(status: Trade['status'] | undefined): string {
   switch (status) {

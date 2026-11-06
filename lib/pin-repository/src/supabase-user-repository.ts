@@ -617,7 +617,19 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       .order('updated_at', { ascending: false });
 
     if (error) throw new Error(error.message);
-    return (data as Record<string, unknown>[]).map(rowToTrade);
+    const trades = (data as Record<string, unknown>[]).map(rowToTrade);
+    const otherIds = [...new Set(trades.map(t => (t.initiatorId === userId ? t.recipientId : t.initiatorId)))];
+    if (otherIds.length === 0) return trades;
+
+    // Names are a nicety: a list without them still gets a collector to the trade.
+    const { data: names } = await this.client.from('profiles').select('id, username').in('id', otherIds);
+    const usernames = new Map(
+      ((names ?? []) as { id: string; username: string | null }[]).map(n => [n.id, n.username ?? undefined]),
+    );
+    return trades.map(t => ({
+      ...t,
+      otherUsername: usernames.get(t.initiatorId === userId ? t.recipientId : t.initiatorId),
+    }));
   }
 
   async getTrade(tradeId: string): Promise<Trade | null> {
@@ -659,6 +671,10 @@ class SupabaseUserPinRepository implements IUserPinRepository {
 
   proposeTrade(recipientId: string, notes?: string): Promise<Trade> {
     return this.callTradeRpc('trade_propose', { p_recipient_id: recipientId, p_notes: notes ?? null });
+  }
+
+  proposeTradeInChat(conversationId: string, notes?: string): Promise<Trade> {
+    return this.callTradeRpc('trade_propose_in_chat', { p_conversation_id: conversationId, p_notes: notes ?? null });
   }
 
   acceptTrade(tradeId: string): Promise<Trade> {
@@ -2555,13 +2571,6 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     };
   }
 
-  async linkConversationTrade(conversationId: string, tradeId: string): Promise<void> {
-    const { error } = await this.client.rpc('link_conversation_trade', {
-      p_conversation_id: conversationId,
-      p_trade_id: tradeId,
-    });
-    if (error) throw new Error(error.message);
-  }
 }
 
 // ─── Factory ──────────────────────────────────────────────────────────────────

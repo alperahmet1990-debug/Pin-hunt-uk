@@ -449,7 +449,6 @@ export default function TradeScreen() {
   const isInitiator = trade?.initiatorId === userId;
   const isRecipient = trade?.recipientId === userId;
   const messages    = trade?.messages ?? [];
-  const isActive    = trade && !['rejected', 'completed', 'cancelled'].includes(trade.status);
   const actions     = trade ? tradeActionsFor(trade, userId) : null;
   const theirTracking = trade ? otherSideTracking(trade, userId) : undefined;
   const botPad      = Platform.OS === 'web' ? 24 : insets.bottom + 8;
@@ -538,10 +537,10 @@ export default function TradeScreen() {
                 />
               )}
                 {trade.problemReason && (
-                  <Text style={[styles.problemNote, { color: colors.homeMuted }]}>Reported: {trade.problemReason}</Text>
+                  <Text style={[styles.problemNote, { color: colors.homeMuted }]}>A collector reported: “{trade.problemReason}”</Text>
                 )}
                 {trade.problemResolutionNote && (
-                  <Text style={[styles.problemNote, { color: colors.homeMuted }]}>PinHunt: {trade.problemResolutionNote}</Text>
+                  <Text style={[styles.resolutionNote, { color: colors.homeInk }]}>From PinHunt: {trade.problemResolutionNote}</Text>
                 )}
             </ScrollView>
 
@@ -714,7 +713,7 @@ export default function TradeScreen() {
                 )}
 
                 {/* Message input (active trades only) */}
-                {isActive && (
+                {actions?.canMessage && (
                   <View style={[styles.inputRow, { borderTopColor: colors.homeLine }]}>
                     <TextInput
                       value={msgText}
@@ -772,6 +771,7 @@ const styles = StyleSheet.create({
   actionBar: { borderTopWidth: StyleSheet.hairlineWidth, paddingHorizontal: spacing.md, paddingTop: spacing.sm + 2, gap: spacing.sm + 2 },
   actionRow: { flexDirection: 'row', gap: spacing.sm + 2 },
   trackingRow: { flexDirection: 'row', gap: spacing.sm },
+  resolutionNote: { fontSize: 13, fontFamily: 'Inter_600SemiBold', paddingHorizontal: spacing.md, paddingVertical: spacing.xs },
   problemNote: { fontSize: 13, fontFamily: 'Inter_500Medium', paddingHorizontal: spacing.md, paddingVertical: spacing.xs },
   reportInput: { minHeight: 72, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, fontSize: 14, fontFamily: 'Inter_400Regular', borderWidth: 1, borderRadius: radius.sm, textAlignVertical: 'top' },
   nextStep: { fontSize: 13, fontFamily: 'Inter_500Medium', textAlign: 'center' },

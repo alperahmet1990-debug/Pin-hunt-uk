@@ -14,6 +14,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { router } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
 import { radius, spacing } from '@/constants/theme';
@@ -32,7 +33,7 @@ const DELETED_ITEMS = [
 
 const ERROR_MESSAGES = {
   not_allowed: "This account can't be deleted in the app. Please contact PinHunt support.",
-  open_trade: "You have a trade in progress. Cancel it, or finish it first. If pins are already in the post, report a problem on the trade and we'll review it.",
+  open_trade: "You have a trade in progress. Open your trades to cancel it or finish it. If pins are already in the post, report a problem on the trade and we'll review it.",
   retry: "We couldn't delete your account. Please check your connection and try again.",
 } as const;
 
@@ -91,6 +92,16 @@ export default function DeleteAccountScreen() {
             <Text accessibilityRole="alert" style={[styles.error, { color: colors.destructive }]}>
               {ERROR_MESSAGES[error]}
             </Text>
+          )}
+          {error === 'open_trade' && (
+            <TouchableOpacity
+              onPress={() => router.push('/my-trades')}
+              accessibilityRole="button"
+              accessibilityLabel="View my trades"
+              style={[styles.button, { backgroundColor: colors.homeAqua }]}
+            >
+              <Text style={[styles.buttonText, { color: colors.homeInk }]}>View my trades</Text>
+            </TouchableOpacity>
           )}
           <TouchableOpacity
             onPress={confirm}

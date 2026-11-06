@@ -9,6 +9,8 @@ export interface TradeActions {
   canUpdateTracking: boolean;
   canMarkReceived: boolean;
   canReportProblem: boolean;
+  /** The server only takes trade messages while a trade is pending or accepted. */
+  canMessage: boolean;
   /** One line saying what the trade is waiting for, from this user's side. */
   nextStep?: string;
 }
@@ -47,6 +49,7 @@ export function tradeActionsFor(trade: Trade, userId: string | null | undefined)
     canUpdateTracking: isParticipant && accepted && iPosted,
     canMarkReceived: isParticipant && accepted && theyPosted && !iReceived,
     canReportProblem: isParticipant && accepted && (iPosted || theyPosted),
+    canMessage: isParticipant && (pending || accepted),
     nextStep: nextStep(),
   };
 }
@@ -66,6 +69,32 @@ export function otherSideTracking(trade: Trade, userId: string | null | undefine
 export function canProposeInChat(tradeId: string | null | undefined, status: Trade['status'] | undefined): boolean {
   if (!tradeId) return true;
   return status === 'rejected' || status === 'cancelled' || status === 'completed';
+}
+
+const TRADE_STATUS_LABEL: Record<Trade['status'], string> = {
+  pending: 'Proposed',
+  accepted: 'In progress',
+  problem: 'Problem reported',
+  completed: 'Completed',
+  rejected: 'Declined',
+  cancelled: 'Cancelled',
+};
+
+export function tradeStatusLabel(status: Trade['status']): string {
+  return TRADE_STATUS_LABEL[status];
+}
+
+/** Trades still needing someone to act. These are what hold account deletion. */
+export function isOpenTrade(status: Trade['status']): boolean {
+  return status === 'pending' || status === 'accepted' || status === 'problem';
+}
+
+/** Active trades first, then past ones. Each group keeps its given order. */
+export function groupTrades(trades: Trade[]): { active: Trade[]; past: Trade[] } {
+  return {
+    active: trades.filter(t => isOpenTrade(t.status)),
+    past: trades.filter(t => !isOpenTrade(t.status)),
+  };
 }
 
 /** The chat card's heading for a linked trade. */

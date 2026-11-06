@@ -7,6 +7,8 @@ const mockSignOut = jest.fn().mockResolvedValue(undefined);
 jest.mock('@/context/AuthContext', () => ({
   useAuth: () => ({ session: { access_token: 'tok' }, signOut: mockSignOut }),
 }));
+const mockPush = jest.fn();
+jest.mock('expo-router', () => ({ router: { push: (...args: unknown[]) => mockPush(...args) } }));
 jest.mock('@/hooks/useColors', () => ({
   useColors: () => new Proxy({}, { get: () => '#000000' }),
 }));
@@ -65,5 +67,14 @@ describe('DeleteAccountScreen', () => {
     const { getByRole } = await setup('DELETE');
     await fireEvent.press(getByRole('button', { name: 'Delete my account' }));
     await waitFor(() => expect(mockSignOut).toHaveBeenCalledTimes(1));
+  });
+
+  it('links to the trades list when an open trade holds deletion', async () => {
+    mockRequest.mockResolvedValue('open_trade');
+    const utils = await setup('DELETE');
+    await fireEvent.press(utils.getByLabelText('Delete my account'));
+    const link = await utils.findByLabelText('View my trades');
+    await fireEvent.press(link);
+    expect(mockPush).toHaveBeenCalledWith('/my-trades');
   });
 });

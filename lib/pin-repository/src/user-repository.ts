@@ -147,7 +147,7 @@ export interface IUserPinRepository {
 
   // ── Trades ───────────────────────────────────────────────────────────────
 
-  /** All trades where the user is initiator or recipient. */
+  /** All trades where the user is initiator or recipient, newest first, with the other collector's username. */
   getUserTrades(userId: string): Promise<Trade[]>;
 
   /** Fetch a single trade with items and messages. */
@@ -155,6 +155,9 @@ export interface IUserPinRepository {
 
   /** Propose a trade to another collector. */
   proposeTrade(recipientId: string, notes?: string): Promise<Trade>;
+
+  /** Propose to the other person in a chat and link it, in one step. */
+  proposeTradeInChat(conversationId: string, notes?: string): Promise<Trade>;
 
   /** Recipient only, while pending. */
   acceptTrade(tradeId: string): Promise<Trade>;
@@ -568,7 +571,4 @@ export interface IUserPinRepository {
 
   /** Send a message in an existing conversation. */
   sendConversationMessage(conversationId: string, senderId: string, body: string, input?: SendConversationMessageInput): Promise<ConversationMessage>;
-
-  /** Link an agreed trade to a conversation. */
-  linkConversationTrade(conversationId: string, tradeId: string): Promise<void>;
 }

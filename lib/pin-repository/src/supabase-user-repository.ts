@@ -303,9 +303,10 @@ function rowToTrade(row: Record<string, unknown>): Trade {
 }
 
 // ─── Profile column lists ─────────────────────────────────────────────────────
-// approx_lat and approx_lng are REVOKED for the authenticated role
-// (migration 008). Using select('*') on profiles would fail for those columns.
-// All profile reads must use an explicit safe column list.
+// Signed-in clients read profiles from a column list (migration 062), so
+// select('*') fails and every read must use an explicit list. Postcode and
+// coordinates are not on it. A collector's own postcode comes from
+// get_my_postcode().
 //
 // BASE_PROFILE_COLUMNS: columns present in the initial schema (migrations 001–006).
 //   Used as a fallback when migration 007/008 haven't been applied yet.
@@ -324,7 +325,6 @@ const SAFE_PROFILE_COLUMNS = [
   // migration 007 — local discovery fields (coordinates excluded)
   'town', 'county', 'country',
   'has_location_set',           // safe boolean — kept in sync by trigger (migration 008)
-  'postcode',                   // last geocoded postcode — display-safe, for UX pre-fill (migration 012)
   'nearby_discovery_enabled', 'preferred_radius_miles',
   'open_to_local_trades', 'open_to_postal_trades', 'happy_to_travel',
 ].join(', ');
@@ -382,7 +382,15 @@ class SupabaseUserPinRepository implements IUserPinRepository {
   }
 
   async getMyProfile(userId: string): Promise<Profile | null> {
-    return this.getProfile(userId);
+    const profile = await this.getProfile(userId);
+    return profile ? this.withMyPostcode(profile) : null;
+  }
+
+  /** Adds the signed-in collector's postcode. The profile is still usable without it. */
+  private async withMyPostcode(profile: Profile): Promise<Profile> {
+    const { data, error } = await (this.client as any).rpc('get_my_postcode');
+    if (error || typeof data !== 'string') return profile;
+    return { ...profile, postcode: data };
   }
 
   async updateProfile(userId: string, input: UpdateProfileInput): Promise<Profile> {
@@ -408,8 +416,8 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     if (input.openToLocalTrades !== undefined) upsertData.open_to_local_trades = input.openToLocalTrades;
     if (input.openToPostalTrades !== undefined) upsertData.open_to_postal_trades = input.openToPostalTrades;
     if (input.happyToTravel !== undefined) upsertData.happy_to_travel = input.happyToTravel;
-    if (input.postcode !== undefined) upsertData.postcode = input.postcode ?? null;
-
+    // Saved separately: an upsert has to read every column it writes, and
+    // postcode isn't readable by clients (migration 062).
     const { data, error } = await this.client
       .from('profiles')
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -430,7 +438,14 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     }
 
     if (error) throw new Error(error.message);
-    return rowToProfile(data as unknown as Record<string, unknown>);
+    if (input.postcode !== undefined) {
+      const saved = await this.client
+        .from('profiles')
+        .update({ postcode: input.postcode ?? null } as never)
+        .eq('id', userId);
+      if (saved.error) throw new Error(saved.error.message);
+    }
+    return this.withMyPostcode(rowToProfile(data as unknown as Record<string, unknown>));
   }
 
   async updateMyProfile(userId: string, input: UpdateProfileInput): Promise<Profile> {

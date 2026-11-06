@@ -48,7 +48,7 @@ async function geocodeUkPostcode(
     if (!data.result?.latitude || !data.result?.longitude) return null;
     return { lat: data.result.latitude, lng: data.result.longitude };
   } catch (err) {
-    logger.warn({ err, postcode }, '[geocode] postcodes.io request failed');
+    logger.warn({ err, outwardCode: cleaned.slice(0, -3) }, '[geocode] postcodes.io request failed');
     return null;
   }
 }

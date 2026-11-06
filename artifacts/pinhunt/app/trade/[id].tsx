@@ -28,7 +28,8 @@ import {
   persistBannerDismissal,
   tradeBannerDismissalKey,
 } from '@/utils/tradeBannerDismissals';
-import { otherSideTracking, tradeActionsFor } from '@/utils/tradeActions';
+import { otherSideTracking, otherUserIdFor, sendFailureLine, tradeActionsFor } from '@/utils/tradeActions';
+import { useBlockedUsers } from '@/context/BlockedUsersContext';
 import type { PotentialTradePin, Trade, TradeMessage, TradeStatus } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
 
@@ -292,6 +293,7 @@ export default function TradeScreen() {
   const router  = useRouter();
   const { repo, userId } = useMarketplace();
 
+  const { isBlocked } = useBlockedUsers();
   const [trade,          setTrade]          = useState<Trade | null>(null);
   const [loading,        setLoading]        = useState(true);
   const [error,          setError]          = useState<string | null>(null);
@@ -407,7 +409,7 @@ export default function TradeScreen() {
       await load();
       setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 100);
     } catch (e) {
-      Alert.alert('Send failed', e instanceof Error ? e.message : 'Try again.');
+      Alert.alert('Send failed', sendFailureLine(e));
     } finally {
       setSending(false);
     }
@@ -450,6 +452,7 @@ export default function TradeScreen() {
   const isRecipient = trade?.recipientId === userId;
   const messages    = trade?.messages ?? [];
   const actions     = trade ? tradeActionsFor(trade, userId) : null;
+  const canMessage  = !!actions?.canMessage && !isBlocked(otherUserIdFor(trade, userId));
   const theirTracking = trade ? otherSideTracking(trade, userId) : undefined;
   const botPad      = Platform.OS === 'web' ? 24 : insets.bottom + 8;
 
@@ -487,8 +490,8 @@ export default function TradeScreen() {
             {/* Trade note */}
             {trade.notes ? (
               <View style={[styles.noteBox, { backgroundColor: colors.homeAqua, borderBottomColor: colors.homeLine }]}>
-                <Feather name="info" size={12} color={colors.homeMuted} />
-                <Text style={[styles.noteText, { color: colors.homeMuted }]}>{trade.notes}</Text>
+                <Feather name="message-circle" size={12} color={colors.homeMuted} />
+                <Text style={[styles.noteText, { color: colors.homeMuted }]}>Note from a collector: {trade.notes}</Text>
               </View>
             ) : null}
 
@@ -537,7 +540,10 @@ export default function TradeScreen() {
                 />
               )}
                 {trade.problemReason && (
-                  <Text style={[styles.problemNote, { color: colors.homeMuted }]}>A collector reported: “{trade.problemReason}”</Text>
+                  <View style={[styles.reportBlock, { borderColor: colors.homeLine }]}>
+                    <Text style={[styles.reportLabel, { color: colors.homeMuted }]}>Written by a collector</Text>
+                    <Text style={[styles.problemNote, { color: colors.homeInk }]}>{trade.problemReason}</Text>
+                  </View>
                 )}
                 {trade.problemResolutionNote && (
                   <Text style={[styles.resolutionNote, { color: colors.homeInk }]}>From PinHunt: {trade.problemResolutionNote}</Text>
@@ -713,7 +719,7 @@ export default function TradeScreen() {
                 )}
 
                 {/* Message input (active trades only) */}
-                {actions?.canMessage && (
+                {canMessage && (
                   <View style={[styles.inputRow, { borderTopColor: colors.homeLine }]}>
                     <TextInput
                       value={msgText}
@@ -772,7 +778,9 @@ const styles = StyleSheet.create({
   actionRow: { flexDirection: 'row', gap: spacing.sm + 2 },
   trackingRow: { flexDirection: 'row', gap: spacing.sm },
   resolutionNote: { fontSize: 13, fontFamily: 'Inter_600SemiBold', paddingHorizontal: spacing.md, paddingVertical: spacing.xs },
-  problemNote: { fontSize: 13, fontFamily: 'Inter_500Medium', paddingHorizontal: spacing.md, paddingVertical: spacing.xs },
+  reportBlock: { marginHorizontal: spacing.md, marginVertical: spacing.xs, padding: spacing.sm, borderWidth: 1, borderRadius: radius.sm, gap: 2 },
+  reportLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  problemNote: { fontSize: 13, fontFamily: 'Inter_500Medium' },
   reportInput: { minHeight: 72, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, fontSize: 14, fontFamily: 'Inter_400Regular', borderWidth: 1, borderRadius: radius.sm, textAlignVertical: 'top' },
   nextStep: { fontSize: 13, fontFamily: 'Inter_500Medium', textAlign: 'center' },
   actionBtn: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm },

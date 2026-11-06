@@ -67,7 +67,7 @@ declare
   t2 uuid := '06000000-0000-4000-8000-00000000d002';
 begin
   insert into conversations (id, participant_a_id, participant_b_id) values (conv, a, b);
-  insert into trades (id, initiator_id, recipient_id, status) values (t2, b, a, 'pending');
+  insert into trades (id, initiator_id, recipient_id, status) values (t2, b, a, 'accepted');
 
   -- Propose in chat: one step, recipient from the chat
   assert pg_temp.v060_refused(c, format('select trade_propose_in_chat(%L)', conv), 'not found'), '2a bystander proposed';

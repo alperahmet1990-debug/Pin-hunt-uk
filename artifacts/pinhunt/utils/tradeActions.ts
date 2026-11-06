@@ -54,6 +54,25 @@ export function tradeActionsFor(trade: Trade, userId: string | null | undefined)
   };
 }
 
+export function otherUserIdFor(trade: Trade | null, userId: string | null | undefined): string | undefined {
+  if (!trade) return undefined;
+  return trade.initiatorId === userId ? trade.recipientId : trade.initiatorId;
+}
+
+/** Trade messages are refused by database rules, so never show that wording. */
+export function sendFailureLine(error: unknown): string {
+  const message = error instanceof Error ? error.message : '';
+  return /row-level security|permission denied/i.test(message)
+    ? "This message can't be sent on this trade right now."
+    : 'Check your connection and try again.';
+}
+
+/** The server's own wording for a refused proposal, if it's one written for collectors. */
+export function proposalRefusalLine(error: unknown): string | undefined {
+  const message = error instanceof Error ? error.message : '';
+  return /in progress|already a proposal|too many proposals|isn't available/i.test(message) ? message : undefined;
+}
+
 /** The other collector's tracking details, if they gave any. */
 export function otherSideTracking(trade: Trade, userId: string | null | undefined): string | undefined {
   const isInitiator = trade.initiatorId === userId;
@@ -84,7 +103,7 @@ export function tradeStatusLabel(status: Trade['status']): string {
   return TRADE_STATUS_LABEL[status];
 }
 
-/** Trades still needing someone to act. These are what hold account deletion. */
+/** Trades still needing someone to act. Accepted and problem trades also hold account deletion. */
 export function isOpenTrade(status: Trade['status']): boolean {
   return status === 'pending' || status === 'accepted' || status === 'problem';
 }

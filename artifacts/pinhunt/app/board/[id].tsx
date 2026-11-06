@@ -573,7 +573,18 @@ export default function BoardDetailScreen() {
             </TouchableOpacity>
           </View>
 
-          {eligiblePins.length === 0 ? (
+          {ownedPool.length === 0 ? (
+            <EmptyState
+              icon="search"
+              title="You don't have any pins yet"
+              subtitle="Add pins to your collection, then you can put them on this board."
+              actionLabel="Browse Catalogue"
+              onAction={() => {
+                setAddModalVisible(false);
+                router.push('/browse-catalogue');
+              }}
+            />
+          ) : eligiblePins.length === 0 ? (
             <EmptyState
               icon="check-circle"
               title="All your eligible pins are already on this board."

@@ -26,7 +26,7 @@ import { getPinImageSource } from '@/utils/pinImage';
 import { collectionStatusLine } from '@/utils/collectionStatusLine';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { ScreenContainer, Chip, MetaRow, ValueDisplay, PrimaryActionBar, SetProgressBar, CompactPinTile } from '@/components/ui';
-import { ScreenHeader } from '@/components/ui/ScreenHeader';
+import { ScreenHeader, useHeaderTopInset } from '@/components/ui/ScreenHeader';
 import type { PrimaryActionBarAction } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
 import { PLATFORM_CONFIG, CURRENCY_SYMBOLS } from '@/utils/marketplaceUrl';
@@ -43,7 +43,8 @@ export default function PinDetailScreen() {
   const colors = useColors();
   const screen = useWindowDimensions();
   // Capped so the title and Add to Collection fit above the fold at 320×568 (B-P2-07).
-  const { hero: heroHeight, card: imageCard } = pinHeroSize(screen.width, screen.height);
+  const topInset = useHeaderTopInset();
+  const { hero: heroHeight, card: imageCard } = pinHeroSize(screen.width, screen.height, topInset);
   const router = useRouter();
   const { collection, getEntry, markViewed, setStatus } = useCollection();
   const { customBoards } = useBoards();
@@ -205,7 +206,7 @@ export default function PinDetailScreen() {
           colors={[colors.homeCoralDeep, colors.homeCoral, colors.homeSand]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
-          style={[styles.hero, { height: heroHeight }]}
+          style={[styles.hero, { height: heroHeight, paddingTop: topInset }]}
         >
           <ScreenHeader
             overlay

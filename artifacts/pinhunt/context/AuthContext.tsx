@@ -229,7 +229,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         password,
         options: {
           emailRedirectTo: SIGNUP_CONFIRM_REDIRECT,
-          data: { display_name: displayName?.trim() || email },
+          // Blank, not the email: display_name is public. The username is chosen next.
+          data: { display_name: displayName?.trim() ?? '' },
         },
       });
       if (error) {

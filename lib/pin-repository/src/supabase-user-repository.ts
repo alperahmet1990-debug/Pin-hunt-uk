@@ -1,6 +1,7 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import type { IUserPinRepository } from './user-repository';
 import { PinRepositoryError } from './repository';
+import { safeDisplayName } from './display-name';
 import type {
   AddUserPinInput,
   AdminReviewInput,
@@ -146,7 +147,7 @@ function rowToProfile(row: Record<string, unknown>): Profile {
   return {
     id: row.id as string,
     username: (row.username as string | null) ?? undefined,
-    displayName: (row.display_name as string | null) ?? undefined,
+    displayName: safeDisplayName(row.display_name),
     avatarUrl: (row.avatar_url as string | null) ?? undefined,
     bio: (row.bio as string | null) ?? undefined,
     location: (row.location as string | null) ?? undefined,
@@ -179,7 +180,7 @@ function rowToPublicProfile(row: Record<string, unknown>): PublicProfile {
   return {
     id: row.id as string,
     username: row.username as string,
-    displayName: (row.display_name as string | null) ?? undefined,
+    displayName: safeDisplayName(row.display_name),
     avatarUrl: (row.avatar_url as string | null) ?? undefined,
     bio: (row.bio as string | null) ?? undefined,
     tradingRegion: (row.trading_region as string | null) ?? undefined,
@@ -788,7 +789,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       return {
         ...rowToExternalSaleListing(row),
         sellerUsername: (profileRow?.username as string | null) ?? undefined,
-        sellerDisplayName: (profileRow?.display_name as string | null) ?? undefined,
+        sellerDisplayName: safeDisplayName(profileRow?.display_name),
       };
     });
   }
@@ -1476,7 +1477,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     return ((data ?? []) as Record<string, unknown>[]).map(row => ({
       id: row.id as string,
       username: (row.username as string | null) ?? undefined,
-      displayName: (row.display_name as string | null) ?? undefined,
+      displayName: safeDisplayName(row.display_name),
       avatarUrl: (row.avatar_url as string | null) ?? undefined,
       isAppCreator: row.is_app_creator === true,
       isAdmin: row.is_admin === true,
@@ -1539,7 +1540,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     return (profileData as Record<string, unknown>[]).map(p => ({
       id: p.id as string,
       username: p.username as string,
-      displayName: (p.display_name as string | null) ?? undefined,
+      displayName: safeDisplayName(p.display_name),
       avatarUrl: (p.avatar_url as string | null) ?? undefined,
       bio: (p.bio as string | null) ?? undefined,
       tradingRegion: (p.trading_region as string | null) ?? undefined,
@@ -1741,7 +1742,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
         ? {
             id: authorRow.id as string,
             username: authorRow.username as string,
-            displayName: (authorRow.display_name as string | null) ?? undefined,
+            displayName: safeDisplayName(authorRow.display_name),
             avatarUrl: (authorRow.avatar_url as string | null) ?? undefined,
             bio: (authorRow.bio as string | null) ?? undefined,
             tradingRegion: (authorRow.trading_region as string | null) ?? undefined,
@@ -1960,7 +1961,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
         ? {
             id: authorRow.id as string,
             username: authorRow.username as string,
-            displayName: (authorRow.display_name as string | null) ?? undefined,
+            displayName: safeDisplayName(authorRow.display_name),
             avatarUrl: (authorRow.avatar_url as string | null) ?? undefined,
             bio: (authorRow.bio as string | null) ?? undefined,
             tradingRegion: (authorRow.trading_region as string | null) ?? undefined,
@@ -2273,7 +2274,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
         ? {
             id: otherProfileRow.id as string,
             username: (otherProfileRow.username as string) ?? '',
-            displayName: (otherProfileRow.display_name as string | null) ?? undefined,
+            displayName: safeDisplayName(otherProfileRow.display_name),
             avatarUrl: (otherProfileRow.avatar_url as string | null) ?? undefined,
             tradingRegion: (otherProfileRow.trading_region as string | null) ?? undefined,
             internationalTradingEnabled: (otherProfileRow.international_trading_enabled as boolean) ?? false,

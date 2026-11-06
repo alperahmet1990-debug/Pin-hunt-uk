@@ -1,6 +1,6 @@
 import type { Trade } from '@workspace/pin-repository';
 import { createSupabaseUserRepository } from '@workspace/pin-repository';
-import { otherSideTracking, tradeActionsFor, tradeCardTitle } from '../tradeActions';
+import { canProposeInChat, otherSideTracking, tradeActionsFor, tradeCardTitle } from '../tradeActions';
 
 const base: Trade = {
   id: 't1', initiatorId: 'a', recipientId: 'b', status: 'pending', createdAt: '', updatedAt: '',
@@ -63,6 +63,25 @@ describe('tradeCardTitle', () => {
   it('only says agreed once the trade is accepted', () => {
     expect(tradeCardTitle('pending')).toBe('Trade proposed');
     expect(tradeCardTitle('accepted')).toBe('Trade agreed ✓');
+  });
+});
+
+describe('canProposeInChat', () => {
+  it('offers a proposal in a chat with no trade', () => {
+    expect(canProposeInChat(undefined, undefined)).toBe(true);
+    expect(canProposeInChat(null, undefined)).toBe(true);
+  });
+
+  it('offers a new proposal once the last trade has finished', () => {
+    for (const status of ['rejected', 'cancelled', 'completed'] as const) {
+      expect(canProposeInChat('t1', status)).toBe(true);
+    }
+  });
+
+  it('holds back while a trade is open or still loading', () => {
+    for (const status of ['pending', 'accepted', 'problem', undefined] as const) {
+      expect(canProposeInChat('t1', status)).toBe(false);
+    }
   });
 });
 

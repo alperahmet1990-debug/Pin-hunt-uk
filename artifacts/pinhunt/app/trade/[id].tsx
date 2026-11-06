@@ -8,6 +8,7 @@ import {
   Alert,
   AppState,
   KeyboardAvoidingView,
+  useWindowDimensions,
   Platform,
   ScrollView,
   StyleSheet,
@@ -67,7 +68,8 @@ function PotentialMatchBanner({
   onDismiss: () => void;
   onPinPress: (pinhuntId: string) => void;
 }) {
-  const [collapsed, setCollapsed] = useState(false);
+  // Starts collapsed: on a small phone it would otherwise fill the screen.
+  const [collapsed, setCollapsed] = useState(true);
 
   const theyHave = pins.filter(p => p.direction === 'they_have_i_want');
   const iHave    = pins.filter(p => p.direction === 'i_have_they_want');
@@ -294,6 +296,7 @@ export default function TradeScreen() {
   const { repo, userId } = useMarketplace();
 
   const { isBlocked } = useBlockedUsers();
+  const { height: windowHeight } = useWindowDimensions();
   const [trade,          setTrade]          = useState<Trade | null>(null);
   const [loading,        setLoading]        = useState(true);
   const [error,          setError]          = useState<string | null>(null);
@@ -557,6 +560,12 @@ export default function TradeScreen() {
               </View>
             ) : (
               <View style={[styles.actionBar, { borderTopColor: colors.homeLine, backgroundColor: colors.homeBackground }]}>
+                <ScrollView
+                  style={{ maxHeight: Math.round(windowHeight * 0.4) }}
+                  contentContainerStyle={styles.actionList}
+                  keyboardShouldPersistTaps="handled"
+                  nestedScrollEnabled
+                >
                 {actions?.nextStep && (
                   <Text style={[styles.nextStep, { color: colors.homeMuted }]}>{actions.nextStep}</Text>
                 )}
@@ -718,6 +727,8 @@ export default function TradeScreen() {
                   </TouchableOpacity>
                 )}
 
+                </ScrollView>
+
                 {/* Message input (active trades only) */}
                 {canMessage && (
                   <View style={[styles.inputRow, { borderTopColor: colors.homeLine }]}>
@@ -776,6 +787,7 @@ const styles = StyleSheet.create({
   bubbleTime: { fontSize: 10, fontFamily: 'Inter_400Regular', textAlign: 'right' },
   actionBar: { borderTopWidth: StyleSheet.hairlineWidth, paddingHorizontal: spacing.md, paddingTop: spacing.sm + 2, gap: spacing.sm + 2 },
   actionRow: { flexDirection: 'row', gap: spacing.sm + 2 },
+  actionList: { gap: spacing.sm + 2 },
   trackingRow: { gap: spacing.sm },
   trackingInput: { paddingHorizontal: spacing.md + 2, paddingVertical: spacing.sm + 2, fontSize: 14, fontFamily: 'Inter_400Regular', borderWidth: 1, borderRadius: radius.sm },
   resolutionNote: { fontSize: 13, fontFamily: 'Inter_600SemiBold', paddingHorizontal: spacing.md, paddingVertical: spacing.xs },

@@ -62,7 +62,7 @@ export default function HomeScreen() {
   const [activeSetLoading, setActiveSetLoading] = useState(false);
   const orbit = useRef(new Animated.Value(0)).current;
   const drift = useRef(new Animated.Value(0)).current;
-  const firstName = profile?.displayName?.split(' ')[0] ?? profile?.username ?? null;
+  const greetingName = profile?.username ?? profile?.displayName?.split(' ')[0] ?? null;
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const bottomPad = tabScreenBottomPad(insets.bottom + 92);
 
@@ -170,7 +170,7 @@ export default function HomeScreen() {
       <View style={styles.header}>
         <TouchableOpacity accessibilityRole="button" accessibilityLabel="Open profile" onPress={() => router.push('/edit-profile')} style={styles.headerLeft}>
           <Avatar uri={profile?.avatarUrl ?? null} name={profile?.username ?? '?'} size={42} />
-          <View><Text style={[styles.welcome, { color: colors.homeMuted }]}>{greeting()}</Text><Text style={[styles.name, { color: colors.homeInk }]}>{firstName ? `Hi, ${firstName}` : 'Hi there'}</Text></View>
+          <View><Text style={[styles.welcome, { color: colors.homeMuted }]}>{greeting()}</Text><Text style={[styles.name, { color: colors.homeInk }]}>{greetingName ? `Hi, ${greetingName}` : 'Hi there'}</Text></View>
         </TouchableOpacity>
         <View style={styles.tools}>
           <IconButton icon="message-square" count={totalUnread} onPress={() => router.push('/community/conversations')} colors={colors} label="Messages" />

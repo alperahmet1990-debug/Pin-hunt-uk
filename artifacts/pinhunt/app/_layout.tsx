@@ -100,6 +100,7 @@ function RootLayoutNav() {
       <Stack.Screen name="trading-safely" options={{ title: 'Trading safely' }} />
       <Stack.Screen name="add-pin" options={{ title: 'Add Pin' }} />
       <Stack.Screen name="my-submissions" options={{ title: 'My Submissions' }} />
+      <Stack.Screen name="my-trades" options={{ title: 'Trades' }} />
       <Stack.Screen name="submission/[id]" options={{ title: 'Submission' }} />
       <Stack.Screen name="edit-submission/[id]" options={{ title: 'Edit Submission' }} />
       <Stack.Screen name="catalogue" options={{ title: 'Pin Catalogue' }} />

@@ -1,6 +1,14 @@
 import type { Trade } from '@workspace/pin-repository';
 import { createSupabaseUserRepository } from '@workspace/pin-repository';
-import { canProposeInChat, otherSideTracking, tradeActionsFor, tradeCardTitle } from '../tradeActions';
+import {
+  canProposeInChat,
+  groupTrades,
+  isOpenTrade,
+  otherSideTracking,
+  tradeActionsFor,
+  tradeCardTitle,
+  tradeStatusLabel,
+} from '../tradeActions';
 
 const base: Trade = {
   id: 't1', initiatorId: 'a', recipientId: 'b', status: 'pending', createdAt: '', updatedAt: '',
@@ -11,8 +19,8 @@ const on = (actions: ReturnType<typeof tradeActionsFor>) =>
 
 describe('tradeActionsFor', () => {
   it('lets only the recipient accept or decline a proposal', () => {
-    expect(on(tradeActionsFor(trade({}), 'b'))).toEqual(['canAccept', 'canDecline']);
-    expect(on(tradeActionsFor(trade({}), 'a'))).toEqual(['canCancel']);
+    expect(on(tradeActionsFor(trade({}), 'b'))).toEqual(['canAccept', 'canDecline', 'canMessage']);
+    expect(on(tradeActionsFor(trade({}), 'a'))).toEqual(['canCancel', 'canMessage']);
   });
 
   it('gives a bystander nothing', () => {
@@ -20,13 +28,13 @@ describe('tradeActionsFor', () => {
   });
 
   it('allows posting or cancelling once accepted, before anyone posts', () => {
-    expect(on(tradeActionsFor(trade({ status: 'accepted' }), 'a'))).toEqual(['canCancel', 'canMarkPosted']);
+    expect(on(tradeActionsFor(trade({ status: 'accepted' }), 'a'))).toEqual(['canCancel', 'canMarkPosted', 'canMessage']);
   });
 
   it('stops cancelling after either side posts, and offers a problem report instead', () => {
     const t = trade({ status: 'accepted', initiatorPostedAt: 'x' });
-    expect(on(tradeActionsFor(t, 'a'))).toEqual(['canReportProblem', 'canUpdateTracking']);
-    expect(on(tradeActionsFor(t, 'b'))).toEqual(['canMarkPosted', 'canMarkReceived', 'canReportProblem']);
+    expect(on(tradeActionsFor(t, 'a'))).toEqual(['canMessage', 'canReportProblem', 'canUpdateTracking']);
+    expect(on(tradeActionsFor(t, 'b'))).toEqual(['canMarkPosted', 'canMarkReceived', 'canMessage', 'canReportProblem']);
   });
 
   it('only offers received when the other side has posted, and only once', () => {
@@ -47,6 +55,38 @@ describe('problem trades', () => {
     expect(tradeActionsFor(t, 'a').nextStep).toMatch(/reviewing/);
     expect(tradeActionsFor(t, 'b').nextStep).toMatch(/reviewing/);
     expect(tradeActionsFor(t, 'c').nextStep).toBeUndefined();
+  });
+});
+
+describe('canMessage', () => {
+  it('matches what the server accepts', () => {
+    expect(tradeActionsFor(trade({}), 'a').canMessage).toBe(true);
+    expect(tradeActionsFor(trade({ status: 'accepted' }), 'b').canMessage).toBe(true);
+    for (const status of ['problem', 'completed', 'rejected', 'cancelled'] as const) {
+      expect(tradeActionsFor(trade({ status }), 'a').canMessage).toBe(false);
+    }
+    expect(tradeActionsFor(trade({}), 'c').canMessage).toBe(false);
+  });
+});
+
+describe('trade lists', () => {
+  it('puts open trades first and keeps their order', () => {
+    const t = (id: string, status: Trade['status']) => trade({ id, status });
+    const { active, past } = groupTrades([
+      t('1', 'completed'), t('2', 'problem'), t('3', 'cancelled'), t('4', 'pending'), t('5', 'accepted'), t('6', 'rejected'),
+    ]);
+    expect(active.map(x => x.id)).toEqual(['2', '4', '5']);
+    expect(past.map(x => x.id)).toEqual(['1', '3', '6']);
+  });
+
+  it('treats exactly the states that can still need action as open', () => {
+    expect(isOpenTrade('problem')).toBe(true);
+    expect(isOpenTrade('completed')).toBe(false);
+  });
+
+  it('labels every status', () => {
+    expect(tradeStatusLabel('pending')).toBe('Proposed');
+    expect(tradeStatusLabel('rejected')).toBe('Declined');
   });
 });
 
@@ -95,6 +135,7 @@ describe('repository trade calls', () => {
   it('calls the lifecycle functions, never a direct update', async () => {
     const { rpc, repo } = setup({ data: row, error: null });
     await repo.proposeTrade('b', 'hi');
+    await repo.proposeTradeInChat('c1');
     await repo.acceptTrade('t1');
     await repo.declineTrade('t1');
     await repo.cancelTrade('t1');
@@ -103,6 +144,7 @@ describe('repository trade calls', () => {
     await repo.reportTradeProblem('t1', 'Lost');
     expect(rpc.mock.calls).toEqual([
       ['trade_propose', { p_recipient_id: 'b', p_notes: 'hi' }],
+      ['trade_propose_in_chat', { p_conversation_id: 'c1', p_notes: null }],
       ['trade_accept', { p_trade_id: 't1' }],
       ['trade_decline', { p_trade_id: 't1' }],
       ['trade_cancel', { p_trade_id: 't1' }],

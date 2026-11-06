@@ -481,6 +481,8 @@ export interface Trade {
   problemReportedAt?: string;
   problemReason?: string;
   problemResolutionNote?: string;
+  /** The other collector's username, in trade lists. */
+  otherUsername?: string;
   items?: TradeItem[];
   messages?: TradeMessage[];
   createdAt: string;

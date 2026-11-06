@@ -274,12 +274,7 @@ export default function ChatScreen() {
     if (!repo || !userId || !conv) return;
     try {
       setSending(true);
-      const trade = await repo.proposeTrade(
-        conv.otherParticipant?.id ?? (
-          conv.participantAId === userId ? conv.participantBId : conv.participantAId
-        ),
-      );
-      await repo.linkConversationTrade(conv.id, trade.id);
+      const trade = await repo.proposeTradeInChat(conv.id);
       setConv(current => current ? { ...current, tradeId: trade.id } : current);
       setTradeStatus(trade.status);
       setTradeConfirmOpen(false);

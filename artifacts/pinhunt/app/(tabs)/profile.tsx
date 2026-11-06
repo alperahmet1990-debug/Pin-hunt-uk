@@ -263,6 +263,11 @@ export default function ProfileScreen() {
                 />
               )}
               <SettingsRow
+                icon="repeat"
+                label="Trades"
+                onPress={() => router.push('/my-trades')}
+              />
+              <SettingsRow
                 icon="upload"
                 label="My Pin Submissions"
                 onPress={() => router.push('/my-submissions')}

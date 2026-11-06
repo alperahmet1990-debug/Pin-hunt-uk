@@ -596,7 +596,7 @@ export default function TradeScreen() {
                       placeholderTextColor={colors.homeMuted}
                       accessibilityLabel="Carrier"
                       maxLength={80}
-                      style={[styles.msgInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
+                      style={[styles.trackingInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
                     />
                     <TextInput
                       value={tracking}
@@ -607,7 +607,7 @@ export default function TradeScreen() {
                       autoCapitalize="characters"
                       autoCorrect={false}
                       maxLength={80}
-                      style={[styles.msgInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
+                      style={[styles.trackingInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
                     />
                   </View>
                 )}
@@ -776,7 +776,8 @@ const styles = StyleSheet.create({
   bubbleTime: { fontSize: 10, fontFamily: 'Inter_400Regular', textAlign: 'right' },
   actionBar: { borderTopWidth: StyleSheet.hairlineWidth, paddingHorizontal: spacing.md, paddingTop: spacing.sm + 2, gap: spacing.sm + 2 },
   actionRow: { flexDirection: 'row', gap: spacing.sm + 2 },
-  trackingRow: { flexDirection: 'row', gap: spacing.sm },
+  trackingRow: { gap: spacing.sm },
+  trackingInput: { paddingHorizontal: spacing.md + 2, paddingVertical: spacing.sm + 2, fontSize: 14, fontFamily: 'Inter_400Regular', borderWidth: 1, borderRadius: radius.sm },
   resolutionNote: { fontSize: 13, fontFamily: 'Inter_600SemiBold', paddingHorizontal: spacing.md, paddingVertical: spacing.xs },
   reportBlock: { marginHorizontal: spacing.md, marginVertical: spacing.xs, padding: spacing.sm, borderWidth: 1, borderRadius: radius.sm, gap: 2 },
   reportLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },

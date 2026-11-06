@@ -1,5 +1,5 @@
 -- ============================================================
--- Verification for migrations 062 and 063 (run in the Supabase SQL editor, as the
+-- Verification for migrations 062, 063 and 064 (run in the Supabase SQL editor, as the
 -- default postgres user).
 --
 -- One transaction, ROLLED BACK at the end. It creates throwaway auth users, so
@@ -99,6 +99,7 @@ declare
   v text;
   v_id uuid;
   v_flag boolean;
+  c uuid := '06300000-0000-4000-8000-0000000000c3';
 begin
   assert pg_temp.v063_refused('anon', 'select id from public.profiles limit 1'), '2a anon read profiles';
   assert pg_temp.v063_refused('anon', 'select id from public.public_profiles limit 1'), '2b anon read view';
@@ -121,11 +122,16 @@ begin
   assert v = 'BB2 2BB', '2g own postcode wrong';
   update profiles set bio = 'Changed' where id = b;
   assert (select count(*) from profiles where username = 'v063_c') = 0, '2h private profile visible';
-  -- The app's save: an upsert returning its column list.
+  -- The app's save, as the API sends it: every sent column is set, id included.
   insert into profiles (id, updated_at, bio, town) values (b, now(), 'Upserted', 'Town')
-    on conflict (id) do update set updated_at = excluded.updated_at, bio = excluded.bio, town = excluded.town
+    on conflict (id) do update set id = excluded.id, updated_at = excluded.updated_at, bio = excluded.bio, town = excluded.town
     returning id, username, bio, town, has_location_set into v_id, v, v, v, v_flag;
   assert v_id = b, '2k upsert failed';
+  begin
+    update profiles set id = c where id = b;
+  exception when others then null;
+  end;
+  assert exists (select 1 from profiles where id = b), '2r changed own id';
   update profiles set bio = 'Changed' where id = a;
   reset role;
   assert (select bio from profiles where id = a) is distinct from 'Changed', '2i edited another profile';

@@ -49,7 +49,7 @@ export class AccountDeletionError extends Error {
 
 export type AccountDeletionResult =
   | { status: "deleted"; storageObjectsRemoved: number; alreadyGone: boolean }
-  | { status: "refused"; reason: "app_creator" };
+  | { status: "refused"; reason: "app_creator" | "open_trade" };
 
 interface StorageRow {
   bucket_id: string;
@@ -172,7 +172,7 @@ export async function deleteAccount(
   }
   const prep = prepared as PrepareResult;
   if (prep.status === "refused") {
-    return { status: "refused", reason: "app_creator" };
+    return { status: "refused", reason: prep.reason === "open_trade" ? "open_trade" : "app_creator" };
   }
   const auditId = prep.status === "ready" && isUuid(prep.audit_id) ? prep.audit_id : null;
 

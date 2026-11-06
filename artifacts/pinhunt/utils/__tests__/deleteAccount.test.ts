@@ -14,7 +14,7 @@ describe('requestAccountDeletion', () => {
   const realFetch = globalThis.fetch;
   afterEach(() => { globalThis.fetch = realFetch; });
   const mockStatus = (status: number) => {
-    globalThis.fetch = jest.fn().mockResolvedValue({ status }) as unknown as typeof fetch;
+    globalThis.fetch = jest.fn().mockResolvedValue({ status, json: async () => ({}) }) as unknown as typeof fetch;
   };
 
   it('sends DELETE with the bearer token', async () => {
@@ -34,6 +34,14 @@ describe('requestAccountDeletion', () => {
   ])('maps %i to %s', async (status, outcome) => {
     mockStatus(status);
     expect(await requestAccountDeletion('tok')).toBe(outcome);
+  });
+
+  it('recognises the open-trade refusal', async () => {
+    globalThis.fetch = jest.fn().mockResolvedValue({
+      status: 409,
+      json: async () => ({ reason: 'open_trade' }),
+    }) as unknown as typeof fetch;
+    expect(await requestAccountDeletion('tok')).toBe('open_trade');
   });
 
   it('retries on network failure and skips the call without a token', async () => {

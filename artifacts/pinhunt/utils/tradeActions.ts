@@ -30,6 +30,7 @@ export function tradeActionsFor(trade: Trade, userId: string | null | undefined)
 
   const nextStep = (): string | undefined => {
     if (!isParticipant) return undefined;
+    if (trade.status === 'problem') return 'PinHunt is reviewing this problem report.';
     if (pending) return isInitiator ? 'Waiting for the other collector to respond.' : undefined;
     if (!accepted) return undefined;
     if (!iPosted) return 'Post your pins, then mark them as posted.';

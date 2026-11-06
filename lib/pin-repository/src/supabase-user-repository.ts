@@ -5,6 +5,7 @@ import { safeDisplayName } from './display-name';
 import type {
   AddUserPinInput,
   MarkTradePostedInput,
+  ProblemTrade,
   AdminReviewInput,
   CataloguePin,
   CommunityPost,
@@ -294,6 +295,8 @@ function rowToTrade(row: Record<string, unknown>): Trade {
     recipientReceivedAt: (row.recipient_received_at as string | null) ?? undefined,
     problemReportedBy: (row.problem_reported_by as string | null) ?? undefined,
     problemReportedAt: (row.problem_reported_at as string | null) ?? undefined,
+    problemReason: (row.problem_reason as string | null) ?? undefined,
+    problemResolutionNote: (row.problem_resolution_note as string | null) ?? undefined,
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
   };
@@ -682,8 +685,40 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     return this.callTradeRpc('trade_mark_received', { p_trade_id: tradeId });
   }
 
-  reportTradeProblem(tradeId: string): Promise<Trade> {
-    return this.callTradeRpc('trade_report_problem', { p_trade_id: tradeId });
+  reportTradeProblem(tradeId: string, reason: string): Promise<Trade> {
+    return this.callTradeRpc('trade_report_problem', { p_trade_id: tradeId, p_reason: reason });
+  }
+
+  async getProblemTrades(): Promise<ProblemTrade[]> {
+    const { data, error } = await (this.client as any).rpc('admin_list_problem_trades');
+    if (error) throw new Error(error.message);
+    return ((data ?? []) as Record<string, unknown>[]).map(row => ({
+      id: row.id as string,
+      initiatorId: row.initiator_id as string,
+      recipientId: row.recipient_id as string,
+      initiatorUsername: (row.initiator_username as string | null) ?? undefined,
+      recipientUsername: (row.recipient_username as string | null) ?? undefined,
+      initiatorPostedAt: (row.initiator_posted_at as string | null) ?? undefined,
+      recipientPostedAt: (row.recipient_posted_at as string | null) ?? undefined,
+      initiatorTracking: (row.initiator_tracking as string | null) ?? undefined,
+      recipientTracking: (row.recipient_tracking as string | null) ?? undefined,
+      initiatorCarrier: (row.initiator_carrier as string | null) ?? undefined,
+      recipientCarrier: (row.recipient_carrier as string | null) ?? undefined,
+      initiatorReceivedAt: (row.initiator_received_at as string | null) ?? undefined,
+      recipientReceivedAt: (row.recipient_received_at as string | null) ?? undefined,
+      reportedBy: (row.problem_reported_by as string | null) ?? undefined,
+      reportedAt: (row.problem_reported_at as string | null) ?? undefined,
+      reason: (row.problem_reason as string | null) ?? undefined,
+    }));
+  }
+
+  async resolveTradeProblem(tradeId: string, outcome: 'completed' | 'cancelled', note?: string): Promise<void> {
+    const { error } = await (this.client as any).rpc('admin_resolve_trade_problem', {
+      p_trade_id: tradeId,
+      p_outcome: outcome,
+      p_note: note ?? null,
+    });
+    if (error) throw new Error(error.message);
   }
 
   async sendTradeMessage(

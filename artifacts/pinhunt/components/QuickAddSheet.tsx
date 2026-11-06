@@ -390,6 +390,7 @@ export function QuickAddSheet({ pin, onClose, onAdded }: QuickAddSheetProps) {
                   value={newBoardName}
                   onChangeText={setNewBoardName}
                   placeholder="Board name…"
+                  autoCapitalize="words"
                   placeholderTextColor={t.muted}
                   style={[styles.newBoardInput, { color: t.fg }]}
                   autoFocus

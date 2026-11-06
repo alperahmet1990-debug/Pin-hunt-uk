@@ -872,6 +872,7 @@ export default function CollectionScreen() {
           value={newBoardName}
           onChangeText={setNewBoardName}
           placeholder="Board name"
+          autoCapitalize="words"
           placeholderTextColor={colors.homeMuted}
           accessibilityLabel="Board name"
           style={[s.modalInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]}

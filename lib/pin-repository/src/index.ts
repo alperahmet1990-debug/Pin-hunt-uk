@@ -96,6 +96,7 @@ export type {
 export type { PinRepository } from './repository';
 export type { PinSetSummary, CatalogueBrowsePin } from './types';
 export { PinRepositoryError } from './repository';
+export { safeDisplayName } from './display-name';
 export type { PinRepositoryErrorCode } from './repository';
 
 export {

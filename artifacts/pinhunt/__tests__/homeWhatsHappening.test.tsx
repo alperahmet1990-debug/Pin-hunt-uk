@@ -29,7 +29,7 @@ jest.mock('@/lib/supabase', () => ({
   supabase: { channel: () => ({ on() { return this; }, subscribe() { return this; } }), removeChannel: jest.fn() },
 }));
 jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ user: { id: 'u1' }, session: null, signOut: jest.fn() }) }));
-jest.mock('@/context/ProfileContext', () => ({ useProfile: () => ({ profile: { id: 'u1', username: 'demo', isAdmin: false }, loading: false }) }));
+jest.mock('@/context/ProfileContext', () => ({ useProfile: () => ({ profile: { id: 'u1', username: 'demo', displayName: 'someone.else', isAdmin: false }, loading: false }) }));
 jest.mock('@/context/UnreadMessagesContext', () => ({ useUnreadMessages: () => ({ totalUnread: 0 }) }));
 jest.mock('@/context/SubmissionNotificationsContext', () => ({ useSubmissionNotifications: () => ({ unseenCount: 0 }) }));
 jest.mock('@/hooks/useCommunity', () => ({ useCommunity: () => ({ repo: mockRepo, userId: 'u1' }) }));
@@ -54,6 +54,12 @@ const past = { ...upcoming, id: 'e0', title: 'Old Meet', eventDate: '2000-01-01'
 beforeEach(() => jest.clearAllMocks());
 
 describe("Home: What's Happening (#352)", () => {
+  it('greets by username, not the stored display name (#429)', async () => {
+    mockEvents = [];
+    await render(<HomeScreen />);
+    expect(screen.getByText('Hi, demo')).toBeTruthy();
+  }, 20_000);
+
   it('shows upcoming events and leaves out past ones', async () => {
     mockEvents = [past, upcoming];
     await render(<HomeScreen />);

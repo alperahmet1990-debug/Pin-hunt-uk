@@ -15,9 +15,12 @@
 --      fallback to any part of the email address. The '@' check also covers
 --      app builds released before #429, which send the email as the name.
 --   2. Existing profiles: display_name becomes NULL where it is the account's
---      own email or contains an email-shaped value. The app then shows the
---      username. updated_at moves on those rows (profiles_updated_at trigger).
---      A name that merely contains '@' ("Pins @ Paris") is left alone.
+--      own email, the part of that email before the @, or contains an
+--      email-shaped value. The app then shows the username. updated_at moves on
+--      those rows (profiles_updated_at trigger). Nothing in the app lets a
+--      collector set a display name, so an email prefix is generated, not
+--      chosen (maintainer's decision). A name that merely contains '@'
+--      ("Pins @ Paris") is left alone.
 -- ============================================================
 
 begin;
@@ -48,7 +51,7 @@ update public.profiles p
     or exists (
       select 1 from auth.users u
        where u.id = p.id
-         and lower(btrim(p.display_name)) = lower(u.email)
+         and lower(btrim(p.display_name)) in (lower(u.email), lower(split_part(u.email, '@', 1)))
     );
 
 commit;

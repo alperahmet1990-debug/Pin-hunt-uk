@@ -15,7 +15,7 @@ begin
   assert (select count(*) from public.profiles p
           left join auth.users u on u.id = p.id
           where p.display_name ~ '[^[:space:]@]+@[^[:space:]@]+\.[^[:space:]@]+'
-             or lower(btrim(p.display_name)) = lower(u.email)) = 0,
+             or lower(btrim(p.display_name)) in (lower(u.email), lower(split_part(u.email, '@', 1)))) = 0,
          '1 an email-shaped display_name remains';
 end $$;
 

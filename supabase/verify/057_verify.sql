@@ -79,8 +79,6 @@ insert into profiles (id) values
 insert into user_suspensions (user_id, suspended_by)
   values ('05700000-0000-4000-8000-0000000000d4', '05700000-0000-4000-8000-0000000000c3');
 
-create temp table v057 (k text primary key, id uuid);
-grant all on v057 to authenticated;
 
 do $$
 declare

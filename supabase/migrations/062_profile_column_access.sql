@@ -7,15 +7,12 @@
 -- Production is a separate approval. Rollback at the bottom.
 -- Needs only the profiles table, so it does not depend on 057 to 061.
 --
--- RELEASE ORDER: publish the matching app update FIRST. Older app builds read
--- and save postcode directly, which this file refuses. The update works both
--- before and after this migration.
+-- RELEASE ORDER: every client ships first. See 062_RUNBOOK.md.
 --
---   1. Signed-out clients have no access to profiles or public_profiles.
---   2. Signed-in clients read profile columns from an explicit list. Postcode
---      and coordinates are not on it. New columns stay private until granted.
---   3. get_my_postcode() returns a collector's own postcode. Coordinates stay
---      server-side.
+--   1. public_profiles and profiles are for signed-in clients only.
+--   2. Signed-in clients read and write profiles through explicit column
+--      lists. A new column stays private until it is added to a list.
+--   3. get_my_postcode() returns a collector's own postcode.
 -- ============================================================
 
 begin;
@@ -24,19 +21,39 @@ revoke all on public.profiles from anon;
 revoke all on public.public_profiles from anon;
 drop policy if exists "Public profiles are visible to all" on public.profiles;
 
--- Replaces table-wide SELECT. A column revoke has no effect alongside it.
-revoke select on public.profiles from authenticated;
+revoke select, insert, update on public.profiles from authenticated;
 
-do $$
-declare v_columns text;
-begin
-  select string_agg(quote_ident(column_name), ', ' order by ordinal_position)
-    into v_columns
-  from information_schema.columns
-  where table_schema = 'public' and table_name = 'profiles'
-    and column_name not in ('postcode', 'approx_lat', 'approx_lng');
-  execute format('grant select (%s) on public.profiles to authenticated', v_columns);
-end $$;
+grant select (
+  id, username, display_name, avatar_url, bio, location,
+  is_admin, is_app_creator,
+  created_at, updated_at,
+  trading_region, international_trading_enabled,
+  allow_trade_requests, allow_messages, profile_visibility,
+  town, county, country,
+  nearby_discovery_enabled, preferred_radius_miles,
+  open_to_local_trades, open_to_postal_trades, happy_to_travel,
+  has_location_set
+) on public.profiles to authenticated;
+
+grant insert (
+  id, updated_at,
+  username, display_name, avatar_url, bio, location,
+  trading_region, international_trading_enabled,
+  allow_trade_requests, allow_messages, profile_visibility,
+  town, county, country,
+  nearby_discovery_enabled, preferred_radius_miles,
+  open_to_local_trades, open_to_postal_trades, happy_to_travel
+) on public.profiles to authenticated;
+
+grant update (
+  updated_at,
+  username, display_name, avatar_url, bio, location,
+  trading_region, international_trading_enabled,
+  allow_trade_requests, allow_messages, profile_visibility,
+  town, county, country,
+  nearby_discovery_enabled, preferred_radius_miles,
+  open_to_local_trades, open_to_postal_trades, happy_to_travel
+) on public.profiles to authenticated;
 
 create or replace function public.get_my_postcode()
 returns text language sql stable security definer
@@ -52,11 +69,17 @@ commit;
 -- ============================================================
 -- Verification: supabase/verify/062_verify.sql (rolls itself back).
 --
--- ROLLBACK. This restores wider access, so only use it to recover the app.
+-- RECOVERY if an older app build can't load profiles. Try this first, briefly:
+--   grant select (postcode) on public.profiles to authenticated;
+--   notify pgrst, 'reload schema';
+--
+-- FULL ROLLBACK. This restores the earlier access, so it's a last resort.
 -- begin;
 -- drop function if exists public.get_my_postcode();
--- grant select on public.profiles to authenticated, anon;
+-- grant select, insert, update on public.profiles to authenticated;
+-- grant select on public.profiles to anon;
 -- grant select on public.public_profiles to anon;
+-- drop policy if exists "Public profiles are visible to all" on public.profiles;
 -- create policy "Public profiles are visible to all" on public.profiles
 --   for select using (profile_visibility = 'public' and username is not null);
 -- commit;

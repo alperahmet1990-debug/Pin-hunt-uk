@@ -16,6 +16,7 @@ import {
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { DEMO_PROFILE, isDemoMode } from '@/lib/demoMode';
 import { useAuth } from '@/context/AuthContext';
+import { needsUsernameFor } from '@/utils/profileState';
 
 // ─── Context shape ────────────────────────────────────────────────────────────
 
@@ -40,6 +41,7 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
   const [loadedUserId, setLoadedUserId] = useState<string | null>(null);
+  const [loadFailed, setLoadFailed] = useState(false);
   const profileRequestId = useRef(0);
 
   const userRepo: IUserPinRepository | null = useMemo(() => {
@@ -65,10 +67,16 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
     setLoadedUserId(null);
     try {
       const p = await userRepo.getMyProfile(id);
-      if (profileRequestId.current === requestId) setProfile(p);
+      if (profileRequestId.current === requestId) {
+        setProfile(p);
+        setLoadFailed(false);
+      }
     } catch (err) {
       console.error('[ProfileContext] loadProfile error:', err);
-      if (profileRequestId.current === requestId) setProfile(null);
+      if (profileRequestId.current === requestId) {
+        setProfile(null);
+        setLoadFailed(true);
+      }
     } finally {
       if (profileRequestId.current === requestId) {
         setLoadedUserId(id);
@@ -121,7 +129,12 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
   // the new user needs to complete their profile.
   const profileIsCurrent = userId !== null && loadedUserId === userId;
   const effectiveLoading = loading || (userId !== null && !profileIsCurrent);
-  const needsUsername = session !== null && profileIsCurrent && !loading && !profile?.username;
+  const needsUsername = needsUsernameFor({
+    hasSession: session !== null,
+    profileLoaded: profileIsCurrent && !loading,
+    loadFailed,
+    username: profile?.username,
+  });
 
   return (
     <ProfileContext.Provider

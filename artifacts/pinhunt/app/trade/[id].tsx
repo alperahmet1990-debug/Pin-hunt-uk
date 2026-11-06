@@ -175,8 +175,7 @@ const bannerStyles = StyleSheet.create({
 
 // ─── Rating modal ─────────────────────────────────────────────────────────────
 
-function RatingPrompt({ otherUserId, tradeId, onDone, colors, repo, userId }: {
-  otherUserId: string;
+function RatingPrompt({ tradeId, onDone, colors, repo, userId }: {
   tradeId: string;
   onDone: () => void;
   colors: ReturnType<typeof useColors>;
@@ -191,9 +190,8 @@ function RatingPrompt({ otherUserId, tradeId, onDone, colors, repo, userId }: {
     if (!repo || !userId) return;
     try {
       setSaving(true);
-      await repo.createTradeRating(userId, {
+      await repo.createTradeRating({
         tradeId,
-        rateeId: otherUserId,
         isPositive,
         comment: comment.trim() || undefined,
       });
@@ -224,6 +222,7 @@ function RatingPrompt({ otherUserId, tradeId, onDone, colors, repo, userId }: {
       </Text>
       <TextInput
         value={comment}
+        maxLength={500}
         onChangeText={setComment}
         placeholder="Optional comment…"
         placeholderTextColor={colors.homeMuted}
@@ -435,7 +434,6 @@ export default function TradeScreen() {
 
   const isInitiator = trade?.initiatorId === userId;
   const isRecipient = trade?.recipientId === userId;
-  const otherUserId = trade ? (isInitiator ? trade.recipientId : trade.initiatorId) : null;
   const messages    = trade?.messages ?? [];
   const isActive    = trade && !['rejected', 'completed', 'cancelled'].includes(trade.status);
   const actions     = trade ? tradeActionsFor(trade, userId) : null;
@@ -516,9 +514,8 @@ export default function TradeScreen() {
               ))}
 
               {/* Rating prompt after completion */}
-              {showRating && otherUserId && (
+              {showRating && (
                 <RatingPrompt
-                  otherUserId={otherUserId}
                   tradeId={trade.id}
                   onDone={() => setShowRating(false)}
                   colors={colors}

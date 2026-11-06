@@ -524,8 +524,7 @@ export interface TradeRating {
 }
 
 export interface CreateTradeRatingInput {
-  tradeId?: string;
-  rateeId: string;
+  tradeId: string;
   isPositive: boolean;
   comment?: string;
 }

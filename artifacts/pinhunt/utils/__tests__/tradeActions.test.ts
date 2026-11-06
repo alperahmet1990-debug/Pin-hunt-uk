@@ -84,6 +84,12 @@ describe('repository trade calls', () => {
     ]);
   });
 
+  it('rates through the function, with the ratee left to the server', async () => {
+    const { rpc, repo } = setup({ data: { id: 'r1', trade_id: 't1', rater_id: 'a', ratee_id: 'b', is_positive: true }, error: null });
+    await repo.createTradeRating({ tradeId: 't1', isPositive: true, comment: 'Nice' });
+    expect(rpc).toHaveBeenCalledWith('trade_rate', { p_trade_id: 't1', p_is_positive: true, p_comment: 'Nice' });
+  });
+
   it('maps the returned row', async () => {
     const { repo } = setup({ data: row, error: null });
     expect((await repo.acceptTrade('t1')).recipientTracking).toBe('X1');

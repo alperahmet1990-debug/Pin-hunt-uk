@@ -173,9 +173,6 @@ export interface IUserPinRepository {
   /** Either side, once pins have been posted. */
   reportTradeProblem(tradeId: string): Promise<Trade>;
 
-  /** Add an item (offered or requested pin) to a pending trade. */
-  addTradeItem(tradeId: string, userPinId: string, direction: TradeItem['direction']): Promise<TradeItem>;
-
   /** Send a message in a trade thread. */
   sendTradeMessage(tradeId: string, senderId: string, message: string): Promise<TradeMessage>;
 
@@ -409,7 +406,7 @@ export interface IUserPinRepository {
   getTraderRating(userId: string): Promise<TraderRatingSummary>;
 
   /** Submit a positive or negative rating for a trader after a trade. */
-  createTradeRating(raterId: string, input: CreateTradeRatingInput): Promise<TradeRating>;
+  createTradeRating(input: CreateTradeRatingInput): Promise<TradeRating>;
 
   // ── Nearby collectors (migration 007) ────────────────────────────────────
 

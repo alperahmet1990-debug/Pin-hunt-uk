@@ -686,28 +686,6 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     return this.callTradeRpc('trade_report_problem', { p_trade_id: tradeId });
   }
 
-  async addTradeItem(
-    tradeId: string,
-    userPinId: string,
-    direction: TradeItem['direction'],
-  ): Promise<TradeItem> {
-    const { data, error } = await this.client
-      .from('trade_items')
-      .insert({ trade_id: tradeId, user_pin_id: userPinId, direction })
-      .select()
-      .single();
-
-    if (error) throw new Error(error.message);
-    const row = data as Record<string, unknown>;
-    return {
-      id: row.id as string,
-      tradeId: row.trade_id as string,
-      userPinId: row.user_pin_id as string,
-      direction: row.direction as TradeItem['direction'],
-      createdAt: row.created_at as string,
-    };
-  }
-
   async sendTradeMessage(
     tradeId: string,
     senderId: string,
@@ -1675,18 +1653,12 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     return { positive: rows.filter(r => r.is_positive).length, total: rows.length };
   }
 
-  async createTradeRating(raterId: string, input: CreateTradeRatingInput): Promise<TradeRating> {
-    const { data, error } = await this.client
-      .from('trade_ratings')
-      .insert({
-        trade_id: input.tradeId ?? null,
-        rater_id: raterId,
-        ratee_id: input.rateeId,
-        is_positive: input.isPositive,
-        comment: input.comment ?? null,
-      })
-      .select()
-      .single();
+  async createTradeRating(input: CreateTradeRatingInput): Promise<TradeRating> {
+    const { data, error } = await (this.client as any).rpc('trade_rate', {
+      p_trade_id: input.tradeId,
+      p_is_positive: input.isPositive,
+      p_comment: input.comment ?? null,
+    });
 
     if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
     const row = data as Record<string, unknown>;

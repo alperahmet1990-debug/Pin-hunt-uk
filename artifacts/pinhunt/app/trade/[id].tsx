@@ -28,6 +28,7 @@ import {
   persistBannerDismissal,
   tradeBannerDismissalKey,
 } from '@/utils/tradeBannerDismissals';
+import { otherSideTracking, tradeActionsFor } from '@/utils/tradeActions';
 import type { PotentialTradePin, Trade, TradeMessage, TradeStatus } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
 
@@ -39,6 +40,7 @@ const STATUS_LABEL: Record<TradeStatus, string> = {
   rejected:  'Declined',
   completed: 'Completed ✓',
   cancelled: 'Cancelled',
+  problem:   'Problem reported',
 };
 function statusColor(status: TradeStatus, colors: ReturnType<typeof useColors>): string {
   switch (status) {
@@ -47,6 +49,7 @@ function statusColor(status: TradeStatus, colors: ReturnType<typeof useColors>):
     case 'rejected': return colors.destructive;
     case 'completed': return colors.owned;
     case 'cancelled': return colors.homeMuted;
+    case 'problem': return colors.destructive;
   }
 }
 
@@ -297,6 +300,8 @@ export default function TradeScreen() {
   const [sending,        setSending]        = useState(false);
   const [actioning,      setActioning]      = useState(false);
   const [showRating,     setShowRating]     = useState(false);
+  const [carrier,        setCarrier]        = useState('');
+  const [tracking,       setTracking]       = useState('');
   const [potentialPins,  setPotentialPins]  = useState<PotentialTradePin[]>([]);
   const [bannerDismissed, setBannerDismissed] = useState(false);
 
@@ -407,13 +412,13 @@ export default function TradeScreen() {
     }
   };
 
-  const updateStatus = async (status: TradeStatus) => {
+  const runAction = async (action: () => Promise<Trade>) => {
     if (!repo || !trade) return;
     try {
       setActioning(true);
-      await repo.updateTradeStatus(trade.id, status);
+      const updated = await action();
       await load();
-      if (status === 'completed') setShowRating(true);
+      if (updated.status === 'completed') setShowRating(true);
     } catch (e) {
       Alert.alert('Error', e instanceof Error ? e.message : 'Try again.');
     } finally {
@@ -421,11 +426,20 @@ export default function TradeScreen() {
     }
   };
 
+  const markPosted = () => {
+    if (!repo || !trade) return;
+    void runAction(() => repo.markTradePosted(trade.id, { carrier, tracking }));
+    setCarrier('');
+    setTracking('');
+  };
+
   const isInitiator = trade?.initiatorId === userId;
   const isRecipient = trade?.recipientId === userId;
   const otherUserId = trade ? (isInitiator ? trade.recipientId : trade.initiatorId) : null;
   const messages    = trade?.messages ?? [];
   const isActive    = trade && !['rejected', 'completed', 'cancelled'].includes(trade.status);
+  const actions     = trade ? tradeActionsFor(trade, userId) : null;
+  const theirTracking = trade ? otherSideTracking(trade, userId) : undefined;
   const botPad      = Platform.OS === 'web' ? 24 : insets.bottom + 8;
 
   const showBanner = potentialPins.length > 0 && !bannerDismissed;
@@ -521,11 +535,18 @@ export default function TradeScreen() {
               </View>
             ) : (
               <View style={[styles.actionBar, { borderTopColor: colors.homeLine, backgroundColor: colors.homeBackground }]}>
-                {/* Recipient: accept or reject pending */}
-                {isRecipient && trade.status === 'pending' && (
+                {actions?.nextStep && (
+                  <Text style={[styles.nextStep, { color: colors.homeMuted }]}>{actions.nextStep}</Text>
+                )}
+                {theirTracking && (
+                  <Text selectable style={[styles.nextStep, { color: colors.homeMuted }]}>Their tracking: {theirTracking}</Text>
+                )}
+
+                {/* Recipient: accept or decline a proposal */}
+                {actions?.canAccept && (
                   <View style={styles.actionRow}>
                     <TouchableOpacity
-                      onPress={() => updateStatus('rejected')}
+                      onPress={() => void runAction(() => repo!.declineTrade(trade.id))}
                       activeOpacity={0.85}
                       accessibilityRole="button"
                       style={[styles.actionBtn, { backgroundColor: colors.destructive + '18', borderColor: colors.destructive + '55' }]}
@@ -533,7 +554,7 @@ export default function TradeScreen() {
                       <Text style={[styles.actionBtnLabel, { color: colors.destructive }]}>Decline</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                      onPress={() => updateStatus('accepted')}
+                      onPress={() => void runAction(() => repo!.acceptTrade(trade.id))}
                       activeOpacity={0.85}
                       accessibilityRole="button"
                       style={[styles.actionBtn, { backgroundColor: colors.owned + '18', borderColor: colors.owned + '55' }]}
@@ -543,43 +564,92 @@ export default function TradeScreen() {
                   </View>
                 )}
 
-                {/* Either party: mark complete or cancel while accepted/pending */}
-                {isActive && trade.status === 'accepted' && (
-                  <View style={styles.actionRow}>
-                    <TouchableOpacity
-                      onPress={() => Alert.alert('Cancel trade?', 'This cannot be undone.', [
-                        { text: 'No', style: 'cancel' },
-                        { text: 'Yes, cancel', style: 'destructive', onPress: () => updateStatus('cancelled') },
-                      ])}
-                      activeOpacity={0.85}
-                      accessibilityRole="button"
-                      style={[styles.actionBtn, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
-                    >
-                      <Text style={[styles.actionBtnLabel, { color: colors.homeMuted }]}>Cancel</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                      onPress={() => Alert.alert('Mark as completed?', 'This means the trade has been successfully completed.', [
-                        { text: 'No', style: 'cancel' },
-                        { text: 'Yes, completed', onPress: () => updateStatus('completed') },
-                      ])}
-                      activeOpacity={0.85}
-                      accessibilityRole="button"
-                      style={[styles.actionBtn, { backgroundColor: colors.homeCoral, borderColor: colors.homeCoral }]}
-                    >
-                      <Text style={[styles.actionBtnLabel, { color: colors.homeSurface }]}>Mark Complete</Text>
-                    </TouchableOpacity>
+                {/* Each side: posted, with optional tracking */}
+                {(actions?.canMarkPosted || actions?.canUpdateTracking) && (
+                  <View style={styles.trackingRow}>
+                    <TextInput
+                      value={carrier}
+                      onChangeText={setCarrier}
+                      placeholder="Carrier (optional)"
+                      placeholderTextColor={colors.homeMuted}
+                      accessibilityLabel="Carrier"
+                      maxLength={80}
+                      style={[styles.msgInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
+                    />
+                    <TextInput
+                      value={tracking}
+                      onChangeText={setTracking}
+                      placeholder="Tracking no. (optional)"
+                      placeholderTextColor={colors.homeMuted}
+                      accessibilityLabel="Tracking number"
+                      autoCapitalize="characters"
+                      autoCorrect={false}
+                      maxLength={80}
+                      style={[styles.msgInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
+                    />
                   </View>
                 )}
-
-                {/* Initiator: cancel pending */}
-                {isInitiator && trade.status === 'pending' && (
+                {actions?.canMarkPosted && (
                   <TouchableOpacity
-                    onPress={() => updateStatus('cancelled')}
+                    onPress={markPosted}
+                    activeOpacity={0.85}
+                    accessibilityRole="button"
+                    style={[styles.actionBtnFull, { backgroundColor: colors.homeCoral, borderColor: colors.homeCoral }]}
+                  >
+                    <Text style={[styles.actionBtnLabel, { color: colors.homeSurface }]}>I've Posted My Pins</Text>
+                  </TouchableOpacity>
+                )}
+                {actions?.canUpdateTracking && (carrier.trim() !== '' || tracking.trim() !== '') && (
+                  <TouchableOpacity
+                    onPress={markPosted}
                     activeOpacity={0.85}
                     accessibilityRole="button"
                     style={[styles.actionBtnFull, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
                   >
-                    <Text style={[styles.actionBtnLabel, { color: colors.homeMuted }]}>Cancel Request</Text>
+                    <Text style={[styles.actionBtnLabel, { color: colors.homeInk }]}>Save Tracking</Text>
+                  </TouchableOpacity>
+                )}
+
+                {/* Each side: received. The trade completes when both have. */}
+                {actions?.canMarkReceived && (
+                  <TouchableOpacity
+                    onPress={() => Alert.alert('Received their pins?', 'The trade completes once you have both confirmed.', [
+                      { text: 'No', style: 'cancel' },
+                      { text: 'Yes, received', onPress: () => void runAction(() => repo!.markTradeReceived(trade.id)) },
+                    ])}
+                    activeOpacity={0.85}
+                    accessibilityRole="button"
+                    style={[styles.actionBtnFull, { backgroundColor: colors.homeCoral, borderColor: colors.homeCoral }]}
+                  >
+                    <Text style={[styles.actionBtnLabel, { color: colors.homeSurface }]}>I've Received Their Pins</Text>
+                  </TouchableOpacity>
+                )}
+
+                {actions?.canCancel && (
+                  <TouchableOpacity
+                    onPress={() => Alert.alert('Cancel trade?', 'This cannot be undone.', [
+                      { text: 'No', style: 'cancel' },
+                      { text: 'Yes, cancel', style: 'destructive', onPress: () => void runAction(() => repo!.cancelTrade(trade.id)) },
+                    ])}
+                    activeOpacity={0.85}
+                    accessibilityRole="button"
+                    style={[styles.actionBtnFull, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
+                  >
+                    <Text style={[styles.actionBtnLabel, { color: colors.homeMuted }]}>Cancel Trade</Text>
+                  </TouchableOpacity>
+                )}
+
+                {actions?.canReportProblem && (
+                  <TouchableOpacity
+                    onPress={() => Alert.alert('Report a problem?', 'This stops the trade. It cannot be undone in the app.', [
+                      { text: 'No', style: 'cancel' },
+                      { text: 'Report problem', style: 'destructive', onPress: () => void runAction(() => repo!.reportTradeProblem(trade.id)) },
+                    ])}
+                    activeOpacity={0.85}
+                    accessibilityRole="button"
+                    style={[styles.actionBtnFull, { backgroundColor: colors.destructive + '18', borderColor: colors.destructive + '55' }]}
+                  >
+                    <Text style={[styles.actionBtnLabel, { color: colors.destructive }]}>Report a Problem</Text>
                   </TouchableOpacity>
                 )}
 
@@ -653,6 +723,8 @@ const styles = StyleSheet.create({
   bubbleTime: { fontSize: 10, fontFamily: 'Inter_400Regular', textAlign: 'right' },
   actionBar: { borderTopWidth: StyleSheet.hairlineWidth, paddingHorizontal: spacing.md, paddingTop: spacing.sm + 2, gap: spacing.sm + 2 },
   actionRow: { flexDirection: 'row', gap: spacing.sm + 2 },
+  trackingRow: { flexDirection: 'row', gap: spacing.sm },
+  nextStep: { fontSize: 13, fontFamily: 'Inter_500Medium', textAlign: 'center' },
   actionBtn: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm },
   actionBtnFull: { alignItems: 'center', paddingVertical: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm },
   actionBtnLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },

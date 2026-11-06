@@ -19,7 +19,7 @@ import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
 import { uploadCommunityPhoto } from '@/utils/communityPhoto';
 import { radius, spacing } from '@/constants/theme';
-import type { CataloguePin, CommunityPost, Conversation, ConversationMessage } from '@workspace/pin-repository';
+import type { CataloguePin, CommunityPost, Conversation, ConversationMessage, TradeStatus } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
 import { chatListData } from '@/utils/chatList';
 import { ErrorState } from '@/components/ui/ErrorState';
@@ -29,6 +29,7 @@ import { UserSafetySheet } from '@/components/UserSafetySheet';
 import { Button } from '@/components/ui/Button';
 import { useToast } from '@/components/ui/Toast';
 import { otherParticipantId } from '@/utils/blockedUsers';
+import { tradeCardTitle } from '@/utils/tradeActions';
 
 /** Space between messages (FlatList content has no `gap`). */
 function MessageGap() {
@@ -113,6 +114,7 @@ export default function ChatScreen() {
   const seenIdsRef = useRef<Set<string>>(new Set()); const isFocusedRef = useRef(false);
   const pendingReadRef = useRef(false); const listRef = useRef<FlatList<ConversationMessage>>(null);
   const [conv, setConv] = useState<Conversation | null>(null);
+  const [tradeStatus, setTradeStatus] = useState<TradeStatus | undefined>();
   const [messages, setMessages] = useState<ConversationMessage[]>([]);
   const [contextPost, setContextPost] = useState<CommunityPost | null>(null);
   const [loading, setLoading] = useState(true); const [error, setError] = useState<UserError | null>(null);
@@ -151,6 +153,7 @@ export default function ChatScreen() {
       const c = await repo.getConversation(id, userId);
       const msgs = await repo.getConversationMessages(id);
       setConv(c);
+      if (c?.tradeId) setTradeStatus((await repo.getTrade(c.tradeId))?.status);
       if (isInitial) {
         if (c?.contextPostId) setContextPost(await repo.getCommunityPost(c.contextPostId));
       }
@@ -272,23 +275,17 @@ export default function ChatScreen() {
     if (!repo || !userId || !conv) return;
     try {
       setSending(true);
-      const existing = conv.tradeId;
-      const trade = existing
-        ? await repo.updateTradeStatus(existing, 'accepted')
-        : await repo.createTrade(
-          userId,
-          conv.otherParticipant?.id ?? (
-            conv.participantAId === userId ? conv.participantBId : conv.participantAId
-          ),
-        );
-      const accepted = trade.status === 'accepted'
-        ? trade
-        : await repo.updateTradeStatus(trade.id, 'accepted');
-      if (!existing) await repo.linkConversationTrade(conv.id, accepted.id);
-      setConv(current => current ? { ...current, tradeId: accepted.id } : current);
+      const trade = await repo.proposeTrade(
+        conv.otherParticipant?.id ?? (
+          conv.participantAId === userId ? conv.participantBId : conv.participantAId
+        ),
+      );
+      await repo.linkConversationTrade(conv.id, trade.id);
+      setConv(current => current ? { ...current, tradeId: trade.id } : current);
+      setTradeStatus(trade.status);
       setTradeConfirmOpen(false);
     } catch (e) {
-      Alert.alert('Trade not marked agreed', userErrorLine(e, 'chat-agree'));
+      Alert.alert('Trade not proposed', userErrorLine(e, 'chat-agree'));
     } finally {
       setSending(false);
     }
@@ -377,8 +374,13 @@ export default function ChatScreen() {
                   )}
                   {tradeRelated && (conv?.tradeId ? (
                     <View style={[styles.agreedCard, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
-                      <Text style={[styles.agreedTitle, { color: colors.homeInk }]}>Trade agreed ✓</Text>
+                      <Text style={[styles.agreedTitle, { color: colors.homeInk }]}>{tradeCardTitle(tradeStatus)}</Text>
                       <Text style={[styles.contextText, { color: colors.homeMuted }]}>Each of you posts your own pins. Use a tracked service.</Text>
+                      <TouchableOpacity onPress={() => router.push(`/trade/${conv.tradeId}`)} accessibilityRole="link" accessibilityLabel="View trade" hitSlop={{ top: 10, bottom: 10 }} style={styles.safelyLink}>
+                        <Feather name="repeat" size={13} color={colors.homeCoral} />
+                        <Text style={[styles.safelyText, { color: colors.homeCoral }]}>View trade</Text>
+                        <Feather name="chevron-right" size={13} color={colors.homeCoral} />
+                      </TouchableOpacity>
                       <TouchableOpacity onPress={() => router.push('/trading-safely')} accessibilityRole="link" accessibilityLabel="Trading safely guide" hitSlop={{ top: 10, bottom: 10 }} style={styles.safelyLink}>
                         <Feather name="shield" size={13} color={colors.homeCoral} />
                         <Text style={[styles.safelyText, { color: colors.homeCoral }]}>Trading safely</Text>
@@ -388,7 +390,7 @@ export default function ChatScreen() {
                   ) : (
                     <TouchableOpacity accessibilityRole="button" onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
                       <Feather name="check-circle" size={16} color={colors.homeCoral} />
-                      <Text style={[styles.agreeText, { color: colors.homeCoral }]}>Mark Trade Agreed</Text>
+                      <Text style={[styles.agreeText, { color: colors.homeCoral }]}>Propose Trade</Text>
                     </TouchableOpacity>
                   ))}
                   {messages.length === 0 && (
@@ -473,9 +475,9 @@ export default function ChatScreen() {
             <View style={[styles.confirmIcon, { backgroundColor: colors.homeAqua }]}>
               <Feather name="check-circle" size={28} color={colors.homeCoral} />
             </View>
-            <Text style={[styles.confirmTitle, { color: colors.homeInk }]}>Mark trade agreed?</Text>
+            <Text style={[styles.confirmTitle, { color: colors.homeInk }]}>Propose this trade?</Text>
             <Text style={[styles.confirmBody, { color: colors.homeMuted }]}>
-              This records the agreement for trade history. You can arrange delivery together when ready.
+              The other collector can accept or decline. Once accepted, you each post your own pins and confirm when theirs arrive.
             </Text>
             <View style={styles.confirmActions}>
               <TouchableOpacity
@@ -490,7 +492,7 @@ export default function ChatScreen() {
                 disabled={sending}
                 onPress={() => void agreeTrade()}
                 accessibilityRole="button"
-                accessibilityLabel="Confirm trade agreed"
+                accessibilityLabel="Confirm propose trade"
                 style={[styles.confirmButton, { backgroundColor: colors.homeCoral }]}
               >
                 {sending ? (

@@ -460,7 +460,7 @@ export interface GetForTradeInventoryInput {
 }
 
 // ─── Trade types ──────────────────────────────────────────────────────────────
-export type TradeStatus = 'pending' | 'accepted' | 'rejected' | 'completed' | 'cancelled';
+export type TradeStatus = 'pending' | 'accepted' | 'rejected' | 'completed' | 'cancelled' | 'problem';
 
 export interface Trade {
   id: string;
@@ -468,10 +468,26 @@ export interface Trade {
   recipientId: string;
   status: TradeStatus;
   notes?: string;
+  /** Each side's own posted and received marks (migration 057). */
+  initiatorPostedAt?: string;
+  recipientPostedAt?: string;
+  initiatorCarrier?: string;
+  recipientCarrier?: string;
+  initiatorTracking?: string;
+  recipientTracking?: string;
+  initiatorReceivedAt?: string;
+  recipientReceivedAt?: string;
+  problemReportedBy?: string;
+  problemReportedAt?: string;
   items?: TradeItem[];
   messages?: TradeMessage[];
   createdAt: string;
   updatedAt: string;
+}
+
+export interface MarkTradePostedInput {
+  carrier?: string;
+  tracking?: string;
 }
 
 export interface TradeItem {

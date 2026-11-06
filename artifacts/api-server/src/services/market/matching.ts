@@ -567,6 +567,17 @@ const V2_GENERIC_TOKENS = new Set([
   "avec", "set", "boxed", "box", "booster",
 ]);
 
+/**
+ * Words too common to tell one collection from another: product types,
+ * places, and catalogue placeholders. "Mystery" on a pin called "Stitch" says
+ * nothing about which mystery collection the listing is from.
+ */
+const V2_WEAK_SERIES_TOKENS = new Set([
+  "mystery", "mysteries", "blind", "surprise", "bag", "character", "characters",
+  "walt", "world", "disneyland", "resort", "paris", "store", "shop", "shopdisney",
+  "uncategorised", "uncategorized",
+]);
+
 /** Variants that make the record itself a different product from the base pin. */
 const STRONG_VARIANTS = new Set<VariantTerm>([
   "jumbo", "mini", "pin_on_pin", "chaser", "artist_proof", "pin_traders_delight",
@@ -653,6 +664,7 @@ function matchV2(pin: CataloguePin, title: string, lang: MatchLang | "auto"): Ma
   ].filter(t => !V2_GENERIC_TOKENS.has(t) && !nameTokens.includes(t) && !/^\d{4}$/.test(t));
   const discHits = discTokens.filter(t => titleTokens.has(t)).length;
   score += Math.min(discHits, 3) * 8;
+  const strongDiscHits = discTokens.filter(t => !V2_WEAK_SERIES_TOKENS.has(t) && titleTokens.has(t)).length;
 
   const recordChars = pinCharacterList(pin);
   const recordCharAliases = recordChars.map(c => lexiconAliases(c));
@@ -737,8 +749,28 @@ function matchV2(pin: CataloguePin, title: string, lang: MatchLang | "auto"): Ma
     if (others.length > 0) return reject("character_conflict", score, others[0]);
   }
 
-  if (!setRecord && !codeHit && nameTokens.length <= 3 && discTokens.length >= 2 && discHits === 0) {
+  if (!setRecord && !codeHit && nameTokens.length <= 3 && discTokens.length >= 2 && strongDiscHits === 0) {
     return reject("generic_name_no_series", score);
+  }
+  // A record named only after a character ("Stitch") can only be told apart by
+  // its collection, so the listing has to name that collection.
+  if (!setRecord && !codeHit) {
+    const nameCharWords = new Set(
+      [...recordChars, ...parseAttributes(pin.title, { lang: "en" }).charactersGuess]
+        .flatMap(c => lexiconAliases(c))
+        .flatMap(a => a.split(" ")),
+    );
+    const bareName = nameTokens.every(t => V2_GENERIC_TOKENS.has(t) || nameCharWords.has(t));
+    if (bareName) {
+      const collectionTokens = v2Tokens(collectionNorm).filter(
+        t => !V2_GENERIC_TOKENS.has(t) && !V2_WEAK_SERIES_TOKENS.has(t) && !nameTokens.includes(t) && !/^\d{4}$/.test(t),
+      );
+      const seen = (t: string) => titleTokens.has(t) || titleTokens.has(t.replace(/s$/, "")) || titleTokens.has(`${t}s`);
+      const needed = Math.min(2, collectionTokens.length);
+      if (needed === 0 || collectionTokens.filter(seen).length < needed) {
+        return reject("generic_name_no_series", score, "collection");
+      }
+    }
   }
   if (nameRatio < 0.4 && !codeHit) return reject("low_name_overlap", score);
   // Matching only the character's name is not enough when the pin name has

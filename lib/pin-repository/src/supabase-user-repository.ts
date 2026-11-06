@@ -4,6 +4,7 @@ import { PinRepositoryError } from './repository';
 import { safeDisplayName } from './display-name';
 import type {
   AddUserPinInput,
+  MarkTradePostedInput,
   AdminReviewInput,
   CataloguePin,
   CommunityPost,
@@ -283,6 +284,16 @@ function rowToTrade(row: Record<string, unknown>): Trade {
     recipientId: row.recipient_id as string,
     status: row.status as Trade['status'],
     notes: (row.notes as string | null) ?? undefined,
+    initiatorPostedAt: (row.initiator_posted_at as string | null) ?? undefined,
+    recipientPostedAt: (row.recipient_posted_at as string | null) ?? undefined,
+    initiatorCarrier: (row.initiator_carrier as string | null) ?? undefined,
+    recipientCarrier: (row.recipient_carrier as string | null) ?? undefined,
+    initiatorTracking: (row.initiator_tracking as string | null) ?? undefined,
+    recipientTracking: (row.recipient_tracking as string | null) ?? undefined,
+    initiatorReceivedAt: (row.initiator_received_at as string | null) ?? undefined,
+    recipientReceivedAt: (row.recipient_received_at as string | null) ?? undefined,
+    problemReportedBy: (row.problem_reported_by as string | null) ?? undefined,
+    problemReportedAt: (row.problem_reported_at as string | null) ?? undefined,
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
   };
@@ -635,27 +646,44 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     return trade;
   }
 
-  async createTrade(initiatorId: string, recipientId: string, notes?: string): Promise<Trade> {
-    const { data, error } = await this.client
-      .from('trades')
-      .insert({ initiator_id: initiatorId, recipient_id: recipientId, notes: notes ?? null })
-      .select()
-      .single();
-
+  // Trades change only through the migration 057 functions, which enforce who
+  // may do what. Their messages are written for collectors, so pass them on.
+  private async callTradeRpc(fn: string, args: Record<string, unknown>): Promise<Trade> {
+    const { data, error } = await (this.client as any).rpc(fn, args);
     if (error) throw new Error(error.message);
     return rowToTrade(data as Record<string, unknown>);
   }
 
-  async updateTradeStatus(tradeId: string, status: Trade['status']): Promise<Trade> {
-    const { data, error } = await this.client
-      .from('trades')
-      .update({ status })
-      .eq('id', tradeId)
-      .select()
-      .single();
+  proposeTrade(recipientId: string, notes?: string): Promise<Trade> {
+    return this.callTradeRpc('trade_propose', { p_recipient_id: recipientId, p_notes: notes ?? null });
+  }
 
-    if (error) throw new Error(error.message);
-    return rowToTrade(data as Record<string, unknown>);
+  acceptTrade(tradeId: string): Promise<Trade> {
+    return this.callTradeRpc('trade_accept', { p_trade_id: tradeId });
+  }
+
+  declineTrade(tradeId: string): Promise<Trade> {
+    return this.callTradeRpc('trade_decline', { p_trade_id: tradeId });
+  }
+
+  cancelTrade(tradeId: string): Promise<Trade> {
+    return this.callTradeRpc('trade_cancel', { p_trade_id: tradeId });
+  }
+
+  markTradePosted(tradeId: string, input: MarkTradePostedInput = {}): Promise<Trade> {
+    return this.callTradeRpc('trade_mark_posted', {
+      p_trade_id: tradeId,
+      p_carrier: input.carrier ?? null,
+      p_tracking: input.tracking ?? null,
+    });
+  }
+
+  markTradeReceived(tradeId: string): Promise<Trade> {
+    return this.callTradeRpc('trade_mark_received', { p_trade_id: tradeId });
+  }
+
+  reportTradeProblem(tradeId: string): Promise<Trade> {
+    return this.callTradeRpc('trade_report_problem', { p_trade_id: tradeId });
   }
 
   async addTradeItem(

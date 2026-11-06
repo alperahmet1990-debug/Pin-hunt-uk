@@ -1,5 +1,6 @@
 import type {
   AddUserPinInput,
+  MarkTradePostedInput,
   AdminReviewInput,
   CommunityPost,
   Conversation,
@@ -151,11 +152,26 @@ export interface IUserPinRepository {
   /** Fetch a single trade with items and messages. */
   getTrade(tradeId: string): Promise<Trade | null>;
 
-  /** Create a new trade request. */
-  createTrade(initiatorId: string, recipientId: string, notes?: string): Promise<Trade>;
+  /** Propose a trade to another collector. */
+  proposeTrade(recipientId: string, notes?: string): Promise<Trade>;
 
-  /** Update trade status (accept, reject, complete, cancel). */
-  updateTradeStatus(tradeId: string, status: Trade['status']): Promise<Trade>;
+  /** Recipient only, while pending. */
+  acceptTrade(tradeId: string): Promise<Trade>;
+
+  /** Recipient only, while pending. */
+  declineTrade(tradeId: string): Promise<Trade>;
+
+  /** Initiator while pending; either side once accepted, until someone has posted. */
+  cancelTrade(tradeId: string): Promise<Trade>;
+
+  /** Marks the caller's own pins as posted. Calling again updates the tracking details. */
+  markTradePosted(tradeId: string, input?: MarkTradePostedInput): Promise<Trade>;
+
+  /** Marks the other side's pins as received. The trade completes when both sides have. */
+  markTradeReceived(tradeId: string): Promise<Trade>;
+
+  /** Either side, once pins have been posted. */
+  reportTradeProblem(tradeId: string): Promise<Trade>;
 
   /** Add an item (offered or requested pin) to a pending trade. */
   addTradeItem(tradeId: string, userPinId: string, direction: TradeItem['direction']): Promise<TradeItem>;

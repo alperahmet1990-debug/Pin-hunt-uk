@@ -622,6 +622,7 @@ function BoardSheet({ visible, count, boards, onPickBoard, onCreateBoard, onClos
             value={newName}
             onChangeText={setNewName}
             placeholder="New board name"
+            autoCapitalize="words"
             placeholderTextColor={colors.homeMuted}
             returnKeyType="done"
             onSubmitEditing={create}

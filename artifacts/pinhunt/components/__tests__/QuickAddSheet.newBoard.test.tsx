@@ -104,3 +104,11 @@ describe('QuickAddSheet: New Board adds the pin', () => {
     },
   );
 });
+
+describe('QuickAddSheet: board name field', () => {
+  it('capitalises each word (#390)', async () => {
+    await render(<Harness initial="none" />);
+    await act(async () => { fireEvent.press(screen.getByText('New Board')); });
+    expect(screen.getByPlaceholderText('Board name…').props.autoCapitalize).toBe('words');
+  });
+});

@@ -671,6 +671,7 @@ export default function BoardDetailScreen() {
           value={newName}
           onChangeText={setNewName}
           placeholder="Board name"
+          autoCapitalize="words"
           placeholderTextColor={colors.homeMuted}
           accessibilityLabel="Board name"
           autoFocus

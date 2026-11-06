@@ -121,6 +121,54 @@ describe("matchListing v2 rules", () => {
     expect(r.accepted).toBe(true);
   });
 
+  describe("records named only after a character", () => {
+    const bare = (title: string, collection: string, character: string) => ({
+      ...fixturePin("figment"),
+      title,
+      collection,
+      edition: "Open Edition",
+      normalisedSeries: `Disney Mystery Pins | 2025 | Walt Disney World | ${collection}`,
+      searchAliases: `${collection}; Disney Mystery Pins; 2025; Walt Disney World; WDW`,
+      characters: [character],
+      externalIdentifiers: {},
+      limitedEditionSize: undefined,
+      releaseYear: 2025,
+    });
+    const toys = bare("Cheshire Cat", "Toys in a Box Mystery Collection", "Cheshire Cat");
+    const fans = bare("Stitch", "Character Folding Fans Mystery Collection", "Stitch");
+
+    // Real sold titles that were wrongly accepted in the 6 Nov 2026 staging test.
+    it.each([
+      [toys, "Loungefly Disney Cats & Dogs Halloween Mystery Pin - Cheshire Cat"],
+      [toys, "Ducks of Disney Mystery Pin CHESHIRE CAT Duck"],
+      [fans, "DISNEY LILO & STITCH CHRISTMAS HOLIDAY SWEATER MYSTERY PIN"],
+      [{ ...fans, title: "Mickey Mouse", characters: ["Mickey Mouse"] }, "Walt Disney World Disney Mickey Mouse Film Strip Pin Single Contemporary"],
+    ])("rejects another collection's pin: %#", (pin, title) => {
+      const r = matchListing(pin, title, { mode: "v2" });
+      expect(r.accepted).toBe(false);
+      expect(r.rejectionReason).toBe("generic_name_no_series");
+    });
+
+    it("accepts a listing that names the collection", () => {
+      expect(matchListing(toys, "Disney Toys in a Box Mystery Pin Cheshire Cat 2025", { mode: "v2" }).accepted).toBe(true);
+      expect(matchListing(fans, "Disney Parks Character Folding Fan Mystery Pin Stitch", { mode: "v2" }).accepted).toBe(true);
+    });
+
+    it("rejects when one of two collection words is missing", () => {
+      expect(matchListing(fans, "Disney Fans Mystery Pin Stitch", { mode: "v2" }).accepted).toBe(false);
+    });
+
+    it("rejects when the record has no usable collection name", () => {
+      const r = matchListing({ ...fans, collection: "Uncategorised" }, "Disney Stitch pin", { mode: "v2" });
+      expect(r.accepted).toBe(false);
+    });
+
+    it("still lets a product code identify the pin", () => {
+      const r = matchListing({ ...toys, externalIdentifiers: { sku: "400020815822" } }, "Disney pin 400020815822 Cheshire Cat", { mode: "v2" });
+      expect(r.accepted).toBe(true);
+    });
+  });
+
   it("keeps the score and parsed attributes on a rejection", () => {
     const r = matchListing(fixturePin("hatbox"), "Hatbox Ghost Haunted Mansion 50th Anniversary pin LE 3000", { mode: "v2" });
     expect(r.accepted).toBe(false);

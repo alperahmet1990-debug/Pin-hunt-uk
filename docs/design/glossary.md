@@ -16,6 +16,9 @@ the maintainer on 2026-10-13 (#108).
 | Light appearance | `light` | **Light Side** | "Light Mode" |
 | Dark appearance | `dark` | **Dark Side** | "Dark Mode" |
 | Follow the device's appearance | `system` | **System** | "Auto" |
+| Identifying a pin from a photo | `scan` tab | **Scan** (camera icon) | "Find" as the tab label |
+| Every pin PinHunt knows | — | **Catalogue**; "Browse the catalogue" | "Pin Catalogue", "Entire Catalogue" |
+| A pin with no estimated value | — | **No value yet** | "Not yet catalogued" |
 
 Notes:
 
@@ -30,4 +33,8 @@ Notes:
 - For Trade copies count as owned (Pin detail, Sets, Home progress).
 - Light Side / Dark Side are wording only (#224): no Star Wars imagery,
   logos or fonts; icons stay sun and moon. Palette keys stay `light` / `dark`.
+- The ISO action uses the **bookmark** icon, matching ISO badges. The heart
+  is kept only for the Collection tab (#462).
+- "Find a Pin", "Find a Trade" and "Find Trades" stay as action names; only
+  the scan tab is called Scan.
 - `artifacts/pinhunt/__tests__/glossary.test.js` fails if a retired label comes back.

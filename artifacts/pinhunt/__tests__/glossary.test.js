@@ -13,6 +13,11 @@ const RETIRED = [
   ['"For trade" as a badge label (use "For Trade")', /label:\s*'For trade'/],
   ['"Light Mode" (use "Light Side", #224)', /['"`>]\s*Light Mode\b/],
   ['"Dark Mode" (use "Dark Side", #224)', /['"`>]\s*Dark Mode\b/],
+  ['"Find" as the scan tab label (use "Scan", #462)', /title:\s*'Find'|Label>\s*Find\s*</],
+  ['"Pin Catalogue" (use "Catalogue", #462)', /['"`>]\s*Pin Catalogue\b/],
+  ['"Entire Catalogue" (use "Catalogue", #462)', /['"`>]\s*(Browse )?Entire Catalogue\b/i],
+  ['a heart icon for the ISO action (use "bookmark", #462)', /key:\s*'iso',[^}]*icon:\s*'heart'/],
+  ['"Not yet catalogued" for a missing value (use "No value yet", #461)', /['"`>]\s*Not yet catalogued/],
 ];
 
 const ROOT = path.resolve(__dirname, '..');

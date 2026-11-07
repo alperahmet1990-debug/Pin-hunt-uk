@@ -1,5 +1,5 @@
 /**
- * Browse Entire Catalogue — multi-select add for collectors.
+ * Browse the Catalogue — multi-select add for collectors.
  *
  * Lists every publicly browsable catalogue pin grouped by set, with search
  * and filters (set, year, edition, hide pins I have). Collectors tap pins
@@ -8,7 +8,7 @@
  * or new board (which also marks them owned — boards only hold pins the
  * collector has, see BoardsContext.addPinToBoard).
  *
- * Reached from Search ("Browse entire catalogue") and, in add mode, from
+ * Reached from Search ("Browse the catalogue") and, in add mode, from
  * Collection → + → Add from catalogue (#353). Writes go through CollectionContext's
  * setStatuses (one batched sync), with the same retry behaviour as single adds.
  *
@@ -91,7 +91,7 @@ export default function BrowseCatalogueScreen() {
   // Same columns and tile size as every other pin grid (PinGrid, UX-043).
   const columns = pinGridColumns(screenWidth);
   const tileSize = pinTileSize(screenWidth, columns);
-  const screenTitle = addMode ? ADD_PINS_LABEL : 'Entire Catalogue';
+  const screenTitle = addMode ? ADD_PINS_LABEL : 'Catalogue';
   const [addedCount, setAddedCount] = useState(0);
   // Pins added as owned/For Trade this visit, for the photo prompt on Done (UX-056).
   const [addedOwnedIds, setAddedOwnedIds] = useState<string[]>([]);
@@ -480,7 +480,7 @@ export default function BrowseCatalogueScreen() {
                 accessibilityRole="button"
                 style={[styles.secondaryBtn, { borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]}
               >
-                {!narrow && <Feather name="heart" size={15} color={colors.homeInk} />}
+                {!narrow && <Feather name="bookmark" size={15} color={colors.homeInk} />}
                 <Text numberOfLines={1} style={[styles.secondaryLabel, { color: colors.homeInk }]}>ISO</Text>
               </TouchableOpacity>
               <TouchableOpacity

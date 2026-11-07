@@ -49,8 +49,8 @@ function NativeTabLayout() {
         {totalUnread > 0 && <NativeTabs.Trigger.Badge>{totalUnread > 9 ? '9+' : String(totalUnread)}</NativeTabs.Trigger.Badge>}
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="scan">
-        <NativeTabs.Trigger.Icon sf={{ default: 'magnifyingglass', selected: 'magnifyingglass' }} />
-        <NativeTabs.Trigger.Label>Find</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon sf={{ default: 'camera', selected: 'camera.fill' }} />
+        <NativeTabs.Trigger.Label>Scan</NativeTabs.Trigger.Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="collection">
         <NativeTabs.Trigger.Icon sf={{ default: 'heart', selected: 'heart.fill' }} />
@@ -148,14 +148,14 @@ function ClassicTabLayout() {
         }}
       />
 
-      {/* Find */}
+      {/* Scan */}
       <Tabs.Screen
         name="scan"
         options={{
-          title: 'Find',
+          title: 'Scan',
           tabBarIcon: ({ color }) => isIOS
-            ? <SymbolView name="magnifyingglass" tintColor={color} size={24} />
-            : <Feather name="search" size={22} color={color} />,
+            ? <SymbolView name="camera" tintColor={color} size={24} />
+            : <Feather name="camera" size={22} color={color} />,
         }}
       />
 

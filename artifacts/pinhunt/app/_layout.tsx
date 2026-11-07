@@ -103,8 +103,8 @@ function RootLayoutNav() {
       <Stack.Screen name="my-trades" options={{ title: 'Trades' }} />
       <Stack.Screen name="submission/[id]" options={{ title: 'Submission' }} />
       <Stack.Screen name="edit-submission/[id]" options={{ title: 'Edit Submission' }} />
-      <Stack.Screen name="catalogue" options={{ title: 'Pin Catalogue' }} />
-      <Stack.Screen name="browse-catalogue" options={{ title: 'Entire Catalogue' }} />
+      <Stack.Screen name="catalogue" options={{ title: 'Catalogue' }} />
+      <Stack.Screen name="browse-catalogue" options={{ title: 'Catalogue' }} />
       <Stack.Screen name="traders/[pinId]" options={{ title: 'Traders' }} />
       <Stack.Screen name="trade/[id]" options={{ title: 'Trade' }} />
       {/* Collectors Nearby (task #5) */}

@@ -24,7 +24,7 @@ export function ValueDisplay({ pinId, catalogueEstimateGBP, collectorValue }: Va
         {catalogueEstimateGBP != null ? (
           <Text style={[styles.amount, { color: colors.homeCoralDeep }]}>£{catalogueEstimateGBP.toFixed(2)}</Text>
         ) : (
-          <Text style={[styles.amountEmpty, { color: colors.homeMuted }]}>Not yet catalogued</Text>
+          <Text style={[styles.amountEmpty, { color: colors.homeMuted }]}>No value yet</Text>
         )}
       </View>
 

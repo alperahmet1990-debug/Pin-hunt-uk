@@ -171,7 +171,7 @@ export default function PinDetailScreen() {
     ...(canToggleIso ? [{
       key: 'iso',
       label: currentStatus === 'wanted' ? 'On your ISO' : 'Add to ISO',
-      icon: 'heart' as const,
+      icon: 'bookmark' as const,
       variant: 'secondary' as const,
       onPress: () => setStatus(pin.id, currentStatus === 'wanted' ? 'none' : 'wanted'),
     }] : []),

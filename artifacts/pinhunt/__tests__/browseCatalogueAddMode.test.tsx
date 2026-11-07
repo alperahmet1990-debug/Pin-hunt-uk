@@ -57,10 +57,10 @@ describe('Browse catalogue: add mode and For Trade (UX-055)', () => {
   // First test in the file: its first render compiles the whole screen tree.
   // On a cold Jest cache with every worker busy that alone can pass the 5 s
   // default (seen in CI-like cold runs), so it gets a longer limit.
-  it('without mode=add it is the Entire Catalogue, with no Done bar', async () => {
+  it('without mode=add it is the Catalogue, with no Done bar', async () => {
     await render(<BrowseCatalogueScreen />);
     expect(mockHeaderShown).toBe(false);
-    expect(screen.getByRole('header', { name: 'Entire Catalogue' })).toBeTruthy();
+    expect(screen.getByRole('header', { name: 'Catalogue' })).toBeTruthy();
     expect(screen.queryByText(/Pick a set and tap Select all/)).toBeNull();
     expect(screen.queryByRole('button', { name: /^Done/ })).toBeNull();
   }, 20_000);

@@ -687,6 +687,16 @@ export default function CollectionScreen() {
     </View>
   );
 
+  // The empty For Trade tab's action opens the user's own pins with Select on,
+  // so they can pick pins and mark them For Trade from the bulk bar (#463).
+  const chooseOwnedPinsToTrade = () => {
+    setActiveTab('all');
+    setSearchQuery('');
+    setSearchActive(false);
+    setPinFilters({});
+    if (ownedIds.size > 0) selection.start();
+  };
+
   const renderEmpty = () => {
     if (showSkeleton) {
       return pinGrid ? (
@@ -721,11 +731,11 @@ export default function CollectionScreen() {
     }
     if (activeTab === 'traders') {
       if (searchActive && searchQuery || traderFilter !== 'all') return <EmptyState icon="search" title="No pins found" subtitle="Try changing your search or filters." />;
-      return <EmptyState icon="repeat" title="No pins for trade yet" subtitle="Mark pins you own as For Trade and they'll show up here." actionLabel="Choose pins to trade" onAction={() => router.push('/search')} />;
+      return <EmptyState icon="repeat" title="No pins for trade yet" subtitle="Mark pins you own as For Trade and they'll show up here." actionLabel="Choose pins to trade" onAction={chooseOwnedPinsToTrade} />;
     }
     if (activeTab === 'iso') {
       if (searchActive && searchQuery || isoFilter !== 'all') return <EmptyState icon="search" title="No pins found" subtitle="Try changing your search or filters." />;
-      return <EmptyState icon="bookmark" title="No ISO pins yet" subtitle="Add the pins you're looking for to your ISO to keep track of them." actionLabel="Find a pin to add" onAction={() => router.push('/search')} />;
+      return <EmptyState icon="bookmark" title="No ISO pins yet" subtitle="Add the pins you're looking for to your ISO to keep track of them." actionLabel="Browse the catalogue" onAction={() => router.push('/browse-catalogue')} />;
     }
     return null;
   };

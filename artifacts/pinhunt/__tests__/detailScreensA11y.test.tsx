@@ -119,7 +119,7 @@ describe('Detail screens: every touchable has a spoken name (#53)', () => {
 describe('ScreenHeader on Find a Trade and Browse Catalogue (#278)', () => {
   it.each([
     ['Find a Trade', { pinId: 'p1' }, () => require('../app/traders/[pinId]').default],
-    ['Entire Catalogue', {}, () => require('../app/browse-catalogue').default],
+    ['Catalogue', {}, () => require('../app/browse-catalogue').default],
   ] as [string, Record<string, string>, () => React.ComponentType][])('%s', async (title, params, load) => {
     mockParams = params;
     const Screen = load();

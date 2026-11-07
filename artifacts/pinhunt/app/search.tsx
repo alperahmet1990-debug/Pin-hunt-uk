@@ -313,7 +313,7 @@ export default function SearchScreen() {
       >
         {showIdle ? (
           <>
-            {/* ── Browse entire catalogue (multi-select add) ── */}
+            {/* ── Browse the catalogue (multi-select add) ── */}
             <View style={styles.section}>
               <TouchableOpacity
                 onPress={() => { Keyboard.dismiss(); router.push('/browse-catalogue'); }}
@@ -325,7 +325,7 @@ export default function SearchScreen() {
                   <Feather name="grid" size={18} color={colors.homeCoral} />
                 </View>
                 <View style={styles.resultInfo}>
-                  <Text style={[styles.resultTitle, { color: colors.homeInk }]}>Browse entire catalogue</Text>
+                  <Text style={[styles.resultTitle, { color: colors.homeInk }]}>Browse the catalogue</Text>
                   <Text style={[styles.resultMeta, { color: colors.homeMuted }]}>Filter, select several pins, and add them in one go</Text>
                 </View>
                 <Feather name="chevron-right" size={18} color={colors.homeMuted} />

@@ -20,6 +20,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { useProfile } from '@/context/ProfileContext';
+import { useAuth } from '@/context/AuthContext';
 import { radius, spacing } from '@/constants/theme';
 
 // ─── Validation ───────────────────────────────────────────────────────────────
@@ -41,6 +42,10 @@ export default function CompleteProfileScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const { updateMyProfile, checkUsernameAvailable } = useProfile();
+  // No back from here, so a way out for someone signed in to the wrong
+  // account (#463). AuthGuard sends a signed-out user to login.
+  const { signOut } = useAuth();
+  const [signingOut, setSigningOut] = useState(false);
 
   const [username, setUsername] = useState('');
   const [bio, setBio] = useState('');
@@ -205,6 +210,21 @@ export default function CompleteProfileScreen() {
                 <Text style={[styles.saveBtnText, { color: colors.homeSurface }]}>Continue</Text>
               )}
             </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.signOutBtn}
+              onPress={async () => {
+                setSigningOut(true);
+                try { await signOut(); } finally { setSigningOut(false); }
+              }}
+              disabled={signingOut || saving}
+              accessibilityRole="button"
+              hitSlop={8}
+            >
+              <Text style={[styles.signOutText, { color: colors.homeMuted }]}>
+                {signingOut ? 'Signing out…' : 'Sign out'}
+              </Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
@@ -258,6 +278,8 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.md,
   },
   inputMultiline: { minHeight: 80, textAlignVertical: 'top' },
+  signOutBtn: { alignSelf: 'center', paddingVertical: spacing.sm, minHeight: 44, justifyContent: 'center' },
+  signOutText: { fontSize: 14, fontFamily: 'Inter_600SemiBold', textDecorationLine: 'underline' },
   errorBox: { borderWidth: 1, borderRadius: radius.sm, padding: spacing.md },
   errorText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20 },
   saveBtn: {

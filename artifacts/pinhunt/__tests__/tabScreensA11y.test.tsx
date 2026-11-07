@@ -63,7 +63,7 @@ jest.mock('@/context/PinCatalogueContext', () => ({
 const SCREENS: [string, () => React.ComponentType][] = [
   ['Home', () => require('../app/(tabs)/index').default],
   ['Community', () => require('../app/(tabs)/community').default],
-  ['Find', () => require('../app/(tabs)/scan').default],
+  ['Scan', () => require('../app/(tabs)/scan').default],
   ['Collection', () => require('../app/(tabs)/collection').default],
   ['Profile', () => require('../app/(tabs)/profile').default],
   ['Collection · Sets', () => { mockParams = { tab: 'sets' }; return require('../app/(tabs)/collection').default; }],

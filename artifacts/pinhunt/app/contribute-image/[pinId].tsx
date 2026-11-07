@@ -43,6 +43,7 @@ import { useAuth } from '@/context/AuthContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { useCollection } from '@/context/CollectionContext';
 import { API_BASE } from '@/lib/apiBase';
+import { useAiPhotoConsent } from '@/hooks/useAiPhotoConsent';
 import {
   findNextContributionTarget,
   getCachedCoverage,
@@ -75,6 +76,8 @@ export default function ContributeImageScreen() {
   const router = useRouter();
   const { pins, ensurePins } = usePinCatalogue();
   const { session } = useAuth();
+  // The photo is cleaned up by Pixian before it's shown back (#501).
+  const { ensure: ensureConsent, sheet: consentSheet } = useAiPhotoConsent();
   const { collection } = useCollection();
   // Admins and the App Creator publish straight to the catalogue (server decides).
   const { isAdmin } = useMyAccess();
@@ -122,7 +125,7 @@ export default function ContributeImageScreen() {
 
   const proposalReason = fromCatalogue || fromReplace ? (isReplacement ? reason : 'missing') : undefined;
 
-  const handleTakePhoto = useCallback(async () => {
+  const takePhoto = useCallback(async () => {
     if (!session?.access_token) return;
     setError(null);
     const launcher = Platform.OS === 'web'
@@ -179,6 +182,13 @@ export default function ContributeImageScreen() {
       setStep(returnTo);
     }
   }, [session?.access_token, pinId, proposalReason, preview]);
+
+  // Ask before the camera opens (#501): "Not now" sends nothing. Returns at
+  // once; the camera follows the answer.
+  const handleTakePhoto = useCallback(() => {
+    if (!session?.access_token) return;
+    void ensureConsent().then(ok => { if (ok) void takePhoto(); });
+  }, [session?.access_token, ensureConsent, takePhoto]);
 
   const handleSubmit = useCallback(async () => {
     if (!preview || !session?.access_token) return;
@@ -410,6 +420,7 @@ export default function ContributeImageScreen() {
           </View>
         )}
       </ScrollView>
+      {consentSheet}
     </>
   );
 }

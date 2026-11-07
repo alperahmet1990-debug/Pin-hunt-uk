@@ -2,6 +2,7 @@ import React from 'react';
 import { Alert } from 'react-native';
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import AddPinScreen from '../app/add-pin';
+import { saveAiPhotoConsent } from '../utils/aiPhotoConsent';
 
 // Add a pin, photo-first (#394; was UX-011, #121): a photo and the rights
 // tick are all it needs; the AI suggests matches and fills in its guesses.
@@ -336,3 +337,7 @@ describe('Add a pin: back photo (#257)', () => {
     expect(screen.queryAllByRole('checkbox', { name: RIGHTS })).toHaveLength(0);
   });
 });
+
+// These flows test what happens after the AI photo permission (#501) was given;
+// aiPhotoConsent.test.tsx covers the question itself.
+beforeEach(() => saveAiPhotoConsent(null));

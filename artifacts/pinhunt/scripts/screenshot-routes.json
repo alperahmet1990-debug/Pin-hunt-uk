@@ -102,5 +102,15 @@
   {
     "name": "find-trades",
     "path": "/find-trades"
+  },
+  {
+    "name": "scan-ai-consent",
+    "path": "/scan",
+    "upload": "Choose Photo"
+  },
+  {
+    "name": "add-pin-ai-consent",
+    "path": "/add-pin",
+    "click": "Choose from Library"
   }
 ]

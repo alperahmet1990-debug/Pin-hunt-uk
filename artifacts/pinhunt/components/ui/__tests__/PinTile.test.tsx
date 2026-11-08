@@ -67,8 +67,20 @@ describe('pin grid sizing', () => {
     expect(pinGridColumns(600)).toBe(4);
   });
 
+  it('adds columns on iPad widths so tiles stay a comfortable size', () => {
+    expect(pinGridColumns(768)).toBe(4);
+    expect(pinGridColumns(834)).toBe(5);
+    expect(pinGridColumns(1194 - 320)).toBe(5);
+    expect(pinGridColumns(1194)).toBe(6);
+    expect(pinGridColumns(1366)).toBe(6);
+    // A tile never shrinks below the phone size when a column is added.
+    for (const w of [600, 800, 1100]) {
+      expect(pinTileSize(w, pinGridColumns(w), 16)).toBeGreaterThanOrEqual(pinTileSize(390, 3, 16));
+    }
+  });
+
   it('fits columns, gutters and side padding inside the width', () => {
-    for (const w of [320, 390, 430, 768]) {
+    for (const w of [320, 390, 430, 768, 1024, 1194, 1366]) {
       const cols = pinGridColumns(w);
       const size = pinTileSize(w, cols, 16);
       expect(size * cols + PIN_GRID_GUTTER * (cols - 1) + 32).toBeLessThanOrEqual(w);

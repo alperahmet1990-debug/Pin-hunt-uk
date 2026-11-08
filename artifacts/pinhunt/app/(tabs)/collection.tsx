@@ -45,6 +45,8 @@ import { useToast } from '@/components/ui/Toast';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { CollectionSummary } from '@/components/CollectionSummary';
 import { BoardListRow, BoardMosaicCard, NewBoardCard, type BoardMosaicItem } from '@/components/BoardMosaicCard';
+import { CollectionDeskPanel } from '@/components/CollectionDeskPanel';
+import { hasSidePanel, SIDE_PANEL_WIDTH } from '@/utils/deviceLayout';
 import { BOARD_SORT_LABELS, COLLECTION_VIEW_KEY, buildBoardItems, type BoardSort, type CollectionView } from '@/utils/collectionBoards';
 
 // Boards is the default (UX-067, #340): boards first, with "All pins" as its
@@ -166,8 +168,14 @@ function FindTradesRow({ detail, onPress, colors }: {
 
 export default function CollectionScreen() {
   const colors = useColors();
-  const { width: screenWidth } = useWindowDimensions();
-  const gridCardWidth = (screenWidth - 16 * 2 - 12) / 2;
+  const { width: windowWidth } = useWindowDimensions();
+  // iPad landscape and wide windows: the Organise panel sits beside the grid,
+  // so the grid lays out in the width that's left (Collecting at home).
+  const sidePanel = hasSidePanel(windowWidth);
+  const screenWidth = sidePanel ? windowWidth - SIDE_PANEL_WIDTH : windowWidth;
+  // Board and set cards: 2 across on phones, 3 on iPad widths.
+  const cardColumns = screenWidth >= 800 ? 3 : 2;
+  const gridCardWidth = (screenWidth - 16 * 2 - 12 * (cardColumns - 1)) / cardColumns;
   const pinColumns = pinGridColumns(screenWidth);
   const tileSize = pinTileSize(screenWidth, pinColumns, spacing.lg);
   const insets = useSafeAreaInsets();
@@ -397,7 +405,7 @@ export default function CollectionScreen() {
   // Pin tabs use the shared 3-column PinTile grid (B-P1-04); Sets and Boards use 2-up cards.
   const pinGrid = activeTab !== 'sets' && activeTab !== 'boards';
   const boardList = activeTab === 'boards' && boardView === 'list';
-  const numColumns = pinGrid ? pinColumns : boardList ? 1 : 2;
+  const numColumns = pinGrid ? pinColumns : boardList ? 1 : cardColumns;
   // Nothing to show yet but this tab has entries whose pins are still on
   // their way: placeholders instead of the empty state (UX-045).
   const tabEntryCount = activeTab === 'traders' ? forTradeIds.size : activeTab === 'iso' ? wantedIds.size : ownedIds.size;
@@ -742,11 +750,13 @@ export default function CollectionScreen() {
 
   return (
     <View style={[s.root, { backgroundColor: colors.homeBackground, paddingTop: topPad }]}>
+      <View style={s.deskRow}>
       <FlatList<GridItem>
+        style={s.deskMain}
         data={gridData}
         keyExtractor={item => item.id}
         numColumns={numColumns}
-        key={pinGrid ? `pin-grid-${pinColumns}` : boardList ? 'list-1' : 'grid-2'}
+        key={pinGrid ? `pin-grid-${pinColumns}` : boardList ? 'list-1' : `grid-${cardColumns}`}
         // Later batches stay small for collections of thousands of pins (UX-051);
         // the first render keeps FlatList's default 10 rows.
         maxToRenderPerBatch={4}
@@ -771,7 +781,7 @@ export default function CollectionScreen() {
         }
         columnWrapperStyle={numColumns === 1 ? undefined : pinGrid ? s.pinGridRow : s.gridRow}
         ItemSeparatorComponent={boardList ? () => <View style={{ height: spacing.sm }} /> : undefined}
-        contentContainerStyle={[s.flatListContent, { paddingBottom: botPad + (selection.active ? BULK_BAR_HEIGHT : 0) }]}
+        contentContainerStyle={[s.flatListContent, { paddingBottom: botPad + (selection.active && !sidePanel ? BULK_BAR_HEIGHT : 0) }]}
         extraData={selection.selected}
         renderItem={({ item }) => {
           if ('isNewBoard' in item) {
@@ -845,6 +855,25 @@ export default function CollectionScreen() {
           );
         }}
       />
+      {sidePanel && (
+        <CollectionDeskPanel
+          selecting={pinGrid && selection.active}
+          ids={selectedIds}
+          onStartSelecting={() => {
+            if (!pinGrid) { setActiveTab('all'); setSearchQuery(''); setSearchActive(false); }
+            selection.start();
+          }}
+          onDone={selection.stop}
+          onOpenBoard={id => router.push({ pathname: '/board/[id]', params: { id } })}
+          onOpenStatus={status => {
+            setActiveTab(status === 'for_trade' ? 'traders' : status === 'wanted' ? 'iso' : 'all');
+            setSearchQuery('');
+            setSearchActive(false);
+          }}
+          counts={{ owned: ownedIds.size, forTrade: forTradeIds.size, iso: wantedIds.size }}
+        />
+      )}
+      </View>
 
       {/* Add Menu Modal */}
       <Sheet visible={addModalVisible} onClose={() => setAddModalVisible(false)} title="Add to Collection">
@@ -893,7 +922,7 @@ export default function CollectionScreen() {
       </Sheet>
 
       {pinActions.sheet}
-      {pinGrid && selection.active && (
+      {pinGrid && selection.active && !sidePanel && (
         <BulkSelectBar ids={selectedIds} onDone={selection.stop} bottomOffset={tabBarOffset(insets.bottom)} />
       )}
 
@@ -1139,6 +1168,9 @@ export default function CollectionScreen() {
 
 const s = StyleSheet.create({
   root: { flex: 1 },
+  // Grid and, on wide screens, the Organise panel side by side.
+  deskRow: { flex: 1, flexDirection: 'row' },
+  deskMain: { flex: 1 },
   headerContent: { paddingBottom: 8 },
   pageHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 16, paddingTop: 8, paddingBottom: 16 },
   pageTitle: { fontSize: 24, fontFamily: 'Inter_700Bold', letterSpacing: -0.5 },

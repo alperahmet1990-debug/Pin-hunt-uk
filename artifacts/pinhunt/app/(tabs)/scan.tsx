@@ -36,6 +36,7 @@ import type { CataloguePin } from '@workspace/pin-repository';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { ScanResult } from '@/components/scan/ScanResult';
 import { ScanCamera, type ScanCameraPhoto } from '@/components/scan/ScanCamera';
+import { ScanProgress } from '@/components/scan/ScanProgress';
 import { useMyAccess } from '@/hooks/useMyAccess';
 import { useAiPhotoConsent } from '@/hooks/useAiPhotoConsent';
 import { ErrorState } from '@/components/ui/ErrorState';
@@ -124,6 +125,8 @@ export default function ScanScreen() {
   const [captured, setCaptured] = useState<CapturedImage | null>(null);
   const [matches, setMatches] = useState<Match[]>([]);
   const [insights, setInsights] = useState<ImageInsights | null>(null);
+  // When the photo was sent, so the progress steps start from then (not while the permission sheet is up).
+  const [sentAt, setSentAt] = useState(0);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   // A failed identify (offline, timeout, server…) in plain words (UX-046).
   const [failure, setFailure] = useState<UserError | null>(null);
@@ -293,6 +296,7 @@ export default function ScanScreen() {
       return;
     }
     if (run !== identifyRun.current) return;
+    setSentAt(Date.now());
 
     try {
       const { matches: rawMatches, imageInsights } = await identifyPin(
@@ -519,7 +523,8 @@ export default function ScanScreen() {
               <View style={styles.overlay}>
                 <View style={[styles.scanLine, { backgroundColor: colors.homeCoral }]} />
                 <ActivityIndicator color="#fff" size="large" />
-                <Text style={styles.overlayText}>Analysing with AI…</Text>
+                {/* Step by step, so the wait reads as progress (TestFlight feedback, 8 Nov). */}
+                <ScanProgress key={sentAt} color="#fff" dimColor="rgba(255,255,255,0.35)" />
               </View>
             )}
 
@@ -741,7 +746,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 14,
   },
-  overlayText: { color: '#fff', fontFamily: 'Inter_600SemiBold', fontSize: 15 },
   scanLine: {
     position: 'absolute',
     top: '40%',

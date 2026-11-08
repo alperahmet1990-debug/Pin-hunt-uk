@@ -47,6 +47,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import { useAiPhotoConsent } from '@/hooks/useAiPhotoConsent';
 import { KeyboardAwareScrollViewCompat } from '@/components/KeyboardAwareScrollViewCompat';
 import { useAuth } from '@/context/AuthContext';
 import { compressSubmissionImage, pickSubmissionImage, type PickedImage } from '@/utils/submissionImage';
@@ -406,6 +407,10 @@ export default function AddPinScreen() {
   const insets   = useSafeAreaInsets();
   const router   = useRouter();
   const { session } = useAuth();
+  // Every front photo goes to the clean-up and identification services (and
+  // the submission is cleaned up server-side too), so a photo is only taken
+  // in once the collector has agreed (#501).
+  const consent = useAiPhotoConsent();
   const { pins, series, repository } = usePinCatalogue();
   const {
     frontUri: handoffUri, characters: handoffCharacters, name: handoffName,
@@ -481,8 +486,10 @@ export default function AddPinScreen() {
       Image.getSize(
         handoffUri,
         (width, height) => {
-          compressSubmissionImage(handoffUri, width, height)
-            .then(img => { frontFromHandoff.current = true; setFront(img); })
+          // Usually already agreed on the scan screen, so this doesn't ask twice.
+          consent.ensure()
+            .then(ok => (ok ? compressSubmissionImage(handoffUri, width, height) : null))
+            .then(img => { if (img) { frontFromHandoff.current = true; setFront(img); } })
             .catch(() => {});
         },
         () => {
@@ -618,7 +625,12 @@ export default function AddPinScreen() {
     frontFromHandoff.current = false;
     setFront(img);
   };
-  const pickFront = async (source: 'camera' | 'library') => {
+  // Ask before the camera or library opens (#501): "Not now" sends nothing.
+  // Returns at once; the pick follows the answer.
+  const pickFront = (source: 'camera' | 'library') => {
+    void consent.ensure().then(ok => { if (ok) void openFrontPicker(source); });
+  };
+  const openFrontPicker = async (source: 'camera' | 'library') => {
     if (source === 'camera' && LIVE_CAMERA) { setCameraOpen(true); return; }
     const img = await pickSubmissionImage(source);
     if (img) acceptFront(img);
@@ -1093,6 +1105,7 @@ export default function AddPinScreen() {
             </Text>
           )}
       </KeyboardAwareScrollViewCompat>
+      {consent.sheet}
     </>
   );
 }

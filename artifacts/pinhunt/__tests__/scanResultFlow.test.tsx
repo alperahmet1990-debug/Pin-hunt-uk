@@ -1,6 +1,7 @@
 import React from 'react';
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import ScanScreen from '../app/(tabs)/scan';
+import { saveAiPhotoConsent } from '../utils/aiPhotoConsent';
 
 // UX-005 (#112): from photo to "That's it" without leaving the scan screen.
 // The first test pays the scan screen's cold start, which can pass 5 s on a
@@ -221,3 +222,7 @@ describe('Auto-identify after capture (UX-008a)', () => {
     expect(mockIdentify).toHaveBeenLastCalledWith('small', 'image/jpeg', undefined);
   });
 });
+
+// These flows test what happens after the AI photo permission (#501) was given;
+// aiPhotoConsent.test.tsx covers the question itself.
+beforeEach(() => saveAiPhotoConsent(null));

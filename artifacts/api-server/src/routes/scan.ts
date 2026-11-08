@@ -20,6 +20,7 @@ import {
   VERIFY_MIN_MS,
 } from "../services/scanBudget";
 import { withScanReasoning } from "../services/scanReasoning";
+import { verifyDecision, VERIFY_MAX_REFERENCES } from "../services/scanVerify";
 import { cachedResult, imageHash, recordUsage, withinDailyCap } from "../services/usage-caps";
 
 const router: IRouter = Router();
@@ -392,116 +393,122 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
     });
 
     // ── Stage 3: visual verification against real catalogue images ──
-    // When any candidate has a stored catalogue photo, show the model the
-    // user's photo alongside those reference images and let it re-rank.
-    // Text metadata alone confuses similar pins (e.g. every Princess
-    // Pastries macaron shares the same collection description).
-    const byPinId = new Map(catalogue.map((p) => [p.id, p]));
+    // Only when it can change the answer (services/scanVerify.ts): skipped
+    // when the ranking is already clear, or when nothing is plausible.
+    const verifyPlan = verifyDecision(matches);
+    if (verifyPlan !== "compare") skipped.push(`verify:${verifyPlan}`);
+    if (verifyPlan === "compare") {
+      // When any candidate has a stored catalogue photo, show the model the
+      // user's photo alongside those reference images and let it re-rank.
+      // Text metadata alone confuses similar pins (e.g. every Princess
+      // Pastries macaron shares the same collection description).
+      const byPinId = new Map(catalogue.map((p) => [p.id, p]));
 
-    // Pull in same-collection siblings that have real catalogue images.
-    // Similar pins in one collection (e.g. all Princess Pastries macarons)
-    // are indistinguishable by text, so any sibling with a photo must be
-    // shown to the model even if the text ranking missed it.
-    const topCollections = [...new Set(
-      matches.slice(0, 3).map((m) => byPinId.get(m.pinId)?.collection).filter(Boolean),
-    )] as string[];
-    // Both collections are looked up at once (#349).
-    const siblingLists = await Promise.all(
-      topCollections.slice(0, 2).map((collection) =>
-        repository.searchPins("", { status: "active", collection, limit: 50 }).catch(() => null)),
-    );
-    for (const siblings of siblingLists) {
-      if (!siblings) continue; // siblings are best-effort
-      for (const s of siblings) {
-        if (!s.imageUrl || byPinId.has(s.id) && matches.some((m) => m.pinId === s.id)) continue;
-        byPinId.set(s.id, s);
-        if (!matches.some((m) => m.pinId === s.id)) {
-          matches.push({ pinId: s.id, confidence: 30, reasoning: "Same collection — has a reference image for comparison." });
+      // Pull in same-collection siblings that have real catalogue images.
+      // Similar pins in one collection (e.g. all Princess Pastries macarons)
+      // are indistinguishable by text, so any sibling with a photo must be
+      // shown to the model even if the text ranking missed it.
+      const topCollections = [...new Set(
+        matches.slice(0, 3).map((m) => byPinId.get(m.pinId)?.collection).filter(Boolean),
+      )] as string[];
+      // Both collections are looked up at once (#349).
+      const siblingLists = await Promise.all(
+        topCollections.slice(0, 2).map((collection) =>
+          repository.searchPins("", { status: "active", collection, limit: 50 }).catch(() => null)),
+      );
+      for (const siblings of siblingLists) {
+        if (!siblings) continue; // siblings are best-effort
+        for (const s of siblings) {
+          if (!s.imageUrl || byPinId.has(s.id) && matches.some((m) => m.pinId === s.id)) continue;
+          byPinId.set(s.id, s);
+          if (!matches.some((m) => m.pinId === s.id)) {
+            matches.push({ pinId: s.id, confidence: 30, reasoning: "Same collection — has a reference image for comparison." });
+          }
         }
       }
-    }
-    timer.mark("siblings");
-    validIds.clear();
-    for (const id of byPinId.keys()) validIds.add(id);
-    // Hard cap the rerank candidate list to keep stage-3 prompts bounded.
-    matches = matches.slice(0, 10);
+      timer.mark("siblings");
+      validIds.clear();
+      for (const id of byPinId.keys()) validIds.add(id);
+      // Hard cap the rerank candidate list to keep stage-3 prompts bounded.
+      matches = matches.slice(0, 10);
 
-    const withImages = matches
-      .map((m) => ({ match: m, pin: byPinId.get(m.pinId)! }))
-      .filter((c) => !!c.pin?.imageUrl)
-      .slice(0, 6);
+      const withImages = matches
+        .map((m) => ({ match: m, pin: byPinId.get(m.pinId)! }))
+        .filter((c) => !!c.pin?.imageUrl)
+        .slice(0, VERIFY_MAX_REFERENCES);
 
-    // Comparing against catalogue photos sharpens the ranking but is
-    // optional: skipped when there isn't enough time left for it.
-    const verifyTimeout = budget.timeoutFor(Number.MAX_SAFE_INTEGER);
-    if (withImages.length > 0 && verifyTimeout < VERIFY_MIN_MS) skipped.push("verify");
-    if (withImages.length > 0 && verifyTimeout >= VERIFY_MIN_MS) {
-      try {
-        const refContent: Array<
-          | { type: "text"; text: string }
-          | { type: "image_url"; image_url: { url: string; detail: "low" | "high" } }
-        > = [
-          {
-            type: "image_url",
-            image_url: { url: `data:${mimeType};base64,${imageBase64}`, detail: "high" },
-          },
-          { type: "text", text: "Photo above is the USER'S PIN. Reference images follow:" },
-        ];
-        for (const c of withImages) {
-          refContent.push({ type: "text", text: `Reference for ${c.pin.id} — "${c.pin.title}" (${c.pin.collection}):` });
-          refContent.push({ type: "image_url", image_url: { url: c.pin.imageUrl!, detail: "low" } });
-        }
-        refContent.push({
-          type: "text",
-          text: "Compare the user's pin to each reference image and re-rank ALL candidates as JSON.",
-        });
-
-        const candidateList = matches
-          .map((m) => {
-            const p = byPinId.get(m.pinId)!;
-            return `${p.id} | "${p.title}" | ${p.collection} | reference image: ${p.imageUrl ? "YES (shown below)" : "no image available"}`;
-          })
-          .join("\n");
-
-        const verifyResp = await withScanReasoning((extra) => openai.chat.completions.create({
-          ...extra,
-          model: SCAN_MODEL,
-          max_completion_tokens: 1024,
-          messages: [
+      // Comparing against catalogue photos sharpens the ranking but is
+      // optional: skipped when there isn't enough time left for it.
+      const verifyTimeout = budget.timeoutFor(Number.MAX_SAFE_INTEGER);
+      if (withImages.length > 0 && verifyTimeout < VERIFY_MIN_MS) skipped.push("verify");
+      if (withImages.length > 0 && verifyTimeout >= VERIFY_MIN_MS) {
+        try {
+          const refContent: Array<
+            | { type: "text"; text: string }
+            | { type: "image_url"; image_url: { url: string; detail: "low" | "high" } }
+          > = [
             {
-              role: "system",
-              content: `You verify Disney pin identifications by comparing photos. Candidates:
-${candidateList}
-
-Where a reference image is shown, compare it DIRECTLY to the user's pin photo — same shapes, colours, props and layout means a match; visible differences mean it is NOT that pin, no matter how similar the text sounds. Candidates without reference images keep roughly their original plausibility.
-Respond with ONLY a JSON array re-ranking all ${matches.length} candidates, best first:
-[ { "pinId": "<id>", "confidence": <0-100>, "reasoning": "<1 sentence>" }, ... ]
-Give a confidence above 85 only when a reference image visually confirms the match.`,
+              type: "image_url",
+              image_url: { url: `data:${mimeType};base64,${imageBase64}`, detail: "high" },
             },
-            { role: "user", content: refContent },
-          ],
-        }, { timeout: verifyTimeout, maxRetries: 0 }));
-
-        const vraw = verifyResp.choices[0]?.message?.content ?? "[]";
-        const vs = vraw.indexOf("[");
-        const ve = vraw.lastIndexOf("]");
-        if (vs !== -1 && ve > vs) {
-          const reranked = (JSON.parse(vraw.slice(vs, ve + 1)) as ScanMatch[]).filter(
-            (m) => validIds.has(m.pinId),
-          );
-          const rerankedSeen = new Set<string>();
-          const deduped = reranked.filter((m) => {
-            if (rerankedSeen.has(m.pinId)) return false;
-            rerankedSeen.add(m.pinId);
-            return true;
+            { type: "text", text: "Photo above is the USER'S PIN. Reference images follow:" },
+          ];
+          for (const c of withImages) {
+            refContent.push({ type: "text", text: `Reference for ${c.pin.id} — "${c.pin.title}" (${c.pin.collection}):` });
+            refContent.push({ type: "image_url", image_url: { url: c.pin.imageUrl!, detail: "low" } });
+          }
+          refContent.push({
+            type: "text",
+            text: "Compare the user's pin to each reference image and re-rank ALL candidates as JSON.",
           });
-          if (deduped.length > 0) matches = deduped;
+
+          const candidateList = matches
+            .map((m) => {
+              const p = byPinId.get(m.pinId)!;
+              return `${p.id} | "${p.title}" | ${p.collection} | reference image: ${p.imageUrl ? "YES (shown below)" : "no image available"}`;
+            })
+            .join("\n");
+
+          const verifyResp = await withScanReasoning((extra) => openai.chat.completions.create({
+            ...extra,
+            model: SCAN_MODEL,
+            max_completion_tokens: 1024,
+            messages: [
+              {
+                role: "system",
+                content: `You verify Disney pin identifications by comparing photos. Candidates:
+  ${candidateList}
+
+  Where a reference image is shown, compare it DIRECTLY to the user's pin photo — same shapes, colours, props and layout means a match; visible differences mean it is NOT that pin, no matter how similar the text sounds. Candidates without reference images keep roughly their original plausibility.
+  Respond with ONLY a JSON array re-ranking all ${matches.length} candidates, best first:
+  [ { "pinId": "<id>", "confidence": <0-100>, "reasoning": "<1 sentence>" }, ... ]
+  Give a confidence above 85 only when a reference image visually confirms the match.`,
+              },
+              { role: "user", content: refContent },
+            ],
+          }, { timeout: verifyTimeout, maxRetries: 0 }));
+
+          const vraw = verifyResp.choices[0]?.message?.content ?? "[]";
+          const vs = vraw.indexOf("[");
+          const ve = vraw.lastIndexOf("]");
+          if (vs !== -1 && ve > vs) {
+            const reranked = (JSON.parse(vraw.slice(vs, ve + 1)) as ScanMatch[]).filter(
+              (m) => validIds.has(m.pinId),
+            );
+            const rerankedSeen = new Set<string>();
+            const deduped = reranked.filter((m) => {
+              if (rerankedSeen.has(m.pinId)) return false;
+              rerankedSeen.add(m.pinId);
+              return true;
+            });
+            if (deduped.length > 0) matches = deduped;
+          }
+        } catch (verifyErr) {
+          if (isUpstreamTimeout(verifyErr)) skipped.push("verify");
+          console.warn("[scan] visual verification failed, using text ranking:", verifyErr);
         }
-      } catch (verifyErr) {
-        if (isUpstreamTimeout(verifyErr)) skipped.push("verify");
-        console.warn("[scan] visual verification failed, using text ranking:", verifyErr);
+        timer.mark("verify");
       }
-      timer.mark("verify");
     }
 
     logTimings("ok");

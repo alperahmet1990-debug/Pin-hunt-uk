@@ -808,6 +808,18 @@ export interface UserReport {
   createdAt: string;
 }
 
+/** A suspended account (migration 050): it can't post, comment, message or start trades. Admins only. */
+export interface UserSuspension {
+  userId: string;
+  /** The admin who suspended it; absent if that admin's account was deleted. */
+  suspendedBy?: string;
+  reason?: string;
+  createdAt: string;
+}
+
+/** Longest suspension reason the database accepts (migration 050). */
+export const SUSPENSION_REASON_MAX = 500;
+
 /** Aggregated report info per post, for the admin moderation queue. */
 export interface PostReportSummary {
   postId: string;

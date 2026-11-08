@@ -33,6 +33,7 @@ import type {
   ReportUserInput,
   UserBlock,
   UserReport,
+  UserSuspension,
   CatalogueImageCoverage,
   ContributedPinImage,
   CreateContributedImageInput,
@@ -547,6 +548,21 @@ export interface IUserPinRepository {
 
   /** Dismiss (delete) a user report. Admin RLS applies. */
   dismissUserReport(reportId: string): Promise<void>;
+
+  // ── Account suspensions (migration 050, #503) ──────────────────────────────
+  // Admins only (RLS). A suspended account can't post, comment, message or
+  // start a trade. Rules: no one suspends themselves; only the App Creator
+  // suspends an admin; the App Creator can't be suspended in the app; an
+  // admin can't lift their own suspension.
+
+  /** Current suspensions, newest first. */
+  getSuspensions(): Promise<UserSuspension[]>;
+
+  /** Suspend an account. Already suspended is not an error. Reason: up to 500 characters. */
+  suspendUser(adminId: string, userId: string, reason?: string): Promise<void>;
+
+  /** Lift a suspension. Throws when it isn't allowed or there is none. */
+  liftSuspension(userId: string): Promise<void>;
 
   // ── Conversations / DMs ────────────────────────────────────────────────────
 

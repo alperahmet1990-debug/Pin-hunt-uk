@@ -11,6 +11,7 @@ import {
   RefreshControl,
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -21,7 +22,9 @@ import { useColors } from '@/hooks/useColors';
 import palette from '@/constants/colors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { Avatar } from '@/components/Avatar';
-import type { CommunityPost, PostReportSummary, ReportedComment, UserReport } from '@workspace/pin-repository';
+import type { CommunityPost, PostReportSummary, ReportedComment, UserReport, UserSuspension } from '@workspace/pin-repository';
+import { SUSPENSION_REASON_MAX } from '@workspace/pin-repository';
+import { useMyAccess } from '@/hooks/useMyAccess';
 import { countReportsByUser, userReportLabel } from '@/utils/blockedUsers';
 
 // Theme-independent status colours for module-level lookup tables.
@@ -32,10 +35,13 @@ const PAGE_SIZE = 30;
 type Confirming =
   | { kind: 'remove' | 'dismiss'; id: string }
   | { kind: 'removeComment'; id: string }
-  | { kind: 'dismissUserReport'; id: string };
+  | { kind: 'dismissUserReport'; id: string }
+  // Account suspensions (#503): from a report card, or the suspended list.
+  | { kind: 'suspend'; id: string; userId: string }
+  | { kind: 'lift'; id: string };
 
 /** Public names for the people in user reports, resolved once per load. */
-type ProfileNames = Map<string, { username?: string; avatarUrl?: string }>;
+type ProfileNames = Map<string, { username?: string; avatarUrl?: string; isAdmin?: boolean }>;
 
 const TYPE_LABEL: Record<string, string> = {
   in_search_of: 'In Search Of',
@@ -67,7 +73,8 @@ export default function CommunityModerationScreen() {
   const colors  = useColors();
   const insets  = useSafeAreaInsets();
   const router  = useRouter();
-  const { repo } = useMarketplace();
+  const { repo, userId: myId } = useMarketplace();
+  const { isAppCreator } = useMyAccess();
 
   const [posts,      setPosts]      = useState<CommunityPost[]>([]);
   const [loading,    setLoading]    = useState(true);
@@ -85,6 +92,10 @@ export default function CommunityModerationScreen() {
   const [userReports, setUserReports] = useState<UserReport[]>([]);
   const [reportNames, setReportNames] = useState<ProfileNames>(new Map());
   const [dismissingUserReportId, setDismissingUserReportId] = useState<string | null>(null);
+  // Account suspensions (#503).
+  const [suspensions, setSuspensions] = useState<UserSuspension[]>([]);
+  const [suspendReason, setSuspendReason] = useState('');
+  const [suspensionBusy, setSuspensionBusy] = useState<string | null>(null);
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 
@@ -93,23 +104,28 @@ export default function CommunityModerationScreen() {
     try {
       if (isRefresh) setRefreshing(true); else setLoading(true);
       setError(null);
-      const [rows, summaries, commentRows, userReportRows] = await Promise.all([
+      const [rows, summaries, commentRows, userReportRows, suspensionRows] = await Promise.all([
         repo.getCommunityFeed({ limit: PAGE_SIZE, offset: 0 }),
         repo.getPostReportSummaries(),
         repo.getReportedComments(),
         // A failure here must not hide the post and comment queues.
         repo.getUserReports().catch(() => [] as UserReport[]),
+        repo.getSuspensions().catch(() => [] as UserSuspension[]),
       ]);
       setPosts(rows);
       setReports(new Map(summaries.map(s => [s.postId, s])));
       setReportedComments(commentRows);
       setUserReports(userReportRows);
-      const ids = [...new Set(userReportRows.flatMap(r => [r.reportedUserId, r.reporterId]))];
+      setSuspensions(suspensionRows);
+      const ids = [...new Set([
+        ...userReportRows.flatMap(r => [r.reportedUserId, r.reporterId]),
+        ...suspensionRows.map(x => x.userId),
+      ])];
       const profiles = await Promise.all(ids.map(id => repo.getProfile(id).catch(() => null)));
       const names: ProfileNames = new Map();
       ids.forEach((id, i) => {
         const p = profiles[i];
-        if (p) names.set(id, { username: p.username, avatarUrl: p.avatarUrl });
+        if (p) names.set(id, { username: p.username, avatarUrl: p.avatarUrl, isAdmin: p.isAdmin });
       });
       setReportNames(names);
       setHasMore(rows.length === PAGE_SIZE);
@@ -210,6 +226,57 @@ export default function CommunityModerationScreen() {
   }, [repo]);
 
   const reportsPerUser = React.useMemo(() => countReportsByUser(userReports), [userReports]);
+
+  // ── Account suspensions (#503) ───────────────────────────────────────────────
+  const suspendedIds = React.useMemo(() => new Set(suspensions.map(x => x.userId)), [suspensions]);
+
+  /** Why this admin can't suspend an account, or null when they can (rules from migration 050). */
+  const cannotSuspend = useCallback((userId: string): string | null => {
+    if (userId === myId) return 'You can\u2019t suspend your own account.';
+    if (reportNames.get(userId)?.isAdmin && !isAppCreator) return 'Only the App Creator can suspend an admin.';
+    return null;
+  }, [myId, reportNames, isAppCreator]);
+
+  const canLift = useCallback((userId: string) => userId !== myId || isAppCreator, [myId, isAppCreator]);
+
+  const handleSuspend = useCallback(async (userId: string) => {
+    if (!repo || !myId) return;
+    try {
+      setSuspensionBusy(userId);
+      setActionError(null);
+      const reason = suspendReason.trim() || undefined;
+      await repo.suspendUser(myId, userId, reason);
+      setSuspensions(prev => prev.some(x => x.userId === userId)
+        ? prev
+        : [{ userId, suspendedBy: myId, reason, createdAt: new Date().toISOString() }, ...prev]);
+      setSuspendReason('');
+      setConfirming(null);
+    } catch (e) {
+      setActionError(e instanceof Error ? e.message : 'Could not suspend the account.');
+    } finally {
+      setSuspensionBusy(null);
+    }
+  }, [repo, myId, suspendReason]);
+
+  const handleLift = useCallback(async (userId: string) => {
+    if (!repo) return;
+    try {
+      setSuspensionBusy(userId);
+      setActionError(null);
+      await repo.liftSuspension(userId);
+      setSuspensions(prev => prev.filter(x => x.userId !== userId));
+      setConfirming(null);
+    } catch (e) {
+      setActionError(e instanceof Error ? e.message : 'Could not lift the suspension.');
+    } finally {
+      setSuspensionBusy(null);
+    }
+  }, [repo]);
+
+  const nameOf = useCallback((userId: string) => {
+    const u = reportNames.get(userId)?.username;
+    return u ? `@${u}` : 'this collector';
+  }, [reportNames]);
 
   // Reported posts first (most recently reported at top), then newest posts.
   const displayPosts = React.useMemo(() => {
@@ -350,6 +417,57 @@ export default function CommunityModerationScreen() {
             data={displayPosts}
             ListHeaderComponent={
               <View style={{ gap: 12 }}>
+                {suspensions.length > 0 && (
+                  <View style={{ gap: 8 }} testID="admin-suspensions">
+                    <Text style={[styles.sectionHeading, { color: colors.homeMuted }]}>
+                      SUSPENDED ACCOUNTS ({suspensions.length})
+                    </Text>
+                    {suspensions.map(sus => {
+                      const who = reportNames.get(sus.userId);
+                      const name = nameOf(sus.userId);
+                      const lifting = confirming?.kind === 'lift' && confirming.id === `list:${sus.userId}`;
+                      return (
+                        <View key={sus.userId} style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+                          <View style={styles.cardTop}>
+                            <Avatar uri={who?.avatarUrl} name={who?.username ?? '?'} size={32} />
+                            <View style={{ flex: 1 }}>
+                              <Text style={[styles.author, { color: colors.homeInk }]} numberOfLines={1}>{name}</Text>
+                              <Text style={[styles.time, { color: colors.homeMuted }]} numberOfLines={1}>
+                                Suspended {timeAgo(sus.createdAt)}{sus.suspendedBy ? ` by ${nameOf(sus.suspendedBy)}` : ''}
+                              </Text>
+                            </View>
+                            {!lifting && canLift(sus.userId) && (
+                              <TouchableOpacity
+                                onPress={() => { setActionError(null); setConfirming({ kind: 'lift', id: `list:${sus.userId}` }); }}
+                                activeOpacity={0.85}
+                                accessibilityRole="button"
+                                accessibilityLabel={`Lift suspension for ${name}`}
+                                style={[styles.removeBtn, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
+                                hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+                              >
+                                <Feather name="unlock" size={13} color={colors.homeCoralDeep} />
+                                <Text style={[styles.removeBtnLabel, { color: colors.homeCoralDeep }]}>Lift</Text>
+                              </TouchableOpacity>
+                            )}
+                          </View>
+                          {sus.reason ? (
+                            <Text style={[styles.metaChipLabel, { color: colors.homeMuted }]}>Reason: {sus.reason}</Text>
+                          ) : null}
+                          {lifting && (
+                            <InlineConfirm
+                              message={`Lift the suspension for ${name}? They can post, comment, message and trade again.`}
+                              confirmLabel="Lift"
+                              busy={suspensionBusy === sus.userId}
+                              error={actionError}
+                              onCancel={() => { setConfirming(null); setActionError(null); }}
+                              onConfirm={() => handleLift(sus.userId)}
+                            />
+                          )}
+                        </View>
+                      );
+                    })}
+                  </View>
+                )}
                 {(reportedCount > 0 || reportedOnly) && (
                   <TouchableOpacity
                     onPress={() => setReportedOnly(v => !v)}
@@ -406,12 +524,49 @@ export default function CommunityModerationScreen() {
                               {againstCount} open reports against {reportedName}
                             </Text>
                           )}
+                          {!suspendedIds.has(report.reportedUserId) && cannotSuspend(report.reportedUserId) ? (
+                            <Text style={[styles.metaChipLabel, { color: colors.homeMuted }]}>{cannotSuspend(report.reportedUserId)}</Text>
+                          ) : null}
                           {report.target === 'message' && report.messageId ? (
                             <Text style={[styles.metaChipLabel, { color: colors.homeMuted }]} selectable>
                               Message ID {report.messageId}
                             </Text>
                           ) : null}
-                          {confirming?.kind === 'dismissUserReport' && confirming.id === report.id ? (
+                          {confirming?.kind === 'suspend' && confirming.id === report.id ? (
+                            <View style={{ gap: 8 }}>
+                              <TextInput
+                                value={suspendReason}
+                                onChangeText={t => setSuspendReason(t.slice(0, SUSPENSION_REASON_MAX))}
+                                placeholder="Reason (optional, for admins only)"
+                                placeholderTextColor={colors.homeMuted}
+                                multiline
+                                maxLength={SUSPENSION_REASON_MAX}
+                                accessibilityLabel="Suspension reason"
+                                style={[styles.reasonInput, { color: colors.homeInk, borderColor: colors.homeLine, backgroundColor: colors.homeBackground }]}
+                              />
+                              <Text style={[styles.reasonCount, { color: colors.homeMuted }]}>
+                                {suspendReason.length}/{SUSPENSION_REASON_MAX}
+                              </Text>
+                              <InlineConfirm
+                                message={`Suspend ${reportedName}? They won\u2019t be able to post, comment, message or start a trade until the suspension is lifted.`}
+                                confirmLabel="Suspend"
+                                destructive
+                                busy={suspensionBusy === report.reportedUserId}
+                                error={actionError}
+                                onCancel={() => { setConfirming(null); setActionError(null); setSuspendReason(''); }}
+                                onConfirm={() => handleSuspend(report.reportedUserId)}
+                              />
+                            </View>
+                          ) : confirming?.kind === 'lift' && confirming.id === report.reportedUserId && suspendedIds.has(report.reportedUserId) ? (
+                            <InlineConfirm
+                              message={`Lift the suspension for ${reportedName}? They can post, comment, message and trade again.`}
+                              confirmLabel="Lift"
+                              busy={suspensionBusy === report.reportedUserId}
+                              error={actionError}
+                              onCancel={() => { setConfirming(null); setActionError(null); }}
+                              onConfirm={() => handleLift(report.reportedUserId)}
+                            />
+                          ) : confirming?.kind === 'dismissUserReport' && confirming.id === report.id ? (
                             <InlineConfirm
                               message="Dismiss this report? Nothing else changes."
                               confirmLabel="Dismiss"
@@ -435,6 +590,38 @@ export default function CommunityModerationScreen() {
                                 </TouchableOpacity>
                               ) : null}
                               <View style={{ flex: 1 }} />
+                              {suspendedIds.has(report.reportedUserId) ? (
+                                <>
+                                  <View style={[styles.suspendedChip, { backgroundColor: colors.destructive + '12' }]}>
+                                    <Text style={[styles.removeBtnLabel, { color: colors.destructive }]}>Suspended</Text>
+                                  </View>
+                                  {canLift(report.reportedUserId) && (
+                                    <TouchableOpacity
+                                      onPress={() => { setActionError(null); setConfirming({ kind: 'lift', id: report.reportedUserId }); }}
+                                      activeOpacity={0.85}
+                                      accessibilityRole="button"
+                                      accessibilityLabel={`Lift suspension for ${reportedName}`}
+                                      style={[styles.removeBtn, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
+                                      hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+                                    >
+                                      <Feather name="unlock" size={13} color={colors.homeCoralDeep} />
+                                      <Text style={[styles.removeBtnLabel, { color: colors.homeCoralDeep }]}>Lift</Text>
+                                    </TouchableOpacity>
+                                  )}
+                                </>
+                              ) : cannotSuspend(report.reportedUserId) ? null : (
+                                <TouchableOpacity
+                                  onPress={() => { setActionError(null); setSuspendReason(''); setConfirming({ kind: 'suspend', id: report.id, userId: report.reportedUserId }); }}
+                                  activeOpacity={0.85}
+                                  accessibilityRole="button"
+                                  accessibilityLabel={`Suspend ${reportedName}`}
+                                  style={[styles.removeBtn, { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' }]}
+                                  hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+                                >
+                                  <Feather name="slash" size={13} color={colors.destructive} />
+                                  <Text style={[styles.removeBtnLabel, { color: colors.destructive }]}>Suspend</Text>
+                                </TouchableOpacity>
+                              )}
                               <TouchableOpacity
                                 onPress={() => setConfirming({ kind: 'dismissUserReport', id: report.id })}
                                 disabled={dismissing}
@@ -630,4 +817,7 @@ const styles = StyleSheet.create({
   metaChipLabel: { fontSize: 11, fontFamily: 'Inter_400Regular' },
   removeBtn:     { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 12, paddingVertical: 6, borderWidth: 1, borderRadius: 8, minWidth: 84, justifyContent: 'center' },
   removeBtnLabel:{ fontSize: 12, fontFamily: 'Inter_600SemiBold' },
+  suspendedChip: { paddingHorizontal: 10, paddingVertical: 6, borderRadius: 8 },
+  reasonInput:   { borderWidth: 1, borderRadius: 10, minHeight: 64, paddingHorizontal: 12, paddingVertical: 10, fontSize: 14, fontFamily: 'Inter_400Regular', textAlignVertical: 'top' },
+  reasonCount:   { fontSize: 11, fontFamily: 'Inter_400Regular', textAlign: 'right', marginTop: -4 },
 });

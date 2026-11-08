@@ -28,6 +28,17 @@ async function setup(typed?: string) {
 describe('DeleteAccountScreen', () => {
   beforeEach(() => { jest.clearAllMocks(); });
 
+  it('shows separate remove and stays lists', async () => {
+    const { getByText } = await setup();
+    expect(getByText("We'll remove")).toBeTruthy();
+    expect(getByText('What stays')).toBeTruthy();
+    expect(getByText(/Your collection, ISO, For Trade list and boards/)).toBeTruthy();
+    expect(getByText(/Your photos on posts and messages/)).toBeTruthy();
+    expect(getByText(/Submissions and photos still waiting for review/)).toBeTruthy();
+    expect(getByText(/stays visible to other people, without your name/)).toBeTruthy();
+    expect(getByText(/Approved catalogue photos stay in the catalogue/)).toBeTruthy();
+  });
+
   it('disables confirm until DELETE is typed', async () => {
     const { getByRole } = await setup('delete');
     expect(getByRole('button', { name: 'Delete my account' }).props.accessibilityState.disabled).toBe(true);

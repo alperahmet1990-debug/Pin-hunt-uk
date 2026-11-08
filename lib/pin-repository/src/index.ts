@@ -126,6 +126,30 @@ export {
   MARKET_VALUATION_COLUMNS_WITH_SUMMARIES,
 } from './market-valuations';
 
+// ─── Collector prices and community prices (migration 065) ─────────────────────
+export type {
+  CommunityPrice,
+  CommunityPriceStep,
+  CommunityPricesClient,
+  MyPinPrice,
+  PriceCurrency,
+} from './community-prices';
+export {
+  clearMyPinPrice,
+  COMMUNITY_PRICE_BATCH,
+  getCommunityPrice,
+  getCommunityPrices,
+  getMyCommunityPriceSetting,
+  getMyPinPrices,
+  isCommunityPricesUnavailable,
+  mapCommunityPriceRow,
+  mapMyPinPriceRow,
+  normalisePriceAmount,
+  PRICE_CURRENCIES,
+  setMyCommunityPriceSetting,
+  setMyPinPrice,
+} from './community-prices';
+
 // ─── Database types ───────────────────────────────────────────────────────────
 export type { Database, Tables, TablesInsert, TablesUpdate } from './database.types';
 

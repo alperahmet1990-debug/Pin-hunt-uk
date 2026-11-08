@@ -363,7 +363,11 @@ export default function PinDetailScreen() {
           </View>
 
           {/* ── 5. Value ── */}
-          <ValueDisplay pinId={pin.id} catalogueEstimateGBP={pin.estimatedValueGBP ?? null} />
+          <ValueDisplay
+            pinId={pin.id}
+            catalogueEstimateGBP={pin.estimatedValueGBP ?? null}
+            canPrice={currentStatus === 'owned' || currentStatus === 'for_trade'}
+          />
 
           {/* ── 6. Trading content — can I find another collector for this pin? ── */}
           <View>

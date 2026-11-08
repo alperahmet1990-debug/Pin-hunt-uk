@@ -31,6 +31,7 @@ import type { CommunityPost, CommunityPostType } from '@workspace/pin-repository
 import { PinImage } from '@/components/ui/PinImage';
 import { PostPinPreview, showsPinPreview } from '@/components/PostPinPreview';
 import { tabScreenBottomPad } from '@/utils/tabBarSpace';
+import { formatDate } from '@/utils/format';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -75,7 +76,7 @@ function timeAgo(iso: string): string {
   if (hr < 24) return `${hr}h ago`;
   const day = Math.floor(hr / 24);
   if (day < 7) return `${day}d ago`;
-  return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  return formatDate(iso, 'short');
 }
 
 /** True when updatedAt is later than createdAt (small tolerance for timestamp serialization), i.e. edited after publishing. */

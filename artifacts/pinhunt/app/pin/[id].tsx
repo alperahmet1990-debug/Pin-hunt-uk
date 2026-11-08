@@ -36,6 +36,7 @@ import { PLATFORM_CONFIG, CURRENCY_SYMBOLS } from '@/utils/marketplaceUrl';
 import type { CataloguePin, ExternalSaleListing } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
 import { pinHeroSize } from '@/utils/pinHeroSize';
+import { formatDate as formatMarketDate } from '@/utils/format';
 
 const SET_TILE = 78;
 
@@ -533,8 +534,7 @@ export default function PinDetailScreen() {
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function formatDate(dateStr: string) {
-  const d = new Date(dateStr);
-  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  return formatMarketDate(dateStr, 'long');
 }
 
 // ─── Styles ───────────────────────────────────────────────────────────────────

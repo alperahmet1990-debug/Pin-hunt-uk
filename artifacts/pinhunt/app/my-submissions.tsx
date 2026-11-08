@@ -26,6 +26,7 @@ import { radius, spacing } from '@/constants/theme';
 import type { PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 import { submissionDisplayName } from '@/utils/suggestPin';
+import { formatDate } from '@/utils/format';
 
 /** Lifetime of signed image URLs (seconds). */
 const SIGNED_URL_TTL_SECONDS = 3600;
@@ -119,7 +120,7 @@ function SubmissionCard({
             </Text>
           </View>
           <Text style={[styles.cardDate, { color: colors.homeMuted }]}>
-            {new Date(submission.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+            {formatDate(submission.createdAt, 'medium')}
           </Text>
         </View>
 

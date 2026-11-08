@@ -15,11 +15,12 @@ import { useToast } from '@/components/ui/Toast';
 import { useBlockedUsers } from '@/context/BlockedUsersContext';
 import { userErrorLine } from '@/utils/userError';
 import type { UserBlock } from '@workspace/pin-repository';
+import { formatDate } from '@/utils/format';
 
 function blockedSince(iso: string): string {
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return 'Blocked';
-  return `Blocked ${d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}`;
+  return `Blocked ${formatDate(d, 'medium')}`;
 }
 
 export default function BlockedUsersScreen() {

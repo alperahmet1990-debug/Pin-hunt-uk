@@ -30,6 +30,7 @@ import { Button } from '@/components/ui/Button';
 import { useToast } from '@/components/ui/Toast';
 import { otherParticipantId } from '@/utils/blockedUsers';
 import { canProposeInChat, proposalRefusalLine, tradeCardTitle } from '@/utils/tradeActions';
+import { formatDate } from '@/utils/format';
 
 /** Space between messages (FlatList content has no `gap`). */
 function MessageGap() {
@@ -98,7 +99,7 @@ function MessageBubble({ msg, isMe, colors, pins, onLongPress }: {
           </Text>
         )}
         <Text style={[styles.bubbleTime, { color: isMe ? colors.homeSurface + '99' : colors.homeMuted }]}>
-          {new Date(msg.createdAt).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
+          {formatDate(msg.createdAt, 'time')}
         </Text>
       </Bubble>
     </View>

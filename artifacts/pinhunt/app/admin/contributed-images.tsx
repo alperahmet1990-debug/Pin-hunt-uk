@@ -38,6 +38,7 @@ import type {
   ContributedPinImage,
   PinAndPopReference,
 } from '@workspace/pin-repository';
+import { formatDate } from '@/utils/format';
 
 type PendingImage = ContributedPinImage & { signedUrl: string; pinAndPop: PinAndPopReference | null };
 
@@ -186,9 +187,7 @@ export default function AdminContributedImagesScreen() {
                 </View>
 
                 <Text style={[styles.cardMeta, { color: colors.homeMuted }]}>
-                  Consented {new Date(img.contributorConsentAt).toLocaleDateString('en-GB', {
-                    day: 'numeric', month: 'short', year: 'numeric',
-                  })}
+                  Consented {formatDate(img.contributorConsentAt, 'medium')}
                 </Text>
 
                 <TextInput

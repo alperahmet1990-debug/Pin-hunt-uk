@@ -13,8 +13,9 @@ import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { radius, spacing } from '@/constants/theme';
 import { groupTrades, tradeStatusLabel } from '@/utils/tradeActions';
+import { formatDate } from '@/utils/format';
 
-const day = (iso: string) => new Date(iso).toLocaleDateString('en-GB');
+const day = (iso: string) => formatDate(iso, 'numeric');
 
 export default function MyTradesScreen() {
   const colors = useColors();

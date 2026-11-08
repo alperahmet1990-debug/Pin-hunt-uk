@@ -17,8 +17,12 @@
 //                       photo picker and give it a fixture image, "click": "<label>" to tap
 //                       a tab/segment/button, "type": "<text>" to type into the first text
 //                       field, and "scroll": "end" to capture the bottom of a scrolling screen
-//                       (applied in that order). "storage": { key: value } adds to the demo
-//                       localStorage for that route only (e.g. a remembered view).
+//                       (applied in that order). "click" may also be a list of labels, tapped
+//                       in turn. "storage": { key: value } adds to the demo localStorage for
+//                       that route only (e.g. a remembered view). "identify": { matches,
+//                       imageInsights } answers POST /scan/identify with that body instead of
+//                       a network error, and accepts the AI photo consent first, so scan
+//                       results can be captured (matches use demo pin ids, e.g. dp-003).
 //   --route name=/path  extra ad-hoc route (repeatable)
 //   --viewports 390x844,320x568   --schemes light,dark
 //   --out <dir>         default <repo>/.screenshots
@@ -153,6 +157,34 @@ function clickByText(text) {
 
 const UPLOAD_FIXTURE = path.join(appDir, 'assets/images/pins/pin-08.png');
 
+// ── Mocked scan identify ("identify" routes) ────────────────────────────
+/** The current AI photo consent version, read from the app so the harness can't drift. */
+export function aiConsentVersion(source = readFileSync(path.join(appDir, 'utils/aiPhotoConsent.ts'), 'utf8')) {
+  const m = source.match(/export const AI_PHOTO_CONSENT_VERSION = '([^']+)'/);
+  if (!m) throw new Error('Could not read AI_PHOTO_CONSENT_VERSION from utils/aiPhotoConsent.ts');
+  return m[1];
+}
+
+/** localStorage that marks the AI photo consent as given, for the demo user and signed out. */
+export function aiConsentStorage(version) {
+  return Object.fromEntries(['signed-out', DEMO_USER_ID].map(u => [`@pinhunt_ai_photo_consent_v1:${u}`, version]));
+}
+
+/** A route's "identify" body, checked so a typo fails loudly rather than as a blank screen. */
+export function identifyBody(route) {
+  const body = route.identify;
+  if (!body || !Array.isArray(body.matches)) throw new Error(`Route "${route.name}": "identify" needs a "matches" array`);
+  return JSON.stringify({ imageInsights: null, ...body });
+}
+
+const CORS = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': '*', 'Access-Control-Allow-Methods': 'POST, OPTIONS' };
+
+/** Labels to tap in turn: "click" is one label or a list. */
+export function clickSteps(route) {
+  if (route.click == null) return [];
+  return Array.isArray(route.click) ? route.click : [route.click];
+}
+
 // ── Capture ─────────────────────────────────────────────────────────────
 async function capture(webDir, outDir, routes, viewports, schemes) {
   rmSync(outDir, { recursive: true, force: true });
@@ -168,10 +200,19 @@ async function capture(webDir, outDir, routes, viewports, schemes) {
           const page = await browser.newPage();
           // Block everything that is not the local server: no external calls, ever.
           await page.setRequestInterception(true);
-          page.on('request', r => (r.url().startsWith(origin) || r.url().startsWith('data:') ? r.continue() : r.abort()));
+          // An "identify" route answers the scan API locally; that is still not an external call.
+          const identify = route.identify ? identifyBody(route) : null;
+          page.on('request', r => {
+            if (identify && new URL(r.url()).pathname.endsWith('/scan/identify')) {
+              return r.method() === 'OPTIONS'
+                ? r.respond({ status: 204, headers: CORS })
+                : r.respond({ status: 200, headers: CORS, contentType: 'application/json', body: identify });
+            }
+            return r.url().startsWith(origin) || r.url().startsWith('data:') ? r.continue() : r.abort();
+          });
           await page.evaluateOnNewDocument(storage => {
             for (const [k, v] of Object.entries(storage)) localStorage.setItem(k, v);
-          }, { ...DEMO_STORAGE, ...(route.storage ?? {}) });
+          }, { ...DEMO_STORAGE, ...(identify ? aiConsentStorage(aiConsentVersion()) : {}), ...(route.storage ?? {}) });
           await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: scheme }]);
           await page.setViewport({ width, height, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
           await page.goto(origin + route.path, { waitUntil: 'networkidle0', timeout: 30_000 }).catch(() => {});
@@ -185,9 +226,10 @@ async function capture(webDir, outDir, routes, viewports, schemes) {
             await chooser.accept([UPLOAD_FIXTURE]);
             await new Promise(r => setTimeout(r, 1200));
           }
-          if (route.click) {
-            const clicked = await page.evaluate(clickByText, route.click);
-            if (!clicked) throw new Error(`Route "${route.name}": no visible element with text "${route.click}"`);
+          if (identify) await new Promise(r => setTimeout(r, 1200)); // let the result render
+          for (const label of clickSteps(route)) {
+            const clicked = await page.evaluate(clickByText, label);
+            if (!clicked) throw new Error(`Route "${route.name}": no visible element with text "${label}"`);
             await new Promise(r => setTimeout(r, 800));
           }
           if (route.type) {

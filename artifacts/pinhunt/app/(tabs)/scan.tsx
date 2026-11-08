@@ -328,7 +328,6 @@ export default function ScanScreen() {
       if (run !== identifyRun.current) return;
 
       if (resolved.length === 0) {
-        setErrorMsg('No matches found in our catalogue. Try a clearer photo, or add this pin yourself.');
         setNoMatchFound(true);
         setScanState('captured');
         return;
@@ -396,6 +395,7 @@ export default function ScanScreen() {
   // ── "None of these": recovery that keeps the photo ───────────────────────────
   const openRecovery = async () => {
     setShowRecovery(true);
+    setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 50);
     try {
       const seen = Number(await AsyncStorage.getItem(RETAKE_TIPS_KEY)) || 0;
       setShowRetakeTips(seen < RETAKE_TIPS_LIMIT);
@@ -477,12 +477,15 @@ export default function ScanScreen() {
         contentContainerStyle={{ paddingTop: topPad + 16, paddingBottom: botPad, flexGrow: 1 }}
       >
         {/* ── Header ── */}
-        <View style={[styles.headerRow, styles.headerWithAction]}>
+        <View style={[styles.headerRow, styles.headerWithAction, scanState === 'results' && styles.headerResults]}>
           <View style={{ flex: 1 }}>
             <Text style={[styles.headerTitle, { color: colors.homeInk }]}>Find a Pin</Text>
-            <Text style={[styles.headerSub, { color: colors.homeMuted }]}>
-              Scan, upload or search for a pin
-            </Text>
+            {/* The how-to line only helps before a scan; after it, it crowds the result. */}
+            {scanState === 'idle' && (
+              <Text style={[styles.headerSub, { color: colors.homeMuted }]}>
+                Scan, upload or search for a pin
+              </Text>
+            )}
           </View>
           {/* Done with this scan: back to the camera in one tap (#354). */}
           {scanState !== 'idle' && (
@@ -496,7 +499,7 @@ export default function ScanScreen() {
           <Animated.View
             style={[
               styles.viewfinder,
-              { height: viewfinderHeight, backgroundColor: '#0a0a18', borderRadius: 18, opacity: shutterAnim },
+              { height: noMatchFound ? Math.min(viewfinderHeight, 160) : viewfinderHeight, backgroundColor: '#0a0a18', borderRadius: 18, opacity: shutterAnim },
             ]}
           >
             {scanState === 'idle' && !LIVE_CAMERA && (
@@ -559,22 +562,27 @@ export default function ScanScreen() {
           />
         )}
 
-        {/* ── No match: Search instead ── */}
-        {errorMsg && noMatchFound && scanState === 'captured' && (
-          <View style={styles.errorActions}>
-            <Button label="Search instead" icon="search" size="compact" variant="secondary" onPress={searchFromScan} style={styles.errorActionBtn} />
+        {/* ── No match: it's probably not in the catalogue yet, so adding it
+             is the main action, with search and a retake as the way round. ── */}
+        {noMatchFound && scanState === 'captured' && (
+          <View
+            style={[styles.recoveryCard, styles.noMatchCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+            accessibilityLabel="No match found. Options"
+          >
+            <Text accessibilityRole="header" style={[styles.recoveryTitle, { color: colors.homeInk }]}>Not in our catalogue yet</Text>
+            <Text style={[styles.recoverySub, { color: colors.homeMuted }]}>
+              We couldn't match this pin. Add it with your photo and help other collectors find it.
+            </Text>
+            <Button label="Add this pin" icon="plus-circle" onPress={handleAddPinInstead} style={styles.noMatchPrimary} />
+            <RecoveryOption
+              icon="search"
+              label="Search the catalogue"
+              detail={recoveryQuery(insights) ? `for “${recoveryQuery(insights)}”` : undefined}
+              onPress={searchFromScan}
+              colors={colors}
+            />
+            <RecoveryOption icon="camera" label="Retake the photo" onPress={handleScanPin} colors={colors} />
           </View>
-        )}
-
-        {/* ── Not in our catalogue? Offer to add it ── */}
-        {noMatchFound && (
-          <Button
-            label="Can't find it? Add this pin yourself"
-            icon="plus-circle"
-            variant="secondary"
-            onPress={handleAddPinInstead}
-            style={styles.addPinCta}
-          />
         )}
 
         {/* ── Controls ── */}
@@ -588,7 +596,7 @@ export default function ScanScreen() {
             </>
           )}
 
-          {scanState === 'captured' && (
+          {scanState === 'captured' && !noMatchFound && (
             <View style={styles.captureRow}>
               <Button label="Retake" icon="refresh-cw" variant="secondary" onPress={handleScanPin} style={styles.retakeBtn} />
               <Button label="Identify Pin" icon="cpu" onPress={handleIdentify} style={styles.identifyBtn} />
@@ -621,18 +629,6 @@ export default function ScanScreen() {
                 recoveryOpen={showRecovery}
               />
             )}
-            {addedOnResult === resultKey ? (
-              // Sorting a pile of pins: the next scan is one tap (UX-061).
-              <View style={styles.scanNext}>
-                <Button label="Scan next pin" icon="camera" fullWidth onPress={handleScanPin} />
-                <Text accessibilityLiveRegion="polite" style={[styles.scanNextCount, { color: colors.homeMuted }]}>
-                  {sessionAdded.length} {sessionAdded.length === 1 ? 'pin' : 'pins'} added this session
-                </Text>
-              </View>
-            ) : (
-              <Button label="Scan another pin" icon="camera" variant="text" fullWidth onPress={handleScanPin} />
-            )}
-
             {showRecovery && (
               <View
                 style={[styles.recoveryCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
@@ -673,15 +669,31 @@ export default function ScanScreen() {
                     ))}
                   </View>
                 )}
-                <RecoveryOption
+                {/* Still not there? Adding it is a clear button, not the last row. */}
+                <Button
+                  label="Add this pin"
                   icon="plus-circle"
-                  label="Suggest this pin"
-                  detail="Add it to the catalogue with your photo"
+                  variant="secondary"
                   onPress={handleAddPinInstead}
-                  colors={colors}
+                  style={styles.recoveryAdd}
                 />
+                <Text style={[styles.recoveryAddHint, { color: colors.homeMuted }]}>
+                  Not in the catalogue? Add it with your photo.
+                </Text>
               </View>
             )}
+            {addedOnResult === resultKey ? (
+              // Sorting a pile of pins: the next scan is one tap (UX-061).
+              <View style={styles.scanNext}>
+                <Button label="Scan next pin" icon="camera" fullWidth onPress={handleScanPin} />
+                <Text accessibilityLiveRegion="polite" style={[styles.scanNextCount, { color: colors.homeMuted }]}>
+                  {sessionAdded.length} {sessionAdded.length === 1 ? 'pin' : 'pins'} added this session
+                </Text>
+              </View>
+            ) : (
+              <Button label="Scan another pin" icon="camera" variant="text" fullWidth onPress={handleScanPin} />
+            )}
+
           </View>
         )}
 
@@ -719,6 +731,7 @@ const styles = StyleSheet.create({
   root: { flex: 1 },
   headerRow: { paddingHorizontal: 16, marginBottom: 12 },
   headerWithAction: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  headerResults: { marginBottom: 24 },
   headerTitle: { fontSize: 28, fontFamily: 'Inter_700Bold' },
   headerSub: { fontSize: 13, fontFamily: 'Inter_400Regular', marginTop: 2 },
   // Search
@@ -780,9 +793,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   errorText: { flex: 1, fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },
-  errorActions: { flexDirection: 'row', gap: 10, marginHorizontal: 16, marginBottom: 12 },
-  errorActionBtn: { flex: 1 },
-  addPinCta: { marginHorizontal: 16, marginBottom: 12 },
   failure: { marginHorizontal: 16, marginBottom: 12 },
   // Controls
   controls: { paddingHorizontal: 16, gap: 12 },
@@ -824,6 +834,10 @@ const styles = StyleSheet.create({
   recoveryOption: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 52, borderTopWidth: StyleSheet.hairlineWidth, paddingVertical: 8 },
   recoveryLabel: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
   recoveryDetail: { fontSize: 12.5, fontFamily: 'Inter_400Regular', marginTop: 1 },
+  noMatchCard: { marginTop: 0 },
+  noMatchPrimary: { marginTop: 4, marginBottom: 8 },
+  recoveryAdd: { marginTop: 12 },
+  recoveryAddHint: { fontSize: 12.5, fontFamily: 'Inter_400Regular', textAlign: 'center', marginTop: 6, marginBottom: 8 },
   tips: { paddingLeft: 30, paddingBottom: 8, gap: 4 },
   tipRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
   tipText: { fontSize: 12.5, fontFamily: 'Inter_400Regular' },

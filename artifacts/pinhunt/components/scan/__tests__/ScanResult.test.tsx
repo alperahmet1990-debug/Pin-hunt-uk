@@ -68,7 +68,7 @@ describe('ScanResult', () => {
 
   it('says which picture is which (#298)', async () => {
     await setup().view;
-    expect(screen.getByText('Your photo on the left, our closest match from the catalogue on the right.')).toBeTruthy();
+    expect(screen.getByText('Your photo')).toBeTruthy();
     expect(screen.getByText('Our match')).toBeTruthy();
     expect(screen.queryByText('Catalogue')).toBeNull();
   });

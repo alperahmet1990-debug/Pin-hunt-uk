@@ -1,7 +1,7 @@
 /**
  * ScanResult — the single-answer scan result (UX-005, #112): the collector's
- * photo beside the best match ("Your photo" / "Our match", with a line
- * saying so, #298), the pin's name and set, then "That's it" and "Not it".
+ * photo beside the best match (labelled "Your photo" / "Our match", #298),
+ * the pin's name and set, then "That's it" and "Not it".
  * "Not it" rejects that pin: it leaves the comparison and "That's it" goes
  * until the collector taps one of the other candidates in the strip (#299),
  * or "None of these". Confidence %, AI reasoning and
@@ -60,11 +60,6 @@ export function ScanResult({ photoUri, candidates, insights, showDetails, onConf
       <Text accessibilityRole="header" style={[styles.heading, { color: colors.homeInk }]}>
         {resultHeading(candidates, state)}
       </Text>
-      {!picking && (
-        <Text style={[styles.explain, { color: colors.homeMuted }]}>
-          Your photo on the left, our closest match from the catalogue on the right.
-        </Text>
-      )}
 
       <View style={styles.compare}>
         <View style={{ width: panel }}>
@@ -219,7 +214,6 @@ const styles = StyleSheet.create({
   heading: { fontSize: 18, fontFamily: 'Inter_700Bold' },
   compare: { flexDirection: 'row', gap: GAP },
   panelImage: { borderRadius: radius.lg },
-  explain: { fontSize: 13, lineHeight: 18, fontFamily: 'Inter_400Regular', marginTop: -spacing.sm },
   emptyPanel: { borderWidth: 1.5, borderStyle: 'dashed', alignItems: 'center', justifyContent: 'center', gap: 6, padding: spacing.sm },
   emptyText: { fontSize: 12, lineHeight: 16, fontFamily: 'Inter_600SemiBold', textAlign: 'center' },
   panelLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold', textAlign: 'center', marginTop: 6 },

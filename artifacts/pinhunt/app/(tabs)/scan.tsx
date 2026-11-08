@@ -473,12 +473,15 @@ export default function ScanScreen() {
         contentContainerStyle={{ paddingTop: topPad + 16, paddingBottom: botPad, flexGrow: 1 }}
       >
         {/* ── Header ── */}
-        <View style={[styles.headerRow, styles.headerWithAction]}>
+        <View style={[styles.headerRow, styles.headerWithAction, scanState === 'results' && styles.headerResults]}>
           <View style={{ flex: 1 }}>
             <Text style={[styles.headerTitle, { color: colors.homeInk }]}>Find a Pin</Text>
-            <Text style={[styles.headerSub, { color: colors.homeMuted }]}>
-              Scan, upload or search for a pin
-            </Text>
+            {/* The how-to line only helps before a scan; after it, it crowds the result. */}
+            {scanState === 'idle' && (
+              <Text style={[styles.headerSub, { color: colors.homeMuted }]}>
+                Scan, upload or search for a pin
+              </Text>
+            )}
           </View>
           {/* Done with this scan: back to the camera in one tap (#354). */}
           {scanState !== 'idle' && (
@@ -714,6 +717,7 @@ const styles = StyleSheet.create({
   root: { flex: 1 },
   headerRow: { paddingHorizontal: 16, marginBottom: 12 },
   headerWithAction: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  headerResults: { marginBottom: 24 },
   headerTitle: { fontSize: 28, fontFamily: 'Inter_700Bold' },
   headerSub: { fontSize: 13, fontFamily: 'Inter_400Regular', marginTop: 2 },
   // Search

@@ -149,3 +149,14 @@ describe('Community prices setting (CV-03)', () => {
     expect(screen.getByText("Community prices aren't available yet.")).toBeTruthy();
   });
 });
+
+describe('Your price after saving (iPhone check, 8 Nov)', () => {
+  it('Remove stays available right after a save', async () => {
+    await render(<YourPriceEditor pinId="p1" />);
+    await screen.findByTestId('your-price-editor');
+    await fireEvent.changeText(screen.getByLabelText('Your price in pounds'), '15');
+    await fireEvent.press(screen.getByRole('button', { name: 'Save your price' }));
+    await screen.findByText(/^Saved\./);
+    expect(await screen.findByRole('button', { name: 'Remove my price' })).toBeTruthy();
+  });
+});

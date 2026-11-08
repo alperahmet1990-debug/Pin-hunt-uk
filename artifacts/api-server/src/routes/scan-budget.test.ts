@@ -163,4 +163,42 @@ describe("POST /api/scan/identify within the budget", () => {
     expect(res.status).toBe(504);
     expect(res.body.error).toMatch(/took too long/i);
   });
+
+  it("skips the photo comparison when the ranking is already clear", async () => {
+    const log = vi.spyOn(console, "log").mockImplementation(() => {});
+    create
+      .mockImplementationOnce(step(3_000, describeOk))
+      .mockImplementationOnce(step(4_000, reply('[{"pinId":"PHUK-1","confidence":94,"reasoning":"Clear"},{"pinId":"PHUK-2","confidence":30,"reasoning":"No"}]')));
+    const res = await scan();
+    expect(res.status).toBe(200);
+    expect(res.body.matches[0].pinId).toBe("PHUK-1");
+    expect(create).toHaveBeenCalledTimes(2);
+    expect(timingsLine(log)).toMatchObject({ outcome: "ok", skipped: ["verify:confident"] });
+    log.mockRestore();
+  });
+
+  it("skips the photo comparison when nothing is plausible", async () => {
+    const log = vi.spyOn(console, "log").mockImplementation(() => {});
+    create
+      .mockImplementationOnce(step(3_000, describeOk))
+      .mockImplementationOnce(step(4_000, reply('[{"pinId":"PHUK-1","confidence":18,"reasoning":"Weak"},{"pinId":"PHUK-2","confidence":10,"reasoning":"Weak"}]')));
+    const res = await scan();
+    expect(res.status).toBe(200);
+    expect(create).toHaveBeenCalledTimes(2);
+    expect(timingsLine(log)).toMatchObject({ outcome: "ok", skipped: ["verify:implausible"] });
+    log.mockRestore();
+  });
+
+  it("shows at most 3 catalogue photos when comparing", async () => {
+    create
+      .mockImplementationOnce(step(3_000, describeOk))
+      .mockImplementationOnce(step(4_000, rankOk))
+      .mockImplementationOnce(step(4_000, verifyOk));
+    await scan();
+    const verifyBody = create.mock.calls[2][0];
+    const content = verifyBody.messages[1].content as Array<{ type: string; image_url?: { detail: string } }>;
+    const references = content.filter((c) => c.type === "image_url" && c.image_url?.detail === "low");
+    expect(references.length).toBeLessThanOrEqual(3);
+  });
 });
+

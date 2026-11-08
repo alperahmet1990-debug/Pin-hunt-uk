@@ -44,7 +44,12 @@ const mockRepo = {
   getCommunityFeed: jest.fn(() => Promise.resolve([] as unknown[])),
   getPostReportSummaries: jest.fn(() => Promise.resolve([] as unknown[])),
   getReportedComments: jest.fn(() => Promise.resolve([] as unknown[])),
+  // Account suspensions (#503)
+  getSuspensions: jest.fn(() => Promise.resolve([] as unknown[])),
+  suspendUser: jest.fn(() => Promise.resolve()),
+  liftSuspension: jest.fn(() => Promise.resolve()),
 };
+let mockAccess = { isAppCreator: false, isAdmin: true, isContributor: false, loading: false };
 
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
@@ -64,6 +69,7 @@ jest.mock('@/context/ProfileContext', () => ({
   useProfile: () => ({ profile: mockMyProfile, getPublicProfile: mockGetPublicProfile }),
 }));
 jest.mock('@/components/Avatar', () => ({ Avatar: () => null }));
+jest.mock('@/hooks/useMyAccess', () => ({ useMyAccess: () => mockAccess }));
 jest.mock('@/context/CollectionContext', () => ({ useCollection: () => ({ collection: {}, setStatus: jest.fn() }) }));
 jest.mock('@/context/UnreadMessagesContext', () => ({ useUnreadMessages: () => ({ markRead: jest.fn() }) }));
 jest.mock('@/context/PinCatalogueContext', () => ({ usePinCatalogue: () => ({ pins: [], ensurePins: () => Promise.resolve() }) }));
@@ -228,5 +234,105 @@ describe('Admin moderation shows user and message reports', () => {
     await render(<ModerationScreen />);
     expect(await screen.findByText('No community posts yet.')).toBeTruthy();
     expect(screen.queryByTestId('admin-user-reports')).toBeNull();
+  });
+});
+
+describe('Admin moderation: suspend and lift accounts (#503)', () => {
+  const ModerationScreen = () => {
+    const Screen = require('../app/admin/community-moderation').default;
+    return <Screen />;
+  };
+  const report = (reportedUserId: string) => ({
+    id: `r-${reportedUserId}`, target: 'profile', reporterId: 'u4', reportedUserId, createdAt: new Date().toISOString(),
+  });
+
+  beforeEach(() => {
+    mockAccess = { isAppCreator: false, isAdmin: true, isContributor: false, loading: false };
+    mockRepo.getUserReports.mockResolvedValue([report('u2')]);
+    mockRepo.getSuspensions.mockResolvedValue([]);
+    mockRepo.getProfile.mockImplementation((id: string) => Promise.resolve({ id, username: id === 'u2' ? 'bea' : 'sam', isAdmin: false }));
+    mockRepo.suspendUser.mockReset().mockResolvedValue(undefined);
+    mockRepo.liftSuspension.mockReset().mockResolvedValue(undefined);
+  });
+
+  it('suspends from a report card with a reason, after an in-app confirmation', async () => {
+    await render(<ModerationScreen />);
+    await fireEvent.press(await screen.findByRole('button', { name: 'Suspend @bea' }));
+    expect(screen.getByText(/Suspend @bea\? They won’t be able to post, comment, message or start a trade/)).toBeTruthy();
+    await fireEvent.changeText(screen.getByLabelText('Suspension reason'), '  Repeated spam  ');
+    expect(screen.getByText('17/500')).toBeTruthy();
+    expect(mockRepo.suspendUser).not.toHaveBeenCalled();
+    await fireEvent.press(screen.getByText('Suspend'));
+    await waitFor(() => expect(mockRepo.suspendUser).toHaveBeenCalledWith('me', 'u2', 'Repeated spam'));
+    expect(await screen.findByText('SUSPENDED ACCOUNTS (1)')).toBeTruthy();
+    expect(screen.getByText('Reason: Repeated spam')).toBeTruthy();
+    expect(screen.getByText('Suspended')).toBeTruthy();
+  });
+
+  it('caps the reason at 500 characters', async () => {
+    await render(<ModerationScreen />);
+    await fireEvent.press(await screen.findByRole('button', { name: 'Suspend @bea' }));
+    await fireEvent.changeText(screen.getByLabelText('Suspension reason'), 'x'.repeat(600));
+    expect(screen.getByText('500/500')).toBeTruthy();
+  });
+
+  it('Cancel suspends nothing', async () => {
+    await render(<ModerationScreen />);
+    await fireEvent.press(await screen.findByRole('button', { name: 'Suspend @bea' }));
+    await fireEvent.press(screen.getByText('Cancel'));
+    expect(mockRepo.suspendUser).not.toHaveBeenCalled();
+    expect(screen.getByRole('button', { name: 'Suspend @bea' })).toBeTruthy();
+  });
+
+  it('lists current suspensions and lifts one after confirming', async () => {
+    mockRepo.getSuspensions.mockResolvedValue([{ userId: 'u2', suspendedBy: 'u5', reason: 'Scam', createdAt: new Date().toISOString() }]);
+    await render(<ModerationScreen />);
+    expect(await screen.findByText('SUSPENDED ACCOUNTS (1)')).toBeTruthy();
+    expect(screen.getByText('Reason: Scam')).toBeTruthy();
+    expect(screen.queryByRole('button', { name: 'Suspend @bea' })).toBeNull();
+    await fireEvent.press(screen.getAllByRole('button', { name: 'Lift suspension for @bea' })[0]);
+    expect(screen.getByText('Lift the suspension for @bea? They can post, comment, message and trade again.')).toBeTruthy();
+    // The list's confirm bar comes before the report card's own Lift button.
+    await fireEvent.press(screen.getAllByText('Lift')[0]);
+    await waitFor(() => expect(mockRepo.liftSuspension).toHaveBeenCalledWith('u2'));
+    await waitFor(() => expect(screen.queryByText('SUSPENDED ACCOUNTS (1)')).toBeNull());
+  });
+
+  it('shows the server’s reason when an action is refused', async () => {
+    const { PinRepositoryError } = jest.requireActual('@workspace/pin-repository');
+    mockRepo.suspendUser.mockRejectedValue(new PinRepositoryError('CONFLICT', 'You can’t suspend this account. Only the App Creator can suspend an admin, and the App Creator’s account can’t be suspended in the app.'));
+    await render(<ModerationScreen />);
+    await fireEvent.press(await screen.findByRole('button', { name: 'Suspend @bea' }));
+    await fireEvent.press(screen.getByText('Suspend'));
+    expect(await screen.findByText(/Only the App Creator can suspend an admin/)).toBeTruthy();
+    expect(screen.queryByText('SUSPENDED ACCOUNTS (1)')).toBeNull();
+  });
+
+  it('an admin can’t suspend another admin unless they are the App Creator', async () => {
+    mockRepo.getProfile.mockImplementation((id: string) => Promise.resolve({ id, username: id === 'u2' ? 'bea' : 'sam', isAdmin: id === 'u2' }));
+    await render(<ModerationScreen />);
+    expect(await screen.findByText('Only the App Creator can suspend an admin.')).toBeTruthy();
+    expect(screen.queryByRole('button', { name: 'Suspend @bea' })).toBeNull();
+  });
+
+  it('the App Creator can suspend an admin', async () => {
+    mockAccess = { ...mockAccess, isAppCreator: true };
+    mockRepo.getProfile.mockImplementation((id: string) => Promise.resolve({ id, username: id === 'u2' ? 'bea' : 'sam', isAdmin: id === 'u2' }));
+    await render(<ModerationScreen />);
+    expect(await screen.findByRole('button', { name: 'Suspend @bea' })).toBeTruthy();
+  });
+
+  it('no Suspend on a report about yourself', async () => {
+    mockRepo.getUserReports.mockResolvedValue([report('me')]);
+    await render(<ModerationScreen />);
+    expect(await screen.findByText('You can’t suspend your own account.')).toBeTruthy();
+    expect(screen.queryByRole('button', { name: /^Suspend / })).toBeNull();
+  });
+
+  it('a failing suspensions query leaves the queues working', async () => {
+    mockRepo.getSuspensions.mockRejectedValue(new Error('permission denied'));
+    await render(<ModerationScreen />);
+    expect(await screen.findByText('REPORTED USERS AND MESSAGES (1)')).toBeTruthy();
+    expect(screen.queryByTestId('admin-suspensions')).toBeNull();
   });
 });

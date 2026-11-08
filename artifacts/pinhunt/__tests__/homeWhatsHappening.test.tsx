@@ -78,4 +78,12 @@ describe("Home: What's Happening (#352)", () => {
     await fireEvent.press(screen.getByRole('button', { name: 'No events coming up. Post an event' }));
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/community/create-post', params: { type: 'new_pickup' } });
   });
+
+  it('"See all" opens the What\u2019s Happening page, not a filtered Community feed (#382)', async () => {
+    mockEvents = [upcoming];
+    await render(<HomeScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'See all: What’s Happening' }));
+    expect(mockPush).toHaveBeenCalledWith('/events');
+  });
 });
+

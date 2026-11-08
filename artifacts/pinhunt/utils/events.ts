@@ -76,3 +76,40 @@ export function selectUpcomingEvents(events: PinHuntEvent[]): PinHuntEvent[] {
       return a.eventDate.localeCompare(b.eventDate);
     });
 }
+
+export interface EventGroup {
+  title: string;
+  events: PinHuntEvent[];
+}
+
+/**
+ * The "What's Happening" page (#382): upcoming events grouped by when they
+ * are. Community event posts have no structured date, so they get their own
+ * group, as do rumoured events without a confirmed date. Empty groups are
+ * left out. Expects selectUpcomingEvents' order.
+ */
+export function groupEventsByWhen(events: PinHuntEvent[], today: Date = new Date()): EventGroup[] {
+  const iso = (d: Date) => d.toISOString().slice(0, 10);
+  const todayIso = iso(today);
+  const weekEnd = new Date(today);
+  weekEnd.setDate(weekEnd.getDate() + 7);
+  const monthEnd = new Date(today);
+  monthEnd.setDate(monthEnd.getDate() + 31);
+  const groups: Record<string, PinHuntEvent[]> = {
+    'This week': [], 'This month': [], Later: [], 'Date to be confirmed': [], 'From the community': [],
+  };
+  for (const event of events) {
+    if (event.sourceType === 'community' && !event.hasScheduledDate) groups['From the community'].push(event);
+    else if (event.rumour || !event.hasScheduledDate) groups['Date to be confirmed'].push(event);
+    else {
+      // A multi-day event that started already but hasn't ended counts as this week.
+      const start = event.eventDate < todayIso ? todayIso : event.eventDate;
+      if (start <= iso(weekEnd)) groups['This week'].push(event);
+      else if (start <= iso(monthEnd)) groups['This month'].push(event);
+      else groups.Later.push(event);
+    }
+  }
+  return Object.entries(groups)
+    .filter(([, list]) => list.length > 0)
+    .map(([title, list]) => ({ title, events: list }));
+}

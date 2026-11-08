@@ -1,7 +1,7 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import type { IUserPinRepository } from './user-repository';
 import { PinRepositoryError } from './repository';
-import { SUSPENSION_REASON_MAX } from './types';
+import { homeMarketFromCountry, SUSPENSION_REASON_MAX } from './types';
 import { safeDisplayName } from './display-name';
 import * as communityPrices from './community-prices';
 import type { CommunityPrice, MyPinPrice, PriceCurrency } from './community-prices';
@@ -180,6 +180,10 @@ function rowToProfile(row: Record<string, unknown>): Profile {
     openToLocalTrades: (row.open_to_local_trades as boolean) ?? false,
     openToPostalTrades: (row.open_to_postal_trades as boolean) ?? false,
     happyToTravel: (row.happy_to_travel as boolean) ?? false,
+    // Migration 068; worked out from country until it's applied.
+    homeMarket: row.home_market === 'US' || row.home_market === 'UK'
+      ? row.home_market
+      : homeMarketFromCountry(row.country as string | null),
   };
 }
 
@@ -339,6 +343,14 @@ const SAFE_PROFILE_COLUMNS = [
  * (i.e. migration 007/008 haven't been applied to this environment).
  * PostgreSQL error code 42703 = undefined_column.
  */
+/** SAFE_PROFILE_COLUMNS plus home_market (migration 068), tried first. */
+const MARKET_PROFILE_COLUMNS = `${SAFE_PROFILE_COLUMNS}, home_market`;
+
+/** True when the missing column is home_market, i.e. migration 068 isn't applied yet. */
+function isMissingHomeMarket(err: { code?: string; message?: string } | null): boolean {
+  return isMissingColumnError(err) && Boolean(err?.message?.includes('home_market'));
+}
+
 function isMissingColumnError(err: { code?: string; message?: string } | null): boolean {
   if (!err) return false;
   return (
@@ -368,9 +380,18 @@ class SupabaseUserPinRepository implements IUserPinRepository {
   async getProfile(userId: string): Promise<Profile | null> {
     let { data, error } = await this.client
       .from('profiles')
-      .select(SAFE_PROFILE_COLUMNS)
+      .select(MARKET_PROFILE_COLUMNS)
       .eq('id', userId)
       .maybeSingle();
+
+    // Migration 068 not yet applied: the same columns without home_market.
+    if (isMissingHomeMarket(error as { code?: string; message?: string })) {
+      ({ data, error } = await this.client
+        .from('profiles')
+        .select(SAFE_PROFILE_COLUMNS)
+        .eq('id', userId)
+        .maybeSingle());
+    }
 
     // Migrations 007/008 not yet applied — fall back to base columns.
     if (isMissingColumnError(error as { code?: string; message?: string })) {
@@ -421,13 +442,27 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     if (input.openToLocalTrades !== undefined) upsertData.open_to_local_trades = input.openToLocalTrades;
     if (input.openToPostalTrades !== undefined) upsertData.open_to_postal_trades = input.openToPostalTrades;
     if (input.happyToTravel !== undefined) upsertData.happy_to_travel = input.happyToTravel;
+    if (input.homeMarket !== undefined) upsertData.home_market = input.homeMarket;
 
-    const { data, error } = await this.client
+    let { data, error } = await this.client
       .from('profiles')
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .upsert(upsertData as any, { onConflict: 'id' })
-      .select(SAFE_PROFILE_COLUMNS)
+      .select(MARKET_PROFILE_COLUMNS)
       .single();
+
+    // Migration 068 not yet applied.
+    if (isMissingHomeMarket(error as { code?: string; message?: string })) {
+      if (input.homeMarket !== undefined) {
+        throw new PinRepositoryError('NOT_FOUND', 'Choosing a home market isn\u2019t available yet.', error);
+      }
+      ({ data, error } = await this.client
+        .from('profiles')
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        .upsert(upsertData as any, { onConflict: 'id' })
+        .select(SAFE_PROFILE_COLUMNS)
+        .single());
+    }
 
     // Migrations 007/008 not yet applied — retry returning base columns only.
     if (isMissingColumnError(error as { code?: string; message?: string })) {

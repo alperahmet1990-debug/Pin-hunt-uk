@@ -310,6 +310,21 @@ export interface Profile {
   openToLocalTrades: boolean;
   openToPostalTrades: boolean;
   happyToTravel: boolean;
+  /**
+   * The collector's home market (migration 068, #560): sets their default
+   * currency, market prices, events, nearby lookups and date style. Before
+   * 068 is applied it is worked out from `country`.
+   */
+  homeMarket: HomeMarket;
+}
+
+/** Markets a collector can call home (#560). France may follow (#411). */
+export type HomeMarket = 'UK' | 'US';
+
+/** 'US' for a United States country value, otherwise 'UK' (decision 2, 8 Nov 2026). */
+export function homeMarketFromCountry(country: string | null | undefined): HomeMarket {
+  const c = (country ?? '').trim().toLowerCase();
+  return ['us', 'usa', 'u.s.', 'u.s.a.', 'united states', 'united states of america'].includes(c) ? 'US' : 'UK';
 }
 
 export interface UpdateProfileInput {
@@ -323,6 +338,8 @@ export interface UpdateProfileInput {
   allowTradeRequests?: boolean;
   allowMessages?: boolean;
   profileVisibility?: ProfileVisibility;
+  /** Migration 068. Saving it before 068 is applied fails with a clear error. */
+  homeMarket?: HomeMarket;
   // ── Local discovery fields (migration 007) ──
   town?: string;
   county?: string;

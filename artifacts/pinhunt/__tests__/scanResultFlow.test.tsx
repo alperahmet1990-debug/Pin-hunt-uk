@@ -68,7 +68,7 @@ describe('Scan result (UX-005)', () => {
     expect(screen.getByText('Dumbo Blue Sky')).toBeTruthy();
     expect(screen.queryByText(/81%/)).toBeNull();
     // The comparison shows the photo, so the big viewfinder steps aside…
-    expect(screen.queryByText('Analysing with AI…')).toBeNull();
+    expect(screen.queryByText('Looking at your pin…')).toBeNull();
     expect(screen.getAllByLabelText('Your photo')).toHaveLength(1);
     // …and a new scan is one tap away.
     expect(screen.getByRole('button', { name: 'Scan another pin' })).toBeTruthy();

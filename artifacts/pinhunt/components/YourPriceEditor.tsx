@@ -190,7 +190,7 @@ function Editor({ pinId, onDone, showHeading = true }: Props) {
         <Text accessibilityLiveRegion="polite" style={[styles.hint, { color: colors.homeMuted }]}>Your price is removed.</Text>
       )}
 
-      {current && !saved && (
+      {current && !saved?.removed && (
         <TouchableOpacity onPress={() => void remove()} disabled={busy} accessibilityRole="button" style={styles.remove}>
           <Text style={[styles.removeLabel, { color: colors.homeMuted }]}>Remove my price</Text>
         </TouchableOpacity>

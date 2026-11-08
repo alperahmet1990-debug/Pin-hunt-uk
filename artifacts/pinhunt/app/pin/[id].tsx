@@ -522,7 +522,8 @@ export default function PinDetailScreen() {
       <QuickAddSheet pin={manageSheetPin} onClose={() => setManageSheetPin(null)} />
       {canPrice && (
         <Sheet visible={priceSheetOpen} onClose={() => setPriceSheetOpen(false)} title="Your price">
-          <YourPriceEditor pinId={pin.id} showHeading={false} />
+          {/* Mounted only while open, so each opening starts fresh. */}
+          {priceSheetOpen && <YourPriceEditor pinId={pin.id} showHeading={false} />}
         </Sheet>
       )}
     </ScreenContainer>

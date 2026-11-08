@@ -22,6 +22,7 @@ import { useAuth } from '@/context/AuthContext';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 import { useBlockedUsers } from '@/context/BlockedUsersContext';
 import { useFeature } from '@/hooks/useFeature';
+import { useCommunityPricesAvailable } from '@/hooks/useCommunityPricesAvailable';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { buildCollectionExportText } from '@/utils/exportCollection';
@@ -153,6 +154,8 @@ export default function ProfileScreen() {
   const isAdmin = profile?.isAdmin === true;
   const { enabled: canContribute } = useFeature('catalogue_contributions');
   const { blockedUsers } = useBlockedUsers();
+  // Community prices setting (CV-03, #514), once migration 065 is live.
+  const communityPricesOn = useCommunityPricesAvailable();
 
   const { collection } = useCollection();
   const { pins } = usePinCatalogue();
@@ -295,8 +298,16 @@ export default function ProfileScreen() {
                 label="Blocked users"
                 value={blockedUsers.length ? String(blockedUsers.length) : undefined}
                 onPress={() => router.push('/settings/blocked-users' as any)}
-                last
+                last={!communityPricesOn}
               />
+              {communityPricesOn && (
+                <SettingsRow
+                  icon="tag"
+                  label="Community prices"
+                  onPress={() => router.push('/settings/community-prices' as any)}
+                  last
+                />
+              )}
             </Section>
 
             {/* App Settings */}

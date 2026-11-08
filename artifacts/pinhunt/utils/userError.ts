@@ -71,3 +71,26 @@ export function userErrorLine(err: unknown, context?: string): string {
   const e = toUserError(err, context);
   return `${e.title}. ${e.message}`;
 }
+
+/**
+ * Plain words for a failed profile save (Complete Profile, Edit Profile,
+ * profile photo). The database's own text, e.g. "permission denied for
+ * table profiles" seen on TestFlight on 8 Nov 2026, is never shown.
+ */
+export function profileSaveErrorLine(err: unknown): string {
+  const { code, text } = details(err);
+  const t = text.toLowerCase();
+  if (code === '23505' || /duplicate key|unique constraint|already (taken|exists)/.test(t)) {
+    return 'That username is already taken. Try another one.';
+  }
+  if (code === '23514' || /violates check constraint/.test(t)) {
+    return 'Something in your profile isn’t allowed. Check your username: 3–20 letters, numbers, _ or .';
+  }
+  if (code === '42501' || /permission denied|row-level security/.test(t)) {
+    if (__DEV__) console.warn('[profile] save refused:', err);
+    return 'Couldn’t save your profile. Please try again. If it keeps happening, make sure you have the latest version of PinHunt.';
+  }
+  const friendly = toUserError(err, 'profile');
+  if (friendly.kind === 'unknown') return 'Couldn’t save your profile. Please try again.';
+  return `${friendly.title}. ${friendly.message}`;
+}

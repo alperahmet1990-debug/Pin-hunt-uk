@@ -19,6 +19,7 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import { profileSaveErrorLine } from '@/utils/userError';
 import { useProfile } from '@/context/ProfileContext';
 import { useAuth } from '@/context/AuthContext';
 import { radius, spacing } from '@/constants/theme';
@@ -106,8 +107,7 @@ export default function CompleteProfileScreen() {
       });
       // ProfileContext sets needsUsername → false → AuthGuard navigates to (tabs)
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : 'Failed to save profile';
-      setSaveError(msg.includes('duplicate') || msg.includes('unique') ? 'This username is already taken' : msg);
+      setSaveError(profileSaveErrorLine(err));
     } finally {
       setSaving(false);
     }

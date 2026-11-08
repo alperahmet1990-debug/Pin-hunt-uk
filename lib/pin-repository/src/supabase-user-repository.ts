@@ -2,6 +2,8 @@ import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import type { IUserPinRepository } from './user-repository';
 import { PinRepositoryError } from './repository';
 import { safeDisplayName } from './display-name';
+import * as communityPrices from './community-prices';
+import type { CommunityPrice, MyPinPrice, PriceCurrency } from './community-prices';
 import type {
   AddUserPinInput,
   MarkTradePostedInput,
@@ -2585,6 +2587,40 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     };
   }
 
+  // ── Collector prices and community prices (migration 065, #511) ──────────────
+
+  private get priceClient(): communityPrices.CommunityPricesClient {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return this.client as any;
+  }
+
+  setMyPinPrice(pinId: string, currency: PriceCurrency, amount: number): Promise<void> {
+    return communityPrices.setMyPinPrice(this.priceClient, pinId, currency, amount);
+  }
+
+  clearMyPinPrice(pinId: string, currency: PriceCurrency): Promise<void> {
+    return communityPrices.clearMyPinPrice(this.priceClient, pinId, currency);
+  }
+
+  getMyPinPrices(pinIds: string[]): Promise<MyPinPrice[]> {
+    return communityPrices.getMyPinPrices(this.priceClient, pinIds);
+  }
+
+  getCommunityPrice(pinId: string, currency: PriceCurrency): Promise<CommunityPrice | null> {
+    return communityPrices.getCommunityPrice(this.priceClient, pinId, currency);
+  }
+
+  getCommunityPrices(pinIds: string[], currency: PriceCurrency): Promise<CommunityPrice[]> {
+    return communityPrices.getCommunityPrices(this.priceClient, pinIds, currency);
+  }
+
+  getMyCommunityPriceSetting(): Promise<boolean> {
+    return communityPrices.getMyCommunityPriceSetting(this.priceClient);
+  }
+
+  setMyCommunityPriceSetting(include: boolean): Promise<void> {
+    return communityPrices.setMyCommunityPriceSetting(this.priceClient, include);
+  }
 }
 
 // ─── Factory ──────────────────────────────────────────────────────────────────

@@ -1,3 +1,4 @@
+import type { CommunityPrice, MyPinPrice, PriceCurrency } from './community-prices';
 import type {
   AddUserPinInput,
   MarkTradePostedInput,
@@ -571,4 +572,27 @@ export interface IUserPinRepository {
 
   /** Send a message in an existing conversation. */
   sendConversationMessage(conversationId: string, senderId: string, body: string, input?: SendConversationMessageInput): Promise<ConversationMessage>;
+
+  // ── Collector prices and community prices (migration 065, #511) ───────────
+  // Until 065 is applied these throw a PinRepositoryError that
+  // isCommunityPricesUnavailable() recognises; screens hide the feature.
+
+  /** Set the caller's price for a pin they own or have For Trade. */
+  setMyPinPrice(pinId: string, currency: PriceCurrency, amount: number): Promise<void>;
+
+  /** Remove the caller's price for a pin in one currency. */
+  clearMyPinPrice(pinId: string, currency: PriceCurrency): Promise<void>;
+
+  /** The caller's own prices for these pins (app pin ids), in every currency. */
+  getMyPinPrices(pinIds: string[]): Promise<MyPinPrice[]>;
+
+  /** Community price for one pin, or null when nobody has priced it in this currency. */
+  getCommunityPrice(pinId: string, currency: PriceCurrency): Promise<CommunityPrice | null>;
+
+  /** Community prices for many pins in one currency; unpriced pins are absent. */
+  getCommunityPrices(pinIds: string[], currency: PriceCurrency): Promise<CommunityPrice[]>;
+
+  /** "Include my prices in community prices" (on by default). */
+  getMyCommunityPriceSetting(): Promise<boolean>;
+  setMyCommunityPriceSetting(include: boolean): Promise<void>;
 }

@@ -25,6 +25,7 @@ import type { CollectionStatus } from '@/types/pin';
 import type { Board } from '@/types/board';
 import type { CataloguePin } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { YourPriceEditor } from '@/components/YourPriceEditor';
 
 const STATUS_CONFIG: Array<{
   status: CollectionStatus;
@@ -320,6 +321,13 @@ export function QuickAddSheet({ pin, onClose, onAdded }: QuickAddSheetProps) {
               </View>
             )}
 
+            {/* Your price (CV-03, #514): renders nothing until prices are available. */}
+            {isKept && pin && (
+              <View style={[styles.quantityRow, styles.priceRow, { borderColor: t.border }]}>
+                <YourPriceEditor pinId={pin.id} />
+              </View>
+            )}
+
             {confirm && (
               <View
                 style={[styles.confirmCard, { borderColor: t.border, backgroundColor: t.card, borderRadius: t.radius }]}
@@ -591,6 +599,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  priceRow: { flexDirection: 'column', alignItems: 'stretch' },
   quantityCopy: { flex: 1 },
   quantityTitle: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   quantityHint: { fontSize: 11, fontFamily: 'Inter_400Regular', marginTop: 2 },

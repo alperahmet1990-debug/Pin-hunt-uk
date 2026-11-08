@@ -102,5 +102,14 @@
   {
     "name": "find-trades",
     "path": "/find-trades"
+  },
+  {
+    "name": "pin-your-price",
+    "path": "/pin/dp-001",
+    "click": "Own this pin? Add your price"
+  },
+  {
+    "name": "settings-community-prices",
+    "path": "/settings/community-prices"
   }
 ]

@@ -107,6 +107,8 @@ describe("POST /api/scan/identify within the budget", () => {
       expect(o.timeout).toBeGreaterThan(0);
       expect(o.timeout).toBeLessThan(30_000);
     }
+    // Each call asks the model to think briefly (scanReasoning.ts).
+    for (const c of create.mock.calls) expect(c[0].reasoning_effort).toBe("low");
     // Describing leaves time for ranking.
     expect(opts[0].timeout).toBeLessThanOrEqual(12_000);
     // Later steps only get what's left.

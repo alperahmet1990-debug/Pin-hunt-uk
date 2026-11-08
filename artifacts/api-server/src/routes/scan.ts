@@ -19,6 +19,7 @@ import {
   RANK_RESERVE_MS,
   VERIFY_MIN_MS,
 } from "../services/scanBudget";
+import { withScanReasoning } from "../services/scanReasoning";
 import { cachedResult, imageHash, recordUsage, withinDailyCap } from "../services/usage-caps";
 
 const router: IRouter = Router();
@@ -224,7 +225,8 @@ router.post("/scan/identify", requireUser, async (req, res) => {
     );
     // A slow or failed description isn't fatal: ranking still sees the photo
     // and whatever Vision found. It just mustn't eat ranking's time.
-    const describeResp = await openai.chat.completions.create({
+    const describeResp = await withScanReasoning((extra) => openai.chat.completions.create({
+      ...extra,
       model: SCAN_MODEL,
       max_completion_tokens: 2048,
       messages: [
@@ -247,7 +249,7 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
           ],
         },
       ],
-    }, { timeout: budget.timeoutFor(DESCRIBE_MAX_MS, RANK_RESERVE_MS), maxRetries: 0 }).catch((err: unknown) => {
+    }, { timeout: budget.timeoutFor(DESCRIBE_MAX_MS, RANK_RESERVE_MS), maxRetries: 0 })).catch((err: unknown) => {
       if (!isUpstreamTimeout(err)) throw err;
       skipped.push("describe");
       return null;
@@ -317,7 +319,8 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
     // fails as a timeout (504), the same as before.
     const rankTimeout = budget.timeoutFor(Number.MAX_SAFE_INTEGER);
     if (rankTimeout <= 0) throw Object.assign(new Error("Scan budget used up"), { name: "APIConnectionTimeoutError" });
-    const response = await openai.chat.completions.create({
+    const response = await withScanReasoning((extra) => openai.chat.completions.create({
+      ...extra,
       model: SCAN_MODEL,
       max_completion_tokens: 1024,
       messages: [
@@ -355,7 +358,7 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
           ],
         },
       ],
-    }, { timeout: rankTimeout, maxRetries: 0 });
+    }, { timeout: rankTimeout, maxRetries: 0 }));
 
     timer.mark("rank");
     const raw = response.choices[0]?.message?.content ?? "[]";
@@ -460,7 +463,8 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
           })
           .join("\n");
 
-        const verifyResp = await openai.chat.completions.create({
+        const verifyResp = await withScanReasoning((extra) => openai.chat.completions.create({
+          ...extra,
           model: SCAN_MODEL,
           max_completion_tokens: 1024,
           messages: [
@@ -476,7 +480,7 @@ Give a confidence above 85 only when a reference image visually confirms the mat
             },
             { role: "user", content: refContent },
           ],
-        }, { timeout: verifyTimeout, maxRetries: 0 });
+        }, { timeout: verifyTimeout, maxRetries: 0 }));
 
         const vraw = verifyResp.choices[0]?.message?.content ?? "[]";
         const vs = vraw.indexOf("[");

@@ -61,7 +61,6 @@ export default function HomeScreen() {
   const [activeSetOwnerId, setActiveSetOwnerId] = useState<string | null>(null);
   const [activeSetLoading, setActiveSetLoading] = useState(false);
   const orbit = useRef(new Animated.Value(0)).current;
-  const drift = useRef(new Animated.Value(0)).current;
   const greetingName = profile?.username ?? profile?.displayName?.split(' ')[0] ?? null;
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   const bottomPad = tabScreenBottomPad(insets.bottom + 92);
@@ -73,19 +72,16 @@ export default function HomeScreen() {
       animation?.stop();
       animation = undefined;
       orbit.stopAnimation();
-      drift.stopAnimation();
       orbit.setValue(0);
-      drift.setValue(0);
     };
     const updateMotion = (reduced: boolean) => {
       if (!mounted) return;
       stopAnimation();
       if (reduced) return;
       const useNativeDriver = Platform.OS !== 'web';
-      animation = Animated.loop(Animated.parallel([
+      animation = Animated.loop(
         Animated.sequence([Animated.timing(orbit, { toValue: 1, duration: 7000, easing: Easing.inOut(Easing.ease), useNativeDriver }), Animated.timing(orbit, { toValue: 0, duration: 7000, easing: Easing.inOut(Easing.ease), useNativeDriver })]),
-        Animated.sequence([Animated.timing(drift, { toValue: 1, duration: 9000, easing: Easing.inOut(Easing.ease), useNativeDriver }), Animated.timing(drift, { toValue: 0, duration: 9000, easing: Easing.inOut(Easing.ease), useNativeDriver })]),
-      ]));
+      );
       animation.start();
     };
     AccessibilityInfo.isReduceMotionEnabled().then(updateMotion).catch(() => {});
@@ -95,7 +91,7 @@ export default function HomeScreen() {
       subscription.remove();
       stopAnimation();
     };
-  }, [drift, orbit]);
+  }, [orbit]);
 
   useEffect(() => {
     let cancelled = false;
@@ -162,7 +158,6 @@ export default function HomeScreen() {
 
   if (!user) return <View style={[styles.root, { backgroundColor: colors.homeBackground }]} />;
   const translateOrbit = orbit.interpolate({ inputRange: [0, 1], outputRange: [0, -10] });
-  const translateDrift = drift.interpolate({ inputRange: [0, 1], outputRange: [0, 12] });
   const openPost = (post: CommunityPost) => router.push({ pathname: '/community/post/[id]', params: { id: post.id } });
 
   return <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
@@ -185,9 +180,9 @@ export default function HomeScreen() {
       <TouchableOpacity accessibilityRole="button" accessibilityLabel="Find a Pin, scan or search the catalogue" onPress={() => router.push('/(tabs)/scan')} activeOpacity={0.9}>
         <LinearGradient colors={[colors.homeCoralDeep, colors.homeCoral, colors.homeSand]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={[styles.hero, { shadowColor: colors.homeShadow }]}>
           <Animated.View pointerEvents="none" style={[styles.heroRing, { borderColor: colors.homeSand, transform: [{ translateX: translateOrbit }, { translateY: translateOrbit }] }]} />
-          <Animated.View pointerEvents="none" style={[styles.heroOrbit, { borderColor: colors.homeSurface, transform: [{ translateX: translateDrift }, { rotate: '-20deg' }] }]} />
+          {/* No thin orbit line here: on a phone it read as a stray hair on the screen (#375). */}
           <View style={styles.heroText}><Text style={[styles.heroKicker, { color: colors.homeHeroMuted }]}>✦  START HERE</Text><Text style={[styles.heroTitle, { color: colors.homeHeroText }]}>Find a Pin</Text><Text style={[styles.heroSubtitle, { color: colors.homeHeroSubtitle }]}>Scan or search for a pin</Text></View>
-          <View style={[styles.heroIcon, { backgroundColor: colors.homeSurface }]}><Feather name="search" size={23} color={colors.homeCoralDeep} /></View>
+          <View style={[styles.heroIcon, { backgroundColor: colors.homeSurface }]}><Feather name="camera" size={23} color={colors.homeCoralDeep} /></View>
         </LinearGradient>
       </TouchableOpacity>
       {/* New collectors: the Get started checklist, else the zero-pins Add pins card. */}
@@ -203,7 +198,7 @@ export default function HomeScreen() {
         </TouchableOpacity>}
         {forYou.map(item => <TouchableOpacity key={item.id} accessibilityRole="button" accessibilityLabel={`${item.title}. ${item.detail}`} onPress={item.action} activeOpacity={0.8} style={[styles.update, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}><View style={[styles.cardIcon, { backgroundColor: item.tone + '25' }]}><Feather name={item.icon} size={18} color={item.tone} /></View><View style={styles.cardText}><Text style={[styles.cardTitle, { color: colors.homeInk }]}>{item.title}</Text><Text style={[styles.cardDetail, { color: colors.homeMuted }]}>{item.detail}</Text></View><Feather name="chevron-right" size={18} color={colors.homeMuted} /></TouchableOpacity>)}
       </Section>}
-      <Section title="What’s Happening" subtitle="Pin drops, trading events & community meet-ups" colors={colors} actionLabel="See all" action={() => router.push({ pathname: '/(tabs)/community', params: { filter: 'new_pickup' } })}>
+      <Section title="What’s Happening" subtitle="Pin drops, trading events & community meet-ups" colors={colors} actionLabel="See all" action={() => router.push('/events')}>
         {whatsHappening.length > 0 ? (
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.eventsShelf}>
             {whatsHappening.map(event => <EventCard key={event.id} event={event} onPress={() => handleViewEvent(event)} />)}
@@ -228,6 +223,6 @@ function Stat({ value, label, onPress, colors, last }: { value: number; label: s
 function Section({ title, subtitle, children, colors, action, actionLabel = 'View set' }: { title: string; subtitle?: string; children: React.ReactNode; colors: ReturnType<typeof useColors>; action?: () => void; actionLabel?: string }) { return <View style={styles.section}><View style={styles.sectionHead}><View style={styles.sectionHeadText}><Text style={[styles.sectionTitle, { color: colors.homeInk }]}>{title}</Text>{subtitle && <Text numberOfLines={1} style={[styles.sectionSubtitle, { color: colors.homeMuted }]}>{subtitle}</Text>}</View>{action && <Button variant="text" label={actionLabel} accessibilityLabel={`${actionLabel}: ${title}`} onPress={action} style={styles.seeAll} />}</View><View style={styles.sectionContent}>{children}</View></View>; }
 
 const styles = StyleSheet.create({
-  root: { flex: 1 }, scroll: { paddingHorizontal: 16 }, header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }, headerLeft: { flexDirection: 'row', alignItems: 'center', gap: 10, flexShrink: 1 }, welcome: { fontSize: 11, fontFamily: 'Inter_600SemiBold' }, name: { fontSize: 20, lineHeight: 23, fontFamily: 'Inter_700Bold', letterSpacing: -0.5 }, tools: { flexDirection: 'row', gap: 8 }, iconButton: { width: 44, height: 44, borderRadius: 14, alignItems: 'center', justifyContent: 'center', borderWidth: 1 }, badge: { position: 'absolute', top: -5, right: -5, minWidth: 18, height: 18, borderRadius: 9, borderWidth: 2, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 3 }, badgeText: { fontSize: 9, fontFamily: 'Inter_700Bold' }, stats: { flexDirection: 'row', borderTopWidth: 1, borderBottomWidth: 1, paddingVertical: 10, marginBottom: 18 }, stat: { flex: 1, paddingHorizontal: 8 }, statValue: { fontSize: 17, lineHeight: 19, fontFamily: 'Inter_700Bold' }, statLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold' }, hero: { minHeight: 96, borderRadius: 22, paddingHorizontal: 16, paddingVertical: 12, overflow: 'hidden', justifyContent: 'center', shadowOpacity: 0.25, shadowRadius: 15, shadowOffset: { width: 0, height: 8 }, elevation: 5 }, heroRing: { position: 'absolute', width: 120, height: 120, borderWidth: 20, borderRadius: 60, right: -44, bottom: -62, opacity: 0.45 }, heroOrbit: { position: 'absolute', width: 170, height: 56, borderWidth: 1, borderRadius: 100, right: -40, top: 14, opacity: 0.35, transform: [{ rotate: '-20deg' }] }, // Room for the 48 pt search button so the subtitle wraps instead of running under it (B-P2-04).
+  root: { flex: 1 }, scroll: { paddingHorizontal: 16 }, header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }, headerLeft: { flexDirection: 'row', alignItems: 'center', gap: 10, flexShrink: 1 }, welcome: { fontSize: 11, fontFamily: 'Inter_600SemiBold' }, name: { fontSize: 20, lineHeight: 23, fontFamily: 'Inter_700Bold', letterSpacing: -0.5 }, tools: { flexDirection: 'row', gap: 8 }, iconButton: { width: 44, height: 44, borderRadius: 14, alignItems: 'center', justifyContent: 'center', borderWidth: 1 }, badge: { position: 'absolute', top: -5, right: -5, minWidth: 18, height: 18, borderRadius: 9, borderWidth: 2, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 3 }, badgeText: { fontSize: 9, fontFamily: 'Inter_700Bold' }, stats: { flexDirection: 'row', borderTopWidth: 1, borderBottomWidth: 1, paddingVertical: 10, marginBottom: 18 }, stat: { flex: 1, paddingHorizontal: 8 }, statValue: { fontSize: 17, lineHeight: 19, fontFamily: 'Inter_700Bold' }, statLabel: { fontSize: 11, fontFamily: 'Inter_600SemiBold' }, hero: { minHeight: 96, borderRadius: 22, paddingHorizontal: 16, paddingVertical: 12, overflow: 'hidden', justifyContent: 'center', shadowOpacity: 0.25, shadowRadius: 15, shadowOffset: { width: 0, height: 8 }, elevation: 5 }, heroRing: { position: 'absolute', width: 120, height: 120, borderWidth: 20, borderRadius: 60, right: -44, bottom: -62, opacity: 0.45 }, // Room for the 48 pt search button so the subtitle wraps instead of running under it (B-P2-04).
   heroText: { paddingRight: 58 }, heroKicker: { fontSize: 10, letterSpacing: 1, fontFamily: 'Inter_700Bold' }, heroTitle: { fontSize: 22, lineHeight: 26, letterSpacing: -0.8, fontFamily: 'Inter_700Bold', marginTop: 3 }, heroSubtitle: { fontSize: 12.5, fontFamily: 'Inter_500Medium', marginTop: 2 }, heroIcon: { position: 'absolute', right: 14, top: 26, width: 44, height: 44, borderRadius: 15, alignItems: 'center', justifyContent: 'center' }, section: { marginTop: 20 }, sectionHead: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginHorizontal: 2, marginBottom: 9 }, sectionHeadText: { flex: 1, minWidth: 0, marginRight: 8 }, sectionTitle: { fontSize: 14, fontFamily: 'Inter_700Bold', letterSpacing: -0.3 }, sectionSubtitle: { fontSize: 11.5, fontFamily: 'Inter_500Medium', marginTop: 2 }, seeAll: { marginVertical: -12, marginRight: -8 }, sectionContent: { gap: 9 }, eventsShelf: { paddingRight: 16, paddingBottom: 2 }, official: { minHeight: 70, flexDirection: 'row', alignItems: 'center', gap: 10, borderWidth: 1, borderRadius: 21, padding: 11 }, update: { minHeight: 64, flexDirection: 'row', alignItems: 'center', gap: 11, borderWidth: 1, borderRadius: 20, padding: 11 }, cardIcon: { width: 40, height: 40, borderRadius: 14, alignItems: 'center', justifyContent: 'center' }, cardText: { flex: 1, minWidth: 0 }, officialKicker: { fontSize: 9, letterSpacing: 0.7, fontFamily: 'Inter_700Bold', marginBottom: 2 }, cardTitle: { fontSize: 12, lineHeight: 15, fontFamily: 'Inter_600SemiBold' }, cardDetail: { fontSize: 11, fontFamily: 'Inter_500Medium', marginTop: 3 }, collect: { minHeight: 100, flexDirection: 'row', alignItems: 'center', borderRadius: 22, padding: 14, gap: 12 }, collectTitle: { fontSize: 14, lineHeight: 17, fontFamily: 'Inter_700Bold' }, collectDetail: { fontSize: 11, fontFamily: 'Inter_600SemiBold', marginTop: 3 }, progressTrack: { height: 5, borderRadius: 3, marginTop: 8, overflow: 'hidden' }, progressFill: { height: '100%', borderRadius: 3 }, percent: { width: 48, height: 48, borderRadius: 24, borderWidth: 4, alignItems: 'center', justifyContent: 'center' }, percentText: { fontSize: 11, fontFamily: 'Inter_700Bold' },
 });

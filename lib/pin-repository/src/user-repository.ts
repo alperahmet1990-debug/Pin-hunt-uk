@@ -54,6 +54,7 @@ import type {
   Profile,
   PublicProfile,
   SearchCollectorsInput,
+  ContactPreferences,
   Trade,
   TradeItem,
   TradeMessage,
@@ -160,6 +161,12 @@ export interface IUserPinRepository {
 
   /** Propose to the other person in a chat and link it, in one step. */
   proposeTradeInChat(conversationId: string, notes?: string): Promise<Trade>;
+
+  /**
+   * Whether another collector accepts new chats and new trade proposals
+   * (their Allow Messages and Allow Trade Requests settings, migration 066).
+   */
+  getContactPreferences(userId: string): Promise<ContactPreferences>;
 
   /** Recipient only, while pending. */
   acceptTrade(tradeId: string): Promise<Trade>;

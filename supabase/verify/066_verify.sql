@@ -1,10 +1,13 @@
 -- ============================================================
--- Verification for migration 066 (run in the Supabase SQL editor, as the
--- default postgres user, after applying 066).
+-- Verification for migration 066 (run on STAGING after applying 066, in the
+-- Supabase SQL editor, as the default postgres user).
 --
--- One transaction, ROLLED BACK at the end. It creates throwaway auth users and
--- a throwaway pin, so it leaves nothing behind. Expected final output: a single
--- row 'ALL 066 CHECKS PASSED'. Any failed check aborts with an error naming it.
+-- One transaction, ROLLED BACK at the end. It creates throwaway auth users, so
+-- it leaves nothing behind. Expected final output: a single row
+-- 'ALL 066 CHECKS PASSED'. Any failed check aborts with an error naming it.
+--
+--   A …a1 open to everything   B …b2 no new messages
+--   C …c3 no trade requests    D …d4 private profile, open to everything
 -- ============================================================
 begin;
 
@@ -13,156 +16,105 @@ create or replace function pg_temp.v066_as(p_uid uuid) returns void language sql
          set_config('request.jwt.claims', json_build_object('sub', p_uid, 'role', 'authenticated')::text, true);
 $$;
 
--- Runs p_sql as the signed-in user p_uid; returns the SQLSTATE it failed
--- with, or null if it succeeded.
-create or replace function pg_temp.v066_try(p_uid uuid, p_sql text) returns text language plpgsql as $$
+create or replace function pg_temp.v066_refused(p_uid uuid, p_sql text, p_like text default null)
+returns boolean language plpgsql as $$
+declare v_msg text;
 begin
   perform pg_temp.v066_as(p_uid);
   begin
     set local role authenticated;
     execute p_sql;
     reset role;
-    return null;
+    return false;
   exception when others then
+    v_msg := sqlerrm;
     reset role;
-    return sqlstate;
+    return p_like is null or v_msg ilike '%' || p_like || '%';
   end;
 end $$;
 
--- Counts the rows p_sql returns when run as the signed-in user p_uid.
-create or replace function pg_temp.v066_count(p_uid uuid, p_sql text) returns integer language plpgsql as $$
-declare n integer;
+create or replace function pg_temp.v066_ok(p_uid uuid, p_sql text) returns void language plpgsql as $$
 begin
   perform pg_temp.v066_as(p_uid);
   set local role authenticated;
-  execute format('select count(*) from (%s) q', p_sql) into n;
+  execute p_sql;
   reset role;
-  return n;
 end $$;
 
--- 1. Structure and grants
-do $$ begin
-  assert to_regclass('public.collection_places') is not null, '1a collection_places missing';
-  assert to_regclass('public.user_pin_locations') is not null, '1b user_pin_locations missing';
-  assert (select relrowsecurity from pg_class where oid = 'public.collection_places'::regclass), '1c RLS off on collection_places';
-  assert (select relrowsecurity from pg_class where oid = 'public.user_pin_locations'::regclass), '1d RLS off on user_pin_locations';
-  assert not has_table_privilege('anon', 'public.collection_places', 'select'), '1e anon reads collection_places';
-  assert not has_table_privilege('anon', 'public.user_pin_locations', 'select'), '1f anon reads user_pin_locations';
-  assert not exists (select 1 from information_schema.columns
-                      where table_schema = 'public' and table_name = 'user_pins'
-                        and column_name in ('place_id', 'page', 'pocket', 'location')),
-         '1g a location column was added to user_pins (readable through the For Trade policy)';
+create or replace function pg_temp.v066_prefs(p_viewer uuid, p_user uuid)
+returns table (m boolean, t boolean) language plpgsql as $$
+begin
+  perform pg_temp.v066_as(p_viewer);
+  set local role authenticated;
+  return query select accepts_messages, accepts_trade_requests from collector_contact_preferences(p_user);
+  reset role;
 end $$;
 
--- 2. Scenario data. A and B are collectors; both own the throwaway pin.
-insert into auth.users (id, email) values
-  ('06600000-0000-4000-8000-00000000000a', 'verify066-a@example.invalid'),
-  ('06600000-0000-4000-8000-00000000000b', 'verify066-b@example.invalid');
-insert into pins (id, pinhunt_id, title, brand, collection, verification_status) values
-  ('06600000-0000-4000-8000-0000000000f1', 'PHUK-VERIFY66A', 'Verify 066 pin', 'Disney', '', 'verified'),
-  ('06600000-0000-4000-8000-0000000000f2', 'PHUK-VERIFY66B', 'Verify 066 pin 2', 'Disney', '', 'verified');
-insert into user_pins (user_id, pin_id, status) values
-  ('06600000-0000-4000-8000-00000000000a', '06600000-0000-4000-8000-0000000000f1', 'for_trade'),
-  ('06600000-0000-4000-8000-00000000000a', '06600000-0000-4000-8000-0000000000f2', 'owned'),
-  ('06600000-0000-4000-8000-00000000000b', '06600000-0000-4000-8000-0000000000f1', 'owned');
-
--- 3. A records places and locations as themself
-do $$ begin
-  assert pg_temp.v066_try('06600000-0000-4000-8000-00000000000a', $q$
-    insert into collection_places (id, name, kind, pages, pockets_per_page) values
-      ('06600000-0000-4000-8000-0000000000c1', 'Trade book 2', 'book', 12, 9),
-      ('06600000-0000-4000-8000-0000000000c2', 'Display frame, hallway', 'display', null, null)
-  $q$) is null, '3a A cannot create places';
-  assert pg_temp.v066_try('06600000-0000-4000-8000-00000000000a', $q$
-    insert into user_pin_locations (pin_id, place_id, page, pocket) values
-      ('06600000-0000-4000-8000-0000000000f1', '06600000-0000-4000-8000-0000000000c1', 5, 2),
-      ('06600000-0000-4000-8000-0000000000f2', '06600000-0000-4000-8000-0000000000c2', null, null)
-  $q$) is null, '3b A cannot place their pins';
-  assert pg_temp.v066_count('06600000-0000-4000-8000-00000000000a', 'select * from user_pin_locations') = 2,
-         '3c A cannot read their locations';
-  assert (select user_id from collection_places where id = '06600000-0000-4000-8000-0000000000c1')
-         = '06600000-0000-4000-8000-00000000000a', '3d place not owned by A by default';
+do $$
+begin
+  assert not has_function_privilege('anon', 'public.collector_contact_preferences(uuid)', 'execute'), '1a anon can read preferences';
+  assert has_function_privilege('authenticated', 'public.collector_contact_preferences(uuid)', 'execute'), '1b cannot read preferences';
+  assert not has_function_privilege('authenticated', 'public.conversations_check_contact_preference()', 'execute'), '1c trigger function exposed';
+  assert not has_function_privilege('anon', 'public.trade_propose(uuid,text)', 'execute'), '1d anon can propose';
+  assert has_function_privilege('authenticated', 'public.trade_propose(uuid,text)', 'execute'), '1e cannot propose';
+  assert exists (select 1 from pg_trigger where tgname = 'conversations_check_contact_preference' and not tgisinternal), '1f trigger missing';
 end $$;
 
--- 4. Privacy: B sees A's For Trade row (existing policy) but none of A's places or locations
-do $$ begin
-  assert pg_temp.v066_count('06600000-0000-4000-8000-00000000000b',
-         $q$select * from user_pins where user_id = '06600000-0000-4000-8000-00000000000a'$q$) = 1,
-         '4a expected B to see A''s For Trade row (migration 006)';
-  assert pg_temp.v066_count('06600000-0000-4000-8000-00000000000b', 'select * from collection_places') = 0,
-         '4b B reads A''s places';
-  assert pg_temp.v066_count('06600000-0000-4000-8000-00000000000b', 'select * from user_pin_locations') = 0,
-         '4c B reads A''s locations';
-  assert pg_temp.v066_try('06600000-0000-4000-8000-00000000000b',
-         $q$update collection_places set name = 'hacked'$q$) is null, '4d update errored';
-  assert (select name from collection_places where id = '06600000-0000-4000-8000-0000000000c1') = 'Trade book 2',
-         '4e B renamed A''s place';
-  perform pg_temp.v066_try('06600000-0000-4000-8000-00000000000b', 'delete from user_pin_locations');
-  assert (select count(*) from user_pin_locations where user_id = '06600000-0000-4000-8000-00000000000a') = 2,
-         '4f B deleted A''s locations';
-end $$;
+insert into auth.users (id) values
+  ('06600000-0000-4000-8000-0000000000a1'), ('06600000-0000-4000-8000-0000000000b2'),
+  ('06600000-0000-4000-8000-0000000000c3'), ('06600000-0000-4000-8000-0000000000d4');
+insert into profiles (id) values
+  ('06600000-0000-4000-8000-0000000000a1'), ('06600000-0000-4000-8000-0000000000b2'),
+  ('06600000-0000-4000-8000-0000000000c3'), ('06600000-0000-4000-8000-0000000000d4')
+  on conflict (id) do nothing;
+update profiles set allow_messages = true, allow_trade_requests = true, profile_visibility = 'public'
+  where id in ('06600000-0000-4000-8000-0000000000a1', '06600000-0000-4000-8000-0000000000b2',
+               '06600000-0000-4000-8000-0000000000c3', '06600000-0000-4000-8000-0000000000d4');
+update profiles set allow_messages = false where id = '06600000-0000-4000-8000-0000000000b2';
+update profiles set allow_trade_requests = false where id = '06600000-0000-4000-8000-0000000000c3';
+update profiles set profile_visibility = 'private' where id = '06600000-0000-4000-8000-0000000000d4';
 
--- 5. Integrity: no placing into someone else's place, for someone else, or for pins you don't have
-do $$ begin
-  assert pg_temp.v066_try('06600000-0000-4000-8000-00000000000b', $q$
-    insert into user_pin_locations (pin_id, place_id) values
-      ('06600000-0000-4000-8000-0000000000f1', '06600000-0000-4000-8000-0000000000c1')
-  $q$) = '23503', '5a B placed a pin in A''s place';
-  assert pg_temp.v066_try('06600000-0000-4000-8000-00000000000b', $q$
-    insert into user_pin_locations (user_id, pin_id, place_id) values
-      ('06600000-0000-4000-8000-00000000000a', '06600000-0000-4000-8000-0000000000f2', '06600000-0000-4000-8000-0000000000c1')
-  $q$) = '42501', '5b B wrote a location for A';
-  assert pg_temp.v066_try('06600000-0000-4000-8000-00000000000b', $q$
-    insert into collection_places (user_id, name) values ('06600000-0000-4000-8000-00000000000a', 'Planted')
-  $q$) = '42501', '5c B created a place for A';
-  assert pg_temp.v066_try('06600000-0000-4000-8000-00000000000b', $q$
-    insert into collection_places (id, name) values ('06600000-0000-4000-8000-0000000000c3', 'B book');
-    insert into user_pin_locations (pin_id, place_id) values
-      ('06600000-0000-4000-8000-0000000000f2', '06600000-0000-4000-8000-0000000000c3')
-  $q$) = '23503', '5d B placed a pin they don''t have';
-  assert pg_temp.v066_try('06600000-0000-4000-8000-00000000000a', $q$
-    update user_pin_locations set page = null, pocket = 3
-     where pin_id = '06600000-0000-4000-8000-0000000000f1'
-  $q$) = '23514', '5e pocket allowed without a page';
-  assert pg_temp.v066_try('06600000-0000-4000-8000-00000000000a', $q$
-    insert into collection_places (name) values ('   ')
-  $q$) = '23514', '5f blank place name allowed';
-end $$;
+do $$
+declare
+  a uuid := '06600000-0000-4000-8000-0000000000a1';
+  b uuid := '06600000-0000-4000-8000-0000000000b2';
+  c uuid := '06600000-0000-4000-8000-0000000000c3';
+  d uuid := '06600000-0000-4000-8000-0000000000d4';
+  conv_ab uuid := '06600000-0000-4000-8000-00000000c0ab';
+  r record;
+begin
+  -- Preferences are readable for any collector, including private profiles
+  select * into r from pg_temp.v066_prefs(a, b);
+  assert r.m = false and r.t = true, '2a B preferences wrong';
+  select * into r from pg_temp.v066_prefs(a, c);
+  assert r.m = true and r.t = false, '2b C preferences wrong';
+  select * into r from pg_temp.v066_prefs(a, d);
+  assert r.m = true and r.t = true, '2c private D preferences wrong';
+  select * into r from pg_temp.v066_prefs(a, '06600000-0000-4000-8000-0000000000ff');
+  assert r.m = false and r.t = false, '2d unknown user should accept nothing';
 
--- 6. Lifecycle: For Trade keeps the location, ISO clears it, removing the pin removes it,
---    deleting a place unplaces its pins
-do $$ begin
-  perform pg_temp.v066_as('06600000-0000-4000-8000-00000000000a');
-  perform set_user_pin_status('PHUK-VERIFY66B', 'for_trade', 1);
-  assert exists (select 1 from user_pin_locations where user_id = '06600000-0000-4000-8000-00000000000a'
-                   and pin_id = '06600000-0000-4000-8000-0000000000f2'), '6a For Trade lost the location';
-  perform set_user_pin_status('PHUK-VERIFY66B', 'wanted', 1);
-  assert not exists (select 1 from user_pin_locations where user_id = '06600000-0000-4000-8000-00000000000a'
-                       and pin_id = '06600000-0000-4000-8000-0000000000f2'), '6b ISO kept the location';
-  perform set_user_pin_status('PHUK-VERIFY66A', 'none', 1);
-  assert not exists (select 1 from user_pin_locations where user_id = '06600000-0000-4000-8000-00000000000a'
-                       and pin_id = '06600000-0000-4000-8000-0000000000f1'), '6c removed pin kept its location';
+  -- New chats need the other collector to allow messages
+  assert pg_temp.v066_refused(a, format('insert into conversations (participant_a_id, participant_b_id) values (%L, %L)', a, b), 'new messages'), '3a chat started with B';
+  perform pg_temp.v066_ok(a, format('insert into conversations (participant_a_id, participant_b_id) values (%L, %L)', a, c));
+  perform pg_temp.v066_ok(a, format('insert into conversations (participant_a_id, participant_b_id) values (%L, %L)', a, d));
+  perform pg_temp.v066_ok(b, format('insert into conversations (participant_a_id, participant_b_id) values (%L, %L)', b, a));
 
-  insert into user_pins (user_id, pin_id, status) values
-    ('06600000-0000-4000-8000-00000000000a', '06600000-0000-4000-8000-0000000000f1', 'owned');
-  insert into user_pin_locations (user_id, pin_id, place_id, page, pocket) values
-    ('06600000-0000-4000-8000-00000000000a', '06600000-0000-4000-8000-0000000000f1', '06600000-0000-4000-8000-0000000000c1', 1, 1);
-  delete from collection_places where id = '06600000-0000-4000-8000-0000000000c1';
-  assert not exists (select 1 from user_pin_locations where place_id = '06600000-0000-4000-8000-0000000000c1'),
-         '6d deleting a place left locations behind';
-  assert exists (select 1 from user_pins where user_id = '06600000-0000-4000-8000-00000000000a'
-                   and pin_id = '06600000-0000-4000-8000-0000000000f1'), '6e deleting a place removed the pin';
-end $$;
+  -- An existing chat keeps working after messages are turned off
+  insert into conversations (id, participant_a_id, participant_b_id) values (conv_ab, b, a);
+  perform pg_temp.v066_ok(a, format('insert into conversation_messages (conversation_id, sender_id, body) values (%L, %L, %L)', conv_ab, a, 'Still here'));
 
--- 7. Deleting an account removes its places and locations
-do $$ begin
-  insert into user_pin_locations (user_id, pin_id, place_id) values
-    ('06600000-0000-4000-8000-00000000000a', '06600000-0000-4000-8000-0000000000f1', '06600000-0000-4000-8000-0000000000c2');
-  delete from auth.users where id = '06600000-0000-4000-8000-00000000000a';
-  assert not exists (select 1 from collection_places where user_id = '06600000-0000-4000-8000-00000000000a'), '7a places left behind';
-  assert not exists (select 1 from user_pin_locations where user_id = '06600000-0000-4000-8000-00000000000a'), '7b locations left behind';
+  -- New proposals need the other collector to allow trade requests
+  assert pg_temp.v066_refused(a, format('select trade_propose(%L)', c), 'trade requests'), '4a proposed to C';
+  perform pg_temp.v066_ok(a, format('select trade_propose(%L)', b));
+  perform pg_temp.v066_ok(c, format('select trade_propose(%L)', d));
+
+  -- In-chat proposals follow the same rule
+  assert pg_temp.v066_refused(a, format('select trade_propose_in_chat(%L)', (
+    select id from conversations where participant_a_id = a and participant_b_id = c limit 1)), 'trade requests'), '4b proposed to C in chat';
+
+  -- Service-role and SQL-editor inserts are not checked
+  insert into conversations (participant_a_id, participant_b_id) values (c, b);
 end $$;
 
 select 'ALL 066 CHECKS PASSED' as result;
-
 rollback;

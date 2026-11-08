@@ -1,8 +1,8 @@
 -- ============================================================
--- Migration 066: where each pin lives (iPad: Collecting at home)
+-- Migration 067: where each pin lives (iPad: Collecting at home)
 --
 -- DRAFT. Never applied by an agent. Staging first: apply in the Supabase SQL
--- editor, run supabase/verify/066_verify.sql there, then:
+-- editor, run supabase/verify/067_verify.sql there, then:
 --   notify pgrst, 'reload schema';
 -- Production is a separate approval. Rollback at the bottom.
 -- Purely additive: two new tables and one trigger. No existing table, column,

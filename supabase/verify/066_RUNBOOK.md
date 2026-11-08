@@ -1,30 +1,33 @@
 # Migration 066: apply runbook (staging first; production needs separate approval)
 
-Migration: `066_pin_locations.sql` (iPad: Collecting at home, "where each pin lives"). Never applied by an agent.
+Migration: `066_contact_preferences.sql` (#505). Never applied by an agent.
 
 ## What it changes
 
-- New table `collection_places`: a collector's real-world places (trade books with pages and pockets, display frames, lanyards, boxes).
-- New table `user_pin_locations`: which place, page and pocket each pin in a collection lives in. One location per collection entry.
-- New trigger on `user_pins`: moving a pin to ISO (`wanted`) clears its location.
+- "Allow Messages" off: nobody can start a new chat with that collector.
+- "Allow Trade Requests" off: nobody can send that collector a new trade proposal, directly or in chat.
+- Existing chats, messages and trades carry on. Blocking still ends contact.
+- `collector_contact_preferences(uuid)` lets the app show or hide Message and Propose Trade.
 
-Both tables are **owner only**: no access when signed out, and signed-in collectors see only their own rows. The location is deliberately not a column on `user_pins`, because `user_pins_for_trade_read` (006) lets every signed-in user read other collectors' whole For Trade rows.
+## Before applying
 
-Locations go with their pin: removing a pin from the collection, deleting a place, or deleting the account (auth.users cascade, 051) removes them.
+- **066 replaces `trade_propose` from 061**, so 057 to 061 must already be applied on that database. Production didn't have 057 to 061 on 6 Nov 2026. Apply those first, following `061_RUNBOOK.md`.
+- If another migration has taken 066, renumber this file and its verify script.
 
 ## Release order
 
-Purely additive: nothing existing changes, so current app builds are unaffected and the order doesn't matter. The app code that reads and writes locations comes in a later PR and needs this applied first.
+The app works before and after the migration. Older builds also work, but anyone they try to contact who has opted out gets a plain error rather than a friendly message.
 
-1. Staging SQL editor, with a guard that stops on any other project: apply `066_pin_locations.sql`.
-2. Run `supabase/verify/066_verify.sql`. Expect `ALL 066 CHECKS PASSED`. It rolls itself back.
-3. Run `notify pgrst, 'reload schema';`
-4. Production: separate approval, then steps 1 to 3 with a guard that stops on staging.
-
-## Pre-checked locally
-
-Replayed with `supabase/verify/local-replay.mjs` (PGlite, no hosted database), with the 006 For Trade read policy added because the stub replay can't load 006: `ALL 066 CHECKS PASSED`. As a control, adding a policy that lets everyone read locations makes check 4c fail, as it should.
+1. Merge, then publish the OTA update. Rebuild the contributor website if it's live.
+2. Staging SQL editor, with a guard that stops on any other project: apply 066.
+3. Run `supabase/verify/066_verify.sql`. Expect `ALL 066 CHECKS PASSED`. It rolls itself back.
+4. Run `notify pgrst, 'reload schema';`
+5. Device check with two staging accounts:
+   - B turns off Allow Messages. A sees no Message button on B's profile, and opening a message link to B shows that B isn't taking new messages.
+   - B turns off Allow Trade Requests. A can't propose a trade in an existing chat with B, and sees a clear message.
+   - An existing chat between A and B still works.
+6. Production: separate approval. Use a guard that stops on staging, then steps 3 to 5.
 
 ## Rollback
 
-At the bottom of the migration. It deletes every saved place and location, so take a copy of both tables first if anyone has used the feature.
+At the bottom of `066_contact_preferences.sql`. It removes the trigger and the function, and restores `trade_propose` by re-running section 2 of 061.

@@ -31,6 +31,7 @@ import { useCommunity } from '@/hooks/useCommunity';
 import { Avatar } from '@/components/Avatar';
 import { radius, spacing } from '@/constants/theme';
 import { formatMatchSummary, matchOpeningMessage, MATCH_PINS_LIMIT } from '@/utils/tradeMatch';
+import { contactRefusalLine } from '@/utils/tradeActions';
 import { useCollection } from '@/context/CollectionContext';
 import type { PotentialTradePin } from '@workspace/pin-repository';
 
@@ -61,6 +62,19 @@ export default function StartConversationScreen() {
   // Matched pins to attach (pinhunt ids, which chat pin cards use); the sender can remove any.
   const [matchPins, setMatchPins] = useState<{ theyHave: PotentialTradePin[]; iHave: PotentialTradePin[] }>({ theyHave: [], iHave: [] });
   const [removed, setRemoved] = useState<Set<string>>(() => new Set());
+  // Allow Messages (migration 066). null while loading; a failed check leaves
+  // Send enabled and the server decides.
+  const [acceptsMessages, setAcceptsMessages] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    if (!repo || !params.recipientId) return;
+    let cancelled = false;
+    repo.getContactPreferences(params.recipientId)
+      .then(prefs => { if (!cancelled) setAcceptsMessages(prefs.acceptsMessages); })
+      .catch(() => { if (!cancelled) setAcceptsMessages(true); });
+    return () => { cancelled = true; };
+  }, [repo, params.recipientId]);
+  const notTakingMessages = acceptsMessages === false;
 
   useEffect(() => {
     if (!fromMatch || !repo || !userId || !params.recipientId) return;
@@ -122,7 +136,13 @@ export default function StartConversationScreen() {
       // Replace this screen with the chat screen
       router.replace({ pathname: '/community/chat/[id]' as any, params: { id: conv.id } });
     } catch (e) {
-      Alert.alert('Error', e instanceof Error ? e.message : 'Could not start conversation. Try again.');
+      const refusal = contactRefusalLine(e);
+      if (refusal) {
+        setAcceptsMessages(false);
+        Alert.alert('Message not sent', refusal);
+      } else {
+        Alert.alert('Error', e instanceof Error ? e.message : 'Could not start conversation. Try again.');
+      }
     } finally {
       setSaving(false);
     }
@@ -148,6 +168,15 @@ export default function StartConversationScreen() {
               <Text style={[styles.recipientName, { color: colors.homeInk }]}>@{recipientName}</Text>
             </View>
           </View>
+
+          {notTakingMessages && (
+            <View testID="recipient-not-taking-messages" style={[styles.contextBanner, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
+              <Feather name="slash" size={13} color={colors.homeMuted} />
+              <Text style={[styles.contextLabel, { color: colors.homeMuted }]}>
+                @{recipientName} isn't taking new messages.
+              </Text>
+            </View>
+          )}
 
           {/* Context reference */}
           {hasContext && contextLabel && (
@@ -230,12 +259,12 @@ export default function StartConversationScreen() {
           {/* Send button */}
           <TouchableOpacity
             onPress={handleSend}
-            disabled={saving || !message.trim()}
+            disabled={saving || !message.trim() || notTakingMessages}
             activeOpacity={0.85}
             style={[
               styles.sendBtn,
               {
-                backgroundColor: message.trim() ? colors.homeCoral : colors.homeAqua,
+                backgroundColor: message.trim() && !notTakingMessages ? colors.homeCoral : colors.homeAqua,
                 shadowColor: colors.homeShadow,
               },
             ]}

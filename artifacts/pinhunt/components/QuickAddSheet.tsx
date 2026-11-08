@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
-  Dimensions,
   Keyboard,
   Modal,
   Platform,
@@ -8,6 +7,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  useWindowDimensions,
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -25,6 +25,7 @@ import type { CollectionStatus } from '@/types/pin';
 import type { Board } from '@/types/board';
 import type { CataloguePin } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { YourPriceEditor } from '@/components/YourPriceEditor';
 
 const STATUS_CONFIG: Array<{
   status: CollectionStatus;
@@ -36,10 +37,12 @@ const STATUS_CONFIG: Array<{
   { status: 'for_trade', label: 'For Trade', icon: 'repeat' },
 ];
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
 const SHEET_PADDING = 20;
 const BOARD_GAP = 10;
-const BOARD_CARD_WIDTH = (SCREEN_WIDTH - SHEET_PADDING * 2 - BOARD_GAP) / 2;
+/** Two board cards per row; follows the live window width (rotation, iPad Split View). */
+function boardCardWidth(windowWidth: number): number {
+  return (windowWidth - SHEET_PADDING * 2 - BOARD_GAP) / 2;
+}
 
 interface QuickAddSheetProps {
   /** Pin to act on. Sheet is hidden when null. */
@@ -320,6 +323,13 @@ export function QuickAddSheet({ pin, onClose, onAdded }: QuickAddSheetProps) {
               </View>
             )}
 
+            {/* Your price (CV-03, #514): renders nothing until prices are available. */}
+            {isKept && pin && (
+              <View style={[styles.quantityRow, styles.priceRow, { borderColor: t.border }]}>
+                <YourPriceEditor pinId={pin.id} />
+              </View>
+            )}
+
             {confirm && (
               <View
                 style={[styles.confirmCard, { borderColor: t.border, backgroundColor: t.card, borderRadius: t.radius }]}
@@ -493,6 +503,7 @@ function BoardCard({ board, pins, selected, onPress, t }: {
   onPress: () => void;
   t: Tokens;
 }) {
+  const { width: windowWidth } = useWindowDimensions();
   const cells = [0, 1, 2, 3].map(i => pins[i] ?? null);
   const hasAny = pins.length > 0;
 
@@ -503,7 +514,7 @@ function BoardCard({ board, pins, selected, onPress, t }: {
       accessibilityRole="button"
       accessibilityLabel={board.name}
       accessibilityState={{ selected }}
-      style={[styles.boardCard, { backgroundColor: t.card, borderColor: selected ? t.primary : t.border }]}
+      style={[styles.boardCard, { width: boardCardWidth(windowWidth), backgroundColor: t.card, borderColor: selected ? t.primary : t.border }]}
     >
       <View style={styles.mosaic}>
         {hasAny ? (
@@ -591,6 +602,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  priceRow: { flexDirection: 'column', alignItems: 'stretch' },
   quantityCopy: { flex: 1 },
   quantityTitle: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   quantityHint: { fontSize: 11, fontFamily: 'Inter_400Regular', marginTop: 2 },
@@ -614,7 +626,7 @@ const styles = StyleSheet.create({
   newBoardCreateLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   emptyBoards: { fontSize: 13, fontFamily: 'Inter_400Regular', paddingVertical: 16, textAlign: 'center' },
   boardGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: BOARD_GAP, paddingBottom: 8 },
-  boardCard: { width: BOARD_CARD_WIDTH, borderWidth: 1.5, borderRadius: 16, padding: 8 },
+  boardCard: { borderWidth: 1.5, borderRadius: 16, padding: 8 },
   mosaic: { width: '100%', aspectRatio: 1, flexDirection: 'row', flexWrap: 'wrap', borderRadius: 10, overflow: 'hidden', position: 'relative' },
   mosaicCell: { width: '50%', height: '50%', alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: 'transparent' },
   mosaicImage: { width: '100%', height: '100%' },

@@ -7,7 +7,6 @@ import {
   ActivityIndicator,
   Alert,
   AppState,
-  Dimensions,
   useWindowDimensions,
   Image,
   Platform,
@@ -35,9 +34,10 @@ import { tabScreenBottomPad } from '@/utils/tabBarSpace';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
-// Card has 12px margin on each side + 14px internal padding each side
-const CARD_INNER_WIDTH = SCREEN_WIDTH - 24 - 28;
+// Card has 12px margin on each side + 14px internal padding each side.
+// Width is read per render (useWindowDimensions) so the grid follows
+// rotation, iPad Split View and Android foldables.
+const CARD_H_INSET = 24 + 28;
 
 const POST_TYPES: Array<{ key: CommunityPostType | 'all'; label: string; icon: keyof typeof Feather.glyphMap }> = [
   { key: 'all',          label: 'All',    icon: 'compass' },
@@ -87,6 +87,8 @@ function wasEdited(createdAt: string, updatedAt?: string): boolean {
 // ─── Photo preview grid (up to 4 cells) ──────────────────────────────────────
 
 function PhotoGrid({ photos, onPress }: { photos: string[]; onPress(index: number): void }) {
+  const { width: windowWidth } = useWindowDimensions();
+  const CARD_INNER_WIDTH = windowWidth - CARD_H_INSET;
   const count = photos.length;
   if (count === 0) return null;
 

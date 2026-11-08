@@ -1,6 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import ContributeImageScreen from '../app/contribute-image/[pinId]';
+import { saveAiPhotoConsent } from '../utils/aiPhotoConsent';
 
 // #383: "Suggest a better photo" from the pin page proposes a replacement for
 // a pin's current photo, with a reason, then returns to the pin page.
@@ -90,3 +91,7 @@ describe('Suggest a better photo (#383)', () => {
     expect(screen.queryByTestId('current-photo-card')).toBeNull();
   });
 });
+
+// These flows test what happens after the AI photo permission (#501) was given;
+// aiPhotoConsent.test.tsx covers the question itself.
+beforeEach(() => saveAiPhotoConsent(null));

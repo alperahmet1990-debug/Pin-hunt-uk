@@ -102,5 +102,28 @@
   {
     "name": "find-trades",
     "path": "/find-trades"
+  },
+  {
+    "name": "scan-ai-consent",
+    "path": "/scan",
+    "upload": "Choose Photo"
+  },
+  {
+    "name": "add-pin-ai-consent",
+    "path": "/add-pin",
+    "click": "Choose from Library"
+  },
+  {
+    "name": "pin-your-price",
+    "path": "/pin/dp-001",
+    "click": "Own this pin? Add your price"
+  },
+  {
+    "name": "settings-community-prices",
+    "path": "/settings/community-prices"
+  },
+  {
+    "name": "price-trade-pins",
+    "path": "/price-trade-pins"
   }
 ]

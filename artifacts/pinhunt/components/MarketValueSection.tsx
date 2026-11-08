@@ -45,7 +45,7 @@ interface ComparableListing {
   condition: string | null;
 }
 
-interface MarketValuePayload {
+export interface MarketValuePayload {
   estimates: MarketEstimate[];
   comparables: ComparableListing[];
   ebayConfigured: boolean;
@@ -74,20 +74,22 @@ interface MarketValueSectionProps {
   pinId: string;
   /** When true, renders without its own outer card chrome so it can nest inside ValueDisplay's single card. */
   embedded?: boolean;
+  /** Already-fetched payload (from usePinMarketValue), so the request isn't made twice. */
+  data?: MarketValuePayload | null;
+  /** False when the price itself is shown elsewhere (the two-price card's market tile). */
+  showHeadline?: boolean;
 }
 
 /**
- * "Typical UK price" from eBay asking prices (B-P1-19). Renders nothing
- * unless the GB estimate is confident and backed by GB listings — no US
- * figure and no manual refresh. Read-only: it never triggers an eBay search.
+ * The saved eBay market value for a pin (read-only: never triggers an eBay
+ * search). Null while loading or when there is none. Pass null as pinId to
+ * skip the request.
  */
-export function MarketValueSection({ pinId, embedded = false }: MarketValueSectionProps) {
-  const colors = useColors();
+export function usePinMarketValue(pinId: string | null): MarketValuePayload | null {
   const { session } = useAuth();
   const [data, setData] = useState<MarketValuePayload | null>(null);
-  const [expanded, setExpanded] = useState(false);
-
   useEffect(() => {
+    if (!pinId) return;
     let cancelled = false;
     setData(null);
     const headers: Record<string, string> = session?.access_token
@@ -101,9 +103,29 @@ export function MarketValueSection({ pinId, embedded = false }: MarketValueSecti
     return () => { cancelled = true; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pinId]);
+  return data;
+}
 
+/** The confident eBay UK estimate in a payload, or null (B-P1-19). */
+export function ukEstimateOf(data: MarketValuePayload | null) {
   const estimate = data ? confidentUkEstimate(data.estimates ?? [], data.comparables ?? []) : null;
   if (!estimate || estimate.estimatedLow == null || estimate.estimatedHigh == null) return null;
+  return estimate as MarketEstimate & { estimatedLow: number; estimatedHigh: number };
+}
+
+/**
+ * "Typical UK price" from eBay asking prices (B-P1-19). Renders nothing
+ * unless the GB estimate is confident and backed by GB listings — no US
+ * figure and no manual refresh. Read-only: it never triggers an eBay search.
+ */
+export function MarketValueSection({ pinId, embedded = false, data: given, showHeadline = true }: MarketValueSectionProps) {
+  const colors = useColors();
+  const fetched = usePinMarketValue(given === undefined ? pinId : null);
+  const data = given === undefined ? fetched : given;
+  const [expanded, setExpanded] = useState(false);
+
+  const estimate = ukEstimateOf(data);
+  if (!estimate) return null;
 
   const comparables = (data?.comparables ?? []).filter(c => c.marketplace === 'EBAY_GB').slice(0, 5);
   const range = estimate.estimatedLow === estimate.estimatedHigh
@@ -120,13 +142,15 @@ export function MarketValueSection({ pinId, embedded = false }: MarketValueSecti
   return (
     <View style={cardStyle}>
       {embedded && <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />}
-      <View style={styles.priceBlock}>
-        <Text style={[styles.priceLabel, { color: colors.homeMuted }]}>Typical UK price</Text>
-        <Text style={[styles.price, { color: colors.homeInk }]}>{range}</Text>
-        <Text style={[styles.subText, { color: colors.homeMuted }]}>
-          eBay asking prices · {estimate.comparableCount} UK {estimate.comparableCount === 1 ? 'listing' : 'listings'} · {formatUpdated(estimate.calculatedAt)}
-        </Text>
-      </View>
+      {showHeadline && (
+        <View style={styles.priceBlock}>
+          <Text style={[styles.priceLabel, { color: colors.homeMuted }]}>Typical UK price</Text>
+          <Text style={[styles.price, { color: colors.homeInk }]}>{range}</Text>
+          <Text style={[styles.subText, { color: colors.homeMuted }]}>
+            eBay asking prices · {estimate.comparableCount} UK {estimate.comparableCount === 1 ? 'listing' : 'listings'} · {formatUpdated(estimate.calculatedAt)}
+          </Text>
+        </View>
+      )}
       <Text style={[styles.explain, { color: colors.homeMuted }]}>
         Current asking prices on eBay UK, not sold prices. What a pin sells or trades for may differ.
       </Text>

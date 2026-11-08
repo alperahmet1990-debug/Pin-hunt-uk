@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useCommunityPricesAvailable } from '@/hooks/useCommunityPricesAvailable';
 import { Feather } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { useColors } from '@/hooks/useColors';
@@ -189,6 +190,7 @@ export default function CollectionScreen() {
   const pinActions = usePinActions();
   // Bulk edits on All / For Trade / ISO (UX-017).
   const selection = usePinSelection();
+  const communityPricesOn = useCommunityPricesAvailable();
   const params = useLocalSearchParams<{ tab?: string }>();
   const { collection } = useCollection();
   const { pins: catalogue, loading: catalogueLoading, ensurePins, ensureCollections, repository } = usePinCatalogue();
@@ -600,6 +602,16 @@ export default function CollectionScreen() {
             <FindTradesRow
               detail="See who wants your For Trade pins"
               onPress={() => router.push('/find-trades')}
+              colors={colors}
+            />
+          )}
+          {/* Price my trade pins (CV-05, #516), once community prices are live. */}
+          {forTradePins.length > 0 && !searchActive && communityPricesOn && (
+            <LinkRow
+              icon="tag"
+              label="Price my trade pins"
+              detail="Get ready for a trading day or pin event"
+              onPress={() => router.push('/price-trade-pins' as never)}
               colors={colors}
             />
           )}

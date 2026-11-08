@@ -1,6 +1,7 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import type { IUserPinRepository } from './user-repository';
 import { PinRepositoryError } from './repository';
+import { SUSPENSION_REASON_MAX } from './types';
 import { safeDisplayName } from './display-name';
 import * as communityPrices from './community-prices';
 import type { CommunityPrice, MyPinPrice, PriceCurrency } from './community-prices';
@@ -42,6 +43,7 @@ import type {
   ReportUserInput,
   UserBlock,
   UserReport,
+  UserSuspension,
   CatalogueImageCoverage,
   CatalogueImageSource,
   ContributedPinImage,
@@ -2316,6 +2318,65 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       .delete()
       .eq('id', reportId);
     if (error) throw new Error(error.message);
+  }
+
+  // ── Account suspensions (migration 050, #503) ────────────────────────────────
+
+  async getSuspensions(): Promise<UserSuspension[]> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('user_suspensions' as any)
+      .select('user_id, suspended_by, reason, created_at')
+      .order('created_at', { ascending: false });
+    if (error) throw new PinRepositoryError('UPSTREAM_ERROR', 'Could not load suspended accounts.', error);
+    return ((data ?? []) as unknown as Record<string, unknown>[]).map(row => ({
+      userId: row.user_id as string,
+      suspendedBy: (row.suspended_by as string | null) ?? undefined,
+      reason: (row.reason as string | null) ?? undefined,
+      createdAt: row.created_at as string,
+    }));
+  }
+
+  async suspendUser(adminId: string, userId: string, reason?: string): Promise<void> {
+    if (adminId === userId) {
+      throw new PinRepositoryError('INVALID_INPUT', 'You can\u2019t suspend your own account.');
+    }
+    const trimmed = reason?.trim() || null;
+    if (trimmed && trimmed.length > SUSPENSION_REASON_MAX) {
+      throw new PinRepositoryError('INVALID_INPUT', `Keep the reason to ${SUSPENSION_REASON_MAX} characters or fewer.`);
+    }
+    const { error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('user_suspensions' as any)
+      .insert({ user_id: userId, suspended_by: adminId, reason: trimmed } as never);
+    if (!error) return;
+    // Already suspended: the account is in the state asked for.
+    if (error.code === UNIQUE_VIOLATION) return;
+    if (error.code === '42501' || /row-level security/i.test(error.message)) {
+      throw new PinRepositoryError(
+        'CONFLICT',
+        'You can\u2019t suspend this account. Only the App Creator can suspend an admin, and the App Creator\u2019s account can\u2019t be suspended in the app.',
+        error,
+      );
+    }
+    throw new PinRepositoryError('UPSTREAM_ERROR', 'Could not suspend the account. Try again.', error);
+  }
+
+  async liftSuspension(userId: string): Promise<void> {
+    const { data, error } = await this.client
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .from('user_suspensions' as any)
+      .delete()
+      .eq('user_id', userId)
+      .select('user_id');
+    if (error) throw new PinRepositoryError('UPSTREAM_ERROR', 'Could not lift the suspension. Try again.', error);
+    // RLS hides a row it won't let you delete, so nothing comes back.
+    if (!Array.isArray(data) || data.length === 0) {
+      throw new PinRepositoryError(
+        'CONFLICT',
+        'This suspension couldn\u2019t be lifted. It may already be lifted, or it\u2019s your own (only the App Creator can lift that).',
+      );
+    }
   }
 
   // ── Conversations / DMs ──────────────────────────────────────────────────────

@@ -37,6 +37,7 @@ import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { ScanResult } from '@/components/scan/ScanResult';
 import { ScanCamera, type ScanCameraPhoto } from '@/components/scan/ScanCamera';
 import { useMyAccess } from '@/hooks/useMyAccess';
+import { useAiPhotoConsent } from '@/hooks/useAiPhotoConsent';
 import { ErrorState } from '@/components/ui/ErrorState';
 import { toUserError, type UserError } from '@/utils/userError';
 import { tabScreenBottomPad } from '@/utils/tabBarSpace';
@@ -115,6 +116,8 @@ export default function ScanScreen() {
   const { markViewed } = useCollection();
   const { pins, repository } = usePinCatalogue();
   const { session } = useAuth();
+  // Nothing is sent to the identification service until the collector agrees (#501).
+  const consent = useAiPhotoConsent();
   const access = useMyAccess();
 
   const [scanState, setScanState] = useState<ScanState>('idle');
@@ -282,6 +285,14 @@ export default function ScanScreen() {
   async function runIdentify(image: CapturedImage, run = ++identifyRun.current) {
     clearResult();
     setScanState('identifying');
+
+    // Ask first (#501). "Not now" keeps the photo on screen, with
+    // Identify Pin to ask again and Search as the way round.
+    if (!(await consent.ensure())) {
+      if (run === identifyRun.current) setScanState('captured');
+      return;
+    }
+    if (run !== identifyRun.current) return;
 
     try {
       const { matches: rawMatches, imageInsights } = await identifyPin(
@@ -679,6 +690,7 @@ export default function ScanScreen() {
           setAddedOnResult(resultKey);
         }}
       />
+      {consent.sheet}
 
     </View>
   );

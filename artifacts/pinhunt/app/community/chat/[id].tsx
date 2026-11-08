@@ -287,6 +287,17 @@ export default function ChatScreen() {
   const otherName = conv?.otherParticipant?.username ? `@${conv.otherParticipant.username}` : 'Conversation';
   const otherId = conv ? otherParticipantId(conv, userId) : undefined;
   const otherBlocked = isBlocked(otherId);
+  // Allow Trade Requests (migration 066): hide Propose Trade when the other
+  // collector has turned it off. A failed check leaves it to the server.
+  const [otherAcceptsTrades, setOtherAcceptsTrades] = useState(true);
+  useEffect(() => {
+    if (!repo || !otherId) return;
+    let cancelled = false;
+    repo.getContactPreferences(otherId)
+      .then(prefs => { if (!cancelled) setOtherAcceptsTrades(prefs.acceptsTradeRequests); })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [repo, otherId]);
   const handleUnblock = async () => {
     if (!otherId) return;
     setUnblocking(true);
@@ -382,7 +393,7 @@ export default function ChatScreen() {
                       </TouchableOpacity>
                     </View>
                   )}
-                  {!!otherId && canProposeInChat(conv?.tradeId, tradeStatus) && (
+                  {!!otherId && otherAcceptsTrades && canProposeInChat(conv?.tradeId, tradeStatus) && (
                     <TouchableOpacity accessibilityRole="button" onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
                       <Feather name="check-circle" size={16} color={colors.homeCoral} />
                       <Text style={[styles.agreeText, { color: colors.homeCoral }]}>Propose Trade</Text>

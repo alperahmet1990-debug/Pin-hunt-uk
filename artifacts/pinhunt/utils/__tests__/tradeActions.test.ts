@@ -2,6 +2,7 @@ import type { Trade } from '@workspace/pin-repository';
 import { createSupabaseUserRepository } from '@workspace/pin-repository';
 import {
   canProposeInChat,
+  contactRefusalLine,
   groupTrades,
   isOpenTrade,
   otherUserIdFor,
@@ -82,6 +83,13 @@ describe('messages shown to collectors', () => {
   it('passes on written refusals and nothing else', () => {
     expect(proposalRefusalLine(new Error('This chat already has a trade in progress.'))).toMatch(/in progress/);
     expect(proposalRefusalLine(new Error('duplicate key value violates constraint'))).toBeUndefined();
+    expect(proposalRefusalLine(new Error("This collector isn't taking trade requests right now."))).toMatch(/trade requests/);
+  });
+
+  it('passes on the new-messages refusal and nothing else (#505)', () => {
+    expect(contactRefusalLine(new Error("This collector isn't taking new messages."))).toMatch(/new messages/);
+    expect(contactRefusalLine(new Error('new row violates row-level security policy'))).toBeUndefined();
+    expect(contactRefusalLine('nope')).toBeUndefined();
   });
 
   it('finds the other collector', () => {
@@ -203,5 +211,23 @@ describe('repository trade calls', () => {
   it("passes on the server's message", async () => {
     const { repo } = setup({ data: null, error: { message: 'Only the other collector can accept this trade.' } });
     await expect(repo.acceptTrade('t1')).rejects.toThrow('Only the other collector');
+  });
+});
+
+describe('getContactPreferences (#505)', () => {
+  it('reads the preferences function and treats missing answers as no', async () => {
+    const rpc = jest.fn()
+      .mockResolvedValueOnce({ data: [{ accepts_messages: false, accepts_trade_requests: true }], error: null })
+      .mockResolvedValueOnce({ data: [], error: null });
+    const repo = createSupabaseUserRepository({ rpc } as never);
+    await expect(repo.getContactPreferences('b')).resolves.toEqual({ acceptsMessages: false, acceptsTradeRequests: true });
+    await expect(repo.getContactPreferences('x')).resolves.toEqual({ acceptsMessages: false, acceptsTradeRequests: false });
+    expect(rpc).toHaveBeenCalledWith('collector_contact_preferences', { p_user: 'b' });
+  });
+
+  it('throws when the function fails', async () => {
+    const rpc = jest.fn().mockResolvedValue({ data: null, error: { message: 'boom' } });
+    const repo = createSupabaseUserRepository({ rpc } as never);
+    await expect(repo.getContactPreferences('b')).rejects.toThrow('boom');
   });
 });

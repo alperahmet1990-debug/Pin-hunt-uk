@@ -181,6 +181,17 @@ export default function CollectorProfileScreen() {
   const isOwnProfile = !!profile && profile.id === currentUserId;
   // A collector I blocked: no trade matches, For Trade list or Message.
   const blocked = !!profile && isBlocked(profile.id);
+  // Allow Messages off: no new chats (migration 066). Existing chats carry on.
+  // A failed check leaves the button and lets the server decide.
+  const [acceptsMessages, setAcceptsMessages] = useState(true);
+  useEffect(() => {
+    if (!repo || !profile?.id) return;
+    let cancelled = false;
+    repo.getContactPreferences(profile.id)
+      .then(prefs => { if (!cancelled) setAcceptsMessages(prefs.acceptsMessages); })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [repo, profile?.id]);
   const visibleTrades = blocked ? [] : potentialTrades;
   const theyHaveIWant = visibleTrades.filter(p => p.direction === 'they_have_i_want');
   const iHaveTheyWant = visibleTrades.filter(p => p.direction === 'i_have_they_want');
@@ -366,7 +377,13 @@ export default function CollectorProfileScreen() {
               </TouchableOpacity>
 
               {/* Opens a normal chat; never silently creates a formal Trade Request. */}
-              <Button label="Start Conversation" icon="message-circle" onPress={startConversation} style={styles.convoBtn} />
+              {acceptsMessages ? (
+                <Button label="Start Conversation" icon="message-circle" onPress={startConversation} style={styles.convoBtn} />
+              ) : (
+                <Text testID="collector-no-messages" style={[styles.safetyText, { color: colors.homeMuted }]}>
+                  Not taking new messages
+                </Text>
+              )}
             </View>
           );
 
@@ -448,8 +465,13 @@ export default function CollectorProfileScreen() {
 
                   {/* Message button — hidden when Potential Trade Match below already
                       surfaces Start Conversation as the primary way to reach out. */}
-                  {currentUserId && profile.id !== currentUserId && !hasPotentialTrades && !blocked && (
+                  {currentUserId && profile.id !== currentUserId && !hasPotentialTrades && !blocked && acceptsMessages && (
                     <Button label="Message" icon="mail" size="compact" fullWidth={false} onPress={startConversation} style={styles.messageBtn} />
+                  )}
+                  {currentUserId && profile.id !== currentUserId && !hasPotentialTrades && !blocked && !acceptsMessages && (
+                    <Text testID="collector-no-messages" style={[styles.metaText, { color: colors.homeMuted }]}>
+                      Not taking new messages
+                    </Text>
                   )}
                 </View>
 

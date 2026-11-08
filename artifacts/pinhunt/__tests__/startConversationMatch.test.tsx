@@ -6,6 +6,7 @@ const mockStart = jest.fn(async () => ({ id: 'conv-1' }));
 const mockSend = jest.fn(async () => ({}));
 const mockReplace = jest.fn();
 let mockParams: Record<string, string> = {};
+let mockAcceptsMessages = true;
 
 jest.mock('@react-native-async-storage/async-storage', () =>
   require('@react-native-async-storage/async-storage/jest/async-storage-mock'),
@@ -23,6 +24,7 @@ jest.mock('@/components/Avatar', () => ({ Avatar: () => null }));
 const mockCommunity = {
   userId: 'me',
   repo: {
+    getContactPreferences: () => Promise.resolve({ acceptsMessages: mockAcceptsMessages, acceptsTradeRequests: true }),
     getPotentialTrades: async () => [
       { direction: 'they_have_i_want', pinId: 'u1', pinhuntId: 'PHUK-1', title: 'Dumbo Blue Sky' },
       { direction: 'they_have_i_want', pinId: 'u2', pinhuntId: 'PHUK-2', title: 'Stitch Aloha' },
@@ -40,6 +42,7 @@ jest.mock('@/context/CollectionContext', () => ({
 describe('Start conversation from a trade match', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    mockAcceptsMessages = true;
     mockParams = { recipientId: 'them', recipientName: 'pinpal', matchTheyHave: '2', matchIHave: '1' };
   });
 
@@ -93,5 +96,22 @@ describe('Start conversation from a trade match', () => {
     await act(async () => {});
     expect(screen.queryByText(/will be shared/)).toBeNull();
     expect(screen.getByPlaceholderText('Hi! I saw your post and…').props.value).toBe('');
+  });
+});
+
+describe('Start conversation when the collector isn\'t taking new messages (#505)', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    mockParams = { recipientId: 'them', recipientName: 'pinpal' };
+  });
+
+  it('says so and keeps Send disabled', async () => {
+    mockAcceptsMessages = false;
+    await render(<StartConversationScreen />);
+    await act(async () => {});
+    expect(screen.getByText("@pinpal isn't taking new messages.")).toBeTruthy();
+    await act(async () => { fireEvent.changeText(screen.getByPlaceholderText(/.+/), 'Hello'); });
+    await act(async () => { fireEvent.press(screen.getByText('Send Message')); });
+    expect(mockStart).not.toHaveBeenCalled();
   });
 });

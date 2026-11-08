@@ -7,6 +7,7 @@ import * as communityPrices from './community-prices';
 import type { CommunityPrice, MyPinPrice, PriceCurrency } from './community-prices';
 import type {
   AddUserPinInput,
+  ContactPreferences,
   MarkTradePostedInput,
   ProblemTrade,
   AdminReviewInput,
@@ -693,6 +694,19 @@ class SupabaseUserPinRepository implements IUserPinRepository {
 
   proposeTradeInChat(conversationId: string, notes?: string): Promise<Trade> {
     return this.callTradeRpc('trade_propose_in_chat', { p_conversation_id: conversationId, p_notes: notes ?? null });
+  }
+
+  async getContactPreferences(userId: string): Promise<ContactPreferences> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data, error } = await (this.client as any).rpc('collector_contact_preferences', { p_user: userId });
+    if (error) throw new Error(error.message);
+    const row = (Array.isArray(data) ? data[0] : data) as
+      | { accepts_messages?: boolean; accepts_trade_requests?: boolean }
+      | null;
+    return {
+      acceptsMessages: row?.accepts_messages === true,
+      acceptsTradeRequests: row?.accepts_trade_requests === true,
+    };
   }
 
   acceptTrade(tradeId: string): Promise<Trade> {

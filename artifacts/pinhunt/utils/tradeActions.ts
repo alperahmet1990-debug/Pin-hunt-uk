@@ -70,7 +70,13 @@ export function sendFailureLine(error: unknown): string {
 /** The server's own wording for a refused proposal, if it's one written for collectors. */
 export function proposalRefusalLine(error: unknown): string | undefined {
   const message = error instanceof Error ? error.message : '';
-  return /in progress|already a proposal|too many proposals|isn't available/i.test(message) ? message : undefined;
+  return /in progress|already a proposal|too many proposals|isn't available|isn't taking trade requests/i.test(message) ? message : undefined;
+}
+
+/** The server's wording when someone isn't taking new messages (migration 066). */
+export function contactRefusalLine(error: unknown): string | undefined {
+  const message = error instanceof Error ? error.message : '';
+  return /isn't taking new messages/i.test(message) ? message : undefined;
 }
 
 /** The other collector's tracking details, if they gave any. */

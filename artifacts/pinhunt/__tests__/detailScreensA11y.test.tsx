@@ -45,6 +45,7 @@ const mockRepo = {
   getConversationMessages: () => Promise.resolve(mockMessages),
   getCommunityPost: () => Promise.resolve(null),
   getTrade: () => Promise.resolve(mockTrade),
+  getContactPreferences: () => Promise.resolve({ acceptsMessages: true, acceptsTradeRequests: true }),
   getPotentialTrades: () => Promise.resolve([]),
   getTraderRating: () => Promise.resolve(null),
 };

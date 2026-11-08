@@ -6,7 +6,6 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
-  Dimensions,
   FlatList,
   Image,
   KeyboardAvoidingView,
@@ -17,6 +16,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  useWindowDimensions,
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -31,7 +31,6 @@ import { withoutBlockedAuthors } from '@/utils/blockedUsers';
 import type { CommunityPost, PostComment } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
 
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 // Matches app/(tabs)/community.tsx exactly — Sea Glass & Coral palette.
 const TYPE_LABEL: Record<string, string> = {
@@ -81,6 +80,8 @@ function PhotoLightbox({
   startIndex: number;
   onClose(): void;
 }) {
+  // Live window size so paging stays aligned after rotation / iPad Split View.
+  const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = useWindowDimensions();
   const listRef = useRef<FlatList>(null);
   const [current, setCurrent] = useState(startIndex);
 
@@ -127,10 +128,10 @@ function PhotoLightbox({
             setCurrent(page);
           }}
           renderItem={({ item }) => (
-            <View style={lb.page}>
+            <View style={[lb.page, { width: SCREEN_WIDTH, height: SCREEN_HEIGHT }]}>
               <Image
                 source={{ uri: item }}
-                style={lb.image}
+                style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.8 }}
                 resizeMode="contain"
               />
             </View>
@@ -144,6 +145,7 @@ function PhotoLightbox({
 // ─── Photo grid (full detail view) ───────────────────────────────────────────
 
 function DetailPhotoGrid({ photos, onPress }: { photos: string[]; onPress(i: number): void }) {
+  const { width: SCREEN_WIDTH } = useWindowDimensions();
   const count = photos.length;
   if (count === 0) return null;
 
@@ -722,14 +724,8 @@ const lb = StyleSheet.create({
     fontFamily: 'Inter_500Medium',
   },
   page: {
-    width: SCREEN_WIDTH,
-    height: SCREEN_HEIGHT,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  image: {
-    width: SCREEN_WIDTH,
-    height: SCREEN_HEIGHT * 0.8,
   },
 });
 

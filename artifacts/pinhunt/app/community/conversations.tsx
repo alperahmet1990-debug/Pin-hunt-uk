@@ -22,6 +22,7 @@ import { useBlockedUsers } from '@/context/BlockedUsersContext';
 import { withoutBlockedConversations } from '@/utils/blockedUsers';
 import { radius, spacing } from '@/constants/theme';
 import type { Conversation } from '@workspace/pin-repository';
+import { formatDate } from '@/utils/format';
 
 function timeAgo(iso: string): string {
   const diff = Date.now() - new Date(iso).getTime();
@@ -32,7 +33,7 @@ function timeAgo(iso: string): string {
   if (hr < 24) return `${hr}h`;
   const day = Math.floor(hr / 24);
   if (day < 7) return `${day}d`;
-  return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  return formatDate(iso, 'short');
 }
 
 function ConversationRow({ conv, onPress, colors }: {

@@ -33,6 +33,7 @@ import { otherSideTracking, otherUserIdFor, sendFailureLine, tradeActionsFor } f
 import { useBlockedUsers } from '@/context/BlockedUsersContext';
 import type { PotentialTradePin, Trade, TradeMessage, TradeStatus } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { formatDate } from '@/utils/format';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -279,7 +280,7 @@ function MessageBubble({ msg, isMe, colors }: {
           {msg.message}
         </Text>
         <Text style={[styles.bubbleTime, { color: isMe ? colors.homeSurface + '99' : colors.homeMuted }]}>
-          {new Date(msg.createdAt).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
+          {formatDate(msg.createdAt, 'time')}
         </Text>
       </View>
     </View>

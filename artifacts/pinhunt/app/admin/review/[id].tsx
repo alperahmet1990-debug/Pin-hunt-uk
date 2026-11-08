@@ -37,6 +37,7 @@ import type { DuplicateCandidate, PinSubmission, PinSubmissionStatus } from '@wo
 import { API_BASE } from '@/lib/apiBase';
 import { submissionDisplayName } from '@/utils/suggestPin';
 import { originalChanges } from '@/utils/submissionProvenance';
+import { formatDate } from '@/utils/format';
 
 // Theme-independent status colours for module-level lookup tables.
 const statusPalette = palette.light;
@@ -506,7 +507,7 @@ export default function AdminReviewScreen() {
               <View style={[styles.row, { borderBottomColor: colors.homeLine }]}>
                 <Text style={[styles.rowLabel, { color: colors.homeMuted }]}>Submitted</Text>
                 <Text style={[styles.rowValue, { color: colors.homeInk }]}>
-                  {new Date(submission.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+                  {formatDate(submission.createdAt, 'long')}
                 </Text>
               </View>
             </View>

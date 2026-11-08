@@ -4,6 +4,7 @@
  * channel and native runtime. Pure, so it is easy to test; About passes in
  * the live values from expo-constants and expo-updates.
  */
+import { formatDate } from './format';
 export interface BuildInfoInput {
   version: string;
   /** expo-updates is active (false in Expo Go, dev and web). */
@@ -19,8 +20,9 @@ export interface BuildInfoInput {
 const short = (id: string) => id.replace(/-/g, '').slice(0, 7);
 
 function when(d: Date): string {
-  const date = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Europe/London' });
-  const time = d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London' });
+  // Build times are given in UK time for everyone.
+  const date = formatDate(d, 'medium', { timeZone: 'Europe/London' });
+  const time = formatDate(d, 'time', { timeZone: 'Europe/London' });
   return `${date}, ${time}`;
 }
 

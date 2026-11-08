@@ -23,6 +23,7 @@ import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { radius, spacing } from '@/constants/theme';
 import type { PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
 import { submissionDisplayName } from '@/utils/suggestPin';
+import { formatDate } from '@/utils/format';
 
 const STATUS_LABEL: Record<PinSubmissionStatus, string> = {
   draft:         'Draft',
@@ -258,7 +259,7 @@ export default function SubmissionDetailScreen() {
                 <View style={[styles.row, { borderBottomColor: colors.homeLine }]}>
                   <Text style={[styles.rowLabel, { color: colors.homeMuted }]}>Submitted</Text>
                   <Text style={[styles.rowValue, { color: colors.homeInk }]}>
-                    {new Date(submission.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+                    {formatDate(submission.createdAt, 'long')}
                   </Text>
                 </View>
               </View>

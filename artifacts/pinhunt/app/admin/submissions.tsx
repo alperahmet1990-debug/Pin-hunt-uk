@@ -31,6 +31,7 @@ import { useMarketplace } from '@/hooks/useMarketplace';
 import { supabase } from '@/lib/supabase';
 import { submissionDisplayName } from '@/utils/suggestPin';
 import type { PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
+import { formatDate } from '@/utils/format';
 
 // Theme-independent status colours for module-level lookup tables.
 const statusPalette = palette.light;
@@ -299,7 +300,7 @@ export default function AdminSubmissionsScreen() {
                       </Text>
                     </View>
                     <Text style={[styles.cardDate, { color: colors.homeMuted }]}>
-                      {new Date(s.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                      {formatDate(s.createdAt, 'medium')}
                     </Text>
                   </View>
                   {s.reviewerNotes && (

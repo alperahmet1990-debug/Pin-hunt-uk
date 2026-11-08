@@ -30,6 +30,7 @@ import { useBlockedUsers } from '@/context/BlockedUsersContext';
 import { withoutBlockedAuthors } from '@/utils/blockedUsers';
 import type { CommunityPost, PostComment } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { formatDate } from '@/utils/format';
 
 
 // Matches app/(tabs)/community.tsx exactly — Sea Glass & Coral palette.
@@ -56,7 +57,7 @@ function timeAgo(iso: string): string {
   if (min < 60) return `${min}m ago`;
   const hr = Math.floor(min / 60);
   if (hr < 24) return `${hr}h ago`;
-  return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  return formatDate(iso, 'medium');
 }
 
 /** True when updatedAt is later than createdAt (small tolerance for timestamp serialization), i.e. edited after publishing. */

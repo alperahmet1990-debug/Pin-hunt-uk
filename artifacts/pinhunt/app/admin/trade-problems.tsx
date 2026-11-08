@@ -18,11 +18,12 @@ import { Stack } from 'expo-router';
 import type { ProblemTrade } from '@workspace/pin-repository';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
+import { formatDate } from '@/utils/format';
 
 type Outcome = 'completed' | 'cancelled';
 
 const name = (username?: string) => (username ? `@${username}` : 'Deleted user');
-const day = (iso?: string) => (iso ? new Date(iso).toLocaleDateString('en-GB') : 'No');
+const day = (iso?: string) => (iso ? formatDate(iso, 'numeric') : 'No');
 
 function sideLine(username: string | undefined, posted?: string, received?: string, carrier?: string, tracking?: string) {
   const parcel = [carrier, tracking].filter(Boolean).join(' · ');

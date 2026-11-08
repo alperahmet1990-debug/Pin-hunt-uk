@@ -14,6 +14,7 @@ import { radius as themeRadius, spacing } from '@/constants/theme';
 
 import { API_BASE } from '@/lib/apiBase';
 import { confidentUkEstimate, type Confidence } from '@/utils/ukValuation';
+import { formatMoney as formatMoneyShared } from '@/utils/format';
 
 // ─── Types (mirror api-server valuation service) ─────────────────────────────
 
@@ -52,12 +53,7 @@ export interface MarketValuePayload {
 }
 
 function formatMoney(value: number, currency: string): string {
-  return new Intl.NumberFormat('en-GB', {
-    style: 'currency',
-    currency,
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(value);
+  return formatMoneyShared(value, currency, { whole: true });
 }
 
 function formatUpdated(iso: string): string {

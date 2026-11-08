@@ -26,6 +26,7 @@ import type { CommunityPost, PostReportSummary, ReportedComment, UserReport, Use
 import { SUSPENSION_REASON_MAX } from '@workspace/pin-repository';
 import { useMyAccess } from '@/hooks/useMyAccess';
 import { countReportsByUser, userReportLabel } from '@/utils/blockedUsers';
+import { formatDate } from '@/utils/format';
 
 // Theme-independent status colours for module-level lookup tables.
 const statusPalette = palette.light;
@@ -66,7 +67,7 @@ function timeAgo(iso: string): string {
   if (min < 60) return `${min}m ago`;
   const hr = Math.floor(min / 60);
   if (hr < 24) return `${hr}h ago`;
-  return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  return formatDate(iso, 'medium');
 }
 
 export default function CommunityModerationScreen() {

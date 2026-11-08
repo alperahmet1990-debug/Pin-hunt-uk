@@ -3,18 +3,13 @@
  * Pounds and dollars are never converted into each other.
  */
 import type { PriceCurrency } from '@workspace/pin-repository';
+import { formatMoney } from './format';
 
 export const CURRENCY_SYMBOL: Record<PriceCurrency, string> = { GBP: '£', USD: '$' };
 
 /** "£14", "£13.50", "$20". Whole amounts drop the pence. */
 export function formatPrice(amount: number, currency: PriceCurrency | string): string {
-  const whole = Math.abs(amount - Math.round(amount)) < 0.005;
-  return new Intl.NumberFormat(currency === 'USD' ? 'en-US' : 'en-GB', {
-    style: 'currency',
-    currency,
-    minimumFractionDigits: whole ? 0 : 2,
-    maximumFractionDigits: whole ? 0 : 2,
-  }).format(amount);
+  return formatMoney(amount, currency);
 }
 
 /** "£12 – £15", or one price when low and high match. */

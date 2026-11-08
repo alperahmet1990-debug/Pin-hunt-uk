@@ -1,5 +1,6 @@
 import type { CommunityPost } from '@workspace/pin-repository';
 import type { PinHuntEvent } from '@/types/event';
+import { formatDayMonth } from './format';
 
 function todayIso(): string {
   return new Date().toISOString().slice(0, 10);
@@ -18,13 +19,9 @@ export function timeAgo(value: string): string {
  * ranges ("03–04", "OCT") since that covers today's seed data; a genuine
  * cross-month range falls back to a longer day string in the same slot. */
 export function formatEventDateParts(event: Pick<PinHuntEvent, 'eventDate' | 'endDate'>): { day: string; month: string } {
-  const start = new Date(`${event.eventDate}T00:00:00`);
-  const day = start.toLocaleDateString('en-GB', { day: '2-digit' });
-  const month = start.toLocaleDateString('en-GB', { month: 'short' }).toUpperCase();
+  const { day, month } = formatDayMonth(new Date(`${event.eventDate}T00:00:00`));
   if (!event.endDate) return { day, month };
-  const end = new Date(`${event.endDate}T00:00:00`);
-  const endDay = end.toLocaleDateString('en-GB', { day: '2-digit' });
-  const endMonth = end.toLocaleDateString('en-GB', { month: 'short' }).toUpperCase();
+  const { day: endDay, month: endMonth } = formatDayMonth(new Date(`${event.endDate}T00:00:00`));
   if (endMonth === month) return { day: `${day}–${endDay}`, month };
   return { day: `${day} ${month} – ${endDay}`, month: endMonth };
 }

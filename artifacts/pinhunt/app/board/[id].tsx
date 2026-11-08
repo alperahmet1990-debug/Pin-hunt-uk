@@ -5,12 +5,16 @@ import {
   type ViewStyle,
   Modal,
   Platform,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
+  useWindowDimensions,
   View,
 } from 'react-native';
+import { BoardDisplay } from '@/components/BoardDisplay';
+import { BOARD_ASPECT } from '@/utils/boardDisplay';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useLocalSearchParams, useRouter, Stack } from 'expo-router';
@@ -29,6 +33,8 @@ import { ConfirmDialog, IconButton, PinGrid, PinTile, ScreenContainer, Sheet } f
 import { ScreenHeader } from '@/components/ui/ScreenHeader';
 import { BOARD_SORT_OPTIONS, boardStats, sortBoardPins, type BoardPinSort } from '@/utils/boardSort';
 import { COLLECTION_VIEW_KEY, type CollectionView } from '@/utils/collectionBoards';
+
+const BOARD_DISPLAY_VIEW_KEY = '@pinhunt_board_display_view_v1';
 import { CollectionSummary } from '@/components/CollectionSummary';
 import { pinTileLabel } from '@/components/ui/PinTile';
 import { radius, spacing } from '@/constants/theme';
@@ -84,8 +90,30 @@ export default function BoardDetailScreen() {
   }, []);
   const changeView = (next: CollectionView) => {
     setView(next);
+    setDisplay(false);
     AsyncStorage.setItem(COLLECTION_VIEW_KEY, next).catch(() => {});
+    AsyncStorage.setItem(BOARD_DISPLAY_VIEW_KEY, '0').catch(() => {});
   };
+  // Display: the board as the real thing (corkboard, lanyard, shadow box).
+  // Remembered on this device for every board.
+  const [display, setDisplay] = useState(false);
+  useEffect(() => {
+    AsyncStorage.getItem(BOARD_DISPLAY_VIEW_KEY)
+      .then(saved => { if (saved === '1') setDisplay(true); })
+      .catch(() => {});
+  }, []);
+  const showDisplay = () => {
+    setDisplay(true);
+    AsyncStorage.setItem(BOARD_DISPLAY_VIEW_KEY, '1').catch(() => {});
+  };
+  const { width: windowWidth, height: windowHeight } = useWindowDimensions();
+  // As big as fits: the whole board in view below the header (4:3), never
+  // wider than the screen or a board you'd hang on a wall.
+  const displayWidth = Math.round(Math.min(
+    windowWidth - spacing.lg * 2,
+    1100,
+    Math.max(320, (windowHeight - 260) * BOARD_ASPECT),
+  ));
 
   const board = getBoardById(id ?? '');
   const boardPins = board ? getBoardPins(board) : [];
@@ -266,18 +294,30 @@ export default function BoardDetailScreen() {
         {!editMode && !selection.active && boardPins.length > 0 && (
           <View style={styles.toolRow}>
             <View style={[styles.viewToggle, { backgroundColor: colors.homeAqua }]} accessibilityRole="radiogroup">
-              {(['grid', 'list'] as const).map(v => (
-                <TouchableOpacity
-                  key={v}
-                  onPress={() => changeView(v)}
-                  accessibilityRole="radio"
-                  accessibilityLabel={v === 'grid' ? 'Grid view' : 'List view'}
-                  accessibilityState={{ selected: view === v }}
-                  style={[styles.viewToggleBtn, view === v && { backgroundColor: colors.homeSurface }]}
-                >
-                  <Feather name={v === 'grid' ? 'grid' : 'list'} size={17} color={view === v ? colors.homeCoral : colors.homeMuted} />
-                </TouchableOpacity>
-              ))}
+              {(['grid', 'list'] as const).map(v => {
+                const on = !display && view === v;
+                return (
+                  <TouchableOpacity
+                    key={v}
+                    onPress={() => changeView(v)}
+                    accessibilityRole="radio"
+                    accessibilityLabel={v === 'grid' ? 'Grid view' : 'List view'}
+                    accessibilityState={{ selected: on }}
+                    style={[styles.viewToggleBtn, on && { backgroundColor: colors.homeSurface }]}
+                  >
+                    <Feather name={v === 'grid' ? 'grid' : 'list'} size={17} color={on ? colors.homeCoral : colors.homeMuted} />
+                  </TouchableOpacity>
+                );
+              })}
+              <TouchableOpacity
+                onPress={showDisplay}
+                accessibilityRole="radio"
+                accessibilityLabel="Display view"
+                accessibilityState={{ selected: display }}
+                style={[styles.viewToggleBtn, display && { backgroundColor: colors.homeSurface }]}
+              >
+                <Feather name="image" size={17} color={display ? colors.homeCoral : colors.homeMuted} />
+              </TouchableOpacity>
             </View>
             <View style={styles.toolRight}>
               {board.isCustom && (
@@ -393,6 +433,22 @@ export default function BoardDetailScreen() {
             onAction={board.isCustom ? () => setAddModalVisible(true) : undefined}
           />
         </View>
+      ) : display && !editMode && !selection.active && !searchActive ? (
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: botPad + spacing.xl }}
+        >
+          {listHeader}
+          <View style={{ alignItems: 'center' }}>
+            <BoardDisplay
+              boardId={board.id}
+              pins={boardPins}
+              width={displayWidth}
+              editable={board.isCustom}
+              onOpenPin={pin => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })}
+            />
+          </View>
+        </ScrollView>
       ) : view === 'list' ? (
         <FlatList
           data={sortedPins}

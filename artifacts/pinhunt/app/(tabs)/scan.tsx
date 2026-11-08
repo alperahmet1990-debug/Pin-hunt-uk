@@ -495,7 +495,7 @@ export default function ScanScreen() {
           <Animated.View
             style={[
               styles.viewfinder,
-              { height: viewfinderHeight, backgroundColor: '#0a0a18', borderRadius: 18, opacity: shutterAnim },
+              { height: noMatchFound ? Math.min(viewfinderHeight, 160) : viewfinderHeight, backgroundColor: '#0a0a18', borderRadius: 18, opacity: shutterAnim },
             ]}
           >
             {scanState === 'idle' && !LIVE_CAMERA && (
@@ -832,7 +832,7 @@ const styles = StyleSheet.create({
   recoveryDetail: { fontSize: 12.5, fontFamily: 'Inter_400Regular', marginTop: 1 },
   noMatchCard: { marginTop: 0 },
   noMatchPrimary: { marginTop: 4, marginBottom: 8 },
-  recoveryAdd: { marginTop: 4, borderTopWidth: 0 },
+  recoveryAdd: { marginTop: 12 },
   recoveryAddHint: { fontSize: 12.5, fontFamily: 'Inter_400Regular', textAlign: 'center', marginTop: 6, marginBottom: 8 },
   tips: { paddingLeft: 30, paddingBottom: 8, gap: 4 },
   tipRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },

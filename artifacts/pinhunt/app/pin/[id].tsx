@@ -25,6 +25,9 @@ import { useMarketplace } from '@/hooks/useMarketplace';
 import { getPinImageSource } from '@/utils/pinImage';
 import { collectionStatusLine } from '@/utils/collectionStatusLine';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
+import { Sheet } from '@/components/ui/Sheet';
+import { YourPriceEditor } from '@/components/YourPriceEditor';
+import { YourPriceRow, useHasMyPrice } from '@/components/YourPriceRow';
 import { ScreenContainer, Chip, MetaRow, ValueDisplay, PrimaryActionBar, SetProgressBar, CompactPinTile } from '@/components/ui';
 import { ScreenHeader, useHeaderTopInset } from '@/components/ui/ScreenHeader';
 import type { PrimaryActionBarAction } from '@/components/ui';
@@ -75,7 +78,10 @@ export default function PinDetailScreen() {
   const pinSet = pin?.collection;
   useEffect(() => { if (pinSet) ensureCollections([pinSet]).catch(() => {}); }, [pinSet, ensureCollections]);
   const entry = pin ? getEntry(pin.id) : undefined;
+  const hasMyPrice = useHasMyPrice(pin?.id);
   const [manageSheetPin, setManageSheetPin] = useState<CataloguePin | null>(null);
+  // "Your price" (CV-03, #514), opened from the value card.
+  const [priceSheetOpen, setPriceSheetOpen] = useState(false);
   const [marketplaceListings, setMarketplaceListings] = useState<ExternalSaleListing[]>([]);
   const [traderCount, setTraderCount] = useState(0);
   const { blockedIds } = useBlockedUsers();
@@ -133,6 +139,8 @@ export default function PinDetailScreen() {
   }
 
   const currentStatus = entry?.status ?? 'none';
+  // Pins in the collection or For Trade can be priced (#511).
+  const canPrice = currentStatus === 'owned' || currentStatus === 'for_trade';
   const quantity = entry?.quantity ?? 1;
   // Owned and For Trade are mutually exclusive in the current data model (one
   // status + one quantity per pin); For Trade copies still count as owned.
@@ -366,7 +374,9 @@ export default function PinDetailScreen() {
           <ValueDisplay
             pinId={pin.id}
             catalogueEstimateGBP={pin.estimatedValueGBP ?? null}
-            canPrice={currentStatus === 'owned' || currentStatus === 'for_trade'}
+            canPrice={canPrice}
+            onAddPrice={hasMyPrice ? undefined : () => setPriceSheetOpen(true)}
+            yourPrice={canPrice ? <YourPriceRow pinId={pin.id} onEdit={() => setPriceSheetOpen(true)} /> : null}
           />
 
           {/* ── 6. Trading content — can I find another collector for this pin? ── */}
@@ -510,6 +520,11 @@ export default function PinDetailScreen() {
       <PrimaryActionBar actions={primaryActions} />
 
       <QuickAddSheet pin={manageSheetPin} onClose={() => setManageSheetPin(null)} />
+      {canPrice && (
+        <Sheet visible={priceSheetOpen} onClose={() => setPriceSheetOpen(false)} title="Your price">
+          <YourPriceEditor pinId={pin.id} showHeading={false} />
+        </Sheet>
+      )}
     </ScreenContainer>
   );
 }

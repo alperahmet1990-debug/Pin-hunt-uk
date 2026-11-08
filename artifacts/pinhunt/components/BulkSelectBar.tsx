@@ -44,14 +44,18 @@ interface BulkSelectBarProps {
   bottomOffset?: number;
 }
 
-export function BulkSelectBar({ ids, onDone, boardId, bottomOffset }: BulkSelectBarProps) {
+/**
+ * The bulk actions themselves, shared by the phone's bottom bar and the
+ * iPad's side panel (CollectionDeskPanel) so both behave identically: one
+ * setStatuses call, Undo, and the same confirmations. Render `dialogs`
+ * once wherever the actions are used.
+ */
+export function useBulkActions({ ids, onDone, boardId }: { ids: string[]; onDone: () => void; boardId?: string }) {
   const colors = useColors();
-  const insets = useSafeAreaInsets();
   const { getEntry, setStatuses, restoreEntries } = useCollection();
   const { customBoards, addPinsToBoard, removePinsFromBoard } = useBoards();
   const toast = useToast();
   const [confirm, setConfirm] = useState<null | 'iso' | 'remove'>(null);
-  const [boardPicker, setBoardPicker] = useState(false);
 
   const n = ids.length;
   const disabled = n === 0;
@@ -96,22 +100,63 @@ export function BulkSelectBar({ ids, onDone, boardId, bottomOffset }: BulkSelect
   };
 
   const addToBoard = (target: { id: string; name: string }) => {
+    if (disabled) return;
     // Boards hold pins you have; ISO pins in the selection are left out.
     addPinsToBoard(target.id, ids);
     const skipped = n - keptCount;
     toast.show({
       message: `Added ${pinsWord(keptCount)} to ${target.name}${skipped > 0 ? ` · ${skipped} ISO skipped` : ''}`,
     });
-    setBoardPicker(false);
     onDone();
   };
 
+  const requestRemove = () => { if (!disabled) setConfirm('remove'); };
+
+  const dialogs = (
+    <>
+      <ConfirmDialog
+        visible={confirm === 'iso'}
+        title={`Move ${pinsWord(n)} to your ISO?`}
+        message={`You'll no longer own ${keptCount === 1 ? 'one of them' : `${keptCount} of them`}, and their copies and boards go with it. You can undo this.`}
+        confirmLabel="Move to ISO"
+        onConfirm={() => applyStatus('wanted', bulkStatusMessage('wanted', n))}
+        onCancel={() => setConfirm(null)}
+      />
+      <ConfirmDialog
+        visible={confirm === 'remove'}
+        title={boardId ? `Remove ${pinsWord(n)} from this board?` : `Remove ${pinsWord(n)}?`}
+        message={boardId
+          ? 'They stay in your collection. You can undo this.'
+          : 'They come off your collection and ISO. You can undo this.'}
+        confirmLabel="Remove"
+        destructive
+        onConfirm={remove}
+        onCancel={() => setConfirm(null)}
+      />
+    </>
+  );
+
+  return { n, disabled, keptCount, customBoards, chooseStatus, addToBoard, requestRemove, dialogs, destructiveTone: colors.destructive };
+}
+
+export function BulkSelectBar({ ids, onDone, boardId, bottomOffset }: BulkSelectBarProps) {
+  const colors = useColors();
+  const insets = useSafeAreaInsets();
+  const bulk = useBulkActions({ ids, onDone, boardId });
+  const { n, disabled, keptCount, customBoards } = bulk;
+  const [boardPicker, setBoardPicker] = useState(false);
+
+  const addToBoard = (target: { id: string; name: string }) => {
+    setBoardPicker(false);
+    bulk.addToBoard(target);
+  };
+
   const actions: { key: string; label: string; icon: keyof typeof Feather.glyphMap; onPress: () => void; tone?: string; hidden?: boolean }[] = [
-    { key: 'owned', label: 'Owned', icon: 'check-circle', onPress: () => chooseStatus('owned') },
-    { key: 'for_trade', label: 'For Trade', icon: 'repeat', onPress: () => chooseStatus('for_trade') },
-    { key: 'wanted', label: 'ISO', icon: 'bookmark', onPress: () => chooseStatus('wanted') },
+    { key: 'owned', label: 'Owned', icon: 'check-circle', onPress: () => bulk.chooseStatus('owned') },
+    { key: 'for_trade', label: 'For Trade', icon: 'repeat', onPress: () => bulk.chooseStatus('for_trade') },
+    { key: 'wanted', label: 'ISO', icon: 'bookmark', onPress: () => bulk.chooseStatus('wanted') },
     { key: 'board', label: 'Board', icon: 'folder-plus', onPress: () => !disabled && setBoardPicker(true), hidden: !!boardId },
-    { key: 'remove', label: 'Remove', icon: 'trash-2', onPress: () => !disabled && setConfirm('remove'), tone: colors.destructive },
+    { key: 'remove', label: 'Remove', icon: 'trash-2', onPress: bulk.requestRemove, tone: colors.destructive },
   ];
 
   return (
@@ -140,25 +185,7 @@ export function BulkSelectBar({ ids, onDone, boardId, bottomOffset }: BulkSelect
         ))}
       </View>
 
-      <ConfirmDialog
-        visible={confirm === 'iso'}
-        title={`Move ${pinsWord(n)} to your ISO?`}
-        message={`You'll no longer own ${keptCount === 1 ? 'one of them' : `${keptCount} of them`}, and their copies and boards go with it. You can undo this.`}
-        confirmLabel="Move to ISO"
-        onConfirm={() => applyStatus('wanted', bulkStatusMessage('wanted', n))}
-        onCancel={() => setConfirm(null)}
-      />
-      <ConfirmDialog
-        visible={confirm === 'remove'}
-        title={boardId ? `Remove ${pinsWord(n)} from this board?` : `Remove ${pinsWord(n)}?`}
-        message={boardId
-          ? 'They stay in your collection. You can undo this.'
-          : 'They come off your collection and ISO. You can undo this.'}
-        confirmLabel="Remove"
-        destructive
-        onConfirm={remove}
-        onCancel={() => setConfirm(null)}
-      />
+      {bulk.dialogs}
       <Sheet visible={boardPicker} onClose={() => setBoardPicker(false)} title={`Add ${pinsWord(keptCount)} to a board`}>
         {customBoards.length === 0 ? (
           <Text style={[styles.hint, { color: colors.homeMuted }]}>No boards yet. Create one from the Boards row first.</Text>

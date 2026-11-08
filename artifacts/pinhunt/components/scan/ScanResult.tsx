@@ -1,7 +1,7 @@
 /**
  * ScanResult — the single-answer scan result (UX-005, #112): the collector's
- * photo beside the best match ("Your photo" / "Our match", with a line
- * saying so, #298), the pin's name and set, then "That's it" and "Not it".
+ * photo beside the best match (labelled "Your photo" / "Our match", #298),
+ * the pin's name and set, then "That's it" and "Not it".
  * "Not it" rejects that pin: it leaves the comparison and "That's it" goes
  * until the collector taps one of the other candidates in the strip (#299),
  * or "None of these". Confidence %, AI reasoning and
@@ -55,16 +55,19 @@ export function ScanResult({ photoUri, candidates, insights, showDetails, onConf
   const others = alternatives(state, candidates.length);
   const picking = awaitingPick(state);
 
+  // "Not it" with nothing else to compare: go straight to the options
+  // rather than making the collector tap "None of these" too.
+  const handleNotIt = () => {
+    const next = notIt(state);
+    setState(next);
+    if (alternatives(next, candidates.length).length === 0) onNoneOfThese();
+  };
+
   return (
     <View style={styles.root}>
       <Text accessibilityRole="header" style={[styles.heading, { color: colors.homeInk }]}>
         {resultHeading(candidates, state)}
       </Text>
-      {!picking && (
-        <Text style={[styles.explain, { color: colors.homeMuted }]}>
-          Your photo on the left, our closest match from the catalogue on the right.
-        </Text>
-      )}
 
       <View style={styles.compare}>
         <View style={{ width: panel }}>
@@ -81,7 +84,7 @@ export function ScanResult({ photoUri, candidates, insights, showDetails, onConf
             <View style={[styles.panelImage, styles.emptyPanel, { width: panel, height: panel, borderColor: colors.homeMuted + '80' }]}>
               <Feather name={others.length > 0 ? 'arrow-down' : 'search'} size={22} color={colors.homeMuted} />
               <Text style={[styles.emptyText, { color: colors.homeMuted }]}>
-                {others.length > 0 ? 'Tap a pin below to compare' : 'Try None of these'}
+                {others.length > 0 ? 'Tap a pin below to compare' : recoveryOpen ? 'See the options below' : 'Try None of these'}
               </Text>
             </View>
             <Text style={[styles.panelLabel, { color: colors.homeMuted }]}>Our match</Text>
@@ -114,7 +117,7 @@ export function ScanResult({ photoUri, candidates, insights, showDetails, onConf
           </View>
 
           <View style={styles.actions}>
-            <Button label="Not it" icon="x" variant="secondary" onPress={() => setState(s => notIt(s))} style={styles.actionHalf} />
+            <Button label="Not it" icon="x" variant="secondary" onPress={handleNotIt} style={styles.actionHalf} />
             <Button label="That's it" icon="check" onPress={() => onConfirm(best.pin)} style={styles.actionHalf} />
           </View>
         </>
@@ -219,7 +222,6 @@ const styles = StyleSheet.create({
   heading: { fontSize: 18, fontFamily: 'Inter_700Bold' },
   compare: { flexDirection: 'row', gap: GAP },
   panelImage: { borderRadius: radius.lg },
-  explain: { fontSize: 13, lineHeight: 18, fontFamily: 'Inter_400Regular', marginTop: -spacing.sm },
   emptyPanel: { borderWidth: 1.5, borderStyle: 'dashed', alignItems: 'center', justifyContent: 'center', gap: 6, padding: spacing.sm },
   emptyText: { fontSize: 12, lineHeight: 16, fontFamily: 'Inter_600SemiBold', textAlign: 'center' },
   panelLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold', textAlign: 'center', marginTop: 6 },

@@ -127,6 +127,13 @@
     "path": "/price-trade-pins"
   },
   {
+    "name": "board-display",
+    "path": "/board/demo-board-1",
+    "storage": {
+      "@pinhunt_board_display_view_v1": "1"
+    }
+  },
+  {
     "name": "events",
     "path": "/events"
   }

@@ -1,6 +1,7 @@
 /**
  * PinGrid — the one pin grid (UX-043, #126). Columns follow the screen
- * width (3 up to tablet, 4 from 600 pt), with an 8 pt gutter, and the
+ * width (3 on phones, 4 from 600 pt, 5 from 800 pt, 6 from 1100 pt so tiles
+ * stay a comfortable size on iPad), with an 8 pt gutter, and the
  * FlatList is tuned for long lists. Screens render each cell with
  * `renderTile(item, tileSize)`, usually a PinTile.
  */
@@ -10,8 +11,14 @@ import { spacing } from '@/constants/theme';
 
 export const PIN_GRID_GUTTER = 8;
 
-/** 3 columns on phones (≤430 pt and up to tablet width), 4 from 600 pt. */
+/**
+ * 3 columns on phones (≤430 pt and up to tablet width), 4 from 600 pt,
+ * 5 from 800 pt (iPad portrait, or beside a side panel) and 6 from 1100 pt
+ * (iPad landscape, wide windows).
+ */
 export function pinGridColumns(width: number): number {
+  if (width >= 1100) return 6;
+  if (width >= 800) return 5;
   return width >= 600 ? 4 : 3;
 }
 

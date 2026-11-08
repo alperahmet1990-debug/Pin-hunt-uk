@@ -37,6 +37,9 @@ const CORK = { frame: '#6B4F3A', base: '#B48A62', dark: 'rgba(90,60,35,0.38)', l
 const SHADOWBOX = { frame: '#3B2A20', bevel: '#2A1D16' };
 
 const STYLE_OPTIONS = BOARD_STYLES.map(s => ({ ...s, tone: 'coral' as const }));
+/** Small phones (320 pt): short labels so none is cut off. */
+const SHORT_LABELS: Record<BoardStyle, string> = { cork: 'Cork', lanyard: 'Lanyard', shadowbox: 'Box', plain: 'Plain' };
+const SHORT_STYLE_OPTIONS = STYLE_OPTIONS.map(o => ({ ...o, label: SHORT_LABELS[o.value] }));
 
 interface BoardDisplayProps {
   boardId: string;
@@ -66,7 +69,7 @@ export function BoardDisplay({ boardId, pins, width, editable, onOpenPin }: Boar
   return (
     <View style={styles.wrap}>
       <View style={{ width: Math.min(width, 520) }}>
-        <SegmentedControl<BoardStyle> options={STYLE_OPTIONS} value={style} onChange={setStyle} />
+        <SegmentedControl<BoardStyle> options={width < 340 ? SHORT_STYLE_OPTIONS : STYLE_OPTIONS} value={style} onChange={setStyle} />
       </View>
 
       <View

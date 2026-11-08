@@ -326,15 +326,18 @@ export default function BoardDetailScreen() {
                   <Text style={[styles.sortBtnText, { color: colors.homeInk }]}>Select</Text>
                 </TouchableOpacity>
               )}
-              <TouchableOpacity
-                onPress={() => setSortVisible(true)}
-                accessibilityRole="button"
-                accessibilityLabel={`Sort: ${sortLabel}`}
-                style={styles.sortBtn}
-              >
-                <Text style={[styles.sortBtnText, { color: colors.homeCoral }]} numberOfLines={1}>{sortLabel}</Text>
-                <Feather name="chevron-down" size={16} color={colors.homeCoral} />
-              </TouchableOpacity>
+              {/* Display keeps the board's own order, so sorting doesn't apply there. */}
+              {!display && (
+                <TouchableOpacity
+                  onPress={() => setSortVisible(true)}
+                  accessibilityRole="button"
+                  accessibilityLabel={`Sort: ${sortLabel}`}
+                  style={styles.sortBtn}
+                >
+                  <Text style={[styles.sortBtnText, { color: colors.homeCoral }]} numberOfLines={1}>{sortLabel}</Text>
+                  <Feather name="chevron-down" size={16} color={colors.homeCoral} />
+                </TouchableOpacity>
+              )}
             </View>
           </View>
         )}

@@ -17,7 +17,8 @@
 //                       photo picker and give it a fixture image, "click": "<label>" to tap
 //                       a tab/segment/button, "type": "<text>" to type into the first text
 //                       field, and "scroll": "end" to capture the bottom of a scrolling screen
-//                       (applied in that order).
+//                       (applied in that order). "storage": { key: value } adds to the demo
+//                       localStorage for that route only (e.g. a remembered view).
 //   --route name=/path  extra ad-hoc route (repeatable)
 //   --viewports 390x844,320x568   --schemes light,dark
 //   --out <dir>         default <repo>/.screenshots
@@ -170,7 +171,7 @@ async function capture(webDir, outDir, routes, viewports, schemes) {
           page.on('request', r => (r.url().startsWith(origin) || r.url().startsWith('data:') ? r.continue() : r.abort()));
           await page.evaluateOnNewDocument(storage => {
             for (const [k, v] of Object.entries(storage)) localStorage.setItem(k, v);
-          }, DEMO_STORAGE);
+          }, { ...DEMO_STORAGE, ...(route.storage ?? {}) });
           await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: scheme }]);
           await page.setViewport({ width, height, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
           await page.goto(origin + route.path, { waitUntil: 'networkidle0', timeout: 30_000 }).catch(() => {});

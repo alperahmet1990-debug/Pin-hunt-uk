@@ -69,4 +69,5 @@ export const DEMO_PROFILE: Profile = {
   openToLocalTrades: false,
   openToPostalTrades: true,
   happyToTravel: false,
+  homeMarket: 'UK',
 };

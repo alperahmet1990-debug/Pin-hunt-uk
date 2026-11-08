@@ -44,6 +44,44 @@
     "scroll": "end"
   },
   {
+    "name": "scan-result",
+    "path": "/scan",
+    "upload": "Choose Photo",
+    "identify": {
+      "matches": [
+        {
+          "pinId": "dp-003",
+          "confidence": 81,
+          "reasoning": "Castle and fireworks"
+        }
+      ]
+    }
+  },
+  {
+    "name": "scan-result-options",
+    "path": "/scan",
+    "upload": "Choose Photo",
+    "identify": {
+      "matches": [
+        {
+          "pinId": "dp-003",
+          "confidence": 81,
+          "reasoning": "Castle and fireworks"
+        }
+      ]
+    },
+    "click": "Not it",
+    "scroll": "end"
+  },
+  {
+    "name": "scan-no-match",
+    "path": "/scan",
+    "upload": "Choose Photo",
+    "identify": {
+      "matches": []
+    }
+  },
+  {
     "name": "profile",
     "path": "/profile"
   },

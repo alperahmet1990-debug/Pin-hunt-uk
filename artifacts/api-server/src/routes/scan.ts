@@ -13,6 +13,12 @@ import {
 } from "../services/google-vision";
 import { findCandidates } from "../services/scanCandidates";
 import { createStageTimer } from "../services/scanTiming";
+import {
+  createScanBudget,
+  DESCRIBE_MAX_MS,
+  RANK_RESERVE_MS,
+  VERIFY_MIN_MS,
+} from "../services/scanBudget";
 import { cachedResult, imageHash, recordUsage, withinDailyCap } from "../services/usage-caps";
 
 const router: IRouter = Router();
@@ -195,10 +201,15 @@ router.post("/scan/identify", requireUser, async (req, res) => {
 
   // Per-stage timings (#349), logged once per scan however it ends.
   const timer = createStageTimer();
+  // One time budget for the whole scan, so it answers before the app stops
+  // waiting (services/scanBudget.ts). Steps it had to skip are logged.
+  const budget = createScanBudget();
+  const skipped: string[] = [];
   const logTimings = (outcome: string) => console.log("[scan] timings:", JSON.stringify({
     outcome,
     auth: (req as Request & { authMs?: number }).authMs ?? null,
     ...timer.summary(),
+    ...(skipped.length ? { skipped } : {}),
   }));
 
   try {
@@ -211,6 +222,8 @@ router.post("/scan/identify", requireUser, async (req, res) => {
     const visionPromise: Promise<VisionSignals | null> = getVisionSignals(imageBase64).catch(
       () => null,
     );
+    // A slow or failed description isn't fatal: ranking still sees the photo
+    // and whatever Vision found. It just mustn't eat ranking's time.
     const describeResp = await openai.chat.completions.create({
       model: SCAN_MODEL,
       max_completion_tokens: 2048,
@@ -234,13 +247,17 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
           ],
         },
       ],
+    }, { timeout: budget.timeoutFor(DESCRIBE_MAX_MS, RANK_RESERVE_MS), maxRetries: 0 }).catch((err: unknown) => {
+      if (!isUpstreamTimeout(err)) throw err;
+      skipped.push("describe");
+      return null;
     });
 
     timer.mark("describe");
 
     let description = { characters: [] as string[], keywords: [] as string[] };
     try {
-      const raw = describeResp.choices[0]?.message?.content ?? "{}";
+      const raw = describeResp?.choices[0]?.message?.content ?? "{}";
       const s = raw.indexOf("{");
       const e = raw.lastIndexOf("}");
       const parsed = s !== -1 && e > s ? JSON.parse(raw.slice(s, e + 1)) : {};
@@ -263,7 +280,7 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
       }));
     }
     if (description.characters.length === 0 && description.keywords.length === 0) {
-      console.log("[scan] stage-1 raw content:", JSON.stringify(describeResp.choices[0]?.message?.content ?? null), "finish:", describeResp.choices[0]?.finish_reason);
+      console.log("[scan] stage-1 raw content:", JSON.stringify(describeResp?.choices[0]?.message?.content ?? null), "finish:", describeResp?.choices[0]?.finish_reason);
     }
 
     // ── Stage 2: search the full catalogue for candidates, then rank ──
@@ -296,6 +313,10 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
       ? `\n\nADDITIONAL SIGNALS from image analysis (use as strong hints, especially any text that matches a pin title or edition):\n${visionHintLines.join("\n")}`
       : "";
 
+    // Ranking is the one step a scan can't do without. With no time left it
+    // fails as a timeout (504), the same as before.
+    const rankTimeout = budget.timeoutFor(Number.MAX_SAFE_INTEGER);
+    if (rankTimeout <= 0) throw Object.assign(new Error("Scan budget used up"), { name: "APIConnectionTimeoutError" });
     const response = await openai.chat.completions.create({
       model: SCAN_MODEL,
       max_completion_tokens: 1024,
@@ -334,7 +355,7 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
           ],
         },
       ],
-    });
+    }, { timeout: rankTimeout, maxRetries: 0 });
 
     timer.mark("rank");
     const raw = response.choices[0]?.message?.content ?? "[]";
@@ -407,7 +428,11 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
       .filter((c) => !!c.pin?.imageUrl)
       .slice(0, 6);
 
-    if (withImages.length > 0) {
+    // Comparing against catalogue photos sharpens the ranking but is
+    // optional: skipped when there isn't enough time left for it.
+    const verifyTimeout = budget.timeoutFor(Number.MAX_SAFE_INTEGER);
+    if (withImages.length > 0 && verifyTimeout < VERIFY_MIN_MS) skipped.push("verify");
+    if (withImages.length > 0 && verifyTimeout >= VERIFY_MIN_MS) {
       try {
         const refContent: Array<
           | { type: "text"; text: string }
@@ -451,7 +476,7 @@ Give a confidence above 85 only when a reference image visually confirms the mat
             },
             { role: "user", content: refContent },
           ],
-        });
+        }, { timeout: verifyTimeout, maxRetries: 0 });
 
         const vraw = verifyResp.choices[0]?.message?.content ?? "[]";
         const vs = vraw.indexOf("[");
@@ -469,6 +494,7 @@ Give a confidence above 85 only when a reference image visually confirms the mat
           if (deduped.length > 0) matches = deduped;
         }
       } catch (verifyErr) {
+        if (isUpstreamTimeout(verifyErr)) skipped.push("verify");
         console.warn("[scan] visual verification failed, using text ranking:", verifyErr);
       }
       timer.mark("verify");

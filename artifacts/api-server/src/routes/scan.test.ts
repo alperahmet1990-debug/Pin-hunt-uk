@@ -20,6 +20,11 @@ vi.mock("../services/google-vision", () => ({
   getVisionSignals: async () => null,
   visionSearchTerms: () => [],
 }));
+// One catalogue pin, so a scan whose description timed out still reaches
+// ranking (a timed-out description is no longer fatal: scan budget).
+vi.mock("../services/scanCandidates", () => ({
+  findCandidates: async () => [{ id: "PHUK-1", title: "Pin", brand: "Disney", collection: "Set", characters: [] }],
+}));
 
 import app from "../app";
 

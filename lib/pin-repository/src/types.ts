@@ -458,6 +458,13 @@ export interface GetForTradeInventoryInput {
 }
 
 // ─── Trade types ──────────────────────────────────────────────────────────────
+
+/** What another collector accepts (migration 066). False when unknown. */
+export interface ContactPreferences {
+  acceptsMessages: boolean;
+  acceptsTradeRequests: boolean;
+}
+
 export type TradeStatus = 'pending' | 'accepted' | 'rejected' | 'completed' | 'cancelled' | 'problem';
 
 export interface Trade {

@@ -14,6 +14,7 @@ const mockMessages: ConversationMessage[] = Array.from({ length: 300 }, (_, i) =
   createdAt: new Date(Date.UTC(2026, 9, 13, 10, 0, i)).toISOString(),
 }));
 const mockRepo = {
+  getContactPreferences: () => Promise.resolve({ acceptsMessages: true, acceptsTradeRequests: true }),
   getConversation: () => Promise.resolve({
     id: 'c1', participantAId: 'u1', participantBId: 'u2', contextPostId: 'post1', createdAt: '2026-10-13T10:00:00Z',
     otherParticipant: { id: 'u2', username: 'bea' },

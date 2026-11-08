@@ -462,14 +462,14 @@ export default function EditProfileScreen() {
             <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
             <ToggleRow
               label="Allow Trade Requests"
-              description="Let collectors send you trade requests"
+              description="Let collectors send you new trade proposals"
               value={allowTradeReqs}
               onValueChange={setAllowTradeReqs}
             />
             <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
             <ToggleRow
               label="Allow Messages"
-              description="Let other collectors message you"
+              description="Let collectors start new chats with you. Existing chats carry on."
               value={allowMsgs}
               onValueChange={setAllowMsgs}
             />

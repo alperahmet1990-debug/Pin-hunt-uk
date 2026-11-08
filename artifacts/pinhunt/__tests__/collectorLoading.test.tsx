@@ -16,6 +16,7 @@ let mockForTrade: unknown[] = [];
 const mockGetForTrade = jest.fn(() => Promise.resolve(mockForTrade));
 const mockRepo = {
   getTraderRating: () => Promise.resolve({ positive: 0, total: 0 }),
+  getContactPreferences: () => Promise.resolve({ acceptsMessages: true, acceptsTradeRequests: true }),
   getPotentialTrades: () => new Promise<unknown[]>(resolve => { resolveTrades = resolve; }),
   getCollectorForTradePins: mockGetForTrade,
 };

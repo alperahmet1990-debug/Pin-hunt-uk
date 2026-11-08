@@ -28,6 +28,7 @@ const mockRepo = {
   getProfile: jest.fn((id: string) => Promise.resolve({ id, username: id === 'u2' ? 'bea' : 'sam' })),
   // Collector profile
   getTraderRating: jest.fn(() => Promise.resolve({ positive: 0, total: 0 })),
+  getContactPreferences: () => Promise.resolve({ acceptsMessages: true, acceptsTradeRequests: true }),
   getPotentialTrades: jest.fn(() => Promise.resolve([] as unknown[])),
   getCollectorForTradePins: jest.fn(() => Promise.resolve([] as unknown[])),
   // Conversations and chat

@@ -17,6 +17,7 @@ export type {
   // User collection
   AddUserPinInput,
   MarkTradePostedInput,
+  ContactPreferences,
   ProblemTrade,
   PinCondition,
   Profile,

@@ -55,6 +55,14 @@ export function ScanResult({ photoUri, candidates, insights, showDetails, onConf
   const others = alternatives(state, candidates.length);
   const picking = awaitingPick(state);
 
+  // "Not it" with nothing else to compare: go straight to the options
+  // rather than making the collector tap "None of these" too.
+  const handleNotIt = () => {
+    const next = notIt(state);
+    setState(next);
+    if (alternatives(next, candidates.length).length === 0) onNoneOfThese();
+  };
+
   return (
     <View style={styles.root}>
       <Text accessibilityRole="header" style={[styles.heading, { color: colors.homeInk }]}>
@@ -76,7 +84,7 @@ export function ScanResult({ photoUri, candidates, insights, showDetails, onConf
             <View style={[styles.panelImage, styles.emptyPanel, { width: panel, height: panel, borderColor: colors.homeMuted + '80' }]}>
               <Feather name={others.length > 0 ? 'arrow-down' : 'search'} size={22} color={colors.homeMuted} />
               <Text style={[styles.emptyText, { color: colors.homeMuted }]}>
-                {others.length > 0 ? 'Tap a pin below to compare' : 'Try None of these'}
+                {others.length > 0 ? 'Tap a pin below to compare' : recoveryOpen ? 'See the options below' : 'Try None of these'}
               </Text>
             </View>
             <Text style={[styles.panelLabel, { color: colors.homeMuted }]}>Our match</Text>
@@ -109,7 +117,7 @@ export function ScanResult({ photoUri, candidates, insights, showDetails, onConf
           </View>
 
           <View style={styles.actions}>
-            <Button label="Not it" icon="x" variant="secondary" onPress={() => setState(s => notIt(s))} style={styles.actionHalf} />
+            <Button label="Not it" icon="x" variant="secondary" onPress={handleNotIt} style={styles.actionHalf} />
             <Button label="That's it" icon="check" onPress={() => onConfirm(best.pin)} style={styles.actionHalf} />
           </View>
         </>

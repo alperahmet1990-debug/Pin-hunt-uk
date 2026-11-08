@@ -73,12 +73,20 @@ describe('ScanResult', () => {
     expect(screen.queryByText('Catalogue')).toBeNull();
   });
 
-  it('one candidate: "Not it" goes straight to "None of these"', async () => {
-    await setup({ candidates: [three[0]] }).view;
+  it('one candidate: "Not it" opens the options straight away', async () => {
+    const { props, view } = setup({ candidates: [three[0]] });
+    await view;
     expect(screen.getByRole('header', { name: 'Is this your pin?' })).toBeTruthy();
     await fireEvent.press(screen.getByRole('button', { name: 'Not it' }));
     expect(screen.queryByText(/Or is it/)).toBeNull();
-    expect(screen.getByRole('button', { name: 'None of these' })).toBeTruthy();
+    expect(props.onNoneOfThese).toHaveBeenCalledTimes(1);
+  });
+
+  it('several candidates: "Not it" shows the others, not the options', async () => {
+    const { props, view } = setup();
+    await view;
+    await fireEvent.press(screen.getByRole('button', { name: 'Not it' }));
+    expect(props.onNoneOfThese).not.toHaveBeenCalled();
   });
 
   it('all low confidence: asks, with the alternatives already showing', async () => {

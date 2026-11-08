@@ -149,6 +149,15 @@ describe('Scan result (UX-005)', () => {
     expect(screen.queryByRole('button', { name: 'None of these' })).toBeNull();
   });
 
+  it('a single match: "Not it" opens the options straight away', async () => {
+    mockIdentify.mockResolvedValueOnce({ matches: [{ pinId: 'p2', confidence: 81, reasoning: 'Blue sky' }], imageInsights: null });
+    await scanToResult();
+    await act(async () => { await fireEvent.press(screen.getByRole('button', { name: 'Not it' })); });
+    expect(await screen.findByText('Not the right pin?')).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Add this pin' })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: 'None of these' })).toBeNull();
+  });
+
   it('"Add this pin" hands over the photo, characters and the scan\'s guesses (UX-011)', async () => {
     mockIdentify.mockResolvedValueOnce({
       matches: [

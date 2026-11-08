@@ -24,11 +24,17 @@ import {
   requestAccountDeletion,
 } from '@/utils/deleteAccount';
 
-const DELETED_ITEMS = [
+const REMOVED_ITEMS = [
   'Your profile, username and avatar',
-  'Your collection, wishlist (ISO), for-trade list and boards',
-  'Your trade listings, community posts and messages',
-  'Your pin submissions and contributed images',
+  'Your collection, ISO, For Trade list and boards',
+  'Your trades',
+  'Your photos on posts and messages',
+  'Submissions and photos still waiting for review',
+];
+
+const KEPT_ITEMS = [
+  'The text of your community posts, comments and messages stays visible to other people, without your name.',
+  'Approved catalogue photos stay in the catalogue.',
 ];
 
 const ERROR_MESSAGES = {
@@ -69,9 +75,14 @@ export default function DeleteAccountScreen() {
         <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
           <Text style={[styles.title, { color: colors.destructive }]}>Delete your account?</Text>
           <Text style={[styles.body, { color: colors.homeInk }]}>
-            This permanently deletes your PinHunt account and cannot be undone. We will delete:
+            This permanently deletes your PinHunt account and cannot be undone.
           </Text>
-          {DELETED_ITEMS.map(item => (
+          <Text accessibilityRole="header" style={[styles.heading, { color: colors.homeInk }]}>We'll remove</Text>
+          {REMOVED_ITEMS.map(item => (
+            <Text key={item} style={[styles.item, { color: colors.homeInk }]}>• {item}</Text>
+          ))}
+          <Text accessibilityRole="header" style={[styles.heading, { color: colors.homeInk }]}>What stays</Text>
+          {KEPT_ITEMS.map(item => (
             <Text key={item} style={[styles.item, { color: colors.homeInk }]}>• {item}</Text>
           ))}
           <Text style={[styles.label, { color: colors.homeMuted }]}>
@@ -130,6 +141,7 @@ const styles = StyleSheet.create({
   card: { borderWidth: 1, borderRadius: radius.lg, padding: 20, gap: 10 },
   title: { fontSize: 20, fontFamily: 'Inter_700Bold' },
   body: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20 },
+  heading: { fontSize: 14, fontFamily: 'Inter_600SemiBold', marginTop: 4 },
   item: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 20, paddingLeft: 4 },
   label: { fontSize: 13, fontFamily: 'Inter_500Medium', marginTop: 8 },
   input: {

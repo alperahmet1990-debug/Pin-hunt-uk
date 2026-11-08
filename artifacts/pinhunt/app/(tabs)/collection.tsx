@@ -46,6 +46,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { CollectionSummary } from '@/components/CollectionSummary';
 import { BoardListRow, BoardMosaicCard, NewBoardCard, type BoardMosaicItem } from '@/components/BoardMosaicCard';
 import { CollectionDeskPanel } from '@/components/CollectionDeskPanel';
+import { DraggablePin, PinDragProvider } from '@/components/PinDrag';
 import { hasSidePanel, SIDE_PANEL_WIDTH } from '@/utils/deviceLayout';
 import { BOARD_SORT_LABELS, COLLECTION_VIEW_KEY, buildBoardItems, type BoardSort, type CollectionView } from '@/utils/collectionBoards';
 
@@ -164,6 +165,11 @@ function FindTradesRow({ detail, onPress, colors }: {
   colors: ReturnType<typeof useColors>;
 }) {
   return <LinkRow icon="compass" label="Find trades for these" detail={detail} onPress={onPress} colors={colors} />;
+}
+
+/** Drag and drop between the grid and the Organise panel, on wide screens only. */
+function DeskDrag({ enabled, children }: { enabled: boolean; children: React.ReactNode }) {
+  return enabled ? <PinDragProvider>{children}</PinDragProvider> : <>{children}</>;
 }
 
 export default function CollectionScreen() {
@@ -750,6 +756,7 @@ export default function CollectionScreen() {
 
   return (
     <View style={[s.root, { backgroundColor: colors.homeBackground, paddingTop: topPad }]}>
+      <DeskDrag enabled={sidePanel}>
       <View style={s.deskRow}>
       <FlatList<GridItem>
         style={s.deskMain}
@@ -835,8 +842,7 @@ export default function CollectionScreen() {
           }
           const pin = item as CataloguePin;
           const entry = collection[pin.id];
-          return (
-            <View style={{ width: tileSize }}>
+          const tile = (
               <PinTile
                 title={pin.title}
                 imageUrl={pin.imageUrl}
@@ -851,6 +857,18 @@ export default function CollectionScreen() {
                 onLongPress={selection.active ? undefined : () => pinActions.open(pin)}
                 {...(selection.active ? {} : pinActions.a11y(pin))}
               />
+          );
+          return (
+            <View style={{ width: tileSize }}>
+              {sidePanel && selection.active ? (
+                // iPad: drag the selection (with this pin) onto the Organise panel.
+                <DraggablePin
+                  getIds={() => (selection.has(pin.id) ? selectedIds : [...selectedIds, pin.id])}
+                  onDragStart={() => { if (!selection.has(pin.id)) selection.toggle(pin.id); }}
+                >
+                  {tile}
+                </DraggablePin>
+              ) : tile}
             </View>
           );
         }}
@@ -874,6 +892,7 @@ export default function CollectionScreen() {
         />
       )}
       </View>
+      </DeskDrag>
 
       {/* Add Menu Modal */}
       <Sheet visible={addModalVisible} onClose={() => setAddModalVisible(false)} title="Add to Collection">

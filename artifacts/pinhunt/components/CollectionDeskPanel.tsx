@@ -8,7 +8,8 @@
  * Selecting: every place is a target that moves the selection there in one
  * go, through the same actions as the phone's bulk bar (useBulkActions):
  * one setStatuses call, Undo, and the same confirmations. ISO and For Trade
- * stay separate targets.
+ * stay separate targets. In select mode, pins dragged from the grid can be
+ * dropped on any target (PinDrag), which does the same as tapping it.
  */
 import React from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -17,6 +18,7 @@ import { useColors } from '@/hooks/useColors';
 import { useBulkActions } from '@/components/BulkSelectBar';
 import { radius, spacing } from '@/constants/theme';
 import { SIDE_PANEL_WIDTH } from '@/utils/deviceLayout';
+import { useDropZone } from '@/components/PinDrag';
 
 const pinsWord = (n: number) => `${n} ${n === 1 ? 'pin' : 'pins'}`;
 
@@ -51,35 +53,6 @@ export function CollectionDeskPanel({ selecting, ids, onStartSelecting, onDone, 
     { key: 'wanted', label: 'ISO', icon: 'bookmark', count: counts.iso },
   ];
 
-  const target = (
-    key: string,
-    label: string,
-    icon: Icon,
-    detail: string,
-    onPress: () => void,
-    a11yLabel: string,
-  ) => (
-    <TouchableOpacity
-      key={key}
-      onPress={onPress}
-      disabled={selecting && disabled}
-      accessibilityRole="button"
-      accessibilityLabel={a11yLabel}
-      accessibilityState={{ disabled: selecting && disabled }}
-      style={[styles.target, {
-        backgroundColor: active ? colors.homeAqua : colors.homeBackground,
-        borderColor: active ? colors.homeCoral : colors.homeLine,
-        borderStyle: active ? 'dashed' : 'solid',
-      }]}
-    >
-      <Feather name={icon} size={20} color={active ? colors.homeCoralDeep : colors.homeInk} />
-      <View style={{ flex: 1 }}>
-        <Text style={[styles.targetLabel, { color: colors.homeInk }]} numberOfLines={1}>{label}</Text>
-        <Text style={[styles.targetDetail, { color: active ? colors.homeCoralDeep : colors.homeMuted }]} numberOfLines={1}>{detail}</Text>
-      </View>
-    </TouchableOpacity>
-  );
-
   return (
     <View
       accessibilityLabel="Organise"
@@ -91,7 +64,7 @@ export function CollectionDeskPanel({ selecting, ids, onStartSelecting, onDone, 
         </Text>
         <Text accessibilityLiveRegion="polite" style={[styles.hint, { color: colors.homeMuted }]}>
           {selecting
-            ? (n > 0 ? 'Tap a place to move them all at once.' : 'Tap pins in the grid to select them.')
+            ? (n > 0 ? 'Tap a place, or drag the pins onto it, to move them all at once.' : 'Tap pins in the grid to select them.')
             : 'Select a few pins, or a whole fair\'s worth, then move them in one go.'}
         </Text>
         {!selecting && (
@@ -107,25 +80,39 @@ export function CollectionDeskPanel({ selecting, ids, onStartSelecting, onDone, 
         )}
 
         <Text style={[styles.section, { color: colors.homeMuted }]}>Your collection</Text>
-        {statusTargets.map(t => target(
-          t.key,
-          t.label,
-          t.icon,
-          active ? `Move ${pinsWord(n)} here` : pinsWord(t.count),
-          () => (selecting ? bulk.chooseStatus(t.key) : onOpenStatus(t.key)),
-          active ? `${t.label}, move ${pinsWord(n)}` : `${t.label}, ${pinsWord(t.count)}`,
+        {statusTargets.map(t => (
+          <DeskTarget
+            key={t.key}
+            id={t.key}
+            label={t.label}
+            icon={t.icon}
+            active={active}
+            disabled={selecting && disabled}
+            detail={active ? `Move ${pinsWord(n)} here` : pinsWord(t.count)}
+            dropLabel={`Move to ${t.label}`}
+            onPress={() => (selecting ? bulk.chooseStatus(t.key) : onOpenStatus(t.key))}
+            onDrop={() => bulk.chooseStatus(t.key)}
+            a11yLabel={active ? `${t.label}, move ${pinsWord(n)}` : `${t.label}, ${pinsWord(t.count)}`}
+          />
         ))}
 
         {customBoards.length > 0 && (
           <>
             <Text style={[styles.section, { color: colors.homeMuted }]}>Boards</Text>
-            {customBoards.map(b => target(
-              `board-${b.id}`,
-              b.name,
-              'folder',
-              active ? `Add ${pinsWord(keptCount)} here` : pinsWord(b.pinIds.length),
-              () => (selecting ? bulk.addToBoard(b) : onOpenBoard(b.id)),
-              active ? `${b.name}, add ${pinsWord(keptCount)}` : `${b.name}, ${pinsWord(b.pinIds.length)}`,
+            {customBoards.map(b => (
+              <DeskTarget
+                key={b.id}
+                id={`board-${b.id}`}
+                label={b.name}
+                icon="folder"
+                active={active}
+                disabled={selecting && disabled}
+                detail={active ? `Add ${pinsWord(keptCount)} here` : pinsWord(b.pinIds.length)}
+                dropLabel={`Add to ${b.name}`}
+                onPress={() => (selecting ? bulk.addToBoard(b) : onOpenBoard(b.id))}
+                onDrop={() => bulk.addToBoard(b)}
+                a11yLabel={active ? `${b.name}, add ${pinsWord(keptCount)}` : `${b.name}, ${pinsWord(b.pinIds.length)}`}
+              />
             ))}
             {active && n > keptCount && (
               <Text style={[styles.hint, { color: colors.homeMuted }]}>
@@ -150,6 +137,51 @@ export function CollectionDeskPanel({ selecting, ids, onStartSelecting, onDone, 
         )}
       </ScrollView>
       {bulk.dialogs}
+    </View>
+  );
+}
+
+interface DeskTargetProps {
+  id: string;
+  label: string;
+  icon: Icon;
+  detail: string;
+  /** Shown on the dragged stack while it's over this target. */
+  dropLabel: string;
+  active: boolean;
+  disabled: boolean;
+  onPress: () => void;
+  onDrop: () => void;
+  a11yLabel: string;
+}
+
+/** A place pins can go: tap it, or drop a dragged stack of pins on it. */
+function DeskTarget({ id, label, icon, detail, dropLabel, active, disabled, onPress, onDrop, a11yLabel }: DeskTargetProps) {
+  const colors = useColors();
+  const zone = useDropZone(id, dropLabel, onDrop);
+  const over = zone.isOver;
+  return (
+    <View ref={zone.ref} collapsable={false}>
+      <TouchableOpacity
+        onPress={onPress}
+        disabled={disabled}
+        accessibilityRole="button"
+        accessibilityLabel={a11yLabel}
+        accessibilityState={{ disabled }}
+        style={[styles.target, {
+          backgroundColor: over ? colors.homeCoral : active ? colors.homeAqua : colors.homeBackground,
+          borderColor: active || over ? colors.homeCoral : colors.homeLine,
+          borderStyle: active && !over ? 'dashed' : 'solid',
+        }]}
+      >
+        <Feather name={icon} size={20} color={over ? colors.homeHeroText : active ? colors.homeCoralDeep : colors.homeInk} />
+        <View style={{ flex: 1 }}>
+          <Text style={[styles.targetLabel, { color: over ? colors.homeHeroText : colors.homeInk }]} numberOfLines={1}>{label}</Text>
+          <Text style={[styles.targetDetail, { color: over ? colors.homeHeroText : active ? colors.homeCoralDeep : colors.homeMuted }]} numberOfLines={1}>
+            {over ? 'Let go to drop' : detail}
+          </Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }

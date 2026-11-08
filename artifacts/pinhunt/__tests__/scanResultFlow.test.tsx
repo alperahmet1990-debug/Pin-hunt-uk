@@ -149,7 +149,7 @@ describe('Scan result (UX-005)', () => {
     expect(screen.queryByRole('button', { name: 'None of these' })).toBeNull();
   });
 
-  it('"Suggest this pin" hands over the photo, characters and the scan\'s guesses (UX-011)', async () => {
+  it('"Add this pin" hands over the photo, characters and the scan\'s guesses (UX-011)', async () => {
     mockIdentify.mockResolvedValueOnce({
       matches: [
         { pinId: 'p2', confidence: 81, reasoning: 'Blue sky and ears' },
@@ -160,11 +160,24 @@ describe('Scan result (UX-005)', () => {
     await scanToResult();
     await fireEvent.press(screen.getByRole('button', { name: 'Not it' }));
     await act(async () => { await fireEvent.press(screen.getByRole('button', { name: 'None of these' })); });
-    await fireEvent.press(await screen.findByRole('button', { name: /Suggest this pin/ }));
+    await fireEvent.press(await screen.findByRole('button', { name: /Add this pin/ }));
     expect(mockPush).toHaveBeenCalledWith({
       pathname: '/add-pin',
       params: { frontUri: 'file:///photo.jpg', characters: 'Dumbo', nameHint: 'Happy 30th', brandHint: 'Disneyland Paris', setHint: 'Park Icons' },
     });
+  });
+
+  it('no match leads with "Add this pin", with search and retake as the way round', async () => {
+    mockIdentify.mockResolvedValueOnce({ matches: [], imageInsights: null });
+    await render(<ScanScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'Choose a photo from your library' }));
+    expect(await screen.findByRole('header', { name: 'Not in our catalogue yet' }, { timeout: 3000 })).toBeTruthy();
+    // Not an error, and identifying the same photo again won't help.
+    expect(screen.queryByRole('button', { name: 'Identify Pin' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Search the catalogue' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Retake the photo' })).toBeTruthy();
+    await fireEvent.press(screen.getByRole('button', { name: 'Add this pin' }));
+    expect(mockPush).toHaveBeenCalledWith(expect.objectContaining({ pathname: '/add-pin', params: expect.objectContaining({ frontUri: 'file:///photo.jpg' }) }));
   });
 
   it('a failed identify says what went wrong in plain words, never the raw error (UX-046)', async () => {

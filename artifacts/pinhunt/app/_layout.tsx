@@ -93,6 +93,9 @@ function RootLayoutNav() {
       <Stack.Screen name="collector/[username]" options={{ title: 'Collector' }} />
       <Stack.Screen name="pin/[id]" options={{ title: 'Pin Detail' }} />
       <Stack.Screen name="board/[id]" options={{ title: 'Board' }} />
+      <Stack.Screen name="places/index" options={{ title: 'Where your pins live' }} />
+      <Stack.Screen name="places/[id]" options={{ title: 'Place' }} />
+      <Stack.Screen name="places/home" options={{ title: 'Find them a home' }} />
       <Stack.Screen name="sell/[pinId]" options={{ title: 'List for Sale' }} />
       <Stack.Screen name="my-listings" options={{ title: 'My Listings' }} />
       <Stack.Screen name="about" options={{ title: 'About PinHunt' }} />

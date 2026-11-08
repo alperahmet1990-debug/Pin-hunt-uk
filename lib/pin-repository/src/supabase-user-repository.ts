@@ -4,6 +4,8 @@ import { PinRepositoryError } from './repository';
 import { SUSPENSION_REASON_MAX } from './types';
 import { safeDisplayName } from './display-name';
 import * as communityPrices from './community-prices';
+import * as pinLocations from './pin-locations';
+import type { CollectionPlace, PinLocation, PinLocationInput, PlaceInput } from './pin-locations';
 import type { CommunityPrice, MyPinPrice, PriceCurrency } from './community-prices';
 import type {
   AddUserPinInput,
@@ -2695,6 +2697,41 @@ class SupabaseUserPinRepository implements IUserPinRepository {
 
   setMyCommunityPriceSetting(include: boolean): Promise<void> {
     return communityPrices.setMyCommunityPriceSetting(this.priceClient, include);
+  }
+
+  // ── Where each pin lives (migration 067, #547) ───────────────────────────
+
+  private get locationClient(): pinLocations.PinLocationsClient {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return this.client as any;
+  }
+
+  getMyPlaces(): Promise<CollectionPlace[]> {
+    return pinLocations.getMyPlaces(this.locationClient);
+  }
+
+  createPlace(input: PlaceInput): Promise<CollectionPlace> {
+    return pinLocations.createPlace(this.locationClient, input);
+  }
+
+  updatePlace(placeId: string, input: PlaceInput): Promise<CollectionPlace> {
+    return pinLocations.updatePlace(this.locationClient, placeId, input);
+  }
+
+  deletePlace(placeId: string): Promise<void> {
+    return pinLocations.deletePlace(this.locationClient, placeId);
+  }
+
+  getMyPinLocations(): Promise<PinLocation[]> {
+    return pinLocations.getMyPinLocations(this.locationClient);
+  }
+
+  setPinLocations(pinIds: string[], input: PinLocationInput | PinLocationInput[], place?: CollectionPlace): Promise<void> {
+    return pinLocations.setPinLocations(this.locationClient, pinIds, input, place);
+  }
+
+  clearPinLocations(pinIds: string[]): Promise<void> {
+    return pinLocations.clearPinLocations(this.locationClient, pinIds);
   }
 }
 

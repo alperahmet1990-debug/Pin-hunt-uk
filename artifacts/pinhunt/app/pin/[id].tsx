@@ -27,6 +27,8 @@ import { collectionStatusLine } from '@/utils/collectionStatusLine';
 import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { Sheet } from '@/components/ui/Sheet';
 import { YourPriceEditor } from '@/components/YourPriceEditor';
+import { WhereItLivesRow } from '@/components/locations/WhereItLivesRow';
+import { getPinLocationService } from '@/lib/pinLocationService';
 import { YourPriceRow, useHasMyPrice } from '@/components/YourPriceRow';
 import { ScreenContainer, Chip, MetaRow, ValueDisplay, PrimaryActionBar, SetProgressBar, CompactPinTile } from '@/components/ui';
 import { ScreenHeader, useHeaderTopInset } from '@/components/ui/ScreenHeader';
@@ -369,6 +371,9 @@ export default function PinDetailScreen() {
               />
             </View>
           </View>
+
+          {/* Where it lives (#547): only for pins you have. */}
+          {canPrice && getPinLocationService() && <WhereItLivesRow pinId={pin.id} />}
 
           {/* ── 5. Value ── */}
           <ValueDisplay

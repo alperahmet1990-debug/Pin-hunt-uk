@@ -22,6 +22,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
+import { profileSaveErrorLine } from '@/utils/userError';
 import { useProfile } from '@/context/ProfileContext';
 import { useAuth } from '@/context/AuthContext';
 import { supabase } from '@/lib/supabase';
@@ -148,7 +149,7 @@ export default function EditProfileScreen() {
       await updateMyProfile({ avatarUrl: url });
       await refreshProfile();
     } catch (e) {
-      Alert.alert('Upload failed', e instanceof Error ? e.message : 'Could not upload photo.');
+      Alert.alert('Upload failed', profileSaveErrorLine(e));
     } finally {
       setUploadingAvatar(false);
     }
@@ -333,8 +334,7 @@ export default function EditProfileScreen() {
         happyToTravel: happyToTravel,
       });
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : 'Failed to save';
-      setSaveError(msg.includes('duplicate') || msg.includes('unique') ? 'This username is already taken' : msg);
+      setSaveError(profileSaveErrorLine(err));
       setSaving(false);
       return;
     }

@@ -1,9 +1,10 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 import RegisterScreen from '../app/(auth)/register';
 
 jest.mock('react-native-safe-area-context', () => ({ useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }) }));
-jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ signUp: jest.fn() }) }));
+const mockSignUp = jest.fn(async () => ({ error: null, needsEmailConfirmation: true }));
+jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ signUp: mockSignUp }) }));
 // Plain-text links that expose where they go, so the test can check the targets.
 jest.mock('expo-router', () => {
   const { Text } = jest.requireActual('react-native');
@@ -19,5 +20,29 @@ describe('Sign-up links to the Terms and Privacy Policy', () => {
     expect(screen.getByText(/By creating an account you agree to our/)).toBeTruthy();
     expect(screen.getByRole('link', { name: 'Terms of Use' }).props.accessibilityHint).toBe('/legal/terms');
     expect(screen.getByRole('link', { name: 'Privacy Policy' }).props.accessibilityHint).toBe('/legal/privacy');
+  });
+});
+
+describe('Sign-up is for adults (18+)', () => {
+  const fill = async () => {
+    await fireEvent.changeText(screen.getByPlaceholderText('Email'), 'a@example.org');
+    await fireEvent.changeText(screen.getByPlaceholderText('Password (min 8 characters)'), 'Pinhunt-2026!');
+    await fireEvent.changeText(screen.getByPlaceholderText('Confirm password'), 'Pinhunt-2026!');
+  };
+
+  it('will not create an account until "I\'m 18 or over" is ticked', async () => {
+    mockSignUp.mockClear();
+    await render(<RegisterScreen />);
+    await fill();
+    const box = screen.getByRole('checkbox', { name: "I'm 18 or over" });
+    expect(box.props.accessibilityState).toEqual({ checked: false });
+    await fireEvent.press(screen.getAllByText('Create account').at(-1)!);
+    expect(screen.getByText(/aged 18 or over/)).toBeTruthy();
+    expect(mockSignUp).not.toHaveBeenCalled();
+
+    await fireEvent.press(box);
+    expect(screen.getByRole('checkbox', { name: "I'm 18 or over" }).props.accessibilityState).toEqual({ checked: true });
+    await fireEvent.press(screen.getAllByText('Create account').at(-1)!);
+    expect(mockSignUp).toHaveBeenCalledWith('a@example.org', 'Pinhunt-2026!');
   });
 });

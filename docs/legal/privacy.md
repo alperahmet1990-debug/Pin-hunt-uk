@@ -43,7 +43,7 @@ Photos you scan to identify a pin are sent for identification and are not saved 
 We use these providers to run PinHunt. They may only use your information to provide their service to us:
 
 - Supabase: our database, sign-in and file storage.
-- Our server host: runs the PinHunt API [to be confirmed].
+- Render: runs the PinHunt API server.
 - OpenAI: identifies pins from photos you scan.
 - Google Cloud Vision: reads text and finds similar images in photos you scan, to improve identification.
 - Pixian.ai: removes the background from photos you submit to the catalogue.
@@ -78,7 +78,7 @@ If you are unhappy with how we handle your information, please tell us first. Yo
 
 ## Children
 
-You must be at least 13 to use PinHunt. If you are under 18, please make sure a parent or guardian is happy for you to use it, and never share your address or personal details in messages. If you think a child under 13 has an account, contact us and we will delete it.
+PinHunt is for adults: you must be 18 or over to use it, and we ask you to confirm this when you sign up. We do not knowingly collect information from anyone under 18. If you think someone under 18 has an account, contact us and we will delete it.
 
 ## Information stored on your device
 

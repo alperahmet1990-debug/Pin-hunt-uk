@@ -1,4 +1,5 @@
 import type { CommunityPrice, MyPinPrice, PriceCurrency } from './community-prices';
+import type { CollectionPlace, PinLocation, PinLocationInput, PlaceInput } from './pin-locations';
 import type {
   AddUserPinInput,
   MarkTradePostedInput,
@@ -618,4 +619,22 @@ export interface IUserPinRepository {
   /** "Include my prices in community prices" (on by default). */
   getMyCommunityPriceSetting(): Promise<boolean>;
   setMyCommunityPriceSetting(include: boolean): Promise<void>;
+
+  // ── Where each pin lives (migration 067, #547) ─────────────────────────
+  // Owner only. Until 067 is applied these throw a PinRepositoryError that
+  // isPinLocationsUnavailable() recognises; screens hide the feature.
+
+  /** The caller's places (trade books, frames, lanyards, boxes), in order. */
+  getMyPlaces(): Promise<CollectionPlace[]>;
+  createPlace(input: PlaceInput): Promise<CollectionPlace>;
+  updatePlace(placeId: string, input: PlaceInput): Promise<CollectionPlace>;
+  /** Deleting a place unplaces its pins. */
+  deletePlace(placeId: string): Promise<void>;
+
+  /** Every location the caller has saved (app pin ids). */
+  getMyPinLocations(): Promise<PinLocation[]>;
+  /** Put pins (app pin ids) in a place: one input for all, or one per pin. */
+  setPinLocations(pinIds: string[], input: PinLocationInput | PinLocationInput[], place?: CollectionPlace): Promise<void>;
+  /** Forget where pins live; they stay in the collection. */
+  clearPinLocations(pinIds: string[]): Promise<void>;
 }

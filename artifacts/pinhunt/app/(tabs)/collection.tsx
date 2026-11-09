@@ -47,6 +47,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { CollectionSummary } from '@/components/CollectionSummary';
 import { BoardListRow, BoardMosaicCard, NewBoardCard, type BoardMosaicItem } from '@/components/BoardMosaicCard';
 import { CollectionDeskPanel } from '@/components/CollectionDeskPanel';
+import { DeskPlacesSection } from '@/components/locations/DeskPlacesSection';
+import { PlacesLinkRow } from '@/components/locations/PlacesLinkRow';
+import { getPinLocationService } from '@/lib/pinLocationService';
 import { DraggablePin, PinDragProvider } from '@/components/PinDrag';
 import { hasSidePanel, SIDE_PANEL_WIDTH } from '@/utils/deviceLayout';
 import { BOARD_SORT_LABELS, COLLECTION_VIEW_KEY, buildBoardItems, type BoardSort, type CollectionView } from '@/utils/collectionBoards';
@@ -257,6 +260,9 @@ export default function CollectionScreen() {
   const ownedIds = useMemo(() => new Set(Object.values(collection).filter(e => e.status === 'owned' || e.status === 'for_trade').map(e => e.pinId)), [collection]);
   const forTradeIds = useMemo(() => new Set(Object.values(collection).filter(e => e.status === 'for_trade').map(e => e.pinId)), [collection]);
   const wantedIds = useMemo(() => new Set(Object.values(collection).filter(e => e.status === 'wanted').map(e => e.pinId)), [collection]);
+  // Where pins live (#547): shown only when there's a place to read them from.
+  const placesOn = getPinLocationService() !== null;
+  const ownedIdList = useMemo(() => [...ownedIds], [ownedIds]);
 
   // True while the catalogue rows for collection entries are being fetched,
   // so the grid shows placeholders rather than "No pins yet" (UX-045).
@@ -493,6 +499,11 @@ export default function CollectionScreen() {
               { value: forTradeIds.size, label: 'For Trade', icon: 'repeat', tone: 'trade' },
             ]}
           />
+          {placesOn && !sidePanel && (
+            <View style={s.placesRow}>
+              <PlacesLinkRow ownedIds={ownedIdList} onPress={() => router.push('/places')} />
+            </View>
+          )}
           <View style={s.toolbar}>
             <View style={[s.viewToggle, { backgroundColor: colors.homeAqua }]} accessibilityRole="radiogroup">
               {(['grid', 'list'] as const).map(view => (
@@ -901,6 +912,15 @@ export default function CollectionScreen() {
             setSearchActive(false);
           }}
           counts={{ owned: ownedIds.size, forTrade: forTradeIds.size, iso: wantedIds.size }}
+          extraSection={placesOn ? (
+            <DeskPlacesSection
+              selecting={pinGrid && selection.active}
+              ids={selectedIds}
+              ownedIds={ownedIdList}
+              onOpenPlaces={() => router.push('/places')}
+              onDone={selection.stop}
+            />
+          ) : null}
         />
       )}
       </View>
@@ -1199,6 +1219,7 @@ export default function CollectionScreen() {
 
 const s = StyleSheet.create({
   root: { flex: 1 },
+  placesRow: { marginTop: spacing.md, marginBottom: spacing.md },
   // Grid and, on wide screens, the Organise panel side by side.
   deskRow: { flex: 1, flexDirection: 'row' },
   deskMain: { flex: 1 },

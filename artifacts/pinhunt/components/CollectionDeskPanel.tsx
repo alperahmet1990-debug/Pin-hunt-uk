@@ -37,11 +37,13 @@ interface CollectionDeskPanelProps {
   onOpenStatus: (status: 'owned' | 'for_trade' | 'wanted') => void;
   /** Pins per status, for the targets' counts. */
   counts: { owned: number; forTrade: number; iso: number };
+  /** Extra section after Boards, e.g. "Where they live" (#547). */
+  extraSection?: React.ReactNode;
 }
 
 type Icon = keyof typeof Feather.glyphMap;
 
-export function CollectionDeskPanel({ selecting, ids, onStartSelecting, onDone, onOpenBoard, onOpenStatus, counts }: CollectionDeskPanelProps) {
+export function CollectionDeskPanel({ selecting, ids, onStartSelecting, onDone, onOpenBoard, onOpenStatus, counts, extraSection }: CollectionDeskPanelProps) {
   const colors = useColors();
   const bulk = useBulkActions({ ids, onDone });
   const { n, disabled, keptCount, customBoards } = bulk;
@@ -122,6 +124,8 @@ export function CollectionDeskPanel({ selecting, ids, onStartSelecting, onDone, 
           </>
         )}
 
+        {extraSection}
+
         {selecting && (
           <TouchableOpacity
             onPress={bulk.requestRemove}
@@ -141,7 +145,7 @@ export function CollectionDeskPanel({ selecting, ids, onStartSelecting, onDone, 
   );
 }
 
-interface DeskTargetProps {
+export interface DeskTargetProps {
   id: string;
   label: string;
   icon: Icon;
@@ -156,7 +160,7 @@ interface DeskTargetProps {
 }
 
 /** A place pins can go: tap it, or drop a dragged stack of pins on it. */
-function DeskTarget({ id, label, icon, detail, dropLabel, active, disabled, onPress, onDrop, a11yLabel }: DeskTargetProps) {
+export function DeskTarget({ id, label, icon, detail, dropLabel, active, disabled, onPress, onDrop, a11yLabel }: DeskTargetProps) {
   const colors = useColors();
   const zone = useDropZone(id, dropLabel, onDrop);
   const over = zone.isOver;

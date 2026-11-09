@@ -98,6 +98,7 @@ function RootLayoutNav() {
       <Stack.Screen name="about" options={{ title: 'About PinHunt' }} />
       <Stack.Screen name="delete-account" options={{ title: 'Delete Account' }} />
       <Stack.Screen name="trading-safely" options={{ title: 'Trading safely' }} />
+      <Stack.Screen name="legal/[doc]" options={{ title: 'Legal' }} />
       <Stack.Screen name="add-pin" options={{ title: 'Add Pin' }} />
       <Stack.Screen name="my-submissions" options={{ title: 'My Submissions' }} />
       <Stack.Screen name="my-trades" options={{ title: 'Trades' }} />

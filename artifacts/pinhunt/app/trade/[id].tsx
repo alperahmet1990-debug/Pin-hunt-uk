@@ -35,6 +35,7 @@ import type { PotentialTradePin, Trade, TradeMessage, TradeStatus } from '@works
 import { PinImage } from '@/components/ui/PinImage';
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
 import { TradeItemsCard } from '@/components/TradeItemsCard';
+import { tradeTimeline } from '@/utils/tradeTimeline';
 import { TradePinsSheet } from '@/components/TradePinsSheet';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { choiceKey, matchPinChoices, mergeChoices, toTradeItemInputs, tradeHasPins, tradeItemChoices } from '@/utils/tradeItems';
@@ -319,6 +320,8 @@ export default function TradeScreen() {
   const [reportReason,   setReportReason]   = useState('');
   const [potentialPins,  setPotentialPins]  = useState<PotentialTradePin[]>([]);
   const [editPinsOpen,   setEditPinsOpen]   = useState(false);
+  // One conversation per trade (WP1): the trade's chat, when it has one.
+  const [chatId,         setChatId]         = useState<string | null | undefined>(undefined);
   const { pins: cataloguePins, ensurePins } = usePinCatalogue();
   const [bannerDismissed, setBannerDismissed] = useState(false);
 
@@ -344,6 +347,13 @@ export default function TradeScreen() {
       const t = await repo.getTrade(id);
       if (!t) { setError('Trade not found.'); setLoading(false); return; }
       setTrade(t);
+      if (typeof repo.getConversationIdForTrade === 'function') {
+        repo.getConversationIdForTrade(t.id)
+          .then(setChatId)
+          .catch(() => setChatId(null));
+      } else {
+        setChatId(null);
+      }
       // Re-fetch potential pins on every load so the banner stays current if
       // either collector adds or removes pins while the chat is open.
       if (userId) {
@@ -559,7 +569,23 @@ export default function TradeScreen() {
                   agreed={trade.status !== 'pending'}
                 />
               )}
-              {messages.length === 0 && (
+              {/* Timeline: what has happened so far */}
+              <View testID="trade-timeline" style={[styles.timeline, { borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}>
+                <Text accessibilityRole="header" style={[styles.timelineTitle, { color: colors.homeInk }]}>Timeline</Text>
+                {tradeTimeline(trade, userId).map(step => (
+                  <View key={step.key} style={styles.timelineRow} accessible accessibilityLabel={step.at ? `${step.label}, ${formatDate(step.at)}` : step.label}>
+                    <View style={[styles.timelineDot, { backgroundColor: colors.homeCoral }]} />
+                    <Text style={[styles.timelineText, { color: colors.homeInk }]}>{step.label}</Text>
+                    {step.at ? <Text style={[styles.timelineTime, { color: colors.homeMuted }]}>{formatDate(step.at)}</Text> : null}
+                  </View>
+                ))}
+              </View>
+
+              {/* Messages now live in the chat. Earlier trade messages stay readable. */}
+              {chatId && messages.length > 0 && (
+                <Text accessibilityRole="header" style={[styles.earlierTitle, { color: colors.homeMuted }]}>Earlier messages</Text>
+              )}
+              {!chatId && chatId !== undefined && messages.length === 0 && canMessage && (
                 <View style={styles.emptyMessages}>
                   <Text style={[styles.emptyMsgText, { color: colors.homeMuted }]}>
                     No messages yet. Start the conversation!
@@ -769,8 +795,23 @@ export default function TradeScreen() {
 
                 </ScrollView>
 
-                {/* Message input (active trades only) */}
-                {canMessage && (
+                {/* One conversation per trade: talk in the chat. A trade from
+                    before chats were linked keeps its own message box. */}
+                {chatId && (
+                  <View style={[styles.inputRow, { borderTopColor: colors.homeLine }]}>
+                    <TouchableOpacity
+                      onPress={() => router.push(`/community/chat/${chatId}`)}
+                      activeOpacity={0.85}
+                      accessibilityRole="button"
+                      accessibilityLabel="Message in chat"
+                      style={[styles.actionBtnFull, styles.chatBtn, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
+                    >
+                      <Feather name="message-circle" size={16} color={colors.homeInk} />
+                      <Text style={[styles.actionBtnLabel, { color: colors.homeInk }]}>Message in chat</Text>
+                    </TouchableOpacity>
+                  </View>
+                )}
+                {chatId === null && canMessage && (
                   <View style={[styles.inputRow, { borderTopColor: colors.homeLine }]}>
                     <TextInput
                       value={msgText}
@@ -847,6 +888,14 @@ export default function TradeScreen() {
 }
 
 const styles = StyleSheet.create({
+  timeline:      { borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.xs + 2, marginBottom: spacing.sm },
+  timelineTitle: { fontSize: 14, fontFamily: 'Inter_600SemiBold', marginBottom: 2 },
+  timelineRow:   { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, minHeight: 24 },
+  timelineDot:   { width: 8, height: 8, borderRadius: 4 },
+  timelineText:  { flex: 1, fontSize: 13, fontFamily: 'Inter_400Regular' },
+  timelineTime:  { fontSize: 12, fontFamily: 'Inter_400Regular' },
+  earlierTitle:  { fontSize: 11, fontFamily: 'Inter_500Medium', textTransform: 'uppercase', letterSpacing: 0.4, marginTop: spacing.sm },
+  chatBtn:       { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: spacing.sm },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   errorText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   statusBar: { padding: spacing.md, borderBottomWidth: 1, alignItems: 'center' },

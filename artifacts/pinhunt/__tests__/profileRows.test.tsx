@@ -8,7 +8,7 @@ let mockConfig = { SUPPORT_EMAIL: '', RATE_APP_ENABLED: false, EXPORT_COLLECTION
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
 }));
-jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush }) }));
+jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush }), useFocusEffect: () => {} }));
 jest.mock('@/components/Avatar', () => ({ Avatar: () => null }));
 jest.mock('@/context/ProfileContext', () => ({ useProfile: () => ({ profile: { username: 'sam' }, loading: false }) }));
 jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ signOut: jest.fn(), user: null }) }));

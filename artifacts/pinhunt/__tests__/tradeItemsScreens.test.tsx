@@ -8,6 +8,8 @@ import { fireEvent, render, screen } from '@testing-library/react-native';
 
 let mockParams: Record<string, string> = {};
 let mockTrade: Record<string, unknown> = {};
+let mockChatId: string | null = 'c1';
+const mockPush = jest.fn();
 const mockPropose = jest.fn();
 const mockAccept = jest.fn();
 const mockSetItems = jest.fn();
@@ -28,7 +30,9 @@ const mockRepo = {
   getConversationMessages: () => Promise.resolve([
     { id: 'm1', conversationId: 'c1', senderId: 'u1', body: '', messageType: 'pin_share', pinIds: ['PHUK-1'], forTradePinIds: ['PHUK-1'], photoUrls: [], createdAt: at(1) },
     { id: 'm2', conversationId: 'c1', senderId: 'u2', body: '', messageType: 'pin_share', pinIds: ['PHUK-2'], forTradePinIds: [], photoUrls: [], createdAt: at(2) },
+    { id: 'm3', conversationId: 'c1', senderId: 'u2', body: '@bea declined the trade.', messageType: 'text', pinIds: [], forTradePinIds: [], photoUrls: [], tradeId: 't0', tradeEvent: 'declined', createdAt: at(3) },
   ]),
+  getConversationIdForTrade: () => Promise.resolve(mockChatId),
   getCommunityPost: () => Promise.resolve(null),
 };
 const mockPins = [
@@ -41,7 +45,7 @@ jest.mock('react-native-safe-area-context', () => ({
   SafeAreaView: require('react-native').View,
 }));
 jest.mock('expo-router', () => ({
-  useRouter: () => ({ push: jest.fn(), back: jest.fn(), replace: jest.fn(), canGoBack: () => true }),
+  useRouter: () => ({ push: mockPush, back: jest.fn(), replace: jest.fn(), canGoBack: () => true }),
   useLocalSearchParams: () => mockParams,
   useFocusEffect: () => {},
   Stack: { Screen: () => null },
@@ -153,5 +157,48 @@ describe('Trade screen shows the agreed pins (#32)', () => {
     await settle();
     expect(screen.getByRole('header', { name: 'Agreed pins' })).toBeTruthy();
     expect(screen.queryByRole('button', { name: 'Change pins' })).toBeNull();
+  }, 30_000);
+});
+
+describe('Trade steps in chat and one conversation per trade (step 2)', () => {
+  beforeEach(() => { mockPush.mockClear(); mockChatId = 'c1'; });
+
+  it('shows a trade line as a centred link to the trade, not a reportable bubble', async () => {
+    mockParams = { id: 'c1' };
+    const ChatScreen = require('../app/community/chat/[id]').default;
+    await render(<ChatScreen />);
+    await settle();
+    const line = screen.getByTestId('trade-event-m3');
+    expect(line.props.accessibilityRole).toBe('link');
+    expect(screen.queryByTestId('message-m3')).toBeNull();
+    await fireEvent.press(line);
+    expect(mockPush).toHaveBeenCalledWith('/trade/t0');
+  }, 30_000);
+
+  it('trade screen: timeline and Message in chat, with no message box of its own', async () => {
+    mockParams = { id: 't1' };
+    mockTrade = { ...baseTrade, items: [item('i1', 'offered', 'PHUK-2', 'Dumbo Blue Sky')],
+      messages: [{ id: 'tm1', tradeId: 't1', senderId: 'u2', message: 'Old note', createdAt: at(1) }] };
+    const TradeScreen = require('../app/trade/[id]').default;
+    await render(<TradeScreen />);
+    await settle();
+    expect(screen.getByTestId('trade-timeline')).toBeTruthy();
+    expect(screen.getByText('They proposed the trade')).toBeTruthy();
+    expect(screen.getByText('Earlier messages')).toBeTruthy();
+    expect(screen.getByText('Old note')).toBeTruthy();
+    expect(screen.queryByPlaceholderText('Type a message…')).toBeNull();
+    await fireEvent.press(screen.getByRole('button', { name: 'Message in chat' }));
+    expect(mockPush).toHaveBeenCalledWith('/community/chat/c1');
+  }, 30_000);
+
+  it('trade screen: a trade with no chat keeps its own message box', async () => {
+    mockParams = { id: 't1' };
+    mockChatId = null;
+    mockTrade = { ...baseTrade, items: [item('i1', 'offered', 'PHUK-2', 'Dumbo Blue Sky')] };
+    const TradeScreen = require('../app/trade/[id]').default;
+    await render(<TradeScreen />);
+    await settle();
+    expect(screen.queryByRole('button', { name: 'Message in chat' })).toBeNull();
+    expect(screen.getByPlaceholderText('Type a message…')).toBeTruthy();
   }, 30_000);
 });

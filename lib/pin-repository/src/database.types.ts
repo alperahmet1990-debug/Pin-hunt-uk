@@ -641,7 +641,7 @@ export interface Database {
           pin_ids: Json;
           for_trade_pin_ids: Json;
           photo_urls: Json;
-          created_at: string;
+          trade_id: string | null;  trade_event: string | null;  created_at: string;
         };
         Insert: {
           id?: string;

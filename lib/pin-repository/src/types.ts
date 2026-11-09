@@ -900,8 +900,19 @@ export interface ConversationMessage {
   /** IDs that the sender had marked For Trade when sharing the message. */
   forTradePinIds: string[];
   photoUrls: string[];
+  /**
+   * Set on a line the server wrote about a trade step (migration 071), sent
+   * as the collector who took the step. Clients can't send these.
+   */
+  tradeId?: string;
+  tradeEvent?: TradeChatEvent;
   createdAt: string;
 }
+
+/** The trade steps written into a chat (migration 071). */
+export type TradeChatEvent =
+  | 'proposed' | 'items_changed' | 'accepted' | 'declined' | 'cancelled'
+  | 'posted' | 'received' | 'completed' | 'problem';
 
 export interface SendConversationMessageInput {
   messageType?: ConversationMessage['messageType'];

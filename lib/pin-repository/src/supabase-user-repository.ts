@@ -70,6 +70,7 @@ import type {
   Trade,
   TradeItem,
   TradeItemInput,
+  TradeChatEvent,
   TradeMessage,
   TraderProfile,
   TradeRating,
@@ -753,6 +754,25 @@ class SupabaseUserPinRepository implements IUserPinRepository {
 
   setTradeItems(tradeId: string, items: TradeItemInput[]): Promise<Trade> {
     return this.callTradeRpc('trade_set_items', { p_trade_id: tradeId, p_items: tradeItemsParam(items) });
+  }
+
+  async getTradesWaitingCount(): Promise<number> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data, error } = await (this.client as any).rpc('trades_waiting_for_me');
+    if (error) throw new Error(error.message);
+    return typeof data === 'number' ? data : Number(data ?? 0) || 0;
+  }
+
+  async getConversationIdForTrade(tradeId: string): Promise<string | null> {
+    const { data, error } = await this.client
+      .from('conversations')
+      .select('id')
+      .eq('trade_id', tradeId)
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    if (error) throw new Error(error.message);
+    return ((data as { id?: string } | null)?.id) ?? null;
   }
 
   async getTradeItems(tradeIds: string[]): Promise<Record<string, TradeItem[]>> {
@@ -2513,6 +2533,8 @@ class SupabaseUserPinRepository implements IUserPinRepository {
             pinIds: (lastMsgRow.pin_ids as string[] | null) ?? [],
             forTradePinIds: (lastMsgRow.for_trade_pin_ids as string[] | null) ?? [],
             photoUrls: (lastMsgRow.photo_urls as string[] | null) ?? [],
+            tradeId: (lastMsgRow.trade_id as string | null) ?? undefined,
+            tradeEvent: (lastMsgRow.trade_event as TradeChatEvent | null) ?? undefined,
             createdAt: lastMsgRow.created_at as string,
           }
         : undefined,
@@ -2692,6 +2714,8 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       pinIds: (r.pin_ids as string[] | null) ?? [],
       forTradePinIds: (r.for_trade_pin_ids as string[] | null) ?? [],
       photoUrls: (r.photo_urls as string[] | null) ?? [],
+      tradeId: (r.trade_id as string | null) ?? undefined,
+      tradeEvent: (r.trade_event as TradeChatEvent | null) ?? undefined,
       createdAt: r.created_at as string,
     }));
   }

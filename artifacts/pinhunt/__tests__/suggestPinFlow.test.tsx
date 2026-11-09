@@ -30,7 +30,7 @@ jest.mock('@/utils/submissionImage', () => ({
   pickSubmissionImage: jest.fn(() => Promise.resolve({ uri: 'file:///front.jpg', width: 800, height: 800, base64: 'front64' })),
   compressSubmissionImage: jest.fn(),
 }));
-jest.mock('@/utils/identifyPin', () => ({ identifyPin: (...args: unknown[]) => mockIdentify(...args) }));
+jest.mock('@/utils/identifyPin', () => ({ identifyPin: (...args: unknown[]) => mockIdentify(...args), recordScanOutcome: jest.fn() }));
 jest.mock('@/components/KeyboardAwareScrollViewCompat', () => ({ KeyboardAwareScrollViewCompat: require('react-native').ScrollView }));
 
 const RIGHTS = 'I took this photo and PinHunt may use it as this pin’s catalogue image.';

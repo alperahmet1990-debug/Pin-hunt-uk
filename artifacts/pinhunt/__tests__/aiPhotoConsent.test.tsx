@@ -32,7 +32,7 @@ jest.mock('expo-image-manipulator', () => ({
   manipulateAsync: jest.fn(() => Promise.resolve({ uri: 'file:///small.jpg', width: 1024, height: 1024, base64: 'small' })),
   SaveFormat: { JPEG: 'jpeg' },
 }));
-jest.mock('@/utils/identifyPin', () => ({ identifyPin: (...args: unknown[]) => mockIdentify(...args) }));
+jest.mock('@/utils/identifyPin', () => ({ identifyPin: (...args: unknown[]) => mockIdentify(...args), recordScanOutcome: jest.fn() }));
 jest.mock('@/utils/submissionImage', () => ({
   pickSubmissionImage: jest.fn(() => Promise.resolve({ uri: 'file:///front.jpg', width: 800, height: 800, base64: 'front64' })),
   compressSubmissionImage: jest.fn(),

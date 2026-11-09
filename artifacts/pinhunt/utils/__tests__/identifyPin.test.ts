@@ -1,4 +1,4 @@
-import { identifyPin, SCAN_NETWORK_MESSAGE, SCAN_TIMEOUT_MESSAGE, SCAN_TIMEOUT_MS } from '../identifyPin';
+import { identifyPin, recordScanOutcome, SCAN_NETWORK_MESSAGE, SCAN_TIMEOUT_MESSAGE, SCAN_TIMEOUT_MS } from '../identifyPin';
 
 describe('identifyPin', () => {
   const realFetch = globalThis.fetch;
@@ -57,5 +57,47 @@ describe('identifyPin', () => {
 
     await expect(identifyPin('abc', 'image/jpeg')).rejects.toThrow(SCAN_NETWORK_MESSAGE);
     expect(jest.getTimerCount()).toBe(0);
+  });
+
+  it('passes the scan id through, or null when an older server sends none', async () => {
+    globalThis.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ matches: [], scanId: 'abc-123' }),
+    }) as unknown as typeof fetch;
+    expect((await identifyPin('abc', 'image/jpeg')).scanId).toBe('abc-123');
+    globalThis.fetch = jest.fn().mockResolvedValue({ ok: true, json: async () => ({ matches: [] }) }) as unknown as typeof fetch;
+    expect((await identifyPin('abc', 'image/jpeg')).scanId).toBeNull();
+  });
+});
+
+// #113: fire-and-forget; never throws, sends nothing without a scan id or token.
+describe('recordScanOutcome', () => {
+  const realFetch = globalThis.fetch;
+  afterEach(() => { globalThis.fetch = realFetch; });
+
+  it('posts the scan id and the chosen pin (or null)', () => {
+    const fetchMock = jest.fn().mockResolvedValue({ ok: true });
+    globalThis.fetch = fetchMock as unknown as typeof fetch;
+    recordScanOutcome('scan-1', null, 'tok');
+    const [url, init] = fetchMock.mock.calls[0];
+    expect(String(url)).toMatch(/\/scan\/outcome$/);
+    expect(init.headers.Authorization).toBe('Bearer tok');
+    expect(JSON.parse(init.body)).toEqual({ scanId: 'scan-1', chosenPinId: null });
+  });
+
+  it('sends nothing without a scan id or a session', () => {
+    const fetchMock = jest.fn();
+    globalThis.fetch = fetchMock as unknown as typeof fetch;
+    recordScanOutcome(null, 'p1', 'tok');
+    recordScanOutcome('scan-1', 'p1', undefined);
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("a failed request doesn't throw", async () => {
+    jest.spyOn(console, 'warn').mockImplementation(() => {});
+    globalThis.fetch = jest.fn().mockRejectedValue(new TypeError('Failed to fetch')) as unknown as typeof fetch;
+    expect(() => recordScanOutcome('scan-1', 'p1', 'tok')).not.toThrow();
+    await new Promise<void>(r => setImmediate(() => r()));
+    jest.restoreAllMocks();
   });
 });

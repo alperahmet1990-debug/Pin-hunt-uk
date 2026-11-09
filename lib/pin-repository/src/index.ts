@@ -32,6 +32,7 @@ export type {
   UpdatePinSubmissionInput,
   Trade,
   TradeItem,
+  TradeItemInput,
   TradeMessage,
   TradeRating,
   TraderProfile,

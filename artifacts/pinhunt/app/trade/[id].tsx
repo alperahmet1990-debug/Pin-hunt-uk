@@ -1,7 +1,7 @@
 /**
  * Trade Chat screen — messages, status controls, and post-trade rating.
  */
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   ActivityIndicator,
@@ -34,6 +34,10 @@ import { useBlockedUsers } from '@/context/BlockedUsersContext';
 import type { PotentialTradePin, Trade, TradeMessage, TradeStatus } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
+import { TradeItemsCard } from '@/components/TradeItemsCard';
+import { TradePinsSheet } from '@/components/TradePinsSheet';
+import { usePinCatalogue } from '@/context/PinCatalogueContext';
+import { choiceKey, matchPinChoices, mergeChoices, toTradeItemInputs, tradeHasPins, tradeItemChoices } from '@/utils/tradeItems';
 import { formatDate } from '@/utils/format';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -314,6 +318,8 @@ export default function TradeScreen() {
   const [confirmAction,  setConfirmAction]  = useState<'received' | 'cancel' | null>(null);
   const [reportReason,   setReportReason]   = useState('');
   const [potentialPins,  setPotentialPins]  = useState<PotentialTradePin[]>([]);
+  const [editPinsOpen,   setEditPinsOpen]   = useState(false);
+  const { pins: cataloguePins, ensurePins } = usePinCatalogue();
   const [bannerDismissed, setBannerDismissed] = useState(false);
 
   // Load persisted dismissal state for this trade
@@ -464,7 +470,29 @@ export default function TradeScreen() {
   const theirTracking = trade ? otherSideTracking(trade, userId) : undefined;
   const botPad      = Platform.OS === 'web' ? 24 : insets.bottom + 8;
 
-  const showBanner = potentialPins.length > 0 && !bannerDismissed;
+  // The agreed pins (migration 070) replace the live match guess once there
+  // are any. A trade from before 070 has none, so it still shows the match.
+  const items = trade?.items ?? [];
+  const hasPins = tradeHasPins(items);
+  const canEditPins = trade?.status === 'pending' && (isInitiator || isRecipient);
+  const showBanner = !hasPins && potentialPins.length > 0 && !bannerDismissed;
+  const pinMap = useMemo(() => new Map(cataloguePins.map(pin => [pin.id, pin])), [cataloguePins]);
+  useEffect(() => {
+    const ids = items.map(i => i.pinhuntId).filter((x): x is string => !!x);
+    if (ids.length) void ensurePins(ids);
+  }, [items, ensurePins]);
+  const currentChoices = useMemo(() => tradeItemChoices(items, isInitiator), [items, isInitiator]);
+  const editChoices = useMemo(
+    () => mergeChoices(currentChoices, matchPinChoices(potentialPins)),
+    [currentChoices, potentialPins],
+  );
+  const editSelected = useMemo(() => new Set(currentChoices.map(choiceKey)), [currentChoices]);
+  const saveItems = async (selected: Set<string>) => {
+    if (!repo || !trade) return;
+    if (await runAction(() => repo.setTradeItems(trade.id, toTradeItemInputs(editChoices, selected, isInitiator)))) {
+      setEditPinsOpen(false);
+    }
+  };
 
   const handlePinPress = (pinhuntId: string) => {
     router.push({ pathname: '/pin/[id]', params: { id: pinhuntId } });
@@ -521,6 +549,16 @@ export default function TradeScreen() {
               showsVerticalScrollIndicator={false}
               onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: false })}
             >
+              {(hasPins || canEditPins) && (
+                <TradeItemsCard
+                  items={items}
+                  viewerIsInitiator={isInitiator}
+                  pinFor={pinhuntId => pinMap.get(pinhuntId)}
+                  onPinPress={handlePinPress}
+                  onEdit={canEditPins ? () => setEditPinsOpen(true) : undefined}
+                  agreed={trade.status !== 'pending'}
+                />
+              )}
               {messages.length === 0 && (
                 <View style={styles.emptyMessages}>
                   <Text style={[styles.emptyMsgText, { color: colors.homeMuted }]}>
@@ -589,13 +627,16 @@ export default function TradeScreen() {
                     >
                       <Text style={[styles.actionBtnLabel, { color: colors.destructive }]}>Decline</Text>
                     </TouchableOpacity>
+                    {/* Accept what's on screen: a change made meanwhile is refused. */}
                     <TouchableOpacity
-                      onPress={() => void runAction(() => repo!.acceptTrade(trade.id))}
+                      onPress={() => hasPins
+                        ? void runAction(() => repo!.acceptTrade(trade.id, trade.itemsVersion))
+                        : setEditPinsOpen(true)}
                       activeOpacity={0.85}
                       accessibilityRole="button"
                       style={[styles.actionBtn, { backgroundColor: colors.owned + '18', borderColor: colors.owned + '55' }]}
                     >
-                      <Text style={[styles.actionBtnLabel, { color: colors.owned }]}>Accept</Text>
+                      <Text style={[styles.actionBtnLabel, { color: colors.owned }]}>{hasPins ? 'Accept' : 'Add Pins'}</Text>
                     </TouchableOpacity>
                   </View>
                 )}
@@ -764,6 +805,18 @@ export default function TradeScreen() {
           </>
         )}
       </KeyboardAvoidingView>
+      <TradePinsSheet
+        visible={editPinsOpen}
+        onClose={() => { if (!actioning) setEditPinsOpen(false); }}
+        title={hasPins ? 'Change the pins' : 'Add the pins'}
+        intro="The other collector sees your change in this trade. Pins can't change once it's accepted."
+        confirmLabel="Save Pins"
+        choices={editChoices}
+        initialSelected={editSelected}
+        busy={actioning}
+        pinFor={pinhuntId => pinMap.get(pinhuntId)}
+        onConfirm={selected => void saveItems(selected)}
+      />
       <ConfirmDialog
         visible={confirmAction === 'received'}
         title="Received their pins?"

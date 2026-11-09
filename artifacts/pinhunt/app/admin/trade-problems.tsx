@@ -15,7 +15,8 @@ import {
   View,
 } from 'react-native';
 import { Stack } from 'expo-router';
-import type { ProblemTrade } from '@workspace/pin-repository';
+import type { ProblemTrade, TradeItem } from '@workspace/pin-repository';
+import { tradeItemsSummary } from '@/components/TradeItemsCard';
 import { useColors } from '@/hooks/useColors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { formatDate } from '@/utils/format';
@@ -39,12 +40,18 @@ export default function TradeProblemsScreen() {
   const [confirming, setConfirming] = useState<{ id: string; outcome: Outcome } | null>(null);
   const [note, setNote] = useState('');
   const [saving, setSaving] = useState(false);
+  // The agreed pins of each reported trade (migration 070). Older trades have none.
+  const [tradePins, setTradePins] = useState<Record<string, TradeItem[]>>({});
 
   const load = useCallback(async () => {
     if (!repo) return;
     try {
       setError(null);
-      setItems(await repo.getProblemTrades());
+      const reports = await repo.getProblemTrades();
+      setItems(reports);
+      repo.getTradeItems(reports.map(r => r.id))
+        .then(setTradePins)
+        .catch(() => setTradePins({}));
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Could not load problem reports.');
     } finally {
@@ -82,6 +89,18 @@ export default function TradeProblemsScreen() {
           Reported by {name(reporter)} on {day(item.reportedAt)}
         </Text>
         <Text style={[styles.reason, { color: colors.homeInk }]}>{item.reason ?? 'No reason given.'}</Text>
+        {(tradePins[item.id]?.length ?? 0) > 0 ? (
+          <>
+            <Text selectable style={[styles.meta, { color: colors.homeInk }]}>
+              {name(item.initiatorUsername)} sends: {tradeItemsSummary(tradePins[item.id], 'offered')}
+            </Text>
+            <Text selectable style={[styles.meta, { color: colors.homeInk }]}>
+              {name(item.recipientUsername)} sends: {tradeItemsSummary(tradePins[item.id], 'requested')}
+            </Text>
+          </>
+        ) : (
+          <Text style={[styles.meta, { color: colors.homeMuted }]}>No agreed pins recorded.</Text>
+        )}
         <Text selectable style={[styles.meta, { color: colors.homeMuted }]}>
           {sideLine(item.initiatorUsername, item.initiatorPostedAt, item.initiatorReceivedAt, item.initiatorCarrier, item.initiatorTracking)}
         </Text>

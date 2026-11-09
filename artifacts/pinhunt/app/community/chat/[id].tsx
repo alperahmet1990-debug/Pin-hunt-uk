@@ -19,7 +19,7 @@ import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
 import { uploadCommunityPhoto } from '@/utils/communityPhoto';
 import { radius, spacing } from '@/constants/theme';
-import type { CataloguePin, CommunityPost, Conversation, ConversationMessage, TradeStatus } from '@workspace/pin-repository';
+import type { CataloguePin, CommunityPost, Conversation, ConversationMessage, PotentialTradePin, TradeStatus } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
 import { chatListData } from '@/utils/chatList';
 import { ErrorState } from '@/components/ui/ErrorState';
@@ -31,6 +31,8 @@ import { useToast } from '@/components/ui/Toast';
 import { otherParticipantId } from '@/utils/blockedUsers';
 import { canProposeInChat, proposalRefusalLine, tradeCardTitle } from '@/utils/tradeActions';
 import { formatDate } from '@/utils/format';
+import { TradePinsSheet } from '@/components/TradePinsSheet';
+import { chatPinChoices, matchPinChoices, mergeChoices, preselectedKeys, toTradeItemInputs } from '@/utils/tradeItems';
 
 /** Space between messages (FlatList content has no `gap`). */
 function MessageGap() {
@@ -271,11 +273,11 @@ export default function ChatScreen() {
     });
     setSelectedPinIds([]);
   };
-  const agreeTrade = async () => {
+  const agreeTrade = async (selected: Set<string>) => {
     if (!repo || !userId || !conv) return;
     try {
       setSending(true);
-      const trade = await repo.proposeTradeInChat(conv.id);
+      const trade = await repo.proposeTradeInChat(conv.id, toTradeItemInputs(tradeChoices, selected, true));
       setConv(current => current ? { ...current, tradeId: trade.id } : current);
       setTradeStatus(trade.status);
       setTradeConfirmOpen(false);
@@ -290,6 +292,22 @@ export default function ChatScreen() {
   const otherBlocked = isBlocked(otherId);
   // Allow Trade Requests (migration 066): hide Propose Trade when the other
   // collector has turned it off. A failed check leaves it to the server.
+  // Pins for a proposal (migration 070): the pins shared in this chat first,
+  // then the collection match between the two collectors.
+  const [matchPins, setMatchPins] = useState<PotentialTradePin[]>([]);
+  useEffect(() => {
+    if (!repo || !userId || !otherId) return;
+    let cancelled = false;
+    repo.getPotentialTrades({ viewerId: userId, collectorId: otherId })
+      .then(pins => { if (!cancelled) setMatchPins(pins); })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [repo, userId, otherId]);
+  useEffect(() => { void ensurePins(matchPins.map(p => p.pinhuntId)); }, [matchPins, ensurePins]);
+  const chatChoices = useMemo(() => chatPinChoices(messages, userId), [messages, userId]);
+  const matchChoices = useMemo(() => matchPinChoices(matchPins), [matchPins]);
+  const tradeChoices = useMemo(() => mergeChoices(chatChoices, matchChoices), [chatChoices, matchChoices]);
+  const tradePreselected = useMemo(() => preselectedKeys(chatChoices, matchChoices), [chatChoices, matchChoices]);
   const [otherAcceptsTrades, setOtherAcceptsTrades] = useState(true);
   useEffect(() => {
     if (!repo || !otherId) return;
@@ -417,7 +435,7 @@ export default function ChatScreen() {
                 list it scrolled out of reach in long chats. */}
             {!!otherId && otherAcceptsTrades && canProposeInChat(conv?.tradeId, tradeStatus) && (
               <View style={[styles.proposeBar, { borderTopColor: colors.homeLine, backgroundColor: colors.homeBackground }]}>
-                <TouchableOpacity accessibilityRole="button" onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
+                <TouchableOpacity accessibilityRole="button" accessibilityLabel="Propose Trade" onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
                   <Feather name="check-circle" size={16} color={colors.homeCoral} />
                   <Text style={[styles.agreeText, { color: colors.homeCoral }]}>Propose Trade</Text>
                 </TouchableOpacity>
@@ -475,47 +493,18 @@ export default function ChatScreen() {
           messageId={safetyMessageId ?? undefined}
         />
       )}
-      <Modal
+      <TradePinsSheet
         visible={tradeConfirmOpen}
-        animationType="fade"
-        transparent
-        onRequestClose={() => setTradeConfirmOpen(false)}
-      >
-        <View style={[styles.confirmShade]}>
-          <View style={[styles.confirmCard, { backgroundColor: colors.homeBackground }]}>
-            <View style={[styles.confirmIcon, { backgroundColor: colors.homeAqua }]}>
-              <Feather name="check-circle" size={28} color={colors.homeCoral} />
-            </View>
-            <Text style={[styles.confirmTitle, { color: colors.homeInk }]}>Propose this trade?</Text>
-            <Text style={[styles.confirmBody, { color: colors.homeMuted }]}>
-              The other collector can accept or decline. Once accepted, you each post your own pins and confirm when theirs arrive.
-            </Text>
-            <View style={styles.confirmActions}>
-              <TouchableOpacity
-                disabled={sending}
-                onPress={() => setTradeConfirmOpen(false)}
-                accessibilityRole="button"
-                style={[styles.confirmButton, { backgroundColor: colors.homeAqua }]}
-              >
-                <Text style={[styles.confirmButtonText, { color: colors.homeInk }]}>Cancel</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                disabled={sending}
-                onPress={() => void agreeTrade()}
-                accessibilityRole="button"
-                accessibilityLabel="Confirm propose trade"
-                style={[styles.confirmButton, { backgroundColor: colors.homeCoral }]}
-              >
-                {sending ? (
-                  <ActivityIndicator size="small" color={colors.homeSurface} />
-                ) : (
-                  <Text style={[styles.confirmButtonText, { color: colors.homeSurface }]}>Confirm</Text>
-                )}
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </Modal>
+        onClose={() => { if (!sending) setTradeConfirmOpen(false); }}
+        title="Propose a trade"
+        intro="Choose the pins you're swapping. Either of you can change them until it's accepted. Then you each post your own pins and confirm when theirs arrive."
+        confirmLabel="Propose Trade"
+        choices={tradeChoices}
+        initialSelected={tradePreselected}
+        busy={sending}
+        pinFor={pinhuntId => pinMap.get(pinhuntId)}
+        onConfirm={selected => void agreeTrade(selected)}
+      />
       <Modal
         visible={attachmentMenuOpen}
         animationType={Platform.OS === 'android' ? 'none' : 'fade'}

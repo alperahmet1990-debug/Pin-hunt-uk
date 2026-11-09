@@ -58,6 +58,7 @@ import type {
   ContactPreferences,
   Trade,
   TradeItem,
+  TradeItemInput,
   TradeMessage,
   UpdateExternalSaleListingInput,
   UpdatePinSubmissionInput,
@@ -160,8 +161,20 @@ export interface IUserPinRepository {
   /** Propose a trade to another collector. */
   proposeTrade(recipientId: string, notes?: string): Promise<Trade>;
 
-  /** Propose to the other person in a chat and link it, in one step. */
-  proposeTradeInChat(conversationId: string, notes?: string): Promise<Trade>;
+  /**
+   * Propose to the other person in a chat and link it, in one step, with the
+   * pins being swapped (migration 070: at least one, at most 12 each way).
+   */
+  proposeTradeInChat(conversationId: string, items: TradeItemInput[], notes?: string): Promise<Trade>;
+
+  /** Either side, while pending: replace the pins in the trade. */
+  setTradeItems(tradeId: string, items: TradeItemInput[]): Promise<Trade>;
+
+  /**
+   * The agreed pins of several trades, by trade id. Participants read their
+   * own trades; admins read any (migration 070), for problem reviews.
+   */
+  getTradeItems(tradeIds: string[]): Promise<Record<string, TradeItem[]>>;
 
   /**
    * Whether another collector accepts new chats and new trade proposals
@@ -169,8 +182,11 @@ export interface IUserPinRepository {
    */
   getContactPreferences(userId: string): Promise<ContactPreferences>;
 
-  /** Recipient only, while pending. */
-  acceptTrade(tradeId: string): Promise<Trade>;
+  /**
+   * Recipient only, while pending, and only once the trade has pins. Pass the
+   * itemsVersion that was shown, so a change made meanwhile is refused.
+   */
+  acceptTrade(tradeId: string, itemsVersion?: number): Promise<Trade>;
 
   /** Recipient only, while pending. */
   declineTrade(tradeId: string): Promise<Trade>;

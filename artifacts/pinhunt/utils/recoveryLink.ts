@@ -82,6 +82,8 @@ export function resolveGuardTarget(args: {
   const inUpdatePassword = inAuthGroup && segments[1] === 'update-password';
 
   if (hasSession && isRecovery) return inUpdatePassword ? null : UPDATE_PASSWORD_ROUTE;
+  // The Privacy Policy and Terms can be read before signing up or finishing a profile.
+  if (segments[0] === 'legal') return null;
   if (!hasSession && !inAuthGroup) return '/(auth)/login';
   if (hasSession && inAuthGroup) return needsUsername ? '/complete-profile' : '/(tabs)';
   if (hasSession && needsUsername && !inCompleteProfile) return '/complete-profile';

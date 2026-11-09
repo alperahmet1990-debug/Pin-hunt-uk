@@ -48,6 +48,14 @@ describe('resolveGuardTarget', () => {
       resolveGuardTarget({ ...base, isRecovery: true, needsUsername: true, segments: ['(auth)', 'update-password'] }),
     ).toBeNull();
   });
+  it('lets anyone read the legal pages, signed in or not', () => {
+    const segments = ['legal', '[doc]'];
+    expect(resolveGuardTarget({ ...base, hasSession: false, segments })).toBeNull();
+    expect(resolveGuardTarget({ ...base, needsUsername: true, segments })).toBeNull();
+    expect(resolveGuardTarget({ ...base, segments })).toBeNull();
+    // Password recovery still comes first.
+    expect(resolveGuardTarget({ ...base, isRecovery: true, segments })).toBe(UPDATE_PASSWORD_ROUTE);
+  });
   it('keeps normal redirects unchanged', () => {
     expect(resolveGuardTarget({ ...base, hasSession: false, segments: ['(tabs)'] })).toBe('/(auth)/login');
     expect(resolveGuardTarget({ ...base, hasSession: false, segments: ['(auth)', 'login'] })).toBeNull();

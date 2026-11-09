@@ -343,6 +343,12 @@ export default function ProfileScreen() {
               {RATE_APP_ENABLED && <SettingsRow icon="star" label="Rate the App" last />}
             </Section>
 
+            {/* Legal */}
+            <Section title="Legal">
+              <SettingsRow icon="lock" label="Privacy Policy" onPress={() => router.push('/legal/privacy' as any)} />
+              <SettingsRow icon="file-text" label="Terms of Use" onPress={() => router.push('/legal/terms' as any)} last />
+            </Section>
+
             {/* Admin */}
             {isAdmin && (
               <Section title="Admin">

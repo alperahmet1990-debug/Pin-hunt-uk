@@ -37,6 +37,7 @@ import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { ScanResult } from '@/components/scan/ScanResult';
 import { ScanCamera, type ScanCameraPhoto } from '@/components/scan/ScanCamera';
 import { ScanProgress } from '@/components/scan/ScanProgress';
+import { IDLE_VIEWFINDER_MAX, idleViewfinderHeight } from '@/components/scan/scanLayout';
 import { useMyAccess } from '@/hooks/useMyAccess';
 import { useAiPhotoConsent } from '@/hooks/useAiPhotoConsent';
 import { ErrorState } from '@/components/ui/ErrorState';
@@ -159,7 +160,7 @@ export default function ScanScreen() {
     };
   }, []));
   const scrollRef = useRef<ScrollView>(null);
-  const { width: screenWidth } = useWindowDimensions();
+  const { width: screenWidth, height: screenHeight } = useWindowDimensions();
   // Square live preview, as wide as the screen allows (capped for tall phones).
   const viewfinderHeight = LIVE_CAMERA ? Math.min(screenWidth - 32, 420) : 300;
   const [resultKey, setResultKey] = useState(0);
@@ -181,6 +182,10 @@ export default function ScanScreen() {
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   // Clears the floating web tab bar (#260).
   const botPad = tabScreenBottomPad(insets.bottom + 80);
+  // Before a photo (no live camera), the card gives way so all three actions
+  // fit above the tab bar on a 320×568 screen (WP3).
+  const idleHeight = idleViewfinderHeight(screenHeight, topPad + 16, botPad);
+  const compactIdle = idleHeight < IDLE_VIEWFINDER_MAX;
 
   const flashShutter = useCallback(
     (cb?: () => void) => {
@@ -514,7 +519,7 @@ export default function ScanScreen() {
           <Animated.View
             style={[
               styles.viewfinder,
-              { height: noMatchFound ? Math.min(viewfinderHeight, 160) : viewfinderHeight, backgroundColor: '#0a0a18', borderRadius: 18, opacity: shutterAnim },
+              { height: scanState === 'idle' ? idleHeight : noMatchFound ? Math.min(viewfinderHeight, 160) : viewfinderHeight, backgroundColor: '#0a0a18', borderRadius: 18, opacity: shutterAnim },
             ]}
           >
             {scanState === 'idle' && !LIVE_CAMERA && (
@@ -525,7 +530,7 @@ export default function ScanScreen() {
                 accessibilityRole="button"
                 accessibilityLabel="Scan a pin with the camera"
               >
-                <Feather name="camera" size={48} color="rgba(255,255,255,0.25)" />
+                <Feather name="camera" size={compactIdle ? 32 : 48} color="rgba(255,255,255,0.25)" />
                 <Text style={styles.viewfinderHint}>Point camera at your pin</Text>
                 <Text style={styles.viewfinderHintSub}>
                   {Platform.OS === 'web' ? 'Select a photo from your library' : 'Works best in good light on a plain background'}

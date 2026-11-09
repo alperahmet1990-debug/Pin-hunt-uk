@@ -17,7 +17,7 @@ export const COMPANY = {
   number: '17570164',
   registeredIn: 'England and Wales',
   /** Registered office, exactly as on Companies House. */
-  registeredOffice: '',
+  registeredOffice: '71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ',
   /** Mailbox for privacy requests, complaints and legal notices. */
   contactEmail: '',
   /** ICO data protection fee registration number (ZA…), once paid. */

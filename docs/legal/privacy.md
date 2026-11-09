@@ -6,11 +6,11 @@ This explains what information PinHunt collects, why, who it goes to and the cho
 
 ## Who we are
 
-PinHunt is run by PinHunt Ltd, a company registered in England and Wales (company number 17570164). Registered office: [to be confirmed].
+PinHunt is run by PinHunt Ltd, a company registered in England and Wales (company number 17570164). Registered office: 71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ.
 
 PinHunt Ltd is the "controller" of your personal information under UK data protection law. ICO registration number: [to be confirmed].
 
-To contact us about privacy, email [to be confirmed] or write to PinHunt Ltd, [to be confirmed].
+To contact us about privacy, email [to be confirmed] or write to PinHunt Ltd, 71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ.
 
 ## What we collect
 
@@ -72,7 +72,7 @@ Under UK data protection law you can ask us for a copy of your information, ask 
 - Turn Collectors Nearby off, or make your profile private, in Profile › Edit Profile.
 - Withdraw permission to send photos to AI services by not scanning or submitting photos; the app asks again before a photo is sent.
 
-To use any other right, email [to be confirmed] or write to PinHunt Ltd, [to be confirmed]. We will reply within one month.
+To use any other right, email [to be confirmed] or write to PinHunt Ltd, 71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ. We will reply within one month.
 
 If you are unhappy with how we handle your information, please tell us first. You can also complain to the Information Commissioner's Office (ico.org.uk, 0303 123 1113).
 

@@ -6,7 +6,7 @@ These terms are the agreement between you and PinHunt Ltd when you use PinHunt. 
 
 ## About us
 
-PinHunt is provided by PinHunt Ltd, a company registered in England and Wales (company number 17570164), registered office [to be confirmed]. To contact us, email [to be confirmed] or write to PinHunt Ltd, [to be confirmed].
+PinHunt is provided by PinHunt Ltd, a company registered in England and Wales (company number 17570164), registered office 71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ. To contact us, email [to be confirmed] or write to PinHunt Ltd, 71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ.
 
 ## Who can use PinHunt
 

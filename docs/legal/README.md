@@ -11,7 +11,7 @@ PinHunt Ltd was incorporated on 9 November 2026 (company number **17570164**, En
 
 | # | Step | Why | Where |
 |---|---|---|---|
-| 1 | Fill in `registeredOffice`, `contactEmail` and `icoRegistration` in `utils/legal.ts`, then regenerate the Markdown. | The app shows "Draft" and "[to be confirmed]" until these are set. | `artifacts/pinhunt/utils/legal.ts` |
+| 1 | Fill in `contactEmail` and `icoRegistration` in `utils/legal.ts`, then regenerate the Markdown. (`registeredOffice` is set: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ.) | The app shows "Draft" and "[to be confirmed]" until these are set. | `artifacts/pinhunt/utils/legal.ts` |
 | 2 | Pay the ICO data protection fee (most likely tier 1, about £52 a year) and add the registration number. | A UK company processing personal data must register unless exempt. PinHunt isn't exempt: it holds accounts, messages and approximate locations. | ico.org.uk/for-organisations/data-protection-fee |
 | 3 | Set up the contact mailbox (e.g. privacy@ on your domain). Also set `SUPPORT_EMAIL` in `constants/appConfig.ts`, which turns on "Send Feedback". | Privacy requests must be answered within one month. | |
 | 4 | Have the documents reviewed (see the open questions below). | Liability wording, children's use and international transfers need a professional eye. | |

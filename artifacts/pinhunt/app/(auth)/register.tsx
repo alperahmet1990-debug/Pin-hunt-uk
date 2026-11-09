@@ -149,6 +149,12 @@ export default function RegisterScreen() {
               <Text style={styles.buttonText}>Create account</Text>
             )}
           </TouchableOpacity>
+          <Text style={styles.agreement}>
+            By creating an account you agree to our{' '}
+            <Link href="/legal/terms" style={styles.agreementLink}>Terms of Use</Link>
+            {' '}and{' '}
+            <Link href="/legal/privacy" style={styles.agreementLink}>Privacy Policy</Link>.
+          </Text>
         </View>
 
         {/* Footer */}
@@ -258,6 +264,15 @@ function makeStyles(colors: any) {
       elevation: 3,
     },
     buttonDisabled: { opacity: 0.6 },
+    agreement: {
+      fontSize: 12.5,
+      lineHeight: 18,
+      fontFamily: 'Inter_400Regular',
+      color: colors.homeMuted,
+      textAlign: 'center',
+      marginTop: spacing.md,
+    },
+    agreementLink: { fontFamily: 'Inter_600SemiBold', color: colors.homeCoral },
     buttonText: {
       fontSize: 16,
       fontFamily: 'Inter_600SemiBold',

@@ -30,7 +30,11 @@ jest.mock('expo-image-manipulator', () => ({
   manipulateAsync: jest.fn(() => Promise.resolve({ uri: 'file:///small.jpg', width: 1024, height: 1024, base64: 'small' })),
   SaveFormat: { JPEG: 'jpeg' },
 }));
-jest.mock('@/utils/identifyPin', () => ({ identifyPin: (...args: unknown[]) => mockIdentify(...args) }));
+const mockRecordOutcome = jest.fn();
+jest.mock('@/utils/identifyPin', () => ({
+  identifyPin: (...args: unknown[]) => mockIdentify(...args),
+  recordScanOutcome: (...args: unknown[]) => mockRecordOutcome(...args),
+}));
 jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ session: null }) }));
 jest.mock('@/hooks/useMyAccess', () => ({ useMyAccess: () => ({ isAdmin: false, isAppCreator: false, isContributor: false, loading: false }) }));
 jest.mock('@/context/CollectionContext', () => ({ useCollection: () => ({ markViewed: jest.fn() }) }));
@@ -52,6 +56,7 @@ beforeEach(() => {
       { pinId: 'p1', confidence: 55, reasoning: 'Castle' },
     ],
     imageInsights: null,
+    scanId: 'scan-1',
   });
 });
 
@@ -200,6 +205,43 @@ describe('Scan result (UX-005)', () => {
     await fireEvent.press(screen.getByRole('button', { name: 'Try again' }));
     await screen.findByRole('header', { name: 'Is this your pin?' });
     expect(mockIdentify).toHaveBeenCalledTimes(2);
+  });
+});
+
+// #113: what the collector picked is recorded, without waiting on it.
+describe('Scan outcome (#113)', () => {
+  it('"That\'s it" records the best match', async () => {
+    await scanToResult();
+    await fireEvent.press(screen.getByRole('button', { name: "That's it" }));
+    expect(mockRecordOutcome).toHaveBeenCalledTimes(1);
+    expect(mockRecordOutcome).toHaveBeenCalledWith('scan-1', 'p2', undefined);
+  });
+
+  it('"None of these" records none, once', async () => {
+    await scanToResult();
+    await fireEvent.press(screen.getByRole('button', { name: 'Not it' }));
+    await act(async () => { await fireEvent.press(screen.getByRole('button', { name: 'None of these' })); });
+    expect(mockRecordOutcome).toHaveBeenCalledWith('scan-1', null, undefined);
+    expect(mockRecordOutcome).toHaveBeenCalledTimes(1);
+  });
+
+  it('"Not it", then the alternative: records that pin', async () => {
+    await scanToResult();
+    await fireEvent.press(screen.getByRole('button', { name: 'Not it' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Compare Castle Fireworks' }));
+    await fireEvent.press(screen.getByRole('button', { name: "That's it" }));
+    expect(mockRecordOutcome).toHaveBeenCalledWith('scan-1', 'p1', undefined);
+  });
+
+  it('records nothing when the server sent no scan id', async () => {
+    mockIdentify.mockResolvedValueOnce({
+      matches: [{ pinId: 'p2', confidence: 81, reasoning: 'Blue sky' }],
+      imageInsights: null,
+      scanId: null,
+    });
+    await scanToResult();
+    await fireEvent.press(screen.getByRole('button', { name: "That's it" }));
+    expect(mockRecordOutcome).not.toHaveBeenCalled();
   });
 });
 

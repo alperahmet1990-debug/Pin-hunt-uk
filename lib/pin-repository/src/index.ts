@@ -154,6 +154,36 @@ export {
   setMyPinPrice,
 } from './community-prices';
 
+// ─── Where each pin lives (migration 067, #547) ───────────────────────────────
+export type {
+  CollectionPlace,
+  PinLocation,
+  PinLocationInput,
+  PinLocationsClient,
+  PlaceInput,
+  PlaceKind,
+} from './pin-locations';
+export {
+  clearPinLocations,
+  createPlace,
+  deletePlace,
+  describeLocation,
+  freePockets,
+  getMyPinLocations,
+  getMyPlaces,
+  isPinLocationsUnavailable,
+  mapPlaceRow,
+  MAX_LOCATION_NOTE,
+  MAX_PLACE_NAME,
+  normaliseLocationInput,
+  normalisePlaceInput,
+  PIN_LOCATION_BATCH,
+  PLACE_KINDS,
+  setPinLocations,
+  suggestPockets,
+  updatePlace,
+} from './pin-locations';
+
 // ─── Database types ───────────────────────────────────────────────────────────
 export type { Database, Tables, TablesInsert, TablesUpdate } from './database.types';
 

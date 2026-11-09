@@ -4,6 +4,7 @@ import Constants from 'expo-constants';
 import * as Updates from 'expo-updates';
 import { useColors } from '@/hooks/useColors';
 import { buildInfoLines } from '@/utils/buildInfo';
+import { companyLine } from '@/utils/legal';
 
 export default function AboutScreen() {
   const colors = useColors();
@@ -38,6 +39,7 @@ export default function AboutScreen() {
           </View>
         )}
       </View>
+      <Text style={[styles.company, { color: colors.homeMuted }]}>{companyLine()}</Text>
     </ScrollView>
   );
 }
@@ -49,5 +51,6 @@ const styles = StyleSheet.create({
   version: { fontSize: 14, fontFamily: 'Inter_500Medium' },
   body: { fontSize: 13, fontFamily: 'Inter_400Regular', textAlign: 'center', marginTop: 8, lineHeight: 18 },
   build: { alignSelf: 'stretch', alignItems: 'center', gap: 2, marginTop: 12, paddingTop: 12, borderTopWidth: StyleSheet.hairlineWidth },
+  company: { fontSize: 12, lineHeight: 18, fontFamily: 'Inter_400Regular', textAlign: 'center', marginTop: 16 },
   buildLine: { fontSize: 12, fontFamily: 'Inter_400Regular', textAlign: 'center' },
 });

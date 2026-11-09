@@ -23,6 +23,8 @@
 //                       imageInsights } answers POST /scan/identify with that body instead of
 //                       a network error, and accepts the AI photo consent first, so scan
 //                       results can be captured (matches use demo pin ids, e.g. dp-003).
+//                       "consent": true pre-accepts the AI photo consent without answering
+//                       the scan API, so its failure (blocked request) can be captured.
 //   --route name=/path  extra ad-hoc route (repeatable)
 //   --viewports 390x844,320x568   --schemes light,dark
 //   --out <dir>         default <repo>/.screenshots
@@ -212,7 +214,7 @@ async function capture(webDir, outDir, routes, viewports, schemes) {
           });
           await page.evaluateOnNewDocument(storage => {
             for (const [k, v] of Object.entries(storage)) localStorage.setItem(k, v);
-          }, { ...DEMO_STORAGE, ...(identify ? aiConsentStorage(aiConsentVersion()) : {}), ...(route.storage ?? {}) });
+          }, { ...DEMO_STORAGE, ...(identify || route.consent ? aiConsentStorage(aiConsentVersion()) : {}), ...(route.storage ?? {}) });
           await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: scheme }]);
           await page.setViewport({ width, height, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
           await page.goto(origin + route.path, { waitUntil: 'networkidle0', timeout: 30_000 }).catch(() => {});
@@ -226,7 +228,7 @@ async function capture(webDir, outDir, routes, viewports, schemes) {
             await chooser.accept([UPLOAD_FIXTURE]);
             await new Promise(r => setTimeout(r, 1200));
           }
-          if (identify) await new Promise(r => setTimeout(r, 1200)); // let the result render
+          if (identify || route.consent) await new Promise(r => setTimeout(r, 1200)); // let the result render
           for (const label of clickSteps(route)) {
             const clicked = await page.evaluate(clickByText, label);
             if (!clicked) throw new Error(`Route "${route.name}": no visible element with text "${label}"`);

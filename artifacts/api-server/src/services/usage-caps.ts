@@ -45,7 +45,7 @@ export function imageHash(base64: string): string {
 }
 
 let client: SupabaseClient | null = null;
-function usageClient(): SupabaseClient | null {
+export function usageClient(): SupabaseClient | null {
   const url = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) return null;

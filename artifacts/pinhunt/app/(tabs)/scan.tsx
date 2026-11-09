@@ -22,7 +22,7 @@ import { useColors } from '@/hooks/useColors';
 import { useAuth } from '@/context/AuthContext';
 import { useCollection } from '@/context/CollectionContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
-import { identifyPin, type ImageInsights } from '@/utils/identifyPin';
+import { identifyPin, recordScanOutcome, type ImageInsights } from '@/utils/identifyPin';
 import { prepareScanPhoto, type ScanPhoto } from '@/utils/scanPhoto';
 import {
   RETAKE_TIPS,
@@ -167,6 +167,16 @@ export default function ScanScreen() {
   // Each identification run has an id; a cancelled or superseded run's
   // result is ignored when it arrives (UX-008a).
   const identifyRun = useRef(0);
+  // The current result's scan id, and whether its outcome was sent (#113).
+  const scanIdRef = useRef<string | null>(null);
+  const outcomeSent = useRef<string | null>(null);
+  /** Record what the collector picked: a pin, or null for "None of these". */
+  const sendOutcome = (chosenPinId: string | null) => {
+    const key = `${scanIdRef.current}:${chosenPinId ?? 'none'}`;
+    if (!scanIdRef.current || outcomeSent.current === key) return;
+    outcomeSent.current = key;
+    recordScanOutcome(scanIdRef.current, chosenPinId, session?.access_token);
+  };
 
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   // Clears the floating web tab bar (#260).
@@ -299,12 +309,14 @@ export default function ScanScreen() {
     setSentAt(Date.now());
 
     try {
-      const { matches: rawMatches, imageInsights } = await identifyPin(
+      scanIdRef.current = null;
+      const { matches: rawMatches, imageInsights, scanId } = await identifyPin(
         image.base64,
         image.mimeType,
         session?.access_token,
       );
       if (run !== identifyRun.current) return;
+      scanIdRef.current = scanId;
       setInsights(imageInsights);
 
       // The cached list only holds part of the catalogue — fetch any matched
@@ -366,6 +378,7 @@ export default function ScanScreen() {
 
   // ── Confirm match: "That's it" adds the pin without leaving the scan ─────────
   const handleConfirm = (pin: CataloguePin) => {
+    sendOutcome(pin.id);
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     markViewed(pin.id);
     setQuickAddPin(pin);
@@ -381,6 +394,7 @@ export default function ScanScreen() {
 
   const handleReset = () => {
     identifyRun.current += 1;
+    scanIdRef.current = null;
     setScanState('idle');
     setCaptured(null);
     setMatches([]);
@@ -394,6 +408,7 @@ export default function ScanScreen() {
 
   // ── "None of these": recovery that keeps the photo ───────────────────────────
   const openRecovery = async () => {
+    sendOutcome(null);
     setShowRecovery(true);
     setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 50);
     try {

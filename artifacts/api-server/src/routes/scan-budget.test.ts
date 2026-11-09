@@ -32,8 +32,9 @@ vi.mock("../services/usage-caps", async (importOriginal) => ({
   ...(await importOriginal<typeof import("../services/usage-caps")>()),
   cachedResult: async () => null,
   withinDailyCap: async () => true,
-  recordUsage: async () => {},
+  recordUsage: async (_u: string, _k: string, _sha: string | null, result?: unknown) => { recorded.push(result); },
 }));
+const recorded: unknown[] = [];
 // The route's budget reads a clock the test moves forward.
 vi.mock("../services/scanBudget", async (importOriginal) => {
   const real = await importOriginal<typeof import("../services/scanBudget")>();
@@ -125,6 +126,19 @@ describe("POST /api/scan/identify within the budget", () => {
     expect(res.body.matches.map((m: { pinId: string }) => m.pinId)).toEqual(["PHUK-1", "PHUK-2"]);
     expect(create).toHaveBeenCalledTimes(2);
     expect(timingsLine(log)).toMatchObject({ outcome: "ok", skipped: ["verify"] });
+    log.mockRestore();
+  });
+
+  it("returns a scan id and stores it with the usage row (#113)", async () => {
+    const log = vi.spyOn(console, "log").mockImplementation(() => {});
+    recorded.length = 0;
+    create
+      .mockImplementationOnce(step(11_000, describeOk))
+      .mockImplementationOnce(step(30_000 - 11_000 - (VERIFY_MIN_MS - 1_000), rankOk));
+    const res = await scan();
+    expect(res.status).toBe(200);
+    expect(res.body.scanId).toMatch(/^[0-9a-f-]{36}$/);
+    expect(recorded).toEqual([expect.objectContaining({ scanId: res.body.scanId })]);
     log.mockRestore();
   });
 

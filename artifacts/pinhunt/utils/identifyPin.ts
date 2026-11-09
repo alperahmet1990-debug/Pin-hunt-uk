@@ -12,6 +12,8 @@ export interface ImageInsights {
 export interface IdentifyResult {
   matches: Array<{ pinId: string; confidence: number; reasoning: string }>;
   imageInsights: ImageInsights | null;
+  /** The server's id for this scan, for recording what the collector picked (#113). */
+  scanId: string | null;
 }
 
 /** The scan request is abandoned after this long so the spinner can't hang. */
@@ -108,8 +110,13 @@ export async function identifyPin(
     const data = await res.json() as {
       matches: IdentifyResult['matches'];
       imageInsights?: ImageInsights;
+      scanId?: unknown;
     };
-    return { matches: data.matches, imageInsights: data.imageInsights ?? null };
+    return {
+      matches: data.matches,
+      imageInsights: data.imageInsights ?? null,
+      scanId: typeof data.scanId === 'string' ? data.scanId : null,
+    };
   } catch (err) {
     if (timedOut) throw new Error(SCAN_TIMEOUT_MESSAGE);
     // fetch rejects with a TypeError ("Failed to fetch", "Network request failed")
@@ -122,4 +129,20 @@ export async function identifyPin(
   } finally {
     clearTimeout(timer);
   }
+}
+
+/**
+ * What the collector picked after a scan (#113): a pin id ("That's it" or an
+ * alternative) or null ("None of these"). Fire-and-forget: never awaited by
+ * the scan screen, never throws, and a failure is only logged in development.
+ */
+export function recordScanOutcome(scanId: string | null, chosenPinId: string | null, accessToken?: string): void {
+  if (!scanId || !accessToken) return;
+  fetch(`${API_BASE}/scan/outcome`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
+    body: JSON.stringify({ scanId, chosenPinId }),
+  }).catch(err => {
+    if (__DEV__) console.warn('[scan-outcome] not recorded:', err);
+  });
 }

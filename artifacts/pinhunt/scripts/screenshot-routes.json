@@ -91,6 +91,18 @@
     "scroll": "end"
   },
   {
+    "name": "about",
+    "path": "/about"
+  },
+  {
+    "name": "legal-privacy",
+    "path": "/legal/privacy"
+  },
+  {
+    "name": "legal-terms",
+    "path": "/legal/terms"
+  },
+  {
     "name": "search",
     "path": "/search"
   },
@@ -174,5 +186,17 @@
   {
     "name": "events",
     "path": "/events"
+  },
+  {
+    "name": "places",
+    "path": "/places"
+  },
+  {
+    "name": "places-book",
+    "path": "/places/demo-place-book-2"
+  },
+  {
+    "name": "places-home",
+    "path": "/places/home"
   }
 ]

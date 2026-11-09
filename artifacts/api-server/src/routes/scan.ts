@@ -22,6 +22,8 @@ import {
 import { withScanReasoning } from "../services/scanReasoning";
 import { verifyDecision, VERIFY_MAX_REFERENCES } from "../services/scanVerify";
 import { cachedResult, imageHash, recordUsage, withinDailyCap } from "../services/usage-caps";
+import { isScanId, recordScanOutcome } from "../services/scan-outcomes";
+import { randomUUID } from "node:crypto";
 
 const router: IRouter = Router();
 
@@ -518,6 +520,9 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
     const result = {
       matches: matches.slice(0, 3),
       imageInsights: buildImageInsights(description, visionSignals),
+      // Lets the app record what the collector picked (#113). Stored with
+      // the usage row, so a repeat of the same photo returns the same id.
+      scanId: randomUUID(),
     };
     void recordUsage(userId, "scan", photoHash, result);
     res.json(result);
@@ -535,6 +540,49 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
     console.error("[scan] Vision analysis error:", err);
     res.status(500).json({ error: "Vision analysis failed. Please try again." });
   }
+});
+
+// ── Scan outcome (#113) ───────────────────────────────────────────────────────
+// What the collector picked: "That's it", an alternative, or "None of these".
+// Signed in, own scans only, rate-limited per user. The app doesn't wait on it.
+const OUTCOME_LIMIT = 20;
+const OUTCOME_WINDOW_MS = 60_000;
+const outcomeCalls = new Map<string, number[]>();
+
+/** True when this user may record another outcome this minute. */
+export function allowOutcome(userId: string, now = Date.now()): boolean {
+  const recent = (outcomeCalls.get(userId) ?? []).filter(t => now - t < OUTCOME_WINDOW_MS);
+  if (recent.length >= OUTCOME_LIMIT) {
+    outcomeCalls.set(userId, recent);
+    return false;
+  }
+  recent.push(now);
+  outcomeCalls.set(userId, recent);
+  if (outcomeCalls.size > 5000) outcomeCalls.clear();
+  return true;
+}
+
+router.post("/scan/outcome", requireUser, async (req, res) => {
+  const userId = (req as Request & { userId?: string }).userId!;
+  const { scanId, chosenPinId } = (req.body ?? {}) as { scanId?: unknown; chosenPinId?: unknown };
+  if (!isScanId(scanId)) {
+    res.status(400).json({ error: "scanId is required" });
+    return;
+  }
+  if (chosenPinId !== null && (typeof chosenPinId !== "string" || !chosenPinId || chosenPinId.length > 64)) {
+    res.status(400).json({ error: "chosenPinId must be a pin id or null" });
+    return;
+  }
+  if (!allowOutcome(userId)) {
+    res.status(429).json({ error: "Too many requests" });
+    return;
+  }
+  const outcome = await recordScanOutcome(userId, scanId, chosenPinId);
+  if (outcome === "saved") res.status(204).end();
+  else if (outcome === "not_found") res.status(404).json({ error: "Scan not found" });
+  else if (outcome === "invalid") res.status(400).json({ error: "That pin wasn't one of this scan's matches" });
+  // Not stored (069 not applied, or a database error): logged, never the app's problem.
+  else res.status(202).json({ recorded: false });
 });
 
 export default router;

@@ -312,6 +312,13 @@ export default function ProfileScreen() {
 
             {/* App Settings */}
             <Section title="App">
+              {/* Home market (HM-02, #562): prices, events and dates. */}
+              <SettingsRow
+                icon="globe"
+                label="Home market"
+                value={profile?.homeMarket === 'US' ? '🇺🇸 US' : '🇬🇧 UK'}
+                onPress={() => router.push('/settings/home-market' as any)}
+              />
               <SettingsRow
                 icon={APPEARANCE_OPTIONS.find(o => o.value === appearance)?.icon ?? 'smartphone'}
                 label="Appearance"

@@ -20,6 +20,9 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { profileSaveErrorLine } from '@/utils/userError';
+import { HomeMarketChoice } from '@/components/HomeMarketChoice';
+import { isHomeMarketUnavailable, marketFromDeviceRegion } from '@/utils/homeMarket';
+import type { HomeMarket } from '@/utils/format';
 import { useProfile } from '@/context/ProfileContext';
 import { useAuth } from '@/context/AuthContext';
 import { radius, spacing } from '@/constants/theme';
@@ -51,6 +54,7 @@ export default function CompleteProfileScreen() {
   const [username, setUsername] = useState('');
   const [bio, setBio] = useState('');
   const [tradingRegion, setTradingRegion] = useState('');
+  const [homeMarket, setHomeMarket] = useState<HomeMarket>(() => marketFromDeviceRegion());
 
   const [usernameError, setUsernameError] = useState<string | null>(null);
   const [usernameAvailable, setUsernameAvailable] = useState<boolean | null>(null);
@@ -100,11 +104,18 @@ export default function CompleteProfileScreen() {
     setSaving(true);
     setSaveError(null);
     try {
-      await updateMyProfile({
+      const details = {
         username: username.trim().toLowerCase(),
         bio: bio.trim() || undefined,
         tradingRegion: tradingRegion.trim() || undefined,
-      });
+      };
+      try {
+        await updateMyProfile({ ...details, homeMarket });
+      } catch (err) {
+        // Before migration 068 a home market can't be saved yet; the rest can.
+        if (!isHomeMarketUnavailable(err)) throw err;
+        await updateMyProfile(details);
+      }
       // ProfileContext sets needsUsername → false → AuthGuard navigates to (tabs)
     } catch (err: unknown) {
       setSaveError(profileSaveErrorLine(err));
@@ -190,6 +201,11 @@ export default function CompleteProfileScreen() {
                 placeholderTextColor={colors.homeMuted}
                 maxLength={60}
               />
+            </Field>
+
+            {/* Home market (HM-02, #562): sets prices, events and dates. */}
+            <Field label="Where do you collect?" hint="Sets your currency and date style. You can change it any time in Profile.">
+              <HomeMarketChoice value={homeMarket} onChange={setHomeMarket} disabled={saving} />
             </Field>
 
             {saveError && (

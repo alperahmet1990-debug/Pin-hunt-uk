@@ -14,6 +14,7 @@ import {
   type UpdateProfileInput,
 } from '@workspace/pin-repository';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { setFormatMarket } from '@/utils/format';
 import { DEMO_PROFILE, isDemoMode } from '@/lib/demoMode';
 import { useAuth } from '@/context/AuthContext';
 import { needsUsernameFor } from '@/utils/profileState';
@@ -101,6 +102,11 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
   const refreshProfile = useCallback(async () => {
     if (userId) await loadProfile(userId);
   }, [userId, loadProfile]);
+
+  // Dates, money and default price currency follow the home market (HM-03, HM-04).
+  useEffect(() => {
+    setFormatMarket(profile?.homeMarket ?? 'UK');
+  }, [profile?.homeMarket]);
 
   const updateMyProfile = useCallback(async (input: UpdateProfileInput): Promise<Profile> => {
     if (!userId || !userRepo) throw new Error('Not signed in');

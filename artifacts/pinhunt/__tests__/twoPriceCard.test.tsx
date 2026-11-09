@@ -147,4 +147,17 @@ describe('two-price value card (CV-04)', () => {
     expect(await screen.findByText('£18.00')).toBeTruthy();
     expect(screen.queryByTestId('two-price-card')).toBeNull();
   });
+
+  it('peeking at the other market says so, with a way back (HM-04)', async () => {
+    mockPrices['p1|GBP'] = confident(14);
+    mockPrices['p1|USD'] = { ...early([20]), currency: 'USD' };
+    await render(<ValueDisplay pinId="p1" />);
+    await card();
+    expect(screen.queryByText(/Comparing/)).toBeNull();
+    await fireEvent.press(screen.getByRole('radio', { name: 'US prices, dollars' }));
+    expect(await screen.findByText('Comparing US prices. Your home market is the UK.')).toBeTruthy();
+    await fireEvent.press(screen.getByRole('button', { name: 'Back to UK' }));
+    await waitFor(() => expect(screen.queryByText(/Comparing/)).toBeNull());
+  });
 });
+

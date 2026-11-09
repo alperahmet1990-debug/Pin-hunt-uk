@@ -40,7 +40,7 @@
     "name": "find-scan-error",
     "path": "/scan",
     "upload": "Choose Photo",
-    "click": "Identify Pin",
+    "consent": true,
     "scroll": "end"
   },
   {

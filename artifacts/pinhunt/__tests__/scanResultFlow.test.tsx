@@ -208,6 +208,54 @@ describe('Scan result (UX-005)', () => {
   });
 });
 
+describe('Scan limits (WP3)', () => {
+  beforeEach(() => jest.spyOn(console, 'warn').mockImplementation(() => {}));
+  afterEach(() => jest.restoreAllMocks());
+
+  it("today's limit says so, with Search instead and no retry", async () => {
+    mockIdentify.mockRejectedValueOnce(Object.assign(
+      new Error("You've reached today's limit for photo identification. You can still add the pin without it."),
+      { status: 429, capReached: true },
+    ));
+    await render(<ScanScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'Choose a photo from your library' }));
+    expect(await screen.findByRole('alert', {
+      name: "You've reached today's scan limit. You've reached today's limit for photo identification. You can still add the pin without it.",
+    })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: 'Try again' })).toBeNull();
+    expect(screen.queryByRole('button', { name: 'Identify Pin' })).toBeNull();
+    expect(screen.queryByRole('button', { name: 'Retake' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Search instead' })).toBeTruthy();
+  });
+
+  it('the cooldown offers Try again only once it has passed', async () => {
+    mockIdentify.mockRejectedValueOnce(Object.assign(
+      new Error('One moment — please wait a few seconds between scans.'),
+      { status: 429, retryAfterMs: 1500 },
+    ));
+    await render(<ScanScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'Choose a photo from your library' }));
+    await screen.findByRole('alert', { name: 'Ready again in a few seconds. One moment — please wait a few seconds between scans.' });
+    expect(screen.queryByRole('button', { name: 'Try again' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Identify Pin' })).toBeDisabled();
+    expect(await screen.findByRole('button', { name: 'Try again' }, { timeout: 4000 })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Identify Pin' })).toBeEnabled();
+    await fireEvent.press(screen.getByRole('button', { name: 'Try again' }));
+    await screen.findByRole('header', { name: 'Is this your pin?' });
+    expect(mockIdentify).toHaveBeenCalledTimes(2);
+  });
+
+  it('a photo that is too large asks for a retake, not a retry', async () => {
+    mockIdentify.mockRejectedValueOnce(Object.assign(new Error('Photo is too large — please retake it.'), { status: 413 }));
+    await render(<ScanScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'Choose a photo from your library' }));
+    await screen.findByRole('alert', { name: 'That photo is too large. Photo is too large — please retake it.' });
+    expect(screen.queryByRole('button', { name: 'Try again' })).toBeNull();
+    expect(screen.queryByRole('button', { name: 'Identify Pin' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Retake' })).toBeTruthy();
+  });
+});
+
 // #113: what the collector picked is recorded, without waiting on it.
 describe('Scan outcome (#113)', () => {
   it('"That\'s it" records the best match', async () => {

@@ -1,47 +1,48 @@
 /**
- * UK (£) or US ($) for prices on this device (#511). One shared value, so the
- * value card and "Your price" stay in step. A fuller UK/US experience is
- * separate work; until then this is a per-device choice, £ by default.
+ * Which currency prices show in (#511, HM-04 #564).
+ *
+ * It starts on the collector's home market (UK -> £, US -> $; set from the
+ * profile through utils/format.ts). Switching to the other currency on the
+ * value card, "Your price" or "Price my trade pins" is a peek for this
+ * session: it isn't saved, and it resets when the home market changes.
+ * Pounds and dollars are never converted.
  */
 import { useEffect, useState } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { PriceCurrency } from '@workspace/pin-repository';
+import { formatMarket, setFormatMarket, subscribeFormatMarket, type HomeMarket } from '@/utils/format';
 
-export const PRICE_CURRENCY_KEY = '@pinhunt_price_currency_v1';
+export const currencyForMarket = (market: HomeMarket): PriceCurrency => (market === 'US' ? 'USD' : 'GBP');
 
-let current: PriceCurrency = 'GBP';
-let loaded = false;
-const listeners = new Set<(c: PriceCurrency) => void>();
+let peek: PriceCurrency | null = null;
+const listeners = new Set<() => void>();
+const notify = () => listeners.forEach(l => l());
 
-function publish(c: PriceCurrency) {
-  current = c;
-  listeners.forEach(l => l(c));
-}
+subscribeFormatMarket(() => {
+  peek = null;
+  notify();
+});
 
+/** Show prices in this currency for now (a peek; the home market is unchanged). */
 export function setPriceCurrency(c: PriceCurrency) {
-  publish(c);
-  AsyncStorage.setItem(PRICE_CURRENCY_KEY, c).catch(() => {});
+  peek = c === currencyForMarket(formatMarket()) ? null : c;
+  notify();
 }
 
-/** For tests: forget the in-memory choice. */
+/** For tests: back to the UK home market with no peek. */
 export function resetPriceCurrencyForTests() {
-  current = 'GBP';
-  loaded = false;
+  peek = null;
+  setFormatMarket('UK');
+  notify();
 }
 
-export function usePriceCurrency(): [PriceCurrency, (c: PriceCurrency) => void] {
-  const [value, setValue] = useState<PriceCurrency>(current);
+/** [currency shown, change it (peek), the home market's currency] */
+export function usePriceCurrency(): [PriceCurrency, (c: PriceCurrency) => void, PriceCurrency] {
+  const [, rerender] = useState(0);
   useEffect(() => {
-    listeners.add(setValue);
-    if (!loaded) {
-      loaded = true;
-      AsyncStorage.getItem(PRICE_CURRENCY_KEY)
-        .then(v => { if (v === 'GBP' || v === 'USD') publish(v); })
-        .catch(() => {});
-    } else {
-      setValue(current);
-    }
-    return () => { listeners.delete(setValue); };
+    const listener = () => rerender(n => n + 1);
+    listeners.add(listener);
+    return () => { listeners.delete(listener); };
   }, []);
-  return [value, setPriceCurrency];
+  const home = currencyForMarket(formatMarket());
+  return [peek ?? home, setPriceCurrency, home];
 }

@@ -55,6 +55,16 @@ describe('Privacy Policy and Terms of Use', () => {
     expect(terms).toMatch(/each collector arranges and pays for their own shipping/);
   });
 
+  it('says PinHunt is for adults (18+) in both documents', () => {
+    expect(text(PRIVACY_POLICY)).toMatch(/18 or over/);
+    expect(text(TERMS_OF_USE)).toMatch(/You must be 18 or over/);
+    expect(text(TERMS_OF_USE)).not.toMatch(/at least 13|parent or guardian/);
+  });
+
+  it('names Render as the API host', () => {
+    expect(text(PRIVACY_POLICY)).toContain('Render: runs the PinHunt API server.');
+  });
+
   it('docs/legal Markdown matches the app copy (UPDATE_LEGAL_DOCS=1 rewrites it)', () => {
     for (const doc of Object.values(LEGAL_DOCS)) {
       const file = path.join(__dirname, '../../../docs/legal', `${doc.slug}.md`);

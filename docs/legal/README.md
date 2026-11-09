@@ -21,12 +21,12 @@ PinHunt Ltd was incorporated on 9 November 2026 (company number **17570164**, En
 | 8 | Fill in App Store "App Privacy" (nutrition labels) from the table below, and add the privacy policy URL. | Required for review. | App Store Connect › App Privacy |
 | 9 | Sign data processing terms with each provider. Most are accepted in account settings: Supabase DPA, OpenAI DPA, Google Cloud data processing terms, Pixian, and the API host. | UK GDPR Article 28. | Each provider's dashboard |
 | 10 | Put the company name, number and registered office on the website footer and on emails. | Companies Act 2006 disclosure rules. | |
-| 11 | Decide on the minimum age (see below), and if children may use PinHunt, assess the Children's Code. | The ICO Age Appropriate Design Code applies to services likely to be used by under-18s. | ico.org.uk/childrens-code |
+| 11 | Keep PinHunt adult-only in practice: don't market to children, and close accounts you learn belong to under-18s. | The ICO Children's Code applies to services *likely* to be used by under-18s, whatever the stated minimum age. 18+ with a sign-up declaration is the simplest defensible position, but a reviewer should confirm it. | ico.org.uk/childrens-code |
 
 ## Open questions for the reviewer
 
-- **Minimum age.** The draft says 13+, with under-18s needing a parent's or guardian's permission. The app has **no age check** at sign-up. Disney pin collecting attracts children, so the Children's Code is likely in scope: default-private profiles for minors, Collectors Nearby off by default (it already is), and messaging safeguards. You could also decide on 18+.
-- **API server host.** The policy says "Our server host [to be confirmed]". The README documents Replit, but confirm where production runs and its data location.
+- **Minimum age: decided 18+.** Sign-up requires ticking "I'm 18 or over" (`app/(auth)/register.tsx`), and both documents say 18+. Disney pins do attract children, so ask the reviewer whether that is enough to stay outside the Children's Code, or whether real age checks are needed.
+- **API server host: Render** (`docs/release/API-DEPLOY.md`, `pin-hunt-uk.onrender.com`). Check the service's region in the Render dashboard (Settings). If it's a US region, that's another US transfer, which the policy already covers in general terms.
 - **International transfers.** OpenAI, Google and Supabase (depending on the project region) may process data in the US. Confirm the Supabase project region and which transfer mechanism each provider offers.
 - **Retention periods.** Confirm how long Supabase backups and server logs are kept, and give a number if possible.
 - **Liability clause.** Check that it's reasonable under the Consumer Rights Act 2015.
@@ -43,6 +43,8 @@ PinHunt Ltd was incorporated on 9 November 2026 (company number **17570164**, En
 | Catalogue photos go to Pixian.ai | `artifacts/api-server/src/services/pixian.ts`, `routes/contribute-pin-image.ts` |
 | eBay and SoldGraph receive search terms only; market data has no seller columns | `services/ebay.ts`, `services/soldgraph/client.ts`, `049_market_evidence_and_provider_usage.sql` |
 | Account deletion: profile, collection, boards, submissions, listings and storage objects deleted; posts, comments and messages kept with the author removed; deletion waits for open trades; audit row has counts only | `051_account_deletion.sql`, `059_trade_problems_and_deletion_hold.sql`, `artifacts/api-server/src/routes/account.ts` |
+| 18+ declaration at sign-up | `artifacts/pinhunt/app/(auth)/register.tsx` ("I'm 18 or over" checkbox; sign-up refused without it) |
+| API server on Render | `docs/release/API-DEPLOY.md` |
 | Blocks, reports, suspensions | `050_user_blocks_reports_suspensions.sql` |
 | AI usage counters for fair-use limits | `049_market_evidence_and_provider_usage.sql` (`provider_usage`), `services/usage-caps.ts` |
 | No analytics, crash reporting, ads or push notifications | No Sentry, PostHog, Firebase or `expo-notifications` in `artifacts/pinhunt/package.json` |

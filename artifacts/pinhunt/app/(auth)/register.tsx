@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Link } from 'expo-router';
+import { Feather } from '@expo/vector-icons';
 import { useAuth } from '@/context/AuthContext';
 import { useColors } from '@/hooks/useColors';
 import { radius, spacing } from '@/constants/theme';
@@ -26,6 +27,8 @@ export default function RegisterScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
+  // PinHunt is for adults (utils/legal.ts, "Who can use PinHunt").
+  const [isAdult, setIsAdult] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
@@ -38,6 +41,10 @@ export default function RegisterScreen() {
     const invalid = validateNewPassword(password, confirm);
     if (invalid) {
       setError(invalid);
+      return;
+    }
+    if (!isAdult) {
+      setError('PinHunt is for collectors aged 18 or over. Please confirm your age.');
       return;
     }
     setError(null);
@@ -136,6 +143,20 @@ export default function RegisterScreen() {
             returnKeyType="done"
             onSubmitEditing={handleSignUp}
           />
+
+          <TouchableOpacity
+            style={styles.ageRow}
+            onPress={() => setIsAdult(v => !v)}
+            activeOpacity={0.7}
+            accessibilityRole="checkbox"
+            accessibilityState={{ checked: isAdult }}
+            accessibilityLabel="I'm 18 or over"
+          >
+            <View style={[styles.ageBox, isAdult && styles.ageBoxOn]}>
+              {isAdult && <Feather name="check" size={14} color={colors.homeSurface} />}
+            </View>
+            <Text style={styles.ageText}>I'm 18 or over</Text>
+          </TouchableOpacity>
 
           <TouchableOpacity
             style={[styles.button, loading && styles.buttonDisabled]}
@@ -264,6 +285,13 @@ function makeStyles(colors: any) {
       elevation: 3,
     },
     buttonDisabled: { opacity: 0.6 },
+    ageRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, minHeight: 44, marginBottom: spacing.sm },
+    ageBox: {
+      width: 22, height: 22, borderRadius: 6, borderWidth: 1.5, borderColor: colors.homeMuted,
+      alignItems: 'center', justifyContent: 'center',
+    },
+    ageBoxOn: { backgroundColor: colors.homeCoral, borderColor: colors.homeCoral },
+    ageText: { fontSize: 14, fontFamily: 'Inter_500Medium', color: colors.homeInk },
     agreement: {
       fontSize: 12.5,
       lineHeight: 18,

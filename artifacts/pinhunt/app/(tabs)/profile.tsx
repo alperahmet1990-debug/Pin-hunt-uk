@@ -235,16 +235,18 @@ export default function ProfileScreen() {
             </View>
 
             {/* Location / Nearby status */}
-            <LocationStatusBanner
-              hasLocationSet={profile?.hasLocationSet ?? false}
-              nearbyEnabled={profile?.nearbyDiscoveryEnabled ?? false}
-              radiusMiles={profile?.preferredRadiusMiles ?? 25}
-              onPress={() =>
-                profile?.hasLocationSet && profile?.nearbyDiscoveryEnabled
-                  ? router.push('/nearby')
-                  : router.push({ pathname: '/edit-profile', params: { section: 'location' } })
-              }
-            />
+            {FEATURES.collectorsNearby && (
+              <LocationStatusBanner
+                hasLocationSet={profile?.hasLocationSet ?? false}
+                nearbyEnabled={profile?.nearbyDiscoveryEnabled ?? false}
+                radiusMiles={profile?.preferredRadiusMiles ?? 25}
+                onPress={() =>
+                  profile?.hasLocationSet && profile?.nearbyDiscoveryEnabled
+                    ? router.push('/nearby')
+                    : router.push({ pathname: '/edit-profile', params: { section: 'location' } })
+                }
+              />
+            )}
 
             {/* Account */}
             <Section title="Account">

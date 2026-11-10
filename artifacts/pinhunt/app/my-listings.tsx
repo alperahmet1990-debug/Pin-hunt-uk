@@ -19,6 +19,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import { FEATURES } from '@/constants/features';
+import { FeatureOffRedirect } from '@/components/FeatureOffRedirect';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { PLATFORM_CONFIG, CURRENCY_SYMBOLS } from '@/utils/marketplaceUrl';
 import { radius, spacing } from '@/constants/theme';
@@ -42,7 +44,7 @@ function statusColor(status: ExternalSaleListingStatus, colors: ReturnType<typeo
   }
 }
 
-export default function MyListingsScreen() {
+function MyListingsScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
@@ -227,6 +229,12 @@ export default function MyListingsScreen() {
       </ScrollView>
     </>
   );
+}
+
+// Hidden while FEATURES.marketplaceListings is off: direct links go back safely.
+export default function MyListingsScreenRoute() {
+  if (!FEATURES.marketplaceListings) return <FeatureOffRedirect />;
+  return <MyListingsScreen />;
 }
 
 const styles = StyleSheet.create({

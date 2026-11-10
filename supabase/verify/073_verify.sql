@@ -1,21 +1,21 @@
 -- ============================================================
--- Verification for migration 072 (run on STAGING after applying 072, in the
+-- Verification for migration 073 (run on STAGING after applying 073, in the
 -- Supabase SQL editor, as the default postgres user).
 --
 -- One transaction, ROLLED BACK at the end. It creates throwaway users, so it
 -- leaves nothing behind. Expected final output: a single row
--- 'ALL 072 CHECKS PASSED'. Any failed check aborts with an error naming it.
+-- 'ALL 073 CHECKS PASSED'. Any failed check aborts with an error naming it.
 -- Role-based: each behaviour check runs as `authenticated` with a fake JWT.
 -- ============================================================
 
--- Project guard (see 072_RUNBOOK.md). Set target to the project you mean.
+-- Project guard (see 073_RUNBOOK.md). Set target to the project you mean.
 do $$
 declare
   target text := 'staging';  -- <- 'staging' or 'production'
   actual text;
 begin
   if to_regprocedure('public.pinhunt_environment()') is null then
-    raise exception 'Project guard: pinhunt_environment() is missing (072_RUNBOOK.md).';
+    raise exception 'Project guard: pinhunt_environment() is missing (073_RUNBOOK.md).';
   end if;
   execute 'select public.pinhunt_environment()' into actual;
   if actual is distinct from target then
@@ -25,7 +25,7 @@ end $$;
 
 begin;
 
-create or replace function pg_temp.v072_as(p_uid uuid) returns void language sql as $$
+create or replace function pg_temp.v073_as(p_uid uuid) returns void language sql as $$
   select set_config('request.jwt.claim.sub', p_uid::text, true),
          set_config('request.jwt.claims', json_build_object('sub', p_uid, 'role', 'authenticated')::text, true);
 $$;
@@ -77,35 +77,35 @@ end $$;
 --   a: adult, b: under 18, c: signed up with the metadata flag,
 --   d: admin, e: second admin, f: App Creator (if the trigger lets us)
 insert into auth.users (id, raw_user_meta_data) values
-  ('07200000-0000-4000-8000-0000000000a1', '{}'),
-  ('07200000-0000-4000-8000-0000000000b2', '{}'),
-  ('07200000-0000-4000-8000-0000000000c3', '{"age_confirmed": true}'),
-  ('07200000-0000-4000-8000-0000000000d4', '{}'),
-  ('07200000-0000-4000-8000-0000000000e5', '{}'),
-  ('07200000-0000-4000-8000-0000000000f6', '{"age_confirmed": "yes"}');
+  ('07300000-0000-4000-8000-0000000000a1', '{}'),
+  ('07300000-0000-4000-8000-0000000000b2', '{}'),
+  ('07300000-0000-4000-8000-0000000000c3', '{"age_confirmed": true}'),
+  ('07300000-0000-4000-8000-0000000000d4', '{}'),
+  ('07300000-0000-4000-8000-0000000000e5', '{}'),
+  ('07300000-0000-4000-8000-0000000000f6', '{"age_confirmed": "yes"}');
 insert into profiles (id) values
-  ('07200000-0000-4000-8000-0000000000a1'), ('07200000-0000-4000-8000-0000000000b2'),
-  ('07200000-0000-4000-8000-0000000000c3'), ('07200000-0000-4000-8000-0000000000d4'),
-  ('07200000-0000-4000-8000-0000000000e5'), ('07200000-0000-4000-8000-0000000000f6')
+  ('07300000-0000-4000-8000-0000000000a1'), ('07300000-0000-4000-8000-0000000000b2'),
+  ('07300000-0000-4000-8000-0000000000c3'), ('07300000-0000-4000-8000-0000000000d4'),
+  ('07300000-0000-4000-8000-0000000000e5'), ('07300000-0000-4000-8000-0000000000f6')
   on conflict (id) do nothing;
 -- The privilege guard only lets the console set this, which is what this is.
 update profiles set is_admin = true
- where id in ('07200000-0000-4000-8000-0000000000d4', '07200000-0000-4000-8000-0000000000e5');
+ where id in ('07300000-0000-4000-8000-0000000000d4', '07300000-0000-4000-8000-0000000000e5');
 
 do $$
 declare
-  a uuid := '07200000-0000-4000-8000-0000000000a1';
-  b uuid := '07200000-0000-4000-8000-0000000000b2';
-  c uuid := '07200000-0000-4000-8000-0000000000c3';
-  d uuid := '07200000-0000-4000-8000-0000000000d4';
-  e uuid := '07200000-0000-4000-8000-0000000000e5';
-  f uuid := '07200000-0000-4000-8000-0000000000f6';
+  a uuid := '07300000-0000-4000-8000-0000000000a1';
+  b uuid := '07300000-0000-4000-8000-0000000000b2';
+  c uuid := '07300000-0000-4000-8000-0000000000c3';
+  d uuid := '07300000-0000-4000-8000-0000000000d4';
+  e uuid := '07300000-0000-4000-8000-0000000000e5';
+  f uuid := '07300000-0000-4000-8000-0000000000f6';
   today date := (now() at time zone 'Etc/GMT-14')::date;
   v text;
   ok boolean;
 begin
   -- 3a. New accounts start unconfirmed.
-  perform pg_temp.v072_as(a);
+  perform pg_temp.v073_as(a);
   set local role authenticated;
   assert get_my_age_status() = 'unconfirmed', '3a new account not unconfirmed';
 
@@ -147,7 +147,7 @@ begin
   assert confirm_my_age((today - interval '30 years')::date) = 'confirmed', '3j repeat confirm';
 
   -- 3k. One day short of 18: declined, and stays declined.
-  perform pg_temp.v072_as(b);
+  perform pg_temp.v073_as(b);
   v := confirm_my_age((today - interval '18 years' + interval '1 day')::date);
   assert v = 'declined', format('3k under 18 gave %s', v);
   assert get_my_age_status() = 'declined', '3l status after decline';
@@ -163,15 +163,15 @@ begin
   end;
 
   -- 3o. Sign-up metadata flag confirms; no flag or a bad value doesn't.
-  perform pg_temp.v072_as(c);
+  perform pg_temp.v073_as(c);
   assert confirm_my_age_from_signup() = 'confirmed', '3o metadata flag did not confirm';
-  perform pg_temp.v072_as(d);
+  perform pg_temp.v073_as(d);
   assert confirm_my_age_from_signup() = 'unconfirmed', '3p no flag confirmed';
-  perform pg_temp.v072_as(f);
+  perform pg_temp.v073_as(f);
   assert confirm_my_age_from_signup() = 'unconfirmed', '3q non-boolean flag confirmed';
 
   -- 3r. Non-admins can't use the admin function.
-  perform pg_temp.v072_as(a);
+  perform pg_temp.v073_as(a);
   begin
     perform admin_set_age_declined(c, true);
     assert false, '3r non-admin declined someone';
@@ -179,23 +179,23 @@ begin
   end;
 
   -- 3s. Admin closes a confirmed account as under 18, then undoes it.
-  perform pg_temp.v072_as(d);
+  perform pg_temp.v073_as(d);
   perform admin_set_age_declined(c, true);
-  perform pg_temp.v072_as(c);
+  perform pg_temp.v073_as(c);
   assert get_my_age_status() = 'declined', '3s admin decline not applied';
-  perform pg_temp.v072_as(d);
+  perform pg_temp.v073_as(d);
   perform admin_set_age_declined(c, false);
-  perform pg_temp.v072_as(c);
+  perform pg_temp.v073_as(c);
   assert get_my_age_status() = 'confirmed', '3t undo did not restore confirmed';
 
   -- 3u. Undo on a self-declined account lets them confirm again.
-  perform pg_temp.v072_as(d);
+  perform pg_temp.v073_as(d);
   perform admin_set_age_declined(b, false);
-  perform pg_temp.v072_as(b);
+  perform pg_temp.v073_as(b);
   assert get_my_age_status() = 'unconfirmed', '3u undo on self-declined';
 
   -- 3v. Limits: not yourself, not another admin (unless App Creator).
-  perform pg_temp.v072_as(d);
+  perform pg_temp.v073_as(d);
   begin
     perform admin_set_age_declined(d, true);
     assert false, '3v admin declined themselves';
@@ -220,10 +220,10 @@ end $$;
 -- 4. Other users can't see either column through any read path
 do $$
 declare
-  a uuid := '07200000-0000-4000-8000-0000000000a1';
-  c uuid := '07200000-0000-4000-8000-0000000000c3';
+  a uuid := '07300000-0000-4000-8000-0000000000a1';
+  c uuid := '07300000-0000-4000-8000-0000000000c3';
 begin
-  perform pg_temp.v072_as(c);
+  perform pg_temp.v073_as(c);
   set local role authenticated;
   begin
     perform age_declined_at from profiles where id = a;
@@ -240,6 +240,6 @@ begin
   end if;
 end $$;
 
-select 'ALL 072 CHECKS PASSED' as result;
+select 'ALL 073 CHECKS PASSED' as result;
 
 rollback;

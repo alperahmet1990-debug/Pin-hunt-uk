@@ -573,7 +573,7 @@ export interface IUserPinRepository {
   liftSuspension(userId: string): Promise<void>;
 
   /**
-   * Admins only (migration 072, LP-9 #531): mark an account as under 18, or
+   * Admins only (migration 073, LP-9 #531): mark an account as under 18, or
    * undo it. Same limits as suspensions. The suspension itself is separate.
    */
   setAgeDeclined(userId: string, declined: boolean): Promise<void>;

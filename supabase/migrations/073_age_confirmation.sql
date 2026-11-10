@@ -1,18 +1,18 @@
 -- ============================================================
--- Migration 072: confirm collectors are 18 or over (LP-8, #530)
+-- Migration 073: confirm collectors are 18 or over (LP-8, #530)
 --
 -- DRAFT, L3. Never applied by an agent. Staging first: set the target in the
 -- guard below, apply in the Supabase SQL editor, run
--- supabase/verify/072_verify.sql there, then:
+-- supabase/verify/073_verify.sql there, then:
 --   notify pgrst, 'reload schema';
 -- Production is a separate approval, applied only when the matching app
 -- update is ready (older builds have no Confirm age screen).
--- See supabase/verify/072_RUNBOOK.md. Rollback at the bottom.
+-- See supabase/verify/073_RUNBOOK.md. Rollback at the bottom.
 -- Needs profiles (003), is_admin() (002), is_app_creator() (040) and the
 -- column lists from 063. Does not depend on 064-071.
 --
--- The number may need bumping if another migration lands first (070 is
--- #581's; 071 was left for the moderation work).
+-- The number may need bumping depending on merge order: 070 is #581's,
+-- 071 is #582's and 072 is the reported-message review (#584).
 --
 -- What it adds:
 --   • profiles.age_confirmed_at, profiles.age_declined_at (timestamptz).
@@ -39,7 +39,7 @@
 -- ── 0. Project guard ─────────────────────────────────────────────────────────
 -- Edit `target` to the project you mean to change: 'staging' or 'production'.
 -- The guard compares it with pinhunt_environment(), a one-line marker the
--- maintainer creates once per project (see 072_RUNBOOK.md), and stops on any
+-- maintainer creates once per project (see 073_RUNBOOK.md), and stops on any
 -- mismatch, a missing marker or missing prerequisites. Nothing below runs.
 do $$
 declare
@@ -47,7 +47,7 @@ declare
   actual text;
 begin
   if to_regprocedure('public.pinhunt_environment()') is null then
-    raise exception 'Project guard: pinhunt_environment() is missing. Create the marker first (072_RUNBOOK.md).';
+    raise exception 'Project guard: pinhunt_environment() is missing. Create the marker first (073_RUNBOOK.md).';
   end if;
   execute 'select public.pinhunt_environment()' into actual;
   if actual is distinct from target then
@@ -231,10 +231,10 @@ commit;
 notify pgrst, 'reload schema';
 
 -- ============================================================
--- Verification: supabase/verify/072_verify.sql (rolls itself back).
+-- Verification: supabase/verify/073_verify.sql (rolls itself back).
 --
 -- ROLLBACK. Ship or keep an app build that tolerates the functions being
--- missing first: the 072 app treats a missing get_my_age_status() as
+-- missing first: the 073 app treats a missing get_my_age_status() as
 -- "no check", so collectors are not locked out. Every recorded confirmation
 -- and decline is lost; export them first if they are needed:
 --   select id, age_confirmed_at, age_declined_at from profiles

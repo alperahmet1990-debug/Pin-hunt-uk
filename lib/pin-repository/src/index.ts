@@ -184,7 +184,7 @@ export {
   updatePlace,
 } from './pin-locations';
 
-// ─── Age confirmation (migration 072, LP-8 #530) ──────────────────────────────
+// ─── Age confirmation (migration 073, LP-8 #530) ──────────────────────────────
 export type { AgeConfirmationClient, AgeStatus } from './age-confirmation';
 export {
   confirmMyAge,

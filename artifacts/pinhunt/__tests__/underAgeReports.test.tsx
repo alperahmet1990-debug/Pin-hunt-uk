@@ -3,7 +3,7 @@
  * - The reason is offered when reporting a profile or a message.
  * - Moderation shows these reports first, labelled.
  * - "Close as under 18" suspends the account and marks it under 18 (migration
- *   072); "Undo" clears both. Both use in-app confirmations.
+ *   073); "Undo" clears both. Both use in-app confirmations.
  */
 import React from 'react';
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react-native';

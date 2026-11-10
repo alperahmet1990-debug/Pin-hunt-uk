@@ -2700,7 +2700,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     };
   }
 
-  // ── Age confirmation, admin side (migration 072, LP-9 #531) ─────────────────
+  // ── Age confirmation, admin side (migration 073, LP-9 #531) ─────────────────
 
   setAgeDeclined(userId: string, declined: boolean): Promise<void> {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

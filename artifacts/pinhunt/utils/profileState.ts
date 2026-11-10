@@ -13,7 +13,7 @@ export function needsUsernameFor(input: {
 
 /**
  * Age gate (LP-8, #530). Only a status the server actually returned moves
- * anyone: a failed check (null) or a database without migration 072
+ * anyone: a failed check (null) or a database without migration 073
  * ('unavailable') sends nobody anywhere.
  */
 export function ageGateFor(input: {

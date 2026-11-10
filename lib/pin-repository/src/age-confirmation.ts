@@ -1,13 +1,13 @@
 /**
- * Age confirmation (LP-8, #530; migration 072).
+ * Age confirmation (LP-8, #530; migration 073).
  *
  * PinHunt is for collectors aged 18 and over. The signed-in collector states
  * their date of birth once; the server works out the age from its own date
  * and keeps only when it was confirmed (or declined). The birth date is never
  * stored, logged or kept in this module.
  *
- * Everything goes through migration 072 functions: the two profile columns
- * have no client access. Until 072 is applied, get_my_age_status() doesn't
+ * Everything goes through migration 073 functions: the two profile columns
+ * have no client access. Until 073 is applied, get_my_age_status() doesn't
  * exist and getMyAgeStatus() answers 'unavailable', which the app treats as
  * "no check yet" so nobody is locked out by the release order.
  */
@@ -20,8 +20,8 @@ export const MINIMUM_AGE = 18;
  * - confirmed: may use PinHunt.
  * - declined: said they're under 18, or a moderator closed the account as
  *   under 18. Can delete the account or sign out, nothing else.
- * - unconfirmed: hasn't been asked yet (accounts from before 072).
- * - unavailable: migration 072 isn't applied yet.
+ * - unconfirmed: hasn't been asked yet (accounts from before 073).
+ * - unavailable: migration 073 isn't applied yet.
  */
 export type AgeStatus = 'confirmed' | 'declined' | 'unconfirmed' | 'unavailable';
 

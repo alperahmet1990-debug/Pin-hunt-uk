@@ -80,6 +80,9 @@ describe('"May be under 18" reason', () => {
 });
 
 describe('Moderation: close as under 18, and undo', () => {
+  // Load the screen once up front, so its cold start isn't charged to the first test.
+  beforeAll(() => { require('../app/admin/community-moderation'); }, 900_000);
+
   beforeEach(() => {
     jest.clearAllMocks();
     mockAccess = { isAppCreator: false, isAdmin: true, isContributor: false, loading: false };

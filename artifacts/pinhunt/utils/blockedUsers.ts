@@ -63,6 +63,7 @@ export const USER_REPORT_REASONS = [
   'Scam or fraud',
   'Harassment or bullying',
   'Inappropriate content',
+  'May be under 18',
   'Other',
 ] as const;
 
@@ -88,4 +89,24 @@ export function countReportsByUser(reports: readonly Pick<UserReport, 'reportedU
   const counts = new Map<string, number>();
   for (const r of reports) counts.set(r.reportedUserId, (counts.get(r.reportedUserId) ?? 0) + 1);
   return counts;
+}
+
+// ─── "May be under 18" (LP-9, #531) ──────────────────────────────────────────
+
+export const UNDER_18_REASON: UserReportReason = 'May be under 18';
+
+/** The suspension reason "Close as under 18" records, so the queue can offer Undo. */
+export const UNDER_18_CLOSURE_REASON = 'Closed as under 18';
+
+/** A report whose chosen reason is "May be under 18" (details may follow after a colon). */
+export function isUnderAgeReport(report: Pick<UserReport, 'reason'>): boolean {
+  const r = report.reason ?? '';
+  return r === UNDER_18_REASON || r.startsWith(`${UNDER_18_REASON}:`);
+}
+
+/** "May be under 18" reports first; otherwise the order is kept. */
+export function underAgeReportsFirst<T extends Pick<UserReport, 'reason'>>(reports: readonly T[]): T[] {
+  const under = reports.filter(isUnderAgeReport);
+  if (under.length === 0) return reports as T[];
+  return [...under, ...reports.filter(r => !isUnderAgeReport(r))];
 }

@@ -33,6 +33,8 @@ alter table storage.objects enable row level security;
 create or replace function storage.foldername(name text) returns text[] language sql immutable as $$ select (string_to_array(name, '/'))[1:greatest(array_length(string_to_array(name, '/'),1)-1,0)] $$;
 create or replace function storage.filename(name text) returns text language sql immutable as $$ select (string_to_array(name, '/'))[array_length(string_to_array(name, '/'),1)] $$;
 create publication supabase_realtime;
+-- The project marker the guards in 072+ check (072_RUNBOOK.md); the replay stands in for staging.
+create or replace function public.pinhunt_environment() returns text language sql immutable as $$ select 'staging' $$;
 -- Supabase's default grants, so verify scripts can run RLS cases as
 -- anon/authenticated (050+). Migrations that revoke still revoke after this.
 grant usage on schema public, auth, storage to anon, authenticated, service_role;

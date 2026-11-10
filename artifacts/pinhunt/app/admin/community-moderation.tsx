@@ -25,7 +25,13 @@ import { Avatar } from '@/components/Avatar';
 import type { CommunityPost, PostReportSummary, ReportedComment, UserReport, UserSuspension } from '@workspace/pin-repository';
 import { SUSPENSION_REASON_MAX } from '@workspace/pin-repository';
 import { useMyAccess } from '@/hooks/useMyAccess';
-import { countReportsByUser, userReportLabel } from '@/utils/blockedUsers';
+import {
+  countReportsByUser,
+  isUnderAgeReport,
+  UNDER_18_CLOSURE_REASON,
+  underAgeReportsFirst,
+  userReportLabel,
+} from '@/utils/blockedUsers';
 import { formatDate } from '@/utils/format';
 
 // Theme-independent status colours for module-level lookup tables.
@@ -39,7 +45,10 @@ type Confirming =
   | { kind: 'dismissUserReport'; id: string }
   // Account suspensions (#503): from a report card, or the suspended list.
   | { kind: 'suspend'; id: string; userId: string }
-  | { kind: 'lift'; id: string };
+  | { kind: 'lift'; id: string }
+  // "May be under 18" (LP-9, #531): suspend and mark under 18, or undo both.
+  | { kind: 'closeUnder18'; id: string; userId: string }
+  | { kind: 'undoUnder18'; id: string };
 
 /** Public names for the people in user reports, resolved once per load. */
 type ProfileNames = Map<string, { username?: string; avatarUrl?: string; isAdmin?: boolean }>;
@@ -227,6 +236,8 @@ export default function CommunityModerationScreen() {
   }, [repo]);
 
   const reportsPerUser = React.useMemo(() => countReportsByUser(userReports), [userReports]);
+  // "May be under 18" reports first (LP-9, #531).
+  const orderedUserReports = React.useMemo(() => underAgeReportsFirst(userReports), [userReports]);
 
   // ── Account suspensions (#503) ───────────────────────────────────────────────
   const suspendedIds = React.useMemo(() => new Set(suspensions.map(x => x.userId)), [suspensions]);
@@ -269,6 +280,49 @@ export default function CommunityModerationScreen() {
       setConfirming(null);
     } catch (e) {
       setActionError(e instanceof Error ? e.message : 'Could not lift the suspension.');
+    } finally {
+      setSuspensionBusy(null);
+    }
+  }, [repo]);
+
+  // ── Close as under 18 (LP-9, #531) ───────────────────────────────────────────
+  // The existing suspension, with a fixed reason, plus the admin-only decline
+  // (migration 072): the collector sees "PinHunt is for adults" next launch.
+  const closedUnder18Ids = React.useMemo(
+    () => new Set(suspensions.filter(x => x.reason === UNDER_18_CLOSURE_REASON).map(x => x.userId)),
+    [suspensions],
+  );
+
+  const handleCloseUnder18 = useCallback(async (userId: string) => {
+    if (!repo || !myId) return;
+    try {
+      setSuspensionBusy(userId);
+      setActionError(null);
+      if (!suspendedIds.has(userId)) await repo.suspendUser(myId, userId, UNDER_18_CLOSURE_REASON);
+      await repo.setAgeDeclined(userId, true);
+      setSuspensions(prev => [
+        { userId, suspendedBy: myId, reason: UNDER_18_CLOSURE_REASON, createdAt: new Date().toISOString() },
+        ...prev.filter(x => x.userId !== userId),
+      ]);
+      setConfirming(null);
+    } catch (e) {
+      setActionError(e instanceof Error ? e.message : 'Could not close the account.');
+    } finally {
+      setSuspensionBusy(null);
+    }
+  }, [repo, myId, suspendedIds]);
+
+  const handleUndoUnder18 = useCallback(async (userId: string) => {
+    if (!repo) return;
+    try {
+      setSuspensionBusy(userId);
+      setActionError(null);
+      await repo.setAgeDeclined(userId, false);
+      await repo.liftSuspension(userId);
+      setSuspensions(prev => prev.filter(x => x.userId !== userId));
+      setConfirming(null);
+    } catch (e) {
+      setActionError(e instanceof Error ? e.message : 'Could not restore the account.');
     } finally {
       setSuspensionBusy(null);
     }
@@ -492,7 +546,7 @@ export default function CommunityModerationScreen() {
                     <Text style={[styles.sectionHeading, { color: colors.homeMuted }]}>
                       REPORTED USERS AND MESSAGES ({userReports.length})
                     </Text>
-                    {userReports.map(report => {
+                    {orderedUserReports.map(report => {
                       const reported = reportNames.get(report.reportedUserId);
                       const reporter = reportNames.get(report.reporterId);
                       const reportedUsername = reported?.username;
@@ -500,11 +554,22 @@ export default function CommunityModerationScreen() {
                       const reporterName = reporter?.username ? `@${reporter.username}` : 'a collector';
                       const againstCount = reportsPerUser.get(report.reportedUserId) ?? 1;
                       const dismissing = dismissingUserReportId === report.id;
+                      const underAge = isUnderAgeReport(report);
+                      const closedUnder18 = closedUnder18Ids.has(report.reportedUserId);
                       return (
                         <View
                           key={report.id}
                           style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
                         >
+                          {underAge ? (
+                            <View
+                              style={[styles.underAgeLabel, { backgroundColor: colors.destructive }]}
+                              accessibilityLabel="Report: may be under 18"
+                            >
+                              <Feather name="alert-triangle" size={12} color={colors.homeHeroText} />
+                              <Text style={[styles.underAgeLabelText, { color: colors.homeHeroText }]}>MAY BE UNDER 18</Text>
+                            </View>
+                          ) : null}
                           <View style={[styles.reportedBanner, { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' }]}>
                             <Feather name={report.target === 'message' ? 'message-square' : 'user-x'} size={12} color={colors.destructive} />
                             <Text style={[styles.reportedBannerText, { color: colors.destructive }]} numberOfLines={2}>
@@ -533,7 +598,26 @@ export default function CommunityModerationScreen() {
                               Message ID {report.messageId}
                             </Text>
                           ) : null}
-                          {confirming?.kind === 'suspend' && confirming.id === report.id ? (
+                          {confirming?.kind === 'closeUnder18' && confirming.id === report.id ? (
+                            <InlineConfirm
+                              message={`Close ${reportedName} as under 18? The account is suspended, and next time they open PinHunt they see \u201cPinHunt is for adults\u201d with only Delete account and Sign out.`}
+                              confirmLabel="Close account"
+                              destructive
+                              busy={suspensionBusy === report.reportedUserId}
+                              error={actionError}
+                              onCancel={() => { setConfirming(null); setActionError(null); }}
+                              onConfirm={() => handleCloseUnder18(report.reportedUserId)}
+                            />
+                          ) : confirming?.kind === 'undoUnder18' && confirming.id === report.reportedUserId && closedUnder18 ? (
+                            <InlineConfirm
+                              message={`Undo closing ${reportedName}? The suspension is lifted and they can use PinHunt again.`}
+                              confirmLabel="Undo"
+                              busy={suspensionBusy === report.reportedUserId}
+                              error={actionError}
+                              onCancel={() => { setConfirming(null); setActionError(null); }}
+                              onConfirm={() => handleUndoUnder18(report.reportedUserId)}
+                            />
+                          ) : confirming?.kind === 'suspend' && confirming.id === report.id ? (
                             <View style={{ gap: 8 }}>
                               <TextInput
                                 value={suspendReason}
@@ -591,7 +675,38 @@ export default function CommunityModerationScreen() {
                                 </TouchableOpacity>
                               ) : null}
                               <View style={{ flex: 1 }} />
-                              {suspendedIds.has(report.reportedUserId) ? (
+                              {closedUnder18 ? (
+                                <>
+                                  <View style={[styles.suspendedChip, { backgroundColor: colors.destructive + '12' }]}>
+                                    <Text style={[styles.removeBtnLabel, { color: colors.destructive }]}>Closed as under 18</Text>
+                                  </View>
+                                  {canLift(report.reportedUserId) && (
+                                    <TouchableOpacity
+                                      onPress={() => { setActionError(null); setConfirming({ kind: 'undoUnder18', id: report.reportedUserId }); }}
+                                      activeOpacity={0.85}
+                                      accessibilityRole="button"
+                                      accessibilityLabel={`Undo closing ${reportedName}`}
+                                      style={[styles.removeBtn, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
+                                      hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+                                    >
+                                      <Feather name="rotate-ccw" size={13} color={colors.homeCoralDeep} />
+                                      <Text style={[styles.removeBtnLabel, { color: colors.homeCoralDeep }]}>Undo</Text>
+                                    </TouchableOpacity>
+                                  )}
+                                </>
+                              ) : underAge && !cannotSuspend(report.reportedUserId) ? (
+                                <TouchableOpacity
+                                  onPress={() => { setActionError(null); setConfirming({ kind: 'closeUnder18', id: report.id, userId: report.reportedUserId }); }}
+                                  activeOpacity={0.85}
+                                  accessibilityRole="button"
+                                  accessibilityLabel={`Close ${reportedName} as under 18`}
+                                  style={[styles.removeBtn, { backgroundColor: colors.destructive + '12', borderColor: colors.destructive + '30' }]}
+                                  hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+                                >
+                                  <Feather name="lock" size={13} color={colors.destructive} />
+                                  <Text style={[styles.removeBtnLabel, { color: colors.destructive }]}>Close as under 18</Text>
+                                </TouchableOpacity>
+                              ) : suspendedIds.has(report.reportedUserId) ? (
                                 <>
                                   <View style={[styles.suspendedChip, { backgroundColor: colors.destructive + '12' }]}>
                                     <Text style={[styles.removeBtnLabel, { color: colors.destructive }]}>Suspended</Text>
@@ -819,6 +934,8 @@ const styles = StyleSheet.create({
   removeBtn:     { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 12, paddingVertical: 6, borderWidth: 1, borderRadius: 8, minWidth: 84, justifyContent: 'center' },
   removeBtnLabel:{ fontSize: 12, fontFamily: 'Inter_600SemiBold' },
   suspendedChip: { paddingHorizontal: 10, paddingVertical: 6, borderRadius: 8 },
+  underAgeLabel: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', gap: 6, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 },
+  underAgeLabelText: { fontSize: 11, fontFamily: 'Inter_700Bold', letterSpacing: 0.5 },
   reasonInput:   { borderWidth: 1, borderRadius: 10, minHeight: 64, paddingHorizontal: 12, paddingVertical: 10, fontSize: 14, fontFamily: 'Inter_400Regular', textAlignVertical: 'top' },
   reasonCount:   { fontSize: 11, fontFamily: 'Inter_400Regular', textAlign: 'right', marginTop: -4 },
 });

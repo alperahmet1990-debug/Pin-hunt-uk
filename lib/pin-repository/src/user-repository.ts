@@ -572,6 +572,12 @@ export interface IUserPinRepository {
   /** Lift a suspension. Throws when it isn't allowed or there is none. */
   liftSuspension(userId: string): Promise<void>;
 
+  /**
+   * Admins only (migration 072, LP-9 #531): mark an account as under 18, or
+   * undo it. Same limits as suspensions. The suspension itself is separate.
+   */
+  setAgeDeclined(userId: string, declined: boolean): Promise<void>;
+
   // ── Conversations / DMs ────────────────────────────────────────────────────
 
   /** Return all conversations for userId, sorted by most recent message. */

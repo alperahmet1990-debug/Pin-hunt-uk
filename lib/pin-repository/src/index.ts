@@ -184,6 +184,17 @@ export {
   updatePlace,
 } from './pin-locations';
 
+// ─── Age confirmation (migration 072, LP-8 #530) ──────────────────────────────
+export type { AgeConfirmationClient, AgeStatus } from './age-confirmation';
+export {
+  confirmMyAge,
+  confirmMyAgeFromSignup,
+  getMyAgeStatus,
+  MINIMUM_AGE,
+  setAgeDeclined,
+  SIGNUP_AGE_METADATA_KEY,
+} from './age-confirmation';
+
 // ─── Database types ───────────────────────────────────────────────────────────
 export type { Database, Tables, TablesInsert, TablesUpdate } from './database.types';
 

@@ -22,6 +22,7 @@ import { useColors } from '@/hooks/useColors';
 import palette from '@/constants/colors';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { Avatar } from '@/components/Avatar';
+import { ReportedMessagePanel } from '@/components/ReportedMessagePanel';
 import type { CommunityPost, PostReportSummary, ReportedComment, UserReport, UserSuspension } from '@workspace/pin-repository';
 import { SUSPENSION_REASON_MAX } from '@workspace/pin-repository';
 import { useMyAccess } from '@/hooks/useMyAccess';
@@ -528,10 +529,8 @@ export default function CommunityModerationScreen() {
                           {!suspendedIds.has(report.reportedUserId) && cannotSuspend(report.reportedUserId) ? (
                             <Text style={[styles.metaChipLabel, { color: colors.homeMuted }]}>{cannotSuspend(report.reportedUserId)}</Text>
                           ) : null}
-                          {report.target === 'message' && report.messageId ? (
-                            <Text style={[styles.metaChipLabel, { color: colors.homeMuted }]} selectable>
-                              Message ID {report.messageId}
-                            </Text>
+                          {report.target === 'message' && report.messageId && repo ? (
+                            <ReportedMessagePanel reportId={report.id} messageId={report.messageId} repo={repo} />
                           ) : null}
                           {confirming?.kind === 'suspend' && confirming.id === report.id ? (
                             <View style={{ gap: 8 }}>

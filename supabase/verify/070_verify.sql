@@ -65,11 +65,11 @@ begin
   assert not has_function_privilege('authenticated', 'public.trade_items_guard()', 'execute'), '1h guard exposed';
   assert to_regprocedure('public.trade_propose_in_chat(uuid,text)') is null, '1i old propose_in_chat left behind';
   assert to_regprocedure('public.trade_accept(uuid)') is null, '1j old accept left behind';
-  assert exists (select 1 from pg_policies where tablename = 'trade_items' and policyname = 'trade_items_select_admin'), '1k admin policy missing';
+  assert exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'trade_items' and policyname = 'trade_items_select_admin'), '1k admin policy missing';
   assert not has_table_privilege('authenticated', 'public.trade_items', 'insert'), '1l clients can insert items';
   assert not has_table_privilege('authenticated', 'public.trade_items', 'delete'), '1m clients can delete items';
-  assert exists (select 1 from information_schema.columns where table_name = 'trades' and column_name = 'items_version'), '1n items_version missing';
-  assert (select is_nullable from information_schema.columns where table_name = 'trade_items' and column_name = 'user_pin_id') = 'YES', '1o user_pin_id still required';
+  assert exists (select 1 from information_schema.columns where table_schema = 'public' and table_name = 'trades' and column_name = 'items_version'), '1n items_version missing';
+  assert (select is_nullable from information_schema.columns where table_schema = 'public' and table_name = 'trade_items' and column_name = 'user_pin_id') = 'YES', '1o user_pin_id still required';
   assert (select confdeltype from pg_constraint where conname = 'trade_items_user_pin_id_fkey') = 'n', '1p user_pin_id not ON DELETE SET NULL';
 end $$;
 

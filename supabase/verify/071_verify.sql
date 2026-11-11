@@ -76,7 +76,7 @@ begin
   assert not has_function_privilege('authenticated', 'public.trade_post_event(trades,text,uuid)', 'execute'), '1c helper exposed';
   assert not has_function_privilege('authenticated', 'public.trades_post_chat_event()', 'execute'), '1d trigger exposed';
   assert not has_function_privilege('authenticated', 'public.conversations_post_trade_proposed()', 'execute'), '1e trigger exposed';
-  assert exists (select 1 from pg_policies where policyname = 'conv_messages_insert_no_trade_event' and permissive = 'RESTRICTIVE'), '1f policy missing';
+  assert exists (select 1 from pg_policies where schemaname = 'public' and policyname = 'conv_messages_insert_no_trade_event' and permissive = 'RESTRICTIVE'), '1f policy missing';
   assert exists (select 1 from pg_trigger where tgname = 'trades_post_chat_event'), '1g trades trigger missing';
   assert exists (select 1 from pg_trigger where tgname = 'conversations_post_trade_proposed'), '1h conversations trigger missing';
 end $$;

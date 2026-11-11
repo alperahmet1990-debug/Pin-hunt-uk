@@ -111,6 +111,9 @@ Before the reset, every PostgREST-visible table on staging was dumped to JSON:
 **Imported:** 116,502 pins from the CSV, plus 1 from the API (P&P 130584) = **116,503**.
 12,987 sets, 112,432 set memberships, 116,503 external ids, 116,503 reference
 images (0 public). The CSV import took 165 s. A second incremental sync wrote 0 pins.
+A full-refresh dry run (584 requests, ~10 min, no 429s) got 116,500 pins back from the
+API. So 3 pins from the CSV export are no longer in the API (removed or merged since the
+export). Running `sync --full --apply` would archive them. Nothing was archived yet.
 
 **Removed:** the old 3,160 pins (2,977 CTP, 182 trusted test, 1 import), 326
 sets, and by cascade 5,287 CTP images, 2,918 memberships, 7,907 external ids,

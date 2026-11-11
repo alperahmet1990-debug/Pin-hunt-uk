@@ -62,6 +62,7 @@ const CONTRIBUTE_LINKS: LinkItem[] = [
 const CREATOR_LINKS: LinkItem[] = [
   { icon: 'users',        title: 'Manage People',        description: 'Admin and contributor rights, feature rollouts.', href: '/admin/people' as Href },
   { icon: 'book-open',    title: 'Catalogue',            description: 'Search and edit catalogue records.',              href: '/admin/catalogue' as Href },
+  { icon: 'layers',       title: 'Board Scans',          description: 'Turn photos of pin boards into catalogue photos.', href: '/admin/board-scans' as Href },
   { icon: 'image',        title: 'Missing Images',       description: 'Add front or back photos to catalogue pins.',     href: '/admin/image-backfill' as Href },
   { icon: 'upload-cloud', title: 'Catalogue Import',     description: 'Preview and run spreadsheet imports.',            href: '/admin/import' as Href },
   { icon: 'check-square', title: 'Catalogue Validation', description: 'eBay checks of catalogue details.',               href: '/admin/catalogue-validation' as Href },

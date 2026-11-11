@@ -16,6 +16,7 @@
     "staging:restore": "node --env-file=.env.staging scripts/staging-db.mjs restore",
     "staging:verify": "node --env-file=.env.staging scripts/staging-db.mjs verify",
     "staging:import-catalogue": "node --env-file=.env.staging scripts/import-collectible-pintrader.mjs",
+    "staging:board-bench": "node --env-file=.env.staging scripts/board-scan-benchmark.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run"
   },

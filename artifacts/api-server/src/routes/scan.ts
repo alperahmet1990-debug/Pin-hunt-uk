@@ -3,7 +3,6 @@ import { createClient } from "@supabase/supabase-js";
 import { getOpenAIClient, isAiConfigured } from "@workspace/integrations-openai-ai-server";
 import {
   createSupabasePinRepository,
-  type CataloguePin,
   type PinRepository,
 } from "@workspace/pin-repository";
 import {
@@ -12,6 +11,7 @@ import {
   type VisionSignals,
 } from "../services/google-vision";
 import { findCandidates } from "../services/scanCandidates";
+import { buildCatalogueText, rankSystemPrompt, verifySystemPrompt } from "../services/pinRank";
 import { createStageTimer } from "../services/scanTiming";
 import {
   createScanBudget,
@@ -39,25 +39,6 @@ function makeRepository(): PinRepository | null {
 }
 
 const repository: PinRepository | null = makeRepository();
-
-// ── Catalogue helpers ─────────────────────────────────────────────────────────
-
-function buildCatalogueText(pins: CataloguePin[]): string {
-  return pins
-    .map(
-      (p) => {
-        const chars = [...new Set([
-          ...(p.mainCharacter ? [p.mainCharacter] : []),
-          ...p.characters,
-          ...(p.allCharacters ?? "").split(/[;,]/).map(c => c.trim()).filter(Boolean),
-        ])];
-        return `ID: ${p.id} | "${p.title}" | ${p.brand} | ${p.collection}` +
-          ` | Characters: ${chars.join(", ") || "none"}` +
-          ` | ${p.edition ?? "Open Edition"}`;
-      },
-    )
-    .join("\n");
-}
 
 // ── POST /scan/identify ───────────────────────────────────────────────────────
 
@@ -332,20 +313,7 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
       messages: [
         {
           role: "system",
-          content: `You are an expert Disney enamel pin identifier with deep knowledge of Disney Parks, Loungefly, and BoxLunch pin collections.
-
-You will be shown a photo of a Disney enamel pin. Your job is to identify it from the catalogue below and return the top 5 most likely matches.
-
-PIN CATALOGUE:
-${catalogueText}${visionHintText}
-
-Respond with ONLY a valid JSON array of exactly 5 objects, no markdown, no explanation outside the JSON:
-[
-  { "pinId": "<id from catalogue>", "confidence": <0-100 integer>, "reasoning": "<1 sentence why>" },
-  ...
-]
-
-If the image is unclear, not a Disney pin, or doesn't match any pin well, still return 3 entries with low confidence scores (under 40). Always pick the best visual matches available — look at characters, colour palette, shape, brand style, and any visible text.`,
+          content: rankSystemPrompt(catalogueText, visionHintText),
         },
         {
           role: "user",
@@ -481,13 +449,7 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
             messages: [
               {
                 role: "system",
-                content: `You verify Disney pin identifications by comparing photos. Candidates:
-  ${candidateList}
-
-  Where a reference image is shown, compare it DIRECTLY to the user's pin photo — same shapes, colours, props and layout means a match; visible differences mean it is NOT that pin, no matter how similar the text sounds. Candidates without reference images keep roughly their original plausibility.
-  Respond with ONLY a JSON array re-ranking all ${matches.length} candidates, best first:
-  [ { "pinId": "<id>", "confidence": <0-100>, "reasoning": "<1 sentence>" }, ... ]
-  Give a confidence above 85 only when a reference image visually confirms the match.`,
+                content: verifySystemPrompt(candidateList, matches.length),
               },
               { role: "user", content: refContent },
             ],

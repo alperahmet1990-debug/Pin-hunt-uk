@@ -18,7 +18,7 @@ import { useColors } from '@/hooks/useColors';
 // First path segment under /admin that only the App Creator may open.
 const APP_CREATOR_ROUTES = new Set([
   'catalogue', 'pin', 'import', 'catalogue-validation', 'image-backfill',
-  'ebay-image-dryrun', 'vision-test', 'research-review',
+  'ebay-image-dryrun', 'vision-test', 'research-review', 'board-scans', 'board-scan',
 ]);
 
 export default function AdminLayout() {
@@ -70,6 +70,8 @@ export default function AdminLayout() {
       <Stack.Screen name="pin/[id]"     options={{ title: 'Pin Editor' }} />
       <Stack.Screen name="community-moderation" options={{ title: 'Community Moderation' }} />
       <Stack.Screen name="catalogue-validation" options={{ title: 'Catalogue Validation' }} />
+      <Stack.Screen name="board-scans"  options={{ title: 'Board Scans' }} />
+      <Stack.Screen name="board-scan/[id]" options={{ title: 'Board' }} />
     </Stack>
   );
 }

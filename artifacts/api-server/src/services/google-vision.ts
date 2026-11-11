@@ -75,14 +75,19 @@ export async function getVisionSignals(
 
   try {
     const call = (async (): Promise<VisionSignals | null> => {
-      const [result] = await vision.annotateImage({
-        image: { content: imageBase64 },
-        features: [
-          { type: "TEXT_DETECTION" },
-          { type: "LOGO_DETECTION", maxResults: 5 },
-          { type: "WEB_DETECTION", maxResults: 12 },
-        ],
-      });
+      // The same budget as a gRPC deadline, so a slow call is cancelled
+      // rather than left running after the race below gives up on it.
+      const [batch] = await vision.batchAnnotateImages({
+        requests: [{
+          image: { content: imageBase64 },
+          features: [
+            { type: "TEXT_DETECTION" },
+            { type: "LOGO_DETECTION", maxResults: 5 },
+            { type: "WEB_DETECTION", maxResults: 12 },
+          ],
+        }],
+      }, { timeout: timeoutMs });
+      const result = batch.responses?.[0] ?? {};
       if (result.error?.message) {
         console.warn("[google-vision] API error:", result.error.message);
         return null;

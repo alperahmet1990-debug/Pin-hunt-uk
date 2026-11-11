@@ -21,6 +21,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
+import { FEATURES } from '@/constants/features';
 import { Avatar } from '@/components/Avatar';
 import { useCommunity } from '@/hooks/useCommunity';
 import { useUnreadMessages } from '@/context/UnreadMessagesContext';
@@ -473,16 +474,18 @@ export default function CommunityScreen() {
         <View style={styles.titleRow}>
           <Text style={[styles.title, narrowHeader && styles.titleNarrow, { color: colors.homeInk }]}>Community</Text>
           <View style={[styles.headerActions, narrowHeader && styles.headerActionsNarrow]}>
-            <TouchableOpacity
-              onPress={() => router.push('/nearby')}
-              style={[styles.headerIconBtn, iconBtnSize, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
-              activeOpacity={0.75}
-              hitSlop={iconHitSlop}
-              accessibilityRole="button"
-              accessibilityLabel="Collectors nearby"
-            >
-              <Feather name="map-pin" size={17} color={colors.homeInk} />
-            </TouchableOpacity>
+            {FEATURES.collectorsNearby && (
+              <TouchableOpacity
+                onPress={() => router.push('/nearby')}
+                style={[styles.headerIconBtn, iconBtnSize, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
+                activeOpacity={0.75}
+                hitSlop={iconHitSlop}
+                accessibilityRole="button"
+                accessibilityLabel="Collectors nearby"
+              >
+                <Feather name="map-pin" size={17} color={colors.homeInk} />
+              </TouchableOpacity>
+            )}
             <TouchableOpacity
               onPress={() => router.push('/find-trades')}
               style={[styles.headerIconBtn, iconBtnSize, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}

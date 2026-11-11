@@ -33,6 +33,7 @@ import { otherSideTracking, otherUserIdFor, sendFailureLine, tradeActionsFor } f
 import { useBlockedUsers } from '@/context/BlockedUsersContext';
 import type { PotentialTradePin, Trade, TradeMessage, TradeStatus } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
 import { formatDate } from '@/utils/format';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -308,6 +309,9 @@ export default function TradeScreen() {
   const [carrier,        setCarrier]        = useState('');
   const [tracking,       setTracking]       = useState('');
   const [reportOpen,     setReportOpen]     = useState(false);
+  // In-app confirmations: Alert.alert callbacks don't run on Expo web
+  // (memory: expo-web-action-confirmations).
+  const [confirmAction,  setConfirmAction]  = useState<'received' | 'cancel' | null>(null);
   const [reportReason,   setReportReason]   = useState('');
   const [potentialPins,  setPotentialPins]  = useState<PotentialTradePin[]>([]);
   const [bannerDismissed, setBannerDismissed] = useState(false);
@@ -645,10 +649,7 @@ export default function TradeScreen() {
                 {/* Each side: received. The trade completes when both have. */}
                 {actions?.canMarkReceived && (
                   <TouchableOpacity
-                    onPress={() => Alert.alert('Received their pins?', 'The trade completes once you have both confirmed.', [
-                      { text: 'No', style: 'cancel' },
-                      { text: 'Yes, received', onPress: () => void runAction(() => repo!.markTradeReceived(trade.id)) },
-                    ])}
+                    onPress={() => setConfirmAction('received')}
                     activeOpacity={0.85}
                     accessibilityRole="button"
                     style={[styles.actionBtnFull, { backgroundColor: colors.homeCoral, borderColor: colors.homeCoral }]}
@@ -659,10 +660,7 @@ export default function TradeScreen() {
 
                 {actions?.canCancel && (
                   <TouchableOpacity
-                    onPress={() => Alert.alert('Cancel trade?', 'This cannot be undone.', [
-                      { text: 'No', style: 'cancel' },
-                      { text: 'Yes, cancel', style: 'destructive', onPress: () => void runAction(() => repo!.cancelTrade(trade.id)) },
-                    ])}
+                    onPress={() => setConfirmAction('cancel')}
                     activeOpacity={0.85}
                     accessibilityRole="button"
                     style={[styles.actionBtnFull, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
@@ -766,6 +764,31 @@ export default function TradeScreen() {
           </>
         )}
       </KeyboardAvoidingView>
+      <ConfirmDialog
+        visible={confirmAction === 'received'}
+        title="Received their pins?"
+        message="The trade completes once you have both confirmed."
+        confirmLabel="Yes, received"
+        cancelLabel="No"
+        onCancel={() => setConfirmAction(null)}
+        onConfirm={() => {
+          setConfirmAction(null);
+          if (repo && trade) void runAction(() => repo.markTradeReceived(trade.id));
+        }}
+      />
+      <ConfirmDialog
+        visible={confirmAction === 'cancel'}
+        title="Cancel trade?"
+        message="This cannot be undone."
+        confirmLabel="Yes, cancel"
+        cancelLabel="No"
+        destructive
+        onCancel={() => setConfirmAction(null)}
+        onConfirm={() => {
+          setConfirmAction(null);
+          if (repo && trade) void runAction(() => repo.cancelTrade(trade.id));
+        }}
+      />
     </>
   );
 }

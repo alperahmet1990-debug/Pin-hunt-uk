@@ -394,12 +394,6 @@ export default function ChatScreen() {
                       </TouchableOpacity>
                     </View>
                   )}
-                  {!!otherId && otherAcceptsTrades && canProposeInChat(conv?.tradeId, tradeStatus) && (
-                    <TouchableOpacity accessibilityRole="button" onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
-                      <Feather name="check-circle" size={16} color={colors.homeCoral} />
-                      <Text style={[styles.agreeText, { color: colors.homeCoral }]}>Propose Trade</Text>
-                    </TouchableOpacity>
-                  )}
                   {messages.length === 0 && (
                     <View style={styles.emptyMessages}>
                       <Text style={[styles.emptyMsgText, { color: colors.homeMuted }]}>
@@ -419,6 +413,16 @@ export default function ChatScreen() {
               // near the newest, the list follows it down.
               maintainVisibleContentPosition={{ minIndexForVisible: 1, autoscrollToTopThreshold: 80 }}
             />
+            {/* Pinned above the composer: as a list footer in this inverted
+                list it scrolled out of reach in long chats. */}
+            {!!otherId && otherAcceptsTrades && canProposeInChat(conv?.tradeId, tradeStatus) && (
+              <View style={[styles.proposeBar, { borderTopColor: colors.homeLine, backgroundColor: colors.homeBackground }]}>
+                <TouchableOpacity accessibilityRole="button" onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
+                  <Feather name="check-circle" size={16} color={colors.homeCoral} />
+                  <Text style={[styles.agreeText, { color: colors.homeCoral }]}>Propose Trade</Text>
+                </TouchableOpacity>
+              </View>
+            )}
             <View style={[styles.inputBar, {
               borderTopColor: colors.homeLine,
               backgroundColor: colors.homeBackground,
@@ -639,6 +643,7 @@ const styles = StyleSheet.create({
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' }, messageList: { flex: 1 }, messageGap: { height: spacing.sm }, listTop: { gap: spacing.sm, paddingBottom: spacing.sm }, emptyMessages: { alignItems: 'center', paddingVertical: 40 }, emptyMsgText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   contextBanner: { flexDirection: 'row', gap: spacing.sm, padding: spacing.sm + 2, borderWidth: 1, borderRadius: radius.sm }, contextText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 }, agreedCard: { padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm, gap: 3 }, agreedTitle: { fontFamily: 'Inter_600SemiBold', fontSize: 14 }, agreeButton: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 7, padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm }, agreeText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   bubbleRow: { flexDirection: 'row' }, bubbleRowMe: { justifyContent: 'flex-end' }, bubble: { maxWidth: '78%', padding: spacing.sm + 2, borderRadius: radius.lg, borderWidth: 1, gap: spacing.xs + 2 }, bubbleMe: { borderWidth: 0 }, bubbleText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 19 }, bubbleTime: { fontSize: 10, fontFamily: 'Inter_400Regular', textAlign: 'right' }, photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 4 }, sharedPhoto: { width: 118, height: 118, borderRadius: radius.sm - 2 }, pinCard: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: 7, borderRadius: radius.sm - 1 }, pinImage: { width: 44, height: 44, borderRadius: 6 }, pinTitle: { fontSize: 12, fontFamily: 'Inter_600SemiBold' }, tradeTag: { marginTop: 2, fontSize: 9, fontFamily: 'Inter_700Bold', letterSpacing: .5 },
+  proposeBar: { paddingHorizontal: spacing.md, paddingTop: spacing.sm, borderTopWidth: StyleSheet.hairlineWidth },
   inputBar: { flexDirection: 'row', alignItems: 'flex-end', gap: spacing.sm, paddingHorizontal: spacing.md, paddingTop: spacing.sm + 2, borderTopWidth: StyleSheet.hairlineWidth }, plusBtn: { width: 40, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' }, msgInput: { flex: 1, paddingHorizontal: spacing.md + 2, paddingVertical: spacing.sm + 2, fontSize: 14, fontFamily: 'Inter_400Regular', maxHeight: 120, borderWidth: 1, borderRadius: 22 }, sendBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 22 },
   attachmentSheet: { borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, padding: spacing.lg, gap: spacing.sm + 2 },
   attachmentOption: { minHeight: 68, borderWidth: 1, borderRadius: radius.md, padding: spacing.sm + 2, flexDirection: 'row', alignItems: 'center', gap: 11 },

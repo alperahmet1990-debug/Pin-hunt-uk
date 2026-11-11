@@ -51,16 +51,21 @@
 
 begin;
 
--- ── 0. Guard: staging only, and the tables this needs ───────────────────────
--- Staging is told apart by trade_for_participant (057), which production
--- does not have yet. Production uses the guard in 072_RUNBOOK.md instead.
+-- ── 0. Project guard, and the tables this needs ─────────────────────────────
+-- Edit `target` to the project you mean to change: 'staging' or 'production'.
+-- It is compared with pinhunt_environment(), the one-line marker created
+-- once per project (073_RUNBOOK.md). Any mismatch stops here; nothing runs.
 do $$
+declare
+  target text := 'staging';  -- <- 'staging' or 'production'
+  actual text;
 begin
-  if not exists (
-    select 1 from pg_proc p join pg_namespace n on n.oid = p.pronamespace
-     where n.nspname = 'public' and p.proname = 'trade_for_participant'
-  ) then
-    raise exception '072 guard: this does not look like staging (trade_for_participant is missing). Nothing was changed. For production, use the production guard in supabase/verify/072_RUNBOOK.md.';
+  if to_regprocedure('public.pinhunt_environment()') is null then
+    raise exception '072 guard: pinhunt_environment() is missing. Create the project marker first (073_RUNBOOK.md). Nothing was changed.';
+  end if;
+  execute 'select public.pinhunt_environment()' into actual;
+  if actual is distinct from target then
+    raise exception '072 guard: this is %, not %. Nothing was changed.', actual, target;
   end if;
   if to_regclass('public.user_reports') is null then
     raise exception '072 guard: user_reports is missing. Apply 050 first. Nothing was changed.';

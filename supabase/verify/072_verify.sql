@@ -1,5 +1,5 @@
 -- ============================================================
--- Verification for migration 072 (run on STAGING after applying 072, in the
+-- Verification for migration 072 (run after applying 072, in the
 -- Supabase SQL editor, as the default postgres user).
 --
 -- One transaction, ROLLED BACK at the end. It creates four throwaway auth
@@ -18,11 +18,18 @@
 -- ============================================================
 begin;
 
--- Guard: staging only (same marker as the migration).
-do $$ begin
-  if not exists (select 1 from pg_proc p join pg_namespace n on n.oid = p.pronamespace
-                  where n.nspname = 'public' and p.proname = 'trade_for_participant') then
-    raise exception '072 verify guard: this does not look like staging. Nothing was run.';
+-- Project guard (same marker as the migration). Edit `target` to match.
+do $$
+declare
+  target text := 'staging';  -- <- 'staging' or 'production'
+  actual text;
+begin
+  if to_regprocedure('public.pinhunt_environment()') is null then
+    raise exception '072 verify guard: pinhunt_environment() is missing. Nothing was run.';
+  end if;
+  execute 'select public.pinhunt_environment()' into actual;
+  if actual is distinct from target then
+    raise exception '072 verify guard: this is %, not %. Nothing was run.', actual, target;
   end if;
 end $$;
 

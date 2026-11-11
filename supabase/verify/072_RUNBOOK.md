@@ -19,7 +19,7 @@ The app and API work before and after the migration:
 - Before it's applied, "Show message" on a report card shows "Reported messages can't be shown yet." and the remove route answers 503.
 - Older app builds ignore `removed_at` and show the placeholder text as a normal message.
 
-1. Staging SQL editor. The migration's first block stops unless the project has `trade_for_participant` (057), which production doesn't have yet. Apply 072.
+1. Staging SQL editor. The migration's first block is a project guard: it stops unless `target` (default `'staging'`) matches `pinhunt_environment()`, the one-line marker created once per project (see `073_RUNBOOK.md`). Apply 072.
 2. Run `supabase/verify/072_verify.sql`. Expect `ALL 072 CHECKS PASSED`. It rolls itself back. If the hosted project refuses the test row in `storage.objects`, the photo checks are skipped with a notice (6h–6k); the API tests cover the storage step.
 3. `notify pgrst, 'reload schema';` (also at the end of the migration).
 4. Deploy the API (Render, staging) so `/api/admin/messages/:id/remove` exists. Merge, then publish the app update.
@@ -30,24 +30,7 @@ The app and API work before and after the migration:
    - A and B reload the chat: both see "Removed by PinHunt moderators" in place of each removed message. The other messages are unchanged. The photo URL no longer loads.
    - The report is still on the queue until dismissed. After Dismiss, Show message (if reopened) says the message is no longer available.
    - A non-admin can't reach the moderation screen, and a direct call to the route with their token gets 403.
-6. Production: separate approval, after 057–061. Replace the migration's step 0 guard with the production guard below, then steps 2–5 with the production project. The verify script has the same staging guard; swap it the same way.
-
-### Production guard (use instead of step 0, only for the approved production run)
-
-```sql
-do $$
-begin
-  if exists (select 1 from pg_proc p join pg_namespace n on n.oid = p.pronamespace
-              where n.nspname = 'public' and p.proname = 'trade_for_participant') then
-    raise exception '072 guard: this looks like staging (or 057 is now on production: pick a new marker). Nothing was changed.';
-  end if;
-  if to_regclass('public.user_reports') is null then
-    raise exception '072 guard: user_reports is missing. Apply 050 first. Nothing was changed.';
-  end if;
-end $$;
-```
-
-If 057 has reached production by then, `trade_for_participant` no longer tells the two apart. Pick a new marker before running either guard.
+6. Production: separate approval, after 057–061 are on production. Create the production marker if it isn't there yet (`073_RUNBOOK.md`). Set `target := 'production'` in both the migration and the verify script (the only edit), then steps 2–5 with the production project.
 
 ## Pre-checks done (local PGlite replay of the full chain, no hosted database)
 

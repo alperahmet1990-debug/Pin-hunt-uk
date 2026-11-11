@@ -19,7 +19,7 @@ jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
 }));
 const mockPush = jest.fn();
-jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush }), Stack: { Screen: () => null } }));
+jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush }), useFocusEffect: () => {}, Stack: { Screen: () => null } }));
 jest.mock('expo-haptics', () => ({ selectionAsync: jest.fn() }));
 jest.mock('@/context/ProfileContext', () => ({ useProfile: () => ({ profile: { username: 'demo', isAdmin: false }, loading: false }) }));
 jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ signOut: jest.fn() }) }));

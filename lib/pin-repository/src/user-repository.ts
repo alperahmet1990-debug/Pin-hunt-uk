@@ -177,6 +177,15 @@ export interface IUserPinRepository {
   getTradeItems(tradeIds: string[]): Promise<Record<string, TradeItem[]>>;
 
   /**
+   * How many of the caller's trades wait on them: answering a proposal,
+   * posting their pins, or confirming receipt (migration 071).
+   */
+  getTradesWaitingCount(): Promise<number>;
+
+  /** The chat linked to a trade, if the caller is in one. */
+  getConversationIdForTrade(tradeId: string): Promise<string | null>;
+
+  /**
    * Whether another collector accepts new chats and new trade proposals
    * (their Allow Messages and Allow Trade Requests settings, migration 066).
    */

@@ -21,6 +21,7 @@ import { useProfile } from '@/context/ProfileContext';
 import { useAuth } from '@/context/AuthContext';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 import { useBlockedUsers } from '@/context/BlockedUsersContext';
+import { useTradesWaiting } from '@/hooks/useTradesWaiting';
 import { useFeature } from '@/hooks/useFeature';
 import { useCommunityPricesAvailable } from '@/hooks/useCommunityPricesAvailable';
 import { useCollection } from '@/context/CollectionContext';
@@ -156,6 +157,8 @@ export default function ProfileScreen() {
   const { blockedUsers } = useBlockedUsers();
   // Community prices setting (CV-03, #514), once migration 065 is live.
   const communityPricesOn = useCommunityPricesAvailable();
+  // Trades where the next step is the collector's (migration 071).
+  const { count: tradesWaiting } = useTradesWaiting();
 
   const { collection } = useCollection();
   const { pins } = usePinCatalogue();
@@ -271,6 +274,7 @@ export default function ProfileScreen() {
                 icon="repeat"
                 label="Trades"
                 onPress={() => router.push('/my-trades')}
+                badge={tradesWaiting}
               />
               <SettingsRow
                 icon="upload"

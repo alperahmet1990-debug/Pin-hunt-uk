@@ -13,6 +13,7 @@ import { PhotoGapsCard } from '@/components/PhotoGapsCard';
 import { RecentPinsStrip, recentEntries } from '@/components/RecentPinsStrip';
 import { useProfile } from '@/context/ProfileContext';
 import { useUnreadMessages } from '@/context/UnreadMessagesContext';
+import { tradesWaitingLine, useTradesWaiting } from '@/hooks/useTradesWaiting';
 import { useSubmissionNotifications } from '@/context/SubmissionNotificationsContext';
 import { useAuth } from '@/context/AuthContext';
 import { useCommunity } from '@/hooks/useCommunity';
@@ -48,6 +49,7 @@ export default function HomeScreen() {
   const { user } = useAuth();
   const { collection } = useCollection();
   const { totalUnread } = useUnreadMessages();
+  const { count: tradesWaiting } = useTradesWaiting();
   const { unseenCount } = useSubmissionNotifications();
   const { repo: userRepo } = useCommunity();
   const { repository: catRepo, pins, ensureCollections } = usePinCatalogue();
@@ -152,6 +154,7 @@ export default function HomeScreen() {
     if (event.sourceUrl) Linking.openURL(event.sourceUrl);
   };
   const forYou = [
+    tradesWaiting ? { id: 'trades', icon: 'repeat' as const, title: tradesWaitingLine(tradesWaiting), detail: 'Your turn to answer, post or confirm', action: () => router.push('/my-trades'), tone: colors.homeCoral } : null,
     totalUnread ? { id: 'messages', icon: 'message-circle' as const, title: 'New messages', detail: `${totalUnread} unread message${totalUnread === 1 ? '' : 's'}`, action: () => router.push('/community/conversations'), tone: colors.homeCoral } : null,
     unseenCount ? { id: 'submissions', icon: 'bell' as const, title: 'Submission update', detail: `${unseenCount} unseen update${unseenCount === 1 ? '' : 's'}`, action: () => router.push('/my-submissions'), tone: colors.homeSandInk } : null,
   ].filter(Boolean) as Array<{ id: string; icon: React.ComponentProps<typeof Feather>['name']; title: string; detail: string; action: () => void; tone: string }>;

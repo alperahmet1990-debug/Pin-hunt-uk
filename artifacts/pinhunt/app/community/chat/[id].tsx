@@ -46,6 +46,30 @@ function previewBody(msg: ConversationMessage) {
   return 'Message';
 }
 
+/**
+ * A line the server wrote about a trade step (migration 071), e.g.
+ * "@alex accepted the trade." Centred, not a bubble, and not reportable:
+ * the collector didn't type it. Opens the trade.
+ */
+function TradeEventLine({ msg, colors }: { msg: ConversationMessage; colors: ReturnType<typeof useColors> }) {
+  const router = useRouter();
+  return (
+    <TouchableOpacity
+      onPress={() => { if (msg.tradeId) router.push(`/trade/${msg.tradeId}`); }}
+      disabled={!msg.tradeId}
+      accessibilityRole="link"
+      accessibilityLabel={`${msg.body} ${formatDate(msg.createdAt, 'time')}. View trade`}
+      style={styles.tradeEventRow}
+      testID={`trade-event-${msg.id}`}
+    >
+      <View style={[styles.tradeEventPill, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
+        <Feather name="repeat" size={12} color={colors.homeMuted} />
+        <Text style={[styles.tradeEventText, { color: colors.homeMuted }]}>{msg.body}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+}
+
 function MessageBubble({ msg, isMe, colors, pins, onLongPress }: {
   msg: ConversationMessage; isMe: boolean; colors: ReturnType<typeof useColors>;
   pins: Map<string, CataloguePin>;
@@ -377,7 +401,7 @@ export default function ChatScreen() {
               data={newestFirst}
               keyExtractor={msg => msg.id}
               renderItem={({ item }) => (
-                <MessageBubble
+                item.tradeEvent ? <TradeEventLine msg={item} colors={colors} /> : <MessageBubble
                   msg={item}
                   isMe={item.senderId === userId}
                   colors={colors}
@@ -633,6 +657,9 @@ const styles = StyleSheet.create({
   contextBanner: { flexDirection: 'row', gap: spacing.sm, padding: spacing.sm + 2, borderWidth: 1, borderRadius: radius.sm }, contextText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 }, agreedCard: { padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm, gap: 3 }, agreedTitle: { fontFamily: 'Inter_600SemiBold', fontSize: 14 }, agreeButton: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 7, padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm }, agreeText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   bubbleRow: { flexDirection: 'row' }, bubbleRowMe: { justifyContent: 'flex-end' }, bubble: { maxWidth: '78%', padding: spacing.sm + 2, borderRadius: radius.lg, borderWidth: 1, gap: spacing.xs + 2 }, bubbleMe: { borderWidth: 0 }, bubbleText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 19 }, bubbleTime: { fontSize: 10, fontFamily: 'Inter_400Regular', textAlign: 'right' }, photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 4 }, sharedPhoto: { width: 118, height: 118, borderRadius: radius.sm - 2 }, pinCard: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: 7, borderRadius: radius.sm - 1 }, pinImage: { width: 44, height: 44, borderRadius: 6 }, pinTitle: { fontSize: 12, fontFamily: 'Inter_600SemiBold' }, tradeTag: { marginTop: 2, fontSize: 9, fontFamily: 'Inter_700Bold', letterSpacing: .5 },
   proposeBar: { paddingHorizontal: spacing.md, paddingTop: spacing.sm, borderTopWidth: StyleSheet.hairlineWidth },
+  tradeEventRow: { alignItems: 'center', paddingVertical: 2 },
+  tradeEventPill: { flexDirection: 'row', alignItems: 'center', gap: 6, maxWidth: '90%', paddingHorizontal: spacing.md, paddingVertical: 6, borderWidth: 1, borderRadius: 999 },
+  tradeEventText: { fontSize: 12, fontFamily: 'Inter_500Medium', flexShrink: 1, textAlign: 'center' },
   inputBar: { flexDirection: 'row', alignItems: 'flex-end', gap: spacing.sm, paddingHorizontal: spacing.md, paddingTop: spacing.sm + 2, borderTopWidth: StyleSheet.hairlineWidth }, plusBtn: { width: 40, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' }, msgInput: { flex: 1, paddingHorizontal: spacing.md + 2, paddingVertical: spacing.sm + 2, fontSize: 14, fontFamily: 'Inter_400Regular', maxHeight: 120, borderWidth: 1, borderRadius: 22 }, sendBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 22 },
   attachmentSheet: { borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, padding: spacing.lg, gap: spacing.sm + 2 },
   attachmentOption: { minHeight: 68, borderWidth: 1, borderRadius: radius.md, padding: spacing.sm + 2, flexDirection: 'row', alignItems: 'center', gap: 11 },

@@ -9,7 +9,7 @@ let mockFlags = { marketplaceListings: false, collectorsNearby: false, inPersonT
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
 }));
-jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush }) }));
+jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush }), useFocusEffect: () => {} }));
 jest.mock('@/components/Avatar', () => ({ Avatar: () => null }));
 jest.mock('@/constants/features', () => ({ get FEATURES() { return mockFlags; } }));
 jest.mock('@/context/ProfileContext', () => ({

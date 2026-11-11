@@ -33,6 +33,7 @@ export type {
   Trade,
   TradeItem,
   TradeItemInput,
+  TradeChatEvent,
   TradeMessage,
   TradeRating,
   TraderProfile,

@@ -23,7 +23,12 @@
         "usesNonExemptEncryption": false
       }
     },
-    "android": {},
+    "android": {
+      "package": "uk.pinhunt.app",
+      "blockedPermissions": [
+        "android.permission.SYSTEM_ALERT_WINDOW"
+      ]
+    },
     "web": {
       "favicon": "./assets/images/icon.png"
     },
@@ -49,7 +54,7 @@
       [
         "expo-camera",
         {
-          "cameraPermission": "PinHunt uses the camera to identify pins you scan.",
+          "cameraPermission": "PinHunt uses the camera to scan pins, take photos of pins you add and take your profile picture.",
           "microphonePermission": false,
           "recordAudioAndroid": false
         }
@@ -57,8 +62,8 @@
       [
         "expo-image-picker",
         {
-          "cameraPermission": "PinHunt uses the camera to identify pins you scan.",
-          "photosPermission": "PinHunt uses your photos to identify a pin from a picture you already took.",
+          "cameraPermission": "PinHunt uses the camera to scan pins, take photos of pins you add and take your profile picture.",
+          "photosPermission": "PinHunt uses your photos so you can choose pictures to identify or add a pin, share in posts and chats, and use as your profile picture.",
           "microphonePermission": false
         }
       ]

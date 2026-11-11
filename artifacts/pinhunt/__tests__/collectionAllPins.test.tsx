@@ -147,14 +147,28 @@ describe('My Collection: Boards first, All pins one tap away (UX-067, B-P1-04)',
     expect(screen.getByRole('button', { name: 'Mickey, 3 copies' })).toBeTruthy();
   });
 
+  it('with no pins and no boards, hides counters, view toggle and sort (TestFlight, 11 Nov)', async () => {
+    mockCollection = {};
+    mockBoards = [];
+    await render(<CollectionScreen />);
+    expect(screen.getByTestId('start-collection')).toBeTruthy();
+    expect(screen.queryByText('Total pins')).toBeNull();
+    expect(screen.queryByRole('radio', { name: 'Grid view' })).toBeNull();
+    expect(screen.queryByRole('button', { name: /^Sort boards/ })).toBeNull();
+    // Catalogue first: it's the quickest way in for collectors who own pins.
+    const buttons = screen.getAllByRole('button').map(b => b.props.accessibilityLabel).filter(Boolean);
+    expect(buttons.indexOf(buttons.find((l: string) => l.startsWith('Add from catalogue'))))
+      .toBeLessThan(buttons.indexOf(buttons.find((l: string) => l.startsWith('Scan a pin'))));
+  });
+
   it('with no pins and no boards, offers Scan and Add from catalogue only (#353)', async () => {
     mockCollection = {};
     mockBoards = [];
     await render(<CollectionScreen />);
-    expect(screen.getByText('No pins yet')).toBeTruthy();
-    await fireEvent.press(screen.getByRole('button', { name: 'Scan a pin' }));
+    expect(screen.getByText('Start your collection')).toBeTruthy();
+    await fireEvent.press(screen.getByRole('button', { name: /^Scan a pin/ }));
     expect(mockPush).toHaveBeenCalledWith('/(tabs)/scan');
-    await fireEvent.press(screen.getByRole('button', { name: 'Add from catalogue' }));
+    await fireEvent.press(screen.getByRole('button', { name: /^Add from catalogue/ }));
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/browse-catalogue', params: { mode: 'add' } });
     expect(screen.queryByText(/Search for a pin/)).toBeNull();
   });

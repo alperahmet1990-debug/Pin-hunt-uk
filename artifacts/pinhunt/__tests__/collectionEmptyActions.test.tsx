@@ -64,7 +64,7 @@ describe('Collection empty-state actions (#463)', () => {
     await render(<CollectionScreen />);
     await fireEvent.press(screen.getByRole('button', { name: 'Choose pins to trade' }));
     expect(mockPush).not.toHaveBeenCalled();
-    expect(screen.getByText('No pins yet')).toBeTruthy();
+    expect(screen.getByText('Start your collection')).toBeTruthy();
   });
 
   it('ISO: the empty action browses the catalogue', async () => {

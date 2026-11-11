@@ -47,7 +47,7 @@ describe('My Collection while loading (UX-045)', () => {
   it('shows placeholder tiles, not the empty state, while your pins are fetched', async () => {
     await render(<CollectionScreen />);
     expect(screen.getByRole('progressbar', { name: 'Loading your pins' })).toBeTruthy();
-    expect(screen.queryByText('No pins yet')).toBeNull();
+    expect(screen.queryByText('Start your collection')).toBeNull();
   });
 
   it('swaps placeholders for the pins once they arrive', async () => {
@@ -70,13 +70,13 @@ describe('My Collection while loading (UX-045)', () => {
     mockCollection = {};
     await render(<CollectionScreen />);
     expect(screen.queryByRole('progressbar')).toBeNull();
-    expect(screen.getByText('No pins yet')).toBeTruthy();
+    expect(screen.getByText('Start your collection')).toBeTruthy();
   });
 
   it('falls back to the empty state once loading ends without the pins', async () => {
     await render(<CollectionScreen />);
     await act(async () => { resolveEnsure(); });
     expect(screen.queryByRole('progressbar', { name: 'Loading your pins' })).toBeNull();
-    expect(screen.getByText('No pins yet')).toBeTruthy();
+    expect(screen.getByText('Start your collection')).toBeTruthy();
   });
 });

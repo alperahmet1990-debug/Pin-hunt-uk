@@ -50,7 +50,8 @@ function TwoPriceCard({
   pinId, catalogueEstimateGBP, canPrice, onAddPrice, yourPrice, currency, community,
 }: ValueDisplayProps & { currency: PriceCurrency; community: CommunityPrice | null }) {
   const colors = useColors();
-  const [, setCurrency] = usePriceCurrency();
+  const [, setCurrency, homeCurrency] = usePriceCurrency();
+  const peeking = currency !== homeCurrency;
   const market = usePinMarketValue(pinId);
   // Today's market figure is eBay UK asking prices (B-P1-19); US has none yet.
   const uk = currency === 'GBP' ? ukEstimateOf(market) : null;
@@ -90,6 +91,18 @@ function TwoPriceCard({
           })}
         </View>
       </View>
+
+      {/* The switch starts on the home market; the other side is a peek (HM-04). */}
+      {peeking && (
+        <View style={styles.peek}>
+          <Text style={[styles.peekText, { color: colors.homeMuted }]}>
+            Comparing {currency === 'USD' ? 'US' : 'UK'} prices. Your home market is the {homeCurrency === 'USD' ? 'US' : 'UK'}.
+          </Text>
+          <TouchableOpacity onPress={() => setCurrency(homeCurrency)} accessibilityRole="button" hitSlop={8}>
+            <Text style={[styles.peekLink, { color: colors.homeCoralDeep }]}>Back to {homeCurrency === 'USD' ? 'US' : 'UK'}</Text>
+          </TouchableOpacity>
+        </View>
+      )}
 
       <View style={styles.pair}>
         {uk && marketStep ? (
@@ -271,6 +284,9 @@ const styles = StyleSheet.create({
   switchOption: { minHeight: 32, minWidth: 52, borderRadius: radius.pill, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 10 },
   switchLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
   pair: { flexDirection: 'row', gap: spacing.sm + 2 },
+  peek: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', columnGap: spacing.sm, rowGap: 2 },
+  peekText: { fontSize: 12, fontFamily: 'Inter_400Regular' },
+  peekLink: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
   tile: { flex: 1, minWidth: 0, borderRadius: radius.lg, padding: spacing.md, gap: 3 },
   emptyTile: { borderWidth: 1.5, borderStyle: 'dashed', justifyContent: 'center' },
   tileLabel: { fontSize: 11.5, fontFamily: 'Inter_700Bold' },

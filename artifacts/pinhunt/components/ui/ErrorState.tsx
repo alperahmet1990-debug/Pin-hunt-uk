@@ -19,6 +19,9 @@ export const COMPACT_STACK_BELOW = 360;
 
 const ICON: Record<UserErrorKind, keyof typeof Feather.glyphMap> = {
   offline: 'wifi-off',
+  unreachable: 'cloud-off',
+  limit: 'pause-circle',
+  too_large: 'image',
   timeout: 'clock',
   auth: 'lock',
   server: 'alert-triangle',

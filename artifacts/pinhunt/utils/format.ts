@@ -6,8 +6,8 @@
  * before. The wording of the app stays British English for everyone; only
  * numbers, currency and dates follow the market (#560, decision 4).
  *
- * The market defaults to UK. HM-04 sets it from the collector's profile
- * (setFormatMarket); until then every collector sees UK formats.
+ * The market defaults to UK. ProfileContext sets it from the collector's
+ * profile (setFormatMarket, HM-04).
  */
 /** Same values as the profile's home market (HM-01); kept local so this has no dependency on it. */
 export type HomeMarket = 'UK' | 'US';
@@ -15,10 +15,19 @@ export type HomeMarket = 'UK' | 'US';
 const LOCALE: Record<HomeMarket, string> = { UK: 'en-GB', US: 'en-US' };
 
 let currentMarket: HomeMarket = 'UK';
+const marketListeners = new Set<(market: HomeMarket) => void>();
 
-/** Set once the collector's home market is known (HM-04). */
+/** Set from the collector's profile (ProfileContext, HM-04). Listeners hear changes. */
 export function setFormatMarket(market: HomeMarket) {
+  if (market === currentMarket) return;
   currentMarket = market;
+  marketListeners.forEach(l => l(market));
+}
+
+/** Hear when the home market changes; returns an unsubscribe. */
+export function subscribeFormatMarket(listener: (market: HomeMarket) => void): () => void {
+  marketListeners.add(listener);
+  return () => { marketListeners.delete(listener); };
 }
 
 export function formatMarket(): HomeMarket {

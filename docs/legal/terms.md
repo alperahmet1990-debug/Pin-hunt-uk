@@ -10,7 +10,7 @@ PinHunt is provided by PinHunt Ltd, a company registered in England and Wales (c
 
 ## Who can use PinHunt
 
-You must be at least 13. If you are under 18 you need permission from a parent or guardian. You must give accurate details, keep your password safe and have only one account. You are responsible for what happens on your account.
+You must be 18 or over. You must give accurate details, keep your password safe and have only one account. You are responsible for what happens on your account.
 
 ## Trading with other collectors
 

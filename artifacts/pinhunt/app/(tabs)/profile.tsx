@@ -235,16 +235,18 @@ export default function ProfileScreen() {
             </View>
 
             {/* Location / Nearby status */}
-            <LocationStatusBanner
-              hasLocationSet={profile?.hasLocationSet ?? false}
-              nearbyEnabled={profile?.nearbyDiscoveryEnabled ?? false}
-              radiusMiles={profile?.preferredRadiusMiles ?? 25}
-              onPress={() =>
-                profile?.hasLocationSet && profile?.nearbyDiscoveryEnabled
-                  ? router.push('/nearby')
-                  : router.push({ pathname: '/edit-profile', params: { section: 'location' } })
-              }
-            />
+            {FEATURES.collectorsNearby && (
+              <LocationStatusBanner
+                hasLocationSet={profile?.hasLocationSet ?? false}
+                nearbyEnabled={profile?.nearbyDiscoveryEnabled ?? false}
+                radiusMiles={profile?.preferredRadiusMiles ?? 25}
+                onPress={() =>
+                  profile?.hasLocationSet && profile?.nearbyDiscoveryEnabled
+                    ? router.push('/nearby')
+                    : router.push({ pathname: '/edit-profile', params: { section: 'location' } })
+                }
+              />
+            )}
 
             {/* Account */}
             <Section title="Account">
@@ -312,6 +314,13 @@ export default function ProfileScreen() {
 
             {/* App Settings */}
             <Section title="App">
+              {/* Home market (HM-02, #562): prices, events and dates. */}
+              <SettingsRow
+                icon="globe"
+                label="Home market"
+                value={profile?.homeMarket === 'US' ? '🇺🇸 US' : '🇬🇧 UK'}
+                onPress={() => router.push('/settings/home-market' as any)}
+              />
               <SettingsRow
                 icon={APPEARANCE_OPTIONS.find(o => o.value === appearance)?.icon ?? 'smartphone'}
                 label="Appearance"

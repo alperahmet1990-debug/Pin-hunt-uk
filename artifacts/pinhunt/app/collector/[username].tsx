@@ -14,6 +14,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
+import { FEATURES } from '@/constants/features';
 import { useProfile } from '@/context/ProfileContext';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { Avatar } from '@/components/Avatar';
@@ -274,18 +275,21 @@ export default function CollectorProfileScreen() {
           // Computed once here (rather than inline below) so both the
           // match-first and normal orderings below can reuse the exact same
           // markup instead of duplicating it.
-          const badgeRow = (profile.internationalTradingEnabled || profile.openToLocalTrades || profile.openToPostalTrades || profile.happyToTravel) ? (
+          const showIntl = FEATURES.internationalTrading && profile.internationalTradingEnabled;
+          const showLocal = FEATURES.inPersonTrading && profile.openToLocalTrades;
+          const showTravel = FEATURES.inPersonTrading && profile.happyToTravel;
+          const badgeRow = (showIntl || showLocal || profile.openToPostalTrades || showTravel) ? (
             <View style={styles.badgeRow}>
-              {profile.internationalTradingEnabled && (
+              {showIntl && (
                 <Chip icon="globe" label="Open to international trades" tone="coral" variant="soft" size="sm" />
               )}
-              {profile.openToLocalTrades && (
+              {showLocal && (
                 <Chip icon="map-pin" label="Local trades" tone="coral" variant="soft" size="sm" />
               )}
               {profile.openToPostalTrades && (
                 <Chip icon="package" label="Postal trades" tone="neutral" variant="soft" size="sm" />
               )}
-              {profile.happyToTravel && (
+              {showTravel && (
                 <Chip icon="navigation" label="Happy to travel" tone="neutral" variant="soft" size="sm" />
               )}
             </View>

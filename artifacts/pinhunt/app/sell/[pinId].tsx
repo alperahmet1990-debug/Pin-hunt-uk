@@ -22,6 +22,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
+import { FEATURES } from '@/constants/features';
+import { FeatureOffRedirect } from '@/components/FeatureOffRedirect';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { radius, spacing } from '@/constants/theme';
@@ -35,7 +37,7 @@ import type { ExternalSaleListingPlatform } from '@workspace/pin-repository';
 
 const PLATFORMS: ExternalSaleListingPlatform[] = ['vinted', 'ebay', 'other'];
 
-export default function SellScreen() {
+function SellScreen() {
   const { pinId } = useLocalSearchParams<{ pinId: string }>();
   const colors = useColors();
   const insets = useSafeAreaInsets();
@@ -319,6 +321,12 @@ export default function SellScreen() {
       </KeyboardAvoidingView>
     </>
   );
+}
+
+// Hidden while FEATURES.marketplaceListings is off: direct links go back safely.
+export default function SellScreenRoute() {
+  if (!FEATURES.marketplaceListings) return <FeatureOffRedirect />;
+  return <SellScreen />;
 }
 
 const styles = StyleSheet.create({

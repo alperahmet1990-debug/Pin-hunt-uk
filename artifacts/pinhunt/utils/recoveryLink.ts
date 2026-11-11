@@ -59,9 +59,14 @@ export function parseConfirmLink(url: string | null | undefined): ConfirmLink | 
 
 export const UPDATE_PASSWORD_ROUTE = '/(auth)/update-password';
 
+export const CONFIRM_AGE_ROUTE = '/confirm-age';
+export const NOT_ELIGIBLE_ROUTE = '/not-eligible';
+
 export type GuardTarget =
   | '/(auth)/login'
   | '/complete-profile'
+  | typeof CONFIRM_AGE_ROUTE
+  | typeof NOT_ELIGIBLE_ROUTE
   | '/(tabs)'
   | typeof UPDATE_PASSWORD_ROUTE
   | null;
@@ -69,23 +74,36 @@ export type GuardTarget =
 /**
  * Where AuthGuard should send the user. A recovery session may reach the
  * update-password screen and nothing else until the password is updated.
+ *
+ * Age (LP-8, #530): a declined account reaches only the not-eligible screen
+ * and Delete account. An account that hasn't confirmed its age is asked
+ * first, before choosing a username.
  */
 export function resolveGuardTarget(args: {
   hasSession: boolean;
   isRecovery: boolean;
   needsUsername: boolean;
+  needsAgeConfirmation?: boolean;
+  ageDeclined?: boolean;
   segments: readonly string[];
 }): GuardTarget {
   const { hasSession, isRecovery, needsUsername, segments } = args;
+  const needsAge = hasSession && !!args.needsAgeConfirmation;
+  const declined = hasSession && !!args.ageDeclined;
   const inAuthGroup = segments[0] === '(auth)';
   const inCompleteProfile = segments[0] === 'complete-profile';
   const inUpdatePassword = inAuthGroup && segments[1] === 'update-password';
+  const inConfirmAge = segments[0] === 'confirm-age';
+  const inNotEligible = segments[0] === 'not-eligible';
 
   if (hasSession && isRecovery) return inUpdatePassword ? null : UPDATE_PASSWORD_ROUTE;
+  if (declined) return inNotEligible || segments[0] === 'delete-account' ? null : NOT_ELIGIBLE_ROUTE;
   // The Privacy Policy and Terms can be read before signing up or finishing a profile.
   if (segments[0] === 'legal') return null;
   if (!hasSession && !inAuthGroup) return '/(auth)/login';
-  if (hasSession && inAuthGroup) return needsUsername ? '/complete-profile' : '/(tabs)';
+  if (needsAge) return inConfirmAge ? null : CONFIRM_AGE_ROUTE;
+  const home = needsUsername ? '/complete-profile' : '/(tabs)';
+  if (hasSession && (inAuthGroup || inConfirmAge || inNotEligible)) return home;
   if (hasSession && needsUsername && !inCompleteProfile) return '/complete-profile';
   if (hasSession && !needsUsername && inCompleteProfile) return '/(tabs)';
   return null;

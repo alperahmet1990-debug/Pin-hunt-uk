@@ -4,6 +4,7 @@ import { PinRepositoryError } from './repository';
 import { homeMarketFromCountry, SUSPENSION_REASON_MAX } from './types';
 import { safeDisplayName } from './display-name';
 import * as communityPrices from './community-prices';
+import * as ageConfirmation from './age-confirmation';
 import * as pinLocations from './pin-locations';
 import type { CollectionPlace, PinLocation, PinLocationInput, PlaceInput } from './pin-locations';
 import type { CommunityPrice, MyPinPrice, PriceCurrency } from './community-prices';
@@ -2745,6 +2746,13 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       photoUrls: (r.photo_urls as string[] | null) ?? [],
       createdAt: r.created_at as string,
     };
+  }
+
+  // ── Age confirmation, admin side (migration 073, LP-9 #531) ─────────────────
+
+  setAgeDeclined(userId: string, declined: boolean): Promise<void> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return ageConfirmation.setAgeDeclined(this.client as any, userId, declined);
   }
 
   // ── Collector prices and community prices (migration 065, #511) ──────────────

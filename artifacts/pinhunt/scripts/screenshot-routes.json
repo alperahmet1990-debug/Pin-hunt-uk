@@ -211,5 +211,17 @@
   {
     "name": "settings-home-market",
     "path": "/settings/home-market"
+  },
+  {
+    "name": "register",
+    "path": "/register?demo_session=none"
+  },
+  {
+    "name": "confirm-age",
+    "path": "/confirm-age?demo_age=unconfirmed"
+  },
+  {
+    "name": "not-eligible",
+    "path": "/not-eligible?demo_age=declined"
   }
 ]

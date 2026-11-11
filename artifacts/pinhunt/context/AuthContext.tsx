@@ -13,9 +13,10 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Platform } from 'react-native';
 import type { Session, User } from '@supabase/supabase-js';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
-import { DEMO_SESSION, isDemoMode } from '@/lib/demoMode';
+import { DEMO_SESSION, demoStartsSignedOut, isDemoMode } from '@/lib/demoMode';
 import * as Linking from 'expo-linking';
 import { parseConfirmLink, parseRecoveryLink } from '@/utils/recoveryLink';
+import { SIGNUP_AGE_METADATA_KEY } from '@workspace/pin-repository';
 
 // Shown to the user when they attempt auth without Supabase configured.
 const NOT_CONFIGURED =
@@ -114,10 +115,15 @@ interface AuthContextValue {
   /** True while a password-recovery session is active and the password is not yet updated. */
   isRecovery: boolean;
   signIn(email: string, password: string): Promise<{ error: string | null }>;
+  /**
+   * `ageConfirmed`: Register checked the date of birth on the device (LP-8).
+   * Only that flag goes into the sign-up metadata, never the date, so the
+   * check survives confirming the email on another device.
+   */
   signUp(
     email: string,
     password: string,
-    displayName?: string,
+    options?: { displayName?: string; ageConfirmed?: boolean },
   ): Promise<{ error: string | null; needsEmailConfirmation: boolean }>;
   signOut(): Promise<void>;
   requestPasswordReset(email: string): Promise<{ error: string | null }>;
@@ -137,7 +143,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // "invalid path in request URL" fetch error on unconfigured builds.
     if (!isSupabaseConfigured) {
       // Screenshot harness only: a mock signed-in session (see lib/demoMode).
-      if (isDemoMode) setSession(DEMO_SESSION);
+      if (isDemoMode && !demoStartsSignedOut()) setSession(DEMO_SESSION);
       setLoading(false);
       return;
     }
@@ -221,7 +227,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const signUp = async (email: string, password: string, displayName?: string) => {
+  const signUp = async (email: string, password: string, options?: { displayName?: string; ageConfirmed?: boolean }) => {
     if (!isSupabaseConfigured) return { error: NOT_CONFIGURED, needsEmailConfirmation: false };
     try {
       const { data, error } = await supabase.auth.signUp({
@@ -230,7 +236,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         options: {
           emailRedirectTo: SIGNUP_CONFIRM_REDIRECT,
           // Blank, not the email: display_name is public. The username is chosen next.
-          data: { display_name: displayName?.trim() ?? '' },
+          data: {
+            display_name: options?.displayName?.trim() ?? '',
+            ...(options?.ageConfirmed ? { [SIGNUP_AGE_METADATA_KEY]: true } : {}),
+          },
         },
       });
       if (error) {

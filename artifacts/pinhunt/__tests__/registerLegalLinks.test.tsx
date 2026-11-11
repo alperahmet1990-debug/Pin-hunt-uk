@@ -30,19 +30,20 @@ describe('Sign-up is for adults (18+)', () => {
     await fireEvent.changeText(screen.getByPlaceholderText('Confirm password'), 'Pinhunt-2026!');
   };
 
-  it('will not create an account until "I\'m 18 or over" is ticked', async () => {
+  // LP-8 (#530) replaced the "I'm 18 or over" tick box with a date of birth.
+  it('will not create an account until an adult date of birth is entered', async () => {
     mockSignUp.mockClear();
     await render(<RegisterScreen />);
     await fill();
-    const box = screen.getByRole('checkbox', { name: "I'm 18 or over" });
-    expect(box.props.accessibilityState).toEqual({ checked: false });
+    // No date of birth yet: nothing is sent.
     await fireEvent.press(screen.getAllByText('Create account').at(-1)!);
-    expect(screen.getByText(/aged 18 or over/)).toBeTruthy();
+    expect(screen.getByText(/Enter a real date of birth/)).toBeTruthy();
     expect(mockSignUp).not.toHaveBeenCalled();
 
-    await fireEvent.press(box);
-    expect(screen.getByRole('checkbox', { name: "I'm 18 or over" }).props.accessibilityState).toEqual({ checked: true });
+    await fireEvent.changeText(screen.getByLabelText('Day of birth'), '01');
+    await fireEvent.changeText(screen.getByLabelText('Month of birth'), '01');
+    await fireEvent.changeText(screen.getByLabelText('Year of birth'), '1990');
     await fireEvent.press(screen.getAllByText('Create account').at(-1)!);
-    expect(mockSignUp).toHaveBeenCalledWith('a@example.org', 'Pinhunt-2026!');
+    expect(mockSignUp).toHaveBeenCalledWith('a@example.org', 'Pinhunt-2026!', { ageConfirmed: true });
   });
 });

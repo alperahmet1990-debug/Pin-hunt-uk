@@ -23,7 +23,8 @@ do $$ begin
 end $$;
 create schema if not exists auth;
 create table if not exists auth.users (id uuid primary key default gen_random_uuid(), email text, raw_user_meta_data jsonb default '{}', created_at timestamptz default now(), last_sign_in_at timestamptz);
-create or replace function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
+-- Same fallback as hosted Supabase: claim.sub, else request.jwt.claims->>'sub'.
+create or replace function auth.uid() returns uuid language sql stable as $$ select coalesce(nullif(current_setting('request.jwt.claim.sub', true), ''), (nullif(current_setting('request.jwt.claims', true), '')::jsonb ->> 'sub'))::uuid $$;
 create or replace function auth.jwt() returns jsonb language sql stable as $$ select coalesce(nullif(current_setting('request.jwt.claims', true), ''), '{}')::jsonb $$;
 create or replace function auth.role() returns text language sql stable as $$ select coalesce(nullif(current_setting('request.jwt.claim.role', true), ''), 'anon') $$;
 create schema if not exists storage;
@@ -33,6 +34,8 @@ alter table storage.objects enable row level security;
 create or replace function storage.foldername(name text) returns text[] language sql immutable as $$ select (string_to_array(name, '/'))[1:greatest(array_length(string_to_array(name, '/'),1)-1,0)] $$;
 create or replace function storage.filename(name text) returns text language sql immutable as $$ select (string_to_array(name, '/'))[array_length(string_to_array(name, '/'),1)] $$;
 create publication supabase_realtime;
+-- The project marker the guards in 073+ check (073_RUNBOOK.md); the replay stands in for staging.
+create or replace function public.pinhunt_environment() returns text language sql immutable as $$ select 'staging' $$;
 -- Supabase's default grants, so verify scripts can run RLS cases as
 -- anon/authenticated (050+). Migrations that revoke still revoke after this.
 grant usage on schema public, auth, storage to anon, authenticated, service_role;

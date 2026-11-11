@@ -13,11 +13,12 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Link } from 'expo-router';
-import { Feather } from '@expo/vector-icons';
 import { useAuth } from '@/context/AuthContext';
 import { useColors } from '@/hooks/useColors';
 import { radius, spacing } from '@/constants/theme';
 import { validateNewPassword } from '@/utils/validatePassword';
+import { DateOfBirthField, EMPTY_DATE_OF_BIRTH, type DateOfBirthValue } from '@/components/DateOfBirthField';
+import { checkBirthDate, INVALID_DOB_MESSAGE, UNDER_AGE_MESSAGE } from '@/utils/ageCheck';
 
 export default function RegisterScreen() {
   const colors = useColors();
@@ -27,8 +28,10 @@ export default function RegisterScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
-  // PinHunt is for adults (utils/legal.ts, "Who can use PinHunt").
-  const [isAdult, setIsAdult] = useState(false);
+  // PinHunt is for adults (LP-8, #530). The date stays on the device: only
+  // "age confirmed" goes into the sign-up metadata, and under 18 sends nothing.
+  const [dob, setDob] = useState<DateOfBirthValue>(EMPTY_DATE_OF_BIRTH);
+  const [underAge, setUnderAge] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
@@ -43,13 +46,20 @@ export default function RegisterScreen() {
       setError(invalid);
       return;
     }
-    if (!isAdult) {
-      setError('PinHunt is for collectors aged 18 or over. Please confirm your age.');
+    const age = checkBirthDate(dob.day, dob.month, dob.year);
+    if (age.kind === 'invalid') {
+      setError(INVALID_DOB_MESSAGE);
+      return;
+    }
+    if (age.kind === 'under_age') {
+      // No account, and nothing sent to the server.
+      setError(null);
+      setUnderAge(true);
       return;
     }
     setError(null);
     setLoading(true);
-    const { error: err, needsEmailConfirmation } = await signUp(email.trim(), password);
+    const { error: err, needsEmailConfirmation } = await signUp(email.trim(), password, { ageConfirmed: true });
     setLoading(false);
     if (err) {
       setError(err);
@@ -62,6 +72,20 @@ export default function RegisterScreen() {
   };
 
   const styles = makeStyles(colors);
+
+  if (underAge) {
+    return (
+      <View style={[styles.root, styles.successRoot, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>
+        <Text style={styles.successHeading} accessibilityRole="header">PinHunt is for adults</Text>
+        <Text style={styles.successBody}>{UNDER_AGE_MESSAGE}</Text>
+        <Link href="/(auth)/login" asChild>
+          <TouchableOpacity style={styles.button} activeOpacity={0.8}>
+            <Text style={styles.buttonText}>Back to sign in</Text>
+          </TouchableOpacity>
+        </Link>
+      </View>
+    );
+  }
 
   if (success) {
     return (
@@ -140,23 +164,12 @@ export default function RegisterScreen() {
             onChangeText={setConfirm}
             secureTextEntry
             textContentType="newPassword"
-            returnKeyType="done"
-            onSubmitEditing={handleSignUp}
+            returnKeyType="next"
           />
 
-          <TouchableOpacity
-            style={styles.ageRow}
-            onPress={() => setIsAdult(v => !v)}
-            activeOpacity={0.7}
-            accessibilityRole="checkbox"
-            accessibilityState={{ checked: isAdult }}
-            accessibilityLabel="I'm 18 or over"
-          >
-            <View style={[styles.ageBox, isAdult && styles.ageBoxOn]}>
-              {isAdult && <Feather name="check" size={14} color={colors.homeSurface} />}
-            </View>
-            <Text style={styles.ageText}>I'm 18 or over</Text>
-          </TouchableOpacity>
+          <View style={styles.dob}>
+            <DateOfBirthField value={dob} onChange={setDob} onSubmitEditing={handleSignUp} />
+          </View>
 
           <TouchableOpacity
             style={[styles.button, loading && styles.buttonDisabled]}
@@ -285,13 +298,7 @@ function makeStyles(colors: any) {
       elevation: 3,
     },
     buttonDisabled: { opacity: 0.6 },
-    ageRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, minHeight: 44, marginBottom: spacing.sm },
-    ageBox: {
-      width: 22, height: 22, borderRadius: 6, borderWidth: 1.5, borderColor: colors.homeMuted,
-      alignItems: 'center', justifyContent: 'center',
-    },
-    ageBoxOn: { backgroundColor: colors.homeCoral, borderColor: colors.homeCoral },
-    ageText: { fontSize: 14, fontFamily: 'Inter_500Medium', color: colors.homeInk },
+    dob: { marginTop: spacing.xs, marginBottom: spacing.sm },
     agreement: {
       fontSize: 12.5,
       lineHeight: 18,

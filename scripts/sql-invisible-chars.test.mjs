@@ -23,7 +23,6 @@ const INVISIBLE = /[\p{Cf}\p{Zl}\p{Zp}\p{Co}\p{Cs}]|(?! )\p{Zs}|[\x00-\x08\x0B\x
 // they stay listed; nothing new may be added here.
 const KNOWN = {
   "supabase/migrations/061_trade_followups.sql": [28, 30],
-  "supabase/verify/061_verify.sql": [95, 117, 118, 119],
 };
 
 export function findInvisible(text) {

@@ -17,6 +17,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
+import { FEATURES } from '@/constants/features';
 import { useProfile } from '@/context/ProfileContext';
 import { useMarketplace } from '@/hooks/useMarketplace';
 import { Avatar } from '@/components/Avatar';
@@ -68,7 +69,7 @@ function CollectorCard({ item, match, onPress }: {
           </View>
         ) : null}
       </View>
-      {item.internationalTradingEnabled && (
+      {FEATURES.internationalTrading && item.internationalTradingEnabled && (
         <View style={[styles.badge, { backgroundColor: colors.homeCoral + '22' }]}>
           <Feather name="globe" size={11} color={colors.homeCoral} />
           <Text style={[styles.badgeText, { color: colors.homeCoral }]}>Intl</Text>

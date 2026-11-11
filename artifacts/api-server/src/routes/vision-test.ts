@@ -74,6 +74,12 @@ function getVisionClient(): ImageAnnotatorClient {
 
 const MAX_IMAGE_BASE64_CHARS = 8_000_000; // ~6MB image
 
+/** gRPC deadline for the Vision call, so a slow upstream can't hold the request open. */
+export const VISION_TEST_TIMEOUT_MS = 30_000;
+
+/** gRPC status DEADLINE_EXCEEDED: the deadline above ran out. */
+const GRPC_DEADLINE_EXCEEDED = 4;
+
 router.post("/vision-test", requireAppCreator, async (req: Request, res: Response) => {
   const { imageBase64 } = req.body as { imageBase64?: unknown };
   if (typeof imageBase64 !== "string" || imageBase64.length === 0) {
@@ -91,14 +97,17 @@ router.post("/vision-test", requireAppCreator, async (req: Request, res: Respons
 
   try {
     const client = getVisionClient();
-    const [result] = await client.annotateImage({
-      image: { content: imageBase64 },
-      features: [
-        { type: "TEXT_DETECTION" },
-        { type: "LOGO_DETECTION", maxResults: 10 },
-        { type: "WEB_DETECTION", maxResults: 15 },
-      ],
-    });
+    const [batch] = await client.batchAnnotateImages({
+      requests: [{
+        image: { content: imageBase64 },
+        features: [
+          { type: "TEXT_DETECTION" },
+          { type: "LOGO_DETECTION", maxResults: 10 },
+          { type: "WEB_DETECTION", maxResults: 15 },
+        ],
+      }],
+    }, { timeout: VISION_TEST_TIMEOUT_MS });
+    const result = batch.responses?.[0] ?? {};
 
     if (result.error?.message) {
       res.status(502).json({ error: `Vision API error: ${result.error.message}` });
@@ -157,6 +166,11 @@ router.post("/vision-test", requireAppCreator, async (req: Request, res: Respons
       suggestedSearchTerms,
     });
   } catch (err) {
+    if ((err as { code?: unknown } | null)?.code === GRPC_DEADLINE_EXCEEDED) {
+      console.error("[vision-test] upstream timeout");
+      res.status(504).json({ error: "Vision took too long to respond. Please try again." });
+      return;
+    }
     const msg = err instanceof Error ? err.message : "Vision request failed";
     console.error("[vision-test]", msg);
     res.status(500).json({ error: msg });

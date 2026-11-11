@@ -28,6 +28,7 @@ import { useAuth } from '@/context/AuthContext';
 import { supabase } from '@/lib/supabase';
 import { Avatar } from '@/components/Avatar';
 import { radius, spacing } from '@/constants/theme';
+import { FEATURES } from '@/constants/features';
 import type { ProfileVisibility } from '@workspace/pin-repository';
 
 // ─── Geocoding API ────────────────────────────────────────────────────────────
@@ -319,7 +320,8 @@ export default function EditProfileScreen() {
         bio: bio.trim() || undefined,
         avatarUrl: avatarUrl ?? undefined,
         tradingRegion: tradingRegion.trim() || undefined,
-        internationalTradingEnabled: intlTrading,
+        // Hidden settings are left out so saving never changes them (LP-7, #525).
+        ...(FEATURES.internationalTrading ? { internationalTradingEnabled: intlTrading } : {}),
         allowTradeRequests: allowTradeReqs,
         allowMessages: allowMsgs,
         profileVisibility: visibility,
@@ -327,11 +329,11 @@ export default function EditProfileScreen() {
         town: town.trim() || undefined,
         county: county.trim() || undefined,
         country: country.trim() || undefined,
-        nearbyDiscoveryEnabled: nearbyDiscovery,
-        preferredRadiusMiles: preferredRadius,
-        openToLocalTrades: openToLocal,
+        ...(FEATURES.collectorsNearby
+          ? { nearbyDiscoveryEnabled: nearbyDiscovery, preferredRadiusMiles: preferredRadius }
+          : {}),
+        ...(FEATURES.inPersonTrading ? { openToLocalTrades: openToLocal, happyToTravel: happyToTravel } : {}),
         openToPostalTrades: openToPostal,
-        happyToTravel: happyToTravel,
       });
     } catch (err: unknown) {
       setSaveError(profileSaveErrorLine(err));
@@ -341,7 +343,7 @@ export default function EditProfileScreen() {
 
     // If the user provided a postcode, geocode it so approx_lat/lng are set
     // and hasLocationSet becomes true (via DB trigger from migration 008).
-    const trimmedPostcode = postcode.trim();
+    const trimmedPostcode = FEATURES.collectorsNearby ? postcode.trim() : '';
     if (trimmedPostcode) {
       const jwt = session?.access_token;
       if (jwt) {
@@ -453,13 +455,17 @@ export default function EditProfileScreen() {
           <SectionHeader title="Trading Preferences" />
 
           <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
-            <ToggleRow
-              label="International Trading"
-              description="Allow trades outside the UK"
-              value={intlTrading}
-              onValueChange={setIntlTrading}
-            />
-            <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
+            {FEATURES.internationalTrading && (
+              <>
+                <ToggleRow
+                  label="International Trading"
+                  description="Allow trades outside the UK"
+                  value={intlTrading}
+                  onValueChange={setIntlTrading}
+                />
+                <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
+              </>
+            )}
             <ToggleRow
               label="Allow Trade Requests"
               description="Let collectors send you new trade proposals"
@@ -482,69 +488,73 @@ export default function EditProfileScreen() {
               maybeScrollToSection();
             }}
           >
-            <SectionHeader title="Local Trading & Discovery" />
+            <SectionHeader
+              title={FEATURES.collectorsNearby || FEATURES.inPersonTrading ? 'Local Trading & Discovery' : 'Location'}
+            />
           </View>
 
           {/* Postcode geocoding */}
-          <Field
-            label={profile?.hasLocationSet ? 'Update UK Postcode' : 'UK Postcode'}
-            hint={
-              profile?.hasLocationSet
-                ? 'Your location is set. Enter a new postcode to update it.'
-                : 'Enter your postcode so collectors nearby can discover you.'
-            }
-          >
-            <View style={[styles.inputRow, { borderColor: geocodingStatus === 'error' ? colors.destructive : colors.homeLine, backgroundColor: colors.homeSurface }]}>
-              <TextInput
-                style={[styles.input, styles.inputFlex, { color: colors.homeInk }]}
-                value={postcode}
-                onChangeText={(v) => {
-                  setPostcode(v);
-                  if (geocodingStatus !== 'idle') {
-                    setGeocodingStatus('idle');
-                    setGeocodingError(null);
+          {FEATURES.collectorsNearby && (
+            <Field
+              label={profile?.hasLocationSet ? 'Update UK Postcode' : 'UK Postcode'}
+              hint={
+                profile?.hasLocationSet
+                  ? 'Your location is set. Enter a new postcode to update it.'
+                  : 'Enter your postcode so collectors nearby can discover you.'
+              }
+            >
+              <View style={[styles.inputRow, { borderColor: geocodingStatus === 'error' ? colors.destructive : colors.homeLine, backgroundColor: colors.homeSurface }]}>
+                <TextInput
+                  style={[styles.input, styles.inputFlex, { color: colors.homeInk }]}
+                  value={postcode}
+                  onChangeText={(v) => {
+                    setPostcode(v);
+                    if (geocodingStatus !== 'idle') {
+                      setGeocodingStatus('idle');
+                      setGeocodingError(null);
+                    }
+                  }}
+                  placeholder={
+                    profile?.hasLocationSet && !profile?.postcode
+                      ? 'Location already set — enter postcode to update'
+                      : 'e.g. WD17 1AB'
                   }
-                }}
-                placeholder={
-                  profile?.hasLocationSet && !profile?.postcode
-                    ? 'Location already set — enter postcode to update'
-                    : 'e.g. WD17 1AB'
-                }
-                placeholderTextColor={colors.homeMuted}
-                autoCapitalize="characters"
-                autoCorrect={false}
-                maxLength={8}
-              />
-              {geocodingStatus === 'loading' && <ActivityIndicator size="small" color={colors.homeMuted} />}
-              {geocodingStatus === 'success' && <Feather name="check-circle" size={16} color={colors.owned} />}
-              {geocodingStatus === 'error' && <Feather name="x-circle" size={16} color={colors.destructive} />}
-              {geocodingStatus === 'idle' && profile?.hasLocationSet && !postcode && (
-                <Feather name="map-pin" size={16} color={colors.owned} />
-              )}
-            </View>
-            {geocodingError && (
-              <Text style={[styles.fieldError, { color: colors.destructive }]}>{geocodingError}</Text>
-            )}
-            {profile?.hasLocationSet && (
-              <TouchableOpacity
-                onPress={handleRemoveLocation}
-                disabled={removingLocation}
-                style={[styles.removeLocationBtn, { borderColor: colors.destructive + '55' }]}
-                activeOpacity={0.7}
-              >
-                {removingLocation ? (
-                  <ActivityIndicator size="small" color={colors.destructive} />
-                ) : (
-                  <>
-                    <Feather name="x-circle" size={14} color={colors.destructive} />
-                    <Text style={[styles.removeLocationText, { color: colors.destructive }]}>
-                      Remove location
-                    </Text>
-                  </>
+                  placeholderTextColor={colors.homeMuted}
+                  autoCapitalize="characters"
+                  autoCorrect={false}
+                  maxLength={8}
+                />
+                {geocodingStatus === 'loading' && <ActivityIndicator size="small" color={colors.homeMuted} />}
+                {geocodingStatus === 'success' && <Feather name="check-circle" size={16} color={colors.owned} />}
+                {geocodingStatus === 'error' && <Feather name="x-circle" size={16} color={colors.destructive} />}
+                {geocodingStatus === 'idle' && profile?.hasLocationSet && !postcode && (
+                  <Feather name="map-pin" size={16} color={colors.owned} />
                 )}
-              </TouchableOpacity>
-            )}
-          </Field>
+              </View>
+              {geocodingError && (
+                <Text style={[styles.fieldError, { color: colors.destructive }]}>{geocodingError}</Text>
+              )}
+              {profile?.hasLocationSet && (
+                <TouchableOpacity
+                  onPress={handleRemoveLocation}
+                  disabled={removingLocation}
+                  style={[styles.removeLocationBtn, { borderColor: colors.destructive + '55' }]}
+                  activeOpacity={0.7}
+                >
+                  {removingLocation ? (
+                    <ActivityIndicator size="small" color={colors.destructive} />
+                  ) : (
+                    <>
+                      <Feather name="x-circle" size={14} color={colors.destructive} />
+                      <Text style={[styles.removeLocationText, { color: colors.destructive }]}>
+                        Remove location
+                      </Text>
+                    </>
+                  )}
+                </TouchableOpacity>
+              )}
+            </Field>
+          )}
 
           <Field label="Town / City">
             <TextInput
@@ -580,36 +590,48 @@ export default function EditProfileScreen() {
           </Field>
 
           <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
-            <ToggleRow
-              label="Appear in Collectors Nearby"
-              description="Let nearby collectors discover your profile"
-              value={nearbyDiscovery}
-              onValueChange={setNearbyDiscovery}
-            />
-            <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
-            <ToggleRow
-              label="Open to Local Trades"
-              description="Happy to meet up and trade in person"
-              value={openToLocal}
-              onValueChange={setOpenToLocal}
-            />
-            <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
+            {FEATURES.collectorsNearby && (
+              <>
+                <ToggleRow
+                  label="Appear in Collectors Nearby"
+                  description="Let nearby collectors discover your profile"
+                  value={nearbyDiscovery}
+                  onValueChange={setNearbyDiscovery}
+                />
+                <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
+              </>
+            )}
+            {FEATURES.inPersonTrading && (
+              <>
+                <ToggleRow
+                  label="Open to Local Trades"
+                  description="Happy to meet up and trade in person"
+                  value={openToLocal}
+                  onValueChange={setOpenToLocal}
+                />
+                <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
+              </>
+            )}
             <ToggleRow
               label="Open to Postal Trades"
               description="Happy to trade by post"
               value={openToPostal}
               onValueChange={setOpenToPostal}
             />
-            <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
-            <ToggleRow
-              label="Happy to Travel"
-              description="Willing to travel to meet collectors"
-              value={happyToTravel}
-              onValueChange={setHappyToTravel}
-            />
+            {FEATURES.inPersonTrading && (
+              <>
+                <View style={[styles.divider, { backgroundColor: colors.homeLine }]} />
+                <ToggleRow
+                  label="Happy to Travel"
+                  description="Willing to travel to meet collectors"
+                  value={happyToTravel}
+                  onValueChange={setHappyToTravel}
+                />
+              </>
+            )}
           </View>
 
-          {nearbyDiscovery && (
+          {FEATURES.collectorsNearby && nearbyDiscovery && (
             <View style={{ marginTop: spacing.md, gap: spacing.sm }}>
               <Text style={[styles.label, { color: colors.homeInk }]}>Discovery Radius</Text>
               <View style={styles.radiusRow}>
@@ -638,7 +660,9 @@ export default function EditProfileScreen() {
           <View style={[styles.privacyNote, { backgroundColor: colors.homeAqua }]}>
             <Feather name="shield" size={14} color={colors.homeMuted} />
             <Text style={[styles.privacyNoteText, { color: colors.homeMuted }]}>
-              Your exact location is never shared. Only your town and county are shown to other collectors — approximate distance is shown as a band (e.g. "Within 10 miles"), not a precise figure.
+              {FEATURES.collectorsNearby
+                ? 'Your exact location is never shared. Only your town and county are shown to other collectors — approximate distance is shown as a band (e.g. "Within 10 miles"), not a precise figure.'
+                : 'Only your town and county are shown to other collectors.'}
             </Text>
           </View>
 

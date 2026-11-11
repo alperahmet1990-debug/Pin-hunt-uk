@@ -147,8 +147,9 @@ Under full parallel load six other suites time out, and all of them pass when ru
 | Pin detail (`getPinById`) | OK, ~45 ms. No image (by licence), attribution line shown. |
 | Sets (`getPinsBySeries`, `getSetSummaries([name])`) | OK, 60–500 ms. **Fixed here:** `getSetSummaries()` returned only the first 1,000 of 12,987 sets, so set totals vanished for most sets. Callers now pass the set names they need. Add Pin uses the new `getAllSetNames()`. |
 | Collections / ISO / For Trade | No schema changes. `user_pins` and boards key on `pins.id` / `pinhunt_id`, both present. Not exercised with a signed-in user (needs a test login). |
-| Search | Before 075: 0.9–2.3 s, and "Stitch" timed out (anon 3 s limit). After 075: no timeouts, but still ~0.7–1.4 s because RLS stops the indexes being used (see Known issues 1). |
-| Scanning | Its candidate search uses the same queries, so it's slow or times out the same way. The character search finds nothing (P&P has no character data). Visual verification has no catalogue images to compare against, because P&P images are reference-only. |
+| Search | Before: 0.7–2.3 s, and "Stitch" timed out (anon 3 s limit). After 075 + 076: "Stitch" 115 ms, "Haunted Mansion" 97 ms, no hits 49 ms, a "mickey" page with its 16,018 total 280–435 ms. Results match the old query exactly. |
+| Scan candidate search | After 075 + 076: character search 57 ms, 3 parallel word searches 250 ms in total (was ~2 s). The character search finds 0 because P&P has no characters. |
+| Scanning | Candidate search is fast now (see above). The character search finds nothing (P&P has no character data). Visual verification has no catalogue images to compare against, because P&P images are reference-only. |
 | Browse Catalogue | **43 s** to load all 116k rows (`getCatalogueBrowseIndex` downloads everything). Needs server-side paging. |
 | Valuations | Unchanged code path (eBay by title). Old market rows were removed with the old pins. P&P has no prices. |
 | Trading | No trades existed. Trades reference `pins.id` / `user_pins`, so no change is needed. |
@@ -157,15 +158,12 @@ Under full parallel load six other suites time out, and all of them pass when ru
 
 ## Known issues / next steps
 
-1. **Search is still ~1.3 s for collectors after 075** (applied on staging 11 Nov 2026,
-   9 indexes confirmed). The search and scan timeouts are gone: "Stitch" takes 0.4–1 s,
-   and scan candidate searches take 0.4–0.8 s each, ~2 s when 3 run in parallel. With the
-   service key the same 9-column search takes ~100 ms, so the indexes work. RLS blocks them
-   for anon and authenticated users: `ilike` isn't leakproof, so Postgres must apply the
-   `pins_public_read` policy row by row before the search filter. The fix is a search RPC
-   (`security definer`, applying the same visibility rule as the policy explicitly:
-   verified, searchable, not archived) that `searchPins` / `searchPinsPage` call instead of
-   the table. That needs a migration (076) and a repository change.
+1. **Search: fixed on staging with 075 + 076** (both applied 11 Nov 2026). 075 alone
+   didn't help collectors: RLS on `pins` stops Postgres using the trigram indexes for
+   `ilike`, which isn't leakproof. 076 adds `search_catalogue_pins()`, which
+   `searchPins` / `searchPinsPage` call for text and character matching. It applies
+   the pins RLS visibility rule itself, once per call. Without 076 the app falls back
+   to the table query.
 2. **Browse Catalogue** needs server-side paging instead of loading 116k rows (see the catalogue-browse UX debt note).
 3. **Scan accuracy:** P&P has no characters. Decide whether scan verification
    may compare against P&P reference images internally. The licence allows internal
@@ -182,9 +180,10 @@ Do this only once staging is signed off. It's a separate, approved session, and 
 must not overlap any other production work.
 
 1. **Back up production**: a JSON dump of every table (as above), plus the Supabase dashboard backup.
-2. **Schema:** apply 075 with a production guard in place of the staging one
+2. **Schema:** apply 075 then 076, each with a production guard in place of the staging one
    (e.g. `if exists (select 1 from storage.buckets where id = 'pinhunt-staging-marker') then raise exception`).
-   No other migration is needed: P&P uses existing columns and tables (042/037).
+   Both are additive (indexes; one function). No other migration is needed: P&P uses
+   existing columns and tables (042/037).
 3. **Decide what happens to production's user data on old pins.** Unlike staging,
    real collections, boards, trades and contributed photos will reference the old
    catalogue. `reset-old` deletes collection entries and refuses nothing else, so

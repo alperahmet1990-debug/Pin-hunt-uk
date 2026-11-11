@@ -1140,6 +1140,48 @@ export interface CatalogueImageCoverage {
   missingFields?: string[];
 }
 
+/** Photo-status filter on the contributor screen. */
+export type CoverageFilter = 'all' | 'needs' | 'reference' | 'pending' | 'community' | 'info' | 'back';
+
+/** Year / park / character / set narrowing on the contributor screen. */
+export interface CoverageFacets {
+  year?: number | null;
+  origin?: string | null;
+  character?: string | null;
+  set?: string | null;
+}
+
+/** One page (or one id lookup) of catalogue_coverage_page (migration 077). */
+export interface CoveragePageQuery extends CoverageFacets {
+  /** Only these pins (pinhunt ids). */
+  ids?: string[] | null;
+  /** Words, or a PHUK id prefix. */
+  query?: string | null;
+  filter?: CoverageFilter;
+  offset: number;
+  limit: number;
+}
+
+export interface CoverageStats {
+  total: number;
+  withPhoto: number;
+  community: number;
+  reference: number;
+  needs: number;
+  pending: number;
+  mine: number;
+  info: number;
+  back: number;
+}
+
+export type CoverageFacetKey = 'year' | 'origin' | 'character' | 'set';
+
+export interface CoverageSummary {
+  stats: CoverageStats;
+  /** Choices for the requested facet, with counts; null when none was asked for. */
+  facet: Array<{ value: string; count: number }> | null;
+}
+
 export interface ReviewContributedImageInput {
   action: 'approve' | 'reject';
   reviewerNotes?: string;

@@ -16,8 +16,30 @@ const mockRows = [
 jest.mock('expo-router', () => ({ useRouter: () => ({ push: jest.fn() }), Stack: { Screen: () => null } }));
 jest.mock('react-native-safe-area-context', () => ({ useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }) }));
 jest.mock('@/hooks/useFeature', () => ({ useFeature: () => ({ enabled: true, loading: false }) }));
+// The screen's filtering runs in the database (migration 077). This stand-in
+// answers with the repository's on-device version of the same rules
+// (coverage-filter, also the fallback without 077), so the screen is still
+// tested end to end against real filtering.
 jest.mock('@/hooks/useCatalogueCoverage', () => ({
-  useCatalogueCoverage: () => ({ rows: mockRows, loading: false, error: null, refresh: jest.fn() }),
+  useCoveragePage: (
+    _enabled: boolean,
+    view: { query: string; filter: string; mineOnly: boolean; facets: Record<string, unknown> },
+    owned: string[],
+  ) => {
+    const repo = jest.requireActual('@workspace/pin-repository');
+    const page = repo.coveragePageLocal(mockRows, {
+      ...view.facets, ids: view.mineOnly ? owned : null, query: view.query, filter: view.filter, offset: 0, limit: 1000,
+    });
+    const summary = repo.coverageSummaryLocal(mockRows, view.facets, owned, null);
+    const sets = [...new Set(page.rows.map((r: { setName: string }) => r.setName))];
+    return {
+      rows: page.rows, total: page.total, stats: summary.stats,
+      setTotals: repo.coverageSetTotalsLocal(mockRows, sets),
+      loading: false, loadingMore: false, hasMore: false, error: null,
+      loadMore: jest.fn(), refresh: jest.fn(),
+      loadFacet: async (key: string) => repo.coverageSummaryLocal(mockRows, view.facets, [], key).facet,
+    };
+  },
 }));
 jest.mock('@/context/CollectionContext', () => ({ useCollection: () => ({ collection: {} }) }));
 
@@ -28,7 +50,8 @@ describe('Explore & improve filters (#396)', () => {
     expect(screen.getByText('Stitch Surf')).toBeTruthy();
 
     await fireEvent.press(screen.getByRole('button', { name: 'Year: any' }));
-    await fireEvent.press(screen.getByText('2024 (2)'));
+    // Facet choices load from the server when the sheet opens.
+    await fireEvent.press(await screen.findByText('2024 (2)'));
     expect(screen.queryByText('Stitch Surf')).toBeNull();
     expect(screen.getByText('Stitch Ohana')).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Year: 2024' })).toBeTruthy();

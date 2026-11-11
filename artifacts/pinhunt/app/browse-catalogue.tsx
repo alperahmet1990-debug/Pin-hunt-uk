@@ -43,7 +43,7 @@ import { useCatalogueBrowseIndex } from '@/hooks/useCatalogueBrowseIndex';
 import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
 import { useFeature } from '@/hooks/useFeature';
-import { useCatalogueCoverage } from '@/hooks/useCatalogueCoverage';
+import { useCoverageFor } from '@/hooks/useCatalogueCoverage';
 import { needsPhoto } from '@/utils/photoGaps';
 import { SearchBar } from '@/components/SearchBar';
 import { ScreenHeader } from '@/components/ui/ScreenHeader';
@@ -96,11 +96,6 @@ export default function BrowseCatalogueScreen() {
   const [photoPrompt, setPhotoPrompt] = useState<string[] | null>(null);
   // Photo contributors (beta: contributor tier) see which pins have no catalogue photo.
   const { enabled: canContribute } = useFeature('catalogue_contributions');
-  const { rows: coverage } = useCatalogueCoverage(canContribute);
-  const photoNeededIds = useMemo(
-    () => new Set(canContribute ? coverage.filter(needsPhoto).map(r => r.pinhuntId) : []),
-    [canContribute, coverage],
-  );
   const [query, setQuery] = useState('');
   const [setFilter, setSetFilter] = useState<string | null>(null);
   const [yearFilter, setYearFilter] = useState<number | null>(null);
@@ -118,6 +113,13 @@ export default function BrowseCatalogueScreen() {
   const {
     rows, total, catalogueTotal, loading, loadingMore, hasMore, error, loadMore, refresh, loadSetNames,
   } = useCatalogueBrowseIndex(browseFilters);
+  // Photo status only for the pins loaded so far (not the whole catalogue).
+  const loadedIds = useMemo(() => rows.map(r => r.id), [rows]);
+  const { rows: coverage } = useCoverageFor(canContribute, loadedIds);
+  const photoNeededIds = useMemo(
+    () => new Set(canContribute ? coverage.filter(needsPhoto).map(r => r.pinhuntId) : []),
+    [canContribute, coverage],
+  );
   const { collection, setStatuses } = useCollection();
   const { customBoards, createBoard, addPinsToBoard } = useBoards();
   const [hideHave, setHideHave] = useState(false);

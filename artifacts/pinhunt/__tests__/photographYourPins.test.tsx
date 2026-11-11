@@ -26,7 +26,7 @@ jest.mock('expo-router', () => ({
 }));
 jest.mock('@/hooks/useFeature', () => ({ useFeature: () => ({ enabled: mockEnabled, loading: false }) }));
 jest.mock('@/hooks/useCatalogueCoverage', () => ({
-  useCatalogueCoverage: (enabled: boolean) => ({ rows: enabled ? mockRows : [], loading: false, error: null, refresh: jest.fn() }),
+  useCoverageFor: (enabled: boolean) => ({ rows: enabled ? mockRows : [], loading: false, error: null, refresh: jest.fn() }),
 }));
 jest.mock('@/context/CollectionContext', () => ({ useCollection: () => ({ collection: mockCollection }) }));
 jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ user: { id: 'u1' } }) }));

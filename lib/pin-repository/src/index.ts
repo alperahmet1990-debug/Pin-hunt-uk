@@ -91,6 +91,12 @@ export type {
   FeatureKey,
   CatalogueImageSource,
   CatalogueImageCoverage,
+  CoverageFilter,
+  CoverageFacets,
+  CoverageFacetKey,
+  CoveragePageQuery,
+  CoverageStats,
+  CoverageSummary,
   FeatureAudience,
   FeatureFlag,
   // Access levels
@@ -190,3 +196,4 @@ export type { Database, Tables, TablesInsert, TablesUpdate } from './database.ty
 
 // ─── Seed data (dev/testing convenience only) ─────────────────────────────────
 export { SEED_PINS } from './seed-data';
+export { isCoveragePending, matchesCoverageFilter, coverageCharacters, coveragePageLocal, coverageSummaryLocal, coverageSetTotalsLocal } from './coverage-filter';

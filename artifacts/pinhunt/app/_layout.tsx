@@ -35,12 +35,14 @@ const queryClient = new QueryClient();
 // ─── Auth + profile guard ─────────────────────────────────────────────────────
 // Watches session and profile state, redirecting as needed:
 //   • No session → /(auth)/login
+//   • Session + age declined → /not-eligible (and Delete account) only (LP-8)
+//   • Session + age not confirmed → /confirm-age (LP-8)
 //   • Session + no username → /complete-profile
 //   • Session + username → /(tabs) (if still in auth group)
 //   • Recovery session → /(auth)/update-password only, until the password is set
 function AuthGuard({ children }: { children: React.ReactNode }) {
   const { session, isRecovery, loading: authLoading } = useAuth();
-  const { needsUsername, loading: profileLoading } = useProfile();
+  const { needsUsername, needsAgeConfirmation, ageDeclined, loading: profileLoading } = useProfile();
   const segments = useSegments();
   const router = useRouter();
   const pendingRedirect = useRef<string | null>(null);
@@ -54,6 +56,8 @@ function AuthGuard({ children }: { children: React.ReactNode }) {
       hasSession: !!session,
       isRecovery,
       needsUsername,
+      needsAgeConfirmation,
+      ageDeclined,
       segments,
     });
 
@@ -71,7 +75,7 @@ function AuthGuard({ children }: { children: React.ReactNode }) {
       router.replace(target);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session, isRecovery, loading, needsUsername, segments]);
+  }, [session, isRecovery, loading, needsUsername, needsAgeConfirmation, ageDeclined, segments]);
 
   if (loading) return null;
 
@@ -87,6 +91,8 @@ function RootLayoutNav() {
       <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="complete-profile" options={{ headerShown: false }} />
+      <Stack.Screen name="confirm-age" options={{ headerShown: false, gestureEnabled: false }} />
+      <Stack.Screen name="not-eligible" options={{ headerShown: false, gestureEnabled: false }} />
       <Stack.Screen name="search" options={{ headerShown: false, animation: 'fade' }} />
       <Stack.Screen name="edit-profile" options={{ title: 'Edit Profile' }} />
       <Stack.Screen name="find-collectors" options={{ title: 'Find Collectors' }} />

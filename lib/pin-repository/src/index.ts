@@ -75,6 +75,7 @@ export type {
   UserReport,
   UserReportTarget,
   UserSuspension,
+  ReportedMessageView,
   HomeMarket,
   ReportUserInput,
   StartConversationInput,
@@ -103,7 +104,7 @@ export type {
 export type { PinRepository } from './repository';
 export type { PinSetSummary, CatalogueBrowsePin } from './types';
 export { PinRepositoryError } from './repository';
-export { homeMarketFromCountry, SUSPENSION_REASON_MAX } from './types';
+export { homeMarketFromCountry, SUSPENSION_REASON_MAX, REMOVED_MESSAGE_BODY, MESSAGE_REMOVAL_REASON_MAX } from './types';
 export { safeDisplayName } from './display-name';
 export type { PinRepositoryErrorCode } from './repository';
 
@@ -114,7 +115,7 @@ export type { SupabasePinRepositoryOptions } from './supabase-repository';
 
 // ─── User collection repository ───────────────────────────────────────────────
 export type { IUserPinRepository } from './user-repository';
-export { createSupabaseUserRepository } from './supabase-user-repository';
+export { createSupabaseUserRepository, rowToReportedMessageView } from './supabase-user-repository';
 
 // ─── Market valuations (migration 049, read-only) ─────────────────────────────
 export type {
@@ -185,6 +186,17 @@ export {
   suggestPockets,
   updatePlace,
 } from './pin-locations';
+
+// ─── Age confirmation (migration 073, LP-8 #530) ──────────────────────────────
+export type { AgeConfirmationClient, AgeStatus } from './age-confirmation';
+export {
+  confirmMyAge,
+  confirmMyAgeFromSignup,
+  getMyAgeStatus,
+  MINIMUM_AGE,
+  setAgeDeclined,
+  SIGNUP_AGE_METADATA_KEY,
+} from './age-confirmation';
 
 // ─── Database types ───────────────────────────────────────────────────────────
 export type { Database, Tables, TablesInsert, TablesUpdate } from './database.types';

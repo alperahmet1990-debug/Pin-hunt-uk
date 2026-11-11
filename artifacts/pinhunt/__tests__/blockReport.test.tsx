@@ -49,6 +49,11 @@ const mockRepo = {
   getSuspensions: jest.fn(() => Promise.resolve([] as unknown[])),
   suspendUser: jest.fn(() => Promise.resolve()),
   liftSuspension: jest.fn(() => Promise.resolve()),
+  // Reported message on the card (#504)
+  getReportedMessage: jest.fn(() => Promise.resolve({
+    status: 'ok',
+    message: { id: 'm1', senderId: 'u2', body: 'Hello from Bea', messageType: 'text', pinIds: [], forTradePinIds: [], photoUrls: [], createdAt: '2026-10-13T10:00:00Z' },
+  })),
 };
 let mockAccess = { isAppCreator: false, isAdmin: true, isContributor: false, loading: false };
 
@@ -69,6 +74,7 @@ const mockMyProfile = { id: 'me', username: 'me', isAdmin: true };
 jest.mock('@/context/ProfileContext', () => ({
   useProfile: () => ({ profile: mockMyProfile, getPublicProfile: mockGetPublicProfile }),
 }));
+jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ session: { access_token: 'admin-token' } }) }));
 jest.mock('@/components/Avatar', () => ({ Avatar: () => null }));
 jest.mock('@/hooks/useMyAccess', () => ({ useMyAccess: () => mockAccess }));
 jest.mock('@/context/CollectionContext', () => ({ useCollection: () => ({ collection: {}, setStatus: jest.fn() }) }));
@@ -165,6 +171,19 @@ describe('Chat: long-press a message to report or block', () => {
     expect(screen.queryByText('Hello from Bea')).toBeNull();
     expect(screen.queryByPlaceholderText('Type a message…')).toBeNull();
   }, 30_000);
+
+  it('a message removed by moderators shows the placeholder and can\u2019t be reported (#524)', async () => {
+    (mockRepo.getConversationMessages as jest.Mock).mockResolvedValueOnce([
+      { id: 'm1', conversationId: 'c1', senderId: 'u2', body: 'Removed by PinHunt moderators', messageType: 'text', pinIds: [], forTradePinIds: [], photoUrls: [], createdAt: '2026-10-13T10:00:00Z', removedAt: '2026-10-14T10:00:00Z' },
+      { id: 'm2', conversationId: 'c1', senderId: 'me', body: 'My reply', messageType: 'text', pinIds: [], forTradePinIds: [], photoUrls: [], createdAt: '2026-10-13T10:01:00Z' },
+    ]);
+    const ChatScreen = require('../app/community/chat/[id]').default;
+    await withProvider(<ChatScreen />);
+    expect(await screen.findByTestId('message-removed-m1')).toBeTruthy();
+    expect(screen.getByLabelText('Removed by PinHunt moderators')).toBeTruthy();
+    expect(screen.queryByTestId('message-m1')).toBeNull();
+    expect(screen.getByText('My reply')).toBeTruthy();
+  }, 30_000);
 });
 
 describe('Messages list hides blocked collectors', () => {
@@ -227,6 +246,24 @@ describe('Admin moderation shows user and message reports', () => {
     await fireEvent.press(screen.getAllByText('Dismiss')[0]);
     expect(mockRepo.dismissUserReport).toHaveBeenCalledWith('r1');
     await waitFor(() => expect(screen.getByText('REPORTED USERS AND MESSAGES (1)')).toBeTruthy());
+  });
+
+  it('a message report card shows the message only when asked (#504)', async () => {
+    mockRepo.getUserReports.mockResolvedValue([
+      { id: 'r1', target: 'message', reporterId: 'u3', reportedUserId: 'u2', messageId: 'm1', reason: 'Spam', createdAt: new Date().toISOString() },
+      { id: 'r2', target: 'profile', reporterId: 'u4', reportedUserId: 'u2', createdAt: new Date().toISOString() },
+    ]);
+    mockRepo.getReportedMessage.mockClear();
+    const ModerationScreen = require('../app/admin/community-moderation').default;
+    await render(<ModerationScreen />);
+    await screen.findByText('Message reported · Spam');
+    // One Show message: the profile report has no message.
+    expect(screen.getAllByLabelText('Show the reported message')).toHaveLength(1);
+    expect(mockRepo.getReportedMessage).not.toHaveBeenCalled();
+    await fireEvent.press(screen.getByLabelText('Show the reported message'));
+    expect(await screen.findByText('Hello from Bea')).toBeTruthy();
+    expect(mockRepo.getReportedMessage).toHaveBeenCalledWith('r1');
+    expect(screen.getByLabelText('Remove this message')).toBeTruthy();
   });
 
   it('a failing user-reports query leaves the post queue working', async () => {

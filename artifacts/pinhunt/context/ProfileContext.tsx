@@ -6,7 +6,13 @@
  */
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import {
+  confirmMyAge,
+  confirmMyAgeFromSignup,
   createSupabaseUserRepository,
+  getMyAgeStatus,
+  SIGNUP_AGE_METADATA_KEY,
+  type AgeConfirmationClient,
+  type AgeStatus,
   type IUserPinRepository,
   type Profile,
   type PublicProfile,
@@ -15,9 +21,9 @@ import {
 } from '@workspace/pin-repository';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { setFormatMarket } from '@/utils/format';
-import { DEMO_PROFILE, isDemoMode } from '@/lib/demoMode';
+import { DEMO_PROFILE, demoAgeStatus, isDemoMode } from '@/lib/demoMode';
 import { useAuth } from '@/context/AuthContext';
-import { needsUsernameFor } from '@/utils/profileState';
+import { ageGateFor, needsUsernameFor } from '@/utils/profileState';
 
 // ─── Context shape ────────────────────────────────────────────────────────────
 
@@ -26,6 +32,12 @@ interface ProfileContextValue {
   loading: boolean;
   /** True when signed in but username has not yet been set. */
   needsUsername: boolean;
+  /** Signed in, and the account hasn't confirmed its age yet (LP-8). */
+  needsAgeConfirmation: boolean;
+  /** The account is under 18 (said so, or closed by a moderator). Only the not-eligible screen. */
+  ageDeclined: boolean;
+  /** Send a date of birth (YYYY-MM-DD) to the server. Nothing is kept on the device. */
+  confirmAge(birthDate: string): Promise<'confirmed' | 'declined'>;
   refreshProfile(): Promise<void>;
   updateMyProfile(input: UpdateProfileInput): Promise<Profile>;
   getPublicProfile(username: string): Promise<PublicProfile | null>;
@@ -43,6 +55,7 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
   const [loadedUserId, setLoadedUserId] = useState<string | null>(null);
   const [loadFailed, setLoadFailed] = useState(false);
+  const [ageStatus, setAgeStatus] = useState<AgeStatus | null>(null);
   const profileRequestId = useRef(0);
 
   const userRepo: IUserPinRepository | null = useMemo(() => {
@@ -52,12 +65,16 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const userId = session?.user?.id ?? null;
+  // Register put this in the sign-up metadata after checking the date on the device.
+  const signedUpAsAdult = session?.user?.user_metadata?.[SIGNUP_AGE_METADATA_KEY] === true;
+  const ageClient = supabase as unknown as AgeConfirmationClient;
 
   const loadProfile = useCallback(async (id: string) => {
     if (!userRepo) {
       // Screenshot harness only: mock-mode profile (see lib/demoMode).
       if (isDemoMode) {
         setProfile(DEMO_PROFILE);
+        setAgeStatus(demoAgeStatus());
         setLoadedUserId(id);
         setLoading(false);
       }
@@ -67,15 +84,17 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
     setLoading(true);
     setLoadedUserId(null);
     try {
-      const p = await userRepo.getMyProfile(id);
+      const [p, age] = await Promise.all([userRepo.getMyProfile(id), loadAgeStatus()]);
       if (profileRequestId.current === requestId) {
         setProfile(p);
+        setAgeStatus(age);
         setLoadFailed(false);
       }
     } catch (err) {
       console.error('[ProfileContext] loadProfile error:', err);
       if (profileRequestId.current === requestId) {
         setProfile(null);
+        setAgeStatus(null);
         setLoadFailed(true);
       }
     } finally {
@@ -84,7 +103,24 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
         setLoading(false);
       }
     }
-  }, [userRepo]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userRepo, signedUpAsAdult]);
+
+  // The account's age status. An account that signed up through the new
+  // Register screen is confirmed here, on its first sign-in on any device.
+  // A failed check returns null: it moves nobody (see ageGateFor).
+  async function loadAgeStatus(): Promise<AgeStatus | null> {
+    try {
+      const status = await getMyAgeStatus(ageClient);
+      if (status === 'unconfirmed' && signedUpAsAdult) {
+        return await confirmMyAgeFromSignup(ageClient);
+      }
+      return status;
+    } catch (err) {
+      console.warn('[ProfileContext] age status unavailable:', (err as Error)?.message);
+      return null;
+    }
+  }
 
   useEffect(() => {
     if (!userId) {
@@ -92,6 +128,7 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
       // be written back after sign-out or an account switch.
       profileRequestId.current += 1;
       setProfile(null);
+      setAgeStatus(null);
       setLoadedUserId(null);
       setLoading(false);
       return;
@@ -125,6 +162,18 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
     return userRepo.searchCollectors(input);
   }, [userRepo]);
 
+  const confirmAge = useCallback(async (birthDate: string): Promise<'confirmed' | 'declined'> => {
+    if (!userId) throw new Error('Not signed in');
+    if (isDemoMode) {
+      setAgeStatus('confirmed');
+      return 'confirmed';
+    }
+    const result = await confirmMyAge(ageClient, birthDate);
+    setAgeStatus(result);
+    return result;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userId]);
+
   const checkUsernameAvailable = useCallback(async (username: string): Promise<boolean> => {
     if (!userRepo) return false;
     return userRepo.checkUsernameAvailable(username, userId ?? undefined);
@@ -141,6 +190,10 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
     loadFailed,
     username: profile?.username,
   });
+  const { needsAgeConfirmation, ageDeclined } = ageGateFor({
+    hasSession: session !== null,
+    ageStatus: profileIsCurrent && !loading ? ageStatus : null,
+  });
 
   return (
     <ProfileContext.Provider
@@ -148,6 +201,9 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
         profile,
         loading: effectiveLoading,
         needsUsername,
+        needsAgeConfirmation,
+        ageDeclined,
+        confirmAge,
         refreshProfile,
         updateMyProfile,
         getPublicProfile,

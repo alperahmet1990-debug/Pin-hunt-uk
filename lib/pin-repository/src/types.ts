@@ -907,6 +907,37 @@ export interface ConversationMessage {
   tradeId?: string;
   tradeEvent?: TradeChatEvent;
   createdAt: string;
+  /** Set when moderators removed the message (migration 072). The body is then REMOVED_MESSAGE_BODY. */
+  removedAt?: string;
+}
+
+/** Text that replaces a message removed by moderators (migration 072). */
+export const REMOVED_MESSAGE_BODY = 'Removed by PinHunt moderators';
+
+/** Longest message-removal reason the database accepts (migration 072). */
+export const MESSAGE_REMOVAL_REASON_MAX = 500;
+
+/**
+ * A reported message as a moderator sees it (migration 072, #504). Only the
+ * message itself, never the conversation. Each view is recorded.
+ *  - ok:      the message as sent
+ *  - removed: moderators already removed it; `removal` says why
+ *  - gone:    the report was dismissed, or the message no longer exists
+ */
+export interface ReportedMessageView {
+  status: 'ok' | 'removed' | 'gone';
+  message?: {
+    id: string;
+    senderId?: string;
+    body: string;
+    messageType: ConversationMessage['messageType'];
+    pinIds: string[];
+    forTradePinIds: string[];
+    photoUrls: string[];
+    createdAt: string;
+    removedAt?: string;
+  };
+  removal?: { adminId?: string; reason?: string; createdAt: string };
 }
 
 /** The trade steps written into a chat (migration 071). */

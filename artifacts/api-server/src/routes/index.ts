@@ -18,6 +18,7 @@ import researchReviewRouter from "./research-review";
 import researchImportRouter from "./research-import";
 import researchCatalogueRouter from "./research-catalogue";
 import accountRouter from "./account";
+import messageModerationRouter from "./message-moderation";
 
 const router: IRouter = Router();
 
@@ -40,5 +41,6 @@ router.use(researchReviewRouter);
 router.use(researchImportRouter);
 router.use(researchCatalogueRouter);
 router.use(accountRouter);
+router.use(messageModerationRouter);
 
 export default router;

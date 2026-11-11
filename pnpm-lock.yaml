@@ -455,9 +455,6 @@ importers:
       expo-linking:
         specifier: ~57.0.9
         version: 57.0.9(expo@57.0.20)(react-native@0.86.3(@babel/core@7.29.7)(@react-native/jest-preset@0.86.3(@babel/core@7.29.7)(react@19.2.3))(@react-native/metro-config@0.86.3(@babel/core@7.29.7))(@types/react@19.2.17)(react@19.2.3))(react@19.2.3)
-      expo-location:
-        specifier: ~57.0.16
-        version: 57.0.16(expo@57.0.20)(typescript@6.0.3)
       expo-router:
         specifier: ~57.0.19
         version: 57.0.19(r6vx76s5m6isvgrnwf7p3hr77i)
@@ -4854,11 +4851,6 @@ packages:
     peerDependencies:
       react: '*'
       react-native: '*'
-
-  expo-location@57.0.16:
-    resolution: {integrity: sha512-DnJXr2F5RQyFWouw4BA1tu1ckNBJe3+OQvZTfDZ4eq9f3vv1LL2Plq2DT3wppMwjH1BgV5QP/JAvu7muqqRwrw==}
-    peerDependencies:
-      expo: '*'
 
   expo-manifests@57.0.2:
     resolution: {integrity: sha512-pPIIcKR73OShwlWMg8H90WRzKUd2krDdKlKAwuQV1FtUwE7H3hQEFw0ePFQY9yFoGMF/77ryYwNKfI5umMcCog==}
@@ -12310,14 +12302,6 @@ snapshots:
     transitivePeerDependencies:
       - expo
       - supports-color
-
-  expo-location@57.0.16(expo@57.0.20)(typescript@6.0.3):
-    dependencies:
-      '@expo/image-utils': 0.11.5(typescript@6.0.3)
-      expo: 57.0.20(@babel/core@7.29.7)(@expo/metro-runtime@57.0.15)(expo-router@57.0.19)(react-dom@19.2.3(react@19.2.3))(react-native-web@0.21.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-native-worklets@0.10.1(@babel/core@7.29.7)(@react-native/metro-config@0.86.3(@babel/core@7.29.7))(react-native@0.86.3(@babel/core@7.29.7)(@react-native/jest-preset@0.86.3(@babel/core@7.29.7)(react@19.2.3))(@react-native/metro-config@0.86.3(@babel/core@7.29.7))(@types/react@19.2.17)(react@19.2.3))(react@19.2.3))(react-native@0.86.3(@babel/core@7.29.7)(@react-native/jest-preset@0.86.3(@babel/core@7.29.7)(react@19.2.3))(@react-native/metro-config@0.86.3(@babel/core@7.29.7))(@types/react@19.2.17)(react@19.2.3))(react@19.2.3)(typescript@6.0.3)
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
 
   expo-manifests@57.0.2(expo@57.0.20):
     dependencies:

@@ -71,3 +71,27 @@ export const DEMO_PROFILE: Profile = {
   happyToTravel: false,
   homeMarket: 'UK',
 };
+
+/**
+ * Screenshot-only knobs read from the page address (web demo mode only, never
+ * a real build): `?demo_age=unconfirmed|declined` sets the demo account's age
+ * status (LP-8, #530), and `?demo_session=none` starts signed out so the
+ * Register screen can be captured.
+ */
+function demoQueryParam(name: string): string | null {
+  if (!isDemoMode || typeof window === 'undefined' || !window.location) return null;
+  try {
+    return new URLSearchParams(window.location.search).get(name);
+  } catch {
+    return null;
+  }
+}
+
+export function demoAgeStatus(): 'confirmed' | 'unconfirmed' | 'declined' {
+  const v = demoQueryParam('demo_age');
+  return v === 'unconfirmed' || v === 'declined' ? v : 'confirmed';
+}
+
+export function demoStartsSignedOut(): boolean {
+  return demoQueryParam('demo_session') === 'none';
+}

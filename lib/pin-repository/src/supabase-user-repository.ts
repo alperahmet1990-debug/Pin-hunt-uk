@@ -4,6 +4,7 @@ import { PinRepositoryError } from './repository';
 import { homeMarketFromCountry, SUSPENSION_REASON_MAX } from './types';
 import { safeDisplayName } from './display-name';
 import * as communityPrices from './community-prices';
+import * as ageConfirmation from './age-confirmation';
 import * as pinLocations from './pin-locations';
 import type { CollectionPlace, PinLocation, PinLocationInput, PlaceInput } from './pin-locations';
 import type { CommunityPrice, MyPinPrice, PriceCurrency } from './community-prices';
@@ -47,6 +48,7 @@ import type {
   UserBlock,
   UserReport,
   UserSuspension,
+  ReportedMessageView,
   CatalogueImageCoverage,
   CatalogueImageSource,
   ContributedPinImage,
@@ -272,6 +274,37 @@ function rowToExternalSaleListing(row: Record<string, unknown>): ExternalSaleLis
     status: row.status as ExternalSaleListing['status'],
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
+  };
+}
+
+/** Maps get_reported_message's jsonb (migration 072). Unknown shapes read as 'gone'. */
+export function rowToReportedMessageView(data: unknown): ReportedMessageView {
+  const d = (data ?? {}) as Record<string, unknown>;
+  const status = d.status === 'ok' || d.status === 'removed' ? d.status : 'gone';
+  const m = d.message as Record<string, unknown> | null | undefined;
+  if (status === 'gone' || !m) return { status: 'gone' };
+  const strings = (v: unknown) => (Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : []);
+  const removal = d.removal as Record<string, unknown> | null | undefined;
+  return {
+    status,
+    message: {
+      id: m.id as string,
+      senderId: (m.sender_id as string | null) ?? undefined,
+      body: conversationMessageBody(m),
+      messageType: ((m.message_type as string) ?? 'text') as ConversationMessage['messageType'],
+      pinIds: strings(m.pin_ids),
+      forTradePinIds: strings(m.for_trade_pin_ids),
+      photoUrls: strings(m.photo_urls),
+      createdAt: m.created_at as string,
+      removedAt: (m.removed_at as string | null) ?? undefined,
+    },
+    removal: removal
+      ? {
+          adminId: (removal.admin_id as string | null) ?? undefined,
+          reason: (removal.reason as string | null) ?? undefined,
+          createdAt: removal.created_at as string,
+        }
+      : undefined,
   };
 }
 
@@ -2432,6 +2465,21 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     if (error) throw new Error(error.message);
   }
 
+  async getReportedMessage(reportId: string): Promise<ReportedMessageView> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data, error } = await (this.client as any).rpc('get_reported_message', { p_report_id: reportId });
+    if (error) {
+      if (error.code === 'PGRST202') {
+        throw new PinRepositoryError('UPSTREAM_ERROR', 'Reported messages can\u2019t be shown yet.', error);
+      }
+      if (error.code === '42501') {
+        throw new PinRepositoryError('CONFLICT', 'Only admins can see reported messages.', error);
+      }
+      throw new PinRepositoryError('UPSTREAM_ERROR', 'Could not load the reported message. Try again.', error);
+    }
+    return rowToReportedMessageView(data);
+  }
+
   // ── Account suspensions (migration 050, #503) ────────────────────────────────
 
   async getSuspensions(): Promise<UserSuspension[]> {
@@ -2717,6 +2765,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       tradeId: (r.trade_id as string | null) ?? undefined,
       tradeEvent: (r.trade_event as TradeChatEvent | null) ?? undefined,
       createdAt: r.created_at as string,
+      removedAt: (r.removed_at as string | null) ?? undefined,
     }));
   }
 
@@ -2762,6 +2811,13 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       photoUrls: (r.photo_urls as string[] | null) ?? [],
       createdAt: r.created_at as string,
     };
+  }
+
+  // ── Age confirmation, admin side (migration 073, LP-9 #531) ─────────────────
+
+  setAgeDeclined(userId: string, declined: boolean): Promise<void> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return ageConfirmation.setAgeDeclined(this.client as any, userId, declined);
   }
 
   // ── Collector prices and community prices (migration 065, #511) ──────────────

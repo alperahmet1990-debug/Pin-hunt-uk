@@ -39,3 +39,38 @@ describe('Complete Profile save errors (TestFlight, 8 Nov)', () => {
   });
 });
 
+describe('Complete Profile: where do you collect (HM-02)', () => {
+  it('saves the chosen home market with the profile', async () => {
+    jest.useFakeTimers();
+    try {
+      mockUpdate.mockReset().mockResolvedValue({});
+      await render(<CompleteProfileScreen />);
+      await fireEvent.changeText(screen.getByPlaceholderText('yourname'), 'alper1990');
+      await act(async () => { jest.advanceTimersByTime(1_000); });
+      await fireEvent.press(screen.getByRole('radio', { name: /United States/ }));
+      await fireEvent.press(screen.getByText('Continue'));
+      await waitFor(() => expect(mockUpdate).toHaveBeenCalledWith(expect.objectContaining({ username: 'alper1990', homeMarket: 'US' })));
+    } finally {
+      jest.useRealTimers();
+    }
+  });
+
+  it('before migration 068, saves the rest of the profile anyway', async () => {
+    jest.useFakeTimers();
+    try {
+      mockUpdate.mockReset()
+        .mockRejectedValueOnce(new Error('Choosing a home market isn’t available yet.'))
+        .mockResolvedValueOnce({});
+      await render(<CompleteProfileScreen />);
+      await fireEvent.changeText(screen.getByPlaceholderText('yourname'), 'alper1990');
+      await act(async () => { jest.advanceTimersByTime(1_000); });
+      await fireEvent.press(screen.getByText('Continue'));
+      await waitFor(() => expect(mockUpdate).toHaveBeenCalledTimes(2));
+      expect(mockUpdate.mock.calls[1][0]).not.toHaveProperty('homeMarket');
+      expect(screen.queryByText(/Couldn’t save/)).toBeNull();
+    } finally {
+      jest.useRealTimers();
+    }
+  });
+});
+

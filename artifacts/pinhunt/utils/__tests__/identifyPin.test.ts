@@ -1,4 +1,11 @@
-import { identifyPin, recordScanOutcome, SCAN_NETWORK_MESSAGE, SCAN_TIMEOUT_MESSAGE, SCAN_TIMEOUT_MS } from '../identifyPin';
+import {
+  identifyPin,
+  recordScanOutcome,
+  SCAN_NETWORK_MESSAGE,
+  SCAN_SERVER_UNREACHABLE_MESSAGE,
+  SCAN_TIMEOUT_MESSAGE,
+  SCAN_TIMEOUT_MS,
+} from '../identifyPin';
 
 describe('identifyPin', () => {
   const realFetch = globalThis.fetch;
@@ -59,6 +66,55 @@ describe('identifyPin', () => {
     expect(jest.getTimerCount()).toBe(0);
   });
 
+  const refuse = (status: number, body: object, headers: Record<string, string> = {}) =>
+    jest.fn().mockResolvedValue({
+      ok: false,
+      status,
+      headers: { get: (h: string) => headers[h] ?? null },
+      json: async () => body,
+    }) as unknown as typeof fetch;
+
+  it('marks the daily limit (429 + capReached) so no retry is offered', async () => {
+    globalThis.fetch = refuse(429, { error: "You've reached today's limit for photo identification.", capReached: true });
+    await expect(identifyPin('abc', 'image/jpeg')).rejects.toMatchObject({ status: 429, capReached: true });
+  });
+
+  it('carries the cooldown time left, from the body or the Retry-After header', async () => {
+    globalThis.fetch = refuse(429, { error: 'One moment', retryAfterSeconds: 3 });
+    await expect(identifyPin('abc', 'image/jpeg')).rejects.toMatchObject({ status: 429, retryAfterMs: 3000 });
+    globalThis.fetch = refuse(429, { error: 'One moment' }, { 'Retry-After': '4' });
+    await expect(identifyPin('abc', 'image/jpeg')).rejects.toMatchObject({ status: 429, retryAfterMs: 4000 });
+  });
+
+  it('keeps the 413 status for a photo that is too large', async () => {
+    globalThis.fetch = refuse(413, { error: 'Photo is too large — please retake it.' });
+    await expect(identifyPin('abc', 'image/jpeg')).rejects.toMatchObject({ status: 413, message: 'Photo is too large — please retake it.' });
+  });
+
+  describe('server unreachable vs offline', () => {
+    const realUrl = process.env.EXPO_PUBLIC_SUPABASE_URL;
+    beforeEach(() => { process.env.EXPO_PUBLIC_SUPABASE_URL = 'https://db.example.test'; });
+    afterEach(() => {
+      if (realUrl === undefined) delete process.env.EXPO_PUBLIC_SUPABASE_URL;
+      else process.env.EXPO_PUBLIC_SUPABASE_URL = realUrl;
+    });
+
+    it("says PinHunt can't reach its server when the device is otherwise online", async () => {
+      const fetchMock = jest.fn()
+        .mockRejectedValueOnce(new TypeError('Failed to fetch'))
+        .mockResolvedValueOnce({ ok: false, status: 401 });
+      globalThis.fetch = fetchMock as unknown as typeof fetch;
+      await expect(identifyPin('abc', 'image/jpeg')).rejects.toThrow(SCAN_SERVER_UNREACHABLE_MESSAGE);
+      expect(fetchMock).toHaveBeenLastCalledWith('https://db.example.test/auth/v1/health', expect.anything());
+      expect(jest.getTimerCount()).toBe(0);
+    });
+
+    it('still says offline when the device reaches nothing', async () => {
+      globalThis.fetch = jest.fn().mockRejectedValue(new TypeError('Network request failed')) as unknown as typeof fetch;
+      await expect(identifyPin('abc', 'image/jpeg')).rejects.toThrow(SCAN_NETWORK_MESSAGE);
+      expect(jest.getTimerCount()).toBe(0);
+    });
+  });
   it('passes the scan id through, or null when an older server sends none', async () => {
     globalThis.fetch = jest.fn().mockResolvedValue({
       ok: true,

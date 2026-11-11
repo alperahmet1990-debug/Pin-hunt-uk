@@ -40,7 +40,7 @@
     "name": "find-scan-error",
     "path": "/scan",
     "upload": "Choose Photo",
-    "click": "Identify Pin",
+    "consent": true,
     "scroll": "end"
   },
   {
@@ -88,6 +88,15 @@
   {
     "name": "profile-bottom",
     "path": "/profile",
+    "scroll": "end"
+  },
+  {
+    "name": "edit-profile",
+    "path": "/edit-profile"
+  },
+  {
+    "name": "edit-profile-bottom",
+    "path": "/edit-profile",
     "scroll": "end"
   },
   {
@@ -198,5 +207,9 @@
   {
     "name": "places-home",
     "path": "/places/home"
+  },
+  {
+    "name": "settings-home-market",
+    "path": "/settings/home-market"
   }
 ]

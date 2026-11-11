@@ -70,6 +70,26 @@ describe("POST /api/scan/identify usage controls", () => {
     expect(create).not.toHaveBeenCalled();
   });
 
+  it("says how long is left when a second scan comes inside the cooldown", async () => {
+    usage.allowed = false; // the first scan stops at the cap, after setting the cooldown
+    await scan();
+    vi.setSystemTime(Date.now() + 2_000);
+    const res = await scan();
+    expect(res.status).toBe(429);
+    expect(res.body.capReached).toBeUndefined();
+    expect(res.body.retryAfterSeconds).toBe(3);
+    expect(res.headers["retry-after"]).toBe("3");
+  });
+
+  it("refuses an oversized photo with a 413 the app can explain", async () => {
+    const res = await request(app)
+      .post("/api/scan/identify")
+      .set("Authorization", "Bearer test-token")
+      .send({ imageBase64: "A".repeat(9_000_000) });
+    expect(res.status).toBe(413);
+    expect(res.body.error).toMatch(/too large/i);
+  });
+
   it("counts a failed scan, since the upstream call was still made", async () => {
     create.mockRejectedValue(new Error("boom"));
     const res = await scan();

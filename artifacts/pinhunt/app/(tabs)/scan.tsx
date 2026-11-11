@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -37,6 +37,7 @@ import { QuickAddSheet } from '@/components/QuickAddSheet';
 import { ScanResult } from '@/components/scan/ScanResult';
 import { ScanCamera, type ScanCameraPhoto } from '@/components/scan/ScanCamera';
 import { ScanProgress } from '@/components/scan/ScanProgress';
+import { IDLE_VIEWFINDER_MAX, idleViewfinderHeight } from '@/components/scan/scanLayout';
 import { useMyAccess } from '@/hooks/useMyAccess';
 import { useAiPhotoConsent } from '@/hooks/useAiPhotoConsent';
 import { ErrorState } from '@/components/ui/ErrorState';
@@ -130,6 +131,8 @@ export default function ScanScreen() {
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   // A failed identify (offline, timeout, server…) in plain words (UX-046).
   const [failure, setFailure] = useState<UserError | null>(null);
+  // The scan cooldown (429): Try again comes back only once it has passed.
+  const [cooledDown, setCooledDown] = useState<UserError | null>(null);
   const [noMatchFound, setNoMatchFound] = useState(false);
   // "None of these" keeps the photo and offers ways forward instead of resetting.
   const [showRecovery, setShowRecovery] = useState(false);
@@ -159,7 +162,7 @@ export default function ScanScreen() {
     };
   }, []));
   const scrollRef = useRef<ScrollView>(null);
-  const { width: screenWidth } = useWindowDimensions();
+  const { width: screenWidth, height: screenHeight } = useWindowDimensions();
   // Square live preview, as wide as the screen allows (capped for tall phones).
   const viewfinderHeight = LIVE_CAMERA ? Math.min(screenWidth - 32, 420) : 300;
   const [resultKey, setResultKey] = useState(0);
@@ -181,6 +184,10 @@ export default function ScanScreen() {
   const topPad = Platform.OS === 'web' ? Math.max(insets.top, 67) : insets.top;
   // Clears the floating web tab bar (#260).
   const botPad = tabScreenBottomPad(insets.bottom + 80);
+  // Before a photo (no live camera), the card gives way so all three actions
+  // fit above the tab bar on a 320×568 screen (WP3).
+  const idleHeight = idleViewfinderHeight(screenHeight, topPad + 16, botPad);
+  const compactIdle = idleHeight < IDLE_VIEWFINDER_MAX;
 
   const flashShutter = useCallback(
     (cb?: () => void) => {
@@ -355,6 +362,19 @@ export default function ScanScreen() {
     }
   }
 
+  useEffect(() => {
+    if (typeof failure?.retry !== 'number') return;
+    const shown = failure;
+    const timer = setTimeout(() => setCooledDown(shown), failure.retry);
+    return () => clearTimeout(timer);
+  }, [failure]);
+  // Daily limit or a too-large photo: trying again can't help (retry false).
+  const retryBlocked = failure?.retry === false;
+  const coolingDown = typeof failure?.retry === 'number' && cooledDown !== failure;
+  const canRetry = !retryBlocked && !coolingDown;
+  // Today's limit: neither another photo nor another try will work.
+  const dailyLimit = failure?.kind === 'limit' && retryBlocked;
+
   /** Identify the current photo again (after Cancel, or Try again). */
   const handleIdentify = () => {
     if (captured?.base64) runIdentify(captured);
@@ -514,7 +534,7 @@ export default function ScanScreen() {
           <Animated.View
             style={[
               styles.viewfinder,
-              { height: noMatchFound ? Math.min(viewfinderHeight, 160) : viewfinderHeight, backgroundColor: '#0a0a18', borderRadius: 18, opacity: shutterAnim },
+              { height: scanState === 'idle' ? idleHeight : noMatchFound ? Math.min(viewfinderHeight, 160) : viewfinderHeight, backgroundColor: '#0a0a18', borderRadius: 18, opacity: shutterAnim },
             ]}
           >
             {scanState === 'idle' && !LIVE_CAMERA && (
@@ -525,7 +545,7 @@ export default function ScanScreen() {
                 accessibilityRole="button"
                 accessibilityLabel="Scan a pin with the camera"
               >
-                <Feather name="camera" size={48} color="rgba(255,255,255,0.25)" />
+                <Feather name="camera" size={compactIdle ? 32 : 48} color="rgba(255,255,255,0.25)" />
                 <Text style={styles.viewfinderHint}>Point camera at your pin</Text>
                 <Text style={styles.viewfinderHintSub}>
                   {Platform.OS === 'web' ? 'Select a photo from your library' : 'Works best in good light on a plain background'}
@@ -571,7 +591,7 @@ export default function ScanScreen() {
           <ErrorState
             compact
             error={failure}
-            onRetry={handleIdentify}
+            onRetry={canRetry ? handleIdentify : undefined}
             secondary={{ label: 'Search instead', icon: 'search', onPress: searchFromScan }}
             style={styles.failure}
           />
@@ -611,10 +631,12 @@ export default function ScanScreen() {
             </>
           )}
 
-          {scanState === 'captured' && !noMatchFound && (
+          {scanState === 'captured' && !noMatchFound && !dailyLimit && (
             <View style={styles.captureRow}>
-              <Button label="Retake" icon="refresh-cw" variant="secondary" onPress={handleScanPin} style={styles.retakeBtn} />
-              <Button label="Identify Pin" icon="cpu" onPress={handleIdentify} style={styles.identifyBtn} />
+              <Button label="Retake" icon="refresh-cw" variant="secondary" onPress={handleScanPin} style={retryBlocked ? styles.identifyBtn : styles.retakeBtn} />
+              {!retryBlocked && (
+                <Button label="Identify Pin" icon="cpu" onPress={handleIdentify} disabled={coolingDown} style={styles.identifyBtn} />
+              )}
             </View>
           )}
 

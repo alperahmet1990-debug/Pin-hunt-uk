@@ -184,7 +184,10 @@ router.post("/scan/identify", requireUser, async (req, res) => {
 
   const last = lastScanAt.get(userId);
   if (last && Date.now() - last < SCAN_COOLDOWN_MS) {
-    res.status(429).json({ error: "One moment — please wait a few seconds between scans." });
+    // How long is left, so the app offers "Try again" only once it's allowed.
+    const retryAfterSeconds = Math.max(1, Math.ceil((SCAN_COOLDOWN_MS - (Date.now() - last)) / 1000));
+    res.set("Retry-After", String(retryAfterSeconds));
+    res.status(429).json({ error: "One moment — please wait a few seconds between scans.", retryAfterSeconds });
     return;
   }
   lastScanAt.set(userId, Date.now());

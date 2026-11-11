@@ -19,7 +19,7 @@ import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { getPinImageSource } from '@/utils/pinImage';
 import { uploadCommunityPhoto } from '@/utils/communityPhoto';
 import { radius, spacing } from '@/constants/theme';
-import type { CataloguePin, CommunityPost, Conversation, ConversationMessage, TradeStatus } from '@workspace/pin-repository';
+import type { CataloguePin, CommunityPost, Conversation, ConversationMessage, PotentialTradePin, TradeStatus } from '@workspace/pin-repository';
 import { REMOVED_MESSAGE_BODY } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
 import { chatListData } from '@/utils/chatList';
@@ -32,6 +32,8 @@ import { useToast } from '@/components/ui/Toast';
 import { otherParticipantId } from '@/utils/blockedUsers';
 import { canProposeInChat, proposalRefusalLine, tradeCardTitle } from '@/utils/tradeActions';
 import { formatDate } from '@/utils/format';
+import { TradePinsSheet } from '@/components/TradePinsSheet';
+import { chatPinChoices, matchPinChoices, mergeChoices, preselectedKeys, toTradeItemInputs } from '@/utils/tradeItems';
 
 /** Space between messages (FlatList content has no `gap`). */
 function MessageGap() {
@@ -43,6 +45,30 @@ function previewBody(msg: ConversationMessage) {
   if (msg.messageType === 'pin_share') return `${msg.pinIds.length} pin${msg.pinIds.length === 1 ? '' : 's'} shared`;
   if (msg.messageType === 'photo') return `${msg.photoUrls.length} photo${msg.photoUrls.length === 1 ? '' : 's'} shared`;
   return 'Message';
+}
+
+/**
+ * A line the server wrote about a trade step (migration 071), e.g.
+ * "@alex accepted the trade." Centred, not a bubble, and not reportable:
+ * the collector didn't type it. Opens the trade.
+ */
+function TradeEventLine({ msg, colors }: { msg: ConversationMessage; colors: ReturnType<typeof useColors> }) {
+  const router = useRouter();
+  return (
+    <TouchableOpacity
+      onPress={() => { if (msg.tradeId) router.push(`/trade/${msg.tradeId}`); }}
+      disabled={!msg.tradeId}
+      accessibilityRole="link"
+      accessibilityLabel={`${msg.body} ${formatDate(msg.createdAt, 'time')}. View trade`}
+      style={styles.tradeEventRow}
+      testID={`trade-event-${msg.id}`}
+    >
+      <View style={[styles.tradeEventPill, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}>
+        <Feather name="repeat" size={12} color={colors.homeMuted} />
+        <Text style={[styles.tradeEventText, { color: colors.homeMuted }]}>{msg.body}</Text>
+      </View>
+    </TouchableOpacity>
+  );
 }
 
 function MessageBubble({ msg, isMe, colors, pins, onLongPress }: {
@@ -292,11 +318,11 @@ export default function ChatScreen() {
     });
     setSelectedPinIds([]);
   };
-  const agreeTrade = async () => {
+  const agreeTrade = async (selected: Set<string>) => {
     if (!repo || !userId || !conv) return;
     try {
       setSending(true);
-      const trade = await repo.proposeTradeInChat(conv.id);
+      const trade = await repo.proposeTradeInChat(conv.id, toTradeItemInputs(tradeChoices, selected, true));
       setConv(current => current ? { ...current, tradeId: trade.id } : current);
       setTradeStatus(trade.status);
       setTradeConfirmOpen(false);
@@ -311,6 +337,22 @@ export default function ChatScreen() {
   const otherBlocked = isBlocked(otherId);
   // Allow Trade Requests (migration 066): hide Propose Trade when the other
   // collector has turned it off. A failed check leaves it to the server.
+  // Pins for a proposal (migration 070): the pins shared in this chat first,
+  // then the collection match between the two collectors.
+  const [matchPins, setMatchPins] = useState<PotentialTradePin[]>([]);
+  useEffect(() => {
+    if (!repo || !userId || !otherId) return;
+    let cancelled = false;
+    repo.getPotentialTrades({ viewerId: userId, collectorId: otherId })
+      .then(pins => { if (!cancelled) setMatchPins(pins); })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [repo, userId, otherId]);
+  useEffect(() => { void ensurePins(matchPins.map(p => p.pinhuntId)); }, [matchPins, ensurePins]);
+  const chatChoices = useMemo(() => chatPinChoices(messages, userId), [messages, userId]);
+  const matchChoices = useMemo(() => matchPinChoices(matchPins), [matchPins]);
+  const tradeChoices = useMemo(() => mergeChoices(chatChoices, matchChoices), [chatChoices, matchChoices]);
+  const tradePreselected = useMemo(() => preselectedKeys(chatChoices, matchChoices), [chatChoices, matchChoices]);
   const [otherAcceptsTrades, setOtherAcceptsTrades] = useState(true);
   useEffect(() => {
     if (!repo || !otherId) return;
@@ -380,7 +422,7 @@ export default function ChatScreen() {
               data={newestFirst}
               keyExtractor={msg => msg.id}
               renderItem={({ item }) => (
-                <MessageBubble
+                item.tradeEvent ? <TradeEventLine msg={item} colors={colors} /> : <MessageBubble
                   msg={item}
                   isMe={item.senderId === userId}
                   colors={colors}
@@ -438,7 +480,7 @@ export default function ChatScreen() {
                 list it scrolled out of reach in long chats. */}
             {!!otherId && otherAcceptsTrades && canProposeInChat(conv?.tradeId, tradeStatus) && (
               <View style={[styles.proposeBar, { borderTopColor: colors.homeLine, backgroundColor: colors.homeBackground }]}>
-                <TouchableOpacity accessibilityRole="button" onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
+                <TouchableOpacity accessibilityRole="button" accessibilityLabel="Propose Trade" onPress={() => setTradeConfirmOpen(true)} style={[styles.agreeButton, { borderColor: colors.homeCoral }]}>
                   <Feather name="check-circle" size={16} color={colors.homeCoral} />
                   <Text style={[styles.agreeText, { color: colors.homeCoral }]}>Propose Trade</Text>
                 </TouchableOpacity>
@@ -496,47 +538,18 @@ export default function ChatScreen() {
           messageId={safetyMessageId ?? undefined}
         />
       )}
-      <Modal
+      <TradePinsSheet
         visible={tradeConfirmOpen}
-        animationType="fade"
-        transparent
-        onRequestClose={() => setTradeConfirmOpen(false)}
-      >
-        <View style={[styles.confirmShade]}>
-          <View style={[styles.confirmCard, { backgroundColor: colors.homeBackground }]}>
-            <View style={[styles.confirmIcon, { backgroundColor: colors.homeAqua }]}>
-              <Feather name="check-circle" size={28} color={colors.homeCoral} />
-            </View>
-            <Text style={[styles.confirmTitle, { color: colors.homeInk }]}>Propose this trade?</Text>
-            <Text style={[styles.confirmBody, { color: colors.homeMuted }]}>
-              The other collector can accept or decline. Once accepted, you each post your own pins and confirm when theirs arrive.
-            </Text>
-            <View style={styles.confirmActions}>
-              <TouchableOpacity
-                disabled={sending}
-                onPress={() => setTradeConfirmOpen(false)}
-                accessibilityRole="button"
-                style={[styles.confirmButton, { backgroundColor: colors.homeAqua }]}
-              >
-                <Text style={[styles.confirmButtonText, { color: colors.homeInk }]}>Cancel</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                disabled={sending}
-                onPress={() => void agreeTrade()}
-                accessibilityRole="button"
-                accessibilityLabel="Confirm propose trade"
-                style={[styles.confirmButton, { backgroundColor: colors.homeCoral }]}
-              >
-                {sending ? (
-                  <ActivityIndicator size="small" color={colors.homeSurface} />
-                ) : (
-                  <Text style={[styles.confirmButtonText, { color: colors.homeSurface }]}>Confirm</Text>
-                )}
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </Modal>
+        onClose={() => { if (!sending) setTradeConfirmOpen(false); }}
+        title="Propose a trade"
+        intro="Choose the pins you're swapping. Either of you can change them until it's accepted. Then you each post your own pins and confirm when theirs arrive."
+        confirmLabel="Propose Trade"
+        choices={tradeChoices}
+        initialSelected={tradePreselected}
+        busy={sending}
+        pinFor={pinhuntId => pinMap.get(pinhuntId)}
+        onConfirm={selected => void agreeTrade(selected)}
+      />
       <Modal
         visible={attachmentMenuOpen}
         animationType={Platform.OS === 'android' ? 'none' : 'fade'}
@@ -665,6 +678,9 @@ const styles = StyleSheet.create({
   contextBanner: { flexDirection: 'row', gap: spacing.sm, padding: spacing.sm + 2, borderWidth: 1, borderRadius: radius.sm }, contextText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 }, agreedCard: { padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm, gap: 3 }, agreedTitle: { fontFamily: 'Inter_600SemiBold', fontSize: 14 }, agreeButton: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 7, padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm }, agreeText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   bubbleRow: { flexDirection: 'row' }, bubbleRowMe: { justifyContent: 'flex-end' }, bubble: { maxWidth: '78%', padding: spacing.sm + 2, borderRadius: radius.lg, borderWidth: 1, gap: spacing.xs + 2 }, bubbleMe: { borderWidth: 0 }, bubbleText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 19 }, bubbleTime: { fontSize: 10, fontFamily: 'Inter_400Regular', textAlign: 'right' }, removedRow: { flexDirection: 'row', alignItems: 'center', gap: 6 }, removedText: { fontStyle: 'italic' }, photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 4 }, sharedPhoto: { width: 118, height: 118, borderRadius: radius.sm - 2 }, pinCard: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: 7, borderRadius: radius.sm - 1 }, pinImage: { width: 44, height: 44, borderRadius: 6 }, pinTitle: { fontSize: 12, fontFamily: 'Inter_600SemiBold' }, tradeTag: { marginTop: 2, fontSize: 9, fontFamily: 'Inter_700Bold', letterSpacing: .5 },
   proposeBar: { paddingHorizontal: spacing.md, paddingTop: spacing.sm, borderTopWidth: StyleSheet.hairlineWidth },
+  tradeEventRow: { alignItems: 'center', paddingVertical: 2 },
+  tradeEventPill: { flexDirection: 'row', alignItems: 'center', gap: 6, maxWidth: '90%', paddingHorizontal: spacing.md, paddingVertical: 6, borderWidth: 1, borderRadius: 999 },
+  tradeEventText: { fontSize: 12, fontFamily: 'Inter_500Medium', flexShrink: 1, textAlign: 'center' },
   inputBar: { flexDirection: 'row', alignItems: 'flex-end', gap: spacing.sm, paddingHorizontal: spacing.md, paddingTop: spacing.sm + 2, borderTopWidth: StyleSheet.hairlineWidth }, plusBtn: { width: 40, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' }, msgInput: { flex: 1, paddingHorizontal: spacing.md + 2, paddingVertical: spacing.sm + 2, fontSize: 14, fontFamily: 'Inter_400Regular', maxHeight: 120, borderWidth: 1, borderRadius: 22 }, sendBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 22 },
   attachmentSheet: { borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, padding: spacing.lg, gap: spacing.sm + 2 },
   attachmentOption: { minHeight: 68, borderWidth: 1, borderRadius: radius.md, padding: spacing.sm + 2, flexDirection: 'row', alignItems: 'center', gap: 11 },

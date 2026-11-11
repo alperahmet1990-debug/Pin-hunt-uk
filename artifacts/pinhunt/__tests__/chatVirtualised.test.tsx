@@ -21,6 +21,7 @@ const mockRepo = {
   }),
   getConversationMessages: () => Promise.resolve(mockMessages),
   getCommunityPost: () => Promise.resolve({ id: 'post1', postType: 'for_trade', body: 'Trading my spare Stitch' }),
+  getPotentialTrades: () => Promise.resolve([]),
 };
 
 jest.mock('react-native-safe-area-context', () => ({ useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }) }));

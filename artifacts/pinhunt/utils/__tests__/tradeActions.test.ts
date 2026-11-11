@@ -165,8 +165,10 @@ describe('repository trade calls', () => {
   it('calls the lifecycle functions, never a direct update', async () => {
     const { rpc, repo } = setup({ data: row, error: null });
     await repo.proposeTrade('b', 'hi');
-    await repo.proposeTradeInChat('c1');
+    await repo.proposeTradeInChat('c1', [{ pinhuntId: 'PHUK-1', direction: 'offered' }, { pinhuntId: 'PHUK-2', direction: 'requested', quantity: 2 }]);
+    await repo.setTradeItems('t1', [{ pinhuntId: 'PHUK-1', direction: 'offered' }]);
     await repo.acceptTrade('t1');
+    await repo.acceptTrade('t1', 3);
     await repo.declineTrade('t1');
     await repo.cancelTrade('t1');
     await repo.markTradePosted('t1', { carrier: 'RM', tracking: 'X1' });
@@ -174,8 +176,17 @@ describe('repository trade calls', () => {
     await repo.reportTradeProblem('t1', 'Lost');
     expect(rpc.mock.calls).toEqual([
       ['trade_propose', { p_recipient_id: 'b', p_notes: 'hi' }],
-      ['trade_propose_in_chat', { p_conversation_id: 'c1', p_notes: null }],
+      ['trade_propose_in_chat', {
+        p_conversation_id: 'c1',
+        p_notes: null,
+        p_items: [
+          { pinhunt_id: 'PHUK-1', direction: 'offered', quantity: 1 },
+          { pinhunt_id: 'PHUK-2', direction: 'requested', quantity: 2 },
+        ],
+      }],
+      ['trade_set_items', { p_trade_id: 't1', p_items: [{ pinhunt_id: 'PHUK-1', direction: 'offered', quantity: 1 }] }],
       ['trade_accept', { p_trade_id: 't1' }],
+      ['trade_accept', { p_trade_id: 't1', p_items_version: 3 }],
       ['trade_decline', { p_trade_id: 't1' }],
       ['trade_cancel', { p_trade_id: 't1' }],
       ['trade_mark_posted', { p_trade_id: 't1', p_carrier: 'RM', p_tracking: 'X1' }],

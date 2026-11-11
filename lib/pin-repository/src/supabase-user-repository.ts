@@ -71,6 +71,8 @@ import type {
   CreateTradeRatingInput,
   Trade,
   TradeItem,
+  TradeItemInput,
+  TradeChatEvent,
   TradeMessage,
   TraderProfile,
   TradeRating,
@@ -322,6 +324,24 @@ function conversationMessageBody(row: Record<string, unknown>): string {
   return 'Message';
 }
 
+function rowToTradeItem(r: Record<string, unknown>): TradeItem {
+  return {
+    id: r.id as string,
+    tradeId: r.trade_id as string,
+    userPinId: (r.user_pin_id as string | null) ?? undefined,
+    direction: r.direction as TradeItem['direction'],
+    pinId: (r.pin_id as string | null) ?? undefined,
+    pinhuntId: (r.pinhunt_id as string | null) ?? undefined,
+    title: (r.title as string | null) ?? undefined,
+    quantity: typeof r.quantity === 'number' ? r.quantity : 1,
+    createdAt: r.created_at as string,
+  };
+}
+
+function tradeItemsParam(items: TradeItemInput[]) {
+  return items.map(i => ({ pinhunt_id: i.pinhuntId, direction: i.direction, quantity: i.quantity ?? 1 }));
+}
+
 function rowToTrade(row: Record<string, unknown>): Trade {
   return {
     id: row.id as string,
@@ -341,6 +361,7 @@ function rowToTrade(row: Record<string, unknown>): Trade {
     problemReportedAt: (row.problem_reported_at as string | null) ?? undefined,
     problemReason: (row.problem_reason as string | null) ?? undefined,
     problemResolutionNote: (row.problem_resolution_note as string | null) ?? undefined,
+    itemsVersion: typeof row.items_version === 'number' ? row.items_version : undefined,
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
   };
@@ -733,13 +754,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
 
     const row = data as Record<string, unknown>;
     const trade = rowToTrade(row);
-    trade.items = ((row.trade_items as Record<string, unknown>[]) ?? []).map(r => ({
-      id: r.id as string,
-      tradeId: r.trade_id as string,
-      userPinId: r.user_pin_id as string,
-      direction: r.direction as TradeItem['direction'],
-      createdAt: r.created_at as string,
-    }));
+    trade.items = ((row.trade_items as Record<string, unknown>[]) ?? []).map(rowToTradeItem);
     trade.messages = ((row.trade_messages as Record<string, unknown>[]) ?? []).map(r => ({
       id: r.id as string,
       tradeId: r.trade_id as string,
@@ -762,8 +777,51 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     return this.callTradeRpc('trade_propose', { p_recipient_id: recipientId, p_notes: notes ?? null });
   }
 
-  proposeTradeInChat(conversationId: string, notes?: string): Promise<Trade> {
-    return this.callTradeRpc('trade_propose_in_chat', { p_conversation_id: conversationId, p_notes: notes ?? null });
+  proposeTradeInChat(conversationId: string, items: TradeItemInput[], notes?: string): Promise<Trade> {
+    return this.callTradeRpc('trade_propose_in_chat', {
+      p_conversation_id: conversationId,
+      p_notes: notes ?? null,
+      p_items: tradeItemsParam(items),
+    });
+  }
+
+  setTradeItems(tradeId: string, items: TradeItemInput[]): Promise<Trade> {
+    return this.callTradeRpc('trade_set_items', { p_trade_id: tradeId, p_items: tradeItemsParam(items) });
+  }
+
+  async getTradesWaitingCount(): Promise<number> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data, error } = await (this.client as any).rpc('trades_waiting_for_me');
+    if (error) throw new Error(error.message);
+    return typeof data === 'number' ? data : Number(data ?? 0) || 0;
+  }
+
+  async getConversationIdForTrade(tradeId: string): Promise<string | null> {
+    const { data, error } = await this.client
+      .from('conversations')
+      .select('id')
+      .eq('trade_id', tradeId)
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    if (error) throw new Error(error.message);
+    return ((data as { id?: string } | null)?.id) ?? null;
+  }
+
+  async getTradeItems(tradeIds: string[]): Promise<Record<string, TradeItem[]>> {
+    const out: Record<string, TradeItem[]> = {};
+    if (tradeIds.length === 0) return out;
+    const { data, error } = await this.client
+      .from('trade_items')
+      .select('*')
+      .in('trade_id', tradeIds)
+      .order('created_at', { ascending: true });
+    if (error) throw new Error(error.message);
+    for (const row of (data ?? []) as Record<string, unknown>[]) {
+      const item = rowToTradeItem(row);
+      (out[item.tradeId] ??= []).push(item);
+    }
+    return out;
   }
 
   async getContactPreferences(userId: string): Promise<ContactPreferences> {
@@ -779,8 +837,11 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     };
   }
 
-  acceptTrade(tradeId: string): Promise<Trade> {
-    return this.callTradeRpc('trade_accept', { p_trade_id: tradeId });
+  acceptTrade(tradeId: string, itemsVersion?: number): Promise<Trade> {
+    return this.callTradeRpc('trade_accept', {
+      p_trade_id: tradeId,
+      ...(itemsVersion === undefined ? {} : { p_items_version: itemsVersion }),
+    });
   }
 
   declineTrade(tradeId: string): Promise<Trade> {
@@ -2520,6 +2581,8 @@ class SupabaseUserPinRepository implements IUserPinRepository {
             pinIds: (lastMsgRow.pin_ids as string[] | null) ?? [],
             forTradePinIds: (lastMsgRow.for_trade_pin_ids as string[] | null) ?? [],
             photoUrls: (lastMsgRow.photo_urls as string[] | null) ?? [],
+            tradeId: (lastMsgRow.trade_id as string | null) ?? undefined,
+            tradeEvent: (lastMsgRow.trade_event as TradeChatEvent | null) ?? undefined,
             createdAt: lastMsgRow.created_at as string,
           }
         : undefined,
@@ -2699,6 +2762,8 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       pinIds: (r.pin_ids as string[] | null) ?? [],
       forTradePinIds: (r.for_trade_pin_ids as string[] | null) ?? [],
       photoUrls: (r.photo_urls as string[] | null) ?? [],
+      tradeId: (r.trade_id as string | null) ?? undefined,
+      tradeEvent: (r.trade_event as TradeChatEvent | null) ?? undefined,
       createdAt: r.created_at as string,
       removedAt: (r.removed_at as string | null) ?? undefined,
     }));

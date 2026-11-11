@@ -505,6 +505,8 @@ export interface Trade {
   problemResolutionNote?: string;
   /** The other collector's username, in trade lists. */
   otherUsername?: string;
+  /** Bumped by every change to the pins while the trade waits (migration 070). */
+  itemsVersion?: number;
   items?: TradeItem[];
   messages?: TradeMessage[];
   createdAt: string;
@@ -536,12 +538,29 @@ export interface MarkTradePostedInput {
   tracking?: string;
 }
 
+/**
+ * One agreed pin in a trade (migration 070). 'offered' pins come from the
+ * collector who proposed; 'requested' pins come from the other collector.
+ * pinhuntId and title are copied when the pin is added, so they stay as
+ * agreed. userPinId is the giver's collection row, when they had one.
+ */
 export interface TradeItem {
   id: string;
   tradeId: string;
-  userPinId: string;
+  userPinId?: string;
   direction: 'offered' | 'requested';
+  pinId?: string;
+  pinhuntId?: string;
+  title?: string;
+  quantity: number;
   createdAt: string;
+}
+
+/** A pin to put in a trade, by PinHunt ID (trade_propose_in_chat, trade_set_items). */
+export interface TradeItemInput {
+  pinhuntId: string;
+  direction: 'offered' | 'requested';
+  quantity?: number;
 }
 
 export interface TradeMessage {
@@ -881,6 +900,12 @@ export interface ConversationMessage {
   /** IDs that the sender had marked For Trade when sharing the message. */
   forTradePinIds: string[];
   photoUrls: string[];
+  /**
+   * Set on a line the server wrote about a trade step (migration 071), sent
+   * as the collector who took the step. Clients can't send these.
+   */
+  tradeId?: string;
+  tradeEvent?: TradeChatEvent;
   createdAt: string;
   /** Set when moderators removed the message (migration 072). The body is then REMOVED_MESSAGE_BODY. */
   removedAt?: string;
@@ -914,6 +939,11 @@ export interface ReportedMessageView {
   };
   removal?: { adminId?: string; reason?: string; createdAt: string };
 }
+
+/** The trade steps written into a chat (migration 071). */
+export type TradeChatEvent =
+  | 'proposed' | 'items_changed' | 'accepted' | 'declined' | 'cancelled'
+  | 'posted' | 'received' | 'completed' | 'problem';
 
 export interface SendConversationMessageInput {
   messageType?: ConversationMessage['messageType'];

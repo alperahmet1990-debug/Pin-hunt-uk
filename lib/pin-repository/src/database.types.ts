@@ -442,7 +442,7 @@ export interface Database {
         ];
       };
       trade_items: {
-        Row: { id: string; trade_id: string; user_pin_id: string; direction: 'offered' | 'requested'; created_at: string };
+        Row: { id: string; trade_id: string; user_pin_id: string | null; direction: 'offered' | 'requested'; pin_id: string | null; pinhunt_id: string | null; title: string | null; quantity: number; created_at: string };
         Insert: { id?: string; trade_id: string; user_pin_id: string; direction: 'offered' | 'requested'; created_at?: string };
         Update: Record<string, never>;
         Relationships: [
@@ -641,7 +641,7 @@ export interface Database {
           pin_ids: Json;
           for_trade_pin_ids: Json;
           photo_urls: Json;
-          created_at: string;
+          trade_id: string | null;  trade_event: string | null;  created_at: string;
         };
         Insert: {
           id?: string;

@@ -23,6 +23,7 @@ import { useBoards } from '@/context/BoardsContext';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { setSummariesFromPins } from '@/utils/setSummariesFromPins';
 import { ADD_PINS_LABEL, ADD_PINS_ROUTE } from '@/utils/addPinsOnboarding';
+import { StartCollection } from '@/components/StartCollection';
 import { PhotoGapsCard } from '@/components/PhotoGapsCard';
 import { getPinImageSource } from '@/utils/pinImage';
 import { EmptyState } from '@/components/EmptyState';
@@ -263,6 +264,8 @@ export default function CollectionScreen() {
   // Where pins live (#547): shown only when there's a place to read them from.
   const placesOn = getPinLocationService() !== null;
   const ownedIdList = useMemo(() => [...ownedIds], [ownedIds]);
+  // No pins and no boards yet (TestFlight feedback, 11 Nov 2026).
+  const collectionEmpty = ownedIds.size === 0 && customBoards.length === 0;
 
   // True while the catalogue rows for collection entries are being fetched,
   // so the grid shows placeholders rather than "No pins yet" (UX-045).
@@ -489,7 +492,8 @@ export default function CollectionScreen() {
 
       {/* Contextual Stats & Search */}
       <View style={s.contextualArea}>
-        {activeTab === 'boards' && (
+        {/* Nothing to count, arrange or sort yet: StartCollection says how to begin. */}
+        {activeTab === 'boards' && !collectionEmpty && (
           <>
           <CollectionSummary
             style={s.summary}
@@ -749,14 +753,12 @@ export default function CollectionScreen() {
       if (searchActive && searchQuery || Object.keys(pinFilters).length > 0) {
         return <EmptyState icon="search" title="No pins found" subtitle="Try changing your search or filters." />;
       }
+      // The same two ways in as the + menu (#353), catalogue first.
       return (
-        <View>
-          <EmptyState icon="camera" title="No pins yet" subtitle="Scan a pin, or add the ones you own from the catalogue." actionLabel="Scan a pin" onAction={() => router.push('/(tabs)/scan')} />
-          {/* The same two ways in as the + menu (#353). */}
-          <View style={s.emptySecondary}>
-            <Button label={ADD_PINS_LABEL} icon="grid" variant="secondary" size="compact" fullWidth={false} onPress={() => router.push(ADD_PINS_ROUTE)} />
-          </View>
-        </View>
+        <StartCollection
+          onAddFromCatalogue={() => router.push(ADD_PINS_ROUTE)}
+          onScan={() => router.push('/(tabs)/scan')}
+        />
       );
     }
     if (activeTab === 'sets') {
@@ -1286,7 +1288,6 @@ const s = StyleSheet.create({
   addMenuItem: { flexDirection: 'row', alignItems: 'center', gap: 12, minHeight: 52, borderBottomWidth: StyleSheet.hairlineWidth },
   addMenuText: { fontSize: 16, fontFamily: 'Inter_500Medium' },
   addMenuSub: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 2 },
-  emptySecondary: { alignItems: 'center', marginTop: -spacing.md },
   modalTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold', marginBottom: 16 },
   modalInput: { height: 44, borderWidth: 1, borderRadius: 12, paddingHorizontal: 12, fontSize: 15, fontFamily: 'Inter_400Regular' },
   sheetSectionTitle: { fontSize: 13, fontFamily: 'Inter_600SemiBold', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 12 },

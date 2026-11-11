@@ -100,6 +100,10 @@ end $$;
 insert into user_reports (id, reporter_id, reported_user_id, message_id, reason) values
   ('07200000-0000-4000-8000-0000000000f1', '07200000-0000-4000-8000-0000000000a1', '07200000-0000-4000-8000-0000000000b2', '07200000-0000-4000-8000-0000000000e1', 'rude'),
   ('07200000-0000-4000-8000-0000000000f9', '07200000-0000-4000-8000-0000000000a1', '07200000-0000-4000-8000-0000000000b2', null, 'profile');
+-- A report that names someone other than the message's sender (050's policy
+-- stops users doing this; inserted directly here) must not count.
+insert into user_reports (id, reporter_id, reported_user_id, message_id, reason) values
+  ('07200000-0000-4000-8000-0000000000f3', '07200000-0000-4000-8000-0000000000a1', '07200000-0000-4000-8000-0000000000c3', '07200000-0000-4000-8000-0000000000e4', 'mismatch');
 insert into user_reports (id, reporter_id, reported_user_id, message_id)
 select '07200000-0000-4000-8000-0000000000f2', '07200000-0000-4000-8000-0000000000a1', '07200000-0000-4000-8000-0000000000b2', id
   from conversation_messages where id = '07200000-0000-4000-8000-0000000000e2';
@@ -179,6 +183,9 @@ begin
   r := get_reported_message('07200000-0000-4000-8000-0000000000ff');
   assert r->>'status' = 'gone', '4h unknown report should be gone';
 
+  r := get_reported_message('07200000-0000-4000-8000-0000000000f3');
+  assert r->>'status' = 'gone', format('4k a report naming someone else showed the message: %s', r);
+
   ok := false;
   begin
     perform get_reported_message('07200000-0000-4000-8000-0000000000f9');
@@ -203,7 +210,8 @@ begin
   r := remove_reported_message('07200000-0000-4000-8000-0000000000a1', '07200000-0000-4000-8000-0000000000e1', 'spam');
   assert r->>'status' = 'not_admin', format('5a non-admin removed: %s', r);
   r := remove_reported_message('07200000-0000-4000-8000-0000000000d4', '07200000-0000-4000-8000-0000000000e4', 'spam');
-  assert r->>'status' = 'no_open_report', format('5b removed a message with no report: %s', r);
+  -- e4's only report names someone other than its sender, so it has no open report.
+  assert r->>'status' = 'no_open_report', format('5b removed a message with no valid report: %s', r);
   r := remove_reported_message('07200000-0000-4000-8000-0000000000d4', '07200000-0000-4000-8000-0000000000e1', '   ');
   assert r->>'status' = 'invalid_reason', '5c empty reason accepted';
   r := remove_reported_message('07200000-0000-4000-8000-0000000000d4', '07200000-0000-4000-8000-0000000000e1', repeat('x', 501));

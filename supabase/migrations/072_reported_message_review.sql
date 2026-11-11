@@ -173,7 +173,10 @@ begin
   end if;
 
   select * into v_msg from conversation_messages where id = v_report.message_id;
-  if not found then
+  -- The report must name the message's sender (a null sender is a deleted
+  -- account, 051). Otherwise it is not a report about this message.
+  if not found
+     or (v_msg.sender_id is not null and v_msg.sender_id <> v_report.reported_user_id) then
     return jsonb_build_object('status', 'gone');
   end if;
 
@@ -250,6 +253,7 @@ begin
 
   select id into v_report from user_reports
    where message_id = v_msg.id
+     and (v_msg.sender_id is null or reported_user_id = v_msg.sender_id)
    order by created_at desc
    limit 1;
   if v_report is null then

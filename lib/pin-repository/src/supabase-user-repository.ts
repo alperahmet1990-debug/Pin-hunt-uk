@@ -274,7 +274,6 @@ function rowToExternalSaleListing(row: Record<string, unknown>): ExternalSaleLis
   };
 }
 
-/** Structured messages retain a readable preview for existing conversation UIs. */
 /** Maps get_reported_message's jsonb (migration 072). Unknown shapes read as 'gone'. */
 export function rowToReportedMessageView(data: unknown): ReportedMessageView {
   const d = (data ?? {}) as Record<string, unknown>;
@@ -306,6 +305,7 @@ export function rowToReportedMessageView(data: unknown): ReportedMessageView {
   };
 }
 
+/** Structured messages retain a readable preview for existing conversation UIs. */
 function conversationMessageBody(row: Record<string, unknown>): string {
   const body = (row.body as string | null) ?? '';
   if (body.trim()) return body;

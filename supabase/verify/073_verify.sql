@@ -207,8 +207,10 @@ begin
   exception when insufficient_privilege then null;
   end;
 
-  -- 3x. Signed out: nothing works.
+  -- 3x. Signed out: nothing works. Clear both settings: hosted auth.uid()
+  -- falls back to request.jwt.claims when claim.sub is empty.
   perform set_config('request.jwt.claim.sub', '', true);
+  perform set_config('request.jwt.claims', '', true);
   begin
     perform confirm_my_age(date '1980-01-01');
     assert false, '3x anonymous confirm';

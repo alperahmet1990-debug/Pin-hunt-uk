@@ -58,11 +58,11 @@ Current state: no tablet support, and no `isTablet`/`isPad` logic anywhere.
 - `removeClippedSubviews` on Android for large grids.
 
 **Gaps**
-1. **No Android config in `app.json`.** `"android": {}` has no `package`, `adaptiveIcon`, `edgeToEdgeEnabled`, permissions block or `versionCode` policy. Add at least `package: "uk.pinhunt.app"` and an adaptive icon foreground/background (only `icon.png` exists today).
-2. **No Android EAS submit profile.** `eas.json` `submit` only covers iOS. Add a Play service-account key and an internal-testing track.
+1. **No Android config in `app.json`.** `"android": {}` has no `package`, `adaptiveIcon`, `edgeToEdgeEnabled`, permissions block or `versionCode` policy. Add at least `package: "uk.pinhunt.app"` and an adaptive icon foreground/background (only `icon.png` exists today). *Update (#20): `package` added and `versionCode` is managed remotely by EAS; the adaptive icon is still open.*
+2. **No Android EAS submit profile.** `eas.json` `submit` only covers iOS. Add a Play service-account key and an internal-testing track. *Update (#20): `internal` / `production` tracks added as drafts; the service-account key is uploaded to EAS by the maintainer (see `RELEASE-CONFIG.md`).*
 3. **Keyboard handling (highest UX risk).** About 20 screens use `KeyboardAvoidingView behavior={ios ? 'padding' : undefined}`. With RN 0.86 / Android 15+ edge-to-edge, `undefined` on Android can leave inputs hidden behind the keyboard; this needs checking on a real device. Affected areas include chat, post, trade, sell, auth and admin. `react-native-keyboard-controller` is already installed (only 4 uses), so standardising on its `KeyboardAvoidingView` is the clean fix.
 4. **Camera differences.** Aspect ratio and autofocus vary by phone (already noted in `docs/design/scan-camera.md`). The crop-to-frame maths needs checking on 2–3 Android phones.
-5. **Location permission.** expo-location is a dependency but has no plugin entry in `app.json`. Confirm how "Collectors Nearby" requests location and add the Android permission text.
+5. **Location permission.** expo-location is a dependency but has no plugin entry in `app.json`. Confirm how "Collectors Nearby" requests location and add the Android permission text. *Update (#20): nothing imports it and Nearby is hidden for V1, so the package was removed; no location permission is requested on either platform.*
 6. **Store admin.** Google Play developer account, Data safety form, and closed testing (personal accounts need 12 testers for 14 days before production).
 7. **eBay deletion webhook / account deletion.** `app/delete-account.tsx` exists, and Play also requires a web link for account deletion.
 

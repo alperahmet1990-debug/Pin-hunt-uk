@@ -7,6 +7,15 @@
     "base": {
       "pnpm": "9.15.9"
     },
+    "development": {
+      "extends": "base",
+      "distribution": "internal",
+      "channel": "development",
+      "environment": "development",
+      "android": {
+        "buildType": "apk"
+      }
+    },
     "preview": {
       "extends": "base",
       "distribution": "store",
@@ -26,11 +35,19 @@
     "preview": {
       "ios": {
         "ascAppId": "6823062114"
+      },
+      "android": {
+        "track": "internal",
+        "releaseStatus": "draft"
       }
     },
     "production": {
       "ios": {
         "ascAppId": "6823062114"
+      },
+      "android": {
+        "track": "production",
+        "releaseStatus": "draft"
       }
     }
   }

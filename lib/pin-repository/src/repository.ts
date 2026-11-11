@@ -1,6 +1,7 @@
 import type {
   PinSetSummary,
   CatalogueBrowsePin,
+  CatalogueBrowsePageQuery,
   CataloguePin,
   CreatePinInput,
   MissingImageCounts,
@@ -71,6 +72,13 @@ export interface PinRepository {
    * PostgREST row cap — for the Browse Entire Catalogue screen.
    */
   getCatalogueBrowseIndex(): Promise<CatalogueBrowsePin[]>;
+
+  /**
+   * One page of browsable pins (same visibility as getCatalogueBrowseIndex),
+   * filtered and ordered on the server. Use this rather than the whole index
+   * once the catalogue is large (Pin & Pop: ~116k pins).
+   */
+  getCatalogueBrowsePage(q: CatalogueBrowsePageQuery): Promise<{ rows: CatalogueBrowsePin[]; total: number | null }>;
 
   /** Fetch multiple pins by their PinHunt IDs (order not guaranteed). */
   getPinsByIds(pinhuntIds: string[]): Promise<CataloguePin[]>;

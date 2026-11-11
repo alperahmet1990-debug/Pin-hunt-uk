@@ -1095,6 +1095,26 @@ export interface CatalogueBrowsePin {
   allCharacters?: string;
 }
 
+/**
+ * One page request for Browse Catalogue (getCatalogueBrowsePage). Rows come
+ * ordered by set, then title, then id.
+ */
+export interface CatalogueBrowsePageQuery {
+  /** Search words: every word must match a field (same rule as searchPins). */
+  query?: string;
+  /** Exact set (pins.collection). */
+  setName?: string;
+  year?: number;
+  /** Exact edition_type, e.g. "Limited Edition". */
+  edition?: string;
+  /** true: only pins with no set; false: only pins with a set; omitted: both. */
+  uncategorised?: boolean;
+  offset: number;
+  limit: number;
+  /** Also return the total number of matching pins (costs a count). */
+  withCount?: boolean;
+}
+
 /** One row of get_catalogue_image_coverage() — a pin and its photo status. */
 export interface CatalogueImageCoverage {
   /** PHUK-XXXXXXXX — the same id the app uses as CataloguePin.id. */

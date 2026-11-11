@@ -3,6 +3,7 @@ import { PinRepositoryError, type PinRepository } from './repository';
 import type {
   AiMatchAdapter,
   CatalogueBrowsePin,
+  CatalogueBrowsePageQuery,
   CataloguePin,
   CataloguePinStatus,
   CreatePinInput,
@@ -458,6 +459,68 @@ class SupabasePinRepository implements PinRepository {
       mainCharacter: r.main_character ?? undefined,
       allCharacters: r.all_characters ?? undefined,
     }));
+  }
+
+  async getCatalogueBrowsePage(p: CatalogueBrowsePageQuery): Promise<{ rows: CatalogueBrowsePin[]; total: number | null }> {
+    const cols = 'pinhunt_id, title, collection, normalised_series, brand, release_year, edition_type, image_url, main_character, all_characters';
+    const tokens = searchTokens(p.query ?? '');
+    const count = p.withCount ? { count: 'exact' as const } : undefined;
+    const build = (useRpc: boolean) => {
+      // Text matching goes through search_catalogue_pins (076) when it exists,
+      // for the same reason as searchPins: RLS stops the indexes being used.
+      // (Builders don't run until awaited, so building the table query is free.)
+      const tableQuery = this.client.from('pins').select(cols, count);
+      let q = useRpc
+        ? (this.client
+            .rpc('search_catalogue_pins' as never, { p_tokens: tokens, p_character: null } as never, count)
+            .select(cols) as unknown as typeof tableQuery)
+        : tableQuery;
+      q = q
+        .eq('verification_status', 'verified')
+        .is('archived_at', null)
+        .or('catalogue_status.is.null,catalogue_status.neq.archived')
+        .or('is_searchable.is.null,is_searchable.eq.true');
+      if (!useRpc) {
+        for (const token of tokens) {
+          q = q.or(
+            `title.ilike.%${token}%,brand.ilike.%${token}%,collection.ilike.%${token}%,main_character.ilike.%${token}%,all_characters.ilike.%${token}%,search_aliases.ilike.%${token}%,normalised_series.ilike.%${token}%,main_subject.ilike.%${token}%,release_scope.ilike.%${token}%`,
+          );
+        }
+      }
+      if (p.setName !== undefined) q = q.eq('collection', p.setName);
+      if (p.uncategorised === true) q = q.eq('collection', '');
+      if (p.uncategorised === false) q = q.neq('collection', '');
+      if (p.year) q = q.eq('release_year', p.year);
+      if (p.edition) q = q.eq('edition_type', p.edition);
+      return q.order('collection').order('title').order('pinhunt_id').range(p.offset, p.offset + p.limit - 1);
+    };
+
+    const useRpc = this.searchRpcAvailable && tokens.length > 0;
+    let res = await build(useRpc);
+    if (res.error && useRpc && isMissingFunction(res.error)) {
+      this.searchRpcAvailable = false;
+      res = await build(false);
+    }
+    if (res.error) throw new PinRepositoryError('UPSTREAM_ERROR', res.error.message, res.error);
+    type BrowseRow = {
+      pinhunt_id: string; title: string; collection: string | null;
+      normalised_series: string | null; brand: string | null;
+      release_year: number | null; edition_type: string | null;
+      image_url: string | null; main_character: string | null;
+      all_characters: string | null;
+    };
+    const rows = ((res.data ?? []) as unknown as BrowseRow[]).map(r => ({
+      id: r.pinhunt_id,
+      title: r.title,
+      setName: r.collection || 'Uncategorised',
+      brand: r.brand ?? undefined,
+      releaseYear: r.release_year ?? undefined,
+      edition: r.edition_type ?? undefined,
+      imageUrl: r.image_url ?? undefined,
+      mainCharacter: r.main_character ?? undefined,
+      allCharacters: r.all_characters ?? undefined,
+    }));
+    return { rows, total: res.count ?? null };
   }
 
   // ── getSetSummaries ────────────────────────────────────────────────────

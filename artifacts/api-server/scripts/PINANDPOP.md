@@ -150,7 +150,7 @@ Under full parallel load six other suites time out, and all of them pass when ru
 | Search | Before: 0.7–2.3 s, and "Stitch" timed out (anon 3 s limit). After 075 + 076: "Stitch" 115 ms, "Haunted Mansion" 97 ms, no hits 49 ms, a "mickey" page with its 16,018 total 280–435 ms. Results match the old query exactly. |
 | Scan candidate search | After 075 + 076: character search 57 ms, 3 parallel word searches 250 ms in total (was ~2 s). The character search finds 0 because P&P has no characters. |
 | Scanning | Candidate search is fast now (see above). The character search finds nothing (P&P has no character data). Visual verification has no catalogue images to compare against, because P&P images are reference-only. |
-| Browse Catalogue | **43 s** to load all 116k rows (`getCatalogueBrowseIndex` downloads everything). Needs server-side paging. |
+| Browse Catalogue | Was **43 s** (downloaded all 116k rows). **Now paged on the server** (`getCatalogueBrowsePage` + `utils/catalogueBrowsePager.ts`). Opening takes ~0.6 s warm; the first open in a fresh session takes up to 2 s while the connection is set up. Searches open in 0.2–0.4 s, a set in 80 ms, a year or edition in under 0.3 s, and each further page 0.1–0.25 s. Search, set, year and edition run on the server (search uses 076). A page never ends mid-set, so set counts and Select all stay right. Uncategorised (4,070) comes last. A typed 4-digit year acts as the year filter. The Set filter loads its 12,985 names when opened (~1.3 s). |
 | Valuations | Unchanged code path (eBay by title). Old market rows were removed with the old pins. P&P has no prices. |
 | Trading | No trades existed. Trades reference `pins.id` / `user_pins`, so no change is needed. |
 | Contributions | Workflow unchanged. P&P reference rows have `uploaded_by = null`, so they stay out of the contribution queue (042). |
@@ -164,7 +164,9 @@ Under full parallel load six other suites time out, and all of them pass when ru
    `searchPins` / `searchPinsPage` call for text and character matching. It applies
    the pins RLS visibility rule itself, once per call. Without 076 the app falls back
    to the table query.
-2. **Browse Catalogue** needs server-side paging instead of loading 116k rows (see the catalogue-browse UX debt note).
+2. **Browse Catalogue** is paged now (see the table). Still open: for photo contributors only, the screen also loads
+   `useCatalogueCoverage`, which fetches every pin's photo status (116k rows). That
+   hook and its contributor screen need the same paging. Not measured.
 3. **Scan accuracy:** P&P has no characters. Decide whether scan verification
    may compare against P&P reference images internally. The licence allows internal
    processing such as reverse image search, but sending them to OpenAI is a call

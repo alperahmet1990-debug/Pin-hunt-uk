@@ -92,7 +92,7 @@ begin
   assert pg_temp.v061_refused(d, format('select trade_propose_in_chat(%L)', conv_d)), '3b suspended proposed';
 
   -- One waiting proposal per pair, either way round
-  perform pg_temp.v061_ok(a, format('select trade_propose(%L, %L)', b, E'Swap?\nPinHunt:​  ok'));
+  perform pg_temp.v061_ok(a, format('select trade_propose(%L, %L)', b, E'Swap?\nPinHunt:\u200b  ok'));
   assert (select notes from trades where initiator_id = a and recipient_id = b) = 'Swap? PinHunt: ok', '4a notes not cleaned';
   assert pg_temp.v061_refused(a, format('select trade_propose(%L)', b), 'already'), '4b second proposal';
   assert pg_temp.v061_refused(b, format('select trade_propose(%L)', a), 'already'), '4c reverse proposal';
@@ -114,9 +114,9 @@ begin
   -- Reasons: plain text only
   update trades set status = 'cancelled' where initiator_id = b and recipient_id = a;
   insert into trades (id, initiator_id, recipient_id, status, initiator_posted_at) values (t, a, b, 'accepted', now());
-  assert pg_temp.v061_refused(b, format('select trade_report_problem(%L, %L)', t, E'​⁠﻿'), 'went wrong'), '6a invisible reason';
-  assert pg_temp.v061_refused(b, format('select trade_report_problem(%L, %L)', t, E'   　 '), 'went wrong'), '6b space-like reason';
-  perform pg_temp.v061_ok(b, format('select trade_report_problem(%L, %L)', t, E'Lost PinHunt:‮  it\u0085now'));
+  assert pg_temp.v061_refused(b, format('select trade_report_problem(%L, %L)', t, E'\u200b\u2060\ufeff'), 'went wrong'), '6a invisible reason';
+  assert pg_temp.v061_refused(b, format('select trade_report_problem(%L, %L)', t, E' \u00a0\u2028\u3000 '), 'went wrong'), '6b space-like reason';
+  perform pg_temp.v061_ok(b, format('select trade_report_problem(%L, %L)', t, E'Lost\u2028PinHunt:\u202e  it\u0085now'));
   assert (select problem_reason from trades where id = t) = 'Lost PinHunt: it now', '6c reason not cleaned';
 
   -- New chats can't start with a trade

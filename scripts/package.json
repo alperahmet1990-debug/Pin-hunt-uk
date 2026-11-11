@@ -8,7 +8,7 @@
     "import:verify-all": "tsx import-catalogue.ts --verify-all",
     "verify": "tsx verify-setup.ts",
     "typecheck": "tsc --noEmit",
-    "test": "node --test testflight-feedback/*.test.mjs"
+    "test": "node --test testflight-feedback/*.test.mjs sql-invisible-chars.test.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",

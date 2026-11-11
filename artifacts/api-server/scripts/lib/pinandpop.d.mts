@@ -14,7 +14,10 @@ export interface PinAndPopClient {
   getPin(id: number): Promise<any>;
   readonly requestCount: number;
 }
-export declare class PinAndPopApiError extends Error { status: number }
+export declare class PinAndPopApiError extends Error {
+  constructor(message: string, status: number);
+  status: number;
+}
 export declare function createPinAndPopClient(opts: {
   token: string | undefined;
   fetchImpl?: typeof fetch;

@@ -117,7 +117,8 @@ export default function PinDetailScreen() {
   useEffect(() => {
     setSourceDisplayName(null);
     if (!pin?.catalogueSource || !repository) return;
-    repository.getCatalogueSourceDisplayName(pin.catalogueSource)
+    // Licence wording comes from catalogue_sources.attribution_text (Pin & Pop requires it verbatim).
+    repository.getCatalogueSourceAttribution(pin.catalogueSource)
       .then(setSourceDisplayName)
       .catch(() => setSourceDisplayName(null));
   }, [pin?.catalogueSource, repository]);
@@ -517,7 +518,7 @@ export default function PinDetailScreen() {
 
           {sourceDisplayName && (
             <Text style={[styles.attribution, { color: colors.homeMuted }]}>
-              Pin data · {sourceDisplayName}
+              {sourceDisplayName}
             </Text>
           )}
         </View>

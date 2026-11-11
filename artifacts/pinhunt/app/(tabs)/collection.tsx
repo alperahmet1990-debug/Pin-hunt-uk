@@ -276,20 +276,27 @@ export default function CollectionScreen() {
     return () => { cancelled = true; };
   }, [collection, ensurePins]);
 
-  useEffect(() => {
+  // Sets the collector has started, as a stable key so effects don't re-run on every catalogue change.
+  const startedSetsKey = useMemo(() => {
     const names = new Set<string>();
     for (const pin of catalogue) {
       if (ownedIds.has(pin.id) && pin.collection) names.add(pin.collection);
     }
-    if (names.size > 0) void ensureCollections([...names]);
-  }, [catalogue, ownedIds, ensureCollections]);
+    return JSON.stringify([...names].sort());
+  }, [catalogue, ownedIds]);
+
+  useEffect(() => {
+    const names: string[] = JSON.parse(startedSetsKey);
+    if (names.length > 0) void ensureCollections(names);
+  }, [startedSetsKey, ensureCollections]);
 
   const [summariesLoading, setSummariesLoading] = useState(!!repository);
   useEffect(() => {
     if (!repository) return;
     let cancelled = false;
     setSummariesLoading(true);
-    repository.getSetSummaries()
+    // Only the started sets: the full list is ~13k sets (Pin & Pop).
+    repository.getSetSummaries(JSON.parse(startedSetsKey) as string[])
       .then(summaries => {
         if (!cancelled) setSetSummaries(summaries);
       })
@@ -302,7 +309,7 @@ export default function CollectionScreen() {
     return () => {
       cancelled = true;
     };
-  }, [repository]);
+  }, [repository, startedSetsKey]);
   // Mock mode has no set summaries endpoint, so derive them from the catalogue.
   const setSummaries = useMemo(
     () => (repository ? repoSetSummaries : setSummariesFromPins(catalogue)),

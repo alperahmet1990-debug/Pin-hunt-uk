@@ -423,13 +423,38 @@ class SupabasePinRepository implements PinRepository {
 
   // ── getSetSummaries ────────────────────────────────────────────────────
 
-  async getSetSummaries(): Promise<PinSetSummary[]> {
-    const { data, error } = await this.client
-      .from('pin_sets' as never)
-      .select('*')
-      .order('set_name');
-
-    if (error) return []; // table may not exist yet — sets are optional metadata
+  async getSetSummaries(names?: string[]): Promise<PinSetSummary[]> {
+    // The catalogue has ~13k sets and PostgREST returns at most 1000 rows a
+    // request, so either look up the named sets or page through all of them.
+    const PAGE = 1000;
+    const NAMES_PER_REQUEST = 40; // names go in the URL
+    const rows: unknown[] = [];
+    if (names) {
+      const wanted = [...new Set(names.filter(Boolean))];
+      for (let i = 0; i < wanted.length; i += NAMES_PER_REQUEST) {
+        const { data, error } = await this.client
+          .from('pin_sets' as never)
+          .select('*')
+          .in('set_name', wanted.slice(i, i + NAMES_PER_REQUEST))
+          .order('set_name');
+        if (error) return []; // table may not exist yet — sets are optional metadata
+        rows.push(...((data ?? []) as unknown[]));
+      }
+    } else {
+      for (let from = 0; ; from += PAGE) {
+        const { data, error } = await this.client
+          .from('pin_sets' as never)
+          .select('*')
+          .order('set_name')
+          .order('id')
+          .range(from, from + PAGE - 1);
+        if (error) return [];
+        const page = (data ?? []) as unknown[];
+        rows.push(...page);
+        if (page.length < PAGE) break;
+      }
+    }
+    const data = rows;
     type SetRow = {
       id: string; normalised_series: string; set_name: string;
       collection_name: string | null; programme: string | null;
@@ -453,6 +478,24 @@ class SupabasePinRepository implements PinRepository {
       sourceUrl: r.source_url ?? undefined,
       validationStatus: r.validation_status ?? undefined,
     }));
+  }
+
+  async getAllSetNames(): Promise<string[]> {
+    const PAGE = 1000;
+    const names = new Set<string>();
+    for (let from = 0; ; from += PAGE) {
+      const { data, error } = await this.client
+        .from('pin_sets' as never)
+        .select('set_name')
+        .order('set_name')
+        .order('id')
+        .range(from, from + PAGE - 1);
+      if (error) return [...names];
+      const page = (data ?? []) as unknown as Array<{ set_name: string }>;
+      for (const r of page) if (r.set_name) names.add(r.set_name);
+      if (page.length < PAGE) break;
+    }
+    return [...names];
   }
 
   // ── getPinsBySeries ────────────────────────────────────────────────────
@@ -573,6 +616,18 @@ class SupabasePinRepository implements PinRepository {
 
     if (error || !data) return null;
     return (data as { display_name: string }).display_name;
+  }
+
+  async getCatalogueSourceAttribution(sourceId: string): Promise<string | null> {
+    const { data, error } = await this.client
+      .from('catalogue_sources')
+      .select('display_name, attribution_text')
+      .eq('id', sourceId)
+      .maybeSingle();
+
+    if (error || !data) return null;
+    const row = data as { display_name: string; attribution_text: string | null };
+    return row.attribution_text?.trim() || `Pin data · ${row.display_name}`;
   }
 
   // ── createPin ─────────────────────────────────────────────────────────

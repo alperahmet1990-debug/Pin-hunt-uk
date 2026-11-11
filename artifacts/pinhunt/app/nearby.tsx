@@ -20,6 +20,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useColors } from '@/hooks/useColors';
+import { FEATURES } from '@/constants/features';
+import { FeatureOffRedirect } from '@/components/FeatureOffRedirect';
 import { Avatar } from '@/components/Avatar';
 import { useProfile } from '@/context/ProfileContext';
 import { useMarketplace } from '@/hooks/useMarketplace';
@@ -206,7 +208,7 @@ function ActiveFilterChip({ label, onClear }: { label: string; onClear(): void }
 
 // ─── Screen ────────────────────────────────────────────────────────────────────
 
-export default function NearbyScreen() {
+function NearbyScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
@@ -430,6 +432,12 @@ export default function NearbyScreen() {
       </Modal>
     </View>
   );
+}
+
+// Hidden while FEATURES.collectorsNearby is off: direct links go back safely.
+export default function NearbyScreenRoute() {
+  if (!FEATURES.collectorsNearby) return <FeatureOffRedirect />;
+  return <NearbyScreen />;
 }
 
 const styles = StyleSheet.create({

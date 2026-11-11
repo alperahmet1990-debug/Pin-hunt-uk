@@ -4,13 +4,17 @@ import { Linking, Share } from 'react-native';
 
 const mockPush = jest.fn();
 let mockConfig = { SUPPORT_EMAIL: '', RATE_APP_ENABLED: false, EXPORT_COLLECTION_ENABLED: true };
+let mockFlags = { marketplaceListings: false, collectorsNearby: false, inPersonTrading: false, internationalTrading: false };
 
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
 }));
 jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush }) }));
 jest.mock('@/components/Avatar', () => ({ Avatar: () => null }));
-jest.mock('@/context/ProfileContext', () => ({ useProfile: () => ({ profile: { username: 'sam' }, loading: false }) }));
+jest.mock('@/constants/features', () => ({ get FEATURES() { return mockFlags; } }));
+jest.mock('@/context/ProfileContext', () => ({
+  useProfile: () => ({ profile: { username: 'sam', hasLocationSet: true, nearbyDiscoveryEnabled: true, preferredRadiusMiles: 25 }, loading: false }),
+}));
 jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ signOut: jest.fn(), user: null }) }));
 jest.mock('@/context/SubmissionNotificationsContext', () => ({ useSubmissionNotifications: () => ({ unseenCount: 0 }) }));
 jest.mock('@/hooks/useFeature', () => ({ useFeature: () => ({ enabled: false }) }));
@@ -34,6 +38,22 @@ describe('Profile support rows', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     mockConfig = { SUPPORT_EMAIL: '', RATE_APP_ENABLED: false, EXPORT_COLLECTION_ENABLED: true };
+    mockFlags = { marketplaceListings: false, collectorsNearby: false, inPersonTrading: false, internationalTrading: false };
+  });
+
+  it('hides the Collectors Nearby banner and My Marketplace Listings for V1 (#525)', async () => {
+    await render(<ProfileScreen />);
+    expect(screen.queryByText(/Collectors Nearby/)).toBeNull();
+    expect(screen.queryByText(/Discoverable/)).toBeNull();
+    expect(screen.queryByText('My Marketplace Listings')).toBeNull();
+  });
+
+  it('restores the Nearby banner and listings row when their flags are on', async () => {
+    mockFlags = { ...mockFlags, collectorsNearby: true, marketplaceListings: true };
+    await render(<ProfileScreen />);
+    await fireEvent.press(screen.getByText('Discoverable · Within 25 miles'));
+    expect(mockPush).toHaveBeenCalledWith('/nearby');
+    expect(screen.getByText('My Marketplace Listings')).toBeTruthy();
   });
 
   it('hides Send Feedback without a support email and hides Rate by default', async () => {

@@ -35,6 +35,7 @@ import type {
   UserBlock,
   UserReport,
   UserSuspension,
+  ReportedMessageView,
   CatalogueImageCoverage,
   ContributedPinImage,
   CreateContributedImageInput,
@@ -556,6 +557,15 @@ export interface IUserPinRepository {
 
   /** Dismiss (delete) a user report. Admin RLS applies. */
   dismissUserReport(reportId: string): Promise<void>;
+
+  /**
+   * Admins only (migration 072, #504): the message a still-open report is
+   * about, and nothing else from the conversation. Each call is recorded.
+   * Throws when the caller isn't an admin, the report is about a profile, or
+   * the migration isn't applied. Removing a message goes through the API
+   * server (POST /api/admin/messages/:id/remove), not this repository.
+   */
+  getReportedMessage(reportId: string): Promise<ReportedMessageView>;
 
   // ── Account suspensions (migration 050, #503) ──────────────────────────────
   // Admins only (RLS). A suspended account can't post, comment, message or

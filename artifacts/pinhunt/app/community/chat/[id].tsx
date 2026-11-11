@@ -20,6 +20,7 @@ import { getPinImageSource } from '@/utils/pinImage';
 import { uploadCommunityPhoto } from '@/utils/communityPhoto';
 import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin, CommunityPost, Conversation, ConversationMessage, TradeStatus } from '@workspace/pin-repository';
+import { REMOVED_MESSAGE_BODY } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
 import { chatListData } from '@/utils/chatList';
 import { ErrorState } from '@/components/ui/ErrorState';
@@ -51,6 +52,26 @@ function MessageBubble({ msg, isMe, colors, pins, onLongPress }: {
   onLongPress?: (msg: ConversationMessage) => void;
 }) {
   const router = useRouter();
+  // Removed by moderators (migration 072, #524): a neutral placeholder for
+  // both people, with nothing left to report.
+  if (msg.removedAt) {
+    return (
+      <View style={[styles.bubbleRow, isMe && styles.bubbleRowMe]}>
+        <View
+          testID={`message-removed-${msg.id}`}
+          accessible
+          accessibilityLabel={REMOVED_MESSAGE_BODY}
+          style={[styles.bubble, { backgroundColor: colors.homeBackground, borderColor: colors.homeLine, borderStyle: 'dashed' }]}
+        >
+          <View style={styles.removedRow}>
+            <Feather name="slash" size={13} color={colors.homeMuted} />
+            <Text style={[styles.bubbleText, styles.removedText, { color: colors.homeMuted }]}>{REMOVED_MESSAGE_BODY}</Text>
+          </View>
+          <Text style={[styles.bubbleTime, { color: colors.homeMuted }]}>{formatDate(msg.createdAt, 'time')}</Text>
+        </View>
+      </View>
+    );
+  }
   const bubbleStyle = [styles.bubble, { backgroundColor: isMe ? colors.homeCoral : colors.homeSurface, borderColor: colors.homeLine }, isMe && styles.bubbleMe];
   // Only their messages respond to a long press; everything else stays a plain View.
   const actionProps = !isMe && onLongPress ? {
@@ -642,7 +663,7 @@ export default function ChatScreen() {
 const styles = StyleSheet.create({
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' }, messageList: { flex: 1 }, messageGap: { height: spacing.sm }, listTop: { gap: spacing.sm, paddingBottom: spacing.sm }, emptyMessages: { alignItems: 'center', paddingVertical: 40 }, emptyMsgText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
   contextBanner: { flexDirection: 'row', gap: spacing.sm, padding: spacing.sm + 2, borderWidth: 1, borderRadius: radius.sm }, contextText: { flex: 1, fontSize: 12, fontFamily: 'Inter_400Regular', lineHeight: 17 }, agreedCard: { padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm, gap: 3 }, agreedTitle: { fontFamily: 'Inter_600SemiBold', fontSize: 14 }, agreeButton: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 7, padding: spacing.md - 1, borderWidth: 1, borderRadius: radius.sm }, agreeText: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
-  bubbleRow: { flexDirection: 'row' }, bubbleRowMe: { justifyContent: 'flex-end' }, bubble: { maxWidth: '78%', padding: spacing.sm + 2, borderRadius: radius.lg, borderWidth: 1, gap: spacing.xs + 2 }, bubbleMe: { borderWidth: 0 }, bubbleText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 19 }, bubbleTime: { fontSize: 10, fontFamily: 'Inter_400Regular', textAlign: 'right' }, photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 4 }, sharedPhoto: { width: 118, height: 118, borderRadius: radius.sm - 2 }, pinCard: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: 7, borderRadius: radius.sm - 1 }, pinImage: { width: 44, height: 44, borderRadius: 6 }, pinTitle: { fontSize: 12, fontFamily: 'Inter_600SemiBold' }, tradeTag: { marginTop: 2, fontSize: 9, fontFamily: 'Inter_700Bold', letterSpacing: .5 },
+  bubbleRow: { flexDirection: 'row' }, bubbleRowMe: { justifyContent: 'flex-end' }, bubble: { maxWidth: '78%', padding: spacing.sm + 2, borderRadius: radius.lg, borderWidth: 1, gap: spacing.xs + 2 }, bubbleMe: { borderWidth: 0 }, bubbleText: { fontSize: 14, fontFamily: 'Inter_400Regular', lineHeight: 19 }, bubbleTime: { fontSize: 10, fontFamily: 'Inter_400Regular', textAlign: 'right' }, removedRow: { flexDirection: 'row', alignItems: 'center', gap: 6 }, removedText: { fontStyle: 'italic' }, photoGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 4 }, sharedPhoto: { width: 118, height: 118, borderRadius: radius.sm - 2 }, pinCard: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: 7, borderRadius: radius.sm - 1 }, pinImage: { width: 44, height: 44, borderRadius: 6 }, pinTitle: { fontSize: 12, fontFamily: 'Inter_600SemiBold' }, tradeTag: { marginTop: 2, fontSize: 9, fontFamily: 'Inter_700Bold', letterSpacing: .5 },
   proposeBar: { paddingHorizontal: spacing.md, paddingTop: spacing.sm, borderTopWidth: StyleSheet.hairlineWidth },
   inputBar: { flexDirection: 'row', alignItems: 'flex-end', gap: spacing.sm, paddingHorizontal: spacing.md, paddingTop: spacing.sm + 2, borderTopWidth: StyleSheet.hairlineWidth }, plusBtn: { width: 40, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' }, msgInput: { flex: 1, paddingHorizontal: spacing.md + 2, paddingVertical: spacing.sm + 2, fontSize: 14, fontFamily: 'Inter_400Regular', maxHeight: 120, borderWidth: 1, borderRadius: 22 }, sendBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 22 },
   attachmentSheet: { borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, padding: spacing.lg, gap: spacing.sm + 2 },

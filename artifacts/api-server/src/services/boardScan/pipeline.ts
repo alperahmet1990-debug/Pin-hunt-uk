@@ -132,7 +132,7 @@ async function makeItem(scan: BoardScan, board: Buffer, position: number, pin: D
     crop_sha256: sha256(crop),
     crop_dhash: dhash,
     quality,
-    detection: { characters: pin.characters, keywords: pin.keywords, text: pin.text, occluded: pin.occluded, partial: pin.partial },
+    detection: { characters: pin.characters, keywords: pin.keywords, text: pin.text, occluded: pin.occluded, partial: pin.partial, glare: !!pin.glare },
   };
 }
 

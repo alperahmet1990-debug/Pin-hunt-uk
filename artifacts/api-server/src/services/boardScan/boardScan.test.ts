@@ -24,12 +24,12 @@ function item(extra: Partial<BoardScanItem> = {}): BoardScanItem {
 
 describe("parseDetection", () => {
   it("reads 0–1000 boxes as fractions and drops malformed entries", () => {
-    const raw = 'Here you go: {"pins":[{"box":[100,200,300,400],"characters":["Grogu"],"keywords":["Mandalorian"],"text":"THIS IS THE WAY","occluded":true},' +
+    const raw = 'Here you go: {"pins":[{"box":[100,200,300,400],"characters":["Grogu"],"keywords":["Mandalorian"],"text":"THIS IS THE WAY","occluded":true,"glare":true},' +
       '{"box":[1,2,3]},{"box":[0,0,1000,1000]},{"box":[500,500,503,503]},{"box":[900,900,800,800],"partial":true}]}';
     const pins = parseDetection(raw);
     expect(pins).toHaveLength(2);
     expect(pins[0].box).toEqual({ x: 0.1, y: 0.2, w: expect.closeTo(0.2), h: expect.closeTo(0.2) });
-    expect(pins[0]).toMatchObject({ characters: ["Grogu"], text: "THIS IS THE WAY", occluded: true, partial: false });
+    expect(pins[0]).toMatchObject({ characters: ["Grogu"], text: "THIS IS THE WAY", occluded: true, partial: false, glare: true });
     // Swapped corners are put right.
     expect(pins[1].box.x).toBeCloseTo(0.8);
     expect(pins[1].partial).toBe(true);
@@ -88,6 +88,13 @@ describe("quality", () => {
     const q = await assessCrop(blank, { x: 0.4, y: 0.4, w: 0.05, h: 0.05 }, 4000, 3000, { occluded: true });
     expect(q.suitable).toBe(false);
     expect(q.reasons).toEqual(expect.arrayContaining(["low_resolution", "blurry", "occluded"]));
+  });
+
+  it("treats glare reported by detection as glare, even when no pixel is blown out", async () => {
+    const plain = await sharp({ create: { width: 200, height: 200, channels: 3, background: "#e8b0a0" } }).jpeg().toBuffer();
+    const q = await assessCrop(plain, { x: 0.4, y: 0.4, w: 0.05, h: 0.05 }, 4000, 3000, { glare: true });
+    expect(q.glare).toBe(0);
+    expect(q.reasons).toContain("glare");
   });
 
   it("gives a re-compressed crop a closer hash than a different pin", async () => {

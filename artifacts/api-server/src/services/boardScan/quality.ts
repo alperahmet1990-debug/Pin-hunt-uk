@@ -157,7 +157,7 @@ export async function assessCrop(
   box: Box,
   boardWidth: number,
   boardHeight: number,
-  flags: { occluded?: boolean; partial?: boolean } = {},
+  flags: { occluded?: boolean; partial?: boolean; glare?: boolean } = {},
 ): Promise<QualityReport> {
   const t = qualityThresholds();
   const px = boxToPixels(box, boardWidth, boardHeight);
@@ -173,7 +173,10 @@ export async function assessCrop(
   const reasons: QualityReason[] = [];
   if (Math.min(px.width, px.height) < t.minSidePx) reasons.push("low_resolution");
   if (sharpness < t.minSharpness) reasons.push("blurry");
-  if (glare > t.maxGlare) reasons.push("glare");
+  // Pixel glare catches blown-out highlights; detection catches coloured
+  // sheen on metallic pins, which pixel brightness can't tell from white
+  // enamel (Toy Story test board, 12 Nov 2026).
+  if (glare > t.maxGlare || flags.glare) reasons.push("glare");
   if (edge || flags.partial) reasons.push("cut_off");
   if (flags.occluded) reasons.push("occluded");
 

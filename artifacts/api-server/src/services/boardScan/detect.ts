@@ -29,6 +29,8 @@ export interface DetectedPin {
   text: string;
   occluded: boolean;
   partial: boolean;
+  /** Reflection or glare washes out part of the design in this photo. */
+  glare?: boolean;
 }
 
 export interface DetectionResult {
@@ -64,12 +66,12 @@ export function boardMaxPins(): number {
 const DETECT_SYSTEM_PROMPT = `You find individual Disney enamel pins in a photo of a pin trading board (pins on cork, fabric, a lanyard or a binder page).
 
 Return ONLY valid JSON (no markdown):
-{ "pins": [ { "box": [x0, y0, x1, y1], "characters": ["..."], "keywords": ["..."], "text": "...", "occluded": false, "partial": false } ] }
+{ "pins": [ { "box": [x0, y0, x1, y1], "characters": ["..."], "keywords": ["..."], "text": "...", "occluded": false, "partial": false, "glare": false } ] }
 
 - "box" is the tight rectangle around ONE pin, in coordinates from 0 to 1000 relative to the image: x0,y0 = top-left corner, x1,y1 = bottom-right corner (x across, y down). Include the whole pin, including danglers, sliders and pin-on-pin pieces that belong to it, but not neighbouring pins.
 - One entry per separate pin. Pins that touch or overlap are still separate pins. Do not include backing cards, lanyards, badges, buttons that are not enamel pins, or empty spaces.
 - "characters": Disney characters on or represented by the pin, best guess first (up to 3). "keywords": up to 6 search terms — series/collection guesses, the object type, distinctive props. "text": any words printed on the pin, exactly as written, or "".
-- "occluded": true when another pin or object covers part of this pin. "partial": true when part of the pin is outside the photo or hidden.
+- "occluded": true when another pin or object covers part of this pin. "partial": true when part of the pin is outside the photo or hidden. "glare": true when light reflecting off the pin (shiny metal, glitter, flash) washes out part of its design in this photo.
 - List pins row by row, top to bottom, left to right.`;
 
 function clamp01(n: number): number {
@@ -109,6 +111,7 @@ export function parseDetection(raw: string): DetectedPin[] {
       keywords: strings(item.keywords, 6),
       text: typeof item.text === "string" ? item.text.trim().slice(0, 200) : "",
       occluded: item.occluded === true,
+      glare: item.glare === true,
       partial: item.partial === true,
     });
   }

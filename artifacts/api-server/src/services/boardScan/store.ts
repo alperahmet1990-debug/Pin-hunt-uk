@@ -62,7 +62,7 @@ export interface BoardScanItem {
   crop_sha256: string | null;
   crop_dhash: string | null;
   quality: QualityReport | null;
-  detection: { characters: string[]; keywords: string[]; text: string; occluded: boolean; partial: boolean } | null;
+  detection: { characters: string[]; keywords: string[]; text: string; occluded: boolean; partial: boolean; glare?: boolean } | null;
   match_status: "pending" | "suggested" | "unmatched" | "failed";
   candidates: MatchCandidate[];
   suggested_pin_id: string | null;

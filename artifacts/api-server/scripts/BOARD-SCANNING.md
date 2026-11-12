@@ -62,6 +62,20 @@ The metrics come from the review itself: a hand-added pin is a missed detection,
 
 Things to compare on the real boards: `BOARD_DETECT_TILES=1` vs `2` (detection on crowded boards), crop tightness on overlapping pins (Pixian keeps whatever it sees as foreground, so a neighbour's edge in the crop can survive clean-up — reject those photos and note how often), and the quality thresholds against what you'd actually publish. Google Vision is not used; only add it if these numbers show detection, not matching, is the bottleneck.
 
+## Test boards — ground truth and findings
+
+Photos are kept out of the repo. `expected.json` for the benchmark: `{ "toy-story": { "pins": 22 } }` (keyed by file name).
+
+**Toy Story board** (maintainer's own photo, iPhone, own_photo + public display). 22 pins: Woody sketch (rose gold), claw machine Buzz/aliens, Buzz star, Mr Potato Head, Woody & Buzz box, Jessie star, Alien star, claw machine green (Rex), Rex on cloud, Woody/Rex/Slinky 30th, Aliens on cloud, claw machine Bullseye, Woody star, Bullseye star, claw machine orange (Woody), Rex star, Jessie & Woody riding, Pixar ball on cloud, Buzz rectangle (partly covered by a thumb), Buzz popsicle, claw machine red cow print, Toy Story vinyl.
+
+Offline checks on 12 Nov 2026 (hand-drawn boxes; AI steps not run — no keys in that session):
+
+- **Resolution is the deciding factor.** The copy received via chat was 1152×1536; every pin's crop was 121–235 px on its short side, so all 22 were correctly marked too small for a catalogue photo. At the original iPhone size (~3024×4032) the same pins are ~320–600 px and pass. Upload the original file (Photos "actual size"/AirDrop/the app picker), not a messaging-app copy, and ask Facebook contributors for originals — Facebook re-compresses to ~2048 px, which lands the smallest pins near the 280 px limit.
+- **Sharpness** ranged 75–1245 (threshold 40): the check didn't misfire, but it can't be calibrated on a downscaled copy.
+- **Glare:** the rose-gold Woody sketch pin is washed out by reflection, but no pixel was blown out (pixel glare 0). Brightness alone can't tell it from white enamel (Mr Potato Head, clouds), so detection now also reports `glare`.
+- **Crowding:** sheriff stars and cloud pins interlock, so crops (6% padding) include points of neighbouring pins. Matching should cope (the prompt says to identify the centre pin); for clean-up, watch whether Pixian keeps the fragments and reject those photos — if common, the next step is to send Pixian an unpadded crop.
+- The thumb over the Buzz rectangle is the occlusion case to check detection reports.
+
 ## Failure handling
 
 Every step saves as it goes. A pin whose matching fails is marked failed and the board ends *Partly processed*; **Resume** redoes only unfinished pins (no new detection). A board left processing by a server restart shows as partial after 10 minutes. A failed Pixian call marks only that pin; **Clean photo** retries it.

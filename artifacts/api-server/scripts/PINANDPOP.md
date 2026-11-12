@@ -164,9 +164,28 @@ Under full parallel load six other suites time out, and all of them pass when ru
    `searchPins` / `searchPinsPage` call for text and character matching. It applies
    the pins RLS visibility rule itself, once per call. Without 076 the app falls back
    to the table query.
-2. **Browse Catalogue** is paged now (see the table). Still open: for photo contributors only, the screen also loads
-   `useCatalogueCoverage`, which fetches every pin's photo status (116k rows). That
-   hook and its contributor screen need the same paging. Not measured.
+2. **Contributor photo coverage: paged with migration 077** (applied on staging
+   12 Nov 2026). Browse Catalogue and photo gaps look up only the pins they show
+   (240 pins: 98 ms; 3,000 owned pins: 213 ms). Help Build the Catalogue filters,
+   counts and pages in the database:
+
+   | View | Time |
+   |---|---|
+   | A page, no filters | 1.3 s (1.7 s deep in the list) |
+   | Filtered (needs photo / missing info) | 0.5–0.7 s |
+   | Search, or a PHUK id | 0.3–0.5 s |
+   | Year plus park, or one set | 0.16–0.19 s |
+   | Header counts | 0.25 s |
+   | Facet lists | 0.24–0.53 s (13k sets) |
+   | Set totals | 0.15 s |
+
+   The unfiltered pages sort all 116k rows each time; that's acceptable for this beta
+   screen, but it's the first thing to tune if it's used widely. The old path wasn't
+   measured: it only answers a signed-in contributor.
+
+   **Data quality this exposed:** every P&P pin counts as "needs photo" (P&P images
+   aren't public) and as "missing info" (P&P has no character data). So those two
+   filters cover the whole catalogue until photos and characters are added.
 3. **Scan accuracy:** P&P has no characters. Decide whether scan verification
    may compare against P&P reference images internally. The licence allows internal
    processing such as reverse image search, but sending them to OpenAI is a call
@@ -182,9 +201,11 @@ Do this only once staging is signed off. It's a separate, approved session, and 
 must not overlap any other production work.
 
 1. **Back up production**: a JSON dump of every table (as above), plus the Supabase dashboard backup.
-2. **Schema:** apply 075 then 076, each with a production guard in place of the staging one
+2. **Schema:** apply 075, 076 and 077 in order, each with a production guard in place of the staging one
    (e.g. `if exists (select 1 from storage.buckets where id = 'pinhunt-staging-marker') then raise exception`).
-   Both are additive (indexes; one function). No other migration is needed: P&P uses
+   All three are additive (indexes; a search function; a private view and three
+   coverage functions). Apply them before shipping the app build that uses them
+   (without them the app falls back to slower paths). No other migration is needed: P&P uses
    existing columns and tables (042/037).
 3. **Decide what happens to production's user data on old pins.** Unlike staging,
    real collections, boards, trades and contributed photos will reference the old

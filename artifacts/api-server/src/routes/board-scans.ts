@@ -13,7 +13,7 @@
  * GET    /admin/board-scans-pin-search?q=           Catalogue search for corrections.
  *
  * Same Bearer JWT → profiles.is_admin check as routes/pin-images.ts. Staging
- * first: needs migration 075. Pipeline: services/boardScan/pipeline.ts.
+ * first: needs migration 078. Pipeline: services/boardScan/pipeline.ts.
  */
 import { Router, type IRouter, type Request, type Response, type NextFunction } from "express";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";

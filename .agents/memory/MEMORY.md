@@ -18,4 +18,4 @@
 - [Final V1 Collection architecture](final-v1-collection.md) — Boards-first single-row navigation; catalogue Sets derive automatically, never through manual tracking
 - [PinHunt visual direction](pinhunt-visual-direction.md) — Storybook (ivory, teal, periwinkle, plum) is the approved app-wide palette (D-01, 12 Oct 2026); never revert to Sea Glass & Coral; `home*` token names are misleading.
 - [Collectible PinTrader rights record](collectible-pintrader-rights.md) — rights basis for Catalogue V2 seed data/images; evidence fields still need dates/contact filled in.
-- [Bulk board scanning](board-scanning.md) — board photo → crops → shared scan recognition (pinRank.ts) → Pixian → reviewed publish; permission record per board; migration 075
+- [Bulk board scanning](board-scanning.md) — board photo → crops → shared scan recognition (pinRank.ts) → Pixian → reviewed publish; permission record per board; migration 078

@@ -22,7 +22,7 @@ Pin & Pop reference images (migration 042) are shown to the model during matchin
 
 ## Setup (staging only)
 
-1. Apply `supabase/migrations/075_board_scans.sql` in the **staging** SQL editor (rollback SQL is in its header).
+1. Apply `supabase/migrations/078_board_scans.sql` in the **staging** SQL editor (rollback SQL is in its header).
 2. In the staging API server env: `OPENAI_API_KEY` (low-budget staging key), `PIXIAN_API_ID`/`PIXIAN_API_SECRET`, `PIXIAN_TEST_MODE=true` (free, watermarked results — switch off only for a real run).
 3. Start the API server for staging, sign in to the app as the App Creator, open **Admin → Board Scans**.
 

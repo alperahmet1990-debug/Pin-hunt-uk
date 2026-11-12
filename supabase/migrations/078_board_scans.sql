@@ -1,5 +1,5 @@
 -- ============================================================
--- Migration 075: Bulk board scanning (staging first)
+-- Migration 078: Bulk board scanning (staging first)
 --
 -- Photographs of pin trading boards, split into one row per detected pin,
 -- matched to the catalogue and (optionally) cleaned up into catalogue
@@ -17,7 +17,7 @@
 -- Writes go through the API server's service-role key; RLS below only
 -- opens reads to admins.
 --
--- Apply in the STAGING Supabase SQL editor first. Run AFTER 074.
+-- Apply in the STAGING Supabase SQL editor first. Run AFTER 077 (Pin & Pop: 075–077).
 --
 -- Rollback (safe — nothing else references these):
 --   drop table if exists board_scan_items;
@@ -173,5 +173,5 @@ on conflict (id) do nothing;
 --   select id, public from storage.buckets where id = 'board-scans';   -- false
 --   select id from catalogue_sources where id = 'pinhunt_board_scan';
 -- ============================================================
--- End of migration 075.
+-- End of migration 078.
 -- ============================================================

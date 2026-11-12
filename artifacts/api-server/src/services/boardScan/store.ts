@@ -1,5 +1,5 @@
 /**
- * Board scanning — persistence (migration 075). Service-role client only:
+ * Board scanning — persistence (migration 078). Service-role client only:
  * every caller is an API route that has already checked the user.
  */
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";

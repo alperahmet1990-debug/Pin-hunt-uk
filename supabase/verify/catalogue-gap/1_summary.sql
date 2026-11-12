@@ -31,26 +31,57 @@ begin
   end if;
   out := out || jsonb_build_object('generated_at', now(), 'report_version', 1);
 
-  -- Catalogue-relevant migrations, detected by an object each one creates.
+  -- Migrations 037 onwards, each detected by an object it creates. Five
+  -- migrations only rewrite existing functions or grants (056, 061, 063, 064,
+  -- 074) and can't be detected this way: use their supabase/verify scripts.
   for m in
     select * from (values
-      ('037', 'table', 'public.catalogue_sources'),
+      ('037', 'table', 'catalogue_sources'),
       ('038', 'column', 'pin_images.status'),
+      ('039', 'table', 'feature_flags'),
+      ('040', 'function', 'is_app_creator'),
+      ('041', 'policy', 'pins.pins_app_creator_insert'),
       ('042', 'constraint', 'pin_images_pin_and_pop_reference_only'),
-      ('045', 'sequence', 'public.pinhunt_id_seq'),
-      ('047', 'table', 'public.contributor_ai_usage'),
-      ('052', 'table', 'public.catalogue_review_events'),
+      ('043', 'table', 'user_boards'),
+      ('044', 'function', 'set_user_pin_statuses'),
+      ('045', 'function', 'next_pinhunt_id'),
+      ('047', 'table', 'contributor_ai_usage'),
+      ('048', 'function', 'get_catalogue_image_coverage'),
+      ('049', 'table', 'market_sources'),
+      ('050', 'table', 'user_blocks'),
+      ('051', 'table', 'account_deletions'),
+      ('052', 'table', 'catalogue_review_events'),
       ('053', 'column', 'pin_external_ids.match_status'),
-      ('073', 'function', 'public.pinhunt_environment()'),
-      ('075', 'table', 'public.board_scans'),
-      ('076', 'table', 'public.bulk_image_batches')
+      ('054', 'column', 'market_listings.site'),
+      ('055', 'table', 'market_valuation_history'),
+      ('057', 'column', 'trades.initiator_posted_at'),
+      ('058', 'constraint', 'trade_ratings_comment_length'),
+      ('059', 'column', 'trades.problem_reason'),
+      ('060', 'function', 'link_conversation_trade'),
+      ('062', 'function', 'get_my_postcode'),
+      ('065', 'table', 'collector_pin_prices'),
+      ('066', 'function', 'collector_contact_preferences'),
+      ('067', 'table', 'collection_places'),
+      ('068', 'column', 'profiles.home_market'),
+      ('069', 'column', 'contributor_ai_usage.outcome'),
+      ('070', 'column', 'trades.items_version'),
+      ('071', 'function', 'trade_post_event'),
+      ('072', 'table', 'message_moderation_events'),
+      ('073', 'function', 'pinhunt_minimum_age'),
+      ('075', 'table', 'board_scans'),
+      ('076', 'table', 'bulk_image_batches')
     ) as t(migration, kind, name)
   loop
     markers := markers || jsonb_build_object(m.migration, case m.kind
-      when 'table' then to_regclass(m.name) is not null
-      when 'sequence' then to_regclass(m.name) is not null
-      when 'function' then to_regprocedure(m.name) is not null
+      when 'table' then to_regclass('public.' || m.name) is not null
+      when 'function' then exists (
+        select 1 from pg_proc p join pg_namespace n on n.oid = p.pronamespace
+        where n.nspname = 'public' and p.proname = m.name)
       when 'constraint' then exists (select 1 from pg_constraint where conname = m.name)
+      when 'policy' then exists (
+        select 1 from pg_policies
+        where schemaname = 'public' and tablename = split_part(m.name, '.', 1)
+          and policyname = split_part(m.name, '.', 2))
       when 'column' then exists (
         select 1 from information_schema.columns
         where table_schema = 'public'
@@ -58,6 +89,8 @@ begin
           and column_name = split_part(m.name, '.', 2))
     end);
   end loop;
+  -- 073's project marker, which later migrations' guards rely on.
+  markers := markers || jsonb_build_object('073_marker', to_regprocedure('public.pinhunt_environment()') is not null);
   out := out || jsonb_build_object('migration_markers', markers);
 
   -- Pins: totals and statuses (to_jsonb keeps this independent of columns).

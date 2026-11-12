@@ -7,13 +7,14 @@
 //
 // <folder> holds staging/ and production/, each with 1_summary.json,
 // 2_pins.csv, 3_images.csv and (optionally) 4_storage.csv and 5_work.json.
-// Writes <folder>/report.md and <folder>/review.csv.
+// Writes <folder>/report.md and <folder>/review.csv (project refs replaced by
+// STAGING / PRODUCTION) and prints a privacy check. Browser alternative: compare.html.
 // Project refs are the 20-letter ids in each project's URL (not secrets).
 // See docs/catalogue-sync/GAP-REPORT.md.
 
 import fs from "node:fs";
 import path from "node:path";
-import { compare, isRef, loadSide, renderMarkdown, renderReviewCsv } from "./lib.mjs";
+import { compare, isRef, loadSide, privacyScan, redactRefs, renderMarkdown, renderReviewCsv } from "./lib.mjs";
 
 const args = process.argv.slice(2);
 const opt = (name) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : undefined; };
@@ -30,8 +31,15 @@ try {
   const staging = loadSide(path.join(folder, "staging"));
   const production = loadSide(path.join(folder, "production"));
   const result = compare(staging, production, { stagingRef, productionRef });
-  fs.writeFileSync(path.join(folder, "report.md"), renderMarkdown(result, { staging, production }));
-  fs.writeFileSync(path.join(folder, "review.csv"), renderReviewCsv(result.review));
+  const refs = { stagingRef, productionRef };
+  // Project refs are replaced with STAGING / PRODUCTION so the files can be shared.
+  const md = redactRefs(renderMarkdown(result, { staging, production }), refs);
+  const csv = redactRefs(renderReviewCsv(result.review), refs);
+  fs.writeFileSync(path.join(folder, "report.md"), md);
+  fs.writeFileSync(path.join(folder, "review.csv"), csv);
+  const scan = privacyScan(md + "\n" + csv, refs);
+  console.log(scan.ok ? "Privacy check: nothing that shouldn't be shared." : "Privacy check: DON'T SHARE YET. Found:");
+  for (const f of scan.findings) console.log(`  ${f.level === "block" ? "!!" : "  "} ${f.what}: ${f.count}`);
   const crit = result.review.filter((r) => r.severity === "critical").length;
   const dec = result.review.filter((r) => r.severity === "review").length;
   for (const c of result.checks) console.log(`${c.level.toUpperCase()}: ${c.text}`);

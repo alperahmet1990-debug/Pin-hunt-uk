@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- No network at all: this page can't load or send anything. Your files stay on this computer. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; form-action 'none'">
+<title>Catalogue Gap Report</title>
+<style>
+  :root { --bg: #fbf8f2; --fg: #1f2a2e; --muted: #5d6b70; --line: #ddd5c8; --card: #fff; --accent: #1f6f6a; --bad: #a3271f; --warn: #8a5a00; --ok: #2f6b2f; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #151a1c; --fg: #e8e4dc; --muted: #9aa6aa; --line: #2e3739; --card: #1c2325; --accent: #5cc0b8; --bad: #ff8a80; --warn: #f0c060; --ok: #8fd18f; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  h2 { font-size: 1.15rem; margin: 28px 0 8px; }
+  p.lead, .muted { color: var(--muted); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin: 12px 0; }
+  .step { font-weight: 600; color: var(--accent); }
+  label { display: block; font-weight: 600; margin: 10px 0 4px; }
+  input[type=text] { width: 100%; max-width: 420px; padding: 8px; font: inherit; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--fg); }
+  button { font: inherit; padding: 10px 16px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: #fff; cursor: pointer; margin: 8px 8px 0 0; }
+  button.secondary { background: transparent; color: var(--accent); }
+  button:disabled { opacity: .5; cursor: default; }
+  .files { font-size: .9rem; color: var(--muted); margin-top: 4px; }
+  .msg { padding: 10px 12px; border-radius: 8px; margin: 8px 0; border: 1px solid var(--line); }
+  .msg.error { border-color: var(--bad); color: var(--bad); }
+  .msg.warn { border-color: var(--warn); color: var(--warn); }
+  .msg.ok { border-color: var(--ok); color: var(--ok); }
+  .report { overflow-x: auto; }
+  .report table { border-collapse: collapse; font-size: .9rem; margin: 8px 0; }
+  .report th, .report td { border: 1px solid var(--line); padding: 4px 8px; text-align: left; vertical-align: top; }
+  .report th { background: var(--bg); }
+  code { font-size: .9em; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Catalogue gap report</h1>
+  <p class="lead">Compares your staging and production export files and shows what hasn't reached production. Everything happens inside this page on your computer. Nothing is uploaded, and the page is blocked from using the internet.</p>
+
+  <div class="card">
+    <div class="step">Step 1 · Staging files</div>
+    <p class="muted">Choose all the files in your <code>staging</code> folder: select them all with Cmd+A (Mac) or Ctrl+A (Windows) in the file window. File names don't matter: each file is recognised by what's inside.</p>
+    <input type="file" id="stagingFiles" multiple accept=".csv,.json,.txt,text/csv,application/json,text/plain">
+    <div class="files" id="stagingList">No files chosen.</div>
+  </div>
+
+  <div class="card">
+    <div class="step">Step 2 · Production files</div>
+    <p class="muted">Choose all the files in your <code>production</code> folder.</p>
+    <input type="file" id="productionFiles" multiple accept=".csv,.json,.txt,text/csv,application/json,text/plain">
+    <div class="files" id="productionList">No files chosen.</div>
+  </div>
+
+  <div class="card">
+    <div class="step">Step 3 · Project refs</div>
+    <p class="muted">The 20 letters and numbers in each project's address: <code>https://<b>this-part</b>.supabase.co</code>, or after <code>/project/</code> in the dashboard address bar. They aren't secret. The report replaces them with STAGING and PRODUCTION.</p>
+    <label for="stagingRef">Staging ref</label>
+    <input type="text" id="stagingRef" autocomplete="off" spellcheck="false" placeholder="20 characters">
+    <label for="productionRef">Production ref</label>
+    <input type="text" id="productionRef" autocomplete="off" spellcheck="false" placeholder="20 characters">
+    <div class="files" id="refHint"></div>
+  </div>
+
+  <button id="run" disabled>Compare</button>
+  <div id="messages"></div>
+
+  <section id="results" hidden>
+    <h2>Before you share</h2>
+    <div id="privacy"></div>
+    <button id="dlReport" class="secondary">Download report.md</button>
+    <button id="dlReview" class="secondary">Download review.csv</button>
+    <h2>Report</h2>
+    <div class="card report" id="report"></div>
+  </section>
+</main>
+<script>
+"use strict";
+/*__CORE__*/
+
+// ── page ────────────────────────────────────────────────────────────────────
+const $ = (id) => document.getElementById(id);
+const picked = { staging: null, production: null };
+let outputs = null;
+
+async function readFiles(list) {
+  const out = {};
+  for (const f of list) out[f.name] = await f.text();
+  return out;
+}
+function showList(el, files) {
+  const label = { summary: "1 summary", pins: "2 pins", images: "3 photos", storage: "4 files", work: "5 work in progress" };
+  const found = {};
+  const lines = Object.keys(files).sort().map((n) => {
+    const kind = identifyExport(files[n]);
+    if (kind) found[kind] = (found[kind] ?? 0) + 1;
+    return `${n} → ${kind ? label[kind] : "not recognised (ignored)"}`;
+  });
+  const missing = Object.keys(label).filter((k) => !found[k]).map((k) => label[k]);
+  el.innerHTML = "";
+  for (const l of lines) { const d = document.createElement("div"); d.textContent = l; el.appendChild(d); }
+  const s = document.createElement("div");
+  s.style.fontWeight = "600";
+  s.textContent = missing.length ? `Missing: ${missing.join(", ")}${missing.every((m) => m.startsWith("4") || m.startsWith("5")) ? " (optional, but recommended)" : ""}` : "All five results present.";
+  el.appendChild(s);
+}
+function refsSeen() {
+  const seen = new Set();
+  for (const files of [picked.staging, picked.production]) if (files) for (const t of Object.values(files)) for (const m of t.matchAll(/https:\/\/([a-z0-9]{20})\.supabase\.co/g)) seen.add(m[1]);
+  $("refHint").textContent = seen.size ? `Refs found in your files: ${[...seen].join(", ")}. Check which is which in the dashboard.` : "";
+}
+function ready() { $("run").disabled = !(picked.staging && picked.production); }
+for (const side of ["staging", "production"]) {
+  $(`${side}Files`).addEventListener("change", async (e) => {
+    picked[side] = await readFiles(e.target.files);
+    showList($(`${side}List`), picked[side]);
+    refsSeen(); ready();
+  });
+}
+function msg(level, text) { const d = document.createElement("div"); d.className = `msg ${level}`; d.textContent = text; $("messages").appendChild(d); }
+
+function mdToHtml(md) {
+  const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const inline = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/`([^`]+)`/g, "<code>$1</code>").replace(/(^|\s)_(.+?)_(?=\s|$|[.,])/g, "$1<i>$2</i>");
+  const cells = (line) => line.trim().replace(/^\|/, "").replace(/\|$/, "").split(/(?<!\\)\|/).map((c) => c.trim().replace(/\\\|/g, "|"));
+  const out = [];
+  const lines = md.split("\n");
+  for (let i = 0; i < lines.length; i++) {
+    const l = lines[i];
+    if (l.startsWith("|")) {
+      const head = cells(l); i++;
+      const body = [];
+      while (i + 1 < lines.length && lines[i + 1].startsWith("|")) { i++; body.push(cells(lines[i])); }
+      out.push(`<table><thead><tr>${head.map((c) => `<th>${inline(c)}</th>`).join("")}</tr></thead><tbody>${body.map((r) => `<tr>${r.map((c) => `<td>${inline(c)}</td>`).join("")}</tr>`).join("")}</tbody></table>`);
+    } else if (l.startsWith("## ")) out.push(`<h2>${inline(l.slice(3))}</h2>`);
+    else if (l.startsWith("# ")) out.push(`<h2>${inline(l.slice(2))}</h2>`);
+    else if (l.startsWith("- ")) out.push(`<p>• ${inline(l.slice(2))}</p>`);
+    else if (l.trim()) out.push(`<p>${inline(l)}</p>`);
+  }
+  return out.join("\n");
+}
+function download(name, text, type) {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([text], { type }));
+  a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+$("run").addEventListener("click", () => {
+  $("messages").textContent = ""; $("results").hidden = true;
+  const refs = { stagingRef: $("stagingRef").value.trim().toLowerCase(), productionRef: $("productionRef").value.trim().toLowerCase() };
+  if (!isRef(refs.stagingRef) || !isRef(refs.productionRef)) return msg("error", "Both refs must be the 20 lowercase letters and numbers from each project's address.");
+  if (refs.stagingRef === refs.productionRef) return msg("error", "The two refs are the same. Check which project is which.");
+  let staging, production, result;
+  try {
+    staging = sideFromFiles(picked.staging, "staging");
+    production = sideFromFiles(picked.production, "production");
+    result = compare(staging, production, refs);
+  } catch (e) { return msg("error", `Couldn't read the files: ${e.message}`); }
+  for (const c of result.checks) msg(c.level === "error" ? "error" : "warn", c.text);
+  if (!result.checks.length) msg("ok", "Export checks passed: both projects identified and no export was cut short.");
+  const md = redactRefs(renderMarkdown(result, { staging, production }), refs);
+  const csv = redactRefs(renderReviewCsv(result.review), refs);
+  outputs = { md, csv };
+  const scan = privacyScan(md + "\n" + csv, refs);
+  $("privacy").innerHTML = "";
+  const head = document.createElement("div");
+  head.className = `msg ${scan.ok ? "ok" : "error"}`;
+  head.textContent = scan.ok ? "Privacy check passed: no emails, keys, Pin & Pop links, private file paths or project refs." : "Don't share yet. The check found something that shouldn't be in a shared report:";
+  $("privacy").appendChild(head);
+  for (const f of scan.findings) {
+    const d = document.createElement("div"); d.className = `files`;
+    d.textContent = `${f.level === "block" ? "⚠ " : "ⓘ "}${f.what}: ${f.count}`;
+    $("privacy").appendChild(d);
+  }
+  $("report").innerHTML = mdToHtml(md);
+  $("results").hidden = false;
+  $("results").scrollIntoView({ behavior: "smooth" });
+});
+$("dlReport").addEventListener("click", () => outputs && download("report.md", outputs.md, "text/markdown"));
+$("dlReview").addEventListener("click", () => outputs && download("review.csv", outputs.csv, "text/csv"));
+</script>
+</body>
+</html>

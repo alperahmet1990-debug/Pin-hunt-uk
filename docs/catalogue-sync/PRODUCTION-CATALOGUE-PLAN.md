@@ -45,11 +45,11 @@ Pins are matched by PinHunt ID, and staging IDs aren't guaranteed to mean the sa
    - Publish it in production through the same `publishContributedImage` path, which re-watermarks it.
    - Carry the permission record across, because `source_record_id` points at a staging row that won't exist in production.
 2. **Confirmed and cleaned, not yet approved:** either finish review in staging and treat them as (1), or carry the cleaned file plus decision across and approve in production. The first reuses existing screens and is simpler.
-3. **Suggested or unreviewed items:** don't carry them across. Re-run in production once the tools are live there. Matching costs a few AI calls per photo. Pixian runs only after confirmation, so no Pixian spend is repeated.
+3. **Match decisions without a cleaned photo**, plus suggested items: keep the decisions. A reviewer's confirmed match is real work. Carry the decision (staging item to PinHunt ID, mapped to the production pin) and the original photo across, rather than re-running AI matching. Items that are only *suggested* can be re-matched in production. That costs a few AI calls per photo but no Pixian, which runs only after confirmation.
 
-**Pixian credits** were spent on the cleaned files, so (1) and (2) are the work worth keeping.
+**Maintainer decision (12 Nov):** real board scans, match decisions and processed images already in staging are **work to preserve**. Nothing in staging is reset or deleted until they've reached production (`PRODUCTION-READINESS.md` P0).
 
-**Recommendation:** treat what's already in staging as one batch to keep, and run all *new real* batches in production once it's ready (section 4). Until then, keep staging batches to the small calibration runs the runbooks describe.
+New *real* batches run in production once it's ready (section 4). Until then, keep staging batches to the small calibration runs the runbooks describe.
 
 ## 3. One-off catch-up or a small promotion tool
 
@@ -117,6 +117,8 @@ Relaxing each exclusion is then a separate, approved change (#431, "Blocked by")
 Until then, Pin & Pop material is never promoted. Its use as an internal matching reference should also be confirmed as covered.
 
 ## 6. Smallest next steps
+
+The prioritised checklist is in `PRODUCTION-READINESS.md`, and the Pin & Pop questions are in `PIN-AND-POP-QUESTIONS.md`. In brief:
 
 1. **You:** run the gap report (`GAP-REPORT.md`, about 15 minutes) and share `report.md`.
 2. **Fix any critical item** (production links to staging files) first, by hand. It's normally a handful.

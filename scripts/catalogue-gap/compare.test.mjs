@@ -128,3 +128,40 @@ test("report and review CSV render", () => {
   const csv = renderReviewCsv(r.review);
   assert.equal(parseCsv(csv)[0].staging_title, 'Comma, "quote"');
 });
+
+test("privacy scan blocks emails, keys, private paths and refs; redaction removes refs", async () => {
+  const { privacyScan, redactRefs } = await import("./core.mjs");
+  assert.equal(privacyScan("PHUK-00000001 only").ok, true);
+  assert.equal(privacyScan("contact a.b@example.com").ok, false);
+  assert.equal(privacyScan("key eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYW5vbiJ9.x").ok, false);
+  assert.equal(privacyScan("see board-scans/abc/1.jpg").ok, false);
+  assert.equal(privacyScan("https://cdn.pinandpop.com/x.jpg").ok, false);
+  assert.equal(privacyScan(`${S} here`, { stagingRef: S }).ok, false);
+  assert.equal(redactRefs(`${S} and ${P}`, { stagingRef: S, productionRef: P }), "STAGING and PRODUCTION");
+});
+
+test("committed compare.html is up to date with core.mjs", async () => {
+  const fs = await import("node:fs");
+  const { buildPage } = await import("./build-page.mjs");
+  const committed = fs.readFileSync(new URL("./compare.html", import.meta.url), "utf8");
+  assert.equal(committed, buildPage(), "run: node scripts/catalogue-gap/build-page.mjs");
+});
+
+test("files are recognised by contents, whatever the SQL editor named them", async () => {
+  const { sideFromFiles } = await import("./core.mjs");
+  const summary = { environment: "staging", generated_at: "t", migration_markers: {}, pins: { total: 1 }, pin_images: [] };
+  const csvCell = (o) => `"${JSON.stringify(o).replace(/"/g, '""')}"`;
+  const files = {
+    "Supabase Snippet A.csv": `summary\n${csvCell(summary)}\n`,
+    "Supabase Snippet B.csv": "pinhunt_id,id,content_md5,content\nPHUK-1,p1,m,\n",
+    "Supabase Snippet C.csv": "id,pinhunt_id,pin_id,is_pin_front_photo\n",
+    "copy.json": JSON.stringify([{ work: { pin_submissions: { draft_count: 0, items: [] } } }]),
+    "notes.txt": "hello",
+  };
+  const side = sideFromFiles(files, "staging");
+  assert.equal(side.summary.environment, "staging");
+  assert.equal(side.pins.length, 1);
+  assert.equal(side.work.pin_submissions.draft_count, 0);
+  assert.deepEqual(side.unknown, ["notes.txt"]);
+  assert.throws(() => sideFromFiles({ "x.csv": "a,b\n" }, "production"), /no summary result/);
+});

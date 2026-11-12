@@ -1,9 +1,9 @@
 -- Catalogue gap report, query 2 of 5: one row per pin (READ-ONLY)
 --
--- Run in EACH project's SQL editor. Download the result as CSV and save it as
---   <folder>/<staging|production>/2_pins.csv
--- Check the row count matches pins.total in 1_summary.json. If the editor
--- returned fewer rows, see "Large results" in docs/catalogue-sync/GAP-REPORT.md.
+-- Run in EACH project's SQL editor and download the result as CSV.
+-- Pins come back in chunks of 500 per row (about 27 rows for 13,000 pins), so
+-- editor row limits don't cut the export short. The comparison checks the
+-- total against query 1 anyway.
 --
 -- `content` is the whole catalogue row as JSON, minus ids, timestamps, people,
 -- private import links, photo URLs (exported separately) and Pin & Pop keys.
@@ -34,30 +34,41 @@ scrubbed as (
         and k !~ '(tsv|fts|search_vector|search_document)$'
     ) as content
   from p
+),
+records as (
+  select
+    s.pinhunt_id,
+    s.id,
+    s.j->>'verification_status' as verification_status,
+    s.j->>'catalogue_status' as catalogue_status,
+    s.j->>'is_searchable' as is_searchable,
+    s.j->>'title' as title,
+    s.j->>'collection' as collection,
+    s.j->>'normalised_series' as normalised_series,
+    s.j->>'release_year' as release_year,
+    s.j->>'edition_type' as edition_type,
+    s.image_url,
+    s.back_image_url,
+    s.created_at,
+    s.updated_at,
+    (select string_agg(e.source || ':' || e.external_id, ';' order by e.source, e.external_id)
+       from public.pin_external_ids e
+      where e.pin_id = s.id
+        and regexp_replace(lower(e.source), '[^a-z]', '', 'g') not in ('pinandpop', 'pinpop')) as external_ids,
+    exists (select 1 from public.pin_external_ids e
+             where e.pin_id = s.id
+               and regexp_replace(lower(e.source), '[^a-z]', '', 'g') in ('pinandpop', 'pinpop')) as has_pin_and_pop_link,
+    md5(s.content::text) as content_md5,
+    case when coalesce(s.j->>'catalogue_status', '') <> 'archived' then s.content::text end as content
+  from scrubbed s
+),
+numbered as (
+  select r, row_number() over (order by r.pinhunt_id) as rn from records r
 )
 select
-  s.pinhunt_id,
-  s.id,
-  s.j->>'verification_status' as verification_status,
-  s.j->>'catalogue_status' as catalogue_status,
-  s.j->>'is_searchable' as is_searchable,
-  s.j->>'title' as title,
-  s.j->>'collection' as collection,
-  s.j->>'normalised_series' as normalised_series,
-  s.j->>'release_year' as release_year,
-  s.j->>'edition_type' as edition_type,
-  s.image_url,
-  s.back_image_url,
-  s.created_at,
-  s.updated_at,
-  (select string_agg(e.source || ':' || e.external_id, ';' order by e.source, e.external_id)
-     from public.pin_external_ids e
-    where e.pin_id = s.id
-      and regexp_replace(lower(e.source), '[^a-z]', '', 'g') not in ('pinandpop', 'pinpop')) as external_ids,
-  exists (select 1 from public.pin_external_ids e
-           where e.pin_id = s.id
-             and regexp_replace(lower(e.source), '[^a-z]', '', 'g') in ('pinandpop', 'pinpop')) as has_pin_and_pop_link,
-  md5(s.content::text) as content_md5,
-  case when coalesce(s.j->>'catalogue_status', '') <> 'archived' then s.content::text end as content
-from scrubbed s
-order by s.pinhunt_id;
+  (rn - 1) / 500 + 1 as chunk,
+  count(*) as pins_in_chunk,
+  json_agg(r order by rn)::text as pins_json
+from numbered
+group by 1
+order by 1;

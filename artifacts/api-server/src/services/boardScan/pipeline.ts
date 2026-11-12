@@ -16,6 +16,7 @@ import { createSupabasePinRepository, createSupabaseUserRepository, type PinRepo
 import { getOpenAIClient, isAiConfigured } from "@workspace/integrations-openai-ai-server";
 import { normalizePinPhoto, pixianConfigured, PixianTimeoutError } from "../pixian";
 import { publishContributedImage } from "../contributed-images";
+import { pinAndPopReferenceImages } from "../scanReferenceImages";
 import { detectPins, emptyUsage, type DetectedPin, type TokenUsage } from "./detect";
 import { matchCrop } from "./match";
 import { assessCrop, cropBox, differenceHash, sha256, type Box } from "./quality";
@@ -144,7 +145,8 @@ async function matchItem(item: BoardScanItem, usage: TokenUsage): Promise<BoardS
       openai: getOpenAIClient(),
       model: scanModel(),
       repository: catalogueRepository(),
-      referenceImages: store.pinAndPopReferenceUrls,
+      // Pin & Pop reference images: recognition only (scripts/PINANDPOP.md).
+      referenceImages: async (ids) => Object.fromEntries(await pinAndPopReferenceImages(ids, undefined, 5_000)),
     }, usage);
     const top = result.candidates[0];
     const patch: Partial<BoardScanItem> = {

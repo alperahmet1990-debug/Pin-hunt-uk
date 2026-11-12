@@ -18,11 +18,11 @@ All in `artifacts/api-server/src/services/boardScan/`, routes in `src/routes/boa
 | Approval + publishing | `pin_images` rows via `createContributedImage`, then `publishContributedImage` (watermark, public bucket, `pins.image_url`) |
 | Storage | Cleaned photos in the existing private `pin-contributed-images` bucket; board photos and crops in a new private `board-scans` bucket |
 
-Pin & Pop reference images (migration 042) are shown to the model during matching only — permitted internal recognition. They are never returned to the app, stored as crops or published.
+Matching runs against the live staging catalogue, which is now Pin & Pop (~116k pins, `scripts/PINANDPOP.md`; this branch includes that work). Pin & Pop reference images are shown to the model during the comparison step only, through the scan's own lookup (`services/scanReferenceImages.ts`) — permitted internal recognition. They are never returned to the app, stored as crops or published; a pin matched from Pin & Pop still has no public photo until a board crop is approved.
 
 ## Setup (staging only)
 
-1. Apply `supabase/migrations/078_board_scans.sql` in the **staging** SQL editor (rollback SQL is in its header).
+1. Staging must already have the Pin & Pop catalogue and migrations 075–077. Apply `supabase/migrations/078_board_scans.sql` in the **staging** SQL editor (rollback SQL is in its header).
 2. In the staging API server env: `OPENAI_API_KEY` (low-budget staging key), `PIXIAN_API_ID`/`PIXIAN_API_SECRET`, `PIXIAN_TEST_MODE=true` (free, watermarked results — switch off only for a real run).
 3. Start the API server for staging, sign in to the app as the App Creator, open **Admin → Board Scans**.
 

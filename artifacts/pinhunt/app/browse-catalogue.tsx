@@ -43,7 +43,7 @@ import { useCatalogueBrowseIndex } from '@/hooks/useCatalogueBrowseIndex';
 import { useCollection } from '@/context/CollectionContext';
 import { useBoards } from '@/context/BoardsContext';
 import { useFeature } from '@/hooks/useFeature';
-import { useCatalogueCoverage } from '@/hooks/useCatalogueCoverage';
+import { useCoverageFor } from '@/hooks/useCatalogueCoverage';
 import { needsPhoto } from '@/utils/photoGaps';
 import { SearchBar } from '@/components/SearchBar';
 import { ScreenHeader } from '@/components/ui/ScreenHeader';
@@ -66,15 +66,13 @@ const EDITION_LABELS: Record<string, string> = {
 
 type FilterKey = 'set' | 'year' | 'edition';
 
-function matchesQuery(pin: CatalogueBrowsePin, tokens: string[]) {
-  if (tokens.length === 0) return true;
-  const haystack = [
-    pin.title, pin.setName, pin.brand, pin.mainCharacter, pin.allCharacters, pin.id,
-    pin.releaseYear ? String(pin.releaseYear) : '',
-  ].join(' ').toLowerCase();
-  // Every word must match somewhere — same tokenised behaviour as Search.
-  return tokens.every(t => haystack.includes(t));
-}
+// Filter choices. The catalogue is too big to derive them from loaded rows
+// (pins load a page at a time), so years and editions are fixed lists and set
+// names load when the Set filter opens.
+const FIRST_YEAR = 1960;
+const YEARS = Array.from({ length: new Date().getFullYear() + 1 - FIRST_YEAR }, (_, i) => new Date().getFullYear() - i);
+const EDITIONS = ['Open Edition', 'Limited Edition', 'Limited Release'];
+const SEARCH_DEBOUNCE_MS = 300;
 
 export default function BrowseCatalogueScreen() {
   const colors = useColors();
@@ -98,19 +96,32 @@ export default function BrowseCatalogueScreen() {
   const [photoPrompt, setPhotoPrompt] = useState<string[] | null>(null);
   // Photo contributors (beta: contributor tier) see which pins have no catalogue photo.
   const { enabled: canContribute } = useFeature('catalogue_contributions');
-  const { rows: coverage } = useCatalogueCoverage(canContribute);
-  const photoNeededIds = useMemo(
-    () => new Set(canContribute ? coverage.filter(needsPhoto).map(r => r.pinhuntId) : []),
-    [canContribute, coverage],
-  );
-  const { rows, loading, error, refresh } = useCatalogueBrowseIndex();
-  const { collection, setStatuses } = useCollection();
-  const { customBoards, createBoard, addPinsToBoard } = useBoards();
-
   const [query, setQuery] = useState('');
   const [setFilter, setSetFilter] = useState<string | null>(null);
   const [yearFilter, setYearFilter] = useState<number | null>(null);
   const [editionFilter, setEditionFilter] = useState<string | null>(null);
+  // Search runs on the server, so wait for a pause in typing.
+  const [debouncedQuery, setDebouncedQuery] = useState('');
+  useEffect(() => {
+    const t = setTimeout(() => setDebouncedQuery(query), SEARCH_DEBOUNCE_MS);
+    return () => clearTimeout(t);
+  }, [query]);
+  const browseFilters = useMemo(
+    () => ({ query: debouncedQuery, setName: setFilter, year: yearFilter, edition: editionFilter }),
+    [debouncedQuery, setFilter, yearFilter, editionFilter],
+  );
+  const {
+    rows, total, catalogueTotal, loading, loadingMore, hasMore, error, loadMore, refresh, loadSetNames,
+  } = useCatalogueBrowseIndex(browseFilters);
+  // Photo status only for the pins loaded so far (not the whole catalogue).
+  const loadedIds = useMemo(() => rows.map(r => r.id), [rows]);
+  const { rows: coverage } = useCoverageFor(canContribute, loadedIds);
+  const photoNeededIds = useMemo(
+    () => new Set(canContribute ? coverage.filter(needsPhoto).map(r => r.pinhuntId) : []),
+    [canContribute, coverage],
+  );
+  const { collection, setStatuses } = useCollection();
+  const { customBoards, createBoard, addPinsToBoard } = useBoards();
   const [hideHave, setHideHave] = useState(false);
   const [openFilter, setOpenFilter] = useState<FilterKey | null>(null);
   const [selected, setSelected] = useState<Set<string>>(() => new Set());
@@ -148,46 +159,47 @@ export default function BrowseCatalogueScreen() {
     return s === 'owned' || s === 'for_trade';
   };
 
-  // Filter options come from the whole catalogue, not the filtered view.
+  // Set names load the first time the Set filter opens (~13k names).
+  const [setNames, setSetNames] = useState<string[] | null>(null);
+  useEffect(() => {
+    if (openFilter !== 'set' || setNames) return;
+    let cancelled = false;
+    const fromRows = () => [...new Set(rows.map(r => r.setName))];
+    Promise.resolve(loadSetNames ? loadSetNames() : fromRows())
+      .then(names => { if (!cancelled) setSetNames([...names].sort((a, b) => a.localeCompare(b))); })
+      .catch(() => { if (!cancelled) setSetNames(fromRows()); });
+    return () => { cancelled = true; };
+  }, [openFilter, setNames, loadSetNames, rows]);
+
   const options = useMemo(() => {
-    const sets = new Set<string>();
-    const years = new Set<number>();
-    const editions = new Set<string>();
-    for (const r of rows) {
-      sets.add(r.setName);
-      if (r.releaseYear) years.add(r.releaseYear);
-      if (r.edition) editions.add(r.edition);
-    }
+    const editions = new Set(EDITIONS);
+    for (const r of rows) if (r.edition) editions.add(r.edition);
     return {
-      set: [...sets].sort((a, b) => a.localeCompare(b)),
-      year: [...years].sort((a, b) => b - a),
+      set: setNames ?? [],
+      year: YEARS,
       edition: [...editions].sort((a, b) => (EDITION_LABELS[a] ?? a).localeCompare(EDITION_LABELS[b] ?? b)),
     };
-  }, [rows]);
+  }, [rows, setNames]);
 
+  // Search, set, year and edition are applied on the server; "Hide pins I
+  // have" is about this collector's own pins, so it's applied here.
   const { sections, matchCount } = useMemo(() => {
-    const tokens = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
     const bySet = new Map<string, CatalogueBrowsePin[]>();
-    let count = 0;
+    let hidden = 0;
     for (const r of rows) {
-      if (setFilter && r.setName !== setFilter) continue;
-      if (yearFilter && r.releaseYear !== yearFilter) continue;
-      if (editionFilter && r.edition !== editionFilter) continue;
-      if (hideHave && isLocked(r.id)) continue;
-      if (!matchesQuery(r, tokens)) continue;
+      if (hideHave && isLocked(r.id)) { hidden++; continue; }
       const list = bySet.get(r.setName) ?? [];
       list.push(r);
       bySet.set(r.setName, list);
-      count++;
     }
     const out = [...bySet.entries()].map(([setName, pins]) => {
       const chunks: CatalogueBrowsePin[][] = [];
       for (let i = 0; i < pins.length; i += columns) chunks.push(pins.slice(i, i + columns));
       return { title: setName, pins, data: chunks };
     });
-    return { sections: out, matchCount: count };
+    return { sections: out, matchCount: Math.max(0, (total ?? rows.length) - hidden) };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rows, query, setFilter, yearFilter, editionFilter, hideHave, collection, columns]);
+  }, [rows, total, hideHave, collection, columns]);
 
   const openPin = (id: string) => router.push({ pathname: '/pin/[id]', params: { id } });
 
@@ -286,7 +298,9 @@ export default function BrowseCatalogueScreen() {
 
   const anyFilter = !!(setFilter || yearFilter || editionFilter || hideHave || query.trim());
 
-  if (loading && rows.length === 0) {
+  // Full-screen spinner only on first open; while filtering, the search bar
+  // stays put and the list shows the spinner.
+  if (loading && rows.length === 0 && !anyFilter) {
     return (
       <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
         <Stack.Screen options={{ headerShown: false }} />
@@ -344,7 +358,7 @@ export default function BrowseCatalogueScreen() {
       <View style={styles.metaRow}>
         <Text style={[styles.metaText, { color: colors.homeMuted }]}>
           {matchCount.toLocaleString()} {matchCount === 1 ? 'pin' : 'pins'}
-          {anyFilter ? ` of ${rows.length.toLocaleString()}` : ''}
+          {anyFilter && catalogueTotal !== null && catalogueTotal !== undefined ? ` of ${catalogueTotal.toLocaleString()}` : ''}
         </Text>
         {anyFilter && (
           <TouchableOpacity onPress={clearFilters} hitSlop={8} accessibilityRole="button">
@@ -386,7 +400,19 @@ export default function BrowseCatalogueScreen() {
         contentContainerStyle={{ paddingBottom: botPad + (selected.size > 0 ? 180 : addMode ? 100 : 24) }}
         initialNumToRender={8}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
-        ListEmptyComponent={
+        // Pins load a page at a time as the list nears the end.
+        onEndReached={hasMore ? loadMore : undefined}
+        onEndReachedThreshold={0.6}
+        ListFooterComponent={loadingMore ? (
+          <View style={styles.footer} accessibilityLabel="Loading more pins">
+            <ActivityIndicator color={colors.homeCoral} />
+          </View>
+        ) : null}
+        ListEmptyComponent={loading ? (
+          <View style={styles.center} accessibilityLabel="Loading pins">
+            <ActivityIndicator color={colors.homeCoral} />
+          </View>
+        ) : (
           <View style={styles.empty}>
             <EmptyState icon="search" title="No pins match" subtitle="Try a different search or clear your filters." />
             <TouchableOpacity
@@ -401,7 +427,7 @@ export default function BrowseCatalogueScreen() {
               </Text>
             </TouchableOpacity>
           </View>
-        }
+        )}
         renderSectionHeader={({ section }) => {
           const selectable = section.pins.filter(p => !isLocked(p.id));
           const allSelected = selectable.length > 0 && selectable.every(p => selected.has(p.id));
@@ -679,6 +705,7 @@ const styles = StyleSheet.create({
   metaLink: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   error: { fontSize: 13, fontFamily: 'Inter_400Regular' },
   empty: { paddingHorizontal: spacing.lg, gap: spacing.md },
+  footer: { paddingVertical: spacing.lg, alignItems: 'center' },
   addPinLink: { flexDirection: 'row', alignItems: 'center', gap: 8, borderWidth: 1, borderRadius: 18, paddingHorizontal: 14, paddingVertical: 12 },
   addPinLinkLabel: { flex: 1, fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   sectionHeader: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: spacing.lg, paddingTop: spacing.lg, paddingBottom: spacing.sm, gap: spacing.md },

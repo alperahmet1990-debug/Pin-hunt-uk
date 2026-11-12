@@ -3,6 +3,7 @@ import { PinRepositoryError, type PinRepository } from './repository';
 import type {
   AiMatchAdapter,
   CatalogueBrowsePin,
+  CatalogueBrowsePageQuery,
   CataloguePin,
   CataloguePinStatus,
   CreatePinInput,
@@ -126,6 +127,16 @@ function rowToPin(row: PinRow): CataloguePin {
 
 // ─── SELECT fragment (reused across all pin queries) ─────────────────────────
 
+/** Search words: PostgREST .or() syntax breaks on , ( ) . inside patterns, so they split words. */
+export function searchTokens(query: string): string[] {
+  return query.trim().replace(/[,().]/g, ' ').split(/\s+/).filter(Boolean);
+}
+
+/** PostgREST "function not found" (PGRST202), or Postgres undefined_function (42883). */
+function isMissingFunction(error: { code?: string }): boolean {
+  return error.code === 'PGRST202' || error.code === '42883';
+}
+
 const SELECT_PINS = `
   *,
   pin_characters(characters(name)),
@@ -196,32 +207,62 @@ class SupabasePinRepository implements PinRepository {
   // ── searchPins ─────────────────────────────────────────────────────────
 
   async searchPins(query: string, filters: PinFilters = {}): Promise<CataloguePin[]> {
-    const q = await this.buildSearchQuery(query, filters, false);
-    if (!q) return [];
-    const { data, error } = await q;
-    if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
-    return (data as unknown as PinRow[]).map(rowToPin);
+    const { data } = await this.runSearch(query, filters, false);
+    return data.map(rowToPin);
   }
 
   async searchPinsPage(
     query: string,
     filters: PinFilters = {},
   ): Promise<{ pins: CataloguePin[]; total: number }> {
-    const q = await this.buildSearchQuery(query, filters, true);
-    if (!q) return { pins: [], total: 0 };
-    const { data, error, count } = await q;
-    if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
-    const pins = (data as unknown as PinRow[]).map(rowToPin);
+    const { data, count } = await this.runSearch(query, filters, true);
+    const pins = data.map(rowToPin);
     return { pins, total: count ?? pins.length };
   }
 
+  /** True until the database says search_catalogue_pins (migration 076) doesn't exist. */
+  private searchRpcAvailable = true;
+
+  /**
+   * Text and character matching go through search_catalogue_pins (076) when
+   * it exists: on the table, RLS stops Postgres using the trigram indexes
+   * (075), which costs ~1.3 s a search at 116k pins. Without 076 (older
+   * databases), the original table query runs instead.
+   */
+  private async runSearch(query: string, filters: PinFilters, withCount: boolean): Promise<{ data: PinRow[]; count: number | null }> {
+    const tokens = searchTokens(query);
+    const useRpc = this.searchRpcAvailable && (tokens.length > 0 || Boolean(filters.character?.trim()));
+    const q = await this.buildSearchQuery(query, filters, withCount, useRpc);
+    if (!q) return { data: [], count: 0 };
+    const { data, error, count } = await q;
+    if (error && useRpc && isMissingFunction(error)) {
+      this.searchRpcAvailable = false;
+      return this.runSearch(query, filters, withCount);
+    }
+    if (error) throw new PinRepositoryError('UPSTREAM_ERROR', error.message, error);
+    return { data: (data ?? []) as unknown as PinRow[], count: count ?? null };
+  }
+
   /** Shared filter/search query for searchPins and searchPinsPage; null = no possible matches. */
-  private async buildSearchQuery(query: string, filters: PinFilters, withCount: boolean) {
-    // Build the base query. RLS automatically restricts to verification_status='verified'
-    // when using the anon key — no need to duplicate that check here.
-    let q = withCount
+  private async buildSearchQuery(query: string, filters: PinFilters, withCount: boolean, useRpc = false) {
+    const tokens = searchTokens(query);
+    // Base rows. On the table, RLS restricts collectors to verified + searchable
+    // pins (or ones they own). search_catalogue_pins applies that same rule
+    // itself and does the text/character matching; every filter below still
+    // applies on top of either base.
+    // (Builders don't run until awaited, so building the table query is free.)
+    const tableQuery = withCount
       ? this.client.from('pins').select(SELECT_PINS, { count: 'exact' })
       : this.client.from('pins').select(SELECT_PINS);
+    let q = useRpc
+      ? (this.client
+          .rpc(
+            'search_catalogue_pins' as never,
+            { p_tokens: tokens, p_character: filters.character?.trim() || null } as never,
+            withCount ? { count: 'exact' } : undefined,
+          )
+          .select(SELECT_PINS) as unknown as typeof tableQuery)
+      : tableQuery;
 
     // Archived pins (catalogue_status='archived' and/or archived_at set —
     // retired legacy records, and catalogue-filler seed batches that were
@@ -268,7 +309,7 @@ class SupabasePinRepository implements PinRepository {
     // Character filter: junction-table matches OR the enriched
     // all_characters text column, so imported character data is searchable
     // even for pins with no pin_characters rows.
-    if (filters.character) {
+    if (filters.character && !useRpc) {
       // PostgREST .or() syntax breaks on these characters inside patterns.
       const safe = filters.character.replace(/[,().]/g, ' ').trim();
       const { data: charRows } = await this.client
@@ -323,8 +364,7 @@ class SupabasePinRepository implements PinRepository {
     // subject fields. Multi-word queries are tokenised: every word must match
     // at least one field (chained .or() calls AND together), so e.g.
     // "2026 mystery" finds pins where "2026" and "mystery" match different fields.
-    if (query.trim()) {
-      const tokens = query.trim().replace(/[,().]/g, ' ').split(/\s+/).filter(Boolean);
+    if (tokens.length && !useRpc) {
       for (const token of tokens) {
         q = q.or(
           `title.ilike.%${token}%,brand.ilike.%${token}%,collection.ilike.%${token}%,main_character.ilike.%${token}%,all_characters.ilike.%${token}%,search_aliases.ilike.%${token}%,normalised_series.ilike.%${token}%,main_subject.ilike.%${token}%,release_scope.ilike.%${token}%`,
@@ -421,15 +461,102 @@ class SupabasePinRepository implements PinRepository {
     }));
   }
 
+  async getCatalogueBrowsePage(p: CatalogueBrowsePageQuery): Promise<{ rows: CatalogueBrowsePin[]; total: number | null }> {
+    const cols = 'pinhunt_id, title, collection, normalised_series, brand, release_year, edition_type, image_url, main_character, all_characters';
+    const tokens = searchTokens(p.query ?? '');
+    const count = p.withCount ? { count: 'exact' as const } : undefined;
+    const build = (useRpc: boolean) => {
+      // Text matching goes through search_catalogue_pins (076) when it exists,
+      // for the same reason as searchPins: RLS stops the indexes being used.
+      // (Builders don't run until awaited, so building the table query is free.)
+      const tableQuery = this.client.from('pins').select(cols, count);
+      let q = useRpc
+        ? (this.client
+            .rpc('search_catalogue_pins' as never, { p_tokens: tokens, p_character: null } as never, count)
+            .select(cols) as unknown as typeof tableQuery)
+        : tableQuery;
+      q = q
+        .eq('verification_status', 'verified')
+        .is('archived_at', null)
+        .or('catalogue_status.is.null,catalogue_status.neq.archived')
+        .or('is_searchable.is.null,is_searchable.eq.true');
+      if (!useRpc) {
+        for (const token of tokens) {
+          q = q.or(
+            `title.ilike.%${token}%,brand.ilike.%${token}%,collection.ilike.%${token}%,main_character.ilike.%${token}%,all_characters.ilike.%${token}%,search_aliases.ilike.%${token}%,normalised_series.ilike.%${token}%,main_subject.ilike.%${token}%,release_scope.ilike.%${token}%`,
+          );
+        }
+      }
+      if (p.setName !== undefined) q = q.eq('collection', p.setName);
+      if (p.uncategorised === true) q = q.eq('collection', '');
+      if (p.uncategorised === false) q = q.neq('collection', '');
+      if (p.year) q = q.eq('release_year', p.year);
+      if (p.edition) q = q.eq('edition_type', p.edition);
+      return q.order('collection').order('title').order('pinhunt_id').range(p.offset, p.offset + p.limit - 1);
+    };
+
+    const useRpc = this.searchRpcAvailable && tokens.length > 0;
+    let res = await build(useRpc);
+    if (res.error && useRpc && isMissingFunction(res.error)) {
+      this.searchRpcAvailable = false;
+      res = await build(false);
+    }
+    if (res.error) throw new PinRepositoryError('UPSTREAM_ERROR', res.error.message, res.error);
+    type BrowseRow = {
+      pinhunt_id: string; title: string; collection: string | null;
+      normalised_series: string | null; brand: string | null;
+      release_year: number | null; edition_type: string | null;
+      image_url: string | null; main_character: string | null;
+      all_characters: string | null;
+    };
+    const rows = ((res.data ?? []) as unknown as BrowseRow[]).map(r => ({
+      id: r.pinhunt_id,
+      title: r.title,
+      setName: r.collection || 'Uncategorised',
+      brand: r.brand ?? undefined,
+      releaseYear: r.release_year ?? undefined,
+      edition: r.edition_type ?? undefined,
+      imageUrl: r.image_url ?? undefined,
+      mainCharacter: r.main_character ?? undefined,
+      allCharacters: r.all_characters ?? undefined,
+    }));
+    return { rows, total: res.count ?? null };
+  }
+
   // ── getSetSummaries ────────────────────────────────────────────────────
 
-  async getSetSummaries(): Promise<PinSetSummary[]> {
-    const { data, error } = await this.client
-      .from('pin_sets' as never)
-      .select('*')
-      .order('set_name');
-
-    if (error) return []; // table may not exist yet — sets are optional metadata
+  async getSetSummaries(names?: string[]): Promise<PinSetSummary[]> {
+    // The catalogue has ~13k sets and PostgREST returns at most 1000 rows a
+    // request, so either look up the named sets or page through all of them.
+    const PAGE = 1000;
+    const NAMES_PER_REQUEST = 40; // names go in the URL
+    const rows: unknown[] = [];
+    if (names) {
+      const wanted = [...new Set(names.filter(Boolean))];
+      for (let i = 0; i < wanted.length; i += NAMES_PER_REQUEST) {
+        const { data, error } = await this.client
+          .from('pin_sets' as never)
+          .select('*')
+          .in('set_name', wanted.slice(i, i + NAMES_PER_REQUEST))
+          .order('set_name');
+        if (error) return []; // table may not exist yet — sets are optional metadata
+        rows.push(...((data ?? []) as unknown[]));
+      }
+    } else {
+      for (let from = 0; ; from += PAGE) {
+        const { data, error } = await this.client
+          .from('pin_sets' as never)
+          .select('*')
+          .order('set_name')
+          .order('id')
+          .range(from, from + PAGE - 1);
+        if (error) return [];
+        const page = (data ?? []) as unknown[];
+        rows.push(...page);
+        if (page.length < PAGE) break;
+      }
+    }
+    const data = rows;
     type SetRow = {
       id: string; normalised_series: string; set_name: string;
       collection_name: string | null; programme: string | null;
@@ -453,6 +580,24 @@ class SupabasePinRepository implements PinRepository {
       sourceUrl: r.source_url ?? undefined,
       validationStatus: r.validation_status ?? undefined,
     }));
+  }
+
+  async getAllSetNames(): Promise<string[]> {
+    const PAGE = 1000;
+    const names = new Set<string>();
+    for (let from = 0; ; from += PAGE) {
+      const { data, error } = await this.client
+        .from('pin_sets' as never)
+        .select('set_name')
+        .order('set_name')
+        .order('id')
+        .range(from, from + PAGE - 1);
+      if (error) return [...names];
+      const page = (data ?? []) as unknown as Array<{ set_name: string }>;
+      for (const r of page) if (r.set_name) names.add(r.set_name);
+      if (page.length < PAGE) break;
+    }
+    return [...names];
   }
 
   // ── getPinsBySeries ────────────────────────────────────────────────────
@@ -573,6 +718,18 @@ class SupabasePinRepository implements PinRepository {
 
     if (error || !data) return null;
     return (data as { display_name: string }).display_name;
+  }
+
+  async getCatalogueSourceAttribution(sourceId: string): Promise<string | null> {
+    const { data, error } = await this.client
+      .from('catalogue_sources')
+      .select('display_name, attribution_text')
+      .eq('id', sourceId)
+      .maybeSingle();
+
+    if (error || !data) return null;
+    const row = data as { display_name: string; attribution_text: string | null };
+    return row.attribution_text?.trim() || `Pin data · ${row.display_name}`;
   }
 
   // ── createPin ─────────────────────────────────────────────────────────

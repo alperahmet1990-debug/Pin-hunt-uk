@@ -215,34 +215,6 @@ export async function signedUrls(bucket: string, paths: string[]): Promise<Recor
   return out;
 }
 
-/**
- * Internal-only reference image URLs for recognition, by pinhunt id: the
- * newest Pin & Pop reference image (migration 042). Never returned to the
- * app — only shown to the model during matching.
- */
-export async function pinAndPopReferenceUrls(pinhuntIds: string[]): Promise<Record<string, string>> {
-  if (pinhuntIds.length === 0) return {};
-  const db = boardDb();
-  const pins = check(
-    await db.from("pins").select("id, pinhunt_id").in("pinhunt_id", pinhuntIds),
-    "Could not look up pins",
-  ) as Array<{ id: string; pinhunt_id: string }> | null;
-  if (!pins?.length) return {};
-  const byUuid = new Map(pins.map((p) => [p.id, p.pinhunt_id]));
-  const { data, error } = await db.from("pin_images")
-    .select("pin_id, image_url, created_at")
-    .eq("source", "pin_and_pop")
-    .in("pin_id", [...byUuid.keys()])
-    .order("created_at", { ascending: false });
-  if (error) return {}; // 037/042 not applied: no references, not an error
-  const out: Record<string, string> = {};
-  for (const row of (data ?? []) as Array<{ pin_id: string; image_url: string }>) {
-    const pid = byUuid.get(row.pin_id);
-    if (pid && !out[pid] && /^https:\/\//.test(row.image_url)) out[pid] = row.image_url;
-  }
-  return out;
-}
-
 /** Current catalogue photo and pending contributions for pins, by pinhunt id. */
 export async function pinImageState(pinhuntIds: string[]): Promise<Record<string, { title: string; imageUrl: string | null; pendingImages: number }>> {
   if (pinhuntIds.length === 0) return {};

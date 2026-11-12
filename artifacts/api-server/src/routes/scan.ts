@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import { getOpenAIClient, isAiConfigured } from "@workspace/integrations-openai-ai-server";
 import {
   createSupabasePinRepository,
+  type CataloguePin,
   type PinRepository,
 } from "@workspace/pin-repository";
 import {
@@ -21,6 +22,7 @@ import {
 } from "../services/scanBudget";
 import { withScanReasoning } from "../services/scanReasoning";
 import { verifyDecision, VERIFY_MAX_REFERENCES } from "../services/scanVerify";
+import { pinAndPopReferenceImages } from "../services/scanReferenceImages";
 import { cachedResult, imageHash, recordUsage, withinDailyCap } from "../services/usage-caps";
 import { isScanId, recordScanOutcome } from "../services/scan-outcomes";
 import { randomUUID } from "node:crypto";
@@ -405,10 +407,20 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
       // Hard cap the rerank candidate list to keep stage-3 prompts bounded.
       matches = matches.slice(0, 10);
 
+      // Pin & Pop pins have no public photo, only an admin reference image.
+      // The comparison may use it (scanReferenceImages.ts); the URL stays in
+      // this prompt and is never sent back to the app.
+      const referenceImages = await pinAndPopReferenceImages(
+        matches.map((m) => byPinId.get(m.pinId)).filter((p) => p && !p.imageUrl).map((p) => p!.id),
+      );
+      timer.mark("references");
+      const comparisonImage = (p: CataloguePin | undefined) => p?.imageUrl ?? (p ? referenceImages.get(p.id) : undefined);
+
       const withImages = matches
-        .map((m) => ({ match: m, pin: byPinId.get(m.pinId)! }))
-        .filter((c) => !!c.pin?.imageUrl)
+        .map((m) => ({ match: m, pin: byPinId.get(m.pinId)!, image: comparisonImage(byPinId.get(m.pinId)) }))
+        .filter((c) => !!c.image)
         .slice(0, VERIFY_MAX_REFERENCES);
+      const shown = new Set(withImages.map((c) => c.pin.id));
 
       // Comparing against catalogue photos sharpens the ranking but is
       // optional: skipped when there isn't enough time left for it.
@@ -428,7 +440,7 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
           ];
           for (const c of withImages) {
             refContent.push({ type: "text", text: `Reference for ${c.pin.id} — "${c.pin.title}" (${c.pin.collection}):` });
-            refContent.push({ type: "image_url", image_url: { url: c.pin.imageUrl!, detail: "low" } });
+            refContent.push({ type: "image_url", image_url: { url: c.image!, detail: "low" } });
           }
           refContent.push({
             type: "text",
@@ -438,7 +450,7 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
           const candidateList = matches
             .map((m) => {
               const p = byPinId.get(m.pinId)!;
-              return `${p.id} | "${p.title}" | ${p.collection} | reference image: ${p.imageUrl ? "YES (shown below)" : "no image available"}`;
+              return `${p.id} | "${p.title}" | ${p.collection} | reference image: ${shown.has(p.id) ? "YES (shown below)" : "no image shown"}`;
             })
             .join("\n");
 

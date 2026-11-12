@@ -3,6 +3,7 @@ import type { IUserPinRepository } from './user-repository';
 import { PinRepositoryError } from './repository';
 import { homeMarketFromCountry, SUSPENSION_REASON_MAX } from './types';
 import { safeDisplayName } from './display-name';
+import { coveragePageLocal, coverageSetTotalsLocal, coverageSummaryLocal } from './coverage-filter';
 import * as communityPrices from './community-prices';
 import * as ageConfirmation from './age-confirmation';
 import * as pinLocations from './pin-locations';
@@ -50,6 +51,10 @@ import type {
   UserSuspension,
   ReportedMessageView,
   CatalogueImageCoverage,
+  CoveragePageQuery,
+  CoverageFacets,
+  CoverageFacetKey,
+  CoverageSummary,
   CatalogueImageSource,
   ContributedPinImage,
   ContributedImageReason,
@@ -86,6 +91,27 @@ import type { Database, Json } from './database.types';
 
 // crypto.randomUUID() is not available in all React Native runtimes, so pin
 // submission IDs use a simple RFC 4122 v4 generator instead.
+/** A get_catalogue_image_coverage (048) or catalogue_coverage_page (077) row. */
+function coverageRowFromDb(row: Record<string, unknown>): CatalogueImageCoverage {
+  return {
+    pinhuntId: row.pinhunt_id as string,
+    title: row.title as string,
+    setName: (row.set_name as string | null) ?? 'Uncategorised',
+    releaseYear: (row.release_year as number | null) ?? undefined,
+    editionType: (row.edition_type as string | null) ?? undefined,
+    imageUrl: (row.image_url as string | null) ?? undefined,
+    imageSource: (row.image_source as CatalogueImageSource) ?? null,
+    pendingCount: (row.pending_count as number | null) ?? 0,
+    myStatus: (row.my_status as ContributedImageStatus | null) ?? undefined,
+    origin: (row.origin as string | null) ?? undefined,
+    mainCharacter: (row.main_character as string | null) ?? undefined,
+    allCharacters: (row.all_characters as string | null) ?? undefined,
+    catalogueSource: (row.catalogue_source as string | null) ?? undefined,
+    needsBackImage: (row.needs_back_image as boolean | null) ?? undefined,
+    missingFields: (row.missing_fields as string[] | null) ?? undefined,
+  };
+}
+
 function generateSubmissionId(): string {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
     const r = (Math.random() * 16) | 0;
@@ -1616,6 +1642,72 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     return data === true;
   }
 
+  // ── Paged coverage (migration 077), with an on-device fallback ──────────
+  /** null until a 077 call fails as "function missing"; then the 048 rows, loaded once. */
+  private coverageFallback: Promise<CatalogueImageCoverage[]> | null = null;
+  private coverage077 = true;
+
+  private async coverageRpc<T>(fn: string, args: Record<string, unknown>, local: (all: CatalogueImageCoverage[]) => T): Promise<{ data: unknown; local: T | null }> {
+    if (this.coverage077) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { data, error } = await (this.client as any).rpc(fn, args);
+      if (!error) return { data, local: null };
+      if (error.code !== 'PGRST202' && error.code !== '42883') throw new Error(error.message);
+      this.coverage077 = false;
+    }
+    this.coverageFallback ??= this.getCatalogueImageCoverage().catch(e => { this.coverageFallback = null; throw e; });
+    return { data: null, local: local(await this.coverageFallback) };
+  }
+
+  async getCatalogueCoveragePage(q: CoveragePageQuery): Promise<{ rows: CatalogueImageCoverage[]; total: number }> {
+    const { data, local } = await this.coverageRpc('catalogue_coverage_page', {
+      p_ids: q.ids ?? null,
+      p_query: q.query?.trim() || null,
+      p_filter: q.filter ?? 'all',
+      p_year: q.year ?? null,
+      p_origin: q.origin ?? null,
+      p_character: q.character ?? null,
+      p_set: q.set ?? null,
+      p_offset: q.offset,
+      p_limit: q.limit,
+    }, all => coveragePageLocal(all, q));
+    if (local) return local;
+    const rows = (data ?? []) as Record<string, unknown>[];
+    return { rows: rows.map(coverageRowFromDb), total: rows.length ? Number(rows[0].total ?? rows.length) : 0 };
+  }
+
+  async getCatalogueCoverageSummary(facets: CoverageFacets, ownedIds: string[], facet: CoverageFacetKey | null = null): Promise<CoverageSummary> {
+    const { data, local } = await this.coverageRpc('catalogue_coverage_summary', {
+      p_year: facets.year ?? null,
+      p_origin: facets.origin ?? null,
+      p_character: facets.character ?? null,
+      p_set: facets.set ?? null,
+      p_owned: ownedIds,
+      p_facet: facet,
+    }, all => coverageSummaryLocal(all, facets, ownedIds, facet));
+    if (local) return local;
+    const d = (data ?? {}) as { stats?: Partial<CoverageSummary['stats']>; facet?: Array<{ value: string; count: number }> | null };
+    const s = d.stats ?? {};
+    return {
+      stats: {
+        total: s.total ?? 0, withPhoto: s.withPhoto ?? 0, community: s.community ?? 0, reference: s.reference ?? 0,
+        needs: s.needs ?? 0, pending: s.pending ?? 0, mine: s.mine ?? 0, info: s.info ?? 0, back: s.back ?? 0,
+      },
+      facet: d.facet ?? null,
+    };
+  }
+
+  async getCatalogueCoverageSetTotals(sets: string[]): Promise<Record<string, { total: number; withPhoto: number }>> {
+    if (!sets.length) return {};
+    const { data, local } = await this.coverageRpc('catalogue_coverage_set_totals', { p_sets: sets }, all => coverageSetTotalsLocal(all, sets));
+    if (local) return local;
+    const out: Record<string, { total: number; withPhoto: number }> = {};
+    for (const r of (data ?? []) as Array<{ set_name: string; total: number; with_photo: number }>) {
+      out[r.set_name] = { total: r.total, withPhoto: r.with_photo };
+    }
+    return out;
+  }
+
   async getCatalogueImageCoverage(): Promise<CatalogueImageCoverage[]> {
     // PostgREST caps rows per request, so page through the function's
     // (deterministically ordered) result.
@@ -1631,23 +1723,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       rows.push(...page);
       if (page.length < PAGE) break;
     }
-    return rows.map(row => ({
-      pinhuntId: row.pinhunt_id as string,
-      title: row.title as string,
-      setName: (row.set_name as string | null) ?? 'Uncategorised',
-      releaseYear: (row.release_year as number | null) ?? undefined,
-      editionType: (row.edition_type as string | null) ?? undefined,
-      imageUrl: (row.image_url as string | null) ?? undefined,
-      imageSource: (row.image_source as CatalogueImageSource) ?? null,
-      pendingCount: (row.pending_count as number | null) ?? 0,
-      myStatus: (row.my_status as ContributedImageStatus | null) ?? undefined,
-      origin: (row.origin as string | null) ?? undefined,
-      mainCharacter: (row.main_character as string | null) ?? undefined,
-      allCharacters: (row.all_characters as string | null) ?? undefined,
-      catalogueSource: (row.catalogue_source as string | null) ?? undefined,
-      needsBackImage: (row.needs_back_image as boolean | null) ?? undefined,
-      missingFields: (row.missing_fields as string[] | null) ?? undefined,
-    }));
+    return rows.map(coverageRowFromDb);
   }
 
   async getFeatureFlags(): Promise<FeatureFlag[]> {

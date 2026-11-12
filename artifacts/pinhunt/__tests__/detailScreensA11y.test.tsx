@@ -36,6 +36,7 @@ const mockRepo = {
   getPinsByIds: (ids: string[]) => Promise.resolve(mockPins.filter(p => ids.includes(p.id))),
   getPinsBySeries: () => Promise.resolve(mockPins),
   getCatalogueSourceDisplayName: () => Promise.resolve(null),
+  getCatalogueSourceAttribution: () => Promise.resolve(null),
   getExternalListingsForPin: () => Promise.resolve([]),
   getUsersWithPinForTrade: () => Promise.resolve([]),
   searchPinsPage: () => Promise.resolve(page),

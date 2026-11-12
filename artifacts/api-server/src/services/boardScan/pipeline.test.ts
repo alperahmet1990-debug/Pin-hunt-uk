@@ -33,6 +33,7 @@ vi.mock("../pixian", () => ({
   PixianTimeoutError: class extends Error {},
   normalizePinPhoto: async (b: Buffer) => { mem.pixianCalls++; return b; },
 }));
+vi.mock("../scanReferenceImages", () => ({ pinAndPopReferenceImages: async () => new Map() }));
 vi.mock("../contributed-images", () => ({
   publishContributedImage: async (image: { id: string }) => { mem.published.push(image.id); return image; },
 }));
@@ -71,7 +72,6 @@ vi.mock("./store", async (importOriginal) => {
     },
     findCleanedByCropHash: async () => null,
     pinImageState: async (ids: string[]) => Object.fromEntries(ids.filter((i) => mem.pins[i]).map((i) => [i, mem.pins[i]])),
-    pinAndPopReferenceUrls: async () => ({}),
   };
 });
 

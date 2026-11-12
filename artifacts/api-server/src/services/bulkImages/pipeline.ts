@@ -17,13 +17,20 @@
  *   BULK_CLEAN_CONCURRENCY      parallel Pixian calls across the server (2)
  *   BULK_MATCH_DAILY_LIMIT      matches per rolling 24 h, all batches (1500)
  *   BULK_CLEAN_DAILY_LIMIT      Pixian clean-ups per rolling 24 h     (1000)
- *   BULK_PIXIAN_MAX_PER_ITEM    Pixian calls one photo may use        (3)
+ *   BULK_PIXIAN_MAX_PER_ITEM    Pixian calls one photo may use        (4)
+ *   BULK_AUTO_CROP              crop to the main pin before Pixian    (true)
  * A photo is only cleaned after a match is confirmed, and its cleaned result
  * is kept: changing the match later reuses it instead of calling Pixian again.
+ *
+ * Photos taken on a pin board show neighbouring pins, and Pixian keeps
+ * everything that looks like foreground. So before cleaning, the photo is
+ * cropped to the main pin: the box the describe step found (no extra AI
+ * call), or a box the admin drew (a "cropped-N.jpg" original, which is
+ * then used as-is).
  */
 import type { SupabaseClient } from "@supabase/supabase-js";
 import sharp from "sharp";
-import type { BulkMatchResult } from "./match";
+import type { BulkMatchResult, PinBox } from "./match";
 
 export const BUCKET = "bulk-image-matcher";
 const STALE_CLAIM_MS = 10 * 60_000;
@@ -94,6 +101,28 @@ async function forMatching(original: Buffer): Promise<Buffer> {
     .jpeg({ quality: 85 }).toBuffer();
 }
 
+/**
+ * Crop to a box given as fractions of the (EXIF-rotated) image, widened by
+ * `margin` of the box size on each side so a slightly tight box never cuts
+ * the pin. Pixian then trims to the pin itself.
+ */
+export async function cropToBox(photo: Buffer, box: PinBox, margin = 0.08): Promise<Buffer> {
+  // Stored originals are already EXIF-rotated and stripped (routes/bulk-images.ts).
+  const { width = 0, height = 0 } = await sharp(photo).metadata();
+  if (!width || !height) return photo;
+  const [l, t, r, b] = box;
+  const mx = (r - l) * margin;
+  const my = (b - t) * margin;
+  const left = Math.max(0, Math.floor((l - mx) * width));
+  const top = Math.max(0, Math.floor((t - my) * height));
+  const right = Math.min(width, Math.ceil((r + mx) * width));
+  const bottom = Math.min(height, Math.ceil((b + my) * height));
+  if (right - left < 32 || bottom - top < 32) return photo;
+  return sharp(photo).extract({ left, top, width: right - left, height: bottom - top }).jpeg({ quality: 92 }).toBuffer();
+}
+
+export const isManualCrop = (path: string) => /\/cropped-\d+\.jpg$/.test(path);
+
 // ── Stage: match ─────────────────────────────────────────────────────────────
 
 async function countSince(db: SupabaseClient, column: string, sinceMs: number): Promise<number> {
@@ -153,7 +182,10 @@ export async function matchItem(
 // ── Stage: clean (Pixian) ────────────────────────────────────────────────────
 
 export async function cleanItem(
-  item: { id: string; batch_id: string; original_path: string; cleaned_path: string | null; pixian_calls: number },
+  item: {
+    id: string; batch_id: string; original_path: string; cleaned_path: string | null; pixian_calls: number;
+    description?: { box?: PinBox } | null;
+  },
   deps: PipelineDeps,
 ): Promise<"cleaned" | "failed" | "skipped"> {
   const env = deps.env ?? process.env;
@@ -179,14 +211,18 @@ export async function cleanItem(
     return "cleaned";
   }
 
-  const maxCalls = envInt(env, "BULK_PIXIAN_MAX_PER_ITEM", 3);
+  const maxCalls = envInt(env, "BULK_PIXIAN_MAX_PER_ITEM", 4);
   if (item.pixian_calls >= maxCalls) {
     return fail(`Pixian retry limit reached (${maxCalls} clean-ups for this photo).`);
   }
 
   let calls = item.pixian_calls;
   try {
-    const original = await download(deps.db, item.original_path);
+    let original = await download(deps.db, item.original_path);
+    const box = item.description?.box;
+    if (box && !isManualCrop(item.original_path) && (env.BULK_AUTO_CROP ?? "true").toLowerCase() !== "false") {
+      original = await cropToBox(original, box);
+    }
     calls++; // a timed-out call may still be charged, so count it before it returns
     const cleaned = await deps.clean(original);
     const cleanedPath = `${item.batch_id}/${item.id}/cleaned-${calls}.jpg`;
@@ -225,7 +261,7 @@ const STAGE = {
   },
   clean: {
     from: "confirmed",
-    select: "id, batch_id, original_path, cleaned_path, pixian_calls",
+    select: "id, batch_id, original_path, cleaned_path, pixian_calls, description",
     limitEnv: "BULK_CLEAN_DAILY_LIMIT",
     limitDefault: 1000,
     countColumn: "cleaning_started_at",

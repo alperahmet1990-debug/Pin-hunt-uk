@@ -12,8 +12,8 @@ Upload a batch of individual pin photos → review suggested catalogue matches �
 | Upload | Drag-and-drop or choose photos. Each one is EXIF-rotated, stripped of metadata, capped at 2400 px and stored privately. The same file again is recognised and skipped | `bulk-image-matcher` bucket, `bulk_image_items` |
 | Match (automatic) | The scan's own recognition: describe → indexed catalogue search (≤150 candidates) → AI rank top 5 → compare against up to 3 reference images (PinHunt photo, else the admin-only Pin & Pop reference) | `services/bulkImages/match.ts` |
 | Review | Photo beside the best match. Enter confirms, 1–5 picks another candidate, S skips, F flags, / searches. Moves on by itself | `app/admin/bulk-images/[batchId].tsx` |
-| Clean (automatic) | Pixian runs only after a match is confirmed. The cleaned result is kept, so changing the match doesn't call Pixian again | `services/bulkImages/pipeline.ts` |
-| Publish | Preview grid. Publish, clean again, or change match. Pins that already have a photo need an explicit "Replace it" | `services/bulkImages/publish.ts` |
+| Clean (automatic) | Pixian runs only after a match is confirmed. The photo is first cropped to the main pin: the describe step returns its box at no extra cost, so neighbouring pins on a board are left out. The cleaned result is kept, so changing the match doesn't call Pixian again | `services/bulkImages/pipeline.ts` |
+| Publish | Preview grid. Publish, change match, or **Crop & clean**: drag a box around the pin and only that area is cleaned again. Pins that already have a photo need an explicit "Replace it" | `services/bulkImages/publish.ts` |
 
 **Confidence bands.** *Confident* only when a reference image confirmed the match (≥85 and ≥20 points ahead of the next candidate). *Possible* ≥50. *Uncertain* ≥25. Below 25 is *No match*. A pin with no reference image can never be *Confident*.
 
@@ -29,7 +29,8 @@ AI calls per photo: 2, or 3 when a reference image exists. Never one call per ca
 |---|---|---|
 | `BULK_MATCH_CONCURRENCY` / `BULK_CLEAN_CONCURRENCY` | 2 / 2 | Parallel calls, server-wide |
 | `BULK_MATCH_DAILY_LIMIT` / `BULK_CLEAN_DAILY_LIMIT` | 1500 / 1000 | Per rolling 24 h. Work pauses and the dashboard says so |
-| `BULK_PIXIAN_MAX_PER_ITEM` | 3 | Clean-ups one photo may use. A failed or timed-out call counts |
+| `BULK_PIXIAN_MAX_PER_ITEM` | 4 | Clean-ups one photo may use. A failed or timed-out call counts |
+| `BULK_AUTO_CROP` | true | Crop to the main pin before Pixian |
 | `BULK_MAX_BATCH_ITEMS` | 1000 | Photos per batch |
 | `BULK_MATCH_ALWAYS_COMPARE` | true | Compare with reference images even when the ranking looks confident |
 | `OPENAI_BULK_MATCH_MODEL` | `OPENAI_SCAN_MODEL` | Model override |

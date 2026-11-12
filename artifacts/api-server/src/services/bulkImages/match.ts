@@ -44,11 +44,21 @@ export interface BulkCandidate {
   reasoning: string;
 }
 
+/** Where the main pin is in the photo, as fractions of width/height: [left, top, right, bottom]. */
+export type PinBox = [number, number, number, number];
+
+export interface PhotoDescription {
+  characters: string[];
+  keywords: string[];
+  /** The main (most central, most complete) pin, so clean-up can ignore neighbours. */
+  box?: PinBox;
+}
+
 export type MatchBand = "confident" | "possible" | "uncertain" | "none";
 
 export interface BulkMatchResult {
   candidates: BulkCandidate[];
-  description: { characters: string[]; keywords: string[] };
+  description: PhotoDescription;
   topConfidence: number;
   band: MatchBand;
   /** A reference-image comparison re-ranked the candidates. */
@@ -90,12 +100,24 @@ export function matchBand(candidates: ReadonlyArray<{ confidence: number }>, ver
 }
 
 const DESCRIBE_PROMPT = `You identify Disney enamel pins. Look at the photo and return ONLY valid JSON (no markdown):
-{ "characters": ["<Disney character names>"], "keywords": ["<search terms: series/collection name guesses, visible text, distinctive objects>"], "text": "<any text printed on the pin, or empty>" }
+{ "characters": ["<Disney character names>"], "keywords": ["<search terms: series/collection name guesses, visible text, distinctive objects>"], "text": "<any text printed on the pin, or empty>", "box": [<left>, <top>, <right>, <bottom>] }
+
+The photo may show neighbouring pins at the edges (e.g. taken on a pin board). Describe ONLY the main pin: the one the photo is centred on and shows most completely. "box" is that main pin's bounding box as fractions of the image width and height (0 to 1), including its whole outline and any dangle, but no neighbouring pins.
 
 IMPORTANT: many Disney pins are objects THEMED after a character (a dessert, dress, ear hat or flower in a character's colours with their signature props) without showing the character's face. Read the props and palette. Include your best character guesses in "characters" even when no face is visible — up to 4, most likely first.
 For keywords, include the object type AND close synonyms/series words. Up to 8 keywords. Use empty arrays only if you truly cannot tell.`;
 
-function parseDescription(raw: string): { characters: string[]; keywords: string[]; text: string } {
+/** A sane box, or undefined. Rejects tiny, inverted or out-of-range boxes. */
+export function parseBox(v: unknown): PinBox | undefined {
+  if (!Array.isArray(v) || v.length !== 4) return undefined;
+  const n = v.map(Number);
+  if (n.some((x) => !Number.isFinite(x))) return undefined;
+  const [l, t, r, b] = n.map((x) => Math.max(0, Math.min(1, x)));
+  if (r - l < 0.1 || b - t < 0.1) return undefined;
+  return [l, t, r, b];
+}
+
+function parseDescription(raw: string): { characters: string[]; keywords: string[]; text: string; box?: PinBox } {
   try {
     const s = raw.indexOf("{");
     const e = raw.lastIndexOf("}");
@@ -105,6 +127,7 @@ function parseDescription(raw: string): { characters: string[]; keywords: string
       characters: list(parsed.characters).slice(0, 4),
       keywords: list(parsed.keywords).slice(0, 8),
       text: typeof parsed.text === "string" ? parsed.text.trim().slice(0, 200) : "",
+      box: parseBox(parsed.box),
     };
   } catch {
     return { characters: [], keywords: [], text: "" };
@@ -150,7 +173,11 @@ export async function matchPhoto(photo: Buffer, deps: MatchDeps): Promise<BulkMa
   }, { timeout, maxRetries: 1 }));
   aiCalls++;
   const described = parseDescription(describeResp.choices[0]?.message?.content ?? "");
-  const description = { characters: described.characters, keywords: described.keywords };
+  const description: PhotoDescription = {
+    characters: described.characters,
+    keywords: described.keywords,
+    ...(described.box ? { box: described.box } : {}),
+  };
 
   // 2. Retrieve (bounded, indexed searches — never the whole catalogue)
   const textTerms = described.text ? [described.text] : [];

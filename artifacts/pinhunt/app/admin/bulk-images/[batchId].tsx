@@ -6,7 +6,8 @@
  *   Review     one photo at a time beside its best catalogue match. Enter
  *              confirms, 1–5 picks another candidate, S skips, F flags,
  *              / searches the catalogue. Advances automatically.
- *   Publish    Pixian results to approve, clean again, or re-match.
+ *   Publish    Pixian results to approve, re-match, or crop to the pin and
+ *              clean again (photos with neighbouring pins in frame).
  *   Problems   failed steps (retry only that step), skipped photos.
  *
  * Everything lives on the server, so closing the page loses nothing:
@@ -17,7 +18,8 @@
  */
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
-  ActivityIndicator, Image, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View,
+  ActivityIndicator, Image, Modal, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity,
+  useWindowDimensions, View, type GestureResponderEvent,
 } from 'react-native';
 import { Stack, useLocalSearchParams } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
@@ -619,6 +621,7 @@ function PublishPanel({ items, canPublish, patchItem, reload }: {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [replace, setReplace] = useState<Record<string, string>>({}); // item id → existing image URL
   const [bulk, setBulk] = useState<'idle' | 'confirming' | 'running'>('idle');
+  const [cropping, setCropping] = useState<ListItem | null>(null);
 
   const ready = items.filter((i) => i.status === 'cleaned');
   const waiting = items.length - ready.length;
@@ -706,7 +709,7 @@ function PublishPanel({ items, canPublish, patchItem, reload }: {
             ) : (
               <View style={styles.rowWrap}>
                 <Btn kind="primary" icon="check" label="Publish" onPress={() => publish(item)} disabled={!canPublish || busyId === item.id || bulk === 'running'} />
-                <Btn icon="refresh-cw" label="Clean again" onPress={() => simple(item, 'reclean', { status: 'confirmed' })} disabled={busyId === item.id} />
+                <Btn icon="crop" label="Crop & clean" onPress={() => setCropping(item)} disabled={busyId === item.id} />
                 <Btn icon="edit-2" label="Change match" onPress={() => simple(item, 'reopen', { status: 'suggested' })} disabled={busyId === item.id} />
               </View>
             )}
@@ -714,7 +717,102 @@ function PublishPanel({ items, canPublish, patchItem, reload }: {
           </View>
         ))}
       </View>
+      {cropping && (
+        <CropModal item={cropping} onClose={() => setCropping(null)}
+          onDone={() => { patchItem(cropping.id, { status: 'confirmed' }); setCropping(null); reload(); }} />
+      )}
     </View>
+  );
+}
+
+// ── Crop ─────────────────────────────────────────────────────────────────────
+
+/**
+ * Drag a box around the pin. Only that part of the photo is sent to Pixian,
+ * so neighbouring pins on a board aren't kept in the cleaned result.
+ */
+function CropModal({ item, onClose, onDone }: { item: ListItem; onClose: () => void; onDone: () => void }) {
+  const colors = useColors();
+  const api = useApi();
+  const win = useWindowDimensions();
+  const [natural, setNatural] = useState<{ w: number; h: number } | null>(null);
+  const [start, setStart] = useState<{ x: number; y: number } | null>(null);
+  const [end, setEnd] = useState<{ x: number; y: number } | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!item.originalUrl) return;
+    Image.getSize(item.originalUrl, (w, h) => setNatural({ w, h }), () => setError('Could not load the photo.'));
+  }, [item.originalUrl]);
+
+  // Show the photo at its own aspect ratio, so touch positions map straight to fractions.
+  const maxW = Math.min(win.width - 48, 640);
+  const maxH = win.height * 0.6;
+  const scale = natural ? Math.min(maxW / natural.w, maxH / natural.h) : 1;
+  const dispW = natural ? natural.w * scale : maxW;
+  const dispH = natural ? natural.h * scale : maxW;
+
+  const clamp = (v: number, max: number) => Math.max(0, Math.min(max, v));
+  const point = (e: GestureResponderEvent) => ({
+    x: clamp(e.nativeEvent.locationX, dispW),
+    y: clamp(e.nativeEvent.locationY, dispH),
+  });
+  const rect = start && end ? {
+    left: Math.min(start.x, end.x), top: Math.min(start.y, end.y),
+    width: Math.abs(end.x - start.x), height: Math.abs(end.y - start.y),
+  } : null;
+  const bigEnough = !!rect && rect.width >= dispW * 0.1 && rect.height >= dispH * 0.1;
+
+  const submit = async () => {
+    if (!rect || !bigEnough) return;
+    setBusy(true);
+    setError(null);
+    try {
+      const box = [rect.left / dispW, rect.top / dispH, (rect.left + rect.width) / dispW, (rect.top + rect.height) / dispH];
+      await api(`/admin/bulk-images/items/${item.id}/crop`, { method: 'POST', body: { box } });
+      onDone();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Could not crop the photo.');
+      setBusy(false);
+    }
+  };
+
+  return (
+    <Modal visible transparent animationType="fade" onRequestClose={onClose}>
+      <View style={styles.cropBackdrop}>
+        <View style={[styles.cropSheet, { backgroundColor: colors.homeSurface }]}>
+          <Text style={[styles.h3, { color: colors.homeInk }]}>Crop to the pin</Text>
+          <Text style={[styles.meta, { color: colors.homeMuted }]}>
+            Drag a box around just this pin — leave out neighbouring pins and the board. Only the box is sent to Pixian.
+          </Text>
+          <View style={{ width: dispW, height: dispH, alignSelf: 'center', backgroundColor: colors.homeAqua }}>
+            {item.originalUrl && natural ? (
+              <Image source={{ uri: item.originalUrl }} style={{ width: dispW, height: dispH }} />
+            ) : <ActivityIndicator style={{ marginTop: 40 }} color={colors.homeCoral} />}
+            {rect && (
+              <View pointerEvents="none"
+                style={[styles.cropRect, { left: rect.left, top: rect.top, width: rect.width, height: rect.height, borderColor: colors.homeCoral }]} />
+            )}
+            {/* Transparent layer on top catches the drag (a browser would otherwise drag the <img> itself). */}
+            <View
+              testID="crop-surface"
+              style={[StyleSheet.absoluteFill, Platform.OS === 'web' ? ({ cursor: 'crosshair', userSelect: 'none' } as object) : null]}
+              onStartShouldSetResponder={() => true}
+              onMoveShouldSetResponder={() => true}
+              onResponderGrant={(e) => { const p = point(e); setStart(p); setEnd(p); }}
+              onResponderMove={(e) => setEnd(point(e))}
+            />
+          </View>
+          {error && <Text style={{ color: colors.destructive, fontSize: 13 }}>{error}</Text>}
+          <Text style={[styles.meta, { color: colors.homeMuted }]}>Pixian calls used: {item.pixian_calls}</Text>
+          <View style={styles.rowWrap}>
+            <Btn label="Cancel" onPress={onClose} disabled={busy} />
+            <Btn kind="primary" icon="crop" label={busy ? 'Cropping…' : 'Crop & clean'} onPress={submit} disabled={busy || !bigEnough} />
+          </View>
+        </View>
+      </View>
+    </Modal>
   );
 }
 
@@ -724,6 +822,7 @@ function ProblemsPanel({ batchId, items, reload }: { batchId: string; items: Lis
   const colors = useColors();
   const api = useApi();
   const [busy, setBusy] = useState(false);
+  const [cropping, setCropping] = useState<ListItem | null>(null);
   const failed = items.filter((i) => i.status === 'failed');
   const skipped = items.filter((i) => i.status === 'skipped');
   const STAGE: Record<string, string> = { match: 'Matching', clean: 'Pixian clean-up', publish: 'Publishing' };
@@ -755,11 +854,15 @@ function ProblemsPanel({ batchId, items, reload }: { batchId: string; items: Lis
               {item.status === 'failed' ? `${STAGE[item.failed_stage ?? ''] ?? 'Step'} failed: ${item.error ?? 'unknown error'}` : 'Skipped'}
             </Text>
           </View>
+          {item.status === 'failed' && item.failed_stage === 'clean' && (
+            <Btn icon="crop" label="Crop & clean" disabled={busy} onPress={() => setCropping(item)} />
+          )}
           {item.status === 'failed'
             ? <Btn icon="refresh-cw" label="Retry" disabled={busy} onPress={() => run(`/admin/bulk-images/items/${item.id}/retry`)} />
             : <Btn icon="rotate-ccw" label="Back to review" disabled={busy} onPress={() => run(`/admin/bulk-images/items/${item.id}/reopen`)} />}
         </View>
       ))}
+      {cropping && <CropModal item={cropping} onClose={() => setCropping(null)} onDone={() => { setCropping(null); reload(); }} />}
     </View>
   );
 }
@@ -793,5 +896,8 @@ const styles = StyleSheet.create({
   searchResult: { flexDirection: 'row', alignItems: 'center', gap: 10, borderTopWidth: 1, paddingTop: 8 },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
   gridCard: { width: 300, maxWidth: '100%' },
+  cropBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.6)', alignItems: 'center', justifyContent: 'center', padding: 16 },
+  cropSheet: { borderRadius: radius.lg, padding: 16, gap: 10, maxWidth: 680, width: '100%' },
+  cropRect: { position: 'absolute', borderWidth: 2, backgroundColor: 'rgba(255,255,255,0.15)' },
   problem: { flexDirection: 'row', alignItems: 'center', gap: 10, borderWidth: 1, borderRadius: radius.md, padding: 10 },
 });

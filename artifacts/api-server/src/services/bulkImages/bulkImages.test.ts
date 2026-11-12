@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from "vitest";
 import sharp from "sharp";
 import type { CataloguePin, PinRepository } from "@workspace/pin-repository";
-import { matchBand, matchPhoto, type BulkMatchResult } from "./match";
-import { cleanItem, matchItem, processBatch, releaseStaleClaims, BUCKET } from "./pipeline";
+import { matchBand, matchPhoto, parseBox, type BulkMatchResult } from "./match";
+import { cleanItem, cropToBox, matchItem, processBatch, releaseStaleClaims, BUCKET } from "./pipeline";
 import { publishItem, PublishBlockedError } from "./publish";
 import { createFakeDb } from "./fakeDb.test-helper";
 
@@ -156,7 +156,7 @@ describe("pipeline", () => {
 
   it("stops calling Pixian for a photo after the per-item limit", async () => {
     const fake = await seededBatch([
-      { id: "a", batch_id: "B", status: "confirmed", original_path: "B/a/original.jpg", cleaned_path: null, pixian_calls: 3 },
+      { id: "a", batch_id: "B", status: "confirmed", original_path: "B/a/original.jpg", cleaned_path: null, pixian_calls: 4 },
     ]);
     const clean = vi.fn();
     const result = await cleanItem({ ...fake.tables.bulk_image_items[0] } as never, { db: fake.db, match: vi.fn(), clean });
@@ -249,5 +249,69 @@ describe("publishItem", () => {
     const again = await publishItem(item, permitted, "admin", {}, { db: fake.db, pinRepo });
     expect(again.pinImageId).toBe(first.pinImageId);
     expect(fake.tables.pin_images).toHaveLength(1);
+  });
+});
+
+// ── Cropping to the main pin (photos taken on a pin board) ───────────────────
+
+describe("cropping to the main pin", () => {
+  const board = () => sharp({ create: { width: 1000, height: 800, channels: 3, background: "#888" } }).jpeg().toBuffer();
+
+  it("accepts only sensible boxes", () => {
+    expect(parseBox([0.2, 0.1, 0.8, 0.9])).toEqual([0.2, 0.1, 0.8, 0.9]);
+    expect(parseBox([0.8, 0.1, 0.2, 0.9])).toBeUndefined(); // inverted
+    expect(parseBox([0.5, 0.5, 0.55, 0.9])).toBeUndefined(); // too thin
+    expect(parseBox([-1, 0, 2, 1])).toEqual([0, 0, 1, 1]); // clamped
+    expect(parseBox("nope")).toBeUndefined();
+  });
+
+  it("crops with a margin and never past the edges", async () => {
+    const meta = async (b: Buffer) => sharp(b).metadata();
+    const exact = await meta(await cropToBox(await board(), [0.25, 0.25, 0.75, 0.75], 0));
+    expect([exact.width, exact.height]).toEqual([500, 400]);
+    const padded = await meta(await cropToBox(await board(), [0.25, 0.25, 0.75, 0.75], 0.1));
+    expect([padded.width, padded.height]).toEqual([600, 480]);
+    const edge = await meta(await cropToBox(await board(), [0, 0, 0.5, 0.5], 0.2));
+    expect([edge.width, edge.height]).toEqual([600, 480]);
+  });
+
+  it("the match step returns the main pin's box from the describe call (no extra AI call)", async () => {
+    const ai = fakeOpenAI([
+      JSON.stringify({ characters: ["Remy"], keywords: ["sign"], box: [0.3, 0.2, 0.7, 0.9] }),
+      JSON.stringify([{ pinId: "PHUK-00000001", confidence: 60, reasoning: "x" }]),
+    ]);
+    const result = await matchPhoto(await photo(), { openai: ai.client, model: "m", repository: repoWith([pin("PHUK-00000001")]) });
+    expect(result.description.box).toEqual([0.3, 0.2, 0.7, 0.9]);
+    expect(ai.calls).toHaveLength(2);
+  });
+
+  it("sends only the main pin to Pixian when a box is known", async () => {
+    const fake = createFakeDb({ bulk_image_items: [{
+      id: "a", batch_id: "B", status: "confirmed", original_path: "B/a/original.jpg", cleaned_path: null, pixian_calls: 0,
+      description: { box: [0.25, 0.25, 0.75, 0.75] },
+    }] });
+    await fake.db.storage.from(BUCKET).upload("B/a/original.jpg", await board());
+    const sizes: number[] = [];
+    const clean = vi.fn(async (b: Buffer) => { sizes.push((await sharp(b).metadata()).width!); return b; });
+    await cleanItem({ ...fake.tables.bulk_image_items[0] } as never, { db: fake.db, match: vi.fn(), clean });
+    expect(sizes[0]).toBe(580); // 500 px box + 8% margin each side
+
+    // Turned off: the whole photo goes to Pixian.
+    fake.tables.bulk_image_items[0].status = "confirmed";
+    fake.tables.bulk_image_items[0].cleaned_path = null;
+    await cleanItem({ ...fake.tables.bulk_image_items[0] } as never, { db: fake.db, match: vi.fn(), clean, env: { BULK_AUTO_CROP: "false" } });
+    expect(sizes[1]).toBe(1000);
+  });
+
+  it("uses an admin's crop as-is", async () => {
+    const fake = createFakeDb({ bulk_image_items: [{
+      id: "a", batch_id: "B", status: "confirmed", original_path: "B/a/cropped-1731400000000.jpg", cleaned_path: null,
+      pixian_calls: 2, description: { box: [0.25, 0.25, 0.75, 0.75] },
+    }] });
+    await fake.db.storage.from(BUCKET).upload("B/a/cropped-1731400000000.jpg", await board());
+    const sizes: number[] = [];
+    const clean = vi.fn(async (b: Buffer) => { sizes.push((await sharp(b).metadata()).width!); return b; });
+    expect(await cleanItem({ ...fake.tables.bulk_image_items[0] } as never, { db: fake.db, match: vi.fn(), clean })).toBe("cleaned");
+    expect(sizes).toEqual([1000]);
   });
 });

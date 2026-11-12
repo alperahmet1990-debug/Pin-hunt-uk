@@ -21,6 +21,7 @@
  *   POST /admin/bulk-images/items/:id/confirm       { pinhuntId, method }
  *   POST /admin/bulk-images/items/:id/skip | flag | reopen   { notes? }
  *   POST /admin/bulk-images/items/:id/reclean       reject the Pixian result, clean again
+ *   POST /admin/bulk-images/items/:id/crop          { box } crop to the pin, then clean again
  *   POST /admin/bulk-images/items/:id/retry         retry the failed stage only
  *   POST /admin/bulk-images/items/:id/publish       { replaceExisting? }
  * Search
@@ -39,7 +40,8 @@ import {
 } from "@workspace/pin-repository";
 import { normalizePinPhoto, pixianConfigured } from "../services/pixian";
 import { matchPhoto } from "../services/bulkImages/match";
-import { BUCKET, isRunning, pausedReasons, processBatch, type PipelineDeps } from "../services/bulkImages/pipeline";
+import { BUCKET, cropToBox, download, isRunning, pausedReasons, processBatch, type PipelineDeps } from "../services/bulkImages/pipeline";
+import { parseBox } from "../services/bulkImages/match";
 import { publishItem, PublishBlockedError } from "../services/bulkImages/publish";
 
 const router: IRouter = Router();
@@ -155,7 +157,7 @@ async function kick(batchId: string, stages: Array<"match" | "clean"> = ["match"
 
 const ITEM_LIST_COLUMNS =
   "id, status, failed_stage, error, original_filename, original_path, cleaned_path, top_confidence, match_band, " +
-  "match_verified, matched_pinhunt_id, candidates, pixian_calls, published_image_url, created_at, updated_at";
+  "match_verified, matched_pinhunt_id, candidates, pixian_calls, published_image_url, width, height, created_at, updated_at";
 
 export const COUNT_KEYS = [
   "uploaded", "matching", "suggested", "unmatched", "flagged", "skipped",
@@ -267,6 +269,16 @@ router.get("/admin/bulk-images/batches/:id", guard, async (req, res) => {
       original_path: string; cleaned_path: string | null; status: string; failed_stage: string | null;
     }>;
     const urls = await signed(db, items.flatMap((i) => [i.original_path, i.cleaned_path ?? ""]));
+    // Titles for pins chosen by manual search (not in the stored candidates).
+    const missing = [...new Set(items.filter((i) => {
+      const id = i.matched_pinhunt_id as string | null;
+      return id && !((i.candidates as Array<{ pinhuntId: string }> | null) ?? []).some((c) => c.pinhuntId === id);
+    }).map((i) => i.matched_pinhunt_id as string))];
+    const titles = new Map<string, string>();
+    if (missing.length) {
+      const { data: rows } = await db.from("pins").select("pinhunt_id, title").in("pinhunt_id", missing);
+      for (const r of (rows ?? []) as Array<{ pinhunt_id: string; title: string }>) titles.set(r.pinhunt_id, r.title);
+    }
     res.json({
       batch,
       summary: summarise(items),
@@ -282,7 +294,7 @@ router.get("/admin/bulk-images/batches/:id", guard, async (req, res) => {
           originalUrl: urls.get(original_path) ?? null,
           cleanedUrl: cleaned_path ? urls.get(cleaned_path) ?? null : null,
           topCandidate: top ? { pinhuntId: top.pinhuntId, title: top.title } : null,
-          matchedTitle: matched?.title ?? null,
+          matchedTitle: matched?.title ?? (rest.matched_pinhunt_id ? titles.get(rest.matched_pinhunt_id as string) ?? null : null),
         };
       }),
     });
@@ -497,6 +509,54 @@ router.post("/admin/bulk-images/items/:id/reclean", guard, async (req, res) => {
     if (error) throw new Error(error.message);
     void kick(item.batch_id, ["clean"]).catch(() => {});
     res.json({ status: "confirmed" });
+  } catch (err) { fail(res, err); }
+});
+
+/**
+ * Crop the photo to the pin (box drawn by the admin, as fractions of the
+ * photo shown) and clean it again. For photos with neighbouring
+ * pins in frame that Pixian can't separate. The upload itself is kept; the
+ * crop becomes the photo that is cleaned and published.
+ */
+const CROPPABLE = ["suggested", "unmatched", "flagged", "skipped", "confirmed", "cleaned", "failed"];
+
+router.post("/admin/bulk-images/items/:id/crop", guard, async (req, res) => {
+  try {
+    const db = getServiceClient();
+    const item = await loadItem(String(req.params.id));
+    if (!item) { res.status(404).json({ error: "Item not found" }); return; }
+    if (!CROPPABLE.includes(item.status) || (item.status === "failed" && item.failed_stage !== "clean")) {
+      res.status(409).json({ error: `This photo is ${item.status} and can't be cropped now.` });
+      return;
+    }
+    const box = parseBox(req.body?.box);
+    if (!box) { res.status(400).json({ error: "Draw a box around the pin first." }); return; }
+    const maxCalls = Number(process.env.BULK_PIXIAN_MAX_PER_ITEM) > 0 ? Number(process.env.BULK_PIXIAN_MAX_PER_ITEM) : 4;
+    const pixianCalls = Number(item.pixian_calls ?? 0);
+    if (pixianCalls >= maxCalls) {
+      res.status(409).json({ error: `This photo has used its ${maxCalls} clean-ups. Crop it on your computer and upload it again.` });
+      return;
+    }
+
+    // The box is drawn on the photo the admin sees: the current one (an
+    // earlier crop, if any). The first upload stays in storage untouched.
+    const cropped = await cropToBox(await download(db, item.original_path), box, 0);
+    const croppedPath = `${item.batch_id}/${item.id}/cropped-${Date.now()}.jpg`;
+    const { error: upErr } = await db.storage.from(BUCKET)
+      .upload(croppedPath, cropped, { contentType: "image/jpeg", upsert: false });
+    if (upErr) throw new Error(`Could not store the crop: ${upErr.message}`);
+
+    // Matched photos go straight back to clean-up; unmatched ones keep their review state.
+    const needsClean = ["confirmed", "cleaned", "failed"].includes(item.status) && !!item.matched_pinhunt_id;
+    const { error } = await db.from("bulk_image_items").update({
+      original_path: croppedPath,
+      cleaned_path: null,
+      cleaned_sha256: null,
+      ...(needsClean ? { status: "confirmed", failed_stage: null, error: null } : {}),
+    }).eq("id", item.id).eq("status", item.status);
+    if (error) throw new Error(error.message);
+    if (needsClean) void kick(item.batch_id, ["clean"]).catch(() => {});
+    res.json({ status: needsClean ? "confirmed" : item.status });
   } catch (err) { fail(res, err); }
 });
 

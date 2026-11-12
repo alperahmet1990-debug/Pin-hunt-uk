@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image } from 'react-native';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import BulkImageBatchScreen from '../app/admin/bulk-images/[batchId]';
 
@@ -87,6 +88,42 @@ describe('admin bulk image matcher', () => {
     await waitFor(() => {
       const call = fetchMock.mock.calls.find(([u]) => String(u).endsWith('/items/a/confirm'));
       expect(JSON.parse(call![1].body)).toMatchObject({ pinhuntId: 'PHUK-a2' });
+    });
+  });
+});
+
+describe('crop & clean (pin photographed on a board)', () => {
+  it('sends the box drawn around the pin, as fractions of the photo', async () => {
+    jest.spyOn(Image, 'getSize').mockImplementation((_uri, ok) => ok(1000, 800));
+    const cleaned = item('c', 'Chez Remy Restaurant Sign', {
+      status: 'cleaned', cleanedUrl: 'https://signed/c-clean.jpg', matched_pinhunt_id: 'PHUK-10080740',
+      matchedTitle: 'Chez Remy Restaurant Sign', pixian_calls: 2,
+    });
+    const withCleaned = { ...batch, items: [cleaned] };
+    fetchMock.mockImplementation((url: string) => Promise.resolve({
+      ok: true, status: 200,
+      json: () => Promise.resolve(url.endsWith('/batches/batch-1') ? withCleaned : { status: 'confirmed' }),
+    }));
+
+    await render(<BulkImageBatchScreen />);
+    await fireEvent.press(await screen.findByText(/^Publish \(/));
+    await fireEvent.press(await screen.findByText('Crop & clean'));
+    const surface = await screen.findByTestId('crop-surface');
+
+    // The photo is shown at 1000x800 scaled to fit; read the scale back from the layout.
+    const frame = surface.parent!;
+    const width = (frame.props.style as { width: number }).width;
+    const height = (frame.props.style as { height: number }).height;
+    await fireEvent(surface, 'responderGrant', { nativeEvent: { locationX: width * 0.25, locationY: height * 0.2 } });
+    await fireEvent(surface, 'responderMove', { nativeEvent: { locationX: width * 0.75, locationY: height * 0.9 } });
+    const buttons = screen.getAllByText('Crop & clean');
+    await fireEvent.press(buttons[buttons.length - 1]);
+
+    await waitFor(() => {
+      const call = fetchMock.mock.calls.find(([u]) => String(u).endsWith('/items/c/crop'));
+      expect(call).toBeTruthy();
+      const { box } = JSON.parse(call![1].body);
+      expect(box.map((n: number) => Math.round(n * 100) / 100)).toEqual([0.25, 0.2, 0.75, 0.9]);
     });
   });
 });

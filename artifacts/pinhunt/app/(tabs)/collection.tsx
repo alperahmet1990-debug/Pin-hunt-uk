@@ -357,8 +357,10 @@ export default function CollectionScreen() {
       year: new Set(), brand: new Set(), edition: new Set(),
     };
     ownedPins.forEach(pin => {
-      (pin.characters.length ? pin.characters : (pin.allCharacters?.split(';') ?? [])).map(v => v.trim()).filter(Boolean).forEach(v => values.character.add(v));
-      if (pin.normalisedSeries || pin.collection) values.series.add(pin.normalisedSeries || pin.collection);
+      // all_characters is "A, B" (Pin & Pop, CTP) or "A; B" (older imports).
+      (pin.characters.length ? pin.characters : (pin.allCharacters?.split(/[;,]/) ?? [])).map(v => v.trim()).filter(Boolean).forEach(v => values.character.add(v));
+      // The set name collectors see; normalised_series is an internal key ("pin_and_pop | <slug>").
+      if (pin.collection || pin.normalisedSeries) values.series.add(pin.collection || pin.normalisedSeries!);
       if (pin.origin) values.location.add(pin.origin);
       const year = pin.releaseYear?.toString() || pin.releaseDate?.slice(0, 4);
       if (year) values.year.add(year);
@@ -370,8 +372,8 @@ export default function CollectionScreen() {
 
   const filteredOwnedPins = useMemo(() => {
     const matchesFilter = (pin: CataloguePin, key: MetadataFilterKey, value: string) => {
-      if (key === 'character') return [...pin.characters, ...(pin.allCharacters?.split(';').map(v => v.trim()) ?? [])].includes(value);
-      if (key === 'series') return (pin.normalisedSeries || pin.collection) === value;
+      if (key === 'character') return [...pin.characters, ...(pin.allCharacters?.split(/[;,]/).map(v => v.trim()) ?? [])].includes(value);
+      if (key === 'series') return (pin.collection || pin.normalisedSeries) === value;
       if (key === 'location') return pin.origin === value;
       if (key === 'year') return (pin.releaseYear?.toString() || pin.releaseDate?.slice(0, 4)) === value;
       if (key === 'brand') return pin.brand === value;

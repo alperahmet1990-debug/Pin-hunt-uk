@@ -8,6 +8,7 @@
  *   node --env-file=.env.staging scripts/import-pinandpop.mjs reset-old --apply         # delete non-P&P catalogue
  *   node --env-file=.env.staging scripts/import-pinandpop.mjs sync [--apply]            # new pins (id_after)
  *   node --env-file=.env.staging scripts/import-pinandpop.mjs sync --full [--apply]     # re-read all, update edits, archive removed
+ *   node --env-file=.env.staging scripts/import-pinandpop.mjs characters [--apply]      # characters from pin names (auto/blank pins only)
  *
  * Needs SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY and, for sync, PINANDPOP_API_TOKEN.
  * Back up first (see PINANDPOP.md): reset-old deletes collection entries and boards.
@@ -17,7 +18,7 @@ import { createClient } from "@supabase/supabase-js";
 import { requireStaging } from "./lib/staging-guard.mjs";
 import {
   PINANDPOP_CSV_COLUMNS, PINANDPOP_SOURCE, createPinAndPopClient, ensurePinAndPopSource, highestStoredPinAndPopId,
-  normalisePinAndPop, parseCsv, pinhuntIdFor, setKeyFor, syncNewPins, syncSetCounts, writePinAndPopBatch,
+  normalisePinAndPop, parseCsv, pinhuntIdFor, setKeyFor, syncNewPins, syncSetCounts, writePinAndPopBatch, fillCharacters,
 } from "./lib/pinandpop.mjs";
 
 await requireStaging();
@@ -186,7 +187,12 @@ try {
   if (mode === "csv") await csvMode(args[0]);
   else if (mode === "reset-old") await resetOld();
   else if (mode === "sync") await syncMode();
-  else throw new Error("mode must be csv, reset-old or sync (see the header of this file)");
+  else if (mode === "characters") {
+    // Characters from pin names, for automatic or blank pins only (never a person's edits).
+    const stats = await fillCharacters(supabase, { apply: APPLY, log });
+    log("characters", JSON.stringify(stats), APPLY ? "" : "(dry run: nothing written; re-run with --apply)");
+  }
+  else throw new Error("mode must be csv, reset-old, sync or characters (see the header of this file)");
 } catch (err) {
   console.error("FAILED:", err.message);
   process.exit(1);

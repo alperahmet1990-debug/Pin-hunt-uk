@@ -16,6 +16,8 @@
  * which are far below 10,000,000.
  */
 
+import { charactersForPin } from "./pinandpop-characters.mjs";
+
 export const PINANDPOP_SOURCE = "pin_and_pop";
 export const PINANDPOP_ATTRIBUTION = "Pin data provided by Pin & Pop (pinandpop.com)";
 export const PINANDPOP_API_BASE = "https://pinandpop.com/api/v1";
@@ -456,6 +458,57 @@ export async function syncSetCounts(supabase, countsByKey) {
 }
 
 /**
+ * Fills character columns from pin names (pinandpop-characters.mjs) for
+ * Pin & Pop pins. Only pins whose characters are blank or were set by this
+ * matcher (character_review_status 'auto_matched') are touched, so a person's
+ * edits are never overwritten; re-running after the character list improves
+ * updates the automatic ones. `pinhuntIds` limits it to those pins (sync);
+ * without it every Pin & Pop pin is checked. Returns counts.
+ */
+export async function fillCharacters(supabase, { pinhuntIds = null, apply = true, log = () => {} } = {}) {
+  const stats = { checked: 0, matched: 0, changed: 0, skippedManual: 0 };
+  const rows = [];
+  const columns = "pinhunt_id, title, brand, collection, main_character, all_characters, character_review_status";
+  if (pinhuntIds) {
+    for (const ids of chunk(pinhuntIds, 150)) {
+      rows.push(...(await must(supabase.from("pins").select(columns).in("pinhunt_id", ids), "read pins for characters")));
+    }
+  } else {
+    for (let from = 0; ; from += 1000) {
+      const page = await must(
+        supabase.from("pins").select(columns).eq("catalogue_source", PINANDPOP_SOURCE).order("pinhunt_id").range(from, from + 999),
+        "read pins for characters",
+      );
+      rows.push(...page);
+      if (page.length < 1000) break;
+    }
+  }
+  const updates = [];
+  for (const r of rows) {
+    stats.checked++;
+    const status = r.character_review_status;
+    const manual = status && status !== "auto_matched" || (!status && (r.main_character || r.all_characters));
+    if (manual) { stats.skippedManual++; continue; }
+    const c = charactersForPin(r.title, r.collection);
+    if (c) stats.matched++;
+    const next = c ?? { main_character: null, all_characters: null, character_confidence: null, character_review_status: null };
+    if (next.main_character === r.main_character && next.all_characters === r.all_characters && next.character_review_status === status) continue;
+    // NOT NULL columns ride along so the upsert's insert half is valid; it only ever updates.
+    updates.push({ pinhunt_id: r.pinhunt_id, title: r.title, brand: r.brand, collection: r.collection, ...next });
+  }
+  stats.changed = updates.length;
+  if (apply) {
+    // 250 a request: each row also updates the character trigram indexes (075),
+    // and 1,000 at once once hit the statement timeout on staging.
+    for (const part of chunk(updates, 250)) {
+      await must(supabase.from("pins").upsert(part, { onConflict: "pinhunt_id" }), "write characters");
+      log(`characters: ${part.length} pins updated`);
+    }
+  }
+  return stats;
+}
+
+/**
  * Incremental sync: pins with id > highest stored id. Stops after maxPages
  * (200 pins each) so a request-bound caller stays inside its time budget; the
  * next run carries on from the new highest id.
@@ -484,5 +537,14 @@ export async function syncNewPins({ supabase, client, maxPages = Infinity, log =
   }
   await recountSets(supabase, touchedSets);
   stats.requests = client.requestCount;
+  if (stats.written > 0) {
+    // Characters for the pins this run added (all Pin & Pop pins if the catalogue was empty).
+    let newIds = null;
+    if (start != null) {
+      newIds = [];
+      for (let id = start + 1; id <= (stats.highestId ?? start); id++) newIds.push(pinhuntIdFor(id));
+    }
+    stats.characters = await fillCharacters(supabase, { pinhuntIds: newIds, log });
+  }
   return stats;
 }

@@ -134,6 +134,35 @@ settings and the 1 pending submission were kept.
 - No character data, no SKU, no price.
 - Only 6,171 pins are Disneyland Paris or Disney Store UK origin. Most are US or Asian parks.
 
+## Characters (12 Nov 2026)
+
+P&P has no character field. `scripts/lib/pinandpop-characters.mjs` finds characters in
+the **pin's name** by whole-word match against a curated list:
+- ~350 characters with aliases ("Pooh" → Winnie the Pooh).
+- Pairs: "Chip & Dale", "Jack and Sally" and others.
+- Context rules: Chip vs Chip Potts, Sally vs Sally Carrera.
+- Blocked phrases: events, programmes and artists ("Hidden Mickey", "Sleepy Hollow",
+  "Eric Robison").
+
+Everyday words ("Joy", "Boo", "Flower", "Eve") are left out. Set names are never used:
+in review, set-name matches were wrong about half the time ("Hercules Character Vases:
+The Muses").
+
+- **Result on staging:** 77,402 of 116,503 pins (66.4%) have `main_character` /
+  `all_characters` ("A, B"), with `character_confidence='name'` and
+  `character_review_status='auto_matched'`. 346 distinct characters.
+- **Review:** name matches in an 80-pin sample were all right apart from missed
+  second characters, which are now fixed with pairs.
+- **What it changed:** the scan's character search for "Stitch" went from 0 pins to
+  120. "Missing info" went from 116,503 to 44,346. The contributor screen's character
+  filter has 347 choices.
+- **Re-running:** `node --env-file=.env.staging scripts/import-pinandpop.mjs characters [--apply]`.
+  It only touches pins that are blank or `auto_matched`, so people's edits are kept, and
+  re-running after improving the list updates the automatic ones. The incremental sync
+  fills characters for the pins it adds.
+- **After a bulk run, `vacuum analyze pins;`** in the SQL editor. Until it ran, word
+  searches slowed from ~0.3 s to ~1–1.6 s.
+
 ## Core functionality on staging (11 Nov 2026)
 
 Measured with the app's anon key unless noted. API tests: 1,145 of 1,145 pass.

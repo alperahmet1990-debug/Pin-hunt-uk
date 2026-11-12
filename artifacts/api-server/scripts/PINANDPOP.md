@@ -167,7 +167,9 @@ The Muses").
   re-running after improving the list updates the automatic ones. The incremental sync
   fills characters for the pins it adds.
 - **After a bulk run, `vacuum analyze pins;`** in the SQL editor. Until it ran, word
-  searches slowed from ~0.3 s to ~1–1.6 s.
+  searches slowed from ~0.3 s to ~1–1.6 s. After it (12 Nov): word searches 0.1–0.14 s,
+  a page of "mickey" with its total (16,128) 0.27 s, the scan's character search
+  for Stitch 0.13 s, and 3 scan searches in parallel 0.32 s.
 
 ## Core functionality on staging (11 Nov 2026)
 

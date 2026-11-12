@@ -39,6 +39,7 @@ import type { CataloguePin, ExternalSaleListing } from '@workspace/pin-repositor
 import { PinImage } from '@/components/ui/PinImage';
 import { pinHeroSize } from '@/utils/pinHeroSize';
 import { formatDate as formatMarketDate } from '@/utils/format';
+import { pinCharacterNames } from '@/utils/pinCharacters';
 
 const SET_TILE = 78;
 
@@ -359,7 +360,7 @@ export default function PinDetailScreen() {
           <View style={[styles.detailsCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
             <Text style={[styles.detailsHeading, { color: colors.homeMuted }]}>DETAILS</Text>
             <View>
-              {pin.characters.length > 0 && <MetaRow label="Characters" value={pin.characters.join(', ')} />}
+              {pinCharacterNames(pin).length > 0 && <MetaRow label="Characters" value={pinCharacterNames(pin).join(', ')} />}
               {pin.origin ? <MetaRow label="Release Location" value={pin.origin} /> : null}
               {pin.edition ? <MetaRow label="Edition Type" value={pin.edition} /> : null}
               {pin.releaseDate ? <MetaRow label="Release Date" value={formatDate(pin.releaseDate)} /> : pin.releaseYear ? <MetaRow label="Release Year" value={String(pin.releaseYear)} /> : null}

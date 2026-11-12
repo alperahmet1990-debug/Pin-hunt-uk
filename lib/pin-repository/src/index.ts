@@ -93,6 +93,12 @@ export type {
   FeatureKey,
   CatalogueImageSource,
   CatalogueImageCoverage,
+  CoverageFilter,
+  CoverageFacets,
+  CoverageFacetKey,
+  CoveragePageQuery,
+  CoverageStats,
+  CoverageSummary,
   FeatureAudience,
   FeatureFlag,
   // Access levels
@@ -102,7 +108,7 @@ export type {
 
 // ─── Catalogue repository ─────────────────────────────────────────────────────
 export type { PinRepository } from './repository';
-export type { PinSetSummary, CatalogueBrowsePin } from './types';
+export type { PinSetSummary, CatalogueBrowsePin, CatalogueBrowsePageQuery } from './types';
 export { PinRepositoryError } from './repository';
 export { homeMarketFromCountry, SUSPENSION_REASON_MAX, REMOVED_MESSAGE_BODY, MESSAGE_REMOVAL_REASON_MAX } from './types';
 export { safeDisplayName } from './display-name';
@@ -203,3 +209,4 @@ export type { Database, Tables, TablesInsert, TablesUpdate } from './database.ty
 
 // ─── Seed data (dev/testing convenience only) ─────────────────────────────────
 export { SEED_PINS } from './seed-data';
+export { isCoveragePending, matchesCoverageFilter, coverageCharacters, coveragePageLocal, coverageSummaryLocal, coverageSetTotalsLocal } from './coverage-filter';

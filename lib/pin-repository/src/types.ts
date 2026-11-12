@@ -1125,6 +1125,26 @@ export interface CatalogueBrowsePin {
   allCharacters?: string;
 }
 
+/**
+ * One page request for Browse Catalogue (getCatalogueBrowsePage). Rows come
+ * ordered by set, then title, then id.
+ */
+export interface CatalogueBrowsePageQuery {
+  /** Search words: every word must match a field (same rule as searchPins). */
+  query?: string;
+  /** Exact set (pins.collection). */
+  setName?: string;
+  year?: number;
+  /** Exact edition_type, e.g. "Limited Edition". */
+  edition?: string;
+  /** true: only pins with no set; false: only pins with a set; omitted: both. */
+  uncategorised?: boolean;
+  offset: number;
+  limit: number;
+  /** Also return the total number of matching pins (costs a count). */
+  withCount?: boolean;
+}
+
 /** One row of get_catalogue_image_coverage() — a pin and its photo status. */
 export interface CatalogueImageCoverage {
   /** PHUK-XXXXXXXX — the same id the app uses as CataloguePin.id. */
@@ -1148,6 +1168,48 @@ export interface CatalogueImageCoverage {
   needsBackImage?: boolean;
   /** Which of 'release_year' | 'set' | 'characters' | 'origin' the pin lacks. */
   missingFields?: string[];
+}
+
+/** Photo-status filter on the contributor screen. */
+export type CoverageFilter = 'all' | 'needs' | 'reference' | 'pending' | 'community' | 'info' | 'back';
+
+/** Year / park / character / set narrowing on the contributor screen. */
+export interface CoverageFacets {
+  year?: number | null;
+  origin?: string | null;
+  character?: string | null;
+  set?: string | null;
+}
+
+/** One page (or one id lookup) of catalogue_coverage_page (migration 077). */
+export interface CoveragePageQuery extends CoverageFacets {
+  /** Only these pins (pinhunt ids). */
+  ids?: string[] | null;
+  /** Words, or a PHUK id prefix. */
+  query?: string | null;
+  filter?: CoverageFilter;
+  offset: number;
+  limit: number;
+}
+
+export interface CoverageStats {
+  total: number;
+  withPhoto: number;
+  community: number;
+  reference: number;
+  needs: number;
+  pending: number;
+  mine: number;
+  info: number;
+  back: number;
+}
+
+export type CoverageFacetKey = 'year' | 'origin' | 'character' | 'set';
+
+export interface CoverageSummary {
+  stats: CoverageStats;
+  /** Choices for the requested facet, with counts; null when none was asked for. */
+  facet: Array<{ value: string; count: number }> | null;
 }
 
 export interface ReviewContributedImageInput {

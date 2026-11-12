@@ -26,7 +26,7 @@ jest.mock('@/context/CollectionContext', () => ({
   useCollection: () => ({ collection: mockCollection, setStatuses: jest.fn() }),
 }));
 jest.mock('@/hooks/useFeature', () => ({ useFeature: () => ({ enabled: false, loading: false }) }));
-jest.mock('@/hooks/useCatalogueCoverage', () => ({ useCatalogueCoverage: () => ({ rows: [] }) }));
+jest.mock('@/hooks/useCatalogueCoverage', () => ({ useCoverageFor: () => ({ rows: [] }) }));
 jest.mock('@/context/BoardsContext', () => ({
   useBoards: () => ({ customBoards: [], createBoard: jest.fn(), addPinsToBoard: jest.fn() }),
 }));

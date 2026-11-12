@@ -1,6 +1,7 @@
 import type {
   PinSetSummary,
   CatalogueBrowsePin,
+  CatalogueBrowsePageQuery,
   CataloguePin,
   CreatePinInput,
   MissingImageCounts,
@@ -55,8 +56,15 @@ export interface PinRepository {
    * Validated set summaries from the trusted catalogue (pin_sets table).
    * Used to show expected totals for ongoing sets, e.g. "7 of 12 released".
    * Returns [] when the table is empty or unavailable.
+   *
+   * Pass `names` (set names, i.e. pin `collection` values) to fetch just
+   * those sets. With no names it pages through every set, which is ~13k
+   * rows with the Pin & Pop catalogue, so callers should pass names.
    */
-  getSetSummaries(): Promise<PinSetSummary[]>;
+  getSetSummaries(names?: string[]): Promise<PinSetSummary[]>;
+
+  /** Every set name in the catalogue (names only, for suggestion lists). */
+  getAllSetNames(): Promise<string[]>;
 
   /**
    * Every publicly browsable pin (verified, searchable, not archived) as
@@ -64,6 +72,13 @@ export interface PinRepository {
    * PostgREST row cap — for the Browse Entire Catalogue screen.
    */
   getCatalogueBrowseIndex(): Promise<CatalogueBrowsePin[]>;
+
+  /**
+   * One page of browsable pins (same visibility as getCatalogueBrowseIndex),
+   * filtered and ordered on the server. Use this rather than the whole index
+   * once the catalogue is large (Pin & Pop: ~116k pins).
+   */
+  getCatalogueBrowsePage(q: CatalogueBrowsePageQuery): Promise<{ rows: CatalogueBrowsePin[]; total: number | null }>;
 
   /** Fetch multiple pins by their PinHunt IDs (order not guaranteed). */
   getPinsByIds(pinhuntIds: string[]): Promise<CataloguePin[]>;
@@ -104,6 +119,14 @@ export interface PinRepository {
    * Returns null when the source is unregistered/unknown — never invent one.
    */
   getCatalogueSourceDisplayName(sourceId: string): Promise<string | null>;
+
+  /**
+   * The attribution line to show for a catalogue source: its registered
+   * attribution_text (licence wording, e.g. Pin & Pop's "Pin data provided by
+   * Pin & Pop (pinandpop.com)"), else "Pin data · <display name>". Null for an
+   * unknown source.
+   */
+  getCatalogueSourceAttribution(sourceId: string): Promise<string | null>;
 
   // ── Catalogue writes ─────────────────────────────────────────────────────
   // Intended for admin tooling and import pipelines, not end-user screens.

@@ -33,8 +33,8 @@ if (!FONT_FILE) {
 }
 
 const WORD = "PinHunt";
-const DARK_ALPHA = "11%";
-const LIGHT_ALPHA = "16%";
+const DARK_ALPHA = "7%";
+const LIGHT_ALPHA = "10%";
 const ANGLE = -30;
 
 async function renderWord(colour: string, alpha: string, fontPx: number): Promise<Buffer> {
@@ -66,8 +66,8 @@ async function buildOverlay(width: number, height: number): Promise<Buffer> {
   const { width: wordW = 0, height: wordH = 0 } = await sharp(dark).metadata();
 
   const side = Math.ceil(Math.hypot(width, height)) + wordW * 2;
-  const stepX = Math.round(wordW * 2);
-  const stepY = Math.round(wordH * 3.4);
+  const stepX = Math.round(wordW * 2.8);
+  const stepY = Math.round(wordH * 5);
 
   const layers: OverlayOptions[] = [];
   for (let row = 0, top = 0; top < side - wordH; row++, top += stepY) {

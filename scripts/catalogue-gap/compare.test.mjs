@@ -163,5 +163,32 @@ test("files are recognised by contents, whatever the SQL editor named them", asy
   assert.equal(side.pins.length, 1);
   assert.equal(side.work.pin_submissions.draft_count, 0);
   assert.deepEqual(side.unknown, ["notes.txt"]);
-  assert.throws(() => sideFromFiles({ "x.csv": "a,b\n" }, "production"), /no summary result/);
+  assert.throws(() => sideFromFiles({ "x.csv": "a,b\n" }, "production"), /no summary found/);
+});
+
+test("the all-in-one download is unpacked into the same data", async () => {
+  const { sideFromFiles } = await import("./core.mjs");
+  const q = (o) => `"${JSON.stringify(o).replace(/"/g, '""')}"`;
+  const summary = { environment: "production", generated_at: "t", pins: { total: 2 }, pin_images: [] };
+  const csv = [
+    "part,chunk,items,payload",
+    `summary,1,1,${q(summary)}`,
+    `work,1,1,${q({ pin_submissions: { draft_count: 2, items: [] } })}`,
+    `pins,1,2,${q([{ pinhunt_id: "PHUK-1", id: "p1", is_searchable: true }, { pinhunt_id: "PHUK-2", id: "p2", is_searchable: false }])}`,
+    `images,1,1,${q([{ id: "i1", pin_id: "p1", is_pin_front_photo: true }])}`,
+  ].join("\n");
+  const side = sideFromFiles({ "Supabase Snippet.csv": csv }, "production");
+  assert.equal(side.summary.environment, "production");
+  assert.equal(side.pins.length, 2);
+  assert.equal(side.pins[0].is_searchable, "true");
+  assert.equal(side.images[0].is_pin_front_photo, "true");
+  assert.equal(side.work.pin_submissions.draft_count, 2);
+  assert.deepEqual(side.storage, [], "no file rows: the combined query ran, the buckets were empty");
+});
+
+test("committed ALL_IN_ONE.sql is up to date with queries 1-5", async () => {
+  const fs = await import("node:fs");
+  const { buildSql } = await import("./build-sql.mjs");
+  const committed = fs.readFileSync(new URL("../../supabase/verify/catalogue-gap/ALL_IN_ONE.sql", import.meta.url), "utf8");
+  assert.equal(committed, buildSql(), "run: node scripts/catalogue-gap/build-sql.mjs");
 });

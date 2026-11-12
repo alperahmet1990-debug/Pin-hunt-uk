@@ -65,6 +65,7 @@ export function identifyExport(text) {
     try { const v = JSON.parse(t); if (v.migration_markers) return "summary"; if ("pin_submissions" in v) return "work"; } catch { /* not JSON */ }
   }
   const cols = firstLine.split(",").map((c) => c.replace(/"/g, "").trim());
+  if (cols[0] === "part" && cols.includes("payload")) return "combined";
   if (cols.includes("pins_json") || (cols.includes("content_md5") && cols.includes("pinhunt_id"))) return "pins";
   if (cols.includes("images_json") || cols.includes("is_pin_front_photo")) return "images";
   if (cols.includes("files_json") || (cols.includes("bucket_id") && cols.includes("etag"))) return "storage";
@@ -78,33 +79,47 @@ export function identifyExport(text) {
  * are harmless.
  */
 export function sideFromFiles(files, label = "folder") {
-  const groups = { summary: [], pins: [], images: [], storage: [], work: [] };
+  // Gather every piece first: from the all-in-one download and/or the five separate ones.
+  const got = { summary: [], work: [], pins: [], images: [], storage: [] };
+  const packedCol = { pins: "pins_json", images: "images_json", storage: "files_json" };
+  const toStrings = (x) => Object.fromEntries(Object.entries(x).map(([k, v]) =>
+    [k, v === null || typeof v === "string" ? v : typeof v === "object" ? JSON.stringify(v) : String(v)]));
+  const kinds = {};
   const unknown = [];
   for (const [name, text] of Object.entries(files)) {
     const kind = identifyExport(text);
-    if (kind) groups[kind].push(name); else unknown.push(name);
+    if (!kind) { unknown.push(name); continue; }
+    kinds[name] = kind;
+    if (kind === "combined") {
+      for (const r of parseCsv(text)) {
+        const part = r.part === "files" ? "storage" : r.part;
+        if (part === "summary" || part === "work") got[part].push({ name, text: r.payload });
+        else if (got[part]) got[part].push(...JSON.parse(r.payload ?? "[]").map(toStrings));
+      }
+    } else if (kind === "summary" || kind === "work") {
+      got[kind].push({ name, text });
+    } else {
+      for (const r of parseCsv(text)) {
+        if (r[packedCol[kind]]) got[kind].push(...JSON.parse(r[packedCol[kind]]).map(toStrings));
+        else got[kind].push(r);
+      }
+    }
   }
   const problem = (msg) => { throw new Error(`${label}: ${msg}`); };
-  if (groups.summary.length !== 1) problem(groups.summary.length ? `more than one summary file (${groups.summary.join(", ")})` : "no summary result found (query 1)");
-  if (groups.work.length > 1) problem(`more than one work-in-progress file (${groups.work.join(", ")})`);
-  if (!groups.pins.length) problem("no pins result found (query 2)");
-  if (!groups.images.length) problem("no photos result found (query 3)");
-  const rows = (kind) => {
-    const packed = { pins: "pins_json", images: "images_json", storage: "files_json" }[kind];
-    // Queries 2-4 return 500 records per row as JSON; plain one-row-per-record CSVs work too.
-    const unpack = (r) => (r[packed] ? JSON.parse(r[packed]).map((x) => Object.fromEntries(
-      Object.entries(x).map(([k, v]) => [k, v === null || typeof v === "string" ? v : typeof v === "object" ? JSON.stringify(v) : String(v)]))) : [r]);
-    const all = groups[kind].sort().flatMap((n) => parseCsv(files[n]).flatMap(unpack));
-    const key = (r) => r.id ?? `${r.bucket_id}/${r.name}`;
-    return [...new Map(all.map((r) => [key(r), r])).values()];
-  };
+  if (got.summary.length !== 1) problem(got.summary.length ? `more than one summary (${got.summary.map((x) => x.name).join(", ")}); remove the extra file` : "no summary found (the all-in-one query, or query 1)");
+  if (got.work.length > 1) problem(`more than one work-in-progress result (${got.work.map((x) => x.name).join(", ")}); remove the extra file`);
+  const summary = parseJsonExport(got.summary[0].text);
+  if (!got.pins.length && Number(summary.pins?.total ?? 0) > 0) problem("no pins found (the all-in-one query, or query 2)");
+  const dedupe = (rows) => [...new Map(rows.map((r) => [r.id ?? `${r.bucket_id}/${r.name}`, r])).values()];
+  const hasSeparate = (k) => Object.values(kinds).includes(k);
+  const hasCombined = Object.values(kinds).includes("combined");
   return {
-    summary: parseJsonExport(files[groups.summary[0]]),
-    pins: rows("pins"),
-    images: rows("images"),
-    storage: groups.storage.length ? rows("storage") : null,
-    work: groups.work.length ? parseJsonExport(files[groups.work[0]]) : null,
-    files: Object.fromEntries(Object.entries(groups).map(([k, v]) => [k, v.sort()])),
+    summary,
+    pins: dedupe(got.pins),
+    images: dedupe(got.images),
+    storage: hasCombined || hasSeparate("storage") ? dedupe(got.storage) : null,
+    work: got.work.length ? parseJsonExport(got.work[0].text) : null,
+    files: kinds,
     unknown,
   };
 }
@@ -470,6 +485,23 @@ export function renderMarkdown(r, { staging, production }) {
     if (r.work.candidates) L.push(`- **Research candidates:** ${kv(r.work.candidates.by_status)}.`);
     L.push("");
   }
+
+  L.push("## Pin & Pop exposure check", "");
+  const pnpRows = (side) => (side.summary.pin_images ?? []).filter((r) => isPnp(r.source)).reduce((n, r) => n + Number(r.count), 0);
+  const pnpHosted = (side) => Object.entries(side.summary.pin_image_hosts ?? {}).filter(([h]) => /pin-?(and|&|n)?-?pop/i.test(h)).reduce((n, [, c]) => n + Number(c), 0);
+  const activity = (side) => {
+    const w = side.work;
+    if (!w) return "not exported";
+    const b = w.board_scans ? `${w.board_scans.items.length} board-scan crop(s)` : "board scanning not installed";
+    const k = w.bulk_images ? `${w.bulk_images.items.length} bulk photo(s), ${w.bulk_images.items.filter((i) => isTrue(i.match_verified)).length} confirmed by comparing with a reference photo (PinHunt's own or Pin & Pop's)` : "bulk matcher not installed";
+    return `${b}; ${k}`;
+  };
+  L.push(table(["", "Staging", "Production"], [
+    ["Pin & Pop reference image records (the only Pin & Pop images the matching tools can use)", pnpRows(staging), pnpRows(production)],
+    ["Pin photos (front or back) hosted by Pin & Pop", pnpHosted(staging), pnpHosted(production)],
+    ["Matching-tool activity", activity(staging), activity(production)],
+  ]));
+  L.push("", "Board scanning and the bulk matcher can only send a Pin & Pop image to the AI service when reference records exist. A count of 0 means none could have been sent from records that exist now; it can't show records that were added and later deleted.", "");
 
   L.push("## Migrations detected", "");
   const ms = staging.summary.migration_markers ?? {};

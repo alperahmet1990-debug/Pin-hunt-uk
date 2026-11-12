@@ -42,14 +42,14 @@
 
   <div class="card">
     <div class="step">Step 1 · Staging files</div>
-    <p class="muted">Choose all the files in your <code>staging</code> folder: select them all with Cmd+A (Mac) or Ctrl+A (Windows) in the file window. File names don't matter: each file is recognised by what's inside.</p>
+    <p class="muted">Choose the file you downloaded from the <b>staging</b> project (or all the files in your <code>staging</code> folder: select them with Cmd+A on a Mac or Ctrl+A on Windows). File names don't matter: each file is recognised by what's inside.</p>
     <input type="file" id="stagingFiles" multiple accept=".csv,.json,.txt,text/csv,application/json,text/plain">
     <div class="files" id="stagingList">No files chosen.</div>
   </div>
 
   <div class="card">
     <div class="step">Step 2 · Production files</div>
-    <p class="muted">Choose all the files in your <code>production</code> folder.</p>
+    <p class="muted">Choose the file you downloaded from the <b>production</b> project (or all the files in your <code>production</code> folder).</p>
     <input type="file" id="productionFiles" multiple accept=".csv,.json,.txt,text/csv,application/json,text/plain">
     <div class="files" id="productionList">No files chosen.</div>
   </div>
@@ -91,19 +91,23 @@ async function readFiles(list) {
   return out;
 }
 function showList(el, files) {
-  const label = { summary: "1 summary", pins: "2 pins", images: "3 photos", storage: "4 files", work: "5 work in progress" };
+  const label = { combined: "all-in-one result", summary: "1 summary", pins: "2 pins", images: "3 photos", storage: "4 files", work: "5 work in progress" };
   const found = {};
-  const lines = Object.keys(files).sort().map((n) => {
-    const kind = identifyExport(files[n]);
-    if (kind) found[kind] = (found[kind] ?? 0) + 1;
-    return `${n} → ${kind ? label[kind] : "not recognised (ignored)"}`;
-  });
-  const missing = Object.keys(label).filter((k) => !found[k]).map((k) => label[k]);
   el.innerHTML = "";
-  for (const l of lines) { const d = document.createElement("div"); d.textContent = l; el.appendChild(d); }
+  for (const n of Object.keys(files).sort()) {
+    const kind = identifyExport(files[n]);
+    if (kind) found[kind] = true;
+    const d = document.createElement("div");
+    d.textContent = `${n} → ${kind ? label[kind] : "not recognised (ignored)"}`;
+    el.appendChild(d);
+  }
   const s = document.createElement("div");
   s.style.fontWeight = "600";
-  s.textContent = missing.length ? `Missing: ${missing.join(", ")}${missing.every((m) => m.startsWith("4") || m.startsWith("5")) ? " (optional, but recommended)" : ""}` : "All five results present.";
+  if (found.combined) s.textContent = "All-in-one result found. That's everything needed.";
+  else {
+    const missing = ["summary", "pins", "images", "storage", "work"].filter((k) => !found[k]).map((k) => label[k]);
+    s.textContent = missing.length ? `Missing: ${missing.join(", ")}` : "All five results present.";
+  }
   el.appendChild(s);
 }
 function refsSeen() {

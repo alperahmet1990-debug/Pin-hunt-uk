@@ -1,6 +1,6 @@
 # Running the "waiting for production" report
 
-A step-by-step guide. No command line, no keys and no installs: you need a web browser and your Supabase dashboard login. It takes about 20–30 minutes.
+A step-by-step guide. No command line, no keys and no installs: you need a web browser and your Supabase dashboard login. **One query run and one download per project**, then a comparison page in your browser. About 15 minutes.
 
 The report compares the staging and production catalogues and lists what hasn't reached production:
 - new pins, ID clashes and possible duplicates;
@@ -39,6 +39,8 @@ The queries read these tables:
 
 ## What the downloads contain
 
+The all-in-one query returns exactly what the five separate queries return, in one file:
+
 | Query | Contains | Never contains |
 |---|---|---|
 | 1 Summary | Counts: pins by status, photos by source, files per bucket, submissions by status. Which migrations exist. The rights settings of each image source. | Any individual record |
@@ -56,46 +58,42 @@ The **shareable** output is `report.md` (and optionally `review.csv`). The page 
 ## Step 1: Download the files from GitHub
 
 1. Open https://github.com/alperahmet1990-debug/Pin-hunt-uk/tree/claude/supabase-staging-production-pp4kd6 while signed in to GitHub.
-   - **Expect:** the repository page, with the branch name `claude/supabase-staging-production-pp4kd6` shown near the top left.
+   - **Expect:** the repository page, with `claude/supabase-staging-production-pp4kd6` shown on the branch button near the top left.
 2. Press the green **Code** button, then **Download ZIP**.
    - **Expect:** a file like `Pin-hunt-uk-claude-supabase-staging-production-pp4kd6.zip` in your Downloads folder. It's large (around 180 MB) because the whole project comes with it.
 3. Double-click the ZIP to unpack it.
-   - **Expect:** a folder with the same name. You'll use two things inside it:
-     - `supabase/verify/catalogue-gap/`: five files, `1_summary.sql` to `5_work.sql`;
+   - **Expect:** a folder with the same name. You'll use two files inside it:
+     - `supabase/verify/catalogue-gap/ALL_IN_ONE.sql`: the query;
      - `scripts/catalogue-gap/compare.html`: the comparison page.
 
 ## Step 2: Make two private folders
 
 Make a new folder somewhere private, for example `Documents/PinHunt-Private/catalogue-gap-2026-11-12`. Inside it, make two folders called `staging` and `production`.
 
-## Step 3: Run the five queries in **staging**
+## Step 3: Run the query in **staging** (one run, one download)
 
 1. Open the Supabase dashboard and choose the **staging** project.
-   - Check the project name in the top bar. Also note its **ref**: the 20 letters and numbers after `/project/` in the address bar. It's also under Project Settings → General → Project ID. You'll need it in step 5.
-2. In the left menu, open **SQL Editor**, then start a **new query** (the + or "New query" button). You should have an empty editor.
-3. Open `1_summary.sql` from the unpacked folder in a text editor:
+   - Check the project name in the top bar.
+   - Note its **ref**: the 20 letters and numbers after `/project/` in the address bar. It's also under Project Settings → General → Project ID. You'll need it in step 5.
+2. In the left menu, open **SQL Editor**, then start a **new query** (the + or "New query" button).
+   - **Expect:** an empty editor.
+3. Open `ALL_IN_ONE.sql` in a text editor:
    - **Mac:** right-click → Open With → TextEdit.
    - **Windows:** right-click → Open with → Notepad.
-   Select everything (**Cmd+A** on Mac, **Ctrl+A** on Windows), copy (**Cmd+C** / **Ctrl+C**), click into the Supabase editor and paste (**Cmd+V** / **Ctrl+V**).
-4. Press **Run** (or **Cmd+Enter** / **Ctrl+Enter**).
-   - **Expect:** one row, with one column called `summary`. If you click the cell, `"environment"` should say `"staging"`. If it says `null`, that project doesn't have the 073 marker yet; that's fine, the report will remind you.
-   - **If** the editor shows a warning about a "destructive operation", press **Cancel** and tell me. None of these queries should cause one.
-5. Download the result. Use the export or download button above the results and choose **CSV** (it's usually called **Export → Download CSV**). Save it into your `staging` folder. **Any file name is fine:** the page recognises each file by what's inside.
-6. Repeat steps 2–5 for `2_pins.sql`, `3_images.sql`, `4_storage.sql` and `5_work.sql`. What to expect:
+   Select everything (**Cmd+A** / **Ctrl+A**) and copy it (**Cmd+C** / **Ctrl+C**). Click into the Supabase editor and paste (**Cmd+V** / **Ctrl+V**).
+4. Press **Run** (or **Cmd+Enter** / **Ctrl+Enter**). It may take up to a minute.
+   - **Expect:** a table with four columns: `part`, `chunk`, `items`, `payload`. The first row is `summary`, the second `work`, then rows for `pins`, `images` and `files`, each holding up to 500 records. The `payload` cells look like long text; that's expected.
+   - Staging with a few thousand pins gives roughly 5–20 rows.
+   - **If** the editor shows a warning about a "destructive operation", press **Cancel** and tell me. This query shouldn't cause one.
+   - **If** it shows an error, copy the error message (not the data) to me.
+5. Download it. Use the export or download button above the results and choose **CSV** (usually **Export → Download CSV**). Save it into your `staging` folder.
+   - **Any file name is fine:** the page recognises it by what's inside.
 
-| Query | Rows you should see |
-|---|---|
-| `1_summary` | 1 row (`summary`) |
-| `2_pins` | about one row per 500 pins, e.g. 3 rows for 1,200 pins. Each row is a bundle, so the cells look like long text. That's expected. |
-| `3_images` | one row per 500 photo records |
-| `4_storage` | one row per 500 files. If it says **"Success. No rows returned"**, there's nothing to download; skip it. |
-| `5_work` | 1 row (`work`) |
+## Step 4: Run it in **production**
 
-**Expect at the end:** four or five CSV files in `staging`.
-
-## Step 4: Run the same five queries in **production**
-
-Switch to the **production** project in the dashboard (check the name!) and repeat step 3. Save into the `production` folder and note production's ref.
+1. Switch to the **production** project in the dashboard. Check the name.
+2. Repeat step 3 and save into the `production` folder. Note production's ref.
+   - If production holds about 13,000 pins (including archived seed pins), expect around 30–40 rows.
 
 Run staging and production close together. If you know a board scan or batch is running, wait for it to finish if you can. The report is a snapshot either way.
 
@@ -103,13 +101,19 @@ Run staging and production close together. If you know a board scan or batch is 
 
 1. In the unpacked folder, open `scripts/catalogue-gap/` and double-click `compare.html`.
    - **Expect:** a page titled "Catalogue gap report" in your browser. Safari, Chrome, Edge and Firefox all work.
-2. **Step 1 on the page:** press **Choose Files**, go to your `staging` folder, select all the files (**Cmd+A** / **Ctrl+A**) and press Open.
-   - **Expect:** each file listed with what it was recognised as ("1 summary", "2 pins" and so on), and "All five results present". "4 files … optional" is fine if query 4 returned no rows.
-3. **Step 2 on the page:** do the same with your `production` folder.
+2. **Step 1 on the page:** press **Choose Files** and pick the file in your `staging` folder.
+   - **Expect:** "→ all-in-one result" and "That's everything needed."
+3. **Step 2 on the page:** do the same with the file in your `production` folder.
 4. **Step 3 on the page:** type the staging ref and the production ref.
-   - The page shows the refs it found in your files, to help you check. Note that **both** refs can appear in staging files, because staging pins copied from production use production's photo links.
+   - The page lists the refs it found in your files, to help you check.
+   - **Both** refs can appear in the staging file: staging pins copied from production use production's photo links.
 5. Press **Compare**.
-   - **Expect:** a green "Export checks passed" message, or messages explaining a problem (see Troubleshooting). Then a **Before you share** section and the full report.
+   - **Expect:** a green "Export checks passed" message, or messages explaining a problem (see Troubleshooting).
+   - Then a **Before you share** section and the full report, including a **Pin & Pop exposure check**.
+
+### Fallback: five separate queries
+
+If the all-in-one query fails or the download is too large, run `1_summary.sql` to `5_work.sql` one at a time instead. Download each as CSV into the same folder and choose all of them on the page (**Cmd+A** / **Ctrl+A** in the file window). Query 4 may say "Success. No rows returned"; then there's nothing to download for it.
 
 ## Step 6: Check before sharing
 
@@ -125,7 +129,7 @@ Run staging and production close together. If you know a board scan or batch is 
    - `review.csv` opens in Numbers, Excel or Google Sheets. It has one row per decision and an empty `decision` column for you.
 4. **Share** `report.md` with me in this conversation. That's enough for me to size the catch-up. `review.csv` is also safe to share; it has the same content as a table.
 
-**Keep these to yourself:** the downloaded CSV files from steps 3–4. They hold the complete catalogue exports, which you may not want to circulate.
+**Keep these to yourself:** the CSV files you downloaded in steps 3–4. They hold the complete catalogue exports, which you may not want to circulate.
 
 ---
 
@@ -136,8 +140,8 @@ Run staging and production close together. If you know a board scan or batch is 
 | "The staging folder says it came from production" (or the reverse) | The files were saved into the wrong folders | Swap them, or re-run the queries |
 | "no project marker … can't prove which project it came from" | That project doesn't have migration 073's marker yet | Fine to continue. Just double-check you ran each query in the right project. |
 | "…has N rows but the project has M. The export was cut short" | The download is incomplete | Re-run that query and download again. If it keeps happening, tell me the numbers. |
-| "no summary result found" / "no pins result found" | A file is missing or was saved from the wrong query | Re-run that query in that project and add the file |
-| "more than one summary file" | The same query was saved twice | Remove the extra copy |
+| "no summary found" / "no pins found" | The download is missing or came from something else | Re-run the query in that project and download again |
+| "more than one summary" | The same result was chosen twice, or the all-in-one file plus query 1 | Choose only one copy |
 | "not recognised (ignored)" next to a file | Not one of the five results, e.g. a stray file in the folder | Ignore it, or take it out |
 | An error in the SQL editor | Something in that project differs from what I expected | Copy the error message (not the data) to me |
 

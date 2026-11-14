@@ -44,7 +44,7 @@
  */
 import { Router, type IRouter, type Request, type Response, type NextFunction } from "express";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
-import { createSupabaseUserRepository, type EditionType, type SubmissionAiIdentification } from "@workspace/pin-repository";
+import { createSupabaseUserRepository, SUBMISSION_CHECK_ANSWERS, type EditionType, type SubmissionAiIdentification } from "@workspace/pin-repository";
 import { pixianConfigured, normalizePinPhoto } from "../services/pixian";
 import { watermarkPinPhoto } from "../services/watermark";
 import { imageHash, recordUsage, withinDailyCap } from "../services/usage-caps";
@@ -175,7 +175,14 @@ export function sanitizeAiIdentification(raw: unknown): SubmissionAiIdentificati
     if (Object.keys(suggested).length) out.suggested = suggested;
   }
 
-  return out.matches || out.suggested ? out : undefined;
+  // The collector's answer to the app's catalogue check (#622): one of a few
+  // known values, anything else dropped.
+  if (typeof r.contributorAnswer === "string"
+    && (SUBMISSION_CHECK_ANSWERS as readonly string[]).includes(r.contributorAnswer)) {
+    out.contributorAnswer = r.contributorAnswer as SubmissionAiIdentification["contributorAnswer"];
+  }
+
+  return out.matches || out.suggested || out.contributorAnswer ? out : undefined;
 }
 
 /**

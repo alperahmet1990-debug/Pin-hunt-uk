@@ -131,6 +131,19 @@ describe("POST /api/pin-submissions photo-only", () => {
     });
   });
 
+  it("stores the collector's catalogue-check answer (#622)", async () => {
+    const res = await submit({
+      proposedName: "Lantern",
+      rightsConfirmed: true,
+      aiIdentification: { matches: [{ pinId: "PHUK-00000001", confidence: 86 }], contributorAnswer: "none_of_these" },
+    });
+    expect(res.status).toBe(200);
+    expect(metadata().aiIdentification).toEqual({
+      matches: [{ pinId: "PHUK-00000001", confidence: 86 }],
+      contributorAnswer: "none_of_these",
+    });
+  });
+
   it("returns 429 when today's submission cap is used up", async () => {
     state.caps.submission = false;
     const res = await submit({ rightsConfirmed: true });
@@ -141,6 +154,17 @@ describe("POST /api/pin-submissions photo-only", () => {
 });
 
 describe("sanitizeAiIdentification", () => {
+  it("keeps a known catalogue-check answer on its own, and drops unknown ones (#622)", () => {
+    for (const answer of ["none_of_these", "no_match", "unavailable", "skipped"]) {
+      expect(sanitizeAiIdentification({ contributorAnswer: answer })).toEqual({ contributorAnswer: answer });
+    }
+    expect(sanitizeAiIdentification({ contributorAnswer: "yes_it_is" })).toBeUndefined();
+    expect(sanitizeAiIdentification({ contributorAnswer: 7 })).toBeUndefined();
+    expect(sanitizeAiIdentification({ contributorAnswer: "NONE_OF_THESE" })).toBeUndefined();
+    expect(sanitizeAiIdentification({ suggested: { name: "Stitch" }, contributorAnswer: "<script>" }))
+      .toEqual({ suggested: { name: "Stitch" } });
+  });
+
   it("drops anything that isn't an object, and empty results", () => {
     expect(sanitizeAiIdentification(null)).toBeUndefined();
     expect(sanitizeAiIdentification([1, 2])).toBeUndefined();

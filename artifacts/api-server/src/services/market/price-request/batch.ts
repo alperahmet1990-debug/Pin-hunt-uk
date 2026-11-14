@@ -8,8 +8,8 @@
  * Spend control, in order:
  *   1. An explicit pin set: verified, non-archived pins with release_year in
  *      --years (default 2025,2026), or those of an --ids-file (same filters).
- *      --offset/--limit page it. Markets are the host's published markets
- *      (MARKET_VALUATION_PUBLISHED_MARKETS), as for a collector's request.
+ *      --offset/--limit page it. --markets (required) must be markets the
+ *      host already publishes (MARKET_VALUATION_PUBLISHED_MARKETS).
  *   2. Skip: a pin with a finished request (priced or no sales) inside
  *      --cache-days (default 180) that searched these sources costs nothing
  *      and isn't asked again. Re-running the same command resumes where the
@@ -32,7 +32,7 @@
  * Output is counts only: no titles, prices of listings, links or keys.
  */
 import type { MarketCode } from "@workspace/pin-repository";
-import { PRICE_REQUEST_FLAG_ENV, priceRequestLimits, requestMarkets, requestSources } from "./config";
+import { PRICE_REQUEST_FLAG_ENV, PRICE_REQUEST_SOURCES, priceRequestLimits, requestMarkets } from "./config";
 import { startPriceRequest, type PriceRequestDeps, type StartInput, type StartResult } from "./service";
 
 export const DEFAULT_YEARS = [2025, 2026];
@@ -53,6 +53,8 @@ export interface BatchOptions {
   years: number[];
   /** Explicit PinHunt IDs instead of --years (e.g. the most-collected pins). */
   pinhuntIds: string[] | null;
+  /** Markets to price: required, and only ones the host already publishes. */
+  markets: MarketCode[];
   offset: number;
   limit: number | null;
   cacheDays: number;
@@ -136,6 +138,12 @@ export function parseBatchArgs(argv: string[], readFile: (p: string) => string):
   }
 
 
+  const marketsRaw = take("--markets");
+  if (!marketsRaw) throw new BatchUsageError("Give --markets UK, US or UK,US (only markets that passed the pilot and are in MARKET_VALUATION_PUBLISHED_MARKETS).");
+  const markets = [...new Set(marketsRaw.split(",").map(s => s.trim().toUpperCase()))];
+  const unknown = markets.filter(m => !(m in PRICE_REQUEST_SOURCES));
+  if (unknown.length || markets.length === 0) throw new BatchUsageError(`--markets takes UK and/or US, not ${unknown.join(", ") || "nothing"}.`);
+
   const num = (name: string, min: number, max: number) => {
     const v = take(name);
     return v === undefined ? null : intFlag(name, v, min, max);
@@ -143,6 +151,7 @@ export function parseBatchArgs(argv: string[], readFile: (p: string) => string):
   const opts: BatchOptions = {
     years,
     pinhuntIds,
+    markets: (["UK", "US"] as MarketCode[]).filter(m => markets.includes(m)),
     offset: num("--offset", 0, 1_000_000) ?? 0,
     limit: num("--limit", 1, 1_000_000),
     cacheDays: num("--cache-days", 1, 365) ?? DEFAULT_BATCH_CACHE_DAYS,
@@ -209,24 +218,31 @@ const monthOf = (ms: number) => new Date(ms).toISOString().slice(0, 7);
 
 /**
  * The env the request path sees for a batch: the collector button's flag is
- * not required, and the batch's own cache window applies. Everything else
- * (published markets, the budget reserve) is the host's configuration,
- * unchanged: a batch skips only the collector daily caps.
+ * not required, the batch's own cache window applies, and the published
+ * markets are narrowed to --markets (which must already be published: a
+ * batch never widens them). The budget reserve is the host's, unchanged: a
+ * batch skips only the collector daily caps.
  */
-export function batchEnv(env: NodeJS.ProcessEnv, opts: Pick<BatchOptions, "cacheDays">): NodeJS.ProcessEnv {
+export function batchEnv(env: NodeJS.ProcessEnv, opts: Pick<BatchOptions, "cacheDays" | "markets">): NodeJS.ProcessEnv {
+  const published = new Set<string>(requestMarkets(env));
+  const outside = opts.markets.filter(m => !published.has(m));
+  if (outside.length) {
+    throw new BatchUsageError(
+      `--markets ${outside.join(",")} is not in MARKET_VALUATION_PUBLISHED_MARKETS (${[...published].join(",") || "none"}). A batch only prices published markets.`,
+    );
+  }
   return {
     ...env,
     [PRICE_REQUEST_FLAG_ENV]: "true",
+    MARKET_VALUATION_PUBLISHED_MARKETS: opts.markets.join(","),
     MARKET_PRICE_REQUEST_CACHE_DAYS: String(opts.cacheDays),
   };
 }
 
 async function plan(opts: BatchOptions, deps: BatchDeps, now: number): Promise<{ plan: BatchPlan; todo: BatchPin[] }> {
-  const markets = requestMarkets(deps.env);
-  const sources = requestSources(deps.env);
-  if (sources.length === 0) {
-    throw new BatchUsageError("MARKET_VALUATION_PUBLISHED_MARKETS lists no UK or US market. Set it to the markets that passed the pilot, e.g. MARKET_VALUATION_PUBLISHED_MARKETS=UK,US.");
-  }
+  batchEnv(deps.env, opts); // refuses --markets outside the published list, before anything is read
+  const markets = opts.markets;
+  const sources = markets.map(m => PRICE_REQUEST_SOURCES[m]!);
   const reserve = priceRequestLimits(deps.env).budgetReserve;
   const pins = await deps.store.listPins({ years: opts.years, pinhuntIds: opts.pinhuntIds, offset: opts.offset, limit: opts.limit });
   const answered = pins.length
@@ -385,7 +401,7 @@ export function formatBatch(r: BatchResult, opts: BatchOptions): string[] {
   const out = [
     `Pins: ${opts.pinhuntIds ? `${opts.pinhuntIds.length} from --ids-file` : `release year ${opts.years.join(", ")}, verified, not archived`}` +
       (opts.offset || opts.limit !== null ? ` (offset ${opts.offset}${opts.limit !== null ? `, limit ${opts.limit}` : ""})` : ""),
-    `Markets: ${p.markets.join(", ")} (MARKET_VALUATION_PUBLISHED_MARKETS) · sources: ${p.sources.join(", ")} (${p.creditsPerPin} credit(s) per pin at most)`,
+    `Markets: ${p.markets.join(", ")} · sources: ${p.sources.join(", ")} (${p.creditsPerPin} credit(s) per pin at most)`,
     `Candidates: ${p.candidates} · already answered in the last ${opts.cacheDays} days: ${p.alreadyAnswered} · to price: ${p.toPrice}`,
     `Worst case for all ${p.toPrice}: ${p.worstCaseAll} credit(s) (${usd(p.worstCaseAll)})`,
     `This run: ${p.pinsThisRun} pin(s), planned ${p.plannedCredits} credit(s) (${usd(p.plannedCredits)})` +

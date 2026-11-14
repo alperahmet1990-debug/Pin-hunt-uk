@@ -10,15 +10,16 @@
  * credits the dry run printed.
  *
  * Usage (from artifacts/api-server, Node 22.18+):
- *   MARKET_VALUATION_PUBLISHED_MARKETS=UK,US node --env-file=.env.staging scripts/market-price-batch.mjs
- *   MARKET_VALUATION_PUBLISHED_MARKETS=UK,US node --env-file=.env.staging scripts/market-price-batch.mjs --max-credits 1000
+ *   MARKET_VALUATION_PUBLISHED_MARKETS=UK,US node --env-file=.env.staging scripts/market-price-batch.mjs --markets UK,US
+ *   MARKET_VALUATION_PUBLISHED_MARKETS=UK,US node --env-file=.env.staging scripts/market-price-batch.mjs --markets UK,US --max-credits 1000
  *   SOLDGRAPH_ENABLED=true MARKET_VALUATION_V2_ENABLED=true MARKET_VALUATION_PUBLISHED_MARKETS=UK,US \
- *     node --env-file=.env.staging scripts/market-price-batch.mjs --max-credits 1000 --apply --confirm-credits 1000
- *   MARKET_VALUATION_PUBLISHED_MARKETS=UK node --env-file=.env.staging scripts/market-price-batch.mjs --ids-file top-pins.txt
+ *     node --env-file=.env.staging scripts/market-price-batch.mjs --markets UK,US --max-credits 1000 --apply --confirm-credits 1000
+ *   MARKET_VALUATION_PUBLISHED_MARKETS=UK node --env-file=.env.staging scripts/market-price-batch.mjs --markets UK --ids-file top-pins.txt
  *
- * Markets are MARKET_VALUATION_PUBLISHED_MARKETS (as on the API host), and the
- * budget reserve MARKET_PRICE_REQUEST_BUDGET_RESERVE applies: a batch skips
- * only the collector daily caps.
+ * --markets is required and must be markets MARKET_VALUATION_PUBLISHED_MARKETS
+ * already lists (a batch never widens them). The budget reserve
+ * MARKET_PRICE_REQUEST_BUDGET_RESERVE applies: a batch skips only the
+ * collector daily caps.
  *
  * See scripts/PRICE-REQUEST.md ("Batch pricing").
  */

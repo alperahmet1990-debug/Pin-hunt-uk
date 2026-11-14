@@ -174,21 +174,21 @@ The question is whether to price every 2025–26 pin up front: **18,608 pins**. 
   - the request path becomes unavailable;
   - there are 5 failures in a row (`--stop-after-errors`).
 - **No collector caps.** Batch requests skip the per-user and global daily caps, but nothing else. Each pin is logged in `market_price_requests` with `origin = 'batch'`, and every credit is reserved against the monthly cap as usual.
-- **Markets come from `MARKET_VALUATION_PUBLISHED_MARKETS`,** exactly as for a collector's request: `UK`, `US` or `UK,US`, only markets that passed the pilot. Set it on the command line (as below) or in your staging env file. With no UK or US market listed, the script refuses to plan. The batch never widens that list and keeps the configured reserve: it skips only the collector daily caps. It doesn't need `MARKET_PRICE_REQUEST_ENABLED` (that's the collector button).
+- **`--markets` is required:** `UK`, `US` or `UK,US`. Every market given must already be in `MARKET_VALUATION_PUBLISHED_MARKETS`, the same setting collector requests use (set it on the command line, as below, or in your staging env file). A batch can price fewer markets than are published, never more. FR is never searched. The configured reserve applies too: a batch skips only the collector daily caps. It doesn't need `MARKET_PRICE_REQUEST_ENABLED` (that's the collector button).
 - **`--ids-file` pins get the same filters:** only verified, non-archived pins are priced.
 - **Output is counts only:** priced, no sales, already answered, running elsewhere, failed, credits spent, and the budget after. It prints a progress line every 25 pins.
 
 **Commands** (from `artifacts/api-server`):
 ```
 # 1. Plan (free)
-MARKET_VALUATION_PUBLISHED_MARKETS=UK,US node --env-file=.env.staging scripts/market-price-batch.mjs --max-credits 1000
+MARKET_VALUATION_PUBLISHED_MARKETS=UK,US node --env-file=.env.staging scripts/market-price-batch.mjs --markets UK,US --max-credits 1000
 
 # 2. Run, with the planned figure from step 1
 SOLDGRAPH_ENABLED=true MARKET_VALUATION_V2_ENABLED=true MARKET_VALUATION_PUBLISHED_MARKETS=UK,US \
-  node --env-file=.env.staging scripts/market-price-batch.mjs --max-credits 1000 --apply --confirm-credits 1000
+  node --env-file=.env.staging scripts/market-price-batch.mjs --markets UK,US --max-credits 1000 --apply --confirm-credits 1000
 
 # Most-collected pins first, from your own list
-MARKET_VALUATION_PUBLISHED_MARKETS=UK,US node --env-file=.env.staging scripts/market-price-batch.mjs --ids-file top-pins.txt --max-credits 1000
+MARKET_VALUATION_PUBLISHED_MARKETS=UK,US node --env-file=.env.staging scripts/market-price-batch.mjs --markets UK,US --ids-file top-pins.txt --max-credits 1000
 ```
 Exit code 0 means it finished or reached the ceiling; 2 means it stopped early (budget, errors or unavailable); 1 means it was refused.
 

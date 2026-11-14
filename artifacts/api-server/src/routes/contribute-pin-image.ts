@@ -20,7 +20,9 @@
  * The photo as taken (before Pixian) is also kept, in the private
  * pin-contributed-raw bucket (migration 079), which only admins can read, so
  * the reviewer can compare raw | cleaned | Pin & Pop. It is deleted once the
- * contribution is approved or rejected (discardRawOriginal). Its metadata (EXIF GPS
+ * contribution is approved or rejected (discardRawOriginal); an unsubmitted
+ * preview's draft goes after 24 hours (services/contributed-drafts-cleanup.ts).
+ * Its metadata (EXIF GPS
  * location etc.) is stripped first; see rawWithoutMetadata. It is only kept
  * when the request says the collector was told (keepOriginalConsent: true,
  * sent by app builds whose consent step says the original is kept), so
@@ -386,7 +388,13 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
       }
     }
 
-    await recordContribution(res, userId, body, storagePath, rawStoragePath);
+    try {
+      await recordContribution(res, userId, body, storagePath, rawStoragePath);
+    } catch (err) {
+      // No row points at the raw original now, so don't leave it behind.
+      if (rawStoragePath) await getStorageClient().storage.from(RAW_BUCKET).remove([rawStoragePath]);
+      throw err;
+    }
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     res.status(500).json({ error: msg });

@@ -15,6 +15,7 @@ const state = vi.hoisted(() => ({
   raw: new Map<string, Buffer>(),
   pixianCalls: 0,
   pixianError: null as Error | null,
+  createError: null as Error | null,
 }));
 
 vi.mock("@supabase/supabase-js", () => ({
@@ -51,7 +52,10 @@ vi.mock("@workspace/pin-repository", async (importOriginal) => ({
   }),
   createSupabaseUserRepository: () => ({
     hasPendingContributedImage: async () => state.pending,
-    createContributedImage: async () => ({ id: "img-1", status: "pending" }),
+    createContributedImage: async () => {
+      if (state.createError) throw state.createError;
+      return { id: "img-1", status: "pending" };
+    },
   }),
 }));
 
@@ -105,6 +109,7 @@ describe("POST /api/pin-images/contribute/preview", () => {
     state.raw = new Map();
     state.pixianCalls = 0;
     state.pixianError = null;
+    state.createError = null;
   });
 
   it("cleans the photo and returns a draft named after its hash", async () => {
@@ -183,5 +188,39 @@ describe("POST /api/pin-images/contribute/preview", () => {
     const res = await preview();
     expect(res.status).toBe(409);
     expect(state.pixianCalls).toBe(0);
+  });
+});
+
+describe("POST /api/pin-images/contribute (no preview, older builds)", () => {
+  beforeEach(() => {
+    vi.stubEnv("SUPABASE_URL", "https://db.test.invalid");
+    vi.stubEnv("SUPABASE_ANON_KEY", "test-anon-key");
+    vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "test-service-key");
+    state.pending = false;
+    state.capOk = true;
+    state.drafts = new Map();
+    state.raw = new Map();
+    state.pixianCalls = 0;
+    state.pixianError = null;
+    state.createError = null;
+  });
+
+  const confirmWithoutPreview = () =>
+    request(app)
+      .post("/api/pin-images/contribute")
+      .set("Authorization", "Bearer test-token")
+      .send({ pinId: "PHUK-00000001", imageBase64: PHOTO, consentGranted: true, keepOriginalConsent: true });
+
+  it("keeps the raw original when the contribution is recorded", async () => {
+    const res = await confirmWithoutPreview();
+    expect(res.status).toBe(200);
+    expect(state.raw.size).toBe(1);
+  });
+
+  it("removes the raw original again if recording the contribution fails", async () => {
+    state.createError = new Error("insert failed");
+    const res = await confirmWithoutPreview();
+    expect(res.status).toBe(500);
+    expect(state.raw.size).toBe(0);
   });
 });

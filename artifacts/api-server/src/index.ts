@@ -1,6 +1,7 @@
 import app from "./app";
 import { logger } from "./lib/logger";
 import { recoverOrphanedImportBatches } from "./routes/catalogue-import";
+import { startDraftCleanup } from "./services/contributed-drafts-cleanup";
 
 const rawPort = process.env["PORT"];
 
@@ -28,4 +29,7 @@ app.listen(port, (err) => {
   void recoverOrphanedImportBatches().catch((err) => {
     logger.error({ err }, "Import batch recovery failed");
   });
+
+  // Delete contribution previews nobody submitted, after 24 hours.
+  startDraftCleanup(logger);
 });

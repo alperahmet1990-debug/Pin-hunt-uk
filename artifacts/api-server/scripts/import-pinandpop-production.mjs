@@ -124,7 +124,10 @@ export async function main(argv = process.argv.slice(2), env = process.env, { fe
     while (start < ordered.length) {
       let end = Math.min(start + 2000, ordered.length);
       while (end < ordered.length && ordered[end].seriesSlug && ordered[end].seriesSlug === ordered[end - 1].seriesSlug) end++;
-      const s = await writePinAndPopBatch(db, ordered.slice(start, end), { fresh });
+      // 250 pins a request (staging used 500): production already has 075's
+      // search indexes, which make each write slower, and on staging 1,000-row
+      // writes into the indexed table once hit the statement timeout.
+      const s = await writePinAndPopBatch(db, ordered.slice(start, end), { fresh, batchSize: Number(env.PINANDPOP_BATCH_SIZE ?? 250) });
       for (const k of Object.keys(totals)) totals[k] += s[k];
       log(`${end}/${ordered.length} pins written (${Math.round((Date.now() - t0) / 1000)}s)`);
       start = end;

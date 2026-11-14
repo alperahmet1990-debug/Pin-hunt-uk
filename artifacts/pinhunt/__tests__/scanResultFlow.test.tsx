@@ -152,7 +152,7 @@ describe('Scan result (UX-005)', () => {
     await scanToResult();
     await fireEvent.press(screen.getByRole('button', { name: 'Add your photo' }));
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/contribute-image/[pinId]', params: { pinId: 'p2', from: 'scan' } });
-    expect(getScanPhotoForContribution('p2')).toMatchObject({ pinId: 'p2', base64: 'small', mimeType: 'image/jpeg' });
+    expect(getScanPhotoForContribution('p2', undefined)).toMatchObject({ pinId: 'p2', base64: 'small', mimeType: 'image/jpeg' });
     // Choosing it confirms the match for the scan's accuracy record.
     expect(mockRecordOutcome).toHaveBeenCalledWith('scan-1', 'p2', undefined);
   });

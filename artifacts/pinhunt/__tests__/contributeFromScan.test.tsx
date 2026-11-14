@@ -3,7 +3,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react-nativ
 import * as ImagePicker from 'expo-image-picker';
 import ContributeImageScreen from '../app/contribute-image/[pinId]';
 import { saveAiPhotoConsent } from '../utils/aiPhotoConsent';
-import { clearScanPhotoForContribution, setScanPhotoForContribution } from '../utils/scanPhotoHandoff';
+import { clearScanPhotoForContribution, getScanPhotoForContribution, setScanPhotoForContribution } from '../utils/scanPhotoHandoff';
 
 // Scan → "Add your photo": the scan photo is the starting image, the
 // collector can still take a new one, and admins are reviewed by default.
@@ -18,7 +18,7 @@ jest.mock('expo-router', () => ({
   Stack: { Screen: () => null },
 }));
 jest.mock('react-native-safe-area-context', () => ({ useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }) }));
-jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ session: { access_token: 'token' } }) }));
+jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ session: { access_token: 'token', user: { id: 'user-1' } } }) }));
 jest.mock('@/context/PinCatalogueContext', () => ({
   usePinCatalogue: () => ({ pins: [{ id: 'PHUK-2', title: 'Dumbo Blue Sky' }], ensurePins: jest.fn() }),
 }));
@@ -42,7 +42,7 @@ beforeEach(() => {
   saveAiPhotoConsent(null);
   mockParams = { pinId: 'PHUK-2', from: 'scan' };
   mockIsAdmin = false;
-  setScanPhotoForContribution({ pinId: 'PHUK-2', uri: 'file:///scan.jpg', base64: 'scan64', mimeType: 'image/jpeg' });
+  setScanPhotoForContribution({ pinId: 'PHUK-2', userId: 'user-1', uri: 'file:///scan.jpg', base64: 'scan64', mimeType: 'image/jpeg' });
   fetchMock.mockImplementation((url: string) => Promise.resolve({
     ok: true,
     json: () => Promise.resolve(url.endsWith('/preview')
@@ -99,6 +99,27 @@ describe('Add your photo from a scan', () => {
     await render(<ContributeImageScreen />);
     expect(screen.queryByText('Use this photo')).toBeNull();
     expect(screen.getByText('Take Photo')).toBeTruthy();
+  });
+
+  it('never offers a scan photo taken by a different signed-in user', async () => {
+    setScanPhotoForContribution({ pinId: 'PHUK-2', userId: 'someone-else', uri: 'file:///theirs.jpg', base64: 'theirs64', mimeType: 'image/jpeg' });
+    await render(<ContributeImageScreen />);
+    expect(screen.queryByLabelText('Your scan photo')).toBeNull();
+    expect(screen.queryByText('Use this photo')).toBeNull();
+  });
+
+  it('says the original is kept privately for moderators', async () => {
+    await render(<ContributeImageScreen />);
+    expect(screen.getByText(/We also keep your original photo privately, without its location/)).toBeTruthy();
+  });
+
+  it('forgets the scan photo once the photo is submitted', async () => {
+    await render(<ContributeImageScreen />);
+    await consent();
+    await fireEvent.press(screen.getByText('Use this photo'));
+    await fireEvent.press(await screen.findByText('Submit Photo'));
+    await screen.findByText(/Your photo is being reviewed/);
+    expect(getScanPhotoForContribution('PHUK-2', 'user-1')).toBeNull();
   });
 
   it('goes back to the scan result when done', async () => {

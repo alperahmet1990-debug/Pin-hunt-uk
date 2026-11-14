@@ -56,7 +56,7 @@ import {
 } from '@/hooks/useCatalogueCoverage';
 import { useMyAccess } from '@/hooks/useMyAccess';
 import type { ContributedImageReason } from '@workspace/pin-repository';
-import { getScanPhotoForContribution } from '@/utils/scanPhotoHandoff';
+import { clearScanPhotoForContribution, getScanPhotoForContribution } from '@/utils/scanPhotoHandoff';
 
 type Step = 'consent' | 'processing' | 'confirm' | 'submitting' | 'done';
 
@@ -77,13 +77,13 @@ export default function ContributeImageScreen() {
   const fromCatalogue = from === 'catalogue';
   const fromReplace = from === 'replace';
   const fromScan = from === 'scan';
-  // The photo the collector just scanned, offered as the starting image.
-  const scanPhoto = fromScan ? getScanPhotoForContribution(pinId) : null;
+  // The photo this collector just scanned, offered as the starting image.
+  const { session } = useAuth();
+  const scanPhoto = fromScan ? getScanPhotoForContribution(pinId, session?.user?.id) : null;
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { pins, ensurePins } = usePinCatalogue();
-  const { session } = useAuth();
   // The photo is cleaned up by Pixian before it's shown back (#501).
   const { ensure: ensureConsent, sheet: consentSheet } = useAiPhotoConsent();
   const { collection } = useCollection();
@@ -238,6 +238,7 @@ export default function ContributeImageScreen() {
       } else {
         markCoveragePending(pinId);
       }
+      clearScanPhotoForContribution();
       setStep('done');
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Could not submit your photo.');
@@ -329,6 +330,10 @@ export default function ContributeImageScreen() {
                 : isReplacement
                 ? 'The current photo stays until a PinHunt moderator reviews yours \u2014 nothing changes unless it\u2019s approved.'
                 : 'A PinHunt moderator reviews every photo before it goes live, so it won\u2019t appear anywhere until approved.'}
+            </Text>
+            <Text style={[styles.body, { color: colors.homeMuted }]}>
+              We also keep your original photo privately, without its location or camera details,
+              so moderators can compare it with the cleaned-up version.
             </Text>
 
             <TouchableOpacity

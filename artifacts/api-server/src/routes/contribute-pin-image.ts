@@ -19,7 +19,8 @@
  *
  * The photo as taken (before Pixian) is also kept, in the private
  * pin-contributed-raw bucket (migration 079), which only admins can read, so
- * the reviewer can compare raw | cleaned | Pin & Pop. It is best-effort:
+ * the reviewer can compare raw | cleaned | Pin & Pop. Its metadata (EXIF GPS
+ * location etc.) is stripped first; see rawWithoutMetadata. It is best-effort:
  * without the bucket (079 not applied yet) the contribution still goes
  * through, just without a raw original.
  *
@@ -33,6 +34,7 @@
  */
 import { Router, type IRouter, type Request, type Response, type NextFunction } from "express";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import sharp from "sharp";
 import { createSupabasePinRepository, createSupabaseUserRepository } from "@workspace/pin-repository";
 import { pixianConfigured, normalizePinPhoto, PixianTimeoutError } from "../services/pixian";
 import { imageHash, recordUsage, withinDailyCap } from "../services/usage-caps";
@@ -116,12 +118,23 @@ async function clearDrafts(userId: string, keep?: string) {
   }
 }
 
-/** Keep the photo as taken. Best-effort: logs and returns false on failure. */
-async function storeRaw(path: string, imageBase64: string, mimeType: string): Promise<boolean> {
+/**
+ * Keep the photo as taken, without its metadata: it is re-encoded as JPEG
+ * with the EXIF orientation applied and every EXIF/XMP/IPTC tag (GPS
+ * location, device, timestamps) dropped, which is sharp's default. Pixels
+ * are otherwise unchanged, so the reviewer still sees the uncleaned photo.
+ * Best-effort: logs and returns false on failure (including a format sharp
+ * can't decode).
+ */
+export async function rawWithoutMetadata(imageBase64: string): Promise<Buffer> {
+  return sharp(Buffer.from(imageBase64, "base64")).rotate().jpeg({ quality: 92 }).toBuffer();
+}
+
+async function storeRaw(path: string, imageBase64: string): Promise<boolean> {
   try {
     const { error } = await getStorageClient().storage
       .from(RAW_BUCKET)
-      .upload(path, Buffer.from(imageBase64, "base64"), { contentType: mimeType, upsert: true });
+      .upload(path, await rawWithoutMetadata(imageBase64), { contentType: "image/jpeg", upsert: true });
     if (error) throw new Error(error.message);
     return true;
   } catch (err) {
@@ -293,7 +306,7 @@ router.post("/pin-images/contribute/preview", requireUser, async (req: UserReque
         return;
       }
       // The photo as taken, same path, admin-only bucket.
-      await storeRaw(draftPath, body.imageBase64!, body.mimeType ?? "image/jpeg");
+      await storeRaw(draftPath, body.imageBase64!);
     }
     await clearDrafts(userId, draftPath);
 
@@ -353,7 +366,7 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
         res.status(500).json({ error: `Could not store your photo: ${uploadError.message}` });
         return;
       }
-      if (await storeRaw(storagePath, body.imageBase64!, body.mimeType ?? "image/jpeg")) {
+      if (await storeRaw(storagePath, body.imageBase64!)) {
         rawStoragePath = storagePath;
       }
     }

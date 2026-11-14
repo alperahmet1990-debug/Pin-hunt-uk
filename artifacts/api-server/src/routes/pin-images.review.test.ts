@@ -159,6 +159,14 @@ describe("admin photo review", () => {
       expect(state.updatedPins).toHaveLength(1);
     });
 
+    it.each(["rejected", "approved"])("refuses to approve a row that is already %s", async (status) => {
+      state.image = pendingImage({ status });
+      const res = await approve({ replaceExisting: true });
+      expect(res.status).toBe(400);
+      expect(state.updatedPins).toEqual([]);
+      expect(state.reviewed).toEqual([]);
+    });
+
     it("is safe to re-run after a partial failure that already set the pin's photo", async () => {
       state.pinImageUrl = `${PUBLIC_BASE}pin-uuid/contributed-img-1.jpg`;
       const res = await approve();

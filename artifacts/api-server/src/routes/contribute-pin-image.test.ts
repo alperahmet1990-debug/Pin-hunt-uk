@@ -1,5 +1,6 @@
 import request from "supertest";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import sharp from "sharp";
+import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 // Photo contribution: checks that run before the paid Pixian clean-up (#472).
 // All upstreams are mocked: no real Supabase, Pixian or storage traffic.
@@ -75,11 +76,23 @@ vi.mock("../services/watermark", () => ({ watermarkPinPhoto: async (b: Buffer) =
 import app from "../app";
 import { PixianTimeoutError } from "../services/pixian";
 
+// Real JPEGs: the raw original is re-encoded, so it must decode. PHOTO
+// carries EXIF with a GPS position, like a phone photo would.
+let PHOTO = "";
+let OTHER_PHOTO = "";
+beforeAll(async () => {
+  const make = (bg: string) => sharp({ create: { width: 40, height: 30, channels: 3, background: bg } }).jpeg();
+  PHOTO = (await make("#88aacc")
+    .withExif({ IFD0: { Make: "TestCam" }, IFD3: { GPSLatitudeRef: "N", GPSLatitude: "51/1 30/1 0/1" } })
+    .toBuffer()).toString("base64");
+  OTHER_PHOTO = (await make("#cc8844").toBuffer()).toString("base64");
+});
+
 const preview = (body: Record<string, unknown> = {}) =>
   request(app)
     .post("/api/pin-images/contribute/preview")
     .set("Authorization", "Bearer test-token")
-    .send({ pinId: "PHUK-00000001", imageBase64: "AAAA", consentGranted: true, ...body });
+    .send({ pinId: "PHUK-00000001", imageBase64: PHOTO, consentGranted: true, ...body });
 
 describe("POST /api/pin-images/contribute/preview", () => {
   beforeEach(() => {
@@ -104,10 +117,21 @@ describe("POST /api/pin-images/contribute/preview", () => {
   it("keeps the photo as taken in the admin-only raw bucket, and never returns it", async () => {
     const res = await preview();
     expect(res.status).toBe(200);
-    expect(state.raw.get(res.body.draftPath)).toEqual(Buffer.from("AAAA", "base64"));
+    const raw = state.raw.get(res.body.draftPath)!;
+    const meta = await sharp(raw).metadata();
+    expect([meta.format, meta.width, meta.height]).toEqual(["jpeg", 40, 30]);
     expect(state.drafts.get(res.body.draftPath)).toEqual(Buffer.from([9, 9, 9]));
     expect(Object.keys(res.body).sort()).toEqual(["draftPath", "previewBase64"]);
     expect(JSON.stringify(res.body)).not.toContain("pin-contributed-raw");
+  });
+
+  it("strips EXIF (GPS location, device) from the raw original before storing it", async () => {
+    expect((await sharp(Buffer.from(PHOTO, "base64")).metadata()).exif).toBeDefined();
+    const res = await preview();
+    const meta = await sharp(state.raw.get(res.body.draftPath)!).metadata();
+    expect(meta.exif).toBeUndefined();
+    expect(meta.xmp).toBeUndefined();
+    expect(meta.iptc).toBeUndefined();
   });
 
   it("refuses an unknown pin without calling Pixian", async () => {
@@ -133,7 +157,7 @@ describe("POST /api/pin-images/contribute/preview", () => {
 
   it("keeps only the latest draft when a different photo is previewed", async () => {
     await preview();
-    await preview({ imageBase64: "BBBB" });
+    await preview({ imageBase64: OTHER_PHOTO });
     expect(state.pixianCalls).toBe(2);
     expect(state.drafts.size).toBe(1);
     expect(state.raw.size).toBe(1);

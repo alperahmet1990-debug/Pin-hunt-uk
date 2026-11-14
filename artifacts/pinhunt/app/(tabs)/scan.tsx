@@ -421,7 +421,9 @@ export default function ScanScreen() {
     sendOutcome(pin.id);
     markViewed(pin.id);
     keepResultOnLeave.current = true;
-    setScanPhotoForContribution({ pinId: pin.id, uri: captured.uri, base64: captured.base64, mimeType: captured.mimeType });
+    setScanPhotoForContribution({
+      pinId: pin.id, userId: session?.user?.id, uri: captured.uri, base64: captured.base64, mimeType: captured.mimeType,
+    });
     router.push({ pathname: '/contribute-image/[pinId]', params: { pinId: pin.id, from: 'scan' } });
   };
 

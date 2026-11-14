@@ -7,6 +7,7 @@ import React from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { TradeCollectionUpdateSheet } from '../components/TradeCollectionUpdateSheet';
+import { UkAskingChip } from '../components/UkAskingChip';
 
 let mockTrade: Record<string, unknown> = {};
 const mockRestore = jest.fn();
@@ -38,8 +39,9 @@ jest.mock('@/lib/supabase', () => ({
   supabase: { channel: () => ({ on() { return this; }, subscribe() { return this; } }), removeChannel: jest.fn() },
 }));
 jest.mock('@/hooks/useMarketplace', () => ({ useMarketplace: () => ({ repo: mockRepo, userId: 'u1' }) }));
+let mockReady = true;
 jest.mock('@/context/CollectionContext', () => ({
-  useCollection: () => ({ collection: mockCollection, restoreEntries: mockRestore }),
+  useCollection: () => ({ collection: mockCollection, restoreEntries: mockRestore, ready: mockReady }),
 }));
 jest.mock('@/context/PinCatalogueContext', () => ({ usePinCatalogue: () => ({ pins: [], ensurePins: () => Promise.resolve() }) }));
 jest.mock('@/components/ui/Toast', () => ({ useToast: () => ({ show: mockToast, hide: jest.fn() }) }));
@@ -60,6 +62,7 @@ beforeEach(async () => {
   mockToast.mockClear();
   await AsyncStorage.clear();
   mockTrade = completed;
+  mockReady = true;
   globalThis.fetch = jest.fn(() => Promise.resolve({
     ok: true,
     json: () => Promise.resolve({ values: {
@@ -149,6 +152,18 @@ describe("A trade's update can't be applied twice (QA finding)", () => {
     expect(await AsyncStorage.getItem(ANSWERED)).toBeNull();
   }, 30_000);
 
+  it('waits for the collection to sync before opening by itself', async () => {
+    mockReady = false;
+    const TradeScreen = require('../app/trade/[id]').default;
+    const view = await render(<TradeScreen />);
+    await settle();
+    expect(screen.queryByRole('header', { name: 'Update your collection?' })).toBeNull();
+    mockReady = true;
+    await view.rerender(<TradeScreen />);
+    await settle();
+    expect(screen.getByRole('header', { name: 'Update your collection?' })).toBeTruthy();
+  }, 30_000);
+
   it("a collection sync while the sheet is open doesn't re-tick a row", async () => {
     const rows = [
       { key: 'give:A:1', pinhuntId: 'A', title: 'Pin A', side: 'give' as const, quantity: 1, action: 'Remove from your collection' },
@@ -162,6 +177,12 @@ describe("A trade's update can't be applied twice (QA finding)", () => {
 });
 
 describe('UK asking chip (WP1 step 3)', () => {
+  it('compact form (Find Trades tiles) is short on screen but says "UK asking" aloud', async () => {
+    await render(<UkAskingChip pinhuntId="PHUK-1" compact />);
+    await waitFor(() => expect(screen.getByText('UK ~£14')).toBeTruthy(), { timeout: 2000 });
+    expect(screen.getByLabelText('UK asking ~£14')).toBeTruthy();
+  }, 30_000);
+
   it('shows on the agreed pins only for a confident UK value', async () => {
     const TradeScreen = require('../app/trade/[id]').default;
     await render(<TradeScreen />);

@@ -45,6 +45,12 @@ interface CollectionContextValue {
    * set (#136). Not called for sync/hydration. Returns an unsubscribe.
    */
   onPinsAdded: (listener: (pinIds: string[]) => void) => () => void;
+  /**
+   * True once the signed-in collector's collection has been pulled from the
+   * server this session (always true without Supabase or when signed out).
+   * For prompts that must not act on a half-synced collection.
+   */
+  ready: boolean;
 }
 
 const isHeld = (status?: CollectionStatus) => status === 'owned' || status === 'for_trade';
@@ -173,6 +179,7 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
   // *different* account was previously synced here, local data is cleared
   // first so collections never bleed between accounts.
   const pulledForUserRef = useRef<string | null>(null);
+  const [pulledUserId, setPulledUserId] = useState<string | null>(null);
 
   useEffect(() => {
     if (!loaded || !isSupabaseConfigured) return;
@@ -181,6 +188,7 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
       // Signed out: if the local collection belonged to a synced account,
       // clear it so the next user (or guest) doesn't inherit it.
       pulledForUserRef.current = null;
+      setPulledUserId(null);
       pendingOwnerRef.current = null;
       pushQueue.clear();
       AsyncStorage.getItem(OWNER_KEY).then(owner => {
@@ -251,6 +259,7 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
       }
 
       pulledForUserRef.current = user.id;
+      setPulledUserId(user.id);
       AsyncStorage.setItem(OWNER_KEY, user.id);
       setCollectionOwnerId(user.id);
       setCollection(prev => {
@@ -511,6 +520,7 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
         markViewed,
         estimatedValue,
         onPinsAdded,
+        ready: !isSupabaseConfigured || !user || pulledUserId === user.id,
       }}
     >
       {children}

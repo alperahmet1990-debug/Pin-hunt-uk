@@ -328,7 +328,8 @@ export default function TradeScreen() {
   const [chatId,         setChatId]         = useState<string | null | undefined>(undefined);
   const { pins: cataloguePins, ensurePins } = usePinCatalogue();
   // After a completed trade: offer "Update your collection?" once (WP1 step 3).
-  const { collection, restoreEntries } = useCollection();
+  // `ready`: don't offer the update on a half-synced collection (QA note on #600).
+  const { collection, restoreEntries, ready: collectionReady = true } = useCollection();
   const toast = useToast();
   const [updateSheetOpen, setUpdateSheetOpen] = useState(false);
   const [bannerDismissed, setBannerDismissed] = useState(false);
@@ -513,12 +514,13 @@ export default function TradeScreen() {
       .then(([applied, answered]) => {
         if (cancelled) return;
         setUpdateApplied(!!applied);
-        // Offered by itself until the collector answers it (update or Not Now).
-        if (!applied && !answered) setUpdateSheetOpen(true);
+        // Offered by itself until the collector answers it (update or Not Now),
+        // and only once their collection has synced.
+        if (!applied && !answered && collectionReady) setUpdateSheetOpen(true);
       })
       .catch(() => { if (!cancelled) setUpdateApplied(false); });
     return () => { cancelled = true; };
-  }, [completed, hasUpdateRows, userId, tradeIdForOffer]);
+  }, [completed, hasUpdateRows, userId, tradeIdForOffer, collectionReady]);
   const rememberAnswered = () => {
     if (userId && tradeIdForOffer) {
       AsyncStorage.setItem(collectionUpdateOfferedKey(userId, tradeIdForOffer), new Date().toISOString()).catch(() => {});

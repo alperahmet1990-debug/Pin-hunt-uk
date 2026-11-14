@@ -295,7 +295,7 @@ function IsoCard({ opportunity, hasMatch, colors, onPress }: {
     >
       <View style={[styles.tileImageWrap, { backgroundColor: colors.homeAqua }]}>
         <PinImage source={pinImageSource(opportunity.imageUrl)} style={styles.tileImage} contentFit="contain" />
-        <UkAskingChip pinhuntId={opportunity.pinId} style={styles.tileChip} />
+        <UkAskingChip pinhuntId={opportunity.pinId} style={styles.tileChip} compact />
         {hasMatch && (
           <View style={[styles.matchDot, { backgroundColor: colors.homeCoral }]}>
             <Feather name="repeat" size={9} color={colors.homeSurface} />
@@ -432,7 +432,7 @@ function DiscoveryTile({ item, colors, onPress }: { item: DiscoveryItem; colors:
     >
       <View style={[styles.tileImageWrap, { backgroundColor: colors.homeAqua }]}>
         <PinImage source={pinImageSource(item.imageUrl)} style={styles.tileImage} contentFit="contain" />
-        <UkAskingChip pinhuntId={item.pinId} style={styles.tileChip} />
+        <UkAskingChip pinhuntId={item.pinId} style={styles.tileChip} compact />
       </View>
       <Text numberOfLines={2} style={[styles.tileTitle, { color: colors.homeInk }]}>{item.title}</Text>
       <Text numberOfLines={1} style={[styles.tileMeta, { color: colors.homeMuted }]}>

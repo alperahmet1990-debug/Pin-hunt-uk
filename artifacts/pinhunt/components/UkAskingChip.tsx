@@ -9,11 +9,13 @@ import { StyleSheet, Text, View, type StyleProp, type ViewStyle } from 'react-na
 import { useColors } from '@/hooks/useColors';
 import { ukAskingLine, useLatestMarketValue } from '@/hooks/useMarketValue';
 
-export function UkAskingChip({ pinhuntId, style, inverse }: {
+export function UkAskingChip({ pinhuntId, style, inverse, compact }: {
   pinhuntId: string | undefined;
   style?: StyleProp<ViewStyle>;
   /** On a coloured background (my own chat bubble). */
   inverse?: boolean;
+  /** "UK ~£14" for small tiles; screen readers still hear "UK asking". */
+  compact?: boolean;
 }) {
   const colors = useColors();
   const line = ukAskingLine(useLatestMarketValue(pinhuntId));
@@ -21,9 +23,11 @@ export function UkAskingChip({ pinhuntId, style, inverse }: {
   return (
     <View
       testID={`uk-asking-${pinhuntId}`}
+      accessible
+      accessibilityLabel={line}
       style={[styles.chip, { backgroundColor: inverse ? colors.homeSurface + '33' : colors.homeSurface, borderColor: inverse ? 'transparent' : colors.homeLine }, style]}
     >
-      <Text numberOfLines={1} style={[styles.text, { color: inverse ? colors.homeSurface : colors.homeInk }]}>{line}</Text>
+      <Text numberOfLines={1} style={[styles.text, { color: inverse ? colors.homeSurface : colors.homeInk }]}>{compact ? line.replace('UK asking ', 'UK ') : line}</Text>
     </View>
   );
 }

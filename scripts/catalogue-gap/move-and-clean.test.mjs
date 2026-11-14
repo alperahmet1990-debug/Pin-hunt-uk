@@ -29,3 +29,11 @@ test("generated SQL: production guards, IDs only, preview reads only", () => {
   assert.match(applySql(links), /delete from public\.pins p using _old o/);
   assert.doesNotMatch(applySql(links), /storage\.objects/, "photo files are never deleted");
 });
+
+test("unmatched Collectible PinTrader pins are kept, not deleted", () => {
+  const apply = applySql([{ old: "PHUK-00013001", pin: "PHUK-10000001" }]);
+  assert.match(apply, /create temp table _keep/);
+  assert.match(apply, /p\.catalogue_source = 'collectible_pintrader'/);
+  assert.match(apply, /not exists \(select 1 from _keep k where k\.id = p\.id\)/, "kept pins are excluded from the delete list");
+  assert.match(previewSql([]), /'ctp_pins_kept_no_match'/);
+});

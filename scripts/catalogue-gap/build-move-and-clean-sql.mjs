@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 // Builds the production MOVE-AND-CLEAN SQL from the confirmed photo links
 // (docs/catalogue-sync/PRODUCTION-CATALOGUE-RESET.md, steps 5-6; decision A).
+// Collectible PinTrader pins with NO confirmed Pin & Pop match are KEPT as they
+// are (maintainer, 14 Nov 2026): Pin & Pop may simply not list them.
 //
 //   node scripts/catalogue-gap/build-move-and-clean-sql.mjs <out-dir> <links files...>
 //
@@ -72,8 +74,19 @@ function setup(links, { readOnly }) {
     join public.pins o on o.pinhunt_id = m.old_phid and coalesce(o.catalogue_source, '') <> 'pin_and_pop'
     join public.pins n on n.pinhunt_id = m.new_phid and n.catalogue_source = 'pin_and_pop';
 
+  -- Collectible PinTrader pins with no confirmed match are KEPT, with their
+  -- photo, sets and everyone's collection entries (maintainer, 14 Nov 2026).
+  create temp table _keep on commit drop as
+  select p.id, p.pinhunt_id from public.pins p
+   where coalesce(p.catalogue_source, '') <> 'pin_and_pop'
+     and (p.catalogue_source = 'collectible_pintrader'
+          or exists (select 1 from public.pin_external_ids e where e.pin_id = p.id and e.source = 'collectible_pintrader'))
+     and not exists (select 1 from _mm m where m.old_id = p.id);
+
+  -- Everything else that isn't Pin & Pop is the old catalogue to remove.
   create temp table _old on commit drop as
-  select id, pinhunt_id from public.pins where coalesce(catalogue_source, '') <> 'pin_and_pop';
+  select id, pinhunt_id from public.pins p where coalesce(catalogue_source, '') <> 'pin_and_pop'
+     and not exists (select 1 from _keep k where k.id = p.id);
 `;
 }
 
@@ -81,7 +94,8 @@ const SUMMARY_COUNTS = `
     'links_in_file', (select count(*) from _links),
     'old_pins_mapped', (select count(*) from _mm),
     'links_not_resolved', (select count(*) from _map) - (select count(*) from _mm),
-    'old_pins_total', (select count(*) from _old),`;
+    'ctp_pins_kept_no_match', (select count(*) from _keep),
+    'old_pins_to_delete_active', (select count(*) from public.pins p join _old o on o.id = p.id where p.catalogue_status is distinct from 'archived'),`;
 
 export function previewSql(links) {
   return `-- MOVE-AND-CLEAN PREVIEW (READ-ONLY), production
@@ -97,7 +111,8 @@ ${setup(links, { readOnly: true })}
   select jsonb_build_object(${SUMMARY_COUNTS}
     'photos_to_attach', (select count(distinct new_id) from _mm where photo and old_image like '%/storage/v1/object/public/pin-catalogue/collectible-pintrader/%'),
     'pin_and_pop_pins_already_with_photo', (select count(distinct m.new_id) from _mm m join public.pins n on n.id = m.new_id where m.photo and n.image_url is not null),
-    'collection_entries_on_old_pins', (select count(*) from public.user_pins up join _old o on o.id = up.pin_id),
+    'collection_entries_kept_on_ctp_pins', (select count(*) from public.user_pins up join _keep k on k.id = up.pin_id),
+    'collection_entries_on_pins_to_delete', (select count(*) from public.user_pins up join _old o on o.id = up.pin_id),
     'collection_entries_to_move', (select count(*) from public.user_pins up join _mm m on m.old_id = up.pin_id
         where not exists (select 1 from public.user_pins x where x.user_id = up.user_id and x.pin_id = m.new_id)),
     'collection_entries_merged_into_existing', (select count(*) from public.user_pins up join _mm m on m.old_id = up.pin_id
@@ -112,8 +127,12 @@ ${setup(links, { readOnly: true })}
     'community_posts_link_cleared', (select count(*) from public.community_posts c join _old o on o.id = c.linked_pin_id where not exists (select 1 from _mm m where m.old_id = c.linked_pin_id)),
     'conversations_relinked', (select count(*) from public.conversations c join _mm m on m.old_id = c.context_pin_id),
     'trade_items_link_cleared_kept_as_history', (select count(*) from public.trade_items t join _old o on o.id = t.pin_id),
-    'tracked_old_sets_removed', (select count(*) from public.user_tracked_sets u join public.pin_sets s on s.id = u.set_id where coalesce(s.catalogue_source, '') <> 'pin_and_pop'),
-    'old_pin_sets_to_delete', (select count(*) from public.pin_sets where coalesce(catalogue_source, '') <> 'pin_and_pop'),
+    'tracked_old_sets_removed', (select count(*) from public.user_tracked_sets u join public.pin_sets s on s.id = u.set_id where coalesce(s.catalogue_source, '') <> 'pin_and_pop'
+        and not exists (select 1 from public.pin_set_memberships ms join _keep k on k.id = ms.pin_id where ms.set_id = s.id)),
+    'old_pin_sets_to_delete', (select count(*) from public.pin_sets s where coalesce(s.catalogue_source, '') <> 'pin_and_pop'
+        and not exists (select 1 from public.pin_set_memberships ms join _keep k on k.id = ms.pin_id where ms.set_id = s.id)),
+    'old_pin_sets_kept', (select count(*) from public.pin_sets s where coalesce(s.catalogue_source, '') <> 'pin_and_pop'
+        and exists (select 1 from public.pin_set_memberships ms join _keep k on k.id = ms.pin_id where ms.set_id = s.id)),
     'old_pins_to_delete', (select count(*) from _old)
   ) into out;
   perform set_config('pinhunt.move_preview', out::text, false);
@@ -135,9 +154,12 @@ export function applySql(links) {
 --   2. Each matched Pin & Pop pin that has no photo gets the Collectible
 --      PinTrader photo: the SAME file in pin-catalogue/collectible-pintrader/,
 --      nothing copied, plus a pin_images record of where it came from.
---   3. Decision A: collection entries on old pins with NO match are deleted.
---   4. The old catalogue is deleted: old pins (their images, links, market
---      rows and caches go with them), then old sets. Trade items keep their
+--   3. Collectible PinTrader pins with NO match are KEPT as they are, with
+--      their photo, sets and everyone's entries (Pin & Pop may not list them).
+--   4. Decision A: entries on the remaining old pins (archived seed pins and
+--      any other non-Collectible-PinTrader pin) are deleted.
+--   5. Those old pins are deleted (their images, links, market rows and
+--      caches go with them), then old sets left with no pins. Trade items keep their
 --      title and old PinHunt ID as history; only their pin link clears.
 --      Photo FILES are never deleted.
 --
@@ -193,7 +215,8 @@ ${setup(links, { readOnly: false })}
     from (select distinct on (new_id) * from _mm where photo and old_image like '%/storage/v1/object/public/pin-catalogue/collectible-pintrader/%' order by new_id, old_phid) m
     join public.pins n on n.id = m.new_id and n.image_url = m.old_image;
 
-  -- 3. Decision A: entries on old pins with no match are deleted (their locations cascade).
+  -- 3. Decision A: entries on old pins being removed are deleted (their locations
+  --    cascade). Entries on kept Collectible PinTrader pins (_keep) are untouched.
   delete from public.user_pins up using _old o where up.pin_id = o.id;
   get diagnostics n_deleted = row_count;
 
@@ -209,9 +232,10 @@ ${setup(links, { readOnly: false })}
   out := jsonb_build_object(
     'collection_entries_moved', n_moved, 'collection_entries_merged', n_merged, 'collection_entries_deleted', n_deleted,
     'photos_attached', n_photos, 'old_pins_deleted', n_pins, 'old_sets_deleted', n_sets,
+    'ctp_pins_kept', (select count(*) from _keep),
     'pins_now', (select count(*) from public.pins),
     'pin_and_pop_pins_with_photo', (select count(*) from public.pins where catalogue_source = 'pin_and_pop' and image_url is not null),
-    'old_pins_left', (select count(*) from public.pins where coalesce(catalogue_source, '') <> 'pin_and_pop'));
+    'non_pin_and_pop_pins_left', (select count(*) from public.pins where coalesce(catalogue_source, '') <> 'pin_and_pop'));
   perform set_config('pinhunt.move_result', out::text, false);
 end $$;
 

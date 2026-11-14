@@ -28,7 +28,7 @@
 //                       "api": { "<path suffix>": { status, body } } answers matching API
 //                       requests locally (key may start with a method, e.g. "POST /x"); any
 //                       other API request is still blocked. "scrollTo": "<text>" scrolls the
-//                       element with that exact text into view before the capture.
+//                       element with that exact text to the top of the view before the capture.
 //   --route name=/path  extra ad-hoc route (repeatable)
 //   --viewports 390x844,320x568   --schemes light,dark
 //   --out <dir>         default <repo>/.screenshots
@@ -188,11 +188,11 @@ import { apiReply } from './lib/apiReply.mjs';
 
 const CORS = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': '*', 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS' };
 
-// Scroll the innermost element with exactly this text into view (centre). Runs in the page.
+// Scroll the innermost element with exactly this text to the top of the view. Runs in the page.
 function scrollToText(text) {
   const el = [...document.querySelectorAll('body *')].find(e =>
     e.childElementCount === 0 && e.textContent.trim() === text && e.getBoundingClientRect().width > 0);
-  el?.scrollIntoView({ block: 'center' });
+  el?.scrollIntoView({ block: 'start' });
   return Boolean(el);
 }
 

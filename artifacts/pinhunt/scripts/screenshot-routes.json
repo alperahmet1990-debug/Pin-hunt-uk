@@ -164,14 +164,14 @@
           "checkedAt": null,
           "nextRequestAt": null,
           "requestsOpen": true,
-              "markets": [
-                "UK",
-                "US"
-              ]
+          "markets": [
+            "UK",
+            "US"
+          ]
         }
       }
     },
-    "scrollTo": "RECENT SOLD PRICES"
+    "scrollTo": "Where it lives"
   },
   {
     "name": "pin-sold-get-price",
@@ -190,14 +190,14 @@
           "checkedAt": null,
           "nextRequestAt": null,
           "requestsOpen": true,
-              "markets": [
-                "UK",
-                "US"
-              ]
+          "markets": [
+            "UK",
+            "US"
+          ]
         }
       }
     },
-    "scrollTo": "RECENT SOLD PRICES"
+    "scrollTo": "Where it lives"
   },
   {
     "name": "pin-sold-pending",
@@ -216,14 +216,14 @@
           "checkedAt": null,
           "nextRequestAt": null,
           "requestsOpen": true,
-              "markets": [
-                "UK",
-                "US"
-              ]
+          "markets": [
+            "UK",
+            "US"
+          ]
         }
       }
     },
-    "scrollTo": "RECENT SOLD PRICES"
+    "scrollTo": "Where it lives"
   },
   {
     "name": "pin-sold-no-sales",
@@ -242,14 +242,14 @@
           "checkedAt": "2026-11-14T10:00:00Z",
           "nextRequestAt": "2026-12-14T10:00:00Z",
           "requestsOpen": true,
-              "markets": [
-                "UK",
-                "US"
-              ]
+          "markets": [
+            "UK",
+            "US"
+          ]
         }
       }
     },
-    "scrollTo": "RECENT SOLD PRICES"
+    "scrollTo": "Where it lives"
   },
   {
     "name": "pin-sold-off",
@@ -268,7 +268,7 @@
         }
       }
     },
-    "scrollTo": "VALUE"
+    "scrollTo": "Where it lives"
   },
   {
     "name": "set-detail",

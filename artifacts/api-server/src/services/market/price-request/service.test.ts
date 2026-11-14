@@ -8,14 +8,14 @@
  */
 import { describe, expect, it, vi } from "vitest";
 import type { MarketCode } from "@workspace/pin-repository";
-import { BudgetExceededError, SoldgraphHttpError } from "../../soldgraph/errors";
+import { BudgetExceededError, ProviderDisabledError, SoldgraphHttpError } from "../../soldgraph/errors";
 import type { SoldgraphClient, SoldgraphSearchResult } from "../../soldgraph/client";
 import { fixturePin, readFixture } from "../__fixtures__/load";
 import type { MarketValuationV2 } from "../valuation-v2";
 import type { RefreshResult } from "../refresh/refresh";
 import type { BudgetStatus, MarketListingRow, PinRef, RefreshStore, SourceRow } from "../refresh/types";
 import { priceRequestLimits, requestSources } from "./config";
-import { priceRequestStatus, startPriceRequest, summarise, type PriceRequestDeps } from "./service";
+import { cancellableClient, priceRequestStatus, startPriceRequest, summarise, type PriceRequestDeps } from "./service";
 import type { ClaimDecision, ClaimInput, FinishInput, PriceRequestRecord, PriceRequestStore } from "./types";
 
 const NOW = Date.UTC(2026, 9, 18, 12, 0, 0);
@@ -293,6 +293,34 @@ describe("a request", () => {
     expect(log.rows[0]).toMatchObject({ status: "failed", outcome: "error" });
     // Not cached, so the pin can be asked again.
     expect((await ask(deps)).kind).toBe("started");
+  });
+
+  it("starts no further paid search from a run once its deadline has passed", async () => {
+    // The UK search hangs past the deadline; the US search must then never be sent.
+    let releaseUk!: () => void;
+    const ukHang = new Promise<void>(r => { releaseUk = r; });
+    const { deps, sg } = setup();
+    const inner = sg.client;
+    deps.createClient = () => ({
+      search: async (route: string, params?: Record<string, unknown>, opts?: unknown) => {
+        if (params?.country !== "us") await ukHang;
+        return (inner.search as (...a: unknown[]) => Promise<SoldgraphSearchResult<unknown>>)(route, params, opts);
+      },
+    }) as unknown as SoldgraphClient;
+    deps.runDeadlineMs = 20;
+    const r = await ask(deps);
+    if (r.kind === "started") expect(await r.done).toMatchObject({ status: "failed", outcome: "error" });
+    releaseUk();
+    await new Promise(res => setTimeout(res, 20));
+    expect(sg.calls.map(c => c.country)).toEqual(["uk"]);
+  });
+
+  it("cancellableClient refuses once cancelled, with the kill-switch error", async () => {
+    let off = false;
+    const c = cancellableClient(fakeSoldgraph().client, () => off);
+    await expect(c.search("r", { country: "uk" })).resolves.toMatchObject({ pages: 1 });
+    off = true;
+    await expect(c.search("r", { country: "uk" })).rejects.toBeInstanceOf(ProviderDisabledError);
   });
 
   it("frees a pin whose request was abandoned (server restart) after the pending timeout", async () => {

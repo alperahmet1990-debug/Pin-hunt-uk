@@ -30,6 +30,7 @@
  */
 import type { MarketCode } from "@workspace/pin-repository";
 import type { SoldgraphClient } from "../../soldgraph/client";
+import { ProviderDisabledError } from "../../soldgraph/errors";
 import { valuationV2Enabled } from "../valuation-v2-service";
 import {
   DEFAULT_ACTIVE_TTL_DAYS,
@@ -74,6 +75,21 @@ export interface PriceRequestDeps {
  * a healthy run (at most 2 searches) finishes long before this.
  */
 export const RUN_DEADLINE_MS = 5 * 60_000;
+
+/**
+ * A client that refuses every search once `cancelled()` is true. After the
+ * deadline no new paid search starts; a search already in flight still ends
+ * within the client's own 60-second deadline. ProviderDisabledError makes the
+ * refresh stop cleanly, the same as the kill switch.
+ */
+export function cancellableClient(client: SoldgraphClient, cancelled: () => boolean): SoldgraphClient {
+  return {
+    search(route, params, opts) {
+      if (cancelled()) return Promise.reject(new ProviderDisabledError("disabled"));
+      return client.search(route, params, opts);
+    },
+  };
+}
 
 class RunDeadlineError extends Error {
   constructor() {
@@ -221,11 +237,17 @@ async function runClaimed(
   const log = deps.log ?? silentLog;
   let summary: FinishSummary;
   let timer: ReturnType<typeof setTimeout> | undefined;
+  let cancelled = false;
+  const make = refreshDeps.createClient;
+  const runDeps: RefreshDeps = make ? { ...refreshDeps, createClient: () => cancellableClient(make(), () => cancelled) } : refreshDeps;
   try {
     const deadline = new Promise<never>((_, reject) => {
-      timer = setTimeout(() => reject(new RunDeadlineError()), deps.runDeadlineMs ?? RUN_DEADLINE_MS);
+      timer = setTimeout(() => {
+        cancelled = true; // no further paid search from this run
+        reject(new RunDeadlineError());
+      }, deps.runDeadlineMs ?? RUN_DEADLINE_MS);
     });
-    const run = runRefresh({ ...refreshOptions(pinhuntId, sources), apply: true, creditCeiling: worstCaseCredits }, refreshDeps);
+    const run = runRefresh({ ...refreshOptions(pinhuntId, sources), apply: true, creditCeiling: worstCaseCredits }, runDeps);
     run.catch(() => {}); // a run that loses the race must not become an unhandled rejection
     const r = await Promise.race([run, deadline]);
     summary = summarise(r, requestMarkets(deps.env));

@@ -23,7 +23,7 @@ function files(dir) {
   ];
   const estPath = path.join(dir, "estimate.csv");
   fs.writeFileSync(estPath, `part,chunk,payload\nsummary,0,"{}"\nrows,1,${q(estimate)}\n`);
-  const pins = [1, 2, 3].map((n) => ({ pinhunt_id: `PHUK-0000000${n}`, id: `c${n}`, title: `Series - Pin ${n}`, collection: "Series", release_year: "2010", edition_type: "Limited Edition", image_url: `https://${PROD}.supabase.co/storage/v1/object/public/pin-catalogue/collectible-pintrader/${n}.jpg`, content_md5: "m", content: "{}" }));
+  const pins = [1, 2, 3].map((n) => ({ pinhunt_id: `PHUK-0000000${n}`, id: `c${n}`, title: n === 2 ? "Spacesuits - Pin 2" : `Series - Pin ${n}`, collection: "Series", release_year: "2010", edition_type: "Limited Edition", image_url: `https://${PROD}.supabase.co/storage/v1/object/public/pin-catalogue/collectible-pintrader/${n}.jpg`, content_md5: "m", content: "{}" }));
   const prodPath = path.join(dir, "production.csv");
   fs.writeFileSync(prodPath, ["part,chunk,items,payload", `summary,1,1,${q({ environment: "production", pins: { total: 3 }, pin_images: [] })}`, `pins,1,3,${q(pins)}`, `images,1,0,${q([])}`].join("\n") + "\n");
   return { estPath, prodPath };
@@ -35,11 +35,17 @@ function fakeFetch(log) {
     log.push({ url: String(url), method: opts.method ?? "GET", body: opts.body ?? null });
     const u = String(url);
     if (u.includes(".supabase.co/rest/v1/pins?") && u.includes("title=ilike.")) return { ok: true, status: 200, json: async () => [] };
+    if (u.includes(".supabase.co/rest/v1/rpc/search_catalogue_pins?")) {
+      // the wider search finds the real match for photo 2 by its series word
+      const hit = decodeURIComponent(u).includes('"spacesuit"') ? [{ id: "u9", pinhunt_id: "PHUK-10000009", title: "Spacesuit Pin 2", collection: "Series", release_year: 2010, edition_type: "Limited Edition", limited_edition_size: null }] : [];
+      pins["PHUK-10000009"] = "u9";
+      return { ok: true, status: 200, json: async () => hit };
+    }
     if (u.includes(".supabase.co/rest/v1/pins?")) {
       return { ok: true, status: 200, json: async () => Object.entries(pins).filter(([phid]) => decodeURIComponent(u).includes(phid)).map(([phid, id]) => ({ id, pinhunt_id: phid, title: "Pin", collection: "Series", release_year: 2010, edition_type: "Limited Edition", limited_edition_size: null })) };
     }
     if (u.includes(".supabase.co/rest/v1/pin_images?")) {
-      return { ok: true, status: 200, json: async () => ["u1", "u2", "u3"].filter((id) => decodeURIComponent(u).includes(id)).map((id) => ({ pin_id: id, image_url: `https://cdn.pinandpop.example/${id}.jpg` })) };
+      return { ok: true, status: 200, json: async () => ["u1", "u2", "u3", "u9"].filter((id) => decodeURIComponent(u).includes(id)).map((id) => ({ pin_id: id, image_url: `https://cdn.pinandpop.example/${id}.jpg` })) };
     }
     if (u.includes("openai.com")) {
       const req = JSON.parse(opts.body);
@@ -98,6 +104,23 @@ test("an empty model line in the settings file falls back to the default model, 
   const failing = async (url, opts) => (String(url).includes("openai.com") ? { ok: false, status: 401, json: async () => ({ error: { message: "Incorrect API key provided" } }) } : base(url, opts));
   await main(["--estimate", estPath, "--production", prodPath, "--out", path.join(dir, "out2"), "--run"], env, failing, (m) => logs.push(m));
   assert.ok(logs.some((m) => /2 of 2 AI calls failed\. First error: OpenAI error 401/.test(m)));
+});
+
+test("wider search adds candidates by series words; --retry re-runs only photos not marked right", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "ctp-"));
+  const { estPath, prodPath } = files(dir);
+  const answers = path.join(dir, "my-answers.json");
+  fs.writeFileSync(answers, JSON.stringify([{ ctp: "PHUK-00000001", verdict: "right" }, { ctp: "PHUK-00000002", verdict: "wrong" }]));
+  const calls = [];
+  const { results } = await main(["--estimate", estPath, "--production", prodPath, "--out", path.join(dir, "out"), "--run", "--retry", answers], env, fakeFetch(calls), () => {});
+  assert.deepEqual(results.map((r) => r.ctp.pinhuntId), ["PHUK-00000002"]);
+  assert.ok(results[0].candidates.some((c) => c.pinhuntId === "PHUK-10000009"), "the series-word search found the extra candidate");
+  assert.ok(calls.filter((c) => c.url.includes(".supabase.co")).every((c) => c.method === "GET"), "still read-only");
+});
+
+test("search words drop years, filler words and plural s", async () => {
+  const { searchWords } = await import("../../artifacts/api-server/scripts/ctp-photo-match.mjs");
+  assert.deepEqual(searchWords("Hidden Mickey 2015 WDW - Spacesuits - Goofy"), ["hidden", "mickey", "spacesuit", "goofy"]);
 });
 
 test("refuses a production target", async () => {

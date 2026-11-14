@@ -36,7 +36,7 @@ import { assertStagingTarget } from "./lib/staging-guard.mjs";
 import { parseCsv, sideFromFiles } from "../../../scripts/catalogue-gap/core.mjs";
 
 const OPENAI_CHAT_URL = "https://api.openai.com/v1/chat/completions";
-const MAX_CANDIDATES = 6;
+const MAX_CANDIDATES = 8;
 
 // ── inputs ──────────────────────────────────────────────────────────────────
 
@@ -97,6 +97,13 @@ function supabaseGet(env, fetchImpl) {
 }
 const inList = (vals) => `(${vals.map((v) => `"${String(v).replace(/"/g, '\\"')}"`).join(",")})`;
 const nameOf = (title) => String(title ?? "").replace(/^.* - /, "").trim();
+const STOP = new Set(["the", "and", "with", "pin", "pins", "set", "series", "mystery", "collection", "disney", "of", "a", "in", "on", "for", "chaser", "wdw", "dlr", "dlp", "box"]);
+/** Distinctive search words: lower-case, no punctuation or years, plural "s" trimmed so "Spacesuits" also finds "Spacesuit". */
+export function searchWords(text) {
+  return [...new Set(String(text ?? "").toLowerCase().replace(/[’']/g, "").split(/[^a-z0-9]+/)
+    .filter((w) => w.length >= 3 && !STOP.has(w) && !/^\d{4}$/.test(w))
+    .map((w) => (w.length > 4 && w.endsWith("s") && !w.endsWith("ss") ? w.slice(0, -1) : w)))];
+}
 
 export async function loadCandidates(sample, photos, get) {
   const PIN_COLS = "id,pinhunt_id,title,collection,release_year,edition_type,limited_edition_size";
@@ -112,6 +119,36 @@ export async function loadCandidates(sample, photos, get) {
     extra.set(r.ctp_pin, rows.map((p) => p.pinhunt_id));
     for (const p of rows) byPhid.set(p.pinhunt_id, p);
   }
+  // 1b. wider search (search_catalogue_pins, migration 076: every word must
+  //     appear in a title/series/character field): distinctive title words
+  //     with the year, then the name plus one series word at a time, then
+  //     without the year. Ranked by word overlap, best kept.
+  const wide = new Map();
+  for (const r of sample) {
+    const ctp = photos.get(r.ctp_pin);
+    const year = Number(ctp.year) || null;
+    const nameWords = searchWords(nameOf(ctp.title));
+    const seriesWords = searchWords(String(ctp.title).includes(" - ") ? String(ctp.title).replace(/ - [^-]*$/, "") : ctp.series).filter((w) => !nameWords.includes(w));
+    const tries = [];
+    const all = [...new Set([...seriesWords, ...nameWords])];
+    if (all.length) tries.push([all, year]);
+    for (const w of seriesWords.slice(0, 3)) if (nameWords.length) tries.push([[...nameWords, w], year]);
+    if (nameWords.length) tries.push([nameWords, year]);
+    if (all.length) tries.push([all, null]);
+    const found = new Map();
+    for (const [words, yr] of tries) {
+      if (found.size >= 40) break;
+      const qs = `rpc/search_catalogue_pins?p_tokens=${encodeURIComponent(`{${words.map((w) => `"${w}"`).join(",")}}`)}&select=${PIN_COLS}&catalogue_source=eq.pin_and_pop${yr ? `&release_year=eq.${yr}` : ""}&limit=25`;
+      for (const p of await get(qs).catch(() => [])) { found.set(p.pinhunt_id, p); byPhid.set(p.pinhunt_id, p); }
+    }
+    const target = searchWords(`${ctp.title} ${ctp.series ?? ""}`);
+    const score = (p) => {
+      const have = searchWords(`${p.title} ${p.collection ?? ""}`);
+      const overlap = target.filter((w) => have.some((h) => h.includes(w) || w.includes(h))).length;
+      return overlap + (year && p.release_year === year ? 2 : 0);
+    };
+    wide.set(r.ctp_pin, [...found.values()].sort((a, b) => score(b) - score(a)).map((p) => p.pinhunt_id));
+  }
   // 2. the estimate's candidates
   const ids = [...new Set(sample.flatMap(estimateCandidates))].filter((id) => !byPhid.has(id));
   for (let i = 0; i < ids.length; i += 80) {
@@ -126,8 +163,12 @@ export async function loadCandidates(sample, photos, get) {
     }
   }
   return sample.map((r) => {
-    const order = [...new Set([...estimateCandidates(r), ...(extra.get(r.ctp_pin) ?? [])])];
-    const cands = order.map((id) => byPhid.get(id)).filter(Boolean)
+    // Interleave the three sources so each gets a place in the shortlist.
+    const lists = [estimateCandidates(r), wide.get(r.ctp_pin) ?? [], extra.get(r.ctp_pin) ?? []];
+    const order = [];
+    for (let i = 0; order.length < 40 && lists.some((l) => i < l.length); i++) for (const l of lists) if (l[i]) order.push(l[i]);
+    const seen = new Set();
+    const cands = order.filter((id) => !seen.has(id) && seen.add(id)).map((id) => byPhid.get(id)).filter(Boolean)
       .map((p) => ({ pinhuntId: p.pinhunt_id, title: p.title, series: p.collection, year: p.release_year, edition: p.edition_type, le: p.limited_edition_size, imageUrl: img.get(p.id) ?? null }))
       .filter((c) => c.imageUrl)
       .slice(0, MAX_CANDIDATES);
@@ -250,7 +291,15 @@ export async function main(argv = process.argv.slice(2), env = process.env, fetc
 
   const estimate = readEstimate(fs.readFileSync(expand(estimatePath), "utf8"));
   const photos = ctpPhotos(fs.readFileSync(expand(productionPath), "utf8"));
-  const sample = pickSample(estimate, photos, Number(env.CTP_MATCH_SAMPLE ?? 50));
+  // --retry <my-answers.json>: only the photos you didn't mark "right" last time.
+  const retryPath = arg("--retry", argv);
+  let sample;
+  if (retryPath) {
+    const keep = new Set(JSON.parse(fs.readFileSync(expand(retryPath), "utf8")).filter((a) => a.verdict !== "right").map((a) => a.ctp));
+    sample = estimate.filter((r) => keep.has(r.ctp_pin) && photos.has(r.ctp_pin));
+  } else {
+    sample = pickSample(estimate, photos, Number(env.CTP_MATCH_SAMPLE ?? 50));
+  }
   log(`Sample: ${sample.length} photos (${Object.entries(sample.reduce((m, r) => { const k = r.tier.split(" (")[0]; m[k] = (m[k] ?? 0) + 1; return m; }, {})).map(([k, v]) => `${k} ${v}`).join(", ")}).`);
 
   const items = await loadCandidates(sample, photos, supabaseGet(env, fetchImpl));

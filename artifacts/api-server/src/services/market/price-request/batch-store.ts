@@ -33,7 +33,13 @@ export class SupabaseBatchStore implements BatchStore {
     };
     if (q.pinhuntIds) {
       for (const part of chunk(q.pinhuntIds, IN_CHUNK)) {
-        const { data, error } = await this.db.from("pins").select("id, pinhunt_id").in("pinhunt_id", part);
+        // The same filters as the year query: never an archived or unverified pin.
+        const { data, error } = await this.db
+          .from("pins")
+          .select("id, pinhunt_id")
+          .in("pinhunt_id", part)
+          .eq("verification_status", "verified")
+          .neq("catalogue_status", "archived");
         if (error) throw new BatchStoreError("list pins");
         push((data ?? []) as Row[]);
       }

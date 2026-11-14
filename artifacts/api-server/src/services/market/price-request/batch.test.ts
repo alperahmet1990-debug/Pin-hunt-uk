@@ -24,6 +24,7 @@ const ON = {
   SOLDGRAPH_ENABLED: "true",
   SOLDGRAPH_API_KEY: "test-key-not-real",
   MARKET_VALUATION_V2_ENABLED: "true",
+  MARKET_VALUATION_PUBLISHED_MARKETS: "UK,US",
 } as NodeJS.ProcessEnv;
 
 const pins = (n: number): BatchPin[] =>
@@ -71,7 +72,7 @@ function deps(s: BatchStore, start: (i: StartInput) => StartResult | Promise<Sta
   return { d, startFn, progress };
 }
 
-const args = (extra: string[] = []) => parseBatchArgs(["--markets", "UK,US", ...extra], () => "");
+const args = (extra: string[] = []) => parseBatchArgs(extra, () => "");
 const applyArgs = (max: number, confirm: number, extra: string[] = []) =>
   args(["--max-credits", String(max), "--apply", "--confirm-credits", String(confirm), ...extra]);
 
@@ -80,15 +81,13 @@ const applyArgs = (max: number, confirm: number, extra: string[] = []) =>
 describe("parseBatchArgs", () => {
   it("defaults to 2025–26 pins, a 180-day skip window, dry run", () => {
     expect(args()).toMatchObject({
-      years: [2025, 2026], pinhuntIds: null, markets: ["UK", "US"], offset: 0, limit: null,
+      years: [2025, 2026], pinhuntIds: null, offset: 0, limit: null,
       cacheDays: DEFAULT_BATCH_CACHE_DAYS, maxCredits: null, confirmCredits: null, leaveCredits: 0, apply: false,
     });
   });
 
-  it("requires --markets, and only UK and/or US (FR has no sold source here)", () => {
-    expect(() => parseBatchArgs([], () => "")).toThrow(BatchUsageError);
-    expect(() => parseBatchArgs(["--markets", "FR"], () => "")).toThrow(/UK and\/or US/);
-    expect(parseBatchArgs(["--markets", "us"], () => "").markets).toEqual(["US"]);
+  it("has no --markets: markets come from the host's MARKET_VALUATION_PUBLISHED_MARKETS", () => {
+    expect(() => parseBatchArgs(["--markets", "UK"], () => "")).toThrow(/Unknown option --markets/);
   });
 
   it("needs --max-credits with --apply, and caps it", () => {
@@ -98,10 +97,10 @@ describe("parseBatchArgs", () => {
   });
 
   it("takes --ids-file instead of --years, keeping order and refusing bad ids", () => {
-    const o = parseBatchArgs(["--markets", "UK", "--ids-file", "f"], () => "# top pins\nPHUK-2\nPHUK-1\nPHUK-2\n");
+    const o = parseBatchArgs(["--ids-file", "f"], () => "# top pins\nPHUK-2\nPHUK-1\nPHUK-2\n");
     expect(o.pinhuntIds).toEqual(["PHUK-2", "PHUK-1"]);
-    expect(() => parseBatchArgs(["--markets", "UK", "--ids-file", "f", "--years", "2025"], () => "PHUK-1")).toThrow(/not both/);
-    expect(() => parseBatchArgs(["--markets", "UK", "--ids-file", "f"], () => "bad id!")).toThrow(/Not a PinHunt ID/);
+    expect(() => parseBatchArgs(["--ids-file", "f", "--years", "2025"], () => "PHUK-1")).toThrow(/not both/);
+    expect(() => parseBatchArgs(["--ids-file", "f"], () => "bad id!")).toThrow(/Not a PinHunt ID/);
   });
 
   it("refuses unknown or repeated options", () => {
@@ -123,10 +122,18 @@ describe("dry run", () => {
     expect(s.answeredCalls[0]).toMatchObject({ sources: ["soldgraph:ebay_gb_sold", "soldgraph:ebay_us_sold"], since: new Date(NOW - 180 * 86_400_000).toISOString() });
   });
 
-  it("plans only as many pins as --max-credits allows (UK only: 1 credit each)", async () => {
-    const { d } = deps(store(pins(50)), () => started(finished()));
-    const r = await runBatch(parseBatchArgs(["--markets", "UK", "--max-credits", "20"], () => ""), d);
-    expect(r.plan).toMatchObject({ toPrice: 50, worstCaseAll: 50, pinsThisRun: 20, plannedCredits: 20, creditsPerPin: 1 });
+  it("plans only as many pins as --max-credits allows (UK only published: 1 credit each)", async () => {
+    const { d } = deps(store(pins(50)), () => started(finished()), { ...ON, MARKET_VALUATION_PUBLISHED_MARKETS: "UK" });
+    const r = await runBatch(args(["--max-credits", "20"]), d);
+    expect(r.plan).toMatchObject({ markets: ["UK"], toPrice: 50, worstCaseAll: 50, pinsThisRun: 20, plannedCredits: 20, creditsPerPin: 1 });
+  });
+
+  it("refuses to plan when no UK or US market is published (FR has no sold source here)", async () => {
+    for (const published of ["", "FR"]) {
+      const { d, startFn } = deps(store(pins(5)), () => started(finished()), { ...ON, MARKET_VALUATION_PUBLISHED_MARKETS: published });
+      await expect(runBatch(args(), d)).rejects.toThrow(/MARKET_VALUATION_PUBLISHED_MARKETS lists no UK or US market/);
+      expect(startFn).not.toHaveBeenCalled();
+    }
   });
 
   it("an odd ceiling rounds down to whole pins", async () => {
@@ -174,6 +181,10 @@ describe("--apply blockers", () => {
     expect(tight.blockers.join()).toMatch(/more than the 5 this run may use/);
     const left = await runBatch(applyArgs(6, 6, ["--leave-credits", "1996"]), deps(store(pins(3)), () => started(finished())).d);
     expect(left.blockers.join()).toMatch(/more than the 4 this run may use/);
+    // The host's reserve applies to a batch too, on top of --leave-credits.
+    const reserved = await runBatch(applyArgs(6, 6, ["--leave-credits", "1990"]), deps(store(pins(3)), () => started(finished()), { ...ON, MARKET_PRICE_REQUEST_BUDGET_RESERVE: "8" }).d);
+    expect(reserved.plan).toMatchObject({ reserve: 8, spendable: 2 });
+    expect(reserved.blockers.join()).toMatch(/more than the 2 this run may use \(budget left minus the reserve and --leave-credits\)/);
     const wrong = await runBatch(applyArgs(6, 5), deps(store(pins(3)), () => started(finished())).d);
     expect(wrong.blockers.join()).toMatch(/must equal the planned credits shown \(6\), not 5/);
   });
@@ -182,18 +193,24 @@ describe("--apply blockers", () => {
 // ─── Run ─────────────────────────────────────────────────────────────────────
 
 describe("--apply", () => {
-  it("prices each pin as a batch request (no user), with the batch's markets and window", async () => {
+  it("prices each pin as a batch request (no user), with the batch's window and the host's markets and reserve", async () => {
     const { d, startFn } = deps(store(pins(3)), () => started(finished()));
     const r = await runBatch(applyArgs(6, 6), d);
     expect(r).toMatchObject({ applied: true, pinsTried: 3, creditsSpent: 6, counts: { priced: 3 } });
     expect(startFn.mock.calls.map(c => c[0])).toEqual(pins(3).map(p => ({ pinhuntId: p.pinhuntId, origin: "batch", userId: null })));
     const env = startFn.envs[0];
-    expect(env).toMatchObject({ MARKET_VALUATION_PUBLISHED_MARKETS: "UK,US", MARKET_PRICE_REQUEST_CACHE_DAYS: "180", MARKET_PRICE_REQUEST_BUDGET_RESERVE: "0" });
+    expect(env).toMatchObject({ MARKET_VALUATION_PUBLISHED_MARKETS: "UK,US", MARKET_PRICE_REQUEST_CACHE_DAYS: "180" });
+    expect(env.MARKET_PRICE_REQUEST_BUDGET_RESERVE).toBeUndefined();
     expect(r.stoppedBy).toBeUndefined();
   });
 
   it("does not need the collector flag: the request path sees requests as open", () => {
-    expect(unavailableReason(batchEnv({ ...ON, MARKET_PRICE_REQUEST_ENABLED: "false" }, { markets: ["UK"], cacheDays: 180 }))).toBeNull();
+    expect(unavailableReason(batchEnv({ ...ON, MARKET_PRICE_REQUEST_ENABLED: "false" }, { cacheDays: 180 }))).toBeNull();
+  });
+
+  it("never widens the published markets or drops the reserve", () => {
+    const env = batchEnv({ ...ON, MARKET_VALUATION_PUBLISHED_MARKETS: "UK", MARKET_PRICE_REQUEST_BUDGET_RESERVE: "25" }, { cacheDays: 180 });
+    expect(env).toMatchObject({ MARKET_VALUATION_PUBLISHED_MARKETS: "UK", MARKET_PRICE_REQUEST_BUDGET_RESERVE: "25" });
   });
 
   it("counts every outcome and carries on past cached, running-elsewhere and no-sales pins", async () => {

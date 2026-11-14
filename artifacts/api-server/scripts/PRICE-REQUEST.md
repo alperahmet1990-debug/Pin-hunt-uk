@@ -166,7 +166,7 @@ The question is whether to price every 2025–26 pin up front: **18,608 pins**. 
   - `--max-credits N`: the run's ceiling, at most 10,000;
   - `--confirm-credits` equal to the planned figure the dry run printed.
 
-  It refuses if the month's budget isn't a hard stop, or if the plan is more than what's left minus `--leave-credits` (credits kept back for collectors' requests).
+  It refuses if the month's budget isn't a hard stop, or if the plan is more than what's left after `MARKET_PRICE_REQUEST_BUDGET_RESERVE` (the same reserve collectors' requests keep) and `--leave-credits` (extra credits this run leaves, for example for collectors).
 - **No double spending.** A pin with a finished answer, priced or "no sales", within `--cache-days` (default 180) is skipped for free. So is a pin a collector is requesting right now. **Re-running the same command resumes**: only unanswered pins are paid for.
 - **Stops early, keeping what it got,** when:
   - the next pin's worst case would pass the ceiling;
@@ -174,20 +174,21 @@ The question is whether to price every 2025–26 pin up front: **18,608 pins**. 
   - the request path becomes unavailable;
   - there are 5 failures in a row (`--stop-after-errors`).
 - **No collector caps.** Batch requests skip the per-user and global daily caps, but nothing else. Each pin is logged in `market_price_requests` with `origin = 'batch'`, and every credit is reserved against the monthly cap as usual.
-- **`--markets` is required:** `UK`, `US` or `UK,US`. Use only markets that passed the pilot. It doesn't need `MARKET_PRICE_REQUEST_ENABLED` (that's the collector button).
+- **Markets come from `MARKET_VALUATION_PUBLISHED_MARKETS`,** exactly as for a collector's request: `UK`, `US` or `UK,US`, only markets that passed the pilot. Set it on the command line (as below) or in your staging env file. With no UK or US market listed, the script refuses to plan. The batch never widens that list and keeps the configured reserve: it skips only the collector daily caps. It doesn't need `MARKET_PRICE_REQUEST_ENABLED` (that's the collector button).
+- **`--ids-file` pins get the same filters:** only verified, non-archived pins are priced.
 - **Output is counts only:** priced, no sales, already answered, running elsewhere, failed, credits spent, and the budget after. It prints a progress line every 25 pins.
 
 **Commands** (from `artifacts/api-server`):
 ```
 # 1. Plan (free)
-node --env-file=.env.staging scripts/market-price-batch.mjs --markets UK,US --max-credits 1000
+MARKET_VALUATION_PUBLISHED_MARKETS=UK,US node --env-file=.env.staging scripts/market-price-batch.mjs --max-credits 1000
 
 # 2. Run, with the planned figure from step 1
-SOLDGRAPH_ENABLED=true MARKET_VALUATION_V2_ENABLED=true node --env-file=.env.staging scripts/market-price-batch.mjs \
-  --markets UK,US --max-credits 1000 --apply --confirm-credits 1000
+SOLDGRAPH_ENABLED=true MARKET_VALUATION_V2_ENABLED=true MARKET_VALUATION_PUBLISHED_MARKETS=UK,US \
+  node --env-file=.env.staging scripts/market-price-batch.mjs --max-credits 1000 --apply --confirm-credits 1000
 
 # Most-collected pins first, from your own list
-node --env-file=.env.staging scripts/market-price-batch.mjs --markets UK,US --ids-file top-pins.txt --max-credits 1000
+MARKET_VALUATION_PUBLISHED_MARKETS=UK,US node --env-file=.env.staging scripts/market-price-batch.mjs --ids-file top-pins.txt --max-credits 1000
 ```
 Exit code 0 means it finished or reached the ceiling; 2 means it stopped early (budget, errors or unavailable); 1 means it was refused.
 

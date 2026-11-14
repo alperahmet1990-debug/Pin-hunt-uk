@@ -45,10 +45,12 @@ describe("SupabaseBatchStore", () => {
     expect(op(c, "order")).toEqual([["pinhunt_id", { ascending: true }]]);
   });
 
-  it("keeps an --ids-file's order", async () => {
-    const { db } = fakeDb(() => [{ id: "u1", pinhunt_id: "PHUK-1" }, { id: "u2", pinhunt_id: "PHUK-2" }]);
+  it("keeps an --ids-file's order, with the same verified and not-archived filters", async () => {
+    const { db, calls } = fakeDb(() => [{ id: "u1", pinhunt_id: "PHUK-1" }, { id: "u2", pinhunt_id: "PHUK-2" }]);
     const out = await new SupabaseBatchStore(db).listPins({ years: [], pinhuntIds: ["PHUK-2", "PHUK-1"], offset: 0, limit: null });
     expect(out.map(p => p.pinhuntId)).toEqual(["PHUK-2", "PHUK-1"]);
+    expect(op(calls[0], "eq")).toEqual([["verification_status", "verified"]]);
+    expect(op(calls[0], "neq")).toEqual([["catalogue_status", "archived"]]);
   });
 
   it("counts a pin as answered only when a completed request covered every source asked for", async () => {

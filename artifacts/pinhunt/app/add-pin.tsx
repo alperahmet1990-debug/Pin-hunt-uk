@@ -1,20 +1,24 @@
 /**
  * Add Pin — photo-first (Early Contributor Programme, #394; was UX-011, #121).
  *
- * Steps:
- *  0 — Photo: the front photo and the image-rights tick are the only
- *      required inputs. "Take Photo" opens the full-screen pin camera
- *      (#392) on iOS/Android. While the photo is cleaned up, the AI scan
- *      runs on it and offers "Is it one of these?" (a match opens that pin
- *      instead of creating a submission). Submit works from here.
- *  1 — Details, all optional: name, set, year and characters, prefilled
- *      from the AI's guesses (marked as suggestions); the rest under
- *      "More details". An "Already in the catalogue?" check runs on the name.
- *  then — Confirmation ("Unidentified pin" when no name was given)
+ * Steps (#612):
+ *  0 — Photo: the front photo, the image-rights tick and an optional back
+ *      photo. "Take Photo" opens the full-screen pin camera (#392) on
+ *      iOS/Android. The photo is cleaned up and the AI scan starts on it.
+ *  1 — Check: "Is it one of these?". The collector answers "Yes, it's this
+ *      one" (opens that pin, no submission) or "No, it's new". Skipped when
+ *      the photo came from the scan screen's "can't find it", which already
+ *      asked.
+ *  2 — Details: the pin's name (required), the park (a picker, stored as
+ *      `releaseLocation`) and the year; set and characters prefilled from the
+ *      AI's guesses (marked as suggestions); the rest under "More details".
+ *      An "Already in the catalogue?" check runs on the name. Submit is here.
+ *  then — Confirmation
  *
- * The AI never blocks: a scan failure, timeout or daily cap just hides the
- * suggestions. What it suggested goes with the submission as hints for the
- * admin's duplicate check (`aiIdentification`).
+ * The AI never blocks: a scan failure, timeout or daily cap says so on the
+ * Check step and lets the collector carry on, and "Continue without
+ * checking" skips a slow scan. What it suggested goes with the submission as
+ * hints for the admin's duplicate check (`aiIdentification`).
  *
  * Submits via POST /pin-submissions on the API server rather than talking
  * to Supabase directly — the server runs the front photo through Pixian.ai
@@ -55,7 +59,7 @@ import { API_BASE } from '@/lib/apiBase';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { PinImage } from '@/components/ui/PinImage';
 import { getPinImageSource } from '@/utils/pinImage';
-import { localDuplicateCandidates, MIN_DUPLICATE_QUERY, scanHint, setSuggestions, submissionDisplayName } from '@/utils/suggestPin';
+import { localDuplicateCandidates, MIN_DUPLICATE_QUERY, OTHER_PARK, PARKS, parkChoice, scanHint, setSuggestions, submissionDisplayName } from '@/utils/suggestPin';
 import { identifyPin } from '@/utils/identifyPin';
 import { sharedCandidateSet } from '@/utils/scanRecovery';
 import { FullScreenCamera } from '@/components/scan/FullScreenCamera';
@@ -76,7 +80,9 @@ const EDITION_TYPES = [
 
 type EditionValue = (typeof EDITION_TYPES)[number]['value'];
 
-const STEPS = ['Photo', 'Details'];
+const STEPS = ['Photo', 'Check', 'Details'];
+const CHECK_STEP = 1;
+const DETAILS_STEP = 2;
 
 /** The live pin camera is native-only; web keeps the photo picker. */
 const LIVE_CAMERA = Platform.OS !== 'web';
@@ -89,6 +95,7 @@ type AiStatus = 'off' | 'running' | 'done' | 'unavailable';
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 interface FormErrors {
+  proposedName?: string;
   releaseYear?: string;
   editionSize?: string;
 }
@@ -346,56 +353,99 @@ function RightsCheck({ checked, onToggle, colors }: {
   );
 }
 
-// ─── "Is it one of these?" (#394) ─────────────────────────────────────────────
+// ─── Check: "Is it one of these?" (#394, explicit since #612) ─────────────────
 
-function AiMatches({ status, matches, onOpen, colors }: {
+/**
+ * The AI scan's catalogue matches, as a question the collector must answer:
+ * "Yes, it's this one" opens that pin (no submission), "No, it's new" goes on
+ * to the details. The AI never blocks: while it runs the collector can carry
+ * on without it, and a failed or empty scan just says so.
+ */
+function CatalogueCheck({ status, matches, onOpen, onNew, colors }: {
   status: AiStatus;
   matches: AiMatch[];
   onOpen: (pin: CataloguePin) => void;
+  onNew: () => void;
   colors: ReturnType<typeof useColors>;
 }) {
-  if (status === 'off') return null;
-  if (status === 'unavailable' || (status === 'done' && matches.length === 0)) {
+  const action = (label: string, a11y: string, primary = false) => (
+    <TouchableOpacity
+      onPress={onNew}
+      activeOpacity={0.85}
+      accessibilityRole="button"
+      accessibilityLabel={a11y}
+      style={[
+        styles.checkBtn,
+        primary
+          ? { backgroundColor: colors.homeCoral, borderColor: colors.homeCoral }
+          : { backgroundColor: colors.homeSurface, borderColor: colors.homeLine },
+      ]}
+    >
+      <Text style={[styles.navBtnLabel, { color: primary ? colors.homeSurface : colors.homeInk }]}>{label}</Text>
+    </TouchableOpacity>
+  );
+
+  if (status === 'running' || status === 'off') {
     return (
-      <Text testID="ai-unavailable" style={[styles.aiQuiet, { color: colors.homeMuted }]}>
-        No suggestions for this photo. You can still submit it.
-      </Text>
+      <View testID="catalogue-check" style={styles.checkStep}>
+        <Text accessibilityRole="header" style={[styles.stepTitle, { color: colors.homeInk }]}>Checking the catalogue…</Text>
+        <View style={styles.aiLoading} accessibilityLiveRegion="polite">
+          <ActivityIndicator color={colors.homeCoral} />
+          <Text style={[styles.aiQuiet, { color: colors.homeMuted }]}>Looking for this pin in the catalogue</Text>
+        </View>
+        {action('Continue without checking', 'Continue without checking')}
+      </View>
     );
   }
+
+  if (status === 'unavailable' || matches.length === 0) {
+    const failed = status === 'unavailable';
+    return (
+      <View testID="catalogue-check" style={styles.checkStep}>
+        <Text accessibilityRole="header" style={[styles.stepTitle, { color: colors.homeInk }]}>
+          {failed ? 'We couldn’t check the catalogue' : 'No match in the catalogue'}
+        </Text>
+        <Text testID={failed ? 'ai-unavailable' : 'ai-no-match'} style={[styles.stepSub, { color: colors.homeMuted }]}>
+          {failed
+            ? 'The check isn’t available right now. You can still add the pin, and our team checks every one.'
+            : 'We didn’t find this pin, so it may well be new. Add its details next.'}
+        </Text>
+        {action('Continue', 'Continue to the details', true)}
+      </View>
+    );
+  }
+
   return (
-    <View testID="ai-matches" style={[styles.aiCard, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+    <View testID="catalogue-check" style={styles.checkStep}>
       <View style={styles.aiHead}>
-        <Text accessibilityRole="header" style={[styles.aiTitle, { color: colors.homeInk }]}>Is it one of these?</Text>
+        <Text accessibilityRole="header" style={[styles.stepTitle, { color: colors.homeInk }]}>Is it one of these?</Text>
         <Text style={[styles.aiTag, { color: colors.homeMuted }]}>AI suggestions</Text>
       </View>
-      {status === 'running' ? (
-        <View style={styles.aiLoading}>
-          <ActivityIndicator color={colors.homeCoral} />
-          <Text style={[styles.aiQuiet, { color: colors.homeMuted }]}>Looking for matches…</Text>
-        </View>
-      ) : (
-        <>
-          <View style={styles.aiRow}>
-            {matches.map(m => (
+      <Text style={[styles.stepSub, { color: colors.homeMuted }]}>
+        If your pin is here, open it to add it to your collection or give it your photo.
+      </Text>
+      <View style={{ gap: spacing.sm }}>
+        {matches.map(m => (
+          <View key={m.pin.id} style={[styles.checkMatch, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}>
+            <PinImage source={getPinImageSource(m.pin)} accessible={false} style={[styles.aiThumb, { backgroundColor: colors.homeAqua }]} contentFit="contain" />
+            <View style={{ flex: 1, minWidth: 0 }}>
+              <Text style={[styles.aiName, { color: colors.homeInk }]} numberOfLines={2}>{m.pin.title}</Text>
+              <Text style={[styles.aiPct, { color: colors.homeMuted }]}>{Math.round(m.confidence)}% match</Text>
               <TouchableOpacity
-                key={m.pin.id}
                 onPress={() => onOpen(m.pin)}
                 activeOpacity={0.8}
                 accessibilityRole="button"
-                accessibilityLabel={`${m.pin.title}, ${Math.round(m.confidence)}% match. Open this pin`}
-                style={[styles.aiItem, { borderColor: colors.homeLine }]}
+                accessibilityLabel={`Yes, it’s ${m.pin.title}, ${Math.round(m.confidence)}% match. Open this pin`}
+                style={[styles.checkYes, { borderColor: colors.homeCoral }]}
               >
-                <PinImage source={getPinImageSource(m.pin)} style={[styles.aiThumb, { backgroundColor: colors.homeAqua }]} contentFit="contain" />
-                <Text style={[styles.aiName, { color: colors.homeInk }]} numberOfLines={2}>{m.pin.title}</Text>
-                <Text style={[styles.aiPct, { color: colors.homeMuted }]}>{Math.round(m.confidence)}% match</Text>
+                <Feather name="check" size={14} color={colors.homeCoralDeep} />
+                <Text style={[styles.checkYesLabel, { color: colors.homeCoralDeep }]}>Yes, it{'’'}s this one</Text>
               </TouchableOpacity>
-            ))}
+            </View>
           </View>
-          <Text style={[styles.aiQuiet, { color: colors.homeMuted }]}>
-            Tap one if it{"\u2019"}s your pin: you can add it to your collection or give it your photo. Not there? Just submit.
-          </Text>
-        </>
-      )}
+        ))}
+      </View>
+      {action('No, it’s new', 'No, it’s new. Add its details', true)}
     </View>
   );
 }
@@ -459,6 +509,8 @@ export default function AddPinScreen() {
   const [characterNames,  setCharacterNames]  = useState('');
   const [seriesName,      setSeriesName]      = useState('');
   const [releaseLocation, setReleaseLocation] = useState('');
+  // "Other" picked on the park chips: shows a free-text field (#612).
+  const [parkOther, setParkOther] = useState(false);
   const [releaseYear,     setReleaseYear]     = useState('');
   const [editionType,     setEditionType]     = useState<EditionValue>('unknown');
   const [editionSize,     setEditionSize]     = useState('');
@@ -650,6 +702,7 @@ export default function AddPinScreen() {
   // ── Validation ──────────────────────────────────────────────────────────────
   const validate = (): boolean => {
     const errs: FormErrors = {};
+    if (!proposedName.trim()) errs.proposedName = 'Enter the pin\u2019s name. A short description is fine.';
     if (releaseYear.trim()) {
       const y = parseInt(releaseYear, 10);
       if (isNaN(y) || y < 1900 || y > 2030) errs.releaseYear = 'Enter a year between 1900 and 2030.';
@@ -663,15 +716,18 @@ export default function AddPinScreen() {
   };
 
   // ── Navigation ──────────────────────────────────────────────────────────────
+  // A photo from the scan screen's "can't find it" was already checked
+  // there, so it skips the Check step (#612).
+  const skipCheck = frontFromHandoff.current;
   const goNext = () => {
     if (step === 0 && !front) {
       Alert.alert('Front photo required', 'Please add a front photo before continuing.');
       return;
     }
     if (step === 0 && previewing) return;
-    setStep(s => s + 1);
+    setStep(step === 0 && !skipCheck ? CHECK_STEP : DETAILS_STEP);
   };
-  const goBack = () => setStep(s => s - 1);
+  const goBack = () => setStep(step === DETAILS_STEP && !skipCheck ? CHECK_STEP : 0);
 
   // ── Submit ──────────────────────────────────────────────────────────────────
   const handleSubmit = async () => {
@@ -772,7 +828,7 @@ export default function AddPinScreen() {
             onPress={() => {
               setFront(null); setBack(null);
               setProposedName(''); setBrand(''); setCharacterNames('');
-              setSeriesName(''); setReleaseLocation(''); setReleaseYear('');
+              setSeriesName(''); setReleaseLocation(''); setParkOther(false); setReleaseYear('');
               setEditionType('unknown'); setEditionSize('');
               setFacNumber(''); setSku(''); setNotes('');
               setRightsConfirmed(false); setAiStatus('off'); setAiMatches([]);
@@ -858,7 +914,7 @@ export default function AddPinScreen() {
           <Image source={{ uri: shownFrontUri ?? front.uri }} style={[styles.detailsThumb, { borderRadius: radius.md }]} resizeMode="cover" />
           <View style={{ flex: 1 }}>
             <Text accessibilityRole="header" style={[styles.stepTitle, { color: colors.homeInk }]}>About this pin</Text>
-            <Text style={[styles.stepSub, { color: colors.homeMuted }]}>All optional. Add anything you know; {"\u201c"}unidentified{"\u201d"} is fine.</Text>
+            <Text style={[styles.stepSub, { color: colors.homeMuted }]}>Give it a name, then add anything else you know.</Text>
           </View>
         </View>
       )}
@@ -875,9 +931,9 @@ export default function AddPinScreen() {
         </View>
       )}
 
-      {field('Pin name', false, (
+      {field('Pin name', true, (
         <>
-          {inp(proposedName, setProposedName, 'e.g. Dumbo Blue Sky')}
+          {inp(proposedName, setProposedName, 'e.g. Dumbo Blue Sky', { errKey: 'proposedName' })}
           {scanChip(nameHint, proposedName, 'name', () => setProposedName(nameHint))}
         </>
       ))}
@@ -908,6 +964,44 @@ export default function AddPinScreen() {
           <Text style={[styles.dupeNote, { color: colors.homeMuted }]}>Not one of these? Carry on below.</Text>
         </View>
       )}
+
+      {field('Park', false, (
+        <>
+          <View style={styles.chipRow} accessibilityRole="radiogroup">
+            {[...PARKS, OTHER_PARK].map(name => {
+              const active = parkChoice(releaseLocation, parkOther) === name;
+              return (
+                <TouchableOpacity
+                  key={name}
+                  onPress={() => {
+                    if (name === OTHER_PARK) {
+                      setParkOther(true);
+                      if (parkChoice(releaseLocation) !== OTHER_PARK) setReleaseLocation('');
+                    } else {
+                      setParkOther(false);
+                      setReleaseLocation(active ? '' : name);
+                    }
+                  }}
+                  activeOpacity={0.8}
+                  accessibilityRole="radio"
+                  accessibilityLabel={name}
+                  accessibilityState={{ selected: active }}
+                  style={[
+                    styles.editionBtn,
+                    {
+                      backgroundColor: active ? colors.homeCoral + '18' : colors.homeSurface,
+                      borderColor: active ? colors.homeCoral : colors.homeLine,
+                    },
+                  ]}
+                >
+                  <Text style={[styles.editionBtnLabel, { color: active ? colors.homeCoralDeep : colors.homeMuted }]}>{name}</Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+          {parkChoice(releaseLocation, parkOther) === OTHER_PARK && inp(releaseLocation, setReleaseLocation, 'Where was it released? e.g. Disney Store UK')}
+        </>
+      ))}
 
       {field('Set or collection', false, (
         <>
@@ -957,7 +1051,6 @@ export default function AddPinScreen() {
               {scanChip(brandHint, brand, 'brand', () => setBrand(brandHint))}
             </>
           ))}
-          {field('Release location', false, inp(releaseLocation, setReleaseLocation, 'e.g. Disneyland Paris, Disney Store UK'))}
           {field('Edition type', false, (
             <View style={styles.editionGrid}>
               {EDITION_TYPES.map(e => {
@@ -1009,12 +1102,6 @@ export default function AddPinScreen() {
         colors={colors}
       />
       {front && rights}
-      <AiMatches
-        status={aiStatus}
-        matches={aiMatches}
-        onOpen={pin => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })}
-        colors={colors}
-      />
       <BackPhotoCard
         uri={back?.uri ?? null}
         onCamera={() => pickBack('camera')}
@@ -1023,6 +1110,14 @@ export default function AddPinScreen() {
         colors={colors}
       />
     </View>,
+    <CatalogueCheck
+      key="check"
+      status={aiStatus}
+      matches={aiMatches}
+      onOpen={pin => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })}
+      onNew={() => setStep(DETAILS_STEP)}
+      colors={colors}
+    />,
     <View key="details" style={{ gap: spacing.lg }}>
       {renderDetails()}
       {rights}
@@ -1091,15 +1186,16 @@ export default function AddPinScreen() {
                 onPress={goNext}
                 activeOpacity={0.85}
                 accessibilityRole="button"
-                accessibilityLabel="Add details"
-                style={[styles.navBtn, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine }]}
+                accessibilityLabel={skipCheck ? 'Add details' : 'Check the catalogue'}
+                style={[styles.navBtn, styles.navBtnPrimary, { backgroundColor: colors.homeCoral }]}
               >
-                <Text style={[styles.navBtnLabel, { color: colors.homeInk }]}>Add details</Text>
+                <Text style={[styles.navBtnLabel, { color: colors.homeSurface }]}>{skipCheck ? 'Add details' : 'Check the catalogue'}</Text>
+                <Feather name="arrow-right" size={16} color={colors.homeSurface} />
               </TouchableOpacity>
             )}
-            {submitButton}
+            {step === DETAILS_STEP && submitButton}
           </View>
-          {front && !rightsConfirmed && (
+          {step === DETAILS_STEP && front && !rightsConfirmed && (
             <Text testID="rights-needed" style={[styles.submitHint, { color: colors.homeMuted }]}>
               Tick the photo confirmation to submit.
             </Text>
@@ -1190,15 +1286,17 @@ const styles = StyleSheet.create({
   rights: { flexDirection: 'row', alignItems: 'flex-start', gap: spacing.md, borderWidth: 1, borderRadius: radius.md, padding: spacing.md, minHeight: 44 },
   rightsBox: { width: 22, height: 22, borderRadius: 6, borderWidth: 2, alignItems: 'center', justifyContent: 'center', marginTop: 1 },
   rightsText: { flex: 1, fontSize: 13.5, lineHeight: 19, fontFamily: 'Inter_500Medium' },
-  aiCard: { borderWidth: 1, borderRadius: radius.lg, padding: spacing.md, gap: spacing.sm + 2 },
   aiHead: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  aiTitle: { fontSize: 15, fontFamily: 'Inter_700Bold' },
   aiTag: { fontSize: 12, fontFamily: 'Inter_400Regular' },
   aiLoading: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, minHeight: 44 },
-  aiRow: { flexDirection: 'row', gap: spacing.sm + 2 },
-  aiItem: { flex: 1, alignItems: 'center', gap: 6, paddingVertical: spacing.sm, paddingHorizontal: 4, borderWidth: 1, borderRadius: radius.md, minHeight: 44 },
   aiThumb: { width: 64, height: 64, borderRadius: radius.sm },
-  aiName: { fontSize: 11.5, lineHeight: 14, fontFamily: 'Inter_600SemiBold', textAlign: 'center' },
+  aiName: { fontSize: 14, lineHeight: 18, fontFamily: 'Inter_600SemiBold' },
+  // Check step (#612)
+  checkStep: { gap: spacing.md },
+  checkMatch: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, borderWidth: 1, borderRadius: radius.md, padding: spacing.sm + 2 },
+  checkYes: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', gap: 6, minHeight: 44, marginTop: 6, paddingHorizontal: spacing.md, borderWidth: 1.5, borderRadius: radius.pill },
+  checkYesLabel: { fontSize: 13.5, fontFamily: 'Inter_600SemiBold' },
+  checkBtn: { minHeight: 48, alignItems: 'center', justifyContent: 'center', paddingHorizontal: spacing.lg, borderWidth: 1, borderRadius: radius.md },
   aiPct: { fontSize: 11, fontFamily: 'Inter_400Regular' },
   aiQuiet: { fontSize: 12.5, lineHeight: 17, fontFamily: 'Inter_400Regular' },
   submitHint: { fontSize: 12.5, fontFamily: 'Inter_400Regular', textAlign: 'center', marginTop: -spacing.md },

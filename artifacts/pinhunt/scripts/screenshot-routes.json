@@ -307,7 +307,8 @@
   {
     "name": "add-pin-photo",
     "path": "/add-pin",
-    "upload": "Choose from Library"
+    "upload": "Choose from Library",
+    "consent": true
   },
   {
     "name": "find-trades",
@@ -317,6 +318,27 @@
     "name": "scan-ai-consent",
     "path": "/scan",
     "upload": "Choose Photo"
+  },
+  {
+    "name": "add-pin-check",
+    "path": "/add-pin",
+    "upload": "Choose from Library",
+    "identify": { "matches": [{ "pinId": "dp-006", "confidence": 86, "reasoning": "Dumbo" }, { "pinId": "dp-003", "confidence": 61, "reasoning": "Castle" }] },
+    "click": "Check the catalogue"
+  },
+  {
+    "name": "add-pin-check-failed",
+    "path": "/add-pin",
+    "upload": "Choose from Library",
+    "consent": true,
+    "click": "Check the catalogue"
+  },
+  {
+    "name": "add-pin-details",
+    "path": "/add-pin",
+    "upload": "Choose from Library",
+    "identify": { "matches": [{ "pinId": "dp-006", "confidence": 86, "reasoning": "Dumbo" }] },
+    "click": ["Check the catalogue", "No, it’s new"]
   },
   {
     "name": "add-pin-ai-consent",

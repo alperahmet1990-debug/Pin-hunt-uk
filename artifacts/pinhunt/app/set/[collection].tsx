@@ -72,7 +72,7 @@ export default function SetDetailScreen() {
     if (!repository || !collectionParam) return;
     let cancelled = false;
     repository
-      .getSetSummaries()
+      .getSetSummaries([collectionParam])
       .then(sets => {
         if (cancelled) return;
         setSetSummary(sets.find(s => s.setName === collectionParam) ?? null);

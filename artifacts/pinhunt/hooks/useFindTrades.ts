@@ -124,7 +124,7 @@ export function useFindTrades(): FindTradesData {
           if (!ownedByCollection.has(p.collection)) ownedByCollection.set(p.collection, new Set());
           ownedByCollection.get(p.collection)!.add(p.id);
         }
-        const summaries = await catRepo.getSetSummaries();
+        const summaries = await catRepo.getSetSummaries([...ownedByCollection.keys()]);
         const summaryNames = new Set(summaries.map(s => s.setName));
         const inProgressNames = [...ownedByCollection.keys()].filter(name => summaryNames.has(name));
         const setCandidates = await Promise.all(inProgressNames.map(async name => {

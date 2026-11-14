@@ -32,7 +32,7 @@ jest.mock('@/context/CollectionContext', () => ({
 let mockCanContribute = false;
 let mockCoverage: Array<{ pinhuntId: string; imageSource: string | null }> = [];
 jest.mock('@/hooks/useFeature', () => ({ useFeature: () => ({ enabled: mockCanContribute, loading: false }) }));
-jest.mock('@/hooks/useCatalogueCoverage', () => ({ useCatalogueCoverage: () => ({ rows: mockCoverage }) }));
+jest.mock('@/hooks/useCatalogueCoverage', () => ({ useCoverageFor: () => ({ rows: mockCoverage }) }));
 jest.mock('@/context/BoardsContext', () => ({
   useBoards: () => ({ customBoards: [], createBoard: jest.fn(), addPinsToBoard: jest.fn() }),
 }));

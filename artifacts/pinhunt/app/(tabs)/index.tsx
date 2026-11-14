@@ -117,7 +117,9 @@ export default function HomeScreen() {
     if (!catRepo || !user?.id) return () => { cancelled = true; };
     const ownedEntries = Object.values(collection).filter(entry => entry.status === 'owned' || entry.status === 'for_trade').sort((a, b) => b.dateAdded.localeCompare(a.dateAdded));
     if (!ownedEntries.length) return () => { cancelled = true; };
-    Promise.all([catRepo.getPinsByIds(ownedEntries.map(entry => entry.pinId)), catRepo.getSetSummaries()]).then(([ownedPins, summaries]) => {
+    catRepo.getPinsByIds(ownedEntries.map(entry => entry.pinId))
+      .then(async ownedPins => [ownedPins, await catRepo.getSetSummaries(ownedPins.map(pin => pin.collection))] as const)
+      .then(([ownedPins, summaries]) => {
       if (cancelled) return;
       const pinMap = new Map(ownedPins.map(pin => [pin.id, pin]));
       const sets = new Map(summaries.map(summary => [summary.setName, summary]));

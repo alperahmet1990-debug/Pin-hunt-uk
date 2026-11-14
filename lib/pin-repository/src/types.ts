@@ -1032,8 +1032,13 @@ export interface ContributedPinImage {
   /** The pin's current display photo, so reviewers can compare replacements. */
   pinImageUrl?: string;
   uploadedBy: string;
-  /** Path within the private `pin-contributed-images` bucket. */
+  /** Path within the private `pin-contributed-images` bucket (the Pixian-cleaned photo). */
   storagePath: string;
+  /**
+   * The photo exactly as the contributor took it, in the private, admin-only
+   * `pin-contributed-raw` bucket (migration 080). Absent on older rows.
+   */
+  rawStoragePath?: string;
   status: ContributedImageStatus;
   /** When the contributor granted PinHunt the right to reuse this photo. */
   contributorConsentAt: string;
@@ -1060,6 +1065,8 @@ export interface PinAndPopReference {
 export interface CreateContributedImageInput {
   /** Path already uploaded to the `pin-contributed-images` bucket. */
   storagePath: string;
+  /** Path already uploaded to the admin-only `pin-contributed-raw` bucket (080). */
+  rawStoragePath?: string;
   /** Must be true — the repository rejects the call otherwise. */
   consentGranted: boolean;
   /** Omitted by the scan flow; set by the catalogue contribution flow. */

@@ -2,15 +2,23 @@
  * Contributed pin image moderation (admin only).
  *
  * GET  /admin/pending-pin-images              List images awaiting review,
- *      each with the pin's Pin & Pop reference (admin-only, migration 042).
- * POST /admin/pin-images/:id/approve          Promote into the public
- *      pin-catalogue bucket and set it as the pin's display image.
- * POST /admin/pin-images/:id/reject           Mark rejected, no storage change.
+ *      each with a signed URL for the cleaned photo, one for the raw photo
+ *      as taken (admin-only bucket, migration 080) and the pin's Pin & Pop
+ *      reference (admin-only, migration 042).
+ * POST /admin/pin-images/:id/approve          Promote the cleaned photo into
+ *      the public pin-catalogue bucket and set it as the pin's display image.
+ *      409 { code: 'has_image' } when a "missing photo" contribution's pin
+ *      has gained a photo since; send { replaceExisting: true } to confirm.
+ * POST /admin/pin-images/:id/reject           Mark rejected and delete the raw
+ *      original (the cleaned private copy is kept for audit).
  *
  * Same Bearer JWT -> profiles.is_admin convention used by admin.ts et al.
  * Write operations use SUPABASE_SERVICE_ROLE_KEY because RLS blocks
  * anonymous writes and cross-bucket storage moves need the Storage API
  * with a service-role key (SQL cannot manipulate storage.objects).
+ *
+ * Pin & Pop images are only ever returned here, for an admin to look at.
+ * They are never sent to OpenAI or any other AI service.
  */
 import { Router, type IRouter, type Request, type Response } from "express";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
@@ -18,7 +26,7 @@ import {
   createSupabasePinRepository,
   createSupabaseUserRepository,
 } from "@workspace/pin-repository";
-import { publishContributedImage } from "../services/contributed-images";
+import { discardRawOriginal, isOwnRawPath, publishContributedImage, PublishBlockedError } from "../services/contributed-images";
 
 const router: IRouter = Router();
 
@@ -98,6 +106,11 @@ router.get("/admin/pending-pin-images", requireAdmin, async (_req: Request, res:
           return {
             ...img,
             signedUrl: await userRepo.getContributedImageUrl(img.storagePath),
+            // Older rows (and a server without migration 080) have none.
+            // Only a path inside the uploader's own folder is signed.
+            rawSignedUrl: isOwnRawPath(img.rawStoragePath, img.uploadedBy)
+              ? await userRepo.getContributedRawImageUrl(img.rawStoragePath).catch(() => null)
+              : null,
             pinAndPop: pinAndPop[img.pinId] ?? null,
           };
         } catch (err) {
@@ -118,7 +131,18 @@ router.get("/admin/pending-pin-images", requireAdmin, async (_req: Request, res:
  * POST /admin/pin-images/:id/approve
  *
  * Publishes the pending photo into the live catalogue — see
- * services/contributed-images.ts (also used when an admin contributes).
+ * services/contributed-images.ts (also used for an admin's "publish now").
+ *
+ * Body: { replaceExisting?: boolean, seenImageUrl?: string | null }.
+ * seenImageUrl is the pin's catalogue photo as the reviewer saw it on the
+ * card (null for none). A replacement proposal (reason wrong_pin /
+ * poor_quality / other) replaces that photo, but only if it is still the
+ * pin's current photo; if the pin's photo has changed since, 409 has_image
+ * shows the admin the new one first. A "missing photo" contribution for a
+ * pin that has gained a photo since also gets 409. replaceExisting: true
+ * (the admin's "Replace and approve") replaces whatever is there.
+ * Admin builds from before seenImageUrl existed don't send it; their
+ * replacement proposals replace as they always did.
  *
  * curl -X POST -H "Authorization: Bearer <token>" \
  *   https://<domain>/api/admin/pin-images/<id>/approve
@@ -139,13 +163,27 @@ router.post("/admin/pin-images/:id/approve", requireAdmin, async (req: AdminRequ
       return;
     }
 
+    const body = (req.body ?? {}) as { replaceExisting?: unknown; seenImageUrl?: unknown };
+    const isReplacementProposal = !!image.proposalReason && image.proposalReason !== "missing";
+    const sentSeen = Object.prototype.hasOwnProperty.call(body, "seenImageUrl");
+    const seen = typeof body.seenImageUrl === "string" ? body.seenImageUrl : undefined;
     const published = await publishContributedImage(image, req.adminId!, {
       serviceClient: getAdminAuthClient(),
       userRepo,
       pinRepo: getWritePinRepository(),
+    }, {
+      // Older admin builds (no seenImageUrl): replacement proposals replace, as before.
+      replaceExisting: body.replaceExisting === true || (isReplacementProposal && !sentSeen),
+      // Newer builds: replace only the photo the reviewer actually saw.
+      replaceIfCurrentIs: isReplacementProposal ? seen : undefined,
     });
     res.json({ image: published });
   } catch (err) {
+    if (err instanceof PublishBlockedError) {
+      res.status(err.code === "has_image" ? 409 : 400)
+        .json({ error: err.message, code: err.code, existingImageUrl: err.existingImageUrl ?? null });
+      return;
+    }
     const msg = err instanceof Error ? err.message : String(err);
     res.status(500).json({ error: msg });
   }
@@ -176,6 +214,8 @@ router.post("/admin/pin-images/:id/reject", requireAdmin, async (req: AdminReque
       action: "reject",
       reviewerNotes,
     });
+    // The raw original was only for the review (migration 080).
+    await discardRawOriginal(image, getAdminAuthClient());
     res.json({ image: reviewed });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);

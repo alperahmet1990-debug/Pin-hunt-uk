@@ -25,6 +25,7 @@ export const USER_CONTENT_BUCKETS = [
   "community-photos",
   "pin-submissions",
   "pin-contributed-images",
+  "pin-contributed-raw",
   "user-pin-images",
   "scan-images",
 ] as const;

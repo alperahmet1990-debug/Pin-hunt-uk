@@ -38,9 +38,15 @@ The existing restrictions stay as they are:
 
 Our own photos, collectors' photos (with permission) and PinHunt's own catalogue photos go to OpenAI either way. That's how the scan has always worked.
 
-## Maintainer decision, 14 Nov 2026: admin tools may send Pin & Pop images to OpenAI
+## Maintainer decision, 14 Nov 2026: the scan and admin tools may send Pin & Pop images to OpenAI
 
-Admin and catalogue-building tools may send Pin & Pop reference images to OpenAI to compare them with our photos. This covers matching Collectible PinTrader photos, the bulk image matcher and board scanning. The purpose is internal only: the images are never shown to public users. This extends the 12 Nov scan decision to admin use. The question below stays useful as a written confirmation from Pin & Pop.
+Pin & Pop reference images may be sent to OpenAI to compare them with a photo. This covers:
+- the **collector scan** (as on `main` since 12 Nov);
+- **admin and catalogue-building tools:** the bulk image matcher, board scanning, and linking Collectible PinTrader photos to Pin & Pop pins.
+
+The images are used only inside the comparison. They're never shown to collectors, never returned to the app and never stored by PinHunt. Admin-only display and the other rules are unchanged.
+
+This replaces the short-lived "never send to AI" rule of the same day: PR #601 was closed without merging, and issue #605 is superseded. The question below stays useful as a written confirmation from Pin & Pop.
 
 ## What to check with Jenn and Chris
 

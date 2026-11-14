@@ -154,6 +154,8 @@ export default function ContributeImageScreen() {
           imageBase64,
           mimeType,
           consentGranted: true,
+          // This screen tells the collector the original is kept for moderators.
+          keepOriginalConsent: true,
           ...(proposalReason ? { proposalReason } : {}),
         }),
       });
@@ -226,6 +228,8 @@ export default function ContributeImageScreen() {
           pinId,
           draftPath: preview.draftPath,
           consentGranted: true,
+          // This screen tells the collector the original is kept for moderators.
+          keepOriginalConsent: true,
           ...(proposalReason ? { proposalReason } : {}),
           ...(isAdmin && publishNow ? { publishNow: true } : {}),
         }),

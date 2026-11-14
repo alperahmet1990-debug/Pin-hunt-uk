@@ -20,9 +20,12 @@
  * The photo as taken (before Pixian) is also kept, in the private
  * pin-contributed-raw bucket (migration 079), which only admins can read, so
  * the reviewer can compare raw | cleaned | Pin & Pop. Its metadata (EXIF GPS
- * location etc.) is stripped first; see rawWithoutMetadata. It is best-effort:
- * without the bucket (079 not applied yet) the contribution still goes
- * through, just without a raw original.
+ * location etc.) is stripped first; see rawWithoutMetadata. It is only kept
+ * when the request says the collector was told (keepOriginalConsent: true,
+ * sent by app builds whose consent step says the original is kept), so
+ * older builds never have it kept. It is best-effort: without the bucket
+ * (079 not applied yet) the contribution still goes through, just without a
+ * raw original.
  *
  * Auth: requireUser (any signed-in collector, same Bearer-token pattern
  * as scan.ts) — NOT requireAdmin. Any user may contribute a photo; only
@@ -118,18 +121,22 @@ async function clearDrafts(userId: string, keep?: string) {
   }
 }
 
+/** Decode limit for raw originals: far above any phone photo, far below sharp's ~268 MP default. */
+const RAW_MAX_INPUT_PIXELS = 50_000_000;
+
 /**
- * Keep the photo as taken, without its metadata: it is re-encoded as JPEG
- * with the EXIF orientation applied and every EXIF/XMP/IPTC tag (GPS
- * location, device, timestamps) dropped, which is sharp's default. Pixels
- * are otherwise unchanged, so the reviewer still sees the uncleaned photo.
- * Best-effort: logs and returns false on failure (including a format sharp
- * can't decode).
+ * The photo as taken, without its metadata: re-encoded as JPEG with the EXIF
+ * orientation applied and every EXIF/XMP/IPTC tag (GPS location, device,
+ * timestamps) dropped, which is sharp's default. Pixels are otherwise
+ * unchanged, so the reviewer still sees the uncleaned photo. Throws on input
+ * sharp can't decode or that is over RAW_MAX_INPUT_PIXELS.
  */
 export async function rawWithoutMetadata(imageBase64: string): Promise<Buffer> {
-  return sharp(Buffer.from(imageBase64, "base64")).rotate().jpeg({ quality: 92 }).toBuffer();
+  return sharp(Buffer.from(imageBase64, "base64"), { limitInputPixels: RAW_MAX_INPUT_PIXELS, failOn: "error" })
+    .rotate().jpeg({ quality: 92 }).toBuffer();
 }
 
+/** Store the raw original. Best-effort: logs and returns false on any failure. */
 async function storeRaw(path: string, imageBase64: string): Promise<boolean> {
   try {
     const { error } = await getStorageClient().storage
@@ -160,6 +167,11 @@ interface ContributionBody {
   draftPath?: string;
   /** Admins only: publish now instead of queueing for review. Ignored otherwise. */
   publishNow?: boolean;
+  /**
+   * The collector was told the original photo is kept for moderators. Only
+   * then is it kept; older app builds don't send it.
+   */
+  keepOriginalConsent?: boolean;
 }
 
 /** Shared checks for both steps. Sends the error response and returns false on failure. */
@@ -306,7 +318,7 @@ router.post("/pin-images/contribute/preview", requireUser, async (req: UserReque
         return;
       }
       // The photo as taken, same path, admin-only bucket.
-      await storeRaw(draftPath, body.imageBase64!);
+      if (body.keepOriginalConsent === true) await storeRaw(draftPath, body.imageBase64!);
     }
     await clearDrafts(userId, draftPath);
 
@@ -350,12 +362,14 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
         res.status(410).json({ error: "This preview has expired — please take the photo again." });
         return;
       }
-      const { error: rawMoveError } = await getStorageClient().storage
-        .from(RAW_BUCKET).move(body.draftPath, storagePath);
-      if (rawMoveError) {
-        console.warn("[contribute-pin-image] raw original not kept:", rawMoveError.message);
-      } else {
-        rawStoragePath = storagePath;
+      if (body.keepOriginalConsent === true) {
+        const { error: rawMoveError } = await getStorageClient().storage
+          .from(RAW_BUCKET).move(body.draftPath, storagePath);
+        if (rawMoveError) {
+          console.warn("[contribute-pin-image] raw original not kept:", rawMoveError.message);
+        } else {
+          rawStoragePath = storagePath;
+        }
       }
     } else {
       const processed = await normalize(res, userId, body.imageBase64!, body.mimeType ?? "image/jpeg");
@@ -366,7 +380,7 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
         res.status(500).json({ error: `Could not store your photo: ${uploadError.message}` });
         return;
       }
-      if (await storeRaw(storagePath, body.imageBase64!)) {
+      if (body.keepOriginalConsent === true && await storeRaw(storagePath, body.imageBase64!)) {
         rawStoragePath = storagePath;
       }
     }

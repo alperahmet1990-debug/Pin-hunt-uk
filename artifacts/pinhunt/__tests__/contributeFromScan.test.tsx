@@ -75,7 +75,7 @@ describe('Add your photo from a scan', () => {
     await render(<ContributeImageScreen />);
     await consent();
     await fireEvent.press(screen.getByText('Use this photo'));
-    await waitFor(() => expect(bodyOf('/contribute/preview')).toMatchObject({ pinId: 'PHUK-2', imageBase64: 'scan64' }));
+    await waitFor(() => expect(bodyOf('/contribute/preview')).toMatchObject({ pinId: 'PHUK-2', imageBase64: 'scan64', keepOriginalConsent: true }));
     expect(ImagePicker.launchCameraAsync).not.toHaveBeenCalled();
     expect(ImagePicker.launchImageLibraryAsync).not.toHaveBeenCalled();
     await screen.findByText('Happy with this?');

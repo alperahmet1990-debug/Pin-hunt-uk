@@ -27,6 +27,8 @@ begin
 
   assert exists (select 1 from storage.buckets where id = 'pin-contributed-raw'), '1b bucket pin-contributed-raw missing';
   assert (select public from storage.buckets where id = 'pin-contributed-raw') = false, '1c bucket pin-contributed-raw is PUBLIC';
+  assert (select allowed_mime_types from storage.buckets where id = 'pin-contributed-raw') = array['image/jpeg'],
+    '1c2 bucket pin-contributed-raw should accept image/jpeg only';
 
   -- Exactly one policy mentions the bucket: admin SELECT.
   assert (select count(*) from pg_policies

@@ -14,7 +14,9 @@
 -- What (purely additive):
 --   pin_images.raw_storage_path    path of the raw photo in the new bucket;
 --                                  null on rows from before this migration.
---   storage bucket pin-contributed-raw   PRIVATE. Path {user_id}/{pin}/{ts}.jpg
+--   storage bucket pin-contributed-raw   PRIVATE, JPEG only (the API re-encodes
+--                                  every raw photo as JPEG without metadata).
+--                                  Path {user_id}/{pin}/{ts}.jpg
 --                                  (drafts: {user_id}/drafts/...), same layout as
 --                                  pin-contributed-images.
 --   storage policy pcr_storage_admin_select   admins may read. There is NO
@@ -51,9 +53,10 @@ values (
   'pin-contributed-raw',
   false,
   10485760,
-  array['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif']
+  array['image/jpeg']
 )
-on conflict (id) do update set public = false;
+on conflict (id) do update
+  set public = false, file_size_limit = 10485760, allowed_mime_types = array['image/jpeg'];
 
 drop policy if exists "pcr_storage_admin_select" on storage.objects;
 create policy "pcr_storage_admin_select"

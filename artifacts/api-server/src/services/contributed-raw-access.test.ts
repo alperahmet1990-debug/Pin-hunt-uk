@@ -16,7 +16,8 @@ const sql = MIGRATION.split("\n").filter((l) => !l.trim().startsWith("--")).join
 describe("migration 079: raw contributed photos", () => {
   it("creates the bucket private, and forces it private if it already exists", () => {
     expect(sql).toMatch(/'pin-contributed-raw',\s*'pin-contributed-raw',\s*false,/);
-    expect(sql).toMatch(/on conflict \(id\) do update set public = false/);
+    expect(sql).toMatch(/on conflict \(id\) do update\s+set public = false, file_size_limit = 10485760, allowed_mime_types = array\['image\/jpeg'\]/);
+    expect(sql).toMatch(/10485760,\s*array\['image\/jpeg'\]\s*\)/);
   });
 
   it("has exactly one storage policy for the bucket: admin SELECT", () => {

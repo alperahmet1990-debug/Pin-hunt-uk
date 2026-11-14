@@ -92,7 +92,7 @@ const preview = (body: Record<string, unknown> = {}) =>
   request(app)
     .post("/api/pin-images/contribute/preview")
     .set("Authorization", "Bearer test-token")
-    .send({ pinId: "PHUK-00000001", imageBase64: PHOTO, consentGranted: true, ...body });
+    .send({ pinId: "PHUK-00000001", imageBase64: PHOTO, consentGranted: true, keepOriginalConsent: true, ...body });
 
 describe("POST /api/pin-images/contribute/preview", () => {
   beforeEach(() => {
@@ -123,6 +123,13 @@ describe("POST /api/pin-images/contribute/preview", () => {
     expect(state.drafts.get(res.body.draftPath)).toEqual(Buffer.from([9, 9, 9]));
     expect(Object.keys(res.body).sort()).toEqual(["draftPath", "previewBase64"]);
     expect(JSON.stringify(res.body)).not.toContain("pin-contributed-raw");
+  });
+
+  it("keeps no raw original for app builds that didn't tell the collector (no keepOriginalConsent)", async () => {
+    const res = await preview({ keepOriginalConsent: undefined });
+    expect(res.status).toBe(200);
+    expect(state.drafts.size).toBe(1);
+    expect(state.raw.size).toBe(0);
   });
 
   it("strips EXIF (GPS location, device) from the raw original before storing it", async () => {

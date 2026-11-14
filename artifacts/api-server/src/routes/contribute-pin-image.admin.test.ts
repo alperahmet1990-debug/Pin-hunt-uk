@@ -74,7 +74,9 @@ const confirm = (extra: Record<string, unknown> = {}) =>
   request(app)
     .post("/api/pin-images/contribute")
     .set("Authorization", "Bearer test-token")
-    .send({ pinId: "PHUK-00000001", draftPath: "user-1/drafts/PHUK-00000001__abc.jpg", consentGranted: true, ...extra });
+    .send({
+      pinId: "PHUK-00000001", draftPath: "user-1/drafts/PHUK-00000001__abc.jpg", consentGranted: true, keepOriginalConsent: true, ...extra,
+    });
 
 describe("POST /api/pin-images/contribute", () => {
   beforeEach(() => {
@@ -132,6 +134,13 @@ describe("POST /api/pin-images/contribute", () => {
     expect(raw?.from).toBe("user-1/drafts/PHUK-00000001__abc.jpg");
     expect(raw?.to).toMatch(/^user-1\/PHUK-00000001\/\d+\.jpg$/);
     expect(state.created[0].rawStoragePath).toBe(raw?.to);
+  });
+
+  it("doesn't keep a raw original for app builds that didn't tell the collector", async () => {
+    const res = await confirm({ keepOriginalConsent: undefined });
+    expect(res.status).toBe(200);
+    expect(state.moves.some((m) => m.bucket === "pin-contributed-raw")).toBe(false);
+    expect(state.created[0].rawStoragePath).toBeUndefined();
   });
 
   it("still queues the photo when the raw original can't be kept (079 not applied)", async () => {

@@ -4,7 +4,7 @@
 
 **Maintainer decisions (14 Nov 2026):**
 - **Catalogue only.** Production's catalogue becomes Pin & Pop only. Sign-in accounts, profiles and settings stay.
-- **Old photo files are deleted.** The 2,977 old catalogue photos in production storage go too.
+- ~~Old photo files are deleted.~~ **Changed 14 Nov 2026: keep the Collectible PinTrader photos and link them to the matching Pin & Pop pins.** The pin information comes from Pin & Pop; the photo comes from Collectible PinTrader (licence: any use, including edited images, confirmed 16 Oct 2026). See step 5b.
 
 ## What production holds now (export of 14 Nov, 21:19)
 
@@ -82,6 +82,31 @@ For old pins already linked to a Pin & Pop ID (94 of them): point their collecti
 
 **Check:** the step 6 dry run shows how many entries were moved and how many are left.
 
+### 5b. Link Collectible PinTrader photos to Pin & Pop pins
+
+Pin & Pop records have no Collectible PinTrader, PinPics or Pin Trading DB number, so linking works from names. Collectible PinTrader titles are mostly "Series - Name", with a year (2,943 of 2,977) and an edition (2,966).
+
+1. **Estimate (read-only, now, in staging).** Run a generated query (`scripts/catalogue-gap/build-ctp-match-sql.mjs`; the file holds catalogue data, so it isn't committed) in the staging SQL editor. For each Collectible PinTrader pin it proposes the best Pin & Pop pin and sorts it into a tier:
+   - **strong:** one candidate, same year;
+   - **likely:** a clear best of several;
+   - **possible:** year unknown;
+   - **ambiguous:** several close candidates;
+   - **weak:** the year differs;
+   - **conflict:** the limited-edition sizes differ;
+   - **fuzzy only:** a similar name only;
+   - **none.**
+   The output is Pin & Pop IDs and scores only, never Pin & Pop titles.
+2. **Review.** You confirm proposals, fastest first:
+   - **strong** in bulk, after spot-checking a sample;
+   - **likely**, **possible** and **ambiguous** one by one, with the Collectible PinTrader photo beside the Pin & Pop image (the admin view already shows Pin & Pop images to admins).
+   **Nothing is linked by name alone.**
+3. **Apply (production, after step 4).** For each confirmed pair:
+   - the Pin & Pop pin's `image_url` points at the **existing** file in `pin-catalogue/collectible-pintrader/`. Nothing is copied or re-uploaded;
+   - a `pin_images` record notes `source = 'collectible_pintrader'` and the Collectible PinTrader ID.
+   Unmatched photos stay in storage, unused, for a later pass. One option is the bulk image matcher, subject to the Pin & Pop answer on sending images to OpenAI.
+
+**Check before relying on it:** that Pin & Pop's agreement allows showing another source's photo on a pin whose data comes from Pin & Pop (`PIN-AND-POP-QUESTIONS.md`, Q14). Also check whether Collectible PinTrader wants a photo credit (`catalogue_sources.attribution_required`).
+
 ### 6. Remove the old catalogue (one guarded SQL script)
 
 **Needs writing** once the pre-check numbers are in. It would be one script for the production SQL editor that:
@@ -94,11 +119,9 @@ For old pins already linked to a Pin & Pop ID (94 of them): point their collecti
 
 **Check:** re-run the pre-check. Old pins should be 0 and Pin & Pop pins about 116,500.
 
-### 7. Delete the old photo files
+### 7. Photo files: keep
 
-In the dashboard, Storage → `pin-catalogue`, then delete the folder **`collectible-pintrader`**. There's also one file in `pins/`; check it before deleting.
-
-Do this **after** step 6, so nothing in the app points at a missing file, and only once you're sure about the copy (step 2).
+**Don't** delete `pin-catalogue/collectible-pintrader/`: the linked Pin & Pop pins now use those files. Photos that weren't linked stay too, for a later pass. Revisit only once linking is finished.
 
 ### 8. After
 
@@ -110,7 +133,7 @@ Do this **after** step 6, so nothing in the app points at a missing file, and on
 
 - **Before step 6:** nothing old has been removed. The import can be undone by deleting the Pin & Pop pins, which have no user data yet.
 - **After step 6:** restore the old catalogue from the Supabase backup, into a **new** project first, then copy back what's needed. Moved collection entries stay moved.
-- **After step 7:** photo files can only come back from your own copy.
+- **Photo files** are never deleted in this plan, so unlinking a photo is a one-row change.
 
 ## Who does what
 
@@ -121,4 +144,5 @@ Do this **after** step 6, so nothing in the app points at a missing file, and on
 | 3 Migrations | you apply; I can prepare production-guard versions | Needs preparing |
 | 4 Production import tool | agent builds (reviewed PR), you run | Needs building |
 | 5–6 Move data and remove old catalogue (SQL script) | agent writes from the pre-check numbers, you run | Needs the pre-check |
-| 7 Delete files | you, in the dashboard | Ready after 6 |
+| 5b Link Collectible PinTrader photos | estimate: you run, I read; review: you; apply script: agent writes, you run | **Estimate ready now** |
+| 7 Keep files | — | — |

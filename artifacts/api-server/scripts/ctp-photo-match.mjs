@@ -105,26 +105,34 @@ export function searchWords(text) {
     .map((w) => (w.length > 4 && w.endsWith("s") && !w.endsWith("ss") ? w.slice(0, -1) : w)))];
 }
 
+/** Runs fn over items, n at a time. */
+async function pool(items, n, fn) {
+  let next = 0;
+  await Promise.all(Array.from({ length: Math.min(n, items.length) }, async () => {
+    while (next < items.length) await fn(items[next++]);
+  }));
+}
+
 export async function loadCandidates(sample, photos, get) {
   const PIN_COLS = "id,pinhunt_id,title,collection,release_year,edition_type,limited_edition_size";
   const byPhid = new Map();
   // 1. extra candidates: Pin & Pop pins whose name equals the CTP name (case-insensitive)
   const extra = new Map();
-  for (const r of sample) {
+  await pool(sample, 4, async (r) => {
     const name = nameOf(photos.get(r.ctp_pin).title).replace(/[*,()"\\]/g, " ").trim();
-    if (!name) continue;
-    const rows = await get(`pins?select=${PIN_COLS}&catalogue_source=eq.pin_and_pop&title=ilike.${encodeURIComponent(name)}&limit=12`);
+    if (!name) return;
+    const rows = await get(`pins?select=${PIN_COLS}&catalogue_source=eq.pin_and_pop&title=ilike.${encodeURIComponent(name)}&limit=12`).catch(() => []);
     const year = Number(photos.get(r.ctp_pin).year) || null;
     rows.sort((a, b) => (b.release_year === year) - (a.release_year === year));
     extra.set(r.ctp_pin, rows.map((p) => p.pinhunt_id));
     for (const p of rows) byPhid.set(p.pinhunt_id, p);
-  }
+  });
   // 1b. wider search (search_catalogue_pins, migration 076: every word must
   //     appear in a title/series/character field): distinctive title words
   //     with the year, then the name plus one series word at a time, then
   //     without the year. Ranked by word overlap, best kept.
   const wide = new Map();
-  for (const r of sample) {
+  await pool(sample, 4, async (r) => {
     const ctp = photos.get(r.ctp_pin);
     const year = Number(ctp.year) || null;
     const nameWords = searchWords(nameOf(ctp.title));
@@ -148,7 +156,7 @@ export async function loadCandidates(sample, photos, get) {
       return overlap + (year && p.release_year === year ? 2 : 0);
     };
     wide.set(r.ctp_pin, [...found.values()].sort((a, b) => score(b) - score(a)).map((p) => p.pinhunt_id));
-  }
+  });
   // 2. the estimate's candidates
   const ids = [...new Set(sample.flatMap(estimateCandidates))].filter((id) => !byPhid.has(id));
   for (let i = 0; i < ids.length; i += 80) {
@@ -275,6 +283,68 @@ export function shareSummary(results) {
   };
 }
 
+// ── full-run review groups ──────────────────────────────────────────────────
+
+/** Series whose sibling pins look alike; the test batch's only wrong picks came from these. */
+const RISKY_SERIES_DEFAULT = ["pixar party countdown"];
+
+/**
+ * 1 = AI confident and agrees with the name match (accept in bulk after a spot-check)
+ * 2 = AI confident, picked a pin the name match didn't (quick scan, accepted unless ticked)
+ * 3 = no pick, less sure, an error, or a look-alike series (check, or leave for later)
+ */
+export function reviewGroup(r, env = {}) {
+  const risky = (env.CTP_RISKY_SERIES ? env.CTP_RISKY_SERIES.split(",") : RISKY_SERIES_DEFAULT).map((s) => s.trim().toLowerCase()).filter(Boolean);
+  const text = `${r.ctp.title} ${r.ctp.series ?? ""}`.toLowerCase();
+  if (!r.ai.match || r.ai.error || r.ai.confidence < 90 || risky.some((s) => text.includes(s))) return 3;
+  return r.ai.match === r.estimate.best_pin ? 1 : 2;
+}
+
+const GROUP_TEXT = {
+  1: ["Group 1: AI and name match agree", "The AI is confident and picked the same pin the name match did. In the test, all of these were right. Check the 20 below; tick <b>Wrong</b> on any that aren't. If they look right, leave <b>Accept all</b> ticked."],
+  2: ["Group 2: AI found a different pin", "The AI is confident, but its pick came from the wider search. Every pair is <b>accepted unless you tick Wrong</b>. Scan the grid and tick only the wrong ones."],
+  3: ["Group 3: needs your eye (optional)", "No pick, a less sure pick, or a look-alike series. Click the right candidate if it's shown, or leave it as <b>Leave unlinked</b>. You can skip this page: the photos stay safely in storage."],
+};
+
+export function groupPageHtml(group, items) {
+  const pick = (r) => r.candidates.find((c) => c.pinhuntId === r.ai.match);
+  const img = (url, cls = "") => `<img class="${cls}" src="${esc(url)}" loading="lazy" alt="">`;
+  const data = items.map((r) => ({ ctp: r.ctp.pinhuntId, pin: r.ai.match ?? null }));
+  let body;
+  if (group === 1) {
+    const step = Math.max(1, Math.floor(items.length / 20));
+    const spot = items.filter((_, i) => i % step === 0).slice(0, 20);
+    body = `<label class="big"><input type="checkbox" id="acceptAll" checked> Accept all ${items.length} in this group (except any ticked Wrong)</label>
+<div class="grid">${spot.map((r) => { const p = pick(r); return `<div class="pair" data-ctp="${esc(r.ctp.pinhuntId)}">${img(r.ctp.imageUrl, "a")}${p ? img(p.imageUrl, "b") : ""}<p>${esc(r.ctp.title)}<br><small>→ ${esc(p?.title ?? "")} (${esc(r.ai.match)})</small></p><label><input type="checkbox" class="wrong"> Wrong</label></div>`; }).join("")}</div>`;
+  } else if (group === 2) {
+    body = `<div class="grid">${items.map((r) => { const p = pick(r); return `<div class="pair" data-ctp="${esc(r.ctp.pinhuntId)}">${img(r.ctp.imageUrl, "a")}${p ? img(p.imageUrl, "b") : ""}<p>${esc(r.ctp.title)}<br><small>→ ${esc(p?.title ?? "")} · ${esc(p?.series ?? "")} · ${esc(p?.year ?? "?")} (${r.ai.confidence})</small></p><label><input type="checkbox" class="wrong"> Wrong</label></div>`; }).join("")}</div>`;
+  } else {
+    body = items.map((r, i) => `<section data-ctp="${esc(r.ctp.pinhuntId)}"><h2>${esc(r.ctp.title)}</h2><p class="meta">${esc(r.ctp.series ?? "")} · ${esc(r.ctp.year ?? "?")} · AI: ${r.ai.match ? `${esc(r.ai.match)} (${r.ai.confidence})` : "no match"}: ${esc(r.ai.reasoning)}</p>
+<div class="row"><figure>${img(r.ctp.imageUrl, "a")}<figcaption>Collectible PinTrader photo</figcaption></figure>
+${r.candidates.map((c) => `<label class="cand"><input type="radio" name="c${i}" value="${esc(c.pinhuntId)}"${c.pinhuntId === r.ai.match ? " checked" : ""}>${img(c.imageUrl)}<span>${esc(c.pinhuntId)}<br>${esc(c.title)}<br><small>${esc(c.series ?? "")} · ${esc(c.year ?? "?")}</small></span></label>`).join("")}
+<label class="cand none"><input type="radio" name="c${i}" value=""${r.ai.match ? "" : " checked"}><span>Leave unlinked</span></label></div></section>`).join("\n");
+  }
+  const [title, intro] = GROUP_TEXT[group];
+  return `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Photo Links ${group}</title>
+<style>body{font:15px/1.5 system-ui,sans-serif;margin:0;padding:16px;background:#f6f7f5;color:#1d2a2c}h1{font-size:1.4rem;margin:0 0 6px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}.pair{background:#fff;border:1px solid #d9e0de;border-radius:10px;padding:8px}.pair img{width:48%;height:120px;object-fit:contain;background:#eef2f1;border-radius:6px}.pair p{margin:4px 0;font-size:13px}img.a{outline:3px solid #1f6f6a}img.b{outline:3px solid #c77d00}.pair:has(.wrong:checked){background:#fde8e6}.big{display:block;font-weight:600;font-size:1.05rem;margin:10px 0}section{background:#fff;border:1px solid #d9e0de;border-radius:10px;padding:10px;margin:10px 0}h2{font-size:1rem;margin:0}.meta{color:#5b6b6c;font-size:13px;margin:4px 0}.row{display:flex;gap:8px;overflow-x:auto}figure{margin:0;flex:none;width:130px;font-size:12px}figure img,.cand img{width:130px;height:130px;object-fit:contain;background:#eef2f1;border-radius:6px}.cand{flex:none;width:130px;font-size:12px;cursor:pointer}.cand input{display:block}.cand:has(input:checked) img{outline:3px solid #c77d00}.none{align-self:center}button{font:600 1rem system-ui;padding:12px 18px;border-radius:8px;border:0;background:#1f6f6a;color:#fff;margin:14px 0}</style>
+<h1>${title} (${items.length})</h1><p>${intro} Teal outline: Collectible PinTrader photo. Orange: the Pin &amp; Pop pin it would be linked to. <b>For your eyes only</b> (Pin &amp; Pop images).</p>
+${body}
+<button id="save" type="button">Download my decisions</button>
+<script type="application/json" id="data">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>
+<script>
+const data = JSON.parse(document.getElementById("data").textContent);
+document.getElementById("save").addEventListener("click", () => {
+  const wrong = new Set([...document.querySelectorAll(".wrong:checked")].map((x) => x.closest("[data-ctp]").dataset.ctp));
+  const all = document.getElementById("acceptAll");
+  const chosen = new Map([...document.querySelectorAll("section[data-ctp]")].map((s) => [s.dataset.ctp, (s.querySelector("input[type=radio]:checked") || {}).value || null]));
+  const out = data.map((d) => ({ ctp: d.ctp, pin: ${group} === 3 ? (chosen.get(d.ctp) ?? null) : (all && !all.checked) ? null : (wrong.has(d.ctp) ? null : d.pin), group: ${group} }));
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(out, null, 1)], { type: "application/json" }));
+  a.download = "decisions-${group}.json"; document.body.appendChild(a); a.click(); a.remove();
+});
+</script>`;
+}
+
 // ── main ────────────────────────────────────────────────────────────────────
 
 const arg = (name, argv) => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : undefined; };
@@ -291,50 +361,87 @@ export async function main(argv = process.argv.slice(2), env = process.env, fetc
 
   const estimate = readEstimate(fs.readFileSync(expand(estimatePath), "utf8"));
   const photos = ctpPhotos(fs.readFileSync(expand(productionPath), "utf8"));
-  // --retry <my-answers.json>: only the photos you didn't mark "right" last time.
+  // --all: every photo. --retry <my-answers.json>: only those not marked "right". Otherwise a test sample.
   const retryPath = arg("--retry", argv);
+  const all = argv.includes("--all");
   let sample;
-  if (retryPath) {
+  if (all) sample = estimate.filter((r) => photos.has(r.ctp_pin));
+  else if (retryPath) {
     const keep = new Set(JSON.parse(fs.readFileSync(expand(retryPath), "utf8")).filter((a) => a.verdict !== "right").map((a) => a.ctp));
     sample = estimate.filter((r) => keep.has(r.ctp_pin) && photos.has(r.ctp_pin));
-  } else {
-    sample = pickSample(estimate, photos, Number(env.CTP_MATCH_SAMPLE ?? 50));
-  }
+  } else sample = pickSample(estimate, photos, Number(env.CTP_MATCH_SAMPLE ?? 50));
   log(`Sample: ${sample.length} photos (${Object.entries(sample.reduce((m, r) => { const k = r.tier.split(" (")[0]; m[k] = (m[k] ?? 0) + 1; return m; }, {})).map(([k, v]) => `${k} ${v}`).join(", ")}).`);
 
-  const items = await loadCandidates(sample, photos, supabaseGet(env, fetchImpl));
-  const calls = items.filter((i) => i.candidates.length).length;
-  log(`Candidates loaded from staging (read-only). ${calls} photos have at least one Pin & Pop image to compare; ${items.length - calls} have none.`);
-  if (!run) { log(`Dry run: no AI calls made. Add --run to make ${calls} OpenAI calls.`); return { items }; }
-
-  fs.mkdirSync(expand(outDir), { recursive: true });
-  const state = { noEffort: false };
-  const results = new Array(items.length);
-  let next = 0, done = 0;
-  const workers = Array.from({ length: Math.max(1, Number(env.CTP_MATCH_CONCURRENCY ?? 3)) }, async () => {
-    while (next < items.length) {
-      const i = next++;
-      const item = items[i];
-      const ai = item.candidates.length ? await compareOne(item, env, fetchImpl, state) : { match: null, confidence: 0, reasoning: "no candidate images", skipped: true };
-      results[i] = { ...item, ai };
-      done++;
-      if (done % 10 === 0 || done === items.length) log(`  compared ${done}/${items.length}`);
-    }
-  });
-  await Promise.all(workers);
-
+  const get = supabaseGet(env, fetchImpl);
   const dir = expand(outDir);
+  const progressFile = path.join(dir, "progress.jsonl");
+
+  if (!run) {
+    const probe = await loadCandidates(sample.slice(0, all ? 25 : sample.length), photos, get);
+    const calls = probe.filter((i) => i.candidates.length).length;
+    if (all) {
+      log(`Candidates checked for the first ${probe.length} photos (read-only): ${calls} have Pin & Pop images to compare.`);
+      log(`Dry run: no AI calls made. Add --run to compare all ${sample.length} photos (about ${sample.length} OpenAI calls). It saves as it goes; re-run the same command to continue after any interruption.`);
+    } else {
+      log(`Candidates loaded from staging (read-only). ${calls} photos have at least one Pin & Pop image to compare; ${probe.length - calls} have none.`);
+      log(`Dry run: no AI calls made. Add --run to make ${calls} OpenAI calls.`);
+    }
+    return { items: probe };
+  }
+
+  // Resume: photos already compared (without an error) are skipped.
+  fs.mkdirSync(dir, { recursive: true });
+  const saved = new Map();
+  if (fs.existsSync(progressFile)) {
+    for (const line of fs.readFileSync(progressFile, "utf8").split("\n")) {
+      if (!line.trim()) continue;
+      try { const r = JSON.parse(line); if (!r.ai?.error) saved.set(r.ctp.pinhuntId, r); } catch { /* partial line from an interruption */ }
+    }
+  }
+  const todo = sample.filter((r) => !saved.has(r.ctp_pin));
+  if (saved.size) log(`Continuing: ${saved.size} already done, ${todo.length} to go.`);
+  const state = { noEffort: false };
+  const concurrency = Math.max(1, Number(env.CTP_MATCH_CONCURRENCY ?? 3));
+  let done = 0;
+  const started = Date.now();
+  for (let c = 0; c < todo.length; c += 25) {
+    const items = await loadCandidates(todo.slice(c, c + 25), photos, get);
+    await pool(items, concurrency, async (item) => {
+      const ai = item.candidates.length ? await compareOne(item, env, fetchImpl, state) : { match: null, confidence: 0, reasoning: "no candidate images", skipped: true };
+      const result = { ...item, ai };
+      fs.appendFileSync(progressFile, JSON.stringify(result) + "\n");
+      saved.set(item.ctp.pinhuntId, result);
+      done++;
+      if (done % 10 === 0 || done === todo.length) {
+        const mins = (Date.now() - started) / 60000;
+        const left = done ? Math.round((mins / done) * (todo.length - done)) : 0;
+        log(`  compared ${done}/${todo.length}${todo.length > 50 ? ` (about ${left} min left)` : ""}`);
+      }
+    });
+  }
+
+  const results = sample.map((r) => saved.get(r.ctp_pin)).filter(Boolean);
   fs.writeFileSync(path.join(dir, "results.json"), JSON.stringify(results, null, 1));
-  const cols = ["ctp_pin", "ctp_title", "tier", "name_best", "ai_match", "ai_confidence", "ai_reasoning", "candidates"];
+  const cols = ["ctp_pin", "ctp_title", "tier", "name_best", "ai_match", "ai_confidence", "review_group", "ai_reasoning", "candidates"];
   const cell = (v) => { const s = String(v ?? ""); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
-  fs.writeFileSync(path.join(dir, "results.csv"), [cols.join(","), ...results.map((r) => [r.ctp.pinhuntId, r.ctp.title, r.estimate.tier, r.estimate.best_pin, r.ai.match, r.ai.confidence, r.ai.reasoning, r.candidates.map((c) => c.pinhuntId).join(" ")].map(cell).join(","))].join("\n") + "\n");
-  fs.writeFileSync(path.join(dir, "review.html"), reviewHtml(results));
+  fs.writeFileSync(path.join(dir, "results.csv"), [cols.join(","), ...results.map((r) => [r.ctp.pinhuntId, r.ctp.title, r.estimate.tier, r.estimate.best_pin, r.ai.match, r.ai.confidence, reviewGroup(r, env), r.ai.reasoning, r.candidates.map((c) => c.pinhuntId).join(" ")].map(cell).join(","))].join("\n") + "\n");
   const share = shareSummary(results);
+  if (all) {
+    const groups = { 1: [], 2: [], 3: [] };
+    for (const r of results) groups[reviewGroup(r, env)].push(r);
+    fs.writeFileSync(path.join(dir, "review-1-agree.html"), groupPageHtml(1, groups[1]));
+    fs.writeFileSync(path.join(dir, "review-2-scan.html"), groupPageHtml(2, groups[2]));
+    fs.writeFileSync(path.join(dir, "review-3-check.html"), groupPageHtml(3, groups[3]));
+    share.review_groups = { "1 agree": groups[1].length, "2 scan": groups[2].length, "3 check": groups[3].length };
+  } else {
+    fs.writeFileSync(path.join(dir, "review.html"), reviewHtml(results));
+  }
   fs.writeFileSync(path.join(dir, "share.json"), JSON.stringify(share, null, 1));
   const failed = results.filter((r) => r.ai.error);
-  if (failed.length) log(`${failed.length} of ${results.length} AI calls failed. First error: ${failed[0].ai.reasoning}`);
+  if (failed.length) log(`${failed.length} of ${results.length} AI calls failed. First error: ${failed[0].ai.reasoning}. Re-run the same command to retry just those.`);
   log(`Done. Tokens: ${share.tokens.prompt} in, ${share.tokens.completion} out (model ${share.model}).`);
-  log(`Open ${path.join(dir, "review.html")} to check the answers. Send Claude share.json and my-answers.json.`);
+  if (all) log(`Review groups: ${JSON.stringify(share.review_groups)}. Open the review-1/2/3 pages in ${dir}.`);
+  else log(`Open ${path.join(dir, "review.html")} to check the answers. Send Claude share.json and my-answers.json.`);
   return { results, share };
 }
 

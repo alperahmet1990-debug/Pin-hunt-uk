@@ -123,6 +123,32 @@ test("search words drop years, filler words and plural s", async () => {
   assert.deepEqual(searchWords("Hidden Mickey 2015 WDW - Spacesuits - Goofy"), ["hidden", "mickey", "spacesuit", "goofy"]);
 });
 
+test("--all saves as it goes, resumes without repeating calls, and writes the three review pages", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "ctp-"));
+  const { estPath, prodPath } = files(dir);
+  const out = path.join(dir, "full");
+  const calls1 = [];
+  const first = await main(["--estimate", estPath, "--production", prodPath, "--out", out, "--all", "--run"], env, fakeFetch(calls1), () => {});
+  assert.equal(first.results.length, 3, "every photo, including the one name matching couldn't place");
+  assert.ok(fs.existsSync(path.join(out, "progress.jsonl")));
+  for (const f of ["review-1-agree.html", "review-2-scan.html", "review-3-check.html", "share.json"]) assert.ok(fs.existsSync(path.join(out, f)), f);
+  const calls2 = [];
+  const logs = [];
+  await main(["--estimate", estPath, "--production", prodPath, "--out", out, "--all", "--run"], env, fakeFetch(calls2), (m) => logs.push(m));
+  assert.equal(calls2.filter((c) => c.url.includes("openai.com")).length, 0, "nothing repeated on resume");
+  assert.ok(logs.some((m) => /Continuing: 3 already done, 0 to go/.test(m)));
+});
+
+test("review groups: agree, different pin, needs a look", async () => {
+  const { reviewGroup } = await import("../../artifacts/api-server/scripts/ctp-photo-match.mjs");
+  const r = (o) => ({ ctp: { title: "Hidden Mickey - Goofy", series: "Hidden Mickey" }, estimate: { best_pin: "PHUK-10000001" }, ai: { match: "PHUK-10000001", confidence: 99 }, ...o });
+  assert.equal(reviewGroup(r({})), 1);
+  assert.equal(reviewGroup(r({ ai: { match: "PHUK-10000002", confidence: 99 } })), 2);
+  assert.equal(reviewGroup(r({ ai: { match: null, confidence: 99 } })), 3);
+  assert.equal(reviewGroup(r({ ai: { match: "PHUK-10000001", confidence: 70 } })), 3);
+  assert.equal(reviewGroup(r({ ctp: { title: "Pixar Party Countdown Collection - Cars", series: "x" } })), 3, "look-alike series always get a look");
+});
+
 test("refuses a production target", async () => {
   await assert.rejects(() => main(["--estimate", "x", "--production", "y", "--out", "z"], { ...env, SUPABASE_URL: `https://${PROD}.supabase.co` }, async () => { throw new Error("no network"); }, () => {}), /STAGING_PROJECT_REF|production/);
 });

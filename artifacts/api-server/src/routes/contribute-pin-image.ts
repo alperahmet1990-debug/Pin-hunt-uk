@@ -392,7 +392,14 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
       await recordContribution(res, userId, body, storagePath, rawStoragePath);
     } catch (err) {
       // No row points at the raw original now, so don't leave it behind.
-      if (rawStoragePath) await getStorageClient().storage.from(RAW_BUCKET).remove([rawStoragePath]);
+      // Best-effort: a failed clean-up must not hide the original error.
+      if (rawStoragePath) {
+        try {
+          await getStorageClient().storage.from(RAW_BUCKET).remove([rawStoragePath]);
+        } catch {
+          console.warn("[contribute-pin-image] raw original not removed after a failed submit");
+        }
+      }
       throw err;
     }
   } catch (err) {

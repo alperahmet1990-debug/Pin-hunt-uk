@@ -181,21 +181,21 @@ export default function AdminContributedImagesScreen() {
                 <View style={styles.compareRow}>
                   <ComparePanel
                     label="Raw"
-                    caption="As taken · admin only"
+                    caption="As taken"
                     uri={img.rawSignedUrl ?? undefined}
                     emptyText="Not kept"
                     onPress={setEnlarged}
                   />
                   <ComparePanel
                     label="Cleaned"
-                    caption="Published on approve"
+                    caption="Goes live"
                     uri={img.signedUrl}
                     highlight
                     onPress={setEnlarged}
                   />
                   <ComparePanel
                     label="Pin & Pop"
-                    caption="Admin reference only"
+                    caption="Admin only"
                     uri={img.pinAndPop?.imageUrl}
                     emptyText={img.pinAndPop?.pageUrl ? 'Open on Pin & Pop' : 'Not linked'}
                     onEmptyPress={img.pinAndPop?.pageUrl ? () => Linking.openURL(img.pinAndPop!.pageUrl!) : undefined}

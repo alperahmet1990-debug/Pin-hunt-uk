@@ -16,6 +16,8 @@ const state = vi.hoisted(() => ({
   moves: [] as Array<{ bucket: string; from: string; to: string }>,
   created: [] as Array<Record<string, unknown>>,
   profileReads: 0,
+  rawRemoved: [] as string[],
+  rawCleared: [] as string[],
 }));
 
 vi.mock("@supabase/supabase-js", () => ({
@@ -30,6 +32,12 @@ vi.mock("@supabase/supabase-js", () => ({
           },
         }),
       }),
+      update: (values: Record<string, unknown>) => ({
+        eq: async (_col: string, id: string) => {
+          if (values.raw_storage_path === null) state.rawCleared.push(id);
+          return { error: null };
+        },
+      }),
     }),
     storage: {
       from: (bucket: string) => ({
@@ -38,6 +46,10 @@ vi.mock("@supabase/supabase-js", () => ({
           return { data: {}, error: bucket === "pin-contributed-raw" ? state.rawMoveError : null };
         },
         download: async () => ({ data: new Blob([new Uint8Array([1, 2, 3])]), error: null }),
+        remove: async (paths: string[]) => {
+          if (bucket === "pin-contributed-raw") state.rawRemoved.push(...paths);
+          return { data: [], error: null };
+        },
         upload: async () => ({ data: {}, error: state.uploadError }),
         getPublicUrl: (path: string) => ({ data: { publicUrl: `https://cdn.test.invalid/storage/v1/object/public/pin-catalogue/${path}` } }),
       }),
@@ -53,10 +65,12 @@ vi.mock("@workspace/pin-repository", async (importOriginal) => ({
   }),
   createSupabaseUserRepository: () => ({
     hasPendingContributedImage: async () => false,
-    createContributedImage: async (_userId: string, _pinId: string, input: Record<string, unknown>) => {
+    // Shaped like the real row (rowToContributedImage): uploader and raw path included.
+    createContributedImage: async (userId: string, _pinId: string, input: Record<string, unknown>) => {
       state.created.push(input);
       return {
-        id: "img-1", pinId: "pin-uuid", pinhuntId: "PHUK-00000001", storagePath: input.storagePath, status: "pending",
+        id: "img-1", pinId: "pin-uuid", pinhuntId: "PHUK-00000001", uploadedBy: userId,
+        storagePath: input.storagePath, rawStoragePath: input.rawStoragePath, status: "pending",
       };
     },
     markContributedImageReviewed: async (id: string) => {
@@ -92,6 +106,8 @@ describe("POST /api/pin-images/contribute", () => {
     state.moves = [];
     state.created = [];
     state.profileReads = 0;
+    state.rawRemoved = [];
+    state.rawCleared = [];
   });
 
   it("sends an admin's own contribution to the review queue by default", async () => {
@@ -110,6 +126,24 @@ describe("POST /api/pin-images/contribute", () => {
     expect(res.body.autoApproved).toBe(true);
     expect(state.updatedPins).toEqual(["PHUK-00000001"]);
     expect(state.reviewed).toEqual(["img-1"]);
+  });
+
+  it("deletes the raw original once an admin's Publish now has published the photo", async () => {
+    state.isAdmin = true;
+    const res = await confirm({ publishNow: true });
+    expect(res.status).toBe(200);
+    expect(res.body.autoApproved).toBe(true);
+    const raw = state.moves.find((m) => m.bucket === "pin-contributed-raw")!.to;
+    expect(state.rawRemoved).toEqual([raw]);
+    expect(state.rawCleared).toEqual(["img-1"]);
+  });
+
+  it("keeps the raw original while the photo waits for review", async () => {
+    state.isAdmin = true;
+    const res = await confirm();
+    expect(res.body.autoApproved).toBe(false);
+    expect(state.rawRemoved).toEqual([]);
+    expect(state.rawCleared).toEqual([]);
   });
 
   it("ignores publishNow from a non-admin", async () => {

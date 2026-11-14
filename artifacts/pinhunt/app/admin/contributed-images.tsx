@@ -108,7 +108,11 @@ export default function AdminContributedImagesScreen() {
           Authorization: `Bearer ${session.access_token}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(action === 'reject' ? { reviewerNotes: notesById[imageId] } : { replaceExisting }),
+        // seenImageUrl: the catalogue photo this card showed, so the server only
+        // replaces that photo (a newer one comes back as 409 to confirm first).
+        body: JSON.stringify(action === 'reject'
+          ? { reviewerNotes: notesById[imageId] }
+          : { replaceExisting, seenImageUrl: images.find(i => i.id === imageId)?.pinImageUrl ?? null }),
       });
       const data = await res.json();
       if (res.status === 409 && data.code === 'has_image') {
@@ -122,7 +126,7 @@ export default function AdminContributedImagesScreen() {
     } finally {
       setBusyId(null);
     }
-  }, [session?.access_token, notesById]);
+  }, [session?.access_token, notesById, images]);
 
   return (
     <>

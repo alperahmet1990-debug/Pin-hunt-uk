@@ -83,12 +83,25 @@ describe('Admin contributed photos', () => {
     await screen.findByText('Dumbo Blue Sky');
     await fireEvent.press(screen.getAllByText('Approve')[0]);
     await screen.findByTestId('replace-confirm');
-    expect(JSON.parse(approveCalls()[0][1].body)).toEqual({ replaceExisting: false });
+    // The card showed no catalogue photo for this pin.
+    expect(JSON.parse(approveCalls()[0][1].body)).toEqual({ replaceExisting: false, seenImageUrl: null });
     expect(screen.getByText('Dumbo Blue Sky')).toBeTruthy();
 
     await fireEvent.press(screen.getByText('Replace and approve'));
     await waitFor(() => expect(approveCalls()).toHaveLength(2));
-    expect(JSON.parse(approveCalls()[1][1].body)).toEqual({ replaceExisting: true });
+    expect(JSON.parse(approveCalls()[1][1].body)).toEqual({ replaceExisting: true, seenImageUrl: null });
     await waitFor(() => expect(screen.queryByText('Dumbo Blue Sky')).toBeNull());
+  });
+
+  it("sends the catalogue photo the card showed, so the server can tell if it changed", async () => {
+    const withCurrent = [{ ...pending[1], id: 'img-3', pinImageUrl: 'https://cdn.test/current.jpg', proposalReason: 'poor_quality' }];
+    fetchMock.mockImplementation((url: string) => url.endsWith('/admin/pending-pin-images')
+      ? Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve({ images: withCurrent }) })
+      : Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve({ image: { id: 'img-3' } }) }));
+    await render(<AdminContributedImagesScreen />);
+    await screen.findByText('Castle Fireworks');
+    await fireEvent.press(screen.getByText('Approve'));
+    await waitFor(() => expect(approveCalls()).toHaveLength(1));
+    expect(JSON.parse(approveCalls()[0][1].body)).toEqual({ replaceExisting: false, seenImageUrl: 'https://cdn.test/current.jpg' });
   });
 });

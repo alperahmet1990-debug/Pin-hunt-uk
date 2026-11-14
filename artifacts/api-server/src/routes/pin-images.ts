@@ -133,10 +133,16 @@ router.get("/admin/pending-pin-images", requireAdmin, async (_req: Request, res:
  * Publishes the pending photo into the live catalogue — see
  * services/contributed-images.ts (also used for an admin's "publish now").
  *
- * Body: { replaceExisting?: boolean }. Replacement proposals (reason
- * wrong_pin / poor_quality / other) replace the current photo, which the
- * reviewer sees on the card. A "missing photo" contribution for a pin that
- * has gained a photo since needs replaceExisting: true, else 409.
+ * Body: { replaceExisting?: boolean, seenImageUrl?: string | null }.
+ * seenImageUrl is the pin's catalogue photo as the reviewer saw it on the
+ * card (null for none). A replacement proposal (reason wrong_pin /
+ * poor_quality / other) replaces that photo, but only if it is still the
+ * pin's current photo; if the pin's photo has changed since, 409 has_image
+ * shows the admin the new one first. A "missing photo" contribution for a
+ * pin that has gained a photo since also gets 409. replaceExisting: true
+ * (the admin's "Replace and approve") replaces whatever is there.
+ * Admin builds from before seenImageUrl existed don't send it; their
+ * replacement proposals replace as they always did.
  *
  * curl -X POST -H "Authorization: Bearer <token>" \
  *   https://<domain>/api/admin/pin-images/<id>/approve
@@ -157,13 +163,20 @@ router.post("/admin/pin-images/:id/approve", requireAdmin, async (req: AdminRequ
       return;
     }
 
-    const { replaceExisting } = (req.body ?? {}) as { replaceExisting?: unknown };
+    const body = (req.body ?? {}) as { replaceExisting?: unknown; seenImageUrl?: unknown };
     const isReplacementProposal = !!image.proposalReason && image.proposalReason !== "missing";
+    const sentSeen = Object.prototype.hasOwnProperty.call(body, "seenImageUrl");
+    const seen = typeof body.seenImageUrl === "string" ? body.seenImageUrl : undefined;
     const published = await publishContributedImage(image, req.adminId!, {
       serviceClient: getAdminAuthClient(),
       userRepo,
       pinRepo: getWritePinRepository(),
-    }, { replaceExisting: replaceExisting === true || isReplacementProposal });
+    }, {
+      // Older admin builds (no seenImageUrl): replacement proposals replace, as before.
+      replaceExisting: body.replaceExisting === true || (isReplacementProposal && !sentSeen),
+      // Newer builds: replace only the photo the reviewer actually saw.
+      replaceIfCurrentIs: isReplacementProposal ? seen : undefined,
+    });
     res.json({ image: published });
   } catch (err) {
     if (err instanceof PublishBlockedError) {

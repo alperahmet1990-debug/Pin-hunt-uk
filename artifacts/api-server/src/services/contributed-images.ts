@@ -13,10 +13,13 @@
  *
  * Replace rule (same as services/bulkImages/publish.ts): a pin whose current
  * photo came from somewhere else is only replaced when the caller says so
- * (replaceExisting). The admin route says so for replacement proposals,
- * where the reviewer saw the photo being replaced; a "missing photo"
- * contribution for a pin that has since gained a photo stops with
- * PublishBlockedError('has_image') until the admin confirms.
+ * (replaceExisting), or when the current photo is still exactly the one the
+ * caller saw (replaceIfCurrentIs). The admin route uses the latter for
+ * replacement proposals: the reviewer saw the photo being replaced on the
+ * card, but if the pin's photo has changed since the queue loaded, the
+ * publish stops with PublishBlockedError('has_image') so the admin sees the
+ * new photo before confirming. A "missing photo" contribution for a pin that
+ * has since gained a photo stops the same way until the admin confirms.
  *
  * Safe to re-run after a partial failure: the public object path is fixed
  * per contribution (upsert), a pin already showing this contribution's photo
@@ -88,8 +91,13 @@ export async function discardRawOriginal(
 }
 
 export interface PublishContributedOptions {
-  /** Replace a catalogue photo that came from somewhere else. */
+  /** Replace a catalogue photo that came from somewhere else, whatever it is. */
   replaceExisting?: boolean;
+  /**
+   * Replace the current catalogue photo only if it is still this URL (the
+   * one the reviewer saw). Any other current photo stops with 'has_image'.
+   */
+  replaceIfCurrentIs?: string;
 }
 
 export async function publishContributedImage(
@@ -109,7 +117,9 @@ export async function publishContributedImage(
   }
   const currentUrl = current.imageUrl || null;
   const currentIsOurs = !!currentUrl && currentUrl.includes(`/pin-catalogue/${publicPath}`);
-  if (currentUrl && !currentIsOurs && !opts.replaceExisting) {
+  const replaceAllowed = opts.replaceExisting === true
+    || (opts.replaceIfCurrentIs !== undefined && opts.replaceIfCurrentIs === currentUrl);
+  if (currentUrl && !currentIsOurs && !replaceAllowed) {
     throw new PublishBlockedError(
       "This pin already has a catalogue photo. Confirm the replacement to publish.",
       "has_image",

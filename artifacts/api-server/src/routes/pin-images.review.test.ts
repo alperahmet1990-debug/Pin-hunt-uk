@@ -168,7 +168,7 @@ describe("admin photo review", () => {
       expect(state.updatedPins).toHaveLength(1);
     });
 
-    it("replaces the current photo for a replacement proposal the reviewer saw", async () => {
+    it("keeps the old behaviour for admin builds that don't send seenImageUrl", async () => {
       state.image = pendingImage({ proposalReason: "poor_quality" });
       state.pinImageUrl = `${PUBLIC_BASE}pin-uuid/old.jpg`;
       const res = await approve();
@@ -182,6 +182,40 @@ describe("admin photo review", () => {
       expect(res.status).toBe(400);
       expect(state.updatedPins).toEqual([]);
       expect(state.reviewed).toEqual([]);
+    });
+
+    it("replaces the photo the reviewer saw for a replacement proposal", async () => {
+      state.image = pendingImage({ proposalReason: "poor_quality" });
+      state.pinImageUrl = `${PUBLIC_BASE}pin-uuid/old.jpg`;
+      const res = await approve({ seenImageUrl: `${PUBLIC_BASE}pin-uuid/old.jpg` });
+      expect(res.status).toBe(200);
+      expect(res.body.image.replacedImageUrl).toBe(`${PUBLIC_BASE}pin-uuid/old.jpg`);
+    });
+
+    it("stops with 409 when a replacement proposal's pin changed photo after the reviewer loaded the card", async () => {
+      state.image = pendingImage({ proposalReason: "wrong_pin" });
+      state.pinImageUrl = `${PUBLIC_BASE}pin-uuid/newer.jpg`;
+      const res = await approve({ seenImageUrl: `${PUBLIC_BASE}pin-uuid/old.jpg` });
+      expect(res.status).toBe(409);
+      expect(res.body.existingImageUrl).toBe(`${PUBLIC_BASE}pin-uuid/newer.jpg`);
+      expect(state.updatedPins).toEqual([]);
+      expect(state.reviewed).toEqual([]);
+    });
+
+    it("stops with 409 when the reviewer saw no photo but the pin has one now", async () => {
+      state.image = pendingImage({ proposalReason: "other" });
+      state.pinImageUrl = `${PUBLIC_BASE}pin-uuid/newer.jpg`;
+      const res = await approve({ seenImageUrl: null });
+      expect(res.status).toBe(409);
+      expect(state.updatedPins).toEqual([]);
+    });
+
+    it("replaces whatever is there once the admin confirms (Replace and approve)", async () => {
+      state.image = pendingImage({ proposalReason: "wrong_pin" });
+      state.pinImageUrl = `${PUBLIC_BASE}pin-uuid/newer.jpg`;
+      const res = await approve({ seenImageUrl: `${PUBLIC_BASE}pin-uuid/old.jpg`, replaceExisting: true });
+      expect(res.status).toBe(200);
+      expect(res.body.image.replacedImageUrl).toBe(`${PUBLIC_BASE}pin-uuid/newer.jpg`);
     });
 
     it("is safe to re-run after a partial failure that already set the pin's photo", async () => {

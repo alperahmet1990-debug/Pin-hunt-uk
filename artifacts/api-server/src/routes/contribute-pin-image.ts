@@ -98,6 +98,10 @@ function getServiceUserRepository() {
   return createSupabaseUserRepository(url, key);
 }
 
+/** Shown to the app instead of storage or database error text. */
+const STORE_FAILED = "Could not store your photo. Please try again.";
+const SUBMIT_FAILED = "Something went wrong with your photo. Please try again.";
+
 /** Photos as taken, before Pixian. Admin-read only (migration 080). */
 const RAW_BUCKET = "pin-contributed-raw";
 
@@ -129,18 +133,39 @@ const RAW_MAX_INPUT_PIXELS = 50_000_000;
 
 /** Photo formats a raw original may be (sharp's names). Anything else is not kept. */
 export const RAW_ALLOWED_FORMATS = ["jpeg", "png", "webp", "heif"] as const;
+type RawFormat = (typeof RAW_ALLOWED_FORMATS)[number];
+
+const HEIF_BRANDS = new Set(["heic", "heix", "hevc", "hevx", "heim", "heis", "mif1", "msf1", "heif"]);
+
+/**
+ * The photo format from the file's signature bytes, or null for anything
+ * else. Checked before sharp sees the bytes, so non-photo formats (SVG,
+ * TIFF, GIF, PDF, …) never reach an image parser at all.
+ */
+export function sniffPhotoFormat(buf: Buffer): RawFormat | null {
+  if (buf.length >= 3 && buf[0] === 0xff && buf[1] === 0xd8 && buf[2] === 0xff) return "jpeg";
+  if (buf.length >= 8 && buf.subarray(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]))) return "png";
+  if (buf.length >= 12 && buf.toString("latin1", 0, 4) === "RIFF" && buf.toString("latin1", 8, 12) === "WEBP") return "webp";
+  if (buf.length >= 12 && buf.toString("latin1", 4, 8) === "ftyp" && HEIF_BRANDS.has(buf.toString("latin1", 8, 12))) return "heif";
+  return null;
+}
 
 /**
  * The photo as taken, without its metadata: re-encoded as JPEG with the EXIF
  * orientation applied and every EXIF/XMP/IPTC tag (GPS location, device,
  * timestamps) dropped, which is sharp's default. Pixels are otherwise
  * unchanged, so the reviewer still sees the uncleaned photo. Throws on input
- * that isn't a RAW_ALLOWED_FORMATS photo, that sharp can't decode, or that is
- * over RAW_MAX_INPUT_PIXELS.
+ * whose signature bytes aren't a JPEG, PNG, WebP or HEIF photo (checked
+ * before sharp is called), that sharp reads as another format, that sharp
+ * can't decode, or that is over RAW_MAX_INPUT_PIXELS.
  */
 export async function rawWithoutMetadata(imageBase64: string): Promise<Buffer> {
-  const image = sharp(Buffer.from(imageBase64, "base64"), { limitInputPixels: RAW_MAX_INPUT_PIXELS, failOn: "error" });
-  // Header-only read: refuse non-photo formats (SVG, TIFF, GIF, …) before decoding pixels.
+  const bytes = Buffer.from(imageBase64, "base64");
+  // Signature first: anything that isn't a photo never reaches sharp.
+  const sniffed = sniffPhotoFormat(bytes);
+  if (!sniffed) throw new Error("Raw original format not allowed: not a photo signature");
+  const image = sharp(bytes, { limitInputPixels: RAW_MAX_INPUT_PIXELS, failOn: "error" });
+  // Then sharp's own header read must agree it's an allowed photo format.
   const { format } = await image.metadata();
   if (!format || !(RAW_ALLOWED_FORMATS as readonly string[]).includes(format)) {
     throw new Error(`Raw original format not allowed: ${format ?? "unknown"}`);
@@ -327,7 +352,8 @@ router.post("/pin-images/contribute/preview", requireUser, async (req: UserReque
         .from("pin-contributed-images")
         .upload(draftPath, processed, { contentType: "image/jpeg", upsert: true });
       if (uploadError) {
-        res.status(500).json({ error: `Could not store your photo: ${uploadError.message}` });
+        console.error("[contribute-pin-image] storing the photo failed:", uploadError.message);
+        res.status(500).json({ error: STORE_FAILED });
         return;
       }
       // The photo as taken, same path, admin-only bucket.
@@ -338,8 +364,9 @@ router.post("/pin-images/contribute/preview", requireUser, async (req: UserReque
     const preview = await watermarkPinPhoto(processed);
     res.json({ draftPath, previewBase64: preview.toString("base64") });
   } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    res.status(500).json({ error: msg });
+    // Details stay in the server log; the app gets a plain message.
+    console.error("[contribute-pin-image] request failed:", err instanceof Error ? err.message : "unknown error");
+    res.status(500).json({ error: SUBMIT_FAILED });
   }
 });
 
@@ -390,7 +417,8 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
       const { error: uploadError } = await bucket
         .upload(storagePath, processed, { contentType: "image/jpeg", upsert: false });
       if (uploadError) {
-        res.status(500).json({ error: `Could not store your photo: ${uploadError.message}` });
+        console.error("[contribute-pin-image] storing the photo failed:", uploadError.message);
+        res.status(500).json({ error: STORE_FAILED });
         return;
       }
       if (body.keepOriginalNoticeShown === true && await storeRaw(storagePath, body.imageBase64!)) {
@@ -413,8 +441,9 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
       throw err;
     }
   } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    res.status(500).json({ error: msg });
+    // Details stay in the server log; the app gets a plain message.
+    console.error("[contribute-pin-image] request failed:", err instanceof Error ? err.message : "unknown error");
+    res.status(500).json({ error: SUBMIT_FAILED });
   }
 });
 

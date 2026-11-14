@@ -1,7 +1,13 @@
 -- ============================================================
 -- Verification for migration 080 (contributed photo raw originals).
 -- Run in the Supabase SQL editor of the project you just applied 080 to
--- (staging first, then production). Read-only: one transaction, rolled back.
+-- (staging first, then production).
+-- NOT read-only: it inserts three test users (auth.users, profiles) and one
+-- storage.objects row, runs the checks, then rolls everything back in one
+-- transaction. Rolling back undoes the rows, but a trigger on auth.users or
+-- profiles that acts outside the database (an email, a webhook, an external
+-- call) would still fire. Before running it on production, do the trigger
+-- check in 080_RUNBOOK.md ("Production", step 4).
 -- Expected final output: a single row 'ALL 080 CHECKS PASSED'.
 --
 -- Test users (rolled back):

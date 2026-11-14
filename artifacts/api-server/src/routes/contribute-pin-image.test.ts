@@ -79,6 +79,7 @@ vi.mock("../services/watermark", () => ({ watermarkPinPhoto: async (b: Buffer) =
 
 import app from "../app";
 import { PixianTimeoutError } from "../services/pixian";
+import { sniffPhotoFormat } from "./contribute-pin-image";
 
 // Real JPEGs: the raw original is re-encoded, so it must decode. PHOTO
 // carries EXIF with a GPS position, like a phone photo would.
@@ -150,7 +151,7 @@ describe("POST /api/pin-images/contribute/preview", () => {
     const res = await preview({ imageBase64: svg });
     expect(res.status).toBe(200);
     expect(state.raw.size).toBe(0);
-    expect(spy.mock.calls.map((c) => c.join(" ")).join("\n")).toContain("format not allowed: svg");
+    expect(spy.mock.calls.map((c) => c.join(" ")).join("\n")).toContain("not a photo signature");
     spy.mockRestore();
   });
 
@@ -235,9 +236,38 @@ describe("POST /api/pin-images/contribute (no preview, older builds)", () => {
   });
 
   it("removes the raw original again if recording the contribution fails", async () => {
-    state.createError = new Error("insert failed");
+    state.createError = new Error('insert failed: relation "pin_images" column raw_storage_path');
+    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
     const res = await confirmWithoutPreview();
     expect(res.status).toBe(500);
     expect(state.raw.size).toBe(0);
+    // The app gets a plain message; the database text stays in the server log.
+    expect(res.body.error).toBe("Something went wrong with your photo. Please try again.");
+    expect(JSON.stringify(res.body)).not.toContain("pin_images");
+    spy.mockRestore();
   });
 });
+
+describe("sniffPhotoFormat (signature bytes, before sharp)", () => {
+  const bytes = (...b: number[]) => Buffer.from(b);
+  const ascii = (str: string) => Buffer.from(str, "latin1");
+
+  it("recognises JPEG, PNG, WebP and HEIF photos", async () => {
+    expect(sniffPhotoFormat(Buffer.from(PHOTO, "base64"))).toBe("jpeg");
+    expect(sniffPhotoFormat(await sharp({ create: { width: 4, height: 4, channels: 3, background: "#000" } }).png().toBuffer())).toBe("png");
+    expect(sniffPhotoFormat(await sharp({ create: { width: 4, height: 4, channels: 3, background: "#000" } }).webp().toBuffer())).toBe("webp");
+    expect(sniffPhotoFormat(Buffer.concat([bytes(0, 0, 0, 0x18), ascii("ftypheic"), Buffer.alloc(8)]))).toBe("heif");
+    expect(sniffPhotoFormat(Buffer.concat([bytes(0, 0, 0, 0x18), ascii("ftypmif1"), Buffer.alloc(8)]))).toBe("heif");
+  });
+
+  it("refuses everything else", async () => {
+    expect(sniffPhotoFormat(ascii('<svg xmlns="http://www.w3.org/2000/svg"/>'))).toBeNull();
+    expect(sniffPhotoFormat(ascii("<?xml version=\"1.0\"?><svg/>"))).toBeNull();
+    expect(sniffPhotoFormat(await sharp({ create: { width: 4, height: 4, channels: 3, background: "#000" } }).tiff().toBuffer())).toBeNull();
+    expect(sniffPhotoFormat(await sharp({ create: { width: 4, height: 4, channels: 3, background: "#000" } }).gif().toBuffer())).toBeNull();
+    expect(sniffPhotoFormat(ascii("%PDF-1.7"))).toBeNull();
+    expect(sniffPhotoFormat(Buffer.concat([bytes(0, 0, 0, 0x18), ascii("ftypmp42"), Buffer.alloc(8)]))).toBeNull(); // MP4 video
+    expect(sniffPhotoFormat(bytes(0xff, 0xd8))).toBeNull(); // too short
+  });
+});
+

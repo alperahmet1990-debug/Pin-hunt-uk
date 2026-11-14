@@ -127,16 +127,25 @@ async function clearDrafts(userId: string, keep?: string) {
 /** Decode limit for raw originals: far above any phone photo, far below sharp's ~268 MP default. */
 const RAW_MAX_INPUT_PIXELS = 50_000_000;
 
+/** Photo formats a raw original may be (sharp's names). Anything else is not kept. */
+export const RAW_ALLOWED_FORMATS = ["jpeg", "png", "webp", "heif"] as const;
+
 /**
  * The photo as taken, without its metadata: re-encoded as JPEG with the EXIF
  * orientation applied and every EXIF/XMP/IPTC tag (GPS location, device,
  * timestamps) dropped, which is sharp's default. Pixels are otherwise
  * unchanged, so the reviewer still sees the uncleaned photo. Throws on input
- * sharp can't decode or that is over RAW_MAX_INPUT_PIXELS.
+ * that isn't a RAW_ALLOWED_FORMATS photo, that sharp can't decode, or that is
+ * over RAW_MAX_INPUT_PIXELS.
  */
 export async function rawWithoutMetadata(imageBase64: string): Promise<Buffer> {
-  return sharp(Buffer.from(imageBase64, "base64"), { limitInputPixels: RAW_MAX_INPUT_PIXELS, failOn: "error" })
-    .rotate().jpeg({ quality: 92 }).toBuffer();
+  const image = sharp(Buffer.from(imageBase64, "base64"), { limitInputPixels: RAW_MAX_INPUT_PIXELS, failOn: "error" });
+  // Header-only read: refuse non-photo formats (SVG, TIFF, GIF, …) before decoding pixels.
+  const { format } = await image.metadata();
+  if (!format || !(RAW_ALLOWED_FORMATS as readonly string[]).includes(format)) {
+    throw new Error(`Raw original format not allowed: ${format ?? "unknown"}`);
+  }
+  return image.rotate().jpeg({ quality: 92 }).toBuffer();
 }
 
 /** Store the raw original. Best-effort: logs and returns false on any failure. */

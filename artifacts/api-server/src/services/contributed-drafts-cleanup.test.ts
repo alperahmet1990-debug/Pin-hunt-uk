@@ -1,13 +1,36 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { describe, expect, it, vi } from "vitest";
-import { DRAFT_MAX_AGE_MS, purgeStaleDrafts, startDraftCleanup } from "./contributed-drafts-cleanup";
+import { DRAFT_MAX_AGE_MS, purgeReviewedRawOriginals, purgeStaleDrafts, startDraftCleanup } from "./contributed-drafts-cleanup";
 
 // A fake storage that lists like Supabase: "" gives one folder per user
 // (id null), a folder path gives the files directly inside it.
 type Files = Map<string, string>; // path -> updated_at ISO
 
-function fakeDb(buckets: Record<string, Files | "missing">) {
+interface Row { id: string; status: string; uploaded_by: string | null; raw_storage_path: string | null }
+
+function fakeDb(buckets: Record<string, Files | "missing">, rows: Row[] | "error" = []) {
   return {
+    // pin_images: just the select/update shapes purgeReviewedRawOriginals and
+    // discardRawOriginal use, honouring their filters.
+    from: () => ({
+      select: () => {
+        const filters: Array<(r: Row) => boolean> = [];
+        const q = {
+          neq: (col: keyof Row, v: unknown) => { filters.push((r) => r[col] !== v); return q; },
+          not: (col: keyof Row, _op: string, _v: null) => { filters.push((r) => r[col] !== null); return q; },
+          limit: async (n: number) => rows === "error"
+            ? { data: null, error: { message: "column pin_images.raw_storage_path does not exist" } }
+            : { data: rows.filter((r) => filters.every((f) => f(r))).slice(0, n), error: null },
+        };
+        return q;
+      },
+      update: (values: Partial<Row>) => ({
+        eq: async (_col: string, id: string) => {
+          if (rows !== "error") rows.filter((r) => r.id === id).forEach((r) => Object.assign(r, values));
+          return { error: null };
+        },
+      }),
+    }),
     storage: {
       from: (name: string) => {
         const files = buckets[name];
@@ -112,5 +135,38 @@ describe("startDraftCleanup", () => {
     stop();
     expect(log.info).not.toHaveBeenCalled();
     vi.unstubAllEnvs();
+  });
+});
+
+describe("purgeReviewedRawOriginals (retry after a failed delete at review time)", () => {
+  it("deletes a reviewed row's leftover raw original and clears its path", async () => {
+    const raw: Files = new Map([["user-a/PHUK-1/1.jpg", ago(HOUR)], ["user-b/PHUK-2/2.jpg", ago(HOUR)]]);
+    const rows: Row[] = [
+      { id: "approved-1", status: "approved", uploaded_by: "user-a", raw_storage_path: "user-a/PHUK-1/1.jpg" },
+      { id: "pending-1", status: "pending", uploaded_by: "user-b", raw_storage_path: "user-b/PHUK-2/2.jpg" },
+    ];
+    const res = await purgeReviewedRawOriginals(fakeDb({ "pin-contributed-raw": raw }, rows));
+    expect(res).toEqual({ removed: 1, cleared: 0, failed: false });
+    expect([...raw.keys()]).toEqual(["user-b/PHUK-2/2.jpg"]); // still pending: kept for review
+    expect(rows[0].raw_storage_path).toBeNull();
+    expect(rows[1].raw_storage_path).toBe("user-b/PHUK-2/2.jpg");
+  });
+
+  it("only clears a path outside the uploader's folder, never deleting what it points at", async () => {
+    const raw: Files = new Map([["user-b/PHUK-2/2.jpg", ago(HOUR)]]);
+    const rows: Row[] = [{ id: "rejected-1", status: "rejected", uploaded_by: "user-a", raw_storage_path: "user-b/PHUK-2/2.jpg" }];
+    const res = await purgeReviewedRawOriginals(fakeDb({ "pin-contributed-raw": raw }, rows));
+    expect(res).toEqual({ removed: 0, cleared: 1, failed: false });
+    expect(raw.size).toBe(1);
+    expect(rows[0].raw_storage_path).toBeNull();
+  });
+
+  it("changes nothing when the column doesn't exist yet (080 not applied)", async () => {
+    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+    const raw: Files = new Map([["user-a/PHUK-1/1.jpg", ago(HOUR)]]);
+    const res = await purgeReviewedRawOriginals(fakeDb({ "pin-contributed-raw": raw }, "error"));
+    expect(res).toEqual({ removed: 0, cleared: 0, failed: true });
+    expect(raw.size).toBe(1);
+    spy.mockRestore();
   });
 });

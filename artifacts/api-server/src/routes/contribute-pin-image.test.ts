@@ -137,6 +137,23 @@ describe("POST /api/pin-images/contribute/preview", () => {
     expect(state.raw.size).toBe(0);
   });
 
+  it("keeps a PNG photo's raw original (re-encoded as JPEG)", async () => {
+    const png = (await sharp({ create: { width: 20, height: 20, channels: 3, background: "#123456" } }).png().toBuffer()).toString("base64");
+    const res = await preview({ imageBase64: png });
+    expect(res.status).toBe(200);
+    expect((await sharp(state.raw.get(res.body.draftPath)!).metadata()).format).toBe("jpeg");
+  });
+
+  it("doesn't keep a raw original that isn't a photo format (SVG), but the preview still works", async () => {
+    const svg = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><rect width="20" height="20"/></svg>').toString("base64");
+    const spy = vi.spyOn(console, "warn").mockImplementation(() => {});
+    const res = await preview({ imageBase64: svg });
+    expect(res.status).toBe(200);
+    expect(state.raw.size).toBe(0);
+    expect(spy.mock.calls.map((c) => c.join(" ")).join("\n")).toContain("format not allowed: svg");
+    spy.mockRestore();
+  });
+
   it("strips EXIF (GPS location, device) from the raw original before storing it", async () => {
     expect((await sharp(Buffer.from(PHOTO, "base64")).metadata()).exif).toBeDefined();
     const res = await preview();

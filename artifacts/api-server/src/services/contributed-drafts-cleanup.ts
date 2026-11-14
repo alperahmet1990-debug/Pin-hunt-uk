@@ -8,8 +8,13 @@
  * draft out of drafts/; a new preview replaces the old one. A preview that is
  * never submitted would otherwise stay until the user's next preview or
  * account deletion, so this sweep removes drafts older than DRAFT_MAX_AGE_MS
- * (23h, so nothing outlives 24h with an hourly sweep) from both buckets. Submitted photos (outside drafts/) are never touched;
- * reviewed raw originals are deleted on approve/reject (discardRawOriginal).
+ * (23h, so nothing outlives 24h with an hourly sweep) from both buckets.
+ * Submitted photos (outside drafts/) are never touched by that part.
+ *
+ * Reviewed raw originals are deleted on approve/reject (discardRawOriginal),
+ * best-effort. purgeReviewedRawOriginals retries any that are left: a
+ * pin_images row that is no longer pending but still has raw_storage_path
+ * gets the object removed (own-folder paths only) and the column cleared.
  *
  * Runs in-process (index.ts): once at start-up, then every hour. Deleting is
  * idempotent, so overlapping runs on several instances are harmless. A user
@@ -18,6 +23,7 @@
  * Logs counts only, never user ids or paths.
  */
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import { discardRawOriginal, isOwnRawPath } from "./contributed-images";
 
 export const DRAFT_BUCKETS = ["pin-contributed-images", "pin-contributed-raw"] as const;
 /**
@@ -76,6 +82,51 @@ export async function purgeStaleDrafts(
   return result;
 }
 
+/** Rows handled per run; the rest are picked up on the next hourly run. */
+const REVIEWED_BATCH = 200;
+
+export interface ReviewedRawSweepResult {
+  /** Raw objects deleted (and their paths cleared). */
+  removed: number;
+  /** Paths cleared without deleting: outside the uploader's own folder. */
+  cleared: number;
+  /** The query failed (e.g. migration 080 not applied); nothing was changed. */
+  failed: boolean;
+}
+
+/**
+ * Retry deleting raw originals of contributions that have been reviewed
+ * (approved or rejected) but still point at one, after discardRawOriginal
+ * failed at review time.
+ */
+export async function purgeReviewedRawOriginals(db: SupabaseClient): Promise<ReviewedRawSweepResult> {
+  const result: ReviewedRawSweepResult = { removed: 0, cleared: 0, failed: false };
+  const { data, error } = await db.from("pin_images")
+    .select("id, uploaded_by, raw_storage_path")
+    .neq("status", "pending")
+    .not("raw_storage_path", "is", null)
+    .limit(REVIEWED_BATCH);
+  if (error) {
+    result.failed = true;
+    console.error("[drafts-cleanup] could not list reviewed raw originals:", error.message);
+    return result;
+  }
+  for (const row of (data ?? []) as Array<{ id: string; uploaded_by: string | null; raw_storage_path: string }>) {
+    if (isOwnRawPath(row.raw_storage_path, row.uploaded_by ?? undefined)) {
+      const ok = await discardRawOriginal(
+        { id: row.id, rawStoragePath: row.raw_storage_path, uploadedBy: row.uploaded_by ?? "" },
+        db,
+      );
+      if (ok) result.removed += 1;
+    } else {
+      // Never delete what a stored path points at unless it is the uploader's own file.
+      const { error: clearError } = await db.from("pin_images").update({ raw_storage_path: null }).eq("id", row.id);
+      if (!clearError) result.cleared += 1;
+    }
+  }
+  return result;
+}
+
 /**
  * Start the sweep: now, then every DRAFT_SWEEP_INTERVAL_MS. Returns a stop
  * function. Does nothing without service-role Supabase credentials.
@@ -97,6 +148,13 @@ export function startDraftCleanup(
       if (removed > 0 || failedBuckets.length > 0) {
         log.info({ removed, failedBuckets }, "Stale contribution drafts swept");
       }
+      const reviewed = await purgeReviewedRawOriginals(db);
+      if (reviewed.removed > 0 || reviewed.cleared > 0) {
+        log.info({ removed: reviewed.removed, cleared: reviewed.cleared }, "Reviewed raw originals swept");
+      }
+    } catch (err) {
+      // Never let the sweep take the server down; it runs again next hour.
+      console.error("[drafts-cleanup] sweep failed:", err instanceof Error ? err.message : "unknown error");
     } finally {
       running = false;
     }

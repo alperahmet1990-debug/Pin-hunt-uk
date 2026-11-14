@@ -5,7 +5,8 @@
  */
 import React from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
+import { TradeCollectionUpdateSheet } from '../components/TradeCollectionUpdateSheet';
 
 let mockTrade: Record<string, unknown> = {};
 const mockRestore = jest.fn();
@@ -87,7 +88,7 @@ describe('Update your collection? (WP1 step 3)', () => {
 
     const toast = mockToast.mock.calls[0][0];
     expect(toast.message).toBe('Collection updated');
-    toast.action.onPress();
+    await act(async () => { toast.action.onPress(); });
     expect(Object.fromEntries(mockRestore.mock.calls[1][0])).toEqual(mockCollection);
   }, 30_000);
 
@@ -108,6 +109,55 @@ describe('Update your collection? (WP1 step 3)', () => {
     await fireEvent.press(screen.getByRole('button', { name: 'Not Now' }));
     expect(mockRestore).not.toHaveBeenCalled();
     expect(await AsyncStorage.getItem('@pinhunt_trade_collection_update_v1:u1:t1')).not.toBeNull();
+  }, 30_000);
+});
+
+describe("A trade's update can't be applied twice (QA finding)", () => {
+  const APPLIED = '@pinhunt_trade_collection_applied_v1:u1:t1';
+  const ANSWERED = '@pinhunt_trade_collection_update_v1:u1:t1';
+
+  it('hides Update Your Collection once applied, and Undo brings it back', async () => {
+    const TradeScreen = require('../app/trade/[id]').default;
+    await render(<TradeScreen />);
+    await settle();
+    await fireEvent.press(screen.getByRole('button', { name: 'Update Collection' }));
+    await settle();
+    expect(screen.queryByRole('button', { name: 'Update Your Collection' })).toBeNull();
+    expect(await AsyncStorage.getItem(APPLIED)).not.toBeNull();
+
+    await act(async () => { mockToast.mock.calls[0][0].action.onPress(); });
+    await settle();
+    expect(await AsyncStorage.getItem(APPLIED)).toBeNull();
+    expect(screen.getByRole('button', { name: 'Update Your Collection' })).toBeTruthy();
+  }, 30_000);
+
+  it('a trade already applied offers neither the sheet nor the button', async () => {
+    await AsyncStorage.setItem(APPLIED, at(5));
+    await AsyncStorage.setItem(ANSWERED, at(5));
+    const TradeScreen = require('../app/trade/[id]').default;
+    await render(<TradeScreen />);
+    await settle();
+    expect(screen.queryByRole('header', { name: 'Update your collection?' })).toBeNull();
+    expect(screen.queryByRole('button', { name: 'Update Your Collection' })).toBeNull();
+  }, 30_000);
+
+  it('opening the sheet by itself does not count as an answer', async () => {
+    const TradeScreen = require('../app/trade/[id]').default;
+    await render(<TradeScreen />);
+    await settle();
+    expect(screen.getByRole('header', { name: 'Update your collection?' })).toBeTruthy();
+    expect(await AsyncStorage.getItem(ANSWERED)).toBeNull();
+  }, 30_000);
+
+  it("a collection sync while the sheet is open doesn't re-tick a row", async () => {
+    const rows = [
+      { key: 'give:A:1', pinhuntId: 'A', title: 'Pin A', side: 'give' as const, quantity: 1, action: 'Remove from your collection' },
+      { key: 'get:B:2', pinhuntId: 'B', title: 'Pin B', side: 'get' as const, quantity: 1, action: 'Mark Owned' },
+    ];
+    const view = await render(<TradeCollectionUpdateSheet visible rows={rows} onClose={jest.fn()} onApply={jest.fn()} />);
+    await fireEvent.press(screen.getByRole('checkbox', { name: 'Pin A: Remove from your collection' }));
+    await view.rerender(<TradeCollectionUpdateSheet visible rows={rows.map(r => ({ ...r }))} onClose={jest.fn()} onApply={jest.fn()} />);
+    expect(screen.getByRole('checkbox', { name: 'Pin A: Remove from your collection' }).props.accessibilityState.checked).toBe(false);
   }, 30_000);
 });
 

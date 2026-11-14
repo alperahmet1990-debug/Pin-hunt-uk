@@ -15,7 +15,7 @@ export interface LatestValue {
   currency: string;
   mid: number;
   /** How well the value is supported ('insufficient' | 'low' | 'medium' | 'high'). Older API builds omit it. */
-  confidence?: string;
+  confidence?: string | null;
   calculatedAt: string;
   stale: boolean;
 }

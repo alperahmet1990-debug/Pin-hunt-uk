@@ -3,7 +3,7 @@
  * complete (WP1 step 3). Rows come pre-ticked from the agreed pins; the
  * collector can untick any, then update in one go (with Undo) or skip.
  */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { Sheet } from '@/components/ui/Sheet';
@@ -27,7 +27,13 @@ const GROUPS = [
 export function TradeCollectionUpdateSheet({ visible, rows, onClose, onApply }: TradeCollectionUpdateSheetProps) {
   const colors = useColors();
   const [ticked, setTicked] = useState<Set<string>>(new Set());
-  useEffect(() => { if (visible) setTicked(new Set(rows.map(r => r.key))); }, [visible, rows]);
+  // Tick every row when the sheet opens, not when the rows change while it's
+  // open (a collection sync must not re-tick what the collector unticked).
+  const wasVisible = useRef(false);
+  useEffect(() => {
+    if (visible && !wasVisible.current) setTicked(new Set(rows.map(r => r.key)));
+    wasVisible.current = visible;
+  }, [visible, rows]);
   const toggle = (key: string) => setTicked(current => {
     const next = new Set(current);
     if (next.has(key)) next.delete(key); else next.add(key);

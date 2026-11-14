@@ -40,7 +40,7 @@ import { TradePinsSheet } from '@/components/TradePinsSheet';
 import { TradeCollectionUpdateSheet } from '@/components/TradeCollectionUpdateSheet';
 import { useCollection } from '@/context/CollectionContext';
 import { useToast } from '@/components/ui/Toast';
-import { collectionUpdateOfferedKey, collectionUpdateRows, planCollectionUpdate } from '@/utils/tradeCollectionUpdate';
+import { collectionUpdateAppliedKey, collectionUpdateOfferedKey, collectionUpdateRows, planCollectionUpdate } from '@/utils/tradeCollectionUpdate';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { choiceKey, matchPinChoices, mergeChoices, toTradeItemInputs, tradeHasPins, tradeItemChoices } from '@/utils/tradeItems';
 import { formatDate } from '@/utils/format';
@@ -500,27 +500,53 @@ export default function TradeScreen() {
   const hasUpdateRows = updateRows.length > 0;
   const tradeIdForOffer = trade?.id;
   const completed = trade?.status === 'completed';
+  // 'applied': this trade's update is in the collection (until Undo), so it
+  // can't be applied twice. Read from storage before anything is offered.
+  const [updateApplied, setUpdateApplied] = useState<boolean | null>(null);
   useEffect(() => {
     if (!completed || !hasUpdateRows || !userId || !tradeIdForOffer) return;
-    const key = collectionUpdateOfferedKey(userId, tradeIdForOffer);
     let cancelled = false;
-    AsyncStorage.getItem(key)
-      .then(seen => {
-        if (cancelled || seen) return;
-        setUpdateSheetOpen(true);
-        return AsyncStorage.setItem(key, new Date().toISOString());
+    Promise.all([
+      AsyncStorage.getItem(collectionUpdateAppliedKey(userId, tradeIdForOffer)),
+      AsyncStorage.getItem(collectionUpdateOfferedKey(userId, tradeIdForOffer)),
+    ])
+      .then(([applied, answered]) => {
+        if (cancelled) return;
+        setUpdateApplied(!!applied);
+        // Offered by itself until the collector answers it (update or Not Now).
+        if (!applied && !answered) setUpdateSheetOpen(true);
       })
-      .catch(() => { /* ignore: the button below still offers it */ });
+      .catch(() => { if (!cancelled) setUpdateApplied(false); });
     return () => { cancelled = true; };
   }, [completed, hasUpdateRows, userId, tradeIdForOffer]);
+  const rememberAnswered = () => {
+    if (userId && tradeIdForOffer) {
+      AsyncStorage.setItem(collectionUpdateOfferedKey(userId, tradeIdForOffer), new Date().toISOString()).catch(() => {});
+    }
+  };
+  const closeCollectionUpdate = () => {
+    setUpdateSheetOpen(false);
+    rememberAnswered();
+  };
   const applyCollectionUpdate = (ticked: Set<string>) => {
     const { apply, undo } = planCollectionUpdate(updateRows, ticked, collection);
     setUpdateSheetOpen(false);
-    if (apply.length === 0) return;
+    rememberAnswered();
+    if (apply.length === 0 || !userId || !tradeIdForOffer) return;
+    const appliedKey = collectionUpdateAppliedKey(userId, tradeIdForOffer);
     restoreEntries(apply);
+    setUpdateApplied(true);
+    AsyncStorage.setItem(appliedKey, new Date().toISOString()).catch(() => {});
     toast.show({
       message: 'Collection updated',
-      action: { label: 'Undo', onPress: () => restoreEntries(undo) },
+      action: {
+        label: 'Undo',
+        onPress: () => {
+          restoreEntries(undo);
+          setUpdateApplied(false);
+          AsyncStorage.removeItem(appliedKey).catch(() => {});
+        },
+      },
     });
   };
   const showBanner = !hasPins && potentialPins.length > 0 && !bannerDismissed;
@@ -820,7 +846,7 @@ export default function TradeScreen() {
                 )}
 
                 {/* Collection update after completion (also offered once on its own) */}
-                {completed && hasUpdateRows && (
+                {completed && hasUpdateRows && updateApplied === false && (
                   <TouchableOpacity
                     onPress={() => setUpdateSheetOpen(true)}
                     activeOpacity={0.85}
@@ -911,7 +937,7 @@ export default function TradeScreen() {
       <TradeCollectionUpdateSheet
         visible={updateSheetOpen}
         rows={updateRows}
-        onClose={() => setUpdateSheetOpen(false)}
+        onClose={closeCollectionUpdate}
         onApply={applyCollectionUpdate}
       />
       <ConfirmDialog

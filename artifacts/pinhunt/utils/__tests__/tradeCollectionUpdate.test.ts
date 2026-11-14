@@ -72,6 +72,8 @@ describe('collectionUpdateRows', () => {
     const rows = collectionUpdateRows(swap, true, { A: entry('A', 'for_trade', 3) });
     const { apply } = planCollectionUpdate(rows, all(rows), { A: entry('A', 'for_trade', 3) }, NOW);
     expect(apply).toEqual([['A', expect.objectContaining({ quantity: 2, status: 'for_trade' })]]);
+    // Each row reads the way the collection will be by then.
+    expect(rows.map(r => r.action)).toEqual(['Keep 1 copy', 'Add to your copies (2 in all)']);
   });
 });
 

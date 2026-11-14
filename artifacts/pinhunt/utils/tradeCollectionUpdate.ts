@@ -41,25 +41,47 @@ function describe(row: { side: TradeSide; quantity: number }, entry: CollectionE
   return entry?.status === 'wanted' ? 'Mark Owned and take off your ISO' : 'Mark Owned';
 }
 
-/** The rows to offer, pre-ticked. Pins with nothing to change are left out. */
+/** One row's effect on an entry, or undefined when the pin leaves the collection. */
+function applyRow(
+  row: { pinhuntId: string; side: TradeSide; quantity: number }, entry: CollectionEntry | undefined, now: string,
+): CollectionEntry | undefined {
+  if (row.side === 'give') {
+    if (!held(entry)) return entry;
+    const left = (entry!.quantity ?? 1) - row.quantity;
+    return left >= 1 ? { ...entry!, quantity: left } : undefined;
+  }
+  if (held(entry)) return { ...entry!, quantity: (entry!.quantity ?? 1) + row.quantity };
+  return { pinId: row.pinhuntId, status: 'owned', quantity: row.quantity, notes: entry?.notes ?? '', dateAdded: now };
+}
+
+/**
+ * The rows to offer, pre-ticked. Pins with nothing to change are left out.
+ * Each row is worded from the collection as the rows before it leave it, so
+ * a pin on both sides reads the way it will end up.
+ */
 export function collectionUpdateRows(
   items: TradeItem[], viewerIsInitiator: boolean, collection: CollectionMap,
 ): CollectionUpdateRow[] {
   const rows: CollectionUpdateRow[] = [];
+  const working: Record<string, CollectionEntry | undefined> = {};
+  const current = (pinId: string) => (pinId in working ? working[pinId] : collection[pinId]);
   for (const item of items) {
     if (!item.pinhuntId) continue;
     const side = sideFor(item.direction, viewerIsInitiator);
     const quantity = Math.max(1, item.quantity ?? 1);
-    const action = describe({ side, quantity }, collection[item.pinhuntId]);
+    const entry = current(item.pinhuntId);
+    const action = describe({ side, quantity }, entry);
     if (!action) continue;
-    rows.push({
+    const row = {
       key: `${side}:${item.pinhuntId}:${item.id}`,
       pinhuntId: item.pinhuntId,
       title: item.title ?? item.pinhuntId,
       side,
       quantity,
       action,
-    });
+    };
+    rows.push(row);
+    working[item.pinhuntId] = applyRow(row, entry, '');
   }
   return rows;
 }
@@ -77,23 +99,8 @@ export function planCollectionUpdate(
 
   for (const row of rows) {
     if (!ticked.has(row.key)) continue;
-    const entry = current(row.pinhuntId);
     if (!touched.includes(row.pinhuntId)) touched.push(row.pinhuntId);
-    if (row.side === 'give') {
-      if (!held(entry)) continue;
-      const left = (entry!.quantity ?? 1) - row.quantity;
-      working[row.pinhuntId] = left >= 1 ? { ...entry!, quantity: left } : undefined;
-    } else if (held(entry)) {
-      working[row.pinhuntId] = { ...entry!, quantity: (entry!.quantity ?? 1) + row.quantity };
-    } else {
-      working[row.pinhuntId] = {
-        pinId: row.pinhuntId,
-        status: 'owned',
-        quantity: row.quantity,
-        notes: entry?.notes ?? '',
-        dateAdded: now,
-      };
-    }
+    working[row.pinhuntId] = applyRow(row, current(row.pinhuntId), now);
   }
 
   return {
@@ -102,6 +109,13 @@ export function planCollectionUpdate(
   };
 }
 
-/** Remembers, per collector and trade, that the sheet was offered. */
+/** Remembers, per collector and trade, that they answered the sheet (updated or "Not Now"). */
 export const collectionUpdateOfferedKey = (userId: string, tradeId: string) =>
   `@pinhunt_trade_collection_update_v1:${userId}:${tradeId}`;
+
+/**
+ * Remembers, per collector and trade, that the update was applied, so the
+ * same trade can't be applied twice. Undo clears it.
+ */
+export const collectionUpdateAppliedKey = (userId: string, tradeId: string) =>
+  `@pinhunt_trade_collection_applied_v1:${userId}:${tradeId}`;

@@ -18,7 +18,7 @@
  * directly from the app to Supabase Storage.
  *
  * The photo as taken (before Pixian) is also kept, in the private
- * pin-contributed-raw bucket (migration 079), which only admins can read, so
+ * pin-contributed-raw bucket (migration 080), which only admins can read, so
  * the reviewer can compare raw | cleaned | Pin & Pop. It is deleted once the
  * contribution is approved or rejected (discardRawOriginal); an unsubmitted
  * preview's draft goes after 24 hours (services/contributed-drafts-cleanup.ts).
@@ -27,7 +27,7 @@
  * when the request says the collector was told (keepOriginalConsent: true,
  * sent by app builds whose consent step says the original is kept), so
  * older builds never have it kept. It is best-effort: without the bucket
- * (079 not applied yet) the contribution still goes through, just without a
+ * (080 not applied yet) the contribution still goes through, just without a
  * raw original.
  *
  * Auth: requireUser (any signed-in collector, same Bearer-token pattern
@@ -98,7 +98,7 @@ function getServiceUserRepository() {
   return createSupabaseUserRepository(url, key);
 }
 
-/** Photos as taken, before Pixian. Admin-read only (migration 079). */
+/** Photos as taken, before Pixian. Admin-read only (migration 080). */
 const RAW_BUCKET = "pin-contributed-raw";
 
 const MAX_IMAGE_BASE64_CHARS = 8_000_000; // ~6MB image, same cap as /scan/identify

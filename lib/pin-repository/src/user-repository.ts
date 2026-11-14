@@ -405,7 +405,7 @@ export interface IUserPinRepository {
 
   /**
    * Signed URL (1 hour TTL) for a contribution's raw original in the
-   * admin-only `pin-contributed-raw` bucket (migration 079). Needs a
+   * admin-only `pin-contributed-raw` bucket (migration 080). Needs a
    * service-role or admin client; admin routes only.
    */
   getContributedRawImageUrl(rawStoragePath: string): Promise<string>;

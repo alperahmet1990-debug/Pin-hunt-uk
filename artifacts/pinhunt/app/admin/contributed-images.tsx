@@ -9,7 +9,7 @@
  * exists only for this review); the private cleaned copy is kept for audit.
  *
  * Each card compares three images: the photo as taken (raw, admin-only
- * bucket, migration 079; missing on older rows), the Pixian-cleaned photo
+ * bucket, migration 080; missing on older rows), the Pixian-cleaned photo
  * that will be published, and the Pin & Pop image (migration 042). The pin's
  * current catalogue photo, if any, is shown under them. The raw photo and
  * the Pin & Pop image are admin-only — never shown to collectors, and the
@@ -48,7 +48,7 @@ import { formatDate } from '@/utils/format';
 
 type PendingImage = ContributedPinImage & {
   signedUrl: string;
-  /** The photo as taken; null on rows from before migration 079. */
+  /** The photo as taken; null on rows from before migration 080. */
   rawSignedUrl?: string | null;
   pinAndPop: PinAndPopReference | null;
 };

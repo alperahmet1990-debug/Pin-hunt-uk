@@ -1498,7 +1498,7 @@ class SupabaseUserPinRepository implements IUserPinRepository {
         // Only sent when set, so the 038-era scan flow keeps working on a
         // database without migration 039's proposal_reason column.
         ...(input.proposalReason ? { proposal_reason: input.proposalReason } : {}),
-        // Only sent when a raw original was kept, which needs migration 079.
+        // Only sent when a raw original was kept, which needs migration 080.
         ...(input.rawStoragePath ? { raw_storage_path: input.rawStoragePath } : {}),
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } as any)

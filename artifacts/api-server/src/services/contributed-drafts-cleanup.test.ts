@@ -55,6 +55,12 @@ describe("purgeStaleDrafts", () => {
     expect([...raw.keys()]).toEqual(["user-b/drafts/PHUK-2__fresh.jpg"]);
   });
 
+  it("removes a draft just under 24 hours old, so the hourly sweep keeps 'within a day'", async () => {
+    const cleaned: Files = new Map([["user-a/drafts/PHUK-1__x.jpg", ago(23.5 * HOUR)]]);
+    const res = await purgeStaleDrafts(fakeDb({ "pin-contributed-images": cleaned, "pin-contributed-raw": new Map() }), NOW);
+    expect(res.removed).toBe(1);
+  });
+
   it("never touches submitted photos, however old", async () => {
     const cleaned: Files = new Map([
       ["user-a/PHUK-1/1700000000000.jpg", ago(400 * 24 * HOUR)],
@@ -76,7 +82,7 @@ describe("purgeStaleDrafts", () => {
     expect(cleaned.size).toBe(2);
   });
 
-  it("still sweeps the cleaned drafts when the raw bucket doesn't exist yet (079 not applied)", async () => {
+  it("still sweeps the cleaned drafts when the raw bucket doesn't exist yet (080 not applied)", async () => {
     const cleaned: Files = new Map([["user-a/drafts/old.jpg", ago(48 * HOUR)]]);
     const spy = vi.spyOn(console, "error").mockImplementation(() => {});
     const res = await purgeStaleDrafts(fakeDb({ "pin-contributed-images": cleaned, "pin-contributed-raw": "missing" }), NOW);

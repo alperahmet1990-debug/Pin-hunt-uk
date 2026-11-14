@@ -4,6 +4,11 @@
     "path": "/"
   },
   {
+    "name": "home-zero-pins",
+    "path": "/",
+    "storage": { "@pinhunt_collection_v1": "{}" }
+  },
+  {
     "name": "collection",
     "path": "/collection"
   },
@@ -138,6 +143,152 @@
   {
     "name": "pin-detail",
     "path": "/pin/dp-001"
+  },
+  {
+    "name": "pin-sold-priced",
+    "path": "/pin/dp-001",
+    "api": {
+      "/market-valuations": {
+        "status": 200,
+        "body": {
+          "valuations": [
+            {
+              "market": "UK",
+              "currency": "GBP",
+              "basis": "sold",
+              "low": 18.4,
+              "fair": 24.6,
+              "high": 31.2,
+              "soldCount": 7,
+              "activeCount": 0,
+              "calculatedAt": "2026-11-10T10:00:00Z"
+            },
+            {
+              "market": "US",
+              "currency": "USD",
+              "basis": "sold",
+              "low": 28,
+              "fair": 34,
+              "high": 41,
+              "soldCount": 3,
+              "activeCount": 0,
+              "calculatedAt": "2026-11-10T10:00:00Z"
+            }
+          ]
+        }
+      },
+      "GET /price-request": {
+        "status": 200,
+        "body": {
+          "state": "none",
+          "checkedAt": null,
+          "nextRequestAt": null,
+          "requestsOpen": true,
+          "markets": [
+            "UK",
+            "US"
+          ]
+        }
+      }
+    },
+    "scrollTo": "Where it lives"
+  },
+  {
+    "name": "pin-sold-get-price",
+    "path": "/pin/dp-001",
+    "api": {
+      "/market-valuations": {
+        "status": 200,
+        "body": {
+          "valuations": []
+        }
+      },
+      "GET /price-request": {
+        "status": 200,
+        "body": {
+          "state": "none",
+          "checkedAt": null,
+          "nextRequestAt": null,
+          "requestsOpen": true,
+          "markets": [
+            "UK",
+            "US"
+          ]
+        }
+      }
+    },
+    "scrollTo": "Where it lives"
+  },
+  {
+    "name": "pin-sold-pending",
+    "path": "/pin/dp-001",
+    "api": {
+      "/market-valuations": {
+        "status": 200,
+        "body": {
+          "valuations": []
+        }
+      },
+      "GET /price-request": {
+        "status": 200,
+        "body": {
+          "state": "pending",
+          "checkedAt": null,
+          "nextRequestAt": null,
+          "requestsOpen": true,
+          "markets": [
+            "UK",
+            "US"
+          ]
+        }
+      }
+    },
+    "scrollTo": "Where it lives"
+  },
+  {
+    "name": "pin-sold-no-sales",
+    "path": "/pin/dp-001",
+    "api": {
+      "/market-valuations": {
+        "status": 200,
+        "body": {
+          "valuations": []
+        }
+      },
+      "GET /price-request": {
+        "status": 200,
+        "body": {
+          "state": "no_sales",
+          "checkedAt": "2026-11-14T10:00:00Z",
+          "nextRequestAt": "2026-12-14T10:00:00Z",
+          "requestsOpen": true,
+          "markets": [
+            "UK",
+            "US"
+          ]
+        }
+      }
+    },
+    "scrollTo": "Where it lives"
+  },
+  {
+    "name": "pin-sold-off",
+    "path": "/pin/dp-001",
+    "api": {
+      "/market-valuations": {
+        "status": 404,
+        "body": {
+          "error": "Not found"
+        }
+      },
+      "/price-request": {
+        "status": 404,
+        "body": {
+          "error": "Not found"
+        }
+      }
+    },
+    "scrollTo": "Where it lives"
   },
   {
     "name": "set-detail",

@@ -130,7 +130,7 @@ describe("admin photo review", () => {
       expect(withRaw.rawSignedUrl).toBe("https://signed.test.invalid/raw/user-1/PHUK-00000001/1.jpg");
       expect(withRaw.signedUrl).toBe("https://signed.test.invalid/cleaned/user-1/PHUK-00000001/1.jpg");
       expect(withRaw.pinAndPop.imageUrl).toBe("https://pinandpop.test.invalid/123.jpg");
-      // Rows from before migration 079 have no raw original.
+      // Rows from before migration 080 have no raw original.
       expect(withoutRaw.rawSignedUrl).toBeNull();
     });
   });
@@ -234,6 +234,21 @@ describe("admin photo review", () => {
       expect(state.reviewed).toEqual(["img-1", "img-1"]);
       expect(state.rawCleared).toEqual([]);
       expect(spy.mock.calls.map((c) => String(c[0])).join("\n")).toContain("img-1");
+      spy.mockRestore();
+    });
+
+    it("never signs or deletes a raw path outside the uploader's own folder", async () => {
+      const foreign = "user-2/PHUK-00000009/1.jpg";
+      state.pending = [pendingImage({ rawStoragePath: foreign }), pendingImage({ id: "img-2", rawStoragePath: "user-1/../user-2/x.jpg" })];
+      const list = await request(app).get("/api/admin/pending-pin-images").set("Authorization", "Bearer t");
+      expect(list.body.images.map((i: { rawSignedUrl: string | null }) => i.rawSignedUrl)).toEqual([null, null]);
+      expect(state.rawUrlCalls).toEqual([]);
+
+      const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+      state.image = pendingImage({ rawStoragePath: foreign });
+      expect((await reject()).status).toBe(200);
+      expect(state.rawRemoved).toEqual([]);
+      expect(state.rawCleared).toEqual([]);
       spy.mockRestore();
     });
 

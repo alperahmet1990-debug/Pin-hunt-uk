@@ -8,7 +8,7 @@
  * bucket into the public pin-catalogue bucket with the PinHunt watermark
  * burned in (services/watermark.ts), writes pins.image_url, and marks the
  * pin_images row approved. The raw original (pin-contributed-raw, migration
- * 079) is never published: once the row is approved it is deleted
+ * 080) is never published: once the row is approved it is deleted
  * (discardRawOriginal), as it is on rejection (routes/pin-images.ts).
  *
  * Replace rule (same as services/bulkImages/publish.ts): a pin whose current
@@ -43,8 +43,20 @@ export function contributedPublicPath(image: Pick<ContributedPinImage, "id" | "p
   return `${image.pinId}/contributed-${image.id}.jpg`;
 }
 
-/** Where raw originals live (migration 079). Admin-read only. */
+/** Where raw originals live (migration 080). Admin-read only. */
 export const RAW_BUCKET = "pin-contributed-raw";
+
+/**
+ * True when a raw path is inside the uploader's own folder ({uploadedBy}/…)
+ * with no empty, "." or ".." segments. The API only ever writes such paths,
+ * but a collector can insert their own pending pin_images row directly (038's
+ * insert policy), so a stored path is never trusted to point at their file.
+ */
+export function isOwnRawPath(path: string | undefined, uploadedBy: string | undefined): path is string {
+  if (!path || !uploadedBy) return false;
+  const segments = path.split("/");
+  return segments[0] === uploadedBy && segments.length > 1 && !segments.some((s) => s === "" || s === "." || s === "..");
+}
 
 /**
  * Delete a reviewed contribution's raw original and clear its path. The raw
@@ -53,10 +65,14 @@ export const RAW_BUCKET = "pin-contributed-raw";
  * fails the review that called it. Rows without a raw original are a no-op.
  */
 export async function discardRawOriginal(
-  image: Pick<ContributedPinImage, "id" | "rawStoragePath">,
+  image: Pick<ContributedPinImage, "id" | "rawStoragePath" | "uploadedBy">,
   serviceClient: SupabaseClient,
 ): Promise<boolean> {
   if (!image.rawStoragePath) return false;
+  if (!isOwnRawPath(image.rawStoragePath, image.uploadedBy)) {
+    console.error(`[contributed-images] raw path outside the uploader's folder, not deleted (image ${image.id})`);
+    return false;
+  }
   try {
     const { error: removeError } = await serviceClient.storage.from(RAW_BUCKET).remove([image.rawStoragePath]);
     if (removeError) throw new Error(removeError.message);

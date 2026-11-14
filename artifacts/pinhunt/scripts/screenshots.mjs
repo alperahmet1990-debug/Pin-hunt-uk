@@ -25,6 +25,10 @@
 //                       results can be captured (matches use demo pin ids, e.g. dp-003).
 //                       "consent": true pre-accepts the AI photo consent without answering
 //                       the scan API, so its failure (blocked request) can be captured.
+//                       "api": { "<path suffix>": { status, body } } answers matching API
+//                       requests locally (key may start with a method, e.g. "POST /x"); any
+//                       other API request is still blocked. "scrollTo": "<text>" scrolls the
+//                       element with that exact text to the top of the view before the capture.
 //   --route name=/path  extra ad-hoc route (repeatable)
 //   --viewports 390x844,320x568   --schemes light,dark
 //   --out <dir>         default <repo>/.screenshots
@@ -179,7 +183,18 @@ export function identifyBody(route) {
   return JSON.stringify({ imageInsights: null, ...body });
 }
 
-const CORS = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': '*', 'Access-Control-Allow-Methods': 'POST, OPTIONS' };
+export { apiReply } from './lib/apiReply.mjs';
+import { apiReply } from './lib/apiReply.mjs';
+
+const CORS = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': '*', 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS' };
+
+// Scroll the innermost element with exactly this text to the top of the view. Runs in the page.
+function scrollToText(text) {
+  const el = [...document.querySelectorAll('body *')].find(e =>
+    e.childElementCount === 0 && e.textContent.trim() === text && e.getBoundingClientRect().width > 0);
+  el?.scrollIntoView({ block: 'start' });
+  return Boolean(el);
+}
 
 /** Labels to tap in turn: "click" is one label or a list. */
 export function clickSteps(route) {
@@ -205,6 +220,14 @@ async function capture(webDir, outDir, routes, viewports, schemes) {
           // An "identify" route answers the scan API locally; that is still not an external call.
           const identify = route.identify ? identifyBody(route) : null;
           page.on('request', r => {
+            if (route.api && !r.url().startsWith(origin)) {
+              const p = new URL(r.url()).pathname;
+              if (r.method() === 'OPTIONS' && (apiReply(route.api, 'POST', p) || apiReply(route.api, 'GET', p))) {
+                return r.respond({ status: 204, headers: CORS });
+              }
+              const hit = apiReply(route.api, r.method(), new URL(r.url()).pathname);
+              if (hit) return r.respond({ status: hit.status ?? 200, headers: CORS, contentType: 'application/json', body: JSON.stringify(hit.body ?? {}) });
+            }
             if (identify && new URL(r.url()).pathname.endsWith('/scan/identify')) {
               return r.method() === 'OPTIONS'
                 ? r.respond({ status: 204, headers: CORS })
@@ -240,6 +263,11 @@ async function capture(webDir, outDir, routes, viewports, schemes) {
             if (!input) throw new Error(`Route "${route.name}": no text field to type into`);
             await input.type(route.type);
             await new Promise(r => setTimeout(r, 1200));
+          }
+          if (route.scrollTo) {
+            const found = await page.evaluate(scrollToText, route.scrollTo);
+            if (!found) throw new Error(`Route "${route.name}": no visible element with text "${route.scrollTo}"`);
+            await new Promise(r => setTimeout(r, 600));
           }
           if (route.scroll === 'end') {
             // React Native Web renders ScrollViews as overflow divs, so scroll those as well as the window.

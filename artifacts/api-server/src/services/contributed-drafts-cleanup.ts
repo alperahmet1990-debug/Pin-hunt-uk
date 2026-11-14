@@ -4,11 +4,11 @@
  * /pin-images/contribute/preview (routes/contribute-pin-image.ts) stores a
  * draft per user at {userId}/drafts/{pinId}__{hash}.jpg: the Pixian-cleaned
  * photo in pin-contributed-images and, with the collector's consent, the
- * photo as taken in pin-contributed-raw (migration 079). Submitting moves the
+ * photo as taken in pin-contributed-raw (migration 080). Submitting moves the
  * draft out of drafts/; a new preview replaces the old one. A preview that is
  * never submitted would otherwise stay until the user's next preview or
  * account deletion, so this sweep removes drafts older than DRAFT_MAX_AGE_MS
- * from both buckets. Submitted photos (outside drafts/) are never touched;
+ * (23h, so nothing outlives 24h with an hourly sweep) from both buckets. Submitted photos (outside drafts/) are never touched;
  * reviewed raw originals are deleted on approve/reject (discardRawOriginal).
  *
  * Runs in-process (index.ts): once at start-up, then every hour. Deleting is
@@ -20,13 +20,17 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
 export const DRAFT_BUCKETS = ["pin-contributed-images", "pin-contributed-raw"] as const;
-export const DRAFT_MAX_AGE_MS = 24 * 60 * 60 * 1000;
+/**
+ * 23 hours, so that with the hourly sweep every unsubmitted draft is gone
+ * within 24 hours ("deleted within a day" on the consent step).
+ */
+export const DRAFT_MAX_AGE_MS = 23 * 60 * 60 * 1000;
 export const DRAFT_SWEEP_INTERVAL_MS = 60 * 60 * 1000;
 const PAGE = 1000;
 
 export interface DraftSweepResult {
   removed: number;
-  /** Buckets that could not be swept (e.g. pin-contributed-raw before 079). */
+  /** Buckets that could not be swept (e.g. pin-contributed-raw before 080). */
   failedBuckets: string[];
 }
 

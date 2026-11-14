@@ -1036,7 +1036,7 @@ export interface ContributedPinImage {
   storagePath: string;
   /**
    * The photo exactly as the contributor took it, in the private, admin-only
-   * `pin-contributed-raw` bucket (migration 079). Absent on older rows.
+   * `pin-contributed-raw` bucket (migration 080). Absent on older rows.
    */
   rawStoragePath?: string;
   status: ContributedImageStatus;
@@ -1065,7 +1065,7 @@ export interface PinAndPopReference {
 export interface CreateContributedImageInput {
   /** Path already uploaded to the `pin-contributed-images` bucket. */
   storagePath: string;
-  /** Path already uploaded to the admin-only `pin-contributed-raw` bucket (079). */
+  /** Path already uploaded to the admin-only `pin-contributed-raw` bucket (080). */
   rawStoragePath?: string;
   /** Must be true — the repository rejects the call otherwise. */
   consentGranted: boolean;

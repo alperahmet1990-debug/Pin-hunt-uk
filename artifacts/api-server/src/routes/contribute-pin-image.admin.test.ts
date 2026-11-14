@@ -143,7 +143,7 @@ describe("POST /api/pin-images/contribute", () => {
     expect(state.created[0].rawStoragePath).toBeUndefined();
   });
 
-  it("still queues the photo when the raw original can't be kept (079 not applied)", async () => {
+  it("still queues the photo when the raw original can't be kept (080 not applied)", async () => {
     state.rawMoveError = { message: "Bucket not found" };
     const spy = vi.spyOn(console, "warn").mockImplementation(() => {});
     const res = await confirm();

@@ -1,9 +1,9 @@
 -- ============================================================
--- Migration 079: keep the raw original of a contributed pin photo (admin-only)
+-- Migration 080: keep the raw original of a contributed pin photo (admin-only)
 --
 -- Never applied by an agent. Apply in the STAGING Supabase SQL editor first,
--- run supabase/verify/079_verify.sql there, then production (separate step).
--- Runbook: supabase/verify/079_RUNBOOK.md.
+-- run supabase/verify/080_verify.sql there, then production (separate step).
+-- Runbook: supabase/verify/080_RUNBOOK.md.
 --
 -- Why: a contributed photo (038) is stored only after Pixian has cleaned it
 -- (background removed, cropped, centred). When the admin reviews it against
@@ -31,8 +31,9 @@
 -- The raw_storage_path value is only a path; who can see the row is unchanged
 -- (pin_images_public_read, 038). Without the storage policy the path is useless.
 --
--- Numbering: 076 is used twice on main and 078 is taken by the board-scanning
--- branch (078_board_scans.sql). 079 does not depend on either.
+-- Numbering: 079 is 079_market_price_requests.sql on main, 078 is taken by the
+-- board-scanning branch (078_board_scans.sql) and 076 is used twice on main.
+-- 080 depends on none of them.
 --
 -- Run AFTER 038, 042 and 051.
 -- ============================================================
@@ -43,7 +44,7 @@ alter table pin_images
   add column if not exists raw_storage_path text;
 
 comment on column pin_images.raw_storage_path is
-  'Contributed photos only: the un-cleaned original in the private, admin-only pin-contributed-raw bucket (079).';
+  'Contributed photos only: the un-cleaned original in the private, admin-only pin-contributed-raw bucket (080).';
 
 -- ── Storage: private, admin-only pin-contributed-raw bucket ──────────────────
 
@@ -90,5 +91,5 @@ grant execute on function public.list_account_storage_objects(uuid) to service_r
 notify pgrst, 'reload schema';
 
 -- ============================================================
--- End of migration 079.
+-- End of migration 080.
 -- ============================================================

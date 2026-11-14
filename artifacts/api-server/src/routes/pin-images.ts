@@ -3,7 +3,7 @@
  *
  * GET  /admin/pending-pin-images              List images awaiting review,
  *      each with a signed URL for the cleaned photo, one for the raw photo
- *      as taken (admin-only bucket, migration 079) and the pin's Pin & Pop
+ *      as taken (admin-only bucket, migration 080) and the pin's Pin & Pop
  *      reference (admin-only, migration 042).
  * POST /admin/pin-images/:id/approve          Promote the cleaned photo into
  *      the public pin-catalogue bucket and set it as the pin's display image.
@@ -26,7 +26,7 @@ import {
   createSupabasePinRepository,
   createSupabaseUserRepository,
 } from "@workspace/pin-repository";
-import { discardRawOriginal, publishContributedImage, PublishBlockedError } from "../services/contributed-images";
+import { discardRawOriginal, isOwnRawPath, publishContributedImage, PublishBlockedError } from "../services/contributed-images";
 
 const router: IRouter = Router();
 
@@ -106,8 +106,9 @@ router.get("/admin/pending-pin-images", requireAdmin, async (_req: Request, res:
           return {
             ...img,
             signedUrl: await userRepo.getContributedImageUrl(img.storagePath),
-            // Older rows (and a server without migration 079) have none.
-            rawSignedUrl: img.rawStoragePath
+            // Older rows (and a server without migration 080) have none.
+            // Only a path inside the uploader's own folder is signed.
+            rawSignedUrl: isOwnRawPath(img.rawStoragePath, img.uploadedBy)
               ? await userRepo.getContributedRawImageUrl(img.rawStoragePath).catch(() => null)
               : null,
             pinAndPop: pinAndPop[img.pinId] ?? null,
@@ -200,7 +201,7 @@ router.post("/admin/pin-images/:id/reject", requireAdmin, async (req: AdminReque
       action: "reject",
       reviewerNotes,
     });
-    // The raw original was only for the review (migration 079).
+    // The raw original was only for the review (migration 080).
     await discardRawOriginal(image, getAdminAuthClient());
     res.json({ image: reviewed });
   } catch (err) {

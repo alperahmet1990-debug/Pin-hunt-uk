@@ -1,143 +1,127 @@
 -- ============================================================
--- Verification for migration 079 (contributed photo raw originals).
--- Run in the Supabase SQL editor of the project you just applied 079 to
--- (staging first, then production). Read-only: one transaction, rolled back.
+-- Verification for migration 079 (run after applying 079, in the Supabase
+-- SQL editor: staging first, then production). One transaction, rolled back:
+-- the test rows it writes never persist.
 -- Expected final output: a single row 'ALL 079 CHECKS PASSED'.
---
--- Test users (rolled back):
---   …a1  collector who uploaded the raw photo
---   …b2  another collector
---   …d4  admin
 -- ============================================================
+
+do $$
+declare
+  actual text;
+begin
+  if to_regprocedure('public.pinhunt_environment()') is null then
+    raise exception 'Project guard: pinhunt_environment() is missing (073_RUNBOOK.md).';
+  end if;
+  execute 'select public.pinhunt_environment()' into actual;
+  if actual not in ('staging', 'production') then
+    raise exception 'Project guard: unexpected environment %.', actual;
+  end if;
+  raise notice '079 verify running on %', actual;
+end $$;
 
 begin;
 
-create or replace function pg_temp.v079_as(p_uid uuid) returns void language sql as $$
-  select set_config('request.jwt.claim.sub', p_uid::text, true),
-         set_config('request.jwt.claims', json_build_object('sub', p_uid, 'role', 'authenticated')::text, true);
-$$;
-
--- 1. Shape
+-- Structure, RLS and grants.
 do $$
 begin
-  assert exists (
-    select 1 from information_schema.columns
-     where table_schema = 'public' and table_name = 'pin_images' and column_name = 'raw_storage_path'
-  ), '1a pin_images.raw_storage_path missing';
-
-  assert exists (select 1 from storage.buckets where id = 'pin-contributed-raw'), '1b bucket pin-contributed-raw missing';
-  assert (select public from storage.buckets where id = 'pin-contributed-raw') = false, '1c bucket pin-contributed-raw is PUBLIC';
-  assert (select allowed_mime_types from storage.buckets where id = 'pin-contributed-raw') = array['image/jpeg'],
-    '1c2 bucket pin-contributed-raw should accept image/jpeg only';
-
-  -- Exactly one policy mentions the bucket: admin SELECT.
-  assert (select count(*) from pg_policies
-           where schemaname = 'storage' and tablename = 'objects'
-             and (coalesce(qual, '') || coalesce(with_check, '')) like '%pin-contributed-raw%') = 1,
-    '1d expected exactly one storage policy for pin-contributed-raw';
-  assert exists (select 1 from pg_policies
-                  where schemaname = 'storage' and tablename = 'objects'
-                    and policyname = 'pcr_storage_admin_select' and cmd = 'SELECT'
-                    and qual like '%is_admin()%'),
-    '1e pcr_storage_admin_select missing or not admin-gated';
-
-  -- The account-deletion lister includes the bucket and stays service-role only.
-  assert pg_get_functiondef('public.list_account_storage_objects(uuid)'::regprocedure) like '%pin-contributed-raw%',
-    '1f list_account_storage_objects does not include pin-contributed-raw';
-  assert not has_function_privilege('authenticated', 'public.list_account_storage_objects(uuid)', 'execute'),
-    '1g authenticated can execute list_account_storage_objects';
-  assert not has_function_privilege('anon', 'public.list_account_storage_objects(uuid)', 'execute'),
-    '1h anon can execute list_account_storage_objects';
+  if to_regclass('public.market_price_requests') is null then raise exception 'market_price_requests missing'; end if;
+  if to_regprocedure('public.claim_market_price_request(uuid, uuid, text, text[], integer, integer, integer, integer, integer)') is null then
+    raise exception 'claim_market_price_request missing';
+  end if;
+  if not (select relrowsecurity from pg_class where oid = 'public.market_price_requests'::regclass) then
+    raise exception 'RLS not enabled on market_price_requests';
+  end if;
+  if exists (select 1 from pg_policies where tablename = 'market_price_requests') then
+    raise exception 'market_price_requests must have no policies (service role only)';
+  end if;
+  if has_table_privilege('authenticated', 'public.market_price_requests', 'select')
+     or has_table_privilege('anon', 'public.market_price_requests', 'select') then
+    raise exception 'client roles can read market_price_requests';
+  end if;
+  if has_function_privilege('authenticated', 'public.claim_market_price_request(uuid, uuid, text, text[], integer, integer, integer, integer, integer)', 'execute')
+     or has_function_privilege('anon', 'public.claim_market_price_request(uuid, uuid, text, text[], integer, integer, integer, integer, integer)', 'execute') then
+    raise exception 'client roles can execute claim_market_price_request';
+  end if;
+  -- Prerequisites from 049/055.
+  if to_regclass('public.market_valuations') is null or to_regclass('public.provider_budgets') is null then
+    raise exception '049 not applied';
+  end if;
+  if to_regclass('public.market_valuation_history') is null then raise exception '055 not applied'; end if;
+  if not exists (select 1 from information_schema.columns where table_name = 'market_listings' and column_name = 'location_filter') then
+    raise exception '054 not applied';
+  end if;
 end $$;
 
--- 2. Test data (as postgres; rolled back)
-insert into auth.users (id) values
-  ('07900000-0000-4000-8000-0000000000a1'),
-  ('07900000-0000-4000-8000-0000000000b2'),
-  ('07900000-0000-4000-8000-0000000000d4');
-insert into profiles (id) values
-  ('07900000-0000-4000-8000-0000000000a1'),
-  ('07900000-0000-4000-8000-0000000000b2'),
-  ('07900000-0000-4000-8000-0000000000d4')
-on conflict (id) do nothing;
-update profiles set is_admin = true where id = '07900000-0000-4000-8000-0000000000d4';
-
-insert into storage.objects (bucket_id, name, owner)
-values ('pin-contributed-raw', '07900000-0000-4000-8000-0000000000a1/PHUK-VERIFY079/1.jpg',
-        '07900000-0000-4000-8000-0000000000a1');
-
--- 3. The uploader cannot read their own raw photo
-select pg_temp.v079_as('07900000-0000-4000-8000-0000000000a1');
-set local role authenticated;
+-- Behaviour: in-flight, cache (including no_sales), caps. Needs one pin and
+-- one auth user to exist; skipped with a notice otherwise.
 do $$
+declare
+  -- Pins with no request history, so nothing real is touched; every row this
+  -- block writes is its own, and the whole script is rolled back.
+  v_pin   uuid := (select p.id from pins p where not exists (select 1 from market_price_requests r where r.pin_id = p.id) order by p.created_at limit 1);
+  v_pin2  uuid := (select p.id from pins p where not exists (select 1 from market_price_requests r where r.pin_id = p.id) order by p.created_at offset 1 limit 1);
+  v_user  uuid := (select id from auth.users order by created_at limit 1);
+  r       record;
+  src     text[] := array['soldgraph:ebay_gb_sold', 'soldgraph:ebay_us_sold'];
 begin
-  assert (select count(*) from storage.objects
-           where bucket_id = 'pin-contributed-raw' and name like '07900000-0000-4000-8000-0000000000a1/%') = 0,
-    '3a the uploader can read their raw photo';
-end $$;
--- Writes too, so a broad storage.objects policy elsewhere would be caught.
-do $$
-declare n int;
-begin
+  if v_pin is null or v_pin2 is null or v_user is null then
+    raise notice 'Behaviour checks skipped: need two pins without request history and one auth user.';
+    return;
+  end if;
+  -- The per-user cap below counts this user's real requests too; start from none of theirs today.
+  if exists (select 1 from market_price_requests where requested_by = v_user and created_at > now() - interval '24 hours') then
+    raise notice 'Behaviour checks skipped: the test user made a real request in the last 24h.';
+    return;
+  end if;
+
+  -- 1. First claim succeeds.
+  select * into r from claim_market_price_request(v_pin, v_user, 'user', src, 2, 2, 100, 30, 10);
+  if r.decision <> 'claimed' or r.request_id is null then raise exception 'first claim: %', r.decision; end if;
+
+  -- 2. A second claim for the same pin is in flight.
+  select * into r from claim_market_price_request(v_pin, v_user, 'user', src, 2, 2, 100, 30, 10);
+  if r.decision <> 'in_flight' then raise exception 'duplicate claim: %', r.decision; end if;
+
+  -- 3. The unique index refuses a second pending row written directly.
   begin
-    insert into storage.objects (bucket_id, name, owner)
-    values ('pin-contributed-raw', '07900000-0000-4000-8000-0000000000a1/PHUK-VERIFY079/2.jpg',
-            '07900000-0000-4000-8000-0000000000a1');
-    raise exception '3b a signed-in collector can upload into the raw bucket';
-  exception when insufficient_privilege then
-    null; -- refused by RLS, as expected
+    insert into market_price_requests (pin_id, origin, sources, worst_case_credits) values (v_pin, 'batch', src, 2);
+    raise exception 'second pending row was accepted';
+  exception when unique_violation then null;
   end;
-  update storage.objects set name = name where bucket_id = 'pin-contributed-raw';
-  get diagnostics n = row_count;
-  assert n = 0, '3c a signed-in collector can update raw photos';
-  delete from storage.objects where bucket_id = 'pin-contributed-raw';
-  get diagnostics n = row_count;
-  assert n = 0, '3d a signed-in collector can delete raw photos';
-end $$;
-reset role;
 
--- 4. Another collector cannot read it
-select pg_temp.v079_as('07900000-0000-4000-8000-0000000000b2');
-set local role authenticated;
-do $$
-begin
-  assert (select count(*) from storage.objects
-           where bucket_id = 'pin-contributed-raw' and name like '07900000-0000-4000-8000-0000000000a1/%') = 0,
-    '4a another collector can read a raw photo';
-end $$;
-reset role;
+  -- 4. Finish with no sales: the next claim is answered from the cache.
+  update market_price_requests set status = 'complete', outcome = 'no_sales', finished_at = now(),
+         sold_counts = '{"UK":0,"US":0}', credits_spent = 2
+   where pin_id = v_pin and status = 'pending';
+  select * into r from claim_market_price_request(v_pin, v_user, 'user', src, 2, 2, 100, 30, 10);
+  if r.decision <> 'cached' or r.cached_outcome <> 'no_sales' then raise exception 'empty result not cached: %', r.decision; end if;
+  -- A narrower request is covered too; a wider one is not.
+  select * into r from claim_market_price_request(v_pin, v_user, 'user', array['soldgraph:ebay_gb_sold'], 1, 2, 100, 30, 10);
+  if r.decision <> 'cached' then raise exception 'subset not cached: %', r.decision; end if;
+  -- A cache window of 0 days means nothing is cached.
+  select * into r from claim_market_price_request(v_pin, v_user, 'user', src, 2, 2, 100, 0, 10);
+  if r.decision <> 'user_cap' and r.decision <> 'claimed' then raise exception 'zero-day cache: %', r.decision; end if;
+  -- Remove only the pending row this block just wrote (v_pin had no history).
+  delete from market_price_requests where pin_id = v_pin and status = 'pending';
 
--- 5. Anonymous cannot read it
-set local role anon;
-do $$
-begin
-  assert (select count(*) from storage.objects where bucket_id = 'pin-contributed-raw') = 0,
-    '5a anon can read raw photos';
-end $$;
-reset role;
+  -- 5. Per-user cap: limit 1, one request already today -> user_cap.
+  select * into r from claim_market_price_request(v_pin2, v_user, 'user', src, 2, 1, 100, 30, 10);
+  if r.decision <> 'user_cap' or r.retry_after is null then raise exception 'user cap: %', r.decision; end if;
 
--- 6. An admin can read it
-select pg_temp.v079_as('07900000-0000-4000-8000-0000000000d4');
-set local role authenticated;
-do $$
-begin
-  assert (select count(*) from storage.objects
-           where bucket_id = 'pin-contributed-raw' and name like '07900000-0000-4000-8000-0000000000a1/%') = 1,
-    '6a admin cannot read raw photos';
-end $$;
-reset role;
+  -- 6. Batch requests ignore the daily caps but still respect the cache and in-flight checks.
+  select * into r from claim_market_price_request(v_pin2, null, 'batch', src, 2, 0, 0, 30, 10);
+  if r.decision <> 'claimed' then raise exception 'batch claim: %', r.decision; end if;
+  select * into r from claim_market_price_request(v_pin2, null, 'batch', src, 2, 0, 0, 30, 10);
+  if r.decision <> 'in_flight' then raise exception 'batch duplicate: %', r.decision; end if;
 
--- 7. Account deletion lists the raw photo for its owner only
-do $$
-begin
-  assert (select count(*) from public.list_account_storage_objects('07900000-0000-4000-8000-0000000000a1')
-           where bucket_id = 'pin-contributed-raw') = 1,
-    '7a account deletion would leave the raw photo behind';
-  assert (select count(*) from public.list_account_storage_objects('07900000-0000-4000-8000-0000000000b2')
-           where bucket_id = 'pin-contributed-raw') = 0,
-    '7b account deletion lists another user''s raw photo';
+  -- 7. Outcome/status consistency is enforced.
+  begin
+    update market_price_requests set status = 'complete' where pin_id = v_pin2 and status = 'pending';
+    raise exception 'complete without outcome was accepted';
+  exception when check_violation then null;
+  end;
 end $$;
-
-select 'ALL 079 CHECKS PASSED' as result;
 
 rollback;
+
+select 'ALL 079 CHECKS PASSED' as result;

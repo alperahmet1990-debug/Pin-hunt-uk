@@ -3,17 +3,17 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { USER_CONTENT_BUCKETS } from "./account-deletion";
 
-// Raw contributed photos (migration 079) must stay admin-only: a private
+// Raw contributed photos (migration 080) must stay admin-only: a private
 // bucket whose only storage policy is an admin SELECT. This reads the
-// migration itself; supabase/verify/079_verify.sql checks the live project.
+// migration itself; supabase/verify/080_verify.sql checks the live project.
 
 const MIGRATION = readFileSync(
-  join(__dirname, "../../../../supabase/migrations/079_contributed_image_raw.sql"),
+  join(__dirname, "../../../../supabase/migrations/080_contributed_image_raw.sql"),
   "utf8",
 );
 const sql = MIGRATION.split("\n").filter((l) => !l.trim().startsWith("--")).join("\n");
 
-describe("migration 079: raw contributed photos", () => {
+describe("migration 080: raw contributed photos", () => {
   it("creates the bucket private, and forces it private if it already exists", () => {
     expect(sql).toMatch(/'pin-contributed-raw',\s*'pin-contributed-raw',\s*false,/);
     expect(sql).toMatch(/on conflict \(id\) do update\s+set public = false, file_size_limit = 10485760, allowed_mime_types = array\['image\/jpeg'\]/);

@@ -78,6 +78,28 @@ test("--run compares with Pin & Pop images, writes the outputs, and never writes
   assert.ok(!/pinandpop|Pin \d/.test(shareText), "share.json carries no Pin & Pop links or titles");
 });
 
+test("an empty model line in the settings file falls back to the default model, and failures are reported", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "ctp-"));
+  const { estPath, prodPath } = files(dir);
+  const calls = [];
+  const base = fakeFetch(calls);
+  const logs = [];
+  const fetchImpl = async (url, opts) => {
+    if (String(url).includes("openai.com")) {
+      const model = JSON.parse(opts.body).model;
+      if (!model) return { ok: false, status: 400, json: async () => ({ error: { message: "you must provide a model parameter" } }) };
+    }
+    return base(url, opts);
+  };
+  const { share } = await main(["--estimate", estPath, "--production", prodPath, "--out", path.join(dir, "out"), "--run"],
+    { ...env, OPENAI_SCAN_MODEL: "", OPENAI_BULK_MATCH_MODEL: "  " }, fetchImpl, (m) => logs.push(m));
+  assert.equal(share.model, "gpt-5.6-luna");
+  assert.equal(share.ai_outcome.error ?? 0, 0);
+  const failing = async (url, opts) => (String(url).includes("openai.com") ? { ok: false, status: 401, json: async () => ({ error: { message: "Incorrect API key provided" } }) } : base(url, opts));
+  await main(["--estimate", estPath, "--production", prodPath, "--out", path.join(dir, "out2"), "--run"], env, failing, (m) => logs.push(m));
+  assert.ok(logs.some((m) => /2 of 2 AI calls failed\. First error: OpenAI error 401/.test(m)));
+});
+
 test("refuses a production target", async () => {
   await assert.rejects(() => main(["--estimate", "x", "--production", "y", "--out", "z"], { ...env, SUPABASE_URL: `https://${PROD}.supabase.co` }, async () => { throw new Error("no network"); }, () => {}), /STAGING_PROJECT_REF|production/);
 });

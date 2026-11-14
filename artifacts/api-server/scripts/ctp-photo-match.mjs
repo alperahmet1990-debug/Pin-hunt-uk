@@ -173,7 +173,8 @@ export function parseAnswer(text, item) {
 }
 
 async function compareOne(item, env, fetchImpl, state) {
-  const model = env.OPENAI_BULK_MATCH_MODEL ?? env.OPENAI_SCAN_MODEL ?? "gpt-5.6-luna";
+  // An empty OPENAI_*_MODEL line in the settings file means "not set", not "no model".
+  const model = (env.OPENAI_BULK_MATCH_MODEL || "").trim() || (env.OPENAI_SCAN_MODEL || "").trim() || "gpt-5.6-luna";
   const effort = state.noEffort ? null : (env.OPENAI_SCAN_REASONING_EFFORT ?? "low").trim().toLowerCase() || null;
   for (let attempt = 1; attempt <= 2; attempt++) {
     const res = await fetchImpl(OPENAI_CHAT_URL, {
@@ -281,6 +282,8 @@ export async function main(argv = process.argv.slice(2), env = process.env, fetc
   fs.writeFileSync(path.join(dir, "review.html"), reviewHtml(results));
   const share = shareSummary(results);
   fs.writeFileSync(path.join(dir, "share.json"), JSON.stringify(share, null, 1));
+  const failed = results.filter((r) => r.ai.error);
+  if (failed.length) log(`${failed.length} of ${results.length} AI calls failed. First error: ${failed[0].ai.reasoning}`);
   log(`Done. Tokens: ${share.tokens.prompt} in, ${share.tokens.completion} out (model ${share.model}).`);
   log(`Open ${path.join(dir, "review.html")} to check the answers. Send Claude share.json and my-answers.json.`);
   return { results, share };

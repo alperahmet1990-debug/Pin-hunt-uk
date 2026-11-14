@@ -97,6 +97,12 @@ export interface RefreshOptions {
   activeTtlDays: number;
   apply: boolean;
   confirmCredits: number | null;
+  /**
+   * Programmatic callers only (the on-demand price request): instead of an
+   * exact --confirm-credits, allow --apply when the worst case is at most
+   * this many credits. The CLI never sets it.
+   */
+  creditCeiling?: number;
 }
 
 export interface ProbeOptions {
@@ -481,7 +487,7 @@ async function prepare(opts: RefreshOptions, deps: RefreshDeps, now: number): Pr
 /** Reasons --apply must not run, in the order they are reported. */
 export function applyBlockers(
   plan: Pick<RefreshPlan, "missingSources" | "disabledSources" | "worstCaseCredits" | "overBudget" | "remainingCredits">,
-  opts: { confirmCredits: number | null },
+  opts: { confirmCredits: number | null; creditCeiling?: number },
   env: NodeJS.ProcessEnv,
 ): string[] {
   const out: string[] = [];
@@ -494,7 +500,13 @@ export function applyBlockers(
   if (plan.overBudget) {
     out.push(`worst case ${plan.worstCaseCredits} credit(s) is more than the ${plan.remainingCredits} left this month`);
   }
-  if (opts.confirmCredits === null) {
+  if (opts.creditCeiling !== undefined) {
+    if (!Number.isInteger(opts.creditCeiling) || opts.creditCeiling < 0) {
+      out.push("credit ceiling must be a whole number of credits");
+    } else if (plan.worstCaseCredits > opts.creditCeiling) {
+      out.push(`worst case ${plan.worstCaseCredits} credit(s) is more than the ${opts.creditCeiling} allowed for this run`);
+    }
+  } else if (opts.confirmCredits === null) {
     out.push(`--confirm-credits ${plan.worstCaseCredits} is required with --apply`);
   } else if (opts.confirmCredits !== plan.worstCaseCredits) {
     out.push(`--confirm-credits must equal the worst case shown (${plan.worstCaseCredits}), not ${opts.confirmCredits}`);

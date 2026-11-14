@@ -21,7 +21,6 @@ import {
 } from "../services/scanBudget";
 import { withScanReasoning } from "../services/scanReasoning";
 import { verifyDecision, VERIFY_MAX_REFERENCES } from "../services/scanVerify";
-import { pinAndPopReferenceImages } from "../services/scanReferenceImages";
 import { cachedResult, imageHash, recordUsage, withinDailyCap } from "../services/usage-caps";
 import { isScanId, recordScanOutcome } from "../services/scan-outcomes";
 import { randomUUID } from "node:crypto";
@@ -410,10 +409,11 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
       // Pastries macaron shares the same collection description).
       const byPinId = new Map(catalogue.map((p) => [p.id, p]));
 
-      // Pull in same-collection siblings that have real catalogue images.
-      // Similar pins in one collection (e.g. all Princess Pastries macarons)
-      // are indistinguishable by text, so any sibling with a photo must be
-      // shown to the model even if the text ranking missed it.
+      // Pull in same-collection siblings that have a PinHunt catalogue photo
+      // (pins.image_url — never a Pin & Pop image). Similar pins in one
+      // collection (e.g. all Princess Pastries macarons) are
+      // indistinguishable by text, so any sibling with a photo must be shown
+      // to the model even if the text ranking missed it.
       const topCollections = [...new Set(
         matches.slice(0, 3).map((m) => byPinId.get(m.pinId)?.collection).filter(Boolean),
       )] as string[];
@@ -428,7 +428,7 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
           if (!s.imageUrl || byPinId.has(s.id) && matches.some((m) => m.pinId === s.id)) continue;
           byPinId.set(s.id, s);
           if (!matches.some((m) => m.pinId === s.id)) {
-            matches.push({ pinId: s.id, confidence: 30, reasoning: "Same collection — has a reference image for comparison." });
+            matches.push({ pinId: s.id, confidence: 30, reasoning: "Same collection — has a PinHunt photo for comparison." });
           }
         }
       }
@@ -438,14 +438,11 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
       // Hard cap the rerank candidate list to keep stage-3 prompts bounded.
       matches = matches.slice(0, 10);
 
-      // Pin & Pop pins have no public photo, only an admin reference image.
-      // The comparison may use it (scanReferenceImages.ts); the URL stays in
-      // this prompt and is never sent back to the app.
-      const referenceImages = await pinAndPopReferenceImages(
-        matches.map((m) => byPinId.get(m.pinId)).filter((p) => p && !p.imageUrl).map((p) => p!.id),
-      );
-      timer.mark("references");
-      const comparisonImage = (p: CataloguePin | undefined) => p?.imageUrl ?? (p ? referenceImages.get(p.id) : undefined);
+      // Only PinHunt's own catalogue photos (pins.image_url) are compared.
+      // Pin & Pop images are admin-only and must NEVER be sent to OpenAI or
+      // any other AI service (maintainer rule, pending Pin & Pop's answer), so
+      // a pin without a PinHunt photo is ranked on text alone.
+      const comparisonImage = (p: CataloguePin | undefined) => p?.imageUrl;
 
       const withImages = matches
         .map((m) => ({ match: m, pin: byPinId.get(m.pinId)!, image: comparisonImage(byPinId.get(m.pinId)) }))

@@ -7,3 +7,4 @@ description: Non-obvious behaviours of the Replit AI-integrations OpenAI proxy m
 - **How to apply:** any new chat.completions call in api-server that expects structured output — budget tokens generously and log `finish_reason` when content is empty.
 
 - Text metadata alone cannot distinguish sibling pins in one collection (e.g. mystery-box sets share collection text). Pin identification needs reference-image comparison; every catalogue image applied via the dry-run report directly improves scan accuracy.
+- Pin & Pop images are admin-display only and must NEVER be sent to OpenAI or any other AI service (maintainer rule, until Pin & Pop answers). The scan's stage-3 comparison (`routes/scan.ts`) and the bulk matcher (`services/bulkImages/match.ts`, fixed in PR #601) compare against `pins.image_url` (PinHunt photos) only; a pin without one is ranked on text alone. `services/scanReferenceImages.ts` is no longer imported by the scan — do not reconnect it to any AI path.

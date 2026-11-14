@@ -1,18 +1,21 @@
 /**
- * Pin & Pop reference images for the scan's photo comparison (stage 3).
+ * Pin & Pop reference images (admin-only pin_images rows, migration 042).
+ *
+ * NOT USED BY THE SCAN. Maintainer rule: Pin & Pop images may be displayed to
+ * admins only and must NEVER be sent to OpenAI or any other AI service until
+ * Pin & Pop answers. The scan's photo comparison (routes/scan.ts, stage 3)
+ * therefore uses only pins.image_url. Nothing imports this module at the
+ * moment; it is kept pending a maintainer decision (keep for a future
+ * admin-only display, or remove). Do not wire it into any AI request.
  *
  * Pin & Pop pins have no public catalogue photo (pins.image_url is null):
- * their images are reference-only pin_images rows (migration 042), which RLS
- * hides from everyone but admins. The scan may compare a collector's photo
- * against them (maintainer decision, 12 Nov 2026), so they're read here with
- * the service-role key.
+ * their images are reference-only pin_images rows, which RLS hides from
+ * everyone but admins, so they're read here with the service-role key.
  *
- * Rules:
- *   - the URLs are used only inside the OpenAI comparison prompt. They are
- *     never put on a CataloguePin, never returned to the app, and never logged;
- *   - only a pin with no public photo gets one;
- *   - best effort: no service key, an error or a slow lookup means no reference
- *     images, and the scan carries on with its text ranking.
+ * Rules if this is ever used again:
+ *   - admin display only — never an AI prompt, never put on a CataloguePin,
+ *     never returned to a non-admin, never logged;
+ *   - best effort: no service key, an error or a slow lookup means no images.
  */
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 

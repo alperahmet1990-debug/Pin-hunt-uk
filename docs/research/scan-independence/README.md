@@ -25,6 +25,7 @@
 
 **Does it depend on Pin & Pop today?**
 - **Images: no.** Pin & Pop images live only in `pin_images` with `public_display_allowed = false` (migration 042, admin-only). The scan reads `pins.image_url` using the anon key, so it never sees them.
+  *Update, Nov 2026:* for a short time the scan's stage 3 fell back to admin-only Pin & Pop reference images (`services/scanReferenceImages.ts`) for pins with no `pins.image_url`. That was removed: the maintainer's rule is that Pin & Pop images are never sent to OpenAI or any other AI service. Stage 3 again compares `pins.image_url` only.
 - **Data: yes, indirectly.** The 182-pin trusted catalogue the scan searches is 100% Pin & Pop-sourced (see `../independent-catalogue-poc/`).
 - **Reverse-image: yes, already.** Google `WEB_DETECTION` is reverse-image search. Its guesses very likely surface pages from pin databases and eBay, and they are fed into ranking as "strong hints". Stage 3 is also image-to-image comparison, using reference images of mixed provenance (eBay photos have no display rights).
 

@@ -341,6 +341,28 @@
     "click": ["Check the catalogue", "No, it’s new"]
   },
   {
+    "name": "add-pin-photo-end",
+    "path": "/add-pin",
+    "upload": "Choose from Library",
+    "consent": true,
+    "scroll": "end"
+  },
+  {
+    "name": "add-pin-park-other",
+    "path": "/add-pin",
+    "upload": "Choose from Library",
+    "identify": { "matches": [] },
+    "click": ["Check the catalogue", "Continue", "Other"],
+    "type": "Lantern"
+  },
+  {
+    "name": "add-pin-name-required",
+    "path": "/add-pin",
+    "upload": "Choose from Library",
+    "identify": { "matches": [] },
+    "click": ["I took this photo and PinHunt may use it as this pin’s catalogue image.", "Check the catalogue", "Continue", "Submit pin"]
+  },
+  {
     "name": "add-pin-ai-consent",
     "path": "/add-pin",
     "click": "Choose from Library"

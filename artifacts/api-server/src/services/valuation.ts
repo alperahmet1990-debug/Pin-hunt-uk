@@ -289,7 +289,7 @@ export async function getMarketValueForPin(pinhuntId: string): Promise<MarketVal
  */
 export async function getLatestValuesForPins(
   pinhuntIds: string[],
-): Promise<Record<string, { marketplace: EbayMarketplace; currency: string; mid: number; calculatedAt: string; stale: boolean }>> {
+): Promise<Record<string, { marketplace: EbayMarketplace; currency: string; mid: number; confidence: string; calculatedAt: string; stale: boolean }>> {
   if (pinhuntIds.length === 0) return {};
   const sb = getServiceClient();
 
@@ -303,12 +303,12 @@ export async function getLatestValuesForPins(
 
   const { data: estRows, error: estErr } = await sb
     .from("pin_market_estimates")
-    .select("pin_id, marketplace, currency, estimated_mid, calculated_at, expires_at")
+    .select("pin_id, marketplace, currency, estimated_mid, confidence, calculated_at, expires_at")
     .in("pin_id", [...uuidToPinhunt.keys()])
     .not("estimated_mid", "is", null);
   if (estErr) throw new Error(estErr.message);
 
-  const out: Record<string, { marketplace: EbayMarketplace; currency: string; mid: number; calculatedAt: string; stale: boolean }> = {};
+  const out: Record<string, { marketplace: EbayMarketplace; currency: string; mid: number; confidence: string; calculatedAt: string; stale: boolean }> = {};
   for (const row of estRows ?? []) {
     const pinhuntId = uuidToPinhunt.get(row.pin_id as string);
     if (!pinhuntId) continue;
@@ -320,6 +320,8 @@ export async function getLatestValuesForPins(
         marketplace: row.marketplace as EbayMarketplace,
         currency: String(row.currency),
         mid: Number(row.estimated_mid),
+        // So lists can show a value only when it's well supported (WP1 price chip).
+        confidence: String(row.confidence),
         calculatedAt: String(row.calculated_at),
         stale: new Date(String(row.expires_at)).getTime() < Date.now(),
       };

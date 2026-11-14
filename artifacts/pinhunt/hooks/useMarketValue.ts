@@ -14,6 +14,8 @@ export interface LatestValue {
   marketplace: 'EBAY_GB' | 'EBAY_US';
   currency: string;
   mid: number;
+  /** How well the value is supported ('insufficient' | 'low' | 'medium' | 'high'). Older API builds omit it. */
+  confidence?: string;
   calculatedAt: string;
   stale: boolean;
 }
@@ -84,4 +86,16 @@ export function useLatestMarketValue(pinId: string | undefined): LatestValue | n
 export function formatLatestValue(v: LatestValue): string {
   const symbol = v.currency === 'GBP' ? '£' : v.currency === 'USD' ? '$' : `${v.currency} `;
   return `${symbol}${Math.round(v.mid)}`;
+}
+
+/**
+ * "UK asking ~£14" for compact lists (WP1 step 3), or null. Only a UK value
+ * in pounds with medium or high confidence: anything thinner shows nothing,
+ * rather than a number collectors might trade on.
+ */
+export function ukAskingLine(v: LatestValue | null | undefined): string | null {
+  if (!v || v.marketplace !== 'EBAY_GB' || v.currency !== 'GBP') return null;
+  if (v.confidence !== 'medium' && v.confidence !== 'high') return null;
+  if (!Number.isFinite(v.mid) || v.mid <= 0) return null;
+  return `UK asking ~£${Math.round(v.mid)}`;
 }

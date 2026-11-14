@@ -168,6 +168,7 @@ See `docs/market-data/RIGHTS.md` §3. Nothing here changes what the refresh stor
 
 - `MARKET_VALUATION_V2_ENABLED=true`: the `GET /api/pins/:pinId/market-valuations` read (signed-in users), and writing values during a refresh.
 - `MARKET_VALUATION_PUBLISHED_MARKETS`: comma list of markets the read returns, for example `UK`. Empty (the default) returns none. Add a market only once its evidence has been checked region-true (#411, #450). Values calculated before region provenance (method version `v2.0`) are never returned; recalculate them with a refresh.
+- `MARKET_PRICE_REQUEST_ENABLED=true`: lets signed-in collectors ask for one pin's eBay UK/US sold prices from the app ("Get a price"). It runs this same refresh for that pin, with daily caps, the hard monthly budget and a cache that includes empty results. See `PRICE-REQUEST.md`, which also has the pilot re-run and the batch design.
 - `MARKET_COMPS_PUBLIC_ENABLED=true`: the comparable-sales endpoint `GET /api/pins/:pinId/market-comps?market=UK&limit=20` (signed-in users; date, price, currency, marketplace, source and a cleaned link only). Off returns 404 for everyone. It is separate from the valuation switch and stays off until the marketplace terms are resolved (RIGHTS.md §2).
 
 ## Switching it all off

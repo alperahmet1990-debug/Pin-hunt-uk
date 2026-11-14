@@ -125,6 +125,136 @@
     "path": "/pin/dp-001"
   },
   {
+    "name": "pin-sold-priced",
+    "path": "/pin/dp-001",
+    "api": {
+      "/market-valuations": {
+        "status": 200,
+        "body": {
+          "valuations": [
+            {
+              "market": "UK",
+              "currency": "GBP",
+              "basis": "sold",
+              "low": 18.4,
+              "fair": 24.6,
+              "high": 31.2,
+              "soldCount": 7,
+              "activeCount": 0,
+              "calculatedAt": "2026-11-10T10:00:00Z"
+            },
+            {
+              "market": "US",
+              "currency": "USD",
+              "basis": "sold",
+              "low": 28,
+              "fair": 34,
+              "high": 41,
+              "soldCount": 3,
+              "activeCount": 0,
+              "calculatedAt": "2026-11-10T10:00:00Z"
+            }
+          ]
+        }
+      },
+      "GET /price-request": {
+        "status": 200,
+        "body": {
+          "state": "none",
+          "checkedAt": null,
+          "nextRequestAt": null,
+          "requestsOpen": true
+        }
+      }
+    },
+    "scrollTo": "RECENT SOLD PRICES"
+  },
+  {
+    "name": "pin-sold-get-price",
+    "path": "/pin/dp-001",
+    "api": {
+      "/market-valuations": {
+        "status": 200,
+        "body": {
+          "valuations": []
+        }
+      },
+      "GET /price-request": {
+        "status": 200,
+        "body": {
+          "state": "none",
+          "checkedAt": null,
+          "nextRequestAt": null,
+          "requestsOpen": true
+        }
+      }
+    },
+    "scrollTo": "RECENT SOLD PRICES"
+  },
+  {
+    "name": "pin-sold-pending",
+    "path": "/pin/dp-001",
+    "api": {
+      "/market-valuations": {
+        "status": 200,
+        "body": {
+          "valuations": []
+        }
+      },
+      "GET /price-request": {
+        "status": 200,
+        "body": {
+          "state": "pending",
+          "checkedAt": null,
+          "nextRequestAt": null,
+          "requestsOpen": true
+        }
+      }
+    },
+    "scrollTo": "RECENT SOLD PRICES"
+  },
+  {
+    "name": "pin-sold-no-sales",
+    "path": "/pin/dp-001",
+    "api": {
+      "/market-valuations": {
+        "status": 200,
+        "body": {
+          "valuations": []
+        }
+      },
+      "GET /price-request": {
+        "status": 200,
+        "body": {
+          "state": "no_sales",
+          "checkedAt": "2026-11-14T10:00:00Z",
+          "nextRequestAt": "2026-12-14T10:00:00Z",
+          "requestsOpen": true
+        }
+      }
+    },
+    "scrollTo": "RECENT SOLD PRICES"
+  },
+  {
+    "name": "pin-sold-off",
+    "path": "/pin/dp-001",
+    "api": {
+      "/market-valuations": {
+        "status": 404,
+        "body": {
+          "error": "Not found"
+        }
+      },
+      "/price-request": {
+        "status": 404,
+        "body": {
+          "error": "Not found"
+        }
+      }
+    },
+    "scrollTo": "VALUE"
+  },
+  {
     "name": "set-detail",
     "path": "/set/Classics%202024"
   },

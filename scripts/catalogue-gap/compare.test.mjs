@@ -192,3 +192,23 @@ test("committed ALL_IN_ONE.sql is up to date with queries 1-5", async () => {
   const committed = fs.readFileSync(new URL("../../supabase/verify/catalogue-gap/ALL_IN_ONE.sql", import.meta.url), "utf8");
   assert.equal(committed, buildSql(), "run: node scripts/catalogue-gap/build-sql.mjs");
 });
+
+test("Pin & Pop pins: same record across projects, or awaiting the production import", async () => {
+  const pnp = (o) => pin({ has_pin_and_pop_link: "true", ...o });
+  const stg = side("staging", [
+    pnp({ id: "s1", pinhunt_id: "PHUK-10000001", title: "Stitch" }),
+    pnp({ id: "s2", pinhunt_id: "PHUK-10000002", title: "Lilo" }),
+    pin({ id: "s3", pinhunt_id: "PHUK-10000003", title: "Not linked" }),
+  ], [{ id: "i2", pin_id: "s2", source: "ok", status: "approved", image_url: url(S, "lilo.jpg"), content_hash: "h2" }]);
+  stg.summary.pins.exported_rows = 3; stg.summary.pins.total = 116503; stg.summary.pin_images = [{ source: "ok", count: 1 }, { source: "pin_and_pop", count: 116503 }];
+  const prod = side("production", [
+    pnp({ id: "p1", pinhunt_id: "PHUK-10000001", title: "Stitch" }),
+    pin({ id: "p3", pinhunt_id: "PHUK-10000003", title: "Something else" }),
+  ]);
+  const r = compare(stg, prod, { stagingRef: S, productionRef: P });
+  assert.equal(r.checks.filter((c) => c.level === "error").length, 0, "skipped Pin & Pop records don't trip the totals check");
+  assert.equal(r.pins.pnpBoth, 1, "same Pin & Pop-derived ID and both linked → same record");
+  assert.deepEqual(r.pins.pnpAwaitingImport.map((p) => p.id), ["s2"]);
+  assert.equal(r.photos.awaitingPnpImport.length, 1);
+  assert.equal(r.pins.collisions.length, 1, "Pin & Pop-range ID without a Pin & Pop link on both sides stays a collision for review");
+});

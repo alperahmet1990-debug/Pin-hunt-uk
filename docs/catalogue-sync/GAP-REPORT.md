@@ -44,8 +44,8 @@ The all-in-one query returns exactly what the five separate queries return, in o
 | Query | Contains | Never contains |
 |---|---|---|
 | 1 Summary | Counts: pins by status, photos by source, files per bucket, submissions by status. Which migrations exist. The rights settings of each image source. | Any individual record |
-| 2 Pins | Every pin's catalogue fields (title, series, year, edition, status, description and so on), its photo links and its non–Pin & Pop external IDs (e.g. Collectible PinTrader) | Who created or edited it, private import data, Pin & Pop IDs (only a yes/no "has a Pin & Pop link") |
-| 3 Photos | Every photo record: which pin, source, status, rights flag, link, whether a person uploaded it | Who uploaded or reviewed it. Pin & Pop rows appear only as "source: Pin & Pop", with no link or ID. |
+| 2 Pins | Every pin's catalogue fields (title, series, year, edition, status, description and so on), its photo links and its non–Pin & Pop external IDs. **Pin & Pop pins with no PinHunt work on them** (no photo, no contributed image, no manual character edit) are only counted, not listed: about 116,500 on staging. The Pin & Pop import brings them to production. | Who created or edited it, private import data, Pin & Pop IDs (only a yes/no "has a Pin & Pop link") |
+| 3 Photos | Every photo record except Pin & Pop reference images: which pin, source, status, rights flag, link, whether a person uploaded it | Who uploaded or reviewed it. Pin & Pop reference images (one per Pin & Pop pin) are only counted. |
 | 4 Files | File names, sizes and checksums in the public catalogue bucket. For the private buckets (board scans, bulk uploads, contributed originals): sizes plus a scrambled stand-in for each name. | File contents. Private file names, which can include account ids. |
 | 5 Work in progress | Submissions, board scans and bulk-matcher items: status, match decisions, PinHunt IDs, whether a cleaned photo exists, the permission flags. Board titles and supplier names you typed. | Who submitted or reviewed. Contributor names and handles, permission evidence text, private file paths. Draft submissions are only counted. |
 
@@ -83,7 +83,7 @@ Make a new folder somewhere private, for example `Documents/PinHunt-Private/cata
    Select everything (**Cmd+A** / **Ctrl+A**) and copy it (**Cmd+C** / **Ctrl+C**). Click into the Supabase editor and paste (**Cmd+V** / **Ctrl+V**).
 4. Press **Run** (or **Cmd+Enter** / **Ctrl+Enter**). It may take up to a minute.
    - **Expect:** a table with four columns: `part`, `chunk`, `items`, `payload`. The first row is `summary`, the second `work`, then rows for `pins`, `images` and `files`, each holding up to 500 records. The `payload` cells look like long text; that's expected.
-   - Staging with a few thousand pins gives roughly 5–20 rows.
+   - For staging, expect only a handful of rows. Its ~116,500 Pin & Pop pins are counted in the summary, not listed, unless PinHunt work has been done on them.
    - **If** the editor shows a warning about a "destructive operation", press **Cancel** and tell me. This query shouldn't cause one.
    - **If** it shows an error, copy the error message (not the data) to me.
 5. Download it. Use the export or download button above the results and choose **CSV** (usually **Export → Download CSV**). Save it into your `staging` folder.

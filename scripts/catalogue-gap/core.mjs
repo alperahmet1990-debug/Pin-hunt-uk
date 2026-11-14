@@ -142,6 +142,8 @@ export const normText = (s) => String(s ?? "").toLowerCase().normalize("NFKD").r
   .replace(/&/g, " and ").replace(/[^a-z0-9]+/g, " ").trim();
 export const nameKey = (p) => `${normText(p.title)}|${normText(p.normalised_series || p.collection)}|${p.release_year ?? ""}`;
 
+/** Pin & Pop pins have PinHunt ID PHUK- + (10,000,000 + Pin & Pop id): the same in every project (PINANDPOP.md). */
+export const isPnpPinhuntId = (phid) => /^PHUK-\d{8,}$/.test(String(phid ?? "")) && Number(String(phid).slice(5)) >= 10_000_000;
 const isTrue = (v) => v === true || v === "true" || v === "t";
 const isPnp = (src) => ["pinandpop", "pinpop"].includes(String(src ?? "").toLowerCase().replace(/[^a-z]/g, ""));
 const emptyish = (v) => v === null || v === undefined || v === false || v === "" ||
@@ -205,10 +207,12 @@ export function compare(staging, production, { stagingRef, productionRef }) {
     const env = side.summary.environment;
     if (env && env !== label) checks.push({ level: "error", text: `The ${label} folder says it came from "${env}". The files may be swapped.` });
     if (!env) checks.push({ level: "warn", text: `${label}: no project marker (pinhunt_environment(), 073_RUNBOOK.md), so the folder can't prove which project it came from. Check you ran it in the right project.` });
-    const total = Number(side.summary.pins?.total ?? NaN);
-    if (total !== side.pins.length) checks.push({ level: "error", text: `${label}: 2_pins.csv has ${side.pins.length} rows but the project has ${total} pins. The export was cut short; see "Large results" in GAP-REPORT.md.` });
-    const imgTotal = (side.summary.pin_images ?? []).reduce((n, r) => n + Number(r.count), 0);
-    if (imgTotal !== side.images.length) checks.push({ level: "error", text: `${label}: 3_images.csv has ${side.images.length} rows but the project has ${imgTotal}. The export was cut short.` });
+    // Untouched Pin & Pop pins and all Pin & Pop reference images are counted, not exported.
+    const total = Number(side.summary.pins?.exported_rows ?? side.summary.pins?.total ?? NaN);
+    if (total !== side.pins.length) checks.push({ level: "error", text: `${label}: the export has ${side.pins.length} pins but should have ${total}. It was cut short; re-run and download again.` });
+    const imgTotal = (side.summary.pin_images ?? []).filter((r) => !isPnp(r.source)).reduce((n, r) => n + Number(r.count), 0);
+    const imgRows = side.images.filter((i) => !isPnp(i.source)).length;
+    if (imgTotal !== imgRows) checks.push({ level: "error", text: `${label}: the export has ${imgRows} photo records but should have ${imgTotal}. It was cut short; re-run and download again.` });
   }
   if (stagingRef === productionRef) checks.push({ level: "error", text: "The staging and production refs are the same." });
 
@@ -230,7 +234,7 @@ export function compare(staging, production, { stagingRef, productionRef }) {
 
   // 1. Pins
   const pinClass = new Map(); // staging id → { kind, prod }
-  const pins = { same: 0, changed: [], collisions: [], idMismatch: [], stagingOnly: [], prodOnlyVisible: [], prodOnlyOther: 0 };
+  const pins = { same: 0, changed: [], collisions: [], idMismatch: [], stagingOnly: [], prodOnlyVisible: [], prodOnlyOther: 0, pnpBoth: 0, pnpAwaitingImport: [] };
   for (const s of staging.pins) {
     const p = prodById.get(s.id);
     if (p && p.pinhunt_id === s.pinhunt_id) {
@@ -254,6 +258,18 @@ export function compare(staging, production, { stagingRef, productionRef }) {
       continue;
     }
     const q = prodByPhid.get(s.pinhunt_id);
+    if (q && isPnpPinhuntId(s.pinhunt_id) && isTrue(s.has_pin_and_pop_link) && isTrue(q.has_pin_and_pop_link)) {
+      // Same Pin & Pop record imported into each project (different internal ids, same Pin & Pop-derived ID and link).
+      pins.pnpBoth++;
+      pinClass.set(s.id, { kind: "same_pnp", prod: q });
+      continue;
+    }
+    if (!q && isPnpPinhuntId(s.pinhunt_id) && isTrue(s.has_pin_and_pop_link)) {
+      // A Pin & Pop pin with PinHunt work on it; production hasn't imported Pin & Pop yet.
+      pins.pnpAwaitingImport.push(s);
+      pinClass.set(s.id, { kind: "pnp_awaiting_import", prod: null });
+      continue;
+    }
     if (q) {
       pins.collisions.push({ s, p: q });
       pinClass.set(s.id, { kind: "collision", prod: q });
@@ -284,7 +300,7 @@ export function compare(staging, production, { stagingRef, productionRef }) {
   const prodImgIds = new Set(production.images.map((i) => i.id));
   const prodHashes = new Set(production.images.map((i) => i.content_hash).filter(Boolean));
   const prodUrls = new Set([...production.images.map((i) => i.image_url), ...production.pins.flatMap((p) => [p.image_url, p.back_image_url])].filter(Boolean));
-  const photos = { dependsOnStaging: [], brokenProd: [], ready: [], blocked: [], needsPinDecision: [], alreadyThere: 0, pendingInStaging: [], untracked: [] };
+  const photos = { dependsOnStaging: [], brokenProd: [], ready: [], blocked: [], needsPinDecision: [], awaitingPnpImport: [], alreadyThere: 0, pendingInStaging: [], untracked: [] };
 
   for (const p of production.pins) for (const col of ["image_url", "back_image_url"]) {
     const u = parseImageUrl(p[col]);
@@ -324,12 +340,15 @@ export function compare(staging, production, { stagingRef, productionRef }) {
     if (u?.ref !== stagingRef) continue; // already hosted elsewhere (usually production's bucket via the copy)
     if (prodImgIds.has(i.id) || (i.content_hash && prodHashes.has(i.content_hash)) || prodUrls.has(i.image_url)) { photos.alreadyThere++; continue; }
     const cls = pinClass.get(i.pin_id);
-    const target = cls?.prod && (cls.kind === "same" || cls.kind === "changed") ? cls.prod : null;
+    const target = cls?.prod && ["same", "changed", "same_pnp"].includes(cls.kind) ? cls.prod : null;
     const rights = rightsCheck(i.source, sources, { edited: looksEdited(i) });
     const shownInStaging = isTrue(i.is_pin_front_photo) || isTrue(i.is_pin_back_photo);
     const replaces = target && (isTrue(i.is_pin_back_photo) ? target.back_image_url : target.image_url);
     const item = { i, s, target, rights, shownInStaging, replaces };
-    if (!target) {
+    if (!target && cls?.kind === "pnp_awaiting_import") {
+      photos.awaitingPnpImport.push(item);
+      add("photo_awaits_pin_and_pop_import", "info", s, null, `approved staging photo ${i.id} belongs to Pin & Pop pin ${s?.pinhunt_id}, which production doesn't have until the Pin & Pop import runs there`, "Keep; promote after the production Pin & Pop import (same PinHunt ID)");
+    } else if (!target) {
       photos.needsPinDecision.push(item);
       add("photo_needs_pin_decision", "review", s, cls?.prod ?? null, `approved staging photo ${i.id} belongs to a pin that isn't matched to production (${cls?.kind ?? "pin not exported"})`, "Resolve the pin first, then the photo");
     } else if (!rights.ok) {
@@ -363,9 +382,12 @@ function summariseWork(work, stagingPins, pinClass, prodByPhid) {
   const targetKind = (phid) => {
     if (!phid) return "no pin chosen";
     const s = byPhid.get(phid);
-    if (!s) return prodByPhid.has(phid) ? "pin only in production" : "pin not found";
+    if (!s) {
+      if (isPnpPinhuntId(phid)) return prodByPhid.has(phid) ? "Pin & Pop pin, in both projects" : "Pin & Pop pin, awaiting production import";
+      return prodByPhid.has(phid) ? "pin only in production" : "pin not found";
+    }
     const k = pinClass.get(s.id)?.kind ?? "unknown";
-    return { same: "same pin in both", changed: "same pin in both (fields differ)", collision: "ID collision", id_mismatch: "ID mismatch",
+    return { same_pnp: "Pin & Pop pin, in both projects", pnp_awaiting_import: "Pin & Pop pin, awaiting production import", same: "same pin in both", changed: "same pin in both (fields differ)", collision: "ID collision", id_mismatch: "ID mismatch",
       staging_only: "pin only in staging", staging_only_possible_match: "pin only in staging (possible duplicate)" }[k] ?? k;
   };
   const tally = (items, keyFn) => items.reduce((m, x) => { const k = keyFn(x); m[k] = (m[k] ?? 0) + 1; return m; }, {});
@@ -445,7 +467,10 @@ export function renderMarkdown(r, { staging, production }) {
     ["Staging pin photos with no provenance record", r.photos.untracked.length],
     ["Production links to files missing from production storage", r.photos.brokenProd.length],
     ["Same pin in both, identical", r.pins.same],
-    ["Visible production pins missing from staging (staging copy is stale)", r.pins.prodOnlyVisible.length],
+    ["Visible production pins not in staging (e.g. the old catalogue staging removed on 11 Nov)", r.pins.prodOnlyVisible.length],
+    ["Pin & Pop pins with PinHunt work, in both projects", r.pins.pnpBoth],
+    ["Pin & Pop pins with PinHunt work, awaiting the production Pin & Pop import", r.pins.pnpAwaitingImport.length],
+    ["Approved staging photos on those pins (kept until the import)", r.photos.awaitingPnpImport.length],
     ["Items needing a decision (total)", decisions],
     ["Critical items", crit],
   ]), "");
@@ -467,7 +492,7 @@ export function renderMarkdown(r, { staging, production }) {
     capped(r.pins.changed).map(({ s, diffs }) => [s.pinhunt_id, s.title, diffs ? diffs.map((d) => `${d.field}: ${JSON.stringify(d.production)} -> ${JSON.stringify(d.staging)}`).join("; ") : "archived: not exported"])) + more(r.pins.changed), "");
 
   L.push("## Approved staging photos", "");
-  const photoRows = [...r.photos.ready.map((x) => ["ready", x]), ...r.photos.blocked.map((x) => ["blocked", x]), ...r.photos.needsPinDecision.map((x) => ["pin decision first", x])];
+  const photoRows = [...r.photos.ready.map((x) => ["ready", x]), ...r.photos.blocked.map((x) => ["blocked", x]), ...r.photos.needsPinDecision.map((x) => ["pin decision first", x]), ...r.photos.awaitingPnpImport.map((x) => ["after production Pin & Pop import", x])];
   L.push(table(["State", "Staging pin", "Photo id", "Source", "Production pin", "Production photo now", "Note"],
     capped(photoRows).map(([st, x]) => [st, x.s?.pinhunt_id, x.i.id, x.i.source, x.target?.pinhunt_id ?? "", x.target ? (x.replaces ? "has one" : "none") : "", x.rights.ok ? "" : x.rights.reason])) + more(photoRows), "");
 
@@ -497,11 +522,11 @@ export function renderMarkdown(r, { staging, production }) {
     return `${b}; ${k}`;
   };
   L.push(table(["", "Staging", "Production"], [
-    ["Pin & Pop reference image records (the only Pin & Pop images the matching tools can use)", pnpRows(staging), pnpRows(production)],
+    ["Pin & Pop reference image records", pnpRows(staging), pnpRows(production)],
     ["Pin photos (front or back) hosted by Pin & Pop", pnpHosted(staging), pnpHosted(production)],
     ["Matching-tool activity", activity(staging), activity(production)],
   ]));
-  L.push("", "Board scanning and the bulk matcher can only send a Pin & Pop image to the AI service when reference records exist. A count of 0 means none could have been sent from records that exist now; it can't show records that were added and later deleted.", "");
+  L.push("", "The scan (since 12 Nov), the bulk matcher (when switched on) and board scanning send a Pin & Pop reference image to OpenAI for candidates with no public photo. These counts show how many such records each project holds now; they can't show records added and later deleted. See docs/catalogue-sync/PIN-AND-POP-QUESTIONS.md.", "");
 
   L.push("## Migrations detected", "");
   const ms = staging.summary.migration_markers ?? {};
@@ -514,7 +539,7 @@ export function renderMarkdown(r, { staging, production }) {
   L.push("## Project summaries", "");
   for (const [label, side] of [["Staging", staging], ["Production", production]]) {
     const s = side.summary;
-    L.push(`**${label}:** ${s.pins?.total} pins (${kv(s.pins?.by_verification_status)}); ${s.pins?.with_image_url} with a photo. Photo hosts: ${kv(s.pin_image_hosts)}. Buckets: ${(s.storage_buckets ?? []).map((b) => `${b.bucket} ${b.objects} files`).join(", ")}.`, "");
+    L.push(`**${label}:** ${s.pins?.total} pins (${kv(s.pins?.by_verification_status)}); ${s.pins?.with_image_url} with a photo. Pin & Pop pins: ${s.pins?.pin_and_pop ?? 0}, of which ${Number(s.pins?.total ?? 0) - Number(s.pins?.exported_rows ?? s.pins?.total ?? 0)} with no PinHunt work were counted, not listed. Photo hosts: ${kv(s.pin_image_hosts)}. Buckets: ${(s.storage_buckets ?? []).map((b) => `${b.bucket} ${b.objects} files`).join(", ")}.`, "");
   }
   L.push("Full list of items: `review.csv` (one row per decision).");
   return L.join("\n") + "\n";

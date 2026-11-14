@@ -29,7 +29,7 @@ begin
   end if;
   out := out || jsonb_build_object('generated_at', now(), 'report_version', 1);
 
-  -- Migrations 037 onwards, each detected by an object it creates. Five
+  -- Migrations 037 onwards (main as of 14 Nov 2026), each detected by an object it creates. Five
   -- migrations only rewrite existing functions or grants (056, 061, 063, 064,
   -- 074) and can't be detected this way: use their supabase/verify scripts.
   for m in
@@ -66,12 +66,16 @@ begin
       ('071', 'function', 'trade_post_event'),
       ('072', 'table', 'message_moderation_events'),
       ('073', 'function', 'pinhunt_minimum_age'),
-      ('075', 'table', 'board_scans'),
-      ('076', 'table', 'bulk_image_batches')
+      ('075 Pin & Pop search indexes', 'index', 'pins_catalogue_source_idx'),
+      ('076 search function', 'function', 'search_catalogue_pins'),
+      ('076 bulk image matcher', 'table', 'bulk_image_batches'),
+      ('077 coverage paging', 'function', 'catalogue_coverage_summary'),
+      ('board scanning (branch, number not yet set)', 'table', 'board_scans')
     ) as t(migration, kind, name)
   loop
     markers := markers || jsonb_build_object(m.migration, case m.kind
       when 'table' then to_regclass('public.' || m.name) is not null
+      when 'index' then to_regclass('public.' || m.name) is not null
       when 'function' then exists (
         select 1 from pg_proc p join pg_namespace n on n.oid = p.pronamespace
         where n.nspname = 'public' and p.proname = m.name)
@@ -104,6 +108,15 @@ begin
     'with_image_url', count(*) filter (where p.image_url is not null),
     'with_back_image_url', count(*) filter (where p.back_image_url is not null),
     'max_pinhunt_id', max(p.pinhunt_id),
+    -- Pin & Pop pins (PINANDPOP.md). Untouched ones are counted, not exported:
+    -- the Pin & Pop import brings them to production. KEEP IN STEP with 2_pins.sql.
+    'pin_and_pop', count(*) filter (where to_jsonb(p)->>'catalogue_source' = 'pin_and_pop'),
+    'exported_rows', count(*) filter (where not (
+        to_jsonb(p)->>'catalogue_source' = 'pin_and_pop'
+        and p.image_url is null and p.back_image_url is null
+        and coalesce(to_jsonb(p)->>'character_review_status', 'auto_matched') = 'auto_matched'
+        and not exists (select 1 from public.pin_images i where i.pin_id = p.id
+                          and regexp_replace(lower(coalesce(i.source, '')), '[^a-z]', '', 'g') not in ('pinandpop', 'pinpop')))),
     'last_created_at', max(p.created_at),
     'last_updated_at', max(p.updated_at)
   ) into v from public.pins p;
@@ -351,6 +364,15 @@ from (
         md5(s.content::text) as content_md5,
         case when coalesce(s.j->>'catalogue_status', '') <> 'archived' then s.content::text end as content
       from scrubbed s
+      -- Untouched Pin & Pop pins are skipped (counted in 1_summary as pins.pin_and_pop):
+      -- no photo, no non-Pin & Pop image record, characters only auto-matched.
+      -- KEEP IN STEP with pins.exported_rows in 1_summary.sql.
+      where not (
+        s.j->>'catalogue_source' = 'pin_and_pop'
+        and s.image_url is null and s.back_image_url is null
+        and coalesce(s.j->>'character_review_status', 'auto_matched') = 'auto_matched'
+        and not exists (select 1 from public.pin_images i where i.pin_id = s.id
+                          and regexp_replace(lower(coalesce(i.source, '')), '[^a-z]', '', 'g') not in ('pinandpop', 'pinpop')))
     ),
     numbered as (
       select r, row_number() over (order by r.pinhunt_id) as rn from records r
@@ -390,6 +412,7 @@ from (
         (p.back_image_url is not distinct from i.image_url and not i.is_pnp) as is_pin_back_photo
       from i
       left join public.pins p on p.id = i.pin_id
+      where not i.is_pnp  -- Pin & Pop reference rows are counted in 1_summary, never listed
     ),
     numbered as (
       select r, row_number() over (order by r.pinhunt_id, r.created_at, r.id) as rn from records r

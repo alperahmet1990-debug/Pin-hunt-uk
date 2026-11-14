@@ -1,36 +1,54 @@
 # Pin & Pop agreement: what needs confirming
 
-You've signed the agreement (Nov 2026). The repo has no copy or summary of it, so the current restrictions stay in force until the answers below are recorded. Those restrictions are:
-- Pin & Pop images are reference-only and never shown, stored or published (042 constraint);
-- Pin & Pop data and links are excluded from copies, reports and promotion (`catalogue-copy.mjs`, 053, the source registry, the gap report);
-- board scanning and the bulk matcher are coded to use Pin & Pop images as matching references (see below). That use is **not yet confirmed** as permitted, so until it is, keep Pin & Pop reference rows out of any project those tools run against.
+**Updated 14 Nov 2026.** Since 12 Nov, Pin & Pop has been imported into **staging** (`artifacts/api-server/scripts/PINANDPOP.md`). That runbook records the licence as **"Data & Image License Agreement v1.3"**, with these rules:
+- attribution shown to collectors;
+- images internal only: never shown, never copied into our storage;
+- no redistribution;
+- no paywall-only use;
+- a **maintainer decision on 12 Nov 2026** that every scan may show OpenAI the Pin & Pop reference image.
 
-**How to answer:** for each question, write the answer in your own words plus the clause number. Don't paste the contract text here; it may be confidential (see Q15). Keep the signed copy and correspondence off-repo, as with Soldgraph (`docs/market-data/RIGHTS.md`). Once answered, each restriction is relaxed by its own, explicitly approved change (#431).
+I can't see the signed agreement itself (it isn't in the repo, and no document connector is attached), so I can't check those rules against its clauses. What's below is what to confirm, and what the code does today.
 
-## How the code uses Pin & Pop images today (checked 12 Nov 2026)
+The existing restrictions stay as they are:
+- Pin & Pop images are never shown to collectors, stored in our buckets or published (042 constraint, RLS);
+- they're excluded from catalogue copies, reports and promotion;
+- the gap report never lists them.
 
-| Where | Pin & Pop images sent to an AI service? | Details |
+**How to answer:** your own words plus the clause number. Don't paste contract text into the repo; it may be confidential (Q15). Keep the signed copy off-repo, as with Soldgraph (`docs/market-data/RIGHTS.md`).
+
+## How the code uses Pin & Pop images (checked 14 Nov 2026, `main`)
+
+| Where | Sent to OpenAI? | When |
 |---|---|---|
-| Live scan (`/api/scan/identify` on `main`, used by TestFlight) | **No** | Its comparison step uses only PinHunt's own catalogue photo (`pins.image_url`) |
-| Admin review of contributed photos (`main`, migration 042) | No | Shows the Pin & Pop image *to admins* beside a contributed photo, so they can check it's the right pin. Display only, admin-only. |
-| Board scanning (branch, not merged) | **Possible** | In the comparison step, for a candidate pin with **no PinHunt photo** that has a Pin & Pop reference record. Runs only when the ranking is unsure. |
-| Bulk image matcher (branch, not merged) | **Possible** | The same comparison step, but it runs for every photo by default (`BULK_MATCH_ALWAYS_COMPARE=true`) |
+| **Live scan** (`/api/scan/identify`, used by TestFlight) | **Yes, since 12 Nov** (`services/scanReferenceImages.ts`) | In the photo-comparison step, for a candidate pin with no public photo. That's every Pin & Pop pin, as they have none. Needs the API's service-role key; without it, it's skipped. |
+| **Bulk image matcher** (merged; off unless `BULK_IMAGE_MATCHER_ENABLED=true`) | Yes, when switched on | The same comparison step, for **every** photo by default (`BULK_MATCH_ALWAYS_COMPARE=true`) |
+| **Board scanning** (branch, not merged) | Yes, once merged and used | The same step, when the ranking is unsure and the candidate has no PinHunt photo |
+| **Admin review** of contributed photos (042) | No | Shows the Pin & Pop image to admins beside a contributed photo. Display only. |
 
-**What is sent, and to whom.** Both branches pass the Pin & Pop image's **web address** to **OpenAI**: the API server's OpenAI client, with the model in `OPENAI_SCAN_MODEL`. OpenAI's servers then download the **full image** from Pin & Pop's own server, so OpenAI receives the image itself, not a derived representation. The links come only from `pin_images` rows with `source = 'pin_and_pop'`, which 042 says are added by hand. No fingerprints or embeddings exist anywhere in the code.
+**What is sent, and to whom.** The code passes the Pin & Pop image's **web address** to **OpenAI** (the API server's OpenAI client, model in `OPENAI_SCAN_MODEL`). OpenAI's servers download the **full image** from Pin & Pop's own server. It isn't a derived representation: no fingerprints or embeddings exist in the code. The address is never returned to the app or logged (`routes/scan-references.test.ts`).
 
-**Has it happened?** Unknown. Neither branch is deployed: Render runs `main`. Both sessions report their staging test runs as not yet done. It could only have happened if:
-1. someone ran a branch's API locally against staging, **and**
-2. staging held Pin & Pop reference rows at the time.
+**Has it happened?**
+- **Live scan:** probably yes, if the staging API on Render has been deployed from `main` since 12 Nov with a service-role key and anyone has scanned since. Staging holds 116,503 Pin & Pop reference records, so nearly every candidate qualifies. I can't see Render's deploy history; it's on the service's Events tab.
+- **Bulk matcher:** only if `BULK_IMAGE_MATCHER_ENABLED=true` was set somewhere and a batch was run.
+- **Board scanning:** only if its branch was run locally against staging.
 
-The gap report's **Pin & Pop exposure check** shows (2) for each project right now. OpenAI's usage logs would show image-bearing requests, but not whose images they were.
+**Testing with our own images only.** This is no longer possible just by "keeping staging free of Pin & Pop records": staging now holds one for every pin. The options are:
+- a switch, e.g. `PIN_AND_POP_REFERENCES_ENABLED`, read by `scanReferenceImages.ts`, the bulk matcher and board scanning. That's a small code change for an agent, and it needs coordinating with whoever owns those files;
+- or leave the API's service-role key out of a test server, so the scan skips Pin & Pop references. That doesn't help the bulk matcher, which needs the key for everything else.
 
-**Testing with our own images.** This is safe as long as no Pin & Pop reference rows exist in the project the tools run against: with none, nothing from Pin & Pop can be sent. Our own photos (yours, or collectors' with permission) and PinHunt's catalogue photos are still sent to OpenAI, which is how the live scan already works. A switch that turns Pin & Pop references off is the more robust fix (`PRODUCTION-READINESS.md`, item 9).
+Our own photos, collectors' photos (with permission) and PinHunt's own catalogue photos go to OpenAI either way. That's how the scan has always worked.
 
-## The question for Jenn and Chris
+## What to check with Jenn and Chris
 
-> Under our agreement, may PinHunt send Pin & Pop images to a third-party AI service (currently OpenAI, which fetches the image from your server by its web address) to compare them with a collector's photo when identifying a pin? The images would be used for that comparison only: not shown to users, not stored by PinHunt, and not used to train models. If yes: does that cover our test environment as well as the live service, and do you need us to name the AI provider or tell you if it changes? If no: may we use them for this internally without sending them to an outside service?
+**First, check your own records:** was the 12 Nov decision based on a specific clause of v1.3, or on something Pin & Pop confirmed in writing? If so, write down the clause number or keep the email, and the scan question is answered. The rest of this section is then only needed for what that clause doesn't cover.
 
-Their answer settles question 7 below. Until it's recorded, keep Pin & Pop references out of both tools.
+If it isn't covered in writing, this is the question to send:
+
+> Under the Data & Image License Agreement (v1.3), may PinHunt send Pin & Pop images to a third-party AI service (currently OpenAI, which fetches the image from your server by its web address) to compare them with a collector's photo when identifying a pin? This would be in our scan feature and in our internal catalogue tools (matching batches of our own photos and photos of collectors' boards). The images would be used for that comparison only: not shown to users, not stored by PinHunt, and not used to train models. If yes: does that cover our test environment as well as the live service, and do you need us to name the AI provider or tell you if it changes?
+
+Before sending, check your OpenAI account's data settings so "not used to train models" is accurate.
+
+"Internal catalogue tools" matters: the 12 Nov decision covers **scans**. The bulk matcher and board scanning are a different use (building our catalogue), so make sure the answer covers them too.
 
 ## Full question list
 

@@ -3,8 +3,8 @@
 -- Run in EACH project's SQL editor and download the result as CSV.
 -- Records come back in chunks of 500 per row.
 --
--- Pin & Pop reference rows are included only as a source + status, with no URL
--- or Pin & Pop id, so they can be counted but never copied.
+-- Pin & Pop reference rows (one per Pin & Pop pin) are left out; 1_summary
+-- counts them by source.
 -- `contributed` says a person uploaded it; who is never exported.
 
 set default_transaction_read_only = on;
@@ -35,6 +35,7 @@ records as (
     (p.back_image_url is not distinct from i.image_url and not i.is_pnp) as is_pin_back_photo
   from i
   left join public.pins p on p.id = i.pin_id
+  where not i.is_pnp  -- Pin & Pop reference rows are counted in 1_summary, never listed
 ),
 numbered as (
   select r, row_number() over (order by r.pinhunt_id, r.created_at, r.id) as rn from records r

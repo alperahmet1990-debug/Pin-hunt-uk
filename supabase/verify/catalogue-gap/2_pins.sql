@@ -9,6 +9,10 @@
 -- private import links, photo URLs (exported separately) and Pin & Pop keys.
 -- It is filled for non-archived pins only, to keep the file small; archived
 -- pins still get `content_md5`, so any change is detected.
+--
+-- Pin & Pop pins with no PinHunt work on them (no photo, no contributed image,
+-- no manual character edit) are counted, not listed: the Pin & Pop import brings
+-- them to production. Any Pin & Pop pin with PinHunt work on it is listed.
 
 set default_transaction_read_only = on;
 
@@ -61,6 +65,15 @@ records as (
     md5(s.content::text) as content_md5,
     case when coalesce(s.j->>'catalogue_status', '') <> 'archived' then s.content::text end as content
   from scrubbed s
+  -- Untouched Pin & Pop pins are skipped (counted in 1_summary as pins.pin_and_pop):
+  -- no photo, no non-Pin & Pop image record, characters only auto-matched.
+  -- KEEP IN STEP with pins.exported_rows in 1_summary.sql.
+  where not (
+    s.j->>'catalogue_source' = 'pin_and_pop'
+    and s.image_url is null and s.back_image_url is null
+    and coalesce(s.j->>'character_review_status', 'auto_matched') = 'auto_matched'
+    and not exists (select 1 from public.pin_images i where i.pin_id = s.id
+                      and regexp_replace(lower(coalesce(i.source, '')), '[^a-z]', '', 'g') not in ('pinandpop', 'pinpop')))
 ),
 numbered as (
   select r, row_number() over (order by r.pinhunt_id) as rn from records r

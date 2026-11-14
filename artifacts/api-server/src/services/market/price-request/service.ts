@@ -231,6 +231,8 @@ export interface StatusResult {
   nextRequestAt: string | null;
   /** True when "Get a price" can be offered at all (switches, markets, provider). */
   requestsOpen: boolean;
+  /** Markets a request searches now (published, with an eBay sold source), UK first. */
+  markets: MarketCode[];
 }
 
 const DAY_MS = 86_400_000;
@@ -239,7 +241,8 @@ const DAY_MS = 86_400_000;
 export async function priceRequestStatus(pinUuid: string, deps: Pick<PriceRequestDeps, "requests" | "env" | "now">): Promise<StatusResult> {
   const now = (deps.now ?? Date.now)();
   const requestsOpen = unavailableReason(deps.env) === null;
-  const none: StatusResult = { state: "none", checkedAt: null, nextRequestAt: null, requestsOpen };
+  const markets = requestMarkets(deps.env);
+  const none: StatusResult = { state: "none", checkedAt: null, nextRequestAt: null, requestsOpen, markets };
   const latest = await deps.requests.latest(pinUuid);
   if (!latest) return none;
   if (latest.status === "pending") {
@@ -257,5 +260,6 @@ export async function priceRequestStatus(pinUuid: string, deps: Pick<PriceReques
     checkedAt: latest.finishedAt,
     nextRequestAt: new Date(until).toISOString(),
     requestsOpen,
+    markets,
   };
 }

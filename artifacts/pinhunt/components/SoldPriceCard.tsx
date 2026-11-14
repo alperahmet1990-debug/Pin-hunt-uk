@@ -29,6 +29,12 @@ const ERROR_TEXT: Record<RequestError, string> = {
   unavailable: 'Price checks aren’t available right now.',
 };
 
+/** "eBay UK", "eBay UK and US"; falls back to both when the server didn't say. */
+function searchedNames(markets: SoldMarket[]): string {
+  const list = markets.length ? markets : (['UK', 'US'] as SoldMarket[]);
+  return list.length === 1 ? MARKET_NAME[list[0]] : `eBay ${list.join(' and ')}`;
+}
+
 function shortDate(iso: string | null): string | null {
   if (!iso) return null;
   return formatDate(iso, 'medium') || null;
@@ -107,7 +113,7 @@ export function SoldPriceCard({ pinId }: { pinId: string }) {
           <Text style={[styles.title, { color: colors.homeInk }]}>No sold price yet</Text>
           <Text style={[styles.body, { color: colors.homeMuted }]}>
             {request.requestsOpen
-              ? 'We can check recent eBay UK and US sales for this pin.'
+              ? `We can check recent ${searchedNames(request.markets)} sales for this pin.`
               : `No recent ${MARKET_NAME[market]} sales are recorded for this pin yet.`}
           </Text>
           {request.requestsOpen && (

@@ -12,7 +12,7 @@ jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ session: { access_
 type Reply = { status: number; body?: unknown };
 const UK = { market: 'UK', currency: 'GBP', low: 18.4, fair: 24.6, high: 31.2, soldCount: 7, activeCount: 0, calculatedAt: '2026-11-10T10:00:00Z' };
 const US = { market: 'US', currency: 'USD', low: 28, fair: 34, high: 41, soldCount: 3, activeCount: 0, calculatedAt: '2026-11-10T10:00:00Z' };
-const OPEN = { state: 'none', checkedAt: null, nextRequestAt: null, requestsOpen: true };
+const OPEN = { state: 'none', checkedAt: null, nextRequestAt: null, requestsOpen: true, markets: ['UK', 'US'] };
 
 let routes: { valuations: Reply; status: Reply; post: Reply };
 let fetchMock: jest.Mock;
@@ -104,6 +104,17 @@ describe('SoldPriceCard', () => {
     await act(async () => { jest.advanceTimersByTime(POLL_MS); });
     expect(await screen.findByTestId('sold-price-priced')).toBeTruthy();
     expect(posts()).toHaveLength(1);
+  });
+
+  it('names only the markets the server will search', async () => {
+    await render(<SoldPriceCard pinId="PHUK-00000001" />);
+    expect(await screen.findByText('We can check recent eBay UK and US sales for this pin.')).toBeTruthy();
+  });
+
+  it('says eBay UK alone when only the UK is searched', async () => {
+    routes.status = { status: 200, body: { ...OPEN, markets: ['UK'] } };
+    await render(<SoldPriceCard pinId="PHUK-00000001" />);
+    expect(await screen.findByText('We can check recent eBay UK sales for this pin.')).toBeTruthy();
   });
 
   it('shows the pending state for a request someone else started', async () => {

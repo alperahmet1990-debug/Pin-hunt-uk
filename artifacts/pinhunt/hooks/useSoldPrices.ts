@@ -33,6 +33,8 @@ export interface RequestStatus {
   checkedAt: string | null;
   nextRequestAt: string | null;
   requestsOpen: boolean;
+  /** Markets a request searches (from the server); empty when unknown. */
+  markets: SoldMarket[];
 }
 
 export type RequestError = 'daily_limit' | 'busy' | 'unavailable';
@@ -52,7 +54,7 @@ export const POLL_MS = 4000;
 /** Stop polling after this long; the tile then offers the button again if nothing came back. */
 export const POLL_LIMIT_MS = 3 * 60_000;
 
-const CLOSED: RequestStatus = { state: 'none', checkedAt: null, nextRequestAt: null, requestsOpen: false };
+const CLOSED: RequestStatus = { state: 'none', checkedAt: null, nextRequestAt: null, requestsOpen: false, markets: [] };
 
 function toValuations(body: unknown): SoldValuation[] {
   const list = (body as { valuations?: unknown[] } | null)?.valuations;
@@ -84,6 +86,7 @@ function toStatus(body: unknown): RequestStatus {
     checkedAt: typeof b.checkedAt === 'string' ? b.checkedAt : null,
     nextRequestAt: typeof b.nextRequestAt === 'string' ? b.nextRequestAt : null,
     requestsOpen: b.requestsOpen === true,
+    markets: Array.isArray(b.markets) ? b.markets.filter((m): m is SoldMarket => m === 'UK' || m === 'US') : [],
   };
 }
 
@@ -171,7 +174,7 @@ export function useSoldPrices(pinId: string | null): SoldPrices {
       if (!alive.current) return;
       if (r.status === 202 || r.status === 409) return; // running; the poll takes over
       if (r.ok) {
-        setRequest(prev => ({ ...prev, ...toStatus(body), requestsOpen: prev.requestsOpen }));
+        setRequest(prev => ({ ...prev, ...toStatus(body), requestsOpen: prev.requestsOpen, markets: prev.markets }));
         await loadValuations();
         return;
       }

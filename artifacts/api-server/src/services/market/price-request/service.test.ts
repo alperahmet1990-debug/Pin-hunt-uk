@@ -450,7 +450,12 @@ describe("status", () => {
 
   it("is 'none' and open before any request", async () => {
     const { deps } = setup();
-    expect(await status(deps)).toEqual({ state: "none", checkedAt: null, nextRequestAt: null, requestsOpen: true });
+    expect(await status(deps)).toEqual({ state: "none", checkedAt: null, nextRequestAt: null, requestsOpen: true, markets: ["UK", "US"] });
+  });
+
+  it("names only the markets a request would search", async () => {
+    const { deps } = setup({ env: { ...ENV_ON, MARKET_VALUATION_PUBLISHED_MARKETS: "UK,FR" } });
+    expect((await status(deps)).markets).toEqual(["UK"]);
   });
 
   it("reports closed requests when the switches are off", async () => {
@@ -468,6 +473,7 @@ describe("status", () => {
       checkedAt: new Date(NOW).toISOString(),
       nextRequestAt: new Date(NOW + 30 * DAY).toISOString(),
       requestsOpen: true,
+      markets: ["UK", "US"],
     });
   });
 

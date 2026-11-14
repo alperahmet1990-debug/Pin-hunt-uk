@@ -163,7 +163,11 @@
           "state": "none",
           "checkedAt": null,
           "nextRequestAt": null,
-          "requestsOpen": true
+          "requestsOpen": true,
+              "markets": [
+                "UK",
+                "US"
+              ]
         }
       }
     },
@@ -185,7 +189,11 @@
           "state": "none",
           "checkedAt": null,
           "nextRequestAt": null,
-          "requestsOpen": true
+          "requestsOpen": true,
+              "markets": [
+                "UK",
+                "US"
+              ]
         }
       }
     },
@@ -207,7 +215,11 @@
           "state": "pending",
           "checkedAt": null,
           "nextRequestAt": null,
-          "requestsOpen": true
+          "requestsOpen": true,
+              "markets": [
+                "UK",
+                "US"
+              ]
         }
       }
     },
@@ -229,7 +241,11 @@
           "state": "no_sales",
           "checkedAt": "2026-11-14T10:00:00Z",
           "nextRequestAt": "2026-12-14T10:00:00Z",
-          "requestsOpen": true
+          "requestsOpen": true,
+              "markets": [
+                "UK",
+                "US"
+              ]
         }
       }
     },

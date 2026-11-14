@@ -1,7 +1,6 @@
 import React from 'react';
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { AddPinsCard } from '../AddPinsCard';
 import { AddPinsWelcomeSheet } from '../AddPinsWelcomeSheet';
 
 const mockPush = jest.fn();
@@ -12,6 +11,7 @@ jest.mock('@react-native-async-storage/async-storage', () =>
   require('@react-native-async-storage/async-storage/jest/async-storage-mock'),
 );
 jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush }) }));
+// The Add pins card is retired (#614); Home's zero-pin line covers it (homeTiles.test.tsx).
 jest.mock('@/context/CollectionContext', () => ({ useCollection: () => ({ collection: mockCollection }) }));
 jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ user: { id: 'u1' } }) }));
 jest.mock('@/context/ProfileContext', () => ({ useProfile: () => ({ profile: { createdAt: mockCreatedAt } }) }));
@@ -23,20 +23,6 @@ beforeEach(async () => {
   mockCollection = {};
   mockCreatedAt = new Date().toISOString();
   await AsyncStorage.removeItem('@pinhunt_welcome_add_pins_v1:u1');
-});
-
-describe('AddPinsCard', () => {
-  it('shows for an empty collection and opens add mode', async () => {
-    await render(<AddPinsCard />);
-    await fireEvent.press(screen.getByRole('button', { name: /Add the pins you own/ }));
-    expect(mockPush).toHaveBeenCalledWith(ADD_ROUTE);
-  });
-
-  it('hides once anything is collected', async () => {
-    mockCollection = { p1: { status: 'owned' } };
-    await render(<AddPinsCard />);
-    expect(screen.queryByText('Add the pins you own')).toBeNull();
-  });
 });
 
 describe('AddPinsWelcomeSheet', () => {

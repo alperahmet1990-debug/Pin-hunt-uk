@@ -6,10 +6,10 @@
  * pin and Submit a new pin side by side; one slim "needs you" line when
  * something is waiting; and two compact upcoming events.
  *
- * Removed from Home with the maintainer's approval: Recently added
- * (RecentPinsStrip), the Find Trades tile, Continue Collecting, the large
- * What's Happening cards, Get started and Photograph your pins. Find Trades
- * stays on Collection (For Trade and ISO tabs) and Community.
+ * Removed from Home with the maintainer's approval (#604): Recently added,
+ * the Find Trades tile, Continue Collecting, the large What's Happening
+ * cards, Get started and Photograph your pins. Find Trades stays on
+ * Collection (For Trade and ISO tabs) and Community.
  */
 import React, { useEffect, useMemo, useState } from 'react';
 import { Image, Linking, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';

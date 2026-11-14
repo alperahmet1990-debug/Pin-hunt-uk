@@ -105,7 +105,10 @@ Pin & Pop records have no Collectible PinTrader, PinPics or Pin Trading DB numbe
    - a `pin_images` record notes `source = 'collectible_pintrader'` and the Collectible PinTrader ID.
    Unmatched photos stay in storage, unused, for a later pass. One option is the bulk image matcher, subject to the Pin & Pop answer on sending images to OpenAI.
 
-**Check before relying on it:** that Pin & Pop's agreement allows showing another source's photo on a pin whose data comes from Pin & Pop (`PIN-AND-POP-QUESTIONS.md`, Q14). Also check whether Collectible PinTrader wants a photo credit (`catalogue_sources.attribution_required`).
+**Rights:**
+- Showing Collectible PinTrader (or our own) photos on Pin & Pop pins is allowed: maintainer, 14 Nov 2026 (`PIN-AND-POP-QUESTIONS.md`, Q14).
+- Still to check: whether Collectible PinTrader wants a photo credit (`catalogue_sources.attribution_required`).
+- Comparing images is still open. A local picture fingerprint keeps Pin & Pop images in-house; an AI comparison needs Pin & Pop's answer on sending their images to OpenAI for catalogue tools.
 
 ### 6. Remove the old catalogue (one guarded SQL script)
 

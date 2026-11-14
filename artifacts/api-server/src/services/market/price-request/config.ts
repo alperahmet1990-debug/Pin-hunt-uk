@@ -12,7 +12,11 @@
  *                                        answers repeat requests for this long (default 30)
  *   MARKET_PRICE_REQUEST_BUDGET_RESERVE  credits of the month's Soldgraph budget that
  *                                        requests leave untouched, e.g. for the
- *                                        maintainer's pilot (default 0)
+ *                                        maintainer's pilot (default 0). Best effort:
+ *                                        it is checked before the claim, outside the
+ *                                        lock, so parallel requests for different pins
+ *                                        can dip into it by a few credits. The monthly
+ *                                        hard stop itself is enforced atomically.
  *
  * Which markets are searched follows MARKET_VALUATION_PUBLISHED_MARKETS: only
  * UK and US have an eBay sold source here, and a market that isn't published

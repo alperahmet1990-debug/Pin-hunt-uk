@@ -35,6 +35,7 @@ vi.mock("../services/market/price-request/service", async (orig) => {
 });
 
 import app from "../app";
+import { POSTS_PER_MINUTE, resetPriceRequestRateLimitsForTests } from "./price-request";
 
 const post = (id = "PHUK-00000001", token: string | null = "good-token") => {
   const r = request(app).post(`/api/pins/${id}/price-request`);
@@ -55,12 +56,15 @@ describe("price-request routes", () => {
     h.deps = true;
     h.start.mockReset();
     h.status.mockReset();
+    resetPriceRequestRateLimitsForTests();
   });
   afterEach(() => vi.unstubAllEnvs());
 
-  it("is 404 for everyone when the flag is off, before any work", async () => {
+  it("is 404 for everyone when the flag is off, before any work (signed out included)", async () => {
     vi.stubEnv("MARKET_PRICE_REQUEST_ENABLED", "");
     expect((await post()).status).toBe(404);
+    expect((await post("PHUK-00000001", null)).status).toBe(404);
+    expect((await get("PHUK-00000001", null)).status).toBe(404);
     expect((await get()).status).toBe(404);
     vi.stubEnv("MARKET_PRICE_REQUEST_ENABLED", "true");
     vi.stubEnv("MARKET_VALUATION_V2_ENABLED", "");
@@ -122,6 +126,14 @@ describe("price-request routes", () => {
     const res = await post();
     expect(res.status).toBe(500);
     expect(JSON.stringify(res.body)).not.toContain("SECRET");
+  });
+
+  it("rate-limits one user's POSTs per minute, answering 429 before any planning", async () => {
+    h.start.mockResolvedValue({ kind: "in_flight" });
+    const codes: number[] = [];
+    for (let i = 0; i < POSTS_PER_MINUTE + 2; i++) codes.push((await post()).status);
+    expect(codes).toEqual([...Array(POSTS_PER_MINUTE).fill(409), 429, 429]);
+    expect(h.start).toHaveBeenCalledTimes(POSTS_PER_MINUTE);
   });
 
   it("GET returns the pin's state from the request log", async () => {

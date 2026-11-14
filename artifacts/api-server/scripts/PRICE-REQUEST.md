@@ -29,7 +29,9 @@ Everything is **off by default**. With the switches off, the tile doesn't appear
    - `priced` or `no_sales`: both are cached;
    - `stopped` (budget or kill switch) or `error`: not cached, so the pin can be asked again. These still count towards the collector's daily cap, so a failing pin can't drain credits.
 
-A stuck request (for example after a server restart) is released after 10 minutes.
+A stuck request (for example after a server restart) is released after 10 minutes. Each search has a 60-second deadline in the Soldgraph client, so a live request finishes well inside that window.
+
+Separately, each signed-in user may call the routes at most 6 times a minute (POST) and 30 times a minute (GET, for polling), per server process. This protects the database; it isn't the spend control.
 
 ## Before turning it on: re-run the pilot (staging, small, budget-capped)
 
@@ -122,7 +124,7 @@ Record the result on #411 for UK and on a new note for US. Update `docs/market-d
 | `MARKET_PRICE_REQUEST_USER_DAILY` | optional, default `5` |
 | `MARKET_PRICE_REQUEST_GLOBAL_DAILY` | optional, default `50` (about 100 credits a day at most) |
 | `MARKET_PRICE_REQUEST_CACHE_DAYS` | optional, default `30` |
-| `MARKET_PRICE_REQUEST_BUDGET_RESERVE` | optional, credits requests must leave for you, default `0` |
+| `MARKET_PRICE_REQUEST_BUDGET_RESERVE` | optional, credits requests leave for you, default `0`. Best effort: parallel requests can dip into it by a few credits. The monthly hard stop itself is exact. |
 | `MARKET_COMPS_PUBLIC_ENABLED` | **leave off** (LAUNCH-BLOCKERS L1) |
 
 To switch it all off: set `MARKET_PRICE_REQUEST_ENABLED=false`, which hides the button. Set `MARKET_VALUATION_V2_ENABLED=false` as well to hide the whole tile. `SOLDGRAPH_ENABLED=false` stops every paid call at once.

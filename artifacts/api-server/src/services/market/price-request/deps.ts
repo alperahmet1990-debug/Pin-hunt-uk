@@ -4,6 +4,7 @@
  * fails closed (503), unlike the contributor usage caps, which fail open,
  * because this path spends paid credits.
  */
+import { createHash } from "node:crypto";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { logger } from "../../../lib/logger";
 import { createSoldgraphClientFromEnv } from "../../soldgraph/factory";
@@ -17,7 +18,8 @@ function serviceClient(env: NodeJS.ProcessEnv): SupabaseClient | null {
   const url = env.SUPABASE_URL;
   const key = env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) return null;
-  const cacheKey = `${url}|${key.length}`;
+  // A hash, never the key itself: a rotated key builds a new client.
+  const cacheKey = createHash("sha256").update(`${url}|${key}`).digest("hex");
   if (!cached || cached.key !== cacheKey) {
     cached = { key: cacheKey, db: createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } }) };
   }

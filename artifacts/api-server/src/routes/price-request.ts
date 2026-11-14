@@ -14,17 +14,49 @@
  *   202 { state: "pending" }                       started
  *   409 { state: "pending" }                       already running for this pin
  *   200 { state: "priced" | "no_sales", ... }      answered from a recent request
- *   429 { error: "daily_limit" | "busy", retryAfter }
+ *   429 { error: "daily_limit" | "busy", retryAfter }   or { error: "too_many_requests" } (per-minute limit)
  *   503 { error: "budget" | "unavailable" }        monthly budget or setup
  * No listing rows, titles, prices of individual listings or links, ever.
  * See services/market/price-request/service.ts and scripts/PRICE-REQUEST.md.
  */
-import { Router, type IRouter, type Response } from "express";
+import { Router, type IRouter, type NextFunction, type Request, type Response } from "express";
 import { PIN_ID_RE, requireUser, userClient, type AuthedRequest } from "./market-valuations";
 import { createPriceRequestDeps } from "../services/market/price-request/deps";
 import { priceRequestStatus, startPriceRequest, unavailableReason } from "../services/market/price-request/service";
+import { createRateLimiter, type RateLimiter } from "../services/market/price-request/rate-limit";
 
 const router: IRouter = Router();
+
+/** Off means 404 for everyone, signed in or not, before any auth call. */
+function flagGate(_req: Request, res: Response, next: NextFunction) {
+  if (unavailableReason(process.env) === "disabled") {
+    res.status(404).json({ error: "Not found" });
+    return;
+  }
+  next();
+}
+
+// Per signed-in user, per process. The app polls GET every 4s while a request runs.
+export const POSTS_PER_MINUTE = 6;
+export const GETS_PER_MINUTE = 30;
+let postLimit = createRateLimiter(POSTS_PER_MINUTE, 60_000);
+let getLimit = createRateLimiter(GETS_PER_MINUTE, 60_000);
+
+/** For tests: forget every user's recent requests. */
+export function resetPriceRequestRateLimitsForTests() {
+  postLimit = createRateLimiter(POSTS_PER_MINUTE, 60_000);
+  getLimit = createRateLimiter(GETS_PER_MINUTE, 60_000);
+}
+
+function rateLimit(limiter: () => RateLimiter) {
+  return (req: AuthedRequest, res: Response, next: NextFunction) => {
+    if (!limiter().take(req.userId ?? "")) {
+      res.status(429).json({ error: "too_many_requests" });
+      return;
+    }
+    next();
+  };
+}
 
 /** The pin's UUID as the caller sees it, or null (404). Throws on a lookup error. */
 async function visiblePinUuid(req: AuthedRequest, pinhuntId: string): Promise<string | null> {
@@ -38,12 +70,8 @@ async function visiblePinUuid(req: AuthedRequest, pinhuntId: string): Promise<st
   return typeof id === "string" && id ? id : null;
 }
 
-/** Shared gate: flag, id shape, visibility, server setup. Sends the response and returns null when refused. */
+/** Shared gate: id shape and visibility. Sends the response and returns null when refused. */
 async function gate(req: AuthedRequest, res: Response): Promise<{ pinhuntId: string; pinUuid: string } | null> {
-  if (unavailableReason(process.env) === "disabled") {
-    res.status(404).json({ error: "Not found" });
-    return null;
-  }
   const pinhuntId = String(req.params.pinId);
   if (!PIN_ID_RE.test(pinhuntId)) {
     res.status(404).json({ error: "Pin not found" });
@@ -57,7 +85,7 @@ async function gate(req: AuthedRequest, res: Response): Promise<{ pinhuntId: str
   return { pinhuntId, pinUuid };
 }
 
-router.get("/pins/:pinId/price-request", requireUser, async (req: AuthedRequest, res) => {
+router.get("/pins/:pinId/price-request", flagGate, requireUser, rateLimit(() => getLimit), async (req: AuthedRequest, res) => {
   try {
     const pin = await gate(req, res);
     if (!pin) return;
@@ -74,7 +102,7 @@ router.get("/pins/:pinId/price-request", requireUser, async (req: AuthedRequest,
   }
 });
 
-router.post("/pins/:pinId/price-request", requireUser, async (req: AuthedRequest, res) => {
+router.post("/pins/:pinId/price-request", flagGate, requireUser, rateLimit(() => postLimit), async (req: AuthedRequest, res) => {
   try {
     const pin = await gate(req, res);
     if (!pin) return;

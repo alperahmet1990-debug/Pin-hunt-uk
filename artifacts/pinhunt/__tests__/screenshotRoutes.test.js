@@ -30,3 +30,20 @@ describe('screenshot routes with a mocked scan identify', () => {
     expect(source.match(/export const AI_PHOTO_CONSENT_VERSION = '([^']+)'/)?.[1]).toBe(AI_PHOTO_CONSENT_VERSION);
   });
 });
+
+describe('sold-price screenshot routes', () => {
+  const sold = routes.filter(r => r.name.startsWith('pin-sold-'));
+
+  it('cover priced, Get a price, pending, no sales and flag off', () => {
+    expect(sold.map(r => r.name).sort()).toEqual(['pin-sold-get-price', 'pin-sold-no-sales', 'pin-sold-off', 'pin-sold-pending', 'pin-sold-priced']);
+  });
+
+  it.each(sold.map(r => [r.name, r]))('%s answers both sold-price API calls locally on a demo pin', (_name, route) => {
+    const ids = new Set(PINS.map(p => p.id));
+    expect(ids.has(route.path.replace('/pin/', ''))).toBe(true);
+    const keys = Object.keys(route.api);
+    expect(keys.some(k => k.endsWith('/market-valuations'))).toBe(true);
+    expect(keys.some(k => k.endsWith('/price-request'))).toBe(true);
+    expect(route.scrollTo).toBeTruthy();
+  });
+});

@@ -45,6 +45,7 @@ export function SoldPriceCard({ pinId }: { pinId: string }) {
   if (data.status !== 'ready') return null;
   const { valuations, request, error, requestPrice } = data;
   const value = valuations.find(v => v.market === market) ?? null;
+  const otherValue = value ? null : valuations.find(v => v.market !== market) ?? null;
   // Nothing to show and nothing to offer: keep the pin page as it was.
   if (valuations.length === 0 && !request.requestsOpen && request.state === 'none') return null;
 
@@ -93,6 +94,13 @@ export function SoldPriceCard({ pinId }: { pinId: string }) {
             {' and didn’t find enough recent sales to give a price.'}
             {shortDate(request.nextRequestAt) ? ` We can check again from ${shortDate(request.nextRequestAt)}.` : ''}
           </Text>
+          {otherValue && (
+            <TouchableOpacity onPress={() => setPicked(otherValue.market)} accessibilityRole="button" hitSlop={8}>
+              <Text style={[styles.body, styles.link, { color: colors.homeCoralDeep }]}>
+                {`${MARKET_NAME[otherValue.market]} has a sold price: see ${MARKET_CHIP[otherValue.market]}`}
+              </Text>
+            </TouchableOpacity>
+          )}
         </View>
       ) : (
         <View testID="sold-price-empty" style={styles.block}>
@@ -180,6 +188,7 @@ const styles = StyleSheet.create({
   statSmall: { fontSize: 17, fontFamily: 'Inter_600SemiBold' },
   title: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
   body: { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18 },
+  link: { fontFamily: 'Inter_600SemiBold' },
   note: { fontSize: 11.5, fontFamily: 'Inter_400Regular', lineHeight: 16 },
   cta: { minHeight: 44, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center', paddingHorizontal: spacing.md, marginTop: 4 },
   ctaLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },

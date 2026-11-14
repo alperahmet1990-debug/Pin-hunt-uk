@@ -122,6 +122,15 @@ describe('SoldPriceCard', () => {
     expect(screen.queryByText('Get a price')).toBeNull();
   });
 
+  it('points to the other market when only it has a sold price', async () => {
+    routes.valuations = { status: 200, body: { valuations: [US] } };
+    routes.status = { status: 200, body: { state: 'priced', checkedAt: '2026-11-14T10:00:00Z', nextRequestAt: null, requestsOpen: true } };
+    await render(<SoldPriceCard pinId="PHUK-00000001" />);
+    expect(await screen.findByText('No recent sales found')).toBeTruthy();
+    await fireEvent.press(screen.getByText('eBay US has a sold price: see US $'));
+    expect(screen.getByText(/Based on 3 recent sales on eBay US/)).toBeTruthy();
+  });
+
   it('shows a cached "no sales" answer straight away', async () => {
     routes.post = { status: 200, body: { state: 'no_sales', checkedAt: '2026-11-01T10:00:00Z', nextRequestAt: '2026-12-01T10:00:00Z' } };
     await render(<SoldPriceCard pinId="PHUK-00000001" />);

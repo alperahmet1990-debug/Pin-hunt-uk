@@ -11,6 +11,7 @@ import type { SoldgraphClient, SoldgraphSearchResult } from "../../soldgraph/cli
 import { fixturePin } from "../__fixtures__/load";
 import {
   MAX_PINS,
+  applyBlockers,
   RefreshUsageError,
   describeFields,
   isFresh,
@@ -723,5 +724,38 @@ describe("region-true eBay sold evidence (#450)", () => {
     expect(text).toMatch(/country=uk, item_location=domestic/);
     expect(text).toMatch(/Item country \(parsed from location, counts only\): unknown 2, GB 1\./);
     expect(text).not.toMatch(/Whinging|Surrey|SELLERNAME/);
+  });
+});
+
+// ─── creditCeiling (on-demand price requests only) ───────────────────────────
+
+describe("applyBlockers with creditCeiling", () => {
+  const plan = { missingSources: [], disabledSources: [], worstCaseCredits: 2, overBudget: false, remainingCredits: 50 };
+
+  it("allows a worst case at or under the ceiling without --confirm-credits", () => {
+    expect(applyBlockers(plan, { confirmCredits: null, creditCeiling: 2 }, ON)).toEqual([]);
+    expect(applyBlockers({ ...plan, worstCaseCredits: 0 }, { confirmCredits: null, creditCeiling: 2 }, ON)).toEqual([]);
+  });
+
+  it("refuses a worst case over the ceiling, or a ceiling that isn't a whole number", () => {
+    expect(applyBlockers({ ...plan, worstCaseCredits: 3 }, { confirmCredits: null, creditCeiling: 2 }, ON))
+      .toEqual(["worst case 3 credit(s) is more than the 2 allowed for this run"]);
+    expect(applyBlockers(plan, { confirmCredits: null, creditCeiling: 1.5 }, ON)).toEqual(["credit ceiling must be a whole number of credits"]);
+    expect(applyBlockers(plan, { confirmCredits: null, creditCeiling: -1 }, ON)).toEqual(["credit ceiling must be a whole number of credits"]);
+  });
+
+  it("still applies every other blocker", () => {
+    const out = applyBlockers({ ...plan, overBudget: true, remainingCredits: 1 }, { confirmCredits: null, creditCeiling: 2 }, { ...ON, SOLDGRAPH_ENABLED: "false" });
+    expect(out).toEqual(expect.arrayContaining([
+      'SOLDGRAPH_ENABLED is not "true" for this command',
+      "worst case 2 credit(s) is more than the 1 left this month",
+    ]));
+  });
+
+  it("leaves the CLI rule unchanged: without a ceiling, --confirm-credits must equal the worst case", () => {
+    expect(applyBlockers(plan, { confirmCredits: null }, ON)).toEqual(["--confirm-credits 2 is required with --apply"]);
+    expect(applyBlockers(plan, { confirmCredits: 3 }, ON)).toEqual(["--confirm-credits must equal the worst case shown (2), not 3"]);
+    expect(applyBlockers(plan, { confirmCredits: 2 }, ON)).toEqual([]);
+    expect(parseCliArgs(["--pinhunt-ids", "PHUK-1", "--sources", "soldgraph:ebay_gb_sold"])).not.toHaveProperty("creditCeiling");
   });
 });

@@ -6,6 +6,18 @@
 - **Catalogue only.** Production's catalogue becomes Pin & Pop only. Sign-in accounts, profiles and settings stay.
 - ~~Old photo files are deleted.~~ **Changed 14 Nov 2026: keep the Collectible PinTrader photos and link them to the matching Pin & Pop pins.** The pin information comes from Pin & Pop; the photo comes from Collectible PinTrader (licence: any use, including edited images, confirmed 16 Oct 2026). See step 5b.
 
+**Pre-check results (production, 14 Nov 2026 22:24):**
+- **Catalogue:** 15,978 old pins (2,978 active, 13,000 archived) and 520 old sets.
+- **People:** 16 accounts. **7 accounts have 248 collection entries on old pins** (150 owned, 53 for trade, 45 wanted). 4 trades hold old pins.
+- **Other links:** 20 community posts and 3 conversations link old pins (cleared automatically).
+- **Blocks the delete:** 1 approved submission and 58 eBay duplicate checks.
+- **Photos:** 3,922 old photo files (453 MB), all kept for linking.
+- **Pin & Pop:** none in production yet.
+
+**Maintainer decision (14 Nov 2026), option A:** collection entries, trade items and links are **moved** to the matching Pin & Pop pin wherever a confirmed link exists. That means the reviewed Collectible PinTrader photo matches, plus the 94 old pins already linked to Pin & Pop. Entries on old pins with **no** match are **deleted**, as on staging.
+
+**Tools:** steps 3–4 (migrations and the Pin & Pop import) are ready for review in `PRODUCTION-ROLLOUT.md`. Steps 5–6 (move and clean) are written once the photo review is done.
+
 ## What production holds now (export of 14 Nov, 21:19)
 
 | | Production |

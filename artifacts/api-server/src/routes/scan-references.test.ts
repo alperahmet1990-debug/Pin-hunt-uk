@@ -1,8 +1,10 @@
 import request from "supertest";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-// Pin & Pop pins have no public photo; the scan's photo comparison may use
-// their admin reference image, which must never reach the app.
+// Pin & Pop images may be displayed to admins only and must NEVER be sent to
+// OpenAI or any other AI service. The scan's photo comparison uses PinHunt's
+// own photos (pins.image_url) only. The Pin & Pop lookup is mocked to return
+// an image anyway, to prove it is not used.
 // All upstreams are mocked: no real Supabase, OpenAI or Vision traffic.
 const create = vi.fn();
 const lookups: string[][] = [];
@@ -57,27 +59,32 @@ beforeEach(() => {
   vi.setSystemTime(Date.now() + Math.floor(Math.random() * 1e9) + 1e6);
 });
 
-describe("scan photo comparison with Pin & Pop reference images", () => {
-  it("compares against the reference image but never returns it", async () => {
+describe("scan photo comparison never uses Pin & Pop images", () => {
+  it("compares against PinHunt photos only and never sends a Pin & Pop URL to OpenAI", async () => {
     create
       .mockResolvedValueOnce(reply('{"characters":["Stitch"],"keywords":["stitch"]}'))
       .mockResolvedValueOnce(reply('[{"pinId":"PHUK-10000001","confidence":60,"reasoning":"Surf"},{"pinId":"PHUK-10000002","confidence":55,"reasoning":"Sleep"},{"pinId":"PHUK-00000003","confidence":50,"reasoning":"Classic"}]'))
-      .mockResolvedValueOnce(reply('[{"pinId":"PHUK-10000001","confidence":92,"reasoning":"Matches the reference"}]'));
+      .mockResolvedValueOnce(reply('[{"pinId":"PHUK-00000003","confidence":80,"reasoning":"Matches the photo"}]'));
     const res = await scan();
     expect(res.status).toBe(200);
-    expect(res.body.matches[0].pinId).toBe("PHUK-10000001");
 
-    // Only pins without a public photo are looked up.
-    expect(lookups).toEqual([["PHUK-10000001", "PHUK-10000002"]]);
+    // The Pin & Pop lookup is never made.
+    expect(lookups).toEqual([]);
 
-    // The comparison prompt shows the reference image and the public photo.
+    // No OpenAI request, in any stage, contains a Pin & Pop URL.
+    expect(create).toHaveBeenCalled();
+    const sent = JSON.stringify(create.mock.calls);
+    expect(sent).not.toContain(REF);
+    expect(sent).not.toContain("pinandpop.com");
+
+    // The comparison shows only the PinHunt photo; Pin & Pop pins show none.
     const verify = create.mock.calls[2][0];
     const urls = (verify.messages[1].content as Array<{ type: string; image_url?: { url: string; detail: string } }>)
       .filter((c) => c.image_url?.detail === "low").map((c) => c.image_url!.url);
-    expect(urls).toEqual([REF, "https://img.test/public.jpg"]);
-    expect(verify.messages[0].content).toContain('PHUK-10000002 | "Stitch Sleeping" | Lilo & Stitch | reference image: no image shown');
+    expect(urls).toEqual(["https://img.test/public.jpg"]);
+    expect(verify.messages[0].content).toContain('PHUK-10000001 | "Stitch Surfing" | Lilo & Stitch | reference image: no image shown');
 
-    // The app never sees the reference URL.
+    // The app never sees the Pin & Pop URL either.
     expect(JSON.stringify(res.body)).not.toContain("pinandpop.com");
   });
 });

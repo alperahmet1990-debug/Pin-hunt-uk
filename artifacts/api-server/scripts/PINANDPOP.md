@@ -25,12 +25,13 @@ Code:
   hides those rows from everyone but admins. `pins.image_url` stays null until a
   collector contributes a photo. If you need to show a pin, link to its P&P page
   (`pins.source_url`).
-- **Scan comparison (decided 12 Nov 2026, all scans).** The scan's photo-comparison
-  step may show OpenAI the P&P reference image of a candidate that has no public
-  photo (`services/scanReferenceImages.ts`, read server-side with the service key).
-  The URL is used only in that prompt. It is never returned to the app and never
-  logged (`routes/scan-references.test.ts` checks the response). Needs
-  `SUPABASE_SERVICE_ROLE_KEY` on the API server; without it the scan simply skips them.
+- **Never sent to AI (Nov 2026, replaces the 12 Nov decision).** P&P images may be
+  displayed to admins only. They must never be sent to OpenAI or any other AI
+  service until Pin & Pop answers. The scan and the bulk image matcher compare
+  against PinHunt's own photos (`pins.image_url`) only;
+  `routes/scan-references.test.ts` and `services/bulkImages/bulkImages.test.ts`
+  check that no P&P URL reaches an OpenAI request. `services/scanReferenceImages.ts`
+  is no longer called by the scan.
 - **No redistribution.** Nothing exports the dataset. Don't add bulk exports or
   public APIs that return it wholesale.
 - **No paywall-only use.** Catalogue data must stay free to view.
@@ -186,7 +187,7 @@ Under full parallel load six other suites time out, and all of them pass when ru
 | Collections / ISO / For Trade | No schema changes. `user_pins` and boards key on `pins.id` / `pinhunt_id`, both present. Not exercised with a signed-in user (needs a test login). |
 | Search | Before: 0.7–2.3 s, and "Stitch" timed out (anon 3 s limit). After 075 + 076: "Stitch" 115 ms, "Haunted Mansion" 97 ms, no hits 49 ms, a "mickey" page with its 16,018 total 280–435 ms. Results match the old query exactly. |
 | Scan candidate search | After 075 + 076: character search 57 ms, 3 parallel word searches 250 ms in total (was ~2 s). The character search finds 0 because P&P has no characters. |
-| Scanning | Candidate search is fast now (see above). The character search finds nothing (P&P has no character data). Visual verification now compares against P&P reference images server-side (never returned to the app). |
+| Scanning | Candidate search is fast now (see above). The character search finds nothing (P&P has no character data). Visual verification compares against PinHunt photos only. P&P pins have none yet, so for them it is skipped. P&P images are never sent to AI. |
 | Browse Catalogue | Was **43 s** (downloaded all 116k rows). **Now paged on the server** (`getCatalogueBrowsePage` + `utils/catalogueBrowsePager.ts`). Opening takes ~0.6 s warm; the first open in a fresh session takes up to 2 s while the connection is set up. Searches open in 0.2–0.4 s, a set in 80 ms, a year or edition in under 0.3 s, and each further page 0.1–0.25 s. Search, set, year and edition run on the server (search uses 076). A page never ends mid-set, so set counts and Select all stay right. Uncategorised (4,070) comes last. A typed 4-digit year acts as the year filter. The Set filter loads its 12,985 names when opened (~1.3 s). |
 | Valuations | Unchanged code path (eBay by title). Old market rows were removed with the old pins. P&P has no prices. |
 | Trading | No trades existed. Trades reference `pins.id` / `user_pins`, so no change is needed. |
@@ -223,9 +224,10 @@ Under full parallel load six other suites time out, and all of them pass when ru
    **Data quality this exposed:** every P&P pin counts as "needs photo" (P&P images
    aren't public) and as "missing info" (P&P has no character data). So those two
    filters cover the whole catalogue until photos and characters are added.
-3. **Scan accuracy:** decided: all scans may compare against P&P reference images
-   (see Licence rules). Two lookups (pins, then `pin_images`) take ~0.3 s on staging;
-   a single embedded join took ~1.3 s. Not yet tried with a real photo on staging.
+3. **Scan accuracy:** scans do **not** compare against P&P reference images: they
+   are never sent to AI (see Licence rules). P&P pins without a PinHunt photo get
+   no visual verification, so expect more close calls between sibling pins until
+   collectors contribute photos. Revisit only if Pin & Pop allows AI use.
 4. The api-server `.env.staging` `SUPABASE_ANON_KEY` is rejected by staging
    ("Invalid API key"), so local `start:staging` auth checks fail. Copy the
    app's staging anon key into it. Check Render's value too.

@@ -1,15 +1,20 @@
 /**
- * Pin & Pop reference images for the scan's photo comparison (stage 3).
+ * Pin & Pop reference image lookup — NOT USED by the scan any more.
+ *
+ * Pin & Pop images must NEVER be sent to OpenAI or any other AI service
+ * (maintainer rule, Nov 2026, pending Pin & Pop's answer). This replaced the
+ * 12 Nov 2026 decision that let the scan compare against them, and
+ * routes/scan.ts no longer calls this. Do not wire it into any AI prompt
+ * without the maintainer's explicit approval. Kept (not deleted) pending that
+ * decision; admin display uses getPinAndPopReferences in lib/pin-repository.
  *
  * Pin & Pop pins have no public catalogue photo (pins.image_url is null):
  * their images are reference-only pin_images rows (migration 042), which RLS
- * hides from everyone but admins. The scan may compare a collector's photo
- * against them (maintainer decision, 12 Nov 2026), so they're read here with
- * the service-role key.
+ * hides from everyone but admins, so they're read here with the service key.
  *
  * Rules:
- *   - the URLs are used only inside the OpenAI comparison prompt. They are
- *     never put on a CataloguePin, never returned to the app, and never logged;
+ *   - the URLs are never sent to an AI service, never put on a CataloguePin,
+ *     never returned to the app, and never logged;
  *   - only a pin with no public photo gets one;
  *   - best effort: no service key, an error or a slow lookup means no reference
  *     images, and the scan carries on with its text ranking.

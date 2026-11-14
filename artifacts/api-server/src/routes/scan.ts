@@ -21,7 +21,6 @@ import {
 } from "../services/scanBudget";
 import { withScanReasoning } from "../services/scanReasoning";
 import { verifyDecision, VERIFY_MAX_REFERENCES } from "../services/scanVerify";
-import { pinAndPopReferenceImages } from "../services/scanReferenceImages";
 import { cachedResult, imageHash, recordUsage, withinDailyCap } from "../services/usage-caps";
 import { isScanId, recordScanOutcome } from "../services/scan-outcomes";
 import { randomUUID } from "node:crypto";
@@ -438,14 +437,11 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
       // Hard cap the rerank candidate list to keep stage-3 prompts bounded.
       matches = matches.slice(0, 10);
 
-      // Pin & Pop pins have no public photo, only an admin reference image.
-      // The comparison may use it (scanReferenceImages.ts); the URL stays in
-      // this prompt and is never sent back to the app.
-      const referenceImages = await pinAndPopReferenceImages(
-        matches.map((m) => byPinId.get(m.pinId)).filter((p) => p && !p.imageUrl).map((p) => p!.id),
-      );
-      timer.mark("references");
-      const comparisonImage = (p: CataloguePin | undefined) => p?.imageUrl ?? (p ? referenceImages.get(p.id) : undefined);
+      // Only PinHunt's own catalogue photos (pins.image_url) are compared.
+      // Pin & Pop images are NEVER sent to OpenAI or any other AI service
+      // (maintainer rule, pending Pin & Pop's answer); a Pin & Pop pin with
+      // no PinHunt photo is simply shown as "no image shown".
+      const comparisonImage = (p: CataloguePin | undefined) => p?.imageUrl ?? undefined;
 
       const withImages = matches
         .map((m) => ({ match: m, pin: byPinId.get(m.pinId)!, image: comparisonImage(byPinId.get(m.pinId)) }))

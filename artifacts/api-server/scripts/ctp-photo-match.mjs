@@ -22,7 +22,8 @@
  *     --out ~/Documents/PinHunt-Private/ctp-match-test            # dry run: no AI calls
  *   ... same command plus --run                                     # makes the AI calls
  *
- * Needs in .env.staging: PINHUNT_ENV, STAGING_PROJECT_REF, PRODUCTION_PROJECT_REF,
+ * Needs (in .env.staging, or any plain-text settings file given to Node):
+ * PINHUNT_ENV=staging, STAGING_PROJECT_REF, PRODUCTION_PROJECT_REF,
  * SUPABASE_URL (staging), SUPABASE_SERVICE_ROLE_KEY (staging), OPENAI_API_KEY.
  * Optional: OPENAI_BULK_MATCH_MODEL / OPENAI_SCAN_MODEL, OPENAI_SCAN_REASONING_EFFORT,
  * CTP_MATCH_SAMPLE (default 50), CTP_MATCH_CONCURRENCY (default 3).
@@ -85,9 +86,11 @@ export function estimateCandidates(r) {
 function supabaseGet(env, fetchImpl) {
   const base = env.SUPABASE_URL.replace(/\/$/, "");
   return async (pathAndQuery) => {
-    const res = await fetchImpl(`${base}/rest/v1/${pathAndQuery}`, {
-      headers: { apikey: env.SUPABASE_SERVICE_ROLE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}` },
-    });
+    const key = String(env.SUPABASE_SERVICE_ROLE_KEY).trim();
+    // New-style secret keys (sb_secret_…) go in the apikey header only; legacy
+    // service_role JWTs also go in Authorization.
+    const headers = key.startsWith("sb_secret_") ? { apikey: key } : { apikey: key, Authorization: `Bearer ${key}` };
+    const res = await fetchImpl(`${base}/rest/v1/${pathAndQuery}`, { headers });
     if (!res.ok) throw new Error(`staging read failed (${res.status}) for ${pathAndQuery.split("?")[0]}`);
     return res.json();
   };

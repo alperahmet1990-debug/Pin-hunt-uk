@@ -2,7 +2,8 @@
  * Loads the market refresh code (src/services/market/refresh/cli.ts) for the
  * maintainer scripts market-refresh.mjs and market-usage.mjs (#409), and the
  * marketplace leads code (src/services/market/leads/cli.ts) for
- * marketplace-leads.mjs (#415).
+ * marketplace-leads.mjs (#415), and the price batch code
+ * (src/services/market/price-request/batch-cli.ts) for market-price-batch.mjs.
  *
  * The service code is TypeScript with extensionless imports, so Node can't
  * import it directly. This bundles it with esbuild (already a dev dependency
@@ -22,6 +23,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const API_ROOT = fileURLToPath(new URL("../../", import.meta.url));
 const ENTRY = path.join(API_ROOT, "src/services/market/refresh/cli.ts");
 export const LEADS_ENTRY = path.join(API_ROOT, "src/services/market/leads/cli.ts");
+export const BATCH_ENTRY = path.join(API_ROOT, "src/services/market/price-request/batch-cli.ts");
 const CACHE_DIR = path.join(API_ROOT, "node_modules/.cache/pinhunt-market-refresh");
 
 const SILENT_LOGGER = `

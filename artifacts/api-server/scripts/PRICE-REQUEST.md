@@ -145,17 +145,58 @@ To switch it all off: set `MARKET_PRICE_REQUEST_ENABLED=false`, which hides the 
 4. Make 6 requests on different pins from one account: the 6th says "You've used today's price checks".
 5. Set the month's `limit_credits` to the current used amount. The next request says "Price checks aren't available right now", and usage doesn't move.
 
-## Later: a capped batch (designed, not built)
+## Batch pricing: `scripts/market-price-batch.mjs`
 
-The question is whether to price every 2025–26 pin up front: **18,608 pins**.
+The question is whether to price every 2025–26 pin up front: **18,608 pins**. The batch script does it in capped runs, through the same request path as **Get a price** (`startPriceRequest()` with `origin: "batch"`). It runs on your machine, against **staging only** (the staging guard refuses anything else), like `market-refresh.mjs`.
 
-**How it would work.** A maintainer script would call the same `startPriceRequest()` with `origin: "batch"` for an explicit list of pins, one or two at a time, awaiting each `done`. It would share all of the request path's protections:
-- **Spend control.** It prints the worst case and needs `--confirm-credits`, like `market-refresh.mjs`. A run ceiling (for example `--max-credits 2000`) stops it before the month's hard stop. `MARKET_PRICE_REQUEST_BUDGET_RESERVE` keeps credits back for collectors' requests.
-- **No double spending.** A pin answered recently by anyone, whether priced or "no sales", is skipped through the same cache. Any pin a collector is already requesting is skipped as in flight. So the batch is **resumable**: re-running the same list only pays for pins not yet done.
-- **No collector caps.** Batch requests skip the per-user and global daily caps, but nothing else. They're logged with `origin = 'batch'`.
-- **Missing pieces to build:** the script itself, and a longer cache window for batch answers (for example 180 days), so collectors don't re-buy what the batch just bought.
+**Which pins.** By default: verified, non-archived pins with `release_year` 2025 or 2026, in PinHunt ID order.
+- `--years 2026` changes the years.
+- `--ids-file top-pins.txt` gives your own list instead (one PinHunt ID per line, priced in that order). Use it for the "most collected first" stage.
+- `--offset N --limit N` takes a slice.
 
-**What it would cost.**
+**What it protects.**
+- **Dry run by default.** It prints:
+  - how many pins match, and how many were already answered;
+  - the worst case for all of them;
+  - what this run would spend under `--max-credits`, with a rough dollar cost;
+  - the month's budget.
+
+  It calls nothing.
+- **`--apply` needs both:**
+  - `--max-credits N`: the run's ceiling, at most 10,000;
+  - `--confirm-credits` equal to the planned figure the dry run printed.
+
+  It refuses if the month's budget isn't a hard stop, or if the plan is more than what's left after `MARKET_PRICE_REQUEST_BUDGET_RESERVE` (the same reserve collectors' requests keep) and `--leave-credits` (extra credits this run leaves, for example for collectors).
+- **No double spending.** A pin with a finished answer, priced or "no sales", within `--cache-days` (default 180) is skipped for free. So is a pin a collector is requesting right now. **Re-running the same command resumes**: only unanswered pins are paid for.
+- **Stops early, keeping what it got,** when:
+  - the next pin's worst case would pass the ceiling;
+  - the monthly budget or the kill switch stops Soldgraph;
+  - the request path becomes unavailable;
+  - there are 5 failures in a row (`--stop-after-errors`).
+- **No collector caps.** Batch requests skip the per-user and global daily caps, but nothing else. Each pin is logged in `market_price_requests` with `origin = 'batch'`, and every credit is reserved against the monthly cap as usual.
+- **`--markets` is required:** `UK`, `US` or `UK,US`. Every market given must already be in `MARKET_VALUATION_PUBLISHED_MARKETS`, the same setting collector requests use (set it on the command line, as below, or in your staging env file). A batch can price fewer markets than are published, never more. FR is never searched. The configured reserve applies too: a batch skips only the collector daily caps. It doesn't need `MARKET_PRICE_REQUEST_ENABLED` (that's the collector button).
+- **`--ids-file` pins get the same filters:** only verified, non-archived pins are priced.
+- **Output is counts only:** priced, no sales, already answered, running elsewhere, failed, credits spent, and the budget after. It prints a progress line every 25 pins.
+
+**Commands** (from `artifacts/api-server`):
+```
+# 1. Plan (free)
+MARKET_VALUATION_PUBLISHED_MARKETS=UK,US node --env-file=.env.staging scripts/market-price-batch.mjs --markets UK,US --max-credits 1000
+
+# 2. Run, with the planned figure from step 1
+SOLDGRAPH_ENABLED=true MARKET_VALUATION_V2_ENABLED=true MARKET_VALUATION_PUBLISHED_MARKETS=UK,US \
+  node --env-file=.env.staging scripts/market-price-batch.mjs --markets UK,US --max-credits 1000 --apply --confirm-credits 1000
+
+# Most-collected pins first, from your own list
+MARKET_VALUATION_PUBLISHED_MARKETS=UK,US node --env-file=.env.staging scripts/market-price-batch.mjs --markets UK,US --ids-file top-pins.txt --max-credits 1000
+```
+Exit code 0 means it finished or reached the ceiling; 2 means it stopped early (budget, errors or unavailable); 1 means it was refused.
+
+**Collector cache vs batch cache.** A collector's request is answered from the cache for `MARKET_PRICE_REQUEST_CACHE_DAYS` (default 30). If you batch-price with `--cache-days 180`, raise that setting on the API host to match. Otherwise a collector tapping **Get a price** on a pin the batch answered 31–180 days ago pays for it again.
+
+**Production.** The script is staging-only, like the pilot. Running it against production needs a deliberate production mode with its own guard. That isn't built yet; ask for it once the staging runs look right.
+
+**What it costs.**
 
 | | UK only | UK + US |
 |---|---|---|
@@ -163,11 +204,11 @@ The question is whether to price every 2025–26 pin up front: **18,608 pins**.
 | At $0.0045/credit (the $9 / 2,000 plan) | ≈ $84 | ≈ $167 |
 | Months at 2,000 credits/month | ≈ 9.3 | ≈ 18.6 |
 
-The worst case is also the likely case. A search that finds nothing still costs its credit, and many 2025–26 pins will have few or no sales yet.
+The worst case is also the likely case. A search that finds nothing still costs its credit, and many 2025–26 pins will have few or no sales yet. The dry run prints the exact numbers for your catalogue.
 
-**Suggested approach.** Do it in stages, each with a hard ceiling, and look at the hit rate after each:
-1. the pilot above (50 credits);
-2. the 500 pins most often in collections or on ISO lists (≈1,000 credits);
+**Suggested approach.** Do it in stages, each with a hard ceiling, and look at the hit rate (priced vs no sales) after each:
+1. the pilot above (about 50 credits);
+2. the 500 pins most often in collections or on ISO lists, with `--ids-file` (about 1,000 credits);
 3. then decide on the rest.
 
-To reach all 18,608 pins in a month or two, a larger Soldgraph plan would be needed; check its per-credit price first. Re-pricing later works the same way: the batch only pays for pins whose answer has expired.
+To reach all 18,608 pins in a month or two, a larger Soldgraph plan would be needed; check its per-credit price first. Re-pricing later works the same way: the batch only pays for pins whose answer is older than `--cache-days`.

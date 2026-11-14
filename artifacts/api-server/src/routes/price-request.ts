@@ -125,7 +125,9 @@ router.post("/pins/:pinId/price-request", flagGate, requireUser, rateLimit(() =>
         res.status(200).json({ pinId: pin.pinhuntId, state: r.outcome, checkedAt: r.checkedAt, nextRequestAt: r.nextRequestAt });
         return;
       case "capped":
-        res.status(429).json({ error: r.scope === "user" ? "daily_limit" : "busy", retryAfter: r.retryAfter });
+        // Only the caller's own cap carries a retry time: the global one would
+        // reveal when other collectors made requests.
+        res.status(429).json(r.scope === "user" ? { error: "daily_limit", retryAfter: r.retryAfter } : { error: "busy" });
         return;
       case "budget":
         res.status(503).json({ error: "budget" });

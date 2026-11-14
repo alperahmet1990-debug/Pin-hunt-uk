@@ -107,7 +107,7 @@ describe("price-request routes", () => {
       { state: "no_sales", checkedAt: "2026-10-18T12:00:00.000Z", nextRequestAt: "2026-11-17T12:00:00.000Z" }],
     [{ kind: "cached", outcome: "priced", checkedAt: "2026-10-18T12:00:00.000Z", nextRequestAt: null }, 200, { state: "priced" }],
     [{ kind: "capped", scope: "user", retryAfter: "2026-10-19T12:00:00.000Z" }, 429, { error: "daily_limit", retryAfter: "2026-10-19T12:00:00.000Z" }],
-    [{ kind: "capped", scope: "global", retryAfter: null }, 429, { error: "busy" }],
+    [{ kind: "capped", scope: "global", retryAfter: "2026-10-19T12:00:00.000Z" }, 429, { error: "busy" }],
     [{ kind: "budget", remainingCredits: 1, worstCaseCredits: 2 }, 503, { error: "budget" }],
     [{ kind: "unavailable", reason: "provider_off" }, 503, { error: "unavailable" }],
     [{ kind: "unavailable", reason: "disabled" }, 404, {}],
@@ -119,6 +119,13 @@ describe("price-request routes", () => {
     expect(res.body).toMatchObject(body);
     // Never budget figures or anything listing-shaped.
     expect(JSON.stringify(res.body)).not.toMatch(/remaining|worstCase|credits|title|url|price"/i);
+  });
+
+  it("never reveals other collectors' timing on the global cap", async () => {
+    h.start.mockResolvedValue({ kind: "capped", scope: "global", retryAfter: "2026-10-19T12:00:00.000Z" });
+    const res = await post();
+    expect(res.status).toBe(429);
+    expect(res.body).toEqual({ error: "busy" });
   });
 
   it("returns a generic 500 when the service throws", async () => {

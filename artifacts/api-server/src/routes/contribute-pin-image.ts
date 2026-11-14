@@ -24,7 +24,7 @@
  * preview's draft goes after 24 hours (services/contributed-drafts-cleanup.ts).
  * Its metadata (EXIF GPS
  * location etc.) is stripped first; see rawWithoutMetadata. It is only kept
- * when the request says the collector was told (keepOriginalConsent: true,
+ * when the request says the collector was told (keepOriginalNoticeShown: true,
  * sent by app builds whose consent step says the original is kept), so
  * older builds never have it kept. It is best-effort: without the bucket
  * (080 not applied yet) the contribution still goes through, just without a
@@ -180,10 +180,11 @@ interface ContributionBody {
   /** Admins only: publish now instead of queueing for review. Ignored otherwise. */
   publishNow?: boolean;
   /**
-   * The collector was told the original photo is kept for moderators. Only
-   * then is it kept; older app builds don't send it.
+   * The collector was shown the notice that the original photo is kept for
+   * moderators until review (a notice on the contribution step, not a
+   * separate opt-in). Only then is it kept; older app builds don't send it.
    */
-  keepOriginalConsent?: boolean;
+  keepOriginalNoticeShown?: boolean;
 }
 
 /** Shared checks for both steps. Sends the error response and returns false on failure. */
@@ -330,7 +331,7 @@ router.post("/pin-images/contribute/preview", requireUser, async (req: UserReque
         return;
       }
       // The photo as taken, same path, admin-only bucket.
-      if (body.keepOriginalConsent === true) await storeRaw(draftPath, body.imageBase64!);
+      if (body.keepOriginalNoticeShown === true) await storeRaw(draftPath, body.imageBase64!);
     }
     await clearDrafts(userId, draftPath);
 
@@ -374,7 +375,7 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
         res.status(410).json({ error: "This preview has expired — please take the photo again." });
         return;
       }
-      if (body.keepOriginalConsent === true) {
+      if (body.keepOriginalNoticeShown === true) {
         const { error: rawMoveError } = await getStorageClient().storage
           .from(RAW_BUCKET).move(body.draftPath, storagePath);
         if (rawMoveError) {
@@ -392,7 +393,7 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
         res.status(500).json({ error: `Could not store your photo: ${uploadError.message}` });
         return;
       }
-      if (body.keepOriginalConsent === true && await storeRaw(storagePath, body.imageBase64!)) {
+      if (body.keepOriginalNoticeShown === true && await storeRaw(storagePath, body.imageBase64!)) {
         rawStoragePath = storagePath;
       }
     }

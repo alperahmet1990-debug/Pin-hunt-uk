@@ -96,7 +96,7 @@ const preview = (body: Record<string, unknown> = {}) =>
   request(app)
     .post("/api/pin-images/contribute/preview")
     .set("Authorization", "Bearer test-token")
-    .send({ pinId: "PHUK-00000001", imageBase64: PHOTO, consentGranted: true, keepOriginalConsent: true, ...body });
+    .send({ pinId: "PHUK-00000001", imageBase64: PHOTO, consentGranted: true, keepOriginalNoticeShown: true, ...body });
 
 describe("POST /api/pin-images/contribute/preview", () => {
   beforeEach(() => {
@@ -130,8 +130,8 @@ describe("POST /api/pin-images/contribute/preview", () => {
     expect(JSON.stringify(res.body)).not.toContain("pin-contributed-raw");
   });
 
-  it("keeps no raw original for app builds that didn't tell the collector (no keepOriginalConsent)", async () => {
-    const res = await preview({ keepOriginalConsent: undefined });
+  it("keeps no raw original for app builds that didn't tell the collector (no keepOriginalNoticeShown)", async () => {
+    const res = await preview({ keepOriginalNoticeShown: undefined });
     expect(res.status).toBe(200);
     expect(state.drafts.size).toBe(1);
     expect(state.raw.size).toBe(0);
@@ -226,7 +226,7 @@ describe("POST /api/pin-images/contribute (no preview, older builds)", () => {
     request(app)
       .post("/api/pin-images/contribute")
       .set("Authorization", "Bearer test-token")
-      .send({ pinId: "PHUK-00000001", imageBase64: PHOTO, consentGranted: true, keepOriginalConsent: true });
+      .send({ pinId: "PHUK-00000001", imageBase64: PHOTO, consentGranted: true, keepOriginalNoticeShown: true });
 
   it("keeps the raw original when the contribution is recorded", async () => {
     const res = await confirmWithoutPreview();

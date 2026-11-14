@@ -75,7 +75,7 @@ const confirm = (extra: Record<string, unknown> = {}) =>
     .post("/api/pin-images/contribute")
     .set("Authorization", "Bearer test-token")
     .send({
-      pinId: "PHUK-00000001", draftPath: "user-1/drafts/PHUK-00000001__abc.jpg", consentGranted: true, keepOriginalConsent: true, ...extra,
+      pinId: "PHUK-00000001", draftPath: "user-1/drafts/PHUK-00000001__abc.jpg", consentGranted: true, keepOriginalNoticeShown: true, ...extra,
     });
 
 describe("POST /api/pin-images/contribute", () => {
@@ -137,7 +137,7 @@ describe("POST /api/pin-images/contribute", () => {
   });
 
   it("doesn't keep a raw original for app builds that didn't tell the collector", async () => {
-    const res = await confirm({ keepOriginalConsent: undefined });
+    const res = await confirm({ keepOriginalNoticeShown: undefined });
     expect(res.status).toBe(200);
     expect(state.moves.some((m) => m.bucket === "pin-contributed-raw")).toBe(false);
     expect(state.created[0].rawStoragePath).toBeUndefined();

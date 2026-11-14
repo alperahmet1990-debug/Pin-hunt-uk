@@ -3,7 +3,9 @@
  * many pins through the same path a collector's "Get a price" uses
  * (startPriceRequest with origin "batch"). Run only from
  * scripts/market-price-batch.mjs, behind the staging guard. No route reaches
- * this module.
+ * this module. Staging by default; --production <ref> targets production
+ * through scripts/lib/production-guard.mjs (the maintainer runs that, never
+ * an agent).
  *
  * Spend control, in order:
  *   1. An explicit pin set: verified, non-archived pins with release_year in
@@ -63,6 +65,12 @@ export interface BatchOptions {
   leaveCredits: number;
   stopAfterErrors: number;
   apply: boolean;
+  /**
+   * --production <ref>: run against production. The script checks it with
+   * scripts/lib/production-guard.mjs (the ref must equal PRODUCTION_PROJECT_REF);
+   * null means staging, through the staging guard.
+   */
+  production: string | null;
 }
 
 export interface BatchPin {
@@ -144,6 +152,11 @@ export function parseBatchArgs(argv: string[], readFile: (p: string) => string):
   const unknown = markets.filter(m => !(m in PRICE_REQUEST_SOURCES));
   if (unknown.length || markets.length === 0) throw new BatchUsageError(`--markets takes UK and/or US, not ${unknown.join(", ") || "nothing"}.`);
 
+  const productionRaw = take("--production");
+  if (productionRaw !== undefined && !/^[a-z0-9]{20}$/.test(productionRaw)) {
+    throw new BatchUsageError("--production needs the 20-character production project ref, typed exactly.");
+  }
+
   const num = (name: string, min: number, max: number) => {
     const v = take(name);
     return v === undefined ? null : intFlag(name, v, min, max);
@@ -160,6 +173,7 @@ export function parseBatchArgs(argv: string[], readFile: (p: string) => string):
     leaveCredits: num("--leave-credits", 0, 1_000_000) ?? 0,
     stopAfterErrors: num("--stop-after-errors", 1, 100) ?? DEFAULT_STOP_AFTER_ERRORS,
     apply,
+    production: productionRaw ?? null,
   };
   const left = [...flags.keys()];
   if (left.length) throw new BatchUsageError(`Unknown option ${left[0]}.`);
@@ -399,6 +413,7 @@ export function formatBatch(r: BatchResult, opts: BatchOptions): string[] {
   const p = r.plan;
   const usd = (credits: number) => `≈ $${(credits * USD_PER_CREDIT).toFixed(2)} at $${USD_PER_CREDIT}/credit`;
   const out = [
+    ...(opts.production ? [`Target: PRODUCTION (${opts.production}). Prices and request rows are written to the live project.`] : []),
     `Pins: ${opts.pinhuntIds ? `${opts.pinhuntIds.length} from --ids-file` : `release year ${opts.years.join(", ")}, verified, not archived`}` +
       (opts.offset || opts.limit !== null ? ` (offset ${opts.offset}${opts.limit !== null ? `, limit ${opts.limit}` : ""})` : ""),
     `Markets: ${p.markets.join(", ")} · sources: ${p.sources.join(", ")} (${p.creditsPerPin} credit(s) per pin at most)`,

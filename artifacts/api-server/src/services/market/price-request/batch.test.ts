@@ -105,6 +105,20 @@ describe("parseBatchArgs", () => {
     expect(() => parseBatchArgs(["--markets", "UK", "--ids-file", "f"], () => "bad id!")).toThrow(/Not a PinHunt ID/);
   });
 
+  it("takes --production with the production ref (format only; the script's guard checks it)", () => {
+    expect(args().production).toBeNull();
+    expect(args(["--production", "productionrefbbbbbbb"]).production).toBe("productionrefbbbbbbb");
+    expect(() => args(["--production", "prod"])).toThrow(/20-character production project ref/);
+    expect(() => args(["--production", "PRODUCTIONREFBBBBBBB"])).toThrow(/typed exactly/);
+  });
+
+  it("says PRODUCTION at the top of the output", async () => {
+    const o = args(["--production", "productionrefbbbbbbb"]);
+    const { d } = deps(store(pins(2)), () => started(finished()));
+    expect(formatBatch(await runBatch(o, d), o)[0]).toMatch(/^Target: PRODUCTION \(productionrefbbbbbbb\)/);
+    expect(formatBatch(await runBatch(args(), d), args())[0]).not.toMatch(/PRODUCTION/);
+  });
+
   it("refuses unknown or repeated options", () => {
     expect(() => args(["--everything", "yes"])).toThrow(/Unknown option --everything/);
     expect(() => args(["--limit", "1", "--limit", "2"])).toThrow(/twice/);

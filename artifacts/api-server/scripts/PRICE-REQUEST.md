@@ -194,7 +194,48 @@ Exit code 0 means it finished or reached the ceiling; 2 means it stopped early (
 
 **Collector cache vs batch cache.** A collector's request is answered from the cache for `MARKET_PRICE_REQUEST_CACHE_DAYS` (default 30). If you batch-price with `--cache-days 180`, raise that setting on the API host to match. Otherwise a collector tapping **Get a price** on a pin the batch answered 31–180 days ago pays for it again.
 
-**Production.** The script is staging-only, like the pilot. Running it against production needs a deliberate production mode with its own guard. That isn't built yet; ask for it once the staging runs look right.
+### Running the batch on production
+
+Do this only after the staging pilot and a staging batch run look right. Only you run it, never an agent: the operating model lists production data changes as human-only. It is the only script in the repo that can write to production.
+
+**Before the first production run:**
+- Production has migrations 049, 054, 055 and 079 applied, each with its verify script.
+- The month has a **hard-stop** budget row (`provider_budgets`).
+- The sold sources for your markets are enabled in `market_sources`.
+- Take a manual export first: production has no backups yet.
+- **Create a local production env file**, `artifacts/api-server/.env.production` (gitignored; never commit it or paste its values anywhere), with:
+  ```
+  PINHUNT_ENV=production
+  PRODUCTION_PROJECT_REF=<production ref>
+  STAGING_PROJECT_REF=<staging ref>
+  SUPABASE_URL=https://<production ref>.supabase.co
+  SUPABASE_SERVICE_ROLE_KEY=<production service-role key>
+  SOLDGRAPH_API_KEY=<production Soldgraph key>
+  ```
+
+**The production guard** (`scripts/lib/production-guard.mjs`) refuses unless **all** of these hold, before any connection:
+1. `PINHUNT_ENV` is `production`.
+2. The ref you type after `--production` is exactly `PRODUCTION_PROJECT_REF`.
+3. `STAGING_PROJECT_REF` is set and is a different project.
+4. `SUPABASE_URL` is the production project's URL.
+5. The project does **not** hold the staging marker bucket. If that check can't be completed, it refuses too.
+
+Without `--production`, the script still goes through the staging guard, exactly as before.
+
+**Commands:** the same as staging, plus `--production <ref>` and the production env file.
+```
+# 1. Plan (free)
+MARKET_VALUATION_PUBLISHED_MARKETS=UK,US node --env-file=.env.production scripts/market-price-batch.mjs \
+  --production <production ref> --markets UK,US --max-credits 100
+
+# 2. Run a small first batch, with the planned figure from step 1
+SOLDGRAPH_ENABLED=true MARKET_VALUATION_V2_ENABLED=true MARKET_VALUATION_PUBLISHED_MARKETS=UK,US \
+  node --env-file=.env.production scripts/market-price-batch.mjs \
+  --production <production ref> --markets UK,US --max-credits 100 --apply --confirm-credits 100
+```
+- **`MARKET_VALUATION_PUBLISHED_MARKETS`:** use the same markets as on Render, so the batch never prices a market the app doesn't show.
+- **Output:** the first line reads `Target: PRODUCTION (<ref>)`. If it doesn't, stop.
+- **Stage it:** start small (about 100 credits) and check a few pins in the app. Then move to the `--ids-file` stage, then the rest. Leave room for collectors with `--leave-credits` or `MARKET_PRICE_REQUEST_BUDGET_RESERVE`.
 
 **What it costs.**
 

@@ -63,6 +63,23 @@ export interface PriceRequestDeps {
   /** Builds the real Soldgraph client; only called when a search will run. */
   createClient?: () => SoldgraphClient;
   log?: PriceRequestLogger;
+  /** Overall limit for one background run; defaults to RUN_DEADLINE_MS. For tests. */
+  runDeadlineMs?: number;
+}
+
+/**
+ * A background run that takes longer than this is closed as an error, well
+ * before PENDING_TIMEOUT_MINUTES would let another claim start. Each
+ * Soldgraph search already has its own 60-second deadline in the client, so
+ * a healthy run (at most 2 searches) finishes long before this.
+ */
+export const RUN_DEADLINE_MS = 5 * 60_000;
+
+class RunDeadlineError extends Error {
+  constructor() {
+    super("price request run deadline");
+    this.name = "RunDeadlineError";
+  }
 }
 
 export type UnavailableReason =
@@ -203,13 +220,22 @@ async function runClaimed(
 ): Promise<FinishSummary> {
   const log = deps.log ?? silentLog;
   let summary: FinishSummary;
+  let timer: ReturnType<typeof setTimeout> | undefined;
   try {
-    const r = await runRefresh({ ...refreshOptions(pinhuntId, sources), apply: true, creditCeiling: worstCaseCredits }, refreshDeps);
+    const deadline = new Promise<never>((_, reject) => {
+      timer = setTimeout(() => reject(new RunDeadlineError()), deps.runDeadlineMs ?? RUN_DEADLINE_MS);
+    });
+    const run = runRefresh({ ...refreshOptions(pinhuntId, sources), apply: true, creditCeiling: worstCaseCredits }, refreshDeps);
+    run.catch(() => {}); // a run that loses the race must not become an unhandled rejection
+    const r = await Promise.race([run, deadline]);
     summary = summarise(r, requestMarkets(deps.env));
   } catch (err) {
     log.error({ requestId, err: err instanceof Error ? err.name : "unknown" }, "price request failed");
     summary = { status: "failed", outcome: "error", soldCounts: null, creditsSpent: 0 };
+  } finally {
+    if (timer) clearTimeout(timer);
   }
+  // A late run's own result is dropped: finish() only closes a pending row.
   try {
     await deps.requests.finish({ requestId, ...summary } as FinishInput);
   } catch (err) {

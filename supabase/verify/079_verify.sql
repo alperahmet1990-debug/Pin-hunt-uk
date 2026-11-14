@@ -56,17 +56,23 @@ end $$;
 -- one auth user to exist; skipped with a notice otherwise.
 do $$
 declare
-  v_pin   uuid := (select id from pins order by created_at limit 1);
-  v_pin2  uuid := (select id from pins order by created_at offset 1 limit 1);
+  -- Pins with no request history, so nothing real is touched; every row this
+  -- block writes is its own, and the whole script is rolled back.
+  v_pin   uuid := (select p.id from pins p where not exists (select 1 from market_price_requests r where r.pin_id = p.id) order by p.created_at limit 1);
+  v_pin2  uuid := (select p.id from pins p where not exists (select 1 from market_price_requests r where r.pin_id = p.id) order by p.created_at offset 1 limit 1);
   v_user  uuid := (select id from auth.users order by created_at limit 1);
   r       record;
   src     text[] := array['soldgraph:ebay_gb_sold', 'soldgraph:ebay_us_sold'];
 begin
   if v_pin is null or v_pin2 is null or v_user is null then
-    raise notice 'Behaviour checks skipped: need two pins and one auth user.';
+    raise notice 'Behaviour checks skipped: need two pins without request history and one auth user.';
     return;
   end if;
-  delete from market_price_requests where pin_id in (v_pin, v_pin2);
+  -- The per-user cap below counts this user's real requests too; start from none of theirs today.
+  if exists (select 1 from market_price_requests where requested_by = v_user and created_at > now() - interval '24 hours') then
+    raise notice 'Behaviour checks skipped: the test user made a real request in the last 24h.';
+    return;
+  end if;
 
   -- 1. First claim succeeds.
   select * into r from claim_market_price_request(v_pin, v_user, 'user', src, 2, 2, 100, 30, 10);
@@ -95,6 +101,7 @@ begin
   -- A cache window of 0 days means nothing is cached.
   select * into r from claim_market_price_request(v_pin, v_user, 'user', src, 2, 2, 100, 0, 10);
   if r.decision <> 'user_cap' and r.decision <> 'claimed' then raise exception 'zero-day cache: %', r.decision; end if;
+  -- Remove only the pending row this block just wrote (v_pin had no history).
   delete from market_price_requests where pin_id = v_pin and status = 'pending';
 
   -- 5. Per-user cap: limit 1, one request already today -> user_cap.

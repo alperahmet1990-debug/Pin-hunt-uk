@@ -97,7 +97,7 @@ router.get("/pins/:pinId/price-request", flagGate, requireUser, rateLimit(() => 
     const s = await priceRequestStatus(pin.pinUuid, deps);
     res.json({ pinId: pin.pinhuntId, ...s });
   } catch (err) {
-    req.log.error({ err: err instanceof Error ? err.message : "unknown" }, "price-request status failed");
+    req.log.error({ err: err instanceof Error ? err.name : "unknown" }, "price-request status failed");
     res.status(500).json({ error: "Failed to load price request" });
   }
 });
@@ -143,7 +143,7 @@ router.post("/pins/:pinId/price-request", flagGate, requireUser, rateLimit(() =>
         return;
     }
   } catch (err) {
-    req.log.error({ err: err instanceof Error ? err.message : "unknown" }, "price request failed");
+    req.log.error({ err: err instanceof Error ? err.name : "unknown" }, "price request failed");
     res.status(500).json({ error: "Failed to request a price" });
   }
 });

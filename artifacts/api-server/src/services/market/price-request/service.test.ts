@@ -283,6 +283,18 @@ describe("a request", () => {
     expect(log.rows).toHaveLength(1);
   });
 
+  it("closes a run that outlives its deadline as an error, before the pending timeout could reclaim it", async () => {
+    const gate = new Promise<void>(() => {}); // Soldgraph never answers
+    const { deps, log } = setup({ behaviour: { gate } });
+    deps.runDeadlineMs = 20;
+    const r = await ask(deps);
+    expect(r.kind).toBe("started");
+    if (r.kind === "started") expect(await r.done).toMatchObject({ status: "failed", outcome: "error" });
+    expect(log.rows[0]).toMatchObject({ status: "failed", outcome: "error" });
+    // Not cached, so the pin can be asked again.
+    expect((await ask(deps)).kind).toBe("started");
+  });
+
   it("frees a pin whose request was abandoned (server restart) after the pending timeout", async () => {
     const { deps, log, advance } = setup();
     log.rows.push({

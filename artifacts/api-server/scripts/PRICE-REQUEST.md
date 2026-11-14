@@ -31,7 +31,11 @@ Everything is **off by default**. With the switches off, the tile doesn't appear
 
 A stuck request (for example after a server restart) is released after 10 minutes. Each search has a 60-second deadline in the Soldgraph client, so a live request finishes well inside that window.
 
-Separately, each signed-in user may call the routes at most 6 times a minute (POST) and 30 times a minute (GET, for polling), per server process. This protects the database; it isn't the spend control.
+Separately, each signed-in user may call the routes at most 6 times a minute (POST) and 30 times a minute (GET, for polling), per server process. This protects the database; it isn't the spend control. The limit is held in memory per process: if the API ever runs on more than one instance, move it to a shared store (or the host's edge rate limiting) first.
+
+A background run that takes longer than 5 minutes is closed as an error, well before the 10-minute release, so another request for that pin can't start while it's still running.
+
+**Global cap trade-off.** The global daily cap (default 50) is shared by everyone, so ten collectors using their 5 each can use it up for the day. Spend stays bounded either way. If that happens often, raise `MARKET_PRICE_REQUEST_GLOBAL_DAILY` (each request costs at most 2 credits), lower the per-user cap, or watch `market_price_requests` for accounts that hit their cap every day.
 
 ## Before turning it on: re-run the pilot (staging, small, budget-capped)
 

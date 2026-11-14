@@ -148,6 +148,14 @@ describe('Home with zero pins', () => {
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/browse-catalogue', params: { mode: 'add' } });
   });
 
+  it('puts that line right under the tiles, above Find a pin, so it stays above the fold', async () => {
+    mockCollection = {};
+    const { toJSON } = await render(<HomeScreen />);
+    const tree = JSON.stringify(toJSON());
+    expect(tree.indexOf('home-stat-trade')).toBeLessThan(tree.indexOf('home-add-first'));
+    expect(tree.indexOf('home-add-first')).toBeLessThan(tree.indexOf('Find a pin. Scan'));
+  });
+
   it('hides that line once a pin is owned', async () => {
     await render(<HomeScreen />);
     expect(screen.queryByTestId('home-add-first')).toBeNull();

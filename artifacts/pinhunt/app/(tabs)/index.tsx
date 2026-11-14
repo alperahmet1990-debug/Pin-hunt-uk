@@ -166,6 +166,17 @@ export default function HomeScreen() {
         />
       </View>
 
+      {/* A brand-new collector: the one starter line (replaces Get started on Home). Right under the
+          tiles so it stays above the fold on small phones. */}
+      {ownedCount === 0 && <SlimLine
+        testID="home-add-first"
+        text="Add the pins you own"
+        a11y="Add the pins you own. Pick a set and tap Select all"
+        icon="plus"
+        onPress={() => router.push(ADD_PINS_ROUTE)}
+        colors={colors}
+      />}
+
       <View style={styles.row}>
         <TouchableOpacity accessibilityRole="button" accessibilityLabel="Find a pin. Scan to identify and price it" onPress={() => router.push('/(tabs)/scan')} activeOpacity={0.9} style={styles.half}>
           <LinearGradient colors={[colors.homeCoral, colors.homeCoralDeep]} start={{ x: 0, y: 0 }} end={{ x: 0.6, y: 1 }} style={[styles.action, { shadowColor: colors.homeShadow }]}>
@@ -191,15 +202,6 @@ export default function HomeScreen() {
         text={needsYou.map(part => part.text).join(' · ')}
         a11y={`${needsYou.map(part => part.text).join('. ')}.`}
         onPress={() => router.push(needsYou[0].route)}
-        colors={colors}
-      />}
-      {/* A brand-new collector: the one starter line (replaces Get started on Home). */}
-      {ownedCount === 0 && <SlimLine
-        testID="home-add-first"
-        text="Add the pins you own"
-        a11y="Add the pins you own. Pick a set and tap Select all"
-        icon="plus"
-        onPress={() => router.push(ADD_PINS_ROUTE)}
         colors={colors}
       />}
 

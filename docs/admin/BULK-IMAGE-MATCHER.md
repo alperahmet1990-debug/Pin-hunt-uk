@@ -10,20 +10,20 @@ Upload a batch of individual pin photos → review suggested catalogue matches �
 |---|---|---|
 | Batch | App Creator records title, supplier, permission basis, licence and whether public display is allowed | `bulk_image_batches` |
 | Upload | Drag-and-drop or choose photos. Each one is EXIF-rotated, stripped of metadata, capped at 2400 px and stored privately. The same file again is recognised and skipped | `bulk-image-matcher` bucket, `bulk_image_items` |
-| Match (automatic) | The scan's own recognition: describe → indexed catalogue search (≤150 candidates) → AI rank top 5 → compare against up to 3 reference images (PinHunt photo, else the admin-only Pin & Pop reference) | `services/bulkImages/match.ts` |
+| Match (automatic) | The scan's own recognition: describe → indexed catalogue search (≤150 candidates) → AI rank top 5 → compare against up to 3 reference images (PinHunt's own catalogue photos only, never Pin & Pop) | `services/bulkImages/match.ts` |
 | Review | Photo beside the best match. Enter confirms, 1–5 picks another candidate, S skips, F flags, / searches. Moves on by itself | `app/admin/bulk-images/[batchId].tsx` |
 | Clean (automatic) | Pixian runs only after a match is confirmed. The photo is first cropped to the main pin: the describe step returns its box at no extra cost, so neighbouring pins on a board are left out. The cleaned result is kept, so changing the match doesn't call Pixian again | `services/bulkImages/pipeline.ts` |
 | Publish | Preview grid. Publish, change match, or **Crop & clean**: drag a box around the pin and only that area is cleaned again. Pins that already have a photo need an explicit "Replace it" | `services/bulkImages/publish.ts` |
 
-**Confidence bands.** *Confident* only when a reference image confirmed the match (≥85 and ≥20 points ahead of the next candidate). *Possible* ≥50. *Uncertain* ≥25. Below 25 is *No match*. A pin with no reference image can never be *Confident*.
+**Confidence bands.** *Confident* only when a reference image confirmed the match (≥85 and ≥20 points ahead of the next candidate). *Possible* ≥50. *Uncertain* ≥25. Below 25 is *No match*. A pin with no PinHunt photo can never be *Confident*: its best possible band is *Possible*. This is expected, because Pin & Pop images are not used as AI references.
 
 **Provenance.** Each published image is a `pin_images` row with `source = 'pinhunt_bulk_upload'` and `source_record_id = bulk item id`. The bulk item links to its batch, which holds the supplier, permission basis and licence. The bulk item also keeps any replaced image URL. Watermarking and the `pin-catalogue` path follow the contributed-photo rules.
 
-**Pin & Pop.** Reference images are used only for internal matching and are shown only to the App Creator, labelled "admin only". They are never stored in these tables or this bucket, and never published.
+**Pin & Pop.** Pin & Pop images are **never sent to OpenAI or any other AI service**. They are shown only to the App Creator in the review screen, labelled "admin only". They are never stored in these tables or this bucket, and never published. This stays the rule until Pin & Pop confirms otherwise.
 
 ## Cost controls
 
-AI calls per photo: 2, or 3 when a reference image exists. Never one call per catalogue record. Pixian: one call per confirmed photo.
+AI calls per photo: 2, or 3 when a candidate has a PinHunt photo. Never one call per catalogue record. Pixian: one call per confirmed photo.
 
 | Env var | Default | Meaning |
 |---|---|---|
@@ -43,9 +43,9 @@ The database is the queue. Items are claimed with a conditional status update, s
 
 1. **Migration.** Apply `supabase/migrations/076_bulk_image_matcher.sql` in the **staging** SQL editor. Run `supabase/verify/076_verify.sql` and expect `ALL 076 CHECKS PASSED`. Then run `notify pgrst, 'reload schema';`.
 2. **API env (staging).** Set `BULK_IMAGE_MATCHER_ENABLED=true`, plus the OpenAI, Pixian and service-role keys. Keep `PIXIAN_TEST_MODE=true` for the first run: results are free but watermarked. Restart the API.
-3. **Reference images.** Matching is much stronger when candidates have a reference image. Check how many staging pins have one:
-   `select count(*) from pin_images where source = 'pin_and_pop';`
-   If the answer is close to 0, every match tops out at *Possible*. That still works, but expect more manual choosing.
+3. **Reference images.** Matching is much stronger when candidates have a PinHunt photo. Pin & Pop images don't count: they are never sent to AI. Check how many staging pins have one:
+   `select count(*) from pins where image_url is not null;`
+   Pins without one top out at *Possible*. That is expected and still works, but expect more manual choosing. Each published batch adds PinHunt photos, so later batches match better.
 4. **Run it.** In the web app (signed in as App Creator), go to **Admin → Bulk Image Matcher → New batch**. Fill in the permission record, tick public display, drop in 20 photos and review them.
 5. **Record.** For each photo, note whether the correct pin was rank 1, ranks 2–5, or missing. Note the seconds per photo, from the API log. Note how many were *Confident* but wrong; this should be 0. These numbers decide the next step below.
 
@@ -57,5 +57,5 @@ The database is the queue. Items are claimed with a conditional status update, s
   - nearest neighbours to add candidates alongside the text search
   - the existing ranking and compare steps unchanged
 
-  Do this only if the Pin & Pop licence allows storing derived embeddings of their images. Otherwise, index PinHunt-owned photos only. Each published batch grows that set.
+  Index PinHunt-owned photos only. Pin & Pop images must not be run through an encoder or any other AI model unless Pin & Pop explicitly allows it. Each published batch grows the PinHunt set.
 - Possible later additions: "Confirm all confident" and keyboard shortcuts on the publish grid.

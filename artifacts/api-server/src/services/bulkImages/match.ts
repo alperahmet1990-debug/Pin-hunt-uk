@@ -11,16 +11,21 @@
  *                 AI comparison is made.
  *   3. rank       services/pinRank.ts prompt → top 5
  *   4. compare    services/scanVerify.ts rules, against up to 3 reference
- *                 images: the pin's PinHunt photo, or else its Pin & Pop
- *                 reference image (migration 042). Pin & Pop images are used
- *                 here only for internal matching; they are never stored by
- *                 this feature, returned in candidates, or published.
+ *                 images. Only PinHunt's own catalogue photos (pins.image_url)
+ *                 are used.
+ *
+ * Pin & Pop images are NEVER sent to OpenAI or any other AI service. They may
+ * only be displayed to admins (the bulk review UI does that via
+ * routes/bulk-images.ts). There is deliberately no dependency here that could
+ * pass them in; do not add one without the maintainer's explicit approval
+ * (the question is pending with Pin & Pop).
  *
  * Unlike the scan, the comparison runs whenever any reference image exists
  * (BULK_MATCH_ALWAYS_COMPARE, default on): catalogue data quality matters
  * more than a few seconds, and text alone cannot separate sibling pins
  * (.agents/memory/ai-model-quirks.md). A match is only "confident" when a
- * reference image confirmed it.
+ * reference image confirmed it, so a pin without a PinHunt photo tops out at
+ * "possible".
  */
 import type { getOpenAIClient } from "@workspace/integrations-openai-ai-server";
 import type { CataloguePin, PinRepository } from "@workspace/pin-repository";
@@ -70,8 +75,6 @@ export interface MatchDeps {
   openai: OpenAIClient;
   model: string;
   repository: PinRepository;
-  /** Internal-only reference image URLs keyed by pinhunt id (e.g. Pin & Pop). */
-  referenceImages?: (pinhuntIds: string[]) => Promise<Record<string, string>>;
   timeoutMs?: number;
   env?: NodeJS.ProcessEnv;
 }
@@ -215,11 +218,9 @@ export async function matchPhoto(photo: Buffer, deps: MatchDeps): Promise<BulkMa
   const alwaysCompare = (env.BULK_MATCH_ALWAYS_COMPARE ?? "true").toLowerCase() !== "false";
   const decision = verifyDecision(matches);
   if (decision === "compare" || (alwaysCompare && decision === "confident")) {
-    const internal = deps.referenceImages
-      ? await deps.referenceImages(matches.map((m) => m.pinId)).catch(() => ({} as Record<string, string>))
-      : {};
+    // PinHunt catalogue photos only — never Pin & Pop images (see header).
     const refs = matches
-      .map((m) => ({ m, url: byId.get(m.pinId)?.imageUrl || internal[m.pinId] }))
+      .map((m) => ({ m, url: byId.get(m.pinId)?.imageUrl }))
       .filter((r): r is { m: PinMatch; url: string } => !!r.url)
       .slice(0, VERIFY_MAX_REFERENCES);
     if (refs.length > 0) {

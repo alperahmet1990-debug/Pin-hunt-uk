@@ -50,7 +50,7 @@ describe("matchBand", () => {
 });
 
 describe("matchPhoto", () => {
-  it("describes, retrieves a bounded candidate list, ranks, and compares with Pin & Pop references", async () => {
+  it("describes, retrieves a bounded candidate list, ranks, and compares with PinHunt photos", async () => {
     const ai = fakeOpenAI([
       JSON.stringify({ characters: ["Mickey Mouse"], keywords: ["castle"], text: "DLP 2026" }),
       JSON.stringify([
@@ -63,17 +63,40 @@ describe("matchPhoto", () => {
         { pinId: "PHUK-00000002", confidence: 20, reasoning: "different colours" },
       ]),
     ]);
-    const referenceImages = vi.fn(async () => ({ "PHUK-00000001": "https://pinandpop.example/1.jpg" }));
     const result = await matchPhoto(await photo(), {
-      openai: ai.client, model: "m", repository: repoWith([pin("PHUK-00000001"), pin("PHUK-00000002")]),
-      referenceImages,
+      openai: ai.client, model: "m",
+      repository: repoWith([pin("PHUK-00000001", { imageUrl: "https://cdn.pinhunt.example/1.jpg" }), pin("PHUK-00000002")]),
     });
     expect(ai.calls).toHaveLength(3);
+    expect(JSON.stringify(ai.calls[2])).toContain("https://cdn.pinhunt.example/1.jpg");
     expect(result.candidates.map((c) => c.pinhuntId)).toEqual(["PHUK-00000001", "PHUK-00000002"]);
     expect(result.verified).toBe(true);
     expect(result.band).toBe("confident");
-    // Reference URLs are used for matching only — never returned in candidates.
-    expect(JSON.stringify(result.candidates)).not.toContain("pinandpop");
+  });
+
+  it("never sends a Pin & Pop image to OpenAI, even when a pin has no PinHunt photo", async () => {
+    const PIN_AND_POP = "https://pinandpop.example/ref-1.jpg";
+    const ai = fakeOpenAI([
+      JSON.stringify({ characters: ["Mickey Mouse"], keywords: ["castle"] }),
+      JSON.stringify([
+        { pinId: "PHUK-00000001", confidence: 70, reasoning: "a" },
+        { pinId: "PHUK-00000002", confidence: 65, reasoning: "b" },
+      ]),
+    ]);
+    // Even if a caller still passes the removed Pin & Pop dependency, it must be ignored.
+    const referenceImages = vi.fn(async () => ({ "PHUK-00000001": PIN_AND_POP, "PHUK-00000002": PIN_AND_POP }));
+    const result = await matchPhoto(await photo(), {
+      openai: ai.client, model: "m", repository: repoWith([pin("PHUK-00000001"), pin("PHUK-00000002")]),
+      ...({ referenceImages } as object),
+    });
+    const sent = JSON.stringify(ai.calls);
+    expect(sent).not.toContain(PIN_AND_POP);
+    expect(sent.toLowerCase()).not.toMatch(/pin\s*(&|and)?\s*pop/);
+    expect(referenceImages).not.toHaveBeenCalled();
+    // No PinHunt photo → no comparison call → tops out at "possible".
+    expect(ai.calls).toHaveLength(2);
+    expect(result.verified).toBe(false);
+    expect(result.band).toBe("possible");
   });
 
   it("never claims confidence without a reference image", async () => {

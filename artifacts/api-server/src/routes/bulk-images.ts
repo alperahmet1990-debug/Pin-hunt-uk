@@ -115,8 +115,9 @@ async function pinUuids(db: SupabaseClient, pinhuntIds: string[]): Promise<Map<s
 }
 
 /**
- * Admin-only Pin & Pop references (migration 042) keyed by pinhunt id.
- * Never stored by this feature and never returned by a collector route.
+ * Admin-only Pin & Pop references (migration 042) keyed by pinhunt id, for
+ * display in the admin review UI only. Never sent to OpenAI or any other AI
+ * service, never stored by this feature and never returned by a collector route.
  */
 async function pinAndPopRefs(pinhuntIds: string[]) {
   const db = getServiceClient();
@@ -137,10 +138,8 @@ function pipelineDeps(): PipelineDeps {
       openai: getOpenAIClient(),
       model: SCAN_MODEL(),
       repository,
-      referenceImages: async (ids) => {
-        const refs = await pinAndPopRefs(ids);
-        return Object.fromEntries(Object.entries(refs).filter(([, r]) => r.imageUrl).map(([id, r]) => [id, r.imageUrl!]));
-      },
+      // No Pin & Pop references: they must never be sent to AI. Only the
+      // admin review routes below display them.
     }),
     clean: (photo) => normalizePinPhoto(photo, "image/jpeg"),
   };

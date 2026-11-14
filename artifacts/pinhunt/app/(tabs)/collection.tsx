@@ -279,20 +279,27 @@ export default function CollectionScreen() {
     return () => { cancelled = true; };
   }, [collection, ensurePins]);
 
-  useEffect(() => {
+  // Sets the collector has started, as a stable key so effects don't re-run on every catalogue change.
+  const startedSetsKey = useMemo(() => {
     const names = new Set<string>();
     for (const pin of catalogue) {
       if (ownedIds.has(pin.id) && pin.collection) names.add(pin.collection);
     }
-    if (names.size > 0) void ensureCollections([...names]);
-  }, [catalogue, ownedIds, ensureCollections]);
+    return JSON.stringify([...names].sort());
+  }, [catalogue, ownedIds]);
+
+  useEffect(() => {
+    const names: string[] = JSON.parse(startedSetsKey);
+    if (names.length > 0) void ensureCollections(names);
+  }, [startedSetsKey, ensureCollections]);
 
   const [summariesLoading, setSummariesLoading] = useState(!!repository);
   useEffect(() => {
     if (!repository) return;
     let cancelled = false;
     setSummariesLoading(true);
-    repository.getSetSummaries()
+    // Only the started sets: the full list is ~13k sets (Pin & Pop).
+    repository.getSetSummaries(JSON.parse(startedSetsKey) as string[])
       .then(summaries => {
         if (!cancelled) setSetSummaries(summaries);
       })
@@ -305,7 +312,7 @@ export default function CollectionScreen() {
     return () => {
       cancelled = true;
     };
-  }, [repository]);
+  }, [repository, startedSetsKey]);
   // Mock mode has no set summaries endpoint, so derive them from the catalogue.
   const setSummaries = useMemo(
     () => (repository ? repoSetSummaries : setSummariesFromPins(catalogue)),
@@ -353,8 +360,10 @@ export default function CollectionScreen() {
       year: new Set(), brand: new Set(), edition: new Set(),
     };
     ownedPins.forEach(pin => {
-      (pin.characters.length ? pin.characters : (pin.allCharacters?.split(';') ?? [])).map(v => v.trim()).filter(Boolean).forEach(v => values.character.add(v));
-      if (pin.normalisedSeries || pin.collection) values.series.add(pin.normalisedSeries || pin.collection);
+      // all_characters is "A, B" (Pin & Pop, CTP) or "A; B" (older imports).
+      (pin.characters.length ? pin.characters : (pin.allCharacters?.split(/[;,]/) ?? [])).map(v => v.trim()).filter(Boolean).forEach(v => values.character.add(v));
+      // The set name collectors see; normalised_series is an internal key ("pin_and_pop | <slug>").
+      if (pin.collection || pin.normalisedSeries) values.series.add(pin.collection || pin.normalisedSeries!);
       if (pin.origin) values.location.add(pin.origin);
       const year = pin.releaseYear?.toString() || pin.releaseDate?.slice(0, 4);
       if (year) values.year.add(year);
@@ -366,8 +375,8 @@ export default function CollectionScreen() {
 
   const filteredOwnedPins = useMemo(() => {
     const matchesFilter = (pin: CataloguePin, key: MetadataFilterKey, value: string) => {
-      if (key === 'character') return [...pin.characters, ...(pin.allCharacters?.split(';').map(v => v.trim()) ?? [])].includes(value);
-      if (key === 'series') return (pin.normalisedSeries || pin.collection) === value;
+      if (key === 'character') return [...pin.characters, ...(pin.allCharacters?.split(/[;,]/).map(v => v.trim()) ?? [])].includes(value);
+      if (key === 'series') return (pin.collection || pin.normalisedSeries) === value;
       if (key === 'location') return pin.origin === value;
       if (key === 'year') return (pin.releaseYear?.toString() || pin.releaseDate?.slice(0, 4)) === value;
       if (key === 'brand') return pin.brand === value;

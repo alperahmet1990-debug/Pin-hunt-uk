@@ -37,6 +37,10 @@ import type {
   UserSuspension,
   ReportedMessageView,
   CatalogueImageCoverage,
+  CoveragePageQuery,
+  CoverageFacets,
+  CoverageFacetKey,
+  CoverageSummary,
   ContributedPinImage,
   CreateContributedImageInput,
   FeatureAudience,
@@ -419,6 +423,20 @@ export interface IUserPinRepository {
    * the caller can access 'catalogue_contributions'.
    */
   getCatalogueImageCoverage(): Promise<CatalogueImageCoverage[]>;
+
+  /**
+   * One filtered page of coverage rows, or the rows for given pins (`ids`),
+   * with the total that match (migration 077; falls back to filtering
+   * getCatalogueImageCoverage on the device without it). Empty unless the
+   * caller can access 'catalogue_contributions'.
+   */
+  getCatalogueCoveragePage(q: CoveragePageQuery): Promise<{ rows: CatalogueImageCoverage[]; total: number }>;
+
+  /** Counts for the contributor screen under these facets, plus one facet's choices. */
+  getCatalogueCoverageSummary(facets: CoverageFacets, ownedIds: string[], facet?: CoverageFacetKey | null): Promise<CoverageSummary>;
+
+  /** Pins and pins-with-photo for whole sets (ignores filters). */
+  getCatalogueCoverageSetTotals(sets: string[]): Promise<Record<string, { total: number; withPhoto: number }>>;
 
   /** All feature flags and their current audience. */
   getFeatureFlags(): Promise<FeatureFlag[]>;

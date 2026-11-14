@@ -14,7 +14,7 @@
  * starts admin-only; widened to contributors / public by editing its row.
  * The data is gated again server-side in get_catalogue_image_coverage().
  */
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Platform,
@@ -31,7 +31,7 @@ import { Feather } from '@expo/vector-icons';
 import type { CatalogueImageCoverage } from '@workspace/pin-repository';
 import { useColors } from '@/hooks/useColors';
 import { useFeature } from '@/hooks/useFeature';
-import { useCatalogueCoverage } from '@/hooks/useCatalogueCoverage';
+import { useCoveragePage } from '@/hooks/useCatalogueCoverage';
 import { useCollection } from '@/context/CollectionContext';
 import { SearchBar } from '@/components/SearchBar';
 import { EmptyState } from '@/components/EmptyState';
@@ -40,28 +40,17 @@ import { radius, spacing } from '@/constants/theme';
 import { PinImage } from '@/components/ui/PinImage';
 import { FilterSheet } from '@/components/ui/FilterSheet';
 import {
-  FACET_TITLES, NO_FACETS, facetOptions, matchesFacets, missingLabel,
+  FACET_TITLES, NO_FACETS, missingLabel,
   type FacetFilters, type FacetKey,
 } from '@/utils/contributeFilters';
 
 type PhotoFilter = 'all' | 'needs' | 'reference' | 'pending' | 'community' | 'info' | 'back';
 
 const COLUMNS = 3;
+const SEARCH_DEBOUNCE_MS = 300;
 
 function isPending(row: CatalogueImageCoverage) {
   return row.myStatus === 'pending' || row.pendingCount > 0;
-}
-
-function matchesFilter(row: CatalogueImageCoverage, filter: PhotoFilter) {
-  switch (filter) {
-    case 'needs': return row.imageSource === null && !isPending(row);
-    case 'reference': return row.imageSource === 'reference';
-    case 'pending': return isPending(row);
-    case 'community': return row.imageSource === 'community';
-    case 'info': return (row.missingFields?.length ?? 0) > 0;
-    case 'back': return row.needsBackImage === true;
-    default: return true;
-  }
 }
 
 export default function ContributeCatalogueScreen() {
@@ -69,7 +58,6 @@ export default function ContributeCatalogueScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { enabled, loading: featureLoading } = useFeature('catalogue_contributions');
-  const { rows, loading, error, refresh } = useCatalogueCoverage(enabled);
   const { collection } = useCollection();
 
   const [query, setQuery] = useState('');
@@ -81,45 +69,39 @@ export default function ContributeCatalogueScreen() {
 
   const botPad = Platform.OS === 'web' ? 34 : insets.bottom + 24;
 
-  const ownedIds = useMemo(() => new Set(
-    Object.entries(collection)
-      .filter(([, e]) => e.status === 'owned' || e.status === 'for_trade')
-      .map(([id]) => id),
-  ), [collection]);
+  const ownedList = useMemo(() => Object.entries(collection)
+    .filter(([, e]) => e.status === 'owned' || e.status === 'for_trade')
+    .map(([id]) => id)
+    .sort(), [collection]);
+  const ownedIds = useMemo(() => new Set(ownedList), [ownedList]);
 
-  // Year / park / character / set narrow everything below, counts included.
-  const faceted = useMemo(() => rows.filter(r => matchesFacets(r, facets)), [rows, facets]);
+  // Search runs in the database (migration 077), so wait for a pause in typing.
+  const [debouncedQuery, setDebouncedQuery] = useState('');
+  useEffect(() => {
+    const t = setTimeout(() => setDebouncedQuery(query), SEARCH_DEBOUNCE_MS);
+    return () => clearTimeout(t);
+  }, [query]);
 
-  const stats = useMemo(() => {
-    let withPhoto = 0, community = 0, needs = 0, reference = 0, pending = 0, mine = 0, info = 0, back = 0;
-    for (const r of faceted) {
-      if (r.imageSource) withPhoto++;
-      if (r.imageSource === 'community') community++;
-      if (r.imageSource === 'reference') reference++;
-      if (matchesFilter(r, 'needs')) needs++;
-      if (isPending(r)) pending++;
-      if (ownedIds.has(r.pinhuntId)) mine++;
-      if (matchesFilter(r, 'info')) info++;
-      if (matchesFilter(r, 'back')) back++;
-    }
-    return { total: faceted.length, withPhoto, community, needs, reference, pending, mine, info, back };
-  }, [faceted, ownedIds]);
+  // Filtering, counting and paging happen in the database; the catalogue is too big to load here.
+  const view = useMemo(() => ({
+    query: debouncedQuery,
+    filter,
+    mineOnly,
+    facets: {
+      year: facets.year ? Number(facets.year) : null,
+      origin: facets.origin,
+      character: facets.character,
+      set: facets.set,
+    },
+  }), [debouncedQuery, filter, mineOnly, facets]);
+  const {
+    rows, stats, setTotals, loading, loadingMore, hasMore, error, loadMore, refresh, loadFacet,
+  } = useCoveragePage(enabled, view, ownedList);
 
+  // Pages arrive ordered by set, so a set can continue on the next page: group what's loaded.
   const sections = useMemo(() => {
-    const q = query.trim().toLowerCase();
     const bySet = new Map<string, CatalogueImageCoverage[]>();
-    const setTotals = new Map<string, { total: number; withPhoto: number }>();
     for (const r of rows) {
-      const t = setTotals.get(r.setName) ?? { total: 0, withPhoto: 0 };
-      t.total++;
-      if (r.imageSource) t.withPhoto++;
-      setTotals.set(r.setName, t);
-
-      if (!matchesFacets(r, facets)) continue;
-      if (mineOnly && !ownedIds.has(r.pinhuntId)) continue;
-      if (!matchesFilter(r, filter)) continue;
-      if (q && !r.title.toLowerCase().includes(q) && !r.setName.toLowerCase().includes(q)
-        && !r.pinhuntId.toLowerCase().includes(q)) continue;
       const list = bySet.get(r.setName) ?? [];
       list.push(r);
       bySet.set(r.setName, list);
@@ -127,9 +109,25 @@ export default function ContributeCatalogueScreen() {
     return [...bySet.entries()].map(([setName, pins]) => {
       const chunks: CatalogueImageCoverage[][] = [];
       for (let i = 0; i < pins.length; i += COLUMNS) chunks.push(pins.slice(i, i + COLUMNS));
-      return { title: setName, totals: setTotals.get(setName)!, data: chunks };
+      return { title: setName, totals: setTotals[setName] ?? null, data: chunks };
     });
-  }, [rows, query, filter, mineOnly, ownedIds, facets]);
+  }, [rows, setTotals]);
+
+  // Facet choices (with counts) load when a facet sheet opens.
+  const [facetItems, setFacetItems] = useState<Array<{ value: string; label: string }>>([]);
+  const loadFacetRef = useRef(loadFacet);
+  loadFacetRef.current = loadFacet;
+  const facetsKey = JSON.stringify(view.facets);
+  useEffect(() => {
+    if (!openFacet) { setFacetItems(prev => (prev.length ? [] : prev)); return; }
+    let cancelled = false;
+    loadFacetRef.current(openFacet)
+      .then(options => {
+        if (!cancelled) setFacetItems(options.map(o => ({ value: o.value, label: `${o.value} (${o.count})` })));
+      })
+      .catch(() => { if (!cancelled) setFacetItems([]); });
+    return () => { cancelled = true; };
+  }, [openFacet, facetsKey]);
 
   const onRefresh = async () => {
     setRefreshing(true);
@@ -141,7 +139,9 @@ export default function ContributeCatalogueScreen() {
     router.push({ pathname: '/contribute-image/[pinId]', params: { pinId: pinhuntId, from: 'catalogue' } });
   };
 
-  if (featureLoading || (enabled && loading && rows.length === 0)) {
+  const anyFilter = Boolean(query.trim() || filter !== 'all' || mineOnly || Object.values(facets).some(Boolean));
+  // Full-screen spinner only on first open; while filtering the header stays and the list shows it.
+  if (featureLoading || (enabled && loading && rows.length === 0 && !anyFilter)) {
     return (
       <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
         <Stack.Screen options={{ title: 'Help Build the Catalogue' }} />
@@ -281,19 +281,33 @@ export default function ContributeCatalogueScreen() {
         contentContainerStyle={{ paddingBottom: botPad }}
         initialNumToRender={8}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
-        ListEmptyComponent={
+        // 240 pins a page, loaded as the list nears the end.
+        onEndReached={hasMore ? loadMore : undefined}
+        onEndReachedThreshold={0.6}
+        ListFooterComponent={loadingMore ? (
+          <View style={styles.footer} accessibilityLabel="Loading more pins">
+            <ActivityIndicator color={colors.homeCoral} />
+          </View>
+        ) : null}
+        ListEmptyComponent={loading ? (
+          <View style={styles.footer} accessibilityLabel="Loading pins">
+            <ActivityIndicator color={colors.homeCoral} />
+          </View>
+        ) : (
           <EmptyState
             icon="image"
             title="No pins match"
             subtitle={mineOnly ? 'None of your pins match these filters.' : 'Try a different filter or search.'}
           />
-        }
+        )}
         renderSectionHeader={({ section }) => (
           <View style={styles.sectionHeader}>
             <Text style={[styles.sectionTitle, { color: colors.homeInk }]} numberOfLines={1}>{section.title}</Text>
-            <Text style={[styles.sectionMeta, { color: colors.homeMuted }]}>
-              {section.totals.withPhoto}/{section.totals.total}
-            </Text>
+            {section.totals && (
+              <Text style={[styles.sectionMeta, { color: colors.homeMuted }]}>
+                {section.totals.withPhoto}/{section.totals.total}
+              </Text>
+            )}
           </View>
         )}
         renderItem={({ item: chunk }) => (
@@ -309,7 +323,7 @@ export default function ContributeCatalogueScreen() {
         visible={openFacet !== null}
         title={openFacet ? FACET_TITLES[openFacet] : ''}
         searchable={openFacet === 'character' || openFacet === 'set'}
-        items={openFacet ? facetOptions(rows.filter(r => matchesFacets(r, { ...facets, [openFacet]: null })), openFacet) : []}
+        items={facetItems}
         value={openFacet ? facets[openFacet] : null}
         onSelect={v => { if (openFacet) setFacets(f => ({ ...f, [openFacet]: v })); setOpenFacet(null); }}
         onClose={() => setOpenFacet(null)}
@@ -384,6 +398,7 @@ const styles = StyleSheet.create({
   error: { fontSize: 13, fontFamily: 'Inter_400Regular' },
   addPinLink: { flexDirection: 'row', alignItems: 'center', gap: 6, alignSelf: 'flex-start' },
   addPinLinkLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
+  footer: { paddingVertical: spacing.lg, alignItems: 'center' },
   sectionHeader: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', paddingHorizontal: spacing.lg, paddingTop: spacing.lg, paddingBottom: spacing.sm, gap: spacing.sm },
   sectionTitle: { flex: 1, fontSize: 15, fontFamily: 'Inter_700Bold' },
   sectionMeta: { fontSize: 12, fontFamily: 'Inter_500Medium' },

@@ -613,8 +613,8 @@ export default function AddPinScreen() {
   useEffect(() => {
     if (!repository) return;
     let cancelled = false;
-    repository.getSetSummaries()
-      .then(summaries => { if (!cancelled) setAllSets(summaries.map(x => x.setName)); })
+    repository.getAllSetNames()
+      .then(names => { if (!cancelled) setAllSets(names); })
       .catch(() => {});
     return () => { cancelled = true; };
   }, [repository]);

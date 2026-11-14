@@ -18,7 +18,7 @@ const mockPost = {
 };
 const mockRepo = {
   getCommunityFeed: () => Promise.resolve([mockPost]), getCommunityPost: () => Promise.resolve(null),
-  getPinsByIds: noopPromise, getSetSummaries: noopPromise,
+  getPinsByIds: noopPromise, getSetSummaries: noopPromise, getAllSetNames: noopPromise,
 };
 const mockCollection = { p1: { pinId: 'p1', status: 'owned', quantity: 2, dateAdded: '2026-10-01' } };
 const mockPins = [{ id: 'p1', title: 'Mickey', collection: 'Park Icons', characters: [] }];

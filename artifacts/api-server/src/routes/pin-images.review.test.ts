@@ -2,8 +2,9 @@ import request from "supertest";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 // Admin photo review: the raw original is only reachable through the
-// admin-gated queue, and approving follows the replace rule and is safe to
-// re-run. All upstreams are mocked.
+// admin-gated queue and is deleted once the photo is approved or rejected;
+// approving follows the replace rule and is safe to re-run. All upstreams
+// are mocked.
 
 const PUBLIC_BASE = "https://cdn.test.invalid/storage/v1/object/public/pin-catalogue/";
 
@@ -15,6 +16,9 @@ const state = vi.hoisted(() => ({
   rawUrlCalls: [] as string[],
   updatedPins: [] as Array<{ id: string; imageUrl: string }>,
   reviewed: [] as string[],
+  rawRemoved: [] as Array<{ bucket: string; paths: string[] }>,
+  rawCleared: [] as string[],
+  rawRemoveError: null as { message: string } | null,
 }));
 
 vi.mock("@supabase/supabase-js", () => ({
@@ -22,9 +26,19 @@ vi.mock("@supabase/supabase-js", () => ({
     auth: { getUser: async () => ({ data: { user: { id: "admin-1" } }, error: null }) },
     from: () => ({
       select: () => ({ eq: () => ({ single: async () => ({ data: { is_admin: state.isAdmin }, error: null }) }) }),
+      update: (values: Record<string, unknown>) => ({
+        eq: async (_col: string, id: string) => {
+          if (values.raw_storage_path === null) state.rawCleared.push(id);
+          return { error: null };
+        },
+      }),
     }),
     storage: {
-      from: () => ({
+      from: (bucket: string) => ({
+        remove: async (paths: string[]) => {
+          if (!state.rawRemoveError) state.rawRemoved.push({ bucket, paths });
+          return { data: [], error: state.rawRemoveError };
+        },
         download: async () => ({ data: new Blob([new Uint8Array([1, 2, 3])]), error: null }),
         upload: async () => ({ data: {}, error: null }),
         getPublicUrl: (path: string) => ({ data: { publicUrl: `https://cdn.test.invalid/storage/v1/object/public/pin-catalogue/${path}` } }),
@@ -51,9 +65,9 @@ vi.mock("@workspace/pin-repository", async (importOriginal) => ({
       return `https://signed.test.invalid/raw/${path}`;
     },
     getContributedImage: async () => state.image,
-    markContributedImageReviewed: async (id: string) => {
+    markContributedImageReviewed: async (id: string, _by: string, input: { action: string }) => {
       state.reviewed.push(id);
-      return { ...state.image, status: "approved" };
+      return { ...state.image, status: input.action === "approve" ? "approved" : "rejected" };
     },
   }),
 }));
@@ -90,6 +104,9 @@ describe("admin photo review", () => {
     state.rawUrlCalls = [];
     state.updatedPins = [];
     state.reviewed = [];
+    state.rawRemoved = [];
+    state.rawCleared = [];
+    state.rawRemoveError = null;
   });
 
   describe("GET /api/admin/pending-pin-images", () => {
@@ -173,6 +190,57 @@ describe("admin photo review", () => {
       expect(res.status).toBe(200);
       expect(res.body.image.replacedImageUrl).toBeNull();
       expect(state.reviewed).toEqual(["img-1"]);
+    });
+  });
+
+  describe("raw original retention (deleted once reviewed)", () => {
+    const RAW = "user-1/PHUK-00000001/1.jpg";
+    const reject = () =>
+      request(app).post("/api/admin/pin-images/img-1/reject").set("Authorization", "Bearer t").send({});
+
+    it("deletes the raw original and clears its path when the photo is approved", async () => {
+      state.image = pendingImage({ rawStoragePath: RAW });
+      const res = await approve();
+      expect(res.status).toBe(200);
+      expect(state.rawRemoved).toEqual([{ bucket: "pin-contributed-raw", paths: [RAW] }]);
+      expect(state.rawCleared).toEqual(["img-1"]);
+    });
+
+    it("deletes the raw original and clears its path when the photo is rejected", async () => {
+      state.image = pendingImage({ rawStoragePath: RAW });
+      const res = await reject();
+      expect(res.status).toBe(200);
+      expect(state.reviewed).toEqual(["img-1"]);
+      expect(state.rawRemoved).toEqual([{ bucket: "pin-contributed-raw", paths: [RAW] }]);
+      expect(state.rawCleared).toEqual(["img-1"]);
+    });
+
+    it("keeps the raw original when the publish is blocked, so the admin can still compare", async () => {
+      state.image = pendingImage({ rawStoragePath: RAW });
+      state.pinImageUrl = `${PUBLIC_BASE}pin-uuid/bulk-9.jpg`;
+      const res = await approve();
+      expect(res.status).toBe(409);
+      expect(state.rawRemoved).toEqual([]);
+      expect(state.rawCleared).toEqual([]);
+    });
+
+    it("still approves and rejects when deleting the raw original fails", async () => {
+      state.rawRemoveError = { message: "storage down" };
+      const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+      state.image = pendingImage({ rawStoragePath: RAW });
+      expect((await approve()).status).toBe(200);
+      state.image = pendingImage({ rawStoragePath: RAW });
+      expect((await reject()).status).toBe(200);
+      expect(state.reviewed).toEqual(["img-1", "img-1"]);
+      expect(state.rawCleared).toEqual([]);
+      expect(spy.mock.calls.map((c) => String(c[0])).join("\n")).toContain("img-1");
+      spy.mockRestore();
+    });
+
+    it("does nothing for a row without a raw original", async () => {
+      expect((await approve()).status).toBe(200);
+      expect(state.rawRemoved).toEqual([]);
+      expect(state.rawCleared).toEqual([]);
     });
   });
 });

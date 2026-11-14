@@ -337,7 +337,7 @@ export default function ContributeImageScreen() {
             </Text>
             <Text style={[styles.body, { color: colors.homeMuted }]}>
               We also keep your original photo privately, without its location or camera details,
-              so moderators can compare it with the cleaned-up version.
+              until a moderator has compared it with the cleaned-up version. Then it&apos;s deleted.
             </Text>
 
             <TouchableOpacity

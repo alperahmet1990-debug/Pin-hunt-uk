@@ -9,7 +9,8 @@
  *      the public pin-catalogue bucket and set it as the pin's display image.
  *      409 { code: 'has_image' } when a "missing photo" contribution's pin
  *      has gained a photo since; send { replaceExisting: true } to confirm.
- * POST /admin/pin-images/:id/reject           Mark rejected, no storage change.
+ * POST /admin/pin-images/:id/reject           Mark rejected and delete the raw
+ *      original (the cleaned private copy is kept for audit).
  *
  * Same Bearer JWT -> profiles.is_admin convention used by admin.ts et al.
  * Write operations use SUPABASE_SERVICE_ROLE_KEY because RLS blocks
@@ -25,7 +26,7 @@ import {
   createSupabasePinRepository,
   createSupabaseUserRepository,
 } from "@workspace/pin-repository";
-import { publishContributedImage, PublishBlockedError } from "../services/contributed-images";
+import { discardRawOriginal, publishContributedImage, PublishBlockedError } from "../services/contributed-images";
 
 const router: IRouter = Router();
 
@@ -199,6 +200,8 @@ router.post("/admin/pin-images/:id/reject", requireAdmin, async (req: AdminReque
       action: "reject",
       reviewerNotes,
     });
+    // The raw original was only for the review (migration 079).
+    await discardRawOriginal(image, getAdminAuthClient());
     res.json({ image: reviewed });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);

@@ -5,7 +5,8 @@
  * become a catalogue pin's public display image. Admins' own photos land here
  * too unless they chose "Publish now". Approving publishes the cleaned photo
  * (watermarked) to the public pin-catalogue bucket and sets pins.image_url;
- * rejecting just marks the row — the private objects are kept for audit.
+ * rejecting marks the row. Either way the raw original is then deleted (it
+ * exists only for this review); the private cleaned copy is kept for audit.
  *
  * Each card compares three images: the photo as taken (raw, admin-only
  * bucket, migration 079; missing on older rows), the Pixian-cleaned photo

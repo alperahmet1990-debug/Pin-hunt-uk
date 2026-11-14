@@ -19,7 +19,8 @@
  *
  * The photo as taken (before Pixian) is also kept, in the private
  * pin-contributed-raw bucket (migration 079), which only admins can read, so
- * the reviewer can compare raw | cleaned | Pin & Pop. Its metadata (EXIF GPS
+ * the reviewer can compare raw | cleaned | Pin & Pop. It is deleted once the
+ * contribution is approved or rejected (discardRawOriginal). Its metadata (EXIF GPS
  * location etc.) is stripped first; see rawWithoutMetadata. It is only kept
  * when the request says the collector was told (keepOriginalConsent: true,
  * sent by app builds whose consent step says the original is kept), so

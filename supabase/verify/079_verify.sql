@@ -75,6 +75,25 @@ begin
            where bucket_id = 'pin-contributed-raw' and name like '07900000-0000-4000-8000-0000000000a1/%') = 0,
     '3a the uploader can read their raw photo';
 end $$;
+-- Writes too, so a broad storage.objects policy elsewhere would be caught.
+do $$
+declare n int;
+begin
+  begin
+    insert into storage.objects (bucket_id, name, owner)
+    values ('pin-contributed-raw', '07900000-0000-4000-8000-0000000000a1/PHUK-VERIFY079/2.jpg',
+            '07900000-0000-4000-8000-0000000000a1');
+    raise exception '3b a signed-in collector can upload into the raw bucket';
+  exception when insufficient_privilege then
+    null; -- refused by RLS, as expected
+  end;
+  update storage.objects set name = name where bucket_id = 'pin-contributed-raw';
+  get diagnostics n = row_count;
+  assert n = 0, '3c a signed-in collector can update raw photos';
+  delete from storage.objects where bucket_id = 'pin-contributed-raw';
+  get diagnostics n = row_count;
+  assert n = 0, '3d a signed-in collector can delete raw photos';
+end $$;
 reset role;
 
 -- 4. Another collector cannot read it

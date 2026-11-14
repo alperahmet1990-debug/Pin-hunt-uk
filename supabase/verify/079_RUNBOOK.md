@@ -14,6 +14,8 @@ The photo-to-catalogue flow (scan → "Add your photo" → Pixian clean-up → a
 - Storage bucket `pin-contributed-raw`: **private**. The one storage policy, `pcr_storage_admin_select`, lets admins read. There is no policy for the uploader, other collectors or anon. The API server writes with the service-role key.
 - `list_account_storage_objects(uuid)` (from 051): same body, with `pin-contributed-raw` added, so deleting an account removes that user's raw photos.
 
+**Retention (maintainer decision, 14 Nov 2026):** a raw original is deleted, and its `raw_storage_path` cleared, as soon as its contribution is approved or rejected, so the bucket only holds photos still waiting for review. A preview that is never submitted keeps its raw draft until that user's next preview or account deletion. The consent step tells collectors this.
+
 Before 079 is applied, the new API code still works. The raw upload fails quietly (logged as a warning), the contribution goes through without a raw original, and the admin page shows "Not kept" in the Raw panel.
 
 ## Pre-checks done (local PGlite replay, no hosted database)

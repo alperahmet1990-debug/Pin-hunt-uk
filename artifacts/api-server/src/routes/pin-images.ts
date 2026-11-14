@@ -2,15 +2,22 @@
  * Contributed pin image moderation (admin only).
  *
  * GET  /admin/pending-pin-images              List images awaiting review,
- *      each with the pin's Pin & Pop reference (admin-only, migration 042).
- * POST /admin/pin-images/:id/approve          Promote into the public
- *      pin-catalogue bucket and set it as the pin's display image.
+ *      each with a signed URL for the cleaned photo, one for the raw photo
+ *      as taken (admin-only bucket, migration 079) and the pin's Pin & Pop
+ *      reference (admin-only, migration 042).
+ * POST /admin/pin-images/:id/approve          Promote the cleaned photo into
+ *      the public pin-catalogue bucket and set it as the pin's display image.
+ *      409 { code: 'has_image' } when a "missing photo" contribution's pin
+ *      has gained a photo since; send { replaceExisting: true } to confirm.
  * POST /admin/pin-images/:id/reject           Mark rejected, no storage change.
  *
  * Same Bearer JWT -> profiles.is_admin convention used by admin.ts et al.
  * Write operations use SUPABASE_SERVICE_ROLE_KEY because RLS blocks
  * anonymous writes and cross-bucket storage moves need the Storage API
  * with a service-role key (SQL cannot manipulate storage.objects).
+ *
+ * Pin & Pop images are only ever returned here, for an admin to look at.
+ * They are never sent to OpenAI or any other AI service.
  */
 import { Router, type IRouter, type Request, type Response } from "express";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
@@ -18,7 +25,7 @@ import {
   createSupabasePinRepository,
   createSupabaseUserRepository,
 } from "@workspace/pin-repository";
-import { publishContributedImage } from "../services/contributed-images";
+import { publishContributedImage, PublishBlockedError } from "../services/contributed-images";
 
 const router: IRouter = Router();
 
@@ -98,6 +105,10 @@ router.get("/admin/pending-pin-images", requireAdmin, async (_req: Request, res:
           return {
             ...img,
             signedUrl: await userRepo.getContributedImageUrl(img.storagePath),
+            // Older rows (and a server without migration 079) have none.
+            rawSignedUrl: img.rawStoragePath
+              ? await userRepo.getContributedRawImageUrl(img.rawStoragePath).catch(() => null)
+              : null,
             pinAndPop: pinAndPop[img.pinId] ?? null,
           };
         } catch (err) {
@@ -118,7 +129,12 @@ router.get("/admin/pending-pin-images", requireAdmin, async (_req: Request, res:
  * POST /admin/pin-images/:id/approve
  *
  * Publishes the pending photo into the live catalogue — see
- * services/contributed-images.ts (also used when an admin contributes).
+ * services/contributed-images.ts (also used for an admin's "publish now").
+ *
+ * Body: { replaceExisting?: boolean }. Replacement proposals (reason
+ * wrong_pin / poor_quality / other) replace the current photo, which the
+ * reviewer sees on the card. A "missing photo" contribution for a pin that
+ * has gained a photo since needs replaceExisting: true, else 409.
  *
  * curl -X POST -H "Authorization: Bearer <token>" \
  *   https://<domain>/api/admin/pin-images/<id>/approve
@@ -139,13 +155,20 @@ router.post("/admin/pin-images/:id/approve", requireAdmin, async (req: AdminRequ
       return;
     }
 
+    const { replaceExisting } = (req.body ?? {}) as { replaceExisting?: unknown };
+    const isReplacementProposal = !!image.proposalReason && image.proposalReason !== "missing";
     const published = await publishContributedImage(image, req.adminId!, {
       serviceClient: getAdminAuthClient(),
       userRepo,
       pinRepo: getWritePinRepository(),
-    });
+    }, { replaceExisting: replaceExisting === true || isReplacementProposal });
     res.json({ image: published });
   } catch (err) {
+    if (err instanceof PublishBlockedError) {
+      res.status(err.code === "has_image" ? 409 : 400)
+        .json({ error: err.message, code: err.code, existingImageUrl: err.existingImageUrl ?? null });
+      return;
+    }
     const msg = err instanceof Error ? err.message : String(err);
     res.status(500).json({ error: msg });
   }

@@ -43,6 +43,7 @@ import { useAiPhotoConsent } from '@/hooks/useAiPhotoConsent';
 import { ErrorState } from '@/components/ui/ErrorState';
 import { toUserError, type UserError } from '@/utils/userError';
 import { tabScreenBottomPad } from '@/utils/tabBarSpace';
+import { setScanPhotoForContribution } from '@/utils/scanPhotoHandoff';
 
 /** Live camera on the Find tab (UX-009, #117); web keeps the photo picker. */
 const LIVE_CAMERA = Platform.OS !== 'web';
@@ -404,12 +405,24 @@ export default function ScanScreen() {
     setQuickAddPin(pin);
   };
 
-  // A pin without a catalogue photo opens Pin detail like any other: a scan
-  // never routes collectors into the photo-contribution flow.
+  // Tapping the match always opens Pin detail, photo or not.
   const handleOpenPin = (pin: CataloguePin) => {
     markViewed(pin.id);
     keepResultOnLeave.current = true;
     router.push({ pathname: '/pin/[id]', params: { id: pin.id } });
+  };
+
+  // A matched pin with no catalogue photo offers "Add your photo", straight
+  // into the contribution flow with this scan's photo as the starting image
+  // (they can still take a new one there). This reverses the earlier "a scan
+  // never routes into contribution" decision. Choosing it confirms the match.
+  const handleAddPhoto = (pin: CataloguePin) => {
+    if (!captured?.base64) return;
+    sendOutcome(pin.id);
+    markViewed(pin.id);
+    keepResultOnLeave.current = true;
+    setScanPhotoForContribution({ pinId: pin.id, uri: captured.uri, base64: captured.base64, mimeType: captured.mimeType });
+    router.push({ pathname: '/contribute-image/[pinId]', params: { pinId: pin.id, from: 'scan' } });
   };
 
   const handleReset = () => {
@@ -662,6 +675,7 @@ export default function ScanScreen() {
                 showDetails={access.isAdmin || access.isAppCreator}
                 onConfirm={handleConfirm}
                 onOpenPin={handleOpenPin}
+                onAddPhoto={handleAddPhoto}
                 onNoneOfThese={openRecovery}
                 recoveryOpen={showRecovery}
               />

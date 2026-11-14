@@ -2,6 +2,7 @@ import React from 'react';
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import ScanScreen from '../app/(tabs)/scan';
 import { saveAiPhotoConsent } from '../utils/aiPhotoConsent';
+import { getScanPhotoForContribution } from '../utils/scanPhotoHandoff';
 
 // UX-005 (#112): from photo to "That's it" without leaving the scan screen.
 // The first test pays the scan screen's cold start, which can pass 5 s on a
@@ -139,11 +140,32 @@ describe('Scan result (UX-005)', () => {
     expect(mockIdentify).toHaveBeenCalledWith('small', 'image/jpeg', undefined);
   });
 
-  it('opening a pin without a catalogue photo goes to Pin detail, never photo contribution', async () => {
+  it('tapping a match with no catalogue photo still opens Pin detail', async () => {
     await scanToResult();
     await fireEvent.press(screen.getByRole('button', { name: 'Dumbo Blue Sky. Open pin details' }));
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/pin/[id]', params: { id: 'p2' } });
     expect(mockPush).not.toHaveBeenCalledWith(expect.objectContaining({ pathname: '/contribute-image/[pinId]' }));
+  });
+
+  // Reverses the earlier "a scan never routes into contribution" decision.
+  it('"Add your photo" on a match with no catalogue photo goes straight to the photo step with the scan photo', async () => {
+    await scanToResult();
+    await fireEvent.press(screen.getByRole('button', { name: 'Add your photo' }));
+    expect(mockPush).toHaveBeenCalledWith({ pathname: '/contribute-image/[pinId]', params: { pinId: 'p2', from: 'scan' } });
+    expect(getScanPhotoForContribution('p2')).toMatchObject({ pinId: 'p2', base64: 'small', mimeType: 'image/jpeg' });
+    // Choosing it confirms the match for the scan's accuracy record.
+    expect(mockRecordOutcome).toHaveBeenCalledWith('scan-1', 'p2', undefined);
+  });
+
+  it('does not offer "Add your photo" when the match already has a catalogue photo', async () => {
+    mockIdentify.mockResolvedValue({
+      matches: [{ pinId: 'p1', confidence: 90, reasoning: 'Castle' }],
+      imageInsights: null,
+      scanId: 'scan-2',
+    });
+    await scanToResult();
+    expect(screen.getByText('Castle Fireworks')).toBeTruthy();
+    expect(screen.queryByRole('button', { name: 'Add your photo' })).toBeNull();
   });
 
   it('"None of these" keeps the photo and shows the recovery options', async () => {

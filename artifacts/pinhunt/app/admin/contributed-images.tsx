@@ -1,13 +1,18 @@
 /**
- * Admin Contributed Pin Images — review photos collectors submitted from
- * the scan flow (scan.tsx → /contribute-image/[pinId]) to become a
- * catalogue pin's public display image. Approving promotes the image into
- * the public pin-catalogue bucket and sets pins.image_url; rejecting just
- * marks the row — the pending object is left in private storage for audit.
+ * Admin Contributed Pin Images — review photos contributed through
+ * /contribute-image/[pinId] (from the scan result's "Add your photo", the pin
+ * page, the catalogue contributor screen, or a pin-submission proposal) to
+ * become a catalogue pin's public display image. Admins' own photos land here
+ * too unless they chose "Publish now". Approving publishes the cleaned photo
+ * (watermarked) to the public pin-catalogue bucket and sets pins.image_url;
+ * rejecting just marks the row — the private objects are kept for audit.
  *
- * Each card compares up to three images: the pin's current catalogue photo,
- * the submitted photo, and the Pin & Pop image (migration 042). The Pin & Pop
- * image is an admin-only reference — it must never be shown to collectors.
+ * Each card compares three images: the photo as taken (raw, admin-only
+ * bucket, migration 079; missing on older rows), the Pixian-cleaned photo
+ * that will be published, and the Pin & Pop image (migration 042). The pin's
+ * current catalogue photo, if any, is shown under them. The raw photo and
+ * the Pin & Pop image are admin-only — never shown to collectors, and the
+ * Pin & Pop image is never sent to any AI service.
  */
 import React, { useCallback, useEffect, useState } from 'react';
 import {
@@ -40,7 +45,12 @@ import type {
 } from '@workspace/pin-repository';
 import { formatDate } from '@/utils/format';
 
-type PendingImage = ContributedPinImage & { signedUrl: string; pinAndPop: PinAndPopReference | null };
+type PendingImage = ContributedPinImage & {
+  signedUrl: string;
+  /** The photo as taken; null on rows from before migration 079. */
+  rawSignedUrl?: string | null;
+  pinAndPop: PinAndPopReference | null;
+};
 
 const REASON_LABEL: Record<ContributedImageReason, string> = {
   missing: 'No photo',
@@ -61,6 +71,8 @@ export default function AdminContributedImagesScreen() {
   const [busyId, setBusyId] = useState<string | null>(null);
   const [notesById, setNotesById] = useState<Record<string, string>>({});
   const [enlarged, setEnlarged] = useState<{ uri: string; label: string } | null>(null);
+  // The pin gained another photo since this was submitted: ask before replacing.
+  const [replaceAsk, setReplaceAsk] = useState<Record<string, string>>({});
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 
@@ -85,7 +97,7 @@ export default function AdminContributedImagesScreen() {
 
   useEffect(() => { load(); }, [load]);
 
-  const review = useCallback(async (imageId: string, action: 'approve' | 'reject') => {
+  const review = useCallback(async (imageId: string, action: 'approve' | 'reject', replaceExisting = false) => {
     if (!session?.access_token) return;
     setBusyId(imageId);
     try {
@@ -95,9 +107,13 @@ export default function AdminContributedImagesScreen() {
           Authorization: `Bearer ${session.access_token}`,
           'Content-Type': 'application/json',
         },
-        body: action === 'reject' ? JSON.stringify({ reviewerNotes: notesById[imageId] }) : undefined,
+        body: JSON.stringify(action === 'reject' ? { reviewerNotes: notesById[imageId] } : { replaceExisting }),
       });
       const data = await res.json();
+      if (res.status === 409 && data.code === 'has_image') {
+        setReplaceAsk(prev => ({ ...prev, [imageId]: data.existingImageUrl ?? '' }));
+        return;
+      }
       if (!res.ok) throw new Error(data.error ?? `Could not ${action} image.`);
       setImages(prev => prev.filter(img => img.id !== imageId));
     } catch (e) {
@@ -164,14 +180,15 @@ export default function AdminContributedImagesScreen() {
 
                 <View style={styles.compareRow}>
                   <ComparePanel
-                    label="Current"
-                    caption={img.pinImageUrl ? 'Replaced on approve' : 'No photo yet'}
-                    uri={img.pinImageUrl}
+                    label="Raw"
+                    caption="As taken · admin only"
+                    uri={img.rawSignedUrl ?? undefined}
+                    emptyText="Not kept"
                     onPress={setEnlarged}
                   />
                   <ComparePanel
-                    label="Submitted"
-                    caption="Contributor"
+                    label="Cleaned"
+                    caption="Published on approve"
                     uri={img.signedUrl}
                     highlight
                     onPress={setEnlarged}
@@ -186,6 +203,24 @@ export default function AdminContributedImagesScreen() {
                   />
                 </View>
 
+                {(img.pinImageUrl || replaceAsk[img.id]) && (
+                  <TouchableOpacity
+                    style={[styles.currentRow, { borderColor: colors.homeLine }]}
+                    onPress={() => setEnlarged({ uri: replaceAsk[img.id] || img.pinImageUrl!, label: 'Current catalogue photo' })}
+                    activeOpacity={0.85}
+                    accessibilityLabel="Current catalogue photo"
+                  >
+                    <Image
+                      source={{ uri: replaceAsk[img.id] || img.pinImageUrl }}
+                      style={[styles.currentImg, { backgroundColor: colors.homeAqua }]}
+                      resizeMode="contain"
+                    />
+                    <Text style={[styles.cardMeta, { color: colors.homeMuted, flex: 1 }]}>
+                      Current catalogue photo · replaced on approve
+                    </Text>
+                  </TouchableOpacity>
+                )}
+
                 <Text style={[styles.cardMeta, { color: colors.homeMuted }]}>
                   Consented {formatDate(img.contributorConsentAt, 'medium')}
                 </Text>
@@ -197,6 +232,23 @@ export default function AdminContributedImagesScreen() {
                   value={notesById[img.id] ?? ''}
                   onChangeText={text => setNotesById(prev => ({ ...prev, [img.id]: text }))}
                 />
+
+                {replaceAsk[img.id] !== undefined && (
+                  <View testID="replace-confirm" style={{ gap: 6 }}>
+                    <Text style={[styles.cardMeta, { color: colors.destructive }]}>
+                      This pin has gained a catalogue photo since this was submitted. Approving will replace it.
+                    </Text>
+                    <TouchableOpacity
+                      style={[styles.actionBtn, { borderColor: colors.destructive }]}
+                      onPress={() => review(img.id, 'approve', true)}
+                      disabled={busyId === img.id}
+                      activeOpacity={0.85}
+                      accessibilityRole="button"
+                    >
+                      <Text style={[styles.actionLabel, { color: colors.destructive }]}>Replace and approve</Text>
+                    </TouchableOpacity>
+                  </View>
+                )}
 
                 <View style={styles.actionRow}>
                   <TouchableOpacity
@@ -275,7 +327,7 @@ function ComparePanel({
         activeOpacity={0.85}
       >
         {uri ? (
-          <Image source={{ uri }} style={styles.panelImg} resizeMode="contain" />
+          <Image source={{ uri }} style={styles.panelImg} resizeMode="contain" accessibilityLabel={`${label} photo`} />
         ) : (
           <View style={styles.panelEmpty}>
             <Feather name={onEmptyPress ? 'external-link' : 'image'} size={16} color={colors.homeMuted} />
@@ -314,6 +366,8 @@ const styles = StyleSheet.create({
   cardMeta:    { fontSize: 11, fontFamily: 'Inter_400Regular' },
   notesInput:  { borderWidth: 1, borderRadius: 8, paddingHorizontal: 10, paddingVertical: 8, fontSize: 13, fontFamily: 'Inter_400Regular' },
   actionRow:   { flexDirection: 'row', gap: 10 },
+  currentRow:  { flexDirection: 'row', alignItems: 'center', gap: 10, borderWidth: 1, borderRadius: radius.sm, padding: 6 },
+  currentImg:  { width: 44, height: 44, borderRadius: 6 },
   actionBtn:   { flex: 1, borderWidth: 1, borderRadius: 10, paddingVertical: 10, alignItems: 'center' },
   approveBtn:  { borderWidth: 0 },
   actionLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },

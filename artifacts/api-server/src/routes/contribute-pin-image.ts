@@ -1,7 +1,8 @@
 /**
- * Contribute a pin photo (user-facing, not admin) — the submit side of the
- * scan → "we don't have a photo of this pin yet" flow (scan.tsx →
- * /contribute-image/[pinId]).
+ * Contribute a pin photo (user-facing, not admin) — the submit side of
+ * /contribute-image/[pinId], reached from the scan result's "Add your photo"
+ * (a matched pin with no catalogue photo), the pin page, and the catalogue
+ * contributor screen.
  *
  * POST /pin-images/contribute/preview   Step 1: process + show the result.
  * POST /pin-images/contribute           Step 2: confirm it.
@@ -16,11 +17,19 @@
  * reaches the client, which is why this happens server-side rather than
  * directly from the app to Supabase Storage.
  *
+ * The photo as taken (before Pixian) is also kept, in the private
+ * pin-contributed-raw bucket (migration 079), which only admins can read, so
+ * the reviewer can compare raw | cleaned | Pin & Pop. It is best-effort:
+ * without the bucket (079 not applied yet) the contribution still goes
+ * through, just without a raw original.
+ *
  * Auth: requireUser (any signed-in collector, same Bearer-token pattern
  * as scan.ts) — NOT requireAdmin. Any user may contribute a photo; only
  * admins (routes/pin-images.ts) can approve one into the live catalogue.
- * Photos from admins and the App Creator (every App Creator is also an
- * admin, migration 040) skip the queue and are published immediately.
+ * Admins' and the App Creator's own photos (every App Creator is also an
+ * admin, migration 040) go to the same review queue by default, so they get
+ * the same side-by-side check. An admin can send { publishNow: true } to
+ * publish straight away instead; it is ignored for everyone else.
  */
 import { Router, type IRouter, type Request, type Response, type NextFunction } from "express";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
@@ -81,6 +90,9 @@ function getServiceUserRepository() {
   return createSupabaseUserRepository(url, key);
 }
 
+/** Photos as taken, before Pixian. Admin-read only (migration 079). */
+const RAW_BUCKET = "pin-contributed-raw";
+
 const MAX_IMAGE_BASE64_CHARS = 8_000_000; // ~6MB image, same cap as /scan/identify
 
 const PROPOSAL_REASONS = ["missing", "wrong_pin", "poor_quality", "other"] as const;
@@ -95,10 +107,27 @@ type ProposalReason = (typeof PROPOSAL_REASONS)[number];
 const draftPrefix = (userId: string, pinId: string) => `${userId}/drafts/${pinId}__`;
 
 async function clearDrafts(userId: string, keep?: string) {
-  const bucket = getStorageClient().storage.from("pin-contributed-images");
-  const { data } = await bucket.list(`${userId}/drafts`);
-  const stale = (data ?? []).map((f) => `${userId}/drafts/${f.name}`).filter((p) => p !== keep);
-  if (stale.length) await bucket.remove(stale);
+  // The raw draft has the same path as the cleaned one, in RAW_BUCKET.
+  for (const name of ["pin-contributed-images", RAW_BUCKET]) {
+    const bucket = getStorageClient().storage.from(name);
+    const { data } = await bucket.list(`${userId}/drafts`);
+    const stale = (data ?? []).map((f) => `${userId}/drafts/${f.name}`).filter((p) => p !== keep);
+    if (stale.length) await bucket.remove(stale);
+  }
+}
+
+/** Keep the photo as taken. Best-effort: logs and returns false on failure. */
+async function storeRaw(path: string, imageBase64: string, mimeType: string): Promise<boolean> {
+  try {
+    const { error } = await getStorageClient().storage
+      .from(RAW_BUCKET)
+      .upload(path, Buffer.from(imageBase64, "base64"), { contentType: mimeType, upsert: true });
+    if (error) throw new Error(error.message);
+    return true;
+  } catch (err) {
+    console.warn("[contribute-pin-image] raw original not kept:", err instanceof Error ? err.message : err);
+    return false;
+  }
 }
 
 /** The cleaned draft for this exact photo, if the user previewed it already. */
@@ -116,6 +145,8 @@ interface ContributionBody {
   proposalReason?: string;
   /** From /preview — confirms that already-processed photo. */
   draftPath?: string;
+  /** Admins only: publish now instead of queueing for review. Ignored otherwise. */
+  publishNow?: boolean;
 }
 
 /** Shared checks for both steps. Sends the error response and returns false on failure. */
@@ -182,31 +213,48 @@ async function normalize(res: Response, userId: string, imageBase64: string, mim
 }
 
 /**
- * Record the contribution for an object already in the private bucket, then
- * publish it straight away when the contributor is trusted.
+ * Record the contribution for an object already in the private bucket. It
+ * waits for review, unless an admin explicitly asked to publish now.
  */
-async function recordContribution(res: Response, userId: string, body: ContributionBody, storagePath: string) {
+async function recordContribution(
+  res: Response,
+  userId: string,
+  body: ContributionBody,
+  storagePath: string,
+  rawStoragePath: string | undefined,
+) {
   const userRepo = getServiceUserRepository();
+  const proposalReason = body.proposalReason as ProposalReason | undefined;
   const image = await userRepo.createContributedImage(userId, body.pinId!, {
     storagePath,
+    rawStoragePath,
     consentGranted: true,
-    proposalReason: body.proposalReason as ProposalReason | undefined,
+    proposalReason,
   });
 
-  // Trusted accounts publish straight to the catalogue, self-reviewed.
-  const { data: profile } = await getStorageClient()
-    .from("profiles").select("is_admin").eq("id", userId).single();
-  if (profile?.is_admin) {
+  // Review is the default for everyone. Only an admin's explicit
+  // "publish now" skips it; the profile check is server-side.
+  let isAdmin = false;
+  if (body.publishNow === true) {
+    const { data: profile } = await getStorageClient()
+      .from("profiles").select("is_admin").eq("id", userId).single();
+    isAdmin = !!profile?.is_admin;
+  }
+  if (isAdmin) {
     try {
       const published = await publishContributedImage(image, userId, {
         serviceClient: getStorageClient(),
         userRepo,
         pinRepo: createSupabasePinRepository(process.env.SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!),
+      }, {
+        // An admin proposing a replacement has seen the current photo.
+        replaceExisting: !!proposalReason && proposalReason !== "missing",
       });
       res.json({ image: published, autoApproved: true });
       return;
     } catch (err) {
-      // The pending row is already saved, so it falls back to the review queue.
+      // The pending row is already saved, so it falls back to the review queue
+      // (including a pin that gained a photo since: the reviewer decides).
       console.error(
         `[contribute-pin-image] auto-publish failed, left pending (pin ${body.pinId}, image ${image.id}):`,
         err,
@@ -244,6 +292,8 @@ router.post("/pin-images/contribute/preview", requireUser, async (req: UserReque
         res.status(500).json({ error: `Could not store your photo: ${uploadError.message}` });
         return;
       }
+      // The photo as taken, same path, admin-only bucket.
+      await storeRaw(draftPath, body.imageBase64!, body.mimeType ?? "image/jpeg");
     }
     await clearDrafts(userId, draftPath);
 
@@ -259,8 +309,8 @@ router.post("/pin-images/contribute/preview", requireUser, async (req: UserReque
  * POST /pin-images/contribute
  *
  * Step 2: confirm a previewed photo ({ draftPath } from /preview) — moves
- * the draft into place and queues it for review, or publishes it directly
- * for admins / the App Creator.
+ * the draft (and its raw original) into place and queues it for review.
+ * An admin's { publishNow: true } publishes it directly instead.
  *
  * Still accepts { imageBase64 } without a preview, for app builds that
  * predate the preview step.
@@ -273,6 +323,7 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
 
     const storagePath = `${userId}/${body.pinId}/${Date.now()}.jpg`;
     const bucket = getStorageClient().storage.from("pin-contributed-images");
+    let rawStoragePath: string | undefined;
 
     if (body.draftPath) {
       // Only the caller's own draft for this pin can be confirmed.
@@ -286,6 +337,13 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
         res.status(410).json({ error: "This preview has expired — please take the photo again." });
         return;
       }
+      const { error: rawMoveError } = await getStorageClient().storage
+        .from(RAW_BUCKET).move(body.draftPath, storagePath);
+      if (rawMoveError) {
+        console.warn("[contribute-pin-image] raw original not kept:", rawMoveError.message);
+      } else {
+        rawStoragePath = storagePath;
+      }
     } else {
       const processed = await normalize(res, userId, body.imageBase64!, body.mimeType ?? "image/jpeg");
       if (!processed) return;
@@ -295,9 +353,12 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
         res.status(500).json({ error: `Could not store your photo: ${uploadError.message}` });
         return;
       }
+      if (await storeRaw(storagePath, body.imageBase64!, body.mimeType ?? "image/jpeg")) {
+        rawStoragePath = storagePath;
+      }
     }
 
-    await recordContribution(res, userId, body, storagePath);
+    await recordContribution(res, userId, body, storagePath, rawStoragePath);
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     res.status(500).json({ error: msg });

@@ -111,4 +111,21 @@ describe('ScanResult', () => {
     expect(screen.getByText('What the scan saw')).toBeTruthy();
     expect(screen.getByText('“DLP 2024”')).toBeTruthy();
   });
+
+  it('offers "Add your photo" only when the shown match has no catalogue photo', async () => {
+    const onAddPhoto = jest.fn();
+    await setup({ onAddPhoto }).view;
+    // Best match p1 has a photo.
+    expect(screen.queryByTestId('scan-add-photo')).toBeNull();
+    // Compare p2 (no photo) instead.
+    await fireEvent.press(screen.getByRole('button', { name: 'Not it' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Compare Dumbo Blue Sky' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Add your photo' }));
+    expect(onAddPhoto).toHaveBeenCalledWith(expect.objectContaining({ id: 'p2' }));
+  });
+
+  it('shows no "Add your photo" when the screen does not handle it', async () => {
+    await setup({ candidates: [three[1]] }).view;
+    expect(screen.queryByTestId('scan-add-photo')).toBeNull();
+  });
 });

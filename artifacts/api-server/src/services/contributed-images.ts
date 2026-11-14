@@ -1,14 +1,27 @@
 /**
- * Publishing a contributed pin photo into the live catalogue — shared by
- * admin approval (routes/pin-images.ts) and by admin/App Creator
- * contributions, which skip the review queue (routes/contribute-pin-image.ts).
+ * Publishing a contributed pin photo into the live catalogue — used by admin
+ * approval (routes/pin-images.ts) and by an admin's explicit "publish now"
+ * on their own contribution (routes/contribute-pin-image.ts). Every other
+ * contribution, admins' included by default, waits in the review queue.
  *
- * Copies the object from the private pin-contributed-images bucket into the
- * public pin-catalogue bucket with the PinHunt watermark burned in
- * (services/watermark.ts), writes pins.image_url, and marks the
- * pin_images row approved. Known v1 gap: no cross-step transaction — a
- * failure between the storage copy and the DB writes can leave an orphaned
- * public-bucket object (low-volume admin action, acceptable for now).
+ * Copies the Pixian-cleaned object from the private pin-contributed-images
+ * bucket into the public pin-catalogue bucket with the PinHunt watermark
+ * burned in (services/watermark.ts), writes pins.image_url, and marks the
+ * pin_images row approved. The raw original (pin-contributed-raw, migration
+ * 079) is never published.
+ *
+ * Replace rule (same as services/bulkImages/publish.ts): a pin whose current
+ * photo came from somewhere else is only replaced when the caller says so
+ * (replaceExisting). The admin route says so for replacement proposals,
+ * where the reviewer saw the photo being replaced; a "missing photo"
+ * contribution for a pin that has since gained a photo stops with
+ * PublishBlockedError('has_image') until the admin confirms.
+ *
+ * Safe to re-run after a partial failure: the public object path is fixed
+ * per contribution (upsert), a pin already showing this contribution's photo
+ * is not treated as "has another photo", and an already-approved row is not
+ * reviewed again. No cross-step transaction otherwise: a failure between the
+ * storage copy and the DB writes can leave an orphaned public object.
  *
  * Needs a service-role client: cross-bucket storage moves can't be done in
  * SQL, and RLS blocks these writes otherwise.
@@ -19,15 +32,44 @@ import type {
   PinRepository,
   IUserPinRepository,
 } from "@workspace/pin-repository";
+import { PublishBlockedError } from "./bulkImages/publish";
 import { watermarkPinPhoto } from "./watermark";
+
+export { PublishBlockedError };
+
+/** Public pin-catalogue path for a contribution. Fixed, so a retry overwrites. */
+export function contributedPublicPath(image: Pick<ContributedPinImage, "id" | "pinId">): string {
+  return `${image.pinId}/contributed-${image.id}.jpg`;
+}
+
+export interface PublishContributedOptions {
+  /** Replace a catalogue photo that came from somewhere else. */
+  replaceExisting?: boolean;
+}
 
 export async function publishContributedImage(
   image: ContributedPinImage,
   reviewerId: string,
   deps: { serviceClient: SupabaseClient; userRepo: IUserPinRepository; pinRepo: PinRepository },
-): Promise<ContributedPinImage & { publicUrl: string }> {
+  opts: PublishContributedOptions = {},
+): Promise<ContributedPinImage & { publicUrl: string; replacedImageUrl: string | null }> {
   if (!image.pinhuntId) {
     throw new Error("Contributed image is missing its linked pin.");
+  }
+
+  const publicPath = contributedPublicPath(image);
+  const current = await deps.pinRepo.getPinByPinhuntId(image.pinhuntId);
+  if (!current) {
+    throw new PublishBlockedError(`Pin ${image.pinhuntId} no longer exists.`, "not_ready");
+  }
+  const currentUrl = current.imageUrl || null;
+  const currentIsOurs = !!currentUrl && currentUrl.includes(`/pin-catalogue/${publicPath}`);
+  if (currentUrl && !currentIsOurs && !opts.replaceExisting) {
+    throw new PublishBlockedError(
+      "This pin already has a catalogue photo. Confirm the replacement to publish.",
+      "has_image",
+      currentUrl,
+    );
   }
 
   const storage = deps.serviceClient.storage;
@@ -41,7 +83,6 @@ export async function publishContributedImage(
   // Only the public copy is watermarked — the private original stays clean.
   const watermarked = await watermarkPinPhoto(Buffer.from(await blob.arrayBuffer()));
 
-  const publicPath = `${image.pinId}/contributed-${image.id}.jpg`;
   const { error: uploadError } = await storage
     .from("pin-catalogue")
     .upload(publicPath, watermarked, { contentType: "image/jpeg", upsert: true });
@@ -56,6 +97,12 @@ export async function publishContributedImage(
     needsFrontImage: false,
   });
 
-  const reviewed = await deps.userRepo.markContributedImageReviewed(image.id, reviewerId, { action: "approve" });
-  return { ...reviewed, publicUrl: publicUrlData.publicUrl };
+  const reviewed = image.status === "approved"
+    ? image
+    : await deps.userRepo.markContributedImageReviewed(image.id, reviewerId, { action: "approve" });
+  return {
+    ...reviewed,
+    publicUrl: publicUrlData.publicUrl,
+    replacedImageUrl: currentUrl && !currentIsOurs ? currentUrl : null,
+  };
 }

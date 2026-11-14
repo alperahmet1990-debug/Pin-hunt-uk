@@ -278,6 +278,7 @@ function rowToContributedImage(row: Record<string, unknown>): ContributedPinImag
     pinImageUrl: pin?.image_url ?? undefined,
     uploadedBy: row.uploaded_by as string,
     storagePath: row.image_url as string,
+    rawStoragePath: (row.raw_storage_path as string | null) ?? undefined,
     status: row.status as ContributedImageStatus,
     contributorConsentAt: row.contributor_consent_at as string,
     proposalReason: (row.proposal_reason as ContributedImageReason | null) ?? undefined,
@@ -1497,6 +1498,8 @@ class SupabaseUserPinRepository implements IUserPinRepository {
         // Only sent when set, so the 038-era scan flow keeps working on a
         // database without migration 039's proposal_reason column.
         ...(input.proposalReason ? { proposal_reason: input.proposalReason } : {}),
+        // Only sent when a raw original was kept, which needs migration 079.
+        ...(input.rawStoragePath ? { raw_storage_path: input.rawStoragePath } : {}),
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } as any)
       // Same pin join as the other contributed-image reads: publishing needs pinhuntId.
@@ -1611,6 +1614,14 @@ class SupabaseUserPinRepository implements IUserPinRepository {
       .from('pin-contributed-images')
       .createSignedUrl(storagePath, 3600);
     if (error || !data?.signedUrl) throw new Error(`Could not generate image URL: ${error?.message ?? 'unknown'}`);
+    return data.signedUrl;
+  }
+
+  async getContributedRawImageUrl(rawStoragePath: string): Promise<string> {
+    const { data, error } = await this.client.storage
+      .from('pin-contributed-raw')
+      .createSignedUrl(rawStoragePath, 3600);
+    if (error || !data?.signedUrl) throw new Error(`Could not generate raw image URL: ${error?.message ?? 'unknown'}`);
     return data.signedUrl;
   }
 

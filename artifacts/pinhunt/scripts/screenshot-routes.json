@@ -74,6 +74,21 @@
     "scroll": "end"
   },
   {
+    "name": "scan-result-add-photo",
+    "path": "/scan",
+    "upload": "Choose Photo",
+    "identify": {
+      "matches": [
+        {
+          "pinId": "dp-003",
+          "confidence": 81,
+          "reasoning": "Castle and fireworks"
+        }
+      ]
+    },
+    "click": "Add your photo"
+  },
+  {
     "name": "scan-no-match",
     "path": "/scan",
     "upload": "Choose Photo",

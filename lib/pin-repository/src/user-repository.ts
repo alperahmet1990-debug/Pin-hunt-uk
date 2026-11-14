@@ -404,6 +404,13 @@ export interface IUserPinRepository {
   getContributedImageUrl(storagePath: string): Promise<string>;
 
   /**
+   * Signed URL (1 hour TTL) for a contribution's raw original in the
+   * admin-only `pin-contributed-raw` bucket (migration 079). Needs a
+   * service-role or admin client; admin routes only.
+   */
+  getContributedRawImageUrl(rawStoragePath: string): Promise<string>;
+
+  /**
    * True when the user already has a pending contribution for this pin
    * (pinhunt_id). Used to stop duplicate submissions.
    */

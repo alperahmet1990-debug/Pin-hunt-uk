@@ -8,7 +8,10 @@ const state = vi.hoisted(() => ({
   pins: new Set<string>(["PHUK-00000001"]),
   pending: false,
   capOk: true,
+  /** Cleaned drafts (pin-contributed-images), by path. */
   drafts: new Map<string, Buffer>(),
+  /** Raw originals (pin-contributed-raw, admin-only), by path. */
+  raw: new Map<string, Buffer>(),
   pixianCalls: 0,
   pixianError: null as Error | null,
 }));
@@ -20,19 +23,22 @@ vi.mock("@supabase/supabase-js", () => ({
       select: () => ({ eq: () => ({ single: async () => ({ data: { is_admin: false }, error: null }) }) }),
     }),
     storage: {
-      from: () => ({
+      from: (bucket: string) => {
+        const files = bucket === "pin-contributed-raw" ? state.raw : state.drafts;
+        return {
         list: async (dir: string) => ({
-          data: [...state.drafts.keys()].filter((p) => p.startsWith(`${dir}/`)).map((p) => ({ name: p.slice(dir.length + 1) })),
+          data: [...files.keys()].filter((p) => p.startsWith(`${dir}/`)).map((p) => ({ name: p.slice(dir.length + 1) })),
           error: null,
         }),
-        remove: async (paths: string[]) => { paths.forEach((p) => state.drafts.delete(p)); return { data: [], error: null }; },
+        remove: async (paths: string[]) => { paths.forEach((p) => files.delete(p)); return { data: [], error: null }; },
         download: async (path: string) => {
-          const bytes = state.drafts.get(path);
+          const bytes = files.get(path);
           return bytes ? { data: new Blob([new Uint8Array(bytes)]), error: null } : { data: null, error: { message: "not found" } };
         },
-        upload: async (path: string, buf: Buffer) => { state.drafts.set(path, Buffer.from(buf)); return { data: {}, error: null }; },
+        upload: async (path: string, buf: Buffer) => { files.set(path, Buffer.from(buf)); return { data: {}, error: null }; },
         move: async () => ({ data: {}, error: null }),
-      }),
+        };
+      },
     },
   }),
 }));
@@ -83,6 +89,7 @@ describe("POST /api/pin-images/contribute/preview", () => {
     state.pending = false;
     state.capOk = true;
     state.drafts = new Map();
+    state.raw = new Map();
     state.pixianCalls = 0;
     state.pixianError = null;
   });
@@ -92,6 +99,15 @@ describe("POST /api/pin-images/contribute/preview", () => {
     expect(res.status).toBe(200);
     expect(res.body.draftPath).toMatch(/^user-1\/drafts\/PHUK-00000001__[0-9a-f]{64}\.jpg$/);
     expect(state.pixianCalls).toBe(1);
+  });
+
+  it("keeps the photo as taken in the admin-only raw bucket, and never returns it", async () => {
+    const res = await preview();
+    expect(res.status).toBe(200);
+    expect(state.raw.get(res.body.draftPath)).toEqual(Buffer.from("AAAA", "base64"));
+    expect(state.drafts.get(res.body.draftPath)).toEqual(Buffer.from([9, 9, 9]));
+    expect(Object.keys(res.body).sort()).toEqual(["draftPath", "previewBase64"]);
+    expect(JSON.stringify(res.body)).not.toContain("pin-contributed-raw");
   });
 
   it("refuses an unknown pin without calling Pixian", async () => {
@@ -120,6 +136,7 @@ describe("POST /api/pin-images/contribute/preview", () => {
     await preview({ imageBase64: "BBBB" });
     expect(state.pixianCalls).toBe(2);
     expect(state.drafts.size).toBe(1);
+    expect(state.raw.size).toBe(1);
   });
 
   it("says so when Pixian times out, and stores nothing", async () => {
@@ -127,6 +144,7 @@ describe("POST /api/pin-images/contribute/preview", () => {
     const res = await preview();
     expect(res.status).toBe(504);
     expect(state.drafts.size).toBe(0);
+    expect(state.raw.size).toBe(0);
   });
 
   it("still refuses a second photo while one is waiting for review", async () => {

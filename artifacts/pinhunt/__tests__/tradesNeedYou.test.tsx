@@ -1,5 +1,6 @@
 /**
- * WP1 step 2: "N trades need you" on Home's For You and a badge on Profile's
+ * WP1 step 2: "N trades need you" on Home's needs-you line (For You until the
+ * Home redesign G, Nov 2026) and a badge on Profile's
  * Trades row (trades_waiting_for_me, migration 071). The count refreshes on
  * focus, and nothing shows while the call fails (before 071 is applied).
  */
@@ -71,7 +72,7 @@ describe('useTradesWaiting', () => {
   });
 });
 
-describe('Home For You', () => {
+describe('Home needs-you line', () => {
   it('shows "N trades need you" and opens Trades', async () => {
     const HomeScreen = require('../app/(tabs)/index').default;
     await render(<HomeScreen />);

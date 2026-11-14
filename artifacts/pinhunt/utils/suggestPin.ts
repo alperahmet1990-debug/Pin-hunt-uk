@@ -79,8 +79,10 @@ export const OTHER_PARK = 'Other';
 
 /** Which park chip a stored release location selects: a listed park, "Other", or none. */
 export function parkChoice(releaseLocation: string, otherPicked = false): string | null {
+  // Typing under "Other" stays "Other", even if it spells a listed park.
+  if (otherPicked) return OTHER_PARK;
   const value = releaseLocation.trim();
   const listed = PARKS.find(p => p.toLowerCase() === value.toLowerCase());
   if (listed) return listed;
-  return value || otherPicked ? OTHER_PARK : null;
+  return value ? OTHER_PARK : null;
 }

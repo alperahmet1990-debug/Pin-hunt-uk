@@ -361,7 +361,7 @@ function RightsCheck({ checked, onToggle, colors }: {
  * to the details. The AI never blocks: while it runs the collector can carry
  * on without it, and a failed or empty scan just says so.
  */
-function CatalogueCheck({ status, matches, onOpen, onNew, colors }: {
+export function CatalogueCheck({ status, matches, onOpen, onNew, colors }: {
   status: AiStatus;
   matches: AiMatch[];
   onOpen: (pin: CataloguePin) => void;
@@ -385,7 +385,7 @@ function CatalogueCheck({ status, matches, onOpen, onNew, colors }: {
     </TouchableOpacity>
   );
 
-  if (status === 'running' || status === 'off') {
+  if (status === 'running') {
     return (
       <View testID="catalogue-check" style={styles.checkStep}>
         <Text accessibilityRole="header" style={[styles.stepTitle, { color: colors.homeInk }]}>Checking the catalogue…</Text>
@@ -398,8 +398,10 @@ function CatalogueCheck({ status, matches, onOpen, onNew, colors }: {
     );
   }
 
-  if (status === 'unavailable' || matches.length === 0) {
-    const failed = status === 'unavailable';
+  // 'off': no scan ran for this photo (e.g. it wasn't started), so say so
+  // plainly rather than spin forever.
+  if (status === 'off' || status === 'unavailable' || matches.length === 0) {
+    const failed = status !== 'done';
     return (
       <View testID="catalogue-check" style={styles.checkStep}>
         <Text accessibilityRole="header" style={[styles.stepTitle, { color: colors.homeInk }]}>

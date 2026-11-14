@@ -1,7 +1,7 @@
 import React from 'react';
 import { Alert } from 'react-native';
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
-import AddPinScreen from '../app/add-pin';
+import AddPinScreen, { CatalogueCheck } from '../app/add-pin';
 import { saveAiPhotoConsent } from '../utils/aiPhotoConsent';
 
 // Add a pin (#394; was UX-011, #121; three steps since #612): photo, then an
@@ -218,6 +218,17 @@ describe('Add a pin: AI suggestions (#394)', () => {
     expect(submitted()).not.toHaveProperty('aiIdentification');
   });
 
+  it('a scan that never started says so instead of spinning', async () => {
+    const onNew = jest.fn();
+    const { useColors } = jest.requireActual('../hooks/useColors');
+    function Harness() { return <CatalogueCheck status="off" matches={[]} onOpen={jest.fn()} onNew={onNew} colors={useColors()} />; }
+    await render(<Harness />);
+    expect(screen.queryByText('Checking the catalogue…')).toBeNull();
+    expect(screen.getByRole('header', { name: 'We couldn’t check the catalogue' })).toBeTruthy();
+    await fireEvent.press(screen.getByRole('button', { name: 'Continue to the details' }));
+    expect(onNew).toHaveBeenCalled();
+  });
+
   it('says when the scan finds nothing, and shows no suggestions', async () => {
     await toCheck();
     expect(screen.getByRole('header', { name: 'No match in the catalogue' })).toBeTruthy();
@@ -257,6 +268,20 @@ describe('Add a pin: details (UX-011)', () => {
     await fireEvent.press(screen.getByRole('button', { name: 'Done' }));
     expect(mockReplace).toHaveBeenCalledWith('/(tabs)');
     expect(mockBack).not.toHaveBeenCalled();
+  });
+
+  it('a replaced hand-off photo is checked after all (#612)', async () => {
+    const { compressSubmissionImage } = jest.requireMock('@/utils/submissionImage');
+    compressSubmissionImage.mockResolvedValue({ uri: 'file:///scan.jpg', width: 800, height: 800, base64: 'scan64' });
+    jest.spyOn(require('react-native').Image, 'getSize').mockImplementation((...args: unknown[]) => (args[1] as (w: number, h: number) => void)(800, 800));
+    mockParams = { frontUri: 'file:///scan.jpg' };
+    await render(<AddPinScreen />);
+    await screen.findByLabelText('Your photo');
+    expect(screen.getByRole('button', { name: 'Add details' })).toBeTruthy();
+    // Retake with a different photo: that one hasn't been checked.
+    await fireEvent.press(screen.getByText('Choose from Library', { exact: false }));
+    await waitFor(() => expect(mockIdentify).toHaveBeenCalledWith('front64', 'image/jpeg', 'token'));
+    expect(screen.getByRole('button', { name: 'Check the catalogue' })).toBeTruthy();
   });
 
   it('suggests catalogue sets as you type', async () => {
@@ -340,6 +365,18 @@ describe('Add a pin: park (#612)', () => {
     expect(screen.getByRole('radio', { name: 'Other' }).props.accessibilityState).toMatchObject({ selected: true });
     await submit();
     expect(submitted()).toMatchObject({ releaseLocation: 'Disney Store UK' });
+  });
+
+  it('typing a listed park under "Other" keeps the text field', async () => {
+    await toDetails();
+    await typeName('Lantern');
+    await fireEvent.press(screen.getByRole('radio', { name: 'Other' }));
+    const field = screen.getByPlaceholderText('Where was it released? e.g. Disney Store UK');
+    await fireEvent.changeText(field, 'walt disney world');
+    expect(screen.getByPlaceholderText('Where was it released? e.g. Disney Store UK')).toBeTruthy();
+    expect(screen.getByRole('radio', { name: 'Other' }).props.accessibilityState).toMatchObject({ selected: true });
+    await submit();
+    expect(submitted()).toMatchObject({ releaseLocation: 'walt disney world' });
   });
 
   it('no park picked: none sent', async () => {

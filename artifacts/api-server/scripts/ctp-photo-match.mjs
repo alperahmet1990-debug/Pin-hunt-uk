@@ -226,7 +226,7 @@ export function shareSummary(results) {
   const tierShort = (t) => String(t).split(" (")[0];
   return {
     photos: results.length,
-    model: results.find((r) => r.ai.model)?.model ?? null,
+    model: results.find((r) => r.ai.model)?.ai.model ?? null,
     tokens,
     ai_outcome: by((r) => (r.ai.error ? "error" : r.ai.match ? (r.ai.confidence >= 80 ? "match, confident (>=80)" : "match, less sure") : "no match")),
     ai_agrees_with_name_match: by((r) => `${tierShort(r.estimate.tier)}: ${!r.ai.match ? "AI found none" : r.ai.match === r.estimate.best_pin ? "same pin" : "different pin"}`),

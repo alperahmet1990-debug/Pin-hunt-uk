@@ -17,9 +17,10 @@
 --   pins_public_read      exists (... user_pins ... = auth.uid())
 --                                       -- auth.uid() re-evaluated per row
 -- and with no index on the sort order Postgres reads and sorts every row
--- before returning the first 240. Opening the screen runs several of these
--- at once (a page, the rest of its last set, and the counts), and together
--- they pass the authenticated statement timeout. The earlier timings were
+-- before returning the first 240, so a single page or count query can pass
+-- the authenticated statement timeout on its own. Opening the screen runs
+-- several of them at once (a page, the rest of its last set, and the counts),
+-- which competes for the same CPU and slows each one. The earlier timings were
 -- taken without a collector login, so they never paid the RLS cost.
 --
 -- What:

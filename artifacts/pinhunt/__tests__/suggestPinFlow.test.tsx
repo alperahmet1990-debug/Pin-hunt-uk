@@ -167,11 +167,16 @@ describe('Add a pin: AI suggestions (#394)', () => {
     expect(submitted()).toBeNull();
   });
 
-  it('"No, it’s new" goes on to the details', async () => {
+  it('"No, it’s new" goes on to the details, and the answer goes with the pin (#622)', async () => {
     mockIdentify.mockResolvedValue(scan);
     await toCheck();
     await fireEvent.press(screen.getByRole('button', { name: 'No, it’s new. Add its details' }));
     expect(await screen.findByRole('header', { name: 'About this pin' })).toBeTruthy();
+    await submit();
+    expect(submitted().aiIdentification).toMatchObject({
+      matches: [{ pinId: 'dp-006', confidence: 86 }, { pinId: 'dp-003', confidence: 61 }],
+      contributorAnswer: 'none_of_these',
+    });
   });
 
   it('never blocks on a slow scan: "Continue without checking"', async () => {
@@ -184,7 +189,7 @@ describe('Add a pin: AI suggestions (#394)', () => {
     expect(await screen.findByRole('header', { name: 'About this pin' })).toBeTruthy();
     await typeName('Lantern');
     await submit();
-    expect(submitted()).not.toHaveProperty('aiIdentification');
+    expect(submitted().aiIdentification).toEqual({ contributorAnswer: 'skipped' });
   });
 
   it('fills empty fields with its guesses, marked as suggestions, and sends them as hints', async () => {
@@ -215,7 +220,8 @@ describe('Add a pin: AI suggestions (#394)', () => {
     await fireEvent.press(screen.getByRole('button', { name: 'Continue to the details' }));
     await typeName('Lantern');
     await submit();
-    expect(submitted()).not.toHaveProperty('aiIdentification');
+    // No matches or guesses to send, just the answer (#622).
+    expect(submitted().aiIdentification).toEqual({ contributorAnswer: 'unavailable' });
   });
 
   it('a scan that never started says so instead of spinning', async () => {
@@ -237,6 +243,10 @@ describe('Add a pin: AI suggestions (#394)', () => {
     await screen.findByRole('header', { name: 'About this pin' });
     expect(screen.queryByRole('button', { name: /from your scan/ })).toBeNull();
     expect(screen.queryByTestId('scan-prefill-note')).toBeNull();
+    await typeName('Lantern');
+    await submit();
+    // The empty scan (no matches; the server drops empty lists), plus the answer (#622).
+    expect(submitted().aiIdentification).toMatchObject({ matches: [], contributorAnswer: 'no_match' });
   });
 });
 
@@ -265,6 +275,8 @@ describe('Add a pin: details (UX-011)', () => {
     await typeName('Lantern');
     await submit();
     expect(mockIdentify).not.toHaveBeenCalled();
+    // The scan screen asked, not this one: no answer to send (#622).
+    expect(submitted()).not.toHaveProperty('aiIdentification');
     await fireEvent.press(screen.getByRole('button', { name: 'Done' }));
     expect(mockReplace).toHaveBeenCalledWith('/(tabs)');
     expect(mockBack).not.toHaveBeenCalled();

@@ -701,7 +701,18 @@ export interface SubmissionAiIdentification {
     setName?: string;
     characters?: string[];
   };
+  /**
+   * How the collector answered Add a pin's "Is it one of these?" check (#622):
+   * 'none_of_these' (saw matches, said it's new), 'no_match' (the scan found
+   * nothing), 'unavailable' (the check couldn't run), 'skipped' ("Continue
+   * without checking"). Absent for older apps and for a photo handed over
+   * from the scan screen, which had already asked.
+   */
+  contributorAnswer?: SubmissionCheckAnswer;
 }
+
+export const SUBMISSION_CHECK_ANSWERS = ['none_of_these', 'no_match', 'unavailable', 'skipped'] as const;
+export type SubmissionCheckAnswer = (typeof SUBMISSION_CHECK_ANSWERS)[number];
 
 /** Every pin_submissions field except the images — shared by CreatePinSubmissionInput
  *  (client uploads base64 itself) and the API server's path-based create call

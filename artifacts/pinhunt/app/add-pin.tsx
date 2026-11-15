@@ -64,7 +64,7 @@ import { identifyPin } from '@/utils/identifyPin';
 import { sharedCandidateSet } from '@/utils/scanRecovery';
 import { FullScreenCamera } from '@/components/scan/FullScreenCamera';
 import type { ScanCameraPhoto } from '@/components/scan/ScanCamera';
-import type { CataloguePin } from '@workspace/pin-repository';
+import type { CataloguePin, SubmissionCheckAnswer } from '@workspace/pin-repository';
 import { radius, spacing } from '@/constants/theme';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -365,12 +365,13 @@ export function CatalogueCheck({ status, matches, onOpen, onNew, colors }: {
   status: AiStatus;
   matches: AiMatch[];
   onOpen: (pin: CataloguePin) => void;
-  onNew: () => void;
+  /** Carry on to the details, saying how (#622: sent with the submission). */
+  onNew: (answer: SubmissionCheckAnswer) => void;
   colors: ReturnType<typeof useColors>;
 }) {
-  const action = (label: string, a11y: string, primary = false) => (
+  const action = (label: string, a11y: string, answer: SubmissionCheckAnswer, primary = false) => (
     <TouchableOpacity
-      onPress={onNew}
+      onPress={() => onNew(answer)}
       activeOpacity={0.85}
       accessibilityRole="button"
       accessibilityLabel={a11y}
@@ -393,7 +394,7 @@ export function CatalogueCheck({ status, matches, onOpen, onNew, colors }: {
           <ActivityIndicator color={colors.homeCoral} />
           <Text style={[styles.aiQuiet, { color: colors.homeMuted }]}>Looking for this pin in the catalogue</Text>
         </View>
-        {action('Continue without checking', 'Continue without checking')}
+        {action('Continue without checking', 'Continue without checking', 'skipped')}
       </View>
     );
   }
@@ -412,7 +413,7 @@ export function CatalogueCheck({ status, matches, onOpen, onNew, colors }: {
             ? 'The check isn’t available right now. You can still add the pin, and our team checks every one.'
             : 'We didn’t find this pin, so it may well be new. Add its details next.'}
         </Text>
-        {action('Continue', 'Continue to the details', true)}
+        {action('Continue', 'Continue to the details', failed ? 'unavailable' : 'no_match', true)}
       </View>
     );
   }
@@ -447,7 +448,7 @@ export function CatalogueCheck({ status, matches, onOpen, onNew, colors }: {
           </View>
         ))}
       </View>
-      {action('No, it’s new', 'No, it’s new. Add its details', true)}
+      {action('No, it’s new', 'No, it’s new. Add its details', 'none_of_these', true)}
     </View>
   );
 }
@@ -493,6 +494,8 @@ export default function AddPinScreen() {
   // "Is it one of these?": the AI scan of the front photo.
   const [aiStatus, setAiStatus] = useState<AiStatus>('off');
   const [aiMatches, setAiMatches] = useState<AiMatch[]>([]);
+  // How the collector got past the Check step (#622), for the admin.
+  const [checkAnswer, setCheckAnswer] = useState<SubmissionCheckAnswer | null>(null);
   const aiRun = useRef(0);
   // A photo handed over by the scan screen was already identified there.
   const frontFromHandoff = useRef(false);
@@ -602,6 +605,7 @@ export default function AddPinScreen() {
   // failure (offline, timeout, daily cap) just hides the suggestions.
   useEffect(() => {
     setAiMatches([]);
+    setCheckAnswer(null);
     if (!front || frontFromHandoff.current) { setAiStatus('off'); return; }
     const run = ++aiRun.current;
     setAiStatus('running');
@@ -777,9 +781,12 @@ export default function AddPinScreen() {
           ...(back ? { backImageBase64: back.base64 } : {}),
           notes:            notes.trim() || undefined,
           rightsConfirmed:  true,
-          aiIdentification: aiStatus === 'done' ? {
-            matches: aiMatches.map(m => ({ pinId: m.pin.id, confidence: m.confidence })),
-            suggested: { name: hints.name || undefined, brand: hints.brand || undefined, setName: hints.set || undefined },
+          aiIdentification: aiStatus === 'done' || checkAnswer ? {
+            ...(aiStatus === 'done' ? {
+              matches: aiMatches.map(m => ({ pinId: m.pin.id, confidence: m.confidence })),
+              suggested: { name: hints.name || undefined, brand: hints.brand || undefined, setName: hints.set || undefined },
+            } : {}),
+            ...(checkAnswer ? { contributorAnswer: checkAnswer } : {}),
           } : undefined,
         }),
       });
@@ -833,7 +840,7 @@ export default function AddPinScreen() {
               setSeriesName(''); setReleaseLocation(''); setParkOther(false); setReleaseYear('');
               setEditionType('unknown'); setEditionSize('');
               setFacNumber(''); setSku(''); setNotes('');
-              setRightsConfirmed(false); setAiStatus('off'); setAiMatches([]);
+              setRightsConfirmed(false); setAiStatus('off'); setAiMatches([]); setCheckAnswer(null);
               setHints({ name: '', brand: '', set: '', characters: false });
               setShowMore(false); setStep(0); setDone(false);
             }}
@@ -1117,7 +1124,7 @@ export default function AddPinScreen() {
       status={aiStatus}
       matches={aiMatches}
       onOpen={pin => router.push({ pathname: '/pin/[id]', params: { id: pin.id } })}
-      onNew={() => setStep(DETAILS_STEP)}
+      onNew={answer => { setCheckAnswer(answer); setStep(DETAILS_STEP); }}
       colors={colors}
     />,
     <View key="details" style={{ gap: spacing.lg }}>

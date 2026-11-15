@@ -35,7 +35,7 @@ import { supabase } from '@/lib/supabase';
 import type { DuplicateCandidate, PinSubmission, PinSubmissionStatus } from '@workspace/pin-repository';
 
 import { API_BASE } from '@/lib/apiBase';
-import { submissionDisplayName } from '@/utils/suggestPin';
+import { checkAnswerLabel, submissionDisplayName } from '@/utils/suggestPin';
 import { originalChanges } from '@/utils/submissionProvenance';
 import { formatDate } from '@/utils/format';
 
@@ -411,6 +411,16 @@ export default function AdminReviewScreen() {
                 const parts = [s?.name && `"${s.name}"`, s?.brand, s?.setName, s?.characters?.join(', ')].filter(Boolean);
                 return parts.length ? (
                   <Text style={[styles.contribBody, { color: colors.homeMuted }]}>AI guessed: {parts.join(' · ')}</Text>
+                ) : null;
+              })()}
+              {(() => {
+                // The collector's answer to the app's catalogue check (#622).
+                const answer = checkAnswerLabel(submission.aiIdentification?.contributorAnswer);
+                return answer ? (
+                  <View testID="check-answer" style={styles.contribRow}>
+                    <Feather name="search" size={14} color={colors.homeMuted} />
+                    <Text style={[styles.contribBody, { color: colors.homeMuted }]}>{answer}</Text>
+                  </View>
                 ) : null;
               })()}
             </View>

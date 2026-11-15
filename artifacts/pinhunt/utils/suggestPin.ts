@@ -86,3 +86,18 @@ export function parkChoice(releaseLocation: string, otherPicked = false): string
   if (listed) return listed;
   return value ? OTHER_PARK : null;
 }
+
+/**
+ * The collector's answer to Add a pin's catalogue check, in plain words for
+ * the admin reviewing the submission (#622). Null when there's no answer
+ * (older apps, or a photo from the scan screen, which had already asked).
+ */
+export function checkAnswerLabel(answer: string | undefined | null): string | null {
+  switch (answer) {
+    case 'none_of_these': return 'Collector saw the AI matches and said none was their pin';
+    case 'no_match': return 'The AI found no catalogue match';
+    case 'unavailable': return 'The catalogue check couldn’t run when this was submitted';
+    case 'skipped': return 'Collector skipped the catalogue check';
+    default: return null;
+  }
+}

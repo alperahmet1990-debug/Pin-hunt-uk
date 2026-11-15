@@ -67,6 +67,8 @@ The import also creates the **Pin & Pop reference image records** that the admin
 
 ### C. Production API (Render)
 
+**Done 14–15 Nov 2026:** `pinhunt-api-production`, healthz OK, production ref checked. Steps D (redirect URLs, storage check; email uses the built-in sender) and F (TestFlight `preview` switched to production, sign-in and app checked by the maintainer) are also done; E was folded into F with OTA rollback ready.
+
 Use a **second** Render service, not the existing `pin-hunt-uk`. That one is staging's API. Repointing it would leave staging without an API, and break the contributor-website preview and the other sessions' staging test runs.
 
 Set these on the new service (names only; values from the production Supabase project and your accounts):

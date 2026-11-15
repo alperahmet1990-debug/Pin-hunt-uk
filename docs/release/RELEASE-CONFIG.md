@@ -27,7 +27,7 @@ Expo, Apple or Google. Everyday TestFlight and OTA use is in `EAS-PREVIEW.md`.
 | Profile | Distribution | Channel | EAS environment | Notes |
 |---|---|---|---|---|
 | `development` | internal | `development` | `development` | Ad hoc iOS build / Android APK for named devices. Not a dev client: that needs `expo-dev-client`, which would be a separate decision. |
-| `preview` | store | `preview` | `preview` | TestFlight + Play **internal** track. Points at staging. |
+| `preview` | store | `preview` | `preview` | TestFlight + Play **internal** track. Points at **production** since 15 Nov 2026 (`EAS-PREVIEW.md`). |
 | `production` | store | `production` | `production` | App Store / Play production track. Unused until launch. |
 
 Per-profile values (`EXPO_PUBLIC_SUPABASE_URL`, `EXPO_PUBLIC_SUPABASE_ANON_KEY`,
@@ -48,7 +48,7 @@ Do these in order. Nothing here is automated.
    TestFlight builds exist). Confirm `uk.pinhunt.app` is what you want for
    Android: a Play package name **can never be changed** after the first upload.
 2. **EAS environments.** expo.dev → `@alperahm1990s-team/uk-pin-app` →
-   Environment variables. `preview` should already have staging values (see
+   Environment variables. `preview` holds production values since 15 Nov 2026 (see
    `EAS-PREVIEW.md`). Add the same three variables to `development` (staging).
    Leave `production` empty until the production API exists.
 3. **Apple.** Nothing new: the App Store Connect app, certificates and

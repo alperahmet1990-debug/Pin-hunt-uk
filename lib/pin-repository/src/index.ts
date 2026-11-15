@@ -194,6 +194,17 @@ export {
   updatePlace,
 } from './pin-locations';
 
+// ─── Events (migration 081, #613) ─────────────────────────────────────────────
+export type { EventsClient, PinEvent, PinEventInput } from './events';
+export {
+  DEFAULT_BADGE_LABEL,
+  DEFAULT_EVENT_TYPE,
+  EVENT_LIMITS,
+  eventInputToRow,
+  isEventsUnavailable,
+  mapEventRow,
+} from './events';
+
 // ─── Age confirmation (migration 073, LP-8 #530) ──────────────────────────────
 export type { AgeConfirmationClient, AgeStatus } from './age-confirmation';
 export {

@@ -407,6 +407,20 @@
     "path": "/events"
   },
   {
+    "name": "admin-events",
+    "path": "/admin/events"
+  },
+  {
+    "name": "admin-events-new",
+    "path": "/admin/events",
+    "click": "Add an event"
+  },
+  {
+    "name": "admin-events-edit",
+    "path": "/admin/events",
+    "click": "Edit"
+  },
+  {
     "name": "places",
     "path": "/places"
   },

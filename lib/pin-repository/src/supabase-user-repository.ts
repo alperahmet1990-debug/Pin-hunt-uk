@@ -7,6 +7,8 @@ import { coveragePageLocal, coverageSetTotalsLocal, coverageSummaryLocal } from 
 import * as communityPrices from './community-prices';
 import * as ageConfirmation from './age-confirmation';
 import * as pinLocations from './pin-locations';
+import * as pinEvents from './events';
+import type { PinEvent, PinEventInput } from './events';
 import type { CollectionPlace, PinLocation, PinLocationInput, PlaceInput } from './pin-locations';
 import type { CommunityPrice, MyPinPrice, PriceCurrency } from './community-prices';
 import type {
@@ -2940,6 +2942,33 @@ class SupabaseUserPinRepository implements IUserPinRepository {
 
   setMyCommunityPriceSetting(include: boolean): Promise<void> {
     return communityPrices.setMyCommunityPriceSetting(this.priceClient, include);
+  }
+
+  // ── Events (migration 081, #613) ─────────────────────────────────────────
+
+  private get eventsClient(): pinEvents.EventsClient {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return this.client as any;
+  }
+
+  getEvents(): Promise<PinEvent[]> {
+    return pinEvents.getEvents(this.eventsClient);
+  }
+
+  getAdminEvents(): Promise<PinEvent[]> {
+    return pinEvents.getAdminEvents(this.eventsClient);
+  }
+
+  saveEvent(input: PinEventInput, id?: string): Promise<PinEvent> {
+    return pinEvents.saveEvent(this.eventsClient, input, id);
+  }
+
+  setEventPublished(id: string, published: boolean): Promise<PinEvent> {
+    return pinEvents.setEventPublished(this.eventsClient, id, published);
+  }
+
+  deleteEvent(id: string): Promise<void> {
+    return pinEvents.deleteEvent(this.eventsClient, id);
   }
 
   // ── Where each pin lives (migration 067, #547) ───────────────────────────

@@ -33,7 +33,7 @@ import { useBlockedUsers } from '@/context/BlockedUsersContext';
 import { withoutBlockedAuthors } from '@/utils/blockedUsers';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { Avatar } from '@/components/Avatar';
-import { EVENTS } from '@/mock-data/events';
+import { useEvents } from '@/hooks/useEvents';
 import { communityPostToEvent, formatEventDateParts, selectUpcomingEvents } from '@/utils/events';
 import { getPinImageSource } from '@/utils/pinImage';
 import { needsYouParts } from '@/utils/needsYou';
@@ -62,6 +62,7 @@ export default function HomeScreen() {
   const { unseenCount } = useSubmissionNotifications();
   const { repo: userRepo } = useCommunity();
   const { pins, ensurePins } = usePinCatalogue();
+  const { events: curatedEvents } = useEvents();
   const [allPickupPosts, setPickupPosts] = useState<CommunityPost[]>([]);
   // Posts by collectors I blocked are hidden (B-P0-05b, #17).
   const { blockedIds } = useBlockedUsers();
@@ -101,8 +102,8 @@ export default function HomeScreen() {
 
   const pickupPostById = useMemo(() => new Map(pickupPosts.map(post => [`community-${post.id}`, post])), [pickupPosts]);
   const events = useMemo(
-    () => selectUpcomingEvents([...EVENTS, ...pickupPosts.map(communityPostToEvent)]).slice(0, HOME_EVENTS),
-    [pickupPosts],
+    () => selectUpcomingEvents([...curatedEvents, ...pickupPosts.map(communityPostToEvent)]).slice(0, HOME_EVENTS),
+    [curatedEvents, pickupPosts],
   );
   const needsYou = needsYouParts({ trades: tradesWaiting, messages: totalUnread, submissions: unseenCount });
 

@@ -1,4 +1,4 @@
-import type { CommunityPost } from '@workspace/pin-repository';
+import type { CommunityPost, PinEvent } from '@workspace/pin-repository';
 import type { PinHuntEvent } from '@/types/event';
 import { formatDayMonth } from './format';
 
@@ -55,6 +55,30 @@ export function communityPostToEvent(post: CommunityPost): PinHuntEvent {
     hasScheduledDate: false,
     createdAt: post.createdAt,
     // No sourceUrl — Home opens the post itself for these.
+  };
+}
+
+/** An admin-managed event (#613, Admin → Events) in the shape the cards render. */
+export function pinEventToEvent(event: PinEvent): PinHuntEvent {
+  return {
+    id: `event-${event.id}`,
+    title: event.title,
+    description: event.description,
+    eventDate: event.eventDate,
+    endDate: event.endDate ?? undefined,
+    time: event.time ?? undefined,
+    location: event.location ?? undefined,
+    country: event.country ?? undefined,
+    eventType: event.eventType,
+    badgeLabel: event.badgeLabel,
+    sourceType: 'admin',
+    sourceName: event.sourceName ?? undefined,
+    sourceUrl: event.sourceUrl ?? undefined,
+    featured: event.featured || undefined,
+    hasScheduledDate: true,
+    rumour: event.rumour || undefined,
+    whenText: event.whenText ?? undefined,
+    createdAt: event.createdAt,
   };
 }
 

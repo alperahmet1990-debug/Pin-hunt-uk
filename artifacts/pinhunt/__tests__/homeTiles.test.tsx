@@ -21,7 +21,10 @@ let mockUnread = 0;
 let mockSubmissions = 0;
 const mockPins = ['p1', 'p2', 'p3', 'p4'].map(id => ({ id, title: `Pin ${id}`, collection: 'Park Icons', characters: [], imageUrl: `https://example.test/${id}.png` }));
 
-jest.mock('@/mock-data/events', () => ({ EVENTS: [] }));
+jest.mock('@/hooks/useEvents', () => {
+  const none = { events: [], reload: () => Promise.resolve() };
+  return { useEvents: () => none };
+});
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
   SafeAreaView: require('react-native').View,

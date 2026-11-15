@@ -380,10 +380,27 @@ export async function writePinAndPopBatch(supabase, records, { now = new Date().
 
   for (const part of chunk(records, batchSize)) {
     const pinRows = part.map((r) => toPinRow(r, now));
-    const saved = await must(
-      supabase.from("pins").upsert(pinRows, { onConflict: "pinhunt_id" }).select("id, pinhunt_id"),
-      "upsert pins",
-    );
+    // Pins already stored keep their photo: a Collectible PinTrader photo linked
+    // in production, or a contributed photo an admin approved, lives in
+    // image_url / needs_front_image, and a refresh must never blank it. Only
+    // brand-new pins get the licence default (no public photo, needs one).
+    const stored = new Set();
+    if (!fresh) {
+      for (const ids of chunk(pinRows.map((r) => r.pinhunt_id), IN_CHUNK)) {
+        const rows = await must(supabase.from("pins").select("pinhunt_id").in("pinhunt_id", ids), "read stored pins");
+        for (const row of rows ?? []) stored.add(row.pinhunt_id);
+      }
+    }
+    const newRows = pinRows.filter((r) => !stored.has(r.pinhunt_id));
+    const updateRows = pinRows.filter((r) => stored.has(r.pinhunt_id)).map(({ image_url, needs_front_image, ...rest }) => rest);
+    const saved = [];
+    for (const rows of [newRows, updateRows]) {
+      if (!rows.length) continue;
+      saved.push(...await must(
+        supabase.from("pins").upsert(rows, { onConflict: "pinhunt_id" }).select("id, pinhunt_id"),
+        "upsert pins",
+      ));
+    }
     const uuidByPh = new Map(saved.map((s) => [s.pinhunt_id, s.id]));
     const uuids = [...uuidByPh.values()];
     stats.pins += saved.length;
@@ -547,4 +564,57 @@ export async function syncNewPins({ supabase, client, maxPages = Infinity, log =
     stats.characters = await fillCharacters(supabase, { pinhuntIds: newIds, log });
   }
   return stats;
+}
+
+/**
+ * Full refresh: re-reads every Pin & Pop pin so edits land, then archives
+ * Pin & Pop pins the API no longer returns (never deletes: collectors may own
+ * them). Refuses to archive anything if the API returned under 90% of the
+ * stored pins (a partial outage looks like mass removal). Without apply it
+ * only reads and reports. Shared by the staging and production entry points.
+ */
+export async function fullRefresh({ supabase, client, apply = false, log = () => {}, batchSize = 500 }) {
+  const seen = new Set();
+  const t0 = Date.now();
+  let buffer = [];
+  const counts = new Map();
+  const totals = { fetched: 0, written: 0, skipped: 0 };
+  if (apply) await ensurePinAndPopSource(supabase);
+  for await (const page of client.pages({})) {
+    for (const item of page.items) {
+      const r = normalisePinAndPop(item);
+      if (r.problem) { totals.skipped++; continue; }
+      seen.add(pinhuntIdFor(r.id));
+      buffer.push(r);
+      if (r.seriesSlug) counts.set(setKeyFor(r.seriesSlug), (counts.get(setKeyFor(r.seriesSlug)) ?? 0) + 1);
+    }
+    totals.fetched += page.items.length;
+    if (buffer.length >= 2000 || !page.hasMore) {
+      if (apply && buffer.length) totals.written += (await writePinAndPopBatch(supabase, buffer, { batchSize })).pins;
+      buffer = [];
+      log(`${totals.fetched} fetched (${Math.round((Date.now() - t0) / 1000)}s, ${client.requestCount} requests)`);
+    }
+  }
+  const stored = [];
+  for (let from = 0; ; from += 1000) {
+    const { data, error } = await supabase.from("pins").select("pinhunt_id").eq("catalogue_source", PINANDPOP_SOURCE)
+      .is("archived_at", null).order("pinhunt_id").range(from, from + 999);
+    if (error) throw new Error(error.message);
+    stored.push(...data.map((d) => d.pinhunt_id));
+    if (data.length < 1000) break;
+  }
+  const gone = stored.filter((id) => !seen.has(id));
+  log(`stored ${stored.length}, returned by API ${seen.size}, no longer returned ${gone.length}`);
+  if (totals.fetched < 0.9 * stored.length) {
+    throw new Error("API returned under 90% of stored pins; refusing to archive anything (partial outage?).");
+  }
+  if (apply && gone.length) {
+    for (let i = 0; i < gone.length; i += 150) {
+      const { error } = await supabase.from("pins").update({ catalogue_status: "archived", is_searchable: false, archived_at: new Date().toISOString() })
+        .in("pinhunt_id", gone.slice(i, i + 150));
+      if (error) throw new Error(error.message);
+    }
+  }
+  const setCountsCorrected = apply ? await syncSetCounts(supabase, counts) : 0;
+  return { ...totals, stored: stored.length, noLongerReturned: gone.length, archived: apply ? gone.length : 0, setCountsCorrected, dryRun: !apply };
 }

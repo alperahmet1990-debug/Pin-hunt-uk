@@ -25,6 +25,10 @@ const ALWAYS_GUARDED = new Set([
 // The only scripts allowed to write to production, each behind
 // lib/production-guard.mjs and only on an explicit --production flag.
 const PRODUCTION_ALLOWED = new Set(["artifacts/api-server/scripts/market-price-batch.mjs"]);
+// Production-only entry points (no staging mode): they identify the target and
+// check the database's own production marker before any write, and confirm each
+// write (docs/catalogue-sync/PRODUCTION-CATALOGUE-RESET.md, PINANDPOP.md).
+const PRODUCTION_ONLY = new Set(["artifacts/api-server/scripts/import-pinandpop-production.mjs"]);
 
 const WRITES = /\.(insert|upsert|update|delete|upload|remove|rpc)\(|auth\.admin\.|\b(INSERT|UPDATE|DELETE)\b|\\copy/;
 // Connects itself: a Supabase client or a spawned psql (comments don't count).
@@ -73,6 +77,18 @@ describe("staging guard coverage", () => {
     for (const file of files) {
       const src = fs.readFileSync(path.join(ROOT, file), "utf8");
       const usesProd = /production-guard\.mjs|requireProduction\(/.test(src);
+      if (PRODUCTION_ONLY.has(file)) {
+        const target = src.search(/assertProductionTarget\(env, /);
+        const client = src.search(/createRestClient\(env\./);
+        const marker = src.search(/await assertProductionMarker\(db\)/);
+        const firstWrite = src.search(/await confirm\(ref, /);
+        expect(target).toBeGreaterThan(-1);
+        expect(target).toBeLessThan(client);
+        expect(marker).toBeGreaterThan(client);
+        expect(marker).toBeLessThan(firstWrite);
+        expect(src).not.toMatch(/createClient\(/);
+        continue;
+      }
       if (!PRODUCTION_ALLOWED.has(file)) {
         expect(usesProd, `${file} must not use the production guard`).toBe(false);
         continue;

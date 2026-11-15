@@ -94,3 +94,29 @@ export async function requireProduction(env = process.env, confirmedRef, { creat
     throw err;
   }
 }
+
+// ── Maintainer-run catalogue tools (import-pinandpop-production.mjs) ─────────
+// They talk to Supabase through scripts/lib/rest-client.mjs (no install) rather
+// than supabase-js, and confirm a write per step rather than per command line.
+
+/**
+ * Checks 5 and 6 for a rest-client connection: the database's own marker,
+ * pinhunt_environment() (073), must say "production", and the staging marker
+ * bucket must not exist.
+ */
+export async function assertProductionMarker(db) {
+  const { data, error } = await db.rpc("pinhunt_environment");
+  if (error) throw new Error("couldn't read pinhunt_environment() (073 project marker). Nothing was changed.");
+  if (data !== "production") throw new Error(`this database says it is "${data}", not "production". Nothing was changed.`);
+  if (await db.storageBucketExists(STAGING_MARKER_BUCKET)) throw new Error("this project has the staging marker bucket. Nothing was changed.");
+}
+
+/** Asks the person to type the production ref before a write. Resolves only on an exact match. */
+export async function confirmWrite(ref, what, { input = process.stdin, output = process.stdout } = {}) {
+  if (!input.isTTY && input === process.stdin) throw new Error("run this in a terminal: writing to production needs a typed confirmation.");
+  const { default: readline } = await import("node:readline");
+  const rl = readline.createInterface({ input, output });
+  const answer = await new Promise((resolve) => rl.question(`\nAbout to ${what} in PRODUCTION.\nType the production project ref to continue (anything else stops): `, resolve));
+  rl.close();
+  if (String(answer).trim() !== ref) throw new Error("confirmation didn't match. Nothing was changed.");
+}

@@ -104,19 +104,21 @@ whether a token is configured.
 
 Production's catalogue is Pin & Pop since 14 Nov 2026. One Render **Cron Job**,
 `pinandpop-sync-daily`, runs the production entry point,
-`import-pinandpop-production.mjs`, from `main` once a day (maintainer decision,
-15 Nov 2026). It is dependency-free, so there is no install step.
+`import-pinandpop-production.mjs`, from `main` once a day: new pins every day,
+plus a full re-read on Sundays (maintainer decision, 15 Nov 2026). It is
+dependency-free, so there is no install step.
 
 - **Schedule:** `17 3 * * *` (03:17 UTC daily).
 - **Build command:** `node --version`
 - **Command:**
-  `node artifacts/api-server/scripts/import-pinandpop-production.mjs sync --apply --unattended && node artifacts/api-server/scripts/import-pinandpop-production.mjs sync --full --apply --unattended`
+  `node artifacts/api-server/scripts/import-pinandpop-production.mjs sync --apply --unattended --full-on-sunday`
 
-The first part adds new pins and fills their characters. The second re-reads
-every pin, so edits land and removed pins are archived. About 585 Pin & Pop API
-calls a day at one a second (around 10 minutes), within the documented 60 a
-minute. If the first part fails, the second doesn't run, and the next day tries
-again.
+Every day it adds new pins and fills their characters (usually 1-2 API calls).
+On Sundays (UTC) it then re-reads every pin, so edits land and removed pins are
+archived: about 585 calls at one a second (around 10 minutes), within the
+documented 60 a minute. If the new-pins step fails, the re-read doesn't run, and
+the next day tries again. A full re-read can also be run by hand with
+`sync --full` plus the apply flag.
 
 Environment for the job. Secrets stay in Render; reuse the API service's values:
 `PINHUNT_ENV=production`, `PRODUCTION_PROJECT_REF`, `STAGING_PROJECT_REF`,

@@ -220,3 +220,20 @@ test("full refresh: edits land, removed pins are archived (never deleted), and a
   await assert.rejects(main(["sync", "--full", "--apply", "--unattended"], withToken, { fetchImpl: fake.fetch, log: quiet, pinAndPopClient: fakePinAndPop(next.slice(0, 5)) }), /under 90%/);
   assert.equal(fake.tables.pins.filter((p) => p.catalogue_status === "archived").length, 1);
 });
+
+test("scheduled daily run: new pins every day, full re-read only on Sundays (UTC)", async () => {
+  const withToken = { ...env, PINANDPOP_API_TOKEN: "t", PINHUNT_UNATTENDED_CONFIRM: PROD };
+  const fake = fakeSupabase();
+  const all = Array.from({ length: 4 }, (_, i) => item(i + 1, `Pin ${i + 1}`));
+  const run = (items, day) => main(["sync", "--apply", "--unattended", "--full-on-sunday"], withToken, {
+    fetchImpl: fake.fetch, log: quiet, pinAndPopClient: fakePinAndPop(items), now: () => new Date(`2026-11-${day}T03:17:00Z`),
+  });
+  await run(all, "16"); // Monday
+  assert.equal(fake.tables.pins.length, 4);
+  const renamed = [...all.map((i) => (i.id === 2 ? { ...i, name: "Pin 2 renamed" } : i)), item(5, "Pin 5")];
+  await run(renamed, "17"); // Tuesday: the new pin arrives, the edit waits for Sunday
+  assert.equal(fake.tables.pins.length, 5);
+  assert.equal(fake.tables.pins.find((p) => p.pinhunt_id === "PHUK-10000002").title, "Pin 2");
+  await run(renamed, "22"); // Sunday
+  assert.equal(fake.tables.pins.find((p) => p.pinhunt_id === "PHUK-10000002").title, "Pin 2 renamed");
+});

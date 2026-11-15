@@ -19,6 +19,7 @@
  *   import --csv <file> --apply   writes the CSV's pins (asks you to type the production ref)
  *   characters --apply         fills characters from pin names (as staging did)
  *   sync --apply               fetches pins added since the highest stored id (needs PINANDPOP_API_TOKEN)
+ *   sync --apply --full-on-sunday   scheduled daily run: new pins daily, plus the full re-read on Sundays (UTC)
  *   sync --full [--apply]      re-reads every pin: edits land, pins Pin & Pop removed are ARCHIVED
  *                              (never deleted); refuses to archive if the API returns < 90%
  *
@@ -81,14 +82,17 @@ async function idClashes(db, recs) {
   return (data ?? []).filter((p) => want.has(p.pinhunt_id)).map((p) => p.pinhunt_id);
 }
 
-export async function main(argv = process.argv.slice(2), env = process.env, { fetchImpl = fetch, log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a), confirm = confirmWrite, pinAndPopClient = (token) => createPinAndPopClient({ token }) } = {}) {
+export async function main(argv = process.argv.slice(2), env = process.env, { fetchImpl = fetch, log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a), confirm = confirmWrite, pinAndPopClient = (token) => createPinAndPopClient({ token }), now = () => new Date() } = {}) {
   const mode = argv[0] && !argv[0].startsWith("--") ? argv[0] : "check";
   const apply = argv.includes("--apply");
   const csvArg = argv.includes("--csv") ? argv[argv.indexOf("--csv") + 1] : null;
   const full = argv.includes("--full");
+  // --full-on-sunday: the daily scheduled run. New pins every day; on Sundays
+  // (UTC) it then also does the full re-read.
+  const fullOnSunday = argv.includes("--full-on-sunday");
   const unattended = argv.includes("--unattended");
   if (!["check", "import", "characters", "sync"].includes(mode)) throw new Error("mode must be check, import, characters or sync");
-  if (full && mode !== "sync") throw new Error("--full only goes with sync.");
+  if ((full || fullOnSunday) && mode !== "sync") throw new Error("--full and --full-on-sunday only go with sync.");
 
   const { ref } = assertProductionTarget(env);
   if (unattended) {
@@ -165,14 +169,18 @@ export async function main(argv = process.argv.slice(2), env = process.env, { fe
   } else if (mode === "sync") {
     if (!env.PINANDPOP_API_TOKEN) throw new Error("sync needs PINANDPOP_API_TOKEN.");
     const client = pinAndPopClient(env.PINANDPOP_API_TOKEN);
-    if (full) {
-      await confirm(ref, "re-read every Pin & Pop pin, update edits and archive pins Pin & Pop no longer lists");
-      const stats = await fullRefresh({ supabase: db, client, apply: true, log, batchSize: Number(env.PINANDPOP_BATCH_SIZE ?? 250) });
-      log("full refresh:", JSON.stringify(stats));
-    } else {
+    const refresh = full || (fullOnSunday && now().getUTCDay() === 0);
+    if (!full) {
       await confirm(ref, "add Pin & Pop pins published since the last sync");
       const stats = await syncNewPins({ supabase: db, client, log });
       log("sync:", JSON.stringify({ ...stats, skipped: stats.skipped.length }));
+    }
+    if (refresh) {
+      if (full) await confirm(ref, "re-read every Pin & Pop pin, update edits and archive pins Pin & Pop no longer lists");
+      const stats = await fullRefresh({ supabase: db, client, apply: true, log, batchSize: Number(env.PINANDPOP_BATCH_SIZE ?? 250) });
+      log("full refresh:", JSON.stringify(stats));
+    } else if (fullOnSunday) {
+      log("full refresh: not today (runs on Sundays, UTC).");
     }
   }
 

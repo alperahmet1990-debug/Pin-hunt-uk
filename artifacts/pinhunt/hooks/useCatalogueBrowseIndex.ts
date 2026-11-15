@@ -24,7 +24,7 @@ export type { BrowseFilters } from '@/utils/catalogueBrowsePager';
 const NO_FILTERS: BrowseFilters = { query: '', setName: null, year: null, edition: null };
 
 // The unfiltered first pages, kept so reopening the screen shows them instantly.
-let cachedUnfiltered: { rows: CatalogueBrowsePin[]; cursor: BrowseCursor; total: number } | null = null;
+let cachedUnfiltered: { rows: CatalogueBrowsePin[]; cursor: BrowseCursor; total: number | null } | null = null;
 
 const isUnfiltered = (f: BrowseFilters) => !f.query.trim() && f.setName === null && f.year === null && f.edition === null;
 
@@ -99,7 +99,8 @@ export function useCatalogueBrowseIndex(filters: BrowseFilters = NO_FILTERS) {
     try {
       const [result, count] = await Promise.all([
         nextBrowsePage(page, f, cursorRef.current),
-        reset ? browseTotal(page, f) : Promise.resolve(null),
+        // A total that fails (e.g. a timeout) mustn't stop the pins showing.
+        reset ? browseTotal(page, f).catch(() => null) : Promise.resolve(null),
       ]);
       if (gen !== generation.current) return;
       cursorRef.current = result.cursor;
@@ -108,10 +109,12 @@ export function useCatalogueBrowseIndex(filters: BrowseFilters = NO_FILTERS) {
       if (count !== null) {
         setTotal(count);
         if (isUnfiltered(f)) setCatalogueTotal(count);
+      } else if (reset) {
+        setTotal(null); // no stale total from the previous filters
       }
       if (isUnfiltered(f)) {
         const prevRows = reset ? [] : (cachedUnfiltered?.rows ?? []);
-        cachedUnfiltered = { rows: [...prevRows, ...result.rows], cursor: result.cursor, total: count ?? cachedUnfiltered?.total ?? 0 };
+        cachedUnfiltered = { rows: [...prevRows, ...result.rows], cursor: result.cursor, total: count ?? cachedUnfiltered?.total ?? null };
       }
     } catch (e) {
       if (gen === generation.current) setError(e instanceof Error ? e.message : 'Could not load the catalogue.');
@@ -147,12 +150,14 @@ export function useCatalogueBrowseIndex(filters: BrowseFilters = NO_FILTERS) {
   }, [key, repository, mockPins]);
 
   // The catalogue total is shown as "N of <total>" while filtering, so fetch it once if needed.
+  // (Not for the unfiltered view: its own load sets it, and counting twice at once
+  // doubled the load on the database.)
   useEffect(() => {
-    if (!repository || catalogueTotal !== null) return;
+    if (!repository || catalogueTotal !== null || unfiltered) return;
     let cancelled = false;
     browseTotal(page, NO_FILTERS).then(n => { if (!cancelled) setCatalogueTotal(n); }).catch(() => {});
     return () => { cancelled = true; };
-  }, [repository, catalogueTotal, page]);
+  }, [repository, catalogueTotal, page, unfiltered]);
 
   const loadMore = useCallback(() => { void load(false); }, [load]);
   const refresh = useCallback(async () => {

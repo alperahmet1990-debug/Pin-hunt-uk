@@ -50,8 +50,17 @@ function base(f: BrowseFilters): Omit<CatalogueBrowsePageQuery, 'offset' | 'limi
   };
 }
 
-/** Total matching pins for these filters (named sets + uncategorised). */
+const noFilters = (f: BrowseFilters) => !f.query.trim() && f.setName === null && f.year === null && f.edition === null;
+
+/**
+ * Total matching pins for these filters (named sets + uncategorised).
+ * The unfiltered total is the planner's estimate: an exact count reads all
+ * ~117k pins and timed out on production (statement timeout).
+ */
 export async function browseTotal(page: PageFn, f: BrowseFilters): Promise<number> {
+  if (noFilters(f)) {
+    return (await page({ offset: 0, limit: 1, withCount: 'estimated' })).total ?? 0;
+  }
   if (f.setName !== null) {
     return (await page({ ...base(f), offset: 0, limit: 1, withCount: true })).total ?? 0;
   }

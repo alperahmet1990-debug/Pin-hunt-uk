@@ -102,18 +102,23 @@ whether a token is configured.
 
 ### Production sync (scheduled, Render Cron Jobs)
 
-Production's catalogue is Pin & Pop since 14 Nov 2026. Two Render **Cron Job**
-services run the production entry point, `import-pinandpop-production.mjs`, from
-`main`. It is dependency-free, so there is no install step:
+Production's catalogue is Pin & Pop since 14 Nov 2026. One Render **Cron Job**,
+`pinandpop-sync-daily`, runs the production entry point,
+`import-pinandpop-production.mjs`, from `main` once a day (maintainer decision,
+15 Nov 2026). It is dependency-free, so there is no install step.
 
-| Job | Schedule (UTC) | Command |
-|---|---|---|
-| `pinandpop-sync-daily` | `17 3 * * *` (03:17 daily) | `node artifacts/api-server/scripts/import-pinandpop-production.mjs sync --apply --unattended` |
-| `pinandpop-refresh-weekly` | `43 4 * * 0` (Sundays 04:43) | `node artifacts/api-server/scripts/import-pinandpop-production.mjs sync --full --apply --unattended` |
+- **Schedule:** `17 3 * * *` (03:17 UTC daily).
+- **Build command:** `node --version`
+- **Command:**
+  `node artifacts/api-server/scripts/import-pinandpop-production.mjs sync --apply --unattended && node artifacts/api-server/scripts/import-pinandpop-production.mjs sync --full --apply --unattended`
 
-Build command for both: `node --version`.
+The first part adds new pins and fills their characters. The second re-reads
+every pin, so edits land and removed pins are archived. About 585 Pin & Pop API
+calls a day at one a second (around 10 minutes), within the documented 60 a
+minute. If the first part fails, the second doesn't run, and the next day tries
+again.
 
-Environment for both jobs. Secrets stay in Render; reuse the API service's values:
+Environment for the job. Secrets stay in Render; reuse the API service's values:
 `PINHUNT_ENV=production`, `PRODUCTION_PROJECT_REF`, `STAGING_PROJECT_REF`,
 `SUPABASE_URL` (production), `SUPABASE_SERVICE_ROLE_KEY` (production),
 `PINANDPOP_API_TOKEN`, and `PINHUNT_UNATTENDED_CONFIRM` (= the production ref).
@@ -129,7 +134,7 @@ Safety:
   (`image_url` / `needs_front_image`). Linked Collectible PinTrader photos and
   approved contributed photos survive every refresh.
 
-After a run, the job's **Logs** show `sync:` or `full refresh:` with counts. A
+After a run, the job's **Logs** show `sync:` and `full refresh:` with counts. A
 failed run shows a red **Failed** in the job's Events, and the next run tries
 again.
 

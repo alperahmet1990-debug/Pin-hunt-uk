@@ -16,7 +16,10 @@ const mockRepo = {
 };
 const mockEnsure = () => Promise.resolve();
 
-jest.mock('@/mock-data/events', () => ({ EVENTS: [] }));
+jest.mock('@/hooks/useEvents', () => {
+  const none = { events: [], reload: () => Promise.resolve() };
+  return { useEvents: () => none };
+});
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
   SafeAreaView: require('react-native').View,

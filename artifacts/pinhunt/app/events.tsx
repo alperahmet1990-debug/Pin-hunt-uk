@@ -16,7 +16,7 @@ import { useColors } from '@/hooks/useColors';
 import { useCommunity } from '@/hooks/useCommunity';
 import { useBlockedUsers } from '@/context/BlockedUsersContext';
 import { withoutBlockedAuthors } from '@/utils/blockedUsers';
-import { EVENTS } from '@/mock-data/events';
+import { useEvents } from '@/hooks/useEvents';
 import {
   communityPostToEvent,
   countryFlag,
@@ -35,12 +35,13 @@ export default function EventsScreen() {
   const router = useRouter();
   const { repo } = useCommunity();
   const { blockedIds } = useBlockedUsers();
+  const { events: curatedEvents, reload: reloadEvents } = useEvents();
   const [posts, setPosts] = useState<CommunityPost[]>([]);
   const [loading, setLoading] = useState(Boolean(repo));
   const [refreshing, setRefreshing] = useState(false);
 
   const load = useCallback(async () => {
-    if (!repo) { setLoading(false); return; }
+    if (!repo) { setLoading(false); setRefreshing(false); return; }
     try {
       setPosts(await repo.getCommunityFeed({ postType: 'new_pickup', limit: 30 }));
     } catch {
@@ -56,8 +57,8 @@ export default function EventsScreen() {
   const visiblePosts = useMemo(() => withoutBlockedAuthors(posts, blockedIds), [posts, blockedIds]);
   const postById = useMemo(() => new Map(visiblePosts.map(p => [`community-${p.id}`, p])), [visiblePosts]);
   const groups = useMemo(
-    () => groupEventsByWhen(selectUpcomingEvents([...EVENTS, ...visiblePosts.map(communityPostToEvent)])),
-    [visiblePosts],
+    () => groupEventsByWhen(selectUpcomingEvents([...curatedEvents, ...visiblePosts.map(communityPostToEvent)])),
+    [curatedEvents, visiblePosts],
   );
 
   const open = (event: PinHuntEvent) => {
@@ -75,7 +76,7 @@ export default function EventsScreen() {
       <ScrollView
         style={{ backgroundColor: colors.homeBackground }}
         contentContainerStyle={styles.content}
-        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={() => { setRefreshing(true); void load(); }} />}
+        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={() => { setRefreshing(true); void reloadEvents(); void load(); }} />}
       >
         <View style={styles.intro}>
           <Text style={[styles.introText, { color: colors.homeMuted }]}>

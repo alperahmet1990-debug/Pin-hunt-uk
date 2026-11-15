@@ -1159,8 +1159,12 @@ export interface CatalogueBrowsePageQuery {
   uncategorised?: boolean;
   offset: number;
   limit: number;
-  /** Also return the total number of matching pins (costs a count). */
-  withCount?: boolean;
+  /**
+   * Also return the total number of matching pins. true counts exactly (reads
+   * every matching row); 'estimated' uses the planner's estimate when the
+   * total is large, which costs almost nothing (the unfiltered catalogue).
+   */
+  withCount?: boolean | 'estimated';
 }
 
 /** One row of get_catalogue_image_coverage() — a pin and its photo status. */

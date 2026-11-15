@@ -464,7 +464,9 @@ class SupabasePinRepository implements PinRepository {
   async getCatalogueBrowsePage(p: CatalogueBrowsePageQuery): Promise<{ rows: CatalogueBrowsePin[]; total: number | null }> {
     const cols = 'pinhunt_id, title, collection, normalised_series, brand, release_year, edition_type, image_url, main_character, all_characters';
     const tokens = searchTokens(p.query ?? '');
-    const count = p.withCount ? { count: 'exact' as const } : undefined;
+    // An exact count of the whole catalogue reads every row (~117k) and can
+    // pass the statement timeout; 'estimated' lets PostgREST use the planner.
+    const count = p.withCount ? { count: p.withCount === 'estimated' ? ('estimated' as const) : ('exact' as const) } : undefined;
     const build = (useRpc: boolean) => {
       // Text matching goes through search_catalogue_pins (076) when it exists,
       // for the same reason as searchPins: RLS stops the indexes being used.

@@ -95,6 +95,21 @@ describe('browseTotal', () => {
     expect(await browseTotal(page, { ...NONE, setName: 'Beta' })).toBe(3);
     expect(await browseTotal(page, { ...NONE, year: 2024 })).toBe(3 + 1 + 5);
   });
+
+  it('asks for an estimated count, in one request, for the unfiltered catalogue', async () => {
+    const { page, calls } = catalogue([['Alpha', 7], ['Beta', 3]], 5);
+    expect(await browseTotal(page, NONE)).toBe(15);
+    expect(calls).toHaveLength(1);
+    expect(calls[0]).toMatchObject({ withCount: 'estimated', limit: 1 });
+    expect(calls[0].uncategorised).toBeUndefined();
+  });
+
+  it('keeps exact counts once any filter is set', async () => {
+    const { page, calls } = catalogue([['Alpha', 7], ['Beta', 3]], 5);
+    await browseTotal(page, { ...NONE, query: 'a' });
+    expect(calls.length).toBeGreaterThan(0);
+    expect(calls.every(q => q.withCount === true)).toBe(true);
+  });
 });
 
 describe('splitYear', () => {

@@ -88,4 +88,17 @@ describe('useCatalogueBrowseIndex', () => {
     expect(mockRepository.getCatalogueBrowsePage).toHaveBeenCalledWith(expect.objectContaining({ setName: 'S2' }));
     expect(await result.current.loadSetNames()).toEqual(['S0', 'S1']);
   });
+  it('Supabase mode: shows the pins even when the total times out', async () => {
+    const ok = server(30, 2);
+    const page = jest.fn(async (q: CatalogueBrowsePageQuery) => {
+      if (q.withCount) throw new Error('canceling statement due to statement timeout');
+      return ok(q);
+    });
+    mockRepository = { getCatalogueBrowsePage: page, getAllSetNames: jest.fn() };
+    const { result } = await renderHook(() => useCatalogueBrowseIndex({ ...NONE, query: 'n' }));
+    await waitFor(() => expect(result.current.loading).toBe(false));
+    expect(result.current.error).toBeNull();
+    expect(result.current.rows.length).toBeGreaterThan(0);
+    expect(result.current.total).toBeNull();
+  });
 });

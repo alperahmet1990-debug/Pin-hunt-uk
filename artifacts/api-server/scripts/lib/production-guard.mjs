@@ -53,17 +53,26 @@ export function assertProductionTarget(env, confirmedRef) {
   return { ref, url: `https://${ref}.supabase.co` };
 }
 
+/** Storage's answer for a bucket that doesn't exist. Anything else is not proof. */
+const BUCKET_NOT_FOUND_RE = /\bbucket not found\b/i;
+
 /**
- * Check 5: the target must not be a prepared staging project. Only a clear
- * "bucket not found" passes; any other error refuses, so a network or
- * permission problem can't be mistaken for production.
+ * Check 5: the target must not be a prepared staging project. It passes only
+ * on a positive, specific "Bucket not found" error from the storage API.
+ * Everything else refuses: the marker bucket itself, a generic "Not Found"
+ * (for example a misrouted request), any other error, and an answer with
+ * neither an error nor the bucket. A network or permission problem can't be
+ * mistaken for production.
  */
 export async function assertNotStagingMarker(client) {
   const { data, error } = await client.storage.getBucket(STAGING_MARKER_BUCKET);
-  if (!error && data && data.id === STAGING_MARKER_BUCKET) {
-    throw new Error(`the target holds the "${STAGING_MARKER_BUCKET}" bucket, so it is a staging project, not production.`);
+  if (!error) {
+    if (data && data.id === STAGING_MARKER_BUCKET) {
+      throw new Error(`the target holds the "${STAGING_MARKER_BUCKET}" bucket, so it is a staging project, not production.`);
+    }
+    throw new Error("could not confirm the target is not staging (unexpected bucket check response).");
   }
-  if (error && !/not\s*found/i.test(String(error.message ?? ""))) {
+  if (!BUCKET_NOT_FOUND_RE.test(String(error.message ?? ""))) {
     throw new Error("could not confirm the target is not staging (bucket check failed).");
   }
 }

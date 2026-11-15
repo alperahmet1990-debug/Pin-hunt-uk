@@ -37,11 +37,15 @@ describe("assertProductionTarget", () => {
   });
 
   it("never puts the service key in an error", () => {
+    expect.assertions(2);
+    let message = "";
     try {
       assertProductionTarget({ ...ok, SUPABASE_URL: "https://example.com" }, PROD);
     } catch (err) {
-      expect(String(err.message)).not.toContain(ok.SUPABASE_SERVICE_ROLE_KEY);
+      message = String(err.message);
     }
+    expect(message).toMatch(/SUPABASE_URL/);
+    expect(message).not.toContain(ok.SUPABASE_SERVICE_ROLE_KEY);
   });
 });
 
@@ -54,8 +58,16 @@ describe("assertNotStagingMarker", () => {
     await expect(assertNotStagingMarker(bucketClient({ data: { id: STAGING_MARKER_BUCKET }, error: null }))).rejects.toThrow(/staging project, not production/);
   });
 
-  it("refuses when the check itself fails (network, permissions)", async () => {
-    await expect(assertNotStagingMarker(bucketClient({ data: null, error: { message: "fetch failed" } }))).rejects.toThrow(/could not confirm/);
+  it.each([
+    ["the check itself fails (network)", { data: null, error: { message: "fetch failed" } }],
+    ["a permissions error", { data: null, error: { message: "new row violates row-level security policy" } }],
+    ["a generic Not Found (e.g. a misrouted request)", { data: null, error: { message: "Not Found" } }],
+    ["an object-level not found", { data: null, error: { message: "Object not found" } }],
+    ["no error and no data", { data: null, error: null }],
+    ["no error and a different bucket", { data: { id: "some-other-bucket" }, error: null }],
+    ["an error with no message", { data: null, error: {} }],
+  ])("refuses when %s", async (_label, result) => {
+    await expect(assertNotStagingMarker(bucketClient(result))).rejects.toThrow(/could not confirm the target is not staging/);
   });
 });
 
@@ -76,6 +88,17 @@ describe("requireProduction", () => {
     await expect(requireProduction({ ...ok, PINHUNT_ENV: "staging" }, PROD, { createClient, exit })).rejects.toThrow();
     expect(exit).toHaveBeenCalledWith(1);
     expect(createClient).not.toHaveBeenCalled();
+    err.mockRestore();
+  });
+
+  it("prints only the reason on failure: no service or Soldgraph key", async () => {
+    const env = { ...ok, SOLDGRAPH_API_KEY: "soldgraph-key-not-real", SUPABASE_URL: "https://example.com" };
+    const err = vi.spyOn(console, "error").mockImplementation(() => {});
+    await expect(requireProduction(env, PROD, { createClient: vi.fn(), exit: vi.fn() })).rejects.toThrow();
+    const printed = err.mock.calls.flat().join(" ");
+    expect(printed).toMatch(/Refusing to run: SUPABASE_URL/);
+    expect(printed).not.toContain(env.SUPABASE_SERVICE_ROLE_KEY);
+    expect(printed).not.toContain(env.SOLDGRAPH_API_KEY);
     err.mockRestore();
   });
 

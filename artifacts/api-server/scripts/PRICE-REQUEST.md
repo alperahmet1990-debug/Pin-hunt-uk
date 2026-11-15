@@ -218,7 +218,7 @@ Do this only after the staging pilot and a staging batch run look right. Only yo
 2. The ref you type after `--production` is exactly `PRODUCTION_PROJECT_REF`.
 3. `STAGING_PROJECT_REF` is set and is a different project.
 4. `SUPABASE_URL` is the production project's URL.
-5. The project does **not** hold the staging marker bucket. If that check can't be completed, it refuses too.
+5. The project does **not** hold the staging marker bucket. Only a clear "Bucket not found" answer from storage passes; anything else (an error, a generic "Not Found", an empty answer) refuses.
 
 Without `--production`, the script still goes through the staging guard, exactly as before.
 

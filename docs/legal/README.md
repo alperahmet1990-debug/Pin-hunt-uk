@@ -26,7 +26,7 @@ PinHunt Ltd was incorporated on 9 November 2026 (company number **17570164**, En
 ## Open questions for the reviewer
 
 - **Minimum age: decided 18+.** Sign-up requires ticking "I'm 18 or over" (`app/(auth)/register.tsx`), and both documents say 18+. Disney pins do attract children, so ask the reviewer whether that is enough to stay outside the Children's Code, or whether real age checks are needed.
-- **API server host: Render** (`docs/release/API-DEPLOY.md`, `pin-hunt-uk.onrender.com`). Check the service's region in the Render dashboard (Settings). If it's a US region, that's another US transfer, which the policy already covers in general terms.
+- **API server host: Render** (`docs/release/API-DEPLOY.md`): production `pinhunt-api-production.onrender.com` (since 15 Nov 2026) and staging `pin-hunt-uk.onrender.com`. Check each service's region in the Render dashboard (Settings). If it's a US region, that's another US transfer, which the policy already covers in general terms.
 - **International transfers.** OpenAI, Google and Supabase (depending on the project region) may process data in the US. Confirm the Supabase project region and which transfer mechanism each provider offers.
 - **Retention periods.** Confirm how long Supabase backups and server logs are kept, and give a number if possible.
 - **Liability clause.** Check that it's reasonable under the Consumer Rights Act 2015.

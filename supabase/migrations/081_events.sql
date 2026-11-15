@@ -20,7 +20,8 @@
 --   • anyone (anon or signed in)   reads published events only
 --   • admins (is_admin())          read every event, including drafts, and
 --                                  insert, update and delete
---   • nobody else writes. created_by is always the inserting admin.
+--   • nobody else writes. created_by is always the inserting admin, and
+--     no client can read or set it (column-level grants).
 --
 -- Optional seed of the events built into the app: supabase/verify/081_seed.sql.
 -- Rollback at the bottom.
@@ -101,9 +102,22 @@ create policy "events_delete_admin" on public.events
   for delete to authenticated
   using (public.is_admin());
 
+-- Column-level grants. Readers get every column except created_by, so the
+-- admin's account id isn't exposed on published rows. Writers can set the
+-- event's own fields only: created_by comes from the default (auth.uid()),
+-- and id and the timestamps are the database's.
 revoke all on public.events from anon, authenticated;
-grant select on public.events to anon, authenticated;
-grant insert, update, delete on public.events to authenticated;
+grant select (id, title, description, event_date, end_date, time_text, location, country,
+              event_type, badge_label, source_name, source_url, featured, rumour, when_text,
+              published, created_at, updated_at)
+  on public.events to anon, authenticated;
+grant insert (title, description, event_date, end_date, time_text, location, country,
+              event_type, badge_label, source_name, source_url, featured, rumour, when_text, published)
+  on public.events to authenticated;
+grant update (title, description, event_date, end_date, time_text, location, country,
+              event_type, badge_label, source_name, source_url, featured, rumour, when_text, published)
+  on public.events to authenticated;
+grant delete on public.events to authenticated;
 
 notify pgrst, 'reload schema';
 

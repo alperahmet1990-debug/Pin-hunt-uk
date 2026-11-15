@@ -232,6 +232,11 @@ export async function setEventPublished(client: EventsClient, id: string, publis
 
 /** Deletes an event. Admins only (RLS). */
 export async function deleteEvent(client: EventsClient, id: string): Promise<void> {
-  const { error } = await client.from('events').delete().eq('id', id);
+  // RLS filters a delete it doesn't allow down to 0 rows without an error,
+  // so ask for the deleted row back and treat none as a failure.
+  const { data, error } = await client.from('events').delete().eq('id', id).select('id');
   if (error) throw toError(error, 'Could not delete the event.');
+  if (!Array.isArray(data) || data.length === 0) {
+    throw new PinRepositoryError('NOT_FOUND', 'That event wasn’t deleted. It may already be gone, or you may not be an admin any more.');
+  }
 }

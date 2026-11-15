@@ -2,8 +2,6 @@
  * #613: events come from the events table (migration 081) through the
  * repository, and admins manage them in Admin → Events.
  */
-import fs from 'fs';
-import path from 'path';
 import React from 'react';
 import { Text } from 'react-native';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
@@ -15,6 +13,16 @@ import {
   type PinEvent,
 } from '@workspace/pin-repository';
 import { pinEventToEvent } from '../utils/events';
+
+// The app's tsconfig has no Node types; same pattern as legalDocs.test.tsx.
+declare const __dirname: string;
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const fs = require('fs') as {
+  readdirSync(p: string, o: { withFileTypes: true }): Array<{ name: string; isDirectory(): boolean }>;
+  readFileSync(p: string, e: string): string;
+};
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const path = require('path') as { join(...parts: string[]): string };
 
 let mockService: Record<string, jest.Mock> | null = null;
 jest.mock('@/lib/eventService', () => ({ getEventService: () => mockService }));
@@ -75,6 +83,14 @@ describe('events in the repository (#613)', () => {
     await createSupabaseUserRepository(edit.client as never).saveEvent({ title: 'Pin Trading Day', eventDate: '2999-01-02', published: true }, 'r1');
     expect(edit.calls.find(c => c[0] === 'update')?.[1]).toMatchObject({ published: true });
     expect(edit.calls).toContainEqual(['eq', 'id', 'r1']);
+  });
+
+  it('a delete that removed nothing (RLS filtered it) is reported, not shown as done', async () => {
+    const none = fakeClient({ data: [] });
+    await expect(createSupabaseUserRepository(none.client as never).deleteEvent('r1')).rejects.toThrow('wasn’t deleted');
+    expect(none.calls).toContainEqual(['select', 'id']);
+    const one = fakeClient({ data: [{ id: 'r1' }] });
+    await expect(createSupabaseUserRepository(one.client as never).deleteEvent('r1')).resolves.toBeUndefined();
   });
 
   it('says events are unavailable until migration 081 is applied', async () => {

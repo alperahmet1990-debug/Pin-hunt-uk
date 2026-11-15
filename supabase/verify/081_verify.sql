@@ -37,7 +37,11 @@ begin
   assert not has_table_privilege('anon', 'public.events', 'insert'), '1f anon can insert events';
   assert not has_table_privilege('anon', 'public.events', 'update'), '1g anon can update events';
   assert not has_table_privilege('anon', 'public.events', 'delete'), '1h anon can delete events';
-  assert has_table_privilege('anon', 'public.events', 'select'), '1i anon cannot read events';
+  assert has_column_privilege('anon', 'public.events', 'title', 'select'), '1i anon cannot read events';
+  assert not has_column_privilege('anon', 'public.events', 'created_by', 'select'), '1j anon can read created_by';
+  assert not has_column_privilege('authenticated', 'public.events', 'created_by', 'select'), '1k signed-in users can read created_by';
+  assert not has_column_privilege('authenticated', 'public.events', 'created_by', 'insert'), '1l clients can set created_by';
+  assert not has_column_privilege('authenticated', 'public.events', 'created_by', 'update'), '1m clients can change created_by';
 end $$;
 
 -- 2. Test users and events (as the table owner, bypassing RLS)
@@ -59,7 +63,7 @@ insert into public.events (id, title, event_date, published) values
 set local role anon;
 do $$
 begin
-  assert (select count(*) from public.events where title like 'VERIFY081%') = 1, '3a anon sees a draft (or not the published event)';
+  assert (select count(id) from public.events where title like 'VERIFY081%') = 1, '3a anon sees a draft (or not the published event)';
   assert not exists (select 1 from public.events where title = 'VERIFY081 draft'), '3b anon sees the draft';
 end $$;
 reset role;
@@ -70,7 +74,7 @@ set local role authenticated;
 do $$
 declare n int;
 begin
-  assert (select count(*) from public.events where title like 'VERIFY081%') = 1, '4a collector sees a draft';
+  assert (select count(id) from public.events where title like 'VERIFY081%') = 1, '4a collector sees a draft';
 
   begin
     insert into public.events (title, event_date, published) values ('VERIFY081 collector', current_date, true);
@@ -94,16 +98,14 @@ set local role authenticated;
 do $$
 declare n int;
 begin
-  assert (select count(*) from public.events where title like 'VERIFY081%') = 2, '5a admin cannot see drafts';
+  assert (select count(id) from public.events where title like 'VERIFY081%') = 2, '5a admin cannot see drafts';
 
-  insert into public.events (id, title, event_date) values
-    ('08100000-0000-4000-8000-00000000e003', 'VERIFY081 admin', current_date + 1);
-  assert (select created_by from public.events where id = '08100000-0000-4000-8000-00000000e003')
-         = '08100000-0000-4000-8000-0000000000d4', '5b created_by is not the inserting admin';
-  assert not (select published from public.events where id = '08100000-0000-4000-8000-00000000e003'),
+  -- Clients can't set id, created_by or the timestamps (column grants).
+  insert into public.events (title, event_date) values ('VERIFY081 admin', current_date + 1);
+  assert not (select published from public.events where title = 'VERIFY081 admin'),
     '5c new events should start unpublished';
 
-  -- An admin can't attribute an event to someone else.
+  -- An admin can't attribute an event to someone else (no column privilege on created_by).
   begin
     insert into public.events (title, event_date, created_by)
     values ('VERIFY081 spoof', current_date, '08100000-0000-4000-8000-0000000000a1');
@@ -111,18 +113,29 @@ begin
   exception when insufficient_privilege then null;
   end;
 
-  update public.events set published = true, created_by = '08100000-0000-4000-8000-0000000000a1'
-   where id = '08100000-0000-4000-8000-00000000e003';
+  update public.events set published = true where title = 'VERIFY081 admin';
   get diagnostics n = row_count;
   assert n = 1, '5e admin could not publish an event';
-  assert (select created_by from public.events where id = '08100000-0000-4000-8000-00000000e003')
-         = '08100000-0000-4000-8000-0000000000d4', '5f created_by changed on update';
+
+  begin
+    update public.events set created_by = '08100000-0000-4000-8000-0000000000a1'
+     where title = 'VERIFY081 admin';
+    raise exception '5f admin changed created_by';
+  exception when insufficient_privilege then null;
+  end;
 
   delete from public.events where id = '08100000-0000-4000-8000-00000000e002';
   get diagnostics n = row_count;
   assert n = 1, '5g admin could not delete an event';
 end $$;
 reset role;
+
+-- created_by is only readable by the table owner (here, the SQL editor).
+do $$
+begin
+  assert (select created_by from public.events where title = 'VERIFY081 admin')
+         = '08100000-0000-4000-8000-0000000000d4', '5b created_by is not the inserting admin';
+end $$;
 
 -- 6. Constraints
 do $$

@@ -16,7 +16,7 @@ Home's "What's Happening" and the `/events` page showed a list of events built i
   - `events_select_published`: anon and signed-in users read **published** rows; admins (`is_admin()`) also read drafts.
   - `events_insert_admin`: admins only, and `created_by` must be the inserting admin.
   - `events_update_admin`, `events_delete_admin`: admins only.
-- Grants: `select` to anon/authenticated; `insert, update, delete` to authenticated (still gated by the admin-only policies). anon can't write.
+- Column-level grants: anon/authenticated can read every column **except `created_by`** (so admin account ids aren't exposed). authenticated can insert/update the event's own fields only (not `created_by`, `id` or the timestamps) and delete, all still gated by the admin-only policies. anon can't write.
 
 No existing table, column, policy or row is touched.
 
@@ -59,6 +59,7 @@ Before 081 is applied, the new app code still works: Home and `/events` show com
    select relrowsecurity from pg_class where oid = 'public.events'::regclass;            -- true
    select policyname, cmd, roles from pg_policies where tablename = 'events' order by 1; -- the 4 policies above
    select has_table_privilege('anon', 'public.events', 'insert');                         -- false
+   select has_column_privilege('anon', 'public.events', 'created_by', 'select');          -- false
    ```
 4. Production SQL editor (check the project URL is production): run 081, then the verify (or the read-only checks), then optionally the seed.
 5. Merge the PR by hand once production is verified.

@@ -117,4 +117,18 @@ describe('useCatalogueBrowseIndex', () => {
     expect(browseErrorMessage(new Error('Network request failed'))).toBe('Network request failed');
     expect(browseErrorMessage('x')).toBe('Could not load the catalogue.');
   });
+
+  it('Supabase mode: shows the pins even when the total times out', async () => {
+    const ok = server(30, 2);
+    const page = jest.fn(async (q: CatalogueBrowsePageQuery) => {
+      if (q.withCount) throw new Error('canceling statement due to statement timeout');
+      return ok(q);
+    });
+    mockRepository = { getCatalogueBrowsePage: page, getAllSetNames: jest.fn() };
+    const { result } = await renderHook(() => useCatalogueBrowseIndex({ ...NONE, query: 'n' }));
+    await waitFor(() => expect(result.current.loading).toBe(false));
+    expect(result.current.error).toBeNull();
+    expect(result.current.rows.length).toBeGreaterThan(0);
+    expect(result.current.total).toBeNull();
+  });
 });

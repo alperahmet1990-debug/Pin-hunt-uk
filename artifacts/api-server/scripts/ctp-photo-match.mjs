@@ -1,0 +1,450 @@
+#!/usr/bin/env node
+/**
+ * Collectible PinTrader photo -> Pin & Pop pin: AI image comparison (TEST BATCH)
+ *
+ * For a sample of Collectible PinTrader (CTP) photos, shows OpenAI the photo
+ * next to its Pin & Pop candidates' reference images and asks which (if any)
+ * is the same pin. Maintainer decision, 14 Nov 2026: Pin & Pop images may be
+ * sent to OpenAI for comparison only (docs/catalogue-sync/PIN-AND-POP-QUESTIONS.md).
+ *
+ * WRITES NOTHING to any database. It reads:
+ *   - the match estimate CSV (ctp_match_estimate.sql, run in staging),
+ *   - the production gap-report export (for the CTP photo links),
+ *   - staging, read-only, with the service key: candidate pins and their
+ *     Pin & Pop reference image links (admin-only rows).
+ * and writes, into --out: results.json, results.csv, review.html (local,
+ * for your eyes: it shows Pin & Pop images and titles) and share.json
+ * (counts and token totals only: safe to send to Claude).
+ *
+ * No install needed: plain Node 20+, built-in fetch. Run from artifacts/api-server:
+ *   node --env-file=.env.staging scripts/ctp-photo-match.mjs \
+ *     --estimate ~/Downloads/<estimate>.csv --production ~/Downloads/<production export>.csv \
+ *     --out ~/Documents/PinHunt-Private/ctp-match-test            # dry run: no AI calls
+ *   ... same command plus --run                                     # makes the AI calls
+ *
+ * Needs (in .env.staging, or any plain-text settings file given to Node):
+ * PINHUNT_ENV=staging, STAGING_PROJECT_REF, PRODUCTION_PROJECT_REF,
+ * SUPABASE_URL (staging), SUPABASE_SERVICE_ROLE_KEY (staging), OPENAI_API_KEY.
+ * Optional: OPENAI_BULK_MATCH_MODEL / OPENAI_SCAN_MODEL, OPENAI_SCAN_REASONING_EFFORT,
+ * CTP_MATCH_SAMPLE (default 50), CTP_MATCH_CONCURRENCY (default 3).
+ */
+import fs from "node:fs";
+import path from "node:path";
+import os from "node:os";
+import { fileURLToPath } from "node:url";
+import { assertStagingTarget } from "./lib/staging-guard.mjs";
+import { parseCsv, sideFromFiles } from "../../../scripts/catalogue-gap/core.mjs";
+
+const OPENAI_CHAT_URL = "https://api.openai.com/v1/chat/completions";
+const MAX_CANDIDATES = 8;
+
+// ── inputs ──────────────────────────────────────────────────────────────────
+
+export function readEstimate(text) {
+  const rows = parseCsv(text);
+  const out = [];
+  for (const r of rows) if (r.part === "rows" && r.payload) out.push(...JSON.parse(r.payload));
+  if (!out.length) throw new Error("the estimate file has no result rows (is it the ctp_match_estimate.sql download?)");
+  return out;
+}
+
+export function ctpPhotos(productionText) {
+  const prod = sideFromFiles({ x: productionText }, "production export");
+  const map = new Map();
+  for (const p of prod.pins) {
+    if (!p.image_url) continue;
+    map.set(p.pinhunt_id, { title: p.title, series: p.collection, year: p.release_year, edition: p.edition_type, imageUrl: p.image_url });
+  }
+  return map;
+}
+
+/** Deterministic, spread across tiers. */
+export function pickSample(estimate, photos, size = 50) {
+  const quota = [
+    ["strong", 10], ["likely", 12], ["ambiguous", 13], ["weak", 5], ["fuzzy", 5], ["conflict", 2], ["possible", 3],
+  ];
+  const eligible = estimate
+    .filter((r) => photos.has(r.ctp_pin) && (r.best_pin || r.fuzzy_candidates))
+    .sort((a, b) => hash(a.ctp_pin) - hash(b.ctp_pin));
+  const picked = [];
+  const used = new Set();
+  for (const [key, n] of quota) {
+    for (const r of eligible.filter((x) => x.tier.startsWith(key)).slice(0, Math.round((n * size) / 50))) { picked.push(r); used.add(r.ctp_pin); }
+  }
+  for (const r of eligible) { if (picked.length >= size) break; if (!used.has(r.ctp_pin)) { picked.push(r); used.add(r.ctp_pin); } }
+  return picked.slice(0, size);
+}
+function hash(s) { let h = 2166136261; for (const c of String(s)) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
+
+export function estimateCandidates(r) {
+  const ids = [r.best_pin, r.second_pin, ...String(r.fuzzy_candidates ?? "").split(";").map((x) => x.split(":")[0])].filter(Boolean);
+  return [...new Set(ids)];
+}
+
+// ── staging (read-only) ─────────────────────────────────────────────────────
+
+function supabaseGet(env, fetchImpl) {
+  const base = env.SUPABASE_URL.replace(/\/$/, "");
+  return async (pathAndQuery) => {
+    const key = String(env.SUPABASE_SERVICE_ROLE_KEY).trim();
+    // New-style secret keys (sb_secret_…) go in the apikey header only; legacy
+    // service_role JWTs also go in Authorization.
+    const headers = key.startsWith("sb_secret_") ? { apikey: key } : { apikey: key, Authorization: `Bearer ${key}` };
+    const res = await fetchImpl(`${base}/rest/v1/${pathAndQuery}`, { headers });
+    if (!res.ok) throw new Error(`staging read failed (${res.status}) for ${pathAndQuery.split("?")[0]}`);
+    return res.json();
+  };
+}
+const inList = (vals) => `(${vals.map((v) => `"${String(v).replace(/"/g, '\\"')}"`).join(",")})`;
+const nameOf = (title) => String(title ?? "").replace(/^.* - /, "").trim();
+const STOP = new Set(["the", "and", "with", "pin", "pins", "set", "series", "mystery", "collection", "disney", "of", "a", "in", "on", "for", "chaser", "wdw", "dlr", "dlp", "box"]);
+/** Distinctive search words: lower-case, no punctuation or years, plural "s" trimmed so "Spacesuits" also finds "Spacesuit". */
+export function searchWords(text) {
+  return [...new Set(String(text ?? "").toLowerCase().replace(/[’']/g, "").split(/[^a-z0-9]+/)
+    .filter((w) => w.length >= 3 && !STOP.has(w) && !/^\d{4}$/.test(w))
+    .map((w) => (w.length > 4 && w.endsWith("s") && !w.endsWith("ss") ? w.slice(0, -1) : w)))];
+}
+
+/** Runs fn over items, n at a time. */
+async function pool(items, n, fn) {
+  let next = 0;
+  await Promise.all(Array.from({ length: Math.min(n, items.length) }, async () => {
+    while (next < items.length) await fn(items[next++]);
+  }));
+}
+
+export async function loadCandidates(sample, photos, get) {
+  const PIN_COLS = "id,pinhunt_id,title,collection,release_year,edition_type,limited_edition_size";
+  const byPhid = new Map();
+  // 1. extra candidates: Pin & Pop pins whose name equals the CTP name (case-insensitive)
+  const extra = new Map();
+  await pool(sample, 4, async (r) => {
+    const name = nameOf(photos.get(r.ctp_pin).title).replace(/[*,()"\\]/g, " ").trim();
+    if (!name) return;
+    const rows = await get(`pins?select=${PIN_COLS}&catalogue_source=eq.pin_and_pop&title=ilike.${encodeURIComponent(name)}&limit=12`).catch(() => []);
+    const year = Number(photos.get(r.ctp_pin).year) || null;
+    rows.sort((a, b) => (b.release_year === year) - (a.release_year === year));
+    extra.set(r.ctp_pin, rows.map((p) => p.pinhunt_id));
+    for (const p of rows) byPhid.set(p.pinhunt_id, p);
+  });
+  // 1b. wider search (search_catalogue_pins, migration 076: every word must
+  //     appear in a title/series/character field): distinctive title words
+  //     with the year, then the name plus one series word at a time, then
+  //     without the year. Ranked by word overlap, best kept.
+  const wide = new Map();
+  await pool(sample, 4, async (r) => {
+    const ctp = photos.get(r.ctp_pin);
+    const year = Number(ctp.year) || null;
+    const nameWords = searchWords(nameOf(ctp.title));
+    const seriesWords = searchWords(String(ctp.title).includes(" - ") ? String(ctp.title).replace(/ - [^-]*$/, "") : ctp.series).filter((w) => !nameWords.includes(w));
+    const tries = [];
+    const all = [...new Set([...seriesWords, ...nameWords])];
+    if (all.length) tries.push([all, year]);
+    for (const w of seriesWords.slice(0, 3)) if (nameWords.length) tries.push([[...nameWords, w], year]);
+    if (nameWords.length) tries.push([nameWords, year]);
+    if (all.length) tries.push([all, null]);
+    const found = new Map();
+    for (const [words, yr] of tries) {
+      if (found.size >= 40) break;
+      const qs = `rpc/search_catalogue_pins?p_tokens=${encodeURIComponent(`{${words.map((w) => `"${w}"`).join(",")}}`)}&select=${PIN_COLS}&catalogue_source=eq.pin_and_pop${yr ? `&release_year=eq.${yr}` : ""}&limit=25`;
+      for (const p of await get(qs).catch(() => [])) { found.set(p.pinhunt_id, p); byPhid.set(p.pinhunt_id, p); }
+    }
+    const target = searchWords(`${ctp.title} ${ctp.series ?? ""}`);
+    const score = (p) => {
+      const have = searchWords(`${p.title} ${p.collection ?? ""}`);
+      const overlap = target.filter((w) => have.some((h) => h.includes(w) || w.includes(h))).length;
+      return overlap + (year && p.release_year === year ? 2 : 0);
+    };
+    wide.set(r.ctp_pin, [...found.values()].sort((a, b) => score(b) - score(a)).map((p) => p.pinhunt_id));
+  });
+  // 2. the estimate's candidates
+  const ids = [...new Set(sample.flatMap(estimateCandidates))].filter((id) => !byPhid.has(id));
+  for (let i = 0; i < ids.length; i += 80) {
+    for (const p of await get(`pins?select=${PIN_COLS}&pinhunt_id=in.${encodeURIComponent(inList(ids.slice(i, i + 80)))}`)) byPhid.set(p.pinhunt_id, p);
+  }
+  // 3. Pin & Pop reference image links (admin-only rows)
+  const uuids = [...byPhid.values()].map((p) => p.id);
+  const img = new Map();
+  for (let i = 0; i < uuids.length; i += 80) {
+    for (const row of await get(`pin_images?select=pin_id,image_url&source=eq.pin_and_pop&pin_id=in.${encodeURIComponent(inList(uuids.slice(i, i + 80)))}`)) {
+      if (/^https:\/\//.test(row.image_url) && !img.has(row.pin_id)) img.set(row.pin_id, row.image_url);
+    }
+  }
+  return sample.map((r) => {
+    // Interleave the three sources so each gets a place in the shortlist.
+    const lists = [estimateCandidates(r), wide.get(r.ctp_pin) ?? [], extra.get(r.ctp_pin) ?? []];
+    const order = [];
+    for (let i = 0; order.length < 40 && lists.some((l) => i < l.length); i++) for (const l of lists) if (l[i]) order.push(l[i]);
+    const seen = new Set();
+    const cands = order.filter((id) => !seen.has(id) && seen.add(id)).map((id) => byPhid.get(id)).filter(Boolean)
+      .map((p) => ({ pinhuntId: p.pinhunt_id, title: p.title, series: p.collection, year: p.release_year, edition: p.edition_type, le: p.limited_edition_size, imageUrl: img.get(p.id) ?? null }))
+      .filter((c) => c.imageUrl)
+      .slice(0, MAX_CANDIDATES);
+    return { estimate: r, ctp: { pinhuntId: r.ctp_pin, ...photos.get(r.ctp_pin) }, candidates: cands };
+  });
+}
+
+// ── OpenAI comparison ───────────────────────────────────────────────────────
+
+export function buildRequest(item, { model, effort }) {
+  const list = item.candidates.map((c, i) => `${i + 1}. ${c.pinhuntId} | "${c.title}" | series: ${c.series || "-"} | year: ${c.year ?? "?"} | edition: ${c.edition ?? "?"}${c.le ? ` ${c.le}` : ""}`).join("\n");
+  const content = [
+    { type: "text", text: `PHOTO A (Collectible PinTrader): "${item.ctp.title}" | series: ${item.ctp.series || "-"} | year: ${item.ctp.year ?? "?"} | edition: ${item.ctp.edition ?? "?"}` },
+    { type: "image_url", image_url: { url: item.ctp.imageUrl, detail: "high" } },
+    { type: "text", text: "Candidate reference images follow, in the order listed." },
+  ];
+  item.candidates.forEach((c, i) => {
+    content.push({ type: "text", text: `Candidate ${i + 1}: ${c.pinhuntId}` });
+    content.push({ type: "image_url", image_url: { url: c.imageUrl, detail: "low" } });
+  });
+  return {
+    model,
+    ...(effort ? { reasoning_effort: effort } : {}),
+    max_completion_tokens: 2048,
+    messages: [
+      { role: "system", content: `You match Disney trading pins between two catalogues by comparing images. Photo A is one pin. Decide which candidate image shows the SAME pin design: same character(s), pose, shapes, colours, text and border. Text details are hints only; sibling pins in a series often share names, so trust the images. If none is clearly the same pin, answer null.
+Candidates:
+${list}
+Respond with ONLY JSON: {"match": "<PinHunt ID or null>", "confidence": <0-100>, "reasoning": "<one sentence>"}` },
+      { role: "user", content },
+    ],
+  };
+}
+
+export function parseAnswer(text, item) {
+  const m = /\{[\s\S]*\}/.exec(String(text ?? ""));
+  if (!m) return { match: null, confidence: 0, reasoning: "no JSON in the answer", invalid: true };
+  try {
+    const j = JSON.parse(m[0]);
+    const ok = item.candidates.some((c) => c.pinhuntId === j.match);
+    return { match: ok ? j.match : null, confidence: Number(j.confidence) || 0, reasoning: String(j.reasoning ?? ""), invalid: j.match != null && !ok };
+  } catch { return { match: null, confidence: 0, reasoning: "unreadable JSON", invalid: true }; }
+}
+
+async function compareOne(item, env, fetchImpl, state) {
+  // An empty OPENAI_*_MODEL line in the settings file means "not set", not "no model".
+  const model = (env.OPENAI_BULK_MATCH_MODEL || "").trim() || (env.OPENAI_SCAN_MODEL || "").trim() || "gpt-5.6-luna";
+  const effort = state.noEffort ? null : (env.OPENAI_SCAN_REASONING_EFFORT ?? "low").trim().toLowerCase() || null;
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    const res = await fetchImpl(OPENAI_CHAT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${env.OPENAI_API_KEY}` },
+      body: JSON.stringify(buildRequest(item, { model, effort: ["none", "off", "default"].includes(effort) ? null : effort })),
+    });
+    const body = await res.json().catch(() => ({}));
+    if (res.status === 400 && /reasoning[_ ]effort/i.test(JSON.stringify(body)) && !state.noEffort) { state.noEffort = true; return compareOne(item, env, fetchImpl, state); }
+    if (res.ok) {
+      const text = body.choices?.[0]?.message?.content ?? "";
+      return { ...parseAnswer(text, item), model, usage: body.usage ?? null };
+    }
+    if (attempt === 2 || ![429, 500, 502, 503, 504].includes(res.status)) return { match: null, confidence: 0, reasoning: `OpenAI error ${res.status}: ${body.error?.message ?? ""}`.slice(0, 200), error: true, model, usage: null };
+    await new Promise((r) => setTimeout(r, 5000));
+  }
+}
+
+// ── outputs ─────────────────────────────────────────────────────────────────
+
+const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+export function reviewHtml(results) {
+  const cards = results.map((r, i) => {
+    const cands = r.candidates.map((c) => `<figure class="${c.pinhuntId === r.ai.match ? "pick" : ""}"><img src="${esc(c.imageUrl)}" loading="lazy" alt=""><figcaption>${esc(c.pinhuntId)}<br>${esc(c.title)}<br><small>${esc(c.series)} · ${esc(c.year ?? "?")} · ${esc(c.edition ?? "?")}</small>${c.pinhuntId === r.ai.match ? "<br><b>AI pick</b>" : ""}</figcaption></figure>`).join("");
+    return `<section data-id="${esc(r.ctp.pinhuntId)}"><h2>${i + 1}. ${esc(r.ctp.title)}</h2><p class="meta">${esc(r.ctp.series)} · ${esc(r.ctp.year ?? "?")} · ${esc(r.ctp.edition ?? "?")} · name-match tier: <b>${esc(r.estimate.tier)}</b> · AI: <b>${r.ai.match ? `${esc(r.ai.match)} (${r.ai.confidence})` : "no match"}</b> — ${esc(r.ai.reasoning)}</p>
+<div class="row"><figure class="a"><img src="${esc(r.ctp.imageUrl)}" alt=""><figcaption>Collectible PinTrader photo</figcaption></figure>${cands || "<p>No candidate had a Pin &amp; Pop image.</p>"}</div>
+<p class="verdict">Is the AI's answer right? <label><input type="radio" name="v${i}" value="right"> Right</label> <label><input type="radio" name="v${i}" value="wrong"> Wrong</label> <label><input type="radio" name="v${i}" value="unsure"> Can't tell</label></p></section>`;
+  }).join("\n");
+  return `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Photo Match Test</title>
+<style>body{font:15px/1.5 system-ui,sans-serif;margin:0;padding:16px;background:#f6f7f5;color:#1d2a2c}h1{font-size:1.4rem}section{background:#fff;border:1px solid #d9e0de;border-radius:10px;padding:12px;margin:12px 0}h2{font-size:1rem;margin:0}.meta{color:#5b6b6c;margin:4px 0}.row{display:flex;gap:10px;overflow-x:auto}figure{margin:0;width:150px;flex:none;font-size:12px}figure img{width:150px;height:150px;object-fit:contain;background:#eef2f1;border-radius:6px}figure.a img{outline:3px solid #1f6f6a}figure.pick img{outline:3px solid #c77d00}.verdict label{margin-right:12px}button{font:600 1rem system-ui;padding:12px 18px;border-radius:8px;border:0;background:#1f6f6a;color:#fff}#done{margin:12px 0}</style>
+<h1>Photo match test: ${results.length} photos</h1>
+<p><b>For your eyes only:</b> this page shows Pin &amp; Pop images and titles. Teal outline = Collectible PinTrader photo; orange outline = the AI's pick. Mark each answer, then press the button at the bottom and send Claude the downloaded <code>my-answers.json</code> (it holds PinHunt IDs and your marks only).</p>
+${cards}
+<p id="done"><button id="save" type="button">Download my answers</button></p>
+<script>
+document.getElementById("save").addEventListener("click", () => {
+  const out = [...document.querySelectorAll("section")].map((s, i) => ({ ctp: s.dataset.id, verdict: (s.querySelector("input[name=v" + i + "]:checked") || {}).value || null }));
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(out, null, 1)], { type: "application/json" }));
+  a.download = "my-answers.json"; document.body.appendChild(a); a.click(); a.remove();
+});
+</script>`;
+}
+
+export function shareSummary(results) {
+  const by = (f) => results.reduce((m, r) => { const k = f(r); m[k] = (m[k] ?? 0) + 1; return m; }, {});
+  const tokens = results.reduce((t, r) => ({ prompt: t.prompt + (r.ai.usage?.prompt_tokens ?? 0), completion: t.completion + (r.ai.usage?.completion_tokens ?? 0) }), { prompt: 0, completion: 0 });
+  const tierShort = (t) => String(t).split(" (")[0];
+  return {
+    photos: results.length,
+    model: results.find((r) => r.ai.model)?.ai.model ?? null,
+    tokens,
+    ai_outcome: by((r) => (r.ai.error ? "error" : r.ai.match ? (r.ai.confidence >= 80 ? "match, confident (>=80)" : "match, less sure") : "no match")),
+    ai_agrees_with_name_match: by((r) => `${tierShort(r.estimate.tier)}: ${!r.ai.match ? "AI found none" : r.ai.match === r.estimate.best_pin ? "same pin" : "different pin"}`),
+    without_candidate_images: results.filter((r) => !r.candidates.length).length,
+  };
+}
+
+// ── full-run review groups ──────────────────────────────────────────────────
+
+/** Series whose sibling pins look alike; the test batch's only wrong picks came from these. */
+const RISKY_SERIES_DEFAULT = ["pixar party countdown"];
+
+/**
+ * 1 = AI confident and agrees with the name match (accept in bulk after a spot-check)
+ * 2 = AI confident, picked a pin the name match didn't (quick scan, accepted unless ticked)
+ * 3 = no pick, less sure, an error, or a look-alike series (check, or leave for later)
+ */
+export function reviewGroup(r, env = {}) {
+  const risky = (env.CTP_RISKY_SERIES ? env.CTP_RISKY_SERIES.split(",") : RISKY_SERIES_DEFAULT).map((s) => s.trim().toLowerCase()).filter(Boolean);
+  const text = `${r.ctp.title} ${r.ctp.series ?? ""}`.toLowerCase();
+  if (!r.ai.match || r.ai.error || r.ai.confidence < 90 || risky.some((s) => text.includes(s))) return 3;
+  return r.ai.match === r.estimate.best_pin ? 1 : 2;
+}
+
+const GROUP_TEXT = {
+  1: ["Group 1: AI and name match agree", "The AI is confident and picked the same pin the name match did. In the test, all of these were right. Check the 20 below; tick <b>Wrong</b> on any that aren't. If they look right, leave <b>Accept all</b> ticked."],
+  2: ["Group 2: AI found a different pin", "The AI is confident, but its pick came from the wider search. Every pair is <b>accepted unless you tick Wrong</b>. Scan the grid and tick only the wrong ones."],
+  3: ["Group 3: needs your eye (optional)", "No pick, a less sure pick, or a look-alike series. Click the right candidate if it's shown, or leave it as <b>Leave unlinked</b>. You can skip this page: the photos stay safely in storage."],
+};
+
+export function groupPageHtml(group, items) {
+  const pick = (r) => r.candidates.find((c) => c.pinhuntId === r.ai.match);
+  const img = (url, cls = "") => `<img class="${cls}" src="${esc(url)}" loading="lazy" alt="">`;
+  const data = items.map((r) => ({ ctp: r.ctp.pinhuntId, pin: r.ai.match ?? null }));
+  let body;
+  if (group === 1) {
+    const step = Math.max(1, Math.floor(items.length / 20));
+    const spot = items.filter((_, i) => i % step === 0).slice(0, 20);
+    body = `<label class="big"><input type="checkbox" id="acceptAll" checked> Accept all ${items.length} in this group (except any ticked Wrong)</label>
+<div class="grid">${spot.map((r) => { const p = pick(r); return `<div class="pair" data-ctp="${esc(r.ctp.pinhuntId)}">${img(r.ctp.imageUrl, "a")}${p ? img(p.imageUrl, "b") : ""}<p>${esc(r.ctp.title)}<br><small>→ ${esc(p?.title ?? "")} (${esc(r.ai.match)})</small></p><label><input type="checkbox" class="wrong"> Wrong</label></div>`; }).join("")}</div>`;
+  } else if (group === 2) {
+    body = `<div class="grid">${items.map((r) => { const p = pick(r); return `<div class="pair" data-ctp="${esc(r.ctp.pinhuntId)}">${img(r.ctp.imageUrl, "a")}${p ? img(p.imageUrl, "b") : ""}<p>${esc(r.ctp.title)}<br><small>→ ${esc(p?.title ?? "")} · ${esc(p?.series ?? "")} · ${esc(p?.year ?? "?")} (${r.ai.confidence})</small></p><label><input type="checkbox" class="wrong"> Wrong</label></div>`; }).join("")}</div>`;
+  } else {
+    body = items.map((r, i) => `<section data-ctp="${esc(r.ctp.pinhuntId)}"><h2>${esc(r.ctp.title)}</h2><p class="meta">${esc(r.ctp.series ?? "")} · ${esc(r.ctp.year ?? "?")} · AI: ${r.ai.match ? `${esc(r.ai.match)} (${r.ai.confidence})` : "no match"}: ${esc(r.ai.reasoning)}</p>
+<div class="row"><figure>${img(r.ctp.imageUrl, "a")}<figcaption>Collectible PinTrader photo</figcaption></figure>
+${r.candidates.map((c) => `<label class="cand"><input type="radio" name="c${i}" value="${esc(c.pinhuntId)}"${c.pinhuntId === r.ai.match ? " checked" : ""}>${img(c.imageUrl)}<span>${esc(c.pinhuntId)}<br>${esc(c.title)}<br><small>${esc(c.series ?? "")} · ${esc(c.year ?? "?")}</small></span></label>`).join("")}
+<label class="cand none"><input type="radio" name="c${i}" value=""${r.ai.match ? "" : " checked"}><span>Leave unlinked</span></label></div></section>`).join("\n");
+  }
+  const [title, intro] = GROUP_TEXT[group];
+  return `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Photo Links ${group}</title>
+<style>body{font:15px/1.5 system-ui,sans-serif;margin:0;padding:16px;background:#f6f7f5;color:#1d2a2c}h1{font-size:1.4rem;margin:0 0 6px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}.pair{background:#fff;border:1px solid #d9e0de;border-radius:10px;padding:8px}.pair img{width:48%;height:120px;object-fit:contain;background:#eef2f1;border-radius:6px}.pair p{margin:4px 0;font-size:13px}img.a{outline:3px solid #1f6f6a}img.b{outline:3px solid #c77d00}.pair:has(.wrong:checked){background:#fde8e6}.big{display:block;font-weight:600;font-size:1.05rem;margin:10px 0}section{background:#fff;border:1px solid #d9e0de;border-radius:10px;padding:10px;margin:10px 0}h2{font-size:1rem;margin:0}.meta{color:#5b6b6c;font-size:13px;margin:4px 0}.row{display:flex;gap:8px;overflow-x:auto}figure{margin:0;flex:none;width:130px;font-size:12px}figure img,.cand img{width:130px;height:130px;object-fit:contain;background:#eef2f1;border-radius:6px}.cand{flex:none;width:130px;font-size:12px;cursor:pointer}.cand input{display:block}.cand:has(input:checked) img{outline:3px solid #c77d00}.none{align-self:center}button{font:600 1rem system-ui;padding:12px 18px;border-radius:8px;border:0;background:#1f6f6a;color:#fff;margin:14px 0}</style>
+<h1>${title} (${items.length})</h1><p>${intro} Teal outline: Collectible PinTrader photo. Orange: the Pin &amp; Pop pin it would be linked to. <b>For your eyes only</b> (Pin &amp; Pop images).</p>
+${body}
+<button id="save" type="button">Download my decisions</button>
+<script type="application/json" id="data">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>
+<script>
+const data = JSON.parse(document.getElementById("data").textContent);
+document.getElementById("save").addEventListener("click", () => {
+  const wrong = new Set([...document.querySelectorAll(".wrong:checked")].map((x) => x.closest("[data-ctp]").dataset.ctp));
+  const all = document.getElementById("acceptAll");
+  const chosen = new Map([...document.querySelectorAll("section[data-ctp]")].map((s) => [s.dataset.ctp, (s.querySelector("input[type=radio]:checked") || {}).value || null]));
+  const out = data.map((d) => ({ ctp: d.ctp, pin: ${group} === 3 ? (chosen.get(d.ctp) ?? null) : (all && !all.checked) ? null : (wrong.has(d.ctp) ? null : d.pin), group: ${group} }));
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(out, null, 1)], { type: "application/json" }));
+  a.download = "decisions-${group}.json"; document.body.appendChild(a); a.click(); a.remove();
+});
+</script>`;
+}
+
+// ── main ────────────────────────────────────────────────────────────────────
+
+const arg = (name, argv) => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : undefined; };
+const expand = (p) => path.resolve(String(p).replace(/^~(?=$|\/)/, os.homedir()));
+
+export async function main(argv = process.argv.slice(2), env = process.env, fetchImpl = fetch, log = console.log) {
+  const estimatePath = arg("--estimate", argv);
+  const productionPath = arg("--production", argv);
+  const outDir = arg("--out", argv);
+  const run = argv.includes("--run");
+  if (!estimatePath || !productionPath || !outDir) throw new Error("usage: --estimate <csv> --production <csv> --out <folder> [--run]");
+  assertStagingTarget(env); // staging only, never production (scripts/lib/staging-guard.mjs)
+  if (run && !env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY isn't set in .env.staging (add it on its own line; never paste it into chat).");
+
+  const estimate = readEstimate(fs.readFileSync(expand(estimatePath), "utf8"));
+  const photos = ctpPhotos(fs.readFileSync(expand(productionPath), "utf8"));
+  // --all: every photo. --retry <my-answers.json>: only those not marked "right". Otherwise a test sample.
+  const retryPath = arg("--retry", argv);
+  const all = argv.includes("--all");
+  let sample;
+  if (all) sample = estimate.filter((r) => photos.has(r.ctp_pin));
+  else if (retryPath) {
+    const keep = new Set(JSON.parse(fs.readFileSync(expand(retryPath), "utf8")).filter((a) => a.verdict !== "right").map((a) => a.ctp));
+    sample = estimate.filter((r) => keep.has(r.ctp_pin) && photos.has(r.ctp_pin));
+  } else sample = pickSample(estimate, photos, Number(env.CTP_MATCH_SAMPLE ?? 50));
+  log(`Sample: ${sample.length} photos (${Object.entries(sample.reduce((m, r) => { const k = r.tier.split(" (")[0]; m[k] = (m[k] ?? 0) + 1; return m; }, {})).map(([k, v]) => `${k} ${v}`).join(", ")}).`);
+
+  const get = supabaseGet(env, fetchImpl);
+  const dir = expand(outDir);
+  const progressFile = path.join(dir, "progress.jsonl");
+
+  if (!run) {
+    const probe = await loadCandidates(sample.slice(0, all ? 25 : sample.length), photos, get);
+    const calls = probe.filter((i) => i.candidates.length).length;
+    if (all) {
+      log(`Candidates checked for the first ${probe.length} photos (read-only): ${calls} have Pin & Pop images to compare.`);
+      log(`Dry run: no AI calls made. Add --run to compare all ${sample.length} photos (about ${sample.length} OpenAI calls). It saves as it goes; re-run the same command to continue after any interruption.`);
+    } else {
+      log(`Candidates loaded from staging (read-only). ${calls} photos have at least one Pin & Pop image to compare; ${probe.length - calls} have none.`);
+      log(`Dry run: no AI calls made. Add --run to make ${calls} OpenAI calls.`);
+    }
+    return { items: probe };
+  }
+
+  // Resume: photos already compared (without an error) are skipped.
+  fs.mkdirSync(dir, { recursive: true });
+  const saved = new Map();
+  if (fs.existsSync(progressFile)) {
+    for (const line of fs.readFileSync(progressFile, "utf8").split("\n")) {
+      if (!line.trim()) continue;
+      try { const r = JSON.parse(line); if (!r.ai?.error) saved.set(r.ctp.pinhuntId, r); } catch { /* partial line from an interruption */ }
+    }
+  }
+  const todo = sample.filter((r) => !saved.has(r.ctp_pin));
+  if (saved.size) log(`Continuing: ${saved.size} already done, ${todo.length} to go.`);
+  const state = { noEffort: false };
+  const concurrency = Math.max(1, Number(env.CTP_MATCH_CONCURRENCY ?? 3));
+  let done = 0;
+  const started = Date.now();
+  for (let c = 0; c < todo.length; c += 25) {
+    const items = await loadCandidates(todo.slice(c, c + 25), photos, get);
+    await pool(items, concurrency, async (item) => {
+      const ai = item.candidates.length ? await compareOne(item, env, fetchImpl, state) : { match: null, confidence: 0, reasoning: "no candidate images", skipped: true };
+      const result = { ...item, ai };
+      fs.appendFileSync(progressFile, JSON.stringify(result) + "\n");
+      saved.set(item.ctp.pinhuntId, result);
+      done++;
+      if (done % 10 === 0 || done === todo.length) {
+        const mins = (Date.now() - started) / 60000;
+        const left = done ? Math.round((mins / done) * (todo.length - done)) : 0;
+        log(`  compared ${done}/${todo.length}${todo.length > 50 ? ` (about ${left} min left)` : ""}`);
+      }
+    });
+  }
+
+  const results = sample.map((r) => saved.get(r.ctp_pin)).filter(Boolean);
+  fs.writeFileSync(path.join(dir, "results.json"), JSON.stringify(results, null, 1));
+  const cols = ["ctp_pin", "ctp_title", "tier", "name_best", "ai_match", "ai_confidence", "review_group", "ai_reasoning", "candidates"];
+  const cell = (v) => { const s = String(v ?? ""); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
+  fs.writeFileSync(path.join(dir, "results.csv"), [cols.join(","), ...results.map((r) => [r.ctp.pinhuntId, r.ctp.title, r.estimate.tier, r.estimate.best_pin, r.ai.match, r.ai.confidence, reviewGroup(r, env), r.ai.reasoning, r.candidates.map((c) => c.pinhuntId).join(" ")].map(cell).join(","))].join("\n") + "\n");
+  const share = shareSummary(results);
+  if (all) {
+    const groups = { 1: [], 2: [], 3: [] };
+    for (const r of results) groups[reviewGroup(r, env)].push(r);
+    fs.writeFileSync(path.join(dir, "review-1-agree.html"), groupPageHtml(1, groups[1]));
+    fs.writeFileSync(path.join(dir, "review-2-scan.html"), groupPageHtml(2, groups[2]));
+    fs.writeFileSync(path.join(dir, "review-3-check.html"), groupPageHtml(3, groups[3]));
+    share.review_groups = { "1 agree": groups[1].length, "2 scan": groups[2].length, "3 check": groups[3].length };
+  } else {
+    fs.writeFileSync(path.join(dir, "review.html"), reviewHtml(results));
+  }
+  fs.writeFileSync(path.join(dir, "share.json"), JSON.stringify(share, null, 1));
+  const failed = results.filter((r) => r.ai.error);
+  if (failed.length) log(`${failed.length} of ${results.length} AI calls failed. First error: ${failed[0].ai.reasoning}. Re-run the same command to retry just those.`);
+  log(`Done. Tokens: ${share.tokens.prompt} in, ${share.tokens.completion} out (model ${share.model}).`);
+  if (all) log(`Review groups: ${JSON.stringify(share.review_groups)}. Open the review-1/2/3 pages in ${dir}.`);
+  else log(`Open ${path.join(dir, "review.html")} to check the answers. Send Claude share.json and my-answers.json.`);
+  return { results, share };
+}
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main().catch((e) => { console.error(`ctp-photo-match: ${e.message}`); process.exit(1); });
+}

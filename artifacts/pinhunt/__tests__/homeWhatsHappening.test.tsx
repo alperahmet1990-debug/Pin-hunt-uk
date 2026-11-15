@@ -12,7 +12,8 @@ const mockRepo = { getCommunityFeed: noopPromise, getCommunityPost: () => Promis
 const mockEnsure = () => Promise.resolve();
 let mockEvents: unknown[] = [];
 
-jest.mock('@/mock-data/events', () => ({ get EVENTS() { return mockEvents; } }));
+// Events come from the event service (#613); the hook is stubbed with fixed events.
+jest.mock('@/hooks/useEvents', () => ({ useEvents: () => ({ events: mockEvents, reload: () => Promise.resolve() }) }));
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
   SafeAreaView: require('react-native').View,

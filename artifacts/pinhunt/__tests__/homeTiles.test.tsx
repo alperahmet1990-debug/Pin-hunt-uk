@@ -21,7 +21,10 @@ let mockUnread = 0;
 let mockSubmissions = 0;
 const mockPins = ['p1', 'p2', 'p3', 'p4'].map(id => ({ id, title: `Pin ${id}`, collection: 'Park Icons', characters: [], imageUrl: `https://example.test/${id}.png` }));
 
-jest.mock('@/mock-data/events', () => ({ EVENTS: [] }));
+jest.mock('@/hooks/useEvents', () => {
+  const none = { events: [], reload: () => Promise.resolve() };
+  return { useEvents: () => none };
+});
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
   SafeAreaView: require('react-native').View,
@@ -100,6 +103,21 @@ describe('Home actions and header', () => {
     await render(<HomeScreen />);
     await fireEvent.press(screen.getByRole('button', { name: /^Submit a new pin\./ }));
     expect(mockPush).toHaveBeenCalledWith('/add-pin');
+  });
+
+  it('Find a pin and Submit a new pin get the same size: neither button carries its own padding or border', async () => {
+    await render(<HomeScreen />);
+    const find = screen.getByRole('button', { name: /^Find a pin\./ });
+    const submit = screen.getByRole('button', { name: /^Submit a new pin\./ });
+    // Padding or a border on one button made it wider than the other (flex: 1 shares space after padding).
+    const outer = (el: { props: { style?: unknown } }) => {
+      const { opacity: _opacity, ...rest } = Object.assign({}, ...[el.props.style].flat(Infinity).filter(Boolean));
+      return rest;
+    };
+    expect(outer(submit)).toEqual(outer(find));
+    expect(outer(find)).not.toHaveProperty('padding');
+    expect(outer(find)).not.toHaveProperty('paddingHorizontal');
+    expect(outer(find)).not.toHaveProperty('borderWidth');
   });
 
   it('shows the app name, Messages with its count, and the avatar opens Edit profile', async () => {

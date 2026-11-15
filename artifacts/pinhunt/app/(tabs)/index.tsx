@@ -33,7 +33,7 @@ import { useBlockedUsers } from '@/context/BlockedUsersContext';
 import { withoutBlockedAuthors } from '@/utils/blockedUsers';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { Avatar } from '@/components/Avatar';
-import { EVENTS } from '@/mock-data/events';
+import { useEvents } from '@/hooks/useEvents';
 import { communityPostToEvent, formatEventDateParts, selectUpcomingEvents } from '@/utils/events';
 import { getPinImageSource } from '@/utils/pinImage';
 import { needsYouParts } from '@/utils/needsYou';
@@ -62,6 +62,7 @@ export default function HomeScreen() {
   const { unseenCount } = useSubmissionNotifications();
   const { repo: userRepo } = useCommunity();
   const { pins, ensurePins } = usePinCatalogue();
+  const { events: curatedEvents } = useEvents();
   const [allPickupPosts, setPickupPosts] = useState<CommunityPost[]>([]);
   // Posts by collectors I blocked are hidden (B-P0-05b, #17).
   const { blockedIds } = useBlockedUsers();
@@ -101,8 +102,8 @@ export default function HomeScreen() {
 
   const pickupPostById = useMemo(() => new Map(pickupPosts.map(post => [`community-${post.id}`, post])), [pickupPosts]);
   const events = useMemo(
-    () => selectUpcomingEvents([...EVENTS, ...pickupPosts.map(communityPostToEvent)]).slice(0, HOME_EVENTS),
-    [pickupPosts],
+    () => selectUpcomingEvents([...curatedEvents, ...pickupPosts.map(communityPostToEvent)]).slice(0, HOME_EVENTS),
+    [curatedEvents, pickupPosts],
   );
   const needsYou = needsYouParts({ trades: tradesWaiting, messages: totalUnread, submissions: unseenCount });
 
@@ -179,7 +180,7 @@ export default function HomeScreen() {
 
       <View style={styles.row}>
         <TouchableOpacity accessibilityRole="button" accessibilityLabel="Find a pin. Scan to identify and price it" onPress={() => router.push('/(tabs)/scan')} activeOpacity={0.9} style={styles.half}>
-          <LinearGradient colors={[colors.homeCoral, colors.homeCoralDeep]} start={{ x: 0, y: 0 }} end={{ x: 0.6, y: 1 }} style={[styles.action, { shadowColor: colors.homeShadow }]}>
+          <LinearGradient colors={[colors.homeCoral, colors.homeCoralDeep]} start={{ x: 0, y: 0 }} end={{ x: 0.6, y: 1 }} style={[styles.action, styles.fill, { shadowColor: colors.homeShadow }]}>
             <View style={[styles.actionIcon, { backgroundColor: colors.homeSurface + '2E' }]}><Feather name="maximize" size={22} color={colors.homeSurface} /></View>
             <View style={styles.actionText}>
               <Text style={[styles.actionTitle, { color: colors.homeSurface }]}>Find a pin</Text>
@@ -188,11 +189,14 @@ export default function HomeScreen() {
           </LinearGradient>
         </TouchableOpacity>
         {/* The existing photo-first submission flow: photo, AI "already in the catalogue?" check, details, admin review. */}
-        <TouchableOpacity accessibilityRole="button" accessibilityLabel="Submit a new pin. Not in the catalogue? Add it" onPress={() => router.push('/add-pin')} activeOpacity={0.85} style={[styles.half, styles.action, styles.submit, { backgroundColor: colors.homeSurface, borderColor: colors.homeCoral }]}>
-          <View style={[styles.actionIcon, { backgroundColor: colors.homeAqua }]}><Feather name="plus" size={22} color={colors.homeCoralDeep} /></View>
-          <View style={styles.actionText}>
-            <Text style={[styles.actionTitle, { color: colors.homeInk }]}>Submit a new pin</Text>
-            <Text style={[styles.actionDetail, { color: colors.homeMuted }]}>Not in the catalogue? Add it</Text>
+        <TouchableOpacity accessibilityRole="button" accessibilityLabel="Submit a new pin. Not in the catalogue? Add it" onPress={() => router.push('/add-pin')} activeOpacity={0.85} style={styles.half}>
+          {/* Padding and border sit on this inner view, like Find a pin's gradient, so both cards get the same width. */}
+          <View style={[styles.action, styles.submit, styles.fill, { backgroundColor: colors.homeSurface, borderColor: colors.homeCoral }]}>
+            <View style={[styles.actionIcon, { backgroundColor: colors.homeAqua }]}><Feather name="plus" size={22} color={colors.homeCoralDeep} /></View>
+            <View style={styles.actionText}>
+              <Text style={[styles.actionTitle, { color: colors.homeInk }]}>Submit a new pin</Text>
+              <Text style={[styles.actionDetail, { color: colors.homeMuted }]}>Not in the catalogue? Add it</Text>
+            </View>
           </View>
         </TouchableOpacity>
       </View>
@@ -293,6 +297,8 @@ const styles = StyleSheet.create({
   badgeText: { fontSize: 9, fontFamily: 'Inter_700Bold' },
   row: { flexDirection: 'row', gap: 10 },
   half: { flex: 1, minWidth: 0 },
+  // Fills the card's button, so the taller card sets the height of both.
+  fill: { flexGrow: 1 },
   tile: { flex: 1, minWidth: 0, gap: 10, paddingVertical: 14, paddingHorizontal: 12, borderRadius: 20, borderWidth: 1 },
   tileValue: { fontSize: 26, lineHeight: 30, fontFamily: 'Inter_700Bold', letterSpacing: -0.5 },
   tileLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },

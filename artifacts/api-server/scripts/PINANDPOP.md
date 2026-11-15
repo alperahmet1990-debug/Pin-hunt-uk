@@ -100,6 +100,51 @@ server, and errors returned to the app never include Pin & Pop's response body.
 `GET /api/admin/catalogue/pinandpop/status` shows the stored count, highest id and
 whether a token is configured.
 
+### Production sync (scheduled, Render Cron Jobs)
+
+Production's catalogue is Pin & Pop since 14 Nov 2026. One Render **Cron Job**,
+`pinandpop-sync-daily`, runs the production entry point,
+`import-pinandpop-production.mjs`, from `main` once a day: new pins every day,
+plus a full re-read on Sundays (maintainer decision, 15 Nov 2026). It is
+dependency-free, so there is no install step.
+
+- **Schedule:** `17 3 * * *` (03:17 UTC daily).
+- **Build command:** `node --version`
+- **Command:**
+  `node artifacts/api-server/scripts/import-pinandpop-production.mjs sync --apply --unattended --full-on-sunday`
+
+Every day it adds new pins and fills their characters (usually 1-2 API calls).
+On Sundays (UTC) it then re-reads every pin, so edits land and removed pins are
+archived: about 585 calls at one a second (around 10 minutes), within the
+documented 60 a minute. If the new-pins step fails, the re-read doesn't run, and
+the next day tries again. A full re-read can also be run by hand with
+`sync --full` plus the apply flag.
+
+Environment for the job. Secrets stay in Render; reuse the API service's values:
+`PINHUNT_ENV=production`, `PRODUCTION_PROJECT_REF`, `STAGING_PROJECT_REF`,
+`SUPABASE_URL` (production), `SUPABASE_SERVICE_ROLE_KEY` (production),
+`PINANDPOP_API_TOKEN`, and `PINHUNT_UNATTENDED_CONFIRM` (= the production ref).
+
+Safety:
+- Every production guard still runs: settings, address, database marker, no
+  staging marker.
+- `--unattended` replaces the typed confirmation with
+  `PINHUNT_UNATTENDED_CONFIRM` and is refused for anything but `sync`.
+- The full refresh archives pins Pin & Pop removed, never deletes them, and
+  archives nothing if the API returns under 90% of stored pins.
+- Re-reading a pin that's already stored never touches its photo
+  (`image_url` / `needs_front_image`). Linked Collectible PinTrader photos and
+  approved contributed photos survive every refresh.
+
+After a run, the job's **Logs** show `sync:` and `full refresh:` with counts. A
+failed run shows a red **Failed** in the job's Events, and the next run tries
+again.
+
+To test a job by hand: open it in Render and choose **Trigger Run**. Before the
+first scheduled full refresh, a dry run from your Mac with the production
+settings file shows what it would change:
+`node scripts/import-pinandpop-production.mjs sync --full` (no `--apply`).
+
 ### Environment
 
 | Var | Where | Notes |

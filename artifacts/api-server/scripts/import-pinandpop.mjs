@@ -18,7 +18,7 @@ import { createClient } from "@supabase/supabase-js";
 import { requireStaging } from "./lib/staging-guard.mjs";
 import {
   PINANDPOP_CSV_COLUMNS, PINANDPOP_SOURCE, createPinAndPopClient, ensurePinAndPopSource, highestStoredPinAndPopId,
-  normalisePinAndPop, parseCsv, pinhuntIdFor, setKeyFor, syncNewPins, syncSetCounts, writePinAndPopBatch, fillCharacters,
+  normalisePinAndPop, parseCsv, pinhuntIdFor, setKeyFor, syncNewPins, syncSetCounts, writePinAndPopBatch, fillCharacters, fullRefresh,
 } from "./lib/pinandpop.mjs";
 
 await requireStaging();
@@ -137,50 +137,10 @@ async function syncMode() {
     log("sync", JSON.stringify({ ...stats, skipped: stats.skipped.length }));
     return;
   }
-  // Full refresh: every pin, so edits to existing pins land and removed pins are archived.
-  const seen = new Set();
-  const t0 = Date.now();
-  let buffer = [];
-  const counts = new Map();
-  const totals = { fetched: 0, written: 0, skipped: 0 };
-  for await (const page of client.pages({})) {
-    for (const item of page.items) {
-      const r = normalisePinAndPop(item);
-      if (r.problem) { totals.skipped++; continue; }
-      seen.add(pinhuntIdFor(r.id));
-      buffer.push(r);
-      if (r.seriesSlug) counts.set(setKeyFor(r.seriesSlug), (counts.get(setKeyFor(r.seriesSlug)) ?? 0) + 1);
-    }
-    totals.fetched += page.items.length;
-    if (buffer.length >= 2000 || !page.hasMore) {
-      if (APPLY) totals.written += (await writePinAndPopBatch(supabase, buffer)).pins;
-      buffer = [];
-      log(`${totals.fetched} fetched (${Math.round((Date.now() - t0) / 1000)}s, ${client.requestCount} requests)`);
-    }
-  }
-  // Archive Pin & Pop pins the API no longer returns (never delete: collectors may own them).
-  const stored = [];
-  for (let from = 0; ; from += 1000) {
-    const { data, error } = await supabase.from("pins").select("pinhunt_id").eq("catalogue_source", PINANDPOP_SOURCE)
-      .is("archived_at", null).order("pinhunt_id").range(from, from + 999);
-    if (error) throw new Error(error.message);
-    stored.push(...data.map((d) => d.pinhunt_id));
-    if (data.length < 1000) break;
-  }
-  const gone = stored.filter((id) => !seen.has(id));
-  log(`stored ${stored.length}, returned by API ${seen.size}, no longer returned ${gone.length}`);
-  if (totals.fetched < 0.9 * stored.length) {
-    throw new Error("API returned under 90% of stored pins; refusing to archive anything (partial outage?).");
-  }
-  if (APPLY && gone.length) {
-    for (let i = 0; i < gone.length; i += 150) {
-      const { error } = await supabase.from("pins").update({ catalogue_status: "archived", is_searchable: false, archived_at: new Date().toISOString() })
-        .in("pinhunt_id", gone.slice(i, i + 150));
-      if (error) throw new Error(error.message);
-    }
-  }
-  if (APPLY) log(`set counts corrected: ${await syncSetCounts(supabase, counts)}`);
-  log("full sync", JSON.stringify({ ...totals, archived: APPLY ? gone.length : 0, dryRun: !APPLY }));
+  // Full refresh: every pin, so edits land and removed pins are archived (lib/pinandpop.mjs).
+  const stats = await fullRefresh({ supabase, client, apply: APPLY, log });
+  if (APPLY) log(`set counts corrected: ${stats.setCountsCorrected}`);
+  log("full sync", JSON.stringify(stats));
 }
 
 try {

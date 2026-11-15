@@ -22,7 +22,30 @@ update is published after a native change, it is not lost or harmful: installed
 builds simply ignore it (the `eas update` log shows the runtime version it
 targeted). Make a `testflight-build` and it picks the change up.
 
-## Test data safety
+## Which backend TestFlight uses
+
+**Since 15 Nov 2026 the EAS `preview` environment points at production**
+(`docs/catalogue-sync/PRODUCTION-READINESS.md`, step F):
+
+- `EXPO_PUBLIC_SUPABASE_URL` / `EXPO_PUBLIC_SUPABASE_ANON_KEY`: the production
+  project. The key is production's **publishable** key; a key from another
+  project fails sign-in with "Unable to sign in right now" and nothing in the
+  Auth logs. Test a URL/key pair with
+  `curl -s "<url>/auth/v1/settings" -H "apikey: <key>"`: production's settings
+  JSON means they match; `Invalid API key` means they don't.
+- `EXPO_PUBLIC_API_BASE_URL`: `https://pinhunt-api-production.onrender.com/api`
+  (Render service `pinhunt-api-production`, see `API-DEPLOY.md`).
+- `development` still points at staging.
+
+**Rollback:** put the staging values (kept privately by the maintainer) back
+into `preview` and run `ota-update`. Installed builds return to staging on
+their next two launches.
+
+Production email uses Supabase's built-in sender, which only delivers to
+project team members. Set up a custom SMTP sender before inviting outside
+testers.
+
+## Test data safety (history: before 15 Nov 2026)
 
 Preview builds use whatever the EAS `preview` environment points at. Point it
 at the **staging** Supabase project and a staging API server, never production:

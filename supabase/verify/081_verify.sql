@@ -6,13 +6,32 @@
 -- events, runs the checks, then rolls everything back in one transaction.
 -- Rolling back undoes the rows, but a trigger on auth.users or profiles that
 -- acts outside the database (an email, a webhook) would still fire. Before
--- running it on production, do the trigger check in 081_RUNBOOK.md.
+-- running it on production, do the trigger check in 081_RUNBOOK.md, then
+-- set target := 'production' in the project guard below.
 -- Expected final output: a single row 'ALL 081 CHECKS PASSED'.
 --
 -- Test users (rolled back):
 --   …a1  collector
 --   …d4  admin
 -- ============================================================
+
+-- Project guard (#645; same as 073/079, see 073_RUNBOOK.md). Set target to
+-- the project you mean. Leave it at 'staging' unless the runbook's trigger
+-- check for production has passed; it stops here, before anything is
+-- written, if the project's marker says otherwise.
+do $$
+declare
+  target text := 'staging';  -- <- 'staging' or 'production'
+  actual text;
+begin
+  if to_regprocedure('public.pinhunt_environment()') is null then
+    raise exception 'Project guard: pinhunt_environment() is missing (073_RUNBOOK.md). Nothing was changed.';
+  end if;
+  execute 'select public.pinhunt_environment()' into actual;
+  if actual is distinct from target then
+    raise exception 'Project guard: this is %, not %. Nothing was changed (081_RUNBOOK.md).', actual, target;
+  end if;
+end $$;
 
 begin;
 

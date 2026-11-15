@@ -36,7 +36,7 @@ No table, column, policy, grant or row changes. The app needs no change.
    ```
    Expect no rows. If there are any, fix each link in Admin → Events, or clear it (`update public.events set source_url = null where id = '…';`).
 2. Open `082_events_source_url_check.sql` from the raw file and run it in the staging SQL editor (check the project URL is staging).
-3. Run `supabase/verify/082_verify.sql`. Expect `ALL 082 CHECKS PASSED`. Then run `081_verify.sql`. Expect `ALL 081 CHECKS PASSED`.
+3. Run `supabase/verify/082_verify.sql` as it is (`target := 'staging'`). Expect `ALL 082 CHECKS PASSED`. Then run `081_verify.sql`. Expect `ALL 081 CHECKS PASSED`.
 4. Device check (optional): in Admin → Events, an https link still saves, and the event's "View event" still opens it.
 
 ## Production (after staging is signed off)
@@ -59,6 +59,7 @@ No table, column, policy, grant or row changes. The app needs no change.
      -- true, {search_path=public}
    select has_function_privilege('anon', 'public.is_admin()', 'execute');   -- true
    ```
+   **Project guard (#645):** both verify scripts start with `target text := 'staging'`. They stop before writing anything if the project's `pinhunt_environment()` marker says otherwise, or if the marker is missing. Only if the trigger check passes, change that line to `'production'` in each script for the production run. Otherwise leave it, and use the read-only checks.
 4. Run 082 in the production SQL editor (check the project URL is production), then the verify (or the read-only checks).
 5. Merge the PR by hand once production is verified.
 

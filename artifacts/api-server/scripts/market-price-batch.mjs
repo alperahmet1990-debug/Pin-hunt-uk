@@ -1,9 +1,13 @@
 /**
  * Capped batch pricing for many pins (default: verified 2025–26 pins), through
  * the same request path as a collector's "Get a price", with origin "batch".
- * Run by the maintainer on their own machine, against staging only. Agents
- * never run it with --apply: it calls a paid API and writes to a hosted
- * database.
+ * Run by the maintainer on their own machine. Staging by default (staging
+ * guard). --production <ref> targets production instead, through
+ * lib/production-guard.mjs: PINHUNT_ENV=production, the typed ref must equal
+ * PRODUCTION_PROJECT_REF, SUPABASE_URL must be that project, and the target
+ * must not hold the staging marker bucket. Agents never run this script
+ * against production, and never with --apply: it calls a paid API and writes
+ * to a hosted database.
  *
  * Every command is a dry run without --apply. --apply also needs
  * --max-credits (the run ceiling) and --confirm-credits equal to the planned
@@ -16,6 +20,10 @@
  *     node --env-file=.env.staging scripts/market-price-batch.mjs --markets UK,US --max-credits 1000 --apply --confirm-credits 1000
  *   MARKET_VALUATION_PUBLISHED_MARKETS=UK node --env-file=.env.staging scripts/market-price-batch.mjs --markets UK --ids-file top-pins.txt
  *
+ * Production (same flags, the production env file, and the ref typed out):
+ *   MARKET_VALUATION_PUBLISHED_MARKETS=UK,US node --env-file=.env.production scripts/market-price-batch.mjs \
+ *     --production <production-ref> --markets UK,US --max-credits 1000
+ *
  * --markets is required and must be markets MARKET_VALUATION_PUBLISHED_MARKETS
  * already lists (a batch never widens them). The budget reserve
  * MARKET_PRICE_REQUEST_BUDGET_RESERVE applies: a batch skips only the
@@ -24,6 +32,7 @@
  * See scripts/PRICE-REQUEST.md ("Batch pricing").
  */
 import { requireStaging } from "./lib/staging-guard.mjs";
+import { requireProduction } from "./lib/production-guard.mjs";
 import { BATCH_ENTRY, loadMarketRefresh } from "./lib/market-refresh-loader.mjs";
 
 const SECRETS = [process.env.SUPABASE_SERVICE_ROLE_KEY, process.env.SOLDGRAPH_API_KEY].filter(Boolean);
@@ -44,8 +53,9 @@ try {
   fail(`${err.message}\nSee scripts/PRICE-REQUEST.md ("Batch pricing") for usage.`);
 }
 
-// Staging only: the guard refuses production before any client exists.
-const target = await requireStaging();
+// A guard always runs before any client exists: staging by default, or
+// production only when --production names the production project ref.
+const target = opts.production ? await requireProduction(process.env, opts.production) : await requireStaging();
 const { createClient } = await import("@supabase/supabase-js");
 const db = createClient(target.url, process.env.SUPABASE_SERVICE_ROLE_KEY, {
   auth: { persistSession: false, autoRefreshToken: false },

@@ -100,6 +100,44 @@ server, and errors returned to the app never include Pin & Pop's response body.
 `GET /api/admin/catalogue/pinandpop/status` shows the stored count, highest id and
 whether a token is configured.
 
+### Production sync (scheduled, Render Cron Jobs)
+
+Production's catalogue is Pin & Pop since 14 Nov 2026. Two Render **Cron Job**
+services run the production entry point, `import-pinandpop-production.mjs`, from
+`main`. It is dependency-free, so there is no install step:
+
+| Job | Schedule (UTC) | Command |
+|---|---|---|
+| `pinandpop-sync-daily` | `17 3 * * *` (03:17 daily) | `node artifacts/api-server/scripts/import-pinandpop-production.mjs sync --apply --unattended` |
+| `pinandpop-refresh-weekly` | `43 4 * * 0` (Sundays 04:43) | `node artifacts/api-server/scripts/import-pinandpop-production.mjs sync --full --apply --unattended` |
+
+Build command for both: `node --version`.
+
+Environment for both jobs. Secrets stay in Render; reuse the API service's values:
+`PINHUNT_ENV=production`, `PRODUCTION_PROJECT_REF`, `STAGING_PROJECT_REF`,
+`SUPABASE_URL` (production), `SUPABASE_SERVICE_ROLE_KEY` (production),
+`PINANDPOP_API_TOKEN`, and `PINHUNT_UNATTENDED_CONFIRM` (= the production ref).
+
+Safety:
+- Every production guard still runs: settings, address, database marker, no
+  staging marker.
+- `--unattended` replaces the typed confirmation with
+  `PINHUNT_UNATTENDED_CONFIRM` and is refused for anything but `sync`.
+- The full refresh archives pins Pin & Pop removed, never deletes them, and
+  archives nothing if the API returns under 90% of stored pins.
+- Re-reading a pin that's already stored never touches its photo
+  (`image_url` / `needs_front_image`). Linked Collectible PinTrader photos and
+  approved contributed photos survive every refresh.
+
+After a run, the job's **Logs** show `sync:` or `full refresh:` with counts. A
+failed run shows a red **Failed** in the job's Events, and the next run tries
+again.
+
+To test a job by hand: open it in Render and choose **Trigger Run**. Before the
+first scheduled full refresh, a dry run from your Mac with the production
+settings file shows what it would change:
+`node scripts/import-pinandpop-production.mjs sync --full` (no `--apply`).
+
 ### Environment
 
 | Var | Where | Notes |

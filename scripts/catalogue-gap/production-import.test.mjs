@@ -27,6 +27,7 @@ function fakeSupabase({ environment = "production", stagingBucket = false, seed 
     if (op === "eq") return String(row[k]) === val;
     if (op === "neq") return String(row[k]) !== val;
     if (op === "gte") return String(row[k] ?? "") >= val;
+    if (op === "is") return val === "null" ? row[k] == null : String(row[k]) === val;
     if (op === "in") return val.slice(1, -1).match(/"((?:[^"\\]|\\.)*)"/g).map((q) => JSON.parse(q)).includes(String(row[k]));
     throw new Error(`fake: unsupported ${op}`);
   };
@@ -158,4 +159,64 @@ test("production migration copies differ from the originals only in the guard, a
     const body = committed.slice(committed.indexOf("\n\n") + 2);
     assert.equal(body.replace(PRODUCTION_GUARD, STAGING_GUARD), original, `${name}: only the guard may differ`);
   }
+});
+
+/** A fake Pin & Pop API client: serves the given items in pages of 2. */
+function fakePinAndPop(items) {
+  return () => ({
+    requestCount: 0,
+    async *pages({ idAfter = null } = {}) {
+      const list = items.filter((i) => idAfter == null || i.id > idAfter);
+      for (let i = 0; i < list.length; i += 2) { this.requestCount++; yield { items: list.slice(i, i + 2), hasMore: i + 2 < list.length }; }
+    },
+  });
+}
+const item = (id, name, extra = {}) => ({ id, name, series: "Beach", origin: "Disneyland Paris", edition: "LE 300", release_year: 2015, cover_image: `https://cdn.example/${id}.jpg`, url: `https://pinandpop.example/pins/${id}`, series_url: "https://pinandpop.example/series/beach", added_at: "2025-01-01", ...extra });
+
+test("scheduled (unattended) sync: only sync modes, only with the production ref in its environment", async () => {
+  const withToken = { ...env, PINANDPOP_API_TOKEN: "t" };
+  const fake = fakeSupabase();
+  const deps = { fetchImpl: fake.fetch, log: quiet, confirm: async () => { throw new Error("must not ask"); }, pinAndPopClient: fakePinAndPop([item(1, "Stitch Surfing")]) };
+  await assert.rejects(main(["sync", "--apply", "--unattended"], withToken, deps), /PINHUNT_UNATTENDED_CONFIRM/);
+  await assert.rejects(main(["sync", "--apply", "--unattended"], { ...withToken, PINHUNT_UNATTENDED_CONFIRM: STAGING }, deps), /PINHUNT_UNATTENDED_CONFIRM/);
+  await assert.rejects(main(["characters", "--apply", "--unattended"], { ...withToken, PINHUNT_UNATTENDED_CONFIRM: PROD }, deps), /only allowed for sync/);
+  assert.equal(fake.tables.pins.length, 0, "nothing written by refused runs");
+
+  await main(["sync", "--apply", "--unattended"], { ...withToken, PINHUNT_UNATTENDED_CONFIRM: PROD }, deps);
+  assert.deepEqual(fake.tables.pins.map((p) => p.pinhunt_id), ["PHUK-10000001"]);
+  // Without --unattended the typed confirmation is still required.
+  await assert.rejects(main(["sync", "--apply"], { ...withToken, PINHUNT_UNATTENDED_CONFIRM: PROD }, deps), /must not ask/);
+});
+
+test("full refresh: edits land, removed pins are archived (never deleted), and a short API answer archives nothing", async () => {
+  const withToken = { ...env, PINANDPOP_API_TOKEN: "t", PINHUNT_UNATTENDED_CONFIRM: PROD };
+  const fake = fakeSupabase();
+  const all = Array.from({ length: 10 }, (_, i) => item(i + 1, `Pin ${i + 1}`));
+  await main(["sync", "--apply", "--unattended"], withToken, { fetchImpl: fake.fetch, log: quiet, pinAndPopClient: fakePinAndPop(all) });
+  assert.equal(fake.tables.pins.length, 10);
+
+  // A Collectible PinTrader photo linked to pin 4 (as the move-and-clean step did).
+  const ctp = `https://${PROD}.supabase.co/storage/v1/object/public/pin-catalogue/collectible-pintrader/4.jpg`;
+  Object.assign(fake.tables.pins.find((p) => p.pinhunt_id === "PHUK-10000004"), { image_url: ctp, needs_front_image: false });
+
+  // Pin 3 renamed, pin 10 removed by Pin & Pop.
+  const next = all.filter((i) => i.id !== 10).map((i) => (i.id === 3 ? { ...i, name: "Pin 3 renamed" } : i));
+  const dry = await main(["sync", "--full"], withToken, { fetchImpl: fake.fetch, log: quiet, pinAndPopClient: fakePinAndPop(next) });
+  assert.equal(dry.stats.noLongerReturned, 1);
+  assert.equal(fake.tables.pins.find((p) => p.pinhunt_id === "PHUK-10000003").title, "Pin 3", "dry run writes nothing");
+
+  await main(["sync", "--full", "--apply", "--unattended"], withToken, { fetchImpl: fake.fetch, log: quiet, pinAndPopClient: fakePinAndPop(next) });
+  assert.equal(fake.tables.pins.find((p) => p.pinhunt_id === "PHUK-10000003").title, "Pin 3 renamed");
+  const four = fake.tables.pins.find((p) => p.pinhunt_id === "PHUK-10000004");
+  assert.equal(four.image_url, ctp, "a refresh never blanks a linked photo");
+  assert.equal(four.needs_front_image, false);
+  assert.equal(fake.tables.pins.find((p) => p.pinhunt_id === "PHUK-10000005").needs_front_image, true);
+  const gone = fake.tables.pins.find((p) => p.pinhunt_id === "PHUK-10000010");
+  assert.equal(gone.catalogue_status, "archived");
+  assert.equal(gone.is_searchable, false);
+  assert.equal(fake.tables.pins.length, 10, "never deletes");
+
+  // A partial answer (5 of 9 live pins) must not archive anything.
+  await assert.rejects(main(["sync", "--full", "--apply", "--unattended"], withToken, { fetchImpl: fake.fetch, log: quiet, pinAndPopClient: fakePinAndPop(next.slice(0, 5)) }), /under 90%/);
+  assert.equal(fake.tables.pins.filter((p) => p.catalogue_status === "archived").length, 1);
 });

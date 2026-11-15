@@ -18,7 +18,14 @@
  *   check --csv <file>         ... plus validates the Pin & Pop CSV
  *   import --csv <file> --apply   writes the CSV's pins (asks you to type the production ref)
  *   characters --apply         fills characters from pin names (as staging did)
- *   sync --apply               fetches pins added since the CSV (needs PINANDPOP_API_TOKEN)
+ *   sync --apply               fetches pins added since the highest stored id (needs PINANDPOP_API_TOKEN)
+ *   sync --full [--apply]      re-reads every pin: edits land, pins Pin & Pop removed are ARCHIVED
+ *                              (never deleted); refuses to archive if the API returns < 90%
+ *
+ * Scheduled runs (Render Cron Jobs, PINANDPOP.md "Production sync"): add
+ * --unattended. Instead of a typed confirmation it requires
+ * PINHUNT_UNATTENDED_CONFIRM=<production ref> in the job's environment, and
+ * it is accepted for the two sync modes only (never import or characters).
  *
  * Settings file (plain text, outside every repository, never shared):
  *   PINHUNT_ENV=production
@@ -36,7 +43,7 @@ import { createRestClient } from "./lib/rest-client.mjs";
 import { assertProductionMarker, assertProductionTarget, confirmWrite } from "./lib/production-guard.mjs";
 import {
   PINANDPOP_CSV_COLUMNS, PINANDPOP_SOURCE, PINHUNT_ID_OFFSET, createPinAndPopClient, ensurePinAndPopSource, fillCharacters,
-  normalisePinAndPop, parseCsv, pinhuntIdFor, setKeyFor, syncNewPins, syncSetCounts, writePinAndPopBatch,
+  fullRefresh, normalisePinAndPop, parseCsv, pinhuntIdFor, setKeyFor, syncNewPins, syncSetCounts, writePinAndPopBatch,
 } from "./lib/pinandpop.mjs";
 
 const expand = (p) => path.resolve(String(p).replace(/^~(?=$|\/)/, os.homedir()));
@@ -74,13 +81,23 @@ async function idClashes(db, recs) {
   return (data ?? []).filter((p) => want.has(p.pinhunt_id)).map((p) => p.pinhunt_id);
 }
 
-export async function main(argv = process.argv.slice(2), env = process.env, { fetchImpl = fetch, log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a), confirm = confirmWrite } = {}) {
+export async function main(argv = process.argv.slice(2), env = process.env, { fetchImpl = fetch, log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a), confirm = confirmWrite, pinAndPopClient = (token) => createPinAndPopClient({ token }) } = {}) {
   const mode = argv[0] && !argv[0].startsWith("--") ? argv[0] : "check";
   const apply = argv.includes("--apply");
   const csvArg = argv.includes("--csv") ? argv[argv.indexOf("--csv") + 1] : null;
+  const full = argv.includes("--full");
+  const unattended = argv.includes("--unattended");
   if (!["check", "import", "characters", "sync"].includes(mode)) throw new Error("mode must be check, import, characters or sync");
+  if (full && mode !== "sync") throw new Error("--full only goes with sync.");
 
   const { ref } = assertProductionTarget(env);
+  if (unattended) {
+    if (mode !== "sync") throw new Error("--unattended is only allowed for sync. Nothing was changed.");
+    if (String(env.PINHUNT_UNATTENDED_CONFIRM ?? "").trim() !== ref) {
+      throw new Error("--unattended needs PINHUNT_UNATTENDED_CONFIRM set to the production project ref. Nothing was changed.");
+    }
+    confirm = async () => {};
+  }
   const db = createRestClient(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY, fetchImpl);
   await assertProductionMarker(db);
   log("target confirmed: PRODUCTION (settings, address, database marker, no staging marker).");
@@ -104,6 +121,12 @@ export async function main(argv = process.argv.slice(2), env = process.env, { fe
     log("ID check: no old pin uses a Pin & Pop PinHunt ID.");
   }
 
+  if (mode === "sync" && full && !apply) {
+    if (!env.PINANDPOP_API_TOKEN) throw new Error("sync needs PINANDPOP_API_TOKEN.");
+    const stats = await fullRefresh({ supabase: db, client: pinAndPopClient(env.PINANDPOP_API_TOKEN), apply: false, log });
+    log("full refresh (dry run, nothing written):", JSON.stringify(stats));
+    return { before, stats };
+  }
   if (mode === "check" || !apply) {
     log(mode === "check" ? "check only: nothing written." : `dry run: nothing written. Add --apply to ${mode}.`);
     return { before, recs };
@@ -140,11 +163,17 @@ export async function main(argv = process.argv.slice(2), env = process.env, { fe
     await confirm(ref, "fill characters on Pin & Pop pins");
     log("characters:", JSON.stringify(await fillCharacters(db, { log })));
   } else if (mode === "sync") {
-    if (!env.PINANDPOP_API_TOKEN) throw new Error("sync needs PINANDPOP_API_TOKEN in the production settings file.");
-    await confirm(ref, "add Pin & Pop pins published since the CSV");
-    const client = createPinAndPopClient({ token: env.PINANDPOP_API_TOKEN });
-    const stats = await syncNewPins({ supabase: db, client, log });
-    log("sync:", JSON.stringify({ ...stats, skipped: stats.skipped.length }));
+    if (!env.PINANDPOP_API_TOKEN) throw new Error("sync needs PINANDPOP_API_TOKEN.");
+    const client = pinAndPopClient(env.PINANDPOP_API_TOKEN);
+    if (full) {
+      await confirm(ref, "re-read every Pin & Pop pin, update edits and archive pins Pin & Pop no longer lists");
+      const stats = await fullRefresh({ supabase: db, client, apply: true, log, batchSize: Number(env.PINANDPOP_BATCH_SIZE ?? 250) });
+      log("full refresh:", JSON.stringify(stats));
+    } else {
+      await confirm(ref, "add Pin & Pop pins published since the last sync");
+      const stats = await syncNewPins({ supabase: db, client, log });
+      log("sync:", JSON.stringify({ ...stats, skipped: stats.skipped.length }));
+    }
   }
 
   const after = {

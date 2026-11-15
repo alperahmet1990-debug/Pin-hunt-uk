@@ -4,7 +4,7 @@
  * `node` and no install. It supports only what scripts/lib/pinandpop.mjs uses:
  *
  *   from(t).select(cols, { count: "exact", head: true })
- *     .eq(c, v) .neq(c, v) .gte(c, v) .in(c, values) .or(expr)
+ *     .eq(c, v) .neq(c, v) .gte(c, v) .is(c, null) .in(c, values) .or(expr)
  *     .order(c, { ascending }) .limit(n) .range(from, to)
  *   from(t).insert(rows)
  *   from(t).upsert(rows, { onConflict, ignoreDuplicates }) [.select(cols)]
@@ -44,6 +44,7 @@ class Query {
   eq(c, v) { this.params.push([c, `eq.${v}`]); return this; }
   neq(c, v) { this.params.push([c, `neq.${v}`]); return this; }
   gte(c, v) { this.params.push([c, `gte.${v}`]); return this; }
+  is(c, v) { this.params.push([c, `is.${v === null ? "null" : v}`]); return this; }
   in(c, values) { this.params.push([c, `in.(${values.map(quote).join(",")})`]); return this; }
   or(expr) { this.params.push(["or", `(${expr})`]); return this; }
   order(c, { ascending = true } = {}) { this.params.push(["order", `${c}.${ascending ? "asc" : "desc"}`]); return this; }

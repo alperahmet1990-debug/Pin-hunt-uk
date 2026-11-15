@@ -30,6 +30,7 @@ const COUNTRY_FLAGS: Record<string, string> = {
   France: '🇫🇷',
   UK: '🇬🇧',
   'United Kingdom': '🇬🇧',
+  USA: '🇺🇸',
 };
 
 export function countryFlag(country?: string): string {

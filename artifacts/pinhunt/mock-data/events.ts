@@ -106,12 +106,10 @@ export const EVENTS: PinHuntEvent[] = [
     hasScheduledDate: true,
     createdAt: '2026-10-16T00:00:00.000Z',
   },
-  // ── Rumoured: talked about, no confirmed date yet. Shown last, marked
-  // "Rumoured"; eventDate/endDate only decide when they stop showing. ──
   {
     id: 'disney-store-reels-of-magic-online-2026-12-08',
     title: 'Reels of Magic Pins Online',
-    description: 'The online drop of Disney Store’s Reels of Magic pin collection, the last part of its November–December staggered release. No event ticket needed.',
+    description: 'The online drop of Disney Store’s Reels of Magic pin collection. No event ticket needed.',
     eventDate: '2026-12-08',
     time: 'From 8am',
     location: 'Disney Store online',
@@ -139,6 +137,8 @@ export const EVENTS: PinHuntEvent[] = [
     hasScheduledDate: true,
     createdAt: '2026-11-15T00:00:00.000Z',
   },
+  // ── Rumoured: talked about, no confirmed date yet. Shown last, marked
+  // "Rumoured"; eventDate/endDate only decide when they stop showing. ──
   {
     id: 'rumour-pinsane-pingle-bell-ball',
     title: 'Pingle Bell Ball',

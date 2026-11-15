@@ -70,9 +70,11 @@ commit;
 analyze public.pins;
 
 -- ── Verification ──────────────────────────────────────────────────────────────
---   select policyname, qual from pg_policies
+--   Before AND after applying, compare:
+--   select policyname, roles, qual from pg_policies
 --    where tablename = 'pins' and cmd = 'SELECT';
---     -- pins_public_read and pins_admin_read_all, both with "( SELECT ..." in qual
+--     -- pins_public_read and pins_admin_read_all, roles {public} both times
+--     -- (002 and 027 have no TO clause), qual now with "( SELECT ..."
 --   select indexname from pg_indexes where indexname = 'pins_browse_order_idx';  -- 1 row
 --
 --   Then, signed in as a NON-admin collector in the app: open Collection →

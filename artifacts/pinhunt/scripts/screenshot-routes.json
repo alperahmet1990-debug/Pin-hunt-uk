@@ -4,6 +4,11 @@
     "path": "/"
   },
   {
+    "name": "home-zero-pins",
+    "path": "/",
+    "storage": { "@pinhunt_collection_v1": "{}" }
+  },
+  {
     "name": "collection",
     "path": "/collection"
   },
@@ -74,6 +79,21 @@
     "scroll": "end"
   },
   {
+    "name": "scan-result-add-photo",
+    "path": "/scan",
+    "upload": "Choose Photo",
+    "identify": {
+      "matches": [
+        {
+          "pinId": "dp-003",
+          "confidence": 81,
+          "reasoning": "Castle and fireworks"
+        }
+      ]
+    },
+    "click": "Add your photo"
+  },
+  {
     "name": "scan-no-match",
     "path": "/scan",
     "upload": "Choose Photo",
@@ -125,6 +145,152 @@
     "path": "/pin/dp-001"
   },
   {
+    "name": "pin-sold-priced",
+    "path": "/pin/dp-001",
+    "api": {
+      "/market-valuations": {
+        "status": 200,
+        "body": {
+          "valuations": [
+            {
+              "market": "UK",
+              "currency": "GBP",
+              "basis": "sold",
+              "low": 18.4,
+              "fair": 24.6,
+              "high": 31.2,
+              "soldCount": 7,
+              "activeCount": 0,
+              "calculatedAt": "2026-11-10T10:00:00Z"
+            },
+            {
+              "market": "US",
+              "currency": "USD",
+              "basis": "sold",
+              "low": 28,
+              "fair": 34,
+              "high": 41,
+              "soldCount": 3,
+              "activeCount": 0,
+              "calculatedAt": "2026-11-10T10:00:00Z"
+            }
+          ]
+        }
+      },
+      "GET /price-request": {
+        "status": 200,
+        "body": {
+          "state": "none",
+          "checkedAt": null,
+          "nextRequestAt": null,
+          "requestsOpen": true,
+          "markets": [
+            "UK",
+            "US"
+          ]
+        }
+      }
+    },
+    "scrollTo": "Where it lives"
+  },
+  {
+    "name": "pin-sold-get-price",
+    "path": "/pin/dp-001",
+    "api": {
+      "/market-valuations": {
+        "status": 200,
+        "body": {
+          "valuations": []
+        }
+      },
+      "GET /price-request": {
+        "status": 200,
+        "body": {
+          "state": "none",
+          "checkedAt": null,
+          "nextRequestAt": null,
+          "requestsOpen": true,
+          "markets": [
+            "UK",
+            "US"
+          ]
+        }
+      }
+    },
+    "scrollTo": "Where it lives"
+  },
+  {
+    "name": "pin-sold-pending",
+    "path": "/pin/dp-001",
+    "api": {
+      "/market-valuations": {
+        "status": 200,
+        "body": {
+          "valuations": []
+        }
+      },
+      "GET /price-request": {
+        "status": 200,
+        "body": {
+          "state": "pending",
+          "checkedAt": null,
+          "nextRequestAt": null,
+          "requestsOpen": true,
+          "markets": [
+            "UK",
+            "US"
+          ]
+        }
+      }
+    },
+    "scrollTo": "Where it lives"
+  },
+  {
+    "name": "pin-sold-no-sales",
+    "path": "/pin/dp-001",
+    "api": {
+      "/market-valuations": {
+        "status": 200,
+        "body": {
+          "valuations": []
+        }
+      },
+      "GET /price-request": {
+        "status": 200,
+        "body": {
+          "state": "no_sales",
+          "checkedAt": "2026-11-14T10:00:00Z",
+          "nextRequestAt": "2026-12-14T10:00:00Z",
+          "requestsOpen": true,
+          "markets": [
+            "UK",
+            "US"
+          ]
+        }
+      }
+    },
+    "scrollTo": "Where it lives"
+  },
+  {
+    "name": "pin-sold-off",
+    "path": "/pin/dp-001",
+    "api": {
+      "/market-valuations": {
+        "status": 404,
+        "body": {
+          "error": "Not found"
+        }
+      },
+      "/price-request": {
+        "status": 404,
+        "body": {
+          "error": "Not found"
+        }
+      }
+    },
+    "scrollTo": "Where it lives"
+  },
+  {
     "name": "set-detail",
     "path": "/set/Classics%202024"
   },
@@ -156,7 +322,8 @@
   {
     "name": "add-pin-photo",
     "path": "/add-pin",
-    "upload": "Choose from Library"
+    "upload": "Choose from Library",
+    "consent": true
   },
   {
     "name": "find-trades",
@@ -166,6 +333,49 @@
     "name": "scan-ai-consent",
     "path": "/scan",
     "upload": "Choose Photo"
+  },
+  {
+    "name": "add-pin-check",
+    "path": "/add-pin",
+    "upload": "Choose from Library",
+    "identify": { "matches": [{ "pinId": "dp-006", "confidence": 86, "reasoning": "Dumbo" }, { "pinId": "dp-003", "confidence": 61, "reasoning": "Castle" }] },
+    "click": "Check the catalogue"
+  },
+  {
+    "name": "add-pin-check-failed",
+    "path": "/add-pin",
+    "upload": "Choose from Library",
+    "consent": true,
+    "click": "Check the catalogue"
+  },
+  {
+    "name": "add-pin-details",
+    "path": "/add-pin",
+    "upload": "Choose from Library",
+    "identify": { "matches": [{ "pinId": "dp-006", "confidence": 86, "reasoning": "Dumbo" }] },
+    "click": ["Check the catalogue", "No, it’s new"]
+  },
+  {
+    "name": "add-pin-photo-end",
+    "path": "/add-pin",
+    "upload": "Choose from Library",
+    "consent": true,
+    "scroll": "end"
+  },
+  {
+    "name": "add-pin-park-other",
+    "path": "/add-pin",
+    "upload": "Choose from Library",
+    "identify": { "matches": [] },
+    "click": ["Check the catalogue", "Continue", "Other"],
+    "type": "Lantern"
+  },
+  {
+    "name": "add-pin-name-required",
+    "path": "/add-pin",
+    "upload": "Choose from Library",
+    "identify": { "matches": [] },
+    "click": ["I took this photo and PinHunt may use it as this pin’s catalogue image.", "Check the catalogue", "Continue", "Submit pin"]
   },
   {
     "name": "add-pin-ai-consent",
@@ -195,6 +405,20 @@
   {
     "name": "events",
     "path": "/events"
+  },
+  {
+    "name": "admin-events",
+    "path": "/admin/events"
+  },
+  {
+    "name": "admin-events-new",
+    "path": "/admin/events",
+    "click": "Add an event"
+  },
+  {
+    "name": "admin-events-edit",
+    "path": "/admin/events",
+    "click": "Edit"
   },
   {
     "name": "places",

@@ -76,6 +76,7 @@ class Query {
       method: this.head ? "HEAD" : this.method,
       headers,
       body: this.body === undefined ? undefined : JSON.stringify(this.body),
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     });
     let count = null;
     const range = res.headers?.get?.("content-range");
@@ -91,18 +92,23 @@ class Query {
   then(resolve, reject) { return this.run().then(resolve, reject); }
 }
 
+// Every call gives up on its own (outbound-timeouts.test.ts, #67), so a hung
+// connection can't stall a scheduled sync forever. Generous: a 250-pin upsert
+// into the indexed pins table can take tens of seconds.
+const REQUEST_TIMEOUT_MS = 120_000;
+
 export function createRestClient(url, serviceKey, fetchImpl = fetch) {
   const client = { base: String(url).replace(/\/$/, ""), headers: restHeaders(serviceKey), fetch: fetchImpl };
   return {
     from: (table) => new Query(client, table),
     rpc: async (fn, args = {}) => {
       const qs = Object.entries(args).map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join("&");
-      const res = await fetchImpl(`${client.base}/rest/v1/rpc/${fn}${qs ? `?${qs}` : ""}`, { headers: client.headers });
+      const res = await fetchImpl(`${client.base}/rest/v1/rpc/${fn}${qs ? `?${qs}` : ""}`, { headers: client.headers, signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) });
       if (!res.ok) return { data: null, error: { message: `${res.status}` } };
       return { data: await res.json(), error: null };
     },
     storageBucketExists: async (id) => {
-      const res = await fetchImpl(`${client.base}/storage/v1/bucket/${encodeURIComponent(id)}`, { headers: client.headers });
+      const res = await fetchImpl(`${client.base}/storage/v1/bucket/${encodeURIComponent(id)}`, { headers: client.headers, signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) });
       if (res.ok) return true;
       if ([400, 404].includes(res.status)) return false;
       throw new Error(`couldn't check storage buckets (${res.status})`);

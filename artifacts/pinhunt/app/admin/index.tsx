@@ -51,6 +51,7 @@ const MODERATION_LINKS: LinkItem[] = [
   { icon: 'alert-triangle', title: 'Trade Problems', description: 'Problem reports on trades.', href: '/admin/trade-problems' as Href },
   { icon: 'inbox',  title: 'Pin Submissions',       description: 'New pins collectors want added to the catalogue.',  href: '/admin/submissions' as Href },
   { icon: 'camera', title: 'Contributed Photos',    description: 'Photos collectors sent from Scan or the catalogue.', href: '/admin/contributed-images' as Href },
+  { icon: 'calendar', title: 'Events',              description: 'Pin events on Home and What’s Happening.',          href: '/admin/events' as Href },
 ];
 
 const CONTRIBUTE_LINKS: LinkItem[] = [

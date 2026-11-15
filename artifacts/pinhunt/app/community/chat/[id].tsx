@@ -22,6 +22,7 @@ import { radius, spacing } from '@/constants/theme';
 import type { CataloguePin, CommunityPost, Conversation, ConversationMessage, PotentialTradePin, TradeStatus } from '@workspace/pin-repository';
 import { REMOVED_MESSAGE_BODY } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { UkAskingChip } from '@/components/UkAskingChip';
 import { chatListData } from '@/utils/chatList';
 import { ErrorState } from '@/components/ui/ErrorState';
 import { toUserError, userErrorLine, type UserError } from '@/utils/userError';
@@ -136,6 +137,7 @@ function MessageBubble({ msg, isMe, colors, pins, onLongPress }: {
               <View style={{ flex: 1 }}>
                 <Text numberOfLines={2} style={[styles.pinTitle, { color: isMe ? colors.homeSurface : colors.homeInk }]}>{pin.title}</Text>
                 {forTrade && <Text style={[styles.tradeTag, { color: isMe ? colors.homeSurface : colors.homeCoral }]}>FOR TRADE</Text>}
+                <UkAskingChip pinhuntId={pinId} inverse={isMe} style={{ marginTop: 3 }} />
               </View>
             </TouchableOpacity>
           );

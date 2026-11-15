@@ -63,6 +63,18 @@ describe('admin review: unidentified submission (#395)', () => {
     expect(screen.getByText('Not given')).toBeTruthy();
   });
 
+  it('shows the collector\'s catalogue-check answer, and nothing for older submissions (#622)', async () => {
+    mockSubmission = { ...mockSubmission, aiIdentification: { ...(mockSubmission.aiIdentification as object), contributorAnswer: 'none_of_these' } };
+    await render(<AdminReviewScreen />);
+    expect(await screen.findByText('Collector saw the AI matches and said none was their pin')).toBeTruthy();
+  });
+
+  it('shows no check-answer line when there isn\'t one', async () => {
+    await render(<AdminReviewScreen />);
+    await screen.findByText('UNIDENTIFIED PIN');
+    expect(screen.queryByTestId('check-answer')).toBeNull();
+  });
+
   it('lists the AI match as a duplicate; merging into a pin with no photo offers "Use this photo"', async () => {
     await render(<AdminReviewScreen />);
     expect(await screen.findByText(/AI match \(86%\)/)).toBeTruthy();

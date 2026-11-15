@@ -1,30 +1,109 @@
 /**
- * Production guard: the mirror image of staging-guard.mjs, for the few
- * maintainer-run scripts that are explicitly approved to write to PRODUCTION
- * (docs/catalogue-sync/PRODUCTION-CATALOGUE-RESET.md). Every check must pass:
+ * Production guard: the only way a maintainer script may write to the
+ * production Supabase project. Today only scripts/market-price-batch.mjs uses
+ * it, behind its --production flag. Every other script stays staging-only
+ * (staging-guard.mjs). Agents never run a script against production: the
+ * operating model lists production data changes as human-only.
  *
- *   1. PINHUNT_ENV is exactly "production".
- *   2. PRODUCTION_PROJECT_REF is a valid ref, and differs from STAGING_PROJECT_REF.
- *   3. SUPABASE_URL is https://<PRODUCTION_PROJECT_REF>.supabase.co.
- *   4. The database's own marker, pinhunt_environment() (073_RUNBOOK.md), says "production".
- *   5. The staging marker bucket does NOT exist.
- *   6. Before any write, the person types the production ref (confirmWrite).
+ * It refuses unless the target is positively identified as production and the
+ * maintainer has typed the production project ref on the command line:
  *
- * Checks 1-3 are pure (assertProductionTarget); 4-5 need the network.
+ *   1. PINHUNT_ENV is exactly "production" (set only in the maintainer's
+ *      local production env file, which is gitignored).
+ *   2. PRODUCTION_PROJECT_REF is a valid ref, and the ref given with
+ *      --production on the command line is exactly that ref.
+ *   3. STAGING_PROJECT_REF is set, valid and different, so the two can't be
+ *      confused.
+ *   4. SUPABASE_URL is https://<PRODUCTION_PROJECT_REF>.supabase.co.
+ *   5. The target does NOT hold the staging marker bucket that only
+ *      `staging-db restore` creates. A staging project can't pass.
+ *
+ * Checks 1–4 are pure (assertProductionTarget). Check 5 needs the network
+ * (assertNotStagingMarker). requireProduction() runs both and exits on
+ * failure, before the caller creates its own client. No value is printed
+ * except the project ref.
  */
-import readline from "node:readline";
-import { isValidRef, refFromSupabaseUrl, STAGING_MARKER_BUCKET } from "./staging-guard.mjs";
+import { STAGING_MARKER_BUCKET, isValidRef, refFromSupabaseUrl } from "./staging-guard.mjs";
 
-export function assertProductionTarget(env) {
-  if (env.PINHUNT_ENV !== "production") throw new Error('PINHUNT_ENV must be "production" in the production settings file.');
+/** Checks 1–4. Throws with a reason; returns { ref, url } when the target is production. */
+export function assertProductionTarget(env, confirmedRef) {
+  if (env.PINHUNT_ENV !== "production") {
+    throw new Error('PINHUNT_ENV must be "production" (run with your local production env file).');
+  }
   const ref = String(env.PRODUCTION_PROJECT_REF ?? "").trim();
-  if (!isValidRef(ref)) throw new Error("PRODUCTION_PROJECT_REF must be the 20-character production project ref.");
-  if (env.STAGING_PROJECT_REF && String(env.STAGING_PROJECT_REF).trim() === ref) throw new Error("PRODUCTION_PROJECT_REF is the same as STAGING_PROJECT_REF.");
-  if (refFromSupabaseUrl(env.SUPABASE_URL) !== ref) throw new Error("SUPABASE_URL is not https://<PRODUCTION_PROJECT_REF>.supabase.co.");
-  if (!env.SUPABASE_SERVICE_ROLE_KEY) throw new Error("SUPABASE_SERVICE_ROLE_KEY (production) is not set.");
+  if (!isValidRef(ref)) {
+    throw new Error("PRODUCTION_PROJECT_REF must be the 20-character production project ref.");
+  }
+  if (String(confirmedRef ?? "").trim() !== ref) {
+    throw new Error("--production must be followed by the production project ref, typed exactly (it doesn't match PRODUCTION_PROJECT_REF).");
+  }
+  const staging = String(env.STAGING_PROJECT_REF ?? "").trim();
+  if (!isValidRef(staging)) {
+    throw new Error("STAGING_PROJECT_REF is not set, so production can't be told apart from staging.");
+  }
+  if (staging === ref) {
+    throw new Error("STAGING_PROJECT_REF and PRODUCTION_PROJECT_REF are the same project.");
+  }
+  if (refFromSupabaseUrl(env.SUPABASE_URL) !== ref) {
+    throw new Error("SUPABASE_URL is not https://<PRODUCTION_PROJECT_REF>.supabase.co.");
+  }
+  if (!env.SUPABASE_SERVICE_ROLE_KEY) {
+    throw new Error("SUPABASE_SERVICE_ROLE_KEY (production) is not set.");
+  }
   return { ref, url: `https://${ref}.supabase.co` };
 }
 
+/** Storage's answer for a bucket that doesn't exist. Anything else is not proof. */
+const BUCKET_NOT_FOUND_RE = /\bbucket not found\b/i;
+
+/**
+ * Check 5: the target must not be a prepared staging project. It passes only
+ * on a positive, specific "Bucket not found" error from the storage API.
+ * Everything else refuses: the marker bucket itself, a generic "Not Found"
+ * (for example a misrouted request), any other error, and an answer with
+ * neither an error nor the bucket. A network or permission problem can't be
+ * mistaken for production.
+ */
+export async function assertNotStagingMarker(client) {
+  const { data, error } = await client.storage.getBucket(STAGING_MARKER_BUCKET);
+  if (!error) {
+    if (data && data.id === STAGING_MARKER_BUCKET) {
+      throw new Error(`the target holds the "${STAGING_MARKER_BUCKET}" bucket, so it is a staging project, not production.`);
+    }
+    throw new Error("could not confirm the target is not staging (unexpected bucket check response).");
+  }
+  if (!BUCKET_NOT_FOUND_RE.test(String(error.message ?? ""))) {
+    throw new Error("could not confirm the target is not staging (bucket check failed).");
+  }
+}
+
+/**
+ * Runs every check, then returns { ref, url }. On any failure it prints the
+ * reason and exits with status 1, before the caller has created a client.
+ */
+export async function requireProduction(env = process.env, confirmedRef, { createClient, exit = (code) => process.exit(code) } = {}) {
+  try {
+    const target = assertProductionTarget(env, confirmedRef);
+    const make = createClient ?? (await import("@supabase/supabase-js")).createClient;
+    await assertNotStagingMarker(make(target.url, env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false } }));
+    console.log(`[production-guard] verified PRODUCTION project ${target.ref}`);
+    return target;
+  } catch (err) {
+    console.error(`[production-guard] Refusing to run: ${err.message}`);
+    exit(1);
+    throw err;
+  }
+}
+
+// ── Maintainer-run catalogue tools (import-pinandpop-production.mjs) ─────────
+// They talk to Supabase through scripts/lib/rest-client.mjs (no install) rather
+// than supabase-js, and confirm a write per step rather than per command line.
+
+/**
+ * Checks 5 and 6 for a rest-client connection: the database's own marker,
+ * pinhunt_environment() (073), must say "production", and the staging marker
+ * bucket must not exist.
+ */
 export async function assertProductionMarker(db) {
   const { data, error } = await db.rpc("pinhunt_environment");
   if (error) throw new Error("couldn't read pinhunt_environment() (073 project marker). Nothing was changed.");
@@ -32,9 +111,10 @@ export async function assertProductionMarker(db) {
   if (await db.storageBucketExists(STAGING_MARKER_BUCKET)) throw new Error("this project has the staging marker bucket. Nothing was changed.");
 }
 
-/** Asks the person to type the production ref. Resolves only on an exact match. */
+/** Asks the person to type the production ref before a write. Resolves only on an exact match. */
 export async function confirmWrite(ref, what, { input = process.stdin, output = process.stdout } = {}) {
   if (!input.isTTY && input === process.stdin) throw new Error("run this in a terminal: writing to production needs a typed confirmation.");
+  const { default: readline } = await import("node:readline");
   const rl = readline.createInterface({ input, output });
   const answer = await new Promise((resolve) => rl.question(`\nAbout to ${what} in PRODUCTION.\nType the production project ref to continue (anything else stops): `, resolve));
   rl.close();

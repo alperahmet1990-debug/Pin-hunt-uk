@@ -47,6 +47,8 @@ const DATE_RE = /^\d{4}-\d{2}-\d{2}/;
 
 export interface AuthedRequest extends Request {
   supabaseToken?: string;
+  /** The signed-in user's id (auth.users.id), set by requireUser. */
+  userId?: string;
 }
 
 /** Require a valid signed-in Supabase user (Bearer token). */
@@ -65,6 +67,7 @@ export async function requireUser(req: AuthedRequest, res: Response, next: NextF
       return;
     }
     req.supabaseToken = token;
+    req.userId = user.id;
     next();
   } catch {
     res.status(401).json({ error: "Authentication failed" });

@@ -47,6 +47,7 @@ import { Button } from '@/components/ui/Button';
 import { Skeleton, SkeletonBlock } from '@/components/ui/Skeleton';
 import { ErrorState } from '@/components/ui/ErrorState';
 import type { PinOpportunity, DiscoveryItem } from '@/utils/findTradesEngine';
+import { UkAskingChip } from '@/components/UkAskingChip';
 import { PinImage } from '@/components/ui/PinImage';
 
 function pinImageSource(imageUrl?: string) {
@@ -294,6 +295,7 @@ function IsoCard({ opportunity, hasMatch, colors, onPress }: {
     >
       <View style={[styles.tileImageWrap, { backgroundColor: colors.homeAqua }]}>
         <PinImage source={pinImageSource(opportunity.imageUrl)} style={styles.tileImage} contentFit="contain" />
+        <UkAskingChip pinhuntId={opportunity.pinId} style={styles.tileChip} compact />
         {hasMatch && (
           <View style={[styles.matchDot, { backgroundColor: colors.homeCoral }]}>
             <Feather name="repeat" size={9} color={colors.homeSurface} />
@@ -430,6 +432,7 @@ function DiscoveryTile({ item, colors, onPress }: { item: DiscoveryItem; colors:
     >
       <View style={[styles.tileImageWrap, { backgroundColor: colors.homeAqua }]}>
         <PinImage source={pinImageSource(item.imageUrl)} style={styles.tileImage} contentFit="contain" />
+        <UkAskingChip pinhuntId={item.pinId} style={styles.tileChip} compact />
       </View>
       <Text numberOfLines={2} style={[styles.tileTitle, { color: colors.homeInk }]}>{item.title}</Text>
       <Text numberOfLines={1} style={[styles.tileMeta, { color: colors.homeMuted }]}>
@@ -440,6 +443,8 @@ function DiscoveryTile({ item, colors, onPress }: { item: DiscoveryItem; colors:
 }
 
 const styles = StyleSheet.create({
+  // Over the picture, so the fixed tile size doesn't change (WP1 price chip).
+  tileChip: { position: 'absolute', left: 4, bottom: 4 },
   center: { alignItems: 'center', paddingTop: 60, gap: spacing.md },
   emptyTitle: { fontSize: 18, fontFamily: 'Inter_600SemiBold' },
   emptySub: { fontSize: 14, fontFamily: 'Inter_400Regular', textAlign: 'center', lineHeight: 20, maxWidth: 280 },

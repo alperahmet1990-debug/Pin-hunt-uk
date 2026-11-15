@@ -92,9 +92,11 @@ function csv(dir) {
 const quiet = () => {};
 
 test("guard refuses anything that isn't production", async () => {
-  assert.throws(() => assertProductionTarget({ ...env, PINHUNT_ENV: "staging" }), /PINHUNT_ENV/);
-  assert.throws(() => assertProductionTarget({ ...env, SUPABASE_URL: `https://${STAGING}.supabase.co` }), /SUPABASE_URL/);
-  assert.throws(() => assertProductionTarget({ ...env, STAGING_PROJECT_REF: PROD }), /same as STAGING/);
+  assert.throws(() => assertProductionTarget({ ...env, PINHUNT_ENV: "staging" }, PROD), /PINHUNT_ENV/);
+  assert.throws(() => assertProductionTarget({ ...env, SUPABASE_URL: `https://${STAGING}.supabase.co` }, PROD), /SUPABASE_URL/);
+  assert.throws(() => assertProductionTarget({ ...env, STAGING_PROJECT_REF: PROD }, PROD), /same project/);
+  // The shared guard also insists on a staging ref, so the two can't be confused.
+  await assert.rejects(main(["check"], { ...env, STAGING_PROJECT_REF: "" }, { fetchImpl: fakeSupabase().fetch, log: quiet }), /STAGING_PROJECT_REF/);
   await assert.rejects(main(["check"], env, { fetchImpl: fakeSupabase({ environment: "staging" }).fetch, log: quiet }), /says it is "staging"/);
   await assert.rejects(main(["check"], env, { fetchImpl: fakeSupabase({ stagingBucket: true }).fetch, log: quiet }), /staging marker bucket/);
 });

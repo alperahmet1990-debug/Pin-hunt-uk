@@ -94,7 +94,9 @@ export async function main(argv = process.argv.slice(2), env = process.env, { fe
   if (!["check", "import", "characters", "sync"].includes(mode)) throw new Error("mode must be check, import, characters or sync");
   if ((full || fullOnSunday) && mode !== "sync") throw new Error("--full and --full-on-sunday only go with sync.");
 
-  const { ref } = assertProductionTarget(env);
+  // Identifies the target (checks 1-4 of lib/production-guard.mjs). Writing is
+  // confirmed separately, per step: a typed ref, or PINHUNT_UNATTENDED_CONFIRM.
+  const { ref } = assertProductionTarget(env, env.PRODUCTION_PROJECT_REF);
   if (unattended) {
     if (mode !== "sync") throw new Error("--unattended is only allowed for sync. Nothing was changed.");
     if (String(env.PINHUNT_UNATTENDED_CONFIRM ?? "").trim() !== ref) {

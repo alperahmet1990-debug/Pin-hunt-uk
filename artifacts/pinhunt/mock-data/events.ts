@@ -1,10 +1,14 @@
 /**
- * Curated upcoming events for the Home "What's Happening" shelf — picked by
- * hand from public listings and confirmed by the maintainer before adding
- * (#352). Not fetched from any backend yet; see types/event.ts (sourceType
- * 'imported'). Undated events are listed as rumours (`rumour: true`). Past events drop off automatically (selectUpcomingEvents), so
- * this list needs topping up: a test fails once every event here is over.
+ * Demo events (#613). Real builds read events from the events table
+ * (migration 081), managed in Admin → Events; this list is what demo mode
+ * (screenshots) serves through the same event service, and what
+ * supabase/verify/081_seed.sql seeded the table with. Picked by hand from
+ * public listings and confirmed by the maintainer (#352). Undated events are
+ * listed as rumours (`rumour: true`). Past events drop off automatically
+ * (selectUpcomingEvents), so a test fails once every event here is over:
+ * top it up so screenshots keep showing events.
  */
+import { eventInputToRow, mapEventRow, type PinEvent, type PinEventInput } from '@workspace/pin-repository';
 import type { PinHuntEvent } from '@/types/event';
 
 export const EVENTS: PinHuntEvent[] = [
@@ -159,3 +163,78 @@ export const EVENTS: PinHuntEvent[] = [
     createdAt: '2026-10-16T00:00:00.000Z',
   },
 ];
+
+function toPinEvent(e: PinHuntEvent): PinEvent {
+  return {
+    id: e.id,
+    title: e.title,
+    description: e.description,
+    eventDate: e.eventDate,
+    endDate: e.endDate ?? null,
+    time: e.time ?? null,
+    location: e.location ?? null,
+    country: e.country ?? null,
+    eventType: e.eventType,
+    badgeLabel: e.badgeLabel,
+    sourceName: e.sourceName ?? null,
+    sourceUrl: e.sourceUrl ?? null,
+    featured: !!e.featured,
+    rumour: !!e.rumour,
+    whenText: e.whenText ?? null,
+    published: true,
+    createdAt: e.createdAt,
+    updatedAt: e.createdAt,
+  };
+}
+
+/**
+ * An in-memory event service for demo mode: the events above, published,
+ * plus one draft so Admin → Events shows both states. Edits last until reload.
+ */
+export function createDemoEvents() {
+  let events: PinEvent[] = [
+    ...EVENTS.map(toPinEvent),
+    {
+      ...toPinEvent(EVENTS[EVENTS.length - 1]),
+      id: 'demo-draft-spring-meet',
+      title: 'Spring pin meet (draft)',
+      description: 'A draft: only admins see it until it is published.',
+      eventDate: '2027-04-10',
+      endDate: null,
+      rumour: false,
+      whenText: null,
+      badgeLabel: 'UK EVENT',
+      published: false,
+    },
+  ];
+  let next = 1;
+  const today = () => new Date().toISOString().slice(0, 10);
+  const save = (input: PinEventInput, id?: string): PinEvent => {
+    const row = eventInputToRow(input);
+    const now = new Date().toISOString();
+    const existing = id ? events.find(e => e.id === id) : undefined;
+    const event = mapEventRow({
+      ...row,
+      id: existing?.id ?? `demo-event-${next++}`,
+      created_at: existing?.createdAt ?? now,
+      updated_at: now,
+    })!;
+    events = existing ? events.map(e => (e.id === id ? event : e)) : [event, ...events];
+    return event;
+  };
+  return {
+    getEvents: async () => events
+      .filter(e => e.published && (e.endDate ?? e.eventDate) >= today())
+      .sort((a, b) => a.eventDate.localeCompare(b.eventDate)),
+    getAdminEvents: async () => [...events].sort((a, b) => b.eventDate.localeCompare(a.eventDate)),
+    saveEvent: async (input: PinEventInput, id?: string) => save(input, id),
+    setEventPublished: async (id: string, published: boolean) => {
+      const found = events.find(e => e.id === id);
+      if (!found) throw new Error('Event not found.');
+      const updated = { ...found, published, updatedAt: new Date().toISOString() };
+      events = events.map(e => (e.id === id ? updated : e));
+      return updated;
+    },
+    deleteEvent: async (id: string) => { events = events.filter(e => e.id !== id); },
+  };
+}

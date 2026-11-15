@@ -13,7 +13,8 @@ let mockEvents: unknown[] = [];
 let mockPosts: unknown[] = [];
 let mockBlocked = new Set<string>();
 
-jest.mock('@/mock-data/events', () => ({ get EVENTS() { return mockEvents; } }));
+// Events come from the event service (#613); the hook is stubbed with fixed events.
+jest.mock('@/hooks/useEvents', () => ({ useEvents: () => ({ events: mockEvents, reload: () => Promise.resolve() }) }));
 jest.mock('expo-router', () => ({ useRouter: () => ({ push: mockPush }), Stack: { Screen: () => null } }));
 jest.mock('@/hooks/useCommunity', () => ({
   useCommunity: () => ({ repo: { getCommunityFeed: () => Promise.resolve(mockPosts) } }),

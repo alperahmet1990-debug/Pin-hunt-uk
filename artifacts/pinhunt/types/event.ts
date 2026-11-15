@@ -1,11 +1,11 @@
 import type { ImageSourcePropType } from 'react-native';
 
 /**
- * Where a "What's Happening" card came from. Only 'imported' (hand-curated
- * seed data, see mock-data/events.ts) and 'community' (derived from existing
- * CommunityPost records of type 'new_pickup') are populated today. 'admin'
- * is reserved for a future admin-authored event tool — see CLAUDE.md /
- * the Home "What's Happening" task notes before building it.
+ * Where a "What's Happening" card came from: 'admin' (the events table,
+ * managed in Admin → Events, #613; demo mode serves mock-data/events.ts
+ * through the same path), 'community' (CommunityPost records of type
+ * 'new_pickup'), or 'imported' (the hand-curated list in
+ * mock-data/events.ts, now demo data only).
  */
 export type EventSourceType = 'admin' | 'community' | 'imported';
 

@@ -16,10 +16,11 @@ describe('Find Trades entry points', () => {
     expect(count('app/(tabs)/community.tsx')).toBeGreaterThanOrEqual(1);
   });
 
-  it('Home keeps at least one', () => {
-    // Since #59 it leads the Recently added strip that Home renders.
-    const home = readFileSync(path.join(ROOT, 'app/(tabs)/index.tsx'), 'utf8');
-    const viaStrip = /<RecentPinsStrip\b/.test(home) ? count('components/RecentPinsStrip.tsx') : 0;
-    expect(count('app/(tabs)/index.tsx') + viaStrip).toBeGreaterThanOrEqual(1);
+  it('Home no longer has one (maintainer decision, #604)', () => {
+    // The maintainer approved removing the Find Trades tile from Home (#604):
+    // Home now leads with the ISO and For trade tiles, which open the
+    // Collection tabs that carry Find Trades (checked above). If Home gets an
+    // entry point again, flip this back to "at least one".
+    expect(count('app/(tabs)/index.tsx')).toBe(0);
   });
 });

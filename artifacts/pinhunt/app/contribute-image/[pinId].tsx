@@ -1,15 +1,19 @@
 /**
- * Contribute Pin Image — shown after a scan match resolves to a catalogue
- * pin that has no display image yet (scan.tsx's handleSelectMatch routes
- * here instead of straight to /pin/[id] when !match.pin.imageUrl).
+ * Contribute Pin Image — add a photo for a catalogue pin. Reached from:
+ *   - the scan result's "Add your photo" (`from=scan`), when the matched pin
+ *     has no catalogue photo. The scan photo is offered as the starting
+ *     image (utils/scanPhotoHandoff.ts); the collector can take a new one;
+ *   - the pin page's "Add a photo" card (no `from`), for a pin with no photo;
+ *   - `from=catalogue` and `from=replace` (below).
  *
- * Steps: consent (explain + explicit rights grant) → capture (a dedicated,
- * higher-quality photo — not the disposable identify photo) → processing
- * (the server cleans it up via Pixian) → confirm (the cleaned-up photo,
- * watermarked exactly as it will be published — retake or submit). The
- * submitted photo is stored privately pending admin review; it only
- * becomes the pin's public catalogue image once approved (admins' and the
- * App Creator's photos publish straight away).
+ * Steps: consent (explain + explicit rights grant) → photo (the scan photo,
+ * or a new camera shot) → processing (the server cleans it up via Pixian and
+ * keeps the photo as taken for the admin only) → confirm (the cleaned-up
+ * photo, watermarked exactly as it will be published — retake or submit).
+ * The submitted photo is stored privately pending admin review; it only
+ * becomes the pin's public catalogue image once approved. Admins' and the
+ * App Creator's photos are reviewed too by default, so they get the same
+ * raw | cleaned | Pin & Pop check; an admin can tick "Publish now" instead.
  *
  * `from=catalogue` (the beta contributor screen, app/contribute) adds an
  * "Is this your pin?" check against the pin's details/reference photo, lets
@@ -52,6 +56,7 @@ import {
 } from '@/hooks/useCatalogueCoverage';
 import { useMyAccess } from '@/hooks/useMyAccess';
 import type { ContributedImageReason } from '@workspace/pin-repository';
+import { clearScanPhotoForContribution, getScanPhotoForContribution } from '@/utils/scanPhotoHandoff';
 
 type Step = 'consent' | 'processing' | 'confirm' | 'submitting' | 'done';
 
@@ -71,16 +76,21 @@ export default function ContributeImageScreen() {
   const { pinId, from } = useLocalSearchParams<{ pinId: string; from?: string }>();
   const fromCatalogue = from === 'catalogue';
   const fromReplace = from === 'replace';
+  const fromScan = from === 'scan';
+  // The photo this collector just scanned, offered as the starting image.
+  const { session } = useAuth();
+  const scanPhoto = fromScan ? getScanPhotoForContribution(pinId, session?.user?.id) : null;
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { pins, ensurePins } = usePinCatalogue();
-  const { session } = useAuth();
   // The photo is cleaned up by Pixian before it's shown back (#501).
   const { ensure: ensureConsent, sheet: consentSheet } = useAiPhotoConsent();
   const { collection } = useCollection();
-  // Admins and the App Creator publish straight to the catalogue (server decides).
+  // Admins and the App Creator are reviewed too, unless they choose
+  // "Publish now" (the server checks they really are an admin).
   const { isAdmin } = useMyAccess();
+  const [publishNow, setPublishNow] = useState(false);
   const [published, setPublished] = useState(false);
 
   // The catalogue context only caches a slice — make sure this pin is loaded.
@@ -107,9 +117,9 @@ export default function ContributeImageScreen() {
   }, [router, pinId]);
 
   const leave = useCallback(() => {
-    if (fromCatalogue || fromReplace) router.back();
+    if (fromCatalogue || fromReplace || fromScan) router.back();
     else goToPin();
-  }, [fromCatalogue, fromReplace, router, goToPin]);
+  }, [fromCatalogue, fromReplace, fromScan, router, goToPin]);
 
   const ownedIds = useMemo(() => new Set(
     Object.entries(collection)
@@ -124,6 +134,40 @@ export default function ContributeImageScreen() {
   }, [router, nextPin]);
 
   const proposalReason = fromCatalogue || fromReplace ? (isReplacement ? reason : 'missing') : undefined;
+
+  // Have the server clean the photo up, so the contributor confirms the
+  // result rather than their raw camera shot.
+  const processPhoto = useCallback(async (imageBase64: string, mimeType: string) => {
+    if (!session?.access_token) return;
+    setError(null);
+    const returnTo: Step = preview ? 'confirm' : 'consent';
+    setStep('processing');
+    try {
+      const res = await fetch(`${API_BASE}/pin-images/contribute/preview`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${session.access_token}`,
+        },
+        body: JSON.stringify({
+          pinId,
+          imageBase64,
+          mimeType,
+          consentGranted: true,
+          // This screen tells the collector the original is kept for moderators.
+          keepOriginalNoticeShown: true,
+          ...(proposalReason ? { proposalReason } : {}),
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? 'Could not process your photo.');
+      setPreview({ uri: `data:image/jpeg;base64,${data.previewBase64}`, draftPath: data.draftPath });
+      setStep('confirm');
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Could not process your photo.');
+      setStep(returnTo);
+    }
+  }, [session?.access_token, pinId, proposalReason, preview]);
 
   const takePhoto = useCallback(async () => {
     if (!session?.access_token) return;
@@ -153,35 +197,8 @@ export default function ContributeImageScreen() {
       Alert.alert('Could not read photo', 'Please try again.');
       return;
     }
-
-    // Have the server clean the photo up, so the contributor confirms the
-    // result rather than their raw camera shot.
-    const returnTo: Step = preview ? 'confirm' : 'consent';
-    setStep('processing');
-    try {
-      const res = await fetch(`${API_BASE}/pin-images/contribute/preview`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${session.access_token}`,
-        },
-        body: JSON.stringify({
-          pinId,
-          imageBase64: asset.base64,
-          mimeType: asset.mimeType ?? 'image/jpeg',
-          consentGranted: true,
-          ...(proposalReason ? { proposalReason } : {}),
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? 'Could not process your photo.');
-      setPreview({ uri: `data:image/jpeg;base64,${data.previewBase64}`, draftPath: data.draftPath });
-      setStep('confirm');
-    } catch (e) {
-      setError(e instanceof Error ? e.message : 'Could not process your photo.');
-      setStep(returnTo);
-    }
-  }, [session?.access_token, pinId, proposalReason, preview]);
+    await processPhoto(asset.base64, asset.mimeType ?? 'image/jpeg');
+  }, [session?.access_token, processPhoto]);
 
   // Ask before the camera opens (#501): "Not now" sends nothing. Returns at
   // once; the camera follows the answer.
@@ -189,6 +206,12 @@ export default function ContributeImageScreen() {
     if (!session?.access_token) return;
     void ensureConsent().then(ok => { if (ok) void takePhoto(); });
   }, [session?.access_token, ensureConsent, takePhoto]);
+
+  // The scan photo goes through the same clean-up as a new one.
+  const handleUseScanPhoto = useCallback(() => {
+    if (!session?.access_token || !scanPhoto) return;
+    void ensureConsent().then(ok => { if (ok) void processPhoto(scanPhoto.base64, scanPhoto.mimeType); });
+  }, [session?.access_token, scanPhoto, ensureConsent, processPhoto]);
 
   const handleSubmit = useCallback(async () => {
     if (!preview || !session?.access_token) return;
@@ -205,7 +228,10 @@ export default function ContributeImageScreen() {
           pinId,
           draftPath: preview.draftPath,
           consentGranted: true,
+          // This screen tells the collector the original is kept for moderators.
+          keepOriginalNoticeShown: true,
           ...(proposalReason ? { proposalReason } : {}),
+          ...(isAdmin && publishNow ? { publishNow: true } : {}),
         }),
       });
       const data = await res.json();
@@ -216,12 +242,13 @@ export default function ContributeImageScreen() {
       } else {
         markCoveragePending(pinId);
       }
+      clearScanPhotoForContribution();
       setStep('done');
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Could not submit your photo.');
       setStep('confirm');
     }
-  }, [preview, session?.access_token, pinId, proposalReason]);
+  }, [preview, session?.access_token, pinId, proposalReason, isAdmin, publishNow]);
 
   const canStart = consentChecked && (!isReplacement || reason !== null);
 
@@ -266,6 +293,17 @@ export default function ContributeImageScreen() {
               <Text style={[styles.pinName, { color: colors.homeMuted }]}>{title}</Text>
             ) : null}
 
+            {scanPhoto && (
+              <View testID="scan-photo-card" style={styles.scanPhotoWrap}>
+                <Image
+                  source={{ uri: scanPhoto.uri }}
+                  style={[styles.scanPhoto, { borderColor: colors.homeLine, backgroundColor: colors.homeAqua }]}
+                  accessibilityLabel="Your scan photo"
+                />
+                <Text style={[styles.pinCardMeta, { color: colors.homeMuted }]}>Your scan photo</Text>
+              </View>
+            )}
+
             {isReplacement && (
               <View style={styles.reasons}>
                 <Text style={[styles.reasonsLabel, { color: colors.homeInk }]}>Why replace the current photo?</Text>
@@ -292,10 +330,15 @@ export default function ContributeImageScreen() {
             </Text>
             <Text style={[styles.body, { color: colors.homeMuted }]}>
               {isAdmin
-                ? 'As an admin, your photo goes live in the catalogue as soon as you submit it \u2014 no review needed.'
+                ? 'As an admin, your photo goes to the review queue too, so you can check it against the Pin & Pop image before it goes live. You can choose to publish it straight away on the next step.'
                 : isReplacement
                 ? 'The current photo stays until a PinHunt moderator reviews yours \u2014 nothing changes unless it\u2019s approved.'
                 : 'A PinHunt moderator reviews every photo before it goes live, so it won\u2019t appear anywhere until approved.'}
+            </Text>
+            <Text style={[styles.body, { color: colors.homeMuted }]}>
+              We also keep your original photo privately, without its location or camera details,
+              until a moderator has compared it with the cleaned-up version. Then it&apos;s deleted.
+              If you don&apos;t submit it, it&apos;s deleted within a day.
             </Text>
 
             <TouchableOpacity
@@ -313,17 +356,46 @@ export default function ContributeImageScreen() {
             {error && (
               <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
             )}
-            <TouchableOpacity
-              style={[styles.primaryBtn, { backgroundColor: canStart ? colors.homeCoral : colors.homeAqua }]}
-              onPress={handleTakePhoto}
-              disabled={!canStart}
-              activeOpacity={0.85}
-            >
-              <Feather name="camera" size={18} color={canStart ? colors.homeHeroText : colors.homeMuted} />
-              <Text style={[styles.primaryBtnLabel, { color: canStart ? colors.homeHeroText : colors.homeMuted }]}>
-                Take Photo
-              </Text>
-            </TouchableOpacity>
+            {scanPhoto ? (
+              <>
+                <TouchableOpacity
+                  style={[styles.primaryBtn, { backgroundColor: canStart ? colors.homeCoral : colors.homeAqua }]}
+                  onPress={handleUseScanPhoto}
+                  disabled={!canStart}
+                  activeOpacity={0.85}
+                  accessibilityRole="button"
+                >
+                  <Feather name="check" size={18} color={canStart ? colors.homeHeroText : colors.homeMuted} />
+                  <Text style={[styles.primaryBtnLabel, { color: canStart ? colors.homeHeroText : colors.homeMuted }]}>
+                    Use this photo
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={[styles.newPhotoBtn, { borderColor: colors.homeLine }]}
+                  onPress={handleTakePhoto}
+                  disabled={!canStart}
+                  activeOpacity={0.85}
+                  accessibilityRole="button"
+                >
+                  <Feather name="camera" size={16} color={canStart ? colors.homeInk : colors.homeMuted} />
+                  <Text style={[styles.secondaryBtnLabel, { color: canStart ? colors.homeInk : colors.homeMuted }]}>
+                    Take a new photo
+                  </Text>
+                </TouchableOpacity>
+              </>
+            ) : (
+              <TouchableOpacity
+                style={[styles.primaryBtn, { backgroundColor: canStart ? colors.homeCoral : colors.homeAqua }]}
+                onPress={handleTakePhoto}
+                disabled={!canStart}
+                activeOpacity={0.85}
+              >
+                <Feather name="camera" size={18} color={canStart ? colors.homeHeroText : colors.homeMuted} />
+                <Text style={[styles.primaryBtnLabel, { color: canStart ? colors.homeHeroText : colors.homeMuted }]}>
+                  Take Photo
+                </Text>
+              </TouchableOpacity>
+            )}
 
             <TouchableOpacity style={styles.skipBtn} onPress={leave} activeOpacity={0.7}>
               <Text style={[styles.skipLabel, { color: colors.homeMuted }]}>
@@ -351,6 +423,19 @@ export default function ContributeImageScreen() {
               This is exactly how it will appear in the catalogue. If the pin is cut off,
               blurry or the wrong one, retake it.
             </Text>
+            {isAdmin && (
+              <TouchableOpacity
+                style={styles.consentRow}
+                onPress={() => setPublishNow(v => !v)}
+                activeOpacity={0.8}
+                testID="publish-now-row"
+              >
+                <Switch value={publishNow} onValueChange={setPublishNow} accessibilityLabel="Publish now, skip review" />
+                <Text style={[styles.consentText, { color: colors.homeInk }]}>
+                  Publish now (admin). Leave this off to check it in the review queue against the Pin & Pop image first.
+                </Text>
+              </TouchableOpacity>
+            )}
             {error && (
               <Text style={[styles.errorText, { color: colors.destructive }]}>{error}</Text>
             )}
@@ -453,5 +538,8 @@ const styles = StyleSheet.create({
   reasonsLabel: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   reasonRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, borderWidth: 1, borderRadius: 14, padding: spacing.md },
   reasonText: { flex: 1, fontSize: 14, fontFamily: 'Inter_400Regular' },
+  scanPhotoWrap: { alignItems: 'center', gap: 4 },
+  scanPhoto: { width: 160, height: 160, borderRadius: radius.lg, borderWidth: 1 },
+  newPhotoBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: spacing.xs, width: '100%', borderWidth: 1, borderRadius: 18, paddingVertical: 13 },
   submitBtn: { flex: 2, alignItems: 'center', justifyContent: 'center', borderRadius: 18, paddingVertical: 14 },
 });

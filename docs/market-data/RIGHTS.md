@@ -41,6 +41,7 @@ Until a marketplace's position is resolved, **raw marketplace listings** stay be
 | `SOLDGRAPH_ENABLED` | Any call to Soldgraph (kill switch) | off | Budget row set; staging pilot accepted |
 | `MARKET_VALUATION_V2_ENABLED` | Writing and reading per-market valuations (`GET /api/pins/:pinId/market-valuations`) | off | **#411 data quality cleared** for each published market (section 6) |
 | Per-market publication allow-list (SG-12, #446) | Which markets' valuations the read returns | none | That market's evidence verified region-true (#411 / #450) |
+| `MARKET_PRICE_REQUEST_ENABLED` | "Get a price": a signed-in collector can start a paid Soldgraph search (eBay UK/US sold, domestic sellers) for one pin. Capped per user and per day; respects the hard monthly budget; answers (including "no sales") are cached. Returns derived values only, never listings. See `artifacts/api-server/scripts/PRICE-REQUEST.md` | off | The searched markets pass the pilot (section 6) and are in the publication allow-list; budget row set with a hard stop |
 | `MARKET_COMPS_PUBLIC_ENABLED` (SG-12, #446) | Public comparable-sales endpoint: individual listings with date, price, currency, marketplace and link | **off** | Marketplace terms resolved for the source shown (section 2) |
 
 Turning on valuations never turns on comparable listings; they are separate switches. The flags in the last two rows are added by #446. Until it merges, they don't exist and nothing is exposed.

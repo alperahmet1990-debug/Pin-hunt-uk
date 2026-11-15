@@ -1,5 +1,6 @@
 import type { CommunityPrice, MyPinPrice, PriceCurrency } from './community-prices';
 import type { CollectionPlace, PinLocation, PinLocationInput, PlaceInput } from './pin-locations';
+import type { PinEvent, PinEventInput } from './events';
 import type {
   AddUserPinInput,
   MarkTradePostedInput,
@@ -404,6 +405,13 @@ export interface IUserPinRepository {
   getContributedImageUrl(storagePath: string): Promise<string>;
 
   /**
+   * Signed URL (1 hour TTL) for a contribution's raw original in the
+   * admin-only `pin-contributed-raw` bucket (migration 080). Needs a
+   * service-role or admin client; admin routes only.
+   */
+  getContributedRawImageUrl(rawStoragePath: string): Promise<string>;
+
+  /**
    * True when the user already has a pending contribution for this pin
    * (pinhunt_id). Used to stop duplicate submissions.
    */
@@ -696,4 +704,20 @@ export interface IUserPinRepository {
   setPinLocations(pinIds: string[], input: PinLocationInput | PinLocationInput[], place?: CollectionPlace): Promise<void>;
   /** Forget where pins live; they stay in the collection. */
   clearPinLocations(pinIds: string[]): Promise<void>;
+
+  // ── Events (migration 081, #613) ───────────────────────────────────────
+  // Anyone reads published events; admins read drafts and write (RLS). Until
+  // 081 is applied these throw a PinRepositoryError that isEventsUnavailable()
+  // recognises.
+
+  /** Published events that haven't ended, soonest first. */
+  getEvents(): Promise<PinEvent[]>;
+  /** Admins: every event, drafts and past ones included. */
+  getAdminEvents(): Promise<PinEvent[]>;
+  /** Admins: add an event (no id) or save changes to one. */
+  saveEvent(input: PinEventInput, id?: string): Promise<PinEvent>;
+  /** Admins: publish or unpublish. */
+  setEventPublished(id: string, published: boolean): Promise<PinEvent>;
+  /** Admins: delete an event. */
+  deleteEvent(id: string): Promise<void>;
 }

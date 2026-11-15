@@ -8,6 +8,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import type { CataloguePin, TradeItem } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { UkAskingChip } from '@/components/UkAskingChip';
 import { useColors } from '@/hooks/useColors';
 import { getPinImageSource } from '@/utils/pinImage';
 import { radius, spacing } from '@/constants/theme';
@@ -65,7 +66,10 @@ export function TradeItemsCard({ items, viewerIsInitiator, pinFor, onPinPress, o
                   ) : (
                     <View style={[styles.image, { backgroundColor: colors.homeAqua }]} />
                   )}
-                  <Text numberOfLines={2} style={[styles.rowText, { color: colors.homeInk }]}>{label}</Text>
+                  <View style={styles.rowBody}>
+                    <Text numberOfLines={2} style={[styles.rowText, { color: colors.homeInk }]}>{label}</Text>
+                    <UkAskingChip pinhuntId={item.pinhuntId} />
+                  </View>
                 </>
               );
               return onPinPress && item.pinhuntId ? (
@@ -108,5 +112,6 @@ const styles = StyleSheet.create({
   groupLabel: { fontSize: 11, fontFamily: 'Inter_500Medium', textTransform: 'uppercase', letterSpacing: 0.4 },
   row: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, minHeight: 44 },
   image: { width: 36, height: 36, borderRadius: radius.sm },
-  rowText: { flex: 1, fontSize: 14, fontFamily: 'Inter_400Regular' },
+  rowBody: { flex: 1, gap: 2 },
+  rowText: { fontSize: 14, fontFamily: 'Inter_400Regular' },
 });

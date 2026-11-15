@@ -28,6 +28,7 @@ export type {
   EditionType,
   PinSubmission,
   SubmissionAiIdentification,
+  SubmissionCheckAnswer,
   PinSubmissionStatus,
   UpdatePinSubmissionInput,
   Trade,
@@ -110,7 +111,7 @@ export type {
 export type { PinRepository } from './repository';
 export type { PinSetSummary, CatalogueBrowsePin, CatalogueBrowsePageQuery } from './types';
 export { PinRepositoryError } from './repository';
-export { homeMarketFromCountry, SUSPENSION_REASON_MAX, REMOVED_MESSAGE_BODY, MESSAGE_REMOVAL_REASON_MAX } from './types';
+export { homeMarketFromCountry, SUSPENSION_REASON_MAX, REMOVED_MESSAGE_BODY, MESSAGE_REMOVAL_REASON_MAX, SUBMISSION_CHECK_ANSWERS } from './types';
 export { safeDisplayName } from './display-name';
 export type { PinRepositoryErrorCode } from './repository';
 
@@ -192,6 +193,17 @@ export {
   suggestPockets,
   updatePlace,
 } from './pin-locations';
+
+// ─── Events (migration 081, #613) ─────────────────────────────────────────────
+export type { EventsClient, PinEvent, PinEventInput } from './events';
+export {
+  DEFAULT_BADGE_LABEL,
+  DEFAULT_EVENT_TYPE,
+  EVENT_LIMITS,
+  eventInputToRow,
+  isEventsUnavailable,
+  mapEventRow,
+} from './events';
 
 // ─── Age confirmation (migration 073, LP-8 #530) ──────────────────────────────
 export type { AgeConfirmationClient, AgeStatus } from './age-confirmation';

@@ -37,6 +37,10 @@ import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
 import { TradeItemsCard } from '@/components/TradeItemsCard';
 import { tradeTimeline } from '@/utils/tradeTimeline';
 import { TradePinsSheet } from '@/components/TradePinsSheet';
+import { TradeCollectionUpdateSheet } from '@/components/TradeCollectionUpdateSheet';
+import { useCollection } from '@/context/CollectionContext';
+import { useToast } from '@/components/ui/Toast';
+import { collectionUpdateAppliedKey, collectionUpdateOfferedKey, collectionUpdateRows, planCollectionUpdate } from '@/utils/tradeCollectionUpdate';
 import { usePinCatalogue } from '@/context/PinCatalogueContext';
 import { choiceKey, matchPinChoices, mergeChoices, toTradeItemInputs, tradeHasPins, tradeItemChoices } from '@/utils/tradeItems';
 import { formatDate } from '@/utils/format';
@@ -323,6 +327,11 @@ export default function TradeScreen() {
   // One conversation per trade (WP1): the trade's chat, when it has one.
   const [chatId,         setChatId]         = useState<string | null | undefined>(undefined);
   const { pins: cataloguePins, ensurePins } = usePinCatalogue();
+  // After a completed trade: offer "Update your collection?" once (WP1 step 3).
+  // `ready`: don't offer the update on a half-synced collection (QA note on #600).
+  const { collection, restoreEntries, ready: collectionReady = true } = useCollection();
+  const toast = useToast();
+  const [updateSheetOpen, setUpdateSheetOpen] = useState(false);
   const [bannerDismissed, setBannerDismissed] = useState(false);
 
   // Load persisted dismissal state for this trade
@@ -485,6 +494,63 @@ export default function TradeScreen() {
   const items = trade?.items ?? [];
   const hasPins = tradeHasPins(items);
   const canEditPins = trade?.status === 'pending' && (isInitiator || isRecipient);
+  const updateRows = useMemo(
+    () => (trade?.status === 'completed' ? collectionUpdateRows(items, isInitiator, collection) : []),
+    [trade?.status, items, isInitiator, collection],
+  );
+  const hasUpdateRows = updateRows.length > 0;
+  const tradeIdForOffer = trade?.id;
+  const completed = trade?.status === 'completed';
+  // 'applied': this trade's update is in the collection (until Undo), so it
+  // can't be applied twice. Read from storage before anything is offered.
+  const [updateApplied, setUpdateApplied] = useState<boolean | null>(null);
+  useEffect(() => {
+    if (!completed || !hasUpdateRows || !userId || !tradeIdForOffer) return;
+    let cancelled = false;
+    Promise.all([
+      AsyncStorage.getItem(collectionUpdateAppliedKey(userId, tradeIdForOffer)),
+      AsyncStorage.getItem(collectionUpdateOfferedKey(userId, tradeIdForOffer)),
+    ])
+      .then(([applied, answered]) => {
+        if (cancelled) return;
+        setUpdateApplied(!!applied);
+        // Offered by itself until the collector answers it (update or Not Now),
+        // and only once their collection has synced.
+        if (!applied && !answered && collectionReady) setUpdateSheetOpen(true);
+      })
+      .catch(() => { if (!cancelled) setUpdateApplied(false); });
+    return () => { cancelled = true; };
+  }, [completed, hasUpdateRows, userId, tradeIdForOffer, collectionReady]);
+  const rememberAnswered = () => {
+    if (userId && tradeIdForOffer) {
+      AsyncStorage.setItem(collectionUpdateOfferedKey(userId, tradeIdForOffer), new Date().toISOString()).catch(() => {});
+    }
+  };
+  const closeCollectionUpdate = () => {
+    setUpdateSheetOpen(false);
+    rememberAnswered();
+  };
+  const applyCollectionUpdate = (ticked: Set<string>) => {
+    const { apply, undo } = planCollectionUpdate(updateRows, ticked, collection);
+    setUpdateSheetOpen(false);
+    rememberAnswered();
+    if (apply.length === 0 || !userId || !tradeIdForOffer) return;
+    const appliedKey = collectionUpdateAppliedKey(userId, tradeIdForOffer);
+    restoreEntries(apply);
+    setUpdateApplied(true);
+    AsyncStorage.setItem(appliedKey, new Date().toISOString()).catch(() => {});
+    toast.show({
+      message: 'Collection updated',
+      action: {
+        label: 'Undo',
+        onPress: () => {
+          restoreEntries(undo);
+          setUpdateApplied(false);
+          AsyncStorage.removeItem(appliedKey).catch(() => {});
+        },
+      },
+    });
+  };
   const showBanner = !hasPins && potentialPins.length > 0 && !bannerDismissed;
   const pinMap = useMemo(() => new Map(cataloguePins.map(pin => [pin.id, pin])), [cataloguePins]);
   useEffect(() => {
@@ -781,6 +847,18 @@ export default function TradeScreen() {
                   </>
                 )}
 
+                {/* Collection update after completion (also offered once on its own) */}
+                {completed && hasUpdateRows && updateApplied === false && (
+                  <TouchableOpacity
+                    onPress={() => setUpdateSheetOpen(true)}
+                    activeOpacity={0.85}
+                    accessibilityRole="button"
+                    style={[styles.actionBtnFull, { backgroundColor: colors.homeAqua, borderColor: colors.homeLine }]}
+                  >
+                    <Text style={[styles.actionBtnLabel, { color: colors.homeInk }]}>Update Your Collection</Text>
+                  </TouchableOpacity>
+                )}
+
                 {/* Rate after completion (re-show prompt) */}
                 {trade.status === 'completed' && !showRating && (
                   <TouchableOpacity
@@ -857,6 +935,12 @@ export default function TradeScreen() {
         busy={actioning}
         pinFor={pinhuntId => pinMap.get(pinhuntId)}
         onConfirm={selected => void saveItems(selected)}
+      />
+      <TradeCollectionUpdateSheet
+        visible={updateSheetOpen}
+        rows={updateRows}
+        onClose={closeCollectionUpdate}
+        onApply={applyCollectionUpdate}
       />
       <ConfirmDialog
         visible={confirmAction === 'received'}

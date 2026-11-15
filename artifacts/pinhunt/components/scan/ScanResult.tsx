@@ -7,6 +7,8 @@
  * or "None of these". Confidence %, AI reasoning and
  * "what we saw" are scan internals: only admins see them, behind
  * "Scan details" (D-07).
+ * When the match has no catalogue photo yet, "Add your photo" offers the
+ * collector's photo for it (the contribution flow, reviewed before it goes live).
  */
 import React, { useState } from 'react';
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, useWindowDimensions } from 'react-native';
@@ -36,6 +38,8 @@ interface ScanResultProps {
   onConfirm: (pin: CataloguePin) => void;
   /** Tap the matched pin's picture: Pin detail. */
   onOpenPin: (pin: CataloguePin) => void;
+  /** "Add your photo": shown when the match has no catalogue photo. */
+  onAddPhoto?: (pin: CataloguePin) => void;
   /** "None of these": the recovery options. */
   onNoneOfThese: () => void;
   /** Hide "None of these" once recovery is showing. */
@@ -45,7 +49,7 @@ interface ScanResultProps {
 const GAP = spacing.md;
 const STRIP_TILE = 88;
 
-export function ScanResult({ photoUri, candidates, insights, showDetails, onConfirm, onOpenPin, onNoneOfThese, recoveryOpen }: ScanResultProps) {
+export function ScanResult({ photoUri, candidates, insights, showDetails, onConfirm, onOpenPin, onAddPhoto, onNoneOfThese, recoveryOpen }: ScanResultProps) {
   const colors = useColors();
   const { width } = useWindowDimensions();
   const [state, setState] = useState(() => initialResult(candidates));
@@ -120,6 +124,18 @@ export function ScanResult({ photoUri, candidates, insights, showDetails, onConf
             <Button label="Not it" icon="x" variant="secondary" onPress={handleNotIt} style={styles.actionHalf} />
             <Button label="That's it" icon="check" onPress={() => onConfirm(best.pin)} style={styles.actionHalf} />
           </View>
+
+          {onAddPhoto && !best.pin.imageUrl && (
+            <View
+              testID="scan-add-photo"
+              style={[styles.addPhoto, { borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
+            >
+              <Text style={[styles.addPhotoText, { color: colors.homeMuted }]}>
+                We don&apos;t have a photo of this pin yet. Is it yours? Add your photo for everyone.
+              </Text>
+              <Button label="Add your photo" icon="camera" variant="secondary" onPress={() => onAddPhoto(best.pin)} />
+            </View>
+          )}
         </>
       )}
 
@@ -230,6 +246,8 @@ const styles = StyleSheet.create({
   set: { fontSize: 13, fontFamily: 'Inter_500Medium' },
   actions: { flexDirection: 'row', gap: GAP },
   actionHalf: { flex: 1 },
+  addPhoto: { borderWidth: 1, borderRadius: radius.lg, padding: spacing.md, gap: spacing.sm, alignItems: 'center' },
+  addPhotoText: { fontSize: 13, fontFamily: 'Inter_400Regular', lineHeight: 18, textAlign: 'center' },
   alternatives: { gap: spacing.sm },
   altHeading: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   strip: { gap: spacing.sm, paddingRight: spacing.lg },

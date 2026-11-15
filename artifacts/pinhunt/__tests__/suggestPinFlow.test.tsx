@@ -1,11 +1,12 @@
 import React from 'react';
 import { Alert } from 'react-native';
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
-import AddPinScreen from '../app/add-pin';
+import AddPinScreen, { CatalogueCheck } from '../app/add-pin';
 import { saveAiPhotoConsent } from '../utils/aiPhotoConsent';
 
-// Add a pin, photo-first (#394; was UX-011, #121): a photo and the rights
-// tick are all it needs; the AI suggests matches and fills in its guesses.
+// Add a pin (#394; was UX-011, #121; three steps since #612): photo, then an
+// explicit "Is it one of these?" check, then details with a required name and
+// a park picker. The AI suggests matches and fills in its guesses.
 const mockPush = jest.fn();
 const mockBack = jest.fn();
 const mockReplace = jest.fn();
@@ -54,17 +55,36 @@ async function toPhoto() {
   await fireEvent.press(screen.getByText('Choose from Library', { exact: false }));
   await waitFor(() => expect(fetchMock).toHaveBeenCalledWith(expect.stringContaining('/pin-submissions/preview'), expect.anything()));
   expect(await screen.findByLabelText('Your photo')).toBeTruthy();
-  await waitFor(() => expect(screen.queryByText('Looking for matches…')).toBeNull());
+  await waitFor(() => expect(screen.queryByText('Cleaning up your photo…')).toBeNull());
 }
 
 const tickRights = () => fireEvent.press(screen.getAllByRole('checkbox', { name: RIGHTS })[0]);
 
-async function toDetails() {
+/** Photo, rights, then the Check step once the scan has answered. */
+async function toCheck() {
   await toPhoto();
   await tickRights();
-  await fireEvent.press(screen.getByRole('button', { name: 'Add details' }));
+  await fireEvent.press(screen.getByRole('button', { name: 'Check the catalogue' }));
+  await screen.findByTestId('catalogue-check');
+  await waitFor(() => expect(screen.queryByText('Checking the catalogue…')).toBeNull());
+}
+
+/** Through the Check step ("No, it's new" or "Continue") to the details. */
+async function toDetails() {
+  await toCheck();
+  await fireEvent.press(screen.getByRole('button', { name: /^(No, it’s new|Continue to the details)/ }));
   await screen.findByRole('header', { name: 'About this pin' });
 }
+
+async function toDetailsFromHere() {
+  await tickRights();
+  await fireEvent.press(screen.getByRole('button', { name: 'Check the catalogue' }));
+  await waitFor(() => expect(screen.queryByText('Checking the catalogue…')).toBeNull());
+  await fireEvent.press(screen.getByRole('button', { name: /^(No, it’s new|Continue to the details)/ }));
+  await screen.findByRole('header', { name: 'About this pin' });
+}
+
+const typeName = (name: string) => fireEvent.changeText(screen.getByPlaceholderText('e.g. Dumbo Blue Sky'), name);
 
 const submit = async () => {
   await fireEvent.press(screen.getByRole('button', { name: 'Submit for review' }));
@@ -76,20 +96,32 @@ const submitted = () => {
   return call ? JSON.parse(call[1].body) : null;
 };
 
-describe('Add a pin: photo only (#394)', () => {
-  it('a photo and the rights tick are enough: no name, no brand, shown as "Unidentified pin"', async () => {
+describe('Add a pin: photo, then name (#394, #612)', () => {
+  it('Submit is only on the details step, and the name is required', async () => {
     await toPhoto();
-    await tickRights();
+    expect(screen.queryByRole('button', { name: 'Submit for review' })).toBeNull();
+    await toDetailsFromHere();
+    await fireEvent.press(screen.getByRole('button', { name: 'Submit for review' }));
+    expect(await screen.findByText(/Enter the pin’s name/)).toBeTruthy();
+    expect(submitted()).toBeNull();
+    await typeName('Lantern');
+    expect(screen.queryByText(/Enter the pin’s name/)).toBeNull();
     await submit();
     const body = submitted();
-    expect(body).toMatchObject({ frontDraftPath: 'drafts/x.jpg', rightsConfirmed: true });
-    expect(body).not.toHaveProperty('proposedName');
+    expect(body).toMatchObject({ proposedName: 'Lantern', frontDraftPath: 'drafts/x.jpg', rightsConfirmed: true });
     expect(body).not.toHaveProperty('brand');
-    expect(screen.getByText(/"Unidentified pin" has been submitted/)).toBeTruthy();
+    expect(screen.getByText(/"Lantern" has been submitted/)).toBeTruthy();
   });
 
   it('without the rights tick, Submit is disabled and says why', async () => {
-    await toPhoto();
+    await render(<AddPinScreen />);
+    await fireEvent.press(screen.getByText('Choose from Library', { exact: false }));
+    await screen.findByLabelText('Your photo');
+    await waitFor(() => expect(screen.queryByText('Cleaning up your photo…')).toBeNull());
+    await fireEvent.press(screen.getByRole('button', { name: 'Check the catalogue' }));
+    await waitFor(() => expect(screen.queryByText('Checking the catalogue…')).toBeNull());
+    await fireEvent.press(screen.getByRole('button', { name: 'Continue to the details' }));
+    await typeName('Lantern');
     const button = screen.getByRole('button', { name: 'Submit for review' });
     expect(button.props.accessibilityState).toMatchObject({ disabled: true });
     expect(screen.getByTestId('rights-needed')).toBeTruthy();
@@ -99,10 +131,10 @@ describe('Add a pin: photo only (#394)', () => {
     expect(screen.queryByTestId('rights-needed')).toBeNull();
   });
 
-  it('the photo is still required before details', async () => {
+  it('the photo is still required before the check', async () => {
     const alert = jest.spyOn(Alert, 'alert').mockImplementation(() => {});
     await render(<AddPinScreen />);
-    await fireEvent.press(screen.getByRole('button', { name: 'Add details' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Check the catalogue' }));
     expect(alert).toHaveBeenCalledWith('Front photo required', expect.any(String));
   });
 
@@ -123,14 +155,41 @@ describe('Add a pin: AI suggestions (#394)', () => {
     imageInsights: { characters: ['Dumbo'], keywords: [], textOnPin: 'Happy 30th', logos: ['Disneyland Paris'], webGuesses: [] },
   };
 
-  it('offers matches; picking one opens that pin and submits nothing', async () => {
+  it('asks "Is it one of these?"; "Yes, it’s this one" opens that pin and submits nothing', async () => {
     mockIdentify.mockResolvedValue(scan);
-    await toPhoto();
+    await toCheck();
     expect(mockIdentify).toHaveBeenCalledWith('front64', 'image/jpeg', 'token');
     expect(screen.getByRole('header', { name: 'Is it one of these?' })).toBeTruthy();
-    await fireEvent.press(screen.getByRole('button', { name: 'Dumbo Blue Sky, 86% match. Open this pin' }));
+    // No way on to the details except answering.
+    expect(screen.queryByRole('header', { name: 'About this pin' })).toBeNull();
+    await fireEvent.press(screen.getByRole('button', { name: 'Yes, it’s Dumbo Blue Sky, 86% match. Open this pin' }));
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/pin/[id]', params: { id: 'dp-006' } });
     expect(submitted()).toBeNull();
+  });
+
+  it('"No, it’s new" goes on to the details, and the answer goes with the pin (#622)', async () => {
+    mockIdentify.mockResolvedValue(scan);
+    await toCheck();
+    await fireEvent.press(screen.getByRole('button', { name: 'No, it’s new. Add its details' }));
+    expect(await screen.findByRole('header', { name: 'About this pin' })).toBeTruthy();
+    await submit();
+    expect(submitted().aiIdentification).toMatchObject({
+      matches: [{ pinId: 'dp-006', confidence: 86 }, { pinId: 'dp-003', confidence: 61 }],
+      contributorAnswer: 'none_of_these',
+    });
+  });
+
+  it('never blocks on a slow scan: "Continue without checking"', async () => {
+    mockIdentify.mockReturnValue(new Promise(() => {}));
+    await toPhoto();
+    await tickRights();
+    await fireEvent.press(screen.getByRole('button', { name: 'Check the catalogue' }));
+    expect(screen.getByRole('header', { name: 'Checking the catalogue…' })).toBeTruthy();
+    await fireEvent.press(screen.getByRole('button', { name: 'Continue without checking' }));
+    expect(await screen.findByRole('header', { name: 'About this pin' })).toBeTruthy();
+    await typeName('Lantern');
+    await submit();
+    expect(submitted().aiIdentification).toEqual({ contributorAnswer: 'skipped' });
   });
 
   it('fills empty fields with its guesses, marked as suggestions, and sends them as hints', async () => {
@@ -153,25 +212,48 @@ describe('Add a pin: AI suggestions (#394)', () => {
     });
   });
 
-  it('a failed scan never blocks: a quiet note, and the pin still submits', async () => {
+  it('a failed scan never blocks: it says so, and the pin still submits', async () => {
     mockIdentify.mockRejectedValue(new Error('429'));
-    await toPhoto();
+    await toCheck();
+    expect(screen.getByRole('header', { name: 'We couldn’t check the catalogue' })).toBeTruthy();
     expect(screen.getByTestId('ai-unavailable')).toBeTruthy();
-    await tickRights();
+    await fireEvent.press(screen.getByRole('button', { name: 'Continue to the details' }));
+    await typeName('Lantern');
     await submit();
-    expect(submitted()).not.toHaveProperty('aiIdentification');
+    // No matches or guesses to send, just the answer (#622).
+    expect(submitted().aiIdentification).toEqual({ contributorAnswer: 'unavailable' });
   });
 
-  it('shows no suggestions when the scan finds nothing', async () => {
-    await toDetails();
+  it('a scan that never started says so instead of spinning', async () => {
+    const onNew = jest.fn();
+    const { useColors } = jest.requireActual('../hooks/useColors');
+    function Harness() { return <CatalogueCheck status="off" matches={[]} onOpen={jest.fn()} onNew={onNew} colors={useColors()} />; }
+    await render(<Harness />);
+    expect(screen.queryByText('Checking the catalogue…')).toBeNull();
+    expect(screen.getByRole('header', { name: 'We couldn’t check the catalogue' })).toBeTruthy();
+    await fireEvent.press(screen.getByRole('button', { name: 'Continue to the details' }));
+    expect(onNew).toHaveBeenCalled();
+  });
+
+  it('says when the scan finds nothing, and shows no suggestions', async () => {
+    await toCheck();
+    expect(screen.getByRole('header', { name: 'No match in the catalogue' })).toBeTruthy();
+    expect(screen.getByTestId('ai-no-match')).toBeTruthy();
+    await fireEvent.press(screen.getByRole('button', { name: 'Continue to the details' }));
+    await screen.findByRole('header', { name: 'About this pin' });
     expect(screen.queryByRole('button', { name: /from your scan/ })).toBeNull();
     expect(screen.queryByTestId('scan-prefill-note')).toBeNull();
+    await typeName('Lantern');
+    await submit();
+    // The empty scan (no matches; the server drops empty lists), plus the answer (#622).
+    expect(submitted().aiIdentification).toMatchObject({ matches: [], contributorAnswer: 'no_match' });
   });
 });
 
 describe('Add a pin: details (UX-011)', () => {
   it('Done returns to where the collector came from (#350)', async () => {
     await toDetails();
+    await typeName('Lantern');
     await submit();
     await fireEvent.press(screen.getByRole('button', { name: 'Done' }));
     expect(mockBack).toHaveBeenCalled();
@@ -186,11 +268,32 @@ describe('Add a pin: details (UX-011)', () => {
     await render(<AddPinScreen />);
     await screen.findByLabelText('Your photo');
     await tickRights();
+    // The scan screen already checked: straight to the details (#612).
+    await fireEvent.press(screen.getByRole('button', { name: 'Add details' }));
+    expect(await screen.findByRole('header', { name: 'About this pin' })).toBeTruthy();
+    expect(screen.queryByTestId('catalogue-check')).toBeNull();
+    await typeName('Lantern');
     await submit();
     expect(mockIdentify).not.toHaveBeenCalled();
+    // The scan screen asked, not this one: no answer to send (#622).
+    expect(submitted()).not.toHaveProperty('aiIdentification');
     await fireEvent.press(screen.getByRole('button', { name: 'Done' }));
     expect(mockReplace).toHaveBeenCalledWith('/(tabs)');
     expect(mockBack).not.toHaveBeenCalled();
+  });
+
+  it('a replaced hand-off photo is checked after all (#612)', async () => {
+    const { compressSubmissionImage } = jest.requireMock('@/utils/submissionImage');
+    compressSubmissionImage.mockResolvedValue({ uri: 'file:///scan.jpg', width: 800, height: 800, base64: 'scan64' });
+    jest.spyOn(require('react-native').Image, 'getSize').mockImplementation((...args: unknown[]) => (args[1] as (w: number, h: number) => void)(800, 800));
+    mockParams = { frontUri: 'file:///scan.jpg' };
+    await render(<AddPinScreen />);
+    await screen.findByLabelText('Your photo');
+    expect(screen.getByRole('button', { name: 'Add details' })).toBeTruthy();
+    // Retake with a different photo: that one hasn't been checked.
+    await fireEvent.press(screen.getByText('Choose from Library', { exact: false }));
+    await waitFor(() => expect(mockIdentify).toHaveBeenCalledWith('front64', 'image/jpeg', 'token'));
+    expect(screen.getByRole('button', { name: 'Check the catalogue' })).toBeTruthy();
   });
 
   it('suggests catalogue sets as you type', async () => {
@@ -231,6 +334,7 @@ describe('Add a pin: details (UX-011)', () => {
     mockParams = { characters: 'Dumbo, Timothy' };
     await toDetails();
     expect(screen.getByDisplayValue('Dumbo, Timothy')).toBeTruthy();
+    await typeName('Lantern');
     await submit();
     expect(submitted()).toMatchObject({ characterNames: ['Dumbo', 'Timothy'] });
   });
@@ -248,6 +352,50 @@ describe('Add a pin: details (UX-011)', () => {
     expect(screen.getByDisplayValue('Happy 30th Anniversary')).toBeTruthy();
     await submit();
     expect(submitted()).toMatchObject({ proposedName: 'Happy 30th Anniversary', seriesName: 'Park Icons', brand: 'Disneyland Paris' });
+  });
+});
+
+describe('Add a pin: park (#612)', () => {
+  it('picks a park, sent as the release location', async () => {
+    await toDetails();
+    await typeName('Lantern');
+    const paris = screen.getByRole('radio', { name: 'Disneyland Paris' });
+    await fireEvent.press(paris);
+    expect(screen.getByRole('radio', { name: 'Disneyland Paris' }).props.accessibilityState).toMatchObject({ selected: true });
+    await submit();
+    expect(submitted()).toMatchObject({ releaseLocation: 'Disneyland Paris' });
+  });
+
+  it('"Other" lets the collector type one; tapping a picked park clears it', async () => {
+    await toDetails();
+    await typeName('Lantern');
+    await fireEvent.press(screen.getByRole('radio', { name: 'Walt Disney World' }));
+    await fireEvent.press(screen.getByRole('radio', { name: 'Walt Disney World' }));
+    expect(screen.getByRole('radio', { name: 'Walt Disney World' }).props.accessibilityState).toMatchObject({ selected: false });
+    await fireEvent.press(screen.getByRole('radio', { name: 'Other' }));
+    await fireEvent.changeText(screen.getByPlaceholderText('Where was it released? e.g. Disney Store UK'), 'Disney Store UK');
+    expect(screen.getByRole('radio', { name: 'Other' }).props.accessibilityState).toMatchObject({ selected: true });
+    await submit();
+    expect(submitted()).toMatchObject({ releaseLocation: 'Disney Store UK' });
+  });
+
+  it('typing a listed park under "Other" keeps the text field', async () => {
+    await toDetails();
+    await typeName('Lantern');
+    await fireEvent.press(screen.getByRole('radio', { name: 'Other' }));
+    const field = screen.getByPlaceholderText('Where was it released? e.g. Disney Store UK');
+    await fireEvent.changeText(field, 'walt disney world');
+    expect(screen.getByPlaceholderText('Where was it released? e.g. Disney Store UK')).toBeTruthy();
+    expect(screen.getByRole('radio', { name: 'Other' }).props.accessibilityState).toMatchObject({ selected: true });
+    await submit();
+    expect(submitted()).toMatchObject({ releaseLocation: 'walt disney world' });
+  });
+
+  it('no park picked: none sent', async () => {
+    await toDetails();
+    await typeName('Lantern');
+    await submit();
+    expect(submitted()).not.toHaveProperty('releaseLocation');
   });
 });
 
@@ -293,8 +441,8 @@ describe('Add a pin: back photo (#257)', () => {
   const pick = () => jest.requireMock('@/utils/submissionImage').pickSubmissionImage as jest.Mock;
 
   it('is optional: submitting without it sends no back photo', async () => {
-    await toPhoto();
-    await tickRights();
+    await toDetails();
+    await typeName('Lantern');
     await submit();
     expect(submitted()).not.toHaveProperty('backImageBase64');
   });
@@ -307,7 +455,8 @@ describe('Add a pin: back photo (#257)', () => {
     await fireEvent.press(screen.getByRole('button', { name: 'Choose a back photo from your library' }));
     expect(await screen.findByLabelText('Back of the pin')).toBeTruthy();
     expect(pick()).toHaveBeenLastCalledWith('library');
-    await tickRights();
+    await toDetailsFromHere();
+    await typeName('Lantern');
     await submit();
     expect(submitted()).toMatchObject({ frontDraftPath: 'drafts/x.jpg', backImageBase64: 'back64' });
   });
@@ -320,7 +469,8 @@ describe('Add a pin: back photo (#257)', () => {
     await screen.findByLabelText('Back of the pin');
     await fireEvent.press(screen.getByRole('button', { name: 'Remove the back photo' }));
     expect(screen.queryByLabelText('Back of the pin')).toBeNull();
-    await tickRights();
+    await toDetailsFromHere();
+    await typeName('Lantern');
     await submit();
     expect(submitted()).not.toHaveProperty('backImageBase64');
   });
@@ -330,7 +480,8 @@ describe('Add a pin: back photo (#257)', () => {
     pick().mockResolvedValueOnce({ uri: 'file:///back.jpg', width: 800, height: 800, base64: 'back64' });
     await fireEvent.press(screen.getByRole('button', { name: 'Add a back photo' }));
     await screen.findByLabelText('Back of the pin');
-    await tickRights();
+    await toDetailsFromHere();
+    await typeName('Lantern');
     await submit();
     await fireEvent.press(screen.getByText('Add Another Pin'));
     expect(screen.queryByLabelText('Back of the pin')).toBeNull();

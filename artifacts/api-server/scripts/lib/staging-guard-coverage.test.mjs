@@ -20,7 +20,15 @@ const ALWAYS_GUARDED = new Set([
   "artifacts/api-server/scripts/market-refresh.mjs",
   "artifacts/api-server/scripts/market-usage.mjs",
   "artifacts/api-server/scripts/marketplace-leads.mjs",
+  "artifacts/api-server/scripts/market-price-batch.mjs",
 ]);
+// The only scripts allowed to write to production, each behind
+// lib/production-guard.mjs and only on an explicit --production flag.
+const PRODUCTION_ALLOWED = new Set(["artifacts/api-server/scripts/market-price-batch.mjs"]);
+// Production-only entry points (no staging mode): they identify the target and
+// check the database's own production marker before any write, and confirm each
+// write (docs/catalogue-sync/PRODUCTION-CATALOGUE-RESET.md, PINANDPOP.md).
+const PRODUCTION_ONLY = new Set(["artifacts/api-server/scripts/import-pinandpop-production.mjs"]);
 
 const WRITES = /\.(insert|upsert|update|delete|upload|remove|rpc)\(|auth\.admin\.|\b(INSERT|UPDATE|DELETE)\b|\\copy/;
 // Connects itself: a Supabase client or a spawned psql (comments don't count).
@@ -61,8 +69,40 @@ describe("staging guard coverage", () => {
     });
   }
 
-  it("finds the market refresh and leads scripts (#409, #415)", () => {
+  it("finds the market refresh, leads and price batch scripts (#409, #415, #620)", () => {
     for (const file of ALWAYS_GUARDED) expect(files).toContain(file);
+  });
+
+  it("only allow-listed scripts use the production guard, and they check it before connecting", () => {
+    for (const file of files) {
+      const src = fs.readFileSync(path.join(ROOT, file), "utf8");
+      const usesProd = /production-guard\.mjs|requireProduction\(/.test(src);
+      if (PRODUCTION_ONLY.has(file)) {
+        const target = src.search(/assertProductionTarget\(env, /);
+        const client = src.search(/createRestClient\(env\./);
+        const marker = src.search(/await assertProductionMarker\(db\)/);
+        const firstWrite = src.search(/await confirm\(ref, /);
+        expect(target).toBeGreaterThan(-1);
+        expect(target).toBeLessThan(client);
+        expect(marker).toBeGreaterThan(client);
+        expect(marker).toBeLessThan(firstWrite);
+        expect(src).not.toMatch(/createClient\(/);
+        continue;
+      }
+      if (!PRODUCTION_ALLOWED.has(file)) {
+        expect(usesProd, `${file} must not use the production guard`).toBe(false);
+        continue;
+      }
+      const prodGuard = src.search(/await requireProduction\(/);
+      const stagingGuard = src.search(/await requireStaging\(/);
+      const client = src.search(/createClient\(/);
+      // Production only behind the flag; staging otherwise; both before any client.
+      expect(src).toMatch(/opts\.production \? await requireProduction\(process\.env, opts\.production\) : await requireStaging\(\)/);
+      expect(prodGuard).toBeGreaterThan(-1);
+      expect(stagingGuard).toBeGreaterThan(-1);
+      expect(prodGuard).toBeLessThan(client);
+      expect(stagingGuard).toBeLessThan(client);
+    }
   });
 
   it("read-only exceptions really don't write", () => {

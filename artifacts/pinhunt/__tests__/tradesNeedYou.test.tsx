@@ -1,5 +1,6 @@
 /**
- * WP1 step 2: "N trades need you" on Home's For You and a badge on Profile's
+ * WP1 step 2: "N trades need you" on Home's needs-you line (For You until the
+ * Home redesign G, Nov 2026) and a badge on Profile's
  * Trades row (trades_waiting_for_me, migration 071). The count refreshes on
  * focus, and nothing shows while the call fails (before 071 is applied).
  */
@@ -15,7 +16,10 @@ const mockRepo = {
 };
 const mockEnsure = () => Promise.resolve();
 
-jest.mock('@/mock-data/events', () => ({ EVENTS: [] }));
+jest.mock('@/hooks/useEvents', () => {
+  const none = { events: [], reload: () => Promise.resolve() };
+  return { useEvents: () => none };
+});
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
   SafeAreaView: require('react-native').View,
@@ -71,7 +75,7 @@ describe('useTradesWaiting', () => {
   });
 });
 
-describe('Home For You', () => {
+describe('Home needs-you line', () => {
   it('shows "N trades need you" and opens Trades', async () => {
     const HomeScreen = require('../app/(tabs)/index').default;
     await render(<HomeScreen />);

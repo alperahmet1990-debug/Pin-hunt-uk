@@ -1,7 +1,8 @@
 /**
- * Contribute a pin photo (user-facing, not admin) — the submit side of the
- * scan → "we don't have a photo of this pin yet" flow (scan.tsx →
- * /contribute-image/[pinId]).
+ * Contribute a pin photo (user-facing, not admin) — the submit side of
+ * /contribute-image/[pinId], reached from the scan result's "Add your photo"
+ * (a matched pin with no catalogue photo), the pin page, and the catalogue
+ * contributor screen.
  *
  * POST /pin-images/contribute/preview   Step 1: process + show the result.
  * POST /pin-images/contribute           Step 2: confirm it.
@@ -16,14 +17,30 @@
  * reaches the client, which is why this happens server-side rather than
  * directly from the app to Supabase Storage.
  *
+ * The photo as taken (before Pixian) is also kept, in the private
+ * pin-contributed-raw bucket (migration 080), which only admins can read, so
+ * the reviewer can compare raw | cleaned | Pin & Pop. It is deleted once the
+ * contribution is approved or rejected (discardRawOriginal); an unsubmitted
+ * preview's draft goes after 24 hours (services/contributed-drafts-cleanup.ts).
+ * Its metadata (EXIF GPS
+ * location etc.) is stripped first; see rawWithoutMetadata. It is only kept
+ * when the request says the collector was told (keepOriginalNoticeShown: true,
+ * sent by app builds whose consent step says the original is kept), so
+ * older builds never have it kept. It is best-effort: without the bucket
+ * (080 not applied yet) the contribution still goes through, just without a
+ * raw original.
+ *
  * Auth: requireUser (any signed-in collector, same Bearer-token pattern
  * as scan.ts) — NOT requireAdmin. Any user may contribute a photo; only
  * admins (routes/pin-images.ts) can approve one into the live catalogue.
- * Photos from admins and the App Creator (every App Creator is also an
- * admin, migration 040) skip the queue and are published immediately.
+ * Admins' and the App Creator's own photos (every App Creator is also an
+ * admin, migration 040) go to the same review queue by default, so they get
+ * the same side-by-side check. An admin can send { publishNow: true } to
+ * publish straight away instead; it is ignored for everyone else.
  */
 import { Router, type IRouter, type Request, type Response, type NextFunction } from "express";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import sharp from "sharp";
 import { createSupabasePinRepository, createSupabaseUserRepository } from "@workspace/pin-repository";
 import { pixianConfigured, normalizePinPhoto, PixianTimeoutError } from "../services/pixian";
 import { imageHash, recordUsage, withinDailyCap } from "../services/usage-caps";
@@ -81,6 +98,13 @@ function getServiceUserRepository() {
   return createSupabaseUserRepository(url, key);
 }
 
+/** Shown to the app instead of storage or database error text. */
+const STORE_FAILED = "Could not store your photo. Please try again.";
+const SUBMIT_FAILED = "Something went wrong with your photo. Please try again.";
+
+/** Photos as taken, before Pixian. Admin-read only (migration 080). */
+const RAW_BUCKET = "pin-contributed-raw";
+
 const MAX_IMAGE_BASE64_CHARS = 8_000_000; // ~6MB image, same cap as /scan/identify
 
 const PROPOSAL_REASONS = ["missing", "wrong_pin", "poor_quality", "other"] as const;
@@ -95,10 +119,72 @@ type ProposalReason = (typeof PROPOSAL_REASONS)[number];
 const draftPrefix = (userId: string, pinId: string) => `${userId}/drafts/${pinId}__`;
 
 async function clearDrafts(userId: string, keep?: string) {
-  const bucket = getStorageClient().storage.from("pin-contributed-images");
-  const { data } = await bucket.list(`${userId}/drafts`);
-  const stale = (data ?? []).map((f) => `${userId}/drafts/${f.name}`).filter((p) => p !== keep);
-  if (stale.length) await bucket.remove(stale);
+  // The raw draft has the same path as the cleaned one, in RAW_BUCKET.
+  for (const name of ["pin-contributed-images", RAW_BUCKET]) {
+    const bucket = getStorageClient().storage.from(name);
+    const { data } = await bucket.list(`${userId}/drafts`);
+    const stale = (data ?? []).map((f) => `${userId}/drafts/${f.name}`).filter((p) => p !== keep);
+    if (stale.length) await bucket.remove(stale);
+  }
+}
+
+/** Decode limit for raw originals: far above any phone photo, far below sharp's ~268 MP default. */
+const RAW_MAX_INPUT_PIXELS = 50_000_000;
+
+/** Photo formats a raw original may be (sharp's names). Anything else is not kept. */
+export const RAW_ALLOWED_FORMATS = ["jpeg", "png", "webp", "heif"] as const;
+type RawFormat = (typeof RAW_ALLOWED_FORMATS)[number];
+
+const HEIF_BRANDS = new Set(["heic", "heix", "hevc", "hevx", "heim", "heis", "mif1", "msf1", "heif"]);
+
+/**
+ * The photo format from the file's signature bytes, or null for anything
+ * else. Checked before sharp sees the bytes, so non-photo formats (SVG,
+ * TIFF, GIF, PDF, …) never reach an image parser at all.
+ */
+export function sniffPhotoFormat(buf: Buffer): RawFormat | null {
+  if (buf.length >= 3 && buf[0] === 0xff && buf[1] === 0xd8 && buf[2] === 0xff) return "jpeg";
+  if (buf.length >= 8 && buf.subarray(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]))) return "png";
+  if (buf.length >= 12 && buf.toString("latin1", 0, 4) === "RIFF" && buf.toString("latin1", 8, 12) === "WEBP") return "webp";
+  if (buf.length >= 12 && buf.toString("latin1", 4, 8) === "ftyp" && HEIF_BRANDS.has(buf.toString("latin1", 8, 12))) return "heif";
+  return null;
+}
+
+/**
+ * The photo as taken, without its metadata: re-encoded as JPEG with the EXIF
+ * orientation applied and every EXIF/XMP/IPTC tag (GPS location, device,
+ * timestamps) dropped, which is sharp's default. Pixels are otherwise
+ * unchanged, so the reviewer still sees the uncleaned photo. Throws on input
+ * whose signature bytes aren't a JPEG, PNG, WebP or HEIF photo (checked
+ * before sharp is called), that sharp reads as another format, that sharp
+ * can't decode, or that is over RAW_MAX_INPUT_PIXELS.
+ */
+export async function rawWithoutMetadata(imageBase64: string): Promise<Buffer> {
+  const bytes = Buffer.from(imageBase64, "base64");
+  // Signature first: anything that isn't a photo never reaches sharp.
+  const sniffed = sniffPhotoFormat(bytes);
+  if (!sniffed) throw new Error("Raw original format not allowed: not a photo signature");
+  const image = sharp(bytes, { limitInputPixels: RAW_MAX_INPUT_PIXELS, failOn: "error" });
+  // Then sharp's own header read must agree it's an allowed photo format.
+  const { format } = await image.metadata();
+  if (!format || !(RAW_ALLOWED_FORMATS as readonly string[]).includes(format)) {
+    throw new Error(`Raw original format not allowed: ${format ?? "unknown"}`);
+  }
+  return image.rotate().jpeg({ quality: 92 }).toBuffer();
+}
+
+/** Store the raw original. Best-effort: logs and returns false on any failure. */
+async function storeRaw(path: string, imageBase64: string): Promise<boolean> {
+  try {
+    const { error } = await getStorageClient().storage
+      .from(RAW_BUCKET)
+      .upload(path, await rawWithoutMetadata(imageBase64), { contentType: "image/jpeg", upsert: true });
+    if (error) throw new Error(error.message);
+    return true;
+  } catch (err) {
+    console.warn("[contribute-pin-image] raw original not kept:", err instanceof Error ? err.message : err);
+    return false;
+  }
 }
 
 /** The cleaned draft for this exact photo, if the user previewed it already. */
@@ -116,6 +202,14 @@ interface ContributionBody {
   proposalReason?: string;
   /** From /preview — confirms that already-processed photo. */
   draftPath?: string;
+  /** Admins only: publish now instead of queueing for review. Ignored otherwise. */
+  publishNow?: boolean;
+  /**
+   * The collector was shown the notice that the original photo is kept for
+   * moderators until review (a notice on the contribution step, not a
+   * separate opt-in). Only then is it kept; older app builds don't send it.
+   */
+  keepOriginalNoticeShown?: boolean;
 }
 
 /** Shared checks for both steps. Sends the error response and returns false on failure. */
@@ -182,31 +276,48 @@ async function normalize(res: Response, userId: string, imageBase64: string, mim
 }
 
 /**
- * Record the contribution for an object already in the private bucket, then
- * publish it straight away when the contributor is trusted.
+ * Record the contribution for an object already in the private bucket. It
+ * waits for review, unless an admin explicitly asked to publish now.
  */
-async function recordContribution(res: Response, userId: string, body: ContributionBody, storagePath: string) {
+async function recordContribution(
+  res: Response,
+  userId: string,
+  body: ContributionBody,
+  storagePath: string,
+  rawStoragePath: string | undefined,
+) {
   const userRepo = getServiceUserRepository();
+  const proposalReason = body.proposalReason as ProposalReason | undefined;
   const image = await userRepo.createContributedImage(userId, body.pinId!, {
     storagePath,
+    rawStoragePath,
     consentGranted: true,
-    proposalReason: body.proposalReason as ProposalReason | undefined,
+    proposalReason,
   });
 
-  // Trusted accounts publish straight to the catalogue, self-reviewed.
-  const { data: profile } = await getStorageClient()
-    .from("profiles").select("is_admin").eq("id", userId).single();
-  if (profile?.is_admin) {
+  // Review is the default for everyone. Only an admin's explicit
+  // "publish now" skips it; the profile check is server-side.
+  let isAdmin = false;
+  if (body.publishNow === true) {
+    const { data: profile } = await getStorageClient()
+      .from("profiles").select("is_admin").eq("id", userId).single();
+    isAdmin = !!profile?.is_admin;
+  }
+  if (isAdmin) {
     try {
       const published = await publishContributedImage(image, userId, {
         serviceClient: getStorageClient(),
         userRepo,
         pinRepo: createSupabasePinRepository(process.env.SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!),
+      }, {
+        // An admin proposing a replacement has seen the current photo.
+        replaceExisting: !!proposalReason && proposalReason !== "missing",
       });
       res.json({ image: published, autoApproved: true });
       return;
     } catch (err) {
-      // The pending row is already saved, so it falls back to the review queue.
+      // The pending row is already saved, so it falls back to the review queue
+      // (including a pin that gained a photo since: the reviewer decides).
       console.error(
         `[contribute-pin-image] auto-publish failed, left pending (pin ${body.pinId}, image ${image.id}):`,
         err,
@@ -241,17 +352,21 @@ router.post("/pin-images/contribute/preview", requireUser, async (req: UserReque
         .from("pin-contributed-images")
         .upload(draftPath, processed, { contentType: "image/jpeg", upsert: true });
       if (uploadError) {
-        res.status(500).json({ error: `Could not store your photo: ${uploadError.message}` });
+        console.error("[contribute-pin-image] storing the photo failed:", uploadError.message);
+        res.status(500).json({ error: STORE_FAILED });
         return;
       }
+      // The photo as taken, same path, admin-only bucket.
+      if (body.keepOriginalNoticeShown === true) await storeRaw(draftPath, body.imageBase64!);
     }
     await clearDrafts(userId, draftPath);
 
     const preview = await watermarkPinPhoto(processed);
     res.json({ draftPath, previewBase64: preview.toString("base64") });
   } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    res.status(500).json({ error: msg });
+    // Details stay in the server log; the app gets a plain message.
+    console.error("[contribute-pin-image] request failed:", err instanceof Error ? err.message : "unknown error");
+    res.status(500).json({ error: SUBMIT_FAILED });
   }
 });
 
@@ -259,8 +374,8 @@ router.post("/pin-images/contribute/preview", requireUser, async (req: UserReque
  * POST /pin-images/contribute
  *
  * Step 2: confirm a previewed photo ({ draftPath } from /preview) — moves
- * the draft into place and queues it for review, or publishes it directly
- * for admins / the App Creator.
+ * the draft (and its raw original) into place and queues it for review.
+ * An admin's { publishNow: true } publishes it directly instead.
  *
  * Still accepts { imageBase64 } without a preview, for app builds that
  * predate the preview step.
@@ -273,6 +388,7 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
 
     const storagePath = `${userId}/${body.pinId}/${Date.now()}.jpg`;
     const bucket = getStorageClient().storage.from("pin-contributed-images");
+    let rawStoragePath: string | undefined;
 
     if (body.draftPath) {
       // Only the caller's own draft for this pin can be confirmed.
@@ -286,21 +402,48 @@ router.post("/pin-images/contribute", requireUser, async (req: UserRequest, res:
         res.status(410).json({ error: "This preview has expired — please take the photo again." });
         return;
       }
+      if (body.keepOriginalNoticeShown === true) {
+        const { error: rawMoveError } = await getStorageClient().storage
+          .from(RAW_BUCKET).move(body.draftPath, storagePath);
+        if (rawMoveError) {
+          console.warn("[contribute-pin-image] raw original not kept:", rawMoveError.message);
+        } else {
+          rawStoragePath = storagePath;
+        }
+      }
     } else {
       const processed = await normalize(res, userId, body.imageBase64!, body.mimeType ?? "image/jpeg");
       if (!processed) return;
       const { error: uploadError } = await bucket
         .upload(storagePath, processed, { contentType: "image/jpeg", upsert: false });
       if (uploadError) {
-        res.status(500).json({ error: `Could not store your photo: ${uploadError.message}` });
+        console.error("[contribute-pin-image] storing the photo failed:", uploadError.message);
+        res.status(500).json({ error: STORE_FAILED });
         return;
+      }
+      if (body.keepOriginalNoticeShown === true && await storeRaw(storagePath, body.imageBase64!)) {
+        rawStoragePath = storagePath;
       }
     }
 
-    await recordContribution(res, userId, body, storagePath);
+    try {
+      await recordContribution(res, userId, body, storagePath, rawStoragePath);
+    } catch (err) {
+      // No row points at the raw original now, so don't leave it behind.
+      // Best-effort: a failed clean-up must not hide the original error.
+      if (rawStoragePath) {
+        try {
+          await getStorageClient().storage.from(RAW_BUCKET).remove([rawStoragePath]);
+        } catch {
+          console.warn("[contribute-pin-image] raw original not removed after a failed submit");
+        }
+      }
+      throw err;
+    }
   } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    res.status(500).json({ error: msg });
+    // Details stay in the server log; the app gets a plain message.
+    console.error("[contribute-pin-image] request failed:", err instanceof Error ? err.message : "unknown error");
+    res.status(500).json({ error: SUBMIT_FAILED });
   }
 });
 

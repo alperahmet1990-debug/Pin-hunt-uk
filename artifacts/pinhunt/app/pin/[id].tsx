@@ -31,6 +31,7 @@ import { WhereItLivesRow } from '@/components/locations/WhereItLivesRow';
 import { getPinLocationService } from '@/lib/pinLocationService';
 import { YourPriceRow, useHasMyPrice } from '@/components/YourPriceRow';
 import { ScreenContainer, Chip, MetaRow, ValueDisplay, PrimaryActionBar, SetProgressBar, CompactPinTile } from '@/components/ui';
+import { SoldPriceCard } from '@/components/SoldPriceCard';
 import { ScreenHeader, useHeaderTopInset } from '@/components/ui/ScreenHeader';
 import type { PrimaryActionBarAction } from '@/components/ui';
 import { radius, spacing } from '@/constants/theme';
@@ -379,6 +380,8 @@ export default function PinDetailScreen() {
           {canPrice && getPinLocationService() && <WhereItLivesRow pinId={pin.id} />}
 
           {/* ── 5. Value ── */}
+          {/* eBay sold prices (valuation v2); renders nothing while switched off on the server. */}
+          <SoldPriceCard pinId={pin.id} />
           <ValueDisplay
             pinId={pin.id}
             catalogueEstimateGBP={pin.estimatedValueGBP ?? null}

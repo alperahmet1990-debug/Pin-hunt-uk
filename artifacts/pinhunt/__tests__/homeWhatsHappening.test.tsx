@@ -1,6 +1,7 @@
 /**
- * #352: Home's "What's Happening" never vanishes. With events coming up it
- * shows them; once they've all passed it says so and offers to post one.
+ * #352: Home's events section never vanishes. With events coming up it
+ * shows them (two compact cards since the Home redesign G, Nov 2026); once
+ * they've all passed it says so and offers to post one.
  */
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react-native';
@@ -11,7 +12,8 @@ const mockRepo = { getCommunityFeed: noopPromise, getCommunityPost: () => Promis
 const mockEnsure = () => Promise.resolve();
 let mockEvents: unknown[] = [];
 
-jest.mock('@/mock-data/events', () => ({ get EVENTS() { return mockEvents; } }));
+// Events come from the event service (#613); the hook is stubbed with fixed events.
+jest.mock('@/hooks/useEvents', () => ({ useEvents: () => ({ events: mockEvents, reload: () => Promise.resolve() }) }));
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
   SafeAreaView: require('react-native').View,
@@ -53,37 +55,49 @@ const past = { ...upcoming, id: 'e0', title: 'Old Meet', eventDate: '2000-01-01'
 
 beforeEach(() => jest.clearAllMocks());
 
-describe("Home: What's Happening (#352)", () => {
-  it('greets by username, not the stored display name (#429)', async () => {
-    mockEvents = [];
-    await render(<HomeScreen />);
-    expect(screen.getByText('Hi, demo')).toBeTruthy();
-  }, 20_000);
-
-  it('shows upcoming events and leaves out past ones', async () => {
+describe('Home: Events (#352, compact since the Home redesign G)', () => {
+  it('shows upcoming events as compact cards with date and place, and leaves out past ones', async () => {
     mockEvents = [past, upcoming];
     await render(<HomeScreen />);
-    expect(screen.getByText('What’s Happening')).toBeTruthy();
+    expect(screen.getByText('Events')).toBeTruthy();
     expect(screen.getByText('Disney Pin Trading Day')).toBeTruthy();
+    expect(screen.getByText('Rochester')).toBeTruthy();
+    expect(screen.getByText('JAN')).toBeTruthy();
+    expect(screen.getByText('01')).toBeTruthy();
     expect(screen.queryByText('Old Meet')).toBeNull();
     expect(screen.queryByTestId('no-events-card')).toBeNull();
+    expect(screen.getByRole('button', { name: 'Disney Pin Trading Day, 01 JAN, Rochester' })).toBeTruthy();
     // The first Home render in a run is slow on a cold cache.
   }, 20_000);
+
+  it('a multi-day event shows its start date and says the range', async () => {
+    mockEvents = [{ ...upcoming, eventDate: '2999-11-14', endDate: '2999-11-15' }];
+    await render(<HomeScreen />);
+    expect(screen.getByText('14')).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Disney Pin Trading Day, 14–15 NOV, Rochester' })).toBeTruthy();
+  });
+
+  it('shows at most two events', async () => {
+    mockEvents = [1, 2, 3].map(n => ({ ...upcoming, id: `e${n}`, title: `Meet ${n}`, eventDate: `2999-01-0${n}` }));
+    await render(<HomeScreen />);
+    expect(screen.getByText('Meet 1')).toBeTruthy();
+    expect(screen.getByText('Meet 2')).toBeTruthy();
+    expect(screen.queryByText('Meet 3')).toBeNull();
+  });
 
   it('says when nothing is coming up and offers to post an event', async () => {
     mockEvents = [past];
     await render(<HomeScreen />);
-    expect(screen.getByText('What’s Happening')).toBeTruthy();
+    expect(screen.getByText('Events')).toBeTruthy();
     expect(screen.getByText('No events coming up')).toBeTruthy();
     await fireEvent.press(screen.getByRole('button', { name: 'No events coming up. Post an event' }));
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/community/create-post', params: { type: 'new_pickup' } });
   });
 
-  it('"See all" opens the What\u2019s Happening page, not a filtered Community feed (#382)', async () => {
+  it('"See all" opens the events page, not a filtered Community feed (#382)', async () => {
     mockEvents = [upcoming];
     await render(<HomeScreen />);
-    await fireEvent.press(screen.getByRole('button', { name: 'See all: What’s Happening' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'See all: Events' }));
     expect(mockPush).toHaveBeenCalledWith('/events');
   });
 });
-

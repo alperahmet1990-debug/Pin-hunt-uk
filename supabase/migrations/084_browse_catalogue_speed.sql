@@ -1,5 +1,5 @@
 -- ============================================================
--- Migration 082: make Browse Catalogue ("Add from catalogue") fast for
+-- Migration 084: make Browse Catalogue ("Add from catalogue") fast for
 -- signed-in collectors
 --
 -- Never applied by an agent. Apply in the STAGING Supabase SQL editor first,
@@ -34,6 +34,8 @@
 --      policy names. Counts still read every row but each row is cheap.
 --
 -- Safe to re-run (if not exists / drop + create in one transaction).
+-- Numbering: 082 is 082_events_source_url_check.sql on main and 083 is
+-- 083_board_scans.sql (open PR), so this is 084. It depends on neither.
 -- Run AFTER 027 (current pins_public_read definition).
 -- ============================================================
 
@@ -47,6 +49,11 @@ end $$;
 begin;
 
 -- 1. Index in the browse order.
+-- PRODUCTION: building it here blocks writes to pins until it finishes
+-- (seconds at ~116k rows). Prefer running this first, on its own:
+--   create index concurrently if not exists pins_browse_order_idx
+--     on public.pins (collection, title, pinhunt_id);
+-- then this migration (if not exists skips the index).
 create index if not exists pins_browse_order_idx on public.pins (collection, title, pinhunt_id);
 
 -- 2. Same policies, evaluated once per query instead of once per row.
@@ -81,7 +88,7 @@ analyze public.pins;
 --   Then, signed in as a NON-admin collector in the app: open Collection →
 --   Add from catalogue. Pins show within ~1 s, no timeout message.
 --   A collector still cannot see unverified pins they don't own; an admin
---   still sees every pin (same checks as before 082).
+--   still sees every pin (same checks as before 084).
 --
 -- ── Rollback ──────────────────────────────────────────────────────────────────
 --   begin;
@@ -94,5 +101,5 @@ analyze public.pins;
 --   commit;
 --   drop index if exists public.pins_browse_order_idx;
 -- ============================================================
--- End of migration 082.
+-- End of migration 084.
 -- ============================================================

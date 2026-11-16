@@ -107,4 +107,10 @@ describe('admin board scan upload', () => {
     await fireEvent.press(screen.getByText('Scan board'));
     expect(calls().filter((c) => c.startsWith('POST'))).toEqual([]);
   });
+
+  it('says when board scanning is switched off on the server', async () => {
+    fetchMock.mockImplementation(() => Promise.resolve({ ok: false, status: 404, json: () => Promise.resolve({ error: 'Not found' }) }));
+    await render(<AdminBoardScansScreen />);
+    expect(await screen.findByText(/Board scanning is not switched on for this server/)).toBeTruthy();
+  });
 });

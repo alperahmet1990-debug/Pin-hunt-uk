@@ -59,7 +59,22 @@ describe("POST /api/admin/board-scans", () => {
     vi.stubEnv("SUPABASE_URL", "https://db.test.invalid");
     vi.stubEnv("SUPABASE_ANON_KEY", "anon");
     vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "service");
+    vi.stubEnv("BOARD_SCAN_ENABLED", "true");
     Object.assign(state, { isAdmin: true, existing: null, inserted: [], uploads: [], enqueued: [], todayCount: 0 });
+  });
+
+  it("is off (404) unless explicitly enabled, before any auth or upload", async () => {
+    for (const value of [undefined, "", "false", "1", "TRUE"]) {
+      vi.stubEnv("BOARD_SCAN_ENABLED", value as string);
+      const res = await upload({ permission: ownPhoto });
+      expect(res.status).toBe(404);
+      expect((await request(app).get("/api/admin/board-scans")).status).toBe(404);
+      expect((await request(app).get("/api/admin/board-scans/scan-1")).status).toBe(404);
+      expect((await request(app).post("/api/admin/board-scans/scan-1/approve-ready").set("Authorization", "Bearer t")).status).toBe(404);
+    }
+    expect(state.inserted).toHaveLength(0);
+    expect(state.uploads).toHaveLength(0);
+    expect(state.enqueued).toHaveLength(0);
   });
 
   it("is admin only", async () => {

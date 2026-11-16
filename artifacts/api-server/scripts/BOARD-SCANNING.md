@@ -23,7 +23,7 @@ Matching runs against the live staging catalogue, which is now Pin & Pop (~116k 
 ## Setup (staging only)
 
 1. Staging must already have the Pin & Pop catalogue and migrations 075–077. Apply `supabase/migrations/083_board_scans.sql` in the **staging** SQL editor (rollback SQL is in its header).
-2. In the staging API server env: `OPENAI_API_KEY` (low-budget staging key), `PIXIAN_API_ID`/`PIXIAN_API_SECRET`, `PIXIAN_TEST_MODE=true` (free, watermarked results — switch off only for a real run).
+2. In the staging API server env: `BOARD_SCAN_ENABLED=true` (off by default — every board-scan route returns 404 and the Board Scans screen says it's switched off), `OPENAI_API_KEY` (low-budget staging key), `PIXIAN_API_ID`/`PIXIAN_API_SECRET`, `PIXIAN_TEST_MODE=true` (free, watermarked results — switch off only for a real run).
 3. Start the API server for staging, sign in to the app as the App Creator, open **Admin → Board Scans**.
 
 ## Permission and rights

@@ -14,6 +14,10 @@
  *
  * Same Bearer JWT → profiles.is_admin check as routes/pin-images.ts. Staging
  * first: needs migration 083. Pipeline: services/boardScan/pipeline.ts.
+ *
+ * Off unless BOARD_SCAN_ENABLED=true (every route 404s otherwise), so the
+ * feature — and its AI and Pixian spend — can't go live on a server by
+ * accident. Same convention as BULK_IMAGE_MATCHER_ENABLED.
  */
 import { Router, type IRouter, type Request, type Response, type NextFunction } from "express";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
@@ -38,7 +42,11 @@ import { pixianConfigured } from "../services/pixian";
 
 const router: IRouter = Router();
 
-// ── Admin auth (same convention as pin-images.ts) ────────────────────────────
+// ── Feature flag + admin auth (same convention as pin-images.ts) ─────────────
+
+export function boardScanEnabled(env: NodeJS.ProcessEnv = process.env): boolean {
+  return env.BOARD_SCAN_ENABLED === "true";
+}
 
 interface AdminRequest extends Request {
   adminId?: string;
@@ -51,6 +59,10 @@ function getAnonClient(): SupabaseClient {
 }
 
 async function requireAdmin(req: AdminRequest, res: Response, next: NextFunction) {
+  if (!boardScanEnabled()) {
+    res.status(404).json({ error: "Not found" });
+    return;
+  }
   const auth = req.headers.authorization;
   if (!auth?.startsWith("Bearer ")) {
     res.status(401).json({ error: "Missing Authorization header" });

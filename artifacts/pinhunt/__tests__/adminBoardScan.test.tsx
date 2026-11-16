@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
-import AdminBoardScanScreen from '../app/admin/board-scan/[id]';
+import AdminBoardScanScreen, { boardPoint } from '../app/admin/board-scan/[id]';
 import AdminBoardScansScreen from '../app/admin/board-scans';
 
 // Board scanning review (Step A): pins without a catalogue photo first,
@@ -137,5 +137,21 @@ describe('admin board scan upload', () => {
     fetchMock.mockImplementation(() => Promise.resolve({ ok: false, status: 404, json: () => Promise.resolve({ error: 'Not found' }) }));
     await render(<AdminBoardScansScreen />);
     expect(await screen.findByText(/Board scanning is not switched on for this server/)).toBeTruthy();
+  });
+});
+
+describe('adding a missed pin: where a tap lands', () => {
+  it('measures from the board on the web, even when the tap lands on an outline', () => {
+    // An outline at (200, 100) inside a board at page (40, 300): locationX/Y would be
+    // relative to the outline (10, 10), but the page position puts it at (210, 110) on the board.
+    const ev = { locationX: 10, locationY: 10, pageX: 250, pageY: 410 };
+    expect(boardPoint(ev, { left: 40, top: 300 }, { x: 0, y: 0 }, 400, 300)).toEqual({ x: 210 / 400, y: 110 / 300 });
+    // The page scrolled by 50: the board's on-screen top is 50 higher.
+    expect(boardPoint({ ...ev, pageY: 410 }, { left: 40, top: 250 }, { x: 0, y: 50 }, 400, 300)).toEqual({ x: 210 / 400, y: 110 / 300 });
+  });
+
+  it('uses locationX/Y on native, and keeps the point on the board', () => {
+    expect(boardPoint({ locationX: 100, locationY: 150, pageX: 0, pageY: 0 }, null, { x: 0, y: 0 }, 400, 300)).toEqual({ x: 0.25, y: 0.5 });
+    expect(boardPoint({ locationX: -20, locationY: 900, pageX: 0, pageY: 0 }, null, { x: 0, y: 0 }, 400, 300)).toEqual({ x: 0, y: 1 });
   });
 });

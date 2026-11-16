@@ -172,6 +172,18 @@ export async function updateItem(id: string, patch: Partial<BoardScanItem>): Pro
   );
 }
 
+/** Update an item only while it still matches `where`; null when it no longer does. */
+export async function updateItemIf(
+  id: string,
+  where: Partial<Pick<BoardScanItem, "image_review" | "cleanup_status">>,
+  patch: Partial<BoardScanItem>,
+): Promise<BoardScanItem | null> {
+  let q = boardDb().from("board_scan_items").update(patch).eq("id", id);
+  for (const [k, v] of Object.entries(where)) q = q.eq(k, v as string);
+  const rows = check(await q.select("*"), "Could not update the pin") as BoardScanItem[] | null;
+  return rows?.[0] ?? null;
+}
+
 export async function deleteItemsForScan(scanId: string): Promise<void> {
   check(await boardDb().from("board_scan_items").delete().eq("board_scan_id", scanId), "Could not reset board items");
 }
@@ -198,6 +210,12 @@ export async function downloadObject(bucket: string, path: string): Promise<Buff
   const { data, error } = await boardDb().storage.from(bucket).download(path);
   if (error || !data) throw new Error(`Could not read image: ${error?.message ?? "missing"}`);
   return Buffer.from(await data.arrayBuffer());
+}
+
+/** Remove one object. Best-effort: a leftover file is harmless, so failures are only logged. */
+export async function removeObject(bucket: string, path: string): Promise<void> {
+  const { error } = await boardDb().storage.from(bucket).remove([path]);
+  if (error) console.warn("[board-scan] could not remove an old image:", error.message);
 }
 
 export async function copyObject(bucket: string, from: string, to: string): Promise<void> {
@@ -240,8 +258,12 @@ export async function pinImageState(pinhuntIds: string[]): Promise<Record<string
 /**
  * Pin & Pop reference images (migration 042) by pinhunt id, for the App
  * Creator's review screen only — the same admin-only use as the Bulk Image
- * Matcher. Never stored by board scanning, never published.
+ * Matcher, approved by the maintainer for board scans (see BOARD-SCANNING.md,
+ * "Pin & Pop reference on the review screen"). Never stored by board
+ * scanning, never published.
  */
+let referenceRepo: ReturnType<typeof createSupabaseUserRepository> | null = null;
+
 export async function pinAndPopReferences(pinhuntIds: string[]): Promise<Record<string, PinAndPopReference>> {
   const ids = [...new Set(pinhuntIds)];
   if (ids.length === 0) return {};
@@ -250,7 +272,11 @@ export async function pinAndPopReferences(pinhuntIds: string[]): Promise<Record<
     "Could not look up pins",
   ) as Array<{ id: string; pinhunt_id: string }> | null;
   if (!pins?.length) return {};
-  const repo = createSupabaseUserRepository(process.env.SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) throw new Error("SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set to look up Pin & Pop references.");
+  referenceRepo ??= createSupabaseUserRepository(url, key);
+  const repo = referenceRepo;
   const byUuid = await repo.getPinAndPopReferences(pins.map((p) => p.id));
   const out: Record<string, PinAndPopReference> = {};
   for (const p of pins) if (byUuid[p.id]?.imageUrl) out[p.pinhunt_id] = byUuid[p.id];

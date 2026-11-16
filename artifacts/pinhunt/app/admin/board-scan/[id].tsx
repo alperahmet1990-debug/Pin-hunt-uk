@@ -100,6 +100,24 @@ const REASON_TEXT: Record<string, string> = {
 };
 type Filter = 'review' | 'ready' | 'published' | 'excluded' | 'all';
 
+/**
+ * Where a tap landed on the board, as fractions (0–1) of its size. On the web,
+ * locationX/Y are measured from whatever element was under the pointer (an
+ * outline, its number), not the board, so pass the board's on-screen `rect`
+ * there and the page position is used instead.
+ */
+export function boardPoint(
+  ev: { locationX: number; locationY: number; pageX: number; pageY: number },
+  rect: { left: number; top: number } | null,
+  scroll: { x: number; y: number },
+  width: number,
+  height: number,
+): { x: number; y: number } {
+  const lx = rect ? ev.pageX - (rect.left + scroll.x) : ev.locationX;
+  const ly = rect ? ev.pageY - (rect.top + scroll.y) : ev.locationY;
+  return { x: Math.max(0, Math.min(1, lx / width)), y: Math.max(0, Math.min(1, ly / height)) };
+}
+
 function pct(n: number | null) { return n == null ? '—' : `${Math.round(n * 100)}%`; }
 
 export default function AdminBoardScanScreen() {
@@ -128,6 +146,9 @@ export default function AdminBoardScanScreen() {
       headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json', ...(init?.headers ?? {}) },
     });
     const body = await res.json().catch(() => ({}));
+    if (res.status === 404 && body.error === 'Not found') {
+      throw new Error('Board scanning is not switched on for this server (BOARD_SCAN_ENABLED).');
+    }
     if (!res.ok) throw Object.assign(new Error(body.error ?? `Request failed (${res.status})`), { code: body.code });
     return body;
   }, [token]);
@@ -212,19 +233,10 @@ export default function AdminBoardScanScreen() {
   const boardRef = useRef<View>(null);
   const onBoardPress = (e: GestureResponderEvent) => {
     if (!drawing || !boardWidth) return;
-    // On the web, locationX/Y are measured from whatever element was under the
-    // pointer (an outline, its number), not the board, so measure from the
-    // board itself.
-    let lx = e.nativeEvent.locationX;
-    let ly = e.nativeEvent.locationY;
     const node = boardRef.current as unknown as { getBoundingClientRect?: () => { left: number; top: number } } | null;
-    if (Platform.OS === 'web' && node?.getBoundingClientRect && typeof window !== 'undefined') {
-      const r = node.getBoundingClientRect();
-      lx = e.nativeEvent.pageX - (r.left + window.scrollX);
-      ly = e.nativeEvent.pageY - (r.top + window.scrollY);
-    }
-    const x = Math.max(0, Math.min(1, lx / boardWidth));
-    const y = Math.max(0, Math.min(1, ly / boardHeight));
+    const rect = Platform.OS === 'web' && node?.getBoundingClientRect ? node.getBoundingClientRect() : null;
+    const scroll = typeof window !== 'undefined' ? { x: window.scrollX, y: window.scrollY } : { x: 0, y: 0 };
+    const { x, y } = boardPoint(e.nativeEvent, rect, scroll, boardWidth, boardHeight);
     if (drawing === 'armed') { setDrawing({ x, y }); return; }
     const box = {
       x: Math.max(0, Math.min(drawing.x, x)), y: Math.max(0, Math.min(drawing.y, y)),
@@ -404,7 +416,7 @@ export default function AdminBoardScanScreen() {
                 {i.cropUrl ? <Image source={{ uri: i.cropUrl }} style={styles.thumb} resizeMode="contain" /> : null}
                 {i.cleanedUrl ? <Image source={{ uri: i.cleanedUrl }} style={[styles.thumb, { backgroundColor: '#fff' }]} resizeMode="contain" /> : null}
                 {i.targetPin?.imageUrl ? <Image source={{ uri: i.targetPin.imageUrl }} style={[styles.thumb, { opacity: 0.8 }]} resizeMode="contain" /> : null}
-                {ref?.imageUrl ? <Image source={{ uri: ref.imageUrl }} style={[styles.thumb, { backgroundColor: '#fff' }]} resizeMode="contain" accessibilityLabel="Pin & Pop reference image" /> : null}
+                {ref?.imageUrl ? <Image source={{ uri: ref.imageUrl }} style={[styles.thumb, { backgroundColor: '#fff' }]} resizeMode="contain" referrerPolicy="no-referrer" accessibilityLabel="Pin & Pop reference image" /> : null}
               </View>
               <Text style={[styles.tiny, { color: colors.homeMuted }]}>
                 Crop{i.cleanedUrl ? ' · Cleaned' : ''}{i.targetPin?.imageUrl ? ' · Current catalogue photo' : ''}
@@ -438,7 +450,7 @@ export default function AdminBoardScanScreen() {
                       style={[styles.chip, { borderColor: colors.homeLine, flexDirection: 'row', alignItems: 'center' }]}
                     >
                       {data.pinAndPop?.[c.pinId]?.imageUrl ? (
-                        <Image source={{ uri: data.pinAndPop[c.pinId].imageUrl! }} style={styles.chipThumb} resizeMode="contain" accessibilityLabel={`Pin & Pop reference for ${c.title}`} />
+                        <Image source={{ uri: data.pinAndPop[c.pinId].imageUrl! }} style={styles.chipThumb} resizeMode="contain" referrerPolicy="no-referrer" accessibilityLabel={`Pin & Pop reference for ${c.title}`} />
                       ) : null}
                       <Text style={[styles.chipText, { color: colors.homeInk }]} numberOfLines={1}>{c.title} · {c.confidence}%</Text>
                     </TouchableOpacity>
@@ -466,8 +478,8 @@ export default function AdminBoardScanScreen() {
                       <>
                         {btn(`${i.id}:approve`, 'Approve photo', () => approve(i.id), 'primary')}
                         {btn(`${i.id}:rotate`, 'Straighten', () => rotate(i.id, 'auto'))}
-                        {btn(`${i.id}:rotate-l`, '↺ Turn left', () => rotate(i.id, -3))}
-                        {btn(`${i.id}:rotate-r`, '↻ Turn right', () => rotate(i.id, 3))}
+                        {btn(`${i.id}:rotate`, '↺ Turn left', () => rotate(i.id, -3))}
+                        {btn(`${i.id}:rotate`, '↻ Turn right', () => rotate(i.id, 3))}
                         {btn(`${i.id}:reject_image`, 'Reject photo', () => patch(i.id, { action: 'reject_image' }), 'danger')}
                       </>
                     ) : null}

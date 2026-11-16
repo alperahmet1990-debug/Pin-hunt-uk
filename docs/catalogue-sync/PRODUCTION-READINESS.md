@@ -76,7 +76,7 @@ Set these on the new service (names only; values from the production Supabase pr
 - **AI:** `OPENAI_API_KEY`, `OPENAI_SCAN_MODEL` (leave unset for the default), optionally `OPENAI_SCAN_REASONING_EFFORT` and `SCAN_BUDGET_MS`.
 - **Pixian:** `PIXIAN_API_ID`, `PIXIAN_API_SECRET` and **`PIXIAN_TEST_MODE=false`**, so clean-ups are real and unwatermarked. Set caps (`CONTRIBUTOR_DAILY_*`, `BULK_*`, `BOARD_*`) and check the Pixian credit balance first.
 - **Pin & Pop:** `PINANDPOP_API_TOKEN`, then schedule the daily incremental sync and weekly full refresh (`PINANDPOP.md` → Sync).
-- **Off until you decide:** `BULK_IMAGE_MATCHER_ENABLED` `BOARD_SCAN_ENABLED`, `SOLDGRAPH_ENABLED`, and the market flags in `docs/market-data/RIGHTS.md`.
+- **Off until you decide:** `BULK_IMAGE_MATCHER_ENABLED`, `BOARD_SCAN_ENABLED`, `SOLDGRAPH_ENABLED`, and the market flags in `docs/market-data/RIGHTS.md`.
 - **eBay and Google Vision,** as on staging if you use them: `EBAY_*`, `GOOGLE_APPLICATION_CREDENTIALS_JSON`.
 
 **Check:**

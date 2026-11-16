@@ -144,7 +144,13 @@ async function scanView(scan: BoardScan, opts: { references?: boolean } = {}) {
     store.signedUrls(store.CLEANED_BUCKET, items.map((i) => i.cleaned_path ?? "")),
     store.pinImageState(items.map(store.targetPinId).filter((x): x is string => !!x)),
   ]);
-  const refs = refIds.length ? await store.pinAndPopReferences(refIds).catch(() => ({} as Awaited<ReturnType<typeof store.pinAndPopReferences>>)) : {};
+  const refs = refIds.length
+    ? await store.pinAndPopReferences(refIds).catch((err) => {
+        // The review still works without them; say why they're missing.
+        console.warn("[board-scan] Pin & Pop references unavailable:", err instanceof Error ? err.message : err);
+        return {} as Awaited<ReturnType<typeof store.pinAndPopReferences>>;
+      })
+    : {};
   return {
     scan: { ...scan, imageUrl: boardUrls[scan.image_path] ?? null, processing: isRunning(scan.id) },
     items: items.map((i) => {
@@ -402,7 +408,7 @@ router.post("/admin/board-scans/:id/items/:itemId/rotate", requireAdmin, async (
     const item = await loadItem(req, res, scan);
     if (!item) return;
     const raw = (req.body ?? {}).degrees;
-    const degrees = raw === "auto" ? "auto" : Number(raw);
+    const degrees = raw === "auto" ? "auto" : typeof raw === "number" ? raw : NaN;
     if (degrees !== "auto" && (!Number.isFinite(degrees) || degrees === 0 || Math.abs(degrees) > 45)) {
       res.status(400).json({ error: "degrees must be \"auto\" or a turn between -45 and 45." });
       return;

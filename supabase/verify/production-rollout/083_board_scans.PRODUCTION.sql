@@ -2,14 +2,17 @@
 -- Hand-made (083 has no staging guard for build-production-migrations.mjs to
 -- swap): the production guard below, then 083 byte-for-byte, in one
 -- transaction. If the guard stops, nothing is changed.
--- Apply in the PRODUCTION SQL editor. Already applied on staging.
+-- Apply in the PRODUCTION SQL editor. Already applied on staging, and applied
+-- to production by the maintainer on 16 Nov 2026 (checked with the 083 checks).
+-- Check the body matches 083: the file minus these header lines and the guard
+-- block contains supabase/migrations/083_board_scans.sql unchanged.
 -- Then run: notify pgrst, 'reload schema';
 
 begin;
 
 do $$
 begin
-  -- PRODUCTION guard (generated copy; the original stops unless this is staging).
+  -- PRODUCTION guard (same checks as build-production-migrations.mjs uses).
   if exists (select 1 from storage.buckets where id = 'pinhunt-staging-marker') then
     raise exception 'This is the staging project (it has the pinhunt-staging-marker bucket). Nothing was changed.';
   end if;

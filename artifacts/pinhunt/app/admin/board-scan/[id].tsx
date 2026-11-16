@@ -612,7 +612,7 @@ const styles = StyleSheet.create({
   itemTitle: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
   badges: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, flexShrink: 1, justifyContent: 'flex-end' },
   badge: { fontSize: 11, fontFamily: 'Inter_600SemiBold', paddingHorizontal: 6, paddingVertical: 2, borderRadius: 4, overflow: 'hidden' },
-  images: { flexDirection: 'row', gap: 8 },
+  images: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   thumb: { width: 96, height: 96, borderRadius: 6, backgroundColor: '#0001' },
   chipThumb: { width: 28, height: 28, borderRadius: 4, marginRight: 6, backgroundColor: '#fff' },
   match: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },

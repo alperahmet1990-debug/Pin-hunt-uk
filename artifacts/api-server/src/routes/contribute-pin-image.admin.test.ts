@@ -133,14 +133,16 @@ describe("POST /api/pin-images/contribute", () => {
     const res = await confirm({ publishNow: true });
     expect(res.status).toBe(200);
     expect(res.body.autoApproved).toBe(true);
-    const raw = state.moves.find((m) => m.bucket === "pin-contributed-raw")!.to;
-    expect(state.rawRemoved).toEqual([raw]);
+    const rawMove = state.moves.find((m) => m.bucket === "pin-contributed-raw");
+    expect(rawMove).toBeDefined();
+    expect(state.rawRemoved).toEqual([rawMove?.to]);
     expect(state.rawCleared).toEqual(["img-1"]);
   });
 
   it("keeps the raw original while the photo waits for review", async () => {
     state.isAdmin = true;
     const res = await confirm();
+    expect(res.status).toBe(200);
     expect(res.body.autoApproved).toBe(false);
     expect(state.rawRemoved).toEqual([]);
     expect(state.rawCleared).toEqual([]);

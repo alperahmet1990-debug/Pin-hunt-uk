@@ -6,7 +6,10 @@
  * catalogue match and alternatives. Pins the catalogue has no photo of are
  * listed first. The reviewer confirms or corrects matches, excludes false
  * detections, adds pins detection missed (tap two corners on the board),
- * and approves cleaned photos — singly or "approve all ready".
+ * turns cleaned photos straight (automatic for straight-sided pins, or by
+ * hand), and approves cleaned photos — singly or "approve all ready".
+ * The App Creator also sees each match's Pin & Pop reference image (admin
+ * only, as in the Bulk Image Matcher; never stored or published).
  *
  * Nothing is published without an approval here. Board photos and crops are
  * private (short-lived signed URLs).
@@ -80,7 +83,12 @@ interface Metrics {
   pixianCalls: number; openaiCalls: number; inputTokens: number; outputTokens: number;
   estimatedCostUsd: number | null; totalSeconds: number | null;
 }
-interface View_ { scan: Scan; items: Item[]; metrics: Metrics; config: { maxPins: number; pixianConfigured: boolean } }
+interface PinAndPopRef { imageUrl: string | null; externalId: string | null }
+interface View_ {
+  scan: Scan; items: Item[]; metrics: Metrics; config: { maxPins: number; pixianConfigured: boolean };
+  /** App Creator only: Pin & Pop reference images by pinhunt id. */
+  pinAndPop?: Record<string, PinAndPopRef>;
+}
 
 const PROCESSING = new Set(['queued', 'detecting', 'matching', 'cleaning']);
 const STATUS_LABEL: Record<string, string> = {
@@ -174,6 +182,10 @@ export default function AdminBoardScanScreen() {
     if (r.item.cleanup_status !== 'done') setNotice(r.item.cleanup_note ?? 'Not cleaned.');
     await load();
   });
+  const rotate = (itemId: string, degrees: number | 'auto') => act(`${itemId}:rotate`, async () => {
+    await api(`/${id}/items/${itemId}/rotate`, { method: 'POST', body: JSON.stringify({ degrees }) });
+    await load();
+  });
   const approve = (itemId: string, replaceExisting = false) => act(`${itemId}:approve`, async () => {
     try {
       await api(`/${id}/items/${itemId}/approve`, { method: 'POST', body: JSON.stringify({ replaceExisting }) });
@@ -197,10 +209,22 @@ export default function AdminBoardScanScreen() {
 
   // ── Adding a missed pin: tap the top-left, then the bottom-right corner ──
   const boardHeight = data ? (boardWidth * data.scan.image_height) / data.scan.image_width : 0;
+  const boardRef = useRef<View>(null);
   const onBoardPress = (e: GestureResponderEvent) => {
     if (!drawing || !boardWidth) return;
-    const x = e.nativeEvent.locationX / boardWidth;
-    const y = e.nativeEvent.locationY / boardHeight;
+    // On the web, locationX/Y are measured from whatever element was under the
+    // pointer (an outline, its number), not the board, so measure from the
+    // board itself.
+    let lx = e.nativeEvent.locationX;
+    let ly = e.nativeEvent.locationY;
+    const node = boardRef.current as unknown as { getBoundingClientRect?: () => { left: number; top: number } } | null;
+    if (Platform.OS === 'web' && node?.getBoundingClientRect && typeof window !== 'undefined') {
+      const r = node.getBoundingClientRect();
+      lx = e.nativeEvent.pageX - (r.left + window.scrollX);
+      ly = e.nativeEvent.pageY - (r.top + window.scrollY);
+    }
+    const x = Math.max(0, Math.min(1, lx / boardWidth));
+    const y = Math.max(0, Math.min(1, ly / boardHeight));
     if (drawing === 'armed') { setDrawing({ x, y }); return; }
     const box = {
       x: Math.max(0, Math.min(drawing.x, x)), y: Math.max(0, Math.min(drawing.y, y)),
@@ -306,12 +330,14 @@ export default function AdminBoardScanScreen() {
         {scan.imageUrl ? (
           <View onLayout={(e: LayoutChangeEvent) => setBoardWidth(e.nativeEvent.layout.width)}>
             {boardWidth > 0 ? (
-              <Pressable onPress={onBoardPress} style={{ width: boardWidth, height: boardHeight }}>
+              <Pressable ref={boardRef} onPress={onBoardPress} style={{ width: boardWidth, height: boardHeight }}>
                 <Image source={{ uri: scan.imageUrl }} style={{ width: boardWidth, height: boardHeight, borderRadius: 8 }} />
                 {data.items.map((i) => (
                   <Pressable
                     key={i.id}
                     disabled={!!drawing}
+                    // While drawing, taps go through the outlines to the board.
+                    pointerEvents={drawing ? 'none' : 'auto'}
                     onPress={() => { setSelected(i.id); setFilter('all'); }}
                     style={{
                       position: 'absolute',
@@ -355,6 +381,7 @@ export default function AdminBoardScanScreen() {
           const top = i.candidates[0];
           const target = i.targetPinId;
           const targetTitle = i.candidates.find((c) => c.pinId === target)?.title ?? i.targetPin?.title ?? target;
+          const ref = target ? data.pinAndPop?.[target] : undefined;
           return (
             <View key={i.id} style={[card, selected === i.id && { borderColor: colors.homeCoral, borderWidth: 2 }]}>
               <View style={styles.rowBetween}>
@@ -377,9 +404,11 @@ export default function AdminBoardScanScreen() {
                 {i.cropUrl ? <Image source={{ uri: i.cropUrl }} style={styles.thumb} resizeMode="contain" /> : null}
                 {i.cleanedUrl ? <Image source={{ uri: i.cleanedUrl }} style={[styles.thumb, { backgroundColor: '#fff' }]} resizeMode="contain" /> : null}
                 {i.targetPin?.imageUrl ? <Image source={{ uri: i.targetPin.imageUrl }} style={[styles.thumb, { opacity: 0.8 }]} resizeMode="contain" /> : null}
+                {ref?.imageUrl ? <Image source={{ uri: ref.imageUrl }} style={[styles.thumb, { backgroundColor: '#fff' }]} resizeMode="contain" accessibilityLabel="Pin & Pop reference image" /> : null}
               </View>
               <Text style={[styles.tiny, { color: colors.homeMuted }]}>
                 Crop{i.cleanedUrl ? ' · Cleaned' : ''}{i.targetPin?.imageUrl ? ' · Current catalogue photo' : ''}
+                {ref?.imageUrl ? ` · Pin & Pop reference${ref.externalId ? ` #${ref.externalId}` : ''} (admin only)` : ''}
               </Text>
 
               {i.match_status === 'pending' ? (
@@ -406,8 +435,11 @@ export default function AdminBoardScanScreen() {
                     <TouchableOpacity
                       key={c.pinId}
                       onPress={() => patch(i.id, { action: 'set_pin', pinId: c.pinId })}
-                      style={[styles.chip, { borderColor: colors.homeLine }]}
+                      style={[styles.chip, { borderColor: colors.homeLine, flexDirection: 'row', alignItems: 'center' }]}
                     >
+                      {data.pinAndPop?.[c.pinId]?.imageUrl ? (
+                        <Image source={{ uri: data.pinAndPop[c.pinId].imageUrl! }} style={styles.chipThumb} resizeMode="contain" accessibilityLabel={`Pin & Pop reference for ${c.title}`} />
+                      ) : null}
                       <Text style={[styles.chipText, { color: colors.homeInk }]} numberOfLines={1}>{c.title} · {c.confidence}%</Text>
                     </TouchableOpacity>
                   ))}
@@ -433,6 +465,9 @@ export default function AdminBoardScanScreen() {
                     {i.cleanup_status === 'done' && i.image_review === 'none' ? (
                       <>
                         {btn(`${i.id}:approve`, 'Approve photo', () => approve(i.id), 'primary')}
+                        {btn(`${i.id}:rotate`, 'Straighten', () => rotate(i.id, 'auto'))}
+                        {btn(`${i.id}:rotate-l`, '↺ Turn left', () => rotate(i.id, -3))}
+                        {btn(`${i.id}:rotate-r`, '↻ Turn right', () => rotate(i.id, 3))}
                         {btn(`${i.id}:reject_image`, 'Reject photo', () => patch(i.id, { action: 'reject_image' }), 'danger')}
                       </>
                     ) : null}
@@ -579,6 +614,7 @@ const styles = StyleSheet.create({
   badge: { fontSize: 11, fontFamily: 'Inter_600SemiBold', paddingHorizontal: 6, paddingVertical: 2, borderRadius: 4, overflow: 'hidden' },
   images: { flexDirection: 'row', gap: 8 },
   thumb: { width: 96, height: 96, borderRadius: 6, backgroundColor: '#0001' },
+  chipThumb: { width: 28, height: 28, borderRadius: 4, marginRight: 6, backgroundColor: '#fff' },
   match: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   modalBackdrop: { flex: 1, backgroundColor: '#0008', justifyContent: 'center', padding: 16 },
   modal: { borderRadius: 14, padding: 16, gap: 10, maxWidth: 560, width: '100%', alignSelf: 'center' },

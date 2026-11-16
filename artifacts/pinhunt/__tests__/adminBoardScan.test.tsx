@@ -99,6 +99,31 @@ describe('admin board scan review', () => {
   });
 });
 
+describe('admin board scan: reference images and straightening', () => {
+  it('shows the Pin & Pop reference beside the match, labelled admin only, when the server sends one', async () => {
+    const withRefs = { ...view, pinAndPop: { 'PHUK-1': { imageUrl: 'https://pinandpop.example/1.jpg', externalId: '4321' } } };
+    fetchMock.mockImplementation(() => Promise.resolve({ ok: true, json: () => Promise.resolve(withRefs) }));
+    await render(<AdminBoardScanScreen />);
+    expect(await screen.findByText(/Pin & Pop reference #4321 \(admin only\)/)).toBeTruthy();
+    expect(screen.getByLabelText('Pin & Pop reference image')).toBeTruthy();
+  });
+
+  it('shows no reference image when the server sends none (not the App Creator)', async () => {
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    expect(screen.queryByText(/Pin & Pop reference/)).toBeNull();
+  });
+
+  it('straightens or turns a cleaned photo before approval', async () => {
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    await fireEvent.press(screen.getByText('Straighten'));
+    await waitFor(() => expect(calls()).toContain('POST /admin/board-scans/scan-1/items/i2/rotate {"degrees":"auto"}'));
+    await fireEvent.press(screen.getByText('↻ Turn right'));
+    await waitFor(() => expect(calls()).toContain('POST /admin/board-scans/scan-1/items/i2/rotate {"degrees":3}'));
+  });
+});
+
 describe('admin board scan upload', () => {
   it("can't start without a photo and a permission record", async () => {
     fetchMock.mockImplementation(() => Promise.resolve({ ok: true, json: () => Promise.resolve({ scans: [] }) }));

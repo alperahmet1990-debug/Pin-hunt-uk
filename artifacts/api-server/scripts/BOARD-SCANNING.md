@@ -76,6 +76,14 @@ Offline checks on 12 Nov 2026 (hand-drawn boxes; AI steps not run — no keys in
 - **Crowding:** sheriff stars and cloud pins interlock, so crops (6% padding) include points of neighbouring pins. Matching should cope (the prompt says to identify the centre pin); for clean-up, watch whether Pixian keeps the fragments and reject those photos — if common, the next step is to send Pixian an unpadded crop.
 - The thumb over the Buzz rectangle is the occlusion case to check detection reports.
 
+## Straightening
+
+After Pixian, a cleaned photo is turned straight when the pin has straight sides (`services/boardScan/straighten.ts`): the tilt is the rotation that gives the outline's convex hull the smallest bounding box, within ±25°. Round, star and other irregular pins (hull fills < 85% of that box) are left as they are. The reviewer can also **Straighten**, or turn by 3° with **↺ / ↻**, before approving; each turn is saved as a new file, since identical crops share one cleaned file.
+
+## Pin & Pop reference on the review screen
+
+The App Creator (`profiles.is_app_creator`) sees each match's Pin & Pop reference image beside the crop, labelled *admin only*, and small ones on the alternatives — the same admin-only use as the Bulk Image Matcher. Other admins don't get them from the API. They are never stored or published.
+
 ## Failure handling
 
 Every step saves as it goes. A pin whose matching fails is marked failed and the board ends *Partly processed*; **Resume** redoes only unfinished pins (no new detection). A board left processing by a server restart shows as partial after 10 minutes. A failed Pixian call marks only that pin; **Clean photo** retries it.

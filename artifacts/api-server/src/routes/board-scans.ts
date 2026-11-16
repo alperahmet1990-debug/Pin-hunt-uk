@@ -8,6 +8,7 @@
  * POST   /admin/board-scans/:id/items               Add a pin detection missed: { box, pinId? }.
  * PATCH  /admin/board-scans/:id/items/:itemId       { action: confirm | set_pin | exclude | reset | reject_image }.
  * POST   /admin/board-scans/:id/items/:itemId/clean    Pixian clean-up on request ({ force } lifts the judgement calls).
+ * POST   /admin/board-scans/:id/items/:itemId/rotate   Turn the cleaned photo: { degrees } clockwise, or { degrees: "auto" } to straighten.
  * POST   /admin/board-scans/:id/items/:itemId/approve  Publish the cleaned photo to its pin ({ pinId?, replaceExisting? }).
  * POST   /admin/board-scans/:id/approve-ready       Publish every cleaned, confident photo of a pin with no photo.
  * GET    /admin/board-scans-pin-search?q=           Catalogue search for corrections.
@@ -27,6 +28,7 @@ import {
   approveItem,
   approveReady,
   catalogueRepository,
+  rotateCleaned,
   cleanItem,
   enqueue,
   isRunning,
@@ -50,6 +52,8 @@ export function boardScanEnabled(env: NodeJS.ProcessEnv = process.env): boolean 
 
 interface AdminRequest extends Request {
   adminId?: string;
+  /** App Creator: also sees the admin-only Pin & Pop reference images. */
+  isAppCreator?: boolean;
 }
 
 let anonClient: SupabaseClient | null = null;
@@ -71,9 +75,11 @@ async function requireAdmin(req: AdminRequest, res: Response, next: NextFunction
   try {
     const { data: { user }, error } = await getAnonClient().auth.getUser(auth.slice(7));
     if (error || !user) { res.status(401).json({ error: "Invalid token" }); return; }
-    const { data: profile } = await store.boardDb().from("profiles").select("is_admin").eq("id", user.id).single();
-    if (!(profile as { is_admin?: boolean } | null)?.is_admin) { res.status(403).json({ error: "Admin access required" }); return; }
+    const { data: profile } = await store.boardDb().from("profiles").select("is_admin, is_app_creator").eq("id", user.id).single();
+    const p = profile as { is_admin?: boolean; is_app_creator?: boolean } | null;
+    if (!p?.is_admin) { res.status(403).json({ error: "Admin access required" }); return; }
     req.adminId = user.id;
+    req.isAppCreator = p.is_app_creator === true;
     next();
   } catch {
     res.status(500).json({ error: "Auth check failed" });
@@ -126,14 +132,19 @@ async function loadItem(req: AdminRequest, res: Response, scan: BoardScan): Prom
 }
 
 /** Board + items as the review screen needs them. */
-async function scanView(scan: BoardScan) {
+async function scanView(scan: BoardScan, opts: { references?: boolean } = {}) {
   const items = await store.listItems(scan.id);
+  // Admin-only Pin & Pop reference images: the target pin and the alternatives.
+  const refIds = opts.references
+    ? items.flatMap((i) => [store.targetPinId(i), ...(i.candidates ?? []).map((c) => c.pinId)]).filter((x): x is string => !!x)
+    : [];
   const [boardUrls, cropUrls, cleanedUrls, pins] = await Promise.all([
     store.signedUrls(store.BOARD_BUCKET, [scan.image_path]),
     store.signedUrls(store.BOARD_BUCKET, items.map((i) => i.crop_path ?? "")),
     store.signedUrls(store.CLEANED_BUCKET, items.map((i) => i.cleaned_path ?? "")),
     store.pinImageState(items.map(store.targetPinId).filter((x): x is string => !!x)),
   ]);
+  const refs = refIds.length ? await store.pinAndPopReferences(refIds).catch(() => ({} as Awaited<ReturnType<typeof store.pinAndPopReferences>>)) : {};
   return {
     scan: { ...scan, imageUrl: boardUrls[scan.image_path] ?? null, processing: isRunning(scan.id) },
     items: items.map((i) => {
@@ -147,6 +158,7 @@ async function scanView(scan: BoardScan) {
       };
     }),
     metrics: boardMetrics(scan, items),
+    pinAndPop: Object.fromEntries(Object.entries(refs).map(([id, r]) => [id, { imageUrl: r.imageUrl ?? null, externalId: r.externalId ?? null }])),
     config: { maxPins: boardMaxPins(), pixianConfigured: pixianConfigured(), aiConfigured: isAiConfigured() },
   };
 }
@@ -260,7 +272,7 @@ router.get("/admin/board-scans/:id", requireAdmin, async (req: AdminRequest, res
   try {
     const scan = await loadScan(req, res);
     if (!scan) return;
-    res.json(await scanView(scan));
+    res.json(await scanView(scan, { references: req.isAppCreator }));
   } catch (err) {
     fail(res, err);
   }
@@ -378,6 +390,24 @@ router.post("/admin/board-scans/:id/items/:itemId/clean", requireAdmin, async (r
     const updated = await cleanItem(scan, retry, siblings, pins, { force: (req.body ?? {}).force === true, stats });
     await store.updateScan(scan.id, { stats });
     res.json({ item: updated });
+  } catch (err) {
+    fail(res, err);
+  }
+});
+
+router.post("/admin/board-scans/:id/items/:itemId/rotate", requireAdmin, async (req: AdminRequest, res: Response) => {
+  try {
+    const scan = await loadScan(req, res);
+    if (!scan) return;
+    const item = await loadItem(req, res, scan);
+    if (!item) return;
+    const raw = (req.body ?? {}).degrees;
+    const degrees = raw === "auto" ? "auto" : Number(raw);
+    if (degrees !== "auto" && (!Number.isFinite(degrees) || degrees === 0 || Math.abs(degrees) > 45)) {
+      res.status(400).json({ error: "degrees must be \"auto\" or a turn between -45 and 45." });
+      return;
+    }
+    res.json({ item: await rotateCleaned(scan, item, degrees) });
   } catch (err) {
     fail(res, err);
   }

@@ -15,6 +15,7 @@ import sharp from "sharp";
 import { createSupabasePinRepository, createSupabaseUserRepository, type PinRepository } from "@workspace/pin-repository";
 import { getOpenAIClient, isAiConfigured } from "@workspace/integrations-openai-ai-server";
 import { normalizePinPhoto, pixianConfigured, PixianTimeoutError } from "../pixian";
+import { rotatePinPhoto, straightenPinPhoto } from "./straighten";
 import { publishContributedImage } from "../contributed-images";
 import { pinAndPopReferenceImages } from "../scanReferenceImages";
 import { detectPins, emptyUsage, type DetectedPin, type TokenUsage } from "./detect";
@@ -170,6 +171,42 @@ async function pinStates(items: BoardScanItem[]): Promise<Record<string, PinStat
   return store.pinImageState(ids);
 }
 
+/** Straighten a cleaned photo when its pin is visibly tilted; never fails the clean-up. */
+async function straightenOrKeep(cleaned: Buffer): Promise<Buffer> {
+  try {
+    return (await straightenPinPhoto(cleaned)).image;
+  } catch (err) {
+    console.warn("[board-scan] straighten skipped:", errText(err));
+    return cleaned;
+  }
+}
+
+/**
+ * Turn a cleaned photo before it's approved: by hand (`degrees`, clockwise)
+ * or automatically ("auto"). Written to a new file, because identical crops
+ * share one cleaned file.
+ */
+export async function rotateCleaned(scan: BoardScan, item: BoardScanItem, degrees: number | "auto"): Promise<BoardScanItem> {
+  if (item.cleanup_status !== "done" || !item.cleaned_path) throw new ReviewError("Clean the photo before turning it.");
+  if (item.image_review === "approved") throw new ReviewError("This photo is already published.");
+  const current = await store.downloadObject(store.CLEANED_BUCKET, item.cleaned_path);
+  let turned: Buffer;
+  if (degrees === "auto") {
+    const out = await straightenPinPhoto(current);
+    if (out.tilt.reason !== "straightened") {
+      throw new ReviewError(out.tilt.reason === "already_straight"
+        ? "It already looks straight."
+        : "Couldn't find straight edges on this pin. Turn it by hand.", 422);
+    }
+    turned = out.image;
+  } else {
+    turned = await rotatePinPhoto(current, degrees);
+  }
+  const path = `${scan.created_by}/board-${scan.id}/${item.id}-${Date.now()}.jpg`;
+  await store.uploadObject(store.CLEANED_BUCKET, path, turned);
+  return store.updateItem(item.id, { cleaned_path: path });
+}
+
 /**
  * Pixian clean-up for one item, if the rules allow it (rules.cleanupBlock).
  * Reuses an earlier clean-up of the identical crop instead of paying again.
@@ -201,7 +238,7 @@ export async function cleanItem(
     } else {
       const crop = await store.downloadObject(store.BOARD_BUCKET, item.crop_path!);
       if (opts.stats) opts.stats.pixianCalls = (opts.stats.pixianCalls ?? 0) + 1;
-      const cleaned = await normalizePinPhoto(crop, "image/jpeg");
+      const cleaned = await straightenOrKeep(await normalizePinPhoto(crop, "image/jpeg"));
       cleanedPath = `${scan.created_by}/board-${scan.id}/${item.id}.jpg`;
       await store.uploadObject(store.CLEANED_BUCKET, cleanedPath, cleaned);
     }

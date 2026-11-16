@@ -3,6 +3,7 @@
  * every caller is an API route that has already checked the user.
  */
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import { createSupabaseUserRepository, type PinAndPopReference } from "@workspace/pin-repository";
 import type { Box, QualityReport } from "./quality";
 import type { MatchCandidate } from "./match";
 
@@ -233,5 +234,25 @@ export async function pinImageState(pinhuntIds: string[]): Promise<Record<string
     const pid = byUuid.get(row.pin_id);
     if (pid) out[pid].pendingImages += 1;
   }
+  return out;
+}
+
+/**
+ * Pin & Pop reference images (migration 042) by pinhunt id, for the App
+ * Creator's review screen only — the same admin-only use as the Bulk Image
+ * Matcher. Never stored by board scanning, never published.
+ */
+export async function pinAndPopReferences(pinhuntIds: string[]): Promise<Record<string, PinAndPopReference>> {
+  const ids = [...new Set(pinhuntIds)];
+  if (ids.length === 0) return {};
+  const pins = check(
+    await boardDb().from("pins").select("id, pinhunt_id").in("pinhunt_id", ids),
+    "Could not look up pins",
+  ) as Array<{ id: string; pinhunt_id: string }> | null;
+  if (!pins?.length) return {};
+  const repo = createSupabaseUserRepository(process.env.SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+  const byUuid = await repo.getPinAndPopReferences(pins.map((p) => p.id));
+  const out: Record<string, PinAndPopReference> = {};
+  for (const p of pins) if (byUuid[p.id]?.imageUrl) out[p.pinhunt_id] = byUuid[p.id];
   return out;
 }

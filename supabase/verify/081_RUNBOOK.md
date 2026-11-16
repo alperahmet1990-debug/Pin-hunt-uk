@@ -31,7 +31,7 @@ Before 081 is applied, the new app code still works: Home and `/events` show com
 
 1. Open `081_events.sql` from the raw file (GitHub "Raw" or a local checkout) and copy the whole file.
 2. Staging Supabase SQL editor (check the project URL is staging): run it.
-3. Run `supabase/verify/081_verify.sql`. Expect one row: `ALL 081 CHECKS PASSED`. It writes two test users and test events and rolls them back (see "Production", step 3, on triggers).
+3. Run `supabase/verify/081_verify.sql` as it is (`target := 'staging'`). Expect one row: `ALL 081 CHECKS PASSED`. It writes two test users and test events and rolls them back (see "Production", step 3, on triggers).
 4. Optional: run `supabase/verify/081_seed.sql` to copy the events built into the app (those that haven't ended) into the table, published. It prints the number of published events.
 5. The migration ends with `notify pgrst, 'reload schema';`. Run that again if the app reports it can't find the `events` table.
 6. Device check (a build pointed at staging):
@@ -61,6 +61,7 @@ Before 081 is applied, the new app code still works: Home and `/events` show com
    select has_table_privilege('anon', 'public.events', 'insert');                         -- false
    select has_column_privilege('anon', 'public.events', 'created_by', 'select');          -- false
    ```
+   **Project guard (#645):** `081_verify.sql` starts with `target text := 'staging'`. It stops before writing anything if the project's `pinhunt_environment()` marker says otherwise, or if the marker is missing. Only if the trigger check passes, change that line to `'production'` for the production run. Otherwise leave it, and use the read-only checks.
 4. Production SQL editor (check the project URL is production): run 081, then the verify (or the read-only checks), then optionally the seed.
 5. Merge the PR by hand once production is verified.
 

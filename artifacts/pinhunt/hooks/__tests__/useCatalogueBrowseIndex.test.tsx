@@ -1,6 +1,6 @@
 import { act, renderHook, waitFor } from '@testing-library/react-native';
 import type { CatalogueBrowsePageQuery } from '@workspace/pin-repository';
-import { useCatalogueBrowseIndex, type BrowseFilters } from '../useCatalogueBrowseIndex';
+import { browseErrorMessage, useCatalogueBrowseIndex, type BrowseFilters } from '../useCatalogueBrowseIndex';
 
 let mockPins: Array<Record<string, unknown>> = [];
 let mockRepository: { getCatalogueBrowsePage: jest.Mock; getAllSetNames: jest.Mock } | null = null;
@@ -88,6 +88,36 @@ describe('useCatalogueBrowseIndex', () => {
     expect(mockRepository.getCatalogueBrowsePage).toHaveBeenCalledWith(expect.objectContaining({ setName: 'S2' }));
     expect(await result.current.loadSetNames()).toEqual(['S0', 'S1']);
   });
+
+  it('Supabase mode: a count that times out still shows the pins', async () => {
+    const real = server(30);
+    const getPage = jest.fn(async (q: CatalogueBrowsePageQuery) => {
+      if (q.withCount) throw new Error('canceling statement due to statement timeout');
+      return real(q);
+    });
+    mockRepository = { getCatalogueBrowsePage: getPage, getAllSetNames: jest.fn() };
+    const { result } = await renderHook(() => useCatalogueBrowseIndex({ ...NONE, setName: 'S1' }));
+    await waitFor(() => expect(result.current.loading).toBe(false));
+    expect(result.current.rows).toHaveLength(10);
+    expect(result.current.error).toBeNull();
+    expect(result.current.total).toBeNull(); // the screen falls back to the loaded rows
+  });
+
+  it('Supabase mode: a page that times out shows a plain message', async () => {
+    mockRepository = {
+      getCatalogueBrowsePage: jest.fn().mockRejectedValue(new Error('canceling statement due to statement timeout')),
+      getAllSetNames: jest.fn(),
+    };
+    const { result } = await renderHook(() => useCatalogueBrowseIndex({ ...NONE, setName: 'S9' }));
+    await waitFor(() => expect(result.current.loading).toBe(false));
+    expect(result.current.error).toBe('The catalogue took too long to load. Pull down to try again.');
+  });
+
+  it('browseErrorMessage keeps other messages', () => {
+    expect(browseErrorMessage(new Error('Network request failed'))).toBe('Network request failed');
+    expect(browseErrorMessage('x')).toBe('Could not load the catalogue.');
+  });
+
   it('Supabase mode: shows the pins even when the total times out', async () => {
     const ok = server(30, 2);
     const page = jest.fn(async (q: CatalogueBrowsePageQuery) => {

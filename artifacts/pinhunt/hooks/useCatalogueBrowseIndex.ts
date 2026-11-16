@@ -24,7 +24,18 @@ export type { BrowseFilters } from '@/utils/catalogueBrowsePager';
 const NO_FILTERS: BrowseFilters = { query: '', setName: null, year: null, edition: null };
 
 // The unfiltered first pages, kept so reopening the screen shows them instantly.
-let cachedUnfiltered: { rows: CatalogueBrowsePin[]; cursor: BrowseCursor; total: number | null } | null = null;
+let cachedUnfiltered: { rows: CatalogueBrowsePin[]; cursor: BrowseCursor } | null = null;
+// The whole catalogue's count, once known (it loads separately from the rows).
+let cachedCatalogueTotal: number | null = null;
+
+/** A database timeout reads as gibberish to collectors ("canceling statement due to statement timeout"). */
+export function browseErrorMessage(e: unknown): string {
+  const msg = e instanceof Error ? e.message : '';
+  if (/statement timeout|canceling statement|timed? ?out/i.test(msg)) {
+    return 'The catalogue took too long to load. Pull down to try again.';
+  }
+  return msg || 'Could not load the catalogue.';
+}
 
 const isUnfiltered = (f: BrowseFilters) => !f.query.trim() && f.setName === null && f.year === null && f.edition === null;
 
@@ -42,8 +53,8 @@ export function useCatalogueBrowseIndex(filters: BrowseFilters = NO_FILTERS) {
   const unfiltered = isUnfiltered(filters);
   const startFromCache = Boolean(repository) && unfiltered && cachedUnfiltered !== null;
   const [rows, setRows] = useState<CatalogueBrowsePin[]>(startFromCache ? cachedUnfiltered!.rows : []);
-  const [total, setTotal] = useState<number | null>(startFromCache ? cachedUnfiltered!.total : null);
-  const [catalogueTotal, setCatalogueTotal] = useState<number | null>(cachedUnfiltered?.total ?? null);
+  const [total, setTotal] = useState<number | null>(startFromCache ? cachedCatalogueTotal : null);
+  const [catalogueTotal, setCatalogueTotal] = useState<number | null>(cachedCatalogueTotal);
   const [loading, setLoading] = useState(!startFromCache);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -96,28 +107,31 @@ export function useCatalogueBrowseIndex(filters: BrowseFilters = NO_FILTERS) {
     setError(null);
     if (reset) { setLoading(true); cursorRef.current = START; }
     else setLoadingMore(true);
+    // The count is extra: if it's slow or fails, the pins still show
+    // (the screen counts the loaded rows instead).
+    if (reset) {
+      setTotal(null);
+      browseTotal(page, f).then(count => {
+        if (gen !== generation.current) return;
+        setTotal(count);
+        if (isUnfiltered(f)) {
+          setCatalogueTotal(count);
+          cachedCatalogueTotal = count;
+        }
+      }).catch(() => {});
+    }
     try {
-      const [result, count] = await Promise.all([
-        nextBrowsePage(page, f, cursorRef.current),
-        // A total that fails (e.g. a timeout) mustn't stop the pins showing.
-        reset ? browseTotal(page, f).catch(() => null) : Promise.resolve(null),
-      ]);
+      const result = await nextBrowsePage(page, f, cursorRef.current);
       if (gen !== generation.current) return;
       cursorRef.current = result.cursor;
       setHasMore(result.cursor.phase !== 'done');
       setRows(prev => (reset ? result.rows : [...prev, ...result.rows]));
-      if (count !== null) {
-        setTotal(count);
-        if (isUnfiltered(f)) setCatalogueTotal(count);
-      } else if (reset) {
-        setTotal(null); // no stale total from the previous filters
-      }
       if (isUnfiltered(f)) {
         const prevRows = reset ? [] : (cachedUnfiltered?.rows ?? []);
-        cachedUnfiltered = { rows: [...prevRows, ...result.rows], cursor: result.cursor, total: count ?? cachedUnfiltered?.total ?? null };
+        cachedUnfiltered = { rows: [...prevRows, ...result.rows], cursor: result.cursor };
       }
     } catch (e) {
-      if (gen === generation.current) setError(e instanceof Error ? e.message : 'Could not load the catalogue.');
+      if (gen === generation.current) setError(browseErrorMessage(e));
     } finally {
       if (gen === generation.current) {
         busy.current = false;
@@ -140,7 +154,7 @@ export function useCatalogueBrowseIndex(filters: BrowseFilters = NO_FILTERS) {
       busy.current = false;
       cursorRef.current = cachedUnfiltered.cursor;
       setRows(cachedUnfiltered.rows);
-      setTotal(cachedUnfiltered.total);
+      setTotal(cachedCatalogueTotal);
       setHasMore(cachedUnfiltered.cursor.phase !== 'done');
       setLoading(false);
       return;
@@ -150,18 +164,17 @@ export function useCatalogueBrowseIndex(filters: BrowseFilters = NO_FILTERS) {
   }, [key, repository, mockPins]);
 
   // The catalogue total is shown as "N of <total>" while filtering, so fetch it once if needed.
-  // (Not for the unfiltered view: its own load sets it, and counting twice at once
-  // doubled the load on the database.)
+  // Not while the unfiltered list is loading: that load counts the catalogue itself.
   useEffect(() => {
-    if (!repository || catalogueTotal !== null || unfiltered) return;
+    if (!repository || catalogueTotal !== null || isUnfiltered(effective())) return;
     let cancelled = false;
-    browseTotal(page, NO_FILTERS).then(n => { if (!cancelled) setCatalogueTotal(n); }).catch(() => {});
+    browseTotal(page, NO_FILTERS).then(n => { cachedCatalogueTotal = n; if (!cancelled) setCatalogueTotal(n); }).catch(() => {});
     return () => { cancelled = true; };
-  }, [repository, catalogueTotal, page, unfiltered]);
+  }, [repository, catalogueTotal, page, effective]);
 
   const loadMore = useCallback(() => { void load(false); }, [load]);
   const refresh = useCallback(async () => {
-    if (isUnfiltered(effective())) cachedUnfiltered = null;
+    if (isUnfiltered(effective())) { cachedUnfiltered = null; cachedCatalogueTotal = null; }
     await load(true);
   }, [load, effective]);
 

@@ -15,6 +15,8 @@ const mem = vi.hoisted(() => ({
   published: [] as string[],
   publishOpts: [] as unknown[],
   nextId: 1,
+  /** processBoardScan runs (each starts with getScan). */
+  getScanCalls: 0,
   create: null as unknown as ReturnType<typeof vi.fn>,
   /** Pin & Pop reference images the comparison step can see, by pin id. */
   refs: new Map<string, string>(),
@@ -57,7 +59,7 @@ vi.mock("./store", async (importOriginal) => {
   return {
     ...real,
     boardDb: () => ({ from: () => ({ update: () => ({ eq: async () => ({ error: null }) }) }) }),
-    getScan: async (sid: string) => mem.scans.get(sid) ?? null,
+    getScan: async (sid: string) => { mem.getScanCalls++; return mem.scans.get(sid) ?? null; },
     updateScan: async (sid: string, patch: Record<string, unknown>) => { Object.assign(mem.scans.get(sid)!, patch, { updated_at: now() }); },
     listItems: async (sid: string) => [...mem.items.values()].filter((i) => i.board_scan_id === sid).sort((a, b) => (a.position as number) - (b.position as number)),
     getItem: async (_s: string, iid: string) => mem.items.get(iid) ?? null,
@@ -82,7 +84,7 @@ vi.mock("./store", async (importOriginal) => {
   };
 });
 
-import { approveItem, approveReady, cleanSetName, learnSet, processBoardScan, refineBox } from "./pipeline";
+import { approveItem, approveReady, cleanSetName, enqueue, isRunning, learnSet, MAX_SET_HINTS, processBoardScan, refineBox } from "./pipeline";
 import type { BoardScan, BoardScanItem } from "./store";
 
 /** A 2000×1500 "board": three sharp, textured pins and one tiny one. */
@@ -292,6 +294,31 @@ describe("processBoardScan", () => {
 
     // A set the board already knows doesn't trigger another round.
     expect(await learnSet(mem.scans.get("s1") as unknown as BoardScan, "tails of friendship", grogu.id)).toBe(0);
+  });
+
+  it("runs a board again when asked while it's running, instead of dropping the request", async () => {
+    let release!: () => void;
+    const gate = new Promise<void>((r) => { release = r; });
+    const answer = model({ G1: rank("PHUK-1", 50) });
+    mem.create.mockImplementation(async (req: { messages: Array<{ content: unknown }> }) => {
+      if (String(req.messages[0].content).startsWith("You find individual")) await gate; // hold the first run
+      return answer(req);
+    });
+    mem.getScanCalls = 0;
+    enqueue("s1");
+    await vi.waitFor(() => expect(mem.getScanCalls).toBe(1)); // first run started, held at detection
+    enqueue("s1"); // e.g. a confirmation's re-match while it's still running
+    release();
+    await vi.waitFor(() => expect(isRunning("s1")).toBe(false));
+    expect(mem.getScanCalls).toBe(2);
+    expect(mem.scans.get("s1")!.status).toBe("ready");
+  });
+
+  it("learns at most MAX_SET_HINTS sets per board", async () => {
+    const full = Array.from({ length: MAX_SET_HINTS }, (_, i) => `Set ${i}`);
+    Object.assign(mem.scans.get("s1")!, { stats: { setHints: full } });
+    expect(await learnSet(mem.scans.get("s1") as unknown as BoardScan, "Tails of Friendship", "x")).toBe(0);
+    expect(mem.scans.get("s1")!.stats).toMatchObject({ setHints: full });
   });
 
   it("cleans set names and ignores empty ones", () => {

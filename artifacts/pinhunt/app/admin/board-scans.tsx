@@ -70,6 +70,7 @@ export default function AdminBoardScansScreen() {
 
   const [photo, setPhoto] = useState<{ uri: string; base64: string } | null>(null);
   const [title, setTitle] = useState('');
+  const [setHint, setSetHint] = useState('');
   const [basis, setBasis] = useState<Basis>('contributor_permission');
   const [contributorName, setContributorName] = useState('');
   const [contributorHandle, setContributorHandle] = useState('');
@@ -131,6 +132,7 @@ export default function AdminBoardScansScreen() {
         body: JSON.stringify({
           imageBase64: photo.base64,
           title: title.trim() || undefined,
+          setHint: setHint.trim() || undefined,
           permission: {
             basis,
             contributorName: contributor ? contributorName.trim() : undefined,
@@ -147,6 +149,7 @@ export default function AdminBoardScansScreen() {
       if (!res.ok) throw new Error(data.error ?? 'Upload failed.');
       setPhoto(null);
       setTitle('');
+      setSetHint('');
       setEvidence('');
       router.push(`/admin/board-scan/${data.scan.id}` as Href);
     } catch (e) {
@@ -203,6 +206,17 @@ export default function AdminBoardScansScreen() {
           )}
 
           <TextInput style={input} placeholder="Label (e.g. Toy Story board)" placeholderTextColor={colors.homeMuted} value={title} onChangeText={setTitle} />
+          <TextInput
+            style={input}
+            placeholder="Set on this board (optional)"
+            placeholderTextColor={colors.homeMuted}
+            value={setHint}
+            onChangeText={setSetHint}
+            accessibilityLabel="Set on this board"
+          />
+          <Text style={[styles.hint, { color: colors.homeMuted }]}>
+            If most pins are from one set, e.g. "Tails of Friendship": matching looks there first. Confirming a pin also teaches the board its set.
+          </Text>
 
           <Text style={[styles.label, { color: colors.homeInk }]}>Whose photo is this?</Text>
           <View style={styles.segment}>

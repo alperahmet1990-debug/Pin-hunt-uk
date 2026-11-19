@@ -8,7 +8,12 @@
  * specific words ("pod", "popsicle", "claw machine") are searched across the
  * whole catalogue and land after them — past the board's candidate cap.
  *
- * Here the narrow searches come first: each of the top characters together
+ * When the board's sets are known (typed at upload, or learned from a
+ * confirmed pin), they come first: the set with each top character, then the
+ * whole set. Many set pins are titled only by character ("Meeko"), so
+ * within a set the character alone is enough to find them.
+ *
+ * Then the narrow searches: each of the top characters together
  * with each specific keyword (search words must all match; the character
  * filter adds to that), the same as plain words too (for pins whose
  * character link is missing), and printed text on its own. The scan's broad
@@ -21,6 +26,8 @@ const FOCUSED_CHARACTERS = 2;
 const FOCUSED_KEYWORDS = 5;
 const FOCUSED_LIMIT = 30;
 const TEXT_LIMIT = 40;
+/** A whole set: most sets are far smaller than this. */
+const SET_LIMIT = 60;
 
 const norm = (s: string) => s.trim().toLowerCase();
 
@@ -29,6 +36,7 @@ export async function findBoardCandidates(
   description: { characters: string[]; keywords: string[] },
   textTerms: string[],
   cap: number,
+  sets: string[] = [],
 ): Promise<CataloguePin[]> {
   // A failed (or throwing) search just contributes nothing.
   const search = async (query: string, filters: Parameters<PinRepository["searchPins"]>[1]) => {
@@ -52,21 +60,35 @@ export async function findBoardCandidates(
       focused.push(search(`${character} ${keyword}`, { status: "active", limit: FOCUSED_LIMIT }));
     }
   }
+  // The board's sets first: the set with each top character (title or
+  // character link), then the whole set.
+  const setSearches: Array<Promise<CataloguePin[]>> = [];
+  const wholeSets: Array<Promise<CataloguePin[]>> = [];
+  for (const set of sets.slice(0, 5)) {
+    for (const character of characters) {
+      setSearches.push(search(`${set} ${character}`, { status: "active", limit: FOCUSED_LIMIT }));
+      setSearches.push(search(set, { status: "active", character, limit: FOCUSED_LIMIT }));
+    }
+    wholeSets.push(search(set, { status: "active", limit: SET_LIMIT }));
+  }
   const text = textTerms
     .map((t) => t.trim())
     .filter((t) => t.length >= 3)
     .slice(0, 2)
     .map((t) => search(t, { status: "active", limit: TEXT_LIMIT }));
 
-  const [narrow, printed, broad] = await Promise.all([
+  const [inSet, wholeSet, narrow, printed, broad] = await Promise.all([
+    Promise.all(setSearches),
+    Promise.all(wholeSets),
     Promise.all(focused),
     Promise.all(text),
     findCandidates(repository, description, textTerms).catch(() => [] as CataloguePin[]),
   ]);
 
   const byId = new Map<string, CataloguePin>();
-  // Narrow (character + specific word) first, then printed text, then broad.
-  for (const pins of [...narrow, ...printed, broad]) {
+  // The board's sets (with the character, then whole), then narrow
+  // (character + specific word), then printed text, then broad.
+  for (const pins of [...inSet, ...wholeSet, ...narrow, ...printed, broad]) {
     for (const p of pins) {
       if (byId.size >= cap) break;
       if (!byId.has(p.id)) byId.set(p.id, p);

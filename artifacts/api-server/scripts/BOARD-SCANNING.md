@@ -89,6 +89,12 @@ Second board (19 Nov 2026, a Grogu board) showed two more causes, now fixed:
 - **The comparison showed only 3 pictures.** The scan's limit (`VERIFY_MAX_REFERENCES`) showed references for the top 3 candidates only, and the prompt lets an unpictured candidate keep its plausibility. When the 3 pictured candidates didn't match, the model promoted the 4th or 5th — whose Pin & Pop picture exists but it was never shown ("despite having no reference image"). Board matching now shows all ranked candidates' pictures (up to 5, `BOARD_MAX_REFERENCES`), and a candidate counts as checked only if its own picture was compared.
 - **The search was built for a 13k catalogue** (`scanCandidates.ts`): a character on its own returns an arbitrary 120 of hundreds or thousands of pins, and specific words were searched across the whole catalogue after them, past the 150 cap. Board matching (`candidates.ts`) now searches each top character together with each specific word first (e.g. Grogu + "pod", Rex + "claw machine"), then printed text, then the broad search. The app's single-pin scan still uses the old search; it likely has the same weakness on the 116k catalogue.
 
+Third board (19 Nov 2026, Disney Store "Tails of Friendship" silver-frame pins) showed the limit of text search: set pins are often titled by character only ("Meeko", "Pongo and Perdita"), and nothing in the catalogue text describes how they look ("silver frame"), so among hundreds of same-titled pins the right one can't be singled out. Boards are usually arranged by set, so:
+
+- **Set on this board** (optional, at upload) is searched first for every pin: the set with each character, then the whole set (`candidates.ts`). Stored in `board_scans.stats.setHints`, so no migration.
+- **Learned from confirmations:** confirming or correcting a pin adds its set (`pins.collection`) to the board, up to 5 sets, and re-matches the board's other undecided pins with it searched first (`learnSet`). A re-match skips the describe step (≈ 2 AI calls per pin). The ranking is also told which sets the board's other pins come from.
+- The review card shows **Searched for:** (the describe step's characters, words and printed text), so a misread pin is obvious, and **Change pin** results show the Pin & Pop picture to the App Creator.
+
 If the right pin still isn't among the candidates, the next step is searching by picture similarity (an image index of reference photos), which needs a check of what Pin & Pop's terms allow.
 
 ## Straightening

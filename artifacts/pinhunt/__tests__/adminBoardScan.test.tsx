@@ -99,6 +99,45 @@ describe('admin board scan review', () => {
   });
 });
 
+describe('admin board scan: searching and what was searched for', () => {
+  it('shows what the describe step searched for', async () => {
+    const described = { ...view, items: view.items.map((i, n) => (n === 1 ? { ...i, detection: { characters: ['Lucifer'], keywords: ['cat', 'silver frame'], text: '', described: true } } : i)) };
+    fetchMock.mockImplementation(() => Promise.resolve({ ok: true, json: () => Promise.resolve(described) }));
+    await render(<AdminBoardScanScreen />);
+    expect(await screen.findByText('Searched for: Lucifer, cat, silver frame')).toBeTruthy();
+  });
+
+  it('shows the Pin & Pop picture in Change pin results when there is no catalogue photo', async () => {
+    fetchMock.mockImplementation((url: string) => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve(String(url).includes('pin-search')
+        ? { pins: [{ pinId: 'PHUK-10122801', title: 'Meeko', collection: 'Tails of Friendship', imageUrl: null, referenceUrl: 'https://pinandpop.example/m.jpg' }] }
+        : view),
+    }));
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    await fireEvent.press(screen.getAllByText('Change pin')[0]);
+    await fireEvent.changeText(screen.getByPlaceholderText('Title, character, set or PHUK-…'), 'meeko');
+    await fireEvent(screen.getByPlaceholderText('Title, character, set or PHUK-…'), 'submitEditing');
+    expect(await screen.findByLabelText('Pin & Pop reference for Meeko')).toBeTruthy();
+    expect(screen.getByText(/Pin & Pop picture \(admin only\)/)).toBeTruthy();
+  });
+});
+
+describe('admin board scan: sets', () => {
+  it("shows the board's sets and says when confirming a pin re-matches the others", async () => {
+    const withSets = { ...view, scan: { ...view.scan, stats: { setHints: ['Tails of Friendship'] } } };
+    fetchMock.mockImplementation((url: string, init?: { method?: string }) => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve(init?.method === 'PATCH' ? { item: {}, rematching: 3, set: 'Tails of Friendship' } : withSets),
+    }));
+    await render(<AdminBoardScanScreen />);
+    expect(await screen.findByText('Sets searched first: Tails of Friendship')).toBeTruthy();
+    await fireEvent.press(screen.getAllByText('Confirm match')[0]);
+    expect(await screen.findByText('Re-matching 3 other pins with "Tails of Friendship" searched first.')).toBeTruthy();
+  });
+});
+
 describe('admin board scan: match checks', () => {
   it('says whether the suggested match was checked against reference pictures', async () => {
     const checked = { ...view, items: view.items.map((i, n) => ({ ...i, candidates: i.candidates.map((c) => ({ ...c, verified: n === 1 })) })) };

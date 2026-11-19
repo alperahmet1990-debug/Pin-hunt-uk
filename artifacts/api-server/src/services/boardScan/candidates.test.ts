@@ -62,4 +62,24 @@ describe("findBoardCandidates", () => {
     const r = { searchPins: () => { throw new Error("db down"); } } as unknown as PinRepository;
     await expect(findBoardCandidates(r, { characters: ["Grogu"], keywords: ["pod"] }, ["x y z"], 150)).resolves.toEqual([]);
   });
+
+  it("searches the board's sets first, where a character-only title is enough", async () => {
+    const meeko = pin("PHUK-10122801", "Meeko", ["Meeko"]);
+    const otherMeekos = Array.from({ length: 200 }, (_, i) => pin(`M-${i}`, "Meeko", ["Meeko"]));
+    const calls: string[] = [];
+    const r = {
+      searchPins: async (q: string, f: { character?: string } = {}) => {
+        calls.push(`${q}|${f.character ?? ""}`);
+        if (q === "Tails of Friendship Meeko") return [meeko];
+        if (q === "Tails of Friendship" && f.character === "Meeko") return [meeko];
+        if (q === "Tails of Friendship" && !f.character) return [meeko, pin("PHUK-NANA", "Nana - London Exclusive", ["Nana"])];
+        return otherMeekos; // every other search: hundreds of pins titled "Meeko"
+      },
+    } as unknown as PinRepository;
+    const out = await findBoardCandidates(r, { characters: ["Meeko"], keywords: ["silver frame"] }, [], 150, ["Tails of Friendship"]);
+    expect(out.map((p) => p.id).slice(0, 2)).toEqual(["PHUK-10122801", "PHUK-NANA"]);
+    // Without the set, the right one is lost among the same-titled pins.
+    const without = await findBoardCandidates(r, { characters: ["Meeko"], keywords: ["silver frame"] }, [], 150);
+    expect(without.map((p) => p.id)).not.toContain("PHUK-10122801");
+  });
 });

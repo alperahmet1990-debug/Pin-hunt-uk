@@ -19,9 +19,9 @@
  * never returned in candidates, stored as crops or published.
  */
 import type { CataloguePin, PinRepository } from "@workspace/pin-repository";
-import { findCandidates } from "../scanCandidates";
 import { withScanReasoning } from "../scanReasoning";
-import { verifyDecision, VERIFY_MAX_REFERENCES } from "../scanVerify";
+import { verifyDecision } from "../scanVerify";
+import { findBoardCandidates } from "./candidates";
 import { buildCatalogueText, parseMatches, rankSystemPrompt, verifySystemPrompt, type PinMatch } from "../pinRank";
 import { DESCRIBE_PROMPT, parseDescription } from "../bulkImages/match";
 import { addUsage, type DetectedPin, type OpenAIClient, type TokenUsage } from "./detect";
@@ -61,6 +61,16 @@ export const MATCH_PLAUSIBLE_MIN = 25;
 export const MATCH_VERIFIED_MIN = 40;
 /** Highest confidence a match can show without a picture comparison (below auto clean-up). */
 export const UNVERIFIED_MAX = 60;
+
+/**
+ * Reference pictures shown in the comparison: every ranked candidate (up to
+ * 5), not the scan's 3. With only the top 3 shown, the model promoted a 4th
+ * or 5th candidate it had never seen when the pictured ones didn't match.
+ */
+function maxReferences(): number {
+  const raw = Number(process.env.BOARD_MAX_REFERENCES);
+  return Number.isFinite(raw) && raw > 0 ? Math.min(5, Math.floor(raw)) : 5;
+}
 
 const alwaysCompare = () => (process.env.BOARD_MATCH_ALWAYS_COMPARE ?? "true").toLowerCase() !== "false";
 
@@ -117,7 +127,7 @@ export async function matchCrop(
 ): Promise<CropMatch> {
   const timeout = deps.timeoutMs ?? 45_000;
   const textTerms = detected.text ? [detected.text] : [];
-  const catalogue = (await findCandidates(deps.repository, detected, textTerms)).slice(0, maxCandidates());
+  const catalogue = await findBoardCandidates(deps.repository, detected, textTerms, maxCandidates());
   if (catalogue.length === 0) return { status: "unmatched", candidates: [], verified: false };
 
   const byId = new Map<string, CataloguePin>(catalogue.map((p) => [p.id, p]));
@@ -146,6 +156,8 @@ export async function matchCrop(
   let matches: PinMatch[] = parseMatches(rankResp.choices[0]?.message?.content ?? "", validIds, 5);
 
   let verified = false;
+  /** Candidates whose own picture the comparison was shown. */
+  let pictured = new Set<string>();
   const decision = verifyDecision(matches);
   if (decision === "compare" || (decision === "confident" && alwaysCompare())) {
     const internal = deps.referenceImages
@@ -154,7 +166,7 @@ export async function matchCrop(
     const refs = matches
       .map((m) => ({ m, url: byId.get(m.pinId)?.imageUrl || internal[m.pinId] }))
       .filter((r): r is { m: PinMatch; url: string } => !!r.url)
-      .slice(0, VERIFY_MAX_REFERENCES);
+      .slice(0, maxReferences());
     if (refs.length > 0) {
       try {
         const content: Array<
@@ -191,6 +203,7 @@ export async function matchCrop(
         if (reranked.length > 0) {
           matches = reranked;
           verified = true;
+          pictured = withRef;
         }
       } catch (err) {
         // Comparison is optional, same as the single-pin scan.
@@ -201,18 +214,20 @@ export async function matchCrop(
 
   const candidates: MatchCandidate[] = matches.slice(0, 3).map((m) => {
     const p = byId.get(m.pinId)!;
+    // A candidate counts as checked only if its own picture was compared.
+    const checked = verified && pictured.has(p.id);
     return {
       pinId: p.id,
       title: p.title,
       collection: p.collection,
       imageUrl: p.imageUrl ?? null,
       // Only a picture comparison can make a match confident.
-      confidence: verified ? m.confidence : Math.min(m.confidence, UNVERIFIED_MAX),
+      confidence: checked ? m.confidence : Math.min(m.confidence, UNVERIFIED_MAX),
       reasoning: m.reasoning,
-      verified,
+      verified: checked,
     };
   });
   const top = candidates[0]?.confidence ?? 0;
-  const min = verified ? MATCH_VERIFIED_MIN : MATCH_PLAUSIBLE_MIN;
+  const min = candidates[0]?.verified ? MATCH_VERIFIED_MIN : MATCH_PLAUSIBLE_MIN;
   return { status: top >= min ? "suggested" : "unmatched", candidates, verified };
 }

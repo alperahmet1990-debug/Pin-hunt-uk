@@ -84,6 +84,11 @@ Learned from the first real board (19 Nov 2026): the board-wide detection descri
 - **Always compare.** The ranking is compared with reference images whenever any exist, however confident it is.
 - **Only a picture makes a match confident.** Unchecked rankings show at most 60% (below automatic clean-up at 70%) with "Not checked against a picture". A checked match under 40% — no reference looked like the pin — is shown as not identified.
 
+Second board (19 Nov 2026, a Grogu board) showed two more causes, now fixed:
+
+- **The comparison showed only 3 pictures.** The scan's limit (`VERIFY_MAX_REFERENCES`) showed references for the top 3 candidates only, and the prompt lets an unpictured candidate keep its plausibility. When the 3 pictured candidates didn't match, the model promoted the 4th or 5th — whose Pin & Pop picture exists but it was never shown ("despite having no reference image"). Board matching now shows all ranked candidates' pictures (up to 5, `BOARD_MAX_REFERENCES`), and a candidate counts as checked only if its own picture was compared.
+- **The search was built for a 13k catalogue** (`scanCandidates.ts`): a character on its own returns an arbitrary 120 of hundreds or thousands of pins, and specific words were searched across the whole catalogue after them, past the 150 cap. Board matching (`candidates.ts`) now searches each top character together with each specific word first (e.g. Grogu + "pod", Rex + "claw machine"), then printed text, then the broad search. The app's single-pin scan still uses the old search; it likely has the same weakness on the 116k catalogue.
+
 If the right pin still isn't among the candidates, the next step is searching by picture similarity (an image index of reference photos), which needs a check of what Pin & Pop's terms allow.
 
 ## Straightening

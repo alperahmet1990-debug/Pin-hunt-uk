@@ -1,11 +1,18 @@
 /**
  * Board scanning — step 2: match one cropped pin to the catalogue.
  *
- * The same recognition as the single-pin scan (routes/scan.ts): catalogue
- * search (services/scanCandidates.ts), the shared ranking prompt, and, when
- * the ranking is unsure, a comparison with reference images
- * (services/pinRank.ts, services/scanVerify.ts). Detection already
- * described the pin, so there is no separate describe call per crop.
+ * The same recognition as the single-pin scan (routes/scan.ts) and the Bulk
+ * Image Matcher: a describe call on the pin itself (describeCrop — its own
+ * search terms, and a tight box so the crop can be redone), catalogue search
+ * (services/scanCandidates.ts), the shared ranking prompt, then a comparison
+ * with reference images whenever any exist (services/pinRank.ts,
+ * services/scanVerify.ts). The board-wide detection's description is too
+ * coarse to search 100k+ pins with on its own.
+ *
+ * A match only counts as confident when a picture comparison confirmed it:
+ * unchecked rankings are capped at UNVERIFIED_MAX, below the automatic
+ * clean-up threshold. A checked match that no reference supports is shown
+ * as not identified rather than as a guess.
  *
  * Reference images may include Pin & Pop images. Those are used here only
  * for internal recognition (permitted by the Pin & Pop agreement) — they are
@@ -16,7 +23,9 @@ import { findCandidates } from "../scanCandidates";
 import { withScanReasoning } from "../scanReasoning";
 import { verifyDecision, VERIFY_MAX_REFERENCES } from "../scanVerify";
 import { buildCatalogueText, parseMatches, rankSystemPrompt, verifySystemPrompt, type PinMatch } from "../pinRank";
+import { DESCRIBE_PROMPT, parseDescription } from "../bulkImages/match";
 import { addUsage, type DetectedPin, type OpenAIClient, type TokenUsage } from "./detect";
+import type { Box } from "./quality";
 
 export interface MatchCandidate {
   pinId: string;
@@ -26,6 +35,8 @@ export interface MatchCandidate {
   imageUrl: string | null;
   confidence: number;
   reasoning: string;
+  /** A picture comparison with reference images produced this ranking. */
+  verified?: boolean;
 }
 
 export interface CropMatch {
@@ -46,6 +57,50 @@ export interface MatchDeps {
 
 /** Below this, no candidate is plausible: shown as "not identified". */
 export const MATCH_PLAUSIBLE_MIN = 25;
+/** After a picture comparison, below this no reference supported the match: "not identified". */
+export const MATCH_VERIFIED_MIN = 40;
+/** Highest confidence a match can show without a picture comparison (below auto clean-up). */
+export const UNVERIFIED_MAX = 60;
+
+const alwaysCompare = () => (process.env.BOARD_MATCH_ALWAYS_COMPARE ?? "true").toLowerCase() !== "false";
+
+export interface CropDescription {
+  characters: string[];
+  keywords: string[];
+  text: string;
+  /** The main pin's box as fractions of the described image, when the model gave a sane one. */
+  box?: Box;
+}
+
+/**
+ * Describe one pin from a close-up (the Bulk Image Matcher's describe
+ * prompt): characters, search terms, printed text and the main pin's box.
+ */
+export async function describeCrop(image: Buffer, deps: Pick<MatchDeps, "openai" | "model" | "timeoutMs">, usage: TokenUsage): Promise<CropDescription> {
+  const resp = await withScanReasoning((extra) => deps.openai.chat.completions.create({
+    ...extra,
+    model: deps.model,
+    max_completion_tokens: 2048,
+    messages: [
+      { role: "system", content: DESCRIBE_PROMPT },
+      {
+        role: "user",
+        content: [
+          { type: "image_url", image_url: { url: `data:image/jpeg;base64,${image.toString("base64")}`, detail: "high" } },
+          { type: "text", text: "Describe this pin as JSON." },
+        ],
+      },
+    ],
+  }, { timeout: deps.timeoutMs ?? 45_000, maxRetries: 1 }));
+  addUsage(usage, resp);
+  const d = parseDescription(resp.choices[0]?.message?.content ?? "");
+  return {
+    characters: d.characters,
+    keywords: d.keywords,
+    text: d.text,
+    ...(d.box ? { box: { x: d.box[0], y: d.box[1], w: d.box[2] - d.box[0], h: d.box[3] - d.box[1] } } : {}),
+  };
+}
 
 function maxCandidates(): number {
   const raw = Number(process.env.BOARD_MAX_CANDIDATES);
@@ -91,7 +146,8 @@ export async function matchCrop(
   let matches: PinMatch[] = parseMatches(rankResp.choices[0]?.message?.content ?? "", validIds, 5);
 
   let verified = false;
-  if (verifyDecision(matches) === "compare") {
+  const decision = verifyDecision(matches);
+  if (decision === "compare" || (decision === "confident" && alwaysCompare())) {
     const internal = deps.referenceImages
       ? await deps.referenceImages(matches.map((m) => m.pinId)).catch(() => ({} as Record<string, string>))
       : {};
@@ -150,10 +206,13 @@ export async function matchCrop(
       title: p.title,
       collection: p.collection,
       imageUrl: p.imageUrl ?? null,
-      confidence: m.confidence,
+      // Only a picture comparison can make a match confident.
+      confidence: verified ? m.confidence : Math.min(m.confidence, UNVERIFIED_MAX),
       reasoning: m.reasoning,
+      verified,
     };
   });
   const top = candidates[0]?.confidence ?? 0;
-  return { status: top >= MATCH_PLAUSIBLE_MIN ? "suggested" : "unmatched", candidates, verified };
+  const min = verified ? MATCH_VERIFIED_MIN : MATCH_PLAUSIBLE_MIN;
+  return { status: top >= min ? "suggested" : "unmatched", candidates, verified };
 }

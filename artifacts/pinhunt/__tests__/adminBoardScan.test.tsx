@@ -99,6 +99,16 @@ describe('admin board scan review', () => {
   });
 });
 
+describe('admin board scan: match checks', () => {
+  it('says whether the suggested match was checked against reference pictures', async () => {
+    const checked = { ...view, items: view.items.map((i, n) => ({ ...i, candidates: i.candidates.map((c) => ({ ...c, verified: n === 1 })) })) };
+    fetchMock.mockImplementation(() => Promise.resolve({ ok: true, json: () => Promise.resolve(checked) }));
+    await render(<AdminBoardScanScreen />);
+    expect(await screen.findByText('Checked against reference pictures.')).toBeTruthy();
+    expect(screen.getByText('Not checked against a picture: compare carefully.')).toBeTruthy();
+  });
+});
+
 describe('admin board scan: reference images and straightening', () => {
   it('shows the Pin & Pop reference beside the match, labelled admin only, when the server sends one', async () => {
     const withRefs = { ...view, pinAndPop: { 'PHUK-1': { imageUrl: 'https://pinandpop.example/1.jpg', externalId: '4321' } } };

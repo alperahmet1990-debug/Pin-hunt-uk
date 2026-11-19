@@ -11,7 +11,6 @@
  * restart) leaves a partly processed board that can be resumed — only the
  * unfinished pins are redone. Nothing is published without a reviewer.
  */
-import sharp from "sharp";
 import { createSupabasePinRepository, createSupabaseUserRepository, type PinRepository } from "@workspace/pin-repository";
 import { getOpenAIClient, isAiConfigured } from "@workspace/integrations-openai-ai-server";
 import { normalizePinPhoto, pixianConfigured, PixianTimeoutError } from "../pixian";
@@ -19,8 +18,8 @@ import { estimateTilt, rotatePinPhoto, straightenPinPhoto } from "./straighten";
 import { publishContributedImage } from "../contributed-images";
 import { pinAndPopReferenceImages } from "../scanReferenceImages";
 import { detectPins, emptyUsage, type DetectedPin, type TokenUsage } from "./detect";
-import { matchCrop } from "./match";
-import { assessCrop, cropBox, differenceHash, sha256, type Box } from "./quality";
+import { describeCrop, matchCrop } from "./match";
+import { assessCrop, boxToPixels, cropBox, differenceHash, sha256, type Box } from "./quality";
 import { bulkApproveBlock, CLEANUP_BLOCK_TEXT, cleanupBlock, itemPriority, type PinState } from "./rules";
 import * as store from "./store";
 import type { BoardScan, BoardScanItem, BoardScanStats } from "./store";
@@ -117,29 +116,87 @@ export async function reconcileStale(scan: BoardScan): Promise<BoardScan> {
 
 // ── Steps ────────────────────────────────────────────────────────────────────
 
-async function makeItem(scan: BoardScan, board: Buffer, position: number, pin: DetectedPin, origin: "detected" | "manual"): Promise<Partial<BoardScanItem>> {
-  const crop = await cropBox(board, scan.image_width, scan.image_height, pin.box);
+/** Cut, check and store one pin's crop from the board. */
+async function cropFields(scan: BoardScan, board: Buffer, cropPath: string, box: Box, flags: Pick<DetectedPin, "occluded" | "partial" | "glare">) {
+  const crop = await cropBox(board, scan.image_width, scan.image_height, box);
   const [quality, dhash] = await Promise.all([
-    assessCrop(crop, pin.box, scan.image_width, scan.image_height, pin),
+    assessCrop(crop, box, scan.image_width, scan.image_height, flags),
     differenceHash(crop),
   ]);
-  const cropPath = `${scan.id}/crops/${String(position).padStart(3, "0")}.jpg`;
   await store.uploadObject(store.BOARD_BUCKET, cropPath, crop);
+  return { box, crop_path: cropPath, crop_sha256: sha256(crop), crop_dhash: dhash, quality };
+}
+
+async function makeItem(scan: BoardScan, board: Buffer, position: number, pin: DetectedPin, origin: "detected" | "manual"): Promise<Partial<BoardScanItem>> {
+  const cropPath = `${scan.id}/crops/${String(position).padStart(3, "0")}.jpg`;
   return {
     board_scan_id: scan.id,
     position,
     origin,
-    box: pin.box,
-    crop_path: cropPath,
-    crop_sha256: sha256(crop),
-    crop_dhash: dhash,
-    quality,
+    ...(await cropFields(scan, board, cropPath, pin.box, pin)),
     detection: { characters: pin.characters, keywords: pin.keywords, text: pin.text, occluded: pin.occluded, partial: pin.partial, glare: !!pin.glare },
   };
 }
 
+/** Context around a detected box for the describe step, so a box that cut the pin off can grow. */
+export const DESCRIBE_CONTEXT_PAD = 0.35;
+
+/**
+ * Map a box given as fractions of a padded context crop back onto the board,
+ * and accept it only when it's plausibly the same pin as the detected box.
+ */
+export function refineBox(detected: Box, inContext: Box, width: number, height: number): Box | null {
+  const ctx = boxToPixels(detected, width, height, DESCRIBE_CONTEXT_PAD);
+  const box: Box = {
+    x: (ctx.left + inContext.x * ctx.width) / width,
+    y: (ctx.top + inContext.y * ctx.height) / height,
+    w: (inContext.w * ctx.width) / width,
+    h: (inContext.h * ctx.height) / height,
+  };
+  const ix = Math.max(0, Math.min(box.x + box.w, detected.x + detected.w) - Math.max(box.x, detected.x));
+  const iy = Math.max(0, Math.min(box.y + box.h, detected.y + detected.h) - Math.max(box.y, detected.y));
+  const smaller = Math.min(box.w * box.h, detected.w * detected.h);
+  // Mostly the same area, and not wildly bigger or smaller.
+  if (smaller <= 0 || (ix * iy) / smaller < 0.5) return null;
+  const ratio = (box.w * box.h) / (detected.w * detected.h);
+  if (ratio < 0.25 || ratio > 4) return null;
+  return box;
+}
+
+/**
+ * The per-pin describe step, once per item: the pin's own search terms and,
+ * for detected pins, a tightened box and a new crop. Hand-drawn boxes are
+ * kept as drawn. Failures fall back to the board-wide description.
+ */
+async function describeItem(scan: BoardScan, board: Buffer | null, item: BoardScanItem, usage: TokenUsage): Promise<BoardScanItem> {
+  if (item.detection?.described) return item;
+  const base = item.detection ?? { characters: [], keywords: [], text: "", occluded: false, partial: false };
+  try {
+    const refine = item.origin === "detected" && !!board;
+    const image = refine
+      ? await cropBox(board!, scan.image_width, scan.image_height, item.box, DESCRIBE_CONTEXT_PAD)
+      : await store.downloadObject(store.BOARD_BUCKET, item.crop_path!);
+    const d = await describeCrop(image, { openai: getOpenAIClient(), model: scanModel() }, usage);
+    const uniq = (a: string[], b: string[], n: number) => [...new Set([...a, ...b])].slice(0, n);
+    const detection = {
+      ...base,
+      characters: uniq(d.characters, base.characters, 5),
+      keywords: uniq(d.keywords, base.keywords, 10),
+      text: d.text || base.text,
+      described: true,
+    };
+    const box = refine && d.box ? refineBox(item.box, d.box, scan.image_width, scan.image_height) : null;
+    const recrop = box ? await cropFields(scan, board!, item.crop_path!, box, base) : {};
+    return store.updateItem(item.id, { ...recrop, detection });
+  } catch (err) {
+    console.warn(`[board-scan] describing item ${item.id} failed, matching with the board description:`, errText(err));
+    return item;
+  }
+}
+
 /** Match one item and save the result. Never throws: failures are recorded on the item. */
-async function matchItem(item: BoardScanItem, usage: TokenUsage): Promise<BoardScanItem> {
+async function matchItem(scan: BoardScan, board: Buffer | null, item: BoardScanItem, usage: TokenUsage): Promise<BoardScanItem> {
+  item = await describeItem(scan, board, item, usage);
   try {
     const crop = await store.downloadObject(store.BOARD_BUCKET, item.crop_path!);
     const result = await matchCrop(crop, item.detection ?? { characters: [], keywords: [], text: "" }, {
@@ -333,7 +390,7 @@ export async function processBoardScan(scanId: string): Promise<void> {
       await setStatus("matching");
       const t = Date.now();
       const usage = emptyUsage();
-      const updated = await mapLimit(toMatch, MATCH_CONCURRENCY, (i) => matchItem(i, usage));
+      const updated = await mapLimit(toMatch, MATCH_CONCURRENCY, (i) => matchItem(scan!, board, i, usage));
       const byId = new Map(updated.map((u) => [u.id, u]));
       items = items.map((i) => byId.get(i.id) ?? i);
       stats = mergeUsage(stats, usage);
@@ -386,26 +443,11 @@ export async function addManualItem(scan: BoardScan, box: Box, pinhuntId?: strin
       candidates: [{ pinId: pin.id, title: pin.title, collection: pin.collection, imageUrl: pin.imageUrl ?? null, confidence: 100, reasoning: "Chosen by the reviewer." }],
     });
   }
+  // A hand-drawn box has no description yet: matchItem's describe step adds one.
   const usage = emptyUsage();
-  if (!pinhuntId && isAiConfigured()) {
-    // A hand-drawn box has no description yet; the catalogue search needs
-    // one, so describe the crop with the same detection call.
-    try {
-      const crop = await store.downloadObject(store.BOARD_BUCKET, row.crop_path!);
-      const meta = await sharp(crop).metadata();
-      const found = await detectPins(getOpenAIClient(), scanModel(), { image: crop, width: meta.width ?? 1, height: meta.height ?? 1 }, { maxPins: 3 });
-      usage.calls += found.usage.calls;
-      usage.inputTokens += found.usage.inputTokens;
-      usage.outputTokens += found.usage.outputTokens;
-      const main = [...found.pins].sort((a, b) => b.box.w * b.box.h - a.box.w * a.box.h)[0];
-      if (main) row.detection = { characters: main.characters, keywords: main.keywords, text: main.text, occluded: false, partial: false };
-    } catch (err) {
-      console.warn("[board-scan] describing a hand-added pin failed, matching without it:", errText(err));
-    }
-  }
   let [item] = await store.insertItems([{ ...row, priority: itemPriority(row as BoardScanItem) }]);
   if (!pinhuntId && isAiConfigured()) {
-    item = await matchItem(item, usage);
+    item = await matchItem(scan, null, item, usage);
     await store.updateScan(scan.id, { stats: mergeUsage(scan.stats ?? {}, usage) });
   }
   return item;

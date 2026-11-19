@@ -99,7 +99,7 @@ export function matchBand(candidates: ReadonlyArray<{ confidence: number }>, ver
   return "uncertain";
 }
 
-const DESCRIBE_PROMPT = `You identify Disney enamel pins. Look at the photo and return ONLY valid JSON (no markdown):
+export const DESCRIBE_PROMPT = `You identify Disney enamel pins. Look at the photo and return ONLY valid JSON (no markdown):
 { "characters": ["<Disney character names>"], "keywords": ["<search terms: series/collection name guesses, visible text, distinctive objects>"], "text": "<any text printed on the pin, or empty>", "box": [<left>, <top>, <right>, <bottom>] }
 
 The photo may show neighbouring pins at the edges (e.g. taken on a pin board). Describe ONLY the main pin: the one the photo is centred on and shows most completely. "box" is that main pin's bounding box as fractions of the image width and height (0 to 1), including its whole outline and any dangle, but no neighbouring pins.
@@ -117,7 +117,7 @@ export function parseBox(v: unknown): PinBox | undefined {
   return [l, t, r, b];
 }
 
-function parseDescription(raw: string): { characters: string[]; keywords: string[]; text: string; box?: PinBox } {
+export function parseDescription(raw: string): { characters: string[]; keywords: string[]; text: string; box?: PinBox } {
   try {
     const s = raw.indexOf("{");
     const e = raw.lastIndexOf("}");

@@ -127,7 +127,28 @@ export async function getScan(id: string): Promise<BoardScan | null> {
   return check(await boardDb().from("board_scans").select("*").eq("id", id).maybeSingle(), "Could not read board scan");
 }
 
+/**
+ * Sets already on the board, then any new ones from `next` (case-insensitive,
+ * at most `max`). Stats are saved from copies read earlier (the processing
+ * run, clean-up and approval), so a set learned meanwhile must survive them.
+ */
+export function mergeSetHints(current: string[] | undefined, next: string[] | undefined, max = 5): string[] | undefined {
+  if (!current?.length && !next?.length) return next;
+  const out: string[] = [];
+  for (const s of [...(current ?? []), ...(next ?? [])]) {
+    if (out.length >= max) break;
+    if (!out.some((o) => o.toLowerCase() === s.toLowerCase())) out.push(s);
+  }
+  return out;
+}
+
 export async function updateScan(id: string, patch: Partial<BoardScan>): Promise<void> {
+  if (patch.stats) {
+    const { data } = await boardDb().from("board_scans").select("stats").eq("id", id).maybeSingle();
+    const current = (data as { stats?: BoardScanStats } | null)?.stats?.setHints;
+    const setHints = mergeSetHints(current, patch.stats.setHints);
+    if (setHints) patch = { ...patch, stats: { ...patch.stats, setHints } };
+  }
   check(await boardDb().from("board_scans").update(patch).eq("id", id), "Could not update board scan");
 }
 

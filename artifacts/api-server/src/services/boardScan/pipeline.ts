@@ -80,6 +80,8 @@ const errText = (err: unknown) => (err instanceof Error ? err.message : String(e
 
 const running = new Set<string>();
 const waiting: string[] = [];
+/** Boards asked to run again while running (e.g. a re-match after a confirmation). */
+const rerun = new Set<string>();
 const concurrentScans = () => Math.max(1, Number(process.env.BOARD_CONCURRENT_SCANS) || 2);
 
 export function isRunning(scanId: string): boolean {
@@ -87,7 +89,8 @@ export function isRunning(scanId: string): boolean {
 }
 
 export function enqueue(scanId: string): void {
-  if (isRunning(scanId)) return;
+  if (running.has(scanId)) { rerun.add(scanId); return; }
+  if (waiting.includes(scanId)) return;
   waiting.push(scanId);
   pump();
 }
@@ -100,6 +103,7 @@ function pump() {
       .catch((err) => console.error(`[board-scan] ${id} crashed:`, err))
       .finally(() => {
         running.delete(id);
+        if (rerun.delete(id)) waiting.push(id);
         pump();
       });
   }
@@ -205,7 +209,7 @@ async function matchItem(scan: BoardScan, board: Buffer | null, item: BoardScanI
       repository: catalogueRepository(),
       // Pin & Pop reference images: recognition only (scripts/PINANDPOP.md).
       referenceImages: async (ids) => Object.fromEntries(await pinAndPopReferenceImages(ids, undefined, 5_000)),
-    }, usage);
+    }, usage, { sets: scan.stats?.setHints ?? [] });
     const top = result.candidates[0];
     const patch: Partial<BoardScanItem> = {
       match_status: result.status,
@@ -451,6 +455,38 @@ export async function addManualItem(scan: BoardScan, box: Box, pinhuntId?: strin
     await store.updateScan(scan.id, { stats: mergeUsage(scan.stats ?? {}, usage) });
   }
   return item;
+}
+
+/** Most sets a board searches first (typed at upload or learned from confirmations). */
+export const MAX_SET_HINTS = 5;
+
+/** A set name as given: trimmed, single-spaced, at most 120 characters. */
+export function cleanSetName(v: unknown): string | null {
+  if (typeof v !== "string") return null;
+  const s = v.replace(/\s+/g, " ").trim().slice(0, 120);
+  return s.length >= 3 ? s : null;
+}
+
+/**
+ * A reviewer confirmed or corrected a pin: if its set is new to this board,
+ * remember it and re-match the board's other undecided pins with that set
+ * searched first (pins on a board are often from the same set, and many
+ * set pins are titled only by character). Returns how many pins will be
+ * re-matched; 0 when the set was already known or the board has enough.
+ */
+export async function learnSet(scan: BoardScan, collection: string | null | undefined, confirmedItemId: string): Promise<number> {
+  const set = cleanSetName(collection);
+  if (!set) return 0;
+  const hints = scan.stats?.setHints ?? [];
+  if (hints.length >= MAX_SET_HINTS || hints.some((h) => h.toLowerCase() === set.toLowerCase())) return 0;
+  await store.updateScan(scan.id, { stats: { ...(scan.stats ?? {}), setHints: [...hints, set] } });
+  const items = await store.listItems(scan.id);
+  const others = items.filter((i) =>
+    i.id !== confirmedItemId && i.decision === "undecided" && i.image_review === "none" &&
+    i.crop_path && i.match_status !== "pending");
+  for (const i of others) await store.updateItem(i.id, { match_status: "pending", attempts: 0 });
+  if (others.length > 0) enqueue(scan.id);
+  return others.length;
 }
 
 export class ReviewError extends Error {

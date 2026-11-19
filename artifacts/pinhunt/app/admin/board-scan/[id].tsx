@@ -41,10 +41,13 @@ import { API_BASE } from '@/lib/apiBase';
 
 interface Box { x: number; y: number; w: number; h: number }
 interface Candidate { pinId: string; title: string; collection: string; imageUrl: string | null; confidence: number; reasoning: string; verified?: boolean }
+interface SearchResult { pinId: string; title: string; collection: string; imageUrl: string | null; referenceUrl?: string | null }
 interface Item {
   id: string;
   position: number;
   origin: 'detected' | 'manual';
+  /** What the describe step saw; `described` once it ran (shown as "Searched for"). */
+  detection?: { characters: string[]; keywords: string[]; text: string; described?: boolean } | null;
   box: Box;
   quality: { suitable: boolean; reasons: string[]; widthPx: number; heightPx: number } | null;
   match_status: 'pending' | 'suggested' | 'unmatched' | 'failed';
@@ -66,6 +69,7 @@ interface Item {
 interface Scan {
   id: string;
   title: string | null;
+  stats?: { setHints?: string[] } | null;
   status: string;
   image_width: number;
   image_height: number;
@@ -195,7 +199,10 @@ export default function AdminBoardScanScreen() {
   }, []);
 
   const patch = (itemId: string, body: Record<string, unknown>) => act(`${itemId}:${String(body.action)}`, async () => {
-    await api(`/${id}/items/${itemId}`, { method: 'PATCH', body: JSON.stringify(body) });
+    const r = await api(`/${id}/items/${itemId}`, { method: 'PATCH', body: JSON.stringify(body) });
+    if (r?.rematching > 0) {
+      setNotice(`Re-matching ${r.rematching} other pin${r.rematching === 1 ? '' : 's'} with "${r.set}" searched first.`);
+    }
     await load();
   });
   const clean = (itemId: string) => act(`${itemId}:clean`, async () => {
@@ -313,6 +320,11 @@ export default function AdminBoardScanScreen() {
             {processing ? <ActivityIndicator color={colors.homeCoral} /> : null}
           </View>
           {scan.error ? <Text style={[styles.small, { color: colors.destructive }]}>{scan.error}</Text> : null}
+          {scan.stats?.setHints?.length ? (
+            <Text style={[styles.small, { color: colors.homeMuted }]}>
+              Sets searched first: {scan.stats.setHints.join(' · ')}
+            </Text>
+          ) : null}
           {scan.detection_truncated ? (
             <Text style={[styles.small, { color: colors.destructive }]}>
               More than {data.config.maxPins} pins were found — only the first {data.config.maxPins} are listed. Add any others by hand or split the board.
@@ -444,6 +456,11 @@ export default function AdminBoardScanScreen() {
                   {top.verified ? 'Checked against reference pictures.' : 'Not checked against a picture: compare carefully.'}
                 </Text>
               ) : null}
+              {i.decision === 'undecided' && i.detection?.described ? (
+                <Text style={[styles.tiny, { color: colors.homeMuted }]} numberOfLines={2}>
+                  Searched for: {[...i.detection.characters, ...i.detection.keywords, ...(i.detection.text ? [`"${i.detection.text}"`] : [])].join(', ') || 'nothing recognisable'}
+                </Text>
+              ) : null}
 
               {/* Alternatives: one tap to switch */}
               {i.decision !== 'excluded' && i.image_review !== 'approved' && i.candidates.length > 1 ? (
@@ -542,7 +559,7 @@ function PinSearchModal(props: {
 }) {
   const colors = useColors();
   const [q, setQ] = useState('');
-  const [results, setResults] = useState<Candidate[]>([]);
+  const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
 
@@ -598,10 +615,14 @@ function PinSearchModal(props: {
           <ScrollView style={{ maxHeight: 360 }} contentContainerStyle={{ gap: 6 }}>
             {results.map((p) => (
               <TouchableOpacity key={p.pinId} onPress={() => props.onPick(p.pinId)} style={[styles.result, { borderColor: colors.homeLine }]}>
-                {p.imageUrl ? <Image source={{ uri: p.imageUrl }} style={styles.resultImg} /> : <View style={[styles.resultImg, { backgroundColor: colors.homeAqua }]} />}
+                {p.imageUrl ? <Image source={{ uri: p.imageUrl }} style={styles.resultImg} resizeMode="contain" />
+                  : p.referenceUrl ? <Image source={{ uri: p.referenceUrl }} style={[styles.resultImg, { backgroundColor: '#fff' }]} resizeMode="contain" referrerPolicy="no-referrer" accessibilityLabel={`Pin & Pop reference for ${p.title}`} />
+                  : <View style={[styles.resultImg, { backgroundColor: colors.homeAqua }]} />}
                 <View style={{ flex: 1 }}>
                   <Text style={[styles.small, { color: colors.homeInk }]} numberOfLines={2}>{p.title}</Text>
-                  <Text style={[styles.tiny, { color: colors.homeMuted }]}>{p.pinId} · {p.collection}</Text>
+                  <Text style={[styles.tiny, { color: colors.homeMuted }]}>
+                    {p.pinId}{p.collection ? ` · ${p.collection}` : ''}{!p.imageUrl && p.referenceUrl ? ' · Pin & Pop picture (admin only)' : ''}
+                  </Text>
                 </View>
               </TouchableOpacity>
             ))}
@@ -638,5 +659,5 @@ const styles = StyleSheet.create({
   searchRow: { flexDirection: 'row', gap: 8 },
   input: { borderWidth: 1, borderRadius: 8, paddingHorizontal: 10, paddingVertical: 8, fontSize: 14, fontFamily: 'Inter_400Regular' },
   result: { flexDirection: 'row', gap: 10, alignItems: 'center', borderWidth: 1, borderRadius: 8, padding: 6 },
-  resultImg: { width: 44, height: 44, borderRadius: 4 },
+  resultImg: { width: 64, height: 64, borderRadius: 4 },
 });

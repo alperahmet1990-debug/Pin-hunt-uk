@@ -24,6 +24,12 @@ export interface BoardScanStats {
   pixianCalls?: number;
   pixianReused?: number;
   rawDetections?: number;
+  /**
+   * Sets this board's pins are searched in first: typed at upload, or the set
+   * of a pin the reviewer confirmed (pipeline.learnSet). Kept here so no
+   * migration is needed.
+   */
+  setHints?: string[];
 }
 
 export interface BoardScan {

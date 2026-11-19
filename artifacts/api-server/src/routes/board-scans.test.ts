@@ -52,6 +52,10 @@ vi.mock("../services/boardScan/store", async (importOriginal) => ({
 vi.mock("../services/boardScan/pipeline", async (importOriginal) => ({
   ...(await importOriginal<typeof import("../services/boardScan/pipeline")>()),
   enqueue: (id: string) => { state.enqueued.push(id); },
+  catalogueRepository: () => ({
+    getPinByPinhuntId: async (id: string) => ({ id, title: "Meeko", collection: "Tails of Friendship", imageUrl: undefined }),
+    searchPins: async () => [],
+  }),
 }));
 
 import app from "../app";
@@ -112,6 +116,12 @@ describe("POST /api/admin/board-scans", () => {
     });
   });
 
+  it("keeps the set typed at upload for matching", async () => {
+    const res = await upload({ permission: ownPhoto, setHint: "  Tails of  Friendship " });
+    expect(res.status).toBe(202);
+    expect(state.inserted[0]).toMatchObject({ stats: { setHints: ["Tails of Friendship"] } });
+  });
+
   it("stores the photo and starts processing", async () => {
     const res = await upload({ permission: ownPhoto, title: "Toy Story board" });
     expect(res.status).toBe(202);
@@ -153,6 +163,17 @@ describe("board review extras", () => {
     const creator = await getBoard();
     expect(creator.body.pinAndPop).toEqual({ "PHUK-1": { imageUrl: "https://pinandpop.example/1.jpg", externalId: "77" } });
     expect(state.refLookups[0]).toEqual(expect.arrayContaining(["PHUK-1", "PHUK-2"]));
+  });
+
+  it("adds the Pin & Pop picture to correction search results for the App Creator only", async () => {
+    const search = () => request(app).get("/api/admin/board-scans-pin-search?q=PHUK-1").set("Authorization", "Bearer t");
+    const admin = await search();
+    expect(admin.status).toBe(200);
+    expect(admin.body.pins[0]).toMatchObject({ pinId: "PHUK-1", referenceUrl: null });
+    expect(state.refLookups).toEqual([]);
+    state.isAppCreator = true;
+    const creator = await search();
+    expect(creator.body.pins[0]).toMatchObject({ pinId: "PHUK-1", referenceUrl: "https://pinandpop.example/1.jpg" });
   });
 
   it("turns a photo only by \"auto\" or up to 45 degrees", async () => {

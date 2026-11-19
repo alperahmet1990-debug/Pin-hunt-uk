@@ -124,18 +124,22 @@ export async function matchCrop(
   detected: Pick<DetectedPin, "characters" | "keywords" | "text">,
   deps: MatchDeps,
   usage: TokenUsage,
+  opts: { sets?: string[] } = {},
 ): Promise<CropMatch> {
   const timeout = deps.timeoutMs ?? 45_000;
   const textTerms = detected.text ? [detected.text] : [];
-  const catalogue = await findBoardCandidates(deps.repository, detected, textTerms, maxCandidates());
+  const sets = opts.sets ?? [];
+  const catalogue = await findBoardCandidates(deps.repository, detected, textTerms, maxCandidates(), sets);
   if (catalogue.length === 0) return { status: "unmatched", candidates: [], verified: false };
 
   const byId = new Map<string, CataloguePin>(catalogue.map((p) => [p.id, p]));
   const validIds = new Set(byId.keys());
   const photo = `data:image/jpeg;base64,${crop.toString("base64")}`;
-  const hint = detected.text
+  const hint = (detected.text
     ? `\n\nADDITIONAL SIGNALS from image analysis (use as strong hints, especially any text that matches a pin title or edition):\nText seen on the pin: "${detected.text}"`
-    : "";
+    : "") + (sets.length
+    ? `\n\nOther pins on this board come from these sets: ${sets.map((s) => `"${s}"`).join(", ")}. Prefer a candidate from one of them when its title and character fit, but only if nothing else fits better.`
+    : "");
 
   const rankResp = await withScanReasoning((extra) => deps.openai.chat.completions.create({
     ...extra,

@@ -82,7 +82,7 @@ vi.mock("./store", async (importOriginal) => {
   };
 });
 
-import { approveItem, approveReady, processBoardScan, refineBox } from "./pipeline";
+import { approveItem, approveReady, cleanSetName, learnSet, processBoardScan, refineBox } from "./pipeline";
 import type { BoardScan, BoardScanItem } from "./store";
 
 /** A 2000×1500 "board": three sharp, textured pins and one tiny one. */
@@ -269,6 +269,35 @@ describe("processBoardScan", () => {
     expect(grogu.box.x + grogu.box.w).toBeCloseTo(0.256, 2);
     const describes = mem.create.mock.calls.filter(([req]) => String(req.messages[0].content).startsWith("You identify Disney enamel pins"));
     expect(describes).toHaveLength(4);
+  });
+
+  it("learns a confirmed pin's set and re-matches the board's other undecided pins with it", async () => {
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50), R2: rank("PHUK-2", 50), W3: rank("PHUK-3", 50), "": rank("PHUK-3", 50) }));
+    await processBoardScan("s1");
+    const [grogu, remy] = [...mem.items.values()] as unknown as BoardScanItem[];
+    Object.assign(grogu, { decision: "confirmed", decided_pin_id: "PHUK-1" });
+    Object.assign(remy, { decision: "excluded", exclude_reason: "not_a_pin" });
+    const scan = mem.scans.get("s1") as unknown as BoardScan;
+    const ranksBefore = mem.create.mock.calls.length;
+
+    // The two other undecided pins (Woody and the tiny one) are re-matched.
+    expect(await learnSet(scan, "Tails of Friendship", grogu.id)).toBe(2);
+    expect(mem.scans.get("s1")!.stats).toMatchObject({ setHints: ["Tails of Friendship"] });
+    await vi.waitFor(() => expect(mem.scans.get("s1")!.status).toBe("ready"));
+    await vi.waitFor(() => expect([...mem.items.values()].every((i) => i.match_status !== "pending")).toBe(true));
+    const newCalls = mem.create.mock.calls.slice(ranksBefore).map(([req]) => String(req.messages[0].content));
+    // No new describe (already described); the ranking is told about the set.
+    expect(newCalls.some((c) => c.startsWith("You identify Disney enamel pins"))).toBe(false);
+    expect(newCalls.filter((c) => c.includes('"Tails of Friendship"'))).toHaveLength(2);
+
+    // A set the board already knows doesn't trigger another round.
+    expect(await learnSet(mem.scans.get("s1") as unknown as BoardScan, "tails of friendship", grogu.id)).toBe(0);
+  });
+
+  it("cleans set names and ignores empty ones", () => {
+    expect(cleanSetName("  Disney Store   Pin Trading Event 2026 - Tails of Friendship ")).toBe("Disney Store Pin Trading Event 2026 - Tails of Friendship");
+    expect(cleanSetName("")).toBeNull();
+    expect(cleanSetName(null)).toBeNull();
   });
 
   it("marks the board failed when detection itself fails", async () => {

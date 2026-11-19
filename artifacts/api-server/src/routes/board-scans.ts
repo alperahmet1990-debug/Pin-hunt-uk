@@ -11,7 +11,7 @@
  * POST   /admin/board-scans/:id/items/:itemId/rotate   Turn the cleaned photo: { degrees } clockwise, or { degrees: "auto" } to straighten.
  * POST   /admin/board-scans/:id/items/:itemId/approve  Publish the cleaned photo to its pin ({ pinId?, replaceExisting? }).
  * POST   /admin/board-scans/:id/approve-ready       Publish every cleaned, confident photo of a pin with no photo.
- * GET    /admin/board-scans-pin-search?q=           Catalogue search for corrections.
+ * GET    /admin/board-scans-pin-search?q=           Catalogue search for corrections (with the admin-only Pin & Pop picture for the App Creator).
  *
  * Same Bearer JWT → profiles.is_admin check as routes/pin-images.ts. Staging
  * first: needs migration 083. Pipeline: services/boardScan/pipeline.ts.
@@ -28,6 +28,8 @@ import {
   approveItem,
   approveReady,
   catalogueRepository,
+  cleanSetName,
+  learnSet,
   rotateCleaned,
   cleanItem,
   enqueue,
@@ -219,6 +221,8 @@ router.post("/admin/board-scans", requireAdmin, async (req: AdminRequest, res: R
       return;
     }
 
+    // Optional: the set most of the board's pins come from, searched first.
+    const setHint = cleanSetName(body.setHint);
     const scan = await store.insertScan({
       created_by: req.adminId!,
       mode: "catalogue_capture",
@@ -235,6 +239,7 @@ router.post("/admin/board-scans", requireAdmin, async (req: AdminRequest, res: R
       permission_processing: true,
       permission_public_display: p.publicDisplay === true,
       not_third_party_catalogue: true,
+      ...(setHint ? { stats: { setHints: [setHint] } } : {}),
     });
     const imagePath = `${scan.id}/board.jpg`;
     try {
@@ -266,8 +271,20 @@ router.get("/admin/board-scans-pin-search", requireAdmin, async (req: AdminReque
     if (!q || q.length < 2) { res.json({ pins: [] }); return; }
     const exact = /^PHUK-\d+$/i.test(q) ? await catalogueRepository().getPinByPinhuntId(q.toUpperCase()) : null;
     const pins = exact ? [exact] : await catalogueRepository().searchPins(q, { status: "active", limit: 25 });
+    // Pin & Pop pins have no public photo yet; the App Creator gets their
+    // admin-only reference picture to tell similar pins apart (same rule as
+    // the review screen, approved on #648).
+    const refs = req.isAppCreator
+      ? await store.pinAndPopReferences(pins.map((p) => p.id)).catch((err) => {
+          console.warn("[board-scan] Pin & Pop references unavailable for search:", err instanceof Error ? err.message : err);
+          return {} as Awaited<ReturnType<typeof store.pinAndPopReferences>>;
+        })
+      : {};
     res.json({
-      pins: pins.map((p) => ({ pinId: p.id, title: p.title, collection: p.collection, imageUrl: p.imageUrl ?? null })),
+      pins: pins.map((p) => ({
+        pinId: p.id, title: p.title, collection: p.collection, imageUrl: p.imageUrl ?? null,
+        referenceUrl: refs[p.id]?.imageUrl ?? null,
+      })),
     });
   } catch (err) {
     fail(res, err);
@@ -374,7 +391,21 @@ router.patch("/admin/board-scans/:id/items/:itemId", requireAdmin, async (req: A
       updated = await cleanItem(scan, updated, siblings, pins, { stats });
       if (stats.pixianCalls !== scan.stats?.pixianCalls) await store.updateScan(scan.id, { stats });
     }
-    res.json({ item: updated });
+    // Learn the confirmed pin's set: the board's other undecided pins are
+    // re-matched with it searched first.
+    let rematching = 0;
+    let learned: string | null = null;
+    if (body.action === "confirm" || body.action === "set_pin") {
+      const target = store.targetPinId(updated);
+      const pin = target ? await catalogueRepository().getPinByPinhuntId(target).catch(() => null) : null;
+      const fresh = (await store.getScan(scan.id)) ?? scan;
+      rematching = await learnSet(fresh, pin?.collection, item.id).catch((err) => {
+        console.warn("[board-scan] couldn't re-match with the confirmed pin's set:", err instanceof Error ? err.message : err);
+        return 0;
+      });
+      if (rematching > 0) learned = cleanSetName(pin?.collection);
+    }
+    res.json({ item: updated, rematching, set: learned });
   } catch (err) {
     fail(res, err);
   }

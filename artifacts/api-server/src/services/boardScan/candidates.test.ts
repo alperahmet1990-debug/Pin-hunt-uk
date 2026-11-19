@@ -45,12 +45,17 @@ describe("findBoardCandidates", () => {
     expect(out.map((p) => p.id)).not.toContain("PHUK-TARGET");
   });
 
-  it("searches printed text on its own, first", async () => {
+  it("searches printed text on its own, after the narrow matches and before the broad ones", async () => {
     const r = {
-      searchPins: async (q: string) => (q === "GROGU 2022" ? [pin("PHUK-TEXT", "Grogu 2022 limited")] : groguPins),
+      searchPins: async (q: string, f: { character?: string } = {}) => {
+        if (q === "GROGU 2022") return [pin("PHUK-TEXT", "Grogu 2022 limited")];
+        if (q === "pod" && f.character === "Grogu") return [target];
+        if (q === "Grogu pod") return [];
+        return groguPins; // the broad searches
+      },
     } as unknown as PinRepository;
-    const out = await findBoardCandidates(r, { characters: ["Grogu"], keywords: [] }, ["GROGU 2022"], 150);
-    expect(out[0].id).toBe("PHUK-TEXT");
+    const out = await findBoardCandidates(r, { characters: ["Grogu"], keywords: ["pod"] }, ["GROGU 2022"], 150);
+    expect(out.map((p) => p.id).slice(0, 2)).toEqual(["PHUK-TARGET", "PHUK-TEXT"]);
   });
 
   it("keeps going when searches fail", async () => {

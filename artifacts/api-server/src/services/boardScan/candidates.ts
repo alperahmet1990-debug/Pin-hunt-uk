@@ -65,7 +65,8 @@ export async function findBoardCandidates(
   ]);
 
   const byId = new Map<string, CataloguePin>();
-  for (const pins of [...printed, ...narrow, broad]) {
+  // Narrow (character + specific word) first, then printed text, then broad.
+  for (const pins of [...narrow, ...printed, broad]) {
     for (const p of pins) {
       if (byId.size >= cap) break;
       if (!byId.has(p.id)) byId.set(p.id, p);

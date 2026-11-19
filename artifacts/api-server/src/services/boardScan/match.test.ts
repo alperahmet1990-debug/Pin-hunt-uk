@@ -51,4 +51,36 @@ describe("matchCrop reference comparison", () => {
     expect(out).toMatchObject({ status: "suggested" });
     expect(out.candidates[0]).toMatchObject({ pinId: "PHUK-2", confidence: 93, verified: true });
   });
+
+  it("asks the comparison to check the pin's format before the artwork", async () => {
+    const { create, openai } = fakeOpenAI(ranking);
+    const refs = Object.fromEntries(ids.map((id) => [id, `https://p/${id}.jpg`]));
+    await matchCrop(Buffer.from("x"), { characters: ["Rhino"], keywords: [], text: "" }, { openai, model: "m", repository, referenceImages: async () => refs }, emptyUsage());
+    const verify = create.mock.calls.map(([r]) => r).find((r) => String(r.messages[0].content).startsWith("You verify"))!;
+    expect(String(verify.messages[0].content)).toContain("FORMAT FIRST");
+    expect(String(verify.messages[0].content)).toContain('"format_match"');
+  });
+
+  it("caps a same-art, different-format pin so it can't pass as a checked match", async () => {
+    // The round Rhino booster (PHUK-1) has the same art but not the silver frame.
+    const answer = JSON.stringify([
+      { pinId: "PHUK-1", confidence: 98, reasoning: "same Rhino art", format_match: false },
+      { pinId: "PHUK-2", confidence: 72, reasoning: "Rhino in a silver frame", format_match: true },
+    ]);
+    const { openai } = fakeOpenAI(answer);
+    const refs = Object.fromEntries(ids.map((id) => [id, `https://p/${id}.jpg`]));
+    const out = await matchCrop(Buffer.from("x"), { characters: ["Rhino"], keywords: [], text: "" }, { openai, model: "m", repository, referenceImages: async () => refs }, emptyUsage());
+    expect(out.candidates[0]).toMatchObject({ pinId: "PHUK-2", confidence: 72, verified: true });
+    expect(out.candidates[1]).toMatchObject({ pinId: "PHUK-1", confidence: 35 });
+    expect(out.candidates[1].reasoning).toMatch(/^Different format from your pin\./);
+  });
+
+  it("shows not identified when every pictured candidate is a different format", async () => {
+    const answer = JSON.stringify([{ pinId: "PHUK-1", confidence: 98, reasoning: "same art", format_match: false }]);
+    const { openai } = fakeOpenAI(answer);
+    const refs = { "PHUK-1": "https://p/1.jpg" };
+    const out = await matchCrop(Buffer.from("x"), { characters: ["Rhino"], keywords: [], text: "" }, { openai, model: "m", repository, referenceImages: async () => refs }, emptyUsage());
+    expect(out).toMatchObject({ status: "unmatched" });
+    expect(out.candidates[0]).toMatchObject({ pinId: "PHUK-1", confidence: 35 });
+  });
 });

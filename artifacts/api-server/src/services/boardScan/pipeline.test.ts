@@ -16,6 +16,8 @@ const mem = vi.hoisted(() => ({
   publishOpts: [] as unknown[],
   nextId: 1,
   create: null as unknown as ReturnType<typeof vi.fn>,
+  /** Pin & Pop reference images the comparison step can see, by pin id. */
+  refs: new Map<string, string>(),
 }));
 
 vi.mock("@workspace/integrations-openai-ai-server", () => ({
@@ -34,7 +36,9 @@ vi.mock("../pixian", () => ({
   PixianTimeoutError: class extends Error {},
   normalizePinPhoto: async (b: Buffer) => { mem.pixianCalls++; return b; },
 }));
-vi.mock("../scanReferenceImages", () => ({ pinAndPopReferenceImages: async () => new Map() }));
+vi.mock("../scanReferenceImages", () => ({
+  pinAndPopReferenceImages: async (ids: string[]) => new Map(ids.filter((i) => mem.refs.has(i)).map((i) => [i, mem.refs.get(i)!])),
+}));
 vi.mock("../contributed-images", () => ({
   publishContributedImage: async (image: { id: string }, _r: string, _d: unknown, opts: unknown) => {
     mem.published.push(image.id); mem.publishOpts.push(opts); return image;
@@ -78,7 +82,7 @@ vi.mock("./store", async (importOriginal) => {
   };
 });
 
-import { approveItem, approveReady, processBoardScan } from "./pipeline";
+import { approveItem, approveReady, processBoardScan, refineBox } from "./pipeline";
 import type { BoardScan, BoardScanItem } from "./store";
 
 /** A 2000×1500 "board": three sharp, textured pins and one tiny one. */
@@ -91,13 +95,36 @@ async function makeBoard() {
   return sharp(Buffer.from(svg)).jpeg({ quality: 92 }).toBuffer();
 }
 
+// Each pin carries distinct "printed text" so the fake model can tell the
+// crops apart: matching runs several pins at once, so call order isn't fixed.
 const detection = JSON.stringify({ pins: [
-  { box: [50, 67, 250, 333], characters: ["Grogu"], keywords: ["Mandalorian"], text: "" },
-  { box: [400, 67, 600, 333], characters: ["Remy"], keywords: ["chef"], text: "" },
-  { box: [750, 67, 950, 333], characters: ["Woody"], keywords: [], text: "", occluded: true },
+  { box: [50, 67, 250, 333], characters: ["Grogu"], keywords: ["Mandalorian"], text: "G1" },
+  { box: [400, 67, 600, 333], characters: ["Remy"], keywords: ["chef"], text: "R2" },
+  { box: [750, 67, 950, 333], characters: ["Woody"], keywords: [], text: "W3", occluded: true },
   { box: [480, 706, 520, 760], characters: [], keywords: [], text: "" },
 ] });
 const rank = (id: string, conf: number) => JSON.stringify([{ pinId: id, confidence: conf, reasoning: "looks right" }]);
+
+const EMPTY_DESCRIPTION = JSON.stringify({ characters: [], keywords: [], text: "" });
+
+/**
+ * A fake model: detection, the per-pin describe step, ranking (by the pin's
+ * printed text, from `byText`) and the reference comparison (confirms the
+ * ranking's first candidate at `verifiedConfidence`).
+ */
+function model(byText: Record<string, string>, opts: { describe?: string; verifiedConfidence?: number } = {}) {
+  return async (req: { messages: Array<{ content: unknown }> }) => {
+    const system = String(req.messages[0].content);
+    if (system.startsWith("You find individual")) return reply(detection);
+    if (system.startsWith("You identify Disney enamel pins")) return reply(opts.describe ?? EMPTY_DESCRIPTION);
+    if (system.startsWith("You verify")) {
+      const first = /PHUK-\d+/.exec(system)?.[0] ?? "PHUK-1";
+      return reply(rank(first, opts.verifiedConfidence ?? 95));
+    }
+    const text = /Text seen on the pin: "([^"]*)"/.exec(system)?.[1] ?? "";
+    return reply(byText[text] ?? "[]");
+  };
+}
 
 function reply(content: string) {
   return { choices: [{ message: { content }, finish_reason: "stop" }], usage: { prompt_tokens: 1000, completion_tokens: 100 } };
@@ -105,7 +132,7 @@ function reply(content: string) {
 
 async function setup(publicDisplay = true) {
   mem.scans.clear(); mem.items.clear(); mem.objects.clear();
-  mem.pixianCalls = 0; mem.published = []; mem.publishOpts = []; mem.nextId = 1;
+  mem.pixianCalls = 0; mem.published = []; mem.publishOpts = []; mem.nextId = 1; mem.refs = new Map();
   mem.pins = {
     "PHUK-1": { title: "Grogu", imageUrl: null, pendingImages: 0 },
     "PHUK-2": { title: "Remy", imageUrl: "https://cdn.test/remy.jpg", pendingImages: 0 },
@@ -128,11 +155,10 @@ describe("processBoardScan", () => {
   });
 
   it("detects, matches, prioritises and cleans only what's worth cleaning", async () => {
-    // Rank answers in item order; the 4th (tiny) crop gets a weak answer.
-    const answers = [rank("PHUK-1", 92), rank("PHUK-2", 90), rank("PHUK-3", 91), rank("PHUK-3", 20)];
-    let n = 0;
-    mem.create.mockImplementation(async (req: { messages: Array<{ content: unknown }> }) =>
-      String(req.messages[0].content).startsWith("You find individual") ? reply(detection) : reply(answers[n++] ?? "[]"));
+    // Grogu and Woody have Pin & Pop references; Remy has a catalogue photo.
+    mem.refs = new Map([["PHUK-1", "https://pinandpop.test/1.jpg"], ["PHUK-3", "https://pinandpop.test/3.jpg"]]);
+    // The tiny crop (no printed text) gets a weak answer.
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 92), R2: rank("PHUK-2", 90), W3: rank("PHUK-3", 91), "": rank("PHUK-3", 20) }));
 
     await processBoardScan("s1");
     const scan = mem.scans.get("s1") as unknown as BoardScan;
@@ -149,7 +175,10 @@ describe("processBoardScan", () => {
     expect(items.map((i) => i.cleanup_status)).toEqual(["done", "skipped", "skipped", "skipped"]);
     expect(mem.pixianCalls).toBe(1);
     expect(items[0].priority).toBeGreaterThan(items[1].priority);
-    expect(scan.stats).toMatchObject({ openaiCalls: 5, inputTokens: 5000, pixianCalls: 1 });
+    // 1 detection + 4 describes + 4 rankings + 3 comparisons (the tiny crop's
+    // ranking is implausible, so it isn't compared).
+    expect(scan.stats).toMatchObject({ openaiCalls: 12, inputTokens: 12000, pixianCalls: 1 });
+    expect(items.slice(0, 3).every((i) => i.candidates[0]?.verified)).toBe(true);
     // Nothing published without a reviewer.
     expect(mem.published).toEqual([]);
 
@@ -162,9 +191,7 @@ describe("processBoardScan", () => {
 
   it("refuses to publish from a board without public display permission, and never cleans it", async () => {
     await setup(false);
-    let n = 0;
-    mem.create.mockImplementation(async (req: { messages: Array<{ content: unknown }> }) =>
-      String(req.messages[0].content).startsWith("You find individual") ? reply(detection) : reply([rank("PHUK-1", 95)][n++] ?? rank("PHUK-3", 90)));
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 95) }));
     await processBoardScan("s1");
     expect(mem.pixianCalls).toBe(0);
     const scan = mem.scans.get("s1") as unknown as BoardScan;
@@ -188,12 +215,12 @@ describe("processBoardScan", () => {
   });
 
   it("keeps going when one pin fails to match, and resumes only the failed pin", async () => {
-    let n = 0;
+    let failRemy = true;
+    const answer = model({ G1: rank("PHUK-3", 50), R2: rank("PHUK-3", 50), W3: rank("PHUK-3", 50), "": rank("PHUK-3", 50) });
     mem.create.mockImplementation(async (req: { messages: Array<{ content: unknown }> }) => {
-      if (String(req.messages[0].content).startsWith("You find individual")) return reply(detection);
-      n++;
-      if (n === 2) throw new Error("upstream 500");
-      return reply(rank("PHUK-3", 50));
+      const system = String(req.messages[0].content);
+      if (failRemy && system.includes('Text seen on the pin: "R2"')) { failRemy = false; throw new Error("upstream 500"); }
+      return answer(req);
     });
     await processBoardScan("s1");
     expect(mem.scans.get("s1")!.status).toBe("partial");
@@ -203,13 +230,68 @@ describe("processBoardScan", () => {
     const callsBefore = mem.create.mock.calls.length;
     await processBoardScan("s1");
     expect(mem.scans.get("s1")!.status).toBe("ready");
-    // No new detection, one new match call.
+    // No new detection and no new describe: one new ranking call.
     expect(mem.create.mock.calls.length - callsBefore).toBe(1);
+  });
+
+  it("never lets an unchecked ranking look confident or trigger a clean-up", async () => {
+    // No reference images anywhere, so nothing can be compared.
+    mem.pins["PHUK-1"].imageUrl = null;
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 97) }));
+    await processBoardScan("s1");
+    const grogu = [...mem.items.values()][0] as unknown as BoardScanItem;
+    expect(grogu).toMatchObject({ suggested_pin_id: "PHUK-1", match_confidence: 60, cleanup_status: "skipped" });
+    expect(grogu.candidates[0]).toMatchObject({ confidence: 60, verified: false });
+    expect(mem.pixianCalls).toBe(0);
+  });
+
+  it("compares a confident ranking too, and reports no match when the picture disagrees", async () => {
+    mem.refs = new Map([["PHUK-1", "https://pinandpop.test/1.jpg"]]);
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 97) }, { verifiedConfidence: 15 }));
+    await processBoardScan("s1");
+    const grogu = [...mem.items.values()][0] as unknown as BoardScanItem;
+    const compared = mem.create.mock.calls.filter(([req]) => String(req.messages[0].content).startsWith("You verify"));
+    expect(compared).toHaveLength(1);
+    expect(grogu).toMatchObject({ match_status: "unmatched", cleanup_status: "skipped" });
+    expect(grogu.candidates[0]).toMatchObject({ confidence: 15, verified: true });
+  });
+
+  it("describes each pin once with context, and re-crops to a tighter box", async () => {
+    // In the 35%-padded context crop, the pin fills the middle part.
+    const describe = JSON.stringify({ characters: ["Grogu"], keywords: ["teacup", "Mandalorian"], text: "", box: [0.2, 0.2, 0.8, 0.8] });
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50) }, { describe }));
+    await processBoardScan("s1");
+    const grogu = [...mem.items.values()][0] as unknown as BoardScanItem;
+    expect(grogu.detection).toMatchObject({ described: true, keywords: expect.arrayContaining(["teacup", "Mandalorian"]) });
+    // Detected box was x 0.05–0.25. The context crop spans x 0–0.32 (0.35 padding,
+    // clamped at the edge), so 0.2–0.8 of it is x 0.064–0.256: the same pin, tighter.
+    expect(grogu.box.x).toBeCloseTo(0.064, 2);
+    expect(grogu.box.x + grogu.box.w).toBeCloseTo(0.256, 2);
+    const describes = mem.create.mock.calls.filter(([req]) => String(req.messages[0].content).startsWith("You identify Disney enamel pins"));
+    expect(describes).toHaveLength(4);
   });
 
   it("marks the board failed when detection itself fails", async () => {
     mem.create.mockRejectedValue(new Error("model unavailable"));
     await processBoardScan("s1");
     expect(mem.scans.get("s1")).toMatchObject({ status: "failed", error: "model unavailable" });
+  });
+});
+
+describe("refineBox", () => {
+  const detected = { x: 0.4, y: 0.4, w: 0.2, h: 0.2 };
+  it("maps a box from the context crop back onto the board", () => {
+    // Context crop: 0.33–0.67 each way (0.35 padding). Its middle half is 0.415–0.585.
+    const b = refineBox(detected, { x: 0.25, y: 0.25, w: 0.5, h: 0.5 }, 1000, 1000)!;
+    expect(b.x).toBeCloseTo(0.415, 2);
+    expect(b.w).toBeCloseTo(0.17, 2);
+  });
+  it("grows a box that cut the pin off", () => {
+    const b = refineBox(detected, { x: 0.1, y: 0.1, w: 0.8, h: 0.8 }, 1000, 1000)!;
+    expect(b.w).toBeGreaterThan(detected.w);
+  });
+  it("rejects a box on a different pin, or one far smaller or bigger", () => {
+    expect(refineBox(detected, { x: 0, y: 0, w: 0.15, h: 0.15 }, 1000, 1000)).toBeNull();
+    expect(refineBox(detected, { x: 0.48, y: 0.48, w: 0.04, h: 0.04 }, 1000, 1000)).toBeNull();
   });
 });

@@ -40,7 +40,7 @@ import { useAuth } from '@/context/AuthContext';
 import { API_BASE } from '@/lib/apiBase';
 
 interface Box { x: number; y: number; w: number; h: number }
-interface Candidate { pinId: string; title: string; collection: string; imageUrl: string | null; confidence: number; reasoning: string }
+interface Candidate { pinId: string; title: string; collection: string; imageUrl: string | null; confidence: number; reasoning: string; verified?: boolean }
 interface Item {
   id: string;
   position: number;
@@ -438,6 +438,11 @@ export default function AdminBoardScanScreen() {
               )}
               {i.decision === 'undecided' && top?.reasoning ? (
                 <Text style={[styles.tiny, { color: colors.homeMuted }]}>{top.reasoning}</Text>
+              ) : null}
+              {i.decision === 'undecided' && top && top.verified !== undefined ? (
+                <Text style={[styles.tiny, { color: top.verified ? '#2E8B57' : colors.homeSand }]}>
+                  {top.verified ? 'Checked against reference pictures.' : 'Not checked against a picture: compare carefully.'}
+                </Text>
               ) : null}
 
               {/* Alternatives: one tap to switch */}

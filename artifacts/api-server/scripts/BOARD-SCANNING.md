@@ -13,7 +13,7 @@ All in `artifacts/api-server/src/services/boardScan/`, routes in `src/routes/boa
 
 | Need | Reused |
 |---|---|
-| Recognition | Same model (`OPENAI_SCAN_MODEL`), catalogue search (`scanCandidates.ts`), ranking + photo-comparison prompts (now shared in `pinRank.ts`, used by `/scan/identify` too), `scanVerify.ts` rules, `scanReasoning.ts` |
+| Recognition | Same model (`OPENAI_SCAN_MODEL`), the Bulk Image Matcher's per-pin describe prompt (`bulkImages/match.ts`), catalogue search (`scanCandidates.ts`), ranking + photo-comparison prompts (shared in `pinRank.ts`, used by `/scan/identify` too), `scanVerify.ts` rules, `scanReasoning.ts` |
 | Clean-up | `pixian.ts` (`normalizePinPhoto`, test mode, timeout/retry) |
 | Approval + publishing | `pin_images` rows via `createContributedImage`, then `publishContributedImage` (watermark, public bucket, `pins.image_url`) |
 | Storage | Cleaned photos in the existing private `pin-contributed-images` bucket; board photos and crops in a new private `board-scans` bucket |
@@ -41,7 +41,7 @@ Uploaded photos are re-encoded, which strips EXIF (including GPS location).
 | Boards processed at once per server | 2 (others queue) | `BOARD_CONCURRENT_SCANS` |
 | Catalogue candidates per crop | 150 | `BOARD_MAX_CANDIDATES` |
 | Same board photo uploaded again | reuses the earlier board | — |
-| AI calls per board | 1 detection + 1 rank per pin + 1 comparison only when the ranking is unsure and a reference image exists (no describe call per pin) | `BOARD_DETECT_TILES=2` adds 4 detection calls |
+| AI calls per board | 1 detection, then per pin: 1 describe + 1 rank + 1 comparison whenever a reference image exists (≈ 3 per pin; a 22-pin board ≈ 65) | `BOARD_DETECT_TILES=2` adds 4 detection calls; `BOARD_MATCH_ALWAYS_COMPARE=false` compares only unsure rankings |
 | Pixian | automatic only for crops that are suitable, matched ≥ 70%, of a pin with no photo and no pending photo, best crop of that pin on the board, on a board with public-display permission. Identical crops are never cleaned twice. Everything else on request. | `BOARD_AUTO_CLEAN_MIN_CONFIDENCE` |
 | "Approve all ready" | cleaned + (reviewed or ≥ 80%) + pin has no photo | `BOARD_BULK_APPROVE_MIN_CONFIDENCE` |
 
@@ -75,6 +75,16 @@ Offline checks on 12 Nov 2026 (hand-drawn boxes; AI steps not run — no keys in
 - **Glare:** the rose-gold Woody sketch pin is washed out by reflection, but no pixel was blown out (pixel glare 0). Brightness alone can't tell it from white enamel (Mr Potato Head, clouds), so detection now also reports `glare`.
 - **Crowding:** sheriff stars and cloud pins interlock, so crops (6% padding) include points of neighbouring pins. Matching should cope (the prompt says to identify the centre pin); for clean-up, watch whether Pixian keeps the fragments and reject those photos — if common, the next step is to send Pixian an unpadded crop.
 - The thumb over the Buzz rectangle is the occlusion case to check detection reports.
+
+## Matching accuracy
+
+Learned from the first real board (19 Nov 2026): the board-wide detection describes every pin in one look, which is too coarse to search 116k pins with ("Buzz Lightyear" matches thousands), and a confident ranking skipped the picture check, so plausible-sounding wrong pins showed at 94–96%. Now:
+
+- **Describe each pin.** Before ranking, each detected pin is described from a close-up with 35% context around it (`describeItem` in `pipeline.ts`): its own characters, object type and printed text for the catalogue search, and a tight box. The crop is redone from that box when it overlaps the detected one (`refineBox`), so a box that cut the pin off or took in a neighbour is corrected. Hand-drawn boxes are described but kept as drawn. Runs once per pin; resuming a board doesn't repeat it.
+- **Always compare.** The ranking is compared with reference images whenever any exist, however confident it is.
+- **Only a picture makes a match confident.** Unchecked rankings show at most 60% (below automatic clean-up at 70%) with "Not checked against a picture". A checked match under 40% — no reference looked like the pin — is shown as not identified.
+
+If the right pin still isn't among the candidates, the next step is searching by picture similarity (an image index of reference photos), which needs a check of what Pin & Pop's terms allow.
 
 ## Straightening
 

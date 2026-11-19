@@ -23,7 +23,7 @@ Matching runs against the live staging catalogue, which is now Pin & Pop (~116k 
 ## Setup (staging only)
 
 1. Staging must already have the Pin & Pop catalogue and migrations 075–077. Apply `supabase/migrations/083_board_scans.sql` in the **staging** SQL editor (rollback SQL is in its header).
-2. In the staging API server env: `OPENAI_API_KEY` (low-budget staging key), `PIXIAN_API_ID`/`PIXIAN_API_SECRET`, `PIXIAN_TEST_MODE=true` (free, watermarked results — switch off only for a real run).
+2. In the staging API server env: `BOARD_SCAN_ENABLED=true` (off by default — every board-scan route returns 404 and the Board Scans screen says it's switched off), `OPENAI_API_KEY` (low-budget staging key), `PIXIAN_API_ID`/`PIXIAN_API_SECRET`, `PIXIAN_TEST_MODE=true` (free, watermarked results — switch off only for a real run).
 3. Start the API server for staging, sign in to the app as the App Creator, open **Admin → Board Scans**.
 
 ## Permission and rights
@@ -75,6 +75,14 @@ Offline checks on 12 Nov 2026 (hand-drawn boxes; AI steps not run — no keys in
 - **Glare:** the rose-gold Woody sketch pin is washed out by reflection, but no pixel was blown out (pixel glare 0). Brightness alone can't tell it from white enamel (Mr Potato Head, clouds), so detection now also reports `glare`.
 - **Crowding:** sheriff stars and cloud pins interlock, so crops (6% padding) include points of neighbouring pins. Matching should cope (the prompt says to identify the centre pin); for clean-up, watch whether Pixian keeps the fragments and reject those photos — if common, the next step is to send Pixian an unpadded crop.
 - The thumb over the Buzz rectangle is the occlusion case to check detection reports.
+
+## Straightening
+
+After Pixian, a cleaned photo is turned straight when the pin has straight sides (`services/boardScan/straighten.ts`): the tilt is the rotation that gives the outline's convex hull the smallest bounding box, within ±25°. Round, star and other irregular pins (hull fills < 85% of that box) are left as they are. The reviewer can also **Straighten**, or turn by 3° with **↺ / ↻**, before approving. Every turn starts again from the un-turned clean-up (no quality lost to repeated turns) and is saved as `<base>.turn.<item>.<degrees>.jpg`; the previous turned file is removed, the shared base never is. Rejected or published photos can't be turned.
+
+## Pin & Pop reference on the review screen
+
+The App Creator (`profiles.is_app_creator`) sees each match's Pin & Pop reference image beside the crop, labelled *admin only*, and small ones on the alternatives — the same admin-only use as the Bulk Image Matcher. Other admins don't get them from the API. They are never stored or published.
 
 ## Failure handling
 

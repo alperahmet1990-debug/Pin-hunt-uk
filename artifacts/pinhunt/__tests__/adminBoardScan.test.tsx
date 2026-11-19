@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
-import AdminBoardScanScreen from '../app/admin/board-scan/[id]';
+import AdminBoardScanScreen, { boardPoint } from '../app/admin/board-scan/[id]';
 import AdminBoardScansScreen from '../app/admin/board-scans';
 
 // Board scanning review (Step A): pins without a catalogue photo first,
@@ -99,6 +99,31 @@ describe('admin board scan review', () => {
   });
 });
 
+describe('admin board scan: reference images and straightening', () => {
+  it('shows the Pin & Pop reference beside the match, labelled admin only, when the server sends one', async () => {
+    const withRefs = { ...view, pinAndPop: { 'PHUK-1': { imageUrl: 'https://pinandpop.example/1.jpg', externalId: '4321' } } };
+    fetchMock.mockImplementation(() => Promise.resolve({ ok: true, json: () => Promise.resolve(withRefs) }));
+    await render(<AdminBoardScanScreen />);
+    expect(await screen.findByText(/Pin & Pop reference #4321 \(admin only\)/)).toBeTruthy();
+    expect(screen.getByLabelText('Pin & Pop reference image')).toBeTruthy();
+  });
+
+  it('shows no reference image when the server sends none (not the App Creator)', async () => {
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    expect(screen.queryByText(/Pin & Pop reference/)).toBeNull();
+  });
+
+  it('straightens or turns a cleaned photo before approval', async () => {
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    await fireEvent.press(screen.getByText('Straighten'));
+    await waitFor(() => expect(calls()).toContain('POST /admin/board-scans/scan-1/items/i2/rotate {"degrees":"auto"}'));
+    await fireEvent.press(screen.getByText('↻ Turn right'));
+    await waitFor(() => expect(calls()).toContain('POST /admin/board-scans/scan-1/items/i2/rotate {"degrees":3}'));
+  });
+});
+
 describe('admin board scan upload', () => {
   it("can't start without a photo and a permission record", async () => {
     fetchMock.mockImplementation(() => Promise.resolve({ ok: true, json: () => Promise.resolve({ scans: [] }) }));
@@ -106,5 +131,27 @@ describe('admin board scan upload', () => {
     expect(await screen.findByText('No boards yet.')).toBeTruthy();
     await fireEvent.press(screen.getByText('Scan board'));
     expect(calls().filter((c) => c.startsWith('POST'))).toEqual([]);
+  });
+
+  it('says when board scanning is switched off on the server', async () => {
+    fetchMock.mockImplementation(() => Promise.resolve({ ok: false, status: 404, json: () => Promise.resolve({ error: 'Not found' }) }));
+    await render(<AdminBoardScansScreen />);
+    expect(await screen.findByText(/Board scanning is not switched on for this server/)).toBeTruthy();
+  });
+});
+
+describe('adding a missed pin: where a tap lands', () => {
+  it('measures from the board on the web, even when the tap lands on an outline', () => {
+    // An outline at (200, 100) inside a board at page (40, 300): locationX/Y would be
+    // relative to the outline (10, 10), but the page position puts it at (210, 110) on the board.
+    const ev = { locationX: 10, locationY: 10, pageX: 250, pageY: 410 };
+    expect(boardPoint(ev, { left: 40, top: 300 }, { x: 0, y: 0 }, 400, 300)).toEqual({ x: 210 / 400, y: 110 / 300 });
+    // The page scrolled by 50: the board's on-screen top is 50 higher.
+    expect(boardPoint({ ...ev, pageY: 410 }, { left: 40, top: 250 }, { x: 0, y: 50 }, 400, 300)).toEqual({ x: 210 / 400, y: 110 / 300 });
+  });
+
+  it('uses locationX/Y on native, and keeps the point on the board', () => {
+    expect(boardPoint({ locationX: 100, locationY: 150, pageX: 0, pageY: 0 }, null, { x: 0, y: 0 }, 400, 300)).toEqual({ x: 0.25, y: 0.5 });
+    expect(boardPoint({ locationX: -20, locationY: 900, pageX: 0, pageY: 0 }, null, { x: 0, y: 0 }, 400, 300)).toEqual({ x: 0, y: 1 });
   });
 });

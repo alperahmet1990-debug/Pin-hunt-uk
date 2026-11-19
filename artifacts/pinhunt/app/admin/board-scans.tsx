@@ -54,6 +54,8 @@ const STATUS_LABEL: Record<string, string> = {
 
 type Basis = 'own_photo' | 'contributor_permission';
 
+const OFF_MESSAGE = 'Board scanning is not switched on for this server (BOARD_SCAN_ENABLED).';
+
 export default function AdminBoardScansScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
@@ -84,6 +86,7 @@ export default function AdminBoardScansScreen() {
       if (isRefresh) setRefreshing(true);
       setError(null);
       const res = await fetch(`${API_BASE}/admin/board-scans`, { headers: { Authorization: `Bearer ${token}` } });
+      if (res.status === 404) throw new Error(OFF_MESSAGE);
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? 'Could not load boards.');
       setScans(data.scans as BoardScanSummary[]);
@@ -139,6 +142,7 @@ export default function AdminBoardScansScreen() {
           },
         }),
       });
+      if (res.status === 404) throw new Error(OFF_MESSAGE);
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? 'Upload failed.');
       setPhoto(null);

@@ -8,6 +8,8 @@ import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const state = vi.hoisted(() => ({
   isAdmin: true,
+  isAppCreator: false,
+  refLookups: [] as string[][],
   existing: null as null | { id: string },
   inserted: [] as Array<Record<string, unknown>>,
   uploads: [] as string[],
@@ -27,7 +29,7 @@ vi.mock("@workspace/integrations-openai-ai-server", () => ({
 vi.mock("../services/boardScan/store", async (importOriginal) => ({
   ...(await importOriginal<typeof import("../services/boardScan/store")>()),
   boardDb: () => ({
-    from: () => ({ select: () => ({ eq: () => ({ single: async () => ({ data: { is_admin: state.isAdmin }, error: null }) }) }) }),
+    from: () => ({ select: () => ({ eq: () => ({ single: async () => ({ data: { is_admin: state.isAdmin, is_app_creator: state.isAppCreator }, error: null }) }) }) }),
   }),
   countScansSince: async () => state.todayCount,
   findScanByHash: async () => state.existing,
@@ -37,6 +39,15 @@ vi.mock("../services/boardScan/store", async (importOriginal) => ({
   },
   updateScan: async () => {},
   uploadObject: async (_b: string, path: string) => { state.uploads.push(path); },
+  getScan: async (id: string) => ({ id, status: "ready", created_by: "admin-1", image_path: `${id}/board.jpg`, stats: {}, updated_at: new Date().toISOString() }),
+  getItem: async (_scan: string, id: string) => ({ id, cleanup_status: "done", cleaned_path: "x.jpg", image_review: "none" }),
+  listItems: async () => [{ id: "i1", position: 1, suggested_pin_id: "PHUK-1", decided_pin_id: null, decision: "undecided", candidates: [{ pinId: "PHUK-2" }], crop_path: null, cleaned_path: null }],
+  signedUrls: async () => ({}),
+  pinImageState: async () => ({}),
+  pinAndPopReferences: async (ids: string[]) => {
+    state.refLookups.push(ids);
+    return { "PHUK-1": { imageUrl: "https://pinandpop.example/1.jpg", externalId: "77" } };
+  },
 }));
 vi.mock("../services/boardScan/pipeline", async (importOriginal) => ({
   ...(await importOriginal<typeof import("../services/boardScan/pipeline")>()),
@@ -59,7 +70,22 @@ describe("POST /api/admin/board-scans", () => {
     vi.stubEnv("SUPABASE_URL", "https://db.test.invalid");
     vi.stubEnv("SUPABASE_ANON_KEY", "anon");
     vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "service");
-    Object.assign(state, { isAdmin: true, existing: null, inserted: [], uploads: [], enqueued: [], todayCount: 0 });
+    vi.stubEnv("BOARD_SCAN_ENABLED", "true");
+    Object.assign(state, { isAdmin: true, isAppCreator: false, refLookups: [], existing: null, inserted: [], uploads: [], enqueued: [], todayCount: 0 });
+  });
+
+  it("is off (404) unless explicitly enabled, before any auth or upload", async () => {
+    for (const value of [undefined, "", "false", "1", "TRUE"]) {
+      vi.stubEnv("BOARD_SCAN_ENABLED", value as string);
+      const res = await upload({ permission: ownPhoto });
+      expect(res.status).toBe(404);
+      expect((await request(app).get("/api/admin/board-scans")).status).toBe(404);
+      expect((await request(app).get("/api/admin/board-scans/scan-1")).status).toBe(404);
+      expect((await request(app).post("/api/admin/board-scans/scan-1/approve-ready").set("Authorization", "Bearer t")).status).toBe(404);
+    }
+    expect(state.inserted).toHaveLength(0);
+    expect(state.uploads).toHaveLength(0);
+    expect(state.enqueued).toHaveLength(0);
   });
 
   it("is admin only", async () => {
@@ -104,5 +130,34 @@ describe("POST /api/admin/board-scans", () => {
   it("enforces the daily board limit", async () => {
     state.todayCount = 40;
     expect((await upload({ permission: ownPhoto })).status).toBe(429);
+  });
+});
+
+describe("board review extras", () => {
+  beforeEach(() => {
+    vi.stubEnv("SUPABASE_URL", "https://db.test.invalid");
+    vi.stubEnv("SUPABASE_ANON_KEY", "anon");
+    vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "service");
+    vi.stubEnv("BOARD_SCAN_ENABLED", "true");
+    Object.assign(state, { isAdmin: true, isAppCreator: false, refLookups: [] });
+  });
+  const getBoard = () => request(app).get("/api/admin/board-scans/scan-1").set("Authorization", "Bearer t");
+
+  it("sends Pin & Pop reference images to the App Creator only", async () => {
+    const admin = await getBoard();
+    expect(admin.status).toBe(200);
+    expect(admin.body.pinAndPop).toEqual({});
+    expect(state.refLookups).toEqual([]);
+
+    state.isAppCreator = true;
+    const creator = await getBoard();
+    expect(creator.body.pinAndPop).toEqual({ "PHUK-1": { imageUrl: "https://pinandpop.example/1.jpg", externalId: "77" } });
+    expect(state.refLookups[0]).toEqual(expect.arrayContaining(["PHUK-1", "PHUK-2"]));
+  });
+
+  it("turns a photo only by \"auto\" or up to 45 degrees", async () => {
+    const rotate = (degrees: unknown) =>
+      request(app).post("/api/admin/board-scans/scan-1/items/i1/rotate").set("Authorization", "Bearer t").send({ degrees });
+    for (const bad of [0, 90, -46, "left", null]) expect((await rotate(bad)).status).toBe(400);
   });
 });

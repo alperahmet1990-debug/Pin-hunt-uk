@@ -15,6 +15,7 @@ import sharp from "sharp";
 import { createSupabasePinRepository, createSupabaseUserRepository, type PinRepository } from "@workspace/pin-repository";
 import { getOpenAIClient, isAiConfigured } from "@workspace/integrations-openai-ai-server";
 import { normalizePinPhoto, pixianConfigured, PixianTimeoutError } from "../pixian";
+import { estimateTilt, rotatePinPhoto, straightenPinPhoto } from "./straighten";
 import { publishContributedImage } from "../contributed-images";
 import { pinAndPopReferenceImages } from "../scanReferenceImages";
 import { detectPins, emptyUsage, type DetectedPin, type TokenUsage } from "./detect";
@@ -170,6 +171,80 @@ async function pinStates(items: BoardScanItem[]): Promise<Record<string, PinStat
   return store.pinImageState(ids);
 }
 
+/** Straighten a cleaned photo when its pin is visibly tilted; never fails the clean-up. */
+async function straightenOrKeep(cleaned: Buffer): Promise<Buffer> {
+  try {
+    return (await straightenPinPhoto(cleaned)).image;
+  } catch (err) {
+    console.warn("[board-scan] straighten skipped:", errText(err));
+    return cleaned;
+  }
+}
+
+/**
+ * A turned photo's path records what it was turned from and by how much:
+ *   <base path without .jpg>.turn.<item id>.<total degrees>.jpg
+ * so every turn starts again from the un-turned clean-up (no quality lost to
+ * repeated re-encoding), and the previous turned file — which only this item
+ * uses — can be removed. The base itself may be shared by identical crops and
+ * is never removed.
+ */
+const TURNED = /^(.*)\.turn\.([^./]+)\.(-?\d+(?:\.\d+)?)\.jpg$/;
+
+export function parseTurnedPath(path: string): { base: string; itemId: string; degrees: number } | null {
+  const m = TURNED.exec(path);
+  return m ? { base: `${m[1]}.jpg`, itemId: m[2], degrees: Number(m[3]) } : null;
+}
+
+export function turnedPath(base: string, itemId: string, degrees: number): string {
+  return `${base.replace(/\.jpg$/, "")}.turn.${itemId}.${Number(degrees.toFixed(2))}.jpg`;
+}
+
+/**
+ * Turn a cleaned photo while it's still under review: by hand (`degrees`,
+ * clockwise) or automatically ("auto").
+ */
+export async function rotateCleaned(scan: BoardScan, item: BoardScanItem, degrees: number | "auto"): Promise<BoardScanItem> {
+  if (item.cleanup_status !== "done" || !item.cleaned_path) throw new ReviewError("Clean the photo before turning it.");
+  if (item.image_review === "approved") throw new ReviewError("This photo is already published.");
+  if (item.image_review !== "none") throw new ReviewError("This photo was rejected. Clean it again to review it.");
+  const previous = item.cleaned_path;
+  const turned = parseTurnedPath(previous);
+  const current = turned?.itemId === item.id ? turned : null;
+  const base = current?.base ?? previous;
+  const sofar = current?.degrees ?? 0;
+
+  let step: number;
+  if (degrees === "auto") {
+    const shown = await store.downloadObject(store.CLEANED_BUCKET, previous);
+    const tilt = await estimateTilt(shown);
+    if (tilt.reason !== "straightened") {
+      throw new ReviewError(tilt.reason === "already_straight"
+        ? "It already looks straight."
+        : "Couldn't find straight edges on this pin. Turn it by hand.", 422);
+    }
+    step = tilt.degrees;
+  } else {
+    step = degrees;
+  }
+  const total = Math.round((sofar + step) * 100) / 100;
+  let path = base;
+  if (Math.abs(total) >= 0.01) {
+    if (Math.abs(total) > 45) throw new ReviewError("That's turned too far. Try the other way.");
+    const original = await store.downloadObject(store.CLEANED_BUCKET, base);
+    path = turnedPath(base, item.id, total);
+    await store.uploadObject(store.CLEANED_BUCKET, path, await rotatePinPhoto(original, total));
+  }
+  // Only save the new path if the photo is still under review (no race with approval).
+  const updated = await store.updateItemIf(item.id, { image_review: "none" }, { cleaned_path: path });
+  if (!updated) {
+    if (path !== base) await store.removeObject(store.CLEANED_BUCKET, path);
+    throw new ReviewError("This photo was approved or rejected meanwhile.", 409);
+  }
+  if (current && previous !== path) await store.removeObject(store.CLEANED_BUCKET, previous);
+  return updated;
+}
+
 /**
  * Pixian clean-up for one item, if the rules allow it (rules.cleanupBlock).
  * Reuses an earlier clean-up of the identical crop instead of paying again.
@@ -201,7 +276,7 @@ export async function cleanItem(
     } else {
       const crop = await store.downloadObject(store.BOARD_BUCKET, item.crop_path!);
       if (opts.stats) opts.stats.pixianCalls = (opts.stats.pixianCalls ?? 0) + 1;
-      const cleaned = await normalizePinPhoto(crop, "image/jpeg");
+      const cleaned = await straightenOrKeep(await normalizePinPhoto(crop, "image/jpeg"));
       cleanedPath = `${scan.created_by}/board-${scan.id}/${item.id}.jpg`;
       await store.uploadObject(store.CLEANED_BUCKET, cleanedPath, cleaned);
     }

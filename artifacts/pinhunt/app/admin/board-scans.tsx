@@ -208,14 +208,14 @@ export default function AdminBoardScansScreen() {
           <TextInput style={input} placeholder="Label (e.g. Toy Story board)" placeholderTextColor={colors.homeMuted} value={title} onChangeText={setTitle} />
           <TextInput
             style={input}
-            placeholder="Set on this board, if most pins are from one (optional)"
+            placeholder="Set on this board (optional)"
             placeholderTextColor={colors.homeMuted}
             value={setHint}
             onChangeText={setSetHint}
             accessibilityLabel="Set on this board"
           />
           <Text style={[styles.hint, { color: colors.homeMuted }]}>
-            e.g. "Tails of Friendship". Matching looks in this set first. Confirming a pin also teaches the board its set.
+            If most pins are from one set, e.g. "Tails of Friendship": matching looks there first. Confirming a pin also teaches the board its set.
           </Text>
 
           <Text style={[styles.label, { color: colors.homeInk }]}>Whose photo is this?</Text>

@@ -52,7 +52,7 @@ describe("picture index: Vertex AI", () => {
     let sent: { instances: Array<{ image: { bytesBase64Encoded: string } }>; parameters: { dimension: number } } | null = null;
     const g = fakeGoogle((body) => { sent = body as typeof sent; return { status: 200, body: { predictions: [{ imageEmbedding: vector }] } }; });
     expect(await embedImage(await picture(), { env, fetchImpl: g.impl })).toEqual(vector);
-    expect(g.calls[1].url).toBe("https://us-central1-aiplatform.googleapis.com/v1/projects/proj-1/locations/us-central1/publishers/google/models/multimodalembedding@001:predict");
+    expect(g.calls[1].url).toBe("https://europe-west2-aiplatform.googleapis.com/v1/projects/proj-1/locations/europe-west2/publishers/google/models/multimodalembedding@001:predict");
     expect((g.calls[1].init.headers as Record<string, string>).Authorization).toBe("Bearer tok-1");
     expect(sent!.parameters.dimension).toBe(256);
     const meta = await sharp(Buffer.from(sent!.instances[0].image.bytesBase64Encoded, "base64")).metadata();
@@ -61,8 +61,8 @@ describe("picture index: Vertex AI", () => {
 
   it("uses the region and project set for Vertex", async () => {
     const g = fakeGoogle(() => ({ status: 200, body: { predictions: [{ imageEmbedding: vector }] } }));
-    await embedImage(await picture(), { env: { ...env, VERTEX_LOCATION: "europe-west2", VERTEX_PROJECT_ID: "other" }, fetchImpl: g.impl });
-    expect(g.calls[1].url).toContain("https://europe-west2-aiplatform.googleapis.com/v1/projects/other/locations/europe-west2/");
+    await embedImage(await picture(), { env: { ...env, VERTEX_LOCATION: "us-central1", VERTEX_PROJECT_ID: "other" }, fetchImpl: g.impl });
+    expect(g.calls[1].url).toContain("https://us-central1-aiplatform.googleapis.com/v1/projects/other/locations/us-central1/");
   });
 
   it("reports Google's refusals with their status, and odd answers", async () => {
@@ -80,7 +80,7 @@ describe("picture index: Vertex AI", () => {
   it("only uses a real-looking region name in the address it sends the token to", async () => {
     const { vertexLocation } = await import("./vertex");
     expect(vertexLocation({ VERTEX_LOCATION: "europe-west2" } as NodeJS.ProcessEnv)).toBe("europe-west2");
-    expect(vertexLocation({ VERTEX_LOCATION: "evil.example.com/x" } as NodeJS.ProcessEnv)).toBe("us-central1");
-    expect(vertexLocation({} as NodeJS.ProcessEnv)).toBe("us-central1");
+    expect(vertexLocation({ VERTEX_LOCATION: "evil.example.com/x" } as NodeJS.ProcessEnv)).toBe("europe-west2");
+    expect(vertexLocation({} as NodeJS.ProcessEnv)).toBe("europe-west2");
   });
 });

@@ -124,6 +124,9 @@ export async function runIndexer(
         return;
       } catch (err) {
         const status = err instanceof VertexError ? err.status : undefined;
+        if (status === 404) {
+          throw new Error("Google couldn't find the picture model in this region. Set VERTEX_LOCATION to a region that offers it (e.g. us-central1 or europe-west4), then Continue.");
+        }
         if (status === 401 || status === 403 || (err instanceof VertexError && status === undefined && /credentials|project/i.test(err.message))) {
           throw err; // every picture would fail the same way
         }

@@ -129,4 +129,12 @@ describe("picture index: building it", () => {
     expect(indexerState()).toMatchObject({ stopReason: "error", lastError: expect.stringContaining("quota") });
     expect(w.index.size).toBe(0);
   });
+
+  it("stops when the model isn't offered in the region, without marking pictures failed", async () => {
+    const w = world(5);
+    w.deps.embed = async () => { throw new VertexError("Picture description failed (404)", 404); };
+    await runIndexer({ rate: 6000 }, w.deps);
+    expect(w.index.size).toBe(0);
+    expect(indexerState()).toMatchObject({ stopReason: "error", lastError: expect.stringContaining("VERTEX_LOCATION") });
+  });
 });

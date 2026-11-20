@@ -90,6 +90,7 @@ export async function downloadPicture(
       await assertPublicUrl(current, opts.allowPrivate === true);
       res = await fetch(current, { signal: controller.signal, redirect: "manual" });
       if (res.status >= 300 && res.status < 400 && res.headers.get("location")) {
+        await res.body?.cancel().catch(() => {});
         if (hop >= MAX_REDIRECTS) throw new Error("too many redirects");
         current = new URL(res.headers.get("location")!, current).toString();
         continue;

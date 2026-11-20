@@ -316,7 +316,11 @@ export default function AdminBoardScanScreen() {
       )}
     </TouchableOpacity>
   );
-  const readyCount = data.items.filter((i) => i.decision !== 'excluded' && i.cleanup_status === 'done' && i.image_review === 'none').length;
+  // Same rule as the server (rules.bulkApproveBlock): confirmed by the
+  // reviewer, cleaned, crop passed the quality check, pin has no photo yet.
+  const readyCount = data.items.filter((i) =>
+    (i.decision === 'confirmed' || i.decision === 'corrected') && i.cleanup_status === 'done' && i.image_review === 'none' &&
+    i.quality?.suitable !== false && !i.targetPin?.imageUrl).length;
 
   return (
     <>

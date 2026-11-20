@@ -149,11 +149,16 @@ describe("rules", () => {
     expect(cleanupBlock(scan, better, [item(), better], undefined)).toBeNull();
   });
 
-  it("bulk-approves only cleaned, confident, unphotographed pins", () => {
-    const ready = item({ cleanup_status: "done", cleaned_path: "u/board-s1/i1.jpg" });
+  it("bulk-approves only cleaned, reviewer-confirmed, good-quality crops of unphotographed pins", () => {
+    const cleaned = item({ cleanup_status: "done", cleaned_path: "u/board-s1/i1.jpg" });
+    const ready = { ...cleaned, decision: "confirmed" as const, decided_pin_id: "PHUK-1" };
     expect(bulkApproveBlock(scan, ready, { imageUrl: null, pendingImages: 0 })).toBeNull();
-    expect(bulkApproveBlock(scan, { ...ready, match_confidence: 60 }, undefined)).toBe("match needs confirming");
-    expect(bulkApproveBlock(scan, { ...ready, match_confidence: 60, decision: "corrected", decided_pin_id: "PHUK-2" }, undefined)).toBeNull();
+    // A high score alone is never enough: the 94–98% wrong matches seen on real boards.
+    expect(bulkApproveBlock(scan, { ...cleaned, match_confidence: 98 }, undefined)).toBe("match needs confirming");
+    expect(bulkApproveBlock(scan, { ...cleaned, decision: "corrected", decided_pin_id: "PHUK-2" }, undefined)).toBeNull();
+    // A crop that failed the quality check (e.g. cleaned with "Clean photo" to have a look) is never bulk-published.
+    const poor = { ...ready, quality: { ...ready.quality!, suitable: false, reasons: ["cut_off" as const] } };
+    expect(bulkApproveBlock(scan, poor, undefined)).toBe("crop failed the quality check");
     expect(bulkApproveBlock(scan, ready, { imageUrl: "https://x", pendingImages: 0 })).toBe("pin already has a photo");
     expect(bulkApproveBlock(scan, item(), undefined)).toBe("not cleaned");
   });

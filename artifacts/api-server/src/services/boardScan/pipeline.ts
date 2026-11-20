@@ -218,7 +218,8 @@ async function matchItem(scan: BoardScan, board: Buffer | null, item: BoardScanI
       match_confidence: top?.confidence ?? null,
       pin_has_image: top ? !!top.imageUrl : null,
       attempts: item.attempts + 1,
-      error: null,
+      // Matching worked; a note here says why the picture check didn't (shown on the card).
+      error: result.problem ?? null,
     };
     return store.updateItem(item.id, { ...patch, priority: itemPriority({ ...item, ...patch }) });
   } catch (err) {

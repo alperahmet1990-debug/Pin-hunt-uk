@@ -40,6 +40,7 @@ vi.mock("../pixian", () => ({
   PixianTimeoutError: class extends Error {},
   normalizePinPhoto: async (b: Buffer) => { mem.pixianCalls++; return b; },
 }));
+vi.mock("./references", () => ({ fetchReferenceImage: async (url: string) => `data:image/jpeg;base64,${Buffer.from(url).toString("base64")}` }));
 vi.mock("../scanReferenceImages", () => ({
   pinAndPopReferenceImages: async (ids: string[]) => new Map(ids.filter((i) => mem.refs.has(i)).map((i) => [i, mem.refs.get(i)!])),
 }));
@@ -191,7 +192,14 @@ describe("processBoardScan", () => {
     // Nothing published without a reviewer.
     expect(mem.published).toEqual([]);
 
-    // The reviewer publishes the ready pin in one go.
+    // Nothing is bulk-published until a reviewer confirms the match, however
+    // high the checked score.
+    const before = await approveReady(scan, "admin-1");
+    expect(before.approved).toEqual([]);
+    expect(mem.published).toEqual([]);
+
+    // The reviewer confirms Grogu, then publishes the ready pin in one go.
+    Object.assign(items[0], { decision: "confirmed", decided_pin_id: "PHUK-1" });
     const result = await approveReady(scan, "admin-1");
     expect(result.approved).toEqual([items[0].id]);
     expect(mem.published).toEqual(["img-PHUK-1"]);

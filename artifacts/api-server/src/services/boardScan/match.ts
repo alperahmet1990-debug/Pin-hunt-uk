@@ -26,6 +26,7 @@ import { buildCatalogueText, parseMatches, rankSystemPrompt, verifySystemPrompt,
 import { DESCRIBE_PROMPT, parseDescription } from "../bulkImages/match";
 import { addUsage, type DetectedPin, type OpenAIClient, type TokenUsage } from "./detect";
 import type { Box } from "./quality";
+import { fetchReferenceImage } from "./references";
 
 export interface MatchCandidate {
   pinId: string;
@@ -44,7 +45,12 @@ export interface CropMatch {
   candidates: MatchCandidate[];
   /** The photo-comparison step ran. */
   verified: boolean;
+  /** Why the picture check didn't run or failed, for the reviewer (null when it worked or wasn't needed). */
+  problem?: string | null;
 }
+
+/** Candidates kept per pin: shown as the suggestion plus alternatives. */
+export const KEEP_CANDIDATES = 5;
 
 export interface MatchDeps {
   openai: OpenAIClient;
@@ -52,6 +58,8 @@ export interface MatchDeps {
   repository: PinRepository;
   /** Internal-only reference image URLs by pinhunt id (e.g. Pin & Pop). */
   referenceImages?: (pinhuntIds: string[]) => Promise<Record<string, string>>;
+  /** Fetch one reference picture as an inline image (default: fetchReferenceImage). */
+  fetchImage?: (url: string) => Promise<string | null>;
   timeoutMs?: number;
 }
 
@@ -104,6 +112,9 @@ export function formatMismatches(raw: string): Set<string> {
   }
   return out;
 }
+
+/** Detail the model sees reference pictures at; "low" (~512 px) loses frame metal and small text. */
+const referenceDetail = (): "low" | "high" => (process.env.BOARD_REFERENCE_DETAIL === "low" ? "low" : "high");
 
 const alwaysCompare = () => (process.env.BOARD_MATCH_ALWAYS_COMPARE ?? "true").toLowerCase() !== "false";
 
@@ -193,17 +204,33 @@ export async function matchCrop(
   let matches: PinMatch[] = parseMatches(rankResp.choices[0]?.message?.content ?? "", validIds, 5);
 
   let verified = false;
+  let problem: string | null = null;
   /** Candidates whose own picture the comparison was shown. */
   let pictured = new Set<string>();
   const decision = verifyDecision(matches);
   if (decision === "compare" || (decision === "confident" && alwaysCompare())) {
-    const internal = deps.referenceImages
-      ? await deps.referenceImages(matches.map((m) => m.pinId)).catch(() => ({} as Record<string, string>))
-      : {};
-    const refs = matches
+    let internal: Record<string, string> = {};
+    if (deps.referenceImages) {
+      try {
+        internal = await deps.referenceImages(matches.map((m) => m.pinId));
+      } catch (err) {
+        problem = "Couldn't look up reference pictures, so the match wasn't checked against a picture.";
+        console.warn("[board-scan] reference lookup failed:", err instanceof Error ? err.message : err);
+      }
+    }
+    const fetchImage = deps.fetchImage ?? fetchReferenceImage;
+    const wanted = matches
       .map((m) => ({ m, url: byId.get(m.pinId)?.imageUrl || internal[m.pinId] }))
       .filter((r): r is { m: PinMatch; url: string } => !!r.url)
       .slice(0, maxReferences());
+    // Downloaded here, so one picture that can't be fetched is left out instead of failing the check.
+    const refs = (await Promise.all(wanted.map(async (r) => ({ m: r.m, url: await fetchImage(r.url) }))))
+      .filter((r): r is { m: PinMatch; url: string } => !!r.url);
+    if (wanted.length === 0 && !problem) {
+      problem = "No reference pictures were found for these candidates, so the match wasn't checked against a picture.";
+    } else if (wanted.length > 0 && refs.length === 0) {
+      problem = "The reference pictures couldn't be downloaded, so the match wasn't checked against a picture.";
+    }
     if (refs.length > 0) {
       try {
         const content: Array<
@@ -216,7 +243,7 @@ export async function matchCrop(
         for (const r of refs) {
           const p = byId.get(r.m.pinId)!;
           content.push({ type: "text", text: `Reference for ${p.id} — "${p.title}" (${p.collection}):` });
-          content.push({ type: "image_url", image_url: { url: r.url, detail: "low" } });
+          content.push({ type: "image_url", image_url: { url: r.url, detail: referenceDetail() } });
         }
         content.push({ type: "text", text: "Compare the user's pin to each reference image and re-rank ALL candidates as JSON." });
         const withRef = new Set(refs.map((r) => r.m.pinId));
@@ -249,13 +276,14 @@ export async function matchCrop(
           pictured = withRef;
         }
       } catch (err) {
-        // Comparison is optional, same as the single-pin scan.
+        // The match still stands on its ranking, but the reviewer is told why it wasn't checked.
+        problem = `The picture check failed (${err instanceof Error ? err.message.slice(0, 120) : "error"}), so the match wasn't checked against a picture.`;
         console.warn("[board-scan] reference comparison failed, using ranking:", err instanceof Error ? err.message : err);
       }
     }
   }
 
-  const candidates: MatchCandidate[] = matches.slice(0, 3).map((m) => {
+  const candidates: MatchCandidate[] = matches.slice(0, KEEP_CANDIDATES).map((m) => {
     const p = byId.get(m.pinId)!;
     // A candidate counts as checked only if its own picture was compared.
     const checked = verified && pictured.has(p.id);
@@ -269,8 +297,10 @@ export async function matchCrop(
       reasoning: m.reasoning,
       verified: checked,
     };
-  });
+  })
+    // Order after the caps: an unchecked 88 capped to 60 mustn't stay above a checked 80.
+    .sort((a, b) => b.confidence - a.confidence || Number(b.verified) - Number(a.verified));
   const top = candidates[0]?.confidence ?? 0;
   const min = candidates[0]?.verified ? MATCH_VERIFIED_MIN : MATCH_PLAUSIBLE_MIN;
-  return { status: top >= min ? "suggested" : "unmatched", candidates, verified };
+  return { status: top >= min ? "suggested" : "unmatched", candidates, verified, problem };
 }

@@ -79,6 +79,18 @@ function clamp01(n: number): number {
 }
 
 /** Parse the model's JSON into boxes (0–1 fractions). Malformed entries are dropped. */
+/** Whether the model's reply is a readable detection answer ({"pins": [...]}, possibly empty). */
+export function isDetectionAnswer(raw: string): boolean {
+  const s = raw.indexOf("{");
+  const e = raw.lastIndexOf("}");
+  if (s === -1 || e <= s) return false;
+  try {
+    return Array.isArray((JSON.parse(raw.slice(s, e + 1)) as { pins?: unknown })?.pins);
+  } catch {
+    return false;
+  }
+}
+
 export function parseDetection(raw: string): DetectedPin[] {
   let parsed: unknown;
   try {
@@ -190,7 +202,11 @@ async function detectOnce(
   }, { timeout: timeoutMs, maxRetries: 1 }));
   addUsage(usage, resp);
   const content = resp.choices[0]?.message?.content ?? "";
-  if (!content) console.warn("[board-scan] empty detection response, finish:", resp.choices[0]?.finish_reason);
+  // A missing or garbled answer is a failure to retry, not "no pins on this board".
+  if (!content) {
+    throw new Error(`The pin finder gave no answer (${resp.choices[0]?.finish_reason ?? "unknown reason"}). Try Scan again.`);
+  }
+  if (!isDetectionAnswer(content)) throw new Error("The pin finder's answer couldn't be read. Try Scan again.");
   return parseDetection(content);
 }
 

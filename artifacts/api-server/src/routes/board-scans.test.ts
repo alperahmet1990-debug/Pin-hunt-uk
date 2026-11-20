@@ -19,6 +19,7 @@ const state = vi.hoisted(() => ({
   uploads: [] as string[],
   enqueued: [] as string[],
   todayCount: 0,
+  scanUpdates: [] as Array<[string, Record<string, unknown>]>,
 }));
 
 vi.mock("@supabase/supabase-js", () => ({
@@ -41,7 +42,7 @@ vi.mock("../services/boardScan/store", async (importOriginal) => ({
     state.inserted.push(row);
     return { id: "scan-1", ...row };
   },
-  updateScan: async () => {},
+  updateScan: async (id: string, patch: Record<string, unknown>) => { state.scanUpdates.push([id, patch]); },
   uploadObject: async (_b: string, path: string) => { state.uploads.push(path); },
   getScan: async (id: string) => ({ id, status: "ready", created_by: "admin-1", image_path: `${id}/board.jpg`, stats: {}, updated_at: new Date().toISOString() }),
   getItem: async (_scan: string, id: string) => ({ id, cleanup_status: "done", cleaned_path: "x.jpg", image_review: "none", decision: "undecided", suggested_pin_id: "PHUK-10122801", decided_pin_id: null }),
@@ -88,7 +89,7 @@ describe("POST /api/admin/board-scans", () => {
     vi.stubEnv("SUPABASE_ANON_KEY", "anon");
     vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "service");
     vi.stubEnv("BOARD_SCAN_ENABLED", "true");
-    Object.assign(state, { isAdmin: true, isAppCreator: false, refLookups: [], existing: null, inserted: [], uploads: [], enqueued: [], todayCount: 0 });
+    Object.assign(state, { isAdmin: true, isAppCreator: false, refLookups: [], existing: null, inserted: [], uploads: [], enqueued: [], todayCount: 0, scanUpdates: [] });
   });
 
   it("is off (404) unless explicitly enabled, before any auth or upload", async () => {
@@ -157,6 +158,21 @@ describe("POST /api/admin/board-scans", () => {
     const res = await upload({ permission: ownPhoto });
     expect(res.body).toMatchObject({ duplicate: true, scan: { id: "scan-old" } });
     expect(state.enqueued).toEqual([]);
+  });
+
+  it("keeps a set typed when the same photo is uploaded again, ready for Scan again", async () => {
+    state.existing = { id: "scan-old" };
+    await upload({ permission: ownPhoto, setHint: "Tails of Friendship" });
+    expect(state.scanUpdates).toEqual([["scan-old", { stats: { setHints: ["Tails of Friendship"] } }]]);
+    expect(state.enqueued).toEqual([]);
+  });
+
+  it("explains an iPhone HEIC photo instead of a generic error", async () => {
+    const heic = Buffer.concat([Buffer.from([0, 0, 0, 24]), Buffer.from("ftypheic"), Buffer.alloc(64)]).toString("base64");
+    const res = await request(app).post("/api/admin/board-scans").set("Authorization", "Bearer t").send({ imageBase64: heic, permission: ownPhoto });
+    expect(res.status).toBe(400);
+    expect(res.body.error).toMatch(/HEIC.*JPEG/);
+    expect(state.inserted).toEqual([]);
   });
 
   it("enforces the daily board limit", async () => {

@@ -1,6 +1,6 @@
 import sharp from "sharp";
 import { describe, expect, it } from "vitest";
-import { dedupeDetections, parseDetection, sortReadingOrder, type DetectedPin } from "./detect";
+import { dedupeDetections, detectPins, isDetectionAnswer, parseDetection, sortReadingOrder, type DetectedPin } from "./detect";
 import { assessCrop, boxToPixels, differenceHash, hammingDistance, isBlankPhoto, laplacianVariance, normaliseBoardPhoto, touchesEdge } from "./quality";
 import { boardMetrics, bulkApproveBlock, cleanupBlock, itemPriority } from "./rules";
 import type { BoardScanItem } from "./store";
@@ -21,6 +21,19 @@ function item(extra: Partial<BoardScanItem> = {}): BoardScanItem {
     attempts: 1, error: null, created_at: "", updated_at: "", ...extra,
   };
 }
+
+describe("detectPins", () => {
+  const board = async () => ({ image: await sharp({ create: { width: 64, height: 48, channels: 3, background: "#888" } }).jpeg().toBuffer(), width: 64, height: 48 });
+  const client = (content: string | null, finish = "stop") =>
+    ({ chat: { completions: { create: async () => ({ choices: [{ message: { content }, finish_reason: finish }], usage: {} }) } } }) as never;
+
+  it("treats a missing or garbled answer as a failure, not an empty board", async () => {
+    await expect(detectPins(client(null, "length"), "m", await board())).rejects.toThrow(/no answer \(length\)/);
+    await expect(detectPins(client("Sorry, I can't help"), "m", await board())).rejects.toThrow(/couldn't be read/);
+    expect((await detectPins(client('{"pins": []}'), "m", await board())).pins).toEqual([]);
+    expect(isDetectionAnswer('```json\n{"pins": []}\n```')).toBe(true);
+  });
+});
 
 describe("parseDetection", () => {
   it("reads 0–1000 boxes as fractions and drops malformed entries", () => {

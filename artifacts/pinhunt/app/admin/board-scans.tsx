@@ -157,7 +157,7 @@ export default function AdminBoardScansScreen() {
     } finally {
       setUploading(false);
     }
-  }, [token, photo, title, basis, contributor, contributorName, contributorHandle, evidence, processing, publicDisplay, notCatalogue, router]);
+  }, [token, photo, title, setHint, basis, contributor, contributorName, contributorHandle, evidence, processing, publicDisplay, notCatalogue, router]);
 
   const card = [styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, borderRadius: radius.lg }];
   const input = [styles.input, { borderColor: colors.homeLine, color: colors.homeInk, backgroundColor: colors.homeBackground }];

@@ -20,16 +20,31 @@ const MAX_BYTES = 8 * 1024 * 1024;
 /** Long side sent to the model: enough for frame metal, dangles and small text. */
 const SEND_SIDE = 768;
 
+/** The IPv4 address inside an IPv4-mapped/-compatible IPv6 address, in either written form, or null. */
+function embeddedIPv4(v6: string): string | null {
+  const m = /^::(?:ffff:)?(\d+\.\d+\.\d+\.\d+)$/.exec(v6);
+  if (m) return m[1];
+  const h = /^::(?:ffff:)?([0-9a-f]{1,4}):([0-9a-f]{1,4})$/.exec(v6);
+  if (!h) return null;
+  const hi = parseInt(h[1], 16);
+  const lo = parseInt(h[2], 16);
+  return `${hi >> 8}.${hi & 255}.${lo >> 8}.${lo & 255}`;
+}
+
 /** Loopback, private, link-local and other non-public addresses (IPv4 and IPv6). */
 export function isPrivateAddress(ip: string): boolean {
-  const v4 = ip.startsWith("::ffff:") ? ip.slice(7) : ip;
-  if (isIP(v4) === 4) {
-    const [a, b] = v4.split(".").map(Number);
+  if (isIP(ip) === 4) {
+    const [a, b] = ip.split(".").map(Number);
     return a === 0 || a === 10 || a === 127 || (a === 169 && b === 254) || (a === 172 && b >= 16 && b <= 31) ||
       (a === 192 && b === 168) || (a === 100 && b >= 64 && b <= 127) || a >= 224;
   }
   const v6 = ip.toLowerCase();
-  return v6 === "::" || v6 === "::1" || v6.startsWith("fc") || v6.startsWith("fd") || v6.startsWith("fe80");
+  const inner = embeddedIPv4(v6);
+  if (inner) return isPrivateAddress(inner);
+  return v6 === "::" || v6 === "::1" || v6.startsWith("fc") || v6.startsWith("fd") || /^fe[89ab]/.test(v6) ||
+    v6.startsWith("ff") ||
+    // NAT64 and 6to4 can reach IPv4 addresses, including private ones.
+    v6.startsWith("64:ff9b:") || v6.startsWith("2002:");
 }
 
 /** Refuse a URL that isn't http(s) or whose host is (or resolves to) a non-public address. */

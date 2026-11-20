@@ -58,12 +58,20 @@ describe("fetchReferenceImage", () => {
     await expect(downloadPicture("http://127.0.0.1:1/x.jpg")).rejects.toThrow("address not allowed");
     await expect(downloadPicture("http://169.254.169.254/latest/meta-data/")).rejects.toThrow("address not allowed");
     await expect(downloadPicture("file:///etc/passwd")).rejects.toThrow("not a web address");
+    await expect(downloadPicture("http://[::ffff:169.254.169.254]/latest/")).rejects.toThrow("address not allowed");
     expect((await downloadPicture(`${base}/to-pin`, undefined, local)).length).toBeGreaterThan(0);
     expect(isPrivateAddress("169.254.169.254")).toBe(true);
     expect(isPrivateAddress("10.1.2.3")).toBe(true);
     expect(isPrivateAddress("::1")).toBe(true);
     expect(isPrivateAddress("fd00::1")).toBe(true);
     expect(isPrivateAddress("::ffff:192.168.0.1")).toBe(true);
+    expect(isPrivateAddress("::ffff:a9fe:a9fe")).toBe(true); // 169.254.169.254, as URL parsing writes it
+    expect(isPrivateAddress("::7f00:1")).toBe(true);
+    expect(isPrivateAddress("64:ff9b::a9fe:a9fe")).toBe(true);
+    expect(isPrivateAddress("2002:a9fe:a9fe::1")).toBe(true);
+    expect(isPrivateAddress("febf::1")).toBe(true);
+    expect(isPrivateAddress("::ffff:9765:101")).toBe(false); // 151.101.1.1
+    expect(isPrivateAddress("2a04:4e42::1")).toBe(false);
     expect(isPrivateAddress("151.101.1.1")).toBe(false);
     expect(await fetchReferenceImage("http://localhost:1/pin.jpg")).toBeNull();
   });

@@ -13,7 +13,8 @@ shared too.
 - **Settings:** it needs three public values, which ship inside the app anyway:
   - `EXPO_PUBLIC_SUPABASE_URL`
   - `EXPO_PUBLIC_SUPABASE_ANON_KEY`
-  - `EXPO_PUBLIC_API_BASE_URL` (production: `https://pin-hunt-uk.onrender.com/api`; see `API-DEPLOY.md`)
+  - `EXPO_PUBLIC_API_BASE_URL` (production: `https://pinhunt-api-production.onrender.com/api`; preview:
+    `https://pin-hunt-uk.onrender.com/api`, which is staging since 15 Nov 2026; see `API-DEPLOY.md`)
 - **Safety built in:**
   - Demo mode is refused.
   - The anon key must really be an anon key.
@@ -32,8 +33,20 @@ shared too.
 1. **GitHub environments** (Settings → Environments). Create `contributor-web-preview` and
    `contributor-web-production`. Each gets three **variables** (not secrets; these values are public):
    `EXPO_PUBLIC_SUPABASE_URL`, `EXPO_PUBLIC_SUPABASE_ANON_KEY`, `EXPO_PUBLIC_API_BASE_URL`.
-   - Preview: the **staging** Supabase project and a staging API.
-   - Production: the production values from the Expo project's environment variables.
+   The workflow (`.github/workflows/contributor-web.yml`) builds with `contributor-web-production` when
+   `target = production` and with `contributor-web-preview` otherwise:
+
+   | Environment | Supabase URL + anon key | `EXPO_PUBLIC_API_BASE_URL` |
+   |---|---|---|
+   | `contributor-web-production` | production project | `https://pinhunt-api-production.onrender.com/api` (Render `pinhunt-api-production`) |
+   | `contributor-web-preview` | staging project | `https://pin-hunt-uk.onrender.com/api` (Render `pin-hunt-uk`, staging) |
+
+   - Set all three `EXPO_PUBLIC_*` variables **on each environment**, not as repository-level variables. The
+     workflow reads `vars.*`, which silently falls back to a repository variable when an environment lacks
+     one, so a repository-level value would leak into the other target.
+   - The Supabase project and the API must match. The API checks sign-ins against its own Supabase project,
+     so a production sign-in sent to the staging API gets **401**. The production values are the same as the
+     EAS `preview` environment's (`EAS-PREVIEW.md`).
    - Restrict both to the `main` branch.
 2. **Workflow.** Copy `docs/release/proposed/contributor-web.yml` to `.github/workflows/contributor-web.yml` in a
    PR labelled `human-approved-config`. Agents can't edit `.github/**`.

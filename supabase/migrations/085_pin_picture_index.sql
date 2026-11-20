@@ -10,7 +10,7 @@
 -- picture looks like; the picture can't be rebuilt from it) of one Pin & Pop
 -- reference image (pin_images, migration 042). The image itself is never
 -- stored here or in our storage. Used only inside admin matching on the API
--- server: never shown, never returned to the app. Maintainer decision (to be confirmed on #659), 20 Nov
+-- server: never shown, never returned to the app. Maintainer decision (approved on #659), 20 Nov
 -- 2026 (docs/catalogue-sync/PIN-AND-POP-QUESTIONS.md, question 8).
 --
 -- Purely additive: the pgvector extension, one table, three functions. No

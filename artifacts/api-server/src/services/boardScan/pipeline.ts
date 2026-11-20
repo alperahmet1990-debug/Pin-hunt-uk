@@ -11,6 +11,8 @@
  * restart) leaves a partly processed board that can be resumed — only the
  * unfinished pins are redone. Nothing is published without a reviewer.
  */
+import { lookalikePins } from "../pictureIndex/search";
+import { pictureIndexConfigured } from "../pictureIndex/vertex";
 import { createSupabasePinRepository, createSupabaseUserRepository, type PinRepository } from "@workspace/pin-repository";
 import { getOpenAIClient, isAiConfigured } from "@workspace/integrations-openai-ai-server";
 import { normalizePinPhoto, pixianConfigured, PixianTimeoutError } from "../pixian";
@@ -209,6 +211,8 @@ async function matchItem(scan: BoardScan, board: Buffer | null, item: BoardScanI
       repository: catalogueRepository(),
       // Pin & Pop reference images: recognition only (scripts/PINANDPOP.md).
       referenceImages: async (ids) => Object.fromEntries(await pinAndPopReferenceImages(ids, undefined, 5_000)),
+      // The picture index (migration 085), when switched on.
+      ...(pictureIndexConfigured() ? { pictureSearch: lookalikePins } : {}),
     }, usage, { sets: scan.stats?.setHints ?? [] });
     const top = result.candidates[0];
     const patch: Partial<BoardScanItem> = {

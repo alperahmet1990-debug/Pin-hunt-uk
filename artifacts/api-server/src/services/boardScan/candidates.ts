@@ -20,6 +20,9 @@
  * filter adds to that), the same as plain words too (for pins whose
  * character link is missing), and printed text on its own. The scan's broad
  * search fills the rest. Order is kept, duplicates dropped, capped.
+ *
+ * When the picture index is on, the pins whose reference pictures look most
+ * like the crop come before all of these.
  */
 import type { CataloguePin, PinRepository } from "@workspace/pin-repository";
 import { findCandidates } from "../scanCandidates";
@@ -81,6 +84,8 @@ export async function findBoardCandidates(
   textTerms: string[],
   cap: number,
   sets: string[] = [],
+  /** Pins whose reference pictures look like the crop (the picture index), closest first. */
+  lookalikes: Promise<CataloguePin[]> | CataloguePin[] = [],
 ): Promise<CataloguePin[]> {
   // A failed (or throwing) search just contributes nothing.
   const search: Search = async (query, filters) => {
@@ -130,7 +135,8 @@ export async function findBoardCandidates(
     .slice(0, 2)
     .map((t) => search(t, { status: "active", limit: TEXT_LIMIT }));
 
-  const [inSet, wholeSet, narrow, printed, broad] = await Promise.all([
+  const [looksAlike, inSet, wholeSet, narrow, printed, broad] = await Promise.all([
+    Promise.resolve(lookalikes).catch(() => [] as CataloguePin[]),
     Promise.all(setSearches),
     Promise.all(wholeSets),
     Promise.all(focused),
@@ -148,6 +154,8 @@ export async function findBoardCandidates(
   // The set with the character, then the rest of the sets — only up to a
   // share of the cap, so a big set (or several) can't push the narrow
   // matches out — then narrow (character + specific word), printed text and broad.
+  // Look-alikes first: the picture says more than any title.
+  add(looksAlike);
   for (const pins of inSet) add(pins);
   const setBudget = byId.size + Math.floor(cap * SET_SHARE);
   for (const pins of wholeSet) add(pins, setBudget);

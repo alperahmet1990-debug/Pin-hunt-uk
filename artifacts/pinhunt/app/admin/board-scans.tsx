@@ -30,6 +30,7 @@ import { radius } from '@/constants/theme';
 import { useAuth } from '@/context/AuthContext';
 import { API_BASE } from '@/lib/apiBase';
 import { formatDate } from '@/utils/format';
+import PictureIndexCard from '@/components/PictureIndexCard';
 
 interface BoardScanSummary {
   id: string;
@@ -261,6 +262,8 @@ export default function AdminBoardScansScreen() {
             {uploading ? <ActivityIndicator color="#fff" /> : <Text style={styles.primaryText}>Scan board</Text>}
           </TouchableOpacity>
         </View>
+
+        <PictureIndexCard token={token} />
 
         <Text style={[styles.sectionTitle, { color: colors.homeInk }]}>Recent boards</Text>
         {loading ? (

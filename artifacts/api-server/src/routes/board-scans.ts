@@ -43,6 +43,9 @@ import {
 } from "../services/boardScan/pipeline";
 import { boardMaxPins } from "../services/boardScan/detect";
 import { isBlankPhoto, normaliseBoardPhoto, sha256, type Box } from "../services/boardScan/quality";
+import { indexerState, ratePerMinute, runIndexer, stopIndexer } from "../services/pictureIndex/indexer";
+import { indexStatus } from "../services/pictureIndex/store";
+import { pictureIndexConfigured, vertexLocation } from "../services/pictureIndex/vertex";
 import { boardMetrics, itemPriority } from "../services/boardScan/rules";
 import * as store from "../services/boardScan/store";
 import type { BoardScan, BoardScanItem, ExcludeReason } from "../services/boardScan/store";
@@ -311,6 +314,50 @@ router.get("/admin/board-scans-pin-search", requireAdmin, async (req: AdminReque
   } catch (err) {
     fail(res, err);
   }
+});
+
+// ── Picture index (migration 085) ────────────────────────────────────────────
+// Building it describes every Pin & Pop reference picture once, in the
+// background on this server; matching then also finds pins by picture.
+
+router.get("/admin/board-scans-picture-index", requireAdmin, async (_req: AdminRequest, res: Response) => {
+  const configured = pictureIndexConfigured();
+  let status: Awaited<ReturnType<typeof indexStatus>> | null = null;
+  let statusError: string | null = null;
+  if (configured) {
+    try {
+      status = await indexStatus();
+    } catch (err) {
+      statusError = err instanceof Error ? err.message : String(err);
+    }
+  }
+  res.json({
+    configured,
+    location: vertexLocation(),
+    ratePerMinute: ratePerMinute(),
+    status,
+    statusError,
+    run: indexerState(),
+  });
+});
+
+router.post("/admin/board-scans-picture-index/run", requireAdmin, async (req: AdminRequest, res: Response) => {
+  if (!pictureIndexConfigured()) {
+    res.status(400).json({ error: "The picture index isn't switched on (PICTURE_INDEX_ENABLED and Google credentials)." });
+    return;
+  }
+  if (indexerState().running) {
+    res.status(409).json({ error: "The picture index is already being built." });
+    return;
+  }
+  const retryFailed = (req.body as { retryFailed?: unknown } | undefined)?.retryFailed === true;
+  void runIndexer({ retryFailed });
+  res.status(202).json({ run: indexerState() });
+});
+
+router.post("/admin/board-scans-picture-index/stop", requireAdmin, async (_req: AdminRequest, res: Response) => {
+  stopIndexer();
+  res.json({ run: indexerState() });
 });
 
 router.get("/admin/board-scans/:id", requireAdmin, async (req: AdminRequest, res: Response) => {

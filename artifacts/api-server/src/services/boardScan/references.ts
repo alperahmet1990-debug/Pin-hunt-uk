@@ -18,16 +18,23 @@ const MAX_BYTES = 8 * 1024 * 1024;
 /** Long side sent to the model: enough for frame metal, dangles and small text. */
 const SEND_SIDE = 768;
 
+/** Download a picture (timeout, size limit). Throws with a short reason. */
+export async function downloadPicture(url: string): Promise<Buffer> {
+  const res = await fetch(url, { signal: AbortSignal.timeout(TIMEOUT_MS), redirect: "follow" });
+  if (!res.ok) throw new Error(`download failed (${res.status})`);
+  const length = Number(res.headers.get("content-length") ?? 0);
+  if (length > MAX_BYTES) throw new Error("picture too large");
+  const body = Buffer.from(await res.arrayBuffer());
+  if (body.length === 0) throw new Error("empty picture");
+  if (body.length > MAX_BYTES) throw new Error("picture too large");
+  return body;
+}
+
 /** A reference picture as an inline JPEG data URL, or null if it can't be fetched or read. */
 export async function fetchReferenceImage(url: string): Promise<string | null> {
   try {
     if (url.startsWith("data:")) return url;
-    const res = await fetch(url, { signal: AbortSignal.timeout(TIMEOUT_MS), redirect: "follow" });
-    if (!res.ok) return null;
-    const length = Number(res.headers.get("content-length") ?? 0);
-    if (length > MAX_BYTES) return null;
-    const body = Buffer.from(await res.arrayBuffer());
-    if (body.length === 0 || body.length > MAX_BYTES) return null;
+    const body = await downloadPicture(url);
     const jpeg = await sharp(body).rotate().removeAlpha()
       .resize(SEND_SIDE, SEND_SIDE, { fit: "inside", withoutEnlargement: true })
       .jpeg({ quality: 85 }).toBuffer();

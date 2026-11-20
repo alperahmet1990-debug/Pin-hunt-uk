@@ -71,7 +71,7 @@ Before sending, check your OpenAI account's data settings so "not used to train 
 | 5 | May we **store copies** of their images in our storage, or only link to their servers? Caching or resizing for speed? | Promotion copies files into our buckets | | |
 | 6 | May we **edit** their images: crop, remove background with Pixian, add our watermark? | Our clean-up and publish steps do all three | | |
 | 7 | May we send their images to **third-party AI services** (OpenAI) for matching, and is internal reference use for recognition covered? | Board scanning and the bulk matcher already do this, with reference images only | | |
-| 8 | May we create and keep **derived data**: image fingerprints or embeddings, match scores, links between their records and ours? | A visual-similarity index is the suggested next step for matching | | |
+| 8 | May we create and keep **derived data**: image fingerprints or embeddings, match scores, links between their records and ours? | A visual-similarity index is the suggested next step for matching | | **Decided by the maintainer, 20 Nov 2026:** proceed without asking Pin & Pop — the maintainer considers the existing licence to cover an internal-only picture index. Built as `pin_picture_index` (migration 085): embeddings only, images never stored, never shown or returned to the app, deletable in one step. Not confirmed with Pin & Pop in writing. |
 | 9 | May we **store and show Pin & Pop IDs**, and link or deep-link to Pin & Pop? | Migration 053 and #470 currently keep their IDs internal | | |
 | 10 | What **attribution** is required: wording, logo, placement? | Feeds PNP-05 (#437) | | |
 | 11 | Does it cover **test environments** (staging), or only the live service? | Staging holds copies of catalogue data | | |

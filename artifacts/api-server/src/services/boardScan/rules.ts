@@ -14,6 +14,10 @@ function envNumber(name: string, fallback: number): number {
 /** Match confidence at which a crop is cleaned without the reviewer asking. */
 export const autoCleanMinConfidence = () => envNumber("BOARD_AUTO_CLEAN_MIN_CONFIDENCE", 70);
 /** Match confidence at which "approve all ready" may publish an unconfirmed suggestion. */
+/**
+ * Kept for configuration compatibility; "approve all ready" now requires a
+ * reviewer's confirmation whatever the score (bulkApproveBlock).
+ */
 export const bulkApproveMinConfidence = () => envNumber("BOARD_BULK_APPROVE_MIN_CONFIDENCE", 80);
 
 /**
@@ -99,6 +103,8 @@ export function cleanupBlock(
     const target = targetPinId(item);
     const better = siblings.some((s) =>
       s.id !== item.id &&
+      // An excluded crop or a rejected photo doesn't stand in for this one.
+      s.decision !== "excluded" && s.image_review !== "rejected" &&
       targetPinId(s) === target &&
       (s.cleanup_status === "done" || (s.quality?.score ?? 0) > (item.quality?.score ?? 0) ||
         ((s.quality?.score ?? 0) === (item.quality?.score ?? 0) && s.position < item.position)));
@@ -122,8 +128,13 @@ export function bulkApproveBlock(
   if (item.cleanup_status !== "done" || !item.cleaned_path) return "not cleaned";
   const target = targetPinId(item);
   if (!target) return "no match";
+  // Only pins a reviewer confirmed: a high "checked" score can still be the
+  // wrong pin (same art in another format, or the right pin never found).
   const reviewed = item.decision === "confirmed" || item.decision === "corrected";
-  if (!reviewed && (item.match_confidence ?? 0) < bulkApproveMinConfidence()) return "match needs confirming";
+  if (!reviewed) return "match needs confirming";
+  // A crop that failed the quality check (cut off, overlapped, glare, small)
+  // is only published on its own, after a look at it.
+  if (item.quality && !item.quality.suitable) return "crop failed the quality check";
   if (pin?.imageUrl) return "pin already has a photo";
   return null;
 }

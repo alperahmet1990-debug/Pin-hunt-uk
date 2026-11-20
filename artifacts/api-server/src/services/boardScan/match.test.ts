@@ -2,6 +2,14 @@ import { describe, expect, it, vi } from "vitest";
 import type { CataloguePin, PinRepository } from "@workspace/pin-repository";
 
 vi.mock("../scanReasoning", () => ({ withScanReasoning: (fn: (extra: object) => unknown) => fn({}) }));
+// Reference pictures are downloaded by the server; here, any URL containing "broken" fails.
+const fetched = vi.hoisted(() => ({ urls: [] as string[] }));
+vi.mock("./references", () => ({
+  fetchReferenceImage: async (url: string) => {
+    fetched.urls.push(url);
+    return url.includes("broken") ? null : `data:image/jpeg;base64,${Buffer.from(url).toString("base64")}`;
+  },
+}));
 
 import { matchCrop } from "./match";
 import { emptyUsage } from "./detect";
@@ -83,4 +91,48 @@ describe("matchCrop reference comparison", () => {
     expect(out).toMatchObject({ status: "unmatched" });
     expect(out.candidates[0]).toMatchObject({ pinId: "PHUK-1", confidence: 35 });
   });
+
+  it("downloads reference pictures itself and leaves out one that fails", async () => {
+    const answer = JSON.stringify([{ pinId: "PHUK-2", confidence: 90, reasoning: "same", format_match: true }]);
+    const { create, openai } = fakeOpenAI(answer);
+    const refs = { "PHUK-1": "https://p/broken.jpg", "PHUK-2": "https://p/2.jpg" };
+    const out = await matchCrop(Buffer.from("x"), { characters: ["Woody"], keywords: [], text: "" }, { openai, model: "m", repository, referenceImages: async () => refs }, emptyUsage());
+    const verify = create.mock.calls.map(([r]) => r).find((r) => String(r.messages[0].content).startsWith("You verify"))!;
+    const images = (verify.messages[1].content as Array<{ type: string; image_url?: { url: string; detail: string } }>).filter((c) => c.type === "image_url");
+    expect(images).toHaveLength(2); // the photo plus the one reference that downloaded
+    expect(images[1].image_url).toMatchObject({ detail: "high" });
+    expect(images[1].image_url!.url.startsWith("data:image/jpeg;base64,")).toBe(true);
+    expect(out.candidates.find((c) => c.pinId === "PHUK-2")).toMatchObject({ verified: true });
+    expect(out.problem).toBeNull();
+  });
+
+  it("tells the reviewer why a match wasn't checked against a picture", async () => {
+    const lookupFailed = await matchCrop(Buffer.from("x"), { characters: ["Woody"], keywords: [], text: "" },
+      { openai: fakeOpenAI(ranking).openai, model: "m", repository, referenceImages: async () => { throw new Error("timeout"); } }, emptyUsage());
+    expect(lookupFailed.problem).toMatch(/Couldn't look up reference pictures/);
+    const noneDownloaded = await matchCrop(Buffer.from("x"), { characters: ["Woody"], keywords: [], text: "" },
+      { openai: fakeOpenAI(ranking).openai, model: "m", repository, referenceImages: async () => ({ "PHUK-1": "https://p/broken.jpg" }) }, emptyUsage());
+    expect(noneDownloaded.problem).toMatch(/couldn't be downloaded/);
+    const noPictures = await matchCrop(Buffer.from("x"), { characters: ["Woody"], keywords: [], text: "" },
+      { openai: fakeOpenAI(ranking).openai, model: "m", repository, referenceImages: async () => ({}) }, emptyUsage());
+    expect(noPictures.problem).toMatch(/No reference pictures were found/);
+  });
+
+  it("orders suggestions after the caps, so a checked match beats a capped unchecked one", async () => {
+    // The comparison scores unpictured PHUK-5 at 88 and pictured PHUK-1 at 80.
+    const answer = JSON.stringify([{ pinId: "PHUK-5", confidence: 88, reasoning: "no picture" }, { pinId: "PHUK-1", confidence: 80, reasoning: "same design", format_match: true }]);
+    const { openai } = fakeOpenAI(answer);
+    const out = await matchCrop(Buffer.from("x"), { characters: ["Woody"], keywords: [], text: "" },
+      { openai, model: "m", repository, referenceImages: async () => ({ "PHUK-1": "https://p/1.jpg" }) }, emptyUsage());
+    expect(out.candidates[0]).toMatchObject({ pinId: "PHUK-1", confidence: 80, verified: true });
+    expect(out.candidates[1]).toMatchObject({ pinId: "PHUK-5", confidence: 60, verified: false });
+  });
+
+  it("keeps up to five candidates for the reviewer", async () => {
+    const { openai } = fakeOpenAI(ranking);
+    const refs = Object.fromEntries(ids.map((id) => [id, `https://p/${id}.jpg`]));
+    const out = await matchCrop(Buffer.from("x"), { characters: ["Woody"], keywords: [], text: "" }, { openai, model: "m", repository, referenceImages: async () => refs }, emptyUsage());
+    expect(out.candidates).toHaveLength(5);
+  });
 });
+

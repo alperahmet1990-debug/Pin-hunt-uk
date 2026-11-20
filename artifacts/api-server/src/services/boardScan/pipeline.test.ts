@@ -20,6 +20,12 @@ const mem = vi.hoisted(() => ({
   create: null as unknown as ReturnType<typeof vi.fn>,
   /** Pin & Pop reference images the comparison step can see, by pin id. */
   refs: new Map<string, string>(),
+  /** Cleaned files another board also uses. */
+  sharedCleaned: new Set<string>(),
+  /** A tiny pin_images table: photo records the approve step creates. */
+  images: [] as Array<{ id: string; status: string; pinhuntId: string; storagePath: string; source?: string; source_record_id?: string }>,
+  /** When set, publishing fails once (e.g. a network error) after the record exists. */
+  failPublishOnce: false,
 }));
 
 vi.mock("@workspace/integrations-openai-ai-server", () => ({
@@ -38,29 +44,73 @@ vi.mock("../pixian", () => ({
   PixianTimeoutError: class extends Error {},
   normalizePinPhoto: async (b: Buffer) => { mem.pixianCalls++; return b; },
 }));
+vi.mock("./references", () => ({ fetchReferenceImage: async (url: string) => `data:image/jpeg;base64,${Buffer.from(url).toString("base64")}` }));
 vi.mock("../scanReferenceImages", () => ({
   pinAndPopReferenceImages: async (ids: string[]) => new Map(ids.filter((i) => mem.refs.has(i)).map((i) => [i, mem.refs.get(i)!])),
 }));
 vi.mock("../contributed-images", () => ({
   publishContributedImage: async (image: { id: string }, _r: string, _d: unknown, opts: unknown) => {
+    if (mem.failPublishOnce) { mem.failPublishOnce = false; throw new Error("network down"); }
+    const row = mem.images.find((r) => r.id === image.id);
+    if (row) row.status = "approved";
     mem.published.push(image.id); mem.publishOpts.push(opts); return image;
   },
 }));
 vi.mock("@workspace/pin-repository", () => ({
   createSupabasePinRepository: () => ({ getPinByPinhuntId: async (id: string) => ({ id, title: id, collection: "", imageUrl: undefined }) }),
   createSupabaseUserRepository: () => ({
-    createContributedImage: async (_u: string, pinId: string) => ({ id: `img-${pinId}`, pinhuntId: pinId }),
+    createContributedImage: async (_u: string, pinId: string, o: { storagePath: string }) => {
+      const row = { id: `img-${pinId}${mem.images.some((r) => r.id === `img-${pinId}`) ? `-${mem.images.length}` : ""}`, status: "pending", pinhuntId: pinId, storagePath: o.storagePath };
+      mem.images.push(row);
+      return { ...row };
+    },
+    getContributedImage: async (iid: string) => { const r = mem.images.find((x) => x.id === iid); return r ? { ...r } : null; },
   }),
 }));
+/** Just enough of a Supabase query on pin_images for the approve step. */
+function fakePinImages() {
+  const filters: Array<[string, unknown]> = [];
+  let op: "select" | "update" | "delete" = "select";
+  let patch: Record<string, unknown> = {};
+  const rows = () => mem.images.filter((r) => filters.every(([k, v]) => (r as Record<string, unknown>)[k] === v));
+  const q = {
+    select: () => { op = "select"; return q; },
+    update: (p: Record<string, unknown>) => { op = "update"; patch = p; return q; },
+    delete: () => { op = "delete"; return q; },
+    eq: (k: string, v: unknown) => { filters.push([k, v]); return q; },
+    order: () => q,
+    limit: () => q,
+    then: (resolve: (v: unknown) => void) => {
+      if (op === "update") for (const r of rows()) Object.assign(r, patch);
+      if (op === "delete") { const gone = new Set(rows()); mem.images = mem.images.filter((r) => !gone.has(r)); }
+      resolve({ data: op === "select" ? rows().slice().reverse() : null, error: null });
+    },
+  };
+  return q;
+}
+
 vi.mock("./store", async (importOriginal) => {
   const real = await importOriginal<typeof import("./store")>();
   const id = () => `id-${mem.nextId++}`;
   const now = () => new Date().toISOString();
   return {
     ...real,
-    boardDb: () => ({ from: () => ({ update: () => ({ eq: async () => ({ error: null }) }) }) }),
+    boardDb: () => ({ from: () => fakePinImages() }),
     getScan: async (sid: string) => { mem.getScanCalls++; return mem.scans.get(sid) ?? null; },
-    updateScan: async (sid: string, patch: Record<string, unknown>) => { Object.assign(mem.scans.get(sid)!, patch, { updated_at: now() }); },
+    // Merges stats the way the real store does.
+    updateScan: async (sid: string, patch: Record<string, unknown>, opts: { resetStats?: boolean; replaceSetHints?: boolean } = {}) => {
+      const scan = mem.scans.get(sid)!;
+      if (patch.stats) {
+        const cur = (scan.stats ?? {}) as Record<string, never>;
+        const next = patch.stats as Record<string, never>;
+        patch = { ...patch, stats: {
+          ...(opts.resetStats ? {} : cur), ...next,
+          setHints: opts.replaceSetHints ? next.setHints : real.mergeSetHints(cur.setHints, next.setHints),
+          setVotes: opts.resetStats ? next.setVotes : real.mergeSetVotes(cur.setVotes, next.setVotes),
+        } };
+      }
+      Object.assign(scan, patch, { updated_at: now() });
+    },
     listItems: async (sid: string) => [...mem.items.values()].filter((i) => i.board_scan_id === sid).sort((a, b) => (a.position as number) - (b.position as number)),
     getItem: async (_s: string, iid: string) => mem.items.get(iid) ?? null,
     insertItems: async (rows: Record<string, unknown>[]) => rows.map((r) => {
@@ -80,11 +130,16 @@ vi.mock("./store", async (importOriginal) => {
       return o;
     },
     findCleanedByCropHash: async () => null,
+    deleteItemsForScan: async (sid: string) => { for (const [k, v] of mem.items) if (v.board_scan_id === sid) mem.items.delete(k); },
+    deleteScan: async (sid: string) => { mem.scans.delete(sid); },
+    listObjects: async (b: string, folder: string) => [...mem.objects.keys()].filter((k) => k.startsWith(`${b}/${folder}/`)).map((k) => k.slice(b.length + 1)),
+    removeObjects: async (b: string, paths: string[]) => { for (const p of paths) mem.objects.delete(`${b}/${p}`); },
+    cleanedPathsUsedElsewhere: async (paths: string[]) => new Set(paths.filter((p) => mem.sharedCleaned.has(p))),
     pinImageState: async (ids: string[]) => Object.fromEntries(ids.filter((i) => mem.pins[i]).map((i) => [i, mem.pins[i]])),
   };
 });
 
-import { approveItem, approveReady, cleanSetName, enqueue, isRunning, learnSet, MAX_SET_HINTS, processBoardScan, refineBox } from "./pipeline";
+import { approveItem, approveReady, cleanItem, cleanSetName, deleteBoard, enqueue, isRunning, learnSet, MAX_SET_HINTS, processBoardScan, refineBox, rescanBoard } from "./pipeline";
 import type { BoardScan, BoardScanItem } from "./store";
 
 /** A 2000×1500 "board": three sharp, textured pins and one tiny one. */
@@ -134,7 +189,8 @@ function reply(content: string) {
 
 async function setup(publicDisplay = true) {
   mem.scans.clear(); mem.items.clear(); mem.objects.clear();
-  mem.pixianCalls = 0; mem.published = []; mem.publishOpts = []; mem.nextId = 1; mem.refs = new Map();
+  mem.pixianCalls = 0; mem.published = []; mem.publishOpts = []; mem.nextId = 1; mem.refs = new Map(); mem.sharedCleaned = new Set();
+  mem.images = []; mem.failPublishOnce = false;
   mem.pins = {
     "PHUK-1": { title: "Grogu", imageUrl: null, pendingImages: 0 },
     "PHUK-2": { title: "Remy", imageUrl: "https://cdn.test/remy.jpg", pendingImages: 0 },
@@ -184,7 +240,14 @@ describe("processBoardScan", () => {
     // Nothing published without a reviewer.
     expect(mem.published).toEqual([]);
 
-    // The reviewer publishes the ready pin in one go.
+    // Nothing is bulk-published until a reviewer confirms the match, however
+    // high the checked score.
+    const before = await approveReady(scan, "admin-1");
+    expect(before.approved).toEqual([]);
+    expect(mem.published).toEqual([]);
+
+    // The reviewer confirms Grogu, then publishes the ready pin in one go.
+    Object.assign(items[0], { decision: "confirmed", decided_pin_id: "PHUK-1" });
     const result = await approveReady(scan, "admin-1");
     expect(result.approved).toEqual([items[0].id]);
     expect(mem.published).toEqual(["img-PHUK-1"]);
@@ -214,6 +277,52 @@ describe("processBoardScan", () => {
     // The confirmation reaches the shared publish step, which refuses a
     // replacement otherwise (services/contributed-images.ts).
     expect(mem.publishOpts).toEqual([{ replaceExisting: true }]);
+  });
+
+  it("can be retried after publishing failed, without a second photo record", async () => {
+    await processBoardScan("s1");
+    const scan = mem.scans.get("s1") as unknown as BoardScan;
+    const stored = [...mem.items.values()][0];
+    Object.assign(stored, { cleanup_status: "done", cleaned_path: "x.jpg", decision: "confirmed", decided_pin_id: "PHUK-1" });
+    mem.failPublishOnce = true;
+    await expect(approveItem(scan, { ...stored } as unknown as BoardScanItem, "admin-1")).rejects.toThrow(/network down/);
+    expect(mem.images).toHaveLength(1);
+    expect(stored.pin_image_id).toBe("img-PHUK-1");
+    await approveItem(scan, { ...stored } as unknown as BoardScanItem, "admin-1");
+    expect(mem.images).toEqual([expect.objectContaining({ id: "img-PHUK-1", status: "approved", source_record_id: stored.id })]);
+    expect(mem.published).toEqual(["img-PHUK-1"]);
+  });
+
+  it("drops a leftover record for a different pin before trying again", async () => {
+    await processBoardScan("s1");
+    const scan = mem.scans.get("s1") as unknown as BoardScan;
+    const stored = [...mem.items.values()][0];
+    Object.assign(stored, { cleanup_status: "done", cleaned_path: "x.jpg", decision: "confirmed", decided_pin_id: "PHUK-3" });
+    mem.failPublishOnce = true;
+    await expect(approveItem(scan, { ...stored } as unknown as BoardScanItem, "admin-1")).rejects.toThrow();
+    // The reviewer changes their mind about the pin, then approves again.
+    Object.assign(stored, { decided_pin_id: "PHUK-1", decision: "corrected" });
+    await approveItem(scan, { ...stored } as unknown as BoardScanItem, "admin-1");
+    expect(mem.images.map((r) => [r.pinhuntId, r.status])).toEqual([["PHUK-1", "approved"]]);
+  });
+
+  it("never publishes a watermarked test-mode photo once test mode is off", async () => {
+    vi.stubEnv("PIXIAN_TEST_MODE", "true");
+    await processBoardScan("s1");
+    const stored = [...mem.items.values()][0];
+    Object.assign(stored, { decision: "confirmed", decided_pin_id: "PHUK-1" });
+    await cleanItem(mem.scans.get("s1") as unknown as BoardScan, { ...stored, cleanup_status: "none" } as unknown as BoardScanItem,
+      [...mem.items.values()] as unknown as BoardScanItem[], {}, { force: true });
+    expect(stored.cleaned_path).toMatch(/\.pixian-test\.jpg$/);
+
+    vi.stubEnv("PIXIAN_TEST_MODE", "false");
+    Object.assign(stored, { decision: "confirmed", decided_pin_id: "PHUK-1" });
+    const scan = mem.scans.get("s1") as unknown as BoardScan;
+    await expect(approveItem(scan, { ...stored } as unknown as BoardScanItem, "admin-1")).rejects.toMatchObject({ code: "test_mode_cleanup" });
+    expect(mem.published).toEqual([]);
+    // Back to "Clean photo" so a real clean-up can be made.
+    expect(stored).toMatchObject({ cleanup_status: "skipped", cleaned_path: null });
+    vi.unstubAllEnvs();
   });
 
   it("keeps going when one pin fails to match, and resumes only the failed pin", async () => {
@@ -273,24 +382,29 @@ describe("processBoardScan", () => {
     expect(describes).toHaveLength(4);
   });
 
-  it("learns a confirmed pin's set and re-matches the board's other undecided pins with it", async () => {
+  it("learns a set once two confirmed pins share it, and re-matches the board's other undecided pins with it", async () => {
     mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50), R2: rank("PHUK-2", 50), W3: rank("PHUK-3", 50), "": rank("PHUK-3", 50) }));
     await processBoardScan("s1");
-    const [grogu, remy] = [...mem.items.values()] as unknown as BoardScanItem[];
+    const [grogu, remy, woody] = [...mem.items.values()] as unknown as BoardScanItem[];
     Object.assign(grogu, { decision: "confirmed", decided_pin_id: "PHUK-1" });
     Object.assign(remy, { decision: "excluded", exclude_reason: "not_a_pin" });
-    const scan = mem.scans.get("s1") as unknown as BoardScan;
     const ranksBefore = mem.create.mock.calls.length;
 
-    // The two other undecided pins (Woody and the tiny one) are re-matched.
-    expect(await learnSet(scan, "Tails of Friendship", grogu.id)).toBe(2);
-    expect(mem.scans.get("s1")!.stats).toMatchObject({ setHints: ["Tails of Friendship"] });
+    // One confirmed pin isn't enough (confirming it twice doesn't count twice).
+    expect(await learnSet(mem.scans.get("s1") as unknown as BoardScan, "Tails of Friendship", grogu.id)).toBe(0);
+    expect(await learnSet(mem.scans.get("s1") as unknown as BoardScan, "Tails of Friendship", grogu.id)).toBe(0);
+    expect(mem.scans.get("s1")!.stats).not.toHaveProperty("setHints", ["Tails of Friendship"]);
+
+    // A second pin from the same set: the last undecided pin (the tiny one) is re-matched.
+    Object.assign(woody, { decision: "confirmed", decided_pin_id: "PHUK-3" });
+    expect(await learnSet(mem.scans.get("s1") as unknown as BoardScan, "tails of friendship", woody.id)).toBe(1);
+    expect(mem.scans.get("s1")!.stats).toMatchObject({ setHints: ["tails of friendship"] });
     await vi.waitFor(() => expect(mem.scans.get("s1")!.status).toBe("ready"));
     await vi.waitFor(() => expect([...mem.items.values()].every((i) => i.match_status !== "pending")).toBe(true));
     const newCalls = mem.create.mock.calls.slice(ranksBefore).map(([req]) => String(req.messages[0].content));
     // No new describe (already described); the ranking is told about the set.
     expect(newCalls.some((c) => c.startsWith("You identify Disney enamel pins"))).toBe(false);
-    expect(newCalls.filter((c) => c.includes('"Tails of Friendship"'))).toHaveLength(2);
+    expect(newCalls.filter((c) => c.includes('"tails of friendship"'))).toHaveLength(1);
 
     // A set the board already knows doesn't trigger another round.
     expect(await learnSet(mem.scans.get("s1") as unknown as BoardScan, "tails of friendship", grogu.id)).toBe(0);
@@ -319,6 +433,69 @@ describe("processBoardScan", () => {
     Object.assign(mem.scans.get("s1")!, { stats: { setHints: full } });
     expect(await learnSet(mem.scans.get("s1") as unknown as BoardScan, "Tails of Friendship", "x")).toBe(0);
     expect(mem.scans.get("s1")!.stats).toMatchObject({ setHints: full });
+  });
+
+  it("scans a board again from the start, with a new set, keeping the photo", async () => {
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50) }));
+    await processBoardScan("s1");
+    const before = [...mem.items.keys()];
+    expect(before).toHaveLength(4);
+    const detections = () => mem.create.mock.calls.filter(([r]) => String(r.messages[0].content).startsWith("You find individual")).length;
+    expect(detections()).toBe(1);
+    // A set learned earlier (perhaps wrongly), and votes for another.
+    Object.assign(mem.scans.get("s1")!.stats as object, { setHints: ["Wrong Set"], setVotes: { other: ["x"] } });
+
+    await rescanBoard(mem.scans.get("s1") as unknown as BoardScan, "Tails of Friendship");
+    await vi.waitFor(() => expect(isRunning("s1")).toBe(false));
+    expect(mem.scans.get("s1")).toMatchObject({ status: "ready", stats: expect.objectContaining({ setHints: ["Tails of Friendship"] }) });
+    expect((mem.scans.get("s1")!.stats as { setVotes?: unknown }).setVotes).toBeUndefined();
+    expect(detections()).toBe(2); // detected again
+    const after = [...mem.items.keys()];
+    expect(after).toHaveLength(4);
+    expect(after.some((k) => before.includes(k))).toBe(false); // all new pins
+    expect(mem.objects.has("board-scans/s1/board.jpg")).toBe(true);
+  });
+
+  it("deletes a board, its images, and only the cleaned photos no other board uses", async () => {
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50) }));
+    await processBoardScan("s1");
+    const [a, b] = [...mem.items.values()];
+    Object.assign(a, { cleanup_status: "done", cleaned_path: "admin-1/board-s1/a.jpg" });
+    Object.assign(b, { cleanup_status: "done", cleaned_path: "admin-1/board-other/shared.jpg" });
+    mem.objects.set("pin-contributed-images/admin-1/board-s1/a.jpg", Buffer.from("a"));
+    mem.objects.set("pin-contributed-images/admin-1/board-other/shared.jpg", Buffer.from("b"));
+    mem.sharedCleaned = new Set(["admin-1/board-other/shared.jpg"]);
+
+    await deleteBoard(mem.scans.get("s1") as unknown as BoardScan);
+    expect(mem.scans.has("s1")).toBe(false);
+    expect(mem.items.size).toBe(0);
+    expect([...mem.objects.keys()].filter((k) => k.startsWith("board-scans/s1/"))).toEqual([]);
+    expect(mem.objects.has("pin-contributed-images/admin-1/board-s1/a.jpg")).toBe(false);
+    expect(mem.objects.has("pin-contributed-images/admin-1/board-other/shared.jpg")).toBe(true);
+  });
+
+  it("won't scan again or delete once a photo from the board is published", async () => {
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50) }));
+    await processBoardScan("s1");
+    Object.assign([...mem.items.values()][0], { image_review: "approved" });
+    const scan = mem.scans.get("s1") as unknown as BoardScan;
+    await expect(rescanBoard(scan)).rejects.toMatchObject({ status: 409, code: "board_has_published" });
+    await expect(deleteBoard(scan)).rejects.toMatchObject({ status: 409, code: "board_has_published" });
+    expect(mem.items.size).toBe(4);
+    expect(mem.scans.has("s1")).toBe(true);
+  });
+
+  it("cleaning a rejected photo again puts it back under review; automatic clean-up leaves it alone", async () => {
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50) }));
+    await processBoardScan("s1");
+    const grogu = [...mem.items.values()][0] as unknown as BoardScanItem;
+    Object.assign(grogu, { decision: "confirmed", decided_pin_id: "PHUK-1", image_review: "rejected", cleanup_status: "skipped", cleaned_path: null });
+    const calls = mem.pixianCalls;
+    await processBoardScan("s1"); // e.g. a resume: the rejected photo isn't redone
+    expect(mem.pixianCalls).toBe(calls);
+    const scan = mem.scans.get("s1") as unknown as BoardScan;
+    const again = await cleanItem(scan, { ...grogu, cleanup_status: "none" }, [...mem.items.values()] as unknown as BoardScanItem[], {}, { force: true });
+    expect(again).toMatchObject({ cleanup_status: "done", image_review: "none" });
   });
 
   it("cleans set names and ignores empty ones", () => {

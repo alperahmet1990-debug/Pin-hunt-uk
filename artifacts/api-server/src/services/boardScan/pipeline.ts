@@ -218,7 +218,8 @@ async function matchItem(scan: BoardScan, board: Buffer | null, item: BoardScanI
       match_confidence: top?.confidence ?? null,
       pin_has_image: top ? !!top.imageUrl : null,
       attempts: item.attempts + 1,
-      error: null,
+      // Matching worked; a note here says why the picture check didn't (shown on the card).
+      error: result.problem ?? null,
     };
     return store.updateItem(item.id, { ...patch, priority: itemPriority({ ...item, ...patch }) });
   } catch (err) {
@@ -338,10 +339,16 @@ export async function cleanItem(
       const crop = await store.downloadObject(store.BOARD_BUCKET, item.crop_path!);
       if (opts.stats) opts.stats.pixianCalls = (opts.stats.pixianCalls ?? 0) + 1;
       const cleaned = await straightenOrKeep(await normalizePinPhoto(crop, "image/jpeg"));
-      cleanedPath = `${scan.created_by}/board-${scan.id}/${item.id}.jpg`;
+      // Test-mode results carry Pixian's watermark: marked in the name so they're never published as real.
+      const mark = process.env.PIXIAN_TEST_MODE === "true" ? store.PIXIAN_TEST_MARK : "";
+      cleanedPath = `${scan.created_by}/board-${scan.id}/${item.id}${mark}.jpg`;
       await store.uploadObject(store.CLEANED_BUCKET, cleanedPath, cleaned);
     }
-    return store.updateItem(item.id, { cleanup_status: "done", cleaned_path: cleanedPath, cleanup_note: null });
+    return store.updateItem(item.id, {
+      cleanup_status: "done", cleaned_path: cleanedPath, cleanup_note: null,
+      // Cleaning a rejected photo again puts it back under review.
+      ...(item.image_review === "rejected" ? { image_review: "none" as const } : {}),
+    });
   } catch (err) {
     const note = err instanceof PixianTimeoutError ? "Pixian took too long — try again." : `Clean-up failed: ${errText(err)}`;
     return store.updateItem(item.id, { cleanup_status: "failed", cleanup_note: note });
@@ -404,7 +411,12 @@ export async function processBoardScan(scanId: string): Promise<void> {
     // ── Clean ──
     // Only automatically, for suitable, confident crops of pins with no
     // photo; anything else waits for the reviewer to ask.
-    const candidates = items.filter((i) => i.cleanup_status === "none" || i.cleanup_status === "failed");
+    // "skipped" is looked at again: a re-match (e.g. after a set was learned)
+    // can make a skipped low-confidence pin confident. A rejected photo is
+    // only cleaned again on request.
+    const candidates = items.filter((i) =>
+      i.cleanup_status === "none" || i.cleanup_status === "failed" ||
+      (i.cleanup_status === "skipped" && i.image_review !== "rejected"));
     if (candidates.length > 0 && scan.permission_public_display) {
       await setStatus("cleaning");
       const t = Date.now();
@@ -467,19 +479,31 @@ export function cleanSetName(v: unknown): string | null {
   return s.length >= 3 ? s : null;
 }
 
+/** Confirmed pins from one set needed before the board learns it. */
+export const SET_VOTES_TO_LEARN = 2;
+
 /**
- * A reviewer confirmed or corrected a pin: if its set is new to this board,
- * remember it and re-match the board's other undecided pins with that set
- * searched first (pins on a board are often from the same set, and many
- * set pins are titled only by character). Returns how many pins will be
- * re-matched; 0 when the set was already known or the board has enough.
+ * A reviewer confirmed or corrected a pin. Once a second confirmed pin on
+ * the board comes from the same set, remember that set and re-match the
+ * board's other undecided pins with it searched first (pins on a board are
+ * often from the same set, and many set pins are titled only by character).
+ * One pin alone isn't enough: a board often mixes sets, and one stray set
+ * would steer every other pin. Returns how many pins will be re-matched; 0
+ * when the set was already known, needs another confirmation, or the board
+ * has enough sets.
  */
 export async function learnSet(scan: BoardScan, collection: string | null | undefined, confirmedItemId: string): Promise<number> {
   const set = cleanSetName(collection);
   if (!set) return 0;
+  const key = set.toLowerCase();
   const hints = scan.stats?.setHints ?? [];
-  if (hints.length >= MAX_SET_HINTS || hints.some((h) => h.toLowerCase() === set.toLowerCase())) return 0;
-  await store.updateScan(scan.id, { stats: { ...(scan.stats ?? {}), setHints: [...hints, set] } });
+  if (hints.length >= MAX_SET_HINTS || hints.some((h) => h.toLowerCase() === key)) return 0;
+  const voters = [...new Set([...(scan.stats?.setVotes?.[key] ?? []), confirmedItemId])];
+  if (voters.length < SET_VOTES_TO_LEARN) {
+    await store.updateScan(scan.id, { stats: { setVotes: { [key]: voters } } });
+    return 0;
+  }
+  await store.updateScan(scan.id, { stats: { setHints: [...hints, set], setVotes: { [key]: voters } } });
   const items = await store.listItems(scan.id);
   const others = items.filter((i) =>
     i.id !== confirmedItemId && i.decision === "undecided" && i.image_review === "none" &&
@@ -487,6 +511,60 @@ export async function learnSet(scan: BoardScan, collection: string | null | unde
   for (const i of others) await store.updateItem(i.id, { match_status: "pending", attempts: 0 });
   if (others.length > 0) enqueue(scan.id);
   return others.length;
+}
+
+/**
+ * A board can be scanned again or deleted only while nothing from it is
+ * published: a published catalogue photo's provenance (pin_images
+ * source_record_id → board_scan_items.id → the board's permission record)
+ * must not be lost.
+ */
+async function assertNothingPublished(scan: BoardScan, items: BoardScanItem[]) {
+  if (isRunning(scan.id)) throw new ReviewError("This board is still being processed. Try again when it has finished.", 409);
+  const published = items.filter((i) => i.image_review === "approved").length;
+  if (published > 0) {
+    throw new ReviewError(
+      `${published} photo${published === 1 ? " from this board is" : "s from this board are"} published to the catalogue, so the board is kept as their record.`,
+      409, "board_has_published",
+    );
+  }
+}
+
+/**
+ * Scan the same board photo again from the start: detection, describing,
+ * matching and clean-up, with the latest matching rules and an optional set.
+ * Earlier pins and their crops are removed; the board photo and its
+ * permission record are kept.
+ */
+export async function rescanBoard(scan: BoardScan, setHint?: string | null): Promise<void> {
+  const items = await store.listItems(scan.id);
+  await assertNothingPublished(scan, items);
+  await store.deleteItemsForScan(scan.id);
+  await store.removeObjects(store.BOARD_BUCKET, await store.listObjects(store.BOARD_BUCKET, `${scan.id}/crops`).catch(() => []));
+  const set = cleanSetName(setHint);
+  // Fresh counters. A set typed now replaces the board's sets (one learned
+  // earlier may be what went wrong); otherwise they're kept.
+  await store.updateScan(scan.id, {
+    status: "queued", error: null, detection_truncated: false,
+    stats: set ? { setHints: [set] } : {},
+  }, { resetStats: true, replaceSetHints: !!set });
+  enqueue(scan.id);
+}
+
+/**
+ * Delete a board: its pins, its photo and crops, and cleaned photos no other
+ * board uses. Refused while anything from it is published.
+ */
+export async function deleteBoard(scan: BoardScan): Promise<void> {
+  const items = await store.listItems(scan.id);
+  await assertNothingPublished(scan, items);
+  const cleaned = [...new Set(items.map((i) => i.cleaned_path).filter((p): p is string => !!p))];
+  const shared = await store.cleanedPathsUsedElsewhere(cleaned, scan.id);
+  await store.deleteItemsForScan(scan.id);
+  await store.deleteScan(scan.id);
+  const crops = await store.listObjects(store.BOARD_BUCKET, `${scan.id}/crops`).catch(() => [] as string[]);
+  await store.removeObjects(store.BOARD_BUCKET, [scan.image_path, ...crops]);
+  await store.removeObjects(store.CLEANED_BUCKET, cleaned.filter((p) => !shared.has(p)));
 }
 
 export class ReviewError extends Error {
@@ -499,6 +577,20 @@ export class ReviewError extends Error {
  * Publish one cleaned crop as its pin's catalogue photo. Approving is the
  * reviewer confirming both the match and the photo.
  */
+/** A pending photo record an earlier, failed approval of this item left behind, if it still fits. */
+async function reusableImage(item: BoardScanItem, target: string, userRepo: ReturnType<typeof writeRepositories>["userRepo"]) {
+  const { data } = await store.boardDb().from("pin_images").select("id, status")
+    .eq("source", "pinhunt_board_scan").eq("source_record_id", item.id)
+    .order("created_at", { ascending: false }).limit(1);
+  const prior = (data as Array<{ id: string; status: string }> | null)?.[0];
+  if (!prior || prior.status !== "pending") return null;
+  const image = await userRepo.getContributedImage(prior.id).catch(() => null);
+  if (image && image.pinhuntId === target && image.storagePath === item.cleaned_path) return image;
+  // Left over from an attempt for another pin or photo: remove it so it doesn't sit in the review queue.
+  await store.boardDb().from("pin_images").delete().eq("id", prior.id).eq("status", "pending");
+  return null;
+}
+
 export async function approveItem(
   scan: BoardScan,
   item: BoardScanItem,
@@ -511,6 +603,14 @@ export async function approveItem(
   if (item.decision === "excluded") throw new ReviewError("This pin is excluded from the board.");
   if (item.image_review === "approved") throw new ReviewError("Already published.");
   if (item.cleanup_status !== "done" || !item.cleaned_path) throw new ReviewError("Clean the photo before approving it.");
+  if (store.isTestModeCleanup(item.cleaned_path) && process.env.PIXIAN_TEST_MODE !== "true") {
+    // Offer "Clean photo" again for a real clean-up.
+    await store.updateItem(item.id, {
+      cleanup_status: "skipped", cleaned_path: null,
+      cleanup_note: "This photo was cleaned in Pixian test mode (watermarked). Clean it again before publishing.",
+    });
+    throw new ReviewError("This photo was cleaned in Pixian test mode and carries a watermark. Clean it again before publishing.", 409, "test_mode_cleanup");
+  }
   const target = opts.pinId ?? store.targetPinId(item);
   if (!target) throw new ReviewError("Choose the catalogue pin first.");
 
@@ -521,17 +621,25 @@ export async function approveItem(
   }
 
   const { userRepo, pinRepo } = writeRepositories();
-  const image = await userRepo.createContributedImage(reviewerId, target, {
-    storagePath: item.cleaned_path,
-    consentGranted: true,
-    proposalReason: state.imageUrl ? "poor_quality" : "missing",
-  });
-  // Provenance: trace the published photo back to its board and permission
-  // record. Best effort — a database without 037's columns still publishes.
-  const { error: provenanceError } = await store.boardDb().from("pin_images")
-    .update({ source: "pinhunt_board_scan", source_record_id: item.id, content_hash: item.crop_sha256 })
-    .eq("id", image.id);
-  if (provenanceError) console.warn(`[board-scan] provenance not saved for image ${image.id}:`, provenanceError.message);
+  // Safe to retry: an earlier attempt that created the photo record but
+  // failed to publish left a pending row with this item's provenance. Reuse
+  // it (a second row would break the provenance unique index and publish a
+  // photo with no permission trail); drop it if it no longer fits.
+  let image = await reusableImage(item, target, userRepo);
+  if (!image) {
+    image = await userRepo.createContributedImage(reviewerId, target, {
+      storagePath: item.cleaned_path,
+      consentGranted: true,
+      proposalReason: state.imageUrl ? "poor_quality" : "missing",
+    });
+    // Provenance: trace the published photo back to its board and permission
+    // record. Best effort — a database without 037's columns still publishes.
+    const { error: provenanceError } = await store.boardDb().from("pin_images")
+      .update({ source: "pinhunt_board_scan", source_record_id: item.id, content_hash: item.crop_sha256 })
+      .eq("id", image.id);
+    if (provenanceError) console.warn(`[board-scan] provenance not saved for image ${image.id}:`, provenanceError.message);
+  }
+  await store.updateItem(item.id, { pin_image_id: image.id });
 
   // The reviewer confirmed the replacement above; publishContributedImage
   // would otherwise refuse a pin whose photo came from somewhere else.

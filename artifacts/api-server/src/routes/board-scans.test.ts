@@ -11,11 +11,15 @@ const state = vi.hoisted(() => ({
   isAppCreator: false,
   refLookups: [] as string[][],
   learned: [] as Array<[string, string]>,
+  rescans: [] as Array<[string, string | null]>,
+  deleted: [] as string[],
+  published: false,
   existing: null as null | { id: string },
   inserted: [] as Array<Record<string, unknown>>,
   uploads: [] as string[],
   enqueued: [] as string[],
   todayCount: 0,
+  scanUpdates: [] as Array<[string, Record<string, unknown>]>,
 }));
 
 vi.mock("@supabase/supabase-js", () => ({
@@ -38,7 +42,7 @@ vi.mock("../services/boardScan/store", async (importOriginal) => ({
     state.inserted.push(row);
     return { id: "scan-1", ...row };
   },
-  updateScan: async () => {},
+  updateScan: async (id: string, patch: Record<string, unknown>) => { state.scanUpdates.push([id, patch]); },
   uploadObject: async (_b: string, path: string) => { state.uploads.push(path); },
   getScan: async (id: string) => ({ id, status: "ready", created_by: "admin-1", image_path: `${id}/board.jpg`, stats: {}, updated_at: new Date().toISOString() }),
   getItem: async (_scan: string, id: string) => ({ id, cleanup_status: "done", cleaned_path: "x.jpg", image_review: "none", decision: "undecided", suggested_pin_id: "PHUK-10122801", decided_pin_id: null }),
@@ -55,6 +59,11 @@ vi.mock("../services/boardScan/pipeline", async (importOriginal) => ({
   ...(await importOriginal<typeof import("../services/boardScan/pipeline")>()),
   enqueue: (id: string) => { state.enqueued.push(id); },
   learnSet: async (_scan: unknown, collection: string, itemId: string) => { state.learned.push([collection, itemId]); return 3; },
+  rescanBoard: async (scan: { id: string }, setHint?: string | null) => { state.rescans.push([scan.id, setHint ?? null]); },
+  deleteBoard: async (scan: { id: string }) => {
+    if (state.published) throw new (await import("../services/boardScan/pipeline")).ReviewError("1 photo from this board is published", 409, "board_has_published");
+    state.deleted.push(scan.id);
+  },
   catalogueRepository: () => ({
     getPinByPinhuntId: async (id: string) => ({ id, title: "Meeko", collection: "Tails of Friendship", imageUrl: undefined }),
     searchPins: async () => [],
@@ -65,7 +74,9 @@ import app from "../app";
 
 let photo = "";
 beforeAll(async () => {
-  photo = (await sharp({ create: { width: 64, height: 48, channels: 3, background: "#346" } }).jpeg().toBuffer()).toString("base64");
+  // A small "board": two pins on a background (not one flat colour, which is refused as blank).
+  const board = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="48"><rect width="64" height="48" fill="#346"/><circle cx="18" cy="24" r="10" fill="#e8a33c"/><rect x="36" y="12" width="18" height="24" fill="#c33"/></svg>`;
+  photo = (await sharp(Buffer.from(board)).jpeg().toBuffer()).toString("base64");
 });
 
 const ownPhoto = { basis: "own_photo", processing: true, publicDisplay: true, notThirdPartyCatalogue: true };
@@ -78,7 +89,7 @@ describe("POST /api/admin/board-scans", () => {
     vi.stubEnv("SUPABASE_ANON_KEY", "anon");
     vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "service");
     vi.stubEnv("BOARD_SCAN_ENABLED", "true");
-    Object.assign(state, { isAdmin: true, isAppCreator: false, refLookups: [], existing: null, inserted: [], uploads: [], enqueued: [], todayCount: 0 });
+    Object.assign(state, { isAdmin: true, isAppCreator: false, refLookups: [], existing: null, inserted: [], uploads: [], enqueued: [], todayCount: 0, scanUpdates: [] });
   });
 
   it("is off (404) unless explicitly enabled, before any auth or upload", async () => {
@@ -119,6 +130,15 @@ describe("POST /api/admin/board-scans", () => {
     });
   });
 
+  it("refuses a blank (all one colour) photo before storing or processing it", async () => {
+    const blank = (await sharp({ create: { width: 64, height: 48, channels: 3, background: "#000" } }).jpeg().toBuffer()).toString("base64");
+    const res = await request(app).post("/api/admin/board-scans").set("Authorization", "Bearer t").send({ imageBase64: blank, permission: ownPhoto });
+    expect(res.status).toBe(400);
+    expect(res.body.error).toMatch(/blank/);
+    expect(state.inserted).toHaveLength(0);
+    expect(state.uploads).toHaveLength(0);
+  });
+
   it("keeps the set typed at upload for matching", async () => {
     const res = await upload({ permission: ownPhoto, setHint: "  Tails of  Friendship " });
     expect(res.status).toBe(202);
@@ -140,6 +160,21 @@ describe("POST /api/admin/board-scans", () => {
     expect(state.enqueued).toEqual([]);
   });
 
+  it("keeps a set typed when the same photo is uploaded again, ready for Scan again", async () => {
+    state.existing = { id: "scan-old" };
+    await upload({ permission: ownPhoto, setHint: "Tails of Friendship" });
+    expect(state.scanUpdates).toEqual([["scan-old", { stats: { setHints: ["Tails of Friendship"] } }]]);
+    expect(state.enqueued).toEqual([]);
+  });
+
+  it("explains an iPhone HEIC photo instead of a generic error", async () => {
+    const heic = Buffer.concat([Buffer.from([0, 0, 0, 24]), Buffer.from("ftypheic"), Buffer.alloc(64)]).toString("base64");
+    const res = await request(app).post("/api/admin/board-scans").set("Authorization", "Bearer t").send({ imageBase64: heic, permission: ownPhoto });
+    expect(res.status).toBe(400);
+    expect(res.body.error).toMatch(/HEIC.*JPEG/);
+    expect(state.inserted).toEqual([]);
+  });
+
   it("enforces the daily board limit", async () => {
     state.todayCount = 40;
     expect((await upload({ permission: ownPhoto })).status).toBe(429);
@@ -152,7 +187,7 @@ describe("board review extras", () => {
     vi.stubEnv("SUPABASE_ANON_KEY", "anon");
     vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "service");
     vi.stubEnv("BOARD_SCAN_ENABLED", "true");
-    Object.assign(state, { isAdmin: true, isAppCreator: false, refLookups: [], learned: [] });
+    Object.assign(state, { isAdmin: true, isAppCreator: false, refLookups: [], learned: [], rescans: [], deleted: [], published: false });
   });
   const getBoard = () => request(app).get("/api/admin/board-scans/scan-1").set("Authorization", "Bearer t");
 
@@ -186,11 +221,41 @@ describe("board review extras", () => {
     expect(state.learned).toEqual([["Tails of Friendship", "i1"]]);
   });
 
+  it("rejecting a photo drops it and lets the reviewer clean again", async () => {
+    const res = await request(app).patch("/api/admin/board-scans/scan-1/items/i1").set("Authorization", "Bearer t").send({ action: "reject_image" });
+    expect(res.status).toBe(200);
+    expect(res.body.item).toMatchObject({ image_review: "rejected", cleanup_status: "skipped", cleaned_path: null });
+    expect(res.body.item.cleanup_note).toMatch(/Clean photo/);
+  });
+
   it("excluding a pin doesn't learn a set", async () => {
     const res = await request(app).patch("/api/admin/board-scans/scan-1/items/i1").set("Authorization", "Bearer t").send({ action: "exclude", reason: "not_a_pin" });
     expect(res.status).toBe(200);
     expect(res.body).toMatchObject({ rematching: 0, set: null });
     expect(state.learned).toEqual([]);
+  });
+
+  it("scans a board again with an optional set, and deletes a board", async () => {
+    const again = await request(app).post("/api/admin/board-scans/scan-1/rescan").set("Authorization", "Bearer t").send({ setHint: "Tails of Friendship" });
+    expect(again.status).toBe(202);
+    expect(state.rescans).toEqual([["scan-1", "Tails of Friendship"]]);
+    const del = await request(app).delete("/api/admin/board-scans/scan-1").set("Authorization", "Bearer t");
+    expect(del.status).toBe(200);
+    expect(state.deleted).toEqual(["scan-1"]);
+  });
+
+  it("explains why a board with published photos can't be deleted", async () => {
+    state.published = true;
+    const del = await request(app).delete("/api/admin/board-scans/scan-1").set("Authorization", "Bearer t");
+    expect(del.status).toBe(409);
+    expect(del.body).toMatchObject({ code: "board_has_published" });
+  });
+
+  it("only admins can scan again or delete", async () => {
+    state.isAdmin = false;
+    expect((await request(app).delete("/api/admin/board-scans/scan-1").set("Authorization", "Bearer t")).status).toBe(403);
+    expect((await request(app).post("/api/admin/board-scans/scan-1/rescan").set("Authorization", "Bearer t")).status).toBe(403);
+    expect(state.deleted).toEqual([]);
   });
 
   it("turns a photo only by \"auto\" or up to 45 degrees", async () => {

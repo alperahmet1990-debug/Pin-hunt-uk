@@ -11,6 +11,8 @@
  * POST   /admin/board-scans/:id/items/:itemId/rotate   Turn the cleaned photo: { degrees } clockwise, or { degrees: "auto" } to straighten.
  * POST   /admin/board-scans/:id/items/:itemId/approve  Publish the cleaned photo to its pin ({ pinId?, replaceExisting? }).
  * POST   /admin/board-scans/:id/approve-ready       Publish every cleaned, confident photo of a pin with no photo.
+ * POST   /admin/board-scans/:id/rescan              Scan the same photo again from the start ({ setHint? }); refused once anything is published.
+ * DELETE /admin/board-scans/:id                     Delete the board, its pins and their images; refused once anything is published.
  * GET    /admin/board-scans-pin-search?q=           Catalogue search for corrections (with the admin-only Pin & Pop picture for the App Creator).
  *
  * Same Bearer JWT → profiles.is_admin check as routes/pin-images.ts. Staging
@@ -29,6 +31,8 @@ import {
   approveReady,
   catalogueRepository,
   cleanSetName,
+  deleteBoard,
+  rescanBoard,
   learnSet,
   rotateCleaned,
   cleanItem,
@@ -38,11 +42,17 @@ import {
   ReviewError,
 } from "../services/boardScan/pipeline";
 import { boardMaxPins } from "../services/boardScan/detect";
-import { normaliseBoardPhoto, sha256, type Box } from "../services/boardScan/quality";
+import { isBlankPhoto, normaliseBoardPhoto, sha256, type Box } from "../services/boardScan/quality";
 import { boardMetrics, itemPriority } from "../services/boardScan/rules";
 import * as store from "../services/boardScan/store";
 import type { BoardScan, BoardScanItem, ExcludeReason } from "../services/boardScan/store";
 import { pixianConfigured } from "../services/pixian";
+
+/** An HEIC/HEIF photo (iPhone's default), which the server's image library can't decode. */
+export function isHeicPhoto(buf: Buffer): boolean {
+  if (buf.length < 12 || buf.toString("latin1", 4, 8) !== "ftyp") return false;
+  return ["heic", "heix", "hevc", "hevx", "heim", "heis", "mif1", "msf1", "heif"].includes(buf.toString("latin1", 8, 12));
+}
 
 const router: IRouter = Router();
 
@@ -207,22 +217,34 @@ router.post("/admin/board-scans", requireAdmin, async (req: AdminRequest, res: R
     }
 
     let normalised;
+    const raw = Buffer.from(imageBase64, "base64");
     try {
-      normalised = await normaliseBoardPhoto(Buffer.from(imageBase64, "base64"));
+      normalised = await normaliseBoardPhoto(raw);
     } catch {
-      res.status(400).json({ error: "That file couldn't be read as a photo." });
+      res.status(400).json({
+        error: isHeicPhoto(raw)
+          ? "This is an iPhone HEIC photo, which the server can't open yet. Export it as a JPEG (on a Mac: File › Export › JPEG; on an iPhone: Settings › Camera › Formats › Most Compatible) and upload that."
+          : "That file couldn't be read as a photo.",
+      });
+      return;
+    }
+    if (await isBlankPhoto(normalised.image)) {
+      res.status(400).json({ error: "That photo is blank (all one colour). If you cropped or exported it, export it again as a JPEG and upload that." });
       return;
     }
     // Same photo again: return the existing board rather than paying twice.
     const sha = sha256(normalised.image);
     const existing = await store.findScanByHash(req.adminId!, sha);
+    // Optional: the set most of the board's pins come from, searched first.
+    const setHint = cleanSetName(body.setHint);
     if (existing) {
+      // A set typed this time is kept for the board, ready for "Scan again".
+      if (setHint && !(existing.stats?.setHints ?? []).some((h) => h.toLowerCase() === setHint.toLowerCase())) {
+        await store.updateScan(existing.id, { stats: { ...(existing.stats ?? {}), setHints: [setHint] } });
+      }
       res.json({ scan: existing, duplicate: true });
       return;
     }
-
-    // Optional: the set most of the board's pins come from, searched first.
-    const setHint = cleanSetName(body.setHint);
     const scan = await store.insertScan({
       created_by: req.adminId!,
       mode: "catalogue_capture",
@@ -365,11 +387,20 @@ router.patch("/admin/board-scans/:id/items/:itemId", requireAdmin, async (req: A
         break;
       }
       case "reset":
-        patch = { decision: "undecided", decided_pin_id: null, exclude_reason: null };
+        patch = {
+          decision: "undecided", decided_pin_id: null, exclude_reason: null,
+          ...(item.image_review === "rejected" ? { image_review: "none" as const } : {}),
+        };
         break;
       case "reject_image":
         if (item.image_review === "approved") { res.status(400).json({ error: "Already published." }); return; }
-        patch = { image_review: "rejected" };
+        // Not a dead end: the cleaned photo is dropped and "Clean photo" is
+        // offered again (e.g. after correcting the crop). Automatic clean-up
+        // leaves a rejected photo alone.
+        patch = {
+          image_review: "rejected", cleanup_status: "skipped", cleaned_path: null,
+          cleanup_note: "Photo rejected. Use Clean photo to try again, or leave this pin out.",
+        };
         break;
       default:
         res.status(400).json({ error: "Unknown action" });
@@ -427,6 +458,28 @@ router.post("/admin/board-scans/:id/items/:itemId/clean", requireAdmin, async (r
     const updated = await cleanItem(scan, retry, siblings, pins, { force: (req.body ?? {}).force === true, stats });
     await store.updateScan(scan.id, { stats });
     res.json({ item: updated });
+  } catch (err) {
+    fail(res, err);
+  }
+});
+
+router.post("/admin/board-scans/:id/rescan", requireAdmin, async (req: AdminRequest, res: Response) => {
+  try {
+    const scan = await loadScan(req, res);
+    if (!scan) return;
+    await rescanBoard(scan, cleanText((req.body ?? {}).setHint, 120));
+    res.status(202).json({ ok: true });
+  } catch (err) {
+    fail(res, err);
+  }
+});
+
+router.delete("/admin/board-scans/:id", requireAdmin, async (req: AdminRequest, res: Response) => {
+  try {
+    const scan = await loadScan(req, res);
+    if (!scan) return;
+    await deleteBoard(scan);
+    res.json({ ok: true });
   } catch (err) {
     fail(res, err);
   }

@@ -30,6 +30,12 @@ export interface BoardScanStats {
    * migration is needed.
    */
   setHints?: string[];
+  /**
+   * Confirmed pins per set not yet in setHints (lower-cased set → item ids):
+   * a set is learned once two confirmed pins on the board share it, so one
+   * pin from an unrelated set doesn't steer the rest of the board.
+   */
+  setVotes?: Record<string, string[]>;
 }
 
 export interface BoardScan {
@@ -142,12 +148,42 @@ export function mergeSetHints(current: string[] | undefined, next: string[] | un
   return out;
 }
 
-export async function updateScan(id: string, patch: Partial<BoardScan>): Promise<void> {
+/** Votes from both copies, each set's item ids without repeats. */
+export function mergeSetVotes(current: BoardScanStats["setVotes"], next: BoardScanStats["setVotes"]): BoardScanStats["setVotes"] {
+  if (!current && !next) return undefined;
+  const out: Record<string, string[]> = {};
+  for (const votes of [current ?? {}, next ?? {}]) {
+    for (const [set, ids] of Object.entries(votes)) out[set] = [...new Set([...(out[set] ?? []), ...ids])];
+  }
+  return out;
+}
+
+/**
+ * Save a board's fields. Stats are merged into what's saved now, so a copy
+ * read earlier (the processing run, clean-up, approval) doesn't wipe a
+ * counter, set or vote saved meanwhile. `resetStats` starts the counters
+ * afresh (scan again) but keeps the sets unless `replaceSetHints`.
+ */
+export async function updateScan(
+  id: string,
+  patch: Partial<BoardScan>,
+  opts: { resetStats?: boolean; replaceSetHints?: boolean } = {},
+): Promise<void> {
   if (patch.stats) {
     const { data } = await boardDb().from("board_scans").select("stats").eq("id", id).maybeSingle();
-    const current = (data as { stats?: BoardScanStats } | null)?.stats?.setHints;
-    const setHints = mergeSetHints(current, patch.stats.setHints);
-    if (setHints) patch = { ...patch, stats: { ...patch.stats, setHints } };
+    const current = (data as { stats?: BoardScanStats } | null)?.stats ?? {};
+    const setHints = opts.replaceSetHints ? patch.stats.setHints : mergeSetHints(current.setHints, patch.stats.setHints);
+    const setVotes = opts.resetStats ? patch.stats.setVotes : mergeSetVotes(current.setVotes, patch.stats.setVotes);
+    patch = {
+      ...patch,
+      stats: {
+        ...(opts.resetStats ? {} : current),
+        ...patch.stats,
+        ...(setHints ? { setHints } : {}),
+        ...(setVotes ? { setVotes } : {}),
+      },
+    };
+    if (opts.replaceSetHints && !setHints) delete patch.stats!.setHints;
   }
   check(await boardDb().from("board_scans").update(patch).eq("id", id), "Could not update board scan");
 }
@@ -215,6 +251,34 @@ export async function updateItemIf(
   return rows?.[0] ?? null;
 }
 
+/** Paths of every object under a folder (one level), e.g. a board's crops. */
+export async function listObjects(bucket: string, folder: string): Promise<string[]> {
+  const { data, error } = await boardDb().storage.from(bucket).list(folder, { limit: 1000 });
+  if (error) throw new Error(`Could not list images: ${error.message}`);
+  return (data ?? []).filter((o) => o.name && o.id).map((o) => `${folder}/${o.name}`);
+}
+
+/** Remove objects. Best-effort: a leftover file is harmless, so failures are only logged. */
+export async function removeObjects(bucket: string, paths: string[]): Promise<void> {
+  if (paths.length === 0) return;
+  const { error } = await boardDb().storage.from(bucket).remove(paths);
+  if (error) console.warn("[board-scan] could not remove old images:", error.message);
+}
+
+/** Cleaned-photo paths that items on other boards still use (identical crops share one file). */
+export async function cleanedPathsUsedElsewhere(paths: string[], scanId: string): Promise<Set<string>> {
+  if (paths.length === 0) return new Set();
+  const rows = check(
+    await boardDb().from("board_scan_items").select("cleaned_path").in("cleaned_path", paths).neq("board_scan_id", scanId),
+    "Could not check shared clean-ups",
+  ) as Array<{ cleaned_path: string }> | null;
+  return new Set((rows ?? []).map((r) => r.cleaned_path));
+}
+
+export async function deleteScan(id: string): Promise<void> {
+  check(await boardDb().from("board_scans").delete().eq("id", id), "Could not delete the board");
+}
+
 export async function deleteItemsForScan(scanId: string): Promise<void> {
   check(await boardDb().from("board_scan_items").delete().eq("board_scan_id", scanId), "Could not reset board items");
 }
@@ -223,13 +287,21 @@ export async function deleteItemsForScan(scanId: string): Promise<void> {
  * A cleaned photo already made from this exact crop (any board), so the
  * same crop never goes to Pixian twice.
  */
+/** Marker in the file name of a clean-up made in Pixian test mode (watermarked). */
+export const PIXIAN_TEST_MARK = ".pixian-test";
+
+export const isTestModeCleanup = (path: string | null | undefined) => !!path && path.includes(PIXIAN_TEST_MARK);
+
 export async function findCleanedByCropHash(sha: string): Promise<string | null> {
   const rows = check(
     await boardDb().from("board_scan_items").select("cleaned_path")
-      .eq("crop_sha256", sha).eq("cleanup_status", "done").not("cleaned_path", "is", null).limit(1),
+      .eq("crop_sha256", sha).eq("cleanup_status", "done").not("cleaned_path", "is", null).limit(10),
     "Could not check for an earlier clean-up",
   ) ?? [];
-  return (rows[0] as { cleaned_path?: string } | undefined)?.cleaned_path ?? null;
+  // A watermarked test-mode clean-up is only reused while test mode is on.
+  const testMode = process.env.PIXIAN_TEST_MODE === "true";
+  const paths = (rows as Array<{ cleaned_path?: string }>).map((r) => r.cleaned_path).filter((p): p is string => !!p);
+  return paths.find((p) => testMode || !isTestModeCleanup(p)) ?? null;
 }
 
 export async function uploadObject(bucket: string, path: string, body: Buffer): Promise<void> {

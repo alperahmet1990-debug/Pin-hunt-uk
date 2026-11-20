@@ -1,7 +1,7 @@
 import sharp from "sharp";
 import { describe, expect, it } from "vitest";
-import { dedupeDetections, parseDetection, sortReadingOrder, type DetectedPin } from "./detect";
-import { assessCrop, boxToPixels, differenceHash, hammingDistance, laplacianVariance, normaliseBoardPhoto, touchesEdge } from "./quality";
+import { dedupeDetections, detectPins, isDetectionAnswer, parseDetection, sortReadingOrder, type DetectedPin } from "./detect";
+import { assessCrop, boxToPixels, differenceHash, hammingDistance, isBlankPhoto, laplacianVariance, normaliseBoardPhoto, touchesEdge } from "./quality";
 import { boardMetrics, bulkApproveBlock, cleanupBlock, itemPriority } from "./rules";
 import type { BoardScanItem } from "./store";
 import { parseMatches } from "../pinRank";
@@ -21,6 +21,19 @@ function item(extra: Partial<BoardScanItem> = {}): BoardScanItem {
     attempts: 1, error: null, created_at: "", updated_at: "", ...extra,
   };
 }
+
+describe("detectPins", () => {
+  const board = async () => ({ image: await sharp({ create: { width: 64, height: 48, channels: 3, background: "#888" } }).jpeg().toBuffer(), width: 64, height: 48 });
+  const client = (content: string | null, finish = "stop") =>
+    ({ chat: { completions: { create: async () => ({ choices: [{ message: { content }, finish_reason: finish }], usage: {} }) } } }) as never;
+
+  it("treats a missing or garbled answer as a failure, not an empty board", async () => {
+    await expect(detectPins(client(null, "length"), "m", await board())).rejects.toThrow(/no answer \(length\)/);
+    await expect(detectPins(client("Sorry, I can't help"), "m", await board())).rejects.toThrow(/couldn't be read/);
+    expect((await detectPins(client('{"pins": []}'), "m", await board())).pins).toEqual([]);
+    expect(isDetectionAnswer('```json\n{"pins": []}\n```')).toBe(true);
+  });
+});
 
 describe("parseDetection", () => {
   it("reads 0–1000 boxes as fractions and drops malformed entries", () => {
@@ -143,17 +156,28 @@ describe("rules", () => {
     expect(cleanupBlock(scan, item(), [], { imageUrl: null, pendingImages: 1 })).toBe("pin_has_pending_photo");
   });
 
+  it("doesn't let an excluded crop or a rejected photo block another crop of the same pin", () => {
+    const rejected = item({ id: "i2", position: 2, quality: { ...item().quality!, score: 95 }, image_review: "rejected", cleanup_status: "skipped" });
+    const excluded = item({ id: "i3", position: 3, quality: { ...item().quality!, score: 99 }, decision: "excluded", exclude_reason: "duplicate" });
+    expect(cleanupBlock(scan, item(), [item(), rejected, excluded], undefined)).toBeNull();
+  });
+
   it("cleans only the best crop when a pin appears twice", () => {
     const better = item({ id: "i2", position: 2, quality: { ...item().quality!, score: 95 } });
     expect(cleanupBlock(scan, item(), [item(), better], undefined)).toBe("duplicate_of_better_crop");
     expect(cleanupBlock(scan, better, [item(), better], undefined)).toBeNull();
   });
 
-  it("bulk-approves only cleaned, confident, unphotographed pins", () => {
-    const ready = item({ cleanup_status: "done", cleaned_path: "u/board-s1/i1.jpg" });
+  it("bulk-approves only cleaned, reviewer-confirmed, good-quality crops of unphotographed pins", () => {
+    const cleaned = item({ cleanup_status: "done", cleaned_path: "u/board-s1/i1.jpg" });
+    const ready = { ...cleaned, decision: "confirmed" as const, decided_pin_id: "PHUK-1" };
     expect(bulkApproveBlock(scan, ready, { imageUrl: null, pendingImages: 0 })).toBeNull();
-    expect(bulkApproveBlock(scan, { ...ready, match_confidence: 60 }, undefined)).toBe("match needs confirming");
-    expect(bulkApproveBlock(scan, { ...ready, match_confidence: 60, decision: "corrected", decided_pin_id: "PHUK-2" }, undefined)).toBeNull();
+    // A high score alone is never enough: the 94–98% wrong matches seen on real boards.
+    expect(bulkApproveBlock(scan, { ...cleaned, match_confidence: 98 }, undefined)).toBe("match needs confirming");
+    expect(bulkApproveBlock(scan, { ...cleaned, decision: "corrected", decided_pin_id: "PHUK-2" }, undefined)).toBeNull();
+    // A crop that failed the quality check (e.g. cleaned with "Clean photo" to have a look) is never bulk-published.
+    const poor = { ...ready, quality: { ...ready.quality!, suitable: false, reasons: ["cut_off" as const] } };
+    expect(bulkApproveBlock(scan, poor, undefined)).toBe("crop failed the quality check");
     expect(bulkApproveBlock(scan, ready, { imageUrl: "https://x", pendingImages: 0 })).toBe("pin already has a photo");
     expect(bulkApproveBlock(scan, item(), undefined)).toBe("not cleaned");
   });
@@ -184,3 +208,24 @@ describe("parseMatches", () => {
     expect(parseMatches("nope", new Set(["A"]))).toEqual([]);
   });
 });
+
+describe("board photo upload", () => {
+  it("keeps the colours of a photo saved with a transparent alpha channel (it used to come out black)", async () => {
+    const w = 120, h = 80;
+    const raw = Buffer.alloc(w * h * 4);
+    for (let i = 0; i < w * h; i++) { raw[i * 4] = 200; raw[i * 4 + 1] = 120 + (i % w) % 50; raw[i * 4 + 2] = 60; raw[i * 4 + 3] = 0; }
+    const png = await sharp(raw, { raw: { width: w, height: h, channels: 4 } }).png().toBuffer();
+    const { image } = await normaliseBoardPhoto(png);
+    const { channels } = await sharp(image).stats();
+    expect(Math.round(channels[0].mean)).toBeGreaterThan(150);
+    expect(await isBlankPhoto(image)).toBe(false);
+  });
+
+  it("recognises a blank photo, and not a real one", async () => {
+    const black = await sharp({ create: { width: 200, height: 150, channels: 3, background: "#000" } }).jpeg().toBuffer();
+    const board = await sharp(Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="200" height="150"><rect width="200" height="150" fill="#9cc3d5"/><circle cx="60" cy="75" r="40" fill="#e8a33c"/></svg>`)).jpeg().toBuffer();
+    expect(await isBlankPhoto(black)).toBe(true);
+    expect(await isBlankPhoto(board)).toBe(false);
+  });
+});
+

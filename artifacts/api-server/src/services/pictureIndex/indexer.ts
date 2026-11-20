@@ -73,6 +73,8 @@ const BATCH = 50;
 const CONCURRENCY = 4;
 const MAX_TRIES = 3;
 const RATE_LIMIT_WAIT_MS = 30_000;
+/** Consecutive "too many requests" waits before the run stops (a quota problem, not a burst). */
+const MAX_RATE_LIMIT_WAITS = 10;
 
 const errText = (err: unknown) => (err instanceof Error ? err.message : String(err));
 
@@ -91,6 +93,7 @@ export async function runIndexer(
   stopRequested = false;
   const interval = 60_000 / (opts.rate ?? ratePerMinute());
   let nextSlot = 0;
+  let rateLimitWaits = 0;
   // Wait for this request's turn: requests start at most `rate` per minute.
   const pace = async () => {
     const now = Date.now();
@@ -115,6 +118,7 @@ export async function runIndexer(
       await pace();
       try {
         const embedding = await deps.embed(picture);
+        rateLimitWaits = 0;
         await deps.save(ref, embedding);
         state.done++;
         return;
@@ -124,6 +128,9 @@ export async function runIndexer(
           throw err; // every picture would fail the same way
         }
         if (status === 429) {
+          if (++rateLimitWaits > MAX_RATE_LIMIT_WAITS) {
+            throw new Error("Google kept refusing for too many requests. Check the Vertex AI quota (or lower PICTURE_INDEX_RATE_PER_MIN), then Continue.");
+          }
           state.lastError = "Google's per-minute limit was reached; waiting before carrying on.";
           await deps.sleep(RATE_LIMIT_WAIT_MS);
           continue;
@@ -131,7 +138,7 @@ export async function runIndexer(
         if (attempt >= MAX_TRIES) {
           await deps.save(ref, null, errText(err));
           state.failed++;
-          state.lastError = errText(err);
+          state.lastError = errText(err).slice(0, 200);
           return;
         }
       }
@@ -161,7 +168,7 @@ export async function runIndexer(
       state.stopReason = "stopped";
     } else {
       state.stopReason = "error";
-      state.lastError = errText(err);
+      state.lastError = errText(err).slice(0, 200);
       console.warn("[picture-index] stopped:", state.lastError);
     }
   } finally {

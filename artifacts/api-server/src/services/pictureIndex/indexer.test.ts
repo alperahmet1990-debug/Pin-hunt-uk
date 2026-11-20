@@ -120,4 +120,13 @@ describe("picture index: building it", () => {
     expect(indexerState()).toMatchObject({ running: false, stopReason: "stopped" });
     expect(w.index.size).toBeLessThan(400);
   });
+
+  it("stops when Google keeps refusing for too many requests, instead of waiting forever", async () => {
+    const w = world(1);
+    w.deps.embed = async () => { throw new VertexError("Picture description failed (429)", 429); };
+    await runIndexer({ rate: 6000 }, w.deps);
+    expect(w.sleeps.filter((ms) => ms === 30_000)).toHaveLength(10);
+    expect(indexerState()).toMatchObject({ stopReason: "error", lastError: expect.stringContaining("quota") });
+    expect(w.index.size).toBe(0);
+  });
 });

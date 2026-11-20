@@ -35,8 +35,12 @@ function embeddedIPv4(v6: string): string | null {
 export function isPrivateAddress(ip: string): boolean {
   if (isIP(ip) === 4) {
     const [a, b] = ip.split(".").map(Number);
+    const [, , c] = ip.split(".").map(Number);
     return a === 0 || a === 10 || a === 127 || (a === 169 && b === 254) || (a === 172 && b >= 16 && b <= 31) ||
-      (a === 192 && b === 168) || (a === 100 && b >= 64 && b <= 127) || a >= 224;
+      (a === 192 && b === 168) || (a === 100 && b >= 64 && b <= 127) || a >= 224 ||
+      // IETF protocol assignments, benchmarking and documentation ranges.
+      (a === 192 && b === 0 && (c === 0 || c === 2)) || (a === 198 && (b === 18 || b === 19)) ||
+      (a === 198 && b === 51 && c === 100) || (a === 203 && b === 0 && c === 113);
   }
   const v6 = ip.toLowerCase();
   const inner = embeddedIPv4(v6);
@@ -53,7 +57,12 @@ async function assertPublicUrl(raw: string, allowPrivate: boolean): Promise<URL>
   if (url.protocol !== "https:" && url.protocol !== "http:") throw new Error("not a web address");
   if (allowPrivate) return url;
   const host = url.hostname.replace(/^\[|\]$/g, "");
-  const addresses = isIP(host) ? [host] : (await lookup(host, { all: true })).map((a) => a.address);
+  const addresses = isIP(host)
+    ? [host]
+    : (await Promise.race([
+      lookup(host, { all: true }),
+      new Promise<never>((_, reject) => setTimeout(() => reject(new Error("address lookup timed out")), 3_000).unref()),
+    ])).map((a) => a.address);
   if (addresses.length === 0 || addresses.some(isPrivateAddress)) throw new Error("address not allowed");
   return url;
 }

@@ -76,4 +76,11 @@ describe("picture index: Vertex AI", () => {
   it("writes vectors the way pgvector reads them", () => {
     expect(toVectorLiteral([0.5, -1, 2e-3])).toBe("[0.5,-1,0.002]");
   });
+
+  it("only uses a real-looking region name in the address it sends the token to", async () => {
+    const { vertexLocation } = await import("./vertex");
+    expect(vertexLocation({ VERTEX_LOCATION: "europe-west2" } as NodeJS.ProcessEnv)).toBe("europe-west2");
+    expect(vertexLocation({ VERTEX_LOCATION: "evil.example.com/x" } as NodeJS.ProcessEnv)).toBe("us-central1");
+    expect(vertexLocation({} as NodeJS.ProcessEnv)).toBe("us-central1");
+  });
 });

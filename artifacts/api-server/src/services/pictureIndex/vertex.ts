@@ -42,8 +42,10 @@ export function pictureIndexConfigured(env: NodeJS.ProcessEnv = process.env): bo
   return env.PICTURE_INDEX_ENABLED === "true" && !!sa && !!(env.VERTEX_PROJECT_ID || sa.project_id);
 }
 
+/** A Google Cloud region name (e.g. us-central1, europe-west2); anything else falls back to us-central1. */
 export function vertexLocation(env: NodeJS.ProcessEnv = process.env): string {
-  return env.VERTEX_LOCATION?.trim() || "us-central1";
+  const raw = env.VERTEX_LOCATION?.trim() ?? "";
+  return /^[a-z]+-[a-z]+[0-9]{1,2}$/.test(raw) ? raw : "us-central1";
 }
 
 export class VertexError extends Error {

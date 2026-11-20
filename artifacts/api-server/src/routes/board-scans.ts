@@ -328,7 +328,9 @@ router.get("/admin/board-scans-picture-index", requireAdmin, async (_req: AdminR
     try {
       status = await indexStatus();
     } catch (err) {
-      statusError = err instanceof Error ? err.message : String(err);
+      // Details stay in the server log; the screen gets a short reason.
+      console.warn("[picture-index] status failed:", err instanceof Error ? err.message : err);
+      statusError = "Could not read the picture index. Has migration 085 been applied?";
     }
   }
   res.json({

@@ -171,8 +171,11 @@ export async function runIndexer(
       state.stopReason = "stopped";
     } else {
       state.stopReason = "error";
-      state.lastError = errText(err).slice(0, 200);
-      console.warn("[picture-index] stopped:", state.lastError);
+      console.warn("[picture-index] stopped:", errText(err));
+      // Our own and Vertex messages are written for admins; database errors stay in the log.
+      state.lastError = /^Could not (list|save|read)/.test(errText(err))
+        ? "Could not read or write the picture index. See the server log."
+        : errText(err).slice(0, 200);
     }
   } finally {
     state.running = false;

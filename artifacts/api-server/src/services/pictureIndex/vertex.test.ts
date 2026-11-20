@@ -61,8 +61,8 @@ describe("picture index: Vertex AI", () => {
 
   it("uses the region and project set for Vertex", async () => {
     const g = fakeGoogle(() => ({ status: 200, body: { predictions: [{ imageEmbedding: vector }] } }));
-    await embedImage(await picture(), { env: { ...env, VERTEX_LOCATION: "us-central1", VERTEX_PROJECT_ID: "other" }, fetchImpl: g.impl });
-    expect(g.calls[1].url).toContain("https://us-central1-aiplatform.googleapis.com/v1/projects/other/locations/us-central1/");
+    await embedImage(await picture(), { env: { ...env, VERTEX_LOCATION: "europe-west4", VERTEX_PROJECT_ID: "other" }, fetchImpl: g.impl });
+    expect(g.calls[1].url).toContain("https://europe-west4-aiplatform.googleapis.com/v1/projects/other/locations/europe-west4/");
   });
 
   it("reports Google's refusals with their status, and odd answers", async () => {
@@ -85,5 +85,7 @@ describe("picture index: Vertex AI", () => {
     expect(vertexLocation({ VERTEX_LOCATION: "europe-west2" } as NodeJS.ProcessEnv)).toBe("europe-west2");
     expect(vertexLocation({ VERTEX_LOCATION: "evil.example.com/x" } as NodeJS.ProcessEnv)).toBe("europe-west2");
     expect(vertexLocation({} as NodeJS.ProcessEnv)).toBe("europe-west2");
+    // Outside the UK/EU isn't covered by the privacy policy.
+    expect(vertexLocation({ VERTEX_LOCATION: "us-central1" } as NodeJS.ProcessEnv)).toBe("europe-west2");
   });
 });

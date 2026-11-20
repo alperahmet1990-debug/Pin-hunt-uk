@@ -45,10 +45,18 @@ export function pictureIndexConfigured(env: NodeJS.ProcessEnv = process.env): bo
 /** Default region: London, so board crops stay in the UK. */
 export const DEFAULT_VERTEX_LOCATION = "europe-west2";
 
-/** A Google Cloud region name (e.g. europe-west2, us-central1); anything else falls back to the default. */
+/**
+ * UK and EU regions only: the privacy policy doesn't cover sending board crops
+ * elsewhere. Anything else falls back to the default (London).
+ */
+export const ALLOWED_VERTEX_LOCATIONS = [
+  "europe-west2", "europe-west1", "europe-west3", "europe-west4", "europe-west8", "europe-west9",
+  "europe-north1", "europe-southwest1", "europe-central2",
+] as const;
+
 export function vertexLocation(env: NodeJS.ProcessEnv = process.env): string {
   const raw = env.VERTEX_LOCATION?.trim() ?? "";
-  return /^[a-z]+-[a-z]+[0-9]{1,2}$/.test(raw) ? raw : DEFAULT_VERTEX_LOCATION;
+  return (ALLOWED_VERTEX_LOCATIONS as readonly string[]).includes(raw) ? raw : DEFAULT_VERTEX_LOCATION;
 }
 
 export class VertexError extends Error {

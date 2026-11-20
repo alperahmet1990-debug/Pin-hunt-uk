@@ -137,4 +137,11 @@ describe("picture index: building it", () => {
     expect(w.index.size).toBe(0);
     expect(indexerState()).toMatchObject({ stopReason: "error", lastError: expect.stringContaining("VERTEX_LOCATION") });
   });
+
+  it("keeps database error details out of the admin screen", async () => {
+    const w = world(2);
+    w.deps.pending = async () => { throw new Error("Could not list pictures to index: relation \"pin_picture_index\" does not exist"); };
+    await runIndexer({ rate: 6000 }, w.deps);
+    expect(indexerState()).toMatchObject({ stopReason: "error", lastError: "Could not read or write the picture index. See the server log." });
+  });
 });

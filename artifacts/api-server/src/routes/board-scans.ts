@@ -42,7 +42,7 @@ import {
   ReviewError,
 } from "../services/boardScan/pipeline";
 import { boardMaxPins } from "../services/boardScan/detect";
-import { normaliseBoardPhoto, sha256, type Box } from "../services/boardScan/quality";
+import { isBlankPhoto, normaliseBoardPhoto, sha256, type Box } from "../services/boardScan/quality";
 import { boardMetrics, itemPriority } from "../services/boardScan/rules";
 import * as store from "../services/boardScan/store";
 import type { BoardScan, BoardScanItem, ExcludeReason } from "../services/boardScan/store";
@@ -215,6 +215,10 @@ router.post("/admin/board-scans", requireAdmin, async (req: AdminRequest, res: R
       normalised = await normaliseBoardPhoto(Buffer.from(imageBase64, "base64"));
     } catch {
       res.status(400).json({ error: "That file couldn't be read as a photo." });
+      return;
+    }
+    if (await isBlankPhoto(normalised.image)) {
+      res.status(400).json({ error: "That photo is blank (all one colour). If you cropped or exported it, export it again as a JPEG and upload that." });
       return;
     }
     // Same photo again: return the existing board rather than paying twice.

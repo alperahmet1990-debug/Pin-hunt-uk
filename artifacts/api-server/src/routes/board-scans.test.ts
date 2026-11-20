@@ -73,7 +73,9 @@ import app from "../app";
 
 let photo = "";
 beforeAll(async () => {
-  photo = (await sharp({ create: { width: 64, height: 48, channels: 3, background: "#346" } }).jpeg().toBuffer()).toString("base64");
+  // A small "board": two pins on a background (not one flat colour, which is refused as blank).
+  const board = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="48"><rect width="64" height="48" fill="#346"/><circle cx="18" cy="24" r="10" fill="#e8a33c"/><rect x="36" y="12" width="18" height="24" fill="#c33"/></svg>`;
+  photo = (await sharp(Buffer.from(board)).jpeg().toBuffer()).toString("base64");
 });
 
 const ownPhoto = { basis: "own_photo", processing: true, publicDisplay: true, notThirdPartyCatalogue: true };
@@ -125,6 +127,15 @@ describe("POST /api/admin/board-scans", () => {
       permission_basis: "contributor_permission", contributor_name: "A Collector",
       permission_evidence: "Facebook message, 11 Nov 2026", permission_public_display: true,
     });
+  });
+
+  it("refuses a blank (all one colour) photo before storing or processing it", async () => {
+    const blank = (await sharp({ create: { width: 64, height: 48, channels: 3, background: "#000" } }).jpeg().toBuffer()).toString("base64");
+    const res = await request(app).post("/api/admin/board-scans").set("Authorization", "Bearer t").send({ imageBase64: blank, permission: ownPhoto });
+    expect(res.status).toBe(400);
+    expect(res.body.error).toMatch(/blank/);
+    expect(state.inserted).toHaveLength(0);
+    expect(state.uploads).toHaveLength(0);
   });
 
   it("keeps the set typed at upload for matching", async () => {

@@ -205,9 +205,22 @@ export async function assessCrop(
  * coordinates match what people see), cap the size, and re-encode — which
  * also strips EXIF metadata such as GPS location from what we store.
  */
+/**
+ * True when a photo is (almost) one flat colour — an all-black or all-white
+ * export, not a board. Checked at upload so nothing is stored or sent to the AI.
+ */
+export async function isBlankPhoto(image: Buffer): Promise<boolean> {
+  const { channels } = await sharp(image).resize(256, 256, { fit: "inside" }).removeAlpha().stats();
+  return channels.slice(0, 3).every((c) => c.stdev < 4);
+}
+
 export async function normaliseBoardPhoto(input: Buffer, maxSide = 4096): Promise<{ image: Buffer; width: number; height: number }> {
   const { data, info } = await sharp(input)
     .rotate()
+    // A board photo's transparency means nothing, and JPEG turns transparent
+    // pixels black: some exports (e.g. a cropped PNG) store the picture with
+    // zero alpha, which came out as an all-black board. Keep the colours.
+    .removeAlpha()
     .resize(maxSide, maxSide, { fit: "inside", withoutEnlargement: true })
     .jpeg({ quality: 92 })
     .toBuffer({ resolveWithObject: true });

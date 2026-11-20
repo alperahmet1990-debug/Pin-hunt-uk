@@ -1,7 +1,7 @@
 import sharp from "sharp";
 import { describe, expect, it } from "vitest";
 import { dedupeDetections, parseDetection, sortReadingOrder, type DetectedPin } from "./detect";
-import { assessCrop, boxToPixels, differenceHash, hammingDistance, laplacianVariance, normaliseBoardPhoto, touchesEdge } from "./quality";
+import { assessCrop, boxToPixels, differenceHash, hammingDistance, isBlankPhoto, laplacianVariance, normaliseBoardPhoto, touchesEdge } from "./quality";
 import { boardMetrics, bulkApproveBlock, cleanupBlock, itemPriority } from "./rules";
 import type { BoardScanItem } from "./store";
 import { parseMatches } from "../pinRank";
@@ -184,3 +184,24 @@ describe("parseMatches", () => {
     expect(parseMatches("nope", new Set(["A"]))).toEqual([]);
   });
 });
+
+describe("board photo upload", () => {
+  it("keeps the colours of a photo saved with a transparent alpha channel (it used to come out black)", async () => {
+    const w = 120, h = 80;
+    const raw = Buffer.alloc(w * h * 4);
+    for (let i = 0; i < w * h; i++) { raw[i * 4] = 200; raw[i * 4 + 1] = 120 + (i % w) % 50; raw[i * 4 + 2] = 60; raw[i * 4 + 3] = 0; }
+    const png = await sharp(raw, { raw: { width: w, height: h, channels: 4 } }).png().toBuffer();
+    const { image } = await normaliseBoardPhoto(png);
+    const { channels } = await sharp(image).stats();
+    expect(Math.round(channels[0].mean)).toBeGreaterThan(150);
+    expect(await isBlankPhoto(image)).toBe(false);
+  });
+
+  it("recognises a blank photo, and not a real one", async () => {
+    const black = await sharp({ create: { width: 200, height: 150, channels: 3, background: "#000" } }).jpeg().toBuffer();
+    const board = await sharp(Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="200" height="150"><rect width="200" height="150" fill="#9cc3d5"/><circle cx="60" cy="75" r="40" fill="#e8a33c"/></svg>`)).jpeg().toBuffer();
+    expect(await isBlankPhoto(black)).toBe(true);
+    expect(await isBlankPhoto(board)).toBe(false);
+  });
+});
+

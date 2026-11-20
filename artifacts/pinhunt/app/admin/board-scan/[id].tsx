@@ -320,7 +320,7 @@ export default function AdminBoardScanScreen() {
   // reviewer, cleaned, crop passed the quality check, pin has no photo yet.
   const readyCount = data.items.filter((i) =>
     (i.decision === 'confirmed' || i.decision === 'corrected') && i.cleanup_status === 'done' && i.image_review === 'none' &&
-    i.quality?.suitable !== false && !i.targetPin?.imageUrl).length;
+    i.quality?.suitable === true && !i.targetPin?.imageUrl).length;
 
   return (
     <>
@@ -510,7 +510,7 @@ export default function AdminBoardScanScreen() {
               {i.decision === 'undecided' && top?.reasoning ? (
                 <Text style={[styles.tiny, { color: colors.homeMuted }]}>{top.reasoning}</Text>
               ) : null}
-              {i.decision === 'undecided' && top && top.verified !== undefined ? (
+              {i.decision === 'undecided' && top && top.verified !== undefined && !(i.error && !top.verified) ? (
                 <Text style={[styles.tiny, { color: top.verified ? '#2E8B57' : colors.homeSand }]}>
                   {top.verified ? 'Checked against reference pictures.' : 'Not checked against a picture: compare carefully.'}
                 </Text>

@@ -43,6 +43,7 @@ Uploaded photos are re-encoded, which strips EXIF (including GPS location).
 | Same board photo uploaded again | reuses the earlier board | — |
 | AI calls per board | 1 detection, then per pin: 1 describe + 1 rank + 1 comparison whenever a reference image exists (≈ 3 per pin; a 22-pin board ≈ 65) | `BOARD_DETECT_TILES=2` adds 4 detection calls; `BOARD_MATCH_ALWAYS_COMPARE=false` compares only unsure rankings |
 | Pixian | automatic only for crops that are suitable, matched ≥ 70%, of a pin with no photo and no pending photo, best crop of that pin on the board, on a board with public-display permission. Identical crops are never cleaned twice. Everything else on request. | `BOARD_AUTO_CLEAN_MIN_CONFIDENCE` |
+| Reference pictures in the picture check | sent at `high` detail (≈ 765 input tokens each at 768px, vs 85 at `low`; up to 5 per pin ≈ 3.4k extra tokens per checked pin). Needed to tell frame metal, dangles and small text apart — the Rhino round-vs-framed mix-up. | `BOARD_REFERENCE_DETAIL=low` to save tokens |
 | "Approve all ready" | match confirmed or corrected by the reviewer + cleaned + crop passed the quality check + pin has no photo. Never on confidence alone. | — |
 
 ## Quality checks (starting thresholds — calibrate on real boards)

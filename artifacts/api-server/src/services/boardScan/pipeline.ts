@@ -539,6 +539,7 @@ async function assertNothingPublished(scan: BoardScan, items: BoardScanItem[]) {
 export async function rescanBoard(scan: BoardScan, setHint?: string | null): Promise<void> {
   const items = await store.listItems(scan.id);
   await assertNothingPublished(scan, items);
+  await store.removePendingBoardImages(items.map((i) => i.id));
   await store.deleteItemsForScan(scan.id);
   await store.removeObjects(store.BOARD_BUCKET, await store.listObjects(store.BOARD_BUCKET, `${scan.id}/crops`).catch(() => []));
   const set = cleanSetName(setHint);
@@ -560,6 +561,7 @@ export async function deleteBoard(scan: BoardScan): Promise<void> {
   await assertNothingPublished(scan, items);
   const cleaned = [...new Set(items.map((i) => i.cleaned_path).filter((p): p is string => !!p))];
   const shared = await store.cleanedPathsUsedElsewhere(cleaned, scan.id);
+  await store.removePendingBoardImages(items.map((i) => i.id));
   await store.deleteItemsForScan(scan.id);
   await store.deleteScan(scan.id);
   const crops = await store.listObjects(store.BOARD_BUCKET, `${scan.id}/crops`).catch(() => [] as string[]);
@@ -573,10 +575,6 @@ export class ReviewError extends Error {
   }
 }
 
-/**
- * Publish one cleaned crop as its pin's catalogue photo. Approving is the
- * reviewer confirming both the match and the photo.
- */
 /** A pending photo record an earlier, failed approval of this item left behind, if it still fits. */
 async function reusableImage(item: BoardScanItem, target: string, userRepo: ReturnType<typeof writeRepositories>["userRepo"]) {
   const { data } = await store.boardDb().from("pin_images").select("id, status")
@@ -591,6 +589,10 @@ async function reusableImage(item: BoardScanItem, target: string, userRepo: Retu
   return null;
 }
 
+/**
+ * Publish one cleaned crop as its pin's catalogue photo. Approving is the
+ * reviewer confirming both the match and the photo.
+ */
 export async function approveItem(
   scan: BoardScan,
   item: BoardScanItem,

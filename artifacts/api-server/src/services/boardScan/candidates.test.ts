@@ -117,4 +117,15 @@ describe("findBoardCandidates", () => {
     expect(calls).toContain("Made Up Set Stitch||");
     expect(calls).toContain("Made Up Set|Stitch|");
   });
+
+  it("puts look-alikes first but keeps room for the text matches", async () => {
+    const lookalikes = Array.from({ length: 30 }, (_, i) => pin(`L-${i}`, `Look-alike ${i}`, ["Someone"]));
+    const out = await findBoardCandidates(repo([]), { characters: ["Grogu"], keywords: ["pod"] }, [], 150, [], lookalikes);
+    const ids = out.map((p) => p.id);
+    expect(ids.slice(0, 30)).toEqual(lookalikes.map((p) => p.id));
+    // The precise text match and the broad search still fit within the cap.
+    expect(ids).toContain("PHUK-TARGET");
+    expect(ids.length).toBe(150);
+    expect(ids.filter((id) => id.startsWith("G-")).length).toBeGreaterThan(0);
+  });
 });

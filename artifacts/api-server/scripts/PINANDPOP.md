@@ -31,6 +31,14 @@ Code:
   The URL is used only in that prompt. It is never returned to the app and never
   logged (`routes/scan-references.test.ts` checks the response). Needs
   `SUPABASE_SERVICE_ROLE_KEY` on the API server; without it the scan simply skips them.
+- **Picture index (maintainer decision 20 Nov 2026, approved on #659; board scanning).** Each P&P reference
+  picture may be described once as an image embedding (256 numbers; the picture
+  can't be rebuilt from it) by Google Vertex AI, and the numbers kept in
+  `pin_picture_index` (migration 085) so board matching can find pins that look
+  like a crop. The picture is held in memory only while it's described; it is
+  never stored. The index is service-role only and never returned to the app.
+  Delete it with `drop table pin_picture_index` (see 085's rollback) if the
+  licence ends or Pin & Pop asks.
 - **No redistribution.** Nothing exports the dataset. Don't add bulk exports or
   public APIs that return it wholesale.
 - **No paywall-only use.** Catalogue data must stay free to view.

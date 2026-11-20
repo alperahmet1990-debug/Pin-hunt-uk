@@ -11,6 +11,8 @@
  * restart) leaves a partly processed board that can be resumed — only the
  * unfinished pins are redone. Nothing is published without a reviewer.
  */
+import { lookalikePins } from "../pictureIndex/search";
+import { pictureIndexConfigured } from "../pictureIndex/vertex";
 import { createSupabasePinRepository, createSupabaseUserRepository, type PinRepository } from "@workspace/pin-repository";
 import { getOpenAIClient, isAiConfigured } from "@workspace/integrations-openai-ai-server";
 import { normalizePinPhoto, pixianConfigured, PixianTimeoutError } from "../pixian";
@@ -209,6 +211,8 @@ async function matchItem(scan: BoardScan, board: Buffer | null, item: BoardScanI
       repository: catalogueRepository(),
       // Pin & Pop reference images: recognition only (scripts/PINANDPOP.md).
       referenceImages: async (ids) => Object.fromEntries(await pinAndPopReferenceImages(ids, undefined, 5_000)),
+      // The picture index (migration 085), when switched on.
+      ...(pictureIndexConfigured() ? { pictureSearch: lookalikePins } : {}),
     }, usage, { sets: scan.stats?.setHints ?? [] });
     const top = result.candidates[0];
     const patch: Partial<BoardScanItem> = {
@@ -533,14 +537,20 @@ async function assertNothingPublished(scan: BoardScan, items: BoardScanItem[]) {
 /**
  * Scan the same board photo again from the start: detection, describing,
  * matching and clean-up, with the latest matching rules and an optional set.
- * Earlier pins and their crops are removed; the board photo and its
- * permission record are kept.
+ * Earlier pins, their crops and cleaned photos (unless another board uses
+ * the same file) are removed; the board photo and its permission record are kept.
  */
 export async function rescanBoard(scan: BoardScan, setHint?: string | null): Promise<void> {
   const items = await store.listItems(scan.id);
   await assertNothingPublished(scan, items);
+  const cleaned = [...new Set(items.map((i) => i.cleaned_path).filter((p): p is string => !!p))];
+  const shared = await store.cleanedPathsUsedElsewhere(cleaned, scan.id);
+  await store.removePendingBoardImages(items.map((i) => i.id));
   await store.deleteItemsForScan(scan.id);
   await store.removeObjects(store.BOARD_BUCKET, await store.listObjects(store.BOARD_BUCKET, `${scan.id}/crops`).catch(() => []));
+  // Cleaned photos of the old pins (the files pending photo records pointed
+  // to, too), unless another board uses the same file.
+  await store.removeObjects(store.CLEANED_BUCKET, cleaned.filter((p) => !shared.has(p)));
   const set = cleanSetName(setHint);
   // Fresh counters. A set typed now replaces the board's sets (one learned
   // earlier may be what went wrong); otherwise they're kept.
@@ -560,6 +570,7 @@ export async function deleteBoard(scan: BoardScan): Promise<void> {
   await assertNothingPublished(scan, items);
   const cleaned = [...new Set(items.map((i) => i.cleaned_path).filter((p): p is string => !!p))];
   const shared = await store.cleanedPathsUsedElsewhere(cleaned, scan.id);
+  await store.removePendingBoardImages(items.map((i) => i.id));
   await store.deleteItemsForScan(scan.id);
   await store.deleteScan(scan.id);
   const crops = await store.listObjects(store.BOARD_BUCKET, `${scan.id}/crops`).catch(() => [] as string[]);
@@ -573,10 +584,6 @@ export class ReviewError extends Error {
   }
 }
 
-/**
- * Publish one cleaned crop as its pin's catalogue photo. Approving is the
- * reviewer confirming both the match and the photo.
- */
 /** A pending photo record an earlier, failed approval of this item left behind, if it still fits. */
 async function reusableImage(item: BoardScanItem, target: string, userRepo: ReturnType<typeof writeRepositories>["userRepo"]) {
   const { data } = await store.boardDb().from("pin_images").select("id, status")
@@ -591,6 +598,10 @@ async function reusableImage(item: BoardScanItem, target: string, userRepo: Retu
   return null;
 }
 
+/**
+ * Publish one cleaned crop as its pin's catalogue photo. Approving is the
+ * reviewer confirming both the match and the photo.
+ */
 export async function approveItem(
   scan: BoardScan,
   item: BoardScanItem,

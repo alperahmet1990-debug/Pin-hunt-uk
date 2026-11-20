@@ -43,6 +43,7 @@ Uploaded photos are re-encoded, which strips EXIF (including GPS location).
 | Same board photo uploaded again | reuses the earlier board | — |
 | AI calls per board | 1 detection, then per pin: 1 describe + 1 rank + 1 comparison whenever a reference image exists (≈ 3 per pin; a 22-pin board ≈ 65) | `BOARD_DETECT_TILES=2` adds 4 detection calls; `BOARD_MATCH_ALWAYS_COMPARE=false` compares only unsure rankings |
 | Pixian | automatic only for crops that are suitable, matched ≥ 70%, of a pin with no photo and no pending photo, best crop of that pin on the board, on a board with public-display permission. Identical crops are never cleaned twice. Everything else on request. | `BOARD_AUTO_CLEAN_MIN_CONFIDENCE` |
+| Reference pictures in the picture check | sent at `high` detail (≈ 765 input tokens each at 768px, vs 85 at `low`; up to 5 per pin ≈ 3.4k extra tokens per checked pin). Needed to tell frame metal, dangles and small text apart — the Rhino round-vs-framed mix-up. | `BOARD_REFERENCE_DETAIL=low` to save tokens |
 | "Approve all ready" | match confirmed or corrected by the reviewer + cleaned + crop passed the quality check + pin has no photo. Never on confidence alone. | — |
 
 ## Quality checks (starting thresholds — calibrate on real boards)
@@ -99,7 +100,18 @@ The same board also showed a picture check passing **the right art in the wrong 
 
 When the picture check can't run (no reference picture, a download failed, the AI call failed), the card says so in plain words, and a match below the threshold shows as **Not identified — best guess** with a **Use best guess** button rather than **Confirm match**. Reference pictures are downloaded by the server (`references.ts`) before the comparison, so a Pin & Pop link the AI provider can't reach no longer fails the check silently; candidates are re-sorted after the caps.
 
-If the right pin still isn't among the candidates, the next step is searching by picture similarity (an image index of reference photos), which needs a check of what Pin & Pop's terms allow.
+When the right pin still isn't among the candidates, the picture index below adds the pins that look most like the crop.
+
+## Picture index (finding pins by how they look)
+
+Text search can't single out pins titled like hundreds of others ("Meeko") when nothing in the catalogue text describes them. The picture index (migration 085, `services/pictureIndex/`) describes every Pin & Pop reference picture as an image embedding — 256 numbers from Google Vertex AI `multimodalembedding@001`; the picture can't be rebuilt from them and isn't stored — so matching can also ask "which pins look most like this crop?".
+
+- **Matching:** each crop is described the same way (one Vertex call, ≈ $0.0001) and the 30 closest pins go first in the candidates. The ranking reads titles only, so the 2 closest look-alikes not in its top 3 are always shown to the picture check too, where the pictures decide. Candidates found this way carry `lookalike: true`. If the picture search fails, matching carries on by text.
+- **Building it:** Admin → Board Scans → **Picture index** → **Build picture index**. It runs in the background on the API server, paced to `PICTURE_INDEX_RATE_PER_MIN` (default 100, under Vertex's default quota — about 20 hours for 116k pictures; ask Google for a higher quota and raise it to go faster). Progress is saved as it goes: after a restart or **Stop**, **Continue building** picks up where it stopped. A picture that can't be downloaded is marked failed (**Retry failed**). A picture whose URL changes is described again. Cost ≈ $12 for the whole catalogue.
+- **Switching it on (server env):** `PICTURE_INDEX_ENABLED=true`, plus the existing `GOOGLE_APPLICATION_CREDENTIALS_JSON`. Optional `VERTEX_PROJECT_ID` (defaults to the credentials' project) and `VERTEX_LOCATION` (default `europe-west2`, London, so crops stay in the UK; if Google doesn't offer the model there, the build stops and says so — use another EU region such as `europe-west4`; only UK/EU regions are accepted, since the privacy policy doesn't cover sending crops elsewhere). In Google Cloud: enable the **Vertex AI API** on the project and give the service account the **Vertex AI User** role. Without these, the card says it's off and matching works as before.
+- **One build at a time:** the guard is per server process. Render runs one instance, so that's enough today; with more instances, start a build on one only.
+- **Before switching it on in production:** Vertex AI request/response logging and data retention checked in the Google Cloud project; the privacy policy (which now names Google Vertex AI) published with `LAST_UPDATED` set in `artifacts/pinhunt/utils/legal.ts`.
+- **Rights:** reference pictures and crops are sent to Google Vertex AI (a processor alongside OpenAI). Maintainer decision, 20 Nov 2026, approved on #659 (`docs/catalogue-sync/PIN-AND-POP-QUESTIONS.md`, question 8; `scripts/PINANDPOP.md`). Service-role only; never returned to the app. Rollback: migration 085's header.
 
 ## Straightening
 
@@ -113,7 +125,7 @@ The App Creator (`profiles.is_app_creator`) sees each match's Pin & Pop referenc
 
 Uploading the same photo again reopens the earlier board (same pixels, same board), so a board can't be re-run by re-uploading. On the board page:
 
-- **Scan again** runs detection, describing, matching and clean-up again on the same photo, with the latest matching and an optional set. Its pins, crops and matches are replaced; the photo and its permission record are kept.
+- **Scan again** runs detection, describing, matching and clean-up again on the same photo, with the latest matching and an optional set. Its pins, crops, matches and cleaned photos (unless another board uses the same file) are replaced; the photo and its permission record are kept. Photo records a failed approval left pending are removed too.
 - **Delete board** removes the board, its pins, its photo and crops, and cleaned photos no other board uses (identical crops share a cleaned file). The same photo can then be uploaded as a new board.
 
 Both are refused while the board is processing, and once any photo from it is published: the board is that catalogue photo's record of where it came from (`pin_images.source_record_id` → `board_scan_items.id` → the board's permission record).

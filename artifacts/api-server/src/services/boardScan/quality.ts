@@ -201,11 +201,6 @@ export async function assessCrop(
 }
 
 /**
- * Prepare an uploaded board photo: apply EXIF orientation (so box
- * coordinates match what people see), cap the size, and re-encode — which
- * also strips EXIF metadata such as GPS location from what we store.
- */
-/**
  * True when a photo is (almost) one flat colour — an all-black or all-white
  * export, not a board. Checked at upload so nothing is stored or sent to the AI.
  */
@@ -214,6 +209,11 @@ export async function isBlankPhoto(image: Buffer): Promise<boolean> {
   return channels.slice(0, 3).every((c) => c.stdev < 4);
 }
 
+/**
+ * Prepare an uploaded board photo: apply EXIF orientation (so box
+ * coordinates match what people see), cap the size, and re-encode — which
+ * also strips EXIF metadata such as GPS location from what we store.
+ */
 export async function normaliseBoardPhoto(input: Buffer, maxSide = 4096): Promise<{ image: Buffer; width: number; height: number }> {
   const { data, info } = await sharp(input)
     .rotate()

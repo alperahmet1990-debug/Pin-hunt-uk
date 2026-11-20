@@ -20,6 +20,9 @@ const state = vi.hoisted(() => ({
   enqueued: [] as string[],
   todayCount: 0,
   scanUpdates: [] as Array<[string, Record<string, unknown>]>,
+  indexRuns: [] as Array<Record<string, unknown>>,
+  indexRunning: false,
+  indexStopped: 0,
 }));
 
 vi.mock("@supabase/supabase-js", () => ({
@@ -68,6 +71,17 @@ vi.mock("../services/boardScan/pipeline", async (importOriginal) => ({
     getPinByPinhuntId: async (id: string) => ({ id, title: "Meeko", collection: "Tails of Friendship", imageUrl: undefined }),
     searchPins: async () => [],
   }),
+}));
+
+vi.mock("../services/pictureIndex/indexer", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("../services/pictureIndex/indexer")>()),
+  runIndexer: async (opts: Record<string, unknown>) => { state.indexRuns.push(opts); state.indexRunning = true; return true; },
+  stopIndexer: () => { state.indexStopped++; },
+  indexerState: () => ({ running: state.indexRunning, startedAt: null, finishedAt: null, done: 0, failed: 0, lastError: null, stopReason: null }),
+}));
+vi.mock("../services/pictureIndex/store", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("../services/pictureIndex/store")>()),
+  indexStatus: async () => ({ referencesTotal: 116503, indexed: 1200, failed: 3 }),
 }));
 
 import app from "../app";
@@ -262,5 +276,35 @@ describe("board review extras", () => {
     const rotate = (degrees: unknown) =>
       request(app).post("/api/admin/board-scans/scan-1/items/i1/rotate").set("Authorization", "Bearer t").send({ degrees });
     for (const bad of [0, 90, -46, "left", null]) expect((await rotate(bad)).status).toBe(400);
+  });
+
+  describe("picture index", () => {
+    const creds = JSON.stringify({ project_id: "p", client_email: "a@p.iam.gserviceaccount.com", private_key: "k" });
+    beforeEach(() => { Object.assign(state, { indexRuns: [], indexRunning: false, indexStopped: 0 }); });
+
+    it("says when it's switched off, and won't build", async () => {
+      const res = await request(app).get("/api/admin/board-scans-picture-index").set("Authorization", "Bearer t");
+      expect(res.body).toMatchObject({ configured: false, status: null });
+      expect((await request(app).post("/api/admin/board-scans-picture-index/run").set("Authorization", "Bearer t")).status).toBe(400);
+      expect(state.indexRuns).toEqual([]);
+    });
+
+    it("shows progress, starts a build in the background once, and stops it", async () => {
+      vi.stubEnv("PICTURE_INDEX_ENABLED", "true");
+      vi.stubEnv("GOOGLE_APPLICATION_CREDENTIALS_JSON", creds);
+      const res = await request(app).get("/api/admin/board-scans-picture-index").set("Authorization", "Bearer t");
+      expect(res.body).toMatchObject({ configured: true, location: "europe-west2", status: { referencesTotal: 116503, indexed: 1200, failed: 3 } });
+      expect((await request(app).post("/api/admin/board-scans-picture-index/run").set("Authorization", "Bearer t").send({ retryFailed: true })).status).toBe(202);
+      expect(state.indexRuns).toEqual([{ retryFailed: true }]);
+      expect((await request(app).post("/api/admin/board-scans-picture-index/run").set("Authorization", "Bearer t")).status).toBe(409);
+      await request(app).post("/api/admin/board-scans-picture-index/stop").set("Authorization", "Bearer t");
+      expect(state.indexStopped).toBe(1);
+    });
+
+    it("is for admins only", async () => {
+      state.isAdmin = false;
+      expect((await request(app).get("/api/admin/board-scans-picture-index").set("Authorization", "Bearer t")).status).toBe(403);
+      expect((await request(app).post("/api/admin/board-scans-picture-index/run").set("Authorization", "Bearer t")).status).toBe(403);
+    });
   });
 });

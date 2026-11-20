@@ -13,7 +13,6 @@ function envNumber(name: string, fallback: number): number {
 
 /** Match confidence at which a crop is cleaned without the reviewer asking. */
 export const autoCleanMinConfidence = () => envNumber("BOARD_AUTO_CLEAN_MIN_CONFIDENCE", 70);
-/** Match confidence at which "approve all ready" may publish an unconfirmed suggestion. */
 /**
  * Kept for configuration compatibility; "approve all ready" now requires a
  * reviewer's confirmation whatever the score (bulkApproveBlock).
@@ -134,7 +133,7 @@ export function bulkApproveBlock(
   if (!reviewed) return "match needs confirming";
   // A crop that failed the quality check (cut off, overlapped, glare, small)
   // is only published on its own, after a look at it.
-  if (item.quality && !item.quality.suitable) return "crop failed the quality check";
+  if (item.quality?.suitable !== true) return "crop failed the quality check";
   if (pin?.imageUrl) return "pin already has a photo";
   return null;
 }

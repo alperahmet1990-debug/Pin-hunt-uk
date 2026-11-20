@@ -279,19 +279,37 @@ export async function deleteScan(id: string): Promise<void> {
   check(await boardDb().from("board_scans").delete().eq("id", id), "Could not delete the board");
 }
 
+/**
+ * Remove photo records an earlier, failed approval left pending for these
+ * items (pin_images source pinhunt_board_scan, source_record_id = item id).
+ * Called before the items go, so no record is left in the review queue
+ * pointing at a deleted item or file. Published records are never touched.
+ */
+export async function removePendingBoardImages(itemIds: string[]): Promise<void> {
+  if (itemIds.length === 0) return;
+  for (let i = 0; i < itemIds.length; i += 100) {
+    check(
+      await boardDb().from("pin_images").delete()
+        .eq("source", "pinhunt_board_scan").eq("status", "pending")
+        .in("source_record_id", itemIds.slice(i, i + 100)),
+      "Could not remove unfinished photo records",
+    );
+  }
+}
+
 export async function deleteItemsForScan(scanId: string): Promise<void> {
   check(await boardDb().from("board_scan_items").delete().eq("board_scan_id", scanId), "Could not reset board items");
 }
 
-/**
- * A cleaned photo already made from this exact crop (any board), so the
- * same crop never goes to Pixian twice.
- */
 /** Marker in the file name of a clean-up made in Pixian test mode (watermarked). */
 export const PIXIAN_TEST_MARK = ".pixian-test";
 
 export const isTestModeCleanup = (path: string | null | undefined) => !!path && path.includes(PIXIAN_TEST_MARK);
 
+/**
+ * A cleaned photo already made from this exact crop (any board), so the
+ * same crop never goes to Pixian twice.
+ */
 export async function findCleanedByCropHash(sha: string): Promise<string | null> {
   const rows = check(
     await boardDb().from("board_scan_items").select("cleaned_path")

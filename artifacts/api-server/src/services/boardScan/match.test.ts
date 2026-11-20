@@ -134,5 +134,34 @@ describe("matchCrop reference comparison", () => {
     const out = await matchCrop(Buffer.from("x"), { characters: ["Woody"], keywords: [], text: "" }, { openai, model: "m", repository, referenceImages: async () => refs }, emptyUsage());
     expect(out.candidates).toHaveLength(5);
   });
-});
 
+  it("adds look-alikes from the picture index and always shows the closest to the picture check", async () => {
+    // Text search can't single it out (titled like hundreds of others); the picture index can.
+    const look = { id: "PHUK-LOOK", title: "Meeko", brand: "Disney", collection: "Tails of Friendship", characters: ["Meeko"] } as unknown as CataloguePin;
+    const repo = { searchPins: async () => pins, getPinsByIds: async (want: string[]) => (want.includes("PHUK-LOOK") ? [look] : []) } as unknown as PinRepository;
+    const verdict = JSON.stringify([{ pinId: "PHUK-LOOK", confidence: 95, reasoning: "same silver frame", format_match: true }, { pinId: "PHUK-1", confidence: 20, reasoning: "different" }]);
+    const { create, openai } = fakeOpenAI(verdict);
+    const refs = Object.fromEntries([...ids, "PHUK-LOOK"].map((id) => [id, `https://p/${id}.jpg`]));
+    const out = await matchCrop(Buffer.from("x"), { characters: ["Meeko"], keywords: [], text: "" }, {
+      openai, model: "m", repository: repo, referenceImages: async (want) => Object.fromEntries(want.map((id) => [id, refs[id]])),
+      pictureSearch: async () => ["PHUK-LOOK", "PHUK-GONE"],
+    }, emptyUsage());
+    const [rank, verify] = create.mock.calls.map(([r]) => r);
+    // Ranked first among the candidates, though the ranking (titles only) left it out.
+    expect(String(rank.messages[0].content).indexOf("PHUK-LOOK")).toBeLessThan(String(rank.messages[0].content).indexOf("PHUK-1"));
+    expect(String(verify.messages[0].content)).toMatch(/PHUK-LOOK \| "Meeko" .*YES \(shown below\)/);
+    expect(imagesIn(verify)).toBe(6);
+    expect(out.candidates[0]).toMatchObject({ pinId: "PHUK-LOOK", confidence: 95, verified: true, lookalike: true });
+  });
+
+  it("matches by text alone when the picture search fails", async () => {
+    const { openai } = fakeOpenAI(ranking);
+    const refs = Object.fromEntries(ids.map((id) => [id, `https://p/${id}.jpg`]));
+    const out = await matchCrop(Buffer.from("x"), { characters: ["Woody"], keywords: [], text: "" }, {
+      openai, model: "m", repository, referenceImages: async () => refs,
+      pictureSearch: async () => { throw new Error("Vertex down"); },
+    }, emptyUsage());
+    expect(out.candidates[0]).toMatchObject({ pinId: "PHUK-1" });
+    expect(out.candidates.some((c) => c.lookalike)).toBe(false);
+  });
+});

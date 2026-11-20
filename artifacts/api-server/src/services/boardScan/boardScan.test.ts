@@ -178,6 +178,8 @@ describe("rules", () => {
     // A crop that failed the quality check (e.g. cleaned with "Clean photo" to have a look) is never bulk-published.
     const poor = { ...ready, quality: { ...ready.quality!, suitable: false, reasons: ["cut_off" as const] } };
     expect(bulkApproveBlock(scan, poor, undefined)).toBe("crop failed the quality check");
+    // No quality record: not known to have passed, so not bulk-published either.
+    expect(bulkApproveBlock(scan, { ...ready, quality: null }, undefined)).toBe("crop failed the quality check");
     expect(bulkApproveBlock(scan, ready, { imageUrl: "https://x", pendingImages: 0 })).toBe("pin already has a photo");
     expect(bulkApproveBlock(scan, item(), undefined)).toBe("not cleaned");
   });

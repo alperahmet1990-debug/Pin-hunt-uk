@@ -78,7 +78,6 @@ function clamp01(n: number): number {
   return Math.max(0, Math.min(1, n));
 }
 
-/** Parse the model's JSON into boxes (0–1 fractions). Malformed entries are dropped. */
 /** Whether the model's reply is a readable detection answer ({"pins": [...]}, possibly empty). */
 export function isDetectionAnswer(raw: string): boolean {
   const s = raw.indexOf("{");
@@ -91,6 +90,7 @@ export function isDetectionAnswer(raw: string): boolean {
   }
 }
 
+/** Parse the model's JSON into boxes (0–1 fractions). Malformed entries are dropped. */
 export function parseDetection(raw: string): DetectedPin[] {
   let parsed: unknown;
   try {

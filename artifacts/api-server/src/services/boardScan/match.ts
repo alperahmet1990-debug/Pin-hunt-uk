@@ -38,6 +38,8 @@ export interface MatchCandidate {
   reasoning: string;
   /** A picture comparison with reference images produced this ranking. */
   verified?: boolean;
+  /** Found by the picture index: its reference picture looks like the crop. */
+  lookalike?: boolean;
 }
 
 export interface CropMatch {
@@ -60,8 +62,19 @@ export interface MatchDeps {
   referenceImages?: (pinhuntIds: string[]) => Promise<Record<string, string>>;
   /** Fetch one reference picture as an inline image (default: fetchReferenceImage). */
   fetchImage?: (url: string) => Promise<string | null>;
+  /**
+   * Pinhunt ids of the catalogue pins whose reference pictures look most
+   * like the crop, closest first (the picture index). Optional: without it,
+   * candidates come from text search only.
+   */
+  pictureSearch?: (crop: Buffer) => Promise<string[]>;
   timeoutMs?: number;
 }
+
+/** Look-alikes from the picture index added to the candidates. */
+export const LOOKALIKE_CANDIDATES = 30;
+/** Look-alikes always shown to the picture check (with the ranking's top 3). */
+export const LOOKALIKES_COMPARED = 2;
 
 /** Below this, no candidate is plausible: shown as "not identified". */
 export const MATCH_PLAUSIBLE_MIN = 25;
@@ -173,7 +186,24 @@ export async function matchCrop(
   const timeout = deps.timeoutMs ?? 45_000;
   const textTerms = detected.text ? [detected.text] : [];
   const sets = opts.sets ?? [];
-  const catalogue = await findBoardCandidates(deps.repository, detected, textTerms, maxCandidates(), sets);
+  // The picture index, alongside the text search: pins that look like the crop.
+  let lookalikeIds: string[] = [];
+  const lookalikes = deps.pictureSearch
+    ? deps.pictureSearch(crop)
+      .then(async (ids) => {
+        lookalikeIds = ids.slice(0, LOOKALIKE_CANDIDATES);
+        if (lookalikeIds.length === 0) return [];
+        const pins = await deps.repository.getPinsByIds(lookalikeIds);
+        const rank = new Map(lookalikeIds.map((id, i) => [id, i]));
+        return pins.filter((p) => rank.has(p.id)).sort((a, b) => rank.get(a.id)! - rank.get(b.id)!);
+      })
+      .catch((err) => {
+        console.warn("[board-scan] picture search failed, using text search only:", err instanceof Error ? err.message : err);
+        lookalikeIds = [];
+        return [] as CataloguePin[];
+      })
+    : undefined;
+  const catalogue = await findBoardCandidates(deps.repository, detected, textTerms, maxCandidates(), sets, lookalikes);
   if (catalogue.length === 0) return { status: "unmatched", candidates: [], verified: false };
 
   const byId = new Map<string, CataloguePin>(catalogue.map((p) => [p.id, p]));
@@ -202,13 +232,27 @@ export async function matchCrop(
   }, { timeout, maxRetries: 1 }));
   addUsage(usage, rankResp);
   let matches: PinMatch[] = parseMatches(rankResp.choices[0]?.message?.content ?? "", validIds, 5);
+  // The ranking only reads titles; a look-alike titled like hundreds of
+  // others ("Meeko") may not make its top 3. Show the closest look-alikes to
+  // the picture check too, so the pictures decide.
+  const lookalikeSet = new Set(lookalikeIds.filter((id) => validIds.has(id)));
+  const top3 = new Set(matches.slice(0, 3).map((m) => m.pinId));
+  const extra = [...lookalikeSet].filter((id) => !top3.has(id)).slice(0, LOOKALIKES_COMPARED);
 
   let verified = false;
   let problem: string | null = null;
   /** Candidates whose own picture the comparison was shown. */
   let pictured = new Set<string>();
   const decision = verifyDecision(matches);
-  if (decision === "compare" || (decision === "confident" && alwaysCompare())) {
+  if (extra.length > 0) {
+    const rest = matches.slice(3).filter((m) => !extra.includes(m.pinId));
+    matches = [
+      ...matches.slice(0, 3),
+      ...extra.map((pinId) => ({ pinId, confidence: 0, reasoning: "Looks like your pin in the picture index." })),
+      ...rest,
+    ];
+  }
+  if (decision === "compare" || extra.length > 0 || (decision === "confident" && alwaysCompare())) {
     let internal: Record<string, string> = {};
     if (deps.referenceImages) {
       try {
@@ -296,6 +340,7 @@ export async function matchCrop(
       confidence: checked ? m.confidence : Math.min(m.confidence, UNVERIFIED_MAX),
       reasoning: m.reasoning,
       verified: checked,
+      ...(lookalikeSet.has(p.id) ? { lookalike: true } : {}),
     };
   })
     // Order after the caps: an unchecked 88 capped to 60 mustn't stay above a checked 80.

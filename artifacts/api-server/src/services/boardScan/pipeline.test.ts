@@ -130,6 +130,9 @@ vi.mock("./store", async (importOriginal) => {
       return o;
     },
     findCleanedByCropHash: async () => null,
+    removePendingBoardImages: async (ids: string[]) => {
+      mem.images = mem.images.filter((r) => !(r.status === "pending" && ids.includes(r.source_record_id ?? "")));
+    },
     deleteItemsForScan: async (sid: string) => { for (const [k, v] of mem.items) if (v.board_scan_id === sid) mem.items.delete(k); },
     deleteScan: async (sid: string) => { mem.scans.delete(sid); },
     listObjects: async (b: string, folder: string) => [...mem.objects.keys()].filter((k) => k.startsWith(`${b}/${folder}/`)).map((k) => k.slice(b.length + 1)),
@@ -456,6 +459,21 @@ describe("processBoardScan", () => {
     expect(mem.objects.has("board-scans/s1/board.jpg")).toBe(true);
   });
 
+  it("removes the old pins' cleaned photos when scanning again, but not one another board uses", async () => {
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50) }));
+    await processBoardScan("s1");
+    const [a, b] = [...mem.items.values()];
+    Object.assign(a, { cleaned_path: "admin-1/board-s1/a.jpg" });
+    Object.assign(b, { cleaned_path: "admin-1/board-other/shared.jpg" });
+    mem.objects.set("pin-contributed-images/admin-1/board-s1/a.jpg", Buffer.from("a"));
+    mem.objects.set("pin-contributed-images/admin-1/board-other/shared.jpg", Buffer.from("b"));
+    mem.sharedCleaned = new Set(["admin-1/board-other/shared.jpg"]);
+    await rescanBoard(mem.scans.get("s1") as unknown as BoardScan);
+    await vi.waitFor(() => expect(isRunning("s1")).toBe(false));
+    expect(mem.objects.has("pin-contributed-images/admin-1/board-s1/a.jpg")).toBe(false);
+    expect(mem.objects.has("pin-contributed-images/admin-1/board-other/shared.jpg")).toBe(true);
+  });
+
   it("deletes a board, its images, and only the cleaned photos no other board uses", async () => {
     mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50) }));
     await processBoardScan("s1");
@@ -483,6 +501,25 @@ describe("processBoardScan", () => {
     await expect(deleteBoard(scan)).rejects.toMatchObject({ status: 409, code: "board_has_published" });
     expect(mem.items.size).toBe(4);
     expect(mem.scans.has("s1")).toBe(true);
+  });
+
+  it("removes photo records a failed approval left pending when a board is scanned again or deleted", async () => {
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50) }));
+    await processBoardScan("s1");
+    const [a, b] = [...mem.items.keys()];
+    mem.images.push(
+      { id: "left-a", status: "pending", pinhuntId: "PHUK-1", storagePath: "x.jpg", source: "pinhunt_board_scan", source_record_id: a },
+      { id: "other-board", status: "pending", pinhuntId: "PHUK-2", storagePath: "y.jpg", source: "pinhunt_board_scan", source_record_id: "item-elsewhere" },
+    );
+    await rescanBoard(mem.scans.get("s1") as unknown as BoardScan);
+    await vi.waitFor(() => expect(isRunning("s1")).toBe(false));
+    expect(mem.images.map((r) => r.id)).toEqual(["other-board"]);
+
+    const c = [...mem.items.keys()][0];
+    mem.images.push({ id: "left-c", status: "pending", pinhuntId: "PHUK-1", storagePath: "z.jpg", source: "pinhunt_board_scan", source_record_id: c });
+    await deleteBoard(mem.scans.get("s1") as unknown as BoardScan);
+    expect(mem.images.map((r) => r.id)).toEqual(["other-board"]);
+    expect(b).toBeDefined();
   });
 
   it("cleaning a rejected photo again puts it back under review; automatic clean-up leaves it alone", async () => {

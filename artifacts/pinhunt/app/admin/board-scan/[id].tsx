@@ -40,7 +40,7 @@ import { useAuth } from '@/context/AuthContext';
 import { API_BASE } from '@/lib/apiBase';
 
 interface Box { x: number; y: number; w: number; h: number }
-interface Candidate { pinId: string; title: string; collection: string; imageUrl: string | null; confidence: number; reasoning: string; verified?: boolean }
+interface Candidate { pinId: string; title: string; collection: string; imageUrl: string | null; confidence: number; reasoning: string; verified?: boolean; lookalike?: boolean }
 interface SearchResult { pinId: string; title: string; collection: string; imageUrl: string | null; referenceUrl?: string | null }
 interface Item {
   id: string;
@@ -320,7 +320,7 @@ export default function AdminBoardScanScreen() {
   // reviewer, cleaned, crop passed the quality check, pin has no photo yet.
   const readyCount = data.items.filter((i) =>
     (i.decision === 'confirmed' || i.decision === 'corrected') && i.cleanup_status === 'done' && i.image_review === 'none' &&
-    i.quality?.suitable !== false && !i.targetPin?.imageUrl).length;
+    i.quality?.suitable === true && !i.targetPin?.imageUrl).length;
 
   return (
     <>
@@ -510,9 +510,10 @@ export default function AdminBoardScanScreen() {
               {i.decision === 'undecided' && top?.reasoning ? (
                 <Text style={[styles.tiny, { color: colors.homeMuted }]}>{top.reasoning}</Text>
               ) : null}
-              {i.decision === 'undecided' && top && top.verified !== undefined ? (
+              {i.decision === 'undecided' && top && top.verified !== undefined && !(i.error && !top.verified) ? (
                 <Text style={[styles.tiny, { color: top.verified ? '#2E8B57' : colors.homeSand }]}>
                   {top.verified ? 'Checked against reference pictures.' : 'Not checked against a picture: compare carefully.'}
+                  {top.lookalike ? ' Found by picture search.' : ''}
                 </Text>
               ) : null}
               {i.decision === 'undecided' && i.detection?.described ? (

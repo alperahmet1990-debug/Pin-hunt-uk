@@ -92,7 +92,10 @@ export async function downloadPicture(
       if (res.status >= 300 && res.status < 400 && res.headers.get("location")) {
         await res.body?.cancel().catch(() => {});
         if (hop >= MAX_REDIRECTS) throw new Error("too many redirects");
-        current = new URL(res.headers.get("location")!, current).toString();
+        const nextUrl = new URL(res.headers.get("location")!, current);
+        // Never downgrade from https to http.
+        if (new URL(current).protocol === "https:" && nextUrl.protocol !== "https:") throw new Error("insecure redirect");
+        current = nextUrl.toString();
         continue;
       }
       break;

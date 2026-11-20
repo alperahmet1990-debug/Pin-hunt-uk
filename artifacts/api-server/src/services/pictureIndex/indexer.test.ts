@@ -144,4 +144,20 @@ describe("picture index: building it", () => {
     await runIndexer({ rate: 6000 }, w.deps);
     expect(indexerState()).toMatchObject({ stopReason: "error", lastError: "Could not read or write the picture index. See the server log." });
   });
+
+  it("lets every worker finish after a fatal error, so none keeps calling Google", async () => {
+    const w = world(8);
+    let calls = 0;
+    w.deps.embed = async () => {
+      calls++;
+      await new Promise((r) => setTimeout(r, 5));
+      throw new VertexError("Picture description failed (403)", 403);
+    };
+    await runIndexer({ rate: 6000 }, w.deps);
+    const after = calls;
+    await new Promise((r) => setTimeout(r, 30));
+    expect(calls).toBe(after); // nothing still running
+    expect(calls).toBeLessThanOrEqual(4); // each worker stopped after its first refusal
+    expect(indexerState()).toMatchObject({ running: false, stopReason: "error" });
+  });
 });

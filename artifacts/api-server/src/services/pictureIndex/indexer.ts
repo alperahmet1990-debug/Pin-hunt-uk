@@ -161,9 +161,17 @@ export async function runIndexer(
       }
       for (const r of batch) tried.add(r.pin_image_id);
       let next = 0;
-      await Promise.all(Array.from({ length: Math.min(CONCURRENCY, batch.length) }, async () => {
-        while (next < batch.length && !stopRequested) await describe(batch[next++]);
+      let fatal: unknown = null;
+      // Every worker finishes before the run ends: a fatal error stops the
+      // others at their next picture, so none is left calling Google.
+      await Promise.allSettled(Array.from({ length: Math.min(CONCURRENCY, batch.length) }, async () => {
+        try {
+          while (next < batch.length && !stopRequested && !fatal) await describe(batch[next++]);
+        } catch (err) {
+          fatal ??= err;
+        }
       }));
+      if (fatal) throw fatal;
     }
     state.stopReason = stopRequested ? "stopped" : "finished";
   } catch (err) {

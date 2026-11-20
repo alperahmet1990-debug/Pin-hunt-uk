@@ -88,4 +88,11 @@ describe("picture index: Vertex AI", () => {
     // Outside the UK/EU isn't covered by the privacy policy.
     expect(vertexLocation({ VERTEX_LOCATION: "us-central1" } as NodeJS.ProcessEnv)).toBe("europe-west2");
   });
+
+  it("doesn't reuse a sign-in token for a different service account", async () => {
+    const g = fakeGoogle(() => ({ status: 200, body: {} }));
+    await accessToken(sa, g.impl);
+    await accessToken({ ...sa, client_email: "other@proj-1.iam.gserviceaccount.com" }, g.impl);
+    expect(g.calls).toHaveLength(2);
+  });
 });

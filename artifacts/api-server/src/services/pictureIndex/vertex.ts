@@ -78,7 +78,7 @@ const VERTEX_REASON: Record<number, string> = {
 
 const b64url = (s: string | Buffer) => Buffer.from(s).toString("base64url");
 
-let cachedToken: { token: string; expires: number } | null = null;
+let cachedToken: { token: string; expires: number; account: string } | null = null;
 
 export function resetTokenCacheForTests() {
   cachedToken = null;
@@ -86,7 +86,8 @@ export function resetTokenCacheForTests() {
 
 /** An OAuth access token for the service account, reused until a minute before it expires. */
 export async function accessToken(sa: ServiceAccount, fetchImpl: typeof fetch = fetch, now = Date.now()): Promise<string> {
-  if (cachedToken && cachedToken.expires - 60_000 > now) return cachedToken.token;
+  // Reused only for the same service account (credentials can be rotated).
+  if (cachedToken && cachedToken.account === sa.client_email && cachedToken.expires - 60_000 > now) return cachedToken.token;
   const iat = Math.floor(now / 1000);
   const header = b64url(JSON.stringify({ alg: "RS256", typ: "JWT" }));
   const claims = b64url(JSON.stringify({
@@ -112,7 +113,7 @@ export async function accessToken(sa: ServiceAccount, fetchImpl: typeof fetch = 
     if (data.error_description) console.warn(`[picture-index] Google sign-in ${res.status}:`, data.error_description);
     throw new VertexError(`Google sign-in failed (${res.status}). Check the service account's credentials.`, res.status);
   }
-  cachedToken = { token: data.access_token, expires: now + (data.expires_in ?? 3600) * 1000 };
+  cachedToken = { token: data.access_token, expires: now + (data.expires_in ?? 3600) * 1000, account: sa.client_email };
   return data.access_token;
 }
 

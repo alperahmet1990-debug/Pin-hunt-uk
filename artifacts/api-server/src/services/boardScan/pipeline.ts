@@ -339,10 +339,16 @@ export async function cleanItem(
       const crop = await store.downloadObject(store.BOARD_BUCKET, item.crop_path!);
       if (opts.stats) opts.stats.pixianCalls = (opts.stats.pixianCalls ?? 0) + 1;
       const cleaned = await straightenOrKeep(await normalizePinPhoto(crop, "image/jpeg"));
-      cleanedPath = `${scan.created_by}/board-${scan.id}/${item.id}.jpg`;
+      // Test-mode results carry Pixian's watermark: marked in the name so they're never published as real.
+      const mark = process.env.PIXIAN_TEST_MODE === "true" ? store.PIXIAN_TEST_MARK : "";
+      cleanedPath = `${scan.created_by}/board-${scan.id}/${item.id}${mark}.jpg`;
       await store.uploadObject(store.CLEANED_BUCKET, cleanedPath, cleaned);
     }
-    return store.updateItem(item.id, { cleanup_status: "done", cleaned_path: cleanedPath, cleanup_note: null });
+    return store.updateItem(item.id, {
+      cleanup_status: "done", cleaned_path: cleanedPath, cleanup_note: null,
+      // Cleaning a rejected photo again puts it back under review.
+      ...(item.image_review === "rejected" ? { image_review: "none" as const } : {}),
+    });
   } catch (err) {
     const note = err instanceof PixianTimeoutError ? "Pixian took too long — try again." : `Clean-up failed: ${errText(err)}`;
     return store.updateItem(item.id, { cleanup_status: "failed", cleanup_note: note });
@@ -405,7 +411,12 @@ export async function processBoardScan(scanId: string): Promise<void> {
     // ── Clean ──
     // Only automatically, for suitable, confident crops of pins with no
     // photo; anything else waits for the reviewer to ask.
-    const candidates = items.filter((i) => i.cleanup_status === "none" || i.cleanup_status === "failed");
+    // "skipped" is looked at again: a re-match (e.g. after a set was learned)
+    // can make a skipped low-confidence pin confident. A rejected photo is
+    // only cleaned again on request.
+    const candidates = items.filter((i) =>
+      i.cleanup_status === "none" || i.cleanup_status === "failed" ||
+      (i.cleanup_status === "skipped" && i.image_review !== "rejected"));
     if (candidates.length > 0 && scan.permission_public_display) {
       await setStatus("cleaning");
       const t = Date.now();
@@ -553,6 +564,20 @@ export class ReviewError extends Error {
  * Publish one cleaned crop as its pin's catalogue photo. Approving is the
  * reviewer confirming both the match and the photo.
  */
+/** A pending photo record an earlier, failed approval of this item left behind, if it still fits. */
+async function reusableImage(item: BoardScanItem, target: string, userRepo: ReturnType<typeof writeRepositories>["userRepo"]) {
+  const { data } = await store.boardDb().from("pin_images").select("id, status")
+    .eq("source", "pinhunt_board_scan").eq("source_record_id", item.id)
+    .order("created_at", { ascending: false }).limit(1);
+  const prior = (data as Array<{ id: string; status: string }> | null)?.[0];
+  if (!prior || prior.status !== "pending") return null;
+  const image = await userRepo.getContributedImage(prior.id).catch(() => null);
+  if (image && image.pinhuntId === target && image.storagePath === item.cleaned_path) return image;
+  // Left over from an attempt for another pin or photo: remove it so it doesn't sit in the review queue.
+  await store.boardDb().from("pin_images").delete().eq("id", prior.id).eq("status", "pending");
+  return null;
+}
+
 export async function approveItem(
   scan: BoardScan,
   item: BoardScanItem,
@@ -565,6 +590,14 @@ export async function approveItem(
   if (item.decision === "excluded") throw new ReviewError("This pin is excluded from the board.");
   if (item.image_review === "approved") throw new ReviewError("Already published.");
   if (item.cleanup_status !== "done" || !item.cleaned_path) throw new ReviewError("Clean the photo before approving it.");
+  if (store.isTestModeCleanup(item.cleaned_path) && process.env.PIXIAN_TEST_MODE !== "true") {
+    // Offer "Clean photo" again for a real clean-up.
+    await store.updateItem(item.id, {
+      cleanup_status: "skipped", cleaned_path: null,
+      cleanup_note: "This photo was cleaned in Pixian test mode (watermarked). Clean it again before publishing.",
+    });
+    throw new ReviewError("This photo was cleaned in Pixian test mode and carries a watermark. Clean it again before publishing.", 409, "test_mode_cleanup");
+  }
   const target = opts.pinId ?? store.targetPinId(item);
   if (!target) throw new ReviewError("Choose the catalogue pin first.");
 
@@ -575,17 +608,25 @@ export async function approveItem(
   }
 
   const { userRepo, pinRepo } = writeRepositories();
-  const image = await userRepo.createContributedImage(reviewerId, target, {
-    storagePath: item.cleaned_path,
-    consentGranted: true,
-    proposalReason: state.imageUrl ? "poor_quality" : "missing",
-  });
-  // Provenance: trace the published photo back to its board and permission
-  // record. Best effort — a database without 037's columns still publishes.
-  const { error: provenanceError } = await store.boardDb().from("pin_images")
-    .update({ source: "pinhunt_board_scan", source_record_id: item.id, content_hash: item.crop_sha256 })
-    .eq("id", image.id);
-  if (provenanceError) console.warn(`[board-scan] provenance not saved for image ${image.id}:`, provenanceError.message);
+  // Safe to retry: an earlier attempt that created the photo record but
+  // failed to publish left a pending row with this item's provenance. Reuse
+  // it (a second row would break the provenance unique index and publish a
+  // photo with no permission trail); drop it if it no longer fits.
+  let image = await reusableImage(item, target, userRepo);
+  if (!image) {
+    image = await userRepo.createContributedImage(reviewerId, target, {
+      storagePath: item.cleaned_path,
+      consentGranted: true,
+      proposalReason: state.imageUrl ? "poor_quality" : "missing",
+    });
+    // Provenance: trace the published photo back to its board and permission
+    // record. Best effort — a database without 037's columns still publishes.
+    const { error: provenanceError } = await store.boardDb().from("pin_images")
+      .update({ source: "pinhunt_board_scan", source_record_id: item.id, content_hash: item.crop_sha256 })
+      .eq("id", image.id);
+    if (provenanceError) console.warn(`[board-scan] provenance not saved for image ${image.id}:`, provenanceError.message);
+  }
+  await store.updateItem(item.id, { pin_image_id: image.id });
 
   // The reviewer confirmed the replacement above; publishContributedImage
   // would otherwise refuse a pin whose photo came from somewhere else.

@@ -205,6 +205,13 @@ describe("board review extras", () => {
     expect(state.learned).toEqual([["Tails of Friendship", "i1"]]);
   });
 
+  it("rejecting a photo drops it and lets the reviewer clean again", async () => {
+    const res = await request(app).patch("/api/admin/board-scans/scan-1/items/i1").set("Authorization", "Bearer t").send({ action: "reject_image" });
+    expect(res.status).toBe(200);
+    expect(res.body.item).toMatchObject({ image_review: "rejected", cleanup_status: "skipped", cleaned_path: null });
+    expect(res.body.item.cleanup_note).toMatch(/Clean photo/);
+  });
+
   it("excluding a pin doesn't learn a set", async () => {
     const res = await request(app).patch("/api/admin/board-scans/scan-1/items/i1").set("Authorization", "Bearer t").send({ action: "exclude", reason: "not_a_pin" });
     expect(res.status).toBe(200);

@@ -103,6 +103,8 @@ export function cleanupBlock(
     const target = targetPinId(item);
     const better = siblings.some((s) =>
       s.id !== item.id &&
+      // An excluded crop or a rejected photo doesn't stand in for this one.
+      s.decision !== "excluded" && s.image_review !== "rejected" &&
       targetPinId(s) === target &&
       (s.cleanup_status === "done" || (s.quality?.score ?? 0) > (item.quality?.score ?? 0) ||
         ((s.quality?.score ?? 0) === (item.quality?.score ?? 0) && s.position < item.position)));

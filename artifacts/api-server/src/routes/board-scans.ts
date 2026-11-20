@@ -373,11 +373,20 @@ router.patch("/admin/board-scans/:id/items/:itemId", requireAdmin, async (req: A
         break;
       }
       case "reset":
-        patch = { decision: "undecided", decided_pin_id: null, exclude_reason: null };
+        patch = {
+          decision: "undecided", decided_pin_id: null, exclude_reason: null,
+          ...(item.image_review === "rejected" ? { image_review: "none" as const } : {}),
+        };
         break;
       case "reject_image":
         if (item.image_review === "approved") { res.status(400).json({ error: "Already published." }); return; }
-        patch = { image_review: "rejected" };
+        // Not a dead end: the cleaned photo is dropped and "Clean photo" is
+        // offered again (e.g. after correcting the crop). Automatic clean-up
+        // leaves a rejected photo alone.
+        patch = {
+          image_review: "rejected", cleanup_status: "skipped", cleaned_path: null,
+          cleanup_note: "Photo rejected. Use Clean photo to try again, or leave this pin out.",
+        };
         break;
       default:
         res.status(400).json({ error: "Unknown action" });

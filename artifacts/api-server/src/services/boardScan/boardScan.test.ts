@@ -143,6 +143,12 @@ describe("rules", () => {
     expect(cleanupBlock(scan, item(), [], { imageUrl: null, pendingImages: 1 })).toBe("pin_has_pending_photo");
   });
 
+  it("doesn't let an excluded crop or a rejected photo block another crop of the same pin", () => {
+    const rejected = item({ id: "i2", position: 2, quality: { ...item().quality!, score: 95 }, image_review: "rejected", cleanup_status: "skipped" });
+    const excluded = item({ id: "i3", position: 3, quality: { ...item().quality!, score: 99 }, decision: "excluded", exclude_reason: "duplicate" });
+    expect(cleanupBlock(scan, item(), [item(), rejected, excluded], undefined)).toBeNull();
+  });
+
   it("cleans only the best crop when a pin appears twice", () => {
     const better = item({ id: "i2", position: 2, quality: { ...item().quality!, score: 95 } });
     expect(cleanupBlock(scan, item(), [item(), better], undefined)).toBe("duplicate_of_better_crop");

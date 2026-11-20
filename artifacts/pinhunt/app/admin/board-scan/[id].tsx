@@ -538,7 +538,6 @@ export default function AdminBoardScanScreen() {
                 <Text style={[styles.small, { color: colors.homeMuted }]}>Excluded ({(i.exclude_reason ?? '').replace(/_/g, ' ')})</Text>
               ) : null}
               {i.image_review === 'approved' ? <Text style={[styles.small, { color: '#2E8B57' }]}>Published to the catalogue.</Text> : null}
-              {i.image_review === 'rejected' ? <Text style={[styles.small, { color: colors.homeMuted }]}>Photo rejected.</Text> : null}
 
               <View style={styles.actions}>
                 {i.decision === 'excluded' ? btn(`${i.id}:reset`, 'Restore', () => patch(i.id, { action: 'reset' })) : i.image_review === 'approved' ? null : (

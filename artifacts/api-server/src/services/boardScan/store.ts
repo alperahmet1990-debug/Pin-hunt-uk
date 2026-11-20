@@ -251,13 +251,21 @@ export async function deleteItemsForScan(scanId: string): Promise<void> {
  * A cleaned photo already made from this exact crop (any board), so the
  * same crop never goes to Pixian twice.
  */
+/** Marker in the file name of a clean-up made in Pixian test mode (watermarked). */
+export const PIXIAN_TEST_MARK = ".pixian-test";
+
+export const isTestModeCleanup = (path: string | null | undefined) => !!path && path.includes(PIXIAN_TEST_MARK);
+
 export async function findCleanedByCropHash(sha: string): Promise<string | null> {
   const rows = check(
     await boardDb().from("board_scan_items").select("cleaned_path")
-      .eq("crop_sha256", sha).eq("cleanup_status", "done").not("cleaned_path", "is", null).limit(1),
+      .eq("crop_sha256", sha).eq("cleanup_status", "done").not("cleaned_path", "is", null).limit(10),
     "Could not check for an earlier clean-up",
   ) ?? [];
-  return (rows[0] as { cleaned_path?: string } | undefined)?.cleaned_path ?? null;
+  // A watermarked test-mode clean-up is only reused while test mode is on.
+  const testMode = process.env.PIXIAN_TEST_MODE === "true";
+  const paths = (rows as Array<{ cleaned_path?: string }>).map((r) => r.cleaned_path).filter((p): p is string => !!p);
+  return paths.find((p) => testMode || !isTestModeCleanup(p)) ?? null;
 }
 
 export async function uploadObject(bucket: string, path: string, body: Buffer): Promise<void> {

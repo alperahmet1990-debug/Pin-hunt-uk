@@ -72,6 +72,39 @@ function maxReferences(): number {
   return Number.isFinite(raw) && raw > 0 ? Math.min(5, Math.floor(raw)) : 5;
 }
 
+/**
+ * Disney reuses the same character art across many pins (round, framed,
+ * cut-out, with or without a dangle). The shared comparison prompt judges
+ * "same shapes, colours, props" — the art — so a Rhino in a silver frame
+ * matched a round Rhino pin at 98%. Board matching adds a format-first rule
+ * and asks for "format_match" per candidate; a format mismatch is capped at
+ * FORMAT_MISMATCH_MAX, below MATCH_VERIFIED_MIN, so it can't pass as a
+ * checked match, be cleaned automatically or be approved in bulk.
+ */
+export const FORMAT_MISMATCH_MAX = 35;
+
+export const FORMAT_RULES = `
+
+FORMAT FIRST: Disney reuses the same character artwork on many different pins. Before comparing the artwork, compare each reference's FORMAT with the user's pin: the outline/shape (round, rectangular, picture frame, cut-out character), any frame or border and its metal colour (silver vs gold), dangles, chains, hinges, spinners or sliders, and how the art sits inside the pin. If the format differs — e.g. the same character art, but the user's pin is in a silver frame and the reference is a round pin, or the reference has a dangle the user's pin doesn't — it is a DIFFERENT pin: give it 35 or less, however similar the art. Parts of the user's pin hidden by the crop or glare are not differences.
+For every candidate also return "format_match": true when its reference has the same format as the user's pin, false when it visibly differs, or null when it has no reference image.`;
+
+/** Candidates the comparison said have a different format (format_match: false). */
+export function formatMismatches(raw: string): Set<string> {
+  const out = new Set<string>();
+  try {
+    const start = raw.indexOf("[");
+    const end = raw.lastIndexOf("]");
+    if (start === -1 || end <= start) return out;
+    const parsed = JSON.parse(raw.slice(start, end + 1)) as Array<{ pinId?: unknown; format_match?: unknown }>;
+    for (const m of Array.isArray(parsed) ? parsed : []) {
+      if (typeof m?.pinId === "string" && m.format_match === false) out.add(m.pinId);
+    }
+  } catch {
+    // unparseable: no mismatches known
+  }
+  return out;
+}
+
 const alwaysCompare = () => (process.env.BOARD_MATCH_ALWAYS_COMPARE ?? "true").toLowerCase() !== "false";
 
 export interface CropDescription {
@@ -198,12 +231,18 @@ export async function matchCrop(
           model: deps.model,
           max_completion_tokens: 2048,
           messages: [
-            { role: "system", content: verifySystemPrompt(candidateList, matches.length) },
+            { role: "system", content: verifySystemPrompt(candidateList, matches.length) + FORMAT_RULES },
             { role: "user", content },
           ],
         }, { timeout, maxRetries: 0 }));
         addUsage(usage, verifyResp);
-        const reranked = parseMatches(verifyResp.choices[0]?.message?.content ?? "", validIds);
+        const verifyRaw = verifyResp.choices[0]?.message?.content ?? "";
+        const mismatched = formatMismatches(verifyRaw);
+        const reranked = parseMatches(verifyRaw, validIds)
+          .map((m) => (mismatched.has(m.pinId)
+            ? { ...m, confidence: Math.min(m.confidence, FORMAT_MISMATCH_MAX), reasoning: `Different format from your pin. ${m.reasoning}`.trim() }
+            : m))
+          .sort((a, b) => b.confidence - a.confidence);
         if (reranked.length > 0) {
           matches = reranked;
           verified = true;

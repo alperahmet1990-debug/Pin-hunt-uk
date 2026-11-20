@@ -95,6 +95,8 @@ Third board (19 Nov 2026, Disney Store "Tails of Friendship" silver-frame pins) 
 - **Learned from confirmations:** confirming or correcting a pin adds its set (`pins.collection`) to the board, up to 5 sets, and re-matches the board's other undecided pins with it searched first (`learnSet`). A re-match skips the describe step (≈ 2 AI calls per pin). The ranking is also told which sets the board's other pins come from.
 - The review card shows **Searched for:** (the describe step's characters, words and printed text), so a misread pin is obvious, and **Change pin** results show the Pin & Pop picture to the App Creator.
 
+The same board also showed a picture check passing **the right art in the wrong format**: a Rhino in a silver frame matched a round Rhino booster pin at 98%, "checked". Disney reuses character art across round, framed, cut-out and dangle pins, and the shared comparison prompt judges the art. Board matching now adds a **format-first rule** (`FORMAT_RULES` in `match.ts`: outline, frame and its metal colour, dangles, spinners), asks for `format_match` per candidate, and caps a format mismatch at 35% (`FORMAT_MISMATCH_MAX`), below the 40% "checked" minimum, so it can't be cleaned automatically or approved in bulk. The card's reasoning starts "Different format from your pin."
+
 If the right pin still isn't among the candidates, the next step is searching by picture similarity (an image index of reference photos), which needs a check of what Pin & Pop's terms allow.
 
 ## Straightening

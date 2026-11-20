@@ -97,7 +97,20 @@ vi.mock("./store", async (importOriginal) => {
     ...real,
     boardDb: () => ({ from: () => fakePinImages() }),
     getScan: async (sid: string) => { mem.getScanCalls++; return mem.scans.get(sid) ?? null; },
-    updateScan: async (sid: string, patch: Record<string, unknown>) => { Object.assign(mem.scans.get(sid)!, patch, { updated_at: now() }); },
+    // Merges stats the way the real store does.
+    updateScan: async (sid: string, patch: Record<string, unknown>, opts: { resetStats?: boolean; replaceSetHints?: boolean } = {}) => {
+      const scan = mem.scans.get(sid)!;
+      if (patch.stats) {
+        const cur = (scan.stats ?? {}) as Record<string, never>;
+        const next = patch.stats as Record<string, never>;
+        patch = { ...patch, stats: {
+          ...(opts.resetStats ? {} : cur), ...next,
+          setHints: opts.replaceSetHints ? next.setHints : real.mergeSetHints(cur.setHints, next.setHints),
+          setVotes: opts.resetStats ? next.setVotes : real.mergeSetVotes(cur.setVotes, next.setVotes),
+        } };
+      }
+      Object.assign(scan, patch, { updated_at: now() });
+    },
     listItems: async (sid: string) => [...mem.items.values()].filter((i) => i.board_scan_id === sid).sort((a, b) => (a.position as number) - (b.position as number)),
     getItem: async (_s: string, iid: string) => mem.items.get(iid) ?? null,
     insertItems: async (rows: Record<string, unknown>[]) => rows.map((r) => {
@@ -369,24 +382,29 @@ describe("processBoardScan", () => {
     expect(describes).toHaveLength(4);
   });
 
-  it("learns a confirmed pin's set and re-matches the board's other undecided pins with it", async () => {
+  it("learns a set once two confirmed pins share it, and re-matches the board's other undecided pins with it", async () => {
     mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50), R2: rank("PHUK-2", 50), W3: rank("PHUK-3", 50), "": rank("PHUK-3", 50) }));
     await processBoardScan("s1");
-    const [grogu, remy] = [...mem.items.values()] as unknown as BoardScanItem[];
+    const [grogu, remy, woody] = [...mem.items.values()] as unknown as BoardScanItem[];
     Object.assign(grogu, { decision: "confirmed", decided_pin_id: "PHUK-1" });
     Object.assign(remy, { decision: "excluded", exclude_reason: "not_a_pin" });
-    const scan = mem.scans.get("s1") as unknown as BoardScan;
     const ranksBefore = mem.create.mock.calls.length;
 
-    // The two other undecided pins (Woody and the tiny one) are re-matched.
-    expect(await learnSet(scan, "Tails of Friendship", grogu.id)).toBe(2);
-    expect(mem.scans.get("s1")!.stats).toMatchObject({ setHints: ["Tails of Friendship"] });
+    // One confirmed pin isn't enough (confirming it twice doesn't count twice).
+    expect(await learnSet(mem.scans.get("s1") as unknown as BoardScan, "Tails of Friendship", grogu.id)).toBe(0);
+    expect(await learnSet(mem.scans.get("s1") as unknown as BoardScan, "Tails of Friendship", grogu.id)).toBe(0);
+    expect(mem.scans.get("s1")!.stats).not.toHaveProperty("setHints", ["Tails of Friendship"]);
+
+    // A second pin from the same set: the last undecided pin (the tiny one) is re-matched.
+    Object.assign(woody, { decision: "confirmed", decided_pin_id: "PHUK-3" });
+    expect(await learnSet(mem.scans.get("s1") as unknown as BoardScan, "tails of friendship", woody.id)).toBe(1);
+    expect(mem.scans.get("s1")!.stats).toMatchObject({ setHints: ["tails of friendship"] });
     await vi.waitFor(() => expect(mem.scans.get("s1")!.status).toBe("ready"));
     await vi.waitFor(() => expect([...mem.items.values()].every((i) => i.match_status !== "pending")).toBe(true));
     const newCalls = mem.create.mock.calls.slice(ranksBefore).map(([req]) => String(req.messages[0].content));
     // No new describe (already described); the ranking is told about the set.
     expect(newCalls.some((c) => c.startsWith("You identify Disney enamel pins"))).toBe(false);
-    expect(newCalls.filter((c) => c.includes('"Tails of Friendship"'))).toHaveLength(2);
+    expect(newCalls.filter((c) => c.includes('"tails of friendship"'))).toHaveLength(1);
 
     // A set the board already knows doesn't trigger another round.
     expect(await learnSet(mem.scans.get("s1") as unknown as BoardScan, "tails of friendship", grogu.id)).toBe(0);
@@ -424,10 +442,13 @@ describe("processBoardScan", () => {
     expect(before).toHaveLength(4);
     const detections = () => mem.create.mock.calls.filter(([r]) => String(r.messages[0].content).startsWith("You find individual")).length;
     expect(detections()).toBe(1);
+    // A set learned earlier (perhaps wrongly), and votes for another.
+    Object.assign(mem.scans.get("s1")!.stats as object, { setHints: ["Wrong Set"], setVotes: { other: ["x"] } });
 
     await rescanBoard(mem.scans.get("s1") as unknown as BoardScan, "Tails of Friendship");
     await vi.waitFor(() => expect(isRunning("s1")).toBe(false));
     expect(mem.scans.get("s1")).toMatchObject({ status: "ready", stats: expect.objectContaining({ setHints: ["Tails of Friendship"] }) });
+    expect((mem.scans.get("s1")!.stats as { setVotes?: unknown }).setVotes).toBeUndefined();
     expect(detections()).toBe(2); // detected again
     const after = [...mem.items.keys()];
     expect(after).toHaveLength(4);

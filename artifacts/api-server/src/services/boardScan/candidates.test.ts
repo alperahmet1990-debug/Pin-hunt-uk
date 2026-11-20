@@ -63,23 +63,58 @@ describe("findBoardCandidates", () => {
     await expect(findBoardCandidates(r, { characters: ["Grogu"], keywords: ["pod"] }, ["x y z"], 150)).resolves.toEqual([]);
   });
 
-  it("searches the board's sets first, where a character-only title is enough", async () => {
-    const meeko = pin("PHUK-10122801", "Meeko", ["Meeko"]);
+  it("searches the board's set first, where a character-only title is enough", async () => {
+    const meeko = { ...pin("PHUK-10122801", "Meeko", ["Meeko"]), collection: "Tails of Friendship" } as CataloguePin;
+    const nana = { ...pin("PHUK-NANA", "Nana - London Exclusive", ["Nana"]), collection: "Tails of Friendship" } as CataloguePin;
     const otherMeekos = Array.from({ length: 200 }, (_, i) => pin(`M-${i}`, "Meeko", ["Meeko"]));
     const calls: string[] = [];
     const r = {
-      searchPins: async (q: string, f: { character?: string } = {}) => {
-        calls.push(`${q}|${f.character ?? ""}`);
-        if (q === "Tails of Friendship Meeko") return [meeko];
-        if (q === "Tails of Friendship" && f.character === "Meeko") return [meeko];
-        if (q === "Tails of Friendship" && !f.character) return [meeko, pin("PHUK-NANA", "Nana - London Exclusive", ["Nana"])];
+      searchPins: async (q: string, f: { character?: string; collection?: string } = {}) => {
+        calls.push(`${q}|${f.character ?? ""}|${f.collection ?? ""}`);
+        if (f.collection === "Tails of Friendship") {
+          if (f.character === "Meeko" || q === "Meeko") return [meeko];
+          return [meeko, nana];
+        }
+        if (f.collection) return [];
+        if (q.toLowerCase().includes("friendship")) return [meeko, nana];
         return otherMeekos; // every other search: hundreds of pins titled "Meeko"
       },
     } as unknown as PinRepository;
-    const out = await findBoardCandidates(r, { characters: ["Meeko"], keywords: ["silver frame"] }, [], 150, ["Tails of Friendship"]);
-    expect(out.map((p) => p.id).slice(0, 2)).toEqual(["PHUK-10122801", "PHUK-NANA"]);
+    const out = await findBoardCandidates(r, { characters: ["Meeko"], keywords: ["silver frame"] }, [], 150, ["tails friendship"]);
+    expect(out[0].id).toBe("PHUK-10122801");
+    expect(out.map((p) => p.id)).toContain("PHUK-NANA");
+    // The typed name was resolved to the exact collection and searched by it.
+    expect(calls).toContain("Meeko||Tails of Friendship");
     // Without the set, the right one is lost among the same-titled pins.
     const without = await findBoardCandidates(r, { characters: ["Meeko"], keywords: ["silver frame"] }, [], 150);
     expect(without.map((p) => p.id)).not.toContain("PHUK-10122801");
+  });
+
+  it("doesn't let big sets push the narrow matches out", async () => {
+    const setPins = (name: string) => Array.from({ length: 60 }, (_, i) => ({ ...pin(`${name}-${i}`, `${name} ${i}`, ["Someone"]), collection: name }) as CataloguePin);
+    const r = {
+      searchPins: async (q: string, f: { character?: string; collection?: string } = {}) => {
+        if (f.collection) return f.character || q ? [] : setPins(f.collection);
+        if (f.character === "Grogu" && q === "pod") return [target];
+        return [];
+      },
+    } as unknown as PinRepository;
+    const out = await findBoardCandidates(r, { characters: ["Grogu"], keywords: ["pod"] }, [], 150, ["Set A", "Set B", "Set C", "Set D", "Set E"]);
+    expect(out.map((p) => p.id)).toContain("PHUK-TARGET");
+    // The rest of the sets fill at most 40% of the candidates.
+    expect(out.filter((p) => p.collection.startsWith("Set")).length).toBeLessThanOrEqual(60);
+  });
+
+  it("falls back to the typed words when no collection fits", async () => {
+    const calls: string[] = [];
+    const r = {
+      searchPins: async (q: string, f: { character?: string; collection?: string } = {}) => {
+        calls.push(`${q}|${f.character ?? ""}|${f.collection ?? ""}`);
+        return [];
+      },
+    } as unknown as PinRepository;
+    await findBoardCandidates(r, { characters: ["Stitch"], keywords: [] }, [], 150, ["Made Up Set"]);
+    expect(calls).toContain("Made Up Set Stitch||");
+    expect(calls).toContain("Made Up Set|Stitch|");
   });
 });

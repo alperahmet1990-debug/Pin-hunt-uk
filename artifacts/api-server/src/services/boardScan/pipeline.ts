@@ -479,19 +479,31 @@ export function cleanSetName(v: unknown): string | null {
   return s.length >= 3 ? s : null;
 }
 
+/** Confirmed pins from one set needed before the board learns it. */
+export const SET_VOTES_TO_LEARN = 2;
+
 /**
- * A reviewer confirmed or corrected a pin: if its set is new to this board,
- * remember it and re-match the board's other undecided pins with that set
- * searched first (pins on a board are often from the same set, and many
- * set pins are titled only by character). Returns how many pins will be
- * re-matched; 0 when the set was already known or the board has enough.
+ * A reviewer confirmed or corrected a pin. Once a second confirmed pin on
+ * the board comes from the same set, remember that set and re-match the
+ * board's other undecided pins with it searched first (pins on a board are
+ * often from the same set, and many set pins are titled only by character).
+ * One pin alone isn't enough: a board often mixes sets, and one stray set
+ * would steer every other pin. Returns how many pins will be re-matched; 0
+ * when the set was already known, needs another confirmation, or the board
+ * has enough sets.
  */
 export async function learnSet(scan: BoardScan, collection: string | null | undefined, confirmedItemId: string): Promise<number> {
   const set = cleanSetName(collection);
   if (!set) return 0;
+  const key = set.toLowerCase();
   const hints = scan.stats?.setHints ?? [];
-  if (hints.length >= MAX_SET_HINTS || hints.some((h) => h.toLowerCase() === set.toLowerCase())) return 0;
-  await store.updateScan(scan.id, { stats: { ...(scan.stats ?? {}), setHints: [...hints, set] } });
+  if (hints.length >= MAX_SET_HINTS || hints.some((h) => h.toLowerCase() === key)) return 0;
+  const voters = [...new Set([...(scan.stats?.setVotes?.[key] ?? []), confirmedItemId])];
+  if (voters.length < SET_VOTES_TO_LEARN) {
+    await store.updateScan(scan.id, { stats: { setVotes: { [key]: voters } } });
+    return 0;
+  }
+  await store.updateScan(scan.id, { stats: { setHints: [...hints, set], setVotes: { [key]: voters } } });
   const items = await store.listItems(scan.id);
   const others = items.filter((i) =>
     i.id !== confirmedItemId && i.decision === "undecided" && i.image_review === "none" &&
@@ -530,11 +542,12 @@ export async function rescanBoard(scan: BoardScan, setHint?: string | null): Pro
   await store.deleteItemsForScan(scan.id);
   await store.removeObjects(store.BOARD_BUCKET, await store.listObjects(store.BOARD_BUCKET, `${scan.id}/crops`).catch(() => []));
   const set = cleanSetName(setHint);
-  // Fresh counters; sets already on the board are kept (store.updateScan merges them).
+  // Fresh counters. A set typed now replaces the board's sets (one learned
+  // earlier may be what went wrong); otherwise they're kept.
   await store.updateScan(scan.id, {
     status: "queued", error: null, detection_truncated: false,
     stats: set ? { setHints: [set] } : {},
-  });
+  }, { resetStats: true, replaceSetHints: !!set });
   enqueue(scan.id);
 }
 

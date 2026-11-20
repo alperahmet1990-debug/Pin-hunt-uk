@@ -30,6 +30,12 @@ export interface BoardScanStats {
    * migration is needed.
    */
   setHints?: string[];
+  /**
+   * Confirmed pins per set not yet in setHints (lower-cased set → item ids):
+   * a set is learned once two confirmed pins on the board share it, so one
+   * pin from an unrelated set doesn't steer the rest of the board.
+   */
+  setVotes?: Record<string, string[]>;
 }
 
 export interface BoardScan {
@@ -142,12 +148,42 @@ export function mergeSetHints(current: string[] | undefined, next: string[] | un
   return out;
 }
 
-export async function updateScan(id: string, patch: Partial<BoardScan>): Promise<void> {
+/** Votes from both copies, each set's item ids without repeats. */
+export function mergeSetVotes(current: BoardScanStats["setVotes"], next: BoardScanStats["setVotes"]): BoardScanStats["setVotes"] {
+  if (!current && !next) return undefined;
+  const out: Record<string, string[]> = {};
+  for (const votes of [current ?? {}, next ?? {}]) {
+    for (const [set, ids] of Object.entries(votes)) out[set] = [...new Set([...(out[set] ?? []), ...ids])];
+  }
+  return out;
+}
+
+/**
+ * Save a board's fields. Stats are merged into what's saved now, so a copy
+ * read earlier (the processing run, clean-up, approval) doesn't wipe a
+ * counter, set or vote saved meanwhile. `resetStats` starts the counters
+ * afresh (scan again) but keeps the sets unless `replaceSetHints`.
+ */
+export async function updateScan(
+  id: string,
+  patch: Partial<BoardScan>,
+  opts: { resetStats?: boolean; replaceSetHints?: boolean } = {},
+): Promise<void> {
   if (patch.stats) {
     const { data } = await boardDb().from("board_scans").select("stats").eq("id", id).maybeSingle();
-    const current = (data as { stats?: BoardScanStats } | null)?.stats?.setHints;
-    const setHints = mergeSetHints(current, patch.stats.setHints);
-    if (setHints) patch = { ...patch, stats: { ...patch.stats, setHints } };
+    const current = (data as { stats?: BoardScanStats } | null)?.stats ?? {};
+    const setHints = opts.replaceSetHints ? patch.stats.setHints : mergeSetHints(current.setHints, patch.stats.setHints);
+    const setVotes = opts.resetStats ? patch.stats.setVotes : mergeSetVotes(current.setVotes, patch.stats.setVotes);
+    patch = {
+      ...patch,
+      stats: {
+        ...(opts.resetStats ? {} : current),
+        ...patch.stats,
+        ...(setHints ? { setHints } : {}),
+        ...(setVotes ? { setVotes } : {}),
+      },
+    };
+    if (opts.replaceSetHints && !setHints) delete patch.stats!.setHints;
   }
   check(await boardDb().from("board_scans").update(patch).eq("id", id), "Could not update board scan");
 }

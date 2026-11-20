@@ -107,6 +107,15 @@ After Pixian, a cleaned photo is turned straight when the pin has straight sides
 
 The App Creator (`profiles.is_app_creator`) sees each match's Pin & Pop reference image beside the crop, labelled *admin only*, and small ones on the alternatives — the same admin-only use as the Bulk Image Matcher. Other admins don't get them from the API. They are never stored or published.
 
+## Scanning again and deleting a board
+
+Uploading the same photo again reopens the earlier board (same pixels, same board), so a board can't be re-run by re-uploading. On the board page:
+
+- **Scan again** runs detection, describing, matching and clean-up again on the same photo, with the latest matching and an optional set. Its pins, crops and matches are replaced; the photo and its permission record are kept.
+- **Delete board** removes the board, its pins, its photo and crops, and cleaned photos no other board uses (identical crops share a cleaned file). The same photo can then be uploaded as a new board.
+
+Both are refused while the board is processing, and once any photo from it is published: the board is that catalogue photo's record of where it came from (`pin_images.source_record_id` → `board_scan_items.id` → the board's permission record).
+
 ## Failure handling
 
 Every step saves as it goes. A pin whose matching fails is marked failed and the board ends *Partly processed*; **Resume** redoes only unfinished pins (no new detection). A board left processing by a server restart shows as partial after 10 minutes. A failed Pixian call marks only that pin; **Clean photo** retries it.

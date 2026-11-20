@@ -8,8 +8,9 @@ import AdminBoardScansScreen from '../app/admin/board-scans';
 // upload that can't start without a permission record.
 
 const mockPush = jest.fn();
+const mockReplace = jest.fn();
 jest.mock('expo-router', () => ({
-  useRouter: () => ({ push: mockPush, back: jest.fn() }),
+  useRouter: () => ({ push: mockPush, replace: mockReplace, back: jest.fn() }),
   useLocalSearchParams: () => ({ id: 'scan-1' }),
   useFocusEffect: (cb: () => void) => { const React = jest.requireActual('react'); React.useEffect(cb, [cb]); },
   Stack: { Screen: () => null },
@@ -121,6 +122,42 @@ describe('admin board scan: searching and what was searched for', () => {
     await fireEvent(screen.getByPlaceholderText('Title, character, set or PHUK-…'), 'submitEditing');
     expect(await screen.findByLabelText('Pin & Pop reference for Meeko')).toBeTruthy();
     expect(screen.getByText(/Pin & Pop picture \(admin only\)/)).toBeTruthy();
+  });
+});
+
+describe('admin board scan: scan again and delete', () => {
+  it('scans the board again with a set, after confirming on the page', async () => {
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    await fireEvent.press(screen.getByText('Scan again'));
+    expect(calls().some((c) => c.includes('/rescan'))).toBe(false); // nothing until confirmed
+    await fireEvent.changeText(screen.getByLabelText('Set on this board'), 'Tails of Friendship');
+    await fireEvent.press(screen.getByText('Scan again now'));
+    await waitFor(() => expect(calls()).toContain('POST /admin/board-scans/scan-1/rescan {"setHint":"Tails of Friendship"}'));
+    expect(await screen.findByText('Scanning this board again from the start…')).toBeTruthy();
+  });
+
+  it('deletes the board after confirming, then goes back to the list', async () => {
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    await fireEvent.press(screen.getByText('Delete board'));
+    expect(calls().some((c) => c.startsWith('DELETE'))).toBe(false); // nothing until confirmed
+    expect(screen.getByText(/This can't be undone/)).toBeTruthy();
+    await fireEvent.press(screen.getAllByText('Delete board')[0]);
+    await waitFor(() => expect(calls()).toContain('DELETE /admin/board-scans/scan-1'));
+    await waitFor(() => expect(mockReplace).toHaveBeenCalledWith('/admin/board-scans'));
+  });
+
+  it('says why a board with published photos is kept', async () => {
+    fetchMock.mockImplementation((url: string, init?: { method?: string }) => Promise.resolve(init?.method === 'DELETE'
+      ? { ok: false, status: 409, json: () => Promise.resolve({ error: '1 photo from this board is published to the catalogue, so the board is kept as their record.', code: 'board_has_published' }) }
+      : { ok: true, json: () => Promise.resolve(view) }));
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    await fireEvent.press(screen.getByText('Delete board'));
+    await fireEvent.press(screen.getAllByText('Delete board')[0]);
+    expect(await screen.findByText(/published to the catalogue, so the board is kept/)).toBeTruthy();
+    expect(mockReplace).not.toHaveBeenCalled();
   });
 });
 

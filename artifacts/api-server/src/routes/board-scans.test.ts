@@ -11,6 +11,9 @@ const state = vi.hoisted(() => ({
   isAppCreator: false,
   refLookups: [] as string[][],
   learned: [] as Array<[string, string]>,
+  rescans: [] as Array<[string, string | null]>,
+  deleted: [] as string[],
+  published: false,
   existing: null as null | { id: string },
   inserted: [] as Array<Record<string, unknown>>,
   uploads: [] as string[],
@@ -55,6 +58,11 @@ vi.mock("../services/boardScan/pipeline", async (importOriginal) => ({
   ...(await importOriginal<typeof import("../services/boardScan/pipeline")>()),
   enqueue: (id: string) => { state.enqueued.push(id); },
   learnSet: async (_scan: unknown, collection: string, itemId: string) => { state.learned.push([collection, itemId]); return 3; },
+  rescanBoard: async (scan: { id: string }, setHint?: string | null) => { state.rescans.push([scan.id, setHint ?? null]); },
+  deleteBoard: async (scan: { id: string }) => {
+    if (state.published) throw new (await import("../services/boardScan/pipeline")).ReviewError("1 photo from this board is published", 409, "board_has_published");
+    state.deleted.push(scan.id);
+  },
   catalogueRepository: () => ({
     getPinByPinhuntId: async (id: string) => ({ id, title: "Meeko", collection: "Tails of Friendship", imageUrl: undefined }),
     searchPins: async () => [],
@@ -152,7 +160,7 @@ describe("board review extras", () => {
     vi.stubEnv("SUPABASE_ANON_KEY", "anon");
     vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "service");
     vi.stubEnv("BOARD_SCAN_ENABLED", "true");
-    Object.assign(state, { isAdmin: true, isAppCreator: false, refLookups: [], learned: [] });
+    Object.assign(state, { isAdmin: true, isAppCreator: false, refLookups: [], learned: [], rescans: [], deleted: [], published: false });
   });
   const getBoard = () => request(app).get("/api/admin/board-scans/scan-1").set("Authorization", "Bearer t");
 
@@ -191,6 +199,29 @@ describe("board review extras", () => {
     expect(res.status).toBe(200);
     expect(res.body).toMatchObject({ rematching: 0, set: null });
     expect(state.learned).toEqual([]);
+  });
+
+  it("scans a board again with an optional set, and deletes a board", async () => {
+    const again = await request(app).post("/api/admin/board-scans/scan-1/rescan").set("Authorization", "Bearer t").send({ setHint: "Tails of Friendship" });
+    expect(again.status).toBe(202);
+    expect(state.rescans).toEqual([["scan-1", "Tails of Friendship"]]);
+    const del = await request(app).delete("/api/admin/board-scans/scan-1").set("Authorization", "Bearer t");
+    expect(del.status).toBe(200);
+    expect(state.deleted).toEqual(["scan-1"]);
+  });
+
+  it("explains why a board with published photos can't be deleted", async () => {
+    state.published = true;
+    const del = await request(app).delete("/api/admin/board-scans/scan-1").set("Authorization", "Bearer t");
+    expect(del.status).toBe(409);
+    expect(del.body).toMatchObject({ code: "board_has_published" });
+  });
+
+  it("only admins can scan again or delete", async () => {
+    state.isAdmin = false;
+    expect((await request(app).delete("/api/admin/board-scans/scan-1").set("Authorization", "Bearer t")).status).toBe(403);
+    expect((await request(app).post("/api/admin/board-scans/scan-1/rescan").set("Authorization", "Bearer t")).status).toBe(403);
+    expect(state.deleted).toEqual([]);
   });
 
   it("turns a photo only by \"auto\" or up to 45 degrees", async () => {

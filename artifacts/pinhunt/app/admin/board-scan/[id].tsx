@@ -32,7 +32,7 @@ import {
   type LayoutChangeEvent,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Stack, useLocalSearchParams } from 'expo-router';
+import { Stack, useLocalSearchParams, useRouter, type Href } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { radius } from '@/constants/theme';
@@ -143,6 +143,10 @@ export default function AdminBoardScanScreen() {
   const [drawing, setDrawing] = useState<{ x: number; y: number } | null | 'armed'>(null);
   const [searchFor, setSearchFor] = useState<{ itemId: string } | { box: Box } | null>(null);
   const [replaceFor, setReplaceFor] = useState<string | null>(null);
+  /** In-page confirmations (native alerts don't run their buttons on the web). */
+  const [boardAction, setBoardAction] = useState<'rescan' | 'delete' | null>(null);
+  const [rescanSet, setRescanSet] = useState('');
+  const router = useRouter();
 
   const api = useCallback(async (path: string, init?: RequestInit) => {
     const res = await fetch(`${API_BASE}/admin/board-scans${path}`, {
@@ -229,6 +233,17 @@ export default function AdminBoardScanScreen() {
     setNotice(`Published ${r.approved.length} photo${r.approved.length === 1 ? '' : 's'}.` +
       (r.skipped.length ? ` ${r.skipped.length} need a closer look.` : ''));
     await load();
+  });
+  const rescan = () => act('rescan', async () => {
+    await api(`/${id}/rescan`, { method: 'POST', body: JSON.stringify({ setHint: rescanSet.trim() || undefined }) });
+    setBoardAction(null);
+    setRescanSet('');
+    setNotice('Scanning this board again from the start…');
+    await load();
+  });
+  const deleteBoard = () => act('delete', async () => {
+    await api(`/${id}`, { method: 'DELETE' });
+    router.replace('/admin/board-scans' as Href);
   });
   const resume = () => act('resume', async () => {
     await api(`/${id}/resume`, { method: 'POST' });
@@ -346,7 +361,39 @@ export default function AdminBoardScanScreen() {
           <View style={styles.actions}>
             {(scan.status === 'partial' || scan.status === 'failed') && !processing ? btn('resume', 'Resume', resume) : null}
             {scan.permission_public_display && readyCount > 0 ? btn('approve-ready', `Approve all ready (${readyCount})`, approveReady, 'primary') : null}
+            {!processing && !boardAction ? btn('rescan', 'Scan again', () => setBoardAction('rescan')) : null}
+            {!processing && !boardAction ? btn('delete', 'Delete board', () => setBoardAction('delete'), 'danger') : null}
           </View>
+          {boardAction === 'rescan' ? (
+            <View style={{ gap: 8 }}>
+              <Text style={[styles.small, { color: colors.homeInk }]}>
+                Find and match every pin on this photo again with the latest matching. Current pins, matches and clean-ups on this board are replaced.
+              </Text>
+              <TextInput
+                style={[styles.input, { borderColor: colors.homeLine, color: colors.homeInk }]}
+                placeholder="Set on this board (optional)"
+                placeholderTextColor={colors.homeMuted}
+                value={rescanSet}
+                onChangeText={setRescanSet}
+                accessibilityLabel="Set on this board"
+              />
+              <View style={styles.actions}>
+                {btn('rescan', 'Scan again now', rescan, 'primary')}
+                {btn('rescan-cancel', 'Cancel', () => setBoardAction(null))}
+              </View>
+            </View>
+          ) : null}
+          {boardAction === 'delete' ? (
+            <View style={{ gap: 8 }}>
+              <Text style={[styles.small, { color: colors.homeInk }]}>
+                Delete this board, its pins, matches and photos? This can't be undone. You can then upload the same photo again.
+              </Text>
+              <View style={styles.actions}>
+                {btn('delete', 'Delete board', deleteBoard, 'danger')}
+                {btn('delete-cancel', 'Keep it', () => setBoardAction(null))}
+              </View>
+            </View>
+          ) : null}
           {notice ? <Text style={[styles.small, { color: colors.homeInk }]}>{notice}</Text> : null}
         </View>
 

@@ -20,6 +20,8 @@ const mem = vi.hoisted(() => ({
   create: null as unknown as ReturnType<typeof vi.fn>,
   /** Pin & Pop reference images the comparison step can see, by pin id. */
   refs: new Map<string, string>(),
+  /** Cleaned files another board also uses. */
+  sharedCleaned: new Set<string>(),
 }));
 
 vi.mock("@workspace/integrations-openai-ai-server", () => ({
@@ -80,11 +82,16 @@ vi.mock("./store", async (importOriginal) => {
       return o;
     },
     findCleanedByCropHash: async () => null,
+    deleteItemsForScan: async (sid: string) => { for (const [k, v] of mem.items) if (v.board_scan_id === sid) mem.items.delete(k); },
+    deleteScan: async (sid: string) => { mem.scans.delete(sid); },
+    listObjects: async (b: string, folder: string) => [...mem.objects.keys()].filter((k) => k.startsWith(`${b}/${folder}/`)).map((k) => k.slice(b.length + 1)),
+    removeObjects: async (b: string, paths: string[]) => { for (const p of paths) mem.objects.delete(`${b}/${p}`); },
+    cleanedPathsUsedElsewhere: async (paths: string[]) => new Set(paths.filter((p) => mem.sharedCleaned.has(p))),
     pinImageState: async (ids: string[]) => Object.fromEntries(ids.filter((i) => mem.pins[i]).map((i) => [i, mem.pins[i]])),
   };
 });
 
-import { approveItem, approveReady, cleanSetName, enqueue, isRunning, learnSet, MAX_SET_HINTS, processBoardScan, refineBox } from "./pipeline";
+import { approveItem, approveReady, cleanSetName, deleteBoard, enqueue, isRunning, learnSet, MAX_SET_HINTS, processBoardScan, refineBox, rescanBoard } from "./pipeline";
 import type { BoardScan, BoardScanItem } from "./store";
 
 /** A 2000×1500 "board": three sharp, textured pins and one tiny one. */
@@ -134,7 +141,7 @@ function reply(content: string) {
 
 async function setup(publicDisplay = true) {
   mem.scans.clear(); mem.items.clear(); mem.objects.clear();
-  mem.pixianCalls = 0; mem.published = []; mem.publishOpts = []; mem.nextId = 1; mem.refs = new Map();
+  mem.pixianCalls = 0; mem.published = []; mem.publishOpts = []; mem.nextId = 1; mem.refs = new Map(); mem.sharedCleaned = new Set();
   mem.pins = {
     "PHUK-1": { title: "Grogu", imageUrl: null, pendingImages: 0 },
     "PHUK-2": { title: "Remy", imageUrl: "https://cdn.test/remy.jpg", pendingImages: 0 },
@@ -319,6 +326,53 @@ describe("processBoardScan", () => {
     Object.assign(mem.scans.get("s1")!, { stats: { setHints: full } });
     expect(await learnSet(mem.scans.get("s1") as unknown as BoardScan, "Tails of Friendship", "x")).toBe(0);
     expect(mem.scans.get("s1")!.stats).toMatchObject({ setHints: full });
+  });
+
+  it("scans a board again from the start, with a new set, keeping the photo", async () => {
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50) }));
+    await processBoardScan("s1");
+    const before = [...mem.items.keys()];
+    expect(before).toHaveLength(4);
+    const detections = () => mem.create.mock.calls.filter(([r]) => String(r.messages[0].content).startsWith("You find individual")).length;
+    expect(detections()).toBe(1);
+
+    await rescanBoard(mem.scans.get("s1") as unknown as BoardScan, "Tails of Friendship");
+    await vi.waitFor(() => expect(isRunning("s1")).toBe(false));
+    expect(mem.scans.get("s1")).toMatchObject({ status: "ready", stats: expect.objectContaining({ setHints: ["Tails of Friendship"] }) });
+    expect(detections()).toBe(2); // detected again
+    const after = [...mem.items.keys()];
+    expect(after).toHaveLength(4);
+    expect(after.some((k) => before.includes(k))).toBe(false); // all new pins
+    expect(mem.objects.has("board-scans/s1/board.jpg")).toBe(true);
+  });
+
+  it("deletes a board, its images, and only the cleaned photos no other board uses", async () => {
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50) }));
+    await processBoardScan("s1");
+    const [a, b] = [...mem.items.values()];
+    Object.assign(a, { cleanup_status: "done", cleaned_path: "admin-1/board-s1/a.jpg" });
+    Object.assign(b, { cleanup_status: "done", cleaned_path: "admin-1/board-other/shared.jpg" });
+    mem.objects.set("pin-contributed-images/admin-1/board-s1/a.jpg", Buffer.from("a"));
+    mem.objects.set("pin-contributed-images/admin-1/board-other/shared.jpg", Buffer.from("b"));
+    mem.sharedCleaned = new Set(["admin-1/board-other/shared.jpg"]);
+
+    await deleteBoard(mem.scans.get("s1") as unknown as BoardScan);
+    expect(mem.scans.has("s1")).toBe(false);
+    expect(mem.items.size).toBe(0);
+    expect([...mem.objects.keys()].filter((k) => k.startsWith("board-scans/s1/"))).toEqual([]);
+    expect(mem.objects.has("pin-contributed-images/admin-1/board-s1/a.jpg")).toBe(false);
+    expect(mem.objects.has("pin-contributed-images/admin-1/board-other/shared.jpg")).toBe(true);
+  });
+
+  it("won't scan again or delete once a photo from the board is published", async () => {
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50) }));
+    await processBoardScan("s1");
+    Object.assign([...mem.items.values()][0], { image_review: "approved" });
+    const scan = mem.scans.get("s1") as unknown as BoardScan;
+    await expect(rescanBoard(scan)).rejects.toMatchObject({ status: 409, code: "board_has_published" });
+    await expect(deleteBoard(scan)).rejects.toMatchObject({ status: 409, code: "board_has_published" });
+    expect(mem.items.size).toBe(4);
+    expect(mem.scans.has("s1")).toBe(true);
   });
 
   it("cleans set names and ignores empty ones", () => {

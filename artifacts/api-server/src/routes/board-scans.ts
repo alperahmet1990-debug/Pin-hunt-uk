@@ -11,6 +11,8 @@
  * POST   /admin/board-scans/:id/items/:itemId/rotate   Turn the cleaned photo: { degrees } clockwise, or { degrees: "auto" } to straighten.
  * POST   /admin/board-scans/:id/items/:itemId/approve  Publish the cleaned photo to its pin ({ pinId?, replaceExisting? }).
  * POST   /admin/board-scans/:id/approve-ready       Publish every cleaned, confident photo of a pin with no photo.
+ * POST   /admin/board-scans/:id/rescan              Scan the same photo again from the start ({ setHint? }); refused once anything is published.
+ * DELETE /admin/board-scans/:id                     Delete the board, its pins and their images; refused once anything is published.
  * GET    /admin/board-scans-pin-search?q=           Catalogue search for corrections (with the admin-only Pin & Pop picture for the App Creator).
  *
  * Same Bearer JWT → profiles.is_admin check as routes/pin-images.ts. Staging
@@ -29,6 +31,8 @@ import {
   approveReady,
   catalogueRepository,
   cleanSetName,
+  deleteBoard,
+  rescanBoard,
   learnSet,
   rotateCleaned,
   cleanItem,
@@ -427,6 +431,28 @@ router.post("/admin/board-scans/:id/items/:itemId/clean", requireAdmin, async (r
     const updated = await cleanItem(scan, retry, siblings, pins, { force: (req.body ?? {}).force === true, stats });
     await store.updateScan(scan.id, { stats });
     res.json({ item: updated });
+  } catch (err) {
+    fail(res, err);
+  }
+});
+
+router.post("/admin/board-scans/:id/rescan", requireAdmin, async (req: AdminRequest, res: Response) => {
+  try {
+    const scan = await loadScan(req, res);
+    if (!scan) return;
+    await rescanBoard(scan, cleanText((req.body ?? {}).setHint, 120));
+    res.status(202).json({ ok: true });
+  } catch (err) {
+    fail(res, err);
+  }
+});
+
+router.delete("/admin/board-scans/:id", requireAdmin, async (req: AdminRequest, res: Response) => {
+  try {
+    const scan = await loadScan(req, res);
+    if (!scan) return;
+    await deleteBoard(scan);
+    res.json({ ok: true });
   } catch (err) {
     fail(res, err);
   }

@@ -215,6 +215,34 @@ export async function updateItemIf(
   return rows?.[0] ?? null;
 }
 
+/** Paths of every object under a folder (one level), e.g. a board's crops. */
+export async function listObjects(bucket: string, folder: string): Promise<string[]> {
+  const { data, error } = await boardDb().storage.from(bucket).list(folder, { limit: 1000 });
+  if (error) throw new Error(`Could not list images: ${error.message}`);
+  return (data ?? []).filter((o) => o.name && o.id).map((o) => `${folder}/${o.name}`);
+}
+
+/** Remove objects. Best-effort: a leftover file is harmless, so failures are only logged. */
+export async function removeObjects(bucket: string, paths: string[]): Promise<void> {
+  if (paths.length === 0) return;
+  const { error } = await boardDb().storage.from(bucket).remove(paths);
+  if (error) console.warn("[board-scan] could not remove old images:", error.message);
+}
+
+/** Cleaned-photo paths that items on other boards still use (identical crops share one file). */
+export async function cleanedPathsUsedElsewhere(paths: string[], scanId: string): Promise<Set<string>> {
+  if (paths.length === 0) return new Set();
+  const rows = check(
+    await boardDb().from("board_scan_items").select("cleaned_path").in("cleaned_path", paths).neq("board_scan_id", scanId),
+    "Could not check shared clean-ups",
+  ) as Array<{ cleaned_path: string }> | null;
+  return new Set((rows ?? []).map((r) => r.cleaned_path));
+}
+
+export async function deleteScan(id: string): Promise<void> {
+  check(await boardDb().from("board_scans").delete().eq("id", id), "Could not delete the board");
+}
+
 export async function deleteItemsForScan(scanId: string): Promise<void> {
   check(await boardDb().from("board_scan_items").delete().eq("board_scan_id", scanId), "Could not reset board items");
 }

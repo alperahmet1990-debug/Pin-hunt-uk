@@ -489,6 +489,59 @@ export async function learnSet(scan: BoardScan, collection: string | null | unde
   return others.length;
 }
 
+/**
+ * A board can be scanned again or deleted only while nothing from it is
+ * published: a published catalogue photo's provenance (pin_images
+ * source_record_id → board_scan_items.id → the board's permission record)
+ * must not be lost.
+ */
+async function assertNothingPublished(scan: BoardScan, items: BoardScanItem[]) {
+  if (isRunning(scan.id)) throw new ReviewError("This board is still being processed. Try again when it has finished.", 409);
+  const published = items.filter((i) => i.image_review === "approved").length;
+  if (published > 0) {
+    throw new ReviewError(
+      `${published} photo${published === 1 ? " from this board is" : "s from this board are"} published to the catalogue, so the board is kept as their record.`,
+      409, "board_has_published",
+    );
+  }
+}
+
+/**
+ * Scan the same board photo again from the start: detection, describing,
+ * matching and clean-up, with the latest matching rules and an optional set.
+ * Earlier pins and their crops are removed; the board photo and its
+ * permission record are kept.
+ */
+export async function rescanBoard(scan: BoardScan, setHint?: string | null): Promise<void> {
+  const items = await store.listItems(scan.id);
+  await assertNothingPublished(scan, items);
+  await store.deleteItemsForScan(scan.id);
+  await store.removeObjects(store.BOARD_BUCKET, await store.listObjects(store.BOARD_BUCKET, `${scan.id}/crops`).catch(() => []));
+  const set = cleanSetName(setHint);
+  // Fresh counters; sets already on the board are kept (store.updateScan merges them).
+  await store.updateScan(scan.id, {
+    status: "queued", error: null, detection_truncated: false,
+    stats: set ? { setHints: [set] } : {},
+  });
+  enqueue(scan.id);
+}
+
+/**
+ * Delete a board: its pins, its photo and crops, and cleaned photos no other
+ * board uses. Refused while anything from it is published.
+ */
+export async function deleteBoard(scan: BoardScan): Promise<void> {
+  const items = await store.listItems(scan.id);
+  await assertNothingPublished(scan, items);
+  const cleaned = [...new Set(items.map((i) => i.cleaned_path).filter((p): p is string => !!p))];
+  const shared = await store.cleanedPathsUsedElsewhere(cleaned, scan.id);
+  await store.deleteItemsForScan(scan.id);
+  await store.deleteScan(scan.id);
+  const crops = await store.listObjects(store.BOARD_BUCKET, `${scan.id}/crops`).catch(() => [] as string[]);
+  await store.removeObjects(store.BOARD_BUCKET, [scan.image_path, ...crops]);
+  await store.removeObjects(store.CLEANED_BUCKET, cleaned.filter((p) => !shared.has(p)));
+}
+
 export class ReviewError extends Error {
   constructor(message: string, public status = 400, public code?: string) {
     super(message);

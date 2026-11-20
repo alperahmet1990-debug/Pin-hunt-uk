@@ -249,7 +249,7 @@ export default function AdminBoardScansScreen() {
             onChangeText={setEvidence}
           />
 
-          {toggle('Permission to crop and process', processing, setProcessing, 'Required — the photo is cut into pins and cleaned up.')}
+          {toggle('Permission to crop and process', processing, setProcessing, 'Required — the photo is cut into pins, matched by AI services (OpenAI, Google Vertex AI) and cleaned up (Pixian). Tell the collector.')}
           {toggle('Permission to display publicly', publicDisplay, setPublicDisplay, 'Needed to publish crops as catalogue photos. Without it the board is matched only.')}
           {toggle('Not taken from Pin & Pop or another catalogue/website', notCatalogue, setNotCatalogue, 'Catalogue images from other sources must never be published as PinHunt photos.')}
 

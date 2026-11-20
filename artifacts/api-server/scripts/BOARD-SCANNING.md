@@ -43,7 +43,7 @@ Uploaded photos are re-encoded, which strips EXIF (including GPS location).
 | Same board photo uploaded again | reuses the earlier board | — |
 | AI calls per board | 1 detection, then per pin: 1 describe + 1 rank + 1 comparison whenever a reference image exists (≈ 3 per pin; a 22-pin board ≈ 65) | `BOARD_DETECT_TILES=2` adds 4 detection calls; `BOARD_MATCH_ALWAYS_COMPARE=false` compares only unsure rankings |
 | Pixian | automatic only for crops that are suitable, matched ≥ 70%, of a pin with no photo and no pending photo, best crop of that pin on the board, on a board with public-display permission. Identical crops are never cleaned twice. Everything else on request. | `BOARD_AUTO_CLEAN_MIN_CONFIDENCE` |
-| "Approve all ready" | cleaned + (reviewed or ≥ 80%) + pin has no photo | `BOARD_BULK_APPROVE_MIN_CONFIDENCE` |
+| "Approve all ready" | match confirmed or corrected by the reviewer + cleaned + crop passed the quality check + pin has no photo. Never on confidence alone. | — |
 
 ## Quality checks (starting thresholds — calibrate on real boards)
 
@@ -91,11 +91,13 @@ Second board (19 Nov 2026, a Grogu board) showed two more causes, now fixed:
 
 Third board (19 Nov 2026, Disney Store "Tails of Friendship" silver-frame pins) showed the limit of text search: set pins are often titled by character only ("Meeko", "Pongo and Perdita"), and nothing in the catalogue text describes how they look ("silver frame"), so among hundreds of same-titled pins the right one can't be singled out. Boards are usually arranged by set, so:
 
-- **Set on this board** (optional, at upload) is searched first for every pin: the set with each character, then the whole set (`candidates.ts`). Stored in `board_scans.stats.setHints`, so no migration.
-- **Learned from confirmations:** confirming or correcting a pin adds its set (`pins.collection`) to the board, up to 5 sets, and re-matches the board's other undecided pins with it searched first (`learnSet`). A re-match skips the describe step (≈ 2 AI calls per pin). The ranking is also told which sets the board's other pins come from.
+- **Set on this board** (optional, at upload or with Scan again) is searched first for every pin: the set with each character, then the rest of the set (`candidates.ts`). A typed name is resolved to the exact catalogue collection when one fits ("tails friendship" → "Tails of Friendship"), and searched by that collection rather than as words. The rest of the board's sets fill at most 40% of the 150 candidates, so a big set (or several) can't push the precise character + word matches out. Stored in `board_scans.stats.setHints`, so no migration. Typing a set when uploading the same photo again adds it to the existing board, ready for Scan again.
+- **Learned from confirmations:** once **two** confirmed or corrected pins on the board come from the same set (`pins.collection`), that set is added to the board, up to 5 sets, and the board's other undecided pins are re-matched with it searched first (`learnSet`; votes in `stats.setVotes`). One pin alone isn't enough: boards often mix sets, and one stray set would steer every other pin. Scan again with a set typed replaces the board's sets. A re-match skips the describe step (≈ 2 AI calls per pin). The ranking is also told which sets the board's other pins come from.
 - The review card shows **Searched for:** (the describe step's characters, words and printed text), so a misread pin is obvious, and **Change pin** results show the Pin & Pop picture to the App Creator.
 
 The same board also showed a picture check passing **the right art in the wrong format**: a Rhino in a silver frame matched a round Rhino booster pin at 98%, "checked". Disney reuses character art across round, framed, cut-out and dangle pins, and the shared comparison prompt judges the art. Board matching now adds a **format-first rule** (`FORMAT_RULES` in `match.ts`: outline, frame and its metal colour, dangles, spinners), asks for `format_match` per candidate, and caps a format mismatch at 35% (`FORMAT_MISMATCH_MAX`), below the 40% "checked" minimum, so it can't be cleaned automatically or approved in bulk. The card's reasoning starts "Different format from your pin."
+
+When the picture check can't run (no reference picture, a download failed, the AI call failed), the card says so in plain words, and a match below the threshold shows as **Not identified — best guess** with a **Use best guess** button rather than **Confirm match**. Reference pictures are downloaded by the server (`references.ts`) before the comparison, so a Pin & Pop link the AI provider can't reach no longer fails the check silently; candidates are re-sorted after the caps.
 
 If the right pin still isn't among the candidates, the next step is searching by picture similarity (an image index of reference photos), which needs a check of what Pin & Pop's terms allow.
 
@@ -116,6 +118,13 @@ Uploading the same photo again reopens the earlier board (same pixels, same boar
 
 Both are refused while the board is processing, and once any photo from it is published: the board is that catalogue photo's record of where it came from (`pin_images.source_record_id` → `board_scan_items.id` → the board's permission record).
 
+## Photos, approving and Pixian test mode
+
+- **iPhone HEIC photos** can't be read by the server yet: the upload says so and asks for a JPEG export. Photos with transparency (e.g. a cropped PNG) keep their colours; a blank (all one colour) photo is refused before anything is stored.
+- **Approve is safe to retry.** If publishing fails after the photo record was created, approving again reuses that pending record (provenance intact) rather than making a second one; a leftover record for a different pin is removed first.
+- **Reject photo** isn't final: the pin goes back to **Clean photo**, and cleaning it again puts it back under review. Automatic clean-up leaves rejected photos alone.
+- **Pixian test mode** (`PIXIAN_TEST_MODE=true`) returns watermarked photos. Their files are named `….pixian-test.jpg`; they are never reused once test mode is off, and approving one with test mode off is refused and sends the pin back to **Clean photo**.
+
 ## Failure handling
 
-Every step saves as it goes. A pin whose matching fails is marked failed and the board ends *Partly processed*; **Resume** redoes only unfinished pins (no new detection). A board left processing by a server restart shows as partial after 10 minutes. A failed Pixian call marks only that pin; **Clean photo** retries it.
+If the pin finder (detection) gives no answer or an unreadable one, the board fails with that reason (and **Resume** or **Scan again** retries) instead of showing "No pins were found". Every step saves as it goes. A pin whose matching fails is marked failed and the board ends *Partly processed*; **Resume** redoes only unfinished pins (no new detection). A board left processing by a server restart shows as partial after 10 minutes. A failed Pixian call marks only that pin; **Clean photo** retries it.

@@ -490,6 +490,11 @@ export default function AdminBoardScanScreen() {
                 <Text style={[styles.small, { color: colors.homeMuted }]}>Matching…</Text>
               ) : i.match_status === 'failed' ? (
                 <Text style={[styles.small, { color: colors.destructive }]}>Matching failed{i.error ? `: ${i.error}` : ''}</Text>
+              ) : target && i.match_status === 'unmatched' && i.decision === 'undecided' ? (
+                // Below the match threshold: a guess to check, not a match.
+                <Text style={[styles.small, { color: colors.homeSand }]}>
+                  Not identified — best guess: {targetTitle} <Text style={{ color: colors.homeMuted }}>· {target}{top ? ` · ${top.confidence}%` : ''}</Text>
+                </Text>
               ) : target ? (
                 <Text style={[styles.match, { color: colors.homeInk }]}>
                   {targetTitle} <Text style={{ color: colors.homeMuted }}>· {target}</Text>
@@ -499,6 +504,9 @@ export default function AdminBoardScanScreen() {
               ) : (
                 <Text style={[styles.small, { color: colors.destructive }]}>Not identified — choose the pin.</Text>
               )}
+              {i.error && i.match_status !== 'failed' && i.decision === 'undecided' ? (
+                <Text style={[styles.tiny, { color: colors.homeSand }]}>{i.error}</Text>
+              ) : null}
               {i.decision === 'undecided' && top?.reasoning ? (
                 <Text style={[styles.tiny, { color: colors.homeMuted }]}>{top.reasoning}</Text>
               ) : null}
@@ -542,7 +550,11 @@ export default function AdminBoardScanScreen() {
               <View style={styles.actions}>
                 {i.decision === 'excluded' ? btn(`${i.id}:reset`, 'Restore', () => patch(i.id, { action: 'reset' })) : i.image_review === 'approved' ? null : (
                   <>
-                    {i.decision === 'undecided' && i.suggested_pin_id ? btn(`${i.id}:confirm`, 'Confirm match', () => patch(i.id, { action: 'confirm' }), 'primary') : null}
+                    {i.decision === 'undecided' && i.suggested_pin_id
+                      ? i.match_status === 'unmatched'
+                        ? btn(`${i.id}:confirm`, 'Use best guess', () => patch(i.id, { action: 'confirm' }))
+                        : btn(`${i.id}:confirm`, 'Confirm match', () => patch(i.id, { action: 'confirm' }), 'primary')
+                      : null}
                     {btn(`${i.id}:search`, target ? 'Change pin' : 'Choose pin', () => setSearchFor({ itemId: i.id }))}
                     {scan.permission_public_display && i.cleanup_status !== 'done' && target && data.config.pixianConfigured
                       ? btn(`${i.id}:clean`, 'Clean photo', () => clean(i.id)) : null}

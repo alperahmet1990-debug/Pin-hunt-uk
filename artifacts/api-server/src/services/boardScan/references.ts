@@ -45,7 +45,7 @@ export function isPrivateAddress(ip: string): boolean {
   const v6 = ip.toLowerCase();
   const inner = embeddedIPv4(v6);
   if (inner) return isPrivateAddress(inner);
-  return v6 === "::" || v6 === "::1" || v6.startsWith("fc") || v6.startsWith("fd") || /^fe[89ab]/.test(v6) ||
+  return v6 === "::" || v6 === "::1" || v6.startsWith("fc") || v6.startsWith("fd") || /^fe[89a-f]/.test(v6) ||
     v6.startsWith("ff") ||
     // NAT64 and 6to4 can reach IPv4 addresses, including private ones.
     v6.startsWith("64:ff9b:") || v6.startsWith("2002:");

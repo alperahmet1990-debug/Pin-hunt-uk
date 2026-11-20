@@ -70,6 +70,7 @@ describe("fetchReferenceImage", () => {
     expect(isPrivateAddress("64:ff9b::a9fe:a9fe")).toBe(true);
     expect(isPrivateAddress("2002:a9fe:a9fe::1")).toBe(true);
     expect(isPrivateAddress("febf::1")).toBe(true);
+    expect(isPrivateAddress("fec0::1")).toBe(true);
     expect(isPrivateAddress("::ffff:9765:101")).toBe(false); // 151.101.1.1
     expect(isPrivateAddress("2a04:4e42::1")).toBe(false);
     for (const ip of ["192.0.0.8", "192.0.2.1", "198.18.0.1", "198.19.255.1", "198.51.100.7", "203.0.113.9"]) expect(isPrivateAddress(ip)).toBe(true);

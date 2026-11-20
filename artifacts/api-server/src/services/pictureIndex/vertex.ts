@@ -57,6 +57,17 @@ export class VertexError extends Error {
   }
 }
 
+/** Short reasons shown to admins; Google's own text stays in the server log. */
+const VERTEX_REASON: Record<number, string> = {
+  400: "Google couldn't read the picture",
+  401: "Google didn't accept the service account",
+  403: "the service account isn't allowed to use Vertex AI (Vertex AI User role, API enabled?)",
+  404: "the picture model isn't offered in this region",
+  429: "too many requests for the quota",
+  500: "Google had an internal error",
+  503: "Google is unavailable",
+};
+
 const b64url = (s: string | Buffer) => Buffer.from(s).toString("base64url");
 
 let cachedToken: { token: string; expires: number } | null = null;
@@ -89,7 +100,9 @@ export async function accessToken(sa: ServiceAccount, fetchImpl: typeof fetch = 
   });
   const data = (await res.json().catch(() => ({}))) as { access_token?: string; expires_in?: number; error_description?: string };
   if (!res.ok || !data.access_token) {
-    throw new VertexError(`Google sign-in failed (${res.status}${data.error_description ? `: ${data.error_description}` : ""})`, res.status);
+    // Google's own wording can name the project or account: server log only.
+    if (data.error_description) console.warn(`[picture-index] Google sign-in ${res.status}:`, data.error_description);
+    throw new VertexError(`Google sign-in failed (${res.status}). Check the service account's credentials.`, res.status);
   }
   cachedToken = { token: data.access_token, expires: now + (data.expires_in ?? 3600) * 1000 };
   return data.access_token;
@@ -132,7 +145,10 @@ export async function embedImage(
     predictions?: Array<{ imageEmbedding?: number[] }>;
     error?: { message?: string };
   };
-  if (!res.ok) throw new VertexError(`Picture description failed (${res.status}${data.error?.message ? `: ${data.error.message}` : ""})`, res.status);
+  if (!res.ok) {
+    if (data.error?.message) console.warn(`[picture-index] Vertex AI ${res.status}:`, data.error.message);
+    throw new VertexError(`Picture description failed (${res.status}): ${VERTEX_REASON[res.status] ?? "Google returned an error"}.`, res.status);
+  }
   const embedding = data.predictions?.[0]?.imageEmbedding;
   if (!Array.isArray(embedding) || embedding.length !== EMBEDDING_DIMENSION || !embedding.every(Number.isFinite)) {
     throw new VertexError("Picture description came back in an unexpected shape.");

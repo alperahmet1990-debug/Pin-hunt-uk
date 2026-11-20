@@ -31,7 +31,7 @@ Code:
   The URL is used only in that prompt. It is never returned to the app and never
   logged (`routes/scan-references.test.ts` checks the response). Needs
   `SUPABASE_SERVICE_ROLE_KEY` on the API server; without it the scan simply skips them.
-- **Picture index (decided 20 Nov 2026, board scanning).** Each P&P reference
+- **Picture index (maintainer decision 20 Nov 2026, to be confirmed on #659; board scanning).** Each P&P reference
   picture may be described once as an image embedding (256 numbers; the picture
   can't be rebuilt from it) by Google Vertex AI, and the numbers kept in
   `pin_picture_index` (migration 085) so board matching can find pins that look

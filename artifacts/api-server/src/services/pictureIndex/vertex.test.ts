@@ -67,7 +67,10 @@ describe("picture index: Vertex AI", () => {
 
   it("reports Google's refusals with their status, and odd answers", async () => {
     const denied = fakeGoogle(() => ({ status: 403, body: { error: { message: "Permission denied" } } }));
-    await expect(embedImage(await picture(), { env, fetchImpl: denied.impl })).rejects.toMatchObject({ status: 403, message: expect.stringContaining("Permission denied") });
+    await expect(embedImage(await picture(), { env, fetchImpl: denied.impl })).rejects.toMatchObject({ status: 403, message: expect.stringContaining("Vertex AI User role") });
+    // Google's own wording isn't passed on.
+    resetTokenCacheForTests();
+    await expect(embedImage(await picture(), { env, fetchImpl: denied.impl })).rejects.not.toMatchObject({ message: expect.stringContaining("Permission denied") });
     resetTokenCacheForTests();
     const odd = fakeGoogle(() => ({ status: 200, body: { predictions: [{ imageEmbedding: [1, 2] }] } }));
     await expect(embedImage(await picture(), { env, fetchImpl: odd.impl })).rejects.toBeInstanceOf(VertexError);

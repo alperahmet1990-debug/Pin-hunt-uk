@@ -459,6 +459,21 @@ describe("processBoardScan", () => {
     expect(mem.objects.has("board-scans/s1/board.jpg")).toBe(true);
   });
 
+  it("removes the old pins' cleaned photos when scanning again, but not one another board uses", async () => {
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50) }));
+    await processBoardScan("s1");
+    const [a, b] = [...mem.items.values()];
+    Object.assign(a, { cleaned_path: "admin-1/board-s1/a.jpg" });
+    Object.assign(b, { cleaned_path: "admin-1/board-other/shared.jpg" });
+    mem.objects.set("pin-contributed-images/admin-1/board-s1/a.jpg", Buffer.from("a"));
+    mem.objects.set("pin-contributed-images/admin-1/board-other/shared.jpg", Buffer.from("b"));
+    mem.sharedCleaned = new Set(["admin-1/board-other/shared.jpg"]);
+    await rescanBoard(mem.scans.get("s1") as unknown as BoardScan);
+    await vi.waitFor(() => expect(isRunning("s1")).toBe(false));
+    expect(mem.objects.has("pin-contributed-images/admin-1/board-s1/a.jpg")).toBe(false);
+    expect(mem.objects.has("pin-contributed-images/admin-1/board-other/shared.jpg")).toBe(true);
+  });
+
   it("deletes a board, its images, and only the cleaned photos no other board uses", async () => {
     mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50) }));
     await processBoardScan("s1");

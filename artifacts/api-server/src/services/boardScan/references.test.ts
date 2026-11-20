@@ -2,11 +2,13 @@ import http from "node:http";
 import type { AddressInfo } from "node:net";
 import sharp from "sharp";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { downloadPicture, fetchReferenceImage } from "./references";
+import { downloadPicture, fetchReferenceImage, isPrivateAddress } from "./references";
 
 // The server downloads reference pictures itself, so one it can't fetch is
 // left out rather than failing the whole picture check.
 
+/** The test server is on 127.0.0.1, which real downloads refuse. */
+const local = { allowPrivate: true };
 let server: http.Server;
 let base = "";
 beforeAll(async () => {
@@ -23,6 +25,8 @@ beforeAll(async () => {
       pump();
       return;
     }
+    if (req.url === "/to-metadata") { res.writeHead(302, { location: "http://169.254.169.254/latest/meta-data/" }); res.end(); return; }
+    if (req.url === "/to-pin") { res.writeHead(301, { location: "/pin.png" }); res.end(); return; }
     if (req.url === "/not-an-image") { res.writeHead(200, { "content-type": "text/html" }); res.end("<html></html>"); return; }
     res.writeHead(404); res.end();
   });
@@ -33,20 +37,34 @@ afterAll(() => new Promise<void>((r) => server.close(() => r())));
 
 describe("fetchReferenceImage", () => {
   it("returns a downloaded picture inline, shrunk to 768 px", async () => {
-    const url = await fetchReferenceImage(`${base}/pin.png`);
+    const url = await fetchReferenceImage(`${base}/pin.png`, local);
     expect(url?.startsWith("data:image/jpeg;base64,")).toBe(true);
     const meta = await sharp(Buffer.from(url!.split(",")[1], "base64")).metadata();
     expect(Math.max(meta.width!, meta.height!)).toBe(768);
   });
 
   it("returns null for a missing picture, a non-image, or an unreachable host", async () => {
-    expect(await fetchReferenceImage(`${base}/missing.jpg`)).toBeNull();
-    expect(await fetchReferenceImage(`${base}/not-an-image`)).toBeNull();
-    expect(await fetchReferenceImage("http://127.0.0.1:9/pin.jpg")).toBeNull();
+    expect(await fetchReferenceImage(`${base}/missing.jpg`, local)).toBeNull();
+    expect(await fetchReferenceImage(`${base}/not-an-image`, local)).toBeNull();
+    expect(await fetchReferenceImage("http://127.0.0.1:9/pin.jpg", local)).toBeNull();
   });
 
   it("stops reading a picture once it passes the size limit, even without a Content-Length", async () => {
-    await expect(downloadPicture(`${base}/huge-no-length`, 1024 * 1024)).rejects.toThrow("picture too large");
-    expect((await downloadPicture(`${base}/pin.png`)).length).toBeGreaterThan(0);
+    await expect(downloadPicture(`${base}/huge-no-length`, 1024 * 1024, local)).rejects.toThrow("picture too large");
+    expect((await downloadPicture(`${base}/pin.png`, undefined, local)).length).toBeGreaterThan(0);
+  });
+
+  it("refuses internal addresses, and follows a redirect only to an allowed one", async () => {
+    await expect(downloadPicture("http://127.0.0.1:1/x.jpg")).rejects.toThrow("address not allowed");
+    await expect(downloadPicture("http://169.254.169.254/latest/meta-data/")).rejects.toThrow("address not allowed");
+    await expect(downloadPicture("file:///etc/passwd")).rejects.toThrow("not a web address");
+    expect((await downloadPicture(`${base}/to-pin`, undefined, local)).length).toBeGreaterThan(0);
+    expect(isPrivateAddress("169.254.169.254")).toBe(true);
+    expect(isPrivateAddress("10.1.2.3")).toBe(true);
+    expect(isPrivateAddress("::1")).toBe(true);
+    expect(isPrivateAddress("fd00::1")).toBe(true);
+    expect(isPrivateAddress("::ffff:192.168.0.1")).toBe(true);
+    expect(isPrivateAddress("151.101.1.1")).toBe(false);
+    expect(await fetchReferenceImage("http://localhost:1/pin.jpg")).toBeNull();
   });
 });

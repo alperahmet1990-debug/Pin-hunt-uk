@@ -124,7 +124,7 @@ The App Creator (`profiles.is_app_creator`) sees each match's Pin & Pop referenc
 
 Uploading the same photo again reopens the earlier board (same pixels, same board), so a board can't be re-run by re-uploading. On the board page:
 
-- **Scan again** runs detection, describing, matching and clean-up again on the same photo, with the latest matching and an optional set. Its pins, crops and matches are replaced; the photo and its permission record are kept.
+- **Scan again** runs detection, describing, matching and clean-up again on the same photo, with the latest matching and an optional set. Its pins, crops, matches and cleaned photos (unless another board uses the same file) are replaced; the photo and its permission record are kept. Photo records a failed approval left pending are removed too.
 - **Delete board** removes the board, its pins, its photo and crops, and cleaned photos no other board uses (identical crops share a cleaned file). The same photo can then be uploaded as a new board.
 
 Both are refused while the board is processing, and once any photo from it is published: the board is that catalogue photo's record of where it came from (`pin_images.source_record_id` → `board_scan_items.id` → the board's permission record).

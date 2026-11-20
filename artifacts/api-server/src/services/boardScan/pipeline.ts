@@ -537,15 +537,20 @@ async function assertNothingPublished(scan: BoardScan, items: BoardScanItem[]) {
 /**
  * Scan the same board photo again from the start: detection, describing,
  * matching and clean-up, with the latest matching rules and an optional set.
- * Earlier pins and their crops are removed; the board photo and its
- * permission record are kept.
+ * Earlier pins, their crops and cleaned photos (unless another board uses
+ * the same file) are removed; the board photo and its permission record are kept.
  */
 export async function rescanBoard(scan: BoardScan, setHint?: string | null): Promise<void> {
   const items = await store.listItems(scan.id);
   await assertNothingPublished(scan, items);
+  const cleaned = [...new Set(items.map((i) => i.cleaned_path).filter((p): p is string => !!p))];
+  const shared = await store.cleanedPathsUsedElsewhere(cleaned, scan.id);
   await store.removePendingBoardImages(items.map((i) => i.id));
   await store.deleteItemsForScan(scan.id);
   await store.removeObjects(store.BOARD_BUCKET, await store.listObjects(store.BOARD_BUCKET, `${scan.id}/crops`).catch(() => []));
+  // Cleaned photos of the old pins (the files pending photo records pointed
+  // to, too), unless another board uses the same file.
+  await store.removeObjects(store.CLEANED_BUCKET, cleaned.filter((p) => !shared.has(p)));
   const set = cleanSetName(setHint);
   // Fresh counters. A set typed now replaces the board's sets (one learned
   // earlier may be what went wrong); otherwise they're kept.

@@ -2,7 +2,7 @@ import http from "node:http";
 import type { AddressInfo } from "node:net";
 import sharp from "sharp";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { fetchReferenceImage } from "./references";
+import { downloadPicture, fetchReferenceImage } from "./references";
 
 // The server downloads reference pictures itself, so one it can't fetch is
 // left out rather than failing the whole picture check.
@@ -13,6 +13,16 @@ beforeAll(async () => {
   const big = await sharp({ create: { width: 2000, height: 1500, channels: 4, background: { r: 200, g: 100, b: 50, alpha: 0.5 } } }).png().toBuffer();
   server = http.createServer((req, res) => {
     if (req.url === "/pin.png") { res.writeHead(200, { "content-type": "image/png" }); res.end(big); return; }
+    if (req.url === "/huge-no-length") {
+      // No Content-Length: streamed until the client gives up.
+      res.writeHead(200, { "content-type": "image/jpeg" });
+      const chunk = Buffer.alloc(64 * 1024, 1);
+      let sent = 0;
+      const pump = () => { while (sent < 400 && res.write(chunk)) sent++; if (sent < 400) res.once("drain", pump); else res.end(); };
+      res.on("close", () => { sent = 400; });
+      pump();
+      return;
+    }
     if (req.url === "/not-an-image") { res.writeHead(200, { "content-type": "text/html" }); res.end("<html></html>"); return; }
     res.writeHead(404); res.end();
   });
@@ -33,5 +43,10 @@ describe("fetchReferenceImage", () => {
     expect(await fetchReferenceImage(`${base}/missing.jpg`)).toBeNull();
     expect(await fetchReferenceImage(`${base}/not-an-image`)).toBeNull();
     expect(await fetchReferenceImage("http://127.0.0.1:9/pin.jpg")).toBeNull();
+  });
+
+  it("stops reading a picture once it passes the size limit, even without a Content-Length", async () => {
+    await expect(downloadPicture(`${base}/huge-no-length`, 1024 * 1024)).rejects.toThrow("picture too large");
+    expect((await downloadPicture(`${base}/pin.png`)).length).toBeGreaterThan(0);
   });
 });

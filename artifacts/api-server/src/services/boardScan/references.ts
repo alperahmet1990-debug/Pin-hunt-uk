@@ -18,16 +18,36 @@ const MAX_BYTES = 8 * 1024 * 1024;
 /** Long side sent to the model: enough for frame metal, dangles and small text. */
 const SEND_SIDE = 768;
 
-/** Download a picture (timeout, size limit). Throws with a short reason. */
-export async function downloadPicture(url: string): Promise<Buffer> {
-  const res = await fetch(url, { signal: AbortSignal.timeout(TIMEOUT_MS), redirect: "follow" });
-  if (!res.ok) throw new Error(`download failed (${res.status})`);
-  const length = Number(res.headers.get("content-length") ?? 0);
-  if (length > MAX_BYTES) throw new Error("picture too large");
-  const body = Buffer.from(await res.arrayBuffer());
-  if (body.length === 0) throw new Error("empty picture");
-  if (body.length > MAX_BYTES) throw new Error("picture too large");
-  return body;
+/**
+ * Download a picture (timeout, size limit). Throws with a short reason.
+ * The body is read in chunks and abandoned once it passes the limit, so a
+ * missing or wrong Content-Length can't make it buffer a huge file.
+ */
+export async function downloadPicture(url: string, maxBytes = MAX_BYTES): Promise<Buffer> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  try {
+    const res = await fetch(url, { signal: controller.signal, redirect: "follow" });
+    if (!res.ok) throw new Error(`download failed (${res.status})`);
+    if (!/^https?:$/.test(new URL(res.url || url).protocol)) throw new Error("not a web address");
+    const length = Number(res.headers.get("content-length") ?? 0);
+    if (length > maxBytes) throw new Error("picture too large");
+    if (!res.body) throw new Error("empty picture");
+    const chunks: Buffer[] = [];
+    let total = 0;
+    for await (const chunk of res.body as unknown as AsyncIterable<Uint8Array>) {
+      total += chunk.length;
+      if (total > maxBytes) {
+        controller.abort();
+        throw new Error("picture too large");
+      }
+      chunks.push(Buffer.from(chunk));
+    }
+    if (total === 0) throw new Error("empty picture");
+    return Buffer.concat(chunks);
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 /** A reference picture as an inline JPEG data URL, or null if it can't be fetched or read. */

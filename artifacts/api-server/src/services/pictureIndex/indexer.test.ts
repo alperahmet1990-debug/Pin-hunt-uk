@@ -16,9 +16,14 @@ function world(refCount: number) {
   const sleeps: number[] = [];
   let embedCalls = 0;
   const deps: IndexerDeps = {
-    pending: async (limit, retryFailed) => refs
-      .filter((r) => !index.has(r.pin_image_id) || (retryFailed && index.get(r.pin_image_id)!.embedding === null))
-      .slice(0, limit),
+    // Pages of 50 by id, like the real store (which reads pages of 200).
+    pending: async (after, retryFailed) => {
+      const page = refs.filter((r) => after === null || r.pin_image_id > after).slice(0, 50);
+      return {
+        refs: page.filter((r) => !index.has(r.pin_image_id) || (retryFailed && index.get(r.pin_image_id)!.embedding === null)),
+        next: page.length < 50 ? null : page[page.length - 1].pin_image_id,
+      };
+    },
     save: async (ref, embedding, problem) => { index.set(ref.pin_image_id, { embedding, error: embedding ? null : problem ?? null }); },
     download: async (url) => Buffer.from(url),
     embed: async () => { embedCalls++; return [1, 2, 3]; },
@@ -159,5 +164,19 @@ describe("picture index: building it", () => {
     expect(calls).toBe(after); // nothing still running
     expect(calls).toBeLessThanOrEqual(4); // each worker stopped after its first refusal
     expect(indexerState()).toMatchObject({ running: false, stopReason: "error" });
+  });
+
+  it("tries a failed picture once per retry run, even though it stays failed", async () => {
+    const w = world(120);
+    const tries = new Map<string, number>();
+    w.deps.download = async (url) => {
+      tries.set(url, (tries.get(url) ?? 0) + 1);
+      if (url.endsWith("/7.jpg")) throw new Error("gone");
+      return Buffer.from(url);
+    };
+    await runIndexer({ rate: 6000 }, w.deps);
+    await runIndexer({ rate: 6000, retryFailed: true }, w.deps);
+    expect(tries.get("https://pinandpop.test/7.jpg")).toBe(2); // once per run
+    expect(indexerState()).toMatchObject({ failed: 1, done: 0, stopReason: "finished" });
   });
 });

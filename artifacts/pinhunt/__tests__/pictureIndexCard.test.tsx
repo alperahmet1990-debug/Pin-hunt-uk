@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import PictureIndexCard from '../components/PictureIndexCard';
 
 // The picture index card on Admin → Board Scans: progress, and build /
@@ -53,5 +53,31 @@ describe('picture index card', () => {
     await render(<PictureIndexCard token="t" />);
     expect(await screen.findByText(/Off on this server/)).toBeTruthy();
     expect(screen.queryByText('Build picture index')).toBeNull();
+  });
+
+  it('checks progress every 15 seconds while building, never starting a check while one is waiting', async () => {
+    jest.useFakeTimers();
+    try {
+      info = { ...base, status: { referencesTotal: 100, indexed: 10, failed: 0 }, run: { ...base.run, running: true, done: 10 } };
+      await render(<PictureIndexCard token="t" />);
+      await screen.findByText(/Building…/);
+      const gets = () => fetchMock.mock.calls.filter(([, init]) => !init?.method).length;
+      expect(gets()).toBe(1);
+
+      // A slow answer: the next check doesn't start until it returns.
+      let release!: (v: unknown) => void;
+      fetchMock.mockImplementationOnce(() => new Promise((r) => { release = r; }));
+      await act(async () => { jest.advanceTimersByTime(14_999); });
+      expect(gets()).toBe(1);
+      await act(async () => { jest.advanceTimersByTime(1); });
+      expect(gets()).toBe(2);
+      await act(async () => { jest.advanceTimersByTime(15_000); });
+      expect(gets()).toBe(2); // the earlier check is still waiting
+      await act(async () => { release({ ok: true, status: 200, json: () => Promise.resolve(info) }); });
+      await act(async () => { jest.advanceTimersByTime(15_000); });
+      expect(gets()).toBe(3);
+    } finally {
+      jest.useRealTimers();
+    }
   });
 });

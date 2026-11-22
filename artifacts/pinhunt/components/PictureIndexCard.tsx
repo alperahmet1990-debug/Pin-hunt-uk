@@ -5,7 +5,7 @@
  * background on the server, so board scanning can also find pins by how they
  * look. Shows progress and lets an admin start, continue or stop it.
  */
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useColors } from '@/hooks/useColors';
 import { radius } from '@/constants/theme';
@@ -28,8 +28,11 @@ export default function PictureIndexCard({ token }: { token: string | undefined 
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
+  // One check at a time: a slow answer is never overlapped by the next one.
+  const loading = useRef(false);
   const load = useCallback(async () => {
-    if (!token) return;
+    if (!token || loading.current) return;
+    loading.current = true;
     try {
       const res = await fetch(`${API_BASE}/admin/board-scans-picture-index`, { headers: { Authorization: `Bearer ${token}` } });
       if (res.status === 404) { setInfo(null); return; }
@@ -40,14 +43,16 @@ export default function PictureIndexCard({ token }: { token: string | undefined 
       setError(null);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Could not load the picture index.');
+    } finally {
+      loading.current = false;
     }
   }, [token]);
 
   useEffect(() => { load(); }, [load]);
-  // Follow a build while it runs.
+  // Follow a build while it runs (every 15 s: progress moves ~25 pictures in that time).
   useEffect(() => {
     if (!info?.run.running) return;
-    const t = setInterval(load, 5000);
+    const t = setInterval(load, 15_000);
     return () => clearInterval(t);
   }, [info?.run.running, load]);
 

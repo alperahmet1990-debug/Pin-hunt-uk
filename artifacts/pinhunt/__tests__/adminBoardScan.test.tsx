@@ -9,6 +9,11 @@ import AdminBoardScansScreen from '../app/admin/board-scans';
 
 const mockPush = jest.fn();
 const mockReplace = jest.fn();
+// The first test pays the board-scan screen's cold start (268 ms locally),
+// which passed 5 s on a busy CI runner (#713); the same allowance as the
+// other large screens (scanResultFlow, aboutBuildInfo).
+jest.setTimeout(20_000);
+
 jest.mock('expo-router', () => ({
   useRouter: () => ({ push: mockPush, replace: mockReplace, back: jest.fn() }),
   useLocalSearchParams: () => ({ id: 'scan-1' }),

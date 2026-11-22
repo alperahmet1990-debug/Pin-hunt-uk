@@ -161,6 +161,9 @@ export interface IUserPinRepository {
   /** All trades where the user is initiator or recipient, newest first, with the other collector's username. */
   getUserTrades(userId: string): Promise<Trade[]>;
 
+  /** Read-only: one collector's username (null if unreadable), for naming the other side of a trade. */
+  getProfileUsername(userId: string): Promise<string | null>;
+
   /** Fetch a single trade with items and messages. */
   getTrade(tradeId: string): Promise<Trade | null>;
 

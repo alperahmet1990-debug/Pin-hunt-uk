@@ -16,9 +16,14 @@ function world(refCount: number) {
   const sleeps: number[] = [];
   let embedCalls = 0;
   const deps: IndexerDeps = {
-    pending: async (limit, retryFailed) => refs
-      .filter((r) => !index.has(r.pin_image_id) || (retryFailed && index.get(r.pin_image_id)!.embedding === null))
-      .slice(0, limit),
+    // Pages of 50 by id, like the real store (which reads pages of 200).
+    pending: async (after, retryFailed) => {
+      const page = refs.filter((r) => after === null || r.pin_image_id > after).slice(0, 50);
+      return {
+        refs: page.filter((r) => !index.has(r.pin_image_id) || (retryFailed && index.get(r.pin_image_id)!.embedding === null)),
+        next: page.length < 50 ? null : page[page.length - 1].pin_image_id,
+      };
+    },
     save: async (ref, embedding, problem) => { index.set(ref.pin_image_id, { embedding, error: embedding ? null : problem ?? null }); },
     download: async (url) => Buffer.from(url),
     embed: async () => { embedCalls++; return [1, 2, 3]; },

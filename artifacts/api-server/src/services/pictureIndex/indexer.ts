@@ -69,7 +69,6 @@ export function ratePerMinute(env: NodeJS.ProcessEnv = process.env): number {
   return Number.isFinite(n) && n > 0 ? Math.min(Math.floor(n), 3000) : 100;
 }
 
-const BATCH = 50;
 const CONCURRENCY = 4;
 const MAX_TRIES = 3;
 const RATE_LIMIT_WAIT_MS = 30_000;
@@ -101,7 +100,7 @@ export async function runIndexer(
     nextSlot = Math.max(now, nextSlot) + interval;
     if (wait > 0) await deps.sleep(wait);
   };
-  let retryFailed = opts.retryFailed ?? false; // retried pictures that fail again stay failed
+  const retryFailed = opts.retryFailed ?? false;
   const limit = opts.maxPictures ?? Infinity;
 
   const describe = async (ref: store.PendingReference) => {
@@ -149,17 +148,18 @@ export async function runIndexer(
   };
 
   try {
-    // Pictures tried in this run: one that fails again comes back from
-    // `pending` while retrying, and mustn't be tried twice.
-    const tried = new Set<string>();
+    // Read through the reference pictures in id order, a page at a time,
+    // describing those that need it; each picture is looked at once per run.
+    let cursor: string | null = null;
     while (!stopRequested && state.done + state.failed < limit) {
-      const fetched = await deps.pending(retryFailed ? 500 : BATCH, retryFailed);
-      const batch = fetched.filter((r) => !tried.has(r.pin_image_id)).slice(0, Math.min(BATCH, limit - state.done - state.failed));
+      const page = await deps.pending(cursor, retryFailed);
+      const batch = page.refs.slice(0, limit - state.done - state.failed);
       if (batch.length === 0) {
-        if (retryFailed) { retryFailed = false; continue; } // the failed ones are done; carry on with new ones
-        break;
+        if (page.next === null) break;
+        cursor = page.next;
+        continue;
       }
-      for (const r of batch) tried.add(r.pin_image_id);
+      cursor = page.next;
       let next = 0;
       let fatal: unknown = null;
       // Every worker finishes before the run ends: a fatal error stops the
@@ -172,6 +172,7 @@ export async function runIndexer(
         }
       }));
       if (fatal) throw fatal;
+      if (cursor === null) break;
     }
     state.stopReason = stopRequested ? "stopped" : "finished";
   } catch (err) {

@@ -38,12 +38,14 @@ import {
   cleanItem,
   enqueue,
   isRunning,
+  matchDeps,
   reconcileStale,
   ReviewError,
 } from "../services/boardScan/pipeline";
 import { boardMaxPins } from "../services/boardScan/detect";
 import { isBlankPhoto, normaliseBoardPhoto, ORIGINAL_MAX_SIDE, sha256, type Box } from "../services/boardScan/quality";
 import { indexerState, ratePerMinute, runIndexer, stopIndexer } from "../services/pictureIndex/indexer";
+import { accuracyRunning, answeredItems, startAccuracyCheck } from "../services/boardScan/accuracy";
 import { indexStatus } from "../services/pictureIndex/store";
 import { pictureIndexConfigured, vertexLocation } from "../services/pictureIndex/vertex";
 import { lookalikePins } from "../services/pictureIndex/search";
@@ -168,7 +170,7 @@ async function scanView(scan: BoardScan, opts: { references?: boolean } = {}) {
       })
     : {};
   return {
-    scan: { ...scan, imageUrl: boardUrls[scan.image_path] ?? null, processing: isRunning(scan.id) },
+    scan: { ...scan, imageUrl: boardUrls[scan.image_path] ?? null, processing: isRunning(scan.id), accuracyRunning: accuracyRunning(scan.id) },
     items: items.map((i) => {
       const target = store.targetPinId(i);
       return {
@@ -385,6 +387,27 @@ router.get("/admin/board-scans/:id/items/:itemId/picks", requireAdmin, async (re
 
 /** Look-alikes offered in "Which pin is it?". */
 const LOOKALIKE_PICKS = 24;
+
+/**
+ * Accuracy check: re-run matching on the pins the reviewer confirmed or
+ * corrected, without changing them, and save how often the right pin came
+ * first / in the top 5 (services/boardScan/accuracy.ts). Runs in the
+ * background; the board view shows it running and, after, the result.
+ */
+router.post("/admin/board-scans/:id/accuracy", requireAdmin, async (req: AdminRequest, res: Response) => {
+  try {
+    const scan = await store.getScan(String(req.params.id));
+    if (!scan) { res.status(404).json({ error: "Board not found" }); return; }
+    if (isRunning(scan.id)) { res.status(409).json({ error: "This board is still being processed. Try again when it has finished." }); return; }
+    if (!isAiConfigured()) { res.status(400).json({ error: "Pin recognition (OpenAI) isn't configured on this server." }); return; }
+    const answered = answeredItems(await store.listItems(scan.id)).length;
+    if (answered === 0) { res.status(400).json({ error: "Confirm or correct some pins on this board first: the check compares matching with your answers." }); return; }
+    if (!startAccuracyCheck(scan, { matchDeps })) { res.status(409).json({ error: "An accuracy check is already running for this board." }); return; }
+    res.status(202).json({ running: true, pins: answered });
+  } catch (err) {
+    fail(res, err);
+  }
+});
 
 // ── Picture index (migration 085) ────────────────────────────────────────────
 // Building it describes every Pin & Pop reference picture once, in the

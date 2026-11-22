@@ -314,6 +314,42 @@ describe('adding a missed pin: where a tap lands', () => {
   });
 });
 
+describe('accuracy check', () => {
+  const answered = { ...view, items: view.items.map((i) => (i.id === 'i2' ? { ...i, decision: 'confirmed' } : i)) };
+  const report = {
+    at: '2026-11-22T12:00:00Z', checked: 20, top1: 14, top5: 18, errors: 1,
+    misses: [{ itemId: 'i2', position: 2, expected: { pinId: 'PHUK-1', title: 'Jessie' }, got: { pinId: 'PHUK-9', title: 'Jessie (glitter)', confidence: 72 }, rank: 2 }],
+  };
+
+  it('offers the check once pins are answered, and starts it', async () => {
+    fetchMock.mockImplementation((url: string, init?: { method?: string }) => Promise.resolve({
+      ok: true, status: init?.method === 'POST' ? 202 : 200,
+      json: () => Promise.resolve(String(url).endsWith('/accuracy') ? { running: true, pins: 1 } : answered),
+    }));
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    await fireEvent.press(screen.getByText('Accuracy check (1)'));
+    await waitFor(() => expect(calls()).toContain('POST /admin/board-scans/scan-1/accuracy'));
+    expect(await screen.findByText(/Checking matching on 1 confirmed pins/)).toBeTruthy();
+  });
+
+  it('isn\'t offered before any pin is confirmed', async () => {
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    expect(screen.queryByText(/Accuracy check/)).toBeNull();
+  });
+
+  it('shows the last result and each miss', async () => {
+    const withReport = { ...answered, scan: { ...answered.scan, stats: { accuracy: report } } };
+    fetchMock.mockImplementation(() => Promise.resolve({ ok: true, json: () => Promise.resolve(withReport) }));
+    await render(<AdminBoardScanScreen />);
+    expect(await screen.findByText(/Right first time: 14 of 20 \(70%\) · In the top 5: 18 of 20 \(90%\)/)).toBeTruthy();
+    expect(screen.getByText(/1 pin couldn't be checked/)).toBeTruthy();
+    expect(screen.getByText(/#2: should be Jessie/)).toBeTruthy();
+    expect(screen.getByText(/Matching picked Jessie \(glitter\) \(72%\) · the right pin was #2/)).toBeTruthy();
+  });
+});
+
 describe('pick grid', () => {
   it('fills the row: 2 across on the smallest phones, 3 from about 390 pt', () => {
     // Grid width = screen − 2 × 16 (backdrop) − 2 × 16 (window padding).

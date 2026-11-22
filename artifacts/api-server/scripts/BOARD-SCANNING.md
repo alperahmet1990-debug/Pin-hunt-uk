@@ -122,6 +122,12 @@ Text search can't single out pins titled like hundreds of others ("Meeko") when 
 - Search the whole catalogue as before (title, character, set or `PHUK-…`).
 Tap a picture to choose it; hold it (or tap ⤢) to see it large, with **Choose this pin**. On the card, tap any picture (crop, cleaned, catalogue photo, Pin & Pop reference) to enlarge it. Pin & Pop pictures are shown to the App Creator only, as elsewhere.
 
+## Accuracy check
+
+On a board with confirmed or corrected pins, **Accuracy check (N)** re-runs matching on those pins — without changing them — and reports how often the right pin (your answer) came first and how often it was in the top 5, with each miss listed (the crop, what matching picked, and where the right pin came). It runs in the background on the server (one check per board at a time) and the result is kept on the board (`stats.accuracy`), so the board page shows the last one. Cost: the same AI calls as matching those pins again (≈ 2–3 per pin). A set the board learned from these confirmations is still searched first, as on a re-scan.
+
+Use it to measure a change: confirm/correct every pin on 2–3 boards, run the check, change matching, run it again.
+
 ## Full-size crops and detection passes
 
 - A board photo larger than the 4096 px working copy is also kept at up to 6000 px (`<board>/original.jpg`, `stats.original`). Pins are cut from it, so small pins on a big board keep their detail. Crops are stored at up to 2000 px; the AI steps get a smaller copy (≤ 1280 px for matching, ≤ 1600 px for describing), so AI cost is unchanged. Cropping from the full-size photo reads it sequentially, two crops at a time. Older boards have no original and are cut from the working copy as before; Scan again keeps the original, Delete board removes it. If the original can't be read, crops fall back to the working copy.

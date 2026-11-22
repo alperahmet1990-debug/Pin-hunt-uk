@@ -42,6 +42,8 @@ export interface BoardScanStats {
    * small pins keep their detail. Kept through Scan again.
    */
   original?: { path: string; width: number; height: number };
+  /** The last accuracy check (services/boardScan/accuracy.ts). */
+  accuracy?: import("./accuracy").AccuracyReport;
 }
 
 export interface BoardScan {

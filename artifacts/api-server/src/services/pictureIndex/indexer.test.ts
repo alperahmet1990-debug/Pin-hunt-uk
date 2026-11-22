@@ -1,5 +1,5 @@
-import { beforeEach, describe, expect, it } from "vitest";
-import { indexerState, resetIndexerForTests, runIndexer, stopIndexer, type IndexerDeps } from "./indexer";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { indexerState, resetIndexerForTests, runIndexer, startAutoResume, stopIndexer, type IndexerDeps } from "./indexer";
 import type { PendingReference } from "./store";
 import { VertexError } from "./vertex";
 
@@ -178,5 +178,40 @@ describe("picture index: building it", () => {
     await runIndexer({ rate: 6000, retryFailed: true }, w.deps);
     expect(tries.get("https://pinandpop.test/7.jpg")).toBe(2); // once per run
     expect(indexerState()).toMatchObject({ failed: 1, done: 0, stopReason: "finished" });
+  });
+
+  describe("automatic resume", () => {
+    const log = { info: () => {} };
+    it("does nothing unless switched on and configured", () => {
+      vi.useFakeTimers();
+      try {
+        const run = vi.fn(async () => true);
+        startAutoResume(log, { configured: () => true, env: {} as NodeJS.ProcessEnv, run });
+        startAutoResume(log, { configured: () => false, env: { PICTURE_INDEX_AUTO_RESUME: "true" } as NodeJS.ProcessEnv, run });
+        vi.advanceTimersByTime(48 * 3600_000);
+        expect(run).not.toHaveBeenCalled();
+      } finally {
+        vi.useRealTimers();
+      }
+    });
+
+    it("runs a minute after start, then daily, never while a run is going", async () => {
+      vi.useFakeTimers();
+      try {
+        const run = vi.fn(async () => true);
+        const stop = startAutoResume(log, { configured: () => true, env: { PICTURE_INDEX_AUTO_RESUME: "true" } as NodeJS.ProcessEnv, run });
+        vi.advanceTimersByTime(59_999);
+        expect(run).not.toHaveBeenCalled();
+        vi.advanceTimersByTime(1);
+        expect(run).toHaveBeenCalledTimes(1);
+        vi.advanceTimersByTime(24 * 3600_000);
+        expect(run).toHaveBeenCalledTimes(2);
+        stop();
+        vi.advanceTimersByTime(48 * 3600_000);
+        expect(run).toHaveBeenCalledTimes(2);
+      } finally {
+        vi.useRealTimers();
+      }
+    });
   });
 });

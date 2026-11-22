@@ -193,3 +193,33 @@ export async function runIndexer(
   }
   return true;
 }
+
+/** First automatic run after the server starts, and the gap between top-ups. */
+export const AUTO_START_DELAY_MS = 60_000;
+export const AUTO_TOP_UP_MS = 24 * 60 * 60_000;
+
+/**
+ * With PICTURE_INDEX_AUTO_RESUME=true (and the index switched on), build or
+ * continue the index a minute after the server starts — so a deploy or
+ * restart doesn't leave it stopped — and again every 24 hours, which
+ * describes pictures new or changed since (e.g. after a Pin & Pop sync).
+ * A run that finds nothing to do ends at once. Returns a stop function.
+ */
+export function startAutoResume(
+  log: { info: (obj: object, msg: string) => void },
+  opts: { configured: () => boolean; env?: NodeJS.ProcessEnv; startDelayMs?: number; intervalMs?: number; run?: typeof runIndexer } = { configured: () => false },
+): () => void {
+  const env = opts.env ?? process.env;
+  if (env.PICTURE_INDEX_AUTO_RESUME !== "true" || !opts.configured()) return () => {};
+  const run = opts.run ?? runIndexer;
+  const go = () => {
+    if (indexerState().running) return;
+    log.info({}, "Picture index: automatic build/top-up starting");
+    void run().catch(() => {});
+  };
+  const first = setTimeout(go, opts.startDelayMs ?? AUTO_START_DELAY_MS);
+  const every = setInterval(go, opts.intervalMs ?? AUTO_TOP_UP_MS);
+  first.unref?.();
+  every.unref?.();
+  return () => { clearTimeout(first); clearInterval(every); };
+}

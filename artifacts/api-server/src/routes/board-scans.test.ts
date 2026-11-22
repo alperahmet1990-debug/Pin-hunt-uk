@@ -20,6 +20,8 @@ const state = vi.hoisted(() => ({
   enqueued: [] as string[],
   todayCount: 0,
   scanUpdates: [] as Array<[string, Record<string, unknown>]>,
+  pageQueries: [] as Array<Record<string, unknown>>,
+  lookalikeCalls: 0,
   indexRuns: [] as Array<Record<string, unknown>>,
   indexRunning: false,
   indexStopped: 0,
@@ -48,7 +50,8 @@ vi.mock("../services/boardScan/store", async (importOriginal) => ({
   updateScan: async (id: string, patch: Record<string, unknown>) => { state.scanUpdates.push([id, patch]); },
   uploadObject: async (_b: string, path: string) => { state.uploads.push(path); },
   getScan: async (id: string) => ({ id, status: "ready", created_by: "admin-1", image_path: `${id}/board.jpg`, stats: {}, updated_at: new Date().toISOString() }),
-  getItem: async (_scan: string, id: string) => ({ id, cleanup_status: "done", cleaned_path: "x.jpg", image_review: "none", decision: "undecided", suggested_pin_id: "PHUK-10122801", decided_pin_id: null }),
+  downloadObject: async () => Buffer.from("crop"),
+  getItem: async (_scan: string, id: string) => ({ id, crop_path: "scan-1/crops/001.jpg", candidates: [{ pinId: "PHUK-2", collection: "Rescue Rangers" }, { pinId: "PHUK-3", collection: "tails of friendship" }], cleanup_status: "done", cleaned_path: "x.jpg", image_review: "none", decision: "undecided", suggested_pin_id: "PHUK-10122801", decided_pin_id: null }),
   updateItem: async (_id: string, patch: Record<string, unknown>) => ({ id: "i1", cleanup_status: "done", image_review: "none", suggested_pin_id: "PHUK-10122801", ...patch }),
   listItems: async () => [{ id: "i1", position: 1, suggested_pin_id: "PHUK-1", decided_pin_id: null, decision: "undecided", candidates: [{ pinId: "PHUK-2" }], crop_path: null, cleaned_path: null }],
   signedUrls: async () => ({}),
@@ -70,7 +73,16 @@ vi.mock("../services/boardScan/pipeline", async (importOriginal) => ({
   catalogueRepository: () => ({
     getPinByPinhuntId: async (id: string) => ({ id, title: "Meeko", collection: "Tails of Friendship", imageUrl: undefined }),
     searchPins: async () => [],
+    searchPinsPage: async (q: string, f: { collection?: string; offset?: number; limit?: number }) => {
+      state.pageQueries.push({ q, ...f });
+      const all = Array.from({ length: 45 }, (_, i) => ({ id: `PHUK-${i + 1}`, title: `Pin ${i + 1}`, collection: f.collection ?? "", imageUrl: undefined }));
+      return { pins: all.slice(f.offset ?? 0, (f.offset ?? 0) + (f.limit ?? 30)), total: all.length };
+    },
+    getPinsByIds: async (ids: string[]) => ids.filter((id) => id !== "PHUK-GONE").map((id) => ({ id, title: `Look ${id}`, collection: "Tails of Friendship", imageUrl: undefined })),
   }),
+}));
+vi.mock("../services/pictureIndex/search", () => ({
+  lookalikePins: async () => { state.lookalikeCalls++; return ["PHUK-9", "PHUK-GONE", "PHUK-1"]; },
 }));
 
 vi.mock("../services/pictureIndex/indexer", async (importOriginal) => ({
@@ -226,6 +238,37 @@ describe("board review extras", () => {
     state.isAppCreator = true;
     const creator = await search();
     expect(creator.body.pins[0]).toMatchObject({ pinId: "PHUK-1", referenceUrl: "https://pinandpop.example/1.jpg" });
+  });
+
+  it("browses a set page by page, with or without words", async () => {
+    state.pageQueries = [];
+    const first = await request(app).get("/api/admin/board-scans-pin-search?set=Tails%20of%20Friendship").set("Authorization", "Bearer t");
+    expect(first.body).toMatchObject({ total: 45, more: true });
+    expect(first.body.pins).toHaveLength(30);
+    const second = await request(app).get("/api/admin/board-scans-pin-search?set=Tails%20of%20Friendship&q=meeko&offset=30").set("Authorization", "Bearer t");
+    expect(second.body).toMatchObject({ more: false });
+    expect(second.body.pins).toHaveLength(15);
+    expect(state.pageQueries).toEqual([
+      expect.objectContaining({ q: "", collection: "Tails of Friendship", offset: 0, limit: 30 }),
+      expect.objectContaining({ q: "meeko", collection: "Tails of Friendship", offset: 30 }),
+    ]);
+    // Words alone still need two letters.
+    expect((await request(app).get("/api/admin/board-scans-pin-search?q=a").set("Authorization", "Bearer t")).body.pins).toEqual([]);
+  });
+
+  it("offers the board's sets and, with the picture index on, look-alikes in order", async () => {
+    const picks = () => request(app).get("/api/admin/board-scans/scan-1/items/i1/picks").set("Authorization", "Bearer t");
+    const off = await picks();
+    expect(off.body).toEqual({ sets: ["Rescue Rangers", "tails of friendship"], lookalikes: [] });
+    expect(state.lookalikeCalls).toBe(0);
+
+    vi.stubEnv("PICTURE_INDEX_ENABLED", "true");
+    vi.stubEnv("GOOGLE_APPLICATION_CREDENTIALS_JSON", JSON.stringify({ project_id: "p", client_email: "a@p.iam.gserviceaccount.com", private_key: "k" }));
+    state.isAppCreator = true;
+    const on = await picks();
+    expect(on.body.lookalikes.map((p: { pinId: string }) => p.pinId)).toEqual(["PHUK-9", "PHUK-1"]);
+    expect(on.body.lookalikes[1]).toMatchObject({ referenceUrl: "https://pinandpop.example/1.jpg" });
+    vi.unstubAllEnvs();
   });
 
   it("confirming a pin learns its set and says how many pins are being re-matched", async () => {

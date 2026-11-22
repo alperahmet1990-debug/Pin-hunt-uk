@@ -46,6 +46,7 @@ import { isBlankPhoto, normaliseBoardPhoto, sha256, type Box } from "../services
 import { indexerState, ratePerMinute, runIndexer, stopIndexer } from "../services/pictureIndex/indexer";
 import { indexStatus } from "../services/pictureIndex/store";
 import { pictureIndexConfigured, vertexLocation } from "../services/pictureIndex/vertex";
+import { lookalikePins } from "../services/pictureIndex/search";
 import { boardMetrics, itemPriority } from "../services/boardScan/rules";
 import * as store from "../services/boardScan/store";
 import type { BoardScan, BoardScanItem, ExcludeReason } from "../services/boardScan/store";
@@ -290,31 +291,90 @@ router.get("/admin/board-scans", requireAdmin, async (_req: AdminRequest, res: R
   }
 });
 
+/** Pins as the pick screens show them, with the App Creator's admin-only Pin & Pop pictures. */
+async function pickRows(pins: Array<{ id: string; title: string; collection: string; imageUrl?: string | null }>, isAppCreator: boolean) {
+  // Pin & Pop pins have no public photo yet; the App Creator gets their
+  // admin-only reference picture to tell similar pins apart (same rule as
+  // the review screen, approved on #648).
+  const refs = isAppCreator
+    ? await store.pinAndPopReferences(pins.map((p) => p.id)).catch((err) => {
+        console.warn("[board-scan] Pin & Pop references unavailable for search:", err instanceof Error ? err.message : err);
+        return {} as Awaited<ReturnType<typeof store.pinAndPopReferences>>;
+      })
+    : {};
+  return pins.map((p) => ({
+    pinId: p.id, title: p.title, collection: p.collection, imageUrl: p.imageUrl ?? null,
+    referenceUrl: refs[p.id]?.imageUrl ?? null,
+  }));
+}
+
+/** Pins per page in "Which pin is it?". */
+export const PICK_PAGE = 30;
+
+/**
+ * Search the catalogue for "Which pin is it?". With `set`, browse that set
+ * (optionally narrowed by `q`), so a pin titled only by character can be
+ * picked from its set's pictures. Paged with `offset`.
+ */
 router.get("/admin/board-scans-pin-search", requireAdmin, async (req: AdminRequest, res: Response) => {
   try {
-    const q = cleanText(req.query.q, 100);
-    if (!q || q.length < 2) { res.json({ pins: [] }); return; }
-    const exact = /^PHUK-\d+$/i.test(q) ? await catalogueRepository().getPinByPinhuntId(q.toUpperCase()) : null;
-    const pins = exact ? [exact] : await catalogueRepository().searchPins(q, { status: "active", limit: 25 });
-    // Pin & Pop pins have no public photo yet; the App Creator gets their
-    // admin-only reference picture to tell similar pins apart (same rule as
-    // the review screen, approved on #648).
-    const refs = req.isAppCreator
-      ? await store.pinAndPopReferences(pins.map((p) => p.id)).catch((err) => {
-          console.warn("[board-scan] Pin & Pop references unavailable for search:", err instanceof Error ? err.message : err);
-          return {} as Awaited<ReturnType<typeof store.pinAndPopReferences>>;
-        })
-      : {};
+    const q = cleanText(req.query.q, 100) ?? "";
+    const set = cleanText(req.query.set, 120);
+    const offset = Math.max(0, Math.min(Number(req.query.offset) || 0, 5_000));
+    if (!set && q.length < 2) { res.json({ pins: [], total: 0, more: false }); return; }
+    const exact = !set && /^PHUK-\d+$/i.test(q) ? await catalogueRepository().getPinByPinhuntId(q.toUpperCase()) : null;
+    const page = exact
+      ? { pins: [exact], total: 1 }
+      : await catalogueRepository().searchPinsPage(q, { status: "active", limit: PICK_PAGE, offset, ...(set ? { collection: set } : {}) });
     res.json({
-      pins: pins.map((p) => ({
-        pinId: p.id, title: p.title, collection: p.collection, imageUrl: p.imageUrl ?? null,
-        referenceUrl: refs[p.id]?.imageUrl ?? null,
-      })),
+      pins: await pickRows(page.pins, req.isAppCreator === true),
+      total: page.total,
+      more: offset + page.pins.length < page.total,
     });
   } catch (err) {
     fail(res, err);
   }
 });
+
+/**
+ * Starting points for "Which pin is it?" on one pin: the board's sets (and
+ * the sets of its suggestions), and — when the picture index is on — the
+ * catalogue pins that look most like its crop.
+ */
+router.get("/admin/board-scans/:id/items/:itemId/picks", requireAdmin, async (req: AdminRequest, res: Response) => {
+  try {
+    const scan = await store.getScan(String(req.params.id));
+    if (!scan) { res.status(404).json({ error: "Board not found" }); return; }
+    const item = await store.getItem(scan.id, String(req.params.itemId));
+    if (!item) { res.status(404).json({ error: "Pin not found" }); return; }
+    const sets: string[] = [];
+    for (const s of [...(scan.stats?.setHints ?? []), ...(item.candidates ?? []).map((c) => c.collection)]) {
+      const name = (s ?? "").trim();
+      if (name && !sets.some((x) => x.toLowerCase() === name.toLowerCase())) sets.push(name);
+    }
+    let lookalikes: Awaited<ReturnType<typeof pickRows>> = [];
+    if (pictureIndexConfigured() && item.crop_path) {
+      try {
+        const crop = await store.downloadObject(store.BOARD_BUCKET, item.crop_path);
+        const ids = await lookalikePins(crop, LOOKALIKE_PICKS);
+        const pins = await catalogueRepository().getPinsByIds(ids);
+        const rank = new Map(ids.map((pinId, i) => [pinId, i]));
+        lookalikes = await pickRows(
+          pins.filter((p) => rank.has(p.id)).sort((a, b) => rank.get(a.id)! - rank.get(b.id)!),
+          req.isAppCreator === true,
+        );
+      } catch (err) {
+        console.warn("[board-scan] look-alikes unavailable:", err instanceof Error ? err.message : err);
+      }
+    }
+    res.json({ sets: sets.slice(0, 6), lookalikes });
+  } catch (err) {
+    fail(res, err);
+  }
+});
+
+/** Look-alikes offered in "Which pin is it?". */
+const LOOKALIKE_PICKS = 24;
 
 // ── Picture index (migration 085) ────────────────────────────────────────────
 // Building it describes every Pin & Pop reference picture once, in the

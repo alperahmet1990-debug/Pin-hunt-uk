@@ -74,7 +74,7 @@ export interface MatchDeps {
 /** Look-alikes from the picture index added to the candidates. */
 export const LOOKALIKE_CANDIDATES = 30;
 /** Look-alikes always shown to the picture check (with the ranking's top 3). */
-export const LOOKALIKES_COMPARED = 2;
+export const LOOKALIKES_COMPARED = 3;
 
 /** Below this, no candidate is plausible: shown as "not identified". */
 export const MATCH_PLAUSIBLE_MIN = 25;
@@ -88,9 +88,14 @@ export const UNVERIFIED_MAX = 60;
  * 5), not the scan's 3. With only the top 3 shown, the model promoted a 4th
  * or 5th candidate it had never seen when the pictured ones didn't match.
  */
+/**
+ * Reference pictures shown to the picture check: the ranking's 5 plus the
+ * closest look-alikes. Admin-only matching, so it errs on seeing more
+ * (≈ 765 input tokens each at high detail).
+ */
 function maxReferences(): number {
   const raw = Number(process.env.BOARD_MAX_REFERENCES);
-  return Number.isFinite(raw) && raw > 0 ? Math.min(5, Math.floor(raw)) : 5;
+  return Number.isFinite(raw) && raw > 0 ? Math.min(10, Math.floor(raw)) : 8;
 }
 
 /**

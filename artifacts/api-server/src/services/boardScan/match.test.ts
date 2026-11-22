@@ -150,7 +150,8 @@ describe("matchCrop reference comparison", () => {
     // Ranked first among the candidates, though the ranking (titles only) left it out.
     expect(String(rank.messages[0].content).indexOf("PHUK-LOOK")).toBeLessThan(String(rank.messages[0].content).indexOf("PHUK-1"));
     expect(String(verify.messages[0].content)).toMatch(/PHUK-LOOK \| "Meeko" .*YES \(shown below\)/);
-    expect(imagesIn(verify)).toBe(6);
+    // The user's photo, the ranking's five and the look-alike: nothing dropped to make room.
+    expect(imagesIn(verify)).toBe(7);
     expect(out.candidates[0]).toMatchObject({ pinId: "PHUK-LOOK", confidence: 95, verified: true, lookalike: true });
   });
 

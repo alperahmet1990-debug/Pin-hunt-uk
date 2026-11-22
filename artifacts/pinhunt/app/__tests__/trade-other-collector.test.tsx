@@ -52,6 +52,7 @@ describe('Trade screen: who the trade is with', () => {
     mockRepo = makeRepo(async () => { throw new Error('nope'); });
     const { findByText, queryByTestId } = await render(<TradeScreen />);
     expect(await findByText('The other collector accepted')).toBeTruthy();
+    expect(await findByText(/Note from the other collector: Hi there/)).toBeTruthy();
     await waitFor(() => expect(mockSetOptions).toHaveBeenLastCalledWith({ title: 'Trade with the other collector' }));
     expect(queryByTestId('trade-other-collector')).toBeNull();
   });

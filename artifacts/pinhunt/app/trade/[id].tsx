@@ -371,11 +371,6 @@ export default function TradeScreen() {
       // either collector adds or removes pins while the chat is open.
       if (userId) {
         const otherId = t.initiatorId === userId ? t.recipientId : t.initiatorId;
-        if (typeof repo.getProfileUsername === 'function') {
-          repo.getProfileUsername(otherId)
-            .then(setOtherUsername)
-            .catch(() => { /* fall back to "the other collector" */ });
-        }
         repo.getPotentialTrades({ viewerId: userId, collectorId: otherId })
           .then(pins => setPotentialPins(pins))
           .catch(() => { /* silently ignore — banner just won't appear */ });
@@ -388,6 +383,17 @@ export default function TradeScreen() {
   }, [repo, id, userId]);
 
   useEffect(() => { load(); }, [load]);
+
+  // The other collector's name: read once per trade, not on every reload.
+  const otherId = trade ? (trade.initiatorId === userId ? trade.recipientId : trade.initiatorId) : undefined;
+  useEffect(() => {
+    if (!repo || !otherId || typeof repo.getProfileUsername !== 'function') return;
+    let cancelled = false;
+    repo.getProfileUsername(otherId)
+      .then(name => { if (!cancelled) setOtherUsername(name); })
+      .catch(() => { /* fall back to "the other collector" */ });
+    return () => { cancelled = true; };
+  }, [repo, otherId]);
 
   // Keep a stable reference to `load` so the realtime subscription below
   // doesn't tear down and resubscribe every time the callback identity changes.
@@ -612,7 +618,7 @@ export default function TradeScreen() {
             {trade.notes ? (
               <View style={[styles.noteBox, { backgroundColor: colors.homeAqua, borderBottomColor: colors.homeLine }]}>
                 <Feather name="message-circle" size={12} color={colors.homeMuted} />
-                <Text style={[styles.noteText, { color: colors.homeMuted }]}>Note from {otherUsername ? `@${otherUsername}` : 'a collector'}: {trade.notes}</Text>
+                <Text style={[styles.noteText, { color: colors.homeMuted }]}>Note from {otherUsername ? `@${otherUsername}` : 'the other collector'}: {trade.notes}</Text>
               </View>
             ) : null}
 

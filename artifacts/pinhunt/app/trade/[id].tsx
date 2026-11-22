@@ -10,6 +10,7 @@ import {
   KeyboardAvoidingView,
   useWindowDimensions,
   Platform,
+  Pressable,
   ScrollView,
   StyleSheet,
   Text,
@@ -32,6 +33,7 @@ import {
 import { otherSideTracking, otherUserIdFor, sendFailureLine, tradeActionsFor } from '@/utils/tradeActions';
 import { useBlockedUsers } from '@/context/BlockedUsersContext';
 import type { PotentialTradePin, Trade, TradeMessage, TradeStatus } from '@workspace/pin-repository';
+import { Avatar } from '@/components/Avatar';
 import { PinImage } from '@/components/ui/PinImage';
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
 import { TradeItemsCard } from '@/components/TradeItemsCard';
@@ -333,6 +335,8 @@ export default function TradeScreen() {
   const toast = useToast();
   const [updateSheetOpen, setUpdateSheetOpen] = useState(false);
   const [bannerDismissed, setBannerDismissed] = useState(false);
+  // The other collector's @username; null while unknown or unreadable.
+  const [otherUsername, setOtherUsername] = useState<string | null>(null);
 
   // Load persisted dismissal state for this trade
   useEffect(() => {
@@ -367,6 +371,11 @@ export default function TradeScreen() {
       // either collector adds or removes pins while the chat is open.
       if (userId) {
         const otherId = t.initiatorId === userId ? t.recipientId : t.initiatorId;
+        if (typeof repo.getProfileUsername === 'function') {
+          repo.getProfileUsername(otherId)
+            .then(setOtherUsername)
+            .catch(() => { /* fall back to "the other collector" */ });
+        }
         repo.getPotentialTrades({ viewerId: userId, collectorId: otherId })
           .then(pins => setPotentialPins(pins))
           .catch(() => { /* silently ignore — banner just won't appear */ });
@@ -576,7 +585,7 @@ export default function TradeScreen() {
 
   return (
     <>
-      <Stack.Screen options={{ title: 'Trade Request' }} />
+      <Stack.Screen options={{ title: otherUsername ? `Trade with @${otherUsername}` : 'Trade with the other collector' }} />
       <KeyboardAvoidingView
         style={{ flex: 1, backgroundColor: colors.homeBackground }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
@@ -603,7 +612,7 @@ export default function TradeScreen() {
             {trade.notes ? (
               <View style={[styles.noteBox, { backgroundColor: colors.homeAqua, borderBottomColor: colors.homeLine }]}>
                 <Feather name="message-circle" size={12} color={colors.homeMuted} />
-                <Text style={[styles.noteText, { color: colors.homeMuted }]}>Note from a collector: {trade.notes}</Text>
+                <Text style={[styles.noteText, { color: colors.homeMuted }]}>Note from {otherUsername ? `@${otherUsername}` : 'a collector'}: {trade.notes}</Text>
               </View>
             ) : null}
 
@@ -636,9 +645,22 @@ export default function TradeScreen() {
                 />
               )}
               {/* Timeline: what has happened so far */}
+              {otherUsername ? (
+                <Pressable
+                  testID="trade-other-collector"
+                  accessibilityRole="link"
+                  accessibilityLabel={`View @${otherUsername}'s collector profile`}
+                  onPress={() => router.push({ pathname: '/collector/[username]', params: { username: otherUsername } })}
+                  style={[styles.identityRow, { borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}
+                >
+                  <Avatar name={otherUsername} size={32} />
+                  <Text style={[styles.identityName, { color: colors.homeInk }]}>@{otherUsername}</Text>
+                  <Feather name="chevron-right" size={16} color={colors.homeMuted} />
+                </Pressable>
+              ) : null}
               <View testID="trade-timeline" style={[styles.timeline, { borderColor: colors.homeLine, backgroundColor: colors.homeSurface }]}>
                 <Text accessibilityRole="header" style={[styles.timelineTitle, { color: colors.homeInk }]}>Timeline</Text>
-                {tradeTimeline(trade, userId).map(step => (
+                {tradeTimeline(trade, userId, otherUsername ? `@${otherUsername}` : 'The other collector').map(step => (
                   <View key={step.key} style={styles.timelineRow} accessible accessibilityLabel={step.at ? `${step.label}, ${formatDate(step.at)}` : step.label}>
                     <View style={[styles.timelineDot, { backgroundColor: colors.homeCoral }]} />
                     <Text style={[styles.timelineText, { color: colors.homeInk }]}>{step.label}</Text>
@@ -973,6 +995,8 @@ export default function TradeScreen() {
 
 const styles = StyleSheet.create({
   timeline:      { borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.xs + 2, marginBottom: spacing.sm },
+  identityRow:   { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, minHeight: 44, borderWidth: 1, borderRadius: radius.md, paddingHorizontal: spacing.md, marginBottom: spacing.sm },
+  identityName:  { flex: 1, fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   timelineTitle: { fontSize: 14, fontFamily: 'Inter_600SemiBold', marginBottom: 2 },
   timelineRow:   { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, minHeight: 24 },
   timelineDot:   { width: 8, height: 8, borderRadius: 4 },

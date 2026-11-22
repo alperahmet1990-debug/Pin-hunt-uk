@@ -771,6 +771,12 @@ class SupabaseUserPinRepository implements IUserPinRepository {
     }));
   }
 
+  async getProfileUsername(userId: string): Promise<string | null> {
+    // Same profiles select getUserTrades makes. A name is a nicety: no throw.
+    const { data } = await this.client.from('profiles').select('username').eq('id', userId).maybeSingle();
+    return (data as { username: string | null } | null)?.username ?? null;
+  }
+
   async getTrade(tradeId: string): Promise<Trade | null> {
     const { data, error } = await this.client
       .from('trades')

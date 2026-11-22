@@ -183,7 +183,7 @@ describe('Trade steps in chat and one conversation per trade (step 2)', () => {
     await render(<TradeScreen />);
     await settle();
     expect(screen.getByTestId('trade-timeline')).toBeTruthy();
-    expect(screen.getByText('They proposed the trade')).toBeTruthy();
+    expect(screen.getByText('The other collector proposed the trade')).toBeTruthy();
     expect(screen.getByText('Earlier messages')).toBeTruthy();
     expect(screen.getByText('Old note')).toBeTruthy();
     expect(screen.queryByPlaceholderText('Type a message…')).toBeNull();

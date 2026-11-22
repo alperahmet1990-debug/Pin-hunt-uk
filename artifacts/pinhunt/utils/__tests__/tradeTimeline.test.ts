@@ -39,3 +39,11 @@ describe('tradeTimeline', () => {
     expect(labels(problem, 'b')).toEqual(['They proposed the trade', 'You accepted', 'They posted their pins', 'A problem was reported']);
   });
 });
+
+describe('tradeTimeline with a name', () => {
+  it('uses the other collector\'s name in place of "They"', () => {
+    const accepted: Trade = { ...base, status: 'accepted' };
+    expect(tradeTimeline(accepted, 'a', '@ana').map(s => s.label)).toEqual(['You proposed the trade', '@ana accepted']);
+    expect(tradeTimeline(accepted, 'b', '@ana').map(s => s.label)).toEqual(['@ana proposed the trade', 'You accepted']);
+  });
+});

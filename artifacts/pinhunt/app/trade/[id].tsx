@@ -387,11 +387,12 @@ export default function TradeScreen() {
   // The other collector's name: read once per trade, not on every reload.
   const otherId = trade ? (trade.initiatorId === userId ? trade.recipientId : trade.initiatorId) : undefined;
   useEffect(() => {
+    setOtherUsername(null);
     if (!repo || !otherId || typeof repo.getProfileUsername !== 'function') return;
     let cancelled = false;
     repo.getProfileUsername(otherId)
       .then(name => { if (!cancelled) setOtherUsername(name); })
-      .catch(() => { /* fall back to "the other collector" */ });
+      .catch(() => { if (!cancelled) setOtherUsername(null); /* fall back to "the other collector" */ });
     return () => { cancelled = true; };
   }, [repo, otherId]);
 
@@ -651,7 +652,7 @@ export default function TradeScreen() {
                 />
               )}
               {/* Timeline: what has happened so far */}
-              {otherUsername ? (
+              {otherUsername && !(otherId && isBlocked(otherId)) ? (
                 <Pressable
                   testID="trade-other-collector"
                   accessibilityRole="link"

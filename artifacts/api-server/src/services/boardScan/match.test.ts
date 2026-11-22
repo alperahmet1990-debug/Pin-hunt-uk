@@ -165,4 +165,26 @@ describe("matchCrop reference comparison", () => {
     expect(out.candidates[0]).toMatchObject({ pinId: "PHUK-1" });
     expect(out.candidates.some((c) => c.lookalike)).toBe(false);
   });
+
+  it("shows the ranking's five and the three closest look-alikes: eight reference pictures by default, at most ten", async () => {
+    const looks = ["PHUK-L1", "PHUK-L2", "PHUK-L3", "PHUK-L4"];
+    const lookPins = looks.map((id) => ({ id, title: `Look ${id}`, brand: "Disney", collection: "Toy Story", characters: [] }) as unknown as CataloguePin);
+    const repo = { searchPins: async () => pins, getPinsByIds: async () => lookPins } as unknown as PinRepository;
+    const refs = Object.fromEntries([...ids, ...looks].map((id) => [id, `https://p/${id}.jpg`]));
+    const verifyImages = async () => {
+      const { create, openai } = fakeOpenAI(ranking);
+      await matchCrop(Buffer.from("x"), { characters: ["Woody"], keywords: [], text: "" }, {
+        openai, model: "m", repository: repo, referenceImages: async (want) => Object.fromEntries(want.map((id) => [id, refs[id]])),
+        pictureSearch: async () => looks,
+      }, emptyUsage());
+      const verify = create.mock.calls.map(([r]) => r).find((r) => String(r.messages[0].content).startsWith("You verify"))!;
+      return imagesIn(verify) - 1; // minus the user's photo
+    };
+    expect(await verifyImages()).toBe(8); // 5 ranked + 3 look-alikes (the 4th isn't compared)
+    vi.stubEnv("BOARD_MAX_REFERENCES", "50");
+    expect(await verifyImages()).toBe(8); // only 8 candidates to show; the cap (10) isn't the limit here
+    vi.stubEnv("BOARD_MAX_REFERENCES", "3");
+    expect(await verifyImages()).toBe(3);
+    vi.unstubAllEnvs();
+  });
 });

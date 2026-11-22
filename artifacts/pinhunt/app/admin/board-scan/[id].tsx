@@ -685,6 +685,10 @@ function PinSearchModal(props: {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   const [preview, setPreview] = useState<SearchResult | null>(null);
+  // Tiles fill the row: 3 across where there's room, else 2 (no empty column).
+  const [gridWidth, setGridWidth] = useState(0);
+  const cols = gridWidth >= 330 ? 3 : 2;
+  const tileWidth = gridWidth > 0 ? Math.floor((gridWidth - 8 * (cols - 1)) / cols) : undefined;
   const itemId = props.item?.id;
 
   useEffect(() => {
@@ -747,7 +751,7 @@ function PinSearchModal(props: {
         key={p.pinId}
         onPress={() => props.onPick(p.pinId)}
         onLongPress={() => picture && setPreview(p)}
-        style={[styles.tile, { borderColor: colors.homeLine }]}
+        style={[styles.tile, { borderColor: colors.homeLine }, tileWidth ? { width: tileWidth } : null]}
         accessibilityLabel={`Choose ${p.title}`}
       >
         {picture ? (
@@ -824,7 +828,7 @@ function PinSearchModal(props: {
             </TouchableOpacity>
           ) : null}
           {err ? <Text style={[styles.small, { color: colors.destructive }]}>{err}</Text> : null}
-          <ScrollView style={{ flexShrink: 1 }} contentContainerStyle={{ gap: 8 }}>
+          <ScrollView style={{ flexShrink: 1 }} contentContainerStyle={{ gap: 8 }} onLayout={(e) => setGridWidth(e.nativeEvent.layout.width)}>
             {showLookalikes ? (
               <>
                 <Text style={[styles.small, { color: colors.homeInk }]}>Looks like your pin</Text>

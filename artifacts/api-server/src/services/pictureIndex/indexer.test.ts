@@ -213,5 +213,22 @@ describe("picture index: building it", () => {
         vi.useRealTimers();
       }
     });
+
+    it("doesn't start while a build is already running", async () => {
+      const w = world(10);
+      w.deps.pending = () => new Promise(() => {}); // a build that's busy
+      void runIndexer({ rate: 6000 }, w.deps);
+      expect(indexerState().running).toBe(true);
+      vi.useFakeTimers();
+      try {
+        const run = vi.fn(async () => true);
+        startAutoResume(log, { configured: () => true, env: { PICTURE_INDEX_AUTO_RESUME: "true" } as NodeJS.ProcessEnv, run });
+        vi.advanceTimersByTime(25 * 3600_000);
+        expect(run).not.toHaveBeenCalled();
+      } finally {
+        vi.useRealTimers();
+        resetIndexerForTests();
+      }
+    });
   });
 });

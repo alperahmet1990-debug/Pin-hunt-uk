@@ -637,7 +637,6 @@ export default function AdminBoardScanScreen() {
 
 /** One picture full size, e.g. to compare a crop with its Pin & Pop reference. */
 function ZoomModal(props: { picture: { uri: string; label: string; reference?: boolean } | null; onClose: () => void }) {
-  const colors = useColors();
   return (
     <Modal visible={!!props.picture} transparent animationType="fade" onRequestClose={props.onClose}>
       <Pressable style={styles.zoomBackdrop} onPress={props.onClose} accessibilityLabel="Close the picture">
@@ -650,7 +649,7 @@ function ZoomModal(props: { picture: { uri: string; label: string; reference?: b
               {...(props.picture.reference ? { referrerPolicy: 'no-referrer' as const } : {})}
             />
             <Text style={[styles.small, { color: '#fff', textAlign: 'center' }]}>{props.picture.label}</Text>
-            <Text style={[styles.tiny, { color: colors.homeAqua, textAlign: 'center' }]}>Tap anywhere to close</Text>
+            <Text style={[styles.tiny, { color: '#ddd', textAlign: 'center' }]}>Tap anywhere to close</Text>
           </>
         ) : null}
       </Pressable>
@@ -793,7 +792,7 @@ function PinSearchModal(props: {
           ) : null}
           <View style={styles.searchRow}>
             <TextInput
-              style={[styles.input, { flex: 1, borderColor: colors.homeLine, color: colors.homeInk }]}
+              style={[styles.input, { flex: 1, minWidth: 0, borderColor: colors.homeLine, color: colors.homeInk }]}
               placeholder={set ? `Search in ${set}` : 'Title, character, set or PHUK-…'}
               placeholderTextColor={colors.homeMuted}
               value={q}
@@ -807,7 +806,7 @@ function PinSearchModal(props: {
             </TouchableOpacity>
           </View>
           {sets.length > 0 ? (
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 6 }}>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ flexGrow: 0, flexShrink: 0 }} contentContainerStyle={{ gap: 6 }}>
               {[null, ...sets].map((name) => (
                 <TouchableOpacity
                   key={name ?? '__all'}
@@ -825,7 +824,7 @@ function PinSearchModal(props: {
             </TouchableOpacity>
           ) : null}
           {err ? <Text style={[styles.small, { color: colors.destructive }]}>{err}</Text> : null}
-          <ScrollView style={{ maxHeight: 420 }} contentContainerStyle={{ gap: 8 }}>
+          <ScrollView style={{ flexShrink: 1 }} contentContainerStyle={{ gap: 8 }}>
             {showLookalikes ? (
               <>
                 <Text style={[styles.small, { color: colors.homeInk }]}>Looks like your pin</Text>
@@ -891,17 +890,17 @@ const styles = StyleSheet.create({
   chipThumb: { width: 28, height: 28, borderRadius: 4, marginRight: 6, backgroundColor: '#fff' },
   match: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   modalBackdrop: { flex: 1, backgroundColor: '#0008', justifyContent: 'center', padding: 16 },
-  modal: { borderRadius: 14, padding: 16, gap: 10, maxWidth: 560, width: '100%', alignSelf: 'center' },
+  modal: { borderRadius: 14, padding: 16, gap: 10, maxWidth: 560, width: '100%', maxHeight: '100%', alignSelf: 'center' },
   searchRow: { flexDirection: 'row', gap: 8 },
   input: { borderWidth: 1, borderRadius: 8, paddingHorizontal: 10, paddingVertical: 8, fontSize: 14, fontFamily: 'Inter_400Regular' },
   result: { flexDirection: 'row', gap: 10, alignItems: 'center', borderWidth: 1, borderRadius: 8, padding: 6 },
   resultImg: { width: 64, height: 64, borderRadius: 4 },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  tile: { width: 112, borderWidth: 1, borderRadius: 8, padding: 4, gap: 2 },
-  tileImg: { width: 102, height: 102, borderRadius: 4 },
+  tile: { width: '31.5%', borderWidth: 1, borderRadius: 8, padding: 4, gap: 2 },
+  tileImg: { width: '100%', aspectRatio: 1, borderRadius: 4 },
   tileZoom: { position: 'absolute', top: 6, right: 6, backgroundColor: '#0008', borderRadius: 10, padding: 4 },
   cropRow: { flexDirection: 'row', gap: 10, alignItems: 'center' },
-  cropImg: { width: 96, height: 96, borderRadius: 6, backgroundColor: '#0001' },
+  cropImg: { width: 80, height: 80, borderRadius: 6, backgroundColor: '#0001' },
   previewOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: '#000c', borderRadius: 14, padding: 16, gap: 10, alignItems: 'center', justifyContent: 'center' },
   previewImg: { width: '100%', height: 360, borderRadius: 8 },
   zoomBackdrop: { flex: 1, backgroundColor: '#000d', padding: 16, gap: 10, alignItems: 'center', justifyContent: 'center' },

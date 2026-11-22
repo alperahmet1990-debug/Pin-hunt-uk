@@ -6,6 +6,7 @@ import { useColors } from '@/hooks/useColors';
 import { radius, spacing } from '@/constants/theme';
 import { MarketValueSection, ukEstimateOf, usePinMarketValue } from '@/components/MarketValueSection';
 import { useCommunityPrice } from '@/hooks/useCommunityPrice';
+import { useSoldPrices } from '@/hooks/useSoldPrices';
 import { usePriceCurrency } from '@/hooks/usePriceCurrency';
 import {
   agreementLine,
@@ -53,6 +54,10 @@ function TwoPriceCard({
   const [, setCurrency, homeCurrency] = usePriceCurrency();
   const peeking = currency !== homeCurrency;
   const market = usePinMarketValue(pinId);
+  // The sold-price card above this one already shows a sold value for the market (UXR-36).
+  const sold = useSoldPrices(pinId);
+  const soldMarket = currency === 'GBP' ? 'UK' : 'US';
+  const soldShown = sold.status === 'ready' && sold.valuations.some(v => v.market === soldMarket);
   // Today's market figure is eBay UK asking prices (B-P1-19); US has none yet.
   const uk = currency === 'GBP' ? ukEstimateOf(market) : null;
   const marketStep: EvidenceStep | null = uk ? (uk.confidence === 'high' ? 'confident' : 'growing') : null;
@@ -108,19 +113,21 @@ function TwoPriceCard({
         {uk && marketStep ? (
           <PriceTile
             kind="market"
-            label="Market price"
+            label="Asking price"
             amount={formatPrice(Math.round(marketMid!), uk.currency)}
             detail={formatPriceRange(uk.estimatedLow, uk.estimatedHigh, uk.currency)}
             step={marketStep}
-            basis={`${uk.comparableCount} eBay UK ${uk.comparableCount === 1 ? 'listing' : 'listings'}, asking prices`}
+            basis={`${uk.comparableCount} eBay UK ${uk.comparableCount === 1 ? 'listing' : 'listings'}`}
           />
         ) : (
           <EmptyTile
             kind="market"
-            title="No market price yet"
-            body={currency === 'GBP'
-              ? 'We show one once enough of this pin is listed on eBay UK.'
-              : 'US market prices are coming.'}
+            title="Asking price"
+            body={soldShown
+              ? 'Sold prices are shown above'
+              : currency === 'GBP'
+                ? 'No asking price yet. We show one once enough of this pin is listed on eBay UK.'
+                : 'US asking prices are coming.'}
           />
         )}
         {community ? (

@@ -114,6 +114,14 @@ Text search can't single out pins titled like hundreds of others ("Meeko") when 
 - **Before switching it on in production:** Vertex AI request/response logging and data retention checked in the Google Cloud project; the privacy policy (which now names Google Vertex AI) published with `LAST_UPDATED` set in `artifacts/pinhunt/utils/legal.ts`.
 - **Rights:** reference pictures and crops are sent to Google Vertex AI (a processor alongside OpenAI). Maintainer decision, 20 Nov 2026, approved on #659 (`docs/catalogue-sync/PIN-AND-POP-QUESTIONS.md`, question 8; `scripts/PINANDPOP.md`). Service-role only; never returned to the app. Rollback: migration 085's header.
 
+## Correcting a match ("Which pin is it?")
+
+**Change pin** / **Choose pin** opens with the pin's crop to compare against, then:
+- **Looks like your pin:** the 24 catalogue pins whose reference pictures look most like the crop (picture index, when on).
+- **The board's sets** (typed, learned, and the sets of its suggestions) as chips: tap one to browse that set as a picture grid, 30 at a time (**Show more**); the search box then narrows within it.
+- Search the whole catalogue as before (title, character, set or `PHUK-…`).
+Tap a picture to choose it; hold it (or tap ⤢) to see it large, with **Choose this pin**. On the card, tap any picture (crop, cleaned, catalogue photo, Pin & Pop reference) to enlarge it. Pin & Pop pictures are shown to the App Creator only, as elsewhere.
+
 ## Straightening
 
 After Pixian, a cleaned photo is turned straight when the pin has straight sides (`services/boardScan/straighten.ts`): the tilt is the rotation that gives the outline's convex hull the smallest bounding box, within ±25°. Round, star and other irregular pins (hull fills < 85% of that box) are left as they are. The reviewer can also **Straighten**, or turn by 3° with **↺ / ↻**, before approving. Every turn starts again from the un-turned clean-up (no quality lost to repeated turns) and is saved as `<base>.turn.<item>.<degrees>.jpg`; the previous turned file is removed, the shared base never is. Rejected or published photos can't be turned.

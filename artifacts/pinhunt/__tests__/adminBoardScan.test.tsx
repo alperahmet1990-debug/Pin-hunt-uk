@@ -151,7 +151,49 @@ describe('admin board scan: searching and what was searched for', () => {
     await fireEvent.changeText(screen.getByPlaceholderText('Title, character, set or PHUK-…'), 'meeko');
     await fireEvent(screen.getByPlaceholderText('Title, character, set or PHUK-…'), 'submitEditing');
     expect(await screen.findByLabelText('Pin & Pop reference for Meeko')).toBeTruthy();
-    expect(screen.getByText(/Pin & Pop picture \(admin only\)/)).toBeTruthy();
+    // Enlarged, it says where the picture comes from, and can be chosen there.
+    await fireEvent.press(screen.getByLabelText('Enlarge Meeko'));
+    expect(screen.getByText(/Meeko · PHUK-10122801 · Pin & Pop \(admin only\)/)).toBeTruthy();
+    await fireEvent.press(screen.getByText('Choose this pin'));
+    await waitFor(() => expect(calls()).toContain('PATCH /admin/board-scans/scan-1/items/i2 {"action":"set_pin","pinId":"PHUK-10122801"}'));
+  });
+
+  it('opens with the pin\'s crop, its look-alikes and the board\'s sets to browse', async () => {
+    const meeko = { pinId: 'PHUK-10122801', title: 'Meeko', collection: 'Tails of Friendship', imageUrl: null, referenceUrl: 'https://pinandpop.example/m.jpg' };
+    const nana = { pinId: 'PHUK-NANA', title: 'Nana', collection: 'Tails of Friendship', imageUrl: null, referenceUrl: 'https://pinandpop.example/n.jpg' };
+    fetchMock.mockImplementation((url: string) => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve(
+        String(url).includes('/picks') ? { sets: ['Tails of Friendship'], lookalikes: [meeko] }
+          : String(url).includes('pin-search') ? { pins: [nana], total: 31, more: true }
+          : view,
+      ),
+    }));
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    await fireEvent.press(screen.getAllByText('Change pin')[0]);
+    expect(await screen.findByText('Looks like your pin')).toBeTruthy();
+    expect(screen.getByLabelText('Your pin')).toBeTruthy();
+    expect(screen.getByLabelText('Choose Meeko')).toBeTruthy();
+
+    // Browse the set as pictures, page by page.
+    await fireEvent.press(screen.getByText('Tails of Friendship'));
+    expect(await screen.findByLabelText('Choose Nana')).toBeTruthy();
+    expect(calls().some((c) => c.includes('pin-search?q=&offset=0&set=Tails+of+Friendship'))).toBe(true);
+    await fireEvent.press(screen.getByText('Show more'));
+    await waitFor(() => expect(calls().some((c) => c.includes('offset=1&set=Tails+of+Friendship'))).toBe(true));
+
+    await fireEvent.press(screen.getAllByLabelText('Choose Nana')[0]);
+    await waitFor(() => expect(calls()).toContain('PATCH /admin/board-scans/scan-1/items/i2 {"action":"set_pin","pinId":"PHUK-NANA"}'));
+  });
+
+  it('enlarges a picture on the card when tapped', async () => {
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    await fireEvent.press(screen.getAllByLabelText('Enlarge the crop')[0]);
+    expect(screen.getByText('#2 · Crop')).toBeTruthy();
+    await fireEvent.press(screen.getByLabelText('Close the picture'));
+    await waitFor(() => expect(screen.queryByText('#2 · Crop')).toBeNull());
   });
 });
 

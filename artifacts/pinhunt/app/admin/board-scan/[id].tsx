@@ -142,6 +142,8 @@ export default function AdminBoardScanScreen() {
   const [boardWidth, setBoardWidth] = useState(0);
   const [drawing, setDrawing] = useState<{ x: number; y: number } | null | 'armed'>(null);
   const [searchFor, setSearchFor] = useState<{ itemId: string } | { box: Box } | null>(null);
+  /** A picture opened full size (tap any picture on a card). */
+  const [zoom, setZoom] = useState<{ uri: string; label: string; reference?: boolean } | null>(null);
   const [replaceFor, setReplaceFor] = useState<string | null>(null);
   /** In-page confirmations (native alerts don't run their buttons on the web). */
   const [boardAction, setBoardAction] = useState<'rescan' | 'delete' | null>(null);
@@ -476,14 +478,31 @@ export default function AdminBoardScanScreen() {
               </View>
 
               <View style={styles.images}>
-                {i.cropUrl ? <Image source={{ uri: i.cropUrl }} style={styles.thumb} resizeMode="contain" /> : null}
-                {i.cleanedUrl ? <Image source={{ uri: i.cleanedUrl }} style={[styles.thumb, { backgroundColor: '#fff' }]} resizeMode="contain" /> : null}
-                {i.targetPin?.imageUrl ? <Image source={{ uri: i.targetPin.imageUrl }} style={[styles.thumb, { opacity: 0.8 }]} resizeMode="contain" /> : null}
-                {ref?.imageUrl ? <Image source={{ uri: ref.imageUrl }} style={[styles.thumb, { backgroundColor: '#fff' }]} resizeMode="contain" referrerPolicy="no-referrer" accessibilityLabel="Pin & Pop reference image" /> : null}
+                {i.cropUrl ? (
+                  <Pressable onPress={() => setZoom({ uri: i.cropUrl!, label: `#${i.position} · Crop` })} accessibilityLabel="Enlarge the crop">
+                    <Image source={{ uri: i.cropUrl }} style={styles.thumb} resizeMode="contain" />
+                  </Pressable>
+                ) : null}
+                {i.cleanedUrl ? (
+                  <Pressable onPress={() => setZoom({ uri: i.cleanedUrl!, label: `#${i.position} · Cleaned` })} accessibilityLabel="Enlarge the cleaned photo">
+                    <Image source={{ uri: i.cleanedUrl }} style={[styles.thumb, { backgroundColor: '#fff' }]} resizeMode="contain" />
+                  </Pressable>
+                ) : null}
+                {i.targetPin?.imageUrl ? (
+                  <Pressable onPress={() => setZoom({ uri: i.targetPin!.imageUrl!, label: `${targetTitle} · Current catalogue photo` })} accessibilityLabel="Enlarge the catalogue photo">
+                    <Image source={{ uri: i.targetPin.imageUrl }} style={[styles.thumb, { opacity: 0.8 }]} resizeMode="contain" />
+                  </Pressable>
+                ) : null}
+                {ref?.imageUrl ? (
+                  <Pressable onPress={() => setZoom({ uri: ref.imageUrl!, label: `${targetTitle} · Pin & Pop reference (admin only)`, reference: true })} accessibilityLabel="Enlarge the Pin & Pop reference image">
+                    <Image source={{ uri: ref.imageUrl }} style={[styles.thumb, { backgroundColor: '#fff' }]} resizeMode="contain" referrerPolicy="no-referrer" accessibilityLabel="Pin & Pop reference image" />
+                  </Pressable>
+                ) : null}
               </View>
               <Text style={[styles.tiny, { color: colors.homeMuted }]}>
                 Crop{i.cleanedUrl ? ' · Cleaned' : ''}{i.targetPin?.imageUrl ? ' · Current catalogue photo' : ''}
                 {ref?.imageUrl ? ` · Pin & Pop reference${ref.externalId ? ` #${ref.externalId}` : ''} (admin only)` : ''}
+                {i.cropUrl ? ' · Tap a picture to enlarge' : ''}
               </Text>
 
               {i.match_status === 'pending' ? (
@@ -591,6 +610,10 @@ export default function AdminBoardScanScreen() {
         onClose={() => setSearchFor(null)}
         apiBase={API_BASE}
         token={token}
+        scanId={id}
+        item={searchFor && 'itemId' in searchFor
+          ? (() => { const it = data?.items.find((x) => x.id === searchFor.itemId); return it ? { id: it.id, position: it.position, cropUrl: it.cropUrl } : null; })()
+          : null}
         allowAuto={!!searchFor && 'box' in searchFor}
         onPick={(pinId) => {
           const target = searchFor;
@@ -607,44 +630,150 @@ export default function AdminBoardScanScreen() {
           }
         }}
       />
+      <ZoomModal picture={zoom} onClose={() => setZoom(null)} />
     </>
   );
 }
 
-/** Catalogue search for corrections and hand-added pins. */
+/** One picture full size, e.g. to compare a crop with its Pin & Pop reference. */
+function ZoomModal(props: { picture: { uri: string; label: string; reference?: boolean } | null; onClose: () => void }) {
+  const colors = useColors();
+  return (
+    <Modal visible={!!props.picture} transparent animationType="fade" onRequestClose={props.onClose}>
+      <Pressable style={styles.zoomBackdrop} onPress={props.onClose} accessibilityLabel="Close the picture">
+        {props.picture ? (
+          <>
+            <Image
+              source={{ uri: props.picture.uri }}
+              style={[styles.zoomImg, { backgroundColor: '#fff' }]}
+              resizeMode="contain"
+              {...(props.picture.reference ? { referrerPolicy: 'no-referrer' as const } : {})}
+            />
+            <Text style={[styles.small, { color: '#fff', textAlign: 'center' }]}>{props.picture.label}</Text>
+            <Text style={[styles.tiny, { color: colors.homeAqua, textAlign: 'center' }]}>Tap anywhere to close</Text>
+          </>
+        ) : null}
+      </Pressable>
+    </Modal>
+  );
+}
+
+/**
+ * "Which pin is it?" — for corrections and hand-added pins. For a pin on the
+ * board it opens with its crop to compare against, the catalogue pins that
+ * look most like it (picture index) and the board's sets to browse as
+ * picture grids; search narrows within the chosen set or the whole
+ * catalogue. Long-press (or the corner button on) a picture to enlarge it.
+ */
 function PinSearchModal(props: {
   visible: boolean;
   onClose: () => void;
   apiBase: string;
   token: string | undefined;
   allowAuto: boolean;
+  scanId?: string;
+  item?: { id: string; position: number; cropUrl: string | null } | null;
   onPick: (pinId: string | null) => void;
 }) {
   const colors = useColors();
   const [q, setQ] = useState('');
+  const [set, setSet] = useState<string | null>(null);
   const [results, setResults] = useState<SearchResult[]>([]);
+  const [more, setMore] = useState(false);
+  const [searched, setSearched] = useState(false);
+  const [sets, setSets] = useState<string[]>([]);
+  const [lookalikes, setLookalikes] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+  const [preview, setPreview] = useState<SearchResult | null>(null);
+  const itemId = props.item?.id;
 
-  useEffect(() => { if (!props.visible) { setQ(''); setResults([]); setErr(null); } }, [props.visible]);
+  useEffect(() => {
+    if (!props.visible) {
+      setQ(''); setSet(null); setResults([]); setMore(false); setSearched(false);
+      setSets([]); setLookalikes([]); setErr(null); setPreview(null);
+    }
+  }, [props.visible]);
 
-  const run = useCallback(async () => {
-    if (q.trim().length < 2 || !props.token) return;
+  // Starting points for a pin on the board: its sets and its look-alikes.
+  useEffect(() => {
+    if (!props.visible || !itemId || !props.scanId || !props.token) return;
+    let cancelled = false;
+    fetch(`${props.apiBase}/admin/board-scans/${props.scanId}/items/${itemId}/picks`, { headers: { Authorization: `Bearer ${props.token}` } })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((body) => {
+        if (cancelled || !body) return;
+        setSets(Array.isArray(body.sets) ? body.sets : []);
+        setLookalikes(Array.isArray(body.lookalikes) ? body.lookalikes : []);
+      })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [props.visible, itemId, props.scanId, props.apiBase, props.token]);
+
+  const run = useCallback(async (opts: { set?: string | null; append?: boolean } = {}) => {
+    const inSet = opts.set !== undefined ? opts.set : set;
+    if (!props.token || (!inSet && q.trim().length < 2)) return;
     setLoading(true);
     setErr(null);
     try {
-      const res = await fetch(`${props.apiBase}/admin/board-scans-pin-search?q=${encodeURIComponent(q.trim())}`, {
+      const offset = opts.append ? results.length : 0;
+      const params = new URLSearchParams({ q: q.trim(), offset: String(offset) });
+      if (inSet) params.set('set', inSet);
+      const res = await fetch(`${props.apiBase}/admin/board-scans-pin-search?${params.toString()}`, {
         headers: { Authorization: `Bearer ${props.token}` },
       });
       const body = await res.json();
       if (!res.ok) throw new Error(body.error ?? 'Search failed');
-      setResults(body.pins);
+      setResults(opts.append ? [...results, ...body.pins] : body.pins);
+      setMore(body.more === true);
+      setSearched(true);
     } catch (e) {
       setErr(e instanceof Error ? e.message : 'Search failed');
     } finally {
       setLoading(false);
     }
-  }, [q, props.apiBase, props.token]);
+  }, [q, set, results, props.apiBase, props.token]);
+
+  const chooseSet = (name: string | null) => {
+    setSet(name);
+    setResults([]);
+    setSearched(false);
+    if (name) void run({ set: name });
+  };
+
+  const tile = (p: SearchResult) => {
+    const picture = p.imageUrl ?? p.referenceUrl ?? null;
+    return (
+      <Pressable
+        key={p.pinId}
+        onPress={() => props.onPick(p.pinId)}
+        onLongPress={() => picture && setPreview(p)}
+        style={[styles.tile, { borderColor: colors.homeLine }]}
+        accessibilityLabel={`Choose ${p.title}`}
+      >
+        {picture ? (
+          <Image
+            source={{ uri: picture }}
+            style={[styles.tileImg, { backgroundColor: '#fff' }]}
+            resizeMode="contain"
+            {...(!p.imageUrl ? { referrerPolicy: 'no-referrer' as const } : {})}
+            accessibilityLabel={!p.imageUrl ? `Pin & Pop reference for ${p.title}` : p.title}
+          />
+        ) : (
+          <View style={[styles.tileImg, { backgroundColor: colors.homeAqua }]} />
+        )}
+        {picture ? (
+          <TouchableOpacity onPress={() => setPreview(p)} style={styles.tileZoom} accessibilityLabel={`Enlarge ${p.title}`}>
+            <Feather name="maximize-2" size={12} color="#fff" />
+          </TouchableOpacity>
+        ) : null}
+        <Text style={[styles.tiny, { color: colors.homeInk }]} numberOfLines={2}>{p.title}</Text>
+        <Text style={[styles.tiny, { color: colors.homeMuted }]} numberOfLines={1}>{p.pinId}</Text>
+      </Pressable>
+    );
+  };
+
+  const showLookalikes = lookalikes.length > 0 && !set && !searched;
 
   return (
     <Modal visible={props.visible} transparent animationType="fade" onRequestClose={props.onClose}>
@@ -652,44 +781,88 @@ function PinSearchModal(props: {
         <View style={[styles.modal, { backgroundColor: colors.homeSurface }]}>
           <View style={styles.rowBetween}>
             <Text style={[styles.itemTitle, { color: colors.homeInk }]}>Which pin is it?</Text>
-            <TouchableOpacity onPress={props.onClose}><Feather name="x" size={20} color={colors.homeMuted} /></TouchableOpacity>
+            <TouchableOpacity onPress={props.onClose} accessibilityLabel="Close"><Feather name="x" size={20} color={colors.homeMuted} /></TouchableOpacity>
           </View>
+          {props.item?.cropUrl ? (
+            <View style={styles.cropRow}>
+              <Image source={{ uri: props.item.cropUrl }} style={styles.cropImg} resizeMode="contain" accessibilityLabel="Your pin" />
+              <Text style={[styles.small, { color: colors.homeMuted, flex: 1 }]}>
+                Pin #{props.item.position} on the board. Tap a picture to choose it; hold (or ⤢) to enlarge.
+              </Text>
+            </View>
+          ) : null}
           <View style={styles.searchRow}>
             <TextInput
               style={[styles.input, { flex: 1, borderColor: colors.homeLine, color: colors.homeInk }]}
-              placeholder="Title, character, set or PHUK-…"
+              placeholder={set ? `Search in ${set}` : 'Title, character, set or PHUK-…'}
               placeholderTextColor={colors.homeMuted}
               value={q}
               onChangeText={setQ}
-              onSubmitEditing={run}
-              autoFocus
+              onSubmitEditing={() => run()}
+              autoFocus={!props.item}
               returnKeyType="search"
             />
-            <TouchableOpacity onPress={run} style={[styles.btn, { borderColor: colors.homeCoral }]}>
+            <TouchableOpacity onPress={() => run()} style={[styles.btn, { borderColor: colors.homeCoral }]} accessibilityLabel="Search">
               {loading ? <ActivityIndicator size="small" color={colors.homeCoral} /> : <Feather name="search" size={16} color={colors.homeCoral} />}
             </TouchableOpacity>
           </View>
+          {sets.length > 0 ? (
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 6 }}>
+              {[null, ...sets].map((name) => (
+                <TouchableOpacity
+                  key={name ?? '__all'}
+                  onPress={() => chooseSet(name)}
+                  style={[styles.chip, { borderColor: colors.homeLine, backgroundColor: set === name ? colors.homeAqua : 'transparent' }]}
+                >
+                  <Text style={[styles.chipText, { color: colors.homeInk }]} numberOfLines={1}>{name ?? 'Whole catalogue'}</Text>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          ) : null}
           {props.allowAuto ? (
             <TouchableOpacity onPress={() => props.onPick(null)} style={[styles.btn, { borderColor: colors.homeCoral, alignSelf: 'flex-start' }]}>
               <Text style={[styles.btnText, { color: colors.homeCoral }]}>Don't know — match it automatically</Text>
             </TouchableOpacity>
           ) : null}
           {err ? <Text style={[styles.small, { color: colors.destructive }]}>{err}</Text> : null}
-          <ScrollView style={{ maxHeight: 360 }} contentContainerStyle={{ gap: 6 }}>
-            {results.map((p) => (
-              <TouchableOpacity key={p.pinId} onPress={() => props.onPick(p.pinId)} style={[styles.result, { borderColor: colors.homeLine }]}>
-                {p.imageUrl ? <Image source={{ uri: p.imageUrl }} style={styles.resultImg} resizeMode="contain" />
-                  : p.referenceUrl ? <Image source={{ uri: p.referenceUrl }} style={[styles.resultImg, { backgroundColor: '#fff' }]} resizeMode="contain" referrerPolicy="no-referrer" accessibilityLabel={`Pin & Pop reference for ${p.title}`} />
-                  : <View style={[styles.resultImg, { backgroundColor: colors.homeAqua }]} />}
-                <View style={{ flex: 1 }}>
-                  <Text style={[styles.small, { color: colors.homeInk }]} numberOfLines={2}>{p.title}</Text>
-                  <Text style={[styles.tiny, { color: colors.homeMuted }]}>
-                    {p.pinId}{p.collection ? ` · ${p.collection}` : ''}{!p.imageUrl && p.referenceUrl ? ' · Pin & Pop picture (admin only)' : ''}
-                  </Text>
-                </View>
+          <ScrollView style={{ maxHeight: 420 }} contentContainerStyle={{ gap: 8 }}>
+            {showLookalikes ? (
+              <>
+                <Text style={[styles.small, { color: colors.homeInk }]}>Looks like your pin</Text>
+                <View style={styles.grid}>{lookalikes.map(tile)}</View>
+              </>
+            ) : null}
+            {results.length > 0 ? <View style={styles.grid}>{results.map(tile)}</View> : null}
+            {searched && results.length === 0 && !loading ? (
+              <Text style={[styles.small, { color: colors.homeMuted }]}>No pins found{set ? ` in ${set}` : ''}.</Text>
+            ) : null}
+            {more ? (
+              <TouchableOpacity onPress={() => run({ append: true })} style={[styles.btn, { borderColor: colors.homeCoral, alignSelf: 'center' }]}>
+                <Text style={[styles.btnText, { color: colors.homeCoral }]}>{loading ? 'Loading…' : 'Show more'}</Text>
               </TouchableOpacity>
-            ))}
+            ) : null}
           </ScrollView>
+          {preview ? (
+            <Pressable style={styles.previewOverlay} onPress={() => setPreview(null)} accessibilityLabel="Close the picture">
+              <Image
+                source={{ uri: (preview.imageUrl ?? preview.referenceUrl)! }}
+                style={[styles.previewImg, { backgroundColor: '#fff' }]}
+                resizeMode="contain"
+                {...(!preview.imageUrl ? { referrerPolicy: 'no-referrer' as const } : {})}
+              />
+              <Text style={[styles.small, { color: '#fff', textAlign: 'center' }]}>
+                {preview.title} · {preview.pinId}{!preview.imageUrl ? ' · Pin & Pop (admin only)' : ''}
+              </Text>
+              <View style={styles.actions}>
+                <TouchableOpacity onPress={() => props.onPick(preview.pinId)} style={[styles.btn, { borderColor: '#fff', backgroundColor: colors.homeCoral }]}>
+                  <Text style={[styles.btnText, { color: '#fff' }]}>Choose this pin</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => setPreview(null)} style={[styles.btn, { borderColor: '#fff' }]}>
+                  <Text style={[styles.btnText, { color: '#fff' }]}>Back</Text>
+                </TouchableOpacity>
+              </View>
+            </Pressable>
+          ) : null}
         </View>
       </View>
     </Modal>
@@ -723,4 +896,14 @@ const styles = StyleSheet.create({
   input: { borderWidth: 1, borderRadius: 8, paddingHorizontal: 10, paddingVertical: 8, fontSize: 14, fontFamily: 'Inter_400Regular' },
   result: { flexDirection: 'row', gap: 10, alignItems: 'center', borderWidth: 1, borderRadius: 8, padding: 6 },
   resultImg: { width: 64, height: 64, borderRadius: 4 },
+  grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  tile: { width: 112, borderWidth: 1, borderRadius: 8, padding: 4, gap: 2 },
+  tileImg: { width: 102, height: 102, borderRadius: 4 },
+  tileZoom: { position: 'absolute', top: 6, right: 6, backgroundColor: '#0008', borderRadius: 10, padding: 4 },
+  cropRow: { flexDirection: 'row', gap: 10, alignItems: 'center' },
+  cropImg: { width: 96, height: 96, borderRadius: 6, backgroundColor: '#0001' },
+  previewOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: '#000c', borderRadius: 14, padding: 16, gap: 10, alignItems: 'center', justifyContent: 'center' },
+  previewImg: { width: '100%', height: 360, borderRadius: 8 },
+  zoomBackdrop: { flex: 1, backgroundColor: '#000d', padding: 16, gap: 10, alignItems: 'center', justifyContent: 'center' },
+  zoomImg: { width: '100%', maxWidth: 720, height: '75%', borderRadius: 8 },
 });

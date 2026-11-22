@@ -657,6 +657,12 @@ function ZoomModal(props: { picture: { uri: string; label: string; reference?: b
   );
 }
 
+/** Tiles 3 across when each can be at least ~95 px wide, else 2; tiles fill the row (8 px gaps). */
+export function pickGrid(width: number): { cols: 2 | 3; tileWidth: number } {
+  const cols = width >= 300 ? 3 : 2;
+  return { cols, tileWidth: Math.floor((width - 8 * (cols - 1)) / cols) };
+}
+
 /**
  * "Which pin is it?" — for corrections and hand-added pins. For a pin on the
  * board it opens with its crop to compare against, the catalogue pins that
@@ -687,8 +693,7 @@ function PinSearchModal(props: {
   const [preview, setPreview] = useState<SearchResult | null>(null);
   // Tiles fill the row: 3 across where there's room, else 2 (no empty column).
   const [gridWidth, setGridWidth] = useState(0);
-  const cols = gridWidth >= 330 ? 3 : 2;
-  const tileWidth = gridWidth > 0 ? Math.floor((gridWidth - 8 * (cols - 1)) / cols) : undefined;
+  const tileWidth = gridWidth > 0 ? pickGrid(gridWidth).tileWidth : undefined;
   const itemId = props.item?.id;
 
   useEffect(() => {

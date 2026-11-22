@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
-import AdminBoardScanScreen, { boardPoint } from '../app/admin/board-scan/[id]';
+import AdminBoardScanScreen, { boardPoint, pickGrid } from '../app/admin/board-scan/[id]';
 import AdminBoardScansScreen from '../app/admin/board-scans';
 
 // Board scanning review (Step A): pins without a catalogue photo first,
@@ -311,5 +311,19 @@ describe('adding a missed pin: where a tap lands', () => {
   it('uses locationX/Y on native, and keeps the point on the board', () => {
     expect(boardPoint({ locationX: 100, locationY: 150, pageX: 0, pageY: 0 }, null, { x: 0, y: 0 }, 400, 300)).toEqual({ x: 0.25, y: 0.5 });
     expect(boardPoint({ locationX: -20, locationY: 900, pageX: 0, pageY: 0 }, null, { x: 0, y: 0 }, 400, 300)).toEqual({ x: 0, y: 1 });
+  });
+});
+
+describe('pick grid', () => {
+  it('fills the row: 2 across on the smallest phones, 3 from about 390 pt', () => {
+    // Grid width = screen − 2 × 16 (backdrop) − 2 × 16 (window padding).
+    expect(pickGrid(320 - 64)).toEqual({ cols: 2, tileWidth: 124 });
+    expect(pickGrid(390 - 64)).toEqual({ cols: 3, tileWidth: 103 });
+    expect(pickGrid(560 - 32)).toEqual({ cols: 3, tileWidth: 170 });
+    // No space left over beyond rounding.
+    for (const w of [256, 299, 300, 326, 528]) {
+      const { cols, tileWidth } = pickGrid(w);
+      expect(w - (cols * tileWidth + 8 * (cols - 1))).toBeLessThan(cols);
+    }
   });
 });

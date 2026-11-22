@@ -2,7 +2,7 @@
 
 Review of the 14 collector journeys agreed with the maintainer on 22 Nov 2026 (admin screens excluded), plus an investigation of a "Check price" button that uses Soldgraph and the eBay API. The output is GitHub issues, all size S, that the dev routine can pick up once they're labelled and approved.
 
-- **Issues filed:** #667–#707 (41 agent-sized issues plus one human checklist), #708 (decisions needed). Index: #709.
+- **Issues filed:** #667–#706 (40 agent-sized issues), #707 (human switch-on checklist), #708 (decisions needed). Index: #709.
 - **Method:** a code walk of every journey (`artifacts/pinhunt`, plus `lib/pin-repository`, `api-server` and migrations where a journey depends on them), and 79 demo-mode screenshots (Expo web export, 390×844, light). Every finding cites `file:line` with an evidence label: CODE (read in code), VISUAL (seen in a screenshot) or INFERRED (reasoned, not verified).
 - **Not done:** no device testing, no signed-in Supabase session (demo mode only), and no admin screens. Native-only behaviour (camera, pickers, push) was reviewed in code only. Demo mode has no pin photos, so "Image needed" tiles were ignored.
 - **Security:** one concern behind a feature flag that is off was found. It is not described here (public repository) and was passed to the maintainer privately.

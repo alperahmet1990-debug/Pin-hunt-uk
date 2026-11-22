@@ -42,7 +42,7 @@ import {
   ReviewError,
 } from "../services/boardScan/pipeline";
 import { boardMaxPins } from "../services/boardScan/detect";
-import { isBlankPhoto, normaliseBoardPhoto, sha256, type Box } from "../services/boardScan/quality";
+import { isBlankPhoto, normaliseBoardPhoto, ORIGINAL_MAX_SIDE, sha256, type Box } from "../services/boardScan/quality";
 import { indexerState, ratePerMinute, runIndexer, stopIndexer } from "../services/pictureIndex/indexer";
 import { indexStatus } from "../services/pictureIndex/store";
 import { pictureIndexConfigured, vertexLocation } from "../services/pictureIndex/vertex";
@@ -268,13 +268,23 @@ router.post("/admin/board-scans", requireAdmin, async (req: AdminRequest, res: R
       ...(setHint ? { stats: { setHints: [setHint] } } : {}),
     });
     const imagePath = `${scan.id}/board.jpg`;
+    // A photo bigger than the working size is also kept at up to 6000 px, and
+    // pins are cut from that: small pins on a big board keep their detail.
+    const original = Math.max(normalised.width, normalised.height) >= 4096
+      ? await normaliseBoardPhoto(raw, ORIGINAL_MAX_SIDE).catch(() => null)
+      : null;
+    const keepOriginal = !!original && Math.max(original.width, original.height) > Math.max(normalised.width, normalised.height);
     try {
       await store.uploadObject(store.BOARD_BUCKET, imagePath, normalised.image);
+      if (keepOriginal) await store.uploadObject(store.BOARD_BUCKET, `${scan.id}/original.jpg`, original!.image);
     } catch (err) {
       await store.updateScan(scan.id, { status: "failed", error: "Could not store the photo." });
       throw err;
     }
-    await store.updateScan(scan.id, { image_path: imagePath });
+    await store.updateScan(scan.id, {
+      image_path: imagePath,
+      ...(keepOriginal ? { stats: { original: { path: `${scan.id}/original.jpg`, width: original!.width, height: original!.height } } } : {}),
+    });
     enqueue(scan.id);
     res.status(202).json({ scan: { ...scan, image_path: imagePath }, duplicate: false });
   } catch (err) {

@@ -1,5 +1,5 @@
 import sharp from "sharp";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { dedupeDetections, detectPins, isDetectionAnswer, parseDetection, sortReadingOrder, type DetectedPin } from "./detect";
 import { assessCrop, boxToPixels, differenceHash, hammingDistance, isBlankPhoto, laplacianVariance, normaliseBoardPhoto, touchesEdge } from "./quality";
 import { boardMetrics, bulkApproveBlock, cleanupBlock, itemPriority } from "./rules";
@@ -26,6 +26,21 @@ describe("detectPins", () => {
   const board = async () => ({ image: await sharp({ create: { width: 64, height: 48, channels: 3, background: "#888" } }).jpeg().toBuffer(), width: 64, height: 48 });
   const client = (content: string | null, finish = "stop") =>
     ({ chat: { completions: { create: async () => ({ choices: [{ message: { content }, finish_reason: finish }], usage: {} }) } } }) as never;
+
+  it("looks at the board whole and in four quarters unless told otherwise", async () => {
+    let calls = 0;
+    const counting = { chat: { completions: { create: async () => { calls++; return { choices: [{ message: { content: '{"pins": []}' }, finish_reason: "stop" }], usage: {} }; } } } } as never;
+    await detectPins(counting, "m", await board());
+    expect(calls).toBe(5);
+    calls = 0;
+    vi.stubEnv("BOARD_DETECT_TILES", "1");
+    try {
+      await detectPins(counting, "m", await board());
+      expect(calls).toBe(1);
+    } finally {
+      vi.unstubAllEnvs();
+    }
+  });
 
   it("treats a missing or garbled answer as a failure, not an empty board", async () => {
     await expect(detectPins(client(null, "length"), "m", await board())).rejects.toThrow(/no answer \(length\)/);

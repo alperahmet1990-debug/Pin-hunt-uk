@@ -122,6 +122,11 @@ Text search can't single out pins titled like hundreds of others ("Meeko") when 
 - Search the whole catalogue as before (title, character, set or `PHUK-…`).
 Tap a picture to choose it; hold it (or tap ⤢) to see it large, with **Choose this pin**. On the card, tap any picture (crop, cleaned, catalogue photo, Pin & Pop reference) to enlarge it. Pin & Pop pictures are shown to the App Creator only, as elsewhere.
 
+## Full-size crops and detection passes
+
+- A board photo larger than the 4096 px working copy is also kept at up to 6000 px (`<board>/original.jpg`, `stats.original`). Pins are cut from it, so small pins on a big board keep their detail. Crops are stored at up to 2000 px; the AI steps get a smaller copy (≤ 1280 px for matching, ≤ 1600 px for describing), so AI cost is unchanged. Cropping from the full-size photo reads it sequentially, two crops at a time. Older boards have no original and are cut from the working copy as before; Scan again keeps the original, Delete board removes it. If the original can't be read, crops fall back to the working copy.
+- Detection now looks at the board whole **and** in four overlapping quarters by default (4 more AI calls per board), which finds small or crowded pins the whole-board pass misses. `BOARD_DETECT_TILES=1` turns the quarters off.
+
 ## Straightening
 
 After Pixian, a cleaned photo is turned straight when the pin has straight sides (`services/boardScan/straighten.ts`): the tilt is the rotation that gives the outline's convex hull the smallest bounding box, within ±25°. Round, star and other irregular pins (hull fills < 85% of that box) are left as they are. The reviewer can also **Straighten**, or turn by 3° with **↺ / ↻**, before approving. Every turn starts again from the un-turned clean-up (no quality lost to repeated turns) and is saved as `<base>.turn.<item>.<degrees>.jpg`; the previous turned file is removed, the shared base never is. Rejected or published photos can't be turned.

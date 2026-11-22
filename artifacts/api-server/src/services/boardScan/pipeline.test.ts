@@ -104,7 +104,9 @@ vi.mock("./store", async (importOriginal) => {
         const cur = (scan.stats ?? {}) as Record<string, never>;
         const next = patch.stats as Record<string, never>;
         patch = { ...patch, stats: {
-          ...(opts.resetStats ? {} : cur), ...next,
+          ...(opts.resetStats ? {} : cur),
+          ...(opts.resetStats && cur.original ? { original: cur.original } : {}),
+          ...next,
           setHints: opts.replaceSetHints ? next.setHints : real.mergeSetHints(cur.setHints, next.setHints),
           setVotes: opts.resetStats ? next.setVotes : real.mergeSetVotes(cur.setVotes, next.setVotes),
         } };
@@ -211,6 +213,7 @@ async function setup(publicDisplay = true) {
 describe("processBoardScan", () => {
   beforeEach(async () => {
     vi.stubEnv("BOARD_MIN_SHARPNESS", "10");
+    vi.stubEnv("BOARD_DETECT_TILES", "1"); // one detection pass: the fake model answers every pass the same
     vi.stubEnv("BOARD_MIN_CROP_SIDE_PX", "200");
     await setup();
   });
@@ -501,6 +504,33 @@ describe("processBoardScan", () => {
     await expect(deleteBoard(scan)).rejects.toMatchObject({ status: 409, code: "board_has_published" });
     expect(mem.items.size).toBe(4);
     expect(mem.scans.has("s1")).toBe(true);
+  });
+
+  it("cuts crops from the full-size photo when the board has one, and keeps it through Scan again and deletes it with the board", async () => {
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50) }));
+    await processBoardScan("s1");
+    const small = await sharp(mem.objects.get(`board-scans/${[...mem.items.values()][0].crop_path}`)!).metadata();
+
+    // The same board photo at twice the size, kept as the board's original.
+    const big = await sharp(mem.objects.get("board-scans/s1/board.jpg")!).resize(4000, 3000).jpeg().toBuffer();
+    mem.objects.set("board-scans/s1/original.jpg", big);
+    Object.assign(mem.scans.get("s1")!, { stats: { original: { path: "s1/original.jpg", width: 4000, height: 3000 } } });
+    await rescanBoard(mem.scans.get("s1") as unknown as BoardScan);
+    await vi.waitFor(() => expect(isRunning("s1")).toBe(false));
+    const crop = await sharp(mem.objects.get(`board-scans/${[...mem.items.values()][0].crop_path}`)!).metadata();
+    expect(crop.width!).toBeGreaterThan(small.width! * 1.8);
+    expect(mem.scans.get("s1")!.stats).toMatchObject({ original: { path: "s1/original.jpg" } });
+
+    await deleteBoard(mem.scans.get("s1") as unknown as BoardScan);
+    expect(mem.objects.has("board-scans/s1/original.jpg")).toBe(false);
+  });
+
+  it("falls back to the working photo when the full-size one can't be read", async () => {
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 50) }));
+    Object.assign(mem.scans.get("s1")!, { stats: { original: { path: "s1/missing.jpg", width: 4000, height: 3000 } } });
+    await processBoardScan("s1");
+    expect(mem.scans.get("s1")!.status).toBe("ready");
+    expect([...mem.items.values()]).toHaveLength(4);
   });
 
   it("removes photo records a failed approval left pending when a board is scanned again or deleted", async () => {

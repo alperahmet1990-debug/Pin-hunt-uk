@@ -79,10 +79,28 @@ export function touchesEdge(box: Box, margin = 0.005): boolean {
   return box.x <= margin || box.y <= margin || box.x + box.w >= 1 - margin || box.y + box.h >= 1 - margin;
 }
 
-/** Cut one pin out of the (already auto-oriented) board photo as a JPEG. */
-export async function cropBox(board: Buffer, width: number, height: number, box: Box, padFrac = 0.06): Promise<Buffer> {
+/** Longest side a stored crop keeps: plenty for clean-up and the catalogue photo. */
+export const CROP_MAX_SIDE = 2000;
+/** Longest side of the full-size board photo kept for cropping. */
+export const ORIGINAL_MAX_SIDE = 6000;
+
+/**
+ * Cut one pin out of the (already auto-oriented) board photo as a JPEG, at
+ * most `maxSide` px. Read sequentially, so a large photo isn't held in memory
+ * in full for each crop.
+ */
+export async function cropBox(board: Buffer, width: number, height: number, box: Box, padFrac = 0.06, maxSide = CROP_MAX_SIDE): Promise<Buffer> {
   const region = boxToPixels(box, width, height, padFrac);
-  return sharp(board).extract(region).jpeg({ quality: 92 }).toBuffer();
+  return sharp(board, { sequentialRead: true }).extract(region)
+    .resize(maxSide, maxSide, { fit: "inside", withoutEnlargement: true })
+    .jpeg({ quality: 92 }).toBuffer();
+}
+
+/** A smaller copy for the AI steps: they don't use more than this, and it keeps requests light. */
+export async function forAi(image: Buffer, maxSide = 1280): Promise<Buffer> {
+  const meta = await sharp(image).metadata();
+  if (Math.max(meta.width ?? 0, meta.height ?? 0) <= maxSide) return image;
+  return sharp(image).resize(maxSide, maxSide, { fit: "inside" }).jpeg({ quality: 88 }).toBuffer();
 }
 
 /** Variance of a 4-neighbour Laplacian over a greyscale image. */

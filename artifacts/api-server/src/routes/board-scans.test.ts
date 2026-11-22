@@ -179,6 +179,22 @@ describe("POST /api/admin/board-scans", () => {
     expect(state.inserted[0]).toMatchObject({ image_width: 64, image_height: 48, mode: "catalogue_capture" });
   });
 
+  it("keeps a big photo at full size too, for cropping, alongside the working copy", async () => {
+    const big = (await sharp({ create: { width: 5200, height: 3900, channels: 3, background: "#346" } })
+      .composite([{ input: Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><circle cx="200" cy="150" r="90" fill="#e8a33c"/></svg>'), left: 1000, top: 1000 }])
+      .jpeg().toBuffer()).toString("base64");
+    const res = await request(app).post("/api/admin/board-scans").set("Authorization", "Bearer t").send({ imageBase64: big, permission: ownPhoto });
+    expect(res.status).toBe(202);
+    expect(state.inserted[0]).toMatchObject({ image_width: 4096, image_height: 3072 });
+    expect(state.uploads).toEqual(["scan-1/board.jpg", "scan-1/original.jpg"]);
+    expect(state.scanUpdates.at(-1)).toEqual(["scan-1", { image_path: "scan-1/board.jpg", stats: { original: { path: "scan-1/original.jpg", width: 5200, height: 3900 } } }]);
+  });
+
+  it("doesn't keep a second copy of a photo that's already small enough", async () => {
+    await upload({ permission: ownPhoto });
+    expect(state.uploads).toEqual(["scan-1/board.jpg"]);
+  });
+
   it("returns the existing board for the same photo instead of processing it again", async () => {
     state.existing = { id: "scan-old" };
     const res = await upload({ permission: ownPhoto });

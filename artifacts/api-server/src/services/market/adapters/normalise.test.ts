@@ -81,6 +81,13 @@ describe("parseSoldDateText", () => {
     ["Vendu le 3 août 2026", "FR", "2026-08-03T00:00:00.000Z"],
     ["Vendu le 2 févr. 2026", "FR", "2026-02-02T00:00:00.000Z"],
     ["Sold 14/09/2026", "UK", "2026-09-14T00:00:00.000Z"],
+    // The form Soldgraph sent on the 24 Nov 2026 staging probe: "99-sept 99:99".
+    ["14-Sept 18:22", "UK", "2026-09-14T00:00:00.000Z"],
+    ["3-Oct 09:05", "UK", "2026-10-03T00:00:00.000Z"],
+    ["21-Nov 18:22", "UK", "2025-11-21T00:00:00.000Z"],
+    ["14-Sept-26 18:22", "UK", "2026-09-14T00:00:00.000Z"],
+    ["Sold Sep 30, 2026 9:05 pm", "US", "2026-09-30T00:00:00.000Z"],
+    ["31-Sept 18:22", "UK", null],
     // No year: the most recent such date that isn't in the future.
     ["Sold 1 Oct", "UK", "2026-10-01T00:00:00.000Z"],
     ["Sold 21 Nov", "UK", "2025-11-21T00:00:00.000Z"],

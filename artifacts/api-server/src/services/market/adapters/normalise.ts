@@ -187,7 +187,8 @@ const MONTHS: Readonly<Record<string, number>> = {
 
 /**
  * Parse the human sold-date text eBay shows ("Sold 21 Nov 2026",
- * "Sold Nov 21, 2026", "Vendu le 21 nov. 2026"), for rows where the
+ * "Sold Nov 21, 2026", "Vendu le 21 nov. 2026", and "14-Sept 18:22", the
+ * form Soldgraph sent on 24 Nov 2026), for rows where the
  * structured date is missing. A text without a year ("Sold 21 Nov") takes
  * the most recent such date that isn't in the future. Anything else, or an
  * impossible date, is null. Same range checks as `parseDate`.
@@ -201,15 +202,20 @@ export function parseSoldDateText(raw: unknown, market: Market, now: number): st
     .replace(/[.,]/g, " ")
     .replace(/^\s*(sold|ended|vendu|vendue|termine|terminee)\b(\s+(on|le))?/, "")
     .replace(/\s+/g, " ")
-    .trim();
+    .trim()
+    // A trailing time is ignored: "14-sept 18:22", "nov 21 2026 9:05 pm".
+    .replace(/ ?\d{1,2}:\d{2}( ?[ap]m)?$/, "")
+    // Dashed day-month(-year): "14-sept", "14-sept-26".
+    .replace(/^(\d{1,2})-([a-z]+)(?:-(\d{2}|\d{4}))?$/, (_m, d, mo, y) => [d, mo, y].filter(Boolean).join(" "));
   if (!t) return null;
   if (/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(t) || /^\d{4}-\d{2}-\d{2}/.test(t)) return parseDate(t, market, now);
 
   let day: number, month: number | undefined, year: number | null;
-  const dmy = /^(\d{1,2}) ([a-z]+)(?: (\d{4}))?$/.exec(t);
+  const dmy = /^(\d{1,2}) ([a-z]+)(?: (\d{4}|\d{2}))?$/.exec(t);
   const mdy = /^([a-z]+) (\d{1,2})(?: (\d{4}))?$/.exec(t);
   if (dmy) {
-    [day, month, year] = [Number(dmy[1]), MONTHS[dmy[2]], dmy[3] ? Number(dmy[3]) : null];
+    const y = dmy[3] ? Number(dmy[3]) : null;
+    [day, month, year] = [Number(dmy[1]), MONTHS[dmy[2]], y !== null && y < 100 ? 2000 + y : y];
   } else if (mdy) {
     [day, month, year] = [Number(mdy[2]), MONTHS[mdy[1]], mdy[3] ? Number(mdy[3]) : null];
   } else {

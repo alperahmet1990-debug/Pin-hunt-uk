@@ -18,6 +18,7 @@ import {
   parseCliArgs,
   resolveCrossPinDuplicates,
   runProbe,
+  dateTextShape,
   runPurge,
   runRefresh,
   runUsageReport,
@@ -634,6 +635,38 @@ describe("runProbe", () => {
     const text = formatProbe(r).join("\n");
     expect(text).toMatch(/Query: hatbox ghost pin/);
     expect(text).toMatch(/Result keys: listings:array\(3\)/);
+  });
+
+  it("shows only the shape of sold dates it couldn't read, never the text", async () => {
+    const store = new FakeStore([pinRef(UUID_A, "PHUK-A")]);
+    const row = (id: string, sold_date: unknown, sold_date_text: unknown) =>
+      ({ item_id: id, title: "Disney Hatbox Ghost pin LE 2000", price: "£20.00", sold_date, sold_date_text });
+    const search = vi.fn(async () => ({
+      rows: [
+        row("u1", null, "Sold\u00a0Seller42 21 Nov 2026 ago"),
+        row("u2", null, "Sold\u00a0Seller42 21 Nov 2026 ago"),
+        row("u3", null, null),
+        row("u4", null, "Sold 1 Oct 2026"),
+      ],
+      pages: 1, truncated: false, requestIds: [],
+    }));
+    const r = await runProbe(probe({ apply: true, confirmCredits: 1 }), deps(store, { search } as unknown as SoldgraphClient).d);
+    expect(r.dropped).toEqual({ missing_sold_date: 3 });
+    expect(r.undatedShapes).toEqual({
+      'sold_date null, sold_date_text "sold<U+00A0>xxxxxx99 99 nov 9999 ago"': 2,
+      "sold_date null, sold_date_text null": 1,
+    });
+    const text = formatProbe(r).join("\n");
+    expect(text).toMatch(/Rows without a readable sold date/);
+    expect(text).not.toMatch(/Seller42/);
+  });
+
+  it("dateTextShape keeps date words and hides everything else", () => {
+    expect(dateTextShape("Vendu le 3 août 2026")).toBe('"vendu le 9 aout 9999"');
+    expect(dateTextShape("Sold by Alice 21/11/2026")).toBe('"sold xx xxxxx 99/99/9999"');
+    expect(dateTextShape(1790000000)).toBe("number");
+    expect(dateTextShape(undefined)).toBe("undefined");
+    expect(dateTextShape("x".repeat(200)).length).toBeLessThanOrEqual(62);
   });
 
   it("refuses without confirmation, kill switch or budget", async () => {

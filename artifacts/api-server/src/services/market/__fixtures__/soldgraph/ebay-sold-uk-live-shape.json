@@ -1,5 +1,5 @@
 {
-  "_comment": "SYNTHETIC values in the field shape the maintainer's staging probe reported for ebay/sold (#411, 2026-10-19): price under displayed_price {amount, currency}, shipping under displayed_shipping. Image and seller fields are present on purpose: adapters must drop them. live-4 and live-5 copy the staging probe of 24 Nov 2026: sold_date null, with the date only in sold_date_text.",
+  "_comment": "SYNTHETIC values in the field shape the maintainer's staging probe reported for ebay/sold (#411, 2026-10-19): price under displayed_price {amount, currency}, shipping under displayed_shipping. Image and seller fields are present on purpose: adapters must drop them. live-4 and live-5 copy the staging probe of 24 Nov 2026: sold_date null, with the date only in sold_date_text, shaped 99-sept 99:99.",
   "request_id": "req-synthetic",
   "status": "complete",
   "credits": 1,
@@ -85,7 +85,7 @@
         "seller_text": "SENTINEL-SELLER",
         "shipping_text": "+£1.55 postage",
         "sold_date": null,
-        "sold_date_text": "Sold 11 Oct 2026"
+        "sold_date_text": "11-Oct 18:22"
       },
       {
         "id": "live-5",

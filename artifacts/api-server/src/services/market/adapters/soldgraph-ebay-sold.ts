@@ -33,6 +33,7 @@ import {
   parseCount,
   parseDate,
   parseMoney,
+  parseSoldDateText,
   pick,
   currencyCode,
   rowPrices,
@@ -80,7 +81,11 @@ export function mapEbaySoldRow(row: RawRow, ctx: RowContext): NormalisedListing 
   if (!externalId) return "missing_external_id";
   const title = cleanText(pick(row, "title", "name"), 500);
   if (!title) return "missing_title";
-  const soldDate = parseDate(pick(row, "sold_date", "sold_at", "end_date", "ended_at", "date_sold"), ctx.market, ctx.now);
+  // Soldgraph sometimes leaves sold_date null while sold_date_text has the
+  // date eBay showed ("Sold 21 Nov 2026"): fall back to the text.
+  const soldDate =
+    parseDate(pick(row, "sold_date", "sold_at", "end_date", "ended_at", "date_sold"), ctx.market, ctx.now) ??
+    parseSoldDateText(pick(row, "sold_date_text"), ctx.market, ctx.now);
   if (!soldDate) return "missing_sold_date";
   const prices = rowPrices(row, ctx, ["sold_price", "price", "sale_price", "displayed_price"]);
   if (prices === "currency_mismatch") return prices;

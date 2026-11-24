@@ -1,12 +1,12 @@
 {
-  "_comment": "SYNTHETIC values in the field shape the maintainer's staging probe reported for ebay/sold (#411, 2026-10-19): price under displayed_price {amount, currency}, shipping under displayed_shipping. Image and seller fields are present on purpose: adapters must drop them.",
+  "_comment": "SYNTHETIC values in the field shape the maintainer's staging probe reported for ebay/sold (#411, 2026-10-19): price under displayed_price {amount, currency}, shipping under displayed_shipping. Image and seller fields are present on purpose: adapters must drop them. live-4 and live-5 copy the staging probe of 24 Nov 2026: sold_date null, with the date only in sold_date_text.",
   "request_id": "req-synthetic",
   "status": "complete",
   "credits": 1,
   "cached": false,
   "result": {
     "page": 1,
-    "count": 3,
+    "count": 5,
     "next_page": null,
     "next_cursor": null,
     "data": [
@@ -67,6 +67,44 @@
         "shipping_text": "+£2.50 postage",
         "sold_date": "2026-09-05",
         "sold_date_text": "Sold 5 Sep 2026"
+      },
+      {
+        "id": "live-4",
+        "title": "Disney Hatbox Ghost pin LE 2000 boxed",
+        "best_offer_accepted": false,
+        "bid_count": 3,
+        "condition": "Used",
+        "displayed_price": { "amount": 21, "currency": "GBP" },
+        "displayed_price_range": null,
+        "displayed_price_text": "£21.00",
+        "displayed_shipping": { "amount": 1.55, "currency": "GBP" },
+        "format": "auction",
+        "image": "https://i.ebayimg.com/images/g/SENTINEL/s-l500.jpg",
+        "link": "https://www.ebay.co.uk/itm/live-4",
+        "location_text": null,
+        "seller_text": "SENTINEL-SELLER",
+        "shipping_text": "+£1.55 postage",
+        "sold_date": null,
+        "sold_date_text": "Sold 11 Oct 2026"
+      },
+      {
+        "id": "live-5",
+        "title": "Disney Hatbox Ghost pin LE 2000 card",
+        "best_offer_accepted": false,
+        "bid_count": 3,
+        "condition": "Used",
+        "displayed_price": { "amount": 21, "currency": "GBP" },
+        "displayed_price_range": null,
+        "displayed_price_text": "£21.00",
+        "displayed_shipping": { "amount": 1.55, "currency": "GBP" },
+        "format": "auction",
+        "image": "https://i.ebayimg.com/images/g/SENTINEL/s-l500.jpg",
+        "link": "https://www.ebay.co.uk/itm/live-5",
+        "location_text": null,
+        "seller_text": "SENTINEL-SELLER",
+        "shipping_text": "+£1.55 postage",
+        "sold_date": null,
+        "sold_date_text": "Sold recently"
       }
     ]
   }

@@ -169,6 +169,70 @@ export function parseDate(raw: unknown, market: Market, now: number): string | n
   return new Date(ms).toISOString();
 }
 
+/** English and French month names and abbreviations (accents removed), 1-based. */
+const MONTHS: Readonly<Record<string, number>> = {
+  jan: 1, january: 1, janv: 1, janvier: 1,
+  feb: 2, february: 2, fev: 2, fevr: 2, fevrier: 2,
+  mar: 3, march: 3, mars: 3,
+  apr: 4, april: 4, avr: 4, avril: 4,
+  may: 5, mai: 5,
+  jun: 6, june: 6, juin: 6,
+  jul: 7, july: 7, juil: 7, juillet: 7,
+  aug: 8, august: 8, aou: 8, aout: 8,
+  sep: 9, sept: 9, september: 9, septembre: 9,
+  oct: 10, october: 10, octobre: 10,
+  nov: 11, november: 11, novembre: 11,
+  dec: 12, december: 12, decembre: 12,
+};
+
+/**
+ * Parse the human sold-date text eBay shows ("Sold 21 Nov 2026",
+ * "Sold Nov 21, 2026", "Vendu le 21 nov. 2026"), for rows where the
+ * structured date is missing. A text without a year ("Sold 21 Nov") takes
+ * the most recent such date that isn't in the future. Anything else, or an
+ * impossible date, is null. Same range checks as `parseDate`.
+ */
+export function parseSoldDateText(raw: unknown, market: Market, now: number): string | null {
+  if (typeof raw !== "string" || raw.length > 100) return null;
+  const t = raw
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[.,]/g, " ")
+    .replace(/^\s*(sold|ended|vendu|vendue|termine|terminee)\b(\s+(on|le))?/, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!t) return null;
+  if (/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(t) || /^\d{4}-\d{2}-\d{2}/.test(t)) return parseDate(t, market, now);
+
+  let day: number, month: number | undefined, year: number | null;
+  const dmy = /^(\d{1,2}) ([a-z]+)(?: (\d{4}))?$/.exec(t);
+  const mdy = /^([a-z]+) (\d{1,2})(?: (\d{4}))?$/.exec(t);
+  if (dmy) {
+    [day, month, year] = [Number(dmy[1]), MONTHS[dmy[2]], dmy[3] ? Number(dmy[3]) : null];
+  } else if (mdy) {
+    [day, month, year] = [Number(mdy[2]), MONTHS[mdy[1]], mdy[3] ? Number(mdy[3]) : null];
+  } else {
+    return null;
+  }
+  if (!month) return null;
+
+  const build = (y: number): number | null => {
+    const d = new Date(Date.UTC(y, month - 1, day));
+    return d.getUTCMonth() === month - 1 && d.getUTCDate() === day ? d.getTime() : null;
+  };
+  let ms: number | null;
+  if (year !== null) {
+    ms = build(year);
+  } else {
+    const thisYear = new Date(now).getUTCFullYear();
+    ms = build(thisYear);
+    if (ms !== null && ms > now + FUTURE_TOLERANCE_MS) ms = build(thisYear - 1);
+  }
+  if (ms === null || ms < MIN_DATE || ms > now + FUTURE_TOLERANCE_MS) return null;
+  return new Date(ms).toISOString();
+}
+
 /** Collapse whitespace, strip control characters, cap the length. Null when empty. */
 export function cleanText(raw: unknown, max: number): string | null {
   if (typeof raw !== "string" && typeof raw !== "number") return null;

@@ -1,4 +1,4 @@
-# Board scanning — staging runbook (Step A: admin catalogue image capture)
+# Board scanning — production runbook (admin catalogue image capture)
 
 Turn a photo of a pin trading board into matched, cleaned, approved catalogue photos.
 
@@ -18,13 +18,15 @@ All in `artifacts/api-server/src/services/boardScan/`, routes in `src/routes/boa
 | Approval + publishing | `pin_images` rows via `createContributedImage`, then `publishContributedImage` (watermark, public bucket, `pins.image_url`) |
 | Storage | Cleaned photos in the existing private `pin-contributed-images` bucket; board photos and crops in a new private `board-scans` bucket |
 
-Matching runs against the live staging catalogue, which is now Pin & Pop (~116k pins, `scripts/PINANDPOP.md`; this branch includes that work). Pin & Pop reference images are shown to the model during the comparison step only, through the scan's own lookup (`services/scanReferenceImages.ts`) — permitted internal recognition. They are never returned to the app, stored as crops or published; a pin matched from Pin & Pop still has no public photo until a board crop is approved.
+**Where it runs:** production. Since the 15 Nov 2026 switch-over, TestFlight and the admin tools use the production API (`pinhunt-api-production`, `docs/release/API-DEPLOY.md`) and the production Supabase project, and board scanning and the picture index are switched on there (#661 was found in production). Approved board photos land in the production catalogue. Staging (`pin-hunt-uk`) is for trying changes first.
 
-## Setup (staging only)
+Matching runs against the live catalogue, which is Pin & Pop (~116k pins, `scripts/PINANDPOP.md`; this branch includes that work). Pin & Pop reference images are shown to the model during the comparison step only, through the scan's own lookup (`services/scanReferenceImages.ts`) — permitted internal recognition. They are never returned to the app, stored as crops or published; a pin matched from Pin & Pop still has no public photo until a board crop is approved.
 
-1. Staging must already have the Pin & Pop catalogue and migrations 075–077. Apply `supabase/migrations/083_board_scans.sql` in the **staging** SQL editor (rollback SQL is in its header).
-2. In the staging API server env: `BOARD_SCAN_ENABLED=true` (off by default — every board-scan route returns 404 and the Board Scans screen says it's switched off), `OPENAI_API_KEY` (low-budget staging key), `PIXIAN_API_ID`/`PIXIAN_API_SECRET`, `PIXIAN_TEST_MODE=true` (free, watermarked results — switch off only for a real run).
-3. Start the API server for staging, sign in to the app as the App Creator, open **Admin → Board Scans**.
+## Setup
+
+**Production (live):** migrations `083_board_scans.sql` and `085_pin_picture_index.sql` applied; on the Render service `pinhunt-api-production`: `BOARD_SCAN_ENABLED=true`, `PICTURE_INDEX_ENABLED=true`, `PIXIAN_TEST_MODE=false` (real, unwatermarked clean-ups — keep an eye on the Pixian credit balance), and `PICTURE_INDEX_AUTO_RESUME=true` (check it is set) so the picture index keeps building after deploys. Sign in to TestFlight or the production contributor website as the App Creator and open **Admin → Board Scans** (`/admin/board-scans`).
+
+**Staging (to try a change first):** the same migrations in the staging SQL editor (rollback SQL is in each header) and the same variables on `pin-hunt-uk`, with `PIXIAN_TEST_MODE=true` (free, watermarked results) and a low-budget `OPENAI_API_KEY`. Without `BOARD_SCAN_ENABLED=true` every board-scan route returns 404 and the Board Scans screen says it's switched off.
 
 ## Permission and rights
 
@@ -51,6 +53,8 @@ Uploaded photos are re-encoded, which strips EXIF (including GPS location).
 A crop is *suitable* for a catalogue photo when its shorter side is ≥ 280 px (`BOARD_MIN_CROP_SIDE_PX`), Laplacian sharpness ≥ 40 (`BOARD_MIN_SHARPNESS`), glare ≤ 8% blown-out pixels in the centre (`BOARD_MAX_GLARE`), it doesn't touch the photo edge, and detection didn't report it overlapped or partly hidden. Unsuitable crops are still matched (for collection use later) but not cleaned unless the reviewer asks. Nothing reconstructs hidden parts of a pin.
 
 ## Measuring the three test boards
+
+In production, use **Accuracy check** on the board page (below) — it needs no script. The benchmark script is staging-only by design (`requireStaging()`):
 
 ```
 # .env.staging also needs BOARD_BENCH_EMAIL / BOARD_BENCH_PASSWORD for a staging admin
@@ -111,7 +115,7 @@ Text search can't single out pins titled like hundreds of others ("Meeko") when 
 - **Automatic resume and daily top-up:** with `PICTURE_INDEX_AUTO_RESUME=true`, the server starts (or continues) the build a minute after every start — so a deploy or restart doesn't leave it stopped — and again every 24 hours, which describes pictures added or changed since (e.g. by the Pin & Pop sync). A run with nothing to do ends at once. Without it, use **Continue building** by hand.
 - **Switching it on (server env):** `PICTURE_INDEX_ENABLED=true`, plus the existing `GOOGLE_APPLICATION_CREDENTIALS_JSON`. Optional `VERTEX_PROJECT_ID` (defaults to the credentials' project) and `VERTEX_LOCATION` (default `europe-west2`, London, so crops stay in the UK; if Google doesn't offer the model there, the build stops and says so — use another EU region such as `europe-west4`; only UK/EU regions are accepted, since the privacy policy doesn't cover sending crops elsewhere). In Google Cloud: enable the **Vertex AI API** on the project and give the service account the **Vertex AI User** role. Without these, the card says it's off and matching works as before.
 - **One build at a time:** the guard is per server process. Render runs one instance, so that's enough today; with more instances, start a build on one only.
-- **Before switching it on in production:** Vertex AI request/response logging and data retention checked in the Google Cloud project; the privacy policy (which now names Google Vertex AI) published with `LAST_UPDATED` set in `artifacts/pinhunt/utils/legal.ts`.
+- **Production checklist (it is already on there):** Vertex AI request/response logging and data retention checked in the Google Cloud project; the privacy policy (which now names Google Vertex AI) published with `LAST_UPDATED` set in `artifacts/pinhunt/utils/legal.ts` — still `9 November 2026` on 24 Nov 2026, so confirm the published policy includes the Vertex wording.
 - **Rights:** reference pictures and crops are sent to Google Vertex AI (a processor alongside OpenAI). Maintainer decision, 20 Nov 2026, approved on #659 (`docs/catalogue-sync/PIN-AND-POP-QUESTIONS.md`, question 8; `scripts/PINANDPOP.md`). Service-role only; never returned to the app. Rollback: migration 085's header.
 
 ## Correcting a match ("Which pin is it?")

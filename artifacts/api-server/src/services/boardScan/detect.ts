@@ -230,7 +230,9 @@ export async function detectPins(
   const usage = emptyUsage();
   const timeoutMs = opts.timeoutMs ?? 90_000;
   const maxPins = opts.maxPins ?? boardMaxPins();
-  const tiles = opts.tiles ?? (Number(process.env.BOARD_DETECT_TILES) === 2 ? 2 : 1);
+  // The quarter passes find pins the whole-board pass misses (small or
+  // crowded ones): on unless BOARD_DETECT_TILES=1.
+  const tiles = opts.tiles ?? (Number(process.env.BOARD_DETECT_TILES) === 1 ? 1 : 2);
 
   const all = await detectOnce(openai, model, await forModel(board.image), timeoutMs, usage);
 

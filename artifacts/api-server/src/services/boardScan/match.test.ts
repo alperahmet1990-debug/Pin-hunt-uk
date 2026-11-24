@@ -180,11 +180,14 @@ describe("matchCrop reference comparison", () => {
       const verify = create.mock.calls.map(([r]) => r).find((r) => String(r.messages[0].content).startsWith("You verify"))!;
       return imagesIn(verify) - 1; // minus the user's photo
     };
-    expect(await verifyImages()).toBe(8); // 5 ranked + 3 look-alikes (the 4th isn't compared)
-    vi.stubEnv("BOARD_MAX_REFERENCES", "50");
-    expect(await verifyImages()).toBe(8); // only 8 candidates to show; the cap (10) isn't the limit here
-    vi.stubEnv("BOARD_MAX_REFERENCES", "3");
-    expect(await verifyImages()).toBe(3);
-    vi.unstubAllEnvs();
+    try {
+      expect(await verifyImages()).toBe(8); // 5 ranked + 3 look-alikes (the 4th isn't compared)
+      vi.stubEnv("BOARD_MAX_REFERENCES", "50");
+      expect(await verifyImages()).toBe(8); // only 8 candidates to show; the cap (10) isn't the limit here
+      vi.stubEnv("BOARD_MAX_REFERENCES", "3");
+      expect(await verifyImages()).toBe(3);
+    } finally {
+      vi.unstubAllEnvs();
+    }
   });
 });

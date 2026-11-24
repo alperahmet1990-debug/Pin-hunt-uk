@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
-import AdminBoardScanScreen, { boardPoint } from '../app/admin/board-scan/[id]';
+import AdminBoardScanScreen, { boardPoint, pickGrid } from '../app/admin/board-scan/[id]';
 import AdminBoardScansScreen from '../app/admin/board-scans';
 
 // Board scanning review (Step A): pins without a catalogue photo first,
@@ -9,6 +9,11 @@ import AdminBoardScansScreen from '../app/admin/board-scans';
 
 const mockPush = jest.fn();
 const mockReplace = jest.fn();
+// The first test pays the board-scan screen's cold start (268 ms locally),
+// which passed 5 s on a busy CI runner (#713); the same allowance as the
+// other large screens (scanResultFlow, aboutBuildInfo).
+jest.setTimeout(20_000);
+
 jest.mock('expo-router', () => ({
   useRouter: () => ({ push: mockPush, replace: mockReplace, back: jest.fn() }),
   useLocalSearchParams: () => ({ id: 'scan-1' }),
@@ -311,5 +316,55 @@ describe('adding a missed pin: where a tap lands', () => {
   it('uses locationX/Y on native, and keeps the point on the board', () => {
     expect(boardPoint({ locationX: 100, locationY: 150, pageX: 0, pageY: 0 }, null, { x: 0, y: 0 }, 400, 300)).toEqual({ x: 0.25, y: 0.5 });
     expect(boardPoint({ locationX: -20, locationY: 900, pageX: 0, pageY: 0 }, null, { x: 0, y: 0 }, 400, 300)).toEqual({ x: 0, y: 1 });
+  });
+});
+
+describe('accuracy check', () => {
+  const answered = { ...view, items: view.items.map((i) => (i.id === 'i2' ? { ...i, decision: 'confirmed' } : i)) };
+  const report = {
+    at: '2026-11-22T12:00:00Z', checked: 20, top1: 14, top5: 18, errors: 1,
+    misses: [{ itemId: 'i2', position: 2, expected: { pinId: 'PHUK-1', title: 'Jessie' }, got: { pinId: 'PHUK-9', title: 'Jessie (glitter)', confidence: 72 }, rank: 2 }],
+  };
+
+  it('offers the check once pins are answered, and starts it', async () => {
+    fetchMock.mockImplementation((url: string, init?: { method?: string }) => Promise.resolve({
+      ok: true, status: init?.method === 'POST' ? 202 : 200,
+      json: () => Promise.resolve(String(url).endsWith('/accuracy') ? { running: true, pins: 1 } : answered),
+    }));
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    await fireEvent.press(screen.getByText('Accuracy check (1)'));
+    await waitFor(() => expect(calls()).toContain('POST /admin/board-scans/scan-1/accuracy'));
+    expect(await screen.findByText(/Checking matching on 1 confirmed pins/)).toBeTruthy();
+  });
+
+  it('isn\'t offered before any pin is confirmed', async () => {
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    expect(screen.queryByText(/Accuracy check/)).toBeNull();
+  });
+
+  it('shows the last result and each miss', async () => {
+    const withReport = { ...answered, scan: { ...answered.scan, stats: { accuracy: report } } };
+    fetchMock.mockImplementation(() => Promise.resolve({ ok: true, json: () => Promise.resolve(withReport) }));
+    await render(<AdminBoardScanScreen />);
+    expect(await screen.findByText(/Right first time: 14 of 20 \(70%\) · In the top 5: 18 of 20 \(90%\)/)).toBeTruthy();
+    expect(screen.getByText(/1 pin couldn't be checked/)).toBeTruthy();
+    expect(screen.getByText(/#2: should be Jessie/)).toBeTruthy();
+    expect(screen.getByText(/Matching picked Jessie \(glitter\) \(72%\) · the right pin was #2/)).toBeTruthy();
+  });
+});
+
+describe('pick grid', () => {
+  it('fills the row: 2 across on the smallest phones, 3 from about 390 pt', () => {
+    // Grid width = screen − 2 × 16 (backdrop) − 2 × 16 (window padding).
+    expect(pickGrid(320 - 64)).toEqual({ cols: 2, tileWidth: 124 });
+    expect(pickGrid(390 - 64)).toEqual({ cols: 3, tileWidth: 103 });
+    expect(pickGrid(560 - 32)).toEqual({ cols: 3, tileWidth: 170 });
+    // No space left over beyond rounding.
+    for (const w of [256, 299, 300, 326, 528]) {
+      const { cols, tileWidth } = pickGrid(w);
+      expect(w - (cols * tileWidth + 8 * (cols - 1))).toBeLessThan(cols);
+    }
   });
 });

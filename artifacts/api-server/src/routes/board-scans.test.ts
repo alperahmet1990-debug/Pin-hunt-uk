@@ -21,6 +21,9 @@ const state = vi.hoisted(() => ({
   todayCount: 0,
   scanUpdates: [] as Array<[string, Record<string, unknown>]>,
   pageQueries: [] as Array<Record<string, unknown>>,
+  accuracyStarts: 0,
+  accuracyBusy: false,
+  answered: false,
   lookalikeCalls: 0,
   indexRuns: [] as Array<Record<string, unknown>>,
   indexRunning: false,
@@ -53,7 +56,7 @@ vi.mock("../services/boardScan/store", async (importOriginal) => ({
   downloadObject: async () => Buffer.from("crop"),
   getItem: async (_scan: string, id: string) => ({ id, crop_path: "scan-1/crops/001.jpg", candidates: [{ pinId: "PHUK-2", collection: "Rescue Rangers" }, { pinId: "PHUK-3", collection: "tails of friendship" }], cleanup_status: "done", cleaned_path: "x.jpg", image_review: "none", decision: "undecided", suggested_pin_id: "PHUK-10122801", decided_pin_id: null }),
   updateItem: async (_id: string, patch: Record<string, unknown>) => ({ id: "i1", cleanup_status: "done", image_review: "none", suggested_pin_id: "PHUK-10122801", ...patch }),
-  listItems: async () => [{ id: "i1", position: 1, suggested_pin_id: "PHUK-1", decided_pin_id: null, decision: "undecided", candidates: [{ pinId: "PHUK-2" }], crop_path: null, cleaned_path: null }],
+  listItems: async () => [{ id: "i1", position: 1, suggested_pin_id: "PHUK-1", decided_pin_id: null, decision: state.answered ? "confirmed" : "undecided", candidates: [{ pinId: "PHUK-2" }], crop_path: state.answered ? "scan-1/crops/001.jpg" : null, cleaned_path: null }],
   signedUrls: async () => ({}),
   pinImageState: async () => ({}),
   pinAndPopReferences: async (ids: string[]) => {
@@ -80,6 +83,11 @@ vi.mock("../services/boardScan/pipeline", async (importOriginal) => ({
     },
     getPinsByIds: async (ids: string[]) => ids.filter((id) => id !== "PHUK-GONE").map((id) => ({ id, title: `Look ${id}`, collection: "Tails of Friendship", imageUrl: undefined })),
   }),
+}));
+vi.mock("../services/boardScan/accuracy", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("../services/boardScan/accuracy")>()),
+  startAccuracyCheck: () => { if (state.accuracyBusy) return false; state.accuracyStarts++; return true; },
+  accuracyRunning: () => state.accuracyBusy,
 }));
 vi.mock("../services/pictureIndex/search", () => ({
   lookalikePins: async () => { state.lookalikeCalls++; return ["PHUK-9", "PHUK-GONE", "PHUK-1"]; },
@@ -179,6 +187,22 @@ describe("POST /api/admin/board-scans", () => {
     expect(state.inserted[0]).toMatchObject({ image_width: 64, image_height: 48, mode: "catalogue_capture" });
   });
 
+  it("keeps a big photo at full size too, for cropping, alongside the working copy", async () => {
+    const big = (await sharp({ create: { width: 5200, height: 3900, channels: 3, background: "#346" } })
+      .composite([{ input: Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><circle cx="200" cy="150" r="90" fill="#e8a33c"/></svg>'), left: 1000, top: 1000 }])
+      .jpeg().toBuffer()).toString("base64");
+    const res = await request(app).post("/api/admin/board-scans").set("Authorization", "Bearer t").send({ imageBase64: big, permission: ownPhoto });
+    expect(res.status).toBe(202);
+    expect(state.inserted[0]).toMatchObject({ image_width: 4096, image_height: 3072 });
+    expect(state.uploads).toEqual(["scan-1/board.jpg", "scan-1/original.jpg"]);
+    expect(state.scanUpdates.at(-1)).toEqual(["scan-1", { image_path: "scan-1/board.jpg", stats: { original: { path: "scan-1/original.jpg", width: 5200, height: 3900 } } }]);
+  });
+
+  it("doesn't keep a second copy of a photo that's already small enough", async () => {
+    await upload({ permission: ownPhoto });
+    expect(state.uploads).toEqual(["scan-1/board.jpg"]);
+  });
+
   it("returns the existing board for the same photo instead of processing it again", async () => {
     state.existing = { id: "scan-old" };
     const res = await upload({ permission: ownPhoto });
@@ -269,6 +293,22 @@ describe("board review extras", () => {
     expect(on.body.lookalikes.map((p: { pinId: string }) => p.pinId)).toEqual(["PHUK-9", "PHUK-1"]);
     expect(on.body.lookalikes[1]).toMatchObject({ referenceUrl: "https://pinandpop.example/1.jpg" });
     vi.unstubAllEnvs();
+  });
+
+  it("runs an accuracy check only on a board with answered pins, one at a time", async () => {
+    Object.assign(state, { accuracyStarts: 0, accuracyBusy: false, answered: false });
+    const check = () => request(app).post("/api/admin/board-scans/scan-1/accuracy").set("Authorization", "Bearer t");
+    const none = await check();
+    expect(none.status).toBe(400);
+    expect(none.body.error).toMatch(/Confirm or correct some pins/);
+    state.answered = true;
+    expect((await check()).body).toEqual({ running: true, pins: 1 });
+    expect(state.accuracyStarts).toBe(1);
+    state.accuracyBusy = true;
+    expect((await check()).status).toBe(409);
+    const view = await request(app).get("/api/admin/board-scans/scan-1").set("Authorization", "Bearer t");
+    expect(view.body.scan.accuracyRunning).toBe(true);
+    Object.assign(state, { accuracyBusy: false, answered: false });
   });
 
   it("confirming a pin learns its set and says how many pins are being re-matched", async () => {

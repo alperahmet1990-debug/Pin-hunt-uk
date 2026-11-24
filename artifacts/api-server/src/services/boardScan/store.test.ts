@@ -40,7 +40,7 @@ describe("updateScan", () => {
     const written: Array<Record<string, unknown>> = [];
     const fake = {
       from: () => ({
-        select: () => ({ eq: () => ({ maybeSingle: async () => ({ data: { stats: { setHints: ["A"], pixianCalls: 3, setVotes: { b: ["i1"] } } }, error: null }) }) }),
+        select: () => ({ eq: () => ({ maybeSingle: async () => ({ data: { stats: { setHints: ["A"], pixianCalls: 3, setVotes: { b: ["i1"] }, original: { path: "s1/original.jpg", width: 6000, height: 4500 } } }, error: null }) }) }),
         update: (patch: Record<string, unknown>) => { written.push(patch); return { eq: async () => ({ data: null, error: null }) }; },
       }),
     } as unknown as SupabaseClient;
@@ -49,11 +49,13 @@ describe("updateScan", () => {
     setBoardDbForTests(fake);
     try {
       await updateScan("s1", { stats: { openaiCalls: 1, setVotes: { b: ["i2"] } } });
-      expect(written[0].stats).toEqual({ setHints: ["A"], pixianCalls: 3, openaiCalls: 1, setVotes: { b: ["i1", "i2"] } });
+      const original = { path: "s1/original.jpg", width: 6000, height: 4500 };
+      expect(written[0].stats).toEqual({ setHints: ["A"], pixianCalls: 3, openaiCalls: 1, setVotes: { b: ["i1", "i2"] }, original });
+      // A reset starts the counters afresh but keeps the sets and the full-size photo.
       await updateScan("s1", { stats: {} }, { resetStats: true });
-      expect(written[1].stats).toEqual({ setHints: ["A"] });
+      expect(written[1].stats).toEqual({ setHints: ["A"], original });
       await updateScan("s1", { stats: { setHints: ["C"] } }, { resetStats: true, replaceSetHints: true });
-      expect(written[2].stats).toEqual({ setHints: ["C"] });
+      expect(written[2].stats).toEqual({ setHints: ["C"], original });
     } finally {
       setBoardDbForTests(null);
       vi.unstubAllEnvs();

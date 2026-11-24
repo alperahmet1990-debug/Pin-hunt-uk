@@ -20,8 +20,8 @@ import { estimateTilt, rotatePinPhoto, straightenPinPhoto } from "./straighten";
 import { publishContributedImage } from "../contributed-images";
 import { pinAndPopReferenceImages } from "../scanReferenceImages";
 import { detectPins, emptyUsage, type DetectedPin, type TokenUsage } from "./detect";
-import { describeCrop, matchCrop } from "./match";
-import { assessCrop, boxToPixels, cropBox, differenceHash, sha256, type Box } from "./quality";
+import { describeCrop, matchCrop, type MatchDeps } from "./match";
+import { assessCrop, boxToPixels, cropBox, differenceHash, forAi, sha256, type Box } from "./quality";
 import { bulkApproveBlock, CLEANUP_BLOCK_TEXT, cleanupBlock, itemPriority, type PinState } from "./rules";
 import * as store from "./store";
 import type { BoardScan, BoardScanItem, BoardScanStats } from "./store";
@@ -122,24 +122,39 @@ export async function reconcileStale(scan: BoardScan): Promise<BoardScan> {
 
 // ── Steps ────────────────────────────────────────────────────────────────────
 
+/** The photo crops are cut from: the full-size original when the board has one, else the working photo. */
+export interface CropSource { image: Buffer; width: number; height: number }
+
+async function cropSource(scan: BoardScan, board: Buffer): Promise<CropSource> {
+  const original = scan.stats?.original;
+  if (original) {
+    try {
+      return { image: await store.downloadObject(store.BOARD_BUCKET, original.path), width: original.width, height: original.height };
+    } catch (err) {
+      console.warn(`[board-scan] full-size photo of ${scan.id} unavailable, cropping from the working photo:`, errText(err));
+    }
+  }
+  return { image: board, width: scan.image_width, height: scan.image_height };
+}
+
 /** Cut, check and store one pin's crop from the board. */
-async function cropFields(scan: BoardScan, board: Buffer, cropPath: string, box: Box, flags: Pick<DetectedPin, "occluded" | "partial" | "glare">) {
-  const crop = await cropBox(board, scan.image_width, scan.image_height, box);
+async function cropFields(scan: BoardScan, src: CropSource, cropPath: string, box: Box, flags: Pick<DetectedPin, "occluded" | "partial" | "glare">) {
+  const crop = await cropBox(src.image, src.width, src.height, box);
   const [quality, dhash] = await Promise.all([
-    assessCrop(crop, box, scan.image_width, scan.image_height, flags),
+    assessCrop(crop, box, src.width, src.height, flags),
     differenceHash(crop),
   ]);
   await store.uploadObject(store.BOARD_BUCKET, cropPath, crop);
   return { box, crop_path: cropPath, crop_sha256: sha256(crop), crop_dhash: dhash, quality };
 }
 
-async function makeItem(scan: BoardScan, board: Buffer, position: number, pin: DetectedPin, origin: "detected" | "manual"): Promise<Partial<BoardScanItem>> {
+async function makeItem(scan: BoardScan, src: CropSource, position: number, pin: DetectedPin, origin: "detected" | "manual"): Promise<Partial<BoardScanItem>> {
   const cropPath = `${scan.id}/crops/${String(position).padStart(3, "0")}.jpg`;
   return {
     board_scan_id: scan.id,
     position,
     origin,
-    ...(await cropFields(scan, board, cropPath, pin.box, pin)),
+    ...(await cropFields(scan, src, cropPath, pin.box, pin)),
     detection: { characters: pin.characters, keywords: pin.keywords, text: pin.text, occluded: pin.occluded, partial: pin.partial, glare: !!pin.glare },
   };
 }
@@ -174,15 +189,15 @@ export function refineBox(detected: Box, inContext: Box, width: number, height: 
  * for detected pins, a tightened box and a new crop. Hand-drawn boxes are
  * kept as drawn. Failures fall back to the board-wide description.
  */
-async function describeItem(scan: BoardScan, board: Buffer | null, item: BoardScanItem, usage: TokenUsage): Promise<BoardScanItem> {
+async function describeItem(scan: BoardScan, src: CropSource | null, item: BoardScanItem, usage: TokenUsage): Promise<BoardScanItem> {
   if (item.detection?.described) return item;
   const base = item.detection ?? { characters: [], keywords: [], text: "", occluded: false, partial: false };
   try {
-    const refine = item.origin === "detected" && !!board;
+    const refine = item.origin === "detected" && !!src;
     const image = refine
-      ? await cropBox(board!, scan.image_width, scan.image_height, item.box, DESCRIBE_CONTEXT_PAD)
+      ? await cropBox(src!.image, src!.width, src!.height, item.box, DESCRIBE_CONTEXT_PAD, 1600)
       : await store.downloadObject(store.BOARD_BUCKET, item.crop_path!);
-    const d = await describeCrop(image, { openai: getOpenAIClient(), model: scanModel() }, usage);
+    const d = await describeCrop(await forAi(image, 1600), { openai: getOpenAIClient(), model: scanModel() }, usage);
     const uniq = (a: string[], b: string[], n: number) => [...new Set([...a, ...b])].slice(0, n);
     const detection = {
       ...base,
@@ -191,8 +206,9 @@ async function describeItem(scan: BoardScan, board: Buffer | null, item: BoardSc
       text: d.text || base.text,
       described: true,
     };
-    const box = refine && d.box ? refineBox(item.box, d.box, scan.image_width, scan.image_height) : null;
-    const recrop = box ? await cropFields(scan, board!, item.crop_path!, box, base) : {};
+    // Box fractions are the same on any size of the photo.
+    const box = refine && d.box ? refineBox(item.box, d.box, src!.width, src!.height) : null;
+    const recrop = box ? await cropFields(scan, src!, item.crop_path!, box, base) : {};
     return store.updateItem(item.id, { ...recrop, detection });
   } catch (err) {
     console.warn(`[board-scan] describing item ${item.id} failed, matching with the board description:`, errText(err));
@@ -200,20 +216,25 @@ async function describeItem(scan: BoardScan, board: Buffer | null, item: BoardSc
   }
 }
 
+/** What matching uses: the AI, the catalogue, Pin & Pop references and (when on) the picture index. */
+export function matchDeps(): MatchDeps {
+  return {
+    openai: getOpenAIClient(),
+    model: scanModel(),
+    repository: catalogueRepository(),
+    // Pin & Pop reference images: recognition only (scripts/PINANDPOP.md).
+    referenceImages: async (ids) => Object.fromEntries(await pinAndPopReferenceImages(ids, undefined, 5_000)),
+    // The picture index (migration 085), when switched on.
+    ...(pictureIndexConfigured() ? { pictureSearch: lookalikePins } : {}),
+  };
+}
+
 /** Match one item and save the result. Never throws: failures are recorded on the item. */
-async function matchItem(scan: BoardScan, board: Buffer | null, item: BoardScanItem, usage: TokenUsage): Promise<BoardScanItem> {
-  item = await describeItem(scan, board, item, usage);
+async function matchItem(scan: BoardScan, src: CropSource | null, item: BoardScanItem, usage: TokenUsage): Promise<BoardScanItem> {
+  item = await describeItem(scan, src, item, usage);
   try {
-    const crop = await store.downloadObject(store.BOARD_BUCKET, item.crop_path!);
-    const result = await matchCrop(crop, item.detection ?? { characters: [], keywords: [], text: "" }, {
-      openai: getOpenAIClient(),
-      model: scanModel(),
-      repository: catalogueRepository(),
-      // Pin & Pop reference images: recognition only (scripts/PINANDPOP.md).
-      referenceImages: async (ids) => Object.fromEntries(await pinAndPopReferenceImages(ids, undefined, 5_000)),
-      // The picture index (migration 085), when switched on.
-      ...(pictureIndexConfigured() ? { pictureSearch: lookalikePins } : {}),
-    }, usage, { sets: scan.stats?.setHints ?? [] });
+    const crop = await forAi(await store.downloadObject(store.BOARD_BUCKET, item.crop_path!));
+    const result = await matchCrop(crop, item.detection ?? { characters: [], keywords: [], text: "" }, matchDeps(), usage, { sets: scan.stats?.setHints ?? [] });
     const top = result.candidates[0];
     const patch: Partial<BoardScanItem> = {
       match_status: result.status,
@@ -385,7 +406,9 @@ export async function processBoardScan(scanId: string): Promise<void> {
       const detection = await detectPins(getOpenAIClient(), scanModel(), { image: board, width: scan.image_width, height: scan.image_height });
       stats = mergeUsage(stats, detection.usage);
       stats.rawDetections = detection.rawCount;
-      const rows = await mapLimit(detection.pins.map((p, i) => ({ p, i })), 4, ({ p, i }) => makeItem(scan!, board, i + 1, p, "detected"));
+      // Crops come from the full-size photo when there is one (two at a time: it's big).
+      const src = await cropSource(scan, board);
+      const rows = await mapLimit(detection.pins.map((p, i) => ({ p, i })), src.image === board ? 4 : 2, ({ p, i }) => makeItem(scan!, src, i + 1, p, "detected"));
       items = await store.insertItems(rows);
       items.sort((a, b) => a.position - b.position);
       stats.detectMs = (stats.detectMs ?? 0) + (Date.now() - t);
@@ -405,7 +428,8 @@ export async function processBoardScan(scanId: string): Promise<void> {
       await setStatus("matching");
       const t = Date.now();
       const usage = emptyUsage();
-      const updated = await mapLimit(toMatch, MATCH_CONCURRENCY, (i) => matchItem(scan!, board, i, usage));
+      const src = await cropSource(scan, board);
+      const updated = await mapLimit(toMatch, MATCH_CONCURRENCY, (i) => matchItem(scan!, src, i, usage));
       const byId = new Map(updated.map((u) => [u.id, u]));
       items = items.map((i) => byId.get(i.id) ?? i);
       stats = mergeUsage(stats, usage);
@@ -454,7 +478,7 @@ export async function addManualItem(scan: BoardScan, box: Box, pinhuntId?: strin
   const board = await store.downloadObject(store.BOARD_BUCKET, scan.image_path);
   const items = await store.listItems(scan.id);
   const position = items.reduce((m, i) => Math.max(m, i.position), 0) + 1;
-  const row = await makeItem(scan, board, position, { box, characters: [], keywords: [], text: "", occluded: false, partial: false }, "manual");
+  const row = await makeItem(scan, await cropSource(scan, board), position, { box, characters: [], keywords: [], text: "", occluded: false, partial: false }, "manual");
   if (pinhuntId) {
     const pin = await catalogueRepository().getPinByPinhuntId(pinhuntId);
     if (!pin) throw Object.assign(new Error("That catalogue pin wasn't found."), { status: 404 });
@@ -574,7 +598,7 @@ export async function deleteBoard(scan: BoardScan): Promise<void> {
   await store.deleteItemsForScan(scan.id);
   await store.deleteScan(scan.id);
   const crops = await store.listObjects(store.BOARD_BUCKET, `${scan.id}/crops`).catch(() => [] as string[]);
-  await store.removeObjects(store.BOARD_BUCKET, [scan.image_path, ...crops]);
+  await store.removeObjects(store.BOARD_BUCKET, [scan.image_path, ...(scan.stats?.original ? [scan.stats.original.path] : []), ...crops]);
   await store.removeObjects(store.CLEANED_BUCKET, cleaned.filter((p) => !shared.has(p)));
 }
 

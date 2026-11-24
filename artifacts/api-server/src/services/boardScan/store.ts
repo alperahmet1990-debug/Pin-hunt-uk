@@ -36,6 +36,14 @@ export interface BoardScanStats {
    * pin from an unrelated set doesn't steer the rest of the board.
    */
   setVotes?: Record<string, string[]>;
+  /**
+   * The upload at up to ORIGINAL_MAX_SIDE, when it was bigger than the
+   * working photo (image_path, at most 4096 px). Crops are cut from it so
+   * small pins keep their detail. Kept through Scan again.
+   */
+  original?: { path: string; width: number; height: number };
+  /** The last accuracy check (services/boardScan/accuracy.ts). */
+  accuracy?: import("./accuracy").AccuracyReport;
 }
 
 export interface BoardScan {
@@ -178,6 +186,8 @@ export async function updateScan(
       ...patch,
       stats: {
         ...(opts.resetStats ? {} : current),
+        // The board's full-size photo stays with the board through a reset.
+        ...(opts.resetStats && current.original ? { original: current.original } : {}),
         ...patch.stats,
         ...(setHints ? { setHints } : {}),
         ...(setVotes ? { setVotes } : {}),

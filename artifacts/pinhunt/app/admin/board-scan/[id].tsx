@@ -38,6 +38,7 @@ import { useColors } from '@/hooks/useColors';
 import { radius } from '@/constants/theme';
 import { useAuth } from '@/context/AuthContext';
 import { API_BASE } from '@/lib/apiBase';
+import { localeFor } from '@/utils/format';
 
 interface Box { x: number; y: number; w: number; h: number }
 interface Candidate { pinId: string; title: string; collection: string; imageUrl: string | null; confidence: number; reasoning: string; verified?: boolean; lookalike?: boolean }
@@ -69,7 +70,9 @@ interface Item {
 interface Scan {
   id: string;
   title: string | null;
-  stats?: { setHints?: string[] } | null;
+  stats?: { setHints?: string[]; accuracy?: AccuracyReport } | null;
+  /** An accuracy check is running on the server. */
+  accuracyRunning?: boolean;
   status: string;
   image_width: number;
   image_height: number;
@@ -79,6 +82,10 @@ interface Scan {
   contributor_name: string | null;
   detection_truncated: boolean;
   error: string | null;
+}
+interface AccuracyReport {
+  at: string; checked: number; top1: number; top5: number; errors: number;
+  misses: Array<{ itemId: string; position: number; expected: { pinId: string; title: string | null }; got: { pinId: string; title: string; confidence: number } | null; rank: number | null }>;
 }
 interface Metrics {
   detected: number; manualAdds: number; falsePositives: number; pinsOnBoard: number;
@@ -181,12 +188,13 @@ export default function AdminBoardScanScreen() {
 
   // Poll while the server is still working on the board.
   const processing = !!data && (data.scan.processing || PROCESSING.has(data.scan.status));
+  const checking = !!data?.scan.accuracyRunning;
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
   useEffect(() => {
-    if (!processing) return;
-    pollRef.current = setInterval(() => load(), 3000);
+    if (!processing && !checking) return;
+    pollRef.current = setInterval(() => load(), checking && !processing ? 5000 : 3000);
     return () => { if (pollRef.current) clearInterval(pollRef.current); };
-  }, [processing, load]);
+  }, [processing, checking, load]);
 
   const replaceItem = useCallback((item: Item) => {
     setData((d) => d && { ...d, items: d.items.map((i) => (i.id === item.id ? { ...i, ...item } : i)) });
@@ -246,6 +254,11 @@ export default function AdminBoardScanScreen() {
   const deleteBoard = () => act('delete', async () => {
     await api(`/${id}`, { method: 'DELETE' });
     router.replace('/admin/board-scans' as Href);
+  });
+  const runAccuracy = () => act('accuracy', async () => {
+    const r = await api(`/${id}/accuracy`, { method: 'POST' });
+    setNotice(`Checking matching on ${r?.pins ?? 'the'} confirmed pins… This takes a minute or two.`);
+    await load();
   });
   const resume = () => act('resume', async () => {
     await api(`/${id}/resume`, { method: 'POST' });
@@ -320,6 +333,8 @@ export default function AdminBoardScanScreen() {
   );
   // Same rule as the server (rules.bulkApproveBlock): confirmed by the
   // reviewer, cleaned, crop passed the quality check, pin has no photo yet.
+  // Pins with the reviewer's answer: what the accuracy check measures against.
+  const answeredCount = data.items.filter((i) => (i.decision === 'confirmed' || i.decision === 'corrected') && !!i.cropUrl).length;
   const readyCount = data.items.filter((i) =>
     (i.decision === 'confirmed' || i.decision === 'corrected') && i.cleanup_status === 'done' && i.image_review === 'none' &&
     i.quality?.suitable === true && !i.targetPin?.imageUrl).length;
@@ -369,7 +384,15 @@ export default function AdminBoardScanScreen() {
             {scan.permission_public_display && readyCount > 0 ? btn('approve-ready', `Approve all ready (${readyCount})`, approveReady, 'primary') : null}
             {!processing && !boardAction ? btn('rescan', 'Scan again', () => setBoardAction('rescan')) : null}
             {!processing && !boardAction ? btn('delete', 'Delete board', () => setBoardAction('delete'), 'danger') : null}
+            {!processing && !boardAction && answeredCount > 0
+              ? btn('accuracy', checking ? 'Checking accuracy…' : `Accuracy check (${answeredCount})`, runAccuracy, 'plain', checking)
+              : null}
           </View>
+          {scan.stats?.accuracy ? (
+            <AccuracyPanel report={scan.stats.accuracy} items={data.items} running={checking} />
+          ) : checking ? (
+            <Text style={[styles.small, { color: colors.homeMuted }]}>Checking accuracy… re-matching your confirmed pins.</Text>
+          ) : null}
           {boardAction === 'rescan' ? (
             <View style={{ gap: 8 }}>
               <Text style={[styles.small, { color: colors.homeInk }]}>
@@ -635,6 +658,42 @@ export default function AdminBoardScanScreen() {
   );
 }
 
+const share = (n: number, of: number) => (of > 0 ? `${Math.round((n / of) * 100)}%` : '—');
+
+/** The last accuracy check: how often matching agreed with the reviewer, and where it didn't. */
+function AccuracyPanel(props: { report: AccuracyReport; items: Item[]; running: boolean }) {
+  const colors = useColors();
+  const r = props.report;
+  const crop = (itemId: string) => props.items.find((i) => i.id === itemId)?.cropUrl ?? null;
+  return (
+    <View style={[styles.accuracy, { borderColor: colors.homeLine }]}>
+      <Text style={[styles.small, { color: colors.homeInk }]}>
+        <Text style={{ fontFamily: 'Inter_600SemiBold' }}>Accuracy check</Text>
+        {` · ${new Date(r.at).toLocaleString(localeFor())}${props.running ? ' · running again…' : ''}`}
+      </Text>
+      <Text style={[styles.match, { color: colors.homeInk }]}>
+        Right first time: {r.top1} of {r.checked} ({share(r.top1, r.checked)}) · In the top 5: {r.top5} of {r.checked} ({share(r.top5, r.checked)})
+      </Text>
+      {r.errors > 0 ? <Text style={[styles.tiny, { color: colors.homeMuted }]}>{r.errors} pin{r.errors === 1 ? '' : 's'} couldn't be checked.</Text> : null}
+      {r.misses.map((m) => (
+        <View key={m.itemId} style={styles.missRow}>
+          {crop(m.itemId) ? <Image source={{ uri: crop(m.itemId)! }} style={styles.missImg} resizeMode="contain" /> : <View style={[styles.missImg, { backgroundColor: colors.homeAqua }]} />}
+          <View style={{ flex: 1 }}>
+            <Text style={[styles.small, { color: colors.homeInk }]}>
+              #{m.position}: should be {m.expected.title ?? m.expected.pinId} <Text style={{ color: colors.homeMuted }}>· {m.expected.pinId}</Text>
+            </Text>
+            <Text style={[styles.tiny, { color: colors.homeMuted }]}>
+              {m.got ? `Matching picked ${m.got.title} (${m.got.confidence}%)` : 'Matching found nothing'}
+              {' · '}{m.rank ? `the right pin was #${m.rank}` : 'the right pin wasn\'t in the top 5'}
+            </Text>
+          </View>
+        </View>
+      ))}
+      {r.misses.length === 0 && r.checked > 0 ? <Text style={[styles.tiny, { color: '#2E8B57' }]}>Every checked pin was matched right first time.</Text> : null}
+    </View>
+  );
+}
+
 /** One picture full size, e.g. to compare a crop with its Pin & Pop reference. */
 function ZoomModal(props: { picture: { uri: string; label: string; reference?: boolean } | null; onClose: () => void }) {
   return (
@@ -655,6 +714,12 @@ function ZoomModal(props: { picture: { uri: string; label: string; reference?: b
       </Pressable>
     </Modal>
   );
+}
+
+/** Tiles 3 across when each can be at least ~95 px wide, else 2; tiles fill the row (8 px gaps). */
+export function pickGrid(width: number): { cols: 2 | 3; tileWidth: number } {
+  const cols = width >= 300 ? 3 : 2;
+  return { cols, tileWidth: Math.floor((width - 8 * (cols - 1)) / cols) };
 }
 
 /**
@@ -687,8 +752,7 @@ function PinSearchModal(props: {
   const [preview, setPreview] = useState<SearchResult | null>(null);
   // Tiles fill the row: 3 across where there's room, else 2 (no empty column).
   const [gridWidth, setGridWidth] = useState(0);
-  const cols = gridWidth >= 330 ? 3 : 2;
-  const tileWidth = gridWidth > 0 ? Math.floor((gridWidth - 8 * (cols - 1)) / cols) : undefined;
+  const tileWidth = gridWidth > 0 ? pickGrid(gridWidth).tileWidth : undefined;
   const itemId = props.item?.id;
 
   useEffect(() => {
@@ -907,6 +971,9 @@ const styles = StyleSheet.create({
   cropImg: { width: 80, height: 80, borderRadius: 6, backgroundColor: '#0001' },
   previewOverlay: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: '#000c', borderRadius: 14, padding: 16, gap: 10, alignItems: 'center', justifyContent: 'center' },
   previewImg: { width: '100%', height: 360, borderRadius: 8 },
+  accuracy: { borderWidth: 1, borderRadius: 10, padding: 10, gap: 6 },
+  missRow: { flexDirection: 'row', gap: 8, alignItems: 'center' },
+  missImg: { width: 48, height: 48, borderRadius: 4, backgroundColor: '#0001' },
   zoomBackdrop: { flex: 1, backgroundColor: '#000d', padding: 16, gap: 10, alignItems: 'center', justifyContent: 'center' },
   zoomImg: { width: '100%', maxWidth: 720, height: '75%', borderRadius: 8 },
 });

@@ -26,6 +26,8 @@ Matching runs against the live catalogue, which is Pin & Pop (~116k pins, `scrip
 
 **Production (live):** migrations `083_board_scans.sql` and `085_pin_picture_index.sql` applied; on the Render service `pinhunt-api-production`: `BOARD_SCAN_ENABLED=true`, `PICTURE_INDEX_ENABLED=true`, `PIXIAN_TEST_MODE=false` (real, unwatermarked clean-ups — keep an eye on the Pixian credit balance), and `PICTURE_INDEX_AUTO_RESUME=true` (check it is set) so the picture index keeps building after deploys. Sign in to TestFlight or the production contributor website as the App Creator and open **Admin → Board Scans** (`/admin/board-scans`).
 
+**Which website is which:** the contributor website's **preview** address, `https://uk-pin-app--contributor-preview.expo.app`, is built against **staging** (`contributor-web-preview` → `pin-hunt-uk.onrender.com`). Board scans made there go to staging, not production. Every run of the *Contributor website (manual)* workflow from 15 to 22 Nov 2026 deployed only the preview. To use board scans in production on a laptop, run that workflow with target `production` (it builds with `contributor-web-production` → `pinhunt-api-production`) and use the production address it prints (`docs/release/CONTRIBUTOR-WEB.md`).
+
 **Staging (to try a change first):** the same migrations in the staging SQL editor (rollback SQL is in each header) and the same variables on `pin-hunt-uk`, with `PIXIAN_TEST_MODE=true` (free, watermarked results) and a low-budget `OPENAI_API_KEY`. Without `BOARD_SCAN_ENABLED=true` every board-scan route returns 404 and the Board Scans screen says it's switched off.
 
 ## Permission and rights

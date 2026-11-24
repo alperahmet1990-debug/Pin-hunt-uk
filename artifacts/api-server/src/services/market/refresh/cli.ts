@@ -167,6 +167,10 @@ export function formatProbe(r: ProbeResult): string[] {
       const byCount = Object.entries(r.itemCountries).sort((a, b) => b[1] - a[1]).map(([c, n]) => `${c} ${n}`).join(", ");
       out.push(`Item country (parsed from location, counts only): ${byCount}.`);
     }
+    if (r.undatedShapes) {
+      out.push("Rows without a readable sold date (shape only: 9 = digit, x = other word):");
+      for (const [shape, n] of Object.entries(r.undatedShapes)) out.push(`  ${n} × ${shape}`);
+    }
     if (r.responseKeys) {
       out.push(`Response keys: ${r.responseKeys.body.join(", ") || "(none)"}`);
       out.push(`Result keys: ${r.responseKeys.result.join(", ") || "(none)"}`);

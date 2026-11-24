@@ -819,7 +819,38 @@ export interface ProbeResult {
   itemCountries?: Record<string, number>;
   /** Key names (never values) of Soldgraph's response and its `result`. */
   responseKeys?: { body: string[]; result: string[] };
+  /**
+   * Rows dropped as missing_sold_date: the shape of their sold-date fields,
+   * with counts (see `dateTextShape`). Never the text itself.
+   */
+  undatedShapes?: Record<string, number>;
   error?: string;
+}
+
+/** Words kept as-is in a date-text shape: date vocabulary only. */
+const DATE_WORDS = new Set([
+  "sold", "ended", "on", "le", "vendu", "vendue", "termine", "terminee", "ago", "day", "days", "hour", "hours",
+  "jan", "january", "janv", "janvier", "feb", "february", "fev", "fevr", "fevrier", "mar", "march", "mars",
+  "apr", "april", "avr", "avril", "may", "mai", "jun", "june", "juin", "jul", "july", "juil", "juillet",
+  "aug", "august", "aou", "aout", "sep", "sept", "september", "septembre", "oct", "october", "octobre",
+  "nov", "november", "novembre", "dec", "december", "decembre",
+]);
+
+/**
+ * The shape of a sold-date value, safe to print: digits become 9, words not
+ * in DATE_WORDS become "x" repeated, other characters are shown as <U+XXXX>
+ * unless they are plain ASCII punctuation or a space. Non-strings show only
+ * their type. Capped at 60 characters.
+ */
+export function dateTextShape(raw: unknown): string {
+  if (raw === null) return "null";
+  if (typeof raw !== "string") return typeof raw;
+  const lowered = raw.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  const shaped = lowered
+    .replace(/[a-z]+/g, w => (DATE_WORDS.has(w) ? w : "x".repeat(Math.min(w.length, 8))))
+    .replace(/[0-9]/g, "9")
+    .replace(/[^\x20-\x7e]/g, c => `<U+${c.charCodeAt(0).toString(16).toUpperCase().padStart(4, "0")}>`);
+  return JSON.stringify(shaped.slice(0, 60));
 }
 
 export async function runProbe(opts: ProbeOptions, deps: RefreshDeps): Promise<ProbeResult> {
@@ -869,6 +900,7 @@ export async function runProbe(opts: ProbeOptions, deps: RefreshDeps): Promise<P
     const dropped: Record<string, number> = {};
     const matchRejected: Record<string, number> = {};
     const itemCountries: Record<string, number> = {};
+    const undatedShapes: Record<string, number> = {};
     let mapped = 0;
     let withPrice = 0;
     let withSoldDate = 0;
@@ -881,6 +913,11 @@ export async function runProbe(opts: ProbeOptions, deps: RefreshDeps): Promise<P
       const out = spec.mapRow(raw as Record<string, unknown>, ctx);
       if (typeof out === "string") {
         dropped[out] = (dropped[out] ?? 0) + 1;
+        if (out === "missing_sold_date") {
+          const r = raw as Record<string, unknown>;
+          const shape = `sold_date ${dateTextShape(r.sold_date)}, sold_date_text ${dateTextShape(r.sold_date_text)}`;
+          undatedShapes[shape] = (undatedShapes[shape] ?? 0) + 1;
+        }
         continue;
       }
       mapped += 1;
@@ -910,6 +947,7 @@ export async function runProbe(opts: ProbeOptions, deps: RefreshDeps): Promise<P
       matchAccepted,
       matchRejected,
       ...(Object.keys(itemCountries).length ? { itemCountries } : {}),
+      ...(Object.keys(undatedShapes).length ? { undatedShapes } : {}),
       ...(res.responseKeys ? { responseKeys: res.responseKeys } : {}),
     };
   } catch (err) {

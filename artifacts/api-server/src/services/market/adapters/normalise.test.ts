@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { cleanExternalId, cleanText, parseBool, parseCount, parseDate, parseDecimal, parseMoney, safeListingUrl } from "./normalise";
+import { cleanExternalId, cleanText, parseBool, parseCount, parseDate, parseDecimal, parseMoney, parseSoldDateText, safeListingUrl } from "./normalise";
 
 const NOW = Date.UTC(2026, 9, 18, 12, 0, 0);
 
@@ -66,6 +66,34 @@ describe("parseDate", () => {
     [undefined, "UK", null],
   ] as const)("%j (%s) -> %s", (raw, market, expected) => {
     expect(parseDate(raw, market, NOW)).toBe(expected);
+  });
+});
+
+describe("parseSoldDateText", () => {
+  // NOW is 18 Oct 2026, 12:00 UTC.
+  it.each([
+    ["Sold 1 Oct 2026", "UK", "2026-10-01T00:00:00.000Z"],
+    ["Sold  21 November 2025", "UK", "2025-11-21T00:00:00.000Z"],
+    ["sold 5 sept 2026", "UK", "2026-09-05T00:00:00.000Z"],
+    ["Sold Oct 1, 2026", "US", "2026-10-01T00:00:00.000Z"],
+    ["Sold on Sep 30, 2026", "US", "2026-09-30T00:00:00.000Z"],
+    ["Vendu le 14 sept. 2026", "FR", "2026-09-14T00:00:00.000Z"],
+    ["Vendu le 3 août 2026", "FR", "2026-08-03T00:00:00.000Z"],
+    ["Vendu le 2 févr. 2026", "FR", "2026-02-02T00:00:00.000Z"],
+    ["Sold 14/09/2026", "UK", "2026-09-14T00:00:00.000Z"],
+    // No year: the most recent such date that isn't in the future.
+    ["Sold 1 Oct", "UK", "2026-10-01T00:00:00.000Z"],
+    ["Sold 21 Nov", "UK", "2025-11-21T00:00:00.000Z"],
+    ["Sold 31 Feb 2026", "UK", null],
+    ["Sold 1 Smarch 2026", "UK", null],
+    ["Sold 21 Nov 2026", "UK", null],
+    ["Sold 1 Jan 1985", "UK", null],
+    ["Sold recently", "UK", null],
+    ["", "UK", null],
+    [null, "UK", null],
+    [20261001, "UK", null],
+  ] as const)("%j (%s) -> %s", (raw, market, expected) => {
+    expect(parseSoldDateText(raw, market, NOW)).toBe(expected);
   });
 });
 

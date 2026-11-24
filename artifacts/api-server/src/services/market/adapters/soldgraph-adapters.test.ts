@@ -192,6 +192,11 @@ describe("soldgraph eBay sold adapter (UK)", () => {
     // An accepted Best Offer keeps its listed price aside, never as the sale price.
     expect(byId["live-2"]).toMatchObject({ price: null, listedPrice: 30, bestOfferAccepted: true });
     expect(byId["live-3"]).toMatchObject({ price: 19.5, shipping: 2.5 });
+    // Staging probe, 24 Nov 2026: 5 of 8 real UK sales had sold_date null and
+    // the date only in sold_date_text. They count; an unreadable text doesn't.
+    expect(byId["live-4"]).toMatchObject({ price: 21, soldDate: "2026-10-11T00:00:00.000Z", priceKind: "sold" });
+    expect(byId["live-5"]).toBeUndefined();
+    expect(res.rejected).toEqual({ missing_sold_date: 1 });
     expectNoThirdPartyDetail(res.listings);
     expectStorable(res.listings);
     expect(JSON.stringify(res.listings)).not.toMatch(/SENTINEL/);

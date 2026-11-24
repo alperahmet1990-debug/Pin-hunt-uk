@@ -259,6 +259,7 @@ export const REJECTION_REASONS = [
   "edition_size_conflict",  // LE size differs
   "edition_kind_conflict",  // LE vs LR vs OE
   "year_conflict",          // a different release year in the title
+  "anniversary_conflict",   // names a different anniversary ("50th" for a 30th pin)
   "character_conflict",     // names another character, none of the record's
   "generic_name_no_series", // short generic name with no series/edition word
   "low_name_overlap",       // too few pin-name words
@@ -594,6 +595,36 @@ function overlap(recordText: string, titleTokens: Set<string>, drop: Set<string>
   return tokens.filter(t => titleTokens.has(t)).length / tokens.length;
 }
 
+const ORDINAL = String.raw`(\d{1,3})(?: ?(?:st|nd|rd|th|e|eme|ieme))?`;
+/** "30th anniversary", "30 years", "30e anniversaire", "30 ans": the number, in any listing. */
+const ANNIVERSARY_IN_CONTEXT = new RegExp(String.raw`\b${ORDINAL} (?:anniversary|anniversaire|years|year|ans)\b`, "g");
+/** "30th", "30eme": an ordinal on its own. */
+const BARE_ORDINAL = /\b(\d{1,3}) ?(?:st|nd|rd|th|eme|ieme)\b/g;
+
+/** Anniversaries a normalised text names (numbers 1-150). */
+function anniversaryNumbers(normalised: string, bareOrdinals: boolean): Set<number> {
+  const found = new Set<number>();
+  const add = (m: RegExpMatchArray) => {
+    const n = Number(m[1]);
+    if (n >= 1 && n <= 150) found.add(n);
+  };
+  for (const m of normalised.matchAll(ANNIVERSARY_IN_CONTEXT)) add(m);
+  if (bareOrdinals) for (const m of normalised.matchAll(BARE_ORDINAL)) add(m);
+  return found;
+}
+
+/**
+ * The anniversary a record belongs to, from its title, collection and series
+ * ("A Goofy Movie 30th Anniversary" → 30). Bare ordinals count here: the
+ * catalogue writes "Haunted Mansion 50th".
+ */
+function recordAnniversaries(pin: CataloguePin): Set<number> {
+  return anniversaryNumbers(
+    normaliseTitle([pin.title, pin.collection, pin.normalisedSeries].filter(Boolean).join(" | ")),
+    true,
+  );
+}
+
 /** The record's own edition kind, from its edition text or LE size. */
 export function recordEditionKind(pin: CataloguePin): EditionKind | undefined {
   const e = normaliseTitle(pin.edition ?? "");
@@ -743,6 +774,18 @@ function matchV2(pin: CataloguePin, title: string, lang: MatchLang | "auto"): Ma
   }
   if (yearConflict) return reject("year_conflict", score, yearDetail);
 
+  // An anniversary pin ("30th Anniversary") is a different pin from another
+  // anniversary's ("50th Anniversary") even when the names match.
+  const recordAnniv = recordAnniversaries(pin);
+  const listingAnnivAny = anniversaryNumbers(text, true);
+  if (!codeHit && recordAnniv.size > 0) {
+    const listingAnnivStated = anniversaryNumbers(text, false);
+    const other = [...listingAnnivStated].find(n => !recordAnniv.has(n));
+    if (other !== undefined && ![...listingAnnivAny].some(n => recordAnniv.has(n))) {
+      return reject("anniversary_conflict", score, String(other));
+    }
+  }
+
   if (!setRecord && recordChars.length > 0 && !charHit) {
     const others = parsed.charactersGuess.filter(c =>
       !lexiconAliases(c).some(a => hasPhrase(recText, a)));
@@ -771,6 +814,17 @@ function matchV2(pin: CataloguePin, title: string, lang: MatchLang | "auto"): Ma
         return reject("generic_name_no_series", score, "collection");
       }
     }
+  }
+  // A short name in an anniversary collection ("Max & Roxanne" in "A Goofy
+  // Movie 30th Anniversary"): the film or park name is on every pin from it,
+  // so the listing has to name the anniversary, or quote the record's exact
+  // LE size.
+  if (
+    !setRecord && !codeHit && recordAnniv.size > 0 && nameTokens.length <= 3
+    && !(pin.limitedEditionSize && parsed.editionSize === pin.limitedEditionSize)
+    && ![...listingAnnivAny].some(n => recordAnniv.has(n))
+  ) {
+    return reject("generic_name_no_series", score, "anniversary");
   }
   if (nameRatio < 0.4 && !codeHit) return reject("low_name_overlap", score);
   // Matching only the character's name is not enough when the pin name has

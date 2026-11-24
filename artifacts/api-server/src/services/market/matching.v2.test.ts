@@ -11,6 +11,7 @@ import {
   parseAttributes,
   recordEditionKind,
 } from "./matching";
+import type { CataloguePin } from "@workspace/pin-repository";
 import { fixturePin } from "./__fixtures__/load";
 
 describe("normaliseTitle", () => {
@@ -176,5 +177,60 @@ describe("matchListing v2 rules", () => {
     expect(r.rejectionDetail).toBe("3000");
     expect(r.parsed.editionSize).toBe(3000);
     expect(r.score).toBeGreaterThan(40);
+  });
+});
+
+describe("anniversary collections (staging probe, 24 Nov 2026)", () => {
+  // PHUK-10097202 on staging: a character-only name in an anniversary set.
+  const maxRoxanne = (over: Partial<CataloguePin> = {}): CataloguePin => ({
+    ...fixturePin("hatbox"),
+    id: "PHUK-TEST0099",
+    title: "Max & Roxanne",
+    collection: "A Goofy Movie 30th Anniversary",
+    edition: "Limited Edition",
+    limitedEditionSize: undefined,
+    releaseYear: 2025,
+    characters: [],
+    ...over,
+  });
+  const v2 = (pin: CataloguePin, title: string) => matchListing(pin, title, { mode: "v2" });
+
+  it.each([
+    // The three UK sales the refresh accepted: other Goofy Movie pins.
+    "2025 Disney Parks Family Cluster A Goofy Movie Max Powerline Roxanne Pin",
+    "Disney A Goofy Movie Max & Roxanne Holiday Enamel Pin Parks 2024 Wreath",
+  ])("rejects another pin from the same film: %s", title => {
+    for (const pin of [maxRoxanne(), maxRoxanne({ characters: ["Max Goof", "Roxanne"] })]) {
+      const r = v2(pin, title);
+      expect(r.accepted).toBe(false);
+      expect(r.rejectionReason).toBe("generic_name_no_series");
+      expect(r.rejectionDetail).toBe("anniversary");
+    }
+  });
+
+  it.each([
+    "Disney A Goofy Movie 30th Anniversary Max & Roxanne LE pin",
+    "Max Roxanne pin Goofy Movie 30 years Limited Edition 2025",
+    "Pin's Max et Roxanne Goofy Movie 30e anniversaire",
+  ])("still accepts the anniversary pin: %s", title => {
+    expect(v2(maxRoxanne(), title).accepted).toBe(true);
+  });
+
+  it("rejects a different anniversary even when the name matches", () => {
+    const r = v2(fixturePin("steamboat"), "Steamboat Willie Mickey pin Disneyland Paris 25th Anniversary LE 800");
+    expect(r.accepted).toBe(false);
+    expect(r.rejectionReason).toBe("anniversary_conflict");
+    expect(r.rejectionDetail).toBe("25");
+  });
+
+  it("accepts a short-named anniversary pin by its exact LE size, without the anniversary", () => {
+    expect(v2(maxRoxanne({ limitedEditionSize: 400 }), "Disney Max Roxanne pin Goofy Movie LE 400").accepted).toBe(true);
+    expect(v2(maxRoxanne({ limitedEditionSize: 400 }), "Disney Max Roxanne pin Goofy Movie").rejectionDetail).toBe("anniversary");
+  });
+
+  it("leaves pins outside anniversary collections alone", () => {
+    expect(v2(fixturePin("hatbox"), "Disney Haunted Mansion 50th Anniversary Hatbox Ghost Pin LE 2000").accepted).toBe(true);
+    expect(v2(fixturePin("orangeBird"), "Orange Bird Sunshine pin Flower and Garden Festival 2023 10 years of fun").accepted)
+      .toBe(v2(fixturePin("orangeBird"), "Orange Bird Sunshine pin Flower and Garden Festival 2023").accepted);
   });
 });

@@ -60,7 +60,7 @@ describe('two-price value card (CV-04)', () => {
     await card();
     const market = await screen.findByTestId('market-price-tile');
     expect(within(market).getByText('£12')).toBeTruthy();
-    expect(within(market).getByText(/8 eBay UK listings, asking prices/)).toBeTruthy();
+    expect(within(market).getByText(/8 eBay UK listings/)).toBeTruthy();
     const community = screen.getByTestId('community-price-tile');
     expect(within(community).getByText('£14')).toBeTruthy();
     expect(within(community).getByText('£12 – £16')).toBeTruthy();
@@ -130,7 +130,7 @@ describe('two-price value card (CV-04)', () => {
     await card();
     await fireEvent.press(screen.getByRole('radio', { name: 'US prices, dollars' }));
     await waitFor(() => expect(within(screen.getByTestId('community-price-tile')).getByText('$20')).toBeTruthy());
-    expect(screen.getByText('US market prices are coming.')).toBeTruthy();
+    expect(screen.getByText('US asking prices are coming.')).toBeTruthy();
     expect(service.getCommunityPrice).toHaveBeenCalledWith('p1', 'USD');
   });
 

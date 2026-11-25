@@ -93,6 +93,17 @@ function validateUsername(value: string): string | null {
 
 // ─── Screen ───────────────────────────────────────────────────────────────────
 
+/**
+ * Value to send for an optional text field. An emptied field that used to have a
+ * value sends '' (the repository skips `undefined`, which left the old value
+ * public); a field that was and stays empty is left out.
+ */
+function textUpdate(value: string, original: string | null | undefined): string | undefined {
+  const trimmed = value.trim();
+  if (trimmed) return trimmed;
+  return original ? '' : undefined;
+}
+
 export default function EditProfileScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
@@ -317,18 +328,18 @@ export default function EditProfileScreen() {
     try {
       await updateMyProfile({
         username: username.trim().toLowerCase(),
-        bio: bio.trim() || undefined,
+        bio: textUpdate(bio, profile?.bio),
         avatarUrl: avatarUrl ?? undefined,
-        tradingRegion: tradingRegion.trim() || undefined,
+        tradingRegion: textUpdate(tradingRegion, profile?.tradingRegion),
         // Hidden settings are left out so saving never changes them (LP-7, #525).
         ...(FEATURES.internationalTrading ? { internationalTradingEnabled: intlTrading } : {}),
         allowTradeRequests: allowTradeReqs,
         allowMessages: allowMsgs,
         profileVisibility: visibility,
         // Local discovery
-        town: town.trim() || undefined,
-        county: county.trim() || undefined,
-        country: country.trim() || undefined,
+        town: textUpdate(town, profile?.town),
+        county: textUpdate(county, profile?.county),
+        country: textUpdate(country, profile?.country),
         ...(FEATURES.collectorsNearby
           ? { nearbyDiscoveryEnabled: nearbyDiscovery, preferredRadiusMiles: preferredRadius }
           : {}),

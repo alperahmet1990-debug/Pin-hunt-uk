@@ -30,6 +30,7 @@ import { useBlockedUsers } from '@/context/BlockedUsersContext';
 import { withoutBlockedAuthors } from '@/utils/blockedUsers';
 import type { CommunityPost, PostComment } from '@workspace/pin-repository';
 import { PinImage } from '@/components/ui/PinImage';
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
 import { formatDate } from '@/utils/format';
 
 
@@ -234,7 +235,7 @@ function CommentRow({ comment, isMe, isAdmin, canReport, hasReported, onReport, 
             </TouchableOpacity>
           )}
           {(isMe || isAdmin) && (
-            <TouchableOpacity onPress={onDelete} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+            <TouchableOpacity onPress={onDelete} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }} accessibilityRole="button" accessibilityLabel="Delete comment" testID="delete-comment-button">
               <Feather name="trash-2" size={13} color={colors.destructive} />
             </TouchableOpacity>
           )}
@@ -273,6 +274,7 @@ export default function PostDetailScreen() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [hasReported, setHasReported] = useState(false);
   const [reporting,   setReporting]   = useState(false);
+  const [pendingDelete, setPendingDelete] = useState<{ kind: 'post' } | { kind: 'comment'; commentId: string } | null>(null);
   const [reportedCommentIds, setReportedCommentIds] = useState<Set<string>>(new Set());
   const scrollRef = useRef<ScrollView>(null);
 
@@ -338,44 +340,42 @@ export default function PostDetailScreen() {
     }
   };
 
-  const handleDeleteComment = async (commentId: string) => {
+  const performDeleteComment = async (commentId: string) => {
     if (!repo) return;
-    Alert.alert('Delete comment?', undefined, [
-      { text: 'Cancel', style: 'cancel' },
-      {
-        text: 'Delete', style: 'destructive', onPress: async () => {
-          try {
-            await repo.deletePostComment(commentId);
-            setComments(prev => prev.filter(c => c.id !== commentId));
-          } catch (e) {
-            Alert.alert('Error', e instanceof Error ? e.message : 'Could not delete comment.');
-          }
-        },
-      },
-    ]);
+    try {
+      await repo.deletePostComment(commentId);
+      setComments(prev => prev.filter(c => c.id !== commentId));
+    } catch (e) {
+      Alert.alert('Error', e instanceof Error ? e.message : 'Could not delete comment.');
+    }
   };
 
-  const handleDeletePost = async () => {
+  const performDeletePost = async () => {
     if (!repo || !post) return;
-    const title   = isAdmin && !isAuthor ? 'Remove post?' : 'Delete post?';
-    const message = isAdmin && !isAuthor
-      ? 'This will permanently remove the post from the community feed.'
-      : 'This cannot be undone.';
-    Alert.alert(title, message, [
-      { text: 'Cancel', style: 'cancel' },
-      {
-        text: isAdmin && !isAuthor ? 'Remove' : 'Delete',
-        style: 'destructive',
-        onPress: async () => {
-          try {
-            await repo.deleteCommunityPost(post.id);
-            router.back();
-          } catch (e) {
-            Alert.alert('Error', e instanceof Error ? e.message : 'Could not delete post.');
-          }
-        },
-      },
-    ]);
+    try {
+      await repo.deleteCommunityPost(post.id);
+      router.back();
+    } catch (e) {
+      Alert.alert('Error', e instanceof Error ? e.message : 'Could not delete post.');
+    }
+  };
+
+  const handleDeleteComment = (commentId: string) => {
+    if (!repo) return;
+    setPendingDelete({ kind: 'comment', commentId });
+  };
+
+  const handleDeletePost = () => {
+    if (!repo || !post) return;
+    setPendingDelete({ kind: 'post' });
+  };
+
+  const confirmPendingDelete = () => {
+    const pending = pendingDelete;
+    setPendingDelete(null);
+    if (!pending) return;
+    if (pending.kind === 'post') void performDeletePost();
+    else void performDeleteComment(pending.commentId);
   };
 
   const submitReport = async (reason: string) => {
@@ -451,6 +451,7 @@ export default function PostDetailScreen() {
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 8;
   const isAuthor = post?.authorId === userId;
   const canDeletePost = isAuthor || isAdmin;
+  const removingAsAdmin = isAdmin && !isAuthor;
   const photos = post?.photos ?? [];
 
   if (loading) {
@@ -520,7 +521,7 @@ export default function PostDetailScreen() {
                     </TouchableOpacity>
                   ) : null}
                   {canDeletePost ? (
-                    <TouchableOpacity onPress={handleDeletePost} style={{ padding: 8 }}>
+                    <TouchableOpacity onPress={handleDeletePost} style={{ padding: 8 }} accessibilityRole="button" accessibilityLabel={removingAsAdmin ? 'Remove post' : 'Delete post'} testID="delete-post-button">
                       <Feather name="trash-2" size={18} color={colors.destructive} />
                     </TouchableOpacity>
                   ) : null}
@@ -692,6 +693,21 @@ export default function PostDetailScreen() {
           </View>
         ) : null}
       </KeyboardAvoidingView>
+      <ConfirmDialog
+        visible={pendingDelete !== null}
+        title={pendingDelete?.kind === 'comment' ? 'Delete comment?' : removingAsAdmin ? 'Remove post?' : 'Delete post?'}
+        message={
+          pendingDelete?.kind === 'comment'
+            ? undefined
+            : removingAsAdmin
+              ? 'This will permanently remove the post from the community feed.'
+              : 'This cannot be undone.'
+        }
+        confirmLabel={pendingDelete?.kind === 'post' && removingAsAdmin ? 'Remove' : 'Delete'}
+        destructive
+        onConfirm={confirmPendingDelete}
+        onCancel={() => setPendingDelete(null)}
+      />
     </>
   );
 }

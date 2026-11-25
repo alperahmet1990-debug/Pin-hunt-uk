@@ -1,14 +1,14 @@
 # Production readiness and the TestFlight switch-over
 
-**Status:** plan only, updated 14 Nov 2026. Nothing has been switched, deployed or applied.
+**Status (updated 24 Nov 2026):** the switch-over is done. Since 14–15 Nov 2026 TestFlight (`preview`) and the admin tools use production: the production API service (step C), Supabase settings (D) and the TestFlight switch (F) are done. Board scanning and the picture index run in production (migrations 083 and 085, `BOARD_SCAN_ENABLED`, `PICTURE_INDEX_ENABLED`). The rest of this document is the original plan, kept for the record and for anything still open. Board scanning's runbook: `artifacts/api-server/scripts/BOARD-SCANNING.md`.
 
 **Goal (maintainer decision, 14 Nov 2026):** the TestFlight app points at **production**, for both Supabase and the API. Photos approved in the admin view then land in the production catalogue and show in TestFlight. Staging stays for testing changes before they reach TestFlight.
 
-**What changed since 12 Nov** (`artifacts/api-server/scripts/PINANDPOP.md`):
+**History — what had changed between 12 and 14 Nov, when this plan was written** (`artifacts/api-server/scripts/PINANDPOP.md`). Since then production has Pin & Pop too (#661 saw ~117k Pin & Pop reference rows there); the gap report is the place to confirm migration parity.
 - Staging's catalogue is now **Pin & Pop**: 116,503 pins, each with a reference-only image record. The old 3,160 pins were removed (after a backup).
 - Production still has the old catalogue.
 - Migrations 075, 076 (two files: `076_search_catalogue_pins`, `076_bulk_image_matcher`) and 077 are on `main` and applied to staging, not production.
-- The bulk image matcher is merged (off unless `BULK_IMAGE_MATCHER_ENABLED=true`). Board scanning is merged too (migration 083, off unless `BOARD_SCAN_ENABLED=true`).
+- The bulk image matcher is merged (off unless `BULK_IMAGE_MATCHER_ENABLED=true`). Board scanning is merged too (migration 083, off unless `BOARD_SCAN_ENABLED=true`; now on in production).
 
 Columns: **Who** — *you* = maintainer only (dashboards, credentials, deploys); *agent* = can be prepared as a draft or PR for your review. **Other sessions** — whether it can happen without affecting parallel work.
 
@@ -29,8 +29,8 @@ Columns: **Who** — *you* = maintainer only (dashboards, credentials, deploys);
 | 6 | **Migration parity.** The gap report's "Migrations detected" table shows each project side by side. Everything production lacks is applied staging first, then production, with that migration's runbook. Five migrations can't be detected by the table (056, 061, 063, 064, 074); use their verify scripts. See the switch-over, step A. | you; agent drafts | Unaffected until applied |
 | 7 | **Safe PinHunt IDs in production.** Production lacks `next_pinhunt_id()` (it came with 045, which also adds staging-only research tables). Draft a small migration with **only** the sequence and function, starting above the highest non–Pin & Pop PinHunt ID. Pin & Pop IDs start at `PHUK-10000001` and never collide with it. | agent drafts (L3), you apply | Unaffected. Number it after the highest on `main` (077) and after board scanning's. |
 | 8 | **Random pin ID fix.** `app/admin/pin/[id].tsx` invents a random `PHUK-` number for new pins, which could even land in the Pin & Pop range (≥ `PHUK-10000000`). Change it to ask `next_pinhunt_id()` at save time. Depends on 7. | agent PR | Unaffected: nobody else touches that file |
-| 9 | **Board scanning.** Merged as migration `083_board_scans`, behind `BOARD_SCAN_ENABLED` (default off: every board-scan route returns 404). Separately, `main` has two files numbered 076. They're independent, but record which order each project received them in. | done | Unaffected |
-| 10 | **Production API service, prepared but unused.** A second Render service from `main`, connected to the production Supabase project (switch-over, step C). Check `/api/healthz`. Fix `API-DEPLOY.md`, which calls the staging service production. | you (Render); agent fixes the doc | Unaffected: new service, staging's untouched |
+| 9 | **Board scanning.** Merged as migration `083_board_scans`, behind `BOARD_SCAN_ENABLED` (default off: every board-scan route returns 404). **Live in production** with the picture index (085). Separately, `main` has two files numbered 076. They're independent, but record which order each project received them in. | done | Unaffected |
+| 10 | **Production API service.** Done 14–15 Nov 2026 and in use (step C). Originally: *prepared but unused.* A second Render service from `main`, connected to the production Supabase project (switch-over, step C). Check `/api/healthz`. Fix `API-DEPLOY.md`, which calls the staging service production. | you (Render); agent fixes the doc | Unaffected: new service, staging's untouched |
 
 ## Switch-over: TestFlight to production
 
@@ -43,7 +43,7 @@ Production must have every migration staging has. From the gap report's table an
 - **045's ID function only** (item 7), not its research tables.
 - **075, `076_search_catalogue_pins`, 077:** apply with the production guard in place of the staging one, as `PINANDPOP.md` → Production rollout, step 2 describes.
 - **`076_bulk_image_matcher`:** needed for the admin bulk matcher. Leave the feature switched off until you want it.
-- **Board scanning:** `083_board_scans`. Leave `BOARD_SCAN_ENABLED` off until you want it.
+- **Board scanning:** `083_board_scans` and `085_pin_picture_index`. Applied in production; board scanning is switched on there.
 - **Anything else** the report's migration table shows missing.
 
 **Check:** re-run the gap report. Every row in the migration table should say *yes* for production, and each migration's verify script should pass.
@@ -76,7 +76,8 @@ Set these on the new service (names only; values from the production Supabase pr
 - **AI:** `OPENAI_API_KEY`, `OPENAI_SCAN_MODEL` (leave unset for the default), optionally `OPENAI_SCAN_REASONING_EFFORT` and `SCAN_BUDGET_MS`.
 - **Pixian:** `PIXIAN_API_ID`, `PIXIAN_API_SECRET` and **`PIXIAN_TEST_MODE=false`**, so clean-ups are real and unwatermarked. Set caps (`CONTRIBUTOR_DAILY_*`, `BULK_*`, `BOARD_*`) and check the Pixian credit balance first.
 - **Pin & Pop:** `PINANDPOP_API_TOKEN`, then schedule the daily incremental sync and weekly full refresh (`PINANDPOP.md` → Sync).
-- **Off until you decide:** `BULK_IMAGE_MATCHER_ENABLED`, `BOARD_SCAN_ENABLED`, `SOLDGRAPH_ENABLED`, and the market flags in `docs/market-data/RIGHTS.md`.
+- **Board scanning (switched on):** `BOARD_SCAN_ENABLED=true`, `PICTURE_INDEX_ENABLED=true`, plus Vertex AI on the Google service account (`BOARD-SCANNING.md` → Picture index). **Open check:** `PICTURE_INDEX_AUTO_RESUME=true` isn't confirmed on production.
+- **Off until you decide:** `BULK_IMAGE_MATCHER_ENABLED`, `SOLDGRAPH_ENABLED`, and the market flags in `docs/market-data/RIGHTS.md`.
 - **eBay and Google Vision,** as on staging if you use them: `EBAY_*`, `GOOGLE_APPLICATION_CREDENTIALS_JSON`.
 
 **Check:**

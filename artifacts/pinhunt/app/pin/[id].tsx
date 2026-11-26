@@ -62,7 +62,7 @@ export default function PinDetailScreen() {
 
   const cachedPin = pins.find(p => p.id === id);
   const [fetchedPin, setFetchedPin] = useState<CataloguePin | null>(null);
-  const [pinLoading, setPinLoading] = useState(false);
+  const [pinLoading, setPinLoading] = useState(!cachedPin && !!repository && !!id);
 
   // The cached catalogue holds a subset of the full database. When the pin
   // isn't cached (e.g. reached from search), fetch it by id directly.
@@ -125,6 +125,15 @@ export default function PinDetailScreen() {
       .catch(() => setSourceDisplayName(null));
   }, [pin?.catalogueSource, repository]);
 
+  // Boards that already contain this pin — custom boards only. Auto-suggested
+  // "boards" (one per owned collection) aren't boards the collector created,
+  // so counting them here would contradict the Add to Collection sheet, which
+  // only ever shows/toggles customBoards.
+  const pinBoardIds = useMemo(
+    () => new Set(customBoards.filter(b => pin && b.pinIds.includes(pin.id)).map(b => b.id)),
+    [customBoards, pin?.id],
+  );
+
   if (!pin) {
     return (
       <ScreenContainer edges={{ top: false, bottom: true }}>
@@ -158,15 +167,6 @@ export default function PinDetailScreen() {
   const setOwnedCount =
     setmates.filter(p => ['owned', 'for_trade'].includes(collection[p.id]?.status ?? '')).length +
     (currentStatus === 'owned' || currentStatus === 'for_trade' ? 1 : 0);
-
-  // Boards that already contain this pin — custom boards only. Auto-suggested
-  // "boards" (one per owned collection) aren't boards the collector created,
-  // so counting them here would contradict the Add to Collection sheet, which
-  // only ever shows/toggles customBoards.
-  const pinBoardIds = useMemo(
-    () => new Set(customBoards.filter(b => b.pinIds.includes(pin.id)).map(b => b.id)),
-    [customBoards, pin.id],
-  );
 
   const images = [getPinImageSource(pin), ...(pin.backImageUrl ? [{ uri: pin.backImageUrl }] : [])];
 

@@ -129,9 +129,10 @@ export default function PinDetailScreen() {
   // "boards" (one per owned collection) aren't boards the collector created,
   // so counting them here would contradict the Add to Collection sheet, which
   // only ever shows/toggles customBoards.
+  const pinId = pin?.id;
   const pinBoardIds = useMemo(
-    () => new Set(customBoards.filter(b => pin && b.pinIds.includes(pin.id)).map(b => b.id)),
-    [customBoards, pin?.id],
+    () => new Set(customBoards.filter(b => pinId && b.pinIds.includes(pinId)).map(b => b.id)),
+    [customBoards, pinId],
   );
 
   if (!pin) {
@@ -141,7 +142,7 @@ export default function PinDetailScreen() {
         <ScreenHeader />
         <View style={styles.notFound}>
           {pinLoading ? (
-            <ActivityIndicator color={colors.homeCoral} />
+            <ActivityIndicator testID="pin-loading" color={colors.homeCoral} />
           ) : (
             <>
               <Text style={[styles.notFoundText, { color: colors.homeInk }]}>Pin not found.</Text>

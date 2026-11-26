@@ -48,7 +48,8 @@ describe('Pin detail: uncached pin', () => {
   it('shows a spinner, then the pin, with no hook-order error', async () => {
     let resolve!: (p: unknown) => void;
     mockRepo = { getPinById: jest.fn(() => new Promise(r => { resolve = r; })) };
-    const { queryByText, findByText } = await render(<PinDetailScreen />);
+    const { queryByText, findByText, queryByTestId } = await render(<PinDetailScreen />);
+    expect(queryByTestId('pin-loading')).toBeTruthy();
     expect(queryByText('Pin not found.')).toBeNull();
     resolve(pin);
     expect(await findByText('Test Pin Title')).toBeTruthy();

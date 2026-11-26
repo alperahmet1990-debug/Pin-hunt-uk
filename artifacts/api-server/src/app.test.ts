@@ -1,5 +1,5 @@
 import request from "supertest";
-import { describe, expect, it } from "vitest";
+import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import app from "./app";
 
 describe("GET /api/healthz", () => {
@@ -14,6 +14,10 @@ describe("GET /api/healthz", () => {
 // every protected route must reject a request with no Bearer token before
 // doing any work.
 describe("protected routes without a token", () => {
+  // The collector refresh route is a 404 while its flag is off (PRICE-01).
+  beforeAll(() => { vi.stubEnv("MARKET_VALUE_REFRESH_ENABLED", "true"); });
+  afterAll(() => { vi.unstubAllEnvs(); });
+
   const protectedRoutes: Array<["get" | "post" | "patch", string]> = [
     ["post", "/api/scan/identify"],
     ["post", "/api/pins/PHUK-00000001/market-value/refresh"],

@@ -39,6 +39,7 @@ const RESULT = {
 describe.each(["", "true"])("v1 market-value endpoints (MARKET_VALUATION_V2_ENABLED=%j)", flag => {
   beforeEach(() => {
     vi.stubEnv("MARKET_VALUATION_V2_ENABLED", flag);
+    vi.stubEnv("MARKET_VALUE_REFRESH_ENABLED", "true"); // PRICE-01: the refresh route is behind this flag
     v1.getMarketValueForPin.mockReset().mockResolvedValue(RESULT);
     v1.getLatestValuesForPins.mockReset().mockResolvedValue({ "PHUK-00000001": { marketplace: "EBAY_GB", currency: "GBP", mid: 10 } });
     v1.refreshMarketValueForPin.mockReset().mockResolvedValue(RESULT);
@@ -76,6 +77,6 @@ describe.each(["", "true"])("v1 market-value endpoints (MARKET_VALUATION_V2_ENAB
     const pin = `PHUK-${flag ? "1" : "2"}${Date.now()}`; // fresh pin: the route has a per-pin cooldown
     const res = await request(app).post(`/api/pins/${pin}/market-value/refresh`).set("Authorization", "Bearer good-token");
     expect(res.status).toBe(200);
-    expect(res.body).toEqual({ ...RESULT, ebayConfigured: true });
+    expect(res.body).toEqual({ ...RESULT, ebayConfigured: true, cached: false });
   });
 });

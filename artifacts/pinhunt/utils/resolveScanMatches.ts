@@ -23,6 +23,10 @@ export interface ResolveScanMatchesResult {
  * Resolve identify-API matches to catalogue pins: the cached list first, then
  * the repository. A lookup that throws is recorded (not swallowed) so the
  * caller can tell "lookup failed" from "genuinely not in the catalogue" (#669).
+ *
+ * If nothing resolved and any lookup threw (even when others returned null),
+ * `hadLookupError` is true: the caller should show the error state, because
+ * the pin may well be in the catalogue.
  */
 export async function resolveScanMatches(
   rawMatches: RawScanMatch[],

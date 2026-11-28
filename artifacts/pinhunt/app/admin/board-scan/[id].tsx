@@ -132,9 +132,14 @@ export function boardPoint(
 
 /**
  * On-screen size of the board photo: as wide as the space allows, but never
- * taller than 60% of the window (min 240 pt), so a tall photo doesn't fill the
- * whole screen and the outlines stay readable. Keeps the photo's proportions.
+ * taller than 45% of the window or 480 pt (min 220 pt), so the photo doesn't
+ * fill the screen and the pin cards stay in view. Keeps the photo's
+ * proportions. Tap a crop on a card to see a pin up close.
  */
+export const BOARD_MAX_SHARE = 0.45;
+export const BOARD_MAX_HEIGHT = 480;
+export const BOARD_MIN_HEIGHT = 220;
+
 export function fitBoard(
   areaWidth: number,
   imageWidth: number,
@@ -143,7 +148,7 @@ export function fitBoard(
 ): { width: number; height: number } {
   if (areaWidth <= 0 || imageWidth <= 0 || imageHeight <= 0) return { width: 0, height: 0 };
   const aspect = imageWidth / imageHeight;
-  const maxHeight = Math.max(240, windowHeight * 0.6);
+  const maxHeight = Math.max(BOARD_MIN_HEIGHT, Math.min(BOARD_MAX_HEIGHT, windowHeight * BOARD_MAX_SHARE));
   const width = Math.min(areaWidth, maxHeight * aspect);
   return { width, height: width / aspect };
 }

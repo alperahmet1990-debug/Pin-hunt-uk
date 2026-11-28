@@ -41,6 +41,7 @@ import { IDLE_VIEWFINDER_MAX, idleViewfinderHeight } from '@/components/scan/sca
 import { useMyAccess } from '@/hooks/useMyAccess';
 import { useAiPhotoConsent } from '@/hooks/useAiPhotoConsent';
 import { ErrorState } from '@/components/ui/ErrorState';
+import { resolveScanMatches } from '@/utils/resolveScanMatches';
 import { toUserError, type UserError } from '@/utils/userError';
 import { tabScreenBottomPad } from '@/utils/tabBarSpace';
 import { setScanPhotoForContribution } from '@/utils/scanPhotoHandoff';
@@ -329,25 +330,20 @@ export default function ScanScreen() {
 
       // The cached list only holds part of the catalogue — fetch any matched
       // pin that isn't cached directly from the repository.
-      const resolved: Match[] = (
-        await Promise.all(
-          rawMatches.map(async m => {
-            let pin = pins.find(p => p.id === m.pinId) ?? null;
-            if (!pin && repository) {
-              try {
-                pin = await repository.getPinById(m.pinId);
-              } catch {
-                pin = null;
-              }
-            }
-            if (!pin) return null;
-            return { pin, confidence: m.confidence, reasoning: m.reasoning };
-          }),
-        )
-      ).filter(Boolean) as Match[];
+      const { resolved, lookupError, hadLookupError } = await resolveScanMatches(
+        rawMatches,
+        pins,
+        repository ? id => repository.getPinById(id) : undefined,
+      );
       if (run !== identifyRun.current) return;
 
       if (resolved.length === 0) {
+        // A failed lookup is not "not in our catalogue" (#669).
+        if (hadLookupError) {
+          setFailure(toUserError(lookupError, 'scan'));
+          setScanState('captured');
+          return;
+        }
         setNoMatchFound(true);
         setScanState('captured');
         return;

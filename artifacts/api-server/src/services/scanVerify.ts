@@ -34,3 +34,48 @@ export function verifyDecision(matches: ReadonlyArray<{ confidence: unknown }>):
   if (top >= VERIFY_CONFIDENT_MIN && top - second >= VERIFY_CONFIDENT_LEAD) return "confident";
   return "compare";
 }
+
+// ── Always compare, with more pictures when there's time (app-scan PR 2) ──
+//
+// Only a picture comparison can make a match confident (applyConfidenceRules
+// in routes/scan.ts), so the comparison now runs on "confident" rankings too
+// (SCAN_ALWAYS_COMPARE, default on): a confident text ranking is still the
+// wrong pin when the art is shared across formats. "implausible" is still
+// skipped: no reference can find a pin that isn't there.
+//
+// The board scanner shows every candidate's picture at high detail; the
+// collector scan has a 30 s budget, so it scales with the time left.
+
+/** With at least this much time left, the comparison gets more pictures (some at high detail). */
+export const RICH_VERIFY_MIN_MS = 14_000;
+/** Pictures in a rich comparison (SCAN_MAX_REFERENCES, 1–8). */
+export const SCAN_RICH_REFERENCES = 5;
+/** Of those, the first this many (the ranking's best) are sent at high detail. */
+export const HIGH_DETAIL_REFERENCES = 3;
+
+export function alwaysCompare(env: NodeJS.ProcessEnv = process.env): boolean {
+  return (env.SCAN_ALWAYS_COMPARE ?? "true").toLowerCase() !== "false";
+}
+
+/** Whether to run the comparison for this ranking. */
+export function shouldCompare(decision: VerifyDecision, env: NodeJS.ProcessEnv = process.env): boolean {
+  return decision === "compare" || (decision === "confident" && alwaysCompare(env));
+}
+
+export function richReferenceCount(env: NodeJS.ProcessEnv = process.env): number {
+  const n = Number(env.SCAN_MAX_REFERENCES);
+  return Number.isFinite(n) && n >= 1 ? Math.min(8, Math.floor(n)) : SCAN_RICH_REFERENCES;
+}
+
+/**
+ * How many reference pictures to show, and how many of them at high detail,
+ * for the time left: plenty → SCAN_RICH_REFERENCES with the top
+ * HIGH_DETAIL_REFERENCES at high detail; otherwise the old 3 at low detail.
+ */
+export function referencePlan(timeLeftMs: number, env: NodeJS.ProcessEnv = process.env): { count: number; highDetail: number } {
+  if (timeLeftMs >= RICH_VERIFY_MIN_MS) {
+    const count = richReferenceCount(env);
+    return { count, highDetail: Math.min(HIGH_DETAIL_REFERENCES, count) };
+  }
+  return { count: VERIFY_MAX_REFERENCES, highDetail: 0 };
+}

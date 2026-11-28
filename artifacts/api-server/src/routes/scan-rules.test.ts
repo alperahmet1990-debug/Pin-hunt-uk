@@ -42,3 +42,23 @@ describe("scanTextTerms", () => {
     expect(scanTextTerms("", null, ["Stitch"])).toEqual(["Stitch"]);
   });
 });
+
+import { referencePlan, shouldCompare } from "../services/scanVerify";
+
+describe("app-scan PR 2: compare more, within the time", () => {
+  it("compares confident rankings too unless SCAN_ALWAYS_COMPARE=false; never implausible ones", () => {
+    expect(shouldCompare("compare", {})).toBe(true);
+    expect(shouldCompare("confident", {})).toBe(true);
+    expect(shouldCompare("confident", { SCAN_ALWAYS_COMPARE: "false" })).toBe(false);
+    expect(shouldCompare("implausible", {})).toBe(false);
+  });
+
+  it("shows 5 pictures (best 3 at high detail) with 14 s or more left; otherwise the old 3 at low detail", () => {
+    expect(referencePlan(20_000, {})).toEqual({ count: 5, highDetail: 3 });
+    expect(referencePlan(14_000, {})).toEqual({ count: 5, highDetail: 3 });
+    expect(referencePlan(13_999, {})).toEqual({ count: 3, highDetail: 0 });
+    expect(referencePlan(20_000, { SCAN_MAX_REFERENCES: "8" })).toEqual({ count: 8, highDetail: 3 });
+    expect(referencePlan(20_000, { SCAN_MAX_REFERENCES: "2" })).toEqual({ count: 2, highDetail: 2 });
+    expect(referencePlan(20_000, { SCAN_MAX_REFERENCES: "50" }).count).toBe(8);
+  });
+});

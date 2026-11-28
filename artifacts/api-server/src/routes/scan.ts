@@ -22,7 +22,7 @@ import {
   VERIFY_MIN_MS,
 } from "../services/scanBudget";
 import { withScanReasoning } from "../services/scanReasoning";
-import { verifyDecision, VERIFY_MAX_REFERENCES } from "../services/scanVerify";
+import { referencePlan, shouldCompare, verifyDecision } from "../services/scanVerify";
 import { pinAndPopReferenceImages } from "../services/scanReferenceImages";
 import { cachedResult, imageHash, recordUsage, withinDailyCap } from "../services/usage-caps";
 import { isScanId, recordScanOutcome } from "../services/scan-outcomes";
@@ -462,9 +462,12 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
     let verified = false;
     let pictured = new Set<string>();
     let formatMismatch = new Set<string>();
+    // Always compared now (SCAN_ALWAYS_COMPARE), confident rankings too:
+    // only a picture can make a match confident. Nothing plausible: skipped.
     const verifyPlan = verifyDecision(matches);
-    if (verifyPlan !== "compare") skipped.push(`verify:${verifyPlan}`);
-    if (verifyPlan === "compare") {
+    const compare = shouldCompare(verifyPlan);
+    if (!compare) skipped.push(`verify:${verifyPlan}`);
+    if (compare) {
       // When any candidate has a stored catalogue photo, show the model the
       // user's photo alongside those reference images and let it re-rank.
       // Text metadata alone confuses similar pins (e.g. every Princess
@@ -486,7 +489,9 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
       for (const siblings of siblingLists) {
         if (!siblings) continue; // siblings are best-effort
         for (const s of siblings) {
-          if (!s.imageUrl || byPinId.has(s.id) && matches.some((m) => m.pinId === s.id)) continue;
+          // Pins with no public photo come too: Pin & Pop pins have a
+          // reference picture the comparison can use (looked up below).
+          if (byPinId.has(s.id) && matches.some((m) => m.pinId === s.id)) continue;
           byPinId.set(s.id, s);
           if (!matches.some((m) => m.pinId === s.id)) {
             matches.push({ pinId: s.id, confidence: 30, reasoning: "Same collection — has a reference image for comparison." });
@@ -511,10 +516,12 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
       // Downloaded by the server first (boardScan/references.ts: size and
       // address checks, 6 s limit), so a link the AI provider can't reach
       // doesn't silently fail the whole comparison.
+      // More pictures, the best at high detail, when there's time for them.
+      const plan = referencePlan(budget.timeoutFor(Number.MAX_SAFE_INTEGER));
       const wanted = matches
         .map((m) => ({ match: m, pin: byPinId.get(m.pinId)!, url: comparisonImage(byPinId.get(m.pinId)) }))
         .filter((c) => !!c.url)
-        .slice(0, VERIFY_MAX_REFERENCES);
+        .slice(0, plan.count);
       const downloaded = await Promise.all(wanted.map(async (c) => ({ ...c, image: await fetchReferenceImage(c.url!) })));
       const withImages = downloaded.filter((c) => !!c.image);
       if (withImages.length < wanted.length) skipped.push(`references:${wanted.length - withImages.length}`);
@@ -537,10 +544,10 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
             },
             { type: "text", text: "Photo above is the USER'S PIN. Reference images follow:" },
           ];
-          for (const c of withImages) {
+          withImages.forEach((c, i) => {
             refContent.push({ type: "text", text: `Reference for ${c.pin.id} — "${c.pin.title}" (${c.pin.collection}):` });
-            refContent.push({ type: "image_url", image_url: { url: c.image!, detail: "low" } });
-          }
+            refContent.push({ type: "image_url", image_url: { url: c.image!, detail: i < plan.highDetail ? "high" : "low" } });
+          });
           refContent.push({
             type: "text",
             text: "Compare the user's pin to each reference image and re-rank ALL candidates as JSON.",

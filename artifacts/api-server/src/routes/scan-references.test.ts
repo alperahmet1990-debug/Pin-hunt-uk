@@ -80,7 +80,7 @@ describe("scan photo comparison with Pin & Pop reference images", () => {
     // downloaded by the server first (sent as pictures, not links).
     const verify = create.mock.calls[2][0];
     const sent = (verify.messages[1].content as Array<{ type: string; image_url?: { url: string; detail: string } }>)
-      .filter((c) => c.image_url?.detail === "low").map((c) => c.image_url!.url);
+      .filter((c) => !!c.image_url).slice(1).map((c) => c.image_url!.url); // [0] is the user's photo
     expect(sent.every((u) => u.startsWith("data:image/jpeg;base64,"))).toBe(true);
     const urls = sent.map((u) => Buffer.from(u.slice("data:image/jpeg;base64,".length), "base64").toString());
     expect(urls).toEqual([REF, "https://img.test/public.jpg"]);

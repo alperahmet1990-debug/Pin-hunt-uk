@@ -144,7 +144,7 @@ vi.mock("./store", async (importOriginal) => {
   };
 });
 
-import { approveItem, approveReady, cleanItem, cleanSetName, deleteBoard, enqueue, isRunning, learnSet, MAX_SET_HINTS, processBoardScan, redrawItem, refineBox, limitShrink, rescanBoard } from "./pipeline";
+import { approveItem, approveReady, cleanItem, cleanSetName, deleteBoard, enqueue, isRunning, learnSet, MAX_SET_HINTS, processBoardScan, redrawItems, refineBox, limitShrink, rescanBoard } from "./pipeline";
 import type { BoardScan, BoardScanItem } from "./store";
 
 /** A 2000×1500 "board": three sharp, textured pins and one tiny one. */
@@ -578,7 +578,7 @@ describe("processBoardScan", () => {
   });
 });
 
-describe("redrawItem", () => {
+describe("redrawItems", () => {
   beforeEach(async () => {
     vi.stubEnv("BOARD_MIN_SHARPNESS", "10");
     vi.stubEnv("BOARD_DETECT_TILES", "1");
@@ -587,34 +587,60 @@ describe("redrawItem", () => {
     mem.create.mockImplementation(model({ G1: rank("PHUK-1", 92), R2: rank("PHUK-2", 90), W3: rank("PHUK-3", 91), "": rank("PHUK-3", 20) }));
     await processBoardScan("s1");
   });
-  const first = () => [...mem.items.values()][0] as unknown as BoardScanItem;
+  const all = () => [...mem.items.values()] as unknown as BoardScanItem[];
   const scan = () => mem.scans.get("s1") as unknown as BoardScan;
+  const settled = () => vi.waitFor(() => expect(isRunning("s1")).toBe(false), { timeout: 5000 });
 
-  it("cuts a new crop from the drawn box, clears the old result and matches again", async () => {
-    const before = { ...first() };
-    Object.assign(mem.items.get(before.id)!, { decision: "confirmed", decided_pin_id: "PHUK-1" });
-    // Describe the new crop as Remy, so the re-match lands on PHUK-2.
+  it("saves several boxes at once, returns before re-matching, then re-matches them in the background", async () => {
+    const [a, b] = all();
+    const before = { a: a.crop_sha256, b: b.crop_sha256 };
+    Object.assign(mem.items.get(a.id)!, { decision: "confirmed", decided_pin_id: "PHUK-1" });
+    // The new crops are described as Remy, so the re-match lands on PHUK-2.
     mem.create.mockImplementation(model({ R2: rank("PHUK-2", 90) }, { describe: JSON.stringify({ characters: ["Remy"], keywords: [], text: "R2" }) }));
-    const box = { x: 0.4, y: 0.04, w: 0.2, h: 0.32 };
-    const after = await redrawItem(scan(), first(), box);
-    expect(after.box).toEqual(box); // kept as drawn
-    expect(after.origin).toBe("manual");
-    expect(after.crop_path).toBe(before.crop_path);
-    expect(after.crop_sha256).not.toBe(before.crop_sha256);
-    expect(after).toMatchObject({ decision: "undecided", decided_pin_id: null, cleaned_path: null, cleanup_status: "none", image_review: "none", suggested_pin_id: "PHUK-2" });
-    expect(after.detection?.described).toBe(true);
+    const boxA = { x: 0.4, y: 0.04, w: 0.2, h: 0.32 };
+    const boxB = { x: 0.38, y: 0.03, w: 0.24, h: 0.34 };
+    const saved = await redrawItems(scan(), [{ item: a, box: boxA }, { item: b, box: boxB }]);
+    // Saved straight away: new crops, old results cleared, waiting to be matched.
+    expect(saved.map((i) => i.box)).toEqual([boxA, boxB]);
+    expect(saved.every((i) => i.match_status === "pending" && i.decision === "undecided" && i.cleaned_path === null && i.origin === "manual")).toBe(true);
+    expect(saved[0].crop_path).toBe(a.crop_path);
+    expect(saved[0].crop_sha256).not.toBe(before.a);
+    expect(saved[1].crop_sha256).not.toBe(before.b);
+    // The board queue re-matches them.
+    await settled();
+    const after = all().filter((i) => i.id === a.id || i.id === b.id);
+    expect(after.map((i) => i.suggested_pin_id)).toEqual(["PHUK-2", "PHUK-2"]);
+    expect(after.every((i) => i.detection?.described)).toBe(true);
+  });
+
+  it("crops an adjusted box almost exactly as drawn (1.5%), not with the detected 6% padding", async () => {
+    const item = all()[0];
+    const box = { x: 0.4, y: 0.1, w: 0.2, h: 0.5 }; // 400 x 750 px on the 2000 x 1500 board
+    await redrawItems(scan(), [{ item, box }]);
+    const crop = mem.objects.get(`board-scans/${item.crop_path}`)!;
+    const meta = await sharp(crop).metadata();
+    // 1.5% of 400 = 6 px a side; 1.5% of 750 = 11.25 px a side (6% would be 448 x 840).
+    expect(meta.width).toBeGreaterThanOrEqual(412);
+    expect(meta.width).toBeLessThanOrEqual(414);
+    expect(meta.height).toBeGreaterThanOrEqual(772);
+    expect(meta.height).toBeLessThanOrEqual(774);
+    await settled();
   });
 
   it("removes a pending photo record left by a failed approval", async () => {
-    const item = first();
+    const item = all()[0];
     mem.images.push({ id: "img-old", status: "pending", pinhuntId: "PHUK-1", storagePath: "x.jpg", source_record_id: item.id });
-    await redrawItem(scan(), item, { x: 0.02, y: 0.04, w: 0.2, h: 0.32 });
+    await redrawItems(scan(), [{ item, box: { x: 0.02, y: 0.04, w: 0.2, h: 0.32 } }]);
     expect(mem.images.find((r) => r.id === "img-old")).toBeUndefined();
+    await settled();
   });
 
-  it("refuses once the photo is published, or while the board is processing", async () => {
-    await expect(redrawItem(scan(), { ...first(), image_review: "approved" }, { x: 0.1, y: 0.1, w: 0.2, h: 0.2 })).rejects.toThrow(/already published/);
-    await expect(redrawItem({ ...scan(), status: "matching" }, first(), { x: 0.1, y: 0.1, w: 0.2, h: 0.2 })).rejects.toThrow(/still being processed/);
+  it("refuses all of them if one is published, or while the board is processing", async () => {
+    const [a, b] = all();
+    const box = { x: 0.1, y: 0.1, w: 0.2, h: 0.2 };
+    await expect(redrawItems(scan(), [{ item: a, box }, { item: { ...b, image_review: "approved" }, box }])).rejects.toThrow(/#2's photo is already published/);
+    expect(mem.items.get(a.id)!.box).not.toEqual(box);
+    await expect(redrawItems({ ...scan(), status: "matching" }, [{ item: a, box }])).rejects.toThrow(/still being processed/);
   });
 });
 

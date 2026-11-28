@@ -7,7 +7,8 @@
  * POST   /admin/board-scans/:id/resume              Finish an interrupted/partial board.
  * POST   /admin/board-scans/:id/items               Add a pin detection missed: { box, pinId? }.
  * PATCH  /admin/board-scans/:id/items/:itemId       { action: confirm | set_pin | exclude | reset | reject_image }.
- * POST   /admin/board-scans/:id/items/:itemId/box      Redraw the pin's box: { box } → new crop, matched again.
+ * POST   /admin/board-scans/:id/items/:itemId/box      Adjust one pin's box: { box } → new crop, re-matched in the background.
+ * POST   /admin/board-scans/:id/boxes                  Adjust several: { boxes: [{ itemId, box }] }, one save.
  * POST   /admin/board-scans/:id/items/:itemId/clean    Pixian clean-up on request ({ force } lifts the judgement calls).
  * POST   /admin/board-scans/:id/items/:itemId/rotate   Turn the cleaned photo: { degrees } clockwise, or { degrees: "auto" } to straighten.
  * POST   /admin/board-scans/:id/items/:itemId/approve  Publish the cleaned photo to its pin ({ pinId?, replaceExisting? }).
@@ -35,7 +36,8 @@ import {
   deleteBoard,
   rescanBoard,
   learnSet,
-  redrawItem,
+  MAX_BOX_EDITS,
+  redrawItems,
   rotateCleaned,
   cleanItem,
   enqueue,
@@ -512,7 +514,32 @@ router.post("/admin/board-scans/:id/items/:itemId/box", requireAdmin, async (req
     if (!item) return;
     const box = parseBox((req.body ?? {}).box);
     if (!box) { res.status(400).json({ error: "box {x, y, w, h} (fractions of the photo) is required" }); return; }
-    res.json({ item: await redrawItem(scan, item, box) });
+    const [updated] = await redrawItems(scan, [{ item, box }]);
+    res.json({ item: updated, rematching: 1 });
+  } catch (err) {
+    fail(res, err);
+  }
+});
+
+router.post("/admin/board-scans/:id/boxes", requireAdmin, async (req: AdminRequest, res: Response) => {
+  try {
+    const scan = await loadScan(req, res);
+    if (!scan) return;
+    const raw = (req.body ?? {}).boxes;
+    if (!Array.isArray(raw) || raw.length === 0 || raw.length > MAX_BOX_EDITS) {
+      res.status(400).json({ error: `boxes: 1–${MAX_BOX_EDITS} of { itemId, box }` });
+      return;
+    }
+    const items = new Map((await store.listItems(scan.id)).map((i) => [i.id, i]));
+    const edits: Array<{ item: BoardScanItem; box: NonNullable<ReturnType<typeof parseBox>> }> = [];
+    for (const e of raw as Array<{ itemId?: unknown; box?: unknown }>) {
+      const item = typeof e?.itemId === "string" ? items.get(e.itemId) : undefined;
+      const box = parseBox(e?.box);
+      if (!item || !box) { res.status(400).json({ error: "Each entry needs an itemId on this board and a box {x, y, w, h}." }); return; }
+      edits.push({ item, box });
+    }
+    const updated = await redrawItems(scan, edits);
+    res.json({ items: updated, rematching: updated.length });
   } catch (err) {
     fail(res, err);
   }

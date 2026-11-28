@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
-import AdminBoardScanScreen, { BOARD_DRAWING_VIEW, boardPoint, adjustBox, drawPrompt, fitBoard, focusRegion, photoToView, pickGrid, viewToPhoto } from '../app/admin/board-scan/[id]';
+import AdminBoardScanScreen, { BOARD_DRAWING_VIEW, boardPoint, adjustBox, boxEditable, changedBoxEdits, drawPrompt, fitBoard, focusRegion, photoToView, pickGrid, viewToPhoto } from '../app/admin/board-scan/[id]';
 import AdminBoardScansScreen from '../app/admin/board-scans';
 
 // Board scanning review (Step A): pins without a catalogue photo first,
@@ -377,7 +377,7 @@ describe('fitBoard', () => {
   });
   it('never goes over 640 pt tall while reviewing, and grows while drawing', () => {
     expect(fitBoard(2000, 2000, 1000, 1400).height).toBeCloseTo(640);
-    expect(fitBoard(2000, 1000, 2000, 1000, BOARD_DRAWING_VIEW).height).toBeCloseTo(850);
+    expect(fitBoard(2000, 1000, 2000, 1000, BOARD_DRAWING_VIEW).height).toBeCloseTo(720);
   });
   it('uses the full width when that fits', () => {
     expect(fitBoard(390, 4032, 3024, 844)).toEqual({ width: 390, height: 390 * 3024 / 4032 });
@@ -414,26 +414,38 @@ describe('zooming to the pins', () => {
 });
 
 describe('adjusting a pin\'s box', () => {
-  it('opens the box editor for that pin, and cancelling sends nothing', async () => {
+  it('opens Adjust boxes from a card or the board; Done with no changes and Cancel send nothing', async () => {
     await render(<AdminBoardScanScreen />);
     await screen.findByText('Ready to review');
-    // Cards are listed #2 first.
     await fireEvent.press(screen.getAllByText('Adjust box')[0]);
-    expect(await screen.findByText(/Adjusting #2: drag a corner to resize, or the middle to move it/)).toBeTruthy();
-    expect(screen.getByText('Save box')).toBeTruthy();
+    expect(await screen.findByText(/Change as many as you like, then save once/)).toBeTruthy();
+    // Nothing changed yet: the save button just closes.
+    expect(screen.getByText('Done')).toBeTruthy();
     // Adding a pin is a separate step, not offered while adjusting.
     expect(screen.queryByText('Add a missed pin')).toBeNull();
     await fireEvent.press(screen.getByText('Cancel'));
     expect(await screen.findByText('Add a missed pin')).toBeTruthy();
+    await fireEvent.press(screen.getByText('Adjust boxes'));
+    await fireEvent.press(await screen.findByText('Done'));
+    expect(await screen.findByText('Add a missed pin')).toBeTruthy();
     expect(calls().some((c) => c.includes('/box'))).toBe(false);
   });
 
-  it('saves the box unchanged when nothing was dragged', async () => {
-    await render(<AdminBoardScanScreen />);
-    await screen.findByText('Ready to review');
-    await fireEvent.press(screen.getAllByText('Adjust box')[0]);
-    await fireEvent.press(await screen.findByText('Save box'));
-    await waitFor(() => expect(calls()).toContain('POST /admin/board-scans/scan-1/items/i2/box {"box":{"x":0.1,"y":0.1,"w":0.2,"h":0.2}}'));
+  it('saves only the boxes that changed, in one request', () => {
+    const items = [
+      { id: 'a', box: { x: 0.1, y: 0.1, w: 0.2, h: 0.2 } },
+      { id: 'b', box: { x: 0.5, y: 0.1, w: 0.2, h: 0.2 } },
+      { id: 'c', box: { x: 0.1, y: 0.5, w: 0.2, h: 0.2 } },
+    ];
+    const boxes = { a: items[0].box, b: { x: 0.5, y: 0.1, w: 0.2, h: 0.15 }, c: { x: 0.12, y: 0.5, w: 0.2, h: 0.2 } };
+    expect(changedBoxEdits(items, boxes)).toEqual([{ itemId: 'b', box: boxes.b }, { itemId: 'c', box: boxes.c }]);
+    expect(changedBoxEdits(items, { a: items[0].box })).toEqual([]);
+  });
+
+  it('only offers boxes that can still change', () => {
+    expect(boxEditable({ decision: 'undecided', image_review: 'none' })).toBe(true);
+    expect(boxEditable({ decision: 'excluded', image_review: 'none' })).toBe(false);
+    expect(boxEditable({ decision: 'confirmed', image_review: 'approved' })).toBe(false);
   });
 
   it('moves one corner, or the whole box, and keeps it on the photo', () => {

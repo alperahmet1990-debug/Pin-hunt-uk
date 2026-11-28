@@ -66,6 +66,8 @@ interface Summary {
 }
 export interface BatchAccuracy {
   at: string; checked: number; top1: number; top5: number; errors: number;
+  /** The check stopped early (the daily AI limit), with how many photos it didn't reach. */
+  stopped?: string; notChecked?: number;
   misses: Array<{ itemId: string; filename: string | null; expected: { pinhuntId: string; title: string | null }; got: { pinhuntId: string; title: string; confidence: number } | null; rank: number | null }>;
 }
 interface BatchData {
@@ -309,6 +311,11 @@ function AccuracyPanel({ batchId, report, running, answered, reload }: {
             Last check: right first {report.top1} of {report.checked} ({pct(report.top1, report.checked)}), in the top 5 {report.top5} ({pct(report.top5, report.checked)})
             {report.errors ? ` · ${report.errors} couldn't be checked` : ''} · {new Date(report.at).toLocaleString()}
           </Text>
+          {report.stopped ? (
+            <Text style={[styles.meta, { color: colors.wanted }]}>
+              Stopped early: {report.stopped}{report.notChecked ? ` ${report.notChecked} photo${report.notChecked === 1 ? '' : 's'} not checked.` : ''}
+            </Text>
+          ) : null}
           {report.misses.map((m) => (
             <Text key={m.itemId} style={[styles.meta, { color: colors.homeMuted }]}>
               {m.filename ?? m.itemId}: you chose {m.expected.title ?? m.expected.pinhuntId} — matching put {m.got ? `${m.got.title} (${m.got.confidence}%)` : 'nothing'} first

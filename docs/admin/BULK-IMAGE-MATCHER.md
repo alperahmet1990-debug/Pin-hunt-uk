@@ -29,6 +29,12 @@ Both need `supabase/migrations/086_bulk_batch_stats.sql` (one `stats` column on 
 - **Learned sets:** once **two** confirmed photos come from the same catalogue set (`pins.collection`), the batch learns it and matches its suggested and unmatched photos again with it first. One photo alone isn't enough, because batches can mix sets.
 - **Accuracy check (N):** matches the batch's confirmed photos again (confirmed, cleaning, cleaned or published; at most 300), **without changing them**. It reports how often your pin came first and how often it was in the top 5, and lists the misses. It runs in the background, one check per batch at a time, and is saved on the batch (`stats.accuracy`). Cost: about 3 AI calls per photo.
 
+**Limits** (security review of #762, migration 087):
+- **Accuracy check:** one at a time on the server, and the same batch again only after 10 minutes.
+- **Sets:** changes by hand at most once a minute per batch.
+- **Re-matching:** a set change or a learned set re-matches at most 200 photos, oldest first.
+- **Set input:** at most 2,000 characters or 20 entries, refused before it's processed.
+
 ## Correcting a match: Which pin is it?
 
 On the review card, **Which pin is it? Look-alikes & sets** opens:
@@ -48,6 +54,7 @@ AI calls per photo: 2, or 3 when a reference image exists. Never one call per ca
 | `BULK_PIXIAN_MAX_PER_ITEM` | 4 | Clean-ups one photo may use. A failed or timed-out call counts |
 | `BULK_AUTO_CROP` | true | Crop to the main pin before Pixian |
 | `BULK_MAX_BATCH_ITEMS` | 1000 | Photos per batch |
+| `BULK_AI_DAILY_CALLS` | 4500 | OpenAI calls per UTC day across every match: uploads, re-matches after a set change or a learned set, and accuracy checks. 3 are reserved per photo before matching (migration 087). When they run out, matching pauses ("Daily AI limit…") and an accuracy check stops early and says how many photos it didn't reach. If the budget can't be checked (087 not applied), matching pauses and says so |
 | `BOARD_MAX_REFERENCES`, `BOARD_MAX_CANDIDATES`, `BOARD_MATCH_ALWAYS_COMPARE`, `BOARD_REFERENCE_DETAIL` | 8, 150, true, high | Matching settings, shared with board scanning (`BULK_MATCH_ALWAYS_COMPARE` and `BULK_MATCH_MAX_CANDIDATES` are no longer read) |
 | `PICTURE_INDEX_ENABLED` | off | Picture-index look-alikes for each photo (Google Vertex AI, one call ≈ $0.0001). Same switch as board scanning |
 | `OPENAI_BULK_MATCH_MODEL` | `OPENAI_SCAN_MODEL` | Model override |

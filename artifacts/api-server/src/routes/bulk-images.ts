@@ -49,8 +49,8 @@ import { publishItem, PublishBlockedError } from "../services/bulkImages/publish
 import { pinAndPopReferenceImages } from "../services/scanReferenceImages";
 import { lookalikePins } from "../services/pictureIndex/search";
 import { pictureIndexConfigured } from "../services/pictureIndex/vertex";
-import { batchSets, cleanSetList, learnBatchSet, readStats, rematchUndecided, updateBatchStats } from "../services/bulkImages/batchStats";
-import { ANSWERED_STATUSES, batchAccuracyRunning, MAX_CHECKED, startBatchAccuracyCheck } from "../services/bulkImages/accuracy";
+import { batchSets, cleanSetList, learnBatchSet, readStats, rematchUndecided, SetInputError, updateBatchStats } from "../services/bulkImages/batchStats";
+import { ACCURACY_COOLDOWN_MS, ANSWERED_STATUSES, batchAccuracyRunning, MAX_CHECKED, startBatchAccuracyCheck } from "../services/bulkImages/accuracy";
 
 const router: IRouter = Router();
 
@@ -207,6 +207,9 @@ async function signed(db: SupabaseClient, paths: string[]): Promise<Map<string, 
 
 // ── Batches ──────────────────────────────────────────────────────────────────
 
+/** Wait between hand changes to a batch's sets (each re-matches its undecided photos). */
+export const SETS_COOLDOWN_MS = 60_000;
+
 const PERMISSION_BASES = ["own_photos", "written_permission", "licence", "other"];
 
 router.post("/admin/bulk-images/batches", guard, async (req: AdminRequest, res) => {
@@ -221,6 +224,11 @@ router.post("/admin/bulk-images/batches", guard, async (req: AdminRequest, res) 
       res.status(400).json({ error: "Choose the permission basis for these photos." });
       return;
     }
+    let sets: string[];
+    try { sets = cleanSetList(b.sets); } catch (e) {
+      if (e instanceof SetInputError) { res.status(400).json({ error: e.message }); return; }
+      throw e;
+    }
     const { data, error } = await getServiceClient().from("bulk_image_batches").insert({
       title,
       created_by: req.adminId,
@@ -231,7 +239,7 @@ router.post("/admin/bulk-images/batches", guard, async (req: AdminRequest, res) 
       permission_notes: typeof b.permissionNotes === "string" && b.permissionNotes.trim() ? b.permissionNotes.trim().slice(0, 2000) : null,
       permission_recorded_by: req.adminId,
       // Optional: the set(s) these photos come from, searched first (migration 086).
-      ...(cleanSetList(b.sets).length ? { stats: { setHints: cleanSetList(b.sets) } } : {}),
+      ...(sets.length ? { stats: { setHints: sets } } : {}),
     }).select("*").single();
     if (error) throw new Error(error.message);
     res.status(201).json({ batch: data });
@@ -386,10 +394,21 @@ router.post("/admin/bulk-images/batches/:id/sets", guard, async (req, res) => {
     const db = getServiceClient();
     const batch = await loadBatch(String(req.params.id));
     if (!batch) { res.status(404).json({ error: "Batch not found" }); return; }
-    const sets = cleanSetList((req.body ?? {}).sets);
-    const before = readStats((batch as { stats?: unknown }).stats).setHints ?? [];
-    await updateBatchStats(db, batch.id, () => ({ setHints: sets }));
+    let sets: string[];
+    try { sets = cleanSetList((req.body ?? {}).sets); } catch (e) {
+      if (e instanceof SetInputError) { res.status(400).json({ error: e.message }); return; }
+      throw e;
+    }
+    const stats = readStats((batch as { stats?: unknown }).stats);
+    const before = stats.setHints ?? [];
     const changed = sets.join("\n").toLowerCase() !== before.join("\n").toLowerCase();
+    // A change re-matches the batch's undecided photos (AI calls): at most once a minute.
+    if (changed && stats.setsChangedAt && Date.now() - Date.parse(stats.setsChangedAt) < SETS_COOLDOWN_MS) {
+      res.status(429).json({ error: "The sets were changed less than a minute ago. Wait a moment before changing them again." });
+      return;
+    }
+    if (!changed) { res.json({ sets: before, rematching: 0 }); return; }
+    await updateBatchStats(db, batch.id, () => ({ setHints: sets, setsChangedAt: new Date().toISOString() }));
     // Photos not decided yet are matched again with the new sets first.
     const rematching = changed && (req.body ?? {}).rematch !== false ? await rematchUndecided(db, batch.id) : 0;
     if (rematching > 0) void kick(batch.id, ["match"]).catch(() => {});
@@ -407,8 +426,18 @@ router.post("/admin/bulk-images/batches/:id/accuracy", guard, async (req, res) =
       .eq("batch_id", batch.id).in("status", [...ANSWERED_STATUSES]);
     if (error) throw new Error(error.message);
     if (!count) { res.status(400).json({ error: "Confirm some photos first: the check compares matching with your answers." }); return; }
-    const started = startBatchAccuracyCheck(batch.id, { db, match: pipelineDeps().match });
-    res.status(202).json({ started, checking: Math.min(count, MAX_CHECKED) });
+    const last = readStats((batch as { stats?: unknown }).stats).accuracy?.at ?? null;
+    const started = startBatchAccuracyCheck(batch.id, { db, match: pipelineDeps().match }, last);
+    if (started === "running_here") { res.status(202).json({ started: false, running: true }); return; }
+    if (started === "running_elsewhere") {
+      res.status(409).json({ error: "Another batch's accuracy check is running. Try again when it has finished." });
+      return;
+    }
+    if (started === "cooldown") {
+      res.status(429).json({ error: `This batch was checked less than ${ACCURACY_COOLDOWN_MS / 60_000} minutes ago. Try again a little later.` });
+      return;
+    }
+    res.status(202).json({ started: true, checking: Math.min(count, MAX_CHECKED) });
   } catch (err) { fail(res, err); }
 });
 

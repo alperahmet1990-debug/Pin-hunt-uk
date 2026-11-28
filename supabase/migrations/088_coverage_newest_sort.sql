@@ -35,6 +35,9 @@ begin
   end if;
 end $$;
 
+-- One transaction: if anything below fails, the 077 function and its grants stay as they were.
+begin;
+
 drop function if exists public.catalogue_coverage_page(text[], text, text, integer, text, text, text, integer, integer);
 
 create or replace function public.catalogue_coverage_page(
@@ -79,7 +82,10 @@ revoke all on function public.catalogue_coverage_page(text[], text, text, intege
 revoke all on function public.catalogue_coverage_page(text[], text, text, integer, text, text, text, integer, integer, text) from anon;
 grant execute on function public.catalogue_coverage_page(text[], text, text, integer, text, text, text, integer, integer, text) to authenticated, service_role;
 
+-- Delivered on commit.
 notify pgrst, 'reload schema';
+
+commit;
 
 -- ── Verification ──────────────────────────────────────────────────────────────
 --   select pg_get_function_identity_arguments(oid) from pg_proc where proname = 'catalogue_coverage_page';

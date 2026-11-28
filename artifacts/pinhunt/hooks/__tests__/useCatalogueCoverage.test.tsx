@@ -139,6 +139,17 @@ describe('useNewestNeedingPhotos', () => {
     expect(result.current.rows).toEqual([]);
   });
 
+  it('reuses its answer for a few minutes instead of asking again on every Home visit', async () => {
+    mockRepo.getCatalogueCoveragePage.mockResolvedValue({ rows: [row('PHUK-10000009', { catalogueSource: 'pin_and_pop' })], total: 1, sort: 'newest' });
+    const first = await renderHook(() => useNewestNeedingPhotos(true, 12));
+    await waitFor(() => expect(first.result.current.rows).toHaveLength(1));
+    const second = await renderHook(() => useNewestNeedingPhotos(true, 12));
+    expect(second.result.current.rows.map(r => r.pinhuntId)).toEqual(['PHUK-10000009']);
+    expect(mockRepo.getCatalogueCoveragePage).toHaveBeenCalledTimes(1);
+    await act(async () => { await second.result.current.refresh(); });
+    expect(mockRepo.getCatalogueCoveragePage).toHaveBeenCalledTimes(2);
+  });
+
   it('loads nothing for people who cannot contribute', async () => {
     const { result } = await renderHook(() => useNewestNeedingPhotos(false, 12));
     expect(result.current.rows).toEqual([]);

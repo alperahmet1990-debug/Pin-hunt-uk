@@ -92,6 +92,7 @@ export function findNextContributionTarget(
 
 /** For tests: forget everything cached. */
 export function resetCoverageCache() {
+  newestCache = null;
   byId.clear();
   requested.clear();
   publish();
@@ -272,22 +273,34 @@ export function useCoveragePage(enabled: boolean, view: CoverageView, ownedIds: 
  * photo (no photo, none waiting for review). Empty until migration 088 is
  * applied, rather than showing pins in set order under a "new" heading.
  */
+const NEWEST_TTL_MS = 5 * 60 * 1000;
+/** Last Home strip answer: Home remounts often, the newest pins change about once a day (sync). */
+let newestCache: { limit: number; ids: string[]; at: number } | null = null;
+
 export function useNewestNeedingPhotos(enabled: boolean, limit: number) {
   const repo = useCoverageRepository();
   const version = useCacheVersion();
-  const [ids, setIds] = useState<string[]>([]);
+  const fresh = newestCache && newestCache.limit === limit && Date.now() - newestCache.at < NEWEST_TTL_MS ? newestCache : null;
+  const [ids, setIds] = useState<string[]>(fresh?.ids ?? []);
   const [loading, setLoading] = useState(false);
 
-  const load = useCallback(async () => {
+  const load = useCallback(async (force = false) => {
     if (!repo || !enabled) { setIds([]); return; }
+    const cached = newestCache;
+    if (!force && cached && cached.limit === limit && Date.now() - cached.at < NEWEST_TTL_MS) {
+      setIds(cached.ids);
+      return;
+    }
     setLoading(true);
     try {
       // A few extra, so pins photographed meanwhile (cache updates) don't empty the strip.
       const page = await repo.getCatalogueCoveragePage({ filter: 'needs', sort: 'newest', offset: 0, limit: limit * 2 });
       remember(page.rows);
-      setIds(page.sort === 'newest'
+      const next = page.sort === 'newest'
         ? page.rows.filter(r => r.catalogueSource === 'pin_and_pop').map(r => r.pinhuntId)
-        : []);
+        : [];
+      newestCache = { limit, ids: next, at: Date.now() };
+      setIds(next);
       publish();
     } catch {
       setIds([]); // optional section: hide it rather than show an error on Home
@@ -297,6 +310,7 @@ export function useNewestNeedingPhotos(enabled: boolean, limit: number) {
   }, [repo, enabled, limit]);
 
   useEffect(() => { void load(); }, [load]);
+  const refresh = useCallback(() => load(true), [load]);
 
   const rows = useMemo(
     () => ids
@@ -306,5 +320,5 @@ export function useNewestNeedingPhotos(enabled: boolean, limit: number) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [ids, version, limit],
   );
-  return { rows: enabled ? rows : [], loading: enabled && loading, refresh: load };
+  return { rows: enabled ? rows : [], loading: enabled && loading, refresh };
 }

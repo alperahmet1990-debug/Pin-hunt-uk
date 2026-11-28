@@ -58,6 +58,13 @@ ISSUES=$(cat <<'LIST'
 707|human-only,P1,area:valuation|n
 708|human-only,P2,area:ux|n
 709|human-only,area:ux|n
+752|human-only,P1,area:catalogue|n
+753|agent:backend,autonomy:L2,size:S,P2,area:catalogue|y
+754|agent:ui,autonomy:L2,size:S,P2,area:catalogue|y
+755|agent:ui,autonomy:L1,size:S,P2,area:catalogue|y
+756|agent:ui,autonomy:L1,size:S,P3,area:catalogue|y
+757|agent:backend,autonomy:L3,size:S,P2,area:catalogue,area:db,area:performance|n
+758|agent:ui,autonomy:L2,size:S,P2,area:catalogue|y
 LIST
 )
 

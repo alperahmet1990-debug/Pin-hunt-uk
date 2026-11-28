@@ -283,3 +283,27 @@ These are real but small, so they were left out to keep the queue focused. Each 
 - **CLAUDE.md is out of date** on Home (no "Continue Collecting", "For You" or "What's Happening" since #604) and on the Collection tabs (Boards / Sets / For Trade / ISO). Suggest folding this into #72.
 - **Demo mode can't show the J4-01 crash** because it caches the whole catalogue. Please do a device check after #667.
 - `/sell/*` and `/nearby` correctly redirect while their flags are off.
+
+---
+
+## 8. Follow-up (28 Nov): filters for adding pins from the catalogue
+
+Browse / Add from catalogue has search plus four filters: Hide pins I have, Set, Year and Edition, each single-choice. It has no "where it's from" filter and no sort.
+
+**Field check.** The only catalogue data in the repo is the 16 Oct research baseline (2,978 public non-seed pins). In it:
+- `pins.origin` (Master Catalogue "Park / Retailer") is "shared" on 44% of pins, and only 30 pins (1%) are Disneyland Paris.
+- Edition is stated on 99%, release year on 99%, and characters and set on almost all pins.
+
+The catalogue is now about 116k pins, so #752 asks the maintainer to run three read-only coverage queries before the park filter is built.
+
+| Issue | What | Level |
+|---|---|---|
+| #752 | Measure filter-field coverage (read-only SQL) | human |
+| #753 | Browse query: filter by origin group | L2 backend, after #752 |
+| #754 | "From" chip (Disneyland Paris, Disney Store, WDW…) | L2 UI, after #753 |
+| #755 | Fixed, labelled Edition list (options no longer change as you scroll) | L1 UI |
+| #756 | Filter chips wrap instead of hiding off-screen | L1 UI |
+| #757 | Index for newest-first ordering | L3 migration |
+| #758 | Sort: Newest first / Set A–Z | L2 UI, after #757 |
+
+Not filed: a character filter (search already matches characters, and a pick-list needs a new RPC), multi-select filters, and "most owned / most wanted" sorts (these need data across users).

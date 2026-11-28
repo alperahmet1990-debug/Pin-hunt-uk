@@ -11,7 +11,9 @@ import {
   visionSearchTerms,
   type VisionSignals,
 } from "../services/google-vision";
-import { findCandidates } from "../services/scanCandidates";
+import { findBoardCandidates } from "../services/boardScan/candidates";
+import { FORMAT_MISMATCH_MAX, FORMAT_RULES, formatMismatches, MATCH_PLAUSIBLE_MIN, MATCH_VERIFIED_MIN, UNVERIFIED_MAX } from "../services/boardScan/match";
+import { fetchReferenceImage } from "../services/boardScan/references";
 import { createStageTimer } from "../services/scanTiming";
 import {
   createScanBudget,
@@ -66,6 +68,53 @@ interface ScanMatch {
   pinId: string;
   confidence: number;
   reasoning: string;
+  /** This pin's own reference picture was compared with the photo. */
+  verified?: boolean;
+}
+
+/** Catalogue candidates searched per scan (the board scanner's cap). */
+export const SCAN_MAX_CANDIDATES = 150;
+
+/**
+ * The board scanner's confidence rules, applied to a scan's final matches:
+ * only a picture comparison can make a match confident (unchecked matches
+ * are capped at UNVERIFIED_MAX), a reference that showed a different format
+ * caps that pin at FORMAT_MISMATCH_MAX, and the list is re-sorted after the
+ * caps. "unmatched" when no checked match reaches MATCH_VERIFIED_MIN (or,
+ * unchecked, nothing reaches MATCH_PLAUSIBLE_MIN): the app then shows the
+ * matches as "Not sure — is it one of these?" rather than "Is this your pin?".
+ */
+export function applyConfidenceRules(
+  matches: ScanMatch[],
+  opts: { verified: boolean; pictured: Set<string>; formatMismatch: Set<string> },
+): { matches: ScanMatch[]; status: "suggested" | "unmatched" } {
+  const out = matches.map((m) => {
+    const checked = opts.verified && opts.pictured.has(m.pinId);
+    let confidence = Math.max(0, Math.min(100, Math.round(Number(m.confidence) || 0)));
+    if (!checked) confidence = Math.min(confidence, UNVERIFIED_MAX);
+    else if (opts.formatMismatch.has(m.pinId)) confidence = Math.min(confidence, FORMAT_MISMATCH_MAX);
+    return { pinId: m.pinId, confidence, reasoning: String(m.reasoning ?? ""), verified: checked };
+  }).sort((a, b) => b.confidence - a.confidence || Number(b.verified) - Number(a.verified));
+  const top = out[0];
+  const min = top?.verified ? MATCH_VERIFIED_MIN : MATCH_PLAUSIBLE_MIN;
+  return { matches: out, status: top && top.confidence >= min ? "suggested" : "unmatched" };
+}
+
+/**
+ * Text to search by: what the describe step read on the pin, then Google
+ * Vision's OCR lines (the first two are searched as printed text by the
+ * board scanner's search), then Vision's other search terms.
+ */
+export function scanTextTerms(describedText: string, signals: Pick<VisionSignals, "ocrLines"> | null, visionTerms: string[]): string[] {
+  const seen = new Set<string>();
+  return [describedText, ...(signals?.ocrLines ?? []).slice(0, 2), ...visionTerms]
+    .map((t) => (t ?? "").replace(/\s+/g, " ").trim())
+    .filter((t) => {
+      const k = t.toLowerCase();
+      if (t.length < 2 || seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
 }
 
 /** User-facing summary of what the scan understood from the photo. */
@@ -240,7 +289,7 @@ router.post("/scan/identify", requireUser, async (req, res) => {
         {
           role: "system",
           content: `You identify Disney enamel pins. Look at the photo and return ONLY valid JSON (no markdown):
-{ "characters": ["<Disney character names>"], "keywords": ["<search terms: series/collection name guesses, visible text, distinctive objects>"] }
+{ "characters": ["<Disney character names>"], "keywords": ["<search terms: series/collection name guesses, visible text, distinctive objects>"], "text": "<any words or numbers printed on the pin, exactly as written, or empty>" }
 
 IMPORTANT: many Disney pins are objects THEMED after a character (a dessert, dress, ear hat or flower in a character's colours with their signature props) without showing the character's face. Read the props and palette: e.g. a fan + comb + jade green suggests Mulan; a glass slipper + powder blue suggests Cinderella. Include your best character guesses in "characters" even when no face is visible — up to 4, most likely first.
 For keywords, include the object type AND close synonyms/series words (e.g. macaron → pastry, pastries, treats, dessert). Up to 8 keywords. Use empty arrays only if you truly cannot tell.`,
@@ -265,6 +314,7 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
     timer.mark("describe");
 
     let description = { characters: [] as string[], keywords: [] as string[] };
+    let describedText = "";
     try {
       const raw = describeResp?.choices[0]?.message?.content ?? "{}";
       const s = raw.indexOf("{");
@@ -274,6 +324,7 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
         characters: Array.isArray(parsed.characters) ? parsed.characters.map(String) : [],
         keywords: Array.isArray(parsed.keywords) ? parsed.keywords.map(String) : [],
       };
+      describedText = typeof parsed.text === "string" ? parsed.text.slice(0, 120) : "";
     } catch { /* fall through with empty description */ }
     console.log("[scan] stage-1 description:", JSON.stringify(description));
 
@@ -293,7 +344,12 @@ For keywords, include the object type AND close synonyms/series words (e.g. maca
     }
 
     // ── Stage 2: search the full catalogue for candidates, then rank ──
-    const catalogue = await findCandidates(repository, description, visionTerms);
+    // The board scanner's search, built for the 116k catalogue: each
+    // character with each specific word first, then printed text (the
+    // describe step's and Vision's OCR), then the broad search.
+    const catalogue = await findBoardCandidates(
+      repository, description, scanTextTerms(describedText, visionSignals, visionTerms), SCAN_MAX_CANDIDATES,
+    );
     timer.mark("candidates");
     if (catalogue.length === 0) {
       logTimings("empty-catalogue");
@@ -401,6 +457,11 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
     // ── Stage 3: visual verification against real catalogue images ──
     // Only when it can change the answer (services/scanVerify.ts): skipped
     // when the ranking is already clear, or when nothing is plausible.
+    // The board scanner's confidence rules need to know which pins' own
+    // pictures the comparison saw, and which it said have another format.
+    let verified = false;
+    let pictured = new Set<string>();
+    let formatMismatch = new Set<string>();
     const verifyPlan = verifyDecision(matches);
     if (verifyPlan !== "compare") skipped.push(`verify:${verifyPlan}`);
     if (verifyPlan === "compare") {
@@ -447,10 +508,17 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
       timer.mark("references");
       const comparisonImage = (p: CataloguePin | undefined) => p?.imageUrl ?? (p ? referenceImages.get(p.id) : undefined);
 
-      const withImages = matches
-        .map((m) => ({ match: m, pin: byPinId.get(m.pinId)!, image: comparisonImage(byPinId.get(m.pinId)) }))
-        .filter((c) => !!c.image)
+      // Downloaded by the server first (boardScan/references.ts: size and
+      // address checks, 6 s limit), so a link the AI provider can't reach
+      // doesn't silently fail the whole comparison.
+      const wanted = matches
+        .map((m) => ({ match: m, pin: byPinId.get(m.pinId)!, url: comparisonImage(byPinId.get(m.pinId)) }))
+        .filter((c) => !!c.url)
         .slice(0, VERIFY_MAX_REFERENCES);
+      const downloaded = await Promise.all(wanted.map(async (c) => ({ ...c, image: await fetchReferenceImage(c.url!) })));
+      const withImages = downloaded.filter((c) => !!c.image);
+      if (withImages.length < wanted.length) skipped.push(`references:${wanted.length - withImages.length}`);
+      timer.mark("download");
       const shown = new Set(withImages.map((c) => c.pin.id));
 
       // Comparing against catalogue photos sharpens the ranking but is
@@ -498,7 +566,8 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
   Where a reference image is shown, compare it DIRECTLY to the user's pin photo — same shapes, colours, props and layout means a match; visible differences mean it is NOT that pin, no matter how similar the text sounds. Candidates without reference images keep roughly their original plausibility.
   Respond with ONLY a JSON array re-ranking all ${matches.length} candidates, best first:
   [ { "pinId": "<id>", "confidence": <0-100>, "reasoning": "<1 sentence>" }, ... ]
-  Give a confidence above 85 only when a reference image visually confirms the match.`,
+  Give a confidence above 85 only when a reference image visually confirms the match.${FORMAT_RULES}
+  Each array entry may include "format_match".`,
               },
               { role: "user", content: refContent },
             ],
@@ -517,7 +586,12 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
               rerankedSeen.add(m.pinId);
               return true;
             });
-            if (deduped.length > 0) matches = deduped;
+            if (deduped.length > 0) {
+              matches = deduped;
+              verified = true;
+              pictured = shown;
+              formatMismatch = formatMismatches(vraw);
+            }
           }
         } catch (verifyErr) {
           if (isUpstreamTimeout(verifyErr)) skipped.push("verify");
@@ -527,9 +601,14 @@ If the image is unclear, not a Disney pin, or doesn't match any pin well, still 
       }
     }
 
+    const ruled = applyConfidenceRules(matches, { verified, pictured, formatMismatch });
     logTimings("ok");
     const result = {
-      matches: matches.slice(0, 3),
+      matches: ruled.matches.slice(0, 3),
+      // "unmatched": nothing checked out, so the app says "Not sure".
+      status: ruled.status,
+      // The picture comparison ran (per match: verified).
+      checked: verified,
       imageInsights: buildImageInsights(description, visionSignals),
       // Lets the app record what the collector picked (#113). Stored with
       // the usage row, so a repeat of the same photo returns the same id.

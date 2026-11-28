@@ -20,6 +20,12 @@ vi.mock("@workspace/integrations-openai-ai-server", () => ({
 vi.mock("@workspace/pin-repository", () => ({
   createSupabasePinRepository: () => ({ searchPins: async () => [] }),
 }));
+// Reference pictures are downloaded by the server (boardScan/references.ts); here,
+// a fake download that keeps the URL inside a data URL so tests can see which were used.
+vi.mock("../services/boardScan/references", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("../services/boardScan/references")>()),
+  fetchReferenceImage: async (url: string) => `data:image/jpeg;base64,${Buffer.from(url).toString("base64")}`,
+}));
 vi.mock("../services/google-vision", () => ({
   getVisionSignals: async () => null,
   visionSearchTerms: () => [],
@@ -70,14 +76,44 @@ describe("scan photo comparison with Pin & Pop reference images", () => {
     // Only pins without a public photo are looked up.
     expect(lookups).toEqual([["PHUK-10000001", "PHUK-10000002"]]);
 
-    // The comparison prompt shows the reference image and the public photo.
+    // The comparison prompt shows the reference image and the public photo,
+    // downloaded by the server first (sent as pictures, not links).
     const verify = create.mock.calls[2][0];
-    const urls = (verify.messages[1].content as Array<{ type: string; image_url?: { url: string; detail: string } }>)
+    const sent = (verify.messages[1].content as Array<{ type: string; image_url?: { url: string; detail: string } }>)
       .filter((c) => c.image_url?.detail === "low").map((c) => c.image_url!.url);
+    expect(sent.every((u) => u.startsWith("data:image/jpeg;base64,"))).toBe(true);
+    const urls = sent.map((u) => Buffer.from(u.slice("data:image/jpeg;base64,".length), "base64").toString());
     expect(urls).toEqual([REF, "https://img.test/public.jpg"]);
+    // Only the pin whose own picture was compared counts as checked.
+    expect(res.body).toMatchObject({ status: "suggested", checked: true });
+    expect(res.body.matches[0]).toMatchObject({ pinId: "PHUK-10000001", confidence: 92, verified: true });
     expect(verify.messages[0].content).toContain('PHUK-10000002 | "Stitch Sleeping" | Lilo & Stitch | reference image: no image shown');
 
     // The app never sees the reference URL.
     expect(JSON.stringify(res.body)).not.toContain("pinandpop.com");
+  });
+});
+
+describe("scan confidence rules (shared with board scanning)", () => {
+  it("a reference in a different format means 'not sure', not a confident match", async () => {
+    create
+      .mockResolvedValueOnce(reply('{"characters":["Stitch"],"keywords":["frame"],"text":""}'))
+      .mockResolvedValueOnce(reply('[{"pinId":"PHUK-10000001","confidence":60,"reasoning":"Surf"},{"pinId":"PHUK-10000002","confidence":55,"reasoning":"Sleep"},{"pinId":"PHUK-00000003","confidence":50,"reasoning":"Classic"}]'))
+      .mockResolvedValueOnce(reply('[{"pinId":"PHUK-10000001","confidence":96,"reasoning":"Same art","format_match":false},{"pinId":"PHUK-00000003","confidence":30,"reasoning":"No","format_match":true}]'));
+    const res = await scan();
+    expect(res.status).toBe(200);
+    // Capped at 35 (same art, other format); the verify prompt carried the format rule.
+    expect(res.body.matches.find((m: { pinId: string }) => m.pinId === "PHUK-10000001").confidence).toBeLessThanOrEqual(35);
+    expect(String(create.mock.calls[2][0].messages[0].content)).toContain("FORMAT FIRST");
+    expect(res.body.status).toBe("unmatched");
+  });
+
+  it("asks the describe step for printed text", async () => {
+    create
+      .mockResolvedValueOnce(reply('{"characters":["Stitch"],"keywords":["surf"],"text":"ALOHA 2026"}'))
+      .mockResolvedValueOnce(reply('[{"pinId":"PHUK-00000003","confidence":70,"reasoning":"Classic"}]'))
+      .mockResolvedValueOnce(reply('[{"pinId":"PHUK-00000003","confidence":80,"reasoning":"ok"}]'));
+    await scan();
+    expect(String(create.mock.calls[0][0].messages[0].content)).toContain('"text"');
   });
 });

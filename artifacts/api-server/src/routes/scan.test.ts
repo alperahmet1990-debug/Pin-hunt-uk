@@ -16,6 +16,12 @@ vi.mock("@workspace/integrations-openai-ai-server", () => ({
 vi.mock("@workspace/pin-repository", () => ({
   createSupabasePinRepository: () => ({ searchPins: async () => [] }),
 }));
+// Reference pictures are downloaded by the server (boardScan/references.ts); here,
+// a fake download that keeps the URL inside a data URL so tests can see which were used.
+vi.mock("../services/boardScan/references", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("../services/boardScan/references")>()),
+  fetchReferenceImage: async (url: string) => `data:image/jpeg;base64,${Buffer.from(url).toString("base64")}`,
+}));
 vi.mock("../services/google-vision", () => ({
   getVisionSignals: async () => null,
   visionSearchTerms: () => [],

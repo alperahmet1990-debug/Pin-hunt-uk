@@ -30,14 +30,23 @@ export function allLowConfidence(candidates: Candidate[]): boolean {
 }
 
 /**
+ * The result should ask rather than assert: every candidate is a guess, or
+ * the server said nothing checked out (`notSure`: its picture comparison
+ * found no reference like the photo, or the art matched in another format).
+ */
+export function shouldAsk(candidates: Candidate[], notSure = false): boolean {
+  return candidates.length > 0 && (notSure || allLowConfidence(candidates));
+}
+
+/**
  * Start on the most confident candidate. When every candidate is a guess the
  * alternatives show straight away, so the collector picks rather than
  * confirms a weak answer.
  */
-export function initialResult(candidates: Candidate[]): ScanResultState {
+export function initialResult(candidates: Candidate[], notSure = false): ScanResultState {
   let best = 0;
   candidates.forEach((c, i) => { if (c.confidence > candidates[best].confidence) best = i; });
-  return { best, showAlternatives: allLowConfidence(candidates), rejected: [] };
+  return { best, showAlternatives: shouldAsk(candidates, notSure), rejected: [] };
 }
 
 /**
@@ -67,10 +76,10 @@ export function alternatives(state: ScanResultState, count: number): number[] {
 }
 
 /** Heading above the comparison. */
-export function resultHeading(candidates: Candidate[], state?: ScanResultState): string {
+export function resultHeading(candidates: Candidate[], state?: ScanResultState, notSure = false): string {
   if (state && awaitingPick(state)) {
     return alternatives(state, candidates.length).length > 0 ? 'Is it one of these?' : 'No other close matches';
   }
-  if (allLowConfidence(candidates)) return 'Not sure. Is it one of these?';
+  if (shouldAsk(candidates, notSure)) return 'Not sure. Is it one of these?';
   return 'Is this your pin?';
 }

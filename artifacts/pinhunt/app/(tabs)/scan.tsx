@@ -127,6 +127,8 @@ export default function ScanScreen() {
   const [scanState, setScanState] = useState<ScanState>('idle');
   const [captured, setCaptured] = useState<CapturedImage | null>(null);
   const [matches, setMatches] = useState<Match[]>([]);
+  /** The server's picture check confirmed none of the matches: ask rather than assert. */
+  const [notSure, setNotSure] = useState(false);
   const [insights, setInsights] = useState<ImageInsights | null>(null);
   // When the photo was sent, so the progress steps start from then (not while the permission sheet is up).
   const [sentAt, setSentAt] = useState(0);
@@ -319,7 +321,7 @@ export default function ScanScreen() {
 
     try {
       scanIdRef.current = null;
-      const { matches: rawMatches, imageInsights, scanId } = await identifyPin(
+      const { matches: rawMatches, imageInsights, scanId, notSure: unsure } = await identifyPin(
         image.base64,
         image.mimeType,
         session?.access_token,
@@ -350,6 +352,7 @@ export default function ScanScreen() {
       }
 
       setMatches(resolved);
+      setNotSure(unsure);
       setResultKey(k => k + 1);
       setScanState('results');
     } catch (err) {
@@ -676,6 +679,7 @@ export default function ScanScreen() {
                 onAddPhoto={handleAddPhoto}
                 onNoneOfThese={openRecovery}
                 recoveryOpen={showRecovery}
+                notSure={notSure}
               />
             )}
             {showRecovery && (

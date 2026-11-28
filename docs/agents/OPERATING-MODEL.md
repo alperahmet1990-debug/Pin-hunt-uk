@@ -25,6 +25,8 @@ Labels are the source of truth for agent state. Agents cannot write to the GitHu
 
 The Project's **Status** field (Kanban columns Backlog → Approved → In Progress → Testing → Awaiting Review → Done) is derived from labels by the `Project status sync` workflow (`.github/scripts/project-sync.mjs`). It runs on issue and PR label events and hourly. The sync is one-way: dragging a card changes nothing for agents, and the next sync moves the card back to the column its labels justify. To approve work, add the `approved` label (and `l3-go` for L3); never rely on the column.
 
+Adding `approved` applies the issue's suggested labels: when the maintainer adds it themselves to an `agent-proposed` issue, `Agent ops` copies the allowed labels from the body's `**Suggested labels:**` line (never gate, hold, `status:*`, `qa:*` or `security:*`; a priority, size, autonomy or agent label already set wins) and comments with what it added.
+
 | Group | Labels | Who sets them |
 |---|---|---|
 | Gate | `approved`, `l3-go`, `human-approved-config` | **Humans only.** The guard hook blocks agents from adding them (shell and built-in GitHub tools). As a backstop, the `Agent ops` workflow removes any gate label that was added through an app or bot, including the `claude` app agents act through, and flags the item `status:needs-human`. |

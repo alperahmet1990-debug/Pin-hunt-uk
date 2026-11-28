@@ -77,10 +77,14 @@ describe("batch accuracy check", () => {
         { id: "e", batch_id: "B", status: "confirmed", original_path: "B/missing.jpg", original_filename: "e.jpg", matched_pinhunt_id: "PHUK-5", candidates: [], created_at: "5" },
       ],
     });
-    for (const p of ["B/a.jpg", "B/b.jpg", "B/c.jpg"]) await fake.db.storage.from(BUCKET).upload(p, await photo());
-    const answers = [result(["PHUK-1", "PHUK-9"]), result(["PHUK-9", "PHUK-2"]), result(["PHUK-8"])];
-    let n = 0;
-    const match = vi.fn(async () => answers[n++]);
+    // Three photos of different widths, so each fake answer belongs to its photo
+    // (the check runs three at a time, in no fixed order).
+    const sized = (w: number) => sharp({ create: { width: w, height: 40, channels: 3, background: "#0a0" } }).jpeg().toBuffer();
+    await fake.db.storage.from(BUCKET).upload("B/a.jpg", await sized(41));
+    await fake.db.storage.from(BUCKET).upload("B/b.jpg", await sized(42));
+    await fake.db.storage.from(BUCKET).upload("B/c.jpg", await sized(43));
+    const answers: Record<number, BulkMatchResult> = { 41: result(["PHUK-1", "PHUK-9"]), 42: result(["PHUK-9", "PHUK-2"]), 43: result(["PHUK-8"]) };
+    const match = vi.fn(async (p: Buffer) => answers[(await sharp(p).metadata()).width!]);
     const before = JSON.stringify(fake.tables.bulk_image_items);
     const report = await checkBatchAccuracy("B", { db: fake.db, match });
     // a: right first; b: 2nd; c: not in the top 5; d: no answer (not checked); e: photo missing (an error).

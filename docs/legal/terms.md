@@ -60,4 +60,4 @@ You can stop using PinHunt and delete your account at any time in Profile › De
 
 ## Changes and law
 
-We may update these terms. If a change is significant we will tell you in the app before it applies. These terms are governed by the law of England and Wales. You can bring a claim in the courts of England and Wales, or of Scotland or Northern Ireland if you live there. Last updated: 9 November 2026.
+We may update these terms. If a change is significant we will tell you in the app before it applies. These terms are governed by the law of England and Wales. You can bring a claim in the courts of England and Wales, or of Scotland or Northern Ireland if you live there. Last updated: 28 November 2026.

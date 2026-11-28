@@ -46,7 +46,7 @@ We use these providers to run PinHunt. They may only use your information to pro
 - Render: runs the PinHunt API server.
 - OpenAI: identifies pins from photos you scan and from photos of pin boards sent to us for the catalogue.
 - Google Cloud Vision: reads text and finds similar images in photos you scan, to improve identification.
-- Google Cloud Vertex AI: compares pins in photos of pin boards sent to us for the catalogue with catalogue pictures, to find the right pin.
+- Google Cloud Vertex AI: compares the pin in photos you scan, and pins in photos of pins and pin boards sent to us for the catalogue, with catalogue pictures, to find the right pin.
 - Pixian.ai: removes the background from photos you submit to the catalogue.
 - postcodes.io: turns the postcode you enter for Collectors Nearby into an approximate location. Only the postcode is sent.
 - Expo: delivers app updates.
@@ -91,4 +91,4 @@ Your information is sent over encrypted connections, and access to it is restric
 
 ## Changes to this policy
 
-We will update this policy when PinHunt changes. If a change is significant we will tell you in the app. Last updated: 9 November 2026.
+We will update this policy when PinHunt changes. If a change is significant we will tell you in the app. Last updated: 28 November 2026.

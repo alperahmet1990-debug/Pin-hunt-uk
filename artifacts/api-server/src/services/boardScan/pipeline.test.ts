@@ -144,7 +144,7 @@ vi.mock("./store", async (importOriginal) => {
   };
 });
 
-import { approveItem, approveReady, cleanItem, cleanSetName, deleteBoard, enqueue, isRunning, learnSet, MAX_SET_HINTS, processBoardScan, refineBox, rescanBoard } from "./pipeline";
+import { approveItem, approveReady, cleanItem, cleanSetName, deleteBoard, enqueue, isRunning, learnSet, MAX_SET_HINTS, processBoardScan, refineBox, limitShrink, rescanBoard } from "./pipeline";
 import type { BoardScan, BoardScanItem } from "./store";
 
 /** A 2000×1500 "board": three sharp, textured pins and one tiny one. */
@@ -589,6 +589,15 @@ describe("refineBox", () => {
   it("grows a box that cut the pin off", () => {
     const b = refineBox(detected, { x: 0.1, y: 0.1, w: 0.8, h: 0.8 }, 1000, 1000)!;
     expect(b.w).toBeGreaterThan(detected.w);
+  });
+  it("doesn't let a too-tight box cut the pin off", () => {
+    // The describe step pulled the bottom up by a third of the pin's height.
+    const tall = { x: 0.4, y: 0.3, w: 0.2, h: 0.3 };
+    const cut = limitShrink(tall, { x: 0.4, y: 0.3, w: 0.2, h: 0.2 });
+    expect(cut.y + cut.h).toBeCloseTo(0.3 + 0.3 - 0.03, 5); // at most 10% of 0.3 pulled in
+    // Growing is unlimited.
+    const grown = limitShrink(tall, { x: 0.35, y: 0.25, w: 0.3, h: 0.4 });
+    expect(grown).toEqual({ x: 0.35, y: 0.25, w: expect.closeTo(0.3), h: expect.closeTo(0.4) });
   });
   it("rejects a box on a different pin, or one far smaller or bigger", () => {
     expect(refineBox(detected, { x: 0, y: 0, w: 0.15, h: 0.15 }, 1000, 1000)).toBeNull();

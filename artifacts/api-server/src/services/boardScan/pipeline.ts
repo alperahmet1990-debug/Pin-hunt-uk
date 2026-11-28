@@ -181,7 +181,26 @@ export function refineBox(detected: Box, inContext: Box, width: number, height: 
   if (smaller <= 0 || (ix * iy) / smaller < 0.5) return null;
   const ratio = (box.w * box.h) / (detected.w * detected.h);
   if (ratio < 0.25 || ratio > 4) return null;
-  return box;
+  return limitShrink(detected, box);
+}
+
+/** How far (fraction of the detected box's size) the describe step may pull each side in. */
+export const REFINE_MAX_SHRINK = 0.1;
+
+/**
+ * The describe step's box may grow freely (a detection that cut the pin off),
+ * but may pull each side in only a little: its boxes are often a bit tight,
+ * and a side pulled in too far cuts the pin off (a wardrobe pin lost its
+ * drawers). The crop's own padding takes care of the rest.
+ */
+export function limitShrink(detected: Box, refined: Box, maxShrink = REFINE_MAX_SHRINK): Box {
+  const dx = detected.w * maxShrink;
+  const dy = detected.h * maxShrink;
+  const left = Math.min(refined.x, detected.x + dx);
+  const top = Math.min(refined.y, detected.y + dy);
+  const right = Math.max(refined.x + refined.w, detected.x + detected.w - dx);
+  const bottom = Math.max(refined.y + refined.h, detected.y + detected.h - dy);
+  return { x: left, y: top, w: right - left, h: bottom - top };
 }
 
 /**

@@ -86,3 +86,45 @@ export function describeTokenRejection(
     tokenUnreadable: payload === null,
   };
 }
+
+/** What kind of key SUPABASE_SERVICE_ROLE_KEY is, without its value. */
+export function describeServiceKey(key: string | undefined): "secret" | "service_role_jwt" | "anon_jwt" | "publishable" | "missing" | "other" {
+  const k = key?.trim();
+  if (!k) return "missing";
+  if (k.startsWith("sb_secret_")) return "secret";
+  if (k.startsWith("sb_publishable_")) return "publishable";
+  if (k.startsWith("eyJ")) {
+    const role = decodePart(k.split(".")[1])?.role;
+    if (role === "service_role") return "service_role_jwt";
+    if (role === "anon") return "anon_jwt";
+  }
+  return "other";
+}
+
+export interface AdminRefusalDiagnostics {
+  /** The profile row was found by the server's database key. */
+  profileFound: boolean;
+  isAdmin: boolean | null;
+  dbError: string | null;
+  dbCode: string | null;
+  /** Host of SUPABASE_URL (which project the server reads). */
+  serverProject: string | null;
+  /** Kind of SUPABASE_SERVICE_ROLE_KEY: a publishable/anon key can't read other rows past RLS. */
+  serviceKeyKind: ReturnType<typeof describeServiceKey>;
+}
+
+/** Why a signed-in user was refused admin access. Never includes the user id, email or any key. */
+export function describeAdminRefusal(
+  profile: { is_admin?: boolean | null } | null,
+  error: { message?: string; code?: string } | null | undefined,
+  env: { SUPABASE_URL?: string; SUPABASE_SERVICE_ROLE_KEY?: string } = process.env,
+): AdminRefusalDiagnostics {
+  return {
+    profileFound: !!profile,
+    isAdmin: profile ? profile.is_admin === true : null,
+    dbError: error?.message ?? null,
+    dbCode: error?.code ?? null,
+    serverProject: hostOf(env.SUPABASE_URL),
+    serviceKeyKind: describeServiceKey(env.SUPABASE_SERVICE_ROLE_KEY),
+  };
+}

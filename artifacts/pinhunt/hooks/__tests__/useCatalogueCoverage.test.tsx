@@ -86,6 +86,30 @@ describe('useCoveragePage', () => {
   });
 });
 
+describe('useCoveragePage sort', () => {
+  type View = { query: string; filter: 'needs'; facets: Record<string, never>; mineOnly: boolean; sort: 'set' | 'newest' };
+  const view = (sort: 'set' | 'newest'): View => ({ query: '', filter: 'needs', facets: {}, mineOnly: false, sort });
+
+  it('reports newest as unavailable only after a newest page comes back in set order', async () => {
+    mockRepo.getCatalogueCoveragePage.mockResolvedValue({ rows: [row('PHUK-1')], total: 1, sort: 'set' });
+    const hook = await renderHook(({ v }: { v: View }) => useCoveragePage(true, v, []), { initialProps: { v: view('set') } });
+    await waitFor(() => expect(hook.result.current.loading).toBe(false));
+    expect(hook.result.current.sortUnavailable).toBe(false);
+
+    await act(async () => { hook.rerender({ v: view('newest') }); });
+    await waitFor(() => expect(mockRepo.getCatalogueCoveragePage).toHaveBeenLastCalledWith(expect.objectContaining({ sort: 'newest' })));
+    await waitFor(() => expect(hook.result.current.sortUnavailable).toBe(true));
+  });
+
+  it('stays available when the newest page really is newest', async () => {
+    mockRepo.getCatalogueCoveragePage.mockImplementation(async (q: CoveragePageQuery) => ({ rows: [row('PHUK-1')], total: 1, sort: q.sort ?? 'set' }));
+    const hook = await renderHook(({ v }: { v: View }) => useCoveragePage(true, v, []), { initialProps: { v: view('set') } });
+    await act(async () => { hook.rerender({ v: view('newest') }); });
+    await waitFor(() => expect(hook.result.current.sort).toBe('newest'));
+    expect(hook.result.current.sortUnavailable).toBe(false);
+  });
+});
+
 describe('useNewestNeedingPhotos', () => {
   it('asks for the newest pins needing a photo and keeps only Pin & Pop ones', async () => {
     mockRepo.getCatalogueCoveragePage.mockResolvedValue({

@@ -112,15 +112,17 @@ export default function ContributeCatalogueScreen() {
     },
   }), [debouncedQuery, filter, mineOnly, facets, sortOrder]);
   const {
-    rows, stats, setTotals, sort: appliedSort, loading, loadingMore, hasMore, error, loadMore, refresh, loadFacet,
+    rows, stats, setTotals, sort: appliedSort, sortUnavailable, loading, loadingMore, hasMore, error, loadMore, refresh, loadFacet,
   } = useCoveragePage(enabled, view, ownedList);
 
+  // Only a page that was asked for newest and came back in set order hides the toggle
+  // (not the previous set-order page still on screen right after tapping Newest).
   useEffect(() => {
-    if (sortOrder === 'newest' && !loading && appliedSort === 'set') {
+    if (sortUnavailable) {
       setNewestAvailable(false);
       setSortOrder('set');
     }
-  }, [sortOrder, loading, appliedSort]);
+  }, [sortUnavailable]);
   const showNewest = sortOrder === 'newest' && appliedSort === 'newest';
 
   // Pages arrive ordered by set, so a set can continue on the next page: group what's loaded.

@@ -160,6 +160,8 @@ export function useCoveragePage(enabled: boolean, view: CoverageView, ownedIds: 
   const [ids, setIds] = useState<string[]>([]);
   const [total, setTotal] = useState(0);
   const [appliedSort, setAppliedSort] = useState<CoverageSort>('set');
+  // True only once a first page asked for 'newest' came back in set order (088 not applied).
+  const [sortUnavailable, setSortUnavailable] = useState(false);
   const [stats, setStats] = useState<CoverageStats>(NO_STATS);
   const [setTotals, setSetTotals] = useState<Record<string, { total: number; withPhoto: number }>>({});
   const [loading, setLoading] = useState(true);
@@ -209,6 +211,7 @@ export function useCoveragePage(enabled: boolean, view: CoverageView, ownedIds: 
       setIds(prev => (reset ? page.rows.map(r => r.pinhuntId) : [...prev, ...page.rows.map(r => r.pinhuntId)]));
       setTotal(page.total);
       setAppliedSort(page.sort ?? 'set');
+      if (reset && v.sort === 'newest' && page.sort === 'set') setSortUnavailable(true);
       publish();
       void fetchSetTotals(page.rows);
     } catch (e) {
@@ -259,7 +262,7 @@ export function useCoveragePage(enabled: boolean, view: CoverageView, ownedIds: 
   }, [load, loadStats]);
 
   return {
-    rows, total, stats, setTotals, sort: appliedSort, loading: enabled && loading, loadingMore, hasMore: rows.length < total,
+    rows, total, stats, setTotals, sort: appliedSort, sortUnavailable, loading: enabled && loading, loadingMore, hasMore: rows.length < total,
     error, loadMore, refresh, loadFacet,
   };
 }

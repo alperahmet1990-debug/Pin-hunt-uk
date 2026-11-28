@@ -27,10 +27,8 @@
 --
 -- No table, column, row or policy changes. RLS is untouched.
 --
--- Rollback (returns to 077's function):
---   re-run the catalogue_coverage_page section of 077 (create, revoke, grant),
---   then: drop function if exists public.catalogue_coverage_page(text[], text, text, integer, text, text, text, integer, integer, text);
---         notify pgrst, 'reload schema';
+-- Rollback (returns to 077's function, in one transaction):
+--   supabase/verify/088_rollback.sql
 -- ============================================================
 
 do $$
@@ -102,6 +100,8 @@ commit;
 -- ── Verification ──────────────────────────────────────────────────────────────
 --   select pg_get_function_identity_arguments(oid) from pg_proc where proname = 'catalogue_coverage_page';
 --     -- one row, ending in "p_sort text"
+--   select has_function_privilege('anon', 'public.catalogue_coverage_page(text[], text, text, integer, text, text, text, integer, integer, text)', 'execute');
+--     -- false
 --   (the SQL editor runs as postgres, which isn't a contributor; check the rows in the app:
 --    Contribute pictures → Newest, or Home → New to the catalogue)
 -- ============================================================

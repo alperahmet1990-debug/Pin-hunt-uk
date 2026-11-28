@@ -25,6 +25,7 @@ import {
   type CoverageStats,
 } from '@workspace/pin-repository';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { demoIsContributor, isDemoMode } from '@/lib/demoMode';
 
 const byId = new Map<string, CatalogueImageCoverage>();
 /** Ids already asked for, including ones the server had no row for. */
@@ -36,9 +37,19 @@ function remember(rows: CatalogueImageCoverage[]) {
   for (const r of rows) byId.set(r.pinhuntId, r);
 }
 
-function useCoverageRepository() {
+type CoverageRepository = Pick<ReturnType<typeof createSupabaseUserRepository>,
+  'getCatalogueCoveragePage' | 'getCatalogueCoverageSummary' | 'getCatalogueCoverageSetTotals'>;
+
+function useCoverageRepository(): CoverageRepository | null {
   return useMemo(() => {
-    if (!isSupabaseConfigured) return null;
+    if (!isSupabaseConfigured) {
+      // Screenshot demo contributor only; never a real build (demoMode.ts).
+      if (isDemoMode && demoIsContributor()) {
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        return (require('@/mock-data/coverage') as typeof import('@/mock-data/coverage')).createDemoCoverage();
+      }
+      return null;
+    }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return createSupabaseUserRepository(supabase as any);
   }, []);
@@ -90,12 +101,26 @@ export function findNextContributionTarget(
   return open.find(row => ownedIds.has(row.pinhuntId)) ?? open[0];
 }
 
+/** For tests: put rows in the shared cache. */
+export function __rememberForTests(rows: CatalogueImageCoverage[]) {
+  remember(rows);
+  publish();
+}
+
 /** For tests: forget everything cached. */
 export function resetCoverageCache() {
   newestCache = null;
   byId.clear();
   requested.clear();
   publish();
+}
+
+// Rows carry the caller's own photo status (myStatus), and the Home strip
+// answer is cached: forget both when the account signs out (security review, #784).
+if (isSupabaseConfigured && typeof supabase?.auth?.onAuthStateChange === 'function') {
+  supabase.auth.onAuthStateChange(event => {
+    if (event === 'SIGNED_OUT') resetCoverageCache();
+  });
 }
 
 const ID_CHUNK = 1000;

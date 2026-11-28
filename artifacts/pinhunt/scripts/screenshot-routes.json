@@ -447,5 +447,22 @@
   {
     "name": "not-eligible",
     "path": "/not-eligible?demo_age=declined"
+  },
+  {
+    "name": "home-contributor",
+    "path": "/?demo_contributor=1",
+    "scroll": "end"
+  },
+  {
+    "name": "contribute-pictures",
+    "path": "/contribute?demo_contributor=1"
+  },
+  {
+    "name": "contribute-newest",
+    "path": "/contribute?sort=newest&filter=needs&demo_contributor=1"
+  },
+  {
+    "name": "set-contribute-link",
+    "path": "/set/Classics%202024?demo_contributor=1"
   }
 ]

@@ -24,6 +24,8 @@ import type { PinRepository } from "@workspace/pin-repository";
 import { VERIFY_CONFIDENT_LEAD } from "../scanVerify";
 import { describeCrop, matchCrop, type MatchCandidate } from "../boardScan/match";
 import { emptyUsage } from "../boardScan/detect";
+import { cropBox, forAi, type Box } from "../boardScan/quality";
+import sharp from "sharp";
 
 export type OpenAIClient = ReturnType<typeof getOpenAIClient>;
 
@@ -50,6 +52,8 @@ export type PinBox = [number, number, number, number];
 export interface PhotoDescription {
   characters: string[];
   keywords: string[];
+  /** Matching used the pin cut out of the photo (it was small in the frame). */
+  matchedOnCrop?: boolean;
   /** The main (most central, most complete) pin, so clean-up can ignore neighbours. */
   box?: PinBox;
 }
@@ -80,6 +84,8 @@ export interface MatchDeps {
   pictureSearch?: (photo: Buffer) => Promise<string[]>;
   /** Sets to search first (e.g. the batch is one set). */
   sets?: string[];
+  /** The full-size photo, to cut the pin from when it's small in the frame (else `photo` is used). */
+  original?: Buffer;
   timeoutMs?: number;
   /** No longer read here; matching settings are the board scanner's (BOARD_MAX_REFERENCES etc.). */
   env?: NodeJS.ProcessEnv;
@@ -174,6 +180,38 @@ function toCandidate(c: MatchCandidate): BulkCandidate {
  * a picture comparison can make a match confident (unchecked rankings are
  * capped at 60%; a checked match under 40% is not identified).
  */
+/** Below this share of the frame, the pin is cut out before matching. */
+export const FOCUS_MAX_AREA = 0.5;
+/** Margin around the described box when cutting the pin out (the box is approximate). */
+export const FOCUS_PAD = 0.1;
+
+/**
+ * The box to match on, or null to match the whole photo: only when the
+ * describe step found the pin and it fills less than FOCUS_MAX_AREA of the
+ * frame (a pin photographed small on a table). A well-centred close-up is
+ * matched as it is.
+ */
+export function focusBox(box: Box | undefined): Box | null {
+  if (!box) return null;
+  if (box.w < 0.05 || box.h < 0.05 || box.w > 1 || box.h > 1) return null;
+  return box.w * box.h < FOCUS_MAX_AREA ? box : null;
+}
+
+/**
+ * Cut the pin out of the photo for matching: from the full-size original when
+ * given (more detail on a small pin), padded by FOCUS_PAD, then sized for the AI
+ * steps (≤ 1280 px). Null when it can't be cut (then the whole photo is used).
+ */
+async function cutPin(source: Buffer, box: Box): Promise<Buffer | null> {
+  try {
+    const { width = 0, height = 0 } = await sharp(source).metadata();
+    if (!width || !height) return null;
+    return await forAi(await cropBox(source, width, height, box, FOCUS_PAD), 1280);
+  } catch {
+    return null;
+  }
+}
+
 export async function matchPhoto(photo: Buffer, deps: MatchDeps): Promise<BulkMatchResult> {
   const timeout = deps.timeoutMs ?? 45_000;
   const usage = emptyUsage();
@@ -186,9 +224,17 @@ export async function matchPhoto(photo: Buffer, deps: MatchDeps): Promise<BulkMa
     ...(described.box ? { box: toPinBox(described.box) } : {}),
   };
 
+  // Small in the frame (e.g. on a table): match on the pin, not the whole
+  // photo, so the look-alike search and the picture check see the pin
+  // rather than mostly background. The describe step's box is fractions of
+  // the photo, the same on the full-size original.
+  const focus = focusBox(described.box);
+  const pinPhoto = focus ? await cutPin(deps.original ?? photo, focus) : null;
+  if (pinPhoto) description.matchedOnCrop = true;
+
   // 2–4. Search, rank and compare: shared with board scanning.
   const result = await matchCrop(
-    photo,
+    pinPhoto ?? photo,
     { characters: described.characters, keywords: described.keywords, text: described.text },
     {
       openai: deps.openai,

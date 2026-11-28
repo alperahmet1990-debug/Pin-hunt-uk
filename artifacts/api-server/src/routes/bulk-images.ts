@@ -143,6 +143,7 @@ function pipelineDeps(): PipelineDeps {
     db,
     match: (photo, ctx) => matchPhoto(photo, {
       ...(ctx?.sets?.length ? { sets: ctx.sets } : {}),
+      ...(ctx?.original ? { original: ctx.original } : {}),
       openai: getOpenAIClient(),
       model: SCAN_MODEL(),
       repository,

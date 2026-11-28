@@ -1,7 +1,16 @@
 import React from 'react';
 import { fireEvent, render, waitFor } from '@testing-library/react-native';
 import DeleteAccountScreen from '../delete-account';
+import { Linking } from 'react-native';
 import { requestAccountDeletion } from '@/utils/deleteAccount';
+
+let mockEmail = '';
+jest.mock('@/constants/appConfig', () => ({
+  get SUPPORT_EMAIL() { return mockEmail; },
+  hasSupportContact: (e: string) => e.trim().length > 0,
+  feedbackMailtoUrl: (e: string, subject: string) =>
+    e.trim() ? `mailto:${e.trim()}?subject=${encodeURIComponent(subject)}` : null,
+}));
 
 const mockSignOut = jest.fn().mockResolvedValue(undefined);
 jest.mock('@/context/AuthContext', () => ({
@@ -87,5 +96,31 @@ describe('DeleteAccountScreen', () => {
     const link = await utils.findByLabelText('View my trades');
     await fireEvent.press(link);
     expect(mockPush).toHaveBeenCalledWith('/my-trades');
+  });
+
+  describe('not_allowed support contact', () => {
+    afterEach(() => { mockEmail = ''; });
+
+    it('does not promise support when no address is set', async () => {
+      mockEmail = '';
+      mockRequest.mockResolvedValue('not_allowed');
+      const { getByRole, getByText, queryByText, queryByRole } = await setup('DELETE');
+      await fireEvent.press(getByRole('button', { name: 'Delete my account' }));
+      await waitFor(() => expect(getByText("This account can't be deleted in the app.")).toBeTruthy());
+      expect(queryByText(/contact PinHunt support/i)).toBeNull();
+      expect(queryByRole('link')).toBeNull();
+    });
+
+    it('shows a tappable mailto link when an address is set', async () => {
+      mockEmail = 'help@example.test';
+      const spy = jest.spyOn(Linking, 'openURL').mockResolvedValue(true);
+      mockRequest.mockResolvedValue('not_allowed');
+      const { getByRole, getByText } = await setup('DELETE');
+      await fireEvent.press(getByRole('button', { name: 'Delete my account' }));
+      await waitFor(() => expect(getByText(/contact PinHunt support/i)).toBeTruthy());
+      await fireEvent.press(getByRole('link'));
+      expect(spy).toHaveBeenCalledWith(expect.stringContaining('mailto:help@example.test'));
+      spy.mockRestore();
+    });
   });
 });

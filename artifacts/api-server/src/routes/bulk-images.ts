@@ -14,6 +14,8 @@
  *   GET  /admin/bulk-images/batches                 list with counts
  *   GET  /admin/bulk-images/batches/:id             dashboard + items
  *   POST /admin/bulk-images/batches/:id/items       upload one photo
+ *   POST /admin/bulk-images/batches/:id/sets        { sets: [..] } searched first; re-matches undecided photos
+ *   POST /admin/bulk-images/batches/:id/accuracy    re-match confirmed photos, report right first / top 5
  *   POST /admin/bulk-images/batches/:id/process     resume background work
  *   POST /admin/bulk-images/batches/:id/retry-failed
  * Items
@@ -46,6 +48,8 @@ import { publishItem, PublishBlockedError } from "../services/bulkImages/publish
 import { pinAndPopReferenceImages } from "../services/scanReferenceImages";
 import { lookalikePins } from "../services/pictureIndex/search";
 import { pictureIndexConfigured } from "../services/pictureIndex/vertex";
+import { cleanSetList, learnBatchSet, readStats, rematchUndecided, updateBatchStats } from "../services/bulkImages/batchStats";
+import { ANSWERED_STATUSES, batchAccuracyRunning, MAX_CHECKED, startBatchAccuracyCheck } from "../services/bulkImages/accuracy";
 
 const router: IRouter = Router();
 
@@ -136,7 +140,8 @@ function pipelineDeps(): PipelineDeps {
   const repository = getPinRepo();
   return {
     db,
-    match: (photo) => matchPhoto(photo, {
+    match: (photo, ctx) => matchPhoto(photo, {
+      ...(ctx?.sets?.length ? { sets: ctx.sets } : {}),
       openai: getOpenAIClient(),
       model: SCAN_MODEL(),
       repository,
@@ -224,6 +229,8 @@ router.post("/admin/bulk-images/batches", guard, async (req: AdminRequest, res) 
       permission_public_display: b.permissionPublicDisplay === true,
       permission_notes: typeof b.permissionNotes === "string" && b.permissionNotes.trim() ? b.permissionNotes.trim().slice(0, 2000) : null,
       permission_recorded_by: req.adminId,
+      // Optional: the set(s) these photos come from, searched first (migration 086).
+      ...(cleanSetList(b.sets).length ? { stats: { setHints: cleanSetList(b.sets) } } : {}),
     }).select("*").single();
     if (error) throw new Error(error.message);
     res.status(201).json({ batch: data });
@@ -286,6 +293,7 @@ router.get("/admin/bulk-images/batches/:id", guard, async (req, res) => {
       batch,
       summary: summarise(items),
       running: isRunning(batch.id),
+      accuracyRunning: batchAccuracyRunning(batch.id),
       paused: pausedReasons(batch.id),
       services: { matching: isAiConfigured(), pixian: pixianConfigured() },
       items: items.map(({ original_path, cleaned_path, candidates, ...rest }) => {
@@ -372,6 +380,37 @@ router.post("/admin/bulk-images/batches/:id/items", guard, async (req: AdminRequ
   } catch (err) { fail(res, err); }
 });
 
+router.post("/admin/bulk-images/batches/:id/sets", guard, async (req, res) => {
+  try {
+    const db = getServiceClient();
+    const batch = await loadBatch(String(req.params.id));
+    if (!batch) { res.status(404).json({ error: "Batch not found" }); return; }
+    const sets = cleanSetList((req.body ?? {}).sets);
+    const before = readStats((batch as { stats?: unknown }).stats).setHints ?? [];
+    await updateBatchStats(db, batch.id, () => ({ setHints: sets }));
+    const changed = sets.join("\n").toLowerCase() !== before.join("\n").toLowerCase();
+    // Photos not decided yet are matched again with the new sets first.
+    const rematching = changed && (req.body ?? {}).rematch !== false ? await rematchUndecided(db, batch.id) : 0;
+    if (rematching > 0) void kick(batch.id, ["match"]).catch(() => {});
+    res.json({ sets, rematching });
+  } catch (err) { fail(res, err); }
+});
+
+router.post("/admin/bulk-images/batches/:id/accuracy", guard, async (req, res) => {
+  try {
+    const db = getServiceClient();
+    const batch = await loadBatch(String(req.params.id));
+    if (!batch) { res.status(404).json({ error: "Batch not found" }); return; }
+    if (!isAiConfigured()) { res.status(503).json({ error: "Pin recognition (OpenAI) isn't configured on this server." }); return; }
+    const { count, error } = await db.from("bulk_image_items").select("id", { count: "exact", head: true })
+      .eq("batch_id", batch.id).in("status", [...ANSWERED_STATUSES]);
+    if (error) throw new Error(error.message);
+    if (!count) { res.status(400).json({ error: "Confirm some photos first: the check compares matching with your answers." }); return; }
+    const started = startBatchAccuracyCheck(batch.id, { db, match: pipelineDeps().match });
+    res.status(202).json({ started, checking: Math.min(count, MAX_CHECKED) });
+  } catch (err) { fail(res, err); }
+});
+
 router.post("/admin/bulk-images/batches/:id/process", guard, async (req, res) => {
   try {
     const batch = await loadBatch(String(req.params.id));
@@ -454,7 +493,8 @@ router.post("/admin/bulk-images/items/:id/confirm", guard, async (req: AdminRequ
     }
     const { pinhuntId, method } = (req.body ?? {}) as { pinhuntId?: string; method?: string };
     if (!pinhuntId || typeof pinhuntId !== "string") { res.status(400).json({ error: "pinhuntId is required" }); return; }
-    if (!(await getPinRepo().getPinByPinhuntId(pinhuntId))) { res.status(404).json({ error: "We couldn't find that pin." }); return; }
+    const pin = await getPinRepo().getPinByPinhuntId(pinhuntId);
+    if (!pin) { res.status(404).json({ error: "We couldn't find that pin." }); return; }
     const inCandidates = (item.candidates ?? []).findIndex((c) => c.pinhuntId === pinhuntId);
     const matchMethod = method === "manual_search" || inCandidates === -1
       ? "manual_search"
@@ -472,7 +512,14 @@ router.post("/admin/bulk-images/items/:id/confirm", guard, async (req: AdminRequ
     }).eq("id", item.id).eq("status", item.status);
     if (error) throw new Error(error.message);
     if (nextStatus === "confirmed") void kick(item.batch_id, ["clean"]).catch(() => {});
-    res.json({ status: nextStatus, matchMethod });
+    // Learn the batch's set from its confirmations: once two come from the
+    // same set, the photos not decided yet are matched again with it first.
+    const learnt = await learnBatchSet(db, item.batch_id, pin.collection, item.id).catch((err) => {
+      console.warn("[bulk-images] couldn't learn the batch's set:", err instanceof Error ? err.message : err);
+      return { learned: null, rematching: 0 };
+    });
+    if (learnt.rematching > 0) void kick(item.batch_id, ["match"]).catch(() => {});
+    res.json({ status: nextStatus, matchMethod, set: learnt.learned, rematching: learnt.rematching });
   } catch (err) { fail(res, err); }
 });
 

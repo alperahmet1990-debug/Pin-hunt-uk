@@ -64,8 +64,13 @@ interface Summary {
   counts: Record<Status, number>;
   failedByStage: Record<string, number>;
 }
+export interface BatchAccuracy {
+  at: string; checked: number; top1: number; top5: number; errors: number;
+  misses: Array<{ itemId: string; filename: string | null; expected: { pinhuntId: string; title: string | null }; got: { pinhuntId: string; title: string; confidence: number } | null; rank: number | null }>;
+}
 interface BatchData {
-  batch: { id: string; title: string; supplier_name: string; permission_public_display: boolean };
+  batch: { id: string; title: string; supplier_name: string; permission_public_display: boolean; stats?: { setHints?: string[]; accuracy?: BatchAccuracy } };
+  accuracyRunning?: boolean;
   summary: Summary;
   running: { match: boolean; clean: boolean };
   paused: { match?: string; clean?: string };
@@ -140,7 +145,7 @@ export default function BulkImageBatchScreen() {
   }, [session?.access_token, api, batchId, load]);
 
   // Refresh while anything is still being worked on.
-  const busy = !!data && (data.items.some((i) => WORKING.includes(i.status)) || data.running.match || data.running.clean);
+  const busy = !!data && (data.items.some((i) => WORKING.includes(i.status)) || data.running.match || data.running.clean || !!data.accuracyRunning);
   useEffect(() => {
     if (!busy) return;
     const t = setInterval(load, 4000);
@@ -188,6 +193,15 @@ export default function BulkImageBatchScreen() {
         {data.paused.match && <Notice text={data.paused.match} />}
         {data.paused.clean && <Notice text={data.paused.clean} />}
 
+        <SetsPanel batchId={data.batch.id} sets={data.batch.stats?.setHints ?? []} reload={load} />
+        <AccuracyPanel
+          batchId={data.batch.id}
+          report={data.batch.stats?.accuracy ?? null}
+          running={!!data.accuracyRunning}
+          answered={data.items.filter((i) => ANSWERED.includes(i.status) && !!i.matched_pinhunt_id).length}
+          reload={load}
+        />
+
         <UploadPanel batchId={data.batch.id} token={session?.access_token} onUploaded={load} />
 
         <View style={styles.tabs}>
@@ -204,6 +218,107 @@ export default function BulkImageBatchScreen() {
         {tab === 'problems' && <ProblemsPanel batchId={data.batch.id} items={data.items} reload={load} />}
       </ScrollView>
     </>
+  );
+}
+
+// ── Sets and accuracy ────────────────────────────────────────────────────────
+
+/** Photos with the reviewer's answer: what the accuracy check re-matches. */
+export const ANSWERED: Status[] = ['confirmed', 'cleaning', 'cleaned', 'published'];
+
+/** Sets searched first for every photo in the batch (typed here, or learned from two confirmations). */
+function SetsPanel({ batchId, sets, reload }: { batchId: string; sets: string[]; reload: () => void }) {
+  const colors = useColors();
+  const api = useApi();
+  const [editing, setEditing] = useState(false);
+  const [text, setText] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [note, setNote] = useState<string | null>(null);
+  const save = async () => {
+    setBusy(true);
+    setNote(null);
+    try {
+      const r = await api<{ sets: string[]; rematching: number }>(`/admin/bulk-images/batches/${batchId}/sets`, { method: 'POST', body: { sets: text } });
+      setNote(r.rematching > 0 ? `Matching ${r.rematching} photo${r.rematching === 1 ? '' : 's'} again with ${r.sets.length ? 'these sets' : 'no set'} searched first.` : null);
+      setEditing(false);
+      reload();
+    } catch (e) {
+      setNote(e instanceof Error ? e.message : 'Could not save the sets.');
+    } finally {
+      setBusy(false);
+    }
+  };
+  return (
+    <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, gap: 8 }]}>
+      <Text style={[styles.meta, { color: colors.homeInk }]}>
+        {sets.length ? `Searched first: ${sets.join(' · ')}` : 'No set yet. If these photos come from one set, name it so it\'s searched first. The batch also learns a set once two confirmed photos come from it.'}
+      </Text>
+      {editing ? (
+        <>
+          <TextInput
+            value={text} onChangeText={setText} autoFocus
+            placeholder="e.g. Beauty and the Beast — separate several with commas"
+            placeholderTextColor={colors.homeMuted}
+            style={[styles.input, { color: colors.homeInk, borderColor: colors.homeLine }]}
+          />
+          <View style={styles.row}>
+            <Btn kind="primary" label={busy ? 'Saving…' : 'Save sets'} onPress={save} disabled={busy} />
+            <Btn label="Cancel" onPress={() => setEditing(false)} disabled={busy} />
+          </View>
+        </>
+      ) : (
+        <View style={styles.row}>
+          <Btn label={sets.length ? 'Change sets' : 'Name the set'} onPress={() => { setText(sets.join(', ')); setEditing(true); }} />
+        </View>
+      )}
+      {note ? <Text style={[styles.meta, { color: colors.homeMuted }]}>{note}</Text> : null}
+    </View>
+  );
+}
+
+const pct = (n: number, d: number) => (d ? `${Math.round((n / d) * 100)}%` : '—');
+
+/** Re-match the confirmed photos without changing them; right first / top 5 and the misses. */
+function AccuracyPanel({ batchId, report, running, answered, reload }: {
+  batchId: string; report: BatchAccuracy | null; running: boolean; answered: number; reload: () => void;
+}) {
+  const colors = useColors();
+  const api = useApi();
+  const [error, setError] = useState<string | null>(null);
+  if (!answered && !report) return null;
+  const start = async () => {
+    setError(null);
+    try {
+      await api(`/admin/bulk-images/batches/${batchId}/accuracy`, { method: 'POST', body: {} });
+      reload();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Could not start the check.');
+    }
+  };
+  return (
+    <View style={[styles.card, { backgroundColor: colors.homeSurface, borderColor: colors.homeLine, gap: 8 }]}>
+      <View style={styles.row}>
+        <Btn label={running ? 'Checking…' : `Accuracy check (${answered})`} onPress={start} disabled={running || !answered} />
+        <Text style={[styles.meta, { color: colors.homeMuted, flex: 1 }]}>
+          Matches your confirmed photos again without changing them (about 3 AI calls each).
+        </Text>
+      </View>
+      {report ? (
+        <>
+          <Text style={[styles.meta, { color: colors.homeInk }]}>
+            Last check: right first {report.top1} of {report.checked} ({pct(report.top1, report.checked)}), in the top 5 {report.top5} ({pct(report.top5, report.checked)})
+            {report.errors ? ` · ${report.errors} couldn't be checked` : ''} · {new Date(report.at).toLocaleString()}
+          </Text>
+          {report.misses.map((m) => (
+            <Text key={m.itemId} style={[styles.meta, { color: colors.homeMuted }]}>
+              {m.filename ?? m.itemId}: you chose {m.expected.title ?? m.expected.pinhuntId} — matching put {m.got ? `${m.got.title} (${m.got.confidence}%)` : 'nothing'} first
+              {m.rank ? `; yours came #${m.rank}` : '; yours wasn\'t in the top 5'}
+            </Text>
+          ))}
+        </>
+      ) : null}
+      {error ? <Text style={[styles.meta, { color: colors.destructive }]}>{error}</Text> : null}
+    </View>
   );
 }
 
@@ -884,6 +999,7 @@ const styles = StyleSheet.create({
   btn: { flexDirection: 'row', alignItems: 'center', gap: 6, borderWidth: 1, borderRadius: 10, paddingHorizontal: 14, paddingVertical: 9 },
   badge: { alignSelf: 'flex-start', borderWidth: 1, borderRadius: 999, paddingHorizontal: 8, paddingVertical: 2 },
   card: { borderWidth: 1, borderRadius: radius.lg, padding: 14, gap: 10 },
+  row: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 8 },
   compare: { flexDirection: 'row', flexWrap: 'wrap', gap: 16 },
   photoLabel: { fontSize: 12, fontFamily: 'Inter_600SemiBold' },
   photoBox: { aspectRatio: 1, borderWidth: 1, borderRadius: radius.md, overflow: 'hidden' },

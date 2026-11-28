@@ -53,6 +53,7 @@ import { boardMetrics, itemPriority } from "../services/boardScan/rules";
 import * as store from "../services/boardScan/store";
 import type { BoardScan, BoardScanItem, ExcludeReason } from "../services/boardScan/store";
 import { pixianConfigured } from "../services/pixian";
+import { describeTokenRejection } from "../services/auth/tokenDiagnostics";
 
 /** An HEIC/HEIF photo (iPhone's default), which the server's image library can't decode. */
 export function isHeicPhoto(buf: Buffer): boolean {
@@ -92,14 +93,19 @@ async function requireAdmin(req: AdminRequest, res: Response, next: NextFunction
   }
   try {
     const { data: { user }, error } = await getAnonClient().auth.getUser(auth.slice(7));
-    if (error || !user) { res.status(401).json({ error: "Invalid token" }); return; }
+    if (error || !user) {
+      console.warn("[board-scan] sign-in rejected:", JSON.stringify(describeTokenRejection(auth.slice(7), error)));
+      res.status(401).json({ error: "Invalid token" });
+      return;
+    }
     const { data: profile } = await store.boardDb().from("profiles").select("is_admin, is_app_creator").eq("id", user.id).single();
     const p = profile as { is_admin?: boolean; is_app_creator?: boolean } | null;
     if (!p?.is_admin) { res.status(403).json({ error: "Admin access required" }); return; }
     req.adminId = user.id;
     req.isAppCreator = p.is_app_creator === true;
     next();
-  } catch {
+  } catch (err) {
+    console.warn("[board-scan] auth check failed:", err instanceof Error ? err.message : err);
     res.status(500).json({ error: "Auth check failed" });
   }
 }

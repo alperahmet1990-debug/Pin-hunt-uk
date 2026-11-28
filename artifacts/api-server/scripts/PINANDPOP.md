@@ -121,6 +121,15 @@ dependency-free, so there is no install step.
 - **Command:**
   `node artifacts/api-server/scripts/import-pinandpop-production.mjs sync --apply --unattended --full-on-sunday`
 
+  **`--apply` is what makes it write.** Without it the job is a dry run: it
+  re-reads the catalogue, logs `full refresh (dry run, nothing written)` or
+  `dry run: nothing written`, and changes nothing. From 15 to 28 Nov 2026 the job
+  ran `sync --full` without it, so production stayed at the 14 Nov import
+  (116,671 pins) while Pin & Pop added about 950. Fixed on 28 Nov: the first real
+  run wrote 949 new pins (117,620) and filled characters for 569 of them. After
+  a run, check the `sync:` log line shows `"written"` above 0 when there were new
+  pins, and no `"dryRun"`.
+
 Every day it adds new pins and fills their characters (usually 1-2 API calls).
 On Sundays (UTC) it then re-reads every pin, so edits land and removed pins are
 archived: about 585 calls at one a second (around 10 minutes), within the
@@ -147,6 +156,20 @@ Safety:
 After a run, the job's **Logs** show `sync:` and `full refresh:` with counts. A
 failed run shows a red **Failed** in the job's Events, and the next run tries
 again.
+
+Reading the counts: `fetched` is what Pin & Pop returned, `stored` what PinHunt
+has, `written` what this run saved, and `noLongerReturned` the pins Pin & Pop no
+longer lists (archived by the Sunday re-read, never deleted; nothing is archived
+if that's over 10% of stored pins). Pin & Pop adds roughly 50–180 pins a day, so
+daily is enough.
+
+After new pins arrive:
+- run `vacuum analyze pins;` in the production SQL editor now and then (the
+  script reminds you), so catalogue search keeps choosing fast plans;
+- their reference pictures need adding to the **picture index** (board-scan and
+  bulk-matcher look-alikes): automatic with `PICTURE_INDEX_AUTO_RESUME=true` on
+  `pinhunt-api-production` (a minute after each server start, then every 24
+  hours), or **Continue building** on Admin → Board Scans → Picture index.
 
 To test a job by hand: open it in Render and choose **Trigger Run**. Before the
 first scheduled full refresh, a dry run from your Mac with the production
@@ -284,10 +307,11 @@ Under full parallel load six other suites time out, and all of them pass when ru
    app's staging anon key into it. Check Render's value too.
 5. Attribution is on Pin Detail only. Consider a line on Catalogue / search lists too.
 
-## Production rollout (not done)
+## Production rollout (done 14–15 Nov 2026)
 
-Do this only once staging is signed off. It's a separate, approved session, and it
-must not overlap any other production work.
+Production's catalogue has been Pin & Pop since 14 Nov 2026, and the daily sync
+has written to it since 28 Nov (see Production sync above). The steps below are
+kept as the record of how it was done.
 
 1. **Back up production**: a JSON dump of every table (as above), plus the Supabase dashboard backup.
 2. **Schema:** apply 075, 076 and 077 in order, each with a production guard in place of the staging one
@@ -305,7 +329,7 @@ must not overlap any other production work.
    so owners still see them.
 4. **Import:** the scripts are staging-only by design. For production, add a separate,
    explicitly approved entry point with its own guard, not a flag on these scripts.
-5. **Server:** add `PINANDPOP_API_TOKEN` to the production API service (none
-   exists yet: Render `pin-hunt-uk` is staging). Schedule the incremental sync daily
-   and the full refresh weekly.
+5. **Server:** `PINANDPOP_API_TOKEN` on the production side, and the daily sync
+   scheduled as the Render Cron Job `pinandpop-sync-daily` (see Production sync
+   above; its command must include the apply flag).
 6. **App:** ship the attribution and set-summary changes before or with the catalogue switch.

@@ -184,16 +184,33 @@ describe("POST /api/scan/identify within the budget", () => {
     expect(res.body.error).toMatch(/took too long/i);
   });
 
-  it("skips the photo comparison when the ranking is already clear", async () => {
+  it("compares a clear ranking too (only a picture makes a match confident), unless switched off", async () => {
     const log = vi.spyOn(console, "log").mockImplementation(() => {});
+    const clear = reply('[{"pinId":"PHUK-1","confidence":94,"reasoning":"Clear"},{"pinId":"PHUK-2","confidence":30,"reasoning":"No"}]');
     create
       .mockImplementationOnce(step(3_000, describeOk))
-      .mockImplementationOnce(step(4_000, reply('[{"pinId":"PHUK-1","confidence":94,"reasoning":"Clear"},{"pinId":"PHUK-2","confidence":30,"reasoning":"No"}]')));
-    const res = await scan();
+      .mockImplementationOnce(step(4_000, clear))
+      .mockImplementationOnce(step(5_000, reply('[{"pinId":"PHUK-1","confidence":93,"reasoning":"Photo matches"}]')));
+    let res = await scan();
     expect(res.status).toBe(200);
-    expect(res.body.matches[0].pinId).toBe("PHUK-1");
-    expect(create).toHaveBeenCalledTimes(2);
-    expect(timingsLine(log)).toMatchObject({ outcome: "ok", skipped: ["verify:confident"] });
+    expect(create).toHaveBeenCalledTimes(3);
+    expect(res.body.matches[0]).toMatchObject({ pinId: "PHUK-1", confidence: 93, verified: true });
+
+    // SCAN_ALWAYS_COMPARE=false brings back the old skip (and the 60% cap, unchecked).
+    create.mockReset();
+    clock.left = 30_000;
+    vi.stubEnv("SCAN_ALWAYS_COMPARE", "false");
+    vi.setSystemTime(Date.now() + 60_000);
+    try {
+      create.mockImplementationOnce(step(3_000, describeOk)).mockImplementationOnce(step(4_000, clear));
+      res = await scan().send({ imageBase64: "BBBB" });
+      expect(create).toHaveBeenCalledTimes(2);
+      expect(res.body.matches[0]).toMatchObject({ pinId: "PHUK-1", confidence: 60, verified: false });
+      const lines = log.mock.calls.filter((c: unknown[]) => c[0] === "[scan] timings:");
+      expect(JSON.parse(String(lines.at(-1)![1]))).toMatchObject({ outcome: "ok", skipped: ["verify:confident"] });
+    } finally {
+      vi.unstubAllEnvs();
+    }
     log.mockRestore();
   });
 

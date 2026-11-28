@@ -163,6 +163,31 @@ export function dedupeDetections(pins: DetectedPin[], iouLimit = 0.5, containLim
   return sortReadingOrder(kept);
 }
 
+/** The model sees at most ~2048 px. Below this, a quarter shows no more detail than the whole photo. */
+export const QUARTERS_MIN_LONG_SIDE = 2600;
+
+/**
+ * Quarters only help when the photo has more detail than the model sees in
+ * one look. On a smaller photo (a screenshot, a messaging-app copy) each
+ * quarter is just a blurrier, context-less crop, and the model tends to
+ * return fragments of pins cut by the quarter's edge.
+ */
+export function quartersHelp(width: number, height: number): boolean {
+  return Math.max(width, height) >= QUARTERS_MIN_LONG_SIDE;
+}
+
+/**
+ * Add the quarter passes' finds to the whole-photo pass. A quarter box that
+ * mostly sits on a pin the whole-photo pass already found (at least
+ * `fragmentLimit` of its own area inside that box) is a fragment of that pin
+ * cut by the quarter's edge, not a new pin, so it's dropped. Pins the whole
+ * pass missed don't overlap its boxes that much, even on crowded boards.
+ */
+export function mergeQuarterDetections(whole: DetectedPin[], quarters: DetectedPin[], fragmentLimit = 0.4): DetectedPin[] {
+  const extra = quarters.filter((q) => !whole.some((w) => intersection(q.box, w.box) / Math.max(area(q.box), 1e-9) >= fragmentLimit));
+  return [...whole, ...extra];
+}
+
 /** Row by row, top to bottom, left to right — the order people read a board in. */
 export function sortReadingOrder(pins: DetectedPin[]): DetectedPin[] {
   const byTop = [...pins].sort((a, b) => a.box.y - b.box.y);
@@ -234,9 +259,9 @@ export async function detectPins(
   // crowded ones): on unless BOARD_DETECT_TILES=1.
   const tiles = opts.tiles ?? (Number(process.env.BOARD_DETECT_TILES) === 1 ? 1 : 2);
 
-  const all = await detectOnce(openai, model, await forModel(board.image), timeoutMs, usage);
+  let all = await detectOnce(openai, model, await forModel(board.image), timeoutMs, usage);
 
-  if (tiles === 2) {
+  if (tiles === 2 && quartersHelp(board.width, board.height)) {
     // Four quarters overlapping by 15%, mapped back to whole-photo fractions.
     const overlap = 0.15;
     const span = 0.5 + overlap / 2;
@@ -262,10 +287,10 @@ export async function detectPins(
         return [];
       }
     }));
-    all.push(...results.flat());
+    all = mergeQuarterDetections(all, results.flat());
   }
 
-  const rawCount = all.length;
+  const rawCount = all.length; // after dropping quarter fragments
   const pins = dedupeDetections(all);
   return { pins: pins.slice(0, maxPins), truncated: pins.length > maxPins, rawCount, usage };
 }

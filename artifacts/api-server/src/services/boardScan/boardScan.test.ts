@@ -1,6 +1,6 @@
 import sharp from "sharp";
 import { describe, expect, it, vi } from "vitest";
-import { dedupeDetections, detectPins, isDetectionAnswer, parseDetection, sortReadingOrder, type DetectedPin } from "./detect";
+import { dedupeDetections, detectPins, isDetectionAnswer, mergeQuarterDetections, parseDetection, quartersHelp, sortReadingOrder, type DetectedPin } from "./detect";
 import { assessCrop, boxToPixels, differenceHash, hammingDistance, isBlankPhoto, laplacianVariance, normaliseBoardPhoto, touchesEdge } from "./quality";
 import { boardMetrics, bulkApproveBlock, cleanupBlock, itemPriority } from "./rules";
 import type { BoardScanItem } from "./store";
@@ -27,19 +27,31 @@ describe("detectPins", () => {
   const client = (content: string | null, finish = "stop") =>
     ({ chat: { completions: { create: async () => ({ choices: [{ message: { content }, finish_reason: finish }], usage: {} }) } } }) as never;
 
-  it("looks at the board whole and in four quarters unless told otherwise", async () => {
+  const bigBoard = async () => ({ image: await sharp({ create: { width: 3024, height: 2016, channels: 3, background: "#888" } }).jpeg().toBuffer(), width: 3024, height: 2016 });
+
+  it("looks at a large board whole and in four quarters unless told otherwise", async () => {
     let calls = 0;
     const counting = { chat: { completions: { create: async () => { calls++; return { choices: [{ message: { content: '{"pins": []}' }, finish_reason: "stop" }], usage: {} }; } } } } as never;
-    await detectPins(counting, "m", await board());
+    await detectPins(counting, "m", await bigBoard());
     expect(calls).toBe(5);
     calls = 0;
     vi.stubEnv("BOARD_DETECT_TILES", "1");
     try {
-      await detectPins(counting, "m", await board());
+      await detectPins(counting, "m", await bigBoard());
       expect(calls).toBe(1);
     } finally {
       vi.unstubAllEnvs();
     }
+  });
+
+  it("skips the quarters on a photo no bigger than the model sees (screenshots, chat copies)", async () => {
+    let calls = 0;
+    const counting = { chat: { completions: { create: async () => { calls++; return { choices: [{ message: { content: '{"pins": []}' }, finish_reason: "stop" }], usage: {} }; } } } } as never;
+    await detectPins(counting, "m", await board());
+    expect(calls).toBe(1);
+    expect(quartersHelp(1152, 1536)).toBe(false);
+    expect(quartersHelp(2048, 2048)).toBe(false);
+    expect(quartersHelp(3024, 4032)).toBe(true);
   });
 
   it("treats a missing or garbled answer as a failure, not an empty board", async () => {
@@ -67,6 +79,24 @@ describe("parseDetection", () => {
     expect(parseDetection("")).toEqual([]);
     expect(parseDetection("{not json}")).toEqual([]);
     expect(parseDetection('{"pins":"x"}')).toEqual([]);
+  });
+});
+
+describe("mergeQuarterDetections", () => {
+  it("drops a quarter box that is mostly a fragment of a pin the whole pass found", () => {
+    const whole = [pin(0.05, 0.2, 0.3, 0.6)];
+    // Tall sliver over the left of that pin, sticking out above it (the stray boxes on a real board).
+    const sliver = pin(0.01, 0.0, 0.11, 0.6);
+    // Narrow box inside the pin's lower half.
+    const inside = pin(0.15, 0.4, 0.1, 0.35);
+    expect(mergeQuarterDetections(whole, [sliver, inside])).toEqual(whole);
+  });
+
+  it("keeps a pin the whole pass missed, even next to or touching another", () => {
+    const whole = [pin(0.1, 0.1, 0.2, 0.2)];
+    const neighbour = pin(0.28, 0.1, 0.2, 0.2); // overlaps 10% of its area
+    const elsewhere = pin(0.7, 0.7, 0.1, 0.1);
+    expect(mergeQuarterDetections(whole, [neighbour, elsewhere])).toEqual([...whole, neighbour, elsewhere]);
   });
 });
 

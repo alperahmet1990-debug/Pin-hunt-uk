@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
-import AdminBoardScanScreen, { boardPoint, pickGrid } from '../app/admin/board-scan/[id]';
+import AdminBoardScanScreen, { boardPoint, fitBoard, pickGrid } from '../app/admin/board-scan/[id]';
 import AdminBoardScansScreen from '../app/admin/board-scans';
 
 // Board scanning review (Step A): pins without a catalogue photo first,
@@ -366,5 +366,21 @@ describe('pick grid', () => {
       const { cols, tileWidth } = pickGrid(w);
       expect(w - (cols * tileWidth + 8 * (cols - 1))).toBeLessThan(cols);
     }
+  });
+});
+
+describe('fitBoard', () => {
+  it('caps a tall photo at 60% of the window height, keeping its proportions', () => {
+    // A phone screenshot (9:19.5) in a 1200 pt wide column on an 800 pt window.
+    const { width, height } = fitBoard(1200, 1170, 2532, 800);
+    expect(height).toBeCloseTo(480);
+    expect(width).toBeCloseTo(480 * 1170 / 2532);
+  });
+  it('uses the full width when that fits', () => {
+    expect(fitBoard(390, 4032, 3024, 844)).toEqual({ width: 390, height: 390 * 3024 / 4032 });
+  });
+  it('never goes below 240 pt tall on a short window, and is empty until measured', () => {
+    expect(fitBoard(1000, 1000, 2000, 200).height).toBeCloseTo(240);
+    expect(fitBoard(0, 1000, 1000, 800)).toEqual({ width: 0, height: 0 });
   });
 });

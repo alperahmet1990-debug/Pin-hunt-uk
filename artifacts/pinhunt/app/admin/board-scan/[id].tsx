@@ -27,6 +27,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  useWindowDimensions,
   View,
   type GestureResponderEvent,
   type LayoutChangeEvent,
@@ -129,6 +130,24 @@ export function boardPoint(
   return { x: Math.max(0, Math.min(1, lx / width)), y: Math.max(0, Math.min(1, ly / height)) };
 }
 
+/**
+ * On-screen size of the board photo: as wide as the space allows, but never
+ * taller than 60% of the window (min 240 pt), so a tall photo doesn't fill the
+ * whole screen and the outlines stay readable. Keeps the photo's proportions.
+ */
+export function fitBoard(
+  areaWidth: number,
+  imageWidth: number,
+  imageHeight: number,
+  windowHeight: number,
+): { width: number; height: number } {
+  if (areaWidth <= 0 || imageWidth <= 0 || imageHeight <= 0) return { width: 0, height: 0 };
+  const aspect = imageWidth / imageHeight;
+  const maxHeight = Math.max(240, windowHeight * 0.6);
+  const width = Math.min(areaWidth, maxHeight * aspect);
+  return { width, height: width / aspect };
+}
+
 function pct(n: number | null) { return n == null ? '—' : `${Math.round(n * 100)}%`; }
 
 export default function AdminBoardScanScreen() {
@@ -146,7 +165,8 @@ export default function AdminBoardScanScreen() {
   const [busy, setBusy] = useState<string | null>(null);
   const [filter, setFilter] = useState<Filter>('review');
   const [selected, setSelected] = useState<string | null>(null);
-  const [boardWidth, setBoardWidth] = useState(0);
+  const [boardAreaWidth, setBoardAreaWidth] = useState(0);
+  const { height: windowHeight } = useWindowDimensions();
   const [drawing, setDrawing] = useState<{ x: number; y: number } | null | 'armed'>(null);
   const [searchFor, setSearchFor] = useState<{ itemId: string } | { box: Box } | null>(null);
   /** A picture opened full size (tap any picture on a card). */
@@ -266,7 +286,9 @@ export default function AdminBoardScanScreen() {
   });
 
   // ── Adding a missed pin: tap the top-left, then the bottom-right corner ──
-  const boardHeight = data ? (boardWidth * data.scan.image_height) / data.scan.image_width : 0;
+  const { width: boardWidth, height: boardHeight } = data
+    ? fitBoard(boardAreaWidth, data.scan.image_width, data.scan.image_height, windowHeight)
+    : { width: 0, height: 0 };
   const boardRef = useRef<View>(null);
   const onBoardPress = (e: GestureResponderEvent) => {
     if (!drawing || !boardWidth) return;
@@ -428,7 +450,7 @@ export default function AdminBoardScanScreen() {
 
         {/* Board with outlines */}
         {scan.imageUrl ? (
-          <View onLayout={(e: LayoutChangeEvent) => setBoardWidth(e.nativeEvent.layout.width)}>
+          <View style={{ alignItems: 'center' }} onLayout={(e: LayoutChangeEvent) => setBoardAreaWidth(e.nativeEvent.layout.width)}>
             {boardWidth > 0 ? (
               <Pressable ref={boardRef} onPress={onBoardPress} style={{ width: boardWidth, height: boardHeight }}>
                 <Image source={{ uri: scan.imageUrl }} style={{ width: boardWidth, height: boardHeight, borderRadius: 8 }} />

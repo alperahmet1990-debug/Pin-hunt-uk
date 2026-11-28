@@ -11,7 +11,7 @@
  * (docs/release/LAUNCH-BLOCKERS.md, L1). The asking-price figures elsewhere
  * on the pin page stay as they are, labelled as asking prices.
  */
-import React, { useState } from 'react';
+import React from 'react';
 import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useColors } from '@/hooks/useColors';
 import { usePriceCurrency } from '@/hooks/usePriceCurrency';
@@ -42,10 +42,11 @@ function shortDate(iso: string | null): string | null {
 
 export function SoldPriceCard({ pinId }: { pinId: string }) {
   const colors = useColors();
-  const [, , homeCurrency] = usePriceCurrency();
+  // The shared session switch (same one as the VALUE card): GBP is UK, USD is US.
+  const [currency, setCurrency, homeCurrency] = usePriceCurrency();
   const home: SoldMarket = homeCurrency === 'USD' ? 'US' : 'UK';
-  const [picked, setPicked] = useState<SoldMarket | null>(null);
-  const market = picked ?? home;
+  const market: SoldMarket = currency === 'USD' ? 'US' : 'UK';
+  const setMarket = (m: SoldMarket) => setCurrency(m === 'US' ? 'USD' : 'GBP');
   const data = useSoldPrices(pinId);
 
   if (data.status !== 'ready') return null;
@@ -67,7 +68,7 @@ export function SoldPriceCard({ pinId }: { pinId: string }) {
             return (
               <TouchableOpacity
                 key={m}
-                onPress={() => setPicked(m)}
+                onPress={() => setMarket(m)}
                 accessibilityRole="radio"
                 accessibilityState={{ selected: on }}
                 accessibilityLabel={m === 'UK' ? 'UK sold prices, pounds' : 'US sold prices, dollars'}
@@ -95,13 +96,12 @@ export function SoldPriceCard({ pinId }: { pinId: string }) {
         <View testID="sold-price-none" style={styles.block}>
           <Text style={[styles.title, { color: colors.homeInk }]}>No recent sales found</Text>
           <Text style={[styles.body, { color: colors.homeMuted }]}>
-            {`We looked for this pin in ${MARKET_NAME[market]} sold listings`}
-            {shortDate(request.checkedAt) ? ` on ${shortDate(request.checkedAt)}` : ''}
-            {' and didn’t find enough recent sales to give a price.'}
-            {shortDate(request.nextRequestAt) ? ` We can check again from ${shortDate(request.nextRequestAt)}.` : ''}
+            {request.markets.length > 0 && !request.markets.includes(market)
+              ? `We don’t check ${MARKET_NAME[market]} sales yet.`
+              : `We looked for this pin in ${MARKET_NAME[market]} sold listings${shortDate(request.checkedAt) ? ` on ${shortDate(request.checkedAt)}` : ''} and didn’t find enough recent sales to give a price.${shortDate(request.nextRequestAt) ? ` We can check again from ${shortDate(request.nextRequestAt)}.` : ''}`}
           </Text>
           {otherValue && (
-            <TouchableOpacity onPress={() => setPicked(otherValue.market)} accessibilityRole="button" hitSlop={8}>
+            <TouchableOpacity onPress={() => setMarket(otherValue.market)} accessibilityRole="button" hitSlop={8}>
               <Text style={[styles.body, styles.link, { color: colors.homeCoralDeep }]}>
                 {`${MARKET_NAME[otherValue.market]} has a sold price: see ${MARKET_CHIP[otherValue.market]}`}
               </Text>

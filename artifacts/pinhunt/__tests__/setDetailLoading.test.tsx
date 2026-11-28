@@ -1,10 +1,12 @@
 import React from 'react';
-import { act, render, screen } from '@testing-library/react-native';
+import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import SetDetailScreen from '../app/set/[collection]';
 
 const mockBack = jest.fn();
+const mockPush = jest.fn();
+let mockCanContribute = false;
 let resolveLoad: () => void = () => {};
-let mockPins: Array<{ id: string; title: string; collection: string }> = [];
+let mockPins: Array<{ id: string; title: string; collection: string; imageUrl?: string }> = [];
 let mockCatalogueLoading = false;
 // Stable across renders, like the real context's callback.
 const mockEnsureCollections = () => new Promise<void>(resolve => { resolveLoad = resolve; });
@@ -18,10 +20,11 @@ jest.mock('react-native-safe-area-context', () => ({
 }));
 jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ collection: 'Classics 2024' }),
-  useRouter: () => ({ back: mockBack, push: jest.fn() }),
+  useRouter: () => ({ back: mockBack, push: mockPush }),
   Stack: { Screen: () => null },
 }));
 jest.mock('@/components/QuickAddSheet', () => ({ QuickAddSheet: () => null }));
+jest.mock('@/hooks/useFeature', () => ({ useFeature: () => ({ enabled: mockCanContribute, loading: false }) }));
 // The missing-pins footer (UX-021) reads these; no Supabase, no toasts here.
 jest.mock('@/hooks/useMarketplace', () => ({ useMarketplace: () => ({ repo: null, userId: null }) }));
 jest.mock('@/components/ui/Toast', () => ({ useToast: () => ({ show: jest.fn(), hide: jest.fn() }) }));
@@ -41,6 +44,8 @@ describe('Set detail while loading', () => {
   beforeEach(() => {
     mockPins = [];
     mockCatalogueLoading = false;
+    mockCanContribute = false;
+    mockPush.mockClear();
   });
 
   it('shows the back button, set name and placeholder tiles instead of a blank screen', async () => {
@@ -81,5 +86,25 @@ describe('Set detail while loading', () => {
     mockPins = [{ id: 'p1', title: 'Mickey Classic', collection: 'Classics 2024' }];
     await act(async () => { view.rerender(<SetDetailScreen />); });
     expect(screen.getByText('Mickey Classic')).toBeTruthy();
+  });
+
+  it('links photo contributors to Contribute pictures for this set\'s pins with no photo', async () => {
+    mockCanContribute = true;
+    await render(<SetDetailScreen />);
+    mockPins = [
+      { id: 'p1', title: 'Mickey Classic', collection: 'Classics 2024' },
+      { id: 'p2', title: 'Minnie Classic', collection: 'Classics 2024', imageUrl: 'https://example.com/minnie.png' },
+    ];
+    await act(async () => { resolveLoad(); });
+    expect(screen.getByText('1 pin needs a photo · Contribute')).toBeTruthy();
+    await act(async () => { fireEvent.press(screen.getByTestId('set-contribute-photos')); });
+    expect(mockPush).toHaveBeenCalledWith({ pathname: '/contribute', params: { set: 'Classics 2024', filter: 'needs' } });
+  });
+
+  it('shows no contribute link to people who cannot contribute', async () => {
+    await render(<SetDetailScreen />);
+    mockPins = [{ id: 'p1', title: 'Mickey Classic', collection: 'Classics 2024' }];
+    await act(async () => { resolveLoad(); });
+    expect(screen.queryByTestId('set-contribute-photos')).toBeNull();
   });
 });

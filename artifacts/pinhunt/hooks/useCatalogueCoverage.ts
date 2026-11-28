@@ -21,6 +21,7 @@ import {
   type CoverageFacetKey,
   type CoverageFacets,
   type CoverageFilter,
+  type CoverageSort,
   type CoverageStats,
 } from '@workspace/pin-repository';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
@@ -145,6 +146,8 @@ export interface CoverageView {
   filter: CoverageFilter;
   facets: CoverageFacets;
   mineOnly: boolean;
+  /** 'newest' needs migration 088; until then pages come back in set order (see `sort` returned). */
+  sort?: CoverageSort;
 }
 
 const PAGE = 240;
@@ -156,6 +159,7 @@ export function useCoveragePage(enabled: boolean, view: CoverageView, ownedIds: 
   const version = useCacheVersion();
   const [ids, setIds] = useState<string[]>([]);
   const [total, setTotal] = useState(0);
+  const [appliedSort, setAppliedSort] = useState<CoverageSort>('set');
   const [stats, setStats] = useState<CoverageStats>(NO_STATS);
   const [setTotals, setSetTotals] = useState<Record<string, { total: number; withPhoto: number }>>({});
   const [loading, setLoading] = useState(true);
@@ -195,6 +199,7 @@ export function useCoveragePage(enabled: boolean, view: CoverageView, ownedIds: 
         ids: v.mineOnly ? (ownedKey ? ownedKey.split(',') : []) : null,
         query: v.query,
         filter: v.filter,
+        sort: v.sort ?? 'set',
         offset: offset.current,
         limit: PAGE,
       });
@@ -203,6 +208,7 @@ export function useCoveragePage(enabled: boolean, view: CoverageView, ownedIds: 
       offset.current += page.rows.length;
       setIds(prev => (reset ? page.rows.map(r => r.pinhuntId) : [...prev, ...page.rows.map(r => r.pinhuntId)]));
       setTotal(page.total);
+      setAppliedSort(page.sort ?? 'set');
       publish();
       void fetchSetTotals(page.rows);
     } catch (e) {
@@ -253,7 +259,49 @@ export function useCoveragePage(enabled: boolean, view: CoverageView, ownedIds: 
   }, [load, loadStats]);
 
   return {
-    rows, total, stats, setTotals, loading: enabled && loading, loadingMore, hasMore: rows.length < total,
+    rows, total, stats, setTotals, sort: appliedSort, loading: enabled && loading, loadingMore, hasMore: rows.length < total,
     error, loadMore, refresh, loadFacet,
   };
+}
+
+/**
+ * Home "New to the catalogue": the newest Pin & Pop pins that still need a
+ * photo (no photo, none waiting for review). Empty until migration 088 is
+ * applied, rather than showing pins in set order under a "new" heading.
+ */
+export function useNewestNeedingPhotos(enabled: boolean, limit: number) {
+  const repo = useCoverageRepository();
+  const version = useCacheVersion();
+  const [ids, setIds] = useState<string[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  const load = useCallback(async () => {
+    if (!repo || !enabled) { setIds([]); return; }
+    setLoading(true);
+    try {
+      // A few extra, so pins photographed meanwhile (cache updates) don't empty the strip.
+      const page = await repo.getCatalogueCoveragePage({ filter: 'needs', sort: 'newest', offset: 0, limit: limit * 2 });
+      remember(page.rows);
+      setIds(page.sort === 'newest'
+        ? page.rows.filter(r => r.catalogueSource === 'pin_and_pop').map(r => r.pinhuntId)
+        : []);
+      publish();
+    } catch {
+      setIds([]); // optional section: hide it rather than show an error on Home
+    } finally {
+      setLoading(false);
+    }
+  }, [repo, enabled, limit]);
+
+  useEffect(() => { void load(); }, [load]);
+
+  const rows = useMemo(
+    () => ids
+      .map(id => byId.get(id))
+      .filter((r): r is CatalogueImageCoverage => Boolean(r) && r!.imageSource === null && r!.pendingCount === 0 && r!.myStatus !== 'pending')
+      .slice(0, limit),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [ids, version, limit],
+  );
+  return { rows: enabled ? rows : [], loading: enabled && loading, refresh: load };
 }

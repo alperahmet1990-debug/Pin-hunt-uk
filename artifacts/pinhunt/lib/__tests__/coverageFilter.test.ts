@@ -33,6 +33,13 @@ describe('coverage filters (same rules as migration 077)', () => {
     expect(coveragePageLocal(ROWS, { offset: 2, limit: 2 }).rows.map(r => r.title)).toEqual(['Stitch Surf', 'Mickey Castle']);
   });
 
+  it('orders newest first (highest PHUK id) when asked, and says which order it used', () => {
+    const p = coveragePageLocal(ROWS, { sort: 'newest', offset: 0, limit: 10 });
+    expect(p.rows.map(r => r.pinhuntId)).toEqual(['PHUK-10000004', 'PHUK-10000003', 'PHUK-10000002', 'PHUK-10000001']);
+    expect(p.sort).toBe('newest');
+    expect(coveragePageLocal(ROWS, { offset: 0, limit: 1 }).sort).toBe('set');
+  });
+
   it('searches words or a PHUK id prefix, and narrows by facets and ids', () => {
     expect(coveragePageLocal(ROWS, { query: 'lilo', offset: 0, limit: 10 }).rows.map(r => r.pinhuntId)).toEqual(['PHUK-10000002', 'PHUK-10000003']);
     expect(coveragePageLocal(ROWS, { query: 'phuk-10000001', offset: 0, limit: 10 }).rows.map(r => r.title)).toEqual(['Mickey Castle']);

@@ -27,6 +27,7 @@ import { pinsToAddToIso } from '@/utils/setTraders';
 import { variantTitle } from '@/utils/variantTitle';
 import { usePinActions } from '@/components/PinActionsSheet';
 import { Button } from '@/components/ui/Button';
+import { useFeature } from '@/hooks/useFeature';
 
 type PinFilter = 'all' | 'owned' | 'missing';
 
@@ -92,6 +93,10 @@ export default function SetDetailScreen() {
   // Placeholders while this set (or, before it exists, the catalogue) is still
   // loading. Once pins are showing, a catalogue refresh doesn't hide them.
   const loading = setLoading || (catalogueLoading && setPins.length === 0);
+
+  // Contribute pictures: how many pins in this set have no catalogue photo yet.
+  const { enabled: canContribute } = useFeature('catalogue_contributions');
+  const noPhotoCount = useMemo(() => setPins.filter(p => !p.imageUrl).length, [setPins]);
 
   const [quickAddPin, setQuickAddPin] = useState<CataloguePin | null>(null);
 
@@ -246,6 +251,23 @@ export default function SetDetailScreen() {
           </Text>
         )}
 
+        {canContribute && !loading && noPhotoCount > 0 && !selection.active && (
+          <TouchableOpacity
+            testID="set-contribute-photos"
+            onPress={() => router.push({ pathname: '/contribute', params: { set: collectionParam, filter: 'needs' } })}
+            activeOpacity={0.8}
+            accessibilityRole="button"
+            accessibilityLabel={`${noPhotoCount} ${noPhotoCount === 1 ? 'pin' : 'pins'} in this set need a photo. Contribute pictures`}
+            style={styles.contributeLink}
+          >
+            <Feather name="camera" size={14} color={colors.homeCoralDeep} />
+            <Text style={[styles.contributeLabel, { color: colors.homeCoralDeep }]} numberOfLines={1}>
+              {noPhotoCount} {noPhotoCount === 1 ? 'pin needs' : 'pins need'} a photo · Contribute
+            </Text>
+            <Feather name="chevron-right" size={14} color={colors.homeCoralDeep} />
+          </TouchableOpacity>
+        )}
+
         <View style={styles.filterWrap}>
           <SegmentedControl options={FILTERS} value={filter} onChange={setFilter} />
         </View>
@@ -357,6 +379,8 @@ const styles = StyleSheet.create({
   completeBadge: { flexDirection: 'row', alignItems: 'center', gap: 5, borderRadius: radius.pill, paddingHorizontal: 10, paddingVertical: 6 },
   completeBadgeLabel: { fontSize: 12, fontFamily: 'Inter_700Bold' },
   setTitle: { fontSize: 21, lineHeight: 26, fontFamily: 'Inter_700Bold', letterSpacing: -0.4, marginTop: spacing.sm },
+  contributeLink: { flexDirection: 'row', alignItems: 'center', gap: 6, alignSelf: 'flex-start', minHeight: 44 },
+  contributeLabel: { fontSize: 13, fontFamily: 'Inter_600SemiBold' },
   progressRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline' },
   progressText: { fontSize: 12.5, fontFamily: 'Inter_500Medium' },
   progressCount: { fontSize: 13, fontFamily: 'Inter_700Bold' },

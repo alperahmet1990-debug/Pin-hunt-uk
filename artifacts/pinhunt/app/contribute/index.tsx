@@ -1,5 +1,5 @@
 /**
- * Help build the catalogue — beta contributor screen.
+ * Contribute pictures (was "Help build the catalogue") — contributor screen.
  *
  * Browses the catalogue grouped by set, showing
  * each pin's photo status, so contributors can photograph pins they own.
@@ -13,6 +13,11 @@
  * Gated by the 'catalogue_contributions' feature flag (migration 039) —
  * starts admin-only; widened to contributors / public by editing its row.
  * The data is gated again server-side in get_catalogue_image_coverage().
+ *
+ * Opens on "Needs photo". Route params (all optional): `filter` (a chip value),
+ * `sort=newest` (Home "New to the catalogue" → See all; migration 088 — the
+ * toggle hides itself while the database can't sort that way) and `set` (a set
+ * name, from a set page).
  */
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
@@ -26,7 +31,7 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Stack, useRouter } from 'expo-router';
+import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import type { CatalogueImageCoverage } from '@workspace/pin-repository';
 import { useColors } from '@/hooks/useColors';
@@ -46,6 +51,10 @@ import {
 
 type PhotoFilter = 'all' | 'needs' | 'reference' | 'pending' | 'community' | 'info' | 'back';
 
+const PHOTO_FILTERS: PhotoFilter[] = ['all', 'needs', 'reference', 'pending', 'community', 'info', 'back'];
+type SortOrder = 'set' | 'newest';
+const SCREEN_TITLE = 'Contribute pictures';
+
 const COLUMNS = 3;
 const SEARCH_DEBOUNCE_MS = 300;
 
@@ -59,11 +68,18 @@ export default function ContributeCatalogueScreen() {
   const router = useRouter();
   const { enabled, loading: featureLoading } = useFeature('catalogue_contributions');
   const { collection } = useCollection();
+  const params = useLocalSearchParams<{ filter?: string; sort?: string; set?: string }>();
+  const initialFilter: PhotoFilter = PHOTO_FILTERS.includes(params.filter as PhotoFilter)
+    ? (params.filter as PhotoFilter)
+    : 'needs';
 
   const [query, setQuery] = useState('');
-  const [filter, setFilter] = useState<PhotoFilter>('all');
+  const [filter, setFilter] = useState<PhotoFilter>(initialFilter);
+  const [sortOrder, setSortOrder] = useState<SortOrder>(params.sort === 'newest' ? 'newest' : 'set');
+  // False once the database answered a "newest" page in set order (088 not applied).
+  const [newestAvailable, setNewestAvailable] = useState(true);
   const [mineOnly, setMineOnly] = useState(false);
-  const [facets, setFacets] = useState<FacetFilters>(NO_FACETS);
+  const [facets, setFacets] = useState<FacetFilters>(() => (params.set ? { ...NO_FACETS, set: params.set } : NO_FACETS));
   const [openFacet, setOpenFacet] = useState<FacetKey | null>(null);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -87,19 +103,35 @@ export default function ContributeCatalogueScreen() {
     query: debouncedQuery,
     filter,
     mineOnly,
+    sort: sortOrder,
     facets: {
       year: facets.year ? Number(facets.year) : null,
       origin: facets.origin,
       character: facets.character,
       set: facets.set,
     },
-  }), [debouncedQuery, filter, mineOnly, facets]);
+  }), [debouncedQuery, filter, mineOnly, facets, sortOrder]);
   const {
-    rows, stats, setTotals, loading, loadingMore, hasMore, error, loadMore, refresh, loadFacet,
+    rows, stats, setTotals, sort: appliedSort, loading, loadingMore, hasMore, error, loadMore, refresh, loadFacet,
   } = useCoveragePage(enabled, view, ownedList);
 
+  useEffect(() => {
+    if (sortOrder === 'newest' && !loading && appliedSort === 'set') {
+      setNewestAvailable(false);
+      setSortOrder('set');
+    }
+  }, [sortOrder, loading, appliedSort]);
+  const showNewest = sortOrder === 'newest' && appliedSort === 'newest';
+
   // Pages arrive ordered by set, so a set can continue on the next page: group what's loaded.
-  const sections = useMemo(() => {
+  // Newest first: one list, each tile still shows its set.
+  type Section = { title: string; totals: { total: number; withPhoto: number } | null; data: CatalogueImageCoverage[][] };
+  const sections = useMemo((): Section[] => {
+    if (showNewest) {
+      const chunks: CatalogueImageCoverage[][] = [];
+      for (let i = 0; i < rows.length; i += COLUMNS) chunks.push(rows.slice(i, i + COLUMNS));
+      return chunks.length ? [{ title: 'Newest first', totals: null, data: chunks }] : [];
+    }
     const bySet = new Map<string, CatalogueImageCoverage[]>();
     for (const r of rows) {
       const list = bySet.get(r.setName) ?? [];
@@ -111,7 +143,7 @@ export default function ContributeCatalogueScreen() {
       for (let i = 0; i < pins.length; i += COLUMNS) chunks.push(pins.slice(i, i + COLUMNS));
       return { title: setName, totals: setTotals[setName] ?? null, data: chunks };
     });
-  }, [rows, setTotals]);
+  }, [rows, setTotals, showNewest]);
 
   // Facet choices (with counts) load when a facet sheet opens.
   const [facetItems, setFacetItems] = useState<Array<{ value: string; label: string }>>([]);
@@ -139,12 +171,12 @@ export default function ContributeCatalogueScreen() {
     router.push({ pathname: '/contribute-image/[pinId]', params: { pinId: pinhuntId, from: 'catalogue' } });
   };
 
-  const anyFilter = Boolean(query.trim() || filter !== 'all' || mineOnly || Object.values(facets).some(Boolean));
+  const anyFilter = Boolean(query.trim() || filter !== initialFilter || sortOrder !== 'set' || mineOnly || Object.values(facets).some(Boolean));
   // Full-screen spinner only on first open; while filtering the header stays and the list shows it.
   if (featureLoading || (enabled && loading && rows.length === 0 && !anyFilter)) {
     return (
       <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
-        <Stack.Screen options={{ title: 'Help Build the Catalogue' }} />
+        <Stack.Screen options={{ title: SCREEN_TITLE }} />
         <ActivityIndicator color={colors.homeCoral} />
       </View>
     );
@@ -153,7 +185,7 @@ export default function ContributeCatalogueScreen() {
   if (!enabled) {
     return (
       <View style={[styles.center, { backgroundColor: colors.homeBackground }]}>
-        <Stack.Screen options={{ title: 'Help Build the Catalogue' }} />
+        <Stack.Screen options={{ title: SCREEN_TITLE }} />
         <EmptyState icon="lock" title="Not available yet" subtitle="This feature isn't open to your account yet." />
       </View>
     );
@@ -220,6 +252,31 @@ export default function ContributeCatalogueScreen() {
         <Text style={[styles.addPinLinkLabel, { color: colors.homeCoral }]}>Pin not in the catalogue? Add it</Text>
       </TouchableOpacity>
 
+      {newestAvailable && (
+        <View style={styles.sortRow} accessibilityRole="radiogroup" accessibilityLabel="Order">
+          {([['set', 'By set'], ['newest', 'Newest']] as const).map(([value, label]) => {
+            const active = sortOrder === value;
+            return (
+              <TouchableOpacity
+                key={value}
+                onPress={() => setSortOrder(value)}
+                activeOpacity={0.8}
+                accessibilityRole="radio"
+                accessibilityState={{ selected: active }}
+                accessibilityLabel={value === 'newest' ? 'Newest pins first' : 'Grouped by set'}
+                style={[styles.sortOption, {
+                  backgroundColor: active ? colors.homeSurface : 'transparent',
+                  borderColor: active ? colors.homeLine : 'transparent',
+                }]}
+              >
+                <Feather name={value === 'newest' ? 'clock' : 'layers'} size={13} color={active ? colors.homeCoralDeep : colors.homeMuted} />
+                <Text style={[styles.chipLabel, { color: active ? colors.homeInk : colors.homeMuted }]}>{label}</Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+      )}
+
       <View style={styles.chips}>
         {chips.map(c => {
           const active = filter === c.value;
@@ -272,7 +329,7 @@ export default function ContributeCatalogueScreen() {
 
   return (
     <View style={[styles.root, { backgroundColor: colors.homeBackground }]}>
-      <Stack.Screen options={{ title: 'Help Build the Catalogue' }} />
+      <Stack.Screen options={{ title: SCREEN_TITLE }} />
       <SectionList
         sections={sections}
         keyExtractor={(chunk, i) => `${chunk[0]?.pinhuntId ?? 'row'}-${i}`}
@@ -313,7 +370,7 @@ export default function ContributeCatalogueScreen() {
         renderItem={({ item: chunk }) => (
           <View style={styles.gridRow}>
             {chunk.map(row => (
-              <Tile key={row.pinhuntId} row={row} owned={ownedIds.has(row.pinhuntId)} showMissing={filter === 'info'} onPress={() => openPin(row.pinhuntId)} />
+              <Tile key={row.pinhuntId} row={row} owned={ownedIds.has(row.pinhuntId)} showMissing={filter === 'info'} showSet={showNewest} onPress={() => openPin(row.pinhuntId)} />
             ))}
             {Array.from({ length: COLUMNS - chunk.length }).map((_, i) => <View key={`pad-${i}`} style={styles.tile} />)}
           </View>
@@ -332,7 +389,7 @@ export default function ContributeCatalogueScreen() {
   );
 }
 
-function Tile({ row, owned, showMissing, onPress }: { row: CatalogueImageCoverage; owned: boolean; showMissing?: boolean; onPress(): void }) {
+function Tile({ row, owned, showMissing, showSet, onPress }: { row: CatalogueImageCoverage; owned: boolean; showMissing?: boolean; showSet?: boolean; onPress(): void }) {
   const colors = useColors();
   const pending = isPending(row);
   const needs = row.imageSource === null;
@@ -370,6 +427,9 @@ function Tile({ row, owned, showMissing, onPress }: { row: CatalogueImageCoverag
         )}
       </View>
       <Text style={[styles.tileTitle, { color: colors.homeInk }]} numberOfLines={2}>{row.title}</Text>
+      {showSet && (
+        <Text style={[styles.tileMissing, { color: colors.homeMuted }]} numberOfLines={1}>{row.setName}</Text>
+      )}
       {showMissing && missingLabel(row) && (
         <Text style={[styles.tileMissing, { color: colors.homeMuted }]} numberOfLines={2}>{missingLabel(row)}</Text>
       )}
@@ -392,6 +452,8 @@ const styles = StyleSheet.create({
   mineCta: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, borderWidth: 1, borderRadius: radius.lg, padding: spacing.lg },
   mineTitle: { fontSize: 15, fontFamily: 'Inter_600SemiBold' },
   mineSub: { fontSize: 12, fontFamily: 'Inter_400Regular', marginTop: 2 },
+  sortRow: { flexDirection: 'row', alignSelf: 'flex-start', gap: 4 },
+  sortOption: { flexDirection: 'row', alignItems: 'center', gap: 5, borderWidth: 1, borderRadius: radius.pill, paddingHorizontal: 12, minHeight: 36 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
   chip: { borderWidth: 1, borderRadius: radius.pill, paddingHorizontal: 12, paddingVertical: 7 },
   chipLabel: { fontSize: 13, fontFamily: 'Inter_500Medium' },

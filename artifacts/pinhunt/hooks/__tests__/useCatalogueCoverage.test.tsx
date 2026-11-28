@@ -14,7 +14,7 @@ jest.mock('@workspace/pin-repository', () => ({
 
 import {
   findNextContributionTarget, getCachedCoverage, markCoveragePending, resetCoverageCache,
-  useCoverageFor, useCoveragePage,
+  useCoverageFor, useCoveragePage, useNewestNeedingPhotos,
 } from '../useCatalogueCoverage';
 
 const row = (id: string, o: Partial<CatalogueImageCoverage> = {}): CatalogueImageCoverage => ({
@@ -83,5 +83,41 @@ describe('useCoveragePage', () => {
       ids: ['PHUK-8', 'PHUK-9'], query: 'stitch', filter: 'needs', year: 2024, offset: 0, limit: 240,
     }));
     expect(mockRepo.getCatalogueCoverageSummary).toHaveBeenCalledWith({ year: 2024 }, ['PHUK-8', 'PHUK-9']);
+  });
+});
+
+describe('useNewestNeedingPhotos', () => {
+  it('asks for the newest pins needing a photo and keeps only Pin & Pop ones', async () => {
+    mockRepo.getCatalogueCoveragePage.mockResolvedValue({
+      rows: [
+        row('PHUK-10000009', { catalogueSource: 'pin_and_pop' }),
+        row('PHUK-00000042', { catalogueSource: 'pinhunt' }),
+        row('PHUK-10000008', { catalogueSource: 'pin_and_pop' }),
+      ],
+      total: 3,
+      sort: 'newest',
+    });
+    const { result } = await renderHook(() => useNewestNeedingPhotos(true, 12));
+    await waitFor(() => expect(result.current.rows).toHaveLength(2));
+    expect(mockRepo.getCatalogueCoveragePage).toHaveBeenCalledWith(expect.objectContaining({ filter: 'needs', sort: 'newest', offset: 0 }));
+    expect(result.current.rows.map(r => r.pinhuntId)).toEqual(['PHUK-10000009', 'PHUK-10000008']);
+
+    // A photo sent from the strip drops that pin straight away.
+    await act(async () => { markCoveragePending('PHUK-10000009'); });
+    expect(result.current.rows.map(r => r.pinhuntId)).toEqual(['PHUK-10000008']);
+  });
+
+  it('shows nothing when the database could only answer in set order (088 not applied)', async () => {
+    mockRepo.getCatalogueCoveragePage.mockResolvedValue({ rows: [row('PHUK-10000001', { catalogueSource: 'pin_and_pop' })], total: 1, sort: 'set' });
+    const { result } = await renderHook(() => useNewestNeedingPhotos(true, 12));
+    await waitFor(() => expect(mockRepo.getCatalogueCoveragePage).toHaveBeenCalled());
+    await waitFor(() => expect(result.current.loading).toBe(false));
+    expect(result.current.rows).toEqual([]);
+  });
+
+  it('loads nothing for people who cannot contribute', async () => {
+    const { result } = await renderHook(() => useNewestNeedingPhotos(false, 12));
+    expect(result.current.rows).toEqual([]);
+    expect(mockRepo.getCatalogueCoveragePage).not.toHaveBeenCalled();
   });
 });

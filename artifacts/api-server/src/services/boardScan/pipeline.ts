@@ -516,6 +516,45 @@ export async function addManualItem(scan: BoardScan, box: Box, pinhuntId?: strin
   return item;
 }
 
+/**
+ * The reviewer redrew a pin's box: cut the crop again from the new box, drop
+ * anything made from the old crop (match, cleaned photo, a pending photo
+ * record), and match it again. The box is kept exactly as drawn (no
+ * tightening). Refused once the photo is published or while the board is
+ * processing.
+ */
+export async function redrawItem(scan: BoardScan, item: BoardScanItem, box: Box): Promise<BoardScanItem> {
+  if (item.image_review === "approved") throw new ReviewError("This photo is already published; its box can't change.");
+  if (isRunning(scan.id) || store.PROCESSING_STATUSES.includes(scan.status)) {
+    throw new ReviewError("The board is still being processed. Try again when it's finished.", 409);
+  }
+  const board = await store.downloadObject(store.BOARD_BUCKET, scan.image_path);
+  const src = await cropSource(scan, board);
+  const flags = { occluded: false, partial: false, glare: !!item.detection?.glare };
+  const cropPath = item.crop_path ?? `${scan.id}/crops/${String(item.position).padStart(3, "0")}.jpg`;
+  const crop = await cropFields(scan, src, cropPath, box, flags);
+  await store.removePendingBoardImages([item.id]);
+  const base = item.detection ?? { characters: [], keywords: [], text: "", occluded: false, partial: false };
+  const patch: Partial<BoardScanItem> = {
+    ...crop,
+    // Described again from the new crop; a drawn box is kept as drawn.
+    origin: "manual",
+    detection: { ...base, occluded: false, partial: false, described: false },
+    match_status: "pending", candidates: [], suggested_pin_id: null, match_confidence: null, pin_has_image: null,
+    decision: "undecided", decided_pin_id: null, exclude_reason: null,
+    cleanup_status: "none", cleanup_note: null, cleaned_path: null, image_review: "none", pin_image_id: null,
+    attempts: 0, error: null,
+  };
+  let updated = await store.updateItem(item.id, { ...patch, priority: itemPriority({ ...item, ...patch }) });
+  if (isAiConfigured()) {
+    const usage = emptyUsage();
+    updated = await matchItem(scan, null, updated, usage);
+    const fresh = (await store.getScan(scan.id)) ?? scan;
+    await store.updateScan(scan.id, { stats: mergeUsage(fresh.stats ?? {}, usage) });
+  }
+  return updated;
+}
+
 /** Most sets a board searches first (typed at upload or learned from confirmations). */
 export const MAX_SET_HINTS = 5;
 

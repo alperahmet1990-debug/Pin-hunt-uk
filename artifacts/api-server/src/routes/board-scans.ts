@@ -7,6 +7,7 @@
  * POST   /admin/board-scans/:id/resume              Finish an interrupted/partial board.
  * POST   /admin/board-scans/:id/items               Add a pin detection missed: { box, pinId? }.
  * PATCH  /admin/board-scans/:id/items/:itemId       { action: confirm | set_pin | exclude | reset | reject_image }.
+ * POST   /admin/board-scans/:id/items/:itemId/box      Redraw the pin's box: { box } → new crop, matched again.
  * POST   /admin/board-scans/:id/items/:itemId/clean    Pixian clean-up on request ({ force } lifts the judgement calls).
  * POST   /admin/board-scans/:id/items/:itemId/rotate   Turn the cleaned photo: { degrees } clockwise, or { degrees: "auto" } to straighten.
  * POST   /admin/board-scans/:id/items/:itemId/approve  Publish the cleaned photo to its pin ({ pinId?, replaceExisting? }).
@@ -34,6 +35,7 @@ import {
   deleteBoard,
   rescanBoard,
   learnSet,
+  redrawItem,
   rotateCleaned,
   cleanItem,
   enqueue,
@@ -497,6 +499,20 @@ router.post("/admin/board-scans/:id/items", requireAdmin, async (req: AdminReque
     const pinId = cleanText((req.body ?? {}).pinId, 64) ?? undefined;
     const item = await addManualItem(scan, box, pinId);
     res.json({ item });
+  } catch (err) {
+    fail(res, err);
+  }
+});
+
+router.post("/admin/board-scans/:id/items/:itemId/box", requireAdmin, async (req: AdminRequest, res: Response) => {
+  try {
+    const scan = await loadScan(req, res);
+    if (!scan) return;
+    const item = await loadItem(req, res, scan);
+    if (!item) return;
+    const box = parseBox((req.body ?? {}).box);
+    if (!box) { res.status(400).json({ error: "box {x, y, w, h} (fractions of the photo) is required" }); return; }
+    res.json({ item: await redrawItem(scan, item, box) });
   } catch (err) {
     fail(res, err);
   }

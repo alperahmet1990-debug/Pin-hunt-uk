@@ -66,6 +66,7 @@ import { FullScreenCamera } from '@/components/scan/FullScreenCamera';
 import type { ScanCameraPhoto } from '@/components/scan/ScanCamera';
 import type { CataloguePin, SubmissionCheckAnswer } from '@workspace/pin-repository';
 import { radius, spacing } from '@/constants/theme';
+import { validateSubmissionFields } from '@/utils/submissionValidation';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -707,16 +708,7 @@ export default function AddPinScreen() {
 
   // ── Validation ──────────────────────────────────────────────────────────────
   const validate = (): boolean => {
-    const errs: FormErrors = {};
-    if (!proposedName.trim()) errs.proposedName = 'Enter the pin\u2019s name. A short description is fine.';
-    if (releaseYear.trim()) {
-      const y = parseInt(releaseYear, 10);
-      if (isNaN(y) || y < 1900 || y > 2030) errs.releaseYear = 'Enter a year between 1900 and 2030.';
-    }
-    if (editionSize.trim()) {
-      const s = parseInt(editionSize, 10);
-      if (isNaN(s) || s <= 0) errs.editionSize = 'Must be a positive whole number.';
-    }
+    const errs: FormErrors = validateSubmissionFields({ proposedName, releaseYear, editionSize });
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };

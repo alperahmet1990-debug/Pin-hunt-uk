@@ -10,7 +10,7 @@ Upload a batch of individual pin photos → review suggested catalogue matches �
 |---|---|---|
 | Batch | App Creator records title, supplier, permission basis, licence and whether public display is allowed | `bulk_image_batches` |
 | Upload | Drag-and-drop or choose photos. Each one is EXIF-rotated, stripped of metadata, capped at 2400 px and stored privately. The same file again is recognised and skipped | `bulk-image-matcher` bucket, `bulk_image_items` |
-| Match (automatic) | The scan's own recognition: describe → indexed catalogue search (≤150 candidates) → AI rank top 5 → compare against up to 3 reference images (PinHunt photo, else the admin-only Pin & Pop reference) | `services/bulkImages/match.ts` |
+| Match (automatic) | Describe, then the board scanner's matching (`boardScan/match.ts` `matchCrop`): the catalogue search built for ~116k pins (character + specific word first), picture-index look-alikes when the index is on, AI rank top 5, then a comparison with every ranked candidate's reference picture (PinHunt photo, else the admin-only Pin & Pop reference; downloaded by the server), with the format-first rule. Unchecked suggestions are capped at 60%; a checked match under 40% is not identified. See `artifacts/api-server/scripts/BOARD-SCANNING.md` → Matching accuracy | `services/bulkImages/match.ts` |
 | Review | Photo beside the best match. Enter confirms, 1–5 picks another candidate, S skips, F flags, / searches. Moves on by itself | `app/admin/bulk-images/[batchId].tsx` |
 | Clean (automatic) | Pixian runs only after a match is confirmed. The photo is first cropped to the main pin: the describe step returns its box at no extra cost, so neighbouring pins on a board are left out. The cleaned result is kept, so changing the match doesn't call Pixian again | `services/bulkImages/pipeline.ts` |
 | Publish | Preview grid. Publish, change match, or **Crop & clean**: drag a box around the pin and only that area is cleaned again. Pins that already have a photo need an explicit "Replace it" | `services/bulkImages/publish.ts` |
@@ -32,7 +32,8 @@ AI calls per photo: 2, or 3 when a reference image exists. Never one call per ca
 | `BULK_PIXIAN_MAX_PER_ITEM` | 4 | Clean-ups one photo may use. A failed or timed-out call counts |
 | `BULK_AUTO_CROP` | true | Crop to the main pin before Pixian |
 | `BULK_MAX_BATCH_ITEMS` | 1000 | Photos per batch |
-| `BULK_MATCH_ALWAYS_COMPARE` | true | Compare with reference images even when the ranking looks confident |
+| `BOARD_MAX_REFERENCES`, `BOARD_MAX_CANDIDATES`, `BOARD_MATCH_ALWAYS_COMPARE`, `BOARD_REFERENCE_DETAIL` | 8, 150, true, high | Matching settings, shared with board scanning (`BULK_MATCH_ALWAYS_COMPARE` and `BULK_MATCH_MAX_CANDIDATES` are no longer read) |
+| `PICTURE_INDEX_ENABLED` | off | Picture-index look-alikes for each photo (Google Vertex AI, one call ≈ $0.0001). Same switch as board scanning |
 | `OPENAI_BULK_MATCH_MODEL` | `OPENAI_SCAN_MODEL` | Model override |
 
 ## Interruptions and retries

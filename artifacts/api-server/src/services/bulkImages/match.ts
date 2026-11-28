@@ -1,33 +1,29 @@
 /**
  * Bulk Image Matcher — suggest catalogue matches for one uploaded photo.
  *
- * The same recognition as the single-pin scan (routes/scan.ts), reused
- * rather than rebuilt:
- *   1. describe   one vision call → characters + keywords
- *   2. retrieve   services/scanCandidates.ts: indexed catalogue searches by
- *                 those terms. This is what keeps it cheap at Pin & Pop scale
- *                 (~116k records): the database narrows to ≤150 candidates,
- *                 the model never sees the whole catalogue, and no per-record
- *                 AI comparison is made.
- *   3. rank       services/pinRank.ts prompt → top 5
- *   4. compare    services/scanVerify.ts rules, against up to 3 reference
- *                 images: the pin's PinHunt photo, or else its Pin & Pop
- *                 reference image (migration 042). Pin & Pop images are used
- *                 here only for internal matching; they are never stored by
- *                 this feature, returned in candidates, or published.
+ *   1. describe   one vision call → characters, keywords, printed text and
+ *                 the main pin's box (DESCRIBE_PROMPT below; board scanning
+ *                 uses the same prompt through describeCrop)
+ *   2–4.          the board scanner's matching (boardScan/match.ts matchCrop):
+ *                 the catalogue search built for ~116k pins (character +
+ *                 specific word first, then printed text, then broad; sets
+ *                 first when given), picture-index look-alikes when the index
+ *                 is on, the shared ranking prompt, and a comparison with
+ *                 every ranked candidate's reference picture (downloaded by
+ *                 the server) with the format-first rule.
  *
- * Unlike the scan, the comparison runs whenever any reference image exists
- * (BULK_MATCH_ALWAYS_COMPARE, default on): catalogue data quality matters
- * more than a few seconds, and text alone cannot separate sibling pins
- * (.agents/memory/ai-model-quirks.md). A match is only "confident" when a
- * reference image confirmed it.
+ * Reference pictures may be Pin & Pop images (migration 042): used here only
+ * for internal matching, never stored by this feature, returned in
+ * candidates, or published. A match is only "confident" when its own
+ * reference picture confirmed it; unchecked suggestions are capped at 60%.
+ * Matching settings are the board scanner's (BOARD_MAX_REFERENCES,
+ * BOARD_MAX_CANDIDATES, BOARD_MATCH_ALWAYS_COMPARE, BOARD_REFERENCE_DETAIL).
  */
 import type { getOpenAIClient } from "@workspace/integrations-openai-ai-server";
-import type { CataloguePin, PinRepository } from "@workspace/pin-repository";
-import { findCandidates } from "../scanCandidates";
-import { withScanReasoning } from "../scanReasoning";
-import { verifyDecision, VERIFY_CONFIDENT_LEAD, VERIFY_MAX_REFERENCES } from "../scanVerify";
-import { buildCatalogueText, parseMatches, rankSystemPrompt, verifySystemPrompt, type PinMatch } from "../pinRank";
+import type { PinRepository } from "@workspace/pin-repository";
+import { VERIFY_CONFIDENT_LEAD } from "../scanVerify";
+import { describeCrop, matchCrop, type MatchCandidate } from "../boardScan/match";
+import { emptyUsage } from "../boardScan/detect";
 
 export type OpenAIClient = ReturnType<typeof getOpenAIClient>;
 
@@ -42,6 +38,10 @@ export interface BulkCandidate {
   imageUrl: string | null;
   confidence: number;
   reasoning: string;
+  /** This candidate's own reference picture was compared with the photo. */
+  verified?: boolean;
+  /** Found by the picture index (its reference picture looks like the photo). */
+  lookalike?: boolean;
 }
 
 /** Where the main pin is in the photo, as fractions of width/height: [left, top, right, bottom]. */
@@ -61,9 +61,11 @@ export interface BulkMatchResult {
   description: PhotoDescription;
   topConfidence: number;
   band: MatchBand;
-  /** A reference-image comparison re-ranked the candidates. */
+  /** The top suggestion was checked against its own reference picture. */
   verified: boolean;
   aiCalls: number;
+  /** Why the picture check didn't run or failed, if it didn't (logged; shown in a later change). */
+  problem?: string | null;
 }
 
 export interface MatchDeps {
@@ -72,7 +74,14 @@ export interface MatchDeps {
   repository: PinRepository;
   /** Internal-only reference image URLs keyed by pinhunt id (e.g. Pin & Pop). */
   referenceImages?: (pinhuntIds: string[]) => Promise<Record<string, string>>;
+  /** Fetch one reference picture as an inline image (default: the board scanner's server-side download). */
+  fetchImage?: (url: string) => Promise<string | null>;
+  /** The picture index: pinhunt ids of the pins that look most like the photo, closest first. */
+  pictureSearch?: (photo: Buffer) => Promise<string[]>;
+  /** Sets to search first (e.g. the batch is one set). */
+  sets?: string[];
   timeoutMs?: number;
+  /** No longer read here; matching settings are the board scanner's (BOARD_MAX_REFERENCES etc.). */
   env?: NodeJS.ProcessEnv;
 }
 
@@ -80,11 +89,6 @@ export const SHOW_CANDIDATES = 5;
 export const BAND_CONFIDENT_MIN = 85;
 export const BAND_POSSIBLE_MIN = 50;
 export const BAND_UNCERTAIN_MIN = 25;
-
-function maxCandidates(env: NodeJS.ProcessEnv): number {
-  const raw = Number(env.BULK_MATCH_MAX_CANDIDATES);
-  return Number.isFinite(raw) && raw > 0 ? Math.floor(raw) : 150;
-}
 
 /**
  * How sure the suggestion is. "confident" needs a reference image to have
@@ -134,147 +138,81 @@ export function parseDescription(raw: string): { characters: string[]; keywords:
   }
 }
 
-function toCandidate(p: CataloguePin, m: PinMatch): BulkCandidate {
+/** [left, top, right, bottom], rounded so a box survives the round trip through x/y/w/h exactly. */
+function toPinBox(b: { x: number; y: number; w: number; h: number }): PinBox {
+  const r = (n: number) => Math.round(n * 1e6) / 1e6;
+  return [r(b.x), r(b.y), r(b.x + b.w), r(b.y + b.h)];
+}
+
+/** What the ranking is told about a bulk photo (one pin, usually centred). */
+export const SINGLE_PHOTO_CONTEXT = "\n\nThe photo shows ONE pin, usually centred. If anything else shows at the edges, identify only the main pin.";
+
+function toCandidate(c: MatchCandidate): BulkCandidate {
   return {
-    pinhuntId: p.id,
-    title: p.title,
-    collection: p.collection,
-    brand: p.brand,
-    edition: p.edition ?? null,
-    characters: [...new Set([...(p.mainCharacter ? [p.mainCharacter] : []), ...p.characters])].slice(0, 6),
-    imageUrl: p.imageUrl ?? null,
-    confidence: m.confidence,
-    reasoning: m.reasoning,
+    pinhuntId: c.pinId,
+    title: c.title,
+    collection: c.collection,
+    brand: c.brand ?? "",
+    edition: c.edition ?? null,
+    characters: c.characters ?? [],
+    imageUrl: c.imageUrl,
+    confidence: c.confidence,
+    reasoning: c.reasoning,
+    ...(c.verified ? { verified: true } : {}),
+    ...(c.lookalike ? { lookalike: true } : {}),
   };
 }
 
-/** Suggest catalogue matches for one photo (a JPEG, already downscaled). */
+/**
+ * Suggest catalogue matches for one photo (a JPEG, already downscaled).
+ *
+ * Describe here, then the board scanner's matching (boardScan/match.ts
+ * matchCrop), so both admin tools match the same way: the search built for
+ * the 116k catalogue (character + specific word first), picture-index
+ * look-alikes when the index is on, every ranked candidate's reference
+ * picture compared (fetched by the server), the format-first rule, and only
+ * a picture comparison can make a match confident (unchecked rankings are
+ * capped at 60%; a checked match under 40% is not identified).
+ */
 export async function matchPhoto(photo: Buffer, deps: MatchDeps): Promise<BulkMatchResult> {
-  const env = deps.env ?? process.env;
   const timeout = deps.timeoutMs ?? 45_000;
-  const dataUrl = `data:image/jpeg;base64,${photo.toString("base64")}`;
-  let aiCalls = 0;
+  const usage = emptyUsage();
 
   // 1. Describe
-  const describeResp = await withScanReasoning((extra) => deps.openai.chat.completions.create({
-    ...extra,
-    model: deps.model,
-    max_completion_tokens: 2048,
-    messages: [
-      { role: "system", content: DESCRIBE_PROMPT },
-      {
-        role: "user",
-        content: [
-          { type: "image_url", image_url: { url: dataUrl, detail: "high" } },
-          { type: "text", text: "Describe this pin as JSON." },
-        ],
-      },
-    ],
-  }, { timeout, maxRetries: 1 }));
-  aiCalls++;
-  const described = parseDescription(describeResp.choices[0]?.message?.content ?? "");
+  const described = await describeCrop(photo, { openai: deps.openai, model: deps.model, timeoutMs: timeout }, usage);
   const description: PhotoDescription = {
     characters: described.characters,
     keywords: described.keywords,
-    ...(described.box ? { box: described.box } : {}),
+    ...(described.box ? { box: toPinBox(described.box) } : {}),
   };
 
-  // 2. Retrieve (bounded, indexed searches — never the whole catalogue)
-  const textTerms = described.text ? [described.text] : [];
-  const catalogue = (await findCandidates(deps.repository, description, textTerms)).slice(0, maxCandidates(env));
-  if (catalogue.length === 0) {
-    return { candidates: [], description, topConfidence: 0, band: "none", verified: false, aiCalls };
-  }
-  const byId = new Map<string, CataloguePin>(catalogue.map((p) => [p.id, p]));
-  const validIds = new Set(byId.keys());
+  // 2–4. Search, rank and compare: shared with board scanning.
+  const result = await matchCrop(
+    photo,
+    { characters: described.characters, keywords: described.keywords, text: described.text },
+    {
+      openai: deps.openai,
+      model: deps.model,
+      repository: deps.repository,
+      referenceImages: deps.referenceImages,
+      ...(deps.fetchImage ? { fetchImage: deps.fetchImage } : {}),
+      ...(deps.pictureSearch ? { pictureSearch: deps.pictureSearch } : {}),
+      timeoutMs: timeout,
+    },
+    usage,
+    { context: SINGLE_PHOTO_CONTEXT, ...(deps.sets?.length ? { sets: deps.sets } : {}) },
+  );
+  if (result.problem) console.warn("[bulk-images] picture check:", result.problem);
 
-  // 3. Rank
-  const hint = described.text
-    ? `\n\nADDITIONAL SIGNALS from image analysis (use as strong hints, especially any text that matches a pin title or edition):\nText seen on the pin: "${described.text}"`
-    : "";
-  const rankResp = await withScanReasoning((extra) => deps.openai.chat.completions.create({
-    ...extra,
-    model: deps.model,
-    max_completion_tokens: 2048,
-    messages: [
-      { role: "system", content: rankSystemPrompt(buildCatalogueText(catalogue), hint) },
-      {
-        role: "user",
-        content: [
-          { type: "image_url", image_url: { url: dataUrl, detail: "high" } },
-          { type: "text", text: "Please identify this Disney pin and return the top 5 matches as JSON." },
-        ],
-      },
-    ],
-  }, { timeout, maxRetries: 1 }));
-  aiCalls++;
-  let matches: PinMatch[] = parseMatches(rankResp.choices[0]?.message?.content ?? "", validIds, SHOW_CANDIDATES);
-
-  // 4. Compare with reference images
-  let verified = false;
-  const alwaysCompare = (env.BULK_MATCH_ALWAYS_COMPARE ?? "true").toLowerCase() !== "false";
-  const decision = verifyDecision(matches);
-  if (decision === "compare" || (alwaysCompare && decision === "confident")) {
-    const internal = deps.referenceImages
-      ? await deps.referenceImages(matches.map((m) => m.pinId)).catch(() => ({} as Record<string, string>))
-      : {};
-    const refs = matches
-      .map((m) => ({ m, url: byId.get(m.pinId)?.imageUrl || internal[m.pinId] }))
-      .filter((r): r is { m: PinMatch; url: string } => !!r.url)
-      .slice(0, VERIFY_MAX_REFERENCES);
-    if (refs.length > 0) {
-      try {
-        const content: Array<
-          | { type: "text"; text: string }
-          | { type: "image_url"; image_url: { url: string; detail: "low" | "high" } }
-        > = [
-          { type: "image_url", image_url: { url: dataUrl, detail: "high" } },
-          { type: "text", text: "Photo above is the USER'S PIN. Reference images follow:" },
-        ];
-        for (const r of refs) {
-          const p = byId.get(r.m.pinId)!;
-          content.push({ type: "text", text: `Reference for ${p.id} — "${p.title}" (${p.collection}):` });
-          content.push({ type: "image_url", image_url: { url: r.url, detail: "low" } });
-        }
-        content.push({ type: "text", text: "Compare the user's pin to each reference image and re-rank ALL candidates as JSON." });
-        const withRef = new Set(refs.map((r) => r.m.pinId));
-        const candidateList = matches
-          .map((m) => {
-            const p = byId.get(m.pinId)!;
-            return `${p.id} | "${p.title}" | ${p.collection} | reference image: ${withRef.has(p.id) ? "YES (shown below)" : "no image available"}`;
-          })
-          .join("\n");
-        const verifyResp = await withScanReasoning((extra) => deps.openai.chat.completions.create({
-          ...extra,
-          model: deps.model,
-          max_completion_tokens: 2048,
-          messages: [
-            { role: "system", content: verifySystemPrompt(candidateList, matches.length) },
-            { role: "user", content },
-          ],
-        }, { timeout, maxRetries: 0 }));
-        aiCalls++;
-        const reranked = parseMatches(verifyResp.choices[0]?.message?.content ?? "", validIds, SHOW_CANDIDATES);
-        if (reranked.length > 0) {
-          // Keep any candidate the comparison dropped, after the re-ranked ones.
-          const seen = new Set(reranked.map((m) => m.pinId));
-          matches = [...reranked, ...matches.filter((m) => !seen.has(m.pinId))].slice(0, SHOW_CANDIDATES);
-          verified = true;
-        }
-      } catch (err) {
-        // The comparison is optional: keep the ranking.
-        console.warn("[bulk-images] reference comparison failed, using ranking:", err instanceof Error ? err.message : err);
-      }
-    }
-  }
-
-  const candidates = matches.map((m) => toCandidate(byId.get(m.pinId)!, m));
+  const candidates = result.candidates.slice(0, SHOW_CANDIDATES).map(toCandidate);
+  const topChecked = !!result.candidates[0]?.verified;
   return {
     candidates,
     description,
     topConfidence: candidates[0]?.confidence ?? 0,
-    band: matchBand(candidates, verified),
-    verified,
-    aiCalls,
+    band: result.status === "unmatched" ? "none" : matchBand(candidates, topChecked),
+    verified: topChecked,
+    aiCalls: usage.calls,
+    problem: result.problem ?? null,
   };
 }

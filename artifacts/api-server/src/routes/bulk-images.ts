@@ -43,6 +43,9 @@ import { matchPhoto } from "../services/bulkImages/match";
 import { BUCKET, cropToBox, download, isRunning, pausedReasons, processBatch, type PipelineDeps } from "../services/bulkImages/pipeline";
 import { parseBox } from "../services/bulkImages/match";
 import { publishItem, PublishBlockedError } from "../services/bulkImages/publish";
+import { pinAndPopReferenceImages } from "../services/scanReferenceImages";
+import { lookalikePins } from "../services/pictureIndex/search";
+import { pictureIndexConfigured } from "../services/pictureIndex/vertex";
 
 const router: IRouter = Router();
 
@@ -137,10 +140,10 @@ function pipelineDeps(): PipelineDeps {
       openai: getOpenAIClient(),
       model: SCAN_MODEL(),
       repository,
-      referenceImages: async (ids) => {
-        const refs = await pinAndPopRefs(ids);
-        return Object.fromEntries(Object.entries(refs).filter(([, r]) => r.imageUrl).map(([id, r]) => [id, r.imageUrl!]));
-      },
+      // Pin & Pop reference images for the picture check, as board scanning gets them (5 s limit).
+      referenceImages: async (ids) => Object.fromEntries(await pinAndPopReferenceImages(ids, undefined, 5_000)),
+      // The picture index (migration 085), when switched on: pins that look like the photo.
+      ...(pictureIndexConfigured() ? { pictureSearch: lookalikePins } : {}),
     }),
     clean: (photo) => normalizePinPhoto(photo, "image/jpeg"),
   };

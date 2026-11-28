@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
-import AdminBoardScanScreen, { boardPoint, fitBoard, pickGrid } from '../app/admin/board-scan/[id]';
+import AdminBoardScanScreen, { boardPoint, drawPrompt, fitBoard, pickGrid } from '../app/admin/board-scan/[id]';
 import AdminBoardScansScreen from '../app/admin/board-scans';
 
 // Board scanning review (Step A): pins without a catalogue photo first,
@@ -370,17 +370,41 @@ describe('pick grid', () => {
 });
 
 describe('fitBoard', () => {
-  it('caps a tall photo at 60% of the window height, keeping its proportions', () => {
+  it('caps the photo at 45% of the window height, keeping its proportions', () => {
     // A phone screenshot (9:19.5) in a 1200 pt wide column on an 800 pt window.
     const { width, height } = fitBoard(1200, 1170, 2532, 800);
-    expect(height).toBeCloseTo(480);
-    expect(width).toBeCloseTo(480 * 1170 / 2532);
+    expect(height).toBeCloseTo(360);
+    expect(width).toBeCloseTo(360 * 1170 / 2532);
+  });
+  it('never goes over 480 pt tall on a tall window', () => {
+    expect(fitBoard(2000, 2000, 1000, 1400).height).toBeCloseTo(480);
   });
   it('uses the full width when that fits', () => {
     expect(fitBoard(390, 4032, 3024, 844)).toEqual({ width: 390, height: 390 * 3024 / 4032 });
   });
-  it('never goes below 240 pt tall on a short window, and is empty until measured', () => {
-    expect(fitBoard(1000, 1000, 2000, 200).height).toBeCloseTo(240);
+  it('never goes below 220 pt tall on a short window, and is empty until measured', () => {
+    expect(fitBoard(1000, 1000, 2000, 200).height).toBeCloseTo(220);
     expect(fitBoard(0, 1000, 1000, 800)).toEqual({ width: 0, height: 0 });
+  });
+});
+
+describe('redrawing a pin\'s box', () => {
+  it('asks for the two corners, naming the pin, and can be cancelled', async () => {
+    await render(<AdminBoardScanScreen />);
+    await screen.findByText('Ready to review');
+    // Cards are listed #2 first.
+    await fireEvent.press(screen.getAllByText('Redraw box')[0]);
+    const prompt = await screen.findByText('Redrawing #2: tap the top-left corner… (cancel)');
+    // Adding a pin is unavailable while drawing; other cards' Redraw box too.
+    expect(screen.queryByText('Add a missed pin')).toBeNull();
+    await fireEvent.press(prompt);
+    expect(await screen.findByText('Add a missed pin')).toBeTruthy();
+    expect(calls().some((c) => c.includes('/box'))).toBe(false);
+  });
+
+  it('words the prompt for each step', () => {
+    expect(drawPrompt('armed', null)).toBe('Tap the top-left corner… (cancel)');
+    expect(drawPrompt({ x: 0.1, y: 0.1 }, null)).toBe('Now the bottom-right corner… (cancel)');
+    expect(drawPrompt({ x: 0.1, y: 0.1 }, 3)).toBe('Redrawing #3: now the bottom-right corner… (cancel)');
   });
 });

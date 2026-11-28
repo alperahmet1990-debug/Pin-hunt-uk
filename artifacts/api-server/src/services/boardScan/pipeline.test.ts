@@ -144,7 +144,7 @@ vi.mock("./store", async (importOriginal) => {
   };
 });
 
-import { approveItem, approveReady, cleanItem, cleanSetName, deleteBoard, enqueue, isRunning, learnSet, MAX_SET_HINTS, processBoardScan, refineBox, limitShrink, rescanBoard } from "./pipeline";
+import { approveItem, approveReady, cleanItem, cleanSetName, deleteBoard, enqueue, isRunning, learnSet, MAX_SET_HINTS, processBoardScan, redrawItem, refineBox, limitShrink, rescanBoard } from "./pipeline";
 import type { BoardScan, BoardScanItem } from "./store";
 
 /** A 2000×1500 "board": three sharp, textured pins and one tiny one. */
@@ -575,6 +575,46 @@ describe("processBoardScan", () => {
     mem.create.mockRejectedValue(new Error("model unavailable"));
     await processBoardScan("s1");
     expect(mem.scans.get("s1")).toMatchObject({ status: "failed", error: "model unavailable" });
+  });
+});
+
+describe("redrawItem", () => {
+  beforeEach(async () => {
+    vi.stubEnv("BOARD_MIN_SHARPNESS", "10");
+    vi.stubEnv("BOARD_DETECT_TILES", "1");
+    vi.stubEnv("BOARD_MIN_CROP_SIDE_PX", "200");
+    await setup();
+    mem.create.mockImplementation(model({ G1: rank("PHUK-1", 92), R2: rank("PHUK-2", 90), W3: rank("PHUK-3", 91), "": rank("PHUK-3", 20) }));
+    await processBoardScan("s1");
+  });
+  const first = () => [...mem.items.values()][0] as unknown as BoardScanItem;
+  const scan = () => mem.scans.get("s1") as unknown as BoardScan;
+
+  it("cuts a new crop from the drawn box, clears the old result and matches again", async () => {
+    const before = { ...first() };
+    Object.assign(mem.items.get(before.id)!, { decision: "confirmed", decided_pin_id: "PHUK-1" });
+    // Describe the new crop as Remy, so the re-match lands on PHUK-2.
+    mem.create.mockImplementation(model({ R2: rank("PHUK-2", 90) }, { describe: JSON.stringify({ characters: ["Remy"], keywords: [], text: "R2" }) }));
+    const box = { x: 0.4, y: 0.04, w: 0.2, h: 0.32 };
+    const after = await redrawItem(scan(), first(), box);
+    expect(after.box).toEqual(box); // kept as drawn
+    expect(after.origin).toBe("manual");
+    expect(after.crop_path).toBe(before.crop_path);
+    expect(after.crop_sha256).not.toBe(before.crop_sha256);
+    expect(after).toMatchObject({ decision: "undecided", decided_pin_id: null, cleaned_path: null, cleanup_status: "none", image_review: "none", suggested_pin_id: "PHUK-2" });
+    expect(after.detection?.described).toBe(true);
+  });
+
+  it("removes a pending photo record left by a failed approval", async () => {
+    const item = first();
+    mem.images.push({ id: "img-old", status: "pending", pinhuntId: "PHUK-1", storagePath: "x.jpg", source_record_id: item.id });
+    await redrawItem(scan(), item, { x: 0.02, y: 0.04, w: 0.2, h: 0.32 });
+    expect(mem.images.find((r) => r.id === "img-old")).toBeUndefined();
+  });
+
+  it("refuses once the photo is published, or while the board is processing", async () => {
+    await expect(redrawItem(scan(), { ...first(), image_review: "approved" }, { x: 0.1, y: 0.1, w: 0.2, h: 0.2 })).rejects.toThrow(/already published/);
+    await expect(redrawItem({ ...scan(), status: "matching" }, first(), { x: 0.1, y: 0.1, w: 0.2, h: 0.2 })).rejects.toThrow(/still being processed/);
   });
 });
 

@@ -1,0 +1,76 @@
+diff --git a/.github/scripts/agent-review.mjs b/.github/scripts/agent-review.mjs
+index 34cfe21..6bca864 100644
+--- a/.github/scripts/agent-review.mjs
++++ b/.github/scripts/agent-review.mjs
+@@ -24,6 +24,36 @@ const MAX_DIFF_CHARS = 350_000;
+ const MAX_IMAGES = 16;
+ const MAX_IMAGE_BYTES = 4_000_000;
+ 
++// The review starts the moment a PR opens or changes, alongside CI. Reviewing
++// before CI has reported made QA fail PRs only for "CI still running", so wait
++// (up to CI_WAIT_MS) for the other checks on this head to finish first.
++const CI_WAIT_MS = 12 * 60_000;
++const CI_POLL_MS = 20_000;
++/** Check runs this workflow or the merge gate publish: never waited for. */
++export const OWN_CHECKS = ['Agent review', 'QA review', 'Security review', 'Merge gate', 'Merge gate sweep'];
++/** Checks CI always creates for a PR; missing ones count as not finished yet. */
++export const EXPECTED_CI_CHECKS = ['Typecheck and tests'];
++
++/** Names of the CI checks on a head that haven't finished (or haven't started). */
++export function pendingCiChecks(runs) {
++  const others = runs.filter(r => !OWN_CHECKS.includes(r.name));
++  const running = others.filter(r => r.status !== 'completed').map(r => r.name);
++  const missing = EXPECTED_CI_CHECKS.filter(name => !others.some(r => r.name === name));
++  return [...new Set([...running, ...missing])];
++}
++
++/** The head's check runs once CI has finished, or as they are at the deadline. */
++export async function waitForCi(fetchRuns, { waitMs = CI_WAIT_MS, pollMs = CI_POLL_MS, now = Date.now, sleep = ms => new Promise(r => setTimeout(r, ms)) } = {}) {
++  const deadline = now() + waitMs;
++  for (;;) {
++    const runs = await fetchRuns();
++    const pending = pendingCiChecks(runs);
++    if (pending.length === 0 || now() >= deadline) return runs;
++    console.log(`Waiting for CI before reviewing: ${pending.join(', ')}`);
++    await sleep(pollMs);
++  }
++}
++
+ export const QA_SCHEMA = {
+   type: 'object',
+   additionalProperties: false,
+@@ -211,7 +241,7 @@ async function main() {
+         if (!c.performed_via_github_app && c.user?.type !== 'Bot' && c.author_association === 'OWNER') maintainerComments.push(`#${issue.number} ${c.created_at}: ${c.body}`);
+       }
+     }
+-    const { check_runs: runs } = await gh(`/repos/${REPO}/commits/${sha}/check-runs?per_page=100`);
++    const runs = await waitForCi(async () => (await gh(`/repos/${REPO}/commits/${sha}/check-runs?per_page=100`)).check_runs);
+     const ciSummary = runs.filter(r => !['QA review', 'Security review', 'Merge gate'].includes(r.name)).map(r => `${r.name}: ${r.conclusion ?? r.status}`).join('\n');
+     const changed = files.flatMap(f => [f.filename, f.previous_filename].filter(Boolean));
+     const needsSecurity = securityRequired({ files: changed, issueLabels: issues.flatMap(labelNames), prLabels: labelNames(pr), paths });
+diff --git a/.github/scripts/merge.test.mjs b/.github/scripts/merge.test.mjs
+index a344243..fb91409 100644
+--- a/.github/scripts/merge.test.mjs
++++ b/.github/scripts/merge.test.mjs
+@@ -152,3 +152,21 @@ test('latest run per check follows check-suite order, like branch protection', (
+   const rerun = [...runs, { id: 114920264436, name: 'Agent rules', status: 'completed', conclusion: 'success', check_suite: { id: 103719000000 } }];
+   assert.equal(gate.latestRuns(rerun).get('Agent rules').conclusion, 'success');
+ });
++
++test('the review waits for CI to finish before reviewing', async () => {
++  const r = (name, status = 'completed') => ({ name, status, conclusion: status === 'completed' ? 'success' : null });
++  assert.deepEqual(review.pendingCiChecks([r('Agent review', 'in_progress'), r('QA review', 'in_progress')]), ['Typecheck and tests'], 'CI not started yet');
++  assert.deepEqual(review.pendingCiChecks([r('Typecheck and tests', 'in_progress'), r('Agent rules')]), ['Typecheck and tests']);
++  assert.deepEqual(review.pendingCiChecks([r('Typecheck and tests'), r('Agent rules'), r('Agent review', 'in_progress')]), [], 'own run ignored');
++
++  let t = 0;
++  const calls = [];
++  const states = [[r('Typecheck and tests', 'queued')], [r('Typecheck and tests', 'in_progress')], [r('Typecheck and tests')]];
++  const runs = await review.waitForCi(async () => { calls.push(t); return states[Math.min(calls.length - 1, 2)]; }, { waitMs: 600_000, pollMs: 20_000, now: () => t, sleep: async ms => { t += ms; } });
++  assert.equal(calls.length, 3);
++  assert.equal(runs[0].status, 'completed');
++
++  t = 0;
++  const stuck = await review.waitForCi(async () => [r('Typecheck and tests', 'in_progress')], { waitMs: 60_000, pollMs: 20_000, now: () => t, sleep: async ms => { t += ms; } });
++  assert.equal(stuck[0].status, 'in_progress', 'gives up at the deadline and reviews what it has');
++});

@@ -2,7 +2,7 @@ import request from "supertest";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 // Gates for the bulk image matcher routes. All upstreams are mocked.
-const state = vi.hoisted(() => ({ isAppCreator: true, inserted: [] as unknown[], pageCalls: [] as unknown[] }));
+const state = vi.hoisted(() => ({ isAppCreator: true, inserted: [] as unknown[], pageCalls: [] as unknown[], items: [] as Array<Record<string, unknown>> }));
 
 vi.mock("@workspace/pin-repository", async (importOriginal) => {
   const real = await importOriginal<typeof import("@workspace/pin-repository")>();
@@ -21,7 +21,7 @@ vi.mock("@workspace/pin-repository", async (importOriginal) => {
 vi.mock("@supabase/supabase-js", () => ({
   createClient: () => ({
     auth: { getUser: async () => ({ data: { user: { id: "creator-1" } }, error: null }) },
-    from: (table: string) => ({
+    from: (table: string) => table === "bulk_image_items" ? itemsTable() : ({
       select: () => ({
         eq: () => ({ single: async () => ({ data: { is_app_creator: state.isAppCreator }, error: null }) }),
         in: async () => ({ data: [], error: null }),
@@ -33,6 +33,26 @@ vi.mock("@supabase/supabase-js", () => ({
     }),
   }),
 }));
+
+/** Just enough of bulk_image_items for "Match again": load one, conditional update. */
+function itemsTable() {
+  const filters: Array<[string, unknown]> = [];
+  let patch: Record<string, unknown> | null = null;
+  const rows = () => state.items.filter((r) => filters.every(([k, v]) => r[k] === v));
+  const q = {
+    select: () => q,
+    update: (p: Record<string, unknown>) => { patch = p; return q; },
+    eq: (k: string, v: unknown) => { filters.push([k, v]); return q; },
+    in: () => q,
+    maybeSingle: async () => ({ data: rows()[0] ?? null, error: null }),
+    then: (resolve: (v: unknown) => void) => {
+      const hit = rows();
+      if (patch) for (const r of hit) Object.assign(r, patch);
+      resolve({ data: hit.map((r) => ({ id: r.id })), error: null });
+    },
+  };
+  return q;
+}
 
 import app from "../app";
 import { summarise } from "./bulk-images";
@@ -92,6 +112,22 @@ describe("bulk image matcher routes", () => {
     // Without a set: the plain search, as before.
     const plain = await request(app).get("/api/admin/bulk-images/search").query({ q: "lumiere" }).set("Authorization", "Bearer t");
     expect(plain.body).toMatchObject({ more: false, results: [{ pinhuntId: "PHUK-10000003" }] });
+  });
+
+  it("Match again sends an undecided photo back to be matched, and refuses confirmed or busy ones", async () => {
+    state.items = [
+      { id: "u1", batch_id: "B", status: "unmatched", match_attempts: 1, error: null },
+      { id: "c1", batch_id: "B", status: "confirmed", match_attempts: 1 },
+      { id: "m1", batch_id: "B", status: "matching", match_attempts: 1 },
+    ];
+    const again = (id: string) => request(app).post(`/api/admin/bulk-images/items/${id}/rematch`).set("Authorization", "Bearer t");
+    const res = await again("u1");
+    expect(res.status).toBe(200);
+    expect(state.items[0]).toMatchObject({ status: "uploaded", match_attempts: 0 });
+    expect((await again("c1")).status).toBe(409);
+    expect(state.items[1].status).toBe("confirmed");
+    expect((await again("m1")).body.error).toMatch(/already being matched/);
+    expect((await again("nope")).status).toBe(404);
   });
 
   it("public display defaults to not permitted", async () => {

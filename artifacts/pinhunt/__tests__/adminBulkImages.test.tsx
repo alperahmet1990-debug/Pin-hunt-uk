@@ -92,6 +92,17 @@ describe('admin bulk image matcher', () => {
   });
 });
 
+describe('match again', () => {
+  it('sends the photo back to be matched and moves on to the next', async () => {
+    await render(<BulkImageBatchScreen />);
+    await screen.findByText('Castle Mickey');
+    await fireEvent.press(screen.getByText('Match again'));
+    await waitFor(() => expect(fetchMock.mock.calls.some(([u, i]) => String(u).endsWith('/items/a/rematch') && i?.method === 'POST')).toBe(true));
+    // The next photo in the queue is shown.
+    expect(await screen.findByText('Minnie Macaron')).toBeTruthy();
+  });
+});
+
 describe('crop & clean (pin photographed on a board)', () => {
   it('sends the box drawn around the pin, as fractions of the photo', async () => {
     jest.spyOn(Image, 'getSize').mockImplementation((_uri, ok) => ok(1000, 800));

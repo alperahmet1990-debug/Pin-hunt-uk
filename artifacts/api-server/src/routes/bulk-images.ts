@@ -26,6 +26,7 @@
  *   POST /admin/bulk-images/items/:id/reclean       reject the Pixian result, clean again
  *   POST /admin/bulk-images/items/:id/crop          { box } crop to the pin, then clean again
  *   POST /admin/bulk-images/items/:id/retry         retry the failed stage only
+ *   POST /admin/bulk-images/items/:id/rematch       match an undecided photo again from the start
  *   POST /admin/bulk-images/items/:id/publish       { replaceExisting? }
  * Search
  *   GET  /admin/bulk-images/search?q=&set=&offset=  manual catalogue search; with set, browse it 30 at a time
@@ -652,6 +653,35 @@ router.post("/admin/bulk-images/items/:id/retry", guard, async (req, res) => {
     if (error) throw new Error(error.message);
     if (to !== "cleaned") void kick(item.batch_id, [to === "uploaded" ? "match" : "clean"]).catch(() => {});
     res.json({ status: to });
+  } catch (err) { fail(res, err); }
+});
+
+/** Photos "Match again" can send back to be matched: not yet decided. */
+export const REMATCHABLE = ["suggested", "unmatched", "flagged", "skipped"];
+
+/**
+ * Match one photo again from the start, e.g. after the batch's sets changed,
+ * matching improved, or the first answer was clearly wrong. Only for photos
+ * not yet confirmed. Counts against the daily AI budget like any match.
+ */
+router.post("/admin/bulk-images/items/:id/rematch", guard, async (req, res) => {
+  try {
+    const item = await loadItem(String(req.params.id));
+    if (!item) { res.status(404).json({ error: "Item not found" }); return; }
+    if (!REMATCHABLE.includes(item.status)) {
+      res.status(409).json({ error: item.status === "matching" || item.status === "uploaded"
+        ? "This photo is already being matched."
+        : "Only a photo that isn't confirmed yet can be matched again." });
+      return;
+    }
+    const { data, error } = await getServiceClient().from("bulk_image_items")
+      .update({ status: "uploaded", match_attempts: 0, failed_stage: null, error: null })
+      .eq("id", item.id).eq("status", item.status)
+      .select("id");
+    if (error) throw new Error(error.message);
+    if (!data?.length) { res.status(409).json({ error: "This photo changed meanwhile. Reload and try again." }); return; }
+    void kick(item.batch_id, ["match"]).catch(() => {});
+    res.json({ status: "uploaded" });
   } catch (err) { fail(res, err); }
 });
 

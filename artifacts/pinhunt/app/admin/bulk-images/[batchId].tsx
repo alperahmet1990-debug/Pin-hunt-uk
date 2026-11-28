@@ -580,6 +580,8 @@ function ReviewPanel({ items, patchItem, reload }: {
   }, [act]);
   const skip = useCallback(() => act('skip', {}, { status: 'skipped' }), [act]);
   const flag = useCallback(() => act('flag', {}, { status: 'flagged' }), [act]);
+  /** Back to the matching queue: it leaves Review and comes back once matched again. */
+  const matchAgain = useCallback(() => act('rematch', {}, { status: 'uploaded' }), [act]);
 
   const search = useCallback(async () => {
     if (query.trim().length < 2) return;
@@ -699,6 +701,7 @@ function ReviewPanel({ items, patchItem, reload }: {
               onPress={() => confirm(candidates[selected])} disabled={busy || candidates.length === 0} />
             <Btn icon="skip-forward" label="Skip" onPress={skip} disabled={busy} />
             <Btn icon="flag" label="Flag as uncertain" onPress={flag} disabled={busy || detail.item.status === 'flagged'} />
+            <Btn icon="refresh-cw" label="Match again" onPress={matchAgain} disabled={busy} />
           </View>
           {actionError && <Text style={{ color: colors.destructive, fontSize: 13 }}>{actionError}</Text>}
 

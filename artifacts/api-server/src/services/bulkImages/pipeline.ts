@@ -40,7 +40,7 @@ const STALE_CLAIM_MS = 10 * 60_000;
 export interface PipelineDeps {
   db: SupabaseClient;
   /** Match one photo; `sets` are searched first (the batch's set hints). */
-  match: (photo: Buffer, ctx?: { sets?: string[] }) => Promise<BulkMatchResult>;
+  match: (photo: Buffer, ctx?: { sets?: string[]; original?: Buffer }) => Promise<BulkMatchResult>;
   /** Reserve a match's AI calls in the daily budget (default: migration 087's bulk_reserve_ai_calls). */
   reserve?: (calls: number) => Promise<Reservation>;
   clean: (photo: Buffer) => Promise<Buffer>;
@@ -176,8 +176,9 @@ export async function matchItem(
   }
 
   try {
-    const photo = await forMatching(await download(deps.db, item.original_path));
-    const result = await deps.match(photo, sets.length ? { sets } : undefined);
+    const original = await download(deps.db, item.original_path);
+    const photo = await forMatching(original);
+    const result = await deps.match(photo, { ...(sets.length ? { sets } : {}), original });
     const status = result.band === "none" || result.candidates.length === 0 ? "unmatched" : "suggested";
     const { error } = await deps.db.from("bulk_image_items").update({
       status,

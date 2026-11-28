@@ -21,6 +21,8 @@ Upload a batch of individual pin photos â†’ review suggested catalogue matches â
 
 **Pin & Pop.** Reference images are used only for internal matching and are shown only to the App Creator, labelled "admin only". They are never stored in these tables or this bucket, and never published.
 
+**Pins photographed small** (e.g. on a table): when the describe step finds the pin filling under half the frame, matching uses the pin cut out of the full-size photo (10% margin, sized to 1280 px), not the whole frame. The look-alike search and the picture check then see the pin rather than mostly background. Close-ups are matched as they are. No extra AI calls. The photo's description records `matchedOnCrop: true`.
+
 ## Sets and the accuracy check (migration 086)
 
 Both need `supabase/migrations/086_bulk_batch_stats.sql` (one `stats` column on `bulk_image_batches`). Without it, matching and review work as before. Naming a set, set learning and saving an accuracy report fail with a column error, and set learning only logs a warning.

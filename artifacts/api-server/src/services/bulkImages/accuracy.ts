@@ -39,7 +39,7 @@ export const batchAccuracyRunning = (batchId: string) => running.has(batchId);
 
 export interface BatchAccuracyDeps {
   db: SupabaseClient;
-  match: (photo: Buffer, ctx?: { sets?: string[] }) => Promise<BulkMatchResult>;
+  match: (photo: Buffer, ctx?: { sets?: string[]; original?: Buffer }) => Promise<BulkMatchResult>;
   reserve?: (calls: number) => Promise<Reservation>;
   env?: NodeJS.ProcessEnv;
 }
@@ -70,8 +70,9 @@ export async function checkBatchAccuracy(batchId: string, deps: BatchAccuracyDep
       const budget = await reserveFor(deps, CALLS_PER_MATCH);
       if (!budget.allowed) { stopped = budget.reason; break; }
       try {
-        const photo = await forMatching(await download(deps.db, item.original_path));
-        const result = await inMatchSlot(() => deps.match(photo, sets.length ? { sets } : undefined));
+        const original = await download(deps.db, item.original_path);
+        const photo = await forMatching(original);
+        const result = await inMatchSlot(() => deps.match(photo, { ...(sets.length ? { sets } : {}), original }));
         const at = result.candidates.findIndex((c) => c.pinhuntId === item.matched_pinhunt_id);
         const top = result.candidates[0];
         results.push({ item, rank: at >= 0 ? at + 1 : null, got: top ? { pinhuntId: top.pinhuntId, title: top.title, confidence: top.confidence } : null });

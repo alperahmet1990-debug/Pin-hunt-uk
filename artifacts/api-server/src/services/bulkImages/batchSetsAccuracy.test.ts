@@ -61,7 +61,7 @@ describe("batch sets", () => {
     await fake.db.storage.from(BUCKET).upload("B/a/original.jpg", await photo());
     const match = vi.fn(async () => result(["PHUK-1"]));
     await matchItem({ id: "a", original_path: "B/a/original.jpg", match_attempts: 0 }, { db: fake.db, match, clean: vi.fn() }, ["Beauty and the Beast"]);
-    expect(match).toHaveBeenCalledWith(expect.any(Buffer), { sets: ["Beauty and the Beast"] });
+    expect(match).toHaveBeenCalledWith(expect.any(Buffer), expect.objectContaining({ sets: ["Beauty and the Beast"], original: expect.any(Buffer) }));
   });
 });
 
@@ -94,7 +94,7 @@ describe("batch accuracy check", () => {
       { itemId: "c", filename: "c.jpg", expected: { pinhuntId: "PHUK-3", title: null }, got: { pinhuntId: "PHUK-8", title: "Pin PHUK-8", confidence: 90 }, rank: null },
     ]);
     // The batch's sets were searched first, and nothing about the photos changed.
-    expect(match).toHaveBeenCalledWith(expect.any(Buffer), { sets: ["Beauty and the Beast"] });
+    expect(match).toHaveBeenCalledWith(expect.any(Buffer), expect.objectContaining({ sets: ["Beauty and the Beast"], original: expect.any(Buffer) }));
     expect(JSON.stringify(fake.tables.bulk_image_items)).toBe(before);
     // Saved on the batch, next to its sets.
     expect(readStats(fake.tables.bulk_image_batches[0].stats)).toMatchObject({ setHints: ["Beauty and the Beast"], accuracy: { checked: 3, top1: 1 } });

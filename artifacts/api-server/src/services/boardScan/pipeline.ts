@@ -137,9 +137,18 @@ async function cropSource(scan: BoardScan, board: Buffer): Promise<CropSource> {
   return { image: board, width: scan.image_width, height: scan.image_height };
 }
 
+/**
+ * Padding around a crop, as a fraction of the box's own size on each side.
+ * Detected boxes tend to be a little tight, so they get 6%. A box the
+ * reviewer drew or adjusted is where they want it: only 1.5%, so rounding
+ * can't shave the outline, and a tall box doesn't reach into the pin above.
+ */
+export const DETECTED_CROP_PAD = 0.06;
+export const DRAWN_CROP_PAD = 0.015;
+
 /** Cut, check and store one pin's crop from the board. */
-async function cropFields(scan: BoardScan, src: CropSource, cropPath: string, box: Box, flags: Pick<DetectedPin, "occluded" | "partial" | "glare">) {
-  const crop = await cropBox(src.image, src.width, src.height, box);
+async function cropFields(scan: BoardScan, src: CropSource, cropPath: string, box: Box, flags: Pick<DetectedPin, "occluded" | "partial" | "glare">, pad = DETECTED_CROP_PAD) {
+  const crop = await cropBox(src.image, src.width, src.height, box, pad);
   const [quality, dhash] = await Promise.all([
     assessCrop(crop, box, src.width, src.height, flags),
     differenceHash(crop),
@@ -154,7 +163,7 @@ async function makeItem(scan: BoardScan, src: CropSource, position: number, pin:
     board_scan_id: scan.id,
     position,
     origin,
-    ...(await cropFields(scan, src, cropPath, pin.box, pin)),
+    ...(await cropFields(scan, src, cropPath, pin.box, pin, origin === "manual" ? DRAWN_CROP_PAD : DETECTED_CROP_PAD)),
     detection: { characters: pin.characters, keywords: pin.keywords, text: pin.text, occluded: pin.occluded, partial: pin.partial, glare: !!pin.glare },
   };
 }
@@ -516,42 +525,46 @@ export async function addManualItem(scan: BoardScan, box: Box, pinhuntId?: strin
   return item;
 }
 
+/** Most boxes saved in one go. */
+export const MAX_BOX_EDITS = 50;
+
 /**
- * The reviewer redrew a pin's box: cut the crop again from the new box, drop
- * anything made from the old crop (match, cleaned photo, a pending photo
- * record), and match it again. The box is kept exactly as drawn (no
- * tightening). Refused once the photo is published or while the board is
- * processing.
+ * The reviewer adjusted one or more pins' boxes. Each is cut again from its
+ * new box (kept exactly as drawn), and anything made from the old crop is
+ * dropped (match, cleaned photo, a pending photo record). Re-matching runs
+ * in the background through the board queue, so saving returns quickly.
+ * Refused, for all of them, if any photo is already published or the board
+ * is still processing.
  */
-export async function redrawItem(scan: BoardScan, item: BoardScanItem, box: Box): Promise<BoardScanItem> {
-  if (item.image_review === "approved") throw new ReviewError("This photo is already published; its box can't change.");
+export async function redrawItems(scan: BoardScan, edits: Array<{ item: BoardScanItem; box: Box }>): Promise<BoardScanItem[]> {
+  if (edits.length === 0) return [];
+  if (edits.length > MAX_BOX_EDITS) throw new ReviewError(`At most ${MAX_BOX_EDITS} boxes can be saved at once.`);
+  const published = edits.find((e) => e.item.image_review === "approved");
+  if (published) throw new ReviewError(`#${published.item.position}'s photo is already published; its box can't change.`);
   if (isRunning(scan.id) || store.PROCESSING_STATUSES.includes(scan.status)) {
     throw new ReviewError("The board is still being processed. Try again when it's finished.", 409);
   }
   const board = await store.downloadObject(store.BOARD_BUCKET, scan.image_path);
   const src = await cropSource(scan, board);
-  const flags = { occluded: false, partial: false, glare: !!item.detection?.glare };
-  const cropPath = item.crop_path ?? `${scan.id}/crops/${String(item.position).padStart(3, "0")}.jpg`;
-  const crop = await cropFields(scan, src, cropPath, box, flags);
-  await store.removePendingBoardImages([item.id]);
-  const base = item.detection ?? { characters: [], keywords: [], text: "", occluded: false, partial: false };
-  const patch: Partial<BoardScanItem> = {
-    ...crop,
-    // Described again from the new crop; a drawn box is kept as drawn.
-    origin: "manual",
-    detection: { ...base, occluded: false, partial: false, described: false },
-    match_status: "pending", candidates: [], suggested_pin_id: null, match_confidence: null, pin_has_image: null,
-    decision: "undecided", decided_pin_id: null, exclude_reason: null,
-    cleanup_status: "none", cleanup_note: null, cleaned_path: null, image_review: "none", pin_image_id: null,
-    attempts: 0, error: null,
-  };
-  let updated = await store.updateItem(item.id, { ...patch, priority: itemPriority({ ...item, ...patch }) });
-  if (isAiConfigured()) {
-    const usage = emptyUsage();
-    updated = await matchItem(scan, null, updated, usage);
-    const fresh = (await store.getScan(scan.id)) ?? scan;
-    await store.updateScan(scan.id, { stats: mergeUsage(fresh.stats ?? {}, usage) });
-  }
+  await store.removePendingBoardImages(edits.map((e) => e.item.id));
+  const updated = await mapLimit(edits, src.image === board ? 4 : 2, async ({ item, box }) => {
+    const flags = { occluded: false, partial: false, glare: !!item.detection?.glare };
+    const cropPath = item.crop_path ?? `${scan.id}/crops/${String(item.position).padStart(3, "0")}.jpg`;
+    const crop = await cropFields(scan, src, cropPath, box, flags, DRAWN_CROP_PAD);
+    const base = item.detection ?? { characters: [], keywords: [], text: "", occluded: false, partial: false };
+    const patch: Partial<BoardScanItem> = {
+      ...crop,
+      // Described again from the new crop; a drawn box is kept as drawn.
+      origin: "manual",
+      detection: { ...base, occluded: false, partial: false, described: false },
+      match_status: "pending", candidates: [], suggested_pin_id: null, match_confidence: null, pin_has_image: null,
+      decision: "undecided", decided_pin_id: null, exclude_reason: null,
+      cleanup_status: "none", cleanup_note: null, cleaned_path: null, image_review: "none", pin_image_id: null,
+      attempts: 0, error: null,
+    };
+    return store.updateItem(item.id, { ...patch, priority: itemPriority({ ...item, ...patch }) });
+  });
+  if (isAiConfigured()) enqueue(scan.id);
   return updated;
 }
 

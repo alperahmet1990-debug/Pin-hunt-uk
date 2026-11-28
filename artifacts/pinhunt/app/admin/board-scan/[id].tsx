@@ -135,10 +135,11 @@ export function boardPoint(
  * On-screen size of the board view: as wide as the space allows, but never
  * taller than a share of the window (min 220 pt), keeping the proportions.
  * Reviewing: 60% of the window, at most 640 pt, so the pin cards stay in
- * view. Drawing a box: 85%, at most 1000 pt, so corners are easy to tap.
+ * view. Drawing or adjusting: 72%, at most 1000 pt, so corners are easy to
+ * reach while the controls above the board stay on screen too.
  */
 export const BOARD_VIEW = { share: 0.6, maxHeight: 640 } as const;
-export const BOARD_DRAWING_VIEW = { share: 0.85, maxHeight: 1000 } as const;
+export const BOARD_DRAWING_VIEW = { share: 0.72, maxHeight: 1000 } as const;
 export const BOARD_MIN_HEIGHT = 220;
 
 export function fitBoard(
@@ -212,6 +213,21 @@ export function adjustBox(start: Box, handle: BoxHandle, dx: number, dy: number)
   return { x: left, y: top, w: right - left, h: bottom - top };
 }
 
+/** Whether a pin's box can still be adjusted: not excluded, photo not published. */
+export function boxEditable(i: { decision: string; image_review: string }): boolean {
+  return i.decision !== 'excluded' && i.image_review !== 'approved';
+}
+
+export function sameBox(a: Box, b: Box): boolean {
+  const eq = (p: number, q: number) => Math.abs(p - q) < 1e-6;
+  return eq(a.x, b.x) && eq(a.y, b.y) && eq(a.w, b.w) && eq(a.h, b.h);
+}
+
+/** The boxes that were actually changed while adjusting, in board order, ready to save. */
+export function changedBoxEdits(items: Array<{ id: string; box: Box }>, boxes: Record<string, Box>): Array<{ itemId: string; box: Box }> {
+  return items.filter((i) => boxes[i.id] && !sameBox(boxes[i.id], i.box)).map((i) => ({ itemId: i.id, box: boxes[i.id] }));
+}
+
 /** One draggable part of the box being adjusted: reports how far it was dragged, in points. */
 function DragHandle({ style, onStart, onMove, label }: {
   style: object; onStart: () => void; onMove: (dx: number, dy: number) => void; label: string;
@@ -253,7 +269,8 @@ export default function AdminBoardScanScreen() {
   const [drawing, setDrawing] = useState<{ x: number; y: number } | null | 'armed'>(null);
   const [searchFor, setSearchFor] = useState<{ itemId: string } | { box: Box } | null>(null);
   /** The pin whose box is being adjusted, and the box so far (fractions of the photo). */
-  const [editing, setEditing] = useState<{ itemId: string; box: Box } | null>(null);
+  /** Adjusting boxes: every editable pin's box so far (fractions of the photo), and the one with corner handles. */
+  const [editing, setEditing] = useState<{ boxes: Record<string, Box>; active: string | null } | null>(null);
   const dragStart = useRef<Box | null>(null);
   const pageRef = useRef<ScrollView>(null);
   /** A picture opened full size (tap any picture on a card). */
@@ -326,22 +343,26 @@ export default function AdminBoardScanScreen() {
     }
     await load();
   });
-  const saveBox = () => {
-    if (!editing) return;
-    const { itemId, box } = editing;
-    return act(`${itemId}:box`, async () => {
-      await api(`/${id}/items/${itemId}/box`, { method: 'POST', body: JSON.stringify({ box }) });
+  const changedBoxes = editing && data ? changedBoxEdits(data.items, editing.boxes) : [];
+  const saveBoxes = () => {
+    if (!changedBoxes.length) { setEditing(null); return; }
+    const boxes = changedBoxes;
+    return act('boxes', async () => {
+      await api(`/${id}/boxes`, { method: 'POST', body: JSON.stringify({ boxes }) });
       setEditing(null);
-      setNotice('Box saved. The pin was cropped and matched again.');
+      setNotice(`Saved ${boxes.length} box${boxes.length === 1 ? '' : 'es'}. Re-matching ${boxes.length === 1 ? 'it' : 'them'} now; the cards update by themselves.`);
       await load();
     });
   };
-  const startAdjust = (item: { id: string; box: Box }) => {
+  /** Adjust boxes: every pin that can still change gets a draggable box; `focus` gets the corner handles first. */
+  const startAdjust = (focus: string | null = null) => {
+    if (!data) return;
     setDrawing(null);
-    setEditing({ itemId: item.id, box: item.box });
-    setSelected(item.id);
+    const boxes = Object.fromEntries(data.items.filter(boxEditable).map((i) => [i.id, i.box]));
+    setEditing({ boxes, active: focus && boxes[focus] ? focus : null });
+    if (focus) setSelected(focus);
     setNotice(null);
-    pageRef.current?.scrollTo({ y: 0, animated: true });
+    // The toolbar scrolls itself to the top once it's laid out (onLayout below).
   };
   const clean = (itemId: string) => act(`${itemId}:clean`, async () => {
     const r = await api(`/${id}/items/${itemId}/clean`, { method: 'POST', body: JSON.stringify({ force: true }) });
@@ -558,6 +579,21 @@ export default function AdminBoardScanScreen() {
           {notice ? <Text style={[styles.small, { color: colors.homeInk }]}>{notice}</Text> : null}
         </View>
 
+        {/* While adjusting, Save / Cancel sit above the (now larger) board so they stay in view. */}
+        {editing ? (
+          <View
+            style={styles.actions}
+            // Bring the controls and the whole board into view together.
+            onLayout={(e: LayoutChangeEvent) => pageRef.current?.scrollTo({ y: Math.max(0, e.nativeEvent.layout.y - 8), animated: true })}
+          >
+            <Text style={[styles.small, { color: colors.homeInk, flexBasis: '100%' }]}>
+              Tap a box to get its corner handles, drag a corner to resize, or drag the middle to move it. Change as many as you like, then save once.
+            </Text>
+            {btn('boxes', busy === 'boxes' ? 'Saving…' : changedBoxes.length ? `Save ${changedBoxes.length} box${changedBoxes.length === 1 ? '' : 'es'}` : 'Done', () => { void saveBoxes(); }, 'primary')}
+            {btn('box-cancel', 'Cancel', () => setEditing(null))}
+            {zoomed || showWhole ? btn('zoom-edit', showWhole ? 'Zoom to pins' : 'Show whole photo', () => setShowWhole((v) => !v)) : null}
+          </View>
+        ) : null}
         {/* Board with outlines */}
         {scan.imageUrl ? (
           <View style={{ alignItems: 'center' }} onLayout={(e: LayoutChangeEvent) => setBoardAreaWidth(e.nativeEvent.layout.width)}>
@@ -571,7 +607,7 @@ export default function AdminBoardScanScreen() {
                     left: (-region.x * boardWidth) / region.w, top: (-region.y * boardHeight) / region.h,
                   }}
                 />
-                {data.items.filter((i) => i.id !== editing?.itemId).map((i) => ({ i, v: photoToView(region, i.box) })).map(({ i, v }) => (
+                {data.items.filter((i) => !editing?.boxes[i.id]).map((i) => ({ i, v: photoToView(region, i.box) })).map(({ i, v }) => (
                   <Pressable
                     key={i.id}
                     disabled={!!drawing || !!editing}
@@ -588,32 +624,49 @@ export default function AdminBoardScanScreen() {
                     <Text style={[styles.tag, { backgroundColor: outline(i) }]}>{i.position}</Text>
                   </Pressable>
                 ))}
-                {editing ? (() => {
-                  const v = photoToView(region, editing.box);
+                {editing ? data.items.filter((i) => editing.boxes[i.id]).map((i) => {
+                  const box = editing.boxes[i.id];
+                  const v = photoToView(region, box);
                   const L = v.x * boardWidth; const T = v.y * boardHeight; const W = v.w * boardWidth; const H = v.h * boardHeight;
+                  const active = editing.active === i.id;
+                  const changed = !sameBox(box, i.box);
                   const drag = (handle: BoxHandle) => ({
-                    onStart: () => { dragStart.current = editing.box; },
+                    onStart: () => {
+                      dragStart.current = box;
+                      setEditing((e) => e && { ...e, active: i.id });
+                      setSelected(i.id);
+                    },
                     onMove: (dx: number, dy: number) => {
-                      const start = dragStart.current ?? editing.box;
-                      setEditing((e) => e && { ...e, box: adjustBox(start, handle, (dx / boardWidth) * region.w, (dy / boardHeight) * region.h) });
+                      const start = dragStart.current ?? box;
+                      const next = adjustBox(start, handle, (dx / boardWidth) * region.w, (dy / boardHeight) * region.h);
+                      setEditing((e) => e && { ...e, boxes: { ...e.boxes, [i.id]: next } });
                     },
                   });
                   const corner = (handle: BoxHandle, cx: number, cy: number, label: string) => (
-                    <DragHandle key={handle} label={label} {...drag(handle)}
+                    <DragHandle key={`${i.id}:${handle}`} label={`#${i.position}: ${label}`} {...drag(handle)}
                       style={[styles.handle, { left: cx - 11, top: cy - 11 }, Platform.OS === 'web' ? ({ cursor: handle === 'tl' || handle === 'br' ? 'nwse-resize' : 'nesw-resize' } as object) : null]} />
                   );
+                  const colour = changed ? '#E0A100' : outline(i);
                   return (
-                    <>
-                      <DragHandle label="Move the box" {...drag('move')}
-                        style={[{ position: 'absolute', left: L, top: T, width: W, height: H, borderWidth: 3, borderColor: '#E0A100', borderRadius: 4, backgroundColor: 'rgba(224,161,0,0.12)' },
-                          Platform.OS === 'web' ? ({ cursor: 'move' } as object) : null]} />
-                      {corner('tl', L, T, 'Drag the top-left corner')}
-                      {corner('tr', L + W, T, 'Drag the top-right corner')}
-                      {corner('bl', L, T + H, 'Drag the bottom-left corner')}
-                      {corner('br', L + W, T + H, 'Drag the bottom-right corner')}
-                    </>
+                    <React.Fragment key={i.id}>
+                      <DragHandle label={`Move #${i.position}'s box`} {...drag('move')}
+                        style={[{
+                          position: 'absolute', left: L, top: T, width: W, height: H, borderRadius: 4,
+                          borderWidth: active ? 3 : 2, borderColor: colour,
+                          backgroundColor: active ? 'rgba(224,161,0,0.14)' : 'transparent',
+                        }, Platform.OS === 'web' ? ({ cursor: 'move' } as object) : null]} />
+                      <Text pointerEvents="none" style={[styles.tag, { left: L + (active ? 14 : -2), top: T + (active ? 4 : -2), backgroundColor: colour }]}>{i.position}</Text>
+                      {active ? (
+                        <>
+                          {corner('tl', L, T, 'Drag the top-left corner')}
+                          {corner('tr', L + W, T, 'Drag the top-right corner')}
+                          {corner('bl', L, T + H, 'Drag the bottom-left corner')}
+                          {corner('br', L + W, T + H, 'Drag the bottom-right corner')}
+                        </>
+                      ) : null}
+                    </React.Fragment>
                   );
-                })() : null}
+                }) : null}
                 {drawing && drawing !== 'armed' ? (
                   <View style={[styles.dot, { left: ((drawing.x - region.x) / region.w) * boardWidth - 5, top: ((drawing.y - region.y) / region.h) * boardHeight - 5 }]} />
                 ) : null}
@@ -622,18 +675,15 @@ export default function AdminBoardScanScreen() {
           </View>
         ) : null}
         <View style={styles.actions}>
-          {editing ? (
-            <>
-              <Text style={[styles.small, { color: colors.homeInk, flexBasis: '100%' }]}>
-                Adjusting #{data.items.find((x) => x.id === editing.itemId)?.position}: drag a corner to resize, or the middle to move it.
-              </Text>
-              {btn(`${editing.itemId}:box`, busy === `${editing.itemId}:box` ? 'Saving…' : 'Save box', () => { void saveBox(); }, 'primary')}
-              {btn('box-cancel', 'Cancel', () => setEditing(null))}
-            </>
-          ) : drawing
+          {editing ? null : drawing
             ? btn('draw', drawPrompt(drawing), () => setDrawing(null))
-            : btn('draw', 'Add a missed pin', () => setDrawing('armed'), 'plain', processing)}
-          {zoomed || showWhole
+            : (
+              <>
+                {btn('adjust', 'Adjust boxes', () => startAdjust(), 'plain', processing || !data.items.some(boxEditable))}
+                {btn('draw', 'Add a missed pin', () => setDrawing('armed'), 'plain', processing)}
+              </>
+            )}
+          {!editing && (zoomed || showWhole)
             ? btn('zoom', showWhole ? 'Zoom to pins' : 'Show whole photo', () => setShowWhole((v) => !v))
             : null}
         </View>
@@ -775,7 +825,7 @@ export default function AdminBoardScanScreen() {
                         : btn(`${i.id}:confirm`, 'Confirm match', () => patch(i.id, { action: 'confirm' }), 'primary')
                       : null}
                     {btn(`${i.id}:search`, target ? 'Change pin' : 'Choose pin', () => setSearchFor({ itemId: i.id }))}
-                    {btn(`${i.id}:adjust`, 'Adjust box', () => startAdjust(i), 'plain', processing || !!drawing || !!editing)}
+                    {btn(`${i.id}:adjust`, 'Adjust box', () => startAdjust(i.id), 'plain', processing || !!drawing || !!editing)}
                     {scan.permission_public_display && i.cleanup_status !== 'done' && target && data.config.pixianConfigured
                       ? btn(`${i.id}:clean`, 'Clean photo', () => clean(i.id)) : null}
                     {i.cleanup_status === 'done' && i.image_review === 'none' ? (

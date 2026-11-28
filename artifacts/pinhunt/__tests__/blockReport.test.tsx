@@ -78,7 +78,7 @@ jest.mock('@/context/AuthContext', () => ({ useAuth: () => ({ session: { access_
 jest.mock('@/components/Avatar', () => ({ Avatar: () => null }));
 jest.mock('@/hooks/useMyAccess', () => ({ useMyAccess: () => mockAccess }));
 jest.mock('@/context/CollectionContext', () => ({ useCollection: () => ({ collection: {}, setStatus: jest.fn() }) }));
-jest.mock('@/context/UnreadMessagesContext', () => ({ useUnreadMessages: () => ({ markRead: jest.fn() }) }));
+jest.mock('@/context/UnreadMessagesContext', () => ({ useUnreadMessages: () => ({ markRead: jest.fn(), unreadByConversation: {} }) }));
 jest.mock('@/context/PinCatalogueContext', () => ({ usePinCatalogue: () => ({ pins: [], ensurePins: () => Promise.resolve() }) }));
 jest.mock('@/components/ui/Toast', () => ({ useToast: () => ({ show: mockToast, hide: jest.fn() }) }));
 

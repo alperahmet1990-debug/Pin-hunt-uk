@@ -113,3 +113,41 @@ test('project sync GraphQL retries HTML error pages and 5xx, then fails clearly'
   await assert.rejects(graphql('q', {}, { fetchImpl: async () => html(), delayMs: 0, attempts: 2 }), /GraphQL → 200 <!DOCTYPE/);
   await assert.rejects(graphql('q', {}, { fetchImpl: async () => reply(401, 'Bad credentials', 'application/json'), delayMs: 0 }), /GraphQL → 401/);
 });
+
+test('approve with one label: suggested labels are applied from the allow-list only', async () => {
+  const { suggestedLabels } = await import('./agent-ops.mjs');
+  const existing = new Set(['P1', 'P2', 'size:S', 'size:L', 'autonomy:L2', 'agent:ui', 'area:trading', 'interactive',
+    'approved', 'l3-go', 'human-approved-config', 'merge-approved', 'on-hold', 'status:ready', 'qa:pass', 'security:required']);
+  const body = '**Suggested labels:** `agent:ui` `autonomy:L2` `size:S` `P1` `area:trading` · Touches the trade screen.\n\n### Problem\n\n`size:L` here is not on the line.';
+  assert.deepEqual(suggestedLabels(body, ['approved', 'agent-proposed'], existing),
+    ['agent:ui', 'autonomy:L2', 'size:S', 'P1', 'area:trading']);
+
+  // Gate, hold, status, qa and security labels are never applied.
+  const risky = '**Suggested labels:** `approved` `l3-go` `human-approved-config` `merge-approved` `on-hold` `status:ready` `qa:pass` `security:required` `size:S`';
+  assert.deepEqual(suggestedLabels(risky, ['approved'], existing), ['size:S']);
+
+  // The maintainer's choice in a group wins.
+  assert.deepEqual(suggestedLabels(body, ['approved', 'P2', 'size:L'], existing), ['agent:ui', 'autonomy:L2', 'area:trading']);
+
+  // Labels that don't exist in the repo, duplicates and labels already present are skipped.
+  assert.deepEqual(suggestedLabels('**Suggested labels:** `area:nope` `interactive` `interactive` `P1`', ['approved', 'P1'], existing), ['interactive']);
+
+  // No suggested-labels line: nothing.
+  assert.deepEqual(suggestedLabels('### Problem\n\n`P1` `size:S`', ['approved'], existing), []);
+  assert.deepEqual(suggestedLabels(null, ['approved'], existing), []);
+});
+
+test('approve with one label: only the owner adding approved themselves triggers it', async () => {
+  const { isOwnerApproval } = await import('./agent-ops.mjs');
+  const base = {
+    action: 'labeled', label: { name: 'approved' }, issue: { number: 1 },
+    sender: { login: 'owner', type: 'User' }, repository: { owner: { login: 'owner' } },
+  };
+  assert.equal(isOwnerApproval(base), true);
+  assert.equal(isOwnerApproval(base, [{ gate: 'approved', via: 'claude' }]), false, 'added via an app');
+  assert.equal(isOwnerApproval({ ...base, sender: { login: 'github-actions[bot]', type: 'Bot' } }), false, 'bot');
+  assert.equal(isOwnerApproval({ ...base, sender: { login: 'someone', type: 'User' } }), false, 'not the owner');
+  assert.equal(isOwnerApproval({ ...base, label: { name: 'P1' } }), false, 'other label');
+  assert.equal(isOwnerApproval({ ...base, action: 'unlabeled' }), false, 'removal');
+  assert.equal(isOwnerApproval({ ...base, issue: { number: 1, pull_request: {} } }), false, 'pull request');
+});

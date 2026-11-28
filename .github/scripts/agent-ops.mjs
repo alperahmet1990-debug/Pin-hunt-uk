@@ -15,6 +15,10 @@
 //     last added by an app or bot (agents act through the "claude" GitHub app),
 //     remove it, comment, and flag the item status:needs-human. Runs on every
 //     `issues`/`pull_request` labeled event as well as daily.
+//  0b. Approve with one label: when the repository owner adds `approved` to an
+//     issue (not via an app or bot), apply the allowed labels from the body's
+//     `**Suggested labels:**` line, before the queue is ranked in the same run
+//     (labels added with GITHUB_TOKEN don't trigger another run).
 
 import { appendFileSync, readFileSync } from 'node:fs';
 import {
@@ -50,6 +54,40 @@ export function illegitimateGates(events, labels) {
   return out;
 }
 
+// Labels Agent ops may copy from a "Suggested labels" line. Never gate, hold,
+// status:*, qa:* or security:* labels.
+const SUGGESTIBLE = /^(P[0-3]|size:[SML]|autonomy:L[123]|agent:(ui|backend)|area:[a-z0-9-]+|human-only|interactive|documentation|needs-device-check)$/;
+// One label per group; a label the maintainer already set wins.
+const LABEL_GROUPS = [/^P[0-3]$/, /^size:/, /^autonomy:/, /^agent:/];
+
+/** Suggested labels to add to an issue. Pure; exported for tests. */
+export function suggestedLabels(body, current, existing) {
+  const line = String(body ?? '').split('\n').find(l => l.includes('**Suggested labels:**'));
+  if (!line) return [];
+  const wanted = [...line.matchAll(/`([^`]+)`/g)].map(m => m[1].trim());
+  return [...new Set(wanted)].filter(l =>
+    SUGGESTIBLE.test(l) && existing.has(l) && !current.includes(l) &&
+    !LABEL_GROUPS.some(g => g.test(l) && current.some(c => g.test(c))));
+}
+
+/** True when an issues event is the repository owner adding `approved` themselves. Exported for tests. */
+export function isOwnerApproval(event, gateAlerts = []) {
+  return event.action === 'labeled' && event.label?.name === 'approved' &&
+    Boolean(event.issue) && !event.issue.pull_request &&
+    event.sender?.type === 'User' && event.sender.login === event.repository?.owner?.login &&
+    !gateAlerts.some(a => a.gate === 'approved');
+}
+
+async function applySuggestedLabels(issue) {
+  const existing = new Set((await ghAll(`/repos/${REPO}/labels`)).map(l => l.name));
+  const add = suggestedLabels(issue.body, labelNames(issue), existing);
+  if (!add.length) { log(`#${issue.number}: no suggested labels to apply`); return; }
+  await act(`#${issue.number}: approved → applying suggested labels ${add.join(', ')}`, async () => {
+    await addLabels(issue.number, add);
+    await comment(issue.number, `Applied suggested labels: ${add.join(', ')}. Change any of them to override.`);
+  });
+}
+
 async function auditGates(item) {
   const labels = labelNames(item);
   if (!labels.some(l => GATE_LABELS.includes(l))) return [];
@@ -76,6 +114,7 @@ async function main() {
       const fresh = await gh(`/repos/${REPO}/issues/${item.number}`);
       const alerts = await auditGates(fresh);
       log(alerts.length ? `Gate alerts: ${JSON.stringify(alerts)}` : `#${item.number}: ${event.label.name} added by a human, OK`);
+      if (process.env.GITHUB_EVENT_NAME === 'issues' && isOwnerApproval(event, alerts)) await applySuggestedLabels(fresh);
     }
     if (process.env.GITHUB_EVENT_NAME !== 'issues') return;
   }

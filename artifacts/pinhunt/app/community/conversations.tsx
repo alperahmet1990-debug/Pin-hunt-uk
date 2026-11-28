@@ -1,7 +1,7 @@
 /**
  * Conversations list — all private DM threads for the current user.
  */
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Platform,
@@ -13,11 +13,12 @@ import {
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Stack, useRouter } from 'expo-router';
+import { Stack, useFocusEffect, useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useColors } from '@/hooks/useColors';
 import { Avatar } from '@/components/Avatar';
 import { useCommunity } from '@/hooks/useCommunity';
+import { useUnreadMessages } from '@/context/UnreadMessagesContext';
 import { useBlockedUsers } from '@/context/BlockedUsersContext';
 import { withoutBlockedConversations } from '@/utils/blockedUsers';
 import { radius, spacing } from '@/constants/theme';
@@ -36,8 +37,10 @@ function timeAgo(iso: string): string {
   return formatDate(iso, 'short');
 }
 
-function ConversationRow({ conv, onPress, colors }: {
+function ConversationRow({ conv, unread, onPress, colors }: {
   conv: Conversation;
+  /** Live unread count from UnreadMessagesContext (clears as soon as the chat marks it read). */
+  unread: number;
   onPress(): void;
   colors: ReturnType<typeof useColors>;
 }) {
@@ -45,7 +48,6 @@ function ConversationRow({ conv, onPress, colors }: {
   const name  = other?.username ?? '…';
   const lastMsg = conv.lastMessage;
   const ts = conv.lastMessageAt ?? conv.createdAt;
-  const unread = conv.unreadCount ?? 0;
 
   return (
     <TouchableOpacity
@@ -95,6 +97,7 @@ export default function ConversationsScreen() {
   const insets  = useSafeAreaInsets();
   const router  = useRouter();
   const { repo, userId } = useCommunity();
+  const { unreadByConversation } = useUnreadMessages();
 
   const [allConvs,   setConvs]      = useState<Conversation[]>([]);
   // Conversations with collectors I blocked are hidden (B-P0-05b, #17).
@@ -107,10 +110,10 @@ export default function ConversationsScreen() {
   const [refreshing, setRefreshing] = useState(false);
   const [error,      setError]      = useState<string | null>(null);
 
-  const load = useCallback(async (isRefresh = false) => {
+  const load = useCallback(async (isRefresh = false, silent = false) => {
     if (!repo || !userId) { setLoading(false); return; }
     try {
-      if (isRefresh) setRefreshing(true); else setLoading(true);
+      if (!silent) { if (isRefresh) setRefreshing(true); else setLoading(true); }
       setError(null);
       const data = await repo.getConversations(userId);
       setConvs(data);
@@ -123,6 +126,14 @@ export default function ConversationsScreen() {
   }, [repo, userId]);
 
   useEffect(() => { load(); }, [load]);
+
+  // Reload when coming back to the list (e.g. after reading a chat). The first
+  // focus is skipped because the mount effect above already loads.
+  const hasFocusedOnce = useRef(false);
+  useFocusEffect(useCallback(() => {
+    if (!hasFocusedOnce.current) { hasFocusedOnce.current = true; return; }
+    load(false, true);
+  }, [load]));
 
   const botPad = Platform.OS === 'web' ? 24 : insets.bottom + 16;
 
@@ -161,6 +172,7 @@ export default function ConversationsScreen() {
             <ConversationRow
               key={conv.id}
               conv={conv}
+              unread={unreadByConversation[conv.id] ?? 0}
               colors={colors}
               onPress={() => router.push({ pathname: '/community/chat/[id]' as any, params: { id: conv.id } })}
             />

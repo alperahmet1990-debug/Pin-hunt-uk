@@ -376,7 +376,9 @@ describe("board review extras", () => {
       vi.stubEnv("PICTURE_INDEX_ENABLED", "true");
       vi.stubEnv("GOOGLE_APPLICATION_CREDENTIALS_JSON", creds);
       const res = await request(app).get("/api/admin/board-scans-picture-index").set("Authorization", "Bearer t");
-      expect(res.body).toMatchObject({ configured: true, location: "europe-west2", status: { referencesTotal: 116503, indexed: 1200, failed: 3 } });
+      expect(res.body).toMatchObject({ configured: true, autoResume: false, location: "europe-west2", status: { referencesTotal: 116503, indexed: 1200, failed: 3 } });
+      vi.stubEnv("PICTURE_INDEX_AUTO_RESUME", "true");
+      expect((await request(app).get("/api/admin/board-scans-picture-index").set("Authorization", "Bearer t")).body.autoResume).toBe(true);
       expect((await request(app).post("/api/admin/board-scans-picture-index/run").set("Authorization", "Bearer t").send({ retryFailed: true })).status).toBe(202);
       expect(state.indexRuns).toEqual([{ retryFailed: true }]);
       expect((await request(app).post("/api/admin/board-scans-picture-index/run").set("Authorization", "Bearer t")).status).toBe(409);

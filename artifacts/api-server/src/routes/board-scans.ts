@@ -442,6 +442,8 @@ router.get("/admin/board-scans-picture-index", requireAdmin, async (_req: AdminR
   }
   res.json({
     configured,
+    // Builds by itself after each start and every 24 hours (PICTURE_INDEX_AUTO_RESUME=true).
+    autoResume: process.env.PICTURE_INDEX_AUTO_RESUME === "true",
     location: vertexLocation(),
     ratePerMinute: ratePerMinute(),
     status,

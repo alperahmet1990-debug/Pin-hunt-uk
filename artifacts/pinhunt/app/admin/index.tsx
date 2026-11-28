@@ -28,6 +28,7 @@ import { useMyAccess } from '@/hooks/useMyAccess';
 import { useAuth } from '@/context/AuthContext';
 import { API_BASE } from '@/lib/apiBase';
 import { radius, spacing } from '@/constants/theme';
+import { PictureIndexRow } from '@/components/admin/PictureIndexRow';
 
 type FeatherName = React.ComponentProps<typeof Feather>['name'];
 
@@ -65,7 +66,7 @@ const CREATOR_LINKS: LinkItem[] = [
   { icon: 'book-open',    title: 'Catalogue',            description: 'Search and edit catalogue records.',              href: '/admin/catalogue' as Href },
   { icon: 'grid',         title: 'Board Scans',          description: 'Turn photos of pin boards into catalogue photos.', href: '/admin/board-scans' as Href },
   { icon: 'image',        title: 'Missing Images',       description: 'Add front or back photos to catalogue pins.',     href: '/admin/image-backfill' as Href },
-  { icon: 'layers',       title: 'Bulk Image Matcher',   description: 'Match a batch of pin photos to the catalogue (staging).', href: '/admin/bulk-images' as Href },
+  { icon: 'layers',       title: 'Bulk Image Matcher',   description: 'Match a batch of pin photos to the catalogue.', href: '/admin/bulk-images' as Href },
   { icon: 'upload-cloud', title: 'Catalogue Import',     description: 'Preview and run spreadsheet imports.',            href: '/admin/import' as Href },
   { icon: 'check-square', title: 'Catalogue Validation', description: 'eBay checks of catalogue details.',               href: '/admin/catalogue-validation' as Href },
   { icon: 'search',       title: 'Research Review',      description: 'Check and decide on researched pins (staging).', href: '/admin/research-review' as Href },
@@ -229,6 +230,7 @@ export default function AdminIndexScreen() {
               <Feather name="plus" size={16} color={colors.homeHeroText} />
               <Text style={[styles.primaryBtnLabel, { color: colors.homeHeroText }]}>Add a Catalogue Pin</Text>
             </TouchableOpacity>
+            <PictureIndexRow token={token} />
             <LinkSection title="App Creator" items={CREATOR_LINKS} />
           </>
         )}

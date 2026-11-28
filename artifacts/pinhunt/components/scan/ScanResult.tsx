@@ -44,15 +44,17 @@ interface ScanResultProps {
   onNoneOfThese: () => void;
   /** Hide "None of these" once recovery is showing. */
   recoveryOpen?: boolean;
+  /** The server's picture check didn't confirm any of them: ask rather than assert. */
+  notSure?: boolean;
 }
 
 const GAP = spacing.md;
 const STRIP_TILE = 88;
 
-export function ScanResult({ photoUri, candidates, insights, showDetails, onConfirm, onOpenPin, onAddPhoto, onNoneOfThese, recoveryOpen }: ScanResultProps) {
+export function ScanResult({ photoUri, candidates, insights, showDetails, onConfirm, onOpenPin, onAddPhoto, onNoneOfThese, recoveryOpen, notSure = false }: ScanResultProps) {
   const colors = useColors();
   const { width } = useWindowDimensions();
-  const [state, setState] = useState(() => initialResult(candidates));
+  const [state, setState] = useState(() => initialResult(candidates, notSure));
   const [detailsOpen, setDetailsOpen] = useState(false);
   const panel = Math.floor((width - spacing.lg * 2 - GAP) / 2);
   const best = candidates[state.best];
@@ -70,7 +72,7 @@ export function ScanResult({ photoUri, candidates, insights, showDetails, onConf
   return (
     <View style={styles.root}>
       <Text accessibilityRole="header" style={[styles.heading, { color: colors.homeInk }]}>
-        {resultHeading(candidates, state)}
+        {resultHeading(candidates, state, notSure)}
       </Text>
 
       <View style={styles.compare}>

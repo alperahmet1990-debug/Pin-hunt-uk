@@ -10,7 +10,12 @@ export interface ImageInsights {
 }
 
 export interface IdentifyResult {
-  matches: Array<{ pinId: string; confidence: number; reasoning: string }>;
+  matches: Array<{ pinId: string; confidence: number; reasoning: string; verified?: boolean }>;
+  /**
+   * The server's picture check didn't confirm any match (status "unmatched"):
+   * show them as "Not sure. Is it one of these?". False for older servers.
+   */
+  notSure: boolean;
   imageInsights: ImageInsights | null;
   /** The server's id for this scan, for recording what the collector picked (#113). */
   scanId: string | null;
@@ -111,9 +116,11 @@ export async function identifyPin(
       matches: IdentifyResult['matches'];
       imageInsights?: ImageInsights;
       scanId?: unknown;
+      status?: unknown;
     };
     return {
       matches: data.matches,
+      notSure: data.status === 'unmatched',
       imageInsights: data.imageInsights ?? null,
       scanId: typeof data.scanId === 'string' ? data.scanId : null,
     };

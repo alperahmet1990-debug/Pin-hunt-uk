@@ -13,7 +13,7 @@ All in `artifacts/api-server/src/services/boardScan/`, routes in `src/routes/boa
 
 | Need | Reused |
 |---|---|
-| Recognition | Same model (`OPENAI_SCAN_MODEL`), the Bulk Image Matcher's per-pin describe prompt (`bulkImages/match.ts`), catalogue search (`scanCandidates.ts`), ranking + photo-comparison prompts (shared in `pinRank.ts`, used by `/scan/identify` too), `scanVerify.ts` rules, `scanReasoning.ts` |
+| Recognition | Same model (`OPENAI_SCAN_MODEL`), the Bulk Image Matcher's per-pin describe prompt (`bulkImages/match.ts`), catalogue search (`scanCandidates.ts`), ranking + photo-comparison prompts (shared in `pinRank.ts`; `/scan/identify` has its own inline copies of the same wording), `scanVerify.ts` rules, `scanReasoning.ts` |
 | Clean-up | `pixian.ts` (`normalizePinPhoto`, test mode, timeout/retry) |
 | Approval + publishing | `pin_images` rows via `createContributedImage`, then `publishContributedImage` (watermark, public bucket, `pins.image_url`) |
 | Storage | Cleaned photos in the existing private `pin-contributed-images` bucket; board photos and crops in a new private `board-scans` bucket |
@@ -94,7 +94,7 @@ Learned from the first real board (19 Nov 2026): the board-wide detection descri
 Second board (19 Nov 2026, a Grogu board) showed two more causes, now fixed:
 
 - **The comparison showed only 3 pictures.** The scan's limit (`VERIFY_MAX_REFERENCES`) showed references for the top 3 candidates only, and the prompt lets an unpictured candidate keep its plausibility. When the 3 pictured candidates didn't match, the model promoted the 4th or 5th — whose Pin & Pop picture exists but it was never shown ("despite having no reference image"). Board matching now shows all ranked candidates' pictures plus the closest look-alikes (up to 8 by default, at most 10, `BOARD_MAX_REFERENCES`), and a candidate counts as checked only if its own picture was compared.
-- **The search was built for a 13k catalogue** (`scanCandidates.ts`): a character on its own returns an arbitrary 120 of hundreds or thousands of pins, and specific words were searched across the whole catalogue after them, past the 150 cap. Board matching (`candidates.ts`) now searches each top character together with each specific word first (e.g. Grogu + "pod", Rex + "claw machine"), then printed text, then the broad search. The app's single-pin scan still uses the old search; it likely has the same weakness on the 116k catalogue.
+- **The search was built for a 13k catalogue** (`scanCandidates.ts`): a character on its own returns an arbitrary 120 of hundreds or thousands of pins, and specific words were searched across the whole catalogue after them, past the 150 cap. Board matching (`candidates.ts`) now searches each top character together with each specific word first (e.g. Grogu + "pod", Rex + "claw machine"), then printed text, then the broad search. The app's scan (`/scan/identify`) now uses this search too, with the describe step's printed text and Google Vision's OCR lines as the printed-text terms, plus the server-side reference download, the format rule and the confidence caps (`applyConfidenceRules` in `routes/scan.ts`).
 
 Third board (19 Nov 2026, Disney Store "Tails of Friendship" silver-frame pins) showed the limit of text search: set pins are often titled by character only ("Meeko", "Pongo and Perdita"), and nothing in the catalogue text describes how they look ("silver frame"), so among hundreds of same-titled pins the right one can't be singled out. Boards are usually arranged by set, so:
 

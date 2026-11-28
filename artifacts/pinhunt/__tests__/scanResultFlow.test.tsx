@@ -176,6 +176,16 @@ describe('Scan result (UX-005)', () => {
     expect(screen.queryByRole('button', { name: 'None of these' })).toBeNull();
   });
 
+  it('says "Not sure" when the server\'s picture check confirmed none of the matches', async () => {
+    mockIdentify.mockResolvedValueOnce({
+      matches: [{ pinId: 'p2', confidence: 60, reasoning: 'Blue sky' }, { pinId: 'p1', confidence: 50, reasoning: 'Maybe' }],
+      imageInsights: null, notSure: true,
+    });
+    await render(<ScanScreen />);
+    await fireEvent.press(screen.getByRole('button', { name: 'Choose a photo from your library' }));
+    expect(await screen.findByRole('header', { name: 'Not sure. Is it one of these?' }, { timeout: 3000 })).toBeTruthy();
+  });
+
   it('a single match: "Not it" opens the options straight away', async () => {
     mockIdentify.mockResolvedValueOnce({ matches: [{ pinId: 'p2', confidence: 81, reasoning: 'Blue sky' }], imageInsights: null });
     await scanToResult();

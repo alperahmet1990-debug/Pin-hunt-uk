@@ -64,3 +64,16 @@ describe('scan result state', () => {
     expect(resultHeading(c(88, 20))).toBe('Is this your pin?');
   });
 });
+
+describe('when the server says nothing checked out (notSure)', () => {
+  const sure = [{ confidence: 60 }, { confidence: 50 }];
+  it('asks rather than asserts, and opens the alternatives straight away', () => {
+    expect(resultHeading(sure, undefined, true)).toBe('Not sure. Is it one of these?');
+    expect(initialResult(sure, true).showAlternatives).toBe(true);
+  });
+  it('is unchanged when the server confirmed a match (or is an older server)', () => {
+    expect(resultHeading(sure)).toBe('Is this your pin?');
+    expect(resultHeading(sure, undefined, false)).toBe('Is this your pin?');
+    expect(initialResult(sure).showAlternatives).toBe(false);
+  });
+});
